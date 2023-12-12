@@ -1,0 +1,448 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+---
+title: Add SBOM and provenance attestations with GitHub Actions
+description: Add SBOM and provenance attestations to your images with GitHub Actions
+keywords: ci, github actions, gha, buildkit, buildx, attestations, sbom, provenance, slsa
+---
+@y
+---
+title: Add SBOM and provenance attestations with GitHub Actions
+description: Add SBOM and provenance attestations to your images with GitHub Actions
+keywords: ci, github actions, gha, buildkit, buildx, attestations, sbom, provenance, slsa
+---
+@z
+
+@x
+Software Bill of Material (SBOM) and provenance
+[attestations](../../attestations/_index.md) add metadata about the contents of
+your image, and how it was built.
+@y
+Software Bill of Material (SBOM) and provenance
+[attestations](../../attestations/_index.md) add metadata about the contents of
+your image, and how it was built.
+@z
+
+@x
+Attestations are supported with version 4 and later of the
+`docker/build-push-action`.
+@y
+Attestations are supported with version 4 and later of the
+`docker/build-push-action`.
+@z
+
+@x
+## Default provenance
+@y
+## Default provenance
+@z
+
+@x
+The `docker/build-push-action` GitHub Action automatically adds provenance
+attestations to your image, with the following conditions:
+@y
+The `docker/build-push-action` GitHub Action automatically adds provenance
+attestations to your image, with the following conditions:
+@z
+
+@x
+- If the GitHub repository is public, provenance attestations with `mode=max`
+  are automatically added to the image.
+- If the GitHub repository is private, provenance attestations with `mode=min`
+  are automatically added to the image.
+- If you're using the [`docker` exporter](../../exporters/oci-docker.md), or
+  you're loading the build results to the runner with `load: true`, no
+  attestations are added to the image. These output formats don't support
+  attestations.
+@y
+- If the GitHub repository is public, provenance attestations with `mode=max`
+  are automatically added to the image.
+- If the GitHub repository is private, provenance attestations with `mode=min`
+  are automatically added to the image.
+- If you're using the [`docker` exporter](../../exporters/oci-docker.md), or
+  you're loading the build results to the runner with `load: true`, no
+  attestations are added to the image. These output formats don't support
+  attestations.
+@z
+
+@x
+## Max-level provenance
+@y
+## Max-level provenance
+@z
+
+@x
+It's recommended that you build your images with max-level provenance
+attestations. Private repositories only add min-level provenance by default,
+but you can manually override the provenance level by setting the `provenance`
+input on the `docker/build-push-action` GitHub Action to `mode=max`.
+@y
+It's recommended that you build your images with max-level provenance
+attestations. Private repositories only add min-level provenance by default,
+but you can manually override the provenance level by setting the `provenance`
+input on the `docker/build-push-action` GitHub Action to `mode=max`.
+@z
+
+@x
+Note that adding attestations to an image means you must push the image to a
+registry directly, as opposed to loading the image to the local image store of
+the runner. This is because the local image store doesn't support loading
+images with attestations.
+@y
+Note that adding attestations to an image means you must push the image to a
+registry directly, as opposed to loading the image to the local image store of
+the runner. This is because the local image store doesn't support loading
+images with attestations.
+@z
+
+@x
+```yaml
+name: ci
+@y
+```yaml
+name: ci
+@z
+
+@x
+on:
+  push:
+    branches:
+      - "main"
+@y
+on:
+  push:
+    branches:
+      - "main"
+@z
+
+@x
+env:
+  IMAGE_NAME: user/app
+@y
+env:
+  IMAGE_NAME: user/app
+@z
+
+@x
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_NAME }}
+@y
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_NAME }}
+@z
+
+@x
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          provenance: mode=max
+          tags: ${{ steps.meta.outputs.tags }}
+```
+@y
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          provenance: mode=max
+          tags: ${{ steps.meta.outputs.tags }}
+```
+@z
+
+@x
+## SBOM
+@y
+## SBOM
+@z
+
+@x
+SBOM attestations aren't automatically added to the image. To add SBOM
+attestations, set the `sbom` input of the `docker/build-push-action` to `true.
+@y
+SBOM attestations aren't automatically added to the image. To add SBOM
+attestations, set the `sbom` input of the `docker/build-push-action` to `true.
+@z
+
+@x
+Note that adding attestations to an image means you must push the image to a
+registry directly, as opposed to loading the image to the local image store of
+the runner. This is because the local image store doesn't support loading
+images with attestations.
+@y
+Note that adding attestations to an image means you must push the image to a
+registry directly, as opposed to loading the image to the local image store of
+the runner. This is because the local image store doesn't support loading
+images with attestations.
+@z
+
+@x
+```yaml
+name: ci
+@y
+```yaml
+name: ci
+@z
+
+@x
+on:
+  push:
+    branches:
+      - "main"
+@y
+on:
+  push:
+    branches:
+      - "main"
+@z
+
+@x
+env:
+  IMAGE_NAME: user/app
+@y
+env:
+  IMAGE_NAME: user/app
+@z
+
+@x
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_NAME }}
+@y
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_NAME }}
+@z
+
+@x
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          sbom: true
+          tags: ${{ steps.meta.outputs.tags }}
+```
+@y
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          sbom: true
+          tags: ${{ steps.meta.outputs.tags }}
+```
+@z
+
+@x
+## SBOM
+@y
+## SBOM
+@z
+
+@x
+SBOM attestations aren't automatically added to the image. To add SBOM
+attestations, set the `sbom` input of the `docker/build-push-action` to `true.
+@y
+SBOM attestations aren't automatically added to the image. To add SBOM
+attestations, set the `sbom` input of the `docker/build-push-action` to `true.
+@z
+
+@x
+Note that adding attestations to an image means you must push the image to a
+registry directly, as opposed to loading the image to the local image store of
+the runner. This is because the local image store doesn't support loading
+images with attestations.
+@y
+Note that adding attestations to an image means you must push the image to a
+registry directly, as opposed to loading the image to the local image store of
+the runner. This is because the local image store doesn't support loading
+images with attestations.
+@z
+
+@x
+```yaml
+name: ci
+@y
+```yaml
+name: ci
+@z
+
+@x
+on:
+  push:
+    branches:
+      - "main"
+@y
+on:
+  push:
+    branches:
+      - "main"
+@z
+
+@x
+env:
+  IMAGE_NAME: user/app
+@y
+env:
+  IMAGE_NAME: user/app
+@z
+
+@x
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_NAME }}
+@y
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_NAME }}
+@z
+
+@x
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          sbom: true
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+```
+@y
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          sbom: true
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+```
+@z

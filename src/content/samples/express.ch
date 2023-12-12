@@ -1,0 +1,16 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+---
+title: Express samples
+description: Docker samples for Express.
+service: express
+---
+@y
+---
+title: Express samples
+description: Docker samples for Express.
+service: express
+---
+@z
