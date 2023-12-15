@@ -4,12 +4,12 @@
 SUBDIRS = images storagedriver
 
 bases = \
-	_index                        \
-	bind-mounts                   \
-	containerd                    \
-	tmpfs                         \
-	troubleshooting_volume_errors \
-	volumes
+	_index.md                        \
+	bind-mounts.md                   \
+	containerd.md                    \
+	tmpfs.md                         \
+	troubleshooting_volume_errors.md \
+	volumes.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

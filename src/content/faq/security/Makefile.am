@@ -4,10 +4,10 @@
 SUBDIRS = single-sign-on
 
 bases = \
-	eci-faq             \
-	general             \
-	networking-and-vms  \
-	settings-management
+	eci-faq.md             \
+	general.md             \
+	networking-and-vms.md  \
+	settings-management.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

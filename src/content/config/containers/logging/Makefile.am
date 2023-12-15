@@ -2,22 +2,22 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index       \
-	awslogs      \
-	configure    \
-	dual-logging \
-	etwlogs      \
-	fluentd      \
-	gcplogs      \
-	gelf         \
-	journald     \
-	json-file    \
-	local        \
-	log_tags     \
-	logentries   \
-	plugins      \
-	splunk       \
-	syslog
+	_index.md       \
+	awslogs.md      \
+	configure.md    \
+	dual-logging.md \
+	etwlogs.md      \
+	fluentd.md      \
+	gcplogs.md      \
+	gelf.md         \
+	journald.md     \
+	json-file.md    \
+	local.md        \
+	log_tags.md     \
+	logentries.md   \
+	plugins.md      \
+	splunk.md       \
+	syslog.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

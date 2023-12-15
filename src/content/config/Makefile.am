@@ -4,10 +4,10 @@
 SUBDIRS = containers daemon
 
 bases = \
-	filter                 \
-	formatting             \
-	labels-custom-metadata \
-	pruning
+	filter.md                 \
+	formatting.md             \
+	labels-custom-metadata.md \
+	pruning.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

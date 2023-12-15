@@ -4,13 +4,13 @@
 SUBDIRS = images
 
 bases = \
-	_index  \
-	bridge  \
-	host    \
-	ipvlan  \
-	macvlan \
-	none    \
-	overlay
+	_index.md  \
+	bridge.md  \
+	host.md    \
+	ipvlan.md  \
+	macvlan.md \
+	none.md    \
+	overlay.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

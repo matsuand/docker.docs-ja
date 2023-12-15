@@ -188,5 +188,19 @@ AC_CONFIG_FILES([
 	src/content/subscription/Makefile
 	src/content/trusted-content/Makefile
 	src/content/trusted-content/images/Makefile
+	src/data/Makefile
+	src/data/buildx/Makefile
+	src/data/docsarchive/Makefile
+	src/data/engine-cli/Makefile
+	src/data/init-cli/Makefile
+	src/i18n/Makefile
+	src/layouts/Makefile
+	src/layouts/_default/Makefile
+	src/layouts/_default/_markup/Makefile
+	src/layouts/partials/Makefile
+	src/layouts/partials/components/Makefile
+	src/layouts/partials/utils/Makefile
+	src/layouts/samples/Makefile
+	src/layouts/shortcodes/Makefile
 ])
 AC_OUTPUT

@@ -4,21 +4,21 @@
 SUBDIRS = images
 
 bases = \
-	02_our_app         \
-	03_updating_app    \
-	04_sharing_app     \
-	05_persisting_data \
-	06_bind_mounts     \
-	07_multi_container \
-	08_using_compose   \
-	09_image_best      \
-	11_what_next       \
-	_index             \
-	kube-deploy        \
-	orchestration      \
-	overview           \
-	resources          \
-	swarm-deploy
+	02_our_app.md         \
+	03_updating_app.md    \
+	04_sharing_app.md     \
+	05_persisting_data.md \
+	06_bind_mounts.md     \
+	07_multi_container.md \
+	08_using_compose.md   \
+	09_image_best.md      \
+	11_what_next.md       \
+	_index.md             \
+	kube-deploy.md        \
+	orchestration.md      \
+	overview.md           \
+	resources.md          \
+	swarm-deploy.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

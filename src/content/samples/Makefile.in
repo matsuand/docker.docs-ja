@@ -237,52 +237,52 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index        \
-	ai-ml         \
-	angular       \
-	cloudflared   \
-	django        \
-	dotnet        \
-	elasticsearch \
-	express       \
-	fastapi       \
-	flask         \
-	gitea         \
-	go            \
-	java          \
-	javascript    \
-	mariadb       \
-	minecraft     \
-	mongodb       \
-	ms-sql        \
-	mysql         \
-	nextcloud     \
-	nginx         \
-	nodejs        \
-	php           \
-	pi-hole       \
-	plex          \
-	portainer     \
-	postgres      \
-	prometheus    \
-	python        \
-	rails         \
-	react         \
-	redis         \
-	ruby          \
-	rust          \
-	spark         \
-	spring        \
-	traefik       \
-	typescript    \
-	vuejs         \
-	wireguard     \
-	wordpress
+	_index.md        \
+	ai-ml.md         \
+	angular.md       \
+	cloudflared.md   \
+	django.md        \
+	dotnet.md        \
+	elasticsearch.md \
+	express.md       \
+	fastapi.md       \
+	flask.md         \
+	gitea.md         \
+	go.md            \
+	java.md          \
+	javascript.md    \
+	mariadb.md       \
+	minecraft.md     \
+	mongodb.md       \
+	ms-sql.md        \
+	mysql.md         \
+	nextcloud.md     \
+	nginx.md         \
+	nodejs.md        \
+	php.md           \
+	pi-hole.md       \
+	plex.md          \
+	portainer.md     \
+	postgres.md      \
+	prometheus.md    \
+	python.md        \
+	rails.md         \
+	react.md         \
+	redis.md         \
+	ruby.md          \
+	rust.md          \
+	spark.md         \
+	spring.md        \
+	traefik.md       \
+	typescript.md    \
+	vuejs.md         \
+	wireguard.md     \
+	wordpress.md
 
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||"}
+thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
 changes = $(bases:=.ch) # change files
-transes = $(bases:=.md) # translated files
+transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 all: all-am
 
@@ -482,9 +482,11 @@ ctie:
 .PHONY: all
 all: $(transes)
 
--include Makefile.sub
-Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh . $(transes)
+submakename ?= Makefile.sub
+
+-include $(submakename)
+$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild
 @MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
@@ -492,7 +494,7 @@ Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
 @MAINT@	@if test ! -f $@; then \
 @MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
 @MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$|.md|"` $@; \
+@MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

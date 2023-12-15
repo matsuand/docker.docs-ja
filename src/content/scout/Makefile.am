@@ -4,17 +4,17 @@
 SUBDIRS = images integrations policy
 
 bases = \
-	_index              \
-	advisory-db-sources \
-	dashboard           \
-	data-handling       \
-	env-vars            \
-	image-analysis      \
-	image-details-view  \
-	local-fs            \
-	quickstart          \
-	release-notes       \
-	sbom
+	_index.md              \
+	advisory-db-sources.md \
+	dashboard.md           \
+	data-handling.md       \
+	env-vars.md            \
+	image-analysis.md      \
+	image-details-view.md  \
+	local-fs.md            \
+	quickstart.md          \
+	release-notes.md       \
+	sbom.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

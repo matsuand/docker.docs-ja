@@ -4,14 +4,14 @@
 SUBDIRS = images
 
 bases = \
-	_index        \
-	ipv6          \
-	logs          \
-	prometheus    \
-	remote-access \
-	start         \
-	systemd       \
-	troubleshoot
+	_index.md        \
+	ipv6.md          \
+	logs.md          \
+	prometheus.md    \
+	remote-access.md \
+	start.md         \
+	systemd.md       \
+	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

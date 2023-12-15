@@ -4,15 +4,15 @@
 SUBDIRS = https trust
 
 bases = \
-	_index         \
-	antivirus      \
-	apparmor       \
-	certificates   \
-	non-events     \
-	protect-access \
-	rootless       \
-	seccomp        \
-	userns-remap
+	_index.md         \
+	antivirus.md      \
+	apparmor.md       \
+	certificates.md   \
+	non-events.md     \
+	protect-access.md \
+	rootless.md       \
+	seccomp.md        \
+	userns-remap.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

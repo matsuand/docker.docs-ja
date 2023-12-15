@@ -7,14 +7,14 @@ SUBDIRS = admin billing build cloud compose config contribute \
 	storage subscription trusted-content
 
 bases = \
-	_index            \
-	get-docker        \
-	glossary          \
-	reference         \
-	registry          \
-	release-lifecycle \
-	release-notes     \
-	support
+	_index.md            \
+	get-docker.md        \
+	glossary.md          \
+	reference.md         \
+	registry.md          \
+	release-lifecycle.md \
+	release-notes.md     \
+	support.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

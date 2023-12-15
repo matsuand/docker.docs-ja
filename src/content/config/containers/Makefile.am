@@ -4,11 +4,11 @@
 SUBDIRS = logging
 
 bases = \
-	live-restore                   \
-	multi-service_container        \
-	resource_constraints           \
-	runmetrics                     \
-	start-containers-automatically
+	live-restore.md                   \
+	multi-service_container.md        \
+	resource_constraints.md           \
+	runmetrics.md                     \
+	start-containers-automatically.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -4,13 +4,13 @@
 SUBDIRS = images
 
 bases = \
-	DISTRIBUTION \
-	_index       \
-	labels       \
-	multi-arch   \
-	publish      \
-	share        \
-	validate
+	DISTRIBUTION.md \
+	_index.md       \
+	labels.md       \
+	multi-arch.md   \
+	publish.md      \
+	share.md        \
+	validate.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

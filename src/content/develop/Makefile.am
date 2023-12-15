@@ -4,9 +4,9 @@
 SUBDIRS = develop-images images
 
 bases = \
-	_index                  \
-	dev-best-practices      \
-	security-best-practices
+	_index.md                  \
+	dev-best-practices.md      \
+	security-best-practices.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

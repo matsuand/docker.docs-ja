@@ -4,10 +4,10 @@
 SUBDIRS = images
 
 bases = \
-	invoke-host-binaries           \
-	kubernetes                     \
-	oauth2-flow                    \
-	use-docker-socket-from-backend
+	invoke-host-binaries.md           \
+	kubernetes.md                     \
+	oauth2-flow.md                    \
+	use-docker-socket-from-backend.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -1,0 +1,28 @@
+##
+## This is part of Japanese translation version for Docker's Documantation.
+##
+SUBDIRS = _default partials samples shortcodes
+
+bases = \
+	404.html
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/main.mk
+
+thisdate = `date +'%Y/%m/%d'`
+commitdate = `(cd @abs_origdir@ && git log -1 --pretty=format:"%ad" --date=short) | sed "s|\-|/|g"`
+commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|/|g"`
+
+all: index.html
+index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
+	@echo Processing index.html...
+	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/index.html $(srcdir)/index.html.ch >/dev/null
+	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
+               -e "s@__COMMITHASH__@$(commithash)@g" $@
+
+copyfiles = \
+	index.redirects.json \
+	index.robots.txt     \
+	sitemap.xml
+
+include $(top_srcdir)/build-aux/copy.mk

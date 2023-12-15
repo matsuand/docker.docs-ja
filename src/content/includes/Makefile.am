@@ -4,32 +4,32 @@
 SUBDIRS = content
 
 bases = \
-	aci-ecs-eol                    \
-	admin-company-overview         \
-	admin-early-access             \
-	admin-org-overview             \
-	api-version-matrix             \
-	beta                           \
-	buildx-v0.10-disclaimer        \
-	compose-eol                    \
-	deploy                         \
-	desktop-builders-setting       \
-	desktop-experimental           \
-	desktop-license-update         \
-	desktop-linux-launch           \
-	desktop-network-setting        \
-	desktop-notifications-settings \
-	dev-envs-changing              \
-	dockerfile-labs-channel        \
-	experimental                   \
-	extensions-form                \
-	gha-tutorial                   \
-	guides-get-docker              \
-	install-script                 \
-	open-terminal                  \
-	root-errors                    \
-	swarm-compose-compat           \
-	swarm-mode
+	aci-ecs-eol.md                    \
+	admin-company-overview.md         \
+	admin-early-access.md             \
+	admin-org-overview.md             \
+	api-version-matrix.md             \
+	beta.md                           \
+	buildx-v0.10-disclaimer.md        \
+	compose-eol.md                    \
+	deploy.md                         \
+	desktop-builders-setting.md       \
+	desktop-experimental.md           \
+	desktop-license-update.md         \
+	desktop-linux-launch.md           \
+	desktop-network-setting.md        \
+	desktop-notifications-settings.md \
+	dev-envs-changing.md              \
+	dockerfile-labs-channel.md        \
+	experimental.md                   \
+	extensions-form.md                \
+	gha-tutorial.md                   \
+	guides-get-docker.md              \
+	install-script.md                 \
+	open-terminal.md                  \
+	root-errors.md                    \
+	swarm-compose-compat.md           \
+	swarm-mode.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

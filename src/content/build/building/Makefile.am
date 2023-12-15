@@ -2,14 +2,15 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	base-images    \
-	context        \
-	env-vars       \
-	multi-platform \
-	multi-stage    \
-	opentelemetry  \
-	packaging      \
-	secrets
+	annotations.md    \
+	base-images.md    \
+	context.md        \
+	env-vars.md       \
+	multi-platform.md \
+	multi-stage.md    \
+	opentelemetry.md  \
+	packaging.md      \
+	secrets.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

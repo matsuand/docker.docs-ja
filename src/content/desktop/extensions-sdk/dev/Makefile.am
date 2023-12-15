@@ -4,9 +4,9 @@
 SUBDIRS = api
 
 bases = \
-	continuous-integration \
-	test-debug             \
-	usage
+	continuous-integration.md \
+	test-debug.md             \
+	usage.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

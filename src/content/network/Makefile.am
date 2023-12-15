@@ -4,14 +4,14 @@
 SUBDIRS = drivers
 
 bases = \
-	_index \
-	links                       \
-	network-tutorial-host       \
-	network-tutorial-macvlan    \
-	network-tutorial-overlay    \
-	network-tutorial-standalone \
-	packet-filtering-firewalls  \
-	proxy
+	_index.md \
+	links.md                       \
+	network-tutorial-host.md       \
+	network-tutorial-macvlan.md    \
+	network-tutorial-overlay.md    \
+	network-tutorial-standalone.md \
+	packet-filtering-firewalls.md  \
+	proxy.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

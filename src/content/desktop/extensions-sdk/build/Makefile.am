@@ -4,9 +4,9 @@
 SUBDIRS = images
 
 bases = \
-	backend-extension-tutorial  \
-	frontend-extension-tutorial \
-	minimal-frontend-extension
+	backend-extension-tutorial.md  \
+	frontend-extension-tutorial.md \
+	minimal-frontend-extension.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

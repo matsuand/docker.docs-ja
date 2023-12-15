@@ -4,20 +4,20 @@
 SUBDIRS = how-swarm-mode-works images swarm-tutorial
 
 bases = \
-	_index       \
-	admin_guide  \
-	configs      \
-	ingress      \
-	join-nodes   \
-	key-concepts \
-	manage-nodes \
-	networking   \
-	raft         \
-	secrets      \
-	services     \
-	stack-deploy \
-	swarm-mode   \
-	swarm_manager_locking
+	_index.md       \
+	admin_guide.md  \
+	configs.md      \
+	ingress.md      \
+	join-nodes.md   \
+	key-concepts.md \
+	manage-nodes.md \
+	networking.md   \
+	raft.md         \
+	secrets.md      \
+	services.md     \
+	stack-deploy.md \
+	swarm-mode.md   \
+	swarm_manager_locking.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

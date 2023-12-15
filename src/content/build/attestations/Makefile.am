@@ -2,9 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index          \
-	sbom            \
-	slsa-provenance
+	_index.md          \
+	sbom.md            \
+	slsa-provenance.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

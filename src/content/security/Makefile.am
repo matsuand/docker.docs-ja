@@ -4,8 +4,8 @@
 SUBDIRS = for-admins for-developers images
 
 bases = \
-	_index                 \
-	security-announcements
+	_index.md                 \
+	security-announcements.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

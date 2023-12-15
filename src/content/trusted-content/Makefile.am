@@ -4,11 +4,11 @@
 SUBDIRS = images
 
 bases = \
-	_index             \
-	dsos-program       \
-	dvp-program        \
-	insights-analytics \
-	official-images
+	_index.md             \
+	dsos-program.md       \
+	dvp-program.md        \
+	insights-analytics.md \
+	official-images.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

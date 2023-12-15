@@ -5,11 +5,11 @@ SUBDIRS = api context install reference release-notes sbom security \
 	swarm tutorials
 
 bases = \
-	_index               \
-	alternative-runtimes \
-	breaking_changes     \
-	faq                  \
-	migration
+	_index.md               \
+	alternative-runtimes.md \
+	breaking_changes.md     \
+	faq.md                  \
+	migration.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -4,13 +4,13 @@
 SUBDIRS = images
 
 bases = \
-	_index            \
-	advanced          \
-	automated-testing \
-	how-builds-work   \
-	link-source       \
-	manage-builds     \
-	troubleshoot
+	_index.md            \
+	advanced.md          \
+	automated-testing.md \
+	how-builds-work.md   \
+	link-source.md       \
+	manage-builds.md     \
+	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

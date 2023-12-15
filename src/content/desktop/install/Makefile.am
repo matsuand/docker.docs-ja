@@ -4,13 +4,13 @@
 SUBDIRS = images
 
 bases = \
-	archlinux       \
-	debian          \
-	fedora          \
-	linux-install   \
-	mac-install     \
-	ubuntu          \
-	windows-install
+	archlinux.md       \
+	debian.md          \
+	fedora.md          \
+	linux-install.md   \
+	mac-install.md     \
+	ubuntu.md          \
+	windows-install.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

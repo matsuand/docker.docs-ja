@@ -4,14 +4,14 @@
 SUBDIRS = images
 
 bases = \
-	_index                \
-	aufs-driver           \
-	btrfs-driver          \
-	device-mapper-driver  \
-	overlayfs-driver      \
-	select-storage-driver \
-	vfs-driver            \
-	zfs-driver
+	_index.md                \
+	aufs-driver.md           \
+	btrfs-driver.md          \
+	device-mapper-driver.md  \
+	overlayfs-driver.md      \
+	select-storage-driver.md \
+	vfs-driver.md            \
+	zfs-driver.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

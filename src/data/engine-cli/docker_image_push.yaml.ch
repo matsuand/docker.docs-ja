@@ -1,0 +1,118 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker image push
+aliases: docker image push, docker push
+short: Upload an image to a registry
+long: See [docker push](push.md) for more information.
+usage: docker image push [OPTIONS] NAME[:TAG]
+pname: docker image
+plink: docker_image.yaml
+options:
+    - option: all-tags
+      shorthand: a
+      value_type: bool
+      default_value: "false"
+      description: Push all tags of an image to the repository
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: disable-content-trust
+      value_type: bool
+      default_value: "true"
+      description: Skip image signing
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: quiet
+      shorthand: q
+      value_type: bool
+      default_value: "false"
+      description: Suppress verbose output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
+      description: Print usage
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker image push
+aliases: docker image push, docker push
+short: Upload an image to a registry
+long: See [docker push](push.md) for more information.
+usage: docker image push [OPTIONS] NAME[:TAG]
+pname: docker image
+plink: docker_image.yaml
+options:
+    - option: all-tags
+      shorthand: a
+      value_type: bool
+      default_value: "false"
+      description: Push all tags of an image to the repository
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: disable-content-trust
+      value_type: bool
+      default_value: "true"
+      description: Skip image signing
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: quiet
+      shorthand: q
+      value_type: bool
+      default_value: "false"
+      description: Suppress verbose output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
+      description: Print usage
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

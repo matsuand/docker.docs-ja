@@ -2,13 +2,13 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index         \
-	builds         \
-	container      \
-	images         \
-	pause          \
-	resource-saver \
-	volumes
+	_index.md         \
+	builds.md         \
+	container.md      \
+	images.md         \
+	pause.md          \
+	resource-saver.md \
+	volumes.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

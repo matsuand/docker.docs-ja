@@ -4,10 +4,10 @@
 SUBDIRS = images
 
 bases = \
-	_index             \
-	design-guidelines  \
-	design-principles  \
-	mui-best-practices
+	_index.md             \
+	design-guidelines.md  \
+	design-principles.md  \
+	mui-best-practices.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

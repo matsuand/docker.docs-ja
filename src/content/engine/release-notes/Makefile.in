@@ -237,32 +237,32 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	17.03          \
-	17.04          \
-	17.05          \
-	17.06          \
-	17.07          \
-	17.09          \
-	17.10          \
-	17.11          \
-	17.12          \
-	18.01          \
-	18.02          \
-	18.03          \
-	18.04          \
-	18.05          \
-	18.06          \
-	18.09          \
-	19.03          \
-	20.10          \
-	23.0           \
-	24.0           \
-	prior-releases
+	17.03.md          \
+	17.04.md          \
+	17.05.md          \
+	17.06.md          \
+	17.07.md          \
+	17.09.md          \
+	17.10.md          \
+	17.11.md          \
+	17.12.md          \
+	18.01.md          \
+	18.02.md          \
+	18.03.md          \
+	18.04.md          \
+	18.05.md          \
+	18.06.md          \
+	18.09.md          \
+	19.03.md          \
+	20.10.md          \
+	23.0.md           \
+	24.0.md           \
+	prior-releases.md
 
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||"}
+thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
 changes = $(bases:=.ch) # change files
-transes = $(bases:=.md) # translated files
+transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 all: all-am
 
@@ -462,9 +462,11 @@ ctie:
 .PHONY: all
 all: $(transes)
 
--include Makefile.sub
-Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh . $(transes)
+submakename ?= Makefile.sub
+
+-include $(submakename)
+$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild
 @MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
@@ -472,7 +474,7 @@ Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
 @MAINT@	@if test ! -f $@; then \
 @MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
 @MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$|.md|"` $@; \
+@MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

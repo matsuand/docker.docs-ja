@@ -245,7 +245,7 @@ copyfiles = \
 	python.webp    \
 	rust-logo.webp
 
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||"}
+thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
 all: all-am
 
@@ -446,7 +446,7 @@ ctie:
 all: $(copyfiles)
 
 -include copyfiles.sub
-copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(top_builddir)/config.log
+copyfiles.sub: $(top_srcdir)/bin/makecp.sh Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -4,14 +4,14 @@
 SUBDIRS = images
 
 bases = \
-	access-local-folder   \
-	containerize-your-app \
-	multi-container-apps  \
-	persist-data          \
-	publish-your-image    \
-	run-a-container       \
-	run-hub-images        \
-	what-is-a-container
+	access-local-folder.md   \
+	containerize-your-app.md \
+	multi-container-apps.md  \
+	persist-data.md          \
+	publish-your-image.md    \
+	run-a-container.md       \
+	run-hub-images.md        \
+	what-is-a-container.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

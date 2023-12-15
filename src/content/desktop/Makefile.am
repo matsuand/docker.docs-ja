@@ -7,20 +7,20 @@ SUBDIRS = dev-environments enterprise extensions extensions-sdk \
 	windows wsl
 
 bases = \
-	_index                    \
-	allow-list                \
-	backup-and-restore        \
-	containerd                \
-	feedback                  \
-	get-started               \
-	kubernetes                \
-	networking                \
-	release-notes             \
-	support                   \
-	synchronized-file-sharing \
-	uninstall                 \
-	vm-vdi                    \
-	wasm
+	_index.md                    \
+	allow-list.md                \
+	backup-and-restore.md        \
+	containerd.md                \
+	feedback.md                  \
+	get-started.md               \
+	kubernetes.md                \
+	networking.md                \
+	release-notes.md             \
+	support.md                   \
+	synchronized-file-sharing.md \
+	uninstall.md                 \
+	vm-vdi.md                    \
+	wasm.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -4,9 +4,9 @@
 SUBDIRS = images
 
 bases = \
-	_index   \
-	metadata \
-	security
+	_index.md   \
+	metadata.md \
+	security.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -4,10 +4,10 @@
 SUBDIRS = components style
 
 bases = \
-	_index           \
-	checklist        \
-	file-conventions \
-	ui
+	_index.md           \
+	checklist.md        \
+	file-conventions.md \
+	ui.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

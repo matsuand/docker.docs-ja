@@ -1,15 +1,18 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = content
+SUBDIRS = content data i18n layouts
+
+bases = \
+	hugo.yaml
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/main.mk
 
 copydirs = \
 	_releaser \
 	_vendor   \
 	assets    \
-	data      \
-	i18n      \
-	layouts   \
 	scripts   \
 	static
 
@@ -27,15 +30,14 @@ copyfiles = \
 	docker-bake.hcl    \
 	go.mod             \
 	go.sum             \
-	hugo.yaml          \
 	netlify.toml       \
 	package-lock.json  \
 	package.json       \
 	postcss.config.js  \
 	tailwind.config.js
 
-.PHONY: all _copydirs _copyfiles
-all: _copydirs _copyfiles
+.PHONY: all _copydirs _copyfiles _npminstall
+all: _copydirs _copyfiles _npminstall
 
 _copydirs:
 	@for d in $(copydirs); do \
@@ -48,11 +50,11 @@ _copyfiles:
 	@for f in $(copyfiles); do \
 	  if test ! -e $$f; then \
 	    cp -p $(ORIGDIR)/$$f .; \
-	    case $$f in \
-              "hugo.yaml") \
-		sed -i -e "/^enableGitInfo/s/true/false/" $$f; \
-		sed -i -e "/languageName: English/a\ \ ja:\n    languageName: Japanese" $$f; \
-	      ;; \
-	    esac \
 	  fi \
 	done
+
+_npminstall:
+	@if test ! -d node_modules; then \
+	  npm install; \
+	  npm cache clean --force; \
+	fi

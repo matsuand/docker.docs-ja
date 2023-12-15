@@ -8,7 +8,7 @@ Run with the --version option for other important information." \
 #define false 0
 #define true 1 \
 
-#define buf_size 2048
+#define buf_size 8192
 #define max_file_index 32 \
 
 #define xisupper(c) (isupper(c) &&((unsigned char) c<0200) )  \

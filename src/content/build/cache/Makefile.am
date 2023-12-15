@@ -4,8 +4,8 @@
 SUBDIRS = backends
 
 bases = \
-	_index             \
-	garbage-collection
+	_index.md             \
+	garbage-collection.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

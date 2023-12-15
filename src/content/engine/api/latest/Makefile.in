@@ -119,7 +119,8 @@ am__can_run_installinfo = \
   esac
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
-	$(top_srcdir)/build-aux/common.mk
+	$(top_srcdir)/build-aux/common.mk \
+	$(top_srcdir)/build-aux/main.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -235,18 +236,18 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||"}
-abs_thisdir = @abs_srcdir@
-htmlbases = \
-	index
+bases = \
+	index.html
 
-ch_htmls = $(htmlbases:=.htmlch)
-tr_htmls = $(htmlbases:=.html)
-EXTRA_DIST = $(ch_htmls)
+thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
+abs_thisdir = @abs_srcdir@
+changes = $(bases:=.ch) # change files
+transes = $(bases)      # translated files
+EXTRA_DIST = $(changes)
 all: all-am
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -266,7 +267,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -439,19 +440,21 @@ ctie:
 	fi
 
 .PHONY: all
-all: $(tr_htmls)
+all: $(transes)
 
--include Makefile.sub
-Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh . $(tr_htmls)
+submakename ?= Makefile.sub
+
+-include $(submakename)
+$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild
-@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(ch_htmls))
-@MAINT@$(addprefix $(abs_thisdir)/, $(ch_htmls)):
+@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
+@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
 @MAINT@	@if test ! -f $@; then \
 @MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
 @MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.htmlch$$|.html|"` $@; \
+@MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -237,18 +237,18 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index          \
-	build-images    \
-	configure-ci-cd \
-	deploy          \
-	develop         \
-	run-containers  \
-	run-tests
+	_index.md          \
+	build-images.md    \
+	configure-ci-cd.md \
+	deploy.md          \
+	develop.md         \
+	run-containers.md  \
+	run-tests.md
 
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||"}
+thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
 changes = $(bases:=.ch) # change files
-transes = $(bases:=.md) # translated files
+transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 all: all-am
 
@@ -448,9 +448,11 @@ ctie:
 .PHONY: all
 all: $(transes)
 
--include Makefile.sub
-Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh . $(transes)
+submakename ?= Makefile.sub
+
+-include $(submakename)
+$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild
 @MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
@@ -458,7 +460,7 @@ Makefile.sub: $(top_srcdir)/bin/makesub.sh $(top_builddir)/config.log
 @MAINT@	@if test ! -f $@; then \
 @MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
 @MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$|.md|"` $@; \
+@MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
