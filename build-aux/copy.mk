@@ -6,5 +6,5 @@
 all: $(copyfiles)
 
 -include copyfiles.sub
-copyfiles.sub: $(top_srcdir)/bin/makecp.sh Makefile.am $(top_builddir)/config.log
+copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
