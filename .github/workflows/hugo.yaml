@@ -59,7 +59,7 @@ jobs:
         run: |
           cd build
           pwd
-          sh configure --with-origdir=..
+          sh ../configure --with-origdir=..
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
