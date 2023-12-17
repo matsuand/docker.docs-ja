@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md         \
+	build-billing.md  \
 	cycle.md          \
 	details.md        \
 	faqs.md           \

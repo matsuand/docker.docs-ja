@@ -633,7 +633,7 @@ all: $(transes)
 submakename ?= Makefile.sub
 
 -include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild
@@ -646,17 +646,20 @@ $(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.
 @MAINT@	fi
 
 all: index.html
-index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
+index.html: #$(abs_origdir)/index.html $(srcdir)/index.html.ch
 	@echo Processing index.html...
 	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/index.html $(srcdir)/index.html.ch >/dev/null
 	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
-               -e "s@__COMMITHASH__@$(commithash)@g" $@
+	        -e "s@__COMMITDATE__@$(commitdate)@" \
+	        -e "s@__COMMITHASH__@$(commithash)@g" $@
+	@echo "commitdate: $(commitdate)" > ../../commit.txt
+	@echo "commithash: $(commithash)" >> ../../commit.txt
 
 .PHONY: all
 all: $(copyfiles)
 
 -include copyfiles.sub
-copyfiles.sub: $(top_srcdir)/bin/makecp.sh Makefile.am $(top_builddir)/config.log
+copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

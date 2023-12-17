@@ -29,7 +29,7 @@ the behavior of features related to building:
 
 @x
 | Variable                                                                    | Type              | Description                                          |
-|-----------------------------------------------------------------------------|-------------------|------------------------------------------------------|
+| --------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------- |
 | [BUILDKIT_COLORS](#buildkit_colors)                                         | String            | Configure text color for the terminal output.        |
 | [BUILDKIT_HOST](#buildkit_host)                                             | String            | Specify host to use for remote builders.             |
 | [BUILDKIT_PROGRESS](#buildkit_progress)                                     | String            | Configure type of progress output.                   |
@@ -45,7 +45,7 @@ the behavior of features related to building:
 | [EXPERIMENTAL_BUILDKIT_SOURCE_POLICY](#experimental_buildkit_source_policy) | String            | Specify a BuildKit source policy file.               |
 @y
 | Variable                                                                    | Type              | Description                                          |
-|-----------------------------------------------------------------------------|-------------------|------------------------------------------------------|
+| --------------------------------------------------------------------------- | ----------------- | ---------------------------------------------------- |
 | [BUILDKIT_COLORS](#buildkit_colors)                                         | String            | Configure text color for the terminal output.        |
 | [BUILDKIT_HOST](#buildkit_host)                                             | String            | Specify host to use for remote builders.             |
 | [BUILDKIT_PROGRESS](#buildkit_progress)                                     | String            | Configure type of progress output.                   |

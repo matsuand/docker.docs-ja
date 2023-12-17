@@ -103,14 +103,14 @@ depending on your use case:
 
 @x
 1. Using the [QEMU emulation](#qemu) support in the kernel
-2. Building on [multiple native nodes](#multiple-native-nodes) using the same
-   builder instance
+2. Building on a single builder backed by
+   [multiple nodes of different architectures](#multiple-native-nodes).
 3. Using a stage in your Dockerfile to [cross-compile](#cross-compilation) to
    different architectures
 @y
 1. Using the [QEMU emulation](#qemu) support in the kernel
-2. Building on [multiple native nodes](#multiple-native-nodes) using the same
-   builder instance
+2. Building on a single builder backed by
+   [multiple nodes of different architectures](#multiple-native-nodes).
 3. Using a stage in your Dockerfile to [cross-compile](#cross-compilation) to
    different architectures
 @z
@@ -143,14 +143,16 @@ loads it through a binary registered in the `binfmt_misc` handler.
 > Emulation with QEMU can be much slower than native builds, especially for
 > compute-heavy tasks like compilation and compression or decompression.
 >
-> Use [cross-compilation](#cross-compilation) instead, if possible.
+> Use [multiple native nodes](#multiple-native-nodes) or
+> [cross-compilation](#cross-compilation) instead, if possible.
 @y
 > **Note**
 >
 > Emulation with QEMU can be much slower than native builds, especially for
 > compute-heavy tasks like compilation and compression or decompression.
 >
-> Use [cross-compilation](#cross-compilation) instead, if possible.
+> Use [multiple native nodes](#multiple-native-nodes) or
+> [cross-compilation](#cross-compilation) instead, if possible.
 @z
 
 @x
@@ -197,18 +199,26 @@ $ docker run --privileged --rm tonistiigi/binfmt --install all
 
 @x
 Using multiple native nodes provide better support for more complicated cases
-that are not handled by QEMU and generally have better performance. You can
-add additional nodes to the builder instance using the `--append` flag.
+that QEMU can't handle, and also provides better performance.
 @y
 Using multiple native nodes provide better support for more complicated cases
-that are not handled by QEMU and generally have better performance. You can
-add additional nodes to the builder instance using the `--append` flag.
+that QEMU can't handle, and also provides better performance.
 @z
 
 @x
-Assuming contexts `node-amd64` and `node-arm64` exist in `docker context ls`;
+You can add additional nodes to a builder using the `--append` flag.
 @y
-Assuming contexts `node-amd64` and `node-arm64` exist in `docker context ls`;
+You can add additional nodes to a builder using the `--append` flag.
+@z
+
+@x
+The following command creates a multi-node builder from Docker contexts named
+`node-amd64` and `node-arm64`. This example assumes that you've already added
+those contexts.
+@y
+The following command creates a multi-node builder from Docker contexts named
+`node-amd64` and `node-arm64`. This example assumes that you've already added
+those contexts.
 @z
 
 @x
@@ -228,13 +238,49 @@ $ docker buildx build --platform linux/amd64,linux/arm64 .
 @z
 
 @x
-For information on using multiple native nodes in CI, with GitHub Actions,
-refer to
-[Configure your GitHub Actions builder](../ci/github-actions/configure-builder.md#append-additional-nodes-to-the-builder).
+While this approach has advantages over emulation, managing multi-node builders
+introduces some overhead of setting up and managing builder clusters.
+Alternatively, you can use [Docker Build Cloud](/build/cloud/), a service that
+provides managed multi-node builders on Docker's infrastructure. With Docker
+Build Cloud, you get native multi-platform Arm and X86-64 builders without the
+burden of maintaining them. Using cloud builders also provides additional
+benefits, such as a shared build cache.
 @y
-For information on using multiple native nodes in CI, with GitHub Actions,
-refer to
-[Configure your GitHub Actions builder](../ci/github-actions/configure-builder.md#append-additional-nodes-to-the-builder).
+While this approach has advantages over emulation, managing multi-node builders
+introduces some overhead of setting up and managing builder clusters.
+Alternatively, you can use [Docker Build Cloud](/build/cloud/), a service that
+provides managed multi-node builders on Docker's infrastructure. With Docker
+Build Cloud, you get native multi-platform Arm and X86-64 builders without the
+burden of maintaining them. Using cloud builders also provides additional
+benefits, such as a shared build cache.
+@z
+
+@x
+After signing up for Docker Build Cloud, add the builder to your local
+environment and start building.
+@y
+After signing up for Docker Build Cloud, add the builder to your local
+environment and start building.
+@z
+
+@x
+```console
+$ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
+cloud-<ORG>-<BUILDER_NAME>
+$ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
+  --platform linux/amd64,linux/arm64,linux/arm/v7 \
+  --tag <IMAGE_NAME> \
+  --push .
+```
+@y
+```console
+$ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
+cloud-<ORG>-<BUILDER_NAME>
+$ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
+  --platform linux/amd64,linux/arm64,linux/arm/v7 \
+  --tag <IMAGE_NAME> \
+  --push .
+```
 @z
 
 @x

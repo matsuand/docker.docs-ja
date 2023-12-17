@@ -4,6 +4,7 @@
 bases = \
 	_index.md          \
 	add-seats.md       \
+	build-details.md   \
 	desktop-license.md \
 	details.md         \
 	downgrade.md       \

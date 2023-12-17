@@ -48,7 +48,7 @@
         <h1 class="py-2 text-center text-3xl md:text-2xl">
           お探しのものは何ですか？
         </h1><br/>
-        <div>暫定公開中 __THISDATE__ (<a href="https://github.com/docker/docs/commit/__COMMITHASH__">github.com/docker/docs@__COMMITHASH__</a>対応)</div>
+        <div align="center">暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__">github.com/docker/docs@__COMMITHASH__ 対応, __COMMITDATE__</a>)</div>
       </div>
 @z
 

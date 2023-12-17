@@ -14,11 +14,14 @@ commitdate = `(cd @abs_origdir@ && git log -1 --pretty=format:"%ad" --date=short
 commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|/|g"`
 
 all: index.html
-index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
+index.html: #$(abs_origdir)/index.html $(srcdir)/index.html.ch
 	@echo Processing index.html...
 	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/index.html $(srcdir)/index.html.ch >/dev/null
 	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
-               -e "s@__COMMITHASH__@$(commithash)@g" $@
+	        -e "s@__COMMITDATE__@$(commitdate)@" \
+	        -e "s@__COMMITHASH__@$(commithash)@g" $@
+	@echo "commitdate: $(commitdate)" > ../../commit.txt
+	@echo "commithash: $(commithash)" >> ../../commit.txt
 
 copyfiles = \
 	index.redirects.json \

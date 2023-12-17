@@ -238,6 +238,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md         \
+	build-billing.md  \
 	cycle.md          \
 	details.md        \
 	faqs.md           \
@@ -451,7 +452,7 @@ all: $(transes)
 submakename ?= Makefile.sub
 
 -include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild

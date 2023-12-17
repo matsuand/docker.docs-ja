@@ -300,7 +300,6 @@ SUBDIRS = attestations bake builders building buildkit cache ci \
 bases = \
 	_index.md        \
 	architecture.md  \
-	hydrobuild.md    \
 	release-notes.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -629,7 +628,7 @@ all: $(transes)
 submakename ?= Makefile.sub
 
 -include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh Makefile.am $(top_builddir)/config.log
+$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
 
 @MAINT@.PHONY: chbuild

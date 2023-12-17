@@ -131,23 +131,23 @@ Guides:
     - title: "Test your deployment"
       path: /language/nodejs/deploy/
 @y
-- sectiontitle: Language-specific guides
+- sectiontitle: 各種言語別ガイド
   section:
   - path: /language/
-    title: Overview
+    title: 概要
   - sectiontitle: Node.js
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/nodejs/
-    - title: "Containerize your app"
+    - title: "アプリのコンテナー化"
       path: /language/nodejs/containerize/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/nodejs/develop/
-    - title: "Run your tests"
+    - title: "テストの実行"
       path: /language/nodejs/run-tests/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/nodejs/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/nodejs/deploy/
 @z
 
@@ -167,15 +167,15 @@ Guides:
 @y
   - sectiontitle: Python
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/python/
-    - title: "Containerize your app"
+    - title: "アプリのコンテナー化"
       path: /language/python/containerize/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/python/develop/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/python/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/python/deploy/
 @z
 
@@ -199,19 +199,19 @@ Guides:
 @y
   - sectiontitle: Java
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/java/
-    - title: "Build images"
+    - title: "イメージのビルド"
       path: /language/java/build-images/
-    - title: "Run containers"
+    - title: "コンテナーの実行"
       path: /language/java/run-containers/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/java/develop/
-    - title: "Run your tests"
+    - title: "テストの実行"
       path: /language/java/run-tests/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/java/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/java/deploy/
 @z
 
@@ -235,19 +235,19 @@ Guides:
 @y
   - sectiontitle: Go
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/golang/
-    - title: "Build images"
+    - title: "イメージのビルド"
       path: /language/golang/build-images/
-    - title: "Run containers"
+    - title: "コンテナーの実行"
       path: /language/golang/run-containers/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/golang/develop/
-    - title: "Run your tests"
+    - title: "テストの実行"
       path: /language/golang/run-tests/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/golang/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/golang/deploy/
 @z
 
@@ -269,17 +269,17 @@ Guides:
 @y
   - sectiontitle: C# (.NET)
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/dotnet/
-    - title: "Containerize your app"
+    - title: "アプリのコンテナー化"
       path: /language/dotnet/containerize/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/dotnet/develop/
-    - title: "Run your tests"
+    - title: "テストの実行"
       path: /language/dotnet/run-tests/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/dotnet/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/dotnet/deploy/
 @z
 
@@ -301,17 +301,17 @@ Guides:
 @y
   - sectiontitle: Rust
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/rust/
-    - title: "Build images"
+    - title: "イメージのビルド"
       path: /language/rust/build-images/
-    - title: "Run containers"
+    - title: "コンテナーの実行"
       path: /language/rust/run-containers/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/rust/develop/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/rust/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/rust/deploy/
 @z
 
@@ -333,17 +333,17 @@ Guides:
 @y
   - sectiontitle: PHP
     section:
-    - title: "Overview"
+    - title: "概要"
       path: /language/php/
-    - title: "Containerize your app"
+    - title: "アプリのコンテナー化"
       path: /language/php/containerize/
-    - title: "Develop your app"
+    - title: "アプリの開発"
       path: /language/php/develop/
-    - title: "Run your tests"
+    - title: "テストの実行"
       path: /language/php/run-tests/
-    - title: "Configure CI/CD"
+    - title: "CI/CD の設定"
       path: /language/php/configure-ci-cd/
-    - title: "Test your deployment"
+    - title: "デプロイのテスト"
       path: /language/php/deploy/
 @z
 
@@ -4889,8 +4889,23 @@ FAQ:
     title: Overview
   - path: /billing/faqs/
     title: Billing
+  - path: /build/cloud/faq/
+    title: Build Cloud
   - path: /compose/faq/
     title: Compose
+@y
+FAQ:
+  - path: /faq/
+    title: Overview
+  - path: /billing/faqs/
+    title: Billing
+  - path: /build/cloud/faq/
+    title: Build Cloud
+  - path: /compose/faq/
+    title: Compose
+@z
+
+@x
   - sectiontitle: Desktop
     section:
     - path: /desktop/faqs/general/
@@ -4903,6 +4918,22 @@ FAQ:
       title: Linux
     - path: /desktop/faqs/releases/
       title: Releases
+@y
+  - sectiontitle: Desktop
+    section:
+    - path: /desktop/faqs/general/
+      title: General
+    - path: /desktop/faqs/macfaqs/
+      title: Mac
+    - path: /desktop/faqs/windowsfaqs/
+      title: Windows
+    - path: /desktop/faqs/linuxfaqs/
+      title: Linux
+    - path: /desktop/faqs/releases/
+      title: Releases
+@z
+
+@x
   - sectiontitle: Docker Hub and admin
     section:
     - path: /docker-hub/general-faqs/
@@ -4911,8 +4942,26 @@ FAQ:
       title: Organization
     - path: /docker-hub/company-faqs/
       title: Company
+@y
+  - sectiontitle: Docker Hub and admin
+    section:
+    - path: /docker-hub/general-faqs/
+      title: General
+    - path: /docker-hub/organization-faqs/
+      title: Organization
+    - path: /docker-hub/company-faqs/
+      title: Company
+@z
+
+@x
   - path: /subscription/faq/
     title: Subscription
+@y
+  - path: /subscription/faq/
+    title: Subscription
+@z
+
+@x
   - sectiontitle: Security
     section:
     - path: /faq/security/general/
@@ -4923,6 +4972,20 @@ FAQ:
       title: Settings Management
     - path: /faq/security/eci-faq/
       title: Enhanced Container Isolation
+@y
+  - sectiontitle: Security
+    section:
+    - path: /faq/security/general/
+      title: General
+    - path: /faq/security/networking-and-vms/
+      title: Networking and VMs
+    - path: /faq/security/settings-management/
+      title: Settings Management
+    - path: /faq/security/eci-faq/
+      title: Enhanced Container Isolation
+@z
+
+@x
     - sectiontitle: Single Sign-On
       section:
       - path: /faq/security/single-sign-on/faqs/
@@ -4938,45 +5001,6 @@ FAQ:
       - path: /faq/security/single-sign-on/users-faqs/
         title: Manage users
 @y
-FAQ:
-  - path: /faq/
-    title: Overview
-  - path: /billing/faqs/
-    title: Billing
-  - path: /compose/faq/
-    title: Compose
-  - sectiontitle: Desktop
-    section:
-    - path: /desktop/faqs/general/
-      title: General
-    - path: /desktop/faqs/macfaqs/
-      title: Mac
-    - path: /desktop/faqs/windowsfaqs/
-      title: Windows
-    - path: /desktop/faqs/linuxfaqs/
-      title: Linux
-    - path: /desktop/faqs/releases/
-      title: Releases
-  - sectiontitle: Docker Hub and admin
-    section:
-    - path: /docker-hub/general-faqs/
-      title: General
-    - path: /docker-hub/organization-faqs/
-      title: Organization
-    - path: /docker-hub/company-faqs/
-      title: Company
-  - path: /subscription/faq/
-    title: Subscription
-  - sectiontitle: Security
-    section:
-    - path: /faq/security/general/
-      title: General
-    - path: /faq/security/networking-and-vms/
-      title: Networking and VMs
-    - path: /faq/security/settings-management/
-      title: Settings Management
-    - path: /faq/security/eci-faq/
-      title: Enhanced Container Isolation
     - sectiontitle: Single Sign-On
       section:
       - path: /faq/security/single-sign-on/faqs/
