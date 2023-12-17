@@ -1,0 +1,3 @@
+[submodule "docs.orig"]
+	path = docs.orig
+	url = https://github.com/docker/docs.git
