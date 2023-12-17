@@ -1,6 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+absORIGDIR=@absORIGDIR@
+
 SUBDIRS = content data i18n layouts
 
 bases = \
@@ -42,14 +44,14 @@ all: _copydirs _copyfiles _npminstall
 _copydirs:
 	@for d in $(copydirs); do \
 	  if test ! -d $$d; then \
-	    cp -pR $(ORIGDIR)/$$d .; \
+	    cp -pR $(absORIGDIR)/$$d .; \
 	  fi \
 	done
 
 _copyfiles:
 	@for f in $(copyfiles); do \
 	  if test ! -e $$f; then \
-	    cp -p $(ORIGDIR)/$$f .; \
+	    cp -p $(absORIGDIR)/$$f .; \
 	  fi \
 	done
 

@@ -691,6 +691,7 @@ abs_targetdir
 TARGETDIR
 HOSTURL
 abs_origdir
+absORIGDIR
 ORIGDIR
 CTIE
 MAINT
@@ -3262,6 +3263,8 @@ else
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: ok" >&5
 printf "%s\n" "ok" >&6; }
 fi
+
+absORIGDIR=`(cd $ORIGDIR && pwd)`
 
 
 abs_origdir=`(cd $ORIGDIR && pwd)`

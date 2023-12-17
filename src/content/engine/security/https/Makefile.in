@@ -181,6 +181,7 @@ UPLOADBASE = @UPLOADBASE@
 UPLOADDIR = @UPLOADDIR@
 UPLOADURL = @UPLOADURL@
 VERSION = @VERSION@
+absORIGDIR = @absORIGDIR@
 abs_builddir = @abs_builddir@
 abs_origdir = @abs_origdir@/$(thisdir)
 abs_publishdir = @abs_publishdir@

@@ -260,6 +260,7 @@ UPLOADBASE = @UPLOADBASE@
 UPLOADDIR = @UPLOADDIR@
 UPLOADURL = @UPLOADURL@
 VERSION = @VERSION@
+absORIGDIR = @absORIGDIR@
 abs_builddir = @abs_builddir@
 abs_origdir = @abs_origdir@
 abs_publishdir = @abs_publishdir@

@@ -18,6 +18,8 @@ else
   AC_MSG_RESULT([ok])
 fi
 AC_SUBST(ORIGDIR)
+absORIGDIR=`(cd $ORIGDIR && pwd)`
+AC_SUBST(absORIGDIR)
 
 abs_origdir=`(cd $ORIGDIR && pwd)`
 AC_SUBST(abs_origdir)
