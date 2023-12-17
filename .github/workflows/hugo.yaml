@@ -52,6 +52,7 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Translate
         run: |
+          pwd
           make
       - name: Build with Hugo
         env:
