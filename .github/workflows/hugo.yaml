@@ -50,12 +50,16 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Translate
+      - name: Configure to translate
         run: |
-          # /home/runner/work/docker.docs-ja/docker.docs-ja
           mkdir -p build && cd build
-          configure --with-origdir=..
-          make
+          pwd
+          sh configure --with-origdir=..
+      - name: Make to translate
+        run: |
+          cd build
+          pwd
+          sh configure --with-origdir=..
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
