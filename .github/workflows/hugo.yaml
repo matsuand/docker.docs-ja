@@ -54,7 +54,7 @@ jobs:
         run: |
           mkdir -p build && cd build
           pwd
-          sh ../configure --with-origdir=..
+          sh ../configure --with-origdir=../docs.orig
       - name: Make to translate
         run: |
           cd build
