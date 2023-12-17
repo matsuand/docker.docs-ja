@@ -53,13 +53,16 @@ jobs:
       - name: Configure to translate
         run: |
           mkdir -p build && cd build
-          pwd
           sh ../configure --with-origdir=../docs.orig
       - name: Make to translate
         run: |
           cd build
-          pwd
           make
+      - name: Change URL in hugo.yaml
+        run: |
+          cd build/src
+          sed -i -e "/baseURL:/s@docs.docker.com@matsuand.github.io/docker.docs-ja@g" \
+            hugo.yaml
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -70,7 +73,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
