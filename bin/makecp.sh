@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # The first arg:		$1		subMakefile name（ex. jsnons, others）
 # The second arg:		$2		directory where the merge files will be created in

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # $1	Makefile name
 # $2	directory where the merge files will be created in
@@ -6,7 +6,7 @@
 
 makename=$1
 dirname=$2
-list=${@:3:($#-1)}
+list=${@:3:($#-2)}
 
 rm -f $makename
 echo "# $makename">$makename
