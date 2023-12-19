@@ -36,11 +36,11 @@ to have the Docker client and the daemon communicate securely over HTTPS.  TLS e
 @x
 This article demonstrates how to ensure the traffic between the Docker registry
 server and the Docker daemon (a client of the registry server) is encrypted and
-properly authenticated using *certificate-based client-server authentication*.
+properly authenticated using certificate-based client-server authentication.
 @y
 This article demonstrates how to ensure the traffic between the Docker registry
 server and the Docker daemon (a client of the registry server) is encrypted and
-properly authenticated using *certificate-based client-server authentication*.
+properly authenticated using certificate-based client-server authentication.
 @z
 
 @x
@@ -94,12 +94,14 @@ repository.
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > If multiple certificates exist, each is tried in alphabetical
 > order. If there is a 4xx-level or 5xx-level authentication error, Docker
 > continues to try with the next certificate.
 @y
-> **Note**:
+> **Note**
+>
 > If multiple certificates exist, each is tried in alphabetical
 > order. If there is a 4xx-level or 5xx-level authentication error, Docker
 > continues to try with the next certificate.
@@ -168,12 +170,14 @@ $ openssl req -new -x509 -text -key client.key -out client.cert
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > These TLS commands only generate a working set of certificates on Linux.
 > The version of OpenSSL in macOS is incompatible with the type of
 > certificate Docker requires.
 @y
-> **Note**:
+> **Note**
+>
 > These TLS commands only generate a working set of certificates on Linux.
 > The version of OpenSSL in macOS is incompatible with the type of
 > certificate Docker requires.

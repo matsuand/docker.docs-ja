@@ -38,18 +38,18 @@ aliases:
 @z
 
 @x
-When transferring data among networked systems, *trust* is a central concern. In
+When transferring data among networked systems, trust is a central concern. In
 particular, when communicating over an untrusted medium such as the internet, it
 is critical to ensure the integrity and the publisher of all the data a system
-operates on. You use the Docker Engine to push and pull images (data) to a
+operates on. You use Docker Engine to push and pull images (data) to a
 public or private registry. Content trust gives you the ability to verify both
 the integrity and the publisher of all the data received from a registry over
 any channel.
 @y
-When transferring data among networked systems, *trust* is a central concern. In
+When transferring data among networked systems, trust is a central concern. In
 particular, when communicating over an untrusted medium such as the internet, it
 is critical to ensure the integrity and the publisher of all the data a system
-operates on. You use the Docker Engine to push and pull images (data) to a
+operates on. You use Docker Engine to push and pull images (data) to a
 public or private registry. Content trust gives you the ability to verify both
 the integrity and the publisher of all the data received from a registry over
 any channel.
@@ -214,14 +214,14 @@ of the following classes of keys:
 @z
 
 @x
-- an offline key that is the root of DCT for an image tag
-- repository or tagging keys that sign tags
-- server-managed keys such as the timestamp key, which provides freshness
+- An offline key that is the root of DCT for an image tag
+- Repository or tagging keys that sign tags
+- Server-managed keys such as the timestamp key, which provides freshness
 	security guarantees for your repository
 @y
-- an offline key that is the root of DCT for an image tag
-- repository or tagging keys that sign tags
-- server-managed keys such as the timestamp key, which provides freshness
+- An offline key that is the root of DCT for an image tag
+- Repository or tagging keys that sign tags
+- Server-managed keys such as the timestamp key, which provides freshness
 	security guarantees for your repository
 @z
 
@@ -238,13 +238,13 @@ The following image depicts the various signing keys and their relationships:
 @z
 
 @x
-> **WARNING**
+> **Warning**
 >
 >The root key once lost is not recoverable. If you lose any other key, send an email to [Docker Hub Support](mailto:hub-support@docker.com). This loss also requires manual intervention from every
 consumer that used a signed tag from this repository prior to the loss.
 { .warning }
 @y
-> **WARNING**
+> **Warning**
 >
 >The root key once lost is not recoverable. If you lose any other key, send an email to [Docker Hub Support](mailto:hub-support@docker.com). This loss also requires manual intervention from every
 consumer that used a signed tag from this repository prior to the loss.
@@ -264,9 +264,9 @@ read how to [manage keys for DCT](trust_key_mng.md).
 @z
 
 @x
-## Signing Images with Docker Content Trust
+## Signing images with Docker Content Trust
 @y
-## Signing Images with Docker Content Trust
+## Signing images with Docker Content Trust
 @z
 
 @x
@@ -538,9 +538,9 @@ Successfully deleted signature for registry.example.com/admin/demo:1
 @z
 
 @x
-## Client Enforcement with Docker Content Trust
+## Client enforcement with Docker Content Trust
 @y
-## Client Enforcement with Docker Content Trust
+## Client enforcement with Docker Content Trust
 @z
 
 @x

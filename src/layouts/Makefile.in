@@ -646,8 +646,9 @@ $(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddi
 @MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
 
-all: index.html
-index.html: #$(abs_origdir)/index.html $(srcdir)/index.html.ch
+.PHONY: _touch
+all: _touch index.html
+index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
 	@echo Processing index.html...
 	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/index.html $(srcdir)/index.html.ch >/dev/null
 	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
@@ -662,6 +663,9 @@ all: $(copyfiles)
 -include copyfiles.sub
 copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
 	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
+
+_touch:
+	@touch $(srcdir)/index.html.ch
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

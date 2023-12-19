@@ -38,9 +38,13 @@ loads it into the kernel.
 @z
 
 @x
-> **Note**: This profile is used on containers, _not_ on the Docker Daemon.
+> **Note**
+>
+> This profile is used on containers, not on the Docker daemon.
 @y
-> **Note**: This profile is used on containers, _not_ on the Docker Daemon.
+> **Note**
+>
+> This profile is used on containers, not on the Docker daemon.
 @z
 
 @x
@@ -118,9 +122,9 @@ $ apparmor_parser -r -W /path/to/your_profile
 @z
 
 @x
-Then, run the custom profile with `--security-opt` like so:
+Then, run the custom profile with `--security-opt`:
 @y
-Then, run the custom profile with `--security-opt` like so:
+Then, run the custom profile with `--security-opt`:
 @z
 
 @x
@@ -488,9 +492,9 @@ profile docker-nginx flags=(attach_disconnected,mediate_deleted) {
 @z
 
 @x
-Congrats! You just deployed a container secured with a custom apparmor profile!
+You just deployed a container secured with a custom apparmor profile.
 @y
-Congrats! You just deployed a container secured with a custom apparmor profile!
+You just deployed a container secured with a custom apparmor profile.
 @z
 
 @x
@@ -539,10 +543,10 @@ looks like the following:
 
 @x
 In the above example, you can see `profile=/usr/bin/docker`. This means the
-user has the `docker-engine` (Docker Engine Daemon) profile loaded.
+user has the `docker-engine` (Docker Engine daemon) profile loaded.
 @y
 In the above example, you can see `profile=/usr/bin/docker`. This means the
-user has the `docker-engine` (Docker Engine Daemon) profile loaded.
+user has the `docker-engine` (Docker Engine daemon) profile loaded.
 @z
 
 @x
@@ -661,30 +665,30 @@ profile.
 
 @x
 The output above also shows the `/usr/bin/docker` (Docker Engine daemon) profile
-is running in `complain` mode. This means AppArmor _only_ logs to `dmesg`
+is running in `complain` mode. This means AppArmor only logs to `dmesg`
 activity outside the bounds of the profile. (Except in the case of Ubuntu
 Trusty, where some interesting behaviors are enforced.)
 @y
 The output above also shows the `/usr/bin/docker` (Docker Engine daemon) profile
-is running in `complain` mode. This means AppArmor _only_ logs to `dmesg`
+is running in `complain` mode. This means AppArmor only logs to `dmesg`
 activity outside the bounds of the profile. (Except in the case of Ubuntu
 Trusty, where some interesting behaviors are enforced.)
 @z
 
 @x
-## Contribute Docker's AppArmor code
+## Contribute to Docker's AppArmor code
 @y
-## Contribute Docker's AppArmor code
+## Contribute to Docker's AppArmor code
 @z
 
 @x
 Advanced users and package managers can find a profile for `/usr/bin/docker`
-(Docker Engine Daemon) underneath
+(Docker Engine daemon) underneath
 [contrib/apparmor](https://github.com/moby/moby/tree/master/contrib/apparmor)
 in the Docker Engine source repository.
 @y
 Advanced users and package managers can find a profile for `/usr/bin/docker`
-(Docker Engine Daemon) underneath
+(Docker Engine daemon) underneath
 [contrib/apparmor](https://github.com/moby/moby/tree/master/contrib/apparmor)
 in the Docker Engine source repository.
 @z

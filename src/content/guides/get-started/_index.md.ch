@@ -45,31 +45,31 @@ aliases:
 @y
 grid:
   - title: "コンテナーとは何か"
-    link: "/guides/walkthroughs/what-is-a-container/"
-    image: "/guides/walkthroughs/images/what-is-a-container.webp"
+    link: "__SUBDIR__/guides/walkthroughs/what-is-a-container/"
+    image: "__SUBDIR__/guides/walkthroughs/images/what-is-a-container.webp"
   - title: "コンテナーの実行"
-    image: "/guides/walkthroughs/images/how-do-i-run-a-container.webp"
-    link: "/guides/walkthroughs/run-a-container/"
+    image: "__SUBDIR__/guides/walkthroughs/images/how-do-i-run-a-container.webp"
+    link: "__SUBDIR__/guides/walkthroughs/run-a-container/"
   - title: "Docker Hub イメージの実行"
-    image: "/guides/walkthroughs/images/run-docker-hub-images.webp"
-    link: "/guides/walkthroughs/run-hub-images/"
+    image: "__SUBDIR__/guides/walkthroughs/images/run-docker-hub-images.webp"
+    link: "__SUBDIR__/guides/walkthroughs/run-hub-images/"
   - title: "マルチコンテナーアプリ"
-    image: "/guides/walkthroughs/images/multi-container-apps.webp"
-    link: "/guides/walkthroughs/multi-container-apps/"
+    image: "__SUBDIR__/guides/walkthroughs/images/multi-container-apps.webp"
+    link: "__SUBDIR__/guides/walkthroughs/multi-container-apps/"
   - title: "コンテナーデータの保存"
-    link: "/guides/walkthroughs/persist-data/"
-    image: "/guides/walkthroughs/images/persist-data.webp"
+    link: "__SUBDIR__/guides/walkthroughs/persist-data/"
+    image: "__SUBDIR__/guides/walkthroughs/images/persist-data.webp"
   - title: "ローカルフォルダーへのアクセス"
-    link: "/guides/walkthroughs/access-local-folder/"
-    image: "/guides/walkthroughs/images/bind-mounts.webp"
+    link: "__SUBDIR__/guides/walkthroughs/access-local-folder/"
+    image: "__SUBDIR__/guides/walkthroughs/images/bind-mounts.webp"
   - title: "アプリケーションのコンテナー化"
-    link: "/guides/walkthroughs/containerize-your-app/"
-    image: "/guides/walkthroughs/images/containerize-app.webp"
+    link: "__SUBDIR__/guides/walkthroughs/containerize-your-app/"
+    image: "__SUBDIR__/guides/walkthroughs/images/containerize-app.webp"
   - title: "Docker Hub へのイメージ公開"
-    link: "/guides/walkthroughs/publish-your-image/"
-    image: "/guides/walkthroughs/images/publish-your-images.webp"
+    link: "__SUBDIR__/guides/walkthroughs/publish-your-image/"
+    image: "__SUBDIR__/guides/walkthroughs/images/publish-your-images.webp"
 aliases:
-- /get-started/hands-on-overview/
+- __SUBDIR__/get-started/hands-on-overview/
 ---
 @z
 
@@ -127,6 +127,6 @@ Dive deeper into Docker and containerization concepts in this end-to-end guide.
   title="Getting started guide"
   link=/get-started/
   description="A 45-minute guide where you start by containerizing a simple application and then follow along to develop it into a multi-container application."
-  icon="/assets/images/rocket.svg"
+  icon="__SUBDIR__/assets/images/rocket.svg"
 >}}
 @z

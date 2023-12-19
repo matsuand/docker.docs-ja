@@ -1,18 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-@x
+@x v{{< param suburldir >}} ではダメか...
 Guides:
 - title: Docker overview
   path: /get-started/overview/
 - title: Get Docker
   path: /get-docker/
-@y
+@y __SUBDIR__ is needed where each subtree is started in.
 ガイド:
 - title: Docker 概要
-  path: /get-started/overview/
+  path: __SUBDIR__/get-started/overview/
 - title: Docker の入手
-  path: /get-docker/
+  path: __SUBDIR__/get-docker/
 @z
 
 @x
@@ -42,25 +42,25 @@ Guides:
 - sectiontitle: はじめよう
   section:
     - title: "概要"
-      path: /guides/get-started/
+      path:  __SUBDIR__/guides/get-started/
     - sectiontitle: "Quick hands-on guides"
       section:
       - title: "コンテナーとは何か"
-        path: /guides/walkthroughs/what-is-a-container/
+        path:  __SUBDIR__/guides/walkthroughs/what-is-a-container/
       - title: "コンテナーの起動"
-        path: /guides/walkthroughs/run-a-container/
+        path:  __SUBDIR__/guides/walkthroughs/run-a-container/
       - title: "Docker Hub イメージの実行"
-        path: /guides/walkthroughs/run-hub-images/
+        path:  __SUBDIR__/guides/walkthroughs/run-hub-images/
       - title: "マルチコンテナーアプリの実行"
-        path: /guides/walkthroughs/multi-container-apps/
+        path:  __SUBDIR__/guides/walkthroughs/multi-container-apps/
       - title: "コンテナーデータの保存"
-        path: /guides/walkthroughs/persist-data/
+        path:  __SUBDIR__/guides/walkthroughs/persist-data/
       - title: "ローカルフォルダーへのアクセス"
-        path: /guides/walkthroughs/access-local-folder/
+        path:  __SUBDIR__/guides/walkthroughs/access-local-folder/
       - title: "アプリケーションのコンテナー化"
-        path: /guides/walkthroughs/containerize-your-app/
+        path:  __SUBDIR__/guides/walkthroughs/containerize-your-app/
       - title: "Docker Hub へのイメージ公開"
-        path: /guides/walkthroughs/publish-your-image/
+        path:  __SUBDIR__/guides/walkthroughs/publish-your-image/
 @z
 
 @x
@@ -89,26 +89,26 @@ Guides:
 @y
     - sectiontitle: "スタートガイド"
       section:
-      - title: "Part 1: Overview"
-        path: /get-started/
-      - title: "Part 2: Containerize an application"
-        path: /get-started/02_our_app/
-      - title: "Part 3: Update the application"
-        path: /get-started/03_updating_app/
-      - title: "Part 4: Share the application"
-        path: /get-started/04_sharing_app/
-      - title: "Part 5: Persist the DB"
-        path: /get-started/05_persisting_data/
-      - title: "Part 6: Use bind mounts"
-        path: /get-started/06_bind_mounts/
-      - title: "Part 7: Multi-container apps"
-        path: /get-started/07_multi_container/
-      - title: "Part 8: Use Docker Compose"
-        path: /get-started/08_using_compose/
-      - title: "Part 9: Image-building best practices"
-        path: /get-started/09_image_best/
-      - title: "Part 10: What next?"
-        path: /get-started/11_what_next/
+      - title: "1部: 概要"
+        path: __SUBDIR__/get-started/
+      - title: "2部: アプリのコンテナー化"
+        path: __SUBDIR__/get-started/02_our_app/
+      - title: "3部: アプリの更新"
+        path: __SUBDIR__/get-started/03_updating_app/
+      - title: "4部: アプリの共有"
+        path: __SUBDIR__/get-started/04_sharing_app/
+      - title: "5部: DB の保存"
+        path: __SUBDIR__/get-started/05_persisting_data/
+      - title: "6部: バインドマウントの利用"
+        path: __SUBDIR__/get-started/06_bind_mounts/
+      - title: "7部: マルチコンテナーアプリ"
+        path: __SUBDIR__/get-started/07_multi_container/
+      - title: "8部: Docker Compose の利用"
+        path: __SUBDIR__/get-started/08_using_compose/
+      - title: "9部: イメージビルドのベストプラクティス"
+        path: __SUBDIR__/get-started/09_image_best/
+      - title: "10部: 次は何？"
+        path: __SUBDIR__/get-started/11_what_next/
 @z
 
 @x
@@ -133,22 +133,22 @@ Guides:
 @y
 - sectiontitle: 各種言語別ガイド
   section:
-  - path: /language/
+  - path: __SUBDIR__/language/
     title: 概要
   - sectiontitle: Node.js
     section:
     - title: "概要"
-      path: /language/nodejs/
+      path: __SUBDIR__/language/nodejs/
     - title: "アプリのコンテナー化"
-      path: /language/nodejs/containerize/
+      path: __SUBDIR__/language/nodejs/containerize/
     - title: "アプリの開発"
-      path: /language/nodejs/develop/
+      path: __SUBDIR__/language/nodejs/develop/
     - title: "テストの実行"
-      path: /language/nodejs/run-tests/
+      path: __SUBDIR__/language/nodejs/run-tests/
     - title: "CI/CD の設定"
-      path: /language/nodejs/configure-ci-cd/
+      path: __SUBDIR__/language/nodejs/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/nodejs/deploy/
+      path: __SUBDIR__/language/nodejs/deploy/
 @z
 
 @x
@@ -168,15 +168,15 @@ Guides:
   - sectiontitle: Python
     section:
     - title: "概要"
-      path: /language/python/
+      path: __SUBDIR__/language/python/
     - title: "アプリのコンテナー化"
-      path: /language/python/containerize/
+      path: __SUBDIR__/language/python/containerize/
     - title: "アプリの開発"
-      path: /language/python/develop/
+      path: __SUBDIR__/language/python/develop/
     - title: "CI/CD の設定"
-      path: /language/python/configure-ci-cd/
+      path: __SUBDIR__/language/python/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/python/deploy/
+      path: __SUBDIR__/language/python/deploy/
 @z
 
 @x
@@ -200,19 +200,19 @@ Guides:
   - sectiontitle: Java
     section:
     - title: "概要"
-      path: /language/java/
+      path: __SUBDIR__/language/java/
     - title: "イメージのビルド"
-      path: /language/java/build-images/
+      path: __SUBDIR__/language/java/build-images/
     - title: "コンテナーの実行"
-      path: /language/java/run-containers/
+      path: __SUBDIR__/language/java/run-containers/
     - title: "アプリの開発"
-      path: /language/java/develop/
+      path: __SUBDIR__/language/java/develop/
     - title: "テストの実行"
-      path: /language/java/run-tests/
+      path: __SUBDIR__/language/java/run-tests/
     - title: "CI/CD の設定"
-      path: /language/java/configure-ci-cd/
+      path: __SUBDIR__/language/java/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/java/deploy/
+      path: __SUBDIR__/language/java/deploy/
 @z
 
 @x
@@ -236,19 +236,19 @@ Guides:
   - sectiontitle: Go
     section:
     - title: "概要"
-      path: /language/golang/
+      path: __SUBDIR__/language/golang/
     - title: "イメージのビルド"
-      path: /language/golang/build-images/
+      path: __SUBDIR__/language/golang/build-images/
     - title: "コンテナーの実行"
-      path: /language/golang/run-containers/
+      path: __SUBDIR__/language/golang/run-containers/
     - title: "アプリの開発"
-      path: /language/golang/develop/
+      path: __SUBDIR__/language/golang/develop/
     - title: "テストの実行"
-      path: /language/golang/run-tests/
+      path: __SUBDIR__/language/golang/run-tests/
     - title: "CI/CD の設定"
-      path: /language/golang/configure-ci-cd/
+      path: __SUBDIR__/language/golang/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/golang/deploy/
+      path: __SUBDIR__/language/golang/deploy/
 @z
 
 @x
@@ -270,17 +270,17 @@ Guides:
   - sectiontitle: C# (.NET)
     section:
     - title: "概要"
-      path: /language/dotnet/
+      path: __SUBDIR__/language/dotnet/
     - title: "アプリのコンテナー化"
-      path: /language/dotnet/containerize/
+      path: __SUBDIR__/language/dotnet/containerize/
     - title: "アプリの開発"
-      path: /language/dotnet/develop/
+      path: __SUBDIR__/language/dotnet/develop/
     - title: "テストの実行"
-      path: /language/dotnet/run-tests/
+      path: __SUBDIR__/language/dotnet/run-tests/
     - title: "CI/CD の設定"
-      path: /language/dotnet/configure-ci-cd/
+      path: __SUBDIR__/language/dotnet/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/dotnet/deploy/
+      path: __SUBDIR__/language/dotnet/deploy/
 @z
 
 @x
@@ -302,17 +302,17 @@ Guides:
   - sectiontitle: Rust
     section:
     - title: "概要"
-      path: /language/rust/
+      path: __SUBDIR__/language/rust/
     - title: "イメージのビルド"
-      path: /language/rust/build-images/
+      path: __SUBDIR__/language/rust/build-images/
     - title: "コンテナーの実行"
-      path: /language/rust/run-containers/
+      path: __SUBDIR__/language/rust/run-containers/
     - title: "アプリの開発"
-      path: /language/rust/develop/
+      path: __SUBDIR__/language/rust/develop/
     - title: "CI/CD の設定"
-      path: /language/rust/configure-ci-cd/
+      path: __SUBDIR__/language/rust/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/rust/deploy/
+      path: __SUBDIR__/language/rust/deploy/
 @z
 
 @x
@@ -334,17 +334,17 @@ Guides:
   - sectiontitle: PHP
     section:
     - title: "概要"
-      path: /language/php/
+      path: __SUBDIR__/language/php/
     - title: "アプリのコンテナー化"
-      path: /language/php/containerize/
+      path: __SUBDIR__/language/php/containerize/
     - title: "アプリの開発"
-      path: /language/php/develop/
+      path: __SUBDIR__/language/php/develop/
     - title: "テストの実行"
-      path: /language/php/run-tests/
+      path: __SUBDIR__/language/php/run-tests/
     - title: "CI/CD の設定"
-      path: /language/php/configure-ci-cd/
+      path: __SUBDIR__/language/php/configure-ci-cd/
     - title: "デプロイのテスト"
-      path: /language/php/deploy/
+      path: __SUBDIR__/language/php/deploy/
 @z
 
 @x
@@ -365,22 +365,22 @@ Guides:
   - path: /develop/security-best-practices/
     title: Security best practices
 @y
-- sectiontitle: Develop with Docker
+- sectiontitle: Docker を使った開発
   section:
-  - path: /develop/
-    title: Overview
-  - path: /develop/dev-best-practices/
-    title: Development best practices
-  - sectiontitle: Dockerfile best practices
+  - path: __SUBDIR__/develop/
+    title: 概要
+  - path: __SUBDIR__/develop/dev-best-practices/
+    title: 開発ベストプラクティス
+  - sectiontitle: Dockerfile ベストプラクティス
     section:
-    - path: /develop/develop-images/dockerfile_best-practices/
-      title: Overview
-    - path: /develop/develop-images/guidelines/
-      title: General guidelines 
-    - path: /develop/develop-images/instructions/
-      title: Best practices for Dockerfile instructions
-  - path: /develop/security-best-practices/
-    title: Security best practices
+    - path: __SUBDIR__/develop/develop-images/dockerfile_best-practices/
+      title: 概要
+    - path: __SUBDIR__/develop/develop-images/guidelines/
+      title: 一般的ガイドライン
+    - path: __SUBDIR__/develop/develop-images/instructions/
+      title: Dockerfile 命令のベストプラクティス
+  - path: __SUBDIR__/develop/security-best-practices/
+    title: セキュリティのベストプラクティス
 @z
 
 @x
@@ -407,28 +407,28 @@ Guides:
   - path: /build/guide/next-steps/
     title: Next steps
 @y
-- sectiontitle: Build with Docker
+- sectiontitle: Docker を使ったビルド
   section:
-  - path: /build/guide/
-    title: Overview
-  - path: /build/guide/intro/
-    title: 1. Introduction
-  - path: /build/guide/layers/
-    title: 2. Layers
-  - path: /build/guide/multi-stage/
-    title: 3. Multi-stage
-  - path: /build/guide/mounts/
-    title: 4. Mounts
-  - path: /build/guide/build-args/
-    title: 5. Build arguments
-  - path: /build/guide/export/
-    title: 6. Export binaries
-  - path: /build/guide/test/
-    title: 7. Test
-  - path: /build/guide/multi-platform/
-    title: 8. Multi-platform
-  - path: /build/guide/next-steps/
-    title: Next steps
+  - path: __SUBDIR__/build/guide/
+    title: 概要
+  - path: __SUBDIR__/build/guide/intro/
+    title: 1. はじめに
+  - path: __SUBDIR__/build/guide/layers/
+    title: 2. レイヤー
+  - path: __SUBDIR__/build/guide/multi-stage/
+    title: 3. マルチステージ
+  - path: __SUBDIR__/build/guide/mounts/
+    title: 4. マウント
+  - path: __SUBDIR__/build/guide/build-args/
+    title: 5. ビルド引数
+  - path: __SUBDIR__/build/guide/export/
+    title: 6. バイナリのエクスポート
+  - path: __SUBDIR__/build/guide/test/
+    title: 7. テスト
+  - path: __SUBDIR__/build/guide/multi-platform/
+    title: 8. マルチプラットフォーム
+  - path: __SUBDIR__/build/guide/next-steps/
+    title: 次のステップ
 @z
 
 @x
@@ -445,18 +445,18 @@ Guides:
 - path: /get-started/resources/
   title: "Educational resources"
 @y
-- sectiontitle: Deployment and orchestration
+- sectiontitle: デプロイとオーケストレーション
   section:
-  - title: "Overview"
-    path: /get-started/orchestration/
-  - title: "Deploy to Kubernetes"
-    path: /get-started/kube-deploy/
-  - title: "Deploy to Swarm"
-    path: /get-started/swarm-deploy/
-  - title: Cloud integrations
-    path: /cloud/
-- path: /get-started/resources/
-  title: "Educational resources"
+  - title: "概要"
+    path: __SUBDIR__/get-started/orchestration/
+  - title: "Kubernetes へのデプロイ"
+    path: __SUBDIR__/get-started/kube-deploy/
+  - title: "Swarm へのデプロイ"
+    path: __SUBDIR__/get-started/swarm-deploy/
+  - title: クラウドインテグレーション
+    path: __SUBDIR__/cloud/
+- path: __SUBDIR__/get-started/resources/
+  title: "学習情報"
 @z
 
 @x
@@ -481,26 +481,26 @@ Guides:
   - path: /contribute/ui/
     title: UI elements in content
 @y
-- sectiontitle: Contribute
+- sectiontitle: ドキュメントへの貢献
   section:
-  - path: /contribute/
-    title: Contribute to Docker's docs
-  - sectiontitle: Style guide
+  - path: __SUBDIR__/contribute/
+    title: Docker ドキュメントへの貢献
+  - sectiontitle: スタイルガイド
     section:
-    - path: /contribute/style/grammar/
-      title: Grammar and style
-    - path: /contribute/style/formatting/
-      title: Formatting
-    - path: /contribute/style/recommended-words/
-      title: Recommended word list
-    - path: /contribute/style/terminology/
-      title: Docker terminology
-    - path: /contribute/style/voice-tone/
-      title: Voice and tone
-  - path: /contribute/file-conventions/
-    title: Source file conventions
-  - path: /contribute/ui/
-    title: UI elements in content
+    - path: __SUBDIR__/contribute/style/grammar/
+      title: 文法とスタイル
+    - path: __SUBDIR__/contribute/style/formatting/
+      title: フォーマット
+    - path: __SUBDIR__/contribute/style/recommended-words/
+      title: 推奨される語句リスト
+    - path: __SUBDIR__/contribute/style/terminology/
+      title: Docker 用語
+    - path: __SUBDIR__/contribute/style/voice-tone/
+      title: 表現とトーン
+  - path: __SUBDIR__/contribute/file-conventions/
+    title: ソースファイル規則
+  - path: __SUBDIR__/contribute/ui/
+    title: ページ内の UI 要素
 @z
 
 @x
@@ -537,33 +537,33 @@ Guides:
 @y
   - sectiontitle: Useful components
     section:
-    - path: /contribute/components/accordions/
+    - path: __SUBDIR__/contribute/components/accordions/
       title: Accordions
-    - path: /contribute/components/badges/
+    - path: __SUBDIR__/contribute/components/badges/
       title: Badges
-    - path: /contribute/components/call-outs/
+    - path: __SUBDIR__/contribute/components/call-outs/
       title: Callouts
-    - path: /contribute/components/cards/
+    - path: __SUBDIR__/contribute/components/cards/
       title: Cards
-    - path: /contribute/components/code-blocks/
+    - path: __SUBDIR__/contribute/components/code-blocks/
       title: Code blocks
-    - path: /contribute/components/icons/
+    - path: __SUBDIR__/contribute/components/icons/
       title: Icons
-    - path: /contribute/components/images/
+    - path: __SUBDIR__/contribute/components/images/
       title: Images
-    - path: /contribute/components/links/
+    - path: __SUBDIR__/contribute/components/links/
       title: Links
-    - path: /contribute/components/lists/
+    - path: __SUBDIR__/contribute/components/lists/
       title: Lists
-    - path: /contribute/components/tables/
+    - path: __SUBDIR__/contribute/components/tables/
       title: Tables
-    - path: /contribute/components/tabs/
+    - path: __SUBDIR__/contribute/components/tabs/
       title: Tabs
-    - path: /contribute/components/videos/
+    - path: __SUBDIR__/contribute/components/videos/
       title: Videos
-    - path: /contribute/components/buttons/
+    - path: __SUBDIR__/contribute/components/buttons/
       title: Buttons
-  - path: /contribute/checklist/
+  - path: __SUBDIR__/contribute/checklist/
     title: Writing checklist
 @z
 
@@ -587,21 +587,21 @@ Reference:
       title: docker build
 @y
 Reference:
-- path: /reference/
+- path: __SUBDIR__/reference/
   title: Reference documentation
 - sectiontitle: Command-line reference
   section:
   - sectiontitle: Docker CLI (docker)
     section:
-    - path: /engine/reference/run/
+    - path: __SUBDIR__/engine/reference/run/
       title: Docker run reference
-    - path: /engine/reference/commandline/cli/
+    - path: __SUBDIR__/engine/reference/commandline/cli/
       title: Use the Docker command line
-    - path: /engine/reference/commandline/docker/
+    - path: __SUBDIR__/engine/reference/commandline/docker/
       title: docker (base command)
-    - path: /engine/reference/commandline/attach/
+    - path: __SUBDIR__/engine/reference/commandline/attach/
       title: docker attach
-    - path: /engine/reference/commandline/build/
+    - path: __SUBDIR__/engine/reference/commandline/build/
       title: docker build
 @z
 
@@ -617,11 +617,11 @@ Reference:
 @y
     - sectiontitle: docker builder
       section:
-        - path: /engine/reference/commandline/builder/
+        - path: __SUBDIR__/engine/reference/commandline/builder/
           title: docker builder
-        - path: /engine/reference/commandline/builder_build/
+        - path: __SUBDIR__/engine/reference/commandline/builder_build/
           title: docker builder build
-        - path: /engine/reference/commandline/builder_prune/
+        - path: __SUBDIR__/engine/reference/commandline/builder_prune/
           title: docker builder prune
 @z
 
@@ -665,39 +665,39 @@ Reference:
 @y
     - sectiontitle: docker buildx
       section:
-        - path: /engine/reference/commandline/buildx/
+        - path: __SUBDIR__/engine/reference/commandline/buildx/
           title: docker buildx
-        - path: /engine/reference/commandline/buildx_bake/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_bake/
           title: docker buildx bake
-        - path: /engine/reference/commandline/buildx_build/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_build/
           title: docker buildx build
-        - path: /engine/reference/commandline/buildx_create/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_create/
           title: docker buildx create
-        - path: /engine/reference/commandline/buildx_debug/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_debug/
           title: docker buildx debug
-        - path: /engine/reference/commandline/buildx_debug_build/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_debug_build/
           title: docker buildx debug build
-        - path: /engine/reference/commandline/buildx_du/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_du/
           title: docker buildx du
-        - path: /engine/reference/commandline/buildx_imagetools/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_imagetools/
           title: docker buildx imagetools
-        - path: /engine/reference/commandline/buildx_imagetools_create/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_imagetools_create/
           title: docker buildx imagetools create
-        - path: /engine/reference/commandline/buildx_imagetools_inspect/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_imagetools_inspect/
           title: docker buildx imagetools inspect
-        - path: /engine/reference/commandline/buildx_inspect/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_inspect/
           title: docker buildx inspect
-        - path: /engine/reference/commandline/buildx_ls/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_ls/
           title: docker buildx ls
-        - path: /engine/reference/commandline/buildx_prune/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_prune/
           title: docker buildx prune
-        - path: /engine/reference/commandline/buildx_rm/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_rm/
           title: docker buildx rm
-        - path: /engine/reference/commandline/buildx_stop/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_stop/
           title: docker buildx stop
-        - path: /engine/reference/commandline/buildx_use/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_use/
           title: docker buildx use
-        - path: /engine/reference/commandline/buildx_version/
+        - path: __SUBDIR__/engine/reference/commandline/buildx_version/
           title: docker buildx version
 @z
 
@@ -717,15 +717,15 @@ Reference:
 @y
     - sectiontitle: docker checkpoint
       section:
-      - path: /engine/reference/commandline/checkpoint/
+      - path: __SUBDIR__/engine/reference/commandline/checkpoint/
         title: docker checkpoint
-      - path: /engine/reference/commandline/checkpoint_create/
+      - path: __SUBDIR__/engine/reference/commandline/checkpoint_create/
         title: docker checkpoint create
-      - path: /engine/reference/commandline/checkpoint_ls/
+      - path: __SUBDIR__/engine/reference/commandline/checkpoint_ls/
         title: docker checkpoint ls
-      - path: /engine/reference/commandline/checkpoint_rm/
+      - path: __SUBDIR__/engine/reference/commandline/checkpoint_rm/
         title: docker checkpoint rm
-    - path: /engine/reference/commandline/commit/
+    - path: __SUBDIR__/engine/reference/commandline/commit/
       title: docker commit
 @z
 
@@ -753,23 +753,23 @@ Reference:
 @y
     - sectiontitle: docker compose
       section:
-        - path: /compose/reference/
+        - path: __SUBDIR__/compose/reference/
           title: overview
-        - path: /compose/environment-variables/envvars/
+        - path: __SUBDIR__/compose/environment-variables/envvars/
           title: environment variables
-        - path: /engine/reference/commandline/compose_alpha/
+        - path: __SUBDIR__/engine/reference/commandline/compose_alpha/
           title: docker compose alpha
-        - path: /engine/reference/commandline/compose_alpha_dry-run/
+        - path: __SUBDIR__/engine/reference/commandline/compose_alpha_dry-run/
           title: docker compose alpha dry-run
-        - path: /engine/reference/commandline/compose_alpha_publish/
+        - path: __SUBDIR__/engine/reference/commandline/compose_alpha_publish/
           title: docker compose alpha publish
-        - path: /engine/reference/commandline/compose_alpha_scale/
+        - path: __SUBDIR__/engine/reference/commandline/compose_alpha_scale/
           title: docker compose alpha scale
-        - path: /engine/reference/commandline/compose_alpha_viz/
+        - path: __SUBDIR__/engine/reference/commandline/compose_alpha_viz/
           title: docker compose alpha viz
-        - path: /engine/reference/commandline/compose/
+        - path: __SUBDIR__/engine/reference/commandline/compose/
           title: docker compose
-        - path: /engine/reference/commandline/compose_build/
+        - path: __SUBDIR__/engine/reference/commandline/compose_build/
           title: docker compose build
 @z
 
@@ -797,27 +797,27 @@ Reference:
         - path: /engine/reference/commandline/compose_pause/
           title: docker compose pause
 @y
-        - path: /engine/reference/commandline/compose_config/
+        - path: __SUBDIR__/engine/reference/commandline/compose_config/
           title: docker compose config
-        - path: /engine/reference/commandline/compose_cp/
+        - path: __SUBDIR__/engine/reference/commandline/compose_cp/
           title: docker compose cp
-        - path: /engine/reference/commandline/compose_create/
+        - path: __SUBDIR__/engine/reference/commandline/compose_create/
           title: docker compose create
-        - path: /engine/reference/commandline/compose_down/
+        - path: __SUBDIR__/engine/reference/commandline/compose_down/
           title: docker compose down
-        - path: /engine/reference/commandline/compose_events/
+        - path: __SUBDIR__/engine/reference/commandline/compose_events/
           title: docker compose events
-        - path: /engine/reference/commandline/compose_exec/
+        - path: __SUBDIR__/engine/reference/commandline/compose_exec/
           title: docker compose exec
-        - path: /engine/reference/commandline/compose_images/
+        - path: __SUBDIR__/engine/reference/commandline/compose_images/
           title: docker compose images
-        - path: /engine/reference/commandline/compose_kill/
+        - path: __SUBDIR__/engine/reference/commandline/compose_kill/
           title: docker compose kill
-        - path: /engine/reference/commandline/compose_logs/
+        - path: __SUBDIR__/engine/reference/commandline/compose_logs/
           title: docker compose logs
-        - path: /engine/reference/commandline/compose_ls/
+        - path: __SUBDIR__/engine/reference/commandline/compose_ls/
           title: docker compose ls
-        - path: /engine/reference/commandline/compose_pause/
+        - path: __SUBDIR__/engine/reference/commandline/compose_pause/
           title: docker compose pause
 @z
 
@@ -845,27 +845,27 @@ Reference:
         - path: /engine/reference/commandline/compose_unpause/
           title: docker compose unpause
 @y
-        - path: /engine/reference/commandline/compose_port/
+        - path: __SUBDIR__/engine/reference/commandline/compose_port/
           title: docker compose port
-        - path: /engine/reference/commandline/compose_ps/
+        - path: __SUBDIR__/engine/reference/commandline/compose_ps/
           title: docker compose ps
-        - path: /engine/reference/commandline/compose_pull/
+        - path: __SUBDIR__/engine/reference/commandline/compose_pull/
           title: docker compose pull
-        - path: /engine/reference/commandline/compose_push/
+        - path: __SUBDIR__/engine/reference/commandline/compose_push/
           title: docker compose push
-        - path: /engine/reference/commandline/compose_restart/
+        - path: __SUBDIR__/engine/reference/commandline/compose_restart/
           title: docker compose restart
-        - path: /engine/reference/commandline/compose_rm/
+        - path: __SUBDIR__/engine/reference/commandline/compose_rm/
           title: docker compose rm
-        - path: /engine/reference/commandline/compose_run/
+        - path: __SUBDIR__/engine/reference/commandline/compose_run/
           title: docker compose run
-        - path: /engine/reference/commandline/compose_start/
+        - path: __SUBDIR__/engine/reference/commandline/compose_start/
           title: docker compose start
-        - path: /engine/reference/commandline/compose_stop/
+        - path: __SUBDIR__/engine/reference/commandline/compose_stop/
           title: docker compose stop
-        - path: /engine/reference/commandline/compose_top/
+        - path: __SUBDIR__/engine/reference/commandline/compose_top/
           title: docker compose top
-        - path: /engine/reference/commandline/compose_unpause/
+        - path: __SUBDIR__/engine/reference/commandline/compose_unpause/
           title: docker compose unpause
 @z
 
@@ -879,13 +879,13 @@ Reference:
         - path: /engine/reference/commandline/compose_watch/
           title: docker compose watch
 @y
-        - path: /engine/reference/commandline/compose_up/
+        - path: __SUBDIR__/engine/reference/commandline/compose_up/
           title: docker compose up
-        - path: /engine/reference/commandline/compose_version/
+        - path: __SUBDIR__/engine/reference/commandline/compose_version/
           title: docker compose version
-        - path: /engine/reference/commandline/compose_wait/
+        - path: __SUBDIR__/engine/reference/commandline/compose_wait/
           title: docker compose wait
-        - path: /engine/reference/commandline/compose_watch/
+        - path: __SUBDIR__/engine/reference/commandline/compose_watch/
           title: docker compose watch
 @z
 
@@ -905,15 +905,15 @@ Reference:
 @y
     - sectiontitle: docker config
       section:
-      - path: /engine/reference/commandline/config/
+      - path: __SUBDIR__/engine/reference/commandline/config/
         title: docker config
-      - path: /engine/reference/commandline/config_create/
+      - path: __SUBDIR__/engine/reference/commandline/config_create/
         title: docker config create
-      - path: /engine/reference/commandline/config_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/config_inspect/
         title: docker config inspect
-      - path: /engine/reference/commandline/config_ls/
+      - path: __SUBDIR__/engine/reference/commandline/config_ls/
         title: docker config ls
-      - path: /engine/reference/commandline/config_rm/
+      - path: __SUBDIR__/engine/reference/commandline/config_rm/
         title: docker config rm
 @z
 
@@ -943,25 +943,25 @@ Reference:
 @y
     - sectiontitle: docker container
       section:
-      - path: /engine/reference/commandline/container/
+      - path: __SUBDIR__/engine/reference/commandline/container/
         title: docker container
-      - path: /engine/reference/commandline/container_attach/
+      - path: __SUBDIR__/engine/reference/commandline/container_attach/
         title: docker container attach
-      - path: /engine/reference/commandline/container_commit/
+      - path: __SUBDIR__/engine/reference/commandline/container_commit/
         title: docker container commit
-      - path: /engine/reference/commandline/container_cp/
+      - path: __SUBDIR__/engine/reference/commandline/container_cp/
         title: docker container cp
-      - path: /engine/reference/commandline/container_create/
+      - path: __SUBDIR__/engine/reference/commandline/container_create/
         title: docker container create
-      - path: /engine/reference/commandline/container_diff/
+      - path: __SUBDIR__/engine/reference/commandline/container_diff/
         title: docker container diff
-      - path: /engine/reference/commandline/container_exec/
+      - path: __SUBDIR__/engine/reference/commandline/container_exec/
         title: docker container exec
-      - path: /engine/reference/commandline/container_export/
+      - path: __SUBDIR__/engine/reference/commandline/container_export/
         title: docker container export
-      - path: /engine/reference/commandline/container_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/container_inspect/
         title: docker container inspect
-      - path: /engine/reference/commandline/container_kill/
+      - path: __SUBDIR__/engine/reference/commandline/container_kill/
         title: docker container kill
 @z
 
@@ -987,25 +987,25 @@ Reference:
       - path: /engine/reference/commandline/container_start/
         title: docker container start
 @y
-      - path: /engine/reference/commandline/container_logs/
+      - path: __SUBDIR__/engine/reference/commandline/container_logs/
         title: docker container logs
-      - path: /engine/reference/commandline/container_ls/
+      - path: __SUBDIR__/engine/reference/commandline/container_ls/
         title: docker container ls
-      - path: /engine/reference/commandline/container_pause/
+      - path: __SUBDIR__/engine/reference/commandline/container_pause/
         title: docker container pause
-      - path: /engine/reference/commandline/container_port/
+      - path: __SUBDIR__/engine/reference/commandline/container_port/
         title: docker container port
-      - path: /engine/reference/commandline/container_prune/
+      - path: __SUBDIR__/engine/reference/commandline/container_prune/
         title: docker container prune
-      - path: /engine/reference/commandline/container_rename/
+      - path: __SUBDIR__/engine/reference/commandline/container_rename/
         title: docker container rename
-      - path: /engine/reference/commandline/container_restart/
+      - path: __SUBDIR__/engine/reference/commandline/container_restart/
         title: docker container restart
-      - path: /engine/reference/commandline/container_rm/
+      - path: __SUBDIR__/engine/reference/commandline/container_rm/
         title: docker container rm
-      - path: /engine/reference/commandline/container_run/
+      - path: __SUBDIR__/engine/reference/commandline/container_run/
         title: docker container run
-      - path: /engine/reference/commandline/container_start/
+      - path: __SUBDIR__/engine/reference/commandline/container_start/
         title: docker container start
 @z
 
@@ -1023,17 +1023,17 @@ Reference:
       - path: /engine/reference/commandline/container_wait/
         title: docker container wait
 @y
-      - path: /engine/reference/commandline/container_stats/
+      - path: __SUBDIR__/engine/reference/commandline/container_stats/
         title: docker container stats
-      - path: /engine/reference/commandline/container_stop/
+      - path: __SUBDIR__/engine/reference/commandline/container_stop/
         title: docker container stop
-      - path: /engine/reference/commandline/container_top/
+      - path: __SUBDIR__/engine/reference/commandline/container_top/
         title: docker container top
-      - path: /engine/reference/commandline/container_unpause/
+      - path: __SUBDIR__/engine/reference/commandline/container_unpause/
         title: docker container unpause
-      - path: /engine/reference/commandline/container_update/
+      - path: __SUBDIR__/engine/reference/commandline/container_update/
         title: docker container update
-      - path: /engine/reference/commandline/container_wait/
+      - path: __SUBDIR__/engine/reference/commandline/container_wait/
         title: docker container wait
 @z
 
@@ -1063,25 +1063,25 @@ Reference:
 @y
     - sectiontitle: docker context
       section:
-        - path: /engine/reference/commandline/context/
+        - path: __SUBDIR__/engine/reference/commandline/context/
           title: docker context
-        - path: /engine/reference/commandline/context_create/
+        - path: __SUBDIR__/engine/reference/commandline/context_create/
           title: docker context create
-        - path: /engine/reference/commandline/context_export/
+        - path: __SUBDIR__/engine/reference/commandline/context_export/
           title: docker context export
-        - path: /engine/reference/commandline/context_import/
+        - path: __SUBDIR__/engine/reference/commandline/context_import/
           title: docker context import
-        - path: /engine/reference/commandline/context_inspect/
+        - path: __SUBDIR__/engine/reference/commandline/context_inspect/
           title: docker context inspect
-        - path: /engine/reference/commandline/context_ls/
+        - path: __SUBDIR__/engine/reference/commandline/context_ls/
           title: docker context ls
-        - path: /engine/reference/commandline/context_rm/
+        - path: __SUBDIR__/engine/reference/commandline/context_rm/
           title: docker context rm
-        - path: /engine/reference/commandline/context_show/
+        - path: __SUBDIR__/engine/reference/commandline/context_show/
           title: docker context show
-        - path: /engine/reference/commandline/context_update/
+        - path: __SUBDIR__/engine/reference/commandline/context_update/
           title: docker context update
-        - path: /engine/reference/commandline/context_use/
+        - path: __SUBDIR__/engine/reference/commandline/context_use/
           title: docker context use
 @z
 
@@ -1101,19 +1101,19 @@ Reference:
     - path: /engine/reference/commandline/history/
       title: docker history
 @y
-    - path: /engine/reference/commandline/cp/
+    - path: __SUBDIR__/engine/reference/commandline/cp/
       title: docker cp
-    - path: /engine/reference/commandline/create/
+    - path: __SUBDIR__/engine/reference/commandline/create/
       title: docker create
-    - path: /engine/reference/commandline/diff/
+    - path: __SUBDIR__/engine/reference/commandline/diff/
       title: docker diff
-    - path: /engine/reference/commandline/events/
+    - path: __SUBDIR__/engine/reference/commandline/events/
       title: docker events
-    - path: /engine/reference/commandline/exec/
+    - path: __SUBDIR__/engine/reference/commandline/exec/
       title: docker exec
-    - path: /engine/reference/commandline/export/
+    - path: __SUBDIR__/engine/reference/commandline/export/
       title: docker export
-    - path: /engine/reference/commandline/history/
+    - path: __SUBDIR__/engine/reference/commandline/history/
       title: docker history
 @z
 
@@ -1143,25 +1143,25 @@ Reference:
 @y
     - sectiontitle: docker image
       section:
-      - path: /engine/reference/commandline/image/
+      - path: __SUBDIR__/engine/reference/commandline/image/
         title: docker image
-      - path: /engine/reference/commandline/image_build/
+      - path: __SUBDIR__/engine/reference/commandline/image_build/
         title: docker image build
-      - path: /engine/reference/commandline/image_history/
+      - path: __SUBDIR__/engine/reference/commandline/image_history/
         title: docker image history
-      - path: /engine/reference/commandline/image_import/
+      - path: __SUBDIR__/engine/reference/commandline/image_import/
         title: docker image import
-      - path: /engine/reference/commandline/image_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/image_inspect/
         title: docker image inspect
-      - path: /engine/reference/commandline/image_load/
+      - path: __SUBDIR__/engine/reference/commandline/image_load/
         title: docker image load
-      - path: /engine/reference/commandline/image_ls/
+      - path: __SUBDIR__/engine/reference/commandline/image_ls/
         title: docker image ls
-      - path: /engine/reference/commandline/image_prune/
+      - path: __SUBDIR__/engine/reference/commandline/image_prune/
         title: docker image prune
-      - path: /engine/reference/commandline/image_pull/
+      - path: __SUBDIR__/engine/reference/commandline/image_pull/
         title: docker image pull
-      - path: /engine/reference/commandline/image_push/
+      - path: __SUBDIR__/engine/reference/commandline/image_push/
         title: docker image push
 @z
 
@@ -1173,11 +1173,11 @@ Reference:
       - path: /engine/reference/commandline/image_tag/
         title: docker image tag
 @y
-      - path: /engine/reference/commandline/image_rm/
+      - path: __SUBDIR__/engine/reference/commandline/image_rm/
         title: docker image rm
-      - path: /engine/reference/commandline/image_save/
+      - path: __SUBDIR__/engine/reference/commandline/image_save/
         title: docker image save
-      - path: /engine/reference/commandline/image_tag/
+      - path: __SUBDIR__/engine/reference/commandline/image_tag/
         title: docker image tag
 @z
 
@@ -1203,25 +1203,25 @@ Reference:
     - path: /engine/reference/commandline/logs/
       title: docker logs
 @y
-    - path: /engine/reference/commandline/images/
+    - path: __SUBDIR__/engine/reference/commandline/images/
       title: docker images
-    - path: /engine/reference/commandline/import/
+    - path: __SUBDIR__/engine/reference/commandline/import/
       title: docker import
-    - path: /engine/reference/commandline/info/
+    - path: __SUBDIR__/engine/reference/commandline/info/
       title: docker info
-    - path: /engine/reference/commandline/init/
+    - path: __SUBDIR__/engine/reference/commandline/init/
       title: docker init (Beta)
-    - path: /engine/reference/commandline/inspect/
+    - path: __SUBDIR__/engine/reference/commandline/inspect/
       title: docker inspect
-    - path: /engine/reference/commandline/kill/
+    - path: __SUBDIR__/engine/reference/commandline/kill/
       title: docker kill
-    - path: /engine/reference/commandline/load/
+    - path: __SUBDIR__/engine/reference/commandline/load/
       title: docker load
-    - path: /engine/reference/commandline/login/
+    - path: __SUBDIR__/engine/reference/commandline/login/
       title: docker login
-    - path: /engine/reference/commandline/logout/
+    - path: __SUBDIR__/engine/reference/commandline/logout/
       title: docker logout
-    - path: /engine/reference/commandline/logs/
+    - path: __SUBDIR__/engine/reference/commandline/logs/
       title: docker logs
 @z
 
@@ -1243,17 +1243,17 @@ Reference:
 @y
     - sectiontitle: docker manifest
       section:
-      - path: /engine/reference/commandline/manifest/
+      - path: __SUBDIR__/engine/reference/commandline/manifest/
         title: docker manifest
-      - path: /engine/reference/commandline/manifest_annotate/
+      - path: __SUBDIR__/engine/reference/commandline/manifest_annotate/
         title: docker manifest annotate
-      - path: /engine/reference/commandline/manifest_create/
+      - path: __SUBDIR__/engine/reference/commandline/manifest_create/
         title: docker manifest create
-      - path: /engine/reference/commandline/manifest_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/manifest_inspect/
         title: docker manifest inspect
-      - path: /engine/reference/commandline/manifest_push/
+      - path: __SUBDIR__/engine/reference/commandline/manifest_push/
         title: docker manifest push
-      - path: /engine/reference/commandline/manifest_rm/
+      - path: __SUBDIR__/engine/reference/commandline/manifest_rm/
         title: docker manifest rm
 @z
 
@@ -1279,21 +1279,21 @@ Reference:
 @y
     - sectiontitle: docker network
       section:
-      - path: /engine/reference/commandline/network/
+      - path: __SUBDIR__/engine/reference/commandline/network/
         title: docker network
-      - path: /engine/reference/commandline/network_connect/
+      - path: __SUBDIR__/engine/reference/commandline/network_connect/
         title: docker network connect
-      - path: /engine/reference/commandline/network_create/
+      - path: __SUBDIR__/engine/reference/commandline/network_create/
         title: docker network create
-      - path: /engine/reference/commandline/network_disconnect/
+      - path: __SUBDIR__/engine/reference/commandline/network_disconnect/
         title: docker network disconnect
-      - path: /engine/reference/commandline/network_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/network_inspect/
         title: docker network inspect
-      - path: /engine/reference/commandline/network_ls/
+      - path: __SUBDIR__/engine/reference/commandline/network_ls/
         title: docker network ls
-      - path: /engine/reference/commandline/network_prune/
+      - path: __SUBDIR__/engine/reference/commandline/network_prune/
         title: docker network prune
-      - path: /engine/reference/commandline/network_rm/
+      - path: __SUBDIR__/engine/reference/commandline/network_rm/
         title: docker network rm
 @z
 
@@ -1321,23 +1321,23 @@ Reference:
 @y
     - sectiontitle: docker node
       section:
-      - path: /engine/reference/commandline/node/
+      - path: __SUBDIR__/engine/reference/commandline/node/
         title: docker node
-      - path: /engine/reference/commandline/node_demote/
+      - path: __SUBDIR__/engine/reference/commandline/node_demote/
         title: docker node demote
-      - path: /engine/reference/commandline/node_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/node_inspect/
         title: docker node inspect
-      - path: /engine/reference/commandline/node_ls/
+      - path: __SUBDIR__/engine/reference/commandline/node_ls/
         title: docker node ls
-      - path: /engine/reference/commandline/node_promote/
+      - path: __SUBDIR__/engine/reference/commandline/node_promote/
         title: docker node promote
-      - path: /engine/reference/commandline/node_ps/
+      - path: __SUBDIR__/engine/reference/commandline/node_ps/
         title: docker node ps
-      - path: /engine/reference/commandline/node_rm/
+      - path: __SUBDIR__/engine/reference/commandline/node_rm/
         title: docker node rm
-      - path: /engine/reference/commandline/node_update/
+      - path: __SUBDIR__/engine/reference/commandline/node_update/
         title: docker node update
-    - path: /engine/reference/commandline/pause/
+    - path: __SUBDIR__/engine/reference/commandline/pause/
       title: docker pause
 @z
 
@@ -1367,25 +1367,25 @@ Reference:
 @y
     - sectiontitle: docker plugin
       section:
-      - path: /engine/reference/commandline/plugin/
+      - path: __SUBDIR__/engine/reference/commandline/plugin/
         title: docker plugin
-      - path: /engine/reference/commandline/plugin_create/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_create/
         title: docker plugin create
-      - path: /engine/reference/commandline/plugin_disable/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_disable/
         title: docker plugin disable
-      - path: /engine/reference/commandline/plugin_enable/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_enable/
         title: docker plugin enable
-      - path: /engine/reference/commandline/plugin_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_inspect/
         title: docker plugin inspect
-      - path: /engine/reference/commandline/plugin_install/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_install/
         title: docker plugin install
-      - path: /engine/reference/commandline/plugin_ls/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_ls/
         title: docker plugin ls
-      - path: /engine/reference/commandline/plugin_rm/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_rm/
         title: docker plugin rm
-      - path: /engine/reference/commandline/plugin_set/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_set/
         title: docker plugin set
-      - path: /engine/reference/commandline/plugin_upgrade/
+      - path: __SUBDIR__/engine/reference/commandline/plugin_upgrade/
         title: docker plugin upgrade
 @z
 
@@ -1411,25 +1411,25 @@ Reference:
     - path: /engine/reference/commandline/save/
       title: docker save
 @y
-    - path: /engine/reference/commandline/port/
+    - path: __SUBDIR__/engine/reference/commandline/port/
       title: docker port
-    - path: /engine/reference/commandline/ps/
+    - path: __SUBDIR__/engine/reference/commandline/ps/
       title: docker ps
-    - path: /engine/reference/commandline/pull/
+    - path: __SUBDIR__/engine/reference/commandline/pull/
       title: docker pull
-    - path: /engine/reference/commandline/push/
+    - path: __SUBDIR__/engine/reference/commandline/push/
       title: docker push
-    - path: /engine/reference/commandline/rename/
+    - path: __SUBDIR__/engine/reference/commandline/rename/
       title: docker rename
-    - path: /engine/reference/commandline/restart/
+    - path: __SUBDIR__/engine/reference/commandline/restart/
       title: docker restart
-    - path: /engine/reference/commandline/rm/
+    - path: __SUBDIR__/engine/reference/commandline/rm/
       title: docker rm
-    - path: /engine/reference/commandline/rmi/
+    - path: __SUBDIR__/engine/reference/commandline/rmi/
       title: docker rmi
-    - path: /engine/reference/commandline/run/
+    - path: __SUBDIR__/engine/reference/commandline/run/
       title: docker run
-    - path: /engine/reference/commandline/save/
+    - path: __SUBDIR__/engine/reference/commandline/save/
       title: docker save
 @z
 
@@ -1459,25 +1459,25 @@ Reference:
 @y
     - sectiontitle: docker scout
       section:
-      - path: /engine/reference/commandline/scout/
+      - path: __SUBDIR__/engine/reference/commandline/scout/
         title: docker scout
-      - path: /engine/reference/commandline/scout_cache/
+      - path: __SUBDIR__/engine/reference/commandline/scout_cache/
         title: docker scout cache
-      - path: /engine/reference/commandline/scout_cache_df/
+      - path: __SUBDIR__/engine/reference/commandline/scout_cache_df/
         title: docker scout cache df
-      - path: /engine/reference/commandline/scout_cache_prune/
+      - path: __SUBDIR__/engine/reference/commandline/scout_cache_prune/
         title: docker scout cache prune
-      - path: /engine/reference/commandline/scout_compare/
+      - path: __SUBDIR__/engine/reference/commandline/scout_compare/
         title: docker scout compare
-      - path: /engine/reference/commandline/scout_config/
+      - path: __SUBDIR__/engine/reference/commandline/scout_config/
         title: docker scout config
-      - path: /engine/reference/commandline/scout_cves/
+      - path: __SUBDIR__/engine/reference/commandline/scout_cves/
         title: docker scout cves
-      - path: /engine/reference/commandline/scout_enroll/
+      - path: __SUBDIR__/engine/reference/commandline/scout_enroll/
         title: docker scout enroll
-      - path: /engine/reference/commandline/scout_environment/
+      - path: __SUBDIR__/engine/reference/commandline/scout_environment/
         title: docker scout environment
-      - path: /engine/reference/commandline/scout_integration/
+      - path: __SUBDIR__/engine/reference/commandline/scout_integration/
         title: docker scout integration
 @z
 
@@ -1503,25 +1503,25 @@ Reference:
       - path: /engine/reference/commandline/scout_repo_list/
         title: docker scout repo list
 @y
-      - path: /engine/reference/commandline/scout_integration_configure/
+      - path: __SUBDIR__/engine/reference/commandline/scout_integration_configure/
         title: docker scout integration configure
-      - path: /engine/reference/commandline/scout_integration_delete/
+      - path: __SUBDIR__/engine/reference/commandline/scout_integration_delete/
         title: docker scout integration delete
-      - path: /engine/reference/commandline/scout_integration_list/
+      - path: __SUBDIR__/engine/reference/commandline/scout_integration_list/
         title: docker scout integration list
-      - path: /engine/reference/commandline/scout_policy/
+      - path: __SUBDIR__/engine/reference/commandline/scout_policy/
         title: docker scout policy
-      - path: /engine/reference/commandline/scout_quickview/
+      - path: __SUBDIR__/engine/reference/commandline/scout_quickview/
         title: docker scout quickview
-      - path: /engine/reference/commandline/scout_recommendations/
+      - path: __SUBDIR__/engine/reference/commandline/scout_recommendations/
         title: docker scout recommendations
-      - path: /engine/reference/commandline/scout_repo/
+      - path: __SUBDIR__/engine/reference/commandline/scout_repo/
         title: docker scout repo
-      - path: /engine/reference/commandline/scout_repo_disable/
+      - path: __SUBDIR__/engine/reference/commandline/scout_repo_disable/
         title: docker scout repo disable
-      - path: /engine/reference/commandline/scout_repo_enable/
+      - path: __SUBDIR__/engine/reference/commandline/scout_repo_enable/
         title: docker scout repo enable
-      - path: /engine/reference/commandline/scout_repo_list/
+      - path: __SUBDIR__/engine/reference/commandline/scout_repo_list/
         title: docker scout repo list
 @z
 
@@ -1537,15 +1537,15 @@ Reference:
     - path: /engine/reference/commandline/search/
       title: docker search
 @y
-      - path: /engine/reference/commandline/scout_sbom/
+      - path: __SUBDIR__/engine/reference/commandline/scout_sbom/
         title: docker scout sbom
-      - path: /engine/reference/commandline/scout_stream/
+      - path: __SUBDIR__/engine/reference/commandline/scout_stream/
         title: docker scout stream
-      - path: /engine/reference/commandline/scout_version/
+      - path: __SUBDIR__/engine/reference/commandline/scout_version/
         title: docker scout version
-      - path: /engine/reference/commandline/scout_watch/
+      - path: __SUBDIR__/engine/reference/commandline/scout_watch/
         title: docker scout watch
-    - path: /engine/reference/commandline/search/
+    - path: __SUBDIR__/engine/reference/commandline/search/
       title: docker search
 @z
 
@@ -1565,15 +1565,15 @@ Reference:
 @y
     - sectiontitle: docker secret
       section:
-      - path: /engine/reference/commandline/secret/
+      - path: __SUBDIR__/engine/reference/commandline/secret/
         title: docker secret
-      - path: /engine/reference/commandline/secret_create/
+      - path: __SUBDIR__/engine/reference/commandline/secret_create/
         title: docker secret create
-      - path: /engine/reference/commandline/secret_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/secret_inspect/
         title: docker secret inspect
-      - path: /engine/reference/commandline/secret_ls/
+      - path: __SUBDIR__/engine/reference/commandline/secret_ls/
         title: docker secret ls
-      - path: /engine/reference/commandline/secret_rm/
+      - path: __SUBDIR__/engine/reference/commandline/secret_rm/
         title: docker secret rm
 @z
 
@@ -1603,25 +1603,25 @@ Reference:
 @y
     - sectiontitle: docker service
       section:
-      - path: /engine/reference/commandline/service/
+      - path: __SUBDIR__/engine/reference/commandline/service/
         title: docker service
-      - path: /engine/reference/commandline/service_create/
+      - path: __SUBDIR__/engine/reference/commandline/service_create/
         title: docker service create
-      - path: /engine/reference/commandline/service_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/service_inspect/
         title: docker service inspect
-      - path: /engine/reference/commandline/service_logs/
+      - path: __SUBDIR__/engine/reference/commandline/service_logs/
         title: docker service logs
-      - path: /engine/reference/commandline/service_ls/
+      - path: __SUBDIR__/engine/reference/commandline/service_ls/
         title: docker service ls
-      - path: /engine/reference/commandline/service_ps/
+      - path: __SUBDIR__/engine/reference/commandline/service_ps/
         title: docker service ps
-      - path: /engine/reference/commandline/service_rollback/
+      - path: __SUBDIR__/engine/reference/commandline/service_rollback/
         title: docker service rollback
-      - path: /engine/reference/commandline/service_rm/
+      - path: __SUBDIR__/engine/reference/commandline/service_rm/
         title: docker service rm
-      - path: /engine/reference/commandline/service_scale/
+      - path: __SUBDIR__/engine/reference/commandline/service_scale/
         title: docker service scale
-      - path: /engine/reference/commandline/service_update/
+      - path: __SUBDIR__/engine/reference/commandline/service_update/
         title: docker service update
 @z
 
@@ -1645,19 +1645,19 @@ Reference:
 @y
     - sectiontitle: docker stack
       section:
-      - path: /engine/reference/commandline/stack/
+      - path: __SUBDIR__/engine/reference/commandline/stack/
         title: docker stack
-      - path: /engine/reference/commandline/stack_config/
+      - path: __SUBDIR__/engine/reference/commandline/stack_config/
         title: docker stack config
-      - path: /engine/reference/commandline/stack_deploy/
+      - path: __SUBDIR__/engine/reference/commandline/stack_deploy/
         title: docker stack deploy
-      - path: /engine/reference/commandline/stack_ls/
+      - path: __SUBDIR__/engine/reference/commandline/stack_ls/
         title: docker stack ls
-      - path: /engine/reference/commandline/stack_ps/
+      - path: __SUBDIR__/engine/reference/commandline/stack_ps/
         title: docker stack ps
-      - path: /engine/reference/commandline/stack_rm/
+      - path: __SUBDIR__/engine/reference/commandline/stack_rm/
         title: docker stack rm
-      - path: /engine/reference/commandline/stack_services/
+      - path: __SUBDIR__/engine/reference/commandline/stack_services/
         title: docker stack services
 @z
 
@@ -1669,11 +1669,11 @@ Reference:
     - path: /engine/reference/commandline/stop/
       title: docker stop
 @y
-    - path: /engine/reference/commandline/start/
+    - path: __SUBDIR__/engine/reference/commandline/start/
       title: docker start
-    - path: /engine/reference/commandline/stats/
+    - path: __SUBDIR__/engine/reference/commandline/stats/
       title: docker stats
-    - path: /engine/reference/commandline/stop/
+    - path: __SUBDIR__/engine/reference/commandline/stop/
       title: docker stop
 @z
 
@@ -1701,23 +1701,23 @@ Reference:
 @y
     - sectiontitle: docker swarm
       section:
-      - path: /engine/reference/commandline/swarm/
+      - path: __SUBDIR__/engine/reference/commandline/swarm/
         title: docker swarm
-      - path: /engine/reference/commandline/swarm_ca/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_ca/
         title: docker swarm ca
-      - path: /engine/reference/commandline/swarm_init/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_init/
         title: docker swarm init
-      - path: /engine/reference/commandline/swarm_join-token/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_join-token/
         title: docker swarm join-token
-      - path: /engine/reference/commandline/swarm_join/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_join/
         title: docker swarm join
-      - path: /engine/reference/commandline/swarm_leave/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_leave/
         title: docker swarm leave
-      - path: /engine/reference/commandline/swarm_unlock-key/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_unlock-key/
         title: docker swarm unlock-key
-      - path: /engine/reference/commandline/swarm_unlock/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_unlock/
         title: docker swarm unlock
-      - path: /engine/reference/commandline/swarm_update/
+      - path: __SUBDIR__/engine/reference/commandline/swarm_update/
         title: docker swarm update
 @z
 
@@ -1737,15 +1737,15 @@ Reference:
 @y
     - sectiontitle: docker system
       section:
-      - path: /engine/reference/commandline/system/
+      - path: __SUBDIR__/engine/reference/commandline/system/
         title: docker system
-      - path: /engine/reference/commandline/system_df/
+      - path: __SUBDIR__/engine/reference/commandline/system_df/
         title: docker system df
-      - path: /engine/reference/commandline/system_events/
+      - path: __SUBDIR__/engine/reference/commandline/system_events/
         title: docker system events
-      - path: /engine/reference/commandline/system_info/
+      - path: __SUBDIR__/engine/reference/commandline/system_info/
         title: docker system info
-      - path: /engine/reference/commandline/system_prune/
+      - path: __SUBDIR__/engine/reference/commandline/system_prune/
         title: docker system prune
 @z
 
@@ -1755,9 +1755,9 @@ Reference:
     - path: /engine/reference/commandline/top/
       title: docker top
 @y
-    - path: /engine/reference/commandline/tag/
+    - path: __SUBDIR__/engine/reference/commandline/tag/
       title: docker tag
-    - path: /engine/reference/commandline/top/
+    - path: __SUBDIR__/engine/reference/commandline/top/
       title: docker top
 @z
 
@@ -1787,25 +1787,25 @@ Reference:
 @y
     - sectiontitle: docker trust
       section:
-      - path: /engine/reference/commandline/trust/
+      - path: __SUBDIR__/engine/reference/commandline/trust/
         title: docker trust
-      - path: /engine/reference/commandline/trust_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/trust_inspect/
         title: docker trust inspect
-      - path: /engine/reference/commandline/trust_key/
+      - path: __SUBDIR__/engine/reference/commandline/trust_key/
         title: docker trust key
-      - path: /engine/reference/commandline/trust_key_generate/
+      - path: __SUBDIR__/engine/reference/commandline/trust_key_generate/
         title: docker trust key generate
-      - path: /engine/reference/commandline/trust_key_load/
+      - path: __SUBDIR__/engine/reference/commandline/trust_key_load/
         title: docker trust key load
-      - path: /engine/reference/commandline/trust_revoke/
+      - path: __SUBDIR__/engine/reference/commandline/trust_revoke/
         title: docker trust revoke
-      - path: /engine/reference/commandline/trust_sign/
+      - path: __SUBDIR__/engine/reference/commandline/trust_sign/
         title: docker trust sign
-      - path: /engine/reference/commandline/trust_signer/
+      - path: __SUBDIR__/engine/reference/commandline/trust_signer/
         title: docker trust signer
-      - path: /engine/reference/commandline/trust_signer_add/
+      - path: __SUBDIR__/engine/reference/commandline/trust_signer_add/
         title: docker trust signer add
-      - path: /engine/reference/commandline/trust_signer_remove/
+      - path: __SUBDIR__/engine/reference/commandline/trust_signer_remove/
         title: docker trust signer remove
 @z
 
@@ -1817,11 +1817,11 @@ Reference:
     - path: /engine/reference/commandline/version/
       title: docker version
 @y
-    - path: /engine/reference/commandline/unpause/
+    - path: __SUBDIR__/engine/reference/commandline/unpause/
       title: docker unpause
-    - path: /engine/reference/commandline/update/
+    - path: __SUBDIR__/engine/reference/commandline/update/
       title: docker update
-    - path: /engine/reference/commandline/version/
+    - path: __SUBDIR__/engine/reference/commandline/version/
       title: docker version
 @z
 
@@ -1845,19 +1845,19 @@ Reference:
 @y
     - sectiontitle: docker volume
       section:
-      - path: /engine/reference/commandline/volume_create/
+      - path: __SUBDIR__/engine/reference/commandline/volume_create/
         title: docker volume create
-      - path: /engine/reference/commandline/volume_inspect/
+      - path: __SUBDIR__/engine/reference/commandline/volume_inspect/
         title: docker volume inspect
-      - path: /engine/reference/commandline/volume_ls/
+      - path: __SUBDIR__/engine/reference/commandline/volume_ls/
         title: docker volume ls
-      - path: /engine/reference/commandline/volume_prune/
+      - path: __SUBDIR__/engine/reference/commandline/volume_prune/
         title: docker volume prune
-      - path: /engine/reference/commandline/volume_rm/
+      - path: __SUBDIR__/engine/reference/commandline/volume_rm/
         title: docker volume rm
-      - path: /engine/reference/commandline/volume_update/
+      - path: __SUBDIR__/engine/reference/commandline/volume_update/
         title: docker volume update
-    - path: /engine/reference/commandline/wait/
+    - path: __SUBDIR__/engine/reference/commandline/wait/
       title: docker wait
 @z
 
@@ -1870,9 +1870,9 @@ Reference:
 @y
   - title: Docker Compose CLI reference
     # using old URL that redirects to the new location
-    path: /compose/reference/overview/
+    path: __SUBDIR__/compose/reference/overview/
   - title: Daemon CLI (dockerd)
-    path: /engine/reference/commandline/dockerd/
+    path: __SUBDIR__/engine/reference/commandline/dockerd/
 @z
 
 @x
@@ -1893,13 +1893,13 @@ Reference:
   section:
   - sectiontitle: Docker Engine API
     section:
-    - path: /engine/api/
+    - path: __SUBDIR__/engine/api/
       title: Overview
-    - path: /engine/api/sdk/
+    - path: __SUBDIR__/engine/api/sdk/
       title: SDKs
-    - path: /engine/api/sdk/examples/
+    - path: __SUBDIR__/engine/api/sdk/examples/
       title: SDK examples
-    - path: /engine/api/latest/
+    - path: v{{< param suburldir >}}/engine/api/latest/
       title: v{{< param latest_engine_api_version >}} reference (latest)
 @z
 
@@ -1961,57 +1961,57 @@ Reference:
 @y
     - sectiontitle: API reference by version
       section:
-      - path: /engine/api/version-history/
+      - path: __SUBDIR__/engine/api/version-history/
         title: Version history overview
-      - path: /engine/api/v1.42/
+      - path: __SUBDIR__/engine/api/v1.42/
         title: v1.42 reference
-      - path: /engine/api/v1.41/
+      - path: __SUBDIR__/engine/api/v1.41/
         title: v1.41 reference
-      - path: /engine/api/v1.40/
+      - path: __SUBDIR__/engine/api/v1.40/
         title: v1.40 reference
-      - path: /engine/api/v1.39/
+      - path: __SUBDIR__/engine/api/v1.39/
         title: v1.39 reference
-      - path: /engine/api/v1.38/
+      - path: __SUBDIR__/engine/api/v1.38/
         title: v1.38 reference
-      - path: /engine/api/v1.37/
+      - path: __SUBDIR__/engine/api/v1.37/
         title: v1.37 reference
-      - path: /engine/api/v1.36/
+      - path: __SUBDIR__/engine/api/v1.36/
         title: v1.36 reference
-      - path: /engine/api/v1.35/
+      - path: __SUBDIR__/engine/api/v1.35/
         title: v1.35 reference
-      - path: /engine/api/v1.34/
+      - path: __SUBDIR__/engine/api/v1.34/
         title: v1.34 reference
-      - path: /engine/api/v1.33/
+      - path: __SUBDIR__/engine/api/v1.33/
         title: v1.33 reference
-      - path: /engine/api/v1.32/
+      - path: __SUBDIR__/engine/api/v1.32/
         title: v1.32 Reference
-      - path: /engine/api/v1.31/
+      - path: __SUBDIR__/engine/api/v1.31/
         title: v1.31 Reference
-      - path: /engine/api/v1.30/
+      - path: __SUBDIR__/engine/api/v1.30/
         title: v1.30 Reference
-      - path: /engine/api/v1.29/
+      - path: __SUBDIR__/engine/api/v1.29/
         title: v1.29 Reference
-      - path: /engine/api/v1.28/
+      - path: __SUBDIR__/engine/api/v1.28/
         title: v1.28 reference
-      - path: /engine/api/v1.27/
+      - path: __SUBDIR__/engine/api/v1.27/
         title: v1.27 reference
-      - path: /engine/api/v1.26/
+      - path: __SUBDIR__/engine/api/v1.26/
         title: v1.26 reference
-      - path: /engine/api/v1.25/
+      - path: __SUBDIR__/engine/api/v1.25/
         title: v1.25 reference
-      - path: /engine/api/v1.24/
+      - path: __SUBDIR__/engine/api/v1.24/
         title: v1.24 reference
-      - path: /engine/api/v1.23/
+      - path: __SUBDIR__/engine/api/v1.23/
         title: v1.23 reference
-      - path: /engine/api/v1.22/
+      - path: __SUBDIR__/engine/api/v1.22/
         title: v1.22 reference
-      - path: /engine/api/v1.21/
+      - path: __SUBDIR__/engine/api/v1.21/
         title: v1.21 reference
-      - path: /engine/api/v1.20/
+      - path: __SUBDIR__/engine/api/v1.20/
         title: v1.20 reference
-      - path: /engine/api/v1.19/
+      - path: __SUBDIR__/engine/api/v1.19/
         title: v1.19 reference
-      - path: /engine/api/v1.18/
+      - path: __SUBDIR__/engine/api/v1.18/
         title: v1.18 reference
 @z
 
@@ -2028,11 +2028,11 @@ Reference:
   - sectiontitle: Docker Hub API
     section:
       - title: Docker Hub API
-        path: /docker-hub/api/latest/
+        path: __SUBDIR__/docker-hub/api/latest/
       - title: DVP Data API
-        path: /docker-hub/api/dvp/
+        path: __SUBDIR__/docker-hub/api/dvp/
       - title: Deprecated API
-        path: /docker-hub/api/deprecated/
+        path: __SUBDIR__/docker-hub/api/deprecated/
 @z
 
 @x
@@ -2061,25 +2061,25 @@ Reference:
 @y
   - sectiontitle: Docker Extension SDK API
     section:
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
         title: DesktopUI
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Dialog/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Dialog/
         title: Dialog
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Docker/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Docker/
         title: Docker
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
         title: DockerCommand
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
         title: DockerDesktopClient
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Exec/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Exec/
         title: Exec
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
         title: ExecProcess
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecResult/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResult/
         title: ExecResult
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
         title: ExecStreamOptions
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Extension/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Extension/
         title: Extension
 @z
 
@@ -2099,19 +2099,19 @@ Reference:
       - path: /desktop/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
         title: OpenDialogResult
 @y
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
         title: ExtensionCli
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
         title: ExtensionHost
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
         title: ExtensionVM
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Host/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Host/
         title: Host
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/
         title: HttpService
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
         title: NavigationIntents
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
         title: OpenDialogResult
 @z
 
@@ -2129,17 +2129,17 @@ Reference:
       - path: /desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/
         title: BackendV0
 @y
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
         title: RawExecResult
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
         title: RequestConfig
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
         title: RequestConfigV0
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Toast/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Toast/
         title: Toast
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
         title: ExecResultV0
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/
+      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/
         title: BackendV0
 @z
 
@@ -2167,27 +2167,27 @@ Reference:
       - path: /compose/compose-file/07-volumes/
         title: Volumes top-level element
 @y
-- title: Dockerfile reference
-  path: /engine/reference/builder/
+- title: Dockerfile リファレンス
+  path: __SUBDIR__/engine/reference/builder/
 - sectiontitle: Compose file reference
   section:
     - sectiontitle: Compose Specification
       section:
-      - path: /compose/compose-file/
+      - path: __SUBDIR__/compose/compose-file/
         title: Overview
-      - path: /compose/compose-file/01-status/
+      - path: __SUBDIR__/compose/compose-file/01-status/
         title: Status of the specification
-      - path: /compose/compose-file/02-model/
+      - path: __SUBDIR__/compose/compose-file/02-model/
         title: Compose application model
-      - path: /compose/compose-file/03-compose-file/
+      - path: __SUBDIR__/compose/compose-file/03-compose-file/
         title: The Compose file
-      - path: /compose/compose-file/04-version-and-name/
+      - path: __SUBDIR__/compose/compose-file/04-version-and-name/
         title: Version and name top-level element
-      - path: /compose/compose-file/05-services/
+      - path: __SUBDIR__/compose/compose-file/05-services/
         title: Services top-level element
-      - path: /compose/compose-file/06-networks/
+      - path: __SUBDIR__/compose/compose-file/06-networks/
         title: Network top-level element
-      - path: /compose/compose-file/07-volumes/
+      - path: __SUBDIR__/compose/compose-file/07-volumes/
         title: Volumes top-level element
 @z
 
@@ -2209,21 +2209,21 @@ Reference:
       - path: /compose/compose-file/15-profiles/
         title: Profiles
 @y
-      - path: /compose/compose-file/08-configs/
+      - path: __SUBDIR__/compose/compose-file/08-configs/
         title: Configs top-level element
-      - path: /compose/compose-file/09-secrets/
+      - path: __SUBDIR__/compose/compose-file/09-secrets/
         title: Secrets top-level element
-      - path: /compose/compose-file/10-fragments/
+      - path: __SUBDIR__/compose/compose-file/10-fragments/
         title: Fragments
-      - path: /compose/compose-file/11-extension/
+      - path: __SUBDIR__/compose/compose-file/11-extension/
         title: Extensions
-      - path: /compose/compose-file/12-interpolation/
+      - path: __SUBDIR__/compose/compose-file/12-interpolation/
         title: Interpolation
-      - path: /compose/compose-file/13-merge/
+      - path: __SUBDIR__/compose/compose-file/13-merge/
         title: Merge
-      - path: /compose/compose-file/14-include/
+      - path: __SUBDIR__/compose/compose-file/14-include/
         title: Include
-      - path: /compose/compose-file/15-profiles/
+      - path: __SUBDIR__/compose/compose-file/15-profiles/
         title: Profiles
 @z
 
@@ -2245,21 +2245,21 @@ Reference:
 - path: /glossary/
   title: Glossary
 @y
-    - path: /compose/compose-file/build/
+    - path: __SUBDIR__/compose/compose-file/build/
       title: Compose Build Specification
-    - path: /compose/compose-file/deploy/
+    - path: __SUBDIR__/compose/compose-file/deploy/
       title: Compose Deploy Specification
-    - path: /compose/compose-file/develop/
+    - path: __SUBDIR__/compose/compose-file/develop/
       title: Compose Develop Specification 
     - sectiontitle: Legacy versions
       section:
-        - path: /compose/compose-file/compose-versioning/
+        - path: __SUBDIR__/compose/compose-file/compose-versioning/
           title: About versions and upgrading
-        - path: /compose/compose-file/compose-file-v3/
+        - path: __SUBDIR__/compose/compose-file/compose-file-v3/
           title: Version 3
-        - path: /compose/compose-file/compose-file-v2/
+        - path: __SUBDIR__/compose/compose-file/compose-file-v2/
           title: Version 2
-- path: /glossary/
+- path: __SUBDIR__/glossary/
   title: Glossary
 @z
 
@@ -2283,21 +2283,21 @@ Samples:
       title: Redis
 @y
 Samples:
-- path: /samples/
+- path: __SUBDIR__/samples/
   title: Overview
 - sectiontitle: Databases
   section:
-    - path: /samples/mariadb/
+    - path: __SUBDIR__/samples/mariadb/
       title: MariaDB
-    - path: /samples/mongodb/
+    - path: __SUBDIR__/samples/mongodb/
       title: MongoDB
-    - path: /samples/ms-sql/
+    - path: __SUBDIR__/samples/ms-sql/
       title: MS-SQL
-    - path: /samples/mysql/
+    - path: __SUBDIR__/samples/mysql/
       title: MySQL
-    - path: /samples/postgres/
+    - path: __SUBDIR__/samples/postgres/
       title: PostgreSQL
-    - path: /samples/redis/
+    - path: __SUBDIR__/samples/redis/
       title: Redis
 @z
 
@@ -2331,29 +2331,29 @@ Samples:
 @y
 - sectiontitle: Frameworks
   section:
-    - path: /samples/dotnet/
+    - path: __SUBDIR__/samples/dotnet/
       title: .NET
-    - path: /samples/angular/
+    - path: __SUBDIR__/samples/angular/
       title: Angular
-    - path: /samples/django/
+    - path: __SUBDIR__/samples/django/
       title: Django
-    - path: /samples/express/
+    - path: __SUBDIR__/samples/express/
       title: Express
-    - path: /samples/fastapi/
+    - path: __SUBDIR__/samples/fastapi/
       title: FastAPI
-    - path: /samples/flask/
+    - path: __SUBDIR__/samples/flask/
       title: Flask
-    - path: /samples/nodejs/
+    - path: __SUBDIR__/samples/nodejs/
       title: Node.js
-    - path: /samples/react/
+    - path: __SUBDIR__/samples/react/
       title: React
-    - path: /samples/rails/
+    - path: __SUBDIR__/samples/rails/
       title: Rails
-    - path: /samples/spark/
+    - path: __SUBDIR__/samples/spark/
       title: Spark
-    - path: /samples/spring/
+    - path: __SUBDIR__/samples/spring/
       title: Spring Boot
-    - path: /samples/vuejs/
+    - path: __SUBDIR__/samples/vuejs/
       title: Vue.js
 @z
 
@@ -2379,21 +2379,21 @@ Samples:
 @y
 - sectiontitle: Languages
   section:
-    - path: /samples/go/
+    - path: __SUBDIR__/samples/go/
       title: Go
-    - path: /samples/java/
+    - path: __SUBDIR__/samples/java/
       title: Java
-    - path: /samples/javascript/
+    - path: __SUBDIR__/samples/javascript/
       title: JavaScript
-    - path: /samples/php/
+    - path: __SUBDIR__/samples/php/
       title: PHP
-    - path: /samples/python/
+    - path: __SUBDIR__/samples/python/
       title: Python
-    - path: /samples/ruby/
+    - path: __SUBDIR__/samples/ruby/
       title: Ruby
-    - path: /samples/rust/
+    - path: __SUBDIR__/samples/rust/
       title: Rust
-    - path: /samples/typescript/
+    - path: __SUBDIR__/samples/typescript/
       title: TypeScript
 @z
 
@@ -2413,15 +2413,15 @@ Samples:
 @y
 - sectiontitle: Platforms
   section:
-    - path: /samples/gitea/
+    - path: __SUBDIR__/samples/gitea/
       title: Gitea
-    - path: /samples/nextcloud/
+    - path: __SUBDIR__/samples/nextcloud/
       title: Nextcloud
-    - path: /samples/portainer/
+    - path: __SUBDIR__/samples/portainer/
       title: Portainer
-    - path: /samples/prometheus/
+    - path: __SUBDIR__/samples/prometheus/
       title: Prometheus
-    - path: /samples/wordpress/
+    - path: __SUBDIR__/samples/wordpress/
       title: WordPress
 @z
 
@@ -2449,23 +2449,23 @@ Samples:
 @y
 - sectiontitle: Other samples
   section:
-    - path: /samples/ai-ml/
+    - path: __SUBDIR__/samples/ai-ml/
       title: AI/ML
-    - path: /samples/cloudflared/
+    - path: __SUBDIR__/samples/cloudflared/
       title: Cloudflared
-    - path: /samples/elasticsearch/
+    - path: __SUBDIR__/samples/elasticsearch/
       title: Elasticsearch / Logstash / Kibana
-    - path: /samples/minecraft/
+    - path: __SUBDIR__/samples/minecraft/
       title: Minecraft
-    - path: /samples/nginx/
+    - path: __SUBDIR__/samples/nginx/
       title: NGINX
-    - path: /samples/pi-hole/
+    - path: __SUBDIR__/samples/pi-hole/
       title: Pi-hole
-    - path: /samples/plex/
+    - path: __SUBDIR__/samples/plex/
       title: Plex
-    - path: /samples/traefik/
+    - path: __SUBDIR__/samples/traefik/
       title: Traefik
-    - path: /samples/wireguard/
+    - path: __SUBDIR__/samples/wireguard/
       title: Wireguard
 @z
 
@@ -2491,19 +2491,19 @@ Manuals:
 Manuals:
 - sectiontitle: Docker Desktop
   section:
-    - path: /desktop/
+    - path: __SUBDIR__/desktop/
       title: Overview
     - sectiontitle: Install Docker Desktop
       section:
-       - path: /desktop/install/mac-install/
+       - path: __SUBDIR__/desktop/install/mac-install/
          title: Install on Mac
-       - path: /desktop/mac/permission-requirements/
+       - path: __SUBDIR__/desktop/mac/permission-requirements/
          title: Understand permission requirements for Mac
-       - path: /desktop/install/windows-install/
+       - path: __SUBDIR__/desktop/install/windows-install/
          title: Install on Windows
-       - path: /desktop/windows/permission-requirements/
+       - path: __SUBDIR__/desktop/windows/permission-requirements/
          title: Understand permission requirements for Windows
-       - path: /desktop/install/linux-install/
+       - path: __SUBDIR__/desktop/install/linux-install/
          title: Install on Linux
 @z
 
@@ -2521,13 +2521,13 @@ Manuals:
 @y
        - sectiontitle: Installation per Linux distro
          section:
-            - path: /desktop/install/debian/
+            - path: __SUBDIR__/desktop/install/debian/
               title: Install on Debian
-            - path: /desktop/install/fedora/
+            - path: __SUBDIR__/desktop/install/fedora/
               title: Install on Fedora
-            - path: /desktop/install/ubuntu/
+            - path: __SUBDIR__/desktop/install/ubuntu/
               title: Install on Ubuntu
-            - path: /desktop/install/archlinux/
+            - path: __SUBDIR__/desktop/install/archlinux/
               title: Install on Arch
 @z
 
@@ -2551,23 +2551,23 @@ Manuals:
         - path: /desktop/use-desktop/pause/
           title: Pause Docker Desktop
 @y
-    - path: /desktop/get-started/
+    - path: __SUBDIR__/desktop/get-started/
       title: Sign in
     - sectiontitle: Explore Docker Desktop
       section:
-        - path: /desktop/use-desktop/
+        - path: __SUBDIR__/desktop/use-desktop/
           title: Overview
-        - path: /desktop/use-desktop/container/
+        - path: __SUBDIR__/desktop/use-desktop/container/
           title: Explore Containers
-        - path: /desktop/use-desktop/images/
+        - path: __SUBDIR__/desktop/use-desktop/images/
           title: Explore Images
-        - path: /desktop/use-desktop/volumes/
+        - path: __SUBDIR__/desktop/use-desktop/volumes/
           title: Explore Volumes
-        - path: /desktop/use-desktop/builds/
+        - path: __SUBDIR__/desktop/use-desktop/builds/
           title: Explore Builds 
-        - path: /desktop/use-desktop/resource-saver/
+        - path: __SUBDIR__/desktop/use-desktop/resource-saver/
           title: Resource Saver mode
-        - path: /desktop/use-desktop/pause/
+        - path: __SUBDIR__/desktop/use-desktop/pause/
           title: Pause Docker Desktop
 @z
 
@@ -2593,21 +2593,21 @@ Manuals:
 @y
     - sectiontitle: Hardened Docker Desktop
       section:
-        - path: /desktop/hardened-desktop/
+        - path: __SUBDIR__/desktop/hardened-desktop/
           title: Overview
         - sectiontitle: Settings Management
           section:
-          - path: /desktop/hardened-desktop/settings-management/
+          - path: __SUBDIR__/desktop/hardened-desktop/settings-management/
             title: What is Settings Management?
-          - path: /desktop/hardened-desktop/settings-management/configure/
+          - path: __SUBDIR__/desktop/hardened-desktop/settings-management/configure/
             title: Configure Settings Management
         - sectiontitle: Enhanced Container Isolation
           section:
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/
+          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
             title: What is Enhanced Container Isolation?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
+          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
             title: How does it work?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
+          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
             title: Key features and benefits
 @z
 
@@ -2627,15 +2627,15 @@ Manuals:
 @y
     - sectiontitle: Dev Environments (Beta)
       section:
-        - path: /desktop/dev-environments/
+        - path: __SUBDIR__/desktop/dev-environments/
           title: Overview
-        - path: /desktop/dev-environments/create-dev-env/
+        - path: __SUBDIR__/desktop/dev-environments/create-dev-env/
           title: Launch a dev environment
-        - path: /desktop/dev-environments/set-up/
+        - path: __SUBDIR__/desktop/dev-environments/set-up/
           title: Set up a dev environment
-        - path: /desktop/dev-environments/share/
+        - path: __SUBDIR__/desktop/dev-environments/share/
           title: Distribute your dev environment
-        - path: /desktop/dev-environments/dev-cli/
+        - path: __SUBDIR__/desktop/dev-environments/dev-cli/
           title: Use the docker dev CLI plugin
 @z
 
@@ -2653,17 +2653,17 @@ Manuals:
         - path: /desktop/wsl/best-practices/
           title: Best practices
 @y
-    - path: /desktop/containerd/
+    - path: __SUBDIR__/desktop/containerd/
       title: containerd image store (Beta)
-    - path: /desktop/wasm/
+    - path: __SUBDIR__/desktop/wasm/
       title: Wasm workloads (Beta)
     - sectiontitle: WSL
       section:
-        - path: /desktop/wsl/
+        - path: __SUBDIR__/desktop/wsl/
           title: Set up WSL 2 on Docker Desktop for Windows
-        - path: /desktop/wsl/use-wsl/
+        - path: __SUBDIR__/desktop/wsl/use-wsl/
           title: Use WSL
-        - path: /desktop/wsl/best-practices/
+        - path: __SUBDIR__/desktop/wsl/best-practices/
           title: Best practices
 @z
 
@@ -2683,15 +2683,15 @@ Manuals:
 @y
     - sectiontitle: Additional resources
       section:
-        - path: /desktop/kubernetes/
+        - path: __SUBDIR__/desktop/kubernetes/
           title: Deploy on Kubernetes
-        - path: /desktop/backup-and-restore/
+        - path: __SUBDIR__/desktop/backup-and-restore/
           title: Back up and restore data
-        - path: /desktop/networking/
+        - path: __SUBDIR__/desktop/networking/
           title: Explore networking features
-        - path: /desktop/vm-vdi/
+        - path: __SUBDIR__/desktop/vm-vdi/
           title: Run Docker Desktop for Windows in a VM or VDI environment
-        - path: /desktop/allow-list/
+        - path: __SUBDIR__/desktop/allow-list/
           title: Allowlist for Docker Desktop
 @z
 
@@ -2707,11 +2707,11 @@ Manuals:
 @y
     - sectiontitle: Change settings
       section:
-        - path: /desktop/settings/mac/
+        - path: __SUBDIR__/desktop/settings/mac/
           title: On Mac
-        - path: /desktop/settings/windows/
+        - path: __SUBDIR__/desktop/settings/windows/
           title: On Windows
-        - path: /desktop/settings/linux/
+        - path: __SUBDIR__/desktop/settings/linux/
           title: On Linux
 @z
 
@@ -2729,13 +2729,13 @@ Manuals:
 @y
     - sectiontitle: Troubleshoot and diagnose
       section:
-        - path: /desktop/troubleshoot/overview/
+        - path: __SUBDIR__/desktop/troubleshoot/overview/
           title: Overview
-        - path: /desktop/troubleshoot/topics/
+        - path: __SUBDIR__/desktop/troubleshoot/topics/
           title: Troubleshoot topics
-        - path: /desktop/troubleshoot/workarounds/
+        - path: __SUBDIR__/desktop/troubleshoot/workarounds/
           title: Workarounds for common problems
-        - path: /desktop/troubleshoot/known-issues/
+        - path: __SUBDIR__/desktop/troubleshoot/known-issues/
           title: Known issues
 @z
 
@@ -2747,11 +2747,11 @@ Manuals:
     - path: /desktop/release-notes/
       title: Release notes
 @y
-    - path: /desktop/uninstall/
+    - path: __SUBDIR__/desktop/uninstall/
       title: Uninstall Docker Desktop
-    - path: /desktop/feedback/
+    - path: __SUBDIR__/desktop/feedback/
       title: Give feedback
-    - path: /desktop/release-notes/
+    - path: __SUBDIR__/desktop/release-notes/
       title: Release notes
 @z
 
@@ -2777,21 +2777,21 @@ Manuals:
 @y
     - sectiontitle: Previous versions
       section:
-      - path: /desktop/previous-versions/3.x-windows/
+      - path: __SUBDIR__/desktop/previous-versions/3.x-windows/
         title: Desktop for Windows 3.x
-      - path: /desktop/previous-versions/3.x-mac/
+      - path: __SUBDIR__/desktop/previous-versions/3.x-mac/
         title: Desktop for Mac 3.x
-      - path: /desktop/previous-versions/2.x-windows/
+      - path: __SUBDIR__/desktop/previous-versions/2.x-windows/
         title: Desktop for Windows 2.x
-      - path: /desktop/previous-versions/2.x-mac/
+      - path: __SUBDIR__/desktop/previous-versions/2.x-mac/
         title: Desktop for Mac 2.x
-      - path: /desktop/previous-versions/edge-releases-windows/
+      - path: __SUBDIR__/desktop/previous-versions/edge-releases-windows/
         title: Windows edge releases
-      - path: /desktop/previous-versions/edge-releases-mac/
+      - path: __SUBDIR__/desktop/previous-versions/edge-releases-mac/
         title: Mac edge releases
-      - path: /desktop/previous-versions/archive-windows/
+      - path: __SUBDIR__/desktop/previous-versions/archive-windows/
         title: Older versions for Windows
-      - path: /desktop/previous-versions/archive-mac/
+      - path: __SUBDIR__/desktop/previous-versions/archive-mac/
         title: Older versions for Mac
 @z
 
@@ -2813,17 +2813,17 @@ Manuals:
 @y
 - sectiontitle: Docker Extensions
   section:
-    - path: /desktop/extensions/
+    - path: __SUBDIR__/desktop/extensions/
       title: What are Docker Extensions?
     - sectiontitle: Extensions on Docker Desktop
       section:
-        - path: /desktop/extensions/marketplace/
+        - path: __SUBDIR__/desktop/extensions/marketplace/
           title: Manage Marketplace extensions
-        - path: /desktop/extensions/non-marketplace/
+        - path: __SUBDIR__/desktop/extensions/non-marketplace/
           title: Manage non-Marketplace extensions
-        - path: /desktop/extensions/settings-feedback/
+        - path: __SUBDIR__/desktop/extensions/settings-feedback/
           title: Change settings and give feedback
-        - path: /desktop/extensions/private-marketplace/
+        - path: __SUBDIR__/desktop/extensions/private-marketplace/
           title: Configure a private marketplace (Beta)
 @z
 
@@ -2839,11 +2839,11 @@ Manuals:
 @y
     - sectiontitle: Extensions SDK
       section:
-        - path: /desktop/extensions-sdk/
+        - path: __SUBDIR__/desktop/extensions-sdk/
           title: Overview
-        - path: /desktop/extensions-sdk/process/
+        - path: __SUBDIR__/desktop/extensions-sdk/process/
           title: The build and publish process
-        - path: /desktop/extensions-sdk/quickstart/
+        - path: __SUBDIR__/desktop/extensions-sdk/quickstart/
           title: Quickstart
 @z
 
@@ -2860,11 +2860,11 @@ Manuals:
         - sectiontitle: "Part one: Build"
           section:
             - title: Create a simple extension
-              path: /desktop/extensions-sdk/build/minimal-frontend-extension/
+              path: __SUBDIR__/desktop/extensions-sdk/build/minimal-frontend-extension/
             - title: Create an advanced frontend extension
-              path: /desktop/extensions-sdk/build/frontend-extension-tutorial/
+              path: __SUBDIR__/desktop/extensions-sdk/build/frontend-extension-tutorial/
             - title: Add a backend to your extension
-              path: /desktop/extensions-sdk/build/backend-extension-tutorial/
+              path: __SUBDIR__/desktop/extensions-sdk/build/backend-extension-tutorial/
 @z
 
 @x
@@ -2888,19 +2888,19 @@ Manuals:
         - sectiontitle: "Part two: Publish"
           section:
             - title: Overview
-              path: /desktop/extensions-sdk/extensions/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/
             - title: Labels
-              path: /desktop/extensions-sdk/extensions/labels/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/labels/
             - title: Validate
-              path: /desktop/extensions-sdk/extensions/validate/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/validate/
             - title: Package and release your extension
-              path: /desktop/extensions-sdk/extensions/DISTRIBUTION/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/DISTRIBUTION/
             - title: Generate a share link
-              path: /desktop/extensions-sdk/extensions/share/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/share/
             - title: Publish in the marketplace
-              path: /desktop/extensions-sdk/extensions/publish/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/publish/
             - title: Build multi-arch extensions
-              path: /desktop/extensions-sdk/extensions/multi-arch/
+              path: __SUBDIR__/desktop/extensions-sdk/extensions/multi-arch/
 @z
 
 @x
@@ -2916,11 +2916,11 @@ Manuals:
         - sectiontitle: "Architecture"
           section:
             - title: Overview
-              path: /desktop/extensions-sdk/architecture/
+              path: __SUBDIR__/desktop/extensions-sdk/architecture/
             - title: Metadata
-              path: /desktop/extensions-sdk/architecture/metadata/
+              path: __SUBDIR__/desktop/extensions-sdk/architecture/metadata/
             - title: Security
-              path: /desktop/extensions-sdk/architecture/security/
+              path: __SUBDIR__/desktop/extensions-sdk/architecture/security/
 @z
 
 @x
@@ -2938,13 +2938,13 @@ Manuals:
         - sectiontitle: "Design and UI styling"
           section:
              - title: UI styling guidelines
-               path: /desktop/extensions-sdk/design/
+               path: __SUBDIR__/desktop/extensions-sdk/design/
              - title: Guidelines
-               path: /desktop/extensions-sdk/design/design-guidelines/
+               path: __SUBDIR__/desktop/extensions-sdk/design/design-guidelines/
              - title: Docker design principles
-               path: /desktop/extensions-sdk/design/design-principles/
+               path: __SUBDIR__/desktop/extensions-sdk/design/design-principles/
              - title: MUI best practices
-               path: /desktop/extensions-sdk/design/mui-best-practices/
+               path: __SUBDIR__/desktop/extensions-sdk/design/mui-best-practices/
 @z
 
 @x
@@ -2962,13 +2962,13 @@ Manuals:
         - sectiontitle: "Developer Guides"
           section:
             - title: Invoke host binaries
-              path: /desktop/extensions-sdk/guides/invoke-host-binaries/
+              path: __SUBDIR__/desktop/extensions-sdk/guides/invoke-host-binaries/
             - title: Use the Docker socket from the extension backend
-              path: /desktop/extensions-sdk/guides/use-docker-socket-from-backend/
+              path: __SUBDIR__/desktop/extensions-sdk/guides/use-docker-socket-from-backend/
             - title: Interacting with Kubernetes
-              path: /desktop/extensions-sdk/guides/kubernetes/
+              path: __SUBDIR__/desktop/extensions-sdk/guides/kubernetes/
             - title: Authentication
-              path: /desktop/extensions-sdk/guides/oauth2-flow/
+              path: __SUBDIR__/desktop/extensions-sdk/guides/oauth2-flow/
 @z
 
 @x
@@ -2984,11 +2984,11 @@ Manuals:
         - sectiontitle: Developer SDK tools
           section:
             - title: "Test and debug"
-              path: /desktop/extensions-sdk/dev/test-debug/
+              path: __SUBDIR__/desktop/extensions-sdk/dev/test-debug/
             - title: "Continuous integration"
-              path: /desktop/extensions-sdk/dev/continuous-integration/
+              path: __SUBDIR__/desktop/extensions-sdk/dev/continuous-integration/
             - title: CLI reference
-              path: /desktop/extensions-sdk/dev/usage/
+              path: __SUBDIR__/desktop/extensions-sdk/dev/usage/
 @z
 
 @x
@@ -3010,17 +3010,17 @@ Manuals:
             - sectiontitle: Extension APIs
               section:
                 - title: Overview
-                  path: /desktop/extensions-sdk/dev/api/overview/
+                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/overview/
                 - title: Extension Backend
-                  path: /desktop/extensions-sdk/dev/api/backend/
+                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/backend/
                 - title: Docker
-                  path: /desktop/extensions-sdk/dev/api/docker/
+                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/docker/
                 - title: Dashboard
-                  path: /desktop/extensions-sdk/dev/api/dashboard/
+                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/dashboard/
                 - title: Navigation
-                  path: /desktop/extensions-sdk/dev/api/dashboard-routes-navigation/
+                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/dashboard-routes-navigation/
                 - title: API Reference
-                  path: /desktop/extensions-sdk/dev/api/reference/README/
+                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/README/
 @z
 
 @x
@@ -3043,19 +3043,19 @@ Manuals:
 @y
 - sectiontitle: Docker Scout
   section:
-    - path: /scout/
+    - path: __SUBDIR__/scout/
       title: Overview
-    - path: /scout/quickstart/
+    - path: __SUBDIR__/scout/quickstart/
       title: Quickstart
     - sectiontitle: Explore Docker Scout
       section:
-      - path: /scout/dashboard/
+      - path: __SUBDIR__/scout/dashboard/
         title: Dashboard
-      - path: /scout/image-details-view/
+      - path: __SUBDIR__/scout/image-details-view/
         title: Image details view
-      - path: /scout/advisory-db-sources/
+      - path: __SUBDIR__/scout/advisory-db-sources/
         title: Advisory database
-      - path: /scout/data-handling/
+      - path: __SUBDIR__/scout/data-handling/
         title: Data handling
 @z
 
@@ -3073,13 +3073,13 @@ Manuals:
 @y
     - sectiontitle: Use Docker Scout
       section:
-      - path: /scout/image-analysis/
+      - path: __SUBDIR__/scout/image-analysis/
         title: Image analysis
-      - path: /scout/local-fs/
+      - path: __SUBDIR__/scout/local-fs/
         title: Analyze local files
-      - path: /scout/sbom/
+      - path: __SUBDIR__/scout/sbom/
         title: SBOM
-      - path: /scout/env-vars/
+      - path: __SUBDIR__/scout/env-vars/
         title: Environment variables
 @z
 
@@ -3097,13 +3097,13 @@ Manuals:
 @y
     - sectiontitle: Policy Evaluation
       section:
-      - path: /scout/policy/
+      - path: __SUBDIR__/scout/policy/
         title: Overview
-      - path: /scout/policy/view/
+      - path: __SUBDIR__/scout/policy/view/
         title: View policy status
-      - path: /scout/policy/configure/
+      - path: __SUBDIR__/scout/policy/configure/
         title: Configure policies
-      - path: /scout/policy/ci/
+      - path: __SUBDIR__/scout/policy/ci/
         title: Policy Evaluation in CI
 @z
 
@@ -3124,15 +3124,15 @@ Manuals:
     - sectiontitle: Integrations
       section:
       - title: Overview
-        path: /scout/integrations/
+        path: __SUBDIR__/scout/integrations/
       - sectiontitle: Environment monitoring
         section:
         - title: Overview
-          path: /scout/integrations/environment/
+          path: __SUBDIR__/scout/integrations/environment/
         - title: Sysdig
-          path: /scout/integrations/environment/sysdig/
+          path: __SUBDIR__/scout/integrations/environment/sysdig/
         - title: Generic
-          path: /scout/integrations/environment/cli/
+          path: __SUBDIR__/scout/integrations/environment/cli/
 @z
 
 @x
@@ -3148,11 +3148,11 @@ Manuals:
       - sectiontitle: Container registries
         section:
         - title: Artifactory
-          path: /scout/integrations/registry/artifactory/
+          path: __SUBDIR__/scout/integrations/registry/artifactory/
         - title: Elastic Container Registry
-          path: /scout/integrations/registry/ecr/
+          path: __SUBDIR__/scout/integrations/registry/ecr/
         - title: Azure Container Registry
-          path: /scout/integrations/registry/acr/
+          path: __SUBDIR__/scout/integrations/registry/acr/
 @z
 
 @x
@@ -3178,20 +3178,20 @@ Manuals:
       - sectiontitle: Continuous integration
         section:
         - title: GitHub Actions
-          path: /scout/integrations/ci/gha/
+          path: __SUBDIR__/scout/integrations/ci/gha/
         - title: GitLab
-          path: /scout/integrations/ci/gitlab/
+          path: __SUBDIR__/scout/integrations/ci/gitlab/
         - title: Microsoft Azure DevOps Pipelines
-          path: /scout/integrations/ci/azure/
+          path: __SUBDIR__/scout/integrations/ci/azure/
         - title: Circle CI
-          path: /scout/integrations/ci/circle-ci/
+          path: __SUBDIR__/scout/integrations/ci/circle-ci/
         - title: Jenkins
-          path: /scout/integrations/ci/jenkins/
+          path: __SUBDIR__/scout/integrations/ci/jenkins/
       - sectiontitle: Code quality
         section:
         - title: SonarQube
-          path: /scout/integrations/code-quality/sonarqube/
-    - path: /scout/release-notes/
+          path: __SUBDIR__/scout/integrations/code-quality/sonarqube/
+    - path: __SUBDIR__/scout/release-notes/
       title: Release notes
 @z
 
@@ -3215,19 +3215,19 @@ Manuals:
 @y
 - sectiontitle: Docker Engine
   section:
-  - path: /engine/
+  - path: __SUBDIR__/engine/
     title: Overview
   - sectiontitle: Install
     section:
-    - path: /engine/install/
+    - path: __SUBDIR__/engine/install/
       title: Overview
-    - path: /engine/install/centos/
+    - path: __SUBDIR__/engine/install/centos/
       title: CentOS
-    - path: /engine/install/debian/
+    - path: __SUBDIR__/engine/install/debian/
       title: Debian
-    - path: /engine/install/fedora/
+    - path: __SUBDIR__/engine/install/fedora/
       title: Fedora
-    - path: /engine/install/rhel/
+    - path: __SUBDIR__/engine/install/rhel/
       title: RHEL (s390x)
 @z
 
@@ -3245,17 +3245,17 @@ Manuals:
     - path: /engine/install/troubleshoot/
       title: Troubleshoot installation
 @y
-    - path: /engine/install/sles/
+    - path: __SUBDIR__/engine/install/sles/
       title: SLES
-    - path: /engine/install/ubuntu/
+    - path: __SUBDIR__/engine/install/ubuntu/
       title: Ubuntu
-    - path: /engine/install/raspberry-pi-os/
+    - path: __SUBDIR__/engine/install/raspberry-pi-os/
       title: Raspberry Pi OS (32-bit)
-    - path: /engine/install/binaries/
+    - path: __SUBDIR__/engine/install/binaries/
       title: Binaries
-    - path: /engine/install/linux-postinstall/
+    - path: __SUBDIR__/engine/install/linux-postinstall/
       title: Post-installation steps
-    - path: /engine/install/troubleshoot/
+    - path: __SUBDIR__/engine/install/troubleshoot/
       title: Troubleshoot installation
 @z
 
@@ -3275,15 +3275,15 @@ Manuals:
 @y
   - sectiontitle: Storage
     section:
-    - path: /storage/
+    - path: __SUBDIR__/storage/
       title: Overview
-    - path: /storage/volumes/
+    - path: __SUBDIR__/storage/volumes/
       title: Volumes
-    - path: /storage/bind-mounts/
+    - path: __SUBDIR__/storage/bind-mounts/
       title: Bind mounts
-    - path: /storage/tmpfs/
+    - path: __SUBDIR__/storage/tmpfs/
       title: tmpfs mounts
-    - path: /storage/troubleshooting_volume_errors/
+    - path: __SUBDIR__/storage/troubleshooting_volume_errors/
       title: Troubleshoot
 @z
 
@@ -3311,23 +3311,23 @@ Manuals:
 @y
     - sectiontitle: Storage drivers
       section:
-      - path: /storage/storagedriver/
+      - path: __SUBDIR__/storage/storagedriver/
         title: Overview
-      - path: /storage/storagedriver/select-storage-driver/
+      - path: __SUBDIR__/storage/storagedriver/select-storage-driver/
         title: Select a storage driver
-      - path: /storage/storagedriver/btrfs-driver/
+      - path: __SUBDIR__/storage/storagedriver/btrfs-driver/
         title: Use the Btrfs storage driver
-      - path: /storage/storagedriver/device-mapper-driver/
+      - path: __SUBDIR__/storage/storagedriver/device-mapper-driver/
         title: Use the Device mapper storage driver
-      - path: /storage/storagedriver/overlayfs-driver/
+      - path: __SUBDIR__/storage/storagedriver/overlayfs-driver/
         title: Use the OverlayFS storage driver
-      - path: /storage/storagedriver/zfs-driver/
+      - path: __SUBDIR__/storage/storagedriver/zfs-driver/
         title: Use the ZFS storage driver
-      - path: /storage/storagedriver/vfs-driver/
+      - path: __SUBDIR__/storage/storagedriver/vfs-driver/
         title: Use the VFS storage driver
-      - path: /storage/storagedriver/aufs-driver/
+      - path: __SUBDIR__/storage/storagedriver/aufs-driver/
         title: Use the AUFS storage driver (deprecated)
-      - path: /storage/containerd/
+      - path: __SUBDIR__/storage/containerd/
         title: containerd snapshotters
 @z
 
@@ -3355,23 +3355,23 @@ Manuals:
 @y
   - sectiontitle: Networking
     section:
-    - path: /network/
+    - path: __SUBDIR__/network/
       title: Overview
     - sectiontitle: Network drivers
       section:
-      - path: /network/drivers/
+      - path: __SUBDIR__/network/drivers/
         title: Overview
-      - path: /network/drivers/bridge/
+      - path: __SUBDIR__/network/drivers/bridge/
         title: Bridge
-      - path: /network/drivers/overlay/
+      - path: __SUBDIR__/network/drivers/overlay/
         title: Overlay
-      - path: /network/drivers/host/
+      - path: __SUBDIR__/network/drivers/host/
         title: Host
-      - path: /network/drivers/ipvlan/
+      - path: __SUBDIR__/network/drivers/ipvlan/
         title: IPvlan
-      - path: /network/drivers/macvlan/
+      - path: __SUBDIR__/network/drivers/macvlan/
         title: Macvlan
-      - path: /network/drivers/none/
+      - path: __SUBDIR__/network/drivers/none/
         title: None (no networking)
 @z
 
@@ -3397,25 +3397,25 @@ Manuals:
       - path: /network/links/
         title: (Legacy) Container links
 @y
-    - path: /network/proxy/
+    - path: __SUBDIR__/network/proxy/
       title: Configure Docker to use a proxy server
-    - path: /network/packet-filtering-firewalls/
+    - path: __SUBDIR__/network/packet-filtering-firewalls/
       title: Packet filtering and firewalls
-    - path: /config/daemon/ipv6/
+    - path: __SUBDIR__/config/daemon/ipv6/
       title: Use IPv6
     - sectiontitle: Networking tutorials
       section:
-      - path: /network/network-tutorial-standalone/
+      - path: __SUBDIR__/network/network-tutorial-standalone/
         title: Bridge network tutorial
-      - path: /network/network-tutorial-host/
+      - path: __SUBDIR__/network/network-tutorial-host/
         title: Host networking tutorial
-      - path: /network/network-tutorial-overlay/
+      - path: __SUBDIR__/network/network-tutorial-overlay/
         title: Overlay networking tutorial
-      - path: /network/network-tutorial-macvlan/
+      - path: __SUBDIR__/network/network-tutorial-macvlan/
         title: Macvlan network tutorial
     - sectiontitle: Legacy networking content
       section:
-      - path: /network/links/
+      - path: __SUBDIR__/network/links/
         title: (Legacy) Container links
 @z
 
@@ -3439,19 +3439,19 @@ Manuals:
 @y
   - sectiontitle: Working with Docker Engine
     section:
-    - path: /config/daemon/start/
+    - path: __SUBDIR__/config/daemon/start/
       title: Start the daemon
-    - path: /config/pruning/
+    - path: __SUBDIR__/config/pruning/
       title: Prune unused objects
-    - path: /config/formatting/
+    - path: __SUBDIR__/config/formatting/
       title: Format command and log output
-    - path: /config/filter/
+    - path: __SUBDIR__/config/filter/
       title: Filter commands
-    - path: /config/containers/start-containers-automatically/
+    - path: __SUBDIR__/config/containers/start-containers-automatically/
       title: Start containers automatically
-    - path: /config/labels-custom-metadata/
+    - path: __SUBDIR__/config/labels-custom-metadata/
       title: Labels
-    - path: /engine/sbom/
+    - path: __SUBDIR__/engine/sbom/
       title: Docker SBOM (Experimental)
 @z
 
@@ -3477,17 +3477,17 @@ Manuals:
     section:
     - sectiontitle: Container logs
       section:
-      - path: /config/containers/logging/
+      - path: __SUBDIR__/config/containers/logging/
         title: View container logs
       - sectiontitle: Manage container logs
         section:
-        - path: /config/containers/logging/configure/
+        - path: __SUBDIR__/config/containers/logging/configure/
           title: Configure logging drivers
-        - path: /config/containers/logging/dual-logging/
+        - path: __SUBDIR__/config/containers/logging/dual-logging/
           title: Use a remote logging driver
-        - path: /config/containers/logging/plugins/
+        - path: __SUBDIR__/config/containers/logging/plugins/
           title: Use a logging driver plugin
-        - path: /config/containers/logging/log_tags/
+        - path: __SUBDIR__/config/containers/logging/log_tags/
           title: Customize log driver output
 @z
 
@@ -3521,29 +3521,29 @@ Manuals:
 @y
         - sectiontitle: Logging drivers
           section:
-          - path: /config/containers/logging/local/
+          - path: __SUBDIR__/config/containers/logging/local/
             title: Local file logging driver
-          - path: /config/containers/logging/logentries/
+          - path: __SUBDIR__/config/containers/logging/logentries/
             title: Logentries logging driver
-          - path: /config/containers/logging/json-file/
+          - path: __SUBDIR__/config/containers/logging/json-file/
             title: JSON File logging driver
-          - path: /config/containers/logging/gelf/
+          - path: __SUBDIR__/config/containers/logging/gelf/
             title: Graylog Extended Format (GELF) logging driver
-          - path: /config/containers/logging/syslog/
+          - path: __SUBDIR__/config/containers/logging/syslog/
             title: Syslog logging driver
-          - path: /config/containers/logging/awslogs/
+          - path: __SUBDIR__/config/containers/logging/awslogs/
             title: Amazon CloudWatch logs logging driver
-          - path: /config/containers/logging/etwlogs/
+          - path: __SUBDIR__/config/containers/logging/etwlogs/
             title: ETW logging driver
-          - path: /config/containers/logging/fluentd/
+          - path: __SUBDIR__/config/containers/logging/fluentd/
             title: Fluentd logging driver
-          - path: /config/containers/logging/gcplogs/
+          - path: __SUBDIR__/config/containers/logging/gcplogs/
             title: Google Cloud logging driver
-          - path: /config/containers/logging/journald/
+          - path: __SUBDIR__/config/containers/logging/journald/
             title: Journald logging driver
-          - path: /config/containers/logging/splunk/
+          - path: __SUBDIR__/config/containers/logging/splunk/
             title: Splunk logging driver
-    - path: /config/daemon/logs/
+    - path: __SUBDIR__/config/daemon/logs/
       title: Daemon logs
 @z
 
@@ -3563,15 +3563,15 @@ Manuals:
 @y
   - sectiontitle: Security
     section:
-      - path: /engine/security/
+      - path: __SUBDIR__/engine/security/
         title: Overview
-      - path: /engine/security/rootless/
+      - path: __SUBDIR__/engine/security/rootless/
         title: Rootless mode
-      - path: /engine/security/non-events/
+      - path: __SUBDIR__/engine/security/non-events/
         title: Docker security non-events
-      - path: /engine/security/protect-access/
+      - path: __SUBDIR__/engine/security/protect-access/
         title: Protect the Docker daemon socket
-      - path: /engine/security/certificates/
+      - path: __SUBDIR__/engine/security/certificates/
         title: Using certificates for repository client verification
 @z
 
@@ -3593,17 +3593,17 @@ Manuals:
 @y
       - sectiontitle: Use trusted images
         section:
-        - path: /engine/security/trust/
+        - path: __SUBDIR__/engine/security/trust/
           title: Overview
-        - path: /engine/security/trust/trust_automation/
+        - path: __SUBDIR__/engine/security/trust/trust_automation/
           title: Automation
-        - path: /engine/security/trust/trust_delegation/
+        - path: __SUBDIR__/engine/security/trust/trust_delegation/
           title: Delegations
-        - path: /engine/security/trust/deploying_notary/
+        - path: __SUBDIR__/engine/security/trust/deploying_notary/
           title: Deploy Notary
-        - path: /engine/security/trust/trust_key_mng/
+        - path: __SUBDIR__/engine/security/trust/trust_key_mng/
           title: Manage content trust keys
-        - path: /engine/security/trust/trust_sandbox/
+        - path: __SUBDIR__/engine/security/trust/trust_sandbox/
           title: Play in a content trust sandbox
 @z
 
@@ -3617,13 +3617,13 @@ Manuals:
       - path: /engine/security/userns-remap/
         title: Isolate containers with a user namespace
 @y
-      - path: /engine/security/antivirus/
+      - path: __SUBDIR__/engine/security/antivirus/
         title: Antivirus software
-      - path: /engine/security/apparmor/
+      - path: __SUBDIR__/engine/security/apparmor/
         title: AppArmor security profiles
-      - path: /engine/security/seccomp/
+      - path: __SUBDIR__/engine/security/seccomp/
         title: Seccomp security profiles
-      - path: /engine/security/userns-remap/
+      - path: __SUBDIR__/engine/security/userns-remap/
         title: Isolate containers with a user namespace
 @z
 
@@ -3637,9 +3637,9 @@ Manuals:
 @y
   - sectiontitle: Swarm mode
     section:
-    - path: /engine/swarm/
+    - path: __SUBDIR__/engine/swarm/
       title: Swarm mode overview
-    - path: /engine/swarm/key-concepts/
+    - path: __SUBDIR__/engine/swarm/key-concepts/
       title: Swarm mode key concepts
 @z
 
@@ -3669,25 +3669,25 @@ Manuals:
 @y
     - sectiontitle: Get started with swarm mode
       section:
-      - path: /engine/swarm/swarm-tutorial/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/
         title: Swarm mode tutorial overview
-      - path: /engine/swarm/swarm-tutorial/create-swarm/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/create-swarm/
         title: Create a swarm
-      - path: /engine/swarm/swarm-tutorial/add-nodes/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/add-nodes/
         title: Add nodes to the swarm
-      - path: /engine/swarm/swarm-tutorial/deploy-service/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/deploy-service/
         title: Deploy a service
-      - path: /engine/swarm/swarm-tutorial/inspect-service/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/inspect-service/
         title: Inspect the service
-      - path: /engine/swarm/swarm-tutorial/scale-service/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/scale-service/
         title: Scale the service
-      - path: /engine/swarm/swarm-tutorial/delete-service/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/delete-service/
         title: Delete the service
-      - path: /engine/swarm/swarm-tutorial/rolling-update/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/rolling-update/
         title: Apply rolling updates
-      - path: /engine/swarm/swarm-tutorial/drain-node/
+      - path: __SUBDIR__/engine/swarm/swarm-tutorial/drain-node/
         title: Drain a node
-      - path: /engine/swarm/ingress/
+      - path: __SUBDIR__/engine/swarm/ingress/
         title: Use Swarm mode routing mesh
 @z
 
@@ -3705,13 +3705,13 @@ Manuals:
 @y
     - sectiontitle: How Swarm mode works
       section:
-      - path: /engine/swarm/how-swarm-mode-works/nodes/
+      - path: __SUBDIR__/engine/swarm/how-swarm-mode-works/nodes/
         title: How nodes work
-      - path: /engine/swarm/how-swarm-mode-works/services/
+      - path: __SUBDIR__/engine/swarm/how-swarm-mode-works/services/
         title: How services work
-      - path: /engine/swarm/how-swarm-mode-works/pki/
+      - path: __SUBDIR__/engine/swarm/how-swarm-mode-works/pki/
         title: Manage swarm security with PKI
-      - path: /engine/swarm/how-swarm-mode-works/swarm-task-states/
+      - path: __SUBDIR__/engine/swarm/how-swarm-mode-works/swarm-task-states/
         title: Swarm task states
 @z
 
@@ -3739,27 +3739,27 @@ Manuals:
     - path: /engine/swarm/raft/
       title: Raft consensus in Swarm mode
 @y
-    - path: /engine/swarm/swarm-mode/
+    - path: __SUBDIR__/engine/swarm/swarm-mode/
       title: Run Docker in Swarm mode
-    - path: /engine/swarm/join-nodes/
+    - path: __SUBDIR__/engine/swarm/join-nodes/
       title: Join nodes to a swarm
-    - path: /engine/swarm/manage-nodes/
+    - path: __SUBDIR__/engine/swarm/manage-nodes/
       title: Manage nodes in a swarm
-    - path: /engine/swarm/services/
+    - path: __SUBDIR__/engine/swarm/services/
       title: Deploy services to a swarm
-    - path: /engine/swarm/stack-deploy/
+    - path: __SUBDIR__/engine/swarm/stack-deploy/
       title: Deploy a stack to a swarm
-    - path: /engine/swarm/configs/
+    - path: __SUBDIR__/engine/swarm/configs/
       title: Store service configuration data
-    - path: /engine/swarm/secrets/
+    - path: __SUBDIR__/engine/swarm/secrets/
       title: Manage sensitive data with Docker secrets
-    - path: /engine/swarm/swarm_manager_locking/
+    - path: __SUBDIR__/engine/swarm/swarm_manager_locking/
       title: Lock your swarm
-    - path: /engine/swarm/networking/
+    - path: __SUBDIR__/engine/swarm/networking/
       title: Manage swarm service networks
-    - path: /engine/swarm/admin_guide/
+    - path: __SUBDIR__/engine/swarm/admin_guide/
       title: Swarm administration guide
-    - path: /engine/swarm/raft/
+    - path: __SUBDIR__/engine/swarm/raft/
       title: Raft consensus in Swarm mode
 @z
 
@@ -3783,15 +3783,15 @@ Manuals:
     section:
     - sectiontitle: Container runtime
       section:
-      - path: /engine/alternative-runtimes/
+      - path: __SUBDIR__/engine/alternative-runtimes/
         title: Alternative container runtimes
-      - path: /config/containers/resource_constraints/
+      - path: __SUBDIR__/config/containers/resource_constraints/
         title: Configure runtime resource constraints
-      - path: /config/containers/runmetrics/
+      - path: __SUBDIR__/config/containers/runmetrics/
         title: Collect runtime metrics
-      - path: /config/containers/multi-service_container/
+      - path: __SUBDIR__/config/containers/multi-service_container/
         title: Run multiple processes in a container
-      - path: /config/daemon/prometheus/
+      - path: __SUBDIR__/config/daemon/prometheus/
         title: Collect metrics with Prometheus
 @z
 
@@ -3813,17 +3813,17 @@ Manuals:
 @y
     - sectiontitle: Daemon configuration
       section:
-      - path: /config/daemon/
+      - path: __SUBDIR__/config/daemon/
         title: Configuration overview
-      - path: /config/daemon/systemd/
+      - path: __SUBDIR__/config/daemon/systemd/
         title: Configure with systemd
-      - path: /config/containers/live-restore/
+      - path: __SUBDIR__/config/containers/live-restore/
         title: Live restore
-      - path: /config/daemon/troubleshoot/
+      - path: __SUBDIR__/config/daemon/troubleshoot/
         title: Troubleshoot
-      - path: /config/daemon/remote-access/
+      - path: __SUBDIR__/config/daemon/remote-access/
         title: Remote access
-      - path: /engine/context/working-with-contexts/
+      - path: __SUBDIR__/engine/context/working-with-contexts/
         title: Contexts
 @z
 
@@ -3847,19 +3847,19 @@ Manuals:
 @y
     - sectiontitle: Engine plugins
       section:
-      - path: /engine/extend/
+      - path: __SUBDIR__/engine/extend/
         title: Managed plugin system
-      - path: /engine/extend/plugins_authorization/
+      - path: __SUBDIR__/engine/extend/plugins_authorization/
         title: Access authorization plugin
-      - path: /engine/extend/legacy_plugins/
+      - path: __SUBDIR__/engine/extend/legacy_plugins/
         title: Extending Docker with plugins
-      - path: /engine/extend/plugins_network/
+      - path: __SUBDIR__/engine/extend/plugins_network/
         title: Docker network driver plugins
-      - path: /engine/extend/plugins_volume/
+      - path: __SUBDIR__/engine/extend/plugins_volume/
         title: Volume plugins
       - title: Plugin configuration
-        path: /engine/extend/config/
-      - path: /engine/extend/plugin_api/
+        path: __SUBDIR__/engine/extend/config/
+      - path: __SUBDIR__/engine/extend/plugin_api/
         title: Plugins
 @z
 
@@ -3893,33 +3893,33 @@ Manuals:
       - path: /engine/release-notes/18.01/
         title: Engine 18.01
 @y
-  - path: /engine/deprecated/
+  - path: __SUBDIR__/engine/deprecated/
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: /engine/release-notes/24.0/
+    - path: __SUBDIR__/engine/release-notes/24.0/
       title: Engine 24.0
     - sectiontitle: Previous versions
       section:
-      - path: /engine/release-notes/23.0/
+      - path: __SUBDIR__/engine/release-notes/23.0/
         title: Engine 23.0
-      - path: /engine/release-notes/20.10/
+      - path: __SUBDIR__/engine/release-notes/20.10/
         title: Engine 20.10
-      - path: /engine/release-notes/19.03/
+      - path: __SUBDIR__/engine/release-notes/19.03/
         title: Engine 19.03
-      - path: /engine/release-notes/18.09/
+      - path: __SUBDIR__/engine/release-notes/18.09/
         title: Engine 18.09
-      - path: /engine/release-notes/18.06/
+      - path: __SUBDIR__/engine/release-notes/18.06/
         title: Engine 18.06
-      - path: /engine/release-notes/18.05/
+      - path: __SUBDIR__/engine/release-notes/18.05/
         title: Engine 18.05
-      - path: /engine/release-notes/18.04/
+      - path: __SUBDIR__/engine/release-notes/18.04/
         title: Engine 18.04
-      - path: /engine/release-notes/18.03/
+      - path: __SUBDIR__/engine/release-notes/18.03/
         title: Engine 18.03
-      - path: /engine/release-notes/18.02/
+      - path: __SUBDIR__/engine/release-notes/18.02/
         title: Engine 18.02
-      - path: /engine/release-notes/18.01/
+      - path: __SUBDIR__/engine/release-notes/18.01/
         title: Engine 18.01
 @z
 
@@ -3945,25 +3945,25 @@ Manuals:
       - path: /engine/release-notes/prior-releases/
         title: Engine 1.13 and earlier
 @y
-      - path: /engine/release-notes/17.12/
+      - path: __SUBDIR__/engine/release-notes/17.12/
         title: Engine 17.12
-      - path: /engine/release-notes/17.11/
+      - path: __SUBDIR__/engine/release-notes/17.11/
         title: Engine 17.11
-      - path: /engine/release-notes/17.10/
+      - path: __SUBDIR__/engine/release-notes/17.10/
         title: Engine 17.10
-      - path: /engine/release-notes/17.09/
+      - path: __SUBDIR__/engine/release-notes/17.09/
         title: Engine 17.09
-      - path: /engine/release-notes/17.07/
+      - path: __SUBDIR__/engine/release-notes/17.07/
         title: Engine 17.07
-      - path: /engine/release-notes/17.06/
+      - path: __SUBDIR__/engine/release-notes/17.06/
         title: Engine 17.06
-      - path: /engine/release-notes/17.05/
+      - path: __SUBDIR__/engine/release-notes/17.05/
         title: Engine 17.05
-      - path: /engine/release-notes/17.04/
+      - path: __SUBDIR__/engine/release-notes/17.04/
         title: Engine 17.04
-      - path: /engine/release-notes/17.03/
+      - path: __SUBDIR__/engine/release-notes/17.03/
         title: Engine 17.03
-      - path: /engine/release-notes/prior-releases/
+      - path: __SUBDIR__/engine/release-notes/prior-releases/
         title: Engine 1.13 and earlier
 @z
 
@@ -3997,29 +3997,29 @@ Manuals:
 @y
 - sectiontitle: Docker Build
   section:
-    - path: /build/
+    - path: __SUBDIR__/build/
       title: Overview
-    - path: /build/architecture/
+    - path: __SUBDIR__/build/architecture/
       title: Architecture
     - sectiontitle: Building images
       section:
-        - path: /build/building/packaging/
+        - path: __SUBDIR__/build/building/packaging/
           title: Packaging your software
-        - path: /build/building/context/
+        - path: __SUBDIR__/build/building/context/
           title: Context
-        - path: /build/building/multi-stage/
+        - path: __SUBDIR__/build/building/multi-stage/
           title: Multi-stage builds
-        - path: /build/building/multi-platform/
+        - path: __SUBDIR__/build/building/multi-platform/
           title: Multi-platform images
-        - path: /build/building/env-vars/
+        - path: __SUBDIR__/build/building/env-vars/
           title: Environment variables
-        - path: /build/building/secrets/
+        - path: __SUBDIR__/build/building/secrets/
           title: Build secrets
-        - path: /build/building/annotations/
+        - path: __SUBDIR__/build/building/annotations/
           title: Annotations
-        - path: /build/building/opentelemetry/
+        - path: __SUBDIR__/build/building/opentelemetry/
           title: OpenTelemetry support
-        - path: /build/building/base-images/
+        - path: __SUBDIR__/build/building/base-images/
           title: Create your own base image
 @z
 
@@ -4045,21 +4045,21 @@ Manuals:
 @y
     - sectiontitle: Builders
       section:
-        - path: /build/builders/
+        - path: __SUBDIR__/build/builders/
           title: Builders overview
-        - path: /build/builders/manage/
+        - path: __SUBDIR__/build/builders/manage/
           title: Manage builders
     - sectiontitle: Drivers
       section:
-        - path: /build/drivers/
+        - path: __SUBDIR__/build/drivers/
           title: Drivers overview
-        - path: /build/drivers/docker/
+        - path: __SUBDIR__/build/drivers/docker/
           title: Docker driver
-        - path: /build/drivers/docker-container/
+        - path: __SUBDIR__/build/drivers/docker-container/
           title: Docker container driver
-        - path: /build/drivers/kubernetes/
+        - path: __SUBDIR__/build/drivers/kubernetes/
           title: Kubernetes driver
-        - path: /build/drivers/remote/
+        - path: __SUBDIR__/build/drivers/remote/
           title: Remote driver
 @z
 
@@ -4077,13 +4077,13 @@ Manuals:
 @y
     - sectiontitle: Exporters
       section:
-        - path: /build/exporters/
+        - path: __SUBDIR__/build/exporters/
           title: Overview
-        - path: /build/exporters/image-registry/
+        - path: __SUBDIR__/build/exporters/image-registry/
           title: Image and registry exporters
-        - path: /build/exporters/local-tar/
+        - path: __SUBDIR__/build/exporters/local-tar/
           title: Local and tar exporters
-        - path: /build/exporters/oci-docker/
+        - path: __SUBDIR__/build/exporters/oci-docker/
           title: OCI and Docker exporters
 @z
 
@@ -4113,25 +4113,25 @@ Manuals:
 @y
     - sectiontitle: Cache
       section:
-        - path: /build/cache/
+        - path: __SUBDIR__/build/cache/
           title: Optimizing builds with cache
-        - path: /build/cache/garbage-collection/
+        - path: __SUBDIR__/build/cache/garbage-collection/
           title: Garbage collection
         - sectiontitle: Cache backends
           section:
-            - path: /build/cache/backends/
+            - path: __SUBDIR__/build/cache/backends/
               title: Overview
-            - path: /build/cache/backends/inline/
+            - path: __SUBDIR__/build/cache/backends/inline/
               title: Inline
-            - path: /build/cache/backends/local/
+            - path: __SUBDIR__/build/cache/backends/local/
               title: Local
-            - path: /build/cache/backends/registry/
+            - path: __SUBDIR__/build/cache/backends/registry/
               title: Registry
-            - path: /build/cache/backends/gha/
+            - path: __SUBDIR__/build/cache/backends/gha/
               title: GitHub Actions
-            - path: /build/cache/backends/azblob/
+            - path: __SUBDIR__/build/cache/backends/azblob/
               title: Azure Blob Storage
-            - path: /build/cache/backends/s3/
+            - path: __SUBDIR__/build/cache/backends/s3/
               title: Amazon S3
 @z
 
@@ -4155,19 +4155,19 @@ Manuals:
 @y
     - sectiontitle: Bake
       section:
-        - path: /build/bake/
+        - path: __SUBDIR__/build/bake/
           title: Overview
-        - path: /build/bake/reference/
+        - path: __SUBDIR__/build/bake/reference/
           title: Bake file reference
-        - path: /build/bake/configuring-build/
+        - path: __SUBDIR__/build/bake/configuring-build/
           title: Configuring builds
-        - path: /build/bake/advanced/
+        - path: __SUBDIR__/build/bake/advanced/
           title: Advanced patterns
-        - path: /build/bake/build-contexts/
+        - path: __SUBDIR__/build/bake/build-contexts/
           title: Build contexts and linking targets
-        - path: /build/bake/compose-file/
+        - path: __SUBDIR__/build/bake/compose-file/
           title: Building from Compose file
-        - path: /build/bake/remote-definition/
+        - path: __SUBDIR__/build/bake/remote-definition/
           title: Remote Bake file definition
 @z
 
@@ -4187,15 +4187,15 @@ Manuals:
 @y
     - sectiontitle: Attestations
       section:
-        - path: /build/attestations/
+        - path: __SUBDIR__/build/attestations/
           title: Overview
-        - path: /build/attestations/sbom/
+        - path: __SUBDIR__/build/attestations/sbom/
           title: SBOM
-        - path: /build/attestations/slsa-provenance/
+        - path: __SUBDIR__/build/attestations/slsa-provenance/
           title: Provenance
-        - path: /build/attestations/slsa-definitions/
+        - path: __SUBDIR__/build/attestations/slsa-definitions/
           title: SLSA definitions
-        - path: /build/attestations/attestation-storage/
+        - path: __SUBDIR__/build/attestations/attestation-storage/
           title: Attestation storage
 @z
 
@@ -4217,17 +4217,17 @@ Manuals:
 @y
     - sectiontitle: Dockerfile
       section:
-        - path: /build/dockerfile/frontend/
+        - path: __SUBDIR__/build/dockerfile/frontend/
           title: Custom Dockerfile syntax
-        - path: /build/dockerfile/release-notes/
+        - path: __SUBDIR__/build/dockerfile/release-notes/
           title: Release notes
     - sectiontitle: BuildKit
       section:
-        - path: /build/buildkit/
+        - path: __SUBDIR__/build/buildkit/
           title: Overview
-        - path: /build/buildkit/configure/
+        - path: __SUBDIR__/build/buildkit/configure/
           title: Configure
-        - path: /build/buildkit/toml-configuration/
+        - path: __SUBDIR__/build/buildkit/toml-configuration/
           title: TOML configuration
 @z
 
@@ -4255,23 +4255,23 @@ Manuals:
 @y
     - sectiontitle: Continuous integration
       section:
-        - path: /build/ci/
+        - path: __SUBDIR__/build/ci/
           title: CI with Docker
         - sectiontitle: GitHub Actions
           section:
-          - path: /build/ci/github-actions/
+          - path: __SUBDIR__/build/ci/github-actions/
             title: Introduction
-          - path: /build/ci/github-actions/configure-builder/
+          - path: __SUBDIR__/build/ci/github-actions/configure-builder/
             title: Configuring your builder
-          - path: /build/ci/github-actions/multi-platform/
+          - path: __SUBDIR__/build/ci/github-actions/multi-platform/
             title: Multi-platform image
-          - path: /build/ci/github-actions/secrets/
+          - path: __SUBDIR__/build/ci/github-actions/secrets/
             title: Secrets
-          - path: /build/ci/github-actions/push-multi-registries/
+          - path: __SUBDIR__/build/ci/github-actions/push-multi-registries/
             title: Push to multiple registries
-          - path: /build/ci/github-actions/manage-tags-labels/
+          - path: __SUBDIR__/build/ci/github-actions/manage-tags-labels/
             title: Manage tags and labels
-          - path: /build/ci/github-actions/cache/
+          - path: __SUBDIR__/build/ci/github-actions/cache/
             title: Cache management
 @z
 
@@ -4297,25 +4297,25 @@ Manuals:
     - path: /build/release-notes/
       title: Release notes
 @y
-          - path: /build/ci/github-actions/export-docker/
+          - path: __SUBDIR__/build/ci/github-actions/export-docker/
             title: Export to Docker
-          - path: /build/ci/github-actions/test-before-push/
+          - path: __SUBDIR__/build/ci/github-actions/test-before-push/
             title: Test before push
-          - path: /build/ci/github-actions/local-registry/
+          - path: __SUBDIR__/build/ci/github-actions/local-registry/
             title: Local registry
-          - path: /build/ci/github-actions/share-image-jobs/
+          - path: __SUBDIR__/build/ci/github-actions/share-image-jobs/
             title: Share built image between jobs
-          - path: /build/ci/github-actions/named-contexts/
+          - path: __SUBDIR__/build/ci/github-actions/named-contexts/
             title: Named contexts
-          - path: /build/ci/github-actions/copy-image-registries/
+          - path: __SUBDIR__/build/ci/github-actions/copy-image-registries/
             title: Copy image between registries
-          - path: /build/ci/github-actions/update-dockerhub-desc/
+          - path: __SUBDIR__/build/ci/github-actions/update-dockerhub-desc/
             title: Update Docker Hub repo description
-          - path: /build/ci/github-actions/attestations/
+          - path: __SUBDIR__/build/ci/github-actions/attestations/
             title: SBOM and provenance attestations
-          - path: /build/ci/github-actions/annotations/
+          - path: __SUBDIR__/build/ci/github-actions/annotations/
             title: Annotations
-    - path: /build/release-notes/
+    - path: __SUBDIR__/build/release-notes/
       title: Release notes
 @z
 
@@ -4345,25 +4345,25 @@ Manuals:
 @y
 - sectiontitle: Docker Compose
   section:
-  - path: /compose/
+  - path: __SUBDIR__/compose/
     title: Overview
-  - path: /compose/features-uses/
+  - path: __SUBDIR__/compose/features-uses/
     title: Key features and use cases
-  - path: /compose/history/
+  - path: __SUBDIR__/compose/history/
     title: History and development of Compose
   - sectiontitle: Install Docker Compose
     section:
-      - path: /compose/install/
+      - path: __SUBDIR__/compose/install/
         title: Overview
-      - path: /compose/install/linux/
+      - path: __SUBDIR__/compose/install/linux/
         title: Install Compose plugin
-      - path: /compose/install/standalone/
+      - path: __SUBDIR__/compose/install/standalone/
         title: Install Compose standalone
-      - path: /compose/install/uninstall/
+      - path: __SUBDIR__/compose/install/uninstall/
         title: Uninstall Compose
-  - path: /compose/migrate/
+  - path: __SUBDIR__/compose/migrate/
     title: Migrate to Compose V2
-  - path: /compose/gettingstarted/
+  - path: __SUBDIR__/compose/gettingstarted/
     title: Try Docker Compose
 @z
 
@@ -4385,17 +4385,17 @@ Manuals:
 @y
   - sectiontitle: Environment variables
     section:
-    - path: /compose/environment-variables/
+    - path: __SUBDIR__/compose/environment-variables/
       title: Overview
-    - path: /compose/environment-variables/set-environment-variables/
+    - path: __SUBDIR__/compose/environment-variables/set-environment-variables/
       title: Explore ways to set environment variables
-    - path: /compose/environment-variables/envvars-precedence/
+    - path: __SUBDIR__/compose/environment-variables/envvars-precedence/
       title: Understand environment variables precedence
-    - path: /compose/environment-variables/env-file/
+    - path: __SUBDIR__/compose/environment-variables/env-file/
       title: Syntax for environment files
-    - path: /compose/environment-variables/envvars/
+    - path: __SUBDIR__/compose/environment-variables/envvars/
       title: Set or change pre-defined environment variables
-    - path: /compose/environment-variables/best-practices/
+    - path: __SUBDIR__/compose/environment-variables/best-practices/
       title: Best practices
 @z
 
@@ -4413,17 +4413,17 @@ Manuals:
     - path: /compose/multiple-compose-files/include/
       title: Include
 @y
-  - path: /compose/profiles/
+  - path: __SUBDIR__/compose/profiles/
     title: Using service profiles
   - sectiontitle: Working with multiple Compose files
     section:
-    - path: /compose/multiple-compose-files/
+    - path: __SUBDIR__/compose/multiple-compose-files/
       title: Overview
-    - path: /compose/multiple-compose-files/extends/
+    - path: __SUBDIR__/compose/multiple-compose-files/extends/
       title: Extend
-    - path: /compose/multiple-compose-files/merge/
+    - path: __SUBDIR__/compose/multiple-compose-files/merge/
       title: Merge
-    - path: /compose/multiple-compose-files/include/
+    - path: __SUBDIR__/compose/multiple-compose-files/include/
       title: Include
 @z
 
@@ -4445,21 +4445,21 @@ Manuals:
   - path: /compose/release-notes/
     title: Release notes
 @y
-  - path: /compose/gpu-support/
+  - path: __SUBDIR__/compose/gpu-support/
     title: GPU support in Compose
-  - path: /compose/networking/
+  - path: __SUBDIR__/compose/networking/
     title: Networking in Compose
-  - path: /compose/file-watch/
+  - path: __SUBDIR__/compose/file-watch/
     title: Use Compose Watch
-  - path: /compose/production/
+  - path: __SUBDIR__/compose/production/
     title: Using Compose in production
-  - path: /compose/use-secrets/
+  - path: __SUBDIR__/compose/use-secrets/
     title: Using secrets in Compose
-  - path: /compose/startup-order/
+  - path: __SUBDIR__/compose/startup-order/
     title: Control startup order
-  - path: /compose/samples-for-compose/
+  - path: __SUBDIR__/compose/samples-for-compose/
     title: Sample apps with Compose
-  - path: /compose/release-notes/
+  - path: __SUBDIR__/compose/release-notes/
     title: Release notes
 @z
 
@@ -4513,49 +4513,49 @@ Manuals:
 @y
 - sectiontitle: Docker Hub
   section:
-  - path: /docker-hub/
+  - path: __SUBDIR__/docker-hub/
     title: Overview
-  - path: /docker-id/
+  - path: docker-id/
     title: Create an account
-  - path: /docker-hub/quickstart/
+  - path: __SUBDIR__/docker-hub/quickstart/
     title: Quickstart
   - sectiontitle: Repositories
     section:
-      - path: /docker-hub/repos/create/
+      - path: __SUBDIR__/docker-hub/repos/create/
         title: Create
-      - path: /docker-hub/repos/access/
+      - path: __SUBDIR__/docker-hub/repos/access/
         title: Access
-      - path: /docker-hub/repos/
+      - path: __SUBDIR__/docker-hub/repos/
         title: Manage
-  - path: /docker-hub/download-rate-limit/
+  - path: __SUBDIR__/docker-hub/download-rate-limit/
     title: Download rate limit
-  - path: /docker-hub/webhooks/
+  - path: __SUBDIR__/docker-hub/webhooks/
     title: Webhooks
-  - path: /docker-hub/service-accounts/
+  - path: __SUBDIR__/docker-hub/service-accounts/
     title: Service accounts
   - sectiontitle: Automated builds
     section:
-      - path: /docker-hub/builds/how-builds-work/
+      - path: __SUBDIR__/docker-hub/builds/how-builds-work/
         title: How Automated builds work
-      - path: /docker-hub/builds/
+      - path: __SUBDIR__/docker-hub/builds/
         title: Set up Automated builds
-      - path: /docker-hub/builds/manage-builds/
+      - path: __SUBDIR__/docker-hub/builds/manage-builds/
         title: Manage your builds
-      - path: /docker-hub/builds/troubleshoot/
+      - path: __SUBDIR__/docker-hub/builds/troubleshoot/
         title: Troubleshoot your builds
-      - path: /docker-hub/builds/automated-testing/
+      - path: __SUBDIR__/docker-hub/builds/automated-testing/
         title: Testing in Automated builds
-      - path: /docker-hub/builds/advanced/
+      - path: __SUBDIR__/docker-hub/builds/advanced/
         title: Advanced options for builds
-      - path: /docker-hub/builds/link-source/
+      - path: __SUBDIR__/docker-hub/builds/link-source/
         title: Link to GitHub and BitBucket
-  - path: /docker-hub/vulnerability-scanning/
+  - path: __SUBDIR__/docker-hub/vulnerability-scanning/
     title: Vulnerability scanning
-  - path: /registry/
+  - path: __SUBDIR__/registry/
     title: Registry
-  - path: /docker-hub/oci-artifacts/
+  - path: __SUBDIR__/docker-hub/oci-artifacts/
     title: OCI artifacts
-  - path: /docker-hub/release-notes/
+  - path: __SUBDIR__/docker-hub/release-notes/
     title: Release notes
 @z
 
@@ -4577,17 +4577,17 @@ Manuals:
 @y
 - sectiontitle: Docker Admin (Early Access)
   section:
-  - path: /admin/
+  - path: __SUBDIR__/admin/
     title: Overview
   - sectiontitle: Company administration
     section:
-    - path: /admin/company/
+    - path: __SUBDIR__/admin/company/
       title: Overview
-    - path: /admin/company/organizations/
+    - path: __SUBDIR__/admin/company/organizations/
       title: Manage organizations
-    - path: /admin/company/users/
+    - path: __SUBDIR__/admin/company/users/
       title: Manage users
-    - path: /admin/company/owners/
+    - path: __SUBDIR__/admin/company/owners/
       title: Manage company owners
 @z
 
@@ -4607,15 +4607,15 @@ Manuals:
 @y
   - sectiontitle: Organization administration
     section:
-    - path: /admin/organization/
+    - path: __SUBDIR__/admin/organization/
       title: Overview
-    - path: /admin/organization/onboard/
+    - path: __SUBDIR__/admin/organization/onboard/
       title: Onboard your organization
-    - path: /admin/organization/members/
+    - path: __SUBDIR__/admin/organization/members/
       title: Manage members
-    - path: /admin/organization/activity-logs/
+    - path: __SUBDIR__/admin/organization/activity-logs/
       title: Activity logs
-    - path: /admin/organization/general-settings/
+    - path: __SUBDIR__/admin/organization/general-settings/
       title: General settings
 @z
 
@@ -4649,29 +4649,29 @@ Manuals:
 @y
 - sectiontitle: Administration 
   section:
-  - path: /docker-hub/admin-overview/
+  - path: __SUBDIR__/docker-hub/admin-overview/
     title: Overview
-  - path: /docker-hub/orgs/
+  - path: __SUBDIR__/docker-hub/orgs/
     title: Create your organization
-  - path: /docker-hub/onboard/
+  - path: __SUBDIR__/docker-hub/onboard/
     title: Onboard your organization
   - sectiontitle: Set up your company
     section:
-    - path: /docker-hub/creating-companies/
+    - path: __SUBDIR__/docker-hub/creating-companies/
       title: Overview
-    - path: /docker-hub/new-company/
+    - path: __SUBDIR__/docker-hub/new-company/
       title: Create a company
-    - path:  /docker-hub/company-owner/
+    - path:  docker-hub/company-owner/
       title: Manage company owners
-  - path: /docker-hub/convert-account/
+  - path: __SUBDIR__/docker-hub/convert-account/
     title: Convert an account into an organization
-  - path: /docker-hub/manage-a-team/
+  - path: __SUBDIR__/docker-hub/manage-a-team/
     title: Create and manage a team
-  - path: /docker-hub/members/
+  - path: __SUBDIR__/docker-hub/members/
     title: Manage members
-  - path: /docker-hub/audit-log/
+  - path: __SUBDIR__/docker-hub/audit-log/
     title: Audit logs
-  - path: /docker-hub/deactivate-account/
+  - path: __SUBDIR__/docker-hub/deactivate-account/
     title: Deactivate an account or organization
 @z
 
@@ -4723,47 +4723,47 @@ Manuals:
 @y
 - sectiontitle: Security
   section:
-  - path: /security/
+  - path: __SUBDIR__/security/
     title: Overview
   - sectiontitle: For admins
     section:
     - sectiontitle: Single Sign-on
       section:
-      -  path: /security/for-admins/single-sign-on/
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/
          title: Overview
-      -  path: /security/for-admins/single-sign-on/configure/
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/configure/
          title: Configure
-      -  path: /security/for-admins/single-sign-on/manage/
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/manage/
          title: Manage
-    - path: /security/for-admins/scim/
+    - path: __SUBDIR__/security/for-admins/scim/
       title: SCIM
-    - path: /security/for-admins/group-mapping/
+    - path: __SUBDIR__/security/for-admins/group-mapping/
       title: Group mapping
-    - path: /security/for-admins/configure-sign-in/
+    - path: __SUBDIR__/security/for-admins/configure-sign-in/
       title: Enforce sign in
-    - path: /security/for-admins/roles-and-permissions/
+    - path: __SUBDIR__/security/for-admins/roles-and-permissions/
       title: Roles and permissions
-    - path: /security/for-admins/domain-audit/
+    - path: __SUBDIR__/security/for-admins/domain-audit/
       title: Domain audit
-    - path: /security/for-admins/image-access-management/
+    - path: __SUBDIR__/security/for-admins/image-access-management/
       title: Image Access Management
-    - path: /security/for-admins/registry-access-management/
+    - path: __SUBDIR__/security/for-admins/registry-access-management/
       title: Registry Access Management
   - sectiontitle: For developers
     section:
-    - path: /security/for-developers/access-tokens/
+    - path: __SUBDIR__/security/for-developers/access-tokens/
       title: Create and manage access tokens
     - sectiontitle: Two-factor authentication
       section:
-      - path: /security/for-developers/2fa/
+      - path: __SUBDIR__/security/for-developers/2fa/
         title: Enable two-factor authentication 
-      - path: /security/for-developers/2fa/disable-2fa/
+      - path: __SUBDIR__/security/for-developers/2fa/disable-2fa/
         title: Disable two-factor authentication
-      - path: /security/for-developers/2fa/recover-hub-account/
+      - path: __SUBDIR__/security/for-developers/2fa/recover-hub-account/
         title: Recover your Docker Hub account
-      - path: /security/for-developers/2fa/new-recovery-code/
+      - path: __SUBDIR__/security/for-developers/2fa/new-recovery-code/
         title: Generate a new recovery code
-  - path: /security/security-announcements/
+  - path: __SUBDIR__/security/security-announcements/
     title: Security announcements
 @z
 
@@ -4785,17 +4785,17 @@ Manuals:
 @y
 - sectiontitle: Billing
   section:
-  - path: /billing/
+  - path: __SUBDIR__/billing/
     title: Overview
-  - path: /billing/payment-method/
+  - path: __SUBDIR__/billing/payment-method/
     title: Add or update a payment method
-  - path: /billing/details/
+  - path: __SUBDIR__/billing/details/
     title: Update the billing information
-  - path: /billing/history/
+  - path: __SUBDIR__/billing/history/
     title: View your billing history
-  - path: /billing/cycle/
+  - path: __SUBDIR__/billing/cycle/
     title: Change your billing cycle
-  - path: /billing/scout-billing/
+  - path: __SUBDIR__/billing/scout-billing/
     title: Docker Scout billing
 @z
 
@@ -4821,21 +4821,21 @@ Manuals:
 @y
 - sectiontitle: Subscription
   section:
-  - path: /subscription/
+  - path: __SUBDIR__/subscription/
     title: Overview
-  - path: /subscription/details/
+  - path: __SUBDIR__/subscription/details/
     title: Docker subscriptions and features
-  - path: /subscription/upgrade/
+  - path: __SUBDIR__/subscription/upgrade/
     title: Upgrade
-  - path: /subscription/add-seats/
+  - path: __SUBDIR__/subscription/add-seats/
     title: Add seats
-  - path: /subscription/remove-seats/
+  - path: __SUBDIR__/subscription/remove-seats/
     title: Remove seats
-  - path: /subscription/downgrade/
+  - path: __SUBDIR__/subscription/downgrade/
     title: Downgrade
-  - path: /subscription/desktop-license/
+  - path: __SUBDIR__/subscription/desktop-license/
     title: Docker Desktop license agreement
-  - path: /subscription/scout-details/
+  - path: __SUBDIR__/subscription/scout-details/
     title: Docker Scout subscriptions and features
 @z
 
@@ -4855,15 +4855,15 @@ Manuals:
 @y
 - sectiontitle: Trusted content
   section:
-  - path: /trusted-content/
+  - path: __SUBDIR__/trusted-content/
     title: Overview
-  - path: /trusted-content/official-images/
+  - path: __SUBDIR__/trusted-content/official-images/
     title: Docker Official images
-  - path: /trusted-content/dvp-program/
+  - path: __SUBDIR__/trusted-content/dvp-program/
     title: Docker Verified Publisher Program
-  - path: /trusted-content/dsos-program/
+  - path: __SUBDIR__/trusted-content/dsos-program/
     title: Docker-Sponsored Open Source Program
-  - path: /trusted-content/insights-analytics/
+  - path: __SUBDIR__/trusted-content/insights-analytics/
     title: Insights and analytics
 @z
 
@@ -4875,11 +4875,11 @@ Manuals:
 - path: /release-lifecycle/
   title: Product release lifecycle
 @y
-- path: /release-notes/
+- path: __SUBDIR__/release-notes/
   title: Release notes
-- path: /support/
+- path: __SUBDIR__/support/
   title: Get support
-- path: /release-lifecycle/
+- path: __SUBDIR__/release-lifecycle/
   title: Product release lifecycle
 @z
 
@@ -4895,13 +4895,13 @@ FAQ:
     title: Compose
 @y
 FAQ:
-  - path: /faq/
+  - path: __SUBDIR__/faq/
     title: Overview
-  - path: /billing/faqs/
+  - path: __SUBDIR__/billing/faqs/
     title: Billing
-  - path: /build/cloud/faq/
+  - path: __SUBDIR__/build/cloud/faq/
     title: Build Cloud
-  - path: /compose/faq/
+  - path: __SUBDIR__/compose/faq/
     title: Compose
 @z
 
@@ -4921,15 +4921,15 @@ FAQ:
 @y
   - sectiontitle: Desktop
     section:
-    - path: /desktop/faqs/general/
+    - path: __SUBDIR__/desktop/faqs/general/
       title: General
-    - path: /desktop/faqs/macfaqs/
+    - path: __SUBDIR__/desktop/faqs/macfaqs/
       title: Mac
-    - path: /desktop/faqs/windowsfaqs/
+    - path: __SUBDIR__/desktop/faqs/windowsfaqs/
       title: Windows
-    - path: /desktop/faqs/linuxfaqs/
+    - path: __SUBDIR__/desktop/faqs/linuxfaqs/
       title: Linux
-    - path: /desktop/faqs/releases/
+    - path: __SUBDIR__/desktop/faqs/releases/
       title: Releases
 @z
 
@@ -4945,11 +4945,11 @@ FAQ:
 @y
   - sectiontitle: Docker Hub and admin
     section:
-    - path: /docker-hub/general-faqs/
+    - path: __SUBDIR__/docker-hub/general-faqs/
       title: General
-    - path: /docker-hub/organization-faqs/
+    - path: __SUBDIR__/docker-hub/organization-faqs/
       title: Organization
-    - path: /docker-hub/company-faqs/
+    - path: __SUBDIR__/docker-hub/company-faqs/
       title: Company
 @z
 
@@ -4957,7 +4957,7 @@ FAQ:
   - path: /subscription/faq/
     title: Subscription
 @y
-  - path: /subscription/faq/
+  - path: __SUBDIR__/subscription/faq/
     title: Subscription
 @z
 
@@ -4975,13 +4975,13 @@ FAQ:
 @y
   - sectiontitle: Security
     section:
-    - path: /faq/security/general/
+    - path: __SUBDIR__/faq/security/general/
       title: General
-    - path: /faq/security/networking-and-vms/
+    - path: __SUBDIR__/faq/security/networking-and-vms/
       title: Networking and VMs
-    - path: /faq/security/settings-management/
+    - path: __SUBDIR__/faq/security/settings-management/
       title: Settings Management
-    - path: /faq/security/eci-faq/
+    - path: __SUBDIR__/faq/security/eci-faq/
       title: Enhanced Container Isolation
 @z
 
@@ -5003,16 +5003,16 @@ FAQ:
 @y
     - sectiontitle: Single Sign-On
       section:
-      - path: /faq/security/single-sign-on/faqs/
+      - path:  __SUBDIR__/faq/security/single-sign-on/faqs/
         title: General
-      - path: /faq/security/single-sign-on/saml-faqs/
+      - path:  __SUBDIR__/faq/security/single-sign-on/saml-faqs/
         title: SAML
-      - path: /faq/security/single-sign-on/idp-faqs/
+      - path:  __SUBDIR__/faq/security/single-sign-on/idp-faqs/
         title: Identity providers
-      - path: /faq/security/single-sign-on/domain-faqs/
+      - path:  __SUBDIR__/faq/security/single-sign-on/domain-faqs/
         title: Domains
-      - path: /faq/security/single-sign-on/enforcement-faqs/
+      - path:  __SUBDIR__/faq/security/single-sign-on/enforcement-faqs/
         title: Enforcement
-      - path: /faq/security/single-sign-on/users-faqs/
+      - path:  __SUBDIR__/faq/security/single-sign-on/users-faqs/
         title: Manage users
 @z

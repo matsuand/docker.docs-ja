@@ -37,37 +37,37 @@ grid:
 ---
 @y
 ---
-title: Contribute to Docker's docs
+title: Docker ドキュメントへの貢献
 toc_max: 1
 aliases:
 - /opensource/
 - /contribute/overview/
 - /contribute/contribute-guide/
 grid:
-- title: Grammar and style
+- title: 文法とスタイル
   description: Explore Docker's grammar and style guide
   icon: menu_book
-  link: /contribute/style/grammar
-- title: Formatting
+  link: __SUBDIR__/contribute/style/grammar
+- title: フォーマット
   description: Format your content to match the rest of our documentation.
   icon: newspaper
-  link: /contribute/style/formatting
-- title: Recommended word list
+  link: __SUBDIR__/contribute/style/formatting
+- title: 推奨される語句リスト
   description: Choose the right words for your content.
   icon: checklist
-  link: /contribute/style/recommended-words
-- title: Source file conventions
+  link: __SUBDIR__/contribute/style/recommended-words
+- title: ソースファイル規則
   description: Guidelines for creating a new page.
   icon: note_add
-  link: /contribute/file-conventions
-- title: Terminology
+  link: __SUBDIR__/contribute/file-conventions
+- title: 用語
   description: Explore commonly used Docker terms.
   icon: spellcheck
-  link: /contribute/style/terminology
-- title: Voice and tone
+  link: __SUBDIR__/contribute/style/terminology
+- title: 表現とトーン
   description: Learn about how we use voice and tone in our writing.
   icon: voice_selection
-  link: /contribute/style/voice-tone
+  link: __SUBDIR__/contribute/style/voice-tone
 ---
 @z
 
@@ -115,6 +115,6 @@ See also:
 - A [writing checklist](checklist.md) to help you when you're contributing to Docker's documentation.
 @y
 - A section of useful components you can add to your documentation.
-- Information on Docker's [tone and voice](style/voice-tone.md).
-- A [writing checklist](checklist.md) to help you when you're contributing to Docker's documentation.
+- Information on Docker's [tone and voice](__SUBDIR__/style/voice-tone.md).
+- A [writing checklist](__SUBDIR__/checklist.md) to help you when you're contributing to Docker's documentation.
 @z

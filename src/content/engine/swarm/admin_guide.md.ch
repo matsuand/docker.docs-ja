@@ -20,12 +20,12 @@ aliases:
 @z
 
 @x
-When you run a swarm of Docker Engines, **manager nodes** are the key components
+When you run a swarm of Docker Engines, manager nodes are the key components
 for managing the swarm and storing the swarm state. It is important to
 understand some key features of manager nodes to properly deploy and
 maintain the swarm.
 @y
-When you run a swarm of Docker Engines, **manager nodes** are the key components
+When you run a swarm of Docker Engines, manager nodes are the key components
 for managing the swarm and storing the swarm state. It is important to
 understand some key features of manager nodes to properly deploy and
 maintain the swarm.
@@ -299,12 +299,12 @@ available to process requests and rebalance workloads.
 By default manager nodes also act as a worker nodes. This means the scheduler
 can assign tasks to a manager node. For small and non-critical swarms
 assigning tasks to managers is relatively low-risk as long as you schedule
-services using **resource constraints** for *cpu* and *memory*.
+services using resource constraints for cpu and memory.
 @y
 By default manager nodes also act as a worker nodes. This means the scheduler
 can assign tasks to a manager node. For small and non-critical swarms
 assigning tasks to managers is relatively low-risk as long as you schedule
-services using **resource constraints** for *cpu* and *memory*.
+services using resource constraints for cpu and memory.
 @z
 
 @x
@@ -626,7 +626,7 @@ You can back up the swarm using any manager. Use the following procedure.
 @z
 
 @x
-    > Note
+    > **Note**
     > 
     > Be sure to maintain the quorum of swarm managers. During the
     > time that a manager is shut down, your swarm is more vulnerable to
@@ -635,7 +635,7 @@ You can back up the swarm using any manager. Use the following procedure.
     > consider running a five manager swarm, so that you can lose an additional
     > manager while the backup is running, without disrupting your services.
 @y
-    > Note
+    > **Note**
     > 
     > Be sure to maintain the quorum of swarm managers. During the
     > time that a manager is shut down, your swarm is more vulnerable to
@@ -708,7 +708,7 @@ restore the data to a new swarm.
 @z
 
 @x
-    > Note
+    > **Note**
     > 
     > The new node uses the same encryption key for on-disk
     > storage as the old one. It is not possible to change the on-disk storage
@@ -718,7 +718,7 @@ restore the data to a new swarm.
     > same as on the old swarm, and the unlock key is needed to restore the
     > swarm.
 @y
-    > Note
+    > **Note**
     > 
     > The new node uses the same encryption key for on-disk
     > storage as the old one. It is not possible to change the on-disk storage

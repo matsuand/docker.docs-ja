@@ -216,15 +216,15 @@ it only connects to servers with a certificate signed by that CA.
 @z
 
 @x
-> Advanced topic
+> **Important**
 >
-> Using TLS and managing a CA is an advanced topic. Please familiarize yourself
+> Using TLS and managing a CA is an advanced topic. Familiarize yourself
 > with OpenSSL, x509, and TLS before using it in production.
 { .important }
 @y
-> Advanced topic
+> **Important**
 >
-> Using TLS and managing a CA is an advanced topic. Please familiarize yourself
+> Using TLS and managing a CA is an advanced topic. Familiarize yourself
 > with OpenSSL, x509, and TLS before using it in production.
 { .important }
 @z
@@ -236,17 +236,21 @@ it only connects to servers with a certificate signed by that CA.
 @z
 
 @x
-> **Note**: Replace all instances of `$HOST` in the following example with the
+> **Note**
+>
+> Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @y
-> **Note**: Replace all instances of `$HOST` in the following example with the
+> **Note**
+>
+> Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @z
 
 @x
-First, on the **Docker daemon's host machine**, generate CA private and public keys:
+First, on the Docker daemon's host machine, generate CA private and public keys:
 @y
-First, on the **Docker daemon's host machine**, generate CA private and public keys:
+First, on the Docker daemon's host machine, generate CA private and public keys:
 @z
 
 @x
@@ -318,10 +322,14 @@ to connect to Docker:
 @z
 
 @x
-> **Note**: Replace all instances of `$HOST` in the following example with the
+> **Note**
+>
+> Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @y
-> **Note**: Replace all instances of `$HOST` in the following example with the
+> **Note**
+>
+> Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @z
 
@@ -438,10 +446,14 @@ request:
 @z
 
 @x
-> **Note**: For simplicity of the next couple of steps, you may perform this
+> **Note**
+>
+> For simplicity of the next couple of steps, you may perform this
 > step on the Docker daemon's host machine as well.
 @y
-> **Note**: For simplicity of the next couple of steps, you may perform this
+> **Note**
+>
+> For simplicity of the next couple of steps, you may perform this
 > step on the Docker daemon's host machine as well.
 @z
 
@@ -608,24 +620,30 @@ certificates and trusted CA:
 @z
 
 @x
-> Run it on the client machine
+> **Tip**
 >
 > This step should be run on your Docker client machine. As such, you
 > need to copy your CA certificate, your server certificate, and your client
 > certificate to that machine.
+{ .tip }
 @y
-> Run it on the client machine
+> **Tip**
 >
 > This step should be run on your Docker client machine. As such, you
 > need to copy your CA certificate, your server certificate, and your client
 > certificate to that machine.
+{ .tip }
 @z
 
 @x
-> **Note**: Replace all instances of `$HOST` in the following example with the
+> **Note**
+>
+> Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @y
-> **Note**: Replace all instances of `$HOST` in the following example with the
+> **Note**
+>
+> Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @z
 
@@ -648,15 +666,18 @@ $ docker --tlsverify \
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > Docker over TLS should run on TCP port 2376.
 @y
-> **Note**:
+> **Note**
+>
 > Docker over TLS should run on TCP port 2376.
 @z
 
 @x
-> **Warning**:
+> **Warning**
+>
 > As shown in the example above, you don't need to run the `docker` client
 > with `sudo` or the `docker` group when you use certificate authentication.
 > That means anyone with the keys can give any instructions to your Docker
@@ -664,7 +685,8 @@ $ docker --tlsverify \
 > these keys as you would a root password!
 { .warning }
 @y
-> **Warning**:
+> **Warning**
+>
 > As shown in the example above, you don't need to run the `docker` client
 > with `sudo` or the `docker` group when you use certificate authentication.
 > That means anyone with the keys can give any instructions to your Docker

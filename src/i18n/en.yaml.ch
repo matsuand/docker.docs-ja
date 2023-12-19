@@ -1,6 +1,9 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+%%%%%%%%%%
+Workaround; Japanese translation should be done by ja.yaml...
+%%%%%%%%%%
 @x
 ## sidebar/aside/toc strings:
 @y
@@ -22,9 +25,9 @@ relatedContent:
 readingTime:
   other: "所要時間 {{ . }} 分"
 editPage:
-  other: Edit this page
+  other: 本ページ編集
 requestChanges:
-  other: Request changes
+  other: 変更リクエスト
 tableOfContents:
   other: もくじ
 relatedContent:

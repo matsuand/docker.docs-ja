@@ -50,11 +50,15 @@ Config values can be generic strings or binary content (up to 500 kb in size).
 @z
 
 @x
-> **Note**: Docker configs are only available to swarm services, not to
+> **Note**
+>
+> Docker configs are only available to swarm services, not to
 > standalone containers. To use this feature, consider adapting your container
 > to run as a service with a scale of 1.
 @y
-> **Note**: Docker configs are only available to swarm services, not to
+> **Note**
+>
+> Docker configs are only available to swarm services, not to
 > standalone containers. To use this feature, consider adapting your container
 > to run as a service with a scale of 1.
 @z
@@ -304,11 +308,15 @@ Docker configs.
 @z
 
 @x
-> **Note**: These examples use a single-Engine swarm and unscaled services for
+> **Note**
+>
+> These examples use a single-engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
 > support configs.
 @y
-> **Note**: These examples use a single-Engine swarm and unscaled services for
+> **Note**
+>
+> These examples use a single-engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
 > support configs.
 @z

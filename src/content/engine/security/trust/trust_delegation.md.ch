@@ -52,9 +52,9 @@ initialize a repository, manage the repository keys, and add a collaborator's ke
 @z
 
 @x
-## Configuring the Docker Client
+## Configuring the Docker client
 @y
-## Configuring the Docker Client
+## Configuring the Docker client
 @z
 
 @x
@@ -188,9 +188,9 @@ Failed to add signer to: registry.example.com/user/repo
 @z
 
 @x
-## Configuring the Notary Client
+## Configuring the Notary client
 @y
-## Configuring the Notary Client
+## Configuring the Notary client
 @z
 
 @x
@@ -252,9 +252,9 @@ Docker Content Trust use cases, refer to the Notary CLI documentation
 @z
 
 @x
-## Creating Delegation Keys
+## Creating delegation keys
 @y
-## Creating Delegation Keys
+## Creating delegation keys
 @z
 
 @x
@@ -268,9 +268,9 @@ a certificate authority.
 @z
 
 @x
-### Using Docker Trust to Generate Keys
+### Using Docker Trust to generate keys
 @y
-### Using Docker Trust to Generate Keys
+### Using Docker Trust to generate keys
 @z
 
 @x
@@ -306,9 +306,9 @@ Successfully generated and loaded private key. Corresponding public key availabl
 @z
 
 @x
-### Manually Generating Keys
+### Manually generating keys
 @y
-### Manually Generating Keys
+### Manually generating keys
 @z
 
 @x
@@ -434,9 +434,9 @@ Successfully imported key from delegation.key
 @z
 
 @x
-### Viewing local Delegation keys 
+### Viewing local delegation keys 
 @y
-### Viewing local Delegation keys 
+### Viewing local delegation keys 
 @z
 
 @x
@@ -470,19 +470,19 @@ jeff                                    9deed251daa1aa6f9d5f9b752847647cf8d705da
 @z
 
 @x
-## Managing Delegations in a Notary Server
+## Managing delegations in a Notary Server
 @y
-## Managing Delegations in a Notary Server
+## Managing delegations in a Notary Server
 @z
 
 @x
-When the first Delegation is added to the Notary Server using `$ docker trust`,
+When the first delegation is added to the Notary Server using `$ docker trust`,
 we automatically initiate trust data for the repository. This includes creating 
 the notary target and snapshots keys, and rotating the snapshot key to be 
 managed by the notary server. More information on these keys can be found 
 [here](trust_key_mng.md)
 @y
-When the first Delegation is added to the Notary Server using `$ docker trust`,
+When the first delegation is added to the Notary Server using `$ docker trust`,
 we automatically initiate trust data for the repository. This includes creating 
 the notary target and snapshots keys, and rotating the snapshot key to be 
 managed by the notary server. More information on these keys can be found 
@@ -500,15 +500,21 @@ therefore don't have a Notary root key, `$ docker trust` will create one for you
 @z
 
 @x
-> Be sure to protect and back up your [Notary Canonical Root Key](trust_key_mng.md)
+> **Important**
+>
+> Be sure to protect and back up your [Notary Canonical Root Key](trust_key_mng.md).
+{ .important }
 @y
-> Be sure to protect and back up your [Notary Canonical Root Key](trust_key_mng.md)
+> **Important**
+>
+> Be sure to protect and back up your [Notary Canonical Root Key](trust_key_mng.md).
+{ .important }
 @z
 
 @x
-### Initiating the Repository
+### Initiating the repository
 @y
-### Initiating the Repository
+### Initiating the repository
 @z
 
 @x
@@ -648,9 +654,9 @@ targets/releases    "" <all paths>    1091060d7bfd938dfa5be703fa057974f9322a4fae
 @z
 
 @x
-### Adding Additional Signers
+### Adding additional signers
 @y
-### Adding Additional Signers
+### Adding additional signers
 @z
 
 @x
@@ -746,9 +752,9 @@ Administrative keys for registry.example.com/admin/demo
 @z
 
 @x
-### Adding Keys to an Existing Delegation
+### Adding keys to an existing delegation
 @y
-### Adding Keys to an Existing Delegation
+### Adding keys to an existing delegation
 @z
 
 @x
@@ -764,10 +770,14 @@ will automatically handle adding this new key to `targets/releases`.
 @z
 
 @x
-> Note you will need the passphrase for the repository key; this would have been
+> **Note**
+>
+> You will need the passphrase for the repository key; this would have been
 > configured when you first initiated the repository.
 @y
-> Note you will need the passphrase for the repository key; this would have been
+> **Note**
+>
+> You will need the passphrase for the repository key; this would have been
 > configured when you first initiated the repository.
 @z
 
@@ -842,9 +852,9 @@ Administrative keys for registry.example.com/admin/demo
 @z
 
 @x
-### Removing a Delegation
+### Removing a delegation
 @y
-### Removing a Delegation
+### Removing a delegation
 @z
 
 @x
@@ -858,10 +868,14 @@ attached to the `targets/releases` role, you can use the
 @z
 
 @x
-> Note tags that were signed by the removed delegation will need to be resigned 
+> **Note**
+>
+> Tags that were signed by the removed delegation will need to be resigned 
 > by an active delegation
 @y
-> Note tags that were signed by the removed delegation will need to be resigned 
+> **Note**
+>
+> Tags that were signed by the removed delegation will need to be resigned 
 > by an active delegation
 @z
 
@@ -928,33 +942,33 @@ Successfully removed ben from registry.example.com/admin/demo
 @z
 
 @x
-Resigning the delegation file is done with the `$ notary witness` command
+   Resigning the delegation file is done with the `$ notary witness` command
 @y
-Resigning the delegation file is done with the `$ notary witness` command
+   Resigning the delegation file is done with the `$ notary witness` command
 @z
 
 @x
-```console
-$ notary witness registry.example.com/admin/demo targets/releases --publish
-```
+   ```console
+   $ notary witness registry.example.com/admin/demo targets/releases --publish
+   ```
 @y
-```console
-$ notary witness registry.example.com/admin/demo targets/releases --publish
-```
+   ```console
+   $ notary witness registry.example.com/admin/demo targets/releases --publish
+   ```
 @z
 
 @x
-More information on the `$ notary witness` command can be found 
-[here](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
+   More information on the `$ notary witness` command can be found 
+   [here](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
 @y
-More information on the `$ notary witness` command can be found 
-[here](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
+   More information on the `$ notary witness` command can be found 
+   [here](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
 @z
 
 @x
-### Removing a Contributor's Key from a Delegation
+### Removing a contributor's key from a delegation
 @y
-### Removing a Contributor's Key from a Delegation
+### Removing a contributor's key from a delegation
 @z
 
 @x
@@ -1100,9 +1114,9 @@ and the role specific to that signer `targets/<name>`.
 @z
 
 @x
-### Removing a local Delegation Private Key
+### Removing a local delegation private key
 @y
-### Removing a local Delegation Private Key
+### Removing a local delegation private key
 @z
 
 @x
@@ -1176,9 +1190,9 @@ the `$ notary key remove` command.
 @z
 
 @x
-## Removing all trust data from a Repository
+## Removing all trust data from a repository
 @y
-## Removing all trust data from a Repository
+## Removing all trust data from a repository
 @z
 
 @x

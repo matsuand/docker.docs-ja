@@ -38,9 +38,9 @@ Before working through this sandbox, you should have read through the
 @z
 
 @x
-### Prerequisites
+## Prerequisites
 @y
-### Prerequisites
+## Prerequisites
 @z
 
 @x
@@ -172,17 +172,17 @@ the `trustsandbox` container, the Notary server, and the Registry server.
 @z
 
 @x
-2. Create a file called `docker-compose.yml` with your favorite editor.  For example, using vim:
+2. Create a file called `compose.yml` with your favorite editor.  For example, using vim:
 @y
-2. Create a file called `docker-compose.yml` with your favorite editor.  For example, using vim:
+2. Create a file called `compose.yml` with your favorite editor.  For example, using vim:
 @z
 
 @x
-        $ touch docker-compose.yml
-        $ vim docker-compose.yml
+        $ touch compose.yml
+        $ vim compose.yml
 @y
-        $ touch docker-compose.yml
-        $ vim docker-compose.yml
+        $ touch compose.yml
+        $ vim compose.yml
 @z
 
 @x

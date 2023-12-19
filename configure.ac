@@ -47,6 +47,7 @@ AC_CONFIG_FILES([
 	src/content/build/ci/github-actions/Makefile
 	src/content/build/ci/github-actions/images/Makefile
 	src/content/build/ci/images/Makefile
+	src/content/build/cloud/Makefile
 	src/content/build/dockerfile/Makefile
 	src/content/build/drivers/Makefile
 	src/content/build/exporters/Makefile

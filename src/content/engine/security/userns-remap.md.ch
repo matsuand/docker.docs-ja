@@ -88,7 +88,7 @@ has no privileges on the host system at all.
 @z
 
 @x
-> Multiple ranges
+> **Note**
 >
 > It is possible to assign multiple subordinate ranges for a given user or group
 > by adding multiple non-overlapping mappings for the same user or group in the
@@ -96,7 +96,7 @@ has no privileges on the host system at all.
 > five mappings, in accordance with the kernel's limitation of only five entries
 > in `/proc/self/uid_map` and `/proc/self/gid_map`.
 @y
-> Multiple ranges
+> **Note**
 >
 > It is possible to assign multiple subordinate ranges for a given user or group
 > by adding multiple non-overlapping mappings for the same user or group in the
@@ -118,13 +118,17 @@ purpose.
 @z
 
 @x
-> **Warning**: Some distributions, such as RHEL and CentOS 7.3, do not
+> **Warning**
+>
+> Some distributions, such as RHEL and CentOS 7.3, do not
 > automatically add the new group to the `/etc/subuid` and `/etc/subgid` files.
 > You are responsible for editing these files and assigning non-overlapping
 > ranges, in this case. This step is covered in [Prerequisites](#prerequisites).
 { .warning }
 @y
-> **Warning**: Some distributions, such as RHEL and CentOS 7.3, do not
+> **Warning**
+>
+> Some distributions, such as RHEL and CentOS 7.3, do not
 > automatically add the new group to the `/etc/subuid` and `/etc/subgid` files.
 > You are responsible for editing these files and assigning non-overlapping
 > ranges, in this case. This step is covered in [Prerequisites](#prerequisites).
@@ -263,11 +267,11 @@ avoid these situations.
 
 @x
     If you want to use the `dockremap` user automatically created by Docker,
-    check for the `dockremap` entry in these files **after**
+    check for the `dockremap` entry in these files after
     configuring and restarting Docker.
 @y
     If you want to use the `dockremap` user automatically created by Docker,
-    check for the `dockremap` entry in these files **after**
+    check for the `dockremap` entry in these files after
     configuring and restarting Docker.
 @z
 
@@ -392,10 +396,14 @@ $ dockerd --userns-remap="testuser:testuser"
 @z
 
 @x
-    > **Note**: To use the `dockremap` user and have Docker create it for you,
+    > **Note**
+    >
+    > To use the `dockremap` user and have Docker create it for you,
     > set the value to `default` rather than `testuser`.
 @y
-    > **Note**: To use the `dockremap` user and have Docker create it for you,
+    > **Note**
+    >
+    > To use the `dockremap` user and have Docker create it for you,
     > set the value to `default` rather than `testuser`.
 @z
 
@@ -636,14 +644,14 @@ daemon with user namespaces enabled:
 @z
 
 @x
-- sharing PID or NET namespaces with the host (`--pid=host` or `--network=host`).
-- external (volume or storage) drivers which are unaware or incapable of using
+- Sharing PID or NET namespaces with the host (`--pid=host` or `--network=host`).
+- External (volume or storage) drivers which are unaware or incapable of using
   daemon user mappings.
 - Using the `--privileged` mode flag on `docker run` without also specifying
   `--userns=host`.
 @y
-- sharing PID or NET namespaces with the host (`--pid=host` or `--network=host`).
-- external (volume or storage) drivers which are unaware or incapable of using
+- Sharing PID or NET namespaces with the host (`--pid=host` or `--network=host`).
+- External (volume or storage) drivers which are unaware or incapable of using
   daemon user mappings.
 - Using the `--privileged` mode flag on `docker run` without also specifying
   `--userns=host`.

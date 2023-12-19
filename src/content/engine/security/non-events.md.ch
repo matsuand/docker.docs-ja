@@ -166,9 +166,9 @@ default.
 @z
 
 @x
-Bugs *not* mitigated:
+Bugs not mitigated:
 @y
-Bugs *not* mitigated:
+Bugs not mitigated:
 @z
 
 @x

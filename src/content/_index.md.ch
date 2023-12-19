@@ -47,46 +47,45 @@ grid:
 ---
 @y
 ---
-title: Home
+title: ホーム
 description: Home page for Docker's documentation
 keywords: Docker, documentation, manual, guide, reference, api, samples
 grid:
 - title: はじめよう
   image:
-    dark: /assets/images/rocket-dark.svg
-    light: /assets/images/rocket.svg
-  link: /guides/get-started/
-  description: Learn Docker basics and the benefits of containerizing your applications.
+    dark: assets/images/rocket-dark.svg
+    light: assets/images/rocket.svg
+  link: guides/get-started/
+  description: Docker の基本やアプリケーションをコンテナー化するメリットについて学びます。
 - title: ダウンロードとインストール
   image:
-    dark: /assets/images/download-docker-dark.svg
-    light: /assets/images/download-docker.svg
-  link: /get-docker/
+    dark: assets/images/download-docker-dark.svg
+    light: assets/images/download-docker.svg
+  link: get-docker/
   description: ほんの数ステップにより Docker をダウンロードしてマシンにインストールします。
 - title: ガイド
   image:
-    dark: /assets/images/guides-dark.svg
-    light: /assets/images/guides.svg
-  link: /get-started/overview/
-  description: Learn how to set up your Docker environment and start containerizing
-    your applications.
-- title: Language-specific guides
+    dark: assets/images/guides-dark.svg
+    light: assets/images/guides.svg
+  link: get-started/overview/
+  description: Docker 環境の構築方法について学び、コンテナー化したアプリケーションを始めます。
+- title: 言語ごとのガイド
   image:
-    dark: /assets/images/language-guides-dark.svg
-    light: /assets/images/language-guides.svg
-  link: /language/
-  description: Learn how to use Docker with your favorite programming language.
+    dark: assets/images/language-guides-dark.svg
+    light: assets/images/language-guides.svg
+  link: language/
+  description: お好みのプログラミング言語を使って Docker を扱う方法について学びます。
 - title: マニュアル
   image:
-    dark: /assets/images/manuals-dark.svg
-    light: /assets/images/manuals.svg
-  link: /desktop/
-  description: Browse the manuals and learn how to use Docker products.
+    dark: assets/images/manuals-dark.svg
+    light: assets/images/manuals.svg
+  link: desktop/
+  description: マニュアルを見ながら Docker 製品の利用方法について学びます。
 - title: リファレンス
   image:
-    dark: /assets/images/reference-dark.svg
-    light: /assets/images/reference.svg
-  link: /reference/
-  description: Browse the CLI and API reference documentation.
+    dark: assets/images/reference-dark.svg
+    light: assets/images/reference.svg
+  link: reference/
+  description: CLI や API のリファレンスドキュメントを確認します。
 ---
 @z

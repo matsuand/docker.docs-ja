@@ -4,31 +4,31 @@
 @x
 ---
 description: Run Docker Engine in swarm mode
-keywords: guide, swarm mode, node
+keywords: guide, swarm mode, node, Docker Engines
 title: Run Docker Engine in swarm mode
 ---
 @y
 ---
 description: Run Docker Engine in swarm mode
-keywords: guide, swarm mode, node
+keywords: guide, swarm mode, node, Docker Engines
 title: Run Docker Engine in swarm mode
 ---
 @z
 
 @x
-When you first install and start working with Docker Engine, swarm mode is
-disabled by default. When you enable swarm mode, you work with the concept of
+When you first install and start working with Docker Engine, Swarm mode is
+disabled by default. When you enable Swarm mode, you work with the concept of
 services managed through the `docker service` command.
 @y
-When you first install and start working with Docker Engine, swarm mode is
-disabled by default. When you enable swarm mode, you work with the concept of
+When you first install and start working with Docker Engine, Swarm mode is
+disabled by default. When you enable Swarm mode, you work with the concept of
 services managed through the `docker service` command.
 @z
 
 @x
-There are two ways to run the Engine in swarm mode:
+There are two ways to run the engine in Swarm mode:
 @y
-There are two ways to run the Engine in swarm mode:
+There are two ways to run the engine in Swarm mode:
 @z
 
 @x
@@ -40,31 +40,31 @@ There are two ways to run the Engine in swarm mode:
 @z
 
 @x
-When you run the Engine in swarm mode on your local machine, you can create and
+When you run the engine in Swarm mode on your local machine, you can create and
 test services based upon images you've created or other available images. In
-your production environment, swarm mode provides a fault-tolerant platform with
+your production environment, Swarm mode provides a fault-tolerant platform with
 cluster management features to keep your services running and available.
 @y
-When you run the Engine in swarm mode on your local machine, you can create and
+When you run the engine in Swarm mode on your local machine, you can create and
 test services based upon images you've created or other available images. In
-your production environment, swarm mode provides a fault-tolerant platform with
+your production environment, Swarm mode provides a fault-tolerant platform with
 cluster management features to keep your services running and available.
 @z
 
 @x
-These instructions assume you have installed the Docker Engine 1.12 or later on
+These instructions assume you have installed the Docker Engine on
 a machine to serve as a manager node in your swarm.
 @y
-These instructions assume you have installed the Docker Engine 1.12 or later on
+These instructions assume you have installed the Docker Engine on
 a machine to serve as a manager node in your swarm.
 @z
 
 @x
-If you haven't already, read through the [swarm mode key concepts](key-concepts.md)
-and try the [swarm mode tutorial](swarm-tutorial/index.md).
+If you haven't already, read through the [Swarm mode key concepts](key-concepts.md)
+and try the [Swarm mode tutorial](swarm-tutorial/index.md).
 @y
-If you haven't already, read through the [swarm mode key concepts](key-concepts.md)
-and try the [swarm mode tutorial](swarm-tutorial/index.md).
+If you haven't already, read through the [Swarm mode key concepts](key-concepts.md)
+and try the [Swarm mode tutorial](swarm-tutorial/index.md).
 @z
 
 @x
@@ -74,53 +74,53 @@ and try the [swarm mode tutorial](swarm-tutorial/index.md).
 @z
 
 @x
-When you run the command to create a swarm, the Docker Engine starts running in swarm mode.
+When you run the command to create a swarm, Docker Engine starts running in Swarm mode.
 @y
-When you run the command to create a swarm, the Docker Engine starts running in swarm mode.
+When you run the command to create a swarm, Docker Engine starts running in Swarm mode.
 @z
 
 @x
 Run [`docker swarm init`](../reference/commandline/swarm_init.md)
-to create a single-node swarm on the current node. The Engine sets up the swarm
+to create a single-node swarm on the current node. The engine sets up the swarm
 as follows:
 @y
 Run [`docker swarm init`](../reference/commandline/swarm_init.md)
-to create a single-node swarm on the current node. The Engine sets up the swarm
+to create a single-node swarm on the current node. The engine sets up the swarm
 as follows:
 @z
 
 @x
-* switches the current node into swarm mode.
-* creates a swarm named `default`.
-* designates the current node as a leader manager node for the swarm.
-* names the node with the machine hostname.
-* configures the manager to listen on an active network interface on port 2377.
-* sets the current node to `Active` availability, meaning it can receive tasks
+* Switches the current node into Swarm mode.
+* Creates a swarm named `default`.
+* Designates the current node as a leader manager node for the swarm.
+* Names the node with the machine hostname.
+* Configures the manager to listen on an active network interface on port `2377``.
+* Sets the current node to `Active` availability, meaning it can receive tasks
 from the scheduler.
-* starts an internal distributed data store for Engines participating in the
+* Starts an internal distributed data store for Engines participating in the
 swarm to maintain a consistent view of the swarm and all services running on it.
-* by default, generates a self-signed root CA for the swarm.
-* by default, generates tokens for worker and manager nodes to join the
+* By default, generates a self-signed root CA for the swarm.
+* By default, generates tokens for worker and manager nodes to join the
 swarm.
-* creates an overlay network named `ingress` for publishing service ports
+* Creates an overlay network named `ingress` for publishing service ports
 external to the swarm.
-* creates an overlay default IP addresses and subnet mask for your networks
+* Creates an overlay default IP addresses and subnet mask for your networks
 @y
-* switches the current node into swarm mode.
-* creates a swarm named `default`.
-* designates the current node as a leader manager node for the swarm.
-* names the node with the machine hostname.
-* configures the manager to listen on an active network interface on port 2377.
-* sets the current node to `Active` availability, meaning it can receive tasks
+* Switches the current node into Swarm mode.
+* Creates a swarm named `default`.
+* Designates the current node as a leader manager node for the swarm.
+* Names the node with the machine hostname.
+* Configures the manager to listen on an active network interface on port `2377``.
+* Sets the current node to `Active` availability, meaning it can receive tasks
 from the scheduler.
-* starts an internal distributed data store for Engines participating in the
+* Starts an internal distributed data store for Engines participating in the
 swarm to maintain a consistent view of the swarm and all services running on it.
-* by default, generates a self-signed root CA for the swarm.
-* by default, generates tokens for worker and manager nodes to join the
+* By default, generates a self-signed root CA for the swarm.
+* By default, generates tokens for worker and manager nodes to join the
 swarm.
-* creates an overlay network named `ingress` for publishing service ports
+* Creates an overlay network named `ingress` for publishing service ports
 external to the swarm.
-* creates an overlay default IP addresses and subnet mask for your networks
+* Creates an overlay default IP addresses and subnet mask for your networks
 @z
 
 @x
@@ -172,31 +172,31 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 @z
 
 @x
-By default Docker Swarm uses a default address pool `10.0.0.0/8` for global scope (overlay) networks. Every 
+By default Swarm mode uses a default address pool `10.0.0.0/8` for global scope (overlay) networks. Every 
 network that does not have a subnet specified will have a subnet sequentially allocated from this pool. In 
 some circumstances it may be desirable to use a different default IP address pool for networks. 
 @y
-By default Docker Swarm uses a default address pool `10.0.0.0/8` for global scope (overlay) networks. Every 
+By default Swarm mode uses a default address pool `10.0.0.0/8` for global scope (overlay) networks. Every 
 network that does not have a subnet specified will have a subnet sequentially allocated from this pool. In 
 some circumstances it may be desirable to use a different default IP address pool for networks. 
 @z
 
 @x
 For example, if the default `10.0.0.0/8` range conflicts with already allocated address space in your network, 
-then it is desirable to ensure that networks use a different range without requiring Swarm users to specify 
+then it is desirable to ensure that networks use a different range without requiring swarm users to specify 
 each subnet with the `--subnet` command. 
 @y
 For example, if the default `10.0.0.0/8` range conflicts with already allocated address space in your network, 
-then it is desirable to ensure that networks use a different range without requiring Swarm users to specify 
+then it is desirable to ensure that networks use a different range without requiring swarm users to specify 
 each subnet with the `--subnet` command. 
 @z
 
 @x
-To configure custom default address pools, you must define pools at Swarm initialization using the 
+To configure custom default address pools, you must define pools at swarm initialization using the 
 `--default-addr-pool` command line option. This command line option uses CIDR notation for defining the subnet mask.
 To create the custom address pool for Swarm, you must define at least one default address pool, and an optional default address pool subnet mask. For example, for the `10.0.0.0/27`, use the value `27`.
 @y
-To configure custom default address pools, you must define pools at Swarm initialization using the 
+To configure custom default address pools, you must define pools at swarm initialization using the 
 `--default-addr-pool` command line option. This command line option uses CIDR notation for defining the subnet mask.
 To create the custom address pool for Swarm, you must define at least one default address pool, and an optional default address pool subnet mask. For example, for the `10.0.0.0/27`, use the value `27`.
 @z
@@ -230,9 +230,9 @@ $ docker swarm init --default-addr-pool <IP range in CIDR> [--default-addr-pool 
 @z
 
 @x
-The command to create a default IP address pool with a /16 (class B) for the 10.20.0.0 network looks like this:
+The command to create a default IP address pool with a /16 (class B) for the `10.20.0.0` network looks like this:
 @y
-The command to create a default IP address pool with a /16 (class B) for the 10.20.0.0 network looks like this:
+The command to create a default IP address pool with a /16 (class B) for the `10.20.0.0` network looks like this:
 @z
 
 @x

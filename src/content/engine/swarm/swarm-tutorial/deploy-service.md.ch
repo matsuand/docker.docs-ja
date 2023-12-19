@@ -108,7 +108,7 @@ Now you're ready to inspect the service.
 @z
 
 @x
-{{< button text="Deploy a service" url="inspect-service.md" >}}
+{{< button text="Inspect the service" url="inspect-service.md" >}}
 @y
-{{< button text="Deploy a service" url="inspect-service.md" >}}
+{{< button text="Inspect the service" url="inspect-service.md" >}}
 @z

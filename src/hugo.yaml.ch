@@ -14,6 +14,7 @@ disableKinds:
 @y
 title: Docker Docs
 baseURL: https://docs.docker.com
+permalinks: __SUBDIR__
 refLinksErrorLevel: ERROR
 enableGitInfo: false
 disablePathToLower: true
@@ -237,6 +238,7 @@ params:
   min_api_threshold: 1.41
 @y
   min_api_threshold: 1.41
+  suburldir: /docker.docs-ja
 @z
 
 @x
@@ -305,28 +307,28 @@ menus:
 @y
   footer:
     - url: https://www.docker.com/products
-      name: Product offerings
+      name: 提供製品
     - url: https://www.docker.com/products/personal
       name: Docker Personal
-      parent: Product offerings
+      parent: 提供製品
     - url: https://www.docker.com/products/pro
       name: Docker Pro
-      parent: Product offerings
+      parent: 提供製品
     - url: https://www.docker.com/products/team
       name: Docker Team
-      parent: Product offerings
+      parent: 提供製品
     - url: https://www.docker.com/products/business
       name: Docker Business
-      parent: Product offerings
+      parent: 提供製品
     - url: https://www.docker.com/pricing/faq
       name: 価格に関する FAQ
-      parent: Product offerings
+      parent: 提供製品
     - url: https://www.docker.com/partners/programs
       name: Docker Verified Publisher
-      parent: Product offerings
+      parent: 提供製品
     - url: https://www.docker.com/partners
       name: パートナー
-      parent: Product offerings
+      parent: 提供製品
 @z
 
 @x
@@ -355,28 +357,28 @@ menus:
       parent: Features
 @y
     - url: https://www.docker.com/
-      name: Features
+      name: 特徴
     - url: https://www.docker.com/products/docker-desktop
       name: Docker Desktop
-      parent: Features
+      parent: 特徴
     - url: https://www.docker.com/products/docker-hub
       name: Docker Hub
-      parent: Features
+      parent: 特徴
     - url: https://www.docker.com/products/secure-software-supply-chain
-      name: Secure Software Supply Chain
-      parent: Features
+      name: セキュアソフトウェアのサプライチェーン
+      parent: 特徴
     - url: https://www.docker.com/products/container-runtime
-      name: Container Runtime
-      parent: Features
+      name: コンテナーランタイム
+      parent: 特徴
     - url: https://www.docker.com/products/developer-tools
-      name: Developer Tools
-      parent: Features
+      name: 開発ツール
+      parent: 特徴
     - url: https://www.docker.com/partners
       name: Trusted Content
-      parent: Features
+      parent: 特徴
     - url: https://www.docker.com/roadmap
-      name: Docker Product Roadmap
-      parent: Features
+      name: Docker 製品ロードマップ
+      parent: 特徴
 @z
 
 @x
@@ -400,25 +402,25 @@ menus:
       name: Preview Program
       parent: Developers
 @y
-    - name: Developers
+    - name: 開発者
     - url: https://www.docker.com/use-cases
-      name: Use cases
-      parent: Developers
+      name: ユースケース
+      parent: 開発者
     - url: /get-started/
-      name: Get started
-      parent: Developers
+      name: はじめよう
+      parent: 開発者
     - url: https://www.docker.com/blog/
-      name: Block
-      parent: Developers
+      name: ブログ
+      parent: 開発者
     - url: https://www.docker.com/docker-community
-      name: Community
-      parent: Developers
+      name: コミュニティ
+      parent: 開発者
     - url: https://www.docker.com/open-source
-      name: Open Source
-      parent: Developers
+      name: オープンソース
+      parent: 開発者
     - url: https://www.docker.com/community/get-involved/developer-preview
-      name: Preview Program
-      parent: Developers
+      name: プレビュープログラム
+      parent: 開発者
 @z
 
 @x
@@ -453,34 +455,34 @@ menus:
       parent: About us
 @y
     - url: https://www.docker.com/company
-      name: About us
+      name: 会社情報
     - url: https://www.docker.com/what-container
-      name: What is a container?
-      parent: About us
+      name: コンテナーって何？
+      parent: 会社情報
     - url: https://www.docker.com/why-docker
-      name: Why Docker?
-      parent: About us
+      name: なぜ Docker？
+      parent: 会社情報
     - url: https://www.docker.com/events
-      name: Virtual events
-      parent: About us
+      name: 仮想イベント
+      parent: 会社情報
     - url: https://www.docker.com/swag
-      name: Swag store
-      parent: About us
+      name: Swag ストア
+      parent: 会社情報
     - url: https://www.docker.com/company/newsroom
-      name: Newsroom
-      parent: About us
+      name: ニュースルーム
+      parent: 会社情報
     - url: https://www.docker.com/careers
-      name: Careers
-      parent: About us
+      name: 採用情報
+      parent: 会社情報
     - url: https://www.docker.com/company/contact
-      name: Contact us
-      parent: About us
+      name: 連絡先
+      parent: 会社情報
     - url: https://www.docker.com/customers
-      name: Customers
-      parent: About us
+      name: 顧客
+      parent: 会社情報
     - url: https://www.docker.com/newsletter-subscription
-      name: Newsletter
-      parent: About us
+      name: ニュースレター
+      parent: 会社情報
 @z
 
 @x

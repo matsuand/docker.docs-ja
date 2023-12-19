@@ -9,7 +9,7 @@ keywords: source file, contribute, style guide
 ---
 @y
 ---
-title: Source file conventions
+title: ソースファイル規則
 description: How new .md files should be formatted
 keywords: source file, contribute, style guide
 ---
@@ -18,7 +18,7 @@ keywords: source file, contribute, style guide
 @x
 ## File name
 @y
-## File name
+## ファイル名 {#file-name}
 @z
 
 @x
@@ -40,7 +40,7 @@ When you create a new .md file for new content, make sure:
 @x
 ## Front matter
 @y
-## Front matter
+## Front matter {#front-matter}
 @z
 
 @x
@@ -134,7 +134,7 @@ toc_max: 4
 @x
 ## Body
 @y
-## Body
+## 本文 {#body}
 @z
 
 @x
@@ -146,7 +146,7 @@ The body of the page (with the exception of keywords) starts after the front mat
 @x
 ### Text length
 @y
-### Text length
+### 文章の長さ {#text-length}
 @z
 
 @x

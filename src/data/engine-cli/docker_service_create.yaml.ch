@@ -2226,7 +2226,7 @@ examples: |-
         <td>
           <p>The type of mount, can be either <tt>volume</tt>, <tt>bind</tt>, <tt>tmpfs</tt>, or <tt>npipe</tt>. Defaults to <tt>volume</tt> if no type is specified.</p>
           <ul>
-            <li><tt>volume</tt>: mounts a <a href="/engine/reference/commandline/volume_create/">managed volume</a>
+            <li><tt>volume</tt>: mounts a <a href="__SUBDIR__/engine/reference/commandline/volume_create/">managed volume</a>
             into the container.</li> <li><tt>bind</tt>:
             bind-mounts a directory or file from the host into the container.</li>
             <li><tt>tmpfs</tt>: mount a tmpfs in the container</li>
@@ -2545,7 +2545,7 @@ examples: |-
           creation. For example,
           <tt>volume-label=mylabel=hello-world,my-other-label=hello-mars</tt>. For more
           information about labels, refer to
-          <a href="/config/labels-custom-metadata/">apply custom metadata</a>.
+          <a href="__SUBDIR__/config/labels-custom-metadata/">apply custom metadata</a>.
         </td>
       </tr>
       <tr>

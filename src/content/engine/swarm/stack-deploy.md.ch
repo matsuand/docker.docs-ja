@@ -32,27 +32,19 @@ a stack description in the form of a [Compose file](../../compose/compose-file/c
 @z
 
 @x
-The `docker stack deploy` command supports any Compose file of version "3.x".
-If you have an older version, see the [upgrade guide](../../compose/compose-file/compose-versioning.md#upgrading).
-@y
-The `docker stack deploy` command supports any Compose file of version "3.x".
-If you have an older version, see the [upgrade guide](../../compose/compose-file/compose-versioning.md#upgrading).
-@z
-
-@x
 To run through this tutorial, you need:
 @y
 To run through this tutorial, you need:
 @z
 
 @x
-1.  A Docker Engine running in [swarm mode](swarm-mode.md).
-    If you're not familiar with swarm mode, you might want to read
+1.  A Docker Engine running in [Swarm mode](swarm-mode.md).
+    If you're not familiar with Swarm mode, you might want to read
     [Swarm mode key concepts](key-concepts.md)
     and [How services work](how-swarm-mode-works/services.md).
 @y
-1.  A Docker Engine running in [swarm mode](swarm-mode.md).
-    If you're not familiar with swarm mode, you might want to read
+1.  A Docker Engine running in [Swarm mode](swarm-mode.md).
+    If you're not familiar with Swarm mode, you might want to read
     [Swarm mode key concepts](key-concepts.md)
     and [How services work](how-swarm-mode-works/services.md).
 @z
@@ -61,7 +53,7 @@ To run through this tutorial, you need:
     > **Note**
     >
     > If you're trying things out on a local development environment,
-    > you can put your engine into swarm mode with `docker swarm init`.
+    > you can put your engine into Swarm mode with `docker swarm init`.
     >
     > If you've already got a multi-node swarm running, keep in mind that all
     > `docker stack` and `docker service` commands must be run from a manager
@@ -70,7 +62,7 @@ To run through this tutorial, you need:
     > **Note**
     >
     > If you're trying things out on a local development environment,
-    > you can put your engine into swarm mode with `docker swarm init`.
+    > you can put your engine into Swarm mode with `docker swarm init`.
     >
     > If you've already got a multi-node swarm running, keep in mind that all
     > `docker stack` and `docker service` commands must be run from a manager
@@ -298,9 +290,9 @@ counter whenever you visit it.
 @z
 
 @x
-5.  Create a file called `docker-compose.yml` and paste this in:
+5.  Create a file called `compose.yml` and paste this in:
 @y
-5.  Create a file called `docker-compose.yml` and paste this in:
+5.  Create a file called `compose.yml` and paste this in:
 @z
 
 @x
@@ -565,10 +557,10 @@ The stack is now ready to be deployed.
 
 @x
     ```console
-    $ docker stack deploy --compose-file docker-compose.yml stackdemo
+    $ docker stack deploy --compose-file compose.yml stackdemo
 @y
     ```console
-    $ docker stack deploy --compose-file docker-compose.yml stackdemo
+    $ docker stack deploy --compose-file compose.yml stackdemo
 @z
 
 @x
@@ -668,11 +660,11 @@ The stack is now ready to be deployed.
 @z
 
 @x
-    Thanks to Docker's built-in routing mesh, you can access any node in the
-    swarm on port 8000 and get routed to the app:
+    With Docker's built-in routing mesh, you can access any node in the
+    swarm on port `8000` and get routed to the app:
 @y
-    Thanks to Docker's built-in routing mesh, you can access any node in the
-    swarm on port 8000 and get routed to the app:
+    With Docker's built-in routing mesh, you can access any node in the
+    swarm on port `8000` and get routed to the app:
 @z
 
 @x
@@ -731,10 +723,10 @@ The stack is now ready to be deployed.
 
 @x
 5.  If you're just testing things out on a local machine and want to bring your
-    Docker Engine out of swarm mode, use `docker swarm leave`:
+    Docker Engine out of Swarm mode, use `docker swarm leave`:
 @y
 5.  If you're just testing things out on a local machine and want to bring your
-    Docker Engine out of swarm mode, use `docker swarm leave`:
+    Docker Engine out of Swarm mode, use `docker swarm leave`:
 @z
 
 @x

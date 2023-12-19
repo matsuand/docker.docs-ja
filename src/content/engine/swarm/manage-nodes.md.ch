@@ -16,21 +16,21 @@ title: Manage nodes in a swarm
 @z
 
 @x
-As part of the swarm management lifecycle, you may need to view or update a node as follows:
+As part of the swarm management lifecycle, you may need to:
 @y
-As part of the swarm management lifecycle, you may need to view or update a node as follows:
+As part of the swarm management lifecycle, you may need to:
 @z
 
 @x
-* [list nodes in the swarm](#list-nodes)
-* [inspect an individual node](#inspect-an-individual-node)
-* [update a node](#update-a-node)
-* [leave the swarm](#leave-the-swarm)
+* [List nodes in the swarm](#list-nodes)
+* [Inspect an individual node](#inspect-an-individual-node)
+* [Update a node](#update-a-node)
+* [Leave the swarm](#leave-the-swarm)
 @y
-* [list nodes in the swarm](#list-nodes)
-* [inspect an individual node](#inspect-an-individual-node)
-* [update a node](#update-a-node)
-* [leave the swarm](#leave-the-swarm)
+* [List nodes in the swarm](#list-nodes)
+* [Inspect an individual node](#inspect-an-individual-node)
+* [Update a node](#update-a-node)
+* [Leave the swarm](#leave-the-swarm)
 @z
 
 @x
@@ -210,19 +210,19 @@ Engine Version:         1.12.0-dev
 @z
 
 @x
-You can modify node attributes as follows:
+You can modify node attributes to:
 @y
-You can modify node attributes as follows:
+You can modify node attributes to:
 @z
 
 @x
-* [change node availability](#change-node-availability)
-* [add or remove label metadata](#add-or-remove-label-metadata)
-* [change a node role](#promote-or-demote-a-node)
+* [Change node availability](#change-node-availability)
+* [Add or remove label metadata](#add-or-remove-label-metadata)
+* [Change a node role](#promote-or-demote-a-node)
 @y
-* [change node availability](#change-node-availability)
-* [add or remove label metadata](#add-or-remove-label-metadata)
-* [change a node role](#promote-or-demote-a-node)
+* [Change node availability](#change-node-availability)
+* [Add or remove label metadata](#add-or-remove-label-metadata)
+* [Change a node role](#promote-or-demote-a-node)
 @z
 
 @x
@@ -238,17 +238,17 @@ Changing node availability lets you:
 @z
 
 @x
-* drain a manager node so that it only performs swarm management tasks and is
+* Drain a manager node so that it only performs swarm management tasks and is
   unavailable for task assignment.
-* drain a node so you can take it down for maintenance.
-* pause a node so it can't receive new tasks.
-* restore unavailable or paused nodes availability status.
+* Drain a node so you can take it down for maintenance.
+* Pause a node so it can't receive new tasks.
+* Restore unavailable or paused nodes availability status.
 @y
-* drain a manager node so that it only performs swarm management tasks and is
+* Drain a manager node so that it only performs swarm management tasks and is
   unavailable for task assignment.
-* drain a node so you can take it down for maintenance.
-* pause a node so it can't receive new tasks.
-* restore unavailable or paused nodes availability status.
+* Drain a node so you can take it down for maintenance.
+* Pause a node so it can't receive new tasks.
+* Restore unavailable or paused nodes availability status.
 @z
 
 @x
@@ -398,11 +398,15 @@ maintenance. Similarly, you can demote a manager node to the worker role.
 @z
 
 @x
-> **Note**: Regardless of your reason to promote or demote
+> **Note**
+>
+> Regardless of your reason to promote or demote
 > a node, you must always maintain a quorum of manager nodes in the
 > swarm. For more information refer to the [Swarm administration guide](admin_guide.md).
 @y
-> **Note**: Regardless of your reason to promote or demote
+> **Note**
+>
+> Regardless of your reason to promote or demote
 > a node, you must always maintain a quorum of manager nodes in the
 > swarm. For more information refer to the [Swarm administration guide](admin_guide.md).
 @z
@@ -550,10 +554,10 @@ Node left the swarm.
 @z
 
 @x
-When a node leaves the swarm, the Docker Engine stops running in swarm
+When a node leaves the swarm, Docker Engine stops running in Swarm
 mode. The orchestrator no longer schedules tasks to the node.
 @y
-When a node leaves the swarm, the Docker Engine stops running in swarm
+When a node leaves the swarm, Docker Engine stops running in Swarm
 mode. The orchestrator no longer schedules tasks to the node.
 @z
 
@@ -578,10 +582,10 @@ For information about maintaining a quorum and disaster recovery, refer to the
 @z
 
 @x
-After a node leaves the swarm, you can run the `docker node rm` command on a
+After a node leaves the swarm, you can run `docker node rm` on a
 manager node to remove the node from the node list.
 @y
-After a node leaves the swarm, you can run the `docker node rm` command on a
+After a node leaves the swarm, you can run `docker node rm` on a
 manager node to remove the node from the node list.
 @z
 

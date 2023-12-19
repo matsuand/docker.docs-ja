@@ -118,9 +118,15 @@ testuser:231072:65536
 @z
 
 @x
-> Note: We recommend that you use the Ubuntu kernel.
+> **Tip**
+>
+> We recommend that you use the Ubuntu kernel.
+{ .tip }
 @y
-> Note: We recommend that you use the Ubuntu kernel.
+> **Tip**
+>
+> We recommend that you use the Ubuntu kernel.
+{ .tip }
 @z
 
 @x
@@ -1100,10 +1106,12 @@ $ dockerd-rootless.sh
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > You must remove the directory every time you log out.
 @y
-> **Note**:
+> **Note**
+>
 > You must remove the directory every time you log out.
 @z
 

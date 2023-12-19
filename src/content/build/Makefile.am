@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = attestations bake builders building buildkit cache ci \
-	dockerfile drivers exporters guide images
+	cloud dockerfile drivers exporters guide images
 
 bases = \
 	_index.md        \

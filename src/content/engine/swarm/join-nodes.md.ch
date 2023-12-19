@@ -17,15 +17,15 @@ title: Join nodes to a swarm
 
 @x
 When you first create a swarm, you place a single Docker Engine into
-swarm mode. To take full advantage of swarm mode you can add nodes to the swarm:
+Swarm mode. To take full advantage of Swarm mode you can add nodes to the swarm:
 @y
 When you first create a swarm, you place a single Docker Engine into
-swarm mode. To take full advantage of swarm mode you can add nodes to the swarm:
+Swarm mode. To take full advantage of Swarm mode you can add nodes to the swarm:
 @z
 
 @x
 * Adding worker nodes increases capacity. When you deploy a service to a swarm,
-the Engine schedules tasks on available nodes whether they are worker nodes or
+the engine schedules tasks on available nodes whether they are worker nodes or
 manager nodes. When you add workers to your swarm, you increase the scale of
 the swarm to handle tasks without affecting the manager raft consensus.
 * Manager nodes increase fault-tolerance. Manager nodes perform the
@@ -36,7 +36,7 @@ orchestration and maintenance of the swarm state. By default, manager nodes
 also run tasks.
 @y
 * Adding worker nodes increases capacity. When you deploy a service to a swarm,
-the Engine schedules tasks on available nodes whether they are worker nodes or
+the engine schedules tasks on available nodes whether they are worker nodes or
 manager nodes. When you add workers to your swarm, you increase the scale of
 the swarm to handle tasks without affecting the manager raft consensus.
 * Manager nodes increase fault-tolerance. Manager nodes perform the
@@ -48,12 +48,12 @@ also run tasks.
 @z
 
 @x
-The Docker Engine joins the swarm depending on the **join-token** you provide to
+Docker Engine joins the swarm depending on the **join-token** you provide to
 the `docker swarm join` command. The node only uses the token at join time. If
 you subsequently rotate the token, it doesn't affect existing swarm nodes. Refer
 to [Run Docker Engine in swarm mode](swarm-mode.md#view-the-join-command-or-update-a-swarm-join-token).
 @y
-The Docker Engine joins the swarm depending on the **join-token** you provide to
+Docker Engine joins the swarm depending on the **join-token** you provide to
 the `docker swarm join` command. The node only uses the token at join time. If
 you subsequently rotate the token, it doesn't affect existing swarm nodes. Refer
 to [Run Docker Engine in swarm mode](swarm-mode.md#view-the-join-command-or-update-a-swarm-join-token).
@@ -132,21 +132,21 @@ The `docker swarm join` command does the following:
 @z
 
 @x
-* switches the Docker Engine on the current node into swarm mode.
-* requests a TLS certificate from the manager.
-* names the node with the machine hostname
-* joins the current node to the swarm at the manager listen address based upon the swarm token.
-* sets the current node to `Active` availability, meaning it can receive tasks
+* Switches Docker Engine on the current node into Swarm mode.
+* Requests a TLS certificate from the manager.
+* Names the node with the machine hostname.
+* Joins the current node to the swarm at the manager listen address based upon the swarm token.
+* Sets the current node to `Active` availability, meaning it can receive tasks
 from the scheduler.
-* extends the `ingress` overlay network to the current node.
+* Extends the `ingress` overlay network to the current node.
 @y
-* switches the Docker Engine on the current node into swarm mode.
-* requests a TLS certificate from the manager.
-* names the node with the machine hostname
-* joins the current node to the swarm at the manager listen address based upon the swarm token.
-* sets the current node to `Active` availability, meaning it can receive tasks
+* Switches Docker Engine on the current node into Swarm mode.
+* Requests a TLS certificate from the manager.
+* Names the node with the machine hostname.
+* Joins the current node to the swarm at the manager listen address based upon the swarm token.
+* Sets the current node to `Active` availability, meaning it can receive tasks
 from the scheduler.
-* extends the `ingress` overlay network to the current node.
+* Extends the `ingress` overlay network to the current node.
 @z
 
 @x
@@ -156,25 +156,25 @@ from the scheduler.
 @z
 
 @x
-When you run `docker swarm join` and pass the manager token, the Docker Engine
-switches into swarm mode the same as for workers. Manager nodes also participate
+When you run `docker swarm join` and pass the manager token, Docker Engine
+switches into Swarm mode the same as for workers. Manager nodes also participate
 in the raft consensus. The new nodes should be `Reachable`, but the existing
 manager remains the swarm `Leader`.
 @y
-When you run `docker swarm join` and pass the manager token, the Docker Engine
-switches into swarm mode the same as for workers. Manager nodes also participate
+When you run `docker swarm join` and pass the manager token, Docker Engine
+switches into Swarm mode the same as for workers. Manager nodes also participate
 in the raft consensus. The new nodes should be `Reachable`, but the existing
 manager remains the swarm `Leader`.
 @z
 
 @x
 Docker recommends three or five manager nodes per cluster to implement high
-availability. Because swarm mode manager nodes share data using Raft, there
+availability. Because Swarm-mode manager nodes share data using Raft, there
 must be an odd number of managers. The swarm can continue to function after as
 long as a quorum of more than half of the manager nodes are available.
 @y
 Docker recommends three or five manager nodes per cluster to implement high
-availability. Because swarm mode manager nodes share data using Raft, there
+availability. Because Swarm-mode manager nodes share data using Raft, there
 must be an odd number of managers. The swarm can continue to function after as
 long as a quorum of more than half of the manager nodes are available.
 @z

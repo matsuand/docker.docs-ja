@@ -296,7 +296,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = attestations bake builders building buildkit cache ci \
-	dockerfile drivers exporters guide images
+	cloud dockerfile drivers exporters guide images
 
 bases = \
 	_index.md        \

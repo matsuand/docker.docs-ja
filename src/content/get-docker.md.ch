@@ -68,8 +68,8 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Mac"
   description="Mac 上ですべての Docker ツールを実行するために macOS サンドボックスセキュリティモデルを使うネイティブなアプリケーションです。"
-  link="/desktop/install/mac-install/"
-  icon="/assets/images/apple_48.svg" >}}
+  link="desktop/install/mac-install/"
+  icon="__SUBDIR__/assets/images/apple_48.svg" >}}
 @z
 
 @x
@@ -82,8 +82,8 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Windows"
   description="Windows コンピューター上ですべての Docker ツールを実行するためのネイティブな Windows アプリケーションです。"
-  link="/desktop/install/windows-install/"
-  icon="/assets/images/windows_48.svg" >}}
+  link="__SUBDIR__/desktop/install/windows-install/"
+  icon="__SUBDIR__/assets/images/windows_48.svg" >}}
 @z
 
 @x
@@ -96,8 +96,8 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Linux"
   description="お手元の Linux コンピューターに Docker ツールをすべて提供するネイティブな Linux アプリケーションです。"
-  link="/desktop/install/linux-install/"
-  icon="/assets/images/linux_48.svg" >}}
+  link="__SUBDIR__/desktop/install/linux-install/"
+  icon="__SUBDIR__/assets/images/linux_48.svg" >}}
 @z
 
 @x

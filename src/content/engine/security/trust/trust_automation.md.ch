@@ -26,13 +26,11 @@ environment variables that can be passed through to the client.
 @z
 
 @x
-This guide follows the steps as described 
-[here](index.md#signing-images-with-docker-content-trust) so please read 
-that and understand its prerequisites. 
+This guide follows the steps as described in
+[Signing images with Docker Content Trust](index.md#signing-images-with-docker-content-trust). Make sure you understand and follow the prerequisites.
 @y
-This guide follows the steps as described 
-[here](index.md#signing-images-with-docker-content-trust) so please read 
-that and understand its prerequisites. 
+This guide follows the steps as described in
+[Signing images with Docker Content Trust](index.md#signing-images-with-docker-content-trust). Make sure you understand and follow the prerequisites.
 @z
 
 @x
@@ -84,12 +82,12 @@ Successfully imported key from delegation.key
 @z
 
 @x
-If you initialising a repository at the same time as adding a Delegation
+If you initialize a repository at the same time as adding a delegation
 public key, then you will need to use the local Notary Canonical Root Key's 
 passphrase to create the repositories trust data. If the repository has already 
 been initiated then you only need the repositories passphrase. 
 @y
-If you initialising a repository at the same time as adding a Delegation
+If you initialize a repository at the same time as adding a delegation
 public key, then you will need to use the local Notary Canonical Root Key's 
 passphrase to create the repositories trust data. If the repository has already 
 been initiated then you only need the repositories passphrase. 

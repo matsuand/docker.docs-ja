@@ -13,8 +13,9 @@ thisdate = `date +'%Y/%m/%d'`
 commitdate = `(cd @abs_origdir@ && git log -1 --pretty=format:"%ad" --date=short) | sed "s|\-|/|g"`
 commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|/|g"`
 
-all: index.html
-index.html: #$(abs_origdir)/index.html $(srcdir)/index.html.ch
+.PHONY: _touch
+all: _touch index.html
+index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
 	@echo Processing index.html...
 	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/index.html $(srcdir)/index.html.ch >/dev/null
 	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
@@ -29,3 +30,6 @@ copyfiles = \
 	sitemap.xml
 
 include $(top_srcdir)/build-aux/copy.mk
+
+_touch:
+	@touch $(srcdir)/index.html.ch
