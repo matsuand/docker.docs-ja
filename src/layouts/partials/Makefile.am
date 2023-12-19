@@ -3,13 +3,18 @@
 ##
 SUBDIRS = components utils
 
+bases = \
+	github-links.html
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/main.mk
+
 copyfiles = \
 	api-aside.html    \
 	aside.html        \
 	breadcrumbs.html  \
 	cli-aside.html    \
 	footer.html       \
-	github-links.html \
 	head.html         \
 	header.html       \
 	heading.html      \
@@ -22,5 +27,4 @@ copyfiles = \
 	toc-default.html  \
 	top-nav.html
 
-include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

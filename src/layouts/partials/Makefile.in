@@ -153,7 +153,8 @@ am__define_uniq_tagged_files = \
 DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/copy.mk
+	$(top_srcdir)/build-aux/copy.mk \
+	$(top_srcdir)/build-aux/main.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
   dir0=`pwd`; \
@@ -296,13 +297,20 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = components utils
+bases = \
+	github-links.html
+
+thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
+abs_thisdir = @abs_srcdir@
+changes = $(bases:=.ch) # change files
+transes = $(bases)      # translated files
+EXTRA_DIST = $(changes)
 copyfiles = \
 	api-aside.html    \
 	aside.html        \
 	breadcrumbs.html  \
 	cli-aside.html    \
 	footer.html       \
-	github-links.html \
 	head.html         \
 	header.html       \
 	heading.html      \
@@ -315,12 +323,10 @@ copyfiles = \
 	toc-default.html  \
 	top-nav.html
 
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
-abs_thisdir = @abs_srcdir@
 all: all-recursive
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -340,7 +346,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -631,6 +637,24 @@ ctie:
 	@if test ! -x "$(top_builddir)/$@/$@"; then \
 	  @$(MAKE) -C $(top_builddir)/$@ $@ >/dev/null; \
 	fi
+
+.PHONY: all
+all: $(transes)
+
+submakename ?= Makefile.sub
+
+-include $(submakename)
+$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
+
+@MAINT@.PHONY: chbuild
+@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
+@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
+@MAINT@	@if test ! -f $@; then \
+@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
+@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
+@MAINT@	    -e "s|\.ch$$||"` $@; \
+@MAINT@	fi
 
 .PHONY: all
 all: $(copyfiles)

@@ -1,0 +1,49 @@
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
+name: Docs issue
+description: Report incorrect or missing content in docs, or a website issue
+labels:
+  - status/triage
+
+body:
+  - type: checkboxes
+    attributes:
+      label: Is this a docs issue?
+      description: |
+        Docker ドキュメント(日本語訳)に関連した問題点をご報告ください。
+        製品の問題やオリジナルドキュメントの問題については、対応するリポジトリを参照してください。
+      options:
+        - label: 問題点の指摘はドキュメント内容またはウェブサイト上の問題である。
+          required: true
+  - type: dropdown
+    attributes:
+      label: Type of issue
+      description: ご報告頂くのはどのような問題ですか？
+      multiple: false
+      options:
+        - 情報が正しくない。
+        - 求めているものが見つけられない。
+        - ウェブサイト上の問題がある。
+        - 日本語訳に問題がある。
+        - その他。
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: |
+        発見した問題点を簡潔にご説明ください。
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: どこで問題を見つけましたか？
+      placeholder: "https://github.com/matsuand/docker.docs-ja/"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Suggestion
+      description: >
+        どのように問題を修正すれば良いか、何かお考えがあれば教えてください。

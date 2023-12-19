@@ -206,7 +206,7 @@ params:
   repo: https://github.com/docker/docs
   docs_url: https://docs.docker.com
 @y
-  repo: https://github.com/docker/docs
+  repo: https://github.com/matsuand/docker.docs-ja
   docs_url: https://docs.docker.com
 @z
 
