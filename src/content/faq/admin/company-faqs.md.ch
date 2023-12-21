@@ -6,12 +6,16 @@
 description: Company FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, company, administration, company management
 title: FAQs on companies
+aliases:
+- /docker-hub/company-faqs/
 ---
 @y
 ---
 description: Company FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, company, administration, company management
 title: FAQs on companies
+aliases:
+- /docker-hub/company-faqs/
 ---
 @z
 
@@ -82,9 +86,9 @@ You can add a maximum of 10 company owners to a single company account.
 @z
 
 @x
-Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change SSO and SCIM settings. Changes to company settings impact all users in each organization under the company. See [Roles and permissions](../security/for-admins/roles-and-permissions.md).
+Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change SSO and SCIM settings. Changes to company settings impact all users in each organization under the company. See [Roles and permissions](../../security/for-admins/roles-and-permissions.md).
 @y
-Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change SSO and SCIM settings. Changes to company settings impact all users in each organization under the company. See [Roles and permissions](../security/for-admins/roles-and-permissions.md).
+Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change SSO and SCIM settings. Changes to company settings impact all users in each organization under the company. See [Roles and permissions](../../security/for-admins/roles-and-permissions.md).
 @z
 
 @x
@@ -112,9 +116,9 @@ You can manage domain verification, Single Sign-on, and System for Cross-domain 
 @z
 
 @x
-To view and manage users across all the organizations under your company, you can [manage users at the company level](../admin/company/users.md) when you use Docker Admin.
+To view and manage users across all the organizations under your company, you can [manage users at the company level](../../admin/company/users.md) when you use the [Admin Console](https://admin.docker.com).
 @y
-To view and manage users across all the organizations under your company, you can [manage users at the company level](../admin/company/users.md) when you use Docker Admin.
+To view and manage users across all the organizations under your company, you can [manage users at the company level](../../admin/company/users.md) when you use the [Admin Console](https://admin.docker.com).
 @z
 
 @x
@@ -142,9 +146,9 @@ A company name must be unique to that of its child organization. If a child orga
 @z
 
 @x
-You can add organizations to a company in [Docker Admin](../admin/company/organizations.md/#add-organizations-to-a-company.md) or [Docker Hub](./new-company.md/#add-organizations-to-a-company.md).
+You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md/#add-organizations-to-a-company.md) or [Docker Hub](../../admin/company/new-company.md/#add-organizations-to-a-company.md).
 @y
-You can add organizations to a company in [Docker Admin](../admin/company/organizations.md/#add-organizations-to-a-company.md) or [Docker Hub](./new-company.md/#add-organizations-to-a-company.md).
+You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md/#add-organizations-to-a-company.md) or [Docker Hub](../../admin/company/new-company.md/#add-organizations-to-a-company.md).
 @z
 
 @x
@@ -154,9 +158,9 @@ You can add organizations to a company in [Docker Admin](../admin/company/organi
 @z
 
 @x
-See your [SCIM](scim.md) and [SSO](../security/for-admins/single-sign-on/configure/index.md) settings.
+See your [SCIM](scim.md) and [SSO](../../security/for-admins/single-sign-on/configure/index.md) settings.
 @y
-See your [SCIM](scim.md) and [SSO](../security/for-admins/single-sign-on/configure/index.md) settings.
+See your [SCIM](scim.md) and [SSO](../../security/for-admins/single-sign-on/configure/index.md) settings.
 @z
 
 @x
@@ -166,9 +170,9 @@ See your [SCIM](scim.md) and [SSO](../security/for-admins/single-sign-on/configu
 @z
 
 @x
-See [SCIM](scim.md) and [Group mapping](../security/for-admins/group-mapping.md) for more information.
+See [SCIM](scim.md) and [Group mapping](../../security/for-admins/group-mapping.md) for more information.
 @y
-See [SCIM](scim.md) and [Group mapping](../security/for-admins/group-mapping.md) for more information.
+See [SCIM](scim.md) and [Group mapping](../../security/for-admins/group-mapping.md) for more information.
 @z
 
 @x

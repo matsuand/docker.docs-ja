@@ -40,9 +40,9 @@ When you upgrade to a paid subscription, you immediately have access to all the 
 @z
 
 @x
-2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../docker-hub/convert-account.md).
+2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../admin/convert-account.md).
 @y
-2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../docker-hub/convert-account.md).
+2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../admin/convert-account.md).
 @z
 
 @x

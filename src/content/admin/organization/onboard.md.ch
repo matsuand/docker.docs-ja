@@ -8,6 +8,10 @@ keywords: business, team, organizations, get started, onboarding
 title: Onboard your organization
 toc_min: 1
 toc_max: 2
+aliases:
+- /docker-hub/onboard/
+- /docker-hub/onboard-team/
+- /docker-hub/onboard-business/
 ---
 @y
 ---
@@ -16,6 +20,10 @@ keywords: business, team, organizations, get started, onboarding
 title: Onboard your organization
 toc_min: 1
 toc_max: 2
+aliases:
+- /docker-hub/onboard/
+- /docker-hub/onboard-team/
+- /docker-hub/onboard-business/
 ---
 @z
 
@@ -26,7 +34,13 @@ toc_max: 2
 @z
 
 @x
-{{% admin-org-onboarding product="admin" %}}
+Learn how to onboard your organization using Docker Hub or the Docker Admin Console.
 @y
-{{% admin-org-onboarding product="admin" %}}
+Learn how to onboard your organization using Docker Hub or the Docker Admin Console.
+@z
+
+@x
+{{% admin-org-onboarding %}}
+@y
+{{% admin-org-onboarding %}}
 @z

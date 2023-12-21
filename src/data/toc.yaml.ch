@@ -43,7 +43,7 @@ Guides:
   section:
     - title: "概要"
       path:  __SUBDIR__/guides/get-started/
-    - sectiontitle: "Quick hands-on guides"
+    - sectiontitle: "かんたん実践ガイド"
       section:
       - title: "コンテナーとは何か"
         path:  __SUBDIR__/guides/walkthroughs/what-is-a-container/
@@ -4064,6 +4064,34 @@ Manuals:
 @z
 
 @x
+    - sectiontitle: Build Cloud
+      section:
+        - path: /build/cloud/
+          title: Overview
+        - path: /build/cloud/setup/
+          title: Setup
+        - path: /build/cloud/usage/
+          title: Usage
+        - path: /build/cloud/ci/
+          title: Build Cloud in CI
+        - path: /build/cloud/optimization/
+          title: Optimize for cloud builds
+@y
+    - sectiontitle: Build Cloud
+      section:
+        - path: __SUBDIR__/build/cloud/
+          title: Overview
+        - path: __SUBDIR__/build/cloud/setup/
+          title: Setup
+        - path: __SUBDIR__/build/cloud/usage/
+          title: Usage
+        - path: __SUBDIR__/build/cloud/ci/
+          title: Build Cloud in CI
+        - path: __SUBDIR__/build/cloud/optimization/
+          title: Optimize for cloud builds
+@z
+
+@x
     - sectiontitle: Exporters
       section:
         - path: /build/exporters/
@@ -4560,35 +4588,15 @@ Manuals:
 @z
 
 @x
-- sectiontitle: Docker Admin (Early Access)
+- sectiontitle: Administration
   section:
   - path: /admin/
     title: Overview
-  - sectiontitle: Company administration
-    section:
-    - path: /admin/company/
-      title: Overview
-    - path: /admin/company/organizations/
-      title: Manage organizations
-    - path: /admin/company/users/
-      title: Manage users
-    - path: /admin/company/owners/
-      title: Manage company owners
 @y
-- sectiontitle: Docker Admin (Early Access)
+- sectiontitle: Administration
   section:
   - path: __SUBDIR__/admin/
     title: Overview
-  - sectiontitle: Company administration
-    section:
-    - path: __SUBDIR__/admin/company/
-      title: Overview
-    - path: __SUBDIR__/admin/company/organizations/
-      title: Manage organizations
-    - path: __SUBDIR__/admin/company/users/
-      title: Manage users
-    - path: __SUBDIR__/admin/company/owners/
-      title: Manage company owners
 @z
 
 @x
@@ -4596,10 +4604,14 @@ Manuals:
     section:
     - path: /admin/organization/
       title: Overview
+    - path: /admin/organization/orgs/
+      title: Create your organization
     - path: /admin/organization/onboard/
       title: Onboard your organization
     - path: /admin/organization/members/
       title: Manage members
+    - path: /admin/organization/manage-a-team/
+      title: Create and manage a team
     - path: /admin/organization/activity-logs/
       title: Activity logs
     - path: /admin/organization/general-settings/
@@ -4609,10 +4621,14 @@ Manuals:
     section:
     - path: __SUBDIR__/admin/organization/
       title: Overview
+    - path: __SUBDIR__/admin/organization/orgs/
+      title: Create your organization
     - path: __SUBDIR__/admin/organization/onboard/
       title: Onboard your organization
     - path: __SUBDIR__/admin/organization/members/
       title: Manage members
+    - path: __SUBDIR__/admin/organization/manage-a-team/
+      title: Create and manage a team
     - path: __SUBDIR__/admin/organization/activity-logs/
       title: Activity logs
     - path: __SUBDIR__/admin/organization/general-settings/
@@ -4620,58 +4636,38 @@ Manuals:
 @z
 
 @x
-- sectiontitle: Administration 
-  section:
-  - path: /docker-hub/admin-overview/
-    title: Overview
-  - path: /docker-hub/orgs/
-    title: Create your organization
-  - path: /docker-hub/onboard/
-    title: Onboard your organization
-  - sectiontitle: Set up your company
+  - sectiontitle: Company administration
     section:
-    - path: /docker-hub/creating-companies/
+    - path: /admin/company/
       title: Overview
-    - path: /docker-hub/new-company/
+    - path: /admin/company/new-company/
       title: Create a company
-    - path:  /docker-hub/company-owner/
+    - path: /admin/company/organizations/
+      title: Manage organizations
+    - path: /admin/company/users/
+      title: Manage users
+    - path: /admin/company/owners/
       title: Manage company owners
-  - path: /docker-hub/convert-account/
+  - path: /admin/convert-account/
     title: Convert an account into an organization
-  - path: /docker-hub/manage-a-team/
-    title: Create and manage a team
-  - path: /docker-hub/members/
-    title: Manage members
-  - path: /docker-hub/audit-log/
-    title: Audit logs
-  - path: /docker-hub/deactivate-account/
+  - path: /admin/deactivate-account/
     title: Deactivate an account or organization
 @y
-- sectiontitle: Administration 
-  section:
-  - path: __SUBDIR__/docker-hub/admin-overview/
-    title: Overview
-  - path: __SUBDIR__/docker-hub/orgs/
-    title: Create your organization
-  - path: __SUBDIR__/docker-hub/onboard/
-    title: Onboard your organization
-  - sectiontitle: Set up your company
+  - sectiontitle: Company administration
     section:
-    - path: __SUBDIR__/docker-hub/creating-companies/
+    - path: __SUBDIR__/admin/company/
       title: Overview
-    - path: __SUBDIR__/docker-hub/new-company/
+    - path: __SUBDIR__/admin/company/new-company/
       title: Create a company
-    - path:  docker-hub/company-owner/
+    - path: __SUBDIR__/admin/company/organizations/
+      title: Manage organizations
+    - path: __SUBDIR__/admin/company/users/
+      title: Manage users
+    - path: __SUBDIR__/admin/company/owners/
       title: Manage company owners
-  - path: __SUBDIR__/docker-hub/convert-account/
+  - path: __SUBDIR__/admin/convert-account/
     title: Convert an account into an organization
-  - path: __SUBDIR__/docker-hub/manage-a-team/
-    title: Create and manage a team
-  - path: __SUBDIR__/docker-hub/members/
-    title: Manage members
-  - path: __SUBDIR__/docker-hub/audit-log/
-    title: Audit logs
-  - path: __SUBDIR__/docker-hub/deactivate-account/
+  - path: __SUBDIR__/admin/deactivate-account/
     title: Deactivate an account or organization
 @z
 
@@ -4782,6 +4778,8 @@ Manuals:
     title: Change your billing cycle
   - path: /billing/scout-billing/
     title: Docker Scout billing
+  - path: /billing/build-billing/
+    title: Docker Build Cloud billing
 @y
 - sectiontitle: Billing
   section:
@@ -4797,6 +4795,8 @@ Manuals:
     title: Change your billing cycle
   - path: __SUBDIR__/billing/scout-billing/
     title: Docker Scout billing
+  - path: __SUBDIR__/billing/build-billing/
+    title: Docker Build Cloud billing
 @z
 
 @x
@@ -4818,6 +4818,8 @@ Manuals:
     title: Docker Desktop license agreement
   - path: /subscription/scout-details/
     title: Docker Scout subscriptions and features
+  - path: /subscription/build-details/
+    title: Docker Build Cloud subscriptions and features
 @y
 - sectiontitle: Subscription
   section:
@@ -4837,6 +4839,8 @@ Manuals:
     title: Docker Desktop license agreement
   - path: __SUBDIR__/subscription/scout-details/
     title: Docker Scout subscriptions and features
+  - path: __SUBDIR__/subscription/build-details/
+    title: Docker Build Cloud subscriptions and features
 @z
 
 @x
@@ -4934,22 +4938,22 @@ FAQ:
 @z
 
 @x
-  - sectiontitle: Docker Hub and admin
+  - sectiontitle: Docker account and admin
     section:
-    - path: /docker-hub/general-faqs/
+    - path: /faq/admin/general-faqs/
       title: General
-    - path: /docker-hub/organization-faqs/
+    - path: /faq/admin/organization-faqs/
       title: Organization
-    - path: /docker-hub/company-faqs/
+    - path: /faq/admin/company-faqs/
       title: Company
 @y
-  - sectiontitle: Docker Hub and admin
+  - sectiontitle: Docker account and admin
     section:
-    - path: __SUBDIR__/docker-hub/general-faqs/
+    - path: __SUBDIR__/faq/admin/general-faqs/
       title: General
-    - path: __SUBDIR__/docker-hub/organization-faqs/
+    - path: __SUBDIR__/faq/admin/organization-faqs/
       title: Organization
-    - path: __SUBDIR__/docker-hub/company-faqs/
+    - path: __SUBDIR__/faq/admin/company-faqs/
       title: Company
 @z
 

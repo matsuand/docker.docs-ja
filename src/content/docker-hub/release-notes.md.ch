@@ -182,9 +182,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
-- You can now [export a CSV file of members](../docker-hub/members.md/#export-members) from organizations that you own.
+- You can now [export a CSV file of members](../admin/organization//members.md/#export-members) from organizations that you own.
 @y
-- You can now [export a CSV file of members](../docker-hub/members.md/#export-members) from organizations that you own.
+- You can now [export a CSV file of members](../admin/organization//members.md/#export-members) from organizations that you own.
 @z
 
 @x
@@ -456,9 +456,9 @@ Docker introduces Audit logs, a new feature that allows team owners to view a li
 @z
 
 @x
-For more information about this feature and for instructions on how to use it, see [Audit logs](audit-log.md).
+For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/organization/activity-logs.md).
 @y
-For more information about this feature and for instructions on how to use it, see [Audit logs](audit-log.md).
+For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/organization/activity-logs.md).
 @z
 
 @x

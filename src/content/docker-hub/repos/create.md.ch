@@ -61,14 +61,14 @@ When creating a new repository:
 
 @x
 - You can choose to locate it under your own user account, or under any
-  [organization](../../docker-hub/orgs.md) where you are an [owner](../manage-a-team.md#organization-owner).
+  [organization](../../admin/organization//orgs.md) where you are an [owner](../../admin/organization//manage-a-team.md#organization-owner).
 - The repository name needs to:
     - Be unique
     - Have between 2 and 255 characters
     - Only contain lowercase letters, numbers, hyphens (`-`), and underscores (`_`)
 @y
 - You can choose to locate it under your own user account, or under any
-  [organization](../../docker-hub/orgs.md) where you are an [owner](../manage-a-team.md#organization-owner).
+  [organization](../../admin/organization//orgs.md) where you are an [owner](../../admin/organization//manage-a-team.md#organization-owner).
 - The repository name needs to:
     - Be unique
     - Have between 2 and 255 characters

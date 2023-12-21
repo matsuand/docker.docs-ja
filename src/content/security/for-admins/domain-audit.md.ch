@@ -109,10 +109,10 @@ Before you audit your domains, review the following required prerequisites:
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x

@@ -3,28 +3,38 @@
 
 @x
 ---
-description: Docker Hub Teams & Organizations
+description: Learn how to create an organization.
 keywords: Docker, docker, registry, teams, organizations, plans, Dockerfile, Docker
   Hub, docs, documentation
 title: Create your organization
 aliases:
 - /docker-cloud/orgs/
+- /docker-hub/orgs/
 ---
 @y
 ---
-description: Docker Hub Teams & Organizations
+description: Learn how to create an organization.
 keywords: Docker, docker, registry, teams, organizations, plans, Dockerfile, Docker
   Hub, docs, documentation
 title: Create your organization
 aliases:
 - /docker-cloud/orgs/
+- /docker-hub/orgs/
 ---
 @z
 
 @x
-{{< include "admin-org-overview.md" >}}
+This section describes how to create an organization. Before you begin:
 @y
-{{< include "admin-org-overview.md" >}}
+This section describes how to create an organization. Before you begin:
+@z
+
+@x
+- You need a [Docker ID](../../docker-id/_index.md).
+- Review the [Docker subscriptions and features](../../subscription/details.md) to determine what plan to choose for your organization.
+@y
+- You need a [Docker ID](../../docker-id/_index.md).
+- Review the [Docker subscriptions and features](../../subscription/details.md) to determine what plan to choose for your organization.
 @z
 
 @x
@@ -39,14 +49,14 @@ organization using the **Create Organization** option in Docker Hub, or you can
 convert an existing user account to an organization. The following section
 contains instructions on how to create a new organization. For prerequisites and
 detailed instructions on converting an existing user account to an organization, see
-[Convert an account into an organization](convert-account.md).
+[Convert an account into an organization](../convert-account.md).
 @y
 There are multiple ways to create an organization. You can create a brand new
 organization using the **Create Organization** option in Docker Hub, or you can
 convert an existing user account to an organization. The following section
 contains instructions on how to create a new organization. For prerequisites and
 detailed instructions on converting an existing user account to an organization, see
-[Convert an account into an organization](convert-account.md).
+[Convert an account into an organization](../convert-account.md).
 @z
 
 @x
@@ -56,14 +66,14 @@ To create an organization:
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../docker-id/index.md), your email address, or your social provider.
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../../docker-id/_index.md), your email address, or your social provider.
 2. Select **Organizations** and then **Create Organization** to create a new
    organization.
 3. Choose a plan for your organization and select **Buy Now**. See
 [Docker Pricing](https://www.docker.com/pricing/)
 for details on the features offered in the Team and Business plan.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../docker-id/index.md), your email address, or your social provider.
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../../docker-id/_index.md), your email address, or your social provider.
 2. Select **Organizations** and then **Create Organization** to create a new
    organization.
 3. Choose a plan for your organization and select **Buy Now**. See
@@ -96,11 +106,11 @@ organization after you've created it.
 @x
    > **Note**
    >
-   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](convert-account.md).
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](../convert-account.md).
 @y
    > **Note**
    >
-   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](convert-account.md).
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](../convert-account.md).
 @z
 
 @x
@@ -168,7 +178,7 @@ To view an organization:
       >
       > You can't _directly_ log in to an organization. This is especially
       > important to note if you create an organization by
-      [converting a user account](convert-account.md), as conversion means you lose the ability to log into that
+      [converting a user account](../convert-account.md), as conversion means you lose the ability to log into that
       > "account", since it no longer exists. To view the organization you 
       > need to log in with the new owner account assigned during the
       > conversion or another account that was added as a member. If you 
@@ -180,7 +190,7 @@ To view an organization:
       >
       > You can't _directly_ log in to an organization. This is especially
       > important to note if you create an organization by
-      [converting a user account](convert-account.md), as conversion means you lose the ability to log into that
+      [converting a user account](../convert-account.md), as conversion means you lose the ability to log into that
       > "account", since it no longer exists. To view the organization you 
       > need to log in with the new owner account assigned during the
       > conversion or another account that was added as a member. If you 
@@ -207,39 +217,39 @@ configure your organization.
 
 @x
 - **Members**: Displays a list of team members. You
-  can invite new members using the **Invite members** button. See [Manage members](../docker-hub/members.md) for details.
+  can invite new members using the **Invite members** button. See [Manage members](./members.md) for details.
 @y
 - **Members**: Displays a list of team members. You
-  can invite new members using the **Invite members** button. See [Manage members](../docker-hub/members.md) for details.
+  can invite new members using the **Invite members** button. See [Manage members](./members.md) for details.
 @z
 
 @x
 - **Teams**: Displays a list of existing teams and the number of
-  members in each team. See [Create a team](manage-a-team.md) for details.
+  members in each team. See [Create a team](./manage-a-team.md) for details.
 @y
 - **Teams**: Displays a list of existing teams and the number of
-  members in each team. See [Create a team](manage-a-team.md) for details.
+  members in each team. See [Create a team](./manage-a-team.md) for details.
 @z
 
 @x
 - **Repositories**: Displays a list of repositories associated with the
-  organization. See [Repositories](../docker-hub/repos/index.md) for detailed information about
+  organization. See [Repositories](../../docker-hub/repos/index.md) for detailed information about
   working with repositories.
 @y
 - **Repositories**: Displays a list of repositories associated with the
-  organization. See [Repositories](../docker-hub/repos/index.md) for detailed information about
+  organization. See [Repositories](../../docker-hub/repos/index.md) for detailed information about
   working with repositories.
 @z
 
 @x
 - **Activity** Displays the audit logs, a chronological list of activities that
   occur at organization and repository levels. It provides the org owners a
-  report of all their team member activities. See [Audit logs](audit-log.md) for
+  report of all their team member activities. See [Audit logs](./activity-logs.md) for
   details.
 @y
 - **Activity** Displays the audit logs, a chronological list of activities that
   occur at organization and repository levels. It provides the org owners a
-  report of all their team member activities. See [Audit logs](audit-log.md) for
+  report of all their team member activities. See [Audit logs](./activity-logs.md) for
   details.
 @z
 
@@ -247,24 +257,22 @@ configure your organization.
 - **Settings**: Displays information about your
   organization, and allows you to view and change your repository privacy
   settings, configure org permissions such as
-  [Image Access Management](image-access-management.md), configure notification settings, and [deactivate](deactivate-account.md#deactivate-an-organization) your
-  organization. You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
+  [Image Access Management](../../security/for-admins/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
    organization's **Settings** page.
 @y
 - **Settings**: Displays information about your
   organization, and allows you to view and change your repository privacy
   settings, configure org permissions such as
-  [Image Access Management](image-access-management.md), configure notification settings, and [deactivate](deactivate-account.md#deactivate-an-organization) your
-  organization. You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
+  [Image Access Management](../../security/for-admins/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
    organization's **Settings** page.
 @z
 
 @x
 - **Billing**: Displays information about your existing
-[Docker subscription (plan)](../subscription/index.md), including the number of seats and next payment due date. For how to access the billing history and payment methods for your organization, see [View billing history](../billing/history.md).
+[Docker subscription (plan)](../../subscription/_index.md), including the number of seats and next payment due date. For how to access the billing history and payment methods for your organization, see [View billing history](../../billing/history.md).
 @y
 - **Billing**: Displays information about your existing
-[Docker subscription (plan)](../subscription/index.md), including the number of seats and next payment due date. For how to access the billing history and payment methods for your organization, see [View billing history](../billing/history.md).
+[Docker subscription (plan)](../../subscription/_index.md), including the number of seats and next payment due date. For how to access the billing history and payment methods for your organization, see [View billing history](../../billing/history.md).
 @z
 
 @x

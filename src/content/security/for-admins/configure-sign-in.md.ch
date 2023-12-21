@@ -105,10 +105,10 @@ following occurs:
 
 @x
 1. Ensure that the user is a member of your organization in Docker. For more
-details, see [Manage members](../../docker-hub/members.md).
+details, see [Manage members](/admin/organization/members/).
 @y
 1. Ensure that the user is a member of your organization in Docker. For more
-details, see [Manage members](../../docker-hub/members.md).
+details, see [Manage members](/admin/organization/members/).
 @z
 
 @x

@@ -6,7 +6,7 @@
 description: >
   Use roles in your organization to control who has access to content,
   registry, and organization management permissions.
-keywords: members, teams, organization, company, roles, access, docker hub, docker admin, security 
+keywords: members, teams, organization, company, roles, access, docker hub, admin console, security 
 title: Roles and permissions
 aliases:
 - /docker-hub/roles-and-permissions/
@@ -16,7 +16,7 @@ aliases:
 description: >
   Use roles in your organization to control who has access to content,
   registry, and organization management permissions.
-keywords: members, teams, organization, company, roles, access, docker hub, docker admin, security 
+keywords: members, teams, organization, company, roles, access, docker hub, admin console, security 
 title: Roles and permissions
 aliases:
 - /docker-hub/roles-and-permissions/
@@ -60,9 +60,9 @@ The following roles are available to assign:
 @z
 
 @x
-Owners can manage roles for members of an organization on [Docker Hub](/docker-hub/members/#update-a-member-role), as well members of an [organization](/admin/organization/members/#update-a-member-role) or a [company](/admin/company/users/#update-a-member-role) on [Docker Admin](/admin/).
+Owners can manage roles for members of an organization on [Docker Hub](/admin/organization/members/#update-a-member-role), as well members of an [organization](/admin/organization/members/#update-a-member-role) or a [company](/admin/company/users/#update-a-member-role) in the [Docker Admin Console](/admin/).
 @y
-Owners can manage roles for members of an organization on [Docker Hub](/docker-hub/members/#update-a-member-role), as well members of an [organization](/admin/organization/members/#update-a-member-role) or a [company](/admin/company/users/#update-a-member-role) on [Docker Admin](/admin/).
+Owners can manage roles for members of an organization on [Docker Hub](/admin/organization/members/#update-a-member-role), as well members of an [organization](/admin/organization/members/#update-a-member-role) or a [company](/admin/company/users/#update-a-member-role) in the [Docker Admin Console](/admin/).
 @z
 
 @x
@@ -132,9 +132,9 @@ Company owners have the same access as organization owners for all associated or
 @z
 
 @x
-When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](/docker-hub/manage-a-team/#permissions-reference).
+When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](/admin/organization/manage-a-team/#permissions-reference).
 @y
-When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](/docker-hub/manage-a-team/#permissions-reference).
+When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](/admin/organization/manage-a-team/#permissions-reference).
 @z
 
 @x

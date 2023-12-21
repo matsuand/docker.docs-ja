@@ -70,7 +70,7 @@ grid:
   icon: domain_verification
 - title: FAQs
   description: Explore common organization FAQs.
-  link: /docker-hub/organization-faqs/
+  link: /faq/admin/organization-faqs/
   icon: help
 ---
 @y
@@ -82,33 +82,27 @@ grid:
   icon: domain_verification
 - title: FAQs
   description: Explore common organization FAQs.
-  link: /docker-hub/organization-faqs/
+  link: /faq/admin/organization-faqs/
   icon: help
 ---
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
-@y
-{{< include "admin-early-access.md" >}}
-@z
-
-@x
 {{< include "admin-org-overview.md" >}}
 @y
 {{< include "admin-org-overview.md" >}}
 @z
 
 @x
-To create an organization, see [Create your organization](../../docker-hub/orgs.md).
+To create an organization, see [Create your organization](../organization/orgs.md).
 @y
-To create an organization, see [Create your organization](../../docker-hub/orgs.md).
+To create an organization, see [Create your organization](../organization/orgs.md).
 @z
 
 @x
-Learn how to administer an organization using Docker Admin in the following sections.
+Learn how to administer an organization in the following sections.
 @y
-Learn how to administer an organization using Docker Admin in the following sections.
+Learn how to administer an organization in the following sections.
 @z
 
 @x

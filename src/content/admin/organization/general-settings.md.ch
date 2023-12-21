@@ -3,14 +3,14 @@
 
 @x
 ---
-description: Learn how about general settings for organizations.
-keywords: organization, settings
+description: Learn how to manage general settings for organizations.
+keywords: organization, settings, Admin Console
 title: General organization settings
 ---
 @y
 ---
-description: Learn how about general settings for organizations.
-keywords: organization, settings
+description: Learn how to manage general settings for organizations.
+keywords: organization, settings, Admin Console
 title: General organization settings
 ---
 @z
@@ -19,6 +19,12 @@ title: General organization settings
 {{< include "admin-early-access.md" >}}
 @y
 {{< include "admin-early-access.md" >}}
+@z
+
+@x
+This section describes how to manage general settings in the Docker Admin Console.
+@y
+This section describes how to manage general settings in the Docker Admin Console.
 @z
 
 @x
@@ -56,12 +62,12 @@ To edit this information:
 @z
 
 @x
-1. Sign in to [Docker Admin](https://admin.docker.com).
+1. Sign in to the [Admin Console](https://admin.docker.com).
 2. In the left navigation, select your organization in the drop-down menu.
 3. Under **Organization Settings**, select **General**.
 4. Specify the organization information and select **Save**.
 @y
-1. Sign in to [Docker Admin](https://admin.docker.com).
+1. Sign in to the [Admin Console](https://admin.docker.com).
 2. In the left navigation, select your organization in the drop-down menu.
 3. Under **Organization Settings**, select **General**.
 4. Specify the organization information and select **Save**.
@@ -80,14 +86,14 @@ To create a new company:
 @z
 
 @x
-1. Sign in to [Docker Admin](https://admin.docker.com).
+1. Sign in to the [Admin Console](https://admin.docker.com).
 2. In the left navigation, select your organization in the drop-down menu.
 3. Under **Organization Settings**, select **General**.
 4. In the **Organization management** section, select **Create a company**.
 5. Enter a unique name for your company, then select **Continue**.
 6. Review the company migration details and then select **Create company**.
 @y
-1. Sign in to [Docker Admin](https://admin.docker.com).
+1. Sign in to the [Admin Console](https://admin.docker.com).
 2. In the left navigation, select your organization in the drop-down menu.
 3. Under **Organization Settings**, select **General**.
 4. In the **Organization management** section, select **Create a company**.

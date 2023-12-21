@@ -371,12 +371,12 @@ RUN --mount=type=cache,target=/root/.cache/go-build go mod download
 
 @x
 COPY ./src ./
-RUN --mount=type=cache,target=/root/.cache/go-build && go build -o /bin/app /build/src
+RUN --mount=type=cache,target=/root/.cache/go-build go build -o /bin/app /build/src
 ...
 ```
 @y
 COPY ./src ./
-RUN --mount=type=cache,target=/root/.cache/go-build && go build -o /bin/app /build/src
+RUN --mount=type=cache,target=/root/.cache/go-build go build -o /bin/app /build/src
 ...
 ```
 @z

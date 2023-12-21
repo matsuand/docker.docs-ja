@@ -4,7 +4,7 @@
 @x
 ---
 description: Overview of Single Sign-On
-keywords: Single Sign-On, SSO, sign-on, admin, docker hub, docker admin, security
+keywords: Single Sign-On, SSO, sign-on, admin, docker hub, admin console, security
 title: Single Sign-On overview
 aliases:
 - /single-sign-on/
@@ -14,7 +14,7 @@ aliases:
 @y
 ---
 description: Overview of Single Sign-On
-keywords: Single Sign-On, SSO, sign-on, admin, docker hub, docker admin, security
+keywords: Single Sign-On, SSO, sign-on, admin, docker hub, admin console, security
 title: Single Sign-On overview
 aliases:
 - /single-sign-on/
@@ -66,9 +66,9 @@ Before enabling SSO in Docker, administrators must first configure their IdP to 
 @z
 
 @x
-After establishing the connection between the IdP server and Docker, administrators sign in to Docker Hub or Docker Admin and complete SSO enablement.
+After establishing the connection between the IdP server and Docker, administrators sign in to Docker Hub or the Docker Admin Console and complete SSO enablement.
 @y
-After establishing the connection between the IdP server and Docker, administrators sign in to Docker Hub or Docker Admin and complete SSO enablement.
+After establishing the connection between the IdP server and Docker, administrators sign in to Docker Hub or the Docker Admin Console and complete SSO enablement.
 @z
 
 @x

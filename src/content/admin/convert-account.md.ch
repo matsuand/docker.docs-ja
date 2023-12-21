@@ -6,12 +6,16 @@
 description: Convert your Docker Hub user account into an organization
 title: Convert an account into an organization
 keywords: docker hub, hub, organization
+aliases:
+- /docker-hub/convert-account/
 ---
 @y
 ---
 description: Convert your Docker Hub user account into an organization
 title: Convert an account into an organization
 keywords: docker hub, hub, organization
+aliases:
+- /docker-hub/convert-account/
 ---
 @z
 

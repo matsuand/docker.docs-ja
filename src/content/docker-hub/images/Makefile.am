@@ -3,7 +3,6 @@
 ##
 copyfiles = \
 	azure-create-connection.png \
-	company-overview.png        \
 	create-connection.png       \
 	index-create-repo.png       \
 	index-report.png            \
@@ -13,9 +12,7 @@ copyfiles = \
 	oci-helm-tagview.png        \
 	oci-helm.png                \
 	oci-volume.png              \
-	remove-owner.png            \
 	saml-create-connection.png  \
-	team-repo-permission.png    \
 	vuln-scan-details.png       \
 	vuln-scan-report.png
 

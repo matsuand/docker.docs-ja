@@ -300,32 +300,32 @@ hello world
 @z
 
 @x
-When using cURL to connect over a unix socket, the hostname is not important. The
-examples above use `localhost`, but any hostname would work.
+When using cURL to connect over a Unix socket, the hostname isn't important. The
+previous examples use `localhost`, but any hostname would work.
 @y
-When using cURL to connect over a unix socket, the hostname is not important. The
-examples above use `localhost`, but any hostname would work.
+When using cURL to connect over a Unix socket, the hostname isn't important. The
+previous examples use `localhost`, but any hostname would work.
 @z
 
 @x
-> **Using cURL 7.47.0 or below?**
+> **Important**
 >
-> The examples above assume you are using cURL 7.50.0 or above. Older versions of
+> The previous examples assume you're using cURL 7.50.0 or above. Older versions of
 > cURL used a [non-standard URL notation](https://github.com/moby/moby/issues/17960)
 > when using a socket connection.
-> 
-> If you are using an older version of cURL, use `http:/<API version>/` instead,
-> for example, `http:/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start`
+>
+> If you're' using an older version of cURL, use `http:/<API version>/` instead,
+> for example: `http:/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start`.
 { .important }
 @y
-> **Using cURL 7.47.0 or below?**
+> **Important**
 >
-> The examples above assume you are using cURL 7.50.0 or above. Older versions of
+> The previous examples assume you're using cURL 7.50.0 or above. Older versions of
 > cURL used a [non-standard URL notation](https://github.com/moby/moby/issues/17960)
 > when using a socket connection.
-> 
-> If you are using an older version of cURL, use `http:/<API version>/` instead,
-> for example, `http:/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start`
+>
+> If you're' using an older version of cURL, use `http:/<API version>/` instead,
+> for example: `http:/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start`.
 { .important }
 @z
 
@@ -702,11 +702,15 @@ This example stops all running containers.
 @z
 
 @x
-> **Note**: Don't run this on a production server. Also, if you are using swarm
+> **Note**
+>
+> Don't run this on a production server. Also, if you're' using swarm
 > services, the containers stop, but Docker creates new ones to keep
 > the service running in its configured state.
 @y
-> **Note**: Don't run this on a production server. Also, if you are using swarm
+> **Note**
+>
+> Don't run this on a production server. Also, if you're' using swarm
 > services, the containers stop, but Docker creates new ones to keep
 > the service running in its configured state.
 @z
@@ -1352,10 +1356,14 @@ Pull an image, like `docker pull`, with authentication:
 @z
 
 @x
-> **Note**: Credentials are sent in the clear. Docker's official registries use
+> **Note**
+>
+> Credentials are sent in the clear. Docker's official registries use
 > HTTPS. Private registries should also be configured to use HTTPS.
 @y
-> **Note**: Credentials are sent in the clear. Docker's official registries use
+> **Note**
+>
+> Credentials are sent in the clear. Docker's official registries use
 > HTTPS. Private registries should also be configured to use HTTPS.
 @z
 
@@ -1477,15 +1485,15 @@ func main() {
 The Python SDK retrieves authentication information from the [credentials
 store](/engine/reference/commandline/login/#credentials-store) file and
 integrates with [credential
-helpers](https://github.com/docker/docker-credential-helpers). It is possible to override these credentials, but that is out of
-scope for this Getting Started guide. After using `docker login`, the Python SDK
+helpers](https://github.com/docker/docker-credential-helpers). It's possible to override these credentials, but that's out of
+scope for this example guide. After using `docker login`, the Python SDK
 uses these credentials automatically.
 @y
 The Python SDK retrieves authentication information from the [credentials
 store](/engine/reference/commandline/login/#credentials-store) file and
 integrates with [credential
-helpers](https://github.com/docker/docker-credential-helpers). It is possible to override these credentials, but that is out of
-scope for this Getting Started guide. After using `docker login`, the Python SDK
+helpers](https://github.com/docker/docker-credential-helpers). It's possible to override these credentials, but that's out of
+scope for this example guide. After using `docker login`, the Python SDK
 uses these credentials automatically.
 @z
 

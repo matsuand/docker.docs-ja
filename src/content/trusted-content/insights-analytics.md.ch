@@ -308,12 +308,12 @@ represents an image pull.
 @x
 [1]: #action-classification-rules
 [2]: /registry/spec/api/
-[3]: /docker-hub/orgs/
+[3]: /admin/organization/orgs/
 [4]: /docker-hub/repos/
 @y
 [1]: #action-classification-rules
 [2]: /registry/spec/api/
-[3]: /docker-hub/orgs/
+[3]: /admin/organization/orgs/
 [4]: /docker-hub/repos/
 @z
 

@@ -1,10 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admin security
 
 bases = \
-	_index.md
+	company-faqs.md      \
+	general-faqs.md      \
+	organization-faqs.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

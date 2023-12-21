@@ -256,7 +256,7 @@ Next, start a Prometheus container using this configuration.
 $ docker run --name my-prometheus \
     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml \
     -p 9090:9090 \
-    --add-host host.docker.internal:host-gateway \
+    --add-host host.docker.internal=host-gateway \
     prom/prometheus
 ```
 @y
@@ -264,7 +264,7 @@ $ docker run --name my-prometheus \
 $ docker run --name my-prometheus \
     --mount type=bind,source=/tmp/prometheus.yml,destination=/etc/prometheus/prometheus.yml \
     -p 9090:9090 \
-    --add-host host.docker.internal:host-gateway \
+    --add-host host.docker.internal=host-gateway \
     prom/prometheus
 ```
 @z

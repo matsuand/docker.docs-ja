@@ -60,11 +60,11 @@ repository from that repository's **Settings** page.
 @x
 You can also assign more granular collaborator rights ("Read", "Write", or
 "Admin") on Docker Hub by using organizations and teams. For more information
-see the [organizations documentation](../../../docker-hub/orgs.md#create-an-organization).
+see the [organizations documentation](../../admin/organization/orgs.md#create-an-organization).
 @y
 You can also assign more granular collaborator rights ("Read", "Write", or
 "Admin") on Docker Hub by using organizations and teams. For more information
-see the [organizations documentation](../../../docker-hub/orgs.md#create-an-organization).
+see the [organizations documentation](../../admin/organization/orgs.md#create-an-organization).
 @z
 
 @x

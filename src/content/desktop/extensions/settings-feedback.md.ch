@@ -48,7 +48,7 @@ Docker Extensions is switched on by default. To change your settings:
 @x
 >**Note**
 >
-> If you are an [organization owner](../../docker-hub/manage-a-team.md#organization-owner), you can turn off extensions for your users. Navigate to the `settings.json` file, and set `"extensionsEnabled"` to `false`. 
+> If you are an [organization owner](../../admin/organization/manage-a-team.md#organization-owner), you can turn off extensions for your users. Open the `settings.json` file, and set `"extensionsEnabled"` to `false`. 
 > The `settings.json` file is located at:
 >   - `~/Library/Group Containers/group.com.docker/settings.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json` on Windows
@@ -57,7 +57,7 @@ Docker Extensions is switched on by default. To change your settings:
 @y
 >**Note**
 >
-> If you are an [organization owner](../../docker-hub/manage-a-team.md#organization-owner), you can turn off extensions for your users. Navigate to the `settings.json` file, and set `"extensionsEnabled"` to `false`. 
+> If you are an [organization owner](../../admin/organization/manage-a-team.md#organization-owner), you can turn off extensions for your users. Open the `settings.json` file, and set `"extensionsEnabled"` to `false`. 
 > The `settings.json` file is located at:
 >   - `~/Library/Group Containers/group.com.docker/settings.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json` on Windows

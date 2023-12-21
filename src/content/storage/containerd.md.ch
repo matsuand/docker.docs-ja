@@ -5,13 +5,13 @@
 ---
 title: containerd image store with Docker Engine
 keywords: containerd, snapshotters, image store, docker engine
-description: Enabling the containerd image store on Docker Engine
+description: Learn how to enable the containerd image store on Docker Engine
 ---
 @y
 ---
 title: containerd image store with Docker Engine
 keywords: containerd, snapshotters, image store, docker engine
-description: Enabling the containerd image store on Docker Engine
+description: Learn how to enable the containerd image store on Docker Engine
 ---
 @z
 

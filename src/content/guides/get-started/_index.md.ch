@@ -76,13 +76,13 @@ aliases:
 @x
 ## Quick hands-on guides
 @y
-## Quick hands-on guides
+## かんたん実践ガイド {#quick-hands-on-guides}
 @z
 
 @x
 Let these 5-minute hands-on guides show you around Docker Desktop and introduce you to containerization concepts.
 @y
-Let these 5-minute hands-on guides show you around Docker Desktop and introduce you to containerization concepts.
+5 分程度の各実践ガイドでは Docker Desktop について紹介し、コンテナー化の考え方について説明していきます。
 @z
 
 @x
@@ -97,22 +97,21 @@ Let these 5-minute hands-on guides show you around Docker Desktop and introduce 
 > These hands-on guides are also available as interactive walkthroughs inside
 > Docker Desktop's learning center.
 @y
-> **Note**
+> **メモ**
 >
-> These hands-on guides are also available as interactive walkthroughs inside
-> Docker Desktop's learning center.
+> この実践ガイドは Docker Desktop の教育センター内においても、対話的なウォークスルーを通じて利用されています。
 @z
 
 @x
 ## Getting started guide
 @y
-## Getting started guide
+## ガイドをはじめましょう {#getting-started-guide}
 @z
 
 @x
 Dive deeper into Docker and containerization concepts in this end-to-end guide.
 @y
-Dive deeper into Docker and containerization concepts in this end-to-end guide.
+このガイドをすべて見ていきながら Docker やコンテナー化の概念を深く理解していきましょう。
 @z
 
 @x
@@ -124,9 +123,9 @@ Dive deeper into Docker and containerization concepts in this end-to-end guide.
 >}}
 @y
 {{< card
-  title="Getting started guide"
+  title="ガイドをはじめましょう"
   link=/get-started/
-  description="A 45-minute guide where you start by containerizing a simple application and then follow along to develop it into a multi-container application."
+  description="この 45 分のガイドは、簡単なアプリケーションをコンテナー化するところから始めて、ガイドに沿ってマルチコンテナーアプリケーションの開発にまで進みます。"
   icon="__SUBDIR__/assets/images/rocket.svg"
 >}}
 @z

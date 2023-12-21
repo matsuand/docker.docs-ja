@@ -140,6 +140,7 @@ AC_CONFIG_FILES([
 	src/content/engine/swarm/swarm-tutorial/Makefile
 	src/content/engine/tutorials/Makefile
 	src/content/faq/Makefile
+	src/content/faq/admin/Makefile
 	src/content/faq/security/Makefile
 	src/content/faq/security/single-sign-on/Makefile
 	src/content/get-started/Makefile

@@ -154,9 +154,9 @@ Docker provides various types of audit logs and log retention varies. For exampl
 @z
 
 @x
-Using the [Export Members](../../docker-hub/members.md) feature, you can export to CSV a list of your organization's users with role and team information. 
+Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information. 
 @y
-Using the [Export Members](../../docker-hub/members.md) feature, you can export to CSV a list of your organization's users with role and team information. 
+Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information. 
 @z
 
 @x

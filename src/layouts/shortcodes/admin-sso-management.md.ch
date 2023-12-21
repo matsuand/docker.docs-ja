@@ -21,7 +21,7 @@
 
 @x
 {{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "[Docker Admin](https://admin.docker.com)" }}
+  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
   {{ $invite_button = "**Invite**" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO & SCIM**." }}
   {{ $member_navigation := `Navigate to the user management page for your organization or company. 
@@ -31,7 +31,7 @@
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "[Docker Admin](https://admin.docker.com)" }}
+  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
   {{ $invite_button = "**Invite**" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO & SCIM**." }}
   {{ $member_navigation := `Navigate to the user management page for your organization or company. 

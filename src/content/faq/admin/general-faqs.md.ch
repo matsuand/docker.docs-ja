@@ -8,6 +8,8 @@ description: Frequently asked Docker account and administration questions
 keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
 redirect:
 - /docker-hub/onboarding-faqs/
+aliases:
+- /docker-hub/general-faqs/
 ---
 @y
 ---
@@ -16,6 +18,8 @@ description: Frequently asked Docker account and administration questions
 keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
 redirect:
 - /docker-hub/onboarding-faqs/
+aliases:
+- /docker-hub/general-faqs/
 ---
 @z
 
@@ -34,9 +38,9 @@ numbers and lowercase letters. You can't use any special characters or spaces.
 @z
 
 @x
-For more information, see [Docker ID](../docker-id/index.md). If your administrator enforces [Single sign-on (SSO)](../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
+For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [Single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
 @y
-For more information, see [Docker ID](../docker-id/index.md). If your administrator enforces [Single sign-on (SSO)](../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
+For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [Single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
 @z
 
 @x
@@ -112,9 +116,9 @@ A team is a group of Docker users that belong to an organization. An organizatio
 @z
 
 @x
-A company is a management layer that centralizes administration of multiple organizations. Administrators can add organizations with a Docker Business subscription to a company and configure settings for all organizations under the company. See [Set up your company](creating-companies.md).
+A company is a management layer that centralizes administration of multiple organizations. Administrators can add organizations with a Docker Business subscription to a company and configure settings for all organizations under the company. See [Set up your company](/admin/company/).
 @y
-A company is a management layer that centralizes administration of multiple organizations. Administrators can add organizations with a Docker Business subscription to a company and configure settings for all organizations under the company. See [Set up your company](creating-companies.md).
+A company is a management layer that centralizes administration of multiple organizations. Administrators can add organizations with a Docker Business subscription to a company and configure settings for all organizations under the company. See [Set up your company](/admin/company/).
 @z
 
 @x
@@ -163,10 +167,10 @@ The organization owner can also add additional owners to help them manage users,
 
 @x
 Docker SSO allows only one IdP configuration per organization. For more
-information, see [Configure SSO](../security/for-admins/single-sign-on/configure/_index.md) and [SSO FAQs](../faq/security/single-sign-on/faqs.md).
+information, see [Configure SSO](../../security/for-admins/single-sign-on/configure/_index.md) and [SSO FAQs](../security/single-sign-on/faqs.md).
 @y
 Docker SSO allows only one IdP configuration per organization. For more
-information, see [Configure SSO](../security/for-admins/single-sign-on/configure/_index.md) and [SSO FAQs](../faq/security/single-sign-on/faqs.md).
+information, see [Configure SSO](../../security/for-admins/single-sign-on/configure/_index.md) and [SSO FAQs](../security/single-sign-on/faqs.md).
 @z
 
 @x
@@ -176,9 +180,9 @@ information, see [Configure SSO](../security/for-admins/single-sign-on/configure
 @z
 
 @x
-A [service account](../docker-hub/service-accounts.md) is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and don't share Docker IDs with the members in the Team or Business plan. Common use cases for service accounts include mirroring content on Docker Hub, or tying in image pulls from your CI/CD process.
+A [service account](../../docker-hub/service-accounts.md) is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and don't share Docker IDs with the members in the Team or Business plan. Common use cases for service accounts include mirroring content on Docker Hub, or tying in image pulls from your CI/CD process.
 @y
-A [service account](../docker-hub/service-accounts.md) is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and don't share Docker IDs with the members in the Team or Business plan. Common use cases for service accounts include mirroring content on Docker Hub, or tying in image pulls from your CI/CD process.
+A [service account](../../docker-hub/service-accounts.md) is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and don't share Docker IDs with the members in the Team or Business plan. Common use cases for service accounts include mirroring content on Docker Hub, or tying in image pulls from your CI/CD process.
 @z
 
 @x
@@ -188,13 +192,13 @@ A [service account](../docker-hub/service-accounts.md) is a Docker ID used for a
 @z
 
 @x
-Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../docker-hub/deactivate-account.md/).
+Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../../admin/deactivate-account.md).
 @y
-Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../docker-hub/deactivate-account.md/).
+Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../../admin/deactivate-account.md).
 @z
 
 @x
-If the user is a member of your organization, you can remove the user from your organization. For more details, see [Remove a member or invitee](/docker-hub/members/#remove-a-member-or-invitee).
+If the user is a member of your organization, you can remove the user from your organization. For more details, see [Remove a member or invitee](../../admin/organization/members.md#remove-a-member-from-a-team).
 @y
-If the user is a member of your organization, you can remove the user from your organization. For more details, see [Remove a member or invitee](/docker-hub/members/#remove-a-member-or-invitee).
+If the user is a member of your organization, you can remove the user from your organization. For more details, see [Remove a member or invitee](../../admin/organization/members.md#remove-a-member-from-a-team).
 @z

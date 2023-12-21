@@ -47,7 +47,7 @@
     >
 @z
 
-@x
+@x __SUBDIR__
     <a href="{{ site.BaseURL }}">
       <figure>
         <img src="/assets/images/404-docs.png" alt="404 page not found" />
@@ -57,7 +57,7 @@
 @y
     <a href="{{ site.BaseURL }}">
       <figure>
-        <img src="/assets/images/404-docs.png" alt="404 page not found" />
+        <img src="__SUBDIR__/assets/images/404-docs.png" alt="404 page not found" />
         <figcaption class="link">Go to the homepage</figcaption>
       </figure>
     </a>

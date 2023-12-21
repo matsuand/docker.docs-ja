@@ -57,10 +57,10 @@ Follow the steps on this page to configure SSO for your organization or company.
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x
@@ -105,10 +105,10 @@ Follow the steps on this page to configure SSO for your organization or company.
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x

@@ -79,10 +79,10 @@ You need to [configure a registry.json to enforce sign-in](configure-sign-in.md)
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x

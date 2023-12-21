@@ -6,12 +6,16 @@
 title: Deactivating an account or an organization
 description: Learn how to deactivate a Docker Hub account or an organization
 keywords: Docker Hub, delete, deactivate, account, organization
+aliases:
+- /docker-hub/deactivate-account/
 ---
 @y
 ---
 title: Deactivating an account or an organization
 description: Learn how to deactivate a Docker Hub account or an organization
 keywords: Docker Hub, delete, deactivate, account, organization
+aliases:
+- /docker-hub/deactivate-account/
 ---
 @z
 
@@ -79,6 +83,12 @@ Before deactivating your Docker account, ensure that you meet the following requ
 - If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/downgrade.md).
 @y
 - If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/downgrade.md).
+@z
+
+@x
+- If you have an active Docker Build Cloud Paid subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
+@y
+- If you have an active Docker Build Cloud Paid subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
 @z
 
 @x

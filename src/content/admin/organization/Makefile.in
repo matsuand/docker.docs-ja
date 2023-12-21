@@ -241,8 +241,10 @@ bases = \
 	_index.md           \
 	activity-logs.md    \
 	general-settings.md \
+	manage-a-team.md    \
 	members.md          \
-	onboard.md
+	onboard.md          \
+	orgs.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

@@ -247,7 +247,7 @@ Before seeking support, you can perform basic troubleshooting. See [Diagnose and
 
 @x
 You can also see if an answer already exists in the following FAQs:
-- [Docker Business or Team onboarding](../docker-hub/general-faqs.md)
+- [Docker Business or Team onboarding](faq/admin/general-faqs.md)
 - [Docker Desktop](../desktop/faqs/general.md)
 - [Docker Desktop for Linux](../desktop/faqs/linuxfaqs.md)
 - [Docker Desktop for Mac](../desktop/faqs/macfaqs.md)
@@ -255,7 +255,7 @@ You can also see if an answer already exists in the following FAQs:
 - [Single Sign-on](faq/security/single-sign-on/faqs.md)
 @y
 You can also see if an answer already exists in the following FAQs:
-- [Docker Business or Team onboarding](../docker-hub/general-faqs.md)
+- [Docker Business or Team onboarding](faq/admin/general-faqs.md)
 - [Docker Desktop](../desktop/faqs/general.md)
 - [Docker Desktop for Linux](../desktop/faqs/linuxfaqs.md)
 - [Docker Desktop for Mac](../desktop/faqs/macfaqs.md)

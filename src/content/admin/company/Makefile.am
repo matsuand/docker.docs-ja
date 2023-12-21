@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md        \
+	new-company.md   \
 	organizations.md \
 	owners.md        \
 	users.md

@@ -4,12 +4,10 @@
 @x
 {{ $sso_link := "[Configure SSO](/security/for-admins/single-sign-on/)" }}
 {{ $scim_link := "[Configure SCIM](/security/for-admins/scim/)" }}
-{{ $members_link := "[Invite members](/docker-hub/members/)" }}
 {{ $audit_link := "[Audit your domains](/docker-hub/domain-audit/)" }}
 @y
 {{ $sso_link := "[Configure SSO](/security/for-admins/single-sign-on/)" }}
 {{ $scim_link := "[Configure SCIM](/security/for-admins/scim/)" }}
-{{ $members_link := "[Invite members](/docker-hub/members/)" }}
 {{ $audit_link := "[Audit your domains](/docker-hub/domain-audit/)" }}
 @z
 
@@ -17,14 +15,12 @@
 {{ if eq (.Get "product") "admin" }}
   {{ $sso_link = "[Configure SSO](/security/for-admins/single-sign-on/)" }}
   {{ $scim_link = "[Configure SCIM](/security/for-admins/scim/)" }}
-  {{ $members_link = "[Invite members](/admin/organization/members/)" }}
   {{ $audit_link = "[Audit your domains](/admin/organization/security-settings/domains/)" }}
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
   {{ $sso_link = "[Configure SSO](/security/for-admins/single-sign-on/)" }}
   {{ $scim_link = "[Configure SCIM](/security/for-admins/scim/)" }}
-  {{ $members_link = "[Invite members](/admin/organization/members/)" }}
   {{ $audit_link = "[Audit your domains](/admin/organization/security-settings/domains/)" }}
 {{ end }}
 @z
@@ -52,17 +48,17 @@ Before you start to onboard your organization, ensure that you:
 @x
   > **Note**
   >
-  > When purchasing a subscription through [Pricing & Subscriptions](https://www.docker.com/pricing/), the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/docker-hub/orgs#create-an-organization).
+  > When purchasing a subscription through [Pricing & Subscriptions](https://www.docker.com/pricing/), the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/admin/organization/orgs).
 @y
   > **Note**
   >
-  > When purchasing a subscription through [Pricing & Subscriptions](https://www.docker.com/pricing/), the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/docker-hub/orgs#create-an-organization).
+  > When purchasing a subscription through [Pricing & Subscriptions](https://www.docker.com/pricing/), the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/admin/organization/orgs).
 @z
 
 @x
-- Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/docker-hub/general-faqs/).
+- Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/faq/admin/general-faqs/).
 @y
-- Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/docker-hub/general-faqs/).
+- Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/faq/admin/general-faqs/).
 @z
 
 @x
@@ -114,9 +110,9 @@ When you create an organization, you are the only owner. You may optionally add 
 @z
 
 @x
-To add an owner, invite a user and assign them the owner role. For more details, see {{ $members_link }}.
+To add an owner, invite a user and assign them the owner role. For more details, see [Invite members](/admin/organization/members/).
 @y
-To add an owner, invite a user and assign them the owner role. For more details, see {{ $members_link }}.
+To add an owner, invite a user and assign them the owner role. For more details, see [Invite members](/admin/organization/members/).
 @z
 
 @x
@@ -132,9 +128,9 @@ When you add users to your organization, you gain visibility into their activity
 @z
 
 @x
-To add a member, invite a user and assign them the member role. For more details, see {{ $members_link }}.
+To add a member, invite a user and assign them the member role. For more details, see [Invite members](/admin/organization/members/).
 @y
-To add a member, invite a user and assign them the member role. For more details, see {{ $members_link }}.
+To add a member, invite a user and assign them the member role. For more details, see [Invite members](/admin/organization/members/).
 @z
 
 @x
@@ -179,12 +175,12 @@ By default, members of your organization can use Docker Desktop on their machine
 
 @x
 - [Create](/docker-hub/repos/create/) and [manage](/docker-hub/repos/) repositories.
-- Create [teams](/docker-hub/manage-a-team/) for fine-grained repository access.
+- Create [teams](/admin/organization/manage-a-team/) for fine-grained repository access.
 - Configure [Hardened Docker Desktop](/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
 - {{ $audit_link }} to ensure that all Docker users in your domain are part of your organization.
 @y
 - [Create](/docker-hub/repos/create/) and [manage](/docker-hub/repos/) repositories.
-- Create [teams](/docker-hub/manage-a-team/) for fine-grained repository access.
+- Create [teams](/admin/organization/manage-a-team/) for fine-grained repository access.
 - Configure [Hardened Docker Desktop](/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
 - {{ $audit_link }} to ensure that all Docker users in your domain are part of your organization.
 @z

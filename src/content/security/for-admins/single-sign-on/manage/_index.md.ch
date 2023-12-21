@@ -4,7 +4,7 @@
 @x
 ---
 description: Learn how to manage Single Sign-On for your organization or company.
-keywords: manage, single sign-on, SSO, sign-on, docker hub, docker admin, admin, security
+keywords: manage, single sign-on, SSO, sign-on, docker hub, admin console, admin, security
 title: Manage Single Sign-On
 aliases:
 - /admin/company/settings/sso-management/
@@ -13,7 +13,7 @@ aliases:
 @y
 ---
 description: Learn how to manage Single Sign-On for your organization or company.
-keywords: manage, single sign-on, SSO, sign-on, docker hub, docker admin, admin, security
+keywords: manage, single sign-on, SSO, sign-on, docker hub, admin console, admin, security
 title: Manage Single Sign-On
 aliases:
 - /admin/company/settings/sso-management/
@@ -30,11 +30,11 @@ aliases:
 @x
 > **Note**
 >
-> You must have a [company](/docker-hub/creating-companies/) to manage more than one organization.
+> You must have a [company](/admin/company/) to manage more than one organization.
 @y
 > **Note**
 >
-> You must have a [company](/docker-hub/creating-companies/) to manage more than one organization.
+> You must have a [company](/admin/company/) to manage more than one organization.
 @z
 
 @x
@@ -53,10 +53,10 @@ aliases:
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x
@@ -101,10 +101,10 @@ aliases:
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Admin" >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x
