@@ -47,7 +47,7 @@ Guides:
       section:
       - title: "コンテナーとは何か"
         path:  __SUBDIR__/guides/walkthroughs/what-is-a-container/
-      - title: "コンテナーの起動"
+      - title: "コンテナーの実行"
         path:  __SUBDIR__/guides/walkthroughs/run-a-container/
       - title: "Docker Hub イメージの実行"
         path:  __SUBDIR__/guides/walkthroughs/run-hub-images/

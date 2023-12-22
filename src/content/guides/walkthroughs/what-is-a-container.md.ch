@@ -55,7 +55,8 @@ Desktop.
 @x
 The first thing you need is a running container. Use the following instructions to run a container.
 @y
-The first thing you need is a running container. Use the following instructions to run a container.
+はじめに必要となるのはコンテナーを起動することです。
+以下の手順に従ってコンテナーを起動します。
 @z
 
 @x
@@ -67,13 +68,13 @@ The first thing you need is a running container. Use the following instructions 
    ![Specifying host port 8088](images/getting-started-setup.webp?w=500&border=true)
 6. Select **Run**.
 @y
-1. Open Docker Desktop and select the search.
-2. Specify `docker/welcome-to-docker` in the search and then select **Run**.
-3. Expand the **Optional settings**.
-4. In **Container name**, specify `welcome-to-docker`.
-5. In **Host port**, specify `8088`.
-   ![Specifying host port 8088](images/getting-started-setup.webp?w=500&border=true)
-6. Select **Run**.
+1. Docker Desktop を開いて検索欄をクリックします。
+2. 検索欄に `docker/welcome-to-docker` を入力して **Run** をクリックします。
+3. **Optional settings**（オプション選択）を展開します。
+4. **Container name**（コンテナー名）欄に `welcome-to-docker` を入力します。
+5. **Host port**（ホストポート欄）に `8088` を入力します。
+   ![ホストポート 8088 の指定](images/getting-started-setup.webp?w=500&border=true)
+6. **Run** をクリックします。
 @z
 
 @x
@@ -89,17 +90,18 @@ When working with more complex projects, you'll run different parts in different
 containers. For example, a different container for the frontend, backend, and
 database. In this walkthrough, you only have a simple frontend container.
 @y
-You just ran a container! You can view it in the **Containers** tab of Docker
-Desktop. This container runs a simple web server that displays a simple website.
-When working with more complex projects, you'll run different parts in different
-containers. For example, a different container for the frontend, backend, and
-database. In this walkthrough, you only have a simple frontend container.
+コンテナーの起動ができました！
+Docker Desktop の **Containers**（コンテナー）タブに、そのコンテナーが表示されます。
+このコンテナーはかんたんなウェブサーバーを起動して、単純なウェブサイトを表示するものです。
+もっと複雑なプロジェクトで作業を行う場合は、さまざまなコンテナーをさまざまに実行することになります。
+たとえばフロントエンド、バックエンド、データベースのためのコンテナーなどがあります。
+このウォークスルーでは、単純なフロントエンドコンテナーを用いるだけにします。
 @z
 
 @x
 ## Step 3: View the frontend
 @y
-## Step 3: View the frontend
+## 手順 3: フロントエンドの参照 {#step-3-view-the-frontend}
 @z
 
 @x
@@ -107,21 +109,20 @@ The frontend is accessible on port 8088 of your local host. Select the link in
 the **Port(s)** column of your container, or visit
 [http://localhost:8088](http://localhost:8088) in your browser to view it.
 @y
-The frontend is accessible on port 8088 of your local host. Select the link in
-the **Port(s)** column of your container, or visit
-[http://localhost:8088](http://localhost:8088) in your browser to view it.
+フロントエンドは、お手元のローカルホストのポート 8088 からアクセスできます。
+コンテナーの **Port(s)**（ポート）にあるリンクをクリックするか、ブラウザーを使って [http://localhost:8088](http://localhost:8088) にアクセスすることが見ることができます。
 @z
 
 @x
 ![Accessing container frontend from Docker Desktop](images/getting-started-frontend.webp?border=true)
 @y
-![Accessing container frontend from Docker Desktop](images/getting-started-frontend.webp?border=true)
+![Docker Desktop からコンテナーフロントエンドにアクセス](images/getting-started-frontend.webp?border=true)
 @z
 
 @x
 ## Step 4: Explore your container
 @y
-## Step 4: Explore your container
+## 手順 4: コンテナーの確認 {#step-4-explore-your-container}
 @z
 
 @x
@@ -129,15 +130,15 @@ Docker Desktop lets you easily view and interact with different aspects of your
 container. Try it out yourself. Select your container and then select **Files**
 to explore your container's isolated file system.
 @y
-Docker Desktop lets you easily view and interact with different aspects of your
-container. Try it out yourself. Select your container and then select **Files**
-to explore your container's isolated file system.
+Docker Desktop では、コンテナーのさまざまな機能などに関して、かんたんに参照したり指示したりすることができます。
+試してみてください。
+コンテナーを選択した上で **Files** をクリックすると、コンテナー内の独自のファイルシステムを参照することができます。
 @z
 
 @x
 ![Viewing container details in Docker Desktop](images/getting-started-explore-container.webp?border=true)
 @y
-![Viewing container details in Docker Desktop](images/getting-started-explore-container.webp?border=true)
+![Docker Desktop からのコンテナーの詳細確認](images/getting-started-explore-container.webp?border=true)
 @z
 
 @x
@@ -151,15 +152,14 @@ The `welcome-to-docker` container continues to run until you stop it. To stop
 the container in Docker Desktop, go to the **Containers** tab and select the
 **Stop** icon in the **Actions** column of your container.
 @y
-The `welcome-to-docker` container continues to run until you stop it. To stop
-the container in Docker Desktop, go to the **Containers** tab and select the
-**Stop** icon in the **Actions** column of your container.
+`welcome-to-docker` コンテナーは、停止させるまで動作し続けます。
+Docker Desktop 内からコンテナーを停止させるには、**Containers**（コンテナー）タブをクリックした上で、**Actions** の中の **Stop**（停止）アイコンをクリックします。
 @z
 
 @x
 ![Stopping a container in Docker Desktop](images/getting-started-stop.webp?border=true)
 @y
-![Stopping a container in Docker Desktop](images/getting-started-stop.webp?border=true)
+![Docker Desktop からのコンテナー停止](images/getting-started-stop.webp?border=true)
 @z
 
 @x
@@ -171,7 +171,8 @@ the container in Docker Desktop, go to the **Containers** tab and select the
 @x
 In this walkthrough, you ran a pre-made image and explored a container. In addition to running pre-made images, you can build and run your own application as container.
 @y
-In this walkthrough, you ran a pre-made image and explored a container. In addition to running pre-made images, you can build and run your own application as container.
+このウォークスルーでは、あらかじめ用意されているイメージを実行させて、コンテナーの確認を行いました。
+イメージの実行によってコンテナーがビルドされ、独自のアプリケーションが起動されました。
 @z
 
 @x
@@ -184,8 +185,8 @@ Related information:
 - Read more about containers in [Use containers to Build, Share and Run your applications](https://www.docker.com/resources/what-container/)
 - Deep dive in Liz Rice's [Containers from Scratch](https://www.youtube.com/watch?v=8fi7uSYlOdc&t=1s) video presentation
 @y
-- Read more about containers in [Use containers to Build, Share and Run your applications](https://www.docker.com/resources/what-container/)
-- Deep dive in Liz Rice's [Containers from Scratch](https://www.youtube.com/watch?v=8fi7uSYlOdc&t=1s) video presentation
+- コンテナーについての詳細は以下を参照してください。[Use containers to Build, Share and Run your applications](https://www.docker.com/resources/what-container/)
+- より深く理解するには Liz Rice 氏のビデオプレゼンテーションを参照してください。 [Containers from Scratch](https://www.youtube.com/watch?v=8fi7uSYlOdc&t=1s)
 @z
 
 @x
@@ -198,8 +199,8 @@ Related information:
 Continue to the next walkthrough to learn what you need to create your own image
 and run it as container.
 @y
-Continue to the next walkthrough to learn what you need to create your own image
-and run it as container.
+次のウォークスルーに進んでください。
+独自のイメージを生成するためには何が必要なのかを学び、それをコンテナーとして実行していきます。
 @z
 
 @x

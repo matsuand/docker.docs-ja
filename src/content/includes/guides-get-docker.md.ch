@@ -1,8 +1,11 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 (workaround?)
+
 @x
 Before you start, get the latest version of [Docker Desktop](../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 @y
-Before you start, get the latest version of [Docker Desktop](../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
+作業を進める前に [Docker Desktop](__SUBDIR__/get-docker/) の最新版を入手してください。
+Docker は常に新たな機能を追加してきているため、本ガイドは最新の Docker Desktop でしか動作しない場合があります。
 @z

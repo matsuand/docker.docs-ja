@@ -116,7 +116,7 @@ $ docker compose up
 @x
 The `docker init` command tries its best to do the heavy lifting for you, but sometimes there's some assembly required. In this case, you can refer to the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)⁠ to learn how to update the files created by `docker init`.
 @y
-The `docker init` command tries its best to do the heavy lifting for you, but sometimes there's some assembly required. In this case, you can refer to the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)⁠ to learn how to update the files created by `docker init`.
+The `docker init` command tries its best to do the heavy lifting for you, but sometimes there's some assembly required. In this case, you can refer to the [Dockerfile reference⁠](__SUBDIR__/engine/reference/builder/) and [Compose file reference](__SUBDIR__/compose/compose-file/)⁠ to learn how to update the files created by `docker init`.
 @z
 
 @x
@@ -141,7 +141,7 @@ Related information:
 - Read more about [docker init](../../engine/reference/commandline/init.md)
 - Learn more about Docker assets in the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)
 @y
-- Read more about [docker init](../../engine/reference/commandline/init.md)
+- Read more about [docker init](__SUBDIR__/engine/reference/commandline/init.md)
 - Learn more about Docker assets in the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)
 @z
 
