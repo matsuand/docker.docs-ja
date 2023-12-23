@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: Discover manuals on administration for accounts, organizations, and companies.
@@ -39,23 +40,23 @@ grid:
 - title: Company administration
   description: Explore how to manage a company.
   icon: apartment
-  link: /admin/company/
+  link: __SUBDIR__/admin/company/
 - title: Organization administration
   description: Learn about organization administration.
   icon: store
-  link: /admin/organization/
+  link: __SUBDIR__/admin/organization/
 - title: Company FAQ
   description: Discover common questions and answers about companies.
   icon: help
-  link: /faq/admin/company-faqs/
+  link: __SUBDIR__/faq/admin/company-faqs/
 - title: Organization FAQ
   description: Explore popular FAQ topics about organizations.
   icon: help
-  link: /faq/admin/organization-faqs/
+  link: __SUBDIR__/faq/admin/organization-faqs/
 - title: Security
   description: Explore security features for administrators.
   icon: shield_locked
-  link: /security/
+  link: __SUBDIR__/security/
 aliases:
 - /docker-hub/admin-overview
 ---

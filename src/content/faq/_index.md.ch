@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 title: Frequently asked questions
@@ -34,22 +35,22 @@ keywords: faqs, desktop, Hub, Scout, Engine, Build, Extensions
 grid:
 - title: Subscription
   icon: contact_page
-  link: /subscription/faq/
+  link: __SUBDIR__/subscription/faq/
 - title: Billing
   icon: credit_score
-  link: /billing/faqs/
+  link: __SUBDIR__/billing/faqs/
 - title: Docker account
   icon: lan
-  link: /faq/admin/general-faqs/
+  link: __SUBDIR__/faq/admin/general-faqs/
 - title: Enforcing Single Sign-On
   icon: key
-  link: /single-sign-on/enforcement-faqs/
+  link: __SUBDIR__/single-sign-on/enforcement-faqs/
 - title: Single Sign-On and IdPs
   icon: checklist
-  link: /single-sign-on/idp-faqs/
+  link: __SUBDIR__/single-sign-on/idp-faqs/
 - title: Docker Desktop
   icon: explore
-  link: /desktop/faqs/general/
+  link: __SUBDIR__/desktop/faqs/general/
 ---
 @z
 

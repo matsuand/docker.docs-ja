@@ -1899,7 +1899,7 @@ Reference:
       title: SDKs
     - path: __SUBDIR__/engine/api/sdk/examples/
       title: SDK examples
-    - path: v{{< param suburldir >}}/engine/api/latest/
+    - path: __SUBDIR__/engine/api/latest/
       title: v{{< param latest_engine_api_version >}} reference (latest)
 @z
 

@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 title: Overview of Docker Build
@@ -56,37 +57,37 @@ grid:
   description: 'Build and package your application to run it anywhere: locally or
     in the cloud.'
   icon: inventory_2
-  link: /build/building/packaging
+  link: __SUBDIR__/build/building/packaging
 - title: Multi-stage builds
   description: Keep your images small and secure with minimal dependencies.
   icon: stairs
-  link: /build/building/multi-stage
+  link: __SUBDIR__/build/building/multi-stage
 - title: Multi-platform images
   description: Build, push, pull, and run images seamlessly on different computer
     architectures.
   icon: content_copy
-  link: /build/building/multi-platform/
+  link: __SUBDIR__/build/building/multi-platform/
 - title: Architecture
   description: Explore BuildKit, the open source build engine.
   icon: construction
-  link: /build/buildkit/
+  link: __SUBDIR__/build/buildkit/
 - title: Build drivers
   description: Configure where and how you run your builds.
   icon: engineering
-  link: /build/drivers/
+  link: __SUBDIR__/build/drivers/
 - title: Exporters
   description: Export any artifact you like, not just Docker images.
   icon: output
-  link: /build/exporters
+  link: __SUBDIR__/build/exporters
 - title: Build caching
   description: Avoid unnecessary repetitions of costly operations, such as package
     installs.
   icon: cycle
-  link: /build/cache
+  link: __SUBDIR__/build/cache
 - title: Bake
   description: Orchestrate your builds with Bake.
   icon: cake
-  link: /build/bake
+  link: __SUBDIR__/build/bake
 aliases:
 - /buildx/working-with-buildx/
 - /develop/develop-images/build_enhancements/

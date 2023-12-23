@@ -15,7 +15,7 @@ aliases:
 description: Understand what you can do with Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
-title: Explore Docker Desktop
+title: Docker Desktop の確認
 aliases:
 - /desktop/dashboard/
 ---
@@ -24,7 +24,7 @@ aliases:
 @x
 When you open Docker Desktop, the Docker Dashboard displays.
 @y
-When you open Docker Desktop, the Docker Dashboard displays.
+Docker Desktop を開くと Docker Dashboard が表示されます。
 @z
 
 @x
@@ -88,7 +88,7 @@ In addition, the Docker Dashboard allows you to:
 @x
 ## Quick search
 @y
-## Quick search
+## クィック検索 {#quick-search}
 @z
 
 @x
@@ -130,7 +130,7 @@ From the Docker Dashboard you can use Quick Search, which is located in the Dash
 @x
 ## The Docker menu
 @y
-## The Docker menu
+## Docker メニュー {#the-docker-menu}
 @z
 
 @x

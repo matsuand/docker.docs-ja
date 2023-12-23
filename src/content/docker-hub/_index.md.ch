@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: Learn about Docker Hub features and the administrative tasks available
@@ -36,20 +37,20 @@ grid:
 - title: Create a Docker ID
   description: Register and create a new Docker ID.
   icon: fingerprint
-  link: /docker-id
+  link: __SUBDIR__/docker-id
 - title: Create a repository
   description: Create a repository to share your images with your team, customers,
     or the Docker community.
   icon: inbox
-  link: /docker-hub/repos
+  link: __SUBDIR__/docker-hub/repos
 - title: Quickstart
   description: Step-by-step instructions on getting started on Docker Hub.
   icon: explore
-  link: /docker-hub/quickstart
+  link: __SUBDIR__/docker-hub/quickstart
 - title: Release notes
   description: Find out about new features, improvements, and bug fixes.
   icon: note_add
-  link: /docker-hub/release-notes
+  link: __SUBDIR__/docker-hub/release-notes
 ---
 @z
 

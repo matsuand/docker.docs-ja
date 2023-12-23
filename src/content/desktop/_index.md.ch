@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: Explore more of Docker Desktop, what it has to offer, and its key features.
@@ -17,28 +18,28 @@ description: Explore more of Docker Desktop, what it has to offer, and its key f
   Take the next step by downloading or find additional resources.
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
-title: Overview of Docker Desktop
+title: Docker Desktop の概要
 grid:
-- title: Install Docker Desktop
+- title: Docker Desktop のインストール
   description: 'Install Docker Desktop on
 @z
 
 @x
     [Mac](/desktop/install/mac-install/),
 @y
-    [Mac](/desktop/install/mac-install/),
+    [Mac](__SUBDIR__/desktop/install/mac-install/),
 @z
 
 @x
     [Windows](/desktop/install/windows-install/), or
 @y
-    [Windows](/desktop/install/windows-install/), or
+    [Windows](__SUBDIR__/desktop/install/windows-install/), or
 @z
 
 @x
     [Linux](/desktop/install/linux-install/).
 @y
-    [Linux](/desktop/install/linux-install/).
+    [Linux](__SUBDIR__/desktop/install/linux-install/).
 @z
 
 @x
@@ -75,27 +76,27 @@ aliases:
 @y
     '
   icon: download
-- title: Explore Docker Desktop
+- title: Docker Desktop の確認
   description: Navigate Docker Desktop and learn about its key features.
   icon: feature_search
-  link: /desktop/use-desktop
+  link: __SUBDIR__/desktop/use-desktop
 - title: View the release notes
   description: Find out about new features, improvements, and bug fixes.
   icon: note_add
-  link: /desktop/release-notes
+  link: __SUBDIR__/desktop/release-notes
 - title: Browse common FAQs
   description: Explore general FAQs or FAQs for specific platforms.
   icon: help
-  link: /desktop/faqs/
+  link: __SUBDIR__/desktop/faqs/
 - title: Find additional resources
   description: Find information on networking features, deploying on Kubernetes, and
     more.
   icon: category
-  link: /desktop/kubernetes
+  link: __SUBDIR__/desktop/kubernetes
 - title: Give feedback
   description: Provide feedback on Docker Desktop or Docker Desktop features.
   icon: sms
-  link: /desktop/feedback
+  link: __SUBDIR__/desktop/feedback
 aliases:
 - /desktop/opensource/
 - /docker-for-mac/dashboard/

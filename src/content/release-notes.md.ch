@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: Release notes for Docker
@@ -34,22 +35,22 @@ title: Release notes for Docker
 grid:
 - title: Docker Desktop
   icon: web_asset
-  link: /desktop/release-notes/
+  link: __SUBDIR__/desktop/release-notes/
 - title: Docker Engine
   icon: settings_suggest
-  link: /engine/release-notes/
+  link: __SUBDIR__/engine/release-notes/
 - title: Docker Compose
   icon: storage
-  link: /compose/release-notes/
+  link: __SUBDIR__/compose/release-notes/
 - title: Docker Build
   icon: construction
-  link: /build/release-notes/
+  link: __SUBDIR__/build/release-notes/
 - title: Docker Hub
   icon: widgets
-  link: /docker-hub/release-notes/
+  link: __SUBDIR__/docker-hub/release-notes/
 - title: Docker Scout
   icon: query_stats
-  link: /scout/release-notes/
+  link: __SUBDIR__/scout/release-notes/
 ---
 @z
 

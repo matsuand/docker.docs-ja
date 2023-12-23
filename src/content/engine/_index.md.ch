@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: Engine
@@ -59,39 +60,39 @@ grid:
 - title: Install Docker Engine
   description: Learn how to install the open source Docker Engine for your distribution.
   icon: download
-  link: /engine/install
+  link: __SUBDIR__/engine/install
 - title: Storage
   description: Use persistent data with Docker containers.
   icon: database
-  link: /storage
+  link: __SUBDIR__/storage
 - title: Networking
   description: Manage network connections between containers.
   icon: network_node
-  link: /network
+  link: __SUBDIR__/network
 - title: Container logs
   description: Learn how to view and read container logs.
   icon: feed
-  link: /config/containers/logging/
+  link: __SUBDIR__/config/containers/logging/
 - title: Prune
   description: Tidy up unused resources.
   icon: cut
-  link: /config/pruning
+  link: __SUBDIR__/config/pruning
 - title: Configure the daemon
   description: Delve into the configuration options of the Docker daemon.
   icon: tune
-  link: /config/daemon
+  link: __SUBDIR__/config/daemon
 - title: Rootless mode
   description: Run Docker without root privileges.
   icon: security
-  link: /engine/security/rootless
+  link: __SUBDIR__/engine/security/rootless
 - title: Deprecated features
   description: Find out what features of Docker Engine you should stop using.
   icon: folder_delete
-  link: /engine/deprecated/
+  link: __SUBDIR__/engine/deprecated/
 - title: Release notes
   description: Read the release notes for the latest version.
   icon: note_add
-  link: /engine/release-notes
+  link: __SUBDIR__/engine/release-notes
 aliases:
 - /edge/
 - /engine/ce-ee-node-activate/

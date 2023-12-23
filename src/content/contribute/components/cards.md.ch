@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: components and formatting examples used in Docker's docs
@@ -37,23 +38,23 @@ grid:
 - title: Docker Desktop
   description: Docker on your Desktop.
   icon: install_desktop
-  link: /desktop/
+  link: __SUBDIR__/desktop/
 - title: Docker Engine
   description: Vrrrrooooommm
   icon: developer_board
-  link: /engine/
+  link: __SUBDIR__/engine/
 - title: Docker Build
   description: Clang bang
   icon: build
-  link: /build/
+  link: __SUBDIR__/build/
 - title: Docker Compose
   description: Figgy!
   icon: account_tree
-  link: /compose/
+  link: __SUBDIR__/compose/
 - title: Docker Hub
   description: so much content, oh wow
   icon: hub
-  link: /docker-hub/
+  link: __SUBDIR__/docker-hub/
 ---
 @z
 

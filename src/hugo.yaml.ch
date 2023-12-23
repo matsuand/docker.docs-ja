@@ -14,7 +14,7 @@ disableKinds:
 @y
 title: Docker Docs
 baseURL: https://docs.docker.com
-permalinks: 
+canonicalURLs: true
 refLinksErrorLevel: ERROR
 enableGitInfo: false
 disablePathToLower: true
@@ -42,7 +42,7 @@ languages:
   repo: https://github.com/docker/docs
   docs_url: https://docs.docker.com
 @y
-  repo: https://github.com/matsuand/docker.docs-ja
+  repo: https://github.com/docker/docs
   docs_url: https://docs.docker.com
 @z
 

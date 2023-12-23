@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 title: Docker Scout
@@ -67,34 +68,34 @@ aliases:
   - /engine/scan/
 grid:
   - title: Quickstart
-    link: /scout/quickstart/
+    link: __SUBDIR__/scout/quickstart/
     description: Learn what Docker Scout can do, and how to get started.
     icon: explore
   - title: Image analysis
-    link: /scout/image-analysis/
+    link: __SUBDIR__/scout/image-analysis/
     description: Reveal and dig into the composition of your images.
     icon: radar
   - title: Advisory database
-    link: /scout/advisory-db-sources/
+    link: __SUBDIR__/scout/advisory-db-sources/
     description: Learn about the information sources that Docker Scout uses.
     icon: database
   - title: Integrations
     description: |
       Connect Docker Scout with your CI, registries, and other third-party services.
-    link: /scout/integrations/
+    link: __SUBDIR__/scout/integrations/
     icon: multiple_stop
   - title: Dashboard
-    link: /scout/dashboard/
+    link: __SUBDIR__/scout/dashboard/
     description: |
       The web interface for Docker Scout.
     icon: dashboard
   - title: Policy {{< badge color=violet text="Early Access" >}}
-    link: /scout/policy/
+    link: __SUBDIR__/scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.
     icon: policy
   - title: Upgrade
-    link: /billing/scout-billing/
+    link: __SUBDIR__/billing/scout-billing/
     description: |
       The free plan includes up to 3 repositories. Upgrade for more.
     icon: upgrade

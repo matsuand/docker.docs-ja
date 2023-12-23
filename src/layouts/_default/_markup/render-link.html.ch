@@ -74,7 +74,7 @@
 @y
   {{- else -}}
     {{/* relative link, use ref */}}
-    <a class="link" href="docker.docs-ja{{ ref .Page $url }}"
+    <a class="link" href="{{ ref .Page $url }}"
       >{{ .Text | safeHTML }}</a
     >
   {{- end -}}

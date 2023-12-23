@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 description: Learn how to use Docker Compose to define and run multi-container applications
@@ -55,29 +56,29 @@ grid:
 - title: Install Compose
   description: Follow the instructions on how to install Docker Compose.
   icon: download
-  link: /compose/install
+  link: __SUBDIR__/compose/install
 - title: Try Compose
   description: Learn the key concepts of Docker Compose whilst building a simple Python
     web application.
   icon: explore
-  link: /compose/gettingstarted
+  link: __SUBDIR__/compose/gettingstarted
 - title: View the release notes
   description: Find out about the latest enhancements and bug fixes.
   icon: note_add
-  link: /compose/release-notes
+  link: __SUBDIR__/compose/release-notes
 - title: Understand key features of Compose
   description: Understand its key features and explore common use cases.
   icon: category
-  link: /compose/features-uses/
+  link: __SUBDIR__/compose/features-uses/
 - title: Explore the Compose file reference
   description: Find information on defining services, networks, and volumes for a
     Docker application.
   icon: feature_search
-  link: /compose/compose-file
+  link: __SUBDIR__/compose/compose-file
 - title: Browse common FAQs
   description: Explore general FAQs and find out how to give feedback.
   icon: help
-  link: /compose/faq
+  link: __SUBDIR__/compose/faq
 aliases:
 - /compose/cli-command/
 - /compose/networking/swarm/

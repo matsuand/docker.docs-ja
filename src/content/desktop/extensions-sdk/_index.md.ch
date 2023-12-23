@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
 ---
 title: Overview of the Extensions SDK
@@ -45,27 +46,27 @@ grid:
   - title: "The build and publish process"
     description: Understand the process for building and publishing an extension.
     icon: "checklist"
-    link: "/desktop/extensions-sdk/process/"
+    link: "__SUBDIR__/desktop/extensions-sdk/process/"
   - title: "Quickstart guide"
     description: Follow the quickstart guide to create a basic Docker Extension quickly.
     icon: "explore"
-    link: "/desktop/extensions-sdk/quickstart/"
+    link: "__SUBDIR__/desktop/extensions-sdk/quickstart/"
   - title: "View the design guidelines"
     description: Ensure your extension aligns to Docker's design guidelines and principles.
     icon: "design_services"
-    link: "/desktop/extensions-sdk/design/design-guidelines/"
+    link: "__SUBDIR__/desktop/extensions-sdk/design/design-guidelines/"
   - title: "Publish your extension"
     description: Understand how to publish your extension to the Marketplace.
     icon: "publish"
-    link: "/desktop/extensions-sdk/extensions/"
+    link: "__SUBDIR__/desktop/extensions-sdk/extensions/"
   - title: "Interacting with Kubernetes"
     description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker Extension.
     icon: "multiple_stop"
-    link: "/desktop/extensions-sdk/dev/kubernetes/"
+    link: "__SUBDIR__/desktop/extensions-sdk/dev/kubernetes/"
   - title: "Multi-arch extensions"
     description: Build your extension for multiple architectures.
     icon: "content_copy"
-    link: "/desktop/extensions-sdk/extensions/multi-arch/"
+    link: "__SUBDIR__/desktop/extensions-sdk/extensions/multi-arch/"
 ---
 @z
 
