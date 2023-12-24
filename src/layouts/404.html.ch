@@ -23,9 +23,8 @@
   <article class="prose max-w-none dark:prose-invert">
     <h1>404</h1>
     <p>
-      There might be a mistake in the URL or you might've clicked a link to
-      content that no longer exists. If you think it's the latter, please file
-      an issue in our issue tracker on GitHub.
+      URL の指定に誤りがあるか、あるいは存在しないページへのリンクをクリックしたのかもしれません。
+      存在しないリンクに該当する場合は、GitHub 上の issue トラッカーに issue をあげてください。
     </p>
 @z
 
@@ -43,7 +42,7 @@
       class="link"
       href="{{ site.Params.repo }}/issues/new"
     >
-      <strong>Create a new issue</strong></a
+      <strong>issue の新規生成</strong></a
     >
 @z
 
@@ -58,7 +57,7 @@
     <a href="{{ site.BaseURL }}">
       <figure>
         <img src="__SUBDIR__/assets/images/404-docs.png" alt="404 page not found" />
-        <figcaption class="link">Go to the homepage</figcaption>
+        <figcaption class="link">ホームページへ</figcaption>
       </figure>
     </a>
 @z
@@ -90,9 +89,9 @@
     if (el) {
         let url = new URL("{{ site.Params.repo }}/issues/new");
         url.searchParams.set("title", "404 at " + window.location.pathname);
-        let body = "I found a broken link : " + window.location.href;
+        let body = "以下のリンク切れを見つけました : " + window.location.href;
         if (document.referrer !== "") {
-            body += "\nI arrived on this page through: " + document.referrer
+            body += "\n以下からこのページにきました: " + document.referrer
         }
         url.searchParams.set("body", body);
         url.searchParams.set("template", "broken_link.yml")
