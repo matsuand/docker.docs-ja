@@ -62,6 +62,7 @@ jobs:
         run: |
           cd build/src
           sed -i -e "/baseURL:/s@docs.docker.com@matsuand.github.io/docker.docs-ja@g" \
+                 -e "s@repo: https://github.com/docker/docs@repo: https://github.com/matsuand/docker.docs-ja@g" \
             hugo.yaml
       - name: Build with Hugo
         env:
