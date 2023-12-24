@@ -586,7 +586,7 @@ Reference:
     - path: /engine/reference/commandline/build/
       title: docker build
 @y
-Reference:
+リファレンス:
 - path: __SUBDIR__/reference/
   title: Reference documentation
 - sectiontitle: Command-line reference
@@ -1886,21 +1886,28 @@ Reference:
       title: SDKs
     - path: /engine/api/sdk/examples/
       title: SDK examples
-    - path: /engine/api/latest/
-      title: v{{< param latest_engine_api_version >}} reference (latest)
 @y
 - sectiontitle: API reference
   section:
   - sectiontitle: Docker Engine API
     section:
     - path: __SUBDIR__/engine/api/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/engine/api/sdk/
-      title: SDKs
+      title: SDK
     - path: __SUBDIR__/engine/api/sdk/examples/
-      title: SDK examples
-    - path: __SUBDIR__/engine/api/latest/
+      title: SDK 利用例
+@z
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Workaround: hard-coding 'v1.43' instead of 'latest'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@x
+    - path: /engine/api/latest/
       title: v{{< param latest_engine_api_version >}} reference (latest)
+@y
+    - path: __SUBDIR__/engine/api/v1.43/
+      title: v{{< param latest_engine_api_version >}} リファレンス (最新)
 @z
 
 @x
@@ -1959,60 +1966,60 @@ Reference:
       - path: /engine/api/v1.18/
         title: v1.18 reference
 @y
-    - sectiontitle: API reference by version
+    - sectiontitle: 各バージョンの API
       section:
       - path: __SUBDIR__/engine/api/version-history/
-        title: Version history overview
+        title: バージョンの履歴概要
       - path: __SUBDIR__/engine/api/v1.42/
-        title: v1.42 reference
+        title: v1.42 リファレンス
       - path: __SUBDIR__/engine/api/v1.41/
-        title: v1.41 reference
+        title: v1.41 リファレンス
       - path: __SUBDIR__/engine/api/v1.40/
-        title: v1.40 reference
+        title: v1.40 リファレンス
       - path: __SUBDIR__/engine/api/v1.39/
-        title: v1.39 reference
+        title: v1.39 リファレンス
       - path: __SUBDIR__/engine/api/v1.38/
-        title: v1.38 reference
+        title: v1.38 リファレンス
       - path: __SUBDIR__/engine/api/v1.37/
-        title: v1.37 reference
+        title: v1.37 リファレンス
       - path: __SUBDIR__/engine/api/v1.36/
-        title: v1.36 reference
+        title: v1.36 リファレンス
       - path: __SUBDIR__/engine/api/v1.35/
-        title: v1.35 reference
+        title: v1.35 リファレンス
       - path: __SUBDIR__/engine/api/v1.34/
-        title: v1.34 reference
+        title: v1.34 リファレンス
       - path: __SUBDIR__/engine/api/v1.33/
-        title: v1.33 reference
+        title: v1.33 リファレンス
       - path: __SUBDIR__/engine/api/v1.32/
-        title: v1.32 Reference
+        title: v1.32 リファレンス
       - path: __SUBDIR__/engine/api/v1.31/
-        title: v1.31 Reference
+        title: v1.31 リファレンス
       - path: __SUBDIR__/engine/api/v1.30/
-        title: v1.30 Reference
+        title: v1.30 リファレンス
       - path: __SUBDIR__/engine/api/v1.29/
-        title: v1.29 Reference
+        title: v1.29 リファレンス
       - path: __SUBDIR__/engine/api/v1.28/
-        title: v1.28 reference
+        title: v1.28 リファレンス
       - path: __SUBDIR__/engine/api/v1.27/
-        title: v1.27 reference
+        title: v1.27 リファレンス
       - path: __SUBDIR__/engine/api/v1.26/
-        title: v1.26 reference
+        title: v1.26 リファレンス
       - path: __SUBDIR__/engine/api/v1.25/
-        title: v1.25 reference
+        title: v1.25 リファレンス
       - path: __SUBDIR__/engine/api/v1.24/
-        title: v1.24 reference
+        title: v1.24 リファレンス
       - path: __SUBDIR__/engine/api/v1.23/
-        title: v1.23 reference
+        title: v1.23 リファレンス
       - path: __SUBDIR__/engine/api/v1.22/
-        title: v1.22 reference
+        title: v1.22 リファレンス
       - path: __SUBDIR__/engine/api/v1.21/
-        title: v1.21 reference
+        title: v1.21 リファレンス
       - path: __SUBDIR__/engine/api/v1.20/
-        title: v1.20 reference
+        title: v1.20 リファレンス
       - path: __SUBDIR__/engine/api/v1.19/
-        title: v1.19 reference
+        title: v1.19 リファレンス
       - path: __SUBDIR__/engine/api/v1.18/
-        title: v1.18 reference
+        title: v1.18 リファレンス
 @z
 
 @x
@@ -2031,7 +2038,7 @@ Reference:
         path: __SUBDIR__/docker-hub/api/latest/
       - title: DVP Data API
         path: __SUBDIR__/docker-hub/api/dvp/
-      - title: Deprecated API
+      - title: 非推奨となった API
         path: __SUBDIR__/docker-hub/api/deprecated/
 @z
 
@@ -2282,7 +2289,7 @@ Samples:
     - path: /samples/redis/
       title: Redis
 @y
-Samples:
+サンプル:
 - path: __SUBDIR__/samples/
   title: Overview
 - sectiontitle: Databases
@@ -2488,23 +2495,23 @@ Manuals:
        - path: /desktop/install/linux-install/
          title: Install on Linux
 @y
-Manuals:
+マニュアル:
 - sectiontitle: Docker Desktop
   section:
     - path: __SUBDIR__/desktop/
-      title: Overview
-    - sectiontitle: Install Docker Desktop
+      title: 概要
+    - sectiontitle: Docker Desktop のインストール
       section:
        - path: __SUBDIR__/desktop/install/mac-install/
-         title: Install on Mac
+         title: Mac へのインストール
        - path: __SUBDIR__/desktop/mac/permission-requirements/
-         title: Understand permission requirements for Mac
+         title: Mac におけるパーミッション要件への理解
        - path: __SUBDIR__/desktop/install/windows-install/
-         title: Install on Windows
+         title: Windows へのインストール
        - path: __SUBDIR__/desktop/windows/permission-requirements/
-         title: Understand permission requirements for Windows
+         title: Windows におけるパーミッション要件への理解
        - path: __SUBDIR__/desktop/install/linux-install/
-         title: Install on Linux
+         title: Linux へのインストール
 @z
 
 @x
@@ -2519,16 +2526,16 @@ Manuals:
             - path: /desktop/install/archlinux/
               title: Install on Arch
 @y
-       - sectiontitle: Installation per Linux distro
+       - sectiontitle: Linux ディストロごとのインストール
          section:
             - path: __SUBDIR__/desktop/install/debian/
-              title: Install on Debian
+              title: Debian へのインストール
             - path: __SUBDIR__/desktop/install/fedora/
-              title: Install on Fedora
+              title: Fedora へのインストール
             - path: __SUBDIR__/desktop/install/ubuntu/
-              title: Install on Ubuntu
+              title: Ubuntu へのインストール
             - path: __SUBDIR__/desktop/install/archlinux/
-              title: Install on Arch
+              title: Arch へのインストール
 @z
 
 @x
@@ -2552,23 +2559,23 @@ Manuals:
           title: Pause Docker Desktop
 @y
     - path: __SUBDIR__/desktop/get-started/
-      title: Sign in
-    - sectiontitle: Explore Docker Desktop
+      title: サインイン
+    - sectiontitle: Docker Desktop の確認
       section:
         - path: __SUBDIR__/desktop/use-desktop/
-          title: Overview
+          title: 概要
         - path: __SUBDIR__/desktop/use-desktop/container/
-          title: Explore Containers
+          title: コンテナーの確認
         - path: __SUBDIR__/desktop/use-desktop/images/
-          title: Explore Images
+          title: イメージの確認
         - path: __SUBDIR__/desktop/use-desktop/volumes/
-          title: Explore Volumes
+          title: ボリュームの確認
         - path: __SUBDIR__/desktop/use-desktop/builds/
-          title: Explore Builds 
+          title: ビルドの確認
         - path: __SUBDIR__/desktop/use-desktop/resource-saver/
           title: Resource Saver mode
         - path: __SUBDIR__/desktop/use-desktop/pause/
-          title: Pause Docker Desktop
+          title: Docker Desktop の一時停止
 @z
 
 @x
@@ -2594,7 +2601,7 @@ Manuals:
     - sectiontitle: Hardened Docker Desktop
       section:
         - path: __SUBDIR__/desktop/hardened-desktop/
-          title: Overview
+          title: 概要
         - sectiontitle: Settings Management
           section:
           - path: __SUBDIR__/desktop/hardened-desktop/settings-management/
@@ -2625,10 +2632,10 @@ Manuals:
         - path: /desktop/dev-environments/dev-cli/
           title: Use the docker dev CLI plugin
 @y
-    - sectiontitle: Dev Environments (Beta)
+    - sectiontitle: Dev 環境 (ベータ)
       section:
         - path: __SUBDIR__/desktop/dev-environments/
-          title: Overview
+          title: 概要
         - path: __SUBDIR__/desktop/dev-environments/create-dev-env/
           title: Launch a dev environment
         - path: __SUBDIR__/desktop/dev-environments/set-up/

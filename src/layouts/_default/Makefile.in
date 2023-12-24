@@ -298,7 +298,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = _markup
 bases = \
-	baseof.html
+	baseof.html            \
+	engine-api-baseof.html \
+	hub-api-baseof.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -307,9 +309,7 @@ transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
 	cli.html               \
-	engine-api-baseof.html \
 	glossary.html          \
-	hub-api-baseof.html    \
 	list.html              \
 	single.html
 

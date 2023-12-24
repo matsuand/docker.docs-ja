@@ -4,16 +4,16 @@
 SUBDIRS = _markup
 
 bases = \
-	baseof.html
+	baseof.html            \
+	engine-api-baseof.html \
+	hub-api-baseof.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
 	cli.html               \
-	engine-api-baseof.html \
 	glossary.html          \
-	hub-api-baseof.html    \
 	list.html              \
 	single.html
 
