@@ -19,7 +19,7 @@ description: コンテナーデータの保存方法について学びます。
 This walkthrough shows you how to persist data between containers. To better understand some concepts in this walkthrough, complete the [Run multi-container applications](./multi-container-apps.md) walkthrough first.
 @y
 このウォークスルーでは、コンテナー間においてデータを保存する方法について示します。
-ウォークスルーにおいて説明する考え方をより深く理解するためには、[マルチコンテナーアプリケーションの実行](__SUBDIR__/guides/walkthroughs/multi-container-apps/) をまずはよくお読みください。
+ウォークスルーにおいて説明する考え方をより深く理解するためには、[マルチコンテナーアプリケーションの実行](./multi-container-apps.md) をまずはよくお読みください。
 @z
 
 @x
@@ -307,9 +307,9 @@ Related information:
 - Learn about using volumes in Compose in the [Compose file reference](../../compose/compose-file/_index.md)
 - Explore using volumes via the CLI in the [docker volume CLI reference](../../engine/reference/commandline/volume_create.md) and [Docker run reference](/reference/run/)
 @y
-- 詳しくは [ボリューム](__SUBDIR__/storage/volumes/) を参照してください。
-- Compose ファイルにおけるボリュームの利用方法については [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を参照してください。
-- CLI を通じてボリュームを利用する方法については [docker volume CLI リファレンス](__SUBDIR__/engine/reference/commandline/volume_create/) や [Docker run リファレンス](__SUBDIR__/reference/run/) を確認してください。
+- 詳しくは [ボリューム](../../storage/volumes.md) を参照してください。
+- Compose ファイルにおけるボリュームの利用方法については [Compose ファイルリファレンス](../../compose/compose-file/_index.md) を参照してください。
+- CLI を通じてボリュームを利用する方法については [docker volume CLI リファレンス](../../engine/reference/commandline/volume_create.md) や [Docker run リファレンス](__SUBDIR__/reference/run/) を確認してください。
 @z
 
 @x

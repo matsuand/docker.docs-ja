@@ -11,7 +11,7 @@ title: Use Compose Watch
 ---
 description: Use File watch to automatically update running services as you work
 keywords: compose, file watch, experimental
-title: Use Compose Watch
+title: Compose Watch の利用
 ---
 @z
 
@@ -20,9 +20,9 @@ title: Use Compose Watch
 >
 > Compose Watch is available in Docker Compose version 2.22 and later.
 @y
-> **Note**
+> **メモ**
 >
-> Compose Watch is available in Docker Compose version 2.22 and later.
+> Compose Watch は Docker Compose バージョン 2.22 またはそれ以降において利用可能です。
 @z
 
 @x

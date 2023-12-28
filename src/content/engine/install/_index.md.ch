@@ -92,7 +92,7 @@ through Docker Desktop. For instructions on how to install Docker Desktop, see:
 @x
 ## Supported platforms
 @y
-## Supported platforms
+## サポートするプラットフォーム {#supported-platforms}
 @z
 
 @x
@@ -107,22 +107,22 @@ through Docker Desktop. For instructions on how to install Docker Desktop, see:
 | [Ubuntu](ubuntu.md)                            | [✅](ubuntu.md)   | [✅](ubuntu.md)   | [✅](ubuntu.md)          | [✅](ubuntu.md) | [✅](ubuntu.md) |
 | [Binaries](binaries.md)                        | [✅](binaries.md) | [✅](binaries.md) | [✅](binaries.md)        |                 |                 |
 @y
-| Platform                                       | x86_64 / amd64    | arm64 / aarch64   | arm (32-bit)             | ppc64le         | s390x           |
-| :--------------------------------------------- | :---------------- | :---------------- | :----------------------- | :-------------- | :-------------- |
-| [CentOS](centos.md)                            | [✅](centos.md)   | [✅](centos.md)   |                          | [✅](centos.md) |                 |
-| [Debian](debian.md)                            | [✅](debian.md)   | [✅](debian.md)   | [✅](debian.md)          | [✅](debian.md) |                 |
-| [Fedora](fedora.md)                            | [✅](fedora.md)   | [✅](fedora.md)   |                          | [✅](fedora.md) |                 |
-| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                   |                   | [✅](raspberry-pi-os.md) |                 |                 |
-| [RHEL (s390x)](rhel.md)                        |                   |                   |                          |                 | [✅](rhel.md)   |
-| [SLES](sles.md)                                |                   |                   |                          |                 | [✅](sles.md)   |
-| [Ubuntu](ubuntu.md)                            | [✅](ubuntu.md)   | [✅](ubuntu.md)   | [✅](ubuntu.md)          | [✅](ubuntu.md) | [✅](ubuntu.md) |
-| [Binaries](binaries.md)                        | [✅](binaries.md) | [✅](binaries.md) | [✅](binaries.md)        |                 |                 |
+| プラットフォーム                                 | x86_64 / amd64    | arm64 / aarch64   | arm (32ビット)           | ppc64le         | s390x           |
+| :----------------------------------------------- | :---------------- | :---------------- | :----------------------- | :-------------- | :-------------- |
+| [CentOS](centos.md)                              | [✅](centos.md)   | [✅](centos.md)   |                          | [✅](centos.md) |                 |
+| [Debian](debian.md)                              | [✅](debian.md)   | [✅](debian.md)   | [✅](debian.md)          | [✅](debian.md) |                 |
+| [Fedora](fedora.md)                              | [✅](fedora.md)   | [✅](fedora.md)   |                          | [✅](fedora.md) |                 |
+| [Raspberry Pi OS (32ビット)](raspberry-pi-os.md) |                   |                   | [✅](raspberry-pi-os.md) |                 |                 |
+| [RHEL (s390x)](rhel.md)                          |                   |                   |                          |                 | [✅](rhel.md)   |
+| [SLES](sles.md)                                  |                   |                   |                          |                 | [✅](sles.md)   |
+| [Ubuntu](ubuntu.md)                              | [✅](ubuntu.md)   | [✅](ubuntu.md)   | [✅](ubuntu.md)          | [✅](ubuntu.md) | [✅](ubuntu.md) |
+| [Binaries](binaries.md)                          | [✅](binaries.md) | [✅](binaries.md) | [✅](binaries.md)        |                 |                 |
 @z
 
 @x
 ### Other Linux distros
 @y
-### Other Linux distros
+### その他の Linux ディストロ {#other-linux-distros}
 @z
 
 @x
@@ -131,7 +131,7 @@ through Docker Desktop. For instructions on how to install Docker Desktop, see:
 > While the following instructions may work, Docker doesn't test or verify
 > installation on distro derivatives.
 @y
-> **Note**
+> **メモ**
 >
 > While the following instructions may work, Docker doesn't test or verify
 > installation on distro derivatives.
@@ -214,7 +214,7 @@ early-access features that are subject to breaking changes.
 @x
 ## Support
 @y
-## Support
+## サポート {#support}
 @z
 
 @x
@@ -252,7 +252,7 @@ Patch releases are always backward compatible with its major and minor version.
 @x
 ### Licensing
 @y
-### Licensing
+## ライセンス {#licensing}
 @z
 
 @x
@@ -260,9 +260,8 @@ Docker Engine is licensed under the Apache License, Version 2.0. See
 [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full
 license text.
 @y
-Docker Engine is licensed under the Apache License, Version 2.0. See
-[LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full
-license text.
+Docker Engine は ライセンスとして Apache License, Version 2.0 を採用しています。
+ライセンス全文は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
 @z
 
 @x
@@ -292,7 +291,7 @@ Security reports are greatly appreciated, and Docker will publicly thank you for
 @x
 ## Get started
 @y
-## Get started
+## はじめよう {#get-started}
 @z
 
 @x

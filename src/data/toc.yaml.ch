@@ -588,8 +588,8 @@ Reference:
 @y
 リファレンス:
 - path: __SUBDIR__/reference/
-  title: Reference documentation
-- sectiontitle: Command-line reference
+  title: リファレンスドキュメント
+- sectiontitle: コマンドラインリファレンス
   section:
   - sectiontitle: Docker CLI (docker)
     section:
@@ -1887,7 +1887,7 @@ Reference:
     - path: /engine/api/sdk/examples/
       title: SDK examples
 @y
-- sectiontitle: API reference
+- sectiontitle: API リファレンス
   section:
   - sectiontitle: Docker Engine API
     section:
@@ -1899,14 +1899,11 @@ Reference:
       title: SDK 利用例
 @z
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Workaround: hard-coding 'v1.43' instead of 'latest'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @x
     - path: /engine/api/latest/
       title: v{{< param latest_engine_api_version >}} reference (latest)
 @y
-    - path: __SUBDIR__/engine/api/v1.43/
+    - path: __SUBDIR__/engine/api/latest/
       title: v{{< param latest_engine_api_version >}} リファレンス (最新)
 @z
 
@@ -2176,12 +2173,12 @@ Workaround: hard-coding 'v1.43' instead of 'latest'
 @y
 - title: Dockerfile リファレンス
   path: __SUBDIR__/engine/reference/builder/
-- sectiontitle: Compose file reference
+- sectiontitle: Compose ファイルリファレンス
   section:
-    - sectiontitle: Compose Specification
+    - sectiontitle: Compose 仕様
       section:
       - path: __SUBDIR__/compose/compose-file/
-        title: Overview
+        title: 概要
       - path: __SUBDIR__/compose/compose-file/01-status/
         title: Status of the specification
       - path: __SUBDIR__/compose/compose-file/02-model/
@@ -2291,7 +2288,7 @@ Samples:
 @y
 サンプル:
 - path: __SUBDIR__/samples/
-  title: Overview
+  title: 概要
 - sectiontitle: Databases
   section:
     - path: __SUBDIR__/samples/mariadb/
@@ -2336,7 +2333,7 @@ Samples:
     - path: /samples/vuejs/
       title: Vue.js
 @y
-- sectiontitle: Frameworks
+- sectiontitle: フレームワーク
   section:
     - path: __SUBDIR__/samples/dotnet/
       title: .NET
@@ -2384,7 +2381,7 @@ Samples:
     - path: /samples/typescript/
       title: TypeScript
 @y
-- sectiontitle: Languages
+- sectiontitle: 言語
   section:
     - path: __SUBDIR__/samples/go/
       title: Go
@@ -2418,7 +2415,7 @@ Samples:
     - path: /samples/wordpress/
       title: WordPress
 @y
-- sectiontitle: Platforms
+- sectiontitle: プラットフォーム
   section:
     - path: __SUBDIR__/samples/gitea/
       title: Gitea
@@ -2454,7 +2451,7 @@ Samples:
     - path: /samples/wireguard/
       title: Wireguard
 @y
-- sectiontitle: Other samples
+- sectiontitle: その他のサンプル
   section:
     - path: __SUBDIR__/samples/ai-ml/
       title: AI/ML
@@ -2697,7 +2694,7 @@ Manuals:
         - path: __SUBDIR__/desktop/networking/
           title: Explore networking features
         - path: __SUBDIR__/desktop/vm-vdi/
-          title: Run Docker Desktop for Windows in a VM or VDI environment
+          title: VM, VDI 環境での Docker Desktop for Windows 実行
         - path: __SUBDIR__/desktop/allow-list/
           title: Allowlist for Docker Desktop
 @z
@@ -3223,11 +3220,11 @@ Manuals:
 - sectiontitle: Docker Engine
   section:
   - path: __SUBDIR__/engine/
-    title: Overview
-  - sectiontitle: Install
+    title: 概要
+  - sectiontitle: インストール
     section:
     - path: __SUBDIR__/engine/install/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/engine/install/centos/
       title: CentOS
     - path: __SUBDIR__/engine/install/debian/
@@ -3257,13 +3254,13 @@ Manuals:
     - path: __SUBDIR__/engine/install/ubuntu/
       title: Ubuntu
     - path: __SUBDIR__/engine/install/raspberry-pi-os/
-      title: Raspberry Pi OS (32-bit)
+      title: Raspberry Pi OS (32ビット)
     - path: __SUBDIR__/engine/install/binaries/
       title: Binaries
     - path: __SUBDIR__/engine/install/linux-postinstall/
-      title: Post-installation steps
+      title: インストール後の作業
     - path: __SUBDIR__/engine/install/troubleshoot/
-      title: Troubleshoot installation
+      title: インストール時のトラブルシューティング
 @z
 
 @x
@@ -3280,18 +3277,18 @@ Manuals:
     - path: /storage/troubleshooting_volume_errors/
       title: Troubleshoot
 @y
-  - sectiontitle: Storage
+  - sectiontitle: ストレージ
     section:
     - path: __SUBDIR__/storage/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/storage/volumes/
-      title: Volumes
+      title: ボリューム
     - path: __SUBDIR__/storage/bind-mounts/
-      title: Bind mounts
+      title: バインドマウント
     - path: __SUBDIR__/storage/tmpfs/
-      title: tmpfs mounts
+      title: tmpfs マウント
     - path: __SUBDIR__/storage/troubleshooting_volume_errors/
-      title: Troubleshoot
+      title: トラブルシューティング
 @z
 
 @x
@@ -3316,24 +3313,24 @@ Manuals:
       - path: /storage/containerd/
         title: containerd snapshotters
 @y
-    - sectiontitle: Storage drivers
+    - sectiontitle: ストレージドライバー
       section:
       - path: __SUBDIR__/storage/storagedriver/
-        title: Overview
+        title: 概要
       - path: __SUBDIR__/storage/storagedriver/select-storage-driver/
-        title: Select a storage driver
+        title: ストレージドライバー選び
       - path: __SUBDIR__/storage/storagedriver/btrfs-driver/
-        title: Use the Btrfs storage driver
+        title: Btrfs ストレージドライバーの利用
       - path: __SUBDIR__/storage/storagedriver/device-mapper-driver/
-        title: Use the Device mapper storage driver
+        title: Device mapper ストレージドライバーの利用
       - path: __SUBDIR__/storage/storagedriver/overlayfs-driver/
-        title: Use the OverlayFS storage driver
+        title: OverlayFS ストレージドライバーの利用
       - path: __SUBDIR__/storage/storagedriver/zfs-driver/
-        title: Use the ZFS storage driver
+        title: ZFS ストレージドライバーの利用
       - path: __SUBDIR__/storage/storagedriver/vfs-driver/
-        title: Use the VFS storage driver
+        title: VFS ストレージドライバーの利用
       - path: __SUBDIR__/storage/storagedriver/aufs-driver/
-        title: Use the AUFS storage driver (deprecated)
+        title: AUFS ストレージドライバーの利用 (非推奨)
       - path: __SUBDIR__/storage/containerd/
         title: containerd snapshotters
 @z
@@ -3360,14 +3357,14 @@ Manuals:
       - path: /network/drivers/none/
         title: None (no networking)
 @y
-  - sectiontitle: Networking
+  - sectiontitle: ネットワーク
     section:
     - path: __SUBDIR__/network/
-      title: Overview
+      title: 概要
     - sectiontitle: Network drivers
       section:
       - path: __SUBDIR__/network/drivers/
-        title: Overview
+        title: 概要
       - path: __SUBDIR__/network/drivers/bridge/
         title: Bridge
       - path: __SUBDIR__/network/drivers/overlay/
@@ -3379,7 +3376,7 @@ Manuals:
       - path: __SUBDIR__/network/drivers/macvlan/
         title: Macvlan
       - path: __SUBDIR__/network/drivers/none/
-        title: None (no networking)
+        title: ネットワークなし
 @z
 
 @x
@@ -3444,22 +3441,22 @@ Manuals:
     - path: /engine/sbom/
       title: Docker SBOM (Experimental)
 @y
-  - sectiontitle: Working with Docker Engine
+  - sectiontitle: Docker Engine を用いた操作
     section:
     - path: __SUBDIR__/config/daemon/start/
-      title: Start the daemon
+      title: デーモンの起動
     - path: __SUBDIR__/config/pruning/
-      title: Prune unused objects
+      title: 未使用オブジェクトの取り除き
     - path: __SUBDIR__/config/formatting/
-      title: Format command and log output
+      title: フォーマットコマンドとログ出力
     - path: __SUBDIR__/config/filter/
-      title: Filter commands
+      title: フィルターコマンド
     - path: __SUBDIR__/config/containers/start-containers-automatically/
-      title: Start containers automatically
+      title: コンテナーの自動起動
     - path: __SUBDIR__/config/labels-custom-metadata/
-      title: Labels
+      title: ラベル
     - path: __SUBDIR__/engine/sbom/
-      title: Docker SBOM (Experimental)
+      title: Docker SBOM (試験的)
 @z
 
 @x

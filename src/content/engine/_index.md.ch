@@ -55,42 +55,42 @@ aliases:
 ---
 description: Engine
 keywords: Engine
-title: Docker Engine overview
+title: Docker Engine 概要
 grid:
-- title: Install Docker Engine
-  description: Learn how to install the open source Docker Engine for your distribution.
+- title: Docker Engine のインストール
+  description: 手元のディストリビューションにオープンソースの Docker Engine をインストールする方法について学びます。
   icon: download
   link: __SUBDIR__/engine/install
-- title: Storage
-  description: Use persistent data with Docker containers.
+- title: ストレージ
+  description: Docker コンテナーにおけるデータを保存します。
   icon: database
   link: __SUBDIR__/storage
-- title: Networking
-  description: Manage network connections between containers.
+- title: ネットワーク
+  description: コンテナー間でのネットワーク接続を管理します。
   icon: network_node
   link: __SUBDIR__/network
-- title: Container logs
-  description: Learn how to view and read container logs.
+- title: コンテナーのログ
+  description: コンテナーのログを参照し読む方法について学びます。
   icon: feed
   link: __SUBDIR__/config/containers/logging/
-- title: Prune
-  description: Tidy up unused resources.
+- title: prune （取り除き）
+  description: 未使用のリソースを取り除きます。
   icon: cut
   link: __SUBDIR__/config/pruning
-- title: Configure the daemon
-  description: Delve into the configuration options of the Docker daemon.
+- title: デーモンを設定します。
+  description: Docker デーモンの設定オプションについて学びます。
   icon: tune
   link: __SUBDIR__/config/daemon
-- title: Rootless mode
-  description: Run Docker without root privileges.
+- title: rootless モード
+  description: root 権限なしに Docker を実行します。
   icon: security
   link: __SUBDIR__/engine/security/rootless
-- title: Deprecated features
-  description: Find out what features of Docker Engine you should stop using.
+- title: 非推奨の機能
+  description: Docker Engine における機能のうち、利用を中止すべきものについて検索します。
   icon: folder_delete
   link: __SUBDIR__/engine/deprecated/
-- title: Release notes
-  description: Read the release notes for the latest version.
+- title: リリースノート
+  description: 最新版に対するリリースノートを確認します。
   icon: note_add
   link: __SUBDIR__/engine/release-notes
 aliases:
@@ -107,9 +107,8 @@ Docker Engine is an open source containerization technology for building and
 containerizing your applications. Docker Engine acts as a client-server
 application with:
 @y
-Docker Engine is an open source containerization technology for building and
-containerizing your applications. Docker Engine acts as a client-server
-application with:
+Docker Engine はオープンソースによるコンテナー技術であり、アプリケーションの構築とコンテナー化を行います。
+Docker Engine はクライアントサーバーアプリケーションとして動作し、以下を提供します。
 @z
 
 @x
@@ -120,12 +119,9 @@ application with:
 - A command line interface (CLI) client
   [`docker`](/engine/reference/commandline/cli/).
 @y
-- A server with a long-running daemon process
-  [`dockerd`](/engine/reference/commandline/dockerd).
-- APIs which specify interfaces that programs can use to talk to and instruct
-  the Docker daemon.
-- A command line interface (CLI) client
-  [`docker`](/engine/reference/commandline/cli/).
+- デーモンプロセス [`dockerd`](/engine/reference/commandline/dockerd) を長期にわたって動作させるサーバー。
+- アプリケーションプログラムが Docker デーモンとやりとりしたり指示したりするためのインターフェースとなる API。
+- コマンドラインインターフェース (CLI) クライアントである [`docker`](/engine/reference/commandline/cli/)。
 @z
 
 @x
@@ -134,18 +130,17 @@ daemon through scripting or direct CLI commands. Many other Docker applications
 use the underlying API and CLI. The daemon creates and manage Docker objects,
 such as images, containers, networks, and volumes.
 @y
-The CLI uses [Docker APIs](api/index.md) to control or interact with the Docker
-daemon through scripting or direct CLI commands. Many other Docker applications
-use the underlying API and CLI. The daemon creates and manage Docker objects,
-such as images, containers, networks, and volumes.
+CLI は [Docker API](api/index.md) を利用して、Docker デーモンの制御ややりとりを行います。
+これはスクリプト処理や CLI コマンドの直接操作によって行います。
+これ以外の Docker アプリケーションの多くが API や CLI を利用しています。
+デーモンからは、イメージ、コンテナー、ネットワーク、ボリュームといった Docker オブジェクトが生成され管理されます。
 @z
 
 @x
 For more details, see
 [Docker Architecture](../get-started/overview.md#docker-architecture).
 @y
-For more details, see
-[Docker Architecture](../get-started/overview.md#docker-architecture).
+詳細は [Docker アーキテクチャー](../get-started/overview.md#docker-architecture) を参照してください。
 @z
 
 @x
@@ -157,7 +152,7 @@ For more details, see
 @x
 ## Licensing
 @y
-## Licensing
+## ライセンス {#licensing}
 @z
 
 @x
@@ -165,7 +160,6 @@ The Docker Engine is licensed under the Apache License, Version 2.0. See
 [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full license
 text.
 @y
-The Docker Engine is licensed under the Apache License, Version 2.0. See
-[LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full license
-text.
+Docker Engine は ライセンスとして Apache License, Version 2.0 を採用しています。
+ライセンス全文は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
 @z

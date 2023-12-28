@@ -68,7 +68,7 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Mac"
   description="Mac 上ですべての Docker ツールを実行するために macOS サンドボックスセキュリティモデルを使うネイティブなアプリケーションです。"
-  link="desktop/install/mac-install/"
+  link="__SUBDIR__/desktop/install/mac-install/"
   icon="__SUBDIR__/assets/images/apple_48.svg" >}}
 @z
 

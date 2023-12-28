@@ -30,9 +30,9 @@ aliases:
 ---
 @y
 ---
-description: Configuring the Docker daemon
+description: Docker デーモンを設定します。
 keywords: docker, daemon, configuration
-title: Docker daemon configuration overview
+title: Docker デーモンの設定概要
 aliases:
   - /articles/chef/
   - /articles/configuring/

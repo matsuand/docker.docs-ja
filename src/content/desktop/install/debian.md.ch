@@ -13,10 +13,10 @@ aliases:
 ---
 @y
 ---
-description: Instructions for installing Docker Desktop on Debian
+description: Debian への Docker Desktop インストール手順
 keywords: debian, install, uninstall, upgrade, update, linux, desktop, docker desktop,
   docker desktop for linux, dd4l
-title: Install Docker Desktop on Debian
+title: Debian への Docker Desktop インストール
 toc_max: 4
 aliases:
 - /desktop/linux/install/debian/
@@ -26,13 +26,13 @@ aliases:
 @x
 This page contains information on how to install, launch, and upgrade Docker Desktop on a Debian distribution.
 @y
-This page contains information on how to install, launch, and upgrade Docker Desktop on a Debian distribution.
+このページでは Debian ディストリビューションにおいて、Docker Desktop のインストール、実行、アップグレードを行う方法について示します。
 @z
 
 @x
 {{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @y
-{{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="DEB パッケージ" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @z
 
 @x

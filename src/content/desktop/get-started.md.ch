@@ -38,7 +38,7 @@ description: Explore the Learning center and understand the benefits of signing 
   to Docker Desktop
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   learning center, guide, sign in
-title: Sign in to Docker Desktop
+title: Docker Desktop へのサインイン
 aliases:
 - /desktop/linux/
 - /desktop/linux/index/
@@ -68,13 +68,13 @@ aliases:
 @x
 Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard.
 @y
-Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard.
+Docker の利用にあたっては、Docker Dashboard の右上にある **サインイン** オプションを使って認証操作を行うことをお勧めします。
 @z
 
 @x
 Once signed in, you can access your Docker Hub repositories directly from Docker Desktop.
 @y
-Once signed in, you can access your Docker Hub repositories directly from Docker Desktop.
+サインインすると Docker Desktop 内から直接 Docker Hub リポジトリにアクセスできるようになります。
 @z
 
 @x
@@ -94,7 +94,7 @@ In large enterprises where admin access is restricted, administrators can [Confi
 >
 > Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity. 
 @y
-> **Note**
+> **メモ**
 >
 > Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity. 
 @z
@@ -102,7 +102,7 @@ In large enterprises where admin access is restricted, administrators can [Confi
 @x
 ### Signing in with Docker Desktop for Linux
 @y
-### Signing in with Docker Desktop for Linux
+### Docker Desktop for Linux におけるサインイン  {#signing-in-with-docker-desktop-for-linux}
 @z
 
 @x
@@ -240,7 +240,7 @@ docker.io/molly/privateimage:latest
 @x
 ## What's next?
 @y
-## What's next?
+## 次は何？ {#whats-next}
 @z
 
 @x
@@ -248,7 +248,7 @@ docker.io/molly/privateimage:latest
 - Change your Docker Desktop settings
 - [Browse common FAQs](faqs/general.md)
 @y
-- [Explore Docker Desktop](use-desktop/index.md) and its features. 
-- Change your Docker Desktop settings
-- [Browse common FAQs](faqs/general.md)
+- [Docker Desktop の確認](use-desktop/index.md) とその機能。
+- Docker Desktop 設定の変更
+- [一般的な FAQ の確認](faqs/general.md)
 @z

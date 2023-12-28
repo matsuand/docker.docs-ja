@@ -10,9 +10,8 @@ notoc: true
 skip_read_time: true
 @y
 ---
-title: Reference documentation
-description: This section includes the reference documentation for the Docker platform’s
-  various APIs, CLIs, and file formats.
+title: リファレンスドキュメント
+description: 本節はは Docker プラットフォームに API、CLI、ドライバー仕様、ファイルフォーマットについてのさまざまなリファレンスドキュメントを示すものです。
 notoc: true
 skip_read_time: true
 @z
@@ -37,7 +36,7 @@ grid_files:
   icon: polyline
   link: /compose/compose-file/
 @y
-- title: Compose file
+- title: Compose ファイル
   description: Defines a multi-container application.
   icon: polyline
   link: __SUBDIR__/compose/compose-file/
@@ -141,7 +140,7 @@ grid_specs:
   link: /registry/spec/manifest-v2-2/
 @y
 grid_specs:
-- title: Image specification
+- title: イメージ仕様
   description: Describes the various components of a Docker image.
   icon: contract
   link: __SUBDIR__/registry/spec/manifest-v2-2/
@@ -209,8 +208,7 @@ aliases:
 This section includes the reference documentation for the Docker platform's
 various APIs, CLIs, drivers and specifications, and file formats.
 @y
-This section includes the reference documentation for the Docker platform's
-various APIs, CLIs, drivers and specifications, and file formats.
+本節はは Docker プラットフォームに API、CLI、ドライバー仕様、ファイルフォーマットについてのさまざまなリファレンスドキュメントを示すものです。
 @z
 
 @x
@@ -228,7 +226,7 @@ various APIs, CLIs, drivers and specifications, and file formats.
 @x
 ## Command-line interfaces (CLIs)
 @y
-## Command-line interfaces (CLIs)
+## コマンドラインインターフェース (Command-line Interface; CLI) {#command-line-interfaces-clis}
 @z
 
 @x
@@ -240,7 +238,7 @@ various APIs, CLIs, drivers and specifications, and file formats.
 @x
 ## Application programming interfaces (APIs)
 @y
-## Application programming interfaces (APIs)
+## アプリケーションプログラミングインターフェース (API) {#application-programming-interfaces-apis}
 @z
 
 @x
@@ -252,7 +250,7 @@ various APIs, CLIs, drivers and specifications, and file formats.
 @x
 ## Drivers and specifications
 @y
-## Drivers and specifications
+## ドライバーと仕様 {#drivers-and-specifications}
 @z
 
 @x

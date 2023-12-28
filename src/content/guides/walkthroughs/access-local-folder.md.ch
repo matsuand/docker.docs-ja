@@ -9,7 +9,7 @@ description: Learn how to access a local folder from a container
 ---
 @y
 ---
-title: Access a local folder from a container
+title: コンテナーからローカルフォルダーへのアクセス
 keywords: get started, quick start, intro, concepts
 description: Learn how to access a local folder from a container
 ---
@@ -18,7 +18,8 @@ description: Learn how to access a local folder from a container
 @x
 This walkthrough shows you how to access a local folder from a container. To better understand some concepts in this walkthrough, complete the [Run multi-container applications](./multi-container-apps.md) walkthrough first.
 @y
-This walkthrough shows you how to access a local folder from a container. To better understand some concepts in this walkthrough, complete the [Run multi-container applications](./multi-container-apps.md) walkthrough first.
+このウォークスルーでは、コンテナーからローカルフォルダーにアクセスする方法について示します。
+ウォークスルーにおいて説明する考え方をより深く理解するためには、[マルチコンテナーアプリの実行](./multi-container-apps.md) をまずはよくお読みください。
 @z
 
 @x
@@ -48,7 +49,7 @@ Sometimes, you may want to access a directory from your local filesystem. To do 
 @x
 ## Step 1: Get the sample application
 @y
-## Step 1: Get the sample application
+## Step 1: Get the sample application {#step-1-get-the-sample-application}
 @z
 
 @x
@@ -112,7 +113,7 @@ Download the source and extract it.
 @x
 ## Step 2: Add a bind mount using Compose
 @y
-## Step 2: Add a bind mount using Compose
+## Step 2: Add a bind mount using Compose {#step-2-add-a-bind-mount-using-compose}
 @z
 
 @x
@@ -164,7 +165,7 @@ The `volumes` element tells Compose to mount the local folder `./app` to `/usr/s
 @x
 ## Step 3: Run the application
 @y
-## Step 3: Run the application
+## Step 3: Run the application {#step-3-run-the-application}
 @z
 
 @x
@@ -198,7 +199,7 @@ $ docker compose up -d
 @x
 ## Step 4: Develop the application
 @y
-## Step 4: Develop the application
+## Step 4: Develop the application {#step-4-develop-the-application}
 @z
 
 @x
@@ -210,7 +211,7 @@ Now, you can take advantage of the container’s environment while you develop t
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -222,7 +223,7 @@ In this walkthrough, you added a bind mount to access a local folder from a cont
 @x
 Related information:
 @y
-Related information:
+関連情報
 @z
 
 @x
@@ -238,7 +239,7 @@ Related information:
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x

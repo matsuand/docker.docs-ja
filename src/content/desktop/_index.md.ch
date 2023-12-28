@@ -110,8 +110,8 @@ aliases:
 Docker Desktop is a one-click-install application for your Mac, Linux, or Windows environment
 that lets you to build, share, and run containerized applications and microservices. 
 @y
-Docker Desktop is a one-click-install application for your Mac, Linux, or Windows environment
-that lets you to build, share, and run containerized applications and microservices. 
+Docker Desktop は Mac、Linux、Windows にワンクリックでインストールできるアプリケーションです。
+これにより、コンテナー化アプリケーションやマイクロサービスを構築し共有することができます。
 @z
 
 @x
@@ -131,7 +131,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 {{< tab name="What's included in Docker Desktop?" >}}
 @y
 {{< tabs >}}
-{{< tab name="What's included in Docker Desktop?" >}}
+{{< tab name="Docker Desktop に含まれているものは？" >}}
 @z
 
 @x
@@ -146,7 +146,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 - [Credential Helper](https://github.com/docker/docker-credential-helpers/)
 @y
 - [Docker Engine](../engine/index.md)
-- Docker CLI client
+- Docker CLI クライアント
 - [Docker Scout](../scout/_index.md) (additional subscription may apply)
 - [Docker Buildx](../build/index.md)
 - [Docker Extensions](extensions/index.md)
@@ -161,7 +161,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 {{< tab name="What are the key features of Docker Desktop?">}}
 @y
 {{< /tab >}}
-{{< tab name="What are the key features of Docker Desktop?">}}
+{{< tab name="Docker Desktop の主要機能は何か？">}}
 @z
 
 @x
@@ -173,13 +173,14 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 * Ability to work natively on Linux through WSL 2 on Windows machines.
 * Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
 @y
-* Ability to containerize and share any application on any cloud platform, in multiple languages and frameworks.
-* Quick installation and setup of a complete Docker development environment.
-* Includes the latest version of Kubernetes.
-* On Windows, the ability to toggle between Linux and Windows Server environments to build applications.
-* Fast and reliable performance with native Windows Hyper-V virtualization.
-* Ability to work natively on Linux through WSL 2 on Windows machines.
-* Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
+* どのようなクラウドプラットフォーム上においても、いろいろなアプリケーションをコンテナー化し共有することができます。複数のプログラミング言語やフレームワークにも対応します。
+* 完全な Docker 開発環境を、すばやくインストールし設定することができます。
+* 最新版の Kubernetes を提供します。
+* Windows においは、Linux と Windows Server を切り替えてアプリケーションを構築できます。
+* Windows のネイティブな Hyper-V 仮想技術を利用して、高速かつ信頼できる性能を提供します。
+* Windows マシン上の WSL 2 を通じて、Linux ネイティブのように機能します。
+* ソースコードやデータに対してボリュームマウントを可能にします。
+  ファイル更新の通知機能や、ローカルホストのネットワーク上で稼動するコンテナーへの簡単なアクセス機能を提供します
 @z
 
 @x

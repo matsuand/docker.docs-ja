@@ -9,7 +9,7 @@ keywords: build, buildkit, buildx, guide, tutorial
 ---
 @y
 ---
-title: Build with Docker
+title: Docker を使ったビルド
 description: Explore the features of Docker Build in this step-by-step guide
 keywords: build, buildkit, buildx, guide, tutorial
 ---

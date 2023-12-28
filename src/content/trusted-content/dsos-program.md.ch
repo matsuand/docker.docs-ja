@@ -59,14 +59,14 @@ The program grants the following perks to eligible projects:
 - Repository logo
 - Verified Docker-Sponsored Open Source badge
 - Insights and analytics
-- Vulnerability analysis
+- Access to [Docker Scout](#docker-scout) for software supply chain management
 - Removal of rate limiting for developers
 - Improved discoverability on Docker Hub
 @y
 - Repository logo
 - Verified Docker-Sponsored Open Source badge
 - Insights and analytics
-- Vulnerability analysis
+- Access to [Docker Scout](#docker-scout) for software supply chain management
 - Removal of rate limiting for developers
 - Improved discoverability on Docker Hub
 @z
@@ -220,41 +220,29 @@ You can select the time span for which you want to view analytics data. You can 
 @z
 
 @x
-### Vulnerability analysis
+### Docker Scout
 @y
-### Vulnerability analysis
+### Docker Scout
 @z
 
 @x
-[Docker Scout](/scout/) provides automatic vulnerability analysis
-for DVP images published to Docker Hub.
-Scanning images ensures that the published content is secure, and proves to
-developers that they can trust the image.
+DSOS projects can enable Docker Scout on up to 100 repositories for free. Docker
+Scout provides automatic image analysis, policy evaluation for improved supply
+chain management, integrations with third-party systems like CI platforms and
+source code management, and more.
 @y
-[Docker Scout](/scout/) provides automatic vulnerability analysis
-for DVP images published to Docker Hub.
-Scanning images ensures that the published content is secure, and proves to
-developers that they can trust the image.
+DSOS projects can enable Docker Scout on up to 100 repositories for free. Docker
+Scout provides automatic image analysis, policy evaluation for improved supply
+chain management, integrations with third-party systems like CI platforms and
+source code management, and more.
 @z
 
 @x
-You can enable analysis on a per-repository
-basis. For more about using this feature, see [Basic vulnerability scanning](/docker-hub/vulnerability-scanning/).
+You can enable Docker Scout on a per-repository basis. For information about
+how to use this product, refer to the [Docker Scout documentation](/scout/).
 @y
-You can enable analysis on a per-repository
-basis. For more about using this feature, see [Basic vulnerability scanning](/docker-hub/vulnerability-scanning/).
-@z
-
-@x
-> **Note**
->
-> Content publishers in the Docker-Sponsored Open Source Program receive 3 free
-> Docker Team Seats
-@y
-> **Note**
->
-> Content publishers in the Docker-Sponsored Open Source Program receive 3 free
-> Docker Team Seats
+You can enable Docker Scout on a per-repository basis. For information about
+how to use this product, refer to the [Docker Scout documentation](/scout/).
 @z
 
 @x

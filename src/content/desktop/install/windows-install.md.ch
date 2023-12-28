@@ -29,7 +29,7 @@ description: Get started with Docker for Windows. This guide covers system requi
 keywords: docker for windows, docker windows, docker desktop for windows, docker on
   windows, install docker windows, install docker on windows, docker windows 10, docker
   run on windows, installing docker for windows
-title: Install Docker Desktop on Windows
+title: Windows への Docker Desktop のインストール
 aliases:
 - /desktop/windows/install/
 - /docker-ee-for-windows/install/
@@ -48,7 +48,7 @@ aliases:
 @x
 This page contains the download URL, information about system requirements, and instructions on how to install Docker Desktop for Windows.
 @y
-This page contains the download URL, information about system requirements, and instructions on how to install Docker Desktop for Windows.
+このページでは Docker Desktop for Windows をインストールするための、ダウンロード情報、システム要件、インストール手順について説明します。
 @z
 
 @x
@@ -60,7 +60,7 @@ This page contains the download URL, information about system requirements, and 
 @x
 _For checksums, see [Release notes](../release-notes.md)_
 @y
-_For checksums, see [Release notes](../release-notes.md)_
+_チェックサムについては [リリースノート](../release-notes.md)_ を参照してください。
 @z
 
 @x
@@ -70,17 +70,15 @@ _For checksums, see [Release notes](../release-notes.md)_
 > employees OR more than $10 million USD in annual revenue) requires a paid
 > subscription.
 @y
-> **Docker Desktop terms**
+> **Docker Desktop 契約条項**
 >
-> Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a paid
-> subscription.
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、有償サブスクリプションが必要です。
 @z
 
 @x
 ## System requirements
 @y
-## System requirements
+## システム要件 {#system-requirements}
 @z
 
 @x
@@ -88,7 +86,7 @@ _For checksums, see [Release notes](../release-notes.md)_
 {{< tab name="WSL 2 backend" >}}
 @y
 {{< tabs >}}
-{{< tab name="WSL 2 backend" >}}
+{{< tab name="WSL 2 バックエンド" >}}
 @z
 
 @x
@@ -132,7 +130,7 @@ _For checksums, see [Release notes](../release-notes.md)_
 > Windows Home or Education editions only allow you to run Linux containers.
 { .important }
 @y
-> **Important**
+> **重要**
 >
 > To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
 > Windows Home or Education editions only allow you to run Linux containers.
@@ -144,7 +142,7 @@ _For checksums, see [Release notes](../release-notes.md)_
 >
 > Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 @y
-> **Note**
+> **メモ**
 >
 > Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 @z
@@ -218,7 +216,7 @@ _For checksums, see [Release notes](../release-notes.md)_
 > Windows Home or Education editions only allow you to run Linux containers.
 { .important }
 @y
-> **Important**
+> **重要**
 >
 > To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
 > Windows Home or Education editions only allow you to run Linux containers.
@@ -230,7 +228,7 @@ _For checksums, see [Release notes](../release-notes.md)_
 >
 > Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 @y
-> **Note**
+> **メモ**
 >
 > Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 @z
@@ -248,9 +246,9 @@ Containers and images created with Docker Desktop are shared between all
 user accounts on machines where it is installed. This is because all Windows
 accounts use the same VM to build and run containers. Note that it is not possible to share containers and images between user accounts when using the Docker Desktop WSL 2 backend.
 @y
-Containers and images created with Docker Desktop are shared between all
-user accounts on machines where it is installed. This is because all Windows
-accounts use the same VM to build and run containers. Note that it is not possible to share containers and images between user accounts when using the Docker Desktop WSL 2 backend.
+Docker Desktop を使って生成されたコンテナーやイメージは、Docker Desktop がインストールされているマシン上であれば、全ユーザーアカウントが共有できます。
+これは Windows アカウントが同一の VM を使って、コンテナーのビルドや実行を行うからです。
+ただし Docker Desktop WSL 2 バックエンドを利用している場合は、ユーザーアカウント間でコンテナーやイメージは共有できません。
 @z
 
 @x
@@ -298,7 +296,7 @@ Looking for information on using Windows containers?
 @x
 ## Install Docker Desktop on Windows
 @y
-## Install Docker Desktop on Windows
+## Windows への Docker Desktop のインストール {#install-docker-desktop-on-windows}
 @z
 
 @x
@@ -312,39 +310,41 @@ Looking for information on using Windows containers?
 @x
 1. Double-click **Docker Desktop Installer.exe** to run the installer.
 @y
-1. Double-click **Docker Desktop Installer.exe** to run the installer.
+1. **Docker Desktop Installer.exe** をダブルクリックしてインストーラーを起動します。
 @z
 
 @x
 2. When prompted, ensure the **Use WSL 2 instead of Hyper-V** option on the Configuration page is selected or not depending on your choice of backend.
 @y
-2. When prompted, ensure the **Use WSL 2 instead of Hyper-V** option on the Configuration page is selected or not depending on your choice of backend.
+2. プロンプト画面が表示されたら、バックエンドでの選択状況に従って Configuration ページにおける **Use WSL 2 instead of Hyper-V** オプションのオンオフが設定されていることを確認してください。
 @z
 
 @x
    If your system only supports one of the two options, you will not be able to select which backend to use.
 @y
-   If your system only supports one of the two options, you will not be able to select which backend to use.
+   利用するシステムが 2 つのオプションの 1 つのみをサポートしている場合は、バックエンドにおいて選択することはできません。
 @z
 
 @x
 3. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 @y
-3. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+3. インストールウィザードの手順に従ってインストーラーを承認して、インストールを完了させます。
 @z
 
 @x
 4. When the installation is successful, select **Close** to complete the installation process.
 @y
-4. When the installation is successful, select **Close** to complete the installation process.
+4. インストールが正常に行われたら **Close** をクリックして作業を終了します。
 @z
 
 @x
 5. If your admin account is different to your user account, you must add the user to the **docker-users** group. Run **Computer Management** as an **administrator** and navigate to **Local Users and Groups** > **Groups** > **docker-users**. Right-click to add the user to the group.
    Sign out and sign back in for the changes to take effect.
 @y
-5. If your admin account is different to your user account, you must add the user to the **docker-users** group. Run **Computer Management** as an **administrator** and navigate to **Local Users and Groups** > **Groups** > **docker-users**. Right-click to add the user to the group.
-   Sign out and sign back in for the changes to take effect.
+5. 管理アカウントが利用しているアカウントと異なる場合、そのアカウントを **docker-users** グループに追加する必要があります。
+   **administrator**（管理者）として **Computer Management**（コンピューターの管理）を実行し、**Local Users and Groups** > **Groups** > **docker-users** を選びます。
+   このグループに対して、右クリックメニューからユーザーを追加します。
+   変更を有効にするため、いったんサインアウトしてからサインインし直します。
 @z
 
 @x
@@ -352,13 +352,13 @@ Looking for information on using Windows containers?
 {{< tab name="Install from the command line" >}}
 @y
 {{< /tab >}}
-{{< tab name="Install from the command line" >}}
+{{< tab name="コマンドラインからのインストール" >}}
 @z
 
 @x
 After downloading **Docker Desktop Installer.exe**, run the following command in a terminal to install Docker Desktop:
 @y
-After downloading **Docker Desktop Installer.exe**, run the following command in a terminal to install Docker Desktop:
+**Docker Desktop Installer.exe** をダウンロードしたら、端末から以下のコマンドを実行して Docker Desktop をインストールします。
 @z
 
 @x
@@ -374,7 +374,7 @@ $ "Docker Desktop Installer.exe" install
 @x
 If you’re using PowerShell you should run it as:
 @y
-If you’re using PowerShell you should run it as:
+PowerShell を利用している場合は以下を実行します。
 @z
 
 @x
@@ -390,7 +390,7 @@ Start-Process 'Docker Desktop Installer.exe' -Wait install
 @x
 If using the Windows Command Prompt:
 @y
-If using the Windows Command Prompt:
+Windows コマンドプロンプトの利用時は以下を実行します。
 @z
 
 @x
@@ -415,12 +415,12 @@ The `install` command accepts the following flags:
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
 @y
-The `install` command accepts the following flags:
-- `--quiet`: Suppresses information output when running the installer 
-- `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
+`install` コマンドでは以下のフラグ指定が可能です。
+- `--quiet`: インストーラーの起動時に情報出力を省略します。
+- `--accept-license`: [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) に関して、アプリケーションの初回実行時に同意するのではなく、この場で同意するものとします。
 - `--no-windows-containers`: Disables the Windows containers integration
-- `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
+- `--allowed-org=<org name>`: アプリケーションを実行するにあたって、ユーザーのサインインを要求して、指定した Docker Hub 組織の一員であることを要求します。
+- `--backend=<backend name>`: Docker Desktop において利用するデフォルトのバックエンドを選択します。`hyper-v`、`windows`、`wsl-2`(デフォルト) のいずれかとします。
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](../hardened-desktop/settings-management/index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
@@ -460,7 +460,7 @@ The `install` command accepts the following flags:
 @x
 If your admin account is different to your user account, you must add the user to the **docker-users** group:
 @y
-If your admin account is different to your user account, you must add the user to the **docker-users** group:
+ユーザーアカウントが管理者アカウントと異なる場合は、ユーザーを **docker-users** グループに追加することが必要です。
 @z
 
 @x
@@ -480,13 +480,14 @@ $ net localgroup docker-users <user> /add
 @x
 ## Start Docker Desktop
 @y
-## Start Docker Desktop
+## Docker Desktop の起動 {#start-docker-desktop}
 @z
 
 @x
 Docker Desktop does not start automatically after installation. To start Docker Desktop:
 @y
-Docker Desktop does not start automatically after installation. To start Docker Desktop:
+インストール直後の Docker Desktop は、自動的には起動されません。
+Docker Desktop を起動するには、以下を実行します。
 @z
 
 @x
@@ -504,7 +505,7 @@ Docker Desktop does not start automatically after installation. To start Docker 
 @x
 2. The Docker menu ({{< inline-image src="images/whale-x.svg" alt="whale menu" >}}) displays the Docker Subscription Service Agreement.
 @y
-2. The Docker menu ({{< inline-image src="images/whale-x.svg" alt="whale menu" >}}) displays the Docker Subscription Service Agreement.
+2. Docker メニュー ({{< inline-image src="images/whale-x.svg" alt="クジラメニュー" >}}) には、Docker Subscription Service Agreement（サブスクリプションサービス契約）画面が表示されます。
 @z
 
 @x
@@ -534,7 +535,7 @@ Docker Desktop does not start automatically after installation. To start Docker 
 @x
 ## Where to go next
 @y
-## Where to go next
+## 次に読むものは {#where-to-go-next}
 @z
 
 @x
@@ -546,11 +547,10 @@ Docker Desktop does not start automatically after installation. To start Docker 
 - [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
 - [Back up and restore data](../backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
-- [Get started with Docker](/get-started/) is a tutorial that teaches you how to deploy a multi-service stack.
-- [Explore Docker Desktop](../use-desktop/index.md) and all its features.
-- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, and
-  how to get support.
-- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
-- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
-- [Back up and restore data](../backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
+- [Docker をはじめよう](/get-started/) はマルチサービススタックのデプロイ方法を説明するチュートリアルです。
+- [Docker Desktop の確認](../use-desktop/index.md) とその全機能。
+- [トラブルシューティング](../troubleshoot/overview.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
+- [FAQ](../faqs/general.md) ではよくたずねられる質問を示しています。
+- [リリースノート](../release-notes.md) では、Docker Desktop リリースにおけるコンポーネントアップデート、新機能、改善項目を一覧にしています。
+- [データのバックアップとリストア](../backup-and-restore.md) では Docker に関するデータのバックアップやリストアの手順を説明しています。
 @z

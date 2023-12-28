@@ -25,7 +25,7 @@ description: Install Docker for Mac to get started. This guide covers system req
 keywords: docker for mac, install docker macos, docker mac, docker mac install, docker
   install macos, install docker on mac, install docker macbook, docker desktop for
   mac, how to install docker on mac, setup docker on mac
-title: Install Docker Desktop on Mac
+title: Mac への Docker Desktop のインストール
 aliases:
 - /desktop/mac/install/
 - /docker-for-mac/install/
@@ -40,21 +40,21 @@ aliases:
 @x
 This page contains download URLs, information about system requirements, and instructions on how to install Docker Desktop for Mac.
 @y
-This page contains download URLs, information about system requirements, and instructions on how to install Docker Desktop for Mac.
+このページでは Docker Desktop for Mac をインストールするための、ダウンロード情報、システム要件、インストール手順について説明します。
 @z
 
 @x
 {{< button text="Docker Desktop for Mac with Apple silicon" url="https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64" >}}
 {{< button text="Docker Desktop for Mac with Intel chip" url="https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64" >}}
 @y
-{{< button text="Docker Desktop for Mac with Apple silicon" url="https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64" >}}
-{{< button text="Docker Desktop for Mac with Intel chip" url="https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64" >}}
+{{< button text="Docker Desktop for Mac、Apple silicon 向け" url="https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64" >}}
+{{< button text="Docker Desktop for Mac、Intel chip 向け" url="https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64" >}}
 @z
 
 @x
 *For checksums, see [Release notes](../release-notes.md).*
 @y
-*For checksums, see [Release notes](../release-notes.md).*
+*チェックサムについては [リリースノート](../release-notes.md) を参照してください。*
 @z
 
 @x
@@ -64,17 +64,15 @@ This page contains download URLs, information about system requirements, and ins
 > employees OR more than $10 million USD in annual revenue) requires a paid
 > subscription.
 @y
-> **Docker Desktop terms**
+> **Docker Desktop 契約条項**
 >
-> Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a paid
-> subscription.
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、有償サブスクリプションが必要です。
 @z
 
 @x
 ## System requirements
 @y
-## System requirements
+## システム要件 {#system-requirements}
 @z
 
 @x
@@ -82,7 +80,7 @@ This page contains download URLs, information about system requirements, and ins
 {{< tab name="Mac with Intel chip" >}}
 @y
 {{< tabs >}}
-{{< tab name="Mac with Intel chip" >}}
+{{< tab name="Intel チップ Mac の場合" >}}
 @z
 
 @x
@@ -97,7 +95,7 @@ This page contains download URLs, information about system requirements, and ins
   > Docker supports Docker Desktop on the most recent versions of macOS. That is, the current release of macOS and the previous two releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
   { .important }
 @y
-  > **Important**
+  > **重要**
   >
   > Docker supports Docker Desktop on the most recent versions of macOS. That is, the current release of macOS and the previous two releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
   { .important }
@@ -114,7 +112,7 @@ This page contains download URLs, information about system requirements, and ins
 {{< tab name="Mac with Apple silicon" >}}
 @y
 {{< /tab >}}
-{{< tab name="Mac with Apple silicon" >}}
+{{< tab name="Apple silicon Mac の場合" >}}
 @z
 
 @x
@@ -129,7 +127,7 @@ This page contains download URLs, information about system requirements, and ins
   > Docker supports Docker Desktop on the most recent versions of macOS. That is, the current release of macOS and the previous two releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
   { .important }
 @y
-  > **Important**
+  > **重要**
   >
   > Docker supports Docker Desktop on the most recent versions of macOS. That is, the current release of macOS and the previous two releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
   { .important }

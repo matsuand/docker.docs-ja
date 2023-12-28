@@ -9,8 +9,8 @@ service: aiml
 ---
 @y
 ---
-title: AI/ML samples
-description: Docker samples for AI/ML.
+title: AI/ML サンプル
+description: AI/ML の Docker サンプル。
 service: aiml
 ---
 @z

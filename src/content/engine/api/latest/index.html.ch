@@ -12,7 +12,7 @@
 ---
 ---
 <html>
-<head><meta http-equiv="refresh" content="0;url=/engine/api/v{{< param latest_engine_api_version >}}/" /></head>
-<body><p>Redirecting to the latest version of the Docker Engine API reference.</body>
+<head><meta http-equiv="refresh" content="0;url=__SUBDIR__/engine/api/v{{< param latest_engine_api_version >}}/" /></head>
+<body><p>Docker Engine API リファレンスの最新バージョンにリダイレクトします。</body>
 </html>
 @z

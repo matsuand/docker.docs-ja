@@ -9,7 +9,7 @@ keywords: build, buildkit, buildx, guide, tutorial, multi-stage
 ---
 @y
 ---
-title: Multi-stage
+title: マルチステージ
 description: Faster and smaller builds with multi-stage builds
 keywords: build, buildkit, buildx, guide, tutorial, multi-stage
 ---

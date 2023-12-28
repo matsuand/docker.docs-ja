@@ -9,7 +9,7 @@ keywords: docker, daemon, configuration, troubleshooting
 ---
 @y
 ---
-title: Start the daemon
+title: デーモンの起動
 description: Starting the Docker daemon manually
 keywords: docker, daemon, configuration, troubleshooting
 ---
@@ -18,13 +18,14 @@ keywords: docker, daemon, configuration, troubleshooting
 @x
 This page shows how to start the daemon, either manually or using OS utilities.
 @y
-This page shows how to start the daemon, either manually or using OS utilities.
+このページではデーモンの起動方法を示します。
+手動の場合と OS ユーティリティーを用いる場合のそれぞれを説明します。
 @z
 
 @x
 ## Start the daemon using operating system utilities
 @y
-## Start the daemon using operating system utilities
+## OS ユーティリティーを使ったデーモン起動 {#start-the-daemon-using-operating-system-utilities}
 @z
 
 @x
@@ -48,7 +49,7 @@ page under [Install Docker](../../engine/install/index.md).
 @x
 ### Start with systemd
 @y
-### Start with systemd
+### systemd を使った起動 {#start-with-systemd}
 @z
 
 @x
@@ -80,7 +81,7 @@ If you want Docker to start at boot, see
 @x
 ## Start the daemon manually
 @y
-## Start the daemon manually
+## 手動によるデーモン起動 {#start-the-daemon-manually}
 @z
 
 @x
@@ -125,6 +126,5 @@ INFO[0000] Listening for HTTP on unix (/var/run/docker.sock)
 To stop Docker when you have started it manually, issue a `Ctrl+C` in your
 terminal.
 @y
-To stop Docker when you have started it manually, issue a `Ctrl+C` in your
-terminal.
+手動によりデーモンを起動していた場合、これを停止するには端末画面にて `Ctrl+C` を入力します。
 @z
