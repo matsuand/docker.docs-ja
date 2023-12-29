@@ -9,8 +9,8 @@ service: react
 ---
 @y
 ---
-title: React samples
-description: Docker samples for React.
+title: React サンプル
+description: React の Docker サンプル。
 service: react
 ---
 @z

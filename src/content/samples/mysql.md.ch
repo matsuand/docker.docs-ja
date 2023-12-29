@@ -9,8 +9,8 @@ service: mysql
 ---
 @y
 ---
-title: MySQL samples
-description: Docker samples for MySQL.
+title: MySQL サンプル
+description: MySQL の Docker サンプル。
 service: mysql
 ---
 @z

@@ -298,7 +298,8 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = components utils
 bases = \
-	github-links.html
+	github-links.html \
+	reading-time.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -316,7 +317,6 @@ copyfiles = \
 	heading.html      \
 	mermaid.html      \
 	meta.html         \
-	reading-time.html \
 	sidebar.html      \
 	toc-api.html      \
 	toc-cli.html      \

@@ -9,8 +9,8 @@ service: javascript
 ---
 @y
 ---
-title: JavaScript samples
-description: Docker samples for JavaScript.
+title: JavaScript サンプル
+description: JavaScript の Docker サンプル。
 service: javascript
 ---
 @z

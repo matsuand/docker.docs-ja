@@ -9,8 +9,8 @@ service: express
 ---
 @y
 ---
-title: Express samples
-description: Docker samples for Express.
+title: Express サンプル
+description: Express の Docker サンプル。
 service: express
 ---
 @z

@@ -9,8 +9,8 @@ service: ruby
 ---
 @y
 ---
-title: Ruby samples
-description: Docker samples for Ruby.
+title: Ruby サンプル
+description: Ruby の Docker サンプル。
 service: ruby
 ---
 @z

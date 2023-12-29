@@ -9,8 +9,8 @@ service: vuejs
 ---
 @y
 ---
-title: Vue.js samples
-description: Docker samples for Vue.js.
+title: Vue.js サンプル
+description: Vue.js の Docker サンプル。
 service: vuejs
 ---
 @z

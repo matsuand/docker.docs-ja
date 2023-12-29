@@ -9,8 +9,8 @@ service: mongodb
 ---
 @y
 ---
-title: MongoDB samples
-description: Docker samples for MongoDB.
+title: MongoDB サンプル
+description: MongoDB の Docker サンプル。
 service: mongodb
 ---
 @z

@@ -27,3 +27,10 @@ apiPropReq:
   other: Required
 apiPropDesc:
   other: Description
+
+## docker.docs-ja 対応
+
+Usage:
+  other: 利用方法
+Description:
+  other: 内容説明

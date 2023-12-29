@@ -9,8 +9,8 @@ service: plex
 ---
 @y
 ---
-title: Plex samples
-description: Docker samples for Plex.
+title: Plex サンプル
+description: Plex の Docker サンプル。
 service: plex
 ---
 @z

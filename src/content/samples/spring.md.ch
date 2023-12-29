@@ -9,8 +9,8 @@ service: spring
 ---
 @y
 ---
-title: Spring Boot samples
-description: Docker samples for Spring Boot.
+title: Spring Boot サンプル
+description: Spring Boot の Docker サンプル。
 service: spring
 ---
 @z

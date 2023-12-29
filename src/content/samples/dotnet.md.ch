@@ -13,8 +13,8 @@ aliases:
 ---
 @y
 ---
-title: .NET samples
-description: Docker samples for .NET.
+title: .NET サンプル
+description: .NET の Docker サンプル。
 service: .net
 aliases:
 - /samples/dotnetcore/

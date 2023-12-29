@@ -33,17 +33,17 @@ On a typical installation the Docker daemon is started by a system utility, not
 manually by a user. This makes it easier to automatically start Docker when the
 machine reboots.
 @y
-On a typical installation the Docker daemon is started by a system utility, not
-manually by a user. This makes it easier to automatically start Docker when the
-machine reboots.
+標準的にインストールを行えば Docker デーモンはシステムユーティリティーによって起動されます。
+つまりユーザーが手動起動するものではありません。
+これにより、マシンの起動と同時に自動的に Docker を起動させることができます。
 @z
 
 @x
 The command to start Docker depends on your operating system. Check the correct
 page under [Install Docker](../../engine/install/index.md).
 @y
-The command to start Docker depends on your operating system. Check the correct
-page under [Install Docker](../../engine/install/index.md).
+Docker の開始コマンドはオペレーティングシステムにより異なります。
+[Docker のインストール](../../engine/install/index.md) における適切な説明を参照してください。
 @z
 
 @x
@@ -56,8 +56,8 @@ page under [Install Docker](../../engine/install/index.md).
 On some operating systems, like Ubuntu and Debian, the Docker daemon service
 starts automatically. Use the following command to start it manually:
 @y
-On some operating systems, like Ubuntu and Debian, the Docker daemon service
-starts automatically. Use the following command to start it manually:
+Ubuntu や Debian などのオペレーティングシステムでは、Docker サービスが自動起動します。
+手動で起動させる場合には以下のコマンドを実行します。
 @z
 
 @x
@@ -74,8 +74,7 @@ $ sudo systemctl start docker
 If you want Docker to start at boot, see
 [Configure Docker to start on boot](../../engine/install/linux-postinstall.md#configure-docker-to-start-on-boot-with-systemd).
 @y
-If you want Docker to start at boot, see
-[Configure Docker to start on boot](../../engine/install/linux-postinstall.md#configure-docker-to-start-on-boot-with-systemd).
+システムブート時に Docker を起動させたい場合には [ブート時の Docker 起動設定](../../engine/install/linux-postinstall.md#configure-docker-to-start-on-boot-with-systemd) を参照してください。
 @z
 
 @x
@@ -89,17 +88,15 @@ If you don't want to use a system utility to manage the Docker daemon, or just
 want to test things out, you can manually run it using the `dockerd` command.
 You may need to use `sudo`, depending on your operating system configuration.
 @y
-If you don't want to use a system utility to manage the Docker daemon, or just
-want to test things out, you can manually run it using the `dockerd` command.
-You may need to use `sudo`, depending on your operating system configuration.
+Docker デーモンを管理するシステムユーティリティーを利用したくない場合、あるいは単にテストを行いたい場合などには、`dockerd` コマンドを使って手動起動することができます。
+その際にはオペレーティングシステムの設定によっては `sudo` を用いることが必要かもしれません。
 @z
 
 @x
 When you start Docker this way, it runs in the foreground and sends its logs
 directly to your terminal.
 @y
-When you start Docker this way, it runs in the foreground and sends its logs
-directly to your terminal.
+この方法によって Docker を起動した場合、Docker はフォアグランド実行されて、ログは直接端末画面に出力されます。
 @z
 
 @x

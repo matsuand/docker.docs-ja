@@ -9,8 +9,8 @@ service: typescript
 ---
 @y
 ---
-title: TypeScript samples
-description: Docker samples for TypeScript.
+title: TypeScript サンプル
+description: TypeScript の Docker サンプル。
 service: typescript
 ---
 @z

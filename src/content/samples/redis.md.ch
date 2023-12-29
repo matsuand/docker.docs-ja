@@ -9,8 +9,8 @@ service: redis
 ---
 @y
 ---
-title: Redis samples
-description: Docker samples for Redis.
+title: Redis サンプル
+description: Redis の Docker サンプル。
 service: redis
 ---
 @z

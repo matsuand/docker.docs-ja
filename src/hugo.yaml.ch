@@ -26,6 +26,8 @@ ignoreFiles:
 disableKinds:
   - taxonomy
   - term
+defaultContentLanguage: ja
+languageCode: ja
 @z
 
 @x
@@ -36,6 +38,8 @@ languages:
 languages:
   en:
     languageName: English
+  ja:
+    languageName: 日本語
 @z
 
 @x
@@ -147,7 +151,7 @@ menus:
     - url: https://www.docker.com/partners/programs
       name: Docker Verified Publisher
       parent: 提供製品
-    - url: https://www.docker.com/partners
+    - url: https://www.docker.com/ja-jp/partners/
       name: パートナー
       parent: 提供製品
 @z
@@ -236,7 +240,7 @@ menus:
     - url: /get-started/
       name: はじめよう
       parent: 開発者
-    - url: https://www.docker.com/blog/
+    - url: https://www.docker.com/ja-jp/blog/
       name: ブログ
       parent: 開発者
     - url: https://www.docker.com/docker-community
@@ -284,12 +288,12 @@ menus:
       name: Newsletter
       parent: About us
 @y
-    - url: https://www.docker.com/company
+    - url: https://www.docker.com/ja-jp/company/
       name: 会社情報
-    - url: https://www.docker.com/what-container
+    - url: https://www.docker.com/ja-jp/resources/what-container/
       name: コンテナーって何？
       parent: 会社情報
-    - url: https://www.docker.com/why-docker
+    - url: https://www.docker.com/ja-jp/why-docker/
       name: なぜ Docker？
       parent: 会社情報
     - url: https://www.docker.com/events
@@ -298,17 +302,17 @@ menus:
     - url: https://www.docker.com/swag
       name: Swag ストア
       parent: 会社情報
-    - url: https://www.docker.com/company/newsroom
+    - url: https://www.docker.com/ja-jp/company/newsroom/
       name: ニュースルーム
       parent: 会社情報
-    - url: https://www.docker.com/careers
+    - url: https://www.docker.com/ja-jp/careers/
       name: 採用情報
       parent: 会社情報
-    - url: https://www.docker.com/company/contact
-      name: 連絡先
+    - url: https://www.docker.com/ja-jp/company/contact/
+      name: お問合わせ
       parent: 会社情報
-    - url: https://www.docker.com/customers
-      name: 顧客
+    - url: https://www.docker.com/ja-jp/customers/
+      name: お客様
       parent: 会社情報
     - url: https://www.docker.com/newsletter-subscription
       name: ニュースレター

@@ -299,6 +299,7 @@ top_srcdir = @top_srcdir@
 SUBDIRS = _markup
 bases = \
 	baseof.html            \
+	cli.html               \
 	engine-api-baseof.html \
 	hub-api-baseof.html
 
@@ -308,7 +309,6 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	cli.html               \
 	glossary.html          \
 	list.html              \
 	single.html

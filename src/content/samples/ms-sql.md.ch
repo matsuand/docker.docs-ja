@@ -9,8 +9,8 @@ service: ms-sql
 ---
 @y
 ---
-title: MS-SQL samples
-description: Docker samples for MS-SQL.
+title: MS-SQL サンプル
+description: MS-SQL の Docker サンプル。
 service: ms-sql
 ---
 @z

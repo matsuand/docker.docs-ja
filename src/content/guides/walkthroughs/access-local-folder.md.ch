@@ -11,7 +11,7 @@ description: Learn how to access a local folder from a container
 ---
 title: コンテナーからローカルフォルダーへのアクセス
 keywords: get started, quick start, intro, concepts
-description: Learn how to access a local folder from a container
+description: コンテナーからローカルフォルダーへのアクセスする方法を学びます。
 ---
 @z
 
@@ -25,19 +25,21 @@ This walkthrough shows you how to access a local folder from a container. To bet
 @x
 Docker isolates all content, code, and data in a container from your local filesystem. By default, containers can't access directories in your local filesystem.
 @y
-Docker isolates all content, code, and data in a container from your local filesystem. By default, containers can't access directories in your local filesystem.
+Docker はコンテナー内にあるコンテンツ、コード、データを、ローカルファイルシステムからは切り離して管理します。
+デフォルトでコンテナーは、ローカルファイルシステムにアクセスすることはできません。
 @z
 
 @x
 ![Data isolation diagram](images/getting-started-isolation.webp?w=400)
 @y
-![Data isolation diagram](images/getting-started-isolation.webp?w=400)
+![データ分離の様子](images/getting-started-isolation.webp?w=400)
 @z
 
 @x
 Sometimes, you may want to access a directory from your local filesystem. To do this, you can use bind mounts.
 @y
-Sometimes, you may want to access a directory from your local filesystem. To do this, you can use bind mounts.
+時にはローカルファイルシステムから、どこかのディレクトリにアクセスしたい場合があるでしょう。
+これを実現するにはバインドマウントを利用します。
 @z
 
 @x
@@ -49,13 +51,15 @@ Sometimes, you may want to access a directory from your local filesystem. To do 
 @x
 ## Step 1: Get the sample application
 @y
-## Step 1: Get the sample application {#step-1-get-the-sample-application}
+## 手順 1: サンプルアプリケーションの入手 {#step-1-get-the-sample-application}
 @z
 
 @x
 If you have git, you can clone the repository for the sample application. Otherwise, you can download the sample application. Choose one of the following options.
 @y
-If you have git, you can clone the repository for the sample application. Otherwise, you can download the sample application. Choose one of the following options.
+git がある場合は、サンプルアプリケーションのリポジトリをクローン入手します。
+git がない場合はサンプルアプリケーションをダウンロードしてください。
+以下のオプションのいずれかを選択してください。
 @z
 
 @x
@@ -63,13 +67,13 @@ If you have git, you can clone the repository for the sample application. Otherw
 {{< tab name="Clone with git" >}}
 @y
 {{< tabs >}}
-{{< tab name="Clone with git" >}}
+{{< tab name="git の clone" >}}
 @z
 
 @x
 Use the following command in a terminal to clone the sample application repository.
 @y
-Use the following command in a terminal to clone the sample application repository.
+端末画面から以下のコマンドを実行して、サンプルアプリケーションのリポジトリのクローンを取得します。
 @z
 
 @x
@@ -87,13 +91,13 @@ $ git clone https://github.com/docker/bindmount-apps
 {{< tab name="Download" >}}
 @y
 {{< /tab >}}
-{{< tab name="Download" >}}
+{{< tab name="ダウンロード" >}}
 @z
 
 @x
 Download the source and extract it.
 @y
-Download the source and extract it.
+ソースをダウンロードして展開します。
 @z
 
 @x
@@ -113,25 +117,26 @@ Download the source and extract it.
 @x
 ## Step 2: Add a bind mount using Compose
 @y
-## Step 2: Add a bind mount using Compose {#step-2-add-a-bind-mount-using-compose}
+## 手順 2: Compose を使ったバインドマウントの追加 {#step-2-add-a-bind-mount-using-compose}
 @z
 
 @x
 Add a bind mount to access data on your system from a container. A bind mount lets you share a directory from your host's filesystem into the container.
 @y
-Add a bind mount to access data on your system from a container. A bind mount lets you share a directory from your host's filesystem into the container.
+バインドマウントを追加して、コンテナー内からシステム上のデータにアクセスします。
+バインドマウントとは、ホストのファイルシステム内のディレクトリを、コンテナーに共有させるものです。
 @z
 
 @x
 ![Bind mount diagram](images/getting-started-bindmount.webp?w=400)
 @y
-![Bind mount diagram](images/getting-started-bindmount.webp?w=400)
+![バインドマウントの様子](images/getting-started-bindmount.webp?w=400)
 @z
 
 @x
 To add a bind mount to this project, open the `compose.yaml` file in a code or text editor, and then uncomment the following lines.
 @y
-To add a bind mount to this project, open the `compose.yaml` file in a code or text editor, and then uncomment the following lines.
+このプロジェクトにバインドマウントを追加するために、コードエディターまたはテキストエディターを使って `compose.yaml` ファイルを開き、以下のコメント行のコメント記号を取り除きます。
 @z
 
 @x
@@ -159,19 +164,22 @@ todo-app:
 @x
 The `volumes` element tells Compose to mount the local folder `./app` to `/usr/src/app` in the container for the `todo-app` service. This particular bind mount overwrites the static contents of the `/usr/src/app` directory in the container and creates what is known as a development container. The second instruction, `/usr/src/app/node_modules`, prevents the bind mount from overwriting the container's `node_modules` directory to preserve the packages installed in the container.
 @y
-The `volumes` element tells Compose to mount the local folder `./app` to `/usr/src/app` in the container for the `todo-app` service. This particular bind mount overwrites the static contents of the `/usr/src/app` directory in the container and creates what is known as a development container. The second instruction, `/usr/src/app/node_modules`, prevents the bind mount from overwriting the container's `node_modules` directory to preserve the packages installed in the container.
+`volumes` の記述は `todo-app` サービスに対する Compose に対して、ローカルフォルダー `./app` をコンテナー内の `/usr/src/app` にマウントすることを指示しています。
+こうして指定したバインドマウントは、コンテナー内の `/usr/src/app` ディレクトリにあるデータ内容を上書きし、開発用コンテナーとして構成します。
+2 行めにある `/usr/src/app/node_modules` の記述は、上のバインドマウントを行っても、コンテナー内の `node_modules` ディレクトリは上書きせず、コンテナー内においてインストールされた内容を維持するようにするものです。
 @z
 
 @x
 ## Step 3: Run the application
 @y
-## Step 3: Run the application {#step-3-run-the-application}
+## 手順 3: アプリケーションの実行 {#step-3-run-the-application}
 @z
 
 @x
 In a terminal, run the follow commands to bring up your application. Replace `/path/to/bindmount-apps/` with the path to your application's directory.
 @y
-In a terminal, run the follow commands to bring up your application. Replace `/path/to/bindmount-apps/` with the path to your application's directory.
+端末から以下のコマンドを実行して、アプリケーションを実行します。
+`/path/to/bindmount-apps/` の部分は実際のアプリケーションディレクトリに置き換えてください。
 @z
 
 @x
@@ -199,13 +207,18 @@ $ docker compose up -d
 @x
 ## Step 4: Develop the application
 @y
-## Step 4: Develop the application {#step-4-develop-the-application}
+## 手順 4: アプリケーションの開発 {#step-4-develop-the-application}
 @z
 
 @x
 Now, you can take advantage of the container’s environment while you develop the application on your local system. Any changes you make to the application on your local system are reflected in the container. In your local directory, open `app/views/todos.ejs` in an code or text editor, update the `Enter your task` string, and save the file. Visit or refresh [localhost:3001](https://localhost:3001)⁠ to view the changes.
 @y
-Now, you can take advantage of the container’s environment while you develop the application on your local system. Any changes you make to the application on your local system are reflected in the container. In your local directory, open `app/views/todos.ejs` in an code or text editor, update the `Enter your task` string, and save the file. Visit or refresh [localhost:3001](https://localhost:3001)⁠ to view the changes.
+ここまでの作業により、コンテナー環境を使いこなせるようになりました。
+アプリケーションの開発はローカルシステム上にて行うことができます。
+ローカルシステム上においてアプリケーションへの変更を行ったら、それがコンテナーに反映されます。
+コードエディターまたはテキストエディターを使って、ローカルディレクトリ上の `app/views/todos.ejs` を開きます。
+そして `Enter your task` という文字列を書き加えてからファイルを保存します。
+[localhost:3001](https://localhost:3001) へアクセスして、変更が反映されたことを確認してください。
 @z
 
 @x
@@ -217,7 +230,9 @@ Now, you can take advantage of the container’s environment while you develop t
 @x
 In this walkthrough, you added a bind mount to access a local folder from a container. You can use this to develop faster without having to rebuild your container when updating your code.
 @y
-In this walkthrough, you added a bind mount to access a local folder from a container. You can use this to develop faster without having to rebuild your container when updating your code.
+このウォークスルーでは、コンテナーからローカルフォルダーにアクセスするためのバインドマウントの追加を行いました。
+これを使うことにより開発作業をより早くに行うことができます。
+コードの編集を行ったからといって、コンテナーを再生成する必要はありません。
 @z
 
 @x
@@ -231,9 +246,9 @@ Related information:
 - Learn about using bind mounts in Compose in the [Compose file reference](../../compose/compose-file/_index.md)
 - Explore using bind mounts via the CLI in the [Docker run reference](/engine/reference/run/#volume-shared-filesystems)
 @y
-- Deep dive into [bind mounts](../../storage/bind-mounts.md)
-- Learn about using bind mounts in Compose in the [Compose file reference](../../compose/compose-file/_index.md)
-- Explore using bind mounts via the CLI in the [Docker run reference](/engine/reference/run/#volume-shared-filesystems)
+- より詳しくは [バインドマウント](../../storage/bind-mounts.md) を参照してください。
+- Compose にてバインドマウントを利用する方法は [Compose ファイルリファレンス](../../compose/compose-file/_index.md) を確認してください。
+- CLI からバインドマウントを利用する方法は [Docker run リファレンス](/engine/reference/run/#volume-shared-filesystems) を確認してください。
 @z
 
 @x
@@ -245,11 +260,12 @@ Related information:
 @x
 Continue to the next walkthrough to learn how you can containerize your own application.
 @y
-Continue to the next walkthrough to learn how you can containerize your own application.
+次のウォークスルーに進んでください。
+自分のアプリケーションをコンテナー化する方法について学びます。
 @z
 
 @x
 {{< button url="./containerize-your-app.md" text="Containerize your app" >}}
 @y
-{{< button url="./containerize-your-app.md" text="Containerize your app" >}}
+{{< button url="./containerize-your-app.md" text="アプリのコンテナー化" >}}
 @z

@@ -16,7 +16,7 @@ aliases:
 ---
 @y
 ---
-title: Glossary
+title: 用語集
 description: Glossary of terms used around Docker
 keywords: glossary, docker, terms, definitions
 layout: glossary

@@ -9,8 +9,8 @@ service: minecraft
 ---
 @y
 ---
-title: Minecraft samples
-description: Docker samples for Minecraft.
+title: Minecraft サンプル
+description: Minecraft の Docker サンプル。
 service: minecraft
 ---
 @z

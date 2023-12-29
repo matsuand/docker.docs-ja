@@ -9,8 +9,8 @@ service: wireguard
 ---
 @y
 ---
-title: WireGuard samples
-description: Docker samples for WireGuard.
+title: WireGuard サンプル
+description: WireGuard の Docker サンプル。
 service: wireguard
 ---
 @z

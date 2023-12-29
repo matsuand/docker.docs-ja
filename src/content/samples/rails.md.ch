@@ -9,8 +9,8 @@ service: rails
 ---
 @y
 ---
-title: Rails samples
-description: Docker samples for Rails.
+title: Rails サンプル
+description: Rails の Docker サンプル。
 service: rails
 ---
 @z

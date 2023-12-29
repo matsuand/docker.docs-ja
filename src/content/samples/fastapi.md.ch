@@ -9,8 +9,8 @@ service: fastapi
 ---
 @y
 ---
-title: FastAPI samples
-description: Docker samples for .NET.
+title: FastAPI サンプル
+description: FastAPI の Docker サンプル。
 service: fastapi
 ---
 @z

@@ -9,8 +9,8 @@ service: spark
 ---
 @y
 ---
-title: Spark samples
-description: Docker samples for Spark.
+title: Spark サンプル
+description: Spark の Docker サンプル。
 service: spark
 ---
 @z

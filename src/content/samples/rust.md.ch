@@ -9,8 +9,8 @@ service: rust
 ---
 @y
 ---
-title: Rust samples
-description: Docker samples for Rust.
+title: Rust サンプル
+description: Rust の Docker サンプル。
 service: rust
 ---
 @z

@@ -9,8 +9,8 @@ service: flask
 ---
 @y
 ---
-title: Flask samples
-description: Docker samples for Flask.
+title: Flask サンプル
+description: Flask の Docker サンプル。
 service: flask
 ---
 @z

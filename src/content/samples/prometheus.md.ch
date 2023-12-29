@@ -9,8 +9,8 @@ service: prometheus
 ---
 @y
 ---
-title: Prometheus samples
-description: Docker samples for Prometheus.
+title: Prometheus サンプル
+description: Prometheus の Docker サンプル。
 service: prometheus
 ---
 @z

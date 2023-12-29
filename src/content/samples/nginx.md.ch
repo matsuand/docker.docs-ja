@@ -9,8 +9,8 @@ service: nginx
 ---
 @y
 ---
-title: NGINX samples
-description: Docker samples for NGINX.
+title: NGINX サンプル
+description: NGINX の Docker サンプル。
 service: nginx
 ---
 @z

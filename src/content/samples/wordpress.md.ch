@@ -11,8 +11,8 @@ aliases:
 ---
 @y
 ---
-title: WordPress samples
-description: Docker samples for WordPress.
+title: WordPress サンプル
+description: WordPress の Docker サンプル。
 service: wordpress
 aliases:
 - /compose/wordpress/

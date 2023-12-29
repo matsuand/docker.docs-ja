@@ -9,8 +9,8 @@ service: python
 ---
 @y
 ---
-title: Python samples
-description: Docker samples for Python.
+title: Python サンプル
+description: Python の Docker サンプル。
 service: python
 ---
 @z

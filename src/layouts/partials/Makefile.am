@@ -4,7 +4,8 @@
 SUBDIRS = components utils
 
 bases = \
-	github-links.html
+	github-links.html \
+	reading-time.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -20,7 +21,6 @@ copyfiles = \
 	heading.html      \
 	mermaid.html      \
 	meta.html         \
-	reading-time.html \
 	sidebar.html      \
 	toc-api.html      \
 	toc-cli.html      \

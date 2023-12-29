@@ -9,8 +9,8 @@ service: cloudflared
 ---
 @y
 ---
-title: Cloudflared samples
-description: Docker samples for cloudflared.
+title: Cloudflared サンプル
+description: cloudflared の Docker サンプル。
 service: cloudflared
 ---
 @z

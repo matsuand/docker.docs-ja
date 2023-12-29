@@ -9,8 +9,8 @@ service: go
 ---
 @y
 ---
-title: Go samples
-description: Docker samples for Go.
+title: Go サンプル
+description: Go の Docker サンプル。
 service: go
 ---
 @z

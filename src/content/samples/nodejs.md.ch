@@ -9,8 +9,8 @@ service: nodejs
 ---
 @y
 ---
-title: Node.js samples
-description: Docker samples for Node.js.
+title: Node.js サンプル
+description: Node.js の Docker サンプル。
 service: nodejs
 ---
 @z

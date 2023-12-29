@@ -9,8 +9,8 @@ service: pi-hole
 ---
 @y
 ---
-title: Pi-hole samples
-description: Docker samples for Pi-hole.
+title: Pi-hole サンプル
+description: Pi-hole の Docker サンプル。
 service: pi-hole
 ---
 @z

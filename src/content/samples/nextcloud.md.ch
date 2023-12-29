@@ -9,8 +9,8 @@ service: nextcloud
 ---
 @y
 ---
-title: Nextcloud samples
-description: Docker samples for Nextcloud.
+title: Nextcloud サンプル
+description: Nextcloud の Docker サンプル。
 service: nextcloud
 ---
 @z

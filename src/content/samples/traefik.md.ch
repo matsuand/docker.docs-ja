@@ -9,8 +9,8 @@ service: traefik
 ---
 @y
 ---
-title: Traefik samples
-description: Docker samples for Traefik.
+title: Traefik サンプル
+description: Traefik の Docker サンプル。
 service: traefik
 ---
 @z

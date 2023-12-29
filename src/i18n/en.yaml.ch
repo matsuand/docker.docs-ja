@@ -67,4 +67,9 @@ apiPropReq:
   other: Required
 apiPropDesc:
   other: Description
+
+## docker.docs-ja 対応
+
+Usage:
+  other: Usage
 @z

@@ -9,8 +9,8 @@ service: mariadb
 ---
 @y
 ---
-title: MariaDB samples
-description: Docker samples for MariaDB.
+title: MariaDB サンプル
+description: MariaDB の Docker サンプル。
 service: mariadb
 ---
 @z

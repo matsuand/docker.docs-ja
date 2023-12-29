@@ -9,8 +9,8 @@ service: gitea
 ---
 @y
 ---
-title: Gitea samples
-description: Docker samples for Gitea.
+title: Gitea サンプル
+description: Gitea の Docker サンプル。
 service: gitea
 ---
 @z

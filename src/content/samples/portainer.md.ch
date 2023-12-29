@@ -9,8 +9,8 @@ service: portainer
 ---
 @y
 ---
-title: Portainer samples
-description: Docker samples for Portainer.
+title: Portainer サンプル
+description: Portainer の Docker サンプル。
 service: portainer
 ---
 @z

@@ -12,8 +12,8 @@ aliases:
 ---
 @y
 ---
-title: PostgreSQL samples
-description: Docker samples for PostgreSQL.
+title: PostgreSQL サンプル
+description: PostgreSQL の Docker サンプル。
 service: postgresql
 aliases:
 - /engine/examples/postgresql_service/

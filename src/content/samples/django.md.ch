@@ -11,8 +11,8 @@ aliases:
 ---
 @y
 ---
-title: Django samples
-description: Docker samples for Django.
+title: Django サンプル
+description: Django の Docker サンプル。
 service: django
 aliases:
 - /compose/django/

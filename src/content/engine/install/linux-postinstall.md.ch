@@ -21,7 +21,7 @@ description: Find the recommended Docker Engine post-installation steps for Linu
 keywords: run docker without sudo, docker running as root, docker post install, docker
   post installation, run docker as non root, docker non root user, how to run docker
   in linux, how to run docker linux, how to start docker in linux, run docker on linux
-title: Linux post-installation steps for Docker Engine
+title: Linux における Docker Engine インストール後の作業
 aliases:
 - /engine/installation/linux/docker-ee/linux-postinstall/
 - /engine/installation/linux/linux-postinstall/
@@ -244,7 +244,7 @@ To create the `docker` group and add your user:
 @x
 ## Configure Docker to start on boot with systemd
 @y
-## Configure Docker to start on boot with systemd
+## ブート時の Docker 起動設定 {#configure-docker-to-start-on-boot-with-systemd}
 @z
 
 @x

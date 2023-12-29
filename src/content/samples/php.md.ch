@@ -9,8 +9,8 @@ service: php
 ---
 @y
 ---
-title: PHP samples
-description: Docker samples for PHP.
+title: PHP サンプル
+description: PHP の Docker サンプル。
 service: php
 ---
 @z

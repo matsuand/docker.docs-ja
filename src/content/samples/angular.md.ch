@@ -9,8 +9,8 @@ service: angular
 ---
 @y
 ---
-title: Angular samples
-description: Docker samples for Angular.
+title: Angular サンプル
+description: Angular の Docker サンプル。
 service: angular
 ---
 @z
