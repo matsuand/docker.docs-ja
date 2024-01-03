@@ -129,147 +129,163 @@ mounts is to think about where the data lives on the Docker host.
 @z
 
 @x
-### More details about mount types
-@y
-### マウントタイプに関する詳細 {#more-details-about-mount-types}
-@z
-
-@x
-- [Volumes](volumes.md): Created and managed by Docker. You can create a
-  volume explicitly using the `docker volume create` command, or Docker can
-  create a volume during container or service creation.
-@y
-- [ボリューム](volumes.md): 
-  Docker によって生成され管理されるものです。
-  ボリュームは`docker volume create`コマンドによって明示的に生成します。
-  あるいは Docker が、コンテナーやサービスの生成時にボリュームを生成します。
-@z
-
-@x
-  When you create a volume, it is stored within a directory on the Docker
-  host. When you mount the volume into a container, this directory is what is
-  mounted into the container. This is similar to the way that bind mounts work,
-  except that volumes are managed by Docker and are isolated from the core
-  functionality of the host machine.
-@y
-  ボリュームを生成した際には、Docker ホスト上のディレクトリにボリュームが保存されます。
-  このボリュームをコンテナーにマウントすると、そのディレクトリがコンテナー内にマウントされるものとなります。
-  このことは、バインドマウントが動作する様子と同様です。
-  ただしボリュームは Docker によって管理されるものであって、ホストマシンの主要な機能からは切り離されています。
-@z
-
-@x
-  A given volume can be mounted into multiple containers simultaneously. When no
-  running container is using a volume, the volume is still available to Docker
-  and is not removed automatically. You can remove unused volumes using `docker
-  volume prune`.
-@y
-  ボリュームは複数のコンテナーに対して同時にマウントすることができます。
-  たとえそのボリュームを利用するコンテナーが 1 つも実行されていなくても、ボリュームは Docker が利用できる状態にあって、自動的に削除されることはありません。
-  未使用のボリュームは`docker volume prune`によって削除することができます。
-@z
-
-@x
-  When you mount a volume, it may be named or anonymous. Anonymous
-  volumes are not given an explicit name when they are first mounted into a
-  container, so Docker gives them a random name that is guaranteed to be unique
-  within a given Docker host. Besides the name, named and anonymous volumes
-  behave in the same ways.
-@y
-  ボリュームのマウントは、名前つき（named）か匿名（anonymous）のいずれかにより行われます。
-  匿名ボリュームがコンテナーにマウントされた初めての段階においては、明示的な名称がありません。
-  そこで Docker が、Docker ホスト内で必ず固有となるランダムな名称を与えます。
-  名前を持たないというだけで、名前つきと匿名の各ボリュームは同等に機能します。
-@z
-
-@x
-  Volumes also support the use of volume drivers, which allow you to store
-  your data on remote hosts or cloud providers, among other possibilities.
-@y
-  ボリュームではボリュームドライバーの利用がサポートされます。
-  これによって、いろいろな利用の仕方が可能となります。
-  たとえば手元のデータを、リモートホストやクラウドプロバイダーに保存することができるようになります。
-@z
-
-@x
-- [Bind mounts](bind-mounts.md): Available since the early days of Docker.
-  Bind mounts have limited functionality compared to volumes. When you use a
-  bind mount, a file or directory on the host machine is mounted into a
-  container. The file or directory is referenced by its full path on the host
-  machine. The file or directory doesn't need to exist on the Docker host
-  already. It is created on demand if it does not yet exist. Bind mounts are
-  very performant, but they rely on the host machine's filesystem having a
-  specific directory structure available. If you are developing new Docker
-  applications, consider using named volumes instead. You can't use
-  Docker CLI commands to directly manage bind mounts.
-@y
-- [バインドマウント](bind-mounts.md): Docker の初期の段階から利用可能。
-  バインドマウントにはボリュームに比べて機能が制限されています。
-  バインドマウントを利用する際には、ホストマシン上のファイルやディレクトリがコンテナーにマウントされます。
-  そのファイルやディレクトリは、ホストマシン上のフルパスによって参照されます。
-  ファイルやディレクトリが、Docker ホスト上からなくなっていても問題ありません。
-  存在していないときは、処理実行時に生成されます。
-  バインドマウントは非常に効率的なものですが、ホストマシン上のファイルシステムに依存し、利用可能な所定のディレクトリ構造に従って動作します。
-  Docker アプリケーションを新規開発する際には、これではなく名前つきボリュームを利用することを考えてみてください。
-  バインドマウントを直接管理するような Docker CLI コマンドはありません。
-@z
-
-@x
-  > **Important**
-  >
-  > Bind mounts allow access to sensitive files.
-  >
-  > One side effect of using bind mounts, for better or for worse,
-  > is that you can change the host filesystem via processes running in a
-  > container, including creating, modifying, or deleting important system
-  > files or directories. This is a powerful ability which can have security
-  > implications, including impacting non-Docker processes on the host system.
-  { .important }
-@y
-  > **重要**
-  >
-  > バインドマウントは機密ファイルへのアクセスも行います。
-  >
-  > バインドマウントを利用する際の副作用として、これが良いことか悪いことかはわかりませんが、コンテナー内に動作するプロセスを通じてホストのファイルシステムに変更がかけられるということです。
-  > たとえばシステムにとって重要なファイル、ディレクトリを生成、編集、削除ができてしまいます。
-  > セキュリティに影響を及ぼしかねない強力な能力がここにあって、ホストシステム上の Docker 以外のプロセスへも影響します。
-  { .important }
-@z
-
-@x
-- **[tmpfs mounts](tmpfs.md)**: A `tmpfs` mount is not persisted on disk, either
-  on the Docker host or within a container. It can be used by a container during
-  the lifetime of the container, to store non-persistent state or sensitive
-  information. For instance, internally, swarm services use `tmpfs` mounts to
-  mount [secrets](../engine/swarm/secrets.md) into a service's containers.
-@y
-- **[tmpfs マウント](tmpfs.md)**: `tmpfs`マウントとは、Docker ホスト上もコンテナー上も、ディスクに長らく保持されるものではありません。
-  これはコンテナーが起動している間のみ、コンテナーが利用するものであって、一時的な状態や機密情報などを保存します。
-  たとえば Docker 内部においては、Swarm サービスが`tmpfs`マウントを利用して、サービスコンテナー内に [secrets](../engine/swarm/secrets.md) をマウントしています。
-@z
-
-@x
-- **[named pipes](https://docs.microsoft.com/en-us/windows/desktop/ipc/named-pipes)**: An `npipe`
-  mount can be used for communication between the Docker host and a container. Common use case is
-  to run a third-party tool inside of a container and connect to the Docker Engine API using a named pipe.
-@y
-- **[名前つきパイプ](https://docs.microsoft.com/en-us/windows/desktop/ipc/named-pipes)**（named pipe）:
-  `npipe`マウントは Docker ホストとコンテナーの間での通信のために利用されます。
-  よく行われる利用例としては、コンテナー内部にサードパーティー製のツールを実行させて、名前つきパイプにより Docker Engine API への接続を行うような場合です。
-@z
-
-@x
 Bind mounts and volumes can both be mounted into containers using the `-v` or
 `--volume` flag, but the syntax for each is slightly different. For `tmpfs`
 mounts, you can use the `--tmpfs` flag. We recommend using the `--mount` flag
 for both containers and services, for bind mounts, volumes, or `tmpfs` mounts,
 as the syntax is more clear.
 @y
-バインドマウントとボリュームは`-v`または`--volume`フラグを使って、コンテナーへのマウントを行うことができます。
-しかしその文法は多少異なります。
-`tmpfs`マウントの場合は`--tmpfs`フラグを使います。
-コンテナーとサービスの双方において、バインドマウント、ボリューム、`tmpfs`マウントのどれであっても、`--mount`フラグを利用することが推奨されます。
-文法がよりはっきりとしているからです。
+バインドマウントとボリュームは、いずれも `-v` フラグまたは `--volume` フラグを使ってコンテナーにマウントすることができますが、その文法は微妙に異なります。
+`tmpfs` マウントに対しては `--tmpfs` フラグがあります。
+文法がより明確になることから、コンテナーとサービス間、バインドマウント、ボリューム、`tmpfs` マウントには `--mount` フラグを用いることをお勧めします。
+@z
+
+@x
+### Volumes
+@y
+### ボリューム {#volumes}
+@z
+
+@x
+Volumes are created and managed by Docker. You can create a volume explicitly
+using the `docker volume create` command, or Docker can create a volume during
+container or service creation.
+@y
+ボリューム (volume) とは Docker によって生成され管理されるものです。
+ボリュームは`docker volume create`コマンドによって明示的に生成します。
+あるいは Docker が、コンテナーやサービスの生成時にボリュームを生成します。
+@z
+
+@x
+When you create a volume, it's stored within a directory on the Docker
+host. When you mount the volume into a container, this directory is what's
+mounted into the container. This is similar to the way that bind mounts work,
+except that volumes are managed by Docker and are isolated from the core
+functionality of the host machine.
+@y
+ボリュームを生成した際には、Docker ホスト上のディレクトリにボリュームが保存されます。
+このボリュームをコンテナーにマウントすると、そのディレクトリがコンテナー内にマウントされるものとなります。
+このことは、バインドマウントが動作する様子と同様です。
+ただしボリュームは Docker によって管理されるものであって、ホストマシンの主要な機能からは切り離されています。
+@z
+
+@x
+A given volume can be mounted into multiple containers simultaneously. When no
+running container is using a volume, the volume is still available to Docker
+and isn't removed automatically. You can remove unused volumes using `docker
+volume prune`.
+@y
+ボリュームは複数のコンテナーに対して同時にマウントすることができます。
+たとえそのボリュームを利用するコンテナーが 1 つも実行されていなくても、ボリュームは Docker が利用できる状態にあって、自動的に削除されることはありません。
+未使用のボリュームは`docker volume prune`によって削除することができます。
+@z
+
+@x
+When you mount a volume, it may be named or anonymous. Anonymous volumes are
+given a random name that's guaranteed to be unique within a given Docker host.
+Just like named volumes, anonymous volumes persist even if you remove the
+container that uses them, except if you use the `--rm` flag when creating the
+container. Docker automatically removes anonymous volume mounts for containers
+created with the `--rm` flag. See [Remove anonymous
+volumes](volumes.md#remove-anonymous-volumes).
+@y
+ボリュームのマウントは、名前つき（named）か匿名（anonymous）のいずれかにより行われます。
+匿名ボリュームにはランダムな名前が与えられます。
+これは利用する Docker ホスト内において固有な名称を確保するためです。
+名前つきボリュームの名称の場合と同様に、匿名ボリュームの名称も維持されます。
+それはコンテナーの生成時に `--rm` フラグをつけなかった場合であれば、たとえそのコンテナーが削除されたとしても、名称は残ります。
+詳しくは [匿名ボリュームの削除](volumes.md#remove-anonymous-volumes) を参照してください。
+@z
+
+@x
+Volumes also support the use of volume drivers, which allow you to store
+your data on remote hosts or cloud providers, among other possibilities.
+@y
+ボリュームではボリュームドライバーの利用がサポートされます。
+これによって、いろいろな利用の仕方が可能となります。
+たとえば手元のデータを、リモートホストやクラウドプロバイダーに保存することができるようになります。
+@z
+
+@x
+### Bind mounts
+@y
+### バインドマウント {#bind-mounts}
+@z
+
+@x
+Bind mounts have limited functionality compared to volumes. When you use a bind
+mount, a file or directory on the host machine is mounted into a container. The
+file or directory is referenced by its full path on the host machine. The file
+or directory doesn't need to exist on the Docker host already. It is created on
+demand if it doesn't yet exist. Bind mounts are fast, but they rely on the host
+machine's filesystem having a specific directory structure available. If you
+are developing new Docker applications, consider using named volumes instead.
+You can't use Docker CLI commands to directly manage bind mounts.
+@y
+バインドマウントにはボリュームに比べて機能が制限されています。
+バインドマウントを利用する際には、ホストマシン上のファイルやディレクトリがコンテナーにマウントされます。
+そのファイルやディレクトリは、ホストマシン上のフルパスによって参照されます。
+ファイルやディレクトリが、Docker ホスト上からなくなっていても問題ありません。
+存在していないときは、処理実行時に生成されます。
+バインドマウントは非常に高速なものですが、ホストマシン上のファイルシステムに依存し、利用可能な所定のディレクトリ構造に従って動作します。
+Docker アプリケーションを新規開発する際には、これではなく名前つきボリュームを利用することを考えてみてください。
+バインドマウントを直接管理するような Docker CLI コマンドはありません。
+@z
+
+@x
+> **Important**
+>
+> Bind mounts allow write access to files on the host by default.
+>
+> One side effect of using bind mounts is that you can change the host
+> filesystem via processes running in a container, including creating,
+> modifying, or deleting important system files or directories. This is a
+> powerful ability which can have security implications, including impacting
+> non-Docker processes on the host system.
+{ .important }
+@y
+> **重要**
+>
+> バインドマウントはデフォルトで、ホスト上のファイルへの書き込みアクセスも行います。
+>
+> バインドマウントを利用する際の副作用として、これが良いことか悪いことかはわかりませんが、コンテナー内に動作するプロセスを通じてホストのファイルシステムに変更がかけられるということです。
+> たとえばシステムにとって重要なファイル、ディレクトリを生成、編集、削除ができてしまいます。
+> セキュリティに影響を及ぼしかねない強力な能力がここにあって、ホストシステム上の Docker 以外のプロセスへも影響します。
+{ .important }
+@z
+
+@x
+### tmpfs
+@y
+### tmpfs
+@z
+
+@x
+A `tmpfs` mount isn't persisted on disk, either on the Docker host or within a
+container. It can be used by a container during the lifetime of the container,
+to store non-persistent state or sensitive information. For instance,
+internally, Swarm services use `tmpfs` mounts to mount
+[secrets](../engine/swarm/secrets.md) into a service's containers.
+@y
+`tmpfs`マウントとは、Docker ホスト上もコンテナー上も、ディスクに長らく保持されるものではありません。
+これはコンテナーが起動している間のみ、コンテナーが利用するものであって、一時的な状態や機密情報などを保存します。
+たとえば Docker 内部においては、Swarm サービスが`tmpfs`マウントを利用して、サービスコンテナー内に [secrets](../engine/swarm/secrets.md) をマウントしています。
+@z
+
+@x
+### Named pipes
+@y
+### 名前つきパイプ {#named-pipes}
+@z
+
+@x
+[Named pipes](https://docs.microsoft.com/en-us/windows/desktop/ipc/named-pipes)
+can be used for communication between the Docker host and a container. Common
+use case is to run a third-party tool inside of a container and connect to the
+Docker Engine API using a named pipe.
+@y
+[名前つきパイプ](https://docs.microsoft.com/en-us/windows/desktop/ipc/named-pipes)**（named pipe）は Docker ホストとコンテナーの間での通信のために利用されます。
+よく行われる利用例としては、コンテナー内部にサードパーティー製のツールを実行させて、名前つきパイプにより Docker Engine API への接続を行うような場合です。
 @z
 
 @x

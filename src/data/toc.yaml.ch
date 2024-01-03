@@ -2685,12 +2685,12 @@ Manuals:
         - path: /desktop/allow-list/
           title: Allowlist for Docker Desktop
 @y
-    - sectiontitle: Additional resources
+    - sectiontitle: その他の情報
       section:
         - path: __SUBDIR__/desktop/kubernetes/
-          title: Deploy on Kubernetes
+          title: Kubernetes へのデプロイ
         - path: __SUBDIR__/desktop/backup-and-restore/
-          title: Back up and restore data
+          title: データバックアップと復元
         - path: __SUBDIR__/desktop/networking/
           title: Explore networking features
         - path: __SUBDIR__/desktop/vm-vdi/

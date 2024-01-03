@@ -1245,6 +1245,8 @@
   - /go/builders/selected/
 "https://www.docker.com/build-early-access-program/?utm_campaign=onboard-30-customer-zero&utm_medium=in-product-ad&utm_source=desktop_v4":
   - /go/build-eap/
+"https://build.docker.com/":
+  - /go/build-ga/
 "/build/building/multi-platform/":
   - /go/build-multi-platform/
 "/build/cache/backends/":
@@ -1265,6 +1267,8 @@
   - /go/builders/selected/
 "https://www.docker.com/build-early-access-program/?utm_campaign=onboard-30-customer-zero&utm_medium=in-product-ad&utm_source=desktop_v4":
   - /go/build-eap/
+"https://build.docker.com/":
+  - /go/build-ga/
 "/build/building/multi-platform/":
   - /go/build-multi-platform/
 "/build/cache/backends/":

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Test your Python deployment
@@ -23,10 +25,10 @@ description: Learn how to develop locally using Kubernetes
 
 @x
 - Complete all the previous sections of this guide, starting with [Containerize a Python application](containerize.md).
-- [Turn on Kubernetes](/desktop/kubernetes/#turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @y
 - Complete all the previous sections of this guide, starting with [Containerize a Python application](containerize.md).
-- [Turn on Kubernetes](/desktop/kubernetes/#turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](__SUBDIR__/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @z
 
 @x

@@ -16,14 +16,14 @@
   {{ partial "breadcrumbs.html" . }}
   <article class="DocSearch-content prose max-w-none dark:prose-invert">
     {{ with .Title }}
-    <h1 id="{{ anchorize . }}" class="scroll-mt-36">{{ . }}</h1>
+    <h1 class="scroll-mt-36">{{ . }}</h1>
     {{ end }}
 @y
 {{ define "main" }}
   {{ partial "breadcrumbs.html" . }}
   <article class="DocSearch-content prose max-w-none dark:prose-invert">
     {{ with .Title }}
-    <h1 id="{{ anchorize . }}" class="scroll-mt-36">{{ . }}</h1>
+    <h1 class="scroll-mt-36">{{ . }}</h1>
     {{ end }}
 @z
 

@@ -296,7 +296,7 @@ counter whenever you visit it.
 @z
 
 @x
-    ```none
+    ```yaml
       services:
         web:
           image: 127.0.0.1:5000/stackdemo
@@ -307,7 +307,7 @@ counter whenever you visit it.
           image: redis:alpine
     ```
 @y
-    ```none
+    ```yaml
       services:
         web:
           image: 127.0.0.1:5000/stackdemo
@@ -358,10 +358,10 @@ counter whenever you visit it.
 @z
 
 @x
-    ```none
+    ```console
     $ docker compose up -d
 @y
-    ```none
+    ```console
     $ docker compose up -d
 @z
 

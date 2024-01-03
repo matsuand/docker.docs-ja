@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Test your Rust deployment
@@ -23,10 +25,10 @@ description: Learn how to test your Rust deployment locally using Kubernetes
 
 @x
 - Complete the previous sections of this guide, starting with [Develop your Rust application](develop.md).
-- [Turn on Kubernetes](/desktop/kubernetes/#turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @y
 - Complete the previous sections of this guide, starting with [Develop your Rust application](develop.md).
-- [Turn on Kubernetes](/desktop/kubernetes/#turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](__SUBDIR__/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @z
 
 @x

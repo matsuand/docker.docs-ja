@@ -14,7 +14,7 @@ aliases:
 ---
 @y
 ---
-title: Containerize an application
+title: アプリケーションのコンテナー化
 keywords: dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers
@@ -30,15 +30,15 @@ For the rest of this guide, you'll be working with a simple todo
 list manager that runs on Node.js. If you're not familiar with Node.js,
 don't worry. This guide doesn't require any prior experience with JavaScript.
 @y
-For the rest of this guide, you'll be working with a simple todo
-list manager that runs on Node.js. If you're not familiar with Node.js,
-don't worry. This guide doesn't require any prior experience with JavaScript.
+ここからのガイドでは、Node.js において稼動する単純な ToDo リストマネージャーを作っていくことにします。
+Node.js をよくわかっていなくても心配ありません。
+JavaScript の知識などなくてもかまいません。
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -54,13 +54,13 @@ don't worry. This guide doesn't require any prior experience with JavaScript.
 @x
 ## Get the app
 @y
-## Get the app
+## アプリの入手 {#get-the-app}
 @z
 
 @x
 Before you can run the application, you need to get the application source code onto your machine.
 @y
-Before you can run the application, you need to get the application source code onto your machine.
+アプリケーションを実行するために、アプリケーションのソースコードを入手してマシン上におくことが必要です。
 @z
 
 @x
@@ -108,7 +108,7 @@ Before you can run the application, you need to get the application source code 
 @x
 ## Build the app's image
 @y
-## Build the app's image
+## アプリイメージのビルド {#build-the-apps-image}
 @z
 
 @x
@@ -316,7 +316,7 @@ To build the image, you'll need to use a Dockerfile. A Dockerfile is simply a te
 @x
 ## Start an app container
 @y
-## Start an app container
+## アプリコンテナーの起動 {#start-an-app-container}
 @z
 
 @x

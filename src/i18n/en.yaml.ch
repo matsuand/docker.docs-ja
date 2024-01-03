@@ -72,4 +72,14 @@ apiPropDesc:
 
 Usage:
   other: Usage
+Description:
+  other: Description
+Options:
+  other: Options
+Option:
+  other: Option
+Short:
+  other: Short
+Default:
+  other: Default
 @z

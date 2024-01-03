@@ -34,3 +34,11 @@ Usage:
   other: 利用方法
 Description:
   other: 内容説明
+Options:
+  other: オプション
+Option:
+  other: オプション
+Short:
+  other: 短縮形
+Default:
+  other: デフォルト

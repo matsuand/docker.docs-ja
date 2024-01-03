@@ -14,7 +14,7 @@ aliases:
 ---
 description: See how you can deploy to Kubernetes on Docker Desktop
 keywords: deploy, kubernetes, kubectl, orchestration, Docker Desktop
-title: Deploy on Kubernetes with Docker Desktop
+title: Docker Desktop を使った Kubernetes へのデプロイ
 aliases:
 - /docker-for-windows/kubernetes/
 - /docker-for-mac/kubernetes/
@@ -25,16 +25,17 @@ aliases:
 Docker Desktop includes a standalone Kubernetes server and client,
 as well as Docker CLI integration that runs on your machine. 
 @y
-Docker Desktop includes a standalone Kubernetes server and client,
-as well as Docker CLI integration that runs on your machine. 
+Docker Desktop には手元のマシン上で動作する Docker CLI 統合環境に加えて、Kubernetes のスタンドアロンサーバーとクライアントが含まれます。
 @z
 
 @x
 The Kubernetes server runs locally within your Docker instance, is not configurable, and is a single-node cluster. It runs within a Docker container on your local system, and
 is only for local testing. 
 @y
-The Kubernetes server runs locally within your Docker instance, is not configurable, and is a single-node cluster. It runs within a Docker container on your local system, and
-is only for local testing. 
+Kubernetes サーバーは Docker インスタンス内にローカルに実行されます。
+設定変更することはできず、単一ノードクラスターとして動作します。
+Kubernetes サーバーは、ローカルシステム内の Docker コンテナー内部で稼動します。
+ローカル環境でのテスト用として利用するものです。
 @z
 
 @x
@@ -42,29 +43,38 @@ Turning on Kubernetes allows you to deploy
 your workloads in parallel, on Kubernetes, Swarm, and as standalone containers. Turning on or off the Kubernetes server does not affect your other
 workloads.
 @y
-Turning on Kubernetes allows you to deploy
-your workloads in parallel, on Kubernetes, Swarm, and as standalone containers. Turning on or off the Kubernetes server does not affect your other
-workloads.
+Kubernetes サポートが有効である場合、Kubernetes と Swarm へ同時並行により開発内容をデプロイし、スタンドアロンコンテナーとすることができます。
+Kubernetes サーバーの有効、無効は、他の開発内容へは影響しません。
 @z
 
 @x
-## Turn on Kubernetes
+## Install and turn on Kubernetes
 @y
-## Turn on Kubernetes
+## Install and turn on Kubernetes
 @z
 
 @x
-To turn on Kubernetes in Docker Desktop:
 1. From the Docker Dashboard, select the **Settings**.
 2. Select **Kubernetes** from the left sidebar. 
 3. Next to **Enable Kubernetes**, select the checkbox.
 4. Select **Apply & Restart** to save the settings and then select **Install** to confirm. This instantiates images required to run the Kubernetes server as containers, and installs the `/usr/local/bin/kubectl` command on your machine.
 @y
-To turn on Kubernetes in Docker Desktop:
 1. From the Docker Dashboard, select the **Settings**.
 2. Select **Kubernetes** from the left sidebar. 
 3. Next to **Enable Kubernetes**, select the checkbox.
 4. Select **Apply & Restart** to save the settings and then select **Install** to confirm. This instantiates images required to run the Kubernetes server as containers, and installs the `/usr/local/bin/kubectl` command on your machine.
+@z
+
+@x
+   > **Important**
+   >
+   > The `kubectl` binary is not automatically packaged with Docker Desktop for Linux. To install the kubectl command for Linux, see [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). It should be installed at `/usr/local/bin/kubectl`.
+   { .important}
+@y
+   > **Important**
+   >
+   > The `kubectl` binary is not automatically packaged with Docker Desktop for Linux. To install the kubectl command for Linux, see [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). It should be installed at `/usr/local/bin/kubectl`.
+   { .important}
 @z
 
 @x
@@ -80,11 +90,11 @@ When Kubernetes is turned on and running, an additional status bar in the Docker
 @z
 
 @x
-> Note
+> **Note**
 >
 > Docker Desktop does not upgrade your Kubernetes cluster automatically after a new update. To upgrade your Kubernetes cluster to the latest version, select **Reset Kubernetes Cluster**.
 @y
-> Note
+> **Note**
 >
 > Docker Desktop does not upgrade your Kubernetes cluster automatically after a new update. To upgrade your Kubernetes cluster to the latest version, select **Reset Kubernetes Cluster**.
 @z
@@ -105,12 +115,6 @@ Kubernetes integration provides the Kubernetes CLI command
 at `/usr/local/bin/kubectl` on Mac and at `C:\Program Files\Docker\Docker\Resources\bin\kubectl.exe` on Windows. This location may not be in your shell's `PATH`
 variable, so you may need to type the full path of the command or add it to
 the `PATH`.
-@z
-
-@x
-The kubectl binary is not automatically packaged with Docker Desktop for Linux. To install the kubectl command for Linux, see [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). It should be installed at `/usr/local/bin/kubectl`.
-@y
-The kubectl binary is not automatically packaged with Docker Desktop for Linux. To install the kubectl command for Linux, see [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). It should be installed at `/usr/local/bin/kubectl`.
 @z
 
 @x
@@ -190,9 +194,9 @@ For more information about `kubectl`, see the
 @z
 
 @x
-## Turn off Kubernetes
+## Turn off and uninstall Kubernetes
 @y
-## Turn off Kubernetes
+## Turn off and uninstall Kubernetes
 @z
 
 @x

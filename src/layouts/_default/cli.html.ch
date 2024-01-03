@@ -38,7 +38,7 @@
 @x
   <article class="DocSearch-content prose max-w-none dark:prose-invert">
     {{ with .Title }}
-    <h1 id="{{ anchorize . }}" class="scroll-mt-36">{{ . }}</h1>
+    <h1 class="scroll-mt-36">{{ . }}</h1>
     {{ end }}
     {{ $data.short | .RenderString (dict "display" "block") }}
     {{ if $data.deprecated }}
@@ -56,7 +56,7 @@
 @y
   <article class="DocSearch-content prose max-w-none dark:prose-invert">
     {{ with .Title }}
-    <h1 id="{{ anchorize . }}" class="scroll-mt-36">{{ . }}</h1>
+    <h1 class="scroll-mt-36">{{ . }}</h1>
     {{ end }}
     {{ $data.short | .RenderString (dict "display" "block") }}
     {{ if $data.deprecated }}
@@ -189,16 +189,16 @@
         </thead>
 @y
     {{ with $data.options }}
-      {{ $heading := dict "level" 2 "text" "Options" }}
+      {{ $heading := dict "level" 2 "text" (T "Options") }}
       {{ partial "heading.html" $heading }}
       {{ $.Scratch.Add "headings" $heading }}
       <table>
         <thead>
           <tr>
-            <th>Option</th>
-            <th>Short</th>
-            <th>Default</th>
-            <th>Description</th>
+            <th>{{ T "Option" }}</th>
+            <th>{{ T "Short" }}</th>
+            <th>{{ T "Default" }}</th>
+            <th>{{ T "Description" }}</th>
           </tr>
         </thead>
 @z

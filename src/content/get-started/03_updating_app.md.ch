@@ -10,10 +10,10 @@ description: Making changes to your application
 ---
 @y
 ---
-title: Update the application
+title: アプリケーションの更新
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
-description: Making changes to your application
+description: アプリケーションに変更を加えます。
 ---
 @z
 
@@ -26,7 +26,7 @@ In [part 2](./02_our_app.md), you containerized a todo application. In this part
 @x
 ## Update the source code
 @y
-## Update the source code
+## ソースコードの更新 {#updat-the-source-code}
 @z
 
 @x
@@ -38,7 +38,7 @@ In the following steps, you'll change the "empty text" when you don't have any t
 @x
 1. In the `src/static/js/app.js` file, update line 56 to use the new empty text.
 @y
-1. In the `src/static/js/app.js` file, update line 56 to use the new empty text.
+1. `src/static/js/app.js`ファイルにおいて、空であることを示した文章が 56 行めにあり、これを変更します。
 @z
 
 @x
@@ -56,7 +56,8 @@ In the following steps, you'll change the "empty text" when you don't have any t
 @x
 2. Build your updated version of the image, using the `docker build` command.
 @y
-2. Build your updated version of the image, using the `docker build` command.
+2. 更新バージョンに基づいてイメージをビルドします。
+   実行するコマンドは `docker build` です。
 @z
 
 @x
@@ -72,7 +73,7 @@ In the following steps, you'll change the "empty text" when you don't have any t
 @x
 3. Start a new container using the updated code.
 @y
-3. Start a new container using the updated code.
+3. 更新したソースコードを利用した新たなコンテナーを起動します。
 @z
 
 @x
@@ -88,7 +89,7 @@ In the following steps, you'll change the "empty text" when you don't have any t
 @x
 You probably saw an error like this:
 @y
-You probably saw an error like this:
+おそらく以下のようなエラーが表示されます。
 @z
 
 @x
@@ -112,13 +113,16 @@ The error occurred because you aren't able to start the new container while your
 @x
 ## Remove the old container
 @y
-## Remove the old container
+## 古いコンテナーの削除 {#remove-the-old-container}
 @z
 
 @x
 To remove a container, you first need to stop it. Once it has stopped, you can remove it. You can remove the old container using the CLI or Docker Desktop's graphical interface. Choose the option that you're most comfortable with.
 @y
-To remove a container, you first need to stop it. Once it has stopped, you can remove it. You can remove the old container using the CLI or Docker Desktop's graphical interface. Choose the option that you're most comfortable with.
+コンテナーを削除するには、まずコンテナーを停止させることが必要です。
+停止していれば削除することができます。
+古いコンテナーを削除する方法としては、CLI を使う方法と Docker Desktop のグラフィカルインターフェースを使う方法があります。
+どちらでもやりやすい方法をとってください。
 @z
 
 @x
@@ -132,13 +136,13 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @x
 ### Remove a container using the CLI
 @y
-### Remove a container using the CLI
+### CLI を用いたコンテナーの削除 {#remove-a-container-using-the-cli}
 @z
 
 @x
 1. Get the ID of the container by using the `docker ps` command.
 @y
-1. Get the ID of the container by using the `docker ps` command.
+1. `docker ps`コマンドを実行してコンテナーの ID を確認します。
 @z
 
 @x
@@ -154,7 +158,8 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @x
 2. Use the `docker stop` command to stop the container. Replace `<the-container-id>` with the ID from `docker ps`.
 @y
-2. Use the `docker stop` command to stop the container. Replace `<the-container-id>` with the ID from `docker ps`.
+2. `docker stop`コマンドを実行してコンテナーを停止します。
+   `<the-container-id>` の部分は `docker ps` によって得られた ID に置き換えてください。
 @z
 
 @x
@@ -170,7 +175,7 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @x
 3. Once the container has stopped, you can remove it by using the `docker rm` command.
 @y
-3. Once the container has stopped, you can remove it by using the `docker rm` command.
+3. コンテナーを停止したら、`docker rm`コマンドを実行してコンテナーを削除します。
 @z
 
 @x
@@ -188,9 +193,11 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 >
 >You can stop and remove a container in a single command by adding the `force` flag to the `docker rm` command. For example: `docker rm -f <the-container-id>`
 @y
->**Note**
+>**メモ**
 >
->You can stop and remove a container in a single command by adding the `force` flag to the `docker rm` command. For example: `docker rm -f <the-container-id>`
+>コンテナーの停止と削除を 1 つのコマンドで実行することができます。
+>これは`docker rm`コマンドに `force` フラグをつけます。
+>たとえば `docker rm -f <the-container-id>` とします。
 @z
 
 @x
@@ -204,7 +211,7 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @x
 ### Remove a container using Docker Desktop
 @y
-### Remove a container using Docker Desktop
+### Docker Desktop を用いたコンテナーの削除 {#remove-a-container-using-docker-desktop}
 @z
 
 @x
@@ -228,13 +235,14 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @x
 ### Start the updated app container
 @y
-### Start the updated app container
+### 更新したアプリコンテナーの起動 {#start-the-updated-app-container}
 @z
 
 @x
 1. Now, start your updated app using the `docker run` command.
 @y
-1. Now, start your updated app using the `docker run` command.
+1. そこで更新したアプリを起動します。
+   コマンドは `docker run` です。
 @z
 
 @x
@@ -250,13 +258,14 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @x
 2. Refresh your browser on [http://localhost:3000](http://localhost:3000) and you should see your updated help text.
 @y
-2. Refresh your browser on [http://localhost:3000](http://localhost:3000) and you should see your updated help text.
+2. ブラウザー上で [http://localhost:3000](http://localhost:3000) にアクセスしている画面を更新します。
+   更新したヘルプテキストが表示されたはずです。
 @z
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -269,14 +278,14 @@ In this section, you learned how to update and rebuild a container, as well as h
 Related information:
  - [docker CLI reference](/engine/reference/commandline/cli/)
 @y
-Related information:
+関連情報
  - [docker CLI reference](/engine/reference/commandline/cli/)
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-step}
 @z
 
 @x
@@ -288,5 +297,5 @@ Next, you'll learn how to share images with others.
 @x
 {{< button text="Share the application" url="04_sharing_app.md" >}}
 @y
-{{< button text="Share the application" url="04_sharing_app.md" >}}
+{{< button text="アプリケーションの共有" url="04_sharing_app.md" >}}
 @z
