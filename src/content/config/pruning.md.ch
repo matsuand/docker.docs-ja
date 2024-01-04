@@ -392,15 +392,19 @@ WARNING! This will remove:
         - all stopped containers
         - all networks not used by at least one container
         - all dangling images
-        - all build cache
-Are you sure you want to continue? [y/N] y
-```
+        - unused build cache
 @y
 WARNING! This will remove:
         - all stopped containers
         - all networks not used by at least one container
         - all dangling images
-        - all build cache
+        - unused build cache
+@z
+
+@x
+Are you sure you want to continue? [y/N] y
+```
+@y
 Are you sure you want to continue? [y/N] y
 ```
 @z
@@ -426,8 +430,6 @@ WARNING! This will remove:
         - all volumes not used by at least one container
         - all dangling images
         - all build cache
-Are you sure you want to continue? [y/N] y
-```
 @y
 WARNING! This will remove:
         - all stopped containers
@@ -435,6 +437,12 @@ WARNING! This will remove:
         - all volumes not used by at least one container
         - all dangling images
         - all build cache
+@z
+
+@x
+Are you sure you want to continue? [y/N] y
+```
+@y
 Are you sure you want to continue? [y/N] y
 ```
 @z

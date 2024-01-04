@@ -192,23 +192,34 @@ jobs:
           - linux/arm/v7
           - linux/arm64
     steps:
-      - name: Checkout
+      -
+        name: Prepare
+        run: |
+          platform=${{ matrix.platform }}
+          echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
+      -
+        name: Checkout
         uses: actions/checkout@v4
-      - name: Docker meta
+      -
+        name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY_IMAGE }}
-      - name: Set up QEMU
+      -
+        name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
+      -
+        name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
+      -
+        name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push by digest
+      -
+        name: Build and push by digest
         id: build
         uses: docker/build-push-action@v5
         with:
@@ -216,15 +227,17 @@ jobs:
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,name=${{ env.REGISTRY_IMAGE }},push-by-digest=true,name-canonical=true,push=true
-      - name: Export digest
+      -
+        name: Export digest
         run: |
           mkdir -p /tmp/digests
           digest="${{ steps.build.outputs.digest }}"
           touch "/tmp/digests/${digest#sha256:}"
-      - name: Upload digest
-        uses: actions/upload-artifact@v3
+      -
+        name: Upload digest
+        uses: actions/upload-artifact@v4
         with:
-          name: digests
+          name: digests-${{ env.PLATFORM_PAIR }}
           path: /tmp/digests/*
           if-no-files-found: error
           retention-days: 1
@@ -241,23 +254,34 @@ jobs:
           - linux/arm/v7
           - linux/arm64
     steps:
-      - name: Checkout
+      -
+        name: Prepare
+        run: |
+          platform=${{ matrix.platform }}
+          echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
+      -
+        name: Checkout
         uses: actions/checkout@v4
-      - name: Docker meta
+      -
+        name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY_IMAGE }}
-      - name: Set up QEMU
+      -
+        name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
+      -
+        name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
+      -
+        name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push by digest
+      -
+        name: Build and push by digest
         id: build
         uses: docker/build-push-action@v5
         with:
@@ -265,15 +289,17 @@ jobs:
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,name=${{ env.REGISTRY_IMAGE }},push-by-digest=true,name-canonical=true,push=true
-      - name: Export digest
+      -
+        name: Export digest
         run: |
           mkdir -p /tmp/digests
           digest="${{ steps.build.outputs.digest }}"
           touch "/tmp/digests/${digest#sha256:}"
-      - name: Upload digest
-        uses: actions/upload-artifact@v3
+      -
+        name: Upload digest
+        uses: actions/upload-artifact@v4
         with:
-          name: digests
+          name: digests-${{ env.PLATFORM_PAIR }}
           path: /tmp/digests/*
           if-no-files-found: error
           retention-days: 1
@@ -285,29 +311,36 @@ jobs:
     needs:
       - build
     steps:
-      - name: Download digests
-        uses: actions/download-artifact@v3
+      -
+        name: Download digests
+        uses: actions/download-artifact@v4
         with:
-          name: digests
           path: /tmp/digests
-      - name: Set up Docker Buildx
+          pattern: digests-*
+          merge-multiple: true
+      -
+        name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Docker meta
+      -
+        name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY_IMAGE }}
-      - name: Login to Docker Hub
+      -
+        name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Create manifest list and push
+      -
+        name: Create manifest list and push
         working-directory: /tmp/digests
         run: |
           docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
             $(printf '${{ env.REGISTRY_IMAGE }}@sha256:%s ' *)
-      - name: Inspect image
+      -
+        name: Inspect image
         run: |
           docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:${{ steps.meta.outputs.version }}
 ```
@@ -317,29 +350,36 @@ jobs:
     needs:
       - build
     steps:
-      - name: Download digests
-        uses: actions/download-artifact@v3
+      -
+        name: Download digests
+        uses: actions/download-artifact@v4
         with:
-          name: digests
           path: /tmp/digests
-      - name: Set up Docker Buildx
+          pattern: digests-*
+          merge-multiple: true
+      -
+        name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Docker meta
+      -
+        name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY_IMAGE }}
-      - name: Login to Docker Hub
+      -
+        name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Create manifest list and push
+      -
+        name: Create manifest list and push
         working-directory: /tmp/digests
         run: |
           docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
             $(printf '${{ env.REGISTRY_IMAGE }}@sha256:%s ' *)
-      - name: Inspect image
+      -
+        name: Inspect image
         run: |
           docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:${{ steps.meta.outputs.version }}
 ```
@@ -502,6 +542,24 @@ jobs:
         name: Show matrix
         run: |
           echo ${{ steps.platforms.outputs.matrix }}
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY_IMAGE }}
+      -
+        name: Rename meta bake definition file
+        run: |
+          mv "${{ steps.meta.outputs.bake-file }}" "/tmp/bake-meta.json"
+      -
+        name: Upload meta bake definition
+        uses: actions/upload-artifact@v4
+        with:
+          name: bake-meta
+          path: /tmp/bake-meta.json
+          if-no-files-found: error
+          retention-days: 1
 @y
 jobs:
   prepare:
@@ -521,6 +579,24 @@ jobs:
         name: Show matrix
         run: |
           echo ${{ steps.platforms.outputs.matrix }}
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY_IMAGE }}
+      -
+        name: Rename meta bake definition file
+        run: |
+          mv "${{ steps.meta.outputs.bake-file }}" "/tmp/bake-meta.json"
+      -
+        name: Upload meta bake definition
+        uses: actions/upload-artifact@v4
+        with:
+          name: bake-meta
+          path: /tmp/bake-meta.json
+          if-no-files-found: error
+          retention-days: 1
 @z
 
 @x
@@ -534,26 +610,19 @@ jobs:
         platform: ${{ fromJson(needs.prepare.outputs.matrix) }}
     steps:
       -
+        name: Prepare
+        run: |
+          platform=${{ matrix.platform }}
+          echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
+      -
         name: Checkout
         uses: actions/checkout@v4
       -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY_IMAGE }}
-      -
-        name: Rename meta bake definition file
-        run: |
-          mv "${{ steps.meta.outputs.bake-file }}" "/tmp/bake-meta.json"
-      -
-        name: Upload meta bake definition
-        uses: actions/upload-artifact@v3
+        name: Download meta bake definition
+        uses: actions/download-artifact@v4
         with:
           name: bake-meta
-          path: /tmp/bake-meta.json
-          if-no-files-found: error
-          retention-days: 1
+          path: /tmp
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -587,9 +656,9 @@ jobs:
           touch "/tmp/digests/${digest#sha256:}"
       -
         name: Upload digest
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: digests
+          name: digests-${{ env.PLATFORM_PAIR }}
           path: /tmp/digests/*
           if-no-files-found: error
           retention-days: 1
@@ -604,26 +673,19 @@ jobs:
         platform: ${{ fromJson(needs.prepare.outputs.matrix) }}
     steps:
       -
+        name: Prepare
+        run: |
+          platform=${{ matrix.platform }}
+          echo "PLATFORM_PAIR=${platform//\//-}" >> $GITHUB_ENV
+      -
         name: Checkout
         uses: actions/checkout@v4
       -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY_IMAGE }}
-      -
-        name: Rename meta bake definition file
-        run: |
-          mv "${{ steps.meta.outputs.bake-file }}" "/tmp/bake-meta.json"
-      -
-        name: Upload meta bake definition
-        uses: actions/upload-artifact@v3
+        name: Download meta bake definition
+        uses: actions/download-artifact@v4
         with:
           name: bake-meta
-          path: /tmp/bake-meta.json
-          if-no-files-found: error
-          retention-days: 1
+          path: /tmp
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -657,9 +719,9 @@ jobs:
           touch "/tmp/digests/${digest#sha256:}"
       -
         name: Upload digest
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: digests
+          name: digests-${{ env.PLATFORM_PAIR }}
           path: /tmp/digests/*
           if-no-files-found: error
           retention-days: 1
@@ -679,10 +741,11 @@ jobs:
           path: /tmp
       -
         name: Download digests
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: digests
           path: /tmp/digests
+          pattern: digests-*
+          merge-multiple: true
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -717,10 +780,11 @@ jobs:
           path: /tmp
       -
         name: Download digests
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: digests
           path: /tmp/digests
+          pattern: digests-*
+          merge-multiple: true
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

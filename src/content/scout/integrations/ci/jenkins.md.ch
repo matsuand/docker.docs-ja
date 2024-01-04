@@ -17,49 +17,77 @@ title: Integrate Docker Scout with Jenkins
 
 @x
 You can add the following stage and steps definition to a `Jenkinsfile` to run
-Docker Scout as part of a Jenkins pipeline. The pipeline needs two secrets
-defined to authenticate with Docker Hub: `DOCKER_HUB_USER` and `DOCKER_HUB_PAT`
-It also needs an environment variable defined for the image and tag.
+Docker Scout as part of a Jenkins pipeline. The pipeline needs a `DOCKER_HUB`
+credential containing the username and password for authenticating to Docker
+Hub. It also needs an environment variable defined for the image and tag.
 @y
 You can add the following stage and steps definition to a `Jenkinsfile` to run
-Docker Scout as part of a Jenkins pipeline. The pipeline needs two secrets
-defined to authenticate with Docker Hub: `DOCKER_HUB_USER` and `DOCKER_HUB_PAT`
-It also needs an environment variable defined for the image and tag.
+Docker Scout as part of a Jenkins pipeline. The pipeline needs a `DOCKER_HUB`
+credential containing the username and password for authenticating to Docker
+Hub. It also needs an environment variable defined for the image and tag.
 @z
 
 @x
 ```groovy
-…
-stage('Analyze image') {
-    steps {
-        // Install Docker Scout
-        sh 'curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin'
+pipeline {
+    agent {
+        // Agent details
+    }
 @y
 ```groovy
-…
-stage('Analyze image') {
-    steps {
-        // Install Docker Scout
-        sh 'curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin'
+pipeline {
+    agent {
+        // Agent details
+    }
 @z
 
 @x
-        // Log into Docker Hub
-        sh 'echo $DOCKER_HUB_PAT | docker login -u $DOCKER_HUB_USER --password-stdin'
+    environment {
+        DOCKER_HUB = credentials('jenkins-docker-hub-credentials')
+        IMAGE_TAG  = 'myorg/scout-demo-service:latest'
+    }
 @y
-        // Log into Docker Hub
-        sh 'echo $DOCKER_HUB_PAT | docker login -u $DOCKER_HUB_USER --password-stdin'
+    environment {
+        DOCKER_HUB = credentials('jenkins-docker-hub-credentials')
+        IMAGE_TAG  = 'myorg/scout-demo-service:latest'
+    }
 @z
 
 @x
-        // Analyze and fail on critical or high vulnerabilities
-        sh 'docker-scout cves $IMAGE_TAG --exit-code --only-severity critical,high'
+    stages {
+        stage('Analyze image') {
+            steps {
+                // Install Docker Scout
+                sh 'curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin'
+@y
+    stages {
+        stage('Analyze image') {
+            steps {
+                // Install Docker Scout
+                sh 'curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin'
+@z
+
+@x
+                // Log into Docker Hub
+                sh 'echo $DOCKER_HUB_PSW | docker login -u $DOCKER_HUB_USR --password-stdin'
+@y
+                // Log into Docker Hub
+                sh 'echo $DOCKER_HUB_PSW | docker login -u $DOCKER_HUB_USR --password-stdin'
+@z
+
+@x
+                // Analyze and fail on critical or high vulnerabilities
+                sh 'docker-scout cves $IMAGE_TAG --exit-code --only-severity critical,high'
+            }
+        }
     }
 }
 ```
 @y
-        // Analyze and fail on critical or high vulnerabilities
-        sh 'docker-scout cves $IMAGE_TAG --exit-code --only-severity critical,high'
+                // Analyze and fail on critical or high vulnerabilities
+                sh 'docker-scout cves $IMAGE_TAG --exit-code --only-severity critical,high'
+            }
+        }
     }
 }
 ```
