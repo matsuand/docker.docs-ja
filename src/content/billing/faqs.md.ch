@@ -22,9 +22,25 @@ keywords: billing, renewal, payments, faq
 @z
 
 @x
-Navigate to the **Plan** tab in your billing settings to view your current plan. You can find the billing date near the bottom-right of your plan details.
+Sign in to Hub, then:
 @y
-Navigate to the **Plan** tab in your billing settings to view your current plan. You can find the billing date near the bottom-right of your plan details.
+Sign in to Hub, then:
+@z
+
+@x
+1. Select your user avatar to open the drop-down menu.
+2. Select **Billing**.
+3. Select the user or organization account to view the billing details.
+@y
+1. Select your user avatar to open the drop-down menu.
+2. Select **Billing**.
+3. Select the user or organization account to view the billing details.
+@z
+
+@x
+Here you can find your renewal date near the bottom-right of your plan details.
+@y
+Here you can find your renewal date near the bottom-right of your plan details.
 @z
 
 @x
@@ -49,6 +65,18 @@ Navigate to the **Plan** tab in your billing settings to view your current plan.
 - JCB
 - Diners
 - UnionPay
+@z
+
+@x
+### What currency is supported?
+@y
+### What currency is supported?
+@z
+
+@x
+United States dollar (USD).
+@y
+United States dollar (USD).
 @z
 
 @x
@@ -83,6 +111,94 @@ Docker also sends an email notification `Action Required - Credit Card Payment F
 Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
 @y
 Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+@z
+
+@x
+### What information is included on my billing invoice?
+@y
+### What information is included on my billing invoice?
+@z
+
+@x
+Your invoice includes the following:
+@y
+Your invoice includes the following:
+@z
+
+@x
+- Invoice number
+- Date of issue
+- Date due
+- Your bill to information
+- Amount due
+- Description of your order, quantity if applicable, unit price, and amount
+@y
+- Invoice number
+- Date of issue
+- Date due
+- Your bill to information
+- Amount due
+- Description of your order, quantity if applicable, unit price, and amount
+@z
+
+@x
+Amounts are in USD.
+@y
+Amounts are in USD.
+@z
+
+@x
+The information listed in the Bill to section is based on your billing information. Not all fields are required. The billing information includes the following:
+@y
+The information listed in the Bill to section is based on your billing information. Not all fields are required. The billing information includes the following:
+@z
+
+@x
+- Name (required) - the name of the administrator or company.
+- Email address (required) - the email address that receives all billing-related emails for the account.
+- Address (required)
+- Phone number
+- Tax ID or VAT
+@y
+- Name (required) - the name of the administrator or company.
+- Email address (required) - the email address that receives all billing-related emails for the account.
+- Address (required)
+- Phone number
+- Tax ID or VAT
+@z
+
+@x
+### How can I make changes to a billing invoice?
+@y
+### How can I make changes to a billing invoice?
+@z
+
+@x
+You can’t make changes to a paid or unpaid billing invoice. When you update your billing information, this change won't update an existing invoice. If you need to update your billing information, make sure you do so before your subscription renewal date when your invoice is finalized. For more information, see [Update the billing information](details.md).
+@y
+You can’t make changes to a paid or unpaid billing invoice. When you update your billing information, this change won't update an existing invoice. If you need to update your billing information, make sure you do so before your subscription renewal date when your invoice is finalized. For more information, see [Update the billing information](details.md).
+@z
+
+@x
+### When during the billing cycle do I receive my invoice?
+@y
+### When during the billing cycle do I receive my invoice?
+@z
+
+@x
+You receive your invoice when the subscription renews. To verify your renewal date, sign in to Hub, then:
+@y
+You receive your invoice when the subscription renews. To verify your renewal date, sign in to Hub, then:
+@z
+
+@x
+1. Select your user avatar to open the drop-down menu.
+2. Select **Billing**.
+3. Select the user or organization account to view the billing details. Here you can find your renewal date and the renewal amount.
+@y
+1. Select your user avatar to open the drop-down menu.
+2. Select **Billing**.
+3. Select the user or organization account to view the billing details. Here you can find your renewal date and the renewal amount.
 @z
 
 @x

@@ -29,6 +29,35 @@ AC_CONFIG_FILES([
 	Makefile
 	ctie/Makefile
 	src/Makefile
+	src/_vendor/Makefile
+	src/_vendor/github.com/Makefile
+	src/_vendor/github.com/compose-spec/Makefile
+	src/_vendor/github.com/compose-spec/compose-spec/Makefile
+	src/_vendor/github.com/docker/Makefile
+	src/_vendor/github.com/docker/buildx/Makefile
+	src/_vendor/github.com/docker/buildx/docs/Makefile
+	src/_vendor/github.com/docker/cli/Makefile
+	src/_vendor/github.com/docker/cli/docs/Makefile
+	src/_vendor/github.com/docker/cli/docs/extend/Makefile
+	src/_vendor/github.com/docker/cli/docs/extend/images/Makefile
+	src/_vendor/github.com/docker/cli/docs/reference/Makefile
+	src/_vendor/github.com/docker/cli/docs/reference/commandline/Makefile
+	src/_vendor/github.com/docker/compose/Makefile
+	src/_vendor/github.com/docker/compose/v2/Makefile
+	src/_vendor/github.com/docker/compose/v2/docs/Makefile
+	src/_vendor/github.com/docker/compose/v2/docs/reference/Makefile
+	src/_vendor/github.com/docker/scout-cli/Makefile
+	src/_vendor/github.com/docker/scout-cli/docs/Makefile
+	src/_vendor/github.com/moby/Makefile
+	src/_vendor/github.com/moby/buildkit/Makefile
+	src/_vendor/github.com/moby/buildkit/docs/Makefile
+	src/_vendor/github.com/moby/buildkit/docs/attestations/Makefile
+	src/_vendor/github.com/moby/buildkit/frontend/Makefile
+	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/Makefile
+	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/docs/Makefile
+	src/_vendor/github.com/moby/moby/Makefile
+	src/_vendor/github.com/moby/moby/docs/Makefile
+	src/_vendor/github.com/moby/moby/docs/api/Makefile
 	src/content/Makefile
 	src/content/admin/Makefile
 	src/content/admin/company/Makefile

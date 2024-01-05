@@ -68,7 +68,7 @@ apiPropReq:
 apiPropDesc:
   other: Description
 
-## docker.docs-ja 対応
+## for docker.docs-ja
 
 Usage:
   other: Usage
@@ -82,4 +82,6 @@ Short:
   other: Short
 Default:
   other: Default
+Examples:
+  other: Examples
 @z

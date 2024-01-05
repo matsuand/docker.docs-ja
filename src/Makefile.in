@@ -295,7 +295,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = content data i18n layouts
+SUBDIRS = _vendor content data i18n layouts
 bases = \
 	hugo.yaml
 
@@ -306,7 +306,6 @@ transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copydirs = \
 	_releaser \
-	_vendor   \
 	assets    \
 	scripts   \
 	static

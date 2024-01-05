@@ -86,9 +86,9 @@ Before deactivating your Docker account, ensure that you meet the following requ
 @z
 
 @x
-- If you have an active Docker Build Cloud Paid subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
+- If you have an active Docker Build Cloud Team subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
 @y
-- If you have an active Docker Build Cloud Paid subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
+- If you have an active Docker Build Cloud Team subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
 @z
 
 @x

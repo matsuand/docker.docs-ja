@@ -96,9 +96,9 @@ If you have an existing [Docker subscription](./details.md), Build Cloud is incl
 @z
 
 @x
-## Docker Build Cloud Paid
+## Docker Build Cloud Team
 @y
-## Docker Build Cloud Paid
+## Docker Build Cloud Team
 @z
 
 @x
@@ -115,6 +115,18 @@ You can upgrade the starter plan for any tier to enhance your developers' experi
 - 200 additional build minutes per seat
 - Option to buy reserve minutes
 - Increased shared cache
+@z
+
+@x
+The Docker Build Cloud Team subscription is tied to a Docker
+[organization](../admin/organization/_index.md). To use the build minutes or
+shared cache of a Docker Build Cloud Team subscription, users must be a part of
+the organization associated with the subscription.
+@y
+The Docker Build Cloud Team subscription is tied to a Docker
+[organization](../admin/organization/_index.md). To use the build minutes or
+shared cache of a Docker Build Cloud Team subscription, users must be a part of
+the organization associated with the subscription.
 @z
 
 @x

@@ -1,0 +1,66 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker compose top
+short: Display the running processes
+long: Displays the running processes.
+usage: docker compose top [SERVICES...]
+pname: docker compose
+plink: docker_compose.yaml
+inherited_options:
+    - option: dry-run
+      value_type: bool
+      default_value: "false"
+      description: Execute command in dry run mode
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ```console
+    $ docker compose top
+    example_foo_1
+    UID    PID      PPID     C    STIME   TTY   TIME       CMD
+    root   142353   142331   2    15:33   ?     00:00:00   ping localhost -c 5
+    ```
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker compose top
+short: Display the running processes
+long: Displays the running processes.
+usage: docker compose top [SERVICES...]
+pname: docker compose
+plink: docker_compose.yaml
+inherited_options:
+    - option: dry-run
+      value_type: bool
+      default_value: "false"
+      description: Execute command in dry run mode
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ```console
+    $ docker compose top
+    example_foo_1
+    UID    PID      PPID     C    STIME   TTY   TIME       CMD
+    root   142353   142331   2    15:33   ?     00:00:00   ping localhost -c 5
+    ```
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

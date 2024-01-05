@@ -317,7 +317,7 @@
 {{ end }}
 @y
     {{ with $data.examples }}
-      {{ $heading := dict "level" 2 "text" "Examples" }}
+      {{ $heading := dict "level" 2 "text" (T "Examples") }}
       {{ partial "heading.html" $heading }}
       {{ $subHeadings := (strings.FindRE `(?m:#{3,4} .*)` .) }}
       {{ $.Scratch.Add "headings" $heading }}

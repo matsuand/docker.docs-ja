@@ -228,9 +228,9 @@
             recommendations, and more. Now generally available.
           </p>
           <div class="flex gap-4">
-            <a href="__SUBDIR__/scout/"
+            <a href="/scout/"
               class="transition cursor-pointer duration-300 py-2 px-4 rounded bg-green-dark hover:bg-green-light-600 text-white">Docs</a>
-            <a href="__SUBDIR__/scout/release-notes/"
+            <a href="/scout/release-notes/"
               class="transition cursor-pointer duration-300 py-2 px-4 rounded bg-green-dark hover:bg-green-light-600 text-white">Release notes</a>
           </div>
         </div>
@@ -266,15 +266,15 @@
             <div aria-role="tablist" class="space-x-2">
               <button class="p-1" :class="selected === 'explore' &&
           'border-blue-light-500 border-b-4 dark:border-b-blue-dark-600'" @click="selected = 'explore'">
-                Explore Docker
+                Docker を知る
               </button>
               <button class="p-1" :class="selected === 'faq' &&
           'border-blue-light-500 border-b-4 dark:border-b-blue-dark-600'" @click="selected = 'faq'">
-                Browse FAQs
+                FAQ
               </button>
               <button class="p-1" :class="selected === 'support' &&
           'border-blue-light-500 border-b-4 dark:border-b-blue-dark-600'" @click="selected = 'support'">
-                Get support
+                サポート
               </button>
             </div>
             <hr />
@@ -310,16 +310,16 @@
                     <a class="link" href="engine/reference/builder/">Dockerfile の書き方</a>
                   </li>
                   <li>
-                    <a class="link" href="network/">Manage container networking</a>
+                    <a class="link" href="network/">コンテナーネットワークの管理</a>
                   </li>
                   <li>
-                    <a class="link" href="compose/compose-file/">Write a Docker Compose file</a>
+                    <a class="link" href="compose/compose-file/">Docker Compose ファイルの書き方</a>
                   </li>
                   <li>
-                    <a class="link" href="storage/">Work with volumes and mounts</a>
+                    <a class="link" href="storage/">ボリュームとマウントを使った作業</a>
                   </li>
                   <li>
-                    <a class="link" href="get-started/04_sharing_app/">Share images on Docker Hub</a>
+                    <a class="link" href="get-started/04_sharing_app/">Docker Hub 上でのイメージ共有</a>
                   </li>
                 </ul>
 @z
@@ -343,16 +343,16 @@
 @y
                 <ul class="w-full space-y-3">
                   <li>
-                    <a class="link" href="config/daemon/">Configure the Docker daemon</a>
+                    <a class="link" href="config/daemon/">Docker デーモンの設定</a>
                   </li>
                   <li>
-                    <a class="link" href="get-started/02_our_app/">Build and run an image</a>
+                    <a class="link" href="get-started/02_our_app/">イメージのビルドと実行</a>
                   </li>
                   <li>
-                    <a class="link" href="config/labels-custom-metadata/">Manage Docker objects</a>
+                    <a class="link" href="config/labels-custom-metadata/">Docker オブジェクトの管理</a>
                   </li>
                   <li>
-                    <a class="link" href="build/building/multi-stage/">Multi-stage builds</a>
+                    <a class="link" href="build/building/multi-stage/">マルチステージビルド</a>
                   </li>
                 </ul>
               </div>

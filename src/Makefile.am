@@ -3,7 +3,7 @@
 ##
 absORIGDIR=@absORIGDIR@
 
-SUBDIRS = content data i18n layouts
+SUBDIRS = _vendor content data i18n layouts
 
 bases = \
 	hugo.yaml
@@ -13,7 +13,6 @@ include $(top_srcdir)/build-aux/main.mk
 
 copydirs = \
 	_releaser \
-	_vendor   \
 	assets    \
 	scripts   \
 	static
