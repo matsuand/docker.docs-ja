@@ -102,12 +102,12 @@ When you run `docker compose up`, the following happens:
 @z
 
 @x
-Each container can now look up the hostname `web` or `db` and
+Each container can now look up the service name `web` or `db` and
 get back the appropriate container's IP address. For example, `web`'s
 application code could connect to the URL `postgres://db:5432` and start
 using the Postgres database.
 @y
-Each container can now look up the hostname `web` or `db` and
+Each container can now look up the service name `web` or `db` and
 get back the appropriate container's IP address. For example, `web`'s
 application code could connect to the URL `postgres://db:5432` and start
 using the Postgres database.

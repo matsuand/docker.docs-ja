@@ -66,29 +66,25 @@ array of profile names:
 services:
   frontend:
     image: frontend
-    profiles: ["frontend"]
+    profiles: [frontend]
 @y
 ```yaml
 services:
   frontend:
     image: frontend
-    profiles: ["frontend"]
+    profiles: [frontend]
 @z
 
 @x
   phpmyadmin:
     image: phpmyadmin
-    depends_on:
-      - db
-    profiles:
-      - debug
+    depends_on: [db]
+    profiles: [debug]
 @y
   phpmyadmin:
     image: phpmyadmin
-    depends_on:
-      - db
-    profiles:
-      - debug
+    depends_on: [db]
+    profiles: [debug]
 @z
 
 @x

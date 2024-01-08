@@ -233,11 +233,11 @@ To view the frontend and add todos:
 
 @x
 1. In Docker Desktop, expand the application stack in **Containers**.
-2. Select the link to port **3000** in the **Port(s)** column or open [https://localhost:3000](https://localhost:3000)⁠.
+2. Select the link to port **3000** in the **Port(s)** column or open [http://localhost:3000](http://localhost:3000)⁠.
 3. Add some todo tasks in the frontend.
 @y
 1. Docker Desktop において **Containers**（コンテナー）タブ内のアプリケーションスタックを展開します。
-2. **Port(s)**（ポート）カラムにあるポート **3000** というリンクをクリックするか、あるいは  [https://localhost:3000](https://localhost:3000) にアクセスします。
+2. **Port(s)**（ポート）カラムにあるポート **3000** というリンクをクリックするか、あるいは  [http://localhost:3000](http://localhost:3000) にアクセスします。
 3. フロントエンド画面から todo タスクを追加します。
 @z
 

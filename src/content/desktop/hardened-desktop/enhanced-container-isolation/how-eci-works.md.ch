@@ -191,12 +191,12 @@ Desktop in organizations with stringent security requirements.
 
 @x
 [Rootless Docker](/engine/security/rootless/) allows the Docker Engine, and by
-extension the containers, to run without root privileges natively a Linux host. This
-allows non-root users install and run Docker natively on Linux.
+extension the containers, to run without root privileges natively on a Linux host. This
+allows non-root users to install and run Docker natively on Linux.
 @y
 [Rootless Docker](/engine/security/rootless/) allows the Docker Engine, and by
-extension the containers, to run without root privileges natively a Linux host. This
-allows non-root users install and run Docker natively on Linux.
+extension the containers, to run without root privileges natively on a Linux host. This
+allows non-root users to install and run Docker natively on Linux.
 @z
 
 @x

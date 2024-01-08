@@ -13,7 +13,7 @@ toc_max: 2
 ---
 description: Containerize and develop PHP apps using Docker
 keywords: getting started, php, composer
-title: PHP language-specific guide
+title: PHP 向けガイド
 toc_min: 1
 toc_max: 2
 ---
@@ -22,7 +22,8 @@ toc_max: 2
 @x
 The PHP language-specific guide teaches you how to create a containerized PHP application using Docker. In this guide, you'll learn how to:
 @y
-The PHP language-specific guide teaches you how to create a containerized PHP application using Docker. In this guide, you'll learn how to:
+言語別ガイド PHP 向けでは、Docker を使ってコンテナー化した PHP アプリケーションの生成方法について説明をはじめます。
+このガイドでは以下について学んでいきます。
 @z
 
 @x
@@ -32,11 +33,11 @@ The PHP language-specific guide teaches you how to create a containerized PHP ap
 * Configure a CI/CD pipeline for a containerized PHP application using GitHub Actions
 * Deploy your containerized application locally to Kubernetes to test and debug your deployment
 @y
-* Containerize and run a PHP application
-* Set up a local environment to develop a PHP application using containers
-* Run tests for a PHP application within containers
-* Configure a CI/CD pipeline for a containerized PHP application using GitHub Actions
-* Deploy your containerized application locally to Kubernetes to test and debug your deployment
+* PHP アプリケーションをコンテナー化して実行します。
+* コンテナーを利用して PHP アプリケーションを開発するローカル環境を構築します。
+* コンテナーを使って PHP アプリケーションのテストを実行します。
+* GitHub アクションを使って、コンテナー化した PHP アプリケーションの CI/CD パイプラインを設定します。
+* コンテナー化した PHP アプリケーションをローカルな Kubernetes にデプロイして、テストおよびデバッグを行います。
 @z
 
 @x
@@ -48,11 +49,11 @@ After completing the PHP language-specific guide, you should be able to containe
 @x
 Start by containerizing an existing PHP application.
 @y
-Start by containerizing an existing PHP application.
+では手元にある PHP アプリケーションのコンテナー化からはじめます。
 @z
 
 @x
 {{< button text="Containerize a PHP app" url="containerize.md" >}}
 @y
-{{< button text="Containerize a PHP app" url="containerize.md" >}}
+{{< button text="PHP アプリのコンテナー化" url="containerize.md" >}}
 @z

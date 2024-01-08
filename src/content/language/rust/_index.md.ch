@@ -22,7 +22,8 @@ toc_max: 2
 @x
 The Rust language-specific guide teaches you how to create a containerized Rust application using Docker. In this guide, you'll learn how to:
 @y
-The Rust language-specific guide teaches you how to create a containerized Rust application using Docker. In this guide, you'll learn how to:
+言語別ガイド Rust 向けでは、Docker を使ってコンテナー化した Rust アプリケーションの生成方法について説明をはじめます。
+このガイドでは以下について学んでいきます。
 @z
 
 @x
@@ -58,5 +59,5 @@ Start with building your first Rust image.
 @x
 {{< button text="Build your first Rust image" url="build-images.md" >}}
 @y
-{{< button text="Build your first Rust image" url="build-images.md" >}}
+{{< button text="Rust イメージのビルド" url="build-images.md" >}}
 @z

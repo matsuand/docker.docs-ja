@@ -188,11 +188,11 @@ image store.
 @z
 
 @x
-Images loaded to the image store are available to for `docker run` immediately
+Images loaded to the image store are available to `docker run` immediately
 after the build finishes, and you'll see them in the list of images when you run
 the `docker images` command.
 @y
-Images loaded to the image store are available to for `docker run` immediately
+Images loaded to the image store are available to `docker run` immediately
 after the build finishes, and you'll see them in the list of images when you run
 the `docker images` command.
 @z

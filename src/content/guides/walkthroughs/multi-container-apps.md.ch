@@ -187,17 +187,17 @@ To view the frontend:
 
 @x
 1. In Docker Desktop, expand the application stack in **Containers**.
-2. Select the link to port **3000** in the **Port(s)** column or open [https://localhost:3000](https://localhost:3000)⁠.
+2. Select the link to port **3000** in the **Port(s)** column or open [http://localhost:3000](http://localhost:3000)⁠.
 @y
 1. Docker Desktop において **Containers**（コンテナー）タブ内のアプリケーションスタックを展開します。
-2. **Port(s)**（ポート）カラムにあるポート **3000** というリンクをクリックするか、あるいは  [https://localhost:3000](https://localhost:3000) にアクセスします。
+2. **Port(s)**（ポート）カラムにあるポート **3000** というリンクをクリックするか、あるいは  [http://localhost:3000](http://localhost:3000) にアクセスします。
 @z
 
 @x
-Add some todo tasks in the frontend, and then open [https://localhost:3000](https://localhost:3000) in a new browser tab. Notice that the tasks are still visible.
+Add some todo tasks in the frontend, and then open [http://localhost:3000](http://localhost:3000) in a new browser tab. Notice that the tasks are still visible.
 @y
 フロントエンド画面にて todo タスクを追加してください。
-そしてブラウザーの新たなタブを使って [https://localhost:3000](https://localhost:3000) を開いてください。
+そしてブラウザーの新たなタブを使って [http://localhost:3000](http://localhost:3000) を開いてください。
 追加したタスクがそのまま表示されるはずです。
 @z
 
@@ -230,7 +230,7 @@ Compose Watch を実行してリアルタイムに変更を確認します。
    ```
 2. Open `app/views/todos.ejs` in a text or code editor, then change the text on line 18.
 3. Save the changes in `app/views/todos.ejs`.
-4. View your application at [https://localhost:3000](https://localhost:3000) to see the changes in real-time.
+4. View your application at [http://localhost:3000](http://localhost:3000) to see the changes in real-time.
 @y
 1. 端末画面を開いて以下のコマンドを実行します。
    `/path/to/multi-container-app/` の部分は実際のアプリケーションディレクトリに置き換えてください。
@@ -243,7 +243,7 @@ Compose Watch を実行してリアルタイムに変更を確認します。
 2. コードエディターあるいはテキストエディターを使って `app/views/todos.ejs` を開きます。
    そして 18 行めのテキストを変更します。
 3. `app/views/todos.ejs` の変更を保存します。
-4. [https://localhost:3000](https://localhost:3000) においてアプリケーションを参照します。
+4. [http://localhost:3000](http://localhost:3000) においてアプリケーションを参照します。
    リアルタイムに変更を確認することができます。
 @z
 

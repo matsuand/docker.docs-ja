@@ -228,9 +228,9 @@
             recommendations, and more. Now generally available.
           </p>
           <div class="flex gap-4">
-            <a href="/scout/"
+            <a href="scout/"
               class="transition cursor-pointer duration-300 py-2 px-4 rounded bg-green-dark hover:bg-green-light-600 text-white">Docs</a>
-            <a href="/scout/release-notes/"
+            <a href="scout/release-notes/"
               class="transition cursor-pointer duration-300 py-2 px-4 rounded bg-green-dark hover:bg-green-light-600 text-white">Release notes</a>
           </div>
         </div>
@@ -1304,7 +1304,7 @@
 
 @x
         <div>
-          <a class="h-full" href="https://www.docker.com/docker-captains">
+          <a class="h-full" href="https://www.docker.com/community/captains/">
             <div
               class="flex h-full flex-col gap-2 rounded border border-gray-light-100 bg-white p-4 drop-shadow-sm hover:border-gray-light-200 hover:drop-shadow-lg dark:border-gray-dark-400 dark:bg-gray-dark-200 hover:dark:border-gray-dark">
               <div class="flex items-center gap-4">
@@ -1323,7 +1323,7 @@
         </div>
 @y
         <div>
-          <a class="h-full" href="https://www.docker.com/docker-captains">
+          <a class="h-full" href="https://www.docker.com/community/captains/">
             <div
               class="flex h-full flex-col gap-2 rounded border border-gray-light-100 bg-white p-4 drop-shadow-sm hover:border-gray-light-200 hover:drop-shadow-lg dark:border-gray-dark-400 dark:bg-gray-dark-200 hover:dark:border-gray-dark">
               <div class="flex items-center gap-4">

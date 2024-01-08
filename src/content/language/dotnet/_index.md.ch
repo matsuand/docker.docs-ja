@@ -13,7 +13,7 @@ toc_max: 2
 ---
 description: Containerize and develop .NET apps using Docker
 keywords: getting started, .net
-title: .NET language-specific guide
+title: .NET 向けガイド
 toc_min: 1
 toc_max: 2
 ---
@@ -22,7 +22,8 @@ toc_max: 2
 @x
 The .NET getting started guide teaches you how to create a containerized .NET application using Docker. In this guide, you'll learn how to:
 @y
-The .NET getting started guide teaches you how to create a containerized .NET application using Docker. In this guide, you'll learn how to:
+言語別ガイド .NET 向けでは、Docker を使ってコンテナー化した .NET アプリケーションの生成方法について説明をはじめます。
+このガイドでは以下について学んでいきます。
 @z
 
 @x
@@ -32,11 +33,11 @@ The .NET getting started guide teaches you how to create a containerized .NET ap
 * Configure a CI/CD pipeline for a containerized .NET application using GitHub Actions
 * Deploy your containerized application locally to Kubernetes to test and debug your deployment
 @y
-* Containerize and run a .NET application
-* Set up a local environment to develop a .NET application using containers
-* Run tests for a .NET application using containers
-* Configure a CI/CD pipeline for a containerized .NET application using GitHub Actions
-* Deploy your containerized application locally to Kubernetes to test and debug your deployment
+* .NET アプリケーションをコンテナー化して実行します。
+* コンテナーを利用して .NET アプリケーションを開発するローカル環境を構築します。
+* コンテナーを使って .NET アプリケーションのテストを実行します。
+* GitHub アクションを使って、コンテナー化した .NET アプリケーションの CI/CD パイプラインを設定します。
+* コンテナー化した .NET アプリケーションをローカルな Kubernetes にデプロイして、テストおよびデバッグを行います。
 @z
 
 @x
@@ -48,11 +49,11 @@ After completing the .NET getting started modules, you should be able to contain
 @x
 Start by containerizing an existing .NET application.
 @y
-Start by containerizing an existing .NET application.
+では手元にある .NET アプリケーションのコンテナー化からはじめます。
 @z
 
 @x
 {{< button text="Containerize a .NET app" url="containerize.md" >}}
 @y
-{{< button text="Containerize a .NET app" url="containerize.md" >}}
+{{< button text=".NET アプリのコンテナー化" url="containerize.md" >}}
 @z

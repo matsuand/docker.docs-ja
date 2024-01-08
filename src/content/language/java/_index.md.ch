@@ -11,7 +11,7 @@ toc_max: 2
 ---
 @y
 ---
-title: Java language-specific guide
+title: Java 向けガイド
 keywords: java, getting started
 description: Containerize Java apps using Docker
 toc_min: 1
@@ -22,7 +22,8 @@ toc_max: 2
 @x
 The Java getting started guide teaches you how to create a containerized Spring Boot application using Docker. In this module, you’ll learn how to:
 @y
-The Java getting started guide teaches you how to create a containerized Spring Boot application using Docker. In this module, you’ll learn how to:
+言語別ガイド Java 向けでは、Docker を使ってコンテナー化した Spring Boot アプリケーションの生成方法について説明をはじめます。
+このガイドでは以下について学んでいきます。
 @z
 
 @x
@@ -58,5 +59,5 @@ Get started building your first Java image.
 @x
 {{< button text="Build your first Java image" url="build-images.md" >}}
 @y
-{{< button text="Build your first Java image" url="build-images.md" >}}
+{{< button text="Java イメージのビルド" url="build-images.md" >}}
 @z

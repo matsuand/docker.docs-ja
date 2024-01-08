@@ -13,7 +13,7 @@ toc_max: 2
 ---
 description: Containerize Python apps using Docker
 keywords: Docker, getting started, Python, language
-title: Python language-specific guide
+title: Python 向けガイド
 toc_min: 1
 toc_max: 2
 ---
@@ -22,7 +22,8 @@ toc_max: 2
 @x
 The Python language-specific guide teaches you how to containerize a Python application using Docker. In this guide, you’ll learn how to:
 @y
-The Python language-specific guide teaches you how to containerize a Python application using Docker. In this guide, you’ll learn how to:
+言語別ガイド Python 向けでは、Docker を使ってコンテナー化した Python アプリケーションの生成方法について説明を始めます。
+このガイドでは以下について学んでいきます。
 @z
 
 @x
@@ -31,20 +32,21 @@ The Python language-specific guide teaches you how to containerize a Python appl
 * Configure a CI/CD pipeline for a containerized Python application using GitHub Actions
 * Deploy your containerized Python application locally to Kubernetes to test and debug your deployment
 @y
-* Containerize and run a Python application
-* Set up a local environment to develop a Python application using containers
-* Configure a CI/CD pipeline for a containerized Python application using GitHub Actions
-* Deploy your containerized Python application locally to Kubernetes to test and debug your deployment
+* Python アプリケーションをコンテナー化して実行します。
+* コンテナーを利用して Python アプリケーションを開発するローカル環境を構築します。
+* GitHub アクションを使って、コンテナー化した Python アプリケーションの CI/CD パイプラインを設定します。
+* コンテナー化した Python アプリケーションをローカルな Kubernetes にデプロイして、テストおよびデバッグを行います。
+ent
 @z
 
 @x
 Start by containerizing an existing Python application.
 @y
-Start by containerizing an existing Python application.
+では手元にある Python アプリケーションのコンテナー化からはじめます。
 @z
 
 @x
 {{< button text="Containerize a Python app" url="containerize.md" >}}
 @y
-{{< button text="Containerize a Python app" url="containerize.md" >}}
+{{< button text="Python アプリのコンテナー化" url="containerize.md" >}}
 @z

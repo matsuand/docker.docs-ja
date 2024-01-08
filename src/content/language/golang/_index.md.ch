@@ -13,7 +13,7 @@ toc_max: 2
 ---
 description: Containerize Go apps using Docker
 keywords: docker, getting started, go, golang, language, dockerfile
-title: Go language-specific guide
+title: Go 向けガイド
 toc_min: 1
 toc_max: 2
 ---
@@ -22,7 +22,7 @@ toc_max: 2
 @x
 This guide will show you how to create, test, and deploy containerized Go applications using Docker.
 @y
-This guide will show you how to create, test, and deploy containerized Go applications using Docker.
+このガイドでは、Docker を使ってコンテナー化した Go アプリケーションの生成、テストデプロイについて説明していきます。
 @z
 
 @x
@@ -124,5 +124,5 @@ Start by building your first Go image.
 @x
 {{< button text="Build your Go image" url="build-images.md" >}}
 @y
-{{< button text="Build your Go image" url="build-images.md" >}}
+{{< button text="Go イメージのビルド" url="build-images.md" >}}
 @z
