@@ -392,9 +392,13 @@ server authentication:
 @z
 
 @x
-    $ echo extendedKeyUsage = serverAuth >> extfile.cnf
+```console
+$ echo extendedKeyUsage = serverAuth >> extfile.cnf
+```
 @y
-    $ echo extendedKeyUsage = serverAuth >> extfile.cnf
+```console
+$ echo extendedKeyUsage = serverAuth >> extfile.cnf
+```
 @z
 
 @x
@@ -490,9 +494,13 @@ config file:
 @z
 
 @x
-    $ echo extendedKeyUsage = clientAuth > extfile-client.cnf
+```console
+$ echo extendedKeyUsage = clientAuth > extfile-client.cnf
+```
 @y
-    $ echo extendedKeyUsage = clientAuth > extfile-client.cnf
+```console
+$ echo extendedKeyUsage = clientAuth > extfile-client.cnf
+```
 @z
 
 @x

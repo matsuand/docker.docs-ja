@@ -221,7 +221,7 @@ menus:
       name: Get started
       parent: Developers
     - url: https://www.docker.com/blog/
-      name: Block
+      name: Blog
       parent: Developers
     - url: https://www.docker.com/docker-community
       name: Community
