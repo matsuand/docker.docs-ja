@@ -84,33 +84,29 @@ There's no need to restart Docker Desktop after reconfiguring.
 @z
 
 @x
-When Docker Desktop enters Resource Saver mode, a leaf icon displays on the
+When Docker Desktop enters Resource Saver mode: 
+- A leaf icon displays on the
 Docker Desktop status bar as well as on the Docker icon in
 the system tray. The following image shows the Linux VM CPU and memory utilization reduced
 to zero when Resource Saver mode is on. 
 @y
-When Docker Desktop enters Resource Saver mode, a leaf icon displays on the
+When Docker Desktop enters Resource Saver mode: 
+- A leaf icon displays on the
 Docker Desktop status bar as well as on the Docker icon in
 the system tray. The following image shows the Linux VM CPU and memory utilization reduced
 to zero when Resource Saver mode is on. 
 @z
 
 @x
-![Resource Saver Status Bar](../images/resource-saver-status-bar.png)
+   ![Resource Saver Status Bar](../images/resource-saver-status-bar.png)
 @y
-![Resource Saver Status Bar](../images/resource-saver-status-bar.png)
+   ![Resource Saver Status Bar](../images/resource-saver-status-bar.png)
 @z
 
 @x
-When Docker Desktop enters Resource Saver mode, Docker commands that don't run
-containers, for example listing container images or volumes, don't necessarily
-trigger an exit from Resource Saver mode as Docker Desktop can serve such
-commands without unnecessarily waking up the Linux VM.
+- Docker commands that don't run containers, for example listing container images or volumes, don't necessarily trigger an exit from Resource Saver mode as Docker Desktop can serve such commands without unnecessarily waking up the Linux VM.
 @y
-When Docker Desktop enters Resource Saver mode, Docker commands that don't run
-containers, for example listing container images or volumes, don't necessarily
-trigger an exit from Resource Saver mode as Docker Desktop can serve such
-commands without unnecessarily waking up the Linux VM.
+- Docker commands that don't run containers, for example listing container images or volumes, don't necessarily trigger an exit from Resource Saver mode as Docker Desktop can serve such commands without unnecessarily waking up the Linux VM.
 @z
 
 @x

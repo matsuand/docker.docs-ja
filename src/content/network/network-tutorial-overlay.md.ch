@@ -428,9 +428,13 @@ connect a service to each of them.
 @z
 
 @x
-    > **Note**: Services can only be created on a manager.
+    > **Note**
+    >
+    > Services can only be created on a manager.
 @y
-    > **Note**: Services can only be created on a manager.
+    > **Note**
+    >
+    > Services can only be created on a manager.
 @z
 
 @x
@@ -556,10 +560,14 @@ connect a service to each of them.
 @z
 
 @x
-    > **Note**: Even though overlay networks are automatically created on swarm
+    > **Note**
+    >
+    > Even though overlay networks are automatically created on swarm
     > worker nodes as needed, they are not automatically removed.
 @y
-    > **Note**: Even though overlay networks are automatically created on swarm
+    > **Note**
+    >
+    > Even though overlay networks are automatically created on swarm
     > worker nodes as needed, they are not automatically removed.
 @z
 
@@ -932,8 +940,12 @@ example also uses Linux hosts, but the same commands work on Windows.
 @z
 
 @x
+    > **Note**
+    >
     > Automatic DNS container discovery only works with unique container names.
 @y
+    > **Note**
+    >
     > Automatic DNS container discovery only works with unique container names.
 @z
 
@@ -1143,14 +1155,14 @@ need to have Docker installed and running.
     The default `bridge` network is listed, along with `host` and `none`. The
     latter two are not fully-fledged networks, but are used to start a container
     connected directly to the Docker daemon host's networking stack, or to start
-    a container with no network devices. **This tutorial will connect two
-    containers to the `bridge` network.**
+    a container with no network devices. This tutorial will connect two
+    containers to the `bridge` network.
 @y
     The default `bridge` network is listed, along with `host` and `none`. The
     latter two are not fully-fledged networks, but are used to start a container
     connected directly to the Docker daemon host's networking stack, or to start
-    a container with no network devices. **This tutorial will connect two
-    containers to the `bridge` network.**
+    a container with no network devices. This tutorial will connect two
+    containers to the `bridge` network.
 @z
 
 @x
@@ -1569,14 +1581,6 @@ learn about user-defined bridge networks, continue to the
 ## Other networking tutorials
 @y
 ## Other networking tutorials
-@z
-
-@x
-Now that you have completed the networking tutorials for overlay networks,
-you might want to run through these other networking tutorials:
-@y
-Now that you have completed the networking tutorials for overlay networks,
-you might want to run through these other networking tutorials:
 @z
 
 @x

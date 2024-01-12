@@ -108,7 +108,7 @@ aliases:
 
 @x
 Docker Desktop is a one-click-install application for your Mac, Linux, or Windows environment
-that lets you to build, share, and run containerized applications and microservices. 
+that lets you build, share, and run containerized applications and microservices. 
 @y
 Docker Desktop は Mac、Linux、Windows にワンクリックでインストールできるアプリケーションです。
 これにより、コンテナー化アプリケーションやマイクロサービスを構築し共有することができます。
@@ -138,7 +138,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 - [Docker Engine](../engine/index.md)
 - Docker CLI client
 - [Docker Scout](../scout/_index.md) (additional subscription may apply)
-- [Docker Buildx](../build/index.md)
+- [Docker Build](../build/index.md)
 - [Docker Extensions](extensions/index.md)
 - [Docker Compose](../compose/index.md)
 - [Docker Content Trust](../engine/security/trust/index.md)
@@ -148,7 +148,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 - [Docker Engine](../engine/index.md)
 - Docker CLI クライアント
 - [Docker Scout](../scout/_index.md) (additional subscription may apply)
-- [Docker Buildx](../build/index.md)
+- [Docker Build](../build/index.md)
 - [Docker Extensions](extensions/index.md)
 - [Docker Compose](../compose/index.md)
 - [Docker Content Trust](../engine/security/trust/index.md)
@@ -168,7 +168,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 * Ability to containerize and share any application on any cloud platform, in multiple languages and frameworks.
 * Quick installation and setup of a complete Docker development environment.
 * Includes the latest version of Kubernetes.
-* On Windows, the ability to toggle between Linux and Windows Server environments to build applications.
+* On Windows, the ability to toggle between Linux and Windows containers to build applications.
 * Fast and reliable performance with native Windows Hyper-V virtualization.
 * Ability to work natively on Linux through WSL 2 on Windows machines.
 * Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
@@ -176,7 +176,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 * どのようなクラウドプラットフォーム上においても、いろいろなアプリケーションをコンテナー化し共有することができます。複数のプログラミング言語やフレームワークにも対応します。
 * 完全な Docker 開発環境を、すばやくインストールし設定することができます。
 * 最新版の Kubernetes を提供します。
-* Windows においは、Linux と Windows Server を切り替えてアプリケーションを構築できます。
+* Windows においは、Linux と Windows のコンテナーを切り替えてアプリケーションを構築できます。
 * Windows のネイティブな Hyper-V 仮想技術を利用して、高速かつ信頼できる性能を提供します。
 * Windows マシン上の WSL 2 を通じて、Linux ネイティブのように機能します。
 * ソースコードやデータに対してボリュームマウントを可能にします。

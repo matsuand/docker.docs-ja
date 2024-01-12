@@ -110,12 +110,14 @@ $ docker run -d -P training/webapp python app.py
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > Containers have an internal network and an IP address.
 > Docker can have a variety of network configurations. You can see more
 > information on Docker networking [here](index.md).
 @y
-> **Note**:
+> **Note**
+>
 > Containers have an internal network and an IP address.
 > Docker can have a variety of network configurations. You can see more
 > information on Docker networking [here](index.md).
@@ -298,10 +300,12 @@ $ docker port nostalgic_morse 5000
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > The `-p` flag can be used multiple times to configure multiple ports.
 @y
-> **Note**:
+> **Note**
+>
 > The `-p` flag can be used multiple times to configure multiple ports.
 @z
 
@@ -312,12 +316,14 @@ $ docker port nostalgic_morse 5000
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > This section covers the legacy link feature in the default `bridge` network.
 > Refer to [differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
 > for more information on links in user-defined networks.
 @y
-> **Note**:
+> **Note**
+>
 > This section covers the legacy link feature in the default `bridge` network.
 > Refer to [differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
 > for more information on links in user-defined networks.
@@ -428,7 +434,8 @@ You can also use `docker inspect` to return the container's name.
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > Container names must be unique. That means you can only call
 > one container `web`. If you want to re-use a container name you must delete
 > the old container (with `docker container rm`) before you can create a new
@@ -436,7 +443,8 @@ You can also use `docker inspect` to return the container's name.
 > flag with the `docker run` command. This deletes the container
 > immediately after it is stopped.
 @y
-> **Note**:
+> **Note**
+>
 > Container names must be unique. That means you can only call
 > one container `web`. If you want to re-use a container name you must delete
 > the old container (with `docker container rm`) before you can create a new
@@ -668,16 +676,18 @@ target container of information related to the source container.
 @z
 
 @x
-> **Warning**:
-> It is important to understand that *all* environment variables originating
-> from Docker within a container are made available to *any* container
+> **Warning**
+>
+> It is important to understand that all environment variables originating
+> from Docker within a container are made available to any container
 > that links to it. This could have serious security implications if sensitive
 > data is stored in them.
 { .warning }
 @y
-> **Warning**:
-> It is important to understand that *all* environment variables originating
-> from Docker within a container are made available to *any* container
+> **Warning**
+>
+> It is important to understand that all environment variables originating
+> from Docker within a container are made available to any container
 > that links to it. This could have serious security implications if sensitive
 > data is stored in them.
 { .warning }
@@ -697,16 +707,10 @@ then Docker creates a `WEBDB_NAME=/web/webdb` variable in the `web` container.
 
 @x
 Docker also defines a set of environment variables for each port exposed by the
-source container. Each variable has a unique prefix in the form:
+source container. Each variable has a unique prefix in the form `<name>_PORT_<port>_<protocol>`
 @y
 Docker also defines a set of environment variables for each port exposed by the
-source container. Each variable has a unique prefix in the form:
-@z
-
-@x
-    <name>_PORT_<port>_<protocol>
-@y
-    <name>_PORT_<port>_<protocol>
+source container. Each variable has a unique prefix in the form `<name>_PORT_<port>_<protocol>`
 @z
 
 @x
@@ -952,11 +956,13 @@ PING webdb (172.17.0.5): 48 data bytes
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > In the example, you had to install `ping` because it was not included
 > in the container initially.
 @y
-> **Note**:
+> **Note**
+>
 > In the example, you had to install `ping` because it was not included
 > in the container initially.
 @z
@@ -972,12 +978,14 @@ to make use of your `db` container.
 @z
 
 @x
-> **Note**:
+> **Note**
+>
 > You can link multiple recipient containers to a single source. For
 > example, you could have multiple (differently named) web containers attached to your
 >`db` container.
 @y
-> **Note**:
+> **Note**
+>
 > You can link multiple recipient containers to a single source. For
 > example, you could have multiple (differently named) web containers attached to your
 >`db` container.

@@ -98,9 +98,15 @@ The following table describes the driver-specific options that you can pass to
 @z
 
 @x
-## Prerequisites
+## Examples
 @y
-## Prerequisites
+## Examples
+@z
+
+@x
+### Prerequisites
+@y
+### Prerequisites
 @z
 
 @x
@@ -112,8 +118,7 @@ The following table describes the driver-specific options that you can pass to
   `docker network create` all together and the driver will create a `dummy`
   interface that will enable local host connectivity to perform the examples.
 - Kernel requirements:
-    - To check your current kernel version, use `uname -r`
-    - IPvlan Linux kernel v4.2+ (support for earlier kernels exists but is buggy)
+    - IPvlan Linux kernel v4.2+ (support for earlier kernels exists but is buggy). To check your current kernel version, use `uname -r`
 @y
 - The examples on this page are all single host.
 - All examples can be performed on a single host running Docker. Any
@@ -123,14 +128,13 @@ The following table describes the driver-specific options that you can pass to
   `docker network create` all together and the driver will create a `dummy`
   interface that will enable local host connectivity to perform the examples.
 - Kernel requirements:
-    - To check your current kernel version, use `uname -r`
-    - IPvlan Linux kernel v4.2+ (support for earlier kernels exists but is buggy)
+    - IPvlan Linux kernel v4.2+ (support for earlier kernels exists but is buggy). To check your current kernel version, use `uname -r`
 @z
 
 @x
-## IPvlan L2 mode example usage
+### IPvlan L2 mode example usage
 @y
-## IPvlan L2 mode example usage
+### IPvlan L2 mode example usage
 @z
 
 @x
@@ -220,13 +224,13 @@ $ docker run --net=db_net -it --rm alpine /bin/sh
 @z
 
 @x
-The default mode for IPvlan is `l2`. If `-o ipvlan_mode=` are left unspecified,
+The default mode for IPvlan is `l2`. If `-o ipvlan_mode=` is left unspecified,
 the default mode will be used. Similarly, if the `--gateway` is left empty, the
 first usable address on the network will be set as the gateway. For example, if
 the subnet provided in the network create is `--subnet=192.168.1.0/24` then the
 gateway the container receives is `192.168.1.1`.
 @y
-The default mode for IPvlan is `l2`. If `-o ipvlan_mode=` are left unspecified,
+The default mode for IPvlan is `l2`. If `-o ipvlan_mode=` is left unspecified,
 the default mode will be used. Similarly, if the `--gateway` is left empty, the
 first usable address on the network will be set as the gateway. For example, if
 the subnet provided in the network create is `--subnet=192.168.1.0/24` then the
@@ -386,9 +390,9 @@ $ docker exec -it cid3 /bin/sh
 @z
 
 @x
-## IPvlan 802.1Q trunk L2 mode example usage
+### IPvlan 802.1Q trunk L2 mode example usage
 @y
-## IPvlan 802.1Q trunk L2 mode example usage
+### IPvlan 802.1Q trunk L2 mode example usage
 @z
 
 @x
@@ -496,9 +500,9 @@ underlying host.
 @z
 
 @x
-### VLAN ID 20
+#### VLAN ID 20
 @y
-### VLAN ID 20
+#### VLAN ID 20
 @z
 
 @x
@@ -544,9 +548,9 @@ $ docker run --net=ipvlan20 -it --name ivlan_test2 --rm alpine /bin/sh
 @z
 
 @x
-### VLAN ID 30
+#### VLAN ID 30
 @y
-### VLAN ID 30
+#### VLAN ID 30
 @z
 
 @x
@@ -718,9 +722,9 @@ are as follows:
 @z
 
 @x
-## IPvlan L3 mode example
+### IPvlan L3 mode example
 @y
-## IPvlan L3 mode example
+### IPvlan L3 mode example
 @z
 
 @x
@@ -784,7 +788,7 @@ mode that reduces a failure domain to a local host only.
   requires a netlink route in the default namespace pointing to the IPvlan parent
   interface.
 - The parent interface used in this example is `eth0` and it is on the subnet
-  `192.168.1.0/24`. Notice the `docker network` is **not** on the same subnet
+  `192.168.1.0/24`. Notice the `docker network` is not on the same subnet
   as `eth0`.
 - Unlike IPvlan l2 modes, different subnets/networks can ping one another as
   long as they share the same parent interface `-o parent=`.
@@ -793,7 +797,7 @@ mode that reduces a failure domain to a local host only.
   requires a netlink route in the default namespace pointing to the IPvlan parent
   interface.
 - The parent interface used in this example is `eth0` and it is on the subnet
-  `192.168.1.0/24`. Notice the `docker network` is **not** on the same subnet
+  `192.168.1.0/24`. Notice the `docker network` is not on the same subnet
   as `eth0`.
 - Unlike IPvlan l2 modes, different subnets/networks can ping one another as
   long as they share the same parent interface `-o parent=`.
@@ -934,9 +938,9 @@ host eth interface.
 @z
 
 @x
-## Dual stack IPv4 IPv6 IPvlan L2 mode
+### Dual stack IPv4 IPv6 IPvlan L2 mode
 @y
-## Dual stack IPv4 IPv6 IPvlan L2 mode
+### Dual stack IPv4 IPv6 IPvlan L2 mode
 @z
 
 @x
@@ -1224,15 +1228,15 @@ $ docker run --net=ipvlan140 --ip=192.168.140.10 -it --rm alpine /bin/sh
 @z
 
 @x
-## Dual stack IPv4 IPv6 IPvlan L3 mode
+### Dual stack IPv4 IPv6 IPvlan L3 mode
 @y
-## Dual stack IPv4 IPv6 IPvlan L3 mode
+### Dual stack IPv4 IPv6 IPvlan L3 mode
 @z
 
 @x
-**Example:** IPvlan L3 Mode Dual Stack IPv4/IPv6, Multi-Subnet w/ 802.1Q VLAN Tag:118
+Example: IPvlan L3 Mode Dual Stack IPv4/IPv6, Multi-Subnet w/ 802.1Q VLAN Tag:118
 @y
-**Example:** IPvlan L3 Mode Dual Stack IPv4/IPv6, Multi-Subnet w/ 802.1Q VLAN Tag:118
+Example: IPvlan L3 Mode Dual Stack IPv4/IPv6, Multi-Subnet w/ 802.1Q VLAN Tag:118
 @z
 
 @x
@@ -1366,14 +1370,14 @@ default dev eth0  metric 1024
 @z
 
 @x
-> *Note*
+> **Note**
 >
 > There may be a bug when specifying `--ip6=` addresses when you delete a
 > container with a specified v6 address and then start a new container with the
 > same v6 address it throws the following like the address isn't properly being
 > released to the v6 pool. It will fail to unmount the container and be left dead.
 @y
-> *Note*
+> **Note**
 >
 > There may be a bug when specifying `--ip6=` addresses when you delete a
 > container with a specified v6 address and then start a new container with the
@@ -1392,15 +1396,15 @@ docker: Error response from daemon: Address already in use.
 @z
 
 @x
-## Manually create 802.1Q links
+### Manually create 802.1Q links
 @y
-## Manually create 802.1Q links
+### Manually create 802.1Q links
 @z
 
 @x
-### VLAN ID 40
+#### VLAN ID 40
 @y
-### VLAN ID 40
+#### VLAN ID 40
 @z
 
 @x
@@ -1470,9 +1474,9 @@ $ docker run --net=ipvlan40 -it --name ivlan_test6 --rm alpine /bin/sh
 @z
 
 @x
-**Example:** VLAN sub-interface manually created with any name:
+Example: VLAN sub-interface manually created with any name:
 @y
-**Example:** VLAN sub-interface manually created with any name:
+Example: VLAN sub-interface manually created with any name:
 @z
 
 @x

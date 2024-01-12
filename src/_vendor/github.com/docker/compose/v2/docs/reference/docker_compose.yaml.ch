@@ -355,6 +355,7 @@ usage: docker compose
 pname: docker
 plink: docker.yaml
 cname:
+    - docker compose attach
     - docker compose build
     - docker compose config
     - docker compose cp
@@ -376,6 +377,7 @@ cname:
     - docker compose run
     - docker compose scale
     - docker compose start
+    - docker compose stats
     - docker compose stop
     - docker compose top
     - docker compose unpause
@@ -384,6 +386,7 @@ cname:
     - docker compose wait
     - docker compose watch
 clink:
+    - docker_compose_attach.yaml
     - docker_compose_build.yaml
     - docker_compose_config.yaml
     - docker_compose_cp.yaml
@@ -405,6 +408,7 @@ clink:
     - docker_compose_run.yaml
     - docker_compose_scale.yaml
     - docker_compose_start.yaml
+    - docker_compose_stats.yaml
     - docker_compose_stop.yaml
     - docker_compose_top.yaml
     - docker_compose_unpause.yaml
@@ -571,6 +575,7 @@ usage: docker compose
 pname: docker
 plink: docker.yaml
 cname:
+    - docker compose attach
     - docker compose build
     - docker compose config
     - docker compose cp
@@ -592,6 +597,7 @@ cname:
     - docker compose run
     - docker compose scale
     - docker compose start
+    - docker compose stats
     - docker compose stop
     - docker compose top
     - docker compose unpause
@@ -600,6 +606,7 @@ cname:
     - docker compose wait
     - docker compose watch
 clink:
+    - docker_compose_attach.yaml
     - docker_compose_build.yaml
     - docker_compose_config.yaml
     - docker_compose_cp.yaml
@@ -621,6 +628,7 @@ clink:
     - docker_compose_run.yaml
     - docker_compose_scale.yaml
     - docker_compose_start.yaml
+    - docker_compose_stats.yaml
     - docker_compose_stop.yaml
     - docker_compose_top.yaml
     - docker_compose_unpause.yaml

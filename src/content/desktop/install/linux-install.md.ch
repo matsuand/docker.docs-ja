@@ -36,7 +36,7 @@ This page contains information about general system requirements, supported plat
 @z
 
 @x
->Important
+> **Important**
 >
 >Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
 >
@@ -45,7 +45,7 @@ This page contains information about general system requirements, supported plat
 >For more information see [What is the difference between Docker Desktop for Linux and Docker Engine](../faqs/linuxfaqs.md#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine). 
 { .important } 
 @y
->Important
+> **Important**
 >
 >Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
 >
@@ -96,9 +96,9 @@ Docker supports Docker Desktop on the current LTS release of the aforementioned 
 @z
 
 @x
-## System requirements
+## General system requirements
 @y
-## System requirements
+## General system requirements
 @z
 
 @x
@@ -138,11 +138,11 @@ Docker Desktop for Linux runs a Virtual Machine (VM). For more information on wh
 @x
 > **Note**
 >
-> Docker does not provide support for running Docker Desktop in nested virtualization scenarios. We recommend that you run Docker Desktop for Linux natively on supported distributions.
+> Docker does not provide support for running Docker Desktop for Linux in nested virtualization scenarios. We recommend that you run Docker Desktop for Linux natively on supported distributions.
 @y
 > **Note**
 >
-> Docker does not provide support for running Docker Desktop in nested virtualization scenarios. We recommend that you run Docker Desktop for Linux natively on supported distributions.
+> Docker does not provide support for running Docker Desktop for Linux in nested virtualization scenarios. We recommend that you run Docker Desktop for Linux natively on supported distributions.
 @z
 
 @x
@@ -300,10 +300,14 @@ Sign out and sign back in so that your group membership is re-evaluated.
 @z
 
 @x
-Make sure you meet the system requirements outlined earlier and follow the distro-specific prerequisites.
+> **Important**
+>
+> Make sure you meet the system requirements outlined earlier and follow the distro-specific prerequisites.
 { .important } 
 @y
-Make sure you meet the system requirements outlined earlier and follow the distro-specific prerequisites.
+> **Important**
+>
+> Make sure you meet the system requirements outlined earlier and follow the distro-specific prerequisites.
 { .important } 
 @z
 
@@ -364,7 +368,7 @@ Make sure you meet the system requirements outlined earlier and follow the distr
 @z
 
 @x
-- [Get started with Docker](../../get-started/index.md) provides a general Docker tutorial.
+- [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](../faqs/general.md) provide answers to frequently asked questions.
@@ -372,7 +376,7 @@ Make sure you meet the system requirements outlined earlier and follow the distr
 - [Back up and restore data](../backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- [Get started with Docker](../../get-started/index.md) provides a general Docker tutorial.
+- [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](../faqs/general.md) provide answers to frequently asked questions.

@@ -28,9 +28,9 @@ Docker Desktop を開くと Docker Dashboard が表示されます。
 @z
 
 @x
-![Docker Dashboard on Containers view](../images/dashboard.PNG)
+![Docker Dashboard on Containers view](../images/dashboard.webp)
 @y
-![Docker Dashboard on Containers view](../images/dashboard.PNG)
+![Docker Dashboard on Containers view](../images/dashboard.webp)
 @z
 
 @x

@@ -214,43 +214,15 @@ Select the image from the list, select the **More options** button and select **
 @z
 
 @x
-You can remove individual images or use the **Clean up** option to delete unused and dangling images.
-@y
-You can remove individual images or use the **Clean up** option to delete unused and dangling images.
-@z
-
-@x
 An unused image is an image which is not used by any running or stopped containers. An image becomes dangling when you build a new version of the image with the same tag.
 @y
 An unused image is an image which is not used by any running or stopped containers. An image becomes dangling when you build a new version of the image with the same tag.
 @z
 
 @x
-To remove individual images, select the image from the list, select the **More options** button and select **Remove**
+To remove individual images, select the bin icon. 
 @y
-To remove individual images, select the image from the list, select the **More options** button and select **Remove**
-@z
-
-@x
-To remove an unused or a dangling image:
-@y
-To remove an unused or a dangling image:
-@z
-
-@x
-1. Select the **Clean up** option from the **Images on disk** status bar.
-2. Use the **Unused** or **Dangling** check boxes to select the type of images you would like to remove.
-@y
-1. Select the **Clean up** option from the **Images on disk** status bar.
-2. Use the **Unused** or **Dangling** check boxes to select the type of images you would like to remove.
-@z
-
-@x
-    The **Clean up** images status bar displays the total space you can reclaim by removing the selected images.
-3. Select **Remove** to confirm.
-@y
-    The **Clean up** images status bar displays the total space you can reclaim by removing the selected images.
-3. Select **Remove** to confirm.
+To remove individual images, select the bin icon. 
 @z
 
 @x
@@ -397,4 +369,14 @@ By default, the image list shows images sorted by push date: the newest images a
 @y
 When signed in, a new **Artifactory** tab appears in the **Images** view.
 By default, the image list shows images sorted by push date: the newest images appear higher in the list.
+@z
+
+@x
+## Additional resources
+- [Run Docker Hub images](../../guides/walkthroughs/run-hub-images.md)
+- [Publish your image](../../guides/walkthroughs/publish-your-image.md)
+@y
+## Additional resources
+- [Run Docker Hub images](../../guides/walkthroughs/run-hub-images.md)
+- [Publish your image](../../guides/walkthroughs/publish-your-image.md)
 @z

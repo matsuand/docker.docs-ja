@@ -165,6 +165,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: with-dependencies
+      value_type: bool
+      default_value: "false"
+      description: Also build dependencies (transitively).
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
 inherited_options:
     - option: dry-run
       value_type: bool
@@ -316,6 +326,16 @@ options:
       value_type: string
       description: |
         Set SSH authentications used when building service images. (use 'default' for using your default SSH Agent)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: with-dependencies
+      value_type: bool
+      default_value: "false"
+      description: Also build dependencies (transitively).
       deprecated: false
       hidden: false
       experimental: false

@@ -28,12 +28,12 @@ learn more about Docker networking in general, see the [overview](index.md).
 @z
 
 @x
-This topic includes three different tutorials. You can run each of them on
-Linux, Windows, or a Mac, but for the last two, you need a second Docker
+This topic includes two different tutorials. You can run each of them on
+Linux, Windows, or a Mac, but for the last one, you need a second Docker
 host running elsewhere.
 @y
-This topic includes three different tutorials. You can run each of them on
-Linux, Windows, or a Mac, but for the last two, you need a second Docker
+This topic includes two different tutorials. You can run each of them on
+Linux, Windows, or a Mac, but for the last one, you need a second Docker
 host running elsewhere.
 @z
 
@@ -123,14 +123,14 @@ need to have Docker installed and running.
     The default `bridge` network is listed, along with `host` and `none`. The
     latter two are not fully-fledged networks, but are used to start a container
     connected directly to the Docker daemon host's networking stack, or to start
-    a container with no network devices. **This tutorial will connect two
-    containers to the `bridge` network.**
+    a container with no network devices. This tutorial will connect two
+    containers to the `bridge` network.
 @y
     The default `bridge` network is listed, along with `host` and `none`. The
     latter two are not fully-fledged networks, but are used to start a container
     connected directly to the Docker daemon host's networking stack, or to start
-    a container with no network devices. **This tutorial will connect two
-    containers to the `bridge` network.**
+    a container with no network devices. This tutorial will connect two
+    containers to the `bridge` network.
 @z
 
 @x
@@ -1012,13 +1012,13 @@ connected to both networks.
 @x
 5.  On user-defined networks like `alpine-net`, containers can not only
     communicate by IP address, but can also resolve a container name to an IP
-    address. This capability is called **automatic service discovery**. Let's
+    address. This capability is called automatic service discovery. Let's
     connect to `alpine1` and test this out. `alpine1` should be able to resolve
     `alpine2` and `alpine4` (and `alpine1`, itself) to IP addresses.
 @y
 5.  On user-defined networks like `alpine-net`, containers can not only
     communicate by IP address, but can also resolve a container name to an IP
-    address. This capability is called **automatic service discovery**. Let's
+    address. This capability is called automatic service discovery. Let's
     connect to `alpine1` and test this out. `alpine1` should be able to resolve
     `alpine2` and `alpine4` (and `alpine1`, itself) to IP addresses.
 @z
@@ -1483,14 +1483,6 @@ connected to both networks.
 ## Other networking tutorials
 @y
 ## Other networking tutorials
-@z
-
-@x
-Now that you have completed the networking tutorials for standalone containers,
-you might want to run through these other networking tutorials:
-@y
-Now that you have completed the networking tutorials for standalone containers,
-you might want to run through these other networking tutorials:
 @z
 
 @x

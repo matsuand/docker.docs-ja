@@ -756,6 +756,18 @@ Turns on the containerd image store. This brings new features like faster contai
 @z
 
 @x
+## Notifications
+@y
+## Notifications
+@z
+
+@x
+{{< include "desktop-notifications-settings.md" >}}
+@y
+{{< include "desktop-notifications-settings.md" >}}
+@z
+
+@x
 ## Advanced
 @y
 ## Advanced
@@ -829,16 +841,4 @@ On the **Advanced** tab, you can reconfigure your initial installation settings:
   You are notified if changes are found and are able to restore the configuration directly from the notification.
 @y
   You are notified if changes are found and are able to restore the configuration directly from the notification.
-@z
-
-@x
-## Notifications
-@y
-## Notifications
-@z
-
-@x
-{{< include "desktop-notifications-settings.md" >}}
-@y
-{{< include "desktop-notifications-settings.md" >}}
 @z

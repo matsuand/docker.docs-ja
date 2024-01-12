@@ -2771,7 +2771,7 @@ Manuals:
         - path: /desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: /desktop/extensions/private-marketplace/
-          title: Configure a private marketplace (Beta)
+          title: Configure a private marketplace (Experimental)
 @y
 - sectiontitle: Docker Extensions
   section:
@@ -2786,7 +2786,7 @@ Manuals:
         - path: __SUBDIR__/desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: __SUBDIR__/desktop/extensions/private-marketplace/
-          title: Configure a private marketplace (Beta)
+          title: Configure a private marketplace (Experimental)
 @z
 
 @x
@@ -3134,6 +3134,10 @@ Manuals:
         section:
         - title: SonarQube
           path: /scout/integrations/code-quality/sonarqube/
+      - sectiontitle: Source code management
+        section:
+        - title: GitHub
+          path: /scout/integrations/source-code-management/github/
     - path: /scout/release-notes/
       title: Release notes
 @y
@@ -3153,6 +3157,10 @@ Manuals:
         section:
         - title: SonarQube
           path: __SUBDIR__/scout/integrations/code-quality/sonarqube/
+      - sectiontitle: Source code management
+        section:
+        - title: GitHub
+          path: __SUBDIR__/scout/integrations/source-code-management/github/
     - path: __SUBDIR__/scout/release-notes/
       title: Release notes
 @z

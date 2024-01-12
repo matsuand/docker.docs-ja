@@ -146,6 +146,36 @@ In order to work properly, `watch` relies on common executables. Make sure your 
 @z
 
 @x
+`watch` also requires that the container's `USER` can write to the target path so it can update files. A common pattern is for 
+initial content to be copied into the container using the `COPY` instruction in a Dockerfile. To ensure such files are owned 
+by the configured user, use the `COPY --chown` flag:
+@y
+`watch` also requires that the container's `USER` can write to the target path so it can update files. A common pattern is for 
+initial content to be copied into the container using the `COPY` instruction in a Dockerfile. To ensure such files are owned 
+by the configured user, use the `COPY --chown` flag:
+@z
+
+@x
+```dockerfile
+# Run as a non-privileged user
+RUN adduser -ms /bin/bash -u 1001 app
+USER app
+
+# Copy source files into application directory
+COPY --chown=app:app . /app
+```
+@y
+```dockerfile
+# Run as a non-privileged user
+RUN adduser -ms /bin/bash -u 1001 app
+USER app
+
+# Copy source files into application directory
+COPY --chown=app:app . /app
+```
+@z
+
+@x
 ### `action`
 @y
 ### `action`

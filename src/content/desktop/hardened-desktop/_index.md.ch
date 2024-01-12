@@ -55,19 +55,19 @@ grid:
 @z
 
 @x
->Note
+> **Note**
 >
->Hardened Docker Desktop is available to Docker Business customers only.
+> Hardened Docker Desktop is available to Docker Business customers only.
 @y
->Note
+> **Note**
 >
->Hardened Docker Desktop is available to Docker Business customers only.
+> Hardened Docker Desktop is available to Docker Business customers only.
 @z
 
 @x
-## What is Hardened Docker Desktop?
+### What is Hardened Docker Desktop?
 @y
-## What is Hardened Docker Desktop?
+### What is Hardened Docker Desktop?
 @z
 
 @x
@@ -89,9 +89,9 @@ Hardened Docker Desktop moves the ownership boundary for Docker Desktop configur
 @z
 
 @x
-## Who is it for?
+### Who is it for?
 @y
-## Who is it for?
+### Who is it for?
 @z
 
 @x
@@ -107,9 +107,9 @@ It is for security conscious organizations who:
 @z
 
 @x
-## What does Hardened Docker Desktop include?
+### What does Hardened Docker Desktop include?
 @y
-## What does Hardened Docker Desktop include?
+### What does Hardened Docker Desktop include?
 @z
 
 @x

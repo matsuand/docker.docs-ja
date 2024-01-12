@@ -68,15 +68,3 @@ To find out more about Docker Extensions, we recommend the video walkthrough fro
 @y
 <iframe width="750" height="315" src="https://www.youtube.com/embed/3rAGXS8pszQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 @z
-
-@x
-## Prerequisites
-@y
-## Prerequisites
-@z
-
-@x
-Docker Extensions are available as part of Docker Desktop 4.8.0 and later releases. [Download and install Docker Desktop 4.8.0 or later](../release-notes.md).
-@y
-Docker Extensions are available as part of Docker Desktop 4.8.0 and later releases. [Download and install Docker Desktop 4.8.0 or later](../release-notes.md).
-@z

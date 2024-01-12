@@ -52,12 +52,6 @@ You can use Dev Environments through the intuitive GUI in Docker Dashboard or st
 @z
 
 @x
-![Dev environments tab in Docker Desktop](../images/dev-env.PNG)
-@y
-![Dev environments tab in Docker Desktop](../images/dev-env.PNG)
-@z
-
-@x
 ## How does it work?
 @y
 ## How does it work?

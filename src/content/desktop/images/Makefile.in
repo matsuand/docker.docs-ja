@@ -247,22 +247,7 @@ copyfiles = \
 	containerd_feature_activation.png \
 	containerd_multiplatform.png      \
 	dashboard.PNG                     \
-	dev-env-gitbash.png               \
-	dev-env.PNG                       \
-	dev-share.PNG                     \
-	diagnose-support.png              \
-	extensions-marketplace.PNG        \
-	hyperv-enabled.png                \
-	notifications.svg                 \
-	resource-saver-settings.png       \
-	resource-saver-status-bar.png     \
-	shared-folder-on-demand.png       \
-	synched-file-sharing.png          \
-	troubleshoot.png                  \
-	virtualization-enabled.png        \
-	whale-x.png                       \
-	whale-x.svg                       \
-	wsl2-enabled.png
+	dashboard.webp                    /
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -453,6 +438,22 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
+	dev-env-gitbash.png               \
+	dev-env.PNG                       \
+	dev-share.PNG                     \
+	diagnose-support.png              \
+	extensions-marketplace.PNG        \
+	hyperv-enabled.png                \
+	notifications.svg                 \
+	resource-saver-settings.png       \
+	resource-saver-status-bar.png     \
+	shared-folder-on-demand.png       \
+	synched-file-sharing.png          \
+	troubleshoot.png                  \
+	virtualization-enabled.png        \
+	whale-x.png                       \
+	whale-x.svg                       \
+	wsl2-enabled.png
 
 .PHONY: all ctie
 all: ctie

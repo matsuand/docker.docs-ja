@@ -305,8 +305,8 @@ $ docker network create -d macvlan \
 
 @x
 Learn how to use the Macvlan driver in the
-[Macvlan networking tutorial](../network-tutorial-macvlan.md)
+[Macvlan networking tutorial](../network-tutorial-macvlan.md).
 @y
 Learn how to use the Macvlan driver in the
-[Macvlan networking tutorial](../network-tutorial-macvlan.md)
+[Macvlan networking tutorial](../network-tutorial-macvlan.md).
 @z

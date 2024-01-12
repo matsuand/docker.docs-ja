@@ -93,6 +93,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: orphans
+      value_type: bool
+      default_value: "true"
+      description: Include orphaned services (not declared by project)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: quiet
       shorthand: q
       value_type: bool
@@ -193,6 +203,16 @@ options:
       value_type: bool
       default_value: "false"
       description: Don't truncate output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: orphans
+      value_type: bool
+      default_value: "true"
+      description: Include orphaned services (not declared by project)
       deprecated: false
       hidden: false
       experimental: false

@@ -202,6 +202,7 @@ AC_CONFIG_FILES([
 	src/content/scout/integrations/code-quality/Makefile
 	src/content/scout/integrations/environment/Makefile
 	src/content/scout/integrations/registry/Makefile
+	src/content/scout/integrations/source-code-management/Makefile
 	src/content/scout/policy/Makefile
 	src/content/security/Makefile
 	src/content/security/for-admins/Makefile

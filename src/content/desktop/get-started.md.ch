@@ -72,21 +72,33 @@ Docker の利用にあたっては、Docker Dashboard の右上にある **サ�
 @z
 
 @x
-Once signed in, you can access your Docker Hub repositories directly from Docker Desktop.
+In large enterprises where admin access is restricted, administrators can [Configure registry.json to enforce sign-in](../security/for-admins/configure-sign-in.md). 
 @y
-サインインすると Docker Desktop 内から直接 Docker Hub リポジトリにアクセスできるようになります。
+In large enterprises where admin access is restricted, administrators can [Configure registry.json to enforce sign-in](../security/for-admins/configure-sign-in.md). 
 @z
 
 @x
-Authenticated users also get a higher pull rate limit compared to anonymous users. For example, if you are authenticated, you get 200 pulls per 6 hour period, compared to 100 pulls per 6 hour period per IP address for anonymous users. For more information, see [Download rate limit](../docker-hub/download-rate-limit.md).
+## Benefits of signing in
 @y
-Authenticated users also get a higher pull rate limit compared to anonymous users. For example, if you are authenticated, you get 200 pulls per 6 hour period, compared to 100 pulls per 6 hour period per IP address for anonymous users. For more information, see [Download rate limit](../docker-hub/download-rate-limit.md).
+## Benefits of signing in
 @z
 
 @x
-In large enterprises where admin access is restricted, administrators can [Configure registry.json to enforce sign-in](../security/for-admins/configure-sign-in.md). Enforcing developers to authenticate through Docker Desktop also allows administrators to improve their organization’s security posture for containerized development by taking advantage of [Hardened Desktop](hardened-desktop/index.md).
+- You can access your Docker Hub repositories directly from Docker Desktop.
 @y
-In large enterprises where admin access is restricted, administrators can [Configure registry.json to enforce sign-in](../security/for-admins/configure-sign-in.md). Enforcing developers to authenticate through Docker Desktop also allows administrators to improve their organization’s security posture for containerized development by taking advantage of [Hardened Desktop](hardened-desktop/index.md).
+- You can access your Docker Hub repositories directly from Docker Desktop.
+@z
+
+@x
+- Authenticated users also get a higher pull rate limit compared to anonymous users. For example, if you are authenticated, you get 200 pulls per 6 hour period, compared to 100 pulls per 6 hour period per IP address for anonymous users. For more information, see [Download rate limit](../docker-hub/download-rate-limit.md).
+@y
+- Authenticated users also get a higher pull rate limit compared to anonymous users. For example, if you are authenticated, you get 200 pulls per 6 hour period, compared to 100 pulls per 6 hour period per IP address for anonymous users. For more information, see [Download rate limit](../docker-hub/download-rate-limit.md).
+@z
+
+@x
+- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](hardened-desktop/index.md).
+@y
+- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](hardened-desktop/index.md).
 @z
 
 @x
@@ -100,9 +112,9 @@ In large enterprises where admin access is restricted, administrators can [Confi
 @z
 
 @x
-### Signing in with Docker Desktop for Linux
+## Signing in with Docker Desktop for Linux
 @y
-### Docker Desktop for Linux におけるサインイン  {#signing-in-with-docker-desktop-for-linux}
+## Docker Desktop for Linux におけるサインイン  {#signing-in-with-docker-desktop-for-linux}
 @z
 
 @x

@@ -308,15 +308,21 @@ Looking for information on using Windows containers?
 @z
 
 @x
-1. Double-click **Docker Desktop Installer.exe** to run the installer.
+1. Download the installer using the download button at the top of the page, or from the [release notes](../release-notes.md).
 @y
-1. **Docker Desktop Installer.exe** をダブルクリックしてインストーラーを起動します。
+1. ページ最上部にあるダウンロードボタンをクリックしてインストーラーをダウンロードするか、あるいは [リリースノート](../release-notes.md) ページからダウンロードします。
 @z
 
 @x
-2. When prompted, ensure the **Use WSL 2 instead of Hyper-V** option on the Configuration page is selected or not depending on your choice of backend.
+2. Double-click `Docker Desktop Installer.exe` to run the installer.
 @y
-2. プロンプト画面が表示されたら、バックエンドでの選択状況に従って Configuration ページにおける **Use WSL 2 instead of Hyper-V** オプションのオンオフが設定されていることを確認してください。
+2. `Docker Desktop Installer.exe` をダブルクリックしてインストーラーを起動します。
+@z
+
+@x
+3. When prompted, ensure the **Use WSL 2 instead of Hyper-V** option on the Configuration page is selected or not depending on your choice of backend.
+@y
+3. プロンプト画面が表示されたら、バックエンドでの選択状況に従って Configuration ページにおける **Use WSL 2 instead of Hyper-V** オプションのオンオフが設定されていることを確認してください。
 @z
 
 @x
@@ -326,25 +332,33 @@ Looking for information on using Windows containers?
 @z
 
 @x
-3. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+4. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 @y
-3. インストールウィザードの手順に従ってインストーラーを承認して、インストールを完了させます。
+4. インストールウィザードの手順に従ってインストーラーを承認して、インストールを完了させます。
 @z
 
 @x
-4. When the installation is successful, select **Close** to complete the installation process.
+5. When the installation is successful, select **Close** to complete the installation process.
 @y
-4. インストールが正常に行われたら **Close** をクリックして作業を終了します。
+5. インストールが正常に行われたら **Close** をクリックして作業を終了します。
 @z
 
 @x
-5. If your admin account is different to your user account, you must add the user to the **docker-users** group. Run **Computer Management** as an **administrator** and navigate to **Local Users and Groups** > **Groups** > **docker-users**. Right-click to add the user to the group.
-   Sign out and sign back in for the changes to take effect.
+If your admin account is different to your user account, you must add the user to the **docker-users** group:
 @y
-5. 管理アカウントが利用しているアカウントと異なる場合、そのアカウントを **docker-users** グループに追加する必要があります。
-   **administrator**（管理者）として **Computer Management**（コンピューターの管理）を実行し、**Local Users and Groups** > **Groups** > **docker-users** を選びます。
-   このグループに対して、右クリックメニューからユーザーを追加します。
-   変更を有効にするため、いったんサインアウトしてからサインインし直します。
+管理アカウントが利用しているアカウントと異なる場合、そのアカウントを **docker-users** グループに追加する必要があります。
+@z
+
+@x
+1. Run **Computer Management** as an **administrator**.
+2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
+3. Right-click to add the user to the group.
+4. Sign out and sign back in for the changes to take effect.
+@y
+1. **administrator**（管理者）として **Computer Management**（コンピューターの管理）を実行します。
+2. **Local Users and Groups** > **Groups** > **docker-users** を選びます。
+3. このグループに対して、右クリックメニューからユーザーを追加します。
+4. 変更を有効にするため、いったんサインアウトしてからサインインし直します。
 @z
 
 @x
@@ -356,9 +370,9 @@ Looking for information on using Windows containers?
 @z
 
 @x
-After downloading **Docker Desktop Installer.exe**, run the following command in a terminal to install Docker Desktop:
+After downloading `Docker Desktop Installer.exe`, run the following command in a terminal to install Docker Desktop:
 @y
-**Docker Desktop Installer.exe** をダウンロードしたら、端末から以下のコマンドを実行して Docker Desktop をインストールします。
+`Docker Desktop Installer.exe` をダウンロードしたら、端末から以下のコマンドを実行して Docker Desktop をインストールします。
 @z
 
 @x
@@ -539,7 +553,7 @@ Docker Desktop を起動するには、以下を実行します。
 @z
 
 @x
-- [Get started with Docker](/get-started/) is a tutorial that teaches you how to deploy a multi-service stack.
+- [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, and
   how to get support.
@@ -547,7 +561,7 @@ Docker Desktop を起動するには、以下を実行します。
 - [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
 - [Back up and restore data](../backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
-- [Docker をはじめよう](/get-started/) はマルチサービススタックのデプロイ方法を説明するチュートリアルです。
+- [Docker をはじめよう](../../guides/get-started/_index.md)。
 - [Docker Desktop の確認](../use-desktop/index.md) とその全機能。
 - [トラブルシューティング](../troubleshoot/overview.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
 - [FAQ](../faqs/general.md) ではよくたずねられる質問を示しています。

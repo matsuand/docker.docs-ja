@@ -98,9 +98,11 @@ The inspection view contains a number of tabs:
 @z
 
 @x
-### Info tab
+{{< tabs >}}
+{{< tab name="Info" >}}
 @y
-### Info tab
+{{< tabs >}}
+{{< tab name="Info" >}}
 @z
 
 @x
@@ -244,9 +246,11 @@ attestations such as SBOM and provenance data.
 @z
 
 @x
-### Source tab
+{{< /tab >}}
+{{< tab name="Sources" >}}
 @y
-### Source tab
+{{< /tab >}}
+{{< tab name="Sources" >}}
 @z
 
 @x
@@ -258,9 +262,11 @@ used to create the build.
 @z
 
 @x
-### Error tab
+{{< /tab >}}
+{{< tab name="Error" >}}
 @y
-### Error tab
+{{< /tab >}}
+{{< tab name="Error" >}}
 @z
 
 @x
@@ -278,9 +284,11 @@ frontend source with the error message inline where the build failed.
 @z
 
 @x
-### Logs tab
+{{< /tab >}}
+{{< tab name="Logs" >}}
 @y
-### Logs tab
+{{< /tab >}}
+{{< tab name="Logs" >}}
 @z
 
 @x
@@ -292,9 +300,11 @@ the logs are updated in real-time.
 @z
 
 @x
-### History tab
+{{< /tab >}}
+{{< tab name="History" >}}
 @y
-### History tab
+{{< /tab >}}
+{{< tab name="History" >}}
 @z
 
 @x
@@ -319,6 +329,14 @@ or in the **Past builds** list below the history tab.
 @y
 You can navigate to and inspect a related build by selecting it in the chart,
 or in the **Past builds** list below the history tab.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x

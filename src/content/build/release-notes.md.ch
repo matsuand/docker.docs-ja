@@ -10,8 +10,8 @@ toc_max: 2
 ---
 @y
 ---
-title: Build release notes
-description: Release notes for Buildx
+title: Build リリースノート
+description: Buildx のリリースノート
 keywords: build, buildx, buildkit, release notes
 toc_max: 2
 ---
@@ -23,6 +23,40 @@ fixes in [Docker Buildx](https://github.com/docker/buildx).
 @y
 This page contains information about the new features, improvements, and bug
 fixes in [Docker Buildx](https://github.com/docker/buildx).
+@z
+
+@x
+## 0.12.1
+@y
+## 0.12.1
+@z
+
+@x
+{{< release-date date="2024-01-12" >}}
+@y
+{{< release-date date="2024-01-12" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.12.1).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.12.1).
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix incorrect validation of some `--driver-opt` values that could cause a panic and corrupt state to be stored.
+  [docker/buildx#2176](https://github.com/docker/buildx/pull/2176)
+@y
+- Fix incorrect validation of some `--driver-opt` values that could cause a panic and corrupt state to be stored.
+  [docker/buildx#2176](https://github.com/docker/buildx/pull/2176)
 @z
 
 @x

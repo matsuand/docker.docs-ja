@@ -52,11 +52,11 @@ describes how to achieve that, and what caveats you need to be aware of.
 @z
 
 @x
-Docker installs two custom iptables chains named `DOCKER-USER` and `DOCKER`,
+Docker installs two custom `iptables` chains named `DOCKER-USER` and `DOCKER`,
 and it ensures that incoming packets are always checked by these two chains
 first. These chains are part of the `FORWARD` chain.
 @y
-Docker installs two custom iptables chains named `DOCKER-USER` and `DOCKER`,
+Docker installs two custom `iptables` chains named `DOCKER-USER` and `DOCKER`,
 and it ensures that incoming packets are always checked by these two chains
 first. These chains are part of the `FORWARD` chain.
 @z
@@ -172,11 +172,11 @@ $ iptables -I DOCKER-USER -i ext_if ! -s 192.168.1.1 -j DROP
 @z
 
 @x
-Please note that you will need to change `ext_if` to correspond with your
+You will need to change `ext_if` to correspond with your
 host's actual external interface. You could instead allow connections from a
 source subnet. The following rule only allows access from the subnet `192.168.1.0/24`:
 @y
-Please note that you will need to change `ext_if` to correspond with your
+You will need to change `ext_if` to correspond with your
 host's actual external interface. You could instead allow connections from a
 source subnet. The following rule only allows access from the subnet `192.168.1.0/24`:
 @z
@@ -386,9 +386,9 @@ $ docker network create mybridge \
 @z
 
 @x
-## Integration with Firewalld
+## Integration with firewalld
 @y
-## Integration with Firewalld
+## Integration with firewalld
 @z
 
 @x

@@ -150,11 +150,11 @@ host.
 @z
 
 @x
-    ```basn
+    ```console
     docker container stop my_nginx
     ```
 @y
-    ```basn
+    ```console
     docker container stop my_nginx
     ```
 @z
@@ -163,14 +163,6 @@ host.
 ## Other networking tutorials
 @y
 ## Other networking tutorials
-@z
-
-@x
-Now that you have completed the networking tutorials for standalone containers,
-you might want to run through these other networking tutorials:
-@y
-Now that you have completed the networking tutorials for standalone containers,
-you might want to run through these other networking tutorials:
 @z
 
 @x

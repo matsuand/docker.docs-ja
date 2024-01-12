@@ -34,9 +34,9 @@ and quality. They appear as **Reviewed** in the Marketplace.
 @z
 
 @x
-Self-published extensions are autonomously published by extension developers. They appear as **Not reviewed** in the Marketplace.
+Self-published extensions are autonomously published by extension developers and go through an automated validation process. They appear as **Not reviewed** in the Marketplace.
 @y
-Self-published extensions are autonomously published by extension developers. They appear as **Not reviewed** in the Marketplace.
+Self-published extensions are autonomously published by extension developers and go through an automated validation process. They appear as **Not reviewed** in the Marketplace.
 @z
 
 @x

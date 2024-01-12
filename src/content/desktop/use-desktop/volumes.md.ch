@@ -110,3 +110,11 @@ To remove a volume, hover over the volume and then select the **Delete** icon. A
 @y
 To remove a volume, hover over the volume and then select the **Delete** icon. Alternatively, select the volume from the list and then select the **Delete** button.
 @z
+
+@x
+## Additional resources
+- [Persist container data](../../guides/walkthroughs/persist-data.md)
+@y
+## Additional resources
+- [Persist container data](../../guides/walkthroughs/persist-data.md)
+@z

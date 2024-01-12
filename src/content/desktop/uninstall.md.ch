@@ -16,6 +16,22 @@ title: Uninstall Docker Desktop
 @z
 
 @x
+> **Warning**
+>
+> Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
+> other Docker-related data local to the machine, and removes the files generated
+> by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](backup-and-restore.md) section .
+{ .warning }
+@y
+> **Warning**
+>
+> Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
+> other Docker-related data local to the machine, and removes the files generated
+> by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](backup-and-restore.md) section .
+{ .warning }
+@z
+
+@x
 {{< tabs >}}
 {{< tab name="Windows" >}}
 @y
@@ -280,9 +296,9 @@ $ sudo apt purge docker-desktop
 @z
 
 @x
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.  preserve important data before uninstalling.
+Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.
 @y
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.  preserve important data before uninstalling.
+Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.
 @z
 
 @x
@@ -393,20 +409,4 @@ Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/conf
 @y
 {{< /tab >}}
 {{< /tabs >}}
-@z
-
-@x
-> **Important**
->
-> Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
-> other Docker-related data local to the machine, and removes the files generated
-> by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](backup-and-restore.md) section .
-{ .important }
-@y
-> **Important**
->
-> Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
-> other Docker-related data local to the machine, and removes the files generated
-> by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](backup-and-restore.md) section .
-{ .important }
 @z

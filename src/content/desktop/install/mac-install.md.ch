@@ -174,23 +174,27 @@ Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to ins
 @z
 
 @x
-1. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to
-    the **Applications** folder.
+1. Download the installer using the download buttons at the top of the page, or from the [release notes](../release-notes.md).
 @y
-1. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to
-    the **Applications** folder.
+1. Download the installer using the download buttons at the top of the page, or from the [release notes](../release-notes.md).
 @z
 
 @x
-2. Double-click `Docker.app` in the **Applications** folder to start Docker.
+2. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to the **Applications** folder.
 @y
-2. Double-click `Docker.app` in the **Applications** folder to start Docker.
+2. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to the **Applications** folder.
 @z
 
 @x
-3. The Docker menu displays the Docker Subscription Service Agreement.
+3. Double-click `Docker.app` in the **Applications** folder to start Docker.
 @y
-3. The Docker menu displays the Docker Subscription Service Agreement.
+3. Double-click `Docker.app` in the **Applications** folder to start Docker.
+@z
+
+@x
+4. The Docker menu displays the Docker Subscription Service Agreement.
+@y
+4. The Docker menu displays the Docker Subscription Service Agreement.
 @z
 
 @x
@@ -208,9 +212,9 @@ Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to ins
 @z
 
 @x
-4. Select **Accept** to continue. 
+5. Select **Accept** to continue. 
 @y
-4. Select **Accept** to continue. 
+5. Select **Accept** to continue. 
 @z
 
 @x
@@ -221,16 +225,24 @@ Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to ins
 
 @x
    For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
-5. From the installation window, select either: 
-   - **Use recommended settings (Requires password)**. This let's Docker Desktop automatically set the necessary configuration settings. 
-   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](../settings/mac.md#advanced), for more information and how to set the location of the Docker CLI tools.
-6. Select **Finish**. If you have applied any of the above configurations that require a password in step 5, enter your password to confirm your choice.  
 @y
    For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
-5. From the installation window, select either: 
+@z
+
+@x
+6. From the installation window, select either: 
    - **Use recommended settings (Requires password)**. This let's Docker Desktop automatically set the necessary configuration settings. 
    - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](../settings/mac.md#advanced), for more information and how to set the location of the Docker CLI tools.
-6. Select **Finish**. If you have applied any of the above configurations that require a password in step 5, enter your password to confirm your choice.  
+@y
+6. From the installation window, select either: 
+   - **Use recommended settings (Requires password)**. This let's Docker Desktop automatically set the necessary configuration settings. 
+   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](../settings/mac.md#advanced), for more information and how to set the location of the Docker CLI tools.
+@z
+
+@x
+7. Select **Finish**. If you have applied any of the above configurations that require a password in step 6, enter your password to confirm your choice.  
+@y
+7. Select **Finish**. If you have applied any of the above configurations that require a password in step 6, enter your password to confirm your choice.  
 @z
 
 @x
@@ -242,9 +254,9 @@ Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to ins
 @z
 
 @x
-After downloading `Docker.dmg`, run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
+After downloading `Docker.dmg` from either the download buttons at the top of the page or from the [release notes](../release-notes.md), run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
 @y
-After downloading `Docker.dmg`, run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
+After downloading `Docker.dmg` from either the download buttons at the top of the page or from the [release notes](../release-notes.md), run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
 @z
 
 @x
@@ -310,7 +322,7 @@ The `install` command accepts the following flags:
 @z
 
 @x
-- [Get started with Docker](../../get-started/index.md) provides a general Docker tutorial.
+- [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.
@@ -319,7 +331,7 @@ The `install` command accepts the following flags:
 - [Back up and restore data](../backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- [Get started with Docker](../../get-started/index.md) provides a general Docker tutorial.
+- [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.

@@ -295,7 +295,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = ci code-quality environment registry
+SUBDIRS = ci code-quality environment registry source-code-management
 bases = \
 	_index.md
 

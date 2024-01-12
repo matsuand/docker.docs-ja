@@ -301,10 +301,11 @@ options:
       kubernetes: false
       swarm: false
     - option: service-ports
+      shorthand: P
       value_type: bool
       default_value: "false"
       description: |
-        Run command with the service's ports enabled and mapped to the host.
+        Run command with all service's ports enabled and mapped to the host.
       deprecated: false
       hidden: false
       experimental: false
@@ -541,10 +542,11 @@ options:
       kubernetes: false
       swarm: false
     - option: service-ports
+      shorthand: P
       value_type: bool
       default_value: "false"
       description: |
-        Run command with the service's ports enabled and mapped to the host.
+        Run command with all service's ports enabled and mapped to the host.
       deprecated: false
       hidden: false
       experimental: false

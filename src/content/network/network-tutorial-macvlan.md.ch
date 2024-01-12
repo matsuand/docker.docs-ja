@@ -178,10 +178,10 @@ on your network, your container appears to be physically attached to the network
 @z
 
 @x
-    ```none
+    ```console
     $ docker container inspect my-macvlan-alpine
 @y
-    ```none
+    ```console
     $ docker container inspect my-macvlan-alpine
 @z
 
@@ -402,10 +402,10 @@ be physically attached to the network.
 @z
 
 @x
-    ```none
+    ```console
     $ docker container inspect my-second-macvlan-alpine
 @y
-    ```none
+    ```console
     $ docker container inspect my-second-macvlan-alpine
 @z
 
@@ -531,23 +531,11 @@ be physically attached to the network.
 
 @x
 ## Other networking tutorials
-@y
-## Other networking tutorials
-@z
-
-@x
-Now that you have completed the networking tutorial for `macvlan` networks,
-you might want to run through these other networking tutorials:
-@y
-Now that you have completed the networking tutorial for `macvlan` networks,
-you might want to run through these other networking tutorials:
-@z
-
-@x
 - [Standalone networking tutorial](network-tutorial-standalone.md)
 - [Overlay networking tutorial](network-tutorial-overlay.md)
 - [Host networking tutorial](network-tutorial-host.md)
 @y
+## Other networking tutorials
 - [Standalone networking tutorial](network-tutorial-standalone.md)
 - [Overlay networking tutorial](network-tutorial-overlay.md)
 - [Host networking tutorial](network-tutorial-host.md)

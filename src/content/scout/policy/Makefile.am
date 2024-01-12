@@ -2,9 +2,10 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index.md    \
-	ci.md        \
-	configure.md \
+	_index.md      \
+	ci.md          \
+	configure.md   \
+	remediation.md \
 	view.md
 
 include $(top_srcdir)/build-aux/common.mk

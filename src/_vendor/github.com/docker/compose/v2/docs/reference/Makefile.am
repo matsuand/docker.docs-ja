@@ -10,6 +10,7 @@ bases = \
 	compose_alpha_scale.md            \
 	compose_alpha_viz.md              \
 	compose_alpha_watch.md            \
+	compose_attach.md                 \
 	compose_build.md                  \
 	compose_config.md                 \
 	compose_cp.md                     \
@@ -31,6 +32,7 @@ bases = \
 	compose_run.md                    \
 	compose_scale.md                  \
 	compose_start.md                  \
+	compose_stats.md                  \
 	compose_stop.md                   \
 	compose_top.md                    \
 	compose_unpause.md                \
@@ -45,6 +47,7 @@ bases = \
 	docker_compose_alpha_scale.yaml   \
 	docker_compose_alpha_viz.yaml     \
 	docker_compose_alpha_watch.yaml   \
+	docker_compose_attach.yaml        \
 	docker_compose_build.yaml         \
 	docker_compose_config.yaml        \
 	docker_compose_convert.yaml       \
@@ -67,6 +70,7 @@ bases = \
 	docker_compose_run.yaml           \
 	docker_compose_scale.yaml         \
 	docker_compose_start.yaml         \
+	docker_compose_stats.yaml         \
 	docker_compose_stop.yaml          \
 	docker_compose_top.yaml           \
 	docker_compose_unpause.yaml       \

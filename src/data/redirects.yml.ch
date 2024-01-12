@@ -1172,6 +1172,24 @@
   - /go/scout-policy/
 "/scout/policy/configure/":
   - /go/scout-configure-policy/
+@y
+# Docker Scout
+"/scout/":
+  - /go/scout/
+  - /go/docker-scout/
+"/scout/quickstart/":
+  - /go/scout-quickstart/
+"/scout/dashboard/":
+  - /go/scout-dashboard/
+"/scout/ci/":
+  - /go/scout-ci/
+"/scout/policy/":
+  - /go/scout-policy/
+"/scout/policy/configure/":
+  - /go/scout-configure-policy/
+@z
+
+@x
 # integrations
 "/scout/integrations/ci/gha/":
   - "/go/scout-gha/"
@@ -1196,20 +1214,6 @@
 "/scout/integrations/code-quality/sonarqube/":
   - "/go/scout-sq/"
 @y
-# Docker Scout
-"/scout/":
-  - /go/scout/
-  - /go/docker-scout/
-"/scout/quickstart/":
-  - /go/scout-quickstart/
-"/scout/dashboard/":
-  - /go/scout-dashboard/
-"/scout/ci/":
-  - /go/scout-ci/
-"/scout/policy/":
-  - /go/scout-policy/
-"/scout/policy/configure/":
-  - /go/scout-configure-policy/
 # integrations
 "/scout/integrations/ci/gha/":
   - "/go/scout-gha/"
