@@ -16,7 +16,7 @@ aliases:
 description: Learn how to create repositories on Docker Hub
 keywords: Docker, docker, trusted, registry, accounts, plans, Dockerfile, Docker Hub,
   webhooks, docs, documentation, manage, repos
-title: Create repositories
+title: リポジトリの生成
 toc_max: 3
 aliases:
 - /docker-hub/repos/configure/
@@ -40,7 +40,7 @@ A single Docker Hub repository can hold many Docker images which are stored as *
 @x
 ## Create a repository
 @y
-## Create a repository
+## リポジトリの生成 {#create-a-repository}
 @z
 
 @x
@@ -48,9 +48,9 @@ A single Docker Hub repository can hold many Docker images which are stored as *
 2. Select **Repositories**.
 3. Near the top-right corner, select **Create Repository**.
 @y
-1. Sign in to Docker Hub.
-2. Select **Repositories**.
-3. Near the top-right corner, select **Create Repository**.
+1. Docker Hub へサインインします。
+2. **Repositories** (リポジトリ) を選びます。
+3. 右上隅にある **Create Repository** (リポジトリの生成) をクリックします。
 @z
 
 @x
@@ -112,7 +112,7 @@ When creating a new repository:
 @x
 ### Add a repository overview
 @y
-### Add a repository overview
+### Add a repository overview {#add-a-repository-overview}
 @z
 
 @x

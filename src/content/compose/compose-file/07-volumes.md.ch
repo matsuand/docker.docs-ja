@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Volumes top-level element
+---
+title: Volumes top-level elements
+description: Explore all the attributes the volumes top-level element can have.
+keywords: compose, compose specification, volumes, compose file reference
+---
 @y
-# Volumes top-level element
+---
+title: Volumes top-level elements
+description: Explore all the attributes the volumes top-level element can have.
+keywords: compose, compose specification, volumes, compose file reference
+---
 @z
 
 @x

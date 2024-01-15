@@ -32,23 +32,22 @@ grid:
 description: Learn about Docker Hub features and the administrative tasks available
   in Docker Hub
 keywords: Docker, docker, docker hub, hub, overview
-title: Overview of Docker Hub
+title: Docker Hub 概要
 grid:
-- title: Create a Docker ID
-  description: Register and create a new Docker ID.
+- title: Docker ID の生成
+  description: 新規 Docker ID を生成登録します。
   icon: fingerprint
   link: __SUBDIR__/docker-id
-- title: Create a repository
-  description: Create a repository to share your images with your team, customers,
-    or the Docker community.
+- title: リポジトリの生成
+  description: 生成したリポジトリを開発チーム、顧客、Docker コミュニティと共有します。
   icon: inbox
   link: __SUBDIR__/docker-hub/repos
-- title: Quickstart
-  description: Step-by-step instructions on getting started on Docker Hub.
+- title: クィックスタート
+  description: Docker Hub をつかった手順を一つひとつ説明します。
   icon: explore
   link: __SUBDIR__/docker-hub/quickstart
-- title: Release notes
-  description: Find out about new features, improvements, and bug fixes.
+- title: リリースノート
+  description: 新機能、改善、バグフィックスを確認します。
   icon: note_add
   link: __SUBDIR__/docker-hub/release-notes
 ---
@@ -57,13 +56,13 @@ grid:
 @x
 Docker Hub is a service provided by Docker for finding and sharing container images.
 @y
-Docker Hub is a service provided by Docker for finding and sharing container images.
+Docker Hub は Docker が提供するサービスであり、コンテナーイメージの検索と共有を行います。
 @z
 
 @x
 It's the world’s largest repository of container images with an array of content sources including container community developers, open source projects, and independent software vendors (ISV) building and distributing their code in containers.
 @y
-It's the world’s largest repository of container images with an array of content sources including container community developers, open source projects, and independent software vendors (ISV) building and distributing their code in containers.
+これは世界最大のコンテナーイメージのリポジトリであり、コンテナーコミュニティの開発者、オープンソースプロジェクトや独立系ソフトウェアベンダー（independent software vendors; ISV）が、コンテナー内でのソースビルドと配布を行うコンテンツを提供しています。
 @z
 
 @x
@@ -83,6 +82,19 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [Docker Hub CLI](https://github.com/docker/hub-tool#readme) tool (currently experimental) and an API that allows you to interact with Docker Hub.
   * Browse through the [Docker Hub API](/docker-hub/api/latest/) documentation to explore the supported endpoints.
 {{< /tab >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub の主要機能は何か" >}}
+* [リポジトリ](../docker-hub/repos/index.md): コンテナーイメージをプッシュおよびプルします。
+* [ビルド](builds/index.md): GitHub や Bitbucket にあるコンテナーイメージをを自動ビルドして Docker Hub にプッシュします。
+* [ウェブフック](webhooks.md): Trigger actions after a successful push
+  to a repository to integrate Docker Hub with other services.
+* [Docker Hub CLI](https://github.com/docker/hub-tool#readme) tool (currently experimental) and an API that allows you to interact with Docker Hub.
+  * Browse through the [Docker Hub API](/docker-hub/api/latest/) documentation to explore the supported endpoints.
+{{< /tab >}}
+@z
+
+@x
 {{< tab name="What administrative tasks can I perform in Docker Hub?" >}}
 * [Create and manage teams and organizations](orgs.md)
 * [Create a company](../admin/company/new-company.md)
@@ -95,16 +107,6 @@ GitHub and Bitbucket and push them to Docker Hub.
 {{< /tab >}}
 {{< /tabs >}}
 @y
-{{< tabs >}}
-{{< tab name="What key features are included in Docker Hub?" >}}
-* [Repositories](../docker-hub/repos/index.md): Push and pull container images.
-* [Builds](builds/index.md): Automatically build container images from
-GitHub and Bitbucket and push them to Docker Hub.
-* [Webhooks](webhooks.md): Trigger actions after a successful push
-  to a repository to integrate Docker Hub with other services.
-* [Docker Hub CLI](https://github.com/docker/hub-tool#readme) tool (currently experimental) and an API that allows you to interact with Docker Hub.
-  * Browse through the [Docker Hub API](/docker-hub/api/latest/) documentation to explore the supported endpoints.
-{{< /tab >}}
 {{< tab name="What administrative tasks can I perform in Docker Hub?" >}}
 * [Create and manage teams and organizations](orgs.md)
 * [Create a company](../admin/company/new-company.md)

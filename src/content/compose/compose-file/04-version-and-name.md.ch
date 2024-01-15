@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Version and name top-level elements
+---
+title: Version and name top-level elements
+description: Understand when and if to set the version and name top-level element
+keywords: compose, compose specification, services, compose file reference
+---
 @y
-# Version and name top-level elements
+---
+title: Version and name top-level elements
+description: Understand when and if to set the version and name top-level element
+keywords: compose, compose specification, services, compose file reference
+---
 @z
 
 @x
@@ -29,10 +37,10 @@ prefers the most recent schema when it's implemented.
 
 @x
 Compose validates whether it can fully parse the Compose file. If some fields are unknown, typically
-because the Compose file was written with fields defined by a newer version of the Specification, you'll receive a warning message. Compose offers options to ignore unknown fields (as defined by ["loose"](01-status.md#requirements-and-optional-attributes) mode).
+because the Compose file was written with fields defined by a newer version of the Specification, you'll receive a warning message. 
 @y
 Compose validates whether it can fully parse the Compose file. If some fields are unknown, typically
-because the Compose file was written with fields defined by a newer version of the Specification, you'll receive a warning message. Compose offers options to ignore unknown fields (as defined by ["loose"](01-status.md#requirements-and-optional-attributes) mode).
+because the Compose file was written with fields defined by a newer version of the Specification, you'll receive a warning message. 
 @z
 
 @x

@@ -176,6 +176,166 @@ Keep the following in mind when using restart policies:
 @z
 
 @x
+### Restarting foreground containers
+@y
+### Restarting foreground containers
+@z
+
+@x
+When you run a container in the foreground, stopping a container causes the
+attached CLI to exit as well, regardless of the restart policy of the
+container. This behavior is illustrated in the following example.
+@y
+When you run a container in the foreground, stopping a container causes the
+attached CLI to exit as well, regardless of the restart policy of the
+container. This behavior is illustrated in the following example.
+@z
+
+@x
+1. Create a Dockerfile that prints the numbers 1 to 5 and then exits.
+@y
+1. Create a Dockerfile that prints the numbers 1 to 5 and then exits.
+@z
+
+@x
+   ```dockerfile
+   FROM busybox:latest
+   COPY --chmod=755 <<"EOF" /start.sh
+   echo "Starting..."
+   for i in $(seq 1 5); do
+     echo "$i"
+     sleep 1
+   done
+   echo "Exiting..."
+   exit 1
+   EOF
+   ENTRYPOINT /start.sh
+   ```
+@y
+   ```dockerfile
+   FROM busybox:latest
+   COPY --chmod=755 <<"EOF" /start.sh
+   echo "Starting..."
+   for i in $(seq 1 5); do
+     echo "$i"
+     sleep 1
+   done
+   echo "Exiting..."
+   exit 1
+   EOF
+   ENTRYPOINT /start.sh
+   ```
+@z
+
+@x
+2. Build an image from the Dockerfile.
+@y
+2. Build an image from the Dockerfile.
+@z
+
+@x
+   ```console
+   $ docker build -t startstop .
+   ```
+@y
+   ```console
+   $ docker build -t startstop .
+   ```
+@z
+
+@x
+3. Run a container from the image, specifying `always` for its restart policy.
+@y
+3. Run a container from the image, specifying `always` for its restart policy.
+@z
+
+@x
+   The container prints the numbers 1..5 to stdout, and then exits. This causes
+   the attached CLI to exit as well.
+@y
+   The container prints the numbers 1..5 to stdout, and then exits. This causes
+   the attached CLI to exit as well.
+@z
+
+@x
+   ```console
+   $ docker run --restart always startstop
+   Starting...
+   1
+   2
+   3
+   4
+   5
+   Exiting...
+   $
+   ```
+@y
+   ```console
+   $ docker run --restart always startstop
+   Starting...
+   1
+   2
+   3
+   4
+   5
+   Exiting...
+   $
+   ```
+@z
+
+@x
+4. Running `docker ps` shows that is still running or restarting, thanks to the
+   restart policy. The CLI session has already exited, however. It doesn't
+   survive the initial container exit.
+@y
+4. Running `docker ps` shows that is still running or restarting, thanks to the
+   restart policy. The CLI session has already exited, however. It doesn't
+   survive the initial container exit.
+@z
+
+@x
+   ```console
+   $ docker ps
+   CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS     NAMES
+   081991b35afe   startstop   "/bin/sh -c /start.sh"   9 seconds ago   Up 4 seconds             gallant_easley
+   ```
+@y
+   ```console
+   $ docker ps
+   CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS         PORTS     NAMES
+   081991b35afe   startstop   "/bin/sh -c /start.sh"   9 seconds ago   Up 4 seconds             gallant_easley
+   ```
+@z
+
+@x
+5. You can re-attach your terminal to the container between restarts, using the
+   `docker container attach` command. It's detached again the next time the
+   container exits.
+@y
+5. You can re-attach your terminal to the container between restarts, using the
+   `docker container attach` command. It's detached again the next time the
+   container exits.
+@z
+
+@x
+   ```console
+   $ docker container attach 081991b35afe
+   4
+   5
+   Exiting...
+   $
+   ```
+@y
+   ```console
+   $ docker container attach 081991b35afe
+   4
+   5
+   Exiting...
+   $
+   ```
+@z
+
+@x
 ## Use a process manager
 @y
 ## Use a process manager

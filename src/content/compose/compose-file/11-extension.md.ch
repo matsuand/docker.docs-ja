@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Extension
+---
+title: Extensions
+description: Understand how to use extensions
+keywords: compose, compose specification, extensions, compose file reference
+---
 @y
-# Extension
+---
+title: Extensions
+description: Understand how to use extensions
+keywords: compose, compose specification, extensions, compose file reference
+---
 @z
 
 @x
@@ -304,7 +312,7 @@ The supported units are `b` (bytes), `k` or `kb` (kilo bytes), `m` or `mb` (mega
 @z
 
 @x
-```
+```text
     2b
     1024kb
     2048k
@@ -312,7 +320,7 @@ The supported units are `b` (bytes), `k` or `kb` (kilo bytes), `m` or `mb` (mega
     1gb
 ```
 @y
-```
+```text
     2b
     1024kb
     2048k
@@ -338,14 +346,14 @@ Values can combine multiple values without separator.
 @z
 
 @x
-```
+```text
   10ms
   40s
   1m30s
   1h5m30s20ms
 ```
 @y
-```
+```text
   10ms
   40s
   1m30s

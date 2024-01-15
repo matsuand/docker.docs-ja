@@ -12,7 +12,7 @@ aliases:
 ---
 @y
 ---
-title: Migrate to Compose V2
+title: Compose V2 への移行
 description: How to migrate from Compose V1 to V2
 keywords: compose, upgrade, migration, v1, v2, docker compose vs docker-compose
 aliases:

@@ -145,16 +145,10 @@ In the following steps, you'll create the network first and then attach the MySQ
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows" >}}
+   {{< tab name="Windows (PowerShell)" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Windows" >}}
-@z
-
-@x
-   In Windows, run this command in PowerShell.
-@y
-   In Windows, run this command in PowerShell.
+   {{< tab name="Windows (PowerShell)" >}}
 @z
 
 @x
@@ -173,6 +167,34 @@ In the following steps, you'll create the network first and then attach the MySQ
        -v todo-mysql-data:/var/lib/mysql `
        -e MYSQL_ROOT_PASSWORD=secret `
        -e MYSQL_DATABASE=todos `
+       mysql:8.0
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< tab name="Windows (Command Prompt)" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="Windows (Command Prompt)" >}}
+@z
+
+@x
+   ```console
+   $ docker run -d ^
+       --network todo-app --network-alias mysql ^
+       -v todo-mysql-data:/var/lib/mysql ^
+       -e MYSQL_ROOT_PASSWORD=secret ^
+       -e MYSQL_DATABASE=todos ^
+       mysql:8.0
+   ```
+@y
+   ```console
+   $ docker run -d ^
+       --network todo-app --network-alias mysql ^
+       -v todo-mysql-data:/var/lib/mysql ^
+       -e MYSQL_ROOT_PASSWORD=secret ^
+       -e MYSQL_DATABASE=todos ^
        mysql:8.0
    ```
 @z
@@ -525,11 +547,11 @@ You can now start your dev-ready container.
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows" >}}
+   {{< tab name="Windows (PowerShell)" >}}
    In Windows, run this command in PowerShell.
 @y
    {{< /tab >}}
-   {{< tab name="Windows" >}}
+   {{< tab name="Windows (PowerShell)" >}}
    In Windows, run this command in PowerShell.
 @z
 
@@ -555,6 +577,42 @@ You can now start your dev-ready container.
      -e MYSQL_PASSWORD=secret `
      -e MYSQL_DB=todos `
      node:18-alpine `
+     sh -c "yarn install && yarn run dev"
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< tab name="Windows (Command Prompt)" >}}
+   In Windows, run this command in Command Prompt.
+@y
+   {{< /tab >}}
+   {{< tab name="Windows (Command Prompt)" >}}
+   In Windows, run this command in Command Prompt.
+@z
+
+@x
+   ```console
+   $ docker run -dp 127.0.0.1:3000:3000 ^
+     -w /app -v "%cd%:/app" ^
+     --network todo-app ^
+     -e MYSQL_HOST=mysql ^
+     -e MYSQL_USER=root ^
+     -e MYSQL_PASSWORD=secret ^
+     -e MYSQL_DB=todos ^
+     node:18-alpine ^
+     sh -c "yarn install && yarn run dev"
+   ```
+@y
+   ```console
+   $ docker run -dp 127.0.0.1:3000:3000 ^
+     -w /app -v "%cd%:/app" ^
+     --network todo-app ^
+     -e MYSQL_HOST=mysql ^
+     -e MYSQL_USER=root ^
+     -e MYSQL_PASSWORD=secret ^
+     -e MYSQL_DB=todos ^
+     node:18-alpine ^
      sh -c "yarn install && yarn run dev"
    ```
 @z

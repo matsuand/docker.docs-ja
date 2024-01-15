@@ -84,11 +84,11 @@ long: |-
 @x
     * [.dockerignore](../../../engine/reference/builder.md#dockerignore-file)
     * [Dockerfile](../../../engine/reference/builder.md)
-    * [compose.yaml](../../../compose/compose-file/03-compose-file.md)
+    * [compose.yaml](../../../compose/compose-yaml-file.md)
 @y
     * [.dockerignore](../../../engine/reference/builder.md#dockerignore-file)
     * [Dockerfile](../../../engine/reference/builder.md)
-    * [compose.yaml](../../../compose/compose-file/03-compose-file.md)
+    * [compose.yaml](../../../compose/compose-yaml-file.md)
 @z
 
 @x

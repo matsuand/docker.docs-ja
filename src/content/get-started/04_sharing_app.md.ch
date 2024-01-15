@@ -97,10 +97,10 @@ In the following image, you can see an example Docker command from Docker Hub. T
 
 @x
 1. In the command line, run the `docker push` command that you see on Docker
-   Hub. Note that your command will have your Docker ID, not "docker".
+   Hub. Note that your command will have your Docker ID, not "docker". For example, `docker push YOUR-USER-NAME/getting-started`.
 @y
 1. In the command line, run the `docker push` command that you see on Docker
-   Hub. Note that your command will have your Docker ID, not "docker".
+   Hub. Note that your command will have your Docker ID, not "docker". For example, `docker push YOUR-USER-NAME/getting-started`.
 @z
 
 @x
@@ -190,7 +190,7 @@ new instance that has never seen this container image. To do this, you will use 
 @x
 > **Note**
 >
-> Play with Docker uses the amd64 platform. If you are using an ARM based Mac with Apple Silicon, you will need to rebuild the image to be compatible with Play with Docker and push the new image to your repository.
+> Play with Docker uses the amd64 platform. If you are using an ARM based Mac with Apple silicon, you will need to rebuild the image to be compatible with Play with Docker and push the new image to your repository.
 >
 > To build an image for the amd64 platform, use the `--platform` flag.
 > ```console
@@ -201,7 +201,7 @@ new instance that has never seen this container image. To do this, you will use 
 @y
 > **Note**
 >
-> Play with Docker uses the amd64 platform. If you are using an ARM based Mac with Apple Silicon, you will need to rebuild the image to be compatible with Play with Docker and push the new image to your repository.
+> Play with Docker uses the amd64 platform. If you are using an ARM based Mac with Apple silicon, you will need to rebuild the image to be compatible with Play with Docker and push the new image to your repository.
 >
 > To build an image for the amd64 platform, use the `--platform` flag.
 > ```console

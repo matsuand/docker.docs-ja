@@ -31,8 +31,6 @@ AC_CONFIG_FILES([
 	src/Makefile
 	src/_vendor/Makefile
 	src/_vendor/github.com/Makefile
-	src/_vendor/github.com/compose-spec/Makefile
-	src/_vendor/github.com/compose-spec/compose-spec/Makefile
 	src/_vendor/github.com/docker/Makefile
 	src/_vendor/github.com/docker/buildx/Makefile
 	src/_vendor/github.com/docker/buildx/docs/Makefile

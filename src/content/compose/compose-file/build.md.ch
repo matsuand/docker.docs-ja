@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Compose Build Specification
+---
+title: Compose Build Specification
+description: Learn about the Compose Build Specification
+keywords: compose, compose specification, compose file reference, compose build specification
+---
 @y
-# Compose Build Specification
+---
+title: Compose Build Specification
+description: Learn about the Compose Build Specification
+keywords: compose, compose specification, compose file reference, compose build specification
+---
 @z
 
 @x
@@ -740,14 +748,50 @@ Illustrative examples of how this is used in Buildx can be found
 @x
 ```yml
 extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
+IPv6 addresses can be enclosed in square brackets, for example:
+@y
+```yml
+extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
+IPv6 addresses can be enclosed in square brackets, for example:
+@z
+
+@x
+```yml
+extra_hosts:
+  - "myhostv6=[::1]"
+```
+@y
+```yml
+extra_hosts:
+  - "myhostv6=[::1]"
+```
+@z
+
+@x
+The separator `=` is preferred, but `:` can also be used. For example:
+@y
+The separator `=` is preferred, but `:` can also be used. For example:
+@z
+
+@x
+```yml
+extra_hosts:
   - "somehost:162.242.195.82"
-  - "otherhost:50.31.209.229"
+  - "myhostv6:::1"
 ```
 @y
 ```yml
 extra_hosts:
   - "somehost:162.242.195.82"
-  - "otherhost:50.31.209.229"
+  - "myhostv6:::1"
 ```
 @z
 
@@ -760,14 +804,16 @@ configuration, which means for Linux `/etc/hosts` will get extra lines:
 @z
 
 @x
-```
+```text
 162.242.195.82  somehost
 50.31.209.229   otherhost
+::1             myhostv6
 ```
 @y
-```
+```text
 162.242.195.82  somehost
 50.31.209.229   otherhost
+::1             myhostv6
 ```
 @z
 

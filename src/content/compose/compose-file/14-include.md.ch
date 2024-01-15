@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Include
+---
+title: Include
+description: Learn about include
+keywords: compose, compose specification, include, compose file reference
+---
 @y
-# Include
+---
+title: Include
+description: Learn about include
+keywords: compose, compose specification, include, compose file reference
+---
 @z
 
 @x

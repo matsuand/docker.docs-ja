@@ -2116,12 +2116,6 @@ Reference:
       section:
       - path: /compose/compose-file/
         title: Overview
-      - path: /compose/compose-file/01-status/
-        title: Status of the specification
-      - path: /compose/compose-file/02-model/
-        title: Compose application model
-      - path: /compose/compose-file/03-compose-file/
-        title: The Compose file
       - path: /compose/compose-file/04-version-and-name/
         title: Version and name top-level element
       - path: /compose/compose-file/05-services/
@@ -2137,12 +2131,6 @@ Reference:
       section:
       - path: __SUBDIR__/compose/compose-file/
         title: 概要
-      - path: __SUBDIR__/compose/compose-file/01-status/
-        title: Status of the specification
-      - path: __SUBDIR__/compose/compose-file/02-model/
-        title: Compose application model
-      - path: __SUBDIR__/compose/compose-file/03-compose-file/
-        title: The Compose file
       - path: __SUBDIR__/compose/compose-file/04-version-and-name/
         title: Version and name top-level element
       - path: __SUBDIR__/compose/compose-file/05-services/
@@ -2776,13 +2764,13 @@ Manuals:
 - sectiontitle: Docker Extensions
   section:
     - path: __SUBDIR__/desktop/extensions/
-      title: What are Docker Extensions?
-    - sectiontitle: Extensions on Docker Desktop
+      title: Docker Extensions とは何か
+    - sectiontitle: Docker Desktop 上の Extensions
       section:
         - path: __SUBDIR__/desktop/extensions/marketplace/
-          title: Manage Marketplace extensions
+          title: マーケットプレースの Extensions 管理
         - path: __SUBDIR__/desktop/extensions/non-marketplace/
-          title: Manage non-Marketplace extensions
+          title: マーケットプレース以外の Extensions 管理
         - path: __SUBDIR__/desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: __SUBDIR__/desktop/extensions/private-marketplace/
@@ -2802,11 +2790,11 @@ Manuals:
     - sectiontitle: Extensions SDK
       section:
         - path: __SUBDIR__/desktop/extensions-sdk/
-          title: Overview
+          title: 概要
         - path: __SUBDIR__/desktop/extensions-sdk/process/
           title: The build and publish process
         - path: __SUBDIR__/desktop/extensions-sdk/quickstart/
-          title: Quickstart
+          title: クィックスタート
 @z
 
 @x
@@ -4336,6 +4324,10 @@ Manuals:
     title: Overview
   - path: /compose/features-uses/
     title: Key features and use cases
+  - path: /compose/compose-application-model/
+    title: Understand the Compose application model
+  - path: /compose/compose-yaml-file/
+    title: Understand the Compose file
   - path: /compose/history/
     title: History and development of Compose
   - sectiontitle: Install Docker Compose
@@ -4356,9 +4348,13 @@ Manuals:
 - sectiontitle: Docker Compose
   section:
   - path: __SUBDIR__/compose/
-    title: Overview
+    title: 概要
   - path: __SUBDIR__/compose/features-uses/
-    title: Key features and use cases
+    title: 主要機能とユースケース
+  - path: __SUBDIR__/compose/compose-application-model/
+    title: Compose アプリケーションモデルの理解
+  - path: __SUBDIR__/compose/compose-yaml-file/
+    title: Compose ファイルの理解
   - path: __SUBDIR__/compose/history/
     title: History and development of Compose
   - sectiontitle: Install Docker Compose
@@ -4486,11 +4482,11 @@ Manuals:
 - sectiontitle: Docker Hub
   section:
   - path: __SUBDIR__/docker-hub/
-    title: Overview
+    title: 概要
   - path: docker-id/
-    title: Create an account
+    title: アカウントの生成
   - path: __SUBDIR__/docker-hub/quickstart/
-    title: Quickstart
+    title: クィックスタート
 @z
 
 @x
@@ -4503,14 +4499,14 @@ Manuals:
       - path: /docker-hub/repos/
         title: Manage
 @y
-  - sectiontitle: Repositories
+  - sectiontitle: リポジトリ
     section:
       - path: __SUBDIR__/docker-hub/repos/create/
-        title: Create
+        title: 生成
       - path: __SUBDIR__/docker-hub/repos/access/
-        title: Access
+        title: アクセス
       - path: __SUBDIR__/docker-hub/repos/
-        title: Manage
+        title: 管理
 @z
 
 @x
@@ -4522,11 +4518,11 @@ Manuals:
     title: Service accounts
 @y
   - path: __SUBDIR__/docker-hub/download-rate-limit/
-    title: Download rate limit
+    title: ダウンロードレート制限
   - path: __SUBDIR__/docker-hub/webhooks/
-    title: Webhooks
+    title: ウェブフック
   - path: __SUBDIR__/docker-hub/service-accounts/
-    title: Service accounts
+    title: サービスアカウント
 @z
 
 @x
@@ -4547,22 +4543,22 @@ Manuals:
       - path: /docker-hub/builds/link-source/
         title: Link to GitHub and BitBucket
 @y
-  - sectiontitle: Automated builds
+  - sectiontitle: 自動ビルド
     section:
       - path: __SUBDIR__/docker-hub/builds/how-builds-work/
-        title: How Automated builds work
+        title: 自動ビルドはどのように動作するか
       - path: __SUBDIR__/docker-hub/builds/
-        title: Set up Automated builds
+        title: 自動ビルドのセットアップ
       - path: __SUBDIR__/docker-hub/builds/manage-builds/
-        title: Manage your builds
+        title: ビルド管理
       - path: __SUBDIR__/docker-hub/builds/troubleshoot/
-        title: Troubleshoot your builds
+        title: ビルドのトラブルシューティング
       - path: __SUBDIR__/docker-hub/builds/automated-testing/
         title: Testing in Automated builds
       - path: __SUBDIR__/docker-hub/builds/advanced/
         title: Advanced options for builds
       - path: __SUBDIR__/docker-hub/builds/link-source/
-        title: Link to GitHub and BitBucket
+        title: GitHub や BitBucket へのリンク
 @z
 
 @x

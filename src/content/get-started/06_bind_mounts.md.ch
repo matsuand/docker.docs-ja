@@ -187,19 +187,19 @@ setting, see the topic for [Mac](../desktop/settings/mac.md/#file-sharing),
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows (CMD)" >}}
+   {{< tab name="Windows (Command Prompt)" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Windows (CMD)" >}}
+   {{< tab name="Windows (Command Prompt)" >}}
 @z
 
 @x
-   ```Command Prompt
-   > docker run -it --mount "type=bind,src=%cd%,target=/src" ubuntu bash
+   ```console
+   $ docker run -it --mount "type=bind,src=%cd%,target=/src" ubuntu bash
    ```
 @y
-   ```Command Prompt
-   > docker run -it --mount "type=bind,src=%cd%,target=/src" ubuntu bash
+   ```console
+   $ docker run -it --mount "type=bind,src=%cd%,target=/src" ubuntu bash
    ```
 @z
 

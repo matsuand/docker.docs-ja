@@ -132,10 +132,10 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 
 @x
    {{< tabs >}}
-   {{< tab name="Mac / Linux" >}}
+   {{< tab name="Mac / Linux / Windows (Git Bash)" >}}
 @y
    {{< tabs >}}
-   {{< tab name="Mac / Linux" >}}
+   {{< tab name="Mac / Linux / Windows (Git Bash)" >}}
 @z
 
 @x
@@ -179,10 +179,10 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows" >}}
+   {{< tab name="Windows (Command Prompt)" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Windows" >}}
+   {{< tab name="Windows (コマンドプロンプト)" >}}
 @z
 
 @x
@@ -221,6 +221,52 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 @y
    ```console
    $ type nul > Dockerfile
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< tab name="Windows (PowerShell)" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="Windows (PowerShell)" >}}
+@z
+
+@x
+   In PowerShell, run the following commands.
+@y
+   In PowerShell, run the following commands.
+@z
+
+@x
+   Make sure you're in the `getting-started-app` directory. Replace `\path\to\getting-started-app` with the path to your `getting-started-app` directory.
+@y
+   Make sure you're in the `getting-started-app` directory. Replace `\path\to\getting-started-app` with the path to your `getting-started-app` directory.
+@z
+
+@x
+   ```console
+   $ cd \path\to\getting-started-app
+   ```
+@y
+   ```console
+   $ cd \path\to\getting-started-app
+   ```
+@z
+
+@x
+   Create an empty file named `Dockerfile`.
+@y
+   Create an empty file named `Dockerfile`.
+@z
+
+@x
+   ```powershell
+   $ New-Item -Path . -Name Dockerfile -ItemType File
+   ```
+@y
+   ```powershell
+   $ New-Item -Path . -Name Dockerfile -ItemType File
    ```
 @z
 

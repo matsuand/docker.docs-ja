@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Fragments
+---
+title: Fragments
+description: Understand how to use fragments
+keywords: compose, compose specification, fragments, compose file reference
+---
 @y
-# Fragments
+---
+title: Fragments
+description: Understand how to use fragments
+keywords: compose, compose specification, fragments, compose file reference
+---
 @z
 
 @x

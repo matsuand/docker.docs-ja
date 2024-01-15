@@ -124,9 +124,9 @@ image up-to-dateness.
 @z
 
 @x
-## Default policies
+## Out-of-the-box policies
 @y
-## Default policies
+## Out-of-the-box policies
 @z
 
 @x
@@ -156,16 +156,16 @@ Docker Scout ships the following out-of-the-box policies:
 @z
 
 @x
-Policies are enabled by default for Scout-enabled repositories. If you want to
-customize the criteria of a policy, you can create custom policies based on the
-default, out-of-the-box policies. You can also disable a policy altogether if
-it isn't relevant to you. For more information, see [Configure
+To give you a head start, Scout enables several policies by default for your
+Scout-enabled repositories. You can customize the default configurations to
+reflect internal requirements and standards. You can also disable a policy
+altogether if it isn't relevant to you. For more information, see [Configure
 policies](./configure.md).
 @y
-Policies are enabled by default for Scout-enabled repositories. If you want to
-customize the criteria of a policy, you can create custom policies based on the
-default, out-of-the-box policies. You can also disable a policy altogether if
-it isn't relevant to you. For more information, see [Configure
+To give you a head start, Scout enables several policies by default for your
+Scout-enabled repositories. You can customize the default configurations to
+reflect internal requirements and standards. You can also disable a policy
+altogether if it isn't relevant to you. For more information, see [Configure
 policies](./configure.md).
 @z
 

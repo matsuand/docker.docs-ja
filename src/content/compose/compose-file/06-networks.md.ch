@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Networks top-level element
+---
+title: Networks top-level elements
+description: Explore all the attributes the networks top-level element can have.
+keywords: compose, compose specification, networks, compose file reference
+---
 @y
-# Networks top-level element
+---
+title: Networks top-level elements
+description: Explore all the attributes the networks top-level element can have.
+keywords: compose, compose specification, networks, compose file reference
+---
 @z
 
 @x
@@ -338,9 +346,9 @@ networks:
 @z
 
 @x
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](https://docs.docker.com/config/daemon/ipv6/).
+`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](../../config/daemon/ipv6.md).
 @y
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](https://docs.docker.com/config/daemon/ipv6/).
+`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](../../config/daemon/ipv6.md).
 @z
 
 @x

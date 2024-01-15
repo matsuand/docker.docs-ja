@@ -46,19 +46,19 @@ driver sends the following metadata in the structured log message:
 @z
 
 @x
-| Field            | Description                                                                                                                                            |
-| :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `container_id`   | The full 64-character container ID.                                                                                                                    |
+| Field            | Description                                                                                                                                           |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `container_id`   | The full 64-character container ID.                                                                                                                   |
 | `container_name` | The container name at the time it was started. If you use `docker rename` to rename a container, the new name isn't reflected in the journal entries. |
-| `source`         | `stdout` or `stderr`                                                                                                                                   |
-| `log`            | The container log                                                                                                                                      |
+| `source`         | `stdout` or `stderr`                                                                                                                                  |
+| `log`            | The container log                                                                                                                                     |
 @y
-| Field            | Description                                                                                                                                            |
-| :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `container_id`   | The full 64-character container ID.                                                                                                                    |
+| Field            | Description                                                                                                                                           |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `container_id`   | The full 64-character container ID.                                                                                                                   |
 | `container_name` | The container name at the time it was started. If you use `docker rename` to rename a container, the new name isn't reflected in the journal entries. |
-| `source`         | `stdout` or `stderr`                                                                                                                                   |
-| `log`            | The container log                                                                                                                                      |
+| `source`         | `stdout` or `stderr`                                                                                                                                  |
+| `log`            | The container log                                                                                                                                     |
 @z
 
 @x
@@ -154,12 +154,12 @@ To set the logging driver for a specific container, pass the
 @z
 
 @x
-```text
-docker run --log-driver=fluentd ...
+```console
+$ docker run --log-driver=fluentd ...
 ```
 @y
-```text
-docker run --log-driver=fluentd ...
+```console
+$ docker run --log-driver=fluentd ...
 ```
 @z
 
@@ -174,12 +174,12 @@ connects to this daemon through `localhost:24224` by default. Use the
 @z
 
 @x
-```text
-docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
+```console
+$ docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
 ```
 @y
-```text
-docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
+```console
+$ docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
 ```
 @z
 
@@ -218,13 +218,17 @@ By default, the logging driver connects to `localhost:24224`. Supply the
 @z
 
 @x
-    docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
-    docker run --log-driver=fluentd --log-opt fluentd-address=tcp://fluentdhost:24224
-    docker run --log-driver=fluentd --log-opt fluentd-address=unix:///path/to/fluentd.sock
+```console
+$ docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
+$ docker run --log-driver=fluentd --log-opt fluentd-address=tcp://fluentdhost:24224
+$ docker run --log-driver=fluentd --log-opt fluentd-address=unix:///path/to/fluentd.sock
+```
 @y
-    docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
-    docker run --log-driver=fluentd --log-opt fluentd-address=tcp://fluentdhost:24224
-    docker run --log-driver=fluentd --log-opt fluentd-address=unix:///path/to/fluentd.sock
+```console
+$ docker run --log-driver=fluentd --log-opt fluentd-address=fluentdhost:24224
+$ docker run --log-driver=fluentd --log-opt fluentd-address=tcp://fluentdhost:24224
+$ docker run --log-driver=fluentd --log-opt fluentd-address=unix:///path/to/fluentd.sock
+```
 @z
 
 @x
@@ -291,6 +295,24 @@ connection is established. Defaults to `false`.
 @y
 Docker connects to Fluentd in the background. Messages are buffered until the
 connection is established. Defaults to `false`.
+@z
+
+@x
+### fluentd-async-reconnect-interval
+@y
+### fluentd-async-reconnect-interval
+@z
+
+@x
+When `fluentd-async` is enabled, the `fluentd-async-reconnect-interval` option
+defines the interval, in milliseconds, at which the connection to
+`fluentd-address` is re-established. This option is useful if the address
+resolves to one or more IP addresses, for example a Consul service address.
+@y
+When `fluentd-async` is enabled, the `fluentd-async-reconnect-interval` option
+defines the interval, in milliseconds, at which the connection to
+`fluentd-address` is re-established. This option is useful if the address
+resolves to one or more IP addresses, for example a Consul service address.
 @z
 
 @x
@@ -420,11 +442,11 @@ aggregate store.
 @z
 
 @x
-    ```text
+    ```console
     $ docker run -it -p 24224:24224 -v /path/to/conf/test.conf:/fluentd/etc/test.conf -e FLUENTD_CONF=test.conf fluent/fluentd:latest
     ```
 @y
-    ```text
+    ```console
     $ docker run -it -p 24224:24224 -v /path/to/conf/test.conf:/fluentd/etc/test.conf -e FLUENTD_CONF=test.conf fluent/fluentd:latest
     ```
 @z
@@ -436,11 +458,11 @@ aggregate store.
 @z
 
 @x
-    ```text
+    ```console
     $ docker run --log-driver=fluentd your/application
     ```
 @y
-    ```text
+    ```console
     $ docker run --log-driver=fluentd your/application
     ```
 @z

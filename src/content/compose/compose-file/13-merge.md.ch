@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Merge and override
+---
+title: Merge
+description: Learn about merging rules
+keywords: compose, compose specification, merge, compose file reference
+---
 @y
-# Merge and override
+---
+title: Merge
+description: Learn about merging rules
+keywords: compose, compose specification, merge, compose file reference
+---
 @z
 
 @x

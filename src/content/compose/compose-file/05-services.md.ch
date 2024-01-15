@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Services top-level element
+---
+title: Services top-level elements
+description: Explore all the attributes the services top-level element can have.
+keywords: compose, compose specification, services, compose file reference
+---
 @y
-# Services top-level element
+---
+title: Services top-level elements
+description: Explore all the attributes the services top-level element can have.
+keywords: compose, compose specification, services, compose file reference
+---
 @z
 
 @x
@@ -429,14 +437,10 @@ cap_drop:
 
 @x
 ## cgroup
-@y
-## cgroup
-@z
-
-@x
 `cgroup` specifies the cgroup namespace to join. When unset, it is the container runtime's decision to
 select which cgroup namespace to use, if supported.
 @y
+## cgroup
 `cgroup` specifies the cgroup namespace to join. When unset, it is the container runtime's decision to
 select which cgroup namespace to use, if supported.
 @z
@@ -1384,6 +1388,34 @@ env_file:
 @z
 
 @x
+List elements can also be declared as a mapping, which then lets you set an additional
+attribute `required`. This defaults to `true`. When `required` is set to `false` and the `.env` file is missing,
+Compose silently ignores the entry.
+@y
+List elements can also be declared as a mapping, which then lets you set an additional
+attribute `required`. This defaults to `true`. When `required` is set to `false` and the `.env` file is missing,
+Compose silently ignores the entry.
+@z
+
+@x
+```yml
+env_file:
+  - path: ./default.env
+    required: true # default
+  - path: ./override.env
+    required: false
+```
+@y
+```yml
+env_file:
+  - path: ./default.env
+    required: true # default
+  - path: ./override.env
+    required: false
+```
+@z
+
+@x
 Relative path are resolved from the Compose file's parent folder. As absolute paths prevent the Compose
 file from being portable, Compose warns you when such a path is used to set `env_file`.
 @y
@@ -1566,13 +1598,21 @@ When both `env_file` and `environment` are set for a service, values set by `env
 @z
 
 @x
-`expose` defines the ports that Compose exposes from the container. These ports must be
+`expose` defines the (incoming) port or a range of ports that Compose exposes from the container. These ports must be
 accessible to linked services and should not be published to the host machine. Only the internal container
 ports can be specified.
 @y
-`expose` defines the ports that Compose exposes from the container. These ports must be
+`expose` defines the (incoming) port or a range of ports that Compose exposes from the container. These ports must be
 accessible to linked services and should not be published to the host machine. Only the internal container
 ports can be specified.
+@z
+
+@x
+Syntax is `<portnum>/[<proto>]` or `<startport-endport>/[<proto>]` for a port range.
+When not explicitly set, `tcp` protocol is used.
+@y
+Syntax is `<portnum>/[<proto>]` or `<startport-endport>/[<proto>]` for a port range.
+When not explicitly set, `tcp` protocol is used.
 @z
 
 @x
@@ -1580,12 +1620,14 @@ ports can be specified.
 expose:
   - "3000"
   - "8000"
+  - "8080-8085/tcp
 ```
 @y
 ```yml
 expose:
   - "3000"
   - "8000"
+  - "8080-8085/tcp
 ```
 @z
 
@@ -2151,23 +2193,63 @@ external_links:
 
 @x
 ### Short syntax
-Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME:IP`.
+Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME=IP`.
 @y
 ### Short syntax
-Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME:IP`.
+Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME=IP`.
+@z
+
+@x
+```yml
+extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
+@y
+```yml
+extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
+@z
+
+@x
+IPv6 addresses can be enclosed in square brackets, for example:
+@y
+IPv6 addresses can be enclosed in square brackets, for example:
+@z
+
+@x
+```yml
+extra_hosts:
+  - "myhostv6=[::1]"
+```
+@y
+```yml
+extra_hosts:
+  - "myhostv6=[::1]"
+```
+@z
+
+@x
+The separator `=` is preferred, but `:` can also be used. For example:
+@y
+The separator `=` is preferred, but `:` can also be used. For example:
 @z
 
 @x
 ```yml
 extra_hosts:
   - "somehost:162.242.195.82"
-  - "otherhost:50.31.209.229"
+  - "myhostv6:::1"
 ```
 @y
 ```yml
 extra_hosts:
   - "somehost:162.242.195.82"
-  - "otherhost:50.31.209.229"
+  - "myhostv6:::1"
 ```
 @z
 
@@ -2184,12 +2266,14 @@ Alternatively, `extra_hosts` can be set as a mapping between hostname(s) and IP(
 extra_hosts:
   somehost: "162.242.195.82"
   otherhost: "50.31.209.229"
+  myhostv6: "::1"
 ```
 @y
 ```yml
 extra_hosts:
   somehost: "162.242.195.82"
   otherhost: "50.31.209.229"
+  myhostv6: "::1"
 ```
 @z
 
@@ -2202,14 +2286,16 @@ configuration, which means for Linux `/etc/hosts` get extra lines:
 @z
 
 @x
-```
+```console
 162.242.195.82  somehost
 50.31.209.229   otherhost
+::1             myhostv6
 ```
 @y
-```
+```console
 162.242.195.82  somehost
 50.31.209.229   otherhost
+::1             myhostv6
 ```
 @z
 
@@ -3259,10 +3345,10 @@ of memory starvation.
 
 @x
 `oom_score_adj` tunes the preference for containers to be killed by platform in case of memory starvation. Value must
-be within [-1000,1000] range.
+be within -1000,1000 range.
 @y
 `oom_score_adj` tunes the preference for containers to be killed by platform in case of memory starvation. Value must
-be within [-1000,1000] range.
+be within -1000,1000 range.
 @z
 
 @x
@@ -3286,9 +3372,9 @@ Supported values are platform specific.
 @z
 
 @x
-_DEPRECATED: use [deploy.reservations.pids](deploy.md#pids)_
+_DEPRECATED: use [deploy.resources.limits.pids](deploy.md#pids)_
 @y
-_DEPRECATED: use [deploy.reservations.pids](deploy.md#pids)_
+_DEPRECATED: use [deploy.resources.limits.pids](deploy.md#pids)_
 @z
 
 @x
@@ -3411,10 +3497,10 @@ value or a range. Host and container must use equivalent ranges.
 
 @x
 Either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
-Compose automatically allocates any unassigned port of the host.
+the container runtime automatically allocates any unassigned port of the host.
 @y
 Either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
-Compose automatically allocates any unassigned port of the host.
+the container runtime automatically allocates any unassigned port of the host.
 @z
 
 @x
@@ -3489,14 +3575,14 @@ expressed in the short form.
 - `target`: The container port
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
 - `host_ip`: The Host IP mapping, unspecified means all network interfaces (`0.0.0.0`).
-- `protocol`: The port protocol (`tcp` or `udp`), unspecified means any protocol.
-- `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced.
+- `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
+- `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
 @y
 - `target`: The container port
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
 - `host_ip`: The Host IP mapping, unspecified means all network interfaces (`0.0.0.0`).
-- `protocol`: The port protocol (`tcp` or `udp`), unspecified means any protocol.
-- `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced.
+- `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
+- `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
 @z
 
 @x
@@ -3728,15 +3814,11 @@ web:
 @z
 
 @x
-_DEPRECATED: use [deploy/replicas](deploy.md#replicas)_
-@y
-_DEPRECATED: use [deploy/replicas](deploy.md#replicas)_
-@z
-
-@x
 `scale` specifies the default number of containers to deploy for this service.
+When both are set, `scale` must be consistent with the `replicas` attribute in the [Deploy Specification](deploy.md#replicas).
 @y
 `scale` specifies the default number of containers to deploy for this service.
+When both are set, `scale` must be consistent with the `replicas` attribute in the [Deploy Specification](deploy.md#replicas).
 @z
 
 @x

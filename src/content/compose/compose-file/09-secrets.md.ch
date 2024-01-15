@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Secrets top-level element
+---
+title: Secrets top-level elements
+description: Explore all the attributes the secrets top-level element can have.
+keywords: compose, compose specification, secrets, compose file reference
+---
 @y
-# Secrets top-level element
+---
+title: Secrets top-level elements
+description: Explore all the attributes the secrets top-level element can have.
+keywords: compose, compose specification, secrets, compose file reference
+---
 @z
 
 @x

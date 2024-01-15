@@ -2,9 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Profiles
+---
+title: Profiles
+description: Learn about profiles
+keywords: compose, compose specification, profiles, compose file reference
+---
 @y
-# Profiles
+---
+title: Profiles
+description: Learn about profiles
+keywords: compose, compose specification, profiles, compose file reference
+---
 @z
 
 @x
@@ -144,7 +152,7 @@ In the above example:
 @z
 
 @x
-See how you can use `profiles` in [Docker Compose](https://docs.docker.com/compose/profiles/).
+See how you can use `profiles` in [Docker Compose](../profiles.md).
 @y
-See how you can use `profiles` in [Docker Compose](https://docs.docker.com/compose/profiles/).
+See how you can use `profiles` in [Docker Compose](../profiles.md).
 @z
