@@ -5,13 +5,11 @@
 ---
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
-skip_read_time: true
 ---
 @y
 ---
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
-skip_read_time: true
 ---
 @z
 
@@ -65,10 +63,12 @@ console.log(output);
 > **Warning**
 >
 > It will be removed in a future version.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version.
+{ .warning }
 @z
 
 @x
@@ -149,10 +149,12 @@ window.ddClient.backend
 > **Warning**
 >
 > It will be removed in a future version. Use [get](HttpService.md#get) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [get](HttpService.md#get) instead.
+{ .warning }
 @z
 
 @x
@@ -225,10 +227,12 @@ window.ddClient.backend
 > **Warning**
 >
 > It will be removed in a future version. Use [post](HttpService.md#post) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [post](HttpService.md#post) instead.
+{ .warning }
 @z
 
 @x
@@ -303,10 +307,12 @@ window.ddClient.backend
 > **Warning**
 > 
 > It will be removed in a future version. Use [put](HttpService.md#put) instead.
+{ .warning }
 @y
 > **Warning**
 > 
 > It will be removed in a future version. Use [put](HttpService.md#put) instead.
+{ .warning }
 @z
 
 @x
@@ -381,10 +387,12 @@ window.ddClient.backend
 > **Warning**
 >
 > It will be removed in a future version. Use [patch](HttpService.md#patch) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [patch](HttpService.md#patch) instead.
+{ .warning }
 @z
 
 @x
@@ -459,10 +467,12 @@ window.ddClient.backend
 > **Warning**
 >
 > It will be removed in a future version. Use [delete](HttpService.md#delete) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [delete](HttpService.md#delete) instead.
+{ .warning }
 @z
 
 @x
@@ -535,10 +545,12 @@ window.ddClient.backend
 > **Warning**
 >
 > It will be removed in a future version. Use [head](HttpService.md#head) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [head](HttpService.md#head) instead.
+{ .warning }
 @z
 
 @x
@@ -611,10 +623,12 @@ window.ddClient.backend
 > **Warning**
 >
 > It will be removed in a future version. Use [request](HttpService.md#request) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [request](HttpService.md#request) instead.
+{ .warning }
 @z
 
 @x
@@ -701,10 +715,12 @@ console.log(output);
 > **Warning**
 >
 > It will be removed in a future version. Use [exec](ExtensionCli.md#exec) instead.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version. Use [exec](ExtensionCli.md#exec) instead.
+{ .warning }
 @z
 
 @x
@@ -793,10 +809,12 @@ window.ddClient.spawnInVMExtension(
 > **Warning**
 >
 > It will be removed in a future version.
+{ .warning }
 @y
 > **Warning**
 >
 > It will be removed in a future version.
+{ .warning }
 @z
 
 @x

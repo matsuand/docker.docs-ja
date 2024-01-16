@@ -9,7 +9,6 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
-skip_read_time: true
 aliases:
 - /engine/release-notes/
 - /engine/release-notes/latest/
@@ -24,7 +23,6 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
-skip_read_time: true
 aliases:
 - /engine/release-notes/
 - /engine/release-notes/latest/

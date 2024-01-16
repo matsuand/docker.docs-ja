@@ -6,14 +6,12 @@
 title: Docker Engine 17.10 release notes
 toc_min: 1
 toc_max: 2
-skip_read_time: true
 ---
 @y
 ---
 title: Docker Engine 17.10 release notes
 toc_min: 1
 toc_max: 2
-skip_read_time: true
 ---
 @z
 

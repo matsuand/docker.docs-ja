@@ -8,8 +8,6 @@
 @z
 
 @x
-readingTime:
-  other: "{{ . }} minute read"
 editPage:
   other: Edit this page
 requestChanges:
@@ -19,8 +17,6 @@ tableOfContents:
 relatedContent:
   other: Related content
 @y
-readingTime:
-  other: "{{ . }} minute read"
 editPage:
   other: Edit this page
 requestChanges:

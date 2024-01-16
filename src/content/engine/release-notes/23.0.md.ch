@@ -9,7 +9,6 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
-skip_read_time: true
 ---
 @y
 ---
@@ -19,7 +18,6 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
-skip_read_time: true
 ---
 @z
 

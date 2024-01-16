@@ -7,13 +7,11 @@ title: Reference documentation
 description: This section includes the reference documentation for the Docker platform’s
   various APIs, CLIs, and file formats.
 notoc: true
-skip_read_time: true
 @y
 ---
 title: リファレンスドキュメント
 description: 本節はは Docker プラットフォームに API、CLI、ドライバー仕様、ファイルフォーマットについてのさまざまなリファレンスドキュメントを示すものです。
 notoc: true
-skip_read_time: true
 @z
 
 @x

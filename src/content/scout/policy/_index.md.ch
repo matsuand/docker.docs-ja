@@ -598,3 +598,85 @@ To make your images compliant with this policy, use the
 [`USER`](../../engine/reference/builder.md#user) Dockerfile instruction to set
 a default user that doesn't have root privileges for the runtime stage.
 @z
+
+@x
+The following Dockerfile snippets shows the difference between a compliant and
+non-compliant image.
+@y
+The following Dockerfile snippets shows the difference between a compliant and
+non-compliant image.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Non-compliant" >}}
+@y
+{{< tabs >}}
+{{< tab name="Non-compliant" >}}
+@z
+
+@x
+```dockerfile
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@y
+```dockerfile
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@z
+
+@x
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+ENTRYPOINT ["/app/production"]
+```
+@y
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+ENTRYPOINT ["/app/production"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Compliant" >}}
+@y
+{{< /tab >}}
+{{< tab name="Compliant" >}}
+@z
+
+@x
+```dockerfile {hl_lines=7}
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@y
+```dockerfile {hl_lines=7}
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@z
+
+@x
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+USER nonroot
+ENTRYPOINT ["/app/production"]
+```
+@y
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+USER nonroot
+ENTRYPOINT ["/app/production"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
