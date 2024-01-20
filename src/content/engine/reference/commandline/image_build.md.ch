@@ -5,18 +5,24 @@
 ---
 datafolder: engine-cli
 datafile: docker_image_build
+linkTitle: docker build
 title: docker image build
 aliases:
 - /edge/engine/reference/commandline/image_build/
+- /engine/reference/commandline/build/
+- /engine/reference/commandline/builder_build/
 layout: cli
 ---
 @y
 ---
 datafolder: engine-cli
 datafile: docker_image_build
+linkTitle: docker build
 title: docker image build
 aliases:
 - /edge/engine/reference/commandline/image_build/
+- /engine/reference/commandline/build/
+- /engine/reference/commandline/builder_build/
 layout: cli
 ---
 @z

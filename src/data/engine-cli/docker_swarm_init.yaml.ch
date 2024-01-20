@@ -5,7 +5,7 @@
 command: docker swarm init
 short: Initialize a swarm
 long: |-
-    Initialize a swarm. The docker engine targeted by this command becomes a manager
+    Initialize a swarm. The Docker Engine targeted by this command becomes a manager
     in the newly created single-node swarm.
 usage: docker swarm init [OPTIONS]
 pname: docker swarm
@@ -14,6 +14,7 @@ options:
     - option: advertise-addr
       value_type: string
       description: 'Advertised address (format: `<ip|interface>[:port]`)'
+      details_url: '#advertise-addr'
       deprecated: false
       hidden: false
       experimental: false
@@ -25,6 +26,7 @@ options:
       default_value: "false"
       description: |
         Enable manager autolocking (requiring an unlock key to start a stopped manager)
+      details_url: '#autolock'
       deprecated: false
       hidden: false
       experimental: false
@@ -35,6 +37,7 @@ options:
       value_type: string
       default_value: active
       description: Availability of the node (`active`, `pause`, `drain`)
+      details_url: '#availability'
       deprecated: false
       hidden: false
       experimental: false
@@ -55,6 +58,7 @@ options:
       value_type: string
       description: |
         Address or interface to use for data path traffic (format: `<ip|interface>`)
+      details_url: '#data-path-addr'
       deprecated: false
       hidden: false
       min_api_version: "1.31"
@@ -67,6 +71,7 @@ options:
       default_value: "0"
       description: |
         Port number to use for data path traffic (1024 - 49151). If no value is set or is set to 0, the default port (4789) is used.
+      details_url: '#data-path-port'
       deprecated: false
       hidden: false
       min_api_version: "1.40"
@@ -78,6 +83,7 @@ options:
       value_type: ipNetSlice
       default_value: '[]'
       description: default address pool in CIDR format
+      details_url: '#default-addr-pool'
       deprecated: false
       hidden: false
       min_api_version: "1.39"
@@ -109,6 +115,7 @@ options:
     - option: external-ca
       value_type: external-ca
       description: Specifications of one or more certificate signing endpoints
+      details_url: '#external-ca'
       deprecated: false
       hidden: false
       experimental: false
@@ -119,6 +126,7 @@ options:
       value_type: bool
       default_value: "false"
       description: Force create a new cluster from current state
+      details_url: '#force-new-cluster'
       deprecated: false
       hidden: false
       experimental: false
@@ -129,6 +137,7 @@ options:
       value_type: node-addr
       default_value: 0.0.0.0:2377
       description: 'Listen address (format: `<ip|interface>[:port]`)'
+      details_url: '#listen-addr'
       deprecated: false
       hidden: false
       experimental: false
@@ -139,6 +148,7 @@ options:
       value_type: uint64
       default_value: "0"
       description: Number of additional Raft snapshots to retain
+      details_url: '#max-snapshots'
       deprecated: false
       hidden: false
       min_api_version: "1.25"
@@ -150,6 +160,7 @@ options:
       value_type: uint64
       default_value: "10000"
       description: Number of log entries between Raft snapshots
+      details_url: '#snapshot-interval'
       deprecated: false
       hidden: false
       min_api_version: "1.25"
@@ -185,7 +196,7 @@ examples: |-
 command: docker swarm init
 short: Initialize a swarm
 long: |-
-    Initialize a swarm. The docker engine targeted by this command becomes a manager
+    Initialize a swarm. The Docker Engine targeted by this command becomes a manager
     in the newly created single-node swarm.
 usage: docker swarm init [OPTIONS]
 pname: docker swarm
@@ -194,6 +205,7 @@ options:
     - option: advertise-addr
       value_type: string
       description: 'Advertised address (format: `<ip|interface>[:port]`)'
+      details_url: '#advertise-addr'
       deprecated: false
       hidden: false
       experimental: false
@@ -205,6 +217,7 @@ options:
       default_value: "false"
       description: |
         Enable manager autolocking (requiring an unlock key to start a stopped manager)
+      details_url: '#autolock'
       deprecated: false
       hidden: false
       experimental: false
@@ -215,6 +228,7 @@ options:
       value_type: string
       default_value: active
       description: Availability of the node (`active`, `pause`, `drain`)
+      details_url: '#availability'
       deprecated: false
       hidden: false
       experimental: false
@@ -235,6 +249,7 @@ options:
       value_type: string
       description: |
         Address or interface to use for data path traffic (format: `<ip|interface>`)
+      details_url: '#data-path-addr'
       deprecated: false
       hidden: false
       min_api_version: "1.31"
@@ -247,6 +262,7 @@ options:
       default_value: "0"
       description: |
         Port number to use for data path traffic (1024 - 49151). If no value is set or is set to 0, the default port (4789) is used.
+      details_url: '#data-path-port'
       deprecated: false
       hidden: false
       min_api_version: "1.40"
@@ -258,6 +274,7 @@ options:
       value_type: ipNetSlice
       default_value: '[]'
       description: default address pool in CIDR format
+      details_url: '#default-addr-pool'
       deprecated: false
       hidden: false
       min_api_version: "1.39"
@@ -289,6 +306,7 @@ options:
     - option: external-ca
       value_type: external-ca
       description: Specifications of one or more certificate signing endpoints
+      details_url: '#external-ca'
       deprecated: false
       hidden: false
       experimental: false
@@ -299,6 +317,7 @@ options:
       value_type: bool
       default_value: "false"
       description: Force create a new cluster from current state
+      details_url: '#force-new-cluster'
       deprecated: false
       hidden: false
       experimental: false
@@ -309,6 +328,7 @@ options:
       value_type: node-addr
       default_value: 0.0.0.0:2377
       description: 'Listen address (format: `<ip|interface>[:port]`)'
+      details_url: '#listen-addr'
       deprecated: false
       hidden: false
       experimental: false
@@ -319,6 +339,7 @@ options:
       value_type: uint64
       default_value: "0"
       description: Number of additional Raft snapshots to retain
+      details_url: '#max-snapshots'
       deprecated: false
       hidden: false
       min_api_version: "1.25"
@@ -330,6 +351,7 @@ options:
       value_type: uint64
       default_value: "10000"
       description: Number of log entries between Raft snapshots
+      details_url: '#snapshot-interval'
       deprecated: false
       hidden: false
       min_api_version: "1.25"
@@ -376,13 +398,9 @@ examples: |-
 @z
 
 @x
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx \
-        172.17.0.2:2377
+        docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx 172.17.0.2:2377
 @y
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx \
-        172.17.0.2:2377
+        docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx 172.17.0.2:2377
 @z
 
 @x
@@ -394,13 +412,15 @@ examples: |-
 @z
 
 @x
-    `docker swarm init` generates two random tokens, a worker token and a manager token. When you join
-    a new node to the swarm, the node joins as a worker or manager node based upon the token you pass
-    to [swarm join](swarm_join.md).
+    The `docker swarm init` command generates two random tokens: a worker token and
+    a manager token. When you join a new node to the swarm, the node joins as a
+    worker or manager node based upon the token you pass to [swarm
+    join](swarm_join.md).
 @y
-    `docker swarm init` generates two random tokens, a worker token and a manager token. When you join
-    a new node to the swarm, the node joins as a worker or manager node based upon the token you pass
-    to [swarm join](swarm_join.md).
+    The `docker swarm init` command generates two random tokens: a worker token and
+    a manager token. When you join a new node to the swarm, the node joins as a
+    worker or manager node based upon the token you pass to [swarm
+    join](swarm_join.md).
 @z
 
 @x
@@ -412,195 +432,189 @@ examples: |-
 @z
 
 @x
-    ### `--autolock`
+    ### Protect manager keys and data (--autolock) {#autolock}
 @y
-    ### `--autolock`
+    ### Protect manager keys and data (--autolock) {#autolock}
 @z
 
 @x
-    This flag enables automatic locking of managers with an encryption key. The
-    private keys and data stored by all managers will be protected by the
-    encryption key printed in the output, and will not be accessible without it.
-    Thus, it is very important to store this key in order to activate a manager
-    after it restarts. The key can be passed to `docker swarm unlock` to reactivate
-    the manager. Autolock can be disabled by running
-    `docker swarm update --autolock=false`. After disabling it, the encryption key
-    is no longer required to start the manager, and it will start up on its own
-    without user intervention.
+    The `--autolock` flag enables automatic locking of managers with an encryption
+    key. The private keys and data stored by all managers are protected by the
+    encryption key printed in the output, and is inaccessible without it. Make sure
+    to store this key securely, in order to reactivate a manager after it restarts.
+    Pass the key to the `docker swarm unlock` command to reactivate the manager.
+    You can disable autolock by running `docker swarm update --autolock=false`.
+    After disabling it, the encryption key is no longer required to start the
+    manager, and it will start up on its own without user intervention.
 @y
-    This flag enables automatic locking of managers with an encryption key. The
-    private keys and data stored by all managers will be protected by the
-    encryption key printed in the output, and will not be accessible without it.
-    Thus, it is very important to store this key in order to activate a manager
-    after it restarts. The key can be passed to `docker swarm unlock` to reactivate
-    the manager. Autolock can be disabled by running
-    `docker swarm update --autolock=false`. After disabling it, the encryption key
-    is no longer required to start the manager, and it will start up on its own
-    without user intervention.
+    The `--autolock` flag enables automatic locking of managers with an encryption
+    key. The private keys and data stored by all managers are protected by the
+    encryption key printed in the output, and is inaccessible without it. Make sure
+    to store this key securely, in order to reactivate a manager after it restarts.
+    Pass the key to the `docker swarm unlock` command to reactivate the manager.
+    You can disable autolock by running `docker swarm update --autolock=false`.
+    After disabling it, the encryption key is no longer required to start the
+    manager, and it will start up on its own without user intervention.
 @z
 
 @x
-    ### `--cert-expiry`
+    ### <a name=""></a> Configure node healthcheck frequency (--dispatcher-heartbeat)
 @y
-    ### `--cert-expiry`
+    ### <a name=""></a> Configure node healthcheck frequency (--dispatcher-heartbeat)
 @z
 
 @x
-    This flag sets the validity period for node certificates.
+    The `--dispatcher-heartbeat` flag sets the frequency at which nodes are told to
+    report their health.
 @y
-    This flag sets the validity period for node certificates.
+    The `--dispatcher-heartbeat` flag sets the frequency at which nodes are told to
+    report their health.
 @z
 
 @x
-    ### `--dispatcher-heartbeat`
+    ### Use an external certificate authority (--external-ca) {#external-ca}
 @y
-    ### `--dispatcher-heartbeat`
+    ### Use an external certificate authority (--external-ca) {#external-ca}
 @z
 
 @x
-    This flag sets the frequency with which nodes are told to use as a
-    period to report their health.
+    This flag sets up the swarm to use an external CA to issue node certificates.
+    The value takes the form `protocol=X,url=Y`. The value for `protocol` specifies
+    what protocol should be used to send signing requests to the external CA.
+    Currently, the only supported value is `cfssl`. The URL specifies the endpoint
+    where signing requests should be submitted.
 @y
-    This flag sets the frequency with which nodes are told to use as a
-    period to report their health.
+    This flag sets up the swarm to use an external CA to issue node certificates.
+    The value takes the form `protocol=X,url=Y`. The value for `protocol` specifies
+    what protocol should be used to send signing requests to the external CA.
+    Currently, the only supported value is `cfssl`. The URL specifies the endpoint
+    where signing requests should be submitted.
 @z
 
 @x
-    ### `--external-ca`
+    ### Force-restart node as a single-mode manager (--force-new-cluster) {#force-new-cluster}
 @y
-    ### `--external-ca`
+    ### Force-restart node as a single-mode manager (--force-new-cluster) {#force-new-cluster}
 @z
 
 @x
-    This flag sets up the swarm to use an external CA to issue node certificates. The value takes
-    the form `protocol=X,url=Y`. The value for `protocol` specifies what protocol should be used
-    to send signing requests to the external CA. Currently, the only supported value is `cfssl`.
-    The URL specifies the endpoint where signing requests should be submitted.
+    This flag forces an existing node that was part of a quorum that was lost to
+    restart as a single-node Manager without losing its data.
 @y
-    This flag sets up the swarm to use an external CA to issue node certificates. The value takes
-    the form `protocol=X,url=Y`. The value for `protocol` specifies what protocol should be used
-    to send signing requests to the external CA. Currently, the only supported value is `cfssl`.
-    The URL specifies the endpoint where signing requests should be submitted.
+    This flag forces an existing node that was part of a quorum that was lost to
+    restart as a single-node Manager without losing its data.
 @z
 
 @x
-    ### `--force-new-cluster`
+    ### Specify interface for inbound control plane traffic (--listen-addr) {#listen-addr}
 @y
-    ### `--force-new-cluster`
+    ### Specify interface for inbound control plane traffic (--listen-addr) {#listen-addr}
 @z
 
 @x
-    This flag forces an existing node that was part of a quorum that was lost to restart as a single node Manager without losing its data.
+    The node listens for inbound swarm manager traffic on this address. The default
+    is to listen on `0.0.0.0:2377`. It is also possible to specify a network
+    interface to listen on that interface's address; for example `--listen-addr
+    eth0:2377`.
 @y
-    This flag forces an existing node that was part of a quorum that was lost to restart as a single node Manager without losing its data.
-@z
-
-@x
-    ### `--listen-addr`
-@y
-    ### `--listen-addr`
-@z
-
-@x
-    The node listens for inbound swarm manager traffic on this address. The default is to listen on
-    0.0.0.0:2377. It is also possible to specify a network interface to listen on that interface's
-    address; for example `--listen-addr eth0:2377`.
-@y
-    The node listens for inbound swarm manager traffic on this address. The default is to listen on
-    0.0.0.0:2377. It is also possible to specify a network interface to listen on that interface's
-    address; for example `--listen-addr eth0:2377`.
+    The node listens for inbound swarm manager traffic on this address. The default
+    is to listen on `0.0.0.0:2377`. It is also possible to specify a network
+    interface to listen on that interface's address; for example `--listen-addr
+    eth0:2377`.
 @z
 
 @x
     Specifying a port is optional. If the value is a bare IP address or interface
-    name, the default port 2377 will be used.
+    name, the default port 2377 is used.
 @y
     Specifying a port is optional. If the value is a bare IP address or interface
-    name, the default port 2377 will be used.
+    name, the default port 2377 is used.
 @z
 
 @x
-    ### `--advertise-addr`
+    ### Specify interface for outbound control plane traffic (--advertise-addr) {#advertise-addr}
 @y
-    ### `--advertise-addr`
+    ### Specify interface for outbound control plane traffic (--advertise-addr) {#advertise-addr}
 @z
 
 @x
-    This flag specifies the address that will be advertised to other members of the
-    swarm for API access and overlay networking. If unspecified, Docker will check
-    if the system has a single IP address, and use that IP address with the
-    listening port (see `--listen-addr`). If the system has multiple IP addresses,
-    `--advertise-addr` must be specified so that the correct address is chosen for
-    inter-manager communication and overlay networking.
+    The `--advertise-addr` flag specifies the address that will be advertised to
+    other members of the swarm for API access and overlay networking. If
+    unspecified, Docker will check if the system has a single IP address, and use
+    that IP address with the listening port (see `--listen-addr`). If the system
+    has multiple IP addresses, `--advertise-addr` must be specified so that the
+    correct address is chosen for inter-manager communication and overlay
+    networking.
 @y
-    This flag specifies the address that will be advertised to other members of the
-    swarm for API access and overlay networking. If unspecified, Docker will check
-    if the system has a single IP address, and use that IP address with the
-    listening port (see `--listen-addr`). If the system has multiple IP addresses,
-    `--advertise-addr` must be specified so that the correct address is chosen for
-    inter-manager communication and overlay networking.
+    The `--advertise-addr` flag specifies the address that will be advertised to
+    other members of the swarm for API access and overlay networking. If
+    unspecified, Docker will check if the system has a single IP address, and use
+    that IP address with the listening port (see `--listen-addr`). If the system
+    has multiple IP addresses, `--advertise-addr` must be specified so that the
+    correct address is chosen for inter-manager communication and overlay
+    networking.
 @z
 
 @x
-    It is also possible to specify a network interface to advertise that interface's address;
-    for example `--advertise-addr eth0:2377`.
+    It is also possible to specify a network interface to advertise that
+    interface's address; for example `--advertise-addr eth0:2377`.
 @y
-    It is also possible to specify a network interface to advertise that interface's address;
-    for example `--advertise-addr eth0:2377`.
+    It is also possible to specify a network interface to advertise that
+    interface's address; for example `--advertise-addr eth0:2377`.
 @z
 
 @x
     Specifying a port is optional. If the value is a bare IP address or interface
-    name, the default port 2377 will be used.
+    name, the default port 2377 is used.
 @y
     Specifying a port is optional. If the value is a bare IP address or interface
-    name, the default port 2377 will be used.
+    name, the default port 2377 is used.
 @z
 
 @x
-    ### `--data-path-addr`
+    ### Specify interface for data traffic (--data-path-addr) {#data-path-addr}
 @y
-    ### `--data-path-addr`
+    ### Specify interface for data traffic (--data-path-addr) {#data-path-addr}
 @z
 
 @x
-    This flag specifies the address that global scope network drivers will publish towards
-    other nodes in order to reach the containers running on this node.
-    Using this parameter it is then possible to separate the container's data traffic from the
-    management traffic of the cluster.
-    If unspecified, Docker will use the same IP address or interface that is used for the
-    advertise address.
+    The `--data-path-addr` flag specifies the address that global scope network
+    drivers will publish towards other nodes in order to reach the containers
+    running on this node. Using this parameter you can separate the container's
+    data traffic from the management traffic of the cluster.
 @y
-    This flag specifies the address that global scope network drivers will publish towards
-    other nodes in order to reach the containers running on this node.
-    Using this parameter it is then possible to separate the container's data traffic from the
-    management traffic of the cluster.
-    If unspecified, Docker will use the same IP address or interface that is used for the
-    advertise address.
+    The `--data-path-addr` flag specifies the address that global scope network
+    drivers will publish towards other nodes in order to reach the containers
+    running on this node. Using this parameter you can separate the container's
+    data traffic from the management traffic of the cluster.
 @z
 
 @x
-    ### `--data-path-port`
+    If unspecified, the IP address or interface of the advertise address is used.
 @y
-    ### `--data-path-port`
+    If unspecified, the IP address or interface of the advertise address is used.
 @z
 
 @x
-    This flag allows you to configure the UDP port number to use for data path
-    traffic. The provided port number must be within the 1024 - 49151 range. If
-    this flag is not set or is set to 0, the default port number 4789 is used.
-    The data path port can only be configured when initializing the swarm, and
-    applies to all nodes that join the swarm.
-    The following example initializes a new Swarm, and configures the data path
-    port to UDP port 7777;
+    ### Configure port number for data traffic (--data-path-port) {#data-path-port}
 @y
-    This flag allows you to configure the UDP port number to use for data path
-    traffic. The provided port number must be within the 1024 - 49151 range. If
-    this flag is not set or is set to 0, the default port number 4789 is used.
-    The data path port can only be configured when initializing the swarm, and
-    applies to all nodes that join the swarm.
-    The following example initializes a new Swarm, and configures the data path
-    port to UDP port 7777;
+    ### Configure port number for data traffic (--data-path-port) {#data-path-port}
+@z
+
+@x
+    The `--data-path-port` flag allows you to configure the UDP port number to use
+    for data path traffic. The provided port number must be within the 1024 - 49151
+    range. If this flag isn't set, or if it's set to 0, the default port number
+    4789 is used. The data path port can only be configured when initializing the
+    swarm, and applies to all nodes that join the swarm. The following example
+    initializes a new Swarm, and configures the data path port to UDP port 7777;
+@y
+    The `--data-path-port` flag allows you to configure the UDP port number to use
+    for data path traffic. The provided port number must be within the 1024 - 49151
+    range. If this flag isn't set, or if it's set to 0, the default port number
+    4789 is used. The data path port can only be configured when initializing the
+    swarm, and applies to all nodes that join the swarm. The following example
+    initializes a new Swarm, and configures the data path port to UDP port 7777;
 @z
 
 @x
@@ -644,41 +658,45 @@ examples: |-
 @z
 
 @x
-    ### `--default-addr-pool`
-    This flag specifies default subnet pools for global scope networks.
-    Format example is `--default-addr-pool 30.30.0.0/16 --default-addr-pool 40.40.0.0/16`
+    ### Specify default subnet pools (--default-addr-pool) {#default-addr-pool}
 @y
-    ### `--default-addr-pool`
-    This flag specifies default subnet pools for global scope networks.
-    Format example is `--default-addr-pool 30.30.0.0/16 --default-addr-pool 40.40.0.0/16`
+    ### Specify default subnet pools (--default-addr-pool) {#default-addr-pool}
 @z
 
 @x
-    ### `--default-addr-pool-mask-length`
-    This flag specifies default subnet pools mask length for default-addr-pool.
-    Format example is `--default-addr-pool-mask-length 24`
+    The `--default-addr-pool` flag specifies default subnet pools for global scope
+    networks. For example, to specify two address pools:
 @y
-    ### `--default-addr-pool-mask-length`
-    This flag specifies default subnet pools mask length for default-addr-pool.
-    Format example is `--default-addr-pool-mask-length 24`
+    The `--default-addr-pool` flag specifies default subnet pools for global scope
+    networks. For example, to specify two address pools:
 @z
 
 @x
-    ### `--task-history-limit`
+    ```console
+    $ docker swarm init \
+      --default-addr-pool 30.30.0.0/16 \
+      --default-addr-pool 40.40.0.0/16
+    ```
 @y
-    ### `--task-history-limit`
+    ```console
+    $ docker swarm init \
+      --default-addr-pool 30.30.0.0/16 \
+      --default-addr-pool 40.40.0.0/16
+    ```
 @z
 
 @x
-    This flag sets up task history retention limit.
+    Use the `--default-addr-pool-mask-length` flag to specify the default subnet
+    pools mask length for the subnet pools.
 @y
-    This flag sets up task history retention limit.
+    Use the `--default-addr-pool-mask-length` flag to specify the default subnet
+    pools mask length for the subnet pools.
 @z
 
 @x
-    ### `--max-snapshots`
+    ### Set limit for number of snapshots to keep (--max-snapshots) {#max-snapshots}
 @y
-    ### `--max-snapshots`
+    ### Set limit for number of snapshots to keep (--max-snapshots) {#max-snapshots}
 @z
 
 @x
@@ -694,42 +712,44 @@ examples: |-
 @z
 
 @x
-    ### `--snapshot-interval`
+    ### Configure Raft snapshot log interval (--snapshot-interval) {#snapshot-interval}
 @y
-    ### `--snapshot-interval`
+    ### Configure Raft snapshot log interval (--snapshot-interval) {#snapshot-interval}
 @z
 
 @x
-    This flag specifies how many log entries to allow in between Raft snapshots.
-    Setting this to a higher number will trigger snapshots less frequently.
-    Snapshots compact the Raft log and allow for more efficient transfer of the
-    state to new managers. However, there is a performance cost to taking snapshots
-    frequently.
+    The `--snapshot-interval` flag specifies how many log entries to allow in
+    between Raft snapshots. Setting this to a high number will trigger snapshots
+    less frequently. Snapshots compact the Raft log and allow for more efficient
+    transfer of the state to new managers. However, there is a performance cost to
+    taking snapshots frequently.
 @y
-    This flag specifies how many log entries to allow in between Raft snapshots.
-    Setting this to a higher number will trigger snapshots less frequently.
-    Snapshots compact the Raft log and allow for more efficient transfer of the
-    state to new managers. However, there is a performance cost to taking snapshots
-    frequently.
+    The `--snapshot-interval` flag specifies how many log entries to allow in
+    between Raft snapshots. Setting this to a high number will trigger snapshots
+    less frequently. Snapshots compact the Raft log and allow for more efficient
+    transfer of the state to new managers. However, there is a performance cost to
+    taking snapshots frequently.
 @z
 
 @x
-    ### `--availability`
+    ### Configure the availability of a manager (--availability) {#availability}
 @y
-    ### `--availability`
+    ### Configure the availability of a manager (--availability) {#availability}
 @z
 
 @x
-    This flag specifies the availability of the node at the time the node joins a master.
-    Possible availability values are `active`, `pause`, or `drain`.
+    The `--availability` flag specifies the availability of the node at the time
+    the node joins a master. Possible availability values are `active`, `pause`, or
+    `drain`.
 @y
-    This flag specifies the availability of the node at the time the node joins a master.
-    Possible availability values are `active`, `pause`, or `drain`.
+    The `--availability` flag specifies the availability of the node at the time
+    the node joins a master. Possible availability values are `active`, `pause`, or
+    `drain`.
 @z
 
 @x
-    This flag is useful in certain situations. For example, a cluster may want to have
-    dedicated manager nodes that are not served as worker nodes. This could be achieved
+    This flag is useful in certain situations. For example, a cluster may want to
+    have dedicated manager nodes that don't serve as worker nodes. You can do this
     by passing `--availability=drain` to `docker swarm init`.
 deprecated: false
 min_api_version: "1.24"
@@ -738,8 +758,8 @@ experimentalcli: false
 kubernetes: false
 swarm: true
 @y
-    This flag is useful in certain situations. For example, a cluster may want to have
-    dedicated manager nodes that are not served as worker nodes. This could be achieved
+    This flag is useful in certain situations. For example, a cluster may want to
+    have dedicated manager nodes that don't serve as worker nodes. You can do this
     by passing `--availability=drain` to `docker swarm init`.
 deprecated: false
 min_api_version: "1.24"

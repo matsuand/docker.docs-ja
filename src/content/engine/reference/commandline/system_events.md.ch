@@ -8,6 +8,7 @@ datafile: docker_system_events
 title: docker system events
 aliases:
 - /edge/engine/reference/commandline/system_events/
+- /engine/reference/commandline/events/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_system_events
 title: docker system events
 aliases:
 - /edge/engine/reference/commandline/system_events/
+- /engine/reference/commandline/events/
 layout: cli
 ---
 @z

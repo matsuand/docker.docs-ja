@@ -693,13 +693,13 @@ An entry with the ip address and hostname is created in `/etc/hosts` inside cont
 Specify a build’s container isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/run.md#isolation)
+[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
 for details.
 @y
 Specify a build’s container isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/run.md#isolation)
+[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
 for details.
 @z
 
@@ -1954,7 +1954,7 @@ host system to be added. An example of where this is useful is when multiple
 containers (running as different users) need to all read or write the same
 file on the host system. That file can be owned by a group shared by all the
 containers, and specified in `group_add`. See the
-[Docker documentation](../../engine/reference/run.md#additional-groups) for more
+[Docker documentation](../../engine/reference/commandline/container_run.md#additional-groups) for more
 details.
 @y
 Specify additional groups (by name or number) which the user inside the
@@ -1963,7 +1963,7 @@ host system to be added. An example of where this is useful is when multiple
 containers (running as different users) need to all read or write the same
 file on the host system. That file can be owned by a group shared by all the
 containers, and specified in `group_add`. See the
-[Docker documentation](../../engine/reference/run.md#additional-groups) for more
+[Docker documentation](../../engine/reference/commandline/container_run.md#additional-groups) for more
 details.
 @z
 
@@ -2257,13 +2257,13 @@ services:
 Specify a container’s isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/run.md#isolation)
+[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
 for details.
 @y
 Specify a container’s isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/run.md#isolation)
+[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
 for details.
 @z
 
@@ -3873,10 +3873,10 @@ restart: "unless-stopped"
 
 @x
 Each of these is a single value, analogous to its
-[docker run](../../engine/reference/run.md#runtime-constraints-on-resources) counterpart.
+[docker run](../../engine/reference/commandline/container_run.md#runtime-constraints-on-resources) counterpart.
 @y
 Each of these is a single value, analogous to its
-[docker run](../../engine/reference/run.md#runtime-constraints-on-resources) counterpart.
+[docker run](../../engine/reference/commandline/container_run.md#runtime-constraints-on-resources) counterpart.
 @z
 
 @x

@@ -234,9 +234,9 @@ examples: |-
 @z
 
 @x
-    You can use `--link` option to link another container with a preferred alias
+    You can use `--link` option to link another container with a preferred alias.
 @y
-    You can use `--link` option to link another container with a preferred alias
+    You can use `--link` option to link another container with a preferred alias.
 @z
 
 @x

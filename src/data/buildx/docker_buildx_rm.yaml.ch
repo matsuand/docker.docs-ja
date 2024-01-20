@@ -3,11 +3,11 @@
 
 @x
 command: docker buildx rm
-short: Remove a builder instance
+short: Remove one or more builder instances
 long: |-
     Removes the specified or current builder. It is a no-op attempting to remove the
     default builder.
-usage: docker buildx rm [NAME]
+usage: docker buildx rm [OPTIONS] [NAME] [NAME...]
 pname: docker buildx
 plink: docker_buildx.yaml
 options:
@@ -71,11 +71,11 @@ examples: |-
     ### Remove all inactive builders (--all-inactive) {#all-inactive}
 @y
 command: docker buildx rm
-short: Remove a builder instance
+short: Remove one or more builder instances
 long: |-
     Removes the specified or current builder. It is a no-op attempting to remove the
     default builder.
-usage: docker buildx rm [NAME]
+usage: docker buildx rm [OPTIONS] [NAME] [NAME...]
 pname: docker buildx
 plink: docker_buildx.yaml
 options:

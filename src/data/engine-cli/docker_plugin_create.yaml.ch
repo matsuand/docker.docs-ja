@@ -6,8 +6,8 @@ command: docker plugin create
 short: |
     Create a plugin from a rootfs and configuration. Plugin data directory must contain config.json and rootfs directory.
 long: |-
-    Creates a plugin. Before creating the plugin, prepare the plugin's root filesystem as well as
-    [the config.json](../../extend/config.md)
+    Creates a plugin. Before creating the plugin, prepare the plugin's root
+    filesystem as well as the [config.json](../../extend/config.md).
 usage: docker plugin create [OPTIONS] PLUGIN PLUGIN-DATA-DIR
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -40,8 +40,8 @@ command: docker plugin create
 short: |
     Create a plugin from a rootfs and configuration. Plugin data directory must contain config.json and rootfs directory.
 long: |-
-    Creates a plugin. Before creating the plugin, prepare the plugin's root filesystem as well as
-    [the config.json](../../extend/config.md)
+    Creates a plugin. Before creating the plugin, prepare the plugin's root
+    filesystem as well as the [config.json](../../extend/config.md).
 usage: docker plugin create [OPTIONS] PLUGIN PLUGIN-DATA-DIR
 pname: docker plugin
 plink: docker_plugin.yaml

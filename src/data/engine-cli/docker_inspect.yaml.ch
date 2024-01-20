@@ -70,9 +70,9 @@ long: |-
 @z
 
 @x
-    The following example inspects a _volume_ named "myvolume"
+    The following example inspects a volume named `myvolume`.
 @y
-    The following example inspects a _volume_ named "myvolume"
+    The following example inspects a volume named `myvolume`.
 @z
 
 @x
@@ -357,14 +357,14 @@ examples: |-
     section contains a map of the internal port mappings to a list of external
     address/port objects. To grab just the numeric public port, you use `index` to
     find the specific port map, and then `index` 0 contains the first object inside
-    of that. Then we ask for the `HostPort` field to get the public address.
+    of that. Then, specify the `HostPort` field to get the public address.
 @y
     The `.Field` syntax doesn't work when the field name begins with a number, but
     the template language's `index` function does. The `.NetworkSettings.Ports`
     section contains a map of the internal port mappings to a list of external
     address/port objects. To grab just the numeric public port, you use `index` to
     find the specific port map, and then `index` 0 contains the first object inside
-    of that. Then we ask for the `HostPort` field to get the public address.
+    of that. Then, specify the `HostPort` field to get the public address.
 @z
 
 @x

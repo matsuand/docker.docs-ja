@@ -5,21 +5,10 @@
 command: docker container wait
 aliases: docker container wait, docker wait
 short: Block until one or more containers stop, then print their exit codes
-long: See [docker wait](wait.md) for more information.
+long: Block until one or more containers stop, then print their exit codes
 usage: docker container wait CONTAINER [CONTAINER...]
 pname: docker container
 plink: docker_container.yaml
-@y
-command: docker container wait
-aliases: docker container wait, docker wait
-short: 1 つまたは複数コンテナーが停止するまで待ち、各終了コードを表示します。
-long: 詳しくは [docker wait](wait.md) を参照してください。
-usage: docker container wait CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-@z
-
-@x
 inherited_options:
     - option: help
       value_type: bool
@@ -31,27 +20,102 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+examples: |-
+    Start a container in the background.
 @y
+command: docker container wait
+aliases: docker container wait, docker wait
+short: Block until one or more containers stop, then print their exit codes
+long: Block until one or more containers stop, then print their exit codes
+usage: docker container wait CONTAINER [CONTAINER...]
+pname: docker container
+plink: docker_container.yaml
 inherited_options:
     - option: help
       value_type: bool
       default_value: "false"
-      description: 利用方法を表示します。
+      description: Print usage
       deprecated: false
       hidden: true
       experimental: false
       experimentalcli: false
       kubernetes: false
       swarm: false
+examples: |-
+    Start a container in the background.
 @z
 
 @x
+    ```console
+    $ docker run -dit --name=my_container ubuntu bash
+    ```
+@y
+    ```console
+    $ docker run -dit --name=my_container ubuntu bash
+    ```
+@z
+
+@x
+    Run `docker wait`, which should block until the container exits.
+@y
+    Run `docker wait`, which should block until the container exits.
+@z
+
+@x
+    ```console
+    $ docker wait my_container
+    ```
+@y
+    ```console
+    $ docker wait my_container
+    ```
+@z
+
+@x
+    In another terminal, stop the first container. The `docker wait` command above
+    returns the exit code.
+@y
+    In another terminal, stop the first container. The `docker wait` command above
+    returns the exit code.
+@z
+
+@x
+    ```console
+    $ docker stop my_container
+    ```
+@y
+    ```console
+    $ docker stop my_container
+    ```
+@z
+
+@x
+    This is the same `docker wait` command from above, but it now exits, returning
+    `0`.
+@y
+    This is the same `docker wait` command from above, but it now exits, returning
+    `0`.
+@z
+
+@x
+    ```console
+    $ docker wait my_container
+@y
+    ```console
+    $ docker wait my_container
+@z
+
+@x
+    0
+    ```
 deprecated: false
 experimental: false
 experimentalcli: false
 kubernetes: false
 swarm: false
 @y
+    0
+    ```
 deprecated: false
 experimental: false
 experimentalcli: false

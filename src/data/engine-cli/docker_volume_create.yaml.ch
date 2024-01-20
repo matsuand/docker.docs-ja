@@ -370,31 +370,31 @@ examples: |-
 @z
 
 @x
-    The mount is created inside the container's `/world` directory. Docker does not
+    The mount is created inside the container's `/world` directory. Docker doesn't
     support relative paths for mount points inside the container.
 @y
-    The mount is created inside the container's `/world` directory. Docker does not
+    The mount is created inside the container's `/world` directory. Docker doesn't
     support relative paths for mount points inside the container.
 @z
 
 @x
-    Multiple containers can use the same volume in the same time period. This is
-    useful if two containers need access to shared data. For example, if one
-    container writes and the other reads the data.
+    Multiple containers can use the same volume. This is useful if two containers
+    need access to shared data. For example, if one container writes and the other
+    reads the data.
 @y
-    Multiple containers can use the same volume in the same time period. This is
-    useful if two containers need access to shared data. For example, if one
-    container writes and the other reads the data.
+    Multiple containers can use the same volume. This is useful if two containers
+    need access to shared data. For example, if one container writes and the other
+    reads the data.
 @z
 
 @x
-    Volume names must be unique among drivers. This means you cannot use the same
-    volume name with two different drivers. If you attempt this `docker` returns an
-    error:
+    Volume names must be unique among drivers. This means you can't use the same
+    volume name with two different drivers. Attempting to create two volumes with
+    the same name results in an error:
 @y
-    Volume names must be unique among drivers. This means you cannot use the same
-    volume name with two different drivers. If you attempt this `docker` returns an
-    error:
+    Volume names must be unique among drivers. This means you can't use the same
+    volume name with two different drivers. Attempting to create two volumes with
+    the same name results in an error:
 @z
 
 @x
@@ -409,10 +409,10 @@ examples: |-
 
 @x
     If you specify a volume name already in use on the current driver, Docker
-    assumes you want to re-use the existing volume and does not return an error.
+    assumes you want to re-use the existing volume and doesn't return an error.
 @y
     If you specify a volume name already in use on the current driver, Docker
-    assumes you want to re-use the existing volume and does not return an error.
+    assumes you want to re-use the existing volume and doesn't return an error.
 @z
 
 @x
@@ -454,23 +454,19 @@ examples: |-
 @z
 
 @x
-    The built-in `local` driver on Windows does not support any options.
+    The built-in `local` driver accepts no options on Windows. On Linux and with
+    Docker Desktop, the `local` driver accepts options similar to the Linux `mount`
+    command. You can provide multiple options by passing the `--opt` flag multiple
+    times. Some `mount` options (such as the `o` option) can take a comma-separated
+    list of options. Complete list of available mount options can be found
+    [here](https://man7.org/linux/man-pages/man8/mount.8.html).
 @y
-    The built-in `local` driver on Windows does not support any options.
-@z
-
-@x
-    The built-in `local` driver on Linux accepts options similar to the linux
-    `mount` command. You can provide multiple options by passing the `--opt` flag
-    multiple times. Some `mount` options (such as the `o` option) can take a
-    comma-separated list of options. Complete list of available mount options can be
-    found [here](https://man7.org/linux/man-pages/man8/mount.8.html).
-@y
-    The built-in `local` driver on Linux accepts options similar to the linux
-    `mount` command. You can provide multiple options by passing the `--opt` flag
-    multiple times. Some `mount` options (such as the `o` option) can take a
-    comma-separated list of options. Complete list of available mount options can be
-    found [here](https://man7.org/linux/man-pages/man8/mount.8.html).
+    The built-in `local` driver accepts no options on Windows. On Linux and with
+    Docker Desktop, the `local` driver accepts options similar to the Linux `mount`
+    command. You can provide multiple options by passing the `--opt` flag multiple
+    times. Some `mount` options (such as the `o` option) can take a comma-separated
+    list of options. Complete list of available mount options can be found
+    [here](https://man7.org/linux/man-pages/man8/mount.8.html).
 @z
 
 @x

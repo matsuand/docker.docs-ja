@@ -11,7 +11,7 @@ aliases:
 ---
 @y
 ---
-title: Use containers for Node.js development
+title: コンテナーを利用した Node.js 開発
 keywords: node, node.js, development
 description: Learn how to develop your Node.js application locally using containers.
 aliases:
@@ -22,19 +22,19 @@ aliases:
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 Complete [Containerize a Node.js application](containerize.md).
 @y
-Complete [Containerize a Node.js application](containerize.md).
+[Node.js アプリケーションのコンテナー化](containerize.md) を完了していること。
 @z
 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
@@ -43,30 +43,32 @@ In this section, you'll learn how to set up a development environment for your c
  - Configuring your container to run a development environment
  - Debugging your containerized application
 @y
-In this section, you'll learn how to set up a development environment for your containerized application. This includes:
- - Adding a local database and persisting data
- - Configuring your container to run a development environment
- - Debugging your containerized application
+本節ではコンテナー化したアプリケーションに対する開発環境の構築方法を学びます。
+ここでは以下を行います。
+ - ローカルデータベースの追加とそのデータ維持。
+ - 開発環境として実行するためのコンテナー設定。
+ - コンテナー化したアプリケーションのデバッグ。
 @z
 
 @x
 ## Add a local database and persist data
 @y
-## Add a local database and persist data
+## ローカルデータベースの追加とデータ維持 {#add-a-local-database-and-persist-data}
 @z
 
 @x
 You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data.
 @y
-You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data.
+コンテナーでは、ローカルサービスとしてたとえばデータベースを構築することができます。
+本節では `compose.yaml` ファイルを編集して、データベースサービスを追加してデータ保存のためのボリュームを定義します。
 @z
 
 @x
 Open the `compose.yaml` file in an IDE or text editor. You'll notice it
 already contains commented-out instructions for a Postgres database and volume.
 @y
-Open the `compose.yaml` file in an IDE or text editor. You'll notice it
-already contains commented-out instructions for a Postgres database and volume.
+IDE またはテキストエディターを使って `compose.yaml` ファイルを開きます。
+中身を見ればわかりますが、そこには Postgres データベースとボリュームに関する命令がコメントアウトされているはずです。
 @z
 
 @x

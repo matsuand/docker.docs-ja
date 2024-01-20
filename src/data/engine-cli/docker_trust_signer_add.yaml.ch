@@ -30,7 +30,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    ### Add a signer to a repo
+    ### Add a signer to a repository
 @y
 command: docker trust signer add
 short: Add a signer
@@ -60,7 +60,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    ### Add a signer to a repo
+    ### Add a signer to a repository
 @z
 
 @x

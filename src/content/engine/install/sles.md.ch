@@ -346,12 +346,12 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
 @z
 
 @x
-     v  | docker-ce | package | 3:24.0.0-3 | s390x | Docker CE Stable - s390x
-     v  | docker-ce | package | 3:23.0.6-3 | s390x | Docker CE Stable - s390x
+     v  | docker-ce | package | 3:25.0.0-3 | s390x | Docker CE Stable - s390x
+     v  | docker-ce | package | 3:24.0.7-3 | s390x | Docker CE Stable - s390x
    ```
 @y
-     v  | docker-ce | package | 3:24.0.0-3 | s390x | Docker CE Stable - s390x
-     v  | docker-ce | package | 3:23.0.6-3 | s390x | Docker CE Stable - s390x
+     v  | docker-ce | package | 3:25.0.0-3 | s390x | Docker CE Stable - s390x
+     v  | docker-ce | package | 3:24.0.7-3 | s390x | Docker CE Stable - s390x
    ```
 @z
 
@@ -366,11 +366,11 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:24.0.0`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:24.0.0`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0`.
 @z
 
 @x

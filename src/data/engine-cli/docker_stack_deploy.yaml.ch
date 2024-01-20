@@ -176,9 +176,9 @@ examples: |-
 @z
 
 @x
-    The `deploy` command supports compose file version `3.0` and above.
+    The `deploy` command supports Compose file version `3.0` and above.
 @y
-    The `deploy` command supports compose file version `3.0` and above.
+    The `deploy` command supports Compose file version `3.0` and above.
 @z
 
 @x

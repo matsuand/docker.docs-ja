@@ -31,7 +31,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    ### Sign a tag as a repo admin
+    ### Sign a tag as a repository admin
 @y
 command: docker trust sign
 short: Sign an image
@@ -62,7 +62,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    ### Sign a tag as a repo admin
+    ### Sign a tag as a repository admin
 @z
 
 @x

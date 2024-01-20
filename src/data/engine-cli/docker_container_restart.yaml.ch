@@ -5,7 +5,7 @@
 command: docker container restart
 aliases: docker container restart, docker restart
 short: Restart one or more containers
-long: See [docker restart](restart.md) for more information.
+long: Restart one or more containers
 usage: docker container restart [OPTIONS] CONTAINER [CONTAINER...]
 pname: docker container
 plink: docker_container.yaml
@@ -42,6 +42,10 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+examples: |-
+    ```console
+    $ docker restart my_container
+    ```
 deprecated: false
 experimental: false
 experimentalcli: false
@@ -51,7 +55,7 @@ swarm: false
 command: docker container restart
 aliases: docker container restart, docker restart
 short: Restart one or more containers
-long: See [docker restart](restart.md) for more information.
+long: Restart one or more containers
 usage: docker container restart [OPTIONS] CONTAINER [CONTAINER...]
 pname: docker container
 plink: docker_container.yaml
@@ -88,6 +92,10 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+examples: |-
+    ```console
+    $ docker restart my_container
+    ```
 deprecated: false
 experimental: false
 experimentalcli: false

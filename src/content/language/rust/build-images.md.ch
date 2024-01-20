@@ -442,13 +442,13 @@ Related information:
  - [Dockerfile reference](../../engine/reference/builder.md)
  - [.dockerignore file](../../engine/reference/builder.md#dockerignore-file)
  - [docker init CLI reference](../../engine/reference/commandline/init.md)
- - [docker build CLI reference](../../engine/reference/commandline/build.md)
+ - [docker build CLI reference](../../engine/reference/commandline/image_build.md)
 @y
 Related information:
  - [Dockerfile reference](../../engine/reference/builder.md)
  - [.dockerignore file](../../engine/reference/builder.md#dockerignore-file)
  - [docker init CLI reference](../../engine/reference/commandline/init.md)
- - [docker build CLI reference](../../engine/reference/commandline/build.md)
+ - [docker build CLI reference](../../engine/reference/commandline/image_build.md)
 @z
 
 @x

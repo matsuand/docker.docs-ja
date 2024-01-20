@@ -136,9 +136,9 @@ examples: |-
 @z
 
 @x
-    You can inspect a secret, either by its *name*, or *ID*
+    You can inspect a secret, either by its name or ID.
 @y
-    You can inspect a secret, either by its *name*, or *ID*
+    You can inspect a secret, either by its name or ID.
 @z
 
 @x
@@ -230,11 +230,11 @@ examples: |-
 @z
 
 @x
-    You can use the --format option to obtain specific information about a
+    You can use the `--format` option to obtain specific information about a
     secret. The following example command outputs the creation time of the
     secret.
 @y
-    You can use the --format option to obtain specific information about a
+    You can use the `--format` option to obtain specific information about a
     secret. The following example command outputs the creation time of the
     secret.
 @z

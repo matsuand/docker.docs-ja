@@ -120,10 +120,10 @@ examples: |-
 @z
 
 @x
-    ```non
+    ```console
     $ docker node rm swarm-node-03
 @y
-    ```non
+    ```console
     $ docker node rm swarm-node-03
 @z
 

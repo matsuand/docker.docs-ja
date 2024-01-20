@@ -18,7 +18,7 @@ aliases:
 ---
 @y
 ---
-title: Networking overview
+title: ネットワーク処理概要
 description: Learn how networking works from the container's point of view
 keywords: networking, container, standalone, IP address, DNS resolution
 aliases:
@@ -466,14 +466,14 @@ Your container will have lines in `/etc/hosts` which define the hostname of the
 container itself, as well as `localhost` and a few other common things. Custom
 hosts, defined in `/etc/hosts` on the host machine, aren't inherited by
 containers. To pass additional hosts into container, refer to [add entries to
-container hosts file](../engine/reference/commandline/run.md#add-host) in the
+container hosts file](../engine/reference/commandline/container_run.md#add-host) in the
 `docker run` reference documentation.
 @y
 Your container will have lines in `/etc/hosts` which define the hostname of the
 container itself, as well as `localhost` and a few other common things. Custom
 hosts, defined in `/etc/hosts` on the host machine, aren't inherited by
 containers. To pass additional hosts into container, refer to [add entries to
-container hosts file](../engine/reference/commandline/run.md#add-host) in the
+container hosts file](../engine/reference/commandline/container_run.md#add-host) in the
 `docker run` reference documentation.
 @z
 

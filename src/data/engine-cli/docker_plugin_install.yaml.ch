@@ -8,7 +8,7 @@ long: |-
     Installs and enables a plugin. Docker looks first for the plugin on your Docker
     host. If the plugin does not exist locally, then the plugin is pulled from
     the registry. Note that the minimum required registry version to distribute
-    plugins is 2.3.0
+    plugins is 2.3.0.
 usage: docker plugin install [OPTIONS] PLUGIN [KEY=VALUE...]
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -75,7 +75,7 @@ long: |-
     Installs and enables a plugin. Docker looks first for the plugin on your Docker
     host. If the plugin does not exist locally, then the plugin is pulled from
     the registry. Note that the minimum required registry version to distribute
-    plugins is 2.3.0
+    plugins is 2.3.0.
 usage: docker plugin install [OPTIONS] PLUGIN [KEY=VALUE...]
 pname: docker plugin
 plink: docker_plugin.yaml

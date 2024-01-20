@@ -8,6 +8,7 @@ datafile: docker_container_stop
 title: docker container stop
 aliases:
 - /edge/engine/reference/commandline/container_stop/
+- /engine/reference/commandline/stop/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_stop
 title: docker container stop
 aliases:
 - /edge/engine/reference/commandline/container_stop/
+- /engine/reference/commandline/stop/
 layout: cli
 ---
 @z

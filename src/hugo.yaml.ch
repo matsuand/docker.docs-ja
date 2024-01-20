@@ -70,7 +70,7 @@ menus:
     url: /get-started/overview/
     weight: 1
   - name: Manuals
-    url: /desktop/
+    url: /manuals/
     weight: 2
   - name: Reference
     url: /reference/
@@ -88,7 +88,7 @@ menus:
     url: /get-started/overview/
     weight: 1
   - name: マニュアル
-    url: /desktop/
+    url: /manuals/
     weight: 2
   - name: リファレンス
     url: /reference/

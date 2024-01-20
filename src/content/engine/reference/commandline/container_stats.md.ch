@@ -8,6 +8,7 @@ datafile: docker_container_stats
 title: docker container stats
 aliases:
 - /edge/engine/reference/commandline/container_stats/
+- /engine/reference/commandline/stats/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_stats
 title: docker container stats
 aliases:
 - /edge/engine/reference/commandline/container_stats/
+- /engine/reference/commandline/stats/
 layout: cli
 ---
 @z

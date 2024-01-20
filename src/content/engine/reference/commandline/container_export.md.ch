@@ -8,6 +8,7 @@ datafile: docker_container_export
 title: docker container export
 aliases:
 - /edge/engine/reference/commandline/container_export/
+- /engine/reference/commandline/export/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_export
 title: docker container export
 aliases:
 - /edge/engine/reference/commandline/container_export/
+- /engine/reference/commandline/export/
 layout: cli
 ---
 @z

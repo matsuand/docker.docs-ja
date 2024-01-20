@@ -42,9 +42,9 @@ computer, for example.
 @z
 
 @x
-1. Commit your containers to an image with [`docker container commit`](../engine/reference/commandline/commit.md).
+1. Commit your containers to an image with [`docker container commit`](../engine/reference/commandline/container_commit.md).
 @y
-1. Commit your containers to an image with [`docker container commit`](../engine/reference/commandline/commit.md).
+1. Commit your containers to an image with [`docker container commit`](../engine/reference/commandline/container_commit.md).
 @z
 
 @x
@@ -74,10 +74,10 @@ computer, for example.
 @z
 
 @x
-2. Use [`docker push`](../engine/reference/commandline/push.md) to push any
+2. Use [`docker push`](../engine/reference/commandline/image_push.md) to push any
    images you have built locally and want to keep to the [Docker Hub registry](../docker-hub/index.md).
 @y
-2. Use [`docker push`](../engine/reference/commandline/push.md) to push any
+2. Use [`docker push`](../engine/reference/commandline/image_push.md) to push any
    images you have built locally and want to keep to the [Docker Hub registry](../docker-hub/index.md).
 @z
 
@@ -90,10 +90,10 @@ computer, for example.
 @z
 
 @x
-   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](../engine/reference/commandline/save.md)
+   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](../engine/reference/commandline/image_save.md)
    to save any images you want to keep to a local tar file. 
 @y
-   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](../engine/reference/commandline/save.md)
+   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](../engine/reference/commandline/image_save.md)
    to save any images you want to keep to a local tar file. 
 @z
 
@@ -112,26 +112,26 @@ and [install a different version](release-notes.md) or reset Docker Desktop to f
 @z
 
 @x
-1. Use [`docker pull`](../engine/reference/commandline/pull.md) to restore images
+1. Use [`docker pull`](../engine/reference/commandline/image_pull.md) to restore images
    you pushed to Docker Hub.
 @y
-1. Use [`docker pull`](../engine/reference/commandline/pull.md) to restore images
+1. Use [`docker pull`](../engine/reference/commandline/image_pull.md) to restore images
    you pushed to Docker Hub.
 @z
 
 @x
-   If you backed up your images to a local tar file, use [`docker image load -i images.tar`](../engine/reference/commandline/load.md)
+   If you backed up your images to a local tar file, use [`docker image load -i images.tar`](../engine/reference/commandline/image_load.md)
    to restore previously saved images.
 @y
-   If you backed up your images to a local tar file, use [`docker image load -i images.tar`](../engine/reference/commandline/load.md)
+   If you backed up your images to a local tar file, use [`docker image load -i images.tar`](../engine/reference/commandline/image_load.md)
    to restore previously saved images.
 @z
 
 @x
-2. Re-create your containers if needed, using [`docker run`](../engine/reference/commandline/run.md),
+2. Re-create your containers if needed, using [`docker run`](../engine/reference/commandline/container_run.md),
    or [Docker Compose](../compose/index.md).
 @y
-2. Re-create your containers if needed, using [`docker run`](../engine/reference/commandline/run.md),
+2. Re-create your containers if needed, using [`docker run`](../engine/reference/commandline/container_run.md),
    or [Docker Compose](../compose/index.md).
 @z
 

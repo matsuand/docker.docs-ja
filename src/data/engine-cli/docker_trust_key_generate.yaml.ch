@@ -6,7 +6,7 @@ command: docker trust key generate
 short: Generate and load a signing key-pair
 long: |-
     `docker trust key generate` generates a key-pair to be used with signing,
-     and loads the private key into the local docker trust keystore.
+     and loads the private key into the local Docker trust keystore.
 usage: docker trust key generate NAME
 pname: docker trust key
 plink: docker_trust_key.yaml
@@ -38,7 +38,7 @@ command: docker trust key generate
 short: Generate and load a signing key-pair
 long: |-
     `docker trust key generate` generates a key-pair to be used with signing,
-     and loads the private key into the local docker trust keystore.
+     and loads the private key into the local Docker trust keystore.
 usage: docker trust key generate NAME
 pname: docker trust key
 plink: docker_trust_key.yaml
@@ -94,10 +94,10 @@ examples: |-
 @z
 
 @x
-    The private signing key is encrypted by the passphrase and loaded into the docker trust keystore.
+    The private signing key is encrypted by the passphrase and loaded into the Docker trust keystore.
     All passphrase requests to sign with the key will be referred to by the provided `NAME`.
 @y
-    The private signing key is encrypted by the passphrase and loaded into the docker trust keystore.
+    The private signing key is encrypted by the passphrase and loaded into the Docker trust keystore.
     All passphrase requests to sign with the key will be referred to by the provided `NAME`.
 @z
 

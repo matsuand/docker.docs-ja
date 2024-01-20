@@ -16,13 +16,13 @@ long: |-
 @z
 
 @x
-    A single manifest is information about an image, such as layers, size, and digest.
-    The docker manifest command also gives users additional information such as the os
-    and architecture an image was built for.
+    A single manifest is information about an image, such as layers, size, and
+    digest. The `docker manifest` command also gives you additional information,
+    such as the OS and architecture an image was built for.
 @y
-    A single manifest is information about an image, such as layers, size, and digest.
-    The docker manifest command also gives users additional information such as the os
-    and architecture an image was built for.
+    A single manifest is information about an image, such as layers, size, and
+    digest. The `docker manifest` command also gives you additional information,
+    such as the OS and architecture an image was built for.
 @z
 
 @x
@@ -39,12 +39,12 @@ long: |-
     Ideally a manifest list is created from images that are identical in function for
     different os/arch combinations. For this reason, manifest lists are often referred
     to as "multi-arch images". However, a user could create a manifest list that points
-    to two images -- one for windows on amd64, and one for darwin on amd64.
+    to two images -- one for Windows on AMD64, and one for Darwin on AMD64.
 @y
     Ideally a manifest list is created from images that are identical in function for
     different os/arch combinations. For this reason, manifest lists are often referred
     to as "multi-arch images". However, a user could create a manifest list that points
-    to two images -- one for windows on amd64, and one for darwin on amd64.
+    to two images -- one for Windows on AMD64, and one for Darwin on AMD64.
 @z
 
 @x
@@ -334,18 +334,18 @@ examples: |-
 @z
 
 @x
-    The `docker manifest inspect` command takes an optional `--verbose` flag
-    that gives you the image's name (Ref), and architecture and os (Platform).
+    The `docker manifest inspect` command takes an optional `--verbose` flag that
+    gives you the image's name (Ref), as well as the architecture and OS (Platform).
 @y
-    The `docker manifest inspect` command takes an optional `--verbose` flag
-    that gives you the image's name (Ref), and architecture and os (Platform).
+    The `docker manifest inspect` command takes an optional `--verbose` flag that
+    gives you the image's name (Ref), as well as the architecture and OS (Platform).
 @z
 
 @x
-    Just as with other docker commands that take image names, you can refer to an image with or
+    Just as with other Docker commands that take image names, you can refer to an image with or
     without a tag, or by digest (e.g. `hello-world@sha256:f3b3b28a45160805bb16542c9531888519430e9e6d6ffc09d72261b0d26ff74f`).
 @y
-    Just as with other docker commands that take image names, you can refer to an image with or
+    Just as with other Docker commands that take image names, you can refer to an image with or
     without a tag, or by digest (e.g. `hello-world@sha256:f3b3b28a45160805bb16542c9531888519430e9e6d6ffc09d72261b0d26ff74f`).
 @z
 

@@ -5,530 +5,522 @@
 ---
 description: "How to develop and use a plugin with the managed plugin system"
 keywords: "API, Usage, plugins, documentation, developer"
+title: Plugin Config Version 1 of Plugin V2
 ---
 @y
 ---
 description: "How to develop and use a plugin with the managed plugin system"
 keywords: "API, Usage, plugins, documentation, developer"
+title: Plugin Config Version 1 of Plugin V2
 ---
 @z
 
 @x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Plugin Config Version 1 of Plugin V2
-@y
-# Plugin Config Version 1 of Plugin V2
-@z
-
-@x
 This document outlines the format of the V0 plugin configuration.
 @y
 This document outlines the format of the V0 plugin configuration.
 @z
 
 @x
-Plugin configs describe the various constituents of a docker plugin. Plugin
-configs can be serialized to JSON format with the following media types:
+Plugin configs describe the various constituents of a Docker engine plugin.
+Plugin configs can be serialized to JSON format with the following media types:
 @y
-Plugin configs describe the various constituents of a docker plugin. Plugin
-configs can be serialized to JSON format with the following media types:
+Plugin configs describe the various constituents of a Docker engine plugin.
+Plugin configs can be serialized to JSON format with the following media types:
 @z
 
 @x
 | Config Type | Media Type                              |
 |-------------|-----------------------------------------|
-| config      | "application/vnd.docker.plugin.v1+json" |
+| config      | `application/vnd.docker.plugin.v1+json` |
 @y
 | Config Type | Media Type                              |
 |-------------|-----------------------------------------|
-| config      | "application/vnd.docker.plugin.v1+json" |
+| config      | `application/vnd.docker.plugin.v1+json` |
 @z
 
 @x
-## *Config* Field Descriptions
+## Config Field Descriptions
 @y
-## *Config* Field Descriptions
+## Config Field Descriptions
 @z
 
 @x
-Config provides the base accessible fields for working with V0 plugin format
- in the registry.
+Config provides the base accessible fields for working with V0 plugin format in
+the registry.
 @y
-Config provides the base accessible fields for working with V0 plugin format
- in the registry.
+Config provides the base accessible fields for working with V0 plugin format in
+the registry.
 @z
 
 @x
-- **`description`** *string*
+- `description` string
 @y
-- **`description`** *string*
+- `description` string
 @z
 
 @x
-    description of the plugin
+  Description of the plugin
 @y
-    description of the plugin
+  Description of the plugin
 @z
 
 @x
-- **`documentation`** *string*
+- `documentation` string
 @y
-- **`documentation`** *string*
+- `documentation` string
 @z
 
 @x
-    link to the documentation about the plugin
+  Link to the documentation about the plugin
 @y
-    link to the documentation about the plugin
+  Link to the documentation about the plugin
 @z
 
 @x
-- **`interface`** *PluginInterface*
+- `interface` PluginInterface
 @y
-- **`interface`** *PluginInterface*
+- `interface` PluginInterface
 @z
 
 @x
-   interface implemented by the plugins, struct consisting of the following fields
+  Interface implemented by the plugins, struct consisting of the following fields:
 @y
-   interface implemented by the plugins, struct consisting of the following fields
+  Interface implemented by the plugins, struct consisting of the following fields:
 @z
 
 @x
-    - **`types`** *string array*
+  - `types` string array
 @y
-    - **`types`** *string array*
+  - `types` string array
 @z
 
 @x
-      types indicate what interface(s) the plugin currently implements.
+    Types indicate what interface(s) the plugin currently implements.
 @y
-      types indicate what interface(s) the plugin currently implements.
+    Types indicate what interface(s) the plugin currently implements.
 @z
 
 @x
-      currently supported:
+    Supported types:
 @y
-      currently supported:
+    Supported types:
 @z
 
 @x
-        - **docker.volumedriver/1.0**
+    - `docker.volumedriver/1.0`
 @y
-        - **docker.volumedriver/1.0**
+    - `docker.volumedriver/1.0`
 @z
 
 @x
-        - **docker.networkdriver/1.0**
+    - `docker.networkdriver/1.0`
 @y
-        - **docker.networkdriver/1.0**
+    - `docker.networkdriver/1.0`
 @z
 
 @x
-        - **docker.ipamdriver/1.0**
+    - `docker.ipamdriver/1.0`
 @y
-        - **docker.ipamdriver/1.0**
+    - `docker.ipamdriver/1.0`
 @z
 
 @x
-        - **docker.authz/1.0**
+    - `docker.authz/1.0`
 @y
-        - **docker.authz/1.0**
+    - `docker.authz/1.0`
 @z
 
 @x
-        - **docker.logdriver/1.0**
+    - `docker.logdriver/1.0`
 @y
-        - **docker.logdriver/1.0**
+    - `docker.logdriver/1.0`
 @z
 
 @x
-        - **docker.metricscollector/1.0**
+    - `docker.metricscollector/1.0`
 @y
-        - **docker.metricscollector/1.0**
+    - `docker.metricscollector/1.0`
 @z
 
 @x
-    - **`socket`** *string*
+  - `socket` string
 @y
-    - **`socket`** *string*
+  - `socket` string
 @z
 
 @x
-      socket is the name of the socket the engine should use to communicate with the plugins.
-      the socket will be created in `/run/docker/plugins`.
+    Socket is the name of the socket the engine should use to communicate with the plugins.
+    the socket will be created in `/run/docker/plugins`.
 @y
-      socket is the name of the socket the engine should use to communicate with the plugins.
-      the socket will be created in `/run/docker/plugins`.
+    Socket is the name of the socket the engine should use to communicate with the plugins.
+    the socket will be created in `/run/docker/plugins`.
 @z
 
 @x
-- **`entrypoint`** *string array*
+- `entrypoint` string array
 @y
-- **`entrypoint`** *string array*
+- `entrypoint` string array
 @z
 
 @x
-   entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
+   Entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
 @y
-   entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
+   Entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
 @z
 
 @x
-- **`workdir`** *string*
+- `workdir` string
 @y
-- **`workdir`** *string*
+- `workdir` string
 @z
 
 @x
-   workdir of the plugin, see [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
+   Working directory of the plugin, see [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
 @y
-   workdir of the plugin, see [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
+   Working directory of the plugin, see [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
 @z
 
 @x
-- **`network`** *PluginNetwork*
+- `network` PluginNetwork
 @y
-- **`network`** *PluginNetwork*
+- `network` PluginNetwork
 @z
 
 @x
-   network of the plugin, struct consisting of the following fields
+  Network of the plugin, struct consisting of the following fields:
 @y
-   network of the plugin, struct consisting of the following fields
+  Network of the plugin, struct consisting of the following fields:
 @z
 
 @x
-    - **`type`** *string*
+  - `type` string
 @y
-    - **`type`** *string*
+  - `type` string
 @z
 
 @x
-      network type.
+    Network type.
 @y
-      network type.
+    Network type.
 @z
 
 @x
-      currently supported:
+    Supported types:
 @y
-      currently supported:
+    Supported types:
 @z
 
 @x
-      	- **bridge**
-      	- **host**
-      	- **none**
+    - `bridge`
+    - `host`
+    - `none`
 @y
-      	- **bridge**
-      	- **host**
-      	- **none**
+    - `bridge`
+    - `host`
+    - `none`
 @z
 
 @x
-- **`mounts`** *PluginMount array*
+- `mounts` PluginMount array
 @y
-- **`mounts`** *PluginMount array*
+- `mounts` PluginMount array
 @z
 
 @x
-   mount of the plugin, struct consisting of the following fields, see [`MOUNTS`](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)
+  Mount of the plugin, struct consisting of the following fields.
+  See [`MOUNTS`](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts).
 @y
-   mount of the plugin, struct consisting of the following fields, see [`MOUNTS`](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts)
+  Mount of the plugin, struct consisting of the following fields.
+  See [`MOUNTS`](https://github.com/opencontainers/runtime-spec/blob/master/config.md#mounts).
 @z
 
 @x
-    - **`name`** *string*
+  - `name` string
 @y
-    - **`name`** *string*
+  - `name` string
 @z
 
 @x
-      name of the mount.
+    Name of the mount.
 @y
-      name of the mount.
+    Name of the mount.
 @z
 
 @x
-    - **`description`** *string*
+  - `description` string
 @y
-    - **`description`** *string*
+  - `description` string
 @z
 
 @x
-      description of the mount.
+    Description of the mount.
 @y
-      description of the mount.
+    Description of the mount.
 @z
 
 @x
-    - **`source`** *string*
+  - `source` string
 @y
-    - **`source`** *string*
+  - `source` string
 @z
 
 @x
-      source of the mount.
+    Source of the mount.
 @y
-      source of the mount.
+    Source of the mount.
 @z
 
 @x
-    - **`destination`** *string*
+  - `destination` string
 @y
-    - **`destination`** *string*
+  - `destination` string
 @z
 
 @x
-      destination of the mount.
+    Destination of the mount.
 @y
-      destination of the mount.
+    Destination of the mount.
 @z
 
 @x
-    - **`type`** *string*
+  - `type` string
 @y
-    - **`type`** *string*
+  - `type` string
 @z
 
 @x
-      mount type.
+    Mount type.
 @y
-      mount type.
+    Mount type.
 @z
 
 @x
-    - **`options`** *string array*
+  - `options` string array
 @y
-    - **`options`** *string array*
+  - `options` string array
 @z
 
 @x
-      options of the mount.
+    Options of the mount.
 @y
-      options of the mount.
+    Options of the mount.
 @z
 
 @x
-- **`ipchost`** *boolean*
+- `ipchost` Boolean
+@y
+- `ipchost` Boolean
+@z
+
+@x
    Access to host ipc namespace.
-- **`pidhost`** *boolean*
-   Access to host pid namespace.
 @y
-- **`ipchost`** *boolean*
    Access to host ipc namespace.
-- **`pidhost`** *boolean*
-   Access to host pid namespace.
 @z
 
 @x
-- **`propagatedMount`** *string*
+- `pidhost` Boolean
 @y
-- **`propagatedMount`** *string*
+- `pidhost` Boolean
 @z
 
 @x
-   path to be mounted as rshared, so that mounts under that path are visible to docker. This is useful for volume plugins.
-   This path will be bind-mounted outside of the plugin rootfs so it's contents
-   are preserved on upgrade.
+   Access to host PID namespace.
 @y
-   path to be mounted as rshared, so that mounts under that path are visible to docker. This is useful for volume plugins.
-   This path will be bind-mounted outside of the plugin rootfs so it's contents
-   are preserved on upgrade.
+   Access to host PID namespace.
 @z
 
 @x
-- **`env`** *PluginEnv array*
+- `propagatedMount` string
 @y
-- **`env`** *PluginEnv array*
+- `propagatedMount` string
 @z
 
 @x
-   env of the plugin, struct consisting of the following fields
+   Path to be mounted as rshared, so that mounts under that path are visible to
+   Docker. This is useful for volume plugins. This path will be bind-mounted
+   outside of the plugin rootfs so it's contents are preserved on upgrade.
 @y
-   env of the plugin, struct consisting of the following fields
+   Path to be mounted as rshared, so that mounts under that path are visible to
+   Docker. This is useful for volume plugins. This path will be bind-mounted
+   outside of the plugin rootfs so it's contents are preserved on upgrade.
 @z
 
 @x
-    - **`name`** *string*
+- `env` PluginEnv array
 @y
-    - **`name`** *string*
+- `env` PluginEnv array
 @z
 
 @x
-      name of the env.
+  Environment variables of the plugin, struct consisting of the following fields:
 @y
-      name of the env.
+  Environment variables of the plugin, struct consisting of the following fields:
 @z
 
 @x
-    - **`description`** *string*
+  - `name` string
 @y
-    - **`description`** *string*
+  - `name` string
 @z
 
 @x
-      description of the env.
+    Name of the environment variable.
 @y
-      description of the env.
+    Name of the environment variable.
 @z
 
 @x
-    - **`value`** *string*
+  - `description` string
 @y
-    - **`value`** *string*
+  - `description` string
 @z
 
 @x
-      value of the env.
+    Description of the environment variable.
 @y
-      value of the env.
+    Description of the environment variable.
 @z
 
 @x
-- **`args`** *PluginArgs*
+  - `value` string
 @y
-- **`args`** *PluginArgs*
+  - `value` string
 @z
 
 @x
-   args of the plugin, struct consisting of the following fields
+    Value of the environment variable.
 @y
-   args of the plugin, struct consisting of the following fields
+    Value of the environment variable.
 @z
 
 @x
-    - **`name`** *string*
+- `args` PluginArgs
 @y
-    - **`name`** *string*
+- `args` PluginArgs
 @z
 
 @x
-      name of the args.
+  Arguments of the plugin, struct consisting of the following fields:
 @y
-      name of the args.
+  Arguments of the plugin, struct consisting of the following fields:
 @z
 
 @x
-    - **`description`** *string*
+  - `name` string
 @y
-    - **`description`** *string*
+  - `name` string
 @z
 
 @x
-      description of the args.
+    Name of the arguments.
 @y
-      description of the args.
+    Name of the arguments.
 @z
 
 @x
-    - **`value`** *string array*
+  - `description` string
 @y
-    - **`value`** *string array*
+  - `description` string
 @z
 
 @x
-      values of the args.
+    Description of the arguments.
 @y
-      values of the args.
+    Description of the arguments.
 @z
 
 @x
-- **`linux`** *PluginLinux*
+  - `value` string array
 @y
-- **`linux`** *PluginLinux*
+  - `value` string array
 @z
 
 @x
-    - **`capabilities`** *string array*
+    Values of the arguments.
 @y
-    - **`capabilities`** *string array*
+    Values of the arguments.
 @z
 
 @x
-       capabilities of the plugin (*Linux only*), see list [`here`](https://github.com/opencontainers/runc/blob/master/libcontainer/SPEC.md#security)
+- `linux` PluginLinux
 @y
-       capabilities of the plugin (*Linux only*), see list [`here`](https://github.com/opencontainers/runc/blob/master/libcontainer/SPEC.md#security)
+- `linux` PluginLinux
 @z
 
 @x
-    - **`allowAllDevices`** *boolean*
+  - `capabilities` string array
 @y
-    - **`allowAllDevices`** *boolean*
+  - `capabilities` string array
 @z
 
 @x
-       If `/dev` is bind mounted from the host, and allowAllDevices is set to true, the plugin will have `rwm` access to all devices on the host.
+    Capabilities of the plugin (Linux only), see list [`here`](https://github.com/opencontainers/runc/blob/master/libcontainer/SPEC.md#security)
 @y
-       If `/dev` is bind mounted from the host, and allowAllDevices is set to true, the plugin will have `rwm` access to all devices on the host.
+    Capabilities of the plugin (Linux only), see list [`here`](https://github.com/opencontainers/runc/blob/master/libcontainer/SPEC.md#security)
 @z
 
 @x
-    - **`devices`** *PluginDevice array*
+  - `allowAllDevices` Boolean
 @y
-    - **`devices`** *PluginDevice array*
+  - `allowAllDevices` Boolean
 @z
 
 @x
-       device of the plugin, (*Linux only*), struct consisting of the following fields, see [`DEVICES`](https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#devices)
+    If `/dev` is bind mounted from the host, and allowAllDevices is set to true, the plugin will have `rwm` access to all devices on the host.
 @y
-       device of the plugin, (*Linux only*), struct consisting of the following fields, see [`DEVICES`](https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#devices)
+    If `/dev` is bind mounted from the host, and allowAllDevices is set to true, the plugin will have `rwm` access to all devices on the host.
 @z
 
 @x
-         - **`name`** *string*
+  - `devices` PluginDevice array
 @y
-         - **`name`** *string*
+  - `devices` PluginDevice array
 @z
 
 @x
-           name of the device.
+    Device of the plugin, (Linux only), struct consisting of the following fields.
+    See [`DEVICES`](https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#devices).
 @y
-           name of the device.
+    Device of the plugin, (Linux only), struct consisting of the following fields.
+    See [`DEVICES`](https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#devices).
 @z
 
 @x
-         - **`description`** *string*
+    - `name` string
 @y
-         - **`description`** *string*
+    - `name` string
 @z
 
 @x
-           description of the device.
+      Name of the device.
 @y
-           description of the device.
+      Name of the device.
 @z
 
 @x
-         - **`path`** *string*
+    - `description` string
 @y
-         - **`path`** *string*
+    - `description` string
 @z
 
 @x
-           path of the device.
+      Description of the device.
 @y
-           path of the device.
+      Description of the device.
+@z
+
+@x
+    - `path` string
+@y
+    - `path` string
+@z
+
+@x
+      Path of the device.
+@y
+      Path of the device.
 @z
 
 @x
@@ -538,9 +530,9 @@ Config provides the base accessible fields for working with V0 plugin format
 @z
 
 @x
-*Example showing the 'tiborvass/sample-volume-plugin' plugin config.*
+The following example shows the 'tiborvass/sample-volume-plugin' plugin config.
 @y
-*Example showing the 'tiborvass/sample-volume-plugin' plugin config.*
+The following example shows the 'tiborvass/sample-volume-plugin' plugin config.
 @z
 
 @x

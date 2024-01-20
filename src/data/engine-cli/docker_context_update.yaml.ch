@@ -11,16 +11,6 @@ usage: docker context update [OPTIONS] CONTEXT
 pname: docker context
 plink: docker_context.yaml
 options:
-    - option: default-stack-orchestrator
-      value_type: string
-      description: |
-        Default orchestrator for stack operations to use with this context (swarm|kubernetes|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
     - option: description
       value_type: string
       description: Description of the context
@@ -39,16 +29,6 @@ options:
       experimental: false
       experimentalcli: false
       kubernetes: false
-      swarm: false
-    - option: kubernetes
-      value_type: stringToString
-      default_value: '[]'
-      description: set the kubernetes endpoint
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: true
       swarm: false
 inherited_options:
     - option: help
@@ -73,16 +53,6 @@ usage: docker context update [OPTIONS] CONTEXT
 pname: docker context
 plink: docker_context.yaml
 options:
-    - option: default-stack-orchestrator
-      value_type: string
-      description: |
-        Default orchestrator for stack operations to use with this context (swarm|kubernetes|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
     - option: description
       value_type: string
       description: Description of the context
@@ -101,16 +71,6 @@ options:
       experimental: false
       experimentalcli: false
       kubernetes: false
-      swarm: false
-    - option: kubernetes
-      value_type: stringToString
-      default_value: '[]'
-      description: set the kubernetes endpoint
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: true
       swarm: false
 inherited_options:
     - option: help

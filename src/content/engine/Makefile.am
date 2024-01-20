@@ -8,8 +8,7 @@ bases = \
 	_index.md               \
 	alternative-runtimes.md \
 	breaking_changes.md     \
-	faq.md                  \
-	migration.md
+	faq.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

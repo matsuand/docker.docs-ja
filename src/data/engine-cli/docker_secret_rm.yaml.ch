@@ -86,6 +86,7 @@ examples: |-
     >
     > Unlike `docker rm`, this command does not ask for confirmation before removing
     > a secret.
+    { .warning }
 deprecated: false
 min_api_version: "1.25"
 experimental: false
@@ -97,6 +98,7 @@ swarm: true
     >
     > Unlike `docker rm`, this command does not ask for confirmation before removing
     > a secret.
+    { .warning }
 deprecated: false
 min_api_version: "1.25"
 experimental: false

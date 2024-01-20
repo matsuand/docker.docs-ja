@@ -171,10 +171,10 @@ examples: |-
 
 @x
     The filtering flag (`-f` or `--filter`) format is a `key=value` pair. If there is more
-    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`)
+    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`).
 @y
     The filtering flag (`-f` or `--filter`) format is a `key=value` pair. If there is more
-    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`)
+    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`).
 @z
 
 @x

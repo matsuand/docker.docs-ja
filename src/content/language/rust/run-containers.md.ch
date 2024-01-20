@@ -515,10 +515,10 @@ In this section, you took a look at running containers. You also took a look at 
 
 @x
 Related information:
- - [docker run CLI reference](../../engine/reference/commandline/run.md)
+ - [docker run CLI reference](../../engine/reference/commandline/container_run.md)
 @y
 Related information:
- - [docker run CLI reference](../../engine/reference/commandline/run.md)
+ - [docker run CLI reference](../../engine/reference/commandline/container_run.md)
 @z
 
 @x

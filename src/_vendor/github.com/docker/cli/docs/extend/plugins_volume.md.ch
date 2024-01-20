@@ -3,40 +3,16 @@
 
 @x
 ---
+title: Docker volume plugins
 description: "How to manage data with external volume plugins"
 keywords: "Examples, Usage, volume, docker, data, volumes, plugin, api"
 ---
 @y
 ---
+title: Docker volume plugins
 description: "How to manage data with external volume plugins"
 keywords: "Examples, Usage, volume, docker, data, volumes, plugin, api"
 ---
-@z
-
-@x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Docker volume plugins
-@y
-# Docker volume plugins
 @z
 
 @x
@@ -133,12 +109,12 @@ beyond the lifetime of a single Docker host. See the
 
 @x
 To give a container access to a volume, use the `--volume` and `--volume-driver`
-flags on the `docker container run` command.  The `--volume` (or `-v`) flag
+flags on the `docker container run` command. The `--volume` (or `-v`) flag
 accepts a volume name and path on the host, and the `--volume-driver` flag
 accepts a driver type.
 @y
 To give a container access to a volume, use the `--volume` and `--volume-driver`
-flags on the `docker container run` command.  The `--volume` (or `-v`) flag
+flags on the `docker container run` command. The `--volume` (or `-v`) flag
 accepts a volume name and path on the host, and the `--volume-driver` flag
 accepts a driver type.
 @z
@@ -258,7 +234,12 @@ the volumes available by bind-mounting the provided paths into the containers.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
     "Name": "volume_name",
@@ -266,7 +247,6 @@ the volumes available by bind-mounting the provided paths into the containers.
 }
 ```
 @y
-**Request**:
 ```json
 {
     "Name": "volume_name",
@@ -288,14 +268,18 @@ volume on the filesystem yet (until `Mount` is called).
 @z
 
 @x
-**Response**:
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
     "Err": ""
 }
 ```
 @y
-**Response**:
 ```json
 {
     "Err": ""
@@ -304,9 +288,9 @@ volume on the filesystem yet (until `Mount` is called).
 @z
 
 @x
-Respond with a string error if an error occurred.
+  Respond with a string error if an error occurred.
 @y
-Respond with a string error if an error occurred.
+  Respond with a string error if an error occurred.
 @z
 
 @x
@@ -316,14 +300,18 @@ Respond with a string error if an error occurred.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
     "Name": "volume_name"
 }
 ```
 @y
-**Request**:
 ```json
 {
     "Name": "volume_name"
@@ -340,14 +328,18 @@ invokes `docker rm -v` to remove volumes associated with a container.
 @z
 
 @x
-**Response**:
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
     "Err": ""
 }
 ```
 @y
-**Response**:
 ```json
 {
     "Err": ""
@@ -368,7 +360,12 @@ Respond with a string error if an error occurred.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
     "Name": "volume_name",
@@ -376,7 +373,6 @@ Respond with a string error if an error occurred.
 }
 ```
 @y
-**Request**:
 ```json
 {
     "Name": "volume_name",
@@ -404,15 +400,15 @@ at the first mount request and deprovision at the last corresponding unmount req
 @z
 
 @x
-**Response**:
+Response:
 @y
-**Response**:
+Response:
 @z
 
 @x
-- **v1**:
+- v1
 @y
-- **v1**:
+- v1
 @z
 
 @x
@@ -432,9 +428,9 @@ at the first mount request and deprovision at the last corresponding unmount req
 @z
 
 @x
-- **v2**:
+- v2
 @y
-- **v2**:
+- v2
 @z
 
 @x
@@ -474,9 +470,9 @@ has been made available.
 @z
 
 @x
-**Request**:
+Request:
 @y
-**Request**:
+Request:
 @z
 
 @x
@@ -500,15 +496,15 @@ Request the path to the volume with the given `volume_name`.
 @z
 
 @x
-**Response**:
+Response:
 @y
-**Response**:
+Response:
 @z
 
 @x
-- **v1**:
+- v1
 @y
-- **v1**:
+- v1
 @z
 
 @x
@@ -528,9 +524,9 @@ Request the path to the volume with the given `volume_name`.
 @z
 
 @x
-- **v2**:
+- v2
 @y
-- **v2**:
+- v2
 @z
 
 @x
@@ -572,7 +568,12 @@ is not provided.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
     "Name": "volume_name",
@@ -580,7 +581,6 @@ is not provided.
 }
 ```
 @y
-**Request**:
 ```json
 {
     "Name": "volume_name",
@@ -606,14 +606,18 @@ this point.
 @z
 
 @x
-**Response**:
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
     "Err": ""
 }
 ```
 @y
-**Response**:
 ```json
 {
     "Err": ""
@@ -634,14 +638,18 @@ Respond with a string error if an error occurred.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
     "Name": "volume_name"
 }
 ```
 @y
-**Request**:
 ```json
 {
     "Name": "volume_name"
@@ -656,15 +664,15 @@ Get info about `volume_name`.
 @z
 
 @x
-**Response**:
+Response:
 @y
-**Response**:
+Response:
 @z
 
 @x
-- **v1**:
+- v1
 @y
-- **v1**:
+- v1
 @z
 
 @x
@@ -692,9 +700,9 @@ Get info about `volume_name`.
 @z
 
 @x
-- **v2**:
+- v2
 @y
-- **v2**:
+- v2
 @z
 
 @x
@@ -736,12 +744,16 @@ optional.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {}
 ```
 @y
-**Request**:
 ```json
 {}
 ```
@@ -754,15 +766,15 @@ Get the list of volumes registered with the plugin.
 @z
 
 @x
-**Response**:
+Response:
 @y
-**Response**:
+Response:
 @z
 
 @x
-- **v1**:
+- v1
 @y
-- **v1**:
+- v1
 @z
 
 @x
@@ -792,9 +804,9 @@ Get the list of volumes registered with the plugin.
 @z
 
 @x
-- **v2**:
+- v2
 @y
-- **v2**:
+- v2
 @z
 
 @x
@@ -836,12 +848,16 @@ Respond with a string error if an error occurred. `Mountpoint` is optional.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {}
 ```
 @y
-**Request**:
 ```json
 {}
 ```
@@ -862,7 +878,12 @@ implemented, the default values are used.
 @z
 
 @x
-**Response**:
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
   "Capabilities": {
@@ -871,7 +892,6 @@ implemented, the default values are used.
 }
 ```
 @y
-**Response**:
 ```json
 {
   "Capabilities": {

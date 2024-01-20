@@ -80,20 +80,20 @@ aliases:
   description: Navigate Docker Desktop and learn about its key features.
   icon: feature_search
   link: __SUBDIR__/desktop/use-desktop
-- title: View the release notes
+- title: リリースノートの確認
   description: Find out about new features, improvements, and bug fixes.
   icon: note_add
   link: __SUBDIR__/desktop/release-notes
-- title: Browse common FAQs
+- title: 一般的な FAQ の確認
   description: Explore general FAQs or FAQs for specific platforms.
   icon: help
   link: __SUBDIR__/desktop/faqs/
-- title: Find additional resources
+- title: その他のリソースを探す
   description: Find information on networking features, deploying on Kubernetes, and
     more.
   icon: category
   link: __SUBDIR__/desktop/kubernetes
-- title: Give feedback
+- title: フィードバック
   description: Provide feedback on Docker Desktop or Docker Desktop features.
   icon: sms
   link: __SUBDIR__/desktop/feedback

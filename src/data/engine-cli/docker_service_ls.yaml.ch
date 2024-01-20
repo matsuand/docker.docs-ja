@@ -6,13 +6,13 @@ command: docker service ls
 aliases: docker service ls, docker service list
 short: List services
 long: |-
-    This command lists services are running in the swarm.
+    This command lists services that are running in the swarm.
 @y
 command: docker service ls
 aliases: docker service ls, docker service list
 short: List services
 long: |-
-    This command lists services are running in the swarm.
+    This command lists services that are running in the swarm.
 @z
 
 @x
@@ -166,12 +166,12 @@ examples: |-
 @z
 
 @x
-    The `REPLICAS` column shows both the *actual* and *desired* number of tasks for
+    The `REPLICAS` column shows both the actual and desired number of tasks for
     the service. If the service is in `replicated-job` or `global-job`, it will
     additionally show the completion status of the job as completed tasks over
     total tasks the job will execute.
 @y
-    The `REPLICAS` column shows both the *actual* and *desired* number of tasks for
+    The `REPLICAS` column shows both the actual and desired number of tasks for
     the service. If the service is in `replicated-job` or `global-job`, it will
     additionally show the completion status of the job as completed tasks over
     total tasks the job will execute.
@@ -185,10 +185,10 @@ examples: |-
 
 @x
     The filtering flag (`-f` or `--filter`) format is of "key=value". If there is more
-    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`)
+    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`).
 @y
     The filtering flag (`-f` or `--filter`) format is of "key=value". If there is more
-    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`)
+    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`).
 @z
 
 @x
@@ -216,9 +216,15 @@ examples: |-
 @z
 
 @x
-    The `id` filter matches all or part of a service's id.
+    The `id` filter matches all or the prefix of a service's ID.
 @y
-    The `id` filter matches all or part of a service's id.
+    The `id` filter matches all or the prefix of a service's ID.
+@z
+
+@x
+    The following filter matches services with an ID starting with `0bcjw`:
+@y
+    The following filter matches services with an ID starting with `0bcjw`:
 @z
 
 @x
@@ -338,15 +344,15 @@ examples: |-
 @z
 
 @x
-    The `name` filter matches on all or part of a service's name.
+    The `name` filter matches on all or the prefix of a service's name.
 @y
-    The `name` filter matches on all or part of a service's name.
+    The `name` filter matches on all or the prefix of a service's name.
 @z
 
 @x
-    The following filter matches services with a name containing `redis`.
+    The following filter matches services with a name starting with `redis`.
 @y
-    The following filter matches services with a name containing `redis`.
+    The following filter matches services with a name starting with `redis`.
 @z
 
 @x

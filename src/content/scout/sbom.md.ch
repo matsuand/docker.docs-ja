@@ -164,27 +164,15 @@ Scout image analysis.
 @x
 ```console
 $ docker build --tag <org>/<image> \
-  --attest type=sbom,generator=docker/scout-sbom-indexer:d3f9c2d \
+  --attest type=sbom,generator=docker/scout-sbom-indexer:latest \
   --push .
 ```
 @y
 ```console
 $ docker build --tag <org>/<image> \
-  --attest type=sbom,generator=docker/scout-sbom-indexer:d3f9c2d \
+  --attest type=sbom,generator=docker/scout-sbom-indexer:latest \
   --push .
 ```
-@z
-
-@x
-> **Note**
->
-> The Docker Scout SBOM generator is currently only published under the tag
-> `d3f9c2d`.
-@y
-> **Note**
->
-> The Docker Scout SBOM generator is currently only published under the tag
-> `d3f9c2d`.
 @z
 
 @x

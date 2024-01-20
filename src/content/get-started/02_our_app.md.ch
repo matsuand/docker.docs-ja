@@ -235,13 +235,14 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 @x
    In PowerShell, run the following commands.
 @y
-   In PowerShell, run the following commands.
+   PowerShell から以下のコマンドを実行します。
 @z
 
 @x
    Make sure you're in the `getting-started-app` directory. Replace `\path\to\getting-started-app` with the path to your `getting-started-app` directory.
 @y
-   Make sure you're in the `getting-started-app` directory. Replace `\path\to\getting-started-app` with the path to your `getting-started-app` directory.
+   カレントディレクトリを `getting-started-app` とします。
+   `\path\to\getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
 @z
 
 @x
@@ -257,7 +258,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 @x
    Create an empty file named `Dockerfile`.
 @y
-   Create an empty file named `Dockerfile`.
+   `Dockerfile` という名の空のファイルを生成します。
 @z
 
 @x
@@ -547,7 +548,8 @@ Docker Desktop 画面にて **Containers** (コンテナー) タブをクリッ�
 @x
 In this section, you learned the basics about creating a Dockerfile to build an image. Once you built an image, you started a container and saw the running app.
 @y
-In this section, you learned the basics about creating a Dockerfile to build an image. Once you built an image, you started a container and saw the running app.
+本節では Dockerfile を生成してイメージをビルドする基本操作を学びました。
+イメージをビルドした後は、コンテナーを起動してアプリケーションが起動することを確認しました。
 @z
 
 @x
@@ -561,9 +563,9 @@ Related information:
  - [docker CLI reference](/engine/reference/commandline/cli/)
  - [Build with Docker guide](../build/guide/index.md)
 @y
- - [Dockerfile reference](../engine/reference/builder.md)
- - [docker CLI reference](/engine/reference/commandline/cli/)
- - [Build with Docker guide](../build/guide/index.md)
+ - [Dockerfile リファレンス](../engine/reference/builder.md)
+ - [docker CLI リファレンス](/engine/reference/commandline/cli/)
+ - [Docker ガイドを使ったビルド](../build/guide/index.md)
 @z
 
 @x
@@ -575,7 +577,9 @@ Related information:
 @x
 Next, you're going to make a modification to your app and learn how to update your running application with a new image. Along the way, you'll learn a few other useful commands.
 @y
-Next, you're going to make a modification to your app and learn how to update your running application with a new image. Along the way, you'll learn a few other useful commands.
+次ではアプリケーションの修正を行います。
+そして新たなイメージを使って起動中のアプリケーションを更新する方法について学びます。
+その際には他の便利なコマンドについてもいろいろ学んでいきます。
 @z
 
 @x

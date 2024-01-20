@@ -306,13 +306,13 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @z
 
 @x
-   docker-ce.x86_64    3:24.0.0-1.el8    docker-ce-stable
-   docker-ce.x86_64    3:23.0.6-1.el8    docker-ce-stable
+   docker-ce.x86_64    3:25.0.0-1.el8    docker-ce-stable
+   docker-ce.x86_64    3:24.0.7-1.el8    docker-ce-stable
    <...>
    ```
 @y
-   docker-ce.x86_64    3:24.0.0-1.el8    docker-ce-stable
-   docker-ce.x86_64    3:23.0.6-1.el8    docker-ce-stable
+   docker-ce.x86_64    3:25.0.0-1.el8    docker-ce-stable
+   docker-ce.x86_64    3:24.0.7-1.el8    docker-ce-stable
    <...>
    ```
 @z
@@ -328,11 +328,11 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:24.0.0-1.el8`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0-1.el8`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:24.0.0-1.el8`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0-1.el8`.
 @z
 
 @x

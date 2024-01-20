@@ -10,7 +10,7 @@ description: Making your DB persistent in your application
 ---
 @y
 ---
-title: Persist the DB
+title: DB への保存
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
@@ -21,14 +21,15 @@ description: Making your DB persistent in your application
 In case you didn't notice, your todo list is empty every single time
 you launch the container. Why is this? In this part, you'll dive into how the container is working.
 @y
-In case you didn't notice, your todo list is empty every single time
-you launch the container. Why is this? In this part, you'll dive into how the container is working.
+気づかないままでいると todo リストの中身は、コンテナーを起動するたびに空っぽになってしまいます。
+なぜそうなっているのでしょう？
+この部では、コンテナーがどうやって動作しているのかについて学んでいきます。
 @z
 
 @x
 ## The container's filesystem
 @y
-## The container's filesystem
+## コンテナーのファイルシステム {#the-containers-filesystem}
 @z
 
 @x
@@ -44,7 +45,7 @@ changes won't be seen in another container, even if they're using the same image
 @x
 ### See this in practice
 @y
-### See this in practice
+### See this in practice {#see-this-in-practice}
 @z
 
 @x
@@ -204,7 +205,7 @@ What you'll see is that the files created in one container aren't available in a
 @x
 ## Container volumes
 @y
-## Container volumes
+## Container volumes {#container-volumes}
 @z
 
 @x
@@ -238,7 +239,7 @@ There are two main types of volumes. You'll eventually use both, but you'll star
 @x
 ## Persist the todo data
 @y
-## Persist the todo data
+## Persist the todo data {#persist-the-todo-data}
 @z
 
 @x
@@ -276,7 +277,7 @@ name of the volume.
 @x
 ### Create a volume and start the container
 @y
-### Create a volume and start the container
+### Create a volume and start the container {#create-a-volume-and-start-the-container}
 @z
 
 @x
@@ -426,7 +427,7 @@ To start the todo app container with the volume mounted:
 @x
 ### Verify that the data persists
 @y
-### Verify that the data persists
+### Verify that the data persists {#verify-that-the-data-persists}
 @z
 
 @x
@@ -474,7 +475,7 @@ You've now learned how to persist data.
 @x
 ## Dive into the volume
 @y
-## Dive into the volume
+## Dive into the volume {#dive-into-the-volume}
 @z
 
 @x
@@ -528,7 +529,7 @@ need to have root access to access this directory from the host.
 @x
 ## Summary
 @y
-## Summary
+## Summary {#summary}
 @z
 
 @x
@@ -547,14 +548,14 @@ Related information:
  - [docker CLI reference](/engine/reference/commandline/cli/)
  - [Volumes](../storage/volumes.md)
 @y
- - [docker CLI reference](/engine/reference/commandline/cli/)
- - [Volumes](../storage/volumes.md)
+ - [Docker CLI リファレンス](__SUBDIR__/engine/reference/commandline/cli/)
+ - [ボリューム](../storage/volumes.md)
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
@@ -566,5 +567,5 @@ Next, you'll learn how you can develop your app more efficiently using bind moun
 @x
 {{< button text="Use bind mounts" url="06_bind_mounts.md" >}}
 @y
-{{< button text="Use bind mounts" url="06_bind_mounts.md" >}}
+{{< button text="バインドマウントの利用" url="06_bind_mounts.md" >}}
 @z

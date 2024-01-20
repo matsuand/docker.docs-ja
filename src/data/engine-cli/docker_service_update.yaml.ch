@@ -326,6 +326,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: health-start-interval
+      value_type: duration
+      description: Time between running the check during the start period (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.44"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: health-start-period
       value_type: duration
       description: |
@@ -1258,6 +1268,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: health-start-interval
+      value_type: duration
+      description: Time between running the check during the start period (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.44"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: health-start-period
       value_type: duration
       description: |
@@ -2170,9 +2190,9 @@ examples: |-
 @z
 
 @x
-    Roll back the `web` service...
+    The following example rolls back the `web` service:
 @y
-    Roll back the `web` service...
+    The following example rolls back the `web` service:
 @z
 
 @x

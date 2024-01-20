@@ -198,11 +198,13 @@ examples: |-
 @z
 
 @x
-    The filtering flag (`-f` or `--filter`) format is of "key=value". If there is more
-    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`)
+    The filtering flag (`-f` or `--filter`) format is of "key=value". If there is
+    more than one filter, then pass multiple flags (e.g., `--filter "foo=bar"
+    --filter "bif=baz"`).
 @y
-    The filtering flag (`-f` or `--filter`) format is of "key=value". If there is more
-    than one filter, then pass multiple flags (e.g., `--filter "foo=bar" --filter "bif=baz"`)
+    The filtering flag (`-f` or `--filter`) format is of "key=value". If there is
+    more than one filter, then pass multiple flags (e.g., `--filter "foo=bar"
+    --filter "bif=baz"`).
 @z
 
 @x

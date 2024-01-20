@@ -6,7 +6,7 @@
 title: "Engine API v1.19"
 description: "API Documentation for Docker"
 keywords: "API, Docker, rcli, REST, documentation"
-redirect_from:
+aliases:
 - /engine/reference/api/docker_remote_api_v1.19/
 - /reference/api/docker_remote_api_v1.19/
 ---
@@ -15,7 +15,7 @@ redirect_from:
 title: "Engine API v1.19"
 description: "API Documentation for Docker"
 keywords: "API, Docker, rcli, REST, documentation"
-redirect_from:
+aliases:
 - /engine/reference/api/docker_remote_api_v1.19/
 - /reference/api/docker_remote_api_v1.19/
 ---
@@ -824,7 +824,7 @@ Return low-level information on the container `id`
 			"WorkingDir": ""
 		},
 		"Created": "2015-01-06T15:47:31.485331387Z",
-		"Driver": "devicemapper",
+		"Driver": "overlay2",
 		"ExecDriver": "native-0.2",
 		"ExecIDs": null,
 		"HostConfig": {
@@ -940,7 +940,7 @@ Return low-level information on the container `id`
 			"WorkingDir": ""
 		},
 		"Created": "2015-01-06T15:47:31.485331387Z",
-		"Driver": "devicemapper",
+		"Driver": "overlay2",
 		"ExecDriver": "native-0.2",
 		"ExecIDs": null,
 		"HostConfig": {

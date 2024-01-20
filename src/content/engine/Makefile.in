@@ -302,8 +302,7 @@ bases = \
 	_index.md               \
 	alternative-runtimes.md \
 	breaking_changes.md     \
-	faq.md                  \
-	migration.md
+	faq.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

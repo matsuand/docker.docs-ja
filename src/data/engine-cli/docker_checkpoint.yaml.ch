@@ -6,14 +6,14 @@ command: docker checkpoint
 short: Manage checkpoints
 long: |-
     Checkpoint and Restore is an experimental feature that allows you to freeze a running
-    container by checkpointing it, which turns its state into a collection of files
+    container by specifying a checkpoint, which turns the container state into a collection of files
     on disk. Later, the container can be restored from the point it was frozen.
 @y
 command: docker checkpoint
 short: Manage checkpoints
 long: |-
     Checkpoint and Restore is an experimental feature that allows you to freeze a running
-    container by checkpointing it, which turns its state into a collection of files
+    container by specifying a checkpoint, which turns the container state into a collection of files
     on disk. Later, the container can be restored from the point it was frozen.
 @z
 
@@ -37,10 +37,10 @@ long: |-
 
 @x
     If you use a Debian system, you can add the CRIU PPA and install with `apt-get`
-    [from the criu launchpad](https://launchpad.net/~criu/+archive/ubuntu/ppa).
+    [from the CRIU launchpad](https://launchpad.net/~criu/+archive/ubuntu/ppa).
 @y
     If you use a Debian system, you can add the CRIU PPA and install with `apt-get`
-    [from the criu launchpad](https://launchpad.net/~criu/+archive/ubuntu/ppa).
+    [from the CRIU launchpad](https://launchpad.net/~criu/+archive/ubuntu/ppa).
 @z
 
 @x
@@ -203,13 +203,13 @@ long: |-
 
 @x
     This process just logs an incrementing counter to stdout. If you run `docker logs`
-    in between running/checkpoint/restoring you should see that the counter
-    increases while the process is running, stops while it's checkpointed, and
+    in-between running/checkpoint/restoring, you should see that the counter
+    increases while the process is running, stops while it's frozen, and
     resumes from the point it left off once you restore.
 @y
     This process just logs an incrementing counter to stdout. If you run `docker logs`
-    in between running/checkpoint/restoring you should see that the counter
-    increases while the process is running, stops while it's checkpointed, and
+    in-between running/checkpoint/restoring, you should see that the counter
+    increases while the process is running, stops while it's frozen, and
     resumes from the point it left off once you restore.
 @z
 
@@ -220,19 +220,19 @@ long: |-
 @z
 
 @x
-    seccomp is only supported by CRIU in very up to date kernels.
+    `seccomp` is only supported by CRIU in very up-to-date kernels.
 @y
-    seccomp is only supported by CRIU in very up to date kernels.
+    `seccomp` is only supported by CRIU in very up-to-date kernels.
 @z
 
 @x
-    External terminal (i.e. `docker run -t ..`) is not supported at the moment.
+    External terminals (i.e. `docker run -t ..`) aren't supported.
     If you try to create a checkpoint for a container with an external terminal,
-    it would fail:
+    it fails:
 @y
-    External terminal (i.e. `docker run -t ..`) is not supported at the moment.
+    External terminals (i.e. `docker run -t ..`) aren't supported.
     If you try to create a checkpoint for a container with an external terminal,
-    it would fail:
+    it fails:
 @z
 
 @x

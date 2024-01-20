@@ -417,13 +417,11 @@ The **Supply chain attestations** policy requires that your artifacts have
 
 @x
 This policy is unfulfilled if an artifact lacks either an SBOM attestation or a
-provenance attestation, or if the provenance attestation lacks information
-about the Git repository and base images being used. To ensure compliance,
+provenance attestation with max mode. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @y
 This policy is unfulfilled if an artifact lacks either an SBOM attestation or a
-provenance attestation, or if the provenance attestation lacks information
-about the Git repository and base images being used. To ensure compliance,
+provenance attestation with max mode. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @z
 
@@ -438,29 +436,13 @@ $ docker buildx build --provenance=true --sbom=true -t <IMAGE> --push .
 @z
 
 @x
-BuildKit automatically detects the Git repository and base images when this
-information is available in the build context. For more information about
+For more information about
 building with attestations, see
 [Attestations](../../build/attestations/_index.md).
 @y
-BuildKit automatically detects the Git repository and base images when this
-information is available in the build context. For more information about
+For more information about
 building with attestations, see
 [Attestations](../../build/attestations/_index.md).
-@z
-
-@x
-> **Note**
->
-> Docker Scout is currently unable to discern the difference between using
-> `scratch` as a base image and having no base image provenance. As a result,
-> images based on `scratch` always fail the Supply chain attestations policy.
-@y
-> **Note**
->
-> Docker Scout is currently unable to discern the difference between using
-> `scratch` as a base image and having no base image provenance. As a result,
-> images based on `scratch` always fail the Supply chain attestations policy.
 @z
 
 @x
@@ -571,6 +553,52 @@ The **Default non-root user** policy detects images that are set to run as the
 default `root` user. To comply with this policy, images must specify a non-root
 user in the image configuration. Images violate this policy if they don't
 specify a non-root default user for the runtime stage.
+@z
+
+@x
+For non-compliant images, evaluation results show whether or not the `root`
+user was set explicitly for the image. This helps you distinguish between
+policy violations caused by images where the `root` user is implicit, and
+images where `root` is set on purpose.
+@y
+For non-compliant images, evaluation results show whether or not the `root`
+user was set explicitly for the image. This helps you distinguish between
+policy violations caused by images where the `root` user is implicit, and
+images where `root` is set on purpose.
+@z
+
+@x
+The following Dockerfile runs as `root` by default despite not being explicitly set:
+```Dockerfile
+FROM alpine
+RUN echo "Hi"
+```
+@y
+The following Dockerfile runs as `root` by default despite not being explicitly set:
+```Dockerfile
+FROM alpine
+RUN echo "Hi"
+```
+@z
+
+@x
+Whereas in the following case, the `root` user is explicitly set:
+@y
+Whereas in the following case, the `root` user is explicitly set:
+@z
+
+@x
+```Dockerfile
+FROM alpine
+USER root
+RUN echo "Hi"
+```
+@y
+```Dockerfile
+FROM alpine
+USER root
+RUN echo "Hi"
+```
 @z
 
 @x

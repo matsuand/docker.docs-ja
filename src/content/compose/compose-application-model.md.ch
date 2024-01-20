@@ -3,26 +3,40 @@
 
 @x
 ---
-title: Understand the Compose application model
-description: Understand the Compose application model with an illustrative example 
+title: How Compose works
+description: Understand how Compose works and the Compose application model with an illustrative example 
 keywords: compose, docker compose, compose specification, compose model 
 aliases:
 - /compose/compose-file/02-model/
+- /compose/compose-yaml-file/
 ---
 @y
 ---
-title: Compose アプリケーションモデルの理解
-description: Understand the Compose application model with an illustrative example 
+title: Compose はどのように動作するか
+description: Understand how Compose works and the Compose application model with an illustrative example 
 keywords: compose, docker compose, compose specification, compose model 
 aliases:
 - /compose/compose-file/02-model/
+- /compose/compose-yaml-file/
 ---
 @z
 
 @x
-The Compose Specification lets you define a platform-agnostic container based application. Such an application is designed as a set of containers which have to both run together with adequate shared resources and communication channels.
+Docker Compose relies on a YAML configuration file, usually named `compose.yaml`. 
 @y
-The Compose Specification lets you define a platform-agnostic container based application. Such an application is designed as a set of containers which have to both run together with adequate shared resources and communication channels.
+Docker Compose relies on a YAML configuration file, usually named `compose.yaml`. 
+@z
+
+@x
+The `compose.yaml` file follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
+@y
+The `compose.yaml` file follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
+@z
+
+@x
+{{< accordion title="The Compose application model" >}}
+@y
+{{< accordion title="The Compose application model" >}}
 @z
 
 @x
@@ -32,15 +46,15 @@ Computing components of an application are defined as [services](compose-file/05
 @z
 
 @x
-Services communicate with each other through [networks](compose-file/06-networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together. Low-level, platform-specific networking options are grouped into the Network definition and may be partially implemented on some platforms.
+Services communicate with each other through [networks](compose-file/06-networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together.
 @y
-Services communicate with each other through [networks](compose-file/06-networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together. Low-level, platform-specific networking options are grouped into the Network definition and may be partially implemented on some platforms.
+Services communicate with each other through [networks](compose-file/06-networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together.
 @z
 
 @x
-Services store and share persistent data into [volumes](compose-file/07-volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. Actual platform-specific implementation details are grouped into the volumes definition and may be partially implemented on some platforms.
+Services store and share persistent data into [volumes](compose-file/07-volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. 
 @y
-Services store and share persistent data into [volumes](compose-file/07-volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. Actual platform-specific implementation details are grouped into the volumes definition and may be partially implemented on some platforms.
+Services store and share persistent data into [volumes](compose-file/07-volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. 
 @z
 
 @x
@@ -67,24 +81,72 @@ A [secret](compose-file/09-secrets.md) is a specific flavor of configuration dat
 
 @x
 A project is an individual deployment of an application specification on a platform. A project's name, set with the top-level [`name`](compose-file/04-version-and-name.md) attribute, is used to group
-resources together and isolate them from other applications or other installation of the same Compose specified application with distinct parameters. If you are creating resources on a platform, you must prefix resource names by project and
+resources together and isolate them from other applications or other installation of the same Compose-specified application with distinct parameters. If you are creating resources on a platform, you must prefix resource names by project and
 set the label `com.docker.compose.project`.
 @y
 A project is an individual deployment of an application specification on a platform. A project's name, set with the top-level [`name`](compose-file/04-version-and-name.md) attribute, is used to group
-resources together and isolate them from other applications or other installation of the same Compose specified application with distinct parameters. If you are creating resources on a platform, you must prefix resource names by project and
+resources together and isolate them from other applications or other installation of the same Compose-specified application with distinct parameters. If you are creating resources on a platform, you must prefix resource names by project and
 set the label `com.docker.compose.project`.
 @z
 
 @x
-Compose offers a way for users to set a custom project name and override this name, so that the same `compose.yaml` file can be deployed twice on the same infrastructure, without changes, by just passing a distinct name.
+Compose offers a way for you to set a custom project name and override this name, so that the same `compose.yaml` file can be deployed twice on the same infrastructure, without changes, by just passing a distinct name.
 @y
-Compose offers a way for users to set a custom project name and override this name, so that the same `compose.yaml` file can be deployed twice on the same infrastructure, without changes, by just passing a distinct name.
+Compose offers a way for you to set a custom project name and override this name, so that the same `compose.yaml` file can be deployed twice on the same infrastructure, without changes, by just passing a distinct name.
 @z
 
 @x
-Project names must contain only lowercase letters, decimal digits, dashes, and underscores, and must begin with a lowercase letter or decimal digit.
+{{< /accordion >}}
 @y
-Project names must contain only lowercase letters, decimal digits, dashes, and underscores, and must begin with a lowercase letter or decimal digit.
+{{< /accordion >}}
+@z
+
+@x
+You then interact with your Compose application through the [Compose CLI](reference/_index.md). Commands such as `docker compose up` are used to start the application, while `docker compose down` stops and removes the containers.
+@y
+You then interact with your Compose application through the [Compose CLI](reference/_index.md). Commands such as `docker compose up` are used to start the application, while `docker compose down` stops and removes the containers.
+@z
+
+@x
+## The Compose file
+@y
+## The Compose file
+@z
+
+@x
+The default path for a Compose file is `compose.yaml` (preferred) or `compose.yml` that is placed in the working directory.
+Compose also supports `docker-compose.yaml` and `docker-compose.yml` for backwards compatibility of earlier versions.
+If both files exist, Compose prefers the canonical `compose.yaml`.
+@y
+The default path for a Compose file is `compose.yaml` (preferred) or `compose.yml` that is placed in the working directory.
+Compose also supports `docker-compose.yaml` and `docker-compose.yml` for backwards compatibility of earlier versions.
+If both files exist, Compose prefers the canonical `compose.yaml`.
+@z
+
+@x
+You can use [fragments](compose-file/10-fragments.md) and [extensions](compose-file/11-extension.md) to keep your Compose file efficient and easy to maintain.
+@y
+You can use [fragments](compose-file/10-fragments.md) and [extensions](compose-file/11-extension.md) to keep your Compose file efficient and easy to maintain.
+@z
+
+@x
+Multiple Compose files can be [merged](13-merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
+Simple attributes and maps get overridden by the highest order Compose file, lists get merged by appending. Relative
+paths are resolved based on the first Compose file's parent folder, whenever complimentary files being
+merged are hosted in other folders. As some Compose file elements can both be expressed as single strings or complex objects, merges apply to
+the expanded form. For more information, see [Working with multiple Compose files](multiple-compose-files/_index.md)
+@y
+Multiple Compose files can be [merged](13-merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
+Simple attributes and maps get overridden by the highest order Compose file, lists get merged by appending. Relative
+paths are resolved based on the first Compose file's parent folder, whenever complimentary files being
+merged are hosted in other folders. As some Compose file elements can both be expressed as single strings or complex objects, merges apply to
+the expanded form. For more information, see [Working with multiple Compose files](multiple-compose-files/_index.md)
+@z
+
+@x
+If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](compose-file/14-include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
+@y
+If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](compose-file/14-include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
 @z
 
 @x
@@ -94,9 +156,9 @@ Project names must contain only lowercase letters, decimal digits, dashes, and u
 @z
 
 @x
-The following example illustrates the Compose Specification concepts outlined above. The example is non-normative.
+The following example illustrates the Compose concepts outlined above. The example is non-normative.
 @y
-The following example illustrates the Compose Specification concepts outlined above. The example is non-normative.
+The following example illustrates the Compose concepts outlined above. The example is non-normative.
 @z
 
 @x
@@ -124,79 +186,9 @@ Both services communicate with each other on an isolated back-tier network, whil
 @z
 
 @x
-```mermaid
-    %%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
-    flowchart LR
-    subgraph A[INFRASTRUCTURE]
-    direction TB
-    subgraph TOP[" "]
-        subgraph B1[Frontend Service]
-            fs["`**webapp**`"]
-        end
-        style B1 fill:#ccd6e8, stroke-width:0px
-        subgraph B2[Backend Service]
-            bs["`**database**`"]
-        end
-        style B2 fill:#ccd6e8, stroke-width:0px
+![Compose application example](images/compose-application.webp)
 @y
-```mermaid
-    %%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
-    flowchart LR
-    subgraph A[INFRASTRUCTURE]
-    direction TB
-    subgraph TOP[" "]
-        subgraph B1[Frontend Service]
-            fs["`**webapp**`"]
-        end
-        style B1 fill:#ccd6e8, stroke-width:0px
-        subgraph B2[Backend Service]
-            bs["`**database**`"]
-        end
-        style B2 fill:#ccd6e8, stroke-width:0px
-@z
-
-@x
-    end
-    style TOP fill:transparent, stroke-width:2px, stroke:#62affb, stroke-dasharray: 5 5
-        key[ro= read only\nr+w = read write]
-        style key fill:transparent, stroke-width:0px,text-align: left, size: 94px
-@y
-    end
-    style TOP fill:transparent, stroke-width:2px, stroke:#62affb, stroke-dasharray: 5 5
-        key[ro= read only\nr+w = read write]
-        style key fill:transparent, stroke-width:0px,text-align: left, size: 94px
-@z
-
-@x
-        direction TB
-        id2(Server\nCertificate)
-        id1(HTTP\nConfiguration)
-        id1 & id2 -.-|ro| B1
-        style id1 stroke:#000,stroke-width:1px,stroke-dasharray: 10
-        style id2 stroke:#000,stroke-width:1px,stroke-dasharray: 10
-        B2 ==r+w==> id3[(Persistent\nVolume)]
-    end
-    style A fill:#eeeeee, stroke-width:0px
-    direction LR
-    id4[External\nUser] ---id5(((443)))--->|Frontend\nNetwork| B1
-    style id4 stroke:#000,stroke-width:2px
-    B1 --Backend\nNetwork--> B2
-```
-@y
-        direction TB
-        id2(Server\nCertificate)
-        id1(HTTP\nConfiguration)
-        id1 & id2 -.-|ro| B1
-        style id1 stroke:#000,stroke-width:1px,stroke-dasharray: 10
-        style id2 stroke:#000,stroke-width:1px,stroke-dasharray: 10
-        B2 ==r+w==> id3[(Persistent\nVolume)]
-    end
-    style A fill:#eeeeee, stroke-width:0px
-    direction LR
-    id4[External\nUser] ---id5(((443)))--->|Frontend\nNetwork| B1
-    style id4 stroke:#000,stroke-width:2px
-    B1 --Backend\nNetwork--> B2
-```
+![Compose application example](images/compose-application.webp)
 @z
 
 @x
@@ -314,15 +306,17 @@ networks:
 @z
 
 @x
-This example illustrates the distinction between volumes, configs and secrets. While all of them are all exposed
-to service containers as mounted files or directories, only a volume can be configured for read+write access.
-Secrets and configs are read-only. The volume configuration allows you to select a volume driver and pass driver options
-to tweak volume management according to the actual infrastructure. Configs and secrets rely on platform services,
-and are declared `external` as they are not managed as part of the application lifecycle. Compose uses a platform-specific lookup mechanism to retrieve runtime values.
+## What's next 
 @y
-This example illustrates the distinction between volumes, configs and secrets. While all of them are all exposed
-to service containers as mounted files or directories, only a volume can be configured for read+write access.
-Secrets and configs are read-only. The volume configuration allows you to select a volume driver and pass driver options
-to tweak volume management according to the actual infrastructure. Configs and secrets rely on platform services,
-and are declared `external` as they are not managed as part of the application lifecycle. Compose uses a platform-specific lookup mechanism to retrieve runtime values.
+## What's next 
+@z
+
+@x
+- [Try Compose](gettingstarted.md)
+- [Explore some sample applications](samples-for-compose.md)
+- [Familiarize yourself with the Compose Specification](compose-file/_index.md)
+@y
+- [Try Compose](gettingstarted.md)
+- [Explore some sample applications](samples-for-compose.md)
+- [Familiarize yourself with the Compose Specification](compose-file/_index.md)
 @z

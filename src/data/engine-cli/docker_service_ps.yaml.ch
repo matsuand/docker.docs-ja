@@ -210,11 +210,11 @@ examples: |-
 @z
 
 @x
-    In addition to _running_ tasks, the output also shows the task history. For
+    In addition to running tasks, the output also shows the task history. For
     example, after updating the service to use the `redis:3.0.6` image, the output
     may look like this:
 @y
-    In addition to _running_ tasks, the output also shows the task history. For
+    In addition to running tasks, the output also shows the task history. For
     example, after updating the service to use the `redis:3.0.6` image, the output
     may look like this:
 @z
@@ -266,15 +266,17 @@ examples: |-
 @z
 
 @x
-    When deploying a service, docker resolves the digest for the service's
-    image, and pins the service to that digest. The digest is not shown by
-    default, but is printed if `--no-trunc` is used. The `--no-trunc` option
-    also shows the non-truncated task ID, and error-messages, as can be seen below;
+    When deploying a service, docker resolves the digest for the service's image,
+    and pins the service to that digest. The digest is not shown by default, but is
+    printed if `--no-trunc` is used. The `--no-trunc` option also shows the
+    non-truncated task ID, and error messages, as can be seen in the following
+    example:
 @y
-    When deploying a service, docker resolves the digest for the service's
-    image, and pins the service to that digest. The digest is not shown by
-    default, but is printed if `--no-trunc` is used. The `--no-trunc` option
-    also shows the non-truncated task ID, and error-messages, as can be seen below;
+    When deploying a service, docker resolves the digest for the service's image,
+    and pins the service to that digest. The digest is not shown by default, but is
+    printed if `--no-trunc` is used. The `--no-trunc` option also shows the
+    non-truncated task ID, and error messages, as can be seen in the following
+    example:
 @z
 
 @x

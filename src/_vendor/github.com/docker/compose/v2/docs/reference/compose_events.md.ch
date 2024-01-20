@@ -88,7 +88,7 @@ With the `--json` flag, a json object is printed one per line with the format:
 @z
 
 @x
-The events that can be received using this can be seen [here](https://docs.docker.com/engine/reference/commandline/events/#object-types).
+The events that can be received using this can be seen [here](https://docs.docker.com/engine/reference/commandline/system_events/#object-types).
 @y
-The events that can be received using this can be seen [here](https://docs.docker.com/engine/reference/commandline/events/#object-types).
+The events that can be received using this can be seen [here](https://docs.docker.com/engine/reference/commandline/system_events/#object-types).
 @z

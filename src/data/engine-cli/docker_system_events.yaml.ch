@@ -6,15 +6,27 @@ command: docker system events
 aliases: docker system events, docker events
 short: Get real time events from the server
 long: |-
-    Use `docker system events` to get real-time events from the server. These
-    events differ per Docker object type.
+    Use `docker events` to get real-time events from the server. These events differ
+    per Docker object type. Different event types have different scopes. Local
+    scoped events are only seen on the node they take place on, and Swarm scoped
+    events are seen on all managers.
 @y
 command: docker system events
 aliases: docker system events, docker events
 short: Get real time events from the server
 long: |-
-    Use `docker system events` to get real-time events from the server. These
-    events differ per Docker object type.
+    Use `docker events` to get real-time events from the server. These events differ
+    per Docker object type. Different event types have different scopes. Local
+    scoped events are only seen on the node they take place on, and Swarm scoped
+    events are seen on all managers.
+@z
+
+@x
+    Only the last 1000 log events are returned. You can use filters to further limit
+    the number of events returned.
+@y
+    Only the last 1000 log events are returned. You can use filters to further limit
+    the number of events returned.
 @z
 
 @x
@@ -132,14 +144,14 @@ long: |-
 @z
 
 @x
-    - `install`
     - `enable`
     - `disable`
+    - `install`
     - `remove`
 @y
-    - `install`
     - `enable`
     - `disable`
+    - `install`
     - `remove`
 @z
 
@@ -157,14 +169,14 @@ long: |-
 
 @x
     - `create`
+    - `destroy`
     - `mount`
     - `unmount`
-    - `destroy`
 @y
     - `create`
+    - `destroy`
     - `mount`
     - `unmount`
-    - `destroy`
 @z
 
 @x
@@ -182,13 +194,15 @@ long: |-
 @x
     - `create`
     - `connect`
-    - `disconnect`
     - `destroy`
+    - `disconnect`
+    - `remove`
 @y
     - `create`
     - `connect`
-    - `disconnect`
     - `destroy`
+    - `disconnect`
+    - `remove`
 @z
 
 @x
@@ -210,26 +224,114 @@ long: |-
 @z
 
 @x
+    #### Services
+@y
+    #### Services
+@z
+
+@x
+    Docker services report the following events:
+@y
+    Docker services report the following events:
+@z
+
+@x
+    - `create`
+    - `remove`
+    - `update`
+@y
+    - `create`
+    - `remove`
+    - `update`
+@z
+
+@x
+    #### Nodes
+@y
+    #### Nodes
+@z
+
+@x
+    Docker nodes report the following events:
+@y
+    Docker nodes report the following events:
+@z
+
+@x
+    - `create`
+    - `remove`
+    - `update`
+@y
+    - `create`
+    - `remove`
+    - `update`
+@z
+
+@x
+    #### Secrets
+@y
+    #### Secrets
+@z
+
+@x
+    Docker secrets report the following events:
+@y
+    Docker secrets report the following events:
+@z
+
+@x
+    - `create`
+    - `remove`
+    - `update`
+@y
+    - `create`
+    - `remove`
+    - `update`
+@z
+
+@x
+    #### Configs
+@y
+    #### Configs
+@z
+
+@x
+    Docker configs report the following events:
+@y
+    Docker configs report the following events:
+@z
+
+@x
+    - `create`
+    - `remove`
+    - `update`
+@y
+    - `create`
+    - `remove`
+    - `update`
+@z
+
+@x
     ### Limiting, filtering, and formatting the output
 @y
     ### Limiting, filtering, and formatting the output
 @z
 
 @x
-    #### Limit events by time
+    #### Limit events by time (--since, --until) {#since}
 @y
-    #### Limit events by time
+    #### Limit events by time (--since, --until) {#since}
 @z
 
 @x
     The `--since` and `--until` parameters can be Unix timestamps, date formatted
     timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
     relative to the client machine’s time. If you do not provide the `--since` option,
-    the command returns only new and/or live events.  Supported formats for date
+    the command returns only new and/or live events. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02Z07:00`, and `2006-01-02`. The local
     timezone on the client will be used if you do not provide either a `Z` or a
-    `+-00:00` timezone offset at the end of the timestamp.  When providing Unix
+    `+-00:00` timezone offset at the end of the timestamp. When providing Unix
     timestamps enter seconds[.nanoseconds], where seconds is the number of seconds
     that have elapsed since January 1, 1970 (midnight UTC/GMT), not counting leap
     seconds (aka Unix epoch or Unix time), and the optional .nanoseconds field is a
@@ -238,15 +340,23 @@ long: |-
     The `--since` and `--until` parameters can be Unix timestamps, date formatted
     timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
     relative to the client machine’s time. If you do not provide the `--since` option,
-    the command returns only new and/or live events.  Supported formats for date
+    the command returns only new and/or live events. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02Z07:00`, and `2006-01-02`. The local
     timezone on the client will be used if you do not provide either a `Z` or a
-    `+-00:00` timezone offset at the end of the timestamp.  When providing Unix
+    `+-00:00` timezone offset at the end of the timestamp. When providing Unix
     timestamps enter seconds[.nanoseconds], where seconds is the number of seconds
     that have elapsed since January 1, 1970 (midnight UTC/GMT), not counting leap
     seconds (aka Unix epoch or Unix time), and the optional .nanoseconds field is a
     fraction of a second no more than nine digits long.
+@z
+
+@x
+    Only the last 1000 log events are returned. You can use filters to further limit
+    the number of events returned.
+@y
+    Only the last 1000 log events are returned. You can use filters to further limit
+    the number of events returned.
 @z
 
 @x
@@ -266,23 +376,23 @@ long: |-
 @z
 
 @x
-    Using the same filter multiple times will be handled as a *OR*; for example
-    `--filter container=588a23dac085 --filter container=a8f7720b8c22` will display
-    events for container 588a23dac085 *OR* container a8f7720b8c22
+    Using the same filter multiple times is interpreted as a logical `OR`; for example,
+    `--filter container=588a23dac085 --filter container=a8f7720b8c22` displays
+    events for container `588a23dac085` or container `a8f7720b8c22`.
 @y
-    Using the same filter multiple times will be handled as a *OR*; for example
-    `--filter container=588a23dac085 --filter container=a8f7720b8c22` will display
-    events for container 588a23dac085 *OR* container a8f7720b8c22
+    Using the same filter multiple times is interpreted as a logical `OR`; for example,
+    `--filter container=588a23dac085 --filter container=a8f7720b8c22` displays
+    events for container `588a23dac085` or container `a8f7720b8c22`.
 @z
 
 @x
-    Using multiple filters will be handled as a *AND*; for example
-    `--filter container=588a23dac085 --filter event=start` will display events for
-    container container 588a23dac085 *AND* the event type is *start*
+    Using multiple filters is interpreted as a logical `AND`; for example,
+    `--filter container=588a23dac085 --filter event=start` displays events for
+    container `588a23dac085` and where the event type is `start`.
 @y
-    Using multiple filters will be handled as a *AND*; for example
-    `--filter container=588a23dac085 --filter event=start` will display events for
-    container container 588a23dac085 *AND* the event type is *start*
+    Using multiple filters is interpreted as a logical `AND`; for example,
+    `--filter container=588a23dac085 --filter event=start` displays events for
+    container `588a23dac085` and where the event type is `start`.
 @z
 
 @x
@@ -292,15 +402,56 @@ long: |-
 @z
 
 @x
-    * container (`container=<name or id>`)
-    * daemon (`daemon=<name or id>`)
-    * event (`event=<event action>`)
-    * image (`image=<tag or id>`)
-    * label (`label=<key>` or `label=<key>=<value>`)
-    * network (`network=<name or id>`)
-    * plugin (`plugin=<name or id>`)
-    * type (`type=<container or image or volume or network or daemon or plugin>`)
-    * volume (`volume=<name or id>`)
+    - config (`config=<name or id>`)
+    - container (`container=<name or id>`)
+    - daemon (`daemon=<name or id>`)
+    - event (`event=<event action>`)
+    - image (`image=<repository or tag>`)
+    - label (`label=<key>` or `label=<key>=<value>`)
+    - network (`network=<name or id>`)
+    - node (`node=<id>`)
+    - plugin (`plugin=<name or id>`)
+    - scope (`scope=<local or swarm>`)
+    - secret (`secret=<name or id>`)
+    - service (`service=<name or id>`)
+    - type (`type=<container or image or volume or network or daemon or plugin or service or node or secret or config>`)
+    - volume (`volume=<name>`)
+@y
+    - config (`config=<name or id>`)
+    - container (`container=<name or id>`)
+    - daemon (`daemon=<name or id>`)
+    - event (`event=<event action>`)
+    - image (`image=<repository or tag>`)
+    - label (`label=<key>` or `label=<key>=<value>`)
+    - network (`network=<name or id>`)
+    - node (`node=<id>`)
+    - plugin (`plugin=<name or id>`)
+    - scope (`scope=<local or swarm>`)
+    - secret (`secret=<name or id>`)
+    - service (`service=<name or id>`)
+    - type (`type=<container or image or volume or network or daemon or plugin or service or node or secret or config>`)
+    - volume (`volume=<name>`)
+@z
+
+@x
+    #### Format the output (--format) {#format}
+@y
+    #### Format the output (--format) {#format}
+@z
+
+@x
+    If you specify a format (`--format`), the given template is executed
+    instead of the default format. Go's [text/template](https://pkg.go.dev/text/template)
+    package describes all the details of the format.
+@y
+    If you specify a format (`--format`), the given template is executed
+    instead of the default format. Go's [text/template](https://pkg.go.dev/text/template)
+    package describes all the details of the format.
+@z
+
+@x
+    If a format is set to `{{json .}}`, events are streamed in the JSON Lines format.
+    For information about JSON Lines, see <https://jsonlines.org/>.
 usage: docker system events [OPTIONS]
 pname: docker system
 plink: docker_system.yaml
@@ -322,7 +473,6 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
       deprecated: false
       hidden: false
       experimental: false
@@ -361,15 +511,8 @@ inherited_options:
 examples: |-
     ### Basic example
 @y
-    * container (`container=<name or id>`)
-    * daemon (`daemon=<name or id>`)
-    * event (`event=<event action>`)
-    * image (`image=<tag or id>`)
-    * label (`label=<key>` or `label=<key>=<value>`)
-    * network (`network=<name or id>`)
-    * plugin (`plugin=<name or id>`)
-    * type (`type=<container or image or volume or network or daemon or plugin>`)
-    * volume (`volume=<name or id>`)
+    If a format is set to `{{json .}}`, events are streamed in the JSON Lines format.
+    For information about JSON Lines, see <https://jsonlines.org/>.
 usage: docker system events [OPTIONS]
 pname: docker system
 plink: docker_system.yaml
@@ -391,7 +534,6 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
       deprecated: false
       hidden: false
       experimental: false
@@ -445,11 +587,11 @@ examples: |-
 
 @x
     ```console
-    $ docker system events
+    $ docker events
     ```
 @y
     ```console
-    $ docker system events
+    $ docker events
     ```
 @z
 
@@ -502,9 +644,9 @@ examples: |-
 @z
 
 @x
-    To exit the `docker system events` command, use `CTRL+C`.
+    To exit the `docker events` command, use `CTRL+C`.
 @y
-    To exit the `docker system events` command, use `CTRL+C`.
+    To exit the `docker events` command, use `CTRL+C`.
 @z
 
 @x
@@ -515,21 +657,38 @@ examples: |-
 
 @x
     You can filter the output by an absolute timestamp or relative time on the host
-    machine, using the following different time syntaxes:
+    machine, using the following different time formats:
 @y
     You can filter the output by an absolute timestamp or relative time on the host
-    machine, using the following different time syntaxes:
+    machine, using the following different time formats:
 @z
 
 @x
     ```console
-    $ docker system events --since 1483283804
+    $ docker events --since 1483283804
+    2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
+    2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
+    2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
+    2017-01-05T00:36:09.830268747+08:00 container kill 0fdb...ff37 (image=alpine:latest, name=test, signal=15)
+    2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
+    2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
 @y
     ```console
-    $ docker system events --since 1483283804
+    $ docker events --since 1483283804
+    2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
+    2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
+    2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
+    2017-01-05T00:36:09.830268747+08:00 container kill 0fdb...ff37 (image=alpine:latest, name=test, signal=15)
+    2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
+    2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
 @z
 
 @x
+    $ docker events --since '2017-01-05'
     2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
     2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
     2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
@@ -539,6 +698,7 @@ examples: |-
     2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
     2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
 @y
+    $ docker events --since '2017-01-05'
     2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
     2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
     2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
@@ -550,38 +710,7 @@ examples: |-
 @z
 
 @x
-    $ docker system events --since '2017-01-05'
-@y
-    $ docker system events --since '2017-01-05'
-@z
-
-@x
-    2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
-    2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
-    2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
-    2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
-    2017-01-05T00:36:09.830268747+08:00 container kill 0fdb...ff37 (image=alpine:latest, name=test, signal=15)
-    2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
-    2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
-    2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
-@y
-    2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
-    2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
-    2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
-    2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
-    2017-01-05T00:36:09.830268747+08:00 container kill 0fdb...ff37 (image=alpine:latest, name=test, signal=15)
-    2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
-    2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
-    2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
-@z
-
-@x
-    $ docker system events --since '2013-09-03T15:49:29'
-@y
-    $ docker system events --since '2013-09-03T15:49:29'
-@z
-
-@x
+    $ docker events --since '2013-09-03T15:49:29'
     2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
     2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
     2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
@@ -591,6 +720,7 @@ examples: |-
     2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
     2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
 @y
+    $ docker events --since '2013-09-03T15:49:29'
     2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
     2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
     2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
@@ -602,12 +732,17 @@ examples: |-
 @z
 
 @x
-    $ docker system events --since '10m'
+    $ docker events --since '10m'
+    2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
+    2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
+    2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
+    2017-01-05T00:36:09.830268747+08:00 container kill 0fdb...ff37 (image=alpine:latest, name=test, signal=15)
+    2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
+    2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
 @y
-    $ docker system events --since '10m'
-@z
-
-@x
+    $ docker events --since '10m'
     2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
     2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
     2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
@@ -616,16 +751,21 @@ examples: |-
     2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
     2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
     2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
+@z
+
+@x
+    $ docker events --since '2017-01-05T00:35:30' --until '2017-01-05T00:36:05'
+    2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
+    2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
+    2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
+    2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
     ```
 @y
+    $ docker events --since '2017-01-05T00:35:30' --until '2017-01-05T00:36:05'
     2017-01-05T00:35:41.241772953+08:00 volume create testVol (driver=local)
     2017-01-05T00:35:58.859401177+08:00 container create d9cd...4d70 (image=alpine:latest, name=test)
     2017-01-05T00:36:04.703631903+08:00 network connect e2e1...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
     2017-01-05T00:36:04.795031609+08:00 container start 0fdb...ff37 (image=alpine:latest, name=test)
-    2017-01-05T00:36:09.830268747+08:00 container kill 0fdb...ff37 (image=alpine:latest, name=test, signal=15)
-    2017-01-05T00:36:09.840186338+08:00 container die 0fdb...ff37 (exitCode=143, image=alpine:latest, name=test)
-    2017-01-05T00:36:09.880113663+08:00 network disconnect e2e...29e2 (container=0fdb...ff37, name=bridge, type=bridge)
-    2017-01-05T00:36:09.890214053+08:00 container stop 0fdb...ff37 (image=alpine:latest, name=test)
     ```
 @z
 
@@ -645,10 +785,10 @@ examples: |-
 
 @x
     ```console
-    $ docker system events --filter 'event=stop'
+    $ docker events --filter 'event=stop'
 @y
     ```console
-    $ docker system events --filter 'event=stop'
+    $ docker events --filter 'event=stop'
 @z
 
 @x
@@ -660,9 +800,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'image=alpine'
+    $ docker events --filter 'image=alpine'
 @y
-    $ docker system events --filter 'image=alpine'
+    $ docker events --filter 'image=alpine'
 @z
 
 @x
@@ -682,9 +822,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'container=test'
+    $ docker events --filter 'container=test'
 @y
-    $ docker system events --filter 'container=test'
+    $ docker events --filter 'container=test'
 @z
 
 @x
@@ -700,9 +840,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'container=test' --filter 'container=d9cdb1525ea8'
+    $ docker events --filter 'container=test' --filter 'container=d9cdb1525ea8'
 @y
-    $ docker system events --filter 'container=test' --filter 'container=d9cdb1525ea8'
+    $ docker events --filter 'container=test' --filter 'container=d9cdb1525ea8'
 @z
 
 @x
@@ -720,9 +860,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'container=test' --filter 'event=stop'
+    $ docker events --filter 'container=test' --filter 'event=stop'
 @y
-    $ docker system events --filter 'container=test' --filter 'event=stop'
+    $ docker events --filter 'container=test' --filter 'event=stop'
 @z
 
 @x
@@ -732,9 +872,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'type=volume'
+    $ docker events --filter 'type=volume'
 @y
-    $ docker system events --filter 'type=volume'
+    $ docker events --filter 'type=volume'
 @z
 
 @x
@@ -750,9 +890,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'type=network'
+    $ docker events --filter 'type=network'
 @y
-    $ docker system events --filter 'type=network'
+    $ docker events --filter 'type=network'
 @z
 
 @x
@@ -764,27 +904,27 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'container=container_1' --filter 'container=container_2'
+    $ docker events --filter 'container=container_1' --filter 'container=container_2'
 @y
-    $ docker system events --filter 'container=container_1' --filter 'container=container_2'
+    $ docker events --filter 'container=container_1' --filter 'container=container_2'
 @z
 
 @x
-    2014-09-03T15:49:29.999999999Z07:00 container die 4386fb97867d (image=ubuntu:22.04  )
-    2014-05-10T17:42:14.999999999Z07:00 container stop 4386fb97867d (image=ubuntu:22.04  )
+    2014-09-03T15:49:29.999999999Z07:00 container die 4386fb97867d (image=ubuntu:22.04)
+    2014-05-10T17:42:14.999999999Z07:00 container stop 4386fb97867d (image=ubuntu:22.04)
     2014-05-10T17:42:14.999999999Z07:00 container die 7805c1d35632 (imager=redis:2.8)
     2014-09-03T15:49:29.999999999Z07:00 container stop 7805c1d35632 (image=redis:2.8)
 @y
-    2014-09-03T15:49:29.999999999Z07:00 container die 4386fb97867d (image=ubuntu:22.04  )
-    2014-05-10T17:42:14.999999999Z07:00 container stop 4386fb97867d (image=ubuntu:22.04  )
+    2014-09-03T15:49:29.999999999Z07:00 container die 4386fb97867d (image=ubuntu:22.04)
+    2014-05-10T17:42:14.999999999Z07:00 container stop 4386fb97867d (image=ubuntu:22.04)
     2014-05-10T17:42:14.999999999Z07:00 container die 7805c1d35632 (imager=redis:2.8)
     2014-09-03T15:49:29.999999999Z07:00 container stop 7805c1d35632 (image=redis:2.8)
 @z
 
 @x
-    $ docker system events --filter 'type=volume'
+    $ docker events --filter 'type=volume'
 @y
-    $ docker system events --filter 'type=volume'
+    $ docker events --filter 'type=volume'
 @z
 
 @x
@@ -800,9 +940,9 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'type=network'
+    $ docker events --filter 'type=network'
 @y
-    $ docker system events --filter 'type=network'
+    $ docker events --filter 'type=network'
 @z
 
 @x
@@ -814,43 +954,97 @@ examples: |-
 @z
 
 @x
-    $ docker system events --filter 'type=plugin'
+    $ docker events --filter 'type=plugin'
 @y
-    $ docker system events --filter 'type=plugin'
+    $ docker events --filter 'type=plugin'
 @z
 
 @x
     2016-07-25T17:30:14.825557616Z plugin pull ec7b87f2ce84330fe076e666f17dfc049d2d7ae0b8190763de94e1f2d105993f (name=tiborvass/sample-volume-plugin:latest)
     2016-07-25T17:30:14.888127370Z plugin enable ec7b87f2ce84330fe076e666f17dfc049d2d7ae0b8190763de94e1f2d105993f (name=tiborvass/sample-volume-plugin:latest)
-    ```
 @y
     2016-07-25T17:30:14.825557616Z plugin pull ec7b87f2ce84330fe076e666f17dfc049d2d7ae0b8190763de94e1f2d105993f (name=tiborvass/sample-volume-plugin:latest)
     2016-07-25T17:30:14.888127370Z plugin enable ec7b87f2ce84330fe076e666f17dfc049d2d7ae0b8190763de94e1f2d105993f (name=tiborvass/sample-volume-plugin:latest)
+@z
+
+@x
+    $ docker events -f type=service
+@y
+    $ docker events -f type=service
+@z
+
+@x
+    2017-07-12T06:34:07.999446625Z service create wj64st89fzgchxnhiqpn8p4oj (name=reverent_albattani)
+    2017-07-12T06:34:21.405496207Z service remove wj64st89fzgchxnhiqpn8p4oj (name=reverent_albattani)
+@y
+    2017-07-12T06:34:07.999446625Z service create wj64st89fzgchxnhiqpn8p4oj (name=reverent_albattani)
+    2017-07-12T06:34:21.405496207Z service remove wj64st89fzgchxnhiqpn8p4oj (name=reverent_albattani)
+@z
+
+@x
+    $ docker events -f type=node
+@y
+    $ docker events -f type=node
+@z
+
+@x
+    2017-07-12T06:21:51.951586759Z node update 3xyz5ttp1a253q74z1thwywk9 (name=ip-172-31-23-42, state.new=ready, state.old=unknown)
+@y
+    2017-07-12T06:21:51.951586759Z node update 3xyz5ttp1a253q74z1thwywk9 (name=ip-172-31-23-42, state.new=ready, state.old=unknown)
+@z
+
+@x
+    $ docker events -f type=secret
+@y
+    $ docker events -f type=secret
+@z
+
+@x
+    2017-07-12T06:32:13.915704367Z secret create s8o6tmlnndrgzbmdilyy5ymju (name=new_secret)
+    2017-07-12T06:32:37.052647783Z secret remove s8o6tmlnndrgzbmdilyy5ymju (name=new_secret)
+@y
+    2017-07-12T06:32:13.915704367Z secret create s8o6tmlnndrgzbmdilyy5ymju (name=new_secret)
+    2017-07-12T06:32:37.052647783Z secret remove s8o6tmlnndrgzbmdilyy5ymju (name=new_secret)
+@z
+
+@x
+    $  docker events -f type=config
+    2017-07-12T06:44:13.349037127Z config create u96zlvzdfsyb9sg4mhyxfh3rl (name=abc)
+    2017-07-12T06:44:36.327694184Z config remove u96zlvzdfsyb9sg4mhyxfh3rl (name=abc)
+@y
+    $  docker events -f type=config
+    2017-07-12T06:44:13.349037127Z config create u96zlvzdfsyb9sg4mhyxfh3rl (name=abc)
+    2017-07-12T06:44:36.327694184Z config remove u96zlvzdfsyb9sg4mhyxfh3rl (name=abc)
+@z
+
+@x
+    $ docker events --filter 'scope=swarm'
+@y
+    $ docker events --filter 'scope=swarm'
+@z
+
+@x
+    2017-07-10T07:46:50.250024503Z service create m8qcxu8081woyof7w3jaax6gk (name=affectionate_wilson)
+    2017-07-10T07:47:31.093797134Z secret create 6g5pufzsv438p9tbvl9j94od4 (name=new_secret)
+    ```
+@y
+    2017-07-10T07:46:50.250024503Z service create m8qcxu8081woyof7w3jaax6gk (name=affectionate_wilson)
+    2017-07-10T07:47:31.093797134Z secret create 6g5pufzsv438p9tbvl9j94od4 (name=new_secret)
     ```
 @z
 
 @x
-    ### Format the output (--format) {#format}
+    ### Format the output
 @y
-    ### Format the output (--format) {#format}
-@z
-
-@x
-    If a format (`--format`) is specified, the given template will be executed
-    instead of the default format. Go's [text/template](https://pkg.go.dev/text/template)
-    package describes all the details of the format.
-@y
-    If a format (`--format`) is specified, the given template will be executed
-    instead of the default format. Go's [text/template](https://pkg.go.dev/text/template)
-    package describes all the details of the format.
+    ### Format the output
 @z
 
 @x
     ```console
-    $ docker system events --filter 'type=container' --format 'Type={{.Type}}  Status={{.Status}}  ID={{.ID}}'
+    $ docker events --filter 'type=container' --format 'Type={{.Type}}  Status={{.Status}}  ID={{.ID}}'
 @y
     ```console
-    $ docker system events --filter 'type=container' --format 'Type={{.Type}}  Status={{.Status}}  ID={{.ID}}'
+    $ docker events --filter 'type=container' --format 'Type={{.Type}}  Status={{.Status}}  ID={{.ID}}'
 @z
 
 @x
@@ -878,19 +1072,19 @@ examples: |-
 @z
 
 @x
-    If a format is set to `{{json .}}`, the events are streamed as valid JSON
-    Lines. For information about JSON Lines, please refer to https://jsonlines.org/ .
+    To list events in JSON format, use the `json` directive, which is the same
+    `--format '{{ json . }}`.
 @y
-    If a format is set to `{{json .}}`, the events are streamed as valid JSON
-    Lines. For information about JSON Lines, please refer to https://jsonlines.org/ .
+    To list events in JSON format, use the `json` directive, which is the same
+    `--format '{{ json . }}`.
 @z
 
 @x
     ```console
-    $ docker system events --format '{{json .}}'
+    $ docker events --format json
 @y
     ```console
-    $ docker system events --format '{{json .}}'
+    $ docker events --format json
 @z
 
 @x

@@ -64,6 +64,54 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
+## 4.26.1
+@y
+## 4.26.1
+@z
+
+@x
+{{< release-date date="2023-12-14" >}}
+@y
+{{< release-date date="2023-12-14" >}}
+@z
+
+@x
+{{< desktop-install all=true version="4.26.1" build_path="/131620/" >}}
+@y
+{{< desktop-install all=true version="4.26.1" build_path="/131620/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Updated feedback links inside Docker Desktop to ensure they continue to work correctly
+@y
+- Updated feedback links inside Docker Desktop to ensure they continue to work correctly
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Switch the CLI binaries to a version compatible with older versions of glibc, such as used in Ubuntu 20.04 fixes [docker/for-win#13824](https://github.com/docker/for-win/issues/13824)
+@y
+- Switch the CLI binaries to a version compatible with older versions of glibc, such as used in Ubuntu 20.04 fixes [docker/for-win#13824](https://github.com/docker/for-win/issues/13824)
+@z
+
+@x
 ## 4.26.0
 @y
 ## 4.26.0
@@ -4984,14 +5032,14 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 Docker Dashboard incorrectly displays the container memory usage as zero on
 Hyper-V based machines.
-You can use the [`docker stats`](../engine/reference/commandline/stats.md)
+You can use the [`docker stats`](../engine/reference/commandline/container_stats.md)
 command on the command line as a workaround to view the
 actual memory usage. See
 [docker/for-mac#6076](https://github.com/docker/for-mac/issues/6076).
 @y
 Docker Dashboard incorrectly displays the container memory usage as zero on
 Hyper-V based machines.
-You can use the [`docker stats`](../engine/reference/commandline/stats.md)
+You can use the [`docker stats`](../engine/reference/commandline/container_stats.md)
 command on the command line as a workaround to view the
 actual memory usage. See
 [docker/for-mac#6076](https://github.com/docker/for-mac/issues/6076).

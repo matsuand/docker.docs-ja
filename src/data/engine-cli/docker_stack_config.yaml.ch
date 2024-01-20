@@ -108,11 +108,11 @@ examples: |-
 @z
 
 @x
-    ```bash
+    ```console
     $ docker stack config --compose-file docker-compose.yml --compose-file docker-compose.prod.yml
     ```
 @y
-    ```bash
+    ```console
     $ docker stack config --compose-file docker-compose.yml --compose-file docker-compose.prod.yml
     ```
 @z
@@ -124,11 +124,11 @@ examples: |-
 @z
 
 @x
-    ```bash
+    ```console
     $ cat docker-compose.yml | docker stack config --compose-file -
     ```
 @y
-    ```bash
+    ```console
     $ cat docker-compose.yml | docker stack config --compose-file -
     ```
 @z
@@ -154,13 +154,13 @@ examples: |-
 @z
 
 @x
-    ```bash
+    ```yaml
       service: webserver
       environment:
         REDIRECT_REGEX=http://host/redirect/$${1}
     ```
 @y
-    ```bash
+    ```yaml
       service: webserver
       environment:
         REDIRECT_REGEX=http://host/redirect/$${1}
@@ -180,7 +180,7 @@ examples: |-
 @z
 
 @x
-    ```
+    ```console
     $ docker stack config --compose-file web.yml --compose-file web.prod.yml --skip-interpolation | docker stack deploy --compose-file -
     ```
 deprecated: false
@@ -190,7 +190,7 @@ experimentalcli: false
 kubernetes: false
 swarm: true
 @y
-    ```
+    ```console
     $ docker stack config --compose-file web.yml --compose-file web.prod.yml --skip-interpolation | docker stack deploy --compose-file -
     ```
 deprecated: false

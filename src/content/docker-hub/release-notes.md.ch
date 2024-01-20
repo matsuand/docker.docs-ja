@@ -50,6 +50,28 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
+  The following API endpoints have been removed:
+@y
+  The following API endpoints have been removed:
+@z
+
+@x
+  ```text
+  /namespaces/{namespace}/repositories/{repository}/images
+  /namespaces/{namespace}/repositories/{repository}/images/{digest}/tags
+  /namespaces/{namespace}/repositories/{repository}/images-summary
+  /namespaces/{namespace}/delete-images
+  ```
+@y
+  ```text
+  /namespaces/{namespace}/repositories/{repository}/images
+  /namespaces/{namespace}/repositories/{repository}/images/{digest}/tags
+  /namespaces/{namespace}/repositories/{repository}/images-summary
+  /namespaces/{namespace}/delete-images
+  ```
+@z
+
+@x
 ## 2023-08-28
 @y
 ## 2023-08-28

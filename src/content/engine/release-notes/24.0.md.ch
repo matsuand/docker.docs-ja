@@ -9,11 +9,6 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
 ---
 @y
 ---
@@ -23,11 +18,6 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
 ---
 @z
 

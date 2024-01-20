@@ -47,9 +47,9 @@ grid:
 aliases:
 - /edge/
 - /engine/ce-ee-node-activate/
+- /engine/migration/
 - /engine/misc/
 - /linux/
-- /manuals/
 ---
 @y
 ---
@@ -96,9 +96,9 @@ grid:
 aliases:
 - /edge/
 - /engine/ce-ee-node-activate/
+- /engine/migration/
 - /engine/misc/
 - /linux/
-- /manuals/
 ---
 @z
 

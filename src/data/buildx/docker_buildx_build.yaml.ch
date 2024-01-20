@@ -19,7 +19,7 @@ long: |-
 
 @x
     For documentation on most of these flags, refer to the [`docker build`
-    documentation](/engine/reference/commandline/build/).
+    documentation](/engine/reference/commandline/image_build/).
     This page describes a subset of the new flags.
 usage: docker buildx build [OPTIONS] PATH | URL | -
 pname: docker buildx
@@ -29,7 +29,7 @@ options:
       value_type: stringSlice
       default_value: '[]'
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /engine/reference/commandline/build/#add-host
+      details_url: /engine/reference/commandline/image_build/#add-host
       deprecated: false
       hidden: false
       experimental: false
@@ -119,7 +119,7 @@ options:
     - option: cgroup-parent
       value_type: string
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /engine/reference/commandline/build/#cgroup-parent
+      details_url: /engine/reference/commandline/image_build/#cgroup-parent
       deprecated: false
       hidden: false
       experimental: false
@@ -199,7 +199,7 @@ options:
       shorthand: f
       value_type: string
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /engine/reference/commandline/build/#file
+      details_url: /engine/reference/commandline/image_build/#file
       deprecated: false
       hidden: false
       experimental: false
@@ -309,6 +309,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: Do not cache specified stages
+      details_url: '#no-cache-filter'
       deprecated: false
       hidden: false
       experimental: false
@@ -500,7 +501,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /engine/reference/commandline/build/#tag
+      details_url: /engine/reference/commandline/image_build/#tag
       deprecated: false
       hidden: false
       experimental: false
@@ -510,7 +511,7 @@ options:
     - option: target
       value_type: string
       description: Set the target build stage to build
-      details_url: /engine/reference/commandline/build/#target
+      details_url: /engine/reference/commandline/image_build/#target
       deprecated: false
       hidden: false
       experimental: false
@@ -543,7 +544,7 @@ examples: |-
     ### Create annotations (--annotation) {#annotation}
 @y
     For documentation on most of these flags, refer to the [`docker build`
-    documentation](/engine/reference/commandline/build/).
+    documentation](/engine/reference/commandline/image_build/).
     This page describes a subset of the new flags.
 usage: docker buildx build [OPTIONS] PATH | URL | -
 pname: docker buildx
@@ -553,7 +554,7 @@ options:
       value_type: stringSlice
       default_value: '[]'
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /engine/reference/commandline/build/#add-host
+      details_url: /engine/reference/commandline/image_build/#add-host
       deprecated: false
       hidden: false
       experimental: false
@@ -643,7 +644,7 @@ options:
     - option: cgroup-parent
       value_type: string
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /engine/reference/commandline/build/#cgroup-parent
+      details_url: /engine/reference/commandline/image_build/#cgroup-parent
       deprecated: false
       hidden: false
       experimental: false
@@ -723,7 +724,7 @@ options:
       shorthand: f
       value_type: string
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /engine/reference/commandline/build/#file
+      details_url: /engine/reference/commandline/image_build/#file
       deprecated: false
       hidden: false
       experimental: false
@@ -833,6 +834,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: Do not cache specified stages
+      details_url: '#no-cache-filter'
       deprecated: false
       hidden: false
       experimental: false
@@ -1024,7 +1026,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /engine/reference/commandline/build/#tag
+      details_url: /engine/reference/commandline/image_build/#tag
       deprecated: false
       hidden: false
       experimental: false
@@ -1034,7 +1036,7 @@ options:
     - option: target
       value_type: string
       description: Set the target build stage to build
-      details_url: /engine/reference/commandline/build/#target
+      details_url: /engine/reference/commandline/image_build/#target
       deprecated: false
       hidden: false
       experimental: false
@@ -1310,9 +1312,9 @@ examples: |-
 @z
 
 @x
-    Same as [`docker build` command](/engine/reference/commandline/build/#build-arg).
+    Same as [`docker build` command](/engine/reference/commandline/image_build/#build-arg).
 @y
-    Same as [`docker build` command](/engine/reference/commandline/build/#build-arg).
+    Same as [`docker build` command](/engine/reference/commandline/image_build/#build-arg).
 @z
 
 @x
@@ -1751,6 +1753,146 @@ examples: |-
       "containerimage.digest": "sha256:19ffeab6f8bc9293ac2c3fdf94ebe28396254c993aea0b5a542cfb02e0883fa3"
     }
     ```
+@z
+
+@x
+    ### Ignore build cache for specific stages (--no-cache-filter) {#no-cache-filter}
+@y
+    ### Ignore build cache for specific stages (--no-cache-filter) {#no-cache-filter}
+@z
+
+@x
+    The `--no-cache-filter` lets you specify one or more stages of a multi-stage
+    Dockerfile for which build cache should be ignored. To specify multiple stages,
+    use a comma-separated syntax:
+@y
+    The `--no-cache-filter` lets you specify one or more stages of a multi-stage
+    Dockerfile for which build cache should be ignored. To specify multiple stages,
+    use a comma-separated syntax:
+@z
+
+@x
+    ```console
+    $ docker buildx build --no-cache-filter stage1,stage2,stage3 .
+    ```
+@y
+    ```console
+    $ docker buildx build --no-cache-filter stage1,stage2,stage3 .
+    ```
+@z
+
+@x
+    For example, the following Dockerfile contains four stages:
+@y
+    For example, the following Dockerfile contains four stages:
+@z
+
+@x
+    - `base`
+    - `install`
+    - `test`
+    - `release`
+@y
+    - `base`
+    - `install`
+    - `test`
+    - `release`
+@z
+
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@z
+
+@x
+    FROM oven/bun:1 as base
+    WORKDIR /app
+@y
+    FROM oven/bun:1 as base
+    WORKDIR /app
+@z
+
+@x
+    FROM base AS install
+    WORKDIR /temp/dev
+    RUN --mount=type=bind,source=package.json,target=package.json \
+        --mount=type=bind,source=bun.lockb,target=bun.lockb \
+        bun install --frozen-lockfile
+@y
+    FROM base AS install
+    WORKDIR /temp/dev
+    RUN --mount=type=bind,source=package.json,target=package.json \
+        --mount=type=bind,source=bun.lockb,target=bun.lockb \
+        bun install --frozen-lockfile
+@z
+
+@x
+    FROM base AS test
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    RUN bun test
+@y
+    FROM base AS test
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    RUN bun test
+@z
+
+@x
+    FROM base AS release
+    ENV NODE_ENV=production
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    ENTRYPOINT ["bun", "run", "index.js"]
+    ```
+@y
+    FROM base AS release
+    ENV NODE_ENV=production
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    ENTRYPOINT ["bun", "run", "index.js"]
+    ```
+@z
+
+@x
+    To ignore the cache for the `install` stage:
+@y
+    To ignore the cache for the `install` stage:
+@z
+
+@x
+    ```console
+    $ docker buildx build --no-cache-filter install .
+    ```
+@y
+    ```console
+    $ docker buildx build --no-cache-filter install .
+    ```
+@z
+
+@x
+    To ignore the cache the `install` and `release` stages:
+@y
+    To ignore the cache the `install` and `release` stages:
+@z
+
+@x
+    ```console
+    $ docker buildx build --no-cache-filter install,release .
+    ```
+@y
+    ```console
+    $ docker buildx build --no-cache-filter install,release .
+    ```
+@z
+
+@x
+    The arguments for the `--no-cache-filter` flag must be names of stages.
+@y
+    The arguments for the `--no-cache-filter` flag must be names of stages.
 @z
 
 @x

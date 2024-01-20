@@ -146,59 +146,59 @@ examples: |-
 @z
 
 @x
-    NAME                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+    NAME                             DESCRIPTION                                     STARS     OFFICIAL
     busybox                          Busybox base image.                             316       [OK]
-    progrium/busybox                                                                 50                   [OK]
-    radial/busyboxplus               Full-chain, Internet enabled, busybox made...   8                    [OK]
-    odise/busybox-python                                                             2                    [OK]
-    azukiapp/busybox                 This image is meant to be used as the base...   2                    [OK]
-    ofayau/busybox-jvm               Prepare busybox to install a 32 bits JVM.       1                    [OK]
-    shingonoide/archlinux-busybox    Arch Linux, a lightweight and flexible Lin...   1                    [OK]
-    odise/busybox-curl                                                               1                    [OK]
-    ofayau/busybox-libc32            Busybox with 32 bits (and 64 bits) libs         1                    [OK]
-    peelsky/zulu-openjdk-busybox                                                     1                    [OK]
-    skomma/busybox-data              Docker image suitable for data volume cont...   1                    [OK]
-    elektritter/busybox-teamspeak    Lightweight teamspeak3 container based on...    1                    [OK]
-    socketplane/busybox                                                              1                    [OK]
-    oveits/docker-nginx-busybox      This is a tiny NginX docker image based on...   0                    [OK]
-    ggtools/busybox-ubuntu           Busybox ubuntu version with extra goodies       0                    [OK]
-    nikfoundas/busybox-confd         Minimal busybox based distribution of confd     0                    [OK]
-    openshift/busybox-http-app                                                       0                    [OK]
-    jllopis/busybox                                                                  0                    [OK]
-    swyckoff/busybox                                                                 0                    [OK]
-    powellquiring/busybox                                                            0                    [OK]
-    williamyeh/busybox-sh            Docker image for BusyBox's sh                   0                    [OK]
-    simplexsys/busybox-cli-powered   Docker busybox images, with a few often us...   0                    [OK]
-    fhisamoto/busybox-java           Busybox java                                    0                    [OK]
-    scottabernethy/busybox                                                           0                    [OK]
+    progrium/busybox                                                                 50
+    radial/busyboxplus               Full-chain, Internet enabled, busybox made...   8
+    odise/busybox-python                                                             2
+    azukiapp/busybox                 This image is meant to be used as the base...   2
+    ofayau/busybox-jvm               Prepare busybox to install a 32 bits JVM.       1
+    shingonoide/archlinux-busybox    Arch Linux, a lightweight and flexible Lin...   1
+    odise/busybox-curl                                                               1
+    ofayau/busybox-libc32            Busybox with 32 bits (and 64 bits) libs         1
+    peelsky/zulu-openjdk-busybox                                                     1
+    skomma/busybox-data              Docker image suitable for data volume cont...   1
+    elektritter/busybox-teamspeak    Lightweight teamspeak3 container based on...    1
+    socketplane/busybox                                                              1
+    oveits/docker-nginx-busybox      This is a tiny NginX docker image based on...   0
+    ggtools/busybox-ubuntu           Busybox ubuntu version with extra goodies       0
+    nikfoundas/busybox-confd         Minimal busybox based distribution of confd     0
+    openshift/busybox-http-app                                                       0
+    jllopis/busybox                                                                  0
+    swyckoff/busybox                                                                 0
+    powellquiring/busybox                                                            0
+    williamyeh/busybox-sh            Docker image for BusyBox's sh                   0
+    simplexsys/busybox-cli-powered   Docker busybox images, with a few often us...   0
+    fhisamoto/busybox-java           Busybox java                                    0
+    scottabernethy/busybox                                                           0
     marclop/busybox-solr
     ```
 @y
-    NAME                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+    NAME                             DESCRIPTION                                     STARS     OFFICIAL
     busybox                          Busybox base image.                             316       [OK]
-    progrium/busybox                                                                 50                   [OK]
-    radial/busyboxplus               Full-chain, Internet enabled, busybox made...   8                    [OK]
-    odise/busybox-python                                                             2                    [OK]
-    azukiapp/busybox                 This image is meant to be used as the base...   2                    [OK]
-    ofayau/busybox-jvm               Prepare busybox to install a 32 bits JVM.       1                    [OK]
-    shingonoide/archlinux-busybox    Arch Linux, a lightweight and flexible Lin...   1                    [OK]
-    odise/busybox-curl                                                               1                    [OK]
-    ofayau/busybox-libc32            Busybox with 32 bits (and 64 bits) libs         1                    [OK]
-    peelsky/zulu-openjdk-busybox                                                     1                    [OK]
-    skomma/busybox-data              Docker image suitable for data volume cont...   1                    [OK]
-    elektritter/busybox-teamspeak    Lightweight teamspeak3 container based on...    1                    [OK]
-    socketplane/busybox                                                              1                    [OK]
-    oveits/docker-nginx-busybox      This is a tiny NginX docker image based on...   0                    [OK]
-    ggtools/busybox-ubuntu           Busybox ubuntu version with extra goodies       0                    [OK]
-    nikfoundas/busybox-confd         Minimal busybox based distribution of confd     0                    [OK]
-    openshift/busybox-http-app                                                       0                    [OK]
-    jllopis/busybox                                                                  0                    [OK]
-    swyckoff/busybox                                                                 0                    [OK]
-    powellquiring/busybox                                                            0                    [OK]
-    williamyeh/busybox-sh            Docker image for BusyBox's sh                   0                    [OK]
-    simplexsys/busybox-cli-powered   Docker busybox images, with a few often us...   0                    [OK]
-    fhisamoto/busybox-java           Busybox java                                    0                    [OK]
-    scottabernethy/busybox                                                           0                    [OK]
+    progrium/busybox                                                                 50
+    radial/busyboxplus               Full-chain, Internet enabled, busybox made...   8
+    odise/busybox-python                                                             2
+    azukiapp/busybox                 This image is meant to be used as the base...   2
+    ofayau/busybox-jvm               Prepare busybox to install a 32 bits JVM.       1
+    shingonoide/archlinux-busybox    Arch Linux, a lightweight and flexible Lin...   1
+    odise/busybox-curl                                                               1
+    ofayau/busybox-libc32            Busybox with 32 bits (and 64 bits) libs         1
+    peelsky/zulu-openjdk-busybox                                                     1
+    skomma/busybox-data              Docker image suitable for data volume cont...   1
+    elektritter/busybox-teamspeak    Lightweight teamspeak3 container based on...    1
+    socketplane/busybox                                                              1
+    oveits/docker-nginx-busybox      This is a tiny NginX docker image based on...   0
+    ggtools/busybox-ubuntu           Busybox ubuntu version with extra goodies       0
+    nikfoundas/busybox-confd         Minimal busybox based distribution of confd     0
+    openshift/busybox-http-app                                                       0
+    jllopis/busybox                                                                  0
+    swyckoff/busybox                                                                 0
+    powellquiring/busybox                                                            0
+    williamyeh/busybox-sh            Docker image for BusyBox's sh                   0
+    simplexsys/busybox-cli-powered   Docker busybox images, with a few often us...   0
+    fhisamoto/busybox-java           Busybox java                                    0
+    scottabernethy/busybox                                                           0
     marclop/busybox-solr
     ```
 @z
@@ -226,16 +226,16 @@ examples: |-
 @z
 
 @x
-    NAME                 DESCRIPTION                                                                               STARS     OFFICIAL   AUTOMATED
+    NAME                 DESCRIPTION                                                                               STARS     OFFICIAL
     busybox              Busybox base image.                                                                       325       [OK]
-    progrium/busybox                                                                                               50                   [OK]
-    radial/busyboxplus   Full-chain, Internet enabled, busybox made from scratch. Comes in git and cURL flavors.   8                    [OK]
+    progrium/busybox                                                                                               50
+    radial/busyboxplus   Full-chain, Internet enabled, busybox made from scratch. Comes in git and cURL flavors.   8
     ```
 @y
-    NAME                 DESCRIPTION                                                                               STARS     OFFICIAL   AUTOMATED
+    NAME                 DESCRIPTION                                                                               STARS     OFFICIAL
     busybox              Busybox base image.                                                                       325       [OK]
-    progrium/busybox                                                                                               50                   [OK]
-    radial/busyboxplus   Full-chain, Internet enabled, busybox made from scratch. Comes in git and cURL flavors.   8                    [OK]
+    progrium/busybox                                                                                               50
+    radial/busyboxplus   Full-chain, Internet enabled, busybox made from scratch. Comes in git and cURL flavors.   8
     ```
 @z
 
@@ -261,10 +261,10 @@ examples: |-
 
 @x
     The filtering flag (`-f` or `--filter`) format is a `key=value` pair. If there is more
-    than one filter, then pass multiple flags (e.g. `--filter is-automated=true --filter stars=3`)
+    than one filter, then pass multiple flags (e.g. `--filter is-official=true --filter stars=3`).
 @y
     The filtering flag (`-f` or `--filter`) format is a `key=value` pair. If there is more
-    than one filter, then pass multiple flags (e.g. `--filter is-automated=true --filter stars=3`)
+    than one filter, then pass multiple flags (e.g. `--filter is-official=true --filter stars=3`).
 @z
 
 @x
@@ -275,11 +275,11 @@ examples: |-
 
 @x
     - stars (int - number of stars the image has)
-    - is-automated (boolean - true or false) - is the image automated or not
+    - is-automated (boolean - true or false) - is the image automated or not (deprecated)
     - is-official (boolean - true or false) - is the image official or not
 @y
     - stars (int - number of stars the image has)
-    - is-automated (boolean - true or false) - is the image automated or not
+    - is-automated (boolean - true or false) - is the image automated or not (deprecated)
     - is-official (boolean - true or false) - is the image official or not
 @z
 
@@ -306,50 +306,16 @@ examples: |-
 @z
 
 @x
-    NAME                 DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+    NAME                 DESCRIPTION                                     STARS     OFFICIAL
     busybox              Busybox base image.                             325       [OK]
-    progrium/busybox                                                     50                   [OK]
-    radial/busyboxplus   Full-chain, Internet enabled, busybox made...   8                    [OK]
+    progrium/busybox                                                     50
+    radial/busyboxplus   Full-chain, Internet enabled, busybox made...   8
     ```
 @y
-    NAME                 DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+    NAME                 DESCRIPTION                                     STARS     OFFICIAL
     busybox              Busybox base image.                             325       [OK]
-    progrium/busybox                                                     50                   [OK]
-    radial/busyboxplus   Full-chain, Internet enabled, busybox made...   8                    [OK]
-    ```
-@z
-
-@x
-    #### is-automated
-@y
-    #### is-automated
-@z
-
-@x
-    This example displays images with a name containing 'busybox'
-    and are automated builds:
-@y
-    This example displays images with a name containing 'busybox'
-    and are automated builds:
-@z
-
-@x
-    ```console
-    $ docker search --filter is-automated=true busybox
-@y
-    ```console
-    $ docker search --filter is-automated=true busybox
-@z
-
-@x
-    NAME                 DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-    progrium/busybox                                                     50                   [OK]
-    radial/busyboxplus   Full-chain, Internet enabled, busybox made...   8                    [OK]
-    ```
-@y
-    NAME                 DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
-    progrium/busybox                                                     50                   [OK]
-    radial/busyboxplus   Full-chain, Internet enabled, busybox made...   8                    [OK]
+    progrium/busybox                                                     50
+    radial/busyboxplus   Full-chain, Internet enabled, busybox made...   8
     ```
 @z
 
@@ -376,11 +342,11 @@ examples: |-
 @z
 
 @x
-    NAME      DESCRIPTION           STARS     OFFICIAL   AUTOMATED
+    NAME      DESCRIPTION           STARS     OFFICIAL
     busybox   Busybox base image.   325       [OK]
     ```
 @y
-    NAME      DESCRIPTION           STARS     OFFICIAL   AUTOMATED
+    NAME      DESCRIPTION           STARS     OFFICIAL
     busybox   Busybox base image.   325       [OK]
     ```
 @z
@@ -406,21 +372,21 @@ examples: |-
 @z
 
 @x
-    | Placeholder    | Description                       |
-    |----------------|-----------------------------------|
-    | `.Name`        | Image Name                        |
-    | `.Description` | Image description                 |
-    | `.StarCount`   | Number of stars for the image     |
-    | `.IsOfficial`  | "OK" if image is official         |
-    | `.IsAutomated` | "OK" if image build was automated |
+    | Placeholder    | Description                                    |
+    |----------------|------------------------------------------------|
+    | `.Name`        | Image Name                                     |
+    | `.Description` | Image description                              |
+    | `.StarCount`   | Number of stars for the image                  |
+    | `.IsOfficial`  | "OK" if image is official                      |
+    | `.IsAutomated` | "OK" if image build was automated (deprecated) |
 @y
-    | Placeholder    | Description                       |
-    |----------------|-----------------------------------|
-    | `.Name`        | Image Name                        |
-    | `.Description` | Image description                 |
-    | `.StarCount`   | Number of stars for the image     |
-    | `.IsOfficial`  | "OK" if image is official         |
-    | `.IsAutomated` | "OK" if image build was automated |
+    | Placeholder    | Description                                    |
+    |----------------|------------------------------------------------|
+    | `.Name`        | Image Name                                     |
+    | `.Description` | Image description                              |
+    | `.StarCount`   | Number of stars for the image                  |
+    | `.IsOfficial`  | "OK" if image is official                      |
+    | `.IsAutomated` | "OK" if image build was automated (deprecated) |
 @z
 
 @x
@@ -483,20 +449,20 @@ examples: |-
 
 @x
     ```console
-    $ docker search --format "table {{.Name}}\t{{.IsAutomated}}\t{{.IsOfficial}}" nginx
+    $ docker search --format "table {{.Name}}\t{{.IsOfficial}}" nginx
 @y
     ```console
-    $ docker search --format "table {{.Name}}\t{{.IsAutomated}}\t{{.IsOfficial}}" nginx
+    $ docker search --format "table {{.Name}}\t{{.IsOfficial}}" nginx
 @z
 
 @x
-    NAME                                     AUTOMATED           OFFICIAL
-    nginx                                                        [OK]
-    jwilder/nginx-proxy                      [OK]
-    richarvey/nginx-php-fpm                  [OK]
-    jrcs/letsencrypt-nginx-proxy-companion   [OK]
-    million12/nginx-php                      [OK]
-    webdevops/php-nginx                      [OK]
+    NAME                                     OFFICIAL
+    nginx                                    [OK]
+    jwilder/nginx-proxy
+    richarvey/nginx-php-fpm
+    jrcs/letsencrypt-nginx-proxy-companion
+    million12/nginx-php
+    webdevops/php-nginx
     ```
 deprecated: false
 experimental: false
@@ -504,13 +470,13 @@ experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    NAME                                     AUTOMATED           OFFICIAL
-    nginx                                                        [OK]
-    jwilder/nginx-proxy                      [OK]
-    richarvey/nginx-php-fpm                  [OK]
-    jrcs/letsencrypt-nginx-proxy-companion   [OK]
-    million12/nginx-php                      [OK]
-    webdevops/php-nginx                      [OK]
+    NAME                                     OFFICIAL
+    nginx                                    [OK]
+    jwilder/nginx-proxy
+    richarvey/nginx-php-fpm
+    jrcs/letsencrypt-nginx-proxy-companion
+    million12/nginx-php
+    webdevops/php-nginx
     ```
 deprecated: false
 experimental: false

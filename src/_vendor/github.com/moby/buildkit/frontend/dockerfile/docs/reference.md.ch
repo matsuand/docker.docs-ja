@@ -461,19 +461,53 @@ The following parser directives are supported:
 <a name="external-implementation-features"><!-- included for deep-links to old section --></a>
 @z
 
+%@x
+%This feature is only available when using the [BuildKit](https://docs.docker.com/build/buildkit/)
+%backend, and is ignored when using the classic builder backend.
+%@y
+%この機能は [BuildKit](/build/buildkit/) バックエンドが用いられているときのみ利用可能であり、旧来の builder バックエンドを利用している場合には無視されます。
+%@z
+
 @x
-This feature is only available when using the [BuildKit](https://docs.docker.com/build/buildkit/)
-backend, and is ignored when using the classic builder backend.
+Use the `syntax` parser directive to declare the Dockerfile syntax version to
+use for the build. If unspecified, BuildKit uses a bundled version of the
+Dockerfile frontend. Declaring a syntax version lets you automatically use the
+latest Dockerfile version without having to upgrade BuildKit or Docker Engine,
+or even use a custom Dockerfile implementation.
 @y
-この機能は [BuildKit](/build/buildkit/) バックエンドが用いられているときのみ利用可能であり、旧来の builder バックエンドを利用している場合には無視されます。
+Use the `syntax` parser directive to declare the Dockerfile syntax version to
+use for the build. If unspecified, BuildKit uses a bundled version of the
+Dockerfile frontend. Declaring a syntax version lets you automatically use the
+latest Dockerfile version without having to upgrade BuildKit or Docker Engine,
+or even use a custom Dockerfile implementation.
 @z
 
 @x
-See [Custom Dockerfile syntax](https://docs.docker.com/build/buildkit/dockerfile-frontend/)
-page for more information.
+Most users will want to set this parser directive to `docker/dockerfile:1`,
+which causes BuildKit to pull the latest stable version of the Dockerfile
+syntax before the build.
 @y
-See [Custom Dockerfile syntax](https://docs.docker.com/build/buildkit/dockerfile-frontend/)
-page for more information.
+Most users will want to set this parser directive to `docker/dockerfile:1`,
+which causes BuildKit to pull the latest stable version of the Dockerfile
+syntax before the build.
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+```
+@z
+
+@x
+For more information about how the parser directive works, see
+[Custom Dockerfile syntax](https://docs.docker.com/build/buildkit/dockerfile-frontend/).
+@y
+For more information about how the parser directive works, see
+[Custom Dockerfile syntax](https://docs.docker.com/build/buildkit/dockerfile-frontend/).
 @z
 
 @x
@@ -845,6 +879,42 @@ directive in your Dockerfile:
 @z
 
 @x
+- `${variable/pattern/replacement}` replace the first occurrence of `pattern`
+  in `variable` with `replacement`
+@y
+- `${variable/pattern/replacement}` replace the first occurrence of `pattern`
+  in `variable` with `replacement`
+@z
+
+@x
+  ```bash
+  string=foobarbaz echo ${string/ba/fo}  # fooforbaz
+  ```
+@y
+  ```bash
+  string=foobarbaz echo ${string/ba/fo}  # fooforbaz
+  ```
+@z
+
+@x
+- `${variable//pattern/replacement}` replaces all occurrences of `pattern`
+  in `variable` with `replacement`
+@y
+- `${variable//pattern/replacement}` replaces all occurrences of `pattern`
+  in `variable` with `replacement`
+@z
+
+@x
+  ```bash
+  string=foobarbaz echo ${string//ba/fo}  # fooforfoz
+  ```
+@y
+  ```bash
+  string=foobarbaz echo ${string//ba/fo}  # fooforfoz
+  ```
+@z
+
+@x
 In all cases, `word` can be any string, including additional environment
 variables.
 @y
@@ -1451,10 +1521,10 @@ RUN apt-get install -y curl
 @z
 
 @x
-You can specify `CMD` instructions using
+You can specify `RUN` instructions using
 [shell or exec forms](#shell-and-exec-form):
 @y
-You can specify `CMD` instructions using
+You can specify `RUN` instructions using
 [shell or exec forms](#shell-and-exec-form):
 @z
 
@@ -6561,11 +6631,43 @@ FILE2
 @z
 
 @x
-In `COPY` commands source parameters can be replaced with here-doc indicators.
-Regular here-doc [variable expansion and tab stripping rules](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) apply.
+With `COPY` instructions, you can replace the source parameter with a here-doc
+indicator to write the contents of the here-document directly to a file. The
+following example creates a `greeting.txt` file containing `hello world` using
+a `COPY` instruction.
 @y
-In `COPY` commands source parameters can be replaced with here-doc indicators.
+With `COPY` instructions, you can replace the source parameter with a here-doc
+indicator to write the contents of the here-document directly to a file. The
+following example creates a `greeting.txt` file containing `hello world` using
+a `COPY` instruction.
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+COPY <<EOF greeting.txt
+hello world
+EOF
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+COPY <<EOF greeting.txt
+hello world
+EOF
+```
+@z
+
+@x
 Regular here-doc [variable expansion and tab stripping rules](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) apply.
+The following example shows a small Dockerfile that creates a `hello.sh` script
+file using a `COPY` instruction with a here-document.
+@y
+Regular here-doc [variable expansion and tab stripping rules](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_07_04) apply.
+The following example shows a small Dockerfile that creates a `hello.sh` script
+file using a `COPY` instruction with a here-document.
 @z
 
 @x
@@ -6573,38 +6675,94 @@ Regular here-doc [variable expansion and tab stripping rules](https://pubs.openg
 # syntax=docker/dockerfile:1
 FROM alpine
 ARG FOO=bar
-COPY <<-EOT /app/foo
-	hello ${FOO}
+COPY <<-EOT /script.sh
+  echo "hello ${FOO}"
 EOT
+ENTRYPOINT ash /script.sh
 ```
 @y
 ```dockerfile
 # syntax=docker/dockerfile:1
 FROM alpine
 ARG FOO=bar
-COPY <<-EOT /app/foo
-	hello ${FOO}
+COPY <<-EOT /script.sh
+  echo "hello ${FOO}"
 EOT
+ENTRYPOINT ash /script.sh
 ```
+@z
+
+@x
+In this case, file script prints "hello bar", because the variable is expanded
+when the `COPY` instruction gets executed.
+@y
+In this case, file script prints "hello bar", because the variable is expanded
+when the `COPY` instruction gets executed.
+@z
+
+@x
+```console
+$ docker build -t heredoc .
+$ docker run heredoc
+hello bar
+```
+@y
+```console
+$ docker build -t heredoc .
+$ docker run heredoc
+hello bar
+```
+@z
+
+@x
+If instead you were to quote any part of the here-document word `EOT`, the
+variable would not be expanded at build-time.
+@y
+If instead you were to quote any part of the here-document word `EOT`, the
+variable would not be expanded at build-time.
 @z
 
 @x
 ```dockerfile
 # syntax=docker/dockerfile:1
 FROM alpine
-COPY <<-"EOT" /app/script.sh
-	echo hello ${FOO}
+ARG FOO=bar
+COPY <<-"EOT" /script.sh
+  echo "hello ${FOO}"
 EOT
-RUN FOO=abc ash /app/script.sh
+ENTRYPOINT ash /script.sh
 ```
 @y
 ```dockerfile
 # syntax=docker/dockerfile:1
 FROM alpine
-COPY <<-"EOT" /app/script.sh
-	echo hello ${FOO}
+ARG FOO=bar
+COPY <<-"EOT" /script.sh
+  echo "hello ${FOO}"
 EOT
-RUN FOO=abc ash /app/script.sh
+ENTRYPOINT ash /script.sh
+```
+@z
+
+@x
+Note that `ARG FOO=bar` is excessive here, and can be removed. The variable
+gets interpreted at runtime, when the script is invoked:
+@y
+Note that `ARG FOO=bar` is excessive here, and can be removed. The variable
+gets interpreted at runtime, when the script is invoked:
+@z
+
+@x
+```console
+$ docker build -t heredoc .
+$ docker run -e FOO=world heredoc
+hello world
+```
+@y
+```console
+$ docker build -t heredoc .
+$ docker run -e FOO=world heredoc
+hello world
 ```
 @z
 

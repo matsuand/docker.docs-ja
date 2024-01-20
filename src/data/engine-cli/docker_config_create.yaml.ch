@@ -22,7 +22,7 @@ long: |-
 @x
     > **Note**
     >
-    > This is a cluster management command, and must be executed on a swarm
+    > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
@@ -67,7 +67,7 @@ examples: |-
 @y
     > **Note**
     >
-    > This is a cluster management command, and must be executed on a swarm
+    > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.

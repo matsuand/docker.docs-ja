@@ -5,22 +5,7 @@
 command: docker unpause
 aliases: docker container unpause, docker unpause
 short: Unpause all processes within one or more containers
-long: |-
-    The `docker unpause` command un-suspends all processes in the specified containers.
-    On Linux, it does this using the freezer cgroup.
-@y
-command: docker unpause
-aliases: docker container unpause, docker unpause
-short: Unpause all processes within one or more containers
-long: |-
-    The `docker unpause` command un-suspends all processes in the specified containers.
-    On Linux, it does this using the freezer cgroup.
-@z
-
-@x
-    See the
-    [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
-    for further details.
+long: Unpause all processes within one or more containers
 usage: docker unpause CONTAINER [CONTAINER...]
 pname: docker
 plink: docker.yaml
@@ -35,20 +20,16 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-examples: |-
-    ```console
-    $ docker unpause my_container
-    my_container
-    ```
 deprecated: false
 experimental: false
 experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    See the
-    [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
-    for further details.
+command: docker unpause
+aliases: docker container unpause, docker unpause
+short: Unpause all processes within one or more containers
+long: Unpause all processes within one or more containers
 usage: docker unpause CONTAINER [CONTAINER...]
 pname: docker
 plink: docker.yaml
@@ -63,11 +44,6 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-examples: |-
-    ```console
-    $ docker unpause my_container
-    my_container
-    ```
 deprecated: false
 experimental: false
 experimentalcli: false

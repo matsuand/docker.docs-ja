@@ -50,7 +50,7 @@ long: |-
 @z
 
 @x
-    The events that can be received using this can be seen [here](/engine/reference/commandline/events/#object-types).
+    The events that can be received using this can be seen [here](/engine/reference/commandline/system_events/#object-types).
 usage: docker compose events [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -83,7 +83,7 @@ experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    The events that can be received using this can be seen [here](/engine/reference/commandline/events/#object-types).
+    The events that can be received using this can be seen [here](/engine/reference/commandline/system_events/#object-types).
 usage: docker compose events [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml

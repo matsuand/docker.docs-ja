@@ -199,10 +199,10 @@ $ docker run -d \
 
 @x
 {{< /tab >}}
-{{< tab name="`-v`" >}}
+{{< tab name="`--tmpfs`" >}}
 @y
 {{< /tab >}}
-{{< tab name="`-v`" >}}
+{{< tab name="`--tmpfs`" >}}
 @z
 
 @x

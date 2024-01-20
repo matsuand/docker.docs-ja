@@ -215,6 +215,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: health-start-interval
+      value_type: duration
+      description: Time between running the check during the start period (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.44"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: health-start-period
       value_type: duration
       description: |
@@ -978,6 +988,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: health-start-interval
+      value_type: duration
+      description: Time between running the check during the start period (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.44"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: health-start-period
       value_type: duration
       description: |
@@ -1628,11 +1648,11 @@ examples: |-
 @x
     This passes the login token from your local client to the swarm nodes where the
     service is deployed, using the encrypted WAL logs. With this information, the
-    nodes are able to log into the registry and pull the image.
+    nodes are able to log in to the registry and pull the image.
 @y
     This passes the login token from your local client to the swarm nodes where the
     service is deployed, using the encrypted WAL logs. With this information, the
-    nodes are able to log into the registry and pull the image.
+    nodes are able to log in to the registry and pull the image.
 @z
 
 @x
@@ -1668,12 +1688,12 @@ examples: |-
 @x
     The above command sets the *desired* number of tasks for the service. Even
     though the command returns immediately, actual scaling of the service may take
-    some time. The `REPLICAS` column shows both the *actual* and *desired* number
+    some time. The `REPLICAS` column shows both the actual and desired number
     of replica tasks for the service.
 @y
     The above command sets the *desired* number of tasks for the service. Even
     though the command returns immediately, actual scaling of the service may take
-    some time. The `REPLICAS` column shows both the *actual* and *desired* number
+    some time. The `REPLICAS` column shows both the actual and desired number
     of replica tasks for the service.
 @z
 
@@ -2056,13 +2076,13 @@ examples: |-
 @x
     Docker supports three different kinds of mounts, which allow containers to read
     from or write to files or directories, either on the host operating system, or
-    on memory filesystems. These types are _data volumes_ (often referred to simply
-    as volumes), _bind mounts_, _tmpfs_, and _named pipes_.
+    on memory filesystems. These types are data volumes (often referred to simply
+    as volumes), bind mounts, tmpfs, and named pipes.
 @y
     Docker supports three different kinds of mounts, which allow containers to read
     from or write to files or directories, either on the host operating system, or
-    on memory filesystems. These types are _data volumes_ (often referred to simply
-    as volumes), _bind mounts_, _tmpfs_, and _named pipes_.
+    on memory filesystems. These types are data volumes (often referred to simply
+    as volumes), bind mounts, tmpfs, and named pipes.
 @z
 
 @x
@@ -2205,7 +2225,7 @@ examples: |-
         <td>
           <p>The Engine mounts binds and volumes <tt>read-write</tt> unless <tt>readonly</tt> option
           is given when mounting the bind or volume. Note that setting <tt>readonly</tt> for a
-          bind-mount does not make its submounts <tt>readonly</tt> on the current Linux implementation. See also <tt>bind-nonrecursive</tt>.</p>
+          bind-mount may not make its submounts <tt>readonly</tt> depending on the kernel version. See also <tt>bind-recursive</tt>.</p>
           <ul>
             <li><tt>true</tt> or <tt>1</tt> or no value: Mounts the bind or volume read-only.</li>
             <li><tt>false</tt> or <tt>0</tt>: Mounts the bind or volume read-write.</li>
@@ -2226,7 +2246,7 @@ examples: |-
         <td>
           <p>The type of mount, can be either <tt>volume</tt>, <tt>bind</tt>, <tt>tmpfs</tt>, or <tt>npipe</tt>. Defaults to <tt>volume</tt> if no type is specified.</p>
           <ul>
-            <li><tt>volume</tt>: mounts a <a href="__SUBDIR__/engine/reference/commandline/volume_create/">managed volume</a>
+            <li><tt>volume</tt>: mounts a <a href="/engine/reference/commandline/volume_create/">managed volume</a>
             into the container.</li> <li><tt>bind</tt>:
             bind-mounts a directory or file from the host into the container.</li>
             <li><tt>tmpfs</tt>: mount a tmpfs in the container</li>
@@ -2271,7 +2291,7 @@ examples: |-
         <td>
           <p>The Engine mounts binds and volumes <tt>read-write</tt> unless <tt>readonly</tt> option
           is given when mounting the bind or volume. Note that setting <tt>readonly</tt> for a
-          bind-mount does not make its submounts <tt>readonly</tt> on the current Linux implementation. See also <tt>bind-nonrecursive</tt>.</p>
+          bind-mount may not make its submounts <tt>readonly</tt> depending on the kernel version. See also <tt>bind-recursive</tt>.</p>
           <ul>
             <li><tt>true</tt> or <tt>1</tt> or no value: Mounts the bind or volume read-only.</li>
             <li><tt>false</tt> or <tt>0</tt>: Mounts the bind or volume read-write.</li>
@@ -2282,9 +2302,9 @@ examples: |-
 @z
 
 @x
-    #### Options for Bind Mounts
+    #### Options for bind mounts
 @y
-    #### Options for Bind Mounts
+    #### Options for bind mounts
 @z
 
 @x
@@ -2318,17 +2338,40 @@ examples: |-
         </td>
       </tr>
       <tr>
-        <td><b>bind-nonrecursive</b></td>
+        <td><b>bind-recursive</b></td>
         <td>
           By default, submounts are recursively bind-mounted as well. However, this behavior can be confusing when a
-          bind mount is configured with <tt>readonly</tt> option, because submounts are not mounted as read-only.
-          Set <tt>bind-nonrecursive</tt> to disable recursive bind-mount.<br />
+          bind mount is configured with <tt>readonly</tt> option, because submounts may not be mounted as read-only,
+          depending on the kernel version.
+          Set <tt>bind-recursive</tt> to control the behavior of the recursive bind-mount.<br />
+          <br />
+          A value is one of:<br />
+          <br />
+          <ul>
+            <li><<tt>enabled</tt>: Enables recursive bind-mount.
+            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
+            Otherwise they are not made recursively read-only.</li>
+            <li><<tt>disabled</tt>: Disables recursive bind-mount.</li>
+            <li><<tt>writable</tt>: Enables recursive bind-mount.
+            Read-only mounts are not made recursively read-only.</li>
+            <li><<tt>readonly</tt>: Enables recursive bind-mount.
+            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
+            Otherwise the Engine raises an error.</li>
+          </ul>
+          When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
+        </td>
+      </tr>
+      <tr>
+        <td><b>bind-nonrecursive</b></td>
+        <td>
+          <tt>bind-nonrecursive</tt> is deprecated since Docker Engine v25.0.
+          Use <tt>bind-recursive</tt>instead.<br />
           <br />
           A value is optional:<br />
           <br />
           <ul>
-            <li><tt>true</tt> or <tt>1</tt>: Disables recursive bind-mount.</li>
-            <li><tt>false</tt> or <tt>0</tt>: Default if you do not provide a value. Enables recursive bind-mount.</li>
+            <li><tt>true</tt> or <tt>1</tt>:  Equivalent to <tt>bind-recursive=disabled</tt>.</li>
+            <li><tt>false</tt> or <tt>0</tt>: Equivalent to <tt>bind-recursive=enabled</tt>.</li>
           </ul>
         </td>
       </tr>
@@ -2358,17 +2401,40 @@ examples: |-
         </td>
       </tr>
       <tr>
-        <td><b>bind-nonrecursive</b></td>
+        <td><b>bind-recursive</b></td>
         <td>
           By default, submounts are recursively bind-mounted as well. However, this behavior can be confusing when a
-          bind mount is configured with <tt>readonly</tt> option, because submounts are not mounted as read-only.
-          Set <tt>bind-nonrecursive</tt> to disable recursive bind-mount.<br />
+          bind mount is configured with <tt>readonly</tt> option, because submounts may not be mounted as read-only,
+          depending on the kernel version.
+          Set <tt>bind-recursive</tt> to control the behavior of the recursive bind-mount.<br />
+          <br />
+          A value is one of:<br />
+          <br />
+          <ul>
+            <li><<tt>enabled</tt>: Enables recursive bind-mount.
+            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
+            Otherwise they are not made recursively read-only.</li>
+            <li><<tt>disabled</tt>: Disables recursive bind-mount.</li>
+            <li><<tt>writable</tt>: Enables recursive bind-mount.
+            Read-only mounts are not made recursively read-only.</li>
+            <li><<tt>readonly</tt>: Enables recursive bind-mount.
+            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
+            Otherwise the Engine raises an error.</li>
+          </ul>
+          When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
+        </td>
+      </tr>
+      <tr>
+        <td><b>bind-nonrecursive</b></td>
+        <td>
+          <tt>bind-nonrecursive</tt> is deprecated since Docker Engine v25.0.
+          Use <tt>bind-recursive</tt>instead.<br />
           <br />
           A value is optional:<br />
           <br />
           <ul>
-            <li><tt>true</tt> or <tt>1</tt>: Disables recursive bind-mount.</li>
-            <li><tt>false</tt> or <tt>0</tt>: Default if you do not provide a value. Enables recursive bind-mount.</li>
+            <li><tt>true</tt> or <tt>1</tt>:  Equivalent to <tt>bind-recursive=disabled</tt>.</li>
+            <li><tt>false</tt> or <tt>0</tt>: Equivalent to <tt>bind-recursive=enabled</tt>.</li>
           </ul>
         </td>
       </tr>
@@ -2545,7 +2611,7 @@ examples: |-
           creation. For example,
           <tt>volume-label=mylabel=hello-world,my-other-label=hello-mars</tt>. For more
           information about labels, refer to
-          <a href="__SUBDIR__/config/labels-custom-metadata/">apply custom metadata</a>.
+          <a href="/config/labels-custom-metadata/">apply custom metadata</a>.
         </td>
       </tr>
       <tr>

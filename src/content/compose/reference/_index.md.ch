@@ -428,6 +428,52 @@ constraint, you must use one of the other mechanisms.
 @z
 
 @x
+### Have multiple isolated environments on a single host
+@y
+### Have multiple isolated environments on a single host
+@z
+
+@x
+Compose uses a project name to isolate environments from each other. You can make use of this project name in several different contexts:
+@y
+Compose uses a project name to isolate environments from each other. You can make use of this project name in several different contexts:
+@z
+
+@x
+* On a dev host, to create multiple copies of a single environment, such as when you want to run a stable copy for each feature branch of a project
+* On a CI server, to keep builds from interfering with each other, you can set
+  the project name to a unique build number
+* On a shared host or dev host, to prevent different projects, which may use the
+  same service names, from interfering with each other
+@y
+* On a dev host, to create multiple copies of a single environment, such as when you want to run a stable copy for each feature branch of a project
+* On a CI server, to keep builds from interfering with each other, you can set
+  the project name to a unique build number
+* On a shared host or dev host, to prevent different projects, which may use the
+  same service names, from interfering with each other
+@z
+
+@x
+The default project name is the base name of the project directory. You can set
+a custom project name by using the
+[`-p` command line option](reference/index.md) or the
+[`COMPOSE_PROJECT_NAME` environment variable](../environment-variables/envvars.md#compose_project_name).
+@y
+The default project name is the base name of the project directory. You can set
+a custom project name by using the
+[`-p` command line option](reference/index.md) or the
+[`COMPOSE_PROJECT_NAME` environment variable](../environment-variables/envvars.md#compose_project_name).
+@z
+
+@x
+The default project directory is the base directory of the Compose file. A custom value
+for it can be defined with the `--project-directory` command line option.
+@y
+The default project directory is the base directory of the Compose file. A custom value
+for it can be defined with the `--project-directory` command line option.
+@z
+
+@x
 ## Use `--profile` to specify one or more active profiles
 @y
 ## Use `--profile` to specify one or more active profiles

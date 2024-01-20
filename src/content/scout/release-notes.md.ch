@@ -36,6 +36,254 @@ for what's coming next.
 @z
 
 @x
+## 2024-01-12
+@y
+## 2024-01-12
+@z
+
+@x
+New **Default non-root user** policy, which flags images that would run as the
+`root` superuser with full system administration privileges by default.
+Specifying a non-root default user for your images can help strengthen your
+runtime security.
+@y
+New **Default non-root user** policy, which flags images that would run as the
+`root` superuser with full system administration privileges by default.
+Specifying a non-root default user for your images can help strengthen your
+runtime security.
+@z
+
+@x
+For more information, see [Default non-root user](./policy/_index.md#default-non-root-user).
+@y
+For more information, see [Default non-root user](./policy/_index.md#default-non-root-user).
+@z
+
+@x
+## 2024-01-11
+@y
+## 2024-01-11
+@z
+
+@x
+[Beta](../release-lifecycle.md#beta) launch of a new GitHub app for integrating
+Docker Scout with your source code management, and a remediation feature for
+helping you improve policy compliance.
+@y
+[Beta](../release-lifecycle.md#beta) launch of a new GitHub app for integrating
+Docker Scout with your source code management, and a remediation feature for
+helping you improve policy compliance.
+@z
+
+@x
+Remediation is a new capability for Docker Scout to provide contextual,
+recommended actions based on policy evaluation results on how you can improve
+compliance.
+@y
+Remediation is a new capability for Docker Scout to provide contextual,
+recommended actions based on policy evaluation results on how you can improve
+compliance.
+@z
+
+@x
+The GitHub integration enhances the remediation feature. With the integration
+enabled, Docker Scout is able to connect analysis results to the source. This
+additional context about how your images are built is used to generate better,
+more precise recommendations.
+@y
+The GitHub integration enhances the remediation feature. With the integration
+enabled, Docker Scout is able to connect analysis results to the source. This
+additional context about how your images are built is used to generate better,
+more precise recommendations.
+@z
+
+@x
+For more information about the types of recommendations that Docker Scout can
+provide to help you improve policy compliance, see
+[Remediation](./policy/remediation.md).
+@y
+For more information about the types of recommendations that Docker Scout can
+provide to help you improve policy compliance, see
+[Remediation](./policy/remediation.md).
+@z
+
+@x
+For more information about how to authorize the Docker Scout GitHub app on your
+source repositories, see
+[Integrate Docker Scout with GitHub](./integrations/source-code-management/github.md).
+@y
+For more information about how to authorize the Docker Scout GitHub app on your
+source repositories, see
+[Integrate Docker Scout with GitHub](./integrations/source-code-management/github.md).
+@z
+
+@x
+## 2023-12-20
+@y
+## 2023-12-20
+@z
+
+@x
+**Azure Container Registry** integration graduated from
+[Beta](../release-lifecycle.md#beta) to
+[Early Access](../release-lifecycle.md#early-access-ea).
+@y
+**Azure Container Registry** integration graduated from
+[Beta](../release-lifecycle.md#beta) to
+[Early Access](../release-lifecycle.md#early-access-ea).
+@z
+
+@x
+For more information and setup instructions, see
+[Integrate Azure Container Registry](./integrations/registry/acr.md).
+@y
+For more information and setup instructions, see
+[Integrate Azure Container Registry](./integrations/registry/acr.md).
+@z
+
+@x
+## 2023-12-06
+@y
+## 2023-12-06
+@z
+
+@x
+New [SonarQube](https://www.sonarsource.com/products/sonarqube/) integration
+and related policy. SonarQube is an open-source platform for continuous
+inspection of code quality. This integration lets you add SonarQube's quality
+gates as a policy evaluation in Docker Scout. Enable the integration, push your
+images, and see the SonarQube quality gate conditions surfaced in the new
+**Quality gates passed** policy.
+@y
+New [SonarQube](https://www.sonarsource.com/products/sonarqube/) integration
+and related policy. SonarQube is an open-source platform for continuous
+inspection of code quality. This integration lets you add SonarQube's quality
+gates as a policy evaluation in Docker Scout. Enable the integration, push your
+images, and see the SonarQube quality gate conditions surfaced in the new
+**Quality gates passed** policy.
+@z
+
+@x
+For more information, see:
+@y
+For more information, see:
+@z
+
+@x
+- [Integration and setup instructions](./integrations/code-quality/sonarqube.md)
+- [Quality gates passed policy](./policy/_index.md#quality-gates-passed)
+@y
+- [Integration and setup instructions](./integrations/code-quality/sonarqube.md)
+- [Quality gates passed policy](./policy/_index.md#quality-gates-passed)
+@z
+
+@x
+## 2023-12-01
+@y
+## 2023-12-01
+@z
+
+@x
+[Beta](../release-lifecycle.md#beta) release of a new **Azure Container
+Registry** (ACR) integration, which lets Docker Scout pull and analyze images
+in ACR repositories automatically.
+@y
+[Beta](../release-lifecycle.md#beta) release of a new **Azure Container
+Registry** (ACR) integration, which lets Docker Scout pull and analyze images
+in ACR repositories automatically.
+@z
+
+@x
+To learn more about the integration and how to get started, see
+[Integrate Azure Container Registry](./integrations/registry/acr.md).
+@y
+To learn more about the integration and how to get started, see
+[Integrate Azure Container Registry](./integrations/registry/acr.md).
+@z
+
+@x
+## 2023-11-21
+@y
+## 2023-11-21
+@z
+
+@x
+New **configurable policies** feature, which enables you to tweak the
+out-of-the-box policies according to your preferences, or disable them entirely
+if they don't quite match your needs. Some examples of how you can adapt
+policies for your organization include:
+@y
+New **configurable policies** feature, which enables you to tweak the
+out-of-the-box policies according to your preferences, or disable them entirely
+if they don't quite match your needs. Some examples of how you can adapt
+policies for your organization include:
+@z
+
+@x
+- Change the severity-thresholds that vulnerability-related policies use
+- Customize the list of "high-profile vulnerabilities"
+- Add or remove software licenses to flag as "copyleft"
+@y
+- Change the severity-thresholds that vulnerability-related policies use
+- Customize the list of "high-profile vulnerabilities"
+- Add or remove software licenses to flag as "copyleft"
+@z
+
+@x
+For more information, see [Configurable policies](./policy/configure.md).
+@y
+For more information, see [Configurable policies](./policy/configure.md).
+@z
+
+@x
+## 2023-11-10
+@y
+## 2023-11-10
+@z
+
+@x
+New **Supply chain attestations** policy for helping you track whether your
+images are built with SBOM and provenance attestations. Adding attestations to
+images is a good first step in improving your supply chain conduct, and is
+often a prerequisite for doing more.
+@y
+New **Supply chain attestations** policy for helping you track whether your
+images are built with SBOM and provenance attestations. Adding attestations to
+images is a good first step in improving your supply chain conduct, and is
+often a prerequisite for doing more.
+@z
+
+@x
+See [Supply chain attestations policy](./policy/_index.md#supply-chain-attestations)
+for details.
+@y
+See [Supply chain attestations policy](./policy/_index.md#supply-chain-attestations)
+for details.
+@z
+
+@x
+## 2023-11-01
+@y
+## 2023-11-01
+@z
+
+@x
+New **High-profile vulnerabilities** policy, which ensures your artifacts are
+free from a curated list of vulnerabilities widely recognized to be risky.
+@y
+New **High-profile vulnerabilities** policy, which ensures your artifacts are
+free from a curated list of vulnerabilities widely recognized to be risky.
+@z
+
+@x
+For more information, see
+[High-profile vulnerabilities policy](./policy/_index.md#high-profile-vulnerabilities).
+@y
+For more information, see
+[High-profile vulnerabilities policy](./policy/_index.md#high-profile-vulnerabilities).
+@z
+
+@x
 ## 2023-10-04
 @y
 ## 2023-10-04
@@ -45,12 +293,6 @@ for what's coming next.
 This marks the General Availability (GA) release of Docker Scout.
 @y
 This marks the General Availability (GA) release of Docker Scout.
-@z
-
-@x
-### New
-@y
-### New
 @z
 
 @x
@@ -72,9 +314,9 @@ The following new features are included in this release:
 @z
 
 @x
-#### Policy evaluation
+### Policy evaluation
 @y
-#### Policy evaluation
+### Policy evaluation
 @z
 
 @x
@@ -128,9 +370,9 @@ refer to the [Policy Evaluation documentation](./policy/_index.md).
 @z
 
 @x
-#### Amazon ECR integration
+### Amazon ECR integration
 @y
-#### Amazon ECR integration
+### Amazon ECR integration
 @z
 
 @x
@@ -166,9 +408,9 @@ documentation](./integrations/registry/ecr.md).
 @z
 
 @x
-#### Sysdig integration
+### Sysdig integration
 @y
-#### Sysdig integration
+### Sysdig integration
 @z
 
 @x
@@ -200,9 +442,9 @@ documentation](./integrations/environment/sysdig.md).
 @z
 
 @x
-#### JFrog Artifactory integration
+### JFrog Artifactory integration
 @y
-#### JFrog Artifactory integration
+### JFrog Artifactory integration
 @z
 
 @x

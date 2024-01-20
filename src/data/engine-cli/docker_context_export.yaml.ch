@@ -28,17 +28,6 @@ long: |-
 usage: docker context export [OPTIONS] CONTEXT [FILE|-]
 pname: docker context
 plink: docker_context.yaml
-options:
-    - option: kubeconfig
-      value_type: bool
-      default_value: "false"
-      description: Export as a kubeconfig file
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: true
-      swarm: false
 inherited_options:
     - option: help
       value_type: bool
@@ -62,17 +51,6 @@ swarm: false
 usage: docker context export [OPTIONS] CONTEXT [FILE|-]
 pname: docker context
 plink: docker_context.yaml
-options:
-    - option: kubeconfig
-      value_type: bool
-      default_value: "false"
-      description: Export as a kubeconfig file
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: true
-      swarm: false
 inherited_options:
     - option: help
       value_type: bool

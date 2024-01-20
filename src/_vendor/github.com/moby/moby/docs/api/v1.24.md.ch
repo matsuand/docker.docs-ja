@@ -6,7 +6,7 @@
 title: "Engine API v1.24"
 description: "API Documentation for Docker"
 keywords: "API, Docker, rcli, REST, documentation"
-redirect_from:
+aliases:
 - /engine/reference/api/docker_remote_api_v1.24/
 - /reference/api/docker_remote_api_v1.24/
 ---
@@ -15,7 +15,7 @@ redirect_from:
 title: "Engine API v1.24"
 description: "API Documentation for Docker"
 keywords: "API, Docker, rcli, REST, documentation"
-redirect_from:
+aliases:
 - /engine/reference/api/docker_remote_api_v1.24/
 - /reference/api/docker_remote_api_v1.24/
 ---
@@ -1250,7 +1250,7 @@ Return low-level information on the container `id`
 			"StopSignal": "SIGTERM"
 		},
 		"Created": "2015-01-06T15:47:31.485331387Z",
-		"Driver": "devicemapper",
+		"Driver": "overlay2",
 		"ExecIDs": null,
 		"HostConfig": {
 			"Binds": null,
@@ -1418,7 +1418,7 @@ Return low-level information on the container `id`
 			"StopSignal": "SIGTERM"
 		},
 		"Created": "2015-01-06T15:47:31.485331387Z",
-		"Driver": "devicemapper",
+		"Driver": "overlay2",
 		"ExecIDs": null,
 		"HostConfig": {
 			"Binds": null,

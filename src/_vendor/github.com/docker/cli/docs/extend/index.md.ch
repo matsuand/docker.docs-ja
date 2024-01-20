@@ -3,40 +3,16 @@
 
 @x
 ---
+title: Docker Engine managed plugin system
 description: Develop and use a plugin with the managed plugin system
 keywords: "API, Usage, plugins, documentation, developer"
 ---
 @y
 ---
+title: Docker Engine managed plugin system
 description: Develop and use a plugin with the managed plugin system
 keywords: "API, Usage, plugins, documentation, developer"
 ---
-@z
-
-@x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Docker Engine managed plugin system
-@y
-# Docker Engine managed plugin system
 @z
 
 @x
@@ -50,10 +26,10 @@ keywords: "API, Usage, plugins, documentation, developer"
 @z
 
 @x
-Docker Engine's plugin system allows you to install, start, stop, and remove
+Docker Engine's plugin system lets you install, start, stop, and remove
 plugins using Docker Engine.
 @y
-Docker Engine's plugin system allows you to install, start, stop, and remove
+Docker Engine's plugin system lets you install, start, stop, and remove
 plugins using Docker Engine.
 @z
 
@@ -127,198 +103,198 @@ enabled, and use it to create a volume.
 > **Note**
 >
 > This example is intended for instructional purposes only. Once the volume is
-> created, your SSH password to the remote host will be exposed as plaintext
-> when inspecting the volume. You should delete the volume as soon as you are
-> done with the example.
+> created, your SSH password to the remote host is exposed as plaintext when
+> inspecting the volume. Delete the volume as soon as you are done with the
+> example.
 @y
 > **Note**
 >
 > This example is intended for instructional purposes only. Once the volume is
-> created, your SSH password to the remote host will be exposed as plaintext
-> when inspecting the volume. You should delete the volume as soon as you are
-> done with the example.
+> created, your SSH password to the remote host is exposed as plaintext when
+> inspecting the volume. Delete the volume as soon as you are done with the
+> example.
 @z
 
 @x
-1.  Install the `sshfs` plugin.
+1. Install the `sshfs` plugin.
 @y
-1.  Install the `sshfs` plugin.
+1. Install the `sshfs` plugin.
 @z
 
 @x
-    ```console
-    $ docker plugin install vieux/sshfs
+   ```console
+   $ docker plugin install vieux/sshfs
 @y
-    ```console
-    $ docker plugin install vieux/sshfs
+   ```console
+   $ docker plugin install vieux/sshfs
 @z
 
 @x
-    Plugin "vieux/sshfs" is requesting the following privileges:
-    - network: [host]
-    - capabilities: [CAP_SYS_ADMIN]
-    Do you grant the above permissions? [y/N] y
+   Plugin "vieux/sshfs" is requesting the following privileges:
+   - network: [host]
+   - capabilities: [CAP_SYS_ADMIN]
+   Do you grant the above permissions? [y/N] y
 @y
-    Plugin "vieux/sshfs" is requesting the following privileges:
-    - network: [host]
-    - capabilities: [CAP_SYS_ADMIN]
-    Do you grant the above permissions? [y/N] y
+   Plugin "vieux/sshfs" is requesting the following privileges:
+   - network: [host]
+   - capabilities: [CAP_SYS_ADMIN]
+   Do you grant the above permissions? [y/N] y
 @z
 
 @x
-    vieux/sshfs
-    ```
+   vieux/sshfs
+   ```
 @y
-    vieux/sshfs
-    ```
+   vieux/sshfs
+   ```
 @z
 
 @x
-    The plugin requests 2 privileges:
+   The plugin requests 2 privileges:
 @y
-    The plugin requests 2 privileges:
+   The plugin requests 2 privileges:
 @z
 
 @x
-    - It needs access to the `host` network.
-    - It needs the `CAP_SYS_ADMIN` capability, which allows the plugin to run
-      the `mount` command.
+   - It needs access to the `host` network.
+   - It needs the `CAP_SYS_ADMIN` capability, which allows the plugin to run
+     the `mount` command.
 @y
-    - It needs access to the `host` network.
-    - It needs the `CAP_SYS_ADMIN` capability, which allows the plugin to run
-      the `mount` command.
+   - It needs access to the `host` network.
+   - It needs the `CAP_SYS_ADMIN` capability, which allows the plugin to run
+     the `mount` command.
 @z
 
 @x
-2.  Check that the plugin is enabled in the output of `docker plugin ls`.
+2. Check that the plugin is enabled in the output of `docker plugin ls`.
 @y
-2.  Check that the plugin is enabled in the output of `docker plugin ls`.
+2. Check that the plugin is enabled in the output of `docker plugin ls`.
 @z
 
 @x
-    ```console
-    $ docker plugin ls
+   ```console
+   $ docker plugin ls
 @y
-    ```console
-    $ docker plugin ls
+   ```console
+   $ docker plugin ls
 @z
 
 @x
-    ID                    NAME                  TAG                 DESCRIPTION                   ENABLED
-    69553ca1d789          vieux/sshfs           latest              the `sshfs` plugin            true
-    ```
+   ID                    NAME                  TAG                 DESCRIPTION                   ENABLED
+   69553ca1d789          vieux/sshfs           latest              the `sshfs` plugin            true
+   ```
 @y
-    ID                    NAME                  TAG                 DESCRIPTION                   ENABLED
-    69553ca1d789          vieux/sshfs           latest              the `sshfs` plugin            true
-    ```
+   ID                    NAME                  TAG                 DESCRIPTION                   ENABLED
+   69553ca1d789          vieux/sshfs           latest              the `sshfs` plugin            true
+   ```
 @z
 
 @x
-3.  Create a volume using the plugin.
-    This example mounts the `/remote` directory on host `1.2.3.4` into a
-    volume named `sshvolume`.
+3. Create a volume using the plugin.
+   This example mounts the `/remote` directory on host `1.2.3.4` into a
+   volume named `sshvolume`.
 @y
-3.  Create a volume using the plugin.
-    This example mounts the `/remote` directory on host `1.2.3.4` into a
-    volume named `sshvolume`.
+3. Create a volume using the plugin.
+   This example mounts the `/remote` directory on host `1.2.3.4` into a
+   volume named `sshvolume`.
 @z
 
 @x
-    This volume can now be mounted into containers.
+   This volume can now be mounted into containers.
 @y
-    This volume can now be mounted into containers.
+   This volume can now be mounted into containers.
 @z
 
 @x
-    ```console
-    $ docker volume create \
-      -d vieux/sshfs \
-      --name sshvolume \
-      -o sshcmd=user@1.2.3.4:/remote \
-      -o password=$(cat file_containing_password_for_remote_host)
+   ```console
+   $ docker volume create \
+     -d vieux/sshfs \
+     --name sshvolume \
+     -o sshcmd=user@1.2.3.4:/remote \
+     -o password=$(cat file_containing_password_for_remote_host)
 @y
-    ```console
-    $ docker volume create \
-      -d vieux/sshfs \
-      --name sshvolume \
-      -o sshcmd=user@1.2.3.4:/remote \
-      -o password=$(cat file_containing_password_for_remote_host)
+   ```console
+   $ docker volume create \
+     -d vieux/sshfs \
+     --name sshvolume \
+     -o sshcmd=user@1.2.3.4:/remote \
+     -o password=$(cat file_containing_password_for_remote_host)
 @z
 
 @x
-    sshvolume
-    ```
+   sshvolume
+   ```
 @y
-    sshvolume
-    ```
+   sshvolume
+   ```
 @z
 
 @x
-4.  Verify that the volume was created successfully.
+4. Verify that the volume was created successfully.
 @y
-4.  Verify that the volume was created successfully.
+4. Verify that the volume was created successfully.
 @z
 
 @x
-    ```console
-    $ docker volume ls
+   ```console
+   $ docker volume ls
 @y
-    ```console
-    $ docker volume ls
+   ```console
+   $ docker volume ls
 @z
 
 @x
-    DRIVER              NAME
-    vieux/sshfs         sshvolume
-    ```
+   DRIVER              NAME
+   vieux/sshfs         sshvolume
+   ```
 @y
-    DRIVER              NAME
-    vieux/sshfs         sshvolume
-    ```
+   DRIVER              NAME
+   vieux/sshfs         sshvolume
+   ```
 @z
 
 @x
-5.  Start a container that uses the volume `sshvolume`.
+5. Start a container that uses the volume `sshvolume`.
 @y
-5.  Start a container that uses the volume `sshvolume`.
+5. Start a container that uses the volume `sshvolume`.
 @z
 
 @x
-    ```console
-    $ docker run --rm -v sshvolume:/data busybox ls /data
+   ```console
+   $ docker run --rm -v sshvolume:/data busybox ls /data
 @y
-    ```console
-    $ docker run --rm -v sshvolume:/data busybox ls /data
+   ```console
+   $ docker run --rm -v sshvolume:/data busybox ls /data
 @z
 
 @x
-    <content of /remote on machine 1.2.3.4>
-    ```
+   <content of /remote on machine 1.2.3.4>
+   ```
 @y
-    <content of /remote on machine 1.2.3.4>
-    ```
+   <content of /remote on machine 1.2.3.4>
+   ```
 @z
 
 @x
-6.  Remove the volume `sshvolume`
+6. Remove the volume `sshvolume`
 @y
-6.  Remove the volume `sshvolume`
+6. Remove the volume `sshvolume`
 @z
 
 @x
-    ```console
-    $ docker volume rm sshvolume
+   ```console
+   $ docker volume rm sshvolume
 @y
-    ```console
-    $ docker volume rm sshvolume
+   ```console
+   $ docker volume rm sshvolume
 @z
 
 @x
-    sshvolume
-    ```
+   sshvolume
+   ```
 @y
-    sshvolume
-    ```
+   sshvolume
+   ```
 @z
 
 @x
@@ -354,11 +330,15 @@ example, it was created from a Dockerfile:
 @z
 
 @x
-> **Note:** The `/run/docker/plugins` directory is mandatory inside of the
-> plugin's filesystem for docker to communicate with the plugin.
+> **Note**
+>
+> The `/run/docker/plugins` directory is mandatory inside of the
+> plugin's filesystem for Docker to communicate with the plugin.
 @y
-> **Note:** The `/run/docker/plugins` directory is mandatory inside of the
-> plugin's filesystem for docker to communicate with the plugin.
+> **Note**
+>
+> The `/run/docker/plugins` directory is mandatory inside of the
+> plugin's filesystem for Docker to communicate with the plugin.
 @z
 
 @x
@@ -560,19 +540,17 @@ INFO[0421] Unmount Called... Unmounted samplevol            plugin=f52a3df433b9a
 @z
 
 @x
-#### Using docker-runc to obtain logfiles and shell into the plugin.
+#### Using runc to obtain logfiles and shell into the plugin.
 @y
-#### Using docker-runc to obtain logfiles and shell into the plugin.
+#### Using runc to obtain logfiles and shell into the plugin.
 @z
 
 @x
-`docker-runc`, the default docker container runtime can be used for debugging
-plugins. This is specifically useful to collect plugin logs if they are
-redirected to a file.
+Use `runc`, the default docker container runtime, for debugging plugins by
+collecting plugin logs redirected to a file.
 @y
-`docker-runc`, the default docker container runtime can be used for debugging
-plugins. This is specifically useful to collect plugin logs if they are
-redirected to a file.
+Use `runc`, the default docker container runtime, for debugging plugins by
+collecting plugin logs redirected to a file.
 @z
 
 @x

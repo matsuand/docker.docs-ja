@@ -3,40 +3,16 @@
 
 @x
 ---
+title: Docker Plugin API
 description: "How to write Docker plugins extensions "
 keywords: "API, Usage, plugins, documentation, developer"
 ---
 @y
 ---
+title: Docker Plugin API
 description: "How to write Docker plugins extensions "
 keywords: "API, Usage, plugins, documentation, developer"
 ---
-@z
-
-@x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Docker Plugin API
-@y
-# Docker Plugin API
 @z
 
 @x
@@ -72,12 +48,12 @@ If you just want to learn about or use Docker plugins, look
 @z
 
 @x
-A plugin is a process running on the same or a different host as the docker daemon,
-which registers itself by placing a file on the same docker host in one of the plugin
+A plugin is a process running on the same or a different host as the Docker daemon,
+which registers itself by placing a file on the daemon host in one of the plugin
 directories described in [Plugin discovery](#plugin-discovery).
 @y
-A plugin is a process running on the same or a different host as the docker daemon,
-which registers itself by placing a file on the same docker host in one of the plugin
+A plugin is a process running on the same or a different host as the Docker daemon,
+which registers itself by placing a file on the daemon host in one of the plugin
 directories described in [Plugin discovery](#plugin-discovery).
 @z
 
@@ -118,28 +94,28 @@ There are three types of files which can be put in the plugin directory.
 @z
 
 @x
-* `.sock` files are UNIX domain sockets.
+* `.sock` files are Unix domain sockets.
 * `.spec` files are text files containing a URL, such as `unix:///other.sock` or `tcp://localhost:8080`.
 * `.json` files are text files containing a full json specification for the plugin.
 @y
-* `.sock` files are UNIX domain sockets.
+* `.sock` files are Unix domain sockets.
 * `.spec` files are text files containing a URL, such as `unix:///other.sock` or `tcp://localhost:8080`.
 * `.json` files are text files containing a full json specification for the plugin.
 @z
 
 @x
-Plugins with UNIX domain socket files must run on the same docker host, whereas
-plugins with spec or json files can run on a different host if a remote URL is specified.
+Plugins with Unix domain socket files must run on the same host as the Docker daemon.
+Plugins with `.spec` or `.json` files can run on a different host if you specify a remote URL.
 @y
-Plugins with UNIX domain socket files must run on the same docker host, whereas
-plugins with spec or json files can run on a different host if a remote URL is specified.
+Plugins with Unix domain socket files must run on the same host as the Docker daemon.
+Plugins with `.spec` or `.json` files can run on a different host if you specify a remote URL.
 @z
 
 @x
-UNIX domain socket files must be located under `/run/docker/plugins`, whereas
+Unix domain socket files must be located under `/run/docker/plugins`, whereas
 spec files can be located either under `/etc/docker/plugins` or `/usr/lib/docker/plugins`.
 @y
-UNIX domain socket files must be located under `/run/docker/plugins`, whereas
+Unix domain socket files must be located under `/run/docker/plugins`, whereas
 spec files can be located either under `/etc/docker/plugins` or `/usr/lib/docker/plugins`.
 @z
 
@@ -150,10 +126,10 @@ The name of the file (excluding the extension) determines the plugin name.
 @z
 
 @x
-For example, the `flocker` plugin might create a UNIX socket at
+For example, the `flocker` plugin might create a Unix socket at
 `/run/docker/plugins/flocker.sock`.
 @y
-For example, the `flocker` plugin might create a UNIX socket at
+For example, the `flocker` plugin might create a Unix socket at
 `/run/docker/plugins/flocker.sock`.
 @z
 
@@ -168,11 +144,11 @@ mount `/run/docker/plugins/flocker` inside the `flocker` container.
 @z
 
 @x
-Docker always searches for unix sockets in `/run/docker/plugins` first. It checks for spec or json files under
+Docker always searches for Unix sockets in `/run/docker/plugins` first. It checks for spec or json files under
 `/etc/docker/plugins` and `/usr/lib/docker/plugins` if the socket doesn't exist. The directory scan stops as
 soon as it finds the first plugin definition with the given name.
 @y
-Docker always searches for unix sockets in `/run/docker/plugins` first. It checks for spec or json files under
+Docker always searches for Unix sockets in `/run/docker/plugins` first. It checks for spec or json files under
 `/etc/docker/plugins` and `/usr/lib/docker/plugins` if the socket doesn't exist. The directory scan stops as
 soon as it finds the first plugin definition with the given name.
 @z
@@ -230,13 +206,13 @@ The `TLSConfig` field is optional and TLS will only be verified if this configur
 @z
 
 @x
-Plugins should be started before Docker, and stopped after Docker.  For
+Plugins should be started before Docker, and stopped after Docker. For
 example, when packaging a plugin for a platform which supports `systemd`, you
 might use [`systemd` dependencies](
 https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Before=) to
 manage startup and shutdown order.
 @y
-Plugins should be started before Docker, and stopped after Docker.  For
+Plugins should be started before Docker, and stopped after Docker. For
 example, when packaging a plugin for a platform which supports `systemd`, you
 might use [`systemd` dependencies](
 https://www.freedesktop.org/software/systemd/man/systemd.unit.html#Before=) to
@@ -270,10 +246,10 @@ directory and activates it with a handshake. See Handshake API below.
 @z
 
 @x
-Plugins are *not* activated automatically at Docker daemon startup. Rather,
+Plugins are not activated automatically at Docker daemon startup. Rather,
 they are activated only lazily, or on-demand, when they are needed.
 @y
-Plugins are *not* activated automatically at Docker daemon startup. Rather,
+Plugins are not activated automatically at Docker daemon startup. Rather,
 they are activated only lazily, or on-demand, when they are needed.
 @z
 
@@ -390,12 +366,12 @@ The Plugin API is RPC-style JSON over HTTP, much like webhooks.
 @z
 
 @x
-Requests flow *from* the Docker daemon *to* the plugin.  So the plugin needs to
-implement an HTTP server and bind this to the UNIX socket mentioned in the
+Requests flow from the Docker daemon to the plugin. The plugin needs to
+implement an HTTP server and bind this to the Unix socket mentioned in the
 "plugin discovery" section.
 @y
-Requests flow *from* the Docker daemon *to* the plugin.  So the plugin needs to
-implement an HTTP server and bind this to the UNIX socket mentioned in the
+Requests flow from the Docker daemon to the plugin. The plugin needs to
+implement an HTTP server and bind this to the Unix socket mentioned in the
 "plugin discovery" section.
 @z
 
@@ -432,15 +408,15 @@ Plugins are activated via the following "handshake" API call.
 @z
 
 @x
-**Request:** empty body
+Request: empty body
 @y
-**Request:** empty body
+Request: empty body
 @z
 
 @x
-**Response:**
+Response:
 @y
-**Response:**
+Response:
 @z
 
 @x

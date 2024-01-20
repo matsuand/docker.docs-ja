@@ -14,7 +14,6 @@ bases = \
 	json-file.md    \
 	local.md        \
 	log_tags.md     \
-	logentries.md   \
 	plugins.md      \
 	splunk.md       \
 	syslog.md

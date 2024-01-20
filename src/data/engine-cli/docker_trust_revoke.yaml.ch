@@ -68,9 +68,9 @@ examples: |-
 @z
 
 @x
-    Here's an example of a repo with two signed tags:
+    Here's an example of a repository with two signed tags:
 @y
-    Here's an example of a repo with two signed tags:
+    Here's an example of a repository with two signed tags:
 @z
 
 @x

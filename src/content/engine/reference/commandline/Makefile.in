@@ -239,10 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	README.md \
-	attach.md \
-	build.md \
 	builder.md \
-	builder_build.md \
 	builder_prune.md \
 	buildx.md \
 	buildx_bake.md \
@@ -265,7 +262,6 @@ bases = \
 	checkpoint_create.md \
 	checkpoint_ls.md \
 	checkpoint_rm.md \
-	commit.md \
 	compose.md \
 	compose_alpha.md \
 	compose_alpha_dry-run.md \
@@ -340,14 +336,7 @@ bases = \
 	context_show.md \
 	context_update.md \
 	context_use.md \
-	cp.md \
-	create.md \
-	diff.md \
 	docker.md \
-	events.md \
-	exec.md \
-	export.md \
-	history.md \
 	image.md \
 	image_build.md \
 	image_history.md \
@@ -361,16 +350,10 @@ bases = \
 	image_rm.md \
 	image_save.md \
 	image_tag.md \
-	images.md \
-	import.md \
-	info.md \
 	init.md \
 	inspect.md \
-	kill.md \
-	load.md \
 	login.md \
 	logout.md \
-	logs.md \
 	manifest.md \
 	manifest_annotate.md \
 	manifest_create.md \
@@ -393,7 +376,6 @@ bases = \
 	node_ps.md \
 	node_rm.md \
 	node_update.md \
-	pause.md \
 	plugin.md \
 	plugin_create.md \
 	plugin_disable.md \
@@ -405,16 +387,6 @@ bases = \
 	plugin_rm.md \
 	plugin_set.md \
 	plugin_upgrade.md \
-	port.md \
-	ps.md \
-	pull.md \
-	push.md \
-	rename.md \
-	restart.md \
-	rm.md \
-	rmi.md \
-	run.md \
-	save.md \
 	scout.md \
 	scout_cache.md \
 	scout_cache_df.md \
@@ -462,9 +434,6 @@ bases = \
 	stack_ps.md \
 	stack_rm.md \
 	stack_services.md \
-	start.md \
-	stats.md \
-	stop.md \
 	swarm.md \
 	swarm_ca.md \
 	swarm_init.md \
@@ -479,8 +448,6 @@ bases = \
 	system_events.md \
 	system_info.md \
 	system_prune.md \
-	tag.md \
-	top.md \
 	trust.md \
 	trust_inspect.md \
 	trust_key.md \
@@ -491,8 +458,6 @@ bases = \
 	trust_signer.md \
 	trust_signer_add.md \
 	trust_signer_remove.md \
-	unpause.md \
-	update.md \
 	version.md \
 	volume.md \
 	volume_create.md \
@@ -500,8 +465,7 @@ bases = \
 	volume_ls.md \
 	volume_prune.md \
 	volume_rm.md \
-	volume_update.md \
-	wait.md
+	volume_update.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

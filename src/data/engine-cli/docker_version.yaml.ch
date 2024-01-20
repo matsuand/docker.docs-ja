@@ -35,15 +35,15 @@ long: |-
 
 @x
     The default output renders all version information divided into two sections;
-    the "Client" section contains information about the Docker CLI and client
-    components, and the "Server" section contains information about the Docker
-    Engine and components used by the Engine, such as the "Containerd" and "Runc"
+    the `Client` section contains information about the Docker CLI and client
+    components, and the `Server` section contains information about the Docker
+    Engine and components used by the Docker Engine, such as the containerd and runc
     OCI Runtimes.
 @y
     The default output renders all version information divided into two sections;
-    the "Client" section contains information about the Docker CLI and client
-    components, and the "Server" section contains information about the Docker
-    Engine and components used by the Engine, such as the "Containerd" and "Runc"
+    the `Client` section contains information about the Docker CLI and client
+    components, and the `Server` section contains information about the Docker
+    Engine and components used by the Docker Engine, such as the containerd and runc
     OCI Runtimes.
 @z
 
@@ -136,20 +136,20 @@ long: |-
 @x
     Docker uses a client/server architecture, which allows you to use the Docker CLI
     on your local machine to control a Docker Engine running on a remote machine,
-    which can be (for example) a machine running in the Cloud or inside a Virtual Machine.
+    which can be (for example) a machine running in the cloud or inside a virtual machine.
 @y
     Docker uses a client/server architecture, which allows you to use the Docker CLI
     on your local machine to control a Docker Engine running on a remote machine,
-    which can be (for example) a machine running in the Cloud or inside a Virtual Machine.
+    which can be (for example) a machine running in the cloud or inside a virtual machine.
 @z
 
 @x
     The following example switches the Docker CLI to use a [context](context.md)
-    named "remote-test-server", which runs an older version of the Docker Engine
+    named `remote-test-server`, which runs an older version of the Docker Engine
     on a Linux server:
 @y
     The following example switches the Docker CLI to use a [context](context.md)
-    named "remote-test-server", which runs an older version of the Docker Engine
+    named `remote-test-server`, which runs an older version of the Docker Engine
     on a Linux server:
 @z
 
@@ -248,11 +248,11 @@ long: |-
 @z
 
 @x
-    For example, if the CLI is connecting with a Docker 19.03 engine, it downgrades
+    For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
     to API version 1.40 (refer to the [API version matrix](/engine/api/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @y
-    For example, if the CLI is connecting with a Docker 19.03 engine, it downgrades
+    For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
     to API version 1.40 (refer to the [API version matrix](/engine/api/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @z

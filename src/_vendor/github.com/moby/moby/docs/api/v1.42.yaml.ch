@@ -6234,8 +6234,6 @@ definitions:
           - Type: "Log"
             Name: "json-file"
           - Type: "Log"
-            Name: "logentries"
-          - Type: "Log"
             Name: "splunk"
           - Type: "Log"
             Name: "syslog"
@@ -6294,8 +6292,6 @@ definitions:
           - Type: "Log"
             Name: "json-file"
           - Type: "Log"
-            Name: "logentries"
-          - Type: "Log"
             Name: "splunk"
           - Type: "Log"
             Name: "syslog"
@@ -10545,7 +10541,7 @@ definitions:
 
 @x
           Currently returned values are "linux" and "windows". A full list of
-          possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "linux"
       Architecture:
@@ -10554,7 +10550,7 @@ definitions:
           (`GOARCH`).
 @y
           Currently returned values are "linux" and "windows". A full list of
-          possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "linux"
       Architecture:
@@ -10564,14 +10560,14 @@ definitions:
 @z
 
 @x
-          A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "x86_64"
       NCPU:
         description: |
           The number of logical CPUs usable by the daemon.
 @y
-          A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "x86_64"
       NCPU:
@@ -11090,7 +11086,7 @@ definitions:
         type: "array"
         items:
           type: "string"
-        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "logentries", "splunk", "syslog"]
+        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "splunk", "syslog"]
 @y
       > **Note**: Only unmanaged (V1) plugins are included in this list.
       > V1 plugins are "lazily" loaded, and are not returned in this list
@@ -11120,7 +11116,7 @@ definitions:
         type: "array"
         items:
           type: "string"
-        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "logentries", "splunk", "syslog"]
+        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "splunk", "syslog"]
 @z
 
 @x
@@ -20529,6 +20525,10 @@ paths:
             example:
               Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
               Warning: ""
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         403:
           description: "operation not supported for pre-defined networks"
           schema:
@@ -20650,6 +20650,10 @@ paths:
             example:
               Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
               Warning: ""
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         403:
           description: "operation not supported for pre-defined networks"
           schema:

@@ -8,7 +8,6 @@ bases = \
 	admin-company-overview.md         \
 	admin-early-access.md             \
 	admin-org-overview.md             \
-	api-version-matrix.md             \
 	beta.md                           \
 	buildx-v0.10-disclaimer.md        \
 	compose-eol.md                    \

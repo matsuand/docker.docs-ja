@@ -6,13 +6,13 @@ command: docker config rm
 aliases: docker config rm, docker config remove
 short: Remove one or more configs
 long: |-
-    Removes the specified configs from the swarm.
+    Removes the specified configs from the Swarm.
 @y
 command: docker config rm
 aliases: docker config rm, docker config remove
 short: Remove one or more configs
 long: |-
-    Removes the specified configs from the swarm.
+    Removes the specified configs from the Swarm.
 @z
 
 @x
@@ -24,7 +24,7 @@ long: |-
 @x
     > **Note**
     >
-    > This is a cluster management command, and must be executed on a swarm
+    > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
@@ -47,7 +47,7 @@ examples: |-
 @y
     > **Note**
     >
-    > This is a cluster management command, and must be executed on a swarm
+    > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
@@ -84,8 +84,8 @@ examples: |-
 @x
     > **Warning**
     >
-    > Unlike `docker rm`, this command does not ask for confirmation before removing
-    > a config.
+    > This command doesn't ask for confirmation before removing a config.
+    { .warning }
 deprecated: false
 min_api_version: "1.30"
 experimental: false
@@ -95,8 +95,8 @@ swarm: true
 @y
     > **Warning**
     >
-    > Unlike `docker rm`, this command does not ask for confirmation before removing
-    > a config.
+    > This command doesn't ask for confirmation before removing a config.
+    { .warning }
 deprecated: false
 min_api_version: "1.30"
 experimental: false

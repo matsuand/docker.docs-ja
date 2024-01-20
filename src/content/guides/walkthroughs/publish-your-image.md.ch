@@ -163,11 +163,11 @@ Related information:
 
 @x
 - Deep dive into the [Docker Hub manual](../../docker-hub/_index.md)
-- Learn more about the [docker tag](../../engine/reference/commandline/tag.md)
+- Learn more about the [docker tag](../../engine/reference/commandline/image_tag.md)
   command
 @y
 - より詳しくは [Docker Hub マニュアル](../../docker-hub/_index.md) を確認してください。
-- [docker tag](../../engine/reference/commandline/tag.md) コマンドを確認してください。
+- [docker tag](../../engine/reference/commandline/image_tag.md) コマンドを確認してください。
 @z
 
 @x

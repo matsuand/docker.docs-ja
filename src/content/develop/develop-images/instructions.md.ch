@@ -803,14 +803,14 @@ as part of your build. `ADD` is better than manually adding files using
 something like `wget` and `tar`, because it ensures a more precise build cache.
 `ADD` also has built-in support for checksum validation of the remote
 resources, and a protocol for parsing branches, tags, and subdirectories from
-[Git URLs](../../engine/reference/commandline/build.md#git-repositories).
+[Git URLs](../../engine/reference/commandline/image_build.md#git-repositories).
 @y
 The `ADD` instruction is best for when you need to download a remote artifact
 as part of your build. `ADD` is better than manually adding files using
 something like `wget` and `tar`, because it ensures a more precise build cache.
 `ADD` also has built-in support for checksum validation of the remote
 resources, and a protocol for parsing branches, tags, and subdirectories from
-[Git URLs](../../engine/reference/commandline/build.md#git-repositories).
+[Git URLs](../../engine/reference/commandline/image_build.md#git-repositories).
 @z
 
 @x

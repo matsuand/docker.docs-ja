@@ -218,12 +218,12 @@ examples: |-
 @z
 
 @x
-    - dangling (boolean - true or false, 0 or 1)
+    - dangling (Boolean - true or false, 0 or 1)
     - driver (a volume driver's name)
     - label (`label=<key>` or `label=<key>=<value>`)
     - name (a volume's name)
 @y
-    - dangling (boolean - true or false, 0 or 1)
+    - dangling (Boolean - true or false, 0 or 1)
     - driver (a volume driver's name)
     - label (`label=<key>` or `label=<key>=<value>`)
     - name (a volume's name)
@@ -316,9 +316,9 @@ examples: |-
 @z
 
 @x
-    First, let's create some volumes to illustrate this;
+    First, create some volumes to illustrate this;
 @y
-    First, let's create some volumes to illustrate this;
+    First, create some volumes to illustrate this;
 @z
 
 @x

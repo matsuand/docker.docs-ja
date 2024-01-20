@@ -85,19 +85,19 @@ aliases:
 @x
 >**New to Compose?**
 >
-> Find more information about the [key features and use cases of Docker Compose](../features-uses.md) or [try the get started guide](../gettingstarted.md).
+> Find more information about the [key features and use cases of Docker Compose](../intro/features-uses.md) or [try the get started guide](../gettingstarted.md).
 { .tip }
 @y
 >**New to Compose?**
 >
-> Find more information about the [key features and use cases of Docker Compose](../features-uses.md) or [try the get started guide](../gettingstarted.md).
+> Find more information about the [key features and use cases of Docker Compose](../intro/features-uses.md) or [try the get started guide](../gettingstarted.md).
 { .tip }
 @z
 
 @x
-The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](../compose-yaml-file.md) which is used to configure your Docker application’s services, networks, volumes, and more.
+The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](../compose-application-model.md) which is used to configure your Docker application’s services, networks, volumes, and more.
 @y
-The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](../compose-yaml-file.md) which is used to configure your Docker application’s services, networks, volumes, and more.
+The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](../compose-application-model.md) which is used to configure your Docker application’s services, networks, volumes, and more.
 @z
 
 @x

@@ -33,7 +33,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    ### Remove a signer from a repo
+    ### Remove a signer from a repository
 @y
 command: docker trust signer remove
 short: Remove a signer
@@ -66,7 +66,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    ### Remove a signer from a repo
+    ### Remove a signer from a repository
 @z
 
 @x
@@ -144,9 +144,9 @@ examples: |-
 @z
 
 @x
-    `docker trust inspect --pretty` now does not list `alice` as a valid signer:
+    `docker trust inspect --pretty` now doesn't list `alice` as a valid signer:
 @y
-    `docker trust inspect --pretty` now does not list `alice` as a valid signer:
+    `docker trust inspect --pretty` now doesn't list `alice` as a valid signer:
 @z
 
 @x
@@ -190,9 +190,9 @@ examples: |-
 @z
 
 @x
-    ### Remove a signer from multiple repos
+    ### Remove a signer from multiple repositories
 @y
-    ### Remove a signer from multiple repos
+    ### Remove a signer from multiple repositories
 @z
 
 @x
@@ -418,13 +418,11 @@ examples: |-
 @z
 
 @x
-    `docker trust signer remove` removes signers to repositories on a best effort
-    basis, so it will continue to remove the signer from subsequent repositories if
-    one attempt fails:
+    `docker trust signer remove` removes signers to repositories on a best effort basis.
+    It continues to remove the signer from subsequent repositories if one attempt fails:
 @y
-    `docker trust signer remove` removes signers to repositories on a best effort
-    basis, so it will continue to remove the signer from subsequent repositories if
-    one attempt fails:
+    `docker trust signer remove` removes signers to repositories on a best effort basis.
+    It continues to remove the signer from subsequent repositories if one attempt fails:
 @z
 
 @x

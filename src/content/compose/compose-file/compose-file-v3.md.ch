@@ -3231,13 +3231,13 @@ services:
 Specify a container’s isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/run.md#isolation)
+[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
 for details.
 @y
 Specify a container’s isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/run.md#isolation)
+[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
 for details.
 @z
 
@@ -4593,12 +4593,12 @@ sysctls:
 You can only use sysctls that are namespaced in the kernel. Docker does not
 support changing sysctls inside a container that also modify the host system.
 For an overview of supported sysctls, refer to
-[configure namespaced kernel parameters (sysctls) at runtime](../../engine/reference/commandline/run.md#sysctl).
+[configure namespaced kernel parameters (sysctls) at runtime](../../engine/reference/commandline/container_run.md#sysctl).
 @y
 You can only use sysctls that are namespaced in the kernel. Docker does not
 support changing sysctls inside a container that also modify the host system.
 For an overview of supported sysctls, refer to
-[configure namespaced kernel parameters (sysctls) at runtime](../../engine/reference/commandline/run.md#sysctl).
+[configure namespaced kernel parameters (sysctls) at runtime](../../engine/reference/commandline/container_run.md#sysctl).
 @z
 
 @x
@@ -5187,10 +5187,10 @@ services:
 
 @x
 Each of these is a single value, analogous to its
-[docker run](../../engine/reference/run.md) counterpart. Note that `mac_address` is a legacy option.
+[docker run](../../engine/reference/commandline/container_run.md) counterpart. Note that `mac_address` is a legacy option.
 @y
 Each of these is a single value, analogous to its
-[docker run](../../engine/reference/run.md) counterpart. Note that `mac_address` is a legacy option.
+[docker run](../../engine/reference/commandline/container_run.md) counterpart. Note that `mac_address` is a legacy option.
 @z
 
 @x

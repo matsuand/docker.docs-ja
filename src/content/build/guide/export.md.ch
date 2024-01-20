@@ -256,10 +256,10 @@ Related information:
 @z
 
 @x
-- [`docker build --output` CLI reference](../../engine/reference/commandline/build.md#output)
+- [`docker build --output` CLI reference](../../engine/reference/commandline/image_build.md#output)
 - [Build exporters](../exporters/index.md)
 @y
-- [`docker build --output` CLI reference](../../engine/reference/commandline/build.md#output)
+- [`docker build --output` CLI reference](../../engine/reference/commandline/image_build.md#output)
 - [Build exporters](../exporters/index.md)
 @z
 

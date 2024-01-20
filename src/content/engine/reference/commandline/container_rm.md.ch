@@ -8,6 +8,7 @@ datafile: docker_container_rm
 title: docker container rm
 aliases:
 - /edge/engine/reference/commandline/container_rm/
+- /engine/reference/commandline/rm/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_rm
 title: docker container rm
 aliases:
 - /edge/engine/reference/commandline/container_rm/
+- /engine/reference/commandline/rm/
 layout: cli
 ---
 @z

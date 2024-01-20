@@ -195,10 +195,12 @@ examples: |-
 
 @x
     > **Note**
+    >
     > Since only `path` is settable in `mydevice`,
     > `docker plugins set mydevice=/dev/bar myplugin` would work too.
 @y
     > **Note**
+    >
     > Since only `path` is settable in `mydevice`,
     > `docker plugins set mydevice=/dev/bar myplugin` would work too.
 @z

@@ -8,6 +8,7 @@ datafile: docker_container_top
 title: docker container top
 aliases:
 - /edge/engine/reference/commandline/container_top/
+- /engine/reference/commandline/top/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_top
 title: docker container top
 aliases:
 - /edge/engine/reference/commandline/container_top/
+- /engine/reference/commandline/top/
 layout: cli
 ---
 @z

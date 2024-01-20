@@ -97,7 +97,7 @@ Guides:
         path: __SUBDIR__/get-started/03_updating_app/
       - title: "4部: アプリの共有"
         path: __SUBDIR__/get-started/04_sharing_app/
-      - title: "5部: DB の保存"
+      - title: "5部: DB への保存"
         path: __SUBDIR__/get-started/05_persisting_data/
       - title: "6部: バインドマウントの利用"
         path: __SUBDIR__/get-started/06_bind_mounts/
@@ -348,6 +348,30 @@ Guides:
 @z
 
 @x
+- sectiontitle: Use-case guides
+  section:
+    - sectiontitle: Generative AI
+      section:
+      - path: /guides/use-case/genai-pdf-bot/
+        title: Overview
+      - path: /guides/use-case/genai-pdf-bot/containerize/
+        title: Containerize your app
+      - path: /guides/use-case/genai-pdf-bot/develop/
+        title: Develop your app
+@y
+- sectiontitle: ユースケースガイド
+  section:
+    - sectiontitle: 生成 AI
+      section:
+      - path: __SUBDIR__/guides/use-case/genai-pdf-bot/
+        title: 概要
+      - path: __SUBDIR__/guides/use-case/genai-pdf-bot/containerize/
+        title: アプリのコンテナー化
+      - path: __SUBDIR__/guides/use-case/genai-pdf-bot/develop/
+        title: アプリの開発
+@z
+
+@x
 - sectiontitle: Develop with Docker
   section:
   - path: /develop/
@@ -575,8 +599,6 @@ Reference:
   section:
   - path: /engine/reference/commandline/docker/
     title: docker (base command)
-  - path: /engine/reference/commandline/attach/
-    title: docker attach
   - path: /engine/reference/commandline/build/
     title: docker build
 @y
@@ -587,8 +609,6 @@ Reference:
   section:
   - path: __SUBDIR__/engine/reference/commandline/docker/
     title: docker (基本コマンド)
-  - path: __SUBDIR__/engine/reference/commandline/attach/
-    title: docker attach
   - path: __SUBDIR__/engine/reference/commandline/build/
     title: docker build
 @z
@@ -711,14 +731,6 @@ Reference:
       title: docker checkpoint ls
     - path: __SUBDIR__/engine/reference/commandline/checkpoint_rm/
       title: docker checkpoint rm
-@z
-
-@x
-  - path: /engine/reference/commandline/commit/
-    title: docker commit
-@y
-  - path: __SUBDIR__/engine/reference/commandline/commit/
-    title: docker commit
 @z
 
 @x
@@ -1058,35 +1070,11 @@ Reference:
 @z
 
 @x
-  - path: /engine/reference/commandline/cp/
-    title: docker cp
-  - path: /engine/reference/commandline/create/
-    title: docker create
-  - path: /engine/reference/commandline/diff/
-    title: docker diff
-  - path: /engine/reference/commandline/events/
-    title: docker events
   - path: /engine/reference/commandline/exec/
     title: docker exec
-  - path: /engine/reference/commandline/export/
-    title: docker export
-  - path: /engine/reference/commandline/history/
-    title: docker history
 @y
-  - path: __SUBDIR__/engine/reference/commandline/cp/
-    title: docker cp
-  - path: __SUBDIR__/engine/reference/commandline/create/
-    title: docker create
-  - path: __SUBDIR__/engine/reference/commandline/diff/
-    title: docker diff
-  - path: __SUBDIR__/engine/reference/commandline/events/
-    title: docker events
   - path: __SUBDIR__/engine/reference/commandline/exec/
     title: docker exec
-  - path: __SUBDIR__/engine/reference/commandline/export/
-    title: docker export
-  - path: __SUBDIR__/engine/reference/commandline/history/
-    title: docker history
 @z
 
 @x
@@ -1152,45 +1140,29 @@ Reference:
 @x
   - path: /engine/reference/commandline/images/
     title: docker images
-  - path: /engine/reference/commandline/import/
-    title: docker import
   - path: /engine/reference/commandline/info/
     title: docker info
   - path: /engine/reference/commandline/init/
     title: docker init (Beta)
   - path: /engine/reference/commandline/inspect/
     title: docker inspect
-  - path: /engine/reference/commandline/kill/
-    title: docker kill
-  - path: /engine/reference/commandline/load/
-    title: docker load
   - path: /engine/reference/commandline/login/
     title: docker login
   - path: /engine/reference/commandline/logout/
     title: docker logout
-  - path: /engine/reference/commandline/logs/
-    title: docker logs
 @y
   - path: __SUBDIR__/engine/reference/commandline/images/
     title: docker images
-  - path: __SUBDIR__/engine/reference/commandline/import/
-    title: docker import
   - path: __SUBDIR__/engine/reference/commandline/info/
     title: docker info
   - path: __SUBDIR__/engine/reference/commandline/init/
     title: docker init (Beta)
   - path: __SUBDIR__/engine/reference/commandline/inspect/
     title: docker inspect
-  - path: __SUBDIR__/engine/reference/commandline/kill/
-    title: docker kill
-  - path: __SUBDIR__/engine/reference/commandline/load/
-    title: docker load
   - path: __SUBDIR__/engine/reference/commandline/login/
     title: docker login
   - path: __SUBDIR__/engine/reference/commandline/logout/
     title: docker logout
-  - path: __SUBDIR__/engine/reference/commandline/logs/
-    title: docker logs
 @z
 
 @x
@@ -1284,8 +1256,6 @@ Reference:
       title: docker node rm
     - path: /engine/reference/commandline/node_update/
       title: docker node update
-  - path: /engine/reference/commandline/pause/
-    title: docker pause
 @y
   - sectiontitle: docker node
     section:
@@ -1305,8 +1275,6 @@ Reference:
       title: docker node rm
     - path: __SUBDIR__/engine/reference/commandline/node_update/
       title: docker node update
-  - path: __SUBDIR__/engine/reference/commandline/pause/
-    title: docker pause
 @z
 
 @x
@@ -1358,47 +1326,23 @@ Reference:
 @z
 
 @x
-  - path: /engine/reference/commandline/port/
-    title: docker port
   - path: /engine/reference/commandline/ps/
     title: docker ps
   - path: /engine/reference/commandline/pull/
     title: docker pull
   - path: /engine/reference/commandline/push/
     title: docker push
-  - path: /engine/reference/commandline/rename/
-    title: docker rename
-  - path: /engine/reference/commandline/restart/
-    title: docker restart
-  - path: /engine/reference/commandline/rm/
-    title: docker rm
-  - path: /engine/reference/commandline/rmi/
-    title: docker rmi
   - path: /engine/reference/commandline/run/
     title: docker run
-  - path: /engine/reference/commandline/save/
-    title: docker save
 @y
-  - path: __SUBDIR__/engine/reference/commandline/port/
-    title: docker port
   - path: __SUBDIR__/engine/reference/commandline/ps/
     title: docker ps
   - path: __SUBDIR__/engine/reference/commandline/pull/
     title: docker pull
   - path: __SUBDIR__/engine/reference/commandline/push/
     title: docker push
-  - path: __SUBDIR__/engine/reference/commandline/rename/
-    title: docker rename
-  - path: __SUBDIR__/engine/reference/commandline/restart/
-    title: docker restart
-  - path: __SUBDIR__/engine/reference/commandline/rm/
-    title: docker rm
-  - path: __SUBDIR__/engine/reference/commandline/rmi/
-    title: docker rmi
   - path: __SUBDIR__/engine/reference/commandline/run/
     title: docker run
-  - path: __SUBDIR__/engine/reference/commandline/save/
-    title: docker save
 @z
 
 @x
@@ -1626,22 +1570,6 @@ Reference:
 @z
 
 @x
-  - path: /engine/reference/commandline/start/
-    title: docker start
-  - path: /engine/reference/commandline/stats/
-    title: docker stats
-  - path: /engine/reference/commandline/stop/
-    title: docker stop
-@y
-  - path: __SUBDIR__/engine/reference/commandline/start/
-    title: docker start
-  - path: __SUBDIR__/engine/reference/commandline/stats/
-    title: docker stats
-  - path: __SUBDIR__/engine/reference/commandline/stop/
-    title: docker stop
-@z
-
-@x
   - sectiontitle: docker swarm
     section:
     - path: /engine/reference/commandline/swarm/
@@ -1714,18 +1642,6 @@ Reference:
 @z
 
 @x
-  - path: /engine/reference/commandline/tag/
-    title: docker tag
-  - path: /engine/reference/commandline/top/
-    title: docker top
-@y
-  - path: __SUBDIR__/engine/reference/commandline/tag/
-    title: docker tag
-  - path: __SUBDIR__/engine/reference/commandline/top/
-    title: docker top
-@z
-
-@x
   - sectiontitle: docker trust
     section:
     - path: /engine/reference/commandline/trust/
@@ -1774,17 +1690,9 @@ Reference:
 @z
 
 @x
-  - path: /engine/reference/commandline/unpause/
-    title: docker unpause
-  - path: /engine/reference/commandline/update/
-    title: docker update
   - path: /engine/reference/commandline/version/
     title: docker version
 @y
-  - path: __SUBDIR__/engine/reference/commandline/unpause/
-    title: docker unpause
-  - path: __SUBDIR__/engine/reference/commandline/update/
-    title: docker update
   - path: __SUBDIR__/engine/reference/commandline/version/
     title: docker version
 @z
@@ -1804,8 +1712,6 @@ Reference:
       title: docker volume rm
     - path: /engine/reference/commandline/volume_update/
       title: docker volume update
-  - path: /engine/reference/commandline/wait/
-    title: docker wait
 @y
   - sectiontitle: docker volume
     section:
@@ -1821,8 +1727,6 @@ Reference:
       title: docker volume rm
     - path: __SUBDIR__/engine/reference/commandline/volume_update/
       title: docker volume update
-  - path: __SUBDIR__/engine/reference/commandline/wait/
-    title: docker wait
 @z
 
 @x
@@ -1874,6 +1778,14 @@ Reference:
       section:
       - path: /engine/api/version-history/
         title: Version history overview
+@y
+    - sectiontitle: 各バージョンの API
+      section:
+      - path: __SUBDIR__/engine/api/version-history/
+        title: バージョンの履歴概要
+@z
+
+@x
       - path: /engine/api/v1.42/
         title: v1.42 reference
       - path: /engine/api/v1.41/
@@ -1912,23 +1824,7 @@ Reference:
         title: v1.25 reference
       - path: /engine/api/v1.24/
         title: v1.24 reference
-      - path: /engine/api/v1.23/
-        title: v1.23 reference
-      - path: /engine/api/v1.22/
-        title: v1.22 reference
-      - path: /engine/api/v1.21/
-        title: v1.21 reference
-      - path: /engine/api/v1.20/
-        title: v1.20 reference
-      - path: /engine/api/v1.19/
-        title: v1.19 reference
-      - path: /engine/api/v1.18/
-        title: v1.18 reference
 @y
-    - sectiontitle: 各バージョンの API
-      section:
-      - path: __SUBDIR__/engine/api/version-history/
-        title: バージョンの履歴概要
       - path: __SUBDIR__/engine/api/v1.42/
         title: v1.42 リファレンス
       - path: __SUBDIR__/engine/api/v1.41/
@@ -1967,18 +1863,6 @@ Reference:
         title: v1.25 リファレンス
       - path: __SUBDIR__/engine/api/v1.24/
         title: v1.24 リファレンス
-      - path: __SUBDIR__/engine/api/v1.23/
-        title: v1.23 リファレンス
-      - path: __SUBDIR__/engine/api/v1.22/
-        title: v1.22 リファレンス
-      - path: __SUBDIR__/engine/api/v1.21/
-        title: v1.21 リファレンス
-      - path: __SUBDIR__/engine/api/v1.20/
-        title: v1.20 リファレンス
-      - path: __SUBDIR__/engine/api/v1.19/
-        title: v1.19 リファレンス
-      - path: __SUBDIR__/engine/api/v1.18/
-        title: v1.18 リファレンス
 @z
 
 @x
@@ -2421,6 +2305,8 @@ Samples:
 
 @x
 Manuals:
+- path: /manuals/
+  title: Overview
 - sectiontitle: Docker Desktop
   section:
     - path: /desktop/
@@ -2439,6 +2325,8 @@ Manuals:
          title: Install on Linux
 @y
 マニュアル:
+- path: __SUBDIR__/manuals/
+  title: 概要
 - sectiontitle: Docker Desktop
   section:
     - path: __SUBDIR__/desktop/
@@ -3554,8 +3442,6 @@ Manuals:
         section:
         - path: /config/containers/logging/local/
           title: Local file logging driver
-        - path: /config/containers/logging/logentries/
-          title: Logentries logging driver
         - path: /config/containers/logging/json-file/
           title: JSON File logging driver
         - path: /config/containers/logging/gelf/
@@ -3579,8 +3465,6 @@ Manuals:
         section:
         - path: __SUBDIR__/config/containers/logging/local/
           title: Local file logging driver
-        - path: __SUBDIR__/config/containers/logging/logentries/
-          title: Logentries logging driver
         - path: __SUBDIR__/config/containers/logging/json-file/
           title: JSON File logging driver
         - path: __SUBDIR__/config/containers/logging/gelf/
@@ -3838,10 +3722,12 @@ Manuals:
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: /engine/release-notes/24.0/
-      title: Engine 24.0
+    - path: /engine/release-notes/25.0/
+      title: Engine 25.0
     - sectiontitle: Previous versions
       section:
+      - path: /engine/release-notes/24.0/
+        title: Engine 24.0
       - path: /engine/release-notes/23.0/
         title: Engine 23.0
       - path: /engine/release-notes/20.10/
@@ -3867,10 +3753,12 @@ Manuals:
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: __SUBDIR__/engine/release-notes/24.0/
-      title: Engine 24.0
+    - path: __SUBDIR__/engine/release-notes/25.0/
+      title: Engine 25.0
     - sectiontitle: Previous versions
       section:
+      - path: __SUBDIR__/engine/release-notes/24.0/
+        title: Engine 24.0
       - path: __SUBDIR__/engine/release-notes/23.0/
         title: Engine 23.0
       - path: __SUBDIR__/engine/release-notes/20.10/
@@ -4322,14 +4210,12 @@ Manuals:
   section:
   - path: /compose/
     title: Overview
-  - path: /compose/features-uses/
-    title: Key features and use cases
-  - path: /compose/compose-application-model/
-    title: Understand the Compose application model
-  - path: /compose/compose-yaml-file/
-    title: Understand the Compose file
-  - path: /compose/history/
-    title: History and development of Compose
+  - sectiontitle: Introduction to Compose
+    section:
+    - path: /compose/intro/features-uses/
+      title: Why use Compose?
+    - path: /compose/intro/history/
+      title: History and development of Compose
   - sectiontitle: Install Docker Compose
     section:
       - path: /compose/install/
@@ -4340,37 +4226,35 @@ Manuals:
         title: Install Compose standalone
       - path: /compose/install/uninstall/
         title: Uninstall Compose
-  - path: /compose/migrate/
-    title: Migrate to Compose V2
+  - path: /compose/compose-application-model/
+    title: How Compose works
   - path: /compose/gettingstarted/
-    title: Try Docker Compose
+    title: Try Compose
 @y
 - sectiontitle: Docker Compose
   section:
   - path: __SUBDIR__/compose/
     title: 概要
-  - path: __SUBDIR__/compose/features-uses/
-    title: 主要機能とユースケース
-  - path: __SUBDIR__/compose/compose-application-model/
-    title: Compose アプリケーションモデルの理解
-  - path: __SUBDIR__/compose/compose-yaml-file/
-    title: Compose ファイルの理解
-  - path: __SUBDIR__/compose/history/
-    title: History and development of Compose
+  - sectiontitle: Compose の導入
+    section:
+    - path: __SUBDIR__/compose/intro/features-uses/
+      title: Compose 利用はなぜ
+    - path: __SUBDIR__/compose/intro/history/
+      title: History and development of Compose
   - sectiontitle: Install Docker Compose
     section:
       - path: __SUBDIR__/compose/install/
-        title: Overview
+        title: 概要
       - path: __SUBDIR__/compose/install/linux/
-        title: Install Compose plugin
+        title: Compose プラグインのインストール
       - path: __SUBDIR__/compose/install/standalone/
         title: Install Compose standalone
       - path: __SUBDIR__/compose/install/uninstall/
-        title: Uninstall Compose
-  - path: __SUBDIR__/compose/migrate/
-    title: Migrate to Compose V2
+        title: Compose のアンインストール
+  - path: __SUBDIR__/compose/compose-application-model/
+    title: How Compose works
   - path: __SUBDIR__/compose/gettingstarted/
-    title: Try Docker Compose
+    title: Compose を試そう
 @z
 
 @x
@@ -4448,6 +4332,8 @@ Manuals:
     title: Control startup order
   - path: /compose/samples-for-compose/
     title: Sample apps with Compose
+  - path: /compose/migrate/
+    title: Migrate to Compose V2
   - path: /compose/release-notes/
     title: Release notes
 @y
@@ -4465,6 +4351,8 @@ Manuals:
     title: Control startup order
   - path: __SUBDIR__/compose/samples-for-compose/
     title: Sample apps with Compose
+  - path: __SUBDIR__/compose/migrate/
+    title: Migrate to Compose V2
   - path: __SUBDIR__/compose/release-notes/
     title: Release notes
 @z

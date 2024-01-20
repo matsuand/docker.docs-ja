@@ -3,40 +3,16 @@
 
 @x
 ---
+title: Docker log driver plugins
 description: "Log driver plugins."
 keywords: "Examples, Usage, plugins, docker, documentation, user guide, logging"
 ---
 @y
 ---
+title: Docker log driver plugins
 description: "Log driver plugins."
 keywords: "Examples, Usage, plugins, docker, documentation, user guide, logging"
 ---
-@z
-
-@x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Docker log driver plugins
-@y
-# Docker log driver plugins
 @z
 
 @x
@@ -124,23 +100,27 @@ is a FIFO. Logging plugins are not currently supported on Windows.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
-		"File": "/path/to/file/stream",
-		"Info": {
-			"ContainerID": "123456"
-		}
+  "File": "/path/to/file/stream",
+  "Info": {
+          "ContainerID": "123456"
+  }
 }
 ```
 @y
-**Request**:
 ```json
 {
-		"File": "/path/to/file/stream",
-		"Info": {
-			"ContainerID": "123456"
-		}
+  "File": "/path/to/file/stream",
+  "Info": {
+          "ContainerID": "123456"
+  }
 }
 ```
 @z
@@ -149,12 +129,12 @@ is a FIFO. Logging plugins are not currently supported on Windows.
 `File` is the path to the log stream that needs to be consumed. Each call to
 `StartLogging` should provide a different file path, even if it's a container
 that the plugin has already received logs for prior. The file is created by
-docker with a randomly generated name.
+Docker with a randomly generated name.
 @y
 `File` is the path to the log stream that needs to be consumed. Each call to
 `StartLogging` should provide a different file path, even if it's a container
 that the plugin has already received logs for prior. The file is created by
-docker with a randomly generated name.
+Docker with a randomly generated name.
 @z
 
 @x
@@ -210,17 +190,21 @@ empty or missing.
 @z
 
 @x
-**Response**
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @y
-**Response**
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @z
@@ -248,11 +232,11 @@ write to its stdio streams.
 @x
 Log stream messages are encoded as protocol buffers. The protobuf definitions are
 in the
-[docker repository](https://github.com/docker/docker/blob/master/api/types/plugins/logdriver/entry.proto).
+[moby repository](https://github.com/moby/moby/blob/master/api/types/plugins/logdriver/entry.proto).
 @y
 Log stream messages are encoded as protocol buffers. The protobuf definitions are
 in the
-[docker repository](https://github.com/docker/docker/blob/master/api/types/plugins/logdriver/entry.proto).
+[moby repository](https://github.com/moby/moby/blob/master/api/types/plugins/logdriver/entry.proto).
 @z
 
 @x
@@ -264,11 +248,11 @@ using the following stream format:
 @z
 
 @x
-```
+```text
 [size][message]
 ```
 @y
-```
+```text
 [size][message]
 ```
 @z
@@ -316,33 +300,41 @@ only that it has stopped.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
-		"File": "/path/to/file/stream"
+  "File": "/path/to/file/stream"
 }
 ```
 @y
-**Request**:
 ```json
 {
-		"File": "/path/to/file/stream"
+  "File": "/path/to/file/stream"
 }
 ```
 @z
 
 @x
-**Response**:
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @y
-**Response**:
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @z
@@ -384,29 +376,37 @@ Docker to be able to take advantage of any of the defined capabilities.
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {}
 ```
 @y
-**Request**:
 ```json
 {}
 ```
 @z
 
 @x
-**Response**:
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
-	"ReadLogs": true
+  "ReadLogs": true
 }
 ```
 @y
-**Response**:
 ```json
 {
-	"ReadLogs": true
+  "ReadLogs": true
 }
 ```
 @z
@@ -450,23 +450,27 @@ In order for Docker to use this endpoint, the plugin must specify as much when
 @z
 
 @x
-**Request**:
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {
-	"ReadConfig": {},
-	"Info": {
-		"ContainerID": "123456"
-	}
+  "ReadConfig": {},
+  "Info": {
+    "ContainerID": "123456"
+  }
 }
 ```
 @y
-**Request**:
 ```json
 {
-	"ReadConfig": {},
-	"Info": {
-		"ContainerID": "123456"
-	}
+  "ReadConfig": {},
+  "Info": {
+    "ContainerID": "123456"
+  }
 }
 ```
 @z
@@ -518,17 +522,17 @@ to determine what set of logs to read.
 @z
 
 @x
-**Response**:
+Response:
 @y
-**Response**:
+Response:
 @z
 
 @x
-```
+```text
 {{ log stream }}
 ```
 @y
-```
+```text
 {{ log stream }}
 ```
 @z

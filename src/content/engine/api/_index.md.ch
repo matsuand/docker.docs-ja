@@ -173,47 +173,47 @@ To see the highest version of the API your Docker daemon and client support, use
 ```console
 $ docker version
 Client: Docker Engine - Community
- Version:           24.0.0
- API version:       1.43
- Go version:        go1.20.4
- Git commit:        98fdcd7
- Built:             Mon May 15 18:48:45 2023
- OS/Arch:           linux/arm64
+ Version:           25.0.0
+ API version:       1.44
+ Go version:        go1.21.6
+ Git commit:        e758fe5
+ Built:             Thu Jan 18 17:11:25 2024
+ OS/Arch:           linux/amd64
  Context:           default
 @y
 ```console
 $ docker version
 Client: Docker Engine - Community
- Version:           24.0.0
- API version:       1.43
- Go version:        go1.20.4
- Git commit:        98fdcd7
- Built:             Mon May 15 18:48:45 2023
- OS/Arch:           linux/arm64
+ Version:           25.0.0
+ API version:       1.44
+ Go version:        go1.21.6
+ Git commit:        e758fe5
+ Built:             Thu Jan 18 17:11:25 2024
+ OS/Arch:           linux/amd64
  Context:           default
 @z
 
 @x
 Server: Docker Engine - Community
  Engine:
-  Version:          24.0.0
-  API version:      1.43 (minimum version 1.12)
-  Go version:       go1.20.4
-  Git commit:       1331b8c
-  Built:            Mon May 15 18:48:45 2023
-  OS/Arch:          linux/arm64
+  Version:          25.0.0
+  API version:      1.44 (minimum version 1.24)
+  Go version:       go1.21.6
+  Git commit:       615dfdf
+  Built:            Thu Jan 18 17:09:47 2024
+  OS/Arch:          linux/amd64
   Experimental:     false
   ...
 ```
 @y
 Server: Docker Engine - Community
  Engine:
-  Version:          24.0.0
-  API version:      1.43 (minimum version 1.12)
-  Go version:       go1.20.4
-  Git commit:       1331b8c
-  Built:            Mon May 15 18:48:45 2023
-  OS/Arch:          linux/arm64
+  Version:          25.0.0
+  API version:      1.44 (minimum version 1.24)
+  Go version:       go1.21.6
+  Git commit:       615dfdf
+  Built:            Thu Jan 18 17:09:47 2024
+  OS/Arch:          linux/amd64
   Experimental:     false
   ...
 ```
@@ -230,7 +230,7 @@ You can specify the API version to use in any of the following ways:
   that incorporates the API version with the features you need.
 - When using `curl` directly, specify the version as the first part of the URL.
   For instance, if the endpoint is `/containers/` you can use
-  `/v1.42/containers/`.
+  `/v1.44/containers/`.
 - To force the Docker CLI or the Docker Engine SDKs to use an older version
   of the API than the version reported by `docker version`, set the
   environment variable `DOCKER_API_VERSION` to the correct version. This works
@@ -240,7 +240,7 @@ You can specify the API version to use in any of the following ways:
   that incorporates the API version with the features you need.
 - When using `curl` directly, specify the version as the first part of the URL.
   For instance, if the endpoint is `/containers/` you can use
-  `/v1.42/containers/`.
+  `/v1.44/containers/`.
 - To force the Docker CLI or the Docker Engine SDKs to use an older version
   of the API than the version reported by `docker version`, set the
   environment variable `DOCKER_API_VERSION` to the correct version. This works
@@ -249,11 +249,11 @@ You can specify the API version to use in any of the following ways:
 
 @x
   ```console
-  $ DOCKER_API_VERSION='1.41'
+  $ DOCKER_API_VERSION='1.43'
   ```
 @y
   ```console
-  $ DOCKER_API_VERSION='1.41'
+  $ DOCKER_API_VERSION='1.43'
   ```
 @z
 
@@ -296,21 +296,81 @@ You can specify the API version to use in any of the following ways:
 @z
 
 @x
-{{< include "api-version-matrix.md" >}}
+| Docker version | Maximum API version        | Change log                                               |
+|:---------------|:---------------------------|:---------------------------------------------------------|
+| 25.0           | [1.44](/engine/api/v1.44/) | [changes](/engine/api/version-history/#v144-api-changes) |
+| 24.0           | [1.43](/engine/api/v1.43/) | [changes](/engine/api/version-history/#v143-api-changes) |
+| 23.0           | [1.42](/engine/api/v1.42/) | [changes](/engine/api/version-history/#v142-api-changes) |
+| 20.10          | [1.41](/engine/api/v1.41/) | [changes](/engine/api/version-history/#v141-api-changes) |
+| 19.03          | [1.40](/engine/api/v1.40/) | [changes](/engine/api/version-history/#v140-api-changes) |
+| 18.09          | [1.39](/engine/api/v1.39/) | [changes](/engine/api/version-history/#v139-api-changes) |
+| 18.06          | [1.38](/engine/api/v1.38/) | [changes](/engine/api/version-history/#v138-api-changes) |
+| 18.05          | [1.37](/engine/api/v1.37/) | [changes](/engine/api/version-history/#v137-api-changes) |
+| 18.04          | [1.37](/engine/api/v1.37/) | [changes](/engine/api/version-history/#v137-api-changes) |
+| 18.03          | [1.37](/engine/api/v1.37/) | [changes](/engine/api/version-history/#v137-api-changes) |
+| 18.02          | [1.36](/engine/api/v1.36/) | [changes](/engine/api/version-history/#v136-api-changes) |
+| 17.12          | [1.35](/engine/api/v1.35/) | [changes](/engine/api/version-history/#v135-api-changes) |
+| 17.11          | [1.34](/engine/api/v1.34/) | [changes](/engine/api/version-history/#v134-api-changes) |
+| 17.10          | [1.33](/engine/api/v1.33/) | [changes](/engine/api/version-history/#v133-api-changes) |
+| 17.09          | [1.32](/engine/api/v1.32/) | [changes](/engine/api/version-history/#v132-api-changes) |
+| 17.07          | [1.31](/engine/api/v1.31/) | [changes](/engine/api/version-history/#v131-api-changes) |
+| 17.06          | [1.30](/engine/api/v1.30/) | [changes](/engine/api/version-history/#v130-api-changes) |
+| 17.05          | [1.29](/engine/api/v1.29/) | [changes](/engine/api/version-history/#v129-api-changes) |
+| 17.04          | [1.28](/engine/api/v1.28/) | [changes](/engine/api/version-history/#v128-api-changes) |
+| 17.03.1        | [1.27](/engine/api/v1.27/) | [changes](/engine/api/version-history/#v127-api-changes) |
+| 17.03          | [1.26](/engine/api/v1.27/) | [changes](/engine/api/version-history/#v126-api-changes) |
+| 1.13.1         | [1.26](/engine/api/v1.26/) | [changes](/engine/api/version-history/#v126-api-changes) |
+| 1.13           | [1.25](/engine/api/v1.26/) | [changes](/engine/api/version-history/#v125-api-changes) |
+| 1.12           | [1.24](/engine/api/v1.24/) | [changes](/engine/api/version-history/#v124-api-changes) |
 @y
-{{< include "api-version-matrix.md" >}}
+| Docker version | Maximum API version        | Change log                                               |
+|:---------------|:---------------------------|:---------------------------------------------------------|
+| 25.0           | [1.44](/engine/api/v1.44/) | [changes](/engine/api/version-history/#v144-api-changes) |
+| 24.0           | [1.43](/engine/api/v1.43/) | [changes](/engine/api/version-history/#v143-api-changes) |
+| 23.0           | [1.42](/engine/api/v1.42/) | [changes](/engine/api/version-history/#v142-api-changes) |
+| 20.10          | [1.41](/engine/api/v1.41/) | [changes](/engine/api/version-history/#v141-api-changes) |
+| 19.03          | [1.40](/engine/api/v1.40/) | [changes](/engine/api/version-history/#v140-api-changes) |
+| 18.09          | [1.39](/engine/api/v1.39/) | [changes](/engine/api/version-history/#v139-api-changes) |
+| 18.06          | [1.38](/engine/api/v1.38/) | [changes](/engine/api/version-history/#v138-api-changes) |
+| 18.05          | [1.37](/engine/api/v1.37/) | [changes](/engine/api/version-history/#v137-api-changes) |
+| 18.04          | [1.37](/engine/api/v1.37/) | [changes](/engine/api/version-history/#v137-api-changes) |
+| 18.03          | [1.37](/engine/api/v1.37/) | [changes](/engine/api/version-history/#v137-api-changes) |
+| 18.02          | [1.36](/engine/api/v1.36/) | [changes](/engine/api/version-history/#v136-api-changes) |
+| 17.12          | [1.35](/engine/api/v1.35/) | [changes](/engine/api/version-history/#v135-api-changes) |
+| 17.11          | [1.34](/engine/api/v1.34/) | [changes](/engine/api/version-history/#v134-api-changes) |
+| 17.10          | [1.33](/engine/api/v1.33/) | [changes](/engine/api/version-history/#v133-api-changes) |
+| 17.09          | [1.32](/engine/api/v1.32/) | [changes](/engine/api/version-history/#v132-api-changes) |
+| 17.07          | [1.31](/engine/api/v1.31/) | [changes](/engine/api/version-history/#v131-api-changes) |
+| 17.06          | [1.30](/engine/api/v1.30/) | [changes](/engine/api/version-history/#v130-api-changes) |
+| 17.05          | [1.29](/engine/api/v1.29/) | [changes](/engine/api/version-history/#v129-api-changes) |
+| 17.04          | [1.28](/engine/api/v1.28/) | [changes](/engine/api/version-history/#v128-api-changes) |
+| 17.03.1        | [1.27](/engine/api/v1.27/) | [changes](/engine/api/version-history/#v127-api-changes) |
+| 17.03          | [1.26](/engine/api/v1.27/) | [changes](/engine/api/version-history/#v126-api-changes) |
+| 1.13.1         | [1.26](/engine/api/v1.26/) | [changes](/engine/api/version-history/#v126-api-changes) |
+| 1.13           | [1.25](/engine/api/v1.26/) | [changes](/engine/api/version-history/#v125-api-changes) |
+| 1.12           | [1.24](/engine/api/v1.24/) | [changes](/engine/api/version-history/#v124-api-changes) |
 @z
 
 @x
-### Archived API versions
+### Deprecated API versions
 @y
-### Archived API versions
+### Deprecated API versions
 @z
 
 @x
-You can find archived documentation for older versions of the API
-in the [Docker code repository on GitHub](https://github.com/moby/moby/tree/v1.9.1/docs/reference/api)
+API versions before v1.24 are [deprecated](/engine/deprecated/#deprecate-legacy-api-versions).
+You can find archived documentation for deprecated versions of the API in the
+code repository on GitHub:
 @y
-You can find archived documentation for older versions of the API
-in the [Docker code repository on GitHub](https://github.com/moby/moby/tree/v1.9.1/docs/reference/api)
+API versions before v1.24 are [deprecated](/engine/deprecated/#deprecate-legacy-api-versions).
+You can find archived documentation for deprecated versions of the API in the
+code repository on GitHub:
+@z
+
+@x
+- [Documentation for API versions 1.23 and before](https://github.com/moby/moby/tree/v25.0.0/docs/api).
+- [Documentation for API versions 1.17 and before](https://github.com/moby/moby/tree/v1.9.1/docs/reference/api).
+@y
+- [Documentation for API versions 1.23 and before](https://github.com/moby/moby/tree/v25.0.0/docs/api).
+- [Documentation for API versions 1.17 and before](https://github.com/moby/moby/tree/v1.9.1/docs/reference/api).
 @z

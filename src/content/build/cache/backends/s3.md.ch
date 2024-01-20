@@ -35,12 +35,12 @@ aliases:
 
 @x
 The `s3` cache storage uploads your resulting build cache to
-[Amazon S3 file storage service](https://aws.amazon.com/s3/),
-into a specified bucket.
+[Amazon S3 file storage service](https://aws.amazon.com/s3/)
+or other S3-compatible services, such as [MinIO](https://min.io/).
 @y
 The `s3` cache storage uploads your resulting build cache to
-[Amazon S3 file storage service](https://aws.amazon.com/s3/),
-into a specified bucket.
+[Amazon S3 file storage service](https://aws.amazon.com/s3/)
+or other S3-compatible services, such as [MinIO](https://min.io/).
 @z
 
 @x

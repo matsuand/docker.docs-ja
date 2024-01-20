@@ -13,9 +13,9 @@ aliases:
 ---
 @y
 ---
-title: Containerize a Node.js application
+title: Node.js アプリケーションのコンテナー化
 keywords: node.js, node, containerize, initialize
-description: Learn how to containerize a Node.js application.
+description: Node.js アプリケーションのコンテナー化について学びます。
 aliases:
   - /get-started/nodejs/build-images/
   - /language/nodejs/build-images/
@@ -26,7 +26,7 @@ aliases:
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -35,30 +35,28 @@ aliases:
 * You have a [git client](https://git-scm.com/downloads). The examples in this
   section use a command-line based git client, but you can use any client.
 @y
-* You have installed the latest version of [Docker
-  Desktop](../../get-docker.md).
-* You have a [git client](https://git-scm.com/downloads). The examples in this
-  section use a command-line based git client, but you can use any client.
+* [Docker Desktop](../../get-docker.md) の最新版をインストールしていること。
+* [git クライアント](https://git-scm.com/downloads) が利用可能であること。
+  本節の利用例ではコマンドラインベースの git クライアントを用いていきますが、別のクライアントを用いてもかまいません。
 @z
 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
 This section walks you through containerizing and running a Node.js
 application.
 @y
-This section walks you through containerizing and running a Node.js
-application.
+本節では Node.js アプリケーションをコンテナー化して実行する手順を示していきます。
 @z
 
 @x
 ## Get the sample application
 @y
-## Get the sample application
+## サンプルアプリケーションの入手 {#get-the-sample-application}
 @z
 
 @x
@@ -66,9 +64,9 @@ Clone the sample application to use with this guide. Open a terminal, change
 directory to a directory that you want to work in, and run the following command
 to clone the repository:
 @y
-Clone the sample application to use with this guide. Open a terminal, change
-directory to a directory that you want to work in, and run the following command
-to clone the repository:
+本ガイドにおいて利用するサンプルアプリケーションをクローンします。
+端末画面を開いて、作業を行うディレクトリに移動します。
+そして以下のコマンドを実行してリポジトリをクローンします。
 @z
 
 @x
@@ -84,7 +82,7 @@ $ git clone https://github.com/docker/docker-nodejs-sample
 @x
 ## Initialize Docker assets
 @y
-## Initialize Docker assets
+## Docker アセットの初期化 {#initialize-docker-assets}
 @z
 
 @x
@@ -95,12 +93,11 @@ necessary Docker assets to containerize your application. Inside the
 few questions about your application. Refer to the following example to answer
 the prompts from `docker init` and use the same answers for your prompts.
 @y
-Now that you have an application, you can use `docker init` to create the
-necessary Docker assets to containerize your application. Inside the
-`docker-nodejs-sample` directory, run the `docker init` command in a terminal.
-`docker init` provides some default configuration, but you'll need to answer a
-few questions about your application. Refer to the following example to answer
-the prompts from `docker init` and use the same answers for your prompts.
+アプリケーションの入手はできました。
+次に `docker init` を実行して、アプリケーションのコンテナー化に必要となる Docker アセットを生成します。
+端末画面内の `docker-nodejs-sample` ディレクトリにおいて `docker init` コマンドを実行します。
+`docker init` はデフォルトの設定をいくつか行いますが、アプリケーション内容についていくつか質問が行われるので、それに答えます。
+以下の利用例において `docker init` の質問への答えを示しているので、これを参考に同様の入力を行ってください。
 @z
 
 @x
@@ -153,8 +150,7 @@ Let's get started!
 You should now have the following contents in your `docker-nodejs-sample`
 directory.
 @y
-You should now have the following contents in your `docker-nodejs-sample`
-directory.
+上により `docker-nodejs-sample` ディレクトリ内は以下の構成となるはずです。
 @z
 
 @x
@@ -193,7 +189,7 @@ To learn more about the files that `docker init` added, see the following:
  - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @y
-To learn more about the files that `docker init` added, see the following:
+`docker init` が追加したファイルについての詳細は、以下を参照してください。
  - [Dockerfile](../../engine/reference/builder.md)
  - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
@@ -202,15 +198,14 @@ To learn more about the files that `docker init` added, see the following:
 @x
 ## Run the application
 @y
-## Run the application
+## アプリケーションの実行 {#run-the-application}
 @z
 
 @x
 Inside the `docker-nodejs-sample` directory, run the following command in a
 terminal.
 @y
-Inside the `docker-nodejs-sample` directory, run the following command in a
-terminal.
+端末画面内の `docker-nodejs-sample` ディレクトリから以下のコマンドを実行します。
 @z
 
 @x
@@ -226,19 +221,20 @@ $ docker compose up --build
 @x
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000). You should see a simple todo application.
 @y
-Open a browser and view the application at [http://localhost:3000](http://localhost:3000). You should see a simple todo application.
+ブラウザーを開いて [http://localhost:3000](http://localhost:3000) にアクセスし、アプリケーションを確認します。
+シンプルな todo アプリケーションが表示されたはずです。
 @z
 
 @x
 In the terminal, press `ctrl`+`c` to stop the application.
 @y
-In the terminal, press `ctrl`+`c` to stop the application.
+端末画面から `ctrl`+`c` を押下してアプリケーションを停止します。
 @z
 
 @x
 ### Run the application in the background
 @y
-### Run the application in the background
+### バックグラウンドでのアプリケーション実行 {#run-the-application-in-the-background}
 @z
 
 @x
@@ -246,9 +242,9 @@ You can run the application detached from the terminal by adding the `-d`
 option. Inside the `docker-nodejs-sample` directory, run the following command
 in a terminal.
 @y
-You can run the application detached from the terminal by adding the `-d`
-option. Inside the `docker-nodejs-sample` directory, run the following command
-in a terminal.
+アプリケーションは端末から切り離して実行することができます。
+それには `-d` オプションをつけます。
+端末画面内の `docker-nodejs-sample` ディレクトリから以下のコマンドを実行します。
 @z
 
 @x
@@ -264,19 +260,19 @@ $ docker compose up --build -d
 @x
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000).
 @y
-Open a browser and view the application at [http://localhost:3000](http://localhost:3000).
+ブラウザーを開いて [http://localhost:3000](http://localhost:3000) にアクセスし、アプリケーションを確認します。
 @z
 
 @x
 You should see a simple todo application.
 @y
-You should see a simple todo application.
+シンプルな todo アプリケーションが表示されたはずです。
 @z
 
 @x
 In the terminal, run the following command to stop the application.
 @y
-In the terminal, run the following command to stop the application.
+端末画面から以下のコマンドを実行してアプリケーションを停止します。
 @z
 
 @x
@@ -293,22 +289,20 @@ $ docker compose down
 For more information about Compose commands, see the [Compose CLI
 reference](../../compose/reference/_index.md).
 @y
-For more information about Compose commands, see the [Compose CLI
-reference](../../compose/reference/_index.md).
+Compose コマンドの詳細は [Compose CLI リファレンス](../../compose/reference/_index.md) を参照してください。
 @z
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
 In this section, you learned how you can containerize and run your Node.js
 application using Docker.
 @y
-In this section, you learned how you can containerize and run your Node.js
-application using Docker.
+本節では Docker を使って Node.js アプリケーションをコンテナー化して実行する方法について学びました。
 @z
 
 @x
@@ -318,29 +312,28 @@ Related information:
  - [.dockerignore file reference](../../engine/reference/builder.md#dockerignore-file)
  - [Docker Compose overview](../../compose/_index.md)
 @y
-Related information:
- - [Dockerfile reference](../../engine/reference/builder.md)
- - [Build with Docker guide](../../build/guide/index.md)
- - [.dockerignore file reference](../../engine/reference/builder.md#dockerignore-file)
- - [Docker Compose overview](../../compose/_index.md)
+関連情報
+ - [Dockerfile リファレンス](../../engine/reference/builder.md)
+ - [Docker ガイドを使ったビルド](../../build/guide/index.md)
+ - [.dockerignore ファイルリファレンス](../../engine/reference/builder.md#dockerignore-file)
+ - [Docker Compose 概要](../../compose/_index.md)
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
 In the next section, you'll learn how you can develop your application using
 containers.
 @y
-In the next section, you'll learn how you can develop your application using
-containers.
+次の節では、コンテナーを使ってアプリケーションの開発を行う方法を学びます。
 @z
 
 @x
 {{< button text="Develop your application" url="develop.md" >}}
 @y
-{{< button text="Develop your application" url="develop.md" >}}
+{{< button text="アプリケーションの開発" url="develop.md" >}}
 @z

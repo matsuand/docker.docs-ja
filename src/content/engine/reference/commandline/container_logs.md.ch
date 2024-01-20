@@ -8,6 +8,7 @@ datafile: docker_container_logs
 title: docker container logs
 aliases:
 - /edge/engine/reference/commandline/container_logs/
+- /engine/reference/commandline/logs/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_logs
 title: docker container logs
 aliases:
 - /edge/engine/reference/commandline/container_logs/
+- /engine/reference/commandline/logs/
 layout: cli
 ---
 @z

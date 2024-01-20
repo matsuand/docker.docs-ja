@@ -87,6 +87,7 @@ AC_CONFIG_FILES([
 	src/content/compose/environment-variables/Makefile
 	src/content/compose/images/Makefile
 	src/content/compose/install/Makefile
+	src/content/compose/intro/Makefile
 	src/content/compose/multiple-compose-files/Makefile
 	src/content/compose/reference/Makefile
 	src/content/config/Makefile
@@ -174,6 +175,8 @@ AC_CONFIG_FILES([
 	src/content/get-started/images/Makefile
 	src/content/guides/Makefile
 	src/content/guides/get-started/Makefile
+	src/content/guides/use-case/Makefile
+	src/content/guides/use-case/genai-pdf-bot/Makefile
 	src/content/guides/walkthroughs/Makefile
 	src/content/guides/walkthroughs/images/Makefile
 	src/content/includes/Makefile

@@ -244,11 +244,11 @@ Related information:
 @x
 - Deep dive into [bind mounts](../../storage/bind-mounts.md)
 - Learn about using bind mounts in Compose in the [Compose file reference](../../compose/compose-file/_index.md)
-- Explore using bind mounts via the CLI in the [Docker run reference](/engine/reference/run/#volume-shared-filesystems)
+- Explore using bind mounts via the CLI in the [Docker run reference](/engine/reference/commandline/container_run/#mount)
 @y
 - より詳しくは [バインドマウント](../../storage/bind-mounts.md) を参照してください。
 - Compose にてバインドマウントを利用する方法は [Compose ファイルリファレンス](../../compose/compose-file/_index.md) を確認してください。
-- CLI からバインドマウントを利用する方法は [Docker run リファレンス](/engine/reference/run/#volume-shared-filesystems) を確認してください。
+- CLI からバインドマウントを利用する方法は [Docker run リファレンス](/engine/reference/commandline/container_run/#mount) を確認してください。
 @z
 
 @x

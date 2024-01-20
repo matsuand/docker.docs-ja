@@ -8,6 +8,7 @@ datafile: docker_container_diff
 title: docker container diff
 aliases:
 - /edge/engine/reference/commandline/container_diff/
+- /engine/reference/commandline/diff/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_container_diff
 title: docker container diff
 aliases:
 - /edge/engine/reference/commandline/container_diff/
+- /engine/reference/commandline/diff/
 layout: cli
 ---
 @z

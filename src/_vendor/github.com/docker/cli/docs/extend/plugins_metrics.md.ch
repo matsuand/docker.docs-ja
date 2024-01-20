@@ -3,48 +3,24 @@
 
 @x
 ---
+title: Docker metrics collector plugins
 description: "Metrics plugins."
 keywords: "Examples, Usage, plugins, docker, documentation, user guide, metrics"
 ---
 @y
 ---
+title: Docker metrics collector plugins
 description: "Metrics plugins."
 keywords: "Examples, Usage, plugins, docker, documentation, user guide, metrics"
 ---
 @z
 
 @x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Docker metrics collector plugins
-@y
-# Docker metrics collector plugins
-@z
-
-@x
-Docker exposes internal metrics based on the prometheus format. Metrics plugins
+Docker exposes internal metrics based on the Prometheus format. Metrics plugins
 enable accessing these metrics in a consistent way by providing a Unix
 socket at a predefined path where the plugin can scrape the metrics.
 @y
-Docker exposes internal metrics based on the prometheus format. Metrics plugins
+Docker exposes internal metrics based on the Prometheus format. Metrics plugins
 enable accessing these metrics in a consistent way by providing a Unix
 socket at a predefined path where the plugin can scrape the metrics.
 @z
@@ -120,35 +96,43 @@ Signals to the plugin that the metrics socket is now available for scraping
 @z
 
 @x
-**Request**
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {}
 ```
 @y
-**Request**
 ```json
 {}
 ```
 @z
 
 @x
-The request has no playload.
+The request has no payload.
 @y
-The request has no playload.
+The request has no payload.
 @z
 
 @x
-**Response**
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @y
-**Response**
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @z
@@ -178,35 +162,43 @@ This may happen when the daemon is shutting down.
 @z
 
 @x
-**Request**
+Request:
+@y
+Request:
+@z
+
+@x
 ```json
 {}
 ```
 @y
-**Request**
 ```json
 {}
 ```
 @z
 
 @x
-The request has no playload.
+The request has no payload.
 @y
-The request has no playload.
+The request has no payload.
 @z
 
 @x
-**Response**
+Response:
+@y
+Response:
+@z
+
+@x
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @y
-**Response**
 ```json
 {
-	"Err": ""
+  "Err": ""
 }
 ```
 @z

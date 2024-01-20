@@ -4554,8 +4554,6 @@ definitions:
           - Type: "Log"
             Name: "json-file"
           - Type: "Log"
-            Name: "logentries"
-          - Type: "Log"
             Name: "splunk"
           - Type: "Log"
             Name: "syslog"
@@ -4614,8 +4612,6 @@ definitions:
           - Type: "Log"
             Name: "json-file"
           - Type: "Log"
-            Name: "logentries"
-          - Type: "Log"
             Name: "splunk"
           - Type: "Log"
             Name: "syslog"
@@ -7663,7 +7659,7 @@ definitions:
 
 @x
           Currently returned values are "linux" and "windows". A full list of
-          possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "linux"
       Architecture:
@@ -7672,7 +7668,7 @@ definitions:
           (`GOARCH`).
 @y
           Currently returned values are "linux" and "windows". A full list of
-          possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "linux"
       Architecture:
@@ -7682,14 +7678,14 @@ definitions:
 @z
 
 @x
-          A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "x86_64"
       NCPU:
         description: |
           The number of logical CPUs usable by the daemon.
 @y
-          A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
+          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
         type: "string"
         example: "x86_64"
       NCPU:
@@ -7843,39 +7839,29 @@ definitions:
       ServerVersion:
         description: |
           Version string of the daemon.
-@y
-          > **Note**: When part of a Swarm, nodes can both have _daemon_ labels,
-          > set through the daemon configuration, and _node_ labels, set from a
-          > manager node in the Swarm. Node labels are not included in this
-          > field. Node labels can be retrieved using the `/nodes/(id)` endpoint
-          > on a manager node in the Swarm.
-        type: "array"
-        items:
-          type: "string"
-        example: ["storage=ssd", "production"]
-      ExperimentalBuild:
-        description: |
-          Indicates if experimental features are enabled on the daemon.
-        type: "boolean"
-        example: true
-      ServerVersion:
-        description: |
-          Version string of the daemon.
-@z
-
-@x
-          > **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)
-          > returns the Swarm version instead of the daemon  version, for example
-          > `swarm/1.2.8`.
         type: "string"
         example: "17.06.0-ce"
       ClusterStore:
         description: |
           URL of the distributed storage backend.
 @y
-          > **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)
-          > returns the Swarm version instead of the daemon  version, for example
-          > `swarm/1.2.8`.
+          > **Note**: When part of a Swarm, nodes can both have _daemon_ labels,
+          > set through the daemon configuration, and _node_ labels, set from a
+          > manager node in the Swarm. Node labels are not included in this
+          > field. Node labels can be retrieved using the `/nodes/(id)` endpoint
+          > on a manager node in the Swarm.
+        type: "array"
+        items:
+          type: "string"
+        example: ["storage=ssd", "production"]
+      ExperimentalBuild:
+        description: |
+          Indicates if experimental features are enabled on the daemon.
+        type: "boolean"
+        example: true
+      ServerVersion:
+        description: |
+          Version string of the daemon.
         type: "string"
         example: "17.06.0-ce"
       ClusterStore:
@@ -8190,7 +8176,7 @@ definitions:
         type: "array"
         items:
           type: "string"
-        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "logentries", "splunk", "syslog"]
+        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "splunk", "syslog"]
 @y
       > **Note**: Only unmanaged (V1) plugins are included in this list.
       > V1 plugins are "lazily" loaded, and are not returned in this list
@@ -8220,7 +8206,7 @@ definitions:
         type: "array"
         items:
           type: "string"
-        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "logentries", "splunk", "syslog"]
+        example: ["awslogs", "fluentd", "gcplogs", "gelf", "journald", "json-file", "splunk", "syslog"]
 @z
 
 @x
@@ -9842,7 +9828,7 @@ paths:
                 StopSignal: "SIGTERM"
                 StopTimeout: 10
               Created: "2015-01-06T15:47:31.485331387Z"
-              Driver: "devicemapper"
+              Driver: "overlay2"
               HostConfig:
                 MaximumIOps: 0
                 MaximumIOBps: 0
@@ -10162,7 +10148,7 @@ paths:
                 StopSignal: "SIGTERM"
                 StopTimeout: 10
               Created: "2015-01-06T15:47:31.485331387Z"
-              Driver: "devicemapper"
+              Driver: "overlay2"
               HostConfig:
                 MaximumIOps: 0
                 MaximumIOBps: 0
@@ -16290,6 +16276,10 @@ paths:
             example:
               Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
               Warning: ""
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         403:
           description: "operation not supported for pre-defined networks"
           schema:
@@ -16398,6 +16388,10 @@ paths:
             example:
               Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
               Warning: ""
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         403:
           description: "operation not supported for pre-defined networks"
           schema:

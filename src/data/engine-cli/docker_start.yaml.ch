@@ -72,10 +72,6 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-examples: |-
-    ```console
-    $ docker start my_container
-    ```
 deprecated: false
 experimental: false
 experimentalcli: false
@@ -152,10 +148,6 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-examples: |-
-    ```console
-    $ docker start my_container
-    ```
 deprecated: false
 experimental: false
 experimentalcli: false

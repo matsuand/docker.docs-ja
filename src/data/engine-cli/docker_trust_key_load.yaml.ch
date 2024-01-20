@@ -5,12 +5,12 @@
 command: docker trust key load
 short: Load a private key file for signing
 long: |-
-    `docker trust key load` adds private keys to the local docker trust keystore.
+    `docker trust key load` adds private keys to the local Docker trust keystore.
 @y
 command: docker trust key load
 short: Load a private key file for signing
 long: |-
-    `docker trust key load` adds private keys to the local docker trust keystore.
+    `docker trust key load` adds private keys to the local Docker trust keystore.
 @z
 
 @x

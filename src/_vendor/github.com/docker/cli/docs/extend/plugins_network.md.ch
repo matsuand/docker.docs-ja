@@ -3,40 +3,16 @@
 
 @x
 ---
+title: Docker network driver plugins
 description: "Network driver plugins."
 keywords: "Examples, Usage, plugins, docker, documentation, user guide"
 ---
 @y
 ---
+title: Docker network driver plugins
 description: "Network driver plugins."
 keywords: "Examples, Usage, plugins, docker, documentation, user guide"
 ---
-@z
-
-@x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
-# Docker network driver plugins
-@y
-# Docker network driver plugins
 @z
 
 @x
@@ -68,19 +44,19 @@ kind of protocol.
 @z
 
 @x
-## Network plugins and swarm mode
+## Network plugins and Swarm mode
 @y
-## Network plugins and swarm mode
+## Network plugins and Swarm mode
 @z
 
 @x
-[Legacy plugins](legacy_plugins.md) do not work in swarm mode. However,
-plugins written using the [v2 plugin system](index.md) do work in swarm mode, as
-long as they are installed on each swarm worker node.
+[Legacy plugins](legacy_plugins.md) do not work in Swarm mode. However,
+plugins written using the [v2 plugin system](index.md) do work in Swarm mode, as
+long as they are installed on each Swarm worker node.
 @y
-[Legacy plugins](legacy_plugins.md) do not work in swarm mode. However,
-plugins written using the [v2 plugin system](index.md) do work in swarm mode, as
-long as they are installed on each swarm worker node.
+[Legacy plugins](legacy_plugins.md) do not work in Swarm mode. However,
+plugins written using the [v2 plugin system](index.md) do work in Swarm mode, as
+long as they are installed on each Swarm worker node.
 @z
 
 @x
@@ -152,12 +128,12 @@ $ docker run --network=mynet busybox top
 @x
 Network plugins are written by third parties, and are published by those
 third parties, either on
-[Docker Store](https://store.docker.com/search?category=network&q=&type=plugin)
+[Docker Hub](https://hub.docker.com/search?q=&type=plugin)
 or on the third party's site.
 @y
 Network plugins are written by third parties, and are published by those
 third parties, either on
-[Docker Store](https://store.docker.com/search?category=network&q=&type=plugin)
+[Docker Hub](https://hub.docker.com/search?q=&type=plugin)
 or on the third party's site.
 @z
 

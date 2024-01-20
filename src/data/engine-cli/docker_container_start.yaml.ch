@@ -5,7 +5,7 @@
 command: docker container start
 aliases: docker container start, docker start
 short: Start one or more stopped containers
-long: See [docker start](start.md) for more information.
+long: Start one or more stopped containers
 usage: docker container start [OPTIONS] CONTAINER [CONTAINER...]
 pname: docker container
 plink: docker_container.yaml
@@ -72,6 +72,10 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+examples: |-
+    ```console
+    $ docker start my_container
+    ```
 deprecated: false
 experimental: false
 experimentalcli: false
@@ -81,7 +85,7 @@ swarm: false
 command: docker container start
 aliases: docker container start, docker start
 short: Start one or more stopped containers
-long: See [docker start](start.md) for more information.
+long: Start one or more stopped containers
 usage: docker container start [OPTIONS] CONTAINER [CONTAINER...]
 pname: docker container
 plink: docker_container.yaml
@@ -148,6 +152,10 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+examples: |-
+    ```console
+    $ docker start my_container
+    ```
 deprecated: false
 experimental: false
 experimentalcli: false

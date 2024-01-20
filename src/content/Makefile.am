@@ -10,6 +10,7 @@ bases = \
 	_index.md            \
 	get-docker.md        \
 	glossary.md          \
+	manuals.md           \
 	reference.md         \
 	registry.md          \
 	release-lifecycle.md \

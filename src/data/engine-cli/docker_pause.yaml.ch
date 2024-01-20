@@ -5,30 +5,7 @@
 command: docker pause
 aliases: docker container pause, docker pause
 short: Pause all processes within one or more containers
-long: |-
-    The `docker pause` command suspends all processes in the specified containers.
-    On Linux, this uses the freezer cgroup. Traditionally, when suspending a process
-    the `SIGSTOP` signal is used, which is observable by the process being suspended.
-    With the freezer cgroup the process is unaware, and unable to capture,
-    that it is being suspended, and subsequently resumed. On Windows, only Hyper-V
-    containers can be paused.
-@y
-command: docker pause
-aliases: docker container pause, docker pause
-short: Pause all processes within one or more containers
-long: |-
-    The `docker pause` command suspends all processes in the specified containers.
-    On Linux, this uses the freezer cgroup. Traditionally, when suspending a process
-    the `SIGSTOP` signal is used, which is observable by the process being suspended.
-    With the freezer cgroup the process is unaware, and unable to capture,
-    that it is being suspended, and subsequently resumed. On Windows, only Hyper-V
-    containers can be paused.
-@z
-
-@x
-    See the
-    [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
-    for further details.
+long: Pause all processes within one or more containers
 usage: docker pause CONTAINER [CONTAINER...]
 pname: docker
 plink: docker.yaml
@@ -43,19 +20,16 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-examples: |-
-    ```console
-    $ docker pause my_container
-    ```
 deprecated: false
 experimental: false
 experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    See the
-    [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
-    for further details.
+command: docker pause
+aliases: docker container pause, docker pause
+short: Pause all processes within one or more containers
+long: Pause all processes within one or more containers
 usage: docker pause CONTAINER [CONTAINER...]
 pname: docker
 plink: docker.yaml
@@ -70,10 +44,6 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-examples: |-
-    ```console
-    $ docker pause my_container
-    ```
 deprecated: false
 experimental: false
 experimentalcli: false

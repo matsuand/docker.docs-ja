@@ -207,16 +207,16 @@ Labels on Swarm nodes and services can be updated dynamically.
 
 @x
   - [Adding labels to images](../engine/reference/builder.md#label)
-  - [Overriding a container's labels at runtime](../engine/reference/commandline/run.md#label)
+  - [Overriding a container's labels at runtime](../engine/reference/commandline/container_run.md#label)
   - [Inspecting labels on images or containers](../engine/reference/commandline/inspect.md)
-  - [Filtering images by label](../engine/reference/commandline/images.md#filter)
-  - [Filtering containers by label](../engine/reference/commandline/ps.md#filter)
+  - [Filtering images by label](../engine/reference/commandline/image_ls.md#filter)
+  - [Filtering containers by label](../engine/reference/commandline/container_ls.md#filter)
 @y
   - [Adding labels to images](../engine/reference/builder.md#label)
-  - [Overriding a container's labels at runtime](../engine/reference/commandline/run.md#label)
+  - [Overriding a container's labels at runtime](../engine/reference/commandline/container_run.md#label)
   - [Inspecting labels on images or containers](../engine/reference/commandline/inspect.md)
-  - [Filtering images by label](../engine/reference/commandline/images.md#filter)
-  - [Filtering containers by label](../engine/reference/commandline/ps.md#filter)
+  - [Filtering images by label](../engine/reference/commandline/image_ls.md#filter)
+  - [Filtering containers by label](../engine/reference/commandline/container_ls.md#filter)
 @z
 
 @x
@@ -227,10 +227,10 @@ Labels on Swarm nodes and services can be updated dynamically.
 
 @x
   - [Adding labels to a Docker daemon at runtime](../engine/reference/commandline/dockerd.md)
-  - [Inspecting a Docker daemon's labels](../engine/reference/commandline/info.md)
+  - [Inspecting a Docker daemon's labels](../engine/reference/commandline/system_info.md)
 @y
   - [Adding labels to a Docker daemon at runtime](../engine/reference/commandline/dockerd.md)
-  - [Inspecting a Docker daemon's labels](../engine/reference/commandline/info.md)
+  - [Inspecting a Docker daemon's labels](../engine/reference/commandline/system_info.md)
 @z
 
 @x

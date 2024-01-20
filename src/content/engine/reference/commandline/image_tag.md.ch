@@ -8,6 +8,7 @@ datafile: docker_image_tag
 title: docker image tag
 aliases:
 - /edge/engine/reference/commandline/image_tag/
+- /engine/reference/commandline/tag/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_image_tag
 title: docker image tag
 aliases:
 - /edge/engine/reference/commandline/image_tag/
+- /engine/reference/commandline/tag/
 layout: cli
 ---
 @z

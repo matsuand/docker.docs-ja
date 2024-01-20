@@ -6,7 +6,7 @@ command: docker system df
 short: Show docker disk usage
 long: |-
     The `docker system df` command displays information regarding the
-    amount of disk space used by the docker daemon.
+    amount of disk space used by the Docker daemon.
 usage: docker system df [OPTIONS]
 pname: docker system
 plink: docker_system.yaml
@@ -49,13 +49,13 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    By default the command will just show a summary of the data used:
+    By default the command displays a summary of the data used:
 @y
 command: docker system df
 short: Show docker disk usage
 long: |-
     The `docker system df` command displays information regarding the
-    amount of disk space used by the docker daemon.
+    amount of disk space used by the Docker daemon.
 usage: docker system df [OPTIONS]
 pname: docker system
 plink: docker_system.yaml
@@ -98,7 +98,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    By default the command will just show a summary of the data used:
+    By default the command displays a summary of the data used:
 @z
 
 @x
@@ -124,9 +124,9 @@ examples: |-
 @z
 
 @x
-    A more detailed view can be requested using the `-v, --verbose` flag:
+    Use the `-v, --verbose` flag to get more detailed information:
 @y
-    A more detailed view can be requested using the `-v, --verbose` flag:
+    Use the `-v, --verbose` flag to get more detailed information:
 @z
 
 @x
@@ -195,18 +195,18 @@ examples: |-
 
 @x
     * `SHARED SIZE` is the amount of space that an image shares with another one (i.e. their common data)
-    * `UNIQUE SIZE` is the amount of space that is only used by a given image
-    * `SIZE` is the virtual size of the image, it is the sum of `SHARED SIZE` and `UNIQUE SIZE`
+    * `UNIQUE SIZE` is the amount of space that's only used by a given image
+    * `SIZE` is the virtual size of the image, it's the sum of `SHARED SIZE` and `UNIQUE SIZE`
 @y
     * `SHARED SIZE` is the amount of space that an image shares with another one (i.e. their common data)
-    * `UNIQUE SIZE` is the amount of space that is only used by a given image
-    * `SIZE` is the virtual size of the image, it is the sum of `SHARED SIZE` and `UNIQUE SIZE`
+    * `UNIQUE SIZE` is the amount of space that's only used by a given image
+    * `SIZE` is the virtual size of the image, it's the sum of `SHARED SIZE` and `UNIQUE SIZE`
 @z
 
 @x
     > **Note**
     >
-    > Network information is not shown because it does not consume disk space.
+    > Network information isn't shown, because it doesn't consume disk space.
 deprecated: false
 min_api_version: "1.25"
 experimental: false
@@ -216,7 +216,7 @@ swarm: false
 @y
     > **Note**
     >
-    > Network information is not shown because it does not consume disk space.
+    > Network information isn't shown, because it doesn't consume disk space.
 deprecated: false
 min_api_version: "1.25"
 experimental: false

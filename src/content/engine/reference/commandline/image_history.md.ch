@@ -8,6 +8,7 @@ datafile: docker_image_history
 title: docker image history
 aliases:
 - /edge/engine/reference/commandline/image_history/
+- /engine/reference/commandline/history/
 layout: cli
 ---
 @y
@@ -17,6 +18,7 @@ datafile: docker_image_history
 title: docker image history
 aliases:
 - /edge/engine/reference/commandline/image_history/
+- /engine/reference/commandline/history/
 layout: cli
 ---
 @z

@@ -316,7 +316,8 @@ bases = \
 	v1.40.md  \
 	v1.41.md  \
 	v1.42.md  \
-	v1.43.md
+	v1.43.md  \
+	v1.44.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

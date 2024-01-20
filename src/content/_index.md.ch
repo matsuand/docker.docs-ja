@@ -37,7 +37,7 @@ grid:
   image:
     dark: /assets/images/manuals-dark.svg
     light: /assets/images/manuals.svg
-  link: /desktop/
+  link: /manuals/
   description: Browse the manuals and learn how to use Docker products.
 - title: Reference
   image:
@@ -80,7 +80,7 @@ grid:
   image:
     dark: assets/images/manuals-dark.svg
     light: assets/images/manuals.svg
-  link: desktop/
+  link: manuals/
   description: マニュアルを見ながら Docker 製品の利用方法について学びます。
 - title: リファレンス
   image:

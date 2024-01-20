@@ -629,10 +629,10 @@ examples: |-
 
 @x
     The `-q ` or `--quiet` option only shows IDs of the tasks in the stack.
-    This example outputs all task IDs of the "voting" stack;
+    This example outputs all task IDs of the `voting` stack:
 @y
     The `-q ` or `--quiet` option only shows IDs of the tasks in the stack.
-    This example outputs all task IDs of the "voting" stack;
+    This example outputs all task IDs of the `voting` stack:
 @z
 
 @x
@@ -664,11 +664,11 @@ examples: |-
 @x
     This option can be used to perform batch operations. For example, you can use
     the task IDs as input for other commands, such as `docker inspect`. The
-    following example inspects all tasks of the "voting" stack;
+    following example inspects all tasks of the `voting` stack:
 @y
     This option can be used to perform batch operations. For example, you can use
     the task IDs as input for other commands, such as `docker inspect`. The
-    following example inspects all tasks of the "voting" stack;
+    following example inspects all tasks of the `voting` stack:
 @z
 
 @x

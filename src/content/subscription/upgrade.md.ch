@@ -64,18 +64,6 @@ When you upgrade to a paid subscription, you immediately have access to all the 
 @z
 
 @x
-    >**Tip**
-    >
-    > To upgrade to a Business subscription, [contact support](https://hub.docker.com/support/contact/).
-    { .tip }
-@y
-    >**Tip**
-    >
-    > To upgrade to a Business subscription, [contact support](https://hub.docker.com/support/contact/).
-    { .tip }
-@z
-
-@x
 6. Follow the on-screen instructions.
 @y
 6. Follow the on-screen instructions.

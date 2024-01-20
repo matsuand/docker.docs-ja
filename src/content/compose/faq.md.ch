@@ -88,9 +88,9 @@ Version two of the Docker Compose command-line binary was announced in 2020, is 
 @z
 
 @x
-For further information, see [History and development of Compose](history.md).
+For further information, see [History and development of Compose](intro/history.md).
 @y
-For further information, see [History and development of Compose](history.md).
+For further information, see [History and development of Compose](intro/history.md).
 @z
 
 @x
