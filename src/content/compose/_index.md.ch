@@ -10,48 +10,6 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
   docker compose documentation, using docker compose, compose container, docker compose
   service
 title: Docker Compose overview
-grid:
-- title: Why use Compose?
-  description: Understand Docker Compose's key benefits
-  icon: feature_search
-  link: /compose/intro/features-uses/
-- title: Install Compose
-  description: Follow the instructions on how to install Docker Compose.
-  icon: download
-  link: /compose/install
-- title: Try Compose
-  description: Learn the key concepts of Docker Compose whilst building a simple Python
-    web application.
-  icon: explore
-  link: /compose/gettingstarted
-- title: How Compose works 
-  description: Understand how Compose works
-  icon: category
-  link: /compose/compose-application-model/
-- title: View the release notes
-  description: Find out about the latest enhancements and bug fixes.
-  icon: note_add
-  link: /compose/release-notes
-- title: Understand key features of Compose
-  description: Understand its key features and explore common use cases.
-  icon: category
-  link: /compose/features-uses/
-- title: Explore the Compose file reference
-  description: Find information on defining services, networks, and volumes for a
-    Docker application.
-  icon: feature_search
-  link: /compose/compose-file
-- title: Browse common FAQs
-  description: Explore general FAQs and find out how to give feedback.
-  icon: help
-  link: /compose/faq
-aliases:
-- /compose/cli-command/
-- /compose/networking/swarm/
-- /compose/overview/
-- /compose/swarm/
-- /compose/completion/
----
 @y
 ---
 description: Learn how to use Docker Compose to define and run multi-container applications
@@ -60,41 +18,107 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
   docker compose documentation, using docker compose, compose container, docker compose
   service
 title: Docker Compose 概要
+@z
+
+@x
+grid:
+- title: Why use Compose?
+  description: Understand Docker Compose's key benefits
+  icon: feature_search
+  link: /compose/intro/features-uses/
+@y
 grid:
 - title: Compose 利用はなぜ？
   description: Understand Docker Compose's key benefits
   icon: feature_search
   link: /compose/intro/features-uses/
+@z
+
+@x
+- title: How Compose works 
+  description: Understand how Compose works
+  icon: category
+  link: /compose/compose-application-model/
+@y
+- title: Compose はどう動くのか
+  description: Understand how Compose works
+  icon: category
+  link: /compose/compose-application-model/
+@z
+
+@x
+- title: Install Compose
+  description: Follow the instructions on how to install Docker Compose.
+  icon: download
+  link: /compose/install
+@y
 - title: Compose のインストール
   description: Follow the instructions on how to install Docker Compose.
   icon: download
   link: __SUBDIR__/compose/install
+@z
+
+@x
+- title: Try Compose
+  description: Learn the key concepts of Docker Compose whilst building a simple Python
+    web application.
+  icon: explore
+  link: /compose/gettingstarted
+@y
 - title: Compose を試す
   description: Learn the key concepts of Docker Compose whilst building a simple Python
     web application.
   icon: explore
   link: __SUBDIR__/compose/gettingstarted
-- title: Compose はどう動くのか
-  description: Understand how Compose works
-  icon: category
-  link: /compose/compose-application-model/
+@z
+
+@x
+- title: View the release notes
+  description: Find out about the latest enhancements and bug fixes.
+  icon: note_add
+  link: /compose/release-notes
+@y
 - title: リリースノートの確認
   description: Find out about the latest enhancements and bug fixes.
   icon: note_add
   link: __SUBDIR__/compose/release-notes
-- title: Understand key features of Compose
-  description: Understand its key features and explore common use cases.
-  icon: category
-  link: __SUBDIR__/compose/features-uses/
+@z
+
+@x
 - title: Explore the Compose file reference
   description: Find information on defining services, networks, and volumes for a
     Docker application.
-  icon: feature_search
+  icon: polyline
+  link: /compose/compose-file
+@y
+- title: Explore the Compose file reference
+  description: Find information on defining services, networks, and volumes for a
+    Docker application.
+  icon: polyline
   link: __SUBDIR__/compose/compose-file
+@z
+
+@x
+- title: Browse common FAQs
+  description: Explore general FAQs and find out how to give feedback.
+  icon: help
+  link: /compose/faq
+@y
 - title: Browse common FAQs
   description: Explore general FAQs and find out how to give feedback.
   icon: help
   link: __SUBDIR__/compose/faq
+@z
+
+@x
+aliases:
+- /compose/cli-command/
+- /compose/networking/swarm/
+- /compose/overview/
+- /compose/swarm/
+- /compose/completion/
+---
+@y
 aliases:
 - /compose/cli-command/
 - /compose/networking/swarm/
