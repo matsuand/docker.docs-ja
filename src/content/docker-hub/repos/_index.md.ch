@@ -3,7 +3,7 @@
 
 @x
 ---
-description: Learn how to use repositories on Docker Hub
+description: Learn how to manage repositories on Docker Hub
 keywords: Docker, docker, trusted, registry, accounts, plans, Dockerfile, Docker Hub,
   webhooks, docs, documentation, manage, repos
 title: Manage repositories
@@ -12,7 +12,7 @@ aliases:
 ---
 @y
 ---
-description: Learn how to use repositories on Docker Hub
+description: Learn how to manage repositories on Docker Hub
 keywords: Docker, docker, trusted, registry, accounts, plans, Dockerfile, Docker Hub,
   webhooks, docs, documentation, manage, repos
 title: Manage repositories
@@ -68,11 +68,11 @@ When consolidating personal repositories, you can pull private images from the i
 @z
 
 @x
-1. Navigate to [Docker Hub](https://hub.docker.com) create a new Docker ID and select the personal subscription.
+1. Navigate to [Docker Hub](https://hub.docker.com) create a new Docker ID and select a personal subscription.
 2. Using `docker login` from the CLI, sign in using your original Docker ID and pull your private images.
 3. Tag your private images with your newly created Docker ID, for example:
 @y
-1. Navigate to [Docker Hub](https://hub.docker.com) create a new Docker ID and select the personal subscription.
+1. Navigate to [Docker Hub](https://hub.docker.com) create a new Docker ID and select a personal subscription.
 2. Using `docker login` from the CLI, sign in using your original Docker ID and pull your private images.
 3. Tag your private images with your newly created Docker ID, for example:
 @z

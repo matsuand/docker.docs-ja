@@ -22,54 +22,6 @@ title: Compose FAQs
 @z
 
 @x
-### How do I get help?
-@y
-### How do I get help?
-@z
-
-@x
-Docker Compose is under active development. If you need help, would like to
-contribute, or simply want to talk about the project with like-minded
-individuals, we have a number of open channels for communication.
-@y
-Docker Compose is under active development. If you need help, would like to
-contribute, or simply want to talk about the project with like-minded
-individuals, we have a number of open channels for communication.
-@z
-
-@x
-- To report bugs or file feature requests, use the [issue tracker on Github](https://github.com/docker/compose/issues).
-@y
-- To report bugs or file feature requests, use the [issue tracker on Github](https://github.com/docker/compose/issues).
-@z
-
-@x
-- To talk about the project with people in real time, join the
-  `#docker-compose` channel on the [Docker Community Slack](https://dockr.ly/slack).
-@y
-- To talk about the project with people in real time, join the
-  `#docker-compose` channel on the [Docker Community Slack](https://dockr.ly/slack).
-@z
-
-@x
-- To contribute code submit a [pull request on Github](https://github.com/docker/compose/pulls).
-@y
-- To contribute code submit a [pull request on Github](https://github.com/docker/compose/pulls).
-@z
-
-@x
-### Where can I find example Compose files?
-@y
-### Where can I find example Compose files?
-@z
-
-@x
-There are [many examples of Compose files on GitHub](https://github.com/docker/awesome-compose).
-@y
-There are [many examples of Compose files on GitHub](https://github.com/docker/awesome-compose).
-@z
-
-@x
 ### What is the difference between `docker compose` and `docker-compose`
 @y
 ### What is the difference between `docker compose` and `docker-compose`
@@ -239,18 +191,6 @@ system (like [s6](https://skarnet.org/software/s6/)) or a signal proxy (like
 [dumb-init](https://github.com/Yelp/dumb-init) or
 [tini](https://github.com/krallin/tini)).  Either of these wrappers takes care of
 handling `SIGTERM` properly.
-@z
-
-@x
-### Can I control service startup order?
-@y
-### Can I control service startup order?
-@z
-
-@x
-Yes, see [Controlling startup order](startup-order.md).
-@y
-Yes, see [Controlling startup order](startup-order.md).
 @z
 
 @x

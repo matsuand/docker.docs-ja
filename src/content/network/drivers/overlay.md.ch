@@ -102,41 +102,43 @@ apply to overlay networks used by standalone containers.
 @z
 
 @x
-> **Prerequisites**:
->
-> - Firewall rules for Docker daemons using overlay networks
->
->   You need the following ports open to traffic to and from each Docker host
->   participating on an overlay network:
->
->   - TCP port 2377 for cluster management communications
->   - TCP and UDP port 7946 for communication among nodes
->   - UDP port 4789 for overlay network traffic
->
-> - Before you can create an overlay network, you need to either initialize your
->   Docker daemon as a swarm manager using `docker swarm init` or join it to an
->   existing swarm using `docker swarm join`. Either of these creates the default
->   `ingress` overlay network which is used by swarm services by default. You need
->   to do this even if you never plan to use swarm services. Afterward, you can
->   create additional user-defined overlay networks.
+Take note of the following prerequisites:
 @y
-> **Prerequisites**:
->
-> - Firewall rules for Docker daemons using overlay networks
->
->   You need the following ports open to traffic to and from each Docker host
->   participating on an overlay network:
->
->   - TCP port 2377 for cluster management communications
->   - TCP and UDP port 7946 for communication among nodes
->   - UDP port 4789 for overlay network traffic
->
-> - Before you can create an overlay network, you need to either initialize your
->   Docker daemon as a swarm manager using `docker swarm init` or join it to an
->   existing swarm using `docker swarm join`. Either of these creates the default
->   `ingress` overlay network which is used by swarm services by default. You need
->   to do this even if you never plan to use swarm services. Afterward, you can
->   create additional user-defined overlay networks.
+Take note of the following prerequisites:
+@z
+
+@x
+- Firewall rules for Docker daemons using overlay networks.
+@y
+- Firewall rules for Docker daemons using overlay networks.
+@z
+
+@x
+  You need the following ports open to traffic to and from each Docker host participating on an overlay network:
+  - TCP port 2377 for cluster management communications
+  - TCP and UDP port 7946 for communication among nodes
+  - UDP port 4789 for overlay network traffic
+@y
+  You need the following ports open to traffic to and from each Docker host participating on an overlay network:
+  - TCP port 2377 for cluster management communications
+  - TCP and UDP port 7946 for communication among nodes
+  - UDP port 4789 for overlay network traffic
+@z
+
+@x
+- Before you can create an overlay network, you need to either initialize your
+  Docker daemon as a swarm manager using `docker swarm init` or join it to an
+  existing swarm using `docker swarm join`. Either of these creates the default
+  `ingress` overlay network which swarm services use by default. You need
+  to do this even if you never plan to use swarm services. Afterward, you can
+  create additional user-defined overlay networks.
+@y
+- Before you can create an overlay network, you need to either initialize your
+  Docker daemon as a swarm manager using `docker swarm init` or join it to an
+  existing swarm using `docker swarm join`. Either of these creates the default
+  `ingress` overlay network which swarm services use by default. You need
+  to do this even if you never plan to use swarm services. Afterward, you can
+  create additional user-defined overlay networks.
 @z
 
 @x
@@ -158,11 +160,11 @@ $ docker network create -d overlay my-overlay
 @z
 
 @x
-To create an overlay network which can be used by swarm services **or**
+To create an overlay network which can be used by swarm services or
 standalone containers to communicate with other standalone containers running on
 other Docker daemons, add the `--attachable` flag:
 @y
-To create an overlay network which can be used by swarm services **or**
+To create an overlay network which can be used by swarm services or
 standalone containers to communicate with other standalone containers running on
 other Docker daemons, add the `--attachable` flag:
 @z
@@ -228,16 +230,16 @@ automatically rotate the keys every 12 hours.
 @z
 
 @x
-> **Do not attach Windows nodes to encrypted overlay networks.**
+> **Warning**
 >
-> Overlay network encryption is not supported on Windows. If a Windows node
+> Do not attach Windows nodes to encrypted overlay networks. Overlay network encryption is not supported on Windows. If a Windows node
 > attempts to connect to an encrypted overlay network, no error is detected but
 > the node cannot communicate.
 { .warning }
 @y
-> **Do not attach Windows nodes to encrypted overlay networks.**
+> **Warning**
 >
-> Overlay network encryption is not supported on Windows. If a Windows node
+> Do not attach Windows nodes to encrypted overlay networks. Overlay network encryption is not supported on Windows. If a Windows node
 > attempts to connect to an encrypted overlay network, no error is detected but
 > the node cannot communicate.
 { .warning }
@@ -300,13 +302,11 @@ remove the `ingress` network.
 @x
 During the time that no `ingress` network exists, existing services which do not
 publish ports continue to function but are not load-balanced. This affects
-services which publish ports, such as a WordPress service which publishes port
-80.
+services which publish ports.
 @y
 During the time that no `ingress` network exists, existing services which do not
 publish ports continue to function but are not load-balanced. This affects
-services which publish ports, such as a WordPress service which publishes port
-80.
+services which publish ports.
 @z
 
 @x
@@ -384,11 +384,15 @@ services which publish ports, such as a WordPress service which publishes port
 @z
 
 @x
-    > **Note**: You can name your `ingress` network something other than
+    > **Note**
+    >
+    > You can name your `ingress` network something other than
     > `ingress`, but you can only have one. An attempt to create a second one
     > fails.
 @y
-    > **Note**: You can name your `ingress` network something other than
+    > **Note**
+    >
+    > You can name your `ingress` network something other than
     > `ingress`, but you can only have one. An attempt to create a second one
     > fails.
 @z
@@ -490,11 +494,9 @@ from the swarm.
 @z
 
 @x
-5.  Initialize or join the swarm. Since the bridge already exists, Docker does
-    not create it with automatic settings.
+5.  Initialize or join the swarm. Since the bridge already exists, Docker doesn't create it with automatic settings.
 @y
-5.  Initialize or join the swarm. Since the bridge already exists, Docker does
-    not create it with automatic settings.
+5.  Initialize or join the swarm. Since the bridge already exists, Docker doesn't create it with automatic settings.
 @z
 
 @x
@@ -512,14 +514,14 @@ from the swarm.
 @x
 Swarm services connected to the same overlay network effectively expose all
 ports to each other. For a port to be accessible outside of the service, that
-port must be _published_ using the `-p` or `--publish` flag on `docker service
+port must be published using the `-p` or `--publish` flag on `docker service
 create` or `docker service update`. Both the legacy colon-separated syntax and
 the newer comma-separated value syntax are supported. The longer syntax is
 preferred because it is somewhat self-documenting.
 @y
 Swarm services connected to the same overlay network effectively expose all
 ports to each other. For a port to be accessible outside of the service, that
-port must be _published_ using the `-p` or `--publish` flag on `docker service
+port must be published using the `-p` or `--publish` flag on `docker service
 create` or `docker service update`. Both the legacy colon-separated syntax and
 the newer comma-separated value syntax are supported. The longer syntax is
 preferred because it is somewhat self-documenting.

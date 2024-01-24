@@ -12,7 +12,7 @@ aliases:
 @y
 ---
 title: Docker Build Cloud
-description: Get started with Docker Build Cloud
+description: Docker Build Cloud を使ってはじめよう。
 keywords: build, cloud, cloud build, remote builder
 aliases:
   - /build/hydrobuild/
@@ -34,7 +34,7 @@ remote build cache, ensuring fast builds anywhere and for all team members.
 @x
 ## How Docker Build Cloud works
 @y
-## How Docker Build Cloud works
+## Docker Build Cloud はどのように動作するか {#how-docker-build-cloud-works}
 @z
 
 @x
@@ -114,7 +114,7 @@ infrastructure. Just connect to your builders, and start building.
 @x
 ## Get Docker Build Cloud
 @y
-## Get Docker Build Cloud
+## Docker Build Cloud の入手 {#get-docker-build-cloud}
 @z
 
 @x
@@ -162,7 +162,7 @@ subscriptions and features](../../subscription/build-details.md).
 @x
 ## Frequently asked questions
 @y
-## Frequently asked questions
+## よくたずねられる質問 {#frequently-asked-questions}
 @z
 
 @x

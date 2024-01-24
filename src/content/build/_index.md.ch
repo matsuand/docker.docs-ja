@@ -49,29 +49,29 @@ aliases:
 ---
 @y
 ---
-title: Overview of Docker Build
-description: Introduction and overview of Docker Build
+title: Docker Build 概要
+description: Docker Build の導入と概要です。
 keywords: build, buildx, buildkit
 grid:
-- title: Packaging your software
+- title: ソフトウェアのパッケージング
   description: 'Build and package your application to run it anywhere: locally or
     in the cloud.'
   icon: inventory_2
   link: __SUBDIR__/build/building/packaging
-- title: Multi-stage builds
+- title: マルチステージビルド
   description: Keep your images small and secure with minimal dependencies.
   icon: stairs
   link: __SUBDIR__/build/building/multi-stage
-- title: Multi-platform images
+- title: マルチプラットフォームイメージ
   description: Build, push, pull, and run images seamlessly on different computer
     architectures.
   icon: content_copy
   link: __SUBDIR__/build/building/multi-platform/
-- title: Architecture
+- title: アーキテクチャー
   description: Explore BuildKit, the open source build engine.
   icon: construction
   link: __SUBDIR__/build/buildkit/
-- title: Build drivers
+- title: Build ドライバー
   description: Configure where and how you run your builds.
   icon: engineering
   link: __SUBDIR__/build/drivers/
@@ -79,7 +79,7 @@ grid:
   description: Export any artifact you like, not just Docker images.
   icon: output
   link: __SUBDIR__/build/exporters
-- title: Build caching
+- title: Build キャッシュ処理
   description: Avoid unnecessary repetitions of costly operations, such as package
     installs.
   icon: cycle

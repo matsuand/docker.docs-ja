@@ -83,11 +83,11 @@ Clone the sample application. Open a terminal, change directory to a directory t
 
 @x
 ```console
-$ git clone https://github.com/docker/docker-genai-sample
+$ git clone https://github.com/craig-osterhout/docker-genai-sample
 ```
 @y
 ```console
-$ git clone https://github.com/docker/docker-genai-sample
+$ git clone https://github.com/craig-osterhout/docker-genai-sample
 ```
 @z
 

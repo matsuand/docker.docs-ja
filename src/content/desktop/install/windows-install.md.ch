@@ -7,7 +7,7 @@ description: Get started with Docker for Windows. This guide covers system requi
   where to download, and instructions on how to install and update.
 keywords: docker for windows, docker windows, docker desktop for windows, docker on
   windows, install docker windows, install docker on windows, docker windows 10, docker
-  run on windows, installing docker for windows
+  run on windows, installing docker for windows, windows containers, wsl, hyper-v
 title: Install Docker Desktop on Windows
 aliases:
 - /desktop/windows/install/
@@ -28,7 +28,7 @@ description: Get started with Docker for Windows. This guide covers system requi
   where to download, and instructions on how to install and update.
 keywords: docker for windows, docker windows, docker desktop for windows, docker on
   windows, install docker windows, install docker on windows, docker windows 10, docker
-  run on windows, installing docker for windows
+  run on windows, installing docker for windows, windows containers, wsl, hyper-v
 title: Windows への Docker Desktop のインストール
 aliases:
 - /desktop/windows/install/
@@ -262,29 +262,93 @@ For more information, see [Running Docker Desktop in a VM or VDI environment](..
 @z
 
 @x
-{{< accordion title="About Windows containers" >}}
+{{< accordion title="How do I switch between Windows and Linux containers?" >}}
 @y
-{{< accordion title="About Windows containers" >}}
+{{< accordion title="How do I switch between Windows and Linux containers?" >}}
 @z
 
 @x
-Looking for information on using Windows containers?
+From the Docker Desktop menu, you can toggle which daemon (Linux or Windows)
+the Docker CLI talks to. Select **Switch to Windows containers** to use Windows
+containers, or select **Switch to Linux containers** to use Linux containers
+(the default).
 @y
-Looking for information on using Windows containers?
+From the Docker Desktop menu, you can toggle which daemon (Linux or Windows)
+the Docker CLI talks to. Select **Switch to Windows containers** to use Windows
+containers, or select **Switch to Linux containers** to use Linux containers
+(the default).
 @z
 
 @x
-* [Switch between Windows and Linux containers](../faqs/windowsfaqs.md#how-do-i-switch-between-windows-and-linux-containers)
-  describes how you can toggle between Linux and Windows containers in Docker Desktop and points you to the tutorial mentioned below.
-- [Getting Started with Windows Containers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/quick-start/set-up-environment?tabs=dockerce)
-- Docker Container Platform for Windows [articles and blog
-  posts](https://www.docker.com/microsoft/) on the Docker website.
+For more information on Windows containers, refer to the following documentation:
 @y
-* [Switch between Windows and Linux containers](../faqs/windowsfaqs.md#how-do-i-switch-between-windows-and-linux-containers)
-  describes how you can toggle between Linux and Windows containers in Docker Desktop and points you to the tutorial mentioned below.
-- [Getting Started with Windows Containers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/quick-start/set-up-environment?tabs=dockerce)
-- Docker Container Platform for Windows [articles and blog
-  posts](https://www.docker.com/microsoft/) on the Docker website.
+For more information on Windows containers, refer to the following documentation:
+@z
+
+@x
+- Microsoft documentation on [Windows containers](https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/index).
+@y
+- Microsoft documentation on [Windows containers](https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/index).
+@z
+
+@x
+- [Build and Run Your First Windows Server Container (Blog Post)](https://www.docker.com/blog/build-your-first-docker-windows-server-container/)
+  gives a quick tour of how to build and run native Docker Windows containers on Windows 10 and Windows Server 2016 evaluation releases.
+@y
+- [Build and Run Your First Windows Server Container (Blog Post)](https://www.docker.com/blog/build-your-first-docker-windows-server-container/)
+  gives a quick tour of how to build and run native Docker Windows containers on Windows 10 and Windows Server 2016 evaluation releases.
+@z
+
+@x
+- [Getting Started with Windows Containers (Lab)](https://github.com/docker/labs/blob/master/windows/windows-containers/README.md)
+  shows you how to use the [MusicStore](https://github.com/aspnet/MusicStore/)
+  application with Windows containers. The MusicStore is a standard .NET application and,
+  [forked here to use containers](https://github.com/friism/MusicStore), is a good example of a multi-container application.
+@y
+- [Getting Started with Windows Containers (Lab)](https://github.com/docker/labs/blob/master/windows/windows-containers/README.md)
+  shows you how to use the [MusicStore](https://github.com/aspnet/MusicStore/)
+  application with Windows containers. The MusicStore is a standard .NET application and,
+  [forked here to use containers](https://github.com/friism/MusicStore), is a good example of a multi-container application.
+@z
+
+@x
+- To understand how to connect to Windows containers from the local host, see
+  [I want to connect to a container from Windows](../networking.md#i-want-to-connect-to-a-container-from-the-host)
+@y
+- To understand how to connect to Windows containers from the local host, see
+  [I want to connect to a container from Windows](../networking.md#i-want-to-connect-to-a-container-from-the-host)
+@z
+
+@x
+> **Note**
+>
+> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers. These are:
+>
+>  * [General](../settings/windows.md#general)
+>  * [Proxies](../settings/windows.md#proxies)
+>  * [Daemon](../settings/windows.md#docker-engine)
+@y
+> **Note**
+>
+> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers. These are:
+>
+>  * [General](../settings/windows.md#general)
+>  * [Proxies](../settings/windows.md#proxies)
+>  * [Daemon](../settings/windows.md#docker-engine)
+@z
+
+@x
+If you set proxies or daemon configuration in Windows containers mode, these
+apply only on Windows containers. If you switch back to Linux containers,
+proxies and daemon configurations return to what you had set for Linux
+containers. Your Windows container settings are retained and become available
+again when you switch back.
+@y
+If you set proxies or daemon configuration in Windows containers mode, these
+apply only on Windows containers. If you switch back to Linux containers,
+proxies and daemon configurations return to what you had set for Linux
+containers. Your Windows container settings are retained and become available
+again when you switch back.
 @z
 
 @x
@@ -314,9 +378,10 @@ Looking for information on using Windows containers?
 @z
 
 @x
-2. Double-click `Docker Desktop Installer.exe` to run the installer.
+2. Double-click `Docker Desktop Installer.exe` to run the installer. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 @y
 2. `Docker Desktop Installer.exe` をダブルクリックしてインストーラーを起動します。
+   デフォルトで Docker は `C:\Program Files\Docker\Docker` にインストールされます。
 @z
 
 @x
@@ -443,11 +508,11 @@ The `install` command accepts the following flags:
 
 @x
     ```text
-    --allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"
+    --allowed-org=<org name> --admin-settings='{"configurationFileVersion": 2, "enhancedContainerIsolation": {"value": true, "locked": false}}'
     ```
 @y
     ```text
-    --allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"
+    --allowed-org=<org name> --admin-settings='{"configurationFileVersion": 2, "enhancedContainerIsolation": {"value": true, "locked": false}}'
     ```
 @z
 
@@ -469,6 +534,24 @@ The `install` command accepts the following flags:
 - `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
 - `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
 - `--always-run-service`: Lets users switch to Windows containers without needing admin rights. 
+@z
+
+@x
+> **Note**
+>
+> If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
+> For example:
+> ```powershell
+> Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--accept-license'
+> ```
+@y
+> **メモ**
+>
+> If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
+> For example:
+> ```powershell
+> Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--accept-license'
+> ```
 @z
 
 @x

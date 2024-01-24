@@ -6,22 +6,30 @@
 ---
 description: Learn about Docker Hub features and the administrative tasks available
   in Docker Hub
-keywords: Docker, docker, docker hub, hub, overview
+keywords: Docker, docker, docker hub, hub, repositories, docker account
 title: Overview of Docker Hub
 grid:
 - title: Create a Docker ID
   description: Register and create a new Docker ID.
   icon: fingerprint
   link: /docker-id
+- title: Quickstart
+  description: Step-by-step instructions on getting started on Docker Hub.
+  icon: explore
+  link: /docker-hub/quickstart
 - title: Create a repository
   description: Create a repository to share your images with your team, customers,
     or the Docker community.
   icon: inbox
   link: /docker-hub/repos
-- title: Quickstart
-  description: Step-by-step instructions on getting started on Docker Hub.
-  icon: explore
-  link: /docker-hub/quickstart
+- title: Manage repository access
+  description: Manage access to push and pull to your repository and assign permissions.
+  icon: key
+  link: /docker-hub/repos/access
+- title: Automated builds
+  description: Learn how you can automatically build images from source code to push to your repositories.
+  icon: build
+  link: /docker-hub/builds/how-builds-work
 - title: Release notes
   description: Find out about new features, improvements, and bug fixes.
   icon: note_add
@@ -31,21 +39,29 @@ grid:
 ---
 description: Learn about Docker Hub features and the administrative tasks available
   in Docker Hub
-keywords: Docker, docker, docker hub, hub, overview
+keywords: Docker, docker, docker hub, hub, repositories, docker account
 title: Docker Hub 概要
 grid:
 - title: Docker ID の生成
   description: 新規 Docker ID を生成登録します。
   icon: fingerprint
   link: __SUBDIR__/docker-id
-- title: リポジトリの生成
-  description: 生成したリポジトリを開発チーム、顧客、Docker コミュニティと共有します。
-  icon: inbox
-  link: __SUBDIR__/docker-hub/repos
 - title: クィックスタート
   description: Docker Hub をつかった手順を一つひとつ説明します。
   icon: explore
   link: __SUBDIR__/docker-hub/quickstart
+- title: リポジトリの生成
+  description: 生成したリポジトリを開発チーム、顧客、Docker コミュニティと共有します。
+  icon: inbox
+  link: __SUBDIR__/docker-hub/repos
+- title: リポジトリのアクセス管理
+  description: Manage access to push and pull to your repository and assign permissions.
+  icon: key
+  link: __SUBDIR__/docker-hub/repos/access
+- title: 自動ビルド
+  description: Learn how you can automatically build images from source code to push to your repositories.
+  icon: build
+  link: __SUBDIR__/docker-hub/builds/how-builds-work
 - title: リリースノート
   description: 新機能、改善、バグフィックスを確認します。
   icon: note_add

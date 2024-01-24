@@ -3269,9 +3269,9 @@ Manuals:
   - sectiontitle: Containers
     section:
     - path: /engine/reference/run/
-      title: Docker run reference
+      title: Running containers
     - path: /config/containers/resource_constraints/
-      title: Configure runtime resource constraints
+      title: Configure resource constraints
     - path: /config/containers/multi-service_container/
       title: Run multiple processes in a container
     - path: /config/containers/start-containers-automatically/
@@ -3280,9 +3280,9 @@ Manuals:
   - sectiontitle: Containers
     section:
     - path: __SUBDIR__/engine/reference/run/
-      title: Docker run reference
+      title: Running containers
     - path: __SUBDIR__/config/containers/resource_constraints/
-      title: Configure runtime resource constraints
+      title: Configure resource constraints
     - path: __SUBDIR__/config/containers/multi-service_container/
       title: Run multiple processes in a container
     - path: __SUBDIR__/config/containers/start-containers-automatically/
@@ -3293,7 +3293,7 @@ Manuals:
   - sectiontitle: CLI
     section:
     - path: /engine/reference/commandline/cli/
-      title: Use the Docker command line
+      title: Use the Docker CLI
     - path: /config/filter/
       title: Filter commands
     - path: /config/formatting/
@@ -3301,8 +3301,8 @@ Manuals:
 @y
   - sectiontitle: CLI
     section:
-    - path: __SUBDIR__/engine/reference/commandline/cli/
-      title: Use the Docker command line
+    - path: /engine/reference/commandline/cli/
+      title: Use the Docker CLI
     - path: __SUBDIR__/config/filter/
       title: Filter commands
     - path: __SUBDIR__/config/formatting/
@@ -3489,14 +3489,14 @@ Manuals:
     - path: /config/daemon/logs/
       title: Daemon logs
     - path: /config/containers/runmetrics/
-      title: Collect runtime metrics
+      title: Runtime metrics
     - path: /config/daemon/prometheus/
       title: Collect metrics with Prometheus
 @y
     - path: __SUBDIR__/config/daemon/logs/
       title: Daemon logs
     - path: __SUBDIR__/config/containers/runmetrics/
-      title: Collect runtime metrics
+      title: Runtime metrics
     - path: __SUBDIR__/config/daemon/prometheus/
       title: Collect metrics with Prometheus
 @z
@@ -3856,9 +3856,9 @@ Manuals:
 - sectiontitle: Docker Build
   section:
     - path: __SUBDIR__/build/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/build/architecture/
-      title: Architecture
+      title: アーキテクチャー
     - sectiontitle: Building images
       section:
         - path: __SUBDIR__/build/building/packaging/
@@ -3904,21 +3904,21 @@ Manuals:
     - sectiontitle: Builders
       section:
         - path: __SUBDIR__/build/builders/
-          title: Builders overview
+          title: Builders 概要
         - path: __SUBDIR__/build/builders/manage/
           title: Manage builders
-    - sectiontitle: Drivers
+    - sectiontitle: ドライバー
       section:
         - path: __SUBDIR__/build/drivers/
-          title: Drivers overview
+          title: ドライバー概要
         - path: __SUBDIR__/build/drivers/docker/
-          title: Docker driver
+          title: Docker ドライバー
         - path: __SUBDIR__/build/drivers/docker-container/
-          title: Docker container driver
+          title: Docker コンテナードライバー
         - path: __SUBDIR__/build/drivers/kubernetes/
-          title: Kubernetes driver
+          title: Kubernetes ドライバー
         - path: __SUBDIR__/build/drivers/remote/
-          title: Remote driver
+          title: リモートドライバー
 @z
 
 @x
@@ -3938,13 +3938,13 @@ Manuals:
     - sectiontitle: Build Cloud
       section:
         - path: __SUBDIR__/build/cloud/
-          title: Overview
+          title: 概要
         - path: __SUBDIR__/build/cloud/setup/
-          title: Setup
+          title: 設定
         - path: __SUBDIR__/build/cloud/usage/
-          title: Usage
+          title: 利用方法
         - path: __SUBDIR__/build/cloud/ci/
-          title: Build Cloud in CI
+          title: CI における Build Cloud
         - path: __SUBDIR__/build/cloud/optimization/
           title: Optimize for cloud builds
 @z
@@ -4104,17 +4104,17 @@ Manuals:
     - sectiontitle: Dockerfile
       section:
         - path: __SUBDIR__/build/dockerfile/frontend/
-          title: Custom Dockerfile syntax
+          title: カスタム Dockerfile 文法
         - path: __SUBDIR__/build/dockerfile/release-notes/
-          title: Release notes
+          title: リリースノート
     - sectiontitle: BuildKit
       section:
         - path: __SUBDIR__/build/buildkit/
-          title: Overview
+          title: 概要
         - path: __SUBDIR__/build/buildkit/configure/
-          title: Configure
+          title: 設定
         - path: __SUBDIR__/build/buildkit/toml-configuration/
-          title: TOML configuration
+          title: TOML 設定
 @z
 
 @x
@@ -4142,23 +4142,23 @@ Manuals:
     - sectiontitle: Continuous integration
       section:
         - path: __SUBDIR__/build/ci/
-          title: CI with Docker
+          title: Docker を使った CI
         - sectiontitle: GitHub Actions
           section:
           - path: __SUBDIR__/build/ci/github-actions/
-            title: Introduction
+            title: はじめに
           - path: __SUBDIR__/build/ci/github-actions/configure-builder/
             title: Configuring your builder
           - path: __SUBDIR__/build/ci/github-actions/multi-platform/
-            title: Multi-platform image
+            title: マルチプラットフォームイメージ
           - path: __SUBDIR__/build/ci/github-actions/secrets/
             title: Secrets
           - path: __SUBDIR__/build/ci/github-actions/push-multi-registries/
             title: Push to multiple registries
           - path: __SUBDIR__/build/ci/github-actions/manage-tags-labels/
-            title: Manage tags and labels
+            title: タグとラベルの管理
           - path: __SUBDIR__/build/ci/github-actions/cache/
-            title: Cache management
+            title: キャッシュ管理
 @z
 
 @x
@@ -4202,7 +4202,7 @@ Manuals:
           - path: __SUBDIR__/build/ci/github-actions/annotations/
             title: Annotations
     - path: __SUBDIR__/build/release-notes/
-      title: Release notes
+      title: リリースノート
 @z
 
 @x
@@ -4240,7 +4240,7 @@ Manuals:
     - path: __SUBDIR__/compose/intro/features-uses/
       title: Compose 利用はなぜ
     - path: __SUBDIR__/compose/intro/history/
-      title: History and development of Compose
+      title: Compose のこれまでと開発
   - sectiontitle: Install Docker Compose
     section:
       - path: __SUBDIR__/compose/install/
@@ -4273,10 +4273,10 @@ Manuals:
     - path: /compose/environment-variables/best-practices/
       title: Best practices
 @y
-  - sectiontitle: Environment variables
+  - sectiontitle: 環境変数
     section:
     - path: __SUBDIR__/compose/environment-variables/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/compose/environment-variables/set-environment-variables/
       title: Explore ways to set environment variables
     - path: __SUBDIR__/compose/environment-variables/envvars-precedence/
@@ -4286,7 +4286,7 @@ Manuals:
     - path: __SUBDIR__/compose/environment-variables/envvars/
       title: Set or change pre-defined environment variables
     - path: __SUBDIR__/compose/environment-variables/best-practices/
-      title: Best practices
+      title: ベストプラクティス
 @z
 
 @x
@@ -4304,11 +4304,11 @@ Manuals:
       title: Include
 @y
   - path: __SUBDIR__/compose/profiles/
-    title: Using service profiles
-  - sectiontitle: Working with multiple Compose files
+    title: サービスプロファイルの利用
+  - sectiontitle: 複数 Compose ファイルによる処理
     section:
     - path: __SUBDIR__/compose/multiple-compose-files/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/compose/multiple-compose-files/extends/
       title: Extend
     - path: __SUBDIR__/compose/multiple-compose-files/merge/
@@ -4332,29 +4332,33 @@ Manuals:
     title: Control startup order
   - path: /compose/samples-for-compose/
     title: Sample apps with Compose
+  - path: /compose/feedback/
+    title: Give feedback
   - path: /compose/migrate/
     title: Migrate to Compose V2
   - path: /compose/release-notes/
     title: Release notes
 @y
   - path: __SUBDIR__/compose/gpu-support/
-    title: GPU support in Compose
+    title: Compose における GPU サポート
   - path: __SUBDIR__/compose/networking/
-    title: Networking in Compose
+    title: Compose におけるネットワーク
   - path: __SUBDIR__/compose/file-watch/
-    title: Use Compose Watch
+    title: Compose Watch の利用
   - path: __SUBDIR__/compose/production/
-    title: Using Compose in production
+    title: 本番環境での Compose の利用
   - path: __SUBDIR__/compose/use-secrets/
-    title: Using secrets in Compose
+    title: Compose における Secret の利用
   - path: __SUBDIR__/compose/startup-order/
     title: Control startup order
   - path: __SUBDIR__/compose/samples-for-compose/
-    title: Sample apps with Compose
+    title: Compose を使ったサンプルアプリ
+  - path: __SUBDIR__/compose/feedback/
+    title: フィードバック
   - path: __SUBDIR__/compose/migrate/
     title: Migrate to Compose V2
   - path: __SUBDIR__/compose/release-notes/
-    title: Release notes
+    title: リリースノート
 @z
 
 @x
@@ -4482,7 +4486,7 @@ Manuals:
 - sectiontitle: Administration
   section:
   - path: __SUBDIR__/admin/
-    title: Overview
+    title: 概要
 @z
 
 @x
@@ -4506,19 +4510,19 @@ Manuals:
   - sectiontitle: Organization administration
     section:
     - path: __SUBDIR__/admin/organization/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/admin/organization/orgs/
-      title: Create your organization
+      title: 組織の生成
     - path: __SUBDIR__/admin/organization/onboard/
       title: Onboard your organization
     - path: __SUBDIR__/admin/organization/members/
-      title: Manage members
+      title: メンバー管理
     - path: __SUBDIR__/admin/organization/manage-a-team/
-      title: Create and manage a team
+      title: チーム生成と管理
     - path: __SUBDIR__/admin/organization/activity-logs/
-      title: Activity logs
+      title: アクティビティーログ
     - path: __SUBDIR__/admin/organization/general-settings/
-      title: General settings
+      title: 一般的設定
 @z
 
 @x

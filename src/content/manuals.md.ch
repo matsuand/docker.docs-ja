@@ -8,116 +8,164 @@ description: Explore the Docker product user manuals
 keywords: docker, docs, manuals, products, user guides, how-to
 notoc: true
 skip_read_time: true
-development:
-- title: Docker Desktop
-  description: Your command center for container development.
-  icon: /assets/icons/Whale.svg
-  link: /desktop/
-- title: Docker Compose
-  description: Define and run multi-container applications.
-  icon: /assets/icons/Compose.svg
-  link: /compose/
-- title: Docker Build
-  description: Build and ship any application anywhere.
-  icon: build
-  link: /build/
-- title: Docker Engine
-  description: The industry-leading container runtime.
-  icon: developer_board
-  link: /engine/
-- title: Docker Extensions
-  description: Customize your Docker Desktop workflow.
-  icon: extension
-  link: /desktop/extensions/
-services:
-- title: Docker Hub
-  description: Discover, share, and integrate container images
-  icon: hub
-  link: /docker-hub/
-- title: Docker Scout
-  description: Image analysis and policy evaluation.
-  icon: /assets/icons/Scout.svg
-  link: /scout/
-- title: Trusted content
-  description: Curated, high-quality content from trusted sources.
-  icon: verified
-  link: /trusted-content/
-admin:
-- title: Administration
-  description: Centralized observability for companies and organizations.
-  icon: admin_panel_settings
-  link: /admin/
-- title: Security
-  description: Security guardrails for both administrators and developers.
-  icon: lock
-  link: /security/
-- title: Billing
-  description: Manage billing and payment methods.
-  icon: payments
-  link: /billing/
-- title: Subscription
-  description: Commercial use licenses for Docker products.
-  icon: card_membership
-  link: /subscription/
----
 @y
 ---
-title: Manuals
-description: Explore the Docker product user manuals
+title: マニュアル
+description: Docker 製品のユーザーマニュアルを確認します。
 keywords: docker, docs, manuals, products, user guides, how-to
 notoc: true
 skip_read_time: true
+@z
+
+@x
 development:
 - title: Docker Desktop
   description: Your command center for container development.
   icon: /assets/icons/Whale.svg
   link: /desktop/
+@y
+development:
+- title: Docker Desktop
+  description: コンテナー開発を行うための中心的な存在です。
+  icon: __SUBDIR__/assets/icons/Whale.svg
+  link: __SUBDIR__/desktop/
+@z
+
+@x
 - title: Docker Compose
   description: Define and run multi-container applications.
   icon: /assets/icons/Compose.svg
   link: /compose/
+@y
+- title: Docker Compose
+  description: マルチコンテナーアプリケーションを定義して実行します。
+  icon: __SUBDIR__/assets/icons/Compose.svg
+  link: __SUBDIR__/compose/
+@z
+
+@x
 - title: Docker Build
   description: Build and ship any application anywhere.
   icon: build
   link: /build/
+@y
+- title: Docker Build
+  description: どんなアプリもどこでもビルドし公開します。
+  icon: build
+  link: __SUBDIR__/build/
+@z
+
+@x
 - title: Docker Engine
   description: The industry-leading container runtime.
   icon: developer_board
   link: /engine/
+@y
+- title: Docker Engine
+  description: 業界をリードするコンテナー実行モジュールです。
+  icon: developer_board
+  link: __SUBDIR__/engine/
+@z
+
+@x
 - title: Docker Extensions
   description: Customize your Docker Desktop workflow.
   icon: extension
   link: /desktop/extensions/
+@y
+- title: Docker Extensions
+  description: Docker Desktop ワークフローをカスタマイズします。
+  icon: extension
+  link: __SUBDIR__/desktop/extensions/
+@z
+
+@x
 services:
 - title: Docker Hub
   description: Discover, share, and integrate container images
   icon: hub
   link: /docker-hub/
+@y
+services:
+- title: Docker Hub
+  description: コンテナーイメージの検索、共有、統合を行います。
+  icon: hub
+  link: __SUBDIR__/docker-hub/
+@z
+
+@x
 - title: Docker Scout
   description: Image analysis and policy evaluation.
   icon: /assets/icons/Scout.svg
   link: /scout/
+@y
+- title: Docker Scout
+  description: Image analysis and policy evaluation.
+  icon: __SUBDIR__/assets/icons/Scout.svg
+  link: __SUBDIR__/scout/
+@z
+
+@x
 - title: Trusted content
   description: Curated, high-quality content from trusted sources.
   icon: verified
   link: /trusted-content/
+@y
+- title: Trusted content
+  description: Curated, high-quality content from trusted sources.
+  icon: verified
+  link: __SUBDIR__/trusted-content/
+@z
+
+@x
 admin:
 - title: Administration
   description: Centralized observability for companies and organizations.
   icon: admin_panel_settings
   link: /admin/
+@y
+admin:
+- title: Administration
+  description: Centralized observability for companies and organizations.
+  icon: admin_panel_settings
+  link: __SUBDIR__/admin/
+@z
+
+@x
 - title: Security
   description: Security guardrails for both administrators and developers.
   icon: lock
   link: /security/
+@y
+- title: Security
+  description: Security guardrails for both administrators and developers.
+  icon: lock
+  link: __SUBDIR__/security/
+@z
+
+@x
 - title: Billing
   description: Manage billing and payment methods.
   icon: payments
   link: /billing/
+@y
+- title: Billing
+  description: Manage billing and payment methods.
+  icon: payments
+  link: __SUBDIR__/billing/
+@z
+
+@x
 - title: Subscription
   description: Commercial use licenses for Docker products.
   icon: card_membership
   link: /subscription/
+---
+@y
+- title: Subscription
+  description: Commercial use licenses for Docker products.
+  icon: card_membership
+  link: __SUBDIR__/subscription/
 ---
 @z
 
@@ -132,13 +180,13 @@ Docker products.
 @x
 ## Developer tools
 @y
-## Developer tools
+## 開発ツール {#developer-tools}
 @z
 
 @x
 Software development and containerization technologies.
 @y
-Software development and containerization technologies.
+以下はソフトウェア開発とコンテナー化技術です。
 @z
 
 @x
@@ -150,7 +198,7 @@ Software development and containerization technologies.
 @x
 ## Services
 @y
-## Services
+## サービス {#services}
 @z
 
 @x

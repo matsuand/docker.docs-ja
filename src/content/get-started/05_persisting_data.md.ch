@@ -37,23 +37,23 @@ When a container runs, it uses the various layers from an image for its filesyst
 Each container also gets its own "scratch space" to create/update/remove files. Any
 changes won't be seen in another container, even if they're using the same image.
 @y
-When a container runs, it uses the various layers from an image for its filesystem.
-Each container also gets its own "scratch space" to create/update/remove files. Any
-changes won't be seen in another container, even if they're using the same image.
+コンテナーが起動すると、イメージ内のさまざまなレイヤーがファイルシステムに利用されます。
+また各コンテナーには、ファイルの生成/更新/削除を行うための「スクラッチスペース」（scratch space、一時的な領域）をもっています。
+1 つのイメージを共通に利用しているからといって、1 つのコンテナー上の変更が他のコンテナーに及ぶわけではありません。
 @z
 
 @x
 ### See this in practice
 @y
-### See this in practice {#see-this-in-practice}
+### 実際を確認 {#see-this-in-practice}
 @z
 
 @x
 To see this in action, you're going to start two containers and create a file in each.
 What you'll see is that the files created in one container aren't available in another.
 @y
-To see this in action, you're going to start two containers and create a file in each.
-What you'll see is that the files created in one container aren't available in another.
+実際の動作を見てみるために 2 つのコンテナーを起動させて、それぞれにファイル生成を行ってみます。
+そこでわかってくるのは、1 つのコンテナーで生成したファイルは、もう 1 つのコンテナーで利用することはできないということです。
 @z
 
 @x
@@ -61,17 +61,17 @@ What you'll see is that the files created in one container aren't available in a
 >
 > If you use Windows and want to use Git Bash to run Docker commands, see [Working with Git Bash](../desktop/troubleshoot/topics.md#working-with-git-bash) for syntax differences.
 @y
-> **Note**
+> **メモ**
 >
-> If you use Windows and want to use Git Bash to run Docker commands, see [Working with Git Bash](../desktop/troubleshoot/topics.md#working-with-git-bash) for syntax differences.
+> Windows 上において Git Bash を用いて Docker コマンドを利用している場合は、文法上の違いがあるので [Git Bash を使った操作](../desktop/troubleshoot/topics.md#working-with-git-bash) を確認してください。
 @z
 
 @x
 1. Start an `ubuntu` container that will create a file named `/data.txt` with a random number
    between 1 and 10000.
 @y
-1. Start an `ubuntu` container that will create a file named `/data.txt` with a random number
-   between 1 and 10000.
+1. `ubuntu` コンテナーを起動させます。
+   その際には、1 から 10000 までの間の乱数を発生させて、`/data.txt` というファイルに書き込みます。
 @z
 
 @x
@@ -89,15 +89,16 @@ What you'll see is that the files created in one container aren't available in a
     commands (why you have the `&&`). The first portion picks a single random number and writes
     it to `/data.txt`. The second command is simply watching a file to keep the container running.
 @y
-    In case you're curious about the command, you're starting a bash shell and invoking two
-    commands (why you have the `&&`). The first portion picks a single random number and writes
-    it to `/data.txt`. The second command is simply watching a file to keep the container running.
+    このコマンドがよくわからない方のために説明しておくと、上では Bash シェルを起動させて 2 つのコマンドを実行させています（だから `&&` を使っています）。
+    前半のコマンドは 1 つの乱数を発生させて`/data.txt` に出力しています。
+    そして後半のコマンドでは、単純にこのファイルを見ることによってこのコンテナーを実行し続けます。
 @z
 
 @x
 2. Validate that you can see the output by accessing the terminal in the container. To do so, you can use the CLI or Docker Desktop's graphical interface.
 @y
-2. Validate that you can see the output by accessing the terminal in the container. To do so, you can use the CLI or Docker Desktop's graphical interface.
+2. コンテナー内の端末にアクセスして、その結果を確認します。
+   これを行うには、CLI かあるいは Docker Desktop のグラフィックインターフェースを用います。
 @z
 
 @x
@@ -143,7 +144,9 @@ What you'll see is that the files created in one container aren't available in a
 @x
    You will see a terminal that is running a shell in the Ubuntu container. Run the following command to see the content of the `/data.txt` file. Close this terminal afterwards again.
 @y
-   You will see a terminal that is running a shell in the Ubuntu container. Run the following command to see the content of the `/data.txt` file. Close this terminal afterwards again.
+   ターミナルを見れば Ubuntu コンテナー内にシェルが実行されたことがわかります。
+   そこで以下のコマンドを実行して `/data.txt` ファイルの中身を確認します。
+   その後はこのターミナルを再び閉じてください。
 @z
 
 @x
@@ -167,7 +170,7 @@ What you'll see is that the files created in one container aren't available in a
 @x
    You should see a random number.
 @y
-   You should see a random number.
+   乱数が書き込まれているはずです。
 @z
 
 @x
@@ -199,13 +202,13 @@ What you'll see is that the files created in one container aren't available in a
 @x
 4. Go ahead and remove the first container using the `docker rm -f <container-id>` command.
 @y
-4. Go ahead and remove the first container using the `docker rm -f <container-id>` command.
+4. `docker rm -f <コンテナーID>` コマンドを実行して 1 つめのコンテナーを削除します。
 @z
 
 @x
 ## Container volumes
 @y
-## Container volumes {#container-volumes}
+## コンテナーボリューム {#container-volumes}
 @z
 
 @x
@@ -213,9 +216,9 @@ With the previous experiment, you saw that each container starts from the image 
 While containers can create, update, and delete files, those changes are lost when you remove the container 
 and Docker isolates all changes to that container. With volumes, you can change all of this.
 @y
-With the previous experiment, you saw that each container starts from the image definition each time it starts. 
-While containers can create, update, and delete files, those changes are lost when you remove the container 
-and Docker isolates all changes to that container. With volumes, you can change all of this.
+上で行った実験では、起動元となるイメージ定義に基づいて、各コンテナーがその都度起動する様子を見ました。
+コンテナーではファイルの生成、更新、削除を行うことができますが、コンテナーを削除すると、そういった変更はすべて失われ、コンテナーから切り離されます。
+そこでボリュームを利用すると、この状況を変えることができます。
 @z
 
 @x
@@ -224,22 +227,22 @@ the container back to the host machine. If you mount a directory in the containe
 directory are also seen on the host machine. If you mount that same directory across container restarts, you'd see
 the same files.
 @y
-[Volumes](../storage/volumes.md) provide the ability to connect specific filesystem paths of 
-the container back to the host machine. If you mount a directory in the container, changes in that
-directory are also seen on the host machine. If you mount that same directory across container restarts, you'd see
-the same files.
+[ボリューム](../storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
+コンテナー内のあるディレクトリがマウントされていると、そのディレクトリ内で行われた変更がホストマシンからも見ることができます。
+仮にコンテナーの再起動の前後で 1 つのディレクトリをマウントしておけば、同一のファイルを維持できることになります。
 @z
 
 @x
 There are two main types of volumes. You'll eventually use both, but you'll start with volume mounts.
 @y
-There are two main types of volumes. You'll eventually use both, but you'll start with volume mounts.
+ボリュームには大きく 2 つの種類があります。
+最終的にはその両方を利用しますが、まずはボリュームマウントから始めます。
 @z
 
 @x
 ## Persist the todo data
 @y
-## Persist the todo data {#persist-the-todo-data}
+## todo データの保存 {#persist-the-todo-data}
 @z
 
 @x
@@ -258,10 +261,11 @@ next container, it should be able to pick up where the last one left off. By cre
 (often called "mounting") it to the directory where you stored the data, you can persist the data. As your container 
 writes to the `todo.db` file, it will persist the data to the host in the volume.
 @y
-With the database being a single file, if you can persist that file on the host and make it available to the
-next container, it should be able to pick up where the last one left off. By creating a volume and attaching
-(often called "mounting") it to the directory where you stored the data, you can persist the data. As your container 
-writes to the `todo.db` file, it will persist the data to the host in the volume.
+データベースが 1 つのファイルに収められているので、ホスト上のファイルとして保存しておけば、新たなコンテナーからも利用できます。
+したがって最後に更新されたものを、その次にも使い続けられます。
+ボリュームを生成して、データを保存するディレクトリに割り当てます（通常これを「マウンティングする」と言い表します）。
+こうすればデータを失うことなく保存できます。
+今の場合、コンテナーから `todo.db` ファイルへの書き込みを行っているので、ボリュームを通じてホスト上にデータが保持されることになります。
 @z
 
 @x

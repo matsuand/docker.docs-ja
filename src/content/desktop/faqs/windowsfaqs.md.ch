@@ -40,18 +40,6 @@ Docker Desktop uses the Windows Hyper-V features. While older Windows versions h
 @z
 
 @x
-### Can I install Docker Desktop on Windows 10 Home?
-@y
-### Can I install Docker Desktop on Windows 10 Home?
-@z
-
-@x
-If you are running Windows 10 Home (starting with build 19045), you can install [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) with the [WSL 2 backend](../wsl/index.md).
-@y
-If you are running Windows 10 Home (starting with build 19045), you can install [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/) with the [WSL 2 backend](../wsl/index.md).
-@z
-
-@x
 ### Can I run Docker Desktop on Windows Server?
 @y
 ### Can I run Docker Desktop on Windows Server?
@@ -61,44 +49,6 @@ If you are running Windows 10 Home (starting with build 19045), you can install 
 No, running Docker Desktop on Windows Server is not supported.
 @y
 No, running Docker Desktop on Windows Server is not supported.
-@z
-
-@x
-### Why do I see the `Docker Desktop Access Denied` error message when I try to start Docker Desktop?
-@y
-### Why do I see the `Docker Desktop Access Denied` error message when I try to start Docker Desktop?
-@z
-
-@x
-Docker Desktop displays the **Docker Desktop - Access Denied** error if a Windows user is not part of the **docker-users** group.
-@y
-Docker Desktop displays the **Docker Desktop - Access Denied** error if a Windows user is not part of the **docker-users** group.
-@z
-
-@x
-If your admin account is different to your user account, add the **docker-users** group. Run **Computer Management** as an administrator and navigate to **Local Users* and Groups** > **Groups** > **docker-users**.
-@y
-If your admin account is different to your user account, add the **docker-users** group. Run **Computer Management** as an administrator and navigate to **Local Users* and Groups** > **Groups** > **docker-users**.
-@z
-
-@x
-Right-click to add the user to the group. Sign out and sign back in for the changes to take effect.
-@y
-Right-click to add the user to the group. Sign out and sign back in for the changes to take effect.
-@z
-
-@x
-### Why does Docker Desktop fail to start when anti-virus software is installed?
-@y
-### Why does Docker Desktop fail to start when anti-virus software is installed?
-@z
-
-@x
-Some anti-virus software may be incompatible with Hyper-V and Windows 10 builds which impact Docker
-Desktop. For more information, see [Docker Desktop fails to start when anti-virus software is installed](../troubleshoot/workarounds.md#docker-desktop-fails-to-start-when-anti-virus-software-is-installed).
-@y
-Some anti-virus software may be incompatible with Hyper-V and Windows 10 builds which impact Docker
-Desktop. For more information, see [Docker Desktop fails to start when anti-virus software is installed](../troubleshoot/workarounds.md#docker-desktop-fails-to-start-when-anti-virus-software-is-installed).
 @z
 
 @x
@@ -259,94 +209,4 @@ in the Docker Engine topics.
 To learn more about how to set the client TLS certificate for verification, see
 [Verify repository client with certificates](../../engine/security/certificates.md)
 in the Docker Engine topics.
-@z
-
-@x
-### How do I switch between Windows and Linux containers
-@y
-### How do I switch between Windows and Linux containers
-@z
-
-@x
-From the Docker Desktop menu, you can toggle which daemon (Linux or Windows)
-the Docker CLI talks to. Select **Switch to Windows containers** to use Windows
-containers, or select **Switch to Linux containers** to use Linux containers
-(the default).
-@y
-From the Docker Desktop menu, you can toggle which daemon (Linux or Windows)
-the Docker CLI talks to. Select **Switch to Windows containers** to use Windows
-containers, or select **Switch to Linux containers** to use Linux containers
-(the default).
-@z
-
-@x
-For more information on Windows containers, refer to the following documentation:
-@y
-For more information on Windows containers, refer to the following documentation:
-@z
-
-@x
-- Microsoft documentation on [Windows containers](https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/index).
-@y
-- Microsoft documentation on [Windows containers](https://docs.microsoft.com/en-us/virtualization/windowscontainers/about/index).
-@z
-
-@x
-- [Build and Run Your First Windows Server Container (Blog Post)](https://blog.docker.com/2016/09/build-your-first-docker-windows-server-container/)
-  gives a quick tour of how to build and run native Docker Windows containers on Windows 10 and Windows Server 2016 evaluation releases.
-@y
-- [Build and Run Your First Windows Server Container (Blog Post)](https://blog.docker.com/2016/09/build-your-first-docker-windows-server-container/)
-  gives a quick tour of how to build and run native Docker Windows containers on Windows 10 and Windows Server 2016 evaluation releases.
-@z
-
-@x
-- [Getting Started with Windows Containers (Lab)](https://github.com/docker/labs/blob/master/windows/windows-containers/README.md)
-  shows you how to use the [MusicStore](https://github.com/aspnet/MusicStore/)
-  application with Windows containers. The MusicStore is a standard .NET application and,
-  [forked here to use containers](https://github.com/friism/MusicStore), is a good example of a multi-container application.
-@y
-- [Getting Started with Windows Containers (Lab)](https://github.com/docker/labs/blob/master/windows/windows-containers/README.md)
-  shows you how to use the [MusicStore](https://github.com/aspnet/MusicStore/)
-  application with Windows containers. The MusicStore is a standard .NET application and,
-  [forked here to use containers](https://github.com/friism/MusicStore), is a good example of a multi-container application.
-@z
-
-@x
-- To understand how to connect to Windows containers from the local host, see
-  [I want to connect to a container from Windows](../networking.md#i-want-to-connect-to-a-container-from-the-host)
-@y
-- To understand how to connect to Windows containers from the local host, see
-  [I want to connect to a container from Windows](../networking.md#i-want-to-connect-to-a-container-from-the-host)
-@z
-
-@x
-> **Note**
->
-> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers. These are:
->
->  * [General](../settings/windows.md#general)
->  * [Proxies](../settings/windows.md#proxies)
->  * [Daemon](../settings/windows.md#docker-engine)
-@y
-> **Note**
->
-> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers. These are:
->
->  * [General](../settings/windows.md#general)
->  * [Proxies](../settings/windows.md#proxies)
->  * [Daemon](../settings/windows.md#docker-engine)
-@z
-
-@x
-If you set proxies or daemon configuration in Windows containers mode, these
-apply only on Windows containers. If you switch back to Linux containers,
-proxies and daemon configurations return to what you had set for Linux
-containers. Your Windows container settings are retained and become available
-again when you switch back.
-@y
-If you set proxies or daemon configuration in Windows containers mode, these
-apply only on Windows containers. If you switch back to Linux containers,
-proxies and daemon configurations return to what you had set for Linux
-containers. Your Windows container settings are retained and become available
-again when you switch back.
 @z

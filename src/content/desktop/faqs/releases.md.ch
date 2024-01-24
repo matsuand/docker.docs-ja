@@ -16,30 +16,6 @@ title: FAQs on Docker Desktop releases
 @z
 
 @x
-### Where can I find the checksums for the download files?
-@y
-### Where can I find the checksums for the download files?
-@z
-
-@x
-You can find the checksums on the [release notes](../release-notes.md) page.
-@y
-You can find the checksums on the [release notes](../release-notes.md) page.
-@z
-
-@x
-### How do new users install Docker Desktop?
-@y
-### How do new users install Docker Desktop?
-@z
-
-@x
-Each Docker Desktop release is also delivered as a full installer for new users. The same applies if you have skipped a version, although this doesn't normally happen as updates are applied automatically.
-@y
-Each Docker Desktop release is also delivered as a full installer for new users. The same applies if you have skipped a version, although this doesn't normally happen as updates are applied automatically.
-@z
-
-@x
 ### How frequent will new releases be?
 @y
 ### How frequent will new releases be?
@@ -73,16 +49,4 @@ Previously you had to manage this yourself. Now, it happens automatically as a s
 Sometimes we may roll out a new version gradually over a few days. Therefore, if you wait, it will turn up soon. Alternatively, you can select **Check for Updates** from the Docker menu to jump the queue and get the latest version immediately.
 @y
 Sometimes we may roll out a new version gradually over a few days. Therefore, if you wait, it will turn up soon. Alternatively, you can select **Check for Updates** from the Docker menu to jump the queue and get the latest version immediately.
-@z
-
-@x
-### Where can I find information about Stable and Edge releases?
-@y
-### Where can I find information about Stable and Edge releases?
-@z
-
-@x
-Starting with Docker Desktop 3.0.0, Stable and Edge releases are combined into a single, cumulative release stream for all users.
-@y
-Starting with Docker Desktop 3.0.0, Stable and Edge releases are combined into a single, cumulative release stream for all users.
 @z

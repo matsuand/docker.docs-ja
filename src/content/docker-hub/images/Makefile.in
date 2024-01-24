@@ -242,8 +242,7 @@ copyfiles = \
 	create-connection.png       \
 	index-create-repo.png       \
 	index-report.png            \
-	index-tag.png               \
-	index-terminal.png          \
+	index-tag.webp              \
 	oci-artifact.png            \
 	oci-helm-tagview.png        \
 	oci-helm.png                \

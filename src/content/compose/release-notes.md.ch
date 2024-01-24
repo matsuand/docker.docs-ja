@@ -34,6 +34,24 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.24.2
+{{< release-date date="2024-01-22" >}}
+@y
+## 2.24.2
+{{< release-date date="2024-01-22" >}}
+@z
+
+@x
+### Update
+- Dependencies upgrade: bump cli to 25.0.0 GA
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.2
+@y
+### 更新 {#update}
+- 依存パッケージの更新: cli 25.0.0 GA
+- 依存パッケージの更新: compose-go 2.0.0-rc.2
+@z
+
+@x
 ## 2.24.1
 {{< release-date date="2024-01-18" >}}
 @y
@@ -57,16 +75,16 @@ For more detailed information, see the [release notes in the Compose repo](https
 
 @x
 ### Bug fixes and enhancements
-Reworked the display of container status during `up`
-Fixed the engine version required to use `healthcheck.start_interval`
-Removed `watch` subcommand from the `alpha` command
-Fixed a bug when handling received signals
+- Reworked the display of container status during `up`
+- Fixed the engine version required to use `healthcheck.start_interval`
+- Removed `watch` subcommand from the `alpha` command
+- Fixed a bug when handling received signals
 @y
 ### Bug fixes and enhancements
-Reworked the display of container status during `up`
-Fixed the engine version required to use `healthcheck.start_interval`
-Removed `watch` subcommand from the `alpha` command
-Fixed a bug when handling received signals
+- Reworked the display of container status during `up`
+- Fixed the engine version required to use `healthcheck.start_interval`
+- Removed `watch` subcommand from the `alpha` command
+- Fixed a bug when handling received signals
 @z
 
 @x
@@ -84,9 +102,9 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump golang to 1.21.6 
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump cli to 25.0.0-beta.3
-- 依存パッケージの更新: bump compose-go to 2.0.0-beta.3
-- 依存パッケージの更新: bump golang to 1.21.6 
+- 依存パッケージの更新: cli 25.0.0-beta.3
+- 依存パッケージの更新: compose-go 2.0.0-beta.3
+- 依存パッケージの更新: golang 1.21.6 
 @z
 
 @x
@@ -140,7 +158,7 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump buildx to v0.12.0
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump buildx to v0.12.0
+- 依存パッケージの更新: buildx v0.12.0
 @z
 
 @x
@@ -159,10 +177,10 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump 1.20.2
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump buildkit 0.12.3 
-- 依存パッケージの更新: bump docker 24.0.7 
-- 依存パッケージの更新: bump cli 24.0.7 
-- 依存パッケージの更新: bump 1.20.2
+- 依存パッケージの更新: buildkit 0.12.3 
+- 依存パッケージの更新: docker 24.0.7 
+- 依存パッケージの更新: cli 24.0.7 
+- 依存パッケージの更新: 1.20.2
 @z
 
 @x
@@ -192,7 +210,7 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump compose-go to v1.20.1
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.20.1
+- 依存パッケージの更新: compose-go v1.20.1
 @z
 
 @x
@@ -239,8 +257,8 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump containerd to 1.7.7
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.20.0
-- 依存パッケージの更新: bump containerd to 1.7.7
+- 依存パッケージの更新: compose-go v1.20.0
+- 依存パッケージの更新: containerd 1.7.7
 @z
 
 @x
@@ -290,9 +308,9 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump buildkit to v0.12.2
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump golang to 1.21.1
-- 依存パッケージの更新: bump compose-go to v1.19.0
-- 依存パッケージの更新: bump buildkit to v0.12.2
+- 依存パッケージの更新: golang 1.21.1
+- 依存パッケージの更新: compose-go v1.19.0
+- 依存パッケージの更新: buildkit v0.12.2
 @z
 
 @x
@@ -340,7 +358,7 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump compose-go to v1.18.3
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.18.3
+- 依存パッケージの更新: compose-go v1.18.3
 @z
 
 @x
@@ -378,9 +396,9 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump buildkit to v0.12.1
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump golang to 1.21.0
-- 依存パッケージの更新: bump compose-go to v1.18.1
-- 依存パッケージの更新: bump buildkit to v0.12.1
+- 依存パッケージの更新: golang 1.21.0
+- 依存パッケージの更新: compose-go v1.18.1
+- 依存パッケージの更新: buildkit v0.12.1
 @z
 
 @x
@@ -437,10 +455,10 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump docker-cli to v24.0.5-dev
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump golang to 1.20.6
-- 依存パッケージの更新: bump buildx to v0.11.2
-- 依存パッケージの更新: bump buildkit to v0.12
-- 依存パッケージの更新: bump docker-cli to v24.0.5-dev
+- 依存パッケージの更新: golang 1.20.6
+- 依存パッケージの更新: buildx v0.11.2
+- 依存パッケージの更新: buildkit v0.12
+- 依存パッケージの更新: docker-cli v24.0.5-dev
 @z
 
 @x
@@ -458,9 +476,9 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump buildx to v0.11.1
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump docker/cli-docs-tools to v0.6.0
-- 依存パッケージの更新: bump docker to v24.0.4
-- 依存パッケージの更新: bump buildx to v0.11.1
+- 依存パッケージの更新: docker/cli-docs-tools v0.6.0
+- 依存パッケージの更新: docker v24.0.4
+- 依存パッケージの更新: buildx v0.11.1
 @z
 
 @x
@@ -504,7 +522,7 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump compose-go to v1.15.1
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.15.1
+- 依存パッケージの更新: compose-go v1.15.1
 @z
 
 @x
@@ -535,10 +553,10 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump golang to 1.20.5
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.15.0
-- 依存パッケージの更新: bump buildx to v0.11.0
-- 依存パッケージの更新: bump docker to v24.0.2
-- 依存パッケージの更新: bump golang to 1.20.5
+- 依存パッケージの更新: compose-go v1.15.0
+- 依存パッケージの更新: buildx v0.11.0
+- 依存パッケージの更新: docker v24.0.2
+- 依存パッケージの更新: golang 1.20.5
 @z
 
 @x
@@ -632,9 +650,9 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump docker to v23.0.5
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.13.5
-- 依存パッケージの更新: bump buildkit to v0.11.6
-- 依存パッケージの更新: bump docker to v23.0.5
+- 依存パッケージの更新: compose-go v1.13.5
+- 依存パッケージの更新: buildkit v0.11.6
+- 依存パッケージの更新: docker v23.0.5
 @z
 
 @x
@@ -694,7 +712,7 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump compose-go to v1.13.2
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.13.2
+- 依存パッケージの更新: compose-go v1.13.2
 @z
 
 @x
@@ -716,9 +734,9 @@ Fixed a bug when handling received signals
 ## 2.17.1
 {{< release-date date="2023-03-24" >}}
 ### 更新 {#update}
-- 依存パッケージの更新: bump buildkit to v0.11.5
-- 依存パッケージの更新: bump compose-go to v1.13.1
-- 依存パッケージの更新: bump golang to 1.20.2
+- 依存パッケージの更新: buildkit v0.11.5
+- 依存パッケージの更新: compose-go v1.13.1
+- 依存パッケージの更新: golang 1.20.2
 @z
 
 @x
@@ -757,10 +775,10 @@ Fixed a bug when handling received signals
 - Dependencies upgrade: bump compose-go to v1.13.0
 @y
 ### 更新 {#update}
-- 依存パッケージの更新: bump buildkit to v0.11.4
-- 依存パッケージの更新: bump buildx to v0.10.4
-- 依存パッケージの更新: bump containerd to 1.6.18
-- 依存パッケージの更新: bump compose-go to v1.13.0
+- 依存パッケージの更新: buildkit v0.11.4
+- 依存パッケージの更新: buildx v0.10.4
+- 依存パッケージの更新: containerd 1.6.18
+- 依存パッケージの更新: compose-go v1.13.0
 @z
 
 @x
@@ -837,12 +855,12 @@ Fixed a bug when handling received signals
 ## 2.16.0
 {{< release-date date="2023-02-08" >}}
 ### 更新 {#update}
-- 依存パッケージの更新: bump docker to v23.0.0
-- 依存パッケージの更新: bump docker-cli to v23.0.0
-- 依存パッケージの更新: bump buildkit to v0.11.2
-- 依存パッケージの更新: bump buildx to v0.10.2
-- 依存パッケージの更新: bump containerd to 1.6.16
-- 依存パッケージの更新: bump golang to 1.20
+- 依存パッケージの更新: docker v23.0.0
+- 依存パッケージの更新: docker-cli v23.0.0
+- 依存パッケージの更新: buildkit v0.11.2
+- 依存パッケージの更新: buildx v0.10.2
+- 依存パッケージの更新: containerd 1.6.16
+- 依存パッケージの更新: golang 1.20
 @z
 
 @x
@@ -939,8 +957,8 @@ Fixed a bug when handling received signals
 ## 2.15.0
 {{< release-date date="2023-01-05" >}}
 ### 更新 {#update}
-- 依存パッケージの更新: bump compose-go to v1.8.1
-- 依存パッケージの更新: bump cli-docs-tool to 0.5.1
+- 依存パッケージの更新: compose-go v1.8.1
+- 依存パッケージの更新: cli-docs-tool 0.5.1
 @z
 
 @x

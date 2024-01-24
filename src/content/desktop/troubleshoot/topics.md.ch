@@ -12,7 +12,7 @@ toc_max: 4
 ---
 description: Explore common troubleshooting topics for Docker Desktop
 keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop
-title: Troubleshoot topics for Docker Desktop
+title: Docker Desktop のトラブルシューティング
 toc_max: 4
 ---
 @z
@@ -20,7 +20,7 @@ toc_max: 4
 @x
 ## Topics for all platforms
 @y
-## Topics for all platforms
+## 全プラットフォームに関するトピック {#topics-for-all-platforms}
 @z
 
 @x
@@ -72,7 +72,7 @@ As well as on the registry. For example:
 @x
 ## Topics for Linux and Mac
 @y
-## Topics for Linux and Mac
+## Linux と Mac に関するトピック {#topics-for-linux-and-mac}
 @z
 
 @x
@@ -442,7 +442,7 @@ $ docker run --rm -ti -v /c/Users/user/work:/work alpine ls /work
 @x
 #### Working with Git Bash
 @y
-#### Working with Git Bash
+#### Git Bash を使った操作 {#working-with-git-bash}
 @z
 
 @x

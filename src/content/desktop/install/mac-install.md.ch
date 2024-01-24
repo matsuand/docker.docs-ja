@@ -180,9 +180,9 @@ Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to ins
 @z
 
 @x
-2. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to the **Applications** folder.
+2. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to the **Applications** folder. By default, Docker Desktop is installed at `/Applications/Docker.app`.
 @y
-2. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to the **Applications** folder.
+2. Double-click `Docker.dmg` to open the installer, then drag the Docker icon to the **Applications** folder. By default, Docker Desktop is installed at `/Applications/Docker.app`.
 @z
 
 @x
@@ -274,9 +274,9 @@ $ sudo hdiutil detach /Volumes/Docker
 @z
 
 @x
-As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
+By default, Docker Desktop is installed at `/Applications/Docker.app`. As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
 @y
-As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
+By default, Docker Desktop is installed at `/Applications/Docker.app`. As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
 @z
 
 @x

@@ -22,18 +22,6 @@ aliases:
 @z
 
 @x
-### What is Docker.app?
-@y
-### What is Docker.app?
-@z
-
-@x
-`Docker.app` is Docker Desktop on Mac. It bundles the Docker client and Docker Engine. `Docker.app` uses the macOS Hypervisor.framework to run containers.
-@y
-`Docker.app` is Docker Desktop on Mac. It bundles the Docker client and Docker Engine. `Docker.app` uses the macOS Hypervisor.framework to run containers.
-@z
-
-@x
 ### What is HyperKit?
 @y
 ### What is HyperKit?

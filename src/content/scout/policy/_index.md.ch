@@ -144,6 +144,7 @@ Docker Scout ships the following out-of-the-box policies:
 - [Supply chain attestations](#supply-chain-attestations)
 - [Quality gates passed](#quality-gates-passed)
 - [Default non-root user](#default-non-root-user)
+- [Unapproved base images](#unapproved-base-images)
 @y
 - [Fixable critical and high vulnerabilities](#fixable-critical-and-high-vulnerabilities)
 - [Critical vulnerabilities](#critical-vulnerabilities)
@@ -153,6 +154,7 @@ Docker Scout ships the following out-of-the-box policies:
 - [Supply chain attestations](#supply-chain-attestations)
 - [Quality gates passed](#quality-gates-passed)
 - [Default non-root user](#default-non-root-user)
+- [Unapproved base images](#unapproved-base-images)
 @z
 
 @x
@@ -312,47 +314,11 @@ means the base image you're using is out of date.
 @z
 
 @x
-#### No base image data
+Your images need provenance attestations for this policy to successfully
+evaluate. For more information, see [No base image data](#no-base-image-data).
 @y
-#### No base image data
-@z
-
-@x
-There are cases when it's not possible to determine whether or not the base
-image is up-to-date. In such cases, the **Outdated base images** policy
-gets flagged as having **No data**.
-@y
-There are cases when it's not possible to determine whether or not the base
-image is up-to-date. In such cases, the **Outdated base images** policy
-gets flagged as having **No data**.
-@z
-
-@x
-This occurs when:
-@y
-This occurs when:
-@z
-
-@x
-- Docker Scout doesn't know what base image tag you used
-- The base image version you used has multiple tags, but not all tags are out
-  of date
-@y
-- Docker Scout doesn't know what base image tag you used
-- The base image version you used has multiple tags, but not all tags are out
-  of date
-@z
-
-@x
-To make sure that Docker Scout always knows about your base image, you can
-attach [provenance attestations](../../build/attestations/slsa-provenance.md)
-at build-time. Docker Scout uses provenance attestations to find out the base
-image version.
-@y
-To make sure that Docker Scout always knows about your base image, you can
-attach [provenance attestations](../../build/attestations/slsa-provenance.md)
-at build-time. Docker Scout uses provenance attestations to find out the base
-image version.
+Your images need provenance attestations for this policy to successfully
+evaluate. For more information, see [No base image data](#no-base-image-data).
 @z
 
 @x
@@ -707,4 +673,132 @@ ENTRYPOINT ["/app/production"]
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+### Unapproved base images
+@y
+### Unapproved base images
+@z
+
+@x
+The **Unapproved base images** policy lets you restrict which base
+images you allow in your builds.
+@y
+The **Unapproved base images** policy lets you restrict which base
+images you allow in your builds.
+@z
+
+@x
+This policy checks whether the base images used in your builds match any of the
+patterns specified in the policy configuration. The following table shows a few
+example patterns for this policy.
+@y
+This policy checks whether the base images used in your builds match any of the
+patterns specified in the policy configuration. The following table shows a few
+example patterns for this policy.
+@z
+
+@x
+| Use case                                                        | Pattern                          |
+| --------------------------------------------------------------- | -------------------------------- |
+| Allow all images from Docker Hub                                | `docker.io/*`                    |
+| Allow all Docker Official Images                                | `docker.io/library/*`            |
+| Allow images from a specific organization                       | `docker.io/orgname/*`            |
+| Allow tags of a specific repository                             | `docker.io/orgname/repository:*` |
+| Allow images on a registry with hostname `registry.example.com` | `registry.example.com/*`         |
+| Allow slim tags of NodeJS images                                | `docker.io/library/node:*-slim`  |
+@y
+| Use case                                                        | Pattern                          |
+| --------------------------------------------------------------- | -------------------------------- |
+| Allow all images from Docker Hub                                | `docker.io/*`                    |
+| Allow all Docker Official Images                                | `docker.io/library/*`            |
+| Allow images from a specific organization                       | `docker.io/orgname/*`            |
+| Allow tags of a specific repository                             | `docker.io/orgname/repository:*` |
+| Allow images on a registry with hostname `registry.example.com` | `registry.example.com/*`         |
+| Allow slim tags of NodeJS images                                | `docker.io/library/node:*-slim`  |
+@z
+
+@x
+An asterisk (`*`) matches up until the character that follows, or until the end
+of the image reference. Note that the `docker.io` prefix is required in order
+to match Docker Hub images. This is the registry hostname of Docker Hub.
+@y
+An asterisk (`*`) matches up until the character that follows, or until the end
+of the image reference. Note that the `docker.io` prefix is required in order
+to match Docker Hub images. This is the registry hostname of Docker Hub.
+@z
+
+@x
+This policy isn't enabled by default. To enable the policy:
+@y
+This policy isn't enabled by default. To enable the policy:
+@z
+
+@x
+1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
+2. Go to the **Policies** section.
+3. Select the **Unapproved base images** policy in the list.
+4. Enter the patterns that you want to allow.
+5. Select **Save and enable**. The policy is now enabled for your current
+   organization.
+@y
+1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
+2. Go to the **Policies** section.
+3. Select the **Unapproved base images** policy in the list.
+4. Enter the patterns that you want to allow.
+5. Select **Save and enable**. The policy is now enabled for your current
+   organization.
+@z
+
+@x
+Your images need provenance attestations for this policy to successfully
+evaluate. For more information, see [No base image data](#no-base-image-data).
+@y
+Your images need provenance attestations for this policy to successfully
+evaluate. For more information, see [No base image data](#no-base-image-data).
+@z
+
+@x
+## No base image data
+@y
+## No base image data
+@z
+
+@x
+There are cases when it's not possible to determine information about the base
+images used in your builds. In such cases, the **Outdated base images** and
+**Unapproved base images** policies get flagged as having **No data**.
+@y
+There are cases when it's not possible to determine information about the base
+images used in your builds. In such cases, the **Outdated base images** and
+**Unapproved base images** policies get flagged as having **No data**.
+@z
+
+@x
+This "no data" state occurs when:
+@y
+This "no data" state occurs when:
+@z
+
+@x
+- Docker Scout doesn't know what base image tag you used
+- The base image version you used has multiple tags, but not all tags are out
+  of date
+@y
+- Docker Scout doesn't know what base image tag you used
+- The base image version you used has multiple tags, but not all tags are out
+  of date
+@z
+
+@x
+To make sure that Docker Scout always knows about your base image, you can
+attach [provenance attestations](../../build/attestations/slsa-provenance.md)
+at build-time. Docker Scout uses provenance attestations to find out the base
+image version.
+@y
+To make sure that Docker Scout always knows about your base image, you can
+attach [provenance attestations](../../build/attestations/slsa-provenance.md)
+at build-time. Docker Scout uses provenance attestations to find out the base
+image version.
 @z

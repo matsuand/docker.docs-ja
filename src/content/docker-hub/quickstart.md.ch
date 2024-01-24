@@ -6,7 +6,7 @@
 description: Learn how to get started using Docker Hub
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, accounts,
   organizations, repositories, groups, teams
-title: Docker Hub Quickstart
+title: Docker Hub quickstart
 aliases:
 - /apidocs/docker-cloud/
 - /docker-cloud/
@@ -180,9 +180,9 @@ Start by creating a [Docker ID](https://hub.docker.com/signup).
 @z
 
 @x
-A Docker ID grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
+A [Docker ID](../docker-id/_index.md) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
 @y
-A Docker ID grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
+A [Docker ID](../docker-id/_index.md) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
 @z
 
 @x
@@ -199,22 +199,22 @@ To create a repository:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Create a Repository** on the Docker Hub welcome page.
+2. On the Repositories page, select **Create repository**.
 3. Name it **&lt;your-username&gt;/my-private-repo**.
 4. Set the visibility to **Private**.
 5. Select **Create**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Create a Repository** on the Docker Hub welcome page.
+2. On the Repositories page, select **Create repository**.
 3. Name it **&lt;your-username&gt;/my-private-repo**.
 4. Set the visibility to **Private**.
 5. Select **Create**.
 @z
 
 @x
-    You've created your first repository. 
+You've created your first repository.
 @y
-    You've created your first repository. 
+You've created your first repository.
 @z
 
 @x
@@ -388,9 +388,57 @@ Docker image locally.
 @z
 
 @x
-    ![Terminal](images/index-terminal.png)
+   ```console
+   $ cat > Dockerfile <<EOF
+   FROM busybox
+   CMD echo "Hello world! This is my first Docker image."
+   EOF
+   $ docker build -t mobythewhale/my-private-repo .
+   [+] Building 1.2s (5/5) FINISHED
+   => [internal] load build definition from Dockerfile
+   => => transferring dockerfile: 110B
+   => [internal] load .dockerignore
+   => => transferring context: 2B
+   => [internal] load metadata for docker.io/library/busybox:latest
+   => CACHED [1/1] FROM docker.io/library/busybox@sha256:a9286defaba7n3a519
+   => exporting to image
+   => => exporting layers
+   => => writing image sha256:dcdb1fd928bf257bfc0122ea47accd911a3a386ce618
+   => => naming to docker.io/mobythewhale/my-private-repo
+   $ docker run mobythewhale/my-private-repo
+   Hello world! This is my first Docker image.
+   $ docker push mobythewhale/my-private-repo
+   The push refers to repository [docker.io/mobythewhale/my-private-repo]
+   d2421964bad1: Layer already exists
+   latest: digest: sha256:7604fbf8eeb03d866fd005fa95cdbb802274bf9fa51f7dafba6658294
+   efa9baa size: 526
+   ```
 @y
-    ![Terminal](images/index-terminal.png)
+   ```console
+   $ cat > Dockerfile <<EOF
+   FROM busybox
+   CMD echo "Hello world! This is my first Docker image."
+   EOF
+   $ docker build -t mobythewhale/my-private-repo .
+   [+] Building 1.2s (5/5) FINISHED
+   => [internal] load build definition from Dockerfile
+   => => transferring dockerfile: 110B
+   => [internal] load .dockerignore
+   => => transferring context: 2B
+   => [internal] load metadata for docker.io/library/busybox:latest
+   => CACHED [1/1] FROM docker.io/library/busybox@sha256:a9286defaba7n3a519
+   => exporting to image
+   => => exporting layers
+   => => writing image sha256:dcdb1fd928bf257bfc0122ea47accd911a3a386ce618
+   => => naming to docker.io/mobythewhale/my-private-repo
+   $ docker run mobythewhale/my-private-repo
+   Hello world! This is my first Docker image.
+   $ docker push mobythewhale/my-private-repo
+   The push refers to repository [docker.io/mobythewhale/my-private-repo]
+   d2421964bad1: Layer already exists
+   latest: digest: sha256:7604fbf8eeb03d866fd005fa95cdbb802274bf9fa51f7dafba6658294
+   efa9baa size: 526
+   ```
 @z
 
 @x
@@ -410,9 +458,9 @@ Docker image locally.
 @z
 
 @x
-    ![Tag created](images/index-tag.png)
+    ![Tag created](images/index-tag.webp)
 @y
-    ![Tag created](images/index-tag.png)
+    ![Tag created](images/index-tag.webp)
 @z
 
 @x

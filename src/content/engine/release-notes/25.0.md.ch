@@ -52,6 +52,74 @@ For more information about:
 @z
 
 @x
+## 25.0.1
+@y
+## 25.0.1
+@z
+
+@x
+{{< release-date date="2024-01-23" >}}
+@y
+{{< release-date date="2024-01-23" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 25.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.1)
+- [moby/moby, 25.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.1)
+@y
+- [docker/cli, 25.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.1)
+- [moby/moby, 25.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- API: Fix incorrect HTTP status code for containers with an invalid network configuration created before upgrading to Docker Engine v25.0. [moby/moby#47159](https://github.com/moby/moby/pull/47159)
+- Ensure that a MAC address based on a container's IP address is re-generated when the container is stopped and restarted, in case the generated IP/MAC addresses have been reused. [moby/moby#47171](https://github.com/moby/moby/pull/47171)
+- Fix `host-gateway-ip` not working during build when not set through configuration. [moby/moby#47192](https://github.com/moby/moby/pull/47192)
+- Fix a bug that prevented a container from being renamed twice. [moby/moby#47196](https://github.com/moby/moby/pull/47196)
+- Fix an issue causing containers to have their short ID added to their network alias when inspecting them. [moby/moby#47182](https://github.com/moby/moby/pull/47182)
+- Fix an issue in detecting whether a remote build context is a Git repository. [moby/moby#47136](https://github.com/moby/moby/pull/47136)
+- Fix an issue with layers order in OCI manifests. [moby/moby#47150](https://github.com/moby/moby/issues/47150)
+- Fix volume mount error when passing an `addr` or `ip` mount option. [moby/moby#47185](https://github.com/moby/moby/pull/47185)
+- Improve error message related to extended attributes that can't be set due to improperly namespaced attribute names. [moby/moby#47178](https://github.com/moby/moby/pull/47178)
+- Swarm: Fixed `start_interval` not being passed to the container config. [moby/moby#47163](https://github.com/moby/moby/pull/47163)
+@y
+- API: Fix incorrect HTTP status code for containers with an invalid network configuration created before upgrading to Docker Engine v25.0. [moby/moby#47159](https://github.com/moby/moby/pull/47159)
+- Ensure that a MAC address based on a container's IP address is re-generated when the container is stopped and restarted, in case the generated IP/MAC addresses have been reused. [moby/moby#47171](https://github.com/moby/moby/pull/47171)
+- Fix `host-gateway-ip` not working during build when not set through configuration. [moby/moby#47192](https://github.com/moby/moby/pull/47192)
+- Fix a bug that prevented a container from being renamed twice. [moby/moby#47196](https://github.com/moby/moby/pull/47196)
+- Fix an issue causing containers to have their short ID added to their network alias when inspecting them. [moby/moby#47182](https://github.com/moby/moby/pull/47182)
+- Fix an issue in detecting whether a remote build context is a Git repository. [moby/moby#47136](https://github.com/moby/moby/pull/47136)
+- Fix an issue with layers order in OCI manifests. [moby/moby#47150](https://github.com/moby/moby/issues/47150)
+- Fix volume mount error when passing an `addr` or `ip` mount option. [moby/moby#47185](https://github.com/moby/moby/pull/47185)
+- Improve error message related to extended attributes that can't be set due to improperly namespaced attribute names. [moby/moby#47178](https://github.com/moby/moby/pull/47178)
+- Swarm: Fixed `start_interval` not being passed to the container config. [moby/moby#47163](https://github.com/moby/moby/pull/47163)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Upgrade Compose to `2.24.2`. [docker/docker-ce-packaging#981](https://github.com/docker/docker-ce-packaging/pull/981)
+@y
+- Upgrade Compose to `2.24.2`. [docker/docker-ce-packaging#981](https://github.com/docker/docker-ce-packaging/pull/981)
+@z
+
+@x
 ## 25.0.0
 @y
 ## 25.0.0
@@ -78,9 +146,97 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
+> **Note**
+>
+> In earlier versions of Docker Engine, recursive mounts (submounts) would
+> always be mounted as writable, even when specifying a read-only mount. This
+> behavior has changed in v25.0.0, for hosts running on kernel version 5.12 or
+> later. Now, read-only bind mounts are **recursively read-only** by default.
+>
+> To get the same behavior as earlier releases, you can specify the
+> `bind-recursive` option for the `--mount` flag.
+>
+> ```console
+> $ docker run --mount type=bind,src=SRC,dst=DST,readonly,bind-recursive=writable IMAGE
+> ```
+>
+> This option isn't supported with the `-v` or `--volume` flag.
+> For more information, see
+> [Recursive mounts](../../storage/bind-mounts.md#recursive-mounts).
+@y
+> **Note**
+>
+> In earlier versions of Docker Engine, recursive mounts (submounts) would
+> always be mounted as writable, even when specifying a read-only mount. This
+> behavior has changed in v25.0.0, for hosts running on kernel version 5.12 or
+> later. Now, read-only bind mounts are **recursively read-only** by default.
+>
+> To get the same behavior as earlier releases, you can specify the
+> `bind-recursive` option for the `--mount` flag.
+>
+> ```console
+> $ docker run --mount type=bind,src=SRC,dst=DST,readonly,bind-recursive=writable IMAGE
+> ```
+>
+> This option isn't supported with the `-v` or `--volume` flag.
+> For more information, see
+> [Recursive mounts](../../storage/bind-mounts.md#recursive-mounts).
+@z
+
+@x
 ### New
 @y
 ### New
+@z
+
+@x
+- The daemon now uses systemd's default `LimitNOFILE`. In earlier versions of
+  Docker Engine, this limit was set to `infinity`. This would cause issues with
+  recent versions of systemd, where the hard limit was increased, causing
+  programs that adjusted their behaviors based on ulimits to consume a high
+  amount of memory. [moby/moby#45534](https://github.com/moby/moby/pull/45534)
+@y
+- The daemon now uses systemd's default `LimitNOFILE`. In earlier versions of
+  Docker Engine, this limit was set to `infinity`. This would cause issues with
+  recent versions of systemd, where the hard limit was increased, causing
+  programs that adjusted their behaviors based on ulimits to consume a high
+  amount of memory. [moby/moby#45534](https://github.com/moby/moby/pull/45534)
+@z
+
+@x
+  The new setting makes containers behave the same way as programs running on
+  the host, but may cause programs that make incorrect assumptions based on the
+  soft limit to misbehave. To get the previous behavior, you can set
+  `LimitNOFILE=1048576`.
+@y
+  The new setting makes containers behave the same way as programs running on
+  the host, but may cause programs that make incorrect assumptions based on the
+  soft limit to misbehave. To get the previous behavior, you can set
+  `LimitNOFILE=1048576`.
+@z
+
+@x
+  This change currently only affects build containers created with `docker
+  build` when using BuildKit with the `docker` driver. Future versions of
+  containerd will also use this limit, which will cause this behavior to affect
+  all containers, not only build containers.
+@y
+  This change currently only affects build containers created with `docker
+  build` when using BuildKit with the `docker` driver. Future versions of
+  containerd will also use this limit, which will cause this behavior to affect
+  all containers, not only build containers.
+@z
+
+@x
+  If you're experiencing issues with the higher ulimit in systemd v240 or later,
+  consider adding a system `drop-in` or `override` file to configure the ulimit
+  settings for your setup. The [Flatcar Container Linux documentation](https://www.flatcar.org/docs/latest/setup/systemd/drop-in-units/)
+  has a great article covering this topic in detail.
+@y
+  If you're experiencing issues with the higher ulimit in systemd v240 or later,
+  consider adding a system `drop-in` or `override` file to configure the ulimit
+  settings for your setup. The [Flatcar Container Linux documentation](https://www.flatcar.org/docs/latest/setup/systemd/drop-in-units/)
+  has a great article covering this topic in detail.
 @z
 
 @x
@@ -134,6 +290,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Unpacking layers with extended attributes onto an incompatible filesystem will now fail instead of silently discarding extended attributes. [moby/moby#45464](https://github.com/moby/moby/pull/45464)
 - Update daemon MTU option to BridgeConfig and display warning on Windows. [moby/moby#45887](https://github.com/moby/moby/pull/45887)
 - Validate IPAM config when creating a network. Automatically fix networks created prior to this release where `--ip-range` is larger than `--subnet`. [moby/moby#45759](https://github.com/moby/moby/pull/45759)
+- Containers connected only to internal networks will now have no default route set, making the `connect` syscall fail-fast. [moby/moby#46603](https://github.com/moby/moby/pull/46603)
 - containerd image store: Add image events for `push`, `pull`, and `save`. [moby/moby#46405](https://github.com/moby/moby/pull/46405)
 - containerd image store: Add support for pulling legacy schema1 images. [moby/moby#46513](https://github.com/moby/moby/pull/46513)
 - containerd image store: Add support for pushing all tags. [moby/moby#46485](https://github.com/moby/moby/pull/46485)
@@ -183,6 +340,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Unpacking layers with extended attributes onto an incompatible filesystem will now fail instead of silently discarding extended attributes. [moby/moby#45464](https://github.com/moby/moby/pull/45464)
 - Update daemon MTU option to BridgeConfig and display warning on Windows. [moby/moby#45887](https://github.com/moby/moby/pull/45887)
 - Validate IPAM config when creating a network. Automatically fix networks created prior to this release where `--ip-range` is larger than `--subnet`. [moby/moby#45759](https://github.com/moby/moby/pull/45759)
+- Containers connected only to internal networks will now have no default route set, making the `connect` syscall fail-fast. [moby/moby#46603](https://github.com/moby/moby/pull/46603)
 - containerd image store: Add image events for `push`, `pull`, and `save`. [moby/moby#46405](https://github.com/moby/moby/pull/46405)
 - containerd image store: Add support for pulling legacy schema1 images. [moby/moby#46513](https://github.com/moby/moby/pull/46513)
 - containerd image store: Add support for pushing all tags. [moby/moby#46485](https://github.com/moby/moby/pull/46485)
@@ -267,4 +425,112 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Deprecate API versions older than 1.24. [Deprecation notice](../deprecated.md#deprecate-legacy-api-versions)
 - Deprecate `IsAutomated` field and `is-automated` filter for `docker search`. [Deprecation notice](../deprecated.md#isautomated-field-and-is-automated-filter-on-docker-search)
 - API: Deprecate `Container` and `ContainerConfig` properties for `/images/{id}/json` (`docker image inspect`). [moby/moby#46939](https://github.com/moby/moby/pull/46939)
+@z
+
+@x
+### Known limitations
+@y
+### Known limitations
+@z
+
+@x
+#### Extended attributes for tar files
+@y
+#### Extended attributes for tar files
+@z
+
+@x
+In this release, the code that handles `tar` archives was changed to be more
+strict and to produce an error when failing to write extended attributes
+(`xattr`). The `tar` implementation for macOS generates additional extended
+attributes by default when creating tar files. These attribute prefixes aren't
+valid Linux `xattr` namespace prefixes, which causes an error when Docker
+attempts to process these files. For example, if you try to use a tar file with
+an `ADD` Dockerfile instruction, you might see an error message similar to the
+following:
+@y
+In this release, the code that handles `tar` archives was changed to be more
+strict and to produce an error when failing to write extended attributes
+(`xattr`). The `tar` implementation for macOS generates additional extended
+attributes by default when creating tar files. These attribute prefixes aren't
+valid Linux `xattr` namespace prefixes, which causes an error when Docker
+attempts to process these files. For example, if you try to use a tar file with
+an `ADD` Dockerfile instruction, you might see an error message similar to the
+following:
+@z
+
+@x
+```text
+failed to solve: lsetxattr /sftp_key.ppk: operation not supported
+```
+@y
+```text
+failed to solve: lsetxattr /sftp_key.ppk: operation not supported
+```
+@z
+
+@x
+Error messages related to extended attribute validation were improved to
+include more context in [v25.0.1](#2501), but the limitation in Docker being
+unable to process the files remains. Tar files created with the macOS `tar`
+using default arguments will produce an error when the tar file is used with
+Docker.
+@y
+Error messages related to extended attribute validation were improved to
+include more context in [v25.0.1](#2501), but the limitation in Docker being
+unable to process the files remains. Tar files created with the macOS `tar`
+using default arguments will produce an error when the tar file is used with
+Docker.
+@z
+
+@x
+As a workaround, if you need to use tar files with Docker generated on macOS,
+you can either:
+@y
+As a workaround, if you need to use tar files with Docker generated on macOS,
+you can either:
+@z
+
+@x
+- Use the `--no-xattr` flag for the macOS `tar` command to strip **all** the
+  extended attributes. If you want to preserve extended attributes, this isn't
+  a recommended option.
+- Install and use `gnu-tar` to create the tarballs on macOS instead of the
+  default `tar` implementation. To install `gnu-tar` using Homebrew:
+@y
+- Use the `--no-xattr` flag for the macOS `tar` command to strip **all** the
+  extended attributes. If you want to preserve extended attributes, this isn't
+  a recommended option.
+- Install and use `gnu-tar` to create the tarballs on macOS instead of the
+  default `tar` implementation. To install `gnu-tar` using Homebrew:
+@z
+
+@x
+  ```console
+  $ brew install gnu-tar
+  ```
+@y
+  ```console
+  $ brew install gnu-tar
+  ```
+@z
+
+@x
+  After installing, add the `gnu-tar` binary to your `PATH`, for example by
+  updating your `.zshrc` file:
+@y
+  After installing, add the `gnu-tar` binary to your `PATH`, for example by
+  updating your `.zshrc` file:
+@z
+
+@x
+  ```console
+  $ echo 'PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"' >> ~/.zshrc
+  $ source ~/.zshrc
+  ```
+@y
+  ```console
+  $ echo 'PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"' >> ~/.zshrc
+  $ source ~/.zshrc
+  ```
 @z
