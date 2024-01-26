@@ -5,15 +5,13 @@
 ---
 description: The benefits of enhanced container isolation
 title: Key features and benefits
-keywords: set up, enhanced container isolation, rootless, security, features, Docker
-  Desktop
+keywords: set up, enhanced container isolation, rootless, security, features, Docker Desktop
 ---
 @y
 ---
 description: The benefits of enhanced container isolation
 title: Key features and benefits
-keywords: set up, enhanced container isolation, rootless, security, features, Docker
-  Desktop
+keywords: set up, enhanced container isolation, rootless, security, features, Docker Desktop
 ---
 @z
 
@@ -158,13 +156,15 @@ access management, and network proxies.
 @z
 
 @x
-With Enhanced Container Isolation, privileged containers can no longer do this. The combination of the Linux user-namespace and other security techniques used
-by Sysbox ensures that processes inside a privileged container can only access
-resources assigned to the container.
+With Enhanced Container Isolation, privileged containers can no longer do
+this. The combination of the Linux user-namespace and other security techniques
+used by Sysbox ensures that processes inside a privileged container can only
+access resources assigned to the container.
 @y
-With Enhanced Container Isolation, privileged containers can no longer do this. The combination of the Linux user-namespace and other security techniques used
-by Sysbox ensures that processes inside a privileged container can only access
-resources assigned to the container.
+With Enhanced Container Isolation, privileged containers can no longer do
+this. The combination of the Linux user-namespace and other security techniques
+used by Sysbox ensures that processes inside a privileged container can only
+access resources assigned to the container.
 @z
 
 @x
@@ -418,25 +418,19 @@ $ docker run -it --rm -v $HOME:/mnt alpine
 @x
 > Note
 >
-> Enhanced Container Isolation won't allow bind mounting the Docker socket
+> By default, Enhanced Container Isolation won't allow bind mounting the Docker Engine socket
 > (/var/run/docker.sock) into a container, as doing so essentially grants the
-> container control of Docker Engine, thus breaking container
-> isolation. Containers that rely on this will not work with Enhanced Container
-> Isolation enabled. Instead, use Docker-in-Docker (i.e., run the Docker Engine
-> fully inside a Docker Container). Enhanced Container Isolation is capable of
-> running Docker-in-Docker securely, without giving the outer container root
-> privileges in the Docker Desktop Linux VM.
+> container control of Docker Engine, thus breaking container isolation. However,
+> as some legitimate use cases require this, it's possible to relax
+> this restriction for trusted container images. See [Docker socket mount permissions](config.md#docker-socket-mount-permissions).
 @y
 > Note
 >
-> Enhanced Container Isolation won't allow bind mounting the Docker socket
+> By default, Enhanced Container Isolation won't allow bind mounting the Docker Engine socket
 > (/var/run/docker.sock) into a container, as doing so essentially grants the
-> container control of Docker Engine, thus breaking container
-> isolation. Containers that rely on this will not work with Enhanced Container
-> Isolation enabled. Instead, use Docker-in-Docker (i.e., run the Docker Engine
-> fully inside a Docker Container). Enhanced Container Isolation is capable of
-> running Docker-in-Docker securely, without giving the outer container root
-> privileges in the Docker Desktop Linux VM.
+> container control of Docker Engine, thus breaking container isolation. However,
+> as some legitimate use cases require this, it's possible to relax
+> this restriction for trusted container images. See [Docker socket mount permissions](config.md#docker-socket-mount-permissions).
 @z
 
 @x

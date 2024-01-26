@@ -8,6 +8,7 @@ description: The Docker Hub registry implementation
 keywords: registry, distribution, docker hub, spec, schema, api, manifest, auth
 aliases:
   - /registry/compatibility/
+  - /registry/configuration/
   - /registry/deploying/
   - /registry/deprecated/
   - /registry/garbage-collection/
@@ -48,6 +49,7 @@ description: The Docker Hub registry implementation
 keywords: registry, distribution, docker hub, spec, schema, api, manifest, auth
 aliases:
   - /registry/compatibility/
+  - /registry/configuration/
   - /registry/deploying/
   - /registry/deprecated/
   - /registry/garbage-collection/
@@ -196,7 +198,7 @@ For documentation related to authentication to the Docker Hub registry, see:
 [specification]: https://github.com/opencontainers/distribution-spec/blob/v1.0.1/spec.md
 [OCI image manifest]: https://github.com/opencontainers/image-spec/blob/main/manifest.md
 [Docker image manifest version 2, schema 2]: https://distribution.github.io/distribution/spec/manifest-v2-2/
-[OCI artifacts]: __SUBDIR__/docker-hub/oci-artifacts/
+[OCI artifacts]: /docker-hub/oci-artifacts/
 [oauth2]: https://distribution.github.io/distribution/spec/auth/oauth/
 [jwt]: https://distribution.github.io/distribution/spec/auth/jwt/
 [token]: https://distribution.github.io/distribution/spec/auth/token/

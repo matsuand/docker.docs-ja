@@ -121,12 +121,12 @@ grid_apis:
 @x
 - title: DVP Data API
   description: API for Docker Verified Publishers to fetch analytics data.
-  icon: auto_graph
+  icon: area_chart
   link: /docker-hub/api/dvp/
 @y
 - title: DVP Data API
   description: API for Docker Verified Publishers to fetch analytics data.
-  icon: auto_graph
+  icon: area_chart
   link: __SUBDIR__/docker-hub/api/dvp/
 @z
 

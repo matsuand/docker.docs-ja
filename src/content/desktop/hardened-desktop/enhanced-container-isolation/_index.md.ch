@@ -18,13 +18,13 @@ title: What is Enhanced Container Isolation?
 @z
 
 @x
->**Note**
+> Note
 >
->Enhanced Container Isolation is available to Docker Business customers only.
+> Enhanced Container Isolation is available to Docker Business customers only.
 @y
->**Note**
+> Note
 >
->Enhanced Container Isolation is available to Docker Business customers only.
+> Enhanced Container Isolation is available to Docker Business customers only.
 @z
 
 @x
@@ -66,11 +66,11 @@ Enhanced Container Isolation ensures stronger container isolation and also locks
 @z
 
 @x
->**Note**
+> Note
 >
 > Enhanced Container Isolation is in addition to other container security techniques used by Docker. For example, reduced Linux Capabilities, Seccomp, AppArmor.
 @y
->**Note**
+> Note
 >
 > Enhanced Container Isolation is in addition to other container security techniques used by Docker. For example, reduced Linux Capabilities, Seccomp, AppArmor.
 @z
@@ -128,12 +128,12 @@ In addition, the following restrictions are imposed:
 @x
 - Containers can no longer share namespaces with the Docker Desktop VM (e.g., `--network=host`, `--pid=host` are disallowed).
 - Containers can no longer modify configuration files inside the Docker Desktop VM (e.g., mounting any VM directory into the container is disallowed).
-- Containers can no longer access the Docker engine (e.g., mounting the Docker engine's socket into the container is restricted); this prevents malicious containers from gaining control of the Docker engine.
+- Containers can no longer access the Docker engine (e.g., mounting the Docker engine's socket into the container is restricted); this prevents malicious containers from gaining control of the Docker engine. Admins can relax this for [trusted container images](config.md).
 - Console access to the Docker Desktop VM is forbidden for all users.
 @y
 - Containers can no longer share namespaces with the Docker Desktop VM (e.g., `--network=host`, `--pid=host` are disallowed).
 - Containers can no longer modify configuration files inside the Docker Desktop VM (e.g., mounting any VM directory into the container is disallowed).
-- Containers can no longer access the Docker engine (e.g., mounting the Docker engine's socket into the container is restricted); this prevents malicious containers from gaining control of the Docker engine.
+- Containers can no longer access the Docker engine (e.g., mounting the Docker engine's socket into the container is restricted); this prevents malicious containers from gaining control of the Docker engine. Admins can relax this for [trusted container images](config.md).
 - Console access to the Docker Desktop VM is forbidden for all users.
 @z
 
@@ -150,14 +150,14 @@ For more information on how Enhanced Container Isolation work, see [How does it 
 @z
 
 @x
->**Important**
+> Important
 >
->Enhanced Container Isolation does not protect Kubernetes pods. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> Enhanced Container Isolation does not protect Kubernetes pods. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
 @y
->**Important**
+> Important
 >
->Enhanced Container Isolation does not protect Kubernetes pods. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> Enhanced Container Isolation does not protect Kubernetes pods. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
 @z
 
@@ -224,14 +224,14 @@ To enable Enhanced Container Isolation as a developer:
 @z
 
 @x
->**Important**
+> Important
 >
->Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
 @y
->**Important**
+> Important
 >
->Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
 @z
 
@@ -242,9 +242,15 @@ To enable Enhanced Container Isolation as a developer:
 @z
 
 @x
-To enable Enhanced Container Isolation as an admin, you first need to [configure a `registry.json` file to enforce sign-in](../../../security/for-admins/configure-sign-in.md). This is because the Enhanced Container Isolation feature requires a Docker Business subscription and therefore your Docker Desktop users must authenticate to your organization for this configuration to take effect.
+To enable Enhanced Container Isolation as an admin, you first need to [configure a `registry.json` file to enforce sign-in](../../../security/for-admins/configure-sign-in.md).
+This is because the Enhanced Container Isolation feature requires a Docker
+Business subscription and therefore your Docker Desktop users must authenticate
+to your organization for this configuration to take effect.
 @y
-To enable Enhanced Container Isolation as an admin, you first need to [configure a `registry.json` file to enforce sign-in](../../../security/for-admins/configure-sign-in.md). This is because the Enhanced Container Isolation feature requires a Docker Business subscription and therefore your Docker Desktop users must authenticate to your organization for this configuration to take effect.
+To enable Enhanced Container Isolation as an admin, you first need to [configure a `registry.json` file to enforce sign-in](../../../security/for-admins/configure-sign-in.md).
+This is because the Enhanced Container Isolation feature requires a Docker
+Business subscription and therefore your Docker Desktop users must authenticate
+to your organization for this configuration to take effect.
 @z
 
 @x
@@ -254,31 +260,45 @@ Next, you must [create and configure the `admin-settings.json` file](../settings
 @z
 
 @x
-```JSON
+```json
 {
- "configurationFileVersion": 2,
- "enhancedContainerIsolation": {
+  "configurationFileVersion": 2,
+  "enhancedContainerIsolation": {
     "value": true,
     "locked": true
-    }
+  }
 }
 ```
 @y
-```JSON
+```json
 {
- "configurationFileVersion": 2,
- "enhancedContainerIsolation": {
+  "configurationFileVersion": 2,
+  "enhancedContainerIsolation": {
     "value": true,
     "locked": true
-    }
+  }
 }
 ```
 @z
 
 @x
-By setting `"value": true`, the admin ensures ECI is enabled by default. By setting `"locked": true`, the admin ensures ECI can't be disabled by developers. If you wish to give developers the ability to disable the feature, set `"locked": false`.
+By setting `"value": true`, the admin ensures ECI is enabled by default. By
+setting `"locked": true`, the admin ensures ECI can't be disabled by
+developers. If you wish to give developers the ability to disable the feature,
+set `"locked": false`.
 @y
-By setting `"value": true`, the admin ensures ECI is enabled by default. By setting `"locked": true`, the admin ensures ECI can't be disabled by developers. If you wish to give developers the ability to disable the feature, set `"locked": false`.
+By setting `"value": true`, the admin ensures ECI is enabled by default. By
+setting `"locked": true`, the admin ensures ECI can't be disabled by
+developers. If you wish to give developers the ability to disable the feature,
+set `"locked": false`.
+@z
+
+@x
+In addition, starting with Docker Desktop 4.27, admins can also configure Docker
+socket mount permissions for containers, as described [here](config.md).
+@y
+In addition, starting with Docker Desktop 4.27, admins can also configure Docker
+socket mount permissions for containers, as described [here](config.md).
 @z
 
 @x
@@ -296,15 +316,15 @@ For this to take effect:
 @z
 
 @x
->Important
-  >
-  >Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
-  { .important }
+> Important
+>
+> Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
+{ .important }
 @y
->Important
-  >
-  >Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
-  { .important }
+> Important
+>
+> Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
+{ .important }
 @z
 
 @x

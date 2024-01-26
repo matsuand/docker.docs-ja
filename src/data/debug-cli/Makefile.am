@@ -3,16 +3,7 @@
 ##
 
 bases = \
-	tocparser.html
+	docker_debug.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
-
-copyfiles = \
-	css.html         \
-	description.html \
-	keywords.html    \
-	resources.html   \
-	title.html
-
-include $(top_srcdir)/build-aux/copy.mk

@@ -9,9 +9,11 @@
     class="link external-link"
     href="{{ $url | safeURL }}"
     target="_blank"
-    rel="noopener"
-    >{{ .Text | safeHTML }}<span
-      class="icon" data-icon="open_in_new"></span></a>
+    rel="noopener">
+      {{- .Text | safeHTML -}}
+      <span class="icon-svg">
+        {{- partial "icon" "open_in_new" -}}
+      </span></a>
 {{- else if (strings.HasPrefix $url "/") -}}
   {{/* absolute link, use url as-is */}}
   <a class="link" href="{{ $url }}">{{ .Text | safeHTML }}</a>
@@ -38,9 +40,11 @@
     class="link external-link"
     href="{{ $url | safeURL }}"
     target="_blank"
-    rel="noopener"
-    >{{ .Text | safeHTML }}<span
-      class="icon" data-icon="open_in_new"></span></a>
+    rel="noopener">
+      {{- .Text | safeHTML -}}
+      <span class="icon-svg">
+        {{- partial "icon" "open_in_new" -}}
+      </span></a>
 {{- else if (strings.HasPrefix $url "/") -}}
   {{/* absolute link, use url as-is */}}
   <a class="link" href="{{ $url }}">{{ .Text | safeHTML }}</a>

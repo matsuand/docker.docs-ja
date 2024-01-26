@@ -12,35 +12,6 @@ keywords: docker compose file, docker compose yml, docker compose reference, doc
 title: Overview
 toc_max: 4
 toc_min: 1
-grid:
-- title: Version and name top-level element
-  description: Understand version and name attributes for Compose.
-  icon: feed
-  link: /compose/compose-file/04-version-and-name/
-- title: Services top-level element
-  description: Explore all services attributes for Compose.
-  icon: construction
-  link: /compose/compose-file/05-services/
-- title: Networks top-level element
-  description: Find all networks attributes for Compose.
-  icon: lan
-  link: /compose/compose-file/06-networks/
-- title: Volumes top-level element
-  description: Explore all volumes attributes for Compose.
-  icon: database
-  link: /compose/compose-file/07-volumes/
-- title: Configs top-level element
-  description: Find out about configs in Compose.
-  icon: settings_suggest
-  link: /compose/compose-file/08-configs/
-- title: Secrets top-level element
-  description: Learn about secrets in Compose.
-  icon: lock
-  link: /compose/compose-file/09-secrets/
-aliases:
-- /compose/yaml/
-- /compose/compose-file/compose-file-v1/
----
 @y
 ---
 description: Find the latest recommended version of the Docker Compose file format
@@ -51,31 +22,88 @@ keywords: docker compose file, docker compose yml, docker compose reference, doc
 title: Overview
 toc_max: 4
 toc_min: 1
+@z
+
+@x
+grid:
+- title: Version and name top-level element
+  description: Understand version and name attributes for Compose.
+  icon: feed
+  link: /compose/compose-file/04-version-and-name/
+@y
 grid:
 - title: Version and name top-level element
   description: Understand version and name attributes for Compose.
   icon: feed
   link: __SUBDIR__/compose/compose-file/04-version-and-name/
+@z
+
+@x
+- title: Services top-level element
+  description: Explore all services attributes for Compose.
+  icon: construction
+  link: /compose/compose-file/05-services/
+@y
 - title: Services top-level element
   description: Explore all services attributes for Compose.
   icon: construction
   link: __SUBDIR__/compose/compose-file/05-services/
+@z
+
+@x
+- title: Networks top-level element
+  description: Find all networks attributes for Compose.
+  icon: lan
+  link: /compose/compose-file/06-networks/
+@y
 - title: Networks top-level element
   description: Find all networks attributes for Compose.
   icon: lan
   link: __SUBDIR__/compose/compose-file/06-networks/
+@z
+
+@x
+- title: Volumes top-level element
+  description: Explore all volumes attributes for Compose.
+  icon: database
+  link: /compose/compose-file/07-volumes/
+@y
 - title: Volumes top-level element
   description: Explore all volumes attributes for Compose.
   icon: database
   link: __SUBDIR__/compose/compose-file/07-volumes/
+@z
+
+@x
 - title: Configs top-level element
   description: Find out about configs in Compose.
-  icon: settings_suggest
+  icon: settings
+  link: /compose/compose-file/08-configs/
+@y
+- title: Configs top-level element
+  description: Find out about configs in Compose.
+  icon: settings
   link: __SUBDIR__/compose/compose-file/08-configs/
+@z
+
+@x
+- title: Secrets top-level element
+  description: Learn about secrets in Compose.
+  icon: lock
+  link: /compose/compose-file/09-secrets/
+@y
 - title: Secrets top-level element
   description: Learn about secrets in Compose.
   icon: lock
   link: __SUBDIR__/compose/compose-file/09-secrets/
+@z
+
+@x
+aliases:
+- /compose/yaml/
+- /compose/compose-file/compose-file-v1/
+---
+@y
 aliases:
 - /compose/yaml/
 - /compose/compose-file/compose-file-v1/

@@ -5,13 +5,13 @@
 ---
 title: Add or update a payment method
 description: Learn how to add or update a payment method in Docker Hub
-keywords: payments, billing, subscription
+keywords: payments, billing, subscription, supported payment methods, failed payments, coupons
 ---
 @y
 ---
 title: Add or update a payment method
 description: Learn how to add or update a payment method in Docker Hub
-keywords: payments, billing, subscription
+keywords: payments, billing, subscription, supported payment methods, failed payments, coupons
 ---
 @z
 
@@ -38,6 +38,36 @@ You can add a payment method or update your account's existing payment method at
 @z
 
 @x
+The following payment methods are supported:
+@y
+The following payment methods are supported:
+@z
+
+@x
+- Visa
+- MasterCard
+- American Express
+- Discover
+- JCB
+- Diners
+- UnionPay
+@y
+- Visa
+- MasterCard
+- American Express
+- Discover
+- JCB
+- Diners
+- UnionPay
+@z
+
+@x
+All currency, for example the amount listed on your billing invoice, is in United States dollar (USD).
+@y
+All currency, for example the amount listed on your billing invoice, is in United States dollar (USD).
+@z
+
+@x
 ## Personal account
 @y
 ## Personal account
@@ -95,4 +125,72 @@ You can add a payment method or update your account's existing payment method at
 6. Enter your new payment information, then select **Add**.
 7. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
 8. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
+@z
+
+@x
+## Failed payments
+@y
+## Failed payments
+@z
+
+@x
+If your subscription payment fails, there is a grace period of 15 days, including the due date. Docker retries to collect the payment 3 times using the following schedule:
+@y
+If your subscription payment fails, there is a grace period of 15 days, including the due date. Docker retries to collect the payment 3 times using the following schedule:
+@z
+
+@x
+- 3 days after the due date
+- 5 days after the previous attempt
+- 7 days after the previous attempt
+@y
+- 3 days after the due date
+- 5 days after the previous attempt
+- 7 days after the previous attempt
+@z
+
+@x
+Docker also sends an email notification `Action Required - Credit Card Payment Failed` with an attached unpaid invoice after each failed payment attempt. 
+@y
+Docker also sends an email notification `Action Required - Credit Card Payment Failed` with an attached unpaid invoice after each failed payment attempt. 
+@z
+
+@x
+Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+@y
+Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+@z
+
+@x
+## Redeem a coupon
+@y
+## Redeem a coupon
+@z
+
+@x
+You can redeem a coupon for any paid Docker subscription.
+@y
+You can redeem a coupon for any paid Docker subscription.
+@z
+
+@x
+A coupon can be used when you:
+- Sign up to a new paid subscription from a free subscription
+- Upgrade an existing paid subscription
+@y
+A coupon can be used when you:
+- Sign up to a new paid subscription from a free subscription
+- Upgrade an existing paid subscription
+@z
+
+@x
+You are asked to enter your coupon code when you confirm or enter your payment method.
+@y
+You are asked to enter your coupon code when you confirm or enter your payment method.
+@z
+
+@x
+If you use a coupon to pay for a subscription, when the coupon expires, your payment method is charged the full cost of your subscription. If you don't have a saved payment method, your account downgrades to a free subscription.
+@y
+If you use a coupon to pay for a subscription, when the coupon expires, your payment method is charged the full cost of your subscription. If you don't have a saved payment method, your account downgrades to a free subscription.
 @z

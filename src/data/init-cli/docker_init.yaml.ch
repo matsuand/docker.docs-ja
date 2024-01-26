@@ -14,9 +14,9 @@ long: |-
 @z
 
 @x
-  Docker Desktop 4.18 and later provides the Docker Init plugin with the `docker init` CLI command. Run `docker init` in your project directory to be walked through the creation of the following files with sensible defaults for your project:
+  Docker Desktop provides the `docker init` CLI command. Run `docker init` in your project directory to be walked through the creation of the following files with sensible defaults for your project:
 @y
-  Docker Desktop 4.18 and later provides the Docker Init plugin with the `docker init` CLI command. Run `docker init` in your project directory to be walked through the creation of the following files with sensible defaults for your project:
+  Docker Desktop provides the `docker init` CLI command. Run `docker init` in your project directory to be walked through the creation of the following files with sensible defaults for your project:
 @z
 
 @x
@@ -60,6 +60,7 @@ long: |-
 @x
     * ASP.NET Core: Suitable for an ASP.NET Core application.
     * Go: Suitable for a Go server application.
+    * Java: suitable for a Java application that uses Maven and packages as an uber jar.
     * Node: Suitable for a Node server application.
     * PHP with Apache: Suitable for a PHP web application.
     * Python: Suitable for a Python server application.
@@ -68,6 +69,7 @@ long: |-
 @y
     * ASP.NET Core: Suitable for an ASP.NET Core application.
     * Go: Suitable for a Go server application.
+    * Java: suitable for a Java application that uses Maven and packages as an uber jar.
     * Node: Suitable for a Node server application.
     * PHP with Apache: Suitable for a PHP web application.
     * Python: Suitable for a Python server application.
@@ -180,7 +182,8 @@ examples: |-
 @x
   ? What application platform does your project use?  [Use arrows to move, type to filter]
   > PHP with Apache - (detected) suitable for a PHP web application
-    Go - (detected) suitable for a Go server application
+    Go - suitable for a Go server application
+    Java - suitable for a Java application that uses Maven and packages as an uber jar
     Python - suitable for a Python server application
     Node - suitable for a Node server application
     Rust - suitable for a Rust server application
@@ -192,7 +195,8 @@ examples: |-
 @y
   ? What application platform does your project use?  [Use arrows to move, type to filter]
   > PHP with Apache - (detected) suitable for a PHP web application
-    Go - (detected) suitable for a Go server application
+    Go - suitable for a Go server application
+    Java - suitable for a Java application that uses Maven and packages as an uber jar
     Python - suitable for a Python server application
     Node - suitable for a Node server application
     Rust - suitable for a Rust server application
@@ -611,6 +615,76 @@ examples: |-
   If your application requires specific PHP extensions, you can follow the instructions in the Dockerfile to add them.
 @y
   If your application requires specific PHP extensions, you can follow the instructions in the Dockerfile to add them.
+@z
+
+@x
+  When you're ready, start your application by running: docker compose up --build
+@y
+  When you're ready, start your application by running: docker compose up --build
+@z
+
+@x
+  Your application will be available at http://localhost:9000
+@y
+  Your application will be available at http://localhost:9000
+@z
+
+@x
+  Consult README.Docker.md for more information about using the generated files.
+  ```
+@y
+  Consult README.Docker.md for more information about using the generated files.
+  ```
+@z
+
+@x
+  ### Example of selecting Java
+@y
+  ### Example of selecting Java
+@z
+
+@x
+  The following example shows the prompts that appear after selecting `Java` and example input.
+@y
+  The following example shows the prompts that appear after selecting `Java` and example input.
+@z
+
+@x
+  ```console
+  ? What application platform does your project use? Java
+  ? What version of Java do you want to use? 17
+  ? What's the relative directory (with a leading .) for your app? ./src
+  ? What port does your server listen on? 9000
+@y
+  ```console
+  ? What application platform does your project use? Java
+  ? What version of Java do you want to use? 17
+  ? What's the relative directory (with a leading .) for your app? ./src
+  ? What port does your server listen on? 9000
+@z
+
+@x
+  CREATED: .dockerignore
+  CREATED: Dockerfile
+  CREATED: compose.yaml
+  CREATED: README.Docker.md
+@y
+  CREATED: .dockerignore
+  CREATED: Dockerfile
+  CREATED: compose.yaml
+  CREATED: README.Docker.md
+@z
+
+@x
+  ✔ Your Docker files are ready!
+@y
+  ✔ Your Docker files are ready!
+@z
+
+@x
+  Take a moment to review them and tailor them to your application.
+@y
+  Take a moment to review them and tailor them to your application.
 @z
 
 @x

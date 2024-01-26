@@ -104,6 +104,20 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](../containerd.md).
+@y
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](../containerd.md).
+@z
+
+@x
 - **Use Virtualization framework**. Select to allow Docker Desktop to use the `virtualization.framework` instead of the `hypervisor.framework`.
     > **Tip**
     >
@@ -729,18 +743,6 @@ You can also sign up to the [Developer Preview program](https://www.docker.com/c
 {{< include "beta.md" >}}
 @y
 {{< include "beta.md" >}}
-@z
-
-@x
-#### Use containerd for pulling and storing images
-@y
-#### Use containerd for pulling and storing images
-@z
-
-@x
-Turns on the containerd image store. This brings new features like faster container startup performance by lazy-pulling images, and the ability to run Wasm applications with Docker. For more information, see [containerd image store](../containerd/index.md).
-@y
-Turns on the containerd image store. This brings new features like faster container startup performance by lazy-pulling images, and the ability to run Wasm applications with Docker. For more information, see [containerd image store](../containerd/index.md).
 @z
 
 @x

@@ -60,9 +60,9 @@ configured to use either Hyper-V or WSL version 2.
 @z
 
 @x
-Note,however, that ECI on WSL is not as secure as on Hyper-V because:
+Note however that ECI on WSL is not as secure as on Hyper-V because:
 @y
-Note,however, that ECI on WSL is not as secure as on Hyper-V because:
+Note however that ECI on WSL is not as secure as on Hyper-V because:
 @z
 
 @x
@@ -154,21 +154,21 @@ these won't work properly.
 @x
 ### Kubernetes pods are not yet protected
 Kubernetes pods are not yet protected by ECI. A malicious or privileged pod can
-compromise the Docker Desktop Linux VM and bypass security controls. 
+compromise the Docker Desktop Linux VM and bypass security controls.
 @y
 ### Kubernetes pods are not yet protected
 Kubernetes pods are not yet protected by ECI. A malicious or privileged pod can
-compromise the Docker Desktop Linux VM and bypass security controls. 
+compromise the Docker Desktop Linux VM and bypass security controls.
 @z
 
 @x
 ### Extension containers are not yet protected
 Extension containers are also not yet protected by ECI. Ensure you extension
-containers come from trusted entities to avoid issues. 
+containers come from trusted entities to avoid issues.
 @y
 ### Extension containers are not yet protected
 Extension containers are also not yet protected by ECI. Ensure you extension
-containers come from trusted entities to avoid issues. 
+containers come from trusted entities to avoid issues.
 @z
 
 @x

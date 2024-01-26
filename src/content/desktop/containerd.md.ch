@@ -3,14 +3,14 @@
 
 @x
 ---
-title: containerd image store (Beta)
+title: containerd image store
 description: How to activate the containerd integration feature in Docker Desktop
 keywords: Docker, containerd, engine, image store, lazy-pull
 toc_max: 3
 ---
 @y
 ---
-title: containerd image store (Beta)
+title: containerd image store
 description: How to activate the containerd integration feature in Docker Desktop
 keywords: Docker, containerd, engine, image store, lazy-pull
 toc_max: 3
@@ -23,24 +23,6 @@ image and file system management in the Docker Engine.
 @y
 This page provides information about the ongoing integration of `containerd` for
 image and file system management in the Docker Engine.
-@z
-
-@x
-> **Beta**
->
-> The containerd image store feature is currently in
-> [Beta](../release-lifecycle.md/#beta). We recommend that you do not use
-> this feature in production environments as this feature may change or be
-> removed from future releases.
-{ .experimental }
-@y
-> **Beta**
->
-> The containerd image store feature is currently in
-> [Beta](../release-lifecycle.md/#beta). We recommend that you do not use
-> this feature in production environments as this feature may change or be
-> removed from future releases.
-{ .experimental }
 @z
 
 @x
@@ -118,29 +100,21 @@ yet supported.
 @z
 
 @x
-The containerd image store beta feature is turned off by default.
+The containerd image store isn't turned on by default. To start using the
+feature:
 @y
-The containerd image store beta feature is turned off by default.
-@z
-
-@x
-To start using the feature:
-@y
-To start using the feature:
+The containerd image store isn't turned on by default. To start using the
+feature:
 @z
 
 @x
 1. Navigate to **Settings**.
-2. From the **Features in development** tab, select **Beta features**.
-3. Next to **Use containerd for pulling and storing images**, select the
-   checkbox.
-4. Select **Apply & Restart**
+2. In the **General** tab, check **Use containerd for pulling and storing images**.
+3. Select **Apply & Restart**
 @y
 1. Navigate to **Settings**.
-2. From the **Features in development** tab, select **Beta features**.
-3. Next to **Use containerd for pulling and storing images**, select the
-   checkbox.
-4. Select **Apply & Restart**
+2. In the **General** tab, check **Use containerd for pulling and storing images**.
+3. Select **Apply & Restart**
 @z
 
 @x

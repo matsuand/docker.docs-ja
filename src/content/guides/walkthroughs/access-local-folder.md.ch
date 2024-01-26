@@ -176,7 +176,7 @@ The `volumes` element tells Compose to mount the local folder `./app` to `/usr/s
 @z
 
 @x
-In a terminal, run the follow commands to bring up your application. Replace `/path/to/bindmount-apps/` with the path to your application's directory.
+In a terminal, run the following commands to bring up your application. Replace `/path/to/bindmount-apps/` with the path to your application's directory.
 @y
 端末から以下のコマンドを実行して、アプリケーションを実行します。
 `/path/to/bindmount-apps/` の部分は実際のアプリケーションディレクトリに置き換えてください。

@@ -219,10 +219,12 @@ AC_CONFIG_FILES([
 	src/content/storage/storagedriver/Makefile
 	src/content/storage/storagedriver/images/Makefile
 	src/content/subscription/Makefile
+	src/content/subscription/images/Makefile
 	src/content/trusted-content/Makefile
 	src/content/trusted-content/images/Makefile
 	src/data/Makefile
 	src/data/buildx/Makefile
+	src/data/debug-cli/Makefile
 	src/data/docsarchive/Makefile
 	src/data/engine-cli/Makefile
 	src/data/init-cli/Makefile

@@ -7,56 +7,80 @@
 description: Learn about organizations.
 keywords: organizations, admin, overview
 title: Organization administration overview
-grid:
-- title: Manage members
-  description: Explore how to manage members.
-  icon: group_add
-  link: /admin/organization/members/
-- title: Activity logs
-  description: Learn how to audit the activities of your members.
-  icon: feed
-  link: /admin/organization/activity-logs/
-- title: Image Access Management
-  description: Control which types of images your developers can pull.
-  icon: photo_library
-  link: /admin/organization/image-access/
-- title: Registry Access Management
-  description: Define which registries your developers can access.
-  icon: home_storage
-  link: /admin/organization/registry-access/
-- title: General settings
-  description: Configure general information or create a company.
-  icon: settings_suggest
-  link: /admin/organization/general-settings/
-- title: SSO & SCIM
-  description: 'Set up [Single Sign-On](/security/for-admins/single-sign-on/)
-    and [SCIM](/security/for-admins/scim/) for your organization.
 @y
 ---
 description: Learn about organizations.
 keywords: organizations, admin, overview
 title: Organization administration overview
+@z
+
+@x
+grid:
+- title: Manage members
+  description: Explore how to manage members.
+  icon: group_add
+  link: /admin/organization/members/
+@y
 grid:
 - title: Manage members
   description: Explore how to manage members.
   icon: group_add
   link: __SUBDIR__/admin/organization/members/
+@z
+
+@x
+- title: Activity logs
+  description: Learn how to audit the activities of your members.
+  icon: feed
+  link: /admin/organization/activity-logs/
+@y
 - title: Activity logs
   description: Learn how to audit the activities of your members.
   icon: feed
   link: __SUBDIR__/admin/organization/activity-logs/
+@z
+
+@x
+- title: Image Access Management
+  description: Control which types of images your developers can pull.
+  icon: photo_library
+  link: /admin/organization/image-access/
+@y
 - title: Image Access Management
   description: Control which types of images your developers can pull.
   icon: photo_library
   link: __SUBDIR__/admin/organization/image-access/
+@z
+
+@x
+- title: Registry Access Management
+  description: Define which registries your developers can access.
+  icon: home_storage
+  link: /admin/organization/registry-access/
+@y
 - title: Registry Access Management
   description: Define which registries your developers can access.
   icon: home_storage
   link: __SUBDIR__/admin/organization/registry-access/
+@z
+
+@x
 - title: General settings
   description: Configure general information or create a company.
-  icon: settings_suggest
+  icon: settings
+  link: /admin/organization/general-settings/
+@y
+- title: General settings
+  description: Configure general information or create a company.
+  icon: settings
   link: __SUBDIR__/admin/organization/general-settings/
+@z
+
+@x
+- title: SSO & SCIM
+  description: 'Set up [Single Sign-On](/security/for-admins/single-sign-on/)
+    and [SCIM](/security/for-admins/scim/) for your organization.
+@y
 - title: SSO & SCIM
   description: 'Set up [Single Sign-On](__SUBDIR__/security/for-admins/single-sign-on/)
     and [SCIM](__SUBDIR__/security/for-admins/scim/) for your organization.

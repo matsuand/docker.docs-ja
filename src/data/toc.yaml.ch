@@ -1143,7 +1143,7 @@ Reference:
   - path: /engine/reference/commandline/info/
     title: docker info
   - path: /engine/reference/commandline/init/
-    title: docker init (Beta)
+    title: docker init
   - path: /engine/reference/commandline/inspect/
     title: docker inspect
   - path: /engine/reference/commandline/login/
@@ -1156,7 +1156,7 @@ Reference:
   - path: __SUBDIR__/engine/reference/commandline/info/
     title: docker info
   - path: __SUBDIR__/engine/reference/commandline/init/
-    title: docker init (Beta)
+    title: docker init
   - path: __SUBDIR__/engine/reference/commandline/inspect/
     title: docker inspect
   - path: __SUBDIR__/engine/reference/commandline/login/
@@ -2424,6 +2424,8 @@ Manuals:
           section:
           - path: /desktop/hardened-desktop/enhanced-container-isolation/
             title: What is Enhanced Container Isolation?
+          - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced Configuration (Beta)
           - path: /desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
             title: How does it work?
           - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
@@ -2443,6 +2445,8 @@ Manuals:
           section:
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
             title: What is Enhanced Container Isolation?
+          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced Configuration (Beta)
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
             title: How does it work?
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
@@ -2479,9 +2483,11 @@ Manuals:
 
 @x
     - path: /desktop/containerd/
-      title: containerd image store (Beta)
+      title: containerd image store
     - path: /desktop/wasm/
       title: Wasm workloads (Beta)
+    - path: /desktop/synchronized-file-sharing/
+      title: Synchronized file shares {{< badge color=violet text=New >}}
     - sectiontitle: WSL
       section:
         - path: /desktop/wsl/
@@ -2492,9 +2498,11 @@ Manuals:
           title: Best practices
 @y
     - path: __SUBDIR__/desktop/containerd/
-      title: containerd image store (Beta)
+      title: containerd image store
     - path: __SUBDIR__/desktop/wasm/
       title: Wasm workloads (Beta)
+    - path: __SUBDIR__/desktop/synchronized-file-sharing/
+      title: Synchronized file shares {{< badge color=violet text=New >}}
     - sectiontitle: WSL
       section:
         - path: __SUBDIR__/desktop/wsl/
@@ -2647,7 +2655,7 @@ Manuals:
         - path: /desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: /desktop/extensions/private-marketplace/
-          title: Configure a private marketplace (Experimental)
+          title: Configure a private marketplace (Beta)
 @y
 - sectiontitle: Docker Extensions
   section:
@@ -2662,7 +2670,7 @@ Manuals:
         - path: __SUBDIR__/desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: __SUBDIR__/desktop/extensions/private-marketplace/
-          title: Configure a private marketplace (Experimental)
+          title: Configure a private marketplace (Beta)
 @z
 
 @x
@@ -3922,7 +3930,7 @@ Manuals:
 @z
 
 @x
-    - sectiontitle: Build Cloud
+    - sectiontitle: Build Cloud {{< badge color=violet text=New >}}
       section:
         - path: /build/cloud/
           title: Overview
@@ -3935,7 +3943,7 @@ Manuals:
         - path: /build/cloud/optimization/
           title: Optimize for cloud builds
 @y
-    - sectiontitle: Build Cloud
+    - sectiontitle: Build Cloud {{< badge color=violet text=New >}}
       section:
         - path: __SUBDIR__/build/cloud/
           title: 概要

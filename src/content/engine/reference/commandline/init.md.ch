@@ -32,13 +32,7 @@ in the source repository on GitHub:
 @x
 https://github.com/docker/docker-init
 -->
-> **Beta**
->
-> The Docker Init plugin is currently in [Beta](../../../release-lifecycle.md#beta). Docker recommends that you do not use this in production environments.
 @y
 https://github.com/docker/docker-init
 -->
-> **Beta**
->
-> The Docker Init plugin is currently in [Beta](../../../release-lifecycle.md#beta). Docker recommends that you do not use this in production environments.
 @z

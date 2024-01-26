@@ -16,16 +16,6 @@ keywords: set up, enhanced container isolation, rootless, security
 @z
 
 @x
->**Note**
->
-> Enhanced Container Isolation is available to Docker Business customers only.
-@y
->**Note**
->
-> Enhanced Container Isolation is available to Docker Business customers only.
-@z
-
-@x
 Docker implements Enhanced Container Isolation by using the [Sysbox
 container runtime](https://github.com/nestybox/sysbox). Sysbox is a fork of the
 standard OCI runc runtime that was modified to enhance standard container isolation and
@@ -70,13 +60,13 @@ to breach the Docker Desktop Virtual Machine (VM) or other containers.
 @z
 
 @x
->Note
+> Note
 >
 > When Enhanced Container Isolation is enabled in Docker Desktop, the Docker CLI
 > "--runtime" flag is ignored. Docker's default runtime continues to be "runc",
 > but all user containers are implicitly launched with Sysbox.
 @y
->Note
+> Note
 >
 > When Enhanced Container Isolation is enabled in Docker Desktop, the Docker CLI
 > "--runtime" flag is ignored. Docker's default runtime continues to be "runc",
@@ -85,10 +75,10 @@ to breach the Docker Desktop Virtual Machine (VM) or other containers.
 
 @x
 Enhanced Container Isolation is not the same as Docker Engine's userns-remap
-mode or Rootless Docker. This is explained further below. 
+mode or Rootless Docker. This is explained further below.
 @y
 Enhanced Container Isolation is not the same as Docker Engine's userns-remap
-mode or Rootless Docker. This is explained further below. 
+mode or Rootless Docker. This is explained further below.
 @z
 
 @x
@@ -173,12 +163,12 @@ container isolation by leveraging the Linux user-namespace.
 
 @x
 However, Enhanced Container Isolation is much more advanced since it assigns
-exclusive user-namespace mappings per container automatically and add several
+exclusive user-namespace mappings per container automatically and adds several
 other [container isolation features](#under-the-hood) meant to secure Docker
 Desktop in organizations with stringent security requirements.
 @y
 However, Enhanced Container Isolation is much more advanced since it assigns
-exclusive user-namespace mappings per container automatically and add several
+exclusive user-namespace mappings per container automatically and adds several
 other [container isolation features](#under-the-hood) meant to secure Docker
 Desktop in organizations with stringent security requirements.
 @z

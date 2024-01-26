@@ -4,7 +4,7 @@
 @x
 ---
 description: Learn how to downgrade your Docker subscription
-keywords: Docker Hub, downgrade, subscription, Pro, Team, Free, pricing plan,
+keywords: Docker Hub, downgrade, subscription, Pro, Team, pricing plan, pause subscription
 title: Downgrade your subscription
 aliases:
 - /docker-hub/cancel-downgrade/
@@ -13,7 +13,7 @@ aliases:
 @y
 ---
 description: Learn how to downgrade your Docker subscription
-keywords: Docker Hub, downgrade, subscription, Pro, Team, Free, pricing plan,
+keywords: Docker Hub, downgrade, subscription, Pro, Team, pricing plan, pause subscription
 title: Downgrade your subscription
 aliases:
 - /docker-hub/cancel-downgrade/
@@ -40,6 +40,18 @@ Before you downgrade to a free subscription, you may need to reduce the number o
 @z
 
 @x
+> **Important**
+>
+> If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only 1 private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
+{ .important }
+@y
+> **Important**
+>
+> If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only 1 private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
+{ .important }
+@z
+
+@x
 ## Downgrade your Docker subscription
 @y
 ## Downgrade your Docker subscription
@@ -105,4 +117,16 @@ Before you downgrade to a free subscription, you may need to reduce the number o
 If you want to cancel the downgrade, select **Cancel the downgrade** on the **Plan** tab.
 @y
 If you want to cancel the downgrade, select **Cancel the downgrade** on the **Plan** tab.
+@z
+
+@x
+## Pause a subscription
+@y
+## Pause a subscription
+@z
+
+@x
+You can't pause or delay a subscription. If a subscription invoice hasn't been paid on the due date, there's a 15 day grace period, including the due date.
+@y
+You can't pause or delay a subscription. If a subscription invoice hasn't been paid on the due date, there's a 15 day grace period, including the due date.
 @z

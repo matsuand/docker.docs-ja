@@ -100,6 +100,7 @@ bases = \
 	context_show.md \
 	context_update.md \
 	context_use.md \
+	debug.md \
 	docker.md \
 	image.md \
 	image_build.md \

@@ -55,8 +55,8 @@ grid:
     icon: "publish"
     description: Icon name = publish
   - title: "Interacting"
-    icon: "multiple_stops"
-    description: Icon name = multiple_stops
+    icon: "multiple_stop"
+    description: Icon name = multiple_stop
   - title: "Storage"
     icon: "database"
     description: Icon name = database
@@ -145,8 +145,8 @@ grid:
     description: Icon name = supervised_user_circle
     icon: supervised_user_circle
   - title: "General settings"
-    icon: "settings_suggest"
-    description: Icon name = settings_suggest
+    icon: "settings"
+    description: Icon name = settings
 ---
 @y
 ---
@@ -202,8 +202,8 @@ grid:
     icon: "publish"
     description: Icon name = publish
   - title: "Interacting"
-    icon: "multiple_stops"
-    description: Icon name = multiple_stops
+    icon: "multiple_stop"
+    description: Icon name = multiple_stop
   - title: "Storage"
     icon: "database"
     description: Icon name = database
@@ -292,8 +292,8 @@ grid:
     description: Icon name = supervised_user_circle
     icon: supervised_user_circle
   - title: "General settings"
-    icon: "settings_suggest"
-    description: Icon name = settings_suggest
+    icon: "settings"
+    description: Icon name = settings
 ---
 @z
 

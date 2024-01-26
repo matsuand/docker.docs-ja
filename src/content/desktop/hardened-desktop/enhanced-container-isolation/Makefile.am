@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md            \
+	config.md            \
 	features-benefits.md \
 	how-eci-works.md     \
 	limitations.md

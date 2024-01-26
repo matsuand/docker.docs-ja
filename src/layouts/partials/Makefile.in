@@ -298,6 +298,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = components utils
 bases = \
+	head.html         \
 	github-links.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -311,9 +312,9 @@ copyfiles = \
 	breadcrumbs.html  \
 	cli-aside.html    \
 	footer.html       \
-	head.html         \
 	header.html       \
 	heading.html      \
+	icon.html         \
 	mermaid.html      \
 	meta.html         \
 	sidebar.html      \

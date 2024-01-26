@@ -22,7 +22,7 @@ copyfiles = \
 	resource-saver-settings.png       \
 	resource-saver-status-bar.png     \
 	shared-folder-on-demand.png       \
-	synched-file-sharing.png          \
+	synched-file-shares.webp          \
 	troubleshoot.png                  \
 	virtualization-enabled.png        \
 	whale-x.png                       \

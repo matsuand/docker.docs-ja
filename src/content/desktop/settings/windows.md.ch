@@ -78,6 +78,20 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](../containerd.md).
+@y
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](../containerd.md).
+@z
+
+@x
 - **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
 If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](../use-desktop/container.md).
 @y
@@ -833,18 +847,6 @@ You can also sign up to the [Developer Preview Program](https://www.docker.com/c
 {{< include "beta.md" >}}
 @y
 {{< include "beta.md" >}}
-@z
-
-@x
-#### Use containerd for pulling and storing images
-@y
-#### Use containerd for pulling and storing images
-@z
-
-@x
-Turns on the containerd image store. This brings new features like faster container startup performance by lazy-pulling images, and the ability to run Wasm applications with Docker. For more information, see [containerd image store](../containerd/index.md).
-@y
-Turns on the containerd image store. This brings new features like faster container startup performance by lazy-pulling images, and the ability to run Wasm applications with Docker. For more information, see [containerd image store](../containerd/index.md).
 @z
 
 @x
