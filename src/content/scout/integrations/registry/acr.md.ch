@@ -293,10 +293,10 @@ integrations for the current organization.
 
 @x
 Next, activate Docker Scout for the repositories that you want to analyze in
-[repository settings](../../dashboard.md#repository-settings). When you enable
+[repository settings](../../dashboard.md#repository-settings).
 @y
 Next, activate Docker Scout for the repositories that you want to analyze in
-[repository settings](../../dashboard.md#repository-settings). When you enable
+[repository settings](../../dashboard.md#repository-settings).
 @z
 
 @x

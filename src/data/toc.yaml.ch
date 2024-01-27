@@ -1,18 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-@x v{{< param suburldir >}} ではダメか...
+@x
 Guides:
 - title: Docker overview
   path: /get-started/overview/
-- title: Get Docker
-  path: /get-docker/
-@y __SUBDIR__ is needed where each subtree is started in.
+@y
 ガイド:
 - title: Docker 概要
   path: __SUBDIR__/get-started/overview/
-- title: Docker の入手
-  path: __SUBDIR__/get-docker/
 @z
 
 @x
@@ -2307,6 +2303,8 @@ Samples:
 Manuals:
 - path: /manuals/
   title: Overview
+- title: Get Docker
+  path: /get-docker/
 - sectiontitle: Docker Desktop
   section:
     - path: /desktop/
@@ -2327,6 +2325,8 @@ Manuals:
 マニュアル:
 - path: __SUBDIR__/manuals/
   title: 概要
+- title: Docker の入手
+  path: __SUBDIR__/get-docker/
 - sectiontitle: Docker Desktop
   section:
     - path: __SUBDIR__/desktop/
@@ -2424,12 +2424,12 @@ Manuals:
           section:
           - path: /desktop/hardened-desktop/enhanced-container-isolation/
             title: What is Enhanced Container Isolation?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced Configuration (Beta)
           - path: /desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
             title: How does it work?
           - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
             title: Key features and benefits
+          - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced configuration options (Beta)
 @y
     - sectiontitle: Hardened Docker Desktop
       section:
@@ -2445,12 +2445,12 @@ Manuals:
           section:
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
             title: What is Enhanced Container Isolation?
-          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced Configuration (Beta)
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
             title: How does it work?
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
             title: Key features and benefits
+          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced configuration options (Beta)
 @z
 
 @x

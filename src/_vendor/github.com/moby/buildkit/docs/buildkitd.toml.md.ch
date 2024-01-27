@@ -26,13 +26,11 @@ The file path is `/etc/buildkit/buildkitd.toml` for rootful mode,
 @z
 
 @x
-The following is a complete `buildkitd.toml` configuration example, please
-note some configuration is only good for edge cases, please take care of it
-carefully.
+The following is a complete `buildkitd.toml` configuration example.
+Note that some configuration options are only useful in edge cases.
 @y
-The following is a complete `buildkitd.toml` configuration example, please
-note some configuration is only good for edge cases, please take care of it
-carefully.
+The following is a complete `buildkitd.toml` configuration example.
+Note that some configuration options are only useful in edge cases.
 @z
 
 @x

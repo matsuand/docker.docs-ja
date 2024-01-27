@@ -7,86 +7,299 @@
 title: Home
 description: Home page for Docker's documentation
 keywords: Docker, documentation, manual, guide, reference, api, samples
-grid:
-- title: Get started
-  image:
-    dark: /assets/images/rocket-dark.svg
-    light: /assets/images/rocket.svg
-  link: /guides/get-started/
-  description: Learn Docker basics and the benefits of containerizing your applications.
-- title: Download and install
-  image:
-    dark: /assets/images/download-docker-dark.svg
-    light: /assets/images/download-docker.svg
-  link: /get-docker/
-  description: Download and install Docker on your machine in a few easy steps.
-- title: Guides
-  image:
-    dark: /assets/images/guides-dark.svg
-    light: /assets/images/guides.svg
-  link: /get-started/overview/
-  description: Learn how to set up your Docker environment and start containerizing
-    your applications.
-- title: Language-specific guides
-  image:
-    dark: /assets/images/language-guides-dark.svg
-    light: /assets/images/language-guides.svg
-  link: /language/
-  description: Learn how to use Docker with your favorite programming language.
-- title: Manuals
-  image:
-    dark: /assets/images/manuals-dark.svg
-    light: /assets/images/manuals.svg
-  link: /manuals/
-  description: Browse the manuals and learn how to use Docker products.
-- title: Reference
-  image:
-    dark: /assets/images/reference-dark.svg
-    light: /assets/images/reference.svg
-  link: /reference/
-  description: Browse the CLI and API reference documentation.
----
 @y
 ---
 title: ホーム
 description: Home page for Docker's documentation
 keywords: Docker, documentation, manual, guide, reference, api, samples
+@z
+
+@x
 grid:
-- title: はじめよう
-  image:
-    dark: assets/images/rocket-dark.svg
-    light: assets/images/rocket.svg
-  link: guides/get-started/
-  description: Docker の基本やアプリケーションをコンテナー化するメリットについて学びます。
-- title: ダウンロードとインストール
-  image:
-    dark: assets/images/download-docker-dark.svg
-    light: assets/images/download-docker.svg
-  link: get-docker/
-  description: ほんの数ステップにより Docker をダウンロードしてマシンにインストールします。
-- title: ガイド
-  image:
-    dark: assets/images/guides-dark.svg
-    light: assets/images/guides.svg
-  link: get-started/overview/
-  description: Docker 環境の構築方法について学び、コンテナー化したアプリケーションを始めます。
-- title: 言語ごとのガイド
-  image:
-    dark: assets/images/language-guides-dark.svg
-    light: assets/images/language-guides.svg
-  link: language/
-  description: お好みのプログラミング言語を使って Docker を扱う方法について学びます。
-- title: マニュアル
-  image:
-    dark: assets/images/manuals-dark.svg
-    light: assets/images/manuals.svg
-  link: manuals/
-  description: マニュアルを見ながら Docker 製品の利用方法について学びます。
-- title: リファレンス
-  image:
-    dark: assets/images/reference-dark.svg
-    light: assets/images/reference.svg
-  link: reference/
-  description: CLI や API のリファレンスドキュメントを確認します。
+  - title: Docker Desktop
+    icon: computer
+    description: |
+      Manage containers, applications, and images directly from your machine.
+    links:
+      - text: "Overview"
+        url: "/desktop/"
+      - text: "Explore Docker Desktop"
+        url: "/desktop/use-desktop/"
+      - text: "Release notes"
+        url: "/desktop/release-notes/"
+@y
+grid:
+  - title: Docker Desktop
+    icon: computer
+    description: |
+      自マシンから直接、コンテナー、アプリケーション、イメージを管理します。
+    links:
+      - text: "概要"
+        url: "desktop/"
+      - text: "Docker Desktop の確認"
+        url: "desktop/use-desktop/"
+      - text: "リリースノート"
+        url: "desktop/release-notes/"
+@z
+
+@x
+  - title: Docker Engine
+    icon: developer_board
+    description: |
+      The definitive open source container client and runtime.
+    links:
+      - text: "Overview"
+        url: "/engine/"
+      - text: "Install"
+        url: "/engine/install/"
+      - text: "Release notes"
+        url: "/engine/release-notes/"
+@y
+  - title: Docker Engine
+    icon: developer_board
+    description: |
+      オープンソースによる決定的なコンテナークライアントおよびランタイムです。
+    links:
+      - text: "概要"
+        url: "engine/"
+      - text: "インストール"
+        url: "engine/install/"
+      - text: "リリースノート"
+        url: "engine/release-notes/"
+@z
+
+@x
+  - title: Docker Build
+    icon: build
+    description: |
+      Package, test, and ship your applications.
+    links:
+      - text: "Overview"
+        url: "/build/"
+      - text: "Packaging your software"
+        url: "/build/building/packaging/"
+      - text: "Release notes"
+        url: "/build/release-notes/"
+@y
+  - title: Docker Build
+    icon: build
+    description: |
+      アプリケーションのパッケージ化、テスト、公開を行います。
+    links:
+      - text: "概要"
+        url: "build/"
+      - text: "ソフトウエアのパッケージング"
+        url: "build/building/packaging/"
+      - text: "リリースノート"
+        url: "build/release-notes/"
+@z
+
+@x
+  - title: Docker Compose
+    icon: polyline
+    description: |
+      Define and run multi-container applications with Docker.
+    links:
+      - text: "Overview"
+        url: "/compose/"
+      - text: "Try Docker Compose"
+        url: "/compose/gettingstarted/"
+      - text: "Release notes"
+        url: "/compose/release-notes/"
+@y
+  - title: Docker Compose
+    icon: polyline
+    description: |
+      Docker を使ってマルチコンテナーアプリケーションを定義して実行します。
+    links:
+      - text: "概要"
+        url: "compose/"
+      - text: "Docker Compose を試す"
+        url: "compose/gettingstarted/"
+      - text: "リリースノート"
+        url: "compose/release-notes/"
+@z
+
+@x
+  - title: Docker Hub
+    icon: device_hub
+    description: |
+      Find and share container images and other artifacts.
+    links:
+      - text: "Overview"
+        url: "/docker-hub/"
+      - text: "Create an account"
+        url: "/docker-id/"
+      - text: "Create a repository"
+        url: "/docker-hub/repos/create/"
+@y
+  - title: Docker Hub
+    icon: device_hub
+    description: |
+      コンテナーイメージや他の成果を検索、共有します。
+    links:
+      - text: "概要"
+        url: "docker-hub/"
+      - text: "アカウントの生成"
+        url: "docker-id/"
+      - text: "リポジトリの生成"
+        url: "docker-hub/repos/create/"
+@z
+
+@x
+  - title: Docker Scout
+    icon: query_stats
+    description: |
+      Strengthen your software supply chain with Docker Scout.
+    links:
+      - text: "Overview"
+        url: "/scout/"
+      - text: "Quickstart"
+        url: "/scout/quickstart/"
+      - text: "Image analysis"
+        url: "/scout/image-analysis/"
+@y
+  - title: Docker Scout
+    icon: query_stats
+    description: |
+      Docker Scout を使ってソフトウェアのサプライチェーンを強化します。
+    links:
+      - text: "概要"
+        url: "scout/"
+      - text: "クィックスタート"
+        url: "scout/quickstart/"
+      - text: "イメージ分析"
+        url: "scout/image-analysis/"
+@z
+
+@x
+  - title: Trusted content
+    icon: verified
+    description: |
+      High-quality, secure images from Docker and verified partners.
+    links:
+      - text: "Overview"
+        url: "/trusted-content/"
+      - text: "Official images"
+        url: "/trusted-content/official-images/"
+      - text: "Verified publisher program"
+        url: "/trusted-content/dvp-program/"
+@y
+  - title: Trusted content
+    icon: verified
+    description: |
+      Docker や認証パートナーにより高品質でセキュアなイメージを提供します。
+    links:
+      - text: "概要"
+        url: "trusted-content/"
+      - text: "公式イメージ"
+        url: "trusted-content/official-images/"
+      - text: "公開者向け認証プログラム"
+        url: "trusted-content/dvp-program/"
+@z
+
+@x
+  - title: Subscription
+    icon: card_membership
+    description: |
+      Licensing for commercial use of Docker components.
+    links:
+      - text: "Overview"
+        url: "/subscription/"
+      - text: "Subscriptions and features"
+        url: "/subscription/details/"
+      - text: "Upgrade"
+        url: "/subscription/upgrade/"
+@y
+  - title: Subscription
+    icon: card_membership
+    description: |
+      Docker コンポーネントの商用利用のためのライセンスです。
+    links:
+      - text: "概要"
+        url: "subscription/"
+      - text: "サブスクリプションと機能"
+        url: "subscription/details/"
+      - text: "アップグレード"
+        url: "subscription/upgrade/"
+@z
+
+@x
+  - title: Billing
+    icon: payments
+    description: |
+      Manage your billing and payment settings for your subscription.
+    links:
+      - text: "Overview"
+        url: "/billing/"
+      - text: "Update payment method"
+        url: "/billing/payment-method/"
+      - text: "View billing history"
+        url: "/billing/history/"
+@y
+  - title: Billing
+    icon: payments
+    description: |
+      サブスクリプションにおける購入設定を管理します。
+    links:
+      - text: "概要"
+        url: "billing/"
+      - text: "支払い方法の更新"
+        url: "billing/payment-method/"
+      - text: "購入履歴の参照"
+        url: "billing/history/"
+@z
+
+@x
+  - title: Administration
+    icon: admin_panel_settings
+    description: |
+      Manage company and organization users, permissions, and more.
+    links:
+      - text: "Overview"
+        url: "/admin/company/"
+      - text: "Organization administration"
+        url: "/admin/organization/"
+      - text: "Company administration"
+        url: "/admin/company/"
+@y
+  - title: Administration
+    icon: admin_panel_settings
+    description: |
+      企業や組織のユーザーやパーミッションなどを管理します。
+    links:
+      - text: "概要"
+        url: "admin/company/"
+      - text: "組織の管理"
+        url: "admin/organization/"
+      - text: "企業の管理"
+        url: "admin/company/"
+@z
+
+@x
+  - title: Security
+    icon: shield
+    description: |
+      Security guardrails for both administrators and developers.
+    links:
+      - text: "Overview"
+        url: "/security/"
+      - text: "SSO"
+        url: "/security/for-admins/single-sign-on/"
+      - text: "SCIM"
+        url: "/security/for-admins/scim/"
+---
+@y
+  - title: Security
+    icon: shield
+    description: |
+      管理者と開発者の双方に対するセキュリティガードレールです。
+    links:
+      - text: "概要"
+        url: "security/"
+      - text: "SSO"
+        url: "security/for-admins/single-sign-on/"
+      - text: "SCIM"
+        url: "security/for-admins/scim/"
 ---
 @z

@@ -168,7 +168,7 @@ access resources assigned to the container.
 @z
 
 @x
-> Note
+> **Note**
 >
 > Enhanced Container Isolation does not prevent users from launching privileged
 > containers, but rather runs them securely by ensuring that they can only
@@ -177,7 +177,7 @@ access resources assigned to the container.
 > settings will not work properly as they will receive "permission
 > denied" error when attempting such operations.
 @y
-> Note
+> **Note**
 >
 > Enhanced Container Isolation does not prevent users from launching privileged
 > containers, but rather runs them securely by ensuring that they can only
@@ -416,7 +416,7 @@ $ docker run -it --rm -v $HOME:/mnt alpine
 @z
 
 @x
-> Note
+> **Note**
 >
 > By default, Enhanced Container Isolation won't allow bind mounting the Docker Engine socket
 > (/var/run/docker.sock) into a container, as doing so essentially grants the
@@ -424,7 +424,7 @@ $ docker run -it --rm -v $HOME:/mnt alpine
 > as some legitimate use cases require this, it's possible to relax
 > this restriction for trusted container images. See [Docker socket mount permissions](config.md#docker-socket-mount-permissions).
 @y
-> Note
+> **Note**
 >
 > By default, Enhanced Container Isolation won't allow bind mounting the Docker Engine socket
 > (/var/run/docker.sock) into a container, as doing so essentially grants the

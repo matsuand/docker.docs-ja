@@ -18,11 +18,11 @@ title: What is Enhanced Container Isolation?
 @z
 
 @x
-> Note
+> **Note**
 >
 > Enhanced Container Isolation is available to Docker Business customers only.
 @y
-> Note
+> **Note**
 >
 > Enhanced Container Isolation is available to Docker Business customers only.
 @z
@@ -66,11 +66,11 @@ Enhanced Container Isolation ensures stronger container isolation and also locks
 @z
 
 @x
-> Note
+> **Note**
 >
 > Enhanced Container Isolation is in addition to other container security techniques used by Docker. For example, reduced Linux Capabilities, Seccomp, AppArmor.
 @y
-> Note
+> **Note**
 >
 > Enhanced Container Isolation is in addition to other container security techniques used by Docker. For example, reduced Linux Capabilities, Seccomp, AppArmor.
 @z
@@ -150,12 +150,12 @@ For more information on how Enhanced Container Isolation work, see [How does it 
 @z
 
 @x
-> Important
+> **Important**
 >
 > Enhanced Container Isolation does not protect Kubernetes pods. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
 @y
-> Important
+> **Important**
 >
 > Enhanced Container Isolation does not protect Kubernetes pods. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
@@ -224,12 +224,12 @@ To enable Enhanced Container Isolation as a developer:
 @z
 
 @x
-> Important
+> **Important**
 >
 > Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
 @y
-> Important
+> **Important**
 >
 > Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
 { .important }
@@ -316,12 +316,12 @@ For this to take effect:
 @z
 
 @x
-> Important
+> **Important**
 >
 > Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
 { .important }
 @y
-> Important
+> **Important**
 >
 > Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
 { .important }

@@ -60,13 +60,13 @@ to breach the Docker Desktop Virtual Machine (VM) or other containers.
 @z
 
 @x
-> Note
+> **Note**
 >
 > When Enhanced Container Isolation is enabled in Docker Desktop, the Docker CLI
 > "--runtime" flag is ignored. Docker's default runtime continues to be "runc",
 > but all user containers are implicitly launched with Sysbox.
 @y
-> Note
+> **Note**
 >
 > When Enhanced Container Isolation is enabled in Docker Desktop, the Docker CLI
 > "--runtime" flag is ignored. Docker's default runtime continues to be "runc",

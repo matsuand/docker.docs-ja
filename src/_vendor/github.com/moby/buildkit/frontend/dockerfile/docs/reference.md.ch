@@ -3112,25 +3112,17 @@ doesn't support authentication.
 
 @x
 - The `<src>` path must be inside the build context;
-  you can't use `COPY ../something /something`, because the builder can only
+  you can't use `ADD ../something /something`, because the builder can only
   access files from the context, and `../something` specifies a parent file or
   directory of the build context root.
 @y
 - The `<src>` path must be inside the build context;
-  you can't use `COPY ../something /something`, because the builder can only
+  you can't use `ADD ../something /something`, because the builder can only
   access files from the context, and `../something` specifies a parent file or
   directory of the build context root.
 @z
 
 @x
-- If `<src>` is a directory, the entire contents of the directory are copied,
-  including filesystem metadata.
-@y
-- If `<src>` is a directory, the entire contents of the directory are copied,
-  including filesystem metadata.
-@z
-
-@x
 - If `<src>` is a URL and `<dest>` does end with a trailing slash, then the
   filename is inferred from the URL and the file is downloaded to
   `<dest>/<filename>`. For instance, `ADD http://example.com/foobar /` would
@@ -3229,11 +3221,11 @@ doesn't support authentication.
 @z
 
 @x
-- If `<dest>` doesn't end with a trailing slash, it will be considered a
-  regular file and the contents of `<src>` will be written at `<dest>`.
+- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
+  the contents of `<src>` will be written as filename `<dest>`.
 @y
-- If `<dest>` doesn't end with a trailing slash, it will be considered a
-  regular file and the contents of `<src>` will be written at `<dest>`.
+- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
+  the contents of `<src>` will be written as filename `<dest>`.
 @z
 
 @x
@@ -3685,11 +3677,11 @@ attempted to be used instead.
 @z
 
 @x
-- If `<dest>` doesn't end with a trailing slash, it will be considered a
-  regular file and the contents of `<src>` will be written at `<dest>`.
+- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
+  the contents of `<src>` will be written as filename `<dest>`.
 @y
-- If `<dest>` doesn't end with a trailing slash, it will be considered a
-  regular file and the contents of `<src>` will be written at `<dest>`.
+- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
+  the contents of `<src>` will be written as filename `<dest>`.
 @z
 
 @x
