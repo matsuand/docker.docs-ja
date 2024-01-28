@@ -3,7 +3,7 @@
 ##
 absORIGDIR=@absORIGDIR@
 
-SUBDIRS = _vendor content data i18n layouts
+SUBDIRS = _vendor assets content data i18n layouts
 
 bases = \
 	hugo.yaml

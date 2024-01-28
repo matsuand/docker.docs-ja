@@ -56,6 +56,12 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/moby/moby/Makefile
 	src/_vendor/github.com/moby/moby/docs/Makefile
 	src/_vendor/github.com/moby/moby/docs/api/Makefile
+	src/assets/Makefile
+	src/assets/css/Makefile
+	src/assets/images/Makefile
+	src/assets/js/Makefile
+	src/assets/js/src/Makefile
+	src/assets/scss/Makefile
 	src/content/Makefile
 	src/content/admin/Makefile
 	src/content/admin/company/Makefile

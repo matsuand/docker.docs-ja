@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src
+subdir = src/assets/js
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -153,7 +153,7 @@ am__define_uniq_tagged_files = \
 DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/main.mk
+	$(top_srcdir)/build-aux/copy.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
   dir0=`pwd`; \
@@ -295,45 +295,17 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = _vendor assets content data i18n layouts
-bases = \
-	hugo.yaml
+SUBDIRS = src
+copyfiles = \
+	mermaid.js \
+	theme.js
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
-changes = $(bases:=.ch) # change files
-transes = $(bases)      # translated files
-EXTRA_DIST = $(changes)
-copydirs = \
-	_releaser \
-	assets    \
-	scripts   \
-	static
-
-copyfiles = \
-	.dockerignore      \
-	.htmltest.yml      \
-	.markdownlint.json \
-	.prettierrc        \
-	.vale.ini          \
-	CONTRIBUTING.md    \
-	Dockerfile         \
-	LICENSE            \
-	README.md          \
-	compose.yaml       \
-	docker-bake.hcl    \
-	go.mod             \
-	go.sum             \
-	netlify.toml       \
-	package-lock.json  \
-	package.json       \
-	postcss.config.js  \
-	tailwind.config.js
-
 all: all-recursive
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -342,9 +314,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/assets/js/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/Makefile
+	  $(AUTOMAKE) --foreign src/assets/js/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -353,7 +325,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -646,45 +618,11 @@ ctie:
 	fi
 
 .PHONY: all
-all: $(transes)
+all: $(copyfiles)
 
-submakename ?= Makefile.sub
-
--include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
-
-@MAINT@.PHONY: chbuild
-@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
-@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
-@MAINT@	@if test ! -f $@; then \
-@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
-@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$||"` $@; \
-@MAINT@	fi
-
-.PHONY: all _copydirs _copyfiles _npminstall
-all: _copydirs _copyfiles _npminstall
-
-_copydirs:
-	@for d in $(copydirs); do \
-	  if test ! -d $$d; then \
-	    cp -pR $(absORIGDIR)/$$d .; \
-	  fi \
-	done
-
-_copyfiles:
-	@for f in $(copyfiles); do \
-	  if test ! -e $$f; then \
-	    cp -p $(absORIGDIR)/$$f .; \
-	  fi \
-	done
-
-_npminstall:
-	@if test ! -d node_modules; then \
-	  npm install; \
-	  npm cache clean --force; \
-	fi
+-include copyfiles.sub
+copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
