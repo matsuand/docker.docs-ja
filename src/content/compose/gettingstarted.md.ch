@@ -226,7 +226,7 @@ In your project directory, create a file named `Dockerfile` and paste the follow
 @x
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM python:3.7-alpine
+FROM python:3.10-alpine
 WORKDIR /code
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
@@ -240,7 +240,7 @@ CMD ["flask", "run"]
 @y
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM python:3.7-alpine
+FROM python:3.10-alpine
 WORKDIR /code
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0

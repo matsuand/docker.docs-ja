@@ -11,7 +11,7 @@ copyfiles = \
 	containerd_feature_activation.png \
 	containerd_multiplatform.png      \
 	dashboard.PNG                     \
-	dashboard.webp                    /
+	dashboard.webp                    \
 	dev-env-gitbash.png               \
 	dev-env.PNG                       \
 	dev-share.PNG                     \

@@ -36,6 +36,56 @@ for what's coming next.
 @z
 
 @x
+## 2024-01-26
+@y
+## 2024-01-26
+@z
+
+@x
+**Azure Container Registry** integration graduated from
+[Early Access](../release-lifecycle.md#early-access-ea) to
+[General Availability](../release-lifecycle.md#genera-availability-ga).
+@y
+**Azure Container Registry** integration graduated from
+[Early Access](../release-lifecycle.md#early-access-ea) to
+[General Availability](../release-lifecycle.md#genera-availability-ga).
+@z
+
+@x
+For more information and setup instructions, see
+[Integrate Azure Container Registry](./integrations/registry/acr.md).
+@y
+For more information and setup instructions, see
+[Integrate Azure Container Registry](./integrations/registry/acr.md).
+@z
+
+@x
+## 2024-01-23
+@y
+## 2024-01-23
+@z
+
+@x
+New **Unapproved base images** policy, which lets you restrict which base
+images you allow in your builds. You define the allowed base images using a
+pattern. Base images whose image reference don't match the specified patterns
+cause the policy to fail.
+@y
+New **Unapproved base images** policy, which lets you restrict which base
+images you allow in your builds. You define the allowed base images using a
+pattern. Base images whose image reference don't match the specified patterns
+cause the policy to fail.
+@z
+
+@x
+For more information, see
+[Unapproved base images](./policy/_index.md#unapproved-base-images).
+@y
+For more information, see
+[Unapproved base images](./policy/_index.md#unapproved-base-images).
+@z
+
+@x
 ## 2024-01-12
 @y
 ## 2024-01-12

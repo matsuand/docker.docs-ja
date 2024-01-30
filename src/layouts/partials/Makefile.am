@@ -4,6 +4,7 @@
 SUBDIRS = components utils
 
 bases = \
+	footer.html       \
 	head.html         \
 	github-links.html
 
@@ -15,7 +16,6 @@ copyfiles = \
 	aside.html        \
 	breadcrumbs.html  \
 	cli-aside.html    \
-	footer.html       \
 	header.html       \
 	heading.html      \
 	icon.html         \

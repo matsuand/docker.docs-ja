@@ -302,6 +302,7 @@ bases = \
 	_index.md \
 	compose-application-model.md \
 	faq.md                       \
+	feedback.md                  \
 	file-watch.md                \
 	gettingstarted.md            \
 	gpu-support.md               \

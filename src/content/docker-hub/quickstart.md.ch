@@ -164,37 +164,38 @@ aliases:
 @x
 The following section contains step-by-step instructions on how to get started with Docker Hub.
 @y
-The following section contains step-by-step instructions on how to get started with Docker Hub.
+以下の節において、Docker Hub をはじめる方法を順に示していきます。
 @z
 
 @x
 ### Step 1: Sign up for a Docker account
 @y
-### Step 1: Sign up for a Docker account
+### 手順 1: Docker アカウントへのサインアップ {#step-1-sign-up-for-a-docker-account}
 @z
 
 @x
 Start by creating a [Docker ID](https://hub.docker.com/signup).
 @y
-Start by creating a [Docker ID](https://hub.docker.com/signup).
+まずは [Docker ID](https://hub.docker.com/signup) を生成するところからはじめます。
 @z
 
 @x
 A [Docker ID](../docker-id/_index.md) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
 @y
-A [Docker ID](../docker-id/_index.md) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
+[Docker ID](../docker-id/_index.md) は Docker Hub リポジトリへのアクセス権を定めるものであり、コミュニティや認証済み公開者が提供するイメージを参照できるようになります。
+また Docker ID は Docker Hub 上においてイメージを共有するために必要となります。
 @z
 
 @x
 ### Step 2: Create your first repository
 @y
-### Step 2: Create your first repository
+### 手順 2: リポジトリの新規生成 {#step-2-create-your-first-repository}
 @z
 
 @x
 To create a repository:
 @y
-To create a repository:
+リポジトリ生成の手順は以下です。
 @z
 
 @x
@@ -204,47 +205,47 @@ To create a repository:
 4. Set the visibility to **Private**.
 5. Select **Create**.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-2. On the Repositories page, select **Create repository**.
-3. Name it **&lt;your-username&gt;/my-private-repo**.
-4. Set the visibility to **Private**.
-5. Select **Create**.
+1. [Docker Hub](https://hub.docker.com) にサインインします。
+2. Repositories ページにて **Create repository** (リポジトリ生成) をクリックします。
+3. 名称を **&lt;your-username&gt;/my-private-repo** とします。
+4. visibility（見せ方）を **Private** に設定します。
+5. **Create** (生成) をクリックします。
 @z
 
 @x
 You've created your first repository.
 @y
-You've created your first repository.
+リポジトリ生成が完了しました。
 @z
 
 @x
 ### Step 3: Download and install Docker Desktop
 @y
-### Step 3: Download and install Docker Desktop
+### 手順 3: Docker Desktop のダウンロードとインストール {#step-3-download-and-install-docker-desktop}
 @z
 
 @x
 You need to download Docker Desktop to build, push, and pull container images.
 @y
-You need to download Docker Desktop to build, push, and pull container images.
+コンテナーイメージのビルド、プッシュ、プルを行うには Docker Desktop をダウンロードする必要があります。
 @z
 
 @x
 1. Download and install [Docker Desktop](../desktop/index.md).
 @y
-1. Download and install [Docker Desktop](../desktop/index.md).
+1. [Docker Desktop](../desktop/index.md) をダウンロードしてインストールします。
 @z
 
 @x
 2. Sign in to Docker Desktop using the Docker ID you created in step one.
 @y
-2. Sign in to Docker Desktop using the Docker ID you created in step one.
+2. 手順 1. において生成した Docker ID を使って Docker Desktop にサインインします。
 @z
 
 @x
 ### Step 4: Pull and run a container image from Docker Hub
 @y
-### Step 4: Pull and run a container image from Docker Hub
+### Step 4: Docker Hub からコンテナーイメージをプルして実行 {#step-4-pull-and-run-a-container-image-from-docker-hub}
 @z
 
 @x

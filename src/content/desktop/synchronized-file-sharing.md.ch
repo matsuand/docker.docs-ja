@@ -18,11 +18,11 @@ keyword: mutagen, file sharing, docker desktop, bind mounts
 @x
 > **Note**
 >
-> Synchronized file shares is available for customers with a Docker Pro, Team, or Business subscription. 
+> Synchronized file shares is available with Docker Desktop version 4.27 and later. It is available for customers with a Docker Pro, Team, or Business subscription. 
 @y
 > **Note**
 >
-> Synchronized file shares is available for customers with a Docker Pro, Team, or Business subscription. 
+> Synchronized file shares is available with Docker Desktop version 4.27 and later. It is available for customers with a Docker Pro, Team, or Business subscription. 
 @z
 
 @x

@@ -9,9 +9,9 @@ title: Uninstall Docker Desktop
 ---
 @y
 ---
-description: How to uninstall Docker Desktop
+description: Docker Desktop のアンインストール方法。
 keywords: Windows, unintall, Mac, Linux, Docker Desktop
-title: Uninstall Docker Desktop
+title: Docker Desktop のアンインストール
 ---
 @z
 
@@ -23,7 +23,7 @@ title: Uninstall Docker Desktop
 > by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](backup-and-restore.md) section .
 { .warning }
 @y
-> **Warning**
+> **警告**
 >
 > Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
 > other Docker-related data local to the machine, and removes the files generated
@@ -42,7 +42,7 @@ title: Uninstall Docker Desktop
 @x
 To uninstall Docker Desktop from your Windows machine:
 @y
-To uninstall Docker Desktop from your Windows machine:
+Windows マシンからの Docker Desktop のアンインストール方法は以下のとおりです。
 @z
 
 @x
@@ -50,9 +50,9 @@ To uninstall Docker Desktop from your Windows machine:
 2. Select **Docker Desktop** from the **Apps & features** list and then select **Uninstall**.
 3. Select **Uninstall** to confirm your selection.
 @y
-1. From the Windows **Start** menu, select **Settings** > **Apps** > **Apps & features**.
-2. Select **Docker Desktop** from the **Apps & features** list and then select **Uninstall**.
-3. Select **Uninstall** to confirm your selection.
+1. Windows の **スタート** メニューから **設定** > **アプリ** > **インストールされているアプリ** をクリックします。
+2. **インストールされているアプリ** の一覧から **Docker Desktop** を選んで **Uninstall** をクリックします。
+3. 確認画面にて **アンインストール** をクリックします。
 @z
 
 @x

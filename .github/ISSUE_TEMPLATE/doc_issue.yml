@@ -1,6 +1,6 @@
 # https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema
-name: Docs-ja issue
-description: docker.docs-ja (Docker 日本語ドキュメント) の不適切な内容あるいはリンク切れについて、またウェブサイト上の問題についてお知らせください。
+name: "Docs-ja の問題"
+description: "docker.docs-ja (Docker 日本語ドキュメント) の不適切な内容あるいはリンク切れについて、またウェブサイト上の問題についてお知らせください。"
 labels:
   - status/triage
 
@@ -22,11 +22,11 @@ body:
       description: ご報告頂くのはどのような問題ですか？
       multiple: false
       options:
-        - 情報が正しくない。
-        - 求めているものが見つけられない。
-        - ウェブサイト上の問題がある。
-        - 日本語訳に問題がある。
-        - その他。
+        - 情報が正しくない
+        - 求めているものが見つけられない
+        - ウェブサイト上の問題がある
+        - 日本語訳に問題がある
+        - その他
     validations:
       required: true
   - type: textarea

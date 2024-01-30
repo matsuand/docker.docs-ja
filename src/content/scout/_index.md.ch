@@ -9,48 +9,6 @@ keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, 
 description:
   Docker Scout analyzes your images to help you understand their dependencies
   and potential vulnerabilities
-aliases:
-  - /atomist/
-  - /atomist/try-atomist/
-  - /atomist/configure/settings/
-  - /atomist/configure/advisories/
-  - /atomist/integrate/github/
-  - /atomist/integrate/deploys/
-  - /engine/scan/
-grid:
-  - title: Quickstart
-    link: /scout/quickstart/
-    description: Learn what Docker Scout can do, and how to get started.
-    icon: explore
-  - title: Image analysis
-    link: /scout/image-analysis/
-    description: Reveal and dig into the composition of your images.
-    icon: radar
-  - title: Advisory database
-    link: /scout/advisory-db-sources/
-    description: Learn about the information sources that Docker Scout uses.
-    icon: database
-  - title: Integrations
-    description: |
-      Connect Docker Scout with your CI, registries, and other third-party services.
-    link: /scout/integrations/
-    icon: multiple_stop
-  - title: Dashboard
-    link: /scout/dashboard/
-    description: |
-      The web interface for Docker Scout.
-    icon: dashboard
-  - title: Policy {{< badge color=violet text="Early Access" >}}
-    link: /scout/policy/
-    description: |
-      Ensure that your artifacts align with supply chain best practices.
-    icon: policy
-  - title: Upgrade
-    link: /billing/scout-billing/
-    description: |
-      The free plan includes up to 3 repositories. Upgrade for more.
-    icon: upgrade
----
 @y
 ---
 title: Docker Scout
@@ -58,6 +16,9 @@ keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, 
 description:
   Docker Scout analyzes your images to help you understand their dependencies
   and potential vulnerabilities
+@z
+
+@x
 aliases:
   - /atomist/
   - /atomist/try-atomist/
@@ -66,34 +27,105 @@ aliases:
   - /atomist/integrate/github/
   - /atomist/integrate/deploys/
   - /engine/scan/
+@y
+aliases:
+  - /atomist/
+  - /atomist/try-atomist/
+  - /atomist/configure/settings/
+  - /atomist/configure/advisories/
+  - /atomist/integrate/github/
+  - /atomist/integrate/deploys/
+  - /engine/scan/
+@z
+
+@x
+grid:
+  - title: Quickstart
+    link: /scout/quickstart/
+    description: Learn what Docker Scout can do, and how to get started.
+    icon: explore
+@y
 grid:
   - title: Quickstart
     link: __SUBDIR__/scout/quickstart/
     description: Learn what Docker Scout can do, and how to get started.
     icon: explore
+@z
+
+@x
+  - title: Image analysis
+    link: /scout/image-analysis/
+    description: Reveal and dig into the composition of your images.
+    icon: radar
+@y
   - title: Image analysis
     link: __SUBDIR__/scout/image-analysis/
     description: Reveal and dig into the composition of your images.
     icon: radar
+@z
+
+@x
+  - title: Advisory database
+    link: /scout/advisory-db-sources/
+    description: Learn about the information sources that Docker Scout uses.
+    icon: database
+@y
   - title: Advisory database
     link: __SUBDIR__/scout/advisory-db-sources/
     description: Learn about the information sources that Docker Scout uses.
     icon: database
+@z
+
+@x
+  - title: Integrations
+    description: |
+      Connect Docker Scout with your CI, registries, and other third-party services.
+    link: /scout/integrations/
+    icon: multiple_stop
+@y
   - title: Integrations
     description: |
       Connect Docker Scout with your CI, registries, and other third-party services.
     link: __SUBDIR__/scout/integrations/
     icon: multiple_stop
+@z
+
+@x
+  - title: Dashboard
+    link: /scout/dashboard/
+    description: |
+      The web interface for Docker Scout.
+    icon: dashboard
+@y
   - title: Dashboard
     link: __SUBDIR__/scout/dashboard/
     description: |
       The web interface for Docker Scout.
     icon: dashboard
+@z
+
+@x
+  - title: Policy {{< badge color=violet text="Early Access" >}}
+    link: /scout/policy/
+    description: |
+      Ensure that your artifacts align with supply chain best practices.
+    icon: policy
+@y
   - title: Policy {{< badge color=violet text="Early Access" >}}
     link: __SUBDIR__/scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.
     icon: policy
+@z
+
+@x
+  - title: Upgrade
+    link: /billing/scout-billing/
+    description: |
+      The free plan includes up to 3 repositories. Upgrade for more.
+    icon: upgrade
+---
+@y
   - title: Upgrade
     link: __SUBDIR__/billing/scout-billing/
     description: |

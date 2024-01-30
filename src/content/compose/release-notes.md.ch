@@ -34,6 +34,58 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.24.4
+{{< release-date date="2024-01-29" >}}
+@y
+## 2.24.4
+{{< release-date date="2024-01-29" >}}
+@z
+
+@x
+### Update
+- Dependencies upgrade: bump cli to 25.0.1
+- Dependencies upgrade: bump docker to 25.0.1
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.3
+@y
+### 更新 {#update}
+- 依存パッケージの更新: cli 25.0.1
+- 依存パッケージの更新: docker 25.0.1
+- 依存パッケージの更新: compose-go 2.0.0-rc.3
+@z
+
+@x
+### Bug fixes and enhancements
+- Fixed issue when checking external network existence when swarm is enabled.
+- Added support for `storage_opt` attribute.
+@y
+### Bug fixes and enhancements
+- Fixed issue when checking external network existence when swarm is enabled.
+- Added support for `storage_opt` attribute.
+@z
+
+@x
+## 2.24.3
+{{< release-date date="2024-01-24" >}}
+@y
+## 2.24.3
+{{< release-date date="2024-01-24" >}}
+@z
+
+@x
+This release fixes a build issue with Docker Desktop for Windows introduced in Compose v2.24.0.
+@y
+This release fixes a build issue with Docker Desktop for Windows introduced in Compose v2.24.0.
+@z
+
+@x
+### Update
+- Compose now uses a custom version of `fsutils` library.
+@y
+### 更新 {#update}
+- Compose now uses a custom version of `fsutils` library.
+@z
+
+@x
 ## 2.24.2
 {{< release-date date="2024-01-22" >}}
 @y

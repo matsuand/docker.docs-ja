@@ -21,7 +21,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 title: Docker Desktop の概要
 grid:
 - title: Docker Desktop のインストール
-  description: 'Install Docker Desktop on
+  description: '
 @z
 
 @x
@@ -33,13 +33,13 @@ grid:
 @x
     [Windows](/desktop/install/windows-install/), or
 @y
-    [Windows](__SUBDIR__/desktop/install/windows-install/), or
+    [Windows](__SUBDIR__/desktop/install/windows-install/),
 @z
 
 @x
     [Linux](/desktop/install/linux-install/).
 @y
-    [Linux](__SUBDIR__/desktop/install/linux-install/).
+    [Linux](__SUBDIR__/desktop/install/linux-install/)
 @z
 
 @x
@@ -74,27 +74,26 @@ aliases:
 - /docker-for-windows/opensource/
 ---
 @y
-    '
+    への Docker  Desktop インストール'
   icon: download
 - title: Docker Desktop の確認
-  description: Navigate Docker Desktop and learn about its key features.
+  description: Docker Desktop を始めて、その主要機能について学びます。
   icon: feature_search
   link: __SUBDIR__/desktop/use-desktop
 - title: リリースノートの確認
-  description: Find out about new features, improvements, and bug fixes.
+  description: 新機能、機能改善、バグフィックスを確認します。
   icon: note_add
   link: __SUBDIR__/desktop/release-notes
 - title: 一般的な FAQ の確認
-  description: Explore general FAQs or FAQs for specific platforms.
+  description: 一般的な FAQ や特定プラットフォームの FAQ を確認します。
   icon: help
   link: __SUBDIR__/desktop/faqs/
 - title: その他のリソースを探す
-  description: Find information on networking features, deploying on Kubernetes, and
-    more.
+  description: ネットワーク機能、Kubernetes へのデプロイなどについての情報を調べます。
   icon: category
   link: __SUBDIR__/desktop/kubernetes
 - title: フィードバック
-  description: Provide feedback on Docker Desktop or Docker Desktop features.
+  description: Docker Desktop やその機能についてのフィードバックを行います。
   icon: sms
   link: __SUBDIR__/desktop/feedback
 aliases:
@@ -117,13 +116,15 @@ Docker Desktop は Mac、Linux、Windows にワンクリックでインストー
 @x
 It provides a straightforward GUI (Graphical User Interface) that lets you manage your containers, applications, and images directly from your machine. You can use Docker Desktop either on its own or as a complementary tool to the CLI. 
 @y
-It provides a straightforward GUI (Graphical User Interface) that lets you manage your containers, applications, and images directly from your machine. You can use Docker Desktop either on its own or as a complementary tool to the CLI. 
+自マシンから直接、コンテナー、アプリケーション、イメージを管理する簡単な GUI (グラフィカルユーザーインターフェース) を提供しています。
+Docker Desktop においては、CLI に対応する独自ツールや補助ツールの利用が可能です。
 @z
 
 @x
 Docker Desktop reduces the time spent on complex setups so you can focus on writing code. It takes care of port mappings, file system concerns, and other default settings, and is regularly updated with bug fixes and security updates.
 @y
-Docker Desktop reduces the time spent on complex setups so you can focus on writing code. It takes care of port mappings, file system concerns, and other default settings, and is regularly updated with bug fixes and security updates.
+Docker Desktop を用いることで複雑な環境準備に費やす時間が軽減されるため、コーディングに集中することができます。
+Docker Desktop はポートマッピング、ファイルシステム関連、諸々のデフォルト設定などの操作をサポートし、バグ修正やセキュリティアップデートを定期的に提供します。
 @z
 
 @x
@@ -147,7 +148,7 @@ Docker Desktop reduces the time spent on complex setups so you can focus on writ
 @y
 - [Docker Engine](../engine/index.md)
 - Docker CLI クライアント
-- [Docker Scout](../scout/_index.md) (additional subscription may apply)
+- [Docker Scout](../scout/_index.md) (追加のサブスクリプションを必要とする場合があります)
 - [Docker Build](../build/index.md)
 - [Docker Extensions](extensions/index.md)
 - [Docker Compose](../compose/index.md)
@@ -198,11 +199,9 @@ gives you access to a vast library of certified images and templates in
 their environment to rapidly auto-build, continuously integrate, and collaborate
 using a secure repository.
 @y
-Docker Desktop works with your choice of development tools and languages and
-gives you access to a vast library of certified images and templates in
-[Docker Hub](https://hub.docker.com/). This allows development teams to extend
-their environment to rapidly auto-build, continuously integrate, and collaborate
-using a secure repository.
+Docker Desktop は、選択した開発ツールやプログラミング言語を使って動作します。
+そして [Docker Hub](https://hub.docker.com/) にある認定イメージやテンプレートに対しての、数多くのライブラリにアクセスできるようになります。
+これにより開発チームの環境を充足させ、セキュアなリポジトリを使ってすばやく自動ビルドを行って、継続的な開発や共同開発を行えるようになります。
 @z
 
 @x

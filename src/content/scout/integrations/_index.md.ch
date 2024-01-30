@@ -68,11 +68,11 @@ The following container registry integrations are available:
 @x
 - [Artifactory](./registry/artifactory.md)
 - [Amazon Elastic Container Registry](./registry/ecr.md)
-- [Azure Container Registry](./registry/acr.md) {{< badge color=violet text="Early Access" >}}
+- [Azure Container Registry](./registry/acr.md)
 @y
 - [Artifactory](./registry/artifactory.md)
 - [Amazon Elastic Container Registry](./registry/ecr.md)
-- [Azure Container Registry](./registry/acr.md) {{< badge color=violet text="Early Access" >}}
+- [Azure Container Registry](./registry/acr.md)
 @z
 
 @x

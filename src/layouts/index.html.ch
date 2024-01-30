@@ -61,6 +61,11 @@
 @z
 
 @x
+            <a class="h-full" href="/get-started/overview/">
+@y
+            <a class="h-full" href="get-started/overview/">
+@z
+@x
                       Guides
 @y
                       ガイド
@@ -73,6 +78,11 @@
 @z
 
 @x
+            <a class="h-full" href="/manuals/">
+@y
+            <a class="h-full" href="manuals/">
+@z
+@x
                       Manuals
 @y
                       マニュアル
@@ -84,6 +94,11 @@
                   Docker 製品のインストール、セットアップ、設定、利用について学びます。
 @z
 
+@x
+            <a class="h-full" href="/reference/">
+@y
+            <a class="h-full" href="reference/">
+@z
 @x
                       Reference
 @y

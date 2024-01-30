@@ -16,18 +16,6 @@ title: Azure Container Registry integration
 @z
 
 @x
-> **Early Access feature**
->
-> The Azure Container Registry (ACR) integration is currently in [Early Access](../../../release-lifecycle.md#early-access-ea).
-{ .experimental }
-@y
-> **Early Access feature**
->
-> The Azure Container Registry (ACR) integration is currently in [Early Access](../../../release-lifecycle.md#early-access-ea).
-{ .experimental }
-@z
-
-@x
 Integrating Docker Scout with Azure Container Registry (ACR) lets you view
 image insights for images hosted in ACR repositories. After integrating Docker
 Scout with ACR and activating Docker Scout for a repository, pushing an image

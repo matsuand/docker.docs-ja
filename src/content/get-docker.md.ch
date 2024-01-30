@@ -107,5 +107,5 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 @y
 > **メモ**
 >
-> Docker Engine のインストール方法についてお調べになっている方は [Docker Engine インストール概要](/engine/install/) を参照してください。
+> Docker Engine のインストール方法についてお調べになっている方は [Docker Engine インストール概要](__SUBDIR__/engine/install/) を参照してください。
 @z

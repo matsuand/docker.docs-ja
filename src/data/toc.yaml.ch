@@ -4383,7 +4383,7 @@ Manuals:
   section:
   - path: __SUBDIR__/docker-hub/
     title: 概要
-  - path: docker-id/
+  - path: __SUBDIR__/docker-id/
     title: アカウントの生成
   - path: __SUBDIR__/docker-hub/quickstart/
     title: クィックスタート
