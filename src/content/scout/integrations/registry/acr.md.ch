@@ -281,10 +281,10 @@ integrations for the current organization.
 
 @x
 Next, activate Docker Scout for the repositories that you want to analyze in
-[repository settings](../../dashboard.md#repository-settings).
+[repository settings](https://scout.docker.com/settings/repos/).
 @y
 Next, activate Docker Scout for the repositories that you want to analyze in
-[repository settings](../../dashboard.md#repository-settings).
+[repository settings](https://scout.docker.com/settings/repos/).
 @z
 
 @x
@@ -326,24 +326,20 @@ To remove an ACR integration:
 @z
 
 @x
-1. Go to [Integrations](https://scout.docker.com/settings/integrations/) on the
-   Docker Scout Dashboard.
-2. Select the **Analyze my images from another registry** filter option.
-3. Find **Azure Container Registry** in the list, and select **Manage**.
-4. Find the ACR integration that you want to remove, and select the **Remove**
+1. Go to the [ACR integration page](https://scout.docker.com/settings/integrations/azure/)
+   on the Docker Scout Dashboard.
+2. Find the ACR integration that you want to remove, and select the **Remove**
    button.
-5. In the dialog that opens, confirm by selecting **Remove**.
-6. After removing the integration in the Docker Scout Dashboard, also remove
+3. In the dialog that opens, confirm by selecting **Remove**.
+4. After removing the integration in the Docker Scout Dashboard, also remove
    the Azure resources related to the integration:
 @y
-1. Go to [Integrations](https://scout.docker.com/settings/integrations/) on the
-   Docker Scout Dashboard.
-2. Select the **Analyze my images from another registry** filter option.
-3. Find **Azure Container Registry** in the list, and select **Manage**.
-4. Find the ACR integration that you want to remove, and select the **Remove**
+1. Go to the [ACR integration page](https://scout.docker.com/settings/integrations/azure/)
+   on the Docker Scout Dashboard.
+2. Find the ACR integration that you want to remove, and select the **Remove**
    button.
-5. In the dialog that opens, confirm by selecting **Remove**.
-6. After removing the integration in the Docker Scout Dashboard, also remove
+3. In the dialog that opens, confirm by selecting **Remove**.
+4. After removing the integration in the Docker Scout Dashboard, also remove
    the Azure resources related to the integration:
 @z
 

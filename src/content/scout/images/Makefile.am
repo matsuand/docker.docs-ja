@@ -21,8 +21,6 @@ copyfiles = \
 	policy-overview.webp                  \
 	policy-tag-view.webp                  \
 	remediation.png                       \
-	scout-onboarding-dd-v1-cvve-focus.png \
-	scout-onboarding-org-picker.png       \
 	scout-policy-eval-ci.webp             \
 	scout-sq-commit-sha.webp
 

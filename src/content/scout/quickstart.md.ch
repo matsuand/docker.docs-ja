@@ -40,18 +40,6 @@ and share the results with your team.
 @z
 
 @x
-The following video shows an end-to-end workflow of using Docker Scout to remediate a reported vulnerability.
-@y
-The following video shows an end-to-end workflow of using Docker Scout to remediate a reported vulnerability.
-@z
-
-@x
-<iframe class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/e066986569924555a2546139f5f61349?sid=6e29be62-78ba-4aa7-a1f6-15f96c37d916"></iframe>
-@y
-<iframe class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/e066986569924555a2546139f5f61349?sid=6e29be62-78ba-4aa7-a1f6-15f96c37d916"></iframe>
-@z
-
-@x
 ## Step 1: Setup
 @y
 ## Step 1: Setup
@@ -98,49 +86,29 @@ a vulnerable Node.js application that you can use to follow along.
 @z
 
 @x
-3. Build the image, naming it to match the organization you will push it to,
-   and tag it as `v1`:
+3. Make sure you're signed in to your Docker account,
+   either by running the `docker login` command or by signing in with Docker Desktop.
 @y
-3. Build the image, naming it to match the organization you will push it to,
-   and tag it as `v1`:
+3. Make sure you're signed in to your Docker account,
+   either by running the `docker login` command or by signing in with Docker Desktop.
+@z
+
+@x
+4. Build the image and push it to a `<ORG_NAME>/scout-demo:v1`,
+   where `<ORG_NAME>` is the Docker Hub namespace you push to.
+@y
+4. Build the image and push it to a `<ORG_NAME>/scout-demo:v1`,
+   where `<ORG_NAME>` is the Docker Hub namespace you push to.
 @z
 
 @x
    ```console
-   $ docker build -t <ORG_NAME>/scout-demo:v1 .
+   $ docker build --push -t <ORG_NAME>/scout-demo:v1 .
    ```
 @y
    ```console
-   $ docker build -t <ORG_NAME>/scout-demo:v1 .
+   $ docker build --push -t <ORG_NAME>/scout-demo:v1 .
    ```
-@z
-
-@x
-4. Create and push the repository on Docker Hub:
-@y
-4. Create and push the repository on Docker Hub:
-@z
-
-@x
-   ```console
-   $ docker push <ORG_NAME>/scout-demo:v1
-   ```
-@y
-   ```console
-   $ docker push <ORG_NAME>/scout-demo:v1
-   ```
-@z
-
-@x
-   > **Important**
-   >
-   > Make sure you log in to the Docker CLI or Docker Desktop before pushing.
-   { .important }
-@y
-   > **Important**
-   >
-   > Make sure you log in to the Docker CLI or Docker Desktop before pushing.
-   { .important }
 @z
 
 @x
@@ -190,81 +158,47 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 @z
 
 @x
-After building, you can use Docker Desktop or the `docker scout` CLI command
-to see vulnerabilities detected by Docker Scout.
+After building, use the `docker scout` CLI command to see vulnerabilities
+detected by Docker Scout.
 @y
-After building, you can use Docker Desktop or the `docker scout` CLI command
-to see vulnerabilities detected by Docker Scout.
+After building, use the `docker scout` CLI command to see vulnerabilities
+detected by Docker Scout.
 @z
 
 @x
-1. Using Docker Desktop, select the image name in the **Images** view to see
-   the image layer view. In the image hierarchy section, you can see which layers
-   introduce vulnerabilities and the details of those.
+The example application for this guide uses a vulnerable version of Express.
+The following command shows all CVEs affecting Express in the image you just
+built:
 @y
-1. Using Docker Desktop, select the image name in the **Images** view to see
-   the image layer view. In the image hierarchy section, you can see which layers
-   introduce vulnerabilities and the details of those.
+The example application for this guide uses a vulnerable version of Express.
+The following command shows all CVEs affecting Express in the image you just
+built:
 @z
 
 @x
-2. Select layer 5 to focus on the vulnerability introduced in that layer.
+```console
+$ docker scout cves --only-package express
+```
 @y
-2. Select layer 5 to focus on the vulnerability introduced in that layer.
+```console
+$ docker scout cves --only-package express
+```
 @z
 
 @x
-3. Toggle the disclosure triangle next to **express 4.17.1** and then the CVE ID (in this case, `CVE-2022-24999`) to see details of the
-   vulnerability.
+Docker Scout analyzes the image you built most recently by default,
+so there's no need to specify the name of the image in this case.
 @y
-3. Toggle the disclosure triangle next to **express 4.17.1** and then the CVE ID (in this case, `CVE-2022-24999`) to see details of the
-   vulnerability.
+Docker Scout analyzes the image you built most recently by default,
+so there's no need to specify the name of the image in this case.
 @z
 
 @x
-   You can also use the Docker CLI to see the same results.
+Learn more about the `docker scout cves` command in the
+[`CLI reference documentation`](/engine/reference/commandline/scout_cves).
 @y
-   You can also use the Docker CLI to see the same results.
-@z
-
-@x
-   ```console
-   $ docker scout cves <ORG_NAME>/scout-demo:v1
-   ```
-@y
-   ```console
-   $ docker scout cves <ORG_NAME>/scout-demo:v1
-   ```
-@z
-
-@x
-![Screenshot showing highlighting a CVE in Docker Desktop](./images/scout-onboarding-dd-v1-cvve-focus.png)
-@y
-![Screenshot showing highlighting a CVE in Docker Desktop](./images/scout-onboarding-dd-v1-cvve-focus.png)
-@z
-
-@x
-Docker Scout creates and maintains its vulnerability database by ingesting and
-collating vulnerability data from multiple sources continuously. These sources
-include many recognizable package repositories and trusted security trackers.
-You can find more details in the [advisory database](./advisory-db-sources.md) documentation.
-@y
-Docker Scout creates and maintains its vulnerability database by ingesting and
-collating vulnerability data from multiple sources continuously. These sources
-include many recognizable package repositories and trusted security trackers.
-You can find more details in the [advisory database](./advisory-db-sources.md) documentation.
-@z
-
-@x
-> **Tip**
->
-> Find out how to filter results using the CLI command [`scout cves`](/engine/reference/commandline/scout_cves).
-> { .tip }
-@y
-> **Tip**
->
-> Find out how to filter results using the CLI command [`scout cves`](/engine/reference/commandline/scout_cves).
-> { .tip }
+Learn more about the `docker scout cves` command in the
+[`CLI reference documentation`](/engine/reference/commandline/scout_cves).
 @z
 
 @x
@@ -288,52 +222,34 @@ the underlying vulnerable express version to 4.17.3 or later.
 @z
 
 @x
-   ```json
-   …
-   "dependencies": {
-        "express": "4.17.3"
-        …
-   }
+   ```diff
+      "dependencies": {
+   -    "express": "4.17.1"
+   +    "express": "4.17.3"
+      }
    ```
 @y
-   ```json
-   …
-   "dependencies": {
-        "express": "4.17.3"
-        …
-   }
+   ```diff
+      "dependencies": {
+   -    "express": "4.17.1"
+   +    "express": "4.17.3"
+      }
    ```
 @z
 
 @x
-2. Rebuild the image, giving it a new version tag:
+2. Rebuild the image with a new tag and push it to your Docker Hub repository:
 @y
-2. Rebuild the image, giving it a new version tag:
+2. Rebuild the image with a new tag and push it to your Docker Hub repository:
 @z
 
 @x
    ```console
-   $ docker build -t <ORG_NAME>/scout-demo:v2 .
+   $ docker build --push -t <ORG_NAME>/scout-demo:v2 .
    ```
 @y
    ```console
-   $ docker build -t <ORG_NAME>/scout-demo:v2 .
-   ```
-@z
-
-@x
-3. Push the image to the same repository on Docker Hub using a new version tag:
-@y
-3. Push the image to the same repository on Docker Hub using a new version tag:
-@z
-
-@x
-   ```console
-   $ docker push <ORG_NAME>/scout-demo:v2
-   ```
-@y
-   ```console
-   $ docker push <ORG_NAME>/scout-demo:v2
+   $ docker build --push -t <ORG_NAME>/scout-demo:v2 .
    ```
 @z
 
@@ -346,245 +262,397 @@ Dashboard, or CLI, you can see that you have fixed the vulnerability.
 @z
 
 @x
-## Step 5: Fix vulnerabilities in base images
+```console
+$ docker scout cves --only-package express
+    ✓ Provenance obtained from attestation
+    ✓ Image stored for indexing
+    ✓ Indexed 79 packages
+    ✓ No vulnerable package detected
 @y
-## Step 5: Fix vulnerabilities in base images
+```console
+$ docker scout cves --only-package express
+    ✓ Provenance obtained from attestation
+    ✓ Image stored for indexing
+    ✓ Indexed 79 packages
+    ✓ No vulnerable package detected
 @z
 
 @x
-In addition to identifying application
-vulnerabilities, Docker Scout also helps you identify and fix issues with the
-base images your images use.
+  ## Overview
 @y
-In addition to identifying application
-vulnerabilities, Docker Scout also helps you identify and fix issues with the
-base images your images use.
+  ## Overview
 @z
 
 @x
-1. On the Docker Scout Dashboard, you can see these suggestions
-   by selecting the **Recommended fixes** button in the image layer view.
+                      │                  Analyzed Image                   
+  ────────────────────┼───────────────────────────────────────────────────
+    Target            │  mobywhale/scout-demo:v2                   
+      digest          │  ef68417b2866                                     
+      platform        │ linux/arm64                                       
+      provenance      │ https://github.com/docker/scout-demo-service.git  
+                      │  7c3a06793fc8f97961b4a40c73e0f7ed85501857         
+      vulnerabilities │    0C     0H     0M     0L                        
+      size            │ 19 MB                                             
+      packages        │ 1                                                 
 @y
-1. On the Docker Scout Dashboard, you can see these suggestions
-   by selecting the **Recommended fixes** button in the image layer view.
+                      │                  Analyzed Image                   
+  ────────────────────┼───────────────────────────────────────────────────
+    Target            │  mobywhale/scout-demo:v2                   
+      digest          │  ef68417b2866                                     
+      platform        │ linux/arm64                                       
+      provenance      │ https://github.com/docker/scout-demo-service.git  
+                      │  7c3a06793fc8f97961b4a40c73e0f7ed85501857         
+      vulnerabilities │    0C     0H     0M     0L                        
+      size            │ 19 MB                                             
+      packages        │ 1                                                 
 @z
 
 @x
-2. Select the **Recommendations for base image** option from the button. In the
-   dialog that appears, select the **Change base image** tab, the new version of
-   the base image you want to use, and copy the suggestion into your `Dockerfile`.
+  ## Packages and Vulnerabilities
 @y
-2. Select the **Recommendations for base image** option from the button. In the
-   dialog that appears, select the **Change base image** tab, the new version of
-   the base image you want to use, and copy the suggestion into your `Dockerfile`.
+  ## Packages and Vulnerabilities
 @z
 
 @x
-3. Rebuild the image, again with a new tag:
+  No vulnerable packages detected
 @y
-3. Rebuild the image, again with a new tag:
+  No vulnerable packages detected
 @z
 
 @x
-   ```console
-   $ docker build -t <ORG_NAME>/scout-demo:v3 .
-   ```
+```
 @y
-   ```console
-   $ docker build -t <ORG_NAME>/scout-demo:v3 .
-   ```
+```
 @z
 
 @x
-4. Push it to Docker Hub using the new version tag:
+## Step 5: Evaluate policy compliance
 @y
-4. Push it to Docker Hub using the new version tag:
+## Step 5: Evaluate policy compliance
 @z
 
 @x
-   ```console
-   $ docker push <ORG_NAME>/scout-demo:v3
-   ```
+While inspecting vulnerabilities based on specific packages can be useful,
+it isn't the most effective way to improve your supply chain conduct.
 @y
-   ```console
-   $ docker push <ORG_NAME>/scout-demo:v3
-   ```
+While inspecting vulnerabilities based on specific packages can be useful,
+it isn't the most effective way to improve your supply chain conduct.
 @z
 
 @x
-5. Select the new image tag in Docker Desktop or the Docker Scout Dashboard and you
-   can see that the base image has been updated, removing many vulnerabilities.
+Docker Scout also supports policy evaluation,
+a higher-level concept for detecting and fixing issues in your images.
+Policies are a set of customizable rules that lets organizations track whether
+images are compliant with their supply chain requirements.
 @y
-5. Select the new image tag in Docker Desktop or the Docker Scout Dashboard and you
-   can see that the base image has been updated, removing many vulnerabilities.
+Docker Scout also supports policy evaluation,
+a higher-level concept for detecting and fixing issues in your images.
+Policies are a set of customizable rules that lets organizations track whether
+images are compliant with their supply chain requirements.
 @z
 
 @x
-   You can see the same using the Docker CLI command:
+Because policy rules are specific to each organization,
+you must specify which organization's policy you're evaluating against.
+Use the `docker scout config` command to configure your Docker organization.
 @y
-   You can see the same using the Docker CLI command:
+Because policy rules are specific to each organization,
+you must specify which organization's policy you're evaluating against.
+Use the `docker scout config` command to configure your Docker organization.
 @z
 
 @x
-   ```console
-   $ docker scout cves <ORG_NAME>/scout-demo:v3
-   ```
+```console
+$ docker scout config organization <ORG_NAME>
+    ✓ Successfully set organization to <ORG_NAME>
+```
 @y
-   ```console
-   $ docker scout cves <ORG_NAME>/scout-demo:v3
-   ```
+```console
+$ docker scout config organization <ORG_NAME>
+    ✓ Successfully set organization to <ORG_NAME>
+```
 @z
 
 @x
-## Step 6: Collaborate on vulnerabilities
+Now you can run the `quickview` command to get an overview
+of the compliance status for the image you just built.
+The image is evaluated against the default, out-of-the-box policies.
 @y
-## Step 6: Collaborate on vulnerabilities
+Now you can run the `quickview` command to get an overview
+of the compliance status for the image you just built.
+The image is evaluated against the default, out-of-the-box policies.
 @z
 
 @x
-You can see and share the same vulnerability information about an image and
-the other images in your organization in the [Docker Scout Dashboard](./dashboard.md).
+```console
+$ docker scout quickview
 @y
-You can see and share the same vulnerability information about an image and
-the other images in your organization in the [Docker Scout Dashboard](./dashboard.md).
+```console
+$ docker scout quickview
 @z
 
 @x
-All organization members can see an overview of all their images from integrated container registries,
-and get remediation advice at their fingertips. This helps team members in
-security, compliance, and operations to know what vulnerabilities and issues to focus on.
+...
+Policy status  FAILED  (2/7 policies met, 2 missing data)
 @y
-All organization members can see an overview of all their images from integrated container registries,
-and get remediation advice at their fingertips. This helps team members in
-security, compliance, and operations to know what vulnerabilities and issues to focus on.
+...
+Policy status  FAILED  (2/7 policies met, 2 missing data)
 @z
 
 @x
-1. Select the **Images** tab on the [Docker Scout Dashboard](https://scout.docker.com).
-2. Select any of the tags under
-   the **Most Recent Image** column, and you can see the same vulnerability
-   information as you saw in Docker Desktop and the Docker CLI and share this link with anyone else in your organization.
+  Status │                  Policy                   │           Results
+─────────┼───────────────────────────────────────────┼──────────────────────────────
+  ✓      │ Copyleft licenses                         │    0 packages
+  !      │ Critical vulnerabilities                  │    2C     0H     0M     0L
+  !      │ Default non-root user                     │
+  !      │ Fixable critical and high vulnerabilities │    2C    16H     0M     0L
+  ✓      │ High-profile vulnerabilities              │    0C     0H     0M     0L
+  ?      │ Outdated base images                      │    No data
+  ?      │ Supply chain attestations                 │    No data
+```
 @y
-1. Select the **Images** tab on the [Docker Scout Dashboard](https://scout.docker.com).
-2. Select any of the tags under
-   the **Most Recent Image** column, and you can see the same vulnerability
-   information as you saw in Docker Desktop and the Docker CLI and share this link with anyone else in your organization.
+  Status │                  Policy                   │           Results
+─────────┼───────────────────────────────────────────┼──────────────────────────────
+  ✓      │ Copyleft licenses                         │    0 packages
+  !      │ Critical vulnerabilities                  │    2C     0H     0M     0L
+  !      │ Default non-root user                     │
+  !      │ Fixable critical and high vulnerabilities │    2C    16H     0M     0L
+  ✓      │ High-profile vulnerabilities              │    0C     0H     0M     0L
+  ?      │ Outdated base images                      │    No data
+  ?      │ Supply chain attestations                 │    No data
+```
+@z
+
+@x
+Exclamation marks in the status column indicate a violated policy.
+Question marks indicate that there isn't enough metadata to complete the evaluation.
+A check mark indicates compliance.
+@y
+Exclamation marks in the status column indicate a violated policy.
+Question marks indicate that there isn't enough metadata to complete the evaluation.
+A check mark indicates compliance.
+@z
+
+@x
+## Step 6: Improve compliance
+@y
+## Step 6: Improve compliance
+@z
+
+@x
+The output of the `quickview` command shows that there's room for improvement.
+Some of the policies couldn't evaluate successfully (`No data`)
+because the image lacks provenance and SBOM attestations.
+The image also failed the check on a few of the evaluations.
+@y
+The output of the `quickview` command shows that there's room for improvement.
+Some of the policies couldn't evaluate successfully (`No data`)
+because the image lacks provenance and SBOM attestations.
+The image also failed the check on a few of the evaluations.
+@z
+
+@x
+Policy evaluation does more than just check for vulnerabilities.
+Take the `Default non-root user` policy for example.
+This policy helps improve runtime security by ensuring that
+images aren't set to run as the `root` superuser by default.
+@y
+Policy evaluation does more than just check for vulnerabilities.
+Take the `Default non-root user` policy for example.
+This policy helps improve runtime security by ensuring that
+images aren't set to run as the `root` superuser by default.
+@z
+
+@x
+To address this policy violation, edit the Dockerfile by adding a `USER`
+instruction, specifying a non-root user:
+@y
+To address this policy violation, edit the Dockerfile by adding a `USER`
+instruction, specifying a non-root user:
+@z
+
+@x
+```diff
+  CMD ["node","/app/app.js"]
+  EXPOSE 3000
++ USER appuser
+```
+@y
+```diff
+  CMD ["node","/app/app.js"]
+  EXPOSE 3000
++ USER appuser
+```
+@z
+
+@x
+Additionally, to get a more complete policy evaluation result,
+your image should have SBOM and provenance attestations attached to it.
+Docker Scout uses the provenance attestations to determine how the image was
+built so that it can provide a better evaluation result.
+@y
+Additionally, to get a more complete policy evaluation result,
+your image should have SBOM and provenance attestations attached to it.
+Docker Scout uses the provenance attestations to determine how the image was
+built so that it can provide a better evaluation result.
+@z
+
+@x
+Before you can build an image with attestations,
+you must enable the [containerd image store](../desktop/containerd.md)
+(or create a custom builder using the `docker-container` driver).
+The default image store doesn't support manifest lists,
+which is how the provenance attestations are attached to an image.
+@y
+Before you can build an image with attestations,
+you must enable the [containerd image store](../desktop/containerd.md)
+(or create a custom builder using the `docker-container` driver).
+The default image store doesn't support manifest lists,
+which is how the provenance attestations are attached to an image.
+@z
+
+@x
+Open **Settings** in Docker Desktop. Under the **General** section,
+check the **Use containerd for pulling and storing images** option.
+Note that changing the image store hides existing images and containers until you switch back.
+@y
+Open **Settings** in Docker Desktop. Under the **General** section,
+check the **Use containerd for pulling and storing images** option.
+Note that changing the image store hides existing images and containers until you switch back.
+@z
+
+@x
+With the containerd image store enabled, rebuild the image with a new `v3` tag.
+This time, add the `--provenance=true` and `--sbom=true` flags.
+@y
+With the containerd image store enabled, rebuild the image with a new `v3` tag.
+This time, add the `--provenance=true` and `--sbom=true` flags.
+@z
+
+@x
+```console
+$ docker build --provenance=true --sbom=true --push -t <ORG_NAME>/scout-demo:v3 .
+```
+@y
+```console
+$ docker build --provenance=true --sbom=true --push -t <ORG_NAME>/scout-demo:v3 .
+```
+@z
+
+@x
+## Step 7: View in Dashboard
+@y
+## Step 7: View in Dashboard
+@z
+
+@x
+After pushing the updated image with attestations, it's time to view the
+results through a different lens: the Docker Scout Dashboard.
+@y
+After pushing the updated image with attestations, it's time to view the
+results through a different lens: the Docker Scout Dashboard.
+@z
+
+@x
+1. Open the [Docker Scout Dashboard](https://scout.docker.com/).
+2. Sign in with your Docker account.
+3. Go to the **Images** tab.
+@y
+1. Open the [Docker Scout Dashboard](https://scout.docker.com/).
+2. Sign in with your Docker account.
+3. Go to the **Images** tab.
+@z
+
+@x
+The images tab lists your Scout-enabled repositories.
+Select the image in the list to open the **Image details** sidebar.
+The sidebar shows a compliance overview for the last pushed tag of a repository.
+@y
+The images tab lists your Scout-enabled repositories.
+Select the image in the list to open the **Image details** sidebar.
+The sidebar shows a compliance overview for the last pushed tag of a repository.
+@z
+
+@x
+> **Note**
+>
+> If policy results haven't appeared yet, try refreshing the page.
+> It might take a few minutes before the results appear if this is your
+> first time using the Docker Scout Dashboard.
+@y
+> **Note**
+>
+> If policy results haven't appeared yet, try refreshing the page.
+> It might take a few minutes before the results appear if this is your
+> first time using the Docker Scout Dashboard.
+@z
+
+@x
+Inspect the **Outdated base images** policy.
+This policy checks whether base images you use are up-to-date.
+It currently has a non-compliant status,
+because the example image uses an old version `alpine` as a base image.
+@y
+Inspect the **Outdated base images** policy.
+This policy checks whether base images you use are up-to-date.
+It currently has a non-compliant status,
+because the example image uses an old version `alpine` as a base image.
+@z
+
+@x
+Select the **View fix** button next to the policy name for details about the violation,
+and recommendations on how to address it.
+In this case, the recommended action is to enable
+[Docker Scout's GitHub integration](./integrations/source-code-management/github.md),
+which helps keep your base images up-to-date automatically.
+@y
+Select the **View fix** button next to the policy name for details about the violation,
+and recommendations on how to address it.
+In this case, the recommended action is to enable
+[Docker Scout's GitHub integration](./integrations/source-code-management/github.md),
+which helps keep your base images up-to-date automatically.
 @z
 
 @x
 > **Tip**
 >
-> If you are a member of multiple organizations, make sure you select the
-> correct organization from the drop-down in the top right.
-> ![Screenshot showing organization picker in the Docker Scout dashboard](./images/scout-onboarding-org-picker.png)
+> You can't enable this integration for the demo app used in this guide.
+> Feel free to push the code to a GitHub repository that you own,
+> and try out the integration there!
 { .tip }
 @y
 > **Tip**
 >
-> If you are a member of multiple organizations, make sure you select the
-> correct organization from the drop-down in the top right.
-> ![Screenshot showing organization picker in the Docker Scout dashboard](./images/scout-onboarding-org-picker.png)
+> You can't enable this integration for the demo app used in this guide.
+> Feel free to push the code to a GitHub repository that you own,
+> and try out the integration there!
 { .tip }
 @z
 
 @x
-## Step 7: Compare images
+## Summary
 @y
-## Step 7: Compare images
+## Summary
 @z
 
 @x
-Over time as you build and push new tags of images, you can use the Docker Scout
-CLI and Dashboard to compare the changes to vulnerabilities and packages in
-different tags of the same image.
+This quickstart guide has scratched the surface on some of the ways
+Docker Scout can support software supply chain management:
 @y
-Over time as you build and push new tags of images, you can use the Docker Scout
-CLI and Dashboard to compare the changes to vulnerabilities and packages in
-different tags of the same image.
+This quickstart guide has scratched the surface on some of the ways
+Docker Scout can support software supply chain management:
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Dashboard" >}}
+- How to enable Docker Scout for your repositories
+- Analyzing images for vulnerabilities
+- Policy and compliance
+- Fixing vulnerabilities and improving compliance
 @y
-{{< tabs >}}
-{{< tab name="Dashboard" >}}
-@z
-
-@x
-On the Docker Scout Dashboard, select the repository to compare from the
-**Images** list. In this case, **scout-demo**.
-@y
-On the Docker Scout Dashboard, select the repository to compare from the
-**Images** list. In this case, **scout-demo**.
-@z
-
-@x
-Choose two of the tags you pushed in the last steps, for example, **v1** and
-**v3**, and then select **Compare images**.
-@y
-Choose two of the tags you pushed in the last steps, for example, **v1** and
-**v3**, and then select **Compare images**.
-@z
-
-@x
-The **Image comparison** view shows you the differences between the two tags.
-The page's top part summarizes the two tags, including the differences between
-vulnerabilities and base image tags.
-@y
-The **Image comparison** view shows you the differences between the two tags.
-The page's top part summarizes the two tags, including the differences between
-vulnerabilities and base image tags.
-@z
-
-@x
-In the bottom part of the page, you can see the changes in packages and
-vulnerabilities between the two tags. In the row for "express", you can see the
-version change from 4.17.1 to 4.17.3. Switch to the **Vulnerabilities** tab to
-see the changes in vulnerabilities between the two tags. You can see that
-`CVE-2022-24999` isn't present under the **v3** tag.
-@y
-In the bottom part of the page, you can see the changes in packages and
-vulnerabilities between the two tags. In the row for "express", you can see the
-version change from 4.17.1 to 4.17.3. Switch to the **Vulnerabilities** tab to
-see the changes in vulnerabilities between the two tags. You can see that
-`CVE-2022-24999` isn't present under the **v3** tag.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="CLI" >}}
-@y
-{{< /tab >}}
-{{< tab name="CLI" >}}
-@z
-
-@x
-Use the `docker scout compare` command to see the compare two image versions.
-Pass the image that you want to compare as a positional argument to the
-command, and specify the base image to compare with using the `--to` flag.
-@y
-Use the `docker scout compare` command to see the compare two image versions.
-Pass the image that you want to compare as a positional argument to the
-command, and specify the base image to compare with using the `--to` flag.
-@z
-
-@x
-```console
-$ docker scout compare --to <ORG_NAME>/scout-demo:v1 <ORG_NAME>/scout-demo:v3
-```
-@y
-```console
-$ docker scout compare --to <ORG_NAME>/scout-demo:v1 <ORG_NAME>/scout-demo:v3
-```
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
+- How to enable Docker Scout for your repositories
+- Analyzing images for vulnerabilities
+- Policy and compliance
+- Fixing vulnerabilities and improving compliance
 @z
 
 @x
@@ -594,13 +662,29 @@ $ docker scout compare --to <ORG_NAME>/scout-demo:v1 <ORG_NAME>/scout-demo:v3
 @z
 
 @x
-- Explore the [Docker Scout Dashboard](/scout/dashboard) to see how you can
-  collaborate with your team on vulnerabilities.
-- [Learn how to integrate Docker Scout with other systems](./integrations/index.md).
-- [Find out where Docker Scout gets its vulnerability data](/scout/advisory-db-sources).
+There's lots more to discover, from third-party integrations,
+to policy customization, and runtime environment monitoring in real-time.
 @y
-- Explore the [Docker Scout Dashboard](/scout/dashboard) to see how you can
-  collaborate with your team on vulnerabilities.
-- [Learn how to integrate Docker Scout with other systems](./integrations/index.md).
-- [Find out where Docker Scout gets its vulnerability data](/scout/advisory-db-sources).
+There's lots more to discover, from third-party integrations,
+to policy customization, and runtime environment monitoring in real-time.
+@z
+
+@x
+Check out the following sections:
+@y
+Check out the following sections:
+@z
+
+@x
+- [Image analysis](./image-analysis.md)
+- [Data sources](/scout/advisory-db-sources)
+- [Docker Scout Dashboard](/scout/dashboard)
+- [Integrations](./integrations/_index.md)
+- [Policy evaluation](./policy/_index.md)
+@y
+- [Image analysis](./image-analysis.md)
+- [Data sources](/scout/advisory-db-sources)
+- [Docker Scout Dashboard](/scout/dashboard)
+- [Integrations](./integrations/_index.md)
+- [Policy evaluation](./policy/_index.md)
 @z

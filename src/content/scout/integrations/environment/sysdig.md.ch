@@ -109,11 +109,11 @@ image.
 
 @x
 - Install the Sysdig Agent in the cluster that you want to integrate, see [Install Sysdig Agent (Sysdig docs)](https://docs.sysdig.com/en/docs/installation/sysdig-monitor/install-sysdig-agent/).
-- Enable profiling for Risk Spotlight Integrations in Sysdig, see [Profiling (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/policies/image-profiles/#enable-for-risk-spotlight-integrations-or-for-the-in-use-column).
+- Enable profiling for Risk Spotlight Integrations in Sysdig, see [Profiling (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/policies/profiling/#enablement).
 - You must be an organization owner to enable the integration in the Docker Scout Dashboard.
 @y
 - Install the Sysdig Agent in the cluster that you want to integrate, see [Install Sysdig Agent (Sysdig docs)](https://docs.sysdig.com/en/docs/installation/sysdig-monitor/install-sysdig-agent/).
-- Enable profiling for Risk Spotlight Integrations in Sysdig, see [Profiling (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/policies/image-profiles/#enable-for-risk-spotlight-integrations-or-for-the-in-use-column).
+- Enable profiling for Risk Spotlight Integrations in Sysdig, see [Profiling (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/policies/profiling/#enablement).
 - You must be an organization owner to enable the integration in the Docker Scout Dashboard.
 @z
 
@@ -124,49 +124,39 @@ image.
 @z
 
 @x
-1. Go to [Integrations](https://scout.docker.com/settings/integrations/) on the
-   Docker Scout Dashboard.
-2. Select the **Detect images running in my environments** filter.
-3. Find Sysdig in the list, and select **Integrate**.
-@y
-1. Go to [Integrations](https://scout.docker.com/settings/integrations/) on the
-   Docker Scout Dashboard.
-2. Select the **Detect images running in my environments** filter.
-3. Find Sysdig in the list, and select **Integrate**.
-@z
-
-@x
-4. In the **How to integrate** section, enter a configuration name for this
+1. Go to the [Sysdig integration page](https://scout.docker.com/settings/integrations/sysdig/)
+   on the Docker Scout Dashboard.
+2. In the **How to integrate** section, enter a configuration name for this
    integration. Docker Scout uses this label as a display name for the
    integration.
 @y
-4. In the **How to integrate** section, enter a configuration name for this
+1. Go to the [Sysdig integration page](https://scout.docker.com/settings/integrations/sysdig/)
+   on the Docker Scout Dashboard.
+2. In the **How to integrate** section, enter a configuration name for this
    integration. Docker Scout uses this label as a display name for the
    integration.
 @z
 
 @x
-5. Select **Next**.
+3. Select **Next**.
 @y
-5. Select **Next**.
+3. Select **Next**.
 @z
 
 @x
-6. Enter a Risk Spotlight API token and select the region in the drop-down
-   list.
+4. Enter a Risk Spotlight API token and select the region in the drop-down list.
 @y
-6. Enter a Risk Spotlight API token and select the region in the drop-down
-   list.
+4. Enter a Risk Spotlight API token and select the region in the drop-down list.
 @z
 
 @x
    The Risk Spotlight API token is the Sysdig token that Docker Scout needs to
    integrate with Sysdig. For more instructions on how to generate a Risk
-   Spotlight token, See [Risk Spotlight Integrations (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/integrations-for-sysdig-secure/risk-spotlight-integrations/#generate-a-token-for-the-integration).
+   Spotlight token, See [Risk Spotlight Integrations (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/integrations-for-sysdig-secure/risk-spotlight-integrations/docker-scout/#generate-a-token-for-the-integration).
 @y
    The Risk Spotlight API token is the Sysdig token that Docker Scout needs to
    integrate with Sysdig. For more instructions on how to generate a Risk
-   Spotlight token, See [Risk Spotlight Integrations (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/integrations-for-sysdig-secure/risk-spotlight-integrations/#generate-a-token-for-the-integration).
+   Spotlight token, See [Risk Spotlight Integrations (Sysdig docs)](https://docs.sysdig.com/en/docs/sysdig-secure/integrations-for-sysdig-secure/risk-spotlight-integrations/docker-scout/#generate-a-token-for-the-integration).
 @z
 
 @x
@@ -178,9 +168,9 @@ image.
 @z
 
 @x
-7. Select **Next**.
+5. Select **Next**.
 @y
-7. Select **Next**.
+5. Select **Next**.
 @z
 
 @x
@@ -206,21 +196,21 @@ image.
 @z
 
 @x
-8. Select a cluster name in the drop-down list.
+6. Select a cluster name in the drop-down list.
 @y
-8. Select a cluster name in the drop-down list.
+6. Select a cluster name in the drop-down list.
 @z
 
 @x
-9. Select **Next**.
+7. Select **Next**.
 @y
-9. Select **Next**.
+7. Select **Next**.
 @z
 
 @x
-10. Assign an environment name for this cluster.
+8. Assign an environment name for this cluster.
 @y
-10. Assign an environment name for this cluster.
+8. Assign an environment name for this cluster.
 @z
 
 @x
@@ -230,9 +220,9 @@ image.
 @z
 
 @x
-11. Select **Enable integration**.
+9. Select **Enable integration**.
 @y
-11. Select **Enable integration**.
+9. Select **Enable integration**.
 @z
 
 @x
@@ -268,9 +258,9 @@ monitoring](./_index.md).
 @z
 
 @x
-To integrate more clusters, go to the [Integrations](https://scout.docker.com/settings/integrations/ecr),
-page, select **Sysdig** > **Manage** and select the **Add** button.
+To integrate more clusters, go to the [Sysdig integrations page](https://scout.docker.com/settings/integrations/sysdig/),
+select **Sysdig** > **Manage** and select the **Add** button.
 @y
-To integrate more clusters, go to the [Integrations](https://scout.docker.com/settings/integrations/ecr),
-page, select **Sysdig** > **Manage** and select the **Add** button.
+To integrate more clusters, go to the [Sysdig integrations page](https://scout.docker.com/settings/integrations/sysdig/),
+select **Sysdig** > **Manage** and select the **Add** button.
 @z

@@ -325,7 +325,7 @@ image comparison:
     to-env: production
     ignore-unchanged: true
     only-severities: critical,high
-    token: ${{ secrets.DOCKER_PAT }}
+    github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 @y
 # Compare the image built in the pull request with the one in production
@@ -339,7 +339,7 @@ image comparison:
     to-env: production
     ignore-unchanged: true
     only-severities: critical,high
-    token: ${{ secrets.DOCKER_PAT }}
+    github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 @z
 

@@ -95,12 +95,10 @@ versions:
 
 @x
 - Ubuntu Mantic 23.10
-- Ubuntu Lunar 23.04
 - Ubuntu Jammy 22.04 (LTS)
 - Ubuntu Focal 20.04 (LTS)
 @y
 - Ubuntu Mantic 23.10
-- Ubuntu Lunar 23.04
 - Ubuntu Jammy 22.04 (LTS)
 - Ubuntu Focal 20.04 (LTS)
 @z

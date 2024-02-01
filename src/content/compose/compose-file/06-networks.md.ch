@@ -184,10 +184,10 @@ networks:
 @z
 
 @x
-Default and available values are platform specific. Compose supports the following drivers:
+Compose supports the following drivers:
 `none` and `host`
 @y
-Default and available values are platform specific. Compose supports the following drivers:
+Compose supports the following drivers:
 `none` and `host`
 @z
 
@@ -617,4 +617,16 @@ networks:
     external: true
     name: "${NETWORK_ID}"
 ```
+@z
+
+@x
+## Additional resources
+@y
+## Additional resources
+@z
+
+@x
+For more examples, see [Networking in Compose](../networking.md).
+@y
+For more examples, see [Networking in Compose](../networking.md).
 @z
