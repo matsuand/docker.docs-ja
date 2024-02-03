@@ -34,9 +34,9 @@ Here is a simple checklist to go through when creating your extension:
 @z
 
 @x
-## Create a consistent experience with Docker Desktop.
+## Create a consistent experience with Docker Desktop
 @y
-## Create a consistent experience with Docker Desktop.
+## Create a consistent experience with Docker Desktop
 @z
 
 @x

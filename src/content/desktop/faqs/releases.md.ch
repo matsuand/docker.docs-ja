@@ -40,9 +40,9 @@ Previously you had to manage this yourself. Now, it happens automatically as a s
 @z
 
 @x
-### My colleague has got a new version but I haven’t got it yet.
+### My colleague has got a new version but I haven’t got it yet
 @y
-### My colleague has got a new version but I haven’t got it yet.
+### My colleague has got a new version but I haven’t got it yet
 @z
 
 @x

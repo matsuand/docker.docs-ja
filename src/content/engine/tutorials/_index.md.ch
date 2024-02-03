@@ -22,9 +22,9 @@ aliases:
 @z
 
 @x
-# Learn by example
+Learn by example:
 @y
-# Learn by example
+Learn by example:
 @z
 
 @x

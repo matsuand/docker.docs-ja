@@ -46,11 +46,9 @@ relevant data to allocate adequate resources on the platform and configure them 
 @z
 
 @x
-`endpoint_mode` specifies a service discovery method for external clients connecting to a service. Default and available values
-are platform specific but the Compose Deploy Specification defines two canonical values:
+`endpoint_mode` specifies a service discovery method for external clients connecting to a service. The Compose Deploy Specification defines two canonical values:
 @y
-`endpoint_mode` specifies a service discovery method for external clients connecting to a service. Default and available values
-are platform specific but the Compose Deploy Specification defines two canonical values:
+`endpoint_mode` specifies a service discovery method for external clients connecting to a service. The Compose Deploy Specification defines two canonical values:
 @z
 
 @x

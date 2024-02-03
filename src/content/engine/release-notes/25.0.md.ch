@@ -52,6 +52,128 @@ For more information about:
 @z
 
 @x
+## 25.0.2
+@y
+## 25.0.2
+@z
+
+@x
+{{< release-date date="2024-01-31" >}}
+@y
+{{< release-date date="2024-01-31" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 25.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.2)
+- [moby/moby, 25.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.2)
+@y
+- [docker/cli, 25.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.2)
+- [moby/moby, 25.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.2)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release contains security fixes for the following CVEs
+affecting Docker Engine and its components.
+@y
+This release contains security fixes for the following CVEs
+affecting Docker Engine and its components.
+@z
+
+@x
+| CVE                                                         | Component     | Fix version | Severity         |
+| ----------------------------------------------------------- | ------------- | ----------- | ---------------- |
+| [CVE-2024-21626](https://scout.docker.com/v/CVE-2024-21626) | runc          | 1.1.12      | High, CVSS 8.6   |
+| [CVE-2024-23651](https://scout.docker.com/v/CVE-2024-23651) | BuildKit      | 1.12.5      | High, CVSS 8.7   |
+| [CVE-2024-23652](https://scout.docker.com/v/CVE-2024-23652) | BuildKit      | 1.12.5      | High, CVSS 8.7   |
+| [CVE-2024-23653](https://scout.docker.com/v/CVE-2024-23653) | BuildKit      | 1.12.5      | High, CVSS 7.7   |
+| [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650) | BuildKit      | 1.12.5      | Medium, CVSS 5.5 |
+| [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557) | Docker Engine | 25.0.2      | Medium, CVSS 6.9 |
+@y
+| CVE                                                         | Component     | Fix version | Severity         |
+| ----------------------------------------------------------- | ------------- | ----------- | ---------------- |
+| [CVE-2024-21626](https://scout.docker.com/v/CVE-2024-21626) | runc          | 1.1.12      | High, CVSS 8.6   |
+| [CVE-2024-23651](https://scout.docker.com/v/CVE-2024-23651) | BuildKit      | 1.12.5      | High, CVSS 8.7   |
+| [CVE-2024-23652](https://scout.docker.com/v/CVE-2024-23652) | BuildKit      | 1.12.5      | High, CVSS 8.7   |
+| [CVE-2024-23653](https://scout.docker.com/v/CVE-2024-23653) | BuildKit      | 1.12.5      | High, CVSS 7.7   |
+| [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650) | BuildKit      | 1.12.5      | Medium, CVSS 5.5 |
+| [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557) | Docker Engine | 25.0.2      | Medium, CVSS 6.9 |
+@z
+
+@x
+The potential impacts of the above vulnerabilities include:
+@y
+The potential impacts of the above vulnerabilities include:
+@z
+
+@x
+- Unauthorized access to the host filesystem
+- Compromising the integrity of the build cache
+- In the case of CVE-2024-21626, a scenario that could lead to full container escape
+@y
+- Unauthorized access to the host filesystem
+- Compromising the integrity of the build cache
+- In the case of CVE-2024-21626, a scenario that could lead to full container escape
+@z
+
+@x
+For more information about the security issues addressed in this release,
+refer to the [blog post](https://www.docker.com/blog/docker-security-advisory-multiple-vulnerabilities-in-runc-buildkit-and-moby/).
+For details about each vulnerability, see the relevant security advisory:
+@y
+For more information about the security issues addressed in this release,
+refer to the [blog post](https://www.docker.com/blog/docker-security-advisory-multiple-vulnerabilities-in-runc-buildkit-and-moby/).
+For details about each vulnerability, see the relevant security advisory:
+@z
+
+@x
+- [CVE-2024-21626](https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv)
+- [CVE-2024-23651](https://github.com/moby/buildkit/security/advisories/GHSA-m3r6-h7wv-7xxv)
+- [CVE-2024-23652](https://github.com/moby/buildkit/security/advisories/GHSA-4v98-7qmw-rqr8)
+- [CVE-2024-23653](https://github.com/moby/buildkit/security/advisories/GHSA-wr6v-9f75-vh2g)
+- [CVE-2024-23650](https://github.com/moby/buildkit/security/advisories/GHSA-9p26-698r-w4hx)
+- [CVE-2024-24557](https://github.com/moby/moby/security/advisories/GHSA-xw73-rw38-6vjc)
+@y
+- [CVE-2024-21626](https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv)
+- [CVE-2024-23651](https://github.com/moby/buildkit/security/advisories/GHSA-m3r6-h7wv-7xxv)
+- [CVE-2024-23652](https://github.com/moby/buildkit/security/advisories/GHSA-4v98-7qmw-rqr8)
+- [CVE-2024-23653](https://github.com/moby/buildkit/security/advisories/GHSA-wr6v-9f75-vh2g)
+- [CVE-2024-23650](https://github.com/moby/buildkit/security/advisories/GHSA-9p26-698r-w4hx)
+- [CVE-2024-24557](https://github.com/moby/moby/security/advisories/GHSA-xw73-rw38-6vjc)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Upgrade containerd to [v1.6.28](https://github.com/containerd/containerd/releases/tag/v1.6.28).
+- Upgrade containerd to v1.7.13 (static binaries only). [moby/moby#47280](https://github.com/moby/moby/pull/47280)
+- Upgrade runc to v1.1.12. [moby/moby#47269](https://github.com/moby/moby/pull/47269)
+- Upgrade Compose to v2.24.5. [docker/docker-ce-packaging#985](https://github.com/docker/docker-ce-packaging/pull/985)
+- Upgrade BuildKit to v0.12.5. [moby/moby#47273](https://github.com/moby/moby/pull/47273)
+@y
+- Upgrade containerd to [v1.6.28](https://github.com/containerd/containerd/releases/tag/v1.6.28).
+- Upgrade containerd to v1.7.13 (static binaries only). [moby/moby#47280](https://github.com/moby/moby/pull/47280)
+- Upgrade runc to v1.1.12. [moby/moby#47269](https://github.com/moby/moby/pull/47269)
+- Upgrade Compose to v2.24.5. [docker/docker-ce-packaging#985](https://github.com/docker/docker-ce-packaging/pull/985)
+- Upgrade BuildKit to v0.12.5. [moby/moby#47273](https://github.com/moby/moby/pull/47273)
+@z
+
+@x
 ## 25.0.1
 @y
 ## 25.0.1

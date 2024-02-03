@@ -248,7 +248,6 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	render-codeblock-mermaid.html \
 	render-codeblock.html         \
 	render-heading.html
 

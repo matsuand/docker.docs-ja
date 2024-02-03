@@ -30,9 +30,9 @@ Readers pay fractionally more attention to headings, bulleted lists, and links, 
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -62,9 +62,9 @@ Page titles should be action orientated. For example: - _Enable SCIM_ - _Install
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -90,9 +90,9 @@ Images, including screenshots, can help a reader better understand a concept. Ho
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -146,9 +146,9 @@ The best links offer readers another way to scan information.
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -200,9 +200,9 @@ For information on how to add code blocks to your content, see [Useful component
 @z
 
 @x
-### Best practice for commands:
+### Best practice for commands
 @y
-### Best practice for commands:
+### Best practice for commands
 @z
 
 @x
@@ -238,9 +238,9 @@ For information on how to add code blocks to your content, see [Useful component
 @z
 
 @x
-### Best practice for code:
+### Best practice for code
 @y
-### Best practice for code:
+### Best practice for code
 @z
 
 @x
@@ -264,9 +264,9 @@ Use callouts to emphasize selected information on a page.
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -285,7 +285,7 @@ Use callouts to emphasize selected information on a page.
 | Important    | Use an Important tag to signal to the reader where actions may cause issues of a lower magnitude.                                                                                   | Yellow               |
 |              | ✅ Example: Update to the Docker Desktop terms                                                                                                                                      |                      |
 | Note         | Use the Note tag for information that may not apply to all readers, or if the information is tangential to a topic.                                                                 | Blue                 |
-|              | ✅ Example: Deleting a repository deletes all the images it contains and its build settings. This action cannot be undone.                                                          |
+|              | ✅ Example: Deleting a repository deletes all the images it contains and its build settings. This action cannot be undone.                                                          |                      |
 @y
 | Text callout | Use case scenario                                                                                                                                                                   | Color or callout box |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
@@ -294,7 +294,7 @@ Use callouts to emphasize selected information on a page.
 | Important    | Use an Important tag to signal to the reader where actions may cause issues of a lower magnitude.                                                                                   | Yellow               |
 |              | ✅ Example: Update to the Docker Desktop terms                                                                                                                                      |                      |
 | Note         | Use the Note tag for information that may not apply to all readers, or if the information is tangential to a topic.                                                                 | Blue                 |
-|              | ✅ Example: Deleting a repository deletes all the images it contains and its build settings. This action cannot be undone.                                                          |
+|              | ✅ Example: Deleting a repository deletes all the images it contains and its build settings. This action cannot be undone.                                                          |                      |
 @z
 
 @x
@@ -402,9 +402,9 @@ Note that in many cases, an unordered list is enough to describe a list of items
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x

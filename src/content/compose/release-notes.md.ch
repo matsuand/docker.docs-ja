@@ -7536,9 +7536,9 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-### Major Features:
+### Major Features
 @y
-### Major Features:
+### Major Features
 @z
 
 @x
@@ -7658,9 +7658,9 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-### New Features:
+### New Features
 @y
-### New Features:
+### New Features
 @z
 
 @x

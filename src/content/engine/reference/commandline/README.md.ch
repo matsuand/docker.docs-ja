@@ -3,11 +3,17 @@
 
 @x
 ---
-{}
+_build:
+  list: never
+  publishResources: false
+  render: never
 ---
 @y
 ---
-{}
+_build:
+  list: never
+  publishResources: false
+  render: never
 ---
 @z
 
@@ -64,9 +70,9 @@ The output files are composed from two sources:
 @z
 
 @x
-# Updating the YAML files
+## Updating the YAML files
 @y
-# Updating the YAML files
+## Updating the YAML files
 @z
 
 @x

@@ -173,106 +173,20 @@ driver is not available on the platform.
 ```yml
 networks:
   db-data:
-    driver: overlay
+    driver: bridge
 ```
 @y
 ```yml
 networks:
   db-data:
-    driver: overlay
+    driver: bridge
 ```
 @z
 
 @x
-Compose supports the following drivers:
-`none` and `host`
+For more information on drivers and available options, see [Network drivers](../../network/drivers/_index.md).
 @y
-Compose supports the following drivers:
-`none` and `host`
-@z
-
-@x
-- `host`: Use the host's networking stack.
-- `none`: Turn off networking.
-@y
-- `host`: Use the host's networking stack.
-- `none`: Turn off networking.
-@z
-
-@x
-#### host or none
-@y
-#### host or none
-@z
-
-@x
-The syntax for using built-in networks such as `host` and `none` is different, as such networks implicitly exist outside
-the scope of Compose. To use them, you must define an external network with the name `host` or `none` and
-an alias that Compose can use (`hostnet` and `nonet` in the following example), then grant the service
-access to that network using its alias.
-@y
-The syntax for using built-in networks such as `host` and `none` is different, as such networks implicitly exist outside
-the scope of Compose. To use them, you must define an external network with the name `host` or `none` and
-an alias that Compose can use (`hostnet` and `nonet` in the following example), then grant the service
-access to that network using its alias.
-@z
-
-@x
-```yml
-services:
-  web:
-    networks:
-      hostnet: {}
-@y
-```yml
-services:
-  web:
-    networks:
-      hostnet: {}
-@z
-
-@x
-networks:
-  hostnet:
-    external: true
-    name: host
-```
-@y
-networks:
-  hostnet:
-    external: true
-    name: host
-```
-@z
-
-@x
-```yml
-services:
-  web:
-    ...
-    networks:
-      nonet: {}
-@y
-```yml
-services:
-  web:
-    ...
-    networks:
-      nonet: {}
-@z
-
-@x
-networks:
-  nonet:
-    external: true
-    name: none
-```
-@y
-networks:
-  nonet:
-    external: true
-    name: none
-```
+For more information on drivers and available options, see [Network drivers](../../network/drivers/_index.md).
 @z
 
 @x

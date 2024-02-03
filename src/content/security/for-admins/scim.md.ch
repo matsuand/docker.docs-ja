@@ -68,14 +68,14 @@ The following table lists the supported attributes. Note that your attribute map
 @z
 
 @x
-| Attribute    | Description
+| Attribute    | Description |
 |:---------------------------------------------------------------|:-------------------------------------------------------------------------------------------|
 | userName             | User's primary email address. This is the unique identifier of the user. |
 | name.givenName | User’s first name |
 | name.familyName | User’s surname |
 | active | Indicates if a user is enabled or disabled. Can be set to false to de-provision the user. |
 @y
-| Attribute    | Description
+| Attribute    | Description |
 |:---------------------------------------------------------------|:-------------------------------------------------------------------------------------------|
 | userName             | User's primary email address. This is the unique identifier of the user. |
 | name.givenName | User’s first name |

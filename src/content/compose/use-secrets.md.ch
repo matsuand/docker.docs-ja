@@ -9,8 +9,8 @@ keywords: secrets, compose, security, environment variables
 ---
 @y
 ---
-title: How to use secrets in Docker Compose
-description: How to use secrets in Compose and their benefits
+title: Docker Compose における Secrets の利用
+description: Compose における Secrets の利用方法と里程について説明します。
 keywords: secrets, compose, security, environment variables
 ---
 @z
@@ -18,19 +18,23 @@ keywords: secrets, compose, security, environment variables
 @x
 A secret is any piece of data, such as a password, certificate, or API key, that shouldn’t be transmitted over a network or stored unencrypted in a Dockerfile or in your application’s source code.
 @y
-A secret is any piece of data, such as a password, certificate, or API key, that shouldn’t be transmitted over a network or stored unencrypted in a Dockerfile or in your application’s source code.
+Secrets というのは、パスワード、証明書、API キーといった種類のデータを扱うものであり、ネットワークを介して送信することが不適切であったり、Dockerfile 内やアプリケーションソースコード内に暗号化せずにそのまま保存することが不適切であるような、あらゆるデータを指します。
 @z
 
 @x
 Docker Compose provides a way for you to use secrets without having to use environment variables to store information. If you’re injecting passwords and API keys as environment variables, you risk unintentional information exposure. Environment variables are often available to all processes, and it can be difficult to track access. They can also be printed in logs when debugging errors without your knowledge. Using secrets mitigates these risks.
 @y
-Docker Compose provides a way for you to use secrets without having to use environment variables to store information. If you’re injecting passwords and API keys as environment variables, you risk unintentional information exposure. Environment variables are often available to all processes, and it can be difficult to track access. They can also be printed in logs when debugging errors without your knowledge. Using secrets mitigates these risks.
+Docker Compose では、そういった機密情報を保存する先として環境変数を用いるのではない、別の方法を提供しています。
+パスワードや API キーを環境変数に設定すると、意図しない情報漏洩のリスクにさらされます。
+環境変数は場合によっては全プロセスからの利用が可能であるため、アクセスをすべて追跡することは困難です。
+また感知していないところで、エラーデバッグを行う際に出力されてしまうかもしれません。
+Secrets を利用すれば、こういったリスクは軽減されます。
 @z
 
 @x
 ## Use secrets
 @y
-## Use secrets
+## Secrets の利用 {#use-secrets}
 @z
 
 @x
@@ -48,13 +52,13 @@ Unlike the other methods, this permits granular access control within a service 
 @x
 ## Examples
 @y
-## Examples
+## 利用例 {#examples}
 @z
 
 @x
 ### Simple
 @y
-### Simple
+### Simple {#simple}
 @z
 
 @x
@@ -200,9 +204,9 @@ In the advanced example above:
 @z
 
 @x
-## Resources:
+## Resources
 @y
-## Resources:
+## リソース {#resources}
 @z
 
 @x

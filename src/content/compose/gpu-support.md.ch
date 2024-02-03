@@ -84,9 +84,9 @@ For more information on these properties, see the [Compose Deploy Specification]
 @z
 
 @x
-### Example of a Compose file for running a service with access to 1 GPU device:
+### Example of a Compose file for running a service with access to 1 GPU device
 @y
-### Example of a Compose file for running a service with access to 1 GPU device:
+### Example of a Compose file for running a service with access to 1 GPU device
 @z
 
 @x

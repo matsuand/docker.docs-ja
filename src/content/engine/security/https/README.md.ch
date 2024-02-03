@@ -3,11 +3,17 @@
 
 @x
 ---
-published: false
+_build:
+  list: never
+  publishResources: false
+  render: never
 ---
 @y
 ---
-published: false
+_build:
+  list: never
+  publishResources: false
+  render: never
 ---
 @z
 

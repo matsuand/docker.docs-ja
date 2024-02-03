@@ -260,7 +260,7 @@ This tells Docker to:
 @z
 
 @x
-* Build an image starting with the Python 3.7 image.
+* Build an image starting with the Python 3.10 image.
 * Set the working directory to `/code`.
 * Set environment variables used by the `flask` command.
 * Install gcc and other dependencies
@@ -269,7 +269,7 @@ This tells Docker to:
 * Copy the current directory `.` in the project to the workdir `.` in the image.
 * Set the default command for the container to `flask run`.
 @y
-* Build an image starting with the Python 3.7 image.
+* Build an image starting with the Python 3.10 image.
 * Set the working directory to `/code`.
 * Set environment variables used by the `flask` command.
 * Install gcc and other dependencies

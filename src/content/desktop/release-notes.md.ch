@@ -64,6 +64,58 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
+## 4.27.1
+@y
+## 4.27.1
+@z
+
+@x
+{{< release-date date="2024-02-01" >}}
+@y
+{{< release-date date="2024-02-01" >}}
+@z
+
+@x
+{{< desktop-install all=true version="4.27.1" build_path="/136059/" >}}
+@y
+{{< desktop-install all=true version="4.27.1" build_path="/136059/" >}}
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Engine v25.0.2](https://docs.docker.com/engine/release-notes/25.0/#2502) which contains a fix for [CVE-2024-24557](https://scout.docker.com/vulnerabilities/id/CVE-2024-24557), [CVE-2024-23650](https://scout.docker.com/vulnerabilities/id/CVE-2024-23650), [CVE-2024-23651](https://scout.docker.com/vulnerabilities/id/CVE-2024-23651), [CVE-2024-23652](https://scout.docker.com/vulnerabilities/id/CVE-2024-23652) and [CVE-2024-23653](https://scout.docker.com/vulnerabilities/id/CVE-2024-23653)
+- [Containerd v1.6.28](https://github.com/containerd/containerd/releases/tag/v1.6.28)
+- [Runc v1.1.12](https://github.com/opencontainers/runc/releases/tag/v1.1.12) which contains a fix for [CVE-2024-21626](https://scout.docker.com/vulnerabilities/id/CVE-2024-21626)
+@y
+- [Docker Engine v25.0.2](https://docs.docker.com/engine/release-notes/25.0/#2502) which contains a fix for [CVE-2024-24557](https://scout.docker.com/vulnerabilities/id/CVE-2024-24557), [CVE-2024-23650](https://scout.docker.com/vulnerabilities/id/CVE-2024-23650), [CVE-2024-23651](https://scout.docker.com/vulnerabilities/id/CVE-2024-23651), [CVE-2024-23652](https://scout.docker.com/vulnerabilities/id/CVE-2024-23652) and [CVE-2024-23653](https://scout.docker.com/vulnerabilities/id/CVE-2024-23653)
+- [Containerd v1.6.28](https://github.com/containerd/containerd/releases/tag/v1.6.28)
+- [Runc v1.1.12](https://github.com/opencontainers/runc/releases/tag/v1.1.12) which contains a fix for [CVE-2024-21626](https://scout.docker.com/vulnerabilities/id/CVE-2024-21626)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed a bug that caused Docker Desktop to hang when applying an update.
+@y
+- Fixed a bug that caused Docker Desktop to hang when applying an update.
+@z
+
+@x
 ## 4.27.0
 @y
 ## 4.27.0
@@ -249,25 +301,17 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 #### For all platforms
+- When using Setting Management, the settings that are not set in the `admin-settings.json` will be reset to default when Docker Desktop starts.
 @y
 #### For all platforms
-@z
-
-@x
-- When using Setting Management, the settings that are not set in the `admin-settings.json` will be reset to default when Docker Desktop starts.
-@y
 - When using Setting Management, the settings that are not set in the `admin-settings.json` will be reset to default when Docker Desktop starts.
 @z
 
 @x
 #### For Mac
-@y
-#### For Mac
-@z
-
-@x
 - Updating to 4.27.0 from the **Software updates** sometimes hangs. As a workaround, use the 4.27.0 installer from this page.
 @y
+#### For Mac
 - Updating to 4.27.0 from the **Software updates** sometimes hangs. As a workaround, use the 4.27.0 installer from this page.
 @z
 

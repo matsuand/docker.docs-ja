@@ -184,9 +184,9 @@ This is applicable only when using Docker Hub's application-level password versu
 @z
 
 @x
-### How do we de-provision access to CLI users who use personal access tokens instead of our IdP? We use SSO but not SCIM. 
+### How do we de-provision access to CLI users who use personal access tokens instead of our IdP? We use SSO but not SCIM
 @y
-### How do we de-provision access to CLI users who use personal access tokens instead of our IdP? We use SSO but not SCIM. 
+### How do we de-provision access to CLI users who use personal access tokens instead of our IdP? We use SSO but not SCIM
 @z
 
 @x

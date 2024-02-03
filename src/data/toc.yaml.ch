@@ -348,23 +348,31 @@ Guides:
   section:
     - sectiontitle: Generative AI
       section:
-      - path: /guides/use-case/genai-pdf-bot/
-        title: Overview
-      - path: /guides/use-case/genai-pdf-bot/containerize/
-        title: Containerize your app
-      - path: /guides/use-case/genai-pdf-bot/develop/
-        title: Develop your app
+      - sectiontitle: PDF analysis and chat
+        section:
+        - path: /guides/use-case/genai-pdf-bot/
+          title: Overview
+        - path: /guides/use-case/genai-pdf-bot/containerize/
+          title: Containerize your app
+        - path: /guides/use-case/genai-pdf-bot/develop/
+          title: Develop your app
+      - path: /guides/use-case/genai-video-bot/
+        title: Video transcription and chat
 @y
 - sectiontitle: ユースケースガイド
   section:
     - sectiontitle: 生成 AI
       section:
-      - path: __SUBDIR__/guides/use-case/genai-pdf-bot/
-        title: 概要
-      - path: __SUBDIR__/guides/use-case/genai-pdf-bot/containerize/
-        title: アプリのコンテナー化
-      - path: __SUBDIR__/guides/use-case/genai-pdf-bot/develop/
-        title: アプリの開発
+      - sectiontitle: PDF 分析とチャット
+        section:
+        - path: __SUBDIR__/guides/use-case/genai-pdf-bot/
+          title: 概要
+        - path: __SUBDIR__/guides/use-case/genai-pdf-bot/containerize/
+          title: アプリのコンテナー化
+        - path: __SUBDIR__/guides/use-case/genai-pdf-bot/develop/
+          title: アプリの開発
+      - path: __SUBDIR__/guides/use-case/genai-video-bot/
+        title: Video transcription and chat
 @z
 
 @x

@@ -113,7 +113,7 @@ deleting files, are written to this writable container layer.
 @z
 
 @x
-## Additional resources:
+## Additional resources
 @y
 ## さらなる情報 {#additional-resources}
 @z

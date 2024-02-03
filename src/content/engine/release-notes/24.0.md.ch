@@ -42,6 +42,174 @@ For more information about:
 @z
 
 @x
+## 24.0.9
+@y
+## 24.0.9
+@z
+
+@x
+{{< release-date date="2024-01-31" >}}
+@y
+{{< release-date date="2024-01-31" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 24.0.9 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
+- [moby/moby, 24.0.9 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
+@y
+- [docker/cli, 24.0.9 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
+- [moby/moby, 24.0.9 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
+@z
+
+@x
+## Security
+@y
+## Security
+@z
+
+@x
+This release contains security fixes for the following CVEs
+affecting Docker Engine and its components.
+@y
+This release contains security fixes for the following CVEs
+affecting Docker Engine and its components.
+@z
+
+@x
+| CVE                                                         | Component     | Fix version | Severity         |
+| ----------------------------------------------------------- | ------------- | ----------- | ---------------- |
+| [CVE-2024-21626](https://scout.docker.com/v/CVE-2024-21626) | runc          | 1.1.12      | High, CVSS 8.6   |
+| [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557) | Docker Engine | 24.0.9      | Medium, CVSS 6.9 |
+@y
+| CVE                                                         | Component     | Fix version | Severity         |
+| ----------------------------------------------------------- | ------------- | ----------- | ---------------- |
+| [CVE-2024-21626](https://scout.docker.com/v/CVE-2024-21626) | runc          | 1.1.12      | High, CVSS 8.6   |
+| [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557) | Docker Engine | 24.0.9      | Medium, CVSS 6.9 |
+@z
+
+@x
+> **Important**
+>
+> Note that this release of Docker Engine doesn't include fixes for
+> the following known vulnerabilities in BuildKit:
+>
+> - [CVE-2024-23651](https://scout.docker.com/v/CVE-2024-23651)
+> - [CVE-2024-23652](https://scout.docker.com/v/CVE-2024-23652)
+> - [CVE-2024-23653](https://scout.docker.com/v/CVE-2024-23653)
+> - [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650)
+>
+> To address these vulnerabilities,
+> upgrade to [Docker Engine v25.0.2](./25.0.md#2502).
+{ .important }
+@y
+> **Important**
+>
+> Note that this release of Docker Engine doesn't include fixes for
+> the following known vulnerabilities in BuildKit:
+>
+> - [CVE-2024-23651](https://scout.docker.com/v/CVE-2024-23651)
+> - [CVE-2024-23652](https://scout.docker.com/v/CVE-2024-23652)
+> - [CVE-2024-23653](https://scout.docker.com/v/CVE-2024-23653)
+> - [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650)
+>
+> To address these vulnerabilities,
+> upgrade to [Docker Engine v25.0.2](./25.0.md#2502).
+{ .important }
+@z
+
+@x
+For more information about the security issues addressed in this release,
+and the unaddressed vulnerabilities in BuildKit,
+refer to the
+[blog post](https://www.docker.com/blog/docker-security-advisory-multiple-vulnerabilities-in-runc-buildkit-and-moby/).
+@y
+For more information about the security issues addressed in this release,
+and the unaddressed vulnerabilities in BuildKit,
+refer to the
+[blog post](https://www.docker.com/blog/docker-security-advisory-multiple-vulnerabilities-in-runc-buildkit-and-moby/).
+@z
+
+@x
+For details about each vulnerability, see the relevant security advisory:
+@y
+For details about each vulnerability, see the relevant security advisory:
+@z
+
+@x
+- [CVE-2024-21626](https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv)
+- [CVE-2024-24557](https://github.com/moby/moby/security/advisories/GHSA-xw73-rw38-6vjc)
+@y
+- [CVE-2024-21626](https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv)
+- [CVE-2024-24557](https://github.com/moby/moby/security/advisories/GHSA-xw73-rw38-6vjc)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Upgrade runc to [v1.1.12](https://github.com/opencontainers/runc/releases/tag/v1.1.12). [moby/moby#47269](https://github.com/moby/moby/pull/47269)
+- Upgrade containerd to [v1.7.13](https://github.com/containerd/containerd/releases/tag/v1.7.13) (static binaries only). [moby/moby#47280](https://github.com/moby/moby/pull/47280)
+@y
+- Upgrade runc to [v1.1.12](https://github.com/opencontainers/runc/releases/tag/v1.1.12). [moby/moby#47269](https://github.com/moby/moby/pull/47269)
+- Upgrade containerd to [v1.7.13](https://github.com/containerd/containerd/releases/tag/v1.7.13) (static binaries only). [moby/moby#47280](https://github.com/moby/moby/pull/47280)
+@z
+
+@x
+## 24.0.8
+@y
+## 24.0.8
+@z
+
+@x
+{{< release-date date="2024-01-25" >}}
+@y
+{{< release-date date="2024-01-25" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 24.0.8 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.8)
+- [moby/moby, 24.0.8 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.8)
+@y
+- [docker/cli, 24.0.8 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.8)
+- [moby/moby, 24.0.8 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.8)
+@z
+
+@x
+### Bug fixes and enhancements
+* Live restore: Containers with auto remove (`docker run --rm`) are no longer forcibly removed on engine restart. [moby/moby#46857](https://github.com/moby/moby/pull/46869)
+@y
+### Bug fixes and enhancements
+* Live restore: Containers with auto remove (`docker run --rm`) are no longer forcibly removed on engine restart. [moby/moby#46857](https://github.com/moby/moby/pull/46869)
+@z
+
+@x
+### Packaging updates
+* Upgrade Go to `go1.20.13`. [moby/moby#47054](https://github.com/moby/moby/pull/47054), [docker/cli#4826](https://github.com/docker/cli/pull/4826), [docker/docker-ce-packaging#975](https://github.com/docker/docker-ce-packaging/pull/975)
+* Upgrade containerd (static binaries only) to [v1.7.12](https://github.com/containerd/containerd/releases/tag/v1.7.12) [moby/moby#47096](https://github.com/moby/moby/pull/47096)
+* Upgrade runc to v1.1.11. [moby/moby#47010](https://github.com/moby/moby/pull/47010)
+@y
+### Packaging updates
+* Upgrade Go to `go1.20.13`. [moby/moby#47054](https://github.com/moby/moby/pull/47054), [docker/cli#4826](https://github.com/docker/cli/pull/4826), [docker/docker-ce-packaging#975](https://github.com/docker/docker-ce-packaging/pull/975)
+* Upgrade containerd (static binaries only) to [v1.7.12](https://github.com/containerd/containerd/releases/tag/v1.7.12) [moby/moby#47096](https://github.com/moby/moby/pull/47096)
+* Upgrade runc to v1.1.11. [moby/moby#47010](https://github.com/moby/moby/pull/47010)
+@z
+
+@x
 ## 24.0.7
 @y
 ## 24.0.7

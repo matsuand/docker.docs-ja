@@ -256,9 +256,9 @@ $ docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddre
 @z
 
 @x
-# Hint
+## Hint
 @y
-# Hint
+## Hint
 @z
 
 @x

@@ -42,9 +42,9 @@ An initialism is a type of acronym that comprises a group of initial letters use
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -76,9 +76,9 @@ Unless you're referring to UI text or user-defined text, you shouldn't add empha
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -172,9 +172,9 @@ Following our conversational approach, it's acceptable to use contractions in al
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -218,9 +218,9 @@ In all UI content and technical documentation, use decimals instead of fractions
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x
@@ -246,9 +246,9 @@ Lists are a great way to break down complex ideas and make them easier to read a
 @z
 
 @x
-### Best practice:
+### Best practice
 @y
-### Best practice:
+### Best practice
 @z
 
 @x

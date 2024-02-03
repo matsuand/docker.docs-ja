@@ -183,6 +183,8 @@ AC_CONFIG_FILES([
 	src/content/guides/get-started/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile
+	src/content/guides/use-case/genai-video-bot/Makefile
+	src/content/guides/use-case/genai-video-bot/images/Makefile
 	src/content/guides/walkthroughs/Makefile
 	src/content/guides/walkthroughs/images/Makefile
 	src/content/includes/Makefile

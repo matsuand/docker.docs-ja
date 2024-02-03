@@ -608,9 +608,9 @@ the final result, which helps keep the image small and secure.
 @z
 
 @x
-#### Combine commands together wherever possible.
+#### Combine commands together wherever possible
 @y
-#### Combine commands together wherever possible.
+#### Combine commands together wherever possible
 @z
 
 @x

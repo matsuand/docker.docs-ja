@@ -185,16 +185,24 @@ When you mount a volume, it may be named or anonymous. Anonymous volumes are
 given a random name that's guaranteed to be unique within a given Docker host.
 Just like named volumes, anonymous volumes persist even if you remove the
 container that uses them, except if you use the `--rm` flag when creating the
-container. Docker automatically removes anonymous volume mounts for containers
-created with the `--rm` flag. See [Remove anonymous
-volumes](volumes.md#remove-anonymous-volumes).
+container, in which case the anonymous volume is destroyed.
+See [Remove anonymous volumes](volumes.md#remove-anonymous-volumes).
+If you create multiple containers after each other that use anonymous volumes,
+each container creates its own volume.
+Anonymous volumes aren't reused or shared between containers automatically.
+To share an anonymous volume between two or more containers,
+you must mount the anonymous volume using the random volume ID.
 @y
 ボリュームのマウントは、名前つき（named）か匿名（anonymous）のいずれかにより行われます。
 匿名ボリュームにはランダムな名前が与えられます。
 これは利用する Docker ホスト内において固有な名称を確保するためです。
 名前つきボリュームの名称の場合と同様に、匿名ボリュームの名称も維持されます。
 それはコンテナーの生成時に `--rm` フラグをつけなかった場合であれば、たとえそのコンテナーが削除されたとしても、名称は残ります。
+逆につけた場合、匿名ボリュームは削除されます。
 詳しくは [匿名ボリュームの削除](volumes.md#remove-anonymous-volumes) を参照してください。
+匿名ボリュームを複数のコンテナーから利用するマルチコンテナーを生成した場合、各コンテナーはそれぞれに自分自身のボリュームを生成します。
+匿名ボリュームはコンテナー間においては、自動的に再利用されたり共有されたりすることはありません。
+匿名ボリュームを複数コンテナー間において共有するためには、その匿名ボリュームに対してランダムなボリューム ID を使ってマウントしなければなりません。
 @z
 
 @x

@@ -40,7 +40,7 @@ You can manage users at the company-level in the Docker Admin Console.
 @z
 
 @x
-Use Docker Hub to add a member to a team or remove a member from a team. For more details, see [Manage members in Docker Hub](#).
+Use Docker Hub to add a member to a team or remove a member from a team. For more details, see [Manage members in Docker Hub](../organization/members.md#manage-members-on-a-team).
 @y
-Use Docker Hub to add a member to a team or remove a member from a team. For more details, see [Manage members in Docker Hub](#).
+Use Docker Hub to add a member to a team or remove a member from a team. For more details, see [Manage members in Docker Hub](../organization/members.md#manage-members-on-a-team).
 @z

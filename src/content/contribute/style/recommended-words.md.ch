@@ -262,9 +262,21 @@ What might be easy for you might not be easy for others. Try eliminating this wo
 @z
 
 @x
+<!-- markdownlint-disable no-trailing-punctuation -->
+@y
+<!-- markdownlint-disable no-trailing-punctuation -->
+@z
+
+@x
 #### e.g.
 @y
 #### e.g.
+@z
+
+@x
+<!-- markdownlint-enable no-trailing-punctuation -->
+@y
+<!-- markdownlint-enable no-trailing-punctuation -->
 @z
 
 @x
@@ -484,15 +496,15 @@ Use `upgrade` when describing a higher subscription tier
 @z
 
 @x
-#### vs.
+#### vs
 @y
-#### vs.
+#### vs
 @z
 
 @x
-Don't use `vs.` as an abbreviation for versus; instead, use the unabbreviated `versus`.
+Don't use `vs` or `vs.` as an abbreviation for versus; instead, use the unabbreviated `versus`.
 @y
-Don't use `vs.` as an abbreviation for versus; instead, use the unabbreviated `versus`.
+Don't use `vs` or `vs.` as an abbreviation for versus; instead, use the unabbreviated `versus`.
 @z
 
 @x

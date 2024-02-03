@@ -68,6 +68,32 @@ attestations to your image, with the following conditions:
 @z
 
 @x
+> **Warning**
+>
+> If you're using `docker/build-push-action` to build images for code in a
+> public GitHub repository, the provenance attestations attached to your image
+> by default contains the values of build arguments. If you're misusing build
+> arguments to pass secrets to your build, such as user credentials or
+> authentication tokens, those secrets are exposed in the provenance
+> attestation. Refactor your build to pass those secrets using
+> [secret mounts](../../../engine/reference/commandline/buildx_build.md#secret)
+> instead. Also remember to rotate any secrets you may have exposed.
+{ .warning }
+@y
+> **Warning**
+>
+> If you're using `docker/build-push-action` to build images for code in a
+> public GitHub repository, the provenance attestations attached to your image
+> by default contains the values of build arguments. If you're misusing build
+> arguments to pass secrets to your build, such as user credentials or
+> authentication tokens, those secrets are exposed in the provenance
+> attestation. Refactor your build to pass those secrets using
+> [secret mounts](../../../engine/reference/commandline/buildx_build.md#secret)
+> instead. Also remember to rotate any secrets you may have exposed.
+{ .warning }
+@z
+
+@x
 ## Max-level provenance
 @y
 ## Max-level provenance
