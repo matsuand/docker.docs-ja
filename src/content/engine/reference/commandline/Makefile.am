@@ -153,6 +153,8 @@ bases = \
 	plugin_set.md \
 	plugin_upgrade.md \
 	scout.md \
+	scout_attestation.md \
+	scout_attestation_add.md \
 	scout_cache.md \
 	scout_cache_df.md \
 	scout_cache_prune.md \

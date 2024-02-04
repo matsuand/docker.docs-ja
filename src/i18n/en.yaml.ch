@@ -80,4 +80,6 @@ Default:
   other: Default
 Examples:
   other: Examples
+Aliases:
+  other: Aliases
 @z

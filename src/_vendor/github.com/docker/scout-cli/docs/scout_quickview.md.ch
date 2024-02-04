@@ -34,23 +34,23 @@ Quick overview of an image
 @z
 
 @x
-| Name             | Type     | Default | Description                                                                                              |
-|:-----------------|:---------|:--------|:---------------------------------------------------------------------------------------------------------|
-| `--env`          | `string` |         | Name of the environment                                                                                  |
-| `--latest`       |          |         | Latest indexed image                                                                                     |
-| `--org`          | `string` |         | Namespace of the Docker organization                                                                     |
-| `-o`, `--output` | `string` |         | Write the report to a file.                                                                              |
-| `--platform`     | `string` |         | Platform of image to analyze                                                                             |
-| `--ref`          | `string` |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive. |
+| Name             | Type     | Default | Description                                                                                             |
+|:-----------------|:---------|:--------|:--------------------------------------------------------------------------------------------------------|
+| `--env`          | `string` |         | Name of the environment                                                                                 |
+| `--latest`       |          |         | Latest indexed image                                                                                    |
+| `--org`          | `string` |         | Namespace of the Docker organization                                                                    |
+| `-o`, `--output` | `string` |         | Write the report to a file                                                                              |
+| `--platform`     | `string` |         | Platform of image to analyze                                                                            |
+| `--ref`          | `string` |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive |
 @y
-| Name             | Type     | Default | Description                                                                                              |
-|:-----------------|:---------|:--------|:---------------------------------------------------------------------------------------------------------|
-| `--env`          | `string` |         | Name of the environment                                                                                  |
-| `--latest`       |          |         | Latest indexed image                                                                                     |
-| `--org`          | `string` |         | Namespace of the Docker organization                                                                     |
-| `-o`, `--output` | `string` |         | Write the report to a file.                                                                              |
-| `--platform`     | `string` |         | Platform of image to analyze                                                                             |
-| `--ref`          | `string` |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive. |
+| Name             | Type     | Default | Description                                                                                             |
+|:-----------------|:---------|:--------|:--------------------------------------------------------------------------------------------------------|
+| `--env`          | `string` |         | Name of the environment                                                                                 |
+| `--latest`       |          |         | Latest indexed image                                                                                    |
+| `--org`          | `string` |         | Namespace of the Docker organization                                                                    |
+| `-o`, `--output` | `string` |         | Write the report to a file                                                                              |
+| `--platform`     | `string` |         | Platform of image to analyze                                                                            |
+| `--ref`          | `string` |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive |
 @z
 
 @x

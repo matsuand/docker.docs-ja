@@ -4,6 +4,8 @@
 
 bases = \
 	docker_scout.yaml                       \
+	docker_scout_attestation.yaml           \
+	docker_scout_attestation_add.yaml       \
 	docker_scout_cache.yaml                 \
 	docker_scout_cache_df.yaml              \
 	docker_scout_cache_prune.yaml           \
@@ -30,6 +32,8 @@ bases = \
 	docker_scout_version.yaml               \
 	docker_scout_watch.yaml                 \
 	scout.md                                \
+	scout_attestation.md                    \
+	scout_attestation_add.md                \
 	scout_cache.md                          \
 	scout_cache_df.md                       \
 	scout_cache_prune.md                    \

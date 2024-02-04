@@ -9,6 +9,7 @@ usage: docker scout [command]
 pname: docker
 plink: docker.yaml
 cname:
+    - docker scout attestation
     - docker scout cache
     - docker scout compare
     - docker scout config
@@ -23,6 +24,7 @@ cname:
     - docker scout repo
     - docker scout version
 clink:
+    - docker_scout_attestation.yaml
     - docker_scout_cache.yaml
     - docker_scout_compare.yaml
     - docker_scout_config.yaml
@@ -70,6 +72,7 @@ usage: docker scout [command]
 pname: docker
 plink: docker.yaml
 cname:
+    - docker scout attestation
     - docker scout cache
     - docker scout compare
     - docker scout config
@@ -84,6 +87,7 @@ cname:
     - docker scout repo
     - docker scout version
 clink:
+    - docker_scout_attestation.yaml
     - docker_scout_cache.yaml
     - docker_scout_compare.yaml
     - docker_scout_config.yaml

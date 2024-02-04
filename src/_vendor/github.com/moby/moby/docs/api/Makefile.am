@@ -3,12 +3,6 @@
 ##
 
 bases = \
-	v1.18.md   \
-	v1.19.md   \
-	v1.20.md   \
-	v1.21.md   \
-	v1.22.md   \
-	v1.23.md   \
 	v1.24.md   \
 	v1.25.yaml \
 	v1.26.yaml \

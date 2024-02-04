@@ -1484,12 +1484,6 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
-[Docker Engine API v1.23](v1.23.md) documentation
-@y
-[Docker Engine API v1.23](v1.23.md) documentation
-@z
-
-@x
 * `GET /containers/json` returns the state of the container, one of `created`, `restarting`, `running`, `paused`, `exited` or `dead`.
 * `GET /containers/json` returns the mount points for the container.
 * `GET /networks/(name)` now returns an `Internal` field showing whether the network is internal or not.
@@ -1531,12 +1525,6 @@ keywords: "API, Docker, rcli, REST, documentation"
 ## v1.22 API changes
 @y
 ## v1.22 API changes
-@z
-
-@x
-[Docker Engine API v1.22](v1.22.md) documentation
-@y
-[Docker Engine API v1.22](v1.22.md) documentation
 @z
 
 @x
@@ -1612,12 +1600,6 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
-[Docker Engine API v1.21](v1.21.md) documentation
-@y
-[Docker Engine API v1.21](v1.21.md) documentation
-@z
-
-@x
 * `GET /volumes` lists volumes from all volume drivers.
 * `POST /volumes/create` to create a volume.
 * `GET /volumes/(name)` get low-level information about a volume.
@@ -1688,12 +1670,6 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
-[Docker Engine API v1.20](v1.20.md) documentation
-@y
-[Docker Engine API v1.20](v1.20.md) documentation
-@z
-
-@x
 * `GET /containers/(id)/archive` get an archive of filesystem content from a container.
 * `PUT /containers/(id)/archive` upload an archive of content to be extracted to
 an existing directory inside a container's filesystem.
@@ -1715,12 +1691,6 @@ list of additional groups that the container process will run as.
 ## v1.19 API changes
 @y
 ## v1.19 API changes
-@z
-
-@x
-[Docker Engine API v1.19](v1.19.md) documentation
-@y
-[Docker Engine API v1.19](v1.19.md) documentation
 @z
 
 @x
@@ -1753,12 +1723,6 @@ end point now returns the new boolean fields `CpuCfsPeriod`, `CpuCfsQuota`, and
 ## v1.18 API changes
 @y
 ## v1.18 API changes
-@z
-
-@x
-[Docker Engine API v1.18](v1.18.md) documentation
-@y
-[Docker Engine API v1.18](v1.18.md) documentation
 @z
 
 @x

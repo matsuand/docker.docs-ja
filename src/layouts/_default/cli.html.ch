@@ -7,6 +7,7 @@
 % {{ T "Description" }}, (T "Description")
 % (T "Examples")
 % (T "Usage")
+% (T "Aliases")
 
 @x
 {{ define "left" }}
@@ -172,7 +173,7 @@
     {{ end }}
 @z
 
-@x
+@x (T "Aliases")
     {{ with $data.aliases }}
       {{ $heading := dict "level" 2 "text" "Aliases" }}
       {{ partial "heading.html" $heading }}
@@ -186,7 +187,7 @@
     {{ end }}
 @y
     {{ with $data.aliases }}
-      {{ $heading := dict "level" 2 "text" "Aliases" }}
+      {{ $heading := dict "level" 2 "text" (T "Aliases") }}
       {{ partial "heading.html" $heading }}
       {{ $aliases := strings.Split . ", " }}
       <p>The following commands are equivalent and redirect here:</p>

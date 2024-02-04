@@ -1354,6 +1354,10 @@ Reference:
     section:
     - path: /engine/reference/commandline/scout/
       title: docker scout
+    - path: /engine/reference/commandline/scout_attestation/
+      title: docker scout attestation
+    - path: /engine/reference/commandline/scout_attestation_add/
+      title: docker scout attestation add
     - path: /engine/reference/commandline/scout_cache/
       title: docker scout cache
     - path: /engine/reference/commandline/scout_cache_df/
@@ -1366,6 +1370,30 @@ Reference:
       title: docker scout config
     - path: /engine/reference/commandline/scout_cves/
       title: docker scout cves
+@y
+  - sectiontitle: docker scout
+    section:
+    - path: __SUBDIR__/engine/reference/commandline/scout/
+      title: docker scout
+    - path: __SUBDIR__/engine/reference/commandline/scout_attestation/
+      title: docker scout attestation
+    - path: __SUBDIR__/engine/reference/commandline/scout_attestation_add/
+      title: docker scout attestation add
+    - path: __SUBDIR__/engine/reference/commandline/scout_cache/
+      title: docker scout cache
+    - path: __SUBDIR__/engine/reference/commandline/scout_cache_df/
+      title: docker scout cache df
+    - path: __SUBDIR__/engine/reference/commandline/scout_cache_prune/
+      title: docker scout cache prune
+    - path: __SUBDIR__/engine/reference/commandline/scout_compare/
+      title: docker scout compare
+    - path: __SUBDIR__/engine/reference/commandline/scout_config/
+      title: docker scout config
+    - path: __SUBDIR__/engine/reference/commandline/scout_cves/
+      title: docker scout cves
+@z
+
+@x
     - path: /engine/reference/commandline/scout_enroll/
       title: docker scout enroll
     - path: /engine/reference/commandline/scout_environment/
@@ -1378,6 +1406,22 @@ Reference:
       title: docker scout integration delete
     - path: /engine/reference/commandline/scout_integration_list/
       title: docker scout integration list
+@y
+    - path: __SUBDIR__/engine/reference/commandline/scout_enroll/
+      title: docker scout enroll
+    - path: __SUBDIR__/engine/reference/commandline/scout_environment/
+      title: docker scout environment
+    - path: __SUBDIR__/engine/reference/commandline/scout_integration/
+      title: docker scout integration
+    - path: __SUBDIR__/engine/reference/commandline/scout_integration_configure/
+      title: docker scout integration configure
+    - path: __SUBDIR__/engine/reference/commandline/scout_integration_delete/
+      title: docker scout integration delete
+    - path: __SUBDIR__/engine/reference/commandline/scout_integration_list/
+      title: docker scout integration list
+@z
+
+@x
     - path: /engine/reference/commandline/scout_policy/
       title: docker scout policy
     - path: /engine/reference/commandline/scout_quickview/
@@ -1388,6 +1432,20 @@ Reference:
       title: docker scout repo
     - path: /engine/reference/commandline/scout_repo_disable/
       title: docker scout repo disable
+@y
+    - path: __SUBDIR__/engine/reference/commandline/scout_policy/
+      title: docker scout policy
+    - path: __SUBDIR__/engine/reference/commandline/scout_quickview/
+      title: docker scout quickview
+    - path: __SUBDIR__/engine/reference/commandline/scout_recommendations/
+      title: docker scout recommendations
+    - path: __SUBDIR__/engine/reference/commandline/scout_repo/
+      title: docker scout repo
+    - path: __SUBDIR__/engine/reference/commandline/scout_repo_disable/
+      title: docker scout repo disable
+@z
+
+@x
     - path: /engine/reference/commandline/scout_repo_enable/
       title: docker scout repo enable
     - path: /engine/reference/commandline/scout_repo_list/
@@ -1401,44 +1459,6 @@ Reference:
     - path: /engine/reference/commandline/scout_watch/
       title: docker scout watch
 @y
-  - sectiontitle: docker scout
-    section:
-    - path: __SUBDIR__/engine/reference/commandline/scout/
-      title: docker scout
-    - path: __SUBDIR__/engine/reference/commandline/scout_cache/
-      title: docker scout cache
-    - path: __SUBDIR__/engine/reference/commandline/scout_cache_df/
-      title: docker scout cache df
-    - path: __SUBDIR__/engine/reference/commandline/scout_cache_prune/
-      title: docker scout cache prune
-    - path: __SUBDIR__/engine/reference/commandline/scout_compare/
-      title: docker scout compare
-    - path: __SUBDIR__/engine/reference/commandline/scout_config/
-      title: docker scout config
-    - path: __SUBDIR__/engine/reference/commandline/scout_cves/
-      title: docker scout cves
-    - path: __SUBDIR__/engine/reference/commandline/scout_enroll/
-      title: docker scout enroll
-    - path: __SUBDIR__/engine/reference/commandline/scout_environment/
-      title: docker scout environment
-    - path: __SUBDIR__/engine/reference/commandline/scout_integration/
-      title: docker scout integration
-    - path: __SUBDIR__/engine/reference/commandline/scout_integration_configure/
-      title: docker scout integration configure
-    - path: __SUBDIR__/engine/reference/commandline/scout_integration_delete/
-      title: docker scout integration delete
-    - path: __SUBDIR__/engine/reference/commandline/scout_integration_list/
-      title: docker scout integration list
-    - path: __SUBDIR__/engine/reference/commandline/scout_policy/
-      title: docker scout policy
-    - path: __SUBDIR__/engine/reference/commandline/scout_quickview/
-      title: docker scout quickview
-    - path: __SUBDIR__/engine/reference/commandline/scout_recommendations/
-      title: docker scout recommendations
-    - path: __SUBDIR__/engine/reference/commandline/scout_repo/
-      title: docker scout repo
-    - path: __SUBDIR__/engine/reference/commandline/scout_repo_disable/
-      title: docker scout repo disable
     - path: __SUBDIR__/engine/reference/commandline/scout_repo_enable/
       title: docker scout repo enable
     - path: __SUBDIR__/engine/reference/commandline/scout_repo_list/
