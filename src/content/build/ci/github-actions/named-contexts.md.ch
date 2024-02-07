@@ -93,7 +93,7 @@ jobs:
         with:
           context: .
           build-contexts: |
-            alpine=docker-image://alpine:3.16
+            alpine=docker-image://alpine:{{% param "example_alpine_version" %}}
           tags: myimage:latest
 ```
 @y
@@ -110,7 +110,7 @@ jobs:
         with:
           context: .
           build-contexts: |
-            alpine=docker-image://alpine:3.16
+            alpine=docker-image://alpine:{{% param "example_alpine_version" %}}
           tags: myimage:latest
 ```
 @z

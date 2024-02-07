@@ -135,9 +135,9 @@ Legacy versions 2.x and 3.x of the Compose file format were merged into the Comp
 @z
 
 @x
-The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the [Compose Specication repository](https://github.com/compose-spec/compose-spec).
+The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the [Compose Specification repository](https://github.com/compose-spec/compose-spec).
 @y
-The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the [Compose Specication repository](https://github.com/compose-spec/compose-spec).
+The Compose Specification on Docker Docs is the Docker Compose implementation. If you wish to implement your own version of the Compose Specification, see the [Compose Specification repository](https://github.com/compose-spec/compose-spec).
 @z
 
 @x

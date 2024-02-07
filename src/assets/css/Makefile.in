@@ -249,6 +249,7 @@ EXTRA_DIST = $(changes)
 copyfiles = \
 	callouts.css     \
 	code.css         \
+	hack.css         \
 	icons.css        \
 	search.css       \
 	styles.css       \

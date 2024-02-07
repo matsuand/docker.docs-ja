@@ -4,28 +4,20 @@
 @x
 ---
 title: Multi-stage builds
-description: 'Learn about multi-stage builds and how you can use
+description: |
+  Learn about multi-stage builds and how you can use
+  them to improve your builds and get smaller images
+keywords: build, best practices
+aliases:
+- /engine/userguide/eng-image/multistage-build/
+- /develop/develop-images/multistage-build/
+---
 @y
 ---
 title: Multi-stage builds
-description: 'Learn about multi-stage builds and how you can use
-@z
-
-@x
+description: |
+  Learn about multi-stage builds and how you can use
   them to improve your builds and get smaller images
-@y
-  them to improve your builds and get smaller images
-@z
-
-@x
-  '
-keywords: build, best practices
-aliases:
-- /engine/userguide/eng-image/multistage-build/
-- /develop/develop-images/multistage-build/
----
-@y
-  '
 keywords: build, best practices
 aliases:
 - /engine/userguide/eng-image/multistage-build/
@@ -61,23 +53,23 @@ another, leaving behind everything you don't want in the final image.
 
 @x
 The following Dockerfile has two separate stages: one for building a binary,
-and another where we copy the binary into.
+and another where the binary gets copied from the first stage into the next stage.
 @y
 The following Dockerfile has two separate stages: one for building a binary,
-and another where we copy the binary into.
+and another where the binary gets copied from the first stage into the next stage.
 @z
 
 @x
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM golang:1.21
+FROM golang:{{% param "example_go_version" %}}
 WORKDIR /src
 COPY <<EOF ./main.go
 package main
 @y
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM golang:1.21
+FROM golang:{{% param "example_go_version" %}}
 WORKDIR /src
 COPY <<EOF ./main.go
 package main
@@ -180,14 +172,14 @@ Dockerfile are re-ordered later, the `COPY` doesn't break.
 @x
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM golang:1.21 as build
+FROM golang:{{% param "example_go_version" %}} as build
 WORKDIR /src
 COPY <<EOF /src/main.go
 package main
 @y
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM golang:1.21 as build
+FROM golang:{{% param "example_go_version" %}} as build
 WORKDIR /src
 COPY <<EOF /src/main.go
 package main

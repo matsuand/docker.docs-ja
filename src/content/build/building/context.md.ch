@@ -1032,13 +1032,13 @@ build context.
 @z
 
 @x
-```gitignore
+```text
 # .dockerignore
 node_modules
 bar
 ```
 @y
-```gitignore
+```text
 # .dockerignore
 node_modules
 bar
@@ -1178,14 +1178,14 @@ The following code snippet shows an example `.dockerignore` file.
 @z
 
 @x
-```gitignore
+```text
 # comment
 */temp*
 */*/temp*
 temp?
 ```
 @y
-```gitignore
+```text
 # comment
 */temp*
 */*/temp*
@@ -1282,12 +1282,12 @@ mechanism:
 @z
 
 @x
-```gitignore
+```text
 *.md
 !README.md
 ```
 @y
-```gitignore
+```text
 *.md
 !README.md
 ```
@@ -1314,13 +1314,13 @@ included or excluded. Consider the following example:
 @z
 
 @x
-```gitignore
+```text
 *.md
 !README*.md
 README-secret.md
 ```
 @y
-```gitignore
+```text
 *.md
 !README*.md
 README-secret.md
@@ -1342,13 +1342,13 @@ Now consider this example:
 @z
 
 @x
-```gitignore
+```text
 *.md
 README-secret.md
 !README*.md
 ```
 @y
-```gitignore
+```text
 *.md
 README-secret.md
 !README*.md

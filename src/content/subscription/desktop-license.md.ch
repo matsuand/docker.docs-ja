@@ -68,3 +68,15 @@ GNU General Public License. Select [here](https://download.docker.com/opensource
 Docker Desktop distributes some components that are licensed under the
 GNU General Public License. Select [here](https://download.docker.com/opensource/License.tar.gz) to download the source for these components.
 @z
+
+@x
+> **Tip**
+>
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
+{ .tip }
+@y
+> **Tip**
+>
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
+{ .tip }
+@z

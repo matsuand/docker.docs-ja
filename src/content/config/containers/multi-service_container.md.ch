@@ -16,7 +16,7 @@ aliases:
 ---
 description: Learn how to run more than one process in a single container
 keywords: docker, supervisor, process management
-title: Run multiple processes in a container
+title: コンテナー内でのマルチプロセス実行
 aliases:
   - /articles/using_supervisord/
   - /engine/admin/multi-service_container/
@@ -35,14 +35,12 @@ avoid one container being responsible for multiple aspects of your overall
 application. You can connect multiple containers using user-defined networks and
 shared volumes.
 @y
-A container's main running process is the `ENTRYPOINT` and/or `CMD` at the
-end of the `Dockerfile`. It's best practice to separate areas of concern by
-using one service per container. That service may fork into multiple
-processes (for example, Apache web server starts multiple worker processes).
-It's ok to have multiple processes, but to get the most benefit out of Docker,
-avoid one container being responsible for multiple aspects of your overall
-application. You can connect multiple containers using user-defined networks and
-shared volumes.
+コンテナーの主となる実行プロセスは、`Dockerfile`の最終部分に指定される`ENTRYPOINT`や`CMD`です。
+1 つのコンテナーには 1 つのサービスを割り当てるということにすれば、気にかける箇所が絞られるので、これがベストプラクティスです。
+ただそのサービスからは、複数のプロセスがフォークされることもあります（たとえば Apache ウェブサーバーでは複数のワーカープロセスが起動されます）。
+マルチプロセスとなることは、まったく問題ありません。
+一方で、アプリケーションが持ついくつもの役割を 1 つのコンテナーに持たせることは、Docker の優れた機能を利用する観点からは避けるべきです。
+コンテナーを複数にするのであれば、ユーザー定義のネットワークや共有ボリュームを利用して接続します。
 @z
 
 @x
@@ -56,29 +54,25 @@ container exits. Handling such processes this way is superior to using a
 full-fledged init process such as `sysvinit` or `systemd` to handle process
 lifecycle within your container.
 @y
-The container's main process is responsible for managing all processes that it
-starts. In some cases, the main process isn't well-designed, and doesn't handle
-"reaping" (stopping) child processes gracefully when the container exits. If
-your process falls into this category, you can use the `--init` option when you
-run the container. The `--init` flag inserts a tiny init-process into the
-container as the main process, and handles reaping of all processes when the
-container exits. Handling such processes this way is superior to using a
-full-fledged init process such as `sysvinit` or `systemd` to handle process
-lifecycle within your container.
+コンテナーのメインプロセスは、コンテナーそのものが起動させるプロセスすべてを管理するためにあります。
+メインプロセスが十分に機能していないことが原因で、コンテナー終了時に子プロセスを適切に停止できないことがあります。
+起動プロセスがこの手の事態に陥った場合は、コンテナー起動時に `--init` オプションを指定してみてください。
+この `--init` フラグは、コンテナーのメインプロセスとして、非常に小さな初期化プロセスを埋め込みます。
+この小さなプロセスが、コンテナー終了時の子プロセス停止を受け持つことになります。
+子プロセスの扱いをこのようにするのは、本格的な初期化プロセス、たとえば `sysvinit`、`systemd` に比べて、コンテナー内部のプロセスのライフサイクルを適切に扱うことができるからです。
 @z
 
 @x
 If you need to run more than one service within a container, you can achieve
 this in a few different ways.
 @y
-If you need to run more than one service within a container, you can achieve
-this in a few different ways.
+1 つのコンテナー内に複数のサービスを起動させる必要があるなら、方法はいくつかあります。
 @z
 
 @x
 ## Use a wrapper script
 @y
-## Use a wrapper script
+## ラッパースクリプトの利用 {#use-a-wrapper-script}
 @z
 
 @x
@@ -86,9 +80,11 @@ Put all of your commands in a wrapper script, complete with testing and
 debugging information. Run the wrapper script as your `CMD`. The following is a
 naive example. First, the wrapper script:
 @y
-Put all of your commands in a wrapper script, complete with testing and
-debugging information. Run the wrapper script as your `CMD`. The following is a
-naive example. First, the wrapper script:
+実行するコマンドをすべてラッパースクリプトに含めます。
+あらかじめテストやデバッグは行っておきます。
+そしてこのラッパースクリプトを `CMD` として実行します。
+以下は簡単な例です。
+まずはラッパースクリプトを生成します。
 @z
 
 @x
@@ -103,7 +99,7 @@ naive example. First, the wrapper script:
 # Start the first process
 ./my_first_process &
 @y
-# Start the first process
+# 1つめのプロセスを起動
 ./my_first_process &
 @z
 
@@ -111,7 +107,7 @@ naive example. First, the wrapper script:
 # Start the second process
 ./my_second_process &
 @y
-# Start the second process
+# 2つめのプロセスを起動
 ./my_second_process &
 @z
 
@@ -119,7 +115,7 @@ naive example. First, the wrapper script:
 # Wait for any process to exit
 wait -n
 @y
-# Wait for any process to exit
+# いずれかが終了するのを待つ
 wait -n
 @z
 
@@ -128,7 +124,7 @@ wait -n
 exit $?
 ```
 @y
-# Exit with status of process that exited first
+# 最初に終了したプロセスのステータスを返す
 exit $?
 ```
 @z
@@ -136,7 +132,7 @@ exit $?
 @x
 Next, the Dockerfile:
 @y
-Next, the Dockerfile:
+次は Dockerfile です。
 @z
 
 @x
@@ -162,7 +158,7 @@ CMD ./my_wrapper_script.sh
 @x
 ## Use Bash job controls
 @y
-## Use Bash job controls
+## Bash のジョブコントロールの利用 {#use-bash-job-controls}
 @z
 
 @x
@@ -170,9 +166,10 @@ If you have one main process that needs to start first and stay running but you
 temporarily need to run some other processes (perhaps to interact with the main
 process) then you can use bash's job control. First, the wrapper script:
 @y
-If you have one main process that needs to start first and stay running but you
-temporarily need to run some other processes (perhaps to interact with the main
-process) then you can use bash's job control. First, the wrapper script:
+1 つのメインプロセスを起動させたら、そのまま起動し続ける場合です。
+一時的に別のプロセスをいくつか起動する（そしておそらくはメインプロセスと通信を行う）とします。
+この場合は bash のジョブコントロールの機能を利用します。
+まずはラッパースクリプトを生成します。
 @z
 
 @x
@@ -187,7 +184,7 @@ process) then you can use bash's job control. First, the wrapper script:
 # turn on bash's job control
 set -m
 @y
-# turn on bash's job control
+# ジョブコントロールを有効にします。
 set -m
 @z
 
@@ -195,7 +192,7 @@ set -m
 # Start the primary process and put it in the background
 ./my_main_process &
 @y
-# Start the primary process and put it in the background
+# 1つめのプロセスをバックグラウンドで実行します。
 ./my_main_process &
 @z
 
@@ -203,7 +200,7 @@ set -m
 # Start the helper process
 ./my_helper_process
 @y
-# Start the helper process
+# ヘルパープロセスを実行します。
 ./my_helper_process
 @z
 
@@ -211,8 +208,8 @@ set -m
 # the my_helper_process might need to know how to wait on the
 # primary process to start before it does its work and returns
 @y
-# the my_helper_process might need to know how to wait on the
-# primary process to start before it does its work and returns
+# この my_helper_process は自分の処理を開始して終了するためには、
+# 1つめのプロセスの動きを知っておく必要があるかもしれません。
 @z
 
 @x
@@ -221,8 +218,8 @@ set -m
 fg %1
 ```
 @y
-# now we bring the primary process back into the foreground
-# and leave it there
+# ここで1つめのプロセスをフォアグラウンド実行に戻して
+# そのままとします。
 fg %1
 ```
 @z
@@ -250,7 +247,7 @@ CMD ./my_wrapper_script.sh
 @x
 ## Use a process manager
 @y
-## Use a process manager
+## プロセスマネージャーの利用 {#use-a-process-manager}
 @z
 
 @x

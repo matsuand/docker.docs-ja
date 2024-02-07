@@ -7,7 +7,8 @@ bases = \
 	admin-org-onboarding.md      \
 	admin-sso-config.md          \
 	admin-sso-management-orgs.md \
-	admin-sso-management.md
+	admin-sso-management.md      \
+	desktop-install.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -25,7 +26,6 @@ copyfiles = \
 	button.html                \
 	card.html                  \
 	cta.html                   \
-	desktop-install.html       \
 	grid.html                  \
 	include.html               \
 	inline-image.html          \

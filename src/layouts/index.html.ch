@@ -53,11 +53,11 @@
             Docker の入手
 @z
 @x
-          <img class="dark:hidden" src="/assets/images/app-wf-light-1.svg" />
-          <img class="hidden dark:block" src="/assets/images/app-wf-dark-1.svg" />
+          <img class="dark:hidden" alt="Low-fi desktop app" src="/assets/images/app-wf-light-1.svg" />
+          <img class="hidden dark:block" alt="Low-fi desktop app" src="/assets/images/app-wf-dark-1.svg" />
 @y
-          <img class="dark:hidden" src="assets/images/app-wf-light-1.svg" />
-          <img class="hidden dark:block" src="assets/images/app-wf-dark-1.svg" />
+          <img class="dark:hidden" alt="Low-fi desktop app" src="assets/images/app-wf-light-1.svg" />
+          <img class="hidden dark:block" alt="Low-fi desktop app" src="assets/images/app-wf-dark-1.svg" />
 @z
 
 @x
@@ -132,11 +132,11 @@
                 はじめよう
 @z
 @x
-            <img class="dark:hidden" src="/assets/images/app-wf-light-2.svg" />
-            <img class="hidden dark:block" src="/assets/images/app-wf-dark-2.svg" />
+            <img class="dark:hidden" alt="Low-fi desktop app" src="/assets/images/app-wf-light-2.svg" />
+            <img class="hidden dark:block" alt="Low-fi desktop app" src="/assets/images/app-wf-dark-2.svg" />
 @y
-            <img class="dark:hidden" src="assets/images/app-wf-light-2.svg" />
-            <img class="hidden dark:block" src="assets/images/app-wf-dark-2.svg" />
+            <img class="dark:hidden" alt="Low-fi desktop app" src="assets/images/app-wf-light-2.svg" />
+            <img class="hidden dark:block" alt="Low-fi desktop app" src="assets/images/app-wf-dark-2.svg" />
 @z
 
 @x

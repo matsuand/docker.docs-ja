@@ -168,9 +168,9 @@ The following section contains step-by-step instructions on how to get started w
 @z
 
 @x
-### Step 1: Sign up for a Docker account
+### Step 1: Sign up for a free Docker account
 @y
-### 手順 1: Docker アカウントへのサインアップ {#step-1-sign-up-for-a-docker-account}
+### 手順 1: 無償 Docker アカウントへのサインアップ {#step-1-sign-up-for-a-free-docker-account}
 @z
 
 @x

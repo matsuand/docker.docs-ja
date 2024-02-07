@@ -16,7 +16,7 @@ aliases:
 description: Learn how to register for a Docker ID and log in to your account
 keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
   base, beta access, email, activation, verification
-title: Create an account
+title: アカウントの生成
 aliases:
 - /docker-cloud/dockerid/
 - /docker-hub/accounts/
@@ -24,9 +24,9 @@ aliases:
 @z
 
 @x
-You can create a Docker account with your email address or by signing up with your Google or GitHub account. Once you've created your account with a unique Docker ID, you can access all Docker products, including Docker Hub. With Docker Hub, you can access repositories and explore images that are available from the community and verified publishers.
+You can create a free Docker account with your email address or by signing up with your Google or GitHub account. Once you've created your account with a unique Docker ID, you can access all Docker products, including Docker Hub. With Docker Hub, you can access repositories and explore images that are available from the community and verified publishers.
 @y
-You can create a Docker account with your email address or by signing up with your Google or GitHub account. Once you've created your account with a unique Docker ID, you can access all Docker products, including Docker Hub. With Docker Hub, you can access repositories and explore images that are available from the community and verified publishers.
+You can create a free Docker account with your email address or by signing up with your Google or GitHub account. Once you've created your account with a unique Docker ID, you can access all Docker products, including Docker Hub. With Docker Hub, you can access repositories and explore images that are available from the community and verified publishers.
 @z
 
 @x
@@ -38,31 +38,31 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 ## Create a Docker ID
 @y
-## Create a Docker ID
+## Docker ID の生成 {#create-a-docker-id}
 @z
 
 @x
 ### Sign up with your email address
 @y
-### Sign up with your email address
+### メールアドレスを使ったサインアップ {#sign-up-with-your-email-address}
 @z
 
 @x
 1. Go to the [Docker sign-up page](https://hub.docker.com/signup/).
 @y
-1. Go to the [Docker sign-up page](https://hub.docker.com/signup/).
+1. [Docker サインアップページ](https://hub.docker.com/signup/) にアクセスします。
 @z
 
 @x
 2. Enter a unique, valid email address.
 @y
-2. Enter a unique, valid email address.
+2. 適切なメールアドレスを入力します。
 @z
 
 @x
 3. Enter a username.
 @y
-3. Enter a username.
+3. ユーザー名を入力します。
 @z
 
 @x
@@ -74,13 +74,13 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 4. Enter a password that's at least 9 characters long.
 @y
-4. Enter a password that's at least 9 characters long.
+4. パスワードを入力します。最低 9 文字が必要です。
 @z
 
 @x
 5. Select **Sign Up**.
 @y
-5. Select **Sign Up**.
+5. **Sign Up** (サインアップ) をクリックします。
 @z
 
 @x
@@ -92,7 +92,7 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 6. Verify your email address to complete the registration process.
 @y
-6. Verify your email address to complete the registration process.
+6. メールアドレスを確認して登録操作を終了します。
 @z
 
 @x
@@ -100,15 +100,15 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 >
 > You have limited actions available until you verify your email address.
 @y
-> **Note**
+> **メモ**
 >
-> You have limited actions available until you verify your email address.
+> メールアドレスを確認しないでおくと、利用できる操作が限定されます。
 @z
 
 @x
 ### Sign up with Google or GitHub
 @y
-### Sign up with Google or GitHub
+### Google または GitHub を使ったサインアップ {#sign-up-with-google-or-github}
 @z
 
 @x
@@ -117,7 +117,7 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 > To sign up with your social provider, make sure you verify your email address with your provider before you begin.
 { .important }
 @y
-> **Important**
+> **重量**
 >
 > To sign up with your social provider, make sure you verify your email address with your provider before you begin.
 { .important }
@@ -126,19 +126,19 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 1. Go to the [Docker sign-up page](https://hub.docker.com/signup/).
 @y
-1. Go to the [Docker sign-up page](https://hub.docker.com/signup/).
+1. [Docker サインアップページ](https://hub.docker.com/signup/) にアクセスします。
 @z
 
 @x
 2. Select your social provider, Google or GitHub.
 @y
-2. Select your social provider, Google or GitHub.
+2. ソーシャルプロバイダーである Google または GitHub のいずれかを選択します。
 @z
 
 @x
 3. Select the social account you want to link to your Docker account.
 @y
-3. Select the social account you want to link to your Docker account.
+3. Docker アカウントへのリンクづけを行いたいソーシャルアカウントを選びます。
 @z
 
 @x
@@ -150,7 +150,7 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 5. Enter a username.
 @y
-5. Enter a username.
+5. ユーザー名を入力します。
 @z
 
 @x
@@ -162,13 +162,13 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 6. Select **Sign up**.
 @y
-6. Select **Sign up**.
+6. **Sign Up** (サインアップ) をクリックします。
 @z
 
 @x
 ## Sign in
 @y
-## Sign in
+## サインイン {#sign-in}
 @z
 
 @x
@@ -204,7 +204,7 @@ stored in your home directory in `.docker/config.json`. The password is base64-e
 @x
 ### Sign in with your social provider
 @y
-### Sign in with your social provider
+### Sign in with your social provider {#sign-in-with-your-social-provider}
 @z
 
 @x
@@ -234,7 +234,7 @@ If you try to sign in with your social provider and don't have a Docker account 
 @x
 ## Reset your password at sign in
 @y
-## Reset your password at sign in
+## Reset your password at sign in {#reset-your-password-at-sign-in}
 @z
 
 @x
@@ -246,7 +246,7 @@ To reset your password, enter your email address on the [Sign in](https://login.
 @x
 ## Troubleshooting
 @y
-## Troubleshooting
+## Troubleshooting {#troubleshooting}
 @z
 
 @x

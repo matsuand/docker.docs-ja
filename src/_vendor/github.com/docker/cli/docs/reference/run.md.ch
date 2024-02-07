@@ -15,7 +15,7 @@ description: "Running and configuring containers with the Docker CLI"
 keywords: "docker, run, cli"
 aliases:
 - /reference/run/
-title: Running containers
+title: コンテナーの実行
 ---
 @z
 
@@ -26,29 +26,29 @@ execute `docker run`, the container process that runs is isolated in
 that it has its own file system, its own networking, and its own
 isolated process tree separate from the host.
 @y
-Docker runs processes in isolated containers. A container is a process
-which runs on a host. The host may be local or remote. When an you
-execute `docker run`, the container process that runs is isolated in
-that it has its own file system, its own networking, and its own
-isolated process tree separate from the host.
+Docker は隔離されたコンテナー内でプロセスを実行します。
+コンテナーとは、ホスト上で実行される 1 つのプロセスです。
+ここでいうホストは、ローカルとリモートのどちらもあります。
+`docker run` を実行すると、分離された状態でコンテナープロセスが起動します。
+そこではホストから切り離されたところで、独自のファイルシステム、独自のネットワーク、分離されたプロセスツリーを持ちます。
 @z
 
 @x
 This page details how to use the `docker run` command to run containers.
 @y
-This page details how to use the `docker run` command to run containers.
+このページでは、コンテナーを実行する `docker run` コマンドの利用方法について説明します。
 @z
 
 @x
 ## General form
 @y
-## General form
+## 一般的な書式 {#general-form}
 @z
 
 @x
 A `docker run` command takes the following form:
 @y
-A `docker run` command takes the following form:
+`docker run` コマンドは以下の書式を取ります。
 @z
 
 @x
@@ -65,22 +65,21 @@ $ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 The `docker run` command must specify an [image reference](#image-references)
 to create the container from.
 @y
-The `docker run` command must specify an [image reference](#image-references)
-to create the container from.
+`docker run` コマンドでは、コンテナーの生成元となる [イメージの参照](#image-references) を指定することが必要です。
 @z
 
 @x
 ### Image references
 @y
-### Image references
+### イメージの参照 {#image-references}
 @z
 
 @x
 The image reference is the name and version of the image. You can use the image
 reference to create or run a container based on an image.
 @y
-The image reference is the name and version of the image. You can use the image
-reference to create or run a container based on an image.
+イメージの参照とは、イメージの名称とバージョンから構成されます。
+イメージの参照は、そのイメージに基づいたコンテナーを生成し、また実行する際に指定します。
 @z
 
 @x
@@ -96,15 +95,15 @@ An image tag is the image version, which defaults to `latest` when omitted. Use
 the tag to run a container from specific version of an image. For example, to
 run version `23.10` of the `ubuntu` image: `docker run ubuntu:23.10`.
 @y
-An image tag is the image version, which defaults to `latest` when omitted. Use
-the tag to run a container from specific version of an image. For example, to
-run version `23.10` of the `ubuntu` image: `docker run ubuntu:23.10`.
+イメージタグ (image tag) とはイメージのバージョンのことであり、これが省略された際のデフォルトは `latest` となります。
+特定バージョンのイメージに基づいてコンテナーを実行するには、このタグを利用します。
+たとえば `ubuntu` イメージのバージョン `23.10` を実行する場合は `docker run ubuntu:23.10` とします。
 @z
 
 @x
 #### Image digests
 @y
-#### Image digests
+#### イメージダイジェスト {#image-digests}
 @z
 
 @x
@@ -138,7 +137,7 @@ $ docker run alpine@sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -156,7 +155,7 @@ networking.
 @x
 ### Commands and arguments
 @y
-### Commands and arguments
+### コマンドと引数 {#commands-and-arguments}
 @z
 
 @x
@@ -206,7 +205,7 @@ $ docker run -it IMAGE sh
 @x
 ## Foreground and background
 @y
-## Foreground and background
+## フォアグラウンドとバックグラウンド {#foreground-and-background}
 @z
 
 @x
@@ -310,7 +309,7 @@ For more information about re-attaching to a background container, see
 @x
 ## Container identification
 @y
-## Container identification
+## コンテナーの識別 {#container-identification}
 @z
 
 @x
@@ -402,7 +401,7 @@ For more information about using filters, see
 @x
 ## Container networking
 @y
-## Container networking
+## コンテナーのネットワーク {#container-networking}
 @z
 
 @x
@@ -472,7 +471,7 @@ overview](https://docs.docker.com/network/)
 @x
 ## Filesystem mounts
 @y
-## Filesystem mounts
+## ファイルシステムマウント {#filesystem-mounts}
 @z
 
 @x
@@ -534,7 +533,7 @@ the [storage section](https://docs.docker.com/storage/) in the documentation.
 @x
 ### Volume mounts
 @y
-### Volume mounts
+### ボリュームマウント {#volume-mounts}
 @z
 
 @x
@@ -600,7 +599,7 @@ alphanumeric character, followed by `a-z0-9`, `_` (underscore), `.` (period) or
 @x
 ### Bind mounts
 @y
-### Bind mounts
+### バインドマウント {#bind-mounts}
 @z
 
 @x
@@ -662,7 +661,7 @@ hello from container
 @x
 ## Exit status
 @y
-## Exit status
+## 終了ステータス {#exit-status}
 @z
 
 @x
@@ -772,7 +771,7 @@ docker: Error response from daemon: Container command 'foo' not found or does no
 @x
 ### Other exit codes
 @y
-### Other exit codes
+### その他の終了コード {#other-exit-codes}
 @z
 
 @x
@@ -866,7 +865,7 @@ container:
 @x
 ### User memory constraints
 @y
-### User memory constraints
+### ユーザーメモリ制約 {#user-memory-constraints}
 @z
 
 @x
@@ -925,8 +924,8 @@ We have four ways to set user memory usage:
 <table>
   <thead>
     <tr>
-      <th>Option</th>
-      <th>Result</th>
+      <th>オプション</th>
+      <th>結果</th>
     </tr>
   </thead>
   <tbody>
@@ -1212,7 +1211,7 @@ less likely to be killed, and positive scores more likely.
 @x
 ### Kernel memory constraints
 @y
-### Kernel memory constraints
+### カーネルメモリ制約 {#kernel-memory-constraints}
 @z
 
 @x
@@ -1300,8 +1299,8 @@ limit and "K" the kernel limit. There are three possible ways to set limits:
 <table>
   <thead>
     <tr>
-      <th>Option</th>
-      <th>Result</th>
+      <th>オプション</th>
+      <th>結果</th>
     </tr>
   </thead>
   <tbody>

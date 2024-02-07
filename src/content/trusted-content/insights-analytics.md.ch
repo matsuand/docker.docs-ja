@@ -23,10 +23,10 @@ aliases:
 
 @x
 Insights and analytics provides usage analytics for Docker Verified
-Publisher (DVP) and Docker-Sponsored Open Source (DSOS) images on Docker Hub. This includes self-serve access to metrics as both raw data and summary data for a desired time span. You can view the number of image pulls by tag or by digest, and get breakdowns by geolocation, cloud provider, client, and more.
+Publisher (DVP) and Docker-Sponsored Open Source (DSOS) images on Docker Hub. This includes self-serve access to image and extension usage metrics for a desired time span. You can also display the number of image pulls by tag or by digest, and get breakdowns by geolocation, cloud provider, client, and more.
 @y
 Insights and analytics provides usage analytics for Docker Verified
-Publisher (DVP) and Docker-Sponsored Open Source (DSOS) images on Docker Hub. This includes self-serve access to metrics as both raw data and summary data for a desired time span. You can view the number of image pulls by tag or by digest, and get breakdowns by geolocation, cloud provider, client, and more.
+Publisher (DVP) and Docker-Sponsored Open Source (DSOS) images on Docker Hub. This includes self-serve access to image and extension usage metrics for a desired time span. You can also display the number of image pulls by tag or by digest, and get breakdowns by geolocation, cloud provider, client, and more.
 @z
 
 @x
@@ -48,21 +48,21 @@ to learn more about the programs.
 @z
 
 @x
-## View the analytics data
+## View the image's analytics data
 @y
-## View the analytics data
+## View the image's analytics data
 @z
 
 @x
 You can find analytics data for your repositories on the **Insights and
 analytics** dashboard at the following URL:
-`https://hub.docker.com/orgs/{namespace}/insights`. The dashboard contains a
+`https://hub.docker.com/orgs/{namespace}/insights/images`. The dashboard contains a
 visualization of the usage data and a table where you can download
 the data as CSV files.
 @y
 You can find analytics data for your repositories on the **Insights and
 analytics** dashboard at the following URL:
-`https://hub.docker.com/orgs/{namespace}/insights`. The dashboard contains a
+`https://hub.docker.com/orgs/{namespace}/insights/images`. The dashboard contains a
 visualization of the usage data and a table where you can download
 the data as CSV files.
 @z
@@ -135,6 +135,22 @@ Selecting the icon generates a link that's copied to your clipboard. The link
 preserves the display selections you made. When someone follows the link, the
 **Insights and analytics** page opens and displays the chart with the same
 configuration as you had set up when creating the link.
+@z
+
+@x
+## Extension analytics data
+@y
+## Extension analytics data
+@z
+
+@x
+If you have published Docker Extensions in the Extension marketplace, you can also get analytics about your extension usage, available as CSV files.
+You can download extension CSV reports from the **Insights and analytics** dashboard at the following URL:
+`https://hub.docker.com/orgs/{namespace}/insights/extensions`. If your Docker namespace contains extensions known in the marketplace, you will see an **Extensions** tab listing CSV files for your extension(s).
+@y
+If you have published Docker Extensions in the Extension marketplace, you can also get analytics about your extension usage, available as CSV files.
+You can download extension CSV reports from the **Insights and analytics** dashboard at the following URL:
+`https://hub.docker.com/orgs/{namespace}/insights/extensions`. If your Docker namespace contains extensions known in the marketplace, you will see an **Extensions** tab listing CSV files for your extension(s).
 @z
 
 @x
@@ -252,9 +268,9 @@ The following sections describe the available data points for each format. The
 @z
 
 @x
-### Raw data
+### Image pulls raw data
 @y
-### Raw data
+### Image pulls raw data
 @z
 
 @x
@@ -306,21 +322,21 @@ represents an image pull.
 @z
 
 @x
-[1]: #action-classification-rules
+[1]: #image-pulls-action-classification-rules
 [2]: /registry/spec/api/
 [3]: /admin/organization/orgs/
 [4]: /docker-hub/repos/
 @y
-[1]: #action-classification-rules
+[1]: #image-pulls-action-classification-rules
 [2]: /registry/spec/api/
 [3]: /admin/organization/orgs/
 [4]: /docker-hub/repos/
 @z
 
 @x
-### Summary data
+### Image pulls summary data
 @y
-### Summary data
+### Image pulls summary data
 @z
 
 @x
@@ -366,9 +382,9 @@ span:
 @z
 
 @x
-### Action classification rules
+### Image pulls action classification rules
 @y
-### Action classification rules
+### Image pulls action classification rules
 @z
 
 @x
@@ -442,6 +458,84 @@ pulls. To provide feedback or ask questions about these rules,
 @z
 
 @x
+### Extension Summary data
+@y
+### Extension Summary data
+@z
+
+@x
+There are two levels of extension summary data available:
+@y
+There are two levels of extension summary data available:
+@z
+
+@x
+- Core summary, with basic extension usage information: number of extension installs, uninstalls, and total install all times
+@y
+- Core summary, with basic extension usage information: number of extension installs, uninstalls, and total install all times
+@z
+
+@x
+The core-summary-data file contains the following data points for the selected time
+span:
+@y
+The core-summary-data file contains the following data points for the selected time
+span:
+@z
+
+@x
+| Data point        | Description                                             | Date added        |
+| ----------------- | ------------------------------------------------------- | ----------------- |
+| Installs          | Number of installs for the extension                    | Feb 1, 2024       |
+| TotalInstalls     | Number of installs for the extension all times          | Feb 1, 2024       |
+| Uninstalls        | Number of uninstalls for the extension                  | Feb 1, 2024       |
+| TotalUninstalls   | Number of uninstalls for the extension all times        | Feb 1, 2024       |
+| Updates           | Number of updates for the extension                     | Feb 1, 2024       |
+@y
+| Data point        | Description                                             | Date added        |
+| ----------------- | ------------------------------------------------------- | ----------------- |
+| Installs          | Number of installs for the extension                    | Feb 1, 2024       |
+| TotalInstalls     | Number of installs for the extension all times          | Feb 1, 2024       |
+| Uninstalls        | Number of uninstalls for the extension                  | Feb 1, 2024       |
+| TotalUninstalls   | Number of uninstalls for the extension all times        | Feb 1, 2024       |
+| Updates           | Number of updates for the extension                     | Feb 1, 2024       |
+@z
+
+@x
+- Premium summary, with advanced extension usage information: installs, uninstalls by unique users, extension opening by unique users.
+@y
+- Premium summary, with advanced extension usage information: installs, uninstalls by unique users, extension opening by unique users.
+@z
+
+@x
+The core-summary-data file contains the following data points for the selected time
+span:
+@y
+The core-summary-data file contains the following data points for the selected time
+span:
+@z
+
+@x
+| Data point        | Description                                             | Date added        |
+| ----------------- | ------------------------------------------------------- | ----------------- |
+| Installs          | Number of installs for the extension                    | Feb 1, 2024       |
+| UniqueInstalls    | Number of unique users installing the extension         | Feb 1, 2024       |
+| Uninstalls        | Number of uninstalls for the extension                  | Feb 1, 2024       |
+| UniqueUninstalls  | Number of unique users uninstalling the extension       | Feb 1, 2024       |
+| Usage             | Number of openings of the extension tab                 | Feb 1, 2024       |
+| UniqueUsers       | Number of unique users openings the extension tab       | Feb 1, 2024       |
+@y
+| Data point        | Description                                             | Date added        |
+| ----------------- | ------------------------------------------------------- | ----------------- |
+| Installs          | Number of installs for the extension                    | Feb 1, 2024       |
+| UniqueInstalls    | Number of unique users installing the extension         | Feb 1, 2024       |
+| Uninstalls        | Number of uninstalls for the extension                  | Feb 1, 2024       |
+| UniqueUninstalls  | Number of unique users uninstalling the extension       | Feb 1, 2024       |
+| Usage             | Number of openings of the extension tab                 | Feb 1, 2024       |
+| UniqueUsers       | Number of unique users openings the extension tab       | Feb 1, 2024       |
+@z
+
+@x
 ## Changes in data over time
 @y
 ## Changes in data over time
@@ -504,17 +598,17 @@ consumers of content on Docker Hub remain completely anonymous.
 @z
 
 @x
-The summary dataset includes unique IP address count. This data point only
+The image pulls summary dataset includes unique IP address count. This data point only
 includes the number of distinct unique IP addresses that request an image.
 Individual IP addresses are never shared.
 @y
-The summary dataset includes unique IP address count. This data point only
+The image pulls summary dataset includes unique IP address count. This data point only
 includes the number of distinct unique IP addresses that request an image.
 Individual IP addresses are never shared.
 @z
 
 @x
-The raw dataset includes user IP domains as a data point. This is the domain name
+The image pulls raw dataset includes user IP domains as a data point. This is the domain name
 associated with the IP address used to pull an image. If the IP type is
 `business`, the domain represents the company or organization associated with
 that IP address (for example, `docker.com`). For any other IP type that's not
@@ -522,7 +616,7 @@ that IP address (for example, `docker.com`). For any other IP type that's not
 provider used to make the request. On average, only about 30% of all pulls
 classify as the `business` IP type (this varies between publishers and images).
 @y
-The raw dataset includes user IP domains as a data point. This is the domain name
+The image pulls raw dataset includes user IP domains as a data point. This is the domain name
 associated with the IP address used to pull an image. If the IP type is
 `business`, the domain represents the company or organization associated with
 that IP address (for example, `docker.com`). For any other IP type that's not

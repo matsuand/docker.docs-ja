@@ -497,14 +497,14 @@ Sign out and sign back in so that your group membership is re-evaluated.
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a paid
-> subscription.
+> employees OR more than $10 million USD in annual revenue) requires a [paid
+> subscription](https://www.docker.com/pricing/).
 @y
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a paid
-> subscription.
+> employees OR more than $10 million USD in annual revenue) requires a [paid
+> subscription](https://www.docker.com/pricing/).
 @z
 
 @x
@@ -578,6 +578,7 @@ Sign out and sign back in so that your group membership is re-evaluated.
 @z
 
 @x
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
@@ -586,6 +587,7 @@ Sign out and sign back in so that your group membership is re-evaluated.
 - [Back up and restore data](../backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Get started with Docker](../../guides/get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.

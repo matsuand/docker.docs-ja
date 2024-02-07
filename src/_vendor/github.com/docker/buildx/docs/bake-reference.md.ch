@@ -4,25 +4,25 @@
 @x
 # Bake file reference
 @y
-# Bake file reference
+# Bake ファイルリファレンス {#bake-file-reference}
 @z
 
 @x
 The Bake file is a file for defining workflows that you run using `docker buildx bake`.
 @y
-The Bake file is a file for defining workflows that you run using `docker buildx bake`.
+Bake ファイルは `docker buildx bake` を使って実行するワークフローを定義するファイルです。
 @z
 
 @x
 ## File format
 @y
-## File format
+## ファイルフォーマット {#file-format}
 @z
 
 @x
 You can define your Bake file in the following file formats:
 @y
-You can define your Bake file in the following file formats:
+Bake ファイルは以下に示すファイルフォーマットによって定義することができます。
 @z
 
 @x
@@ -32,13 +32,13 @@ You can define your Bake file in the following file formats:
 @y
 - HashiCorp Configuration Language (HCL)
 - JSON
-- YAML (Compose file)
+- YAML (Compose ファイル)
 @z
 
 @x
 By default, Bake uses the following lookup order to find the configuration file:
 @y
-By default, Bake uses the following lookup order to find the configuration file:
+デフォルトにおいて Bake では、以下の順に設定ファイルを探します。
 @z
 
 @x
@@ -64,7 +64,7 @@ By default, Bake uses the following lookup order to find the configuration file:
 @x
 You can specify the file location explicitly using the `--file` flag:
 @y
-You can specify the file location explicitly using the `--file` flag:
+`--file` フラグを使えば、ファイルの場所を明示的に指定することができます。
 @z
 
 @x

@@ -1074,9 +1074,13 @@ Reference:
 @z
 
 @x
+  - path: /engine/reference/commandline/debug/
+    title: docker debug (Beta)
   - path: /engine/reference/commandline/exec/
     title: docker exec
 @y
+  - path: __SUBDIR__/engine/reference/commandline/debug/
+    title: docker debug (ベータ)
   - path: __SUBDIR__/engine/reference/commandline/exec/
     title: docker exec
 @z
@@ -3313,16 +3317,16 @@ Manuals:
     - path: /config/containers/start-containers-automatically/
       title: Start containers automatically
 @y
-  - sectiontitle: Containers
+  - sectiontitle: コンテナー
     section:
     - path: __SUBDIR__/engine/reference/run/
-      title: Running containers
+      title: コンテナーの実行
     - path: __SUBDIR__/config/containers/resource_constraints/
-      title: Configure resource constraints
+      title: リソース制約の設定
     - path: __SUBDIR__/config/containers/multi-service_container/
-      title: Run multiple processes in a container
+      title: コンテナーでのマルチプロセス実行
     - path: __SUBDIR__/config/containers/start-containers-automatically/
-      title: Start containers automatically
+      title: コンテナーの自動実行
 @z
 
 @x
@@ -3337,12 +3341,12 @@ Manuals:
 @y
   - sectiontitle: CLI
     section:
-    - path: /engine/reference/commandline/cli/
-      title: Use the Docker CLI
+    - path: __SUBDIR__/engine/reference/commandline/cli/
+      title: Docker CLI の利用
     - path: __SUBDIR__/config/filter/
-      title: Filter commands
+      title: フィルターコマンド
     - path: __SUBDIR__/config/formatting/
-      title: Format command and log output
+      title: フォーマットコマンドとログ出力
 @z
 
 @x

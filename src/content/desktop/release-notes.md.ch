@@ -84,7 +84,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -158,7 +158,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -294,6 +294,24 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
+### Security
+@y
+### Security
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Mitigated several DLL side-loading vulnerabilities in the Docker Desktop installer on Windows, reported by Suman Kumar Chakraborty ([@Hijack-Everything](https://github.com/Hijack-Everything))
+@y
+- Mitigated several DLL side-loading vulnerabilities in the Docker Desktop installer on Windows, reported by Suman Kumar Chakraborty ([@Hijack-Everything](https://github.com/Hijack-Everything))
+@z
+
+@x
 ### Known issues
 @y
 ### Known issues
@@ -402,7 +420,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -694,7 +712,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -960,7 +978,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -1114,7 +1132,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
   - wasmtime, wasmedge revision `d0a1a1cd`.
   - slight and spin wasm `v0.9.0`.
 @y
-### Upgrades
+### アップグレード {#upgrades}
 - [Compose v2.21.0](https://github.com/docker/compose/releases/tag/v2.21.0)
 - [Docker Engine v24.0.6](https://docs.docker.com/engine/release-notes/24.0/#2406)
 - [Docker Scout CLI v0.24.1](https://github.com/docker/scout-cli/releases/tag/v0.24.1).
@@ -1330,7 +1348,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -1526,7 +1544,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -1692,7 +1710,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -1836,7 +1854,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -2006,7 +2024,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -2230,7 +2248,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -2544,7 +2562,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -2710,7 +2728,7 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -4950,7 +4968,7 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5102,7 +5120,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5152,7 +5170,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5204,7 +5222,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5362,7 +5380,7 @@ actual memory usage. See
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5522,7 +5540,7 @@ actual memory usage. See
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5608,7 +5626,7 @@ Docker Desktop may fail to start when upgrading to 4.1.0 on some WSL-based distr
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x
@@ -5710,7 +5728,7 @@ For more information, see [Docker subscription overview](../subscription/index.m
 @x
 ### Upgrades
 @y
-### Upgrades
+### アップグレード {#upgrades}
 @z
 
 @x

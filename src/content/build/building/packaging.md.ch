@@ -216,11 +216,11 @@ FROM ubuntu:22.04
 @x
 # install app dependencies
 RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip install flask==2.1.*
+RUN pip install flask==3.0.*
 @y
 # install app dependencies
 RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip install flask==2.1.*
+RUN pip install flask==3.0.*
 @z
 
 @x
@@ -235,13 +235,13 @@ COPY hello.py /
 # final configuration
 ENV FLASK_APP=hello
 EXPOSE 8000
-CMD flask run --host 0.0.0.0 --port 8000
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
 ```
 @y
 # final configuration
 ENV FLASK_APP=hello
 EXPOSE 8000
-CMD flask run --host 0.0.0.0 --port 8000
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
 ```
 @z
 
@@ -457,11 +457,11 @@ Python application.
 
 @x
 ```dockerfile
-RUN pip install flask==2.1.*
+RUN pip install flask==3.0.*
 ```
 @y
 ```dockerfile
-RUN pip install flask==2.1.*
+RUN pip install flask==3.0.*
 ```
 @z
 
@@ -599,6 +599,26 @@ command that is run when the user starts a container based on this image.
 
 @x
 ```dockerfile
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
+```
+@y
+```dockerfile
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
+```
+@z
+
+@x
+This command starts the flask development server listening on all addresses
+on port `8000`. The example here uses the "exec form" version of `CMD`.
+It's also possible to use the "shell form":
+@y
+This command starts the flask development server listening on all addresses
+on port `8000`. The example here uses the "exec form" version of `CMD`.
+It's also possible to use the "shell form":
+@z
+
+@x
+```dockerfile
 CMD flask run --host 0.0.0.0 --port 8000
 ```
 @y
@@ -608,11 +628,15 @@ CMD flask run --host 0.0.0.0 --port 8000
 @z
 
 @x
-In this case we'll start the flask development server listening on all addresses
-on port `8000`.
+There are subtle differences between these two versions,
+for example in how they trap signals like `SIGTERM` and `SIGKILL`.
+For more information about these differences, see
+[Shell and exec form](../../engine/reference/builder.md#shell-and-exec-form)
 @y
-In this case we'll start the flask development server listening on all addresses
-on port `8000`.
+There are subtle differences between these two versions,
+for example in how they trap signals like `SIGTERM` and `SIGKILL`.
+For more information about these differences, see
+[Shell and exec form](../../engine/reference/builder.md#shell-and-exec-form)
 @z
 
 @x

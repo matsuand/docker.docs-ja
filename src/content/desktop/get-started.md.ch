@@ -78,6 +78,16 @@ In large enterprises where admin access is restricted, administrators can [Confi
 @z
 
 @x
+> **Tip**
+>
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+@y
+> **情報**
+>
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+@z
+
+@x
 ## Benefits of signing in
 @y
 ## Benefits of signing in

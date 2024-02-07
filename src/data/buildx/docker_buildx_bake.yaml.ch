@@ -31,278 +31,104 @@ long: |-
     > `buildx bake` command may receive backwards incompatible features in the future
     > if needed. We are looking for feedback on improving the command and extending
     > the functionality further.
-usage: docker buildx bake [OPTIONS] [TARGET...]
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: file
-      shorthand: f
-      value_type: stringArray
-      default_value: '[]'
-      description: Build definition file
-      details_url: '#file'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: load
-      value_type: bool
-      default_value: "false"
-      description: Shorthand for `--set=*.output=type=docker`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: metadata-file
-      value_type: string
-      description: Write build result metadata to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache
-      value_type: bool
-      default_value: "false"
-      description: Do not use cache when building the image
-      details_url: '#no-cache'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: print
-      value_type: bool
-      default_value: "false"
-      description: Print the options without building
-      details_url: '#print'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
-      description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
-      details_url: '#progress'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: provenance
-      value_type: string
-      description: Shorthand for `--set=*.attest=type=provenance`
-      details_url: '#provenance'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: bool
-      default_value: "false"
-      description: Always attempt to pull all referenced images
-      details_url: '#pull'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: push
-      value_type: bool
-      default_value: "false"
-      description: Shorthand for `--set=*.output=type=registry`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sbom
-      value_type: string
-      description: Shorthand for `--set=*.attest=type=sbom`
-      details_url: '#sbom'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: set
-      value_type: stringArray
-      default_value: '[]'
-      description: Override target value (e.g., `targetpattern.key=value`)
-      details_url: '#set'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
 @y
-    > **Note**
+    > **メモ**
     >
     > `buildx bake` command may receive backwards incompatible features in the future
     > if needed. We are looking for feedback on improving the command and extending
     > the functionality further.
+@z
+
+@x
 usage: docker buildx bake [OPTIONS] [TARGET...]
 pname: docker buildx
 plink: docker_buildx.yaml
 options:
-    - option: file
-      shorthand: f
-      value_type: stringArray
-      default_value: '[]'
+@y
+usage: docker buildx bake [OPTIONS] [TARGET...]
+pname: docker buildx
+plink: docker_buildx.yaml
+options:
+@z
+
+@x option: file
       description: Build definition file
-      details_url: '#file'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: load
-      value_type: bool
-      default_value: "false"
+@y
+      description: ビルド定義ファイル。
+@z
+
+@x option: load
       description: Shorthand for `--set=*.output=type=docker`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: metadata-file
-      value_type: string
+@y
+      description: "`--set=*.output=type=docker` の短縮形。"
+@z
+
+@x option: metadata-file
       description: Write build result metadata to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache
-      value_type: bool
-      default_value: "false"
+@y
+      description: Write build result metadata to the file
+@z
+
+@x option: no-cache
       description: Do not use cache when building the image
-      details_url: '#no-cache'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: print
-      value_type: bool
-      default_value: "false"
+@y
+      description: イメージビルド時にキャッシュを利用しません。
+@z
+
+@x option: print
       description: Print the options without building
-      details_url: '#print'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
+@y
+      description: Print the options without building
+@z
+
+@x option: progress
       description: |
         Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
-      details_url: '#progress'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: provenance
-      value_type: string
+@y
+      description: |
+        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+@z
+
+@x option: provenance
       description: Shorthand for `--set=*.attest=type=provenance`
-      details_url: '#provenance'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: bool
-      default_value: "false"
+@y
+      description: "`--set=*.attest=type=provenance` の短縮形。"
+@z
+
+@x option: pull
       description: Always attempt to pull all referenced images
-      details_url: '#pull'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: push
-      value_type: bool
-      default_value: "false"
+@y
+      description: Always attempt to pull all referenced images
+@z
+
+@x option: push
       description: Shorthand for `--set=*.output=type=registry`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sbom
-      value_type: string
+@y
+      description: "`--set=*.output=type=registry` の短縮形。"
+@z
+
+@x option: sbom
       description: Shorthand for `--set=*.attest=type=sbom`
-      details_url: '#sbom'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: set
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: "`--set=*.attest=type=sbom` の短縮形。"
+@z
+
+@x option: set
       description: Override target value (e.g., `targetpattern.key=value`)
-      details_url: '#set'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
+@y
+      description: Override target value (e.g., `targetpattern.key=value`)
+@z
+
+@x inherited_options: option: builder
       description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Override the configured builder instance
+@z
+
+@x
+examples: |-
+    ### Override the configured builder instance (--builder) {#builder}
+@y
 examples: |-
     ### Override the configured builder instance (--builder) {#builder}
 @z
@@ -594,12 +420,6 @@ examples: |-
     * `ssh`
     * `tags`
     * `target`
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     * `args`
     * `cache-from`
@@ -617,10 +437,4 @@ swarm: false
     * `ssh`
     * `tags`
     * `target`
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

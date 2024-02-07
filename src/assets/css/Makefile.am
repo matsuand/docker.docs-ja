@@ -11,6 +11,7 @@ include $(top_srcdir)/build-aux/main.mk
 copyfiles = \
 	callouts.css     \
 	code.css         \
+	hack.css         \
 	icons.css        \
 	search.css       \
 	styles.css       \
