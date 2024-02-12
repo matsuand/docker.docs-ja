@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image build
 aliases: docker image build, docker build, docker buildx build, docker builder build
@@ -19,7 +21,7 @@ long: |-
     The `docker build` command builds Docker images from a Dockerfile and a
     "context". A build's context is the set of files located in the specified
     `PATH` or `URL`. The build process can refer to any of the files in the
-    context. For example, your build can use a [*COPY*](/engine/reference/builder/#copy)
+    context. For example, your build can use a [*COPY*](__SUBDIR__/engine/reference/builder/#copy)
     instruction to reference a file in the context.
 @z
 
@@ -248,7 +250,7 @@ long: |-
     add to that directory only the files needed for building the Dockerfile. To
     increase the build's performance, you can exclude files and directories by
     adding a `.dockerignore` file to that directory as well. For information on
-    creating one, see the [.dockerignore file](/engine/reference/builder/#dockerignore-file).
+    creating one, see the [.dockerignore file](__SUBDIR__/engine/reference/builder/#dockerignore-file).
 @z
 
 @x
@@ -991,7 +993,7 @@ examples: |-
     Remember that the daemon could be running on a remote machine and that no
     parsing of the Dockerfile happens at the client side (where you're running
     `docker build`). That means that all the files at `PATH` are sent, not just
-    the ones listed to [`ADD`](/engine/reference/builder/#add)
+    the ones listed to [`ADD`](__SUBDIR__/engine/reference/builder/#add)
     in the Dockerfile.
 @z
 
@@ -1202,7 +1204,7 @@ examples: |-
     This example shows the use of the `.dockerignore` file to exclude the `.git`
     directory from the context. You can see its effect in the changed size of the
     uploaded context. The builder reference contains detailed information on
-    [creating a .dockerignore file](/engine/reference/builder/#dockerignore-file).
+    [creating a .dockerignore file](__SUBDIR__/engine/reference/builder/#dockerignore-file).
 @z
 
 @x
@@ -1214,7 +1216,7 @@ examples: |-
     `.dockerignore` is useful if a project contains multiple Dockerfiles that expect
     to ignore different sets of files.
 @y
-    When using the [BuildKit backend](/build/buildkit/),
+    When using the [BuildKit backend](__SUBDIR__/build/buildkit/),
     `docker build` searches for a `.dockerignore` file relative to the Dockerfile
     name. For example, running `docker build -f myapp.Dockerfile .` first looks
     for an ignore file named `myapp.Dockerfile.dockerignore`. If it can't find such a file,
@@ -1486,7 +1488,7 @@ examples: |-
     [Dockerfile reference](/engine/reference/builder/).
 @y
     For detailed information on using `ARG` and `ENV` instructions, see the
-    [Dockerfile reference](/engine/reference/builder/).
+    [Dockerfile reference](__SUBDIR__/engine/reference/builder/).
 @z
 
 @x
@@ -1700,7 +1702,7 @@ examples: |-
     > **Note**
     >
     > This feature requires the BuildKit backend. You can either
-    > [enable BuildKit](/build/buildkit/#getting-started) or
+    > [enable BuildKit](__SUBDIR__/build/buildkit/#getting-started) or
     > use the [buildx](https://github.com/docker/buildx) plugin which provides more
     > output type options.
 @z
@@ -1832,7 +1834,7 @@ examples: |-
 @y
     The `--output` option exports all files from the target stage. A common pattern
     for exporting only specific files is to do multi-stage builds and to copy the
-    desired files to a new scratch stage with [`COPY --from`](/engine/reference/builder/#copy).
+    desired files to a new scratch stage with [`COPY --from`](__SUBDIR__/engine/reference/builder/#copy).
 @z
 
 @x
@@ -1934,7 +1936,7 @@ examples: |-
     > **Note**
     >
     > This feature requires the BuildKit backend. You can either
-    > [enable BuildKit](/build/buildkit/#getting-started) or
+    > [enable BuildKit](__SUBDIR__/build/buildkit/#getting-started) or
     > use the [buildx](https://github.com/docker/buildx) plugin. The previous
     > builder has limited support for reusing cache from pre-pulled images.
 @z
@@ -2056,7 +2058,7 @@ examples: |-
 @x
     Find more details in the [Dockerfile documentation](/engine/reference/builder/#run---network).
 @y
-    Find more details in the [Dockerfile documentation](/engine/reference/builder/#run---network).
+    Find more details in the [Dockerfile documentation](__SUBDIR__/engine/reference/builder/#run---network).
 @z
 
 @x
@@ -2119,7 +2121,7 @@ examples: |-
 @y
     For most use cases, multi-stage builds are a better alternative, as they give more
     fine-grained control over your build, and can take advantage of future
-    optimizations in the builder. Refer to the [Multi-stage builds](/build/building/multi-stage/)
+    optimizations in the builder. Refer to the [Multi-stage builds](__SUBDIR__/build/building/multi-stage/)
     section for more information.
 @z
 

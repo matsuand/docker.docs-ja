@@ -5,76 +5,20 @@
 command: docker scout cache
 short: Manage Docker Scout cache and temporary files
 long: Manage Docker Scout cache and temporary files
-pname: docker scout
-plink: docker_scout.yaml
-cname:
-    - docker scout cache df
-    - docker scout cache prune
-clink:
-    - docker_scout_cache_df.yaml
-    - docker_scout_cache_prune.yaml
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
-      description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
-      description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker scout cache
-short: Manage Docker Scout cache and temporary files
-long: Manage Docker Scout cache and temporary files
-pname: docker scout
-plink: docker_scout.yaml
-cname:
-    - docker scout cache df
-    - docker scout cache prune
-clink:
-    - docker_scout_cache_df.yaml
-    - docker_scout_cache_prune.yaml
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
+short: Docker Scout のキャッシュや一時ファイルを管理します。
+long: Docker Scout のキャッシュや一時ファイルを管理します。
+@z
+
+@x inherited_options: debug
       description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: デバッグメッセージ。
+@z
+
+@x inherited_options: verbose-debug
       description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: 詳細なデバッグ出力を行います。
 @z

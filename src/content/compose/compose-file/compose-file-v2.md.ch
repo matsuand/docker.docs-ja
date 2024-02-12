@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Compose file reference
@@ -3776,7 +3778,7 @@ See [Docker Volumes](../../storage/volumes.md) and
 [Volume Plugins](/engine/extend/plugins_volume/) for more information.
 @y
 See [Docker Volumes](../../storage/volumes.md) and
-[Volume Plugins](/engine/extend/plugins_volume/) for more information.
+[Volume Plugins](__SUBDIR__/engine/extend/plugins_volume/) for more information.
 @z
 
 @x
@@ -4079,7 +4081,7 @@ subcommand documentation for more information.
 See [use volumes](../../storage/volumes.md) and [volume plugins](/engine/extend/plugins_volume/)
 for general information on volumes.
 @y
-See [use volumes](../../storage/volumes.md) and [volume plugins](/engine/extend/plugins_volume/)
+See [use volumes](../../storage/volumes.md) and [volume plugins](__SUBDIR__/engine/extend/plugins_volume/)
 for general information on volumes.
 @z
 

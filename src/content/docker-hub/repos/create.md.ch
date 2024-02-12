@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Learn how to create repositories on Docker Hub
@@ -34,7 +36,7 @@ customers, or the Docker community at large.
 @x
 A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](/engine/reference/commandline/push/)command.
 @y
-A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](/engine/reference/commandline/push/)command.
+A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](__SUBDIR__/engine/reference/commandline/push/)command.
 @z
 
 @x

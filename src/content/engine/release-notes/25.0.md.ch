@@ -17,7 +17,7 @@ aliases:
 ---
 @y
 ---
-title: Docker Engine 25.0 release notes
+title: Docker Engine 25.0 リリースノート
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
@@ -34,21 +34,114 @@ aliases:
 @x
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 25.0.
 @y
-This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 25.0.
+本ページでは Docker Engine バージョン 2.5.0 に関する最新の変更、追加、既知の問題、バグフィックスについて示します。
+5.0.
 @z
 
 @x
 For more information about:
 @y
-For more information about:
+さらに以下の情報についても示します。
 @z
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](../api/version-history.md).
 @y
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](../api/version-history.md) を参照。
+@z
+
+@x
+## 25.0.3
+@y
+## 25.0.3
+@z
+
+@x
+{{< release-date date="2024-02-06" >}}
+@y
+{{< release-date date="2024-02-06" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+本リリースにおけるプルリクエストや変更点の一覧は、対応する GitHub のマイルストーンを参照してください。
+@z
+
+@x
+- [docker/cli, 25.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.3)
+- [moby/moby, 25.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.3)
+@y
+- [docker/cli, 25.0.3 マイルストーン](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.3)
+- [moby/moby, 25.0.3 マイルストーン](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.3)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+- containerd image store: Fix a bug where `docker image history` would fail if a manifest wasn't found in the content store. [moby/moby#47348](https://github.com/moby/moby/pull/47348)
+- Ensure that a generated MAC address is not restored when a container is restarted, but a configured MAC address is preserved. [moby/moby#47304](https://github.com/moby/moby/pull/47304)
+@y
+- containerd image store: Fix a bug where `docker image history` would fail if a manifest wasn't found in the content store. [moby/moby#47348](https://github.com/moby/moby/pull/47348)
+- Ensure that a generated MAC address is not restored when a container is restarted, but a configured MAC address is preserved. [moby/moby#47304](https://github.com/moby/moby/pull/47304)
+@z
+
+@x
+  > **Note**
+  >
+  > - Containers created with Docker Engine version 25.0.0 may have duplicate MAC addresses.
+  >   They must be re-created.
+  > - Containers with user-defined MAC addresses created with Docker Engine versions 25.0.0 or 25.0.1
+  >   receive new MAC addresses when started using Docker Engine version 25.0.2.
+  >   They must also be re-created.
+@y
+  > **Note**
+  >
+  > - Containers created with Docker Engine version 25.0.0 may have duplicate MAC addresses.
+  >   They must be re-created.
+  > - Containers with user-defined MAC addresses created with Docker Engine versions 25.0.0 or 25.0.1
+  >   receive new MAC addresses when started using Docker Engine version 25.0.2.
+  >   They must also be re-created.
+@z
+
+@x
+- Fix `docker save <image>@<digest>` producing an OCI archive with index without manifests. [moby/moby#47294](https://github.com/moby/moby/pull/47294)
+- Fix a bug preventing bridge networks from being created with an MTU higher than 1500 on RHEL and CentOS 7. [moby/moby#47308](https://github.com/moby/moby/issues/47308), [moby/moby#47311](https://github.com/moby/moby/pull/47311)
+- Fix a bug where containers are unable to communicate over an `internal` network. [moby/moby#47303](https://github.com/moby/moby/pull/47303)
+- Fix a bug where the value of the `ipv6` daemon option was ignored. [moby/moby#47310](https://github.com/moby/moby/pull/47310)
+- Fix a bug where trying to install a pulling using a digest revision would cause a panic. [moby/moby#47323](https://github.com/moby/moby/pull/47323)
+- Fix a potential race condition in the managed containerd supervisor. [moby/moby#47313](https://github.com/moby/moby/pull/47313)
+- Fix an issue with the `journald` log driver preventing container logs from being followed correctly with systemd version 255. [moby/moby47243](https://github.com/moby/moby/pull/47243)
+- seccomp: Update the builtin seccomp profile to include syscalls added in kernel v5.17 - v6.7 to align the profile with the profile used by containerd. [moby/moby#47341](https://github.com/moby/moby/pull/47341)
+- Windows: Fix cache not being used when building images based on Windows versions older than the host's version. [moby/moby#47307](https://github.com/moby/moby/pull/47307), [moby/moby#47337](https://github.com/moby/moby/pull/47337)
+@y
+- Fix `docker save <image>@<digest>` producing an OCI archive with index without manifests. [moby/moby#47294](https://github.com/moby/moby/pull/47294)
+- Fix a bug preventing bridge networks from being created with an MTU higher than 1500 on RHEL and CentOS 7. [moby/moby#47308](https://github.com/moby/moby/issues/47308), [moby/moby#47311](https://github.com/moby/moby/pull/47311)
+- Fix a bug where containers are unable to communicate over an `internal` network. [moby/moby#47303](https://github.com/moby/moby/pull/47303)
+- Fix a bug where the value of the `ipv6` daemon option was ignored. [moby/moby#47310](https://github.com/moby/moby/pull/47310)
+- Fix a bug where trying to install a pulling using a digest revision would cause a panic. [moby/moby#47323](https://github.com/moby/moby/pull/47323)
+- Fix a potential race condition in the managed containerd supervisor. [moby/moby#47313](https://github.com/moby/moby/pull/47313)
+- Fix an issue with the `journald` log driver preventing container logs from being followed correctly with systemd version 255. [moby/moby47243](https://github.com/moby/moby/pull/47243)
+- seccomp: Update the builtin seccomp profile to include syscalls added in kernel v5.17 - v6.7 to align the profile with the profile used by containerd. [moby/moby#47341](https://github.com/moby/moby/pull/47341)
+- Windows: Fix cache not being used when building images based on Windows versions older than the host's version. [moby/moby#47307](https://github.com/moby/moby/pull/47307), [moby/moby#47337](https://github.com/moby/moby/pull/47337)
+@z
+
+@x
+### Packaging updates
+@y
+### パッケージングのアップデート {#packaging-updates}
+@z
+
+@x
+- Removed support for Ubuntu Lunar (23.04). [docker/ce-packaging#986](https://github.com/docker/docker-ce-packaging/pull/986)
+@y
+- Removed support for Ubuntu Lunar (23.04). [docker/ce-packaging#986](https://github.com/docker/docker-ce-packaging/pull/986)
 @z
 
 @x
@@ -66,15 +159,15 @@ For more information about:
 @x
 For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
 @y
-For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+本リリースにおけるプルリクエストや変更点の一覧は、対応する GitHub のマイルストーンを参照してください。
 @z
 
 @x
 - [docker/cli, 25.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.2)
 - [moby/moby, 25.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.2)
 @y
-- [docker/cli, 25.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.2)
-- [moby/moby, 25.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.2)
+- [docker/cli, 25.0.2 マイルストーン](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.2)
+- [moby/moby, 25.0.2 マイルストーン](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.2)
 @z
 
 @x
@@ -156,7 +249,7 @@ For details about each vulnerability, see the relevant security advisory:
 @x
 ### Packaging updates
 @y
-### Packaging updates
+### パッケージングのアップデート {#packaging-updates}
 @z
 
 @x
@@ -188,21 +281,21 @@ For details about each vulnerability, see the relevant security advisory:
 @x
 For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
 @y
-For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+本リリースにおけるプルリクエストや変更点の一覧は、対応する GitHub のマイルストーンを参照してください。
 @z
 
 @x
 - [docker/cli, 25.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.1)
 - [moby/moby, 25.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.1)
 @y
-- [docker/cli, 25.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.1)
-- [moby/moby, 25.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.1)
+- [docker/cli, 25.0.1 マイルストーン](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.1)
+- [moby/moby, 25.0.1 マイルストーン](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.1)
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -232,7 +325,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Packaging updates
 @y
-### Packaging updates
+### パッケージングのアップデート {#packaging-updates}
 @z
 
 @x
@@ -256,15 +349,15 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
 @y
-For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+本リリースにおけるプルリクエストや変更点の一覧は、対応する GitHub のマイルストーンを参照してください。
 @z
 
 @x
 - [docker/cli, 25.0.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.0)
 - [moby/moby, 25.0.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.0)
 @y
-- [docker/cli, 25.0.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.0)
-- [moby/moby, 25.0.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.0)
+- [docker/cli, 25.0.0 マイルストーン](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A25.0.0)
+- [moby/moby, 25.0.0 マイルストーン](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A25.0.0)
 @z
 
 @x
@@ -380,7 +473,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -488,7 +581,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Packaging updates
 @y
-### Packaging updates
+### パッケージングのアップデート {#packaging-updates}
 @z
 
 @x

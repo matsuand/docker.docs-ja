@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $sso_navigation := `Navigate to the SSO settings page for your organization or company.
@@ -92,13 +94,13 @@ After your domain is verified, create an SSO connection.
 @x
    ![SAML](/docker-hub/images/saml-create-connection.png)
 @y
-   ![SAML](/docker-hub/images/saml-create-connection.png)
+   ![SAML](__SUBDIR__/docker-hub/images/saml-create-connection.png)
 @z
 
 @x
    ![Azure AD](/docker-hub/images/azure-create-connection.png)
 @y
-   ![Azure AD](/docker-hub/images/azure-create-connection.png)
+   ![Azure AD](__SUBDIR__/docker-hub/images/azure-create-connection.png)
 @z
 
 @x
@@ -170,7 +172,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 @x
 The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see [Set up SCIM](/security/for-admins/scim/).
 @y
-The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see [Set up SCIM](/security/for-admins/scim/).
+The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see [Set up SCIM](__SUBDIR__/security/for-admins/scim/).
 @z
 
 @x

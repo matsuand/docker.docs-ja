@@ -13,10 +13,9 @@ Dockerfile. A Dockerfile is a text document that contains all the commands a
 user could call on the command line to assemble an image. This page describes
 the commands you can use in a Dockerfile.
 @y
-Docker can build images automatically by reading the instructions from a
-Dockerfile. A Dockerfile is a text document that contains all the commands a
-user could call on the command line to assemble an image. This page describes
-the commands you can use in a Dockerfile.
+Docker は Dockerfile から命令を読み込んで、自動的にイメージをビルドします。
+Dockerfile はテキストファイルであり、イメージを作り上げるために実行するコマンドラインコマンドを、すべてこのファイルに含めることができます。
+このページでは Docker file 内で利用するコマンドについて説明します。
 @z
 
 @x
@@ -55,8 +54,8 @@ Dockerfile では以下の命令がサポートされています。
 @y
 | 命令                                   | 内容説明                                                    |
 | :------------------------------------- | :---------------------------------------------------------- |
-| [`ADD`](#add)                          | Add local or remote files and directories.                  |
-| [`ARG`](#arg)                          | Use build-time variables.                                   |
+| [`ADD`](#add)                          | ローカルまたはリモートのファイルやディレクトリを追加します。|
+| [`ARG`](#arg)                          | ビルド時の変数として利用します                              |
 | [`CMD`](#cmd)                          | Specify default commands.                                   |
 | [`COPY`](#copy)                        | Copy files and directories.                                 |
 | [`ENTRYPOINT`](#entrypoint)            | Specify default executable.                                 |
@@ -87,17 +86,7 @@ Here is the format of the Dockerfile:
 Dockerfile のフォーマットは以下のとおりです。
 @z
 
-@x
-```dockerfile
-# Comment
-INSTRUCTION arguments
-```
-@y
-```dockerfile
-# Comment
-INSTRUCTION arguments
-```
-@z
+% snip code...
 
 @x
 The instruction is not case-sensitive. However, convention is for them to
@@ -136,17 +125,7 @@ else in a line is treated as an argument. This allows statements like:
 以下のような行記述が可能です。
 @z
 
-@x
-```dockerfile
-# Comment
-RUN echo 'we are running some # of cool things'
-```
-@y
-```dockerfile
-# Comment
-RUN echo 'we are running some # of cool things'
-```
-@z
+% snip code...
 
 @x
 Comment lines are removed before the Dockerfile instructions are executed.
@@ -158,37 +137,15 @@ The comment in the following example is removed before the shell executes
 the `echo` command.
 @z
 
-@x
-```dockerfile
-RUN echo hello \
-# comment
-world
-```
-@y
-```dockerfile
-RUN echo hello \
-# comment
-world
-```
-@z
+% snip code...
 
 @x
 The following examples is equivalent.
 @y
-The following examples is equivalent.
+以下としても同じことです。
 @z
 
-@x
-```dockerfile
-RUN echo hello \
-world
-```
-@y
-```dockerfile
-RUN echo hello \
-world
-```
-@z
+% snip code...
 
 @x
 Comments don't support line continuation characters.
@@ -313,17 +270,7 @@ Invalid due to line continuation:
 行継続は無効です。
 @z
 
-@x
-```dockerfile
-# direc \
-tive=value
-```
-@y
-```dockerfile
-# direc \
-tive=value
-```
-@z
+% snip code...
 
 @x
 Invalid due to appearing twice:
@@ -331,23 +278,7 @@ Invalid due to appearing twice:
 二度出現するため無効です。
 @z
 
-@x
-```dockerfile
-# directive=value1
-# directive=value2
-@y
-```dockerfile
-# directive=value1
-# directive=value2
-@z
-
-@x
-FROM ImageName
-```
-@y
-FROM ImageName
-```
-@z
+% snip code...
 
 @x
 Treated as a comment because it appears after a builder instruction:
@@ -355,17 +286,7 @@ Treated as a comment because it appears after a builder instruction:
 ビルド命令の後に記述されたためコメントとして扱われます。
 @z
 
-@x
-```dockerfile
-FROM ImageName
-# directive=value
-```
-@y
-```dockerfile
-FROM ImageName
-# directive=value
-```
-@z
+% snip code...
 
 @x
 Treated as a comment because it appears after a comment that isn't a parser
@@ -374,19 +295,7 @@ directive:
 パーサーディレクティブではないコメントの後に記述されたためコメントして扱われます。
 @z
 
-@x
-```dockerfile
-# About my dockerfile
-# directive=value
-FROM ImageName
-```
-@y
-```dockerfile
-# About my dockerfile
-# directive=value
-FROM ImageName
-```
-@z
+% snip code...
 
 @x
 The following `unknowndirective` is treated as a comment because it isn't
@@ -397,17 +306,7 @@ appears after a comment that isn't a parser directive.
 さらに正常なディレクティブ `syntax` であっても、その前にパーサーディレクティブではないコメントが記述された場合、コメントとして扱われます。
 @z
 
-@x
-```dockerfile
-# unknowndirective=value
-# syntax=value
-```
-@y
-```dockerfile
-# unknowndirective=value
-# syntax=value
-```
-@z
+% snip code...
 
 @x
 Non line-breaking whitespace is permitted in a parser directive. Hence, the
@@ -417,23 +316,7 @@ following lines are all treated identically:
 そこで、以下の各行はすべて同一のものとして扱われます。
 @z
 
-@x
-```dockerfile
-#directive=value
-# directive =value
-#	directive= value
-# directive = value
-#	  dIrEcTiVe=value
-```
-@y
-```dockerfile
-#directive=value
-# directive =value
-#	directive= value
-# directive = value
-#	  dIrEcTiVe=value
-```
-@z
+% snip code...
 
 @x
 The following parser directives are supported:
@@ -492,15 +375,7 @@ which causes BuildKit to pull the latest stable version of the Dockerfile
 syntax before the build.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-```
-@z
+% snip code...
 
 @x
 For more information about how the parser directive works, see
@@ -516,15 +391,7 @@ For more information about how the parser directive works, see
 ### escape
 @z
 
-@x
-```dockerfile
-# escape=\
-```
-@y
-```dockerfile
-# escape=\
-```
-@z
+% snip code...
 
 @x
 Or
@@ -532,15 +399,7 @@ Or
 または
 @z
 
-@x
-```dockerfile
-# escape=`
-```
-@y
-```dockerfile
-# escape=`
-```
-@z
+% snip code...
 
 @x
 The `escape` directive sets the character used to escape characters in a
@@ -589,19 +448,7 @@ instruction:
 結果としてこの Dockerfile の 2 行めと 3 行めは、一続きの記述行とみなされます。
 @z
 
-@x
-```dockerfile
-FROM microsoft/nanoserver
-COPY testfile.txt c:\\
-RUN dir c:\
-```
-@y
-```dockerfile
-FROM microsoft/nanoserver
-COPY testfile.txt c:\\
-RUN dir c:\
-```
-@z
+% snip code...
 
 @x
 Results in:
@@ -609,31 +456,9 @@ Results in:
 この Dockerfile を用いると以下の結果になります。
 @z
 
-@x
-```console
-PS E:\myproject> docker build -t cmd .
-@y
-```console
-PS E:\myproject> docker build -t cmd .
-@z
+% snip command...
 
-@x
-Sending build context to Docker daemon 3.072 kB
-Step 1/2 : FROM microsoft/nanoserver
- ---> 22738ff49c6d
-Step 2/2 : COPY testfile.txt c:\RUN dir c:
-GetFileAttributesEx c:RUN: The system cannot find the file specified.
-PS E:\myproject>
-```
-@y
-Sending build context to Docker daemon 3.072 kB
-Step 1/2 : FROM microsoft/nanoserver
- ---> 22738ff49c6d
-Step 2/2 : COPY testfile.txt c:\RUN dir c:
-GetFileAttributesEx c:RUN: The system cannot find the file specified.
-PS E:\myproject>
-```
-@z
+% snip output...
 
 @x
 One solution to the above would be to use `/` as the target of both the `COPY`
@@ -652,25 +477,7 @@ expected with the use of natural platform semantics for file paths on Windows:
 パーサーディレクティブ `escape` を利用すれば、Windows 上のファイルパスの文法をそのままに、期待どおりに Dockerfile が動作してくれます。
 @z
 
-@x
-```dockerfile
-# escape=`
-@y
-```dockerfile
-# escape=`
-@z
-
-@x
-FROM microsoft/nanoserver
-COPY testfile.txt c:\
-RUN dir c:\
-```
-@y
-FROM microsoft/nanoserver
-COPY testfile.txt c:\
-RUN dir c:\
-```
-@z
+% snip code...
 
 @x
 Results in:
@@ -678,73 +485,7 @@ Results in:
 Results in:
 @z
 
-@x
-```console
-PS E:\myproject> docker build -t succeeds --no-cache=true .
-@y
-```console
-PS E:\myproject> docker build -t succeeds --no-cache=true .
-@z
-
-@x
-Sending build context to Docker daemon 3.072 kB
-Step 1/3 : FROM microsoft/nanoserver
- ---> 22738ff49c6d
-Step 2/3 : COPY testfile.txt c:\
- ---> 96655de338de
-Removing intermediate container 4db9acbb1682
-Step 3/3 : RUN dir c:\
- ---> Running in a2c157f842f5
- Volume in drive C has no label.
- Volume Serial Number is 7E6D-E0F7
-@y
-Sending build context to Docker daemon 3.072 kB
-Step 1/3 : FROM microsoft/nanoserver
- ---> 22738ff49c6d
-Step 2/3 : COPY testfile.txt c:\
- ---> 96655de338de
-Removing intermediate container 4db9acbb1682
-Step 3/3 : RUN dir c:\
- ---> Running in a2c157f842f5
- Volume in drive C has no label.
- Volume Serial Number is 7E6D-E0F7
-@z
-
-@x
- Directory of c:\
-@y
- Directory of c:\
-@z
-
-@x
-10/05/2016  05:04 PM             1,894 License.txt
-10/05/2016  02:22 PM    <DIR>          Program Files
-10/05/2016  02:14 PM    <DIR>          Program Files (x86)
-10/28/2016  11:18 AM                62 testfile.txt
-10/28/2016  11:20 AM    <DIR>          Users
-10/28/2016  11:20 AM    <DIR>          Windows
-           2 File(s)          1,956 bytes
-           4 Dir(s)  21,259,096,064 bytes free
- ---> 01c7f3bef04f
-Removing intermediate container a2c157f842f5
-Successfully built 01c7f3bef04f
-PS E:\myproject>
-```
-@y
-10/05/2016  05:04 PM             1,894 License.txt
-10/05/2016  02:22 PM    <DIR>          Program Files
-10/05/2016  02:14 PM    <DIR>          Program Files (x86)
-10/28/2016  11:18 AM                62 testfile.txt
-10/28/2016  11:20 AM    <DIR>          Users
-10/28/2016  11:20 AM    <DIR>          Windows
-           2 File(s)          1,956 bytes
-           4 Dir(s)  21,259,096,064 bytes free
- ---> 01c7f3bef04f
-Removing intermediate container a2c157f842f5
-Successfully built 01c7f3bef04f
-PS E:\myproject>
-```
-@z
+% snip output...
 
 @x
 ## Environment replacement
@@ -1047,7 +788,7 @@ ENV ghi=$abc
 @x
 ## .dockerignore file
 @y
-## .dockerignore file
+## .dockerignore ファイル {#dockerignore-file}
 @z
 
 @x
@@ -1063,21 +804,21 @@ build context. For more information, see
 @x
 ## Shell and exec form
 @y
-## Shell and exec form
+## シェル形式と exec 形式 {#shell-and-exec-form}
 @z
 
 @x
 The `RUN`, `CMD`, and `ENTRYPOINT` instructions all have two possible forms:
 @y
-The `RUN`, `CMD`, and `ENTRYPOINT` instructions all have two possible forms:
+`RUN`、`CMD`、`ENTRYPOINT` の各命令は、以下の 2 つの書式を取ります。
 @z
 
 @x
 - `INSTRUCTION ["executable","param1","param2"]` (exec form)
 - `INSTRUCTION command param1 param2` (shell form)
 @y
-- `INSTRUCTION ["executable","param1","param2"]` (exec form)
-- `INSTRUCTION command param1 param2` (shell form)
+- `<命令> ["<実行ファイル>","<パラメーター1>","<パラメーター2>"]` (exec 形式)
+- `<命令> <コマンド> <パラメーター1> <パラメーター2>` (シェル形式)
 @z
 
 @x
@@ -1105,7 +846,7 @@ exec form does not.
 @x
 ### Exec form
 @y
-### Exec form
+### Exec form {#exec-form}
 @z
 
 @x
@@ -1139,7 +880,7 @@ more information, see [ENTRYPOINT](#entrypoint).
 @x
 #### Variable substitution
 @y
-#### Variable substitution
+#### Variable substitution {#variable-substitution}
 @z
 
 @x
@@ -1171,7 +912,7 @@ not the builder.
 @x
 #### Backslashes
 @y
-#### Backslashes
+#### バックスラッシュ {#backslashes}
 @z
 
 @x
@@ -1215,7 +956,7 @@ RUN ["c:\\windows\\system32\\tasklist.exe"]
 @x
 ### Shell form
 @y
-### Shell form
+### Shell form {#shell-form}
 @z
 
 @x
@@ -1295,7 +1036,7 @@ For more information about heredocs, see [Here-documents](#here-documents).
 @x
 ### Use a different shell
 @y
-### Use a different shell
+### 別のシェル利用 {#use-a-different-shell}
 @z
 
 @x
@@ -1433,7 +1174,7 @@ and use it to cross-compile to the target platform inside the stage.
 @x
 ### Understand how ARG and FROM interact
 @y
-### Understand how ARG and FROM interact
+### Understand how ARG and FROM interact {#understand-how-arg-and-from-interac}
 @z
 
 @x
@@ -1565,7 +1306,7 @@ EOF
 @x
 ### Cache invalidation for RUN instructions
 @y
-### Cache invalidation for RUN instructions
+### Cache invalidation for RUN instructions {#understand-how-arg-and-from-interact}
 @z
 
 @x
@@ -1639,7 +1380,7 @@ Syntax: `--mount=[type=<TYPE>][,option=<value>[,option=<value>]...]`
 @x
 ### Mount types
 @y
-### Mount types
+### マウントタイプ {#mount-types}
 @z
 
 @x
@@ -2245,17 +1986,17 @@ You can specify `CMD` instructions using
 - `CMD ["param1","param2"]` (exec form, as default parameters to `ENTRYPOINT`)
 - `CMD command param1 param2` (shell form)
 @y
-- `CMD ["executable","param1","param2"]` (exec form)
-- `CMD ["param1","param2"]` (exec form, as default parameters to `ENTRYPOINT`)
-- `CMD command param1 param2` (shell form)
+- `CMD ["executable","param1","param2"]` (exec 形式)
+- `CMD ["param1","param2"]` (exec 形式、`ENTRYPOINT` のデフォルトパラメーター)
+- `CMD command param1 param2` (シェル形式)
 @z
 
 @x
 There can only be one `CMD` instruction in a Dockerfile. If you list more than
 one `CMD`, only the last one takes effect.
 @y
-There can only be one `CMD` instruction in a Dockerfile. If you list more than
-one `CMD`, only the last one takes effect.
+Dockerfile では `CMD` 命令を 1 つしか記述できません。
+仮に複数の `CMD` を記述しても、最後の `CMD` 命令しか処理されません。
 @z
 
 @x
@@ -2263,9 +2004,9 @@ The purpose of a `CMD` is to provide defaults for an executing container. These
 defaults can include an executable, or they can omit the executable, in which
 case you must specify an `ENTRYPOINT` instruction as well.
 @y
-The purpose of a `CMD` is to provide defaults for an executing container. These
-defaults can include an executable, or they can omit the executable, in which
-case you must specify an `ENTRYPOINT` instruction as well.
+`CMD` 命令の目的は、コンテナーの実行時のデフォルト処理を設定することです。
+この処理設定においては、実行モジュールを含める場合と、実行モジュールを省略する場合があります。
+省略する場合は `ENTRYPOINT` 命令を合わせて指定する必要があります。
 @z
 
 @x
@@ -2287,9 +2028,7 @@ If `CMD` is used to provide default arguments for the `ENTRYPOINT` instruction,
 both the `CMD` and `ENTRYPOINT` instructions should be specified in the
 [exec form](#exec-form).
 @y
-If `CMD` is used to provide default arguments for the `ENTRYPOINT` instruction,
-both the `CMD` and `ENTRYPOINT` instructions should be specified in the
-[exec form](#exec-form).
+`ENTRYPOINT` 命令に対するデフォルト引数を設定する目的で `CMD` 命令を用いる場合、`CMD` と `ENTRYPOINT` の両命令とも、[exec 形式](#exec-form) で指定しなければなりません。
 @z
 
 @x
@@ -2299,11 +2038,11 @@ both the `CMD` and `ENTRYPOINT` instructions should be specified in the
 > the result; `CMD` doesn't execute anything at build time, but specifies
 > the intended command for the image.
 @y
-> **Note**
+> **メモ**
 >
-> Don't confuse `RUN` with `CMD`. `RUN` actually runs a command and commits
-> the result; `CMD` doesn't execute anything at build time, but specifies
-> the intended command for the image.
+> `RUN` と `CMD` を混同しないようにしてください。
+> `RUN` はコマンドを実行して処理結果を確定させます。
+> 一方 `CMD` はイメージビルド時には何も実行せず、ただイメージ内にてコマンド指示がされたことを定めるだけです。
 @z
 
 @x
@@ -2912,15 +2651,7 @@ In the example below, `?` is replaced with any single character, e.g., "home.txt
 In the example below, `?` is replaced with any single character, e.g., "home.txt".
 @z
 
-@x
-```dockerfile
-ADD hom?.txt /mydir/
-```
-@y
-```dockerfile
-ADD hom?.txt /mydir/
-```
-@z
+% snip code...
 
 @x
 The `<dest>` is an absolute path, or a path relative to `WORKDIR`, into which
@@ -2933,34 +2664,18 @@ the source will be copied inside the destination container.
 @x
 The example below uses a relative path, and adds "test.txt" to `<WORKDIR>/relativeDir/`:
 @y
-The example below uses a relative path, and adds "test.txt" to `<WORKDIR>/relativeDir/`:
+以下の例では相対パスを使っているので "test.txt" を `<WORKDIR>/relativeDir/` に追加します。
 @z
 
-@x
-```dockerfile
-ADD test.txt relativeDir/
-```
-@y
-```dockerfile
-ADD test.txt relativeDir/
-```
-@z
+% snip code...
 
 @x
 Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
 @y
-Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
+一方、以下の例では絶対パスを使っているので "test.txt" を `/absoluteDir/` に追加します。
 @z
 
-@x
-```dockerfile
-ADD test.txt /absoluteDir/
-```
-@y
-```dockerfile
-ADD test.txt /absoluteDir/
-```
-@z
+% snip code...
 
 @x
 When adding files or directories that contain special characters (such as `[`
@@ -3379,25 +3094,15 @@ See [`COPY --link`](#copy---link).
 @x
 COPY has two forms:
 @y
-COPY has two forms:
+COPY には 2 つの書式があります。
 @z
 
-@x
-```dockerfile
-COPY [--chown=<user>:<group>] [--chmod=<perms>] <src>... <dest>
-COPY [--chown=<user>:<group>] [--chmod=<perms>] ["<src>",... "<dest>"]
-```
-@y
-```dockerfile
-COPY [--chown=<user>:<group>] [--chmod=<perms>] <src>... <dest>
-COPY [--chown=<user>:<group>] [--chmod=<perms>] ["<src>",... "<dest>"]
-```
-@z
+% snip code...
 
 @x
 This latter form is required for paths containing whitespace
 @y
-This latter form is required for paths containing whitespace
+2 つめの書式は、パス文字列内にホワイトスペースを含む場合に用います。
 @z
 
 @x
@@ -3409,21 +3114,18 @@ This latter form is required for paths containing whitespace
 > translating user and group names to IDs restricts this feature to only be viable for
 > Linux OS-based containers.
 @y
-> **Note**
+> **メモ**
 >
-> The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
-> and doesn't work on Windows containers. Since user and group ownership concepts do
-> not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
-> translating user and group names to IDs restricts this feature to only be viable for
-> Linux OS-based containers.
+> `--chown` と `--chmod` の機能は Linux コンテナーをビルドする Dockerfile においてのみサポートされるものであり、Windows コンテナーに対しては動作しません。
+> Linux と Windows の間で、ユーザーやグループの所有権という考え方が共有されないためです。
+> この機能では `/etc/passwd` や `/etc/group` を使って、ユーザーやグループの名前を ID に変換するため、この機能が実現できるのは Linux OS をベースとするコンテナーに限定されます。
 @z
 
 @x
 The `COPY` instruction copies new files or directories from `<src>`
 and adds them to the filesystem of the container at the path `<dest>`.
 @y
-The `COPY` instruction copies new files or directories from `<src>`
-and adds them to the filesystem of the container at the path `<dest>`.
+`COPY` 命令は `<src>` からファイルやディレクトリを新たにコピーして、コンテナー内のファイルシステムのパス `<dest>` に追加します。
 @z
 
 @x
@@ -3431,74 +3133,52 @@ Multiple `<src>` resources may be specified but the paths of files and
 directories will be interpreted as relative to the source of the context
 of the build.
 @y
-Multiple `<src>` resources may be specified but the paths of files and
-directories will be interpreted as relative to the source of the context
-of the build.
+`<src>` には複数のソースを指定することが可能です。
+ソースとしてファイルあるいはディレクトリが指定されている場合、そのパスはビルドコンテキストからの相対パスとして解釈されます。
 @z
 
 @x
 Each `<src>` may contain wildcards and matching will be done using Go's
 [filepath.Match](https://golang.org/pkg/path/filepath#Match) rules. For example:
 @y
-Each `<src>` may contain wildcards and matching will be done using Go's
-[filepath.Match](https://golang.org/pkg/path/filepath#Match) rules. For example:
+`<src>` にはワイルドカードを含めることができます。
+その場合、マッチング処理は Go 言語の [filepath.Match](https://golang.org/pkg/path/filepath#Match) ルールに従って行われます。
+記述例は以下のとおりです。
 @z
 
 @x
 To add all files starting with "hom":
 @y
-To add all files starting with "hom":
+"hom" で始まるファイルをすべて追加するには以下とします。
 @z
 
-@x
-```dockerfile
-COPY hom* /mydir/
-```
-@y
-```dockerfile
-COPY hom* /mydir/
-```
-@z
+% snip code...
 
 @x
 In the example below, `?` is replaced with any single character, e.g., "home.txt".
 @y
-In the example below, `?` is replaced with any single character, e.g., "home.txt".
+以下の例における `?` はただ 1 つの文字の何にでもマッチします。
+したがってたとえば "home.txt" となります。
 @z
 
-@x
-```dockerfile
-COPY hom?.txt /mydir/
-```
-@y
-```dockerfile
-COPY hom?.txt /mydir/
-```
-@z
+% snip code...
 
 @x
 The `<dest>` is an absolute path, or a path relative to `WORKDIR`, into which
 the source will be copied inside the destination container.
 @y
-The `<dest>` is an absolute path, or a path relative to `WORKDIR`, into which
-the source will be copied inside the destination container.
+`<dest>` は絶対パスか、あるいは `WORKDIR` からの相対パスにより指定します。
+対象としているコンテナー内において、そのパスに対してソースがコピーされます。
 @z
 
 @x
 The example below uses a relative path, and adds "test.txt" to `<WORKDIR>/relativeDir/`:
 @y
-The example below uses a relative path, and adds "test.txt" to `<WORKDIR>/relativeDir/`:
+以下の例では相対パスを用いています。
+"test.txt" は `<WORKDIR>/relativeDir/` に対して追加されることになります。
 @z
 
-@x
-```dockerfile
-COPY test.txt relativeDir/
-```
-@y
-```dockerfile
-COPY test.txt relativeDir/
-```
-@z
+% snip code...
 
 @x
 Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
@@ -3506,15 +3186,7 @@ Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir
 Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
 @z
 
-@x
-```dockerfile
-COPY test.txt /absoluteDir/
-```
-@y
-```dockerfile
-COPY test.txt /absoluteDir/
-```
-@z
+% snip code...
 
 @x
 When copying files or directories that contain special characters (such as `[`

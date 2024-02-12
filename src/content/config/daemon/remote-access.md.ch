@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description:
@@ -34,7 +36,7 @@ requests from local clients. It's possible to allow Docker to accept requests
 from remote hosts by configuring it to listen on an IP address and port as well
 as the Unix socket. For more detailed information on this configuration option,
 refer to the
-[dockerd CLI reference](/engine/reference/commandline/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket).
+[dockerd CLI reference](__SUBDIR__/engine/reference/commandline/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket).
 @z
 
 @x

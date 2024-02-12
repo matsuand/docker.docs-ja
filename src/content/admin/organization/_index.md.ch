@@ -65,13 +65,13 @@ grid:
 @z
 
 @x
-- title: General settings
-  description: Configure general information or create a company.
+- title: Organization settings
+  description: Configure information for your organization and manage settings.
   icon: settings
   link: /admin/organization/general-settings/
 @y
-- title: General settings
-  description: Configure general information or create a company.
+- title: Organization settings
+  description: Configure information for your organization and manage settings.
   icon: settings
   link: __SUBDIR__/admin/organization/general-settings/
 @z

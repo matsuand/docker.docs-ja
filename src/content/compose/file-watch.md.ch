@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Use File watch to automatically update running services as you work
@@ -262,8 +264,8 @@ and [multi-stage builds](/build/building/multi-stage/).
 >**Tip**
 >
 > Optimize your `Dockerfile` for speedy
-incremental rebuilds with [image layer caching](/build/cache)
-and [multi-stage builds](/build/building/multi-stage/).
+incremental rebuilds with [image layer caching](__SUBDIR__/build/cache)
+and [multi-stage builds](__SUBDIR__/build/building/multi-stage/).
 { .tip }
 @z
 

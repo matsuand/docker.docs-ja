@@ -12,7 +12,7 @@ toc_max: 2
 ---
 @y
 ---
-title: Docker Engine 24.0 release notes
+title: Docker Engine 24.0 リリースノート
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
@@ -30,15 +30,15 @@ This page describes the latest changes, additions, known issues, and fixes for D
 @x
 For more information about:
 @y
-For more information about:
+さらに以下の情報についても示します。
 @z
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](../api/version-history.md).
 @y
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](../api/version-history.md) を参照。
 @z
 
 @x
@@ -63,8 +63,8 @@ For a full list of pull requests and changes in this release, refer to the relev
 - [docker/cli, 24.0.9 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
 - [moby/moby, 24.0.9 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
 @y
-- [docker/cli, 24.0.9 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
-- [moby/moby, 24.0.9 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
+- [docker/cli, 24.0.9 マイルストーン](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A24.0.9)
+- [moby/moby, 24.0.9 マイルストーン](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A24.0.9)
 @z
 
 @x
@@ -193,7 +193,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 ### Bug fixes and enhancements
 * Live restore: Containers with auto remove (`docker run --rm`) are no longer forcibly removed on engine restart. [moby/moby#46857](https://github.com/moby/moby/pull/46869)
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 * Live restore: Containers with auto remove (`docker run --rm`) are no longer forcibly removed on engine restart. [moby/moby#46857](https://github.com/moby/moby/pull/46869)
 @z
 
@@ -238,7 +238,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -344,7 +344,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -430,7 +430,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -504,7 +504,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -542,7 +542,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -646,7 +646,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -720,7 +720,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -850,7 +850,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x

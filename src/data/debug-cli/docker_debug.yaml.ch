@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker debug
 short: Get a shell into any container or image. Replacement for `docker exec`.
@@ -15,8 +17,8 @@ short: Get a shell into any container or image. Replacement for `docker exec`.
 long: |-
   > **Note**
   >
-  > Docker Debug requires a [Pro, Team, or Business subcription](/subscription/details/).
-  > You must [sign in](/desktop/get-started/) to use this command.
+  > Docker Debug requires a [Pro, Team, or Business subcription](__SUBDIR__/subscription/details/).
+  > You must [sign in](__SUBDIR__/desktop/get-started/) to use this command.
 @z
 
 @x
@@ -495,7 +497,7 @@ examples: |-
 @y
   The `entrypoint` command evaluates the `ENTRYPOINT` and `CMD` statement of the underlying image 
   and lets you print, lint, or run the resulting entrypoint.
-  However, it can be difficult to understand all the corner cases from [Understand how CMD and ENTRYPOINT interact](/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact). 
+  However, it can be difficult to understand all the corner cases from [Understand how CMD and ENTRYPOINT interact](__SUBDIR__/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact). 
   In these situations, `entrypoint` can help.
 @z
 

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker login
 short: Log in to a registry
@@ -178,7 +180,7 @@ examples: |-
     - The user is added to the `docker` group. This will impact the security of your system; the `docker` group is `root` equivalent.  See [Docker Daemon Attack Surface](/engine/security/#docker-daemon-attack-surface) for details.
 @y
     - Connecting to a remote daemon, such as a `docker-machine` provisioned `docker engine`.
-    - The user is added to the `docker` group. This will impact the security of your system; the `docker` group is `root` equivalent.  See [Docker Daemon Attack Surface](/engine/security/#docker-daemon-attack-surface) for details.
+    - The user is added to the `docker` group. This will impact the security of your system; the `docker` group is `root` equivalent.  See [Docker Daemon Attack Surface](__SUBDIR__/engine/security/#docker-daemon-attack-surface) for details.
 @z
 
 @x

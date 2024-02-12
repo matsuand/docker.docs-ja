@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker buildx rm
 short: Remove one or more builder instances
@@ -207,8 +209,8 @@ examples: |-
     Keep the BuildKit daemon running after the buildx context is removed. This is
     useful when you manage buildkitd daemons and buildx contexts independently.
     Only supported by the
-    [`docker-container`](/build/drivers/docker-container/)
-    and [`kubernetes`](/build/drivers/kubernetes/) drivers.
+    [`docker-container`](__SUBDIR__/build/drivers/docker-container/)
+    and [`kubernetes`](__SUBDIR__/build/drivers/kubernetes/) drivers.
 @z
 
 @x
@@ -228,7 +230,7 @@ kubernetes: false
 swarm: false
 @y
     Keep BuildKit state, so it can be reused by a new builder with the same name.
-    Currently, only supported by the [`docker-container` driver](/build/drivers/docker-container/).
+    Currently, only supported by the [`docker-container` driver](__SUBDIR__/build/drivers/docker-container/).
 deprecated: false
 hidden: false
 experimental: false

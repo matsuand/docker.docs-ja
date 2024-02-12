@@ -462,6 +462,84 @@ dependencies.
 @z
 
 @x
+## Relative paths
+@y
+## Relative paths
+@z
+
+@x
+When using `extends` with a `file` attribute which points to another folder, relative paths 
+declared by the service being extended are converted so they still point to the
+same file when used by the extending service. This is illustrated in the following example:
+@y
+When using `extends` with a `file` attribute which points to another folder, relative paths 
+declared by the service being extended are converted so they still point to the
+same file when used by the extending service. This is illustrated in the following example:
+@z
+
+@x
+Base Compose file:
+```yaml
+services:
+  webapp:
+    image: example
+    extends:
+      file: ../commons/compose.yaml
+      service: base
+```
+@y
+Base Compose file:
+```yaml
+services:
+  webapp:
+    image: example
+    extends:
+      file: ../commons/compose.yaml
+      service: base
+```
+@z
+
+@x
+The `commons/compose.yaml` file:
+```yaml
+services:
+  base:
+    env_file: ./container.env
+```
+@y
+The `commons/compose.yaml` file:
+```yaml
+services:
+  base:
+    env_file: ./container.env
+```
+@z
+
+@x
+The resulting service refers to the original `container.env` file
+within the `commons` directory. This can be confirmed with `docker compose config`
+which inspects the actual model:
+```yaml
+services:
+  webapp:
+    image: example
+    env_file: 
+      - ../commons/container.env
+```
+@y
+The resulting service refers to the original `container.env` file
+within the `commons` directory. This can be confirmed with `docker compose config`
+which inspects the actual model:
+```yaml
+services:
+  webapp:
+    image: example
+    env_file: 
+      - ../commons/container.env
+```
+@z
+
+@x
 ## Reference information
 @y
 ## Reference information

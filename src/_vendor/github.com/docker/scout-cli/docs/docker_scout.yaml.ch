@@ -1,130 +1,24 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-@x
-command: docker scout
+@x docker scout
 short: Command line tool for Docker Scout
 long: Command line tool for Docker Scout
 usage: docker scout [command]
-pname: docker
-plink: docker.yaml
-cname:
-    - docker scout attestation
-    - docker scout cache
-    - docker scout compare
-    - docker scout config
-    - docker scout cves
-    - docker scout enroll
-    - docker scout environment
-    - docker scout help
-    - docker scout integration
-    - docker scout policy
-    - docker scout quickview
-    - docker scout recommendations
-    - docker scout repo
-    - docker scout version
-clink:
-    - docker_scout_attestation.yaml
-    - docker_scout_cache.yaml
-    - docker_scout_compare.yaml
-    - docker_scout_config.yaml
-    - docker_scout_cves.yaml
-    - docker_scout_enroll.yaml
-    - docker_scout_environment.yaml
-    - docker_scout_help.yaml
-    - docker_scout_integration.yaml
-    - docker_scout_policy.yaml
-    - docker_scout_quickview.yaml
-    - docker_scout_recommendations.yaml
-    - docker_scout_repo.yaml
-    - docker_scout_version.yaml
-options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
-      description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
-      description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-command: docker scout
-short: Command line tool for Docker Scout
-long: Command line tool for Docker Scout
+short: Docker Scout のコマンドラインツール
+long: Docker Scout のコマンドラインツール
 usage: docker scout [command]
-pname: docker
-plink: docker.yaml
-cname:
-    - docker scout attestation
-    - docker scout cache
-    - docker scout compare
-    - docker scout config
-    - docker scout cves
-    - docker scout enroll
-    - docker scout environment
-    - docker scout help
-    - docker scout integration
-    - docker scout policy
-    - docker scout quickview
-    - docker scout recommendations
-    - docker scout repo
-    - docker scout version
-clink:
-    - docker_scout_attestation.yaml
-    - docker_scout_cache.yaml
-    - docker_scout_compare.yaml
-    - docker_scout_config.yaml
-    - docker_scout_cves.yaml
-    - docker_scout_enroll.yaml
-    - docker_scout_environment.yaml
-    - docker_scout_help.yaml
-    - docker_scout_integration.yaml
-    - docker_scout_policy.yaml
-    - docker_scout_quickview.yaml
-    - docker_scout_recommendations.yaml
-    - docker_scout_repo.yaml
-    - docker_scout_version.yaml
-options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
+@z
+
+@x
       description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: デバッグメッセージ。
+@z
+
+@x
       description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: 詳細なデバッグ出力を行います。
 @z

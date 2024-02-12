@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container ls
 aliases: docker container ls, docker container list, docker container ps, docker ps
@@ -336,7 +338,7 @@ examples: |-
 @x
     For more information, refer to the [container size on disk](/storage/storagedriver/#container-size-on-disk) section.
 @y
-    For more information, refer to the [container size on disk](/storage/storagedriver/#container-size-on-disk) section.
+    For more information, refer to the [container size on disk](__SUBDIR__/storage/storagedriver/#container-size-on-disk) section.
 @z
 
 @x

@@ -6,6 +6,7 @@ SUBDIRS = components utils
 bases = \
 	footer.html       \
 	head.html         \
+	heading.html      \
 	github-links.html
 
 include $(top_srcdir)/build-aux/common.mk
@@ -17,7 +18,6 @@ copyfiles = \
 	breadcrumbs.html  \
 	cli-aside.html    \
 	header.html       \
-	heading.html      \
 	icon.html         \
 	mermaid.html      \
 	meta.html         \

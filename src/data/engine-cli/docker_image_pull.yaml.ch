@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image pull
 aliases: docker image pull, docker pull
@@ -316,7 +318,7 @@ examples: |-
     refer to [understand images, containers, and storage drivers](/storage/storagedriver/).
 @y
     For more information about images, layers, and the content-addressable store,
-    refer to [understand images, containers, and storage drivers](/storage/storagedriver/).
+    refer to [understand images, containers, and storage drivers](__SUBDIR__/storage/storagedriver/).
 @z
 
 @x

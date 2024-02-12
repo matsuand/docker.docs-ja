@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Learn how to configure logging driver for the Docker daemon
@@ -109,7 +111,7 @@ for details.
 To configure the Docker daemon to default to a specific logging driver, set the
 value of `log-driver` to the name of the logging driver in the `daemon.json`
 configuration file. Refer to the "daemon configuration file" section in the
-[`dockerd` reference manual](/engine/reference/commandline/dockerd/#daemon-configuration-file)
+[`dockerd` reference manual](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-configuration-file)
 for details.
 @z
 

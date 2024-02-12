@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker version
 short: Show the Docker version information
@@ -253,7 +255,7 @@ long: |-
     to learn about the supported API versions for Docker Engine):
 @y
     For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
-    to API version 1.40 (refer to the [API version matrix](/engine/api/#api-version-matrix)
+    to API version 1.40 (refer to the [API version matrix](__SUBDIR__/engine/api/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @z
 
@@ -389,7 +391,7 @@ examples: |-
 @y
     The formatting option (`--format`) pretty-prints the output using a Go template,
     which allows you to customize the output format, or to obtain specific information
-    from the output. Refer to the [format command and log output](/config/formatting/)
+    from the output. Refer to the [format command and log output](__SUBDIR__/config/formatting/)
     page for details of the format.
 @z
 

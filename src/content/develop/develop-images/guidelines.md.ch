@@ -311,12 +311,12 @@ builds, see [cache management](../../build/cache/_index.md).
 
 @x
 Image tags are mutable, meaning a publisher can update a tag to point to a new
-image. This is a useful because it lets publishers update tags to point to
+image. This is useful because it lets publishers update tags to point to
 newer versions of an image. And as an image consumer, it means you
 automatically get the new version when you re-build your image.
 @y
 Image tags are mutable, meaning a publisher can update a tag to point to a new
-image. This is a useful because it lets publishers update tags to point to
+image. This is useful because it lets publishers update tags to point to
 newer versions of an image. And as an image consumer, it means you
 automatically get the new version when you re-build your image.
 @z

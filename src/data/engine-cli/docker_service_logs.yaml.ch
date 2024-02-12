@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker service logs
 short: Fetch the logs of a service or task
@@ -25,7 +27,7 @@ long: |-
     >
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](/engine/swarm/) in the
+    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
 @z
 
@@ -58,7 +60,7 @@ long: |-
     [Configure logging drivers](/config/containers/logging/configure/).
 @y
     For more information about selecting and configuring logging drivers, refer to
-    [Configure logging drivers](/config/containers/logging/configure/).
+    [Configure logging drivers](__SUBDIR__/config/containers/logging/configure/).
 @z
 
 @x

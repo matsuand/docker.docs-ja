@@ -1,14 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 {{ $sso_link := "[Configure SSO](/security/for-admins/single-sign-on/)" }}
 {{ $scim_link := "[Configure SCIM](/security/for-admins/scim/)" }}
 {{ $audit_link := "[Audit your domains](/docker-hub/domain-audit/)" }}
 @y
-{{ $sso_link := "[Configure SSO](/security/for-admins/single-sign-on/)" }}
-{{ $scim_link := "[Configure SCIM](/security/for-admins/scim/)" }}
-{{ $audit_link := "[Audit your domains](/docker-hub/domain-audit/)" }}
+{{ $sso_link := "[Configure SSO](__SUBDIR__/security/for-admins/single-sign-on/)" }}
+{{ $scim_link := "[Configure SCIM](__SUBDIR__/security/for-admins/scim/)" }}
+{{ $audit_link := "[Audit your domains](__SUBDIR__/docker-hub/domain-audit/)" }}
 @z
 
 @x
@@ -19,16 +21,16 @@
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
-  {{ $sso_link = "[Configure SSO](/security/for-admins/single-sign-on/)" }}
-  {{ $scim_link = "[Configure SCIM](/security/for-admins/scim/)" }}
-  {{ $audit_link = "[Audit your domains](/admin/organization/security-settings/domains/)" }}
+  {{ $sso_link = "[Configure SSO](__SUBDIR__/security/for-admins/single-sign-on/)" }}
+  {{ $scim_link = "[Configure SCIM](__SUBDIR__/security/for-admins/scim/)" }}
+  {{ $audit_link = "[Audit your domains](__SUBDIR__/admin/organization/security-settings/domains/)" }}
 {{ end }}
 @z
 
 @x
 Onboarding your organization allows you to gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](/subscription/details/).
 @y
-Onboarding your organization allows you to gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](/subscription/details/).
+Onboarding your organization allows you to gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](__SUBDIR__/subscription/details/).
 @z
 
 @x
@@ -52,13 +54,13 @@ Before you start to onboard your organization, ensure that you:
 @y
   > **Note**
   >
-  > When purchasing a subscription through [Pricing & Subscriptions](https://www.docker.com/pricing/), the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/admin/organization/orgs).
+  > When purchasing a subscription through [Pricing & Subscriptions](https://www.docker.com/pricing/), the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](__SUBDIR__/admin/organization/orgs).
 @z
 
 @x
 - Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/faq/admin/general-faqs/).
 @y
-- Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/faq/admin/general-faqs/).
+- Familiarize yourself with Docker concepts and terminology in the [glossary](__SUBDIR__/glossary/) and [FAQs](__SUBDIR__/faq/admin/general-faqs/).
 @z
 
 @x
@@ -112,7 +114,7 @@ When you create an organization, you are the only owner. You may optionally add 
 @x
 To add an owner, invite a user and assign them the owner role. For more details, see [Invite members](/admin/organization/members/).
 @y
-To add an owner, invite a user and assign them the owner role. For more details, see [Invite members](/admin/organization/members/).
+To add an owner, invite a user and assign them the owner role. For more details, see [Invite members](__SUBDIR__/admin/organization/members/).
 @z
 
 @x
@@ -130,7 +132,7 @@ When you add users to your organization, you gain visibility into their activity
 @x
 To add a member, invite a user and assign them the member role. For more details, see [Invite members](/admin/organization/members/).
 @y
-To add a member, invite a user and assign them the member role. For more details, see [Invite members](/admin/organization/members/).
+To add a member, invite a user and assign them the member role. For more details, see [Invite members](__SUBDIR__/admin/organization/members/).
 @z
 
 @x
@@ -142,7 +144,7 @@ To add a member, invite a user and assign them the member role. For more details
 @x
 Configuring Single Sign-On (SSO) or System for Cross-domain Identity Management (SCIM) is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
 @y
-Configuring Single Sign-On (SSO) or System for Cross-domain Identity Management (SCIM) is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
+Configuring Single Sign-On (SSO) or System for Cross-domain Identity Management (SCIM) is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](__SUBDIR__/subscription/upgrade/).
 @z
 
 @x
@@ -164,7 +166,7 @@ You can manage your members in your identity provider and automatically provisio
 @x
 By default, members of your organization can use Docker Desktop on their machines without signing in to any Docker account. You must enforce sign-in to ensure that users receive the benefits of your Docker subscription and that security settings are enforced. For details, see [Configure registry.json to enforce sign-in](/docker-hub/configure-sign-in/).
 @y
-By default, members of your organization can use Docker Desktop on their machines without signing in to any Docker account. You must enforce sign-in to ensure that users receive the benefits of your Docker subscription and that security settings are enforced. For details, see [Configure registry.json to enforce sign-in](/docker-hub/configure-sign-in/).
+By default, members of your organization can use Docker Desktop on their machines without signing in to any Docker account. You must enforce sign-in to ensure that users receive the benefits of your Docker subscription and that security settings are enforced. For details, see [Configure registry.json to enforce sign-in](__SUBDIR__/docker-hub/configure-sign-in/).
 @z
 
 @x
@@ -179,14 +181,14 @@ By default, members of your organization can use Docker Desktop on their machine
 - Configure [Hardened Docker Desktop](/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
 - {{ $audit_link }} to ensure that all Docker users in your domain are part of your organization.
 @y
-- [Create](/docker-hub/repos/create/) and [manage](/docker-hub/repos/) repositories.
-- Create [teams](/admin/organization/manage-a-team/) for fine-grained repository access.
-- Configure [Hardened Docker Desktop](/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
+- [Create](__SUBDIR__/docker-hub/repos/create/) and [manage](__SUBDIR__/docker-hub/repos/) repositories.
+- Create [teams](__SUBDIR__/admin/organization/manage-a-team/) for fine-grained repository access.
+- Configure [Hardened Docker Desktop](__SUBDIR__/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
 - {{ $audit_link }} to ensure that all Docker users in your domain are part of your organization.
 @z
 
 @x
 Your Docker subscription provides many more additional features. To learn more, see [Docker subscriptions and features](/subscription/details/).
 @y
-Your Docker subscription provides many more additional features. To learn more, see [Docker subscriptions and features](/subscription/details/).
+Your Docker subscription provides many more additional features. To learn more, see [Docker subscriptions and features](__SUBDIR__/subscription/details/).
 @z

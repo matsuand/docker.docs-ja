@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker network create
 short: Create a network
@@ -48,7 +50,7 @@ long: |-
     Bridge networks are isolated networks on a single Docker Engine installation. If you
     want to create a network that spans multiple Docker hosts each running Docker
     Engine, you must enable Swarm mode, and create an `overlay` network. To read more
-    about overlay networks with Swarm mode, see ["*use overlay networks*"](/network/overlay/).
+    about overlay networks with Swarm mode, see ["*use overlay networks*"](__SUBDIR__/network/overlay/).
 @z
 
 @x
@@ -306,7 +308,7 @@ examples: |-
     need more than 256 IP addresses, do not increase the IP block size. You can
     either use `dnsrr` endpoint mode with an external load balancer, or use multiple
     smaller overlay networks. See
-    [Configure service discovery](/engine/swarm/networking/#configure-service-discovery)
+    [Configure service discovery](__SUBDIR__/engine/swarm/networking/#configure-service-discovery)
     for more information about different endpoint modes.
 usage: docker network create [OPTIONS] NETWORK
 pname: docker network

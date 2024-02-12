@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container run
 aliases: docker container run, docker run
@@ -2856,7 +2858,7 @@ examples: |-
 @x
     For more information, see [tmpfs mounts](/storage/tmpfs/).
 @y
-    For more information, see [tmpfs mounts](/storage/tmpfs/).
+    For more information, see [tmpfs mounts](__SUBDIR__/storage/tmpfs/).
 @z
 
 @x
@@ -2976,7 +2978,7 @@ examples: |-
     Docker daemon.
 @y
     By bind-mounting the Docker Unix socket and statically linked Docker
-    binary (refer to [get the Linux binary](/engine/install/binaries/#install-static-binaries)),
+    binary (refer to [get the Linux binary](__SUBDIR__/engine/install/binaries/#install-static-binaries)),
     you give the container the full access to create and manipulate the host's
     Docker daemon.
 @z
@@ -3042,7 +3044,7 @@ examples: |-
 @x
     For in-depth information about volumes, refer to [manage data in containers](/storage/volumes/)
 @y
-    For in-depth information about volumes, refer to [manage data in containers](/storage/volumes/)
+    For in-depth information about volumes, refer to [manage data in containers](__SUBDIR__/storage/volumes/)
 @z
 
 @x
@@ -3068,7 +3070,7 @@ examples: |-
     The `--mount` flag supports most options supported by the `-v` or the
     `--volume` flag, but uses a different syntax. For in-depth information on the
     `--mount` flag, and a comparison between `--volume` and `--mount`, refer to
-    [Bind mounts](/storage/bind-mounts/).
+    [Bind mounts](__SUBDIR__/storage/bind-mounts/).
 @z
 
 @x
@@ -3127,7 +3129,7 @@ examples: |-
 @y
     This binds port `8080` of the container to TCP port `80` on `127.0.0.1` of the
     host. You can also specify `udp` and `sctp` ports. The [Networking overview
-    page](/network/) explains in detail how to publish ports
+    page](__SUBDIR__/network/) explains in detail how to publish ports
     with Docker.
 @z
 
@@ -3148,7 +3150,7 @@ examples: |-
     > port on all interfaces (address `0.0.0.0`) by default. These ports are
     > externally accessible. This also applies if you configured UFW to block this
     > specific port, as Docker manages its own iptables rules. [Read
-    > more](/network/packet-filtering-firewalls/)
+    > more](__SUBDIR__/network/packet-filtering-firewalls/)
 @z
 
 @x
@@ -3552,7 +3554,7 @@ examples: |-
     [Labels](/config/labels-custom-metadata/).
 @y
     For additional information on working with labels, see
-    [Labels](/config/labels-custom-metadata/).
+    [Labels](__SUBDIR__/config/labels-custom-metadata/).
 @z
 
 @x
@@ -3654,7 +3656,7 @@ examples: |-
 @x
     For more information on connecting a container to a network when using the `run` command, see the ["*Docker network overview*"](/network/).
 @y
-    For more information on connecting a container to a network when using the `run` command, see the ["*Docker network overview*"](/network/).
+    For more information on connecting a container to a network when using the `run` command, see the ["*Docker network overview*"](__SUBDIR__/network/).
 @z
 
 @x
@@ -4509,7 +4511,7 @@ examples: |-
     Read [Specify a container's resources](/config/containers/resource_constraints/)
     for more information.
 @y
-    Read [Specify a container's resources](/config/containers/resource_constraints/)
+    Read [Specify a container's resources](__SUBDIR__/config/containers/resource_constraints/)
     for more information.
 @z
 
@@ -4896,7 +4898,7 @@ examples: |-
 @y
     It's conventional to use `host.docker.internal` as the hostname referring to
     `host-gateway`. Docker Desktop automatically resolves this hostname, see
-    [Explore networking features](/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+    [Explore networking features](__SUBDIR__/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
 @z
 
 @x
@@ -4968,7 +4970,7 @@ examples: |-
     [Configure logging drivers](/config/containers/logging/configure/).
 @y
     To learn about the supported logging drivers and how to use them, refer to
-    [Configure logging drivers](/config/containers/logging/configure/).
+    [Configure logging drivers](__SUBDIR__/config/containers/logging/configure/).
 @z
 
 @x
@@ -5141,7 +5143,7 @@ examples: |-
     The default value is defined by [`STOPSIGNAL`](/engine/reference/builder/#stopsignal)
     in the image, or `SIGTERM` if the image has no `STOPSIGNAL` defined.
 @y
-    The default value is defined by [`STOPSIGNAL`](/engine/reference/builder/#stopsignal)
+    The default value is defined by [`STOPSIGNAL`](__SUBDIR__/engine/reference/builder/#stopsignal)
     in the image, or `SIGTERM` if the image has no `STOPSIGNAL` defined.
 @z
 

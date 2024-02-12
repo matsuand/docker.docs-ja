@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Run the Docker daemon as a non-root user (Rootless mode)
@@ -338,7 +340,7 @@ testuser:231072:65536
 @x
 If you installed Docker 20.10 or later with [RPM/DEB packages](/engine/install), you should have `dockerd-rootless-setuptool.sh` in `/usr/bin`.
 @y
-If you installed Docker 20.10 or later with [RPM/DEB packages](/engine/install), you should have `dockerd-rootless-setuptool.sh` in `/usr/bin`.
+If you installed Docker 20.10 or later with [RPM/DEB packages](__SUBDIR__/engine/install), you should have `dockerd-rootless-setuptool.sh` in `/usr/bin`.
 @z
 
 @x

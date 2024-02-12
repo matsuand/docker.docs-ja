@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Deploy to Swarm
@@ -289,6 +291,6 @@ Further documentation for all new Swarm objects and CLI commands used in this ar
  - [Swarm Mode](../engine/swarm/index.md)
  - [Swarm Mode Services](../engine/swarm/how-swarm-mode-works/services.md)
  - [Swarm Stacks](../engine/swarm/stack-deploy.md)
- - [`docker stack *`](/engine/reference/commandline/stack/)
- - [`docker service *`](/engine/reference/commandline/service/)
+ - [`docker stack *`](__SUBDIR__/engine/reference/commandline/stack/)
+ - [`docker service *`](__SUBDIR__/engine/reference/commandline/service/)
 @z

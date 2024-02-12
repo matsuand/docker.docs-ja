@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Understand how Settings Management works, who it is for, and what the
@@ -170,5 +172,5 @@ Any settings that are enforced, are grayed out in Docker Desktop and the user is
 @x
 ![Proxy settings grayed out](/assets/images/grayed-setting.png)
 @y
-![Proxy settings grayed out](/assets/images/grayed-setting.png)
+![Proxy settings grayed out](__SUBDIR__/assets/images/grayed-setting.png)
 @z

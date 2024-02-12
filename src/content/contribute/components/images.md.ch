@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: components and formatting examples used in Docker's docs
@@ -24,7 +26,7 @@ toc_max: 3
 @x
 - A small image: ![a small image](/assets/images/footer_moby_icon.png)
 @y
-- A small image: ![a small image](/assets/images/footer_moby_icon.png)
+- A small image: ![a small image](__SUBDIR__/assets/images/footer_moby_icon.png)
 @z
 
 @x
@@ -36,7 +38,7 @@ toc_max: 3
 @x
   ![a pretty wide image](/assets/images/banner_image_24512.png)
 @y
-  ![a pretty wide image](/assets/images/banner_image_24512.png)
+  ![a pretty wide image](__SUBDIR__/assets/images/banner_image_24512.png)
 @z
 
 @x
@@ -48,7 +50,7 @@ toc_max: 3
 @x
   ![a pretty wide image](/assets/images/banner_image_24512.png?w=100&h=50)
 @y
-  ![a pretty wide image](/assets/images/banner_image_24512.png?w=100&h=50)
+  ![a pretty wide image](__SUBDIR__/assets/images/banner_image_24512.png?w=100&h=50)
 @z
 
 @x
@@ -60,7 +62,7 @@ toc_max: 3
 @x
   ![a small image](/assets/images/footer_moby_icon.png?border=true)
 @y
-  ![a small image](/assets/images/footer_moby_icon.png?border=true)
+  ![a small image](__SUBDIR__/assets/images/footer_moby_icon.png?border=true)
 @z
 
 @x
@@ -74,7 +76,7 @@ toc_max: 3
 - A small image: ![a small image](/assets/images/footer_moby_icon.png)
 @y
 ```markdown
-- A small image: ![a small image](/assets/images/footer_moby_icon.png)
+- A small image: ![a small image](__SUBDIR__/assets/images/footer_moby_icon.png)
 @z
 
 @x
@@ -86,7 +88,7 @@ toc_max: 3
 @x
   ![a pretty wide image](/assets/images/banner_image_24512.png)
 @y
-  ![a pretty wide image](/assets/images/banner_image_24512.png)
+  ![a pretty wide image](__SUBDIR__/assets/images/banner_image_24512.png)
 @z
 
 @x
@@ -98,7 +100,7 @@ toc_max: 3
 @x
   ![a pretty wide image](/assets/images/banner_image_24512.png?w=100&h=50)
 @y
-  ![a pretty wide image](/assets/images/banner_image_24512.png?w=100&h=50)
+  ![a pretty wide image](__SUBDIR__/assets/images/banner_image_24512.png?w=100&h=50)
 @z
 
 @x
@@ -111,6 +113,6 @@ toc_max: 3
   ![a small image](/assets/images/footer_moby_icon.png?border=true)
 ```
 @y
-  ![a small image](/assets/images/footer_moby_icon.png?border=true)
+  ![a small image](__SUBDIR__/assets/images/footer_moby_icon.png?border=true)
 ```
 @z

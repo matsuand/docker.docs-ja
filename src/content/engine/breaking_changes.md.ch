@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Breaking changes
@@ -33,7 +35,7 @@ in advance and documented as part of the [deprecated features](/engine/deprecate
 page.
 @y
 In all cases, feature removal is communicated three releases
-in advance and documented as part of the [deprecated features](/engine/deprecated/)
+in advance and documented as part of the [deprecated features](__SUBDIR__/engine/deprecated/)
 page.
 @z
 

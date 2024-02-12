@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: components and formatting examples used in Docker's docs
@@ -118,7 +120,7 @@ We support these broad categories of callouts:
 @x
 For both of the following callouts, consult [the Docker release lifecycle](/release-lifecycle) for more information on when to use them.
 @y
-For both of the following callouts, consult [the Docker release lifecycle](/release-lifecycle) for more information on when to use them.
+For both of the following callouts, consult [the Docker release lifecycle](__SUBDIR__/release-lifecycle) for more information on when to use them.
 @z
 
 @x
@@ -142,7 +144,7 @@ For both of the following callouts, consult [the Docker release lifecycle](/rele
 @y
 > **Restricted**
 >
-> Docker Scout is an [early access](/release-lifecycle/#early-access-ea)
+> Docker Scout is an [early access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > product.
 { .restricted}
 @z
@@ -249,7 +251,7 @@ For both of the following callouts, consult [the Docker release lifecycle](/rele
 @y
 > **Restricted**
 >
-> Docker Scout is an [early access](/release-lifecycle/#early-access-ea)
+> Docker Scout is an [early access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > product.
 { .restricted }
 ```

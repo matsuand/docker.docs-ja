@@ -3,13 +3,13 @@
 
 @x
 ---
-description: Learn how to manage general settings for organizations.
+description: Learn how to manage settings for organizations using Docker Admin Console.
 keywords: organization, settings, Admin Console
 title: General organization settings
 ---
 @y
 ---
-description: Learn how to manage general settings for organizations.
+description: Learn how to manage settings for organizations using Docker Admin Console.
 keywords: organization, settings, Admin Console
 title: General organization settings
 ---
@@ -22,9 +22,9 @@ title: General organization settings
 @z
 
 @x
-This section describes how to manage general settings in the Docker Admin Console.
+This section describes how to manage organization settings in the Docker Admin Console.
 @y
-This section describes how to manage general settings in the Docker Admin Console.
+This section describes how to manage organization settings in the Docker Admin Console.
 @z
 
 @x
@@ -64,39 +64,23 @@ To edit this information:
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com).
 2. In the left navigation, select your organization in the drop-down menu.
-3. Under **Organization Settings**, select **General**.
+3. Under **Organization settings**, select **General**.
 4. Specify the organization information and select **Save**.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com).
 2. In the left navigation, select your organization in the drop-down menu.
-3. Under **Organization Settings**, select **General**.
+3. Under **Organization settings**, select **General**.
 4. Specify the organization information and select **Save**.
 @z
 
 @x
-## Create a company
+## Next steps
 @y
-## Create a company
+## Next steps
 @z
 
 @x
-To create a new company:
+In the **Organization settings** menu, you can also [configure SSO](../../security/for-admins/single-sign-on/configure/) and [set up SCIM](../../security/for-admins/scim.md). If your organization isn't part of a company, from here you can also [audit your domains](../../security/for-admins/domain-audit.md) or [create a company](new-company.md).
 @y
-To create a new company:
-@z
-
-@x
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your organization in the drop-down menu.
-3. Under **Organization Settings**, select **General**.
-4. In the **Organization management** section, select **Create a company**.
-5. Enter a unique name for your company, then select **Continue**.
-6. Review the company migration details and then select **Create company**.
-@y
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your organization in the drop-down menu.
-3. Under **Organization Settings**, select **General**.
-4. In the **Organization management** section, select **Create a company**.
-5. Enter a unique name for your company, then select **Continue**.
-6. Review the company migration details and then select **Create company**.
+In the **Organization settings** menu, you can also [configure SSO](../../security/for-admins/single-sign-on/configure/) and [set up SCIM](../../security/for-admins/scim.md). If your organization isn't part of a company, from here you can also [audit your domains](../../security/for-admins/domain-audit.md) or [create a company](new-company.md).
 @z

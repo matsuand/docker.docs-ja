@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Build release notes
@@ -1208,7 +1210,7 @@ For more details, see the complete release notes in the [Buildx GitHub repositor
 - The new flag `--keep-buildkitd` allows keeping BuildKit daemon running when removing a builder
   - [docker/buildx#852](https://github.com/docker/buildx/issues/852)
 @y
-- Build command now accepts `--build-context` flag to [define additional named build contexts](/engine/reference/commandline/buildx_build/#build-context)
+- Build command now accepts `--build-context` flag to [define additional named build contexts](__SUBDIR__/engine/reference/commandline/buildx_build/#build-context)
   for your builds. [docker/buildx#904](https://github.com/docker/buildx/issues/904)
 - Bake definitions now support [defining dependencies between targets](bake/build-contexts.md)
   and using the result of one target in another build.

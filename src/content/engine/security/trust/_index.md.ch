@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Enabling content trust in Docker
@@ -286,7 +288,7 @@ standing up a self-hosted environment can be found [here](/engine/security/trust
 @y
 A prerequisite for signing an image is a Docker Registry with a Notary server
 attached (Such as the Docker Hub ). Instructions for
-standing up a self-hosted environment can be found [here](/engine/security/trust/deploying_notary/).
+standing up a self-hosted environment can be found [here](__SUBDIR__/engine/security/trust/deploying_notary/).
 @z
 
 @x

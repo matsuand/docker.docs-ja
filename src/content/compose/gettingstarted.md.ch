@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Check out this tutorial on how to use Docker Compose from defining application
@@ -298,7 +300,7 @@ and the [Dockerfile reference](/engine/reference/builder/).
 @y
 For more information on how to write Dockerfiles, see the
 [Docker user guide](../develop/index.md)
-and the [Dockerfile reference](/engine/reference/builder/).
+and the [Dockerfile reference](__SUBDIR__/engine/reference/builder/).
 @z
 
 @x

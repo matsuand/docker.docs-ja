@@ -730,6 +730,20 @@ to match Docker Hub images. This is the registry hostname of Docker Hub.
 @z
 
 @x
+You can also configure the policy to allow only supported tags of Docker
+Official Images. When this option is enabled, images using unsupported tags of
+official images trigger a policy violation. Supported tags for official images
+are listed in the **Supported tags** section of the repository overview on
+Docker Hub.
+@y
+You can also configure the policy to allow only supported tags of Docker
+Official Images. When this option is enabled, images using unsupported tags of
+official images trigger a policy violation. Supported tags for official images
+are listed in the **Supported tags** section of the repository overview on
+Docker Hub.
+@z
+
+@x
 This policy isn't enabled by default. To enable the policy:
 @y
 This policy isn't enabled by default. To enable the policy:
@@ -740,15 +754,21 @@ This policy isn't enabled by default. To enable the policy:
 2. Go to the **Policies** section.
 3. Select the **Unapproved base images** policy in the list.
 4. Enter the patterns that you want to allow.
-5. Select **Save and enable**. The policy is now enabled for your current
-   organization.
+5. Select whether you want to allow only supported tags of official images.
+6. Select **Save and enable**.
 @y
 1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
 2. Go to the **Policies** section.
 3. Select the **Unapproved base images** policy in the list.
 4. Enter the patterns that you want to allow.
-5. Select **Save and enable**. The policy is now enabled for your current
-   organization.
+5. Select whether you want to allow only supported tags of official images.
+6. Select **Save and enable**.
+@z
+
+@x
+   The policy is now enabled for your current organization.
+@y
+   The policy is now enabled for your current organization.
 @z
 
 @x

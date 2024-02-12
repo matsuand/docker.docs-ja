@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
 ---
 description: Explore more of Docker Desktop, what it has to offer, and its key features.

@@ -13,6 +13,7 @@ bases = \
 	containerd.md                \
 	feedback.md                  \
 	get-started.md               \
+	gpu.md                       \
 	kubernetes.md                \
 	networking.md                \
 	release-notes.md             \

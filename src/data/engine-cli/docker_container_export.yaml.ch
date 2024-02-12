@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container export
 aliases: docker container export, docker export
@@ -52,7 +54,7 @@ inherited_options:
 examples: |-
     The following commands produce the same result.
 @y
-    Refer to [Backup, restore, or migrate data volumes](/storage/volumes/#back-up-restore-or-migrate-data-volumes)
+    Refer to [Backup, restore, or migrate data volumes](__SUBDIR__/storage/volumes/#back-up-restore-or-migrate-data-volumes)
     in the user guide for examples on exporting data in a volume.
 usage: docker container export [OPTIONS] CONTAINER
 pname: docker container

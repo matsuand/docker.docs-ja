@@ -22,10 +22,11 @@ description: Learn how to containerize a generative AI (GenAI) application.
 @z
 
 @x
-* You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
+* You have installed the latest version of [Docker Desktop](../../../get-docker.md) or, if you are a Linux user and are planning to use GPU acceleration, [Docker Engine](../../../engine/install/_index.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 * You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @y
 * [Docker Desktop](../../../get-docker.md) の最新版をインストールしていること。
+  そして Linux ユーザーの場合、GPU アクセラレーションを利用する予定であること。
   Docker は常に新たな機能を追加してきているため、本ガイドは最新の Docker Desktop でしか動作しない場合があります。
 * [git クライアント](https://git-scm.com/downloads) が利用可能であること。
   本節の利用例ではコマンドラインベースの git クライアントを用いていきますが、別のクライアントを用いてもかまいません。

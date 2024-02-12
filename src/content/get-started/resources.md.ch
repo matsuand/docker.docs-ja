@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ ‘Î‰ž
+
 @x
 ---
 title: Educational resources
@@ -128,7 +130,7 @@ If books are your preferred learning style, check out these written by the [Dock
 @x
 The [Docker CLI cheat sheet](/get-started/docker_cheatsheet.pdf) features the common Docker CLI commands for easy reference. It covers working with Images, Containers, Docker Hub, and other general purpose commands.
 @y
-The [Docker CLI cheat sheet](/get-started/docker_cheatsheet.pdf) features the common Docker CLI commands for easy reference. It covers working with Images, Containers, Docker Hub, and other general purpose commands.
+The [Docker CLI cheat sheet](__SUBDIR__/get-started/docker_cheatsheet.pdf) features the common Docker CLI commands for easy reference. It covers working with Images, Containers, Docker Hub, and other general purpose commands.
 @z
 
 @x

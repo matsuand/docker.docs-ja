@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Services top-level elements
@@ -3781,7 +3783,7 @@ You can find more detailed information on restart policies in the
 section of the Docker run reference page.
 @y
 You can find more detailed information on restart policies in the
-[Restart Policies (--restart)](/engine/reference/run/#restart-policies---restart)
+[Restart Policies (--restart)](__SUBDIR__/engine/reference/run/#restart-policies---restart)
 section of the Docker run reference page.
 @z
 

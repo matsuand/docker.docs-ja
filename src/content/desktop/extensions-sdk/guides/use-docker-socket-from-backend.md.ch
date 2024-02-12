@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Use the Docker socket from the extension backend
@@ -28,7 +30,7 @@ interact with the Docker engine from the extension backend logic. Learn more abo
 @y
 In some cases, it is useful to also
 interact with the Docker Engine from the backend. Extension backend containers can mount the Docker socket and use it to
-interact with the Docker engine from the extension backend logic. Learn more about the [Docker Engine socket](/engine/reference/commandline/dockerd/#examples)
+interact with the Docker engine from the extension backend logic. Learn more about the [Docker Engine socket](__SUBDIR__/engine/reference/commandline/dockerd/#examples)
 @z
 
 @x

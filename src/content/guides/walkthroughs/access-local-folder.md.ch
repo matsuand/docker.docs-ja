@@ -248,7 +248,7 @@ Related information:
 @y
 - より詳しくは [バインドマウント](../../storage/bind-mounts.md) を参照してください。
 - Compose にてバインドマウントを利用する方法は [Compose ファイルリファレンス](../../compose/compose-file/_index.md) を確認してください。
-- CLI からバインドマウントを利用する方法は [Docker run リファレンス](/engine/reference/commandline/container_run/#mount) を確認してください。
+- CLI からバインドマウントを利用する方法は [Docker run リファレンス](__SUBDIR__/engine/reference/commandline/container_run/#mount) を確認してください。
 @z
 
 @x

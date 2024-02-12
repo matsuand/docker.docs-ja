@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
 ---
 description: Engine
@@ -119,9 +120,9 @@ Docker Engine はクライアントサーバーアプリケーションとして
 - A command line interface (CLI) client
   [`docker`](/engine/reference/commandline/cli/).
 @y
-- デーモンプロセス [`dockerd`](/engine/reference/commandline/dockerd) を長期にわたって動作させるサーバー。
+- デーモンプロセス [`dockerd`](__SUBDIR__/engine/reference/commandline/dockerd) を長期にわたって動作させるサーバー。
 - アプリケーションプログラムが Docker デーモンとやりとりしたり指示したりするためのインターフェースとなる API。
-- コマンドラインインターフェース (CLI) クライアントである [`docker`](/engine/reference/commandline/cli/)。
+- コマンドラインインターフェース (CLI) クライアントである [`docker`](__SUBDIR__/engine/reference/commandline/cli/)。
 @z
 
 @x

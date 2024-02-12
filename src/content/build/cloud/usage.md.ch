@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Building with Docker Build Cloud
@@ -96,7 +98,7 @@ $ docker buildx use cloud-<ORG>-<BUILDER_NAME> --global
 @x
    ![Selecting the cloud builder as default using the Docker Desktop GUI](/build/images/set-default-builder-gui.webp)
 @y
-   ![Selecting the cloud builder as default using the Docker Desktop GUI](/build/images/set-default-builder-gui.webp)
+   ![Selecting the cloud builder as default using the Docker Desktop GUI](__SUBDIR__/build/images/set-default-builder-gui.webp)
 @z
 
 @x
@@ -240,7 +242,7 @@ To learn more about building for multiple platforms, refer to [Multi-platform
 builds](/build/building/multi-platform/).
 @y
 To learn more about building for multiple platforms, refer to [Multi-platform
-builds](/build/building/multi-platform/).
+builds](__SUBDIR__/build/building/multi-platform/).
 @z
 
 @x
@@ -255,7 +257,7 @@ Docker Build Cloud out of the box. This view can show information about not only
 own builds, but also builds initiated by your team members using the same
 builder.
 @y
-The Docker Desktop [Builds view](/desktop/use-desktop/builds/) works with
+The Docker Desktop [Builds view](__SUBDIR__/desktop/use-desktop/builds/) works with
 Docker Build Cloud out of the box. This view can show information about not only your
 own builds, but also builds initiated by your team members using the same
 builder.

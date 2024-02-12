@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker node update
 short: Update a node
@@ -79,7 +81,7 @@ examples: |-
     >
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](/engine/swarm/) in the
+    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
 usage: docker node update [OPTIONS] NODE
 pname: docker node
@@ -220,7 +222,7 @@ kubernetes: false
 swarm: true
 @y
     For more information about labels, refer to [apply custom
-    metadata](/engine/userguide/labels-custom-metadata/).
+    metadata](__SUBDIR__/engine/userguide/labels-custom-metadata/).
 deprecated: false
 min_api_version: "1.24"
 experimental: false

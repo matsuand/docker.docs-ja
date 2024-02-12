@@ -58,6 +58,72 @@ be rendered in a special color and font style.
 @z
 
 @x
+## Highlight lines
+@y
+## Highlight lines
+@z
+
+@x
+```text {hl_lines=[7,8]}
+incoming := map[string]interface{}{
+    "asdf": 1,
+    "qwer": []interface{}{},
+    "zxcv": []interface{}{
+        map[string]interface{}{},
+        true,
+        int(1e9),
+        "tyui",
+    },
+}
+```
+@y
+```text {hl_lines=[7,8]}
+incoming := map[string]interface{}{
+    "asdf": 1,
+    "qwer": []interface{}{},
+    "zxcv": []interface{}{
+        map[string]interface{}{},
+        true,
+        int(1e9),
+        "tyui",
+    },
+}
+```
+@z
+
+@x
+````markdown
+```go {hl_lines=[7,8]}
+incoming := map[string]interface{}{
+    "asdf": 1,
+    "qwer": []interface{}{},
+    "zxcv": []interface{}{
+        map[string]interface{}{},
+        true,
+        int(1e9),
+        "tyui",
+    },
+}
+```
+````
+@y
+````markdown
+```go {hl_lines=[7,8]}
+incoming := map[string]interface{}{
+    "asdf": 1,
+    "qwer": []interface{}{},
+    "zxcv": []interface{}{
+        map[string]interface{}{},
+        true,
+        int(1e9),
+        "tyui",
+    },
+}
+```
+````
+@z
+
+@x
 ## Bash
 @y
 ## Bash

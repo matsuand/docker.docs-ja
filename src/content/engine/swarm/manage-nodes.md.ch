@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Manage existing nodes in a swarm
@@ -486,7 +488,7 @@ the plugin in a similar way as a global service using the Docker API, by specify
 a `PluginSpec` instead of a `ContainerSpec`.
 @y
 If your swarm service relies on one or more
-[plugins](/engine/extend/plugin_api/), these plugins need to be available on
+[plugins](__SUBDIR__/engine/extend/plugin_api/), these plugins need to be available on
 every node where the service could potentially be deployed. You can manually
 install the plugin on each node or script the installation. You can also deploy
 the plugin in a similar way as a global service using the Docker API, by specifying
@@ -513,9 +515,9 @@ is defined by the plugin developer. To add the plugin to all Docker nodes, use
 the [`service/create`](/engine/api/v1.31/#operation/ServiceCreate) API, passing
 the `PluginSpec` JSON defined in the `TaskTemplate`.
 @y
-The [`PluginSpec`](/engine/extend/plugin_api/#json-specification)
+The [`PluginSpec`](__SUBDIR__/engine/extend/plugin_api/#json-specification)
 is defined by the plugin developer. To add the plugin to all Docker nodes, use
-the [`service/create`](/engine/api/v1.31/#operation/ServiceCreate) API, passing
+the [`service/create`](__SUBDIR__/engine/api/v1.31/#operation/ServiceCreate) API, passing
 the `PluginSpec` JSON defined in the `TaskTemplate`.
 @z
 

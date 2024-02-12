@@ -100,59 +100,7 @@ To run the database service:
    コメント化がすべてなくなった状態です。
 @z
 
-@x
-   ```yaml{hl_lines=["7-23"]}
-   services:
-     server:
-       build:
-         context: .
-       ports:
-         - 8000:8000
-       env_file:
-         - .env
-       depends_on:
-         database:
-           condition: service_healthy
-     database:
-       image: neo4j:5.11
-       ports:
-         - "7474:7474"
-         - "7687:7687"
-       environment:
-         - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
-       healthcheck:
-         test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1"]
-         interval: 5s
-         timeout: 3s
-         retries: 5
-   ```
-@y
-   ```yaml{hl_lines=["7-23"]}
-   services:
-     server:
-       build:
-         context: .
-       ports:
-         - 8000:8000
-       env_file:
-         - .env
-       depends_on:
-         database:
-           condition: service_healthy
-     database:
-       image: neo4j:5.11
-       ports:
-         - "7474:7474"
-         - "7687:7687"
-       environment:
-         - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
-       healthcheck:
-         test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1"]
-         interval: 5s
-         timeout: 3s
-         retries: 5
-   ```
-@z
+% snip code...
 
 @x
    > **Note**
@@ -216,14 +164,14 @@ The sample application supports both [Ollama](https://ollama.ai/) and [OpenAI](h
 @x
 While all platforms can use any of the previous scenarios, the performance and
 GPU support may vary. You can use the following guidelines to help you choose the appropriate option:
-- Run Ollama in a container if you're on Linux or Windows 11, you
+- Run Ollama in a container if you're on Linux, and using a native installation of the Docker Engine, or Windows 10/11, and using Docker Desktop, you
   have a CUDA-supported GPU, and your system has at least 8 GB of RAM.
 - Run Ollama outside of a container if you're on an Apple silicon Mac.
 - Use OpenAI if the previous two scenarios don't apply to you.
 @y
 While all platforms can use any of the previous scenarios, the performance and
 GPU support may vary. You can use the following guidelines to help you choose the appropriate option:
-- Run Ollama in a container if you're on Linux or Windows 11, you
+- Run Ollama in a container if you're on Linux, and using a native installation of the Docker Engine, or Windows 10/11, and using Docker Desktop, you
   have a CUDA-supported GPU, and your system has at least 8 GB of RAM.
 - Run Ollama outside of a container if you're on an Apple silicon Mac.
 - Use OpenAI if the previous two scenarios don't apply to you.
@@ -252,102 +200,20 @@ When running Ollama in a container, you should have a CUDA-supported GPU. While 
 @x
 To run Ollama in a container and provide GPU access:
 1. Install the prerequisites.
-   - For Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
-   - For Windows 11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx).
+   - For Docker Engine on Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
+   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](../../../desktop/wsl/index.md/#turn-on-docker-desktop-wsl-2)
 2. Add the Ollama service and a volume in your `compose.yaml`. The following is
    the updated `compose.yaml`:
 @y
 To run Ollama in a container and provide GPU access:
 1. Install the prerequisites.
-   - For Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
-   - For Windows 11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx).
+   - For Docker Engine on Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
+   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](../../../desktop/wsl/index.md/#turn-on-docker-desktop-wsl-2)
 2. Add the Ollama service and a volume in your `compose.yaml`. The following is
    the updated `compose.yaml`:
 @z
 
-@x
-   ```yaml {hl_lines=["24-38"]}
-   services:
-     server:
-       build:
-         context: .
-       ports:
-         - 8000:8000
-       env_file:
-         - .env
-       depends_on:
-         database:
-           condition: service_healthy
-     database:
-       image: neo4j:5.11
-       ports:
-         - "7474:7474"
-         - "7687:7687"
-       environment:
-         - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
-       healthcheck:
-         test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1"]
-         interval: 5s
-         timeout: 3s
-         retries: 5
-     ollama:
-       image: ollama/ollama:latest
-       ports:
-         - "11434:11434"
-       volumes:
-         - ollama_volume:/root/.ollama
-       deploy:
-         resources:
-           reservations:
-             devices:
-               - driver: nvidia
-               count: all
-               capabilities: [gpu]
-   volumes:
-     ollama_volume:
-   ```
-@y
-   ```yaml {hl_lines=["24-38"]}
-   services:
-     server:
-       build:
-         context: .
-       ports:
-         - 8000:8000
-       env_file:
-         - .env
-       depends_on:
-         database:
-           condition: service_healthy
-     database:
-       image: neo4j:5.11
-       ports:
-         - "7474:7474"
-         - "7687:7687"
-       environment:
-         - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
-       healthcheck:
-         test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider localhost:7474 || exit 1"]
-         interval: 5s
-         timeout: 3s
-         retries: 5
-     ollama:
-       image: ollama/ollama:latest
-       ports:
-         - "11434:11434"
-       volumes:
-         - ollama_volume:/root/.ollama
-       deploy:
-         resources:
-           reservations:
-             devices:
-               - driver: nvidia
-               count: all
-               capabilities: [gpu]
-   volumes:
-     ollama_volume:
-   ```
-@z
+% snip code...
 
 @x
    > **Note**
@@ -373,49 +239,7 @@ To run Ollama in a container and provide GPU access:
    container. The following is the updated section of the `compose.yaml` file:
 @z
 
-@x
-   ```yaml {hl_lines=["12-17"]}
-   services:
-     server:
-       build:
-         context: .
-       ports:
-         - 8000:8000
-       env_file:
-         - .env
-       depends_on:
-         database:
-           condition: service_healthy
-         ollama-pull:
-           condition: service_completed_successfully
-     ollama-pull:
-       image: docker/genai:ollama-pull
-       env_file:
-         - .env
-     # ...
-   ```
-@y
-   ```yaml {hl_lines=["12-17"]}
-   services:
-     server:
-       build:
-         context: .
-       ports:
-         - 8000:8000
-       env_file:
-         - .env
-       depends_on:
-         database:
-           condition: service_healthy
-         ollama-pull:
-           condition: service_completed_successfully
-     ollama-pull:
-       image: docker/genai:ollama-pull
-       env_file:
-         - .env
-     # ...
-   ```
-@z
+% snip code...
 
 @x
 {{< /tab >}}

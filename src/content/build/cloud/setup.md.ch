@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Docker Build Cloud setup
@@ -172,7 +174,7 @@ This creates a builder named `cloud-ORG-BUILDER_NAME`.
 @x
    ![Create builder GUI screenshot](/build/images/create-builder-gui.webp)
 @y
-   ![Create builder GUI screenshot](/build/images/create-builder-gui.webp)
+   ![Create builder GUI screenshot](__SUBDIR__/build/images/create-builder-gui.webp)
 @z
 
 @x

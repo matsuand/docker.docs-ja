@@ -122,6 +122,26 @@ If you are a Mac or Linux user, you also have the option to **Uninstall** Docker
 @z
 
 @x
+> **Tip**
+>
+> If you do not find a solution in troubleshooting, browse the GitHub repositories or create a new issue:
+>
+> - [docker/for-mac](https://github.com/docker/for-mac/issues)
+> - [docker/for-win](https://github.com/docker/for-win/issues)
+> - [docker/for-linux](https://github.com/docker/for-linux/issues)
+{ .tip }
+@y
+> **Tip**
+>
+> If you do not find a solution in troubleshooting, browse the GitHub repositories or create a new issue:
+>
+> - [docker/for-mac](https://github.com/docker/for-mac/issues)
+> - [docker/for-win](https://github.com/docker/for-win/issues)
+> - [docker/for-linux](https://github.com/docker/for-linux/issues)
+{ .tip }
+@z
+
+@x
 ### Diagnose from the app
 @y
 ### Diagnose from the app
@@ -192,18 +212,18 @@ Docker Desktop cannot start.
 @z
 
 @x
-2. Create and upload the diagnostics ID. Run:
+2. Create and upload the diagnostics ID. In PowerShell, run:
 @y
-2. Create and upload the diagnostics ID. Run:
+2. Create and upload the diagnostics ID. In PowerShell, run:
 @z
 
 @x
    ```console
-   $ "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather -upload
+   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather -upload
    ```
 @y
    ```console
-   $ "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather -upload
+   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather -upload
    ```
 @z
 
@@ -476,18 +496,18 @@ Docker Desktop contains a self-diagnose tool which can help you identify some co
 @z
 
 @x
-2. Run the self-diagnose tool:
+2. In PowerShell, run the self-diagnose tool:
 @y
-2. Run the self-diagnose tool:
+2. In PowerShell, run the self-diagnose tool:
 @z
 
 @x
    ```console
-   $ "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" check
+   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" check
    ```
 @y
    ```console
-   $ "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" check
+   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" check
    ```
 @z
 

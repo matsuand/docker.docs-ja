@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Manager administration guide
@@ -383,7 +385,7 @@ for more information.
 @y
 You can monitor the health of manager nodes by querying the docker `nodes` API
 in JSON format through the `/nodes` HTTP endpoint. Refer to the
-[nodes API documentation](/engine/api/v1.25/#tag/Node)
+[nodes API documentation](__SUBDIR__/engine/api/v1.25/#tag/Node)
 for more information.
 @z
 

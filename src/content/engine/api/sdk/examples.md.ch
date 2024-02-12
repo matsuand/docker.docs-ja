@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Examples using the Docker Engine SDKs and Docker API
@@ -1490,7 +1492,7 @@ scope for this example guide. After using `docker login`, the Python SDK
 uses these credentials automatically.
 @y
 The Python SDK retrieves authentication information from the [credentials
-store](/engine/reference/commandline/login/#credentials-store) file and
+store](__SUBDIR__/engine/reference/commandline/login/#credentials-store) file and
 integrates with [credential
 helpers](https://github.com/docker/docker-credential-helpers). It's possible to override these credentials, but that's out of
 scope for this example guide. After using `docker login`, the Python SDK

@@ -19,13 +19,13 @@ keywords: enhanced container isolation, Docker Desktop, Docker socket, bind moun
 > **Note**
 >
 > This feature is available with Docker Desktop version 4.27 and later. It's currently in
-> [Beta](../../../release-lifecycle.md/#beta). 
+> [Beta](../../../release-lifecycle.md/#beta).
 { .experimental }
 @y
 > **Note**
 >
 > This feature is available with Docker Desktop version 4.27 and later. It's currently in
-> [Beta](../../../release-lifecycle.md/#beta). 
+> [Beta](../../../release-lifecycle.md/#beta).
 { .experimental }
 @z
 
@@ -36,9 +36,9 @@ This page describes optional, advanced configurations for ECI, once ECI is enabl
 @z
 
 @x
-## Docker socket mount permissions 
+## Docker socket mount permissions
 @y
-## Docker socket mount permissions 
+## Docker socket mount permissions
 @z
 
 @x
@@ -81,12 +81,12 @@ push malicious images into the organization's repositories) or similar.
 
 @x
 However, some legitimate use cases require containers to have access to the
-Docker Engine socket. For example, the popular [TestContainers](https://testcontainers.com/)
+Docker Engine socket. For example, the popular [Testcontainers](https://testcontainers.com/)
 framework sometimes bind-mounts the Docker Engine socket into containers to
 manage them or perform post-test cleanup.
 @y
 However, some legitimate use cases require containers to have access to the
-Docker Engine socket. For example, the popular [TestContainers](https://testcontainers.com/)
+Docker Engine socket. For example, the popular [Testcontainers](https://testcontainers.com/)
 framework sometimes bind-mounts the Docker Engine socket into containers to
 manage them or perform post-test cleanup.
 @z
@@ -272,14 +272,14 @@ In general, it's easier to specify the image using the tag wildcard format
 (e.g., `<image-name>:*`) because then `imageList` doesn't need to be updated whenever a new version of the
 image is used. Alternatively, you can use an immutable tag (e.g., `:latest`),
 but it does not always work as well as the wildcard because, for example,
-TestContainers uses specific versions of the image, not necessarily the latest
+Testcontainers uses specific versions of the image, not necessarily the latest
 one.
 @y
 In general, it's easier to specify the image using the tag wildcard format
 (e.g., `<image-name>:*`) because then `imageList` doesn't need to be updated whenever a new version of the
 image is used. Alternatively, you can use an immutable tag (e.g., `:latest`),
 but it does not always work as well as the wildcard because, for example,
-TestContainers uses specific versions of the image, not necessarily the latest
+Testcontainers uses specific versions of the image, not necessarily the latest
 one.
 @z
 
@@ -523,13 +523,13 @@ Whether to configure the list as an allow or deny list depends on the use case.
 
 @x
 * In the `commandList`, block commands that you don't expect the container to
-  execute. For example, for local testing (e.g., TestContainers), containers that bind-mount the Docker
+  execute. For example, for local testing (e.g., Testcontainers), containers that bind-mount the Docker
   socket typically create / run / remove containers, volumes, and networks, but
   don't typically build images or push them into repositories (though some may
   legitimately do this). What commands to allow or block depends on the use case.
 @y
 * In the `commandList`, block commands that you don't expect the container to
-  execute. For example, for local testing (e.g., TestContainers), containers that bind-mount the Docker
+  execute. For example, for local testing (e.g., Testcontainers), containers that bind-mount the Docker
   socket typically create / run / remove containers, volumes, and networks, but
   don't typically build images or push them into repositories (though some may
   legitimately do this). What commands to allow or block depends on the use case.

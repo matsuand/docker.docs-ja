@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: How to setup and run Docker with SSH or HTTPS
@@ -434,7 +436,7 @@ to other information described in the above document, authorization plugins
 running on a Docker daemon receive the certificate information for connecting
 Docker clients.
 @y
-[Authorization plugins](/engine/extend/plugins_authorization/) offer more
+[Authorization plugins](__SUBDIR__/engine/extend/plugins_authorization/) offer more
 fine-grained control to supplement authentication from mutual TLS. In addition
 to other information described in the above document, authorization plugins
 running on a Docker daemon receive the certificate information for connecting

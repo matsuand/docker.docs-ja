@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Build Cloud
 description: Get started with Docker Build Cloud
 keywords: build, cloud, cloud build, remote builder
-aliases:
-  - /build/hydrobuild/
----
 @y
----
 title: Docker Build Cloud
 description: Docker Build Cloud を使ってはじめよう。
 keywords: build, cloud, cloud build, remote builder
-aliases:
-  - /build/hydrobuild/
----
 @z
 
 @x
@@ -157,18 +149,4 @@ subscriptions and features](../../subscription/build-details.md).
 @y
 For more information about the available subscription plans, see [Docker Build Cloud
 subscriptions and features](../../subscription/build-details.md).
-@z
-
-@x
-## Frequently asked questions
-@y
-## よくたずねられる質問 {#frequently-asked-questions}
-@z
-
-@x
-The [Docker Build Cloud FAQ](./faq.md) page lists common questions and answers about
-Docker Build Cloud.
-@y
-The [Docker Build Cloud FAQ](./faq.md) page lists common questions and answers about
-Docker Build Cloud.
 @z

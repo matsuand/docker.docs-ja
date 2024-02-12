@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Find a quick reference for Docker Compose version 3, including Docker
@@ -3218,7 +3220,7 @@ services:
 > The default init binary that is used is [Tini](https://github.com/krallin/tini),
 > and is installed in `/usr/libexec/docker-init` on the daemon host. You can
 > configure the daemon to use a custom init binary through the
-> [`init-path` configuration option](/engine/reference/commandline/dockerd/#daemon-configuration-file).
+> [`init-path` configuration option](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-configuration-file).
 @z
 
 @x
@@ -4894,7 +4896,7 @@ volumes:
 > **Note**
 > 
 > For general information on volumes, refer to the [use volumes](../../storage/volumes.md)
-> and [volume plugins](/engine/extend/plugins_volume/) sections in the documentation.
+> and [volume plugins](__SUBDIR__/engine/extend/plugins_volume/) sections in the documentation.
 @z
 
 @x
@@ -5336,7 +5338,7 @@ See [use volumes](../../storage/volumes.md) and [volume
 plugins](/engine/extend/plugins_volume/) for general information on volumes.
 @y
 See [use volumes](../../storage/volumes.md) and [volume
-plugins](/engine/extend/plugins_volume/) for general information on volumes.
+plugins](__SUBDIR__/engine/extend/plugins_volume/) for general information on volumes.
 @z
 
 @x

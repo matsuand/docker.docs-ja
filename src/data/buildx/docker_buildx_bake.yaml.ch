@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker buildx bake
 aliases: docker buildx bake, docker buildx f
@@ -21,7 +23,7 @@ long: |-
     Read [High-level build options with Bake](/build/bake/)
     guide for introduction to writing bake files.
 @y
-    Read [High-level build options with Bake](/build/bake/)
+    Read [High-level build options with Bake](__SUBDIR__/build/bake/)
     guide for introduction to writing bake files.
 @z
 
@@ -231,7 +233,7 @@ examples: |-
     See the [Bake file reference](/build/bake/reference/)
     for more details.
 @y
-    See the [Bake file reference](/build/bake/reference/)
+    See the [Bake file reference](__SUBDIR__/build/bake/reference/)
     for more details.
 @z
 

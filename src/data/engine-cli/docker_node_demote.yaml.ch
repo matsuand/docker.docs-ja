@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker node demote
 short: Demote one or more nodes from manager in the swarm
@@ -48,7 +50,7 @@ swarm: true
     >
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the [Swarm mode
-    > section](/engine/swarm/) in the documentation.
+    > section](__SUBDIR__/engine/swarm/) in the documentation.
 usage: docker node demote NODE [NODE...]
 pname: docker node
 plink: docker_node.yaml

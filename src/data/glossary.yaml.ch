@@ -1,70 +1,102 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ﻿amd64: |
   AMD64 is AMD's 64-bit extension of Intel's x86 architecture, and is also
   referred to as x86_64 (or x86-64).
-arm64: |
-  ARM64 is the 64-bit extension of the ARM CPU architecture. arm64 architecture
-  is used in Apple silicon machines.
-base image: |
-  A base image has no parent image specified in its Dockerfile. It is created using a Dockerfile with the `FROM scratch` directive.
-btrfs: |
-  btrfs (B-tree file system) is a Linux [filesystem](#filesystem) that Docker
-  supports as a storage backend. It is a [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystem.
-build: |
-  Build is the process of building Docker images using a [Dockerfile](#dockerfile).
-  The build uses a Dockerfile and a "context". The context is the set of files in the directory in which the image is built.
-cgroups: |
-  cgroups is a Linux kernel feature that limits, accounts for, and isolates
-  the resource usage (CPU, memory, disk I/O, network, etc.) of a collection
-  of processes. Docker relies on cgroups to control and isolate resource limits.
 @y
-﻿amd64: |
+amd64: |
   AMD64 is AMD's 64-bit extension of Intel's x86 architecture, and is also
   referred to as x86_64 (or x86-64).
-arm64: |
-  ARM64 is the 64-bit extension of the ARM CPU architecture. arm64 architecture
-  is used in Apple silicon machines.
-base image: |
-  A base image has no parent image specified in its Dockerfile. It is created using a Dockerfile with the `FROM scratch` directive.
-btrfs: |
-  btrfs (B-tree file system) is a Linux [filesystem](#filesystem) that Docker
-  supports as a storage backend. It is a [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystem.
-build: |
-  Build is the process of building Docker images using a [Dockerfile](#dockerfile).
-  The build uses a Dockerfile and a "context". The context is the set of files in the directory in which the image is built.
-cgroups: |
-  cgroups is a Linux kernel feature that limits, accounts for, and isolates
-  the resource usage (CPU, memory, disk I/O, network, etc.) of a collection
-  of processes. Docker relies on cgroups to control and isolate resource limits.
 @z
 
 @x
+arm64: |
+  ARM64 is the 64-bit extension of the ARM CPU architecture. arm64 architecture
+  is used in Apple silicon machines.
+@y
+arm64: |
+  ARM64 is the 64-bit extension of the ARM CPU architecture. arm64 architecture
+  is used in Apple silicon machines.
+@z
+
+@x
+base image: |
+  A base image has no parent image specified in its Dockerfile. It is created using a Dockerfile with the `FROM scratch` directive.
+@y
+ベースイメージ: |
+  ベースイメージとは Dockerfile において親を持たないイメージとして記述されるものです。
+  Dockerfile における `FROM scratch` ディレクティブを使って生成されます。
+@z
+
+@x
+btrfs: |
+  btrfs (B-tree file system) is a Linux [filesystem](#filesystem) that Docker
+  supports as a storage backend. It is a [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystem.
+@y
+btrfs: |
+  btrfs (B-tree file system) is a Linux [filesystem](#filesystem) that Docker
+  supports as a storage backend. It is a [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystem.
+@z
+
+@x
+build: |
+  Build is the process of building Docker images using a [Dockerfile](#dockerfile).
+  The build uses a Dockerfile and a "context". The context is the set of files in the directory in which the image is built.
+@y
+build: |
+  Build is the process of building Docker images using a [Dockerfile](#dockerfile).
+  The build uses a Dockerfile and a "context". The context is the set of files in the directory in which the image is built.
+@z
+
+@x
+cgroups: |
+  cgroups is a Linux kernel feature that limits, accounts for, and isolates
+  the resource usage (CPU, memory, disk I/O, network, etc.) of a collection
+  of processes. Docker relies on cgroups to control and isolate resource limits.
+
   *Also known as control groups*
+@y
+cgroups: |
+  cgroups is a Linux kernel feature that limits, accounts for, and isolates
+  the resource usage (CPU, memory, disk I/O, network, etc.) of a collection
+  of processes. Docker relies on cgroups to control and isolate resource limits.
+
+  *Also known as control groups*
+@z
+
+@x
 cluster: |
   A cluster is a group of machines that work together to run workloads and provide high availability.
+@y
+cluster: |
+  A cluster is a group of machines that work together to run workloads and provide high availability.
+@z
+
+@x
 Compose: |
   [Compose](https://github.com/docker/compose) is a tool for defining and
   running complex applications with Docker. With Compose, you define a
   multi-container application in a single file, then spin your
   application up in a single command which does everything that needs to
   be done to get it running.
-@y
-  *Also known as control groups*
-cluster: |
-  A cluster is a group of machines that work together to run workloads and provide high availability.
-Compose: |
-  [Compose](https://github.com/docker/compose) is a tool for defining and
-  running complex applications with Docker. With Compose, you define a
-  multi-container application in a single file, then spin your
-  application up in a single command which does everything that needs to
-  be done to get it running.
-@z
 
-@x
   *Also known as Docker Compose*
+@y
+Compose: |
+  [Compose](https://github.com/docker/compose) is a tool for defining and
+  running complex applications with Docker. With Compose, you define a
+  multi-container application in a single file, then spin your
+  application up in a single command which does everything that needs to
+  be done to get it running.
+
+  *Also known as Docker Compose*
+@z
+
+@x
 copy-on-write: |
   Docker uses a
   [copy-on-write](/storage/storagedriver/#the-copy-on-write-cow-strategy)
@@ -73,10 +105,9 @@ copy-on-write: |
   entity share the same instance and each one makes only specific changes to its
   unique layer.
 @y
-  *Also known as Docker Compose*
 copy-on-write: |
   Docker uses a
-  [copy-on-write](/storage/storagedriver/#the-copy-on-write-cow-strategy)
+  [copy-on-write](__SUBDIR__/storage/storagedriver/#the-copy-on-write-cow-strategy)
   technique and a [union file system](#union-file-system) for both images and
   containers to optimize resources and speed performance. Multiple copies of an
   entity share the same instance and each one makes only specific changes to its
@@ -109,12 +140,16 @@ copy-on-write: |
   For more about copy-on-write in the context of Docker, see [Understand images,
   containers, and storage
   drivers](/storage/storagedriver/).
-container: |
-  A container is a runtime instance of a [docker image](#image).
 @y
   For more about copy-on-write in the context of Docker, see [Understand images,
   containers, and storage
-  drivers](/storage/storagedriver/).
+  drivers](__SUBDIR__/storage/storagedriver/).
+@z
+
+@x
+container: |
+  A container is a runtime instance of a [docker image](#image).
+@y
 container: |
   A container is a runtime instance of a [docker image](#image).
 @z
@@ -137,38 +172,55 @@ container: |
 
 @x
   The concept is borrowed from shipping containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
-container image: |
-   Docker images are the basis of containers. An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other.
-Docker: |
-  The term Docker can refer to
 @y
   The concept is borrowed from shipping containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
+@z
+
+@x
 container image: |
    Docker images are the basis of containers. An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other.
+@y
+container image: |
+   Docker images are the basis of containers. An image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other.
+@z
+
+@x
 Docker: |
   The term Docker can refer to
-@z
 
-@x
   - The Docker project as a whole, which is a platform for developers and sysadmins to develop, ship, and run applications
   - The docker daemon process running on the host which manages images and containers (also called Docker Engine)
-Docker Business: |
-  Docker Business is a Docker subscription. Docker Business offers centralized management and advanced security features for enterprises that use Docker at scale. It empowers leaders to manage their Docker development environments and accelerate their secure software supply chain initiatives.
-Docker Desktop: |
-  Docker Desktop is an easy-to-install, lightweight
-  Docker development environment. Docker Desktop is available for [Mac](#docker-desktop-for-mac), [Windows](#docker-desktop-for-windows), and [Linux](#docker-desktop-for-linux), providing developers a consistent experience across platforms. Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper.
 @y
+Docker: |
+  The term Docker can refer to
+
   - The Docker project as a whole, which is a platform for developers and sysadmins to develop, ship, and run applications
   - The docker daemon process running on the host which manages images and containers (also called Docker Engine)
-Docker Business: |
-  Docker Business is a Docker subscription. Docker Business offers centralized management and advanced security features for enterprises that use Docker at scale. It empowers leaders to manage their Docker development environments and accelerate their secure software supply chain initiatives.
-Docker Desktop: |
-  Docker Desktop is an easy-to-install, lightweight
-  Docker development environment. Docker Desktop is available for [Mac](#docker-desktop-for-mac), [Windows](#docker-desktop-for-windows), and [Linux](#docker-desktop-for-linux), providing developers a consistent experience across platforms. Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper.
 @z
 
 @x
+Docker Business: |
+  Docker Business is a Docker subscription. Docker Business offers centralized management and advanced security features for enterprises that use Docker at scale. It empowers leaders to manage their Docker development environments and accelerate their secure software supply chain initiatives.
+@y
+Docker Business: |
+  Docker Business is a Docker subscription. Docker Business offers centralized management and advanced security features for enterprises that use Docker at scale. It empowers leaders to manage their Docker development environments and accelerate their secure software supply chain initiatives.
+@z
+
+@x
+Docker Desktop: |
+  Docker Desktop is an easy-to-install, lightweight
+  Docker development environment. Docker Desktop is available for [Mac](#docker-desktop-for-mac), [Windows](#docker-desktop-for-windows), and [Linux](#docker-desktop-for-linux), providing developers a consistent experience across platforms. Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper.
+
   Docker Desktop works with your choice of development tools and languages and gives you access to a vast library of certified images and templates in Docker Hub. This enables development teams to extend their environment to rapidly auto-build, continuously integrate, and collaborate using a secure repository.
+@y
+Docker Desktop: |
+  Docker Desktop is an easy-to-install, lightweight
+  Docker development environment. Docker Desktop is available for [Mac](#docker-desktop-for-mac), [Windows](#docker-desktop-for-windows), and [Linux](#docker-desktop-for-linux), providing developers a consistent experience across platforms. Docker Desktop includes Docker Engine, Docker CLI client, Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper.
+
+  Docker Desktop works with your choice of development tools and languages and gives you access to a vast library of certified images and templates in Docker Hub. This enables development teams to extend their environment to rapidly auto-build, continuously integrate, and collaborate using a secure repository.
+@z
+
+@x
 Docker Desktop for Mac: |
   Docker Desktop for Mac is an easy-to-install, lightweight
   Docker development environment designed specifically for the Mac. A native
@@ -176,31 +228,38 @@ Docker Desktop for Mac: |
   framework, networking, and filesystem. It's the best solution if you want
   to build, debug, test, package, and ship Dockerized applications on a
   Mac.
+@y
+Docker Desktop for Mac: |
+  Docker Desktop for Mac is an easy-to-install, lightweight
+  Docker development environment designed specifically for the Mac. A native
+  Mac application, Docker Desktop for Mac uses the macOS Hypervisor
+  framework, networking, and filesystem. It's the best solution if you want
+  to build, debug, test, package, and ship Dockerized applications on a
+  Mac.
+@z
+
+@x
 Docker Desktop for Windows: |
   Docker Desktop for Windows is an
   easy-to-install, lightweight Docker development environment designed
   specifically for Windows systems that support WSL 2 and Microsoft Hyper-V.
   Docker Desktop for Windows uses WSL 2 or Hyper-V for
   virtualization. Docker Desktop for Windows is the best solution if you want to build, debug, test, package, and ship Dockerized applications from Windows machines.
+@y
+Docker Desktop for Windows: |
+  Docker Desktop for Windows is an
+  easy-to-install, lightweight Docker development environment designed
+  specifically for Windows systems that support WSL 2 and Microsoft Hyper-V.
+  Docker Desktop for Windows uses WSL 2 or Hyper-V for
+  virtualization. Docker Desktop for Windows is the best solution if you want to build, debug, test, package, and ship Dockerized applications from Windows machines.
+@z
+
+@x
 Docker Desktop for Linux: |
   Docker Desktop for Linux is an an easy-to-install, lightweight Docker development environment designed specifically for Linux machines. It's the best solution if you want to build, debug, test, package, and ship Dockerized applications on a Linux machine.
 Docker Hub: |
   [Docker Hub](https://hub.docker.com/) is a centralized resource for working with Docker and its components. It provides the following services:
 @y
-  Docker Desktop works with your choice of development tools and languages and gives you access to a vast library of certified images and templates in Docker Hub. This enables development teams to extend their environment to rapidly auto-build, continuously integrate, and collaborate using a secure repository.
-Docker Desktop for Mac: |
-  Docker Desktop for Mac is an easy-to-install, lightweight
-  Docker development environment designed specifically for the Mac. A native
-  Mac application, Docker Desktop for Mac uses the macOS Hypervisor
-  framework, networking, and filesystem. It's the best solution if you want
-  to build, debug, test, package, and ship Dockerized applications on a
-  Mac.
-Docker Desktop for Windows: |
-  Docker Desktop for Windows is an
-  easy-to-install, lightweight Docker development environment designed
-  specifically for Windows systems that support WSL 2 and Microsoft Hyper-V.
-  Docker Desktop for Windows uses WSL 2 or Hyper-V for
-  virtualization. Docker Desktop for Windows is the best solution if you want to build, debug, test, package, and ship Dockerized applications from Windows machines.
 Docker Desktop for Linux: |
   Docker Desktop for Linux is an an easy-to-install, lightweight Docker development environment designed specifically for Linux machines. It's the best solution if you want to build, debug, test, package, and ship Dockerized applications on a Linux machine.
 Docker Hub: |
@@ -257,7 +316,7 @@ Docker Personal: |
 Docker Pro: |
   Docker Pro is a [Docker subscription](#docker-subscription). Docker Pro enables individual developers to get more control of their development environment and provides an integrated and reliable developer experience. It reduces the amount of time developers spend on mundane and repetitive tasks and empowers developers to spend more time creating value for their customers.
 Docker subscription: |
-  Docker subscription tiers, sometimes referred to as plans, include [Personal](#docker-personal), [Pro](#docker-pro), [Team](#docker-team), and [Business](#docker-business). For more details, see [Docker subscription overview](/subscription/details/).
+  Docker subscription tiers, sometimes referred to as plans, include [Personal](#docker-personal), [Pro](#docker-pro), [Team](#docker-team), and [Business](#docker-business). For more details, see [Docker subscription overview](__SUBDIR__/subscription/details/).
 Docker Team: |
   Docker Team is a [Docker subscription](#docker-subscription). Docker Team offers capabilities for collaboration, productivity, and security across organizations. It enables groups of developers to unlock the full power of collaboration and sharing combined with essential security features and team management capabilities.
 Docker Trusted Content Program: |
@@ -403,9 +462,9 @@ member: |
 namespace: |
   A [Linux namespace](https://man7.org/linux/man-pages/man7/namespaces.7.html)
   is a Linux kernel feature that isolates and virtualizes system resources. Processes which are restricted to a namespace can only interact with resources or processes that are part of the same namespace. Namespaces
-  are an important part of Docker's isolation model. Namespaces exist for each type of resource, including `net` (networking), `mnt` (storage), `pid` (processes), `uts` (hostname control), and `user` (UID mapping). For more information about namespaces, see [Docker run reference](/engine/reference/run/) and [Isolate containers with a user namespace](/engine/security/userns-remap/).
+  are an important part of Docker's isolation model. Namespaces exist for each type of resource, including `net` (networking), `mnt` (storage), `pid` (processes), `uts` (hostname control), and `user` (UID mapping). For more information about namespaces, see [Docker run reference](__SUBDIR__/engine/reference/run/) and [Isolate containers with a user namespace](__SUBDIR__/engine/security/userns-remap/).
 node: |
-  A [node](/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
+  A [node](__SUBDIR__/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
   machine running an instance of the Docker Engine in [swarm mode](#swarm-mode).
 @z
 
@@ -496,7 +555,7 @@ SSH: |
 seats: |
   The number of seats refers to the number of planned members within an [organization](#organization).
 service: |
-  A [service](/engine/swarm/how-swarm-mode-works/services/) is the definition of how you want to run your application containers in a swarm. At the most basic level, a service  defines which container image to run in the swarm and which commands to run in the container. For orchestration purposes, the service defines the "desired state", meaning how many containers to run as tasks and constraints for deploying the containers.
+  A [service](__SUBDIR__/engine/swarm/how-swarm-mode-works/services/) is the definition of how you want to run your application containers in a swarm. At the most basic level, a service  defines which container image to run in the swarm and which commands to run in the container. For orchestration purposes, the service defines the "desired state", meaning how many containers to run as tasks and constraints for deploying the containers.
 @z
 
 @x
@@ -516,7 +575,7 @@ service discovery: |
 service account: |
   A service account is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and do not share Docker IDs with the members in a Docker Team or Docker Business subscription plan.
 service discovery: |
-  Swarm mode [container discovery](/network/drivers/overlay/#container-discovery) is a DNS component internal to the swarm that automatically assigns each service on an overlay network in the swarm a VIP and DNS entry. Containers on the network share DNS mappings for the service through gossip so any container on the network can access the service through its service name.
+  Swarm mode [container discovery](__SUBDIR__/network/drivers/overlay/#container-discovery) is a DNS component internal to the swarm that automatically assigns each service on an overlay network in the swarm a VIP and DNS entry. Containers on the network share DNS mappings for the service through gossip so any container on the network can access the service through its service name.
 @z
 
 @x
@@ -542,15 +601,15 @@ Union file system: |
 @y
   You don’t need to expose service-specific ports to make the service available to other services on the same overlay network. The swarm’s internal load balancer automatically distributes requests to the service VIP among the active tasks.
 swarm: |
-  A [swarm](/engine/swarm/) is a cluster of one or more Docker Engines running in [swarm mode](#swarm-mode).
+  A [swarm](__SUBDIR__/engine/swarm/) is a cluster of one or more Docker Engines running in [swarm mode](#swarm-mode).
 swarm mode: |
-  [Swarm mode](/engine/swarm/) refers to cluster management and orchestration
+  [Swarm mode](__SUBDIR__/engine/swarm/) refers to cluster management and orchestration
   features embedded in Docker Engine. When you initialize a new swarm (cluster) or join nodes to a swarm, the Docker Engine runs in swarm mode.
 tag: |
   A tag is a label applied to a Docker image in a [repository](#repository).
   Tags are how various images in a repository are distinguished from each other.
 task: |
-  A [task](/engine/swarm/how-swarm-mode-works/services/#tasks-and-scheduling) is the atomic unit of scheduling within a swarm. A task carries a Docker container and the commands to run inside the container. Manager nodes assign tasks to worker nodes according to the number of replicas set in the service scale.
+  A [task](__SUBDIR__/engine/swarm/how-swarm-mode-works/services/#tasks-and-scheduling) is the atomic unit of scheduling within a swarm. A task carries a Docker container and the commands to run inside the container. Manager nodes assign tasks to worker nodes according to the number of replicas set in the service scale.
 team: |
   A team is a group of Docker users that belong to an [organization](#organization). An organization can have multiple teams.
 Union file system: |
@@ -566,7 +625,7 @@ Union file system: |
   practice](/engine/userguide/storagedriver/overlayfs-driver/).
 @y
   For more on Docker and union file systems, see [Docker and OverlayFS in
-  practice](/engine/userguide/storagedriver/overlayfs-driver/).
+  practice](__SUBDIR__/engine/userguide/storagedriver/overlayfs-driver/).
 @z
 
 @x

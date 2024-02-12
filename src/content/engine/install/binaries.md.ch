@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Learn how to install Docker as a binary. These instructions are most suitable for testing purposes.
@@ -226,7 +228,7 @@ instructions for enabling and configuring AppArmor or SELinux.
   [Daemon user namespace options](/engine/reference/commandline/dockerd/#daemon-user-namespace-options).
 @y
 - Enable user namespaces if possible. See the
-  [Daemon user namespace options](/engine/reference/commandline/dockerd/#daemon-user-namespace-options).
+  [Daemon user namespace options](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-user-namespace-options).
 @z
 
 @x

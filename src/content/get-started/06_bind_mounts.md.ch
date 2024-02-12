@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Use bind mounts
@@ -849,7 +851,7 @@ Related information:
  - [docker CLI reference](/engine/reference/commandline/cli/)
  - [Manage data in Docker](https://docs.docker.com/storage/)
 @y
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [docker CLI reference](__SUBDIR__/engine/reference/commandline/cli/)
  - [Manage data in Docker](https://docs.docker.com/storage/)
 @z
 

@@ -3,7 +3,7 @@
 
 @x
 ---
-title: FAQs
+title: Enhanced Container Isolation (ECI) FAQs
 description: Frequently asked questions for Enhanced Container Isolation
 keywords: enhanced container isolation, security, faq, sysbox, Docker Desktop
 toc_max: 2
@@ -12,7 +12,7 @@ aliases:
 ---
 @y
 ---
-title: FAQs
+title: Enhanced Container Isolation (ECI) FAQs
 description: Frequently asked questions for Enhanced Container Isolation
 keywords: enhanced container isolation, security, faq, sysbox, Docker Desktop
 toc_max: 2
@@ -22,59 +22,61 @@ aliases:
 @z
 
 @x
-### Do I need to change the way I use Docker when Enhanced Container Isolation is switched on?
+### Do I need to change the way I use Docker when ECI is switched on?
 @y
-### Do I need to change the way I use Docker when Enhanced Container Isolation is switched on?
+### Do I need to change the way I use Docker when ECI is switched on?
 @z
 
 @x
-No, you can continue to use Docker as usual. 
+No, you can continue to use Docker as usual. ECI works under the covers by
+creating a more secure container.
 @y
-No, you can continue to use Docker as usual. 
+No, you can continue to use Docker as usual. ECI works under the covers by
+creating a more secure container.
 @z
 
 @x
-### Do all container workloads work well with Enhanced Container Isolation?
+### Do all container workloads work well with ECI?
 @y
-### Do all container workloads work well with Enhanced Container Isolation?
+### Do all container workloads work well with ECI?
 @z
 
 @x
-The great majority of container workloads run fine with ECI, but a few do not
-(yet). For the few workloads that don't yet work with Enhanced Container
+The great majority of container workloads run fine with ECI enabled, but a few
+do not (yet). For the few workloads that don't yet work with Enhanced Container
 Isolation, Docker is continuing to improve the feature to reduce this to a
 minimum.
 @y
-The great majority of container workloads run fine with ECI, but a few do not
-(yet). For the few workloads that don't yet work with Enhanced Container
+The great majority of container workloads run fine with ECI enabled, but a few
+do not (yet). For the few workloads that don't yet work with Enhanced Container
 Isolation, Docker is continuing to improve the feature to reduce this to a
 minimum.
 @z
 
 @x
-### Can I run privileged containers with Enhanced Container Isolation?
+### Can I run privileged containers with ECI?
 @y
-### Can I run privileged containers with Enhanced Container Isolation?
+### Can I run privileged containers with ECI?
 @z
 
 @x
 Yes, you can use the `--privileged` flag in containers but unlike privileged
-containers without Enhanced Container Isolation, the container can only use it's elevated privileges to
+containers without ECI, the container can only use it's elevated privileges to
 access resources assigned to the container. It can't access global kernel
 resources in the Docker Desktop Linux VM. This allows you to run privileged
 containers securely (including Docker-in-Docker). For more information, see [Key features and benefits](features-benefits.md#privileged-containers-are-also-secured).
 @y
 Yes, you can use the `--privileged` flag in containers but unlike privileged
-containers without Enhanced Container Isolation, the container can only use it's elevated privileges to
+containers without ECI, the container can only use it's elevated privileges to
 access resources assigned to the container. It can't access global kernel
 resources in the Docker Desktop Linux VM. This allows you to run privileged
 containers securely (including Docker-in-Docker). For more information, see [Key features and benefits](features-benefits.md#privileged-containers-are-also-secured).
 @z
 
 @x
-### Will all privileged container workloads run with Enhanced Container Isolation?
+### Will all privileged container workloads run with ECI?
 @y
-### Will all privileged container workloads run with Enhanced Container Isolation?
+### Will all privileged container workloads run with ECI?
 @z
 
 @x
@@ -106,17 +108,17 @@ devices.
 @z
 
 @x
-Enhanced Container Isolation allows the running of advanced workloads, but denies the ability to perform
+ECI allows the running of advanced workloads, but denies the ability to perform
 kernel operations or access hardware devices.
 @y
-Enhanced Container Isolation allows the running of advanced workloads, but denies the ability to perform
+ECI allows the running of advanced workloads, but denies the ability to perform
 kernel operations or access hardware devices.
 @z
 
 @x
-### Does Enhanced Container Isolation restrict bind mounts inside the container?
+### Does ECI restrict bind mounts inside the container?
 @y
-### Does Enhanced Container Isolation restrict bind mounts inside the container?
+### Does ECI restrict bind mounts inside the container?
 @z
 
 @x
@@ -136,77 +138,119 @@ as configured via Docker Desktop's **Settings** > **Resources** > **File Sharing
 @z
 
 @x
-### Does Enhanced Container Isolation protect all containers launched with Docker Desktop?
+### Can I mount the host's Docker Socket into a container when ECI is enabled?
 @y
-### Does Enhanced Container Isolation protect all containers launched with Docker Desktop?
+### Can I mount the host's Docker Socket into a container when ECI is enabled?
 @z
 
 @x
-It protects all containers launched by users via `docker create` and `docker run`. It does not yet protect Docker Desktop Kubernetes pods, ExtensioncContainers, and Dev Environments.
+By default, ECI blocks bind-mounting the host's Docker socket into containers,
+for security reasons. However, there are legitimate use cases for this, such as
+when using [Testcontainers](https://testcontainers.com/) for local testing.
 @y
-It protects all containers launched by users via `docker create` and `docker run`. It does not yet protect Docker Desktop Kubernetes pods, ExtensioncContainers, and Dev Environments.
+By default, ECI blocks bind-mounting the host's Docker socket into containers,
+for security reasons. However, there are legitimate use cases for this, such as
+when using [Testcontainers](https://testcontainers.com/) for local testing.
 @z
 
 @x
-### Does Enhanced Container Isolation protect containers launched prior to enabling ECI?
+To enable such use cases, it's possible to configure ECI to allow Docker socket
+mounts into containers, but only for your chosen (i.e,. trusted) container images, and
+even restrict what commands the container can send to the Docker engine via the socket.
+See [ECI Docker socket mount permissions](../../desktop/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions).
 @y
-### Does Enhanced Container Isolation protect containers launched prior to enabling ECI?
+To enable such use cases, it's possible to configure ECI to allow Docker socket
+mounts into containers, but only for your chosen (i.e,. trusted) container images, and
+even restrict what commands the container can send to the Docker engine via the socket.
+See [ECI Docker socket mount permissions](../../desktop/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions).
+@z
+
+@x
+### Does ECI protect all containers launched with Docker Desktop?
+@y
+### Does ECI protect all containers launched with Docker Desktop?
+@z
+
+@x
+Not yet. It protects all containers launched by users via `docker create` and
+`docker run`. In addition, it protects containers implicitly used by `docker build`, when
+using the [docker-container build driver](../../build/drivers/_index.md).
+@y
+Not yet. It protects all containers launched by users via `docker create` and
+`docker run`. In addition, it protects containers implicitly used by `docker build`, when
+using the [docker-container build driver](../../build/drivers/_index.md).
+@z
+
+@x
+It does not yet protect containers implicitly used by `docker build` with the
+`docker` build driver, nor Docker Desktop Kubernetes pods, Extension containers,
+and [Dev Environments containers](../../desktop/dev-environments/_index.md).
+@y
+It does not yet protect containers implicitly used by `docker build` with the
+`docker` build driver, nor Docker Desktop Kubernetes pods, Extension containers,
+and [Dev Environments containers](../../desktop/dev-environments/_index.md).
+@z
+
+@x
+### Does ECI protect containers launched prior to enabling ECI?
+@y
+### Does ECI protect containers launched prior to enabling ECI?
 @z
 
 @x
 No. Containers created prior to switching on ECI are not protected. Therefore, we
-recommend removing all containers prior to switching on ECI. 
+recommend removing all containers prior to switching on ECI.
 @y
 No. Containers created prior to switching on ECI are not protected. Therefore, we
-recommend removing all containers prior to switching on ECI. 
+recommend removing all containers prior to switching on ECI.
 @z
 
 @x
-### Does Enhanced Container Isolation affect the performance of containers?
+### Does ECI affect the performance of containers?
 @y
-### Does Enhanced Container Isolation affect the performance of containers?
+### Does ECI affect the performance of containers?
 @z
 
 @x
-Enhanced Container Isolation has very little impact on the performance of
+ECI has very little impact on the performance of
 containers. The exception is for containers that perform lots of `mount` and
 `umount` system calls, as these are trapped and vetted by the Sysbox container
 runtime to ensure they are not being used to breach the container's filesystem.
 @y
-Enhanced Container Isolation has very little impact on the performance of
+ECI has very little impact on the performance of
 containers. The exception is for containers that perform lots of `mount` and
 `umount` system calls, as these are trapped and vetted by the Sysbox container
 runtime to ensure they are not being used to breach the container's filesystem.
 @z
 
 @x
-### With Enhanced Container Isolation, can the user still override the `--runtime` flag from the CLI ?
+### With ECI, can the user still override the `--runtime` flag from the CLI ?
 @y
-### With Enhanced Container Isolation, can the user still override the `--runtime` flag from the CLI ?
+### With ECI, can the user still override the `--runtime` flag from the CLI ?
 @z
 
 @x
-No. With Enhanced Container Isolation enabled, Sysbox is set as the default (and only) runtime for
+No. With ECI enabled, Sysbox is set as the default (and only) runtime for
 containers deployed by Docker Desktop users. If a user attempts to override the
 runtime (e.g., `docker run --runtime=runc`), this request is ignored and the
 container is created through the Sysbox runtime.
 @y
-No. With Enhanced Container Isolation enabled, Sysbox is set as the default (and only) runtime for
+No. With ECI enabled, Sysbox is set as the default (and only) runtime for
 containers deployed by Docker Desktop users. If a user attempts to override the
 runtime (e.g., `docker run --runtime=runc`), this request is ignored and the
 container is created through the Sysbox runtime.
 @z
 
 @x
-The reason `runc` is disallowed with Enhanced Container Isolation because it
-allows users to run as "true root" on the Docker Desktop Linux VM, thereby
-providing them with implicit control of the VM and the ability to modify the
-administrative configurations for Docker Desktop, for example.
+The reason `runc` is disallowed with ECI because it allows users to run as "true
+root" on the Docker Desktop Linux VM, thereby providing them with implicit
+control of the VM and the ability to modify the administrative configurations
+for Docker Desktop, for example.
 @y
-The reason `runc` is disallowed with Enhanced Container Isolation because it
-allows users to run as "true root" on the Docker Desktop Linux VM, thereby
-providing them with implicit control of the VM and the ability to modify the
-administrative configurations for Docker Desktop, for example.
+The reason `runc` is disallowed with ECI because it allows users to run as "true
+root" on the Docker Desktop Linux VM, thereby providing them with implicit
+control of the VM and the ability to modify the administrative configurations
+for Docker Desktop, for example.
 @z
 
 @x

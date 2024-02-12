@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Develop with Docker Engine SDKs
@@ -129,8 +131,8 @@ You can
 or [choose a specific version](/engine/api/version-history/).
 @y
 You can
-[view the reference for the latest version of the API](/engine/api/latest/)
-or [choose a specific version](/engine/api/version-history/).
+[view the reference for the latest version of the API](__SUBDIR__/engine/api/latest/)
+or [choose a specific version](__SUBDIR__/engine/api/version-history/).
 @z
 
 @x
@@ -145,7 +147,7 @@ your Docker daemon and Docker client. See the [versioned API and SDK](/engine/ap
 section in the API documentation for details.
 @y
 The version of the Docker Engine API you should use depends on the version of
-your Docker daemon and Docker client. See the [versioned API and SDK](/engine/api/#versioned-api-and-sdk)
+your Docker daemon and Docker client. See the [versioned API and SDK](__SUBDIR__/engine/api/#versioned-api-and-sdk)
 section in the API documentation for details.
 @z
 
@@ -171,7 +173,7 @@ code:
   that supports the feature, and prefer the latest version you can use.
 - Otherwise, continue to use the version that your code is already using.
 @y
-- If you're starting a new project, use the [latest version](/engine/api/latest/),
+- If you're starting a new project, use the [latest version](__SUBDIR__/engine/api/latest/),
   but use API version negotiation or specify the version you are using. This
   helps prevent surprises.
 - If you need a new feature, update your code to use at least the minimum version

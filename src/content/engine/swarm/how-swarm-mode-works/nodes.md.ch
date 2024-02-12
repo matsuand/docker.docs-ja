@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: How swarm nodes work
@@ -42,7 +44,7 @@ There are two types of nodes: [managers](#manager-nodes) and
 @x
 ![Swarm mode cluster](/engine/swarm/images/swarm-diagram.webp)
 @y
-![Swarm mode cluster](/engine/swarm/images/swarm-diagram.webp)
+![Swarm mode cluster](__SUBDIR__/engine/swarm/images/swarm-diagram.webp)
 @z
 
 @x

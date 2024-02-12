@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker buildx imagetools create
 short: Create a new image based on source images
@@ -248,7 +250,7 @@ examples: |-
     [Annotations](/build/building/annotations/).
 @y
     For more information about annotations, see
-    [Annotations](/build/building/annotations/).
+    [Annotations](__SUBDIR__/build/building/annotations/).
 @z
 
 @x

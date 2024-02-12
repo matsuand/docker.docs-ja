@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image tag
 aliases: docker image tag, docker tag
@@ -99,7 +101,7 @@ examples: |-
     ### Tag an image referenced by ID
 @y
     You can group your images together using names and tags, and then
-    [push](/engine/reference/commandline/push) them to a
+    [push](__SUBDIR__/engine/reference/commandline/push) them to a
     registry.
 usage: docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 pname: docker image

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Containerize an application
@@ -564,7 +566,7 @@ Related information:
  - [Build with Docker guide](../build/guide/index.md)
 @y
  - [Dockerfile リファレンス](../engine/reference/builder.md)
- - [docker CLI リファレンス](/engine/reference/commandline/cli/)
+ - [docker CLI リファレンス](__SUBDIR__/engine/reference/commandline/cli/)
  - [Docker ガイドを使ったビルド](../build/guide/index.md)
 @z
 

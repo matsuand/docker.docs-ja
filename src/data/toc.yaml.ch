@@ -376,6 +376,38 @@ Guides:
 @z
 
 @x
+    - sectiontitle: Natural language processing
+      section:
+      - path: /guides/use-case/nlp/
+        title: Overview
+      - path: /guides/use-case/nlp/language-translation/
+        title: Language translation
+      - path: /guides/use-case/nlp/named-entity-recognition/
+        title: Named entity recognition
+      - path: /guides/use-case/nlp/sentiment-analysis/
+        title: Sentiment analysis
+      - path: /guides/use-case/nlp/text-classification/
+        title: Text classification
+      - path: /guides/use-case/nlp/text-summarization/
+        title: Text summarization
+@y
+    - sectiontitle: 自然言語処理
+      section:
+      - path: __SUBDIR__/guides/use-case/nlp/
+        title: 概要
+      - path: __SUBDIR__/guides/use-case/nlp/language-translation/
+        title: Language translation
+      - path: __SUBDIR__/guides/use-case/nlp/named-entity-recognition/
+        title: Named entity recognition
+      - path: __SUBDIR__/guides/use-case/nlp/sentiment-analysis/
+        title: Sentiment analysis
+      - path: __SUBDIR__/guides/use-case/nlp/text-classification/
+        title: Text classification
+      - path: __SUBDIR__/guides/use-case/nlp/text-summarization/
+        title: Text summarization
+@z
+
+@x
 - sectiontitle: Develop with Docker
   section:
   - path: /develop/
@@ -2122,7 +2154,7 @@ Reference:
         - path: __SUBDIR__/compose/compose-file/compose-file-v2/
           title: Version 2
 - path: __SUBDIR__/glossary/
-  title: Glossary
+  title: 用語集
 @z
 
 @x
@@ -2147,7 +2179,7 @@ Samples:
 サンプル:
 - path: __SUBDIR__/samples/
   title: 概要
-- sectiontitle: Databases
+- sectiontitle: データベース
   section:
     - path: __SUBDIR__/samples/mariadb/
       title: MariaDB
@@ -4545,7 +4577,7 @@ Manuals:
     - path: /admin/organization/activity-logs/
       title: Activity logs
     - path: /admin/organization/general-settings/
-      title: General settings
+      title: Organization settings
 @y
   - sectiontitle: Organization administration
     section:
@@ -4562,7 +4594,7 @@ Manuals:
     - path: __SUBDIR__/admin/organization/activity-logs/
       title: アクティビティーログ
     - path: __SUBDIR__/admin/organization/general-settings/
-      title: 一般的設定
+      title: 組織の設定
 @z
 
 @x
@@ -4823,18 +4855,14 @@ FAQ:
     title: Overview
   - path: /billing/faqs/
     title: Billing
-  - path: /build/cloud/faq/
-    title: Build Cloud
   - path: /compose/faq/
     title: Compose
 @y
 FAQ:
   - path: __SUBDIR__/faq/
-    title: Overview
+    title: 概要
   - path: __SUBDIR__/billing/faqs/
-    title: Billing
-  - path: __SUBDIR__/build/cloud/faq/
-    title: Build Cloud
+    title: 支払い
   - path: __SUBDIR__/compose/faq/
     title: Compose
 @z

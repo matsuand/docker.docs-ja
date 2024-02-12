@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Optimize for building in the cloud
@@ -81,13 +83,13 @@ more efficient:
 ### Dockerignore files
 @z
 
-@x
+@x __SUBDIR__ 対応
 Using a [`.dockerignore` file](/build/building/context/#dockerignore-files),
 you can be explicit about which local files you don’t want to include in the
 build context. Files caught by the glob patterns you specify in your
 ignore-file aren't transferred to the remote builder.
 @y
-Using a [`.dockerignore` file](/build/building/context/#dockerignore-files),
+Using a [`.dockerignore` file](__SUBDIR__/build/building/context/#dockerignore-files),
 you can be explicit about which local files you don’t want to include in the
 build context. Files caught by the glob patterns you specify in your
 ignore-file aren't transferred to the remote builder.
@@ -164,7 +166,7 @@ Write your Dockerfile in such a way that the final runtime stage uses the
 smallest possible base image, with only the resources that your program requires
 to run.
 @y
-[Multi-stage builds](/build/building/multi-stage/) can make your build run faster,
+[Multi-stage builds](__SUBDIR__/build/building/multi-stage/) can make your build run faster,
 because stages can run in parallel. It can also make your end-result smaller.
 Write your Dockerfile in such a way that the final runtime stage uses the
 smallest possible base image, with only the resources that your program requires
@@ -178,7 +180,7 @@ using the Dockerfile `COPY --from` instruction. This technique can reduce the
 number of layers, and the size of those layers, in the final stage.
 @y
 It’s also possible to
-[copy resources from other images or stages](/build/building/multi-stage/#name-your-build-stages),
+[copy resources from other images or stages](__SUBDIR__/build/building/multi-stage/#name-your-build-stages),
 using the Dockerfile `COPY --from` instruction. This technique can reduce the
 number of layers, and the size of those layers, in the final stage.
 @z
@@ -207,7 +209,7 @@ You can fetch remote files during the build using the
 or in your `RUN` instructions with tools like `wget` and `rsync`.
 @y
 You can fetch remote files during the build using the
-[Dockerfile `ADD` instruction](/engine/reference/builder/#add),
+[Dockerfile `ADD` instruction](__SUBDIR__/engine/reference/builder/#add),
 or in your `RUN` instructions with tools like `wget` and `rsync`.
 @z
 

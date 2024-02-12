@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Docker Engine 19.03 release notes
@@ -1584,7 +1586,7 @@ For more information on deprecated flags and APIs, refer to
 [deprecation information](/engine/deprecated/) for target removal dates.
 @y
 For more information on deprecated flags and APIs, refer to
-[deprecation information](/engine/deprecated/) for target removal dates.
+[deprecation information](__SUBDIR__/engine/deprecated/) for target removal dates.
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker secret rm
 aliases: docker secret rm, docker secret remove
@@ -18,7 +20,7 @@ long: |-
 @x
     For detailed information about using secrets, refer to [manage sensitive data with Docker secrets](/engine/swarm/secrets/).
 @y
-    For detailed information about using secrets, refer to [manage sensitive data with Docker secrets](/engine/swarm/secrets/).
+    For detailed information about using secrets, refer to [manage sensitive data with Docker secrets](__SUBDIR__/engine/swarm/secrets/).
 @z
 
 @x
@@ -49,7 +51,7 @@ examples: |-
     >
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](/engine/swarm/) in the
+    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
 usage: docker secret rm SECRET [SECRET...]
 pname: docker secret

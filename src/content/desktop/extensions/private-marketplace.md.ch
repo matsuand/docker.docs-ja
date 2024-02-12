@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: How to configure and use Docker Extensions' private marketplace
@@ -470,7 +472,7 @@ When you select the **Extensions** tab, you should see the private marketplace l
 @x
 ![Extensions Private Marketplace](/assets/images/extensions-private-marketplace.webp)
 @y
-![Extensions Private Marketplace](/assets/images/extensions-private-marketplace.webp)
+![Extensions Private Marketplace](__SUBDIR__/assets/images/extensions-private-marketplace.webp)
 @z
 
 @x

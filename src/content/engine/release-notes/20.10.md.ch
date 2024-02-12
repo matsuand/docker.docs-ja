@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Docker Engine 20.10 release notes
@@ -1974,7 +1976,7 @@ well as updated versions of the containerd.io package.
 @x
 For an overview of all deprecated features, refer to the [Deprecated Engine Features](/engine/deprecated/) page.
 @y
-For an overview of all deprecated features, refer to the [Deprecated Engine Features](/engine/deprecated/) page.
+For an overview of all deprecated features, refer to the [Deprecated Engine Features](__SUBDIR__/engine/deprecated/) page.
 @z
 
 @x

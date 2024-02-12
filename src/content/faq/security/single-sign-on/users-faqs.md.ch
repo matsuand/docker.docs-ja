@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Single Sign-on user management FAQs
@@ -178,7 +180,7 @@ Docker SSO provides Just-In-Time (JIT) provisioning by default. This provisionin
 @x
 Additionally, you can use the [Docker Hub API](/docker-hub/api/latest/) to complete this process.
 @y
-Additionally, you can use the [Docker Hub API](/docker-hub/api/latest/) to complete this process.
+Additionally, you can use the [Docker Hub API](__SUBDIR__/docker-hub/api/latest/) to complete this process.
 @z
 
 @x

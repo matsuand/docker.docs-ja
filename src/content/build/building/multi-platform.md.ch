@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Multi-platform images
@@ -156,9 +158,9 @@ loads it through a binary registered in the `binfmt_misc` handler.
 @z
 
 @x
-## Support on Docker Desktop
+#### Support on Docker Desktop
 @y
-## Support on Docker Desktop
+#### Support on Docker Desktop
 @z
 
 @x
@@ -271,7 +273,7 @@ $ docker buildx build --platform linux/amd64,linux/arm64 .
 ```
 @z
 
-@x
+@x __SUBDIR__ 対応
 While this approach has advantages over emulation, managing multi-node builders
 introduces some overhead of setting up and managing builder clusters.
 Alternatively, you can use [Docker Build Cloud](/build/cloud/), a service that
@@ -282,7 +284,7 @@ benefits, such as a shared build cache.
 @y
 While this approach has advantages over emulation, managing multi-node builders
 introduces some overhead of setting up and managing builder clusters.
-Alternatively, you can use [Docker Build Cloud](/build/cloud/), a service that
+Alternatively, you can use [Docker Build Cloud](__SUBDIR__/build/cloud/), a service that
 provides managed multi-node builders on Docker's infrastructure. With Docker
 Build Cloud, you get native multi-platform Arm and X86-64 builders without the
 burden of maintaining them. Using cloud builders also provides additional

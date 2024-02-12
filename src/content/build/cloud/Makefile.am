@@ -5,7 +5,6 @@
 bases = \
 	_index.md       \
 	ci.md           \
-	faq.md          \
 	optimization.md \
 	setup.md        \
 	usage.md

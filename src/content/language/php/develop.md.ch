@@ -268,7 +268,7 @@ secrets:
 > **Note**
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](/compose/compose-file/).
+> reference](__SUBDIR__/compose/compose-file/).
 @z
 
 @x
@@ -1003,7 +1003,7 @@ Related information:
 @y
 Related information:
  - [Build with Docker guide](../../build/guide/index.md)
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](__SUBDIR__/compose/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Dockerfile reference](../../engine/reference/builder.md)
  - [Official Docker Image for PHP](https://hub.docker.com/_/php)

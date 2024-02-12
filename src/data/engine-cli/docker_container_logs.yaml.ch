@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container logs
 aliases: docker container logs, docker logs
@@ -20,7 +22,7 @@ long: |-
     [Configure logging drivers](/config/containers/logging/configure/).
 @y
     For more information about selecting and configuring logging drivers, refer to
-    [Configure logging drivers](/config/containers/logging/configure/).
+    [Configure logging drivers](__SUBDIR__/config/containers/logging/configure/).
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker buildx build
 aliases: docker buildx build, docker buildx b
@@ -544,7 +546,7 @@ examples: |-
     ### Create annotations (--annotation) {#annotation}
 @y
     For documentation on most of these flags, refer to the [`docker build`
-    documentation](/engine/reference/commandline/image_build/).
+    documentation](__SUBDIR__/engine/reference/commandline/image_build/).
     This page describes a subset of the new flags.
 usage: docker buildx build [OPTIONS] PATH | URL | -
 pname: docker buildx
@@ -1176,7 +1178,7 @@ examples: |-
     [Annotations](/build/building/annotations/).
 @y
     For more information about annotations, see
-    [Annotations](/build/building/annotations/).
+    [Annotations](__SUBDIR__/build/building/annotations/).
 @z
 
 @x
@@ -1201,7 +1203,7 @@ examples: |-
     Create [image attestations](/build/attestations/).
     BuildKit currently supports:
 @y
-    Create [image attestations](/build/attestations/).
+    Create [image attestations](__SUBDIR__/build/attestations/).
     BuildKit currently supports:
 @z
 
@@ -1222,7 +1224,7 @@ examples: |-
 @x
       For more information, see [here](/build/attestations/sbom/).
 @y
-      For more information, see [here](/build/attestations/sbom/).
+      For more information, see [here](__SUBDIR__/build/attestations/sbom/).
 @z
 
 @x
@@ -1250,7 +1252,7 @@ examples: |-
 @x
       For more information, see [here](/build/attestations/slsa-provenance/).
 @y
-      For more information, see [here](/build/attestations/slsa-provenance/).
+      For more information, see [here](__SUBDIR__/build/attestations/slsa-provenance/).
 @z
 
 @x
@@ -1282,7 +1284,7 @@ examples: |-
 @y
     - `network.host` - Allows executions with host networking.
     - `security.insecure` - Allows executions without sandbox. See
-      [related Dockerfile extensions](/engine/reference/builder/#run---securitysandbox).
+      [related Dockerfile extensions](__SUBDIR__/engine/reference/builder/#run---securitysandbox).
 @z
 
 @x
@@ -1314,7 +1316,7 @@ examples: |-
 @x
     Same as [`docker build` command](/engine/reference/commandline/image_build/#build-arg).
 @y
-    Same as [`docker build` command](/engine/reference/commandline/image_build/#build-arg).
+    Same as [`docker build` command](__SUBDIR__/engine/reference/commandline/image_build/#build-arg).
 @z
 
 @x
@@ -1346,7 +1348,7 @@ examples: |-
 @x
     Learn more about the built-in build arguments in the [Dockerfile reference docs](/engine/reference/builder/#buildkit-built-in-build-args).
 @y
-    Learn more about the built-in build arguments in the [Dockerfile reference docs](/engine/reference/builder/#buildkit-built-in-build-args).
+    Learn more about the built-in build arguments in the [Dockerfile reference docs](__SUBDIR__/engine/reference/builder/#buildkit-built-in-build-args).
 @z
 
 @x
@@ -2213,7 +2215,7 @@ examples: |-
 @y
     Inside a `Dockerfile`, you can access the current platform value through
     `TARGETPLATFORM` build argument. Refer to the [`docker build`
-    documentation](/engine/reference/builder/#automatic-platform-args-in-the-global-scope)
+    documentation](__SUBDIR__/engine/reference/builder/#automatic-platform-args-in-the-global-scope)
     for the full description of automatic platform argument variants .
 @z
 
@@ -2370,7 +2372,7 @@ examples: |-
     [here](/build/attestations/slsa-provenance/).
 @y
     For more information about provenance attestations, see
-    [here](/build/attestations/slsa-provenance/).
+    [here](__SUBDIR__/build/attestations/slsa-provenance/).
 @z
 
 @x
@@ -2428,7 +2430,7 @@ examples: |-
 @x
     For more information, see [here](/build/attestations/sbom/).
 @y
-    For more information, see [here](/build/attestations/sbom/).
+    For more information, see [here](__SUBDIR__/build/attestations/sbom/).
 @z
 
 @x
@@ -2452,7 +2454,7 @@ examples: |-
     [`RUN --mount=type=secret` mount](/engine/reference/builder/#run---mounttypesecret).
 @y
     Exposes secret to the build. The secret can be used by the build using
-    [`RUN --mount=type=secret` mount](/engine/reference/builder/#run---mounttypesecret).
+    [`RUN --mount=type=secret` mount](__SUBDIR__/engine/reference/builder/#run---mounttypesecret).
 @z
 
 @x
@@ -2602,7 +2604,7 @@ examples: |-
     [`RUN --mount=type=ssh` mount](/engine/reference/builder/#run---mounttypessh).
 @y
     `--ssh` exposes SSH agent socket or keys to the build and can be used with the
-    [`RUN --mount=type=ssh` mount](/engine/reference/builder/#run---mounttypessh).
+    [`RUN --mount=type=ssh` mount](__SUBDIR__/engine/reference/builder/#run---mounttypessh).
 @z
 
 @x

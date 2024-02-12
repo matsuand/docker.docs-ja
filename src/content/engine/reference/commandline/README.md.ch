@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 _build:
@@ -34,7 +36,7 @@ The files in this directory are stub files which include the file
 `/_includes/cli.md`, which parses YAML files generated from the
 [`docker/cli`](https://github.com/docker/cli) repository. The YAML files
 are parsed into output files like
-[/engine/reference/commandline/build/](/engine/reference/commandline/build/).
+[/engine/reference/commandline/build/](__SUBDIR__/engine/reference/commandline/build/).
 @z
 
 @x

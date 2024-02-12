@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: >
@@ -280,7 +282,7 @@ the [daemon configuration file](/engine/reference/commandline/dockerd/#daemon-co
 The dual logging cache accepts the same configuration options as the
 [`local` logging driver](local.md), but with a `cache-` prefix. These options
 can be specified per container, and defaults for new containers can be set using
-the [daemon configuration file](/engine/reference/commandline/dockerd/#daemon-configuration-file).
+the [daemon configuration file](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-configuration-file).
 @z
 
 @x
@@ -332,7 +334,7 @@ Caching can be disabled for individual containers or by default for new containe
 when using the [daemon configuration file](/engine/reference/commandline/dockerd/#daemon-configuration-file).
 @y
 Caching can be disabled for individual containers or by default for new containers,
-when using the [daemon configuration file](/engine/reference/commandline/dockerd/#daemon-configuration-file).
+when using the [daemon configuration file](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-configuration-file).
 @z
 
 @x

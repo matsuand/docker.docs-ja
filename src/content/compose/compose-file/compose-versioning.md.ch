@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Compose file reference
@@ -33,9 +35,9 @@ title: Compose file versions and upgrading
 >From the end of June 2023 Compose V1 won’t be supported anymore.
 >
 >The latest and recommended version of Compose is the [Compose Specification](index.md). 
->Make sure you switch to [Compose V2](/compose/compose-file/) with the `docker compose` CLI plugin or by activating the **Use Docker Compose V2** setting in Docker Desktop.
+>Make sure you switch to [Compose V2](__SUBDIR__/compose/compose-file/) with the `docker compose` CLI plugin or by activating the **Use Docker Compose V2** setting in Docker Desktop.
 >
-> For more information, see the [History of Compose](/compose/history/). 
+> For more information, see the [History of Compose](__SUBDIR__/compose/history/). 
 { .warning }
 @z
 
@@ -619,7 +621,7 @@ Designed to be cross-compatible between Compose and the Docker Engine's
 several more.
 @y
 Designed to be cross-compatible between Compose and the Docker Engine's
-[swarm mode](/engine/swarm/), version 3 removes several options and adds
+[swarm mode](__SUBDIR__/engine/swarm/), version 3 removes several options and adds
 several more.
 @z
 

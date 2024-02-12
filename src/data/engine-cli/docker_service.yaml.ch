@@ -8,9 +8,9 @@ long: |-
     Manage Swarm services.
 @y
 command: docker service
-short: Manage Swarm services
+short: Swarm サービスを管理します。
 long: |-
-    Manage Swarm services.
+    Swarm サービスを管理します。
 @z
 
 @x
@@ -20,91 +20,15 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker service
-pname: docker
-plink: docker.yaml
-cname:
-    - docker service create
-    - docker service inspect
-    - docker service logs
-    - docker service ls
-    - docker service ps
-    - docker service rm
-    - docker service rollback
-    - docker service scale
-    - docker service update
-clink:
-    - docker_service_create.yaml
-    - docker_service_inspect.yaml
-    - docker_service_logs.yaml
-    - docker_service_ls.yaml
-    - docker_service_ps.yaml
-    - docker_service_rm.yaml
-    - docker_service_rollback.yaml
-    - docker_service_scale.yaml
-    - docker_service_update.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
-    > **Note**
+    > **メモ**
     >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](/engine/swarm/) in the
-    > documentation.
-usage: docker service
-pname: docker
-plink: docker.yaml
-cname:
-    - docker service create
-    - docker service inspect
-    - docker service logs
-    - docker service ls
-    - docker service ps
-    - docker service rm
-    - docker service rollback
-    - docker service scale
-    - docker service update
-clink:
-    - docker_service_create.yaml
-    - docker_service_inspect.yaml
-    - docker_service_logs.yaml
-    - docker_service_ls.yaml
-    - docker_service_ps.yaml
-    - docker_service_rm.yaml
-    - docker_service_rollback.yaml
-    - docker_service_scale.yaml
-    - docker_service_update.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x inherited_options: help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
+@y
+      description: 利用方法を表示します。
 @z

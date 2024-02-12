@@ -301,6 +301,7 @@ bases = \
 	baseof.html            \
 	cli.html               \
 	engine-api-baseof.html \
+	glossary.html          \
 	hub-api-baseof.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -309,7 +310,6 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	glossary.html          \
 	list.html              \
 	single.html
 

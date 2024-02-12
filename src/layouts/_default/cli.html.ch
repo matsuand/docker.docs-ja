@@ -8,101 +8,19 @@
 % (T "Examples")
 % (T "Usage")
 % (T "Aliases")
+% heading.html に受け渡す dict の第三引数追加
 
 @x
-{{ define "left" }}
-  {{ partial "sidebar.html" . }}
-{{ end }}
-@y
-{{ define "left" }}
-  {{ partial "sidebar.html" . }}
-{{ end }}
-@z
-
-@x
-{{ define "main" }}
-  {{ $data := "" }}
-  {{ if .Params.datafolder }}
-    {{ $data = index (index site.Data .Params.datafolder) .Params.datafile }}
-  {{ else }}
-    {{ $data = index site.Data .Params.datafile }}
-  {{ end }}
-  {{ .Scratch.Set "headings" slice }}
-  {{ .Scratch.Set "subheadings" slice }}
-  {{ partial "breadcrumbs.html" . }}
-@y
-{{ define "main" }}
-  {{ $data := "" }}
-  {{ if .Params.datafolder }}
-    {{ $data = index (index site.Data .Params.datafolder) .Params.datafile }}
-  {{ else }}
-    {{ $data = index site.Data .Params.datafile }}
-  {{ end }}
-  {{ .Scratch.Set "headings" slice }}
-  {{ .Scratch.Set "subheadings" slice }}
-  {{ partial "breadcrumbs.html" . }}
-@z
-
-@x
-  <article class="DocSearch-content prose max-w-none dark:prose-invert">
-    {{ if ne .LinkTitle .Title }}
-    {{/*
-      we use linkTitle for surfacing popular aliases like "docker run"
-      if linkTitle is set, use both alias and canonical cmd as title
-    */}}
-    <h1 class="scroll-mt-36">{{ .LinkTitle }}<span
-      class="text-gray-light dark:text-gray-dark"> ({{ .Title }})</span>
-    </h1>
-    {{ else }}
-    <h1 class="scroll-mt-36">{{ .Title }}</h1>
-    {{ end }}
-@y
-  <article class="DocSearch-content prose max-w-none dark:prose-invert">
-    {{ if ne .LinkTitle .Title }}
-    {{/*
-      we use linkTitle for surfacing popular aliases like "docker run"
-      if linkTitle is set, use both alias and canonical cmd as title
-    */}}
-    <h1 class="scroll-mt-36">{{ .LinkTitle }}<span
-      class="text-gray-light dark:text-gray-dark"> ({{ .Title }})</span>
-    </h1>
-    {{ else }}
-    <h1 class="scroll-mt-36">{{ .Title }}</h1>
-    {{ end }}
-@z
-
-@x
-    {{ $data.short | .RenderString (dict "display" "block") }}
-    {{ if $data.deprecated }}
-      <blockquote class="warning">
-        <p><strong>This command is deprecated</strong></p>
-        <p>
-          It may be removed in a future Docker version. For more information,
-          see the
           <a href="https://github.com/docker/roadmap/issues/209"
             >Docker roadmap</a
           >
-        </p>
-      </blockquote>
-    {{ end }}
 @y
-    {{ $data.short | .RenderString (dict "display" "block") }}
-    {{ if $data.deprecated }}
-      <blockquote class="warning">
-        <p><strong>This command is deprecated</strong></p>
-        <p>
-          It may be removed in a future Docker version. For more information,
-          see the
           <a href="https://github.com/docker/roadmap/issues/209"
-            >Docker roadmap</a
+            >Docker ロードマップ</a
           >
-        </p>
-      </blockquote>
-    {{ end }}
 @z
 
 @x
-    {{ if or $data.experimental $data.experimentalcli }}
       <blockquote class="important">
         <p><strong>This command is experimental</strong></p>
         <p>
@@ -111,9 +29,7 @@
           can be removed entirely in a future release.
         </p>
       </blockquote>
-    {{ end }}
 @y
-    {{ if or $data.experimental $data.experimentalcli }}
       <blockquote class="important">
         <p><strong>This command is experimental</strong></p>
         <p>
@@ -122,7 +38,6 @@
           can be removed entirely in a future release.
         </p>
       </blockquote>
-    {{ end }}
 @z
 
 @x
@@ -152,12 +67,12 @@
     {{ with $data.swarm }}
       <p>
         {{ partial "components/badge.html" (dict "color" "blue" "content" "Swarm") }}
-        This command works with the Swarm orchestrator.
+        このコマンドは Swarm オーケストレーターにおいて動作します。
       </p>
     {{ end }}
 @z
 
-@x (T "Usage")
+@x (T "Usage") ／dict 第三引数追加
     {{ with $data.usage }}
       {{ $heading := dict "level" 2 "text" "Usage" }}
       {{ partial "heading.html" $heading }}
@@ -166,14 +81,14 @@
     {{ end }}
 @y
     {{ with $data.usage }}
-      {{ $heading := dict "level" 2 "text" (T "Usage") }}
+      {{ $heading := dict "level" 2 "text" (T "Usage") "id" "usage" }}
       {{ partial "heading.html" $heading }}
       {{ $.Scratch.Add "headings" $heading }}
       {{ highlight (strings.Replace . "\t" "") "console" }}
     {{ end }}
 @z
 
-@x (T "Aliases")
+@x (T "Aliases") ／dict 第三引数追加
     {{ with $data.aliases }}
       {{ $heading := dict "level" 2 "text" "Aliases" }}
       {{ partial "heading.html" $heading }}
@@ -187,7 +102,7 @@
     {{ end }}
 @y
     {{ with $data.aliases }}
-      {{ $heading := dict "level" 2 "text" (T "Aliases") }}
+      {{ $heading := dict "level" 2 "text" (T "Aliases") "id" "aliases" }}
       {{ partial "heading.html" $heading }}
       {{ $aliases := strings.Split . ", " }}
       <p>The following commands are equivalent and redirect here:</p>
@@ -199,7 +114,7 @@
     {{ end }}
 @z
 
-@x (T "Description")
+@x (T "Description") ／dict 第三引数追加
     {{ with $data.long }}
       {{ $heading := dict "level" 2 "text" "Description" }}
       {{ partial "heading.html" $heading }}
@@ -214,7 +129,7 @@
     {{ end }}
 @y
     {{ with $data.long }}
-      {{ $heading := dict "level" 2 "text" (T "Description") }}
+      {{ $heading := dict "level" 2 "text" (T "Description") "id" "description" }}
       {{ partial "heading.html" $heading }}
       {{ $subHeadings := (strings.FindRE `(?m:#{3,4} .*)` .) }}
       {{ $.Scratch.Add "headings" $heading }}
@@ -227,7 +142,7 @@
     {{ end }}
 @z
 
-@x (T "Options")
+@x (T "Options") ／dict 第三引数追加
     {{ with $data.options }}
       {{ $heading := dict "level" 2 "text" "Options" }}
       {{ partial "heading.html" $heading }}
@@ -236,21 +151,19 @@
         <thead>
           <tr>
             <th>Option</th>
-            <th>Short</th>
             <th>Default</th>
             <th>Description</th>
           </tr>
         </thead>
 @y
     {{ with $data.options }}
-      {{ $heading := dict "level" 2 "text" (T "Options") }}
+      {{ $heading := dict "level" 2 "text" (T "Options") "id" "options" }}
       {{ partial "heading.html" $heading }}
       {{ $.Scratch.Add "headings" $heading }}
       <table>
         <thead>
           <tr>
             <th>{{ T "Option" }}</th>
-            <th>{{ T "Short" }}</th>
             <th>{{ T "Default" }}</th>
             <th>{{ T "Description" }}</th>
           </tr>
@@ -258,98 +171,14 @@
 @z
 
 @x
-        <tbody>
-          {{ range where . "hidden" false }}
-            <tr>
-              <td>{{ with .option }}<code>--{{ . }}</code>{{ end }}</td>
-              <td>{{ with .shorthand }}<code>-{{ . }}</code>{{ end }}</td>
-              {{ $skipDefault := `[],map[],false,0,0s,default,'',""` }}
-              <td>
-                {{ with .default_value }}
-                  {{ cond (in $skipDefault .) "" (printf "<code>%s</code>" . | safeHTML) }}
-                {{ end }}
-              </td>
-@y
-        <tbody>
-          {{ range where . "hidden" false }}
-            <tr>
-              <td>{{ with .option }}<code>--{{ . }}</code>{{ end }}</td>
-              <td>{{ with .shorthand }}<code>-{{ . }}</code>{{ end }}</td>
-              {{ $skipDefault := `[],map[],false,0,0s,default,'',""` }}
-              <td>
-                {{ with .default_value }}
-                  {{ cond (in $skipDefault .) "" (printf "<code>%s</code>" . | safeHTML) }}
-                {{ end }}
-              </td>
-@z
-
-@x
-              <td>
                 {{ with .min_api_version }}
                   {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s+" .)) }}
-                {{ end }}
-                {{ with .deprecated }}
-                  {{ partial "components/badge.html" (dict "color" "red" "content" "Deprecated") }}
-                {{ end }}
-                {{ with .experimental }}
-                  {{ partial "components/badge.html" (dict "color" "amber" "content" "experimental (daemon)") }}
-                {{ end }}
-                {{ with .experimentalcli }}
-                  {{ partial "components/badge.html" (dict "color" "amber" "content" "experimental (CLI)") }}
-                {{ end }}
 @y
-              <td>
                 {{ with .min_api_version }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s+" .)) }}
-                {{ end }}
-                {{ with .deprecated }}
-                  {{ partial "components/badge.html" (dict "color" "red" "content" "Deprecated") }}
-                {{ end }}
-                {{ with .experimental }}
-                  {{ partial "components/badge.html" (dict "color" "amber" "content" "experimental (daemon)") }}
-                {{ end }}
-                {{ with .experimentalcli }}
-                  {{ partial "components/badge.html" (dict "color" "amber" "content" "experimental (CLI)") }}
-                {{ end }}
+                  {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s 以上" .)) }}
 @z
 
-@x
-                {{ with .kubernetes }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" "Kubernetes") }}
-                {{ end }}
-                {{ with .swarm }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" "Swarm") }}
-                {{ end }}
-                {{ if .description }}
-                  {{/* replace newlines in long desc with break tags */}}
-                  {{ markdownify (strings.Replace .description "\n" "<br>") }}
-                {{ end }}
-              </td>
-            </tr>
-          {{ end }}
-        </tbody>
-      </table>
-    {{ end }}
-@y
-                {{ with .kubernetes }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" "Kubernetes") }}
-                {{ end }}
-                {{ with .swarm }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" "Swarm") }}
-                {{ end }}
-                {{ if .description }}
-                  {{/* replace newlines in long desc with break tags */}}
-                  {{ markdownify (strings.Replace .description "\n" "<br>") }}
-                {{ end }}
-              </td>
-            </tr>
-          {{ end }}
-        </tbody>
-      </table>
-    {{ end }}
-@z
-
-@x (T "Examples")
+@x (T "Examples") ／dict 第三引数追加
     {{ with $data.examples }}
       {{ $heading := dict "level" 2 "text" "Examples" }}
       {{ partial "heading.html" $heading }}
@@ -367,7 +196,7 @@
 {{ end }}
 @y
     {{ with $data.examples }}
-      {{ $heading := dict "level" 2 "text" (T "Examples") }}
+      {{ $heading := dict "level" 2 "text" (T "Examples") "id" "examples" }}
       {{ partial "heading.html" $heading }}
       {{ $subHeadings := (strings.FindRE `(?m:#{3,4} .*)` .) }}
       {{ $.Scratch.Add "headings" $heading }}

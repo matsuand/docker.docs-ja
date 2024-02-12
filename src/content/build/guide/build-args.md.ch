@@ -99,22 +99,22 @@ has to be. Build arguments make life easier:
 
 @x
   FROM scratch AS client
-  COPY --from=build /bin/client /bin/
+  COPY --from=build-client /bin/client /bin/
   ENTRYPOINT [ "/bin/client" ]
 @y
   FROM scratch AS client
-  COPY --from=build /bin/client /bin/
+  COPY --from=build-client /bin/client /bin/
   ENTRYPOINT [ "/bin/client" ]
 @z
 
 @x
   FROM scratch AS server
-  COPY --from=build /bin/server /bin/
+  COPY --from=build-server /bin/server /bin/
   ENTRYPOINT [ "/bin/server" ]
 ```
 @y
   FROM scratch AS server
-  COPY --from=build /bin/server /bin/
+  COPY --from=build-server /bin/server /bin/
   ENTRYPOINT [ "/bin/server" ]
 ```
 @z

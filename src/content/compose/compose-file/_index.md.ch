@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
 ---
 description: Find the latest recommended version of the Docker Compose file format
@@ -153,7 +154,7 @@ The Compose Specification on Docker Docs is the Docker Compose implementation. I
 > Compose V1 no longer receives updates and is not available in new releases of Docker Desktop.
 >
 > Compose V2 is included with all currently supported versions of Docker Desktop.
-> For more information, see [Migrate to Compose V2](/compose/migrate).
+> For more information, see [Migrate to Compose V2](__SUBDIR__/compose/migrate).
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Manage autobuilds
@@ -104,7 +106,7 @@ repository and branch, or tag, the build logs, the build duration, creation time
 @x
 ![Build report](/docker-hub/images/index-report.png)
 @y
-![Build report](/docker-hub/images/index-report.png)
+![Build report](__SUBDIR__/docker-hub/images/index-report.png)
 @z
 
 @x
