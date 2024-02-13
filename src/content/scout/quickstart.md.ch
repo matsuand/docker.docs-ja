@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Docker Scout quickstart
@@ -126,7 +128,7 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 Docker Scout analyzes all local images by default. To analyze images in
 remote repositories, you need to enable it first.
 You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
-[Find out how in the overview guide](/scout).
+[Find out how in the overview guide](__SUBDIR__/scout).
 @z
 
 @x
@@ -137,7 +139,7 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 @y
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.
-2. Use the Docker CLI [`docker scout repo enable`](/engine/reference/commandline/scout_repo_enable)
+2. Use the Docker CLI [`docker scout repo enable`](__SUBDIR__/engine/reference/commandline/scout_repo_enable)
    command to enable analysis on an existing repository:
 @z
 
@@ -198,7 +200,7 @@ Learn more about the `docker scout cves` command in the
 [`CLI reference documentation`](/engine/reference/commandline/scout_cves).
 @y
 Learn more about the `docker scout cves` command in the
-[`CLI reference documentation`](/engine/reference/commandline/scout_cves).
+[`CLI reference documentation`](__SUBDIR__/engine/reference/commandline/scout_cves).
 @z
 
 @x
@@ -683,8 +685,8 @@ Check out the following sections:
 - [Policy evaluation](./policy/_index.md)
 @y
 - [Image analysis](./image-analysis.md)
-- [Data sources](/scout/advisory-db-sources)
-- [Docker Scout Dashboard](/scout/dashboard)
+- [Data sources](__SUBDIR__/scout/advisory-db-sources)
+- [Docker Scout Dashboard](__SUBDIR__/scout/dashboard)
 - [Integrations](./integrations/_index.md)
 - [Policy evaluation](./policy/_index.md)
 @z

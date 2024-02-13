@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Learn how to optimize your use of ZFS driver.
@@ -338,7 +340,7 @@ See all storage options for each storage driver in the
 [daemon reference documentation](/engine/reference/commandline/dockerd/#daemon-storage-driver)
 @y
 See all storage options for each storage driver in the
-[daemon reference documentation](/engine/reference/commandline/dockerd/#daemon-storage-driver)
+[daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-storage-driver)
 @z
 
 @x

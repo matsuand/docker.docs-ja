@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Learn how to create, manage, and use volumes instead of bind mounts for
@@ -1727,6 +1729,6 @@ $ docker volume prune
 @y
 - Learn about [bind mounts](bind-mounts.md).
 - Learn about [tmpfs mounts](tmpfs.md).
-- Learn about [storage drivers](/storage/storagedriver/).
-- Learn about [third-party volume driver plugins](/engine/extend/legacy_plugins/).
+- Learn about [storage drivers](__SUBDIR__/storage/storagedriver/).
+- Learn about [third-party volume driver plugins](__SUBDIR__/engine/extend/legacy_plugins/).
 @z

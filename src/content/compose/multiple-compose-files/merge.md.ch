@@ -46,17 +46,125 @@ the rules described below and in the
 @z
 
 @x
+## How to merge multiple Compose files
+@y
+## How to merge multiple Compose files
+@z
+
+@x
 To use multiple override files, or an override file with a different name, you
-can use the `-f` option to specify the list of files. Compose merges files in
-the order they're specified on the command line. See the
-[`docker compose` command reference](../reference/index.md) for more information
-about using `-f`.
+can either use the pre-defined [COMPOSE_FILE](../environment-variables/envvars.md#compose_file) environment variable, or use the `-f` option to specify the list of files. 
 @y
 To use multiple override files, or an override file with a different name, you
-can use the `-f` option to specify the list of files. Compose merges files in
-the order they're specified on the command line. See the
-[`docker compose` command reference](../reference/index.md) for more information
-about using `-f`.
+can either use the pre-defined [COMPOSE_FILE](../environment-variables/envvars.md#compose_file) environment variable, or use the `-f` option to specify the list of files. 
+@z
+
+@x
+Compose merges files in
+the order they're specified on the command line. Subsequent files may merge, override, or
+add to their predecessors.
+@y
+Compose merges files in
+the order they're specified on the command line. Subsequent files may merge, override, or
+add to their predecessors.
+@z
+
+@x
+For example:
+@y
+For example:
+@z
+
+@x
+```console
+$ docker compose -f compose.yml -f compose.admin.yml run backup_db
+```
+@y
+```console
+$ docker compose -f compose.yml -f compose.admin.yml run backup_db
+```
+@z
+
+@x
+The `compose.yml` file might specify a `webapp` service.
+@y
+The `compose.yml` file might specify a `webapp` service.
+@z
+
+@x
+```yaml
+webapp:
+  image: examples/web
+  ports:
+    - "8000:8000"
+  volumes:
+    - "/data"
+```
+@y
+```yaml
+webapp:
+  image: examples/web
+  ports:
+    - "8000:8000"
+  volumes:
+    - "/data"
+```
+@z
+
+@x
+The `compose.admin.yml` may also specify this same service: 
+@y
+The `compose.admin.yml` may also specify this same service: 
+@z
+
+@x
+```yaml
+webapp:
+  environment:
+    - DEBUG=1
+```
+@y
+```yaml
+webapp:
+  environment:
+    - DEBUG=1
+```
+@z
+
+@x
+Any matching
+fields override the previous file. New values, add to the `webapp` service
+configuration:
+@y
+Any matching
+fields override the previous file. New values, add to the `webapp` service
+configuration:
+@z
+
+@x
+```yaml
+webapp:
+  image: examples/web
+  ports:
+    - "8000:8000"
+  volumes:
+    - "/data"
+  environment:
+    - DEBUG=1
+    - ANOTHER_VARIABLE=value
+```
+@y
+```yaml
+webapp:
+  image: examples/web
+  ports:
+    - "8000:8000"
+  volumes:
+    - "/data"
+  environment:
+    - DEBUG=1
+    - ANOTHER_VARIABLE=value
+```
 @z
 
 @x
@@ -81,6 +189,122 @@ Tracking which fragment of a service is relative to which path is difficult and
 confusing, so to keep paths easier to understand, all paths must be defined
 relative to the base file.
 { .important }
+@z
+
+@x
+### Additional information
+@y
+### Additional information
+@z
+
+@x
+- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yml` and a `compose.override.yml` file. You must supply at least the `compose.yml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
+@y
+- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yml` and a `compose.override.yml` file. You must supply at least the `compose.yml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
+@z
+
+@x
+- When you use multiple Compose files, all paths in the files are relative to the first configuration file specified with `-f`. You can  use the `--project-directory` option to override this base path.
+@y
+- When you use multiple Compose files, all paths in the files are relative to the first configuration file specified with `-f`. You can  use the `--project-directory` option to override this base path.
+@z
+
+@x
+- You can use a `-f` with `-` (dash) as the filename to read the configuration from `stdin`. For example: 
+   ```console
+   $ docker compose -f - <<EOF
+     webapp:
+       image: examples/web
+       ports:
+        - "8000:8000"
+       volumes:
+        - "/data"
+       environment:
+        - DEBUG=1
+     EOF
+   ```
+@y
+- You can use a `-f` with `-` (dash) as the filename to read the configuration from `stdin`. For example: 
+   ```console
+   $ docker compose -f - <<EOF
+     webapp:
+       image: examples/web
+       ports:
+        - "8000:8000"
+       volumes:
+        - "/data"
+       environment:
+        - DEBUG=1
+     EOF
+   ```
+@z
+
+@x
+   When `stdin` is used, all paths in the configuration are relative to the current working directory.
+@y
+   When `stdin` is used, all paths in the configuration are relative to the current working directory.
+@z
+
+@x
+- You can use the `-f` flag to specify a path to a Compose file that is not located in the current directory, either from the command line or by setting up a [COMPOSE_FILE environment variable](../environment-variables/envvars.md#compose_file) in your shell or in an environment file.
+@y
+- You can use the `-f` flag to specify a path to a Compose file that is not located in the current directory, either from the command line or by setting up a [COMPOSE_FILE environment variable](../environment-variables/envvars.md#compose_file) in your shell or in an environment file.
+@z
+
+@x
+   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](../../engine/reference/commandline/compose_pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
+@y
+   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](../../engine/reference/commandline/compose_pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
+@z
+
+@x
+   Here's the full example:
+@y
+   Here's the full example:
+@z
+
+@x
+   ```console
+   $ docker compose -f ~/sandbox/rails/compose.yml pull db
+   Pulling db (postgres:latest)...
+   latest: Pulling from library/postgres
+   ef0380f84d05: Pull complete
+   50cf91dc1db8: Pull complete
+   d3add4cd115c: Pull complete
+   467830d8a616: Pull complete
+   089b9db7dc57: Pull complete
+   6fba0a36935c: Pull complete
+   81ef0e73c953: Pull complete
+   338a6c4894dc: Pull complete
+   15853f32f67c: Pull complete
+   044c83d92898: Pull complete
+   17301519f133: Pull complete
+   dcca70822752: Pull complete
+   cecf11b8ccf3: Pull complete
+   Digest: sha256:1364924c753d5ff7e2260cd34dc4ba05ebd40ee8193391220be0f9901d4e1651
+   Status: Downloaded newer image for postgres:latest
+   ```
+@y
+   ```console
+   $ docker compose -f ~/sandbox/rails/compose.yml pull db
+   Pulling db (postgres:latest)...
+   latest: Pulling from library/postgres
+   ef0380f84d05: Pull complete
+   50cf91dc1db8: Pull complete
+   d3add4cd115c: Pull complete
+   467830d8a616: Pull complete
+   089b9db7dc57: Pull complete
+   6fba0a36935c: Pull complete
+   81ef0e73c953: Pull complete
+   338a6c4894dc: Pull complete
+   15853f32f67c: Pull complete
+   044c83d92898: Pull complete
+   17301519f133: Pull complete
+   dcca70822752: Pull complete
+   cecf11b8ccf3: Pull complete
+   Digest: sha256:1364924c753d5ff7e2260cd34dc4ba05ebd40ee8193391220be0f9901d4e1651
+   Status: Downloaded newer image for postgres:latest
+   ```
 @z
 
 @x

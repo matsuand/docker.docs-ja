@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 This tutorial walks you through the process of setting up and using Docker GitHub
 Actions for building Docker images, and pushing images to Docker Hub. You will
@@ -73,7 +75,7 @@ Create a GitHub repository and configure the Docker Hub secrets.
    for Docker Hub. You can name this token `clockboxci`.
 @y
 4. Create a new
-   [Personal Access Token (PAT)](/security/for-developers/access-tokens/#create-an-access-token)
+   [Personal Access Token (PAT)](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token)
    for Docker Hub. You can name this token `clockboxci`.
 @z
 
@@ -288,7 +290,7 @@ The previous YAML snippet contains a sequence of steps that:
      it.
    - `tags`: tags that specify where to push the image.
 @y
-   - `context`: the [build context](/build/building/context/).
+   - `context`: the [build context](__SUBDIR__/build/building/context/).
    - `file`: filepath to the Dockerfile.
    - `push`: tells the action to upload the image to a registry after building
      it.

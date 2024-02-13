@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 An organization in Docker is a collection of teams and repositories
 that can be managed together. A team is a group of Docker members that belong to an organization.
@@ -38,5 +40,5 @@ The following diagram depicts the setup of an organization and how it relates to
 @x
 ![organization-hierarchy](/admin/images/org-structure.webp)
 @y
-![organization-hierarchy](/admin/images/org-structure.webp)
+![organization-hierarchy](__SUBDRI__/admin/images/org-structure.webp)
 @z

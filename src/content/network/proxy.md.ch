@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Configure Docker to use a proxy server
@@ -194,7 +196,7 @@ sections for configuring proxy settings for the CLI and daemon.
 These settings are used to configure proxy environment variables for containers
 only, and not used as proxy settings for the Docker CLI or the Docker Engine
 itself.
-Refer to the [environment variables](/engine/reference/commandline/cli/#environment-variables)
+Refer to the [environment variables](__SUBDIR__/engine/reference/commandline/cli/#environment-variables)
 and [configure the Docker daemon to use a proxy server](../config/daemon/systemd.md#httphttps-proxy)
 sections for configuring proxy settings for the CLI and daemon.
 @z

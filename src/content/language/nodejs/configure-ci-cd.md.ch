@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Configure CI/CD for your Node.js application
@@ -87,7 +89,7 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
    can name this token `node-docker`.
 @y
 4. Create a new [Personal Access Token
-   (PAT)](/security/for-developers/access-tokens/#create-an-access-token) for Docker Hub. You
+   (PAT)](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token) for Docker Hub. You
    can name this token `node-docker`.
 @z
 

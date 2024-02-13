@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 Now that we have configured a CI/CD pipeline, let's look at how we can deploy the application. Docker supports deploying containers on Azure ACI and AWS ECS. You can also deploy your application to Kubernetes if you have enabled Kubernetes in Docker Desktop.
 @y
@@ -22,7 +24,7 @@ The Docker Azure Integration enables developers to use native Docker commands to
 @x
 For detailed instructions, see [Deploying Docker containers on Azure](/cloud/aci-integration/).
 @y
-For detailed instructions, see [Deploying Docker containers on Azure](/cloud/aci-integration/).
+For detailed instructions, see [Deploying Docker containers on Azure](__SUBDIR__/cloud/aci-integration/).
 @z
 
 @x
@@ -46,7 +48,7 @@ The integration between Docker and Amazon ECS allows developers to use the Docke
 @x
 For detailed instructions, see [Deploying Docker containers on ECS](/cloud/ecs-integration/).
 @y
-For detailed instructions, see [Deploying Docker containers on ECS](/cloud/ecs-integration/).
+For detailed instructions, see [Deploying Docker containers on ECS](__SUBDIR__/cloud/ecs-integration/).
 @z
 
 @x
@@ -84,5 +86,5 @@ To enable Kubernetes:
 @x
 For detailed information, see [Deploy on Kubernetes](/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](/get-started/kube-deploy/#describing-apps-using-kubernetes-yaml).
 @y
-For detailed information, see [Deploy on Kubernetes](/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](/get-started/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](__SUBDIR__/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](__SUBDIR__/get-started/kube-deploy/#describing-apps-using-kubernetes-yaml).
 @z

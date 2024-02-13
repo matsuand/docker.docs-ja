@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Configure registry.json to enforce users to sign into Docker Desktop
@@ -108,7 +110,7 @@ following occurs:
 details, see [Manage members](/admin/organization/members/).
 @y
 1. Ensure that the user is a member of your organization in Docker. For more
-details, see [Manage members](/admin/organization/members/).
+details, see [Manage members](__SUBDIR__/admin/organization/members/).
 @z
 
 @x

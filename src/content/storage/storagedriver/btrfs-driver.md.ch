@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Learn how to optimize your use of Btrfs driver.
@@ -290,7 +292,7 @@ This procedure is essentially identical on SLES and Ubuntu.
    [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
 @y
    See all storage options for each storage driver in the
-   [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
+   [daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#options-per-storage-driver)
 @z
 
 @x

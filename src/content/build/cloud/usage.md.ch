@@ -290,3 +290,155 @@ This lets you and your team work collaboratively on troubleshooting and
 improving build speeds, without having to send build logs and benchmarks back
 and forth between each other.
 @z
+
+@x
+## Use secrets with Docker Build Cloud
+@y
+## Use secrets with Docker Build Cloud
+@z
+
+@x
+To use build secrets with Docker Build Cloud,
+such as authentication credentials or tokens,
+use the `--secret` and `--ssh` CLI flags for the `docker buildx` command.
+The traffic is end-to-end encrypted and secrets are never stored in the build cache.
+@y
+To use build secrets with Docker Build Cloud,
+such as authentication credentials or tokens,
+use the `--secret` and `--ssh` CLI flags for the `docker buildx` command.
+The traffic is end-to-end encrypted and secrets are never stored in the build cache.
+@z
+
+@x
+> **Warning**
+>
+> If you're misusing build arguments to pass credentials, authentication
+> tokens, or other secrets, you should refactor your build to pass the secrets using
+> [secret mounts](../../engine/reference/commandline/buildx_build.md#secret) instead.
+> Build arguments are stored in the cache and their values are exposed through attestations.
+> Secret mounts don't leak outside of the build and are never included in attestations.
+{.warning}
+@y
+> **Warning**
+>
+> If you're misusing build arguments to pass credentials, authentication
+> tokens, or other secrets, you should refactor your build to pass the secrets using
+> [secret mounts](../../engine/reference/commandline/buildx_build.md#secret) instead.
+> Build arguments are stored in the cache and their values are exposed through attestations.
+> Secret mounts don't leak outside of the build and are never included in attestations.
+{.warning}
+@z
+
+@x
+For more information, refer to:
+@y
+For more information, refer to:
+@z
+
+@x
+- [`docker buildx build --secret`](/engine/reference/commandline/buildx_build/#secret)
+- [`docker buildx build --ssh`](/engine/reference/commandline/buildx_build/#ssh)
+@y
+- [`docker buildx build --secret`](__SUBDIR__/engine/reference/commandline/buildx_build/#secret)
+- [`docker buildx build --ssh`](__SUBDIR__/engine/reference/commandline/buildx_build/#ssh)
+@z
+
+@x
+## Managing build cache
+@y
+## Managing build cache
+@z
+
+@x
+You don't need to manage Docker Build Cloud cache manually.
+The system manages it for you through [garbage collection](/build/cache/garbage-collection/).
+@y
+You don't need to manage Docker Build Cloud cache manually.
+The system manages it for you through [garbage collection](__SUBDIR__/build/cache/garbage-collection/).
+@z
+
+@x
+Old cache is automatically removed if you hit your storage limit.
+You can check your current cache state using the
+[`docker buildx du` command](/engine/reference/commandline/buildx_du/).
+@y
+Old cache is automatically removed if you hit your storage limit.
+You can check your current cache state using the
+[`docker buildx du` command](__SUBDIR__/engine/reference/commandline/buildx_du/).
+@z
+
+@x
+To clear the builder's cache manually,
+use the [`docker buildx prune` command](/engine/reference/commandline/buildx_prune/).
+This works like pruning the cache for any other builder.
+@y
+To clear the builder's cache manually,
+use the [`docker buildx prune` command](__SUBDIR__/engine/reference/commandline/buildx_prune/).
+This works like pruning the cache for any other builder.
+@z
+
+@x
+> **Warning**
+>
+> Pruning a cloud builder's cache also removes the cache for other team members
+> using the same builder.
+{ .warning }
+@y
+> **Warning**
+>
+> Pruning a cloud builder's cache also removes the cache for other team members
+> using the same builder.
+{ .warning }
+@z
+
+@x
+## Unset Docker Build Cloud as the default builder
+@y
+## Unset Docker Build Cloud as the default builder
+@z
+
+@x
+If you've set a cloud builder as the default builder
+and want to revert to the default `docker` builder,
+run the following command:
+@y
+If you've set a cloud builder as the default builder
+and want to revert to the default `docker` builder,
+run the following command:
+@z
+
+@x
+```console
+$ docker context use default
+```
+@y
+```console
+$ docker context use default
+```
+@z
+
+@x
+This doesn't remove the builder from your system.
+It only changes the builder that's automatically selected to run your builds.
+@y
+This doesn't remove the builder from your system.
+It only changes the builder that's automatically selected to run your builds.
+@z
+
+@x
+## Registries on internal networks
+@y
+## Registries on internal networks
+@z
+
+@x
+It isn't possible to use Docker Build Cloud with a private registry
+or registry mirror on an internal network behind a VPN.
+All endpoints that a cloud builder interacts with,
+including OCI registries, must be accessible over the internet.
+@y
+It isn't possible to use Docker Build Cloud with a private registry
+or registry mirror on an internal network behind a VPN.
+All endpoints that a cloud builder interacts with,
+including OCI registries, must be accessible over the internet.
+@z

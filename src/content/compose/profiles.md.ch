@@ -16,12 +16,6 @@ keywords: cli, compose, profile, profiles reference
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 Profiles help you adjust the Compose application model for various uses and
 environments by selectively starting services.
 This is achieved by assigning each service to zero or more profiles. If
@@ -190,6 +184,16 @@ In the example, `compose.yml` file above, this starts the services `backend`,
 @z
 
 @x
+You can also enable
+multiple profiles, e.g. with `docker compose --profile frontend --profile debug up`
+the profiles `frontend` and `debug` will be enabled.
+@y
+You can also enable
+multiple profiles, e.g. with `docker compose --profile frontend --profile debug up`
+the profiles `frontend` and `debug` will be enabled.
+@z
+
+@x
 Multiple profiles can be specified by passing multiple `--profile` flags or
 a comma-separated list for the `COMPOSE_PROFILES` environment variable:
 @y
@@ -215,6 +219,12 @@ $ COMPOSE_PROFILES=frontend,debug docker compose up
 ```console
 $ COMPOSE_PROFILES=frontend,debug docker compose up
 ```
+@z
+
+@x
+If you want to enable all profiles at the same time, you can run `docker compose --profile "*"`.
+@y
+If you want to enable all profiles at the same time, you can run `docker compose --profile "*"`.
 @z
 
 @x
@@ -388,11 +398,11 @@ $ docker compose up -d mock-backend
 @z
 
 @x
-# This fails because profiles "dev" is disabled
+# This fails because profiles "dev" is not enabled
 $ docker compose up phpmyadmin
 ```
 @y
-# This fails because profiles "dev" is disabled
+# This fails because profiles "dev" is not enabled
 $ docker compose up phpmyadmin
 ```
 @z

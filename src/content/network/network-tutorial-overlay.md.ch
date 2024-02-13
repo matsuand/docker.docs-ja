@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Networking with overlay networks
@@ -1012,7 +1014,7 @@ example also uses Linux hosts, but the same commands work on Windows.
     The two containers communicate with the overlay network connecting the two
     hosts. If you run another alpine container on `host2` that is _not detached_,
     you can ping `alpine1` from `host2` (and here we add the
-    [remove option](/engine/reference/commandline/container_run/#rm) for automatic container cleanup):
+    [remove option](__SUBDIR__/engine/reference/commandline/container_run/#rm) for automatic container cleanup):
 @z
 
 @x

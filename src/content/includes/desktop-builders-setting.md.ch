@@ -1,13 +1,15 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 If you have turned on the
 [Docker Desktop Builds view](/desktop/use-desktop/builds/), you can use the
 **Builders** tab to inspect and manage builders in the Docker Desktop settings.
 @y
 If you have turned on the
-[Docker Desktop Builds view](/desktop/use-desktop/builds/), you can use the
+[Docker Desktop Builds view](__SUBDIR__/desktop/use-desktop/builds/), you can use the
 **Builders** tab to inspect and manage builders in the Docker Desktop settings.
 @z
 
@@ -88,7 +90,7 @@ To create a builder, use the Docker CLI. See
 [Create a new builder](/build/builders/manage/#create-a-new-builder)
 @y
 To create a builder, use the Docker CLI. See
-[Create a new builder](/build/builders/manage/#create-a-new-builder)
+[Create a new builder](__SUBDIR__/build/builders/manage/#create-a-new-builder)
 @z
 
 @x
@@ -107,8 +109,8 @@ You can remove a builder if:
 - The builder isn't your [selected builder](/build/builders/#selected-builder)
 - The builder isn't [associated with a Docker context](/build/builders/#default-builder).
 @y
-- The builder isn't your [selected builder](/build/builders/#selected-builder)
-- The builder isn't [associated with a Docker context](/build/builders/#default-builder).
+- The builder isn't your [selected builder](__SUBDIR__/build/builders/#selected-builder)
+- The builder isn't [associated with a Docker context](__SUBDIR__/build/builders/#default-builder).
 @z
 
 @x
@@ -156,7 +158,7 @@ run the BuildKit daemon in a container.
 You can start and stop the BuildKit container using the drop-down menu.
 @y
 Builders that use the
-[`docker-container` driver](/build/drivers/docker-container/)
+[`docker-container` driver](__SUBDIR__/build/drivers/docker-container/)
 run the BuildKit daemon in a container.
 You can start and stop the BuildKit container using the drop-down menu.
 @z

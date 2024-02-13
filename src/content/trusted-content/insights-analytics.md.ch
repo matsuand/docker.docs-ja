@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Insights and analytics
@@ -164,7 +166,7 @@ You can export the analytics data either from the web dashboard, or using the
 [DVP Data API](/docker-hub/api/dvp/). All members of an organization have access to the analytics data.
 @y
 You can export the analytics data either from the web dashboard, or using the
-[DVP Data API](/docker-hub/api/dvp/). All members of an organization have access to the analytics data.
+[DVP Data API](__SUBDIR__/docker-hub/api/dvp/). All members of an organization have access to the analytics data.
 @z
 
 @x
@@ -242,7 +244,7 @@ using the API in the [DVP Data API documentation](/docker-hub/api/dvp/).
 @y
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
-using the API in the [DVP Data API documentation](/docker-hub/api/dvp/).
+using the API in the [DVP Data API documentation](__SUBDIR__/docker-hub/api/dvp/).
 @z
 
 @x

@@ -11,20 +11,21 @@ title: Explore the Containers view in Docker Desktop
 ---
 description: Understand what you can do with the Containers view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
-title: Explore the Containers view in Docker Desktop
+title: Docker Desktop におけるコンテナー画面の確認
 ---
 @z
 
 @x
 The **Containers** view lists all your running containers and applications. You must have running or stopped containers and applications to see them listed.
 @y
-The **Containers** view lists all your running containers and applications. You must have running or stopped containers and applications to see them listed.
+**Containers** (コンテナー) 画面 は、実行中のコンテナーやアプリケーションをすべて一覧表示します。
+逆にコンテナーやアプリケーションを一覧から確認するには、それらが実行中であるか停止状態となっていなければなりません。
 @z
 
 @x
 ## Container actions
 @y
-## Container actions
+## Container actions {#container-actions}
 @z
 
 @x
@@ -56,7 +57,7 @@ From the **Containers** view you can perform the following actions:
 @x
 ## Resource usage
 @y
-## Resource usage
+## Resource usage {#Resource-usage}
 @z
 
 @x
@@ -74,7 +75,7 @@ When you [inspect a container](#inspect-a-container), the **Stats** tab displays
 @x
 ## Inspect a container
 @y
-## Inspect a container
+## コンテナーの詳細確認 {#inspect-a-container}
 @z
 
 @x
@@ -92,7 +93,7 @@ From here, you can use the quick action buttons to perform various actions such 
 @x
 ### Logs
 @y
-### Logs
+### ログ {#logs}
 @z
 
 @x
@@ -172,7 +173,7 @@ To use your external terminal, navigate to the **General** tab in **Settings** a
 @x
 ### Files
 @y
-### Files
+### ファイル {#files}
 @z
 
 @x
@@ -193,12 +194,16 @@ To use your external terminal, navigate to the **General** tab in **Settings** a
 
 @x
 ## Additional resources
+@y
+## さらなる情報 {#additional-resources}
+@z
+
+@x
 - [What is a container](../../guides/walkthroughs/what-is-a-container.md)
 - [Run a container](../../guides/walkthroughs/run-a-container.md)
 - [Run multi-container applications](../../guides/walkthroughs/multi-container-apps.md)
 @y
-## Additional resources
-- [What is a container](../../guides/walkthroughs/what-is-a-container.md)
-- [Run a container](../../guides/walkthroughs/run-a-container.md)
-- [Run multi-container applications](../../guides/walkthroughs/multi-container-apps.md)
+- [コンテナーとは何か](../../guides/walkthroughs/what-is-a-container.md)
+- [コンテナーの実行](../../guides/walkthroughs/run-a-container.md)
+- [マルチコンテナーアプリの実行](../../guides/walkthroughs/multi-container-apps.md)
 @z

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Containerize your application
@@ -152,7 +154,7 @@ Related information:
 - Learn more about Docker assets in the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)
 @y
 - [docker init](__SUBDIR__/engine/reference/commandline/init.md) の詳細を読んでください。
-- Docker アセットについては [Dockerfile リファレンス](/engine/reference/builder/) と [Compose ファイルリファレンス](/compose/compose-file/) を確認してください。
+- Docker アセットについては [Dockerfile リファレンス](__SUBDIR__/engine/reference/builder/) と [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を確認してください。
 @z
 
 @x

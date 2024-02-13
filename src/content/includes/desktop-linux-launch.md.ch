@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 To start Docker Desktop for Linux, search **Docker Desktop** on the
 **Applications** menu and open it. This launches the Docker menu icon and opens
@@ -34,7 +36,7 @@ a clash with a local Docker Engine that may be running on the Linux host and
 using the default context. On shutdown, Docker Desktop resets the current
 context to the previous one.
 @y
-When Docker Desktop starts, it creates a dedicated [context](/engine/context/working-with-contexts) that the Docker CLI
+When Docker Desktop starts, it creates a dedicated [context](__SUBDIR__/engine/context/working-with-contexts) that the Docker CLI
 can use as a target and sets it as the current context in use. This is to avoid
 a clash with a local Docker Engine that may be running on the Linux host and
 using the default context. On shutdown, Docker Desktop resets the current

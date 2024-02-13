@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Network drivers overview
@@ -105,7 +107,7 @@ exist by default, and provide core networking functionality:
 - [Network plugins](/engine/extend/plugins_services/): You can install and use
   third-party network plugins with Docker.
 @y
-- [Network plugins](/engine/extend/plugins_services/): You can install and use
+- [Network plugins](__SUBDIR__/engine/extend/plugins_services/): You can install and use
   third-party network plugins with Docker.
 @z
 

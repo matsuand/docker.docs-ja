@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 Your configuration options can contain environment variables. Compose uses the
 variable values from the shell environment in which `docker compose` is run. For
@@ -54,7 +56,7 @@ project directory (parent folder of your Compose file).
 Values set in the shell environment override those set in the `.env` file.
 @y
 You can set default values for environment variables using a
-[`.env` file](/compose/env-file/), which Compose automatically looks for in
+[`.env` file](__SUBDIR__/compose/env-file/), which Compose automatically looks for in
 project directory (parent folder of your Compose file). 
 Values set in the shell environment override those set in the `.env` file.
 @z
@@ -79,7 +81,7 @@ the [2.1 file format](/compose/compose-file/compose-versioning/#version-21), it 
 provide inline default values using typical shell syntax:
 @y
 Both `$VARIABLE` and `${VARIABLE}` syntax are supported. Additionally when using
-the [2.1 file format](/compose/compose-file/compose-versioning/#version-21), it is possible to
+the [2.1 file format](__SUBDIR__/compose/compose-file/compose-versioning/#version-21), it is possible to
 provide inline default values using typical shell syntax:
 @z
 

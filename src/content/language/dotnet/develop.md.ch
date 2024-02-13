@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Use containers for .NET development
@@ -286,7 +288,7 @@ secrets:
 > **Note**
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](/compose/compose-file/).
+> reference](__SUBDIR__/compose/compose-file/).
 @z
 
 @x
@@ -944,7 +946,7 @@ Related information:
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @y
 Related information:
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](__SUBDIR__/compose/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @z

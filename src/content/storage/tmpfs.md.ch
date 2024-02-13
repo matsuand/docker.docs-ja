@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Using tmpfs mounts
@@ -336,5 +338,5 @@ docker run -d \
 @y
 - Learn about [volumes](volumes.md)
 - Learn about [bind mounts](bind-mounts.md)
-- Learn about [storage drivers](/storage/storagedriver/)
+- Learn about [storage drivers](__SUBDIR__/storage/storagedriver/)
 @z

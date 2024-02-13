@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: >
@@ -62,7 +64,7 @@ The following roles are available to assign:
 @x
 Owners can manage roles for members of an organization on [Docker Hub](/admin/organization/members/#update-a-member-role), as well members of an [organization](/admin/organization/members/#update-a-member-role) or a [company](/admin/company/users/#update-a-member-role) in the [Docker Admin Console](/admin/).
 @y
-Owners can manage roles for members of an organization on [Docker Hub](/admin/organization/members/#update-a-member-role), as well members of an [organization](/admin/organization/members/#update-a-member-role) or a [company](/admin/company/users/#update-a-member-role) in the [Docker Admin Console](/admin/).
+Owners can manage roles for members of an organization on [Docker Hub](__SUBDIR__/admin/organization/members/#update-a-member-role), as well members of an [organization](__SUBDIR__/admin/organization/members/#update-a-member-role) or a [company](__SUBDIR__/admin/company/users/#update-a-member-role) in the [Docker Admin Console](__SUBDIR__/admin/).
 @z
 
 @x
@@ -92,7 +94,7 @@ The following outlines content and registry permissions for member, editor, and 
 @x
 Company owners have the same access as organization owners for all associated organizations. See [Company overview](/admin/company/).
 @y
-Company owners have the same access as organization owners for all associated organizations. See [Company overview](/admin/company/).
+Company owners have the same access as organization owners for all associated organizations. See [Company overview](__SUBDIR__/admin/company/).
 @z
 
 @x
@@ -134,7 +136,7 @@ Company owners have the same access as organization owners for all associated or
 @x
 When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](/admin/organization/manage-a-team/#permissions-reference).
 @y
-When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](/admin/organization/manage-a-team/#permissions-reference).
+When you add members to a team, you can manage their repository permissions. For team repository permissions, see [Create and manage a team permissions reference](__SUBDIR__/admin/organization/manage-a-team/#permissions-reference).
 @z
 
 @x

@@ -774,8 +774,6 @@ Reference:
     section:
       - path: /compose/reference/
         title: overview
-      - path: /compose/environment-variables/envvars/
-        title: environment variables
       - path: /engine/reference/commandline/compose_alpha/
         title: docker compose alpha
       - path: /engine/reference/commandline/compose_alpha_dry-run/
@@ -847,8 +845,6 @@ Reference:
     section:
       - path: __SUBDIR__/compose/reference/
         title: overview
-      - path: __SUBDIR__/compose/environment-variables/envvars/
-        title: environment variables
       - path: __SUBDIR__/engine/reference/commandline/compose_alpha/
         title: docker compose alpha
       - path: __SUBDIR__/engine/reference/commandline/compose_alpha_dry-run/
@@ -4288,7 +4284,7 @@ Manuals:
       title: Why use Compose?
     - path: /compose/intro/history/
       title: History and development of Compose
-  - sectiontitle: Install Docker Compose
+  - sectiontitle: Install
     section:
       - path: /compose/install/
         title: Overview
@@ -4302,6 +4298,8 @@ Manuals:
     title: How Compose works
   - path: /compose/gettingstarted/
     title: Try Compose
+  - path: /compose/project-name/
+    title: Specify a project name
 @y
 - sectiontitle: Docker Compose
   section:
@@ -4313,7 +4311,7 @@ Manuals:
       title: Compose 利用はなぜ
     - path: __SUBDIR__/compose/intro/history/
       title: Compose のこれまでと開発
-  - sectiontitle: Install Docker Compose
+  - sectiontitle: インストール
     section:
       - path: __SUBDIR__/compose/install/
         title: 概要
@@ -4327,6 +4325,8 @@ Manuals:
     title: How Compose works
   - path: __SUBDIR__/compose/gettingstarted/
     title: Compose を試そう
+  - path: __SUBDIR__/compose/project-name/
+    title: プロジェクト名の指定
 @z
 
 @x
@@ -4362,48 +4362,62 @@ Manuals:
 @z
 
 @x
-  - path: /compose/profiles/
-    title: Using service profiles
+  - sectiontitle: Use...
+    section:
+    - path: /compose/profiles/
+      title: ...service profiles
+    - path: /compose/file-watch/
+      title: ...Compose Watch
+    - path: /compose/production/
+      title: ...Compose in production
+    - path: /compose/use-secrets/
+      title: ...secrets in Compose
+@y
+  - sectiontitle: ～～～の利用
+    section:
+    - path: __SUBDIR__/compose/profiles/
+      title: サービスプロファイル
+    - path: __SUBDIR__/compose/file-watch/
+      title: Compose Watch
+    - path: __SUBDIR__/compose/production/
+      title: 本番環境での Compose
+    - path: __SUBDIR__/compose/use-secrets/
+      title: Compose における Secrets
+@z
+
+@x
   - sectiontitle: Working with multiple Compose files
     section:
     - path: /compose/multiple-compose-files/
       title: Overview
-    - path: /compose/multiple-compose-files/extends/
-      title: Extend
     - path: /compose/multiple-compose-files/merge/
       title: Merge
+    - path: /compose/multiple-compose-files/extends/
+      title: Extend
     - path: /compose/multiple-compose-files/include/
       title: Include
 @y
-  - path: __SUBDIR__/compose/profiles/
-    title: サービスプロファイルの利用
   - sectiontitle: 複数 Compose ファイルによる処理
     section:
     - path: __SUBDIR__/compose/multiple-compose-files/
       title: 概要
-    - path: __SUBDIR__/compose/multiple-compose-files/extends/
-      title: Extend
     - path: __SUBDIR__/compose/multiple-compose-files/merge/
       title: Merge
+    - path: __SUBDIR__/compose/multiple-compose-files/extends/
+      title: Extend
     - path: __SUBDIR__/compose/multiple-compose-files/include/
       title: Include
 @z
 
 @x
-  - path: /compose/gpu-support/
-    title: GPU support in Compose
-  - path: /compose/networking/
-    title: Networking in Compose
-  - path: /compose/file-watch/
-    title: Use Compose Watch
-  - path: /compose/production/
-    title: Using Compose in production
-  - path: /compose/use-secrets/
-    title: Using secrets in Compose
   - path: /compose/startup-order/
     title: Control startup order
+  - path: /compose/gpu-support/
+    title: GPU support
+  - path: /compose/networking/
+    title: Networking
   - path: /compose/samples-for-compose/
-    title: Sample apps with Compose
+    title: Sample apps
   - path: /compose/feedback/
     title: Give feedback
   - path: /compose/migrate/
@@ -4411,20 +4425,14 @@ Manuals:
   - path: /compose/release-notes/
     title: Release notes
 @y
-  - path: __SUBDIR__/compose/gpu-support/
-    title: Compose における GPU サポート
-  - path: __SUBDIR__/compose/networking/
-    title: Compose におけるネットワーク
-  - path: __SUBDIR__/compose/file-watch/
-    title: Compose Watch の利用
-  - path: __SUBDIR__/compose/production/
-    title: 本番環境での Compose の利用
-  - path: __SUBDIR__/compose/use-secrets/
-    title: Compose における Secret の利用
   - path: __SUBDIR__/compose/startup-order/
     title: Control startup order
+  - path: __SUBDIR__/compose/gpu-support/
+    title: GPU サポート
+  - path: __SUBDIR__/compose/networking/
+    title: ネットワーク
   - path: __SUBDIR__/compose/samples-for-compose/
-    title: Compose を使ったサンプルアプリ
+    title: サンプルアプリ
   - path: __SUBDIR__/compose/feedback/
     title: フィードバック
   - path: __SUBDIR__/compose/migrate/

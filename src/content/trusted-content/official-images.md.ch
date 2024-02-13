@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Guidelines for Official Images on Docker Hub
@@ -52,7 +54,7 @@ The images are some of the most secure images on Docker Hub. This is particularl
 @x
 The images exemplify [`Dockerfile` best practices](/engine/userguide/eng-image/dockerfile_best-practices/) and provide clear documentation to serve as a reference for other `Dockerfile` authors.
 @y
-The images exemplify [`Dockerfile` best practices](/engine/userguide/eng-image/dockerfile_best-practices/) and provide clear documentation to serve as a reference for other `Dockerfile` authors.
+The images exemplify [`Dockerfile` best practices](__SUBDIR__/engine/userguide/eng-image/dockerfile_best-practices/) and provide clear documentation to serve as a reference for other `Dockerfile` authors.
 @z
 
 @x

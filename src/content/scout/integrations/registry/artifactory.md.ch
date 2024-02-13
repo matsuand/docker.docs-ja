@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Integrate JFrog Artifactory and JFrog Container Registry with Docker Scout
@@ -36,7 +38,7 @@ automatically on images in Artifactory registries.
 @x
 You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](/engine/reference/commandline/login/) command. For example:
 @y
-You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](/engine/reference/commandline/login/) command. For example:
+You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](__SUBDIR__/engine/reference/commandline/login/) command. For example:
 @z
 
 @x

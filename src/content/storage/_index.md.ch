@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Overview of persisting data in containers
@@ -42,7 +44,7 @@ container layer. This means that:
   そのデータをコンテナーの外部から取得したいと思っても、外部プロセスがこれを行うことは極めて困難になります。
 - コンテナーの書き込み可能レイヤーは、コンテナーが稼動しているホストマシンに強く結び付けられています。
   したがってその中のデータをどこかに移動させることは容易ではありません。
-- コンテナーの書き込み可能レイヤーにデータを書き込むためには、ファイルシステムを管理する [ストレージドライバー](/storage/storagedriver/) が必要になります。
+- コンテナーの書き込み可能レイヤーにデータを書き込むためには、ファイルシステムを管理する [ストレージドライバー](__SUBDIR__/storage/storagedriver/) が必要になります。
   このストレージドライバーは、Linux カーネルを利用してユニオンファイルシステム（union filesystem）を提供します。
   この特別な抽象ファイルシステムは **データボリューム** に比べると性能が劣ります。
   データボリュームであれば、ホストのファイルシステムに直接データを書き込むことができます。

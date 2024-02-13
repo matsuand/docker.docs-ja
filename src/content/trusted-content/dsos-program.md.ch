@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Learn about the Docker-Sponsored Open Source Program and how it works
@@ -195,7 +197,7 @@ Docker verifies that developers can trust images with this badge on Docker Hub a
 The [insights and analytics](/docker-hub/publish/insights-analytics) service provides usage metrics for how
 the community uses Docker images, granting insight into user behavior.
 @y
-The [insights and analytics](/docker-hub/publish/insights-analytics) service provides usage metrics for how
+The [insights and analytics](__SUBDIR__/docker-hub/publish/insights-analytics) service provides usage metrics for how
 the community uses Docker images, granting insight into user behavior.
 @z
 
@@ -242,7 +244,7 @@ You can enable Docker Scout on a per-repository basis. For information about
 how to use this product, refer to the [Docker Scout documentation](/scout/).
 @y
 You can enable Docker Scout on a per-repository basis. For information about
-how to use this product, refer to the [Docker Scout documentation](/scout/).
+how to use this product, refer to the [Docker Scout documentation](__SUBDIR__/scout/).
 @z
 
 @x

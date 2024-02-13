@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Learn how to optimize your use of device mapper driver.
@@ -200,7 +202,7 @@ For production systems, see
     [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
 @y
     See all storage options for each storage driver in the
-    [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
+    [daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#options-per-storage-driver)
 @z
 
 @x
@@ -446,7 +448,7 @@ See all storage options for each storage driver in the
 [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
 @y
 See all storage options for each storage driver in the
-[daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
+[daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#options-per-storage-driver)
 @z
 
 @x
@@ -1082,7 +1084,7 @@ If you run into repeated problems with thin pool, you can set the storage option
 `/etc/docker/daemon.json`. For instance, setting it to `10` ensures
 that operations fail with a warning when the free space is at or near 10%.
 See the
-[storage driver options in the Engine daemon reference](/engine/reference/commandline/dockerd/#daemon-storage-driver).
+[storage driver options in the Engine daemon reference](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-storage-driver).
 @z
 
 @x

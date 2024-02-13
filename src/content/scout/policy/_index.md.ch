@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Get started with Policy Evaluation in Docker Scout
@@ -30,7 +32,7 @@ description: |
 @y
 > **Early Access**
 >
-> Policy Evaluation is an [Early Access](/release-lifecycle/#early-access-ea)
+> Policy Evaluation is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > feature of Docker Scout.
 { .restricted }
 @z

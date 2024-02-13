@@ -16,6 +16,7 @@ bases = \
 	networking.md                \
 	production.md                \
 	profiles.md                  \
+	project-name.md              \
 	release-notes.md             \
 	samples-for-compose.md       \
 	startup-order.md             \

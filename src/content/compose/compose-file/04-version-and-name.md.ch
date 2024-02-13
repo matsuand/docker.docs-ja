@@ -16,9 +16,9 @@ keywords: compose, compose specification, services, compose file reference
 @z
 
 @x
-## Version top-level element
+## Version top-level element (optional)
 @y
-## Version top-level element
+## Version top-level element (optional)
 @z
 
 @x
@@ -85,4 +85,10 @@ services:
       - COMPOSE_PROJECT_NAME
     command: echo "I'm running ${COMPOSE_PROJECT_NAME}"
 ```
+@z
+
+@x
+For more information on other ways to name Compose projects, see [Specify a project name](../project-name.md).
+@y
+For more information on other ways to name Compose projects, see [Specify a project name](../project-name.md).
 @z

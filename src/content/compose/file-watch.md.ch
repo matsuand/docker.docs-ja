@@ -157,25 +157,7 @@ initial content to be copied into the container using the `COPY` instruction in 
 by the configured user, use the `COPY --chown` flag:
 @z
 
-@x
-```dockerfile
-# Run as a non-privileged user
-RUN adduser -ms /bin/bash -u 1001 app
-USER app
-
-# Copy source files into application directory
-COPY --chown=app:app . /app
-```
-@y
-```dockerfile
-# Run as a non-privileged user
-RUN adduser -ms /bin/bash -u 1001 app
-USER app
-
-# Copy source files into application directory
-COPY --chown=app:app . /app
-```
-@z
+% snip code...
 
 @x
 ### `action`
@@ -327,39 +309,7 @@ myproject/
 ```
 @z
 
-@x
-```yaml
-services:
-  web:
-    build: .
-    command: npm start
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /src/web
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
-```
-@y
-```yaml
-services:
-  web:
-    build: .
-    command: npm start
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /src/web
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
-```
-@z
+% snip code...
 
 @x
 In this example, when running `docker compose watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.

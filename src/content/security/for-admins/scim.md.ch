@@ -86,7 +86,7 @@ The following table lists the supported attributes. Note that your attribute map
 @x
 For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
 @y
-For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
+For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](__SUBDIR__/docker-hub/api/latest/#tag/scim).
 @z
 
 @x

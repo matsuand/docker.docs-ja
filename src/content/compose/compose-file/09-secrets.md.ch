@@ -38,19 +38,9 @@ application. The source of the secret is either `file` or `environment`.
 @x
 - `file`: The secret is created with the contents of the file at the specified path.
 - `environment`: The secret is created with the value of an environment variable.
-- `external`: If set to true, `external` specifies that this secret has already been created. Compose does
-  not attempt to create it, and if it does not exist, an error occurs.
-- `name`: The name of the secret object in Docker. This field can be used to
-  reference secrets that contain special characters. The name is used as is
-  and isn't scoped with the project name.
 @y
 - `file`: The secret is created with the contents of the file at the specified path.
 - `environment`: The secret is created with the value of an environment variable.
-- `external`: If set to true, `external` specifies that this secret has already been created. Compose does
-  not attempt to create it, and if it does not exist, an error occurs.
-- `name`: The name of the secret object in Docker. This field can be used to
-  reference secrets that contain special characters. The name is used as is
-  and isn't scoped with the project name.
 @z
 
 @x
@@ -110,69 +100,13 @@ secrets:
 @z
 
 @x
-Alternatively, `server-certificate` can be declared as external. Compose looks up the `server-certificate` secret to expose to relevant services.
+## Additional resources
 @y
-Alternatively, `server-certificate` can be declared as external. Compose looks up the `server-certificate` secret to expose to relevant services.
+## Additional resources
 @z
 
 @x
-```yml
-secrets:
-  server-certificate:
-    external: true
-```
+For more information, see [How to use secrets in Compose](../use-secrets.md).
 @y
-```yml
-secrets:
-  server-certificate:
-    external: true
-```
-@z
-
-@x
-## Example 3
-@y
-## Example 3
-@z
-
-@x
-External secrets lookup can also use a distinct key by specifying a `name`. 
-@y
-External secrets lookup can also use a distinct key by specifying a `name`. 
-@z
-
-@x
-The following example modifies the previous example to look up a secret using the name `CERTIFICATE_KEY`. The actual lookup key is set at deployment time by the [interpolation](12-interpolation.md) of
-variables, but exposed to containers as hard-coded ID `server-certificate`.
-@y
-The following example modifies the previous example to look up a secret using the name `CERTIFICATE_KEY`. The actual lookup key is set at deployment time by the [interpolation](12-interpolation.md) of
-variables, but exposed to containers as hard-coded ID `server-certificate`.
-@z
-
-@x
-```yml
-secrets:
-  server-certificate:
-    external: true
-    name: "${CERTIFICATE_KEY}"
-```
-@y
-```yml
-secrets:
-  server-certificate:
-    external: true
-    name: "${CERTIFICATE_KEY}"
-```
-@z
-
-@x
-If `external` is set to `true`, all other attributes apart from `name` are irrelevant. If Compose detects any other attribute, it rejects the Compose file as invalid.
-@y
-If `external` is set to `true`, all other attributes apart from `name` are irrelevant. If Compose detects any other attribute, it rejects the Compose file as invalid.
-@z
-
-@x
-Your Compose file needs to explicitly grant access to the secrets to relevant services in your application.
-@y
-Your Compose file needs to explicitly grant access to the secrets to relevant services in your application.
+For more information, see [How to use secrets in Compose](../use-secrets.md).
 @z

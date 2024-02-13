@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 title: Run Node.js tests in a container
@@ -76,7 +78,7 @@ $ docker compose run server npm run test
 @x
 To learn more about the command, see [docker compose run](/engine/reference/commandline/compose_run/).
 @y
-To learn more about the command, see [docker compose run](/engine/reference/commandline/compose_run/).
+To learn more about the command, see [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/).
 @z
 
 @x
@@ -421,7 +423,7 @@ Related information:
  - [Build with Docker guide](../../build/guide/index.md)
 @y
 Related information:
- - [docker compose run](/engine/reference/commandline/compose_run/)
+ - [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @z
 

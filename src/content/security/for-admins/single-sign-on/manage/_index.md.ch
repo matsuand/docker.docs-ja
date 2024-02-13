@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 ---
 description: Learn how to manage Single Sign-On for your organization or company.
@@ -34,7 +36,7 @@ aliases:
 @y
 > **Note**
 >
-> You must have a [company](/admin/company/) to manage more than one organization.
+> You must have a [company](__SUBDIR__/admin/company/) to manage more than one organization.
 @z
 
 @x

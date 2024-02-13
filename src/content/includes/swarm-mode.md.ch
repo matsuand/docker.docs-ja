@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
 > **Note**
 >
@@ -20,7 +22,7 @@
 > Use Swarm mode if you intend to use Swarm as a production runtime environment.
 > 
 > If you're not planning on deploying with Swarm, use
-> [Docker Compose](/compose/) instead.
+> [Docker Compose](__SUBDIR__/compose/) instead.
 > If you're developing for a Kubernetes deployment, consider using the
-> [integrated Kubernetes feature](/desktop/kubernetes/) in Docker Desktop.
+> [integrated Kubernetes feature](__SUBDIR__/desktop/kubernetes/) in Docker Desktop.
 @z

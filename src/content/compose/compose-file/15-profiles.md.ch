@@ -17,10 +17,8 @@ keywords: compose, compose specification, profiles, compose file reference
 
 @x
 With profiles you can define a set of active profiles so your Compose application model is adjusted for various usages and environments.
-The exact mechanism is implementation specific and may include command line flags, environment variables, etc.
 @y
 With profiles you can define a set of active profiles so your Compose application model is adjusted for various usages and environments.
-The exact mechanism is implementation specific and may include command line flags, environment variables, etc.
 @z
 
 @x
