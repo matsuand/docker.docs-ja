@@ -4,25 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Change log / release notes per edge release
 keywords: Docker Desktop for Windows, edge, release notes
 title: Docker Desktop for Windows Edge Release notes
-toc_min: 1
-toc_max: 2
-aliases:
-- /desktop/windows/release-notes/edge-releases/
----
 @y
----
 description: Change log / release notes per edge release
 keywords: Docker Desktop for Windows, edge, release notes
 title: Docker Desktop for Windows Edge Release notes
-toc_min: 1
-toc_max: 2
-aliases:
-- /desktop/windows/release-notes/edge-releases/
----
 @z
 
 @x
@@ -2339,14 +2327,14 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 * Bug fixes and minor changes
-  - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Settings > Reset menu) before updating to the next major update. You can check documentation to [save images](/engine/reference/commandline/image_save/#examples) and [back up volumes](../../storage/volumes.md#back-up-restore-or-migrate-data-volumes)
+  - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Settings > Reset menu) before updating to the next major update. You can check documentation to [save images](/reference/cli/docker/image/save/#examples) and [back up volumes](../../storage/volumes.md#back-up-restore-or-migrate-data-volumes)
   - Fix startup issue with AUFS
   - Fix status bug which could prevent the kubernetes cluster from starting.
   - Fix bug which would cause VM logs to be written to RAM rather than disk in some cases, and the VM to hang.
   - Fix security issue with named pipe connection to docker service.
 @y
 * Bug fixes and minor changes
-  - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Settings > Reset menu) before updating to the next major update. You can check documentation to [save images](__SUBDIR__/engine/reference/commandline/image_save/#examples) and [back up volumes](../../storage/volumes.md#back-up-restore-or-migrate-data-volumes)
+  - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Settings > Reset menu) before updating to the next major update. You can check documentation to [save images](__SUBDIR__/reference/cli/docker/image/save/#examples) and [back up volumes](../../storage/volumes.md#back-up-restore-or-migrate-data-volumes)
   - Fix startup issue with AUFS
   - Fix status bug which could prevent the kubernetes cluster from starting.
   - Fix bug which would cause VM logs to be written to RAM rather than disk in some cases, and the VM to hang.

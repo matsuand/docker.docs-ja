@@ -2,29 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Overview of a Dockerfile and introduction to best practices
 keywords: parent image, images, dockerfile, best practices, hub, official image
 title: Overview of best practices for writing Dockerfiles
-aliases:
-- /articles/dockerfile_best-practices/
-- /engine/articles/dockerfile_best-practices/
-- /docker-cloud/getting-started/intermediate/optimize-dockerfiles/
-- /docker-cloud/tutorials/optimize-dockerfiles/
-- /engine/userguide/eng-image/dockerfile_best-practices/
----
 @y
----
 description: Dockerfile の概要とベストプラクティスの導入です。
 keywords: parent image, images, dockerfile, best practices, hub, official image
 title: Dockerfile 記述のベストプラクティス概要
-aliases:
-- /articles/dockerfile_best-practices/
-- /engine/articles/dockerfile_best-practices/
-- /docker-cloud/getting-started/intermediate/optimize-dockerfiles/
-- /docker-cloud/tutorials/optimize-dockerfiles/
-- /engine/userguide/eng-image/dockerfile_best-practices/
----
 @z
 
 @x
@@ -45,12 +29,12 @@ efficient images. It provides [general guidelines for your Dockerfiles](guidelin
 Docker builds images automatically by reading the instructions from a
 Dockerfile which is a text file that contains all commands, in order, needed to
 build a given image. A Dockerfile adheres to a specific format and set of
-instructions which you can find at [Dockerfile reference](../../engine/reference/builder.md).
+instructions which you can find at [Dockerfile reference](../../reference/dockerfile.md).
 @y
 Docker は Dockerfile に書かれた指示を読み込んで、自動的にイメージを構築します。
 このファイルはあらゆる命令を含んだテキストファイルであり、順に処理することで指定されたイメージを構築するために必要となるものです。
 Dockerfile は所定のフォーマットや各種の命令に従います。
-その内容は [Dockerfile リファレンス](../../engine/reference/builder.md) に示しています。
+その内容は [Dockerfile リファレンス](../../reference/dockerfile.md) に示しています。
 @z
 
 @x
@@ -119,14 +103,14 @@ deleting files, are written to this writable container layer.
 @z
 
 @x
-* [Dockerfile reference](../../engine/reference/builder.md)
+* [Dockerfile reference](../../reference/dockerfile.md)
 * [More about Automated builds](../../docker-hub/builds/index.md)
 * [Guidelines for creating Docker Official Images](../../trusted-content/official-images.md)
 * [Best practices to containerize Node.js web applications with Docker](https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker)
 * [More about base images](../../build/building/base-images.md)
 * [More on image layers and how Docker builds and stores images](../../storage/storagedriver/index.md).
 @y
-* [Dockerfile リファレンス](../../engine/reference/builder.md)
+* [Dockerfile リファレンス](../../reference/dockerfile.md)
 * [自動ビルドの詳細](../../docker-hub/builds/index.md)
 * [Docker 公式イメージ生成のガイドライン](../../trusted-content/official-images.md)
 * [Docker を使った Node.js ウェブアプリケーションコンテナー化のベストプラテクティス](https://snyk.io/blog/10-best-practices-to-containerize-nodejs-web-applications-with-docker)

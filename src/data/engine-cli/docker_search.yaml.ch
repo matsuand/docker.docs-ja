@@ -465,6 +465,7 @@ examples: |-
     webdevops/php-nginx
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -479,6 +480,7 @@ swarm: false
     webdevops/php-nginx
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

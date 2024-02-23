@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 {{ $invite_button := "**Invite members**" }}
 {{ $export_button := "**Export members**" }}
@@ -66,7 +68,7 @@
 {{ $member_navigation = "Select your organization in the left navigation drop-down menu, and then select **Members**." }}
 {{ $remove_button = "**Remove member**" }}
 {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-{{ $role_mapping_link = "[SCIM for role mapping](/security/for-admins/scim/)" }}
+{{ $role_mapping_link = "[SCIM for role mapping](__SUBDIR__/security/for-admins/scim/)" }}
 {{ if eq (.Get "layer") "company" }}
 {{ $export_fields = `The CSV file for a company contains the following fields:
 * **Name**: The user's name.

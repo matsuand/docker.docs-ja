@@ -193,13 +193,13 @@ directory.
 
 @x
 To learn more about the files that `docker init` added, see the following:
- - [Dockerfile](../../engine/reference/builder.md)
- - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
+ - [Dockerfile](../../reference/dockerfile.md)
+ - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @y
 To learn more about the files that `docker init` added, see the following:
- - [Dockerfile](../../engine/reference/builder.md)
- - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
+ - [Dockerfile](../../reference/dockerfile.md)
+ - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @z
 
@@ -311,10 +311,10 @@ application using Docker.
 
 @x
 Related information:
- - [docker init reference](../../engine/reference/commandline/init.md)
+ - [docker init reference](../../reference/cli/docker/init.md)
 @y
 Related information:
- - [docker init reference](../../engine/reference/commandline/init.md)
+ - [docker init reference](../../reference/cli/docker/init.md)
 @z
 
 @x

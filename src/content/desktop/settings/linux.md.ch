@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Change your Docker Desktop settings on Linux
 keywords: settings, preferences, proxy, file sharing, resources, kubernetes, Docker
   Desktop, Linux
 title: Change Docker Desktop settings on Linux
----
 @y
----
 description: Change your Docker Desktop settings on Linux
 keywords: settings, preferences, proxy, file sharing, resources, kubernetes, Docker
   Desktop, Linux
 title: Change Docker Desktop settings on Linux
----
 @z
 
 @x
@@ -58,10 +54,10 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Start Docker Desktop when you sign in**. Select to automatically start Docker
+- **Start Docker Desktop when you sign in to your computer**. Select to automatically start Docker
   Desktop when you sign in to your machine.
 @y
-- **Start Docker Desktop when you sign in**. Select to automatically start Docker
+- **Start Docker Desktop when you sign in to your computer**. Select to automatically start Docker
   Desktop when you sign in to your machine.
 @z
 
@@ -74,9 +70,17 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use System Settings**.
+- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use system settings**.
 @y
-- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use System Settings**.
+- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use system settings**.
+@z
+
+@x
+- **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
+If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](../use-desktop/container.md).
+@y
+- **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
+If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](../use-desktop/container.md).
 @z
 
 @x
@@ -94,14 +98,6 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
-If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](../use-desktop/container.md).
-@y
-- **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
-If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](../use-desktop/container.md).
-@z
-
-@x
 - **Send usage statistics**. Select so Docker Desktop sends diagnostics,
   crash reports, and usage data. This information helps Docker improve and
   troubleshoot the application. Clear the check box to opt out. Docker may
@@ -111,14 +107,6 @@ If you choose the integrated terminal, you can run commands in a running contain
   crash reports, and usage data. This information helps Docker improve and
   troubleshoot the application. Clear the check box to opt out. Docker may
   periodically prompt you for more information.
-@z
-
-@x
-- **Show weekly tips**. Select to display useful advice and suggestions about
-  using Docker.
-@y
-- **Show weekly tips**. Select to display useful advice and suggestions about
-  using Docker.
 @z
 
 @x
@@ -475,10 +463,10 @@ edit the file using your favorite text editor.
 
 @x
 To see the full list of possible configuration options, see the
-[dockerd command reference](/engine/reference/commandline/dockerd/).
+[dockerd command reference](/reference/cli/dockerd/).
 @y
 To see the full list of possible configuration options, see the
-[dockerd command reference](__SUBDIR__/engine/reference/commandline/dockerd/).
+[dockerd command reference](__SUBDIR__/reference/cli/dockerd/).
 @z
 
 @x

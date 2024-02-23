@@ -513,6 +513,7 @@ examples: |-
     > In addition, `docker image ls` doesn't support negative filtering, so it
     > difficult to predict what images will actually be removed.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -526,6 +527,7 @@ swarm: false
     > In addition, `docker image ls` doesn't support negative filtering, so it
     > difficult to predict what images will actually be removed.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

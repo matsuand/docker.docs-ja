@@ -164,9 +164,9 @@ the registry.
 @z
 
 @x
-   Entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
+   Entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/reference/dockerfile/#entrypoint)
 @y
-   Entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint)
+   Entrypoint of the plugin, see [`ENTRYPOINT`](https://docs.docker.com/reference/dockerfile/#entrypoint)
 @z
 
 @x
@@ -176,9 +176,9 @@ the registry.
 @z
 
 @x
-   Working directory of the plugin, see [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
+   Working directory of the plugin, see [`WORKDIR`](https://docs.docker.com/reference/dockerfile/#workdir)
 @y
-   Working directory of the plugin, see [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)
+   Working directory of the plugin, see [`WORKDIR`](https://docs.docker.com/reference/dockerfile/#workdir)
 @z
 
 @x

@@ -4,21 +4,17 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: View Docker Scout policy status
 description: |
   The Docker Scout Dashboard and the `docker scout policy` command lets you
   view policy status of images.
 keywords: scout, policy, status, vulnerabilities, supply chain, cves, licenses
----
 @y
----
 title: View Docker Scout policy status
 description: |
   The Docker Scout Dashboard and the `docker scout policy` command lets you
   view policy status of images.
 keywords: scout, policy, status, vulnerabilities, supply chain, cves, licenses
----
 @z
 
 @x
@@ -275,8 +271,8 @@ Policy status:  FAILED  (1/3 policies violated)
 
 @x
 For more information about the command, refer to the [CLI
-reference](../../engine/reference/commandline/scout_policy.md).
+reference](../../reference/cli/docker/scout/policy.md).
 @y
 For more information about the command, refer to the [CLI
-reference](../../engine/reference/commandline/scout_policy.md).
+reference](../../reference/cli/docker/scout/policy.md).
 @z

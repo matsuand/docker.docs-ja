@@ -4,12 +4,10 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Use bind mounts
 keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 @y
----
 title: Use bind mounts
 keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
@@ -18,11 +16,9 @@ keywords: 'get started, setup, orientation, quickstart, intro, concepts, contain
 @x
   '
 description: Using bind mounts in our application
----
 @y
   '
 description: Using bind mounts in our application
----
 @z
 
 @x
@@ -848,10 +844,10 @@ Related information:
 @z
 
 @x
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [docker CLI reference](/reference/cli/docker/)
  - [Manage data in Docker](https://docs.docker.com/storage/)
 @y
- - [docker CLI reference](__SUBDIR__/engine/reference/commandline/cli/)
+ - [docker CLI reference](__SUBDIR__/reference/cli/docker/)
  - [Manage data in Docker](https://docs.docker.com/storage/)
 @z
 

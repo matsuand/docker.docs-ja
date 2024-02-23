@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image push
 aliases: docker image push, docker push
@@ -18,10 +20,10 @@ long: |-
 @z
 
 @x
-    Refer to the [`docker image tag`](image_tag.md) reference for more information
+    Refer to the [`docker image tag`](/reference/cli/docker/image/tag/) reference for more information
     about valid image and tag names.
 @y
-    Refer to the [`docker image tag`](image_tag.md) reference for more information
+    Refer to the [`docker image tag`](__SUBDIR__/reference/cli/docker/image/tag/) reference for more information
     about valid image and tag names.
 @z
 
@@ -44,9 +46,9 @@ long: |-
 @z
 
 @x
-    Registry credentials are managed by [docker login](login.md).
+    Registry credentials are managed by [docker login](/reference/cli/docker/login/).
 @y
-    Registry credentials are managed by [docker login](login.md).
+    Registry credentials are managed by [docker login](__SUBDIR__/reference/cli/docker/login/).
 @z
 
 @x
@@ -59,7 +61,7 @@ long: |-
     By default the Docker daemon will push five layers of an image at a time.
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-uploads` daemon option. See the
-    [daemon documentation](dockerd.md) for more details.
+    [daemon documentation](/reference/cli/dockerd/) for more details.
 usage: docker image push [OPTIONS] NAME[:TAG]
 pname: docker image
 plink: docker_image.yaml
@@ -114,7 +116,7 @@ examples: |-
     By default the Docker daemon will push five layers of an image at a time.
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-uploads` daemon option. See the
-    [daemon documentation](dockerd.md) for more details.
+    [daemon documentation](__SUBDIR__/reference/cli/dockerd/) for more details.
 usage: docker image push [OPTIONS] NAME[:TAG]
 pname: docker image
 plink: docker_image.yaml
@@ -169,11 +171,11 @@ examples: |-
 
 @x
     First save the new image by finding the container ID (using [`docker container
-    ls`](container_ls.md)) and then committing it to a new image name. Note that
+    ls`](/reference/cli/docker/container/ls/)) and then committing it to a new image name. Note that
     only `a-z0-9-_.` are allowed when naming images:
 @y
     First save the new image by finding the container ID (using [`docker container
-    ls`](container_ls.md)) and then committing it to a new image name. Note that
+    ls`](__SUBDIR__/reference/cli/docker/container/ls/)) and then committing it to a new image name. Note that
     only `a-z0-9-_.` are allowed when naming images:
 @z
 
@@ -335,6 +337,7 @@ examples: |-
     v1.0.1: digest: sha256:edafc0a0fb057813850d1ba44014914ca02d671ae247107ca70c94db686e7de6 size: 4527
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -351,6 +354,7 @@ swarm: false
     v1.0.1: digest: sha256:edafc0a0fb057813850d1ba44014914ca02d671ae247107ca70c94db686e7de6 size: 4527
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

@@ -428,6 +428,7 @@ examples: |-
     78a85c484f71        config-3                  10 days ago
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false
@@ -440,6 +441,7 @@ swarm: true
     78a85c484f71        config-3                  10 days ago
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false

@@ -1,12 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker plugin enable
 short: Enable a plugin
 long: |-
     Enables a plugin. The plugin must be installed before it can be enabled,
-    see [`docker plugin install`](plugin_install.md).
+    see [`docker plugin install`](/reference/cli/docker/plugin/install/).
 usage: docker plugin enable [OPTIONS] PLUGIN
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -40,7 +42,7 @@ command: docker plugin enable
 short: Enable a plugin
 long: |-
     Enables a plugin. The plugin must be installed before it can be enabled,
-    see [`docker plugin install`](plugin_install.md).
+    see [`docker plugin install`](__SUBDIR__/reference/cli/docker/plugin/install/).
 usage: docker plugin enable [OPTIONS] PLUGIN
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -120,6 +122,7 @@ examples: |-
     69553ca1d123  tiborvass/sample-volume-plugin:latest   A test plugin for Docker   true
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -130,6 +133,7 @@ swarm: false
     69553ca1d123  tiborvass/sample-volume-plugin:latest   A test plugin for Docker   true
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

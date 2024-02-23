@@ -171,13 +171,13 @@ Here’s what this Dockerfile does:
 
 @x
    This comment is a
-   [Dockerfile parser directive](../../engine/reference/builder.md#parser-directives).
+   [Dockerfile parser directive](../../reference/dockerfile.md#parser-directives).
    It specifies which version of the Dockerfile syntax to use. This file uses
    the `dockerfile:1` syntax which is best practice: it ensures that you have
    access to the latest Docker build features.
 @y
    This comment is a
-   [Dockerfile parser directive](../../engine/reference/builder.md#parser-directives).
+   [Dockerfile parser directive](../../reference/dockerfile.md#parser-directives).
    It specifies which version of the Dockerfile syntax to use. This file uses
    the `dockerfile:1` syntax which is best practice: it ensures that you have
    access to the latest Docker build features.
@@ -424,13 +424,13 @@ Related information:
 @z
 
 @x
-- [Dockerfile reference](../../engine/reference/builder.md)
-- [`docker build` CLI reference](../../engine/reference/commandline/image_build.md)
-- [`docker run` CLI reference](../../engine/reference/commandline/container_run.md)
+- [Dockerfile reference](../../reference/dockerfile.md)
+- [`docker build` CLI reference](../../reference/cli/docker/image/build.md)
+- [`docker run` CLI reference](../../reference/cli/docker/container/run.md)
 @y
-- [Dockerfile reference](../../engine/reference/builder.md)
-- [`docker build` CLI reference](../../engine/reference/commandline/image_build.md)
-- [`docker run` CLI reference](../../engine/reference/commandline/container_run.md)
+- [Dockerfile reference](../../reference/dockerfile.md)
+- [`docker build` CLI reference](../../reference/cli/docker/image/build.md)
+- [`docker run` CLI reference](../../reference/cli/docker/container/run.md)
 @z
 
 @x

@@ -4,25 +4,17 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Share the application
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop, docker hub, sharing
 description: Sharing your image you built for your example application so you can
   run it else where and other developers can use it
-aliases:
-- /get-started/part3/
----
 @y
----
 title: アプリケーションの共有
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop, docker hub, sharing
 description: Sharing your image you built for your example application so you can
   run it else where and other developers can use it
-aliases:
-- /get-started/part3/
----
 @z
 
 @x
@@ -348,11 +340,11 @@ Related information:
 @z
 
 @x
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [docker CLI reference](/reference/cli/docker/)
  - [Multi-platform images](../build/building/multi-platform.md)
  - [Docker Hub overview](../docker-hub/index.md)
 @y
- - [Docker CLI リファレンス](__SUBDIR__/engine/reference/commandline/cli/)
+ - [Docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
  - [マルチプラットフォームイメージ](../build/building/multi-platform.md)
  - [Docker Hub 概要](../docker-hub/index.md)
 @z

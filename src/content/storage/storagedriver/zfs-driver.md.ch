@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Learn how to optimize your use of ZFS driver.
 keywords: 'container, storage, driver, ZFS '
 title: Use the ZFS storage driver
-aliases:
-- /engine/userguide/storagedriver/zfs-driver/
----
 @y
----
 description: Learn how to optimize your use of ZFS driver.
 keywords: 'container, storage, driver, ZFS '
 title: Use the ZFS storage driver
-aliases:
-- /engine/userguide/storagedriver/zfs-driver/
----
 @z
 
 @x
@@ -337,10 +329,10 @@ Edit `/etc/docker/daemon.json` and add the following:
 
 @x
 See all storage options for each storage driver in the
-[daemon reference documentation](/engine/reference/commandline/dockerd/#daemon-storage-driver)
+[daemon reference documentation](/reference/cli/dockerd/#daemon-storage-driver)
 @y
 See all storage options for each storage driver in the
-[daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-storage-driver)
+[daemon reference documentation](__SUBDIR__/reference/cli/dockerd/#daemon-storage-driver)
 @z
 
 @x

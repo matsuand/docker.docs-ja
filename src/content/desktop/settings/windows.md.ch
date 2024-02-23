@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Change your Docker Desktop settings on Windows
 keywords: settings, preferences, proxy, file sharing, resources, kubernetes, Docker
   Desktop, Windows
 title: Change Docker Desktop settings on Windows
----
 @y
----
 description: Change your Docker Desktop settings on Windows
 keywords: settings, preferences, proxy, file sharing, resources, kubernetes, Docker
   Desktop, Windows
 title: Change Docker Desktop settings on Windows
----
 @z
 
 @x
@@ -58,10 +54,10 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Start Docker Desktop when you sign in**. Select to automatically start Docker
+- **Start Docker Desktop when you sign in to your computer**. Select to automatically start Docker
   Desktop when you sign in to your machine.
 @y
-- **Start Docker Desktop when you sign in**. Select to automatically start Docker
+- **Start Docker Desktop when you sign in to your computer**. Select to automatically start Docker
   Desktop when you sign in to your machine.
 @z
 
@@ -74,23 +70,9 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use System Settings**.
+- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use system settings**.
 @y
-- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use System Settings**.
-@z
-
-@x
-- **Use containerd for pulling and storing images**.
-  Turns on the containerd image store.
-  This brings new features like faster container startup performance by lazy-pulling images,
-  and the ability to run Wasm applications with Docker.
-  For more information, see [containerd image store](../containerd.md).
-@y
-- **Use containerd for pulling and storing images**.
-  Turns on the containerd image store.
-  This brings new features like faster container startup performance by lazy-pulling images,
-  and the ability to run Wasm applications with Docker.
-  For more information, see [containerd image store](../containerd.md).
+- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use system settings**.
 @z
 
 @x
@@ -122,9 +104,23 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **Add `*.docker.internal` to the host's `/etc/hosts` file. (Password required)**. Lets you resolve `*.docker.internal` DNS names from both the host and your containers.
+- **Add the `*.docker.internal` names to the host's `/etc/hosts` file (Password required)**. Lets you resolve `*.docker.internal` DNS names from both the host and your containers.
 @y
-- **Add `*.docker.internal` to the host's `/etc/hosts` file. (Password required)**. Lets you resolve `*.docker.internal` DNS names from both the host and your containers.
+- **Add the `*.docker.internal` names to the host's `/etc/hosts` file (Password required)**. Lets you resolve `*.docker.internal` DNS names from both the host and your containers.
+@z
+
+@x
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](../containerd.md).
+@y
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](../containerd.md).
 @z
 
 @x
@@ -137,14 +133,6 @@ If you choose the integrated terminal, you can run commands in a running contain
   crash reports, and usage data. This information helps Docker improve and
   troubleshoot the application. Clear the check box to opt out. Docker may
   periodically prompt you for more information.
-@z
-
-@x
-- **Show weekly tips**. Select to display useful advice and suggestions about
-  using Docker.
-@y
-- **Show weekly tips**. Select to display useful advice and suggestions about
-  using Docker.
 @z
 
 @x
@@ -677,10 +665,10 @@ edit the file using your favorite text editor.
 
 @x
 To see the full list of possible configuration options, see the
-[dockerd command reference](/engine/reference/commandline/dockerd/).
+[dockerd command reference](/reference/cli/dockerd/).
 @y
 To see the full list of possible configuration options, see the
-[dockerd command reference](__SUBDIR__/engine/reference/commandline/dockerd/).
+[dockerd command reference](__SUBDIR__/reference/cli/dockerd/).
 @z
 
 @x

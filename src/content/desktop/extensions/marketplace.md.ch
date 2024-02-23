@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace
 title: Marketplace extensions
----
 @y
----
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace
 title: マーケットプレースの Extensions
----
 @z
 
 @x
@@ -68,7 +64,7 @@ Extension をインストールするには以下を行います。
    The Extensions Marketplace opens on the **Browse** tab.
 3. Browse the available extensions.
    You can sort the list of extensions by **Recently added**, **Most installed**, or alphabetically. Alternatively, use the **Content** or **Categories** drop-down menu to search for extensions by whether they have been reviewed or not, or by category.
-4. Choose you extension and select **Install**.
+4. Choose an extension and select **Install**.
 @y
 1. Docker Desktop を開きます。
 2. Dashboard 画面のメニューバーから **Add Extensions** (Extension の追加) を選びます。

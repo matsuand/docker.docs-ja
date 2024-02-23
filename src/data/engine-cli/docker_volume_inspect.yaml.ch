@@ -173,6 +173,7 @@ examples: |-
     /var/lib/docker/volumes/myvolume/_data
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false
@@ -182,6 +183,7 @@ swarm: false
     /var/lib/docker/volumes/myvolume/_data
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false

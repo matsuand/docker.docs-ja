@@ -2,29 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Develop with Docker
 description: Overview of developer resources
 keywords: developer, developing, apps, api, sdk
----
 @y
----
-title: Develop with Docker
+title: Docker を使った開発
 description: Overview of developer resources
 keywords: developer, developing, apps, api, sdk
----
 @z
 
 @x
 This page contains a list of resources for application developers who would like to build new applications using Docker.
 @y
-This page contains a list of resources for application developers who would like to build new applications using Docker.
+本ページでは Docker を使って新たなアプリケーションを構築したいと思っているアプリケーション開発者に向けて、各種情報を一覧で示すものです。
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -36,7 +32,7 @@ Work through the learning modules in [Get started](../get-started/index.md) to u
 @x
 ## Develop new apps on Docker
 @y
-## Develop new apps on Docker
+## Docker での新規アプリ開発 {#develop-new-apps-on-docker}
 @z
 
 @x
@@ -50,14 +46,14 @@ most benefits from Docker.
 @z
 
 @x
-- Learn how to [build an image](../engine/reference/builder.md) using a Dockerfile
+- Learn how to [build an image](../reference/dockerfile.md) using a Dockerfile
 - Use [multi-stage builds](../build/building/multi-stage.md) to keep your images lean
 - Manage application data using [volumes](../storage/volumes.md) and [bind mounts](../storage/bind-mounts.md)
 - [Scale your app with Kubernetes](../get-started/kube-deploy.md) 
 - [Scale your app as a Swarm service](../get-started/swarm-deploy.md) 
 - [General application development best practices](dev-best-practices.md)
 @y
-- Learn how to [build an image](../engine/reference/builder.md) using a Dockerfile
+- Learn how to [build an image](../reference/dockerfile.md) using a Dockerfile
 - Use [multi-stage builds](../build/building/multi-stage.md) to keep your images lean
 - Manage application data using [volumes](../storage/volumes.md) and [bind mounts](../storage/bind-mounts.md)
 - [Scale your app with Kubernetes](../get-started/kube-deploy.md) 

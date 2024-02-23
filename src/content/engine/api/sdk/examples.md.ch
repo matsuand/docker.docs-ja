@@ -4,31 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Examples using the Docker Engine SDKs and Docker API
 description: Examples on how to perform a given Docker operation using the Go and
   Python SDKs and the HTTP API using curl.
 keywords: developing, api, sdk, developers, rest, curl, python, go
-aliases:
-- /engine/api/getting-started/
-- /engine/api/client-libraries/
-- /engine/reference/api/remote_api_client_libraries/
-- /reference/api/remote_api_client_libraries/
-- /develop/sdk/examples/
----
 @y
----
 title: Examples using the Docker Engine SDKs and Docker API
 description: Examples on how to perform a given Docker operation using the Go and
   Python SDKs and the HTTP API using curl.
 keywords: developing, api, sdk, developers, rest, curl, python, go
-aliases:
-- /engine/api/getting-started/
-- /engine/api/client-libraries/
-- /engine/reference/api/remote_api_client_libraries/
-- /reference/api/remote_api_client_libraries/
-- /develop/sdk/examples/
----
 @z
 
 @x
@@ -1485,14 +1469,14 @@ func main() {
 
 @x
 The Python SDK retrieves authentication information from the [credentials
-store](/engine/reference/commandline/login/#credentials-store) file and
+store](/reference/cli/docker/login/#credentials-store) file and
 integrates with [credential
 helpers](https://github.com/docker/docker-credential-helpers). It's possible to override these credentials, but that's out of
 scope for this example guide. After using `docker login`, the Python SDK
 uses these credentials automatically.
 @y
 The Python SDK retrieves authentication information from the [credentials
-store](__SUBDIR__/engine/reference/commandline/login/#credentials-store) file and
+store](__SUBDIR__/reference/cli/docker/login/#credentials-store) file and
 integrates with [credential
 helpers](https://github.com/docker/docker-credential-helpers). It's possible to override these credentials, but that's out of
 scope for this example guide. After using `docker login`, the Python SDK

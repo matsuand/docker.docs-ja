@@ -230,6 +230,7 @@ examples: |-
     xbw728mf6q0d        my-service          replicated          1/1                 nginx:alpine        *:8080->80/tcp
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.31"
 experimental: false
 experimentalcli: false
@@ -240,6 +241,7 @@ swarm: true
     xbw728mf6q0d        my-service          replicated          1/1                 nginx:alpine        *:8080->80/tcp
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.31"
 experimental: false
 experimentalcli: false

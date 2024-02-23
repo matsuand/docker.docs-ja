@@ -42,9 +42,9 @@ being a full Linux distribution.
 @z
 
 @x
-For more information about the `FROM` instruction, see [Dockerfile reference for the FROM instruction](../../engine/reference/builder.md#from).
+For more information about the `FROM` instruction, see [Dockerfile reference for the FROM instruction](../../reference/dockerfile.md#from).
 @y
-For more information about the `FROM` instruction, see [Dockerfile reference for the FROM instruction](../../engine/reference/builder.md#from).
+For more information about the `FROM` instruction, see [Dockerfile reference for the FROM instruction](../../reference/dockerfile.md#from).
 @z
 
 @x
@@ -148,13 +148,13 @@ See [Understanding object labels](../../config/labels-custom-metadata.md)
 for guidelines about acceptable label keys and values. For information about
 querying labels, refer to the items related to filtering in
 [Managing labels on objects](../../config/labels-custom-metadata.md#manage-labels-on-objects).
-See also [LABEL](../../engine/reference/builder.md#label) in the Dockerfile reference.
+See also [LABEL](../../reference/dockerfile.md#label) in the Dockerfile reference.
 @y
 See [Understanding object labels](../../config/labels-custom-metadata.md)
 for guidelines about acceptable label keys and values. For information about
 querying labels, refer to the items related to filtering in
 [Managing labels on objects](../../config/labels-custom-metadata.md#manage-labels-on-objects).
-See also [LABEL](../../engine/reference/builder.md#label) in the Dockerfile reference.
+See also [LABEL](../../reference/dockerfile.md#label) in the Dockerfile reference.
 @z
 
 @x
@@ -174,9 +174,9 @@ maintainable.
 @z
 
 @x
-For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../engine/reference/builder.md#run).
+For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../reference/dockerfile.md#run).
 @y
-For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../engine/reference/builder.md#run).
+For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../reference/dockerfile.md#run).
 @z
 
 @x
@@ -513,7 +513,7 @@ python and perl. For example, `CMD ["perl", "-de0"]`, `CMD ["python"]`, or `CMD
 ["php", "-a"]`. Using this form means that when you execute something like
 `docker run -it python`, you’ll get dropped into a usable shell, ready to go.
 `CMD` should rarely be used in the manner of `CMD ["param", "param"]` in
-conjunction with [`ENTRYPOINT`](../../engine/reference/builder.md#entrypoint), unless
+conjunction with [`ENTRYPOINT`](../../reference/dockerfile.md#entrypoint), unless
 you and your expected users are already quite familiar with how `ENTRYPOINT`
 works.
 @y
@@ -522,15 +522,15 @@ python and perl. For example, `CMD ["perl", "-de0"]`, `CMD ["python"]`, or `CMD
 ["php", "-a"]`. Using this form means that when you execute something like
 `docker run -it python`, you’ll get dropped into a usable shell, ready to go.
 `CMD` should rarely be used in the manner of `CMD ["param", "param"]` in
-conjunction with [`ENTRYPOINT`](../../engine/reference/builder.md#entrypoint), unless
+conjunction with [`ENTRYPOINT`](../../reference/dockerfile.md#entrypoint), unless
 you and your expected users are already quite familiar with how `ENTRYPOINT`
 works.
 @z
 
 @x
-For more information about `CMD`, see [Dockerfile reference for the CMD instruction](../../engine/reference/builder.md#cmd).
+For more information about `CMD`, see [Dockerfile reference for the CMD instruction](../../reference/dockerfile.md#cmd).
 @y
-For more information about `CMD`, see [Dockerfile reference for the CMD instruction](../../engine/reference/builder.md#cmd).
+For more information about `CMD`, see [Dockerfile reference for the CMD instruction](../../reference/dockerfile.md#cmd).
 @z
 
 @x
@@ -566,9 +566,9 @@ the recipient container back to the source (for example, `MYSQL_PORT_3306_TCP`).
 @z
 
 @x
-For more information about `EXPOSE`, see [Dockerfile reference for the EXPOSE instruction](../../engine/reference/builder.md#expose).
+For more information about `EXPOSE`, see [Dockerfile reference for the EXPOSE instruction](../../reference/dockerfile.md#expose).
 @y
-For more information about `EXPOSE`, see [Dockerfile reference for the EXPOSE instruction](../../engine/reference/builder.md#expose).
+For more information about `EXPOSE`, see [Dockerfile reference for the EXPOSE instruction](../../reference/dockerfile.md#expose).
 @z
 
 @x
@@ -732,9 +732,9 @@ $ docker run --rm test sh -c 'echo $ADMIN_USER'
 @z
 
 @x
-For more information about `ENV`, see [Dockerfile reference for the ENV instruction](../../engine/reference/builder.md#env).
+For more information about `ENV`, see [Dockerfile reference for the ENV instruction](../../reference/dockerfile.md#env).
 @y
-For more information about `ENV`, see [Dockerfile reference for the ENV instruction](../../engine/reference/builder.md#env).
+For more information about `ENV`, see [Dockerfile reference for the ENV instruction](../../reference/dockerfile.md#env).
 @z
 
 @x
@@ -803,14 +803,14 @@ as part of your build. `ADD` is better than manually adding files using
 something like `wget` and `tar`, because it ensures a more precise build cache.
 `ADD` also has built-in support for checksum validation of the remote
 resources, and a protocol for parsing branches, tags, and subdirectories from
-[Git URLs](../../engine/reference/commandline/image_build.md#git-repositories).
+[Git URLs](../../reference/cli/docker/image/build.md#git-repositories).
 @y
 The `ADD` instruction is best for when you need to download a remote artifact
 as part of your build. `ADD` is better than manually adding files using
 something like `wget` and `tar`, because it ensures a more precise build cache.
 `ADD` also has built-in support for checksum validation of the remote
 resources, and a protocol for parsing branches, tags, and subdirectories from
-[Git URLs](../../engine/reference/commandline/image_build.md#git-repositories).
+[Git URLs](../../reference/cli/docker/image/build.md#git-repositories).
 @z
 
 @x
@@ -881,12 +881,12 @@ RUN ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 @x
 For more information about `ADD` or `COPY`, see the following:
-- [Dockerfile reference for the ADD instruction](../../engine/reference/builder.md#add)
-- [Dockerfile reference for the COPY instruction](../../engine/reference/builder.md#copy)
+- [Dockerfile reference for the ADD instruction](../../reference/dockerfile.md#add)
+- [Dockerfile reference for the COPY instruction](../../reference/dockerfile.md#copy)
 @y
 For more information about `ADD` or `COPY`, see the following:
-- [Dockerfile reference for the ADD instruction](../../engine/reference/builder.md#add)
-- [Dockerfile reference for the COPY instruction](../../engine/reference/builder.md#copy)
+- [Dockerfile reference for the ADD instruction](../../reference/dockerfile.md#add)
+- [Dockerfile reference for the COPY instruction](../../reference/dockerfile.md#copy)
 @z
 
 @x
@@ -1026,9 +1026,9 @@ exec "$@"
 @z
 
 @x
-This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](../../engine/reference/builder.md#entrypoint).
+This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](../../reference/dockerfile.md#entrypoint).
 @y
-This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](../../engine/reference/builder.md#entrypoint).
+This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](../../reference/dockerfile.md#entrypoint).
 @z
 
 @x
@@ -1108,9 +1108,9 @@ $ docker run --rm -it postgres bash
 @z
 
 @x
-For more information about `ENTRYPOINT`, see [Dockerfile reference for the ENTRYPOINT instruction](../../engine/reference/builder.md#entrypoint).
+For more information about `ENTRYPOINT`, see [Dockerfile reference for the ENTRYPOINT instruction](../../reference/dockerfile.md#entrypoint).
 @y
-For more information about `ENTRYPOINT`, see [Dockerfile reference for the ENTRYPOINT instruction](../../engine/reference/builder.md#entrypoint).
+For more information about `ENTRYPOINT`, see [Dockerfile reference for the ENTRYPOINT instruction](../../reference/dockerfile.md#entrypoint).
 @z
 
 @x
@@ -1132,9 +1132,9 @@ parts of your image.
 @z
 
 @x
-For more information about `VOLUME`, see [Dockerfile reference for the VOLUME instruction](../../engine/reference/builder.md#volume).
+For more information about `VOLUME`, see [Dockerfile reference for the VOLUME instruction](../../reference/dockerfile.md#volume).
 @y
-For more information about `VOLUME`, see [Dockerfile reference for the VOLUME instruction](../../engine/reference/builder.md#volume).
+For more information about `VOLUME`, see [Dockerfile reference for the VOLUME instruction](../../reference/dockerfile.md#volume).
 @z
 
 @x
@@ -1222,9 +1222,9 @@ frequently.
 @z
 
 @x
-For more information about `USER`, see [Dockerfile reference for the USER instruction](../../engine/reference/builder.md#user).
+For more information about `USER`, see [Dockerfile reference for the USER instruction](../../reference/dockerfile.md#user).
 @y
-For more information about `USER`, see [Dockerfile reference for the USER instruction](../../engine/reference/builder.md#user).
+For more information about `USER`, see [Dockerfile reference for the USER instruction](../../reference/dockerfile.md#user).
 @z
 
 @x
@@ -1246,9 +1246,9 @@ maintain.
 @z
 
 @x
-For more information about `WORKDIR`, see [Dockerfile reference for the WORKDIR instruction](../../engine/reference/builder.md#workdir).
+For more information about `WORKDIR`, see [Dockerfile reference for the WORKDIR instruction](../../reference/dockerfile.md#workdir).
 @y
-For more information about `WORKDIR`, see [Dockerfile reference for the WORKDIR instruction](../../engine/reference/builder.md#workdir).
+For more information about `WORKDIR`, see [Dockerfile reference for the WORKDIR instruction](../../reference/dockerfile.md#workdir).
 @z
 
 @x
@@ -1310,7 +1310,7 @@ allowing the Dockerfile author to make a choice.
 @z
 
 @x
-For more information about `ONBUILD`, see [Dockerfile reference for the ONBUILD instruction](../../engine/reference/builder.md#onbuild).
+For more information about `ONBUILD`, see [Dockerfile reference for the ONBUILD instruction](../../reference/dockerfile.md#onbuild).
 @y
-For more information about `ONBUILD`, see [Dockerfile reference for the ONBUILD instruction](../../engine/reference/builder.md#onbuild).
+For more information about `ONBUILD`, see [Dockerfile reference for the ONBUILD instruction](../../reference/dockerfile.md#onbuild).
 @z

@@ -44,7 +44,7 @@ Start services
 @z
 
 @x
-Starts existing containers for a service.
+Starts existing containers for a service
 @y
-Starts existing containers for a service.
+Starts existing containers for a service
 @z

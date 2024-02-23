@@ -297,7 +297,8 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = _vendor assets content data i18n layouts
 bases = \
-	hugo.yaml
+	hugo.yaml    \
+	package.json
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -326,7 +327,6 @@ copyfiles = \
 	go.sum             \
 	netlify.toml       \
 	package-lock.json  \
-	package.json       \
 	postcss.config.js  \
 	tailwind.config.js
 

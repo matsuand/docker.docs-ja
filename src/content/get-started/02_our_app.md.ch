@@ -4,27 +4,19 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Containerize an application
 keywords: dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers
 description: Follow this step-by-step guide to learn how to create and run a containerized
   application using Docker
-aliases:
-- /get-started/part2/
----
 @y
----
 title: アプリケーションのコンテナー化
 keywords: dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers
 description: Follow this step-by-step guide to learn how to create and run a containerized
   application using Docker
-aliases:
-- /get-started/part2/
----
 @z
 
 @x
@@ -561,12 +553,12 @@ Related information:
 @z
 
 @x
- - [Dockerfile reference](../engine/reference/builder.md)
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [Dockerfile reference](../reference/dockerfile.md)
+ - [docker CLI reference](/reference/cli/docker/)
  - [Build with Docker guide](../build/guide/index.md)
 @y
- - [Dockerfile リファレンス](../engine/reference/builder.md)
- - [docker CLI リファレンス](__SUBDIR__/engine/reference/commandline/cli/)
+ - [Dockerfile リファレンス](../reference/dockerfile.md)
+ - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
  - [Docker ガイドを使ったビルド](../build/guide/index.md)
 @z
 

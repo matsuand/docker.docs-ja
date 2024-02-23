@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Image-building best practices
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Tips for building images for your application
----
 @y
----
 title: Image-building best practices
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Tips for building images for your application
----
 @z
 
 @x
@@ -512,13 +508,13 @@ In this section, you learned a few image building best practices, including laye
 @x
 Related information:
  - [.dockerignore](../build/building/context.md#dockerignore-files)
- - [Dockerfile reference](../engine/reference/builder.md)
+ - [Dockerfile reference](../reference/dockerfile.md)
  - [Build with Docker guide](../build/guide/index.md)
  - [Dockerfile best practices](../develop/develop-images/dockerfile_best-practices.md)
 @y
 Related information:
  - [.dockerignore](../build/building/context.md#dockerignore-files)
- - [Dockerfile reference](../engine/reference/builder.md)
+ - [Dockerfile reference](../reference/dockerfile.md)
  - [Build with Docker guide](../build/guide/index.md)
  - [Dockerfile best practices](../develop/develop-images/dockerfile_best-practices.md)
 @z

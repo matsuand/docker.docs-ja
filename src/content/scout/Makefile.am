@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images integrations policy
+SUBDIRS = guides images integrations policy
 
 bases = \
 	_index.md              \

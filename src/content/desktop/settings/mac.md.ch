@@ -4,29 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Change your Docker Desktop settings on Mac
 keywords: settings, preferences, proxy, file sharing, resources, kubernetes, Docker
   Desktop, Mac
 title: Change Docker Desktop settings on Mac
-aliases:
-- /docker-for-mac/mutagen-caching/
-- /docker-for-mac/mutagen/
-- /docker-for-mac/osxfs-caching/
-- /docker-for-mac/osxfs/
----
 @y
----
 description: Change your Docker Desktop settings on Mac
 keywords: settings, preferences, proxy, file sharing, resources, kubernetes, Docker
   Desktop, Mac
 title: Change Docker Desktop settings on Mac
-aliases:
-- /docker-for-mac/mutagen-caching/
-- /docker-for-mac/mutagen/
-- /docker-for-mac/osxfs-caching/
-- /docker-for-mac/osxfs/
----
 @z
 
 @x
@@ -68,10 +54,10 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Start Docker Desktop when you sign in**. Select to automatically start Docker
+- **Start Docker Desktop when you sign in to your computer**. Select to automatically start Docker
   Desktop when you sign in to your machine.
 @y
-- **Start Docker Desktop when you sign in**. Select to automatically start Docker
+- **Start Docker Desktop when you sign in to your computer**. Select to automatically start Docker
   Desktop when you sign in to your machine.
 @z
 
@@ -84,9 +70,9 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
-- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use System Settings**.
+- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use system settings**.
 @y
-- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use System Settings**.
+- **Choose theme for Docker Desktop**. Choose whether you want to apply a **Light** or **Dark** theme to Docker Desktop. Alternatively you can set Docker Desktop to **Use system settings**.
 @z
 
 @x
@@ -148,9 +134,9 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **Use Rosetta for x86/AMD64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have turned on **Virtualization framework** in the **General** settings tab. You must also be on macOS Ventura or later. 
+- **Use Rosetta for x86_64/amd64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have turned on **Virtualization framework** in the **General** settings tab. You must also be on macOS Ventura or later. 
 @y
-- **Use Rosetta for x86/AMD64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have turned on **Virtualization framework** in the **General** settings tab. You must also be on macOS Ventura or later. 
+- **Use Rosetta for x86_64/amd64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have turned on **Virtualization framework** in the **General** settings tab. You must also be on macOS Ventura or later. 
 @z
 
 @x
@@ -163,14 +149,6 @@ If you choose the integrated terminal, you can run commands in a running contain
   crash reports, and usage data. This information helps Docker improve and
   troubleshoot the application. Clear the checkbox to opt out. Docker may
   periodically prompt you for more information.
-@z
-
-@x
-- **Show weekly tips**. Select to display useful advice and suggestions about
-  using Docker.
-@y
-- **Show weekly tips**. Select to display useful advice and suggestions about
-  using Docker.
 @z
 
 @x
@@ -583,10 +561,10 @@ edit the file using your favorite text editor.
 
 @x
 To see the full list of possible configuration options, see the
-[dockerd command reference](/engine/reference/commandline/dockerd/).
+[dockerd command reference](/reference/cli/dockerd/).
 @y
 To see the full list of possible configuration options, see the
-[dockerd command reference](__SUBDIR__/engine/reference/commandline/dockerd/).
+[dockerd command reference](__SUBDIR__/reference/cli/dockerd/).
 @z
 
 @x

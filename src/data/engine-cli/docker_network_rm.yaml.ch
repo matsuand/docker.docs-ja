@@ -121,6 +121,7 @@ examples: |-
     list and tries to delete that. The command reports success or failure for each
     deletion.
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false
@@ -132,6 +133,7 @@ swarm: false
     list and tries to delete that. The command reports success or failure for each
     deletion.
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false

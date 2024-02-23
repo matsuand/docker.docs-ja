@@ -2,72 +2,92 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
 ---
 title: Overview of the Extensions SDK
 description: Overall index for Docker Extensions SDK documentation
 keywords: Docker, Extensions, sdk
-aliases:
-- /desktop/extensions-sdk/dev/overview/
-grid:
-  - title: "The build and publish process"
-    description: Understand the process for building and publishing an extension.
-    icon: "checklist"
-    link: "/desktop/extensions-sdk/process/"
-  - title: "Quickstart guide"
-    description: Follow the quickstart guide to create a basic Docker Extension quickly.
-    icon: "explore"
-    link: "/desktop/extensions-sdk/quickstart/"
-  - title: "View the design guidelines"
-    description: Ensure your extension aligns to Docker's design guidelines and principles.
-    icon: "design_services"
-    link: "/desktop/extensions-sdk/design/design-guidelines/"
-  - title: "Publish your extension"
-    description: Understand how to publish your extension to the Marketplace.
-    icon: "publish"
-    link: "/desktop/extensions-sdk/extensions/"
-  - title: "Interacting with Kubernetes"
-    description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker Extension.
-    icon: "multiple_stop"
-    link: "/desktop/extensions-sdk/dev/kubernetes/"
-  - title: "Multi-arch extensions"
-    description: Build your extension for multiple architectures.
-    icon: "content_copy"
-    link: "/desktop/extensions-sdk/extensions/multi-arch/"
----
 @y
 ---
 title: Overview of the Extensions SDK
 description: Overall index for Docker Extensions SDK documentation
 keywords: Docker, Extensions, sdk
-aliases:
-- /desktop/extensions-sdk/dev/overview/
-grid:
+@z
+
+% snip aliases...
+% snip grid:
+
+@x
+  - title: "The build and publish process"
+    description: Understand the process for building and publishing an extension.
+    icon: "checklist"
+    link: "/desktop/extensions-sdk/process/"
+@y
   - title: "The build and publish process"
     description: Understand the process for building and publishing an extension.
     icon: "checklist"
     link: "__SUBDIR__/desktop/extensions-sdk/process/"
+@z
+
+@x
   - title: "Quickstart guide"
-    description: Follow the quickstart guide to create a basic Docker Extension quickly.
+    description: Follow the quickstart guide to create a basic Docker extension quickly.
+    icon: "explore"
+    link: "/desktop/extensions-sdk/quickstart/"
+@y
+  - title: "Quickstart guide"
+    description: Follow the quickstart guide to create a basic Docker extension quickly.
     icon: "explore"
     link: "__SUBDIR__/desktop/extensions-sdk/quickstart/"
+@z
+
+@x
+  - title: "View the design guidelines"
+    description: Ensure your extension aligns to Docker's design guidelines and principles.
+    icon: "design_services"
+    link: "/desktop/extensions-sdk/design/design-guidelines/"
+@y
   - title: "View the design guidelines"
     description: Ensure your extension aligns to Docker's design guidelines and principles.
     icon: "design_services"
     link: "__SUBDIR__/desktop/extensions-sdk/design/design-guidelines/"
+@z
+
+@x
+  - title: "Publish your extension"
+    description: Understand how to publish your extension to the Marketplace.
+    icon: "publish"
+    link: "/desktop/extensions-sdk/extensions/"
+@y
   - title: "Publish your extension"
     description: Understand how to publish your extension to the Marketplace.
     icon: "publish"
     link: "__SUBDIR__/desktop/extensions-sdk/extensions/"
+@z
+
+@x
   - title: "Interacting with Kubernetes"
-    description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker Extension.
+    description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker extension.
+    icon: "multiple_stop"
+    link: "/desktop/extensions-sdk/dev/kubernetes/"
+@y
+  - title: "Interacting with Kubernetes"
+    description: Find information on how to interact indirectly with a Kubernetes cluster from your Docker extension.
     icon: "multiple_stop"
     link: "__SUBDIR__/desktop/extensions-sdk/dev/kubernetes/"
+@z
+
+@x
+  - title: "Multi-arch extensions"
+    description: Build your extension for multiple architectures.
+    icon: "content_copy"
+    link: "/desktop/extensions-sdk/extensions/multi-arch/"
+@y
   - title: "Multi-arch extensions"
     description: Build your extension for multiple architectures.
     icon: "content_copy"
     link: "__SUBDIR__/desktop/extensions-sdk/extensions/multi-arch/"
----
 @z
 
 @x

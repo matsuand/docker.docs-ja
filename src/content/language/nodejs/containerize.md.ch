@@ -2,25 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Containerize a Node.js application
 keywords: node.js, node, containerize, initialize
 description: Learn how to containerize a Node.js application.
-aliases:
-  - /get-started/nodejs/build-images/
-  - /language/nodejs/build-images/
-  - /language/nodejs/run-containers/
----
 @y
----
 title: Node.js アプリケーションのコンテナー化
 keywords: node.js, node, containerize, initialize
 description: Node.js アプリケーションのコンテナー化について学びます。
-aliases:
-  - /get-started/nodejs/build-images/
-  - /language/nodejs/build-images/
-  - /language/nodejs/run-containers/
----
 @z
 
 @x
@@ -185,13 +173,13 @@ directory.
 
 @x
 To learn more about the files that `docker init` added, see the following:
- - [Dockerfile](../../engine/reference/builder.md)
- - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
+ - [Dockerfile](../../reference/dockerfile.md)
+ - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @y
 `docker init` が追加したファイルについての詳細は、以下を参照してください。
- - [Dockerfile](../../engine/reference/builder.md)
- - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
+ - [Dockerfile](../../reference/dockerfile.md)
+ - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @z
 
@@ -307,15 +295,15 @@ application using Docker.
 
 @x
 Related information:
- - [Dockerfile reference](../../engine/reference/builder.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
  - [Build with Docker guide](../../build/guide/index.md)
- - [.dockerignore file reference](../../engine/reference/builder.md#dockerignore-file)
+ - [.dockerignore file reference](../../reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](../../compose/_index.md)
 @y
 関連情報
- - [Dockerfile リファレンス](../../engine/reference/builder.md)
+ - [Dockerfile リファレンス](../../reference/dockerfile.md)
  - [Docker ガイドを使ったビルド](../../build/guide/index.md)
- - [.dockerignore ファイルリファレンス](../../engine/reference/builder.md#dockerignore-file)
+ - [.dockerignore ファイルリファレンス](../../reference/dockerfile.md#dockerignore-file)
  - [Docker Compose 概要](../../compose/_index.md)
 @z
 

@@ -337,6 +337,7 @@ examples: |-
     {"ID":"hyujct8cnjkk","Image":"postgres:13.2-alpine","Mode":"replicated","Name":"myapp_repos-db","Ports":"*:5432-\u003e5432/tcp","Replicas":"0/1"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -350,6 +351,7 @@ swarm: true
     {"ID":"hyujct8cnjkk","Image":"postgres:13.2-alpine","Mode":"replicated","Name":"myapp_repos-db","Ports":"*:5432-\u003e5432/tcp","Replicas":"0/1"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

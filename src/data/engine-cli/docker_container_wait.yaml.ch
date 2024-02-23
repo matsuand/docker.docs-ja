@@ -109,6 +109,7 @@ examples: |-
     0
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -117,6 +118,7 @@ swarm: false
     0
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

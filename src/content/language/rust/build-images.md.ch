@@ -150,11 +150,11 @@ directory:
 @x
 For building an image, only the Dockerfile is necessary. Open the Dockerfile
 in your favorite IDE or text editor and see what it contains. To learn more
-about Dockerfiles, see the [Dockerfile reference](../../engine/reference/builder.md).
+about Dockerfiles, see the [Dockerfile reference](../../reference/dockerfile.md).
 @y
 For building an image, only the Dockerfile is necessary. Open the Dockerfile
 in your favorite IDE or text editor and see what it contains. To learn more
-about Dockerfiles, see the [Dockerfile reference](../../engine/reference/builder.md).
+about Dockerfiles, see the [Dockerfile reference](../../reference/dockerfile.md).
 @z
 
 @x
@@ -164,9 +164,9 @@ about Dockerfiles, see the [Dockerfile reference](../../engine/reference/builder
 @z
 
 @x
-When you run `docker init`, it also creates a [`.dockerignore`](../../engine/reference/builder.md#dockerignore-file) file. Use the `.dockerignore` file to specify patterns and paths that you don't want copied into the image in order to keep the image as small as possible. Open up the `.dockerignore` file in your favorite IDE or text editor and see what's inside already.
+When you run `docker init`, it also creates a [`.dockerignore`](../../reference/dockerfile.md#dockerignore-file) file. Use the `.dockerignore` file to specify patterns and paths that you don't want copied into the image in order to keep the image as small as possible. Open up the `.dockerignore` file in your favorite IDE or text editor and see what's inside already.
 @y
-When you run `docker init`, it also creates a [`.dockerignore`](../../engine/reference/builder.md#dockerignore-file) file. Use the `.dockerignore` file to specify patterns and paths that you don't want copied into the image in order to keep the image as small as possible. Open up the `.dockerignore` file in your favorite IDE or text editor and see what's inside already.
+When you run `docker init`, it also creates a [`.dockerignore`](../../reference/dockerfile.md#dockerignore-file) file. Use the `.dockerignore` file to specify patterns and paths that you don't want copied into the image in order to keep the image as small as possible. Open up the `.dockerignore` file in your favorite IDE or text editor and see what's inside already.
 @z
 
 @x
@@ -439,16 +439,16 @@ This section showed how you can use `docker init` to create a Dockerfile and .do
 
 @x
 Related information:
- - [Dockerfile reference](../../engine/reference/builder.md)
- - [.dockerignore file](../../engine/reference/builder.md#dockerignore-file)
- - [docker init CLI reference](../../engine/reference/commandline/init.md)
- - [docker build CLI reference](../../engine/reference/commandline/image_build.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
+ - [.dockerignore file](../../reference/dockerfile.md#dockerignore-file)
+ - [docker init CLI reference](../../reference/cli/docker/init.md)
+ - [docker build CLI reference](../../reference/cli/docker/image/build.md)
 @y
 Related information:
- - [Dockerfile reference](../../engine/reference/builder.md)
- - [.dockerignore file](../../engine/reference/builder.md#dockerignore-file)
- - [docker init CLI reference](../../engine/reference/commandline/init.md)
- - [docker build CLI reference](../../engine/reference/commandline/image_build.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
+ - [.dockerignore file](../../reference/dockerfile.md#dockerignore-file)
+ - [docker init CLI reference](../../reference/cli/docker/init.md)
+ - [docker build CLI reference](../../reference/cli/docker/image/build.md)
 @z
 
 @x

@@ -180,10 +180,10 @@ Docker provides security guardrails for both administrators and developers.
 @z
 
 @x
-If you're an administrator, you can enforce sign in across Docker products for your developers, and 
+If you're an administrator, you can enforce sign-in across Docker products for your developers, and 
 scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management. 
 @y
-If you're an administrator, you can enforce sign in across Docker products for your developers, and 
+If you're an administrator, you can enforce sign-in across Docker products for your developers, and 
 scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management. 
 @z
 

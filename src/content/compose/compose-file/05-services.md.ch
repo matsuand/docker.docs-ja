@@ -66,9 +66,51 @@ If not implemented the `deploy` section is ignored and the Compose file is still
 @z
 
 @x
+## annotations
+@y
+## annotations
+@z
+
+@x
+`annotations` defines annotations for the container. `annotations` can use either an array or a map.
+@y
+`annotations` defines annotations for the container. `annotations` can use either an array or a map.
+@z
+
+@x
+```yml
+annotations:
+  com.example.foo: bar
+```
+@y
+```yml
+annotations:
+  com.example.foo: bar
+```
+@z
+
+@x
+```yml
+annotations:
+  - com.example.foo=bar
+```
+@y
+```yml
+annotations:
+  - com.example.foo=bar
+```
+@z
+
+@x
 ## attach
 @y
 ## attach
+@z
+
+@x
+> Available with Docker Compose version 2.20.0 and later
+@y
+> Available with Docker Compose version 2.20.0 and later
 @z
 
 @x
@@ -500,9 +542,9 @@ command: bundle exec thin -p 3000
 @z
 
 @x
-The value can also be a list, in a manner similar to [Dockerfile](https://docs.docker.com/engine/reference/builder/#cmd):
+The value can also be a list, in a manner similar to [Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
 @y
-The value can also be a list, in a manner similar to [Dockerfile](https://docs.docker.com/engine/reference/builder/#cmd):
+The value can also be a list, in a manner similar to [Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
 @z
 
 @x
@@ -552,11 +594,9 @@ Compose reports an error if `config` doesn't exist on the platform or isn't defi
 @z
 
 @x
-There are two syntaxes defined for configs. To remain compliant to this specification, an implementation
-must support both syntaxes. Implementations must allow use of both short and long syntaxes within the same document.
+There are two syntaxes defined for configs: a short syntax and a long syntax.
 @y
-There are two syntaxes defined for configs. To remain compliant to this specification, an implementation
-must support both syntaxes. Implementations must allow use of both short and long syntaxes within the same document.
+There are two syntaxes defined for configs: a short syntax and a long syntax.
 @z
 
 @x
@@ -1088,6 +1128,12 @@ Compose guarantees dependency services marked with
 @z
 
 @x
+> Available with Docker Compose version 2.22.0 and later.
+@y
+> Available with Docker Compose version 2.22.0 and later.
+@z
+
+@x
 `develop` specifies the development configuration for maintaining a container in sync with source, as defined in the [Development Section](develop.md).
 @y
 `develop` specifies the development configuration for maintaining a container in sync with source, as defined in the [Development Section](develop.md).
@@ -1303,10 +1349,10 @@ entrypoint: /code/entrypoint.sh
 
 @x
 Alternatively, the value can also be a list, in a manner similar to the
-[Dockerfile](https://docs.docker.com/engine/reference/builder/#cmd):
+[Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
 @y
 Alternatively, the value can also be a list, in a manner similar to the
-[Dockerfile](https://docs.docker.com/engine/reference/builder/#cmd):
+[Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
 @z
 
 @x
@@ -1407,6 +1453,7 @@ env_file:
   - path: ./override.env
     required: false
 ```
+> `required` attribute is available with Docker Compose version 2.24.0 or later.
 @y
 ```yml
 env_file:
@@ -1415,6 +1462,7 @@ env_file:
   - path: ./override.env
     required: false
 ```
+> `required` attribute is available with Docker Compose version 2.24.0 or later.
 @z
 
 @x
@@ -1622,14 +1670,14 @@ When not explicitly set, `tcp` protocol is used.
 expose:
   - "3000"
   - "8000"
-  - "8080-8085/tcp
+  - "8080-8085/tcp"
 ```
 @y
 ```yml
 expose:
   - "3000"
   - "8000"
-  - "8080-8085/tcp
+  - "8080-8085/tcp"
 ```
 @z
 
@@ -2114,42 +2162,6 @@ Any other allowed keys in the service definition should be treated as scalars.
 @z
 
 @x
-## annotations
-@y
-## annotations
-@z
-
-@x
-`annotations` defines annotations for the container. `annotations` can use either an array or a map.
-@y
-`annotations` defines annotations for the container. `annotations` can use either an array or a map.
-@z
-
-@x
-```yml
-annotations:
-  com.example.foo: bar
-```
-@y
-```yml
-annotations:
-  com.example.foo: bar
-```
-@z
-
-@x
-```yml
-annotations:
-  - com.example.foo=bar
-```
-@y
-```yml
-annotations:
-  - com.example.foo=bar
-```
-@z
-
-@x
 ## external_links
 @y
 ## external_links
@@ -2357,11 +2369,11 @@ been the case if `group_add` were not declared.
 
 @x
 `healthcheck` declares a check that's run to determine whether or not the service containers are "healthy". It works in the same way, and has the same default values, as the
-[HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck)
+[HEALTHCHECK Dockerfile instruction](https://docs.docker.com/reference/dockerfile/#healthcheck)
 set by the service's Docker image. Your Compose file can override the values set in the Dockerfile. 
 @y
 `healthcheck` declares a check that's run to determine whether or not the service containers are "healthy". It works in the same way, and has the same default values, as the
-[HEALTHCHECK Dockerfile instruction](https://docs.docker.com/engine/reference/builder/#healthcheck)
+[HEALTHCHECK Dockerfile instruction](https://docs.docker.com/reference/dockerfile/#healthcheck)
 set by the service's Docker image. Your Compose file can override the values set in the Dockerfile. 
 @z
 
@@ -2570,13 +2582,9 @@ The init binary that is used is platform specific.
 @z
 
 @x
-`ipc` configures the IPC isolation mode set by the service container. Available
-values are platform specific, but Compose defines specific values
-which must be implemented as described if supported:
+`ipc` configures the IPC isolation mode set by the service container.
 @y
-`ipc` configures the IPC isolation mode set by the service container. Available
-values are platform specific, but Compose defines specific values
-which must be implemented as described if supported:
+`ipc` configures the IPC isolation mode set by the service container.
 @z
 
 @x
@@ -2600,36 +2608,6 @@ which must be implemented as described if supported:
 ```yml
     ipc: "shareable"
     ipc: "service:[service name]"
-```
-@z
-
-@x
-## uts
-@y
-## uts
-@z
-
-@x
-`uts` configures the UTS namespace mode set for the service container. When unspecified
-it is the runtime's decision to assign a UTS namespace, if supported. Available values are:
-@y
-`uts` configures the UTS namespace mode set for the service container. When unspecified
-it is the runtime's decision to assign a UTS namespace, if supported. Available values are:
-@z
-
-@x
-- `'host'`: Results in the container using the same UTS namespace as the host.
-@y
-- `'host'`: Results in the container using the same UTS namespace as the host.
-@z
-
-@x
-```yml
-    uts: "host"
-```
-@y
-```yml
-    uts: "host"
 ```
 @z
 
@@ -2726,16 +2704,6 @@ results in a runtime error.
 @z
 
 @x
-> **Note**
->
-> Availability of the `links` attribute is implementation specific.
-@y
-> **Note**
->
-> Availability of the `links` attribute is implementation specific.
-@z
-
-@x
 `links` defines a network link to containers in another service. Either specify both the service name and
 a link alias (`SERVICE:ALIAS`), or just the service name.
 @y
@@ -2826,25 +2794,135 @@ are platform specific. Driver specific options can be set with `options` as key-
 @z
 
 @x
+## mac_address
+@y
+## mac_address
+@z
+
+@x
+> Available with Docker Compose version 2.24.0 and later.
+@y
+> Available with Docker Compose version 2.24.0 and later.
+@z
+
+@x
+`mac_address` sets a MAC address for the service container.
+@y
+`mac_address` sets a MAC address for the service container.
+@z
+
+@x
+> **Note**
+> Container runtimes might reject this value (ie. Docker Engine >= v25.0). In that case, you should use [networks.mac_address](#mac_address) instead.
+@y
+> **Note**
+> Container runtimes might reject this value (ie. Docker Engine >= v25.0). In that case, you should use [networks.mac_address](#mac_address) instead.
+@z
+
+@x
+## mem_limit
+@y
+## mem_limit
+@z
+
+@x
+_DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
+@y
+_DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
+@z
+
+@x
+## mem_reservation
+@y
+## mem_reservation
+@z
+
+@x
+_DEPRECATED: use [deploy.reservations.memory](deploy.md#memory)_
+@y
+_DEPRECATED: use [deploy.reservations.memory](deploy.md#memory)_
+@z
+
+@x
+## mem_swappiness
+@y
+## mem_swappiness
+@z
+
+@x
+`mem_swappiness` defines as a percentage, a value between 0 and 100, for the host kernel to swap out
+anonymous memory pages used by a container.
+@y
+`mem_swappiness` defines as a percentage, a value between 0 and 100, for the host kernel to swap out
+anonymous memory pages used by a container.
+@z
+
+@x
+- `0`: Turns off anonymous page swapping.
+- `100`: Sets all anonymous pages as swappable.
+@y
+- `0`: Turns off anonymous page swapping.
+- `100`: Sets all anonymous pages as swappable.
+@z
+
+@x
+The default value is platform specific.
+@y
+The default value is platform specific.
+@z
+
+@x
+## memswap_limit
+@y
+## memswap_limit
+@z
+
+@x
+`memswap_limit` defines the amount of memory the container is allowed to swap to disk. This is a modifier
+attribute that only has meaning if [`memory`](deploy.md#memory) is also set. Using swap lets the container write excess
+memory requirements to disk when the container has exhausted all the memory that is available to it.
+There is a performance penalty for applications that swap memory to disk often.
+@y
+`memswap_limit` defines the amount of memory the container is allowed to swap to disk. This is a modifier
+attribute that only has meaning if [`memory`](deploy.md#memory) is also set. Using swap lets the container write excess
+memory requirements to disk when the container has exhausted all the memory that is available to it.
+There is a performance penalty for applications that swap memory to disk often.
+@z
+
+@x
+- If `memswap_limit` is set to a positive integer, then both `memory` and `memswap_limit` must be set. `memswap_limit` represents the total amount of memory and swap that can be used, and `memory` controls the amount used by non-swap memory. So if `memory`="300m" and `memswap_limit`="1g", the container can use 300m of memory and 700m (1g - 300m) swap.
+- If `memswap_limit` is set to 0, the setting is ignored, and the value is treated as unset.
+- If `memswap_limit` is set to the same value as `memory`, and `memory` is set to a positive integer, the container does not have access to swap.
+- If `memswap_limit` is unset, and `memory` is set, the container can use as much swap as the `memory` setting, if the host container has swap memory configured. For instance, if `memory`="300m" and `memswap_limit` is not set, the container can use 600m in total of memory and swap.
+- If `memswap_limit` is explicitly set to -1, the container is allowed to use unlimited swap, up to the amount available on the host system.
+@y
+- If `memswap_limit` is set to a positive integer, then both `memory` and `memswap_limit` must be set. `memswap_limit` represents the total amount of memory and swap that can be used, and `memory` controls the amount used by non-swap memory. So if `memory`="300m" and `memswap_limit`="1g", the container can use 300m of memory and 700m (1g - 300m) swap.
+- If `memswap_limit` is set to 0, the setting is ignored, and the value is treated as unset.
+- If `memswap_limit` is set to the same value as `memory`, and `memory` is set to a positive integer, the container does not have access to swap.
+- If `memswap_limit` is unset, and `memory` is set, the container can use as much swap as the `memory` setting, if the host container has swap memory configured. For instance, if `memory`="300m" and `memswap_limit` is not set, the container can use 600m in total of memory and swap.
+- If `memswap_limit` is explicitly set to -1, the container is allowed to use unlimited swap, up to the amount available on the host system.
+@z
+
+@x
 ## network_mode
 @y
 ## network_mode
 @z
 
 @x
-`network_mode` sets a service container's network mode. Available values are platform specific, but Compose defines specific values which must be implemented as described if supported:
+`network_mode` sets a service container's network mode. 
 @y
-`network_mode` sets a service container's network mode. Available values are platform specific, but Compose defines specific values which must be implemented as described if supported:
+`network_mode` sets a service container's network mode. 
 @z
 
 @x
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
-- `service:{name}`: Gives the containers access to the specified service only.
+- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](../../network/_index.md#container-networks).
 @y
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
-- `service:{name}`: Gives the containers access to the specified service only.
+- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](../../network/_index.md#container-networks).
 @z
 
 @x
@@ -3104,11 +3182,11 @@ networks:
 @x
 `link_local_ips` specifies a list of link-local IPs. Link-local IPs are special IPs which belong to a well
 known subnet and are purely managed by the operator, usually dependent on the architecture where they are
-deployed. Implementation is platform specific.
+deployed.
 @y
 `link_local_ips` specifies a list of link-local IPs. Link-local IPs are special IPs which belong to a well
 known subnet and are purely managed by the operator, usually dependent on the architecture where they are
-deployed. Implementation is platform specific.
+deployed.
 @z
 
 @x
@@ -3219,110 +3297,6 @@ networks:
   app_net_2:
   app_net_3:
 ```
-@z
-
-@x
-## mac_address
-@y
-## mac_address
-@z
-
-@x
-`mac_address` sets a MAC address for the service container.
-@y
-`mac_address` sets a MAC address for the service container.
-@z
-
-@x
-> **Note**
-> Container runtimes might reject this value (ie. Docker Engine >= v25.0). In that case, you should use [networks.mac_address](#mac_address) instead.
-@y
-> **Note**
-> Container runtimes might reject this value (ie. Docker Engine >= v25.0). In that case, you should use [networks.mac_address](#mac_address) instead.
-@z
-
-@x
-## mem_limit
-@y
-## mem_limit
-@z
-
-@x
-_DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
-@y
-_DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
-@z
-
-@x
-## mem_reservation
-@y
-## mem_reservation
-@z
-
-@x
-_DEPRECATED: use [deploy.reservations.memory](deploy.md#memory)_
-@y
-_DEPRECATED: use [deploy.reservations.memory](deploy.md#memory)_
-@z
-
-@x
-## mem_swappiness
-@y
-## mem_swappiness
-@z
-
-@x
-`mem_swappiness` defines as a percentage, a value between 0 and 100, for the host kernel to swap out
-anonymous memory pages used by a container.
-@y
-`mem_swappiness` defines as a percentage, a value between 0 and 100, for the host kernel to swap out
-anonymous memory pages used by a container.
-@z
-
-@x
-- `0`: Turns off anonymous page swapping.
-- `100`: Sets all anonymous pages as swappable.
-@y
-- `0`: Turns off anonymous page swapping.
-- `100`: Sets all anonymous pages as swappable.
-@z
-
-@x
-The default value is platform specific.
-@y
-The default value is platform specific.
-@z
-
-@x
-## memswap_limit
-@y
-## memswap_limit
-@z
-
-@x
-`memswap_limit` defines the amount of memory the container is allowed to swap to disk. This is a modifier
-attribute that only has meaning if [`memory`](deploy.md#memory) is also set. Using swap lets the container write excess
-memory requirements to disk when the container has exhausted all the memory that is available to it.
-There is a performance penalty for applications that swap memory to disk often.
-@y
-`memswap_limit` defines the amount of memory the container is allowed to swap to disk. This is a modifier
-attribute that only has meaning if [`memory`](deploy.md#memory) is also set. Using swap lets the container write excess
-memory requirements to disk when the container has exhausted all the memory that is available to it.
-There is a performance penalty for applications that swap memory to disk often.
-@z
-
-@x
-- If `memswap_limit` is set to a positive integer, then both `memory` and `memswap_limit` must be set. `memswap_limit` represents the total amount of memory and swap that can be used, and `memory` controls the amount used by non-swap memory. So if `memory`="300m" and `memswap_limit`="1g", the container can use 300m of memory and 700m (1g - 300m) swap.
-- If `memswap_limit` is set to 0, the setting is ignored, and the value is treated as unset.
-- If `memswap_limit` is set to the same value as `memory`, and `memory` is set to a positive integer, the container does not have access to swap.
-- If `memswap_limit` is unset, and `memory` is set, the container can use as much swap as the `memory` setting, if the host container has swap memory configured. For instance, if `memory`="300m" and `memswap_limit` is not set, the container can use 600m in total of memory and swap.
-- If `memswap_limit` is explicitly set to -1, the container is allowed to use unlimited swap, up to the amount available on the host system.
-@y
-- If `memswap_limit` is set to a positive integer, then both `memory` and `memswap_limit` must be set. `memswap_limit` represents the total amount of memory and swap that can be used, and `memory` controls the amount used by non-swap memory. So if `memory`="300m" and `memswap_limit`="1g", the container can use 300m of memory and 700m (1g - 300m) swap.
-- If `memswap_limit` is set to 0, the setting is ignored, and the value is treated as unset.
-- If `memswap_limit` is set to the same value as `memory`, and `memory` is set to a positive integer, the container does not have access to swap.
-- If `memswap_limit` is unset, and `memory` is set, the container can use as much swap as the `memory` setting, if the host container has swap memory configured. For instance, if `memory`="300m" and `memswap_limit` is not set, the container can use 600m in total of memory and swap.
-- If `memswap_limit` is explicitly set to -1, the container is allowed to use unlimited swap, up to the amount available on the host system.
 @z
 
 @x
@@ -3587,39 +3561,7 @@ expressed in the short form.
 - `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
 @z
 
-@x
-```yml
-ports:
-  - target: 80
-    host_ip: 127.0.0.1
-    published: "8080"
-    protocol: tcp
-    mode: host
-@y
-```yml
-ports:
-  - target: 80
-    host_ip: 127.0.0.1
-    published: "8080"
-    protocol: tcp
-    mode: host
-@z
-
-@x
-  - target: 80
-    host_ip: 127.0.0.1
-    published: "8000-9000"
-    protocol: tcp
-    mode: host
-```
-@y
-  - target: 80
-    host_ip: 127.0.0.1
-    published: "8000-9000"
-    protocol: tcp
-    mode: host
-```
-@z
+% snip code...
 
 @x
 ## privileged
@@ -3711,12 +3653,6 @@ services:
    This is the default option if you are not also using the [Compose Build Specification](build.md).
   `if_not_present` is considered an alias for this value for backward compatibility.
 * `build`: Compose builds the image. Compose rebuilds the image if it's already present.
-@z
-
-@x
-If `pull_policy` and `build` are both present, Compose builds the image by default. This behavior may be overridden in the toolchain, depending on the implementation. 
-@y
-If `pull_policy` and `build` are both present, Compose builds the image by default. This behavior may be overridden in the toolchain, depending on the implementation. 
 @z
 
 @x
@@ -3800,10 +3736,8 @@ section of the Docker run reference page.
 @z
 
 @x
-The value of `runtime` is specific to the implementation.
 For example, `runtime` can be the name of [an implementation of OCI Runtime Spec](https://github.com/opencontainers/runtime-spec/blob/master/implementations.md), such as "runc".
 @y
-The value of `runtime` is specific to the implementation.
 For example, `runtime` can be the name of [an implementation of OCI Runtime Spec](https://github.com/opencontainers/runtime-spec/blob/master/implementations.md), such as "runc".
 @z
 
@@ -3821,6 +3755,12 @@ web:
   command: true
   runtime: runc
 ```
+@z
+
+@x
+The default is `runc`. To use a different runtime, see [Alternative runtimes](../../engine/alternative-runtimes.md).
+@y
+The default is `runc`. To use a different runtime, see [Alternative runtimes](../../engine/alternative-runtimes.md).
 @z
 
 @x
@@ -3944,7 +3884,7 @@ the service's containers.
 - `mode`: The [permissions](https://wintelguy.com/permissions-calc.pl) for the file to be mounted in `/run/secrets/`
   in the service's task containers, in octal notation.
   The default value is world-readable permissions (mode `0444`).
-  The writable bit must be ignored if set. The executable bit may be set.
+  The writable bit must be ignored if set. The executable bit may be set. 
 @y
 - `source`: The name of the secret as it exists on the platform.
 - `target`: The name of the file to be mounted in `/run/secrets/` in the
@@ -3954,13 +3894,7 @@ the service's containers.
 - `mode`: The [permissions](https://wintelguy.com/permissions-calc.pl) for the file to be mounted in `/run/secrets/`
   in the service's task containers, in octal notation.
   The default value is world-readable permissions (mode `0444`).
-  The writable bit must be ignored if set. The executable bit may be set.
-@z
-
-@x
-Note that the `uid`, `gid`, and `mode` attributes are implementation specific. 
-@y
-Note that the `uid`, `gid`, and `mode` attributes are implementation specific. 
+  The writable bit must be ignored if set. The executable bit may be set. 
 @z
 
 @x
@@ -4314,6 +4248,36 @@ userns_mode: "host"
 @y
 ```yml
 userns_mode: "host"
+```
+@z
+
+@x
+## uts
+@y
+## uts
+@z
+
+@x
+`uts` configures the UTS namespace mode set for the service container. When unspecified
+it is the runtime's decision to assign a UTS namespace, if supported. Available values are:
+@y
+`uts` configures the UTS namespace mode set for the service container. When unspecified
+it is the runtime's decision to assign a UTS namespace, if supported. Available values are:
+@z
+
+@x
+- `'host'`: Results in the container using the same UTS namespace as the host.
+@y
+- `'host'`: Results in the container using the same UTS namespace as the host.
+@z
+
+@x
+```yml
+    uts: "host"
+```
+@y
+```yml
+    uts: "host"
 ```
 @z
 

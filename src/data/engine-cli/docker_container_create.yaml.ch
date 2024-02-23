@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container create
 aliases: docker container create, docker create
@@ -43,8 +45,8 @@ long: |-
 
 @x
     The `docker create` command shares most of its options with the `docker run`
-    command (which performs a `docker create` before starting it). Refer to the
-    [`docker run` command](run.md) section and the [Docker run reference](../run.md)
+    command (which performs a `docker create` before starting it).
+    Refer to the [`docker run` CLI reference](/reference/cli/docker/container/run/)
     for details on the available flags and options.
 usage: docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 pname: docker container
@@ -1067,8 +1069,8 @@ examples: |-
     ### Create and start a container
 @y
     The `docker create` command shares most of its options with the `docker run`
-    command (which performs a `docker create` before starting it). Refer to the
-    [`docker run` command](run.md) section and the [Docker run reference](../run.md)
+    command (which performs a `docker create` before starting it).
+    Refer to the [`docker run` CLI reference](__SUBDIR__/reference/cli/docker/container/run/)
     for details on the available flags and options.
 usage: docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 pname: docker container
@@ -2230,6 +2232,7 @@ examples: |-
     drwxr-xr-x 32 1000 staff 1140 Dec  5 04:01 docker
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -2247,6 +2250,7 @@ swarm: false
     drwxr-xr-x 32 1000 staff 1140 Dec  5 04:01 docker
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

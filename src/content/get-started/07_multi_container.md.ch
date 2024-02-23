@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Multi container apps
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using more than one container in your application
----
 @y
----
 title: Multi container apps
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using more than one container in your application
----
 @z
 
 @x
@@ -731,11 +727,11 @@ container. You learned a little bit about container networking and service disco
 
 @x
 Related information:
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [docker CLI reference](/reference/cli/docker/)
  - [Networking overview](../network/index.md)
 @y
 Related information:
- - [docker CLI reference](__SUBDIR__/engine/reference/commandline/cli/)
+ - [docker CLI reference](__SUBDIR__/reference/cli/docker/)
  - [Networking overview](../network/index.md)
 @z
 

@@ -553,13 +553,13 @@ service's configuration in a similar way.
 
 @x
 See the command-line references for
-[`docker service create`](../reference/commandline/service_create.md) and
-[`docker service update`](../reference/commandline/service_update.md), or run
+[`docker service create`](../../reference/cli/docker/service/create.md) and
+[`docker service update`](../../reference/cli/docker/service/update.md), or run
 one of those commands with the `--help` flag.
 @y
 See the command-line references for
-[`docker service create`](../reference/commandline/service_create.md) and
-[`docker service update`](../reference/commandline/service_update.md), or run
+[`docker service create`](../../reference/cli/docker/service/create.md) and
+[`docker service update`](../../reference/cli/docker/service/update.md), or run
 one of those commands with the `--help` flag.
 @z
 
@@ -1680,13 +1680,13 @@ Service constraints let you set criteria for a node to meet before the scheduler
 deploys a service to the node. You can apply constraints to the
 service based upon node attributes and metadata or engine metadata. For more
 information on constraints, refer to the `docker service create`
-[CLI reference](../reference/commandline/service_create.md).
+[CLI reference](../../reference/cli/docker/service/create.md).
 @y
 Service constraints let you set criteria for a node to meet before the scheduler
 deploys a service to the node. You can apply constraints to the
 service based upon node attributes and metadata or engine metadata. For more
 information on constraints, refer to the `docker service create`
-[CLI reference](../reference/commandline/service_create.md).
+[CLI reference](../../reference/cli/docker/service/create.md).
 @z
 
 @x
@@ -1835,10 +1835,10 @@ possible to fulfill.
 
 @x
 For more information on constraints, refer to the `docker service create`
-[CLI reference](../reference/commandline/service_create.md).
+[CLI reference](../../reference/cli/docker/service/create.md).
 @y
 For more information on constraints, refer to the `docker service create`
-[CLI reference](../reference/commandline/service_create.md).
+[CLI reference](../../reference/cli/docker/service/create.md).
 @z
 
 @x
@@ -2601,10 +2601,10 @@ $ docker inspect --format="{{.Config.Hostname}}" hosttempl.1.wo41w8hg8qanxwjwsg4
 
 @x
 * [Swarm administration guide](admin_guide.md)
-* [Docker Engine command line reference](../reference/commandline/docker.md)
+* [Docker Engine command line reference](../../reference/cli/docker/)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
 @y
 * [Swarm administration guide](admin_guide.md)
-* [Docker Engine command line reference](../reference/commandline/docker.md)
+* [Docker Engine command line reference](../../reference/cli/docker/)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
 @z

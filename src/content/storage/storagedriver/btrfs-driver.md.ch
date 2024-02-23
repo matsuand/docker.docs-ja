@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Learn how to optimize your use of Btrfs driver.
 keywords: container, storage, driver, Btrfs
 title: Use the BTRFS storage driver
-aliases:
-  - /engine/userguide/storagedriver/btrfs-driver/
----
 @y
----
 description: Learn how to optimize your use of Btrfs driver.
 keywords: container, storage, driver, Btrfs
 title: Use the BTRFS storage driver
-aliases:
-  - /engine/userguide/storagedriver/btrfs-driver/
----
 @z
 
 @x
@@ -289,10 +281,10 @@ This procedure is essentially identical on SLES and Ubuntu.
 
 @x
    See all storage options for each storage driver in the
-   [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
+   [daemon reference documentation](/reference/cli/dockerd/#options-per-storage-driver)
 @y
    See all storage options for each storage driver in the
-   [daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#options-per-storage-driver)
+   [daemon reference documentation](__SUBDIR__/reference/cli/dockerd/#options-per-storage-driver)
 @z
 
 @x

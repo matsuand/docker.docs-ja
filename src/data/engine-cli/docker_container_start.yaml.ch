@@ -77,6 +77,7 @@ examples: |-
     $ docker start my_container
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -157,6 +158,7 @@ examples: |-
     $ docker start my_container
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

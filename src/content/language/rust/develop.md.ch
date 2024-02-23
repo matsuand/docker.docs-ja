@@ -44,9 +44,9 @@ In this section, you’ll learn how to use volumes and networking in Docker. You
 @z
 
 @x
-First, you’ll take a look at running a database in a container and how you can use volumes and networking to persist your data and allow your application to talk with the database. Then you’ll pull everything together into a Compose file which allows you to set up and run a local development environment with one command.
+First, you’ll take a look at running a database in a container and how you can use volumes and networking to persist your data and let your application talk with the database. Then you’ll pull everything together into a Compose file which lets you set up and run a local development environment with one command.
 @y
-First, you’ll take a look at running a database in a container and how you can use volumes and networking to persist your data and allow your application to talk with the database. Then you’ll pull everything together into a Compose file which allows you to set up and run a local development environment with one command.
+First, you’ll take a look at running a database in a container and how you can use volumes and networking to persist your data and let your application talk with the database. Then you’ll pull everything together into a Compose file which lets you set up and run a local development environment with one command.
 @z
 
 @x
@@ -100,10 +100,10 @@ $ docker network create postgresnet
 @z
 
 @x
-Now you can run PostgreSQL in a container and attach to the volume and network that you created above. Docker pulls the image from Hub and runs it for you locally.
+Now you can run PostgreSQL in a container and attach to the volume and network that you created previously. Docker pulls the image from Hub and runs it for you locally.
 In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](../../storage/volumes.md).
 @y
-Now you can run PostgreSQL in a container and attach to the volume and network that you created above. Docker pulls the image from Hub and runs it for you locally.
+Now you can run PostgreSQL in a container and attach to the volume and network that you created previously. Docker pulls the image from Hub and runs it for you locally.
 In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](../../storage/volumes.md).
 @z
 
@@ -266,21 +266,21 @@ For the sample application, you'll use a variation of the backend from the react
 @z
 
 @x
-   ```dockerfile
+   ```dockerfile {hl_lines="28"}
    # syntax=docker/dockerfile:1
 @y
-   ```dockerfile
+   ```dockerfile {hl_lines="28"}
    # syntax=docker/dockerfile:1
 @z
 
 @x
    # Comments are provided throughout this file to help you get started.
    # If you need more help, visit the Dockerfile reference guide at
-   # https://docs.docker.com/engine/reference/builder/
+   # https://docs.docker.com/reference/dockerfile/
 @y
    # Comments are provided throughout this file to help you get started.
    # If you need more help, visit the Dockerfile reference guide at
-   # https://docs.docker.com/engine/reference/builder/
+   # https://docs.docker.com/reference/dockerfile/
 @z
 
 @x
@@ -554,12 +554,12 @@ The following is the updated `compose.yaml` file.
 @z
 
 @x
-```yaml
+```yaml {hl_lines=["17-23","30-55"]}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker compose reference guide at
 # https://docs.docker.com/compose/compose-file/
 @y
-```yaml
+```yaml {hl_lines=["17-23","30-55"]}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker compose reference guide at
 # https://docs.docker.com/compose/compose-file/

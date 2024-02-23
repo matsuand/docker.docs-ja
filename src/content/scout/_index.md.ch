@@ -3,14 +3,12 @@
 
 % __SUBDIR__ 対応
 @x
----
 title: Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, analyze
 description:
   Docker Scout analyzes your images to help you understand their dependencies
   and potential vulnerabilities
 @y
----
 title: Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, analyze
 description:
@@ -18,35 +16,17 @@ description:
   and potential vulnerabilities
 @z
 
-@x
-aliases:
-  - /atomist/
-  - /atomist/try-atomist/
-  - /atomist/configure/settings/
-  - /atomist/configure/advisories/
-  - /atomist/integrate/github/
-  - /atomist/integrate/deploys/
-  - /engine/scan/
-@y
-aliases:
-  - /atomist/
-  - /atomist/try-atomist/
-  - /atomist/configure/settings/
-  - /atomist/configure/advisories/
-  - /atomist/integrate/github/
-  - /atomist/integrate/deploys/
-  - /engine/scan/
-@z
+% snip aliases...
+
+% grid:
 
 @x
-grid:
   - title: Quickstart
     link: /scout/quickstart/
     description: Learn what Docker Scout can do, and how to get started.
     icon: explore
 @y
-grid:
-  - title: Quickstart
+  - title: クイックスタート
     link: __SUBDIR__/scout/quickstart/
     description: Learn what Docker Scout can do, and how to get started.
     icon: explore
@@ -58,7 +38,7 @@ grid:
     description: Reveal and dig into the composition of your images.
     icon: radar
 @y
-  - title: Image analysis
+  - title: イメージ分析
     link: __SUBDIR__/scout/image-analysis/
     description: Reveal and dig into the composition of your images.
     icon: radar
@@ -97,7 +77,7 @@ grid:
       The web interface for Docker Scout.
     icon: dashboard
 @y
-  - title: Dashboard
+  - title: ダッシュボード
     link: __SUBDIR__/scout/dashboard/
     description: |
       The web interface for Docker Scout.
@@ -111,7 +91,7 @@ grid:
       Ensure that your artifacts align with supply chain best practices.
     icon: policy
 @y
-  - title: Policy {{< badge color=violet text="Early Access" >}}
+  - title: ポリシー {{< badge color=violet text="早期アクセス" >}}
     link: __SUBDIR__/scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.
@@ -126,7 +106,7 @@ grid:
     icon: upgrade
 ---
 @y
-  - title: Upgrade
+  - title: アップグレード
     link: __SUBDIR__/billing/scout-billing/
     description: |
       The free plan includes up to 3 repositories. Upgrade for more.

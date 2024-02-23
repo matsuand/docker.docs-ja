@@ -200,15 +200,15 @@ examples: |-
 @z
 
 @x
-    * [id](service_ls.md#id)
-    * [label](service_ls.md#label)
-    * [mode](service_ls.md#mode)
-    * [name](service_ls.md#name)
+    * [id](/reference/cli/docker/service/ls/#id)
+    * [label](/reference/cli/docker/service/ls/#label)
+    * [mode](/reference/cli/docker/service/ls/#mode)
+    * [name](/reference/cli/docker/service/ls/#name)
 @y
-    * [id](service_ls.md#id)
-    * [label](service_ls.md#label)
-    * [mode](service_ls.md#mode)
-    * [name](service_ls.md#name)
+    * [id](__SUBDIR__/reference/cli/docker/service/ls/#id)
+    * [label](__SUBDIR__/reference/cli/docker/service/ls/#label)
+    * [mode](__SUBDIR__/reference/cli/docker/service/ls/#mode)
+    * [name](__SUBDIR__/reference/cli/docker/service/ls/#name)
 @z
 
 @x
@@ -459,6 +459,7 @@ examples: |-
     {"ID":"ssniordqolsi","Image":"hello-world:latest","Mode":"replicated","Name":"hello","Ports":"","Replicas":"0/1"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -470,6 +471,7 @@ swarm: true
     {"ID":"ssniordqolsi","Image":"hello-world:latest","Mode":"replicated","Name":"hello","Ports":"","Replicas":"0/1"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

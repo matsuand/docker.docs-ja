@@ -662,6 +662,7 @@ examples: |-
     > on a locally-stored manifest list. Be sure to keep in mind that locally-stored
     > manifest lists are never used by the engine on a `docker pull`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: true
 kubernetes: false
@@ -675,6 +676,7 @@ swarm: false
     > on a locally-stored manifest list. Be sure to keep in mind that locally-stored
     > manifest lists are never used by the engine on a `docker pull`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: true
 kubernetes: false

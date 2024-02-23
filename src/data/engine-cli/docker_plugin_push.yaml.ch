@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker plugin push
 short: Push a plugin to a registry
@@ -18,7 +20,7 @@ long: |-
 @z
 
 @x
-    Registry credentials are managed by [docker login](login.md).
+    Registry credentials are managed by [docker login](/reference/cli/docker/login/).
 usage: docker plugin push [OPTIONS] PLUGIN[:TAG]
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -47,7 +49,7 @@ inherited_options:
 examples: |-
     The following example shows how to push a sample `user/plugin`.
 @y
-    Registry credentials are managed by [docker login](login.md).
+    Registry credentials are managed by [docker login](__SUBDIR__/reference/cli/docker/login/).
 usage: docker plugin push [OPTIONS] PLUGIN[:TAG]
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -97,6 +99,7 @@ examples: |-
     $ docker plugin push user/plugin
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -106,6 +109,7 @@ swarm: false
     $ docker plugin push user/plugin
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

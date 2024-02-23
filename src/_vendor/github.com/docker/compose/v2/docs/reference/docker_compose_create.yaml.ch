@@ -3,8 +3,8 @@
 
 @x
 command: docker compose create
-short: Creates containers for a service.
-long: Creates containers for a service.
+short: Creates containers for a service
+long: Creates containers for a service
 usage: docker compose create [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -12,7 +12,7 @@ options:
     - option: build
       value_type: bool
       default_value: "false"
-      description: Build images before starting containers.
+      description: Build images before starting containers
       deprecated: false
       hidden: false
       experimental: false
@@ -23,7 +23,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Recreate containers even if their configuration and image haven't changed.
+        Recreate containers even if their configuration and image haven't changed
       deprecated: false
       hidden: false
       experimental: false
@@ -33,7 +33,7 @@ options:
     - option: no-build
       value_type: bool
       default_value: "false"
-      description: Don't build an image, even if it's policy.
+      description: Don't build an image, even if it's policy
       deprecated: false
       hidden: false
       experimental: false
@@ -64,7 +64,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -101,8 +101,8 @@ kubernetes: false
 swarm: false
 @y
 command: docker compose create
-short: Creates containers for a service.
-long: Creates containers for a service.
+short: Creates containers for a service
+long: Creates containers for a service
 usage: docker compose create [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -110,7 +110,7 @@ options:
     - option: build
       value_type: bool
       default_value: "false"
-      description: Build images before starting containers.
+      description: Build images before starting containers
       deprecated: false
       hidden: false
       experimental: false
@@ -121,7 +121,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Recreate containers even if their configuration and image haven't changed.
+        Recreate containers even if their configuration and image haven't changed
       deprecated: false
       hidden: false
       experimental: false
@@ -131,7 +131,7 @@ options:
     - option: no-build
       value_type: bool
       default_value: "false"
-      description: Don't build an image, even if it's policy.
+      description: Don't build an image, even if it's policy
       deprecated: false
       hidden: false
       experimental: false
@@ -162,7 +162,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false

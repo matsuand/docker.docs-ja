@@ -26,6 +26,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -55,6 +56,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

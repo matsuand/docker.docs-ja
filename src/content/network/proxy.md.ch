@@ -1,20 +1,17 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
+% snip 対応
 
 @x
----
 title: Configure Docker to use a proxy server
 description: How to configure the Docker client to use a proxy server
 keywords: network, networking, proxy, client
----
 @y
----
 title: Configure Docker to use a proxy server
 description: How to configure the Docker client to use a proxy server
 keywords: network, networking, proxy, client
----
 @z
 
 @x
@@ -403,28 +400,18 @@ Proxy configuration on the command-line uses the `--build-arg` flag for builds,
 and the `--env` flag for when you want to run containers with a proxy.
 @z
 
-@x
-```console
-$ docker build --build-arg HTTP_PROXY="http://proxy.example.com:3128" .
-$ docker run --env HTTP_PROXY="http://proxy.example.com:3128" redis
-```
-@y
-```console
-$ docker build --build-arg HTTP_PROXY="http://proxy.example.com:3128" .
-$ docker run --env HTTP_PROXY="http://proxy.example.com:3128" redis
-```
-@z
+% snip command...
 
 @x
 For a list of all the proxy-related build arguments that you can use with the
 `docker build` command, see
-[Predefined ARGs](../engine/reference/builder.md#predefined-args).
+[Predefined ARGs](../reference/dockerfile.md#predefined-args).
 These proxy values are only available in the build container.
 They're not included in the build output.
 @y
 For a list of all the proxy-related build arguments that you can use with the
 `docker build` command, see
-[Predefined ARGs](../engine/reference/builder.md#predefined-args).
+[Predefined ARGs](../reference/dockerfile.md#predefined-args).
 These proxy values are only available in the build container.
 They're not included in the build output.
 @z

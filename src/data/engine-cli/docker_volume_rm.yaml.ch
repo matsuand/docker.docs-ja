@@ -79,6 +79,7 @@ examples: |-
     hello
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false
@@ -88,6 +89,7 @@ swarm: false
     hello
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false

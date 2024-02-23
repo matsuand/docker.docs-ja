@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Publish your image
 keywords: get started, quick start, intro, concepts
 description: Learn how to publish your image to Docker Hub
-aliases:
-- /get-started/publish-your-own-image/
----
 @y
----
 title: イメージの公開
 keywords: get started, quick start, intro, concepts
 description: Docker Hub へのイメージ公開方法について学びます。
-aliases:
-- /get-started/publish-your-own-image/
----
 @z
 
 @x
@@ -163,11 +155,11 @@ Related information:
 
 @x
 - Deep dive into the [Docker Hub manual](../../docker-hub/_index.md)
-- Learn more about the [docker tag](../../engine/reference/commandline/image_tag.md)
+- Learn more about the [docker tag](../../reference/cli/docker/image/tag.md)
   command
 @y
 - より詳しくは [Docker Hub マニュアル](../../docker-hub/_index.md) を確認してください。
-- [docker tag](../../engine/reference/commandline/image_tag.md) コマンドを確認してください。
+- [docker tag](../../reference/cli/docker/image/tag.md) コマンドを確認してください。
 @z
 
 @x

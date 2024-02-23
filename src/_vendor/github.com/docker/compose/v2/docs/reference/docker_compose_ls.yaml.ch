@@ -4,7 +4,7 @@
 @x
 command: docker compose ls
 short: List running compose projects
-long: Lists running Compose projects.
+long: Lists running Compose projects
 usage: docker compose ls [OPTIONS]
 pname: docker compose
 plink: docker_compose.yaml
@@ -22,7 +22,7 @@ options:
       swarm: false
     - option: filter
       value_type: filter
-      description: Filter output based on conditions provided.
+      description: Filter output based on conditions provided
       deprecated: false
       hidden: false
       experimental: false
@@ -32,7 +32,7 @@ options:
     - option: format
       value_type: string
       default_value: table
-      description: 'Format the output. Values: [table | json].'
+      description: 'Format the output. Values: [table | json]'
       deprecated: false
       hidden: false
       experimental: false
@@ -43,7 +43,7 @@ options:
       shorthand: q
       value_type: bool
       default_value: "false"
-      description: Only display IDs.
+      description: Only display IDs
       deprecated: false
       hidden: false
       experimental: false
@@ -70,7 +70,7 @@ swarm: false
 @y
 command: docker compose ls
 short: List running compose projects
-long: Lists running Compose projects.
+long: Lists running Compose projects
 usage: docker compose ls [OPTIONS]
 pname: docker compose
 plink: docker_compose.yaml
@@ -88,7 +88,7 @@ options:
       swarm: false
     - option: filter
       value_type: filter
-      description: Filter output based on conditions provided.
+      description: Filter output based on conditions provided
       deprecated: false
       hidden: false
       experimental: false
@@ -98,7 +98,7 @@ options:
     - option: format
       value_type: string
       default_value: table
-      description: 'Format the output. Values: [table | json].'
+      description: 'Format the output. Values: [table | json]'
       deprecated: false
       hidden: false
       experimental: false
@@ -109,7 +109,7 @@ options:
       shorthand: q
       value_type: bool
       default_value: "false"
-      description: Only display IDs.
+      description: Only display IDs
       deprecated: false
       hidden: false
       experimental: false

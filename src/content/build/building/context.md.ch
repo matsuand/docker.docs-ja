@@ -17,10 +17,10 @@ keywords: build, buildx, buildkit, context, git, tarball, stdin
 
 @x
 The `docker build` and `docker buildx build` commands build Docker images from
-a [Dockerfile](../../engine/reference/builder.md) and a context.
+a [Dockerfile](../../reference/dockerfile.md) and a context.
 @y
 The `docker build` and `docker buildx build` commands build Docker images from
-a [Dockerfile](../../engine/reference/builder.md) and a context.
+a [Dockerfile](../../reference/dockerfile.md) and a context.
 @z
 
 @x
@@ -598,12 +598,12 @@ contexts:
 @x
 By default, BuildKit doesn't keep the `.git` directory when using Git contexts.
 You can configure BuildKit to keep the directory by setting the
-[`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument](../../engine/reference/builder.md#buildkit-built-in-build-args).
+[`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument](../../reference/dockerfile.md#buildkit-built-in-build-args).
 This can be useful to if you want to retrieve Git information during your build:
 @y
 By default, BuildKit doesn't keep the `.git` directory when using Git contexts.
 You can configure BuildKit to keep the directory by setting the
-[`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument](../../engine/reference/builder.md#buildkit-built-in-build-args).
+[`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument](../../reference/dockerfile.md#buildkit-built-in-build-args).
 This can be useful to if you want to retrieve Git information during your build:
 @z
 
@@ -659,12 +659,12 @@ either SSH or token-based authentication.
 Buildx automatically detects and uses SSH credentials if the Git context you
 specify is an SSH or Git address. By default, this uses `$SSH_AUTH_SOCK`.
 You can configure the SSH credentials to use with the
-[`--ssh` flag](../../engine/reference/commandline/buildx_build.md#ssh).
+[`--ssh` flag](../../reference/cli/docker/buildx/build.md#ssh).
 @y
 Buildx automatically detects and uses SSH credentials if the Git context you
 specify is an SSH or Git address. By default, this uses `$SSH_AUTH_SOCK`.
 You can configure the SSH credentials to use with the
-[`--ssh` flag](../../engine/reference/commandline/buildx_build.md#ssh).
+[`--ssh` flag](../../reference/cli/docker/buildx/build.md#ssh).
 @z
 
 @x
@@ -680,11 +680,11 @@ $ docker buildx build --ssh default git@github.com:user/private.git
 @x
 If you want to use token-based authentication instead, you can pass the token
 using the
-[`--secret` flag](../../engine/reference/commandline/buildx_build.md#secret).
+[`--secret` flag](../../reference/cli/docker/buildx/build.md#secret).
 @y
 If you want to use token-based authentication instead, you can pass the token
 using the
-[`--secret` flag](../../engine/reference/commandline/buildx_build.md#secret).
+[`--secret` flag](../../reference/cli/docker/buildx/build.md#secret).
 @z
 
 @x

@@ -26,11 +26,11 @@ Extensions can invoke Docker commands directly from the frontend with the SDK.
 @x
 In some cases, it is useful to also
 interact with the Docker Engine from the backend. Extension backend containers can mount the Docker socket and use it to
-interact with the Docker engine from the extension backend logic. Learn more about the [Docker Engine socket](/engine/reference/commandline/dockerd/#examples)
+interact with the Docker engine from the extension backend logic. Learn more about the [Docker Engine socket](/reference/cli/dockerd/#examples)
 @y
 In some cases, it is useful to also
 interact with the Docker Engine from the backend. Extension backend containers can mount the Docker socket and use it to
-interact with the Docker engine from the extension backend logic. Learn more about the [Docker Engine socket](__SUBDIR__/engine/reference/commandline/dockerd/#examples)
+interact with the Docker engine from the extension backend logic. Learn more about the [Docker Engine socket](__SUBDIR__/reference/cli/dockerd/#examples)
 @z
 
 @x

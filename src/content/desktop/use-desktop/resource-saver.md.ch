@@ -194,9 +194,9 @@ no exit delay).
 @z
 
 @x
-Give feedback or report any bugs you may find create an issue on the appropriate Docker Desktop GitHub repository:
+To give feedback or report any bugs you may find, create an issue on the appropriate Docker Desktop GitHub repository:
 @y
-Give feedback or report any bugs you may find create an issue on the appropriate Docker Desktop GitHub repository:
+To give feedback or report any bugs you may find, create an issue on the appropriate Docker Desktop GitHub repository:
 @z
 
 @x

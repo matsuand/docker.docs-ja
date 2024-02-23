@@ -22,7 +22,7 @@ options:
     - option: resolve-image-digests
       value_type: bool
       default_value: "false"
-      description: Pin image tags to digests.
+      description: Pin image tags to digests
       deprecated: false
       hidden: false
       experimental: false
@@ -67,7 +67,7 @@ options:
     - option: resolve-image-digests
       value_type: bool
       default_value: "false"
-      description: Pin image tags to digests.
+      description: Pin image tags to digests
       deprecated: false
       hidden: false
       experimental: false

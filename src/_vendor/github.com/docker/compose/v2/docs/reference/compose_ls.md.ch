@@ -22,21 +22,21 @@ List running compose projects
 @z
 
 @x
-| Name            | Type     | Default | Description                                 |
-|:----------------|:---------|:--------|:--------------------------------------------|
-| `-a`, `--all`   |          |         | Show all stopped Compose projects           |
-| `--dry-run`     |          |         | Execute command in dry run mode             |
-| `--filter`      | `filter` |         | Filter output based on conditions provided. |
-| `--format`      | `string` | `table` | Format the output. Values: [table \| json]. |
-| `-q`, `--quiet` |          |         | Only display IDs.                           |
+| Name            | Type     | Default | Description                                |
+|:----------------|:---------|:--------|:-------------------------------------------|
+| `-a`, `--all`   |          |         | Show all stopped Compose projects          |
+| `--dry-run`     |          |         | Execute command in dry run mode            |
+| `--filter`      | `filter` |         | Filter output based on conditions provided |
+| `--format`      | `string` | `table` | Format the output. Values: [table \| json] |
+| `-q`, `--quiet` |          |         | Only display IDs                           |
 @y
-| Name            | Type     | Default | Description                                 |
-|:----------------|:---------|:--------|:--------------------------------------------|
-| `-a`, `--all`   |          |         | Show all stopped Compose projects           |
-| `--dry-run`     |          |         | Execute command in dry run mode             |
-| `--filter`      | `filter` |         | Filter output based on conditions provided. |
-| `--format`      | `string` | `table` | Format the output. Values: [table \| json]. |
-| `-q`, `--quiet` |          |         | Only display IDs.                           |
+| Name            | Type     | Default | Description                                |
+|:----------------|:---------|:--------|:-------------------------------------------|
+| `-a`, `--all`   |          |         | Show all stopped Compose projects          |
+| `--dry-run`     |          |         | Execute command in dry run mode            |
+| `--filter`      | `filter` |         | Filter output based on conditions provided |
+| `--format`      | `string` | `table` | Format the output. Values: [table \| json] |
+| `-q`, `--quiet` |          |         | Only display IDs                           |
 @z
 
 @x
@@ -52,7 +52,7 @@ List running compose projects
 @z
 
 @x
-Lists running Compose projects.
+Lists running Compose projects
 @y
-Lists running Compose projects.
+Lists running Compose projects
 @z

@@ -4,7 +4,7 @@
 @x
 command: docker compose unpause
 short: Unpause services
-long: Unpauses paused containers of a service.
+long: Unpauses paused containers of a service
 usage: docker compose unpause [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -28,7 +28,7 @@ swarm: false
 @y
 command: docker compose unpause
 short: Unpause services
-long: Unpauses paused containers of a service.
+long: Unpauses paused containers of a service
 usage: docker compose unpause [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml

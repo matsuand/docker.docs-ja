@@ -28,15 +28,15 @@ You can enhance your teams' builds with a Build Cloud subscription. This page de
 @z
 
 @x
-If you have an existing [Docker subscription](./details.md), Build Cloud is included. The features available vary depending on your subscription tier.
+If you have an existing [Docker Core subscription](./details.md), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
 @y
-If you have an existing [Docker subscription](./details.md), Build Cloud is included. The features available vary depending on your subscription tier.
+If you have an existing [Docker Core subscription](./details.md), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
 @z
 
 @x
-### Docker Personal plus Build Cloud
+### Docker Personal
 @y
-### Docker Personal plus Build Cloud
+### Docker Personal
 @z
 
 @x
@@ -50,9 +50,9 @@ If you have an existing [Docker subscription](./details.md), Build Cloud is incl
 @z
 
 @x
-### Docker Pro plus Build Cloud
+### Docker Pro
 @y
-### Docker Pro plus Build Cloud
+### Docker Pro
 @z
 
 @x
@@ -66,33 +66,33 @@ If you have an existing [Docker subscription](./details.md), Build Cloud is incl
 @z
 
 @x
-### Docker Team plus Build Cloud
+### Docker Team
 @y
-### Docker Team plus Build Cloud
+### Docker Team
 @z
 
 @x
-- 400 build minutes every month
+- 400 build minutes every month shared across your organization
 - Option to onboard up to 100 members
 - Can buy additional seats to add more minutes
 @y
-- 400 build minutes every month
+- 400 build minutes every month shared across your organization
 - Option to onboard up to 100 members
 - Can buy additional seats to add more minutes
 @z
 
 @x
-### Docker Business plus Build Cloud
+### Docker Business
 @y
-### Docker Business plus Build Cloud
+### Docker Business
 @z
 
 @x
-- All the features listed for Docker Team plus Build Cloud
-- 800 build minutes every month
+- All the features listed for Docker Team
+- 800 build minutes every month shared across your organization
 @y
-- All the features listed for Docker Team plus Build Cloud
-- 800 build minutes every month
+- All the features listed for Docker Team
+- 800 build minutes every month shared across your organization
 @z
 
 @x
@@ -102,9 +102,9 @@ If you have an existing [Docker subscription](./details.md), Build Cloud is incl
 @z
 
 @x
-You can upgrade the starter plan for any tier to enhance your developers' experience with the following features:
+You can upgrade any tier to enhance your developers' experience with the following features:
 @y
-You can upgrade the starter plan for any tier to enhance your developers' experience with the following features:
+You can upgrade any tier to enhance your developers' experience with the following features:
 @z
 
 @x
@@ -142,7 +142,7 @@ To learn how to buy this subscription, see [Docker Build Cloud billing](../billi
 @z
 
 @x
-For enterprise features such as paying via invoice and additional build minutes, [contact sales](https://www.docker.com/pricing/contact-sales/).
+For enterprise features such as paying via invoice and additional build minutes, [contact sales](https://www.docker.com/products/build-cloud/#contact_sales).
 @y
-For enterprise features such as paying via invoice and additional build minutes, [contact sales](https://www.docker.com/pricing/contact-sales/).
+For enterprise features such as paying via invoice and additional build minutes, [contact sales](https://www.docker.com/products/build-cloud/#contact_sales).
 @z

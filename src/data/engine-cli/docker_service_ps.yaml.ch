@@ -259,12 +259,12 @@ examples: |-
     The number of items in the task history is determined by the
     `--task-history-limit` option that was set when initializing the swarm. You can
     change the task history retention limit using the
-    [`docker swarm update`](swarm_update.md) command.
+    [`docker swarm update`](/reference/cli/docker/swarm/update/) command.
 @y
     The number of items in the task history is determined by the
     `--task-history-limit` option that was set when initializing the swarm. You can
     change the task history retention limit using the
-    [`docker swarm update`](swarm_update.md) command.
+    [`docker swarm update`](__SUBDIR__/reference/cli/docker/swarm/update/) command.
 @z
 
 @x
@@ -527,6 +527,7 @@ examples: |-
     top.3: busybox
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -538,6 +539,7 @@ swarm: true
     top.3: busybox
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

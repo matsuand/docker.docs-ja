@@ -2,30 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# this file lets you add descriptions and keywords
-# to files without modifying the file.
-#
-# Useful for upstream pages where we don't want to
-# or can't add front matter to the source!
-#
-# To add descriptions and keywords for a page,
-# add a key with the path of the page file,
-# relative to the content directory. For upstream
-# page files, that's the target of the file mount.
-@y
-# this file lets you add descriptions and keywords
-# to files without modifying the file.
-#
-# Useful for upstream pages where we don't want to
-# or can't add front matter to the source!
-#
-# To add descriptions and keywords for a page,
-# add a key with the path of the page file,
-# relative to the content directory. For upstream
-# page files, that's the target of the file mount.
-@z
-
-@x
 build/attestations/attestation-storage.md:
   description: |
     How SBOM and provenance attestations are stored for images.
@@ -78,7 +54,7 @@ build/buildkit/toml-configuration.md:
 @z
 
 @x
-engine/reference/builder.md:
+reference/dockerfile.md:
   description: |
     Find all the available commands you can use in a Dockerfile
     and learn how to use them, including COPY, ARG, ENTRYPOINT, and more.
@@ -86,7 +62,7 @@ engine/reference/builder.md:
     dockerfile, docker file, docker copy, dockerfile exec, docker entrypoint,
     dockerfile entrypoint, dockerfile arg, docker args, entrypoint, shell dockerfile
 @y
-engine/reference/builder.md:
+reference/dockerfile.md:
   description: |
     Find all the available commands you can use in a Dockerfile
     and learn how to use them, including COPY, ARG, ENTRYPOINT, and more.

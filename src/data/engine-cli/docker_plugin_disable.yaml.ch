@@ -1,12 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker plugin disable
 short: Disable a plugin
 long: |-
     Disables a plugin. The plugin must be installed before it can be disabled,
-    see [`docker plugin install`](plugin_install.md). Without the `-f` option,
+    see [`docker plugin install`](/reference/cli/docker/plugin/install/). Without the `-f` option,
     a plugin that has references (e.g., volumes, networks) cannot be disabled.
 usage: docker plugin disable [OPTIONS] PLUGIN
 pname: docker plugin
@@ -42,7 +44,7 @@ command: docker plugin disable
 short: Disable a plugin
 long: |-
     Disables a plugin. The plugin must be installed before it can be disabled,
-    see [`docker plugin install`](plugin_install.md). Without the `-f` option,
+    see [`docker plugin install`](__SUBDIR__/reference/cli/docker/plugin/install/). Without the `-f` option,
     a plugin that has references (e.g., volumes, networks) cannot be disabled.
 usage: docker plugin disable [OPTIONS] PLUGIN
 pname: docker plugin
@@ -124,6 +126,7 @@ examples: |-
     69553ca1d123  tiborvass/sample-volume-plugin:latest   A test plugin for Docker   false
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -134,6 +137,7 @@ swarm: false
     69553ca1d123  tiborvass/sample-volume-plugin:latest   A test plugin for Docker   false
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

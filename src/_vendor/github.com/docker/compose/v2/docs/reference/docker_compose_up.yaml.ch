@@ -95,7 +95,7 @@ options:
     - option: attach-dependencies
       value_type: bool
       default_value: "false"
-      description: Automatically attach to log output of dependent services.
+      description: Automatically attach to log output of dependent services
       deprecated: false
       hidden: false
       experimental: false
@@ -105,7 +105,7 @@ options:
     - option: build
       value_type: bool
       default_value: "false"
-      description: Build images before starting containers.
+      description: Build images before starting containers
       deprecated: false
       hidden: false
       experimental: false
@@ -137,7 +137,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Recreate containers even if their configuration and image haven't changed.
+        Recreate containers even if their configuration and image haven't changed
       deprecated: false
       hidden: false
       experimental: false
@@ -147,7 +147,7 @@ options:
     - option: no-attach
       value_type: stringArray
       default_value: '[]'
-      description: Do not attach (stream logs) to the specified services.
+      description: Do not attach (stream logs) to the specified services
       deprecated: false
       hidden: false
       experimental: false
@@ -157,7 +157,7 @@ options:
     - option: no-build
       value_type: bool
       default_value: "false"
-      description: Don't build an image, even if it's policy.
+      description: Don't build an image, even if it's policy
       deprecated: false
       hidden: false
       experimental: false
@@ -167,7 +167,7 @@ options:
     - option: no-color
       value_type: bool
       default_value: "false"
-      description: Produce monochrome output.
+      description: Produce monochrome output
       deprecated: false
       hidden: false
       experimental: false
@@ -177,7 +177,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't start linked services.
+      description: Don't start linked services
       deprecated: false
       hidden: false
       experimental: false
@@ -187,7 +187,7 @@ options:
     - option: no-log-prefix
       value_type: bool
       default_value: "false"
-      description: Don't print prefix in logs.
+      description: Don't print prefix in logs
       deprecated: false
       hidden: false
       experimental: false
@@ -208,7 +208,7 @@ options:
     - option: no-start
       value_type: bool
       default_value: "false"
-      description: Don't start the services after creating them.
+      description: Don't start the services after creating them
       deprecated: false
       hidden: false
       experimental: false
@@ -228,7 +228,7 @@ options:
     - option: quiet-pull
       value_type: bool
       default_value: "false"
-      description: Pull without printing progress information.
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false
@@ -238,7 +238,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -250,7 +250,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Recreate anonymous volumes instead of retrieving data from the previous containers.
+        Recreate anonymous volumes instead of retrieving data from the previous containers
       deprecated: false
       hidden: false
       experimental: false
@@ -273,7 +273,7 @@ options:
       value_type: int
       default_value: "0"
       description: |
-        Use this timeout in seconds for container shutdown when attached or when containers are already running.
+        Use this timeout in seconds for container shutdown when attached or when containers are already running
       deprecated: false
       hidden: false
       experimental: false
@@ -283,7 +283,7 @@ options:
     - option: timestamps
       value_type: bool
       default_value: "false"
-      description: Show timestamps.
+      description: Show timestamps
       deprecated: false
       hidden: false
       experimental: false
@@ -303,7 +303,7 @@ options:
     - option: wait-timeout
       value_type: int
       default_value: "0"
-      description: Maximum duration to wait for the project to be running|healthy.
+      description: Maximum duration to wait for the project to be running|healthy
       deprecated: false
       hidden: false
       experimental: false
@@ -369,7 +369,7 @@ options:
     - option: attach-dependencies
       value_type: bool
       default_value: "false"
-      description: Automatically attach to log output of dependent services.
+      description: Automatically attach to log output of dependent services
       deprecated: false
       hidden: false
       experimental: false
@@ -379,7 +379,7 @@ options:
     - option: build
       value_type: bool
       default_value: "false"
-      description: Build images before starting containers.
+      description: Build images before starting containers
       deprecated: false
       hidden: false
       experimental: false
@@ -411,7 +411,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Recreate containers even if their configuration and image haven't changed.
+        Recreate containers even if their configuration and image haven't changed
       deprecated: false
       hidden: false
       experimental: false
@@ -421,7 +421,7 @@ options:
     - option: no-attach
       value_type: stringArray
       default_value: '[]'
-      description: Do not attach (stream logs) to the specified services.
+      description: Do not attach (stream logs) to the specified services
       deprecated: false
       hidden: false
       experimental: false
@@ -431,7 +431,7 @@ options:
     - option: no-build
       value_type: bool
       default_value: "false"
-      description: Don't build an image, even if it's policy.
+      description: Don't build an image, even if it's policy
       deprecated: false
       hidden: false
       experimental: false
@@ -441,7 +441,7 @@ options:
     - option: no-color
       value_type: bool
       default_value: "false"
-      description: Produce monochrome output.
+      description: Produce monochrome output
       deprecated: false
       hidden: false
       experimental: false
@@ -451,7 +451,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't start linked services.
+      description: Don't start linked services
       deprecated: false
       hidden: false
       experimental: false
@@ -461,7 +461,7 @@ options:
     - option: no-log-prefix
       value_type: bool
       default_value: "false"
-      description: Don't print prefix in logs.
+      description: Don't print prefix in logs
       deprecated: false
       hidden: false
       experimental: false
@@ -482,7 +482,7 @@ options:
     - option: no-start
       value_type: bool
       default_value: "false"
-      description: Don't start the services after creating them.
+      description: Don't start the services after creating them
       deprecated: false
       hidden: false
       experimental: false
@@ -502,7 +502,7 @@ options:
     - option: quiet-pull
       value_type: bool
       default_value: "false"
-      description: Pull without printing progress information.
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false
@@ -512,7 +512,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -524,7 +524,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Recreate anonymous volumes instead of retrieving data from the previous containers.
+        Recreate anonymous volumes instead of retrieving data from the previous containers
       deprecated: false
       hidden: false
       experimental: false
@@ -547,7 +547,7 @@ options:
       value_type: int
       default_value: "0"
       description: |
-        Use this timeout in seconds for container shutdown when attached or when containers are already running.
+        Use this timeout in seconds for container shutdown when attached or when containers are already running
       deprecated: false
       hidden: false
       experimental: false
@@ -557,7 +557,7 @@ options:
     - option: timestamps
       value_type: bool
       default_value: "false"
-      description: Show timestamps.
+      description: Show timestamps
       deprecated: false
       hidden: false
       experimental: false
@@ -577,7 +577,7 @@ options:
     - option: wait-timeout
       value_type: int
       default_value: "0"
-      description: Maximum duration to wait for the project to be running|healthy.
+      description: Maximum duration to wait for the project to be running|healthy
       deprecated: false
       hidden: false
       experimental: false

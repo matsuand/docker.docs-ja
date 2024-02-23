@@ -98,6 +98,14 @@ Alternatively, you can use the shorthand `--sbom=true` option instead of `--atte
 @z
 
 @x
+For an example on how to add SBOM attestations with GitHub Actions, see
+[Add attestations with GitHub Actions](../ci/github-actions/attestations.md).
+@y
+For an example on how to add SBOM attestations with GitHub Actions, see
+[Add attestations with GitHub Actions](../ci/github-actions/attestations.md).
+@z
+
+@x
 ## Verify SBOM attestations
 @y
 ## Verify SBOM attestations
@@ -427,10 +435,10 @@ sbom.spdx.json
 
 @x
 To explore created SBOMs exported through the `image` exporter, you can use
-[`imagetools inspect`](../../engine/reference/commandline/buildx_imagetools_inspect.md).
+[`imagetools inspect`](../../reference/cli/docker/buildx/imagetools/inspect.md).
 @y
 To explore created SBOMs exported through the `image` exporter, you can use
-[`imagetools inspect`](../../engine/reference/commandline/buildx_imagetools_inspect.md).
+[`imagetools inspect`](../../reference/cli/docker/buildx/imagetools/inspect.md).
 @z
 
 @x

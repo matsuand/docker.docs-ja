@@ -110,13 +110,13 @@ build commands.
 @x
 When you run a build, or interact with builders in some way using the CLI,
 you can use the optional `--builder` flag, or the `BUILDX_BUILDER`
-[environment variable](../building/env-vars.md#buildx_builder),
+[environment variable](../building/variables.md#buildx_builder),
 to specify a builder by name. If you don't specify a builder,
 the selected builder is used.
 @y
 When you run a build, or interact with builders in some way using the CLI,
 you can use the optional `--builder` flag, or the `BUILDX_BUILDER`
-[environment variable](../building/env-vars.md#buildx_builder),
+[environment variable](../building/variables.md#buildx_builder),
 to specify a builder by name. If you don't specify a builder,
 the selected builder is used.
 @z

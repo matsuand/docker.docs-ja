@@ -3,17 +3,7 @@
 
 % __SUBDIR__ 対応。
 
-@x
-{{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
-{{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-{{ end }}
-@y
-{{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
-{{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-{{ end }}
-@z
+% snip code...
 
 @x
 To configure Registry Access Management permissions, perform the following steps:
@@ -23,11 +13,11 @@ To configure Registry Access Management permissions, perform the following steps
 
 @x
 1. Sign in to {{ $product_link }}.
-2. Select **Organizations**, your organization, **Settings**, and then select **Registry Access**.
+2. Select **Organizations**, your organization, **Settings**, and then select **Registry access**.
 3. Enable Registry Access Management to set the permissions for your registry.
 @y
 1. Sign in to {{ $product_link }}.
-2. Select **Organizations**, your organization, **Settings**, and then select **Registry Access**.
+2. Select **Organizations**, your organization, **Settings**, and then select **Registry access**.
 3. Enable Registry Access Management to set the permissions for your registry.
 @z
 
@@ -43,10 +33,10 @@ To configure Registry Access Management permissions, perform the following steps
 
 @x
 4. Select **Add** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
-5. Verify that the registry appears in your list and select **Save & Apply**.
+5. Verify that the registry appears in your list and select **Save**.
 @y
 4. Select **Add** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
-5. Verify that the registry appears in your list and select **Save & Apply**.
+5. Verify that the registry appears in your list and select **Save**.
 @z
 
 @x
@@ -62,11 +52,11 @@ To configure Registry Access Management permissions, perform the following steps
 @x
    > **Tip**
    >
-   > Since RAM sets policies about where content can be fetched from, the [ADD](/engine/reference/builder/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
+   > Since RAM sets policies about where content can be fetched from, the [ADD](/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
    { .tip }
 @y
    > **Tip**
    >
-   > Since RAM sets policies about where content can be fetched from, the [ADD](__SUBDIR__/engine/reference/builder/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
+   > Since RAM sets policies about where content can be fetched from, the [ADD](__SUBDIR__/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
    { .tip }
 @z

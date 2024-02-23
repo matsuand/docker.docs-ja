@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: How swarm nodes work
 keywords: docker, container, cluster, swarm mode, node
 title: How nodes work
-aliases:
-- /engine/swarm/how-swarm-mode-works/
----
 @y
----
 description: How swarm nodes work
 keywords: docker, container, cluster, swarm mode, node
 title: How nodes work
-aliases:
-- /engine/swarm/how-swarm-mode-works/
----
 @z
 
 @x
@@ -176,10 +168,10 @@ availability.
 @z
 
 @x
-Refer to the [`docker node update`](../../reference/commandline/node_update.md)
+Refer to the [`docker node update`](../../../reference/cli/docker/node/update.md)
 command line reference to see how to change node availability.
 @y
-Refer to the [`docker node update`](../../reference/commandline/node_update.md)
+Refer to the [`docker node update`](../../../reference/cli/docker/node/update.md)
 command line reference to see how to change node availability.
 @z
 
@@ -192,19 +184,19 @@ command line reference to see how to change node availability.
 @x
 You can promote a worker node to be a manager by running `docker node promote`.
 For example, you may want to promote a worker node when you
-take a manager node offline for maintenance. See [node promote](../../reference/commandline/node_promote.md).
+take a manager node offline for maintenance. See [node promote](../../../reference/cli/docker/node/promote.md).
 @y
 You can promote a worker node to be a manager by running `docker node promote`.
 For example, you may want to promote a worker node when you
-take a manager node offline for maintenance. See [node promote](../../reference/commandline/node_promote.md).
+take a manager node offline for maintenance. See [node promote](../../../reference/cli/docker/node/promote.md).
 @z
 
 @x
 You can also demote a manager node to a worker node. See
-[node demote](../../reference/commandline/node_demote.md).
+[node demote](../../../reference/cli/docker/node/demote.md).
 @y
 You can also demote a manager node to a worker node. See
-[node demote](../../reference/commandline/node_demote.md).
+[node demote](../../../reference/cli/docker/node/demote.md).
 @z
 
 @x

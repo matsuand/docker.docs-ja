@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container attach
 aliases: docker container attach, docker attach
@@ -450,8 +452,9 @@ examples: |-
 @x
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](cli.md#configuration-files).
+    containers, see [**Configuration file** section](/engine/reference/commandline/cli/#configuration-files).
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -459,8 +462,9 @@ swarm: false
 @y
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](cli.md#configuration-files).
+    containers, see [**Configuration file** section](__SUBDIR__/engine/reference/commandline/cli/#configuration-files).
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

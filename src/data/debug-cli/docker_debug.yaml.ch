@@ -492,12 +492,12 @@ examples: |-
 @x
   The `entrypoint` command evaluates the `ENTRYPOINT` and `CMD` statement of the underlying image 
   and lets you print, lint, or run the resulting entrypoint.
-  However, it can be difficult to understand all the corner cases from [Understand how CMD and ENTRYPOINT interact](/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact). 
+  However, it can be difficult to understand all the corner cases from [Understand how CMD and ENTRYPOINT interact](/reference/dockerfile/#understand-how-cmd-and-entrypoint-interact). 
   In these situations, `entrypoint` can help.
 @y
   The `entrypoint` command evaluates the `ENTRYPOINT` and `CMD` statement of the underlying image 
   and lets you print, lint, or run the resulting entrypoint.
-  However, it can be difficult to understand all the corner cases from [Understand how CMD and ENTRYPOINT interact](__SUBDIR__/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact). 
+  However, it can be difficult to understand all the corner cases from [Understand how CMD and ENTRYPOINT interact](__SUBDIR__/reference/dockerfile/#understand-how-cmd-and-entrypoint-interact). 
   In these situations, `entrypoint` can help.
 @z
 
@@ -571,15 +571,15 @@ examples: |-
 
 @x
   Docs:
-  - https://docs.docker.com/engine/reference/builder/#cmd
-  - https://docs.docker.com/engine/reference/builder/#entrypoint
-  - https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact
+  - https://docs.docker.com/reference/dockerfile/#cmd
+  - https://docs.docker.com/reference/dockerfile/#entrypoint
+  - https://docs.docker.com/reference/dockerfile/#understand-how-cmd-and-entrypoint-interact
   ```
 @y
   Docs:
-  - https://docs.docker.com/engine/reference/builder/#cmd
-  - https://docs.docker.com/engine/reference/builder/#entrypoint
-  - https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact
+  - https://docs.docker.com/reference/dockerfile/#cmd
+  - https://docs.docker.com/reference/dockerfile/#entrypoint
+  - https://docs.docker.com/reference/dockerfile/#understand-how-cmd-and-entrypoint-interact
   ```
 @z
 

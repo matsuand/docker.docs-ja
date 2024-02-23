@@ -21,7 +21,7 @@ long: |-
 
 @x
     For documentation on most of these flags, refer to the [`docker build`
-    documentation](/engine/reference/commandline/image_build/).
+    documentation](/reference/cli/docker/image/build/).
     This page describes a subset of the new flags.
 usage: docker buildx build [OPTIONS] PATH | URL | -
 pname: docker buildx
@@ -31,7 +31,7 @@ options:
       value_type: stringSlice
       default_value: '[]'
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /engine/reference/commandline/image_build/#add-host
+      details_url: /reference/cli/docker/image/build/#add-host
       deprecated: false
       hidden: false
       experimental: false
@@ -121,7 +121,7 @@ options:
     - option: cgroup-parent
       value_type: string
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /engine/reference/commandline/image_build/#cgroup-parent
+      details_url: /reference/cli/docker/image/build/#cgroup-parent
       deprecated: false
       hidden: false
       experimental: false
@@ -201,7 +201,7 @@ options:
       shorthand: f
       value_type: string
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /engine/reference/commandline/image_build/#file
+      details_url: /reference/cli/docker/image/build/#file
       deprecated: false
       hidden: false
       experimental: false
@@ -503,7 +503,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /engine/reference/commandline/image_build/#tag
+      details_url: /reference/cli/docker/image/build/#tag
       deprecated: false
       hidden: false
       experimental: false
@@ -513,7 +513,7 @@ options:
     - option: target
       value_type: string
       description: Set the target build stage to build
-      details_url: /engine/reference/commandline/image_build/#target
+      details_url: /reference/cli/docker/image/build/#target
       deprecated: false
       hidden: false
       experimental: false
@@ -546,7 +546,7 @@ examples: |-
     ### Create annotations (--annotation) {#annotation}
 @y
     For documentation on most of these flags, refer to the [`docker build`
-    documentation](__SUBDIR__/engine/reference/commandline/image_build/).
+    documentation](__SUBDIR__/reference/cli/docker/image/build/).
     This page describes a subset of the new flags.
 usage: docker buildx build [OPTIONS] PATH | URL | -
 pname: docker buildx
@@ -556,7 +556,7 @@ options:
       value_type: stringSlice
       default_value: '[]'
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /engine/reference/commandline/image_build/#add-host
+      details_url: /reference/cli/docker/image/build/#add-host
       deprecated: false
       hidden: false
       experimental: false
@@ -646,7 +646,7 @@ options:
     - option: cgroup-parent
       value_type: string
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /engine/reference/commandline/image_build/#cgroup-parent
+      details_url: /reference/cli/docker/image/build/#cgroup-parent
       deprecated: false
       hidden: false
       experimental: false
@@ -726,7 +726,7 @@ options:
       shorthand: f
       value_type: string
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /engine/reference/commandline/image_build/#file
+      details_url: /reference/cli/docker/image/build/#file
       deprecated: false
       hidden: false
       experimental: false
@@ -1028,7 +1028,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /engine/reference/commandline/image_build/#tag
+      details_url: /reference/cli/docker/image/build/#tag
       deprecated: false
       hidden: false
       experimental: false
@@ -1038,7 +1038,7 @@ options:
     - option: target
       value_type: string
       description: Set the target build stage to build
-      details_url: /engine/reference/commandline/image_build/#target
+      details_url: /reference/cli/docker/image/build/#target
       deprecated: false
       hidden: false
       experimental: false
@@ -1280,19 +1280,19 @@ examples: |-
 @x
     - `network.host` - Allows executions with host networking.
     - `security.insecure` - Allows executions without sandbox. See
-      [related Dockerfile extensions](/engine/reference/builder/#run---securitysandbox).
+      [related Dockerfile extensions](/reference/dockerfile/#run---securitysandbox).
 @y
     - `network.host` - Allows executions with host networking.
     - `security.insecure` - Allows executions without sandbox. See
-      [related Dockerfile extensions](__SUBDIR__/engine/reference/builder/#run---securitysandbox).
+      [related Dockerfile extensions](__SUBDIR__/reference/dockerfile/#run---securitysandbox).
 @z
 
 @x
     For entitlements to be enabled, the `buildkitd` daemon also needs to allow them
-    with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](buildx_create.md#buildkitd-flags)).
+    with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](/reference/cli/docker/buildx/create/#buildkitd-flags)).
 @y
     For entitlements to be enabled, the `buildkitd` daemon also needs to allow them
-    with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](buildx_create.md#buildkitd-flags)).
+    with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-flags)).
 @z
 
 @x
@@ -1314,9 +1314,9 @@ examples: |-
 @z
 
 @x
-    Same as [`docker build` command](/engine/reference/commandline/image_build/#build-arg).
+    Same as [`docker build` command](/reference/cli/docker/image/build/#build-arg).
 @y
-    Same as [`docker build` command](__SUBDIR__/engine/reference/commandline/image_build/#build-arg).
+    Same as [`docker build` command](__SUBDIR__/reference/cli/docker/image/build/#build-arg).
 @z
 
 @x
@@ -1346,9 +1346,9 @@ examples: |-
 @z
 
 @x
-    Learn more about the built-in build arguments in the [Dockerfile reference docs](/engine/reference/builder/#buildkit-built-in-build-args).
+    Learn more about the built-in build arguments in the [Dockerfile reference docs](/reference/dockerfile/#buildkit-built-in-build-args).
 @y
-    Learn more about the built-in build arguments in the [Dockerfile reference docs](__SUBDIR__/engine/reference/builder/#buildkit-built-in-build-args).
+    Learn more about the built-in build arguments in the [Dockerfile reference docs](__SUBDIR__/reference/dockerfile/#buildkit-built-in-build-args).
 @z
 
 @x
@@ -1492,9 +1492,9 @@ examples: |-
 @z
 
 @x
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @y
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
 @z
 
 @x
@@ -2210,12 +2210,12 @@ examples: |-
 @x
     Inside a `Dockerfile`, you can access the current platform value through
     `TARGETPLATFORM` build argument. Refer to the [`docker build`
-    documentation](/engine/reference/builder/#automatic-platform-args-in-the-global-scope)
+    documentation](/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
     for the full description of automatic platform argument variants .
 @y
     Inside a `Dockerfile`, you can access the current platform value through
     `TARGETPLATFORM` build argument. Refer to the [`docker build`
-    documentation](__SUBDIR__/engine/reference/builder/#automatic-platform-args-in-the-global-scope)
+    documentation](__SUBDIR__/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
     for the full description of automatic platform argument variants .
 @z
 
@@ -2451,10 +2451,10 @@ examples: |-
 
 @x
     Exposes secret to the build. The secret can be used by the build using
-    [`RUN --mount=type=secret` mount](/engine/reference/builder/#run---mounttypesecret).
+    [`RUN --mount=type=secret` mount](/reference/dockerfile/#run---mounttypesecret).
 @y
     Exposes secret to the build. The secret can be used by the build using
-    [`RUN --mount=type=secret` mount](__SUBDIR__/engine/reference/builder/#run---mounttypesecret).
+    [`RUN --mount=type=secret` mount](__SUBDIR__/reference/dockerfile/#run---mounttypesecret).
 @z
 
 @x
@@ -2601,10 +2601,10 @@ examples: |-
 
 @x
     `--ssh` exposes SSH agent socket or keys to the build and can be used with the
-    [`RUN --mount=type=ssh` mount](/engine/reference/builder/#run---mounttypessh).
+    [`RUN --mount=type=ssh` mount](/reference/dockerfile/#run---mounttypessh).
 @y
     `--ssh` exposes SSH agent socket or keys to the build and can be used with the
-    [`RUN --mount=type=ssh` mount](__SUBDIR__/engine/reference/builder/#run---mounttypessh).
+    [`RUN --mount=type=ssh` mount](__SUBDIR__/reference/dockerfile/#run---mounttypessh).
 @z
 
 @x

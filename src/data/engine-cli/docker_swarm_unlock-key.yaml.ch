@@ -236,6 +236,7 @@ examples: |-
 @x
     Only print the unlock key, without instructions.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -244,6 +245,7 @@ swarm: true
 @y
     Only print the unlock key, without instructions.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

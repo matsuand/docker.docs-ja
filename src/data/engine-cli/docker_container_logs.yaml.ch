@@ -271,11 +271,6 @@ examples: |-
     Tue 14 Nov 2017 16:40:01 CET
     Tue 14 Nov 2017 16:40:02 CET
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     ```console
     $ docker run --name test -d busybox sh -c "while true; do $(echo date); sleep 1; done"
@@ -286,9 +281,4 @@ swarm: false
     Tue 14 Nov 2017 16:40:01 CET
     Tue 14 Nov 2017 16:40:02 CET
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

@@ -252,12 +252,12 @@ examples: |-
 @x
     The `label` filter matches nodes based on engine labels and on the presence of a
     `label` alone or a `label` and a value. Engine labels are configured in
-    the [daemon configuration](dockerd.md#daemon-configuration-file). To filter on
+    the [daemon configuration](/reference/cli/dockerd/#daemon-configuration-file). To filter on
     Swarm `node` labels, use [`node.label` instead](#nodelabel).
 @y
     The `label` filter matches nodes based on engine labels and on the presence of a
     `label` alone or a `label` and a value. Engine labels are configured in
-    the [daemon configuration](dockerd.md#daemon-configuration-file). To filter on
+    the [daemon configuration](__SUBDIR__/reference/cli/dockerd/#daemon-configuration-file). To filter on
     Swarm `node` labels, use [`node.label` instead](#nodelabel).
 @z
 
@@ -578,6 +578,7 @@ examples: |-
     {"Availability":"Active","EngineVersion":"23.0.3","Hostname":"docker-desktop","ID":"k8f4w7qtzpj5sqzclcqafw35g","ManagerStatus":"Leader","Self":true,"Status":"Ready","TLSStatus":"Ready"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -590,6 +591,7 @@ swarm: true
     {"Availability":"Active","EngineVersion":"23.0.3","Hostname":"docker-desktop","ID":"k8f4w7qtzpj5sqzclcqafw35g","ManagerStatus":"Leader","Self":true,"Status":"Ready","TLSStatus":"Ready"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

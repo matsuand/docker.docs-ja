@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker context show
 short: Print the name of the current context
@@ -48,9 +50,9 @@ examples: |-
 @z
 
 @x
-    The following example prints the currently used [`docker context`](context.md):
+    The following example prints the currently used [`docker context`](/reference/cli/docker/context/):
 @y
-    The following example prints the currently used [`docker context`](context.md):
+    The following example prints the currently used [`docker context`](__SUBDIR__/reference/cli/docker/context/):
 @z
 
 @x
@@ -126,6 +128,7 @@ examples: |-
     context: default>
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -145,6 +148,7 @@ swarm: false
     context: default>
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

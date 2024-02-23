@@ -1,16 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 command: docker compose events
-short: Receive real time events from containers.
+short: Receive real time events from containers
 long: |-
     Stream container events for every container in the project.
 @y
 command: docker compose events
-short: Receive real time events from containers.
+short: Receive real time events from containers
 long: |-
     Stream container events for every container in the project.
 @z
@@ -52,7 +50,7 @@ long: |-
 @z
 
 @x
-    The events that can be received using this can be seen [here](/engine/reference/commandline/system_events/#object-types).
+    The events that can be received using this can be seen [here](/reference/cli/docker/system/events/#object-types).
 usage: docker compose events [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -85,7 +83,7 @@ experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    The events that can be received using this can be seen [here](__SUBDIR__/engine/reference/commandline/system_events/#object-types).
+    The events that can be received using this can be seen [here](__SUBDIR__/reference/cli/docker/system/events/#object-types).
 usage: docker compose events [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml

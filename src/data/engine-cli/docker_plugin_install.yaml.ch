@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker plugin install
 short: Install a plugin
@@ -64,7 +66,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    The following example installs `vieus/sshfs` plugin and [sets](plugin_set.md) its
+    The following example installs `vieus/sshfs` plugin and [sets](/reference/cli/docker/plugin/set/) its
     `DEBUG` environment variable to `1`. To install, `pull` the plugin from Docker
     Hub and prompt the user to accept the list of privileges that the plugin needs,
     set the plugin's parameters and enable the plugin.
@@ -131,7 +133,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 examples: |-
-    The following example installs `vieus/sshfs` plugin and [sets](plugin_set.md) its
+    The following example installs `vieus/sshfs` plugin and [sets](__SUBDIR__/reference/cli/docker/plugin/set/) its
     `DEBUG` environment variable to `1`. To install, `pull` the plugin from Docker
     Hub and prompt the user to accept the list of privileges that the plugin needs,
     set the plugin's parameters and enable the plugin.
@@ -182,6 +184,7 @@ examples: |-
     69553ca1d123   vieux/sshfs:latest    sshFS plugin for Docker    true
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -192,6 +195,7 @@ swarm: false
     69553ca1d123   vieux/sshfs:latest    sshFS plugin for Docker    true
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

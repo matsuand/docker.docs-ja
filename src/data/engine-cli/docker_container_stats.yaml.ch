@@ -534,6 +534,7 @@ examples: |-
 @x
         "table {{.ID}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}\t{{.BlockIO}}"
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -541,6 +542,7 @@ swarm: false
 @y
         "table {{.ID}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}\t{{.BlockIO}}"
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

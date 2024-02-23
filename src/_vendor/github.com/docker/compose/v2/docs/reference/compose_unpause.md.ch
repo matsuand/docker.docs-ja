@@ -44,7 +44,7 @@ Unpause services
 @z
 
 @x
-Unpauses paused containers of a service.
+Unpauses paused containers of a service
 @y
-Unpauses paused containers of a service.
+Unpauses paused containers of a service
 @z

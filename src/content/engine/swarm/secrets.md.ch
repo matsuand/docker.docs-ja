@@ -2,25 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Manage sensitive data with Docker secrets
 description: How to securely store, retrieve, and use sensitive data with Docker services
 keywords: swarm, secrets, credentials, sensitive strings, sensitive data, security,
   encryption, encryption at rest
----
 @y
----
-title: Manage sensitive data with Docker secrets
+title: Docker シークレットを使った機密情報の管理
 description: How to securely store, retrieve, and use sensitive data with Docker services
 keywords: swarm, secrets, credentials, sensitive strings, sensitive data, security,
   encryption, encryption at rest
----
 @z
 
 @x
 ## About secrets
 @y
-## About secrets
+## シークレットについて {#about-secrets}
 @z
 
 @x
@@ -33,10 +29,8 @@ it. Secrets are encrypted during transit and at rest in a Docker swarm. A given
 secret is only accessible to those services which have been granted explicit
 access to it, and only while those service tasks are running.
 @y
-In terms of Docker Swarm services, a _secret_ is a blob of data, such as a
-password, SSH private key, SSL certificate, or another piece of data that should
-not be transmitted over a network or stored unencrypted in a Dockerfile or in
-your application's source code. You can use Docker _secrets_ to centrally manage
+Docker Swarm サービスにおいてシークレット (secrets) とは、パスワード、SSH 秘密鍵、SSL 証明書などのようなデータであって、ネットワーク上を転送したり Dockerfile やアプリケーションソースコードに暗号化せずに書いたりすべきではないものです。
+You can use Docker _secrets_ to centrally manage
 this data and securely transmit it to only those containers that need access to
 it. Secrets are encrypted during transit and at rest in a Docker swarm. A given
 secret is only accessible to those services which have been granted explicit
@@ -288,19 +282,19 @@ Use these links to read about specific commands, or continue to the
 @z
 
 @x
-- [`docker secret create`](../reference/commandline/secret_create.md)
-- [`docker secret inspect`](../reference/commandline/secret_inspect.md)
-- [`docker secret ls`](../reference/commandline/secret_ls.md)
-- [`docker secret rm`](../reference/commandline/secret_rm.md)
-- [`--secret`](../reference/commandline/service_create.md#secret) flag for `docker service create`
-- [`--secret-add` and `--secret-rm`](../reference/commandline/service_update.md#secret-add) flags for `docker service update`
+- [`docker secret create`](../../reference/cli/docker/secret/create.md)
+- [`docker secret inspect`](../../reference/cli/docker/secret/inspect.md)
+- [`docker secret ls`](../../reference/cli/docker/secret/ls.md)
+- [`docker secret rm`](../../reference/cli/docker/secret/rm.md)
+- [`--secret`](../../reference/cli/docker/service/create.md#secret) flag for `docker service create`
+- [`--secret-add` and `--secret-rm`](../../reference/cli/docker/service/update.md#secret-add) flags for `docker service update`
 @y
-- [`docker secret create`](../reference/commandline/secret_create.md)
-- [`docker secret inspect`](../reference/commandline/secret_inspect.md)
-- [`docker secret ls`](../reference/commandline/secret_ls.md)
-- [`docker secret rm`](../reference/commandline/secret_rm.md)
-- [`--secret`](../reference/commandline/service_create.md#secret) flag for `docker service create`
-- [`--secret-add` and `--secret-rm`](../reference/commandline/service_update.md#secret-add) flags for `docker service update`
+- [`docker secret create`](../../reference/cli/docker/secret/create.md)
+- [`docker secret inspect`](../../reference/cli/docker/secret/inspect.md)
+- [`docker secret ls`](../../reference/cli/docker/secret/ls.md)
+- [`docker secret rm`](../../reference/cli/docker/secret/rm.md)
+- [`--secret`](../../reference/cli/docker/service/create.md#secret) flag for `docker service create`
+- [`--secret-add` and `--secret-rm`](../../reference/cli/docker/service/update.md#secret-add) flags for `docker service update`
 @z
 
 @x
@@ -534,10 +528,10 @@ real-world example, continue to
 @z
 
 @x
-    ```none
+    ```console
     $ docker commit $(docker ps --filter name=redis -q) committed_redis
 @y
-    ```none
+    ```console
     $ docker commit $(docker ps --filter name=redis -q) committed_redis
 @z
 
@@ -624,10 +618,10 @@ real-world example, continue to
 @z
 
 @x
-    ```none
+    ```console
     $ docker container exec -it $(docker ps --filter name=redis -q) cat /run/secrets/my_secret_data
 @y
-    ```none
+    ```console
     $ docker container exec -it $(docker ps --filter name=redis -q) cat /run/secrets/my_secret_data
 @z
 
@@ -716,12 +710,12 @@ This example assumes that you have PowerShell installed.
 @z
 
 @x
-    ```powershell
-    docker swarm init
+    ```console
+    > docker swarm init
     ```
 @y
-    ```powershell
-    docker swarm init
+    ```console
+    > docker swarm init
     ```
 @z
 
@@ -732,12 +726,12 @@ This example assumes that you have PowerShell installed.
 @z
 
 @x
-    ```powershell
-    docker secret create homepage index.html
+    ```console
+    > docker secret create homepage index.html
     ```
 @y
-    ```powershell
-    docker secret create homepage index.html
+    ```console
+    > docker secret create homepage index.html
     ```
 @z
 
@@ -748,20 +742,20 @@ This example assumes that you have PowerShell installed.
 @z
 
 @x
-    ```powershell
-    docker service create
-        --name my-iis
-        --publish published=8000,target=8000
-        --secret src=homepage,target="\inetpub\wwwroot\index.html"
-        microsoft/iis:nanoserver  
+    ```console
+    > docker service create `
+        --name my-iis `
+        --publish published=8000,target=8000 `
+        --secret src=homepage,target="\inetpub\wwwroot\index.html" `
+        microsoft/iis:nanoserver
     ```
 @y
-    ```powershell
-    docker service create
-        --name my-iis
-        --publish published=8000,target=8000
-        --secret src=homepage,target="\inetpub\wwwroot\index.html"
-        microsoft/iis:nanoserver  
+    ```console
+    > docker service create `
+        --name my-iis `
+        --publish published=8000,target=8000 `
+        --secret src=homepage,target="\inetpub\wwwroot\index.html" `
+        microsoft/iis:nanoserver
     ```
 @z
 
@@ -794,16 +788,16 @@ This example assumes that you have PowerShell installed.
 @z
 
 @x
-    ```powershell
-    docker service rm my-iis
-    docker secret rm homepage
-    docker image remove secret-test
+    ```console
+    > docker service rm my-iis
+    > docker secret rm homepage
+    > docker image remove secret-test
     ```
 @y
-    ```powershell
-    docker service rm my-iis
-    docker secret rm homepage
-    docker image remove secret-test
+    ```console
+    > docker service rm my-iis
+    > docker secret rm homepage
+    > docker image remove secret-test
     ```
 @z
 
@@ -904,14 +898,14 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    ```none
+    ```ini
     [root_ca]
     basicConstraints = critical,CA:TRUE,pathlen:1
     keyUsage = critical, nonRepudiation, cRLSign, keyCertSign
     subjectKeyIdentifier=hash
     ```
 @y
-    ```none
+    ```ini
     [root_ca]
     basicConstraints = critical,CA:TRUE,pathlen:1
     keyUsage = critical, nonRepudiation, cRLSign, keyCertSign
@@ -988,7 +982,7 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    ```none
+    ```ini
     [server]
     authorityKeyIdentifier=keyid,issuer
     basicConstraints = critical,CA:FALSE
@@ -998,7 +992,7 @@ generate the site key and certificate, name the files `site.key` and
     subjectKeyIdentifier=hash
     ```
 @y
-    ```none
+    ```ini
     [server]
     authorityKeyIdentifier=keyid,issuer
     basicConstraints = critical,CA:FALSE
@@ -1064,14 +1058,14 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    ```none
+    ```nginx
     server {
         listen                443 ssl;
         server_name           localhost;
         ssl_certificate       /run/secrets/site.crt;
         ssl_certificate_key   /run/secrets/site.key;
 @y
-    ```none
+    ```nginx
     server {
         listen                443 ssl;
         server_name           localhost;
@@ -1820,18 +1814,6 @@ line.
 @z
 
 @x
-    At this point, you could actually revoke the `mysql` service's access to the
-    `mysql_password` and `mysql_root_password` secrets because the passwords
-    have been saved in the MySQL system database. Don't do that for now, because
-    we use them later to facilitate rotating the MySQL password.
-@y
-    At this point, you could actually revoke the `mysql` service's access to the
-    `mysql_password` and `mysql_root_password` secrets because the passwords
-    have been saved in the MySQL system database. Don't do that for now, because
-    we use them later to facilitate rotating the MySQL password.
-@z
-
-@x
 5.  Now that MySQL is set up, create a WordPress service that connects to the
     MySQL service. The WordPress service has the following characteristics:
 @y
@@ -1852,9 +1834,7 @@ line.
       nodes.
     - Has access to the `mysql_password` secret, but specifies a different
       target file name within the container. The WordPress container uses
-      the mount point `/run/secrets/wp_db_password`. Also specifies that the
-      secret is not group-or-world-readable, by setting the mode to
-      `0400`.
+      the mount point `/run/secrets/wp_db_password`.
     - Sets the environment variable `WORDPRESS_DB_PASSWORD_FILE` to the file
       path where the secret is mounted. The WordPress service reads the
       MySQL password string from that file and add it to the `wp-config.php`
@@ -1877,9 +1857,7 @@ line.
       nodes.
     - Has access to the `mysql_password` secret, but specifies a different
       target file name within the container. The WordPress container uses
-      the mount point `/run/secrets/wp_db_password`. Also specifies that the
-      secret is not group-or-world-readable, by setting the mode to
-      `0400`.
+      the mount point `/run/secrets/wp_db_password`.
     - Sets the environment variable `WORDPRESS_DB_PASSWORD_FILE` to the file
       path where the secret is mounted. The WordPress service reads the
       MySQL password string from that file and add it to the `wp-config.php`
@@ -1899,7 +1877,7 @@ line.
          --network mysql_private \
          --publish published=30000,target=80 \
          --mount type=volume,source=wpdata,destination=/var/www/html \
-         --secret source=mysql_password,target=wp_db_password,mode=0400 \
+         --secret source=mysql_password,target=wp_db_password \
          -e WORDPRESS_DB_USER="wordpress" \
          -e WORDPRESS_DB_PASSWORD_FILE="/run/secrets/wp_db_password" \
          -e WORDPRESS_DB_HOST="mysql:3306" \
@@ -1914,7 +1892,7 @@ line.
          --network mysql_private \
          --publish published=30000,target=80 \
          --mount type=volume,source=wpdata,destination=/var/www/html \
-         --secret source=mysql_password,target=wp_db_password,mode=0400 \
+         --secret source=mysql_password,target=wp_db_password \
          -e WORDPRESS_DB_USER="wordpress" \
          -e WORDPRESS_DB_PASSWORD_FILE="/run/secrets/wp_db_password" \
          -e WORDPRESS_DB_HOST="mysql:3306" \
@@ -2215,28 +2193,26 @@ use it, then remove the old secret.
 
 @x
 4.  Update the `wordpress` service to use the new password, keeping the target
-    path at `/run/secrets/wp_db_password` and keeping the file permissions at
-    `0400`.  This triggers a rolling restart of the WordPress service and
-    the new secret is used.
+    path at `/run/secrets/wp_db_password`. This triggers a rolling restart of
+    the WordPress service and the new secret is used.
 @y
 4.  Update the `wordpress` service to use the new password, keeping the target
-    path at `/run/secrets/wp_db_password` and keeping the file permissions at
-    `0400`.  This triggers a rolling restart of the WordPress service and
-    the new secret is used.
+    path at `/run/secrets/wp_db_password`. This triggers a rolling restart of
+    the WordPress service and the new secret is used.
 @z
 
 @x
     ```console
     $ docker service update \
          --secret-rm mysql_password \
-         --secret-add source=mysql_password_v2,target=wp_db_password,mode=0400 \
+         --secret-add source=mysql_password_v2,target=wp_db_password \
          wordpress    
     ```
 @y
     ```console
     $ docker service update \
          --secret-rm mysql_password \
-         --secret-add source=mysql_password_v2,target=wp_db_password,mode=0400 \
+         --secret-add source=mysql_password_v2,target=wp_db_password \
          wordpress    
     ```
 @z

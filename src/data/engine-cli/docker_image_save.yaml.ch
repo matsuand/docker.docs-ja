@@ -164,6 +164,7 @@ examples: |-
     $ docker save -o ubuntu.tar ubuntu:lucid ubuntu:saucy
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -173,6 +174,7 @@ swarm: false
     $ docker save -o ubuntu.tar ubuntu:lucid ubuntu:saucy
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

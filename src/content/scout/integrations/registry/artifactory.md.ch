@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Integrate JFrog Artifactory and JFrog Container Registry with Docker Scout
 keywords: docker scout, jfrog, artifactory, jcr, integration, image analysis, security, cves
 title: Artifactory integration
-aliases:
-  - /scout/artifactory/
----
 @y
----
 description: Integrate JFrog Artifactory and JFrog Container Registry with Docker Scout
 keywords: docker scout, jfrog, artifactory, jcr, integration, image analysis, security, cves
 title: Artifactory integration
-aliases:
-  - /scout/artifactory/
----
 @z
 
 @x
@@ -36,9 +28,9 @@ automatically on images in Artifactory registries.
 @z
 
 @x
-You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](/engine/reference/commandline/login/) command. For example:
+You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](/reference/cli/docker/login/) command. For example:
 @y
-You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](__SUBDIR__/engine/reference/commandline/login/) command. For example:
+You can analyze Artifactory images for vulnerabilities locally using Docker Desktop or the Docker CLI. You first need to authenticate with JFrog Artifactory using the [`docker login`](__SUBDIR__/reference/cli/docker/login/) command. For example:
 @z
 
 @x

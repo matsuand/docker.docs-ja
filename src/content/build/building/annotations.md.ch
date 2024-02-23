@@ -165,12 +165,12 @@ For examples on how to add annotations to images built with GitHub Actions, see
 You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
-[CLI reference](../../engine/reference/commandline/buildx_imagetools_create.md#annotations).
+[CLI reference](../../reference/cli/docker/buildx/imagetools/create.md#annotations).
 @y
 You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
-[CLI reference](../../engine/reference/commandline/buildx_imagetools_create.md#annotations).
+[CLI reference](../../reference/cli/docker/buildx/imagetools/create.md#annotations).
 @z
 
 @x
@@ -428,13 +428,13 @@ Reference information:
 @z
 
 @x
-- [`docker buildx build --annotation`](../../engine/reference/commandline/buildx_build.md#annotation)
+- [`docker buildx build --annotation`](../../reference/cli/docker/buildx/build.md#annotation)
 - [Bake file reference: `annotations`](../bake/reference.md#targetannotations)
-- [`docker buildx imagetools create --annotation`](../../engine/reference/commandline/buildx_imagetools_create.md#annotation)
+- [`docker buildx imagetools create --annotation`](../../reference/cli/docker/buildx/imagetools/create.md#annotation)
 @y
-- [`docker buildx build --annotation`](../../engine/reference/commandline/buildx_build.md#annotation)
+- [`docker buildx build --annotation`](../../reference/cli/docker/buildx/build.md#annotation)
 - [Bake file reference: `annotations`](../bake/reference.md#targetannotations)
-- [`docker buildx imagetools create --annotation`](../../engine/reference/commandline/buildx_imagetools_create.md#annotation)
+- [`docker buildx imagetools create --annotation`](../../reference/cli/docker/buildx/imagetools/create.md#annotation)
 @z
 
 @x

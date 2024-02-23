@@ -287,23 +287,23 @@ background modes, see:
 @z
 
 @x
-- [`docker run --detach`](commandline/container_run.md#detach): run container in background
-- [`docker run --attach`](commandline/container_run.md#attach): attach to `stdin`, `stdout`, and `stderr`
-- [`docker run --tty`](commandline/container_run.md#tty): allocate a pseudo-tty
-- [`docker run --interactive`](commandline/container_run.md#interactive): keep `stdin` open even if not attached
+- [`docker run --detach`](https://docs.docker.com/reference/cli/docker/container/run/#detach): run container in background
+- [`docker run --attach`](https://docs.docker.com/reference/cli/docker/container/run/#attach): attach to `stdin`, `stdout`, and `stderr`
+- [`docker run --tty`](https://docs.docker.com/reference/cli/docker/container/run/#tty): allocate a pseudo-tty
+- [`docker run --interactive`](https://docs.docker.com/reference/cli/docker/container/run/#interactive): keep `stdin` open even if not attached
 @y
-- [`docker run --detach`](commandline/container_run.md#detach): run container in background
-- [`docker run --attach`](commandline/container_run.md#attach): attach to `stdin`, `stdout`, and `stderr`
-- [`docker run --tty`](commandline/container_run.md#tty): allocate a pseudo-tty
-- [`docker run --interactive`](commandline/container_run.md#interactive): keep `stdin` open even if not attached
+- [`docker run --detach`](https://docs.docker.com/reference/cli/docker/container/run/#detach): run container in background
+- [`docker run --attach`](https://docs.docker.com/reference/cli/docker/container/run/#attach): attach to `stdin`, `stdout`, and `stderr`
+- [`docker run --tty`](https://docs.docker.com/reference/cli/docker/container/run/#tty): allocate a pseudo-tty
+- [`docker run --interactive`](https://docs.docker.com/reference/cli/docker/container/run/#interactive): keep `stdin` open even if not attached
 @z
 
 @x
 For more information about re-attaching to a background container, see
-[`docker attach`](commandline/container_attach.md).
+[`docker attach`](https://docs.docker.com/reference/cli/docker/container/attach/).
 @y
 For more information about re-attaching to a background container, see
-[`docker attach`](commandline/container_attach.md).
+[`docker attach`](https://docs.docker.com/reference/cli/docker/container/attach/).
 @z
 
 @x
@@ -340,14 +340,14 @@ The UUID identifier is a random ID assigned to the container by the daemon.
 
 @x
 The daemon generates a random string name for containers automatically. You can
-also defined a custom name using [the `--name` flag](./commandline/container_run.md#name).
+also defined a custom name using [the `--name` flag](https://docs.docker.com/reference/cli/docker/container/run/#name).
 Defining a `name` can be a handy way to add meaning to a container. If you
 specify a `name`, you can use it when referring to the container in a
 user-defined network. This works for both background and foreground Docker
 containers.
 @y
 The daemon generates a random string name for containers automatically. You can
-also defined a custom name using [the `--name` flag](./commandline/container_run.md#name).
+also defined a custom name using [the `--name` flag](https://docs.docker.com/reference/cli/docker/container/run/#name).
 Defining a `name` can be a handy way to add meaning to a container. If you
 specify a `name`, you can use it when referring to the container in a
 user-defined network. This works for both background and foreground Docker
@@ -2375,12 +2375,12 @@ use of facilities allowed by the capabilities, so you should not have to adjust 
 @z
 
 @x
-When you build an image from a [Dockerfile](https://docs.docker.com/engine/reference/builder/),
+When you build an image from a [Dockerfile](https://docs.docker.com/reference/dockerfile/),
 or when committing it, you can set a number of default parameters that take
 effect when the image starts up as a container. When you run an image, you can
 override those defaults using flags for the `docker run` command.
 @y
-When you build an image from a [Dockerfile](https://docs.docker.com/engine/reference/builder/),
+When you build an image from a [Dockerfile](https://docs.docker.com/reference/dockerfile/),
 or when committing it, you can set a number of default parameters that take
 effect when the image starts up as a container. When you run an image, you can
 override those defaults using flags for the `docker run` command.

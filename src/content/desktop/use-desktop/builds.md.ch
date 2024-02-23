@@ -198,10 +198,10 @@ operations are defined as follows:
 @z
 
 @x
-The **Dependencies** section shows images and remote resources used to during
+The **Dependencies** section shows images and remote resources used during
 the build. Resources listed here include:
 @y
-The **Dependencies** section shows images and remote resources used to during
+The **Dependencies** section shows images and remote resources used during
 the build. Resources listed here include:
 @z
 

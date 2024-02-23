@@ -14,14 +14,26 @@ keywords: organizations, admin, overview
 title: Organization administration overview
 @z
 
+% grid:
+
 @x
-grid:
+- title: Onboard your organization
+  description: Learn how to onboard and secure your organization.
+  icon: explore
+  link: /admin/organization/onboard
+@y
+- title: Onboard your organization
+  description: Learn how to onboard and secure your organization.
+  icon: explore
+  link: __SUBDIR__/admin/organization/onboard
+@z
+
+@x
 - title: Manage members
   description: Explore how to manage members.
   icon: group_add
   link: /admin/organization/members/
 @y
-grid:
 - title: Manage members
   description: Explore how to manage members.
   icon: group_add

@@ -38,6 +38,7 @@ examples: |-
     $ docker network disconnect multi-host-network container1
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false
@@ -80,6 +81,7 @@ examples: |-
     $ docker network disconnect multi-host-network container1
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false

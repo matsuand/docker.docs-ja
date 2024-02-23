@@ -277,12 +277,12 @@ as a default, with dual logging caching enabled:
 The dual logging cache accepts the same configuration options as the
 [`local` logging driver](local.md), but with a `cache-` prefix. These options
 can be specified per container, and defaults for new containers can be set using
-the [daemon configuration file](/engine/reference/commandline/dockerd/#daemon-configuration-file).
+the [daemon configuration file](/reference/cli/dockerd/#daemon-configuration-file).
 @y
 The dual logging cache accepts the same configuration options as the
 [`local` logging driver](local.md), but with a `cache-` prefix. These options
 can be specified per container, and defaults for new containers can be set using
-the [daemon configuration file](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-configuration-file).
+the [daemon configuration file](__SUBDIR__/reference/cli/dockerd/#daemon-configuration-file).
 @z
 
 @x
@@ -331,10 +331,10 @@ through a remote logging system, and if there is no need to read logs through
 
 @x
 Caching can be disabled for individual containers or by default for new containers,
-when using the [daemon configuration file](/engine/reference/commandline/dockerd/#daemon-configuration-file).
+when using the [daemon configuration file](/reference/cli/dockerd/#daemon-configuration-file).
 @y
 Caching can be disabled for individual containers or by default for new containers,
-when using the [daemon configuration file](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-configuration-file).
+when using the [daemon configuration file](__SUBDIR__/reference/cli/dockerd/#daemon-configuration-file).
 @z
 
 @x

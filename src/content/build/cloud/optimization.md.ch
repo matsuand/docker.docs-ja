@@ -205,11 +205,11 @@ than transferring the files with the build context.
 
 @x
 You can fetch remote files during the build using the
-[Dockerfile `ADD` instruction](/engine/reference/builder/#add),
+[Dockerfile `ADD` instruction](/reference/dockerfile/#add),
 or in your `RUN` instructions with tools like `wget` and `rsync`.
 @y
 You can fetch remote files during the build using the
-[Dockerfile `ADD` instruction](__SUBDIR__/engine/reference/builder/#add),
+[Dockerfile `ADD` instruction](__SUBDIR__/reference/dockerfile/#add),
 or in your `RUN` instructions with tools like `wget` and `rsync`.
 @z
 

@@ -66,10 +66,10 @@ The easiest way to deploy Notary Server is by using Docker Compose. To follow th
 @z
 
 @x
-See the instructions for [Docker](../../reference/commandline/cli.md#notary) or
+See the instructions for [Docker](../../../engine/reference/commandline/cli.md#notary) or
 for [Notary](https://github.com/docker/notary#using-notary) depending on which one you are using.
 @y
-See the instructions for [Docker](../../reference/commandline/cli.md#notary) or
+See the instructions for [Docker](../../../engine/reference/commandline/cli.md#notary) or
 for [Notary](https://github.com/docker/notary#using-notary) depending on which one you are using.
 @z
 

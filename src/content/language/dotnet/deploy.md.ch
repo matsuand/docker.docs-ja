@@ -64,13 +64,13 @@ In your `docker-dotnet-sample` directory, create a file named
 `docker-dotnet-kubernetes.yaml`. Open the file in an IDE or text editor and add
 the following contents. Replace `DOCKER_USERNAME/REPO_NAME` with your Docker
 username and the name of the repository that you created in [Configure CI/CD for
-your.NET application](configure-ci-cd.md).
+your .NET application](configure-ci-cd.md).
 @y
 In your `docker-dotnet-sample` directory, create a file named
 `docker-dotnet-kubernetes.yaml`. Open the file in an IDE or text editor and add
 the following contents. Replace `DOCKER_USERNAME/REPO_NAME` with your Docker
 username and the name of the repository that you created in [Configure CI/CD for
-your.NET application](configure-ci-cd.md).
+your .NET application](configure-ci-cd.md).
 @z
 
 @x

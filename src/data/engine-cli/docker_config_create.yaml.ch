@@ -236,6 +236,7 @@ examples: |-
     ]
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false
@@ -262,6 +263,7 @@ swarm: true
     ]
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false

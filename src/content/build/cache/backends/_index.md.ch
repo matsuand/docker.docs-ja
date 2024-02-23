@@ -60,7 +60,7 @@ Other cache backends require you to select a different
 >
 > If you use secrets or credentials inside your build process, ensure you
 > manipulate them using the dedicated
-> [`--secret` option](../../../engine/reference/commandline/buildx_build/#secret).
+> [`--secret` option](../../../reference/cli/docker/buildx/build.md#secret).
 > Manually managing secrets using `COPY` or `ARG` could result in leaked
 > credentials.
 { .warning }
@@ -69,7 +69,7 @@ Other cache backends require you to select a different
 >
 > If you use secrets or credentials inside your build process, ensure you
 > manipulate them using the dedicated
-> [`--secret` option](../../../engine/reference/commandline/buildx_build/#secret).
+> [`--secret` option](../../../reference/cli/docker/buildx/build.md#secret).
 > Manually managing secrets using `COPY` or `ARG` could result in leaked
 > credentials.
 { .warning }
@@ -149,17 +149,17 @@ Buildx supports the following cache storage backends:
 
 @x
 To use any of the cache backends, you first need to specify it on build with the
-[`--cache-to` option](../../../engine/reference/commandline/buildx_build/#cache-to)
+[`--cache-to` option](../../../reference/cli/docker/buildx/build.md#cache-to)
 to export the cache to your storage backend of choice. Then, use the
-[`--cache-from` option](../../../engine/reference/commandline/buildx_build/#cache-from)
+[`--cache-from` option](../../../reference/cli/docker/buildx/build.md#cache-from)
 to import the cache from the storage backend into the current build. Unlike the
 local BuildKit cache (which is always enabled), all of the cache storage
 backends must be explicitly exported to, and explicitly imported from.
 @y
 To use any of the cache backends, you first need to specify it on build with the
-[`--cache-to` option](../../../engine/reference/commandline/buildx_build/#cache-to)
+[`--cache-to` option](../../../reference/cli/docker/buildx/build.md#cache-to)
 to export the cache to your storage backend of choice. Then, use the
-[`--cache-from` option](../../../engine/reference/commandline/buildx_build/#cache-from)
+[`--cache-from` option](../../../reference/cli/docker/buildx/build.md#cache-from)
 to import the cache from the storage backend into the current build. Unlike the
 local BuildKit cache (which is always enabled), all of the cache storage
 backends must be explicitly exported to, and explicitly imported from.

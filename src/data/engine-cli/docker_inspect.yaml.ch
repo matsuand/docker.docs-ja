@@ -398,6 +398,7 @@ examples: |-
     $ docker inspect --format='{{json .Config}}' $INSTANCE_ID
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -407,6 +408,7 @@ swarm: false
     $ docker inspect --format='{{json .Config}}' $INSTANCE_ID
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

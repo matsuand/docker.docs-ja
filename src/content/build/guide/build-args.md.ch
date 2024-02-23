@@ -352,9 +352,9 @@ Related information:
 @z
 
 @x
-- [`ARG` Dockerfile reference](../../engine/reference/builder.md#arg)
+- [`ARG` Dockerfile reference](../../reference/dockerfile.md#arg)
 @y
-- [`ARG` Dockerfile reference](../../engine/reference/builder.md#arg)
+- [`ARG` Dockerfile reference](../../reference/dockerfile.md#arg)
 @z
 
 @x

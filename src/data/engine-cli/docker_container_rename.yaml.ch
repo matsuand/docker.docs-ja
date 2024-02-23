@@ -24,11 +24,6 @@ examples: |-
     ```console
     $ docker rename my_container my_new_container
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker container rename
 aliases: docker container rename, docker rename
@@ -52,9 +47,4 @@ examples: |-
     ```console
     $ docker rename my_container my_new_container
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

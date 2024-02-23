@@ -24,6 +24,18 @@ aliases:
 @z
 
 @x
+> **Docker Desktop terms**
+>
+> Commercial use of Docker Desktop in larger enterprises (more than 250
+> employees OR more than $10 million USD in annual revenue) requires a [paid
+> subscription](https://www.docker.com/pricing/).
+@y
+> **Docker Desktop 契約条項**
+>
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
+@z
+
+@x
 This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
 @y
 This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.

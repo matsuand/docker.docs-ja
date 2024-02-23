@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image rm
 aliases: docker image rm, docker image remove, docker rmi
@@ -24,7 +26,7 @@ long: |-
 @x
     This does not remove images from a registry. You cannot remove an image of a
     running container unless you use the `-f` option. To see all images on a host
-    use the [`docker image ls`](image_ls.md) command.
+    use the [`docker image ls`](/reference/cli/docker/image/ls/) command.
 usage: docker image rm [OPTIONS] IMAGE [IMAGE...]
 pname: docker image
 plink: docker_image.yaml
@@ -69,7 +71,7 @@ examples: |-
 @y
     This does not remove images from a registry. You cannot remove an image of a
     running container unless you use the `-f` option. To see all images on a host
-    use the [`docker image ls`](image_ls.md) command.
+    use the [`docker image ls`](__SUBDIR__/reference/cli/docker/image/ls/) command.
 usage: docker image rm [OPTIONS] IMAGE [IMAGE...]
 pname: docker image
 plink: docker_image.yaml
@@ -288,6 +290,7 @@ examples: |-
     Deleted: df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -301,6 +304,7 @@ swarm: false
     Deleted: df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

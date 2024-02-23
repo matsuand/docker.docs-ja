@@ -16,33 +16,35 @@ keywords: wsl, wsl 2, develop, docker desktop, windows
 @z
 
 @x
-## Develop with Docker and WSL 2
-@y
-## Develop with Docker and WSL 2
-@z
-
-@x
 The following section describes how to start developing your applications using Docker and WSL 2. We recommend that you have your code in your default Linux distribution for the best development experience using Docker and WSL 2. After you have turned on the WSL 2 feature on Docker Desktop, you can start working with your code inside the Linux distro and ideally with your IDE still in Windows. This workflow is straightforward if you are using [VS Code](https://code.visualstudio.com/download).
 @y
 The following section describes how to start developing your applications using Docker and WSL 2. We recommend that you have your code in your default Linux distribution for the best development experience using Docker and WSL 2. After you have turned on the WSL 2 feature on Docker Desktop, you can start working with your code inside the Linux distro and ideally with your IDE still in Windows. This workflow is straightforward if you are using [VS Code](https://code.visualstudio.com/download).
 @z
 
 @x
-1. Open VS Code and install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension. This extension lets you to work with a remote server in the Linux distro and your IDE client still on Windows.
-2. Start working in VS Code remotely. To do this, open your terminal and type:
+## Develop with Docker and WSL 2
 @y
-1. Open VS Code and install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension. This extension lets you to work with a remote server in the Linux distro and your IDE client still on Windows.
-2. Start working in VS Code remotely. To do this, open your terminal and type:
+## Develop with Docker and WSL 2
+@z
+
+@x
+1. Open VS Code and install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension. This extension lets you work with a remote server in the Linux distro and your IDE client still on Windows.
+2. Open your terminal and type:
+@y
+1. Open VS Code and install the [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extension. This extension lets you work with a remote server in the Linux distro and your IDE client still on Windows.
+2. Open your terminal and type:
 @z
 
 @x
     ```console
     $ wsl
     ```
+3. Navigate to your project directory and then type:
 @y
     ```console
     $ wsl
     ```
+3. Navigate to your project directory and then type:
 @z
 
 @x
@@ -62,9 +64,7 @@ The following section describes how to start developing your applications using 
 @z
 
 @x
-    Alternatively, you can type the name of your default Linux distro in your Start menu, open it, and then run `code` .
-3. When you are in VS Code, you can use the terminal in VS Code to pull your code and start working natively from your Windows machine.
+Alternatively, you can open your default Linux distribution from the **Start** menu, navigate to your project directory, and then run `code .`
 @y
-    Alternatively, you can type the name of your default Linux distro in your Start menu, open it, and then run `code` .
-3. When you are in VS Code, you can use the terminal in VS Code to pull your code and start working natively from your Windows machine.
+Alternatively, you can open your default Linux distribution from the **Start** menu, navigate to your project directory, and then run `code .`
 @z

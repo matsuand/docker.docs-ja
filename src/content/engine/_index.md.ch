@@ -4,7 +4,6 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Engine
 keywords: Engine
 title: Docker Engine overview
@@ -45,15 +44,7 @@ grid:
   description: Read the release notes for the latest version.
   icon: note_add
   link: /engine/release-notes
-aliases:
-- /edge/
-- /engine/ce-ee-node-activate/
-- /engine/migration/
-- /engine/misc/
-- /linux/
----
 @y
----
 description: Engine
 keywords: Engine
 title: Docker Engine 概要
@@ -94,13 +85,6 @@ grid:
   description: 最新版に対するリリースノートを確認します。
   icon: note_add
   link: __SUBDIR__/engine/release-notes
-aliases:
-- /edge/
-- /engine/ce-ee-node-activate/
-- /engine/migration/
-- /engine/misc/
-- /linux/
----
 @z
 
 @x
@@ -114,21 +98,21 @@ Docker Engine はクライアントサーバーアプリケーションとして
 
 @x
 - A server with a long-running daemon process
-  [`dockerd`](/engine/reference/commandline/dockerd).
+  [`dockerd`](/reference/cli/dockerd).
 - APIs which specify interfaces that programs can use to talk to and instruct
   the Docker daemon.
 - A command line interface (CLI) client
-  [`docker`](/engine/reference/commandline/cli/).
+  [`docker`](/reference/cli/docker/).
 @y
-- デーモンプロセス [`dockerd`](__SUBDIR__/engine/reference/commandline/dockerd) を長期にわたって動作させるサーバー。
+- デーモンプロセス [`dockerd`](__SUBDIR__/reference/cli/dockerd) を長期にわたって動作させるサーバー。
 - アプリケーションプログラムが Docker デーモンとやりとりしたり指示したりするためのインターフェースとなる API。
-- コマンドラインインターフェース (CLI) クライアントである [`docker`](__SUBDIR__/engine/reference/commandline/cli/)。
+- コマンドラインインターフェース (CLI) クライアントである [`docker`](__SUBDIR__/reference/cli/docker/)。
 @z
 
 @x
 The CLI uses [Docker APIs](api/index.md) to control or interact with the Docker
 daemon through scripting or direct CLI commands. Many other Docker applications
-use the underlying API and CLI. The daemon creates and manage Docker objects,
+use the underlying API and CLI. The daemon creates and manages Docker objects,
 such as images, containers, networks, and volumes.
 @y
 CLI は [Docker API](api/index.md) を利用して、Docker デーモンの制御ややりとりを行います。
@@ -163,4 +147,10 @@ text.
 @y
 Docker Engine は ライセンスとして Apache License, Version 2.0 を採用しています。
 ライセンス全文は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
+@z
+
+@x
+However, for commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
+@y
+However, for commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
 @z

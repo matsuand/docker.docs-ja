@@ -18,12 +18,12 @@ keywords: build, buildkit, configuration, buildx, network, cni, registry
 @x
 If you create a `docker-container` or `kubernetes` builder with Buildx, you can
 apply a custom [BuildKit configuration](toml-configuration.md) by passing the
-[`--config` flag](../../engine/reference/commandline/buildx_create.md#config) to
+[`--config` flag](../../reference/cli/docker/buildx/create.md#config) to
 the `docker buildx create` command.
 @y
 If you create a `docker-container` or `kubernetes` builder with Buildx, you can
 apply a custom [BuildKit configuration](toml-configuration.md) by passing the
-[`--config` flag](../../engine/reference/commandline/buildx_create.md#config) to
+[`--config` flag](../../reference/cli/docker/buildx/create.md#config) to
 the `docker buildx create` command.
 @z
 
@@ -413,10 +413,10 @@ ADD https://raw.githubusercontent.com/moby/buildkit/${BUILDKIT_VERSION}/hack/fix
 
 @x
 Now you can build this image, and create a builder instance from it using
-[the `--driver-opt image` option](../../engine/reference/commandline/buildx_create.md#driver-opt):
+[the `--driver-opt image` option](../../reference/cli/docker/buildx/create.md#driver-opt):
 @y
 Now you can build this image, and create a builder instance from it using
-[the `--driver-opt image` option](../../engine/reference/commandline/buildx_create.md#driver-opt):
+[the `--driver-opt image` option](../../reference/cli/docker/buildx/create.md#driver-opt):
 @z
 
 @x
@@ -454,11 +454,11 @@ $ docker buildx create --use --bootstrap \
 @x
 You can limit the parallelism of the BuildKit solver, which is particularly useful
 for low-powered machines, using a [BuildKit configuration](toml-configuration.md)
-while creating a builder with the [`--config` flags](../../engine/reference/commandline/buildx_create.md#config).
+while creating a builder with the [`--config` flags](../../reference/cli/docker/buildx/create.md#config).
 @y
 You can limit the parallelism of the BuildKit solver, which is particularly useful
 for low-powered machines, using a [BuildKit configuration](toml-configuration.md)
-while creating a builder with the [`--config` flags](../../engine/reference/commandline/buildx_create.md#config).
+while creating a builder with the [`--config` flags](../../reference/cli/docker/buildx/create.md#config).
 @z
 
 @x

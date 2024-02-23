@@ -1,13 +1,15 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker plugin create
 short: |
     Create a plugin from a rootfs and configuration. Plugin data directory must contain config.json and rootfs directory.
 long: |-
     Creates a plugin. Before creating the plugin, prepare the plugin's root
-    filesystem as well as the [config.json](../../extend/config.md).
+    filesystem as well as the [config.json](/engine/extend/config/).
 usage: docker plugin create [OPTIONS] PLUGIN PLUGIN-DATA-DIR
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -41,7 +43,7 @@ short: |
     Create a plugin from a rootfs and configuration. Plugin data directory must contain config.json and rootfs directory.
 long: |-
     Creates a plugin. Before creating the plugin, prepare the plugin's root
-    filesystem as well as the [config.json](../../extend/config.md).
+    filesystem as well as the [config.json](__SUBDIR__/engine/extend/config/).
 usage: docker plugin create [OPTIONS] PLUGIN PLUGIN-DATA-DIR
 pname: docker plugin
 plink: docker_plugin.yaml
@@ -120,6 +122,7 @@ examples: |-
 @x
     The plugin can subsequently be enabled for local use or pushed to the public registry.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -128,6 +131,7 @@ swarm: false
 @y
     The plugin can subsequently be enabled for local use or pushed to the public registry.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

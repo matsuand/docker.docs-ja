@@ -251,10 +251,10 @@ multiple times to the same node each time, ensuring better use of local cache.
 
 @x
 For more information on scalability, see the options for
-[`docker buildx create`](../../engine/reference/commandline/buildx_create.md#driver-opt).
+[`docker buildx create`](../../reference/cli/docker/buildx/create.md#driver-opt).
 @y
 For more information on scalability, see the options for
-[`docker buildx create`](../../engine/reference/commandline/buildx_create.md#driver-opt).
+[`docker buildx create`](../../reference/cli/docker/buildx/create.md#driver-opt).
 @z
 
 @x
@@ -841,8 +841,8 @@ That's it! You've now built an image from a Kubernetes pod, using Buildx!
 
 @x
 For more information on the Kubernetes driver, see the
-[buildx reference](../../engine/reference/commandline/buildx_create.md#driver).
+[buildx reference](../../reference/cli/docker/buildx/create.md#driver).
 @y
 For more information on the Kubernetes driver, see the
-[buildx reference](../../engine/reference/commandline/buildx_create.md#driver).
+[buildx reference](../../reference/cli/docker/buildx/create.md#driver).
 @z

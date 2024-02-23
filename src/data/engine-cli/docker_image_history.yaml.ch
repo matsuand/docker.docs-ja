@@ -270,6 +270,7 @@ examples: |-
     <missing>: 4 weeks ago
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -279,6 +280,7 @@ swarm: false
     <missing>: 4 weeks ago
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

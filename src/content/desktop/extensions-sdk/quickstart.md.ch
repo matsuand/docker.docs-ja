@@ -178,11 +178,13 @@ see a **Quickstart** item underneath the **Extensions** menu. Selecting this ite
 >
 > During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire
 > extension. See [Preview whilst developing the UI](dev/test-debug.md#hot-reloading-whilst-developing-the-ui) for more information.
+{ .tip }
 @y
 > **Tip**
 >
 > During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire
 > extension. See [Preview whilst developing the UI](dev/test-debug.md#hot-reloading-whilst-developing-the-ui) for more information.
+{ .tip }
 @z
 
 @x
@@ -227,12 +229,6 @@ $ docker extension rm <name-of-your-extension>
 ```console
 $ docker extension rm <name-of-your-extension>
 ```
-@z
-
-@x
-{{< include "extensions-form.md" >}}
-@y
-{{< include "extensions-form.md" >}}
 @z
 
 @x

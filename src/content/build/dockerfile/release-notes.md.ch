@@ -19,10 +19,10 @@ toc_max: 2
 
 @x
 This page contains information about the new features, improvements, known
-issues, and bug fixes in [Dockerfile reference](../../engine/reference/builder.md).
+issues, and bug fixes in [Dockerfile reference](../../reference/dockerfile.md).
 @y
 This page contains information about the new features, improvements, known
-issues, and bug fixes in [Dockerfile reference](../../engine/reference/builder.md).
+issues, and bug fixes in [Dockerfile reference](../../reference/dockerfile.md).
 @z
 
 @x
@@ -51,10 +51,10 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 
 @x
 - Add `--start-interval` flag to the
-  [`HEALTHCHECK` instruction](../../engine/reference/builder.md#healthcheck).
+  [`HEALTHCHECK` instruction](../../reference/dockerfile.md#healthcheck).
 @y
 - Add `--start-interval` flag to the
-  [`HEALTHCHECK` instruction](../../engine/reference/builder.md#healthcheck).
+  [`HEALTHCHECK` instruction](../../reference/dockerfile.md#healthcheck).
 @z
 
 @x
@@ -64,12 +64,12 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- The `ADD` instruction can now [import files directly from Git URLs](../../engine/reference/builder.md#adding-a-git-repository-add-git-ref-dir)
-- The `ADD` instruction now supports [`--checksum` flag](../../engine/reference/builder.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- The `ADD` instruction can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
+- The `ADD` instruction now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @y
-- The `ADD` instruction can now [import files directly from Git URLs](../../engine/reference/builder.md#adding-a-git-repository-add-git-ref-dir)
-- The `ADD` instruction now supports [`--checksum` flag](../../engine/reference/builder.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- The `ADD` instruction can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
+- The `ADD` instruction now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @z
 
@@ -172,10 +172,10 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `ADD` command now supports [`--checksum` flag](../../engine/reference/builder.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- `ADD` command now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @y
-- `ADD` command now supports [`--checksum` flag](../../engine/reference/builder.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- `ADD` command now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @z
 
@@ -198,9 +198,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `ADD` command can now [import files directly from Git URLs](../../engine/reference/builder.md#adding-a-git-repository-add-git-ref-dir)
+- `ADD` command can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
 @y
-- `ADD` command can now [import files directly from Git URLs](../../engine/reference/builder.md#adding-a-git-repository-add-git-ref-dir)
+- `ADD` command can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
 @z
 
 @x
@@ -334,30 +334,30 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- [`COPY --link` and `ADD --link`](../../engine/reference/builder.md#copy---link)
+- [`COPY --link` and `ADD --link`](../../reference/dockerfile.md#copy---link)
   allow copying files with increased cache efficiency and rebase images without
   requiring them to be rebuilt. `--link` copies files to a separate layer and
   then uses new LLB MergeOp implementation to chain independent layers together
-- [Heredocs](../../engine/reference/builder.md#here-documents) support have
+- [Heredocs](../../reference/dockerfile.md#here-documents) support have
   been promoted from labs channel to stable. This feature allows writing
   multiline inline scripts and files
-- Additional [named build contexts](../../engine/reference/commandline/buildx_build.md#build-context)
+- Additional [named build contexts](../../reference/cli/docker/buildx/build.md#build-context)
   can be passed to build to add or overwrite a stage or an image inside the
   build. A source for the context can be a local source, image, Git, or HTTP URL
-- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](../../engine/reference/builder.md#buildkit-built-in-build-args)
+- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
   can be used to set the default hostname for the `RUN` steps
 @y
-- [`COPY --link` and `ADD --link`](../../engine/reference/builder.md#copy---link)
+- [`COPY --link` and `ADD --link`](../../reference/dockerfile.md#copy---link)
   allow copying files with increased cache efficiency and rebase images without
   requiring them to be rebuilt. `--link` copies files to a separate layer and
   then uses new LLB MergeOp implementation to chain independent layers together
-- [Heredocs](../../engine/reference/builder.md#here-documents) support have
+- [Heredocs](../../reference/dockerfile.md#here-documents) support have
   been promoted from labs channel to stable. This feature allows writing
   multiline inline scripts and files
-- Additional [named build contexts](../../engine/reference/commandline/buildx_build.md#build-context)
+- Additional [named build contexts](../../reference/cli/docker/buildx/build.md#build-context)
   can be passed to build to add or overwrite a stage or an image inside the
   build. A source for the context can be a local source, image, Git, or HTTP URL
-- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](../../engine/reference/builder.md#buildkit-built-in-build-args)
+- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
   can be used to set the default hostname for the `RUN` steps
 @z
 
@@ -426,10 +426,10 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `RUN` and `COPY` commands now support [Here-document syntax](../../engine/reference/builder.md#here-documents)
+- `RUN` and `COPY` commands now support [Here-document syntax](../../reference/dockerfile.md#here-documents)
   allowing writing multiline inline scripts and files
 @y
-- `RUN` and `COPY` commands now support [Here-document syntax](../../engine/reference/builder.md#here-documents)
+- `RUN` and `COPY` commands now support [Here-document syntax](../../reference/dockerfile.md#here-documents)
   allowing writing multiline inline scripts and files
 @z
 
@@ -452,12 +452,12 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `RUN` command allows [`--network` flag](../../engine/reference/builder.md#run---network)
+- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement. This feature was previously
   only available on labs channel
 @y
-- `RUN` command allows [`--network` flag](../../engine/reference/builder.md#run---network)
+- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement. This feature was previously
   only available on labs channel
@@ -471,16 +471,16 @@ The following features have graduated from the labs channel to stable:
 
 @x
 - `ADD` command with a remote URL input now correctly handles the `--chmod` flag
-- Values for [`RUN --mount` flag](../../engine/reference/builder.md#run---mount)
+- Values for [`RUN --mount` flag](../../reference/dockerfile.md#run---mount)
   now support variable expansion, except for the `from` field
-- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](../../engine/reference/builder.md#buildkit-built-in-build-args)
+- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
   to force always creating multi-platform image, even if only contains single
   platform
 @y
 - `ADD` command with a remote URL input now correctly handles the `--chmod` flag
-- Values for [`RUN --mount` flag](../../engine/reference/builder.md#run---mount)
+- Values for [`RUN --mount` flag](../../reference/dockerfile.md#run---mount)
   now support variable expansion, except for the `from` field
-- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](../../engine/reference/builder.md#buildkit-built-in-build-args)
+- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
   to force always creating multi-platform image, even if only contains single
   platform
 @z
@@ -510,11 +510,11 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `RUN` command allows [`--network` flag](../../engine/reference/builder.md#run---network)
+- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement
 @y
-- `RUN` command allows [`--network` flag](../../engine/reference/builder.md#run---network)
+- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement
 @z
@@ -594,16 +594,16 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- [`RUN --mount` syntax](../../engine/reference/builder.md#run---mount) for
+- [`RUN --mount` syntax](../../reference/dockerfile.md#run---mount) for
   creating secret, ssh, bind, and cache mounts have been moved to mainline
   channel
-- [`ARG` command](../../engine/reference/builder.md#arg) now supports defining
+- [`ARG` command](../../reference/dockerfile.md#arg) now supports defining
   multiple build args on the same line similarly to `ENV`
 @y
-- [`RUN --mount` syntax](../../engine/reference/builder.md#run---mount) for
+- [`RUN --mount` syntax](../../reference/dockerfile.md#run---mount) for
   creating secret, ssh, bind, and cache mounts have been moved to mainline
   channel
-- [`ARG` command](../../engine/reference/builder.md#arg) now supports defining
+- [`ARG` command](../../reference/dockerfile.md#arg) now supports defining
   multiple build args on the same line similarly to `ENV`
 @z
 
@@ -675,16 +675,16 @@ The following features have graduated from the labs channel to stable:
 
 @x
 - Allow setting security mode for a process with `RUN --security=sandbox|insecure`
-- Allow setting uid/gid for [cache mounts](../../engine/reference/builder.md#run---mounttypecache)
+- Allow setting uid/gid for [cache mounts](../../reference/dockerfile.md#run---mounttypecache)
 - Avoid requesting internally linked paths to be pulled to build context
 - Ensure missing cache IDs default to target paths
-- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](../../engine/reference/builder.md#buildkit-built-in-build-args)
+- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
 @y
 - Allow setting security mode for a process with `RUN --security=sandbox|insecure`
-- Allow setting uid/gid for [cache mounts](../../engine/reference/builder.md#run---mounttypecache)
+- Allow setting uid/gid for [cache mounts](../../reference/dockerfile.md#run---mounttypecache)
 - Avoid requesting internally linked paths to be pulled to build context
 - Ensure missing cache IDs default to target paths
-- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](../../engine/reference/builder.md#buildkit-built-in-build-args)
+- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
 @z
 
 @x

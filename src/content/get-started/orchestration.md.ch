@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応 (最下段)
 
 @x
----
 title: Deployment and orchestration
 keywords: orchestration, deploy, kubernetes, swarm,
 description: Get oriented on some basics of Docker and install Docker Desktop.
----
 @y
----
 title: デプロイとオーケストレーション
 keywords: orchestration, deploy, kubernetes, swarm,
 description: Get oriented on some basics of Docker and install Docker Desktop.
----
 @z
 
 @x
@@ -478,13 +474,13 @@ Further documentation for all CLI commands used in this article are available he
 - [`kubectl get`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get)
 - [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs)
 - [`kubectl delete`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete)
-- [`docker swarm init`](/engine/reference/commandline/swarm_init/)
-- [`docker service *`](/engine/reference/commandline/service/)
+- [`docker swarm init`](/reference/cli/docker/swarm/init/)
+- [`docker service *`](/reference/cli/docker/service/)
 @y
 - [`kubectl apply`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply)
 - [`kubectl get`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get)
 - [`kubectl logs`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs)
 - [`kubectl delete`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete)
-- [`docker swarm init`](__SUBDIR__/engine/reference/commandline/swarm_init/)
-- [`docker service *`](__SUBDIR__/engine/reference/commandline/service/)
+- [`docker swarm init`](__SUBDIR__/reference/cli/docker/swarm/init/)
+- [`docker service *`](__SUBDIR__/reference/cli/docker/service/)
 @z

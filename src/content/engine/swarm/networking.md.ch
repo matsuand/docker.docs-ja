@@ -920,11 +920,11 @@ order to delete an existing bridge. The package name is `bridge-utils`.
 @x
 4.  Create or re-create the `docker_gwbridge` bridge with your custom settings.
     This example uses the subnet `10.11.0.0/16`. For a full list of customizable
-    options, see [Bridge driver options](../reference/commandline/network_create.md#bridge-driver-options).
+    options, see [Bridge driver options](../../reference/cli/docker/network/create.md#bridge-driver-options).
 @y
 4.  Create or re-create the `docker_gwbridge` bridge with your custom settings.
     This example uses the subnet `10.11.0.0/16`. For a full list of customizable
-    options, see [Bridge driver options](../reference/commandline/network_create.md#bridge-driver-options).
+    options, see [Bridge driver options](../../reference/cli/docker/network/create.md#bridge-driver-options).
 @z
 
 @x
@@ -1048,11 +1048,11 @@ $ docker swarm join \
 * [Swarm administration guide](admin_guide.md)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
 * [Networking overview](../../network/index.md)
-* [Docker CLI reference](../reference/commandline/docker.md)
+* [Docker CLI reference](../../reference/cli/docker/)
 @y
 * [Deploy services to a swarm](services.md)
 * [Swarm administration guide](admin_guide.md)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
 * [Networking overview](../../network/index.md)
-* [Docker CLI reference](../reference/commandline/docker.md)
+* [Docker CLI reference](../../reference/cli/docker/)
 @z

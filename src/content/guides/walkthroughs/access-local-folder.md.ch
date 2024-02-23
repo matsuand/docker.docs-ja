@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Access a local folder from a container
 keywords: get started, quick start, intro, concepts
 description: Learn how to access a local folder from a container
----
 @y
----
 title: コンテナーからローカルフォルダーへのアクセス
 keywords: get started, quick start, intro, concepts
 description: コンテナーからローカルフォルダーへのアクセスする方法を学びます。
----
 @z
 
 @x
@@ -244,11 +240,11 @@ Related information:
 @x
 - Deep dive into [bind mounts](../../storage/bind-mounts.md)
 - Learn about using bind mounts in Compose in the [Compose file reference](../../compose/compose-file/_index.md)
-- Explore using bind mounts via the CLI in the [Docker run reference](/engine/reference/commandline/container_run/#mount)
+- Explore using bind mounts via the CLI in the [Docker run reference](/reference/cli/docker/container/run/#mount)
 @y
 - より詳しくは [バインドマウント](../../storage/bind-mounts.md) を参照してください。
 - Compose にてバインドマウントを利用する方法は [Compose ファイルリファレンス](../../compose/compose-file/_index.md) を確認してください。
-- CLI からバインドマウントを利用する方法は [Docker run リファレンス](__SUBDIR__/engine/reference/commandline/container_run/#mount) を確認してください。
+- CLI からバインドマウントを利用する方法は [Docker run リファレンス](__SUBDIR__/reference/cli/docker/container/run/#mount) を確認してください。
 @z
 
 @x

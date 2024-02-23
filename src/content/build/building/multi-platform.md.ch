@@ -273,7 +273,7 @@ $ docker buildx build --platform linux/amd64,linux/arm64 .
 ```
 @z
 
-@x __SUBDIR__ 対応
+@x
 While this approach has advantages over emulation, managing multi-node builders
 introduces some overhead of setting up and managing builder clusters.
 Alternatively, you can use [Docker Build Cloud](/build/cloud/), a service that
@@ -370,10 +370,10 @@ COPY --from=build /log /log
 @z
 
 @x
-Run the [`docker buildx ls` command](../../engine/reference/commandline/buildx_ls.md)
+Run the [`docker buildx ls` command](../../reference/cli/docker/buildx/ls.md)
 to list the existing builders:
 @y
-Run the [`docker buildx ls` command](../../engine/reference/commandline/buildx_ls.md)
+Run the [`docker buildx ls` command](../../reference/cli/docker/buildx/ls.md)
 to list the existing builders:
 @z
 
@@ -576,9 +576,9 @@ $ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <userna
 @z
 
 @x
-Inspect the image using [`docker buildx imagetools` command](../../engine/reference/commandline/buildx_imagetools.md):
+Inspect the image using [`docker buildx imagetools` command](../../reference/cli/docker/buildx/imagetools/_index.md):
 @y
-Inspect the image using [`docker buildx imagetools` command](../../engine/reference/commandline/buildx_imagetools.md):
+Inspect the image using [`docker buildx imagetools` command](../../reference/cli/docker/buildx/imagetools/_index.md):
 @z
 
 @x

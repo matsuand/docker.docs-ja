@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container rm
 aliases: docker container rm, docker container remove, docker rm
@@ -218,13 +220,13 @@ examples: |-
 @z
 
 @x
-    Use the [`docker container prune`](container_prune.md) command to remove all
-    stopped containers, or refer to the [`docker system prune`](system_prune.md)
+    Use the [`docker container prune`](/reference/cli/docker/container/prune/) command to remove all
+    stopped containers, or refer to the [`docker system prune`](/reference/cli/docker/system/prune/)
     command to remove unused containers in addition to other Docker resources, such
     as (unused) images and networks.
 @y
-    Use the [`docker container prune`](container_prune.md) command to remove all
-    stopped containers, or refer to the [`docker system prune`](system_prune.md)
+    Use the [`docker container prune`](__SUBDIR__/reference/cli/docker/container/prune/) command to remove all
+    stopped containers, or refer to the [`docker system prune`](__SUBDIR__/reference/cli/docker/system/prune/)
     command to remove unused containers in addition to other Docker resources, such
     as (unused) images and networks.
 @z
@@ -342,6 +344,7 @@ examples: |-
     `/bar` is removed. The same behavior holds for volumes inherited with
     `--volumes-from`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -351,6 +354,7 @@ swarm: false
     `/bar` is removed. The same behavior holds for volumes inherited with
     `--volumes-from`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

@@ -388,6 +388,7 @@ examples: |-
      Issuer Subject:    MBMxETAPBgNVBAMTCHN3YXJtLWNh
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -398,6 +399,7 @@ swarm: true
      Issuer Subject:    MBMxETAPBgNVBAMTCHN3YXJtLWNh
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

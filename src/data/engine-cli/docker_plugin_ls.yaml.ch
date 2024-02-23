@@ -1,13 +1,15 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__対応
+
 @x
 command: docker plugin ls
 aliases: docker plugin ls, docker plugin list
 short: List plugins
 long: |-
     Lists all the plugins that are currently installed. You can install plugins
-    using the [`docker plugin install`](plugin_install.md) command.
+    using the [`docker plugin install`](/reference/cli/docker/plugin/install/) command.
     You can also filter using the `-f` or `--filter` flag.
     Refer to the [filtering](#filter) section for more information about available filter options.
 usage: docker plugin ls [OPTIONS]
@@ -82,7 +84,7 @@ aliases: docker plugin ls, docker plugin list
 short: List plugins
 long: |-
     Lists all the plugins that are currently installed. You can install plugins
-    using the [`docker plugin install`](plugin_install.md) command.
+    using the [`docker plugin install`](__SUBDIR__/reference/cli/docker/plugin/install/) command.
     You can also filter using the `-f` or `--filter` flag.
     Refer to the [filtering](#filter) section for more information about available filter options.
 usage: docker plugin ls [OPTIONS]
@@ -326,6 +328,7 @@ examples: |-
     {"Description":"sshFS plugin for Docker","Enabled":false,"ID":"856d89febb1c","Name":"vieux/sshfs:latest","PluginReference":"docker.io/vieux/sshfs:latest"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -338,6 +341,7 @@ swarm: false
     {"Description":"sshFS plugin for Docker","Enabled":false,"ID":"856d89febb1c","Name":"vieux/sshfs:latest","PluginReference":"docker.io/vieux/sshfs:latest"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

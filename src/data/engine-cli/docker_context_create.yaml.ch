@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker context create
 short: Create a context
@@ -228,15 +230,17 @@ examples: |-
 @z
 
 @x
-    Refer to the [`docker context update` reference](context_update.md) for details.
+    Refer to the [`docker context update` reference](/reference/cli/docker/context/update/) for details.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    Refer to the [`docker context update` reference](context_update.md) for details.
+    Refer to the [`docker context update` reference](__SUBDIR__/reference/cli/docker/context/update/) for details.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

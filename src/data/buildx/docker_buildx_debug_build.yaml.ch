@@ -14,7 +14,7 @@ options:
       value_type: stringSlice
       default_value: '[]'
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /engine/reference/commandline/image_build/#add-host
+      details_url: /reference/cli/docker/image/build/#add-host
       deprecated: false
       hidden: false
       experimental: false
@@ -97,7 +97,7 @@ options:
     - option: cgroup-parent
       value_type: string
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /engine/reference/commandline/image_build/#cgroup-parent
+      details_url: /reference/cli/docker/image/build/#cgroup-parent
       deprecated: false
       hidden: false
       experimental: false
@@ -177,7 +177,7 @@ options:
       shorthand: f
       value_type: string
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /engine/reference/commandline/image_build/#file
+      details_url: /reference/cli/docker/image/build/#file
       deprecated: false
       hidden: false
       experimental: false
@@ -467,7 +467,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /engine/reference/commandline/image_build/#tag
+      details_url: /reference/cli/docker/image/build/#tag
       deprecated: false
       hidden: false
       experimental: false
@@ -477,7 +477,7 @@ options:
     - option: target
       value_type: string
       description: Set the target build stage to build
-      details_url: /engine/reference/commandline/image_build/#target
+      details_url: /reference/cli/docker/image/build/#target
       deprecated: false
       hidden: false
       experimental: false
@@ -523,7 +523,7 @@ options:
       value_type: stringSlice
       default_value: '[]'
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /engine/reference/commandline/image_build/#add-host
+      details_url: /reference/cli/docker/image/build/#add-host
       deprecated: false
       hidden: false
       experimental: false
@@ -606,7 +606,7 @@ options:
     - option: cgroup-parent
       value_type: string
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /engine/reference/commandline/image_build/#cgroup-parent
+      details_url: /reference/cli/docker/image/build/#cgroup-parent
       deprecated: false
       hidden: false
       experimental: false
@@ -686,7 +686,7 @@ options:
       shorthand: f
       value_type: string
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /engine/reference/commandline/image_build/#file
+      details_url: /reference/cli/docker/image/build/#file
       deprecated: false
       hidden: false
       experimental: false
@@ -976,7 +976,7 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /engine/reference/commandline/image_build/#tag
+      details_url: /reference/cli/docker/image/build/#tag
       deprecated: false
       hidden: false
       experimental: false
@@ -986,7 +986,7 @@ options:
     - option: target
       value_type: string
       description: Set the target build stage to build
-      details_url: /engine/reference/commandline/image_build/#target
+      details_url: /reference/cli/docker/image/build/#target
       deprecated: false
       hidden: false
       experimental: false

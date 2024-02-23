@@ -348,6 +348,7 @@ examples: |-
     the same type. For example, you can connect a single container bridge and overlay
     networks.
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false
@@ -358,6 +359,7 @@ swarm: false
     the same type. For example, you can connect a single container bridge and overlay
     networks.
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false

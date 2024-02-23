@@ -235,6 +235,7 @@ examples: |-
     f949d337b1f5        none                null                local
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -248,6 +249,7 @@ swarm: false
     f949d337b1f5        none                null                local
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

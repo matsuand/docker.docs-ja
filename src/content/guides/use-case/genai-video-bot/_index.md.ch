@@ -73,11 +73,25 @@ The project showcases the following technologies:
 
 @x
 - You have an [OpenAI API Key](https://platform.openai.com/api-keys).
+@y
+- You have an [OpenAI API Key](https://platform.openai.com/api-keys).
+@z
+
+@x
+  > **Note**
+  >
+  > OpenAI is a third-party hosted service and [charges](https://openai.com/pricing) may apply.
+@y
+  > **Note**
+  >
+  > OpenAI is a third-party hosted service and [charges](https://openai.com/pricing) may apply.
+@z
+
+@x
 - You have a [Pinecone API Key](https://app.pinecone.io/).
 - You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
 @y
-- You have an [OpenAI API Key](https://platform.openai.com/api-keys).
 - You have a [Pinecone API Key](https://app.pinecone.io/).
 - You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.

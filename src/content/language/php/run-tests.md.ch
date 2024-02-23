@@ -2,19 +2,16 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
----
 title: Run PHP tests in a container
 keywords: php, test
 description: Learn how to run your PHP tests in a container.
----
 @y
----
 title: Run PHP tests in a container
 keywords: php, test
 description: Learn how to run your PHP tests in a container.
----
 @z
 
 @x
@@ -81,38 +78,12 @@ You should see output that contains the following.
 You should see output that contains the following.
 @z
 
-@x
-```console
-Hello, Docker!PHPUnit 9.6.13 by Sebastian Bergmann and contributors.
-@y
-```console
-Hello, Docker!PHPUnit 9.6.13 by Sebastian Bergmann and contributors.
-@z
+% snip output ...
 
 @x
-.                                                                   1 / 1 (100%)
+To learn more about the command, see [docker compose run](/reference/cli/docker/compose/run/).
 @y
-.                                                                   1 / 1 (100%)
-@z
-
-@x
-Time: 00:00.003, Memory: 4.00 MB
-@y
-Time: 00:00.003, Memory: 4.00 MB
-@z
-
-@x
-OK (1 test, 1 assertion)
-```
-@y
-OK (1 test, 1 assertion)
-```
-@z
-
-@x
-To learn more about the command, see [docker compose run](/engine/reference/commandline/compose_run/).
-@y
-To learn more about the command, see [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/).
+To learn more about the command, see [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/).
 @z
 
 @x
@@ -285,11 +256,11 @@ In this section, you learned how to run tests when developing locally using Comp
 
 @x
 Related information:
- - [docker compose run](/engine/reference/commandline/compose_run/)
+ - [docker compose run](/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @y
 Related information:
- - [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/)
+ - [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @z
 

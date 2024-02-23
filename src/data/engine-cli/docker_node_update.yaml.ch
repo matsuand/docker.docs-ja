@@ -174,11 +174,11 @@ examples: |-
 @z
 
 @x
-    When you [create a service](service_create.md),
+    When you [create a service](/reference/cli/docker/service/create/),
     you can use node labels as a constraint. A constraint limits the nodes where the
     scheduler deploys tasks for a service.
 @y
-    When you [create a service](service_create.md),
+    When you [create a service](__SUBDIR__/reference/cli/docker/service/create/),
     you can use node labels as a constraint. A constraint limits the nodes where the
     scheduler deploys tasks for a service.
 @z
@@ -204,17 +204,18 @@ examples: |-
 @x
     The labels you set for nodes using `docker node update` apply only to the node
     entity within the swarm. Do not confuse them with the docker daemon labels for
-    [dockerd](dockerd.md).
+    [dockerd](/reference/cli/dockerd/).
 @y
     The labels you set for nodes using `docker node update` apply only to the node
     entity within the swarm. Do not confuse them with the docker daemon labels for
-    [dockerd](dockerd.md).
+    [dockerd](__SUBDIR__/reference/cli/dockerd/).
 @z
 
 @x
     For more information about labels, refer to [apply custom
     metadata](/engine/userguide/labels-custom-metadata/).
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -224,6 +225,7 @@ swarm: true
     For more information about labels, refer to [apply custom
     metadata](__SUBDIR__/engine/userguide/labels-custom-metadata/).
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

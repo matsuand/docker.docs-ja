@@ -70,6 +70,16 @@ The top-level `configs` declaration defines or references configuration data tha
 @z
 
 @x
+> **Note**
+>
+> `environment` and `content` attributes are available with Docker Compose version 2.23.1 and later.
+@y
+> **Note**
+>
+> `environment` and `content` attributes are available with Docker Compose version 2.23.1 and later.
+@z
+
+@x
 ## Example 1
 @y
 ## Example 1
@@ -125,13 +135,11 @@ configs:
 
 @x
 `<project_name>_app_config` is created when the application is deployed,
-by registering the inlined content as the configuration data. This comes with the
-benefits Compose will infer variables when creating the config, which allows to
+by registering the inlined content as the configuration data. This means Compose infers variables when creating the config, which allows you to
 adjust content according to service configuration:
 @y
 `<project_name>_app_config` is created when the application is deployed,
-by registering the inlined content as the configuration data. This comes with the
-benefits Compose will infer variables when creating the config, which allows to
+by registering the inlined content as the configuration data. This means Compose infers variables when creating the config, which allows you to
 adjust content according to service configuration:
 @z
 
@@ -169,13 +177,11 @@ External configs lookup can also use a distinct key by specifying a `name`.
 
 @x
 The following
-example modifies the previous one to look up a config using the parameter `HTTP_CONFIG_KEY`. The
-the actual lookup key will is set at deployment time by the [interpolation](12-interpolation.md) of
+example modifies the previous one to look up a config using the parameter `HTTP_CONFIG_KEY`. The actual lookup key is set at deployment time by the [interpolation](12-interpolation.md) of
 variables, but exposed to containers as hard-coded ID `http_config`.
 @y
 The following
-example modifies the previous one to look up a config using the parameter `HTTP_CONFIG_KEY`. The
-the actual lookup key will is set at deployment time by the [interpolation](12-interpolation.md) of
+example modifies the previous one to look up a config using the parameter `HTTP_CONFIG_KEY`. The actual lookup key is set at deployment time by the [interpolation](12-interpolation.md) of
 variables, but exposed to containers as hard-coded ID `http_config`.
 @z
 

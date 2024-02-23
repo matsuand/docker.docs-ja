@@ -465,12 +465,12 @@ examples: |-
 
 @x
     Uses the builder that is built into the Docker daemon. With this driver,
-    the [`--load`](buildx_build.md#load) flag is implied by default on
+    the [`--load`](/reference/cli/docker/buildx/build/#load) flag is implied by default on
     `buildx build`. However, building multi-platform images or exporting cache is
     not currently supported.
 @y
     Uses the builder that is built into the Docker daemon. With this driver,
-    the [`--load`](buildx_build.md#load) flag is implied by default on
+    the [`--load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) flag is implied by default on
     `buildx build`. However, building multi-platform images or exporting cache is
     not currently supported.
 @z
@@ -491,11 +491,11 @@ examples: |-
 
 @x
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](buildx_build.md#load) needs to be used
+    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](buildx_build.md#load) needs to be used
+    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -515,11 +515,11 @@ examples: |-
 
 @x
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](buildx_build.md#load) needs to be used
+    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](buildx_build.md#load) needs to be used
+    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -541,11 +541,11 @@ examples: |-
 
 @x
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](buildx_build.md#load) needs to be used
+    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](buildx_build.md#load) needs to be used
+    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 

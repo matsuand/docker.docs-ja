@@ -26,6 +26,7 @@ examples: |-
     $ docker logout localhost:8080
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -55,6 +56,7 @@ examples: |-
     $ docker logout localhost:8080
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

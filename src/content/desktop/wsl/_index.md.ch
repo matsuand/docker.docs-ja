@@ -59,11 +59,11 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 
 @x
 - At a minimum WSL version 1.1.3.0., but ideally the latest version of WSL to [avoid Docker Desktop not working as expected](best-practices.md).
-- Windows 10, version 21H2 or later, or Windows 11, version 21H2 or later. For more information, see [System requirements](https://docs.docker.com/desktop/install/windows-install/#system-requirements).
+- Met the Docker Desktop for Windows' [system requirements](https://docs.docker.com/desktop/install/windows-install/#system-requirements).
 - Installed the WSL 2 feature on Windows. For detailed instructions, refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 @y
 - At a minimum WSL version 1.1.3.0., but ideally the latest version of WSL to [avoid Docker Desktop not working as expected](best-practices.md).
-- Windows 10, version 21H2 or later, or Windows 11, version 21H2 or later. For more information, see [System requirements](https://docs.docker.com/desktop/install/windows-install/#system-requirements).
+- Met the Docker Desktop for Windows' [system requirements](https://docs.docker.com/desktop/install/windows-install/#system-requirements).
 - Installed the WSL 2 feature on Windows. For detailed instructions, refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 @z
 
@@ -71,29 +71,19 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 >**Tip**
 >
 > For a better experience on WSL, consider enabling the WSL
-> [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+> [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings)
 > setting available since WSL 1.3.10 (experimental).
 >
-> This feature causes the Windows host to better reclaim unused memory inside
-> the WSL virtual machine, thereby resulting in better memory availability to
-> other host applications. This is particularly helpful with Docker Desktop,
-> since otherwise the WSL VM may consume large amounts (GBs) of memory in the
-> Linux kernel's page cache as Docker builds container images, without ever
-> returning that memory to the host when it becomes unused inside the VM.
+> This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
 { .tip }
 @y
 >**Tip**
 >
 > For a better experience on WSL, consider enabling the WSL
-> [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+> [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings)
 > setting available since WSL 1.3.10 (experimental).
 >
-> This feature causes the Windows host to better reclaim unused memory inside
-> the WSL virtual machine, thereby resulting in better memory availability to
-> other host applications. This is particularly helpful with Docker Desktop,
-> since otherwise the WSL VM may consume large amounts (GBs) of memory in the
-> Linux kernel's page cache as Docker builds container images, without ever
-> returning that memory to the host when it becomes unused inside the VM.
+> This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
 { .tip }
 @z
 
@@ -257,8 +247,10 @@ Docker Desktop does not require any particular Linux distros to be installed. Th
 
 @x
 - [Explore best practices](best-practices.md)
-- [Understand how to develop with Docker and WSL 2 and GPU support for WSL](use-wsl.md)
+- [Understand how to develop with Docker and WSL 2](use-wsl.md)
+- [Learn about GPU support with WSL 2](../gpu.md)
 @y
 - [Explore best practices](best-practices.md)
-- [Understand how to develop with Docker and WSL 2 and GPU support for WSL](use-wsl.md)
+- [Understand how to develop with Docker and WSL 2](use-wsl.md)
+- [Learn about GPU support with WSL 2](../gpu.md)
 @z

@@ -4,23 +4,15 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Networking with overlay networks
 description: Tutorials for networking with swarm services and standalone containers
   on multiple Docker daemons
 keywords: networking, bridge, routing, ports, swarm, overlay
-aliases:
-- /engine/userguide/networking/get-started-overlay/
----
 @y
----
 title: Networking with overlay networks
 description: Tutorials for networking with swarm services and standalone containers
   on multiple Docker daemons
 keywords: networking, bridge, routing, ports, swarm, overlay
-aliases:
-- /engine/userguide/networking/get-started-overlay/
----
 @z
 
 @x
@@ -1009,12 +1001,12 @@ example also uses Linux hosts, but the same commands work on Windows.
     The two containers communicate with the overlay network connecting the two
     hosts. If you run another alpine container on `host2` that is _not detached_,
     you can ping `alpine1` from `host2` (and here we add the
-    [remove option](/engine/reference/commandline/container_run/#rm) for automatic container cleanup):
+    [remove option](/reference/cli/docker/container/run/#rm) for automatic container cleanup):
 @y
     The two containers communicate with the overlay network connecting the two
     hosts. If you run another alpine container on `host2` that is _not detached_,
     you can ping `alpine1` from `host2` (and here we add the
-    [remove option](__SUBDIR__/engine/reference/commandline/container_run/#rm) for automatic container cleanup):
+    [remove option](__SUBDIR__/reference/cli/docker/container/run/#rm) for automatic container cleanup):
 @z
 
 @x

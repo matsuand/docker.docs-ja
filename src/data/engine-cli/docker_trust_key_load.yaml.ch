@@ -122,6 +122,7 @@ examples: |-
     Successfully imported key from alice.pem
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -133,6 +134,7 @@ swarm: false
     Successfully imported key from alice.pem
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

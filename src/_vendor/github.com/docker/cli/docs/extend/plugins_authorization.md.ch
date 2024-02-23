@@ -258,13 +258,13 @@ Enable the authorization plugin with a dedicated command line flag in the
 `--authorization-plugin=PLUGIN_ID` format. The flag supplies a `PLUGIN_ID`
 value. This value can be the plugin’s socket or a path to a specification file.
 Authorization plugins can be loaded without restarting the daemon. Refer
-to the [`dockerd` documentation](../reference/commandline/dockerd.md#configuration-reload-behavior) for more information.
+to the [`dockerd` documentation](https://docs.docker.com/reference/cli/dockerd/#configuration-reload-behavior) for more information.
 @y
 Enable the authorization plugin with a dedicated command line flag in the
 `--authorization-plugin=PLUGIN_ID` format. The flag supplies a `PLUGIN_ID`
 value. This value can be the plugin’s socket or a path to a specification file.
 Authorization plugins can be loaded without restarting the daemon. Refer
-to the [`dockerd` documentation](../reference/commandline/dockerd.md#configuration-reload-behavior) for more information.
+to the [`dockerd` documentation](https://docs.docker.com/reference/cli/dockerd/#configuration-reload-behavior) for more information.
 @z
 
 @x

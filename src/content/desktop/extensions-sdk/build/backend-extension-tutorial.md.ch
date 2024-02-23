@@ -36,13 +36,15 @@ Before you start, make sure you have installed the latest version of [Docker Des
 @z
 
 @x
-> Note
+> Tip
 >
 > Check the [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>`. They provide a better base for your extension as it's more up-to-date and related to your install of Docker Desktop.
+{ .tip }
 @y
-> Note
+> Tip
 >
 > Check the [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>`. They provide a better base for your extension as it's more up-to-date and related to your install of Docker Desktop.
+{ .tip }
 @z
 
 @x
@@ -446,15 +448,15 @@ type HTTPMessageBody struct {
 @z
 
 @x
-To deploy your Go backend when installing the extension, you need first to configure the `Dockerfile`, so that:
-- it builds the backend application
-- it copies the binary in the extension's container filesystem
-- it starts the binary when the container starts listening on the extension socket
+To deploy your Go backend when installing the extension, you need first to configure the `Dockerfile`, so that it:
+- Builds the backend application
+- Copies the binary in the extension's container filesystem
+- Starts the binary when the container starts listening on the extension socket
 @y
-To deploy your Go backend when installing the extension, you need first to configure the `Dockerfile`, so that:
-- it builds the backend application
-- it copies the binary in the extension's container filesystem
-- it starts the binary when the container starts listening on the extension socket
+To deploy your Go backend when installing the extension, you need first to configure the `Dockerfile`, so that it:
+- Builds the backend application
+- Copies the binary in the extension's container filesystem
+- Starts the binary when the container starts listening on the extension socket
 @z
 
 @x

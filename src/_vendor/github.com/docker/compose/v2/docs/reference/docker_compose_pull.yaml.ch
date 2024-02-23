@@ -4,9 +4,8 @@
 @x
 command: docker compose pull
 short: Pull service images
-long: |-
-    Pulls an image associated with a service defined in a `compose.yaml` file, but does not start containers based on
-    those images.
+long: |
+    Pulls an image associated with a service defined in a `compose.yaml` file, but does not start containers based on those images
 usage: docker compose pull [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -14,7 +13,7 @@ options:
     - option: ignore-buildable
       value_type: bool
       default_value: "false"
-      description: Ignore images that can be built.
+      description: Ignore images that can be built
       deprecated: false
       hidden: false
       experimental: false
@@ -24,7 +23,7 @@ options:
     - option: ignore-pull-failures
       value_type: bool
       default_value: "false"
-      description: Pull what it can and ignores images with pull failures.
+      description: Pull what it can and ignores images with pull failures
       deprecated: false
       hidden: false
       experimental: false
@@ -34,7 +33,7 @@ options:
     - option: include-deps
       value_type: bool
       default_value: "false"
-      description: Also pull services declared as dependencies.
+      description: Also pull services declared as dependencies
       deprecated: false
       hidden: false
       experimental: false
@@ -44,7 +43,7 @@ options:
     - option: no-parallel
       value_type: bool
       default_value: "true"
-      description: DEPRECATED disable parallel pulling.
+      description: DEPRECATED disable parallel pulling
       deprecated: false
       hidden: true
       experimental: false
@@ -54,7 +53,7 @@ options:
     - option: parallel
       value_type: bool
       default_value: "true"
-      description: DEPRECATED pull multiple images in parallel.
+      description: DEPRECATED pull multiple images in parallel
       deprecated: false
       hidden: true
       experimental: false
@@ -63,7 +62,7 @@ options:
       swarm: false
     - option: policy
       value_type: string
-      description: Apply pull policy ("missing"|"always").
+      description: Apply pull policy ("missing"|"always")
       deprecated: false
       hidden: false
       experimental: false
@@ -74,7 +73,7 @@ options:
       shorthand: q
       value_type: bool
       default_value: "false"
-      description: Pull without printing progress information.
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false
@@ -97,9 +96,8 @@ examples: |-
 @y
 command: docker compose pull
 short: Pull service images
-long: |-
-    Pulls an image associated with a service defined in a `compose.yaml` file, but does not start containers based on
-    those images.
+long: |
+    Pulls an image associated with a service defined in a `compose.yaml` file, but does not start containers based on those images
 usage: docker compose pull [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -107,7 +105,7 @@ options:
     - option: ignore-buildable
       value_type: bool
       default_value: "false"
-      description: Ignore images that can be built.
+      description: Ignore images that can be built
       deprecated: false
       hidden: false
       experimental: false
@@ -117,7 +115,7 @@ options:
     - option: ignore-pull-failures
       value_type: bool
       default_value: "false"
-      description: Pull what it can and ignores images with pull failures.
+      description: Pull what it can and ignores images with pull failures
       deprecated: false
       hidden: false
       experimental: false
@@ -127,7 +125,7 @@ options:
     - option: include-deps
       value_type: bool
       default_value: "false"
-      description: Also pull services declared as dependencies.
+      description: Also pull services declared as dependencies
       deprecated: false
       hidden: false
       experimental: false
@@ -137,7 +135,7 @@ options:
     - option: no-parallel
       value_type: bool
       default_value: "true"
-      description: DEPRECATED disable parallel pulling.
+      description: DEPRECATED disable parallel pulling
       deprecated: false
       hidden: true
       experimental: false
@@ -147,7 +145,7 @@ options:
     - option: parallel
       value_type: bool
       default_value: "true"
-      description: DEPRECATED pull multiple images in parallel.
+      description: DEPRECATED pull multiple images in parallel
       deprecated: false
       hidden: true
       experimental: false
@@ -156,7 +154,7 @@ options:
       swarm: false
     - option: policy
       value_type: string
-      description: Apply pull policy ("missing"|"always").
+      description: Apply pull policy ("missing"|"always")
       deprecated: false
       hidden: false
       experimental: false
@@ -167,7 +165,7 @@ options:
       shorthand: q
       value_type: bool
       default_value: "false"
-      description: Pull without printing progress information.
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false

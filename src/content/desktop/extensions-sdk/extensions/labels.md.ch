@@ -34,9 +34,9 @@ This information is then displayed as an overview of the extension, so users can
 @z
 
 @x
-You can define [Image labels](../../../engine/reference/builder.md#label) in the extension's `Dockerfile`.
+You can define [Image labels](../../../reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @y
-You can define [Image labels](../../../engine/reference/builder.md#label) in the extension's `Dockerfile`.
+You can define [Image labels](../../../reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Use containers for Python development
@@ -155,85 +157,7 @@ The following is the updated `compose.yaml` file.
 The following is the updated `compose.yaml` file.
 @z
 
-@x
-```yaml
-services:
-  server:
-    build:
-      context: .
-    ports:
-      - 5000:5000
-    environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@y
-```yaml
-services:
-  server:
-    build:
-      context: .
-    ports:
-      - 5000:5000
-    environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -397,93 +321,7 @@ Open your `compose.yaml` file in an IDE or text editor and then add the Compose
 Watch instructions. The following is the updated `compose.yaml` file.
 @z
 
-@x
-```yaml
-services:
-  server:
-    build:
-      context: .
-    ports:
-      - 5000:5000
-    environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-    develop:
-      watch:
-        - action: rebuild
-          path: .
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@y
-```yaml
-services:
-  server:
-    build:
-      context: .
-    ports:
-      - 5000:5000
-    environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-    develop:
-      watch:
-        - action: rebuild
-          path: .
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@z
+% snip code...
 
 @x
 Run the following command to run your application with Compose Watch.

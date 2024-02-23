@@ -90,6 +90,7 @@ examples: |-
     > a secret.
     { .warning }
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -102,6 +103,7 @@ swarm: true
     > a secret.
     { .warning }
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

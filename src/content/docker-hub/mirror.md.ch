@@ -4,25 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Setting-up a local mirror for Docker Hub images
 keywords: registry, on-prem, images, tags, repository, distribution, mirror, Hub,
   recipe, advanced
 title: Registry as a pull through cache
-aliases:
-- /engine/admin/registry_mirror/
-- /registry/recipes/mirror/
----
 @y
----
 description: Setting-up a local mirror for Docker Hub images
 keywords: registry, on-prem, images, tags, repository, distribution, mirror, Hub,
   recipe, advanced
 title: Registry as a pull through cache
-aliases:
-- /engine/admin/registry_mirror/
-- /registry/recipes/mirror/
----
 @z
 
 @x
@@ -291,11 +281,11 @@ proxy:
 
 @x
 Either pass the `--registry-mirror` option when starting `dockerd` manually,
-or edit [`/etc/docker/daemon.json`](../../engine/reference/commandline/dockerd.md#daemon-configuration-file)
+or edit [`/etc/docker/daemon.json`](../../reference/cli/dockerd.md#daemon-configuration-file)
 and add the `registry-mirrors` key and value, to make the change persistent.
 @y
 Either pass the `--registry-mirror` option when starting `dockerd` manually,
-or edit [`/etc/docker/daemon.json`](../../engine/reference/commandline/dockerd.md#daemon-configuration-file)
+or edit [`/etc/docker/daemon.json`](../../reference/cli/dockerd.md#daemon-configuration-file)
 and add the `registry-mirrors` key and value, to make the change persistent.
 @z
 

@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Force stop service containers.
+Force stop service containers
 @y
 <!---MARKER_GEN_START-->
-Force stop service containers.
+Force stop service containers
 @z
 
 @x
@@ -22,17 +22,17 @@ Force stop service containers.
 @z
 
 @x
-| Name               | Type     | Default   | Description                                                     |
-|:-------------------|:---------|:----------|:----------------------------------------------------------------|
-| `--dry-run`        |          |           | Execute command in dry run mode                                 |
-| `--remove-orphans` |          |           | Remove containers for services not defined in the Compose file. |
-| `-s`, `--signal`   | `string` | `SIGKILL` | SIGNAL to send to the container.                                |
+| Name               | Type     | Default   | Description                                                    |
+|:-------------------|:---------|:----------|:---------------------------------------------------------------|
+| `--dry-run`        |          |           | Execute command in dry run mode                                |
+| `--remove-orphans` |          |           | Remove containers for services not defined in the Compose file |
+| `-s`, `--signal`   | `string` | `SIGKILL` | SIGNAL to send to the container                                |
 @y
-| Name               | Type     | Default   | Description                                                     |
-|:-------------------|:---------|:----------|:----------------------------------------------------------------|
-| `--dry-run`        |          |           | Execute command in dry run mode                                 |
-| `--remove-orphans` |          |           | Remove containers for services not defined in the Compose file. |
-| `-s`, `--signal`   | `string` | `SIGKILL` | SIGNAL to send to the container.                                |
+| Name               | Type     | Default   | Description                                                    |
+|:-------------------|:---------|:----------|:---------------------------------------------------------------|
+| `--dry-run`        |          |           | Execute command in dry run mode                                |
+| `--remove-orphans` |          |           | Remove containers for services not defined in the Compose file |
+| `-s`, `--signal`   | `string` | `SIGKILL` | SIGNAL to send to the container                                |
 @z
 
 @x

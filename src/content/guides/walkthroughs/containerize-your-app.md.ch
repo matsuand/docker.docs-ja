@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Containerize your application
 keywords: get started, quick start, intro, concepts
 description: Learn how to containerize your application.
----
 @y
----
 title: アプリケーションのコンテナー化
 keywords: get started, quick start, intro, concepts
 description: アプリケーションをコンテナー化する方法を学びます。
----
 @z
 
 @x
@@ -124,11 +120,11 @@ $ docker compose up
 @z
 
 @x
-The `docker init` command tries its best to do the heavy lifting for you, but sometimes there's some assembly required. In this case, you can refer to the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)⁠ to learn how to update the files created by `docker init`.
+The `docker init` command tries its best to do the heavy lifting for you, but sometimes there's some assembly required. In this case, you can refer to the [Dockerfile reference⁠](/reference/dockerfile/) and [Compose file reference](/compose/compose-file/)⁠ to learn how to update the files created by `docker init`.
 @y
 `docker init` コマンドは、できる限り最適な設定を行うようにしています。
 ただし時には再構築が必要となることもあります。
-そういった場合は [Dockerfile リファレンス](__SUBDIR__/engine/reference/builder/) や [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を参照して、`docker init` により生成されたファイルの更新方法を学んでください。
+そういった場合は [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/) や [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を参照して、`docker init` により生成されたファイルの更新方法を学んでください。
 @z
 
 @x
@@ -150,11 +146,11 @@ Related information:
 @z
 
 @x
-- Read more about [docker init](../../engine/reference/commandline/init.md)
-- Learn more about Docker assets in the [Dockerfile reference⁠](/engine/reference/builder/) and [Compose file reference](/compose/compose-file/)
+- Read more about [docker init](../../reference/cli/docker/init.md)
+- Learn more about Docker assets in the [Dockerfile reference⁠](/reference/dockerfile/) and [Compose file reference](/compose/compose-file/)
 @y
-- [docker init](__SUBDIR__/engine/reference/commandline/init.md) の詳細を読んでください。
-- Docker アセットについては [Dockerfile リファレンス](__SUBDIR__/engine/reference/builder/) と [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を確認してください。
+- [docker init](../../reference/cli/docker/init.md) の詳細を読んでください。
+- Docker アセットについては [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/) と [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を確認してください。
 @z
 
 @x

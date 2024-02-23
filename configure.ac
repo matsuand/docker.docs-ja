@@ -159,8 +159,6 @@ AC_CONFIG_FILES([
 	src/content/engine/api/sdk/Makefile
 	src/content/engine/context/Makefile
 	src/content/engine/install/Makefile
-	src/content/engine/reference/Makefile
-	src/content/engine/reference/commandline/Makefile
 	src/content/engine/release-notes/Makefile
 	src/content/engine/sbom/Makefile
 	src/content/engine/security/Makefile
@@ -203,8 +201,41 @@ AC_CONFIG_FILES([
 	src/content/network/Makefile
 	src/content/network/drivers/Makefile
 	src/content/network/drivers/images/Makefile
+	src/content/reference/Makefile
+	src/content/reference/cli/Makefile
+	src/content/reference/cli/docker/Makefile
+	src/content/reference/cli/docker/builder/Makefile
+	src/content/reference/cli/docker/buildx/Makefile
+	src/content/reference/cli/docker/buildx/debug/Makefile
+	src/content/reference/cli/docker/buildx/imagetools/Makefile
+	src/content/reference/cli/docker/checkpoint/Makefile
+	src/content/reference/cli/docker/compose/Makefile
+	src/content/reference/cli/docker/compose/alpha/Makefile
+	src/content/reference/cli/docker/config/Makefile
+	src/content/reference/cli/docker/container/Makefile
+	src/content/reference/cli/docker/context/Makefile
+	src/content/reference/cli/docker/image/Makefile
+	src/content/reference/cli/docker/manifest/Makefile
+	src/content/reference/cli/docker/network/Makefile
+	src/content/reference/cli/docker/node/Makefile
+	src/content/reference/cli/docker/plugin/Makefile
+	src/content/reference/cli/docker/scout/Makefile
+	src/content/reference/cli/docker/scout/attestation/Makefile
+	src/content/reference/cli/docker/scout/cache/Makefile
+	src/content/reference/cli/docker/scout/integration/Makefile
+	src/content/reference/cli/docker/scout/repo/Makefile
+	src/content/reference/cli/docker/secret/Makefile
+	src/content/reference/cli/docker/service/Makefile
+	src/content/reference/cli/docker/stack/Makefile
+	src/content/reference/cli/docker/swarm/Makefile
+	src/content/reference/cli/docker/system/Makefile
+	src/content/reference/cli/docker/trust/Makefile
+	src/content/reference/cli/docker/trust/key/Makefile
+	src/content/reference/cli/docker/trust/signer/Makefile
+	src/content/reference/cli/docker/volume/Makefile
 	src/content/samples/Makefile
 	src/content/scout/Makefile
+	src/content/scout/guides/Makefile
 	src/content/scout/images/Makefile
 	src/content/scout/images/release-notes/Makefile
 	src/content/scout/integrations/Makefile

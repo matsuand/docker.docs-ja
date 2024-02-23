@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Run Node.js tests in a container
 keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
----
 @y
----
 title: Run Node.js tests in a container
 keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
----
 @z
 
 @x
@@ -76,9 +72,9 @@ $ docker compose run server npm run test
 @z
 
 @x
-To learn more about the command, see [docker compose run](/engine/reference/commandline/compose_run/).
+To learn more about the command, see [docker compose run](/reference/cli/docker/compose/run/).
 @y
-To learn more about the command, see [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/).
+To learn more about the command, see [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/).
 @z
 
 @x
@@ -217,95 +213,7 @@ The following is the updated Dockerfile.
 The following is the updated Dockerfile.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-ARG NODE_VERSION=18.0.0
-@y
-ARG NODE_VERSION=18.0.0
-@z
-
-@x
-FROM node:${NODE_VERSION}-alpine as base
-WORKDIR /usr/src/app
-EXPOSE 3000
-@y
-FROM node:${NODE_VERSION}-alpine as base
-WORKDIR /usr/src/app
-EXPOSE 3000
-@z
-
-@x
-FROM base as dev
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --include=dev
-USER node
-COPY . .
-CMD npm run dev
-@y
-FROM base as dev
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --include=dev
-USER node
-COPY . .
-CMD npm run dev
-@z
-
-@x
-FROM base as prod
-ENV NODE_ENV production
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev
-USER node
-COPY . .
-CMD node src/index.js
-@y
-FROM base as prod
-ENV NODE_ENV production
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev
-USER node
-COPY . .
-CMD node src/index.js
-@z
-
-@x
-FROM base as test
-ENV NODE_ENV test
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --include=dev
-USER node
-COPY . .
-RUN npm run test
-```
-@y
-FROM base as test
-ENV NODE_ENV test
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --include=dev
-USER node
-COPY . .
-RUN npm run test
-```
-@z
+% snip code...
 
 @x
 Instead of using `CMD` in the test stage, use `RUN` to run the tests. The reason is that the `CMD` instruction runs when the container runs, and the `RUN` instruction runs when the image is being built and the build will fail if the tests fail.
@@ -419,11 +327,11 @@ In this section, you learned how to run tests when developing locally using Comp
 
 @x
 Related information:
- - [docker compose run](/engine/reference/commandline/compose_run/)
+ - [docker compose run](/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @y
 Related information:
- - [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/)
+ - [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @z
 

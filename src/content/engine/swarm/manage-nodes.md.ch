@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Manage existing nodes in a swarm
 keywords: guide, swarm mode, node
 title: Manage nodes in a swarm
----
 @y
----
 description: Manage existing nodes in a swarm
 keywords: guide, swarm mode, node
 title: Manage nodes in a swarm
----
 @z
 
 @x
@@ -376,10 +372,10 @@ directly. These labels are more easily "trusted" by the swarm orchestrator.
 @z
 
 @x
-Refer to the `docker service create` [CLI reference](../reference/commandline/service_create.md)
+Refer to the `docker service create` [CLI reference](../../reference/cli/docker/service/create.md)
 for more information about service constraints.
 @y
-Refer to the `docker service create` [CLI reference](../reference/commandline/service_create.md)
+Refer to the `docker service create` [CLI reference](../../reference/cli/docker/service/create.md)
 for more information about service constraints.
 @z
 
@@ -615,10 +611,10 @@ $ docker node rm node-2
 
 @x
 * [Swarm administration guide](admin_guide.md)
-* [Docker Engine command line reference](../reference/commandline/docker.md)
+* [Docker Engine command line reference](../../reference/cli/docker/)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
 @y
 * [Swarm administration guide](admin_guide.md)
-* [Docker Engine command line reference](../reference/commandline/docker.md)
+* [Docker Engine command line reference](../../reference/cli/docker/)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
 @z

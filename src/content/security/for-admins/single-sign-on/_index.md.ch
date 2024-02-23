@@ -26,9 +26,9 @@ aliases:
 @z
 
 @x
-SSO allows users to authenticate using their identity providers (IdPs) to access Docker. SSO is available for a whole company, and all associated organizations, or an individual organization that has a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
+Single Sign-On (SSO) allows users to authenticate using their identity providers (IdPs) to access Docker. SSO is available for a whole company, and all associated organizations, or an individual organization that has a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
 @y
-SSO allows users to authenticate using their identity providers (IdPs) to access Docker. SSO is available for a whole company, and all associated organizations, or an individual organization that has a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](__SUBDIR__/subscription/upgrade/).
+Single Sign-On (SSO) allows users to authenticate using their identity providers (IdPs) to access Docker. SSO is available for a whole company, and all associated organizations, or an individual organization that has a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](__SUBDIR__/subscription/upgrade/).
 @z
 
 @x
@@ -38,9 +38,9 @@ SSO allows users to authenticate using their identity providers (IdPs) to access
 @z
 
 @x
-When you enable SSO, this redirects to your IdP's authentication page to sign in. They can't authenticate using their Docker login credentials (Docker ID and password). Docker supports Service Provider Initiated SSO flow. Your users must sign in to Docker Hub or Docker Desktop to initiate the SSO authentication process.
+When you enable SSO, your users can't authenticate using their Docker login credentials (Docker ID and password). Docker supports Service Provider Initiated SSO flow. Instead, they are redirected to your IdP's authentication page to sign in. Your users must sign in to Docker Hub or Docker Desktop to initiate the SSO authentication process.
 @y
-When you enable SSO, this redirects to your IdP's authentication page to sign in. They can't authenticate using their Docker login credentials (Docker ID and password). Docker supports Service Provider Initiated SSO flow. Your users must sign in to Docker Hub or Docker Desktop to initiate the SSO authentication process.
+When you enable SSO, your users can't authenticate using their Docker login credentials (Docker ID and password). Docker supports Service Provider Initiated SSO flow. Instead, they are redirected to your IdP's authentication page to sign in. Your users must sign in to Docker Hub or Docker Desktop to initiate the SSO authentication process.
 @z
 
 @x
@@ -62,27 +62,15 @@ The following diagram shows how SSO operates and is managed in Docker Hub and Do
 @z
 
 @x
-Before enabling SSO in Docker, administrators must first configure their IdP to work with Docker. Docker provides the Assertion Consumer Service (ACS) URL and the Entity ID. Administrators use this information to establish a connection between their IdP server and Docker Hub.
+1. Configure SSO by adding and verify your domain for your organization, then create an SSO connection with your IdP. Docker provides the Assertion Consumer Service (ACS) URL and Entity ID needed to establish a connection between your IdP server and Docker Hub.
+2. Test your connection by attempting to sign in to Docker Hub using your domain email address.
+3. Optionally, you can enforce SSO sign-in.
+4. Complete SSO enablement. A first-time user can sign in to Docker Hub using their company's domain email address. They're then added to your company, assigned to an organization, and optionally assigned to a team.
 @y
-Before enabling SSO in Docker, administrators must first configure their IdP to work with Docker. Docker provides the Assertion Consumer Service (ACS) URL and the Entity ID. Administrators use this information to establish a connection between their IdP server and Docker Hub.
-@z
-
-@x
-After establishing the connection between the IdP server and Docker, administrators sign in to Docker Hub or the Docker Admin Console and complete SSO enablement.
-@y
-After establishing the connection between the IdP server and Docker, administrators sign in to Docker Hub or the Docker Admin Console and complete SSO enablement.
-@z
-
-@x
-When you enable SSO for your company, a first-time user can sign in to Docker Hub using their company's domain email address. They're then added to your company, assigned to an organization, and optionally assigned to a team.
-@y
-When you enable SSO for your company, a first-time user can sign in to Docker Hub using their company's domain email address. They're then added to your company, assigned to an organization, and optionally assigned to a team.
-@z
-
-@x
-Administrators can then choose to enforce SSO sign-in and manage SSO connections for their individual company.
-@y
-Administrators can then choose to enforce SSO sign-in and manage SSO connections for their individual company.
+1. Configure SSO by adding and verify your domain for your organization, then create an SSO connection with your IdP. Docker provides the Assertion Consumer Service (ACS) URL and Entity ID needed to establish a connection between your IdP server and Docker Hub.
+2. Test your connection by attempting to sign in to Docker Hub using your domain email address.
+3. Optionally, you can enforce SSO sign-in.
+4. Complete SSO enablement. A first-time user can sign in to Docker Hub using their company's domain email address. They're then added to your company, assigned to an organization, and optionally assigned to a team.
 @z
 
 @x
@@ -172,14 +160,14 @@ You can also configure attributes to override default values, such as default te
 @x
 * You must first notify your company about the new SSO login procedures.
 * Verify that your members have Docker Desktop version 4.4.2, or later, installed on their machines.
-* If your organization uses the Docker Hub CLI, new org members must [create a Personal Access Token (PAT)](/docker-hub/access-tokens/) to sign in to the CLI. There is a grace period for existing users, which will expire in the near future. Before the grace period ends, your users can sign in from Docker Desktop CLI using their previous credentials until PATs are mandatory.
+* If your organization uses the Docker Hub CLI, we recommend that members [create a Personal Access Token (PAT)](/docker-hub/access-tokens/) to sign in to the CLI instead of with a username and password. Docker may deprecate signing in to the CLI with a username and password in the future, so using a PAT instead is a best practice to prevent potential issues with authentication.
 In addition, you should add all email addresses to your IdP.
 * Confirm that all CI/CD pipelines have replaced their passwords with PATs.
 * For your service accounts, add your additional domains or enable it in your IdP.
 @y
 * You must first notify your company about the new SSO login procedures.
 * Verify that your members have Docker Desktop version 4.4.2, or later, installed on their machines.
-* If your organization uses the Docker Hub CLI, new org members must [create a Personal Access Token (PAT)](__SUBDIR__/docker-hub/access-tokens/) to sign in to the CLI. There is a grace period for existing users, which will expire in the near future. Before the grace period ends, your users can sign in from Docker Desktop CLI using their previous credentials until PATs are mandatory.
+* If your organization uses the Docker Hub CLI, we recommend that members [create a Personal Access Token (PAT)](__SUBDIR__/docker-hub/access-tokens/) to sign in to the CLI instead of with a username and password. Docker may deprecate signing in to the CLI with a username and password in the future, so using a PAT instead is a best practice to prevent potential issues with authentication.
 In addition, you should add all email addresses to your IdP.
 * Confirm that all CI/CD pipelines have replaced their passwords with PATs.
 * For your service accounts, add your additional domains or enable it in your IdP.

@@ -359,6 +359,7 @@ examples: |-
     format is the `label!=...` (`label!=<key>` or `label!=<key>=<value>`), which removes
     containers, images, networks, and volumes without the specified labels.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -370,6 +371,7 @@ swarm: false
     format is the `label!=...` (`label!=<key>` or `label!=<key>=<value>`), which removes
     containers, images, networks, and volumes without the specified labels.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

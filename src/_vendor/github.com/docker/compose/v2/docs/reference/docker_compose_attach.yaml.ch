@@ -4,9 +4,9 @@
 @x
 command: docker compose attach
 short: |
-    Attach local standard input, output, and error streams to a service's running container.
+    Attach local standard input, output, and error streams to a service's running container
 long: |
-    Attach local standard input, output, and error streams to a service's running container.
+    Attach local standard input, output, and error streams to a service's running container
 usage: docker compose attach [OPTIONS] SERVICE
 pname: docker compose
 plink: docker_compose.yaml
@@ -70,9 +70,9 @@ swarm: false
 @y
 command: docker compose attach
 short: |
-    Attach local standard input, output, and error streams to a service's running container.
+    Attach local standard input, output, and error streams to a service's running container
 long: |
-    Attach local standard input, output, and error streams to a service's running container.
+    Attach local standard input, output, and error streams to a service's running container
 usage: docker compose attach [OPTIONS] SERVICE
 pname: docker compose
 plink: docker_compose.yaml

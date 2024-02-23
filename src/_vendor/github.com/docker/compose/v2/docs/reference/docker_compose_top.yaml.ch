@@ -4,7 +4,7 @@
 @x
 command: docker compose top
 short: Display the running processes
-long: Displays the running processes.
+long: Displays the running processes
 usage: docker compose top [SERVICES...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -35,7 +35,7 @@ swarm: false
 @y
 command: docker compose top
 short: Display the running processes
-long: Displays the running processes.
+long: Displays the running processes
 usage: docker compose top [SERVICES...]
 pname: docker compose
 plink: docker_compose.yaml

@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Docker Scout quickstart
 keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, analyze
 description: Learn how to get started with Docker Scout to analyze images and fix vulnerabilities
-aliases:
-  - /atomist/get-started/
----
 @y
----
-title: Docker Scout quickstart
+title: Docker Scout クイックスタート
 keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, analyze
 description: Learn how to get started with Docker Scout to analyze images and fix vulnerabilities
-aliases:
-  - /atomist/get-started/
----
 @z
 
 @x
@@ -61,15 +53,7 @@ a vulnerable Node.js application that you can use to follow along.
 1. Clone its repository:
 @z
 
-@x
-   ```console
-   $ git clone https://github.com/docker/scout-demo-service.git
-   ```
-@y
-   ```console
-   $ git clone https://github.com/docker/scout-demo-service.git
-   ```
-@z
+% snip command...
 
 @x
 2. Move into the directory:
@@ -77,15 +61,7 @@ a vulnerable Node.js application that you can use to follow along.
 2. Move into the directory:
 @z
 
-@x
-   ```console
-   $ cd scout-demo-service
-   ```
-@y
-   ```console
-   $ cd scout-demo-service
-   ```
-@z
+% snip command...
 
 @x
 3. Make sure you're signed in to your Docker account,
@@ -103,15 +79,7 @@ a vulnerable Node.js application that you can use to follow along.
    where `<ORG_NAME>` is the Docker Hub namespace you push to.
 @z
 
-@x
-   ```console
-   $ docker build --push -t <ORG_NAME>/scout-demo:v1 .
-   ```
-@y
-   ```console
-   $ docker build --push -t <ORG_NAME>/scout-demo:v1 .
-   ```
-@z
+% snip command...
 
 @x
 ## Step 2: Enable Docker Scout
@@ -134,24 +102,16 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 @x
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.
-2. Use the Docker CLI [`docker scout repo enable`](/engine/reference/commandline/scout_repo_enable)
+2. Use the Docker CLI [`docker scout repo enable`](/reference/cli/docker/scout/repo/enable)
    command to enable analysis on an existing repository:
 @y
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.
-2. Use the Docker CLI [`docker scout repo enable`](__SUBDIR__/engine/reference/commandline/scout_repo_enable)
+2. Use the Docker CLI [`docker scout repo enable`](__SUBDIR__/reference/cli/docker/scout/repo/enable)
    command to enable analysis on an existing repository:
 @z
 
-@x
-   ```console
-   $ docker scout repo enable --org <ORG_NAME> <ORG_NAME>/scout-demo
-   ```
-@y
-   ```console
-   $ docker scout repo enable --org <ORG_NAME> <ORG_NAME>/scout-demo
-   ```
-@z
+% snip command...
 
 @x
 ## Step 3: Analyze image vulnerabilities
@@ -177,15 +137,7 @@ The following command shows all CVEs affecting Express in the image you just
 built:
 @z
 
-@x
-```console
-$ docker scout cves --only-package express
-```
-@y
-```console
-$ docker scout cves --only-package express
-```
-@z
+% snip command...
 
 @x
 Docker Scout analyzes the image you built most recently by default,
@@ -197,10 +149,10 @@ so there's no need to specify the name of the image in this case.
 
 @x
 Learn more about the `docker scout cves` command in the
-[`CLI reference documentation`](/engine/reference/commandline/scout_cves).
+[`CLI reference documentation`](/reference/cli/docker/scout/cves).
 @y
 Learn more about the `docker scout cves` command in the
-[`CLI reference documentation`](__SUBDIR__/engine/reference/commandline/scout_cves).
+[`CLI reference documentation`](__SUBDIR__/reference/cli/docker/scout/cves).
 @z
 
 @x
@@ -223,21 +175,7 @@ the underlying vulnerable express version to 4.17.3 or later.
 1. Update the `package.json` file with the new package version.
 @z
 
-@x
-   ```diff
-      "dependencies": {
-   -    "express": "4.17.1"
-   +    "express": "4.17.3"
-      }
-   ```
-@y
-   ```diff
-      "dependencies": {
-   -    "express": "4.17.1"
-   +    "express": "4.17.3"
-      }
-   ```
-@z
+% snip code...
 
 @x
 2. Rebuild the image with a new tag and push it to your Docker Hub repository:
@@ -245,15 +183,7 @@ the underlying vulnerable express version to 4.17.3 or later.
 2. Rebuild the image with a new tag and push it to your Docker Hub repository:
 @z
 
-@x
-   ```console
-   $ docker build --push -t <ORG_NAME>/scout-demo:v2 .
-   ```
-@y
-   ```console
-   $ docker build --push -t <ORG_NAME>/scout-demo:v2 .
-   ```
-@z
+% snip command...
 
 @x
 Now, viewing the latest tag of the image in Docker Desktop, the Docker Scout
@@ -263,27 +193,9 @@ Now, viewing the latest tag of the image in Docker Desktop, the Docker Scout
 Dashboard, or CLI, you can see that you have fixed the vulnerability.
 @z
 
-@x
-```console
-$ docker scout cves --only-package express
-    ✓ Provenance obtained from attestation
-    ✓ Image stored for indexing
-    ✓ Indexed 79 packages
-    ✓ No vulnerable package detected
-@y
-```console
-$ docker scout cves --only-package express
-    ✓ Provenance obtained from attestation
-    ✓ Image stored for indexing
-    ✓ Indexed 79 packages
-    ✓ No vulnerable package detected
-@z
+% snip command...
 
-@x
-  ## Overview
-@y
-  ## Overview
-@z
+% snip output...
 
 @x
                       │                  Analyzed Image                   
@@ -309,23 +221,7 @@ $ docker scout cves --only-package express
       packages        │ 1                                                 
 @z
 
-@x
-  ## Packages and Vulnerabilities
-@y
-  ## Packages and Vulnerabilities
-@z
-
-@x
-  No vulnerable packages detected
-@y
-  No vulnerable packages detected
-@z
-
-@x
-```
-@y
-```
-@z
+% snip output...
 
 @x
 ## Step 5: Evaluate policy compliance
@@ -344,12 +240,12 @@ it isn't the most effective way to improve your supply chain conduct.
 @x
 Docker Scout also supports policy evaluation,
 a higher-level concept for detecting and fixing issues in your images.
-Policies are a set of customizable rules that lets organizations track whether
+Policies are a set of customizable rules that let organizations track whether
 images are compliant with their supply chain requirements.
 @y
 Docker Scout also supports policy evaluation,
 a higher-level concept for detecting and fixing issues in your images.
-Policies are a set of customizable rules that lets organizations track whether
+Policies are a set of customizable rules that let organizations track whether
 images are compliant with their supply chain requirements.
 @z
 
@@ -363,17 +259,7 @@ you must specify which organization's policy you're evaluating against.
 Use the `docker scout config` command to configure your Docker organization.
 @z
 
-@x
-```console
-$ docker scout config organization <ORG_NAME>
-    ✓ Successfully set organization to <ORG_NAME>
-```
-@y
-```console
-$ docker scout config organization <ORG_NAME>
-    ✓ Successfully set organization to <ORG_NAME>
-```
-@z
+% snip command...
 
 @x
 Now you can run the `quickview` command to get an overview
@@ -385,21 +271,9 @@ of the compliance status for the image you just built.
 The image is evaluated against the default, out-of-the-box policies.
 @z
 
-@x
-```console
-$ docker scout quickview
-@y
-```console
-$ docker scout quickview
-@z
+% snip command...
 
-@x
-...
-Policy status  FAILED  (2/7 policies met, 2 missing data)
-@y
-...
-Policy status  FAILED  (2/7 policies met, 2 missing data)
-@z
+% snip output...
 
 @x
   Status │                  Policy                   │           Results
@@ -473,19 +347,7 @@ To address this policy violation, edit the Dockerfile by adding a `USER`
 instruction, specifying a non-root user:
 @z
 
-@x
-```diff
-  CMD ["node","/app/app.js"]
-  EXPOSE 3000
-+ USER appuser
-```
-@y
-```diff
-  CMD ["node","/app/app.js"]
-  EXPOSE 3000
-+ USER appuser
-```
-@z
+% snip output...
 
 @x
 Additionally, to get a more complete policy evaluation result,
@@ -531,15 +393,7 @@ With the containerd image store enabled, rebuild the image with a new `v3` tag.
 This time, add the `--provenance=true` and `--sbom=true` flags.
 @z
 
-@x
-```console
-$ docker build --provenance=true --sbom=true --push -t <ORG_NAME>/scout-demo:v3 .
-```
-@y
-```console
-$ docker build --provenance=true --sbom=true --push -t <ORG_NAME>/scout-demo:v3 .
-```
-@z
+% snip command...
 
 @x
 ## Step 7: View in Dashboard

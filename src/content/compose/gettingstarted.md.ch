@@ -296,11 +296,11 @@ This tells Docker to:
 @x
 For more information on how to write Dockerfiles, see the
 [Docker user guide](../develop/index.md)
-and the [Dockerfile reference](/engine/reference/builder/).
+and the [Dockerfile reference](/reference/dockerfile/).
 @y
 For more information on how to write Dockerfiles, see the
 [Docker user guide](../develop/index.md)
-and the [Dockerfile reference](__SUBDIR__/engine/reference/builder/).
+and the [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
 @z
 
 @x

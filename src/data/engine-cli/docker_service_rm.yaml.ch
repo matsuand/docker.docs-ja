@@ -99,6 +99,7 @@ examples: |-
     > Unlike `docker rm`, this command does not ask for confirmation before removing
     > a running service.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -110,6 +111,7 @@ swarm: true
     > Unlike `docker rm`, this command does not ask for confirmation before removing
     > a running service.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

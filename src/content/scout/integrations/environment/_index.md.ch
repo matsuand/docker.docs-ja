@@ -205,11 +205,11 @@ staging or production.
 
 @x
 You can also compare with streams using the `--to-env` flag on the
-[`docker scout compare`](../../../engine/reference/commandline/scout_compare.md)
+[`docker scout compare`](../../../reference/cli/docker/scout/compare.md)
 CLI command:
 @y
 You can also compare with streams using the `--to-env` flag on the
-[`docker scout compare`](../../../engine/reference/commandline/scout_compare.md)
+[`docker scout compare`](../../../reference/cli/docker/scout/compare.md)
 CLI command:
 @z
 

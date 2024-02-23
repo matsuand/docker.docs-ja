@@ -214,9 +214,9 @@ Docker started your container in the background and printed the Container ID on 
 @z
 
 @x
-Again, make sure that our container is running properly. Run the same curl command from above.
+Again, make sure that your container is running properly. Run the curl command again.
 @y
-Again, make sure that our container is running properly. Run the same curl command from above.
+Again, make sure that your container is running properly. Run the curl command again.
 @z
 
 @x
@@ -414,9 +414,9 @@ Notice that the container you just restarted has been started in detached mode. 
 @z
 
 @x
-Now, stop and remove all of your containers and take a look at fixing the random naming issue. Stop the container you just started. Find the name of your running container and replace the name in the command below with the name of the container on your system.
+Now, stop and remove all of your containers and take a look at fixing the random naming issue. Stop the container you just started. Find the name of your running container and replace the name in the following command with the name of the container on your system.
 @y
-Now, stop and remove all of your containers and take a look at fixing the random naming issue. Stop the container you just started. Find the name of your running container and replace the name in the command below with the name of the container on your system.
+Now, stop and remove all of your containers and take a look at fixing the random naming issue. Stop the container you just started. Find the name of your running container and replace the name in the following command with the name of the container on your system.
 @z
 
 @x
@@ -515,10 +515,10 @@ In this section, you took a look at running containers. You also took a look at 
 
 @x
 Related information:
- - [docker run CLI reference](../../engine/reference/commandline/container_run.md)
+ - [docker run CLI reference](../../reference/cli/docker/container/run.md)
 @y
 Related information:
- - [docker run CLI reference](../../engine/reference/commandline/container_run.md)
+ - [docker run CLI reference](../../reference/cli/docker/container/run.md)
 @z
 
 @x

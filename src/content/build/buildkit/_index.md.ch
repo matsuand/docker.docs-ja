@@ -162,11 +162,11 @@ work for the features used by their definition.
 @z
 
 @x
-For example, to build a [Dockerfile](../../engine/reference/builder.md) with
+For example, to build a [Dockerfile](../../reference/dockerfile.md) with
 BuildKit, you would
 [use an external Dockerfile frontend](../dockerfile/frontend.md).
 @y
-For example, to build a [Dockerfile](../../engine/reference/builder.md) with
+For example, to build a [Dockerfile](../../reference/dockerfile.md) with
 BuildKit, you would
 [use an external Dockerfile frontend](../dockerfile/frontend.md).
 @z

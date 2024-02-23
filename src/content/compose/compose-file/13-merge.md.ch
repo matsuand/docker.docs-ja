@@ -368,86 +368,76 @@ cleared.
 @z
 
 @x
-Merging the following example YAML trees:
+A base `compose.yaml` file:
 @y
-Merging the following example YAML trees:
+A base `compose.yaml` file:
 @z
 
 @x
 ```yaml
 services:
-  foo:
-    build: 
-      dockerfile: foo.Dockerfile
-    read_only: true
-    environment:
-      FOO: BAR
+  app:
+    image: myapp
     ports:
-      - "8080:80"            
+      - "8080:80" 
+    environment:
+      FOO: BAR           
 ```
 @y
 ```yaml
 services:
-  foo:
-    build: 
-      dockerfile: foo.Dockerfile
-    read_only: true
-    environment:
-      FOO: BAR
+  app:
+    image: myapp
     ports:
-      - "8080:80"            
+      - "8080:80" 
+    environment:
+      FOO: BAR           
 ```
+@z
+
+@x
+And an `overide.compose.yaml` file:
+@y
+And an `overide.compose.yaml` file:
 @z
 
 @x
 ```yaml
 services:
-  foo:
-    image: foo
-    build: !reset null
-    read_only: !reset false
+  app:
+    image: myapp
+    ports: !reset []
     environment:
       FOO: !reset null
-    ports: !reset []
 ```
 @y
 ```yaml
 services:
-  foo:
-    image: foo
-    build: !reset null
-    read_only: !reset false
+  app:
+    image: myapp
+    ports: !reset []
     environment:
       FOO: !reset null
-    ports: !reset []
 ```
 @z
 
 @x
-Result in a Compose application model equivalent to the YAML tree:
+Results in:
 @y
-Result in a Compose application model equivalent to the YAML tree:
+Results in:
 @z
 
 @x
 ```yaml
 services:
-  foo:
-    image: foo
-    build: null
-    read_only: false
-    environment: {}
-    ports: []
+  app:
+    image: myapp
 ```
 @y
 ```yaml
 services:
-  foo:
-    image: foo
-    build: null
-    read_only: false
-    environment: {}
-    ports: []
+  app:
+    image: myapp
 ```
 @z
 
@@ -455,6 +445,12 @@ services:
 ### Replace value
 @y
 ### Replace value
+@z
+
+@x
+> Available in Docker Compose version 2.24.4 and later
+@y
+> Available in Docker Compose version 2.24.4 and later
 @z
 
 @x
@@ -466,47 +462,89 @@ to fully replace an attribute, bypassing the standard merge rules. A typical exa
 @z
 
 @x
-Merging the following example YAML trees:
+A base `compose.yaml` file:
 @y
-Merging the following example YAML trees:
+A base `compose.yaml` file:
 @z
 
 @x
 ```yaml
-networks:
-  foo:
-    # this is production configuration
-    name: production-overlay-network
-    driver: overlay
-    driver-opts: (...)
+services:
+  app:
+    image: myapp
+    ports:
+      - "8080:80"            
 ```
 @y
 ```yaml
-networks:
-  foo:
-    # this is production configuration
-    name: production-overlay-network
-    driver: overlay
-    driver-opts: (...)
+services:
+  app:
+    image: myapp
+    ports:
+      - "8080:80"            
 ```
 @z
 
 @x
+To remove the original port, but expose a new one, the following override file is used:
+@y
+To remove the original port, but expose a new one, the following override file is used:
+@z
+
+@x
 ```yaml
-networks:
-  # this is development configuration
-  foo: !override {}
+services:
+  app:
+    ports: !override
+      - "8443:443" 
 ```
 @y
 ```yaml
-networks:
-  # this is development configuration
-  foo: !override {}
+services:
+  app:
+    ports: !override
+      - "8443:443" 
 ```
 @z
 
 @x
-Results in a Compose application model equivalent to the override YAML tree.
+This results in: 
 @y
-Results in a Compose application model equivalent to the override YAML tree.
+This results in: 
+@z
+
+@x
+```yaml
+services:
+  app:
+    image: myapp
+    ports:
+      - "8443:443" 
+```
+@y
+```yaml
+services:
+  app:
+    image: myapp
+    ports:
+      - "8443:443" 
+```
+@z
+
+@x
+If `!override` had not been used, both `8080:80` and `8443:443` would be exposed as per the [merging rules outlined above](#sequence). 
+@y
+If `!override` had not been used, both `8080:80` and `8443:443` would be exposed as per the [merging rules outlined above](#sequence). 
+@z
+
+@x
+## Additional resources
+@y
+## Additional resources
+@z
+
+@x
+For more information on how merge can be used to create a composite Compose file, see [Working with multiple Compose files](../multiple-compose-files/_index.md)
+@y
+For more information on how merge can be used to create a composite Compose file, see [Working with multiple Compose files](../multiple-compose-files/_index.md)
 @z

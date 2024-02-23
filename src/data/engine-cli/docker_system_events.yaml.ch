@@ -1095,6 +1095,7 @@ examples: |-
     {"status":"resize","id":"196016a57679bf42424484918746a9474cd905dd993c4d0f4..
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -1107,6 +1108,7 @@ swarm: false
     {"status":"resize","id":"196016a57679bf42424484918746a9474cd905dd993c4d0f4..
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

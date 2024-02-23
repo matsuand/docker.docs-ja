@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Learn what the Docker Verified Publisher Program is and how it works
@@ -229,7 +231,7 @@ to identify projects that Docker has verified as high quality publishers and wit
 The [insights and analytics](/docker-hub/publish/insights-analytics) service provides usage metrics for how
 the community uses Docker images, granting insight into user behavior.
 @y
-The [insights and analytics](/docker-hub/publish/insights-analytics) service provides usage metrics for how
+The [insights and analytics](__SUBDIR__/docker-hub/publish/insights-analytics) service provides usage metrics for how
 the community uses Docker images, granting insight into user behavior.
 @z
 
@@ -265,7 +267,7 @@ for DVP images published to Docker Hub.
 Scanning images ensures that the published content is secure, and proves to
 developers that they can trust the image.
 @y
-[Docker Scout](/scout/) provides automatic vulnerability analysis
+[Docker Scout](__SUBDIR__/scout/) provides automatic vulnerability analysis
 for DVP images published to Docker Hub.
 Scanning images ensures that the published content is secure, and proves to
 developers that they can trust the image.
@@ -276,7 +278,7 @@ You can enable analysis on a per-repository
 basis. For more about using this feature, see [Basic vulnerability scanning](/docker-hub/vulnerability-scanning/).
 @y
 You can enable analysis on a per-repository
-basis. For more about using this feature, see [Basic vulnerability scanning](/docker-hub/vulnerability-scanning/).
+basis. For more about using this feature, see [Basic vulnerability scanning](__SUBDIR__/docker-hub/vulnerability-scanning/).
 @z
 
 @x

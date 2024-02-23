@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Run .NET tests in a container
 keywords: .NET, test
 description: Learn how to run your .NET tests in a container.
----
 @y
----
 title: Run .NET tests in a container
 keywords: .NET, test
 description: Learn how to run your .NET tests in a container.
----
 @z
 
 @x
@@ -100,9 +96,9 @@ Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration:
 @z
 
 @x
-To learn more about the command, see [docker compose run](/engine/reference/commandline/compose_run/).
+To learn more about the command, see [docker compose run](/reference/cli/docker/compose/run/).
 @y
-To learn more about the command, see [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/).
+To learn more about the command, see [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/).
 @z
 
 @x
@@ -123,77 +119,7 @@ The following is the updated Dockerfile.
 The following is the updated Dockerfile.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
-ARG TARGETARCH
-COPY . /source
-WORKDIR /source/src
-RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
-    dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app
-RUN dotnet test /source/tests
-@y
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
-ARG TARGETARCH
-COPY . /source
-WORKDIR /source/src
-RUN --mount=type=cache,id=nuget,target=/root/.nuget/packages \
-    dotnet publish -a ${TARGETARCH/amd64/x64} --use-current-runtime --self-contained false -o /app
-RUN dotnet test /source/tests
-@z
-
-@x
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS development
-COPY . /source
-WORKDIR /source/src
-CMD dotnet run --no-launch-profile
-@y
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS development
-COPY . /source
-WORKDIR /source/src
-CMD dotnet run --no-launch-profile
-@z
-
-@x
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS final
-WORKDIR /app
-COPY --from=build /app .
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
-USER appuser
-ENTRYPOINT ["dotnet", "myWebApp.dll"]
-```
-@y
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine AS final
-WORKDIR /app
-COPY --from=build /app .
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
-USER appuser
-ENTRYPOINT ["dotnet", "myWebApp.dll"]
-```
-@z
+% snip code...
 
 @x
 Run the following command to build an image using the build stage as the target and view the test results. Include `--progress=plain` to view the build output, `--no-cache` to ensure the tests always run, and `--target build` to target the build stage.
@@ -201,15 +127,7 @@ Run the following command to build an image using the build stage as the target 
 Run the following command to build an image using the build stage as the target and view the test results. Include `--progress=plain` to view the build output, `--no-cache` to ensure the tests always run, and `--target build` to target the build stage.
 @z
 
-@x
-```console
-$ docker build -t dotnet-docker-image-test --progress=plain --no-cache --target build .
-```
-@y
-```console
-$ docker build -t dotnet-docker-image-test --progress=plain --no-cache --target build .
-```
-@z
+% snip command...
 
 @x
 You should see output containing the following.
@@ -217,43 +135,7 @@ You should see output containing the following.
 You should see output containing the following.
 @z
 
-@x
-```console
-#11 [build 5/5] RUN dotnet test /source/tests
-#11 1.564   Determining projects to restore...
-#11 3.421   Restored /source/src/myWebApp.csproj (in 1.02 sec).
-#11 19.42   Restored /source/tests/tests.csproj (in 17.05 sec).
-#11 27.91   myWebApp -> /source/src/bin/Debug/net6.0/myWebApp.dll
-#11 28.47   tests -> /source/tests/bin/Debug/net6.0/tests.dll
-#11 28.49 Test run for /source/tests/bin/Debug/net6.0/tests.dll (.NETCoreApp,Version=v6.0)
-#11 28.67 Microsoft (R) Test Execution Command Line Tool Version 17.3.3 (x64)
-#11 28.67 Copyright (c) Microsoft Corporation.  All rights reserved.
-#11 28.68
-#11 28.97 Starting test execution, please wait...
-#11 29.03 A total of 1 test files matched the specified pattern.
-#11 32.07
-#11 32.08 Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - /source/tests/bin/Debug/net6.0/tests.dll (net6.0)
-#11 DONE 32.2s
-```
-@y
-```console
-#11 [build 5/5] RUN dotnet test /source/tests
-#11 1.564   Determining projects to restore...
-#11 3.421   Restored /source/src/myWebApp.csproj (in 1.02 sec).
-#11 19.42   Restored /source/tests/tests.csproj (in 17.05 sec).
-#11 27.91   myWebApp -> /source/src/bin/Debug/net6.0/myWebApp.dll
-#11 28.47   tests -> /source/tests/bin/Debug/net6.0/tests.dll
-#11 28.49 Test run for /source/tests/bin/Debug/net6.0/tests.dll (.NETCoreApp,Version=v6.0)
-#11 28.67 Microsoft (R) Test Execution Command Line Tool Version 17.3.3 (x64)
-#11 28.67 Copyright (c) Microsoft Corporation.  All rights reserved.
-#11 28.68
-#11 28.97 Starting test execution, please wait...
-#11 29.03 A total of 1 test files matched the specified pattern.
-#11 32.07
-#11 32.08 Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: < 1 ms - /source/tests/bin/Debug/net6.0/tests.dll (net6.0)
-#11 DONE 32.2s
-```
-@z
+% snip output...
 
 @x
 To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
@@ -275,11 +157,11 @@ In this section, you learned how to run tests when developing locally using Comp
 
 @x
 Related information:
- - [docker compose run](/engine/reference/commandline/compose_run/)
+ - [docker compose run](/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @y
 Related information:
- - [docker compose run](__SUBDIR__/engine/reference/commandline/compose_run/)
+ - [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @z
 

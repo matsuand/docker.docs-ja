@@ -44,12 +44,12 @@ long: |-
 @x
     If you are behind an HTTP proxy server, for example in corporate settings,
     before open a connect to registry, you may need to configure the Docker
-    daemon's proxy settings, refer to the [dockerd command-line reference](dockerd.md#proxy-configuration)
+    daemon's proxy settings, refer to the [dockerd command-line reference](/reference/cli/dockerd/#proxy-configuration)
     for details.
 @y
     If you are behind an HTTP proxy server, for example in corporate settings,
     before open a connect to registry, you may need to configure the Docker
-    daemon's proxy settings, refer to the [dockerd command-line reference](dockerd.md#proxy-configuration)
+    daemon's proxy settings, refer to the [dockerd command-line reference](__SUBDIR__/reference/cli/dockerd/#proxy-configuration)
     for details.
 @z
 
@@ -63,7 +63,7 @@ long: |-
     By default the Docker daemon will pull three layers of an image at a time.
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-downloads` daemon option. See the
-    [daemon documentation](dockerd.md) for more details.
+    [daemon documentation](/reference/cli/dockerd/) for more details.
 usage: docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
 pname: docker image
 plink: docker_image.yaml
@@ -128,7 +128,7 @@ examples: |-
     By default the Docker daemon will pull three layers of an image at a time.
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-downloads` daemon option. See the
-    [daemon documentation](dockerd.md) for more details.
+    [daemon documentation](__SUBDIR__/reference/cli/dockerd/) for more details.
 usage: docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
 pname: docker image
 plink: docker_image.yaml
@@ -272,10 +272,10 @@ examples: |-
 @z
 
 @x
-    To see which images are present locally, use the [`docker images`](image_ls.md)
+    To see which images are present locally, use the [`docker images`](/reference/cli/docker/image/ls/)
     command:
 @y
-    To see which images are present locally, use the [`docker images`](image_ls.md)
+    To see which images are present locally, use the [`docker images`](__SUBDIR__/reference/cli/docker/image/ls/)
     command:
 @z
 
@@ -514,19 +514,19 @@ examples: |-
 @z
 
 @x
-    Registry credentials are managed by [docker login](login.md).
+    Registry credentials are managed by [docker login](/reference/cli/docker/login/).
 @y
-    Registry credentials are managed by [docker login](login.md).
+    Registry credentials are managed by [docker login](__SUBDIR__/reference/cli/docker/login/).
 @z
 
 @x
     Docker uses the `https://` protocol to communicate with a registry, unless the
     registry is allowed to be accessed over an insecure connection. Refer to the
-    [insecure registries](dockerd.md#insecure-registries) section for more information.
+    [insecure registries](/reference/cli/dockerd/#insecure-registries) section for more information.
 @y
     Docker uses the `https://` protocol to communicate with a registry, unless the
     registry is allowed to be accessed over an insecure connection. Refer to the
-    [insecure registries](dockerd.md#insecure-registries) section for more information.
+    [insecure registries](__SUBDIR__/reference/cli/dockerd/#insecure-registries) section for more information.
 @z
 
 @x
@@ -662,6 +662,7 @@ examples: |-
     and the client (initiating the pull) is cut or lost for any reason or the
     command is manually terminated.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -671,6 +672,7 @@ swarm: false
     and the client (initiating the pull) is cut or lost for any reason or the
     command is manually terminated.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

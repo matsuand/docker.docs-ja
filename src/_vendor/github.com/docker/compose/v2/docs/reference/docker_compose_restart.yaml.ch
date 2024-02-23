@@ -36,7 +36,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't restart dependent services.
+      description: Don't restart dependent services
       deprecated: false
       hidden: false
       experimental: false
@@ -82,7 +82,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't restart dependent services.
+      description: Don't restart dependent services
       deprecated: false
       hidden: false
       experimental: false

@@ -103,93 +103,7 @@ The following is the updated `compose.yaml` file.
 The following is the updated `compose.yaml` file.
 @z
 
-@x
-```yaml
-services:
-  server:
-    build:
-      context: .
-    environment:
-      NODE_ENV: production
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
-      POSTGRES_DB: example
-    ports:
-      - 3000:3000
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@y
-```yaml
-services:
-  server:
-    build:
-      context: .
-    environment:
-      NODE_ENV: production
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
-      POSTGRES_DB: example
-    ports:
-      - 3000:3000
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -267,15 +181,7 @@ Run the following command to start your application.
 Run the following command to start your application.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Open a browser and verify that the application is running at [http://localhost:3000](http://localhost:3000).
@@ -301,17 +207,7 @@ In the terminal, run `docker compose rm` to remove your containers and then run 
 In the terminal, run `docker compose rm` to remove your containers and then run `docker compose up` to run your application again.
 @z
 
-@x
-```console
-$ docker compose rm
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose rm
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
@@ -369,87 +265,21 @@ Update your Dockerfile to the following multi-stage Dockerfile.
 Update your Dockerfile to the following multi-stage Dockerfile.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-ARG NODE_VERSION=18.0.0
-@y
-ARG NODE_VERSION=18.0.0
-@z
-
-@x
-FROM node:${NODE_VERSION}-alpine as base
-WORKDIR /usr/src/app
-EXPOSE 3000
-@y
-FROM node:${NODE_VERSION}-alpine as base
-WORKDIR /usr/src/app
-EXPOSE 3000
-@z
-
-@x
-FROM base as dev
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --include=dev
-USER node
-COPY . .
-CMD npm run dev
-@y
-FROM base as dev
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --include=dev
-USER node
-COPY . .
-CMD npm run dev
-@z
-
-@x
-FROM base as prod
-ENV NODE_ENV production
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev
-USER node
-COPY . .
-CMD node src/index.js
-```
-@y
-FROM base as prod
-ENV NODE_ENV production
-RUN --mount=type=bind,source=package.json,target=package.json \
-    --mount=type=bind,source=package-lock.json,target=package-lock.json \
-    --mount=type=cache,target=/root/.npm \
-    npm ci --omit=dev
-USER node
-COPY . .
-CMD node src/index.js
-```
-@z
+% snip code...
 
 @x
 In the Dockerfile, you first add a label `as base` to the `FROM
-node:${NODE_VERSION}-alpine` statement. This allows you to refer to this build
-stage in other build stages. Next, you add a new build stage labeled `dev` to
-install your dev dependencies and start the container using `npm run dev`.
+node:${NODE_VERSION}-alpine` statement. This lets you refer to this build stage
+in other build stages. Next, you add a new build stage labeled `dev` to install
+your development dependencies and start the container using `npm run dev`.
 Finally, you add a stage labeled `prod` that omits the dev dependencies and runs
 your application using `node src/index.js`. To learn more about multi-stage
 builds, see [Multi-stage builds](../../build/building/multi-stage.md).
 @y
 In the Dockerfile, you first add a label `as base` to the `FROM
-node:${NODE_VERSION}-alpine` statement. This allows you to refer to this build
-stage in other build stages. Next, you add a new build stage labeled `dev` to
-install your dev dependencies and start the container using `npm run dev`.
+node:${NODE_VERSION}-alpine` statement. This lets you refer to this build stage
+in other build stages. Next, you add a new build stage labeled `dev` to install
+your development dependencies and start the container using `npm run dev`.
 Finally, you add a stage labeled `prod` that omits the dev dependencies and runs
 your application using `node src/index.js`. To learn more about multi-stage
 builds, see [Multi-stage builds](../../build/building/multi-stage.md).
@@ -468,13 +298,13 @@ Next, you'll need to update your Compose file to use the new stage.
 @z
 
 @x
-To run the `dev` stage with Compose, you need to update your `compose.yaml` file.
-Open your `compose.yaml` file in an IDE or text editor, and then add the
+To run the `dev` stage with Compose, you need to update your `compose.yaml`
+file. Open your `compose.yaml` file in an IDE or text editor, and then add the
 `target: dev` instruction to target the `dev` stage from your multi-stage
 Dockerfile.
 @y
-To run the `dev` stage with Compose, you need to update your `compose.yaml` file.
-Open your `compose.yaml` file in an IDE or text editor, and then add the
+To run the `dev` stage with Compose, you need to update your `compose.yaml`
+file. Open your `compose.yaml` file in an IDE or text editor, and then add the
 `target: dev` instruction to target the `dev` stage from your multi-stage
 Dockerfile.
 @z
@@ -497,101 +327,7 @@ The following is the updated Compose file.
 The following is the updated Compose file.
 @z
 
-@x
-```yaml
-services:
-  server:
-    build:
-      context: .
-      target: dev
-    environment:
-      NODE_ENV: production
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
-      POSTGRES_DB: example
-    ports:
-      - 3000:3000
-      - 9229:9229
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-    volumes:
-      - ./src:/usr/src/app/src
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@y
-```yaml
-services:
-  server:
-    build:
-      context: .
-      target: dev
-    environment:
-      NODE_ENV: production
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD_FILE: /run/secrets/db-password
-      POSTGRES_DB: example
-    ports:
-      - 3000:3000
-      - 9229:9229
-    depends_on:
-      db:
-        condition: service_healthy
-    secrets:
-      - db-password
-    volumes:
-      - ./src:/usr/src/app/src
-  db:
-    image: postgres
-    restart: always
-    user: postgres
-    secrets:
-      - db-password
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=example
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 5432
-    healthcheck:
-      test: [ "CMD", "pg_isready" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@z
+% snip code...
 
 @x
 ### Run your development container and debug your application

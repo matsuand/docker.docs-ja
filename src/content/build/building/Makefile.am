@@ -5,12 +5,12 @@ bases = \
 	annotations.md    \
 	base-images.md    \
 	context.md        \
-	env-vars.md       \
 	multi-platform.md \
 	multi-stage.md    \
 	opentelemetry.md  \
 	packaging.md      \
-	secrets.md
+	secrets.md        \
+	variables.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

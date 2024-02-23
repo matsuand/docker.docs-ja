@@ -58,7 +58,7 @@ options:
       swarm: false
     - option: filter
       value_type: string
-      description: 'Filter services by a property (supported filters: status).'
+      description: 'Filter services by a property (supported filters: status)'
       details_url: '#filter'
       deprecated: false
       hidden: false
@@ -174,7 +174,7 @@ options:
       swarm: false
     - option: filter
       value_type: string
-      description: 'Filter services by a property (supported filters: status).'
+      description: 'Filter services by a property (supported filters: status)'
       details_url: '#filter'
       deprecated: false
       hidden: false

@@ -3,12 +3,12 @@
 
 @x
 command: docker compose kill
-short: Force stop service containers.
+short: Force stop service containers
 long: |-
     Forces running containers to stop by sending a `SIGKILL` signal. Optionally the signal can be passed, for example:
 @y
 command: docker compose kill
-short: Force stop service containers.
+short: Force stop service containers
 long: |-
     Forces running containers to stop by sending a `SIGKILL` signal. Optionally the signal can be passed, for example:
 @z
@@ -24,7 +24,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -35,7 +35,7 @@ options:
       shorthand: s
       value_type: string
       default_value: SIGKILL
-      description: SIGNAL to send to the container.
+      description: SIGNAL to send to the container
       deprecated: false
       hidden: false
       experimental: false
@@ -70,7 +70,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -81,7 +81,7 @@ options:
       shorthand: s
       value_type: string
       default_value: SIGKILL
-      description: SIGNAL to send to the container.
+      description: SIGNAL to send to the container
       deprecated: false
       hidden: false
       experimental: false

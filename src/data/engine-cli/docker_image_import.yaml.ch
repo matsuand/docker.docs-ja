@@ -239,6 +239,7 @@ examples: |-
     archiving with tar. If you are not root (or the sudo command) when you
     tar, then the ownerships might not get preserved.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -249,6 +250,7 @@ swarm: false
     archiving with tar. If you are not root (or the sudo command) when you
     tar, then the ownerships might not get preserved.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

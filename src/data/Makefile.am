@@ -6,9 +6,13 @@ SUBDIRS = buildx debug-cli docsarchive engine-cli init-cli
 bases = \
 	frontmatter.yaml \
 	glossary.yaml    \
-	redirects.yml    \
 	samples.yaml     \
 	toc.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
+
+copyfiles = \
+	redirects.yml
+
+include $(top_srcdir)/build-aux/copy.mk

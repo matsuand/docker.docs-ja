@@ -146,11 +146,11 @@ long: |-
 @z
 
 @x
-    The following example switches the Docker CLI to use a [context](context.md)
+    The following example switches the Docker CLI to use a [context](/reference/cli/docker/context/)
     named `remote-test-server`, which runs an older version of the Docker Engine
     on a Linux server:
 @y
-    The following example switches the Docker CLI to use a [context](context.md)
+    The following example switches the Docker CLI to use a [context](__SUBDIR__/reference/cli/docker/context/)
     named `remote-test-server`, which runs an older version of the Docker Engine
     on a Linux server:
 @z
@@ -473,6 +473,7 @@ examples: |-
     {"Client":"Version":"23.0.3","ApiVersion":"1.42", ...}
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -481,6 +482,7 @@ swarm: false
     {"Client":"Version":"23.0.3","ApiVersion":"1.42", ...}
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

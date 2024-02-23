@@ -44,7 +44,7 @@ The samples should help you to:
   [Compose files](compose-file/index.md): `compose.yml` and
   `docker-stack.yml`
 - Understand the relationship between `compose.yml` and
-  [Dockerfiles](/engine/reference/builder/)
+  [Dockerfiles](/reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](../engine/swarm/index.md)
 @y
@@ -52,7 +52,7 @@ The samples should help you to:
   [Compose files](compose-file/index.md): `compose.yml` and
   `docker-stack.yml`
 - Understand the relationship between `compose.yml` and
-  [Dockerfiles](__SUBDIR__/engine/reference/builder/)
+  [Dockerfiles](__SUBDIR__/reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](../engine/swarm/index.md)
 @z

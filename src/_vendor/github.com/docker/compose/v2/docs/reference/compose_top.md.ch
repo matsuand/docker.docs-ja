@@ -44,9 +44,9 @@ Display the running processes
 @z
 
 @x
-Displays the running processes.
+Displays the running processes
 @y
-Displays the running processes.
+Displays the running processes
 @z
 
 @x

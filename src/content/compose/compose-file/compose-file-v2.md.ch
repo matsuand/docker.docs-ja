@@ -551,7 +551,7 @@ build:
 > In your Dockerfile, if you specify `ARG` before the `FROM` instruction,
 > `ARG` is not available in the build instructions under `FROM`.
 > If you need an argument to be available in both places, also specify it under
-> the `FROM` instruction. Refer to the [understand how ARGS and FROM interact](../../engine/reference/builder.md#understand-how-arg-and-from-interact)
+> the `FROM` instruction. Refer to the [understand how ARGS and FROM interact](../../reference/dockerfile.md#understand-how-arg-and-from-interact)
 > section in the documentation for usage details.
 @y
 > Scope of build-args
@@ -559,7 +559,7 @@ build:
 > In your Dockerfile, if you specify `ARG` before the `FROM` instruction,
 > `ARG` is not available in the build instructions under `FROM`.
 > If you need an argument to be available in both places, also specify it under
-> the `FROM` instruction. Refer to the [understand how ARGS and FROM interact](../../engine/reference/builder.md#understand-how-arg-and-from-interact)
+> the `FROM` instruction. Refer to the [understand how ARGS and FROM interact](../../reference/dockerfile.md#understand-how-arg-and-from-interact)
 > section in the documentation for usage details.
 @z
 
@@ -695,13 +695,13 @@ An entry with the ip address and hostname is created in `/etc/hosts` inside cont
 Specify a build’s container isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
+[Docker Engine docs](../../reference/cli/docker/container/run.md#isolation)
 for details.
 @y
 Specify a build’s container isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
+[Docker Engine docs](../../reference/cli/docker/container/run.md#isolation)
 for details.
 @z
 
@@ -1017,10 +1017,10 @@ command: bundle exec thin -p 3000
 
 @x
 The command can also be a list, in a manner similar to
-[dockerfile](../../engine/reference/builder.md#cmd):
+[dockerfile](../../reference/dockerfile.md#cmd):
 @y
 The command can also be a list, in a manner similar to
-[dockerfile](../../engine/reference/builder.md#cmd):
+[dockerfile](../../reference/dockerfile.md#cmd):
 @z
 
 @x
@@ -1459,10 +1459,10 @@ entrypoint: /code/entrypoint.sh
 
 @x
 The entrypoint can also be a list, in a manner similar to
-[dockerfile](../../engine/reference/builder.md#entrypoint):
+[dockerfile](../../reference/dockerfile.md#entrypoint):
 @y
 The entrypoint can also be a list, in a manner similar to
-[dockerfile](../../engine/reference/builder.md#entrypoint):
+[dockerfile](../../reference/dockerfile.md#entrypoint):
 @z
 
 @x
@@ -1956,7 +1956,7 @@ host system to be added. An example of where this is useful is when multiple
 containers (running as different users) need to all read or write the same
 file on the host system. That file can be owned by a group shared by all the
 containers, and specified in `group_add`. See the
-[Docker documentation](../../engine/reference/commandline/container_run.md#additional-groups) for more
+[Docker documentation](../../reference/cli/docker/container/run.md#additional-groups) for more
 details.
 @y
 Specify additional groups (by name or number) which the user inside the
@@ -1965,7 +1965,7 @@ host system to be added. An example of where this is useful is when multiple
 containers (running as different users) need to all read or write the same
 file on the host system. That file can be owned by a group shared by all the
 containers, and specified in `group_add`. See the
-[Docker documentation](../../engine/reference/commandline/container_run.md#additional-groups) for more
+[Docker documentation](../../reference/cli/docker/container/run.md#additional-groups) for more
 details.
 @z
 
@@ -2020,12 +2020,12 @@ used.
 @x
 Configure a check that's run to determine whether or not containers for this
 service are "healthy". See the docs for the
-[HEALTHCHECK Dockerfile instruction](../../engine/reference/builder.md#healthcheck)
+[HEALTHCHECK Dockerfile instruction](../../reference/dockerfile.md#healthcheck)
 for details on how healthchecks work.
 @y
 Configure a check that's run to determine whether or not containers for this
 service are "healthy". See the docs for the
-[HEALTHCHECK Dockerfile instruction](../../engine/reference/builder.md#healthcheck)
+[HEALTHCHECK Dockerfile instruction](../../reference/dockerfile.md#healthcheck)
 for details on how healthchecks work.
 @z
 
@@ -2235,12 +2235,12 @@ services:
 > The default init binary that is used is [Tini](https://github.com/krallin/tini),
 > and is installed in `/usr/libexec/docker-init` on the daemon host. You can
 > configure the daemon to use a custom init binary through the
-> [`init-path` configuration option](../../engine/reference/commandline/dockerd.md#daemon-configuration-file).
+> [`init-path` configuration option](../../reference/cli/dockerd.md#daemon-configuration-file).
 @y
 > The default init binary that is used is [Tini](https://github.com/krallin/tini),
 > and is installed in `/usr/libexec/docker-init` on the daemon host. You can
 > configure the daemon to use a custom init binary through the
-> [`init-path` configuration option](../../engine/reference/commandline/dockerd.md#daemon-configuration-file).
+> [`init-path` configuration option](../../reference/cli/dockerd.md#daemon-configuration-file).
 @z
 
 @x
@@ -2259,13 +2259,13 @@ services:
 Specify a container’s isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
+[Docker Engine docs](../../reference/cli/docker/container/run.md#isolation)
 for details.
 @y
 Specify a container’s isolation technology. On Linux, the only supported value
 is `default`. On Windows, acceptable values are `default`, `process` and
 `hyperv`. Refer to the
-[Docker Engine docs](../../engine/reference/commandline/container_run.md#isolation)
+[Docker Engine docs](../../reference/cli/docker/container/run.md#isolation)
 for details.
 @z
 
@@ -3221,12 +3221,12 @@ web:
 Specify the default number of containers to deploy for this service. Whenever
 you run `docker-compose up`, Compose creates or removes containers to match
 the specified number. This value can be overridden using the
-[`--scale`](../../engine/reference/commandline/compose_up.md)
+[`--scale`](../../reference/cli/docker/compose/up.md)
 @y
 Specify the default number of containers to deploy for this service. Whenever
 you run `docker-compose up`, Compose creates or removes containers to match
 the specified number. This value can be overridden using the
-[`--scale`](../../engine/reference/commandline/compose_up.md)
+[`--scale`](../../reference/cli/docker/compose/up.md)
 @z
 
 @x
@@ -3875,10 +3875,10 @@ restart: "unless-stopped"
 
 @x
 Each of these is a single value, analogous to its
-[docker run](../../engine/reference/commandline/container_run.md#runtime-constraints-on-resources) counterpart.
+[docker run](../../reference/cli/docker/container/run.md#runtime-constraints-on-resources) counterpart.
 @y
 Each of these is a single value, analogous to its
-[docker run](../../engine/reference/commandline/container_run.md#runtime-constraints-on-resources) counterpart.
+[docker run](../../reference/cli/docker/container/run.md#runtime-constraints-on-resources) counterpart.
 @z
 
 @x
@@ -4066,14 +4066,14 @@ While it is possible to declare [volumes](#volumes) on the fly as part of the
 service declaration, this section allows you to create named volumes that can be
 reused across multiple services (without relying on `volumes_from`), and are
 easily retrieved and inspected using the docker command line or API.
-See the [docker volume](../../engine/reference/commandline/volume_create.md)
+See the [docker volume](../../reference/cli/docker/volume/create.md)
 subcommand documentation for more information.
 @y
 While it is possible to declare [volumes](#volumes) on the fly as part of the
 service declaration, this section allows you to create named volumes that can be
 reused across multiple services (without relying on `volumes_from`), and are
 easily retrieved and inspected using the docker command line or API.
-See the [docker volume](../../engine/reference/commandline/volume_create.md)
+See the [docker volume](../../reference/cli/docker/volume/create.md)
 subcommand documentation for more information.
 @z
 

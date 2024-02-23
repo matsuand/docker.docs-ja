@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Most frequently asked questions.
 keywords: faq, questions, documentation,  docker
 title: Docker frequently asked questions (FAQ)
-aliases:
-- /engine/misc/faq/
----
 @y
----
 description: Most frequently asked questions.
 keywords: faq, questions, documentation,  docker
 title: Docker frequently asked questions (FAQ)
-aliases:
-- /engine/misc/faq/
----
 @z
 
 @x
@@ -108,14 +100,14 @@ offers a high-level tool with several powerful functionalities:
 @x
  - *Automatic build.* Docker includes [*a tool for developers to automatically
  assemble a container from their source
- code*](/engine/reference/builder/), with full control over application
+ code*](/reference/dockerfile/), with full control over application
  dependencies, build tools, packaging etc. They are free to use `make`, `maven`,
  `chef`, `puppet`, `salt,` Debian packages, RPMs, source tarballs, or any
  combination of the above, regardless of the configuration of the machines.
 @y
  - *Automatic build.* Docker includes [*a tool for developers to automatically
  assemble a container from their source
- code*](__SUBDIR__/engine/reference/builder/), with full control over application
+ code*](__SUBDIR__/reference/dockerfile/), with full control over application
  dependencies, build tools, packaging etc. They are free to use `make`, `maven`,
  `chef`, `puppet`, `salt,` Debian packages, RPMs, source tarballs, or any
  combination of the above, regardless of the configuration of the machines.

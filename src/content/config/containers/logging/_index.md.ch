@@ -123,8 +123,8 @@ its errors to `/proc/self/fd/2` (which is `STDERR`). See the
 
 @x
 - Configure [logging drivers](configure.md).
-- Write a [Dockerfile](../../../engine/reference/builder.md).
+- Write a [Dockerfile](../../../reference/dockerfile.md).
 @y
 - Configure [logging drivers](configure.md).
-- Write a [Dockerfile](../../../engine/reference/builder.md).
+- Write a [Dockerfile](../../../reference/dockerfile.md).
 @z

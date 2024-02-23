@@ -451,7 +451,7 @@ options:
     - option: env-file
       value_type: stringArray
       default_value: '[]'
-      description: Specify an alternate environment file.
+      description: Specify an alternate environment file
       deprecated: false
       hidden: false
       experimental: false
@@ -671,7 +671,7 @@ options:
     - option: env-file
       value_type: stringArray
       default_value: '[]'
-      description: Specify an alternate environment file.
+      description: Specify an alternate environment file
       deprecated: false
       hidden: false
       experimental: false

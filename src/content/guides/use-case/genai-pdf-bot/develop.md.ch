@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Use containers for generative AI development
 keywords: python, local, development, generative ai, genai, llm, neo4j, ollama, langchain, openai
 description: Learn how to develop your generative AI (GenAI) application locally.
----
 @y
----
 title: コンテナーを利用した生成 AI 開発
 keywords: python, local, development, generative ai, genai, llm, neo4j, ollama, langchain, openai
 description: Learn how to develop your generative AI (GenAI) application locally.
----
 @z
 
 @x
@@ -395,14 +391,13 @@ access all the services that your GenAI application needs.
 
 @x
 Related information:
- - [Dockerfile reference](../../../engine/reference/builder.md)
+ - [Dockerfile reference](../../../reference/dockerfile.md)
  - [Compose file reference](../../../compose/compose-file/_index.md)
  - [Ollama Docker image](https://hub.docker.com/r/ollama/ollama)
  - [Neo4j Official Docker Image](https://hub.docker.com/_/neo4j)
  - [GenAI Stack demo applications](https://github.com/docker/genai-stack)
 @y
-Related information:
- - [Dockerfile reference](../../../engine/reference/builder.md)
+ - [Dockerfile reference](../../../reference/dockerfile.md)
  - [Compose file reference](../../../compose/compose-file/_index.md)
  - [Ollama Docker image](https://hub.docker.com/r/ollama/ollama)
  - [Neo4j Official Docker Image](https://hub.docker.com/_/neo4j)

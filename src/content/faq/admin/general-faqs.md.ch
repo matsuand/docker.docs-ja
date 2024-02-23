@@ -8,22 +8,15 @@
 title: General FAQs for Docker accounts
 description: Frequently asked Docker account and administration questions
 keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
-redirect:
-- /docker-hub/onboarding-faqs/
-aliases:
-- /docker-hub/general-faqs/
----
 @y
 ---
 title: General FAQs for Docker accounts
 description: Frequently asked Docker account and administration questions
 keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
-redirect:
-- /docker-hub/onboarding-faqs/
-aliases:
-- /docker-hub/general-faqs/
----
 @z
+
+% skip redirect...
+% skip aliases...
 
 @x
 ### What is a Docker ID?

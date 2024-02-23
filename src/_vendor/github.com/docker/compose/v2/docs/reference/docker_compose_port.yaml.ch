@@ -3,8 +3,8 @@
 
 @x
 command: docker compose port
-short: Print the public port for a port binding.
-long: Prints the public port for a port binding.
+short: Print the public port for a port binding
+long: Prints the public port for a port binding
 usage: docker compose port [OPTIONS] SERVICE PRIVATE_PORT
 pname: docker compose
 plink: docker_compose.yaml
@@ -12,7 +12,7 @@ options:
     - option: index
       value_type: int
       default_value: "0"
-      description: index of the container if service has multiple replicas
+      description: Index of the container if service has multiple replicas
       deprecated: false
       hidden: false
       experimental: false
@@ -48,8 +48,8 @@ kubernetes: false
 swarm: false
 @y
 command: docker compose port
-short: Print the public port for a port binding.
-long: Prints the public port for a port binding.
+short: Print the public port for a port binding
+long: Prints the public port for a port binding
 usage: docker compose port [OPTIONS] SERVICE PRIVATE_PORT
 pname: docker compose
 plink: docker_compose.yaml
@@ -57,7 +57,7 @@ options:
     - option: index
       value_type: int
       default_value: "0"
-      description: index of the container if service has multiple replicas
+      description: Index of the container if service has multiple replicas
       deprecated: false
       hidden: false
       experimental: false

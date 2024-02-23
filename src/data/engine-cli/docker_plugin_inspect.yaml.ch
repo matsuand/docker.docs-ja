@@ -80,9 +80,9 @@ examples: |-
 @z
 
 @x
-    The following example example inspects the `tiborvass/sample-volume-plugin` plugin:
+    The following example inspects the `tiborvass/sample-volume-plugin` plugin:
 @y
-    The following example example inspects the `tiborvass/sample-volume-plugin` plugin:
+    The following example inspects the `tiborvass/sample-volume-plugin` plugin:
 @z
 
 @x
@@ -339,6 +339,7 @@ examples: |-
     8c74c978c434745c3ade82f1bc0acf38d04990eaf494fa507c16d9f1daa99c21
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -348,6 +349,7 @@ swarm: false
     8c74c978c434745c3ade82f1bc0acf38d04990eaf494fa507c16d9f1daa99c21
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

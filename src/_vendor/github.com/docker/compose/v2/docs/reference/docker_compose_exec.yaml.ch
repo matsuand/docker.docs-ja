@@ -3,12 +3,12 @@
 
 @x
 command: docker compose exec
-short: Execute a command in a running container.
+short: Execute a command in a running container
 long: |-
     This is the equivalent of `docker exec` targeting a Compose service.
 @y
 command: docker compose exec
-short: Execute a command in a running container.
+short: Execute a command in a running container
 long: |-
     This is the equivalent of `docker exec` targeting a Compose service.
 @z
@@ -24,7 +24,7 @@ options:
       shorthand: d
       value_type: bool
       default_value: "false"
-      description: 'Detached mode: Run command in the background.'
+      description: 'Detached mode: Run command in the background'
       deprecated: false
       hidden: false
       experimental: false
@@ -45,7 +45,7 @@ options:
     - option: index
       value_type: int
       default_value: "0"
-      description: index of the container if service has multiple replicas
+      description: Index of the container if service has multiple replicas
       deprecated: false
       hidden: false
       experimental: false
@@ -56,7 +56,7 @@ options:
       shorthand: i
       value_type: bool
       default_value: "true"
-      description: Keep STDIN open even if not attached.
+      description: Keep STDIN open even if not attached
       deprecated: false
       hidden: true
       experimental: false
@@ -78,7 +78,7 @@ options:
     - option: privileged
       value_type: bool
       default_value: "false"
-      description: Give extended privileges to the process.
+      description: Give extended privileges to the process
       deprecated: false
       hidden: false
       experimental: false
@@ -89,7 +89,7 @@ options:
       shorthand: t
       value_type: bool
       default_value: "true"
-      description: Allocate a pseudo-TTY.
+      description: Allocate a pseudo-TTY
       deprecated: false
       hidden: true
       experimental: false
@@ -99,7 +99,7 @@ options:
     - option: user
       shorthand: u
       value_type: string
-      description: Run the command as this user.
+      description: Run the command as this user
       deprecated: false
       hidden: false
       experimental: false
@@ -109,7 +109,7 @@ options:
     - option: workdir
       shorthand: w
       value_type: string
-      description: Path to workdir directory for this command.
+      description: Path to workdir directory for this command
       deprecated: false
       hidden: false
       experimental: false
@@ -144,7 +144,7 @@ options:
       shorthand: d
       value_type: bool
       default_value: "false"
-      description: 'Detached mode: Run command in the background.'
+      description: 'Detached mode: Run command in the background'
       deprecated: false
       hidden: false
       experimental: false
@@ -165,7 +165,7 @@ options:
     - option: index
       value_type: int
       default_value: "0"
-      description: index of the container if service has multiple replicas
+      description: Index of the container if service has multiple replicas
       deprecated: false
       hidden: false
       experimental: false
@@ -176,7 +176,7 @@ options:
       shorthand: i
       value_type: bool
       default_value: "true"
-      description: Keep STDIN open even if not attached.
+      description: Keep STDIN open even if not attached
       deprecated: false
       hidden: true
       experimental: false
@@ -198,7 +198,7 @@ options:
     - option: privileged
       value_type: bool
       default_value: "false"
-      description: Give extended privileges to the process.
+      description: Give extended privileges to the process
       deprecated: false
       hidden: false
       experimental: false
@@ -209,7 +209,7 @@ options:
       shorthand: t
       value_type: bool
       default_value: "true"
-      description: Allocate a pseudo-TTY.
+      description: Allocate a pseudo-TTY
       deprecated: false
       hidden: true
       experimental: false
@@ -219,7 +219,7 @@ options:
     - option: user
       shorthand: u
       value_type: string
-      description: Run the command as this user.
+      description: Run the command as this user
       deprecated: false
       hidden: false
       experimental: false
@@ -229,7 +229,7 @@ options:
     - option: workdir
       shorthand: w
       value_type: string
-      description: Path to workdir directory for this command.
+      description: Path to workdir directory for this command
       deprecated: false
       hidden: false
       experimental: false

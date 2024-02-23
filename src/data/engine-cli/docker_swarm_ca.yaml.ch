@@ -399,6 +399,7 @@ examples: |-
     Initiate the root CA rotation, but do not wait for the completion of or display the
     progress of the rotation.
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false
@@ -408,6 +409,7 @@ swarm: true
     Initiate the root CA rotation, but do not wait for the completion of or display the
     progress of the rotation.
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false

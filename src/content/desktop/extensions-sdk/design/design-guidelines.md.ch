@@ -52,9 +52,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Light and dark mode](images/light_dark_mode.png)
+  ![Light and dark mode](images/light_dark_mode.webp)
 @y
-  ![Light and dark mode](images/light_dark_mode.png)
+  ![Light and dark mode](images/light_dark_mode.webp)
 @z
 
 @x
@@ -64,9 +64,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Icon colors in light and dark mode](images/icon_colors.png)
+  ![Icon colors in light and dark mode](images/icon_colors.webp)
 @y
-  ![Icon colors in light and dark mode](images/icon_colors.png)
+  ![Icon colors in light and dark mode](images/icon_colors.webp)
 @z
 
 @x
@@ -76,9 +76,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Header that sets the context](images/header.png)
+  ![Header that sets the context](images/header.webp)
 @y
-  ![Header that sets the context](images/header.png)
+  ![Header that sets the context](images/header.webp)
 @z
 
 @x
@@ -88,15 +88,15 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Terminal window used incorrectly](images/terminal_window_dont.png)
+  ![Terminal window used incorrectly](images/terminal_window_dont.webp)
 @y
-  ![Terminal window used incorrectly](images/terminal_window_dont.png)
+  ![Terminal window used incorrectly](images/terminal_window_dont.webp)
 @z
 
 @x
-  ![Terminal window used correctly](images/terminal_window_do.png)
+  ![Terminal window used correctly](images/terminal_window_do.webp)
 @y
-  ![Terminal window used correctly](images/terminal_window_do.png)
+  ![Terminal window used correctly](images/terminal_window_do.webp)
 @z
 
 @x
@@ -112,15 +112,15 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Incorrect way to switch context](images/switch_context_dont.png)
+  ![Incorrect way to switch context](images/switch_context_dont.webp)
 @y
-  ![Incorrect way to switch context](images/switch_context_dont.png)
+  ![Incorrect way to switch context](images/switch_context_dont.webp)
 @z
 
 @x
-  ![Correct way to switch context](images/switch_context_do.png)
+  ![Correct way to switch context](images/switch_context_do.webp)
 @y
-  ![Correct way to switch context](images/switch_context_do.png)
+  ![Correct way to switch context](images/switch_context_do.webp)
 @z
 
 @x
@@ -136,9 +136,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![A complicated flow](images/complicated_flows.png)
+  ![A complicated flow](images/complicated_flows.webp)
 @y
-  ![A complicated flow](images/complicated_flows.png)
+  ![A complicated flow](images/complicated_flows.webp)
 @z
 
 @x
@@ -148,9 +148,9 @@ Use the [Docker Material UI Theme](https://www.npmjs.com/package/@docker/docker-
 @z
 
 @x
-  ![Call to action](images/cta.png)
+  ![Call to action](images/cta.webp)
 @y
-  ![Call to action](images/cta.png)
+  ![Call to action](images/cta.webp)
 @z
 
 @x
@@ -180,9 +180,9 @@ When creating your extension, ensure that first time users of the extension and 
 @z
 
 @x
-  ![start page](images/start_page.png)
+  ![start page](images/start_page.webp)
 @y
-  ![start page](images/start_page.png)
+  ![start page](images/start_page.webp)
 @z
 
 @x

@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Deploy to Swarm
 keywords: swarm, swarm services, stacks
 description: Learn how to describe and deploy a simple application on Docker Swarm.
-aliases:
-- /get-started/part4/
----
 @y
----
 title: Deploy to Swarm
 keywords: swarm, swarm services, stacks
 description: Learn how to describe and deploy a simple application on Docker Swarm.
-aliases:
-- /get-started/part4/
----
 @z
 
 @x
@@ -285,12 +277,12 @@ Further documentation for all new Swarm objects and CLI commands used in this ar
  - [Swarm Mode](../engine/swarm/index.md)
  - [Swarm Mode Services](../engine/swarm/how-swarm-mode-works/services.md)
  - [Swarm Stacks](../engine/swarm/stack-deploy.md)
- - [`docker stack *`](/engine/reference/commandline/stack/)
- - [`docker service *`](/engine/reference/commandline/service/)
+ - [`docker stack *`](/reference/cli/docker/stack/)
+ - [`docker service *`](/reference/cli/docker/service/)
 @y
  - [Swarm Mode](../engine/swarm/index.md)
  - [Swarm Mode Services](../engine/swarm/how-swarm-mode-works/services.md)
  - [Swarm Stacks](../engine/swarm/stack-deploy.md)
- - [`docker stack *`](__SUBDIR__/engine/reference/commandline/stack/)
- - [`docker service *`](__SUBDIR__/engine/reference/commandline/service/)
+ - [`docker stack *`](__SUBDIR__/reference/cli/docker/stack/)
+ - [`docker service *`](__SUBDIR__/reference/cli/docker/service/)
 @z

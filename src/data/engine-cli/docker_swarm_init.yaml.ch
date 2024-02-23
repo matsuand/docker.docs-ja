@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker swarm init
 short: Initialize a swarm
@@ -415,20 +417,20 @@ examples: |-
     The `docker swarm init` command generates two random tokens: a worker token and
     a manager token. When you join a new node to the swarm, the node joins as a
     worker or manager node based upon the token you pass to [swarm
-    join](swarm_join.md).
+    join](/reference/cli/docker/swarm/join/).
 @y
     The `docker swarm init` command generates two random tokens: a worker token and
     a manager token. When you join a new node to the swarm, the node joins as a
     worker or manager node based upon the token you pass to [swarm
-    join](swarm_join.md).
+    join](__SUBDIR__/reference/cli/docker/swarm/join/).
 @z
 
 @x
     After you create the swarm, you can display or rotate the token using
-    [swarm join-token](swarm_join-token.md).
+    [swarm join-token](/reference/cli/docker/swarm/join-token/).
 @y
     After you create the swarm, you can display or rotate the token using
-    [swarm join-token](swarm_join-token.md).
+    [swarm join-token](__SUBDIR__/reference/cli/docker/swarm/join-token/).
 @z
 
 @x
@@ -752,6 +754,7 @@ examples: |-
     have dedicated manager nodes that don't serve as worker nodes. You can do this
     by passing `--availability=drain` to `docker swarm init`.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -762,6 +765,7 @@ swarm: true
     have dedicated manager nodes that don't serve as worker nodes. You can do this
     by passing `--availability=drain` to `docker swarm init`.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

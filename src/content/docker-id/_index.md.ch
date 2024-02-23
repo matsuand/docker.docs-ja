@@ -2,25 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to register for a Docker ID and log in to your account
 keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
   base, beta access, email, activation, verification
 title: Create an account
-aliases:
-- /docker-cloud/dockerid/
-- /docker-hub/accounts/
----
 @y
----
 description: Learn how to register for a Docker ID and log in to your account
 keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
   base, beta access, email, activation, verification
 title: アカウントの生成
-aliases:
-- /docker-cloud/dockerid/
-- /docker-hub/accounts/
----
 @z
 
 @x
@@ -178,9 +168,9 @@ Once you register and verify your Docker ID email address, you can sign in to [y
 @z
 
 @x
-You can also sign in through the CLI using the `docker login` command. For more information, see [`docker login`](../engine/reference/commandline/login.md).
+You can also sign in through the CLI using the `docker login` command. For more information, see [`docker login`](../reference/cli/docker/login.md).
 @y
-You can also sign in through the CLI using the `docker login` command. For more information, see [`docker login`](../engine/reference/commandline/login.md).
+You can also sign in through the CLI using the `docker login` command. For more information, see [`docker login`](../reference/cli/docker/login.md).
 @z
 
 @x

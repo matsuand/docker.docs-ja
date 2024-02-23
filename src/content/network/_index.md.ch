@@ -2,35 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Networking overview
 description: Learn how networking works from the container's point of view
 keywords: networking, container, standalone, IP address, DNS resolution
-aliases:
-- /articles/networking/
-- /config/containers/container-networking/
-- /engine/userguide/networking/
-- /engine/userguide/networking/configure-dns/
-- /engine/userguide/networking/default_network/binding/
-- /engine/userguide/networking/default_network/configure-dns/
-- /engine/userguide/networking/default_network/container-communication/
-- /engine/userguide/networking/dockernetworks/
----
 @y
----
 title: ネットワーク処理概要
 description: Learn how networking works from the container's point of view
 keywords: networking, container, standalone, IP address, DNS resolution
-aliases:
-- /articles/networking/
-- /config/containers/container-networking/
-- /engine/userguide/networking/
-- /engine/userguide/networking/configure-dns/
-- /engine/userguide/networking/default_network/binding/
-- /engine/userguide/networking/default_network/configure-dns/
-- /engine/userguide/networking/default_network/container-communication/
-- /engine/userguide/networking/dockernetworks/
----
 @z
 
 @x
@@ -466,14 +444,14 @@ Your container will have lines in `/etc/hosts` which define the hostname of the
 container itself, as well as `localhost` and a few other common things. Custom
 hosts, defined in `/etc/hosts` on the host machine, aren't inherited by
 containers. To pass additional hosts into container, refer to [add entries to
-container hosts file](../engine/reference/commandline/container_run.md#add-host) in the
+container hosts file](../reference/cli/docker/container/run.md#add-host) in the
 `docker run` reference documentation.
 @y
 Your container will have lines in `/etc/hosts` which define the hostname of the
 container itself, as well as `localhost` and a few other common things. Custom
 hosts, defined in `/etc/hosts` on the host machine, aren't inherited by
 containers. To pass additional hosts into container, refer to [add entries to
-container hosts file](../engine/reference/commandline/container_run.md#add-host) in the
+container hosts file](../reference/cli/docker/container/run.md#add-host) in the
 `docker run` reference documentation.
 @z
 

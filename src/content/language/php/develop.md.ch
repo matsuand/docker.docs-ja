@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Use containers for PHP development
@@ -998,14 +1000,14 @@ Related information:
  - [Build with Docker guide](../../build/guide/index.md)
  - [Compose file reference](/compose/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
- - [Dockerfile reference](../../engine/reference/builder.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
  - [Official Docker Image for PHP](https://hub.docker.com/_/php)
 @y
 Related information:
  - [Build with Docker guide](../../build/guide/index.md)
  - [Compose file reference](__SUBDIR__/compose/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
- - [Dockerfile reference](../../engine/reference/builder.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
  - [Official Docker Image for PHP](https://hub.docker.com/_/php)
 @z
 

@@ -116,6 +116,7 @@ examples: |-
     staging                                                       tcp:///stage.corp.example.com:2376
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -127,6 +128,7 @@ swarm: false
     staging                                                       tcp:///stage.corp.example.com:2376
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

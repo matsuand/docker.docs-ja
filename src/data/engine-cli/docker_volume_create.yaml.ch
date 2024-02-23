@@ -534,6 +534,7 @@ examples: |-
         foo
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false
@@ -548,6 +549,7 @@ swarm: false
         foo
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.21"
 experimental: false
 experimentalcli: false

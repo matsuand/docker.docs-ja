@@ -102,11 +102,11 @@ services:
 @x
 When you run `docker compose up`, the `web` service defined in the Compose file [interpolates](env-file.md#interpolation) in the
 image `webapp:v1.5` which was set in the `.env` file. You can verify this with the
-[config command](../../engine/reference/commandline/compose_config.md), which prints your resolved application config to the terminal:
+[config command](../../reference/cli/docker/compose/config.md), which prints your resolved application config to the terminal:
 @y
 When you run `docker compose up`, the `web` service defined in the Compose file [interpolates](env-file.md#interpolation) in the
 image `webapp:v1.5` which was set in the `.env` file. You can verify this with the
-[config command](../../engine/reference/commandline/compose_config.md), which prints your resolved application config to the terminal:
+[config command](../../reference/cli/docker/compose/config.md), which prints your resolved application config to the terminal:
 @z
 
 @x
@@ -137,11 +137,6 @@ services:
 
 @x
 - As of Docker Compose version 2.24.0, you can set your `.env` file to be optional by using the `env_file` attribute. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-@y
-- As of Docker Compose version 2.24.0, you can set your `.env` file to be optional by using the `env_file` attribute. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-@z
-
-@x
   ```yaml
   env_file:
     - path: ./default.env
@@ -150,6 +145,7 @@ services:
       required: false
   ``` 
 @y
+- As of Docker Compose version 2.24.0, you can set your `.env` file to be optional by using the `env_file` attribute. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
   ```yaml
   env_file:
     - path: ./default.env
@@ -181,7 +177,7 @@ services:
 - You can place your `.env` file in a location other than the root of your project's directory, and then use one of the following methods so Compose can navigate to it:
   - The [`--env-file` option in the CLI](#substitute-with---env-file)
   - Using the [`env_file` attribute in the Compose file](../compose-file/05-services.md#env_file)
-- Values in your `.env` file can be overridden from the command line by using [`docker-compose up -e`](#set-environment-variables-with-docker-compose-run---env).
+- Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env).
 - Your `.env` file can be overridden by another `.env` if it is [substituted with `--env-file`](#substitute-with---env-file).
 @y
 - If you define an environment variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
@@ -205,7 +201,7 @@ services:
 - You can place your `.env` file in a location other than the root of your project's directory, and then use one of the following methods so Compose can navigate to it:
   - The [`--env-file` option in the CLI](#substitute-with---env-file)
   - Using the [`env_file` attribute in the Compose file](../compose-file/05-services.md#env_file)
-- Values in your `.env` file can be overridden from the command line by using [`docker-compose up -e`](#set-environment-variables-with-docker-compose-run---env).
+- Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env).
 - Your `.env` file can be overridden by another `.env` if it is [substituted with `--env-file`](#substitute-with---env-file).
 @z
 
@@ -323,15 +319,6 @@ web:
   env_file:
     - web-variables.env
 ```
-@y
-```yaml
-web:
-  env_file:
-    - web-variables.env
-```
-@z
-
-@x
 #### Additional information 
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
 - Environment variables declared in the `.env` file cannot then be referenced again separately in the Compose file.
@@ -341,19 +328,6 @@ web:
 - Your `.env` files can be overriden by another `.env` if it is [substituted with `--env-file`](#substitute-with---env-file).
 - As of Docker Compose version 2.24.0, you can set your `.env` file to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing,
 Compose silently ignores the entry.
-@y
-#### Additional information 
-- If multiple files are specified, they are evaluated in order and can override values set in previous files.
-- Environment variables declared in the `.env` file cannot then be referenced again separately in the Compose file.
-- If you use both the `env_file` and `environment` attribute, environment variables set by `environment` take precedence.
-- The paths to your `.env` file, specified in the `env_file` attribute,  are relative to the location of your `compose.yml` file. 
-- Values in your `.env` files can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env).
-- Your `.env` files can be overriden by another `.env` if it is [substituted with `--env-file`](#substitute-with---env-file).
-- As of Docker Compose version 2.24.0, you can set your `.env` file to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing,
-Compose silently ignores the entry.
-@z
-
-@x
   ```yaml
   env_file:
     - path: ./default.env
@@ -362,6 +336,20 @@ Compose silently ignores the entry.
       required: false
   ``` 
 @y
+```yaml
+web:
+  env_file:
+    - web-variables.env
+```
+#### Additional information 
+- If multiple files are specified, they are evaluated in order and can override values set in previous files.
+- Environment variables declared in the `.env` file cannot then be referenced again separately in the Compose file.
+- If you use both the `env_file` and `environment` attribute, environment variables set by `environment` take precedence.
+- The paths to your `.env` file, specified in the `env_file` attribute,  are relative to the location of your `compose.yml` file. 
+- Values in your `.env` files can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env).
+- Your `.env` files can be overriden by another `.env` if it is [substituted with `--env-file`](#substitute-with---env-file).
+- As of Docker Compose version 2.24.0, you can set your `.env` file to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing,
+Compose silently ignores the entry.
   ```yaml
   env_file:
     - path: ./default.env

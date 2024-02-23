@@ -208,6 +208,7 @@ examples: |-
     >
     > Network information isn't shown, because it doesn't consume disk space.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -218,6 +219,7 @@ swarm: false
     >
     > Network information isn't shown, because it doesn't consume disk space.
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

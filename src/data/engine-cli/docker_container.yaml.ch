@@ -71,11 +71,6 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker container
 short: Manage containers
@@ -146,9 +141,4 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

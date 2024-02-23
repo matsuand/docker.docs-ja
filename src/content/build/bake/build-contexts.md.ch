@@ -27,12 +27,12 @@ aliases:
 In addition to the main `context` key that defines the build context, each
 target can also define additional named contexts with a map defined with key
 `contexts`. These values map to the `--build-context` flag in the [build
-command](../../engine/reference/commandline/buildx_build.md#build-context).
+command](../../reference/cli/docker/buildx/build.md#build-context).
 @y
 In addition to the main `context` key that defines the build context, each
 target can also define additional named contexts with a map defined with key
 `contexts`. These values map to the `--build-context` flag in the [build
-command](../../engine/reference/commandline/buildx_build.md#build-context).
+command](../../reference/cli/docker/buildx/build.md#build-context).
 @z
 
 @x

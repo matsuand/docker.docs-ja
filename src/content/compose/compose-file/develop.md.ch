@@ -18,11 +18,11 @@ keywords: compose, compose specification, compose file reference, compose develo
 @x
 > **Note:** 
 >
-> Develop is an optional part of the Compose Specification
+> Develop is an optional part of the Compose Specification. It's available with Docker Compose version 2.22.0 and later.
 @y
 > **Note:** 
 >
-> Develop is an optional part of the Compose Specification
+> Develop is an optional part of the Compose Specification. It's available with Docker Compose version 2.22.0 and later.
 @z
 
 @x
@@ -149,6 +149,12 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 - `rebuild`, Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
 - `sync`, Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
 - `sync+restart`, Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container.
+@z
+
+@x
+> `sync+restart` attribute is available with Docker Compose version 2.23.0 and later.
+@y
+> `sync+restart` attribute is available with Docker Compose version 2.23.0 and later.
 @z
 
 @x

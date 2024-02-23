@@ -177,6 +177,7 @@ examples: |-
     A manager node must be demoted to a worker node (using `docker node demote`)
     before you can remove it from the swarm.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -186,6 +187,7 @@ swarm: true
     A manager node must be demoted to a worker node (using `docker node demote`)
     before you can remove it from the swarm.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

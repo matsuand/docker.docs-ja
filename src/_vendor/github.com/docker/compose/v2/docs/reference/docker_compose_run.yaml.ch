@@ -3,12 +3,12 @@
 
 @x
 command: docker compose run
-short: Run a one-off command on a service.
+short: Run a one-off command on a service
 long: |-
     Runs a one-time command against a service.
 @y
 command: docker compose run
-short: Run a one-off command on a service.
+short: Run a one-off command on a service
 long: |-
     Runs a one-time command against a service.
 @z
@@ -151,7 +151,7 @@ options:
     - option: build
       value_type: bool
       default_value: "false"
-      description: Build image before starting container.
+      description: Build image before starting container
       deprecated: false
       hidden: false
       experimental: false
@@ -211,7 +211,7 @@ options:
       shorthand: i
       value_type: bool
       default_value: "true"
-      description: Keep STDIN open even if not attached.
+      description: Keep STDIN open even if not attached
       deprecated: false
       hidden: false
       experimental: false
@@ -242,7 +242,7 @@ options:
       shorthand: T
       value_type: bool
       default_value: "true"
-      description: 'Disable pseudo-TTY allocation (default: auto-detected).'
+      description: 'Disable pseudo-TTY allocation (default: auto-detected)'
       deprecated: false
       hidden: false
       experimental: false
@@ -252,7 +252,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't start linked services.
+      description: Don't start linked services
       deprecated: false
       hidden: false
       experimental: false
@@ -263,7 +263,7 @@ options:
       shorthand: p
       value_type: stringArray
       default_value: '[]'
-      description: Publish a container's port(s) to the host.
+      description: Publish a container's port(s) to the host
       deprecated: false
       hidden: false
       experimental: false
@@ -273,7 +273,7 @@ options:
     - option: quiet-pull
       value_type: bool
       default_value: "false"
-      description: Pull without printing progress information.
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false
@@ -283,7 +283,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -305,7 +305,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Run command with all service's ports enabled and mapped to the host.
+        Run command with all service's ports enabled and mapped to the host
       deprecated: false
       hidden: false
       experimental: false
@@ -316,7 +316,7 @@ options:
       shorthand: t
       value_type: bool
       default_value: "true"
-      description: Allocate a pseudo-TTY.
+      description: Allocate a pseudo-TTY
       deprecated: false
       hidden: true
       experimental: false
@@ -327,7 +327,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Use the service's network useAliases in the network(s) the container connects to.
+        Use the service's network useAliases in the network(s) the container connects to
       deprecated: false
       hidden: false
       experimental: false
@@ -348,7 +348,7 @@ options:
       shorthand: v
       value_type: stringArray
       default_value: '[]'
-      description: Bind mount a volume.
+      description: Bind mount a volume
       deprecated: false
       hidden: false
       experimental: false
@@ -392,7 +392,7 @@ options:
     - option: build
       value_type: bool
       default_value: "false"
-      description: Build image before starting container.
+      description: Build image before starting container
       deprecated: false
       hidden: false
       experimental: false
@@ -452,7 +452,7 @@ options:
       shorthand: i
       value_type: bool
       default_value: "true"
-      description: Keep STDIN open even if not attached.
+      description: Keep STDIN open even if not attached
       deprecated: false
       hidden: false
       experimental: false
@@ -483,7 +483,7 @@ options:
       shorthand: T
       value_type: bool
       default_value: "true"
-      description: 'Disable pseudo-TTY allocation (default: auto-detected).'
+      description: 'Disable pseudo-TTY allocation (default: auto-detected)'
       deprecated: false
       hidden: false
       experimental: false
@@ -493,7 +493,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't start linked services.
+      description: Don't start linked services
       deprecated: false
       hidden: false
       experimental: false
@@ -504,7 +504,7 @@ options:
       shorthand: p
       value_type: stringArray
       default_value: '[]'
-      description: Publish a container's port(s) to the host.
+      description: Publish a container's port(s) to the host
       deprecated: false
       hidden: false
       experimental: false
@@ -514,7 +514,7 @@ options:
     - option: quiet-pull
       value_type: bool
       default_value: "false"
-      description: Pull without printing progress information.
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false
@@ -524,7 +524,7 @@ options:
     - option: remove-orphans
       value_type: bool
       default_value: "false"
-      description: Remove containers for services not defined in the Compose file.
+      description: Remove containers for services not defined in the Compose file
       deprecated: false
       hidden: false
       experimental: false
@@ -546,7 +546,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Run command with all service's ports enabled and mapped to the host.
+        Run command with all service's ports enabled and mapped to the host
       deprecated: false
       hidden: false
       experimental: false
@@ -557,7 +557,7 @@ options:
       shorthand: t
       value_type: bool
       default_value: "true"
-      description: Allocate a pseudo-TTY.
+      description: Allocate a pseudo-TTY
       deprecated: false
       hidden: true
       experimental: false
@@ -568,7 +568,7 @@ options:
       value_type: bool
       default_value: "false"
       description: |
-        Use the service's network useAliases in the network(s) the container connects to.
+        Use the service's network useAliases in the network(s) the container connects to
       deprecated: false
       hidden: false
       experimental: false
@@ -589,7 +589,7 @@ options:
       shorthand: v
       value_type: stringArray
       default_value: '[]'
-      description: Bind mount a volume.
+      description: Bind mount a volume
       deprecated: false
       hidden: false
       experimental: false

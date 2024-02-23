@@ -101,6 +101,7 @@ examples: |-
     A /var/log/nginx/error.log
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -127,6 +128,7 @@ swarm: false
     A /var/log/nginx/error.log
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

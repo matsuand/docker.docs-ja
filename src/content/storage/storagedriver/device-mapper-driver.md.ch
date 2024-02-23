@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Learn how to optimize your use of device mapper driver.
 keywords: container, storage, driver, device mapper
 title: Use the Device Mapper storage driver (deprecated)
-aliases:
-- /engine/userguide/storagedriver/device-mapper-driver/
----
 @y
----
 description: Learn how to optimize your use of device mapper driver.
 keywords: container, storage, driver, device mapper
 title: Use the Device Mapper storage driver (deprecated)
-aliases:
-- /engine/userguide/storagedriver/device-mapper-driver/
----
 @z
 
 @x
@@ -199,10 +191,10 @@ For production systems, see
 
 @x
     See all storage options for each storage driver in the
-    [daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
+    [daemon reference documentation](/reference/cli/dockerd/#options-per-storage-driver)
 @y
     See all storage options for each storage driver in the
-    [daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#options-per-storage-driver)
+    [daemon reference documentation](__SUBDIR__/reference/cli/dockerd/#options-per-storage-driver)
 @z
 
 @x
@@ -445,10 +437,10 @@ options in the table above.
 
 @x
 See all storage options for each storage driver in the
-[daemon reference documentation](/engine/reference/commandline/dockerd/#options-per-storage-driver)
+[daemon reference documentation](/reference/cli/dockerd/#options-per-storage-driver)
 @y
 See all storage options for each storage driver in the
-[daemon reference documentation](__SUBDIR__/engine/reference/commandline/dockerd/#options-per-storage-driver)
+[daemon reference documentation](__SUBDIR__/reference/cli/dockerd/#options-per-storage-driver)
 @z
 
 @x
@@ -1077,14 +1069,14 @@ If you run into repeated problems with thin pool, you can set the storage option
 `/etc/docker/daemon.json`. For instance, setting it to `10` ensures
 that operations fail with a warning when the free space is at or near 10%.
 See the
-[storage driver options in the Engine daemon reference](/engine/reference/commandline/dockerd/#daemon-storage-driver).
+[storage driver options in the Engine daemon reference](/reference/cli/dockerd/#daemon-storage-driver).
 @y
 If you run into repeated problems with thin pool, you can set the storage option
 `dm.min_free_space` to a value (representing a percentage) in
 `/etc/docker/daemon.json`. For instance, setting it to `10` ensures
 that operations fail with a warning when the free space is at or near 10%.
 See the
-[storage driver options in the Engine daemon reference](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-storage-driver).
+[storage driver options in the Engine daemon reference](__SUBDIR__/reference/cli/dockerd/#daemon-storage-driver).
 @z
 
 @x

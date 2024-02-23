@@ -16,11 +16,11 @@ keywords: ci, github actions, gha, buildkit, buildx, context
 @z
 
 @x
-You can define [additional build contexts](../../../engine/reference/commandline/buildx_build.md#build-context),
+You can define [additional build contexts](../../../reference/cli/docker/buildx/build.md#build-context),
 and access them in your Dockerfile with `FROM name` or `--from=name`. When
 Dockerfile defines a stage with the same name it's overwritten.
 @y
-You can define [additional build contexts](../../../engine/reference/commandline/buildx_build.md#build-context),
+You can define [additional build contexts](../../../reference/cli/docker/buildx/build.md#build-context),
 and access them in your Dockerfile with `FROM name` or `--from=name`. When
 Dockerfile defines a stage with the same name it's overwritten.
 @z

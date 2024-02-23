@@ -131,11 +131,11 @@ $ docker image prune -a --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker image prune` reference](../engine/reference/commandline/image_prune.md)
+[`docker image prune` reference](../reference/cli/docker/image/prune.md)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker image prune` reference](../engine/reference/commandline/image_prune.md)
+[`docker image prune` reference](../reference/cli/docker/image/prune.md)
 for more examples.
 @z
 
@@ -209,11 +209,11 @@ $ docker container prune --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker container prune` reference](../engine/reference/commandline/container_prune.md)
+[`docker container prune` reference](../reference/cli/docker/container/prune.md)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker container prune` reference](../engine/reference/commandline/container_prune.md)
+[`docker container prune` reference](../reference/cli/docker/container/prune.md)
 for more examples.
 @z
 
@@ -281,11 +281,11 @@ $ docker volume prune --filter "label!=keep"
 
 @x
 Other filtering expressions are available. See the
-[`docker volume prune` reference](../engine/reference/commandline/volume_prune.md)
+[`docker volume prune` reference](../reference/cli/docker/volume/prune.md)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker volume prune` reference](../engine/reference/commandline/volume_prune.md)
+[`docker volume prune` reference](../reference/cli/docker/volume/prune.md)
 for more examples.
 @z
 
@@ -355,11 +355,11 @@ $ docker network prune --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker network prune` reference](../engine/reference/commandline/network_prune.md)
+[`docker network prune` reference](../reference/cli/docker/network/prune.md)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker network prune` reference](../engine/reference/commandline/network_prune.md)
+[`docker network prune` reference](../reference/cli/docker/network/prune.md)
 for more examples.
 @z
 
@@ -477,10 +477,10 @@ $ docker system prune --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker system prune` reference](../engine/reference/commandline/system_prune.md)
+[`docker system prune` reference](../reference/cli/docker/system/prune.md)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker system prune` reference](../engine/reference/commandline/system_prune.md)
+[`docker system prune` reference](../reference/cli/docker/system/prune.md)
 for more examples.
 @z

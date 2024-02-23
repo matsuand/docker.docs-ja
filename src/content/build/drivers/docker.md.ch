@@ -95,8 +95,8 @@ If you need additional configuration and flexibility, consider using the
 
 @x
 For more information on the Docker driver, see the
-[buildx reference](../../engine/reference/commandline/buildx_create.md#driver).
+[buildx reference](../../reference/cli/docker/buildx/create.md#driver).
 @y
 For more information on the Docker driver, see the
-[buildx reference](../../engine/reference/commandline/buildx_create.md#driver).
+[buildx reference](../../reference/cli/docker/buildx/create.md#driver).
 @z

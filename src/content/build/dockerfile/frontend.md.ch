@@ -27,13 +27,13 @@ aliases:
 
 @x
 BuildKit supports loading frontends dynamically from container images. To use
-an external Dockerfile frontend, the first line of your [Dockerfile](../../engine/reference/builder.md)
-needs to set the [`syntax` directive](../../engine/reference/builder.md#syntax)
+an external Dockerfile frontend, the first line of your [Dockerfile](../../reference/dockerfile.md)
+needs to set the [`syntax` directive](../../reference/dockerfile.md#syntax)
 pointing to the specific image you want to use:
 @y
 BuildKit supports loading frontends dynamically from container images. To use
-an external Dockerfile frontend, the first line of your [Dockerfile](../../engine/reference/builder.md)
-needs to set the [`syntax` directive](../../engine/reference/builder.md#syntax)
+an external Dockerfile frontend, the first line of your [Dockerfile](../../reference/dockerfile.md)
+needs to set the [`syntax` directive](../../reference/dockerfile.md#syntax)
 pointing to the specific image you want to use:
 @z
 

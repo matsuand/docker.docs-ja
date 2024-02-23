@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Update the application
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making changes to your application
----
 @y
----
 title: アプリケーションの更新
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: アプリケーションに変更を加えます。
----
 @z
 
 @x
@@ -284,10 +280,10 @@ In this section, you learned how to update and rebuild a container, as well as h
 
 @x
 Related information:
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [docker CLI reference](/reference/cli/docker/)
 @y
 関連情報
- - [Docker CLI リファレンス](__SUBDIR__/engine/reference/commandline/cli/)
+ - [Docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
 @z
 
 @x

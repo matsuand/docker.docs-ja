@@ -3,15 +3,14 @@
 ##
 SUBDIRS = admin billing build cloud compose config contribute \
 	desktop develop docker-id docker-hub engine faq get-started \
-	guides includes language network samples scout security \
-	storage subscription trusted-content
+	guides includes language network reference samples scout \
+	security storage subscription trusted-content
 
 bases = \
 	_index.md            \
 	get-docker.md        \
 	glossary.md          \
 	manuals.md           \
-	reference.md         \
 	registry.md          \
 	release-lifecycle.md \
 	release-notes.md     \

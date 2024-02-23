@@ -602,13 +602,13 @@ by default.
 @z
 
 @x
-Refer to the [daemon command](../reference/commandline/dockerd.md#daemon-user-namespace-options)
+Refer to the [daemon command](../../reference/cli/dockerd.md#daemon-user-namespace-options)
 in the command line reference for more information on this feature.
 Additional information on the implementation of User Namespaces in Docker
 can be found in
 [this blog post](https://integratedcode.us/2015/10/13/user-namespaces-have-arrived-in-docker/).
 @y
-Refer to the [daemon command](../reference/commandline/dockerd.md#daemon-user-namespace-options)
+Refer to the [daemon command](../../reference/cli/dockerd.md#daemon-user-namespace-options)
 in the command line reference for more information on this feature.
 Additional information on the implementation of User Namespaces in Docker
 can be found in

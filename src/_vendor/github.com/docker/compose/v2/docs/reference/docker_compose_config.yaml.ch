@@ -25,7 +25,7 @@ options:
       swarm: false
     - option: hash
       value_type: string
-      description: Print the service config hash, one per line.
+      description: Print the service config hash, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -35,7 +35,7 @@ options:
     - option: images
       value_type: bool
       default_value: "false"
-      description: Print the image names, one per line.
+      description: Print the image names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -56,7 +56,7 @@ options:
     - option: no-interpolate
       value_type: bool
       default_value: "false"
-      description: Don't interpolate environment variables.
+      description: Don't interpolate environment variables
       deprecated: false
       hidden: false
       experimental: false
@@ -66,7 +66,7 @@ options:
     - option: no-normalize
       value_type: bool
       default_value: "false"
-      description: Don't normalize compose model.
+      description: Don't normalize compose model
       deprecated: false
       hidden: false
       experimental: false
@@ -76,7 +76,7 @@ options:
     - option: no-path-resolution
       value_type: bool
       default_value: "false"
-      description: Don't resolve file paths.
+      description: Don't resolve file paths
       deprecated: false
       hidden: false
       experimental: false
@@ -96,7 +96,7 @@ options:
     - option: profiles
       value_type: bool
       default_value: "false"
-      description: Print the profile names, one per line.
+      description: Print the profile names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -107,7 +107,7 @@ options:
       shorthand: q
       value_type: bool
       default_value: "false"
-      description: Only validate the configuration, don't print anything.
+      description: Only validate the configuration, don't print anything
       deprecated: false
       hidden: false
       experimental: false
@@ -117,7 +117,7 @@ options:
     - option: resolve-image-digests
       value_type: bool
       default_value: "false"
-      description: Pin image tags to digests.
+      description: Pin image tags to digests
       deprecated: false
       hidden: false
       experimental: false
@@ -127,7 +127,7 @@ options:
     - option: services
       value_type: bool
       default_value: "false"
-      description: Print the service names, one per line.
+      description: Print the service names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -137,7 +137,7 @@ options:
     - option: volumes
       value_type: bool
       default_value: "false"
-      description: Print the volume names, one per line.
+      description: Print the volume names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -185,7 +185,7 @@ options:
       swarm: false
     - option: hash
       value_type: string
-      description: Print the service config hash, one per line.
+      description: Print the service config hash, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -195,7 +195,7 @@ options:
     - option: images
       value_type: bool
       default_value: "false"
-      description: Print the image names, one per line.
+      description: Print the image names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -216,7 +216,7 @@ options:
     - option: no-interpolate
       value_type: bool
       default_value: "false"
-      description: Don't interpolate environment variables.
+      description: Don't interpolate environment variables
       deprecated: false
       hidden: false
       experimental: false
@@ -226,7 +226,7 @@ options:
     - option: no-normalize
       value_type: bool
       default_value: "false"
-      description: Don't normalize compose model.
+      description: Don't normalize compose model
       deprecated: false
       hidden: false
       experimental: false
@@ -236,7 +236,7 @@ options:
     - option: no-path-resolution
       value_type: bool
       default_value: "false"
-      description: Don't resolve file paths.
+      description: Don't resolve file paths
       deprecated: false
       hidden: false
       experimental: false
@@ -256,7 +256,7 @@ options:
     - option: profiles
       value_type: bool
       default_value: "false"
-      description: Print the profile names, one per line.
+      description: Print the profile names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -267,7 +267,7 @@ options:
       shorthand: q
       value_type: bool
       default_value: "false"
-      description: Only validate the configuration, don't print anything.
+      description: Only validate the configuration, don't print anything
       deprecated: false
       hidden: false
       experimental: false
@@ -277,7 +277,7 @@ options:
     - option: resolve-image-digests
       value_type: bool
       default_value: "false"
-      description: Pin image tags to digests.
+      description: Pin image tags to digests
       deprecated: false
       hidden: false
       experimental: false
@@ -287,7 +287,7 @@ options:
     - option: services
       value_type: bool
       default_value: "false"
-      description: Print the service names, one per line.
+      description: Print the service names, one per line
       deprecated: false
       hidden: false
       experimental: false
@@ -297,7 +297,7 @@ options:
     - option: volumes
       value_type: bool
       default_value: "false"
-      description: Print the volume names, one per line.
+      description: Print the volume names, one per line
       deprecated: false
       hidden: false
       experimental: false

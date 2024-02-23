@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Scale services. 
+Scale services
 @y
 <!---MARKER_GEN_START-->
-Scale services. 
+Scale services
 @z
 
 @x
@@ -25,12 +25,12 @@ Scale services.
 | Name        | Type | Default | Description                     |
 |:------------|:-----|:--------|:--------------------------------|
 | `--dry-run` |      |         | Execute command in dry run mode |
-| `--no-deps` |      |         | Don't start linked services    |
+| `--no-deps` |      |         | Don't start linked services     |
 @y
 | Name        | Type | Default | Description                     |
 |:------------|:-----|:--------|:--------------------------------|
 | `--dry-run` |      |         | Execute command in dry run mode |
-| `--no-deps` |      |         | Don't start linked services    |
+| `--no-deps` |      |         | Don't start linked services     |
 @z
 
 @x

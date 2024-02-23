@@ -1,12 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker context update
 short: Update a context
 long: |-
     Updates an existing `context`.
-    See [context create](context_create.md).
+    See [context create](/reference/cli/docker/context/create/).
 usage: docker context update [OPTIONS] CONTEXT
 pname: docker context
 plink: docker_context.yaml
@@ -48,7 +50,7 @@ command: docker context update
 short: Update a context
 long: |-
     Updates an existing `context`.
-    See [context create](context_create.md).
+    See [context create](__SUBDIR__/reference/cli/docker/context/create/).
 usage: docker context update [OPTIONS] CONTEXT
 pname: docker context
 plink: docker_context.yaml
@@ -95,6 +97,7 @@ examples: |-
         my-context
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -107,6 +110,7 @@ swarm: false
         my-context
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Manager administration guide
 keywords: docker, container, swarm, manager, raft
 title: Administer and maintain a swarm of Docker Engines
-aliases:
-- /engine/swarm/manager-administration-guide/
----
 @y
----
 description: Manager administration guide
 keywords: docker, container, swarm, manager, raft
 title: Administer and maintain a swarm of Docker Engines
-aliases:
-- /engine/swarm/manager-administration-guide/
----
 @z
 
 @x
@@ -971,10 +963,10 @@ balance of your service across nodes.
 
 @x
 See also
-[`docker service scale`](../reference/commandline/service_scale.md) and
-[`docker service ps`](../reference/commandline/service_ps.md).
+[`docker service scale`](../../reference/cli/docker/service/scale.md) and
+[`docker service ps`](../../reference/cli/docker/service/ps.md).
 @y
 See also
-[`docker service scale`](../reference/commandline/service_scale.md) and
-[`docker service ps`](../reference/commandline/service_ps.md).
+[`docker service scale`](../../reference/cli/docker/service/scale.md) and
+[`docker service ps`](../../reference/cli/docker/service/ps.md).
 @z

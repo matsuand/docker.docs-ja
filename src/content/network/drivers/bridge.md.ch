@@ -323,12 +323,12 @@ daemon. The following tables shows which options have equivalent flags in the
 The Docker daemon supports a `--bridge` flag, which you can use to define
 your own `docker0` bridge. Use this option if you want to run multiple daemon
 instances on the same host. For details, see
-[Run multiple daemons](../../engine/reference/commandline/dockerd.md#run-multiple-daemons).
+[Run multiple daemons](../../reference/cli/dockerd.md#run-multiple-daemons).
 @y
 The Docker daemon supports a `--bridge` flag, which you can use to define
 your own `docker0` bridge. Use this option if you want to run multiple daemon
 instances on the same host. For details, see
-[Run multiple daemons](../../engine/reference/commandline/dockerd.md#run-multiple-daemons).
+[Run multiple daemons](../../reference/cli/dockerd.md#run-multiple-daemons).
 @z
 
 @x
@@ -358,12 +358,12 @@ $ docker network create my-net
 @x
 You can specify the subnet, the IP address range, the gateway, and other
 options. See the
-[docker network create](../../engine/reference/commandline/network_create.md#specify-advanced-options)
+[docker network create](../../reference/cli/docker/network/create.md#specify-advanced-options)
 reference or the output of `docker network create --help` for details.
 @y
 You can specify the subnet, the IP address range, the gateway, and other
 options. See the
-[docker network create](../../engine/reference/commandline/network_create.md#specify-advanced-options)
+[docker network create](../../reference/cli/docker/network/create.md#specify-advanced-options)
 reference or the output of `docker network create --help` for details.
 @z
 

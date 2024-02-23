@@ -68,10 +68,10 @@ redis2              0.07%               2.746 MB / 64 MB      4.29%             
 @z
 
 @x
-The [`docker stats`](../../engine/reference/commandline/container_stats.md) reference
+The [`docker stats`](../../reference/cli/docker/container/stats.md) reference
 page has more details about the `docker stats` command.
 @y
-The [`docker stats`](../../engine/reference/commandline/container_stats.md) reference
+The [`docker stats`](../../reference/cli/docker/container/stats.md) reference
 page has more details about the `docker stats` command.
 @z
 

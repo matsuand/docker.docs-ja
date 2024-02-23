@@ -46,11 +46,6 @@ examples: |-
     ```console
     $ docker restart my_container
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker container restart
 aliases: docker container restart, docker restart
@@ -96,9 +91,4 @@ examples: |-
     ```console
     $ docker restart my_container
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

@@ -6,7 +6,8 @@ absORIGDIR=@absORIGDIR@
 SUBDIRS = _vendor assets content data i18n layouts
 
 bases = \
-	hugo.yaml
+	hugo.yaml    \
+	package.json
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -33,7 +34,6 @@ copyfiles = \
 	go.sum             \
 	netlify.toml       \
 	package-lock.json  \
-	package.json       \
 	postcss.config.js  \
 	tailwind.config.js
 

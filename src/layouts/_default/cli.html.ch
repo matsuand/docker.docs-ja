@@ -191,9 +191,6 @@
       {{ end }}
       {{ $.RenderString (dict "display" "block") . }}
     {{ end }}
-    {{ .Content }}
-  </article>
-{{ end }}
 @y
     {{ with $data.examples }}
       {{ $heading := dict "level" 2 "text" (T "Examples") "id" "examples" }}
@@ -207,9 +204,6 @@
       {{ end }}
       {{ $.RenderString (dict "display" "block") . }}
     {{ end }}
-    {{ .Content }}
-  </article>
-{{ end }}
 @z
 
 @x

@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Attach local standard input, output, and error streams to a service's running container.
+Attach local standard input, output, and error streams to a service's running container
 @y
 <!---MARKER_GEN_START-->
-Attach local standard input, output, and error streams to a service's running container.
+Attach local standard input, output, and error streams to a service's running container
 @z
 
 @x

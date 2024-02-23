@@ -47,11 +47,6 @@ examples: |-
     ```console
     $ docker pause my_container
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     See the
     [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
@@ -74,9 +69,4 @@ examples: |-
     ```console
     $ docker pause my_container
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

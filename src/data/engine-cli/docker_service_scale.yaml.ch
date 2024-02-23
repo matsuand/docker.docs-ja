@@ -180,10 +180,10 @@ examples: |-
 @z
 
 @x
-    You can also scale a service using the [`docker service update`](service_update.md)
+    You can also scale a service using the [`docker service update`](/reference/cli/docker/service/update/)
     command. The following commands are equivalent:
 @y
-    You can also scale a service using the [`docker service update`](service_update.md)
+    You can also scale a service using the [`docker service update`](__SUBDIR__/reference/cli/docker/service/update/)
     command. The following commands are equivalent:
 @z
 
@@ -243,6 +243,7 @@ examples: |-
     74nzcxxjv6fq  backend   replicated  3/3       redis:3.0.6
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -254,6 +255,7 @@ swarm: true
     74nzcxxjv6fq  backend   replicated  3/3       redis:3.0.6
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

@@ -24,6 +24,18 @@ aliases:
 @z
 
 @x
+> **Docker Desktop terms**
+>
+> Commercial use of Docker Desktop in larger enterprises (more than 250
+> employees OR more than $10 million USD in annual revenue) requires a [paid
+> subscription](https://www.docker.com/pricing/).
+@y
+> **Docker Desktop 契約条項**
+>
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
+@z
+
+@x
 This page contains information on how to install, launch and upgrade Docker Desktop on a Fedora distribution.
 @y
 This page contains information on how to install, launch and upgrade Docker Desktop on a Fedora distribution.

@@ -8,14 +8,14 @@ command: docker service update
 short: Update a service
 long: |-
     Updates a service as described by the specified parameters. The parameters are
-    the same as [`docker service create`](service_create.md). Refer to the description
+    the same as [`docker service create`](/reference/cli/docker/service/create/). Refer to the description
     there for further information.
 @y
 command: docker service update
 short: Update a service
 long: |-
     Updates a service as described by the specified parameters. The parameters are
-    the same as [`docker service create`](service_create.md). Refer to the description
+    the same as [`docker service create`](__SUBDIR__/reference/cli/docker/service/create/). Refer to the description
     there for further information.
 @z
 
@@ -1991,11 +1991,11 @@ examples: |-
 
 @x
     - The `--mount-add` flag takes the same parameters as the `--mount` flag on
-      `service create`. Refer to the [volumes and bind mounts](service_create.md#mount)
+      `service create`. Refer to the [volumes and bind mounts](/reference/cli/docker/service/create/#mount)
       section in the `service create` reference for details.
 @y
     - The `--mount-add` flag takes the same parameters as the `--mount` flag on
-      `service create`. Refer to the [volumes and bind mounts](service_create.md#mount)
+      `service create`. Refer to the [volumes and bind mounts](__SUBDIR__/reference/cli/docker/service/create/#mount)
       section in the `service create` reference for details.
 @z
 
@@ -2064,12 +2064,12 @@ examples: |-
 @x
     Use the `--publish-add` or `--publish-rm` flags to add or remove a published
     port for a service. You can use the short or long syntax discussed in the
-    [docker service create](service_create.md#publish)
+    [docker service create](/reference/cli/docker/service/create/#publish)
     reference.
 @y
     Use the `--publish-add` or `--publish-rm` flags to add or remove a published
     port for a service. You can use the short or long syntax discussed in the
-    [docker service create](service_create.md#publish)
+    [docker service create](__SUBDIR__/reference/cli/docker/service/create/#publish)
     reference.
 @z
 
@@ -2102,12 +2102,12 @@ examples: |-
 @x
     Use the `--network-add` or `--network-rm` flags to add or remove a network for
     a service. You can use the short or long syntax discussed in the
-    [docker service create](service_create.md#network)
+    [docker service create](/reference/cli/docker/service/create/#network)
     reference.
 @y
     Use the `--network-add` or `--network-rm` flags to add or remove a network for
     a service. You can use the short or long syntax discussed in the
-    [docker service create](service_create.md#network)
+    [docker service create](__SUBDIR__/reference/cli/docker/service/create/#network)
     reference.
 @z
 
@@ -2355,10 +2355,10 @@ examples: |-
 
 @x
     Some flags of `service update` support the use of templating.
-    See [`service create`](service_create.md#create-services-using-templates) for the reference.
+    See [`service create`](/reference/cli/docker/service/create/#create-services-using-templates) for the reference.
 @y
     Some flags of `service update` support the use of templating.
-    See [`service create`](service_create.md#create-services-using-templates) for the reference.
+    See [`service create`](__SUBDIR__/reference/cli/docker/service/create/#create-services-using-templates) for the reference.
 @z
 
 @x
@@ -2369,10 +2369,10 @@ examples: |-
 
 @x
     `service update` supports the same `--isolation` flag as `service create`
-    See [`service create`](service_create.md) for the reference.
+    See [`service create`](/reference/cli/docker/service/create/) for the reference.
 @y
     `service update` supports the same `--isolation` flag as `service create`
-    See [`service create`](service_create.md) for the reference.
+    See [`service create`](__SUBDIR__/reference/cli/docker/service/create/) for the reference.
 @z
 
 @x
@@ -2415,6 +2415,7 @@ examples: |-
     To run a job again with the same parameters that it was run previously, it can
     be force updated with the `--force` flag.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -2424,6 +2425,7 @@ swarm: true
     To run a job again with the same parameters that it was run previously, it can
     be force updated with the `--force` flag.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

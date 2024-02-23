@@ -1,11 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker builder build
 aliases: docker image build, docker build, docker buildx build, docker builder build
 short: Build an image from a Dockerfile
-long: See [docker build](build.md) for more information.
+long: |
+    See [docker build](/reference/cli/docker/image/build/) for more information.
 usage: docker builder build [OPTIONS] PATH | URL | -
 pname: docker builder
 plink: docker_builder.yaml
@@ -318,6 +321,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
+hidden: false
 min_api_version: "1.31"
 experimental: false
 experimentalcli: false
@@ -327,7 +331,8 @@ swarm: false
 command: docker builder build
 aliases: docker image build, docker build, docker buildx build, docker builder build
 short: Build an image from a Dockerfile
-long: See [docker build](build.md) for more information.
+long: |
+    See [docker build](__SUBDIR__/reference/cli/docker/image/build/) for more information.
 usage: docker builder build [OPTIONS] PATH | URL | -
 pname: docker builder
 plink: docker_builder.yaml
@@ -640,6 +645,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
+hidden: false
 min_api_version: "1.31"
 experimental: false
 experimentalcli: false

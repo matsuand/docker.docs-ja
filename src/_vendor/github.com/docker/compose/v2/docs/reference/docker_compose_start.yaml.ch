@@ -4,7 +4,7 @@
 @x
 command: docker compose start
 short: Start services
-long: Starts existing containers for a service.
+long: Starts existing containers for a service
 usage: docker compose start [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -28,7 +28,7 @@ swarm: false
 @y
 command: docker compose start
 short: Start services
-long: Starts existing containers for a service.
+long: Starts existing containers for a service
 usage: docker compose start [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml

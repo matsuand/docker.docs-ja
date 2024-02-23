@@ -168,11 +168,11 @@ Keep the following in mind when using restart policies:
 @x
 - Restart policies only apply to containers. To configure restart policies for
   Swarm services, see
-  [flags related to service restart](../../engine/reference/commandline/service_create.md).
+  [flags related to service restart](../../reference/cli/docker/service/create.md).
 @y
 - Restart policies only apply to containers. To configure restart policies for
   Swarm services, see
-  [flags related to service restart](../../engine/reference/commandline/service_create.md).
+  [flags related to service restart](../../reference/cli/docker/service/create.md).
 @z
 
 @x

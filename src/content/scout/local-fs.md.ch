@@ -298,11 +298,11 @@ Read about the commands and supported flags in the CLI reference documentation:
 @z
 
 @x
-- [`docker scout quickview`](../engine/reference/commandline/scout_compare.md)
-- [`docker scout cves`](../engine/reference/commandline/scout_compare.md)
-- [`docker scout compare`](../engine/reference/commandline/scout_compare.md)
+- [`docker scout quickview`](../reference/cli/docker/scout/compare.md)
+- [`docker scout cves`](../reference/cli/docker/scout/compare.md)
+- [`docker scout compare`](../reference/cli/docker/scout/compare.md)
 @y
-- [`docker scout quickview`](../engine/reference/commandline/scout_compare.md)
-- [`docker scout cves`](../engine/reference/commandline/scout_compare.md)
-- [`docker scout compare`](../engine/reference/commandline/scout_compare.md)
+- [`docker scout quickview`](../reference/cli/docker/scout/compare.md)
+- [`docker scout cves`](../reference/cli/docker/scout/compare.md)
+- [`docker scout compare`](../reference/cli/docker/scout/compare.md)
 @z

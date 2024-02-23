@@ -455,6 +455,7 @@ examples: |-
     Error removing signer from: example/unauthorized
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -463,6 +464,7 @@ swarm: false
     Error removing signer from: example/unauthorized
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

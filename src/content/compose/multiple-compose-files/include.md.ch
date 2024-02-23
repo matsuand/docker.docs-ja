@@ -18,11 +18,11 @@ title: Include
 @x
 > **Note**
 >
-> `include` is available in Docker Compose version 2.20 and later, and Docker Desktop version 4.22 and later. 
+> `include` is available in Docker Compose version 2.20.3 and later, and Docker Desktop version 4.22 and later. 
 @y
 > **Note**
 >
-> `include` is available in Docker Compose version 2.20 and later, and Docker Desktop version 4.22 and later. 
+> `include` is available in Docker Compose version 2.20.3 and later, and Docker Desktop version 4.22 and later. 
 @z
 
 @x

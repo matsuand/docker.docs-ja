@@ -504,6 +504,7 @@ examples: |-
     1
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -513,6 +514,7 @@ swarm: false
     1
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

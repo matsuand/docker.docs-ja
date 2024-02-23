@@ -24,13 +24,13 @@ aliases:
 @z
 
 @x
-> Note
+> **Note**
 >
-> Image Access Management is available to [Docker Business](../../subscription/details.md) customers only.
+> Image Access Management is available to [Docker Business](../../subscription/details.md#docker-business) customers only.
 @y
-> Note
+> **Note**
 >
-> Image Access Management is available to [Docker Business](../../subscription/details.md) customers only.
+> Image Access Management is available to [Docker Business](../../subscription/details.md#docker-business) customers only.
 @z
 
 @x

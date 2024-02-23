@@ -429,6 +429,7 @@ examples: |-
     top.3: busybox
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -440,6 +441,7 @@ swarm: true
     top.3: busybox
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

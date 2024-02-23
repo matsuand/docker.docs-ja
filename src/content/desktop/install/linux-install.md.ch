@@ -9,11 +9,6 @@ keywords: linux, docker linux install, docker linux, linux docker installation, 
   for linux, docker desktop for linux, installing docker on linux, docker download
   linux, how to install docker on linux, linux vs docker engine, switch docker contexts
 title: Install Docker Desktop on Linux
-aliases:
-- /desktop/linux/install/
-'yes': '![yes](/assets/images/green-check.svg){: .inline style="height: 14px; margin:
-  0 auto"}'
----
 @y
 ---
 description: Install Docker on Linux with ease using our step-by-step installation
@@ -21,12 +16,19 @@ description: Install Docker on Linux with ease using our step-by-step installati
 keywords: linux, docker linux install, docker linux, linux docker installation, docker
   for linux, docker desktop for linux, installing docker on linux, docker download
   linux, how to install docker on linux, linux vs docker engine, switch docker contexts
-title: Install Docker Desktop on Linux
-aliases:
-- /desktop/linux/install/
-'yes': '![yes](/assets/images/green-check.svg){: .inline style="height: 14px; margin:
-  0 auto"}'
----
+title: Linux への Docker Desktop のインストール
+@z
+
+@x
+> **Docker Desktop terms**
+>
+> Commercial use of Docker Desktop in larger enterprises (more than 250
+> employees OR more than $10 million USD in annual revenue) requires a [paid
+> subscription](https://www.docker.com/pricing/).
+@y
+> **Docker Desktop 契約条項**
+>
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
 @z
 
 @x
@@ -45,7 +47,7 @@ This page contains information about general system requirements, supported plat
 >For more information see [What is the difference between Docker Desktop for Linux and Docker Engine](../faqs/linuxfaqs.md#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine). 
 { .important } 
 @y
-> **Important**
+> **重要**
 >
 >Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
 >
@@ -70,7 +72,7 @@ Docker Desktop for Linux provides a user-friendly graphical interface that simpl
 @x
 #### Installing Docker Desktop and Docker Engine
 @y
-#### Installing Docker Desktop and Docker Engine
+#### Docker Desktop と Docker Engine のインストール {#installing-docker-desktop-and-docker-engine}
 @z
 
 @x
@@ -119,15 +121,7 @@ Use the following command to stop the Docker Engine service:
 Use the following command to stop the Docker Engine service:
 @z
 
-@x
-```console
-$ sudo systemctl stop docker docker.socket containerd
-```
-@y
-```console
-$ sudo systemctl stop docker docker.socket containerd
-```
-@z
+% snip command...
 
 @x
 Depending on your installation, the Docker Engine may be configured to automatically
@@ -139,15 +133,7 @@ start as a system service when your machine starts. Use the following command to
 disable the Docker Engine service, and to prevent it from starting automatically:
 @z
 
-@x
-```console
-$ sudo systemctl disable docker docker.socket containerd
-```
-@y
-```console
-$ sudo systemctl disable docker docker.socket containerd
-```
-@z
+% snip command...
 
 @x
 ### Switching between Docker Desktop and Docker Engine
@@ -189,21 +175,7 @@ Use the `docker context ls` command to view what contexts are available on your
 machine. The current context is indicated with an asterisk (`*`);
 @z
 
-@x
-```console
-$ docker context ls
-NAME            DESCRIPTION                               DOCKER ENDPOINT                                  ...
-default *       Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                      ...
-desktop-linux                                             unix:///home/<user>/.docker/desktop/docker.sock  ...        
-```
-@y
-```console
-$ docker context ls
-NAME            DESCRIPTION                               DOCKER ENDPOINT                                  ...
-default *       Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                      ...
-desktop-linux                                             unix:///home/<user>/.docker/desktop/docker.sock  ...        
-```
-@z
+% snip command...
 
 @x
 If you have both Docker Desktop and Docker Engine installed on the same machine,
@@ -217,19 +189,7 @@ and Docker Engine contexts. For example, use the "default" context to interact
 with the Docker Engine:
 @z
 
-@x
-```console
-$ docker context use default
-default
-Current context is now "default"
-```
-@y
-```console
-$ docker context use default
-default
-Current context is now "default"
-```
-@z
+% snip command...
 
 @x
 And use the `desktop-linux` context to interact with Docker Desktop:
@@ -237,19 +197,7 @@ And use the `desktop-linux` context to interact with Docker Desktop:
 And use the `desktop-linux` context to interact with Docker Desktop:
 @z
 
-@x
-```console
-$ docker context use desktop-linux
-desktop-linux
-Current context is now "desktop-linux"
-```
-@y
-```console
-$ docker context use desktop-linux
-desktop-linux
-Current context is now "desktop-linux"
-```
-@z
+% snip command...
 
 @x
 Refer to the [Docker Context documentation](../../engine/context/working-with-contexts.md) for more details.
@@ -371,15 +319,7 @@ The `kvm` module should load automatically if the host has virtualization suppor
 The `kvm` module should load automatically if the host has virtualization support. To load the module manually, run:
 @z
 
-@x
-```console
-$ modprobe kvm
-```
-@y
-```console
-$ modprobe kvm
-```
-@z
+% snip command...
 
 @x
 Depending on the processor of the host machine, the corresponding module must be loaded:
@@ -392,14 +332,14 @@ Depending on the processor of the host machine, the corresponding module must be
 $ modprobe kvm_intel  # Intel processors
 @y
 ```console
-$ modprobe kvm_intel  # Intel processors
+$ modprobe kvm_intel  # Intel プロセッサー
 @z
 
 @x
 $ modprobe kvm_amd    # AMD processors
 ```
 @y
-$ modprobe kvm_amd    # AMD processors
+$ modprobe kvm_amd    # AMD プロセッサー
 ```
 @z
 
@@ -409,15 +349,7 @@ If the above commands fail, you can view the diagnostics by running:
 If the above commands fail, you can view the diagnostics by running:
 @z
 
-@x
-```console
-$ kvm-ok
-```
-@y
-```console
-$ kvm-ok
-```
-@z
+% snip command...
 
 @x
 To check if the KVM modules are enabled, run:
@@ -425,23 +357,7 @@ To check if the KVM modules are enabled, run:
 To check if the KVM modules are enabled, run:
 @z
 
-@x
-```console
-$ lsmod | grep kvm
-kvm_amd               167936  0
-ccp                   126976  1 kvm_amd
-kvm                  1089536  1 kvm_amd
-irqbypass              16384  1 kvm
-```
-@y
-```console
-$ lsmod | grep kvm
-kvm_amd               167936  0
-ccp                   126976  1 kvm_amd
-kvm                  1089536  1 kvm_amd
-irqbypass              16384  1 kvm
-```
-@z
+% snip command...
 
 @x
 #### Set up KVM device user permissions
@@ -455,15 +371,7 @@ To check ownership of `/dev/kvm`, run :
 To check ownership of `/dev/kvm`, run :
 @z
 
-@x
-```console
-$ ls -al /dev/kvm
-```
-@y
-```console
-$ ls -al /dev/kvm
-```
-@z
+% snip command...
 
 @x
 Add your user to the kvm group in order to access the kvm device:
@@ -471,15 +379,7 @@ Add your user to the kvm group in order to access the kvm device:
 Add your user to the kvm group in order to access the kvm device:
 @z
 
-@x
-```console
-$ sudo usermod -aG kvm $USER
-```
-@y
-```console
-$ sudo usermod -aG kvm $USER
-```
-@z
+% snip command...
 
 @x
 Sign out and sign back in so that your group membership is re-evaluated.
@@ -491,20 +391,6 @@ Sign out and sign back in so that your group membership is re-evaluated.
 ## Generic installation steps
 @y
 ## Generic installation steps
-@z
-
-@x
-> **Docker Desktop terms**
->
-> Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
-@y
-> **Docker Desktop terms**
->
-> Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
 @z
 
 @x

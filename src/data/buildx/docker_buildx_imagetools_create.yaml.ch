@@ -274,9 +274,9 @@ examples: |-
 @z
 
 @x
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @y
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
 @z
 
 @x

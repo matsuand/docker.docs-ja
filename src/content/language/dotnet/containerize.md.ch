@@ -189,13 +189,13 @@ directory.
 
 @x
 To learn more about the files that `docker init` added, see the following:
- - [Dockerfile](../../engine/reference/builder.md)
- - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
+ - [Dockerfile](../../reference/dockerfile.md)
+ - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @y
 To learn more about the files that `docker init` added, see the following:
- - [Dockerfile](../../engine/reference/builder.md)
- - [.dockerignore](../../engine/reference/builder.md#dockerignore-file)
+ - [Dockerfile](../../reference/dockerfile.md)
+ - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @z
 
@@ -307,15 +307,15 @@ application using Docker.
 
 @x
 Related information:
- - [Dockerfile reference](../../engine/reference/builder.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
  - [Build with Docker guide](../../build/guide/index.md)
- - [.dockerignore file reference](../../engine/reference/builder.md#dockerignore-file)
+ - [.dockerignore file reference](../../reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](../../compose/_index.md)
 @y
 Related information:
- - [Dockerfile reference](../../engine/reference/builder.md)
+ - [Dockerfile reference](../../reference/dockerfile.md)
  - [Build with Docker guide](../../build/guide/index.md)
- - [.dockerignore file reference](../../engine/reference/builder.md#dockerignore-file)
+ - [.dockerignore file reference](../../reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](../../compose/_index.md)
 @z
 

@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Build a text summarization app
 keywords: nlp, natural language processing, text summarization, python, bert extractive summarizer
 description: Learn how to build and run a text summarization application using Python, Bert Extractive Summarizer, and Docker.
----
 @y
----
 title: Build a text summarization app
 keywords: nlp, natural language processing, text summarization, python, bert extractive summarizer
 description: Learn how to build and run a text summarization application using Python, Bert Extractive Summarizer, and Docker.
----
 @z
 
 @x
@@ -398,9 +394,9 @@ The sample application already contains a `Dockerfile`. Open the `Dockerfile` in
 @z
 
 @x
-The following steps explain each part of the `Dockerfile`. For more details, see the [Dockerfile reference](/engine/reference/builder/).
+The following steps explain each part of the `Dockerfile`. For more details, see the [Dockerfile reference](/reference/dockerfile/).
 @y
-The following steps explain each part of the `Dockerfile`. For more details, see the [Dockerfile reference](__SUBDIR__/engine/reference/builder/).
+The following steps explain each part of the `Dockerfile`. For more details, see the [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
 @z
 
 @x
@@ -706,9 +702,9 @@ To run the application using Docker:
 @z
 
 @x
-   For more details, see the [docker build CLI reference](/engine/reference/commandline/image_build/).
+   For more details, see the [docker build CLI reference](/reference/cli/docker/image/build/).
 @y
-   For more details, see the [docker build CLI reference](__SUBDIR__/engine/reference/commandline/image_build/).
+   For more details, see the [docker build CLI reference](__SUBDIR__/reference/cli/docker/image/build/).
 @z
 
 @x
@@ -788,9 +784,9 @@ To run the application using Docker:
 @z
 
 @x
-   For more details, see the [docker run CLI reference](/engine/reference/commandline/container_run/).
+   For more details, see the [docker run CLI reference](/reference/cli/docker/container/run/).
 @y
-   For more details, see the [docker run CLI reference](__SUBDIR__/engine/reference/commandline/container_run/).
+   For more details, see the [docker run CLI reference](__SUBDIR__/reference/cli/docker/container/run/).
 @z
 
 @x
@@ -876,14 +872,14 @@ Related information:
 @z
 
 @x
-* [Docker CLI reference](/engine/reference/commandline/docker/)
-* [Dockerfile reference](/engine/reference/builder/)
+* [Docker CLI reference](/reference/cli/docker/)
+* [Dockerfile reference](/reference/dockerfile/)
 * [Bert Extractive Summarizer](https://github.com/dmmiller612/bert-extractive-summarizer)
 * [PyTorch](https://pytorch.org/)
 * [Python documentation](https://docs.python.org/3/)
 @y
-* [Docker CLI reference](__SUBDIR__/engine/reference/commandline/docker/)
-* [Dockerfile reference](__SUBDIR__/engine/reference/builder/)
+* [Docker CLI reference](__SUBDIR__/reference/cli/docker/)
+* [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 * [Bert Extractive Summarizer](https://github.com/dmmiller612/bert-extractive-summarizer)
 * [PyTorch](https://pytorch.org/)
 * [Python documentation](https://docs.python.org/3/)

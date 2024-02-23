@@ -255,6 +255,7 @@ examples: |-
     2017-03-24 08:15:09.735271783 +0000 UTC
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false
@@ -264,6 +265,7 @@ swarm: true
     2017-03-24 08:15:09.735271783 +0000 UTC
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false

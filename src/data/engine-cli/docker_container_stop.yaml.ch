@@ -51,6 +51,7 @@ examples: |-
     $ docker stop my_container
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -105,6 +106,7 @@ examples: |-
     $ docker stop my_container
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

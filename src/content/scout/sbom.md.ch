@@ -133,10 +133,10 @@ $ docker scout sbom --format list alpine
 
 @x
 For more information about the `docker scout sbom` command, refer to the [CLI
-reference](../engine/reference/commandline/scout_sbom.md).
+reference](../reference/cli/docker/scout/sbom.md).
 @y
 For more information about the `docker scout sbom` command, refer to the [CLI
-reference](../engine/reference/commandline/scout_sbom.md).
+reference](../reference/cli/docker/scout/sbom.md).
 @z
 
 @x

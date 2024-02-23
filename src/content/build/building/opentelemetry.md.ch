@@ -74,9 +74,9 @@ $ docker buildx create --use \
 @z
 
 @x
-Boot and [inspect `mybuilder`](../../engine/reference/commandline/buildx_inspect.md):
+Boot and [inspect `mybuilder`](../../reference/cli/docker/buildx/inspect.md):
 @y
-Boot and [inspect `mybuilder`](../../engine/reference/commandline/buildx_inspect.md):
+Boot and [inspect `mybuilder`](../../reference/cli/docker/buildx/inspect.md):
 @z
 
 @x

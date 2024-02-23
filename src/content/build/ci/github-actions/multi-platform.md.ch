@@ -126,11 +126,11 @@ take a long time depending on the number of platforms and your Dockerfile.
 @x
 To solve this issue you can use a matrix strategy to distribute the build for
 each platform across multiple runners and create manifest list using the
-[`buildx imagetools create` command](../../../engine/reference/commandline/buildx_imagetools_create.md).
+[`buildx imagetools create` command](../../../reference/cli/docker/buildx/imagetools/create.md).
 @y
 To solve this issue you can use a matrix strategy to distribute the build for
 each platform across multiple runners and create manifest list using the
-[`buildx imagetools create` command](../../../engine/reference/commandline/buildx_imagetools_create.md).
+[`buildx imagetools create` command](../../../reference/cli/docker/buildx/imagetools/create.md).
 @z
 
 @x

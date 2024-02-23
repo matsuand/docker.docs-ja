@@ -4,7 +4,7 @@
 @x
 command: docker compose logs
 short: View output from containers
-long: Displays log output from services.
+long: Displays log output from services
 usage: docker compose logs [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -13,7 +13,7 @@ options:
       shorthand: f
       value_type: bool
       default_value: "false"
-      description: Follow log output.
+      description: Follow log output
       deprecated: false
       hidden: false
       experimental: false
@@ -33,7 +33,7 @@ options:
     - option: no-color
       value_type: bool
       default_value: "false"
-      description: Produce monochrome output.
+      description: Produce monochrome output
       deprecated: false
       hidden: false
       experimental: false
@@ -43,7 +43,7 @@ options:
     - option: no-log-prefix
       value_type: bool
       default_value: "false"
-      description: Don't print prefix in logs.
+      description: Don't print prefix in logs
       deprecated: false
       hidden: false
       experimental: false
@@ -65,7 +65,7 @@ options:
       value_type: string
       default_value: all
       description: |
-        Number of lines to show from the end of the logs for each container.
+        Number of lines to show from the end of the logs for each container
       deprecated: false
       hidden: false
       experimental: false
@@ -76,7 +76,7 @@ options:
       shorthand: t
       value_type: bool
       default_value: "false"
-      description: Show timestamps.
+      description: Show timestamps
       deprecated: false
       hidden: false
       experimental: false
@@ -113,7 +113,7 @@ swarm: false
 @y
 command: docker compose logs
 short: View output from containers
-long: Displays log output from services.
+long: Displays log output from services
 usage: docker compose logs [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
@@ -122,7 +122,7 @@ options:
       shorthand: f
       value_type: bool
       default_value: "false"
-      description: Follow log output.
+      description: Follow log output
       deprecated: false
       hidden: false
       experimental: false
@@ -142,7 +142,7 @@ options:
     - option: no-color
       value_type: bool
       default_value: "false"
-      description: Produce monochrome output.
+      description: Produce monochrome output
       deprecated: false
       hidden: false
       experimental: false
@@ -152,7 +152,7 @@ options:
     - option: no-log-prefix
       value_type: bool
       default_value: "false"
-      description: Don't print prefix in logs.
+      description: Don't print prefix in logs
       deprecated: false
       hidden: false
       experimental: false
@@ -174,7 +174,7 @@ options:
       value_type: string
       default_value: all
       description: |
-        Number of lines to show from the end of the logs for each container.
+        Number of lines to show from the end of the logs for each container
       deprecated: false
       hidden: false
       experimental: false
@@ -185,7 +185,7 @@ options:
       shorthand: t
       value_type: bool
       default_value: "false"
-      description: Show timestamps.
+      description: Show timestamps
       deprecated: false
       hidden: false
       experimental: false

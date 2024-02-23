@@ -132,6 +132,7 @@ examples: |-
     alice.pub
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -145,6 +146,7 @@ swarm: false
     alice.pub
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

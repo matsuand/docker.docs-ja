@@ -45,11 +45,11 @@ which runs the BuildKit daemon in a container.
 
 @x
 Use the
-[`docker buildx create`](../../engine/reference/commandline/buildx_create.md)
+[`docker buildx create`](../../reference/cli/docker/buildx/create.md)
 command to create a builder.
 @y
 Use the
-[`docker buildx create`](../../engine/reference/commandline/buildx_create.md)
+[`docker buildx create`](../../reference/cli/docker/buildx/create.md)
 command to create a builder.
 @z
 
@@ -231,6 +231,64 @@ acekq89snc7j6im1rjdizvsg1*                true        8.192kB     37 seconds ago
 Reclaimable:  2.01GB
 Total:        2.01GB
 ```
+@z
+
+@x
+## Remove a builder
+@y
+## Remove a builder
+@z
+
+@x
+Use the
+[`docker buildx remove`](../../reference/cli/docker/buildx/create.md)
+command to remove a builder.
+@y
+Use the
+[`docker buildx remove`](../../reference/cli/docker/buildx/create.md)
+command to remove a builder.
+@z
+
+@x
+```console
+$ docker buildx rm <builder-name>
+```
+@y
+```console
+$ docker buildx rm <builder-name>
+```
+@z
+
+@x
+If you remove your currently selected builder,
+the default `docker` builder is automatically selected.
+You can't remove the default builder.
+@y
+If you remove your currently selected builder,
+the default `docker` builder is automatically selected.
+You can't remove the default builder.
+@z
+
+@x
+Local build cache for the builder is also removed.
+@y
+Local build cache for the builder is also removed.
+@z
+
+@x
+### Removing remote builders
+@y
+### Removing remote builders
+@z
+
+@x
+Removing a remote builder doesn't affect the remote build cache.
+It also doesn't stop the remote BuildKit daemon.
+It only removes your connection to the builder.
+@y
+Removing a remote builder doesn't affect the remote build cache.
+It also doesn't stop the remote BuildKit daemon.
+It only removes your connection to the builder.
 @z
 
 @x

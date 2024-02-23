@@ -53,7 +53,8 @@ are relative to the base Compose file. This is required because extend files
 need not be valid Compose files. Extend files can contain small fragments of
 configuration. Tracking which fragment of a service is relative to which path is
 difficult and confusing, so to keep paths easier to understand, all paths must
-be defined relative to the base file. { .important }
+be defined relative to the base file. 
+{ .important }
 @y
 > **Important**
 >
@@ -62,7 +63,8 @@ are relative to the base Compose file. This is required because extend files
 need not be valid Compose files. Extend files can contain small fragments of
 configuration. Tracking which fragment of a service is relative to which path is
 difficult and confusing, so to keep paths easier to understand, all paths must
-be defined relative to the base file. { .important }
+be defined relative to the base file. 
+{ .important }
 @z
 
 @x
@@ -72,11 +74,15 @@ be defined relative to the base file. { .important }
 @z
 
 @x
-When defining any service in your `compose.yaml` file, you can declare that you
-are extending another service:
+### Extending services from another file
 @y
-When defining any service in your `compose.yaml` file, you can declare that you
-are extending another service:
+### Extending services from another file
+@z
+
+@x
+Take the following example:
+@y
+Take the following example:
 @z
 
 @x
@@ -98,12 +104,18 @@ services:
 @z
 
 @x
-This instructs Compose to re-use the configuration for the `webapp` service
-defined in the `common-services.yaml` file. Suppose that `common-services.yaml`
+This instructs Compose to re-use only the properties of the `webapp` service
+defined in the `common-services.yaml` file. The `webapp` service itself is not part of the final project.
+@y
+This instructs Compose to re-use only the properties of the `webapp` service
+defined in the `common-services.yaml` file. The `webapp` service itself is not part of the final project.
+@z
+
+@x
+If `common-services.yaml`
 looks like this:
 @y
-This instructs Compose to re-use the configuration for the `webapp` service
-defined in the `common-services.yaml` file. Suppose that `common-services.yaml`
+If `common-services.yaml`
 looks like this:
 @z
 
@@ -117,6 +129,9 @@ services:
     volumes:
       - "/data"
 ```
+You get exactly the same result as if you wrote
+`docker-compose.yml` with the same `build`, `ports` and `volumes` configuration
+values defined directly under `web`.
 @y
 ```yaml
 services:
@@ -127,16 +142,91 @@ services:
     volumes:
       - "/data"
 ```
+You get exactly the same result as if you wrote
+`docker-compose.yml` with the same `build`, `ports` and `volumes` configuration
+values defined directly under `web`.
 @z
 
 @x
-In this case, you get exactly the same result as if you wrote
-`docker-compose.yml` with the same `build`, `ports` and `volumes` configuration
-values defined directly under `web`.
+To include the service `webapp` in the final project when extending services from another file, you need to explicitly include both services in your current Compose file. For example (note this is a non-normative example):
 @y
-In this case, you get exactly the same result as if you wrote
-`docker-compose.yml` with the same `build`, `ports` and `volumes` configuration
-values defined directly under `web`.
+To include the service `webapp` in the final project when extending services from another file, you need to explicitly include both services in your current Compose file. For example (note this is a non-normative example):
+@z
+
+@x
+```yaml
+services:
+  web:
+    build: alpine
+    command: echo
+    extends:
+      file: common-services.yml
+      service: webapp
+  webapp:
+    extends:
+      file: common-services.yml
+      service: webapp
+```
+@y
+```yaml
+services:
+  web:
+    build: alpine
+    command: echo
+    extends:
+      file: common-services.yml
+      service: webapp
+  webapp:
+    extends:
+      file: common-services.yml
+      service: webapp
+```
+@z
+
+@x
+Alternatively, you can use [include](include.md). 
+@y
+Alternatively, you can use [include](include.md). 
+@z
+
+@x
+### Extending services within the same file 
+@y
+### Extending services within the same file 
+@z
+
+@x
+If you define services in the same Compose file and extend one service from another, both the original service and the extended service will be part of your final configuration. For example:
+@y
+If you define services in the same Compose file and extend one service from another, both the original service and the extended service will be part of your final configuration. For example:
+@z
+
+@x
+```yaml 
+services:
+  web:
+    build: alpine
+    extends: webapp
+  webapp:
+    environment:
+      - DEBUG=1
+```
+@y
+```yaml 
+services:
+  web:
+    build: alpine
+    extends: webapp
+  webapp:
+    environment:
+      - DEBUG=1
+```
+@z
+
+@x
+### Extending services within the same file and from another file
+@y
+### Extending services within the same file and from another file
 @z
 
 @x
@@ -178,44 +268,6 @@ services:
   important_web:
     extends: web
     cpu_shares: 10
-```
-@z
-
-@x
-You can also write other services and link your `web` service to them:
-@y
-You can also write other services and link your `web` service to them:
-@z
-
-@x
-```yaml
-services:
-  web:
-    extends:
-      file: common-services.yml
-      service: webapp
-    environment:
-      - DEBUG=1
-    cpu_shares: 5
-    depends_on:
-      - db
-  db:
-    image: postgres
-```
-@y
-```yaml
-services:
-  web:
-    extends:
-      file: common-services.yml
-      service: webapp
-    environment:
-      - DEBUG=1
-    cpu_shares: 5
-    depends_on:
-      - db
-  db:
-    image: postgres
 ```
 @z
 

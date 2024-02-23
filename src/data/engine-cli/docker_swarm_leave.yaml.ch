@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker swarm leave
 short: Leave the swarm
@@ -132,9 +134,10 @@ examples: |-
 @x
     The node will still appear in the node list, and marked as `down`. It no longer
     affects swarm operation, but a long list of `down` nodes can clutter the node
-    list. To remove an inactive node from the list, use the [`node rm`](node_rm.md)
+    list. To remove an inactive node from the list, use the [`node rm`](/reference/cli/docker/node/rm/)
     command.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -143,9 +146,10 @@ swarm: true
 @y
     The node will still appear in the node list, and marked as `down`. It no longer
     affects swarm operation, but a long list of `down` nodes can clutter the node
-    list. To remove an inactive node from the list, use the [`node rm`](node_rm.md)
+    list. To remove an inactive node from the list, use the [`node rm`](__SUBDIR__/reference/cli/docker/node/rm/)
     command.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

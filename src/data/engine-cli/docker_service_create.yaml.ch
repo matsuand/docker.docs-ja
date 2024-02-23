@@ -22,6 +22,772 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+usage: docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]
+pname: docker service
+plink: docker_service.yaml
+options:
+    - option: cap-add
+      value_type: list
+      description: Add Linux capabilities
+      deprecated: false
+      hidden: false
+      min_api_version: "1.41"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: cap-drop
+      value_type: list
+      description: Drop Linux capabilities
+      deprecated: false
+      hidden: false
+      min_api_version: "1.41"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: config
+      value_type: config
+      description: Specify configurations to expose to the service
+      details_url: '#config'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: constraint
+      value_type: list
+      description: Placement constraints
+      details_url: '#constraint'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: container-label
+      value_type: list
+      description: Container labels
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: credential-spec
+      value_type: credential-spec
+      description: Credential spec for managed service account (Windows only)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: detach
+      shorthand: d
+      value_type: bool
+      default_value: "false"
+      description: Exit immediately instead of waiting for the service to converge
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: dns
+      value_type: list
+      description: Set custom DNS servers
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: dns-option
+      value_type: list
+      description: Set DNS options
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: dns-search
+      value_type: list
+      description: Set custom DNS search domains
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: endpoint-mode
+      value_type: string
+      default_value: vip
+      description: Endpoint mode (vip or dnsrr)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: entrypoint
+      value_type: command
+      description: Overwrite the default ENTRYPOINT of the image
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: env
+      shorthand: e
+      value_type: list
+      description: Set environment variables
+      details_url: '#env'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: env-file
+      value_type: list
+      description: Read in a file of environment variables
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: generic-resource
+      value_type: list
+      description: User defined resources
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: group
+      value_type: list
+      description: Set one or more supplementary user groups for the container
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: health-cmd
+      value_type: string
+      description: Command to run to check health
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: health-interval
+      value_type: duration
+      description: Time between running the check (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: health-retries
+      value_type: int
+      default_value: "0"
+      description: Consecutive failures needed to report unhealthy
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: health-start-interval
+      value_type: duration
+      description: Time between running the check during the start period (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.44"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: health-start-period
+      value_type: duration
+      description: |
+        Start period for the container to initialize before counting retries towards unstable (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: health-timeout
+      value_type: duration
+      description: Maximum time to allow one check to run (ms|s|m|h)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: host
+      value_type: list
+      description: Set one or more custom host-to-IP mappings (host:ip)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: hostname
+      value_type: string
+      description: Container hostname
+      details_url: '#hostname'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: init
+      value_type: bool
+      default_value: "false"
+      description: |
+        Use an init inside each service container to forward signals and reap processes
+      deprecated: false
+      hidden: false
+      min_api_version: "1.37"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: isolation
+      value_type: string
+      description: Service container isolation mode
+      details_url: '#isolation'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.35"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: label
+      shorthand: l
+      value_type: list
+      description: Service labels
+      details_url: '#label'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: limit-cpu
+      value_type: decimal
+      description: Limit CPUs
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: limit-memory
+      value_type: bytes
+      default_value: "0"
+      description: Limit Memory
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: limit-pids
+      value_type: int64
+      default_value: "0"
+      description: Limit maximum number of processes (default 0 = unlimited)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.41"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: log-driver
+      value_type: string
+      description: Logging driver for service
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: log-opt
+      value_type: list
+      description: Logging driver options
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: max-concurrent
+      value_type: uint
+      description: |
+        Number of job tasks to run concurrently (default equal to --replicas)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.41"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: mode
+      value_type: string
+      default_value: replicated
+      description: |
+        Service mode (`replicated`, `global`, `replicated-job`, `global-job`)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: mount
+      value_type: mount
+      description: Attach a filesystem mount to the service
+      details_url: '#mount'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: name
+      value_type: string
+      description: Service name
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: network
+      value_type: network
+      description: Network attachments
+      details_url: '#network'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: no-healthcheck
+      value_type: bool
+      default_value: "false"
+      description: Disable any container-specified HEALTHCHECK
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: no-resolve-image
+      value_type: bool
+      default_value: "false"
+      description: |
+        Do not query the registry to resolve image digest and supported platforms
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: placement-pref
+      value_type: pref
+      description: Add a placement preference
+      details_url: '#placement-pref'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: publish
+      shorthand: p
+      value_type: port
+      description: Publish a port as a node port
+      details_url: '#publish'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: quiet
+      shorthand: q
+      value_type: bool
+      default_value: "false"
+      description: Suppress progress output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: read-only
+      value_type: bool
+      default_value: "false"
+      description: Mount the container's root filesystem as read only
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: replicas
+      value_type: uint
+      description: Number of tasks
+      details_url: '#replicas'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: replicas-max-per-node
+      value_type: uint64
+      default_value: "0"
+      description: Maximum number of tasks per node (default 0 = unlimited)
+      details_url: '#replicas-max-per-node'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.40"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: reserve-cpu
+      value_type: decimal
+      description: Reserve CPUs
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: reserve-memory
+      value_type: bytes
+      default_value: "0"
+      description: Reserve Memory
+      details_url: '#reserve-memory'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: restart-condition
+      value_type: string
+      description: |
+        Restart when condition is met (`none`, `on-failure`, `any`) (default `any`)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: restart-delay
+      value_type: duration
+      description: Delay between restart attempts (ns|us|ms|s|m|h) (default 5s)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: restart-max-attempts
+      value_type: uint
+      description: Maximum number of restarts before giving up
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: restart-window
+      value_type: duration
+      description: Window used to evaluate the restart policy (ns|us|ms|s|m|h)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: rollback-delay
+      value_type: duration
+      default_value: 0s
+      description: Delay between task rollbacks (ns|us|ms|s|m|h) (default 0s)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: rollback-failure-action
+      value_type: string
+      description: Action on rollback failure (`pause`, `continue`) (default `pause`)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: rollback-max-failure-ratio
+      value_type: float
+      default_value: "0"
+      description: Failure rate to tolerate during a rollback (default 0)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: rollback-monitor
+      value_type: duration
+      default_value: 0s
+      description: |
+        Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h) (default 5s)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: rollback-order
+      value_type: string
+      description: |
+        Rollback order (`start-first`, `stop-first`) (default `stop-first`)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: rollback-parallelism
+      value_type: uint64
+      default_value: "1"
+      description: |
+        Maximum number of tasks rolled back simultaneously (0 to roll back all at once)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: secret
+      value_type: secret
+      description: Specify secrets to expose to the service
+      details_url: '#secret'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: stop-grace-period
+      value_type: duration
+      description: |
+        Time to wait before force killing a container (ns|us|ms|s|m|h) (default 10s)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: stop-signal
+      value_type: string
+      description: Signal to stop the container
+      deprecated: false
+      hidden: false
+      min_api_version: "1.28"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: sysctl
+      value_type: list
+      description: Sysctl options
+      deprecated: false
+      hidden: false
+      min_api_version: "1.40"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: tty
+      shorthand: t
+      value_type: bool
+      default_value: "false"
+      description: Allocate a pseudo-TTY
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ulimit
+      value_type: ulimit
+      default_value: '[]'
+      description: Ulimit options
+      deprecated: false
+      hidden: false
+      min_api_version: "1.41"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: update-delay
+      value_type: duration
+      default_value: 0s
+      description: Delay between updates (ns|us|ms|s|m|h) (default 0s)
+      details_url: '#update-delay'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: update-failure-action
+      value_type: string
+      description: |
+        Action on update failure (`pause`, `continue`, `rollback`) (default `pause`)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: update-max-failure-ratio
+      value_type: float
+      default_value: "0"
+      description: Failure rate to tolerate during an update (default 0)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: update-monitor
+      value_type: duration
+      default_value: 0s
+      description: |
+        Duration after each task update to monitor for failure (ns|us|ms|s|m|h) (default 5s)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: update-order
+      value_type: string
+      description: Update order (`start-first`, `stop-first`) (default `stop-first`)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: update-parallelism
+      value_type: uint64
+      default_value: "1"
+      description: |
+        Maximum number of tasks updated simultaneously (0 to update all at once)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: user
+      shorthand: u
+      value_type: string
+      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: with-registry-auth
+      value_type: bool
+      default_value: "false"
+      description: Send registry authentication details to swarm agents
+      details_url: '#with-registry-auth'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: workdir
+      shorthand: w
+      value_type: string
+      description: Working directory inside the container
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
+      description: Print usage
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ### Create a service
 @y
     > **Note**
     >
@@ -29,19 +795,9 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
-@z
-
-@x
 usage: docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]
 pname: docker service
 plink: docker_service.yaml
-@y
-usage: docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]
-pname: docker service
-plink: docker_service.yaml
-@z
-
-@x
 options:
     - option: cap-add
       value_type: list
@@ -53,21 +809,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-options:
-    - option: cap-add
-      value_type: list
-      description: Add Linux capabilities
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: cap-drop
       value_type: list
       description: Drop Linux capabilities
@@ -78,20 +819,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: cap-drop
-      value_type: list
-      description: Drop Linux capabilities
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: config
       value_type: config
       description: Specify configurations to expose to the service
@@ -103,21 +830,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: config
-      value_type: config
-      description: Specify configurations to expose to the service
-      details_url: '#config'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: constraint
       value_type: list
       description: Placement constraints
@@ -128,20 +840,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: constraint
-      value_type: list
-      description: Placement constraints
-      details_url: '#constraint'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: container-label
       value_type: list
       description: Container labels
@@ -151,19 +849,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: container-label
-      value_type: list
-      description: Container labels
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: credential-spec
       value_type: credential-spec
       description: Credential spec for managed service account (Windows only)
@@ -174,20 +859,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: credential-spec
-      value_type: credential-spec
-      description: Credential spec for managed service account (Windows only)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: detach
       shorthand: d
       value_type: bool
@@ -200,22 +871,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: Exit immediately instead of waiting for the service to converge
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: dns
       value_type: list
       description: Set custom DNS servers
@@ -226,20 +881,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: dns
-      value_type: list
-      description: Set custom DNS servers
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: dns-option
       value_type: list
       description: Set DNS options
@@ -250,20 +891,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: dns-option
-      value_type: list
-      description: Set DNS options
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: dns-search
       value_type: list
       description: Set custom DNS search domains
@@ -274,20 +901,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: dns-search
-      value_type: list
-      description: Set custom DNS search domains
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: endpoint-mode
       value_type: string
       default_value: vip
@@ -298,20 +911,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: endpoint-mode
-      value_type: string
-      default_value: vip
-      description: Endpoint mode (vip or dnsrr)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: entrypoint
       value_type: command
       description: Overwrite the default ENTRYPOINT of the image
@@ -321,19 +920,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: entrypoint
-      value_type: command
-      description: Overwrite the default ENTRYPOINT of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: env
       shorthand: e
       value_type: list
@@ -345,21 +931,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: env
-      shorthand: e
-      value_type: list
-      description: Set environment variables
-      details_url: '#env'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: env-file
       value_type: list
       description: Read in a file of environment variables
@@ -369,19 +940,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: env-file
-      value_type: list
-      description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: generic-resource
       value_type: list
       description: User defined resources
@@ -391,19 +949,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: generic-resource
-      value_type: list
-      description: User defined resources
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: group
       value_type: list
       description: Set one or more supplementary user groups for the container
@@ -414,20 +959,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: group
-      value_type: list
-      description: Set one or more supplementary user groups for the container
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: health-cmd
       value_type: string
       description: Command to run to check health
@@ -438,20 +969,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: health-cmd
-      value_type: string
-      description: Command to run to check health
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: health-interval
       value_type: duration
       description: Time between running the check (ms|s|m|h)
@@ -462,20 +979,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: health-interval
-      value_type: duration
-      description: Time between running the check (ms|s|m|h)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: health-retries
       value_type: int
       default_value: "0"
@@ -487,21 +990,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: health-retries
-      value_type: int
-      default_value: "0"
-      description: Consecutive failures needed to report unhealthy
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: health-start-interval
       value_type: duration
       description: Time between running the check during the start period (ms|s|m|h)
@@ -512,20 +1000,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: health-start-interval
-      value_type: duration
-      description: Time between running the check during the start period (ms|s|m|h)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.44"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: health-start-period
       value_type: duration
       description: |
@@ -537,21 +1011,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: health-start-period
-      value_type: duration
-      description: |
-        Start period for the container to initialize before counting retries towards unstable (ms|s|m|h)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: health-timeout
       value_type: duration
       description: Maximum time to allow one check to run (ms|s|m|h)
@@ -562,20 +1021,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: health-timeout
-      value_type: duration
-      description: Maximum time to allow one check to run (ms|s|m|h)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: host
       value_type: list
       description: Set one or more custom host-to-IP mappings (host:ip)
@@ -586,20 +1031,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: host
-      value_type: list
-      description: Set one or more custom host-to-IP mappings (host:ip)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: hostname
       value_type: string
       description: Container hostname
@@ -611,21 +1042,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: hostname
-      value_type: string
-      description: Container hostname
-      details_url: '#hostname'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: init
       value_type: bool
       default_value: "false"
@@ -638,22 +1054,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: init
-      value_type: bool
-      default_value: "false"
-      description: |
-        Use an init inside each service container to forward signals and reap processes
-      deprecated: false
-      hidden: false
-      min_api_version: "1.37"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: isolation
       value_type: string
       description: Service container isolation mode
@@ -665,21 +1065,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: isolation
-      value_type: string
-      description: Service container isolation mode
-      details_url: '#isolation'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.35"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: label
       shorthand: l
       value_type: list
@@ -691,21 +1076,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: label
-      shorthand: l
-      value_type: list
-      description: Service labels
-      details_url: '#label'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: limit-cpu
       value_type: decimal
       description: Limit CPUs
@@ -715,19 +1085,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: limit-cpu
-      value_type: decimal
-      description: Limit CPUs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: limit-memory
       value_type: bytes
       default_value: "0"
@@ -738,20 +1095,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: limit-memory
-      value_type: bytes
-      default_value: "0"
-      description: Limit Memory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: limit-pids
       value_type: int64
       default_value: "0"
@@ -763,21 +1106,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: limit-pids
-      value_type: int64
-      default_value: "0"
-      description: Limit maximum number of processes (default 0 = unlimited)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: log-driver
       value_type: string
       description: Logging driver for service
@@ -787,19 +1115,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: log-driver
-      value_type: string
-      description: Logging driver for service
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: log-opt
       value_type: list
       description: Logging driver options
@@ -809,19 +1124,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: log-opt
-      value_type: list
-      description: Logging driver options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: max-concurrent
       value_type: uint
       description: |
@@ -833,21 +1135,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: max-concurrent
-      value_type: uint
-      description: |
-        Number of job tasks to run concurrently (default equal to --replicas)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: mode
       value_type: string
       default_value: replicated
@@ -859,21 +1146,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: mode
-      value_type: string
-      default_value: replicated
-      description: |
-        Service mode (`replicated`, `global`, `replicated-job`, `global-job`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: mount
       value_type: mount
       description: Attach a filesystem mount to the service
@@ -884,20 +1156,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: mount
-      value_type: mount
-      description: Attach a filesystem mount to the service
-      details_url: '#mount'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: name
       value_type: string
       description: Service name
@@ -907,19 +1165,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: name
-      value_type: string
-      description: Service name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: network
       value_type: network
       description: Network attachments
@@ -930,20 +1175,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: network
-      value_type: network
-      description: Network attachments
-      details_url: '#network'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: no-healthcheck
       value_type: bool
       default_value: "false"
@@ -955,21 +1186,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: no-healthcheck
-      value_type: bool
-      default_value: "false"
-      description: Disable any container-specified HEALTHCHECK
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: no-resolve-image
       value_type: bool
       default_value: "false"
@@ -982,22 +1198,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: no-resolve-image
-      value_type: bool
-      default_value: "false"
-      description: |
-        Do not query the registry to resolve image digest and supported platforms
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: placement-pref
       value_type: pref
       description: Add a placement preference
@@ -1009,21 +1209,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: placement-pref
-      value_type: pref
-      description: Add a placement preference
-      details_url: '#placement-pref'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: publish
       shorthand: p
       value_type: port
@@ -1035,21 +1220,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: publish
-      shorthand: p
-      value_type: port
-      description: Publish a port as a node port
-      details_url: '#publish'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: quiet
       shorthand: q
       value_type: bool
@@ -1061,21 +1231,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress progress output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: read-only
       value_type: bool
       default_value: "false"
@@ -1087,21 +1242,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: read-only
-      value_type: bool
-      default_value: "false"
-      description: Mount the container's root filesystem as read only
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: replicas
       value_type: uint
       description: Number of tasks
@@ -1112,20 +1252,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: replicas
-      value_type: uint
-      description: Number of tasks
-      details_url: '#replicas'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: replicas-max-per-node
       value_type: uint64
       default_value: "0"
@@ -1138,22 +1264,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: replicas-max-per-node
-      value_type: uint64
-      default_value: "0"
-      description: Maximum number of tasks per node (default 0 = unlimited)
-      details_url: '#replicas-max-per-node'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: reserve-cpu
       value_type: decimal
       description: Reserve CPUs
@@ -1163,19 +1273,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: reserve-cpu
-      value_type: decimal
-      description: Reserve CPUs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: reserve-memory
       value_type: bytes
       default_value: "0"
@@ -1187,21 +1284,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: reserve-memory
-      value_type: bytes
-      default_value: "0"
-      description: Reserve Memory
-      details_url: '#reserve-memory'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: restart-condition
       value_type: string
       description: |
@@ -1212,20 +1294,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: restart-condition
-      value_type: string
-      description: |
-        Restart when condition is met (`none`, `on-failure`, `any`) (default `any`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: restart-delay
       value_type: duration
       description: Delay between restart attempts (ns|us|ms|s|m|h) (default 5s)
@@ -1235,19 +1303,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: restart-delay
-      value_type: duration
-      description: Delay between restart attempts (ns|us|ms|s|m|h) (default 5s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: restart-max-attempts
       value_type: uint
       description: Maximum number of restarts before giving up
@@ -1257,19 +1312,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: restart-max-attempts
-      value_type: uint
-      description: Maximum number of restarts before giving up
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
     - option: restart-window
       value_type: duration
       description: Window used to evaluate the restart policy (ns|us|ms|s|m|h)
@@ -1279,260 +1321,6 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
-@y
-    - option: restart-window
-      value_type: duration
-      description: Window used to evaluate the restart policy (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-@z
-
-@x
-    - option: rollback-delay
-      value_type: duration
-      default_value: 0s
-      description: Delay between task rollbacks (ns|us|ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rollback-failure-action
-      value_type: string
-      description: Action on rollback failure (`pause`, `continue`) (default `pause`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rollback-max-failure-ratio
-      value_type: float
-      default_value: "0"
-      description: Failure rate to tolerate during a rollback (default 0)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rollback-monitor
-      value_type: duration
-      default_value: 0s
-      description: |
-        Duration after each task rollback to monitor for failure (ns|us|ms|s|m|h) (default 5s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rollback-order
-      value_type: string
-      description: |
-        Rollback order (`start-first`, `stop-first`) (default `stop-first`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rollback-parallelism
-      value_type: uint64
-      default_value: "1"
-      description: |
-        Maximum number of tasks rolled back simultaneously (0 to roll back all at once)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: secret
-      value_type: secret
-      description: Specify secrets to expose to the service
-      details_url: '#secret'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: stop-grace-period
-      value_type: duration
-      description: |
-        Time to wait before force killing a container (ns|us|ms|s|m|h) (default 10s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: stop-signal
-      value_type: string
-      description: Signal to stop the container
-      deprecated: false
-      hidden: false
-      min_api_version: "1.28"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sysctl
-      value_type: list
-      description: Sysctl options
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
-      description: Ulimit options
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: update-delay
-      value_type: duration
-      default_value: 0s
-      description: Delay between updates (ns|us|ms|s|m|h) (default 0s)
-      details_url: '#update-delay'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: update-failure-action
-      value_type: string
-      description: |
-        Action on update failure (`pause`, `continue`, `rollback`) (default `pause`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: update-max-failure-ratio
-      value_type: float
-      default_value: "0"
-      description: Failure rate to tolerate during an update (default 0)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: update-monitor
-      value_type: duration
-      default_value: 0s
-      description: |
-        Duration after each task update to monitor for failure (ns|us|ms|s|m|h) (default 5s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: update-order
-      value_type: string
-      description: Update order (`start-first`, `stop-first`) (default `stop-first`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: update-parallelism
-      value_type: uint64
-      default_value: "1"
-      description: |
-        Maximum number of tasks updated simultaneously (0 to update all at once)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: with-registry-auth
-      value_type: bool
-      default_value: "false"
-      description: Send registry authentication details to swarm agents
-      details_url: '#with-registry-auth'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Create a service
-@y
     - option: rollback-delay
       value_type: duration
       default_value: 0s
@@ -1971,10 +1759,10 @@ examples: |-
 
 @x
     Use the `--secret` flag to give a container access to a
-    [secret](secret_create.md).
+    [secret](/reference/cli/docker/secret/create/).
 @y
     Use the `--secret` flag to give a container access to a
-    [secret](secret_create.md).
+    [secret](__SUBDIR__/reference/cli/docker/secret/create/).
 @z
 
 @x
@@ -2055,10 +1843,10 @@ examples: |-
 
 @x
     Use the `--config` flag to give a container access to a
-    [config](config_create.md).
+    [config](/reference/cli/docker/config/create/).
 @y
     Use the `--config` flag to give a container access to a
-    [config](config_create.md).
+    [config](__SUBDIR__/reference/cli/docker/config/create/).
 @z
 
 @x
@@ -2148,12 +1936,12 @@ examples: |-
 @z
 
 @x
-    When you run a [service update](service_update.md), the scheduler updates a
+    When you run a [service update](/reference/cli/docker/service/update/), the scheduler updates a
     maximum of 2 tasks at a time, with `10s` between updates. For more information,
     refer to the [rolling updates
     tutorial](/engine/swarm/swarm-tutorial/rolling-update/).
 @y
-    When you run a [service update](service_update.md), the scheduler updates a
+    When you run a [service update](__SUBDIR__/reference/cli/docker/service/update/), the scheduler updates a
     maximum of 2 tasks at a time, with `10s` between updates. For more information,
     refer to the [rolling updates
     tutorial](__SUBDIR__/engine/swarm/swarm-tutorial/rolling-update/).
@@ -2394,7 +2182,7 @@ examples: |-
         <td>
           <p>The type of mount, can be either <tt>volume</tt>, <tt>bind</tt>, <tt>tmpfs</tt>, or <tt>npipe</tt>. Defaults to <tt>volume</tt> if no type is specified.</p>
           <ul>
-            <li><tt>volume</tt>: mounts a <a href="/engine/reference/commandline/volume_create/">managed volume</a>
+            <li><tt>volume</tt>: mounts a <a href="/reference/cli/docker/volume/create/">managed volume</a>
             into the container.</li> <li><tt>bind</tt>:
             bind-mounts a directory or file from the host into the container.</li>
             <li><tt>tmpfs</tt>: mount a tmpfs in the container</li>
@@ -2460,7 +2248,7 @@ examples: |-
         <td>
           <p>The type of mount, can be either <tt>volume</tt>, <tt>bind</tt>, <tt>tmpfs</tt>, or <tt>npipe</tt>. Defaults to <tt>volume</tt> if no type is specified.</p>
           <ul>
-            <li><tt>volume</tt>: mounts a <a href="__SUBDIR__/engine/reference/commandline/volume_create/">managed volume</a>
+            <li><tt>volume</tt>: mounts a <a href="/reference/cli/docker/volume/create/">managed volume</a>
             into the container.</li> <li><tt>bind</tt>:
             bind-mounts a directory or file from the host into the container.</li>
             <li><tt>tmpfs</tt>: mount a tmpfs in the container</li>
@@ -2825,7 +2613,7 @@ examples: |-
           creation. For example,
           <tt>volume-label=mylabel=hello-world,my-other-label=hello-mars</tt>. For more
           information about labels, refer to
-          <a href="__SUBDIR__/config/labels-custom-metadata/">apply custom metadata</a>.
+          <a href="/config/labels-custom-metadata/">apply custom metadata</a>.
         </td>
       </tr>
       <tr>
@@ -3182,11 +2970,11 @@ examples: |-
 @x
     `engine.labels` apply to Docker Engine labels like operating system, drivers,
     etc. Swarm administrators add `node.labels` for operational purposes by using
-    the [`docker node update`](node_update.md) command.
+    the [`docker node update`](/reference/cli/docker/node/update/) command.
 @y
     `engine.labels` apply to Docker Engine labels like operating system, drivers,
     etc. Swarm administrators add `node.labels` for operational purposes by using
-    the [`docker node update`](node_update.md) command.
+    the [`docker node update`](__SUBDIR__/reference/cli/docker/node/update/) command.
 @z
 
 @x
@@ -4377,6 +4165,7 @@ examples: |-
     whole have a "done" state, except insofar as every Node meeting the job's
     constraints has a Completed task.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -4388,6 +4177,7 @@ swarm: true
     whole have a "done" state, except insofar as every Node meeting the job's
     constraints has a Completed task.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

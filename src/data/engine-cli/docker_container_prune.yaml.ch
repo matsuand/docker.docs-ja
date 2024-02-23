@@ -293,20 +293,8 @@ examples: |-
     CONTAINER ID        IMAGE               COMMAND             CREATED AT                      STATUS
     53a9bc23a516        busybox             "sh"                2017-01-04 13:11:59 -0800 PST   Exited (0) 9 minutes ago
     ```
-deprecated: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     CONTAINER ID        IMAGE               COMMAND             CREATED AT                      STATUS
     53a9bc23a516        busybox             "sh"                2017-01-04 13:11:59 -0800 PST   Exited (0) 9 minutes ago
     ```
-deprecated: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

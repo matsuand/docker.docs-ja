@@ -12,7 +12,7 @@ options:
     - option: format
       value_type: string
       default_value: table
-      description: 'Format the output. Values: [table | json].'
+      description: 'Format the output. Values: [table | json]'
       deprecated: false
       hidden: false
       experimental: false
@@ -58,7 +58,7 @@ options:
     - option: format
       value_type: string
       default_value: table
-      description: 'Format the output. Values: [table | json].'
+      description: 'Format the output. Values: [table | json]'
       deprecated: false
       hidden: false
       experimental: false

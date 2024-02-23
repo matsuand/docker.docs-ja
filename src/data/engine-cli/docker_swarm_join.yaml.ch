@@ -360,6 +360,7 @@ examples: |-
     dedicated manager nodes that are not served as worker nodes. This could be achieved
     by passing `--availability=drain` to `docker swarm join`.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -370,6 +371,7 @@ swarm: true
     dedicated manager nodes that are not served as worker nodes. This could be achieved
     by passing `--availability=drain` to `docker swarm join`.
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

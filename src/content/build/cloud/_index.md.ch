@@ -42,13 +42,13 @@ difference is in where and how that build gets executed.
 @x
 By default when you invoke a build command, the build runs on a local instance
 of BuildKit, bundled with the Docker daemon. With Docker Build Cloud, you send
-the build request to a BuildKit instance running remotely, in the cloud. The
-build request is transmitted over a secure, end-to-end encrypted connection.
+the build request to a BuildKit instance running remotely, in the cloud.
+All data is encrypted in transit.
 @y
 By default when you invoke a build command, the build runs on a local instance
 of BuildKit, bundled with the Docker daemon. With Docker Build Cloud, you send
-the build request to a BuildKit instance running remotely, in the cloud. The
-build request is transmitted over a secure, end-to-end encrypted connection.
+the build request to a BuildKit instance running remotely, in the cloud.
+All data is encrypted in transit.
 @z
 
 @x

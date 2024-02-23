@@ -504,9 +504,103 @@ reference documentation:
 @z
 
 @x
-- [`docker scout quickview`](../engine/reference/commandline/scout_quickview.md)
-- [`docker scout cves`](../engine/reference/commandline/scout_cves.md)
+- [`docker scout quickview`](../reference/cli/docker/scout/quickview.md)
+- [`docker scout cves`](../reference/cli/docker/scout/cves.md)
 @y
-- [`docker scout quickview`](../engine/reference/commandline/scout_quickview.md)
-- [`docker scout cves`](../engine/reference/commandline/scout_cves.md)
+- [`docker scout quickview`](../reference/cli/docker/scout/quickview.md)
+- [`docker scout cves`](../reference/cli/docker/scout/cves.md)
+@z
+
+@x
+## Vulnerability severity assessment
+@y
+## Vulnerability severity assessment
+@z
+
+@x
+Docker Scout assigns a severity rating to vulnerabilities based on
+vulnerability data from [advisory sources](./advisory-db-sources.md).
+Advisories are ranked and prioritized depending on the type of package that's
+affected by a vulnerability. For example, if a vulnerability affects an OS
+package, the severity level assigned by the distribution maintainer is
+prioritized.
+@y
+Docker Scout assigns a severity rating to vulnerabilities based on
+vulnerability data from [advisory sources](./advisory-db-sources.md).
+Advisories are ranked and prioritized depending on the type of package that's
+affected by a vulnerability. For example, if a vulnerability affects an OS
+package, the severity level assigned by the distribution maintainer is
+prioritized.
+@z
+
+@x
+If the preferred advisory source has assigned a severity rating to a CVE, but
+not a CVSS score, Docker Scout falls back to displaying a CVSS score from
+another source. The severity rating from the preferred advisory and the CVSS
+score from the fallback advisory are displayed together. This means a
+vulnerability can have a severity rating of `LOW` with a CVSS score of 9.8, if
+the preferred advisory assigns a `LOW` rating but no CVSS score, and a fallback
+advisory assigns a CVSS score of 9.8.
+@y
+If the preferred advisory source has assigned a severity rating to a CVE, but
+not a CVSS score, Docker Scout falls back to displaying a CVSS score from
+another source. The severity rating from the preferred advisory and the CVSS
+score from the fallback advisory are displayed together. This means a
+vulnerability can have a severity rating of `LOW` with a CVSS score of 9.8, if
+the preferred advisory assigns a `LOW` rating but no CVSS score, and a fallback
+advisory assigns a CVSS score of 9.8.
+@z
+
+@x
+Vulnerabilities that haven't been assigned a CVSS score in any source are
+categorized as **Unspecified** (U).
+@y
+Vulnerabilities that haven't been assigned a CVSS score in any source are
+categorized as **Unspecified** (U).
+@z
+
+@x
+Docker Scout doesn't implement a proprietary vulnerability metrics system. All
+metrics are inherited from security advisories that Docker Scout integrates
+with. Advisories may use different thresholds for classifying vulnerabilities,
+but most of them adhere to the CVSS v3.0 specification, which maps CVSS scores
+to severity ratings according to the following table:
+@y
+Docker Scout doesn't implement a proprietary vulnerability metrics system. All
+metrics are inherited from security advisories that Docker Scout integrates
+with. Advisories may use different thresholds for classifying vulnerabilities,
+but most of them adhere to the CVSS v3.0 specification, which maps CVSS scores
+to severity ratings according to the following table:
+@z
+
+@x
+| CVSS score | Severity rating  |
+| ---------- | ---------------- |
+| 0.1 – 3.9  | **Low** (L)      |
+| 4.0 – 6.9  | **Medium** (M)   |
+| 7.0 – 8.9  | **High** (H)     |
+| 9.0 – 10.0 | **Critical** (C) |
+@y
+| CVSS score | Severity rating  |
+| ---------- | ---------------- |
+| 0.1 – 3.9  | **Low** (L)      |
+| 4.0 – 6.9  | **Medium** (M)   |
+| 7.0 – 8.9  | **High** (H)     |
+| 9.0 – 10.0 | **Critical** (C) |
+@z
+
+@x
+For more information, see [Vulnerability Metrics (NIST)](https://nvd.nist.gov/vuln-metrics/cvss).
+@y
+For more information, see [Vulnerability Metrics (NIST)](https://nvd.nist.gov/vuln-metrics/cvss).
+@z
+
+@x
+Note that, given the advisory prioritization and fallback mechanism described
+earlier, severity ratings displayed in Docker Scout may deviate from this
+rating system.
+@y
+Note that, given the advisory prioritization and fallback mechanism described
+earlier, severity ratings displayed in Docker Scout may deviate from this
+rating system.
 @z

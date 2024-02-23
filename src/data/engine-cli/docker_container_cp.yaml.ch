@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container cp
 aliases: docker container cp, docker cp
@@ -309,13 +311,13 @@ examples: |-
 
 @x
     It isn't possible to copy certain system files such as resources under
-    `/proc`, `/sys`, `/dev`, [tmpfs](run.md#tmpfs), and mounts created by
+    `/proc`, `/sys`, `/dev`, [tmpfs](/reference/cli/docker/container/run/#tmpfs), and mounts created by
     the user in the container. However, you can still copy such files by manually
     running `tar` in `docker exec`. Both of the following examples do the same thing
     in different ways (consider `SRC_PATH` and `DEST_PATH` are directories):
 @y
     It isn't possible to copy certain system files such as resources under
-    `/proc`, `/sys`, `/dev`, [tmpfs](run.md#tmpfs), and mounts created by
+    `/proc`, `/sys`, `/dev`, [tmpfs](__SUBDIR__/reference/cli/docker/container/run/#tmpfs), and mounts created by
     the user in the container. However, you can still copy such files by manually
     running `tar` in `docker exec`. Both of the following examples do the same thing
     in different ways (consider `SRC_PATH` and `DEST_PATH` are directories):
@@ -347,6 +349,7 @@ examples: |-
     filesystem. In this case, `DEST_PATH` must specify a directory. Using `-` as
     the `DEST_PATH` streams the contents of the resource as a tar archive to `STDOUT`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -357,6 +360,7 @@ swarm: false
     filesystem. In this case, `DEST_PATH` must specify a directory. Using `-` as
     the `DEST_PATH` streams the contents of the resource as a tar archive to `STDOUT`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

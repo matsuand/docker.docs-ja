@@ -14,7 +14,7 @@ options:
     - option: all
       value_type: bool
       default_value: "false"
-      description: copy to all the containers of the service.
+      description: Copy to all the containers of the service
       deprecated: true
       hidden: true
       experimental: false
@@ -46,7 +46,7 @@ options:
     - option: index
       value_type: int
       default_value: "0"
-      description: index of the container if service has multiple replicas
+      description: Index of the container if service has multiple replicas
       deprecated: false
       hidden: false
       experimental: false
@@ -83,7 +83,7 @@ options:
     - option: all
       value_type: bool
       default_value: "false"
-      description: copy to all the containers of the service.
+      description: Copy to all the containers of the service
       deprecated: true
       hidden: true
       experimental: false
@@ -115,7 +115,7 @@ options:
     - option: index
       value_type: int
       default_value: "0"
-      description: index of the container if service has multiple replicas
+      description: Index of the container if service has multiple replicas
       deprecated: false
       hidden: false
       experimental: false

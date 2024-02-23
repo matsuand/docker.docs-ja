@@ -89,6 +89,7 @@ examples: |-
     > This command doesn't ask for confirmation before removing a config.
     { .warning }
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false
@@ -100,6 +101,7 @@ swarm: true
     > This command doesn't ask for confirmation before removing a config.
     { .warning }
 deprecated: false
+hidden: false
 min_api_version: "1.30"
 experimental: false
 experimentalcli: false

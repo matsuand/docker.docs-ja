@@ -215,6 +215,7 @@ examples: |-
     {"Name":"myapp","Namespace":"","Orchestrator":"Swarm","Services":"3"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -226,6 +227,7 @@ swarm: true
     {"Name":"myapp","Namespace":"","Orchestrator":"Swarm","Services":"3"}
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

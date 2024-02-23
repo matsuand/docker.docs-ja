@@ -12,7 +12,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't start linked services.
+      description: Don't start linked services
       deprecated: false
       hidden: false
       experimental: false
@@ -47,7 +47,7 @@ options:
     - option: no-deps
       value_type: bool
       default_value: "false"
-      description: Don't start linked services.
+      description: Don't start linked services
       deprecated: false
       hidden: false
       experimental: false

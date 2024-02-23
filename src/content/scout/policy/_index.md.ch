@@ -4,23 +4,19 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Get started with Policy Evaluation in Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, policy
 description: |
   Policies in Docker Scout let you define supply chain rules and thresholds
   for your artifacts, and track how your artifacts perform against those
   requirements over time
----
 @y
----
 title: Get started with Policy Evaluation in Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, policy
 description: |
   Policies in Docker Scout let you define supply chain rules and thresholds
   for your artifacts, and track how your artifacts perform against those
   requirements over time
----
 @z
 
 @x
@@ -587,11 +583,11 @@ RUN echo "Hi"
 
 @x
 To make your images compliant with this policy, use the
-[`USER`](../../engine/reference/builder.md#user) Dockerfile instruction to set
+[`USER`](../../reference/dockerfile.md#user) Dockerfile instruction to set
 a default user that doesn't have root privileges for the runtime stage.
 @y
 To make your images compliant with this policy, use the
-[`USER`](../../engine/reference/builder.md#user) Dockerfile instruction to set
+[`USER`](../../reference/dockerfile.md#user) Dockerfile instruction to set
 a default user that doesn't have root privileges for the runtime stage.
 @z
 

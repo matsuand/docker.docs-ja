@@ -41,6 +41,7 @@ examples: |-
     $ docker node promote <node name>
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -72,6 +73,7 @@ examples: |-
     $ docker node promote <node name>
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

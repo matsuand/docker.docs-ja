@@ -99,18 +99,8 @@ examples: |-
     ```console
     $ docker export --output="latest.tar" red_panda
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     ```console
     $ docker export --output="latest.tar" red_panda
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

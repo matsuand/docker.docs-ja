@@ -153,6 +153,7 @@ examples: |-
     Removing network vossibility_vossibility
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false
@@ -174,6 +175,7 @@ swarm: true
     Removing network vossibility_vossibility
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.25"
 experimental: false
 experimentalcli: false

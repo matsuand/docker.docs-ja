@@ -40,9 +40,17 @@ use.
 @z
 
 @x
-## Features for all platforms
+## Networking features
 @y
-## Features for all platforms
+## Networking features
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="For all platforms" >}}
+@y
+{{< tabs >}}
+{{< tab name="For all platforms" >}}
 @z
 
 @x
@@ -132,9 +140,11 @@ See:
 @z
 
 @x
-## Features for Mac and Linux
+{{< /tab >}}
+{{< tab name="For Mac and Linux" >}}
 @y
-## Features for Mac and Linux
+{{< /tab >}}
+{{< tab name="For Mac and Linux" >}}
 @z
 
 @x
@@ -214,9 +224,17 @@ services:
 @z
 
 @x
-## Known limitations for all platforms
+{{< /tab >}}
+{{< /tabs >}}
 @y
-## Known limitations for all platforms
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Known limitations
+@y
+## Known limitations
 @z
 
 @x
@@ -268,17 +286,17 @@ ping the Windows containers.
 @z
 
 @x
-The docker bridge network is not reachable from the host.
-However if you are a Windows user, it works with Windows containers.
+This is because the Docker `bridge` network is not reachable from the host.
+However if you are a Windows user, per-container IP addressing is possible with Windows containers.
 @y
-The docker bridge network is not reachable from the host.
-However if you are a Windows user, it works with Windows containers.
+This is because the Docker `bridge` network is not reachable from the host.
+However if you are a Windows user, per-container IP addressing is possible with Windows containers.
 @z
 
 @x
-## Use cases and workarounds for all platforms
+## Use cases and workarounds 
 @y
-## Use cases and workarounds for all platforms
+## Use cases and workarounds 
 @z
 
 @x
@@ -350,9 +368,9 @@ If you have installed Python on your machine, use the following instructions as 
 @z
 
 @x
-#### I want to connect to a container from the host
+### I want to connect to a container from the host
 @y
-#### I want to connect to a container from the host
+### I want to connect to a container from the host
 @z
 
 @x
@@ -432,9 +450,9 @@ $ docker run -d -P --name webserver nginx
 @z
 
 @x
-See the [run command](../engine/reference/commandline/container_run.md) for more details on
+See the [run command](../reference/cli/docker/container/run.md) for more details on
 publish options used with `docker run`.
 @y
-See the [run command](../engine/reference/commandline/container_run.md) for more details on
+See the [run command](../reference/cli/docker/container/run.md) for more details on
 publish options used with `docker run`.
 @z

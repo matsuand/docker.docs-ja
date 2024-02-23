@@ -252,9 +252,9 @@ relative to the base file.
 @z
 
 @x
-   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](../../engine/reference/commandline/compose_pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
+   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](../../reference/cli/docker/compose/pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
 @y
-   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](../../engine/reference/commandline/compose_pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
+   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](../../reference/cli/docker/compose/pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
 @z
 
 @x

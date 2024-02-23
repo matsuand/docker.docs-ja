@@ -62,6 +62,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
+hidden: false
 min_api_version: "1.39"
 experimental: false
 experimentalcli: false
@@ -128,6 +129,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
+hidden: false
 min_api_version: "1.39"
 experimental: false
 experimentalcli: false

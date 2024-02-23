@@ -1,60 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: Configuring the Docker daemon
 keywords: docker, daemon, configuration
 title: Docker daemon configuration overview
-aliases:
-  - /articles/chef/
-  - /articles/configuring/
-  - /articles/dsc/
-  - /articles/puppet/
-  - /config/thirdparty/
-  - /config/thirdparty/ansible/
-  - /config/thirdparty/chef/
-  - /config/thirdparty/dsc/
-  - /config/thirdparty/puppet/
-  - /engine/admin/
-  - /engine/admin/ansible/
-  - /engine/admin/chef/
-  - /engine/admin/configuring/
-  - /engine/admin/dsc/
-  - /engine/admin/puppet/
-  - /engine/articles/chef/
-  - /engine/articles/configuring/
-  - /engine/articles/dsc/
-  - /engine/articles/puppet/
-  - /engine/userguide/
----
 @y
----
 description: Docker デーモンを設定します。
 keywords: docker, daemon, configuration
 title: Docker デーモンの設定概要
-aliases:
-  - /articles/chef/
-  - /articles/configuring/
-  - /articles/dsc/
-  - /articles/puppet/
-  - /config/thirdparty/
-  - /config/thirdparty/ansible/
-  - /config/thirdparty/chef/
-  - /config/thirdparty/dsc/
-  - /config/thirdparty/puppet/
-  - /engine/admin/
-  - /engine/admin/ansible/
-  - /engine/admin/chef/
-  - /engine/admin/configuring/
-  - /engine/admin/dsc/
-  - /engine/admin/puppet/
-  - /engine/articles/chef/
-  - /engine/articles/configuring/
-  - /engine/articles/dsc/
-  - /engine/articles/puppet/
-  - /engine/userguide/
----
 @z
 
 @x
@@ -163,10 +119,10 @@ startup, using the `dockerd --config-file` flag.
 
 @x
 Learn about the available configuration options in the
-[dockerd reference docs](../../engine/reference/commandline/dockerd.md#daemon-configuration-file)
+[dockerd reference docs](../../reference/cli/dockerd.md#daemon-configuration-file)
 @y
 Learn about the available configuration options in the
-[dockerd reference docs](../../engine/reference/commandline/dockerd.md#daemon-configuration-file)
+[dockerd reference docs](../../reference/cli/dockerd.md#daemon-configuration-file)
 @z
 
 @x
@@ -191,43 +147,19 @@ Here's an example of how to manually start the Docker daemon, using the same
 configurations as shown in the previous JSON configuration:
 @z
 
-@x
-```console
-$ dockerd --debug \
-  --tls=true \
-  --tlscert=/var/docker/server.pem \
-  --tlskey=/var/docker/serverkey.pem \
-  --host tcp://192.168.59.3:2376
-```
-@y
-```console
-$ dockerd --debug \
-  --tls=true \
-  --tlscert=/var/docker/server.pem \
-  --tlskey=/var/docker/serverkey.pem \
-  --host tcp://192.168.59.3:2376
-```
-@z
+% snip command...
 
 @x
 Learn about the available configuration options in the
-[dockerd reference docs](../../engine/reference/commandline/dockerd.md), or by
+[dockerd reference docs](../../reference/cli/dockerd.md), or by
 running:
 @y
 Learn about the available configuration options in the
-[dockerd reference docs](../../engine/reference/commandline/dockerd.md), or by
+[dockerd reference docs](../../reference/cli/dockerd.md), or by
 running:
 @z
 
-@x
-```console
-$ dockerd --help
-```
-@y
-```console
-$ dockerd --help
-```
-@z
+% snip command...
 
 @x
 ## Daemon data directory
@@ -267,19 +199,7 @@ You can configure the Docker daemon to use a different directory, using the
 `data-root` configuration option. For example:
 @z
 
-@x
-```json
-{
-  "data-root": "/mnt/docker-data"
-}
-```
-@y
-```json
-{
-  "data-root": "/mnt/docker-data"
-}
-```
-@z
+% snip code...
 
 @x
 Since the state of a Docker daemon is kept on this directory, make sure you use

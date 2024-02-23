@@ -113,6 +113,7 @@ examples: |-
     $ docker swarm update --cert-expiry 720h
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false
@@ -216,6 +217,7 @@ examples: |-
     $ docker swarm update --cert-expiry 720h
     ```
 deprecated: false
+hidden: false
 min_api_version: "1.24"
 experimental: false
 experimentalcli: false

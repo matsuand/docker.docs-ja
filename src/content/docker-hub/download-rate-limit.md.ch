@@ -304,9 +304,9 @@ Select **Sign in / Create Docker ID** from the Docker Desktop menu and follow th
 @z
 
 @x
-If you're using a standalone version of Docker Engine, run the `docker login` command from a terminal to authenticate with Docker Hub. For information on how to use the command, see [docker login](../engine/reference/commandline/login.md).
+If you're using a standalone version of Docker Engine, run the `docker login` command from a terminal to authenticate with Docker Hub. For information on how to use the command, see [docker login](../reference/cli/docker/login.md).
 @y
-If you're using a standalone version of Docker Engine, run the `docker login` command from a terminal to authenticate with Docker Hub. For information on how to use the command, see [docker login](../engine/reference/commandline/login.md).
+If you're using a standalone version of Docker Engine, run the `docker login` command from a terminal to authenticate with Docker Hub. For information on how to use the command, see [docker login](../reference/cli/docker/login.md).
 @z
 
 @x
@@ -316,9 +316,9 @@ If you're using a standalone version of Docker Engine, run the `docker login` co
 @z
 
 @x
-If you're running Docker Swarm, you must use the `-- with-registry-auth` flag to authenticate with Docker Hub. For more information, see [Create a service](../engine/reference/commandline/service_create.md/#create-a-service). If you are using a Docker Compose file to deploy an application stack, see [docker stack deploy](../engine/reference/commandline/stack_deploy.md).
+If you're running Docker Swarm, you must use the `-- with-registry-auth` flag to authenticate with Docker Hub. For more information, see [Create a service](../reference/cli/docker/service/create.md/#create-a-service). If you are using a Docker Compose file to deploy an application stack, see [docker stack deploy](../reference/cli/docker/stack/deploy.md).
 @y
-If you're running Docker Swarm, you must use the `-- with-registry-auth` flag to authenticate with Docker Hub. For more information, see [Create a service](../engine/reference/commandline/service_create.md/#create-a-service). If you are using a Docker Compose file to deploy an application stack, see [docker stack deploy](../engine/reference/commandline/stack_deploy.md).
+If you're running Docker Swarm, you must use the `-- with-registry-auth` flag to authenticate with Docker Hub. For more information, see [Create a service](../reference/cli/docker/service/create.md/#create-a-service). If you are using a Docker Compose file to deploy an application stack, see [docker stack deploy](../reference/cli/docker/stack/deploy.md).
 @z
 
 @x

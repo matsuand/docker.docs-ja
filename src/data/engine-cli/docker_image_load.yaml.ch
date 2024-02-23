@@ -170,6 +170,7 @@ examples: |-
     fedora              latest              58394af37342        7 weeks ago         385.5 MB
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -183,6 +184,7 @@ swarm: false
     fedora              latest              58394af37342        7 weeks ago         385.5 MB
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

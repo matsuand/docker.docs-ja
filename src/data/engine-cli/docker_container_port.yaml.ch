@@ -116,17 +116,7 @@ examples: |-
 @x
     0.0.0.0:4321
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     0.0.0.0:4321
     ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z

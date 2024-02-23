@@ -196,10 +196,10 @@ $ docker build \
 @z
 
 @x
-This command uses emulation to run the same build four times, once for each
+This command uses emulation to run the same build three times, once for each
 platform. The build results are exported to a `bin` directory.
 @y
-This command uses emulation to run the same build four times, once for each
+This command uses emulation to run the same build three times, once for each
 platform. The build results are exported to a `bin` directory.
 @z
 
@@ -234,11 +234,11 @@ bin
 @x
 When you build for multiple platforms concurrently,
 BuildKit runs all of the build steps under emulation for each platform that you specify.
-Effectively forking the build into two concurrent processes.
+Effectively forking the build into multiple concurrent processes.
 @y
 When you build for multiple platforms concurrently,
 BuildKit runs all of the build steps under emulation for each platform that you specify.
-Effectively forking the build into two concurrent processes.
+Effectively forking the build into multiple concurrent processes.
 @z
 
 @x

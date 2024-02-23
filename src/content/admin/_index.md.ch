@@ -7,60 +7,88 @@
 description: Discover manuals on administration for accounts, organizations, and companies.
 keywords: admin, administration, company, organization, Admin Console, user accounts, account management
 title: Administration overview
-grid:
-- title: Company administration
-  description: Explore how to manage a company.
-  icon: apartment
-  link: /admin/company/
-- title: Organization administration
-  description: Learn about organization administration.
-  icon: store
-  link: /admin/organization/
-- title: Company FAQ
-  description: Discover common questions and answers about companies.
-  icon: help
-  link: /faq/admin/company-faqs/
-- title: Organization FAQ
-  description: Explore popular FAQ topics about organizations.
-  icon: help
-  link: /faq/admin/organization-faqs/
-- title: Security
-  description: Explore security features for administrators.
-  icon: shield_locked
-  link: /security/
-aliases:
-- /docker-hub/admin-overview
----
 @y
 ---
 description: Discover manuals on administration for accounts, organizations, and companies.
 keywords: admin, administration, company, organization, Admin Console, user accounts, account management
 title: Administration overview
+@z
+
+@x
+grid:
+- title: Company administration
+  description: Explore how to manage a company.
+  icon: apartment
+  link: /admin/company/
+@y
 grid:
 - title: Company administration
   description: Explore how to manage a company.
   icon: apartment
   link: __SUBDIR__/admin/company/
+@z
+
+@x
+- title: Organization administration
+  description: Learn about organization administration.
+  icon: store
+  link: /admin/organization/
+@y
 - title: Organization administration
   description: Learn about organization administration.
   icon: store
   link: __SUBDIR__/admin/organization/
+@z
+
+@x
+- title: Onboard your organization
+  description: Learn how to onboard and secure your organization.
+  icon: explore
+  link: /admin/organization/onboard
+@y
+- title: Onboard your organization
+  description: Learn how to onboard and secure your organization.
+  icon: explore
+  link: __SUBDIR__/admin/organization/onboard
+@z
+
+@x
+- title: Company FAQ
+  description: Discover common questions and answers about companies.
+  icon: help
+  link: /faq/admin/company-faqs/
+@y
 - title: Company FAQ
   description: Discover common questions and answers about companies.
   icon: help
   link: __SUBDIR__/faq/admin/company-faqs/
+@z
+
+@x
+- title: Organization FAQ
+  description: Explore popular FAQ topics about organizations.
+  icon: help
+  link: /faq/admin/organization-faqs/
+@y
 - title: Organization FAQ
   description: Explore popular FAQ topics about organizations.
   icon: help
   link: __SUBDIR__/faq/admin/organization-faqs/
+@z
+
+@x
+- title: Security
+  description: Explore security features for administrators.
+  icon: shield_locked
+  link: /security/
+@y
 - title: Security
   description: Explore security features for administrators.
   icon: shield_locked
   link: __SUBDIR__/security/
-aliases:
-- /docker-hub/admin-overview
----
 @z
+
+% skip aliases...
 
 @x
 Administrators can manage companies and organizations using Docker Hub or the Docker Admin Console.
@@ -69,9 +97,9 @@ Administrators can manage companies and organizations using Docker Hub or the Do
 @z
 
 @x
-The Docker Admin Console is available in [Early Access](../release-lifecycle.md#early-access-ea) to all company owners and organization owners that have a Docker Business or Docker Team subscription. The [Docker Admin Console](https://admin.docker.com) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
+The Docker Admin Console is available in [Early Access](../release-lifecycle.md#early-access-ea) to all company owners and organization owners. The [Docker Admin Console](https://admin.docker.com) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
 @y
-The Docker Admin Console is available in [Early Access](../release-lifecycle.md#early-access-ea) to all company owners and organization owners that have a Docker Business or Docker Team subscription. The [Docker Admin Console](https://admin.docker.com) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
+The Docker Admin Console is available in [Early Access](../release-lifecycle.md#early-access-ea) to all company owners and organization owners. The [Docker Admin Console](https://admin.docker.com) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
 @z
 
 @x

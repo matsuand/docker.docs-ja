@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Persist the DB
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
----
 @y
----
 title: DB への保存
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
----
 @z
 
 @x
@@ -551,10 +547,10 @@ Related information:
 @z
 
 @x
- - [docker CLI reference](/engine/reference/commandline/cli/)
+ - [docker CLI reference](/reference/cli/docker/)
  - [Volumes](../storage/volumes.md)
 @y
- - [Docker CLI リファレンス](__SUBDIR__/engine/reference/commandline/cli/)
+ - [Docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
  - [ボリューム](../storage/volumes.md)
 @z
 

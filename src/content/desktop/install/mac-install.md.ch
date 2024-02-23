@@ -38,6 +38,18 @@ aliases:
 @z
 
 @x
+> **Docker Desktop terms**
+>
+> Commercial use of Docker Desktop in larger enterprises (more than 250
+> employees OR more than $10 million USD in annual revenue) requires a [paid
+> subscription](https://www.docker.com/pricing/).
+@y
+> **Docker Desktop 契約条項**
+>
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
+@z
+
+@x
 This page contains download URLs, information about system requirements, and instructions on how to install Docker Desktop for Mac.
 @y
 このページでは Docker Desktop for Mac をインストールするための、ダウンロード情報、システム要件、インストール手順について説明します。
@@ -55,18 +67,6 @@ This page contains download URLs, information about system requirements, and ins
 *For checksums, see [Release notes](../release-notes.md).*
 @y
 *チェックサムについては [リリースノート](../release-notes.md) を参照してください。*
-@z
-
-@x
-> **Docker Desktop terms**
->
-> Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
-@y
-> **Docker Desktop 契約条項**
->
-> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
 @z
 
 @x

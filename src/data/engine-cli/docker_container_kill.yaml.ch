@@ -183,6 +183,7 @@ examples: |-
     Refer to the [`signal(7)`](https://man7.org/linux/man-pages/man7/signal.7.html)
     man-page for a list of standard Linux signals.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -191,6 +192,7 @@ swarm: false
     Refer to the [`signal(7)`](https://man7.org/linux/man-pages/man7/signal.7.html)
     man-page for a list of standard Linux signals.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

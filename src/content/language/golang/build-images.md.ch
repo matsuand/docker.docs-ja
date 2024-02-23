@@ -398,14 +398,14 @@ COPY go.mod go.sum ./
 >
 > If you'd like to familiarize yourself with the trailing slash treatment by the
 > `COPY` command, see [Dockerfile
-> reference](../../engine/reference/builder.md/#copy). This trailing slash can
+> reference](../../reference/dockerfile.md#copy). This trailing slash can
 > cause issues in more ways than you can imagine.
 @y
 > **Note**
 >
 > If you'd like to familiarize yourself with the trailing slash treatment by the
 > `COPY` command, see [Dockerfile
-> reference](../../engine/reference/builder.md/#copy). This trailing slash can
+> reference](../../reference/dockerfile.md#copy). This trailing slash can
 > cause issues in more ways than you can imagine.
 @z
 
@@ -565,11 +565,11 @@ RUN go mod download
 
 @x
 # Copy the source code. Note the slash at the end, as explained in
-# https://docs.docker.com/engine/reference/builder/#copy
+# https://docs.docker.com/reference/dockerfile/#copy
 COPY *.go ./
 @y
 # Copy the source code. Note the slash at the end, as explained in
-# https://docs.docker.com/engine/reference/builder/#copy
+# https://docs.docker.com/reference/dockerfile/#copy
 COPY *.go ./
 @z
 
@@ -586,14 +586,14 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
 # To bind to a TCP port, runtime parameters must be supplied to the docker command.
 # But we can document in the Dockerfile what ports
 # the application is going to listen on by default.
-# https://docs.docker.com/engine/reference/builder/#expose
+# https://docs.docker.com/reference/dockerfile/#expose
 EXPOSE 8080
 @y
 # Optional:
 # To bind to a TCP port, runtime parameters must be supplied to the docker command.
 # But we can document in the Dockerfile what ports
 # the application is going to listen on by default.
-# https://docs.docker.com/engine/reference/builder/#expose
+# https://docs.docker.com/reference/dockerfile/#expose
 EXPOSE 8080
 @z
 

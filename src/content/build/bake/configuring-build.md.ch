@@ -329,10 +329,10 @@ $ docker buildx bake --print foo bar
 
 @x
 You can also override target configurations from the command line with the
-[`--set` flag](../../engine/reference/commandline/buildx_bake.md#set):
+[`--set` flag](../../reference/cli/docker/buildx/bake.md#set):
 @y
 You can also override target configurations from the command line with the
-[`--set` flag](../../engine/reference/commandline/buildx_bake.md#set):
+[`--set` flag](../../reference/cli/docker/buildx/bake.md#set):
 @z
 
 @x

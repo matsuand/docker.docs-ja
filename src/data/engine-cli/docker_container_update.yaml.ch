@@ -578,6 +578,7 @@ examples: |-
     policy for it. The `AutoRemove` and `RestartPolicy` are mutually exclusive for the
     container.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -587,6 +588,7 @@ swarm: false
     policy for it. The `AutoRemove` and `RestartPolicy` are mutually exclusive for the
     container.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

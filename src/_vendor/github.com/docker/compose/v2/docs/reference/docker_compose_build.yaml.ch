@@ -35,7 +35,7 @@ options:
     - option: build-arg
       value_type: stringArray
       default_value: '[]'
-      description: Set build-time variables for services.
+      description: Set build-time variables for services
       deprecated: false
       hidden: false
       experimental: false
@@ -44,7 +44,7 @@ options:
       swarm: false
     - option: builder
       value_type: string
-      description: Set builder to use.
+      description: Set builder to use
       deprecated: false
       hidden: false
       experimental: false
@@ -127,7 +127,7 @@ options:
     - option: pull
       value_type: bool
       default_value: "false"
-      description: Always attempt to pull a newer version of the image.
+      description: Always attempt to pull a newer version of the image
       deprecated: false
       hidden: false
       experimental: false
@@ -137,7 +137,7 @@ options:
     - option: push
       value_type: bool
       default_value: "false"
-      description: Push service images.
+      description: Push service images
       deprecated: false
       hidden: false
       experimental: false
@@ -168,7 +168,7 @@ options:
     - option: with-dependencies
       value_type: bool
       default_value: "false"
-      description: Also build dependencies (transitively).
+      description: Also build dependencies (transitively)
       deprecated: false
       hidden: false
       experimental: false
@@ -202,7 +202,7 @@ options:
     - option: build-arg
       value_type: stringArray
       default_value: '[]'
-      description: Set build-time variables for services.
+      description: Set build-time variables for services
       deprecated: false
       hidden: false
       experimental: false
@@ -211,7 +211,7 @@ options:
       swarm: false
     - option: builder
       value_type: string
-      description: Set builder to use.
+      description: Set builder to use
       deprecated: false
       hidden: false
       experimental: false
@@ -294,7 +294,7 @@ options:
     - option: pull
       value_type: bool
       default_value: "false"
-      description: Always attempt to pull a newer version of the image.
+      description: Always attempt to pull a newer version of the image
       deprecated: false
       hidden: false
       experimental: false
@@ -304,7 +304,7 @@ options:
     - option: push
       value_type: bool
       default_value: "false"
-      description: Push service images.
+      description: Push service images
       deprecated: false
       hidden: false
       experimental: false
@@ -335,7 +335,7 @@ options:
     - option: with-dependencies
       value_type: bool
       default_value: "false"
-      description: Also build dependencies (transitively).
+      description: Also build dependencies (transitively)
       deprecated: false
       hidden: false
       experimental: false

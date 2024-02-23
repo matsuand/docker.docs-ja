@@ -47,7 +47,7 @@ and `log-opt` keys to appropriate values in the `daemon.json` file, which is
 located in `/etc/docker/` on Linux hosts or
 `C:\ProgramData\docker\config\daemon.json` on Windows Server. For more about
 configuring Docker using `daemon.json`, see
-[daemon.json](../../../engine/reference/commandline/dockerd.md#daemon-configuration-file).
+[daemon.json](../../../reference/cli/dockerd.md#daemon-configuration-file).
 The following example sets the log driver to `awslogs` and sets the
 `awslogs-region` option.
 @y
@@ -56,7 +56,7 @@ and `log-opt` keys to appropriate values in the `daemon.json` file, which is
 located in `/etc/docker/` on Linux hosts or
 `C:\ProgramData\docker\config\daemon.json` on Windows Server. For more about
 configuring Docker using `daemon.json`, see
-[daemon.json](../../../engine/reference/commandline/dockerd.md#daemon-configuration-file).
+[daemon.json](../../../reference/cli/dockerd.md#daemon-configuration-file).
 The following example sets the log driver to `awslogs` and sets the
 `awslogs-region` option.
 @z

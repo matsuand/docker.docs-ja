@@ -81,8 +81,7 @@ long: |-
 
 @x
     You can group your images together using names and tags, and then
-    [push](/engine/reference/commandline/push) them to a
-    registry.
+    [push](/reference/cli/docker/image/push/) them to a registry.
 usage: docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 pname: docker image
 plink: docker_image.yaml
@@ -101,8 +100,7 @@ examples: |-
     ### Tag an image referenced by ID
 @y
     You can group your images together using names and tags, and then
-    [push](__SUBDIR__/engine/reference/commandline/push) them to a
-    registry.
+    [push](__SUBDIR__/reference/cli/docker/image/push/) them to a registry.
 usage: docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 pname: docker image
 plink: docker_image.yaml
@@ -212,6 +210,7 @@ examples: |-
     $ docker tag 0e5574283393 myregistryhost:5000/fedora/httpd:version1.0
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -221,6 +220,7 @@ swarm: false
     $ docker tag 0e5574283393 myregistryhost:5000/fedora/httpd:version1.0
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

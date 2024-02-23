@@ -4,25 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Learn how to create repositories on Docker Hub
 keywords: Docker, docker, trusted, registry, accounts, plans, Dockerfile, Docker Hub,
   webhooks, docs, documentation, manage, repos
 title: Create repositories
-toc_max: 3
-aliases:
-- /docker-hub/repos/configure/
----
 @y
----
 description: Learn how to create repositories on Docker Hub
 keywords: Docker, docker, trusted, registry, accounts, plans, Dockerfile, Docker Hub,
   webhooks, docs, documentation, manage, repos
 title: リポジトリの生成
-toc_max: 3
-aliases:
-- /docker-hub/repos/configure/
----
 @z
 
 @x
@@ -34,9 +24,9 @@ customers, or the Docker community at large.
 @z
 
 @x
-A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](/engine/reference/commandline/push/)command.
+A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](/reference/cli/docker/image/push/)command.
 @y
-A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](__SUBDIR__/engine/reference/commandline/push/)command.
+A single Docker Hub repository can hold many Docker images which are stored as **tags**. You can push Docker images to Docker Hub with the [`docker push`](__SUBDIR__/reference/cli/docker/image/push/)command.
 @z
 
 @x

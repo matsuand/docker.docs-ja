@@ -4,30 +4,6 @@
 % __SUBDIR__ 対応
 
 @x
-{{ $sso_link := "[Configure SSO](/security/for-admins/single-sign-on/)" }}
-{{ $scim_link := "[Configure SCIM](/security/for-admins/scim/)" }}
-{{ $audit_link := "[Audit your domains](/docker-hub/domain-audit/)" }}
-@y
-{{ $sso_link := "[Configure SSO](__SUBDIR__/security/for-admins/single-sign-on/)" }}
-{{ $scim_link := "[Configure SCIM](__SUBDIR__/security/for-admins/scim/)" }}
-{{ $audit_link := "[Audit your domains](__SUBDIR__/docker-hub/domain-audit/)" }}
-@z
-
-@x
-{{ if eq (.Get "product") "admin" }}
-  {{ $sso_link = "[Configure SSO](/security/for-admins/single-sign-on/)" }}
-  {{ $scim_link = "[Configure SCIM](/security/for-admins/scim/)" }}
-  {{ $audit_link = "[Audit your domains](/admin/organization/security-settings/domains/)" }}
-{{ end }}
-@y
-{{ if eq (.Get "product") "admin" }}
-  {{ $sso_link = "[Configure SSO](__SUBDIR__/security/for-admins/single-sign-on/)" }}
-  {{ $scim_link = "[Configure SCIM](__SUBDIR__/security/for-admins/scim/)" }}
-  {{ $audit_link = "[Audit your domains](__SUBDIR__/admin/organization/security-settings/domains/)" }}
-{{ end }}
-@z
-
-@x
 Onboarding your organization allows you to gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](/subscription/details/).
 @y
 Onboarding your organization allows you to gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](__SUBDIR__/subscription/details/).
@@ -142,19 +118,21 @@ To add a member, invite a user and assign them the member role. For more details
 @z
 
 @x
-Configuring Single Sign-On (SSO) or System for Cross-domain Identity Management (SCIM) is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
+Configuring SSO and SCIM is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
 @y
-Configuring Single Sign-On (SSO) or System for Cross-domain Identity Management (SCIM) is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](__SUBDIR__/subscription/upgrade/).
+Configuring SSO and SCIM is optional and only available to Docker Business subscribers. To upgrade a Docker Team subscription to a Docker Business subscription, see [Upgrade your subscription](__SUBDIR__/subscription/upgrade/).
 @z
 
 @x
-You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO or SCIM. See the following for more details.
-   - {{ $sso_link }} to automatically provision and add members when they sign in to Docker through your identity provider.
-   - {{ $scim_link }} to automatically provision, add, and de-provision members to Docker through your identity provider.
+You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
+   - [Configure SSO](/security/for-admins/single-sign-on/) to authenticate and add members when they sign in to Docker through your identity provider.
+   - Optional: [Enforce SSO](/security/for-admins/single-sign-on/configure/#optional-step-four-enforce-sso) to ensure that users must sign in to Docker with SSO.
+   - [Configure SCIM](/security/for-admins/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
 @y
-You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO or SCIM. See the following for more details.
-   - {{ $sso_link }} to automatically provision and add members when they sign in to Docker through your identity provider.
-   - {{ $scim_link }} to automatically provision, add, and de-provision members to Docker through your identity provider.
+You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
+   - [Configure SSO](__SUBDIR__/security/for-admins/single-sign-on/) to authenticate and add members when they sign in to Docker through your identity provider.
+   - Optional: [Enforce SSO](__SUBDIR__/security/for-admins/single-sign-on/configure/#optional-step-four-enforce-sso) to ensure that users must sign in to Docker with SSO.
+   - [Configure SCIM](__SUBDIR__/security/for-admins/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
 @z
 
 @x
@@ -179,12 +157,12 @@ By default, members of your organization can use Docker Desktop on their machine
 - [Create](/docker-hub/repos/create/) and [manage](/docker-hub/repos/) repositories.
 - Create [teams](/admin/organization/manage-a-team/) for fine-grained repository access.
 - Configure [Hardened Docker Desktop](/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
-- {{ $audit_link }} to ensure that all Docker users in your domain are part of your organization.
+- [Audit your domains](/docker-hub/domain-audit/) to ensure that all Docker users in your domain are part of your organization.
 @y
 - [Create](__SUBDIR__/docker-hub/repos/create/) and [manage](__SUBDIR__/docker-hub/repos/) repositories.
 - Create [teams](__SUBDIR__/admin/organization/manage-a-team/) for fine-grained repository access.
 - Configure [Hardened Docker Desktop](__SUBDIR__/desktop/hardened-desktop/) to improve your organization’s security posture for containerized development.
-- {{ $audit_link }} to ensure that all Docker users in your domain are part of your organization.
+- [Audit your domains](__SUBDIR__/docker-hub/domain-audit/) to ensure that all Docker users in your domain are part of your organization.
 @z
 
 @x

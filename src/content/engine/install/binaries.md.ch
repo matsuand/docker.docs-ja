@@ -4,27 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Learn how to install Docker as a binary. These instructions are most suitable for testing purposes.
 keywords: binaries, installation, docker, documentation, linux, install docker engine
 title: Install Docker Engine from binaries
-aliases:
-- /engine/installation/binaries/
-- /engine/installation/linux/docker-ce/binaries/
-- /install/linux/docker-ce/binaries/
-- /installation/binaries/
----
 @y
----
 description: Learn how to install Docker as a binary. These instructions are most suitable for testing purposes.
 keywords: binaries, installation, docker, documentation, linux, install docker engine
 title: Install Docker Engine from binaries
-aliases:
-- /engine/installation/binaries/
-- /engine/installation/linux/docker-ce/binaries/
-- /install/linux/docker-ce/binaries/
-- /installation/binaries/
----
 @z
 
 @x
@@ -225,10 +211,10 @@ instructions for enabling and configuring AppArmor or SELinux.
 
 @x
 - Enable user namespaces if possible. See the
-  [Daemon user namespace options](/engine/reference/commandline/dockerd/#daemon-user-namespace-options).
+  [Daemon user namespace options](/reference/cli/dockerd/#daemon-user-namespace-options).
 @y
 - Enable user namespaces if possible. See the
-  [Daemon user namespace options](__SUBDIR__/engine/reference/commandline/dockerd/#daemon-user-namespace-options).
+  [Daemon user namespace options](__SUBDIR__/reference/cli/dockerd/#daemon-user-namespace-options).
 @z
 
 @x

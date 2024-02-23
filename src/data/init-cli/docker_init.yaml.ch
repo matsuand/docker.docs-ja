@@ -32,9 +32,17 @@ long: |-
 @z
 
 @x
-    If any of the files already exist, a prompt appears and provides a warning as well as giving you the option to overwrite all the files.
+    If any of the files already exist, a prompt appears and provides a warning
+    as well as giving you the option to overwrite all the files. If
+    `docker-compose.yaml` already exists instead of `compose.yaml`, `docker
+    init` can overwrite it, using `docker-compose.yaml` as the name for the
+    Compose file.
 @y
-    If any of the files already exist, a prompt appears and provides a warning as well as giving you the option to overwrite all the files.
+    If any of the files already exist, a prompt appears and provides a warning
+    as well as giving you the option to overwrite all the files. If
+    `docker-compose.yaml` already exists instead of `compose.yaml`, `docker
+    init` can overwrite it, using `docker-compose.yaml` as the name for the
+    Compose file.
 @z
 
 @x
@@ -84,12 +92,12 @@ long: |-
 @z
 
 @x
-    * [.dockerignore](../../../engine/reference/builder.md#dockerignore-file)
-    * [Dockerfile](../../../engine/reference/builder.md)
+    * [.dockerignore](../../../reference/dockerfile.md#dockerignore-file)
+    * [Dockerfile](../../../reference/dockerfile.md)
     * [compose.yaml](../../../compose/compose-application-model.md)
 @y
-    * [.dockerignore](../../../engine/reference/builder.md#dockerignore-file)
-    * [Dockerfile](../../../engine/reference/builder.md)
+    * [.dockerignore](../../../reference/dockerfile.md#dockerignore-file)
+    * [Dockerfile](../../../reference/dockerfile.md)
     * [compose.yaml](../../../compose/compose-application-model.md)
 @z
 

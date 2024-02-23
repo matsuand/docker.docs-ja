@@ -3844,11 +3844,11 @@ examples: |-
 @x
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](cli.md#configuration-files).
+    containers, see [**Configuration file** section](/engine/reference/commandline/cli/#configuration-files).
 @y
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](cli.md#configuration-files).
+    containers, see [**Configuration file** section](__SUBDIR__/engine/reference/commandline/cli/#configuration-files).
 @z
 
 @x
@@ -4092,13 +4092,13 @@ examples: |-
       on the system running the daemon, in one of the configured CDI specification
       directories.
     - The CDI feature has been enabled on the daemon side, see [Enable CDI
-      devices](dockerd.md#enable-cdi-devices).
+      devices](/reference/cli/dockerd/#enable-cdi-devices).
 @y
     - A valid CDI specification (JSON file) for the requested device is available
       on the system running the daemon, in one of the configured CDI specification
       directories.
     - The CDI feature has been enabled on the daemon side, see [Enable CDI
-      devices](dockerd.md#enable-cdi-devices).
+      devices](__SUBDIR__/reference/cli/dockerd/#enable-cdi-devices).
 @z
 
 @x
@@ -4206,9 +4206,9 @@ examples: |-
 @z
 
 @x
-    See also [the `docker cp` command](container_cp.md).
+    See also [the `docker cp` command](/reference/cli/docker/container/cp/).
 @y
-    See also [the `docker cp` command](container_cp.md).
+    See also [the `docker cp` command](__SUBDIR__/reference/cli/docker/container/cp/).
 @z
 
 @x
@@ -4619,12 +4619,12 @@ examples: |-
 
 @x
     When a restart policy is active on a container, it shows as either `Up` or
-    `Restarting` in [`docker ps`](container_ls.md). It can also be useful to use
-    [`docker events`](system_events.md) to see the restart policy in effect.
+    `Restarting` in [`docker ps`](/reference/cli/docker/container/ls/). It can also be useful to use
+    [`docker events`](/reference/cli/docker/system/events/) to see the restart policy in effect.
 @y
     When a restart policy is active on a container, it shows as either `Up` or
-    `Restarting` in [`docker ps`](container_ls.md). It can also be useful to use
-    [`docker events`](system_events.md) to see the restart policy in effect.
+    `Restarting` in [`docker ps`](__SUBDIR__/reference/cli/docker/container/ls/). It can also be useful to use
+    [`docker events`](__SUBDIR__/reference/cli/docker/system/events/) to see the restart policy in effect.
 @z
 
 @x
@@ -4701,11 +4701,11 @@ examples: |-
 
 @x
     The number of (attempted) restarts for a container can be obtained using the
-    [`docker inspect`](inspect.md) command. For example, to get the number of
+    [`docker inspect`](/reference/cli/docker/inspect/) command. For example, to get the number of
     restarts for container "my-container";
 @y
     The number of (attempted) restarts for a container can be obtained using the
-    [`docker inspect`](inspect.md) command. For example, to get the number of
+    [`docker inspect`](__SUBDIR__/reference/cli/docker/inspect/) command. For example, to get the number of
     restarts for container "my-container";
 @z
 
@@ -5140,10 +5140,10 @@ examples: |-
 @z
 
 @x
-    The default value is defined by [`STOPSIGNAL`](/engine/reference/builder/#stopsignal)
+    The default value is defined by [`STOPSIGNAL`](/reference/dockerfile/#stopsignal)
     in the image, or `SIGTERM` if the image has no `STOPSIGNAL` defined.
 @y
-    The default value is defined by [`STOPSIGNAL`](__SUBDIR__/engine/reference/builder/#stopsignal)
+    The default value is defined by [`STOPSIGNAL`](__SUBDIR__/reference/dockerfile/#stopsignal)
     in the image, or `SIGTERM` if the image has no `STOPSIGNAL` defined.
 @z
 
@@ -5603,6 +5603,7 @@ examples: |-
     - Sysctls beginning with `net.*`
     - If you use the `--network=host` option using these sysctls are not allowed.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -5611,6 +5612,7 @@ swarm: false
     - Sysctls beginning with `net.*`
     - If you use the `--network=host` option using these sysctls are not allowed.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

@@ -11,7 +11,7 @@ long: |-
     The `docker build` command builds Docker images from a Dockerfile and a
     "context". A build's context is the set of files located in the specified
     `PATH` or `URL`. The build process can refer to any of the files in the
-    context. For example, your build can use a [*COPY*](/engine/reference/builder/#copy)
+    context. For example, your build can use a [*COPY*](/reference/dockerfile/#copy)
     instruction to reference a file in the context.
 @y
 command: docker image build
@@ -21,7 +21,7 @@ long: |-
     The `docker build` command builds Docker images from a Dockerfile and a
     "context". A build's context is the set of files located in the specified
     `PATH` or `URL`. The build process can refer to any of the files in the
-    context. For example, your build can use a [*COPY*](__SUBDIR__/engine/reference/builder/#copy)
+    context. For example, your build can use a [*COPY*](__SUBDIR__/reference/dockerfile/#copy)
     instruction to reference a file in the context.
 @z
 
@@ -244,13 +244,13 @@ long: |-
     add to that directory only the files needed for building the Dockerfile. To
     increase the build's performance, you can exclude files and directories by
     adding a `.dockerignore` file to that directory as well. For information on
-    creating one, see the [.dockerignore file](/engine/reference/builder/#dockerignore-file).
+    creating one, see the [.dockerignore file](/reference/dockerfile/#dockerignore-file).
 @y
     In most cases, it's best to put each Dockerfile in an empty directory. Then,
     add to that directory only the files needed for building the Dockerfile. To
     increase the build's performance, you can exclude files and directories by
     adding a `.dockerignore` file to that directory as well. For information on
-    creating one, see the [.dockerignore file](__SUBDIR__/engine/reference/builder/#dockerignore-file).
+    creating one, see the [.dockerignore file](__SUBDIR__/reference/dockerfile/#dockerignore-file).
 @z
 
 @x
@@ -984,7 +984,7 @@ examples: |-
     Remember that the daemon could be running on a remote machine and that no
     parsing of the Dockerfile happens at the client side (where you're running
     `docker build`). That means that all the files at `PATH` are sent, not just
-    the ones listed to [`ADD`](/engine/reference/builder/#add)
+    the ones listed to [`ADD`](/reference/dockerfile/#add)
     in the Dockerfile.
 @y
     This example specifies that the `PATH` is `.`, and so `tar`s all the files in the
@@ -993,7 +993,7 @@ examples: |-
     Remember that the daemon could be running on a remote machine and that no
     parsing of the Dockerfile happens at the client side (where you're running
     `docker build`). That means that all the files at `PATH` are sent, not just
-    the ones listed to [`ADD`](__SUBDIR__/engine/reference/builder/#add)
+    the ones listed to [`ADD`](__SUBDIR__/reference/dockerfile/#add)
     in the Dockerfile.
 @z
 
@@ -1199,12 +1199,12 @@ examples: |-
     This example shows the use of the `.dockerignore` file to exclude the `.git`
     directory from the context. You can see its effect in the changed size of the
     uploaded context. The builder reference contains detailed information on
-    [creating a .dockerignore file](/engine/reference/builder/#dockerignore-file).
+    [creating a .dockerignore file](/reference/dockerfile/#dockerignore-file).
 @y
     This example shows the use of the `.dockerignore` file to exclude the `.git`
     directory from the context. You can see its effect in the changed size of the
     uploaded context. The builder reference contains detailed information on
-    [creating a .dockerignore file](__SUBDIR__/engine/reference/builder/#dockerignore-file).
+    [creating a .dockerignore file](__SUBDIR__/reference/dockerfile/#dockerignore-file).
 @z
 
 @x
@@ -1250,9 +1250,9 @@ examples: |-
 @z
 
 @x
-    [Read more about valid tags](image_tag.md).
+    [Read more about valid tags](/reference/cli/docker/image/tag/).
 @y
-    [Read more about valid tags](image_tag.md).
+    [Read more about valid tags](__SUBDIR__/reference/cli/docker/image/tag/).
 @z
 
 @x
@@ -1405,10 +1405,10 @@ examples: |-
 
 @x
     When you run `docker build` with the `--cgroup-parent` option, the daemon runs the containers
-    used in the build with the [corresponding `docker run` flag](../run.md#specify-custom-cgroups).
+    used in the build with the [corresponding `docker run` flag](/reference/cli/docker/container/run/#cgroup-parent).
 @y
     When you run `docker build` with the `--cgroup-parent` option, the daemon runs the containers
-    used in the build with the [corresponding `docker run` flag](../run.md#specify-custom-cgroups).
+    used in the build with the [corresponding `docker run` flag](__SUBDIR__/reference/cli/docker/container/run/#cgroup-parent).
 @z
 
 @x
@@ -1419,10 +1419,10 @@ examples: |-
 
 @x
     Using the `--ulimit` option with `docker build` causes the daemon to start each build step's
-    container using those [`--ulimit` flag values](run.md#ulimit).
+    container using those [`--ulimit` flag values](/reference/cli/docker/container/run/#ulimit).
 @y
     Using the `--ulimit` option with `docker build` causes the daemon to start each build step's
-    container using those [`--ulimit` flag values](run.md#ulimit).
+    container using those [`--ulimit` flag values](__SUBDIR__/reference/cli/docker/container/run/#ulimit).
 @z
 
 @x
@@ -1485,10 +1485,10 @@ examples: |-
 
 @x
     For detailed information on using `ARG` and `ENV` instructions, see the
-    [Dockerfile reference](/engine/reference/builder/).
+    [Dockerfile reference](/reference/dockerfile/).
 @y
     For detailed information on using `ARG` and `ENV` instructions, see the
-    [Dockerfile reference](__SUBDIR__/engine/reference/builder/).
+    [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
 @z
 
 @x
@@ -1512,10 +1512,10 @@ examples: |-
 @z
 
 @x
-    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](run.md#env)
+    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](/reference/cli/docker/container/run/#env)
     for more information.
 @y
-    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](run.md#env)
+    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](__SUBDIR__/reference/cli/docker/container/run/#env)
     for more information.
 @z
 
@@ -1830,11 +1830,11 @@ examples: |-
 @x
     The `--output` option exports all files from the target stage. A common pattern
     for exporting only specific files is to do multi-stage builds and to copy the
-    desired files to a new scratch stage with [`COPY --from`](/engine/reference/builder/#copy).
+    desired files to a new scratch stage with [`COPY --from`](/reference/dockerfile/#copy).
 @y
     The `--output` option exports all files from the target stage. A common pattern
     for exporting only specific files is to do multi-stage builds and to copy the
-    desired files to a new scratch stage with [`COPY --from`](__SUBDIR__/engine/reference/builder/#copy).
+    desired files to a new scratch stage with [`COPY --from`](__SUBDIR__/reference/dockerfile/#copy).
 @z
 
 @x
@@ -2056,9 +2056,9 @@ examples: |-
 @z
 
 @x
-    Find more details in the [Dockerfile documentation](/engine/reference/builder/#run---network).
+    Find more details in the [Dockerfile documentation](/reference/dockerfile/#run---network).
 @y
-    Find more details in the [Dockerfile documentation](__SUBDIR__/engine/reference/builder/#run---network).
+    Find more details in the [Dockerfile documentation](__SUBDIR__/reference/dockerfile/#run---network).
 @z
 
 @x
@@ -2339,6 +2339,7 @@ examples: |-
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -2347,6 +2348,7 @@ swarm: false
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

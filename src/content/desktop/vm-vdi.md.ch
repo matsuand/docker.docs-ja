@@ -34,18 +34,6 @@ To run Docker Desktop in a virtual desktop environment, it is essential nested v
 @z
 
 @x
->**Important**
->
-> Docker doesn't support running Docker Desktop for Mac inside a VM.
-{ .important }
-@y
->**重要**
->
-> Docker では VM 内での Docker Desktop for Mac の実行はサポートしていません。
-{ .important }
-@z
-
-@x
 ## Virtual desktop support
 @y
 ## 仮想デスクトップサポート {#virtual-desktop-support}

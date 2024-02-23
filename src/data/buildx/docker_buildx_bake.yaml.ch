@@ -136,9 +136,9 @@ examples: |-
 @z
 
 @x
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @y
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
 @z
 
 @x
@@ -316,9 +316,9 @@ examples: |-
 @z
 
 @x
-    Same as [`build --progress`](buildx_build.md#progress).
+    Same as [`build --progress`](/reference/cli/docker/buildx/build/#progress).
 @y
-    Same as [`build --progress`](buildx_build.md#progress).
+    Same as [`build --progress`](__SUBDIR__/reference/cli/docker/buildx/build/#progress).
 @z
 
 @x
@@ -328,9 +328,9 @@ examples: |-
 @z
 
 @x
-    Same as [`build --provenance`](buildx_build.md#provenance).
+    Same as [`build --provenance`](/reference/cli/docker/buildx/build/#provenance).
 @y
-    Same as [`build --provenance`](buildx_build.md#provenance).
+    Same as [`build --provenance`](__SUBDIR__/reference/cli/docker/buildx/build/#provenance).
 @z
 
 @x
@@ -352,9 +352,9 @@ examples: |-
 @z
 
 @x
-    Same as [`build --sbom`](buildx_build.md#sbom).
+    Same as [`build --sbom`](/reference/cli/docker/buildx/build/#sbom).
 @y
-    Same as [`build --sbom`](buildx_build.md#sbom).
+    Same as [`build --sbom`](__SUBDIR__/reference/cli/docker/buildx/build/#sbom).
 @z
 
 @x

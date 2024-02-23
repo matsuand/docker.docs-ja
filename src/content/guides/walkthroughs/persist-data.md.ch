@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Persist container data
 keywords: get started, quick start, intro, concepts
 description: Learn how to persist container data
----
 @y
----
 title: コンテナーデータの保存
 keywords: get started, quick start, intro, concepts
 description: コンテナーデータの保存方法について学びます。
----
 @z
 
 @x
@@ -305,11 +301,11 @@ Related information:
 @x
 - Deep dive into [volumes](../../storage/volumes.md)
 - Learn about using volumes in Compose in the [Compose file reference](../../compose/compose-file/_index.md)
-- Explore using volumes via the CLI in the [docker volume CLI reference](../../engine/reference/commandline/volume_create.md) and [Docker run reference](/reference/run/)
+- Explore using volumes via the CLI in the [docker volume CLI reference](../../reference/cli/docker/volume/create.md) and [Docker run reference](/reference/run/)
 @y
 - 詳しくは [ボリューム](../../storage/volumes.md) を参照してください。
 - Compose ファイルにおけるボリュームの利用方法については [Compose ファイルリファレンス](../../compose/compose-file/_index.md) を参照してください。
-- CLI を通じてボリュームを利用する方法については [docker volume CLI リファレンス](../../engine/reference/commandline/volume_create.md) や [Docker run リファレンス](__SUBDIR__/reference/run/) を確認してください。
+- CLI を通じてボリュームを利用する方法については [docker volume CLI リファレンス](../../reference/cli/docker/volume/create.md) や [Docker run リファレンス](__SUBDIR__/reference/run/) を確認してください。
 @z
 
 @x

@@ -367,6 +367,7 @@ examples: |-
      Live Restore Enabled: false
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false
@@ -407,6 +408,7 @@ swarm: false
      Live Restore Enabled: false
     ```
 deprecated: false
+hidden: false
 experimental: false
 experimentalcli: false
 kubernetes: false

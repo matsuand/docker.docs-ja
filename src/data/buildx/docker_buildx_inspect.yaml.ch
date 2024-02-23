@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker buildx inspect
 short: Inspect current builder instance
@@ -90,9 +92,9 @@ examples: |-
 @z
 
 @x
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @y
-    Same as [`buildx --builder`](buildx.md#builder).
+    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
 @z
 
 @x
