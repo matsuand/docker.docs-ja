@@ -25,6 +25,7 @@ copyfiles = \
 	toc-api.html      \
 	toc-cli.html      \
 	toc-default.html  \
+	tooltip.html      \
 	top-nav.html
 
 include $(top_srcdir)/build-aux/copy.mk

@@ -24,49 +24,55 @@ aliases:
 @z
 
 @x
-When you activate image analysis for a repository, Docker Scout analyzes new
-images automatically when you push to that repository. Docker Scout image
-analysis is more than point-in-time scanning, the analysis gets reevaluated
-continuously, meaning you don't need to re-scan the image to see an updated
-vulnerability report.
+When you activate image analysis for a repository,
+Docker Scout automatically analyzes new images that you push to that repository.
 @y
-When you activate image analysis for a repository, Docker Scout analyzes new
-images automatically when you push to that repository. Docker Scout image
-analysis is more than point-in-time scanning, the analysis gets reevaluated
-continuously, meaning you don't need to re-scan the image to see an updated
-vulnerability report.
+When you activate image analysis for a repository,
+Docker Scout automatically analyzes new images that you push to that repository.
 @z
 
 @x
-Docker Scout image analysis is available by default for Docker Hub
-repositories. You can also integrate third-party registries, such as Amazon ECR
-and JFrog Artifactory, and even run image analysis locally on your development
-machine.
+Image analysis extracts the Software Bill of Material (SBOM)
+and other image metadata,and evaluates it against vulnerability data from
+[security advisories](./advisory-db-sources.md).
 @y
-Docker Scout image analysis is available by default for Docker Hub
-repositories. You can also integrate third-party registries, such as Amazon ECR
-and JFrog Artifactory, and even run image analysis locally on your development
-machine.
+Image analysis extracts the Software Bill of Material (SBOM)
+and other image metadata,and evaluates it against vulnerability data from
+[security advisories](./advisory-db-sources.md).
 @z
 
 @x
-The following video shows how to activate Docker Scout image analysis on your
-repositories.
+If you run image analysis as a one-off task using the CLI or Docker Desktop,
+Docker Scout won't store any data about your image.
+If you enable Docker Scout for your container image repositories however,
+Docker Scout saves a metadata snapshot of your images after the analysis.
+As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot,
+which means your security status for images is updated in real-time.
+This dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed.
 @y
-The following video shows how to activate Docker Scout image analysis on your
-repositories.
+If you run image analysis as a one-off task using the CLI or Docker Desktop,
+Docker Scout won't store any data about your image.
+If you enable Docker Scout for your container image repositories however,
+Docker Scout saves a metadata snapshot of your images after the analysis.
+As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot,
+which means your security status for images is updated in real-time.
+This dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed.
 @z
 
 @x
-<iframe class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/a6fb14ede0a94d0d984edf6cf16604e0?sid=ba34f694-32a6-4b74-b3f8-9cc6b80ef66f"></iframe>
+Docker Scout image analysis is available by default for Docker Hub repositories.
+You can also integrate third-party registries and other services. To learn more,
+see [Integrating Docker Scout with other systems](./integrations/_index.md).
 @y
-<iframe class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/a6fb14ede0a94d0d984edf6cf16604e0?sid=ba34f694-32a6-4b74-b3f8-9cc6b80ef66f"></iframe>
+Docker Scout image analysis is available by default for Docker Hub repositories.
+You can also integrate third-party registries and other services. To learn more,
+see [Integrating Docker Scout with other systems](./integrations/_index.md).
 @z
 
 @x
-## Activate image analysis
+## Activate Docker Scout on a repository
 @y
-## Activate image analysis
+## Activate Docker Scout on a repository
 @z
 
 @x
@@ -82,15 +88,15 @@ billing](../billing/scout-billing.md).
 @z
 
 @x
-Before you can activate image analysis for a repository, ensure that the
-registry is integrated with Docker Scout. Docker Hub is integrated by default.
-For information about integrating Docker Scout with registries and other
-systems, see [Integrating Docker Scout](./integrations/_index.md)
+Before you can activate image analysis on a repository in a third-party registry,
+the registry must be integrated with Docker Scout for your Docker organization.
+Docker Hub is integrated by default. For more information, see
+See [Container registry integrations](./integrations/_index.md#container-registries)
 @y
-Before you can activate image analysis for a repository, ensure that the
-registry is integrated with Docker Scout. Docker Hub is integrated by default.
-For information about integrating Docker Scout with registries and other
-systems, see [Integrating Docker Scout](./integrations/_index.md)
+Before you can activate image analysis on a repository in a third-party registry,
+the registry must be integrated with Docker Scout for your Docker organization.
+Docker Hub is integrated by default. For more information, see
+See [Container registry integrations](./integrations/_index.md#container-registries)
 @z
 
 @x
@@ -128,11 +134,11 @@ To activate image analysis:
 @z
 
 @x
-If your repositories already contain images, Docker Scout pulls and analyzes
-the latest images automatically.
+If your repositories already contain images,
+Docker Scout pulls and analyzes the latest images automatically.
 @y
-If your repositories already contain images, Docker Scout pulls and analyzes
-the latest images automatically.
+If your repositories already contain images,
+Docker Scout pulls and analyzes the latest images automatically.
 @z
 
 @x
@@ -182,11 +188,15 @@ analysis is activated.
 @z
 
 @x
-   The default `docker` driver only supports build attestations if you use the
-   [containerd image store](../desktop/containerd.md).
+   > **Note**
+   >
+   > The default `docker` driver only supports build attestations if you use the
+   > [containerd image store](../desktop/containerd.md).
 @y
-   The default `docker` driver only supports build attestations if you use the
-   [containerd image store](../desktop/containerd.md).
+   > **Note**
+   >
+   > The default `docker` driver only supports build attestations if you use the
+   > [containerd image store](../desktop/containerd.md).
 @z
 
 @x
@@ -204,11 +214,9 @@ analysis is activated.
 @z
 
 @x
-   It may take a few minutes for the analysis report to appear. If the analysis
-   report is not available, wait a moment and then refresh the page.
+   It may take a few minutes for the analysis results to appear.
 @y
-   It may take a few minutes for the analysis report to appear. If the analysis
-   report is not available, wait a moment and then refresh the page.
+   It may take a few minutes for the analysis results to appear.
 @z
 
 @x
@@ -219,10 +227,10 @@ analysis is activated.
 
 @x
 You can analyze local images with Docker Scout using Docker Desktop or the
-`docker scout quickview` and `docker scout cves` commands for the Docker CLI.
+`docker scout` commands for the Docker CLI.
 @y
 You can analyze local images with Docker Scout using Docker Desktop or the
-`docker scout quickview` and `docker scout cves` commands for the Docker CLI.
+`docker scout` commands for the Docker CLI.
 @z
 
 @x
@@ -276,23 +284,31 @@ To analyze an image locally using the Docker Desktop GUI:
 @z
 
 @x
-The `docker scout` CLI commands provide a terminal interface for using Docker
-Scout with local and remote images.
+The `docker scout` CLI commands provide a command line interface for using Docker
+Scout from your terminal.
 @y
-The `docker scout` CLI commands provide a terminal interface for using Docker
-Scout with local and remote images.
+The `docker scout` CLI commands provide a command line interface for using Docker
+Scout from your terminal.
 @z
 
 @x
-Using the `docker scout quickview` and `docker scout cves` CLI commands, you
-can analyze images locally and view the analysis report in text format. You can
-print the results directly to stdout, or export them to a file using a
-structured format, such as Static Analysis Results Interchange Format (SARIF).
+- `docker scout quickview`: summary of the specified image, see [Quickview](#quickview)
+- `docker scout cves`: local analysis of the specified image, see [CVEs](#cves)
+- `docker scout compare`: analyzes and compares two images
 @y
-Using the `docker scout quickview` and `docker scout cves` CLI commands, you
-can analyze images locally and view the analysis report in text format. You can
-print the results directly to stdout, or export them to a file using a
-structured format, such as Static Analysis Results Interchange Format (SARIF).
+- `docker scout quickview`: summary of the specified image, see [Quickview](#quickview)
+- `docker scout cves`: local analysis of the specified image, see [CVEs](#cves)
+- `docker scout compare`: analyzes and compares two images
+@z
+
+@x
+By default, the results are printed to standard output.
+You can also export results to a file in a structured format,
+such as Static Analysis Results Interchange Format (SARIF).
+@y
+By default, the results are printed to standard output.
+You can also export results to a file in a structured format,
+such as Static Analysis Results Interchange Format (SARIF).
 @z
 
 @x
@@ -302,19 +318,17 @@ structured format, such as Static Analysis Results Interchange Format (SARIF).
 @z
 
 @x
-The Docker Scout CLI plugin is available in Docker Desktop starting with
-version 4.17 and available as a standalone binary.
+The Docker Scout CLI plugin comes pre-installed with Docker Desktop.
+You can also install it as a standalone binary.
 @y
-The Docker Scout CLI plugin is available in Docker Desktop starting with
-version 4.17 and available as a standalone binary.
+The Docker Scout CLI plugin comes pre-installed with Docker Desktop.
+You can also install it as a standalone binary.
 @z
 
 @x
-To install the latest version of the plugin manually, run the following
-commands:
+To install the latest version of the plugin manually, run the following commands:
 @y
-To install the latest version of the plugin manually, run the following
-commands:
+To install the latest version of the plugin manually, run the following commands:
 @z
 
 @x

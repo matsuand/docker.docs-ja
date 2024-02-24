@@ -10,6 +10,74 @@
 % (T "Aliases")
 % heading.html に受け渡す dict の第三引数追加
 
+% @x (T "Usage") ／dict 第三引数追加
+%     {{ with $data.usage }}
+%       {{ $heading := dict "level" 2 "text" "Usage" }}
+%       {{ partial "heading.html" $heading }}
+%       {{ $.Scratch.Add "headings" $heading }}
+%       {{ highlight (strings.Replace . "\t" "") "console" }}
+%     {{ end }}
+% @y
+%     {{ with $data.usage }}
+%       {{ $heading := dict "level" 2 "text" (T "Usage") "id" "usage" }}
+%       {{ partial "heading.html" $heading }}
+%       {{ $.Scratch.Add "headings" $heading }}
+%       {{ highlight (strings.Replace . "\t" "") "console" }}
+%     {{ end }}
+% @z
+
+@x {{ T "Usage" }}
+        {{ with $data.usage }}
+        <tr>
+          <th class="text-left w-32">Usage</th>
+          <td><code>{{ . }}</code></td>
+        </tr>
+        {{ end }}
+@y
+        {{ with $data.usage }}
+        <tr>
+          <th class="text-left w-32">{{ T "Usage" }}</th>
+          <td><code>{{ . }}</code></td>
+        </tr>
+        {{ end }}
+@z
+
+@x {{ T "Aliases" }}
+        {{ with $data.aliases }}
+        {{ $aliases := strings.Replace . (fmt.Printf "%s, " page.Title) "" }}
+        <tr>
+          <th class="text-left w-32 flex items-center gap-2">
+            <span>Aliases</span>
+            {{ partial "tooltip.html" "An alias is a short or memorable alternative for a longer command." }}
+          </th>
+          <td>
+            <div class="flex gap-3">
+            {{ range (strings.Split $aliases ", ") }}
+              <code>{{ . }}</code>
+            {{ end }}
+            </div>
+          </td>
+        </tr>
+        {{ end }}
+@y
+        {{ with $data.aliases }}
+        {{ $aliases := strings.Replace . (fmt.Printf "%s, " page.Title) "" }}
+        <tr>
+          <th class="text-left w-32 flex items-center gap-2">
+            <span>{{ T "Aliases" }}</span>
+            {{ partial "tooltip.html" "An alias is a short or memorable alternative for a longer command." }}
+          </th>
+          <td>
+            <div class="flex gap-3">
+            {{ range (strings.Split $aliases ", ") }}
+              <code>{{ . }}</code>
+            {{ end }}
+            </div>
+          </td>
+        </tr>
+        {{ end }}
+@z
+
 @x
           <a href="https://github.com/docker/roadmap/issues/209"
             >Docker roadmap</a
@@ -72,47 +140,31 @@
     {{ end }}
 @z
 
-@x (T "Usage") ／dict 第三引数追加
-    {{ with $data.usage }}
-      {{ $heading := dict "level" 2 "text" "Usage" }}
-      {{ partial "heading.html" $heading }}
-      {{ $.Scratch.Add "headings" $heading }}
-      {{ highlight (strings.Replace . "\t" "") "console" }}
-    {{ end }}
-@y
-    {{ with $data.usage }}
-      {{ $heading := dict "level" 2 "text" (T "Usage") "id" "usage" }}
-      {{ partial "heading.html" $heading }}
-      {{ $.Scratch.Add "headings" $heading }}
-      {{ highlight (strings.Replace . "\t" "") "console" }}
-    {{ end }}
-@z
-
-@x (T "Aliases") ／dict 第三引数追加
-    {{ with $data.aliases }}
-      {{ $heading := dict "level" 2 "text" "Aliases" }}
-      {{ partial "heading.html" $heading }}
-      {{ $aliases := strings.Split . ", " }}
-      <p>The following commands are equivalent and redirect here:</p>
-      <ul>
-      {{ range $aliases }}
-        <li><code>{{ . }}</code></li>
-      {{ end }}
-      </ul>
-    {{ end }}
-@y
-    {{ with $data.aliases }}
-      {{ $heading := dict "level" 2 "text" (T "Aliases") "id" "aliases" }}
-      {{ partial "heading.html" $heading }}
-      {{ $aliases := strings.Split . ", " }}
-      <p>The following commands are equivalent and redirect here:</p>
-      <ul>
-      {{ range $aliases }}
-        <li><code>{{ . }}</code></li>
-      {{ end }}
-      </ul>
-    {{ end }}
-@z
+% @x (T "Aliases") ／dict 第三引数追加
+%     {{ with $data.aliases }}
+%       {{ $heading := dict "level" 2 "text" "Aliases" }}
+%       {{ partial "heading.html" $heading }}
+%       {{ $aliases := strings.Split . ", " }}
+%       <p>The following commands are equivalent and redirect here:</p>
+%       <ul>
+%       {{ range $aliases }}
+%         <li><code>{{ . }}</code></li>
+%       {{ end }}
+%       </ul>
+%     {{ end }}
+% @y
+%     {{ with $data.aliases }}
+%       {{ $heading := dict "level" 2 "text" (T "Aliases") "id" "aliases" }}
+%       {{ partial "heading.html" $heading }}
+%       {{ $aliases := strings.Split . ", " }}
+%       <p>The following commands are equivalent and redirect here:</p>
+%       <ul>
+%       {{ range $aliases }}
+%         <li><code>{{ . }}</code></li>
+%       {{ end }}
+%       </ul>
+%     {{ end }}
+% @z
 
 @x (T "Description") ／dict 第三引数追加
     {{ with $data.long }}

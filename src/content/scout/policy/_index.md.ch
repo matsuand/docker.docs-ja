@@ -4,19 +4,23 @@
 % __SUBDIR__ 対応。
 
 @x
+---
 title: Get started with Policy Evaluation in Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, policy
 description: |
   Policies in Docker Scout let you define supply chain rules and thresholds
   for your artifacts, and track how your artifacts perform against those
   requirements over time
+---
 @y
+---
 title: Get started with Policy Evaluation in Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, policy
 description: |
   Policies in Docker Scout let you define supply chain rules and thresholds
   for your artifacts, and track how your artifacts perform against those
   requirements over time
+---
 @z
 
 @x
@@ -728,17 +732,47 @@ to match Docker Hub images. This is the registry hostname of Docker Hub.
 @z
 
 @x
-You can also configure the policy to allow only supported tags of Docker
-Official Images. When this option is enabled, images using unsupported tags of
-official images trigger a policy violation. Supported tags for official images
-are listed in the **Supported tags** section of the repository overview on
-Docker Hub.
+You can also configure the policy to:
 @y
-You can also configure the policy to allow only supported tags of Docker
-Official Images. When this option is enabled, images using unsupported tags of
-official images trigger a policy violation. Supported tags for official images
-are listed in the **Supported tags** section of the repository overview on
-Docker Hub.
+You can also configure the policy to:
+@z
+
+@x
+- Allow only supported tags of Docker Official Images.
+@y
+- Allow only supported tags of Docker Official Images.
+@z
+
+@x
+  When this option is enabled, images using unsupported tags of official images
+  trigger a policy violation. Supported tags for official images are listed in
+  the **Supported tags** section of the repository overview on Docker Hub.
+@y
+  When this option is enabled, images using unsupported tags of official images
+  trigger a policy violation. Supported tags for official images are listed in
+  the **Supported tags** section of the repository overview on Docker Hub.
+@z
+
+@x
+- Allow only Docker Official Images of supported distro versions
+@y
+- Allow only Docker Official Images of supported distro versions
+@z
+
+@x
+  When this option is enabled, images using unsupported Linux distributions
+  that have reached end of life (such as `ubuntu:18.04`) trigger a policy violation.
+@y
+  When this option is enabled, images using unsupported Linux distributions
+  that have reached end of life (such as `ubuntu:18.04`) trigger a policy violation.
+@z
+
+@x
+  Enabling this option may cause the policy to report no data
+  if the operating system version cannot be determined.
+@y
+  Enabling this option may cause the policy to report no data
+  if the operating system version cannot be determined.
 @z
 
 @x
@@ -752,14 +786,16 @@ This policy isn't enabled by default. To enable the policy:
 2. Go to the **Policies** section.
 3. Select the **Unapproved base images** policy in the list.
 4. Enter the patterns that you want to allow.
-5. Select whether you want to allow only supported tags of official images.
+5. Select whether you want to allow only supported tags or supported distro
+   versions of official images.
 6. Select **Save and enable**.
 @y
 1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
 2. Go to the **Policies** section.
 3. Select the **Unapproved base images** policy in the list.
 4. Enter the patterns that you want to allow.
-5. Select whether you want to allow only supported tags of official images.
+5. Select whether you want to allow only supported tags or supported distro
+   versions of official images.
 6. Select **Save and enable**.
 @z
 

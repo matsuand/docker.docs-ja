@@ -18,16 +18,20 @@ toc_max: 3
 @z
 
 @x
-This topic discusses how to manage the application data for your swarm services.
+This page describes networking for swarm services.
 @y
-This topic discusses how to manage the application data for your swarm services.
+This page describes networking for swarm services.
 @z
 
 @x
 ## Swarm and types of traffic
-A Docker swarm generates two different kinds of traffic:
 @y
 ## Swarm and types of traffic
+@z
+
+@x
+A Docker swarm generates two different kinds of traffic:
+@y
 A Docker swarm generates two different kinds of traffic:
 @z
 
@@ -170,9 +174,39 @@ for an overview.
 @z
 
 @x
-## Create an overlay network
+## Overlay networking
 @y
-## Create an overlay network
+## Overlay networking
+@z
+
+@x
+When you initialize a swarm or join a Docker host to an existing swarm, two
+new networks are created on that Docker host:
+@y
+When you initialize a swarm or join a Docker host to an existing swarm, two
+new networks are created on that Docker host:
+@z
+
+@x
+- An overlay network called `ingress`, which handles the control and data traffic
+  related to swarm services. When you create a swarm service and do not
+  connect it to a user-defined overlay network, it connects to the `ingress`
+  network by default.
+- A bridge network called `docker_gwbridge`, which connects the individual
+  Docker daemon to the other daemons participating in the swarm.
+@y
+- An overlay network called `ingress`, which handles the control and data traffic
+  related to swarm services. When you create a swarm service and do not
+  connect it to a user-defined overlay network, it connects to the `ingress`
+  network by default.
+- A bridge network called `docker_gwbridge`, which connects the individual
+  Docker daemon to the other daemons participating in the swarm.
+@z
+
+@x
+### Create an overlay network
+@y
+### Create an overlay network
 @z
 
 @x
@@ -1035,6 +1069,72 @@ $ docker swarm join \
   --data-path-addr eth1 \
   192.168.99.100:2377
 ```
+@z
+
+@x
+## Publish ports on an overlay network
+@y
+## Publish ports on an overlay network
+@z
+
+@x
+Swarm services connected to the same overlay network effectively expose all
+ports to each other. For a port to be accessible outside of the service, that
+port must be _published_ using the `-p` or `--publish` flag on `docker service
+create` or `docker service update`. Both the legacy colon-separated syntax and
+the newer comma-separated value syntax are supported. The longer syntax is
+preferred because it is somewhat self-documenting.
+@y
+Swarm services connected to the same overlay network effectively expose all
+ports to each other. For a port to be accessible outside of the service, that
+port must be _published_ using the `-p` or `--publish` flag on `docker service
+create` or `docker service update`. Both the legacy colon-separated syntax and
+the newer comma-separated value syntax are supported. The longer syntax is
+preferred because it is somewhat self-documenting.
+@z
+
+@x
+<table>
+<thead>
+<tr>
+<th>Flag value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tr>
+<td><tt>-p 8080:80</tt> or<br /><tt>-p published=8080,target=80</tt></td>
+<td>Map TCP port 80 on the service to port 8080 on the routing mesh.</td>
+</tr>
+<tr>
+<td><tt>-p 8080:80/udp</tt> or<br /><tt>-p published=8080,target=80,protocol=udp</tt></td>
+<td>Map UDP port 80 on the service to port 8080 on the routing mesh.</td>
+</tr>
+<tr>
+<td><tt>-p 8080:80/tcp -p 8080:80/udp</tt> or <br /><tt>-p published=8080,target=80,protocol=tcp -p published=8080,target=80,protocol=udp</tt></td>
+<td>Map TCP port 80 on the service to TCP port 8080 on the routing mesh, and map UDP port 80 on the service to UDP port 8080 on the routing mesh.</td>
+</tr>
+</table>
+@y
+<table>
+<thead>
+<tr>
+<th>Flag value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tr>
+<td><tt>-p 8080:80</tt> or<br /><tt>-p published=8080,target=80</tt></td>
+<td>Map TCP port 80 on the service to port 8080 on the routing mesh.</td>
+</tr>
+<tr>
+<td><tt>-p 8080:80/udp</tt> or<br /><tt>-p published=8080,target=80,protocol=udp</tt></td>
+<td>Map UDP port 80 on the service to port 8080 on the routing mesh.</td>
+</tr>
+<tr>
+<td><tt>-p 8080:80/tcp -p 8080:80/udp</tt> or <br /><tt>-p published=8080,target=80,protocol=tcp -p published=8080,target=80,protocol=udp</tt></td>
+<td>Map TCP port 80 on the service to TCP port 8080 on the routing mesh, and map UDP port 80 on the service to UDP port 8080 on the routing mesh.</td>
+</tr>
+</table>
 @z
 
 @x

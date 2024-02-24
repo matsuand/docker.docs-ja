@@ -2400,9 +2400,9 @@ examples: |-
 @z
 
 @x
-    To run `htop` in a container that shares the process namespac of the host:
+    To run `htop` in a container that shares the process namespace of the host:
 @y
-    To run `htop` in a container that shares the process namespac of the host:
+    To run `htop` in a container that shares the process namespace of the host:
 @z
 
 @x

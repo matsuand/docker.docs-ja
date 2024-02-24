@@ -4,6 +4,7 @@
 copyfiles = \
 	build-execution.png             \
 	build-high-level-arch.png       \
+	build-variables.svg             \
 	buildkit-dag.svg                \
 	cache-stack-invalidate-copy.dot \
 	cache-stack-invalidate-copy.svg \

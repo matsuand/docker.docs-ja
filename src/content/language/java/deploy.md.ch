@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Test your Java deployment
 keywords: deploy, kubernetes, java
 description: Learn how to develop locally using Kubernetes
----
 @y
----
 title: Test your Java deployment
 keywords: deploy, kubernetes, java
 description: Learn how to develop locally using Kubernetes
----
 @z
 
 @x
@@ -24,10 +20,10 @@ description: Learn how to develop locally using Kubernetes
 @z
 
 @x
-- Complete all the previous sections of this guide, starting with [Build your Java image](build-images.md).
+- Complete all the previous sections of this guide, starting with [Containerize your app](containerize.md).
 - [Turn on Kubernetes](/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @y
-- Complete all the previous sections of this guide, starting with [Build your Java image](build-images.md).
+- Complete all the previous sections of this guide, starting with [Containerize your app](containerize.md).
 - [Turn on Kubernetes](__SUBDIR__/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @z
 

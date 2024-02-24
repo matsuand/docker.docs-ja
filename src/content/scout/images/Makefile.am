@@ -4,24 +4,19 @@
 SUBDIRS = release-notes
 
 copyfiles = \
-	Scout-ECR.png                         \
-	change-base-image.png                 \
-	dashboard-base-images.webp            \
-	dashboard-image-layers.webp           \
-	dashboard-image-policies.webp         \
-	dashboard-images.png                  \
-	dashboard-overview.webp               \
-	dashboard-policies-view.webp          \
-	dashboard-repo-tags.webp              \
-	dd-image-view.png                     \
-	gha-output.webp                       \
-	gha-policy-eval.webp                  \
-	policy-detailed-results.webp          \
-	policy-image-list.webp                \
-	policy-overview.webp                  \
-	policy-tag-view.webp                  \
-	remediation.png                       \
-	scout-policy-eval-ci.webp             \
+	Scout-ECR.png                \
+	change-base-image.png        \
+	dashboard-images.webp        \
+	dashboard-overview.webp      \
+	dd-image-view.png            \
+	gha-output.webp              \
+	gha-policy-eval.webp         \
+	policy-detailed-results.webp \
+	policy-image-list.webp       \
+	policy-overview.webp         \
+	policy-tag-view.webp         \
+	remediation.png              \
+	scout-policy-eval-ci.webp    \
 	scout-sq-commit-sha.webp
 
 include $(top_srcdir)/build-aux/common.mk

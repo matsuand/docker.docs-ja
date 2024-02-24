@@ -36,9 +36,21 @@ for what's coming next.
 @z
 
 @x
-## 2024-01-26
+## 2024 Q1
 @y
-## 2024-01-26
+## 2024 Q1
+@z
+
+@x
+New features and enhancements released in Q1 of 2024.
+@y
+New features and enhancements released in Q1 of 2024.
+@z
+
+@x
+### 2024-01-26
+@y
+### 2024-01-26
 @z
 
 @x
@@ -60,9 +72,9 @@ For more information and setup instructions, see
 @z
 
 @x
-## 2024-01-23
+### 2024-01-23
 @y
-## 2024-01-23
+### 2024-01-23
 @z
 
 @x
@@ -86,9 +98,9 @@ For more information, see
 @z
 
 @x
-## 2024-01-12
+### 2024-01-12
 @y
-## 2024-01-12
+### 2024-01-12
 @z
 
 @x
@@ -110,9 +122,9 @@ For more information, see [Default non-root user](./policy/_index.md#default-non
 @z
 
 @x
-## 2024-01-11
+### 2024-01-11
 @y
-## 2024-01-11
+### 2024-01-11
 @z
 
 @x
@@ -168,9 +180,21 @@ source repositories, see
 @z
 
 @x
-## 2023-12-20
+## 2023 Q4
 @y
-## 2023-12-20
+## 2023 Q4
+@z
+
+@x
+New features and enhancements released in Q4 of 2023.
+@y
+New features and enhancements released in Q4 of 2023.
+@z
+
+@x
+### 2023-12-20
+@y
+### 2023-12-20
 @z
 
 @x
@@ -192,9 +216,9 @@ For more information and setup instructions, see
 @z
 
 @x
-## 2023-12-06
+### 2023-12-06
 @y
-## 2023-12-06
+### 2023-12-06
 @z
 
 @x
@@ -228,9 +252,9 @@ For more information, see:
 @z
 
 @x
-## 2023-12-01
+### 2023-12-01
 @y
-## 2023-12-01
+### 2023-12-01
 @z
 
 @x
@@ -252,9 +276,9 @@ To learn more about the integration and how to get started, see
 @z
 
 @x
-## 2023-11-21
+### 2023-11-21
 @y
-## 2023-11-21
+### 2023-11-21
 @z
 
 @x
@@ -286,9 +310,9 @@ For more information, see [Configurable policies](./policy/configure.md).
 @z
 
 @x
-## 2023-11-10
+### 2023-11-10
 @y
-## 2023-11-10
+### 2023-11-10
 @z
 
 @x
@@ -312,9 +336,9 @@ for details.
 @z
 
 @x
-## 2023-11-01
+### 2023-11-01
 @y
-## 2023-11-01
+### 2023-11-01
 @z
 
 @x
@@ -334,9 +358,9 @@ For more information, see
 @z
 
 @x
-## 2023-10-04
+### 2023-10-04
 @y
-## 2023-10-04
+### 2023-10-04
 @z
 
 @x
@@ -364,9 +388,9 @@ The following new features are included in this release:
 @z
 
 @x
-### Policy evaluation
+#### Policy evaluation
 @y
-### Policy evaluation
+#### Policy evaluation
 @z
 
 @x
@@ -420,9 +444,9 @@ refer to the [Policy Evaluation documentation](./policy/_index.md).
 @z
 
 @x
-### Amazon ECR integration
+#### Amazon ECR integration
 @y
-### Amazon ECR integration
+#### Amazon ECR integration
 @z
 
 @x
@@ -458,9 +482,9 @@ documentation](./integrations/registry/ecr.md).
 @z
 
 @x
-### Sysdig integration
+#### Sysdig integration
 @y
-### Sysdig integration
+#### Sysdig integration
 @z
 
 @x
@@ -492,9 +516,9 @@ documentation](./integrations/environment/sysdig.md).
 @z
 
 @x
-### JFrog Artifactory integration
+#### JFrog Artifactory integration
 @y
-### JFrog Artifactory integration
+#### JFrog Artifactory integration
 @z
 
 @x
@@ -524,9 +548,9 @@ integration documentation](./integrations/registry/artifactory.md)
 @z
 
 @x
-### Known limitations
+#### Known limitations
 @y
-### Known limitations
+#### Known limitations
 @z
 
 @x

@@ -3,14 +3,14 @@
 ##
 
 bases = \
-	render-image.html \
-	render-link.html
+	render-image.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	render-codeblock.html         \
-	render-heading.html
+	render-codeblock.html \
+	render-heading.html   \
+	render-link.html
 
 include $(top_srcdir)/build-aux/copy.mk

@@ -298,11 +298,10 @@ top_srcdir = @top_srcdir@
 SUBDIRS = images
 bases = \
 	_index.md          \
-	build-images.md    \
 	configure-ci-cd.md \
+	containerize.md    \
 	deploy.md          \
 	develop.md         \
-	run-containers.md  \
 	run-tests.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

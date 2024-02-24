@@ -11,7 +11,7 @@ bases = \
 	env-vars.md            \
 	image-analysis.md      \
 	image-details-view.md  \
-	local-fs.md            \
+	image-prefix.md        \
 	quickstart.md          \
 	release-notes.md       \
 	sbom.md

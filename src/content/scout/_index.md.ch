@@ -2,6 +2,8 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
+
 @x
 title: Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, scan, analysis, analyze
@@ -115,39 +117,31 @@ description:
 @z
 
 @x
-Container images are often built from layers of other container images and
-software packages. These layers and packages can contain vulnerabilities that
-make your containers and the applications they run vulnerable to attack.
+Container images consist of layers and software packages, which are susceptible to vulnerabilities.
+These vulnerabilities can compromise the security of containers and applications.
 @y
-Container images are often built from layers of other container images and
-software packages. These layers and packages can contain vulnerabilities that
-make your containers and the applications they run vulnerable to attack.
+Container images consist of layers and software packages, which are susceptible to vulnerabilities.
+These vulnerabilities can compromise the security of containers and applications.
 @z
 
 @x
-Docker Scout can proactively help you find and fix these vulnerabilities,
-helping you create a more secure software supply chain. It does this by analyzing your images and creating a full inventory of the
-packages and layers called a [Software bill of materials (SBOM)](https://ntia.gov/sites/default/files/publications/sbom_at_a_glance_apr2021_0.pdf).
-It then correlates this inventory with a continuously updated vulnerability
-database to identify vulnerabilities in your images.
+Docker Scout is a solution for proactively enhancing your software supply chain security.
+By analyzing your images, Docker Scout compiles an inventory of components, also known as a Software Bill of Materials (SBOM).
+The SBOM is matched against a continuously updated vulnerability database to pinpoint security weaknesses.
 @y
-Docker Scout can proactively help you find and fix these vulnerabilities,
-helping you create a more secure software supply chain. It does this by analyzing your images and creating a full inventory of the
-packages and layers called a [Software bill of materials (SBOM)](https://ntia.gov/sites/default/files/publications/sbom_at_a_glance_apr2021_0.pdf).
-It then correlates this inventory with a continuously updated vulnerability
-database to identify vulnerabilities in your images.
+Docker Scout is a solution for proactively enhancing your software supply chain security.
+By analyzing your images, Docker Scout compiles an inventory of components, also known as a Software Bill of Materials (SBOM).
+The SBOM is matched against a continuously updated vulnerability database to pinpoint security weaknesses.
 @z
 
 @x
-You can use Docker Scout in Docker Desktop, Docker Hub, the Docker CLI, and in
-the [Docker Scout Dashboard](./dashboard.md). Docker Scout also supports
-integrations with third-party systems, refer to [Integrating Docker
-Scout](./integrations/index.md) for more information.
+Docker Scout is a standalone service and platform that you can interact with
+using Docker Desktop, Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
+Docker Scout also facilitates integrations with third-party systems, such as container registries and CI platforms.
 @y
-You can use Docker Scout in Docker Desktop, Docker Hub, the Docker CLI, and in
-the [Docker Scout Dashboard](./dashboard.md). Docker Scout also supports
-integrations with third-party systems, refer to [Integrating Docker
-Scout](./integrations/index.md) for more information.
+Docker Scout is a standalone service and platform that you can interact with
+using Docker Desktop, Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
+Docker Scout also facilitates integrations with third-party systems, such as container registries and CI platforms.
 @z
 
 @x

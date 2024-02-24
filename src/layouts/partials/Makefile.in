@@ -321,6 +321,7 @@ copyfiles = \
 	toc-api.html      \
 	toc-cli.html      \
 	toc-default.html  \
+	tooltip.html      \
 	top-nav.html
 
 all: all-recursive

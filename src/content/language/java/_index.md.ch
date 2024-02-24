@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Java language-specific guide
 keywords: java, getting started
 description: Containerize Java apps using Docker
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Java 向けガイド
 keywords: java, getting started
 description: Containerize Java apps using Docker
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -27,19 +19,15 @@ The Java getting started guide teaches you how to create a containerized Spring 
 @z
 
 @x
-* Clone and run a Spring Boot application with Maven
-* Create a new Dockerfile which contains instructions required to build a Java image
-* Run the newly built image as a container
-* Set up a local development environment to connect a database to the container
-* Use Docker Compose to run the Spring Boot application
+* Containerize and run a Spring Boot application with Maven
+* Set up a local development environment to connect a database to the container, configure a debugger, and use Compose Watch for live reload
+* Run your unit tests inside a container
 * Configure a CI/CD pipeline for your application using GitHub Actions
 * Deploy your containerized application locally to Kubernetes to test and debug your deployment
 @y
-* Clone and run a Spring Boot application with Maven
-* Create a new Dockerfile which contains instructions required to build a Java image
-* Run the newly built image as a container
-* Set up a local development environment to connect a database to the container
-* Use Docker Compose to run the Spring Boot application
+* Containerize and run a Spring Boot application with Maven
+* Set up a local development environment to connect a database to the container, configure a debugger, and use Compose Watch for live reload
+* Run your unit tests inside a container
 * Configure a CI/CD pipeline for your application using GitHub Actions
 * Deploy your containerized application locally to Kubernetes to test and debug your deployment
 @z
@@ -51,13 +39,13 @@ After completing the Java getting started modules, you should be able to contain
 @z
 
 @x
-Get started building your first Java image.
+Get started containerizing your first Java app.
 @y
-Get started building your first Java image.
+Get started containerizing your first Java app.
 @z
 
 @x
-{{< button text="Build your first Java image" url="build-images.md" >}}
+{{< button text="Containerize your first Java app" url="containerize.md" >}}
 @y
-{{< button text="Java イメージのビルド" url="build-images.md" >}}
+{{< button text="Java アプリのコンテナー化" url="containerize.md" >}}
 @z

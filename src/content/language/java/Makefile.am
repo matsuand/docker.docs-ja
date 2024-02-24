@@ -5,11 +5,10 @@ SUBDIRS = images
 
 bases = \
 	_index.md          \
-	build-images.md    \
 	configure-ci-cd.md \
+	containerize.md    \
 	deploy.md          \
 	develop.md         \
-	run-containers.md  \
 	run-tests.md
 
 include $(top_srcdir)/build-aux/common.mk

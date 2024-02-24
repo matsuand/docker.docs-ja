@@ -180,10 +180,8 @@ Guides:
     section:
     - title: "Overview"
       path: /language/java/
-    - title: "Build images"
-      path: /language/java/build-images/
-    - title: "Run containers"
-      path: /language/java/run-containers/
+    - title: "Containerize your app"
+      path: /language/java/containerize/
     - title: "Develop your app"
       path: /language/java/develop/
     - title: "Run your tests"
@@ -197,10 +195,8 @@ Guides:
     section:
     - title: "概要"
       path: __SUBDIR__/language/java/
-    - title: "イメージのビルド"
-      path: __SUBDIR__/language/java/build-images/
-    - title: "コンテナーの実行"
-      path: __SUBDIR__/language/java/run-containers/
+    - title: "アプリのコンテナー化"
+      path: __SUBDIR__/language/java/containerize/
     - title: "アプリの開発"
       path: __SUBDIR__/language/java/develop/
     - title: "テストの実行"
@@ -2970,8 +2966,8 @@ Manuals:
       section:
       - path: /scout/image-analysis/
         title: Image analysis
-      - path: /scout/local-fs/
-        title: Analyze local files
+      - path: /scout/image-prefix/
+        title: Specify artifact type or location
       - path: /scout/sbom/
         title: SBOM
       - path: /scout/env-vars/
@@ -2981,8 +2977,8 @@ Manuals:
       section:
       - path: __SUBDIR__/scout/image-analysis/
         title: Image analysis
-      - path: __SUBDIR__/scout/local-fs/
-        title: Analyze local files
+      - path: __SUBDIR__/scout/image-prefix/
+        title: Specify artifact type or location
       - path: __SUBDIR__/scout/sbom/
         title: SBOM
       - path: __SUBDIR__/scout/env-vars/

@@ -142,11 +142,11 @@ You can find further information on the vulnerability or exploit, including if a
 @z
 
 @x
-In Docker Hub and Docker Desktop 4.17 and later versions, when inspecting an
-image, you can get recommended actions for improving the security of that image.
+When you inspect an image in Docker Desktop or Docker Hub,
+Docker Scout can provide recommendations for improving the security of that image.
 @y
-In Docker Hub and Docker Desktop 4.17 and later versions, when inspecting an
-image, you can get recommended actions for improving the security of that image.
+When you inspect an image in Docker Desktop or Docker Hub,
+Docker Scout can provide recommendations for improving the security of that image.
 @z
 
 @x
@@ -241,16 +241,6 @@ To view security recommendations for an image in Docker Hub:
 ### Recommendations for current image
 @y
 ### Recommendations for current image
-@z
-
-@x
-> **Note**
->
-> This recommendation is only available in Docker Desktop.
-@y
-> **Note**
->
-> This recommendation is only available in Docker Desktop.
 @z
 
 @x
