@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Docker Build Cloud setup
 description: How to get started with Docker Build Cloud
 keywords: build, cloud build
-aliases:
-  - /hydrobuild/setup/
----
 @y
----
 title: Docker Build Cloud setup
 description: How to get started with Docker Build Cloud
 keywords: build, cloud build
-aliases:
-  - /hydrobuild/setup/
----
 @z
 
 @x
@@ -166,15 +158,9 @@ This creates a builder named `cloud-ORG-BUILDER_NAME`.
 @z
 
 @x
-3. Under **Available builders**, select **Create builder**.
+3. Under **Available builders**, select **Connect to builder**.
 @y
-3. Under **Available builders**, select **Create builder**.
-@z
-
-@x
-   ![Create builder GUI screenshot](/build/images/create-builder-gui.webp)
-@y
-   ![Create builder GUI screenshot](__SUBDIR__/build/images/create-builder-gui.webp)
+3. Under **Available builders**, select **Connect to builder**.
 @z
 
 @x

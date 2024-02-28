@@ -9,139 +9,57 @@ aliases: docker container rm, docker container remove, docker rm
 short: Remove one or more containers
 long: Remove one or more containers
 usage: docker container rm [OPTIONS] CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Force the removal of a running container (uses SIGKILL)
-      details_url: '#force'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: link
-      shorthand: l
-      value_type: bool
-      default_value: "false"
-      description: Remove the specified link
-      details_url: '#link'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volumes
-      shorthand: v
-      value_type: bool
-      default_value: "false"
-      description: Remove anonymous volumes associated with the container
-      details_url: '#volumes'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Remove a container
 @y
 command: docker container rm
 aliases: docker container rm, docker container remove, docker rm
-short: Remove one or more containers
-long: Remove one or more containers
+short: 1 つまたは複数コンテナーを削除します。
+long: 1 つまたは複数コンテナーを削除します。
 usage: docker container rm [OPTIONS] CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@z
+
+% options:
+
+@x force
       description: Force the removal of a running container (uses SIGKILL)
-      details_url: '#force'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: link
-      shorthand: l
-      value_type: bool
-      default_value: "false"
+@y
+      description: 実行中コンテナーを強制的に削除します。(SIGKILL を利用)
+@z
+
+@x link
       description: Remove the specified link
-      details_url: '#link'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volumes
-      shorthand: v
-      value_type: bool
-      default_value: "false"
+@y
+      description: 指定されたリンクを削除します。
+@z
+
+@x volumes
       description: Remove anonymous volumes associated with the container
-      details_url: '#volumes'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: コンテナーに関連づいた匿名ボリュームを削除します。
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     ### Remove a container
+@y
+examples: |-
+    ### コンテナーの削除 {#remove-a-container}
 @z
 
 @x
     This removes the container referenced under the link `/redis`.
 @y
-    This removes the container referenced under the link `/redis`.
+    以下では、リンク `/redis` のもとに参照されているコンテナーを削除します。
 @z
 
-@x
-    ```console
-    $ docker rm /redis
-@y
-    ```console
-    $ docker rm /redis
-@z
-
-@x
-    /redis
-    ```
-@y
-    /redis
-    ```
-@z
+% snip command...
 
 @x
     ### Remove a link specified with `--link` on the default bridge network (--link) {#link}
@@ -161,21 +79,7 @@ examples: |-
     user-specified networks.
 @z
 
-@x
-    ```console
-    $ docker rm --link /webapp/redis
-@y
-    ```console
-    $ docker rm --link /webapp/redis
-@z
-
-@x
-    /webapp/redis
-    ```
-@y
-    /webapp/redis
-    ```
-@z
+% snip command...
 
 @x
     ### Force-remove a running container (--force) {#force}
@@ -189,21 +93,7 @@ examples: |-
     This command force-removes a running container.
 @z
 
-@x
-    ```console
-    $ docker rm --force redis
-@y
-    ```console
-    $ docker rm --force redis
-@z
-
-@x
-    redis
-    ```
-@y
-    redis
-    ```
-@z
+% snip command...
 
 @x
     The main process inside the container referenced under the link `redis` will receive
@@ -263,15 +153,7 @@ examples: |-
     the `docker rm` command:
 @z
 
-@x
-    ```console
-    $ docker rm $(docker ps --filter status=exited -q)
-    ```
-@y
-    ```console
-    $ docker rm $(docker ps --filter status=exited -q)
-    ```
-@z
+% snip command...
 
 @x
     Or, using the `xargs` Linux utility:
@@ -279,15 +161,7 @@ examples: |-
     Or, using the `xargs` Linux utility:
 @z
 
-@x
-    ```console
-    $ docker ps --filter status=exited -q | xargs docker rm
-    ```
-@y
-    ```console
-    $ docker ps --filter status=exited -q | xargs docker rm
-    ```
-@z
+% snip command...
 
 @x
     ### Remove a container and its volumes (-v, --volumes) {#volumes}
@@ -295,17 +169,7 @@ examples: |-
     ### Remove a container and its volumes (-v, --volumes) {#volumes}
 @z
 
-@x
-    ```console
-    $ docker rm --volumes redis
-    redis
-    ```
-@y
-    ```console
-    $ docker rm --volumes redis
-    redis
-    ```
-@z
+% snip command...
 
 @x
     This command removes the container and any volumes associated with it.
@@ -321,42 +185,16 @@ examples: |-
     ### Remove a container and selectively remove volumes
 @z
 
-@x
-    ```console
-    $ docker create -v awesome:/foo -v /bar --name hello redis
-    hello
-@y
-    ```console
-    $ docker create -v awesome:/foo -v /bar --name hello redis
-    hello
-@z
-
-@x
-    $ docker rm -v hello
-    ```
-@y
-    $ docker rm -v hello
-    ```
-@z
+% snip command...
 
 @x
     In this example, the volume for `/foo` remains intact, but the volume for
     `/bar` is removed. The same behavior holds for volumes inherited with
     `--volumes-from`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     In this example, the volume for `/foo` remains intact, but the volume for
     `/bar` is removed. The same behavior holds for volumes inherited with
     `--volumes-from`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

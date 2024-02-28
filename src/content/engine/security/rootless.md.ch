@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Run the Docker daemon as a non-root user (Rootless mode)
 keywords: security, namespaces, rootless
 title: Run the Docker daemon as a non-root user (Rootless mode)
----
 @y
----
 description: Run the Docker daemon as a non-root user (Rootless mode)
 keywords: security, namespaces, rootless
 title: Run the Docker daemon as a non-root user (Rootless mode)
----
 @z
 
 @x
@@ -320,13 +316,17 @@ testuser:231072:65536
 > **Note**
 >
 > If the system-wide Docker daemon is already running, consider disabling it:
-> `$ sudo systemctl disable --now docker.service docker.socket`
+>```console
+>$ sudo systemctl disable --now docker.service docker.socket
+>```
 @y
 ## Install
 > **Note**
 >
 > If the system-wide Docker daemon is already running, consider disabling it:
-> `$ sudo systemctl disable --now docker.service docker.socket`
+>```console
+>$ sudo systemctl disable --now docker.service docker.socket
+>```
 @z
 
 @x

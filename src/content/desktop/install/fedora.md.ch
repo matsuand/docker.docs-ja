@@ -2,25 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Instructions for installing Docker Desktop on Fedora
 keywords: fedora, rpm, update install, uninstall, upgrade, update, linux, desktop,
   docker desktop, docker desktop for linux, dd4l
 title: Install Docker Desktop on Fedora
-toc_max: 4
-aliases:
-- /desktop/linux/install/fedora/
----
 @y
----
 description: Instructions for installing Docker Desktop on Fedora
 keywords: fedora, rpm, update install, uninstall, upgrade, update, linux, desktop,
   docker desktop, docker desktop for linux, dd4l
 title: Install Docker Desktop on Fedora
-toc_max: 4
-aliases:
-- /desktop/linux/install/fedora/
----
 @z
 
 @x
@@ -42,9 +32,9 @@ This page contains information on how to install, launch and upgrade Docker Desk
 @z
 
 @x
-{{< button text="RPM package" url="https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="RPM package" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @y
-{{< button text="RPM package" url="https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="RPM package" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @z
 
 @x
@@ -108,9 +98,9 @@ To install Docker Desktop on Fedora:
 @z
 
 @x
-2. Download latest [RPM package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download latest [RPM package](https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
 @y
-2. Download latest [RPM package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download latest [RPM package](https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
 @z
 
 @x

@@ -22,9 +22,9 @@ Secrets are a flavor of [Configs](08-configs.md) focusing on sensitive data, wit
 @z
 
 @x
-Services can only access secrets when explicitly granted by a [`secrets`](05-services.md#secrets) attribute within the `services` top-level element.
+Services can only access secrets when explicitly granted by a [`secrets` attribute](05-services.md#secrets) within the `services` top-level element.
 @y
-Services can only access secrets when explicitly granted by a [`secrets`](05-services.md#secrets) attribute within the `services` top-level element.
+Services can only access secrets when explicitly granted by a [`secrets` attribute](05-services.md#secrets) within the `services` top-level element.
 @z
 
 @x

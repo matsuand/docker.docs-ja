@@ -2,29 +2,23 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Manuals
 description: Explore the Docker product user manuals
 keywords: docker, docs, manuals, products, user guides, how-to
-notoc: true
-skip_read_time: true
 @y
----
 title: マニュアル
 description: Docker 製品のユーザーマニュアルを確認します。
 keywords: docker, docs, manuals, products, user guides, how-to
-notoc: true
-skip_read_time: true
 @z
 
+% development:
+
 @x
-development:
 - title: Docker Desktop
   description: Your command center for container development.
   icon: /assets/icons/Whale.svg
   link: /desktop/
 @y
-development:
 - title: Docker Desktop
   description: コンテナー開発を行うための中心的な存在です。
   icon: __SUBDIR__/assets/icons/Whale.svg
@@ -79,14 +73,14 @@ development:
   link: __SUBDIR__/desktop/extensions/
 @z
 
+% services:
+
 @x
-services:
 - title: Docker Hub
   description: Discover, share, and integrate container images
   icon: hub
   link: /docker-hub/
 @y
-services:
 - title: Docker Hub
   description: コンテナーイメージの検索、共有、統合を行います。
   icon: hub
@@ -117,14 +111,14 @@ services:
   link: __SUBDIR__/trusted-content/
 @z
 
+% admin:
+
 @x
-admin:
 - title: Administration
   description: Centralized observability for companies and organizations.
   icon: admin_panel_settings
   link: /admin/
 @y
-admin:
 - title: Administration
   description: Centralized observability for companies and organizations.
   icon: admin_panel_settings
@@ -160,21 +154,18 @@ admin:
   description: Commercial use licenses for Docker products.
   icon: card_membership
   link: /subscription/
----
 @y
 - title: Subscription
   description: Commercial use licenses for Docker products.
   icon: card_membership
   link: __SUBDIR__/subscription/
----
 @z
 
 @x
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
 @y
-This section contains user guides on how to install, set up, configure, and use
-Docker products.
+この節に示すユーザーガイドでは、Docker 製品のインストール、セットアップ、設定、利用方法について説明しています。
 @z
 
 @x

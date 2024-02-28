@@ -15,7 +15,6 @@ copyfiles = \
 	cache-stack.png                 \
 	cache-stack.svg                 \
 	cache.excalidraw                \
-	create-builder-gui.webp         \
 	opentelemetry.png               \
 	set-default-builder-gui.webp
 

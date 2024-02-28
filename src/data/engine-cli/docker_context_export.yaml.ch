@@ -8,65 +8,35 @@ long: |-
     Exports a context to a file that can then be used with `docker context import`.
 @y
 command: docker context export
-short: Export a context to a tar archive FILE or a tar stream on STDOUT.
+short: コンテキストを tar アーカイブの FILE または STDOUT 上の tar ストリームとしてエクスポートします。
 long: |-
-    Exports a context to a file that can then be used with `docker context import`.
+    コンテキストをファイルにエクスポートします。
+    このファイルは `docker context import` で利用することができます。
 @z
 
 @x
     The default output filename is `<CONTEXT>.dockercontext`. To export to `STDOUT`,
     use `-` as filename, for example:
 @y
-    The default output filename is `<CONTEXT>.dockercontext`. To export to `STDOUT`,
-    use `-` as filename, for example:
+    デフォルトの出力ファイル名は `<CONTEXT>.dockercontext` です。
+    `STDOUT` へエクスポートする場合はファイル名に `-` を指定します。
+    たとえば以下のとおりです。
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker context export my-context -
-    ```
 usage: docker context export [OPTIONS] CONTEXT [FILE|-]
-pname: docker context
-plink: docker_context.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    ```console
-    $ docker context export my-context -
-    ```
 usage: docker context export [OPTIONS] CONTEXT [FILE|-]
-pname: docker context
-plink: docker_context.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

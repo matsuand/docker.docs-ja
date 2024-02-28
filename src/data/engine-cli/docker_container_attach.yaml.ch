@@ -17,7 +17,7 @@ long: |-
 command: docker container attach
 aliases: docker container attach, docker attach
 short: |
-    Attach local standard input, output, and error streams to a running container
+    ローカルの標準入出力やエラー出力を実行中のコンテナーにアタッチします。
 long: |-
     Use `docker attach` to attach your terminal's standard input, output, and error
     (or any combination of the three) to a running container using the container's
@@ -90,53 +90,6 @@ long: |-
     performance-critical applications that generate a lot of output in the
     foreground over a slow client connection. Instead, use the `docker logs`
     command to get access to the logs.
-usage: docker container attach [OPTIONS] CONTAINER
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: detach-keys
-      value_type: string
-      description: Override the key sequence for detaching a container
-      details_url: '#detach-keys'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-stdin
-      value_type: bool
-      default_value: "false"
-      description: Do not attach STDIN
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sig-proxy
-      value_type: bool
-      default_value: "true"
-      description: Proxy all received signals to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Attach to and detach from a running container
 @y
     While a client is connected to container's `stdio` using `docker attach`,
     Docker uses a ~1MB memory buffer to maximize the throughput of the application.
@@ -146,51 +99,46 @@ examples: |-
     performance-critical applications that generate a lot of output in the
     foreground over a slow client connection. Instead, use the `docker logs`
     command to get access to the logs.
+@z
+
+@x
 usage: docker container attach [OPTIONS] CONTAINER
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: detach-keys
-      value_type: string
+@y
+usage: docker container attach [OPTIONS] CONTAINER
+@z
+
+% options:
+
+@x detach-keys
       description: Override the key sequence for detaching a container
-      details_url: '#detach-keys'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-stdin
-      value_type: bool
-      default_value: "false"
+@y
+      description: コンテナーデタッチ時のキーシーケンスをオーバーライドします。
+@z
+
+@x no-stdin
       description: Do not attach STDIN
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sig-proxy
-      value_type: bool
-      default_value: "true"
+@y
+      description: STDIN をアタッチしません。
+@z
+
+@x sig-proxy
       description: Proxy all received signals to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: 受信シグナルのすべてをプロセスにプロキシーします。
+@z
+
+% inherited_options:
+
+@x
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
+examples: |-
+    ### Attach to and detach from a running container
+@y
 examples: |-
     ### Attach to and detach from a running container
 @z
@@ -203,35 +151,7 @@ examples: |-
     then attaches to the container;
 @z
 
-@x
-    ```console
-    $ docker run -d --name topdemo alpine top -b
-@y
-    ```console
-    $ docker run -d --name topdemo alpine top -b
-@z
-
-@x
-    $ docker attach topdemo
-@y
-    $ docker attach topdemo
-@z
-
-@x
-    Mem: 2395856K used, 5638884K free, 2328K shrd, 61904K buff, 1524264K cached
-    CPU:   0% usr   0% sys   0% nic  99% idle   0% io   0% irq   0% sirq
-    Load average: 0.15 0.06 0.01 1/567 6
-      PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
-        1     0 root     R     1700   0%   3   0% top -b
-    ```
-@y
-    Mem: 2395856K used, 5638884K free, 2328K shrd, 61904K buff, 1524264K cached
-    CPU:   0% usr   0% sys   0% nic  99% idle   0% io   0% irq   0% sirq
-    Load average: 0.15 0.06 0.01 1/567 6
-      PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
-        1     0 root     R     1700   0%   3   0% top -b
-    ```
-@z
+% snip command...
 
 @x
     As the container was started without the `-i`, and `-t` options, signals are
@@ -245,37 +165,7 @@ examples: |-
     container:
 @z
 
-@x
-    ```console
-    <...>
-      PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
-        1     0 root     R     1700   0%   7   0% top -b
-    ^P^Q
-    ^C
-@y
-    ```console
-    <...>
-      PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
-        1     0 root     R     1700   0%   7   0% top -b
-    ^P^Q
-    ^C
-@z
-
-@x
-    $ docker ps -a --filter name=topdemo
-@y
-    $ docker ps -a --filter name=topdemo
-@z
-
-@x
-    CONTAINER ID   IMAGE     COMMAND    CREATED          STATUS                       PORTS     NAMES
-    96254a235bd6   alpine    "top -b"   44 seconds ago   Exited (130) 8 seconds ago             topdemo
-    ```
-@y
-    CONTAINER ID   IMAGE     COMMAND    CREATED          STATUS                       PORTS     NAMES
-    96254a235bd6   alpine    "top -b"   44 seconds ago   Exited (130) 8 seconds ago             topdemo
-    ```
-@z
+% snip output...
 
 @x
     Repeating the example above, but this time with the `-i` and `-t` options set;
@@ -283,15 +173,7 @@ examples: |-
     Repeating the example above, but this time with the `-i` and `-t` options set;
 @z
 
-@x
-    ```console
-    $ docker run -dit --name topdemo2 ubuntu:22.04 /usr/bin/top -b
-    ```
-@y
-    ```console
-    $ docker run -dit --name topdemo2 ubuntu:22.04 /usr/bin/top -b
-    ```
-@z
+% snip command...
 
 @x
     Now, when attaching to the container, and pressing the `CTRL-p CTRL-q` ("read
@@ -305,45 +187,7 @@ examples: |-
     with `docker ps` shows that the container is still running in the background:
 @z
 
-@x
-    ```console
-    $ docker attach topdemo2
-@y
-    ```console
-    $ docker attach topdemo2
-@z
-
-@x
-    Mem: 2405344K used, 5629396K free, 2512K shrd, 65100K buff, 1524952K cached
-    CPU:   0% usr   0% sys   0% nic  99% idle   0% io   0% irq   0% sirq
-    Load average: 0.12 0.12 0.05 1/594 6
-      PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
-        1     0 root     R     1700   0%   3   0% top -b
-    read escape sequence
-@y
-    Mem: 2405344K used, 5629396K free, 2512K shrd, 65100K buff, 1524952K cached
-    CPU:   0% usr   0% sys   0% nic  99% idle   0% io   0% irq   0% sirq
-    Load average: 0.12 0.12 0.05 1/594 6
-      PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
-        1     0 root     R     1700   0%   3   0% top -b
-    read escape sequence
-@z
-
-@x
-    $ docker ps -a --filter name=topdemo2
-@y
-    $ docker ps -a --filter name=topdemo2
-@z
-
-@x
-    CONTAINER ID   IMAGE     COMMAND    CREATED          STATUS          PORTS     NAMES
-    fde88b83c2c2   alpine    "top -b"   22 seconds ago   Up 21 seconds             topdemo2
-    ```
-@y
-    CONTAINER ID   IMAGE     COMMAND    CREATED          STATUS          PORTS     NAMES
-    fde88b83c2c2   alpine    "top -b"   22 seconds ago   Up 21 seconds             topdemo2
-    ```
-@z
+% snip command...
 
 @x
     ### Get the exit code of the container's command
@@ -359,47 +203,7 @@ examples: |-
     process is returned by the `docker attach` command to its caller too:
 @z
 
-@x
-    ```console
-    $ docker run --name test -dit alpine
-    275c44472aebd77c926d4527885bb09f2f6db21d878c75f0a1c212c03d3bcfab
-@y
-    ```console
-    $ docker run --name test -dit alpine
-    275c44472aebd77c926d4527885bb09f2f6db21d878c75f0a1c212c03d3bcfab
-@z
-
-@x
-    $ docker attach test
-    /# exit 13
-@y
-    $ docker attach test
-    /# exit 13
-@z
-
-@x
-    $ echo $?
-    13
-@y
-    $ echo $?
-    13
-@z
-
-@x
-    $ docker ps -a --filter name=test
-@y
-    $ docker ps -a --filter name=test
-@z
-
-@x
-    CONTAINER ID   IMAGE     COMMAND     CREATED              STATUS                       PORTS     NAMES
-    a2fe3fd886db   alpine    "/bin/sh"   About a minute ago   Exited (13) 40 seconds ago             test
-    ```
-@y
-    CONTAINER ID   IMAGE     COMMAND     CREATED              STATUS                       PORTS     NAMES
-    a2fe3fd886db   alpine    "/bin/sh"   About a minute ago   Exited (13) 40 seconds ago             test
-    ```
-@z
+% snip command...
 
 @x
     ### Override the detach sequence (--detach-keys) {#detach-keys}
@@ -453,20 +257,10 @@ examples: |-
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
     containers, see [**Configuration file** section](/engine/reference/commandline/cli/#configuration-files).
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
     containers, see [**Configuration file** section](__SUBDIR__/engine/reference/commandline/cli/#configuration-files).
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

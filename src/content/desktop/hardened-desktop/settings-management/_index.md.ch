@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Understand how Settings Management works, who it is for, and what the
   benefits are
 keywords: Settings Management, rootless, docker desktop, hardened desktop
 title: What is Settings Management?
----
 @y
----
 description: Understand how Settings Management works, who it is for, and what the
   benefits are
 keywords: Settings Management, rootless, docker desktop, hardened desktop
 title: What is Settings Management?
----
 @z
 
 @x
@@ -70,15 +66,15 @@ It is available with [Docker Desktop 4.13.0 and later](../../release-notes.md).
 @z
 
 @x
-Administrators can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by users with root or admin privileges.
+Administrators can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or admin privileges.
 @y
-Administrators can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by users with root or admin privileges.
+Administrators can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or admin privileges.
 @z
 
 @x
-Values that are set to `locked: true` within the `admin-settings.json` override any previous values set by users and ensure that these cannot be modified. For more information, see [Configure Settings Management](../settings-management/configure.md#step-two-configure-the-settings-you-want-to-lock-in).
+Values that are set to `locked: true` within the `admin-settings.json` override any previous values set by developers and ensure that these cannot be modified. For more information, see [Configure Settings Management](../settings-management/configure.md#step-two-configure-the-settings-you-want-to-lock-in).
 @y
-Values that are set to `locked: true` within the `admin-settings.json` override any previous values set by users and ensure that these cannot be modified. For more information, see [Configure Settings Management](../settings-management/configure.md#step-two-configure-the-settings-you-want-to-lock-in).
+Values that are set to `locked: true` within the `admin-settings.json` override any previous values set by developers and ensure that these cannot be modified. For more information, see [Configure Settings Management](../settings-management/configure.md#step-two-configure-the-settings-you-want-to-lock-in).
 @z
 
 @x
@@ -98,23 +94,27 @@ Using the `admin-settings.json` file, admins can:
 - Configure HTTP proxies
 - Configure network settings
 - Configure Kubernetes settings
-- Enforce the use of WSL2 based engine or Hyper-V
+- Enforce the use of WSL 2 based engine or Hyper-V
 - Configure Docker Engine
 - Turn off Docker Desktop's ability to checks for updates
 - Turn off Docker Extensions
 - Turn off Docker Scout SBOM indexing
 - Turn off beta and experimental features
+- Control the file sharing implementation for your developers on macOS
+- Specify which paths your developers can add file shares to
 @y
 - Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/index.md)
 - Configure HTTP proxies
 - Configure network settings
 - Configure Kubernetes settings
-- Enforce the use of WSL2 based engine or Hyper-V
+- Enforce the use of WSL 2 based engine or Hyper-V
 - Configure Docker Engine
 - Turn off Docker Desktop's ability to checks for updates
 - Turn off Docker Extensions
 - Turn off Docker Scout SBOM indexing
 - Turn off beta and experimental features
+- Control the file sharing implementation for your developers on macOS
+- Specify which paths your developers can add file shares to
 @z
 
 @x
@@ -130,9 +130,9 @@ For more details on the syntax and options admins can set, see [Configure Settin
 @z
 
 @x
-As an administrator, you first need to [configure a registry.json to enforce sign-in](../../../security/for-admins/configure-sign-in.md). This is because the Settings Management feature requires a Docker Business subscription and therefore your Docker Desktop users must authenticate to your organization for this configuration to take effect.
+As an administrator, you first need to [configure a registry.json to enforce sign-in](../../../security/for-admins/configure-sign-in.md). This is because the Settings Management feature requires a Docker Business subscription and therefore your Docker Desktop developers must authenticate to your organization for this configuration to take effect.
 @y
-As an administrator, you first need to [configure a registry.json to enforce sign-in](../../../security/for-admins/configure-sign-in.md). This is because the Settings Management feature requires a Docker Business subscription and therefore your Docker Desktop users must authenticate to your organization for this configuration to take effect.
+As an administrator, you first need to [configure a registry.json to enforce sign-in](../../../security/for-admins/configure-sign-in.md). This is because the Settings Management feature requires a Docker Business subscription and therefore your Docker Desktop developers must authenticate to your organization for this configuration to take effect.
 @z
 
 @x
@@ -142,11 +142,11 @@ Next, you must either manually [create and configure the admin-settings.json fil
 @z
 
 @x
-Once this is done, Docker Desktop users receive the changed settings when they either:
+Once this is done, Docker Desktop developers receive the changed settings when they either:
 - Quit, re-launch, and sign in to Docker Desktop
 - Launch and sign in to Docker Desktop for the first time
 @y
-Once this is done, Docker Desktop users receive the changed settings when they either:
+Once this is done, Docker Desktop developers receive the changed settings when they either:
 - Quit, re-launch, and sign in to Docker Desktop
 - Launch and sign in to Docker Desktop for the first time
 @z
@@ -158,15 +158,15 @@ Docker doesn't automatically mandate that developers re-launch and re-authentica
 @z
 
 @x
-### What do users see when the settings are enforced?
+### What do developers see when the settings are enforced?
 @y
-### What do users see when the settings are enforced?
+### What do developers see when the settings are enforced?
 @z
 
 @x
-Any settings that are enforced, are grayed out in Docker Desktop and the user is unable to edit them, either via the Docker Desktop UI, CLI, or the `settings.json` file. In addition, if Enhanced Container Isolation is enforced, users can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM, for example, reconfigure proxy and networking of reconfigure Docker Engine.
+Any settings that are enforced, are grayed out in Docker Desktop and the user is unable to edit them, either via the Docker Desktop UI, CLI, or the `settings.json` file. In addition, if Enhanced Container Isolation is enforced, developers can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM, for example, reconfigure proxy and networking of reconfigure Docker Engine.
 @y
-Any settings that are enforced, are grayed out in Docker Desktop and the user is unable to edit them, either via the Docker Desktop UI, CLI, or the `settings.json` file. In addition, if Enhanced Container Isolation is enforced, users can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM, for example, reconfigure proxy and networking of reconfigure Docker Engine.
+Any settings that are enforced, are grayed out in Docker Desktop and the user is unable to edit them, either via the Docker Desktop UI, CLI, or the `settings.json` file. In addition, if Enhanced Container Isolation is enforced, developers can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM, for example, reconfigure proxy and networking of reconfigure Docker Engine.
 @z
 
 @x

@@ -10,62 +10,38 @@ long: |-
     Print the name of the current context, possibly set by `DOCKER_CONTEXT` environment
     variable or `--context` global option.
 usage: docker context show
-pname: docker context
-plink: docker_context.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+command: docker context show
+short: カレントなコンテキスト名を表示します。
+long: |-
+    カレントなコンテキスト名を表示します。
+    そのコンテキスト名は、通常は環境変数 `DOCKER_CONTEXT` に設定されるか、グローバルオプション `--context` にて設定されます。
+usage: docker context show
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     ### Print the current context
 @y
-command: docker context show
-short: Print the name of the current context
-long: |-
-    Print the name of the current context, possibly set by `DOCKER_CONTEXT` environment
-    variable or `--context` global option.
-usage: docker context show
-pname: docker context
-plink: docker_context.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
-    ### Print the current context
+    ### カレントなコンテキストの表示 {#print-the-current-context}
 @z
 
 @x
     The following example prints the currently used [`docker context`](/reference/cli/docker/context/):
 @y
-    The following example prints the currently used [`docker context`](__SUBDIR__/reference/cli/docker/context/):
+    以下の例は [`docker context`](__SUBDIR__/reference/cli/docker/context/) が利用しているカレントなコンテキストを出力します。
 @z
 
-@x
-    ```console
-    $ docker context show'
-    default
-    ```
-@y
-    ```console
-    $ docker context show'
-    default
-    ```
-@z
+% snip command...
 
 @x
     As an example, this output can be used to dynamically change your shell prompt
@@ -85,25 +61,7 @@ examples: |-
     this command as your `PROMPT_COMMAND`
 @z
 
-@x
-    ```console
-    function docker_context_prompt() {
-            PS1="context: $(docker context show)> "
-    }
-@y
-    ```console
-    function docker_context_prompt() {
-            PS1="context: $(docker context show)> "
-    }
-@z
-
-@x
-    PROMPT_COMMAND=docker_context_prompt
-    ```
-@y
-    PROMPT_COMMAND=docker_context_prompt
-    ```
-@z
+% snip command...
 
 @x
     After reloading the `~/.bashrc`, the prompt now shows the currently selected
@@ -113,44 +71,6 @@ examples: |-
     `docker context`:
 @z
 
-@x
-    ```console
-    $ source ~/.bashrc
-    context: default> docker context create --docker host=unix:///var/run/docker.sock my-context
-    my-context
-    Successfully created context "my-context"
-    context: default> docker context use my-context
-    my-context
-    Current context is now "my-context"
-    context: my-context> docker context use default
-    default
-    Current context is now "default"
-    context: default>
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ source ~/.bashrc
-    context: default> docker context create --docker host=unix:///var/run/docker.sock my-context
-    my-context
-    Successfully created context "my-context"
-    context: default> docker context use my-context
-    my-context
-    Current context is now "my-context"
-    context: my-context> docker context use default
-    default
-    Current context is now "default"
-    context: default>
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+
+% snip directives...

@@ -69,20 +69,22 @@ Whenever a project name is defined by top-level `name` or by some custom mechani
 
 @x
 ```yml
+name: myapp
+@y
+```yml
+name: myapp
+@z
+
+@x
 services:
   foo:
     image: busybox
-    environment:
-      - COMPOSE_PROJECT_NAME
     command: echo "I'm running ${COMPOSE_PROJECT_NAME}"
 ```
 @y
-```yml
 services:
   foo:
     image: busybox
-    environment:
-      - COMPOSE_PROJECT_NAME
     command: echo "I'm running ${COMPOSE_PROJECT_NAME}"
 ```
 @z

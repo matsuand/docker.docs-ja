@@ -2,25 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Instructions for installing Docker Desktop on Debian
 keywords: debian, install, uninstall, upgrade, update, linux, desktop, docker desktop,
   docker desktop for linux, dd4l
 title: Install Docker Desktop on Debian
-toc_max: 4
-aliases:
-- /desktop/linux/install/debian/
----
 @y
----
 description: Debian への Docker Desktop インストール手順
 keywords: debian, install, uninstall, upgrade, update, linux, desktop, docker desktop,
   docker desktop for linux, dd4l
 title: Debian への Docker Desktop インストール
-toc_max: 4
-aliases:
-- /desktop/linux/install/debian/
----
 @z
 
 @x
@@ -42,9 +32,9 @@ This page contains information on how to install, launch, and upgrade Docker Des
 @z
 
 @x
-{{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @y
-{{< button text="DEB パッケージ" url="https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="DEB パッケージ" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @z
 
 @x
@@ -110,9 +100,9 @@ Recommended approach to install Docker Desktop on Debian:
 @z
 
 @x
-2. Download latest [DEB package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download latest [DEB package](https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
 @y
-2. Download latest [DEB package](https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download latest [DEB package](https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
 @z
 
 @x

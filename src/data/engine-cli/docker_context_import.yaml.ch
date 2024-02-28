@@ -7,50 +7,26 @@ short: Import a context from a tar or zip file
 long: |-
     Imports a context previously exported with `docker context export`. To import
     from stdin, use a hyphen (`-`) as filename.
-usage: docker context import CONTEXT FILE|-
-pname: docker context
-plink: docker_context.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker context import
-short: Import a context from a tar or zip file
+short: tar ファイルまたは zip ファイルからコンテキストへインポートします。
 long: |-
-    Imports a context previously exported with `docker context export`. To import
-    from stdin, use a hyphen (`-`) as filename.
-usage: docker context import CONTEXT FILE|-
-pname: docker context
-plink: docker_context.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    `docker context export` によってエクスポートされたコンテキストをインポートします。
+    標準入力からインポートする場合はファイル名にハイフン (`-`) を指定します。
 @z
+
+@x
+usage: docker context import CONTEXT FILE|-
+@y
+usage: docker context import CONTEXT FILE|-
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

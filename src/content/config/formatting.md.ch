@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: CLI and log output formatting reference
 keywords: format, formatting, output, templates, log
 title: Format command and log output
-aliases:
-  - /engine/admin/formatting/
----
 @y
----
 description: CLI and log output formatting reference
 keywords: format, formatting, output, templates, log
 title: Format command and log output
-aliases:
-  - /engine/admin/formatting/
----
 @z
 
 @x

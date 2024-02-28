@@ -38,7 +38,7 @@ To get the example image:
 @x
 1. In Docker Desktop, select the search bar.
 2. In the search bar, specify `docker/welcome-to-docker`.
-3. Select **Pull** to pull the image from Docker Hub to you computer.
+3. Select **Pull** to pull the image from Docker Hub to your computer.
 @y
 1. Docker Desktop 画面にて検索バーをクリックします。
 2. 検索欄に `docker/welcome-to-docker` と入力します。

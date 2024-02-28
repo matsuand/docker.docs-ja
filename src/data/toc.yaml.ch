@@ -340,7 +340,7 @@ Guides:
 @z
 
 @x
-- sectiontitle: Use-case guides
+- sectiontitle: Use-case guides {{< badge color=violet text=New >}}
   section:
     - sectiontitle: Generative AI
       section:
@@ -355,7 +355,7 @@ Guides:
       - path: /guides/use-case/genai-video-bot/
         title: Video transcription and chat
 @y
-- sectiontitle: ユースケースガイド
+- sectiontitle: ユースケースガイド {{< badge color=violet text=New >}}
   section:
     - sectiontitle: 生成 AI
       section:
@@ -401,6 +401,18 @@ Guides:
         title: Text classification
       - path: __SUBDIR__/guides/use-case/nlp/text-summarization/
         title: Text summarization
+@z
+
+@x
+    - path: /guides/use-case/jupyter/
+      title: Data science with JupyterLab
+    - path: /scout/guides/vex/
+      title: Suppress CVEs with VEX
+@y
+    - path: __SUBDIR__/guides/use-case/jupyter/
+      title: Data science with JupyterLab
+    - path: __SUBDIR__/scout/guides/vex/
+      title: Suppress CVEs with VEX
 @z
 
 @x

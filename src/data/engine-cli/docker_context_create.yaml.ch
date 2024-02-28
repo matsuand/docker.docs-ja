@@ -10,105 +10,49 @@ long: |-
     Creates a new `context`. This lets you switch the daemon your `docker` CLI
     connects to.
 usage: docker context create [OPTIONS] CONTEXT
-pname: docker context
-plink: docker_context.yaml
-options:
-    - option: description
-      value_type: string
-      description: Description of the context
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: docker
-      value_type: stringToString
-      default_value: '[]'
-      description: set the docker endpoint
-      details_url: '#docker'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: from
-      value_type: string
-      description: create context from a named context
-      details_url: '#from'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Create a context with a Docker endpoint (--docker) {#docker}
 @y
 command: docker context create
-short: Create a context
+short: コンテキストを生成します。
 long: |-
-    Creates a new `context`. This lets you switch the daemon your `docker` CLI
-    connects to.
+    新たな `context` (コンテキスト) を生成します。
+    これによって、それまで `docker` CLI が接続していたデーモンを切り替えることができます。
 usage: docker context create [OPTIONS] CONTEXT
-pname: docker context
-plink: docker_context.yaml
-options:
-    - option: description
-      value_type: string
+@z
+
+% options:
+
+@x description
       description: Description of the context
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: docker
-      value_type: stringToString
-      default_value: '[]'
+@y
+      description: コンテキストの内容説明を設定します。
+@z
+
+@x docker
       description: set the docker endpoint
-      details_url: '#docker'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: from
-      value_type: string
+@y
+      description: Docker のエンドポイントを設定します。
+@z
+
+@x from
       description: create context from a named context
-      details_url: '#from'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: 名前づけされたコンテキストから新たなコンテキストを生成します。
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     ### Create a context with a Docker endpoint (--docker) {#docker}
+@y
+examples: |-
+    ### Docker エンドポイントを使ったコンテキスト生成 (--docker) {#docker}
 @z
 
 @x
@@ -116,29 +60,16 @@ examples: |-
     following example creates a context named `my-context` with a docker endpoint
     of `/var/run/docker.sock`:
 @y
-    Use the `--docker` flag to create a context with a custom endpoint. The
-    following example creates a context named `my-context` with a docker endpoint
-    of `/var/run/docker.sock`:
+    `--docker` フラグを利用して、独自のエンドポイントを持つコンテキストを生成します。
+    以下の例では Docker エンドポイントとして `/var/run/docker.sock` を使った `my-context` という名前のコンテキストを生成します。
 @z
 
-@x
-    ```console
-    $ docker context create \
-        --docker host=unix:///var/run/docker.sock \
-        my-context
-    ```
-@y
-    ```console
-    $ docker context create \
-        --docker host=unix:///var/run/docker.sock \
-        my-context
-    ```
-@z
+% snip command...
 
 @x
     ### Create a context based on an existing context (--from) {#from}
 @y
-    ### Create a context based on an existing context (--from) {#from}
+    ### 既存コンテキストに基づいたコンテキストの新規生成 (--from) {#from}
 @z
 
 @x
@@ -151,15 +82,7 @@ examples: |-
     from the existing context `existing-context`:
 @z
 
-@x
-    ```console
-    $ docker context create --from existing-context my-context
-    ```
-@y
-    ```console
-    $ docker context create --from existing-context my-context
-    ```
-@z
+% snip command...
 
 @x
     If the `--from` option isn't set, the `context` is created from the current context:
@@ -167,15 +90,7 @@ examples: |-
     If the `--from` option isn't set, the `context` is created from the current context:
 @z
 
-@x
-    ```console
-    $ docker context create my-context
-    ```
-@y
-    ```console
-    $ docker context create my-context
-    ```
-@z
+% snip command...
 
 @x
     This can be used to create a context out of an existing `DOCKER_HOST` based script:
@@ -183,17 +98,7 @@ examples: |-
     This can be used to create a context out of an existing `DOCKER_HOST` based script:
 @z
 
-@x
-    ```console
-    $ source my-setup-script.sh
-    $ docker context create my-context
-    ```
-@y
-    ```console
-    $ source my-setup-script.sh
-    $ docker context create my-context
-    ```
-@z
+% snip command...
 
 @x
     To source the `docker` endpoint configuration from an existing context
@@ -207,19 +112,7 @@ examples: |-
     the existing context `existing-context`:
 @z
 
-@x
-    ```console
-    $ docker context create \
-        --docker from=existing-context \
-        my-context
-    ```
-@y
-    ```console
-    $ docker context create \
-        --docker from=existing-context \
-        my-context
-    ```
-@z
+% snip command...
 
 @x
     Docker endpoints configurations, as well as the description can be modified with
@@ -229,20 +122,10 @@ examples: |-
     `docker context update`.
 @z
 
-@x
+@x __SUBDIR__ 対応
     Refer to the [`docker context update` reference](/reference/cli/docker/context/update/) for details.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    Refer to the [`docker context update` reference](__SUBDIR__/reference/cli/docker/context/update/) for details.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    詳細は [`docker context update` リファレンス](__SUBDIR__/reference/cli/docker/context/update/) を参照してください。
 @z
+
+% snip directives...

@@ -3,6 +3,9 @@
 ##
 copyfiles = \
 	about_desktop_versions.png        \
+	build-ui-active-builds.webp       \
+	build-ui-error.webp               \
+	build-ui-history.webp             \
 	build-ui-manage-builders.webp     \
 	build-ui-platform-menu.webp       \
 	build-ui-timing-chart.webp        \

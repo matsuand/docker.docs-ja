@@ -1,17 +1,25 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker context ls
 aliases: docker context ls, docker context list
 short: List contexts
 long: List contexts
 usage: docker context ls [OPTIONS]
-pname: docker context
-plink: docker_context.yaml
-options:
-    - option: format
-      value_type: string
+@y
+command: docker context ls
+aliases: docker context ls, docker context list
+short: コンテキストを一覧表示します。
+long: コンテキストを一覧表示します。
+usage: docker context ls [OPTIONS]
+@z
+
+% options:
+
+@x format
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -19,118 +27,40 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only show context names
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    Use `docker context ls` to print all contexts. The currently active context is
-    indicated with an `*`:
 @y
-command: docker context ls
-aliases: docker context ls, docker context list
-short: List contexts
-long: List contexts
-usage: docker context ls [OPTIONS]
-pname: docker context
-plink: docker_context.yaml
-options:
-    - option: format
-      value_type: string
       description: |-
-        Format output using a custom template:
-        'table':            Print output in table format with column headers (default)
-        'table TEMPLATE':   Print output in table format using the given Go template
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+        カスタムテンプレートを使って出力をフォーマットします。
+        'table':            カラムヘッダー付きの表形式により出力します。(デフォルト)
+        'table TEMPLATE':   指定された Go テンプレートを使って表形式により出力します。
+        'json':             JSON 書式により出力します。
+        'TEMPLATE':         指定された Go テンプレートを使って出力します。
+        テンプレートを使ったフォーマット出力の詳細は [コマンドとログのフォーマット出力](__SUBDIR__/config/formatting/) を参照してください。
+@z
+
+@x quiet
       description: Only show context names
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: コンテキスト名のみを表示します。
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     Use `docker context ls` to print all contexts. The currently active context is
     indicated with an `*`:
+@y
+examples: |-
+    `docker context ls` を使ってコンテキストをすべて出力します。
+    その時点でのアクティブなコンテキストは `*` をつけて表示されます。
 @z
 
-@x
-    ```console
-    $ docker context ls
-@y
-    ```console
-    $ docker context ls
-@z
+% snip command...
 
-@x
-    NAME                DESCRIPTION                               DOCKER ENDPOINT                      ORCHESTRATOR
-    default *           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock          swarm
-    production                                                    tcp:///prod.corp.example.com:2376
-    staging                                                       tcp:///stage.corp.example.com:2376
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    NAME                DESCRIPTION                               DOCKER ENDPOINT                      ORCHESTRATOR
-    default *           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock          swarm
-    production                                                    tcp:///prod.corp.example.com:2376
-    staging                                                       tcp:///stage.corp.example.com:2376
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip directives...

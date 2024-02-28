@@ -911,12 +911,12 @@ layer. This means that the writable layer is as small as possible.
 
 @x
 When an existing file in a container is modified, the storage driver performs a
-copy-on-write operation. The specifics steps involved depend on the specific
+copy-on-write operation. The specific steps involved depend on the specific
 storage driver. For the `overlay2` driver, the  copy-on-write operation follows
 this rough sequence:
 @y
 When an existing file in a container is modified, the storage driver performs a
-copy-on-write operation. The specifics steps involved depend on the specific
+copy-on-write operation. The specific steps involved depend on the specific
 storage driver. For the `overlay2` driver, the  copy-on-write operation follows
 this rough sequence:
 @z
@@ -1012,11 +1012,11 @@ time a given file is modified.
 @z
 
 @x
-To verify the way that copy-on-write works, the following procedures spins up 5
+To verify the way that copy-on-write works, the following procedure spins up 5
 containers based on the `acme/my-final-image:1.0` image we built earlier and
 examines how much room they take up.
 @y
-To verify the way that copy-on-write works, the following procedures spins up 5
+To verify the way that copy-on-write works, the following procedure spins up 5
 containers based on the `acme/my-final-image:1.0` image we built earlier and
 examines how much room they take up.
 @z
@@ -1242,13 +1242,13 @@ examines how much room they take up.
 @z
 
 @x
-The previous examples illustrate how copy-on-write filesystems help making
+The previous examples illustrate how copy-on-write filesystems help make
 containers efficient. Not only does copy-on-write save space, but it also
 reduces container start-up time. When you create a container (or multiple
 containers from the same image), Docker only needs to create the thin writable
 container layer.
 @y
-The previous examples illustrate how copy-on-write filesystems help making
+The previous examples illustrate how copy-on-write filesystems help make
 containers efficient. Not only does copy-on-write save space, but it also
 reduces container start-up time. When you create a container (or multiple
 containers from the same image), Docker only needs to create the thin writable
@@ -1257,14 +1257,14 @@ container layer.
 
 @x
 If Docker had to make an entire copy of the underlying image stack each time it
-created a new container, container create times and disk space used would be
+created a new container, container creation times and disk space used would be
 significantly increased. This would be similar to the way that virtual machines
 work, with one or more virtual disks per virtual machine. The [`vfs` storage](vfs-driver.md)
 doesn't provide a CoW filesystem or other optimizations. When using this storage
 driver, a full copy of the image's data is created for each container.
 @y
 If Docker had to make an entire copy of the underlying image stack each time it
-created a new container, container create times and disk space used would be
+created a new container, container creation times and disk space used would be
 significantly increased. This would be similar to the way that virtual machines
 work, with one or more virtual disks per virtual machine. The [`vfs` storage](vfs-driver.md)
 doesn't provide a CoW filesystem or other optimizations. When using this storage
