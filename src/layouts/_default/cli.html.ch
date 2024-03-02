@@ -164,38 +164,42 @@
 
 @x (T "Options") ／dict 第三引数追加
     {{ with $data.options }}
-      {{ $heading := dict "level" 2 "text" "Options" }}
-      {{ partial "heading.html" $heading }}
-      {{ $.Scratch.Add "headings" $heading }}
-      <table>
-        <thead>
-          <tr>
-            <th>Option</th>
-            <th>Default</th>
-            <th>Description</th>
-          </tr>
-        </thead>
+      {{ $opts := where . "hidden" false }}
+      {{ with $opts }}
+        {{ $heading := dict "level" 2 "text" "Options" }}
+        {{ partial "heading.html" $heading }}
+        {{ $.Scratch.Add "headings" $heading }}
+        <table>
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
 @y
     {{ with $data.options }}
-      {{ $heading := dict "level" 2 "text" (T "Options") "id" "options" }}
-      {{ partial "heading.html" $heading }}
-      {{ $.Scratch.Add "headings" $heading }}
-      <table>
-        <thead>
-          <tr>
-            <th>{{ T "Option" }}</th>
-            <th>{{ T "Default" }}</th>
-            <th>{{ T "Description" }}</th>
-          </tr>
-        </thead>
+      {{ $opts := where . "hidden" false }}
+      {{ with $opts }}
+        {{ $heading := dict "level" 2 "text" (T "Options") "id" "options" }}
+        {{ partial "heading.html" $heading }}
+        {{ $.Scratch.Add "headings" $heading }}
+        <table>
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
 @z
 
 @x
-                {{ with .min_api_version }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s+" .)) }}
+                  {{ with .min_api_version }}
+                    {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s+" .)) }}
 @y
-                {{ with .min_api_version }}
-                  {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s 以上" .)) }}
+                  {{ with .min_api_version }}
+                    {{ partial "components/badge.html" (dict "color" "blue" "content" (printf "API %s 以上" .)) }}
 @z
 
 @x (T "Examples") ／dict 第三引数追加

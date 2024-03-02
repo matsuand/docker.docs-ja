@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Find the answers to common security related FAQs
 keywords: Docker, Docker Hub, Docker Desktop secuirty FAQs, secuirty, platform, Docker Scout, admin, security
 title: General security FAQs
----
 @y
----
 description: Find the answers to common security related FAQs
 keywords: Docker, Docker Hub, Docker Desktop secuirty FAQs, secuirty, platform, Docker Scout, admin, security
 title: General security FAQs
----
 @z
 
 @x
@@ -82,15 +78,21 @@ You can configure this through SSO using your IdP. Check with your IdP if they s
 @z
 
 @x
-If configured, the IdP manages sessions.
+Docker Desktop uses tokens to manage sessions after a user signs in. Docker Desktop signs you out after 90 days, or 30 days of inactivity.
 @y
-If configured, the IdP manages sessions.
+Docker Desktop uses tokens to manage sessions after a user signs in. Docker Desktop signs you out after 90 days, or 30 days of inactivity.
 @z
 
 @x
-Docker Desktop sessions expire after 30 days, or after 7 days of inactivity. For Docker Hub, the IdP manages sessions, if configured. If you use application-level sign-in, users are signed out due to inactivity after 14 days and must sign in again after 30 days.
+In Docker Hub, you need to re-authenticate after 24 hours. If users are authenticating using SSO, the default session timeout for the IdP is respected.
 @y
-Docker Desktop sessions expire after 30 days, or after 7 days of inactivity. For Docker Hub, the IdP manages sessions, if configured. If you use application-level sign-in, users are signed out due to inactivity after 14 days and must sign in again after 30 days.
+In Docker Hub, you need to re-authenticate after 24 hours. If users are authenticating using SSO, the default session timeout for the IdP is respected.
+@z
+
+@x
+Custom settings per organization for sessions aren't supported.
+@y
+Custom settings per organization for sessions aren't supported.
 @z
 
 @x

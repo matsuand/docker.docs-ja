@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Understand what you can do with Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
 title: Explore Docker Desktop
-aliases:
-- /desktop/dashboard/
----
 @y
----
 description: Understand what you can do with Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
 title: Docker Desktop の確認
-aliases:
-- /desktop/dashboard/
----
 @z
 
 @x
@@ -104,9 +96,9 @@ From the Docker Dashboard you can use Quick Search, which is located in the Dash
 @z
 
 @x
-- Public Docker Hub images, local images, and images from remote repositories. Depending on the type of image you select, you can either pull the image by tag, view documentation, go to Docker Hub for more details, or run a new container using the image.
+- Public Docker Hub images, local images, and images from remote repositories (private repositories from organizations you're a part of in Hub). Depending on the type of image you select, you can either pull the image by tag, view documentation, go to Docker Hub for more details, or run a new container using the image.
 @y
-- Public Docker Hub images, local images, and images from remote repositories. Depending on the type of image you select, you can either pull the image by tag, view documentation, go to Docker Hub for more details, or run a new container using the image.
+- Public Docker Hub images, local images, and images from remote repositories (private repositories from organizations you're a part of in Hub). Depending on the type of image you select, you can either pull the image by tag, view documentation, go to Docker Hub for more details, or run a new container using the image.
 @z
 
 @x

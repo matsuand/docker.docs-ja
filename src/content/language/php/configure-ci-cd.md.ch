@@ -2,23 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Configure CI/CD for your PHP application
 keywords: php, CI/CD
 description: Learn how to Configure CI/CD for your PHP application
----
 @y
----
 title: Configure CI/CD for your PHP application
 keywords: php, CI/CD
 description: Learn how to Configure CI/CD for your PHP application
----
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -30,7 +26,7 @@ Complete all the previous sections of this guide, starting with [Containerize a 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
@@ -44,15 +40,15 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 2. Define the GitHub Actions workflow.
 3. Run the workflow.
 @y
-1. Create a new repository on GitHub.
-2. Define the GitHub Actions workflow.
-3. Run the workflow.
+1. GitHub 上に新たなリポジトリを生成します。
+2. GitHub Actions ワークフローを定義します。
+3. ワークフローを実行します。
 @z
 
 @x
 ## Step one: Create the repository
 @y
-## Step one: Create the repository
+## 手順 1: リポジトリの生成 {#step-one-create-the-repository}
 @z
 
 @x
@@ -64,7 +60,7 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
 @x
 1. [Create a new repository](https://github.com/new) on GitHub.
 @y
-1. [Create a new repository](https://github.com/new) on GitHub.
+1. GitHub 上に [新たなリポジトリを生成](https://github.com/new) します。
 @z
 
 @x
@@ -125,15 +121,7 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
    the branch to main.
 @z
 
-@x
-   ```console
-   $ git branch -M main
-   ```
-@y
-   ```console
-   $ git branch -M main
-   ```
-@z
+% snip command...
 
 @x
 8. Run the following commands to stage, commit, and then push your local
@@ -143,19 +131,7 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
    repository to GitHub.
 @z
 
-@x
-   ```console
-   $ git add -A
-   $ git commit -m "my first commit"
-   $ git push -u origin main
-   ```
-@y
-   ```console
-   $ git add -A
-   $ git commit -m "my first commit"
-   $ git push -u origin main
-   ```
-@z
+% snip command...
 
 @x
 ## Step two: Set up the workflow
@@ -197,93 +173,7 @@ to Docker Hub.
 3. In the editor window, copy and paste the following YAML configuration.
 @z
 
-@x
-   ```yaml
-   name: ci
-@y
-   ```yaml
-   name: ci
-@z
-
-@x
-   on:
-     push:
-       branches:
-         - main
-@y
-   on:
-     push:
-       branches:
-         - main
-@z
-
-@x
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Checkout
-           uses: actions/checkout@v4
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@v3
-           with:
-             username: ${{ secrets.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@v3
-         -
-           name: Build and test
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             target: test
-             load: true
-         -
-           name: Build and push
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             push: true
-             target: final
-             tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
-@y
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Checkout
-           uses: actions/checkout@v4
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@v3
-           with:
-             username: ${{ secrets.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@v3
-         -
-           name: Build and test
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             target: test
-             load: true
-         -
-           name: Build and push
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             push: true
-             target: final
-             tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
-@z
+% snip code...
 
 @x
    For more information about the YAML syntax used here, see [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
@@ -360,7 +250,7 @@ Related information:
  - [Introduction to GitHub Actions](../../build/ci/github-actions/index.md)
  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
-Related information:
+関連情報
  - [Introduction to GitHub Actions](../../build/ci/github-actions/index.md)
  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
@@ -368,7 +258,7 @@ Related information:
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
@@ -380,5 +270,5 @@ Next, learn how you can locally test and debug your workloads on Kubernetes befo
 @x
 {{< button text="Test your deployment" url="./deploy.md" >}}
 @y
-{{< button text="Test your deployment" url="./deploy.md" >}}
+{{< button text="デプロイのテスト" url="./deploy.md" >}}
 @z

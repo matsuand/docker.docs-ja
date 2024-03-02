@@ -67,11 +67,11 @@ stack up against the image you run in production.
 
 @x
 First, set up the GitHub Action workflow to build an image. This isn't specific
-to Docker Scout here, but you'll need to create build an image to have
+to Docker Scout here, but you'll need to build an image to have
 something to compare with.
 @y
 First, set up the GitHub Action workflow to build an image. This isn't specific
-to Docker Scout here, but you'll need to create build an image to have
+to Docker Scout here, but you'll need to build an image to have
 something to compare with.
 @z
 

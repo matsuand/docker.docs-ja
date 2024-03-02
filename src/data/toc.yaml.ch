@@ -342,6 +342,8 @@ Guides:
 @x
 - sectiontitle: Use-case guides {{< badge color=violet text=New >}}
   section:
+    - path: /guides/use-case/
+      title: Overview
     - sectiontitle: Generative AI
       section:
       - sectiontitle: PDF analysis and chat
@@ -357,6 +359,8 @@ Guides:
 @y
 - sectiontitle: ユースケースガイド {{< badge color=violet text=New >}}
   section:
+    - path: __SUBDIR__/guides/use-case/
+      title: 概要
     - sectiontitle: 生成 AI
       section:
       - sectiontitle: PDF 分析とチャット
@@ -2944,6 +2948,8 @@ Manuals:
       title: Overview
     - path: /scout/quickstart/
       title: Quickstart
+    - path: /scout/install/
+      title: Install
     - sectiontitle: Explore Docker Scout
       section:
       - path: /scout/dashboard/
@@ -2958,13 +2964,15 @@ Manuals:
 - sectiontitle: Docker Scout
   section:
     - path: __SUBDIR__/scout/
-      title: Overview
+      title: 概要
     - path: __SUBDIR__/scout/quickstart/
-      title: Quickstart
+      title: クィックスタート
+    - path: __SUBDIR__/scout/install/
+      title: インストール
     - sectiontitle: Explore Docker Scout
       section:
       - path: __SUBDIR__/scout/dashboard/
-        title: Dashboard
+        title: ダッシュボード
       - path: __SUBDIR__/scout/image-details-view/
         title: Image details view
       - path: __SUBDIR__/scout/advisory-db-sources/

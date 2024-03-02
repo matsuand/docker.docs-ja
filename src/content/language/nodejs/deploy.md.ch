@@ -4,23 +4,19 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Test your Node.js deployment
 keywords: deploy, kubernetes, node, node.js
 description: Learn how to deploy locally to test and debug your Kubernetes deployment
----
 @y
----
 title: Test your Node.js deployment
 keywords: deploy, kubernetes, node, node.js
 description: Learn how to deploy locally to test and debug your Kubernetes deployment
----
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -34,7 +30,7 @@ description: Learn how to deploy locally to test and debug your Kubernetes deplo
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
@@ -69,79 +65,7 @@ username and the name of the repository that you created in [Configure CI/CD for
 your Node.js application](configure-ci-cd.md).
 @z
 
-@x
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-nodejs-demo
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      todo: web
-  template:
-    metadata:
-      labels:
-        todo: web
-    spec:
-      containers:
-      - name: todo-site
-        image: DOCKER_USERNAME/REPO_NAME
-        imagePullPolicy: Always
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: todo-entrypoint
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    todo: web
-  ports:
-  - port: 3000
-    targetPort: 3000
-    nodePort: 30001
-```
-@y
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-nodejs-demo
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      todo: web
-  template:
-    metadata:
-      labels:
-        todo: web
-    spec:
-      containers:
-      - name: todo-site
-        image: DOCKER_USERNAME/REPO_NAME
-        imagePullPolicy: Always
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: todo-entrypoint
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    todo: web
-  ports:
-  - port: 3000
-    targetPort: 3000
-    nodePort: 30001
-```
-@z
+% snip code...
 
 @x
 In this Kubernetes YAML file, there are two objects, separated by the `---`:
@@ -189,15 +113,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    and deploy your application to Kubernetes.
 @z
 
-@x
-   ```console
-   $ kubectl apply -f docker-node-kubernetes.yaml
-   ```
-@y
-   ```console
-   $ kubectl apply -f docker-node-kubernetes.yaml
-   ```
-@z
+% snip command...
 
 @x
    You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
@@ -205,17 +121,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
 @z
 
-@x
-   ```shell
-   deployment.apps/docker-nodejs-demo created
-   service/todo-entrypoint created
-   ```
-@y
-   ```shell
-   deployment.apps/docker-nodejs-demo created
-   service/todo-entrypoint created
-   ```
-@z
+% snip command...
 
 @x
 2. Make sure everything worked by listing your deployments.
@@ -223,15 +129,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 2. Make sure everything worked by listing your deployments.
 @z
 
-@x
-   ```console
-   $ kubectl get deployments
-   ```
-@y
-   ```console
-   $ kubectl get deployments
-   ```
-@z
+% snip command...
 
 @x
    Your deployment should be listed as follows:
@@ -239,17 +137,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    Your deployment should be listed as follows:
 @z
 
-@x
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-   docker-nodejs-demo   1/1     1            1           6s
-   ```
-@y
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-   docker-nodejs-demo   1/1     1            1           6s
-   ```
-@z
+% snip output...
 
 @x
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
@@ -257,15 +145,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
 @z
 
-@x
-   ```console
-   $ kubectl get services
-   ```
-@y
-   ```console
-   $ kubectl get services
-   ```
-@z
+% snip command...
 
 @x
    You should get output like the following.
@@ -273,19 +153,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    You should get output like the following.
 @z
 
-@x
-   ```shell
-   NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-   kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP          7d22h
-   todo-entrypoint   NodePort    10.111.101.229   <none>        3000:30001/TCP   33s
-   ```
-@y
-   ```shell
-   NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
-   kubernetes        ClusterIP   10.96.0.1        <none>        443/TCP          7d22h
-   todo-entrypoint   NodePort    10.111.101.229   <none>        3000:30001/TCP   33s
-   ```
-@z
+% snip output...
 
 @x
    In addition to the default `kubernetes` service, you can see your `todo-entrypoint` service, accepting traffic on port 30001/TCP.
@@ -307,20 +175,12 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 4. Run the following command to tear down your application.
 @z
 
-@x
-   ```console
-   $ kubectl delete -f docker-node-kubernetes.yaml
-   ```
-@y
-   ```console
-   $ kubectl delete -f docker-node-kubernetes.yaml
-   ```
-@z
+% snip command...
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -335,7 +195,7 @@ Related information:
    - [Deploy on Kubernetes with Docker Desktop](../../desktop/kubernetes.md)
    - [Swarm mode overview](../../engine/swarm/_index.md)
 @y
-Related information:
+関連情報
    - [Kubernetes documentation](https://kubernetes.io/docs/home/)
    - [Deploy on Kubernetes with Docker Desktop](../../desktop/kubernetes.md)
    - [Swarm mode overview](../../engine/swarm/_index.md)

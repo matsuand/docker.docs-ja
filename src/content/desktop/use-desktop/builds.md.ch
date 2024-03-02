@@ -277,12 +277,34 @@ The **Configuration** section of the Info tab shows parameters passed to the bui
 
 @x
 The **Build results** section shows a summary of the generated build artifacts,
-including the image manifest media type and digest, and information about build
-attestations such as SBOM and provenance data.
+including image manifest details, attestations, and Open Telemetry traces.
 @y
 The **Build results** section shows a summary of the generated build artifacts,
-including the image manifest media type and digest, and information about build
-attestations such as SBOM and provenance data.
+including image manifest details, attestations, and Open Telemetry traces.
+@z
+
+@x
+Attestations are metadata records attached to a container image.
+The metadata describes something about the image,
+for example how it was built or what packages it contains.
+For more information about attestations, see [Build attestations](../../build/attestations/_index.md).
+@y
+Attestations are metadata records attached to a container image.
+The metadata describes something about the image,
+for example how it was built or what packages it contains.
+For more information about attestations, see [Build attestations](../../build/attestations/_index.md).
+@z
+
+@x
+Open Telemetry traces for builds capture information about the build execution
+steps in Buildx and BuildKit. You can view and analyze the traces yourself
+using a trace visualization tool like Jaeger. Refer to
+[OpenTelemetry support](../../build/building/opentelemetry.md) for more information.
+@y
+Open Telemetry traces for builds capture information about the build execution
+steps in Buildx and BuildKit. You can view and analyze the traces yourself
+using a trace visualization tool like Jaeger. Refer to
+[OpenTelemetry support](../../build/building/opentelemetry.md) for more information.
 @z
 
 @x

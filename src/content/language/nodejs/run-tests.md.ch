@@ -8,7 +8,7 @@ title: Run Node.js tests in a container
 keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
 @y
-title: Run Node.js tests in a container
+title: コンテナーでの Node.js テストの実行
 keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
 @z
@@ -16,19 +16,19 @@ description: Learn how to run your Node.js tests in a container.
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md).
 @y
-Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md).
+本ガイドの [Node.js アプリケーションのコンテナー化](containerize.md) から始まる前節までを完了していること。
 @z
 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
@@ -37,7 +37,8 @@ lot of things to different development teams. There are unit tests, integration
 tests and end-to-end testing. In this guide you take a look at running your unit
 tests in Docker when developing and when building.
 @y
-Testing is an essential part of modern software development. Testing can mean a
+テストというものは、現代のソフトウェア開発においては重要な工程です。
+Testing can mean a
 lot of things to different development teams. There are unit tests, integration
 tests and end-to-end testing. In this guide you take a look at running your unit
 tests in Docker when developing and when building.
@@ -61,15 +62,7 @@ Run the following command to run the test script from the `package.json` file in
 Run the following command to run the test script from the `package.json` file inside a container.
 @z
 
-@x
-```console
-$ docker compose run server npm run test
-```
-@y
-```console
-$ docker compose run server npm run test
-```
-@z
+% snip command...
 
 @x
 To learn more about the command, see [docker compose run](/reference/cli/docker/compose/run/).
@@ -83,117 +76,7 @@ You should see output like the following.
 You should see output like the following.
 @z
 
-@x
-```console
-> docker-nodejs@1.0.0 test
-> jest
-@y
-```console
-> docker-nodejs@1.0.0 test
-> jest
-@z
-
-@x
- PASS  spec/routes/deleteItem.spec.js
- PASS  spec/routes/getItems.spec.js
- PASS  spec/routes/addItem.spec.js
- PASS  spec/routes/updateItem.spec.js
- PASS  spec/persistence/sqlite.spec.js
-  ● Console
-@y
- PASS  spec/routes/deleteItem.spec.js
- PASS  spec/routes/getItems.spec.js
- PASS  spec/routes/addItem.spec.js
- PASS  spec/routes/updateItem.spec.js
- PASS  spec/persistence/sqlite.spec.js
-  ● Console
-@z
-
-@x
-    console.log
-      Using sqlite database at /tmp/todo.db
-@y
-    console.log
-      Using sqlite database at /tmp/todo.db
-@z
-
-@x
-      at Database.log (src/persistence/sqlite.js:18:25)
-@y
-      at Database.log (src/persistence/sqlite.js:18:25)
-@z
-
-@x
-    console.log
-      Using sqlite database at /tmp/todo.db
-@y
-    console.log
-      Using sqlite database at /tmp/todo.db
-@z
-
-@x
-      at Database.log (src/persistence/sqlite.js:18:25)
-@y
-      at Database.log (src/persistence/sqlite.js:18:25)
-@z
-
-@x
-    console.log
-      Using sqlite database at /tmp/todo.db
-@y
-    console.log
-      Using sqlite database at /tmp/todo.db
-@z
-
-@x
-      at Database.log (src/persistence/sqlite.js:18:25)
-@y
-      at Database.log (src/persistence/sqlite.js:18:25)
-@z
-
-@x
-    console.log
-      Using sqlite database at /tmp/todo.db
-@y
-    console.log
-      Using sqlite database at /tmp/todo.db
-@z
-
-@x
-      at Database.log (src/persistence/sqlite.js:18:25)
-@y
-      at Database.log (src/persistence/sqlite.js:18:25)
-@z
-
-@x
-    console.log
-      Using sqlite database at /tmp/todo.db
-@y
-    console.log
-      Using sqlite database at /tmp/todo.db
-@z
-
-@x
-      at Database.log (src/persistence/sqlite.js:18:25)
-@y
-      at Database.log (src/persistence/sqlite.js:18:25)
-@z
-
-@x
-Test Suites: 5 passed, 5 total
-Tests:       9 passed, 9 total
-Snapshots:   0 total
-Time:        2.008 s
-Ran all test suites.
-```
-@y
-Test Suites: 5 passed, 5 total
-Tests:       9 passed, 9 total
-Snapshots:   0 total
-Time:        2.008 s
-Ran all test suites.
-```
-@z
+% snip output...
 
 @x
 ## Run tests when building
@@ -227,15 +110,7 @@ Run the following command to build a new image using the test stage as the targe
 Run the following command to build a new image using the test stage as the target and view the test results. Include `--progress=plain` to view the build output, `--no-cache` to ensure the tests always run, and `--target test` to target the test stage.
 @z
 
-@x
-```console
-$ docker build -t node-docker-image-test --progress=plain --no-cache --target test .
-```
-@y
-```console
-$ docker build -t node-docker-image-test --progress=plain --no-cache --target test .
-```
-@z
+% snip command...
 
 @x
 To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
@@ -249,74 +124,12 @@ You should see output containing the following.
 You should see output containing the following.
 @z
 
-@x
-```console
-...
-@y
-```console
-...
-@z
-
-@x
-#11 [test 3/3] RUN npm run test
-#11 1.058
-#11 1.058 > docker-nodejs@1.0.0 test
-#11 1.058 > jest
-#11 1.058
-#11 3.765 PASS spec/routes/getItems.spec.js
-#11 3.767 PASS spec/routes/deleteItem.spec.js
-#11 3.783 PASS spec/routes/updateItem.spec.js
-#11 3.806 PASS spec/routes/addItem.spec.js
-#11 4.179 PASS spec/persistence/sqlite.spec.js
-#11 4.207
-#11 4.208 Test Suites: 5 passed, 5 total
-#11 4.208 Tests:       9 passed, 9 total
-#11 4.208 Snapshots:   0 total
-#11 4.208 Time:        2.168 s
-#11 4.208 Ran all test suites.
-#11 4.265 npm notice
-#11 4.265 npm notice New major version of npm available! 8.6.0 -> 9.8.1
-#11 4.265 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.8.1>
-#11 4.265 npm notice Run `npm install -g npm@9.8.1` to update!
-#11 4.266 npm notice
-#11 DONE 4.3s
-@y
-#11 [test 3/3] RUN npm run test
-#11 1.058
-#11 1.058 > docker-nodejs@1.0.0 test
-#11 1.058 > jest
-#11 1.058
-#11 3.765 PASS spec/routes/getItems.spec.js
-#11 3.767 PASS spec/routes/deleteItem.spec.js
-#11 3.783 PASS spec/routes/updateItem.spec.js
-#11 3.806 PASS spec/routes/addItem.spec.js
-#11 4.179 PASS spec/persistence/sqlite.spec.js
-#11 4.207
-#11 4.208 Test Suites: 5 passed, 5 total
-#11 4.208 Tests:       9 passed, 9 total
-#11 4.208 Snapshots:   0 total
-#11 4.208 Time:        2.168 s
-#11 4.208 Ran all test suites.
-#11 4.265 npm notice
-#11 4.265 npm notice New major version of npm available! 8.6.0 -> 9.8.1
-#11 4.265 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.8.1>
-#11 4.265 npm notice Run `npm install -g npm@9.8.1` to update!
-#11 4.266 npm notice
-#11 DONE 4.3s
-@z
-
-@x
-...
-```
-@y
-...
-```
-@z
+% snip output...
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -330,7 +143,7 @@ Related information:
  - [docker compose run](/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @y
-Related information:
+関連情報
  - [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/)
  - [Build with Docker guide](../../build/guide/index.md)
 @z
@@ -338,7 +151,7 @@ Related information:
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
@@ -350,5 +163,5 @@ Next, you’ll learn how to set up a CI/CD pipeline using GitHub Actions.
 @x
 {{< button text="Configure CI/CD" url="configure-ci-cd.md" >}}
 @y
-{{< button text="Configure CI/CD" url="configure-ci-cd.md" >}}
+{{< button text="CI/CD の設定" url="configure-ci-cd.md" >}}
 @z

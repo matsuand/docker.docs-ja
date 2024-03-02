@@ -2,25 +2,18 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応。
 
 @x
----
 description: Configure registry.json to enforce users to sign into Docker Desktop
 toc_max: 2
 keywords: authentication, registry.json, configure, enforce sign-in
 title: Enforce sign-in for Desktop
-aliases:
-- /docker-hub/configure-sign-in/
----
 @y
----
 description: Configure registry.json to enforce users to sign into Docker Desktop
 toc_max: 2
 keywords: authentication, registry.json, configure, enforce sign-in
 title: Enforce sign-in for Desktop
-aliases:
-- /docker-hub/configure-sign-in/
----
 @z
 
 @x
@@ -151,19 +144,7 @@ details, see [Manage members](__SUBDIR__/admin/organization/members/).
     Open the `registry.json` file in a text editor and add the following contents, where `myorg` is replaced with your organization’s name. The file contents are case-sensitive and you must use lowercase letters for your organization's name.
 @z
 
-@x
-    ```json
-    {
-    "allowedOrgs": ["myorg"]
-    }
-    ```
-@y
-    ```json
-    {
-    "allowedOrgs": ["myorg"]
-    }
-    ```
-@z
+% snip code...
 
 @x
 4. Verify that sign-in is enforced.
@@ -172,11 +153,29 @@ details, see [Manage members](__SUBDIR__/admin/organization/members/).
 @z
 
 @x
-    Start Docker Desktop on the user’s machine and verify that the **Sign in
-    required!** prompt appears.
+    To activate the `registry.json` file, restart Docker Desktop on the user’s machine. When Docker Desktop starts, verify that the **Sign in
+    required!** prompt appears. 
 @y
-    Start Docker Desktop on the user’s machine and verify that the **Sign in
-    required!** prompt appears.
+    To activate the `registry.json` file, restart Docker Desktop on the user’s machine. When Docker Desktop starts, verify that the **Sign in
+    required!** prompt appears. 
+@z
+
+@x
+    In some cases, a system reboot may be necessary for the enforcement to take effect.
+@y
+    In some cases, a system reboot may be necessary for the enforcement to take effect.
+@z
+
+@x
+    > **Tip**
+    >
+    > If your users have issues starting Docker Desktop after you enforce sign-in, they may need to update to the latest version.
+    { .tip }
+@y
+    > **Tip**
+    >
+    > If your users have issues starting Docker Desktop after you enforce sign-in, they may need to update to the latest version.
+    { .tip }
 @z
 
 @x
@@ -267,15 +266,7 @@ If you're using PowerShell:
 If you're using PowerShell:
 @z
 
-@x
-```powershell
-PS> Start-Process '.\Docker Desktop Installer.exe' -Wait 'install --allowed-org=myorg'
-```
-@y
-```powershell
-PS> Start-Process '.\Docker Desktop Installer.exe' -Wait 'install --allowed-org=myorg'
-```
-@z
+% snip command...
 
 @x
 If you're using the Windows Command Prompt:
@@ -283,15 +274,7 @@ If you're using the Windows Command Prompt:
 If you're using the Windows Command Prompt:
 @z
 
-@x
-```console
-C:\Users\Admin> "Docker Desktop Installer.exe" install --allowed-org=myorg
-```
-@y
-```console
-C:\Users\Admin> "Docker Desktop Installer.exe" install --allowed-org=myorg
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -311,19 +294,7 @@ download `Docker.dmg` and run the following commands in a terminal from the
 directory containing `Docker.dmg`. Replace `myorg` with your organization's name. You must use lowercase letters for your organization's name.
 @z
 
-@x
-```console
-$ sudo hdiutil attach Docker.dmg
-$ sudo /Volumes/Docker/Docker.app/Contents/MacOS/install --allowed-org=myorg
-$ sudo hdiutil detach /Volumes/Docker
-```
-@y
-```console
-$ sudo hdiutil attach Docker.dmg
-$ sudo /Volumes/Docker/Docker.app/Contents/MacOS/install --allowed-org=myorg
-$ sudo hdiutil detach /Volumes/Docker
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -365,15 +336,7 @@ contents are case-sensitive and you must use lowercase letters for your
 organization's name.
 @z
 
-@x
-```powershell
-PS>  Set-Content /ProgramData/DockerDesktop/registry.json '{"allowedOrgs":["myorg"]}'
-```
-@y
-```powershell
-PS>  Set-Content /ProgramData/DockerDesktop/registry.json '{"allowedOrgs":["myorg"]}'
-```
-@z
+% snip command...
 
 @x
 This creates the `registry.json` file at
@@ -385,31 +348,7 @@ This creates the `registry.json` file at
 information the user belongs to. Make sure that the user can't edit this file, but only the administrator can:
 @z
 
-@x
-```console
-PS C:\ProgramData\DockerDesktop> Get-Acl .\registry.json
-@y
-```console
-PS C:\ProgramData\DockerDesktop> Get-Acl .\registry.json
-@z
-
-@x
-    Directory: C:\ProgramData\DockerDesktop
-@y
-    Directory: C:\ProgramData\DockerDesktop
-@z
-
-@x
-Path          Owner                  Access
-----          -----                  ------
-registry.json BUILTIN\Administrators NT AUTHORITY\SYSTEM Allow  FullControl...
-```
-@y
-Path          Owner                  Access
-----          -----                  ------
-registry.json BUILTIN\Administrators NT AUTHORITY\SYSTEM Allow  FullControl...
-```
-@z
+% snip comand...
 
 @x
 {{< /tab >}}
@@ -431,17 +370,7 @@ are case-sensitive and you must use lowercase letters for your organization's
 name.
 @z
 
-@x
-```console
-$ sudo mkdir -p "/Library/Application Support/com.docker.docker"
-$ echo '{"allowedOrgs":["myorg"]}' | sudo tee "/Library/Application Support/com.docker.docker/registry.json"
-```
-@y
-```console
-$ sudo mkdir -p "/Library/Application Support/com.docker.docker"
-$ echo '{"allowedOrgs":["myorg"]}' | sudo tee "/Library/Application Support/com.docker.docker/registry.json"
-```
-@z
+% snip command...
 
 @x
 This creates (or updates, if the file already exists) the `registry.json` file
@@ -461,17 +390,7 @@ Verify that the content of the file contains the correct information:
 Verify that the content of the file contains the correct information:
 @z
 
-@x
-```console
-$ sudo cat "/Library/Application Support/com.docker.docker/registry.json"
-{"allowedOrgs":["myorg"]}
-```
-@y
-```console
-$ sudo cat "/Library/Application Support/com.docker.docker/registry.json"
-{"allowedOrgs":["myorg"]}
-```
-@z
+% snip command...
 
 @x
 Verify that the file has the expected permissions (`-rw-r--r--`) and ownership
@@ -481,17 +400,7 @@ Verify that the file has the expected permissions (`-rw-r--r--`) and ownership
 (`root` and `admin`):
 @z
 
-@x
-```console
-$ sudo ls -l "/Library/Application Support/com.docker.docker/registry.json"
--rw-r--r--  1 root  admin  26 Jul 27 22:01 /Library/Application Support/com.docker.docker/registry.json
-```
-@y
-```console
-$ sudo ls -l "/Library/Application Support/com.docker.docker/registry.json"
--rw-r--r--  1 root  admin  26 Jul 27 22:01 /Library/Application Support/com.docker.docker/registry.json
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -513,17 +422,7 @@ are case-sensitive and you must use lowercase letters for your organization's
 name.
 @z
 
-@x
-```console
-$ sudo mkdir -p /usr/share/docker-desktop/registry
-$ echo '{"allowedOrgs":["myorg"]}' | sudo tee /usr/share/docker-desktop/registry/registry.json
-```
-@y
-```console
-$ sudo mkdir -p /usr/share/docker-desktop/registry
-$ echo '{"allowedOrgs":["myorg"]}' | sudo tee /usr/share/docker-desktop/registry/registry.json
-```
-@z
+% snip command...
 
 @x
 This creates (or updates, if the file already exists) the `registry.json` file
@@ -543,17 +442,7 @@ Verify that the content of the file contains the correct information:
 Verify that the content of the file contains the correct information:
 @z
 
-@x
-```console
-$ sudo cat /usr/share/docker-desktop/registry/registry.json
-{"allowedOrgs":["myorg"]}
-```
-@y
-```console
-$ sudo cat /usr/share/docker-desktop/registry/registry.json
-{"allowedOrgs":["myorg"]}
-```
-@z
+% snip command...
 
 @x
 Verify that the file has the expected permissions (`-rw-r--r--`) and ownership
@@ -563,17 +452,7 @@ Verify that the file has the expected permissions (`-rw-r--r--`) and ownership
 (`root`):
 @z
 
-@x
-```console
-$ sudo ls -l /usr/share/docker-desktop/registry/registry.json
--rw-r--r--  1 root  root  26 Jul 27 22:01 /usr/share/docker-desktop/registry/registry.json
-```
-@y
-```console
-$ sudo ls -l /usr/share/docker-desktop/registry/registry.json
--rw-r--r--  1 root  root  26 Jul 27 22:01 /usr/share/docker-desktop/registry/registry.json
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}

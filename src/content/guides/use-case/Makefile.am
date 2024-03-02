@@ -4,6 +4,7 @@
 SUBDIRS = genai-pdf-bot genai-video-bot nlp
 
 bases = \
+	_index.md  \
 	jupyter.md
 
 include $(top_srcdir)/build-aux/common.mk

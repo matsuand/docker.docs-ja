@@ -77,12 +77,12 @@ Btrfs Filesystem as Btrfs.
 - Changing the storage driver makes any containers you have already
   created inaccessible on the local system. Use `docker save` to save containers,
   and push existing images to Docker Hub or a private repository, so that you
-  not need to re-create them later.
+  do not need to re-create them later.
 @y
 - Changing the storage driver makes any containers you have already
   created inaccessible on the local system. Use `docker save` to save containers,
   and push existing images to Docker Hub or a private repository, so that you
-  not need to re-create them later.
+  do not need to re-create them later.
 @z
 
 @x
@@ -686,12 +686,12 @@ storage driver.
 @x
 Btrfs doesn't support page cache sharing. This means that each process
 accessing the same file copies the file into the Docker host's memory. As a
-result, the `btrfs` driver may not be the best choice high-density use cases
+result, the `btrfs` driver may not be the best choice for high-density use cases
 such as PaaS.
 @y
 Btrfs doesn't support page cache sharing. This means that each process
 accessing the same file copies the file into the Docker host's memory. As a
-result, the `btrfs` driver may not be the best choice high-density use cases
+result, the `btrfs` driver may not be the best choice for high-density use cases
 such as PaaS.
 @z
 

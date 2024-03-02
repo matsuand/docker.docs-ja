@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Containerize a Node.js application
 keywords: node.js, node, containerize, initialize
@@ -57,15 +59,7 @@ to clone the repository:
 そして以下のコマンドを実行してリポジトリをクローンします。
 @z
 
-@x
-```console
-$ git clone https://github.com/docker/docker-nodejs-sample
-```
-@y
-```console
-$ git clone https://github.com/docker/docker-nodejs-sample
-```
-@z
+% snip command...
 
 @x
 ## Initialize Docker assets
@@ -88,15 +82,7 @@ the prompts from `docker init` and use the same answers for your prompts.
 以下の利用例において `docker init` の質問への答えを示しているので、これを参考に同様の入力を行ってください。
 @z
 
-@x
-```console
-$ docker init
-Welcome to the Docker Init CLI!
-@y
-```console
-$ docker init
-Welcome to the Docker Init CLI!
-@z
+% snip command...
 
 @x
 This utility will walk you through creating the following files with sensible defaults for your project:
@@ -141,35 +127,7 @@ directory.
 上により `docker-nodejs-sample` ディレクトリ内は以下の構成となるはずです。
 @z
 
-@x
-```text
-├── docker-nodejs-sample/
-│ ├── spec/
-│ ├── src/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── package-lock.json
-│ ├── package.json
-│ ├── README.Docker.md
-│ └── README.md
-```
-@y
-```text
-├── docker-nodejs-sample/
-│ ├── spec/
-│ ├── src/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── package-lock.json
-│ ├── package.json
-│ ├── README.Docker.md
-│ └── README.md
-```
-@z
+% snip text...
 
 @x
 To learn more about the files that `docker init` added, see the following:
@@ -196,15 +154,7 @@ terminal.
 端末画面内の `docker-nodejs-sample` ディレクトリから以下のコマンドを実行します。
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000). You should see a simple todo application.
@@ -235,15 +185,7 @@ in a terminal.
 端末画面内の `docker-nodejs-sample` ディレクトリから以下のコマンドを実行します。
 @z
 
-@x
-```console
-$ docker compose up --build -d
-```
-@y
-```console
-$ docker compose up --build -d
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:3000](http://localhost:3000).
@@ -263,15 +205,7 @@ In the terminal, run the following command to stop the application.
 端末画面から以下のコマンドを実行してアプリケーションを停止します。
 @z
 
-@x
-```console
-$ docker compose down
-```
-@y
-```console
-$ docker compose down
-```
-@z
+% snip command...
 
 @x
 For more information about Compose commands, see the [Compose CLI

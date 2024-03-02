@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Compose file reference
 keywords: fig, composition, compose version 2, docker
 title: Compose file version 2 reference
-toc_max: 4
-toc_min: 1
----
 @y
----
 description: Compose file reference
 keywords: fig, composition, compose version 2, docker
-title: Compose file version 2 reference
-toc_max: 4
-toc_min: 1
----
+title: Compose ファイルバージョン 2 リファレンス
 @z
 
 @x

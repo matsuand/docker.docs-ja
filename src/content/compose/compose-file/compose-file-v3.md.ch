@@ -4,25 +4,17 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Find a quick reference for Docker Compose version 3, including Docker
   Engine compatibility, memory limitations, and more.
 keywords: docker compose ports, docker compose version 3, docker-compose memory limit
   version 3, docker compose 3 memory limit
 title: Compose file version 3 reference
-toc_max: 4
-toc_min: 1
----
 @y
----
 description: Find a quick reference for Docker Compose version 3, including Docker
   Engine compatibility, memory limitations, and more.
 keywords: docker compose ports, docker compose version 3, docker-compose memory limit
   version 3, docker compose 3 memory limit
-title: Compose file version 3 reference
-toc_max: 4
-toc_min: 1
----
+title: Compose ファイルバージョン 3 リファレンス
 @z
 
 @x

@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Containerize and develop Node.js apps using Docker
 keywords: getting started, node, node.js
 title: Node.js language-specific guide
-toc_min: 1
-toc_max: 2
----
 @y
----
 description: Containerize and develop Node.js apps using Docker
 keywords: getting started, node, node.js
 title: Node.js 向けガイド
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x

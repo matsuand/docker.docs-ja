@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Containerize and develop PHP apps using Docker
 keywords: getting started, php, composer
 title: PHP language-specific guide
-toc_min: 1
-toc_max: 2
----
 @y
----
 description: Containerize and develop PHP apps using Docker
 keywords: getting started, php, composer
 title: PHP 向けガイド
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x

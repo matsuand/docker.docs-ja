@@ -22,97 +22,57 @@ Docker Scout lets users secure their software supply chain and continuously obse
 @z
 
 @x
-In this section, learn how to buy Docker Scout Team in Docker Hub for your personal account or for an organization. To buy Docker Scout Business, [contact sales](https://www.docker.com/products/docker-scout/).
+In this section, learn how to buy and manage a Docker Scout Team subscription for your personal account or for an organization. If you're an organization with multiple teams, a Docker Scout Business plan may be better. To buy Docker Scout Business, [contact sales](https://www.docker.com/products/docker-scout/#contact-sales).
 @y
-In this section, learn how to buy Docker Scout Team in Docker Hub for your personal account or for an organization. To buy Docker Scout Business, [contact sales](https://www.docker.com/products/docker-scout/).
+In this section, learn how to buy and manage a Docker Scout Team subscription for your personal account or for an organization. If you're an organization with multiple teams, a Docker Scout Business plan may be better. To buy Docker Scout Business, [contact sales](https://www.docker.com/products/docker-scout/#contact-sales).
 @z
 
 @x
-## Personal account
+> **Note**
+>
+> You need to be an owner to manage billing for an organization.
+>
 @y
-## Personal account
+> **Note**
+>
+> You need to be an owner to manage billing for an organization.
+>
 @z
 
 @x
-1. Select your avatar in the top-right corner of Docker Hub.
-2. From the drop-down menu select **Billing**.
-3. In the **Plan** section, navigate to the **Docker Scout** plan section. The default plan is **Docker Scout Free**. 
-4. Next to the plan name, select **Buy now**.
-5. From the **Purchase Scout Team** drop-down menu, under **Your Account**, select the name of your personal account.
-6. This redirects you to the payment processing page. Enter your email if this field isn't pre-populated. Then, enter your payment information.
-7. Update the quantity of repositories you want to use with Docker Scout. See [Docker Scout subscriptions](../subscription/scout-details.md) to learn more about the number of repositories available for each plan.
-8. Select annual or monthly billing.
-9. Select **Subscribe**.
-10. Subscribing redirects you back to the billing page in Docker Hub, where you can find your active Docker Scout plan.
+## Buy Docker Scout Team
 @y
-1. Select your avatar in the top-right corner of Docker Hub.
-2. From the drop-down menu select **Billing**.
-3. In the **Plan** section, navigate to the **Docker Scout** plan section. The default plan is **Docker Scout Free**. 
-4. Next to the plan name, select **Buy now**.
-5. From the **Purchase Scout Team** drop-down menu, under **Your Account**, select the name of your personal account.
-6. This redirects you to the payment processing page. Enter your email if this field isn't pre-populated. Then, enter your payment information.
-7. Update the quantity of repositories you want to use with Docker Scout. See [Docker Scout subscriptions](../subscription/scout-details.md) to learn more about the number of repositories available for each plan.
-8. Select annual or monthly billing.
-9. Select **Subscribe**.
-10. Subscribing redirects you back to the billing page in Docker Hub, where you can find your active Docker Scout plan.
+## Buy Docker Scout Team
 @z
 
 @x
-Once your purchase is complete, you receive a confirmation email and a copy of your invoice. 
-@y
-Once your purchase is complete, you receive a confirmation email and a copy of your invoice. 
-@z
-
-@x
-## Organization
-@y
-## Organization
-@z
-
-@x
-1. In Docker Hub, select **Organizations**. 
-2. Select the organization namespace. 
-3. Select the **Billing** tab.
-4. In the **Plan** section, navigate to the **Docker Scout** plan section. The default plan is **Docker Scout Free**. 
-5. Next to the plan name, select **Buy now**.
-6. From the **Purchase Scout Team** drop-down menu, select the name of your organization.
-@y
-1. In Docker Hub, select **Organizations**. 
-2. Select the organization namespace. 
-3. Select the **Billing** tab.
-4. In the **Plan** section, navigate to the **Docker Scout** plan section. The default plan is **Docker Scout Free**. 
-5. Next to the plan name, select **Buy now**.
-6. From the **Purchase Scout Team** drop-down menu, select the name of your organization.
-@z
-
-@x
-    >**Note**
-    >
-    > If you're an organization with multiple teams, a Docker Scout Business plan may be better. [Contact sales](https://www.docker.com/products/docker-scout/) to learn more.
-@y
-    >**Note**
-    >
-    > If you're an organization with multiple teams, a Docker Scout Business plan may be better. [Contact sales](https://www.docker.com/products/docker-scout/) to learn more.
-@z
-
-@x
-7. This redirects you to the payment processing page. Enter your email if this field isn't pre-populated. Then, enter your payment information.
-8. Update the quantity of repositories you want to use with Docker Scout. See [Docker Scout subscriptions](../subscription/scout-details.md) to learn more about the number of repositories available for each plan.
-9. Select annual or monthly billing.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. The default plan is Docker Scout Free. Next to the plan name, select **Change plan**.
+6. Select **Purchase Scout Team**.
+7. Choose annual or monthly billing cycle, then select the number of Scout-enabled repositories you want from the repository quantity drop-down. You can select groups of five.
+8. Select **Continue to payment**.
+9. This redirects you to the payment processing page. Enter your email if this field isn't pre-populated. Then, enter your payment information.
 10. Select **Subscribe**.
-11. Subscribing redirects you back to the billing page in Docker Hub, where you can find your active Docker Scout plan.
 @y
-7. This redirects you to the payment processing page. Enter your email if this field isn't pre-populated. Then, enter your payment information.
-8. Update the quantity of repositories you want to use with Docker Scout. See [Docker Scout subscriptions](../subscription/scout-details.md) to learn more about the number of repositories available for each plan.
-9. Select annual or monthly billing.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. The default plan is Docker Scout Free. Next to the plan name, select **Change plan**.
+6. Select **Purchase Scout Team**.
+7. Choose annual or monthly billing cycle, then select the number of Scout-enabled repositories you want from the repository quantity drop-down. You can select groups of five.
+8. Select **Continue to payment**.
+9. This redirects you to the payment processing page. Enter your email if this field isn't pre-populated. Then, enter your payment information.
 10. Select **Subscribe**.
-11. Subscribing redirects you back to the billing page in Docker Hub, where you can find your active Docker Scout plan.
 @z
 
 @x
-Once your purchase is complete, you receive a confirmation email and a copy of your invoice.
+Subscribing redirects you back to the billing page in Docker Scout, where you can find your active Docker Scout plan. Once your purchase is complete, you receive a confirmation email and a copy of your invoice.
 @y
-Once your purchase is complete, you receive a confirmation email and a copy of your invoice.
+Subscribing redirects you back to the billing page in Docker Scout, where you can find your active Docker Scout plan. Once your purchase is complete, you receive a confirmation email and a copy of your invoice.
 @z
 
 @x
@@ -122,15 +82,31 @@ Once your purchase is complete, you receive a confirmation email and a copy of y
 @z
 
 @x
-To access your subscription details, go to the **Billing** section for your personal account or organization that's subscribed. Select **Payment methods and billing history** to go to the billing details portal. In the billing details portal, you can find your renewal date, invoice history, and payment methods.
+To access your subscription details, sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID. Select **Settings**, then **Billing** for your personal account or organization that's subscribed.
 @y
-To access your subscription details, go to the **Billing** section for your personal account or organization that's subscribed. Select **Payment methods and billing history** to go to the billing details portal. In the billing details portal, you can find your renewal date, invoice history, and payment methods.
+To access your subscription details, sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID. Select **Settings**, then **Billing** for your personal account or organization that's subscribed.
 @z
 
 @x
-Renewals charge to the original credit card used to buy Docker Scout Team. You can manage your payment methods in the billing details portal.
+Here you can find:
 @y
-Renewals charge to the original credit card used to buy Docker Scout Team. You can manage your payment methods in the billing details portal.
+Here you can find:
+@z
+
+@x
+- The type of billing cycle you have, annual or monthly
+- How many repositories are Scout-enabled
+- Your subscription renewal date
+@y
+- The type of billing cycle you have, annual or monthly
+- How many repositories are Scout-enabled
+- Your subscription renewal date
+@z
+
+@x
+Renewals charge to the original credit card used to buy Docker Scout Team. Select the **Payment methods and billing history** link to update your payment information or view past invoices.
+@y
+Renewals charge to the original credit card used to buy Docker Scout Team. Select the **Payment methods and billing history** link to update your payment information or view past invoices.
 @z
 
 @x
@@ -140,9 +116,9 @@ Renewals charge to the original credit card used to buy Docker Scout Team. You c
 @z
 
 @x
-You can add or remove the number of repositories associated with your subscription.
+On a Docker Scout Team plan, you can add or remove the number of repositories associated with your subscription. The number of repositories you can add or remove are bundled in groups of five.
 @y
-You can add or remove the number of repositories associated with your subscription.
+On a Docker Scout Team plan, you can add or remove the number of repositories associated with your subscription. The number of repositories you can add or remove are bundled in groups of five.
 @z
 
 @x
@@ -152,17 +128,19 @@ To add repositories:
 @z
 
 @x
-1. In Docker Hub, select **Organizations**.
-2. Select the organization namespace.
-3. Select the **Billing** tab to find your active Docker Scout plan.
-4. Select **Add repositories**.
-5. Enter the number of repositories you want to add, then select **Purchase**.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Select **Add repositories**.
+6. Select the number of repositories you want to add, then select **Purchase**.
 @y
-1. In Docker Hub, select **Organizations**.
-2. Select the organization namespace.
-3. Select the **Billing** tab to find your active Docker Scout plan.
-4. Select **Add repositories**.
-5. Enter the number of repositories you want to add, then select **Purchase**.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Select **Add repositories**.
+6. Select the number of repositories you want to add, then select **Purchase**.
 @z
 
 @x
@@ -178,17 +156,19 @@ To remove repositories:
 @z
 
 @x
-1. In Docker Hub, select **Organizations**.
-2. Select the organization namespace.
-3. Select the **Billing** tab to find your active Docker Scout plan.
-4. Select **Remove repositories**.
-5. Enter the number of repositories you want to remove, then select **Remove**.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Select **Remove repositories**.
+6. Select the number of repositories you want to remove, then select **Remove**.
 @y
-1. In Docker Hub, select **Organizations**.
-2. Select the organization namespace.
-3. Select the **Billing** tab to find your active Docker Scout plan.
-4. Select **Remove repositories**.
-5. Enter the number of repositories you want to remove, then select **Remove**.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Select **Remove repositories**.
+6. Select the number of repositories you want to remove, then select **Remove**.
 @z
 
 @x
@@ -201,10 +181,12 @@ The number of repositories updates on your next billing cycle.
 > **Note**
 >
 > You can't add repositories while repository removal is pending. You can add repositories again during the next billing cycle.
+>
 @y
 > **Note**
 >
 > You can't add repositories while repository removal is pending. You can add repositories again during the next billing cycle.
+>
 @z
 
 @x
@@ -214,23 +196,41 @@ The number of repositories updates on your next billing cycle.
 @z
 
 @x
-You can downgrade your Docker Scout Team subscription at anytime before the renewal date. Your subscription features remain available until the end of your billing cycle.
+You can downgrade from Docker Scout Team or Docker Scout Business to a Docker Scout Free subscription at anytime before the renewal date. Your subscription features remain available until the end of your billing cycle.
 @y
-You can downgrade your Docker Scout Team subscription at anytime before the renewal date. Your subscription features remain available until the end of your billing cycle.
+You can downgrade from Docker Scout Team or Docker Scout Business to a Docker Scout Free subscription at anytime before the renewal date. Your subscription features remain available until the end of your billing cycle.
 @z
 
 @x
-1. In Docker Hub, select your avatar in the top-right corner and from the drop-down menu select **Billing**.
-2. Select the namespace of either your personal account or organization.
-3. Find your Docker Scout plan, then select **Change plan**.
-4. Select **Downgrade**, then review the warning message.
-5. To confirm the downgrade, select **Continue**.
+> **Tip**
+>
+> To downgrade from Docker Scout Business to Docker Scout Team, [contact](https://hub.docker.com/support/contact) your account manager to cancel so you can start a Docker Scout Team subscription.
+>
+{ .tip }
 @y
-1. In Docker Hub, select your avatar in the top-right corner and from the drop-down menu select **Billing**.
-2. Select the namespace of either your personal account or organization.
-3. Find your Docker Scout plan, then select **Change plan**.
-4. Select **Downgrade**, then review the warning message.
-5. To confirm the downgrade, select **Continue**.
+> **Tip**
+>
+> To downgrade from Docker Scout Business to Docker Scout Team, [contact](https://hub.docker.com/support/contact) your account manager to cancel so you can start a Docker Scout Team subscription.
+>
+{ .tip }
+@z
+
+@x
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Find your Docker Scout plan, then select **Change plan**.
+6. On the Docker Scout Free card, select **Downgrade to this plan**, then review the warning message.
+7. To confirm the downgrade, select **Continue to Downgrade**.
+@y
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Find your Docker Scout plan, then select **Change plan**.
+6. On the Docker Scout Free card, select **Downgrade to this plan**, then review the warning message.
+7. To confirm the downgrade, select **Continue to Downgrade**.
 @z
 
 @x
@@ -246,11 +246,15 @@ You can cancel a subscription downgrade at anytime before the end of the billing
 @z
 
 @x
-1. In Docker Hub, Select your avatar in the top-right corner and from the drop-down menu select **Billing**.
-2. Select the namespace of either your personal account or organization.
-3. Find your Docker Scout plan, then select **Cancel the downgrade**.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Select **Cancel the downgrade** in the top-right corner of your billing details page.
 @y
-1. In Docker Hub, Select your avatar in the top-right corner and from the drop-down menu select **Billing**.
-2. Select the namespace of either your personal account or organization.
-3. Find your Docker Scout plan, then select **Cancel the downgrade**.
+1. Sign in to [Docker Scout](https://scout.docker.com/) with your Docker ID.
+2. Select your personal account or organization namespace from the drop-down in the navigation menu on the left side of the screen.
+3. Select **Settings**.
+4. Select **Billing**.
+5. Select **Cancel the downgrade** in the top-right corner of your billing details page.
 @z
