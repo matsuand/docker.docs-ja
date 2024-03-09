@@ -16,33 +16,45 @@ keywords: Docker, extensions, sdk, labels
 @z
 
 @x
-Extensions use image labels to provide additional information such as title, description, screenshots, and more.
+Extensions use image labels to provide additional information such as a title, description, screenshots, and more.
 @y
-Extensions use image labels to provide additional information such as title, description, screenshots, and more.
+Extensions use image labels to provide additional information such as a title, description, screenshots, and more.
 @z
 
 @x
-This information is then displayed as an overview of the extension, so users can choose to install it
+This information is then displayed as an overview of the extension, so users can choose to install it.
 @y
-This information is then displayed as an overview of the extension, so users can choose to install it
+This information is then displayed as an overview of the extension, so users can choose to install it.
 @z
 
 @x
-![An extension overveiw, generated from labels](images/marketplace-details.png)
+![An extension overview, generated from labels](images/marketplace-details.png)
 @y
-![An extension overveiw, generated from labels](images/marketplace-details.png)
+![An extension overview, generated from labels](images/marketplace-details.png)
 @z
 
 @x
-You can define [Image labels](../../../reference/dockerfile.md#label) in the extension's `Dockerfile`.
+You can define [image labels](../../../reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @y
-You can define [Image labels](../../../reference/dockerfile.md#label) in the extension's `Dockerfile`.
+You can define [image labels](../../../reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @z
 
 @x
-Here is the list of labels you need to specify when building your extension:
+> **Important**
+>
+> If any of the **required** labels are missing in the `Dockerfile`, Docker Desktop considers the extension invalid and doesn't list it in the Marketplace.
+{ .important }
 @y
-Here is the list of labels you need to specify when building your extension:
+> **Important**
+>
+> If any of the **required** labels are missing in the `Dockerfile`, Docker Desktop considers the extension invalid and doesn't list it in the Marketplace.
+{ .important }
+@z
+
+@x
+Here is the list of labels you can or need to specify when building your extension:
+@y
+Here is the list of labels you can or need to specify when building your extension:
 @z
 
 @x
@@ -78,30 +90,18 @@ Here is the list of labels you need to specify when building your extension:
 @z
 
 @x
-> Missing required labels
->
-> If any of the previous **required** labels are missing in the `Dockerfile`, Docker Desktop considers the extension invalid and doesn't list it in the Marketplace.
-{ .important }
-@y
-> Missing required labels
->
-> If any of the previous **required** labels are missing in the `Dockerfile`, Docker Desktop considers the extension invalid and doesn't list it in the Marketplace.
-{ .important }
-@z
-
-@x
-> HTML content styling
+> **Tip**
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
-> [within the marketplace](#preview-the-extension-in-the-marketplace). Docker recommends that you follow the 
-> [Styling guidelines](../design/index.md).
+> [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
+> [styling guidelines](../design/index.md).
 { .tip }
 @y
-> HTML content styling
+> **Tip**
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
-> [within the marketplace](#preview-the-extension-in-the-marketplace). Docker recommends that you follow the 
-> [Styling guidelines](../design/index.md).
+> [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
+> [styling guidelines](../design/index.md).
 { .tip }
 @z
 
@@ -118,22 +118,22 @@ You can validate that the image labels render as you expect.
 @z
 
 @x
-When you create and install your unpublished extension, you can preview the extension in the Marketplace **Managed** tab. You can see how the extension labels render in the list and in the details page of the extension.
+When you create and install your unpublished extension, you can preview the extension in the Marketplace's **Managed** tab. You can see how the extension labels render in the list and in the details page of the extension.
 @y
-When you create and install your unpublished extension, you can preview the extension in the Marketplace **Managed** tab. You can see how the extension labels render in the list and in the details page of the extension.
+When you create and install your unpublished extension, you can preview the extension in the Marketplace's **Managed** tab. You can see how the extension labels render in the list and in the details page of the extension.
 @z
 
 @x
 > Preview extensions already listed in Marketplace
 >
-> When you install a local image of an extension already published in the Marketplace, for example with the tag `latest`, your local image is currently not detected as "unpublished".
+> When you install a local image of an extension already published in the Marketplace, for example with the tag `latest`, your local image is not detected as "unpublished".
 >
 > You can re-tag your image in order to have a different image name that's not listed as a published extension.
 > Use `docker tag org/published-extension unpublished-extension` and then `docker extension install unpublished-extension`.
 @y
 > Preview extensions already listed in Marketplace
 >
-> When you install a local image of an extension already published in the Marketplace, for example with the tag `latest`, your local image is currently not detected as "unpublished".
+> When you install a local image of an extension already published in the Marketplace, for example with the tag `latest`, your local image is not detected as "unpublished".
 >
 > You can re-tag your image in order to have a different image name that's not listed as a published extension.
 > Use `docker tag org/published-extension unpublished-extension` and then `docker extension install unpublished-extension`.

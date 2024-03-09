@@ -38,9 +38,9 @@ allowed to perform any administrative tasks such as deleting the repository or c
 @z
 
 @x
-Only personal account repositories can use collaborators. You can add unlimited collaborators to public repositories, and [Docker Pro](../../subscription/details.md#docker-pro) accounts can add up to 1 collaborator on private repositories. Organization repositories can't use collaborators. Organization owners can control repository access with [member roles](../../security/for-admins/roles-and-permissions.md) and [teams](../../admin/organization/manage-a-team.md).
+Only personal account repositories can use collaborators. You can add unlimited collaborators to public repositories, and [Docker Pro](../../subscription/core-subscription/details.md#docker-pro) accounts can add up to 1 collaborator on private repositories. Organization repositories can't use collaborators. Organization owners can control repository access with [member roles](../../security/for-admins/roles-and-permissions.md) and [teams](../../admin/organization/manage-a-team.md).
 @y
-Only personal account repositories can use collaborators. You can add unlimited collaborators to public repositories, and [Docker Pro](../../subscription/details.md#docker-pro) accounts can add up to 1 collaborator on private repositories. Organization repositories can't use collaborators. Organization owners can control repository access with [member roles](../../security/for-admins/roles-and-permissions.md) and [teams](../../admin/organization/manage-a-team.md).
+Only personal account repositories can use collaborators. You can add unlimited collaborators to public repositories, and [Docker Pro](../../subscription/core-subscription/details.md#docker-pro) accounts can add up to 1 collaborator on private repositories. Organization repositories can't use collaborators. Organization owners can control repository access with [member roles](../../security/for-admins/roles-and-permissions.md) and [teams](../../admin/organization/manage-a-team.md).
 @z
 
 @x

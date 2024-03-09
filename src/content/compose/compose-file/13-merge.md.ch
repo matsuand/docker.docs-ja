@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Merge
 description: Learn about merging rules
 keywords: compose, compose specification, merge, compose file reference
----
 @y
----
 title: Merge
 description: Learn about merging rules
 keywords: compose, compose specification, merge, compose file reference
----
 @z
 
 @x
@@ -41,37 +39,7 @@ Merging the following example YAML trees:
 Merging the following example YAML trees:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    key1: value1
-    key2: value2
-```
-@y
-```yaml
-services:
-  foo:
-    key1: value1
-    key2: value2
-```
-@z
-
-@x
-```yaml
-services:
-  foo:
-    key2: VALUE
-    key3: value3
-```
-@y
-```yaml
-services:
-  foo:
-    key2: VALUE
-    key3: value3
-```
-@z
+% snip code...
 
 @x
 Results in a Compose application model equivalent to the YAML tree:
@@ -79,23 +47,7 @@ Results in a Compose application model equivalent to the YAML tree:
 Results in a Compose application model equivalent to the YAML tree:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    key1: value1
-    key2: VALUE
-    key3: value3
-```
-@y
-```yaml
-services:
-  foo:
-    key1: value1
-    key2: VALUE
-    key3: value3
-```
-@z
+% snip code...
 
 @x
 ## Sequence
@@ -115,37 +67,7 @@ Merging the following example YAML trees:
 Merging the following example YAML trees:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    DNS:
-      - 1.1.1.1
-```
-@y
-```yaml
-services:
-  foo:
-    DNS:
-      - 1.1.1.1
-```
-@z
-
-@x
-```yaml
-services:
-  foo:
-    DNS: 
-      - 8.8.8.8
-```
-@y
-```yaml
-services:
-  foo:
-    DNS: 
-      - 8.8.8.8
-```
-@z
+% snip code...
 
 @x
 Results in a Compose application model equivalent to the YAML tree:
@@ -153,23 +75,7 @@ Results in a Compose application model equivalent to the YAML tree:
 Results in a Compose application model equivalent to the YAML tree:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    DNS:
-      - 1.1.1.1
-      - 8.8.8.8
-```
-@y
-```yaml
-services:
-  foo:
-    DNS:
-      - 1.1.1.1
-      - 8.8.8.8
-```
-@z
+% snip code...
 
 @x
 ## Exceptions
@@ -195,33 +101,7 @@ Merging the following example YAML trees:
 Merging the following example YAML trees:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    command: ["echo", "foo"]
-```
-@y
-```yaml
-services:
-  foo:
-    command: ["echo", "foo"]
-```
-@z
-
-@x
-```yaml
-services:
-  foo:
-    command: ["echo", "bar"]
-```
-@y
-```yaml
-services:
-  foo:
-    command: ["echo", "bar"]
-```
-@z
+% snip code...
 
 @x
 Results in a Compose application model equivalent to the YAML tree:
@@ -229,19 +109,7 @@ Results in a Compose application model equivalent to the YAML tree:
 Results in a Compose application model equivalent to the YAML tree:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    command: ["echo", "bar"]
-```
-@y
-```yaml
-services:
-  foo:
-    command: ["echo", "bar"]
-```
-@z
+% snip code...
 
 @x
 ### Unique resources
@@ -285,37 +153,7 @@ Merging the following example YAML trees:
 Merging the following example YAML trees:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    volumes:
-      - foo:/work
-```
-@y
-```yaml
-services:
-  foo:
-    volumes:
-      - foo:/work
-```
-@z
-
-@x
-```yaml
-services:
-  foo:
-    volumes:
-      - bar:/work
-```
-@y
-```yaml
-services:
-  foo:
-    volumes:
-      - bar:/work
-```
-@z
+% snip code...
 
 @x
 Results in a Compose application model equivalent to the YAML tree:
@@ -323,21 +161,7 @@ Results in a Compose application model equivalent to the YAML tree:
 Results in a Compose application model equivalent to the YAML tree:
 @z
 
-@x
-```yaml
-services:
-  foo:
-    volumes:
-      - bar:/work
-```
-@y
-```yaml
-services:
-  foo:
-    volumes:
-      - bar:/work
-```
-@z
+% snip code...
 
 @x
 ### Reset value
@@ -373,53 +197,15 @@ A base `compose.yaml` file:
 A base `compose.yaml` file:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: myapp
-    ports:
-      - "8080:80" 
-    environment:
-      FOO: BAR           
-```
-@y
-```yaml
-services:
-  app:
-    image: myapp
-    ports:
-      - "8080:80" 
-    environment:
-      FOO: BAR           
-```
-@z
+% snip code...
 
 @x
-And an `overide.compose.yaml` file:
+And an `override.compose.yaml` file:
 @y
-And an `overide.compose.yaml` file:
+And an `override.compose.yaml` file:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: myapp
-    ports: !reset []
-    environment:
-      FOO: !reset null
-```
-@y
-```yaml
-services:
-  app:
-    image: myapp
-    ports: !reset []
-    environment:
-      FOO: !reset null
-```
-@z
+% snip code...
 
 @x
 Results in:
@@ -427,19 +213,7 @@ Results in:
 Results in:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: myapp
-```
-@y
-```yaml
-services:
-  app:
-    image: myapp
-```
-@z
+% snip code...
 
 @x
 ### Replace value
@@ -467,23 +241,7 @@ A base `compose.yaml` file:
 A base `compose.yaml` file:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: myapp
-    ports:
-      - "8080:80"            
-```
-@y
-```yaml
-services:
-  app:
-    image: myapp
-    ports:
-      - "8080:80"            
-```
-@z
+% snip code...
 
 @x
 To remove the original port, but expose a new one, the following override file is used:
@@ -491,21 +249,7 @@ To remove the original port, but expose a new one, the following override file i
 To remove the original port, but expose a new one, the following override file is used:
 @z
 
-@x
-```yaml
-services:
-  app:
-    ports: !override
-      - "8443:443" 
-```
-@y
-```yaml
-services:
-  app:
-    ports: !override
-      - "8443:443" 
-```
-@z
+% snip code...
 
 @x
 This results in: 
@@ -513,23 +257,7 @@ This results in:
 This results in: 
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: myapp
-    ports:
-      - "8443:443" 
-```
-@y
-```yaml
-services:
-  app:
-    image: myapp
-    ports:
-      - "8443:443" 
-```
-@z
+% snip code...
 
 @x
 If `!override` had not been used, both `8080:80` and `8443:443` would be exposed as per the [merging rules outlined above](#sequence). 

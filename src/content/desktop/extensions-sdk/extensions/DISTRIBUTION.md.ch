@@ -16,9 +16,9 @@ keywords: Docker, extensions, sdk, distribution
 @z
 
 @x
-This page contains additional information on how to package and distribute Docker extensions.
+This page contains additional information on how to package and distribute extensions.
 @y
-This page contains additional information on how to package and distribute Docker extensions.
+This page contains additional information on how to package and distribute extensions.
 @z
 
 @x
@@ -29,10 +29,10 @@ This page contains additional information on how to package and distribute Docke
 
 @x
 Docker extensions are packaged as Docker images. The entire extension runtime including the UI, backend services (host or VM), and any necessary binary must be included in the extension image.
-Every extension image must contain a metadata.json file at the root of its filesystem that defines the [contents of the extension](../architecture/metadata.md).
+Every extension image must contain a `metadata.json` file at the root of its filesystem that defines the [contents of the extension](../architecture/metadata.md).
 @y
 Docker extensions are packaged as Docker images. The entire extension runtime including the UI, backend services (host or VM), and any necessary binary must be included in the extension image.
-Every extension image must contain a metadata.json file at the root of its filesystem that defines the [contents of the extension](../architecture/metadata.md).
+Every extension image must contain a `metadata.json` file at the root of its filesystem that defines the [contents of the extension](../architecture/metadata.md).
 @z
 
 @x
@@ -42,9 +42,9 @@ The Docker image must have several [image labels](labels.md), providing informat
 @z
 
 @x
-To package and release an extension, you must build a Docker image (`docker build`), and push the image to [DockerHub](https://hub.docker.com/) (`docker push`) with a specific tag that allows you to manage versions of the extension.
+To package and release an extension, you must build a Docker image (`docker build`), and push the image to [Docker Hub](https://hub.docker.com/) (`docker push`) with a specific tag that lets you manage versions of the extension.
 @y
-To package and release an extension, you must build a Docker image (`docker build`), and push the image to [DockerHub](https://hub.docker.com/) (`docker push`) with a specific tag that allows you to manage versions of the extension.
+To package and release an extension, you must build a Docker image (`docker build`), and push the image to [Docker Hub](https://hub.docker.com/) (`docker push`) with a specific tag that lets you manage versions of the extension.
 @z
 
 @x
@@ -68,9 +68,9 @@ Extensions that install binaries on the host must also provide Windows binaries 
 @z
 
 @x
-You can implement extensions without any constraints on the code repository. Docker doesn't need access to the code repository in order to use the extension. Also, you can entirely manage new releases of your extension, without any dependency on Docker Desktop releases.
+You can implement extensions without any constraints on the code repository. Docker doesn't need access to the code repository in order to use the extension. Also, you can manage new releases of your extension, without any dependency on Docker Desktop releases.
 @y
-You can implement extensions without any constraints on the code repository. Docker doesn't need access to the code repository in order to use the extension. Also, you can entirely manage new releases of your extension, without any dependency on Docker Desktop releases.
+You can implement extensions without any constraints on the code repository. Docker doesn't need access to the code repository in order to use the extension. Also, you can manage new releases of your extension, without any dependency on Docker Desktop releases.
 @z
 
 @x
@@ -86,15 +86,15 @@ You can release a new version of your Docker extension by pushing a new image wi
 @z
 
 @x
-Any new image pushed to an image repository corresponding to a Docker Extension defines a new version of that extension. Image tags are used to identify version numbers. Extension versions must follow semver to make it easy to understand and compare versions.
+Any new image pushed to an image repository corresponding to an extension defines a new version of that extension. Image tags are used to identify version numbers. Extension versions must follow semver to make it easy to understand and compare versions.
 @y
-Any new image pushed to an image repository corresponding to a Docker Extension defines a new version of that extension. Image tags are used to identify version numbers. Extension versions must follow semver to make it easy to understand and compare versions.
+Any new image pushed to an image repository corresponding to an extension defines a new version of that extension. Image tags are used to identify version numbers. Extension versions must follow semver to make it easy to understand and compare versions.
 @z
 
 @x
-Docker Desktop scans the list of extensions published in the marketplace for new versions, and provides notifications to users when they can upgrade a specific extension. Extensions that aren't part of the marketplace don't have automatic update notifications at the moment.
+Docker Desktop scans the list of extensions published in the marketplace for new versions, and provides notifications to users when they can upgrade a specific extension. Extensions that aren't part of the Marketplace don't have automatic update notifications at the moment.
 @y
-Docker Desktop scans the list of extensions published in the marketplace for new versions, and provides notifications to users when they can upgrade a specific extension. Extensions that aren't part of the marketplace don't have automatic update notifications at the moment.
+Docker Desktop scans the list of extensions published in the marketplace for new versions, and provides notifications to users when they can upgrade a specific extension. Extensions that aren't part of the Marketplace don't have automatic update notifications at the moment.
 @z
 
 @x
@@ -110,9 +110,9 @@ Users can download and install the newer version of any extension without updati
 @z
 
 @x
-Extensions must specify the Extension API version they rely on. Docker Desktop checks the extension required version, and only propose to install extensions that are compatible with the current Docker Desktop installed. Users might need to update Docker Desktop in order to install the latest extensions available.
+Extensions must specify the Extension API version they rely on. Docker Desktop checks the extension's required version, and only proposes to install extensions that are compatible with the current Docker Desktop version installed. Users might need to update Docker Desktop in order to install the latest extensions available.
 @y
-Extensions must specify the Extension API version they rely on. Docker Desktop checks the extension required version, and only propose to install extensions that are compatible with the current Docker Desktop installed. Users might need to update Docker Desktop in order to install the latest extensions available.
+Extensions must specify the Extension API version they rely on. Docker Desktop checks the extension's required version, and only proposes to install extensions that are compatible with the current Docker Desktop version installed. Users might need to update Docker Desktop in order to install the latest extensions available.
 @z
 
 @x
@@ -134,7 +134,7 @@ The [Docker Extension SDK](https://www.npmjs.com/package/@docker/extension-api-c
 @z
 
 @x
-There is no constraint on how each extension should be licensed, this is up to the extension authors to decide when creating a new extension.
+There is no constraint on how each extension should be licensed, this is up to you to decide when creating a new extension.
 @y
-There is no constraint on how each extension should be licensed, this is up to the extension authors to decide when creating a new extension.
+There is no constraint on how each extension should be licensed, this is up to you to decide when creating a new extension.
 @z

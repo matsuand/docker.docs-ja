@@ -47,160 +47,63 @@ changes won't be seen in another container, even if they're using the same image
 @z
 
 @x
-To see this in action, you're going to start two containers and create a file in each.
-What you'll see is that the files created in one container aren't available in another.
+To see this in action, you're going to start two containers. In one container, you'll create a file. In the other container, you'll verify the file exists.
+What you'll see is that the file created in one container isn't available in another.
 @y
-実際の動作を見てみるために 2 つのコンテナーを起動させて、それぞれにファイル生成を行ってみます。
+実際の動作を見てみるために 2 つのコンテナーを起動させます。
+1 つのコンテナーではファイル生成を行います。
+もう 1 つのコンテナーでは、ファイルの存在を確認します。
 そこでわかってくるのは、1 つのコンテナーで生成したファイルは、もう 1 つのコンテナーで利用することはできないということです。
 @z
 
 @x
-> **Note**
->
-> If you use Windows and want to use Git Bash to run Docker commands, see [Working with Git Bash](../desktop/troubleshoot/topics.md#working-with-git-bash) for syntax differences.
+1. Start an Alpine container and access its shell.
 @y
-> **メモ**
->
-> Windows 上において Git Bash を用いて Docker コマンドを利用している場合は、文法上の違いがあるので [Git Bash を使った操作](../desktop/troubleshoot/topics.md#working-with-git-bash) を確認してください。
+1. Alpine コンテナーを起動させて、そのシェルにアクセスします。
 @z
 
-@x
-1. Start an `ubuntu` container that will create a file named `/data.txt` with a random number
-   between 1 and 10000.
-@y
-1. `ubuntu` コンテナーを起動させます。
-   その際には、1 から 10000 までの間の乱数を発生させて、`/data.txt` というファイルに書き込みます。
-@z
+% snip command...
 
 @x
-    ```console
-    $ docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
-    ```
+2. In the container, create a `greeting.txt` file with `hello` inside.
 @y
-    ```console
-    $ docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
-    ```
+2. コンテナー内に `greeting.txt` というファイルを生成して、その中に `hello` と書き込みます。
 @z
 
-@x
-    In case you're curious about the command, you're starting a bash shell and invoking two
-    commands (why you have the `&&`). The first portion picks a single random number and writes
-    it to `/data.txt`. The second command is simply watching a file to keep the container running.
-@y
-    このコマンドがよくわからない方のために説明しておくと、上では Bash シェルを起動させて 2 つのコマンドを実行させています（だから `&&` を使っています）。
-    前半のコマンドは 1 つの乱数を発生させて`/data.txt` に出力しています。
-    そして後半のコマンドでは、単純にこのファイルを見ることによってこのコンテナーを実行し続けます。
-@z
+% snip command...
 
 @x
-2. Validate that you can see the output by accessing the terminal in the container. To do so, you can use the CLI or Docker Desktop's graphical interface.
+3. Exit the container.
 @y
-2. コンテナー内の端末にアクセスして、その結果を確認します。
-   これを行うには、CLI かあるいは Docker Desktop のグラフィックインターフェースを用います。
+3. コンテナーから抜け出ます。
 @z
 
-@x
-   {{< tabs group="ui" >}}
-   {{< tab name="CLI" >}}
-@y
-   {{< tabs group="ui" >}}
-   {{< tab name="CLI" >}}
-@z
+% snip command...
 
 @x
-   On the command line, use the `docker exec` command to access the container. You need to get the
-   container's ID (use `docker ps` to get it). In your Mac or Linux terminal, or in Windows Command Prompt or PowerShell, get the content with the following command.
+4. Run a new Alpine container and use the `cat` command to verify that the
+   file does not exist.
 @y
-   On the command line, use the `docker exec` command to access the container. You need to get the
-   container's ID (use `docker ps` to get it). In your Mac or Linux terminal, or in Windows Command Prompt or PowerShell, get the content with the following command.
+4. 新たな Alpine コンテナーを起動して `cat` コマンドを実行し、先のファイルは存在していないことを確認します。
 @z
 
-@x
-   ```console
-   $ docker exec <container-id> cat /data.txt
-   ```
-@y
-   ```console
-   $ docker exec <container-id> cat /data.txt
-   ```
-@z
+% snip command...
 
 @x
-   {{< /tab >}}
-   {{< tab name="Docker Desktop" >}}
+   You should see output similiar to the following that indicates the file does not exist in the new container.
 @y
-   {{< /tab >}}
-   {{< tab name="Docker Desktop" >}}
+   以下のようなメッセージが表示されるはずです。
+   これは、新たなコンテナー内にはそのファイルが含まれていないことを示しています。
 @z
 
-@x
-   In Docker Desktop, go to **Containers**, hover over the container running the **ubuntu** image, and select the **Show container actions** menu. From the drop-down menu, select **Open in terminal**.
-@y
-   In Docker Desktop, go to **Containers**, hover over the container running the **ubuntu** image, and select the **Show container actions** menu. From the drop-down menu, select **Open in terminal**.
-@z
+% snip output...
 
 @x
-   You will see a terminal that is running a shell in the Ubuntu container. Run the following command to see the content of the `/data.txt` file. Close this terminal afterwards again.
+5. Go ahead and remove the containers using `docker ps --all` to get the IDs,
+   and then `docker rm -f <container-id>` to remove the containers.
 @y
-   ターミナルを見れば Ubuntu コンテナー内にシェルが実行されたことがわかります。
-   そこで以下のコマンドを実行して `/data.txt` ファイルの中身を確認します。
-   その後はこのターミナルを再び閉じてください。
-@z
-
-@x
-   ```console
-   $ cat /data.txt
-   ```
-@y
-   ```console
-   $ cat /data.txt
-   ```
-@z
-
-@x
-   {{< /tab >}}
-   {{< /tabs >}}
-@y
-   {{< /tab >}}
-   {{< /tabs >}}
-@z
-
-@x
-   You should see a random number.
-@y
-   乱数が書き込まれているはずです。
-@z
-
-@x
-3. Now, start another `ubuntu` container (the same image) and you'll see you don't have the same file. In your Mac or Linux terminal, or in Windows Command Prompt or PowerShell, get the content with the following command.
-@y
-3. Now, start another `ubuntu` container (the same image) and you'll see you don't have the same file. In your Mac or Linux terminal, or in Windows Command Prompt or PowerShell, get the content with the following command.
-@z
-
-@x
-    ```console
-    $ docker run -it ubuntu ls /
-    ```
-@y
-    ```console
-    $ docker run -it ubuntu ls /
-    ```
-@z
-
-@x
-    In this case the command lists the files in the root directory of the container.
-    Look, there's no `data.txt` file there! That's because it was written to the scratch space for
-    only the first container.
-@y
-    In this case the command lists the files in the root directory of the container.
-    Look, there's no `data.txt` file there! That's because it was written to the scratch space for
-    only the first container.
-@z
-
-@x
-4. Go ahead and remove the first container using the `docker rm -f <container-id>` command.
-@y
-4. `docker rm -f <コンテナーID>` コマンドを実行して 1 つめのコンテナーを削除します。
+5. `docker ps --all` を実行して ID の一覧を取得します。
+   そして `docker rm -f <container-id>` の実行によってコンテナーを削除します。
 @z
 
 @x
@@ -289,10 +192,10 @@ You can create the volume and start the container using the CLI or Docker Deskto
 @z
 
 @x
-{{< tabs group="ui" >}}
+{{< tabs >}}
 {{< tab name="CLI" >}}
 @y
-{{< tabs group="ui" >}}
+{{< tabs >}}
 {{< tab name="CLI" >}}
 @z
 
@@ -313,17 +216,21 @@ You can create the volume and start the container using the CLI or Docker Deskto
 @z
 
 @x
-2. Stop and remove the todo app container once again with `docker rm -f <id>`, as it is still running without using the persistent volume.
+2. Stop and remove the todo app container once again with `docker rm -f <id>`,
+   as it is still running without using the persistent volume.
 @y
-2. Stop and remove the todo app container once again with `docker rm -f <id>`, as it is still running without using the persistent volume.
+2. Stop and remove the todo app container once again with `docker rm -f <id>`,
+   as it is still running without using the persistent volume.
 @z
 
 @x
-3. Start the todo app container, but add the `--mount` option to specify a volume mount. Give the volume a name, and mount
-   it to `/etc/todos` in the container, which captures all files created at the path. In your Mac or Linux terminal, or in Windows Command Prompt or PowerShell, run the following command:
+3. Start the todo app container, but add the `--mount` option to specify a
+   volume mount. Give the volume a name, and mount it to `/etc/todos` in the
+   container, which captures all files created at the path.
 @y
-3. Start the todo app container, but add the `--mount` option to specify a volume mount. Give the volume a name, and mount
-   it to `/etc/todos` in the container, which captures all files created at the path. In your Mac or Linux terminal, or in Windows Command Prompt or PowerShell, run the following command:
+3. Start the todo app container, but add the `--mount` option to specify a
+   volume mount. Give the volume a name, and mount it to `/etc/todos` in the
+   container, which captures all files created at the path.
 @z
 
 @x
@@ -334,6 +241,30 @@ You can create the volume and start the container using the CLI or Docker Deskto
    ```console
    $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=/etc/todos getting-started
    ```
+@z
+
+@x
+   > **Note**
+   >
+   > If you're using Git Bash, you must use different syntax for this command.
+   >
+   > ```console
+   > $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db, target=//etc/todos getting-started
+   > ```
+   >
+   > For more details about Git Bash's syntax differences, see
+   > [Working with Git Bash](../desktop/troubleshoot/topics/#working-with-git-bash).
+@y
+   > **Note**
+   >
+   > If you're using Git Bash, you must use different syntax for this command.
+   >
+   > ```console
+   > $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db, target=//etc/todos getting-started
+   > ```
+   >
+   > For more details about Git Bash's syntax differences, see
+   > [Working with Git Bash](../desktop/troubleshoot/topics/#working-with-git-bash).
 @z
 
 @x
@@ -429,7 +360,7 @@ To start the todo app container with the volume mounted:
 @x
 ### Verify that the data persists
 @y
-### Verify that the data persists {#verify-that-the-data-persists}
+### Verify that the data persists
 @z
 
 @x
@@ -477,7 +408,7 @@ You've now learned how to persist data.
 @x
 ## Dive into the volume
 @y
-## Dive into the volume {#dive-into-the-volume}
+## Dive into the volume
 @z
 
 @x
@@ -531,7 +462,7 @@ need to have root access to access this directory from the host.
 @x
 ## Summary
 @y
-## Summary {#summary}
+## Summary
 @z
 
 @x
@@ -550,7 +481,7 @@ Related information:
  - [docker CLI reference](/reference/cli/docker/)
  - [Volumes](../storage/volumes.md)
 @y
- - [Docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
+ - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
  - [ボリューム](../storage/volumes.md)
 @z
 

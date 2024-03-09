@@ -870,9 +870,9 @@ Setting `NO_COLOR` to anything turns off colorized output, as recommended by
 @z
 
 @x
-_Introduced in [Buildx v0.9.0](../release-notes.md#090)_
+{{< introduced buildx 0.9.0 "../release-notes.md#090" >}}
 @y
-_Introduced in [Buildx v0.9.0](../release-notes.md#090)_
+{{< introduced buildx 0.9.0 "../release-notes.md#090" >}}
 @z
 
 @x
@@ -1178,9 +1178,9 @@ $ export BUILDX_EXPERIMENTAL=1
 @z
 
 @x
-_Introduced in [Buildx v0.10.4](../release-notes.md#0104)_
+{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
 @y
-_Introduced in [Buildx v0.10.4](../release-notes.md#0104)_
+{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
 @z
 
 @x
@@ -1214,9 +1214,9 @@ $ export BUILDX_GIT_CHECK_DIRTY=1
 @z
 
 @x
-_Introduced in [Buildx v0.10.0](../release-notes.md#0100)_
+{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
 @y
-_Introduced in [Buildx v0.10.0](../release-notes.md#0100)_
+{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
 @z
 
 @x
@@ -1250,9 +1250,9 @@ $ export BUILDX_GIT_INFO=0
 @z
 
 @x
-_Introduced in [Buildx v0.10.0](../release-notes.md#0100)_
+{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
 @y
-_Introduced in [Buildx v0.10.0](../release-notes.md#0100)_
+{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
 @z
 
 @x
@@ -1326,9 +1326,9 @@ If the repository is in a dirty state, the `revision` gets a `-dirty` suffix.
 @z
 
 @x
-_Introduced in [Buildx v0.10.4](../release-notes.md#0104)_
+{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
 @y
-_Introduced in [Buildx v0.10.4](../release-notes.md#0104)_
+{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
 @z
 
 @x

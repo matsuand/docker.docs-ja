@@ -13,11 +13,11 @@ To configure Registry Access Management permissions, perform the following steps
 
 @x
 1. Sign in to {{ $product_link }}.
-2. Select **Organizations**, your organization, **Settings**, and then select **Registry access**.
+2. Select **Organizations**, your organization, then in the **Access management** menu, select **Registry access**.
 3. Enable Registry Access Management to set the permissions for your registry.
 @y
 1. Sign in to {{ $product_link }}.
-2. Select **Organizations**, your organization, **Settings**, and then select **Registry access**.
+2. Select **Organizations**, your organization, then in the **Access management** menu, select **Registry access**.
 3. Enable Registry Access Management to set the permissions for your registry.
 @z
 
@@ -32,11 +32,11 @@ To configure Registry Access Management permissions, perform the following steps
 @z
 
 @x
-4. Select **Add** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
-5. Verify that the registry appears in your list and select **Save**.
+4. Select **Add registry** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
+5. Verify that the registry appears in your list and select **Save changes**.
 @y
-4. Select **Add** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
-5. Verify that the registry appears in your list and select **Save**.
+4. Select **Add registry** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
+5. Verify that the registry appears in your list and select **Save changes**.
 @z
 
 @x

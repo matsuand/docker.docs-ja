@@ -13,84 +13,38 @@ long: |-
     Lists all builder instances and the nodes for each instance.
 @z
 
-@x
-    ```console
-    $ docker buildx ls
-    NAME/NODE           DRIVER/ENDPOINT                   STATUS    BUILDKIT   PLATFORMS
-    elated_tesla*       docker-container
-     \_ elated_tesla0    \_ unix:///var/run/docker.sock   running   v0.10.3    linux/amd64
-     \_ elated_tesla1    \_ ssh://ubuntu@1.2.3.4          running   v0.10.3    linux/arm64*, linux/arm/v7, linux/arm/v6
-    default             docker
-     \_ default          \_ default                       running   v0.8.2     linux/amd64
-    ```
-@y
-    ```console
-    $ docker buildx ls
-    NAME/NODE           DRIVER/ENDPOINT                   STATUS    BUILDKIT   PLATFORMS
-    elated_tesla*       docker-container
-     \_ elated_tesla0    \_ unix:///var/run/docker.sock   running   v0.10.3    linux/amd64
-     \_ elated_tesla1    \_ ssh://ubuntu@1.2.3.4          running   v0.10.3    linux/arm64*, linux/arm/v7, linux/arm/v6
-    default             docker
-     \_ default          \_ default                       running   v0.8.2     linux/amd64
-    ```
-@z
+% snip command...
 
 @x
     Each builder has one or more nodes associated with it. The current builder's
     name is marked with a `*` in `NAME/NODE` and explicit node to build against for
     the target platform marked with a `*` in the `PLATFORMS` column.
-usage: docker buildx ls
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: builder
-      value_type: string
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      default_value: table
-      description: Format the output
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Format the output (--format) {#format}
 @y
     Each builder has one or more nodes associated with it. The current builder's
     name is marked with a `*` in `NAME/NODE` and explicit node to build against for
     the target platform marked with a `*` in the `PLATFORMS` column.
+@z
+
+@x
 usage: docker buildx ls
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: builder
-      value_type: string
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      default_value: table
+@y
+usage: docker buildx ls
+@z
+
+% options:
+
+% builder???
+
+@x format
       description: Format the output
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Format the output
+@z
+
+@x
+examples: |-
+    ### Format the output (--format) {#format}
+@y
 examples: |-
     ### Format the output (--format) {#format}
 @z
@@ -151,25 +105,7 @@ examples: |-
     `Name` and `DriverEndpoint` entries separated by a colon (`:`):
 @z
 
-@x
-    ```console
-    $ docker buildx ls --format "{{.Name}}: {{.DriverEndpoint}}"
-    elated_tesla: docker-container
-    elated_tesla0: unix:///var/run/docker.sock
-    elated_tesla1: ssh://ubuntu@1.2.3.4
-    default: docker
-    default: default
-    ```
-@y
-    ```console
-    $ docker buildx ls --format "{{.Name}}: {{.DriverEndpoint}}"
-    elated_tesla: docker-container
-    elated_tesla0: unix:///var/run/docker.sock
-    elated_tesla1: ssh://ubuntu@1.2.3.4
-    default: docker
-    default: default
-    ```
-@z
+% snip command...
 
 @x
     The `Builder` placeholder can be used to access the builder object and its
@@ -181,34 +117,5 @@ examples: |-
     nodes' names with their respective endpoints:
 @z
 
-@x
-    ```console
-    $ docker buildx ls --format "{{.Builder.Name}}: {{range .Builder.Nodes}}\n  {{.Name}}: {{.Endpoint}}{{end}}"
-    elated_tesla:
-      elated_tesla0: unix:///var/run/docker.sock
-      elated_tesla1: ssh://ubuntu@1.2.3.4
-    default: docker
-      default: default
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker buildx ls --format "{{.Builder.Name}}: {{range .Builder.Nodes}}\n  {{.Name}}: {{.Endpoint}}{{end}}"
-    elated_tesla:
-      elated_tesla0: unix:///var/run/docker.sock
-      elated_tesla1: ssh://ubuntu@1.2.3.4
-    default: docker
-      default: default
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

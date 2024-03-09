@@ -3694,12 +3694,6 @@ definitions:
         description: |
           Date and time at which the image was created, formatted in
           [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-        type: "string"
-        x-nullable: false
-        example: "2022-02-04T21:20:12.497794809Z"
-      Container:
-        description: |
-          The ID of the container that was used to create the image.
 @y
           Depending on how the image was created, this field may be empty and
           is only set for images that were built/created locally. This field
@@ -3717,8 +3711,24 @@ definitions:
         description: |
           Date and time at which the image was created, formatted in
           [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
+@z
+
+@x
+          This information is only available if present in the image,
+          and omitted otherwise.
         type: "string"
-        x-nullable: false
+        format: "dateTime"
+        x-nullable: true
+        example: "2022-02-04T21:20:12.497794809Z"
+      Container:
+        description: |
+          The ID of the container that was used to create the image.
+@y
+          This information is only available if present in the image,
+          and omitted otherwise.
+        type: "string"
+        format: "dateTime"
+        x-nullable: true
         example: "2022-02-04T21:20:12.497794809Z"
       Container:
         description: |

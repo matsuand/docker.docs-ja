@@ -4,25 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Learn how to audit your domains for uncaptured users.
 keywords: domain audit, security, identify users, manage users
 title: Domain audit
-aliases:
-- /docker-hub/domain-audit/
-- /admin/company/settings/domains/
-- /admin/organization/security-settings/domains/
----
 @y
----
 description: Learn how to audit your domains for uncaptured users.
 keywords: domain audit, security, identify users, manage users
 title: Domain audit
-aliases:
-- /docker-hub/domain-audit/
-- /admin/company/settings/domains/
-- /admin/organization/security-settings/domains/
----
 @z
 
 @x
@@ -70,10 +58,10 @@ Before you audit your domains, review the following required prerequisites:
 @z
 
 @x
-- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/upgrade.md).
+- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/core-subscription/upgrade.md).
 - You must [add and verify your domains](./single-sign-on/configure/_index.md#step-one-add-and-verify-your-domain).
 @y
-- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/upgrade.md).
+- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/core-subscription/upgrade.md).
 - You must [add and verify your domains](./single-sign-on/configure/_index.md#step-one-add-and-verify-your-domain).
 @z
 

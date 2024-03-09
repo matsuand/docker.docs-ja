@@ -1,34 +1,27 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Docker Scout image analysis
 description:
   Docker Scout image analysis provides a detailed view into the composition of
   your images and the vulnerabilities that they contain
 keywords: scanning, vulnerabilities, supply chain, security, analysis
-aliases:
-  - /scout/advanced-image-analysis/
----
 @y
----
-title: Docker Scout image analysis
+title: Docker Scout のイメージ分析
 description:
   Docker Scout image analysis provides a detailed view into the composition of
   your images and the vulnerabilities that they contain
 keywords: scanning, vulnerabilities, supply chain, security, analysis
-aliases:
-  - /scout/advanced-image-analysis/
----
 @z
 
 @x
 When you activate image analysis for a repository,
 Docker Scout automatically analyzes new images that you push to that repository.
 @y
-When you activate image analysis for a repository,
-Docker Scout automatically analyzes new images that you push to that repository.
+リポジトリにおいてイメージ分析をアクティブにした場合、そのリポジトリへのプッシュが行われると Docker Scout は新たなイメージに対して自動的に分析を行います。
 @z
 
 @x
@@ -181,15 +174,7 @@ analysis is activated.
 2. Build and push the image that you want to analyze.
 @z
 
-@x
-   ```console
-   $ docker build --push --tag <org>/<image:tag> --provenance=true --sbom=true .
-   ```
-@y
-   ```console
-   $ docker build --push --tag <org>/<image:tag> --provenance=true --sbom=true .
-   ```
-@z
+% snip command...
 
 @x
    Building with the `--provenance=true` and `--sbom=true` flags attaches
@@ -339,25 +324,7 @@ The `docker scout quickview` command provides an overview of the
 vulnerabilities found in a given image and its base image.
 @z
 
-@x
-```console
-$ docker scout quickview traefik:latest
-    ✓ SBOM of image already cached, 311 packages indexed
-@y
-```console
-$ docker scout quickview traefik:latest
-    ✓ SBOM of image already cached, 311 packages indexed
-@z
-
-@x
-  Your image  traefik:latest  │    0C     2H     8M     1L
-  Base image  alpine:3        │    0C     0H     0M     0L
-```
-@y
-  Your image  traefik:latest  │    0C     2H     8M     1L
-  Base image  alpine:3        │    0C     0H     0M     0L
-```
-@z
+% snip command...
 
 @x
 If your the base image is out of date, the `quickview` command also shows how
@@ -367,37 +334,7 @@ If your the base image is out of date, the `quickview` command also shows how
 updating your base image would change the vulnerability exposure of your image.
 @z
 
-@x
-```console
-$ docker scout quickview postgres:13.1
-    ✓ Pulled
-    ✓ Image stored for indexing
-    ✓ Indexed 187 packages
-@y
-```console
-$ docker scout quickview postgres:13.1
-    ✓ Pulled
-    ✓ Image stored for indexing
-    ✓ Indexed 187 packages
-@z
-
-@x
-  Your image  postgres:13.1                 │   17C    32H    35M    33L
-  Base image  debian:buster-slim            │    9C    14H     9M    23L
-  Refreshed base image  debian:buster-slim  │    0C     1H     6M    29L
-                                            │    -9    -13     -3     +6
-  Updated base image  debian:stable-slim    │    0C     0H     0M    17L
-                                            │    -9    -14     -9     -6
-```
-@y
-  Your image  postgres:13.1                 │   17C    32H    35M    33L
-  Base image  debian:buster-slim            │    9C    14H     9M    23L
-  Refreshed base image  debian:buster-slim  │    0C     1H     6M    29L
-                                            │    -9    -13     -3     +6
-  Updated base image  debian:stable-slim    │    0C     0H     0M    17L
-                                            │    -9    -14     -9     -6
-```
-@z
+% snip command...
 
 @x
 #### CVEs
@@ -417,49 +354,7 @@ specify more precisely which vulnerabilities you're interested in, for example,
 by severity or package type:
 @z
 
-@x
-```console
-$ docker scout cves --format only-packages --only-vuln-packages \
-  --only-severity critical postgres:13.1
-    ✓ SBOM of image already cached, 187 packages indexed
-    ✗ Detected 10 vulnerable packages with a total of 17 vulnerabilities
-@y
-```console
-$ docker scout cves --format only-packages --only-vuln-packages \
-  --only-severity critical postgres:13.1
-    ✓ SBOM of image already cached, 187 packages indexed
-    ✗ Detected 10 vulnerable packages with a total of 17 vulnerabilities
-@z
-
-@x
-     Name            Version         Type        Vulnerabilities
-───────────────────────────────────────────────────────────────────────────
-  dpkg        1.19.7                 deb      1C     0H     0M     0L
-  glibc       2.28-10                deb      4C     0H     0M     0L
-  gnutls28    3.6.7-4+deb10u6        deb      2C     0H     0M     0L
-  libbsd      0.9.1-2                deb      1C     0H     0M     0L
-  libksba     1.3.5-2                deb      2C     0H     0M     0L
-  libtasn1-6  4.13-3                 deb      1C     0H     0M     0L
-  lz4         1.8.3-1                deb      1C     0H     0M     0L
-  openldap    2.4.47+dfsg-3+deb10u5  deb      1C     0H     0M     0L
-  openssl     1.1.1d-0+deb10u4       deb      3C     0H     0M     0L
-  zlib        1:1.2.11.dfsg-1        deb      1C     0H     0M     0L
-```
-@y
-     Name            Version         Type        Vulnerabilities
-───────────────────────────────────────────────────────────────────────────
-  dpkg        1.19.7                 deb      1C     0H     0M     0L
-  glibc       2.28-10                deb      4C     0H     0M     0L
-  gnutls28    3.6.7-4+deb10u6        deb      2C     0H     0M     0L
-  libbsd      0.9.1-2                deb      1C     0H     0M     0L
-  libksba     1.3.5-2                deb      2C     0H     0M     0L
-  libtasn1-6  4.13-3                 deb      1C     0H     0M     0L
-  lz4         1.8.3-1                deb      1C     0H     0M     0L
-  openldap    2.4.47+dfsg-3+deb10u5  deb      1C     0H     0M     0L
-  openssl     1.1.1d-0+deb10u4       deb      3C     0H     0M     0L
-  zlib        1:1.2.11.dfsg-1        deb      1C     0H     0M     0L
-```
-@z
+% snip command...
 
 @x
 For more information about these commands and how to use them, refer to the CLI

@@ -139,10 +139,12 @@ the Azure resources.
 
 @x
 {{< acr-template.inline >}}
-{{ $data := data.GetJSON "https://prod-scout-integration-templates.s3.amazonaws.com/latest/acr_token_template.json" }}
+{{ with resources.GetRemote "https://prod-scout-integration-templates.s3.amazonaws.com/latest/acr_token_template.json" }}
+{{ $data := .Content | transform.Unmarshal }}
 @y
 {{< acr-template.inline >}}
-{{ $data := data.GetJSON "https://prod-scout-integration-templates.s3.amazonaws.com/latest/acr_token_template.json" }}
+{{ with resources.GetRemote "https://prod-scout-integration-templates.s3.amazonaws.com/latest/acr_token_template.json" }}
+{{ $data := .Content | transform.Unmarshal }}
 @z
 
 @x
@@ -156,8 +158,10 @@ the Azure resources.
 @z
 
 @x
+{{ end }}
 {{< /acr-template.inline >}}
 @y
+{{ end }}
 {{< /acr-template.inline >}}
 @z
 

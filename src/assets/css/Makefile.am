@@ -17,7 +17,6 @@ copyfiles = \
 	styles.css       \
 	syntax-dark.css  \
 	syntax-light.css \
-	tables.css       \
 	toc.css          \
 	typography.css
 

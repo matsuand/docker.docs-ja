@@ -18,11 +18,11 @@ keywords: Docker, extensions, sdk, build
 @z
 
 @x
-In some cases, your extension needs to invoke some command from the host. For example, you
+In some cases, your extension may need to invoke some command from the host. For example, you
 might want to invoke the CLI of your cloud provider to create a new resource, or the CLI of a tool your extension
 provides, or even a shell script that you want to run on the host. 
 @y
-In some cases, your extension needs to invoke some command from the host. For example, you
+In some cases, your extension may need to invoke some command from the host. For example, you
 might want to invoke the CLI of your cloud provider to create a new resource, or the CLI of a tool your extension
 provides, or even a shell script that you want to run on the host. 
 @z
@@ -74,6 +74,14 @@ string.
 @z
 
 @x
+{{< tabs >}}
+{{< tab name="Mac and Linux" >}}
+@y
+{{< tabs >}}
+{{< tab name="Mac and Linux" >}}
+@z
+
+@x
 Create a `bash` script for macOS and Linux, in the file `binaries/unix/hello.sh` with the following content:
 @y
 Create a `bash` script for macOS and Linux, in the file `binaries/unix/hello.sh` with the following content:
@@ -92,6 +100,14 @@ echo "Hello, $1!"
 @z
 
 @x
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@y
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@z
+
+@x
 Create a `batch script` for Windows in another file `binaries/windows/hello.cmd` with the following content:
 @y
 Create a `batch script` for Windows in another file `binaries/windows/hello.cmd` with the following content:
@@ -107,6 +123,14 @@ echo "Hello, %1!"
 @echo off
 echo "Hello, %1!"
 ```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -302,10 +326,10 @@ export function App() {
 @z
 
 @x
-The host binaries must be specified in the `metadata.json` so that Docker Desktop copies them on to the host when installing
+The host binaries must be specified in the `metadata.json` file so that Docker Desktop copies them on to the host when installing
 the extension. Once the extension is uninstalled, the binaries that were copied are removed as well.
 @y
-The host binaries must be specified in the `metadata.json` so that Docker Desktop copies them on to the host when installing
+The host binaries must be specified in the `metadata.json` file so that Docker Desktop copies them on to the host when installing
 the extension. Once the extension is uninstalled, the binaries that were copied are removed as well.
 @z
 

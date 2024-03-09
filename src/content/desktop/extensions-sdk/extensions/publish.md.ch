@@ -3,22 +3,22 @@
 
 @x
 ---
-title: Publish your extension to the marketplace
+title: Publish your extension in the Marketplace
 description: Docker extension distribution
 keywords: Docker, extensions, publish
 ---
 @y
 ---
-title: Publish your extension to the marketplace
+title: Publish your extension in the Marketplace
 description: Docker extension distribution
 keywords: Docker, extensions, publish
 ---
 @z
 
 @x
-## Submit your extension to the marketplace
+## Submit your extension to the Marketplace
 @y
-## Submit your extension to the marketplace
+## Submit your extension to the Marketplace
 @z
 
 @x
@@ -38,12 +38,12 @@ Whenever you are [ready to publish](./DISTRIBUTION.md) your extension in the Mar
 @x
 > **Note**
 >
-> As the Extension Marketplace continues to add new features for both Extension users and publishers, we expect you
+> As the Extension Marketplace continues to add new features for both Extension users and publishers, you are expected
 > to maintain your extension over time to ensure it stays available in the Marketplace.
 @y
 > **Note**
 >
-> As the Extension Marketplace continues to add new features for both Extension users and publishers, we expect you
+> As the Extension Marketplace continues to add new features for both Extension users and publishers, you are expected
 > to maintain your extension over time to ensure it stays available in the Marketplace.
 @z
 
@@ -69,10 +69,10 @@ Before you submit your extension, it must pass the [validation](validate.md) che
 
 @x
 It is highly recommended that your extension follows the guidelines outlined in this section before submitting your
-extension. If you request a review from the Docker Extensions team and have not followed the guidelines above, the review process may take longer. 
+extension. If you request a review from the Docker Extensions team and have not followed the guidelines, the review process may take longer. 
 @y
 It is highly recommended that your extension follows the guidelines outlined in this section before submitting your
-extension. If you request a review from the Docker Extensions team and have not followed the guidelines above, the review process may take longer. 
+extension. If you request a review from the Docker Extensions team and have not followed the guidelines, the review process may take longer. 
 @z
 
 @x

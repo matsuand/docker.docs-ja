@@ -36,9 +36,9 @@ Docker Desktop retrieves the extension image according to the user’s system ar
 @z
 
 @x
-### Build and push for multiple architectures
+## Build and push for multiple architectures
 @y
-### Build and push for multiple architectures
+## Build and push for multiple architectures
 @z
 
 @x
@@ -52,11 +52,11 @@ If you created an extension from the `docker extension init` command, the
 @z
 
 @x
-You can do `make push-extension` to build your extension against both
-`linux/amd64` and `linux/arm64` platforms, and push them to DockerHub.
+You can run `make push-extension` to build your extension against both
+`linux/amd64` and `linux/arm64` platforms, and push them to Docker Hub.
 @y
-You can do `make push-extension` to build your extension against both
-`linux/amd64` and `linux/arm64` platforms, and push them to DockerHub.
+You can run `make push-extension` to build your extension against both
+`linux/amd64` and `linux/arm64` platforms, and push them to Docker Hub.
 @z
 
 @x
@@ -140,14 +140,14 @@ Manifests:
 @z
 
 @x
-> Having trouble pushing the image?
+> **Tip**
 >
-> Ensure you are logged into DockerHub. Otherwise, run `docker login` to authenticate.
+> If you're having trouble pushing the image, make sure you're signed in to Docker Hub. Otherwise, run `docker login` to authenticate.
 { .tip }
 @y
-> Having trouble pushing the image?
+> **Tip**
 >
-> Ensure you are logged into DockerHub. Otherwise, run `docker login` to authenticate.
+> If you're having trouble pushing the image, make sure you're signed in to Docker Hub. Otherwise, run `docker login` to authenticate.
 { .tip }
 @z
 
@@ -158,9 +158,9 @@ For more information, see [Multi-platform images](../../../build/building/multi-
 @z
 
 @x
-### Adding multi-arch binaries
+## Adding multi-arch binaries
 @y
-### Adding multi-arch binaries
+## Adding multi-arch binaries
 @z
 
 @x
@@ -176,15 +176,15 @@ Currently, Docker does not provide a way to explicitly specify multiple binaries
 @z
 
 @x
-The example below shows an extension that uses a binary as part of its operations. The extension needs to run both in Docker Desktop for Mac and Windows.
+The following example shows an extension that uses a binary as part of its operations. The extension needs to run both in Docker Desktop for Mac and Windows.
 @y
-The example below shows an extension that uses a binary as part of its operations. The extension needs to run both in Docker Desktop for Mac and Windows.
+The following example shows an extension that uses a binary as part of its operations. The extension needs to run both in Docker Desktop for Mac and Windows.
 @z
 
 @x
-In the `Dockerfile`, we download the binary depending on the target architecture:
+In the `Dockerfile`, download the binary depending on the target architecture:
 @y
-In the `Dockerfile`, we download the binary depending on the target architecture:
+In the `Dockerfile`, download the binary depending on the target architecture:
 @z
 
 @x
@@ -252,9 +252,9 @@ COPY --from=dl /out /
 @z
 
 @x
-In the `metadata.json` file, we specify the path for every binary on every platform:
+In the `metadata.json` file, specify the path for every binary on every platform:
 @y
-In the `metadata.json` file, we specify the path for every binary on every platform:
+In the `metadata.json` file, specify the path for every binary on every platform:
 @z
 
 @x
@@ -332,13 +332,13 @@ As a result, when `TARGETARCH` equals:
 @z
 
 @x
-> Note
+> **Note**
 >
-> The binary destination path for darwin is darwin/kubectl in both cases. The only change is the architecture-specific binary that is downloaded.
+> The binary destination path for Darwin is `darwin/kubectl` in both cases. The only change is the architecture-specific binary that is downloaded.
 @y
-> Note
+> **Note**
 >
-> The binary destination path for darwin is darwin/kubectl in both cases. The only change is the architecture-specific binary that is downloaded.
+> The binary destination path for Darwin is `darwin/kubectl` in both cases. The only change is the architecture-specific binary that is downloaded.
 @z
 
 @x

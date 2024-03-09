@@ -80,9 +80,9 @@ Before deactivating your Docker account, ensure that you meet the following requ
 @z
 
 @x
-- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/downgrade.md).
+- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/core-subscription/downgrade.md).
 @y
-- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/downgrade.md).
+- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/core-subscription/downgrade.md).
 @z
 
 @x
@@ -158,9 +158,9 @@ Before deactivating an organization, complete the following:
 @z
 
 @x
-- If you have an active Docker subscription, [downgrade it to a **Docker Free Team** subscription](../subscription/downgrade.md).
+- If you have an active Docker subscription, [downgrade it to a **Docker Free Team** subscription](../subscription/core-subscription/downgrade.md).
 @y
-- If you have an active Docker subscription, [downgrade it to a **Docker Free Team** subscription](../subscription/downgrade.md).
+- If you have an active Docker subscription, [downgrade it to a **Docker Free Team** subscription](../subscription/core-subscription/downgrade.md).
 @z
 
 @x

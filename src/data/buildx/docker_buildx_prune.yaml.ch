@@ -54,161 +54,66 @@ long: |-
 @x
     - The `--all` flag to allow clearing internal helper images and frontend images
       set using the `#syntax=` directive or the `BUILDKIT_SYNTAX` build argument.
-usage: docker buildx prune
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: all
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Include internal/frontend images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: filter
-      value_type: filter
-      description: Provide filter values (e.g., `until=24h`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: keep-storage
-      value_type: bytes
-      default_value: "0"
-      description: Amount of disk space to keep for cache
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Provide a more verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
 @y
     - The `--all` flag to allow clearing internal helper images and frontend images
       set using the `#syntax=` directive or the `BUILDKIT_SYNTAX` build argument.
-usage: docker buildx prune
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: all
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Include internal/frontend images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: filter
-      value_type: filter
-      description: Provide filter values (e.g., `until=24h`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: keep-storage
-      value_type: bytes
-      default_value: "0"
-      description: Amount of disk space to keep for cache
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Provide a more verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
 @z
 
 @x
-    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+usage: docker buildx prune
 @y
-    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+usage: docker buildx prune
 @z
+
+% options:
+
+@x all
+      description: Include internal/frontend images
+@y
+      description: Include internal/frontend images
+@z
+
+@x filter
+      description: Provide filter values (e.g., `until=24h`)
+@y
+      description: Provide filter values (e.g., `until=24h`)
+@z
+
+@x force
+      description: Do not prompt for confirmation
+@y
+      description: Do not prompt for confirmation
+@z
+
+@x keep-storage
+      description: Amount of disk space to keep for cache
+@y
+      description: Amount of disk space to keep for cache
+@z
+
+@x verbose
+      description: Provide a more verbose output
+@y
+      description: Provide a more verbose output
+@z
+
+% inherited_options:
+
+@x builder
+      description: Override the configured builder instance
+@y
+      description: Override the configured builder instance
+@z
+
+@xexamples: |-
+    ### Override the configured builder instance (--builder) {#builder}
+
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
+@y
+examples: |-
+    ### Override the configured builder instance (--builder) {#builder}
+
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
+@z
+
+% snip directives...

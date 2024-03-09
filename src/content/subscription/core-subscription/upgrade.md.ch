@@ -4,20 +4,22 @@
 @x
 ---
 description: Learn how to upgrade your Docker subscription
-keywords: Docker Hub, upgrade, subscription, Pro, Team, business, pricing plan,
+keywords: Docker Hub, upgrade, subscription, Pro, Team, business, pricing plan, docker core
 title: Upgrade your subscription
 aliases:
 - /docker-hub/upgrade/
 - /docker-hub/billing/upgrade/
+- /subscription/upgrade/
 ---
 @y
 ---
 description: Learn how to upgrade your Docker subscription
-keywords: Docker Hub, upgrade, subscription, Pro, Team, business, pricing plan,
+keywords: Docker Hub, upgrade, subscription, Pro, Team, business, pricing plan, docker core
 title: Upgrade your subscription
 aliases:
 - /docker-hub/upgrade/
 - /docker-hub/billing/upgrade/
+- /subscription/upgrade/
 ---
 @z
 
@@ -40,9 +42,9 @@ When you upgrade to a paid subscription, you immediately have access to all the 
 @z
 
 @x
-2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../admin/convert-account.md).
+2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../../admin/convert-account.md).
 @y
-2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../admin/convert-account.md).
+2. Optional: If you're upgrading from a free user account to a Team subscription and want to keep your account name, [convert your user account into an organization](../../admin/convert-account.md).
 @z
 
 @x
@@ -58,9 +60,21 @@ When you upgrade to a paid subscription, you immediately have access to all the 
 @z
 
 @x
-5. In the **Plan** section, select **Change plan** and then choose the plan you'd like to upgrade to.
+5. Go to your current plan, then select **Change plan** and then choose the plan you'd like to upgrade to.
 @y
-5. In the **Plan** section, select **Change plan** and then choose the plan you'd like to upgrade to.
+5. Go to your current plan, then select **Change plan** and then choose the plan you'd like to upgrade to.
+@z
+
+@x
+   > **Tip**
+   >
+   > If your current plan is a free plan, select **Buy now**.
+   {.tip}
+@y
+   > **Tip**
+   >
+   > If your current plan is a free plan, select **Buy now**.
+   {.tip}
 @z
 
 @x
@@ -70,7 +84,7 @@ When you upgrade to a paid subscription, you immediately have access to all the 
 @z
 
 @x
-    If you have a [coupon](../billing/faqs.md#how-do-i-redeem-a-coupon) to use, you can enter it during this step.
+   If you have a coupon to use, you can enter it during this step.
 @y
-    If you have a [coupon](../billing/faqs.md#how-do-i-redeem-a-coupon) to use, you can enter it during this step.
+   If you have a coupon to use, you can enter it during this step.
 @z

@@ -6,12 +6,16 @@
 title: Docker subscriptions and features
 description: Learn about Docker subscription tiers and their features
 keywords: subscription, personal, pro, team, business, features, docker core subscription, docker core
+aliases:
+- /subscription/details/
 ---
 @y
 ---
 title: Docker subscriptions and features
 description: Learn about Docker subscription tiers and their features
 keywords: subscription, personal, pro, team, business, features, docker core subscription, docker core
+aliases:
+- /subscription/details/
 ---
 @z
 
@@ -28,21 +32,21 @@ The following describes some of the key features included with your Docker Core 
 @z
 
 @x
-![Docker Core subscription diagram](images/subscription-diagram.webp)
+![Docker Core subscription diagram](../images/subscription-diagram.webp)
 @y
-![Docker Core subscription diagram](images/subscription-diagram.webp)
+![Docker Core subscription diagram](../images/subscription-diagram.webp)
 @z
 
 @x
-3 Docker Scout-enabled repositories for advanced remote image analysis. You can purchase a Docker Scout subscription to enable more repositories. See [Docker Scout subscriptions and features](./scout-details.md).
+3 Docker Scout-enabled repositories for advanced remote image analysis. You can purchase a Docker Scout subscription to enable more repositories. See [Docker Scout subscriptions and features](../scout-details.md).
 @y
-3 Docker Scout-enabled repositories for advanced remote image analysis. You can purchase a Docker Scout subscription to enable more repositories. See [Docker Scout subscriptions and features](./scout-details.md).
+3 Docker Scout-enabled repositories for advanced remote image analysis. You can purchase a Docker Scout subscription to enable more repositories. See [Docker Scout subscriptions and features](../scout-details.md).
 @z
 
 @x
-Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](./build-details.md).
+Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](../build-details.md).
 @y
-Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](./build-details.md).
+Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](../build-details.md).
 @z
 
 @x
@@ -67,14 +71,14 @@ Docker Personal includes:
 
 @x
 - Unlimited public repositories
-- Unlimited [Scoped Access Tokens](../security/for-developers/access-tokens.md)
-- Unlimited [collaborators](../docker-hub/repos/access.md#collaborators-and-their-role) for public repositories at no cost per month.
-- Access to [Docker Scout Free](./scout-details.md#docker-scout-free) to get started with software supply chain security.
+- Unlimited [Scoped Access Tokens](../../security/for-developers/access-tokens.md)
+- Unlimited [collaborators](../../docker-hub/repos/access.md#collaborators-and-their-role) for public repositories at no cost per month.
+- Access to [Docker Scout Free](../scout-details.md#docker-scout-free) to get started with software supply chain security.
 @y
 - Unlimited public repositories
-- Unlimited [Scoped Access Tokens](../security/for-developers/access-tokens.md)
-- Unlimited [collaborators](../docker-hub/repos/access.md#collaborators-and-their-role) for public repositories at no cost per month.
-- Access to [Docker Scout Free](./scout-details.md#docker-scout-free) to get started with software supply chain security.
+- Unlimited [Scoped Access Tokens](../../security/for-developers/access-tokens.md)
+- Unlimited [collaborators](../../docker-hub/repos/access.md#collaborators-and-their-role) for public repositories at no cost per month.
+- Access to [Docker Scout Free](../scout-details.md#docker-scout-free) to get started with software supply chain security.
 @z
 
 @x
@@ -105,16 +109,16 @@ For a list of features available in each tier, see [Docker Pricing](https://www.
 Docker Pro includes:
 - All the features available in Personal
 - Unlimited private repositories
-- 5000 image [pulls per day](../docker-hub/download-rate-limit.md)
-- [Auto Builds](../docker-hub/builds/index.md) with 5 concurrent builds
-- 300 [Vulnerability Scans](../docker-hub/vulnerability-scanning.md)
+- 5000 image [pulls per day](../../docker-hub/download-rate-limit.md)
+- [Auto Builds](../../docker-hub/builds/index.md) with 5 concurrent builds
+- 300 [Vulnerability Scans](../../docker-hub/vulnerability-scanning.md)
 @y
 Docker Pro includes:
 - All the features available in Personal
 - Unlimited private repositories
-- 5000 image [pulls per day](../docker-hub/download-rate-limit.md)
-- [Auto Builds](../docker-hub/builds/index.md) with 5 concurrent builds
-- 300 [Vulnerability Scans](../docker-hub/vulnerability-scanning.md)
+- 5000 image [pulls per day](../../docker-hub/download-rate-limit.md)
+- [Auto Builds](../../docker-hub/builds/index.md) with 5 concurrent builds
+- 300 [Vulnerability Scans](../../docker-hub/vulnerability-scanning.md)
 @z
 
 @x
@@ -139,22 +143,22 @@ For a list of features available in each tier, see [Docker Pricing](https://www.
 Docker Team includes:
 - Everything included in Docker Pro
 - Unlimited teams
-- [Auto Builds](../docker-hub/builds/index.md) with 15 concurrent builds
-- Unlimited [Vulnerability Scanning](../docker-hub/vulnerability-scanning.md)
-- 5000 image [pulls per day](../docker-hub/download-rate-limit.md) for each team member
+- [Auto Builds](../../docker-hub/builds/index.md) with 15 concurrent builds
+- Unlimited [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md)
+- 5000 image [pulls per day](../../docker-hub/download-rate-limit.md) for each team member
 @y
 Docker Team includes:
 - Everything included in Docker Pro
 - Unlimited teams
-- [Auto Builds](../docker-hub/builds/index.md) with 15 concurrent builds
-- Unlimited [Vulnerability Scanning](../docker-hub/vulnerability-scanning.md)
-- 5000 image [pulls per day](../docker-hub/download-rate-limit.md) for each team member
+- [Auto Builds](../../docker-hub/builds/index.md) with 15 concurrent builds
+- Unlimited [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md)
+- 5000 image [pulls per day](../../docker-hub/download-rate-limit.md) for each team member
 @z
 
 @x
-There are also advanced collaboration and management tools, including organization and team management with [Role Based Access Control (RBAC)](../security/for-admins/roles-and-permissions.md), [activity logs](../admin/organization/activity-logs.md), and more.
+There are also advanced collaboration and management tools, including organization and team management with [Role Based Access Control (RBAC)](../../security/for-admins/roles-and-permissions.md), [activity logs](../../admin/organization/activity-logs.md), and more.
 @y
-There are also advanced collaboration and management tools, including organization and team management with [Role Based Access Control (RBAC)](../security/for-admins/roles-and-permissions.md), [activity logs](../admin/organization/activity-logs.md), and more.
+There are also advanced collaboration and management tools, including organization and team management with [Role Based Access Control (RBAC)](../../security/for-admins/roles-and-permissions.md), [activity logs](../../admin/organization/activity-logs.md), and more.
 @z
 
 @x
@@ -178,21 +182,21 @@ For a list of features available in each tier, see [Docker Pricing](https://www.
 @x
 Docker Business includes:
 - Everything included in Docker Team
-- [Hardened Docker Desktop](../desktop/hardened-desktop/index.md) 
-- [Image Access Management](../security/for-admins/image-access-management.md) which lets admins control what content developers can access
-- [Registry Access Management](../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
-- [Company layer](../admin/company/_index.md) to manage multiple organizations and settings
-- [Single Sign-On](../security/for-admins/single-sign-on/index.md)
-- [System for Cross-domain Identity Management](../security/for-admins/scim.md) and more.
+- [Hardened Docker Desktop](../../desktop/hardened-desktop/index.md) 
+- [Image Access Management](../../security/for-admins/image-access-management.md) which lets admins control what content developers can access
+- [Registry Access Management](../../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
+- [Company layer](../../admin/company/_index.md) to manage multiple organizations and settings
+- [Single Sign-On](../../security/for-admins/single-sign-on/index.md)
+- [System for Cross-domain Identity Management](../../security/for-admins/scim.md) and more.
 @y
 Docker Business includes:
 - Everything included in Docker Team
-- [Hardened Docker Desktop](../desktop/hardened-desktop/index.md) 
-- [Image Access Management](../security/for-admins/image-access-management.md) which lets admins control what content developers can access
-- [Registry Access Management](../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
-- [Company layer](../admin/company/_index.md) to manage multiple organizations and settings
-- [Single Sign-On](../security/for-admins/single-sign-on/index.md)
-- [System for Cross-domain Identity Management](../security/for-admins/scim.md) and more.
+- [Hardened Docker Desktop](../../desktop/hardened-desktop/index.md) 
+- [Image Access Management](../../security/for-admins/image-access-management.md) which lets admins control what content developers can access
+- [Registry Access Management](../../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
+- [Company layer](../../admin/company/_index.md) to manage multiple organizations and settings
+- [Single Sign-On](../../security/for-admins/single-sign-on/index.md)
+- [System for Cross-domain Identity Management](../../security/for-admins/scim.md) and more.
 @z
 
 @x

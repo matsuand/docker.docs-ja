@@ -28,9 +28,9 @@ This section describes how to make your extension available and more visible, so
 @z
 
 @x
-You have developed your extension and tested it locally. You are now ready to release the extension and make it available for others to install and use (either internally with your team, or more publicly).
+After you have developed your extension and tested it locally, you are ready to release the extension and make it available for others to install and use (either internally with your team, or more publicly).
 @y
-You have developed your extension and tested it locally. You are now ready to release the extension and make it available for others to install and use (either internally with your team, or more publicly).
+After you have developed your extension and tested it locally, you are ready to release the extension and make it available for others to install and use (either internally with your team, or more publicly).
 @z
 
 @x
@@ -74,9 +74,9 @@ Once your extension is available on Docker Hub, users who have access to the ext
 @z
 
 @x
-You can also [generate a share URL](share.md) in order to share your extension within your team, or promote your extension on the internet. The share link allows users to view the extension description and screenshots.
+You can also [generate a share URL](share.md) in order to share your extension within your team, or promote your extension on the internet. The share link lets users view the extension description and screenshots.
 @y
-You can also [generate a share URL](share.md) in order to share your extension within your team, or promote your extension on the internet. The share link allows users to view the extension description and screenshots.
+You can also [generate a share URL](share.md) in order to share your extension within your team, or promote your extension on the internet. The share link lets users view the extension description and screenshots.
 @z
 
 @x
@@ -98,17 +98,17 @@ You can publish your extension in the Extensions Marketplace to make it more dis
 @z
 
 @x
-### Extension new releases
+### New releases
 @y
-### Extension new releases
+### New releases
 @z
 
 @x
-Once you have released your extension, you can push a new release just by pushing a new version of the extension image, with an incremented tag (still using semver conventions).
-Docker extensions published in the Marketplace benefit from update notifications to all Desktop users that have installed the extension. For more details, see [new releases and updates](DISTRIBUTION.md#new-releases-and-updates)
+Once you have released your extension, you can push a new release just by pushing a new version of the extension image, with an incremented tag (still using `semver` conventions).
+Extensions published in the Marketplace benefit from update notifications to all Desktop users that have installed the extension. For more details, see [new releases and updates](DISTRIBUTION.md#new-releases-and-updates).
 @y
-Once you have released your extension, you can push a new release just by pushing a new version of the extension image, with an incremented tag (still using semver conventions).
-Docker extensions published in the Marketplace benefit from update notifications to all Desktop users that have installed the extension. For more details, see [new releases and updates](DISTRIBUTION.md#new-releases-and-updates)
+Once you have released your extension, you can push a new release just by pushing a new version of the extension image, with an incremented tag (still using `semver` conventions).
+Extensions published in the Marketplace benefit from update notifications to all Desktop users that have installed the extension. For more details, see [new releases and updates](DISTRIBUTION.md#new-releases-and-updates).
 @z
 
 @x

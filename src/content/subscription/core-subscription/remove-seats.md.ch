@@ -4,25 +4,27 @@
 @x
 ---
 description: Learn how to remove seats from your subscription
-keywords: Docker, Docker Hub, subscription, update, remove, seats
+keywords: Docker, Docker Hub, subscription, update, remove, seats, docker core
 title: Remove seats from your subscription
 aliases:
 - /docker-hub/billing/remove-seats/
+- /subscription/remove-seats/
 ---
 @y
 ---
 description: Learn how to remove seats from your subscription
-keywords: Docker, Docker Hub, subscription, update, remove, seats
+keywords: Docker, Docker Hub, subscription, update, remove, seats, docker core
 title: Remove seats from your subscription
 aliases:
 - /docker-hub/billing/remove-seats/
+- /subscription/remove-seats/
 ---
 @z
 
 @x
-You can remove seats from your Team or Business subscription at anytime. 
+You can remove seats from your Team or Business subscription at anytime.
 @y
-You can remove seats from your Team or Business subscription at anytime. 
+You can remove seats from your Team or Business subscription at anytime.
 @z
 
 @x
@@ -86,7 +88,7 @@ For example, if you receive your billing on the 8th of every month for 10 seats 
 @z
 
 @x
-To cancel the removal of seats, [contact support](https://hub.docker.com/support/contact/).
+You can cancel the removal of seats before your next billing cycle. To do so, select **Cancel change** in the bottom-right corner.
 @y
-To cancel the removal of seats, [contact support](https://hub.docker.com/support/contact/).
+You can cancel the removal of seats before your next billing cycle. To do so, select **Cancel change** in the bottom-right corner.
 @z

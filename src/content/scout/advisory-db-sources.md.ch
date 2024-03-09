@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scanning, analysis, vulnerabilities, Hub, supply chain, security
 title: Advisory database sources and matching service
----
 @y
----
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scanning, analysis, vulnerabilities, Hub, supply chain, security
 title: Advisory database sources and matching service
----
 @z
 
 @x

@@ -54,9 +54,10 @@ languages:
 suburldir 追加
 ------------------------------
 @x
-  min_api_threshold: 1.41
+    scout: "1.0.0"
 @y
-  min_api_threshold: 1.41
+    scout: "1.0.0"
+
   suburldir: /docker.docs-ja
 @z
 

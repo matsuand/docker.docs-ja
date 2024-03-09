@@ -11,42 +11,6 @@ long: |-
     will run on a specified builder. Alternatively, a context name can be used to
     switch to the default builder of that context.
 usage: docker buildx use [OPTIONS] NAME
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: default
-      value_type: bool
-      default_value: "false"
-      description: Set builder as default for current context
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: global
-      value_type: bool
-      default_value: "false"
-      description: Builder persists context changes
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
 @y
 command: docker buildx use
 short: Set the current builder instance
@@ -55,58 +19,40 @@ long: |-
     will run on a specified builder. Alternatively, a context name can be used to
     switch to the default builder of that context.
 usage: docker buildx use [OPTIONS] NAME
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: default
-      value_type: bool
-      default_value: "false"
+@z
+
+% options:
+
+@x default
       description: Set builder as default for current context
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: global
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set builder as default for current context
+@z
+
+@x global
       description: Builder persists context changes
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
+@y
+      description: Builder persists context changes
+@z
+
+% inherited_options:
+
+@x builder
       description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
+@y
+      description: Override the configured builder instance
 @z
 
 @x
+examples: |-
+    ### Override the configured builder instance (--builder) {#builder}
+
     Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+examples: |-
+    ### Override the configured builder instance (--builder) {#builder}
+
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @z
+
+% snip directives...

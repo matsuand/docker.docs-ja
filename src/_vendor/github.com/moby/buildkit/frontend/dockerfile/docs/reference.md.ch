@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 # Dockerfile reference
 @y
@@ -1249,58 +1251,42 @@ The `RUN` instruction will execute any commands to create a new layer on top of
 the current image. The added layer is used in the next step in the Dockerfile.
 @z
 
+% snip code...
+
 @x
-```dockerfile
-RUN apt-get update
-RUN apt-get install -y curl
-```
+For more information about the differences between these two forms, see
+[shell or exec forms](#shell-and-exec-form).
 @y
-```dockerfile
-RUN apt-get update
-RUN apt-get install -y curl
-```
+For more information about the differences between these two forms, see
+[shell or exec forms](#shell-and-exec-form).
 @z
 
 @x
-You can specify `RUN` instructions using
-[shell or exec forms](#shell-and-exec-form):
-@y
-You can specify `RUN` instructions using
-[shell or exec forms](#shell-and-exec-form):
-@z
-
-@x
-- `RUN ["executable","param1","param2"]` (exec form)
-- `RUN command param1 param2` (shell form)
-@y
-- `RUN ["executable","param1","param2"]` (exec form)
-- `RUN command param1 param2` (shell form)
-@z
-
-@x
-The shell form is most commonly used, and lets you more easily break up longer
+The shell form is most commonly used, and lets you break up longer
 instructions into multiple lines, either using newline [escapes](#escape), or
 with [heredocs](#here-documents):
 @y
-The shell form is most commonly used, and lets you more easily break up longer
+The shell form is most commonly used, and lets you break up longer
 instructions into multiple lines, either using newline [escapes](#escape), or
 with [heredocs](#here-documents):
 @z
 
+% snip code...
+
 @x
-```dockerfile
-RUN <<EOF
-apt-get update
-apt-get install -y curl
-EOF
-```
+The available `[OPTIONS]` for the `RUN` instruction are:
 @y
-```dockerfile
-RUN <<EOF
-apt-get update
-apt-get install -y curl
-EOF
-```
+The available `[OPTIONS]` for the `RUN` instruction are:
+@z
+
+@x
+- [`--mount`](#run---mount)
+- [`--network`](#run---network)
+- [`--security`](#run---security)
+@y
+- [`--mount`](#run---mount)
+- [`--network`](#run---network)
+- [`--security`](#run---security)
 @z
 
 @x
@@ -1338,20 +1324,12 @@ The cache for `RUN` instructions can be invalidated by [`ADD`](#add) and [`COPY`
 @z
 
 @x
-## RUN --mount
+### RUN --mount
 @y
-## RUN --mount
+### RUN --mount
 @z
 
-@x
-> **Note**
->
-> Added in [`docker/dockerfile:1.2`](#syntax)
-@y
-> **Note**
->
-> Added in [`docker/dockerfile:1.2`](#syntax)
-@z
+% snip code...
 
 @x
 `RUN --mount` allows you to create filesystem mounts that the build can access.
@@ -1372,15 +1350,9 @@ This can be used to:
 @z
 
 @x
-Syntax: `--mount=[type=<TYPE>][,option=<value>[,option=<value>]...]`
+The supported mount types are:
 @y
-Syntax: `--mount=[type=<TYPE>][,option=<value>[,option=<value>]...]`
-@z
-
-@x
-### Mount types
-@y
-### マウントタイプ {#mount-types}
+The supported mount types are:
 @z
 
 @x
@@ -1388,6 +1360,7 @@ Syntax: `--mount=[type=<TYPE>][,option=<value>[,option=<value>]...]`
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [`bind`](#run---mounttypebind) (default) | Bind-mount context directories (read-only).                                                               |
 | [`cache`](#run---mounttypecache)         | Mount a temporary directory to cache directories for compilers and package managers.                      |
+| [`tmpfs`](#run---mounttypetmpfs)         | Mount a `tmpfs` in the build container.                                                                   |
 | [`secret`](#run---mounttypesecret)       | Allow the build container to access secure files such as private keys without baking them into the image. |
 | [`ssh`](#run---mounttypessh)             | Allow the build container to access SSH keys via SSH agents, with support for passphrases.                |
 @y
@@ -1395,6 +1368,7 @@ Syntax: `--mount=[type=<TYPE>][,option=<value>[,option=<value>]...]`
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [`bind`](#run---mounttypebind) (default) | Bind-mount context directories (read-only).                                                               |
 | [`cache`](#run---mounttypecache)         | Mount a temporary directory to cache directories for compilers and package managers.                      |
+| [`tmpfs`](#run---mounttypetmpfs)         | Mount a `tmpfs` in the build container.                                                                   |
 | [`secret`](#run---mounttypesecret)       | Allow the build container to access secure files such as private keys without baking them into the image. |
 | [`ssh`](#run---mounttypessh)             | Allow the build container to access SSH keys via SSH agents, with support for passphrases.                |
 @z
@@ -1728,20 +1702,12 @@ However, pem files with passphrases are not supported.
 @z
 
 @x
-## RUN --network
+### RUN --network
 @y
-## RUN --network
+### RUN --network
 @z
 
-@x
-> **Note**
->
-> Added in [`docker/dockerfile:1.1`](#syntax)
-@y
-> **Note**
->
-> Added in [`docker/dockerfile:1.1`](#syntax)
-@z
+% snip code...
 
 @x
 `RUN --network` allows control over which networking environment the command
@@ -1752,15 +1718,9 @@ is run in.
 @z
 
 @x
-Syntax: `--network=<TYPE>`
+The supported network types are:
 @y
-Syntax: `--network=<TYPE>`
-@z
-
-@x
-### Network types
-@y
-### Network types
+The supported network types are:
 @z
 
 @x
@@ -1868,9 +1828,9 @@ The command is run in the host's network environment (similar to
 @z
 
 @x
-## RUN --security
+### RUN --security
 @y
-## RUN --security
+### RUN --security
 @z
 
 @x
@@ -1883,18 +1843,16 @@ The command is run in the host's network environment (similar to
 > Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @z
 
-@x
-### RUN --security=insecure
-@y
-### RUN --security=insecure
-@z
+% snip code...
 
 @x
-With `--security=insecure`, builder runs the command without sandbox in insecure
+The default security mode is `sandbox`.
+With `--security=insecure`, the builder runs the command without sandbox in insecure
 mode, which allows to run flows requiring elevated privileges (e.g. containerd).
 This is equivalent to running `docker run --privileged`.
 @y
-With `--security=insecure`, builder runs the command without sandbox in insecure
+The default security mode is `sandbox`.
+With `--security=insecure`, the builder runs the command without sandbox in insecure
 mode, which allows to run flows requiring elevated privileges (e.g. containerd).
 This is equivalent to running `docker run --privileged`.
 @z
@@ -1945,18 +1903,6 @@ RUN --security=insecure cat /proc/self/status | grep CapEff
 ```text
 #84 0.093 CapEff:	0000003fffffffff
 ```
-@z
-
-@x
-### RUN --security=sandbox
-@y
-### RUN --security=sandbox
-@z
-
-@x
-Default sandbox mode can be activated via `--security=sandbox`, but that is no-op.
-@y
-Default sandbox mode can be activated via `--security=sandbox`, but that is no-op.
 @z
 
 @x
@@ -2548,60 +2494,14 @@ RUN apt-get update && apt-get install -y ...
 @z
 
 @x
-ADD has two forms:
-@y
-ADD has two forms:
-@z
-
-@x
-```dockerfile
-ADD [--chown=<user>:<group>] [--chmod=<perms>] [--checksum=<checksum>] <src>... <dest>
-ADD [--chown=<user>:<group>] [--chmod=<perms>] ["<src>",... "<dest>"]
-```
-@y
-```dockerfile
-ADD [--chown=<user>:<group>] [--chmod=<perms>] [--checksum=<checksum>] <src>... <dest>
-ADD [--chown=<user>:<group>] [--chmod=<perms>] ["<src>",... "<dest>"]
-```
-@z
-
-@x
+ADD has two forms.
 The latter form is required for paths containing whitespace.
 @y
+ADD has two forms.
 The latter form is required for paths containing whitespace.
 @z
 
-@x
-> **Note**
->
-> The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
-> and doesn't work on Windows containers. Since user and group ownership concepts do
-> not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
-> translating user and group names to IDs restricts this feature to only be viable
-> for Linux OS-based containers.
-@y
-> **Note**
->
-> The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
-> and doesn't work on Windows containers. Since user and group ownership concepts do
-> not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
-> translating user and group names to IDs restricts this feature to only be viable
-> for Linux OS-based containers.
-@z
-
-@x
-> **Note**
->
-> `--chmod` is supported since [Dockerfile 1.3](https://docs.docker.com/build/buildkit/dockerfile-frontend/).
-> Only octal notation is currently supported. Non-octal support is tracked in
-> [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
-@y
-> **Note**
->
-> `--chmod` is supported since [Dockerfile 1.3](https://docs.docker.com/build/buildkit/dockerfile-frontend/).
-> Only octal notation is currently supported. Non-octal support is tracked in
-> [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
-@z
+% snip code...
 
 @x
 The `ADD` instruction copies new files, directories or remote file URLs from `<src>`
@@ -2630,25 +2530,17 @@ Each `<src>` may contain wildcards and matching will be done using Go's
 @z
 
 @x
-To add all files starting with "hom":
+To add all files in the root of the build context starting with "hom":
 @y
-To add all files starting with "hom":
+To add all files in the root of the build context starting with "hom":
 @z
 
-@x
-```dockerfile
-ADD hom* /mydir/
-```
-@y
-```dockerfile
-ADD hom* /mydir/
-```
-@z
+% snip code...
 
 @x
-In the example below, `?` is replaced with any single character, e.g., "home.txt".
+In the following example, `?` is a single-character wildcard, matching e.g. "home.txt".
 @y
-In the example below, `?` is replaced with any single character, e.g., "home.txt".
+In the following example, `?` is a single-character wildcard, matching e.g. "home.txt".
 @z
 
 % snip code...
@@ -2700,60 +2592,6 @@ ADD arr[[]0].txt /mydir/
 @z
 
 @x
-All new files and directories are created with a UID and GID of 0, unless the
-optional `--chown` flag specifies a given username, groupname, or UID/GID
-combination to request specific ownership of the content added. The
-format of the `--chown` flag allows for either username and groupname strings
-or direct integer UID and GID in any combination. Providing a username without
-groupname or a UID without GID will use the same numeric UID as the GID. If a
-username or groupname is provided, the container's root filesystem
-`/etc/passwd` and `/etc/group` files will be used to perform the translation
-from name to integer UID or GID respectively. The following examples show
-valid definitions for the `--chown` flag:
-@y
-All new files and directories are created with a UID and GID of 0, unless the
-optional `--chown` flag specifies a given username, groupname, or UID/GID
-combination to request specific ownership of the content added. The
-format of the `--chown` flag allows for either username and groupname strings
-or direct integer UID and GID in any combination. Providing a username without
-groupname or a UID without GID will use the same numeric UID as the GID. If a
-username or groupname is provided, the container's root filesystem
-`/etc/passwd` and `/etc/group` files will be used to perform the translation
-from name to integer UID or GID respectively. The following examples show
-valid definitions for the `--chown` flag:
-@z
-
-@x
-```dockerfile
-ADD --chown=55:mygroup files* /somedir/
-ADD --chown=bin files* /somedir/
-ADD --chown=1 files* /somedir/
-ADD --chown=10:11 files* /somedir/
-ADD --chown=myuser:mygroup --chmod=655 files* /somedir/
-```
-@y
-```dockerfile
-ADD --chown=55:mygroup files* /somedir/
-ADD --chown=bin files* /somedir/
-ADD --chown=1 files* /somedir/
-ADD --chown=10:11 files* /somedir/
-ADD --chown=myuser:mygroup --chmod=655 files* /somedir/
-```
-@z
-
-@x
-If the container root filesystem doesn't contain either `/etc/passwd` or
-`/etc/group` files and either user or group names are used in the `--chown`
-flag, the build will fail on the `ADD` operation. Using numeric IDs requires
-no lookup and doesn't depend on container root filesystem content.
-@y
-If the container root filesystem doesn't contain either `/etc/passwd` or
-`/etc/group` files and either user or group names are used in the `--chown`
-flag, the build will fail on the `ADD` operation. Using numeric IDs requires
-no lookup and doesn't depend on container root filesystem content.
-@z
-
-@x
 In the case where `<src>` is a remote file URL, the destination will
 have permissions of 600. If the remote file being retrieved has an HTTP
 `Last-Modified` header, the timestamp from that header will be used
@@ -2952,85 +2790,15 @@ doesn't support authentication.
 @z
 
 @x
-### Verifying a remote file checksum `ADD --checksum=<checksum> <http src> <dest>`
+### Adding private Git repositories
 @y
-### Verifying a remote file checksum `ADD --checksum=<checksum> <http src> <dest>`
+### Adding private Git repositories
 @z
 
 @x
-The checksum of a remote file can be verified with the `--checksum` flag:
+To add a private repository via SSH, create a Dockerfile with the following form:
 @y
-The checksum of a remote file can be verified with the `--checksum` flag:
-@z
-
-@x
-```dockerfile
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
-```
-@y
-```dockerfile
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
-```
-@z
-
-@x
-The `--checksum` flag only supports HTTP sources currently.
-@y
-The `--checksum` flag only supports HTTP sources currently.
-@z
-
-@x
-### Adding a Git repository `ADD <git ref> <dir>`
-@y
-### Adding a Git repository `ADD <git ref> <dir>`
-@z
-
-@x
-This form allows adding a Git repository to an image directly, without using the `git` command inside the image:
-@y
-This form allows adding a Git repository to an image directly, without using the `git` command inside the image:
-@z
-
-@x
-```dockerfile
-ADD [--keep-git-dir=<boolean>] <git ref> <dir>
-```
-@y
-```dockerfile
-ADD [--keep-git-dir=<boolean>] <git ref> <dir>
-```
-@z
-
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-ADD --keep-git-dir=true https://github.com/moby/buildkit.git#v0.10.1 /buildkit
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-ADD --keep-git-dir=true https://github.com/moby/buildkit.git#v0.10.1 /buildkit
-```
-@z
-
-@x
-The `--keep-git-dir=true` flag adds the `.git` directory. This flag defaults to false.
-@y
-The `--keep-git-dir=true` flag adds the `.git` directory. This flag defaults to false.
-@z
-
-@x
-### Adding a private git repository
-@y
-### Adding a private git repository
-@z
-
-@x
-To add a private repo via SSH, create a Dockerfile with the following form:
-@y
-To add a private repo via SSH, create a Dockerfile with the following form:
+To add a private repository via SSH, create a Dockerfile with the following form:
 @z
 
 @x
@@ -3074,52 +2842,140 @@ $ buildctl build --frontend=dockerfile.v0 --local context=. --local dockerfile=.
 @z
 
 @x
-## ADD --link
+### ADD --keep-git-dir
 @y
-## ADD --link
-@z
-
-@x
-See [`COPY --link`](#copy---link).
-@y
-See [`COPY --link`](#copy---link).
-@z
-
-@x
-## COPY
-@y
-## COPY
-@z
-
-@x
-COPY has two forms:
-@y
-COPY には 2 つの書式があります。
+### ADD --keep-git-dir
 @z
 
 % snip code...
 
 @x
-This latter form is required for paths containing whitespace
+When `<src>` is the HTTP or SSH address of a remote Git repository,
+BuildKit adds the contents of the Git repository to the image
+excluding the `.git` directory by default.
 @y
-2 つめの書式は、パス文字列内にホワイトスペースを含む場合に用います。
+When `<src>` is the HTTP or SSH address of a remote Git repository,
+BuildKit adds the contents of the Git repository to the image
+excluding the `.git` directory by default.
 @z
 
 @x
-> **Note**
->
-> The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
-> and doesn't work on Windows containers. Since user and group ownership concepts do
-> not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
-> translating user and group names to IDs restricts this feature to only be viable for
-> Linux OS-based containers.
+The `--keep-git-dir=true` flag lets you preserve the `.git` directory.
 @y
-> **メモ**
->
-> `--chown` と `--chmod` の機能は Linux コンテナーをビルドする Dockerfile においてのみサポートされるものであり、Windows コンテナーに対しては動作しません。
-> Linux と Windows の間で、ユーザーやグループの所有権という考え方が共有されないためです。
-> この機能では `/etc/passwd` や `/etc/group` を使って、ユーザーやグループの名前を ID に変換するため、この機能が実現できるのは Linux OS をベースとするコンテナーに限定されます。
+The `--keep-git-dir=true` flag lets you preserve the `.git` directory.
 @z
+
+% snip code...
+
+@x
+### ADD --checksum
+@y
+### ADD --checksum
+@z
+
+% snip code...
+
+@x
+The `--checksum` flag lets you verify the checksum of a remote resource:
+@y
+The `--checksum` flag lets you verify the checksum of a remote resource:
+@z
+
+% snip code...
+
+@x
+The `--checksum` flag only supports HTTP sources currently.
+@y
+The `--checksum` flag only supports HTTP sources currently.
+@z
+
+@x
+### ADD --chown --chmod
+@y
+### ADD --chown --chmod
+@z
+
+@x
+See [`COPY --chown --chmod`](#copy---chown---chmod).
+@y
+See [`COPY --chown --chmod`](#copy---chown---chmod).
+@z
+
+@x
+### ADD --link
+@y
+### ADD --link
+@z
+
+@x
+See [`COPY --link`](#copy---link).
+@y
+See [`COPY --link`](#copy---link).
+@z
+
+@x
+### ADD --exclude
+@y
+### ADD --exclude
+@z
+
+@x
+See [`COPY --exclude`](#copy---exclude).
+@y
+See [`COPY --exclude`](#copy---exclude).
+@z
+
+@x
+## COPY
+@y
+## COPY
+@z
+
+@x
+COPY has two forms.
+The latter form is required for paths containing whitespace.
+@y
+COPY には 2 つの書式があります。
+2 つめの書式は、パス文字列内にホワイトスペースを含む場合に用います。
+@z
+
+% snip code...
+
+@x
+The available `[OPTIONS]` are:
+@y
+The available `[OPTIONS]` are:
+@z
+
+@x
+- [`--chown`](#copy---chown---chmod)
+- [`--chmod`](#copy---chown---chmod)
+- [`--link`](#copy---link)
+- [`--parents`](#copy---parents)
+- [`--exclude`](#copy---exclude)
+@y
+- [`--chown`](#copy---chown---chmod)
+- [`--chmod`](#copy---chown---chmod)
+- [`--link`](#copy---link)
+- [`--parents`](#copy---parents)
+- [`--exclude`](#copy---exclude)
+@z
+
+% @x
+% > **Note**
+% >
+% > The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
+% > and doesn't work on Windows containers. Since user and group ownership concepts do
+% > not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
+% > translating user and group names to IDs restricts this feature to only be viable for
+% > Linux OS-based containers.
+% @y
+% > **メモ**
+% >
+% > `--chown` と `--chmod` の機能は Linux コンテナーをビルドする Dockerfile においてのみサポートされるものであり、Windows コンテナーに対しては動作しません。
+% > Linux と Windows の間で、ユーザーやグループの所有権という考え方が共有されないためです。
+% > この機能では `/etc/passwd` や `/etc/group` を使って、ユーザーやグループの名前を ID に変換するため、この機能が実現できるのは Linux OS をベースとするコンテナーに限定されます。
+% @z
 
 @x
 The `COPY` instruction copies new files or directories from `<src>`
@@ -3147,15 +3003,15 @@ Each `<src>` may contain wildcards and matching will be done using Go's
 @z
 
 @x
-To add all files starting with "hom":
+To add all files in the root of the build context starting with "hom":
 @y
-"hom" で始まるファイルをすべて追加するには以下とします。
+ビルドコンテキストのルート内において、"hom" で始まるファイルをすべて追加するには以下とします。
 @z
 
 % snip code...
 
 @x
-In the example below, `?` is replaced with any single character, e.g., "home.txt".
+In the following example, `?` is a single-character wildcard, matching e.g. "home.txt".
 @y
 以下の例における `?` はただ 1 つの文字の何にでもマッチします。
 したがってたとえば "home.txt" となります。
@@ -3200,69 +3056,8 @@ them from being treated as a matching pattern. For example, to copy a file
 named `arr[0].txt`, use the following;
 @z
 
-@x
-```dockerfile
-COPY arr[[]0].txt /mydir/
-```
-@y
-```dockerfile
-COPY arr[[]0].txt /mydir/
-```
-@z
+% snip code...
 
-@x
-All new files and directories are created with a UID and GID of 0, unless the
-optional `--chown` flag specifies a given username, groupname, or UID/GID
-combination to request specific ownership of the copied content. The
-format of the `--chown` flag allows for either username and groupname strings
-or direct integer UID and GID in any combination. Providing a username without
-groupname or a UID without GID will use the same numeric UID as the GID. If a
-username or groupname is provided, the container's root filesystem
-`/etc/passwd` and `/etc/group` files will be used to perform the translation
-from name to integer UID or GID respectively. The following examples show
-valid definitions for the `--chown` flag:
-@y
-All new files and directories are created with a UID and GID of 0, unless the
-optional `--chown` flag specifies a given username, groupname, or UID/GID
-combination to request specific ownership of the copied content. The
-format of the `--chown` flag allows for either username and groupname strings
-or direct integer UID and GID in any combination. Providing a username without
-groupname or a UID without GID will use the same numeric UID as the GID. If a
-username or groupname is provided, the container's root filesystem
-`/etc/passwd` and `/etc/group` files will be used to perform the translation
-from name to integer UID or GID respectively. The following examples show
-valid definitions for the `--chown` flag:
-@z
-
-@x
-```dockerfile
-COPY --chown=55:mygroup files* /somedir/
-COPY --chown=bin files* /somedir/
-COPY --chown=1 files* /somedir/
-COPY --chown=10:11 files* /somedir/
-COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
-```
-@y
-```dockerfile
-COPY --chown=55:mygroup files* /somedir/
-COPY --chown=bin files* /somedir/
-COPY --chown=1 files* /somedir/
-COPY --chown=10:11 files* /somedir/
-COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
-```
-@z
-
-@x
-If the container root filesystem doesn't contain either `/etc/passwd` or
-`/etc/group` files and either user or group names are used in the `--chown`
-flag, the build will fail on the `COPY` operation. Using numeric IDs requires
-no lookup and does not depend on container root filesystem content.
-@y
-If the container root filesystem doesn't contain either `/etc/passwd` or
-`/etc/group` files and either user or group names are used in the `--chown`
-flag, the build will fail on the `COPY` operation. Using numeric IDs requires
-no lookup and does not depend on container root filesystem content.
-@z
 
 @x
 > **Note**
@@ -3276,45 +3071,7 @@ no lookup and does not depend on container root filesystem content.
 > build context, so `COPY` can't be used.
 @z
 
-@x
-Optionally `COPY` accepts a flag `--from=<name>` that can be used to set
-the source location to a previous build stage (created with `FROM .. AS <name>`)
-that will be used instead of a build context sent by the user. In case a build
-stage with a specified name can't be found an image with the same name is
-attempted to be used instead.
-@y
-Optionally `COPY` accepts a flag `--from=<name>` that can be used to set
-the source location to a previous build stage (created with `FROM .. AS <name>`)
-that will be used instead of a build context sent by the user. In case a build
-stage with a specified name can't be found an image with the same name is
-attempted to be used instead.
-@z
 
-@x
-`COPY` obeys the following rules:
-@y
-`COPY` obeys the following rules:
-@z
-
-@x
-- The `<src>` path must be inside the build context;
-  you can't use `COPY ../something /something`, because the builder can only
-  access files from the context, and `../something` specifies a parent file or
-  directory of the build context root.
-@y
-- The `<src>` path must be inside the build context;
-  you can't use `COPY ../something /something`, because the builder can only
-  access files from the context, and `../something` specifies a parent file or
-  directory of the build context root.
-@z
-
-@x
-- If `<src>` is a directory, the entire contents of the directory are copied,
-  including filesystem metadata.
-@y
-- If `<src>` is a directory, the entire contents of the directory are copied,
-  including filesystem metadata.
-@z
 
 @x
   > **Note**
@@ -3385,19 +3142,115 @@ attempted to be used instead.
 @z
 
 @x
-## COPY --link
+### COPY --chown --chmod
 @y
-## COPY --link
+### COPY --chown --chmod
 @z
 
 @x
 > **Note**
 >
-> Added in [`docker/dockerfile:1.4`](#syntax)
+> Only octal notation is currently supported. Non-octal support is tracked in
+> [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
 @y
 > **Note**
 >
-> Added in [`docker/dockerfile:1.4`](#syntax)
+> Only octal notation is currently supported. Non-octal support is tracked in
+> [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
+@z
+
+@x
+```dockerfile
+COPY [--chown=<user>:<group>] [--chmod=<perms> ...] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--chown=<user>:<group>] [--chmod=<perms> ...] <src> ... <dest>
+```
+@z
+
+@x
+The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
+and doesn't work on Windows containers. Since user and group ownership concepts do
+not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
+translating user and group names to IDs restricts this feature to only be viable for
+Linux OS-based containers.
+@y
+The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
+and doesn't work on Windows containers. Since user and group ownership concepts do
+not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
+translating user and group names to IDs restricts this feature to only be viable for
+Linux OS-based containers.
+@z
+
+@x
+All files and directories copied from the build context are created with a UID and GID of 0.unless the
+optional `--chown` flag specifies a given username, groupname, or UID/GID
+combination to request specific ownership of the copied content. The
+format of the `--chown` flag allows for either username and groupname strings
+or direct integer UID and GID in any combination. Providing a username without
+groupname or a UID without GID will use the same numeric UID as the GID. If a
+username or groupname is provided, the container's root filesystem
+`/etc/passwd` and `/etc/group` files will be used to perform the translation
+from name to integer UID or GID respectively. The following examples show
+valid definitions for the `--chown` flag:
+@y
+All files and directories copied from the build context are created with a UID and GID of 0.unless the
+optional `--chown` flag specifies a given username, groupname, or UID/GID
+combination to request specific ownership of the copied content. The
+format of the `--chown` flag allows for either username and groupname strings
+or direct integer UID and GID in any combination. Providing a username without
+groupname or a UID without GID will use the same numeric UID as the GID. If a
+username or groupname is provided, the container's root filesystem
+`/etc/passwd` and `/etc/group` files will be used to perform the translation
+from name to integer UID or GID respectively. The following examples show
+valid definitions for the `--chown` flag:
+@z
+
+@x
+```dockerfile
+COPY --chown=55:mygroup files* /somedir/
+COPY --chown=bin files* /somedir/
+COPY --chown=1 files* /somedir/
+COPY --chown=10:11 files* /somedir/
+COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
+```
+@y
+```dockerfile
+COPY --chown=55:mygroup files* /somedir/
+COPY --chown=bin files* /somedir/
+COPY --chown=1 files* /somedir/
+COPY --chown=10:11 files* /somedir/
+COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
+```
+@z
+
+@x
+If the container root filesystem doesn't contain either `/etc/passwd` or
+`/etc/group` files and either user or group names are used in the `--chown`
+flag, the build will fail on the `COPY` operation. Using numeric IDs requires
+no lookup and does not depend on container root filesystem content.
+@y
+If the container root filesystem doesn't contain either `/etc/passwd` or
+`/etc/group` files and either user or group names are used in the `--chown`
+flag, the build will fail on the `COPY` operation. Using numeric IDs requires
+no lookup and does not depend on container root filesystem content.
+@z
+
+@x
+### COPY --link
+@y
+### COPY --link
+@z
+
+@x
+```dockerfile
+COPY [--link[=<boolean>]] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--link[=<boolean>]] <src> ... <dest>
+```
 @z
 
 @x
@@ -3475,9 +3328,9 @@ and merging all the layers of both images together.
 @z
 
 @x
-### Benefits of using `--link`
+#### Benefits of using `--link`
 @y
-### Benefits of using `--link`
+#### Benefits of using `--link`
 @z
 
 @x
@@ -3523,9 +3376,9 @@ layers of the base image.
 @z
 
 @x
-### Incompatibilities with `--link=false`
+#### Incompatibilities with `--link=false`
 @y
-### Incompatibilities with `--link=false`
+#### Incompatibilities with `--link=false`
 @z
 
 @x
@@ -3555,30 +3408,28 @@ conditions for cache reuse.
 @z
 
 @x
-## COPY --parents
+### COPY --parents
 @y
-## COPY --parents
+### COPY --parents
 @z
 
 @x
 > **Note**
 >
-> Available in [`docker/dockerfile-upstream:master-labs`](#syntax).
-> Will be included in `docker/dockerfile:1.6-labs`.
+> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @y
 > **Note**
 >
-> Available in [`docker/dockerfile-upstream:master-labs`](#syntax).
-> Will be included in `docker/dockerfile:1.6-labs`.
+> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @z
 
 @x
 ```dockerfile
-COPY [--parents[=<boolean>]] <src>... <dest>
+COPY [--parents[=<boolean>]] <src> ... <dest>
 ```
 @y
 ```dockerfile
-COPY [--parents[=<boolean>]] <src>... <dest>
+COPY [--parents[=<boolean>]] <src> ... <dest>
 ```
 @z
 
@@ -3590,11 +3441,11 @@ The `--parents` flag preserves parent directories for `src` entries. This flag d
 
 @x
 ```dockerfile
-# syntax=docker/dockerfile-upstream:master-labs
+# syntax=docker/dockerfile:1.7-labs
 FROM scratch
 @y
 ```dockerfile
-# syntax=docker/dockerfile-upstream:master-labs
+# syntax=docker/dockerfile:1.7-labs
 FROM scratch
 @z
 
@@ -3619,11 +3470,59 @@ COPY --parents ./x/a.txt ./y/a.txt /parents/
 @z
 
 @x
-This behavior is analogous to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
-`--parents` flag.
+This behavior is similar to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
+`--parents` or [`rsync`](https://man7.org/linux/man-pages/man1/rsync.1.html) `--relative` flag.
 @y
-This behavior is analogous to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
-`--parents` flag.
+This behavior is similar to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
+`--parents` or [`rsync`](https://man7.org/linux/man-pages/man1/rsync.1.html) `--relative` flag.
+@z
+
+@x
+As with Rsync, it is possible to limit which parent directories are preserved by
+inserting a dot and a slash (`./`) into the source path. If such point exists, only parent
+directories after it will be preserved. This may be especially useful copies between stages
+with `--from` where the source paths need to be absolute.
+@y
+As with Rsync, it is possible to limit which parent directories are preserved by
+inserting a dot and a slash (`./`) into the source path. If such point exists, only parent
+directories after it will be preserved. This may be especially useful copies between stages
+with `--from` where the source paths need to be absolute.
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+FROM scratch
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+FROM scratch
+@z
+
+@x
+COPY --parents ./x/./y/*.txt /parents/
+@y
+COPY --parents ./x/./y/*.txt /parents/
+@z
+
+@x
+# Build context:
+# ./x/y/a.txt
+# ./x/y/b.txt
+#
+# Output:
+# /parents/y/a.txt
+# /parents/y/b.txt
+```
+@y
+# Build context:
+# ./x/y/a.txt
+# ./x/y/b.txt
+#
+# Output:
+# /parents/y/a.txt
+# /parents/y/b.txt
+```
 @z
 
 @x
@@ -3650,6 +3549,82 @@ instructions consisting of only one `src` entry, usually it is more beneficial
 to keep the layer count in the resulting image as low as possible. Therefore,
 with the `--parents` flag, the Buildkit is capable of packing multiple
 `COPY` instructions together, keeping the directory structure intact.
+@z
+
+@x
+### COPY --exclude
+@y
+### COPY --exclude
+@z
+
+@x
+> **Note**
+>
+> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
+@y
+> **Note**
+>
+> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
+@z
+
+@x
+```dockerfile
+COPY [--exclude=<path> ...] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--exclude=<path> ...] <src> ... <dest>
+```
+@z
+
+@x
+The `--exclude` flag lets you specify a path expression for files to be excluded.
+@y
+The `--exclude` flag lets you specify a path expression for files to be excluded.
+@z
+
+@x
+The path expression follows the same format as `<src>`,
+supporting wildcards and matching using Go's
+[filepath.Match](https://golang.org/pkg/path/filepath#Match) rules.
+For example, to add all files starting with "hom", excluding files with a `.txt` extension:
+@y
+The path expression follows the same format as `<src>`,
+supporting wildcards and matching using Go's
+[filepath.Match](https://golang.org/pkg/path/filepath#Match) rules.
+For example, to add all files starting with "hom", excluding files with a `.txt` extension:
+@z
+
+@x
+```dockerfile
+COPY --exclude=*.txt hom* /mydir/
+```
+@y
+```dockerfile
+COPY --exclude=*.txt hom* /mydir/
+```
+@z
+
+@x
+You can specify the `--exclude` option multiple times for a `COPY` instruction.
+Multiple `--excludes` are files matching its patterns not to be copied,
+even if the files paths match the pattern specified in `<src>`.
+To add all files starting with "hom", excluding files with either `.txt` or `.md` extensions:
+@y
+You can specify the `--exclude` option multiple times for a `COPY` instruction.
+Multiple `--excludes` are files matching its patterns not to be copied,
+even if the files paths match the pattern specified in `<src>`.
+To add all files starting with "hom", excluding files with either `.txt` or `.md` extensions:
+@z
+
+@x
+```dockerfile
+COPY --exclude=*.txt --exclude=*.md hom* /mydir/
+```
+@y
+```dockerfile
+COPY --exclude=*.txt --exclude=*.md hom* /mydir/
+```
 @z
 
 @x
@@ -6162,16 +6137,6 @@ required such as `zsh`, `csh`, `tcsh` and others.
 ## Here-Documents
 @y
 ## Here-Documents
-@z
-
-@x
-> **Note**
->
-> Added in [`docker/dockerfile:1.4`](#syntax)
-@y
-> **Note**
->
-> Added in [`docker/dockerfile:1.4`](#syntax)
 @z
 
 @x

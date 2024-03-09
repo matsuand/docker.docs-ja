@@ -9,6 +9,7 @@ bases = \
 	docker_buildx_create.yaml             \
 	docker_buildx_debug.yaml              \
 	docker_buildx_debug_build.yaml        \
+	docker_buildx_dial-stdio.yaml         \
 	docker_buildx_du.yaml                 \
 	docker_buildx_imagetools.yaml         \
 	docker_buildx_imagetools_create.yaml  \

@@ -20,25 +20,25 @@ aliases:
 @z
 
 @x
-> Note
+> **Note**
 >
 > This page assumes that you already have an Identity Provider (IdP), such as Google, Entra ID (formerly Azure AD) or Okta, which handles the authentication process and returns an access token.
 @y
-> Note
+> **Note**
 >
 > This page assumes that you already have an Identity Provider (IdP), such as Google, Entra ID (formerly Azure AD) or Okta, which handles the authentication process and returns an access token.
 @z
 
 @x
-Learn how you can let users authenticate from your Docker Extension using OAuth 2.0 via a web browser, and return them back to your Docker extension.
+Learn how you can let users authenticate from your extension using OAuth 2.0 via a web browser, and return to your extension.
 @y
-Learn how you can let users authenticate from your Docker Extension using OAuth 2.0 via a web browser, and return them back to your Docker extension.
+Learn how you can let users authenticate from your extension using OAuth 2.0 via a web browser, and return to your extension.
 @z
 
 @x
-In OAuth 2.0, the term "grant type" refers to the way an application gets an access token. Although OAuth 2.0 defines several grant types, this page only describes how to authorize users from your Docker Extension using the Authorization Code grant type.
+In OAuth 2.0, the term "grant type" refers to the way an application gets an access token. Although OAuth 2.0 defines several grant types, this page only describes how to authorize users from your extension using the Authorization Code grant type.
 @y
-In OAuth 2.0, the term "grant type" refers to the way an application gets an access token. Although OAuth 2.0 defines several grant types, this page only describes how to authorize users from your Docker Extension using the Authorization Code grant type.
+In OAuth 2.0, the term "grant type" refers to the way an application gets an access token. Although OAuth 2.0 defines several grant types, this page only describes how to authorize users from your extension using the Authorization Code grant type.
 @z
 
 @x
@@ -73,14 +73,14 @@ The image above shows that:
 
 @x
 - The Docker extension asks the user to authorize access to their data.
-- If the user grants access, the Docker Extension then requests an access token from the service provider, passing the access grant from the user and authentication details to identify the client.
+- If the user grants access, the extension then requests an access token from the service provider, passing the access grant from the user and authentication details to identify the client.
 - The service provider then validates these details and returns an access token.
-- The Docker Extension uses the access token to request the user data with the service provider.
+- The extension uses the access token to request the user data with the service provider.
 @y
 - The Docker extension asks the user to authorize access to their data.
-- If the user grants access, the Docker Extension then requests an access token from the service provider, passing the access grant from the user and authentication details to identify the client.
+- If the user grants access, the extension then requests an access token from the service provider, passing the access grant from the user and authentication details to identify the client.
 - The service provider then validates these details and returns an access token.
-- The Docker Extension uses the access token to request the user data with the service provider.
+- The extension uses the access token to request the user data with the service provider.
 @z
 
 @x
@@ -188,9 +188,9 @@ Next, you exchange the authorization code for an access token.
 @z
 
 @x
-The extension must send a `POST` request to the oauth authorization server with the following parameters:
+The extension must send a `POST` request to the 0Auth authorization server with the following parameters:
 @y
-The extension must send a `POST` request to the oauth authorization server with the following parameters:
+The extension must send a `POST` request to the 0Auth authorization server with the following parameters:
 @z
 
 @x
@@ -228,9 +228,9 @@ POST https://authorization-server.com/token
 @z
 
 @x
-The Docker Extensions SDK doesn't currently provide a specific mechanism to store secrets.
+The Docker Extensions SDK doesn't provide a specific mechanism to store secrets.
 @y
-The Docker Extensions SDK doesn't currently provide a specific mechanism to store secrets.
+The Docker Extensions SDK doesn't provide a specific mechanism to store secrets.
 @z
 
 @x
@@ -240,11 +240,11 @@ It's highly recommended that you use an external source of storage to store the 
 @z
 
 @x
-> Note
+> **Note**
 >
 > The user interface Local Storage is isolated between extensions (an extension can't access another extension's local storage), and each extension's local storage gets deleted when users uninstall an extension.
 @y
-> Note
+> **Note**
 >
 > The user interface Local Storage is isolated between extensions (an extension can't access another extension's local storage), and each extension's local storage gets deleted when users uninstall an extension.
 @z

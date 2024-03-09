@@ -2727,7 +2727,7 @@ Manuals:
         - path: /desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: /desktop/extensions/private-marketplace/
-          title: Configure a private marketplace (Beta)
+          title: Configure a private Marketplace (Beta)
 @y
 - sectiontitle: Docker Extensions
   section:
@@ -2742,7 +2742,7 @@ Manuals:
         - path: __SUBDIR__/desktop/extensions/settings-feedback/
           title: Change settings and give feedback
         - path: __SUBDIR__/desktop/extensions/private-marketplace/
-          title: Configure a private marketplace (Beta)
+          title: Configure a private Marketplace (Beta)
 @z
 
 @x
@@ -2798,7 +2798,7 @@ Manuals:
               path: /desktop/extensions-sdk/extensions/DISTRIBUTION/
             - title: Generate a share link
               path: /desktop/extensions-sdk/extensions/share/
-            - title: Publish in the marketplace
+            - title: Publish in the Marketplace
               path: /desktop/extensions-sdk/extensions/publish/
             - title: Build multi-arch extensions
               path: /desktop/extensions-sdk/extensions/multi-arch/
@@ -2815,7 +2815,7 @@ Manuals:
               path: __SUBDIR__/desktop/extensions-sdk/extensions/DISTRIBUTION/
             - title: Generate a share link
               path: __SUBDIR__/desktop/extensions-sdk/extensions/share/
-            - title: Publish in the marketplace
+            - title: Publish in the Marketplace
               path: __SUBDIR__/desktop/extensions-sdk/extensions/publish/
             - title: Build multi-arch extensions
               path: __SUBDIR__/desktop/extensions-sdk/extensions/multi-arch/
@@ -2993,10 +2993,10 @@ Manuals:
       - path: /scout/env-vars/
         title: Environment variables
 @y
-    - sectiontitle: Use Docker Scout
+    - sectiontitle: Docker Scout の利用
       section:
       - path: __SUBDIR__/scout/image-analysis/
-        title: Image analysis
+        title: イメージ分析
       - path: __SUBDIR__/scout/image-prefix/
         title: Specify artifact type or location
       - path: __SUBDIR__/scout/sbom/
@@ -4754,14 +4754,16 @@ Manuals:
   section:
   - path: /billing/
     title: Overview
-  - path: /billing/payment-method/
-    title: Add or update a payment method
-  - path: /billing/details/
-    title: Update the billing information
-  - path: /billing/history/
-    title: View your billing history
-  - path: /billing/cycle/
-    title: Change your billing cycle
+  - sectiontitle: Docker Core billing
+    section:
+    - path: /billing/core-billing/payment-method/
+      title: Add or update a payment method
+    - path: /billing/core-billing/details/
+      title: Update the billing information
+    - path: /billing/core-billing/history/
+      title: View your billing history
+    - path: /billing/core-billing/cycle/
+      title: Change your billing cycle
   - path: /billing/scout-billing/
     title: Docker Scout billing
   - path: /billing/build-billing/
@@ -4771,14 +4773,16 @@ Manuals:
   section:
   - path: __SUBDIR__/billing/
     title: Overview
-  - path: __SUBDIR__/billing/payment-method/
-    title: Add or update a payment method
-  - path: __SUBDIR__/billing/details/
-    title: Update the billing information
-  - path: __SUBDIR__/billing/history/
-    title: View your billing history
-  - path: __SUBDIR__/billing/cycle/
-    title: Change your billing cycle
+  - sectiontitle: Docker Core billing
+    section:
+    - path: __SUBDIR__/billing/core-billing/payment-method/
+      title: Add or update a payment method
+    - path: __SUBDIR__/billing/core-billing/details/
+      title: Update the billing information
+    - path: __SUBDIR__/billing/core-billing/history/
+      title: View your billing history
+    - path: __SUBDIR__/billing/core-billing/cycle/
+      title: Change your billing cycle
   - path: __SUBDIR__/billing/scout-billing/
     title: Docker Scout billing
   - path: __SUBDIR__/billing/build-billing/
@@ -4790,16 +4794,18 @@ Manuals:
   section:
   - path: /subscription/
     title: Overview
-  - path: /subscription/details/
-    title: Docker subscriptions and features
-  - path: /subscription/upgrade/
-    title: Upgrade
-  - path: /subscription/add-seats/
-    title: Add seats
-  - path: /subscription/remove-seats/
-    title: Remove seats
-  - path: /subscription/downgrade/
-    title: Downgrade
+  - sectiontitle: Docker Core
+    section:
+    - path: /subscription/core-subscription/details/
+      title: Subscriptions and features
+    - path: /subscription/core-subscription/upgrade/
+      title: Upgrade
+    - path: /subscription/core-subscription/add-seats/
+      title: Add seats
+    - path: /subscription/core-subscription/remove-seats/
+      title: Remove seats
+    - path: /subscription/core-subscription/downgrade/
+      title: Downgrade
   - path: /subscription/desktop-license/
     title: Docker Desktop license agreement
   - path: /subscription/scout-details/
@@ -4811,16 +4817,18 @@ Manuals:
   section:
   - path: __SUBDIR__/subscription/
     title: Overview
-  - path: __SUBDIR__/subscription/details/
-    title: Docker subscriptions and features
-  - path: __SUBDIR__/subscription/upgrade/
-    title: Upgrade
-  - path: __SUBDIR__/subscription/add-seats/
-    title: Add seats
-  - path: __SUBDIR__/subscription/remove-seats/
-    title: Remove seats
-  - path: __SUBDIR__/subscription/downgrade/
-    title: Downgrade
+  - sectiontitle: Docker Core
+    section:
+    - path: __SUBDIR__/subscription/core-subscription/details/
+      title: Subscriptions and features
+    - path: __SUBDIR__/subscription/core-subscription/upgrade/
+      title: Upgrade
+    - path: __SUBDIR__/subscription/core-subscription/add-seats/
+      title: Add seats
+    - path: __SUBDIR__/subscription/core-subscription/remove-seats/
+      title: Remove seats
+    - path: __SUBDIR__/subscription/core-subscription/downgrade/
+      title: Downgrade
   - path: __SUBDIR__/subscription/desktop-license/
     title: Docker Desktop license agreement
   - path: __SUBDIR__/subscription/scout-details/
@@ -4954,8 +4962,6 @@ FAQ:
       title: General
     - path: /faq/security/networking-and-vms/
       title: Networking and VMs
-    - path: /faq/security/settings-management/
-      title: Settings Management
     - path: /faq/security/eci-faq/
       title: Enhanced Container Isolation
 @y
@@ -4965,8 +4971,6 @@ FAQ:
       title: General
     - path: __SUBDIR__/faq/security/networking-and-vms/
       title: Networking and VMs
-    - path: __SUBDIR__/faq/security/settings-management/
-      title: Settings Management
     - path: __SUBDIR__/faq/security/eci-faq/
       title: Enhanced Container Isolation
 @z

@@ -6,19 +6,23 @@
 title: Add or update a payment method
 description: Learn how to add or update a payment method in Docker Hub
 keywords: payments, billing, subscription, supported payment methods, failed payments, coupons
+billing:
+- /billing/payment-method/
 ---
 @y
 ---
 title: Add or update a payment method
 description: Learn how to add or update a payment method in Docker Hub
 keywords: payments, billing, subscription, supported payment methods, failed payments, coupons
+billing:
+- /billing/payment-method/
 ---
 @z
 
 @x
-This page describes how to add or update a payment method for your personal account or for an organization. 
+This page describes how to add or update a payment method for your personal account or for an organization.
 @y
-This page describes how to add or update a payment method for your personal account or for an organization. 
+This page describes how to add or update a payment method for your personal account or for an organization.
 @z
 
 @x
@@ -30,11 +34,11 @@ You can add a payment method or update your account's existing payment method at
 @x
 >**Important**
 >
-> If you want to remove all payment methods, you must first downgrade your subscription to a free plan. See [Downgrade](../subscription/downgrade.md), for more information. 
+> If you want to remove all payment methods, you must first downgrade your subscription to a free plan. See [Downgrade](../../subscription/core-subscription/downgrade.md).
 @y
 >**Important**
 >
-> If you want to remove all payment methods, you must first downgrade your subscription to a free plan. See [Downgrade](../subscription/downgrade.md), for more information. 
+> If you want to remove all payment methods, you must first downgrade your subscription to a free plan. See [Downgrade](../../subscription/core-subscription/downgrade.md).
 @z
 
 @x
@@ -68,16 +72,22 @@ All currency, for example the amount listed on your billing invoice, is in Unite
 @z
 
 @x
-## Personal account
+## Manage payment method
 @y
-## Personal account
+## Manage payment method
+@z
+
+@x
+### Personal account
+@y
+### Personal account
 @z
 
 @x
 1. Select your avatar in the top-right corner of Docker Hub.
 2. From the drop-down menu select **Billing**.
 3. Select the **Payment methods and billing history** link.
-4. In the **Payment Method** section, select **Add payment method**.
+4. In the **Payment method** section, select **Add payment method**.
 5. Enter your new payment information, then select **Add**.
 6. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
 7. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
@@ -85,16 +95,16 @@ All currency, for example the amount listed on your billing invoice, is in Unite
 1. Select your avatar in the top-right corner of Docker Hub.
 2. From the drop-down menu select **Billing**.
 3. Select the **Payment methods and billing history** link.
-4. In the **Payment Method** section, select **Add payment method**.
+4. In the **Payment method** section, select **Add payment method**.
 5. Enter your new payment information, then select **Add**.
 6. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
 7. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
 @z
 
 @x
-## Organization 
+### Organization
 @y
-## Organization 
+### Organization
 @z
 
 @x
@@ -109,7 +119,7 @@ All currency, for example the amount listed on your billing invoice, is in Unite
 
 @x
 1. Select your avatar in the top-right corner of Docker Hub.
-2. From the drop-down menu select **Billing**. 
+2. From the drop-down menu select **Billing**.
 3. Select the organization account you want to update.
 4. Select the **Payment methods and billing history** link.
 5. In the **Payment Method** section, select **Add payment method**.
@@ -118,7 +128,7 @@ All currency, for example the amount listed on your billing invoice, is in Unite
 8. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
 @y
 1. Select your avatar in the top-right corner of Docker Hub.
-2. From the drop-down menu select **Billing**. 
+2. From the drop-down menu select **Billing**.
 3. Select the organization account you want to update.
 4. Select the **Payment methods and billing history** link.
 5. In the **Payment Method** section, select **Add payment method**.

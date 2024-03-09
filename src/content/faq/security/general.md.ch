@@ -222,9 +222,9 @@ File sharing (bind mount from the host filesystem) uses a user-space crafted fil
 @z
 
 @x
-### How are Extensions within the Marketplace vetting for security prior to placement? 
+### How are extensions within the Marketplace vetted for security prior to placement? 
 @y
-### How are Extensions within the Marketplace vetting for security prior to placement? 
+### How are extensions within the Marketplace vetted for security prior to placement? 
 @z
 
 @x

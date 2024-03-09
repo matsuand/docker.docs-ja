@@ -68,6 +68,7 @@ AC_CONFIG_FILES([
 	src/content/admin/images/Makefile
 	src/content/admin/organization/Makefile
 	src/content/billing/Makefile
+	src/content/billing/core-billing/Makefile
 	src/content/build/Makefile
 	src/content/build/attestations/Makefile
 	src/content/build/bake/Makefile
@@ -259,6 +260,7 @@ AC_CONFIG_FILES([
 	src/content/storage/storagedriver/Makefile
 	src/content/storage/storagedriver/images/Makefile
 	src/content/subscription/Makefile
+	src/content/subscription/core-subscription/Makefile
 	src/content/subscription/images/Makefile
 	src/content/trusted-content/Makefile
 	src/content/trusted-content/images/Makefile

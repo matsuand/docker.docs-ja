@@ -119,30 +119,30 @@ In the following steps, you'll create the network first and then attach the MySQ
 
 @x
    {{< tabs >}}
-   {{< tab name="Mac / Linux" >}}
+   {{< tab name="Mac / Linux / Git Bash" >}}
 @y
    {{< tabs >}}
-   {{< tab name="Mac / Linux" >}}
+   {{< tab name="Mac / Linux / Git Bash" >}}
 @z
 
 % snip command...
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
+   {{< tab name="PowerShell" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
+   {{< tab name="PowerShell" >}}
 @z
 
 % snip command...
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows (Command Prompt)" >}}
+   {{< tab name="Command Prompt" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Windows (コマンドプロンプト)" >}}
+   {{< tab name="コマンドプロンプト" >}}
 @z
 
 % snip command...
@@ -369,11 +369,11 @@ You can now start your dev-ready container.
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
+   {{< tab name="PowerShell" >}}
    In Windows, run this command in PowerShell.
 @y
    {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
+   {{< tab name="PowerShell" >}}
    In Windows, run this command in PowerShell.
 @z
 
@@ -381,12 +381,22 @@ You can now start your dev-ready container.
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows (Command Prompt)" >}}
+   {{< tab name="Command Prompt" >}}
    In Windows, run this command in Command Prompt.
 @y
    {{< /tab >}}
-   {{< tab name="Windows (Command Prompt)" >}}
+   {{< tab name="Command Prompt" >}}
    In Windows, run this command in Command Prompt.
+@z
+
+% snip command...
+
+@x
+   {{< /tab >}}
+   {{< tab name="Git Bash" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="Git Bash" >}}
 @z
 
 % snip command...

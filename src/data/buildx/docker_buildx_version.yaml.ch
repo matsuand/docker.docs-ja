@@ -13,50 +13,16 @@ long: |-
     View version information
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker buildx version
-    github.com/docker/buildx v0.11.2 9872040b6626fb7d87ef7296fd5b832e8cc2ad17
-    ```
 usage: docker buildx version
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: builder
-      value_type: string
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    ```console
-    $ docker buildx version
-    github.com/docker/buildx v0.11.2 9872040b6626fb7d87ef7296fd5b832e8cc2ad17
-    ```
 usage: docker buildx version
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: builder
-      value_type: string
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+% builder???
+
+% snip directives...

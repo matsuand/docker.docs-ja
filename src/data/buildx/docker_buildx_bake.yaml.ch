@@ -43,47 +43,43 @@ long: |-
 
 @x
 usage: docker buildx bake [OPTIONS] [TARGET...]
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
 @y
 usage: docker buildx bake [OPTIONS] [TARGET...]
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
 @z
 
-@x option: file
+% options:
+
+@x file
       description: Build definition file
 @y
       description: ビルド定義ファイル。
 @z
 
-@x option: load
+@x load
       description: Shorthand for `--set=*.output=type=docker`
 @y
       description: "`--set=*.output=type=docker` の短縮形。"
 @z
 
-@x option: metadata-file
+@x metadata-file
       description: Write build result metadata to the file
 @y
       description: Write build result metadata to the file
 @z
 
-@x option: no-cache
+@x no-cache
       description: Do not use cache when building the image
 @y
       description: イメージビルド時にキャッシュを利用しません。
 @z
 
-@x option: print
+@x print
       description: Print the options without building
 @y
       description: Print the options without building
 @z
 
-@x option: progress
+@x progress
       description: |
         Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
 @y
@@ -91,37 +87,37 @@ options:
         Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
 @z
 
-@x option: provenance
+@x provenance
       description: Shorthand for `--set=*.attest=type=provenance`
 @y
       description: "`--set=*.attest=type=provenance` の短縮形。"
 @z
 
-@x option: pull
+@x pull
       description: Always attempt to pull all referenced images
 @y
       description: Always attempt to pull all referenced images
 @z
 
-@x option: push
+@x push
       description: Shorthand for `--set=*.output=type=registry`
 @y
       description: "`--set=*.output=type=registry` の短縮形。"
 @z
 
-@x option: sbom
+@x sbom
       description: Shorthand for `--set=*.attest=type=sbom`
 @y
       description: "`--set=*.attest=type=sbom` の短縮形。"
 @z
 
-@x option: set
+@x set
       description: Override target value (e.g., `targetpattern.key=value`)
 @y
       description: Override target value (e.g., `targetpattern.key=value`)
 @z
 
-@x inherited_options: option: builder
+@x builder
       description: Override the configured builder instance
 @y
       description: Override the configured builder instance

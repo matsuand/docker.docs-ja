@@ -6,12 +6,16 @@
 title: View billing history
 description: Discover how to view your billing history in Docker Hub
 keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration
+aliases:
+- /billing/history/
 ---
 @y
 ---
 title: View billing history
 description: Discover how to view your billing history in Docker Hub
 keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration
+aliases:
+- /billing/history/
 ---
 @z
 
@@ -56,9 +60,9 @@ Amounts are in USD.
 @z
 
 @x
-The information listed in the Bill to section is based on your billing information. Not all fields are required. The billing information includes the following:
+The information listed in the **Bill** to section is based on your billing information. Not all fields are required. The billing information includes the following:
 @y
-The information listed in the Bill to section is based on your billing information. Not all fields are required. The billing information includes the following:
+The information listed in the **Bill** to section is based on your billing information. Not all fields are required. The billing information includes the following:
 @z
 
 @x

@@ -4,24 +4,18 @@
 @x
 ---
 title: Share your extension
-description: Docker extension distribution
+description: Share your extension with a share link
 keywords: Docker, extensions, share
 ---
 @y
 ---
 title: Share your extension
-description: Docker extension distribution
+description: Share your extension with a share link
 keywords: Docker, extensions, share
 ---
 @z
 
 @x
-## Share your extension with others
-@y
-## Share your extension with others
-@z
-
-@x
 Once your extension image is accessible on Docker Hub, anyone with access to the image can install the extension.
 @y
 Once your extension image is accessible on Docker Hub, anyone with access to the image can install the extension.
@@ -40,15 +34,15 @@ However, this option doesn't provide a preview of the extension before it's inst
 @z
 
 @x
-## Share with URL
+## Createa a share URL
 @y
-## Share with URL
+## Createa a share URL
 @z
 
 @x
-Docker now allows you to share your extensions using a URL.
+Docker lets you share your extensions using a URL.
 @y
-Docker now allows you to share your extensions using a URL.
+Docker lets you share your extensions using a URL.
 @z
 
 @x
@@ -98,7 +92,11 @@ To generate this link you can either:
 @z
 
 @x
-Previews of the extension description or screenshots, for example, are created using [extension labels](labels.md).
+> **Note**
+>
+> Previews of the extension description or screenshots, for example, are created using [extension labels](labels.md).
 @y
-Previews of the extension description or screenshots, for example, are created using [extension labels](labels.md).
+> **Note**
+>
+> Previews of the extension description or screenshots, for example, are created using [extension labels](labels.md).
 @z

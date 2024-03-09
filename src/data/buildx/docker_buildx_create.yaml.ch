@@ -30,267 +30,93 @@ long: |-
 @x
     Builder instances are isolated environments where builds can be invoked. All
     Docker contexts also get the default builder instance.
-usage: docker buildx create [OPTIONS] [CONTEXT|ENDPOINT]
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: append
-      value_type: bool
-      default_value: "false"
-      description: Append a node to builder instead of changing it
-      details_url: '#append'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: bootstrap
-      value_type: bool
-      default_value: "false"
-      description: Boot builder after creation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: builder
-      value_type: string
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: buildkitd-flags
-      value_type: string
-      description: Flags for buildkitd daemon
-      details_url: '#buildkitd-flags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: config
-      value_type: string
-      description: BuildKit config file
-      details_url: '#config'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: driver
-      value_type: string
-      description: |
-        Driver to use (available: `docker-container`, `kubernetes`, `remote`)
-      details_url: '#driver'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: driver-opt
-      value_type: stringArray
-      default_value: '[]'
-      description: Options for the driver
-      details_url: '#driver-opt'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: leave
-      value_type: bool
-      default_value: "false"
-      description: Remove a node from builder instead of changing it
-      details_url: '#leave'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
-      description: Builder instance name
-      details_url: '#name'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: node
-      value_type: string
-      description: Create/modify node with given name
-      details_url: '#node'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: stringArray
-      default_value: '[]'
-      description: Fixed platforms for current node
-      details_url: '#platform'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: use
-      value_type: bool
-      default_value: "false"
-      description: Set the current builder instance
-      details_url: '#use'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Append a new node to an existing builder (--append) {#append}
 @y
     Builder instances are isolated environments where builds can be invoked. All
     Docker contexts also get the default builder instance.
+@z
+
+@x
 usage: docker buildx create [OPTIONS] [CONTEXT|ENDPOINT]
-pname: docker buildx
-plink: docker_buildx.yaml
-options:
-    - option: append
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker buildx create [OPTIONS] [CONTEXT|ENDPOINT]
+@z
+
+% options:
+
+@x append
       description: Append a node to builder instead of changing it
-      details_url: '#append'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: bootstrap
-      value_type: bool
-      default_value: "false"
+@y
+      description: Append a node to builder instead of changing it
+@z
+
+@x bootstrap
       description: Boot builder after creation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: builder
-      value_type: string
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: buildkitd-flags
-      value_type: string
-      description: Flags for buildkitd daemon
-      details_url: '#buildkitd-flags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: config
-      value_type: string
-      description: BuildKit config file
-      details_url: '#config'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: driver
-      value_type: string
+@y
+      description: Boot builder after creation
+@z
+
+% builder ?
+
+@x buildkitd-flags
+      description: BuildKit daemon flags
+@y
+      description: BuildKit daemon flags
+@z
+
+@x config
+      description: BuildKit daemon config file
+@y
+      description: BuildKit daemon config file
+@z
+
+@x driver
       description: |
         Driver to use (available: `docker-container`, `kubernetes`, `remote`)
-      details_url: '#driver'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: driver-opt
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: |
+        Driver to use (available: `docker-container`, `kubernetes`, `remote`)
+@z
+
+@x driver-opt
       description: Options for the driver
-      details_url: '#driver-opt'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: leave
-      value_type: bool
-      default_value: "false"
+@y
+      description: Options for the driver
+@z
+
+@x leave
       description: Remove a node from builder instead of changing it
-      details_url: '#leave'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
+@y
+      description: Remove a node from builder instead of changing it
+@z
+
+@x name
       description: Builder instance name
-      details_url: '#name'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: node
-      value_type: string
+@y
+      description: Builder instance name
+@z
+
+@x node
       description: Create/modify node with given name
-      details_url: '#node'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Create/modify node with given name
+@z
+
+@x platform
       description: Fixed platforms for current node
-      details_url: '#platform'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: use
-      value_type: bool
-      default_value: "false"
+@y
+      description: Fixed platforms for current node
+@z
+
+@x use
       description: Set the current builder instance
-      details_url: '#use'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Set the current builder instance
+@z
+
+@x
+examples: |-
+    ### Append a new node to an existing builder (--append) {#append}
+@y
 examples: |-
     ### Append a new node to an existing builder (--append) {#append}
 @z
@@ -305,86 +131,24 @@ examples: |-
     for a build based on the platforms it supports.
 @z
 
-@x
-    ```console
-    $ docker buildx create mycontext1
-    eager_beaver
-@y
-    ```console
-    $ docker buildx create mycontext1
-    eager_beaver
-@z
+% snip command...
 
 @x
-    $ docker buildx create --name eager_beaver --append mycontext2
-    eager_beaver
-    ```
+    ### Specify a configuration file for the BuildKit daemon (--buildkitd-config) {#buildkitd-config}
 @y
-    $ docker buildx create --name eager_beaver --append mycontext2
-    eager_beaver
-    ```
+    ### Specify a configuration file for the BuildKit daemon (--buildkitd-config) {#buildkitd-config}
 @z
 
-@x
-    ### Specify options for the buildkitd daemon (--buildkitd-flags) {#buildkitd-flags}
-@y
-    ### Specify options for the buildkitd daemon (--buildkitd-flags) {#buildkitd-flags}
-@z
+% snip code...
 
 @x
-    ```text
-    --buildkitd-flags FLAGS
-    ```
+    Specifies the configuration file for the BuildKit daemon to use. The
+    configuration can be overridden by [`--buildkitd-flags`](#buildkitd-flags).
+    See an [example BuildKit daemon configuration file](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md).
 @y
-    ```text
-    --buildkitd-flags FLAGS
-    ```
-@z
-
-@x
-    Adds flags when starting the buildkitd daemon. They take precedence over the
-    configuration file specified by [`--config`](#config). See `buildkitd --help`
-    for the available flags.
-@y
-    Adds flags when starting the buildkitd daemon. They take precedence over the
-    configuration file specified by [`--config`](#config). See `buildkitd --help`
-    for the available flags.
-@z
-
-@x
-    ```text
-    --buildkitd-flags '--debug --debugaddr 0.0.0.0:6666'
-    ```
-@y
-    ```text
-    --buildkitd-flags '--debug --debugaddr 0.0.0.0:6666'
-    ```
-@z
-
-@x
-    ### Specify a configuration file for the buildkitd daemon (--config) {#config}
-@y
-    ### Specify a configuration file for the buildkitd daemon (--config) {#config}
-@z
-
-@x
-    ```text
-    --config FILE
-    ```
-@y
-    ```text
-    --config FILE
-    ```
-@z
-
-@x
-    Specifies the configuration file for the buildkitd daemon to use. The configuration
-    can be overridden by [`--buildkitd-flags`](#buildkitd-flags).
-    See an [example buildkitd configuration file](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md).
-@y
-    Specifies the configuration file for the buildkitd daemon to use. The configuration
-    can be overridden by [`--buildkitd-flags`](#buildkitd-flags).
-    See an [example buildkitd configuration file](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md).
+    Specifies the configuration file for the BuildKit daemon to use. The
+    configuration can be overridden by [`--buildkitd-flags`](#buildkitd-flags).
+    See an [example BuildKit daemon configuration file](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md).
 @z
 
 @x
@@ -416,20 +180,64 @@ examples: |-
 @z
 
 @x
+    ### Specify options for the BuildKit daemon (--buildkitd-flags) {#buildkitd-flags}
+@y
+    ### Specify options for the BuildKit daemon (--buildkitd-flags) {#buildkitd-flags}
+@z
+
+% snip code...
+
+@x
+    Adds flags when starting the BuildKit daemon. They take precedence over the
+    configuration file specified by [`--buildkitd-config`](#buildkitd-config). See
+    `buildkitd --help` for the available flags.
+@y
+    Adds flags when starting the BuildKit daemon. They take precedence over the
+    configuration file specified by [`--buildkitd-config`](#buildkitd-config). See
+    `buildkitd --help` for the available flags.
+@z
+
+% snip code...
+
+@x
+    #### BuildKit daemon network mode
+@y
+    #### BuildKit daemon network mode
+@z
+
+@x
+    You can specify the network mode for the BuildKit daemon with either the
+    configuration file specified by [`--buildkitd-config`](#buildkitd-config) using the
+    `worker.oci.networkMode` option or `--oci-worker-net` flag here. The default
+    value is `auto` and can be one of `bridge`, `cni`, `host`:
+@y
+    You can specify the network mode for the BuildKit daemon with either the
+    configuration file specified by [`--buildkitd-config`](#buildkitd-config) using the
+    `worker.oci.networkMode` option or `--oci-worker-net` flag here. The default
+    value is `auto` and can be one of `bridge`, `cni`, `host`:
+@z
+
+% snip code...
+
+@x
+    > **Note**
+    >
+    > Network mode "bridge" is supported since BuildKit v0.13 and will become the
+    > default in next v0.14.
+@y
+    > **Note**
+    >
+    > Network mode "bridge" is supported since BuildKit v0.13 and will become the
+    > default in next v0.14.
+@z
+
+@x
     ### Set the builder driver to use (--driver) {#driver}
 @y
     ### Set the builder driver to use (--driver) {#driver}
 @z
 
-@x
-    ```text
-    --driver DRIVER
-    ```
-@y
-    ```text
-    --driver DRIVER
-    ```
-@z
+% snip code...
 
 @x
     Sets the builder driver to be used. A driver is a configuration of a BuildKit
@@ -454,7 +262,7 @@ examples: |-
 @x
     For more information about build drivers, see [here](/build/drivers/).
 @y
-    For more information about build drivers, see [here](__SUBDIR__/build/drivers/).
+    For more information about build drivers, see [here](/build/drivers/).
 @z
 
 @x
@@ -470,7 +278,7 @@ examples: |-
     not currently supported.
 @y
     Uses the builder that is built into the Docker daemon. With this driver,
-    the [`--load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) flag is implied by default on
+    the [`--load`](/reference/cli/docker/buildx/build/#load) flag is implied by default on
     `buildx build`. However, building multi-platform images or exporting cache is
     not currently supported.
 @z
@@ -495,7 +303,7 @@ examples: |-
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
+    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -519,7 +327,7 @@ examples: |-
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
+    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -530,12 +338,12 @@ examples: |-
 @z
 
 @x
-    Uses a remote instance of buildkitd over an arbitrary connection. With this
-    driver, you manually create and manage instances of buildkit yourself, and
+    Uses a remote instance of BuildKit daemon over an arbitrary connection. With
+    this driver, you manually create and manage instances of buildkit yourself, and
     configure buildx to point at it.
 @y
-    Uses a remote instance of buildkitd over an arbitrary connection. With this
-    driver, you manually create and manage instances of buildkit yourself, and
+    Uses a remote instance of BuildKit daemon over an arbitrary connection. With
+    this driver, you manually create and manage instances of buildkit yourself, and
     configure buildx to point at it.
 @z
 
@@ -545,7 +353,7 @@ examples: |-
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
+    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -555,15 +363,7 @@ examples: |-
     ### Set additional driver-specific options (--driver-opt) {#driver-opt}
 @z
 
-@x
-    ```text
-    --driver-opt OPTIONS
-    ```
-@y
-    ```text
-    --driver-opt OPTIONS
-    ```
-@z
+% snip code...
 
 @x
     Passes additional driver-specific options.
@@ -581,10 +381,10 @@ examples: |-
     * [`kubernetes` driver](/build/drivers/kubernetes/)
     * [`remote` driver](/build/drivers/remote/)
 @y
-    * [`docker` driver](__SUBDIR__/build/drivers/docker/)
-    * [`docker-container` driver](__SUBDIR__/build/drivers/docker-container/)
-    * [`kubernetes` driver](__SUBDIR__/build/drivers/kubernetes/)
-    * [`remote` driver](__SUBDIR__/build/drivers/remote/)
+    * [`docker` driver](/build/drivers/docker/)
+    * [`docker-container` driver](/build/drivers/docker-container/)
+    * [`kubernetes` driver](/build/drivers/kubernetes/)
+    * [`remote` driver](/build/drivers/remote/)
 @z
 
 @x
@@ -603,15 +403,7 @@ examples: |-
     is set with `--node`.
 @z
 
-@x
-    ```console
-    $ docker buildx create --name mybuilder --node mybuilder0 --leave
-    ```
-@y
-    ```console
-    $ docker buildx create --name mybuilder --node mybuilder0 --leave
-    ```
-@z
+% snip command...
 
 @x
     ### Specify the name of the builder (--name) {#name}
@@ -619,15 +411,7 @@ examples: |-
     ### Specify the name of the builder (--name) {#name}
 @z
 
-@x
-    ```text
-    --name NAME
-    ```
-@y
-    ```text
-    --name NAME
-    ```
-@z
+% snip code...
 
 @x
     The `--name` flag specifies the name of the builder to be created or modified.
@@ -643,15 +427,7 @@ examples: |-
     ### Specify the name of the node (--node) {#node}
 @z
 
-@x
-    ```text
-    --node NODE
-    ```
-@y
-    ```text
-    --node NODE
-    ```
-@z
+% snip code...
 
 @x
     The `--node` flag specifies the name of the node to be created or modified. If
@@ -669,15 +445,7 @@ examples: |-
     ### Set the platforms supported by the node (--platform) {#platform}
 @z
 
-@x
-    ```text
-    --platform PLATFORMS
-    ```
-@y
-    ```text
-    --platform PLATFORMS
-    ```
-@z
+% snip code...
 
 @x
     The `--platform` flag sets the platforms supported by the node. It expects a
@@ -693,17 +461,7 @@ examples: |-
     building for the same platform.
 @z
 
-@x
-    ```console
-    $ docker buildx create --platform linux/amd64
-    $ docker buildx create --platform linux/arm64,linux/arm/v7
-    ```
-@y
-    ```console
-    $ docker buildx create --platform linux/amd64
-    $ docker buildx create --platform linux/arm64,linux/arm/v7
-    ```
-@z
+% snip command...
 
 @x
     ### Automatically switch to the newly created builder (--use) {#use}
@@ -714,19 +472,9 @@ examples: |-
 @x
     The `--use` flag automatically switches the current builder to the newly created
     one. Equivalent to running `docker buildx use $(docker buildx create ...)`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     The `--use` flag automatically switches the current builder to the newly created
     one. Equivalent to running `docker buildx use $(docker buildx create ...)`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

@@ -4,35 +4,23 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Registry Access Management
 keywords: registry, access, management, permissions, Docker Business feature
 title: Registry Access Management
-aliases:
-- /desktop/hardened-desktop/registry-access-management/
-- /admin/organization/registry-access/
-- /docker-hub/registry-access-management/
----
 @y
----
 description: Registry Access Management
 keywords: registry, access, management, permissions, Docker Business feature
 title: Registry Access Management
-aliases:
-- /desktop/hardened-desktop/registry-access-management/
-- /admin/organization/registry-access/
-- /docker-hub/registry-access-management/
----
 @z
 
 @x
 > **Note**
 >
-> Registry Access Management is available to [Docker Business](../../subscription/details.md) customers only. 
+> Registry Access Management is available to [Docker Business](../../subscription/core-subscription/details.md) customers only. 
 @y
 > **Note**
 >
-> Registry Access Management is available to [Docker Business](../../subscription/details.md) customers only. 
+> Registry Access Management is available to [Docker Business](../../subscription/core-subscription/details.md) customers only. 
 @z
 
 @x

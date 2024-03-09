@@ -310,6 +310,18 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: watch
+      shorthand: w
+      value_type: bool
+      default_value: "false"
+      description: |
+        Watch source code and rebuild/refresh containers when files are updated.
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
 inherited_options:
     - option: dry-run
       value_type: bool
@@ -578,6 +590,18 @@ options:
       value_type: int
       default_value: "0"
       description: Maximum duration to wait for the project to be running|healthy
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: watch
+      shorthand: w
+      value_type: bool
+      default_value: "false"
+      description: |
+        Watch source code and rebuild/refresh containers when files are updated.
       deprecated: false
       hidden: false
       experimental: false

@@ -312,12 +312,14 @@ Each network also has a default subnet mask and gateway.
 @z
 
 @x
-When a container starts, it can only attach to a single network, using the `--network` flag.
-You can connect a running container to additional networks using the `docker network connect` command.
+You can connect a running container to multiple networks,
+either by passing the `--network` flag multiple times when creating the container,
+or using the `docker network connect` command for already running containers.
 In both cases, you can use the `--ip` or `--ip6` flags to specify the container's IP address on that particular network.
 @y
-When a container starts, it can only attach to a single network, using the `--network` flag.
-You can connect a running container to additional networks using the `docker network connect` command.
+You can connect a running container to multiple networks,
+either by passing the `--network` flag multiple times when creating the container,
+or using the `docker network connect` command for already running containers.
 In both cases, you can use the `--ip` or `--ip6` flags to specify the container's IP address on that particular network.
 @z
 

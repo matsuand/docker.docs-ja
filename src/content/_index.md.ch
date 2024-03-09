@@ -2,20 +2,20 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % grid 内の link: 冒頭のスラッシュ除去
+
 @x
----
 title: Home
 description: Home page for Docker's documentation
 keywords: Docker, documentation, manual, guide, reference, api, samples
 @y
----
 title: ホーム
 description: Home page for Docker's documentation
 keywords: Docker, documentation, manual, guide, reference, api, samples
 @z
 
+% grid:
+
 @x
-grid:
   - title: Docker Desktop
     icon: computer
     description: |
@@ -28,7 +28,6 @@ grid:
       - text: "Release notes"
         url: "/desktop/release-notes/"
 @y
-grid:
   - title: Docker Desktop
     icon: computer
     description: |
@@ -207,9 +206,9 @@ grid:
       - text: "Overview"
         url: "/subscription/"
       - text: "Subscriptions and features"
-        url: "/subscription/details/"
+        url: "/subscription/core-subscription/details/"
       - text: "Upgrade"
-        url: "/subscription/upgrade/"
+        url: "/subscription/core-subscription/upgrade/"
 @y
   - title: Subscription
     icon: card_membership
@@ -219,9 +218,9 @@ grid:
       - text: "概要"
         url: "subscription/"
       - text: "サブスクリプションと機能"
-        url: "subscription/details/"
+        url: "subscription/core-subscription/details/"
       - text: "アップグレード"
-        url: "subscription/upgrade/"
+        url: "subscription/core-subscription/upgrade/"
 @z
 
 @x
@@ -233,9 +232,9 @@ grid:
       - text: "Overview"
         url: "/billing/"
       - text: "Update payment method"
-        url: "/billing/payment-method/"
+        url: "/billing/core-billing/payment-method/"
       - text: "View billing history"
-        url: "/billing/history/"
+        url: "/billing/core-billing/history/"
 @y
   - title: Billing
     icon: payments
@@ -245,9 +244,9 @@ grid:
       - text: "概要"
         url: "billing/"
       - text: "支払い方法の更新"
-        url: "billing/payment-method/"
+        url: "billing/core-billing/payment-method/"
       - text: "購入履歴の参照"
-        url: "billing/history/"
+        url: "billing/core-billing/history/"
 @z
 
 @x
@@ -288,7 +287,6 @@ grid:
         url: "/security/for-admins/single-sign-on/"
       - text: "SCIM"
         url: "/security/for-admins/scim/"
----
 @y
   - title: Security
     icon: shield
@@ -301,5 +299,4 @@ grid:
         url: "security/for-admins/single-sign-on/"
       - text: "SCIM"
         url: "security/for-admins/scim/"
----
 @z

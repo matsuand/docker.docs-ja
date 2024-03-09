@@ -12,90 +12,6 @@ long: |-
     exist in the registry where the new manifest is created. If only one source is
     specified, create performs a carbon copy.
 usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
-pname: docker buildx imagetools
-plink: docker_buildx_imagetools.yaml
-options:
-    - option: annotation
-      value_type: stringArray
-      default_value: '[]'
-      description: Add annotation to the image
-      details_url: '#annotation'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: append
-      value_type: bool
-      default_value: "false"
-      description: Append to existing manifest
-      details_url: '#append'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Show final image instead of pushing
-      details_url: '#dry-run'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: stringArray
-      default_value: '[]'
-      description: Read source descriptor from file
-      details_url: '#file'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
-      description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tag
-      shorthand: t
-      value_type: stringArray
-      default_value: '[]'
-      description: Set reference for new image
-      details_url: '#tag'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Add annotations to an image (--annotation) {#annotation}
 @y
 command: docker buildx imagetools create
 short: Create a new image based on source images
@@ -105,88 +21,60 @@ long: |-
     exist in the registry where the new manifest is created. If only one source is
     specified, create performs a carbon copy.
 usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
-pname: docker buildx imagetools
-plink: docker_buildx_imagetools.yaml
-options:
-    - option: annotation
-      value_type: stringArray
-      default_value: '[]'
+@z
+
+% options:
+
+@x annotation
       description: Add annotation to the image
-      details_url: '#annotation'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: append
-      value_type: bool
-      default_value: "false"
+@y
+      description: Add annotation to the image
+@z
+
+@x append
       description: Append to existing manifest
-      details_url: '#append'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: Append to existing manifest
+@z
+
+@x dry-run
       description: Show final image instead of pushing
-      details_url: '#dry-run'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Show final image instead of pushing
+@z
+
+@x file
       description: Read source descriptor from file
-      details_url: '#file'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
+@y
+      description: Read source descriptor from file
+@z
+
+@x progress
       description: |
         Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tag
-      shorthand: t
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: |
+        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+@z
+
+@x tag
       description: Set reference for new image
-      details_url: '#tag'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
+@y
+      description: Set reference for new image
+@z
+
+% inherited_options:
+
+@x builder
       description: Override the configured builder instance
-      details_url: '#builder'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Override the configured builder instance
+@z
+
+@x
+examples: |-
+    ### Add annotations to an image (--annotation) {#annotation}
+@y
 examples: |-
     ### Add annotations to an image (--annotation) {#annotation}
 @z
@@ -207,21 +95,7 @@ examples: |-
     `org.opencontainers.image.authors` annotation on the image index.
 @z
 
-@x
-    ```console
-    $ docker buildx imagetools create \
-      --annotation "index:org.opencontainers.image.authors=dvdksn" \
-      --tag foo/bar:latest \
-      foo/bar:alpha foo/bar:beta foo/bar:gamma
-    ```
-@y
-    ```console
-    $ docker buildx imagetools create \
-      --annotation "index:org.opencontainers.image.authors=dvdksn" \
-      --tag foo/bar:latest \
-      foo/bar:alpha foo/bar:beta foo/bar:gamma
-    ```
-@z
+% snip command...
 
 @x
     > **Note**
@@ -297,15 +171,7 @@ examples: |-
     ### Read source descriptor from a file (-f, --file) {#file}
 @z
 
-@x
-    ```text
-    -f FILE or --file FILE
-    ```
-@y
-    ```text
-    -f FILE or --file FILE
-    ```
-@z
+% snip code...
 
 @x
     Reads source from files. A source can be a manifest digest, manifest reference,
@@ -323,17 +189,7 @@ examples: |-
     `os.features` you need to add them in the OCI descriptor object encoded in JSON.
 @z
 
-@x
-    ```console
-    $ docker buildx imagetools inspect --raw alpine | jq '.manifests[0] | .platform."os.version"="10.1"' > descr.json
-    $ docker buildx imagetools create -f descr.json myuser/image
-    ```
-@y
-    ```console
-    $ docker buildx imagetools inspect --raw alpine | jq '.manifests[0] | .platform."os.version"="10.1"' > descr.json
-    $ docker buildx imagetools create -f descr.json myuser/image
-    ```
-@z
+% snip command...
 
 @x
     The descriptor in the file is merged with existing descriptor in the registry if it exists.
@@ -353,15 +209,7 @@ examples: |-
     ### Set reference for new image  (-t, --tag) {#tag}
 @z
 
-@x
-    ```text
-    -t IMAGE or --tag IMAGE
-    ```
-@y
-    ```text
-    -t IMAGE or --tag IMAGE
-    ```
-@z
+% snip code...
 
 @x
     Use the `-t` or `--tag` flag to set the name of the image to be created.
@@ -369,26 +217,5 @@ examples: |-
     Use the `-t` or `--tag` flag to set the name of the image to be created.
 @z
 
-@x
-    ```console
-    $ docker buildx imagetools create --dry-run alpine@sha256:5c40b3c27b9f13c873fefb2139765c56ce97fd50230f1f2d5c91e55dec171907 sha256:c4ba6347b0e4258ce6a6de2401619316f982b7bcc529f73d2a410d0097730204
-    $ docker buildx imagetools create -t tonistiigi/myapp -f image1 -f image2
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker buildx imagetools create --dry-run alpine@sha256:5c40b3c27b9f13c873fefb2139765c56ce97fd50230f1f2d5c91e55dec171907 sha256:c4ba6347b0e4258ce6a6de2401619316f982b7bcc529f73d2a410d0097730204
-    $ docker buildx imagetools create -t tonistiigi/myapp -f image1 -f image2
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

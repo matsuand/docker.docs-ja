@@ -66,9 +66,9 @@ $ docker extension validate <name-of-your-extension>
 @z
 
 @x
-If your extension is valid, the message below displays:
+If your extension is valid, the following message displays:
 @y
-If your extension is valid, the message below displays:
+If your extension is valid, the following message displays:
 @z
 
 @x
@@ -82,9 +82,9 @@ The extension image "name-of-your-extension" is valid
 @z
 
 @x
-Before the image is built, it is also possible to validate only the metadata.json file:
+Before the image is built, it's also possible to validate only the `metadata.json` file:
 @y
-Before the image is built, it is also possible to validate only the metadata.json file:
+Before the image is built, it's also possible to validate only the `metadata.json` file:
 @z
 
 @x

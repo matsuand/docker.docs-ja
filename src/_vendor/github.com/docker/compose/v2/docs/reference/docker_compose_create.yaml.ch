@@ -61,6 +61,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: quiet-pull
+      value_type: bool
+      default_value: "false"
+      description: Pull without printing progress information
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: remove-orphans
       value_type: bool
       default_value: "false"
@@ -153,6 +163,16 @@ options:
       value_type: string
       default_value: policy
       description: Pull image before running ("always"|"missing"|"never"|"build")
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: quiet-pull
+      value_type: bool
+      default_value: "false"
+      description: Pull without printing progress information
       deprecated: false
       hidden: false
       experimental: false

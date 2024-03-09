@@ -2,8 +2,8 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
----
 description: Learn how to use Docker Compose to define and run multi-container applications
   with this detailed introduction to the tool.
 keywords: docker compose, docker-compose, docker compose command, docker compose files,
@@ -11,7 +11,6 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
   service
 title: Docker Compose overview
 @y
----
 description: Learn how to use Docker Compose to define and run multi-container applications
   with this detailed introduction to the tool.
 keywords: docker compose, docker-compose, docker compose command, docker compose files,
@@ -20,14 +19,14 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
 title: Docker Compose 概要
 @z
 
+% grid:
+
 @x
-grid:
 - title: Why use Compose?
   description: Understand Docker Compose's key benefits
   icon: feature_search
   link: /compose/intro/features-uses/
 @y
-grid:
 - title: Compose 利用はなぜ？
   description: Understand Docker Compose's key benefits
   icon: feature_search
@@ -91,7 +90,7 @@ grid:
   icon: polyline
   link: /compose/compose-file
 @y
-- title: Explore the Compose file reference
+- title: Compose ファイルリファレンスの確認
   description: Find information on defining services, networks, and volumes for a
     Docker application.
   icon: polyline
@@ -104,29 +103,13 @@ grid:
   icon: help
   link: /compose/faq
 @y
-- title: Browse common FAQs
+- title: 一般的な FAQ の確認
   description: Explore general FAQs and find out how to give feedback.
   icon: help
   link: __SUBDIR__/compose/faq
 @z
 
-@x
-aliases:
-- /compose/cli-command/
-- /compose/networking/swarm/
-- /compose/overview/
-- /compose/swarm/
-- /compose/completion/
----
-@y
-aliases:
-- /compose/cli-command/
-- /compose/networking/swarm/
-- /compose/overview/
-- /compose/swarm/
-- /compose/completion/
----
-@z
+% snip aliases...
 
 @x
 {{< include "compose-eol.md" >}}
@@ -171,8 +154,4 @@ Compose は本番環境、ステージング環境、開発環境において動
  * サービスに対する一括 (one-off) コマンドの実行。
 @z
 
-@x
-{{< grid >}}
-@y
-{{< grid >}}
-@z
+% snip grid...

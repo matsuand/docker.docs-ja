@@ -29,6 +29,7 @@ copyfiles = \
 	grid.html                  \
 	include.html               \
 	inline-image.html          \
+	introduced.html            \
 	release-date.html          \
 	sectionlinks.html          \
 	siblings.html              \

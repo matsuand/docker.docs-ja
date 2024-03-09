@@ -7,80 +7,116 @@
 description: Engine
 keywords: Engine
 title: Docker Engine overview
-grid:
+@y
+description: Engine
+keywords: Engine
+title: Docker Engine 概要
+@z
+
+% grid:
+
+@x
 - title: Install Docker Engine
   description: Learn how to install the open source Docker Engine for your distribution.
   icon: download
   link: /engine/install
+@y
+- title: Docker Engine のインストール
+  description: 手元のディストリビューションにオープンソースの Docker Engine をインストールする方法について学びます。
+  icon: download
+  link: __SUBDIR__/engine/install
+@z
+
+@x
 - title: Storage
   description: Use persistent data with Docker containers.
   icon: database
   link: /storage
+@y
+- title: ストレージ
+  description: Docker コンテナーにおけるデータを保存します。
+  icon: database
+  link: __SUBDIR__/storage
+@z
+
+@x
 - title: Networking
   description: Manage network connections between containers.
   icon: network_node
   link: /network
+@y
+- title: ネットワーク
+  description: コンテナー間でのネットワーク接続を管理します。
+  icon: network_node
+  link: __SUBDIR__/network
+@z
+
+@x
 - title: Container logs
   description: Learn how to view and read container logs.
   icon: feed
   link: /config/containers/logging/
+@y
+- title: コンテナーのログ
+  description: コンテナーのログを参照し読む方法について学びます。
+  icon: feed
+  link: __SUBDIR__/config/containers/logging/
+@z
+
+@x
 - title: Prune
   description: Tidy up unused resources.
   icon: cut
   link: /config/pruning
+@y
+- title: prune （取り除き）
+  description: 未使用のリソースを取り除きます。
+  icon: cut
+  link: __SUBDIR__/config/pruning
+@z
+
+@x
 - title: Configure the daemon
   description: Delve into the configuration options of the Docker daemon.
   icon: tune
   link: /config/daemon
+@y
+- title: デーモンを設定します。
+  description: Docker デーモンの設定オプションについて学びます。
+  icon: tune
+  link: __SUBDIR__/config/daemon
+@z
+
+@x
 - title: Rootless mode
   description: Run Docker without root privileges.
   icon: security
   link: /engine/security/rootless
+@y
+- title: rootless モード
+  description: root 権限なしに Docker を実行します。
+  icon: security
+  link: __SUBDIR__/engine/security/rootless
+@z
+
+@x
 - title: Deprecated features
   description: Find out what features of Docker Engine you should stop using.
   icon: folder_delete
   link: /engine/deprecated/
+@y
+- title: 非推奨の機能
+  description: Docker Engine における機能のうち、利用を中止すべきものについて検索します。
+  icon: folder_delete
+  link: __SUBDIR__/engine/deprecated/
+@z
+
+@x
 - title: Release notes
   description: Read the release notes for the latest version.
   icon: note_add
   link: /engine/release-notes
 @y
-description: Engine
-keywords: Engine
-title: Docker Engine 概要
-grid:
-- title: Docker Engine のインストール
-  description: 手元のディストリビューションにオープンソースの Docker Engine をインストールする方法について学びます。
-  icon: download
-  link: __SUBDIR__/engine/install
-- title: ストレージ
-  description: Docker コンテナーにおけるデータを保存します。
-  icon: database
-  link: __SUBDIR__/storage
-- title: ネットワーク
-  description: コンテナー間でのネットワーク接続を管理します。
-  icon: network_node
-  link: __SUBDIR__/network
-- title: コンテナーのログ
-  description: コンテナーのログを参照し読む方法について学びます。
-  icon: feed
-  link: __SUBDIR__/config/containers/logging/
-- title: prune （取り除き）
-  description: 未使用のリソースを取り除きます。
-  icon: cut
-  link: __SUBDIR__/config/pruning
-- title: デーモンを設定します。
-  description: Docker デーモンの設定オプションについて学びます。
-  icon: tune
-  link: __SUBDIR__/config/daemon
-- title: rootless モード
-  description: root 権限なしに Docker を実行します。
-  icon: security
-  link: __SUBDIR__/engine/security/rootless
-- title: 非推奨の機能
-  description: Docker Engine における機能のうち、利用を中止すべきものについて検索します。
-  icon: folder_delete
-  link: __SUBDIR__/engine/deprecated/
 - title: リリースノート
   description: 最新版に対するリリースノートを確認します。
   icon: note_add
@@ -128,11 +164,7 @@ For more details, see
 詳細は [Docker アーキテクチャー](../get-started/overview.md#docker-architecture) を参照してください。
 @z
 
-@x
-{{< grid >}}
-@y
-{{< grid >}}
-@z
+% {{< grid >}}
 
 @x
 ## Licensing
@@ -152,5 +184,5 @@ Docker Engine は ライセンスとして Apache License, Version 2.0 を採用
 @x
 However, for commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
 @y
-However, for commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
+ただし Docker Desktop 内の Docker Engine を大規模エンタープライズ（従業員 250名以上、または年間収益 1 千万 US ドル以上）向けの商用利用に対しては [有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
 @z

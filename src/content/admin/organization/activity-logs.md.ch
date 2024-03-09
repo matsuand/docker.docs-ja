@@ -52,11 +52,11 @@ Owners can also see the activity logs for their repository if the repository is 
 @x
 > **Note**
 >
-> Activity logs requires a [Docker Team or Business subscription](../../subscription/_index.md).
+> Activity logs requires a [Docker Team or Business subscription](../../../subscription/_index.md).
 @y
 > **Note**
 >
-> Activity logs requires a [Docker Team or Business subscription](../../subscription/_index.md).
+> Activity logs requires a [Docker Team or Business subscription](../../../subscription/_index.md).
 @z
 
 @x

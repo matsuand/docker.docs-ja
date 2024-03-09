@@ -4,18 +4,20 @@
 @x
 ---
 description: Learn how to add seats to an existing subscription
-keywords: Docker, Docker Hub, subscription, update, add, seats, pricing
+keywords: Docker, Docker Hub, subscription, update, add, seats, pricing, docker core
 title: Add seats to your subscription
 aliases:
 - /docker-hub/billing/add-seats/
+- /subscription/add-seats/
 ---
 @y
 ---
 description: Learn how to add seats to an existing subscription
-keywords: Docker, Docker Hub, subscription, update, add, seats, pricing
+keywords: Docker, Docker Hub, subscription, update, add, seats, pricing, docker core
 title: Add seats to your subscription
 aliases:
 - /docker-hub/billing/add-seats/
+- /subscription/add-seats/
 ---
 @z
 
@@ -78,9 +80,9 @@ When you add seats to your subscription in the middle of your billing cycle, you
 @z
 
 @x
-6. Navigate to the **Members** tab to add new members. For more information, see [Add a member to a team](../admin/organization/members.md#add-a-member-to-a-team).
+6. Navigate to the **Members** tab to add new members. For more information, see [Add a member to a team](../../admin/organization/members.md#add-a-member-to-a-team).
 @y
-6. Navigate to the **Members** tab to add new members. For more information, see [Add a member to a team](../admin/organization/members.md#add-a-member-to-a-team).
+6. Navigate to the **Members** tab to add new members. For more information, see [Add a member to a team](../../admin/organization/members.md#add-a-member-to-a-team).
 @z
 
 @x

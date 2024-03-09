@@ -132,9 +132,9 @@ There is no limit to the number of organizations you can have under a company la
 @z
 
 @x
-When you have a [self-serve](../../subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
+When you have a [self-serve](../../subscription/core-subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
 @y
-When you have a [self-serve](../../subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
+When you have a [self-serve](../../subscription/core-subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
 @z
 
 @x

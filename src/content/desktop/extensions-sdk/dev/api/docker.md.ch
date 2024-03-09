@@ -154,10 +154,10 @@ The result contains both the standard output and the standard error of the execu
 @z
 
 @x
-In this example, the docker command output is a json output.
+In this example, the command output is JSON.
 For convenience, the command result object also has methods to easily parse it:
 @y
-In this example, the docker command output is a json output.
+In this example, the command output is JSON.
 For convenience, the command result object also has methods to easily parse it:
 @z
 
@@ -178,10 +178,10 @@ For convenience, the command result object also has methods to easily parse it:
 @z
 
 @x
-The command above streams the output as a result of the execution of a docker command.
+The command above streams the output as a result of the execution of a Docker command.
 This is useful if you need to get the output as a stream or the output of the command is too long.
 @y
-The command above streams the output as a result of the execution of a docker command.
+The command above streams the output as a result of the execution of a Docker command.
 This is useful if you need to get the output as a stream or the output of the command is too long.
 @z
 

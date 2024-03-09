@@ -1,14 +1,13 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
+SUBDIRS = core-billing
+
 bases = \
 	_index.md         \
 	build-billing.md  \
-	cycle.md          \
-	details.md        \
 	faqs.md           \
-	history.md        \
-	payment-method.md \
 	scout-billing.md
 
 include $(top_srcdir)/build-aux/common.mk

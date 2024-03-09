@@ -82,7 +82,7 @@ description:
   - title: ダッシュボード
     link: __SUBDIR__/scout/dashboard/
     description: |
-      The web interface for Docker Scout.
+      Docker Scout のウェブインターフェースです。
     icon: dashboard
 @z
 
@@ -111,7 +111,7 @@ description:
   - title: アップグレード
     link: __SUBDIR__/billing/scout-billing/
     description: |
-      The free plan includes up to 3 repositories. Upgrade for more.
+      無償プランは 3 リポジトリまで。アップグレードによりさらに増やせます。
     icon: upgrade
 ---
 @z

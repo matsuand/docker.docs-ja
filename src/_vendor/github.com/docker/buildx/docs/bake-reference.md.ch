@@ -67,15 +67,7 @@ You can specify the file location explicitly using the `--file` flag:
 `--file` フラグを使えば、ファイルの場所を明示的に指定することができます。
 @z
 
-@x
-```console
-$ docker buildx bake --file ../docker/bake.hcl --print
-```
-@y
-```console
-$ docker buildx bake --file ../docker/bake.hcl --print
-```
-@z
+% snip command...
 
 @x
 If you don't specify a file explicitly, Bake searches for the file in the
@@ -131,73 +123,7 @@ For example, if `compose.yaml` and `docker-bake.hcl` both define the `tags`
 attribute, the `docker-bake.hcl` is used.
 @z
 
-@x
-```console
-$ cat compose.yaml
-services:
-  webapp:
-    build:
-      context: .
-      tags:
-        - bar
-$ cat docker-bake.hcl
-target "webapp" {
-  tags = ["foo"]
-}
-$ docker buildx bake --print webapp
-{
-  "group": {
-    "default": {
-      "targets": [
-        "webapp"
-      ]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": [
-        "foo"
-      ]
-    }
-  }
-}
-```
-@y
-```console
-$ cat compose.yaml
-services:
-  webapp:
-    build:
-      context: .
-      tags:
-        - bar
-$ cat docker-bake.hcl
-target "webapp" {
-  tags = ["foo"]
-}
-$ docker buildx bake --print webapp
-{
-  "group": {
-    "default": {
-      "targets": [
-        "webapp"
-      ]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": [
-        "foo"
-      ]
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 All other attributes are merged. For example, if `compose.yaml` and
@@ -209,85 +135,7 @@ All other attributes are merged. For example, if `compose.yaml` and
 entries are included. Duplicate entries for the same label are overridden.
 @z
 
-@x
-```console
-$ cat compose.yaml
-services:
-  webapp:
-    build:
-      context: .
-      labels: 
-        com.example.foo: "foo"
-        com.example.name: "Alice"
-$ cat docker-bake.hcl
-target "webapp" {
-  labels = {
-    "com.example.bar" = "bar"
-    "com.example.name" = "Bob"
-  }
-}
-$ docker buildx bake --print webapp
-{
-  "group": {
-    "default": {
-      "targets": [
-        "webapp"
-      ]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "labels": {
-        "com.example.foo": "foo",
-        "com.example.bar": "bar",
-        "com.example.name": "Bob"
-      }
-    }
-  }
-}
-```
-@y
-```console
-$ cat compose.yaml
-services:
-  webapp:
-    build:
-      context: .
-      labels: 
-        com.example.foo: "foo"
-        com.example.name: "Alice"
-$ cat docker-bake.hcl
-target "webapp" {
-  labels = {
-    "com.example.bar" = "bar"
-    "com.example.name" = "Bob"
-  }
-}
-$ docker buildx bake --print webapp
-{
-  "group": {
-    "default": {
-      "targets": [
-        "webapp"
-      ]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "labels": {
-        "com.example.foo": "foo",
-        "com.example.bar": "bar",
-        "com.example.name": "Bob"
-      }
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 ## Syntax
@@ -329,49 +177,7 @@ The following snippet shows a JSON representation of a simple Bake file.
 This Bake file defines three properties: a variable, a group, and a target.
 @z
 
-@x
-```json
-{
-  "variable": {
-    "TAG": {
-      "default": "latest"
-    }
-  },
-  "group": {
-    "default": {
-      "targets": ["webapp"]
-    }
-  },
-  "target": {
-    "webapp": {
-      "dockerfile": "Dockerfile",
-      "tags": ["docker.io/username/webapp:${TAG}"]
-    }
-  }
-}
-```
-@y
-```json
-{
-  "variable": {
-    "TAG": {
-      "default": "latest"
-    }
-  },
-  "group": {
-    "default": {
-      "targets": ["webapp"]
-    }
-  },
-  "target": {
-    "webapp": {
-      "dockerfile": "Dockerfile",
-      "tags": ["docker.io/username/webapp:${TAG}"]
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 In the JSON representation of a Bake file, properties are objects,
@@ -387,41 +193,7 @@ The following example shows the same Bake file in the HCL format:
 The following example shows the same Bake file in the HCL format:
 @z
 
-@x
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@y
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@z
-
-@x
-group "default" {
-  targets = ["webapp"]
-}
-@y
-group "default" {
-  targets = ["webapp"]
-}
-@z
-
-@x
-target "webapp" {
-  dockerfile = "Dockerfile"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@y
-target "webapp" {
-  dockerfile = "Dockerfile"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@z
+% snip code...
 
 @x
 HCL is the preferred format for Bake files.
@@ -453,21 +225,7 @@ A target reflects a single `docker build` invocation.
 Consider the following build command:
 @z
 
-@x
-```console
-$ docker build \
-  --file=Dockerfile.webapp \
-  --tag=docker.io/username/webapp:latest \
-  https://github.com/username/webapp
-```
-@y
-```console
-$ docker build \
-  --file=Dockerfile.webapp \
-  --tag=docker.io/username/webapp:latest \
-  https://github.com/username/webapp
-```
-@z
+% snip command...
 
 @x
 You can express this command in a Bake file as follows:
@@ -475,23 +233,7 @@ You can express this command in a Bake file as follows:
 You can express this command in a Bake file as follows:
 @z
 
-@x
-```hcl
-target "webapp" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-```
-@y
-```hcl
-target "webapp" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-```
-@z
+% snip code...
 
 @x
 The following table shows the complete list of attributes that you can assign to a target:
@@ -501,7 +243,7 @@ The following table shows the complete list of attributes that you can assign to
 
 @x
 | Name                                            | Type    | Description                                                          |
-| ----------------------------------------------- | ------- | -------------------------------------------------------------------- |
+|-------------------------------------------------|---------|----------------------------------------------------------------------|
 | [`args`](#targetargs)                           | Map     | Build arguments                                                      |
 | [`annotations`](#targetannotations)             | List    | Exporter annotations                                                 |
 | [`attest`](#targetattest)                       | List    | Build attestations                                                   |
@@ -521,12 +263,14 @@ The following table shows the complete list of attributes that you can assign to
 | [`platforms`](#targetplatforms)                 | List    | Target platforms                                                     |
 | [`pull`](#targetpull)                           | Boolean | Always pull images                                                   |
 | [`secret`](#targetsecret)                       | List    | Secrets to expose to the build                                       |
+| [`shm-size`](#targetshm-size)                   | List    | Size of `/dev/shm`                                                   |
 | [`ssh`](#targetssh)                             | List    | SSH agent sockets or keys to expose to the build                     |
 | [`tags`](#targettags)                           | List    | Image names and tags                                                 |
 | [`target`](#targettarget)                       | String  | Target build stage                                                   |
+| [`ulimits`](#targetulimits)                     | List    | Ulimit options                                                       |
 @y
 | Name                                            | Type    | Description                                                          |
-| ----------------------------------------------- | ------- | -------------------------------------------------------------------- |
+|-------------------------------------------------|---------|----------------------------------------------------------------------|
 | [`args`](#targetargs)                           | Map     | Build arguments                                                      |
 | [`annotations`](#targetannotations)             | List    | Exporter annotations                                                 |
 | [`attest`](#targetattest)                       | List    | Build attestations                                                   |
@@ -546,9 +290,11 @@ The following table shows the complete list of attributes that you can assign to
 | [`platforms`](#targetplatforms)                 | List    | Target platforms                                                     |
 | [`pull`](#targetpull)                           | Boolean | Always pull images                                                   |
 | [`secret`](#targetsecret)                       | List    | Secrets to expose to the build                                       |
+| [`shm-size`](#targetshm-size)                   | List    | Size of `/dev/shm`                                                   |
 | [`ssh`](#targetssh)                             | List    | SSH agent sockets or keys to expose to the build                     |
 | [`tags`](#targettags)                           | List    | Image names and tags                                                 |
 | [`target`](#targettarget)                       | String  | Target build stage                                                   |
+| [`ulimits`](#targetulimits)                     | List    | Ulimit options                                                       |
 @z
 
 @x
@@ -565,23 +311,7 @@ Use the `args` attribute to define build arguments for the target.
 This has the same effect as passing a [`--build-arg`][build-arg] flag to the build command.
 @z
 
-@x
-```hcl
-target "default" {
-  args = {
-    VERSION = "0.0.0+unknown"
-  }
-}
-```
-@y
-```hcl
-target "default" {
-  args = {
-    VERSION = "0.0.0+unknown"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 You can set `args` attributes to use `null` values.
@@ -591,49 +321,7 @@ You can set `args` attributes to use `null` values.
 Doing so forces the `target` to use the `ARG` value specified in the Dockerfile.
 @z
 
-@x
-```hcl
-variable "GO_VERSION" {
-  default = "1.20.3"
-}
-@y
-```hcl
-variable "GO_VERSION" {
-  default = "1.20.3"
-}
-@z
-
-@x
-target "webapp" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp"]
-}
-@y
-target "webapp" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp"]
-}
-@z
-
-@x
-target "db" {
-  args = {
-    GO_VERSION = null
-  }
-  dockerfile = "db.Dockerfile"
-  tags = ["docker.io/username/db"]
-}
-```
-@y
-target "db" {
-  args = {
-    GO_VERSION = null
-  }
-  dockerfile = "db.Dockerfile"
-  tags = ["docker.io/username/db"]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.annotations`
@@ -649,21 +337,7 @@ The `annotations` attribute lets you add annotations to images built with bake.
 The key takes a list of annotations, in the format of `KEY=VALUE`.
 @z
 
-@x
-```hcl
-target "default" {
-  output = ["type=image,name=foo"]
-  annotations = ["org.opencontainers.image.authors=dvdksn"]
-}
-```
-@y
-```hcl
-target "default" {
-  output = ["type=image,name=foo"]
-  annotations = ["org.opencontainers.image.authors=dvdksn"]
-}
-```
-@z
+% snip code...
 
 @x
 is the same as
@@ -671,19 +345,7 @@ is the same as
 is the same as
 @z
 
-@x
-```hcl
-target "default" {
-  output = ["type=image,name=foo,annotation.org.opencontainers.image.authors=dvdksn"]
-}
-```
-@y
-```hcl
-target "default" {
-  output = ["type=image,name=foo,annotation.org.opencontainers.image.authors=dvdksn"]
-}
-```
-@z
+% snip code...
 
 @x
 By default, the annotation is added to image manifests. You can configure the
@@ -697,21 +359,7 @@ comma-separated list of all the levels that you want to annotate. The following
 example adds annotations to both the image index and manifests.
 @z
 
-@x
-```hcl
-target "default" {
-  output = ["type=image,name=foo"]
-  annotations = ["index,manifest:org.opencontainers.image.authors=dvdksn"]
-}
-```
-@y
-```hcl
-target "default" {
-  output = ["type=image,name=foo"]
-  annotations = ["index,manifest:org.opencontainers.image.authors=dvdksn"]
-}
-```
-@z
+% snip code...
 
 @x
 Read about the supported levels in
@@ -735,25 +383,7 @@ The `attest` attribute lets you apply [build attestations][attestations] to the 
 This attribute accepts the long-form CSV version of attestation parameters.
 @z
 
-@x
-```hcl
-target "default" {
-  attest = [
-    "type=provenance,mode=min",
-    "type=sbom"
-  ]
-}
-```
-@y
-```hcl
-target "default" {
-  attest = [
-    "type=provenance,mode=min",
-    "type=sbom"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.cache-from`
@@ -775,25 +405,7 @@ and it works the same way as the [`--cache-from`][cache-from] flag.
 This takes a list value, so you can specify multiple cache sources.
 @z
 
-@x
-```hcl
-target "app" {
-  cache-from = [
-    "type=s3,region=eu-west-1,bucket=mybucket",
-    "user/repo:cache",
-  ]
-}
-```
-@y
-```hcl
-target "app" {
-  cache-from = [
-    "type=s3,region=eu-west-1,bucket=mybucket",
-    "user/repo:cache",
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.cache-to`
@@ -815,25 +427,7 @@ and it works the same way as the [`--cache-to` flag][cache-to].
 This takes a list value, so you can specify multiple cache export targets.
 @z
 
-@x
-```hcl
-target "app" {
-  cache-to = [
-    "type=s3,region=eu-west-1,bucket=mybucket",
-    "type=inline"
-  ]
-}
-```
-@y
-```hcl
-target "app" {
-  cache-to = [
-    "type=s3,region=eu-west-1,bucket=mybucket",
-    "type=inline"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.context`
@@ -853,19 +447,7 @@ This is the same as the [build context][context] positional argument
 that you pass to the build command.
 @z
 
-@x
-```hcl
-target "app" {
-  context = "./src/www"
-}
-```
-@y
-```hcl
-target "app" {
-  context = "./src/www"
-}
-```
-@z
+% snip code...
 
 @x
 This resolves to the current working directory (`"."`) by default.
@@ -873,33 +455,7 @@ This resolves to the current working directory (`"."`) by default.
 This resolves to the current working directory (`"."`) by default.
 @z
 
-@x
-```console
-$ docker buildx bake --print -f - <<< 'target "default" {}'
-[+] Building 0.0s (0/0)
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile"
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print -f - <<< 'target "default" {}'
-[+] Building 0.0s (0/0)
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile"
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 ### `target.contexts`
@@ -953,39 +509,8 @@ a context based on the pattern of the context value.
 #### Pin an image version
 @z
 
-@x
-```hcl
-# docker-bake.hcl
-target "app" {
-    contexts = {
-        alpine = "docker-image://alpine:3.13"
-    }
-}
-```
-@y
-```hcl
-# docker-bake.hcl
-target "app" {
-    contexts = {
-        alpine = "docker-image://alpine:3.13"
-    }
-}
-```
-@z
-
-@x
-```Dockerfile
-# Dockerfile
-FROM alpine
-RUN echo "Hello world"
-```
-@y
-```Dockerfile
-# Dockerfile
-FROM alpine
-RUN echo "Hello world"
-```
-@z
+% snip code...
+% snip code...
 
 @x
 #### Use a local directory
@@ -993,41 +518,8 @@ RUN echo "Hello world"
 #### Use a local directory
 @z
 
-@x
-```hcl
-# docker-bake.hcl
-target "app" {
-    contexts = {
-        src = "../path/to/source"
-    }
-}
-```
-@y
-```hcl
-# docker-bake.hcl
-target "app" {
-    contexts = {
-        src = "../path/to/source"
-    }
-}
-```
-@z
-
-@x
-```Dockerfile
-# Dockerfile
-FROM scratch AS src
-FROM golang
-COPY --from=src . .
-```
-@y
-```Dockerfile
-# Dockerfile
-FROM scratch AS src
-FROM golang
-COPY --from=src . .
-```
-@z
+% snip code...
+% snip code...
 
 @x
 #### Use another target as base
@@ -1049,45 +541,8 @@ COPY --from=src . .
 > merged into one.
 @z
 
-@x
-```hcl
-# docker-bake.hcl
-target "base" {
-    dockerfile = "baseapp.Dockerfile"
-}
-target "app" {
-    contexts = {
-        baseapp = "target:base"
-    }
-}
-```
-@y
-```hcl
-# docker-bake.hcl
-target "base" {
-    dockerfile = "baseapp.Dockerfile"
-}
-target "app" {
-    contexts = {
-        baseapp = "target:base"
-    }
-}
-```
-@z
-
-@x
-```Dockerfile
-# Dockerfile
-FROM baseapp
-RUN echo "Hello world"
-```
-@y
-```Dockerfile
-# Dockerfile
-FROM baseapp
-RUN echo "Hello world"
-```
-@z
+% snip code...
+% snip code...
 
 @x
 ### `target.dockerfile-inline`
@@ -1101,19 +556,7 @@ Uses the string value as an inline Dockerfile for the build target.
 Uses the string value as an inline Dockerfile for the build target.
 @z
 
-@x
-```hcl
-target "default" {
-  dockerfile-inline = "FROM alpine\nENTRYPOINT [\"echo\", \"hello\"]"
-}
-```
-@y
-```hcl
-target "default" {
-  dockerfile-inline = "FROM alpine\nENTRYPOINT [\"echo\", \"hello\"]"
-}
-```
-@z
+% snip code...
 
 @x
 The `dockerfile-inline` takes precedence over the `dockerfile` attribute.
@@ -1137,19 +580,7 @@ Name of the Dockerfile to use for the build.
 This is the same as the [`--file` flag][file] for the `docker build` command.
 @z
 
-@x
-```hcl
-target "default" {
-  dockerfile = "./src/www/Dockerfile"
-}
-```
-@y
-```hcl
-target "default" {
-  dockerfile = "./src/www/Dockerfile"
-}
-```
-@z
+% snip code...
 
 @x
 Resolves to `"Dockerfile"` by default.
@@ -1157,33 +588,7 @@ Resolves to `"Dockerfile"` by default.
 Resolves to `"Dockerfile"` by default.
 @z
 
-@x
-```console
-$ docker buildx bake --print -f - <<< 'target "default" {}'
-[+] Building 0.0s (0/0)
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile"
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print -f - <<< 'target "default" {}'
-[+] Building 0.0s (0/0)
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile"
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 ### `target.inherits`
@@ -1209,41 +614,7 @@ the `app-dev` target specifies an image name and tag.
 The `app-release` target uses `inherits` to reuse the tag name.
 @z
 
-@x
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@y
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@z
-
-@x
-target "app-dev" {
-  tags = ["docker.io/username/myapp:${TAG}"]
-}
-@y
-target "app-dev" {
-  tags = ["docker.io/username/myapp:${TAG}"]
-}
-@z
-
-@x
-target "app-release" {
-  inherits = ["app-dev"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@y
-target "app-release" {
-  inherits = ["app-dev"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@z
+% snip code...
 
 @x
 The `inherits` attribute is a list,
@@ -1257,63 +628,7 @@ In the following example, the `app-release` target reuses attributes
 from both the `app-dev` and `_release` targets.
 @z
 
-@x
-```hcl
-target "app-dev" {
-  args = {
-    GO_VERSION = "1.20"
-    BUILDX_EXPERIMENTAL = 1
-  }
-  tags = ["docker.io/username/myapp"]
-  dockerfile = "app.Dockerfile"
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-  }
-}
-@y
-```hcl
-target "app-dev" {
-  args = {
-    GO_VERSION = "1.20"
-    BUILDX_EXPERIMENTAL = 1
-  }
-  tags = ["docker.io/username/myapp"]
-  dockerfile = "app.Dockerfile"
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-  }
-}
-@z
-
-@x
-target "_release" {
-  args = {
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
-    BUILDX_EXPERIMENTAL = 0
-  }
-}
-@y
-target "_release" {
-  args = {
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
-    BUILDX_EXPERIMENTAL = 0
-  }
-}
-@z
-
-@x
-target "app-release" {
-  inherits = ["app-dev", "_release"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@y
-target "app-release" {
-  inherits = ["app-dev", "_release"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@z
+% snip code...
 
 @x
 When inheriting attributes from multiple targets and there's a conflict,
@@ -1327,77 +642,7 @@ The previous example defines the `BUILDX_EXPERIMENTAL` argument twice for the `a
 It resolves to `0` because the `_release` target appears last in the inheritance chain:
 @z
 
-@x
-```console
-$ docker buildx bake --print app-release
-[+] Building 0.0s (0/0)
-{
-  "group": {
-    "default": {
-      "targets": [
-        "app-release"
-      ]
-    }
-  },
-  "target": {
-    "app-release": {
-      "context": ".",
-      "dockerfile": "app.Dockerfile",
-      "args": {
-        "BUILDKIT_CONTEXT_KEEP_GIT_DIR": "1",
-        "BUILDX_EXPERIMENTAL": "0",
-        "GO_VERSION": "1.20"
-      },
-      "labels": {
-        "org.opencontainers.image.source": "https://github.com/username/myapp"
-      },
-      "tags": [
-        "docker.io/username/myapp"
-      ],
-      "platforms": [
-        "linux/amd64",
-        "linux/arm64"
-      ]
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print app-release
-[+] Building 0.0s (0/0)
-{
-  "group": {
-    "default": {
-      "targets": [
-        "app-release"
-      ]
-    }
-  },
-  "target": {
-    "app-release": {
-      "context": ".",
-      "dockerfile": "app.Dockerfile",
-      "args": {
-        "BUILDKIT_CONTEXT_KEEP_GIT_DIR": "1",
-        "BUILDX_EXPERIMENTAL": "0",
-        "GO_VERSION": "1.20"
-      },
-      "labels": {
-        "org.opencontainers.image.source": "https://github.com/username/myapp"
-      },
-      "tags": [
-        "docker.io/username/myapp"
-      ],
-      "platforms": [
-        "linux/amd64",
-        "linux/arm64"
-      ]
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 ### `target.labels`
@@ -1413,25 +658,7 @@ Assigns image labels to the build.
 This is the same as the `--label` flag for `docker build`.
 @z
 
-@x
-```hcl
-target "default" {
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-    "com.docker.image.source.entrypoint" = "Dockerfile"
-  }
-}
-```
-@y
-```hcl
-target "default" {
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-    "com.docker.image.source.entrypoint" = "Dockerfile"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 It's possible to use a `null` value for labels.
@@ -1483,93 +710,8 @@ The following example resolves the `app` target to `app-foo` and `app-bar`.
 It also uses the matrix value to define the [target build stage](#targettarget).
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${tgt}"
-  matrix = {
-    tgt = ["foo", "bar"]
-  }
-  target = tgt
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${tgt}"
-  matrix = {
-    tgt = ["foo", "bar"]
-  }
-  target = tgt
-}
-```
-@z
-
-@x
-```console
-$ docker buildx bake --print app
-[+] Building 0.0s (0/0)
-{
-  "group": {
-    "app": {
-      "targets": [
-        "app-foo",
-        "app-bar"
-      ]
-    },
-    "default": {
-      "targets": [
-        "app"
-      ]
-    }
-  },
-  "target": {
-    "app-bar": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "bar"
-    },
-    "app-foo": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "foo"
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print app
-[+] Building 0.0s (0/0)
-{
-  "group": {
-    "app": {
-      "targets": [
-        "app-foo",
-        "app-bar"
-      ]
-    },
-    "default": {
-      "targets": [
-        "app"
-      ]
-    }
-  },
-  "target": {
-    "app-bar": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "bar"
-    },
-    "app-foo": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "foo"
-    }
-  }
-}
-```
-@z
+% snip code...
+% snip command...
 
 @x
 #### Multiple axes
@@ -1603,35 +745,7 @@ The following example builds four targets:
 - `app-bar-2-0`
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${tgt}-${replace(version, ".", "-")}"
-  matrix = {
-    tgt = ["foo", "bar"]
-    version = ["1.0", "2.0"]
-  }
-  target = tgt
-  args = {
-    VERSION = version
-  }
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${tgt}-${replace(version, ".", "-")}"
-  matrix = {
-    tgt = ["foo", "bar"]
-    version = ["1.0", "2.0"]
-  }
-  target = tgt
-  args = {
-    VERSION = version
-  }
-}
-```
-@z
+% snip code...
 
 @x
 #### Multiple values per matrix target
@@ -1663,51 +777,7 @@ The following example builds two targets:
 - `app-bar-2-0`
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${item.tgt}-${replace(item.version, ".", "-")}"
-  matrix = {
-    item = [
-      {
-        tgt = "foo"
-        version = "1.0"
-      },
-      {
-        tgt = "bar"
-        version = "2.0"
-      }
-    ]
-  }
-  target = item.tgt
-  args = {
-    VERSION = item.version
-  }
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${item.tgt}-${replace(item.version, ".", "-")}"
-  matrix = {
-    item = [
-      {
-        tgt = "foo"
-        version = "1.0"
-      },
-      {
-        tgt = "bar"
-        version = "2.0"
-      }
-    ]
-  }
-  target = item.tgt
-  args = {
-    VERSION = item.version
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.name`
@@ -1723,27 +793,7 @@ Specify name resolution for targets that use a matrix strategy.
 The following example resolves the `app` target to `app-foo` and `app-bar`.
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${tgt}"
-  matrix = {
-    tgt = ["foo", "bar"]
-  }
-  target = tgt
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${tgt}"
-  matrix = {
-    tgt = ["foo", "bar"]
-  }
-  target = tgt
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.no-cache-filter`
@@ -1761,19 +811,7 @@ This is the same as the `--no-cache-filter` flag for `docker build`.
 The following example avoids build cache for the `foo` build stage.
 @z
 
-@x
-```hcl
-target "default" {
-  no-cache-filter = ["foo"]
-}
-```
-@y
-```hcl
-target "default" {
-  no-cache-filter = ["foo"]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.no-cache`
@@ -1789,19 +827,7 @@ Don't use cache when building the image.
 This is the same as the `--no-cache` flag for `docker build`.
 @z
 
-@x
-```hcl
-target "default" {
-  no-cache = 1
-}
-```
-@y
-```hcl
-target "default" {
-  no-cache = 1
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.output`
@@ -1819,19 +845,7 @@ This is the same as the [`--output` flag][output].
 The following example configures the target to use a cache-only output,
 @z
 
-@x
-```hcl
-target "default" {
-  output = ["type=cacheonly"]
-}
-```
-@y
-```hcl
-target "default" {
-  output = ["type=cacheonly"]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.platforms`
@@ -1849,19 +863,7 @@ This is the same as the [`--platform` flag][platform].
 The following example creates a multi-platform build for three architectures.
 @z
 
-@x
-```hcl
-target "default" {
-  platforms = ["linux/amd64", "linux/arm64", "linux/arm/v7"]
-}
-```
-@y
-```hcl
-target "default" {
-  platforms = ["linux/amd64", "linux/arm64", "linux/arm/v7"]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.pull`
@@ -1879,19 +881,7 @@ This is the same as the `--pull` flag for `docker build`.
 The following example forces the builder to always pull all images referenced in the build target.
 @z
 
-@x
-```hcl
-target "default" {
-  pull = "always"
-}
-```
-@y
-```hcl
-target "default" {
-  pull = "always"
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.secret`
@@ -1907,35 +897,7 @@ Defines secrets to expose to the build target.
 This is the same as the [`--secret` flag][secret].
 @z
 
-@x
-```hcl
-variable "HOME" {
-  default = null
-}
-@y
-```hcl
-variable "HOME" {
-  default = null
-}
-@z
-
-@x
-target "default" {
-  secret = [
-    "type=env,id=KUBECONFIG",
-    "type=file,id=aws,src=${HOME}/.aws/credentials"
-  ]
-}
-```
-@y
-target "default" {
-  secret = [
-    "type=env,id=KUBECONFIG",
-    "type=file,id=aws,src=${HOME}/.aws/credentials"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 This lets you [mount the secret][run_mount_secret] in your Dockerfile.
@@ -1943,21 +905,7 @@ This lets you [mount the secret][run_mount_secret] in your Dockerfile.
 This lets you [mount the secret][run_mount_secret] in your Dockerfile.
 @z
 
-@x
-```dockerfile
-RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-    aws cloudfront create-invalidation ...
-RUN --mount=type=secret,id=KUBECONFIG \
-    KUBECONFIG=$(cat /run/secrets/KUBECONFIG) helm upgrade --install
-```
-@y
-```dockerfile
-RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-    aws cloudfront create-invalidation ...
-RUN --mount=type=secret,id=KUBECONFIG \
-    KUBECONFIG=$(cat /run/secrets/KUBECONFIG) helm upgrade --install
-```
-@z
+% snip code...
 
 @x
 ### `target.ssh`
@@ -1975,39 +923,8 @@ This is the same as the [`--ssh` flag][ssh].
 This can be useful if you need to access private repositories during a build.
 @z
 
-@x
-```hcl
-target "default" {
-  ssh = ["default"]
-}
-```
-@y
-```hcl
-target "default" {
-  ssh = ["default"]
-}
-```
-@z
-
-@x
-```dockerfile
-FROM alpine
-RUN --mount=type=ssh \
-    apk add git openssh-client \
-    && install -m 0700 -d ~/.ssh \
-    && ssh-keyscan github.com >> ~/.ssh/known_hosts \
-    && git clone git@github.com:user/my-private-repo.git
-```
-@y
-```dockerfile
-FROM alpine
-RUN --mount=type=ssh \
-    apk add git openssh-client \
-    && install -m 0700 -d ~/.ssh \
-    && ssh-keyscan github.com >> ~/.ssh/known_hosts \
-    && git clone git@github.com:user/my-private-repo.git
-```
-@z
+% snip code...
+% snip code...
 
 @x
 ### `target.tags`
@@ -2023,25 +940,7 @@ Image names and tags to use for the build target.
 This is the same as the [`--tag` flag][tag].
 @z
 
-@x
-```hcl
-target "default" {
-  tags = [
-    "org/repo:latest",
-    "myregistry.azurecr.io/team/image:v1"
-  ]
-}
-```
-@y
-```hcl
-target "default" {
-  tags = [
-    "org/repo:latest",
-    "myregistry.azurecr.io/team/image:v1"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 ### `target.target`
@@ -2057,19 +956,7 @@ Set the target build stage to build.
 This is the same as the [`--target` flag][target].
 @z
 
-@x
-```hcl
-target "default" {
-  target = "binaries"
-}
-```
-@y
-```hcl
-target "default" {
-  target = "binaries"
-}
-```
-@z
+% snip code...
 
 @x
 ## Group
@@ -2083,43 +970,7 @@ Groups allow you to invoke multiple builds (targets) at once.
 Groups allow you to invoke multiple builds (targets) at once.
 @z
 
-@x
-```hcl
-group "default" {
-  targets = ["db", "webapp-dev"]
-}
-@y
-```hcl
-group "default" {
-  targets = ["db", "webapp-dev"]
-}
-@z
-
-@x
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-}
-@y
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-}
-@z
-
-@x
-target "db" {
-  dockerfile = "Dockerfile.db"
-  tags = ["docker.io/username/db"]
-}
-```
-@y
-target "db" {
-  dockerfile = "Dockerfile.db"
-  tags = ["docker.io/username/db"]
-}
-```
-@z
+% snip code...
 
 @x
 Groups take precedence over targets, if both exist with the same name.
@@ -2131,41 +982,7 @@ The following bake file builds the `default` group.
 Bake ignores the `default` target.
 @z
 
-@x
-```hcl
-target "default" {
-  dockerfile-inline = "FROM ubuntu"
-}
-@y
-```hcl
-target "default" {
-  dockerfile-inline = "FROM ubuntu"
-}
-@z
-
-@x
-group "default" {
-  targets = ["alpine", "debian"]
-}
-target "alpine" {
-  dockerfile-inline = "FROM alpine"
-}
-target "debian" {
-  dockerfile-inline = "FROM debian"
-}
-```
-@y
-group "default" {
-  targets = ["alpine", "debian"]
-}
-target "alpine" {
-  dockerfile-inline = "FROM alpine"
-}
-target "debian" {
-  dockerfile-inline = "FROM debian"
-}
-```
-@z
+% snip code...
 
 @x
 ## Variable
@@ -2183,31 +1000,7 @@ You can use variables as build arguments in your Dockerfile,
 or interpolate them in attribute values in your Bake file.
 @z
 
-@x
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@y
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@z
-
-@x
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@y
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@z
+% snip code...
 
 @x
 You can assign a default value for a variable in the Bake file,
@@ -2229,15 +1022,7 @@ The following example sets the `TAG` variable to `dev`,
 overriding the default `latest` value shown in the previous example.
 @z
 
-@x
-```console
-$ TAG=dev docker buildx bake webapp-dev
-```
-@y
-```console
-$ TAG=dev docker buildx bake webapp-dev
-```
-@z
+% snip command...
 
 @x
 ### Built-in variables
@@ -2277,19 +1062,7 @@ You can set a Bake variable to use the value of an environment variable as a def
 You can set a Bake variable to use the value of an environment variable as a default value:
 @z
 
-@x
-```hcl
-variable "HOME" {
-  default = "$HOME"
-}
-```
-@y
-```hcl
-variable "HOME" {
-  default = "$HOME"
-}
-```
-@z
+% snip code...
 
 @x
 ### Interpolate variables into attributes
@@ -2307,29 +1080,7 @@ you must use curly brackets.
 The following doesn't work:
 @z
 
-@x
-```hcl
-variable "HOME" {
-  default = "$HOME"
-}
-@y
-```hcl
-variable "HOME" {
-  default = "$HOME"
-}
-@z
-
-@x
-target "default" {
-  ssh = ["default=$HOME/.ssh/id_rsa"]
-}
-```
-@y
-target "default" {
-  ssh = ["default=$HOME/.ssh/id_rsa"]
-}
-```
-@z
+% snip code...
 
 @x
 Wrap the variable in curly brackets where you want to insert it:
@@ -2337,31 +1088,7 @@ Wrap the variable in curly brackets where you want to insert it:
 Wrap the variable in curly brackets where you want to insert it:
 @z
 
-@x
-```diff
-  variable "HOME" {
-    default = "$HOME"
-  }
-@y
-```diff
-  variable "HOME" {
-    default = "$HOME"
-  }
-@z
-
-@x
-  target "default" {
--   ssh = ["default=$HOME/.ssh/id_rsa"]
-+   ssh = ["default=${HOME}/.ssh/id_rsa"]
-  }
-```
-@y
-  target "default" {
--   ssh = ["default=$HOME/.ssh/id_rsa"]
-+   ssh = ["default=${HOME}/.ssh/id_rsa"]
-  }
-```
-@z
+% snip code...
 
 @x
 Before you can interpolate a variable into an attribute,
@@ -2373,61 +1100,7 @@ first you must declare it in the bake file,
 as demonstrated in the following example.
 @z
 
-@x
-```console
-$ cat docker-bake.hcl
-target "default" {
-  dockerfile-inline = "FROM ${BASE_IMAGE}"
-}
-$ docker buildx bake
-[+] Building 0.0s (0/0)
-docker-bake.hcl:2
---------------------
-   1 |     target "default" {
-   2 | >>>   dockerfile-inline = "FROM ${BASE_IMAGE}"
-   3 |     }
-   4 |
---------------------
-ERROR: docker-bake.hcl:2,31-41: Unknown variable; There is no variable named "BASE_IMAGE"., and 1 other diagnostic(s)
-$ cat >> docker-bake.hcl
-@y
-```console
-$ cat docker-bake.hcl
-target "default" {
-  dockerfile-inline = "FROM ${BASE_IMAGE}"
-}
-$ docker buildx bake
-[+] Building 0.0s (0/0)
-docker-bake.hcl:2
---------------------
-   1 |     target "default" {
-   2 | >>>   dockerfile-inline = "FROM ${BASE_IMAGE}"
-   3 |     }
-   4 |
---------------------
-ERROR: docker-bake.hcl:2,31-41: Unknown variable; There is no variable named "BASE_IMAGE"., and 1 other diagnostic(s)
-$ cat >> docker-bake.hcl
-@z
-
-@x
-variable "BASE_IMAGE" {
-  default = "alpine"
-}
-@y
-variable "BASE_IMAGE" {
-  default = "alpine"
-}
-@z
-
-@x
-$ docker buildx bake
-[+] Building 0.6s (5/5) FINISHED
-```
-@y
-$ docker buildx bake
-[+] Building 0.6s (5/5) FINISHED
-```
-@z
+% snip command...
 
 @x
 ## Function
@@ -2445,29 +1118,7 @@ provided by [go-cty][go-cty]
 are available for use in HCL files:
 @z
 
-@x
-```hcl
-# docker-bake.hcl
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-  args = {
-    buildno = "${add(123, 1)}"
-  }
-}
-```
-@y
-```hcl
-# docker-bake.hcl
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-  args = {
-    buildno = "${add(123, 1)}"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 In addition, [user defined functions][userfunc]
@@ -2477,41 +1128,7 @@ In addition, [user defined functions][userfunc]
 are also supported:
 @z
 
-@x
-```hcl
-# docker-bake.hcl
-function "increment" {
-  params = [number]
-  result = number + 1
-}
-@y
-```hcl
-# docker-bake.hcl
-function "increment" {
-  params = [number]
-  result = number + 1
-}
-@z
-
-@x
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-  args = {
-    buildno = "${increment(123)}"
-  }
-}
-```
-@y
-target "webapp-dev" {
-  dockerfile = "Dockerfile.webapp"
-  tags = ["docker.io/username/webapp:latest"]
-  args = {
-    buildno = "${increment(123)}"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -2521,12 +1138,6 @@ target "webapp-dev" {
 > **Note**
 >
 > See [User defined HCL functions][hcl-funcs] page for more details.
-@z
-
-@x
-<!-- external links -->
-@y
-<!-- external links -->
 @z
 
 % snip links...

@@ -1,1022 +1,334 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker buildx debug build
 aliases: docker buildx debug build, docker buildx debug b
 short: Start a build
 long: Start a build
 usage: docker buildx debug build [OPTIONS] PATH | URL | -
-pname: docker buildx debug
-plink: docker_buildx_debug.yaml
-options:
-    - option: add-host
-      value_type: stringSlice
-      default_value: '[]'
-      description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /reference/cli/docker/image/build/#add-host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: allow
-      value_type: stringSlice
-      default_value: '[]'
-      description: |
-        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: annotation
-      value_type: stringArray
-      default_value: '[]'
-      description: Add annotation to the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: attest
-      value_type: stringArray
-      default_value: '[]'
-      description: 'Attestation parameters (format: `type=sbom,generator=image`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: build-arg
-      value_type: stringArray
-      default_value: '[]'
-      description: Set build-time variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: build-context
-      value_type: stringArray
-      default_value: '[]'
-      description: Additional build contexts (e.g., name=path)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cache-from
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        External cache sources (e.g., `user/app:cache`, `type=local,src=path/to/dir`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cache-to
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        Cache export destinations (e.g., `user/app:cache`, `type=local,dest=path/to/dir`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroup-parent
-      value_type: string
-      description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /reference/cli/docker/image/build/#cgroup-parent
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: compress
-      value_type: bool
-      default_value: "false"
-      description: Compress the build context using gzip
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
-      description: Limit the CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
-      description: Limit the CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
-      description: CPU shares (relative weight)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
-      description: CPUs in which to allow execution (`0-3`, `0,1`)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
-      description: MEMs in which to allow execution (`0-3`, `0,1`)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      value_type: bool
-      default_value: "false"
-      description: Detach buildx server (supported only on linux)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: string
-      description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /reference/cli/docker/image/build/#file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-rm
-      value_type: bool
-      default_value: "false"
-      description: Always remove intermediate containers
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: iidfile
-      value_type: string
-      description: Write the image ID to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: isolation
-      value_type: string
-      description: Container isolation technology
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      value_type: stringArray
-      default_value: '[]'
-      description: Set metadata for an image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: load
-      value_type: bool
-      default_value: "false"
-      description: Shorthand for `--output=type=docker`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: string
-      description: Memory limit
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: string
-      description: |
-        Swap limit equal to memory plus swap: `-1` to enable unlimited swap
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: metadata-file
-      value_type: string
-      description: Write build result metadata to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network
-      value_type: string
-      default_value: default
-      description: Set the networking mode for the `RUN` instructions during build
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache
-      value_type: bool
-      default_value: "false"
-      description: Do not use cache when building the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache-filter
-      value_type: stringArray
-      default_value: '[]'
-      description: Do not cache specified stages
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: stringArray
-      default_value: '[]'
-      description: 'Output destination (format: `type=local,dest=path`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: stringArray
-      default_value: '[]'
-      description: Set target platform for build
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: print
-      value_type: string
-      description: Print result of information request (e.g., outline, targets)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
-      description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: provenance
-      value_type: string
-      description: Shorthand for `--attest=type=provenance`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: bool
-      default_value: "false"
-      description: Always attempt to pull all referenced images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: push
-      value_type: bool
-      default_value: "false"
-      description: Shorthand for `--output=type=registry`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress the build output and print image ID on success
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "true"
-      description: Remove intermediate containers after a successful build
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: root
-      value_type: string
-      description: Specify root directory of server to connect
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: sbom
-      value_type: string
-      description: Shorthand for `--attest=type=sbom`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: secret
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        Secret to expose to the build (format: `id=mysecret[,src=/local/secret]`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: security-opt
-      value_type: stringSlice
-      default_value: '[]'
-      description: Security options
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: server-config
-      value_type: string
-      description: |
-        Specify buildx server config file (used only when launching new server)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: shm-size
-      value_type: bytes
-      default_value: "0"
-      description: Size of `/dev/shm`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: squash
-      value_type: bool
-      default_value: "false"
-      description: Squash newly built layers into a single new layer
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: ssh
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        SSH agent socket or keys to expose to the build (format: `default|<id>[=<socket>|<key>[,<key>]]`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tag
-      shorthand: t
-      value_type: stringArray
-      default_value: '[]'
-      description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /reference/cli/docker/image/build/#tag
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: target
-      value_type: string
-      description: Set the target build stage to build
-      details_url: /reference/cli/docker/image/build/#target
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
-      description: Ulimit options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @y
 command: docker buildx debug build
 aliases: docker buildx debug build, docker buildx debug b
 short: Start a build
 long: Start a build
 usage: docker buildx debug build [OPTIONS] PATH | URL | -
-pname: docker buildx debug
-plink: docker_buildx_debug.yaml
-options:
-    - option: add-host
-      value_type: stringSlice
-      default_value: '[]'
+@z
+
+% options:
+
+@x add-host
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /reference/cli/docker/image/build/#add-host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: allow
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
+@z
+
+@x allow
       description: |
         Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: annotation
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: |
+        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`)
+@z
+
+@x annotation
       description: Add annotation to the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: attest
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Add annotation to the image
+@z
+
+@x attest
       description: 'Attestation parameters (format: `type=sbom,generator=image`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: build-arg
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: 'Attestation parameters (format: `type=sbom,generator=image`)'
+@z
+
+@x build-arg
       description: Set build-time variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: build-context
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Set build-time variables
+@z
+
+@x build-context
       description: Additional build contexts (e.g., name=path)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cache-from
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Additional build contexts (e.g., name=path)
+@z
+
+@x cache-from
       description: |
         External cache sources (e.g., `user/app:cache`, `type=local,src=path/to/dir`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cache-to
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: |
+        External cache sources (e.g., `user/app:cache`, `type=local,src=path/to/dir`)
+@z
+
+@x cache-to
       description: |
         Cache export destinations (e.g., `user/app:cache`, `type=local,dest=path/to/dir`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroup-parent
-      value_type: string
+@y
+      description: |
+        Cache export destinations (e.g., `user/app:cache`, `type=local,dest=path/to/dir`)
+@z
+
+@x cgroup-parent
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /reference/cli/docker/image/build/#cgroup-parent
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: compress
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set the parent cgroup for the `RUN` instructions during build
+@z
+
+@x compress
       description: Compress the build context using gzip
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
+@y
+      description: Compress the build context using gzip
+@z
+
+@x cpu-period
       description: Limit the CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit the CPU CFS (Completely Fair Scheduler) period
+@z
+
+@x cpu-quota
       description: Limit the CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit the CPU CFS (Completely Fair Scheduler) quota
+@z
+
+@x cpu-shares
       description: CPU shares (relative weight)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
+@y
+      description: CPU shares (relative weight)
+@z
+
+@x cpuset-cpus
       description: CPUs in which to allow execution (`0-3`, `0,1`)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
+@y
+      description: CPUs in which to allow execution (`0-3`, `0,1`)
+@z
+
+@x cpuset-mems
       description: MEMs in which to allow execution (`0-3`, `0,1`)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      value_type: bool
-      default_value: "false"
+@y
+      description: MEMs in which to allow execution (`0-3`, `0,1`)
+@z
+
+@x detach
       description: Detach buildx server (supported only on linux)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: string
+@y
+      description: Detach buildx server (supported only on linux)
+@z
+
+@x file
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /reference/cli/docker/image/build/#file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-rm
-      value_type: bool
-      default_value: "false"
+@y
+      description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
+@z
+
+@x force-rm
       description: Always remove intermediate containers
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: iidfile
-      value_type: string
+@y
+      description: Always remove intermediate containers
+@z
+
+@x iidfile
       description: Write the image ID to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: isolation
-      value_type: string
+@y
+      description: Write the image ID to the file
+@z
+
+@x isolation
       description: Container isolation technology
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Container isolation technology
+@z
+
+@x label
       description: Set metadata for an image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: load
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set metadata for an image
+@z
+
+@x load
       description: Shorthand for `--output=type=docker`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: string
+@y
+      description: Shorthand for `--output=type=docker`
+@z
+
+@x memory
       description: Memory limit
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: string
+@y
+      description: Memory limit
+@z
+
+@x memory-swap
       description: |
         Swap limit equal to memory plus swap: `-1` to enable unlimited swap
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: metadata-file
-      value_type: string
+@y
+      description: |
+        Swap limit equal to memory plus swap: `-1` to enable unlimited swap
+@z
+
+@x metadata-file
       description: Write build result metadata to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network
-      value_type: string
-      default_value: default
+@y
+      description: Write build result metadata to the file
+@z
+
+@x network
       description: Set the networking mode for the `RUN` instructions during build
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set the networking mode for the `RUN` instructions during build
+@z
+
+@x no-cache
       description: Do not use cache when building the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache-filter
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Do not use cache when building the image
+@z
+
+@x no-cache-filter
       description: Do not cache specified stages
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Do not cache specified stages
+@z
+
+@x output
       description: 'Output destination (format: `type=local,dest=path`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: 'Output destination (format: `type=local,dest=path`)'
+@z
+
+@x platform
       description: Set target platform for build
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: print
-      value_type: string
+@y
+      description: Set target platform for build
+@z
+
+@x print
       description: Print result of information request (e.g., outline, targets)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
+@y
+      description: Print result of information request (e.g., outline, targets)
+@z
+
+@x progress
       description: |
         Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: provenance
-      value_type: string
+@y
+      description: |
+        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+@z
+
+@x provenance
       description: Shorthand for `--attest=type=provenance`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: bool
-      default_value: "false"
+@y
+      description: Shorthand for `--attest=type=provenance`
+@z
+
+@x pull
       description: Always attempt to pull all referenced images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: push
-      value_type: bool
-      default_value: "false"
+@y
+      description: Always attempt to pull all referenced images
+@z
+
+@x push
       description: Shorthand for `--output=type=registry`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Shorthand for `--output=type=registry`
+@z
+
+@x quiet
       description: Suppress the build output and print image ID on success
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "true"
+@y
+      description: Suppress the build output and print image ID on success
+@z
+
+@x rm
       description: Remove intermediate containers after a successful build
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: root
-      value_type: string
+@y
+      description: Remove intermediate containers after a successful build
+@z
+
+@x root
       description: Specify root directory of server to connect
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: sbom
-      value_type: string
+@y
+      description: Specify root directory of server to connect
+@z
+
+@x sbom
       description: Shorthand for `--attest=type=sbom`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: secret
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Shorthand for `--attest=type=sbom`
+@z
+
+@x secret
       description: |
         Secret to expose to the build (format: `id=mysecret[,src=/local/secret]`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: security-opt
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: |
+        Secret to expose to the build (format: `id=mysecret[,src=/local/secret]`)
+@z
+
+@x security-opt
       description: Security options
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: server-config
-      value_type: string
+@y
+      description: Security options
+@z
+
+@x server-config
       description: |
         Specify buildx server config file (used only when launching new server)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: shm-size
-      value_type: bytes
-      default_value: "0"
-      description: Size of `/dev/shm`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: squash
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Specify buildx server config file (used only when launching new server)
+@z
+
+@x shm-size
+      description: Shared memory size for build containers
+@y
+      description: Shared memory size for build containers
+@z
+
+@x squash
       description: Squash newly built layers into a single new layer
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: true
-      kubernetes: false
-      swarm: false
-    - option: ssh
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Squash newly built layers into a single new layer
+@z
+
+@x ssh
       description: |
         SSH agent socket or keys to expose to the build (format: `default|<id>[=<socket>|<key>[,<key>]]`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tag
-      shorthand: t
-      value_type: stringArray
-      default_value: '[]'
-      description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /reference/cli/docker/image/build/#tag
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: target
-      value_type: string
-      description: Set the target build stage to build
-      details_url: /reference/cli/docker/image/build/#target
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
-      description: Ulimit options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
+@y
+      description: |
+        SSH agent socket or keys to expose to the build (format: `default|<id>[=<socket>|<key>[,<key>]]`)
 @z
+
+@x tag
+      description: 'Name and optionally a tag (format: `name:tag`)'
+@y
+      description: 'Name and optionally a tag (format: `name:tag`)'
+@z
+
+@x target
+      description: Set the target build stage to build
+@y
+      description: Set the target build stage to build
+@z
+
+@x ulimit
+      description: Ulimit options
+@y
+      description: Ulimit options
+@z
+
+% inherited_options:
+
+@x builder
+      description: Override the configured builder instance
+@y
+      description: Override the configured builder instance
+@z
+
+% snip directives...

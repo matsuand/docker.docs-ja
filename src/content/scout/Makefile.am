@@ -12,6 +12,7 @@ bases = \
 	image-analysis.md      \
 	image-details-view.md  \
 	image-prefix.md        \
+	install.md             \
 	quickstart.md          \
 	release-notes.md       \
 	sbom.md

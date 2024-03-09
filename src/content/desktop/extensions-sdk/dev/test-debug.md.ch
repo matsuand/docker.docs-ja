@@ -32,9 +32,9 @@ In order to improve the developer experience, Docker Desktop provides a set of t
 @z
 
 @x
-In order to open the Chrome DevTools for your extension when you click on the extension tab, run:
+In order to open the Chrome DevTools for your extension when you select the **Extensions** tab, run:
 @y
-In order to open the Chrome DevTools for your extension when you click on the extension tab, run:
+In order to open the Chrome DevTools for your extension when you select the **Extensions** tab, run:
 @z
 
 @x
@@ -64,9 +64,9 @@ $ docker extension dev reset <name-of-your-extensions>
 @z
 
 @x
-After an extension is deployed, it is also possible to open Chrome DevTools from the UI extension part using a variation of the [Konami Code](https://en.wikipedia.org/wiki/Konami_Code). Click on the extension tab, and then hit the key sequence `up, up, down, down, left, right, left, right, p, d, t`.
+After an extension is deployed, it is also possible to open Chrome DevTools from the UI extension part using a variation of the [Konami Code](https://en.wikipedia.org/wiki/Konami_Code). Select the **Extensions** tab, and then hit the key sequence `up, up, down, down, left, right, left, right, p, d, t`.
 @y
-After an extension is deployed, it is also possible to open Chrome DevTools from the UI extension part using a variation of the [Konami Code](https://en.wikipedia.org/wiki/Konami_Code). Click on the extension tab, and then hit the key sequence `up, up, down, down, left, right, left, right, p, d, t`.
+After an extension is deployed, it is also possible to open Chrome DevTools from the UI extension part using a variation of the [Konami Code](https://en.wikipedia.org/wiki/Konami_Code). Select the **Extensions** tab, and then hit the key sequence `up, up, down, down, left, right, left, right, p, d, t`.
 @z
 
 @x

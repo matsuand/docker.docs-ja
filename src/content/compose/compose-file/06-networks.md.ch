@@ -266,9 +266,9 @@ networks:
 @z
 
 @x
-## external
+### external
 @y
-## external
+### external
 @z
 
 @x
@@ -404,9 +404,9 @@ networks:
 @z
 
 @x
-## internal
+### internal
 @y
-## internal
+### internal
 @z
 
 @x
@@ -418,9 +418,9 @@ create an externally isolated network.
 @z
 
 @x
-## labels
+### labels
 @y
-## labels
+### labels
 @z
 
 @x
@@ -482,9 +482,9 @@ Compose sets `com.docker.compose.project` and `com.docker.compose.network` label
 @z
 
 @x
-## name
+### name
 @y
-## name
+### name
 @z
 
 @x

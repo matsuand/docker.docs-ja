@@ -4,21 +4,17 @@
 % __SUBDIR__ 対応
 
 @x
+---
 title: Use bind mounts
-keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers,
-  docker desktop
+keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers, docker desktop'
+description: Using bind mounts in our application
+---
 @y
+---
 title: Use bind mounts
-keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers,
-  docker desktop
-@z
-
-@x
-  '
+keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers, docker desktop'
 description: Using bind mounts in our application
-@y
-  '
-description: Using bind mounts in our application
+---
 @z
 
 @x
@@ -66,6 +62,20 @@ frameworks.
 @z
 
 @x
+The following are examples of a named volume and a bind mount using `--mount`:
+@y
+The following are examples of a named volume and a bind mount using `--mount`:
+@z
+
+@x
+- Named volume: `type=volume,src=my-volume,target=/usr/local/data`
+- Bind mount: `type=bind,src=/path/to/data,target=/usr/local/data`
+@y
+- Named volume: `type=volume,src=my-volume,target=/usr/local/data`
+- Bind mount: `type=bind,src=/path/to/data,target=/usr/local/data`
+@z
+
+@x
 The following table outlines the main differences between volume mounts and bind
 mounts.
 @y
@@ -77,14 +87,12 @@ mounts.
 |                                              | Named volumes                                      | Bind mounts                                          |
 | -------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------- |
 | Host location                                | Docker chooses                                     | You decide                                           |
-| Mount example (using `--mount`)              | `type=volume,src=my-volume,target=/usr/local/data` | `type=bind,src=/path/to/data,target=/usr/local/data` |
 | Populates new volume with container contents | Yes                                                | No                                                   |
 | Supports Volume Drivers                      | Yes                                                | No                                                   |
 @y
 |                                              | Named volumes                                      | Bind mounts                                          |
 | -------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------- |
 | Host location                                | Docker chooses                                     | You decide                                           |
-| Mount example (using `--mount`)              | `type=volume,src=my-volume,target=/usr/local/data` | `type=bind,src=/path/to/data,target=/usr/local/data` |
 | Populates new volume with container contents | Yes                                                | No                                                   |
 | Supports Volume Drivers                      | Yes                                                | No                                                   |
 @z
@@ -103,16 +111,6 @@ work.
 Before looking at how you can use bind mounts for developing your application,
 you can run a quick experiment to get a practical understanding of how bind mounts
 work.
-@z
-
-@x
-> **Note**
->
-> If you use Windows and want to use Git Bash to run Docker commands, see [Working with Git Bash](../desktop/troubleshoot/topics.md#working-with-git-bash) for syntax differences.
-@y
-> **Note**
->
-> If you use Windows and want to use Git Bash to run Docker commands, see [Working with Git Bash](../desktop/troubleshoot/topics.md#working-with-git-bash) for syntax differences.
 @z
 
 @x
@@ -149,10 +147,10 @@ setting, see the topic for [Mac](../desktop/settings/mac.md/#file-sharing),
 
 @x
    {{< tabs >}}
-   {{< tab name="Mac / Linux" >}}
+   {{< tab name="Mac / Linux / PowerShell" >}}
 @y
    {{< tabs >}}
-   {{< tab name="Mac / Linux" >}}
+   {{< tab name="Mac / Linux / PowerShell" >}}
 @z
 
 @x
@@ -167,28 +165,10 @@ setting, see the topic for [Mac](../desktop/settings/mac.md/#file-sharing),
 
 @x
    {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
+   {{< tab name="Command Prompt" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
-@z
-
-@x
-   ```powershell
-   $ docker run -it --mount "type=bind,src=$pwd,target=/src" ubuntu bash
-   ```
-@y
-   ```powershell
-   $ docker run -it --mount "type=bind,src=$pwd,target=/src" ubuntu bash
-   ```
-@z
-
-@x
-   {{< /tab >}}
-   {{< tab name="Windows (Command Prompt)" >}}
-@y
-   {{< /tab >}}
-   {{< tab name="Windows (Command Prompt)" >}}
+   {{< tab name="Command Prompt" >}}
 @z
 
 @x
@@ -198,6 +178,24 @@ setting, see the topic for [Mac](../desktop/settings/mac.md/#file-sharing),
 @y
    ```console
    $ docker run -it --mount "type=bind,src=%cd%,target=/src" ubuntu bash
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< tab name="Git Bash" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="Git Bash" >}}
+@z
+
+@x
+   ```console
+   $ docker run -it --mount type=bind,src="/$(pwd)",target=/src ubuntu bash
+   ```
+@y
+   ```console
+   $ docker run -it --mount type=bind,src="/$(pwd)",target=/src ubuntu bash
    ```
 @z
 
@@ -409,10 +407,10 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 
 @x
 {{< tabs >}}
-{{< tab name="CLI (Mac / Linux)" >}}
+{{< tab name="Mac / Linux CLI" >}}
 @y
 {{< tabs >}}
-{{< tab name="CLI (Mac / Linux)" >}}
+{{< tab name="Mac / Linux CLI" >}}
 @z
 
 @x
@@ -517,10 +515,10 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 
 @x
 {{< /tab >}}
-{{< tab name="CLI (Windows)" >}}
+{{< tab name="PowerShell CLI" >}}
 @y
 {{< /tab >}}
-{{< tab name="CLI (Windows)" >}}
+{{< tab name="PowerShell CLI" >}}
 @z
 
 @x
@@ -533,12 +531,6 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 2. Run the following command from the `getting-started-app` directory.
 @y
 2. Run the following command from the `getting-started-app` directory.
-@z
-
-@x
-   Run this command in PowerShell.
-@y
-   Run this command in PowerShell.
 @z
 
 @x
@@ -579,6 +571,222 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
    - `-w /app` - sets the "working directory" or the current directory that the
      command will run from
    - `--mount "type=bind,src=$pwd,target=/app"` - bind mount the current
+     directory from the host into the `/app` directory in the container
+   - `node:18-alpine` - the image to use. Note that this is the base image for
+     your app from the Dockerfile
+   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
+     install packages and then running `yarn run dev` to start the development
+     server. If you look in the `package.json`, you'll see that the `dev` script
+     starts `nodemon`.
+@z
+
+@x
+3. You can watch the logs using `docker logs <container-id>`. You'll know you're
+   ready to go when you see this:
+@y
+3. You can watch the logs using `docker logs <container-id>`. You'll know you're
+   ready to go when you see this:
+@z
+
+@x
+   ```console
+   $ docker logs -f <container-id>
+   nodemon -L src/index.js
+   [nodemon] 2.0.20
+   [nodemon] to restart at any time, enter `rs`
+   [nodemon] watching path(s): *.*
+   [nodemon] watching extensions: js,mjs,json
+   [nodemon] starting `node src/index.js`
+   Using sqlite database at /etc/todos/todo.db
+   Listening on port 3000
+   ```
+@y
+   ```console
+   $ docker logs -f <container-id>
+   nodemon -L src/index.js
+   [nodemon] 2.0.20
+   [nodemon] to restart at any time, enter `rs`
+   [nodemon] watching path(s): *.*
+   [nodemon] watching extensions: js,mjs,json
+   [nodemon] starting `node src/index.js`
+   Using sqlite database at /etc/todos/todo.db
+   Listening on port 3000
+   ```
+@z
+
+@x
+   When you're done watching the logs, exit out by hitting `Ctrl`+`C`.
+@y
+   When you're done watching the logs, exit out by hitting `Ctrl`+`C`.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Command Prompt CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="Command Prompt CLI" >}}
+@z
+
+@x
+1. Make sure you don't have any `getting-started` containers currently running.
+@y
+1. Make sure you don't have any `getting-started` containers currently running.
+@z
+
+@x
+2. Run the following command from the `getting-started-app` directory.
+@y
+2. Run the following command from the `getting-started-app` directory.
+@z
+
+@x
+   ```console
+   $ docker run -dp 127.0.0.1:3000:3000 ^
+       -w /app --mount "type=bind,src=%cd%,target=/app" ^
+       node:18-alpine ^
+       sh -c "yarn install && yarn run dev"
+   ```
+@y
+   ```console
+   $ docker run -dp 127.0.0.1:3000:3000 ^
+       -w /app --mount "type=bind,src=%cd%,target=/app" ^
+       node:18-alpine ^
+       sh -c "yarn install && yarn run dev"
+   ```
+@z
+
+@x
+   The following is a breakdown of the command:
+   - `-dp 127.0.0.1:3000:3000` - same as before. Run in detached (background) mode and
+     create a port mapping
+   - `-w /app` - sets the "working directory" or the current directory that the
+     command will run from
+   - `--mount "type=bind,src=%cd%,target=/app"` - bind mount the current
+     directory from the host into the `/app` directory in the container
+   - `node:18-alpine` - the image to use. Note that this is the base image for
+     your app from the Dockerfile
+   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
+     install packages and then running `yarn run dev` to start the development
+     server. If you look in the `package.json`, you'll see that the `dev` script
+     starts `nodemon`.
+@y
+   The following is a breakdown of the command:
+   - `-dp 127.0.0.1:3000:3000` - same as before. Run in detached (background) mode and
+     create a port mapping
+   - `-w /app` - sets the "working directory" or the current directory that the
+     command will run from
+   - `--mount "type=bind,src=%cd%,target=/app"` - bind mount the current
+     directory from the host into the `/app` directory in the container
+   - `node:18-alpine` - the image to use. Note that this is the base image for
+     your app from the Dockerfile
+   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
+     install packages and then running `yarn run dev` to start the development
+     server. If you look in the `package.json`, you'll see that the `dev` script
+     starts `nodemon`.
+@z
+
+@x
+3. You can watch the logs using `docker logs <container-id>`. You'll know you're
+   ready to go when you see this:
+@y
+3. You can watch the logs using `docker logs <container-id>`. You'll know you're
+   ready to go when you see this:
+@z
+
+@x
+   ```console
+   $ docker logs -f <container-id>
+   nodemon -L src/index.js
+   [nodemon] 2.0.20
+   [nodemon] to restart at any time, enter `rs`
+   [nodemon] watching path(s): *.*
+   [nodemon] watching extensions: js,mjs,json
+   [nodemon] starting `node src/index.js`
+   Using sqlite database at /etc/todos/todo.db
+   Listening on port 3000
+   ```
+@y
+   ```console
+   $ docker logs -f <container-id>
+   nodemon -L src/index.js
+   [nodemon] 2.0.20
+   [nodemon] to restart at any time, enter `rs`
+   [nodemon] watching path(s): *.*
+   [nodemon] watching extensions: js,mjs,json
+   [nodemon] starting `node src/index.js`
+   Using sqlite database at /etc/todos/todo.db
+   Listening on port 3000
+   ```
+@z
+
+@x
+   When you're done watching the logs, exit out by hitting `Ctrl`+`C`.
+@y
+   When you're done watching the logs, exit out by hitting `Ctrl`+`C`.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Git Bash CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="Git Bash CLI" >}}
+@z
+
+@x
+1. Make sure you don't have any `getting-started` containers currently running.
+@y
+1. Make sure you don't have any `getting-started` containers currently running.
+@z
+
+@x
+2. Run the following command from the `getting-started-app` directory.
+@y
+2. Run the following command from the `getting-started-app` directory.
+@z
+
+@x
+   ```console
+   $ docker run -dp 127.0.0.1:3000:3000 \
+       -w //app --mount type=bind,src="/$(pwd)",target=/app \
+       node:18-alpine \
+       sh -c "yarn install && yarn run dev"
+   ```
+@y
+   ```console
+   $ docker run -dp 127.0.0.1:3000:3000 \
+       -w //app --mount type=bind,src="/$(pwd)",target=/app \
+       node:18-alpine \
+       sh -c "yarn install && yarn run dev"
+   ```
+@z
+
+@x
+   The following is a breakdown of the command:
+   - `-dp 127.0.0.1:3000:3000` - same as before. Run in detached (background) mode and
+     create a port mapping
+   - `-w //app` - sets the "working directory" or the current directory that the
+     command will run from
+   - `--mount type=bind,src="/$(pwd)",target=/app` - bind mount the current
+     directory from the host into the `/app` directory in the container
+   - `node:18-alpine` - the image to use. Note that this is the base image for
+     your app from the Dockerfile
+   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
+     install packages and then running `yarn run dev` to start the development
+     server. If you look in the `package.json`, you'll see that the `dev` script
+     starts `nodemon`.
+@y
+   The following is a breakdown of the command:
+   - `-dp 127.0.0.1:3000:3000` - same as before. Run in detached (background) mode and
+     create a port mapping
+   - `-w //app` - sets the "working directory" or the current directory that the
+     command will run from
+   - `--mount type=bind,src="/$(pwd)",target=/app` - bind mount the current
      directory from the host into the `/app` directory in the container
    - `node:18-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
