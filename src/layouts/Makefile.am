@@ -25,6 +25,7 @@ index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
 	@echo "commithash: $(commithash)" >> ../../commit.txt
 
 copyfiles = \
+	index.metadata.json  \
 	index.redirects.json \
 	index.robots.txt     \
 	sitemap.xml

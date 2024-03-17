@@ -8,6 +8,7 @@ bases = \
 	admin-registry-access.html   \
 	admin-scim.html              \
 	admin-sso-config.md          \
+	admin-sso-connect.md         \
 	admin-sso-management-orgs.md \
 	admin-sso-management.md      \
 	admin-users.html             \
@@ -21,6 +22,7 @@ copyfiles = \
 	admin-domains.html         \
 	admin-image-access.html    \
 	admin-org-audit-log.html   \
+	admin-scim-disable.html    \
 	badge.html                 \
 	build-feature-state.html   \
 	button.html                \

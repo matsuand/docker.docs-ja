@@ -3,9 +3,9 @@
 
 @x
 ---
-description: Learn how to configure Single Sign-On for your organization or company.
+description: Learn how to configure single sign-on for your organization or company.
 keywords: configure, sso, docker hub, hub, docker admin, admin, security 
-title: Configure Single Sign-On
+title: Configure single sign-on
 aliases:
 - /docker-hub/domains/
 - /docker-hub/sso-connection/
@@ -16,9 +16,9 @@ aliases:
 ---
 @y
 ---
-description: Learn how to configure Single Sign-On for your organization or company.
+description: Learn how to configure single sign-on for your organization or company.
 keywords: configure, sso, docker hub, hub, docker admin, admin, security 
-title: Configure Single Sign-On
+title: Configure single sign-on
 aliases:
 - /docker-hub/domains/
 - /docker-hub/sso-connection/
@@ -30,9 +30,33 @@ aliases:
 @z
 
 @x
-Follow the steps on this page to configure SSO for your organization or company.
+Get started creating a single sign-on (SSO) connection for your organization or company.
 @y
-Follow the steps on this page to configure SSO for your organization or company.
+Get started creating a single sign-on (SSO) connection for your organization or company.
+@z
+
+@x
+The steps to set up your SSO configuration are:
+@y
+The steps to set up your SSO configuration are:
+@z
+
+@x
+1. [Add and verify the domain or domains](#step-one-add-and-verify-your-domain) that your members use to sign in to Docker.
+2. [Create your SSO connection](#step-two-create-an-sso-connection-in-docker) in Docker.
+3. [Configure your IdP](./configure-idp.md) to work with Docker.
+4. [Complete your SSO connection](../connect/_index.md) in Docker.
+@y
+1. [Add and verify the domain or domains](#step-one-add-and-verify-your-domain) that your members use to sign in to Docker.
+2. [Create your SSO connection](#step-two-create-an-sso-connection-in-docker) in Docker.
+3. [Configure your IdP](./configure-idp.md) to work with Docker.
+4. [Complete your SSO connection](../connect/_index.md) in Docker.
+@z
+
+@x
+This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
+@y
+This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
 @z
 
 @x
@@ -84,9 +108,9 @@ Follow the steps on this page to configure SSO for your organization or company.
 @z
 
 @x
-## Step two: Create an SSO connection
+## Step two: Create an SSO connection in Docker
 @y
-## Step two: Create an SSO connection
+## Step two: Create an SSO connection in Docker
 @z
 
 @x
@@ -112,6 +136,12 @@ Follow the steps on this page to configure SSO for your organization or company.
 @z
 
 @x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
 {{% admin-sso-config product="admin" %}}
 @y
 {{% admin-sso-config product="admin" %}}
@@ -126,35 +156,13 @@ Follow the steps on this page to configure SSO for your organization or company.
 @z
 
 @x
-## More resources
-@y
-## More resources
-@z
-
-@x
-The following video provides an overview of configuring SSO with SAML in Entra ID (formerly Azure AD).
-@y
-The following video provides an overview of configuring SSO with SAML in Entra ID (formerly Azure AD).
-@z
-
-@x
-<iframe title="Configure SSO with SAML in Entra ID overview" class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/0a30409381f340cfb01790adbd9aa9b3?sid=7e4e10a7-7f53-437d-b593-8a4886775632"></iframe>
-@y
-<iframe title="Configure SSO with SAML in Entra ID overview" class="border-0 w-full aspect-video mb-8" allow="fullscreen" src="https://www.loom.com/embed/0a30409381f340cfb01790adbd9aa9b3?sid=7e4e10a7-7f53-437d-b593-8a4886775632"></iframe>
-@z
-
-@x
 ## What's next?
 @y
 ## What's next?
 @z
 
 @x
-- [Set up SCIM](../../scim.md)
-- [Enable Group mapping](../../group-mapping.md)
-- [Manage your SSO connections](../manage/_index.md)
+[Continue configuration in your IdP](./configure-idp.md).
 @y
-- [Set up SCIM](../../scim.md)
-- [Enable Group mapping](../../group-mapping.md)
-- [Manage your SSO connections](../manage/_index.md)
+[Continue configuration in your IdP](./configure-idp.md).
 @z

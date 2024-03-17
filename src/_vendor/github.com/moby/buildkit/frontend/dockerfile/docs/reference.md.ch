@@ -109,7 +109,7 @@ building. `FROM` may only be preceded by one or more `ARG` instructions, which
 declare arguments that are used in `FROM` lines in the Dockerfile.
 @y
 Docker は Dockerfile 内の命令を記述順に実行します。
-Dockerfile は必ず**`FROM`命令**で始めなければなりません。
+Dockerfile は **必ず `FROM` 命令で始めなければなりません** 。
 この命令より前に記述できるのは、[パーサーディレクティブ](#parser-directives)、[コメント](#format)、グローバル定義された [ARG](#arg) です。
 `FROM` 命令は、ビルドするイメージに対しての [親イメージ](glossary.md#parent-image) を指定するものです。
 `FROM` よりも先に記述できる命令として `ARG` があります。
@@ -134,9 +134,8 @@ Comment lines are removed before the Dockerfile instructions are executed.
 The comment in the following example is removed before the shell executes
 the `echo` command.
 @y
-Comment lines are removed before the Dockerfile instructions are executed.
-The comment in the following example is removed before the shell executes
-the `echo` command.
+コメント行は Dockerfile 命令が実行される前に削除されます。
+上の例で言えば、シェルが `echo` コマンドを実行する前にコメントが削除されます。
 @z
 
 % snip code...

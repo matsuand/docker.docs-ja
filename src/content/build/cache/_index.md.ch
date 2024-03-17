@@ -3,7 +3,7 @@
 
 @x
 ---
-title: Optimizing builds with cache management
+title: Docker build cache
 description: Improve your build speed with effective use of the build cache
 keywords: build, buildx, buildkit, dockerfile, image layers, build instructions, build context
 aliases:
@@ -11,7 +11,7 @@ aliases:
 ---
 @y
 ---
-title: Optimizing builds with cache management
+title: Docker build cache
 description: Improve your build speed with effective use of the build cache
 keywords: build, buildx, buildkit, dockerfile, image layers, build instructions, build context
 aliases:
@@ -28,9 +28,9 @@ the build cache is a great tool for making sure the builds run fast.
 @z
 
 @x
-## How does the build cache work?
+## How the build cache works
 @y
-## How does the build cache work?
+## How the build cache works
 @z
 
 @x
@@ -128,43 +128,15 @@ anything differently, they still need to re-run.
 @z
 
 @x
-> **Note**
->
-> Suppose you have a step in your Dockerfile
-> to upgrade all the software packages in your
-> Debian-based image to the latest version:
->
-> ```dockerfile
-> RUN apt-get update && apt-get upgrade -y
-> ```
->
-> This doesn't mean that the images you build are always up to date. Rebuilding
-> the image on the same host one week later will still get you the same packages
-> as before. The only way to force a rebuild is by making sure that a layer
-> before it has changed, or by clearing the build cache using
-> [`docker builder prune`](../../reference/cli/docker/builder/prune.md).
+For more details about how cache invalidation works, see [Cache invalidation](invalidation.md).
 @y
-> **Note**
->
-> Suppose you have a step in your Dockerfile
-> to upgrade all the software packages in your
-> Debian-based image to the latest version:
->
-> ```dockerfile
-> RUN apt-get update && apt-get upgrade -y
-> ```
->
-> This doesn't mean that the images you build are always up to date. Rebuilding
-> the image on the same host one week later will still get you the same packages
-> as before. The only way to force a rebuild is by making sure that a layer
-> before it has changed, or by clearing the build cache using
-> [`docker builder prune`](../../reference/cli/docker/builder/prune.md).
+For more details about how cache invalidation works, see [Cache invalidation](invalidation.md).
 @z
 
 @x
-## How can I use the cache efficiently?
+## Optimizing how you use the build cache
 @y
-## How can I use the cache efficiently?
+## Optimizing how you use the build cache
 @z
 
 @x
@@ -716,9 +688,11 @@ For more information on using cache to do efficient builds, see:
 @z
 
 @x
+- [Cache invalidation](invalidation.md)
 - [Garbage collection](garbage-collection.md)
 - [Cache storage backends](./backends/index.md)
 @y
+- [Cache invalidation](invalidation.md)
 - [Garbage collection](garbage-collection.md)
 - [Cache storage backends](./backends/index.md)
 @z

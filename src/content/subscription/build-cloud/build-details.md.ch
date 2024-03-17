@@ -3,15 +3,19 @@
 
 @x
 ---
-title: Docker Build Cloud subscriptions and features
+title: Subscriptions and features
 description: Learn about the Docker Build Cloud subscriptions plans and features
 keywords: subscription, pro, team, business, features, build, cloud, Build Cloud, remote builder
+aliases:
+- /subscription/build-details/
 ---
 @y
 ---
-title: Docker Build Cloud subscriptions and features
+title: Subscriptions and features
 description: Learn about the Docker Build Cloud subscriptions plans and features
 keywords: subscription, pro, team, business, features, build, cloud, Build Cloud, remote builder
+aliases:
+- /subscription/build-details/
 ---
 @z
 
@@ -28,9 +32,9 @@ You can enhance your teams' builds with a Build Cloud subscription. This page de
 @z
 
 @x
-If you have an existing [Docker Core subscription](../subscription/core-subscription/details.md), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
+If you have an existing [Docker Core subscription](/subscription/core-subscription/details/), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
 @y
-If you have an existing [Docker Core subscription](../subscription/core-subscription/details.md), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
+If you have an existing [Docker Core subscription](/subscription/core-subscription/details/), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
 @z
 
 @x
@@ -102,9 +106,9 @@ If you have an existing [Docker Core subscription](../subscription/core-subscrip
 @z
 
 @x
-You can upgrade any tier to enhance your developers' experience with the following features:
+You can buy Docker Build Cloud Team if you don’t have a Docker Core subscription, or upgrade any Docker Core tier to enhance your developers' experience with the following features:
 @y
-You can upgrade any tier to enhance your developers' experience with the following features:
+You can buy Docker Build Cloud Team if you don’t have a Docker Core subscription, or upgrade any Docker Core tier to enhance your developers' experience with the following features:
 @z
 
 @x
@@ -119,20 +123,26 @@ You can upgrade any tier to enhance your developers' experience with the followi
 
 @x
 The Docker Build Cloud Team subscription is tied to a Docker
-[organization](../admin/organization/_index.md). To use the build minutes or
+[organization](/admin/organization/). To use the build minutes or
 shared cache of a Docker Build Cloud Team subscription, users must be a part of
-the organization associated with the subscription.
+the organization associated with the subscription. See Manage seats and invites.
 @y
 The Docker Build Cloud Team subscription is tied to a Docker
-[organization](../admin/organization/_index.md). To use the build minutes or
+[organization](/admin/organization/). To use the build minutes or
 shared cache of a Docker Build Cloud Team subscription, users must be a part of
-the organization associated with the subscription.
+the organization associated with the subscription. See Manage seats and invites.
 @z
 
 @x
-To learn how to buy this subscription, see [Docker Build Cloud billing](../billing/build-billing.md).
+To learn how to buy this subscription for your Docker organization, see [Buy your subscription - existing account or organization](/billing/build-billing#existing-account-or-organization).
 @y
-To learn how to buy this subscription, see [Docker Build Cloud billing](../billing/build-billing.md).
+To learn how to buy this subscription for your Docker organization, see [Buy your subscription - existing account or organization](/billing/build-billing#existing-account-or-organization).
+@z
+
+@x
+If you haven’t created a Docker organization yet and don’t have an existing Docker Core subscription, see [Buy your subscription - new organization](/billing/build-billing#new-organization). For organizations without a Docker Core subscription, this plan also includes 50 shared minutes in addition to the Docker Build Cloud Team minutes.
+@y
+If you haven’t created a Docker organization yet and don’t have an existing Docker Core subscription, see [Buy your subscription - new organization](/billing/build-billing#new-organization). For organizations without a Docker Core subscription, this plan also includes 50 shared minutes in addition to the Docker Build Cloud Team minutes.
 @z
 
 @x

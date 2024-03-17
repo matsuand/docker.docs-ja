@@ -9,110 +9,42 @@ short: |
 long: |
     Attach local standard input, output, and error streams to a running container
 usage: docker attach [OPTIONS] CONTAINER
-pname: docker
-plink: docker.yaml
-options:
-    - option: detach-keys
-      value_type: string
-      description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-stdin
-      value_type: bool
-      default_value: "false"
-      description: Do not attach STDIN
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sig-proxy
-      value_type: bool
-      default_value: "true"
-      description: Proxy all received signals to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker attach
 aliases: docker container attach, docker attach
 short: |
-    Attach local standard input, output, and error streams to a running container
+    ローカルの標準入出力やエラー出力を実行中コンテナーにアタッチします。
 long: |
-    Attach local standard input, output, and error streams to a running container
+    ローカルの標準入出力やエラー出力を実行中コンテナーにアタッチします。
 usage: docker attach [OPTIONS] CONTAINER
-pname: docker
-plink: docker.yaml
-options:
-    - option: detach-keys
-      value_type: string
-      description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-stdin
-      value_type: bool
-      default_value: "false"
-      description: Do not attach STDIN
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sig-proxy
-      value_type: bool
-      default_value: "true"
-      description: Proxy all received signals to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x detach-keys
+      description: Override the key sequence for detaching a container
+@y
+      description: コンテナーデタッチのためのキーシーケンスをオーバーライドします。
+@z
+
+@x no-stdin
+      description: Do not attach STDIN
+@y
+      description: STDIN をアタッチしません。
+@z
+
+@x sig-proxy
+      description: Proxy all received signals to the process
+@y
+      description: 受信シグナルをすべてプロセスにプロキシーします。
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

@@ -16,27 +16,26 @@ long: |-
 @y
 command: docker image build
 aliases: docker image build, docker build, docker buildx build, docker builder build
-short: Build an image from a Dockerfile
+short: Dockerfile からイメージをビルドします。
 long: |-
-    The `docker build` command builds Docker images from a Dockerfile and a
-    "context". A build's context is the set of files located in the specified
-    `PATH` or `URL`. The build process can refer to any of the files in the
-    context. For example, your build can use a [*COPY*](__SUBDIR__/reference/dockerfile/#copy)
-    instruction to reference a file in the context.
+    `docker build` コマンドは Dockerfile と "コンテキスト" (context) から Docker イメージをビルドします。
+    ビルド時のコンテキストとは、`PATH` または `URL` によって指定された場所にあるファイルの集まりのことです。
+    ビルド処理においては、コンテキスト内のどのファイルでも参照できます。
+    たとえばビルドにおいて [*COPY*](__SUBDIR__/reference/dockerfile/#copy) 命令を使う場合、コンテキスト内のファイルを参照することができます。
 @z
 
 @x
     The `URL` parameter can refer to three kinds of resources: Git repositories,
     pre-packaged tarball contexts, and plain text files.
 @y
-    The `URL` parameter can refer to three kinds of resources: Git repositories,
-    pre-packaged tarball contexts, and plain text files.
+    `URL` パラメーターは 3 種類のリソースを参照します。
+    Git リポジトリ、パッケージングされた tarball コンテキスト、プレーンなテキストファイルの 3 つです。
 @z
 
 @x
     ### Git repositories
 @y
-    ### Git repositories
+    ### Git リポジトリ {#git-repositories}
 @z
 
 @x
@@ -48,13 +47,13 @@ long: |-
     Local copy gives you the ability to access private repositories using local
     user credentials, VPNs, and so forth.
 @y
-    When the `URL` parameter points to the location of a Git repository, the
-    repository acts as the build context. The system recursively fetches the
-    repository and its submodules. The commit history isn't preserved. A
-    repository is first pulled into a temporary directory on your local host. After
-    that succeeds, the command sends the directory to the Docker daemon as the context.
-    Local copy gives you the ability to access private repositories using local
-    user credentials, VPNs, and so forth.
+    `URL` パラメーターが Git リポジトリの場所を指している場合、そのリポジトリがビルドコンテキストとして扱われます。
+    システムはリポジトリとサブモジュールを再帰的にフェッチします。
+    コミット履歴は保持されません。
+    リポジトリは初めに、ローカルホスト内の一時的なディレクトリにプルされます。
+    これが正常処理されると、ディレクトリ内容がコンテキストとして Docker デーモンに送信されます。
+    ローカルにコピーが存在しているなら、プライベートリポジトリにもアクセス可能になります。
+    その際にはローカルにあるユーザー認証情報、VPN 情報などが用いられます。
 @z
 
 @x
@@ -63,10 +62,9 @@ long: |-
     > If the `URL` parameter contains a fragment the system recursively clones
     > the repository and its submodules using a `git clone --recursive` command.
 @y
-    > **Note**
+    > **メモ**
     >
-    > If the `URL` parameter contains a fragment the system recursively clones
-    > the repository and its submodules using a `git clone --recursive` command.
+    > `URL` パラメーターが部分的なものであった場合、システムは `git clone --recursive` コマンドを実行して、そのリポジトリやサブモジュールを再帰的にクローンします。
 @z
 
 @x
@@ -76,37 +74,28 @@ long: |-
     represents a subdirectory inside the repository used as a build
     context.
 @y
-    Git URLs accept context configuration in their fragment section, separated by a
-    colon (`:`).  The first part represents the reference that Git checks out,
-    and can be either a branch, a tag, or a remote reference. The second part
-    represents a subdirectory inside the repository used as a build
-    context.
+    Git URL では、コンテキスト設定にあたって URL の部分指定が可能です。
+    部分指定にはコロン（`:`）を使って区切ります。
+    コロンより前の 1 つめの項目として Git がチェックアウトを行う URL を指定します。
+    これはブランチ、タグ、リモートリファレンスのいずれでも可能です。
+    2 つめの項目には、そのリポジトリ内のサブディレクトリを指定します。
+    このサブディレクトリがビルドコンテキストとして用いられることになります。
 @z
 
 @x
     For example, run this command to use a directory called `docker` in the branch
     `container`:
 @y
-    For example, run this command to use a directory called `docker` in the branch
-    `container`:
+    たとえば `container` ブランチ内の `docker` というディレクトリを利用するには、以下のように実行します。
 @z
 
-@x
-    ```console
-    $ docker build https://github.com/docker/rootfs.git#container:docker
-    ```
-@y
-    ```console
-    $ docker build https://github.com/docker/rootfs.git#container:docker
-    ```
-@z
+% snip command...
 
 @x
     The following table represents all the valid suffixes with their build
     contexts:
 @y
-    The following table represents all the valid suffixes with their build
-    contexts:
+    以下に示す表は、ビルドコンテキストとして有効なサフィックス指定の例です。
 @z
 
 @x
@@ -121,7 +110,7 @@ long: |-
     | `myrepo.git#mytag:myfolder`    | `refs/tags/mytag`     | `/myfolder`        |
     | `myrepo.git#mybranch:myfolder` | `refs/heads/mybranch` | `/myfolder`        |
 @y
-    | Build Syntax Suffix            | Commit Used           | Build Context Used |
+    | ビルド時のサフィックス指定例   | 利用されるコミット    | 利用されるビルドコンテキスト |
     |--------------------------------|-----------------------|--------------------|
     | `myrepo.git`                   | `refs/heads/master`   | `/`                |
     | `myrepo.git#mytag`             | `refs/tags/mytag`     | `/`                |
@@ -136,26 +125,17 @@ long: |-
 @x
     ### Tarball contexts
 @y
-    ### Tarball contexts
+    ### Tarball コンテキスト {#tarball-contexts}
 @z
 
 @x
     If you pass a URL to a remote tarball, the command sends the URL itself to the
     daemon:
 @y
-    If you pass a URL to a remote tarball, the command sends the URL itself to the
-    daemon:
+    URL にリモートの tarball を指定した場合、URL がそのままデーモンに送信されます。
 @z
 
-@x
-    ```console
-    $ docker build http://server/context.tar.gz
-    ```
-@y
-    ```console
-    $ docker build http://server/context.tar.gz
-    ```
-@z
+% snip command...
 
 @x
     The host running the Docker daemon performs the download operation,
@@ -165,62 +145,47 @@ long: |-
     `tar` Unix format and can be compressed with any one of the `xz`, `bzip2`,
     `gzip` or `identity` (no compression) formats.
 @y
-    The host running the Docker daemon performs the download operation,
-    which isn't necessarily the same host that issued the build command.
-    The Docker daemon fetches `context.tar.gz` and uses it as the
-    build context. Tarball contexts must be tar archives conforming to the standard
-    `tar` Unix format and can be compressed with any one of the `xz`, `bzip2`,
-    `gzip` or `identity` (no compression) formats.
+    Docker デーモンが稼働しているホストは、ダウンロード処理を実現します。
+    そのホストは build コマンドが実行されたホストと同じである必要はありません。
+    Docker デーモンは `context.tar.gz` を取得して、これをビルドコンテキストとして利用します。
+    Tarball コンテキストは UNIX `tar` フォーマット標準に適合した tar アーカイブである必要があります。
+    これを `xz`、`bzip2`、`gzip` により圧縮したフォーマットも受け付けます。
+    `identity`（圧縮なし）のフォーマットも利用できます。
 @z
 
 @x
     ### Text files
 @y
-    ### Text files
+    ### テキストファイル {#text-files}
 @z
 
 @x
     Instead of specifying a context, you can pass a single `Dockerfile` in the
     `URL` or pipe the file in via `STDIN`. To pipe a `Dockerfile` from `STDIN`:
 @y
-    Instead of specifying a context, you can pass a single `Dockerfile` in the
-    `URL` or pipe the file in via `STDIN`. To pipe a `Dockerfile` from `STDIN`:
+    コンテキストを指定するのではなく、1 つの Dockerfile を指定することができます。
+    つまりそのファイル内容を、`STDIN` を介してパイプ入力します。
+    `Dockerfile` を `STDIN` からパイプ入力するには、以下のようにします。
 @z
 
-@x
-    ```console
-    $ docker build - < Dockerfile
-    ```
-@y
-    ```console
-    $ docker build - < Dockerfile
-    ```
-@z
+% snip command...
 
 @x
     With PowerShell on Windows, you run:
 @y
-    With PowerShell on Windows, you run:
+    Windows における Powershell 上では以下のようにします。
 @z
 
-@x
-    ```powershell
-    Get-Content Dockerfile | docker build -
-    ```
-@y
-    ```powershell
-    Get-Content Dockerfile | docker build -
-    ```
-@z
+% snip command...
 
 @x
     If you use `STDIN` or specify a `URL` pointing to a plain text file, the daemon
     places the contents into a `Dockerfile`, and ignores any `-f`, `--file`
     option. In this scenario, there is no context.
 @y
-    If you use `STDIN` or specify a `URL` pointing to a plain text file, the daemon
-    places the contents into a `Dockerfile`, and ignores any `-f`, `--file`
-    option. In this scenario, there is no context.
+    `STDIN` を利用するか `URL` によりプレーンテキストファイルを指定した場合、デーモンはその内容を `Dockerfile` に書き入れます。
+    この場合 `-f` や `--file` オプションは無視されます。
+    この状況では、コンテキストは存在しないものとなります。
 @z
 
 @x
@@ -231,12 +196,11 @@ long: |-
     build context. Relative path are interpreted as relative to the root of the
     context.
 @y
-    By default the `docker build` command looks for a `Dockerfile` at the root
-    of the build context. The `-f`, `--file`, option lets you specify the path to
-    an alternative file to use instead. This is useful in cases that use the same
-    set of files for multiple builds. The path must be to a file within the
-    build context. Relative path are interpreted as relative to the root of the
-    context.
+    `docker build` コマンドが `Dockerfile` を探しにいく場所は、デフォルトではビルドコンテキストのルートディレクトリです。
+    `-f` や `--file` オプションを使うと、別のファイルを利用するように指定できます。
+    これは同一のファイル群を使って、ビルドを何度か行う場合に便利です。
+    パスはビルドコンテキスト内のファイルを表わしていなければなりません。
+    相対パスが指定された場合は、コンテキストのルートからの相対パスと解釈されます。
 @z
 
 @x
@@ -915,67 +879,7 @@ examples: |-
     ### Build with PATH
 @z
 
-@x
-    ```console
-    $ docker build .
-@y
-    ```console
-    $ docker build .
-@z
-
-@x
-    Uploading context 10240 bytes
-    Step 1/3 : FROM busybox
-    Pulling repository busybox
-     ---> e9aa60c60128MB/2.284 MB (100%) endpoint: https://cdn-registry-1.docker.io/v1/
-    Step 2/3 : RUN ls -lh /
-     ---> Running in 9c9e81692ae9
-    total 24
-    drwxr-xr-x    2 root     root        4.0K Mar 12  2013 bin
-    drwxr-xr-x    5 root     root        4.0K Oct 19 00:19 dev
-    drwxr-xr-x    2 root     root        4.0K Oct 19 00:19 etc
-    drwxr-xr-x    2 root     root        4.0K Nov 15 23:34 lib
-    lrwxrwxrwx    1 root     root           3 Mar 12  2013 lib64 -> lib
-    dr-xr-xr-x  116 root     root           0 Nov 15 23:34 proc
-    lrwxrwxrwx    1 root     root           3 Mar 12  2013 sbin -> bin
-    dr-xr-xr-x   13 root     root           0 Nov 15 23:34 sys
-    drwxr-xr-x    2 root     root        4.0K Mar 12  2013 tmp
-    drwxr-xr-x    2 root     root        4.0K Nov 15 23:34 usr
-     ---> b35f4035db3f
-    Step 3/3 : CMD echo Hello world
-     ---> Running in 02071fceb21b
-     ---> f52f38b7823e
-    Successfully built f52f38b7823e
-    Removing intermediate container 9c9e81692ae9
-    Removing intermediate container 02071fceb21b
-    ```
-@y
-    Uploading context 10240 bytes
-    Step 1/3 : FROM busybox
-    Pulling repository busybox
-     ---> e9aa60c60128MB/2.284 MB (100%) endpoint: https://cdn-registry-1.docker.io/v1/
-    Step 2/3 : RUN ls -lh /
-     ---> Running in 9c9e81692ae9
-    total 24
-    drwxr-xr-x    2 root     root        4.0K Mar 12  2013 bin
-    drwxr-xr-x    5 root     root        4.0K Oct 19 00:19 dev
-    drwxr-xr-x    2 root     root        4.0K Oct 19 00:19 etc
-    drwxr-xr-x    2 root     root        4.0K Nov 15 23:34 lib
-    lrwxrwxrwx    1 root     root           3 Mar 12  2013 lib64 -> lib
-    dr-xr-xr-x  116 root     root           0 Nov 15 23:34 proc
-    lrwxrwxrwx    1 root     root           3 Mar 12  2013 sbin -> bin
-    dr-xr-xr-x   13 root     root           0 Nov 15 23:34 sys
-    drwxr-xr-x    2 root     root        4.0K Mar 12  2013 tmp
-    drwxr-xr-x    2 root     root        4.0K Nov 15 23:34 usr
-     ---> b35f4035db3f
-    Step 3/3 : CMD echo Hello world
-     ---> Running in 02071fceb21b
-     ---> f52f38b7823e
-    Successfully built f52f38b7823e
-    Removing intermediate container 9c9e81692ae9
-    Removing intermediate container 02071fceb21b
-    ```
-@z
+% snip command...
 
 @x
     This example specifies that the `PATH` is `.`, and so `tar`s all the files in the
@@ -1019,15 +923,7 @@ examples: |-
     ### Build with URL
 @z
 
-@x
-    ```console
-    $ docker build github.com/creack/docker-firefox
-    ```
-@y
-    ```console
-    $ docker build github.com/creack/docker-firefox
-    ```
-@z
+% snip command...
 
 @x
     This clones the GitHub repository, using the cloned repository as context,
@@ -1039,41 +935,7 @@ examples: |-
     specify an arbitrary Git repository by using the `git://` or `git@` scheme.
 @z
 
-@x
-    ```console
-    $ docker build -f ctx/Dockerfile http://server/ctx.tar.gz
-@y
-    ```console
-    $ docker build -f ctx/Dockerfile http://server/ctx.tar.gz
-@z
-
-@x
-    Downloading context: http://server/ctx.tar.gz [===================>]    240 B/240 B
-    Step 1/3 : FROM busybox
-     ---> 8c2e06607696
-    Step 2/3 : ADD ctx/container.cfg /
-     ---> e7829950cee3
-    Removing intermediate container b35224abf821
-    Step 3/3 : CMD /bin/ls
-     ---> Running in fbc63d321d73
-     ---> 3286931702ad
-    Removing intermediate container fbc63d321d73
-    Successfully built 377c409b35e4
-    ```
-@y
-    Downloading context: http://server/ctx.tar.gz [===================>]    240 B/240 B
-    Step 1/3 : FROM busybox
-     ---> 8c2e06607696
-    Step 2/3 : ADD ctx/container.cfg /
-     ---> e7829950cee3
-    Removing intermediate container b35224abf821
-    Step 3/3 : CMD /bin/ls
-     ---> Running in fbc63d321d73
-     ---> 3286931702ad
-    Removing intermediate container fbc63d321d73
-    Successfully built 377c409b35e4
-    ```
-@z
+% snip command...
 
 @x
     This sends the URL `http://server/ctx.tar.gz` to the Docker daemon, which
@@ -1099,15 +961,7 @@ examples: |-
     ### Build with `-`
 @z
 
-@x
-    ```console
-    $ docker build - < Dockerfile
-    ```
-@y
-    ```console
-    $ docker build - < Dockerfile
-    ```
-@z
+% snip command...
 
 @x
     This example reads a Dockerfile from `STDIN` without context. Due to the lack of a
@@ -1121,15 +975,7 @@ examples: |-
     remote URL.
 @z
 
-@x
-    ```console
-    $ docker build - < context.tar.gz
-    ```
-@y
-    ```console
-    $ docker build - < context.tar.gz
-    ```
-@z
+% snip command...
 
 @x
     This example builds an image for a compressed context read from `STDIN`.
@@ -1145,55 +991,7 @@ examples: |-
     ### Use a .dockerignore file
 @z
 
-@x
-    ```console
-    $ docker build .
-@y
-    ```console
-    $ docker build .
-@z
-
-@x
-    Uploading context 18.829 MB
-    Uploading context
-    Step 1/2 : FROM busybox
-     ---> 769b9341d937
-    Step 2/2 : CMD echo Hello world
-     ---> Using cache
-     ---> 99cc1ad10469
-    Successfully built 99cc1ad10469
-    $ echo ".git" > .dockerignore
-    $ docker build .
-    Uploading context  6.76 MB
-    Uploading context
-    Step 1/2 : FROM busybox
-     ---> 769b9341d937
-    Step 2/2 : CMD echo Hello world
-     ---> Using cache
-     ---> 99cc1ad10469
-    Successfully built 99cc1ad10469
-    ```
-@y
-    Uploading context 18.829 MB
-    Uploading context
-    Step 1/2 : FROM busybox
-     ---> 769b9341d937
-    Step 2/2 : CMD echo Hello world
-     ---> Using cache
-     ---> 99cc1ad10469
-    Successfully built 99cc1ad10469
-    $ echo ".git" > .dockerignore
-    $ docker build .
-    Uploading context  6.76 MB
-    Uploading context
-    Step 1/2 : FROM busybox
-     ---> 769b9341d937
-    Step 2/2 : CMD echo Hello world
-     ---> Using cache
-     ---> 99cc1ad10469
-    Successfully built 99cc1ad10469
-    ```
-@z
+% snip command...
 
 @x
     This example shows the use of the `.dockerignore` file to exclude the `.git`
@@ -1231,15 +1029,7 @@ examples: |-
     ### Tag an image (-t, --tag) {#tag}
 @z
 
-@x
-    ```console
-    $ docker build -t vieux/apache:2.0 .
-    ```
-@y
-    ```console
-    $ docker build -t vieux/apache:2.0 .
-    ```
-@z
+% snip command...
 
 @x
     This examples builds in the same way as the previous example, but it then tags the resulting
@@ -1273,15 +1063,7 @@ examples: |-
     `whenry/fedora-jboss:v2.1`, use the following:
 @z
 
-@x
-    ```console
-    $ docker build -t whenry/fedora-jboss:latest -t whenry/fedora-jboss:v2.1 .
-    ```
-@y
-    ```console
-    $ docker build -t whenry/fedora-jboss:latest -t whenry/fedora-jboss:v2.1 .
-    ```
-@z
+% snip command...
 
 @x
     ### Specify a Dockerfile (-f, --file) {#file}
@@ -1289,15 +1071,7 @@ examples: |-
     ### Specify a Dockerfile (-f, --file) {#file}
 @z
 
-@x
-    ```console
-    $ docker build -f Dockerfile.debug .
-    ```
-@y
-    ```console
-    $ docker build -f Dockerfile.debug .
-    ```
-@z
+% snip command...
 
 @x
     This uses a file called `Dockerfile.debug` for the build instructions
@@ -1307,15 +1081,7 @@ examples: |-
     instead of `Dockerfile`.
 @z
 
-@x
-    ```console
-    $ curl example.com/remote/Dockerfile | docker build -f - .
-    ```
-@y
-    ```console
-    $ curl example.com/remote/Dockerfile | docker build -f - .
-    ```
-@z
+% snip command...
 
 @x
     The above command uses the current directory as the build context and reads
@@ -1325,17 +1091,7 @@ examples: |-
     a Dockerfile from stdin.
 @z
 
-@x
-    ```console
-    $ docker build -f dockerfiles/Dockerfile.debug -t myapp_debug .
-    $ docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .
-    ```
-@y
-    ```console
-    $ docker build -f dockerfiles/Dockerfile.debug -t myapp_debug .
-    $ docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .
-    ```
-@z
+% snip command...
 
 @x
     The above commands build the current build context (as specified by the
@@ -1347,19 +1103,7 @@ examples: |-
     production version.
 @z
 
-@x
-    ```console
-    $ cd /home/me/myapp/some/dir/really/deep
-    $ docker build -f /home/me/myapp/dockerfiles/debug /home/me/myapp
-    $ docker build -f ../../../../dockerfiles/debug /home/me/myapp
-    ```
-@y
-    ```console
-    $ cd /home/me/myapp/some/dir/really/deep
-    $ docker build -f /home/me/myapp/dockerfiles/debug /home/me/myapp
-    $ docker build -f ../../../../dockerfiles/debug /home/me/myapp
-    ```
-@z
+% snip command...
 
 @x
     These two `docker build` commands do the exact same thing. They both use the
@@ -1453,15 +1197,7 @@ examples: |-
     can set at build-time using the  `--build-arg` flag:
 @z
 
-@x
-    ```console
-    $ docker build --build-arg HTTP_PROXY=http://10.20.30.2:1234 --build-arg FTP_PROXY=http://40.50.60.5:4567 .
-    ```
-@y
-    ```console
-    $ docker build --build-arg HTTP_PROXY=http://10.20.30.2:1234 --build-arg FTP_PROXY=http://40.50.60.5:4567 .
-    ```
-@z
+% snip command...
 
 @x
     This flag allows you to pass the build-time variables that are
@@ -1499,17 +1235,7 @@ examples: |-
     propagates the value from the local environment into the Docker container it's building:
 @z
 
-@x
-    ```console
-    $ export HTTP_PROXY=http://10.20.30.2:1234
-    $ docker build --build-arg HTTP_PROXY .
-    ```
-@y
-    ```console
-    $ export HTTP_PROXY=http://10.20.30.2:1234
-    $ docker build --build-arg HTTP_PROXY .
-    ```
-@z
+% snip command...
 
 @x
     This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](/reference/cli/docker/container/run/#env)
@@ -1589,15 +1315,7 @@ examples: |-
     `my-hostname` and `my_hostname_v6`:
 @z
 
-@x
-    ```console
-    $ docker build --add-host my_hostname=8.8.8.8 --add-host my_hostname_v6=2001:4860:4860::8888 .
-    ```
-@y
-    ```console
-    $ docker build --add-host my_hostname=8.8.8.8 --add-host my_hostname_v6=2001:4860:4860::8888 .
-    ```
-@z
+% snip command...
 
 @x
     If you need your build to connect to services running on the host, you can use
@@ -1609,15 +1327,7 @@ examples: |-
     build containers resolve `host.docker.internal` to the host's gateway IP.
 @z
 
-@x
-    ```console
-    $ docker build --add-host host.docker.internal=host-gateway .
-    ```
-@y
-    ```console
-    $ docker build --add-host host.docker.internal=host-gateway .
-    ```
-@z
+% snip command...
 
 @x
     You can wrap an IPv6 address in square brackets.
@@ -1629,15 +1339,7 @@ examples: |-
     Both formats in the following example are valid:
 @z
 
-@x
-    ```console
-    $ docker build --add-host my-hostname:10.180.0.1 --add-host my-hostname_v6=[2001:4860:4860::8888] .
-    ```
-@y
-    ```console
-    $ docker build --add-host my-hostname:10.180.0.1 --add-host my-hostname_v6=[2001:4860:4860::8888] .
-    ```
-@z
+% snip command...
 
 @x
     ### Specifying target build stage (--target) {#target}
@@ -1655,35 +1357,8 @@ examples: |-
     resulting image. The daemon skips commands after the target stage.
 @z
 
-@x
-    ```dockerfile
-    FROM debian AS build-env
-    # ...
-@y
-    ```dockerfile
-    FROM debian AS build-env
-    # ...
-@z
-
-@x
-    FROM alpine AS production-env
-    # ...
-    ```
-@y
-    FROM alpine AS production-env
-    # ...
-    ```
-@z
-
-@x
-    ```console
-    $ docker build -t mybuildimage --target build-env .
-    ```
-@y
-    ```console
-    $ docker build -t mybuildimage --target build-env .
-    ```
-@z
+% snip code...
+% snip command...
 
 @x
     ### Custom build outputs (--output) {#output}
@@ -1757,15 +1432,7 @@ examples: |-
     If the directory does not exist, Docker creates the directory automatically:
 @z
 
-@x
-    ```console
-    $ docker build -o out .
-    ```
-@y
-    ```console
-    $ docker build -o out .
-    ```
-@z
+% snip command...
 
 @x
     The example above uses the short-hand syntax, omitting the `type` options, and
@@ -1779,15 +1446,7 @@ examples: |-
     path):
 @z
 
-@x
-    ```console
-    $ docker build --output type=local,dest=out .
-    ```
-@y
-    ```console
-    $ docker build --output type=local,dest=out .
-    ```
-@z
+% snip command...
 
 @x
     Use the `tar` type to export the files as a `.tar` archive:
@@ -1795,15 +1454,7 @@ examples: |-
     Use the `tar` type to export the files as a `.tar` archive:
 @z
 
-@x
-    ```console
-    $ docker build --output type=tar,dest=out.tar .
-    ```
-@y
-    ```console
-    $ docker build --output type=tar,dest=out.tar .
-    ```
-@z
+% snip command...
 
 @x
     The example below shows the equivalent when using the short-hand syntax. In this
@@ -1817,15 +1468,7 @@ examples: |-
     the `out.tar` file:
 @z
 
-@x
-    ```console
-    $ docker build -o - . > out.tar
-    ```
-@y
-    ```console
-    $ docker build -o - . > out.tar
-    ```
-@z
+% snip command...
 
 @x
     The `--output` option exports all files from the target stage. A common pattern
@@ -1845,25 +1488,7 @@ examples: |-
     build artifacts for exporting:
 @z
 
-@x
-    ```dockerfile
-    FROM golang AS build-stage
-    RUN go get -u github.com/LK4D4/vndr
-@y
-    ```dockerfile
-    FROM golang AS build-stage
-    RUN go get -u github.com/LK4D4/vndr
-@z
-
-@x
-    FROM scratch AS export-stage
-    COPY --from=build-stage /go/bin/vndr /
-    ```
-@y
-    FROM scratch AS export-stage
-    COPY --from=build-stage /go/bin/vndr /
-    ```
-@z
+% snip code...
 
 @x
     When building the Dockerfile with the `-o` option, the command only exports the files from the final
@@ -1873,51 +1498,7 @@ examples: |-
     stage to the `out` directory, in this case, the `vndr` binary:
 @z
 
-@x
-    ```console
-    $ docker build -o out .
-@y
-    ```console
-    $ docker build -o out .
-@z
-
-@x
-    [+] Building 2.3s (7/7) FINISHED
-     => [internal] load build definition from Dockerfile                                                                          0.1s
-     => => transferring dockerfile: 176B                                                                                          0.0s
-     => [internal] load .dockerignore                                                                                             0.0s
-     => => transferring context: 2B                                                                                               0.0s
-     => [internal] load metadata for docker.io/library/golang:latest                                                              1.6s
-     => [build-stage 1/2] FROM docker.io/library/golang@sha256:2df96417dca0561bf1027742dcc5b446a18957cd28eba6aa79269f23f1846d3f   0.0s
-     => => resolve docker.io/library/golang@sha256:2df96417dca0561bf1027742dcc5b446a18957cd28eba6aa79269f23f1846d3f               0.0s
-     => CACHED [build-stage 2/2] RUN go get -u github.com/LK4D4/vndr                                                              0.0s
-     => [export-stage 1/1] COPY --from=build-stage /go/bin/vndr /                                                                 0.2s
-     => exporting to client                                                                                                       0.4s
-     => => copying files 10.30MB                                                                                                  0.3s
-@y
-    [+] Building 2.3s (7/7) FINISHED
-     => [internal] load build definition from Dockerfile                                                                          0.1s
-     => => transferring dockerfile: 176B                                                                                          0.0s
-     => [internal] load .dockerignore                                                                                             0.0s
-     => => transferring context: 2B                                                                                               0.0s
-     => [internal] load metadata for docker.io/library/golang:latest                                                              1.6s
-     => [build-stage 1/2] FROM docker.io/library/golang@sha256:2df96417dca0561bf1027742dcc5b446a18957cd28eba6aa79269f23f1846d3f   0.0s
-     => => resolve docker.io/library/golang@sha256:2df96417dca0561bf1027742dcc5b446a18957cd28eba6aa79269f23f1846d3f               0.0s
-     => CACHED [build-stage 2/2] RUN go get -u github.com/LK4D4/vndr                                                              0.0s
-     => [export-stage 1/1] COPY --from=build-stage /go/bin/vndr /                                                                 0.2s
-     => exporting to client                                                                                                       0.4s
-     => => copying files 10.30MB                                                                                                  0.3s
-@z
-
-@x
-    $ ls ./out
-    vndr
-    ```
-@y
-    $ ls ./out
-    vndr
-    ```
-@z
+% snip command...
 
 @x
     ### Specifying external cache sources (--cache-from) {#cache-from}
@@ -1991,17 +1572,7 @@ examples: |-
     to a registry, then uses the image as a cache source on another machine:
 @z
 
-@x
-    ```console
-    $ docker build -t myname/myapp --build-arg BUILDKIT_INLINE_CACHE=1 .
-    $ docker push myname/myapp
-    ```
-@y
-    ```console
-    $ docker build -t myname/myapp --build-arg BUILDKIT_INLINE_CACHE=1 .
-    $ docker push myname/myapp
-    ```
-@z
+% snip command...
 
 @x
     After pushing the image, the image is used as cache source on another machine.
@@ -2017,15 +1588,7 @@ examples: |-
     On another machine:
 @z
 
-@x
-    ```console
-    $ docker build --cache-from myname/myapp .
-    ```
-@y
-    ```console
-    $ docker build --cache-from myname/myapp .
-    ```
-@z
+% snip command...
 
 @x
     ### Set the networking mode for the RUN instructions during build (--network) {#network}
@@ -2197,53 +1760,7 @@ examples: |-
     line in the `Engine` section:
 @z
 
-@x
-    ```console
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.42
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           default
-@y
-    ```console
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.42
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           default
-@z
-
-@x
-    Server: Docker Engine - Community
-     Engine:
-      Version:          23.0.3
-      API version:      1.42 (minimum version 1.12)
-      Go version:       go1.19.7
-      Git commit:       59118bf
-      Built:            Tue Apr  4 22:05:41 2023
-      OS/Arch:          linux/amd64
-      Experimental:     true
-     [...]
-    ```
-@y
-    Server: Docker Engine - Community
-     Engine:
-      Version:          23.0.3
-      API version:      1.42 (minimum version 1.12)
-      Go version:       go1.19.7
-      Git commit:       59118bf
-      Built:            Tue Apr  4 22:05:41 2023
-      OS/Arch:          linux/amd64
-      Experimental:     true
-     [...]
-    ```
-@z
+% snip output...
 
 @x
     #### Build an image with the `--squash` flag
@@ -2259,25 +1776,7 @@ examples: |-
     `Dockerfile`:
 @z
 
-@x
-    ```dockerfile
-    FROM busybox
-    RUN echo hello > /hello
-    RUN echo world >> /hello
-    RUN touch remove_me /remove_me
-    ENV HELLO=world
-    RUN rm /remove_me
-    ```
-@y
-    ```dockerfile
-    FROM busybox
-    RUN echo hello > /hello
-    RUN echo world >> /hello
-    RUN touch remove_me /remove_me
-    ENV HELLO=world
-    RUN rm /remove_me
-    ```
-@z
+% snip code...
 
 @x
     Next, build an image named `test` using the `--squash` flag.
@@ -2285,15 +1784,7 @@ examples: |-
     Next, build an image named `test` using the `--squash` flag.
 @z
 
-@x
-    ```console
-    $ docker build --squash -t test .
-    ```
-@y
-    ```console
-    $ docker build --squash -t test .
-    ```
-@z
+% snip command...
 
 @x
     After the build completes, the history looks like the below. The history could show that a layer's
@@ -2303,54 +1794,14 @@ examples: |-
     name is `<missing>`, and there is a new layer with COMMENT `merge`.
 @z
 
-@x
-    ```console
-    $ docker history test
-@y
-    ```console
-    $ docker history test
-@z
-
-@x
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    4e10cb5b4cac        3 seconds ago                                                       12 B                merge sha256:88a7b0112a41826885df0e7072698006ee8f621c6ab99fca7fe9151d7b599702 to sha256:47bcc53f74dc94b1920f0b34f6036096526296767650f223433fe65c35f149eb
-    <missing>           5 minutes ago       /bin/sh -c rm /remove_me                        0 B
-    <missing>           5 minutes ago       /bin/sh -c #(nop) ENV HELLO=world               0 B
-    <missing>           5 minutes ago       /bin/sh -c touch remove_me /remove_me           0 B
-    <missing>           5 minutes ago       /bin/sh -c echo world >> /hello                 0 B
-    <missing>           6 minutes ago       /bin/sh -c echo hello > /hello                  0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) CMD ["sh"]                    0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:47ca6e777c36a4cfff   1.113 MB
-    ```
-@y
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    4e10cb5b4cac        3 seconds ago                                                       12 B                merge sha256:88a7b0112a41826885df0e7072698006ee8f621c6ab99fca7fe9151d7b599702 to sha256:47bcc53f74dc94b1920f0b34f6036096526296767650f223433fe65c35f149eb
-    <missing>           5 minutes ago       /bin/sh -c rm /remove_me                        0 B
-    <missing>           5 minutes ago       /bin/sh -c #(nop) ENV HELLO=world               0 B
-    <missing>           5 minutes ago       /bin/sh -c touch remove_me /remove_me           0 B
-    <missing>           5 minutes ago       /bin/sh -c echo world >> /hello                 0 B
-    <missing>           6 minutes ago       /bin/sh -c echo hello > /hello                  0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) CMD ["sh"]                    0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:47ca6e777c36a4cfff   1.113 MB
-    ```
-@z
+% snip command...
 
 @x
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

@@ -250,6 +250,7 @@ AC_CONFIG_FILES([
 	src/content/security/for-admins/Makefile
 	src/content/security/for-admins/single-sign-on/Makefile
 	src/content/security/for-admins/single-sign-on/configure/Makefile
+	src/content/security/for-admins/single-sign-on/connect/Makefile
 	src/content/security/for-admins/single-sign-on/images/Makefile
 	src/content/security/for-admins/single-sign-on/manage/Makefile
 	src/content/security/for-developers/Makefile
@@ -260,6 +261,7 @@ AC_CONFIG_FILES([
 	src/content/storage/storagedriver/Makefile
 	src/content/storage/storagedriver/images/Makefile
 	src/content/subscription/Makefile
+	src/content/subscription/build-cloud/Makefile
 	src/content/subscription/core-subscription/Makefile
 	src/content/subscription/images/Makefile
 	src/content/trusted-content/Makefile

@@ -42,12 +42,12 @@ title: Docker subscription overview
 @x
 - title: Docker Build Cloud subscriptions and features
   description: Learn how a Docker Build Cloud subscription can accelerate your builds.
-  link: /subscription/build-details/
+  link: /subscription/build-cloud/build-details/
   icon: build
 @y
 - title: Docker Build Cloud subscriptions and features
   description: Learn how a Docker Build Cloud subscription can accelerate your builds.
-  link: __SUBDIR__/subscription/build-details/
+  link: __SUBDIR__/subscription/build-cloud/build-details/
   icon: build
 @z
 

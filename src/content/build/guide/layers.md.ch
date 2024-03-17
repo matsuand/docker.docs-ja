@@ -180,10 +180,10 @@ Related information:
 @z
 
 @x
-- [Optimizing builds with cache](../cache/index.md)
+- [Docker build cache](../cache/_index.md)
 - [Dockerfile best practices](../../develop/develop-images/dockerfile_best-practices.md)
 @y
-- [Optimizing builds with cache](../cache/index.md)
+- [Docker build cache](../cache/_index.md)
 - [Dockerfile best practices](../../develop/develop-images/dockerfile_best-practices.md)
 @z
 

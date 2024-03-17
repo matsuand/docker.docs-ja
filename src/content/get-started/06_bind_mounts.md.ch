@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Use bind mounts
 keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers, docker desktop'
 description: Using bind mounts in our application
----
 @y
 ---
 title: Use bind mounts
@@ -208,11 +206,11 @@ setting, see the topic for [Mac](../desktop/settings/mac.md/#file-sharing),
 @z
 
 @x
-   The `--mount` option tells Docker to create a bind mount, where `src` is the
+   The `--mount type=bind` option tells Docker to create a bind mount, where `src` is the
    current working directory on your host machine (`getting-started-app`), and
    `target` is where that directory should appear inside the container (`/src`).
 @y
-   The `--mount` option tells Docker to create a bind mount, where `src` is the
+   The `--mount type=bind` option tells Docker to create a bind mount, where `src` is the
    current working directory on your host machine (`getting-started-app`), and
    `target` is where that directory should appear inside the container (`/src`).
 @z

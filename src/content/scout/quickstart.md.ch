@@ -276,30 +276,6 @@ The image is evaluated against the default, out-of-the-box policies.
 % snip output...
 
 @x
-  Status │                  Policy                   │           Results
-─────────┼───────────────────────────────────────────┼──────────────────────────────
-  ✓      │ Copyleft licenses                         │    0 packages
-  !      │ Critical vulnerabilities                  │    2C     0H     0M     0L
-  !      │ Default non-root user                     │
-  !      │ Fixable critical and high vulnerabilities │    2C    16H     0M     0L
-  ✓      │ High-profile vulnerabilities              │    0C     0H     0M     0L
-  ?      │ Outdated base images                      │    No data
-  ?      │ Supply chain attestations                 │    No data
-```
-@y
-  Status │                  Policy                   │           Results
-─────────┼───────────────────────────────────────────┼──────────────────────────────
-  ✓      │ Copyleft licenses                         │    0 packages
-  !      │ Critical vulnerabilities                  │    2C     0H     0M     0L
-  !      │ Default non-root user                     │
-  !      │ Fixable critical and high vulnerabilities │    2C    16H     0M     0L
-  ✓      │ High-profile vulnerabilities              │    0C     0H     0M     0L
-  ?      │ Outdated base images                      │    No data
-  ?      │ Supply chain attestations                 │    No data
-```
-@z
-
-@x
 Exclamation marks in the status column indicate a violated policy.
 Question marks indicate that there isn't enough metadata to complete the evaluation.
 A check mark indicates compliance.

@@ -158,11 +158,11 @@ also specify it explicitly with `type=file` or `type=env`.
 @z
 
 @x
-The following example mounts the environment variable `KUBECONFIG` to secret ID
-`kube`.
+The following example mounts the environment variable `KUBECONFIG` to secret ID `kube`,
+as a file in the build container at `/run/secrets/kube`.
 @y
-The following example mounts the environment variable `KUBECONFIG` to secret ID
-`kube`.
+The following example mounts the environment variable `KUBECONFIG` to secret ID `kube`,
+as a file in the build container at `/run/secrets/kube`.
 @z
 
 @x
@@ -176,18 +176,24 @@ $ docker build --secret id=kube,env=KUBECONFIG .
 @z
 
 @x
-The following example maps an environment variable directly to a secret ID.
+When you secrets from environment variables, you can omit the `id` parameter
+to bind the secret to a file with the same name as the variable.
+In the following example, the value of the `API_TOKEN` variable
+is mounted to `/run/secrets/API_TOKEN` in the build container.
 @y
-The following example maps an environment variable directly to a secret ID.
+When you secrets from environment variables, you can omit the `id` parameter
+to bind the secret to a file with the same name as the variable.
+In the following example, the value of the `API_TOKEN` variable
+is mounted to `/run/secrets/API_TOKEN` in the build container.
 @z
 
 @x
 ```console
-$ docker build --secret env=KUBECONFIG .
+$ docker build --secret id=API_TOKEN .
 ```
 @y
 ```console
-$ docker build --secret env=KUBECONFIG .
+$ docker build --secret id=API_TOKEN .
 ```
 @z
 

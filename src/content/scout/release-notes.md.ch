@@ -36,15 +36,15 @@ for what's coming next.
 @z
 
 @x
-## 2024 Q1
+## Q1 2024
 @y
-## 2024 Q1
+## Q1 2024
 @z
 
 @x
-New features and enhancements released in Q1 of 2024.
+New features and enhancements released in the first quarter of of 2024.
 @y
-New features and enhancements released in Q1 of 2024.
+New features and enhancements released in the first quarter of of 2024.
 @z
 
 @x
@@ -180,15 +180,15 @@ source repositories, see
 @z
 
 @x
-## 2023 Q4
+## Q4 2023
 @y
-## 2023 Q4
+## Q4 2023
 @z
 
 @x
-New features and enhancements released in Q4 of 2023.
+New features and enhancements released in the fourth quarter of 2023.
 @y
-New features and enhancements released in Q4 of 2023.
+New features and enhancements released in the fourth quarter of 2023.
 @z
 
 @x

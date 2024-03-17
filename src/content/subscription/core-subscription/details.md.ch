@@ -44,9 +44,9 @@ The following describes some of the key features included with your Docker Core 
 @z
 
 @x
-Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](../build-details.md).
+Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](../build-cloud/build-details.md).
 @y
-Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](../build-details.md).
+Docker Build Cloud minutes are also included. For more information, see [Docker Build Cloud subscriptions and features](../build-cloud/build-details.md).
 @z
 
 @x

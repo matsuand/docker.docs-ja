@@ -4,23 +4,19 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Get started with Policy Evaluation in Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, policy
 description: |
   Policies in Docker Scout let you define supply chain rules and thresholds
   for your artifacts, and track how your artifacts perform against those
   requirements over time
----
 @y
----
 title: Get started with Policy Evaluation in Docker Scout
 keywords: scout, supply chain, vulnerabilities, packages, cves, policy
 description: |
   Policies in Docker Scout let you define supply chain rules and thresholds
   for your artifacts, and track how your artifacts perform against those
   requirements over time
----
 @z
 
 @x
@@ -30,7 +26,7 @@ description: |
 > feature of Docker Scout.
 { .restricted }
 @y
-> **Early Access**
+> **早期アクセス**
 >
 > Policy Evaluation is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > feature of Docker Scout.
@@ -82,17 +78,17 @@ defined by policies.
 @z
 
 @x
-A policy defines one or more criteria that your artifacts should fulfill. For
-example, one of the default policies in Docker Scout is the **Critical
-vulnerabilities** policy, which requires that your artifacts must not contain
-any critical vulnerabilities. If an artifact contains one or more
-vulnerabilities with a critical severity, that artifact fails the evaluation.
+A policy defines image quality criteria that your artifacts should fulfill.
+For example, the **Copyleft licenses** policy flags packages distributed under a copyleft license.
+If an image contains a copyleft-licensed package, that image is non-compliant with this policy.
+Some policies, such as the **Copyleft licenses** policy, are configurable.
+Configurable policies let you adjust the criteria to better match your organization's needs.
 @y
-A policy defines one or more criteria that your artifacts should fulfill. For
-example, one of the default policies in Docker Scout is the **Critical
-vulnerabilities** policy, which requires that your artifacts must not contain
-any critical vulnerabilities. If an artifact contains one or more
-vulnerabilities with a critical severity, that artifact fails the evaluation.
+A policy defines image quality criteria that your artifacts should fulfill.
+For example, the **Copyleft licenses** policy flags packages distributed under a copyleft license.
+If an image contains a copyleft-licensed package, that image is non-compliant with this policy.
+Some policies, such as the **Copyleft licenses** policy, are configurable.
+Configurable policies let you adjust the criteria to better match your organization's needs.
 @z
 
 @x
@@ -139,7 +135,6 @@ Docker Scout ships the following out-of-the-box policies:
 
 @x
 - [Fixable critical and high vulnerabilities](#fixable-critical-and-high-vulnerabilities)
-- [Critical vulnerabilities](#critical-vulnerabilities)
 - [Copyleft licenses](#copyleft-licenses)
 - [Outdated base images](#outdated-base-images)
 - [High-profile vulnerabilities](#high-profile-vulnerabilities)
@@ -149,7 +144,6 @@ Docker Scout ships the following out-of-the-box policies:
 - [Unapproved base images](#unapproved-base-images)
 @y
 - [Fixable critical and high vulnerabilities](#fixable-critical-and-high-vulnerabilities)
-- [Critical vulnerabilities](#critical-vulnerabilities)
 - [Copyleft licenses](#copyleft-licenses)
 - [Outdated base images](#outdated-base-images)
 - [High-profile vulnerabilities](#high-profile-vulnerabilities)
@@ -224,40 +218,6 @@ policy. For more information, see [Configure policies](./configure.md).
 @z
 
 @x
-### Critical vulnerabilities
-@y
-### Critical vulnerabilities
-@z
-
-@x
-The **Critical vulnerabilities** policy requires that your artifacts contain no
-known critical vulnerabilities. The policy is unfulfilled if your artifact
-contains one or more critical vulnerabilities.
-@y
-The **Critical vulnerabilities** policy requires that your artifacts contain no
-known critical vulnerabilities. The policy is unfulfilled if your artifact
-contains one or more critical vulnerabilities.
-@z
-
-@x
-This policy flags all critical vulnerabilities, whether or not there's a fix
-version available, and regardless of how long it's been since the vulnerability
-was first disclosed.
-@y
-This policy flags all critical vulnerabilities, whether or not there's a fix
-version available, and regardless of how long it's been since the vulnerability
-was first disclosed.
-@z
-
-@x
-You can configure the severity level by creating a custom policy, see
-[Configure policies](./configure.md).
-@y
-You can configure the severity level by creating a custom policy, see
-[Configure policies](./configure.md).
-@z
-
-@x
 ### Copyleft licenses
 @y
 ### Copyleft licenses
@@ -284,11 +244,13 @@ a violating license.
 @z
 
 @x
-You can configure the list of licenses by creating a custom policy, see
-[Configure policies](./configure.md).
+You can configure the list of licenses that this policy should look out for,
+and add exceptions by specifying an allow-list (in the form of PURLs).
+See [Configure policies](./configure.md).
 @y
-You can configure the list of licenses by creating a custom policy, see
-[Configure policies](./configure.md).
+You can configure the list of licenses that this policy should look out for,
+and add exceptions by specifying an allow-list (in the form of PURLs).
+See [Configure policies](./configure.md).
 @z
 
 @x
@@ -537,17 +499,11 @@ images where `root` is set on purpose.
 
 @x
 The following Dockerfile runs as `root` by default despite not being explicitly set:
-```Dockerfile
-FROM alpine
-RUN echo "Hi"
-```
 @y
 The following Dockerfile runs as `root` by default despite not being explicitly set:
-```Dockerfile
-FROM alpine
-RUN echo "Hi"
-```
 @z
+
+% snip code...
 
 @x
 Whereas in the following case, the `root` user is explicitly set:
@@ -555,19 +511,7 @@ Whereas in the following case, the `root` user is explicitly set:
 Whereas in the following case, the `root` user is explicitly set:
 @z
 
-@x
-```Dockerfile
-FROM alpine
-USER root
-RUN echo "Hi"
-```
-@y
-```Dockerfile
-FROM alpine
-USER root
-RUN echo "Hi"
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -611,29 +555,7 @@ non-compliant image.
 {{< tab name="Non-compliant" >}}
 @z
 
-@x
-```dockerfile
-FROM alpine AS builder
-COPY Makefile ./src /
-RUN make build
-@y
-```dockerfile
-FROM alpine AS builder
-COPY Makefile ./src /
-RUN make build
-@z
-
-@x
-FROM alpine AS runtime
-COPY --from=builder bin/production /app
-ENTRYPOINT ["/app/production"]
-```
-@y
-FROM alpine AS runtime
-COPY --from=builder bin/production /app
-ENTRYPOINT ["/app/production"]
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -643,31 +565,7 @@ ENTRYPOINT ["/app/production"]
 {{< tab name="Compliant" >}}
 @z
 
-@x
-```dockerfile {hl_lines=7}
-FROM alpine AS builder
-COPY Makefile ./src /
-RUN make build
-@y
-```dockerfile {hl_lines=7}
-FROM alpine AS builder
-COPY Makefile ./src /
-RUN make build
-@z
-
-@x
-FROM alpine AS runtime
-COPY --from=builder bin/production /app
-USER nonroot
-ENTRYPOINT ["/app/production"]
-```
-@y
-FROM alpine AS runtime
-COPY --from=builder bin/production /app
-USER nonroot
-ENTRYPOINT ["/app/production"]
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}

@@ -1803,9 +1803,9 @@ Reference:
 - title: Daemon CLI (dockerd)
   path: /reference/cli/dockerd/
 @y
-- title: Dockerfile reference
+- title: Dockerfile リファレンス
   path: __SUBDIR__/reference/dockerfile/
-- title: Daemon CLI (dockerd)
+- title: デーモン CLI (dockerd)
   path: __SUBDIR__/reference/cli/dockerd/
 @z
 
@@ -4061,9 +4061,23 @@ Manuals:
     - sectiontitle: Cache
       section:
         - path: /build/cache/
-          title: Optimizing builds with cache
+          title: Overview
+        - path: /build/cache/invalidation/
+          title: Cache invalidation
         - path: /build/cache/garbage-collection/
           title: Garbage collection
+@y
+    - sectiontitle: Cache
+      section:
+        - path: __SUBDIR__/build/cache/
+          title: Overview
+        - path: __SUBDIR__/build/cache/invalidation/
+          title: Cache invalidation
+        - path: __SUBDIR__/build/cache/garbage-collection/
+          title: Garbage collection
+@z
+
+@x
         - sectiontitle: Cache backends
           section:
             - path: /build/cache/backends/
@@ -4081,12 +4095,6 @@ Manuals:
             - path: /build/cache/backends/s3/
               title: Amazon S3
 @y
-    - sectiontitle: Cache
-      section:
-        - path: __SUBDIR__/build/cache/
-          title: Optimizing builds with cache
-        - path: __SUBDIR__/build/cache/garbage-collection/
-          title: Garbage collection
         - sectiontitle: Cache backends
           section:
             - path: __SUBDIR__/build/cache/backends/
@@ -4254,6 +4262,18 @@ Manuals:
             title: Local registry
           - path: /build/ci/github-actions/share-image-jobs/
             title: Share built image between jobs
+@y
+          - path: __SUBDIR__/build/ci/github-actions/export-docker/
+            title: Export to Docker
+          - path: __SUBDIR__/build/ci/github-actions/test-before-push/
+            title: Test before push
+          - path: __SUBDIR__/build/ci/github-actions/local-registry/
+            title: Local registry
+          - path: __SUBDIR__/build/ci/github-actions/share-image-jobs/
+            title: Share built image between jobs
+@z
+
+@x
           - path: /build/ci/github-actions/named-contexts/
             title: Named contexts
           - path: /build/ci/github-actions/copy-image-registries/
@@ -4264,17 +4284,9 @@ Manuals:
             title: SBOM and provenance attestations
           - path: /build/ci/github-actions/annotations/
             title: Annotations
-    - path: /build/release-notes/
-      title: Release notes
+          - path: /build/ci/github-actions/reproducible-builds/
+            title: Reproducible builds
 @y
-          - path: __SUBDIR__/build/ci/github-actions/export-docker/
-            title: Export to Docker
-          - path: __SUBDIR__/build/ci/github-actions/test-before-push/
-            title: Test before push
-          - path: __SUBDIR__/build/ci/github-actions/local-registry/
-            title: Local registry
-          - path: __SUBDIR__/build/ci/github-actions/share-image-jobs/
-            title: Share built image between jobs
           - path: __SUBDIR__/build/ci/github-actions/named-contexts/
             title: Named contexts
           - path: __SUBDIR__/build/ci/github-actions/copy-image-registries/
@@ -4285,6 +4297,14 @@ Manuals:
             title: SBOM and provenance attestations
           - path: __SUBDIR__/build/ci/github-actions/annotations/
             title: Annotations
+          - path: __SUBDIR__/build/ci/github-actions/reproducible-builds/
+            title: Reproducible builds
+@z
+
+@x
+    - path: /build/release-notes/
+      title: Release notes
+@y
     - path: __SUBDIR__/build/release-notes/
       title: リリースノート
 @z
@@ -4662,6 +4682,14 @@ Manuals:
   section:
   - path: /security/
     title: Overview
+@y
+- sectiontitle: Security
+  section:
+  - path: __SUBDIR__/security/
+    title: Overview
+@z
+
+@x
   - sectiontitle: For admins
     section:
     - sectiontitle: Single Sign-on
@@ -4669,15 +4697,47 @@ Manuals:
       -  path: /security/for-admins/single-sign-on/
          title: Overview
       -  path: /security/for-admins/single-sign-on/configure/
-         title: Configure
+         title: Configure Docker
+      -  path: /security/for-admins/single-sign-on/configure/configure-idp/
+         title: Configure your IdP
+      -  path: /security/for-admins/single-sign-on/connect/
+         title: Connect
       -  path: /security/for-admins/single-sign-on/manage/
          title: Manage
+@y
+  - sectiontitle: For admins
+    section:
+    - sectiontitle: Single Sign-on
+      section:
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/
+         title: Overview
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/configure/
+         title: Configure Docker
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/configure/configure-idp/
+         title: Configure your IdP
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/connect/
+         title: Connect
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/manage/
+         title: Manage
+@z
+
+@x
     - path: /security/for-admins/scim/
       title: SCIM
     - path: /security/for-admins/group-mapping/
       title: Group mapping
     - path: /security/for-admins/configure-sign-in/
       title: Enforce sign in
+@y
+    - path: __SUBDIR__/security/for-admins/scim/
+      title: SCIM
+    - path: __SUBDIR__/security/for-admins/group-mapping/
+      title: Group mapping
+    - path: __SUBDIR__/security/for-admins/configure-sign-in/
+      title: Enforce sign in
+@z
+
+@x
     - path: /security/for-admins/roles-and-permissions/
       title: Roles and permissions
     - path: /security/for-admins/domain-audit/
@@ -4686,6 +4746,18 @@ Manuals:
       title: Image Access Management
     - path: /security/for-admins/registry-access-management/
       title: Registry Access Management
+@y
+    - path: __SUBDIR__/security/for-admins/roles-and-permissions/
+      title: Roles and permissions
+    - path: __SUBDIR__/security/for-admins/domain-audit/
+      title: Domain audit
+    - path: __SUBDIR__/security/for-admins/image-access-management/
+      title: Image Access Management
+    - path: __SUBDIR__/security/for-admins/registry-access-management/
+      title: Registry Access Management
+@z
+
+@x
   - sectiontitle: For developers
     section:
     - path: /security/for-developers/access-tokens/
@@ -4703,34 +4775,6 @@ Manuals:
   - path: /security/security-announcements/
     title: Security announcements
 @y
-- sectiontitle: Security
-  section:
-  - path: __SUBDIR__/security/
-    title: Overview
-  - sectiontitle: For admins
-    section:
-    - sectiontitle: Single Sign-on
-      section:
-      -  path: __SUBDIR__/security/for-admins/single-sign-on/
-         title: Overview
-      -  path: __SUBDIR__/security/for-admins/single-sign-on/configure/
-         title: Configure
-      -  path: __SUBDIR__/security/for-admins/single-sign-on/manage/
-         title: Manage
-    - path: __SUBDIR__/security/for-admins/scim/
-      title: SCIM
-    - path: __SUBDIR__/security/for-admins/group-mapping/
-      title: Group mapping
-    - path: __SUBDIR__/security/for-admins/configure-sign-in/
-      title: Enforce sign in
-    - path: __SUBDIR__/security/for-admins/roles-and-permissions/
-      title: Roles and permissions
-    - path: __SUBDIR__/security/for-admins/domain-audit/
-      title: Domain audit
-    - path: __SUBDIR__/security/for-admins/image-access-management/
-      title: Image Access Management
-    - path: __SUBDIR__/security/for-admins/registry-access-management/
-      title: Registry Access Management
   - sectiontitle: For developers
     section:
     - path: __SUBDIR__/security/for-developers/access-tokens/
@@ -4754,6 +4798,14 @@ Manuals:
   section:
   - path: /billing/
     title: Overview
+@y
+- sectiontitle: Billing
+  section:
+  - path: __SUBDIR__/billing/
+    title: Overview
+@z
+
+@x
   - sectiontitle: Docker Core billing
     section:
     - path: /billing/core-billing/payment-method/
@@ -4764,15 +4816,7 @@ Manuals:
       title: View your billing history
     - path: /billing/core-billing/cycle/
       title: Change your billing cycle
-  - path: /billing/scout-billing/
-    title: Docker Scout billing
-  - path: /billing/build-billing/
-    title: Docker Build Cloud billing
 @y
-- sectiontitle: Billing
-  section:
-  - path: __SUBDIR__/billing/
-    title: Overview
   - sectiontitle: Docker Core billing
     section:
     - path: __SUBDIR__/billing/core-billing/payment-method/
@@ -4783,10 +4827,18 @@ Manuals:
       title: View your billing history
     - path: __SUBDIR__/billing/core-billing/cycle/
       title: Change your billing cycle
-  - path: __SUBDIR__/billing/scout-billing/
+@z
+
+@x
+  - path: /billing/build-billing/
+    title: Docker Build Cloud billing
+  - path: /billing/scout-billing/
     title: Docker Scout billing
+@y
   - path: __SUBDIR__/billing/build-billing/
     title: Docker Build Cloud billing
+  - path: __SUBDIR__/billing/scout-billing/
+    title: Docker Scout billing
 @z
 
 @x
@@ -4794,6 +4846,14 @@ Manuals:
   section:
   - path: /subscription/
     title: Overview
+@y
+- sectiontitle: Subscription
+  section:
+  - path: __SUBDIR__/subscription/
+    title: Overview
+@z
+
+@x
   - sectiontitle: Docker Core
     section:
     - path: /subscription/core-subscription/details/
@@ -4806,17 +4866,7 @@ Manuals:
       title: Remove seats
     - path: /subscription/core-subscription/downgrade/
       title: Downgrade
-  - path: /subscription/desktop-license/
-    title: Docker Desktop license agreement
-  - path: /subscription/scout-details/
-    title: Docker Scout subscriptions and features
-  - path: /subscription/build-details/
-    title: Docker Build Cloud subscriptions and features
 @y
-- sectiontitle: Subscription
-  section:
-  - path: __SUBDIR__/subscription/
-    title: Overview
   - sectiontitle: Docker Core
     section:
     - path: __SUBDIR__/subscription/core-subscription/details/
@@ -4829,12 +4879,34 @@ Manuals:
       title: Remove seats
     - path: __SUBDIR__/subscription/core-subscription/downgrade/
       title: Downgrade
-  - path: __SUBDIR__/subscription/desktop-license/
+@z
+
+@x
+  - sectiontitle: Docker Build Cloud
+    section:
+    - path: /subscription/build-cloud/build-details/
+      title: Subscriptions and features
+    - path: /subscription/build-cloud/manage-seats/
+      title: Manage seats and invites
+@y
+  - sectiontitle: Docker Build Cloud
+    section:
+    - path: __SUBDIR__/subscription/build-cloud/build-details/
+      title: Subscriptions and features
+    - path: __SUBDIR__/subscription/build-cloud/manage-seats/
+      title: Manage seats and invites
+@z
+
+@x
+  - path: /subscription/scout-details/
+    title: Docker Scout subscriptions and features
+  - path: /subscription/desktop-license/
     title: Docker Desktop license agreement
+@y
   - path: __SUBDIR__/subscription/scout-details/
     title: Docker Scout subscriptions and features
-  - path: __SUBDIR__/subscription/build-details/
-    title: Docker Build Cloud subscriptions and features
+  - path: __SUBDIR__/subscription/desktop-license/
+    title: Docker Desktop license agreement
 @z
 
 @x

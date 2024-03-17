@@ -201,73 +201,7 @@ To view policy status for an image from the CLI, use the `docker scout policy`
 command.
 @z
 
-@x
-```console
-$ docker scout policy \
-  --org dockerscoutpolicy \
-  --platform linux/amd64 \
-  dockerscoutpolicy/email-api-service:0.0.2
-@y
-```console
-$ docker scout policy \
-  --org dockerscoutpolicy \
-  --platform linux/amd64 \
-  dockerscoutpolicy/email-api-service:0.0.2
-@z
-
-@x
-Image reference: dockerscoutpolicy/email-api-service:0.0.2
-Digest: sha256:17b1fde0329c71af302b6391fc73a08f56cb8c33e7eea7a33b61a24cedbf2b69
-Platform: linux/amd64
-@y
-Image reference: dockerscoutpolicy/email-api-service:0.0.2
-Digest: sha256:17b1fde0329c71af302b6391fc73a08f56cb8c33e7eea7a33b61a24cedbf2b69
-Platform: linux/amd64
-@z
-
-@x
-## Overview
-@y
-## Overview
-@z
-
-@x
-Policy status:  FAILED  (1/3 policies violated)
-@y
-Policy status:  FAILED  (1/3 policies violated)
-@z
-
-@x
-                      Policy                     │      Results       
-─────────────────────────────────────────────────┼────────────────────
-  ✓ Critical and high vulnerabilities with fixes │ 0 vulnerabilities  
-  ✗ Critical vulnerabilities                     │    1C              
-  ✓ Packages with GPL3+ licenses                 │ 0 packages         
-@y
-                      Policy                     │      Results       
-─────────────────────────────────────────────────┼────────────────────
-  ✓ Critical and high vulnerabilities with fixes │ 0 vulnerabilities  
-  ✗ Critical vulnerabilities                     │    1C              
-  ✓ Packages with GPL3+ licenses                 │ 0 packages         
-@z
-
-@x
-## "Critical vulnerabilities" policy evaluation results
-@y
-## "Critical vulnerabilities" policy evaluation results
-@z
-
-@x
-  Vulnerability  │  Severity  │                     Current package version                     │ Fix version  
-─────────────────┼────────────┼─────────────────────────────────────────────────────────────────┼──────────────
-  CVE-2022-48174 │  CRITICAL  │ pkg:apk/alpine/busybox@1.36.1-r0?os_name=alpine&os_version=3.18 │ 1.36.1-r1
-```
-@y
-  Vulnerability  │  Severity  │                     Current package version                     │ Fix version  
-─────────────────┼────────────┼─────────────────────────────────────────────────────────────────┼──────────────
-  CVE-2022-48174 │  CRITICAL  │ pkg:apk/alpine/busybox@1.36.1-r0?os_name=alpine&os_version=3.18 │ 1.36.1-r1
-```
-@z
+% snip command...
 
 @x
 For more information about the command, refer to the [CLI

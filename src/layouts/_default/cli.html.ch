@@ -140,6 +140,30 @@
                     {{ partialCached "components/badge.html" (dict "color" "blue" "content" (printf "API %s 以上" .)) "api" . }}
 @z
 
+@x "非推奨"
+                  {{ with .deprecated }}
+                    {{ partialCached "components/badge.html" (dict "color" "red" "content" "Deprecated") "deprecated" }}
+@y
+                  {{ with .deprecated }}
+                    {{ partialCached "components/badge.html" (dict "color" "red" "content" "非推奨") "deprecated" }}
+@z
+
+@x "試験的"
+                  {{ with .experimental }}
+                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (daemon)") "exp" }}
+@y
+                  {{ with .experimental }}
+                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (デーモン)") "exp" }}
+@z
+
+@x "試験的"
+                  {{ with .experimentalcli }}
+                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (CLI)") "exp-cli" }}
+@y
+                  {{ with .experimentalcli }}
+                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (CLI)") "exp-cli" }}
+@z
+
 @x (T "Examples") ／dict 第三引数追加
     {{ with $data.examples }}
       {{ $heading := dict "level" 2 "text" "Examples" }}

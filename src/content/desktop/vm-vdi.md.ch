@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Instructions on how to enable nested virtualization
 keywords: nested virtualization, Docker Desktop, windows, VM, VDI environment
 title: Run Docker Desktop for Windows in a VM or VDI environment
-aliases:
-- /desktop/nested-virtualization/
----
 @y
----
 description: Instructions on how to enable nested virtualization
 keywords: nested virtualization, Docker Desktop, windows, VM, VDI environment
 title: VM、VDI 環境内での Docker Desktop for Windows の実行
-aliases:
-- /desktop/nested-virtualization/
----
 @z
 
 @x
@@ -40,11 +32,11 @@ To run Docker Desktop in a virtual desktop environment, it is essential nested v
 @z
 
 @x
->Note
+> **Note**
 >
 > Support for running Docker Desktop on a virtual desktop is available to Docker Business customers, on VMware ESXi or Azure VMs only.
 @y
->メモ
+> **メモ**
 >
 > Docker Business 利用者は、VMware ESXi または Azure VM についてのみ、仮想デスクトップ上での Docker Desktop の実行がサポートされています。
 @z

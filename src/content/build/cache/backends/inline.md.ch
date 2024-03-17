@@ -138,9 +138,9 @@ $ docker buildx build --push -t <registry>/<image> \
 @z
 
 @x
-For an introduction to caching see [Optimizing builds with cache](../index.md).
+For an introduction to caching see [Docker build cache](../_index.md).
 @y
-For an introduction to caching see [Optimizing builds with cache](../index.md).
+For an introduction to caching see [Docker build cache](../_index.md).
 @z
 
 @x

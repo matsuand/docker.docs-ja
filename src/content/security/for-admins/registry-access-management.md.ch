@@ -30,19 +30,31 @@ With Registry Access Management (RAM), administrators can ensure that their deve
 @z
 
 @x
-Registry Access Management supports both cloud and on-prem registries. Example registries administrators can allow include: 
+Registry Access Management supports both cloud and on-prem registries. This feature operates at the DNS level and therefore is compatible with all registries. You can add any hostname or domain name you’d like to include in the list of allowed registries. However, if the registry redirects to other domains such as `s3.amazon.com`, then you must add those domains to the list.
+@y
+Registry Access Management supports both cloud and on-prem registries. This feature operates at the DNS level and therefore is compatible with all registries. You can add any hostname or domain name you’d like to include in the list of allowed registries. However, if the registry redirects to other domains such as `s3.amazon.com`, then you must add those domains to the list.
+@z
+
+@x
+Example registries administrators can allow include:
+@y
+Example registries administrators can allow include:
+@z
+
+@x
  - Docker Hub. This is enabled by default.
  - Amazon ECR
  - GitHub Container Registry
  - Google Container Registry
+ - GitLab Container Registry
  - Nexus
  - Artifactory
 @y
-Registry Access Management supports both cloud and on-prem registries. Example registries administrators can allow include: 
  - Docker Hub. This is enabled by default.
  - Amazon ECR
  - GitHub Container Registry
  - Google Container Registry
+ - GitLab Container Registry
  - Nexus
  - Artifactory
 @z

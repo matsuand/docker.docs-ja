@@ -130,9 +130,9 @@ The environment variables are read from the server, not the Buildx client.
 @z
 
 @x
-For an introduction to caching see [Optimizing builds with cache](../_index.md).
+For an introduction to caching see [Docker build cache](../_index.md).
 @y
-For an introduction to caching see [Optimizing builds with cache](../_index.md).
+For an introduction to caching see [Docker build cache](../_index.md).
 @z
 
 @x

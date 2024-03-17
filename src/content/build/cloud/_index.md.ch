@@ -143,12 +143,12 @@ Once you've signed up and created a builder, continue by
 
 @x
 For more information about the available subscription plans, see
-[Docker Build Cloud subscriptions and features](../../subscription/build-details.md).
+[Docker Build Cloud subscriptions and features](../../subscription/build-cloud/build-details.md).
 For information about roles and permissions related to Docker Build Cloud, see
 [Roles and Permissions](../../security/for-admins/roles-and-permissions.md#docker-build-cloud).
 @y
 For more information about the available subscription plans, see
-[Docker Build Cloud subscriptions and features](../../subscription/build-details.md).
+[Docker Build Cloud subscriptions and features](../../subscription/build-cloud/build-details.md).
 For information about roles and permissions related to Docker Build Cloud, see
 [Roles and Permissions](../../security/for-admins/roles-and-permissions.md#docker-build-cloud).
 @z

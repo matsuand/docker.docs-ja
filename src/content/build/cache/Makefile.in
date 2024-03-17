@@ -298,7 +298,8 @@ top_srcdir = @top_srcdir@
 SUBDIRS = backends
 bases = \
 	_index.md             \
-	garbage-collection.md
+	garbage-collection.md \
+	invalidation.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
