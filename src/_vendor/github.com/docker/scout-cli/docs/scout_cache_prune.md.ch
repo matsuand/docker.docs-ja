@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 # docker scout cache prune
 @y
@@ -24,11 +26,13 @@ Remove temporary or cached data
 @x
 | Name            | Type | Default | Description                    |
 |:----------------|:-----|:--------|:-------------------------------|
+| `--epss`        |      |         | Prune cached EPSS scores       |
 | `-f`, `--force` |      |         | Do not prompt for confirmation |
 | `--sboms`       |      |         | Prune cached SBOMs             |
 @y
 | Name            | Type | Default | Description                    |
 |:----------------|:-----|:--------|:-------------------------------|
+| `--epss`        |      |         | Prune cached EPSS scores       |
 | `-f`, `--force` |      |         | Do not prompt for confirmation |
 | `--sboms`       |      |         | Prune cached SBOMs             |
 @z
@@ -71,19 +75,7 @@ To delete temporary data and clear the SBOM cache, use the `--sboms` flag.
 ### Delete temporary data
 @z
 
-@x
-```console
-$ docker scout cache prune
-? Are you sure to delete all temporary data? Yes
-    ✓ temporary data deleted
-```
-@y
-```console
-$ docker scout cache prune
-? Are you sure to delete all temporary data? Yes
-    ✓ temporary data deleted
-```
-@z
+% snip command...
 
 @x
 ### Delete temporary _and_ cache data
@@ -91,18 +83,4 @@ $ docker scout cache prune
 ### Delete temporary _and_ cache data
 @z
 
-@x
-```console
-$ docker scout cache prune --sboms
-? Are you sure to delete all temporary data and all cached SBOMs? Yes
-    ✓ temporary data deleted
-    ✓ cached SBOMs deleted
-```
-@y
-```console
-$ docker scout cache prune --sboms
-? Are you sure to delete all temporary data and all cached SBOMs? Yes
-    ✓ temporary data deleted
-    ✓ cached SBOMs deleted
-```
-@z
+% snip command...

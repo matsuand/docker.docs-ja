@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 # docker scout cves
 @y
@@ -36,6 +38,10 @@ Display CVEs identified in a software artifact
 |:-----------------------|:--------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `--details`            |               |            | Print details on default text output                                                                                                                                                                                                                                                                                   |
 | `--env`                | `string`      |            | Name of environment                                                                                                                                                                                                                                                                                                    |
+| [`--epss`](#epss)      |               |            | Display the EPSS scores and organize the package's CVEs according to their EPSS score                                                                                                                                                                                                                                  |
+| `--epss-date`          | `string`      |            | Date to use for EPSS scores                                                                                                                                                                                                                                                                                            |
+| `--epss-percentile`    | `float32`     | `0`        | Exclude CVEs with EPSS scores less than the specified percentile (0 to 1)                                                                                                                                                                                                                                              |
+| `--epss-score`         | `float32`     | `0`        | Exclude CVEs with EPSS scores less than the specified value (0 to 1)                                                                                                                                                                                                                                                   |
 | `-e`, `--exit-code`    |               |            | Return exit code '2' if vulnerabilities are detected                                                                                                                                                                                                                                                                   |
 | `--format`             | `string`      | `packages` | Output format of the generated vulnerability report:<br>- packages: default output, plain text with vulnerabilities grouped by packages<br>- sarif: json Sarif output<br>- spdx: json SPDX output <br>- markdown: markdown output (including some html tags like collapsible sections)<br>- sbom: json SBOM output<br> |
 | `--ignore-base`        |               |            | Filter out CVEs introduced from base image                                                                                                                                                                                                                                                                             |
@@ -62,6 +68,10 @@ Display CVEs identified in a software artifact
 |:-----------------------|:--------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `--details`            |               |            | Print details on default text output                                                                                                                                                                                                                                                                                   |
 | `--env`                | `string`      |            | Name of environment                                                                                                                                                                                                                                                                                                    |
+| [`--epss`](#epss)      |               |            | Display the EPSS scores and organize the package's CVEs according to their EPSS score                                                                                                                                                                                                                                  |
+| `--epss-date`          | `string`      |            | Date to use for EPSS scores                                                                                                                                                                                                                                                                                            |
+| `--epss-percentile`    | `float32`     | `0`        | Exclude CVEs with EPSS scores less than the specified percentile (0 to 1)                                                                                                                                                                                                                                              |
+| `--epss-score`         | `float32`     | `0`        | Exclude CVEs with EPSS scores less than the specified value (0 to 1)                                                                                                                                                                                                                                                   |
 | `-e`, `--exit-code`    |               |            | Return exit code '2' if vulnerabilities are detected                                                                                                                                                                                                                                                                   |
 | `--format`             | `string`      | `packages` | Output format of the generated vulnerability report:<br>- packages: default output, plain text with vulnerabilities grouped by packages<br>- sarif: json Sarif output<br>- spdx: json SPDX output <br>- markdown: markdown output (including some html tags like collapsible sections)<br>- sbom: json SBOM output<br> |
 | `--ignore-base`        |               |            | Filter out CVEs introduced from base image                                                                                                                                                                                                                                                                             |
@@ -158,6 +168,8 @@ or if you want to control from where the image will be resolved, you must prefix
 - `oci-dir://` use an OCI layout directory
 - `archive://` use a tarball archive, as created by `docker save`
 - `fs://` use a local directory or file
+- `sbom://` SPDX file or in-toto attestation file with SPDX predicate or `syft` json SBOM file
+    In case of `sbom://` prefix, if the file is not defined then it will try to read it from the standard input.
 @y
 - `image://` (default) use a local image, or fall back to a registry lookup
 - `local://` use an image from the local image store (don't do a registry lookup)
@@ -165,6 +177,8 @@ or if you want to control from where the image will be resolved, you must prefix
 - `oci-dir://` use an OCI layout directory
 - `archive://` use a tarball archive, as created by `docker save`
 - `fs://` use a local directory or file
+- `sbom://` SPDX file or in-toto attestation file with SPDX predicate or `syft` json SBOM file
+    In case of `sbom://` prefix, if the file is not defined then it will try to read it from the standard input.
 @z
 
 @x
@@ -179,23 +193,7 @@ or if you want to control from where the image will be resolved, you must prefix
 ### Display vulnerabilities grouped by package
 @z
 
-@x
-```console
-$ docker scout cves alpine
-Analyzing image alpine
-    ✓ Image stored for indexing
-    ✓ Indexed 18 packages
-    ✓ No vulnerable package detected
-```
-@y
-```console
-$ docker scout cves alpine
-Analyzing image alpine
-    ✓ Image stored for indexing
-    ✓ Indexed 18 packages
-    ✓ No vulnerable package detected
-```
-@z
+% snip command...
 
 @x
 ### Display vulnerabilities from a `docker save` tarball
@@ -203,29 +201,7 @@ Analyzing image alpine
 ### Display vulnerabilities from a `docker save` tarball
 @z
 
-@x
-```console
-$ docker save alpine > alpine.tar
-@y
-```console
-$ docker save alpine > alpine.tar
-@z
-
-@x
-$ docker scout cves archive://alpine.tar
-Analyzing archive alpine.tar
-    ✓ Archive read
-    ✓ SBOM of image already cached, 18 packages indexed
-    ✓ No vulnerable package detected
-```
-@y
-$ docker scout cves archive://alpine.tar
-Analyzing archive alpine.tar
-    ✓ Archive read
-    ✓ SBOM of image already cached, 18 packages indexed
-    ✓ No vulnerable package detected
-```
-@z
+% snip command...
 
 @x
 ### Display vulnerabilities from an OCI directory
@@ -233,31 +209,7 @@ Analyzing archive alpine.tar
 ### Display vulnerabilities from an OCI directory
 @z
 
-@x
-```console
-$ skopeo copy --override-os linux docker://alpine oci:alpine
-@y
-```console
-$ skopeo copy --override-os linux docker://alpine oci:alpine
-@z
-
-@x
-$ docker scout cves oci-dir://alpine
-Analyzing OCI directory alpine
-    ✓ OCI directory read
-    ✓ Image stored for indexing
-    ✓ Indexed 19 packages
-    ✓ No vulnerable package detected
-```
-@y
-$ docker scout cves oci-dir://alpine
-Analyzing OCI directory alpine
-    ✓ OCI directory read
-    ✓ Image stored for indexing
-    ✓ Indexed 19 packages
-    ✓ No vulnerable package detected
-```
-@z
+% snip command...
 
 @x
 ### Display vulnerabilities from the current directory
@@ -265,15 +217,7 @@ Analyzing OCI directory alpine
 ### Display vulnerabilities from the current directory
 @z
 
-@x
-```console
-$ docker scout cves fs://.
-```
-@y
-```console
-$ docker scout cves fs://.
-```
-@z
+% snip command...
 
 @x
 ### Export vulnerabilities to a SARIF JSON file
@@ -281,23 +225,7 @@ $ docker scout cves fs://.
 ### Export vulnerabilities to a SARIF JSON file
 @z
 
-@x
-```console
-$ docker scout cves --format sarif --output alpine.sarif.json alpine
-Analyzing image alpine
-    ✓ SBOM of image already cached, 18 packages indexed
-    ✓ No vulnerable package detected
-    ✓ Report written to alpine.sarif.json
-```
-@y
-```console
-$ docker scout cves --format sarif --output alpine.sarif.json alpine
-Analyzing image alpine
-    ✓ SBOM of image already cached, 18 packages indexed
-    ✓ No vulnerable package detected
-    ✓ Report written to alpine.sarif.json
-```
-@z
+% snip command...
 
 @x
 ### Display markdown output
@@ -311,47 +239,7 @@ The following example shows how to generate the vulnerability report as markdown
 The following example shows how to generate the vulnerability report as markdown.
 @z
 
-@x
-```console
-$ docker scout cves --format markdown alpine
-    ✓ Pulled
-    ✓ SBOM of image already cached, 19 packages indexed
-    ✗ Detected 1 vulnerable package with 3 vulnerabilities
-<h2>:mag: Vulnerabilities of <code>alpine</code></h2>
-@y
-```console
-$ docker scout cves --format markdown alpine
-    ✓ Pulled
-    ✓ SBOM of image already cached, 19 packages indexed
-    ✗ Detected 1 vulnerable package with 3 vulnerabilities
-<h2>:mag: Vulnerabilities of <code>alpine</code></h2>
-@z
-
-@x
-<details open="true"><summary>:package: Image Reference</strong> <code>alpine</code></summary>
-<table>
-<tr><td>digest</td><td><code>sha256:e3bd82196e98898cae9fe7fbfd6e2436530485974dc4fb3b7ddb69134eda2407</code></td><tr><tr><td>vulnerabilities</td><td><img alt="critical: 0" src="https://img.shields.io/badge/critical-0-lightgrey"/> <img alt="high: 0" src="https://img.shields.io/badge/high-0-lightgrey"/> <img alt="medium: 2" src="https://img.shields.io/badge/medium-2-fbb552"/> <img alt="low: 0" src="https://img.shields.io/badge/low-0-lightgrey"/> <img alt="unspecified: 1" src="https://img.shields.io/badge/unspecified-1-lightgrey"/></td></tr>
-<tr><td>platform</td><td>linux/arm64</td></tr>
-<tr><td>size</td><td>3.3 MB</td></tr>
-<tr><td>packages</td><td>19</td></tr>
-</table>
-</details></table>
-</details>
-...
-```
-@y
-<details open="true"><summary>:package: Image Reference</strong> <code>alpine</code></summary>
-<table>
-<tr><td>digest</td><td><code>sha256:e3bd82196e98898cae9fe7fbfd6e2436530485974dc4fb3b7ddb69134eda2407</code></td><tr><tr><td>vulnerabilities</td><td><img alt="critical: 0" src="https://img.shields.io/badge/critical-0-lightgrey"/> <img alt="high: 0" src="https://img.shields.io/badge/high-0-lightgrey"/> <img alt="medium: 2" src="https://img.shields.io/badge/medium-2-fbb552"/> <img alt="low: 0" src="https://img.shields.io/badge/low-0-lightgrey"/> <img alt="unspecified: 1" src="https://img.shields.io/badge/unspecified-1-lightgrey"/></td></tr>
-<tr><td>platform</td><td>linux/arm64</td></tr>
-<tr><td>size</td><td>3.3 MB</td></tr>
-<tr><td>packages</td><td>19</td></tr>
-</table>
-</details></table>
-</details>
-...
-```
-@z
+% snip command...
 
 @x
 ### List all vulnerable packages of a certain type
@@ -367,28 +255,72 @@ The following example shows how to generate a list of packages, only including
 packages of the specified type, and only showing packages that are vulnerable.
 @z
 
+% snip command...
+
 @x
-```console
-$ docker scout cves --format only-packages --only-package-type golang --only-vuln-packages golang:1.18.0
-    ✓ Pulled
-    ✓ SBOM of image already cached, 296 packages indexed
-    ✗ Detected 1 vulnerable package with 40 vulnerabilities
+### <a name="epss"></a> Display EPSS score (--epss)
 @y
-```console
-$ docker scout cves --format only-packages --only-package-type golang --only-vuln-packages golang:1.18.0
-    ✓ Pulled
-    ✓ SBOM of image already cached, 296 packages indexed
-    ✗ Detected 1 vulnerable package with 40 vulnerabilities
+### <a name="epss"></a> Display EPSS score (--epss)
 @z
 
 @x
-   Name   Version   Type         Vulnerabilities
-───────────────────────────────────────────────────────────
-  stdlib  1.18     golang     2C    29H     8M     1L
-```
+The `--epss` flag adds [Exploit Prediction Scoring System (EPSS)](https://www.first.org/epss/)
+scores to the `docker scout cves` output. EPSS scores are estimates of the likelihood (probability)
+that a software vulnerability will be exploited in the wild in the next 30 days.
+The higher the score, the greater the probability that a vulnerability will be exploited.
 @y
-   Name   Version   Type         Vulnerabilities
-───────────────────────────────────────────────────────────
-  stdlib  1.18     golang     2C    29H     8M     1L
-```
+The `--epss` flag adds [Exploit Prediction Scoring System (EPSS)](https://www.first.org/epss/)
+scores to the `docker scout cves` output. EPSS scores are estimates of the likelihood (probability)
+that a software vulnerability will be exploited in the wild in the next 30 days.
+The higher the score, the greater the probability that a vulnerability will be exploited.
 @z
+
+% snip command...
+
+@x
+- `EPSS Score` is a floating point number between 0 and 1 representing the probability of exploitation in the wild in the next 30 days (following score publication).
+- `EPSS Percentile` is the percentile of the current score, the proportion of all scored vulnerabilities with the same or a lower EPSS score.
+@y
+- `EPSS Score` is a floating point number between 0 and 1 representing the probability of exploitation in the wild in the next 30 days (following score publication).
+- `EPSS Percentile` is the percentile of the current score, the proportion of all scored vulnerabilities with the same or a lower EPSS score.
+@z
+
+@x
+You can use the `--epss-score` and `--epss-percentile` flags to filter the output
+of `docker scout cves` based on these scores. For example,
+to only show vulnerabilities with an EPSS score higher than 0.5:
+@y
+You can use the `--epss-score` and `--epss-percentile` flags to filter the output
+of `docker scout cves` based on these scores. For example,
+to only show vulnerabilities with an EPSS score higher than 0.5:
+@z
+
+% snip command...
+
+@x
+EPSS scores are updated on a daily basis.
+By default, the latest available score is displayed.
+You can use the `--epss-date` flag to manually specify a date
+in the format `yyyy-mm-dd` for fetching EPSS scores.
+@y
+EPSS scores are updated on a daily basis.
+By default, the latest available score is displayed.
+You can use the `--epss-date` flag to manually specify a date
+in the format `yyyy-mm-dd` for fetching EPSS scores.
+@z
+
+% snip command...
+
+@x
+### List vulnerabilities from an SPDX file
+@y
+### List vulnerabilities from an SPDX file
+@z
+
+@x
+The following example shows how to generate a list of vulnerabilities from an SPDX file using `syft`.
+@y
+The following example shows how to generate a list of vulnerabilities from an SPDX file using `syft`.
+@z
+
+% snip command...
