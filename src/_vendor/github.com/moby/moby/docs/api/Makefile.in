@@ -259,6 +259,7 @@ bases = \
 	v1.42.yaml \
 	v1.43.yaml \
 	v1.44.yaml \
+	v1.45.yaml \
 	version-history.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

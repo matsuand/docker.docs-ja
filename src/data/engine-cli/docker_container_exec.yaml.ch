@@ -40,233 +40,85 @@ long: |-
 @x
     - This works: `docker exec -it my_container sh -c "echo a && echo b"`
     - This doesn't work: `docker exec -it my_container "echo a && echo b"`
-usage: docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: 'Detached mode: run command in the background'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach-keys
-      value_type: string
-      description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: list
-      description: Set environment variables
-      details_url: '#env'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: list
-      description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "false"
-      description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
-      description: Give extended privileges to the command
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: 'Username or UID (format: `<name|uid>[:<group|gid>]`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      details_url: '#workdir'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.35"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Run `docker exec` on a running container
 @y
     - This works: `docker exec -it my_container sh -c "echo a && echo b"`
     - This doesn't work: `docker exec -it my_container "echo a && echo b"`
+@z
+
+@x
 usage: docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+@z
+
+% options:
+
+@x detach
       description: 'Detached mode: run command in the background'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach-keys
-      value_type: string
+@y
+      description: 'Detached mode: run command in the background'
+@z
+
+@x detach-keys
       description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: list
+@y
+      description: Override the key sequence for detaching a container
+@z
+
+@x env
       description: Set environment variables
-      details_url: '#env'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: list
+@y
+      description: Set environment variables
+@z
+
+@x env-file
       description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "false"
+@y
+      description: Read in a file of environment variables
+@z
+
+@x interactive
       description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
+@y
+      description: Keep STDIN open even if not attached
+@z
+
+@x privileged
       description: Give extended privileges to the command
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
+@y
+      description: Give extended privileges to the command
+@z
+
+@x tty
       description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
+@y
+      description: Allocate a pseudo-TTY
+@z
+
+@x user
       description: 'Username or UID (format: `<name|uid>[:<group|gid>]`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
+@y
+      description: 'Username or UID (format: `<name|uid>[:<group|gid>]`)'
+@z
+
+@x workdir
       description: Working directory inside the container
-      details_url: '#workdir'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.35"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Working directory inside the container
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Run `docker exec` on a running container
+@y
 examples: |-
     ### Run `docker exec` on a running container
 @z
@@ -307,15 +159,7 @@ examples: |-
     Next, execute a command on the container.
 @z
 
-@x
-    ```console
-    $ docker exec -d mycontainer touch /tmp/execWorks
-    ```
-@y
-    ```console
-    $ docker exec -d mycontainer touch /tmp/execWorks
-    ```
-@z
+% snip command...
 
 @x
     This creates a new file `/tmp/execWorks` inside the running container
@@ -331,15 +175,7 @@ examples: |-
     Next, execute an interactive `sh` shell on the container.
 @z
 
-@x
-    ```console
-    $ docker exec -it mycontainer sh
-    ```
-@y
-    ```console
-    $ docker exec -it mycontainer sh
-    ```
-@z
+% snip command...
 
 @x
     This starts a new shell session in the container `mycontainer`.
@@ -385,25 +221,7 @@ examples: |-
     the container.
 @z
 
-@x
-    ```console
-    $ docker exec -e VAR_A=1 -e VAR_B=2 mycontainer env
-    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-    HOSTNAME=f64a4851eb71
-    VAR_A=1
-    VAR_B=2
-    HOME=/root
-    ```
-@y
-    ```console
-    $ docker exec -e VAR_A=1 -e VAR_B=2 mycontainer env
-    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-    HOSTNAME=f64a4851eb71
-    VAR_A=1
-    VAR_B=2
-    HOME=/root
-    ```
-@z
+% snip command...
 
 @x
     ### Set the working directory for the exec process (--workdir, -w) {#workdir}
@@ -419,17 +237,7 @@ examples: |-
     the container was created.
 @z
 
-@x
-    ```console
-    $ docker exec -it mycontainer pwd
-    /
-    ```
-@y
-    ```console
-    $ docker exec -it mycontainer pwd
-    /
-    ```
-@z
+% snip command...
 
 @x
     You can specify an alternative working directory for the command to execute
@@ -439,17 +247,7 @@ examples: |-
     using the `--workdir` option (or the `-w` shorthand):
 @z
 
-@x
-    ```console
-    $ docker exec -it -w /root mycontainer pwd
-    /root
-    ```
-@y
-    ```console
-    $ docker exec -it -w /root mycontainer pwd
-    /root
-    ```
-@z
+% snip command...
 
 @x
     ### Try to run `docker exec` on a paused container
@@ -463,60 +261,5 @@ examples: |-
     If the container is paused, then the `docker exec` command fails with an error:
 @z
 
-@x
-    ```console
-    $ docker pause mycontainer
-    mycontainer
-@y
-    ```console
-    $ docker pause mycontainer
-    mycontainer
-@z
-
-@x
-    $ docker ps
-@y
-    $ docker ps
-@z
-
-@x
-    CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS                   PORTS     NAMES
-    482efdf39fac   alpine    "/bin/sh"   17 seconds ago   Up 16 seconds (Paused)             mycontainer
-@y
-    CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS                   PORTS     NAMES
-    482efdf39fac   alpine    "/bin/sh"   17 seconds ago   Up 16 seconds (Paused)             mycontainer
-@z
-
-@x
-    $ docker exec mycontainer sh
-@y
-    $ docker exec mycontainer sh
-@z
-
-@x
-    Error response from daemon: Container mycontainer is paused, unpause the container before exec
-@y
-    Error response from daemon: Container mycontainer is paused, unpause the container before exec
-@z
-
-@x
-    $ echo $?
-    1
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    $ echo $?
-    1
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

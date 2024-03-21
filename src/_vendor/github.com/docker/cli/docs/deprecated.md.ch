@@ -124,8 +124,10 @@ The table below provides an overview of the current status of deprecated feature
 @x
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
+| Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v27.0  |
+| Deprecated | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
 | Deprecated | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
-| Deprecated | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
+| Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
 | Deprecated | [IsAutomated field, and "is-automated" filter on docker search](#isautomated-field-and-is-automated-filter-on-docker-search)       | v25.0      | v26.0  |
 | Removed    | [logentries logging driver](#logentries-logging-driver)                                                                            | v24.0      | v25.0  |
 | Removed    | [OOM-score adjust for the daemon](#oom-score-adjust-for-the-daemon)                                                                | v24.0      | v25.0  |
@@ -146,7 +148,7 @@ The table below provides an overview of the current status of deprecated feature
 | Removed    | [`docker build --stream` flag (experimental)](#docker-build---stream-flag-experimental)                                            | v20.10     | v20.10 |
 | Deprecated | [`fluentd-async-connect` log opt](#fluentd-async-connect-log-opt)                                                                  | v20.10     | -      |
 | Removed    | [Configuration options for experimental CLI features](#configuration-options-for-experimental-cli-features)                        | v19.03     | v23.0  |
-| Deprecated | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v20.10 |
+| Deprecated | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v27.0  |
 | Removed    | [`docker engine` subcommands](#docker-engine-subcommands)                                                                          | v19.03     | v20.10 |
 | Removed    | [Top-level `docker deploy` subcommand (experimental)](#top-level-docker-deploy-subcommand-experimental)                            | v19.03     | v20.10 |
 | Removed    | [`docker stack deploy` using "dab" files (experimental)](#docker-stack-deploy-using-dab-files-experimental)                        | v19.03     | v20.10 |
@@ -186,8 +188,10 @@ The table below provides an overview of the current status of deprecated feature
 @y
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
+| Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v27.0  |
+| Deprecated | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
 | Deprecated | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
-| Deprecated | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
+| Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
 | Deprecated | [IsAutomated field, and "is-automated" filter on docker search](#isautomated-field-and-is-automated-filter-on-docker-search)       | v25.0      | v26.0  |
 | Removed    | [logentries logging driver](#logentries-logging-driver)                                                                            | v24.0      | v25.0  |
 | Removed    | [OOM-score adjust for the daemon](#oom-score-adjust-for-the-daemon)                                                                | v24.0      | v25.0  |
@@ -208,7 +212,7 @@ The table below provides an overview of the current status of deprecated feature
 | Removed    | [`docker build --stream` flag (experimental)](#docker-build---stream-flag-experimental)                                            | v20.10     | v20.10 |
 | Deprecated | [`fluentd-async-connect` log opt](#fluentd-async-connect-log-opt)                                                                  | v20.10     | -      |
 | Removed    | [Configuration options for experimental CLI features](#configuration-options-for-experimental-cli-features)                        | v19.03     | v23.0  |
-| Deprecated | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v20.10 |
+| Deprecated | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v27.0  |
 | Removed    | [`docker engine` subcommands](#docker-engine-subcommands)                                                                          | v19.03     | v20.10 |
 | Removed    | [Top-level `docker deploy` subcommand (experimental)](#top-level-docker-deploy-subcommand-experimental)                            | v19.03     | v20.10 |
 | Removed    | [`docker stack deploy` using "dab" files (experimental)](#docker-stack-deploy-using-dab-files-experimental)                        | v19.03     | v20.10 |
@@ -248,6 +252,106 @@ The table below provides an overview of the current status of deprecated feature
 @z
 
 @x
+### Unauthenticated TCP connections
+@y
+### Unauthenticated TCP connections
+@z
+
+@x
+**Deprecated in Release: v26.0**
+**Target For Removal In Release: v27.0**
+@y
+**Deprecated in Release: v26.0**
+**Target For Removal In Release: v27.0**
+@z
+
+@x
+Configuring the Docker daemon to listen on a TCP address will require mandatory
+TLS verification. This change aims to ensure secure communication by preventing
+unauthorized access to the Docker daemon over potentially insecure networks.
+This mandatory TLS requirement applies to all TCP addresses except `tcp://localhost`.
+@y
+Configuring the Docker daemon to listen on a TCP address will require mandatory
+TLS verification. This change aims to ensure secure communication by preventing
+unauthorized access to the Docker daemon over potentially insecure networks.
+This mandatory TLS requirement applies to all TCP addresses except `tcp://localhost`.
+@z
+
+@x
+In version 27.0 and later, specifying `--tls=false` or `--tlsverify=false` CLI flags
+causes the daemon to fail to start if it's also configured to accept remote connections over TCP.
+This also applies to the equivalent configuration options in `daemon.json`.
+@y
+In version 27.0 and later, specifying `--tls=false` or `--tlsverify=false` CLI flags
+causes the daemon to fail to start if it's also configured to accept remote connections over TCP.
+This also applies to the equivalent configuration options in `daemon.json`.
+@z
+
+@x
+To facilitate remote access to the Docker daemon over TCP, you'll need to
+implement TLS verification. This secures the connection by encrypting data in
+transit and providing a mechanism for mutual authentication.
+@y
+To facilitate remote access to the Docker daemon over TCP, you'll need to
+implement TLS verification. This secures the connection by encrypting data in
+transit and providing a mechanism for mutual authentication.
+@z
+
+@x
+For environments remote daemon access isn't required,
+we recommend binding the Docker daemon to a Unix socket.
+For daemon's where remote access is required and where TLS encryption is not feasible,
+you may want to consider using SSH as an alternative solution.
+@y
+For environments remote daemon access isn't required,
+we recommend binding the Docker daemon to a Unix socket.
+For daemon's where remote access is required and where TLS encryption is not feasible,
+you may want to consider using SSH as an alternative solution.
+@z
+
+@x
+For further information, assistance, and step-by-step instructions on
+configuring TLS (or SSH) for the Docker daemon, refer to
+[Protect the Docker daemon socket](https://docs.docker.com/engine/security/protect-access/).
+@y
+For further information, assistance, and step-by-step instructions on
+configuring TLS (or SSH) for the Docker daemon, refer to
+[Protect the Docker daemon socket](https://docs.docker.com/engine/security/protect-access/).
+@z
+
+@x
+### `Container` and `ContainerConfig` fields in Image inspect
+@y
+### `Container` and `ContainerConfig` fields in Image inspect
+@z
+
+@x
+**Deprecated in Release: v25.0**
+**Target For Removal In Release: v26.0**
+@y
+**Deprecated in Release: v25.0**
+**Target For Removal In Release: v26.0**
+@z
+
+@x
+The `Container` and `ContainerConfig` fields returned by `docker inspect` are
+mostly an implementation detail of the classic (non-BuildKit) image builder.
+These fields are not portable and are empty when using the
+BuildKit-based builder (enabled by default since v23.0).
+These fields are deprecated in v25.0 and will be omitted starting from v26.0.
+If image configuration of an image is needed, you can obtain it from the
+`Config` field.
+@y
+The `Container` and `ContainerConfig` fields returned by `docker inspect` are
+mostly an implementation detail of the classic (non-BuildKit) image builder.
+These fields are not portable and are empty when using the
+BuildKit-based builder (enabled by default since v23.0).
+These fields are deprecated in v25.0 and will be omitted starting from v26.0.
+If image configuration of an image is needed, you can obtain it from the
+`Config` field.
+@z
+
+@x
 ### Deprecate legacy API versions
 @y
 ### Deprecate legacy API versions
@@ -385,10 +489,10 @@ old clients, and those clients must be supported.
 
 @x
 **Deprecated in Release: v25.0**
-**Target For Remove In Release: v26.0**
+**Removed In Release: v26.0**
 @y
 **Deprecated in Release: v25.0**
-**Target For Remove In Release: v26.0**
+**Removed In Release: v26.0**
 @z
 
 @x
@@ -1384,27 +1488,75 @@ for the old option will be removed in a future release.
 @z
 
 @x
-**Target For Removal In Release: v20.10**
+**Disabled by default in Release: v26.0**
 @y
-**Target For Removal In Release: v20.10**
+**Disabled by default in Release: v26.0**
 @z
 
 @x
-The image manifest
-[v2 schema 1](https://github.com/docker/distribution/blob/fda42e5ef908bdba722d435ff1f330d40dfcd56c/docs/spec/manifest-v2-1.md)
-format is deprecated in favor of the
-[v2 schema 2](https://github.com/docker/distribution/blob/fda42e5ef908bdba722d435ff1f330d40dfcd56c/docs/spec/manifest-v2-2.md) format.
+**Target For Removal In Release: v27.0**
 @y
-The image manifest
-[v2 schema 1](https://github.com/docker/distribution/blob/fda42e5ef908bdba722d435ff1f330d40dfcd56c/docs/spec/manifest-v2-1.md)
-format is deprecated in favor of the
-[v2 schema 2](https://github.com/docker/distribution/blob/fda42e5ef908bdba722d435ff1f330d40dfcd56c/docs/spec/manifest-v2-2.md) format.
+**Target For Removal In Release: v27.0**
 @z
 
 @x
-If the registry you are using still supports v2 schema 1, urge their administrators to move to v2 schema 2.
+The image manifest [v2 schema 1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/)
+and "Docker Image v1" formats were deprecated in favor of the
+[v2 schema 2](https://distribution.github.io/distribution/spec/manifest-v2-2/)
+and [OCI image spec](https://github.com/opencontainers/image-spec/tree/v1.1.0)
+formats.
 @y
-If the registry you are using still supports v2 schema 1, urge their administrators to move to v2 schema 2.
+The image manifest [v2 schema 1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/)
+and "Docker Image v1" formats were deprecated in favor of the
+[v2 schema 2](https://distribution.github.io/distribution/spec/manifest-v2-2/)
+and [OCI image spec](https://github.com/opencontainers/image-spec/tree/v1.1.0)
+formats.
+@z
+
+@x
+These legacy formats should no longer be used, and users are recommended to
+update images to use current formats, or to upgrade to more current images.
+Starting with Docker v26.0, pulling these images is disabled by default, and
+produces an error when attempting to pull the image:
+@y
+These legacy formats should no longer be used, and users are recommended to
+update images to use current formats, or to upgrade to more current images.
+Starting with Docker v26.0, pulling these images is disabled by default, and
+produces an error when attempting to pull the image:
+@z
+
+@x
+```console
+$ docker pull ubuntu:10.04
+Error response from daemon:
+[DEPRECATION NOTICE] Docker Image Format v1 and Docker Image manifest version 2, schema 1 support is disabled by default and will be removed in an upcoming release.
+Suggest the author of docker.io/library/ubuntu:10.04 to upgrade the image to the OCI Format or Docker Image manifest v2, schema 2.
+More information at https://docs.docker.com/go/deprecated-image-specs/
+```
+@y
+```console
+$ docker pull ubuntu:10.04
+Error response from daemon:
+[DEPRECATION NOTICE] Docker Image Format v1 and Docker Image manifest version 2, schema 1 support is disabled by default and will be removed in an upcoming release.
+Suggest the author of docker.io/library/ubuntu:10.04 to upgrade the image to the OCI Format or Docker Image manifest v2, schema 2.
+More information at https://docs.docker.com/go/deprecated-image-specs/
+```
+@z
+
+@x
+An environment variable (`DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE`) is
+added in Docker v26.0 that allows re-enabling support for these image formats
+in the daemon. This environment variable must be set to a non-empty value in
+the daemon's environment (for example, through a [systemd override file](https://docs.docker.com/config/daemon/systemd/)).
+Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment-variable
+will be removed in Docker v27.0 after which this functionality is removed permanently.
+@y
+An environment variable (`DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE`) is
+added in Docker v26.0 that allows re-enabling support for these image formats
+in the daemon. This environment variable must be set to a non-empty value in
+the daemon's environment (for example, through a [systemd override file](https://docs.docker.com/config/daemon/systemd/)).
+Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment-variable
+will be removed in Docker v27.0 after which this functionality is removed permanently.
 @z
 
 @x

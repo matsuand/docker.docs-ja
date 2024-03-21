@@ -60,11 +60,11 @@ long: |-
     > **Note**
     >
     > If the `URL` parameter contains a fragment the system recursively clones
-    > the repository and its submodules using a `git clone --recursive` command.
+    > the repository and its submodules.
 @y
     > **メモ**
     >
-    > `URL` パラメーターが部分的なものであった場合、システムは `git clone --recursive` コマンドを実行して、そのリポジトリやサブモジュールを再帰的にクローンします。
+    > `URL` パラメーターが部分的なものであった場合、システムはそのリポジトリやサブモジュールを再帰的にクローンします。
 @z
 
 @x
@@ -222,659 +222,213 @@ long: |-
     This happens if you interrupt the Docker client with `CTRL-c` or if the Docker
     client is killed for any reason. If the build initiated a pull which is still
     running at the time the build is cancelled, the client also cancels the pull.
-usage: docker image build [OPTIONS] PATH | URL | -
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: add-host
-      value_type: list
-      description: Add a custom host-to-IP mapping (`host:ip`)
-      details_url: '#add-host'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: build-arg
-      value_type: list
-      description: Set build-time variables
-      details_url: '#build-arg'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cache-from
-      value_type: stringSlice
-      default_value: '[]'
-      description: Images to consider as cache sources
-      details_url: '#cache-from'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroup-parent
-      value_type: string
-      description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: '#cgroup-parent'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: compress
-      value_type: bool
-      default_value: "false"
-      description: Compress the build context using gzip
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
-      description: Limit the CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
-      description: Limit the CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
-      description: CPU shares (relative weight)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
-      description: CPUs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
-      description: MEMs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: string
-      description: Name of the Dockerfile (Default is `PATH/Dockerfile`)
-      details_url: '#file'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-rm
-      value_type: bool
-      default_value: "false"
-      description: Always remove intermediate containers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: iidfile
-      value_type: string
-      description: Write the image ID to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: isolation
-      value_type: string
-      description: Container isolation technology
-      details_url: '#isolation'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      value_type: list
-      description: Set metadata for an image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: bytes
-      default_value: "0"
-      description: Memory limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: bytes
-      default_value: "0"
-      description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network
-      value_type: string
-      default_value: default
-      description: Set the networking mode for the RUN instructions during build
-      details_url: '#network'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache
-      value_type: bool
-      default_value: "false"
-      description: Do not use cache when building the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.38"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: bool
-      default_value: "false"
-      description: Always attempt to pull a newer version of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress the build output and print image ID on success
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "true"
-      description: Remove intermediate containers after a successful build
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: security-opt
-      value_type: stringSlice
-      default_value: '[]'
-      description: Security options
-      details_url: '#security-opt'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: shm-size
-      value_type: bytes
-      default_value: "0"
-      description: Size of `/dev/shm`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: squash
-      value_type: bool
-      default_value: "false"
-      description: Squash newly built layers into a single new layer
-      details_url: '#squash'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: true
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tag
-      shorthand: t
-      value_type: list
-      description: Name and optionally a tag in the `name:tag` format
-      details_url: '#tag'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: target
-      value_type: string
-      description: Set the target build stage to build.
-      details_url: '#target'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
-      description: Ulimit options
-      details_url: '#ulimit'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Build with PATH
 @y
     If the Docker client loses connection to the daemon, it cancels the build.
     This happens if you interrupt the Docker client with `CTRL-c` or if the Docker
     client is killed for any reason. If the build initiated a pull which is still
     running at the time the build is cancelled, the client also cancels the pull.
+@z
+
+@x
 usage: docker image build [OPTIONS] PATH | URL | -
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: add-host
-      value_type: list
+@y
+usage: docker image build [OPTIONS] PATH | URL | -
+@z
+
+% options:
+
+@x add-host
       description: Add a custom host-to-IP mapping (`host:ip`)
-      details_url: '#add-host'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: build-arg
-      value_type: list
+@y
+      description: Add a custom host-to-IP mapping (`host:ip`)
+@z
+
+@x build-arg
       description: Set build-time variables
-      details_url: '#build-arg'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cache-from
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: Set build-time variables
+@z
+
+@x cache-from
       description: Images to consider as cache sources
-      details_url: '#cache-from'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroup-parent
-      value_type: string
+@y
+      description: Images to consider as cache sources
+@z
+
+@x cgroup-parent
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: '#cgroup-parent'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: compress
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set the parent cgroup for the `RUN` instructions during build
+@z
+
+@x compress
       description: Compress the build context using gzip
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
+@y
+      description: Compress the build context using gzip
+@z
+
+@x cpu-period
       description: Limit the CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit the CPU CFS (Completely Fair Scheduler) period
+@z
+
+@x cpu-quota
       description: Limit the CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit the CPU CFS (Completely Fair Scheduler) quota
+@z
+
+@x cpu-shares
       description: CPU shares (relative weight)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
+@y
+      description: CPU shares (relative weight)
+@z
+
+@x cpuset-cpus
       description: CPUs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
+@y
+      description: CPUs in which to allow execution (0-3, 0,1)
+@z
+
+@x cpuset-mems
       description: MEMs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
+@y
+      description: MEMs in which to allow execution (0-3, 0,1)
+@z
+
+@x disable-content-trust
       description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: string
+@y
+      description: Skip image verification
+@z
+
+@x file
       description: Name of the Dockerfile (Default is `PATH/Dockerfile`)
-      details_url: '#file'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-rm
-      value_type: bool
-      default_value: "false"
+@y
+      description: Name of the Dockerfile (Default is `PATH/Dockerfile`)
+@z
+
+@x force-rm
       description: Always remove intermediate containers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: iidfile
-      value_type: string
+@y
+      description: Always remove intermediate containers
+@z
+
+@x iidfile
       description: Write the image ID to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: isolation
-      value_type: string
+@y
+      description: Write the image ID to the file
+@z
+
+@x isolation
       description: Container isolation technology
-      details_url: '#isolation'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      value_type: list
+@y
+      description: Container isolation technology
+@z
+
+@x label
       description: Set metadata for an image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Set metadata for an image
+@z
+
+@x memory
       description: Memory limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Memory limit
+@z
+
+@x memory-swap
       description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network
-      value_type: string
-      default_value: default
+@y
+      description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
+@z
+
+@x network
       description: Set the networking mode for the RUN instructions during build
-      details_url: '#network'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-cache
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set the networking mode for the RUN instructions during build
+@z
+
+@x no-cache
       description: Do not use cache when building the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
+@y
+      description: Do not use cache when building the image
+@z
+
+@x platform
       description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.38"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set platform if server is multi-platform capable
+@z
+
+@x pull
       description: Always attempt to pull a newer version of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Always attempt to pull a newer version of the image
+@z
+
+@x quiet
       description: Suppress the build output and print image ID on success
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "true"
+@y
+      description: Suppress the build output and print image ID on success
+@z
+
+@x rm
       description: Remove intermediate containers after a successful build
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: security-opt
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: Remove intermediate containers after a successful build
+@z
+
+@x security-opt
       description: Security options
-      details_url: '#security-opt'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: shm-size
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Security options
+@z
+
+@x shm-size
       description: Size of `/dev/shm`
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: squash
-      value_type: bool
-      default_value: "false"
+@y
+      description: Size of `/dev/shm`
+@z
+
+@x squash
       description: Squash newly built layers into a single new layer
-      details_url: '#squash'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: true
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tag
-      shorthand: t
-      value_type: list
+@y
+      description: Squash newly built layers into a single new layer
+@z
+
+@x tag
       description: Name and optionally a tag in the `name:tag` format
-      details_url: '#tag'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: target
-      value_type: string
+@y
+      description: Name and optionally a tag in the `name:tag` format
+@z
+
+@x target
       description: Set the target build stage to build.
-      details_url: '#target'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
+@y
+      description: Set the target build stage to build.
+@z
+
+@x ulimit
       description: Ulimit options
-      details_url: '#ulimit'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Ulimit options
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Build with PATH
+@y
 examples: |-
     ### Build with PATH
 @z

@@ -2,40 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Engine 25.0 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
-skip_read_time: true
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
----
 @y
----
 title: Docker Engine 25.0 リリースノート
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
-skip_read_time: true
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
----
 @z
 
 @x
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 25.0.
 @y
-本ページでは Docker Engine バージョン 2.5.0 に関する最新の変更、追加、既知の問題、バグフィックスについて示します。
-5.0.
+本ページでは Docker Engine バージョン 25.0 に関する最新の変更、追加、既知の問題、バグフィックスについて示します。
 @z
 
 @x

@@ -2,26 +2,22 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: "Running and configuring containers with the Docker CLI"
 keywords: "docker, run, cli"
-aliases:
-- /reference/run/
-title: Running containers
----
 @y
----
 description: "Running and configuring containers with the Docker CLI"
 keywords: "docker, run, cli"
-aliases:
-- /reference/run/
+@z
+
+@x
+title: Running containers
+@y
 title: コンテナーの実行
----
 @z
 
 @x
 Docker runs processes in isolated containers. A container is a process
-which runs on a host. The host may be local or remote. When an you
+which runs on a host. The host may be local or remote. When you
 execute `docker run`, the container process that runs is isolated in
 that it has its own file system, its own networking, and its own
 isolated process tree separate from the host.
@@ -124,15 +120,7 @@ The following example runs a container from the `alpine` image with the
 `sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0` digest:
 @z
 
-@x
-```console
-$ docker run alpine@sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0 date
-```
-@y
-```console
-$ docker run alpine@sha256:9cacb71397b640eca97488cf08582ae4e4068513101088e9f96c9814bfda95e0 date
-```
-@z
+% snip command...
 
 @x
 ### Options
@@ -172,15 +160,7 @@ to start an interactive shell in the container (if the image you select has an
 `sh` executable on `PATH`).
 @z
 
-@x
-```console
-$ docker run -it IMAGE sh
-```
-@y
-```console
-$ docker run -it IMAGE sh
-```
-@z
+% snip command...
 
 @x
 > **Note**
@@ -220,15 +200,7 @@ If you want to run the container in the background instead, you can use the
 terminal window.
 @z
 
-@x
-```console
-$ docker run -d <IMAGE>
-```
-@y
-```console
-$ docker run -d <IMAGE>
-```
-@z
+% snip command...
 
 @x
 While the container runs in the background, you can interact with the container
@@ -240,43 +212,7 @@ using other CLI commands. For example, `docker logs` lets you view the logs for
 the container, and `docker attach` brings it to the foreground.
 @z
 
-@x
-```console
-$ docker run -d nginx
-0246aa4d1448a401cabd2ce8f242192b6e7af721527e48a810463366c7ff54f1
-$ docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        PORTS     NAMES
-0246aa4d1448   nginx     "/docker-entrypoint.…"   2 seconds ago   Up 1 second   80/tcp    pedantic_liskov
-$ docker logs -n 5 0246aa4d1448
-2023/11/06 15:58:23 [notice] 1#1: start worker process 33
-2023/11/06 15:58:23 [notice] 1#1: start worker process 34
-2023/11/06 15:58:23 [notice] 1#1: start worker process 35
-2023/11/06 15:58:23 [notice] 1#1: start worker process 36
-2023/11/06 15:58:23 [notice] 1#1: start worker process 37
-$ docker attach 0246aa4d1448
-^C
-2023/11/06 15:58:40 [notice] 1#1: signal 2 (SIGINT) received, exiting
-...
-```
-@y
-```console
-$ docker run -d nginx
-0246aa4d1448a401cabd2ce8f242192b6e7af721527e48a810463366c7ff54f1
-$ docker ps
-CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        PORTS     NAMES
-0246aa4d1448   nginx     "/docker-entrypoint.…"   2 seconds ago   Up 1 second   80/tcp    pedantic_liskov
-$ docker logs -n 5 0246aa4d1448
-2023/11/06 15:58:23 [notice] 1#1: start worker process 33
-2023/11/06 15:58:23 [notice] 1#1: start worker process 34
-2023/11/06 15:58:23 [notice] 1#1: start worker process 35
-2023/11/06 15:58:23 [notice] 1#1: start worker process 36
-2023/11/06 15:58:23 [notice] 1#1: start worker process 37
-$ docker attach 0246aa4d1448
-^C
-2023/11/06 15:58:40 [notice] 1#1: signal 2 (SIGINT) received, exiting
-...
-```
-@z
+% snip command...
 
 @x
 For more information about `docker run` flags related to foreground and
@@ -380,15 +316,7 @@ example, the following `docker ps` command gets the IDs of all running
 containers based on the `nginx:alpine` image:
 @z
 
-@x
-```console
-$ docker ps -q --filter ancestor=nginx:alpine
-```
-@y
-```console
-$ docker ps -q --filter ancestor=nginx:alpine
-```
-@z
+% snip command...
 
 @x
 For more information about using filters, see
@@ -428,37 +356,7 @@ following example creates a custom network named `my-net`, and runs two
 containers that attach to the network.
 @z
 
-@x
-```console
-$ docker network create my-net
-$ docker run -d --name web --network my-net nginx:alpine
-$ docker run --rm -it --network my-net busybox
-/ # ping web
-PING web (172.18.0.2): 56 data bytes
-64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.326 ms
-64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.257 ms
-64 bytes from 172.18.0.2: seq=2 ttl=64 time=0.281 ms
-^C
---- web ping statistics ---
-3 packets transmitted, 3 packets received, 0% packet loss
-round-trip min/avg/max = 0.257/0.288/0.326 ms
-```
-@y
-```console
-$ docker network create my-net
-$ docker run -d --name web --network my-net nginx:alpine
-$ docker run --rm -it --network my-net busybox
-/ # ping web
-PING web (172.18.0.2): 56 data bytes
-64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.326 ms
-64 bytes from 172.18.0.2: seq=1 ttl=64 time=0.257 ms
-64 bytes from 172.18.0.2: seq=2 ttl=64 time=0.281 ms
-^C
---- web ping statistics ---
-3 packets transmitted, 3 packets received, 0% packet loss
-round-trip min/avg/max = 0.257/0.288/0.326 ms
-```
-@z
+% snip command...
 
 @x
 For more information about container networking, see [Networking
@@ -542,15 +440,7 @@ To create a volume mount:
 To create a volume mount:
 @z
 
-@x
-```console
-$ docker run --mount source=<VOLUME_NAME>,target=[PATH] [IMAGE] [COMMAND...]
-```
-@y
-```console
-$ docker run --mount source=<VOLUME_NAME>,target=[PATH] [IMAGE] [COMMAND...]
-```
-@z
+% snip command...
 
 @x
 The `--mount` flag takes two parameters in this case: `source` and `target`.
@@ -566,23 +456,7 @@ created the volume, any data you write to the volume is persisted, even if you
 stop or remove the container:
 @z
 
-@x
-```console
-$ docker run --rm --mount source=my_volume,target=/foo busybox \
-  echo "hello, volume!" > /foo/hello.txt
-$ docker run --mount source=my_volume,target=/bar busybox
-  cat /bar/hello.txt
-hello, volume!
-```
-@y
-```console
-$ docker run --rm --mount source=my_volume,target=/foo busybox \
-  echo "hello, volume!" > /foo/hello.txt
-$ docker run --mount source=my_volume,target=/bar busybox
-  cat /bar/hello.txt
-hello, volume!
-```
-@z
+% snip command...
 
 @x
 The `target` must always be an absolute path, such as `/src/docs`. An absolute
@@ -608,15 +482,7 @@ To create a bind mount:
 To create a bind mount:
 @z
 
-@x
-```console
-$ docker run -it --mount type=bind,source=[PATH],target=[PATH] busybox
-```
-@y
-```console
-$ docker run -it --mount type=bind,source=[PATH],target=[PATH] busybox
-```
-@z
+% snip command...
 
 @x
 In this case, the `--mount` flag takes three parameters. A type (`bind`), and
@@ -640,23 +506,7 @@ files to and from the mounted location from the container. Changes that you
 make, such as adding or editing files, are reflected on the host filesystem:
 @z
 
-@x
-```console
-$ docker run -it --mount type=bind,source=.,target=/foo busybox
-/ # echo "hello from container" > /foo/hello.txt
-/ # exit
-$ cat hello.txt
-hello from container
-```
-@y
-```console
-$ docker run -it --mount type=bind,source=.,target=/foo busybox
-/ # echo "hello from container" > /foo/hello.txt
-/ # exit
-$ cat hello.txt
-hello from container
-```
-@z
+% snip command...
 
 @x
 ## Exit status
@@ -686,25 +536,7 @@ Exit code `125` indicates that the error is with Docker daemon itself.
 Exit code `125` indicates that the error is with Docker daemon itself.
 @z
 
-@x
-```console
-$ docker run --foo busybox; echo $?
-@y
-```console
-$ docker run --foo busybox; echo $?
-@z
-
-@x
-flag provided but not defined: --foo
-See 'docker run --help'.
-125
-```
-@y
-flag provided but not defined: --foo
-See 'docker run --help'.
-125
-```
-@z
+% snip command...
 
 @x
 ### 126
@@ -720,23 +552,7 @@ Exit code `126` indicates that the specified contained command can't be invoked.
 The container command in the following example is: `/etc; echo $?`.
 @z
 
-@x
-```console
-$ docker run busybox /etc; echo $?
-@y
-```console
-$ docker run busybox /etc; echo $?
-@z
-
-@x
-docker: Error response from daemon: Container command '/etc' could not be invoked.
-126
-```
-@y
-docker: Error response from daemon: Container command '/etc' could not be invoked.
-126
-```
-@z
+% snip command...
 
 @x
 ### 127
@@ -750,23 +566,7 @@ Exit code `127` indicates that the contained command can't be found.
 Exit code `127` indicates that the contained command can't be found.
 @z
 
-@x
-```console
-$ docker run busybox foo; echo $?
-@y
-```console
-$ docker run busybox foo; echo $?
-@z
-
-@x
-docker: Error response from daemon: Container command 'foo' not found or does not exist.
-127
-```
-@y
-docker: Error response from daemon: Container command 'foo' not found or does not exist.
-127
-```
-@z
+% snip command...
 
 @x
 ### Other exit codes
@@ -782,19 +582,7 @@ Any exit code other than `125`, `126`, and `127` represent the exit code of the
 provided container command.
 @z
 
-@x
-```console
-$ docker run busybox /bin/sh -c 'exit 3'
-$ echo $?
-3
-```
-@y
-```console
-$ docker run busybox /bin/sh -c 'exit 3'
-$ echo $?
-3
-```
-@z
+% snip command...
 
 @x
 ## Runtime constraints on resources
@@ -974,15 +762,7 @@ Examples:
 Examples:
 @z
 
-@x
-```console
-$ docker run -it ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 We set nothing about memory, this means the processes in the container can use
@@ -992,15 +772,7 @@ We set nothing about memory, this means the processes in the container can use
 as much memory and swap memory as they need.
 @z
 
-@x
-```console
-$ docker run -it -m 300M --memory-swap -1 ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it -m 300M --memory-swap -1 ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 We set memory limit and disabled swap memory limit, this means the processes in
@@ -1012,15 +784,7 @@ the container can use 300M memory and as much swap memory as they need (if the
 host supports swap memory).
 @z
 
-@x
-```console
-$ docker run -it -m 300M ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it -m 300M ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 We set memory limit only, this means the processes in the container can use
@@ -1034,15 +798,7 @@ We set memory limit only, this means the processes in the container can use
 would be 2*300M, so processes can use 300M swap memory as well.
 @z
 
-@x
-```console
-$ docker run -it -m 300M --memory-swap 1G ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it -m 300M --memory-swap 1G ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 We set both memory and swap memory, so the processes in the container can use
@@ -1098,15 +854,7 @@ The following example limits the memory (`-m`) to 500M and sets the memory
 reservation to 200M.
 @z
 
-@x
-```console
-$ docker run -it -m 500M --memory-reservation 200M ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it -m 500M --memory-reservation 200M ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 Under this configuration, when the container consumes memory more than 200M and
@@ -1124,15 +872,7 @@ The following example set memory reservation to 1G without a hard memory limit.
 The following example set memory reservation to 1G without a hard memory limit.
 @z
 
-@x
-```console
-$ docker run -it --memory-reservation 1G ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --memory-reservation 1G ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 The container can use as much memory as it needs. The memory reservation setting
@@ -1168,15 +908,7 @@ The following example limits the memory to 100M and disables the OOM killer for
 this container:
 @z
 
-@x
-```console
-$ docker run -it -m 100M --oom-kill-disable ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it -m 100M --oom-kill-disable ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 The following example, illustrates a dangerous way to use the flag:
@@ -1184,15 +916,7 @@ The following example, illustrates a dangerous way to use the flag:
 The following example, illustrates a dangerous way to use the flag:
 @z
 
-@x
-```console
-$ docker run -it --oom-kill-disable ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --oom-kill-disable ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 The container has unlimited memory which can cause the host to run out memory
@@ -1342,15 +1066,7 @@ Examples:
 Examples:
 @z
 
-@x
-```console
-$ docker run -it -m 500M --kernel-memory 50M ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it -m 500M --kernel-memory 50M ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 We set memory and kernel memory, so the processes in the container can use
@@ -1360,15 +1076,7 @@ We set memory and kernel memory, so the processes in the container can use
 500M memory in total, in this 500M memory, it can be 50M kernel memory tops.
 @z
 
-@x
-```console
-$ docker run -it --kernel-memory 50M ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --kernel-memory 50M ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 We set kernel memory without **-m**, so the processes in the container can
@@ -1404,15 +1112,7 @@ For example, you can set:
 For example, you can set:
 @z
 
-@x
-```console
-$ docker run -it --memory-swappiness=0 ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --memory-swappiness=0 ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 Setting the `--memory-swappiness` option is helpful when you want to retain the
@@ -1532,15 +1232,7 @@ Examples:
 Examples:
 @z
 
-@x
-```console
-$ docker run -it --cpu-period=50000 --cpu-quota=25000 ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --cpu-period=50000 --cpu-quota=25000 ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 If there is 1 CPU, this means the container can get 50% CPU worth of run-time every 50ms.
@@ -1590,15 +1282,7 @@ Examples:
 Examples:
 @z
 
-@x
-```console
-$ docker run -it --cpuset-cpus="1,3" ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --cpuset-cpus="1,3" ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 This means processes in container can be executed on cpu 1 and cpu 3.
@@ -1606,15 +1290,7 @@ This means processes in container can be executed on cpu 1 and cpu 3.
 This means processes in container can be executed on cpu 1 and cpu 3.
 @z
 
-@x
-```console
-$ docker run -it --cpuset-cpus="0-2" ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --cpuset-cpus="0-2" ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 This means processes in container can be executed on cpu 0, cpu 1 and cpu 2.
@@ -1636,15 +1312,7 @@ Examples:
 Examples:
 @z
 
-@x
-```console
-$ docker run -it --cpuset-mems="1,3" ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --cpuset-mems="1,3" ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 This example restricts the processes in the container to only use memory from
@@ -1654,15 +1322,7 @@ This example restricts the processes in the container to only use memory from
 memory nodes 1 and 3.
 @z
 
-@x
-```console
-$ docker run -it --cpuset-mems="0-2" ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --cpuset-mems="0-2" ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 This example restricts the processes in the container to only use memory from
@@ -1734,17 +1394,7 @@ For example, the commands below create two containers with different blkio
 weight:
 @z
 
-@x
-```console
-$ docker run -it --name c1 --blkio-weight 300 ubuntu:22.04 /bin/bash
-$ docker run -it --name c2 --blkio-weight 600 ubuntu:22.04 /bin/bash
-```
-@y
-```console
-$ docker run -it --name c1 --blkio-weight 300 ubuntu:22.04 /bin/bash
-$ docker run -it --name c2 --blkio-weight 600 ubuntu:22.04 /bin/bash
-```
-@z
+% snip command...
 
 @x
 If you do block IO in the two containers at the same time, by, for example:
@@ -1752,15 +1402,7 @@ If you do block IO in the two containers at the same time, by, for example:
 If you do block IO in the two containers at the same time, by, for example:
 @z
 
-@x
-```console
-$ time dd if=/mnt/zerofile of=test.out bs=1M count=1024 oflag=direct
-```
-@y
-```console
-$ time dd if=/mnt/zerofile of=test.out bs=1M count=1024 oflag=direct
-```
-@z
+% snip command...
 
 @x
 You'll find that the proportion of time is the same as the proportion of blkio
@@ -1780,19 +1422,7 @@ The `DEVICE_NAME:WEIGHT` is a string containing a colon-separated device name an
 For example, to set `/dev/sda` device weight to `200`:
 @z
 
-@x
-```console
-$ docker run -it \
-    --blkio-weight-device "/dev/sda:200" \
-    ubuntu
-```
-@y
-```console
-$ docker run -it \
-    --blkio-weight-device "/dev/sda:200" \
-    ubuntu
-```
-@z
+% snip command...
 
 @x
 If you specify both the `--blkio-weight` and `--blkio-weight-device`, Docker
@@ -1808,21 +1438,7 @@ The following example uses a default weight of `300` and overrides this default
 on `/dev/sda` setting that weight to `200`:
 @z
 
-@x
-```console
-$ docker run -it \
-    --blkio-weight 300 \
-    --blkio-weight-device "/dev/sda:200" \
-    ubuntu
-```
-@y
-```console
-$ docker run -it \
-    --blkio-weight 300 \
-    --blkio-weight-device "/dev/sda:200" \
-    ubuntu
-```
-@z
+% snip command...
 
 @x
 The `--device-read-bps` flag limits the read rate (bytes per second) from a device.
@@ -1834,15 +1450,7 @@ For example, this command creates a container and limits the read rate to `1mb`
 per second from `/dev/sda`:
 @z
 
-@x
-```console
-$ docker run -it --device-read-bps /dev/sda:1mb ubuntu
-```
-@y
-```console
-$ docker run -it --device-read-bps /dev/sda:1mb ubuntu
-```
-@z
+% snip command...
 
 @x
 The `--device-write-bps` flag limits the write rate (bytes per second) to a device.
@@ -1854,15 +1462,7 @@ For example, this command creates a container and limits the write rate to `1mb`
 per second for `/dev/sda`:
 @z
 
-@x
-```console
-$ docker run -it --device-write-bps /dev/sda:1mb ubuntu
-```
-@y
-```console
-$ docker run -it --device-write-bps /dev/sda:1mb ubuntu
-```
-@z
+% snip command...
 
 @x
 Both flags take limits in the `<device-path>:<limit>[unit]` format. Both read
@@ -1884,15 +1484,7 @@ For example, this command creates a container and limits the read rate to
 `1000` IO per second from `/dev/sda`:
 @z
 
-@x
-```console
-$ docker run -ti --device-read-iops /dev/sda:1000 ubuntu
-```
-@y
-```console
-$ docker run -ti --device-read-iops /dev/sda:1000 ubuntu
-```
-@z
+% snip command...
 
 @x
 The `--device-write-iops` flag limits write rate (IO per second) to a device.
@@ -1904,15 +1496,7 @@ For example, this command creates a container and limits the write rate to
 `1000` IO per second to `/dev/sda`:
 @z
 
-@x
-```console
-$ docker run -ti --device-write-iops /dev/sda:1000 ubuntu
-```
-@y
-```console
-$ docker run -ti --device-write-iops /dev/sda:1000 ubuntu
-```
-@z
+% snip command...
 
 @x
 Both flags take limits in the `<device-path>:<limit>` format. Both read and
@@ -1928,15 +1512,7 @@ write rates must be a positive integer.
 ## Additional groups
 @z
 
-@x
-```console
---group-add: Add additional groups to run as
-```
-@y
-```console
---group-add: Add additional groups to run as
-```
-@z
+% snip command...
 
 @x
 By default, the docker container process runs with the supplementary groups looked
@@ -1948,21 +1524,7 @@ up for the specified user. If one wants to add more to that list of groups, then
 one can use this flag:
 @z
 
-@x
-```console
-$ docker run --rm --group-add audio --group-add nogroup --group-add 777 busybox id
-@y
-```console
-$ docker run --rm --group-add audio --group-add nogroup --group-add 777 busybox id
-@z
-
-@x
-uid=0(root) gid=0(root) groups=10(wheel),29(audio),99(nogroup),777
-```
-@y
-uid=0(root) gid=0(root) groups=10(wheel),29(audio),99(nogroup),777
-```
-@z
+% snip command...
 
 @x
 ## Runtime privilege and Linux capabilities
@@ -2002,18 +1564,20 @@ the documentation on [cgroups devices](https://www.kernel.org/doc/Documentation/
 
 @x
 The `--privileged` flag gives all capabilities to the container. When the operator
-executes `docker run --privileged`, Docker will enable access to all devices on
-the host as well as set some configuration in AppArmor or SELinux to allow the
-container nearly all the same access to the host as processes running outside
-containers on the host. Additional information about running with `--privileged`
-is available on the [Docker Blog](https://www.docker.com/blog/docker-can-now-run-within-docker/).
+executes `docker run --privileged`, Docker enables access to all devices on
+the host, and reconfigures AppArmor or SELinux to allow the container
+nearly all the same access to the host as processes running outside
+containers on the host. Use this flag with caution.
+For more information about the `--privileged` flag, see the
+[`docker run` reference](https://docs.docker.com/reference/cli/docker/container/run/#privileged).
 @y
 The `--privileged` flag gives all capabilities to the container. When the operator
-executes `docker run --privileged`, Docker will enable access to all devices on
-the host as well as set some configuration in AppArmor or SELinux to allow the
-container nearly all the same access to the host as processes running outside
-containers on the host. Additional information about running with `--privileged`
-is available on the [Docker Blog](https://www.docker.com/blog/docker-can-now-run-within-docker/).
+executes `docker run --privileged`, Docker enables access to all devices on
+the host, and reconfigures AppArmor or SELinux to allow the container
+nearly all the same access to the host as processes running outside
+containers on the host. Use this flag with caution.
+For more information about the `--privileged` flag, see the
+[`docker run` reference](https://docs.docker.com/reference/cli/docker/container/run/#privileged).
 @z
 
 @x
@@ -2026,15 +1590,7 @@ the `--device` flag. It allows you to specify one or more devices that
 will be accessible within the container.
 @z
 
-@x
-```console
-$ docker run --device=/dev/snd:/dev/snd ...
-```
-@y
-```console
-$ docker run --device=/dev/snd:/dev/snd ...
-```
-@z
+% snip command...
 
 @x
 By default, the container will be able to `read`, `write`, and `mknod` these devices.
@@ -2044,47 +1600,7 @@ By default, the container will be able to `read`, `write`, and `mknod` these dev
 This can be overridden using a third `:rwm` set of options to each `--device` flag:
 @z
 
-@x
-```console
-$ docker run --device=/dev/sda:/dev/xvdc --rm -it ubuntu fdisk  /dev/xvdc
-@y
-```console
-$ docker run --device=/dev/sda:/dev/xvdc --rm -it ubuntu fdisk  /dev/xvdc
-@z
-
-@x
-Command (m for help): q
-$ docker run --device=/dev/sda:/dev/xvdc:r --rm -it ubuntu fdisk  /dev/xvdc
-You will not be able to write the partition table.
-@y
-Command (m for help): q
-$ docker run --device=/dev/sda:/dev/xvdc:r --rm -it ubuntu fdisk  /dev/xvdc
-You will not be able to write the partition table.
-@z
-
-@x
-Command (m for help): q
-@y
-Command (m for help): q
-@z
-
-@x
-$ docker run --device=/dev/sda:/dev/xvdc:w --rm -it ubuntu fdisk  /dev/xvdc
-    crash....
-@y
-$ docker run --device=/dev/sda:/dev/xvdc:w --rm -it ubuntu fdisk  /dev/xvdc
-    crash....
-@z
-
-@x
-$ docker run --device=/dev/sda:/dev/xvdc:m --rm -it ubuntu fdisk  /dev/xvdc
-fdisk: unable to open /dev/xvdc: Operation not permitted
-```
-@y
-$ docker run --device=/dev/sda:/dev/xvdc:m --rm -it ubuntu fdisk  /dev/xvdc
-fdisk: unable to open /dev/xvdc: Operation not permitted
-```
-@z
+% snip command...
 
 @x
 In addition to `--privileged`, the operator can have fine grain control over the
@@ -2218,15 +1734,7 @@ Both flags support the value `ALL`, so to allow a container to use all capabilit
 except for `MKNOD`:
 @z
 
-@x
-```console
-$ docker run --cap-add=ALL --cap-drop=MKNOD ...
-```
-@y
-```console
-$ docker run --cap-add=ALL --cap-drop=MKNOD ...
-```
-@z
+% snip command...
 
 @x
 The `--cap-add` and `--cap-drop` flags accept capabilities to be specified with
@@ -2236,17 +1744,7 @@ The `--cap-add` and `--cap-drop` flags accept capabilities to be specified with
 a `CAP_` prefix. The following examples are therefore equivalent:
 @z
 
-@x
-```console
-$ docker run --cap-add=SYS_ADMIN ...
-$ docker run --cap-add=CAP_SYS_ADMIN ...
-```
-@y
-```console
-$ docker run --cap-add=SYS_ADMIN ...
-$ docker run --cap-add=CAP_SYS_ADMIN ...
-```
-@z
+% snip command...
 
 @x
 For interacting with the network stack, instead of using `--privileged` they
@@ -2256,27 +1754,7 @@ For interacting with the network stack, instead of using `--privileged` they
 should use `--cap-add=NET_ADMIN` to modify the network interfaces.
 @z
 
-@x
-```console
-$ docker run -it --rm  ubuntu:22.04 ip link add dummy0 type dummy
-@y
-```console
-$ docker run -it --rm  ubuntu:22.04 ip link add dummy0 type dummy
-@z
-
-@x
-RTNETLINK answers: Operation not permitted
-@y
-RTNETLINK answers: Operation not permitted
-@z
-
-@x
-$ docker run -it --rm --cap-add=NET_ADMIN ubuntu:22.04 ip link add dummy0 type dummy
-```
-@y
-$ docker run -it --rm --cap-add=NET_ADMIN ubuntu:22.04 ip link add dummy0 type dummy
-```
-@z
+% snip command...
 
 @x
 To mount a FUSE based filesystem, you need to combine both `--cap-add` and
@@ -2286,79 +1764,7 @@ To mount a FUSE based filesystem, you need to combine both `--cap-add` and
 `--device`:
 @z
 
-@x
-```console
-$ docker run --rm -it --cap-add SYS_ADMIN sshfs sshfs sven@10.10.10.20:/home/sven /mnt
-@y
-```console
-$ docker run --rm -it --cap-add SYS_ADMIN sshfs sshfs sven@10.10.10.20:/home/sven /mnt
-@z
-
-@x
-fuse: failed to open /dev/fuse: Operation not permitted
-@y
-fuse: failed to open /dev/fuse: Operation not permitted
-@z
-
-@x
-$ docker run --rm -it --device /dev/fuse sshfs sshfs sven@10.10.10.20:/home/sven /mnt
-@y
-$ docker run --rm -it --device /dev/fuse sshfs sshfs sven@10.10.10.20:/home/sven /mnt
-@z
-
-@x
-fusermount: mount failed: Operation not permitted
-@y
-fusermount: mount failed: Operation not permitted
-@z
-
-@x
-$ docker run --rm -it --cap-add SYS_ADMIN --device /dev/fuse sshfs
-@y
-$ docker run --rm -it --cap-add SYS_ADMIN --device /dev/fuse sshfs
-@z
-
-@x
-# sshfs sven@10.10.10.20:/home/sven /mnt
-The authenticity of host '10.10.10.20 (10.10.10.20)' can't be established.
-ECDSA key fingerprint is 25:34:85:75:25:b0:17:46:05:19:04:93:b5:dd:5f:c6.
-Are you sure you want to continue connecting (yes/no)? yes
-sven@10.10.10.20's password:
-@y
-# sshfs sven@10.10.10.20:/home/sven /mnt
-The authenticity of host '10.10.10.20 (10.10.10.20)' can't be established.
-ECDSA key fingerprint is 25:34:85:75:25:b0:17:46:05:19:04:93:b5:dd:5f:c6.
-Are you sure you want to continue connecting (yes/no)? yes
-sven@10.10.10.20's password:
-@z
-
-@x
-root@30aa0cfaf1b5:/# ls -la /mnt/src/docker
-@y
-root@30aa0cfaf1b5:/# ls -la /mnt/src/docker
-@z
-
-@x
-total 1516
-drwxrwxr-x 1 1000 1000   4096 Dec  4 06:08 .
-drwxrwxr-x 1 1000 1000   4096 Dec  4 11:46 ..
--rw-rw-r-- 1 1000 1000     16 Oct  8 00:09 .dockerignore
--rwxrwxr-x 1 1000 1000    464 Oct  8 00:09 .drone.yml
-drwxrwxr-x 1 1000 1000   4096 Dec  4 06:11 .git
--rw-rw-r-- 1 1000 1000    461 Dec  4 06:08 .gitignore
-....
-```
-@y
-total 1516
-drwxrwxr-x 1 1000 1000   4096 Dec  4 06:08 .
-drwxrwxr-x 1 1000 1000   4096 Dec  4 11:46 ..
--rw-rw-r-- 1 1000 1000     16 Oct  8 00:09 .dockerignore
--rwxrwxr-x 1 1000 1000    464 Oct  8 00:09 .drone.yml
-drwxrwxr-x 1 1000 1000   4096 Dec  4 06:11 .git
--rw-rw-r-- 1 1000 1000    461 Dec  4 06:08 .gitignore
-....
-```
-@z
+% snip command...
 
 @x
 The default seccomp profile will adjust to the selected capabilities, in order to allow
@@ -2420,15 +1826,7 @@ arguments to the container's entrypoint, represented as `[COMMAND]` and
 `[ARG...]` in the following synopsis example:
 @z
 
-@x
-```console
-$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
-```
-@y
-```console
-$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
-```
-@z
+% snip command...
 
 @x
 This command is optional because whoever created the `IMAGE` may have already

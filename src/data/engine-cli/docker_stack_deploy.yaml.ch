@@ -24,78 +24,6 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker stack deploy [OPTIONS] STACK
-pname: docker stack
-plink: docker_stack.yaml
-options:
-    - option: compose-file
-      shorthand: c
-      value_type: stringSlice
-      default_value: '[]'
-      description: Path to a Compose file, or `-` to read from stdin
-      details_url: '#compose-file'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: prune
-      value_type: bool
-      default_value: "false"
-      description: Prune services that are no longer referenced
-      deprecated: false
-      hidden: false
-      min_api_version: "1.27"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: resolve-image
-      value_type: string
-      default_value: always
-      description: |
-        Query the registry to resolve image digest and supported platforms (`always`, `changed`, `never`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: with-registry-auth
-      value_type: bool
-      default_value: "false"
-      description: Send registry authentication details to Swarm agents
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: orchestrator
-      value_type: string
-      description: Orchestrator to use (swarm|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Compose file (--compose-file) {#compose-file}
 @y
     > **Note**
     >
@@ -103,76 +31,60 @@ examples: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
+@z
+
+@x
 usage: docker stack deploy [OPTIONS] STACK
-pname: docker stack
-plink: docker_stack.yaml
-options:
-    - option: compose-file
-      shorthand: c
-      value_type: stringSlice
-      default_value: '[]'
+@y
+usage: docker stack deploy [OPTIONS] STACK
+@z
+
+% options:
+
+@x compose-file
       description: Path to a Compose file, or `-` to read from stdin
-      details_url: '#compose-file'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: prune
-      value_type: bool
-      default_value: "false"
+@y
+      description: Path to a Compose file, or `-` to read from stdin
+@z
+
+@x prune
       description: Prune services that are no longer referenced
-      deprecated: false
-      hidden: false
-      min_api_version: "1.27"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: resolve-image
-      value_type: string
-      default_value: always
+@y
+      description: Prune services that are no longer referenced
+@z
+
+@x resolve-image
       description: |
         Query the registry to resolve image digest and supported platforms (`always`, `changed`, `never`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: with-registry-auth
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Query the registry to resolve image digest and supported platforms (`always`, `changed`, `never`)
+@z
+
+@x with-registry-auth
       description: Send registry authentication details to Swarm agents
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Send registry authentication details to Swarm agents
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: orchestrator
-      value_type: string
+@y
+      description: Print usage
+@z
+
+@x orchestrator
       description: Orchestrator to use (swarm|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Orchestrator to use (swarm|all)
+@z
+
+@x
+examples: |-
+    ### Compose file (--compose-file) {#compose-file}
+@y
 examples: |-
     ### Compose file (--compose-file) {#compose-file}
 @z

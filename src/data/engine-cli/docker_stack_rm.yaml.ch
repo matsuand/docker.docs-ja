@@ -24,31 +24,6 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker stack rm [OPTIONS] STACK [STACK...]
-pname: docker stack
-plink: docker_stack.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: orchestrator
-      value_type: string
-      description: Orchestrator to use (swarm|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Remove a stack
 @y
     > **Note**
     >
@@ -56,29 +31,32 @@ examples: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
+@z
+
+@x
 usage: docker stack rm [OPTIONS] STACK [STACK...]
-pname: docker stack
-plink: docker_stack.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker stack rm [OPTIONS] STACK [STACK...]
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: orchestrator
-      value_type: string
+@y
+      description: Print usage
+@z
+
+@x orchestrator
       description: Orchestrator to use (swarm|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Orchestrator to use (swarm|all)
+@z
+
+@x
+examples: |-
+    ### Remove a stack
+@y
 examples: |-
     ### Remove a stack
 @z
@@ -91,29 +69,7 @@ examples: |-
     associated with the stack will be removed.
 @z
 
-@x
-    ```console
-    $ docker stack rm myapp
-@y
-    ```console
-    $ docker stack rm myapp
-@z
-
-@x
-    Removing service myapp_redis
-    Removing service myapp_web
-    Removing service myapp_lb
-    Removing network myapp_default
-    Removing network myapp_frontend
-    ```
-@y
-    Removing service myapp_redis
-    Removing service myapp_web
-    Removing service myapp_lb
-    Removing network myapp_default
-    Removing network myapp_frontend
-    ```
-@z
+% snip command...
 
 @x
     ### Remove multiple stacks
@@ -129,56 +85,5 @@ examples: |-
     networks, and secrets associated with all the specified stacks will be removed.
 @z
 
-@x
-    ```console
-    $ docker stack rm myapp vossibility
-@y
-    ```console
-    $ docker stack rm myapp vossibility
-@z
-
-@x
-    Removing service myapp_redis
-    Removing service myapp_web
-    Removing service myapp_lb
-    Removing network myapp_default
-    Removing network myapp_frontend
-    Removing service vossibility_nsqd
-    Removing service vossibility_logstash
-    Removing service vossibility_elasticsearch
-    Removing service vossibility_kibana
-    Removing service vossibility_ghollector
-    Removing service vossibility_lookupd
-    Removing network vossibility_default
-    Removing network vossibility_vossibility
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    Removing service myapp_redis
-    Removing service myapp_web
-    Removing service myapp_lb
-    Removing network myapp_default
-    Removing network myapp_frontend
-    Removing service vossibility_nsqd
-    Removing service vossibility_logstash
-    Removing service vossibility_elasticsearch
-    Removing service vossibility_kibana
-    Removing service vossibility_ghollector
-    Removing service vossibility_lookupd
-    Removing network vossibility_default
-    Removing network vossibility_vossibility
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip command...
+% snip directives...

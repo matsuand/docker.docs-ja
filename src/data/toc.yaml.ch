@@ -3806,10 +3806,12 @@ Manuals:
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: /engine/release-notes/25.0/
-      title: Engine 25.0
+    - path: /engine/release-notes/26.0/
+      title: Engine 26.0
     - sectiontitle: Previous versions
       section:
+      - path: /engine/release-notes/25.0/
+        title: Engine 25.0
       - path: /engine/release-notes/24.0/
         title: Engine 24.0
       - path: /engine/release-notes/23.0/
@@ -3837,10 +3839,12 @@ Manuals:
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: __SUBDIR__/engine/release-notes/25.0/
-      title: Engine 25.0
+    - path: __SUBDIR__/engine/release-notes/26.0/
+      title: Engine 26.0
     - sectiontitle: Previous versions
       section:
+      - path: __SUBDIR__/engine/release-notes/25.0/
+        title: Engine 25.0
       - path: __SUBDIR__/engine/release-notes/24.0/
         title: Engine 24.0
       - path: __SUBDIR__/engine/release-notes/23.0/

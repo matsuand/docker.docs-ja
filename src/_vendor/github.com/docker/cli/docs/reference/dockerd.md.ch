@@ -2519,7 +2519,7 @@ The following is a full example of the allowed configuration options on Linux:
   "cgroup-parent": "",
   "containerd": "/run/containerd/containerd.sock",
   "containerd-namespace": "docker",
-  "containerd-plugin-namespace": "docker-plugins",
+  "containerd-plugins-namespace": "docker-plugins",
   "data-root": "",
   "debug": true,
   "default-address-pools": [
@@ -2560,7 +2560,7 @@ The following is a full example of the allowed configuration options on Linux:
   "proxies": {
     "http-proxy": "http://proxy.example.com:80",
     "https-proxy": "https://proxy.example.com:443",
-    "no-proxy": "*.test.example.com,.example.org",
+    "no-proxy": "*.test.example.com,.example.org"
   },
   "icc": false,
   "init": false,
@@ -2648,7 +2648,7 @@ The following is a full example of the allowed configuration options on Linux:
   "cgroup-parent": "",
   "containerd": "/run/containerd/containerd.sock",
   "containerd-namespace": "docker",
-  "containerd-plugin-namespace": "docker-plugins",
+  "containerd-plugins-namespace": "docker-plugins",
   "data-root": "",
   "debug": true,
   "default-address-pools": [
@@ -2689,7 +2689,7 @@ The following is a full example of the allowed configuration options on Linux:
   "proxies": {
     "http-proxy": "http://proxy.example.com:80",
     "https-proxy": "https://proxy.example.com:443",
-    "no-proxy": "*.test.example.com,.example.org",
+    "no-proxy": "*.test.example.com,.example.org"
   },
   "icc": false,
   "init": false,
@@ -2807,7 +2807,7 @@ The following is a full example of the allowed configuration options on Windows:
   "bridge": "",
   "containerd": "\\\\.\\pipe\\containerd-containerd",
   "containerd-namespace": "docker",
-  "containerd-plugin-namespace": "docker-plugins",
+  "containerd-plugins-namespace": "docker-plugins",
   "data-root": "",
   "debug": true,
   "default-network-opts": {},
@@ -2852,7 +2852,7 @@ The following is a full example of the allowed configuration options on Windows:
   "bridge": "",
   "containerd": "\\\\.\\pipe\\containerd-containerd",
   "containerd-namespace": "docker",
-  "containerd-plugin-namespace": "docker-plugins",
+  "containerd-plugins-namespace": "docker-plugins",
   "data-root": "",
   "debug": true,
   "default-network-opts": {},
@@ -3213,7 +3213,7 @@ using the `daemon.json` file.
   "default-network-opts": {
     "bridge": {
       "com.docker.network.bridge.host_binding_ipv4": "127.0.0.1",
-      "com.docker.network.bridge.mtu": "1234"
+      "com.docker.network.driver.mtu": "1234"
     }
   }
 }
@@ -3224,7 +3224,7 @@ using the `daemon.json` file.
   "default-network-opts": {
     "bridge": {
       "com.docker.network.bridge.host_binding_ipv4": "127.0.0.1",
-      "com.docker.network.bridge.mtu": "1234"
+      "com.docker.network.driver.mtu": "1234"
     }
   }
 }
@@ -3253,13 +3253,13 @@ you create use these option configurations as defaults.
 ```console
 $ docker network create mynet
 $ docker network inspect mynet --format "{{json .Options}}"
-{"com.docker.network.bridge.host_binding_ipv4":"127.0.0.1","com.docker.network.bridge.mtu":"1234"}
+{"com.docker.network.bridge.host_binding_ipv4":"127.0.0.1","com.docker.network.driver.mtu":"1234"}
 ```
 @y
 ```console
 $ docker network create mynet
 $ docker network inspect mynet --format "{{json .Options}}"
-{"com.docker.network.bridge.host_binding_ipv4":"127.0.0.1","com.docker.network.bridge.mtu":"1234"}
+{"com.docker.network.bridge.host_binding_ipv4":"127.0.0.1","com.docker.network.driver.mtu":"1234"}
 ```
 @z
 
@@ -3287,12 +3287,12 @@ daemon configuration. The CLI flag expects a value with the following format:
 ```console
 $ sudo dockerd \
   --default-network-opt bridge=com.docker.network.bridge.host_binding_ipv4=127.0.0.1 \
-  --default-network-opt bridge=com.docker.network.bridge.mtu=1234
+  --default-network-opt bridge=com.docker.network.driver.mtu=1234
 ```
 @y
 ```console
 $ sudo dockerd \
   --default-network-opt bridge=com.docker.network.bridge.host_binding_ipv4=127.0.0.1 \
-  --default-network-opt bridge=com.docker.network.bridge.mtu=1234
+  --default-network-opt bridge=com.docker.network.driver.mtu=1234
 ```
 @z
