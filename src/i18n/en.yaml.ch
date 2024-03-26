@@ -82,4 +82,8 @@ Examples:
   other: Examples
 Aliases:
   other: Aliases
+Command:
+  other: Command
+Subcommands:
+  other: Subcommands
 @z

@@ -171,3 +171,16 @@
     {{ with $data.examples }}
       {{ $heading := dict "level" 2 "text" (T "Examples") "id" "examples" }}
 @z
+
+@x (T "Subcommands")
+      {{ $heading := dict "level" 2 "text" "Subcommands" }}
+@y
+      {{ $heading := dict "level" 2 "text" (T "Subcommands") }}
+@z
+@x
+            <th class="text-left">Command</th>
+            <th class="text-left">Description</th>
+@y
+            <th class="text-left">{{ T "Command" }}</th>
+            <th class="text-left">{{ T "Description" }}</th>
+@z

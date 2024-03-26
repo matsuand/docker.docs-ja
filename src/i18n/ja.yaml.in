@@ -44,3 +44,7 @@ Examples:
   other: 利用例
 Aliases:
   other: エイリアス
+Command:
+  other: コマンド
+Subcommands:
+  other: サブコマンド
