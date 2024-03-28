@@ -6,69 +6,21 @@ command: docker config
 short: Manage Swarm configs
 long: Manage configs.
 usage: docker config
-pname: docker
-plink: docker.yaml
-cname:
-    - docker config create
-    - docker config inspect
-    - docker config ls
-    - docker config rm
-clink:
-    - docker_config_create.yaml
-    - docker_config_inspect.yaml
-    - docker_config_ls.yaml
-    - docker_config_rm.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.30"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
 command: docker config
-short: Manage Swarm configs
-long: Manage configs.
+short: swarm config を管理します。
+long: config を管理します。
 usage: docker config
-pname: docker
-plink: docker.yaml
-cname:
-    - docker config create
-    - docker config inspect
-    - docker config ls
-    - docker config rm
-clink:
-    - docker_config_create.yaml
-    - docker_config_inspect.yaml
-    - docker_config_ls.yaml
-    - docker_config_rm.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.30"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @z
+
+% cname:
+% clink:
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

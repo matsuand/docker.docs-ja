@@ -264,15 +264,15 @@ daemon.
 @x
 > **Warning**
 >
-> BuildKit only supports building Linux containers. Windows support is tracked
-> in
+> BuildKit only fully supports building Linux containers. Experimental Windows
+> container support is tracked in
 > [`moby/buildkit#616`](https://github.com/moby/buildkit/issues/616)
 { .warning }
 @y
 > **Warning**
 >
-> BuildKit only supports building Linux containers. Windows support is tracked
-> in
+> BuildKit only fully supports building Linux containers. Experimental Windows
+> container support is tracked in
 > [`moby/buildkit#616`](https://github.com/moby/buildkit/issues/616)
 { .warning }
 @z

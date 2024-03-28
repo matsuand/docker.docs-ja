@@ -34,31 +34,31 @@ title: Install Docker Desktop on Ubuntu
 @x
 This page contains information on how to install, launch and upgrade Docker Desktop on an Ubuntu distribution.
 @y
-This page contains information on how to install, launch and upgrade Docker Desktop on an Ubuntu distribution.
+このページでは Ubuntu ディストリビューションにおいて、 Docker Desktop のインストール、起動、アップグレードを行う方法について説明します。
 @z
 
 @x
 {{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @y
-{{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="DEB パッケージ" url="https://desktop.docker.com/linux/main/amd64/139021/docker-desktop-4.28.0-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @z
 
 @x
 _For checksums, see [Release notes](../release-notes.md)_
 @y
-_For checksums, see [Release notes](../release-notes.md)_
+_チェックサムについては [リリースノート](../release-notes.md) を参照してください。_
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提要件 {#prerequisites}
 @z
 
 @x
 To install Docker Desktop successfully, you must:
 @y
-To install Docker Desktop successfully, you must:
+Docker Desktop のインストールを正常に行うためには以下が必要です。
 @z
 
 @x
@@ -69,15 +69,19 @@ To install Docker Desktop successfully, you must:
   ```console
   $ sudo apt install gnome-terminal
   ```
+@y
+- [システム要件](linux-install.md#system-requirements) を満たしていること。
+- Have a 64-bit version of either the latest LTS version (Ubuntu Jammy Jellyfish 22.04) or the current non-LTS version (Ubuntu Mantic Minotaur 23.10).
+  Docker Desktop is supported on `x86_64` (or `amd64`) architecture.
+- For non-Gnome Desktop environments, `gnome-terminal` must be installed:
+  ```console
+  $ sudo apt install gnome-terminal
+  ```
+@z
+
+@x
 ## Install Docker Desktop
 @y
-- Meet the [system requirements](linux-install.md#system-requirements)
-- Have a 64-bit version of either the latest LTS version (Ubuntu Jammy Jellyfish 22.04) or the current non-LTS version (Ubuntu Mantic Minotaur 23.10).
-  Docker Desktop is supported on `x86_64` (or `amd64`) architecture.
-- For non-Gnome Desktop environments, `gnome-terminal` must be installed:
-  ```console
-  $ sudo apt install gnome-terminal
-  ```
 ## Install Docker Desktop
 @z
 
@@ -107,17 +111,7 @@ Recommended approach to install Docker Desktop on Ubuntu:
 3. Install the package with apt as follows:
 @z
 
-@x
-   ```console
-   $ sudo apt-get update
-   $ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-   ```
-@y
-   ```console
-   $ sudo apt-get update
-   $ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-   ```
-@z
+% snip command...
 
 @x
    > **Note**
@@ -189,15 +183,7 @@ Once a new version for Docker Desktop is released, the Docker UI shows a notific
 You need to download the new package each time you want to upgrade Docker Desktop and run:
 @z
 
-@x
-```console
-$ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-```
-@y
-```console
-$ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-```
-@z
+% snip command...
 
 @x
 ## Next steps

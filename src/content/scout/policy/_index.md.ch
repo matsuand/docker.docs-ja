@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
 title: Get started with Policy Evaluation in Docker Scout
@@ -188,14 +189,14 @@ containing a fix for the vulnerability.
 @z
 
 @x
-This policy only flags critical and high severity vulnerabilities that were
-published more than 30 days ago. The rationale for only flagging
+By default, this policy only flags critical and high severity vulnerabilities
+disclosed more than 30 days ago. The rationale for only flagging
 vulnerabilities of a certain age is that newly discovered vulnerabilities
 shouldn't cause your evaluations to fail until you've had a chance to address
 them.
 @y
-This policy only flags critical and high severity vulnerabilities that were
-published more than 30 days ago. The rationale for only flagging
+By default, this policy only flags critical and high severity vulnerabilities
+disclosed more than 30 days ago. The rationale for only flagging
 vulnerabilities of a certain age is that newly discovered vulnerabilities
 shouldn't cause your evaluations to fail until you've had a chance to address
 them.
@@ -210,11 +211,11 @@ or high-severity vulnerability, where a fix version is available.
 @z
 
 @x
-You can configure the severity level and age thresholds by creating a custom
-policy. For more information, see [Configure policies](./configure.md).
+You can configure the parameters of this policy by creating a custom version of the policy.
+The following policy parameters are configurable in a custom version:
 @y
-You can configure the severity level and age thresholds by creating a custom
-policy. For more information, see [Configure policies](./configure.md).
+You can configure the parameters of this policy by creating a custom version of the policy.
+The following policy parameters are configurable in a custom version:
 @z
 
 @x
@@ -355,15 +356,7 @@ provenance attestation with max mode. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @z
 
-@x
-```console
-$ docker buildx build --provenance=true --sbom=true -t <IMAGE> --push .
-```
-@y
-```console
-$ docker buildx build --provenance=true --sbom=true -t <IMAGE> --push .
-```
-@z
+% snip command...
 
 @x
 For more information about

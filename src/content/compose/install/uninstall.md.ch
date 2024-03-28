@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: How to uninstall Docker Compose
 keywords: compose, orchestration, uninstall, uninstallation, docker, documentation
 title: Uninstall Docker Compose
----
 @y
----
-description: How to uninstall Docker Compose
+description: Docker Compose のアンインストール方法。
 keywords: compose, orchestration, uninstall, uninstallation, docker, documentation
-title: Uninstall Docker Compose
----
+title: Docker Compose のアンインストール
 @z
 
 @x
@@ -24,7 +20,7 @@ Uninstalling Docker Compose depends on the method you have used to install Docke
 @x
 ## Uninstalling Docker Desktop
 @y
-## Uninstalling Docker Desktop
+## Docker Desktop のアンインストール {#uninstalling-docker-desktop}
 @z
 
 @x
@@ -38,7 +34,7 @@ If you want to uninstall Compose and you have installed Docker Desktop, see [Uni
 >
 > Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
 @y
-> **Note**
+> **メモ**
 >
 > Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
 @z
@@ -46,7 +42,7 @@ If you want to uninstall Compose and you have installed Docker Desktop, see [Uni
 @x
 ## Uninstalling the Docker Compose CLI plugin
 @y
-## Uninstalling the Docker Compose CLI plugin
+## Docker Compose CLI プラグインのアンインストール {#uninstalling-the-docker-compose-cli-plugin}
 @z
 
 @x
@@ -58,35 +54,23 @@ To remove the Compose CLI plugin, run:
 @x
 Ubuntu, Debian:
 @y
-Ubuntu, Debian:
+Ubuntu, Debian の場合
 @z
 
-@x
-   ```console
-   $ sudo apt-get remove docker-compose-plugin
-   ```
-RPM-based distros:
-@y
-   ```console
-   $ sudo apt-get remove docker-compose-plugin
-   ```
-RPM-based distros:
-@z
+% snip command...
 
 @x
-   ```console
-   $ sudo yum remove docker-compose-plugin
-   ```
+RPM-based distros:
 @y
-   ```console
-   $ sudo yum remove docker-compose-plugin
-   ```
+RPM ベースのディストロの場合
 @z
+
+% snip command...
 
 @x
 ### Manually installed
 @y
-### Manually installed
+### 手動インストールの場合 {#manually-installed}
 @z
 
 @x
@@ -95,15 +79,7 @@ If you used `curl` to install Compose CLI plugin, to uninstall it, run:
 If you used `curl` to install Compose CLI plugin, to uninstall it, run:
 @z
 
-@x
-   ```console
-   $ rm $DOCKER_CONFIG/cli-plugins/docker-compose
-   ```
-@y
-   ```console
-   $ rm $DOCKER_CONFIG/cli-plugins/docker-compose
-   ```
-@z
+% snip command...
 
 @x
 ### Remove for all users
@@ -117,15 +93,7 @@ Or, if you have installed Compose for all users, run:
 Or, if you have installed Compose for all users, run:
 @z
 
-@x
-   ```console
-   $ rm /usr/local/lib/docker/cli-plugins/docker-compose
-   ```
-@y
-   ```console
-   $ rm /usr/local/lib/docker/cli-plugins/docker-compose
-   ```
-@z
+% snip command...
 
 @x
 > Got a **Permission denied** error?
@@ -155,12 +123,4 @@ To check where Compose is installed, use:
 To check where Compose is installed, use:
 @z
 
-@x
-```console
-$ docker info --format '{{range .ClientInfo.Plugins}}{{if eq .Name "compose"}}{{.Path}}{{end}}{{end}}'
-```
-@y
-```console
-$ docker info --format '{{range .ClientInfo.Plugins}}{{if eq .Name "compose"}}{{.Path}}{{end}}{{end}}'
-```
-@z
+% snip command...

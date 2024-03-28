@@ -36,6 +36,7 @@ copyfiles = \
 	sectionlinks.html          \
 	siblings.html              \
 	tab.html                   \
-	tabs.html
+	tabs.html                  \
+	youtube-embed.html
 
 include $(top_srcdir)/build-aux/copy.mk

@@ -10,109 +10,44 @@ long: |-
     Updates an existing `context`.
     See [context create](/reference/cli/docker/context/create/).
 usage: docker context update [OPTIONS] CONTEXT
-pname: docker context
-plink: docker_context.yaml
-options:
-    - option: description
-      value_type: string
-      description: Description of the context
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: docker
-      value_type: stringToString
-      default_value: '[]'
-      description: set the docker endpoint
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Update an existing context
 @y
 command: docker context update
-short: Update a context
+short: コンテキストを更新します。
 long: |-
-    Updates an existing `context`.
-    See [context create](__SUBDIR__/reference/cli/docker/context/create/).
+    既存の `context` を更新します。
+    [context create](__SUBDIR__/reference/cli/docker/context/create/) を参照してください。
 usage: docker context update [OPTIONS] CONTEXT
-pname: docker context
-plink: docker_context.yaml
-options:
-    - option: description
-      value_type: string
+@z
+
+% options:
+
+@x description
       description: Description of the context
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: docker
-      value_type: stringToString
-      default_value: '[]'
+@y
+      description: コンテキストの内容説明を設定します。
+@z
+
+@x docker
       description: set the docker endpoint
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Docker のエンドポイントを設定します。
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Update an existing context
+@y
+      description: 利用方法を表示します。
 @z
 
 @x
-    ```console
-    $ docker context update \
-        --description "some description" \
-        --docker "host=tcp://myserver:2376,ca=~/ca-file,cert=~/cert-file,key=~/key-file" \
-        my-context
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+examples: |-
+    ### Update an existing context
 @y
-    ```console
-    $ docker context update \
-        --description "some description" \
-        --docker "host=tcp://myserver:2376,ca=~/ca-file,cert=~/cert-file,key=~/key-file" \
-        my-context
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+examples: |-
+    ### 既存コンテキストの更新 {#update-an-existing-context}
 @z
+
+% snip command...
+% snip directives...

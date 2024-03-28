@@ -302,6 +302,7 @@ bases = \
 	fedora.md          \
 	linux-install.md   \
 	mac-install.md     \
+	rhel.md            \
 	ubuntu.md          \
 	windows-install.md
 

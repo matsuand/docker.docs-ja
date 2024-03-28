@@ -2,29 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Security best practices
 description: Image security best practices guide
 keywords: docker, images, containers, vulnerability, cve
-aliases:
-- /develop/scan-images/
----
 @y
----
-title: Security best practices
-description: Image security best practices guide
+title: セキュリティのベストプラクティス
+description: イメージに対するセキュリティのベストプラクティスガイドです。
 keywords: docker, images, containers, vulnerability, cve
-aliases:
-- /develop/scan-images/
----
 @z
 
 @x
 You can take a few steps to improve the security of your
 container. This includes:
 @y
-You can take a few steps to improve the security of your
-container. This includes:
+いくらかの手順を経て、コンテナーのセキュリティを向上させることができます。
+それは以下のようなものです。
 @z
 
 @x
@@ -33,16 +25,16 @@ container. This includes:
 3. [Rebuilding images](#rebuild-images)
 4. [Checking your image for vulnerabilities](#check-your-image-for-vulnerabilities)
 @y
-1. [Choosing the right base image](#choose-the-right-base-image) from a trusted source and keeping it small
-2. [Using multi-stage builds](#use-multi-stage-builds)
-3. [Rebuilding images](#rebuild-images)
-4. [Checking your image for vulnerabilities](#check-your-image-for-vulnerabilities)
+1. 信頼できるソースから [適切なベースイメージの選択](#choose-the-right-base-image) を行い、小容量を保ちます。
+2. [マルチステージビルド](#use-multi-stage-builds) を利用します。
+3. [イメージの再ビルド](#rebuild-images) を行います。
+4. [イメージのぜい弱性の確認](#check-your-image-for-vulnerabilities) を行います。
 @z
 
 @x
 ### Choose the right base image
 @y
-### Choose the right base image
+### 適切なベースイメージの選択 {#choose-the-right-base-image}
 @z
 
 @x
@@ -50,9 +42,8 @@ The first step towards achieving a secure image is to choose the right base
 image. When choosing an image, ensure it's built from a trusted source and keep
 it small.
 @y
-The first step towards achieving a secure image is to choose the right base
-image. When choosing an image, ensure it's built from a trusted source and keep
-it small.
+セキュアなイメージを達成するためにまず行うべきなのは、適切なベースイメージを選ぶことです。
+イメージを選ぶ際には、それが信頼できるソースにおいてビルドされていることを確認し、イメージサイズを小さく保ちます。
 @z
 
 @x
@@ -66,21 +57,19 @@ Docker verifying the authenticity of the content in their repositories. When you
 pick your base image, look out for the **Official Image** and **Verified Publisher**
 badges.
 @y
-Docker Hub has more than 8.3 million repositories. Some of these images are
-[Official Images](../trusted-content/official-images.md), which are published by
-Docker as a curated set of Docker open source and drop-in solution repositories.
-Docker also offers images that are published by
-[Verified Publishers](../trusted-content/dvp-program.md). These high-quality images
-are published and maintained by the organizations partnering with Docker, with
-Docker verifying the authenticity of the content in their repositories. When you
-pick your base image, look out for the **Official Image** and **Verified Publisher**
-badges.
+Docker Hub には 830 万を超えるリポジトリが存在しています。
+その中には [公式イメージ](../trusted-content/official-images.md) を提供しているものがあります。
+これは Docker が提供する公開オープンソースであり、気軽に利用できるリポジトリです。
+Docker ではさらに [検証済公開者](../trusted-content/dvp-program.md) が構築するイメージも提供しています。
+そのイメージは高品質なものであり、Docker と共同開発を行う組織が公開および保守を行っています。
+そして Docker を使って、リポジトリ内のコンテンツの信頼性検証が行われています。
+ベースイメージを選び出す際には、**Official Image**（公式イメージ）や **Verified Publisher**（検証済公開者）というバッチがついているかどうかの確認を行ってください。
 @z
 
 @x
 ![Docker Hub Official and Verified Publisher images](images/hub-official-images.webp)
 @y
-![Docker Hub Official and Verified Publisher images](images/hub-official-images.webp)
+![Docker Hub 公式イメージおよび検証済公開者によるイメージ](images/hub-official-images.webp)
 @z
 
 @x
@@ -89,10 +78,9 @@ image that matches your requirements. A smaller base image not only offers
 portability and fast downloads, but also shrinks the size of your image and
 minimizes the number of vulnerabilities introduced through the dependencies.
 @y
-When building your own image from a Dockerfile, ensure you choose a minimal base
-image that matches your requirements. A smaller base image not only offers
-portability and fast downloads, but also shrinks the size of your image and
-minimizes the number of vulnerabilities introduced through the dependencies.
+Dockerfile から独自のイメージを構築する際には、仕様を満たす最小限のベースイメージを選ぶようにしてください。
+小さなベースイメージを選んでおけば、移植性に優れ、ダウンロードも早くなります。
+さらにイメージサイズは小さく抑えられ、依存パッケージからもたらされるぜい弱性の数も少なくて済みます。
 @z
 
 @x
@@ -114,7 +102,7 @@ lower the attack surface.
 @x
 ### Use multi-stage builds
 @y
-### Use multi-stage builds
+### マルチステージビルドの利用 {#use-multi-stage-builds}
 @z
 
 @x

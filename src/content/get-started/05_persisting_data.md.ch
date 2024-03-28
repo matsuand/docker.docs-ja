@@ -151,9 +151,11 @@ By default, the todo app stores its data in a SQLite database at
 `/etc/todos/todo.db` in the container's filesystem. If you're not familiar with SQLite, no worries! It's simply a relational database that stores all the data in a single file. While this isn't the best for large-scale applications,
 it works for small demos. You'll learn how to switch this to a different database engine later.
 @y
-By default, the todo app stores its data in a SQLite database at
-`/etc/todos/todo.db` in the container's filesystem. If you're not familiar with SQLite, no worries! It's simply a relational database that stores all the data in a single file. While this isn't the best for large-scale applications,
-it works for small demos. You'll learn how to switch this to a different database engine later.
+Todo アプリはデフォルトで、各種データをコンテナーのファイルシステムの `/etc/todos/todo.db` にある SQLite データベースに保存します。
+SQLite がよくわからなくても心配無用です。
+これは単純なリレーショナルデータベースであって、すべてのデータを 1 つのファイルに保存するものです。
+大規模アプリケーションに対して利用するのは適切ではありませんが、ちょっとしたデモであれば十分に動作します。
+この後には別のデータベースエンジンについて学んでいきます。
 @z
 
 @x
@@ -174,15 +176,16 @@ As mentioned, you're going to use a volume mount. Think of a volume mount as an 
 Docker fully manages the volume, including the storage location on disk. You only need to remember the
 name of the volume.
 @y
-As mentioned, you're going to use a volume mount. Think of a volume mount as an opaque bucket of data. 
-Docker fully manages the volume, including the storage location on disk. You only need to remember the
-name of the volume.
+先ほど言ったように、これから扱うのはボリュームマウントです。
+ボリュームマウントとは、単純にデータが入った 1 つのバケツだと思ってください。
+Docker は、ボリュームによって確保される保存領域を含め、このボリュームを完全に管理します。
+ボリュームという名前を覚えるだけで十分です。
 @z
 
 @x
 ### Create a volume and start the container
 @y
-### Create a volume and start the container {#create-a-volume-and-start-the-container}
+### ボリューム生成とコンテナー起動 {#create-a-volume-and-start-the-container}
 @z
 
 @x

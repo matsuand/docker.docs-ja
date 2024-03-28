@@ -1,8 +1,9 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: Install Docker on Linux with ease using our step-by-step installation
   guide covering system requirements, supported platforms, and where to go next.
 keywords: linux, docker linux install, docker linux, linux docker installation, docker
@@ -10,7 +11,6 @@ keywords: linux, docker linux install, docker linux, linux docker installation, 
   linux, how to install docker on linux, linux vs docker engine, switch docker contexts
 title: Install Docker Desktop on Linux
 @y
----
 description: Install Docker on Linux with ease using our step-by-step installation
   guide covering system requirements, supported platforms, and where to go next.
 keywords: linux, docker linux install, docker linux, linux docker installation, docker
@@ -226,17 +226,19 @@ and architectures:
 @z
 
 @x
-| Platform                | x86_64 / amd64         | 
-|:-----------------------|:-----------------------:|
-| [Ubuntu](ubuntu.md)     | ✅ |
-| [Debian](debian.md)     | ✅  |
-| [Fedora](fedora.md)     | ✅ |
+| Platform                | x86_64 / amd64          | 
+|:------------------------|:-----------------------:|
+| [Ubuntu](ubuntu.md)                         | ✅  |
+| [Debian](debian.md)                         | ✅  |
+| [Red Hat Enterprise Linux (RHEL)](rhel.md)  | ✅  |
+| [Fedora](fedora.md)                         | ✅  |
 @y
-| Platform                | x86_64 / amd64         | 
-|:-----------------------|:-----------------------:|
-| [Ubuntu](ubuntu.md)     | ✅ |
-| [Debian](debian.md)     | ✅  |
-| [Fedora](fedora.md)     | ✅ |
+| プラットフォーム        | x86_64 / amd64          |
+|:------------------------|:-----------------------:|
+| [Ubuntu](ubuntu.md)                         | ✅  |
+| [Debian](debian.md)                         | ✅  |
+| [Red Hat Enterprise Linux (RHEL)](rhel.md)  | ✅  |
+| [Fedora](fedora.md)                         | ✅  |
 @z
 
 @x
@@ -406,19 +408,21 @@ Sign out and sign back in so that your group membership is re-evaluated.
 @z
 
 @x
-1. Download the correct package for your Linux distribution and install it with the corresponding package manager. 
-   - [Install on Debian](debian.md)
-   - [Install on Fedora](fedora.md)
+1. Download the correct package for your Linux distribution and install it with the corresponding package manager.
    - [Install on Ubuntu](ubuntu.md)
-   - [Install on Arch](archlinux.md) 
-   By default, Docker Desktop is installed at `/opt/docker-desktop`.
+   - [Install on Debian](debian.md)
+   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
+   - [Install on Fedora](fedora.md)
+   - [Install on Arch](archlinux.md)
+  By default, Docker Desktop is installed at `/opt/docker-desktop`.
 @y
-1. Download the correct package for your Linux distribution and install it with the corresponding package manager. 
-   - [Install on Debian](debian.md)
-   - [Install on Fedora](fedora.md)
+1. Download the correct package for your Linux distribution and install it with the corresponding package manager.
    - [Install on Ubuntu](ubuntu.md)
-   - [Install on Arch](archlinux.md) 
-   By default, Docker Desktop is installed at `/opt/docker-desktop`.
+   - [Install on Debian](debian.md)
+   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
+   - [Install on Fedora](fedora.md)
+   - [Install on Arch](archlinux.md)
+  By default, Docker Desktop is installed at `/opt/docker-desktop`.
 @z
 
 @x

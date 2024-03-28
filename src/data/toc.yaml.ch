@@ -108,6 +108,34 @@ Guides:
 @z
 
 @x
+- sectiontitle: "Docker concepts"
+  section:
+  - sectiontitle: "The basics"
+    section:
+    - title: "What is a container?"
+      path: /guides/docker-concepts/the-basics/what-is-a-container/
+    - title: "What is an image?"
+      path: /guides/docker-concepts/the-basics/what-is-an-image/
+    - title: "What is a registry?"
+      path: /guides/docker-concepts/the-basics/what-is-a-registry/
+    - title: "What is Docker Compose?"
+      path: /guides/docker-concepts/the-basics/what-is-docker-compose/
+@y
+- sectiontitle: "Docker の考え方"
+  section:
+  - sectiontitle: "基本"
+    section:
+    - title: "コンテナーとは?"
+      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-a-container/
+    - title: "イメージとは?"
+      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-an-image/
+    - title: "レジストリとは?"
+      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-a-registry/
+    - title: "Docker Compose とは?"
+      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-docker-compose/
+@z
+
+@x
 - sectiontitle: Language-specific guides
   section:
   - path: /language/
@@ -2420,23 +2448,23 @@ Manuals:
 @x
        - sectiontitle: Installation per Linux distro
          section:
+            - path: /desktop/install/ubuntu/
+              title: Install on Ubuntu
             - path: /desktop/install/debian/
               title: Install on Debian
             - path: /desktop/install/fedora/
               title: Install on Fedora
-            - path: /desktop/install/ubuntu/
-              title: Install on Ubuntu
             - path: /desktop/install/archlinux/
               title: Install on Arch
 @y
        - sectiontitle: Linux ディストロごとのインストール
          section:
+            - path: __SUBDIR__/desktop/install/ubuntu/
+              title: Ubuntu へのインストール
             - path: __SUBDIR__/desktop/install/debian/
               title: Debian へのインストール
             - path: __SUBDIR__/desktop/install/fedora/
               title: Fedora へのインストール
-            - path: __SUBDIR__/desktop/install/ubuntu/
-              title: Ubuntu へのインストール
             - path: __SUBDIR__/desktop/install/archlinux/
               title: Arch へのインストール
 @z
@@ -4358,7 +4386,7 @@ Manuals:
       - path: __SUBDIR__/compose/install/linux/
         title: Compose プラグインのインストール
       - path: __SUBDIR__/compose/install/standalone/
-        title: Install Compose standalone
+        title: Compose のスタンドアローンインストール
       - path: __SUBDIR__/compose/install/uninstall/
         title: Compose のアンインストール
   - path: __SUBDIR__/compose/compose-application-model/

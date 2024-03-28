@@ -226,35 +226,21 @@ To remove individual images, select the bin icon.
 @z
 
 @x
-## Interact with remote repositories
+## Docker Hub repositories
 @y
-## Interact with remote repositories
+## Docker Hub repositories
 @z
 
 @x
-The **Images** view also allows you to manage and interact with images in remote repositories.
+The **Images** view also allows you to manage and interact with images in Docker Hub repositories.
 By default, when you go to **Images** in Docker Desktop, you see a list of images that exist in your local image store.
 The **Local** and **Hub** tabs near the top toggles between viewing images in your local image store,
 and images in remote Docker Hub repositories that you have access to.
 @y
-The **Images** view also allows you to manage and interact with images in remote repositories.
+The **Images** view also allows you to manage and interact with images in Docker Hub repositories.
 By default, when you go to **Images** in Docker Desktop, you see a list of images that exist in your local image store.
 The **Local** and **Hub** tabs near the top toggles between viewing images in your local image store,
 and images in remote Docker Hub repositories that you have access to.
-@z
-
-@x
-For more information about supported integrations, see
-[Integrating Docker Scout](../../scout/integrations/index.md).
-@y
-For more information about supported integrations, see
-[Integrating Docker Scout](../../scout/integrations/index.md).
-@z
-
-@x
-### Hub
-@y
-### Hub
 @z
 
 @x
@@ -272,9 +258,9 @@ Select an organization from the drop-down to view a list of repositories for tha
 @z
 
 @x
-If you have enabled [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md) in Docker Hub, the scan results appear next to the image tags.
+If you have enabled [Docker Scout](../../scout/_index.md) on the repositories, image analysis results appear next to the image tags.
 @y
-If you have enabled [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md) in Docker Hub, the scan results appear next to the image tags.
+If you have enabled [Docker Scout](../../scout/_index.md) on the repositories, image analysis results appear next to the image tags.
 @z
 
 @x
@@ -289,86 +275,6 @@ Hovering over an image tag reveals two options:
 @y
 - **Pull**: Pull the latest version of the image from Docker Hub.
 - **View in Hub**: Open the Docker Hub page and display detailed information about the image.
-@z
-
-@x
-### Artifactory
-@y
-### Artifactory
-@z
-
-@x
-The Artifactory integration lets you interact with images in JFrog Artifactory,
-and JFrog container registry, directly in the **Images** view of Docker Desktop.
-The integration described here connects your local Docker Desktop client with Artifactory.
-You can browse, filter, save, and pull images in the Artifactory instance you configure.
-@y
-The Artifactory integration lets you interact with images in JFrog Artifactory,
-and JFrog container registry, directly in the **Images** view of Docker Desktop.
-The integration described here connects your local Docker Desktop client with Artifactory.
-You can browse, filter, save, and pull images in the Artifactory instance you configure.
-@z
-
-@x
-You may also want to consider activating automatic image analysis for your Artifactory repositories.
-Learn more about [Artifactory integration with Docker Scout](../../scout/integrations/registry/artifactory.md).
-@y
-You may also want to consider activating automatic image analysis for your Artifactory repositories.
-Learn more about [Artifactory integration with Docker Scout](../../scout/integrations/registry/artifactory.md).
-@z
-
-@x
-#### Connect an Artifactory registry
-@y
-#### Connect an Artifactory registry
-@z
-
-@x
-To connect a new Artifactory registry to Docker Desktop:
-@y
-To connect a new Artifactory registry to Docker Desktop:
-@z
-
-@x
-1. Sign in to an Artifactory registry using the `docker login` command:
-@y
-1. Sign in to an Artifactory registry using the `docker login` command:
-@z
-
-@x
-   ```console
-   $ cat ./password.txt | docker login -u <username> --password-stdin <hostname>
-   ```
-@y
-   ```console
-   $ cat ./password.txt | docker login -u <username> --password-stdin <hostname>
-   ```
-@z
-
-@x
-   - `password.txt`: Text file containing your Artifactory password.
-   - `username`: Your Artifactory username.
-   - `hostname`: Hostname for your Artifactory instance.
-@y
-   - `password.txt`: Text file containing your Artifactory password.
-   - `username`: Your Artifactory username.
-   - `hostname`: Hostname for your Artifactory instance.
-@z
-
-@x
-2. Open the **Images** view in Docker Desktop.
-3. Select the **Artifactory** tab near the top of the image view to see Artifactory images.
-@y
-2. Open the **Images** view in Docker Desktop.
-3. Select the **Artifactory** tab near the top of the image view to see Artifactory images.
-@z
-
-@x
-When signed in, a new **Artifactory** tab appears in the **Images** view.
-By default, the image list shows images sorted by push date: the newest images appear higher in the list.
-@y
-When signed in, a new **Artifactory** tab appears in the **Images** view.
-By default, the image list shows images sorted by push date: the newest images appear higher in the list.
 @z
 
 @x

@@ -2,47 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Get started with Docker for Windows. This guide covers system requirements,
   where to download, and instructions on how to install and update.
 keywords: docker for windows, docker windows, docker desktop for windows, docker on
   windows, install docker windows, install docker on windows, docker windows 10, docker
   run on windows, installing docker for windows, windows containers, wsl, hyper-v
 title: Install Docker Desktop on Windows
-aliases:
-- /desktop/windows/install/
-- /docker-ee-for-windows/install/
-- /docker-for-windows/install-windows-home/
-- /docker-for-windows/install/
-- /ee/docker-ee/windows/docker-ee/
-- /engine/installation/windows/
-- /engine/installation/windows/docker-ee/
-- /install/windows/docker-ee/
-- /install/windows/ee-preview/
-- /installation/windows/
-- /desktop/win/configuring-wsl/
----
 @y
----
 description: Get started with Docker for Windows. This guide covers system requirements,
   where to download, and instructions on how to install and update.
 keywords: docker for windows, docker windows, docker desktop for windows, docker on
   windows, install docker windows, install docker on windows, docker windows 10, docker
   run on windows, installing docker for windows, windows containers, wsl, hyper-v
 title: Windows への Docker Desktop のインストール
-aliases:
-- /desktop/windows/install/
-- /docker-ee-for-windows/install/
-- /docker-for-windows/install-windows-home/
-- /docker-for-windows/install/
-- /ee/docker-ee/windows/docker-ee/
-- /engine/installation/windows/
-- /engine/installation/windows/docker-ee/
-- /install/windows/docker-ee/
-- /install/windows/ee-preview/
-- /installation/windows/
-- /desktop/win/configuring-wsl/
----
 @z
 
 @x
@@ -440,15 +412,7 @@ After downloading `Docker Desktop Installer.exe`, run the following command in a
 `Docker Desktop Installer.exe` をダウンロードしたら、端末から以下のコマンドを実行して Docker Desktop をインストールします。
 @z
 
-@x
-```console
-$ "Docker Desktop Installer.exe" install
-```
-@y
-```console
-$ "Docker Desktop Installer.exe" install
-```
-@z
+% snip command...
 
 @x
 If you’re using PowerShell you should run it as:
@@ -456,15 +420,7 @@ If you’re using PowerShell you should run it as:
 PowerShell を利用している場合は以下を実行します。
 @z
 
-@x
-```powershell
-Start-Process 'Docker Desktop Installer.exe' -Wait install
-```
-@y
-```powershell
-Start-Process 'Docker Desktop Installer.exe' -Wait install
-```
-@z
+% snip command...
 
 @x
 If using the Windows Command Prompt:
@@ -472,15 +428,7 @@ If using the Windows Command Prompt:
 Windows コマンドプロンプトの利用時は以下を実行します。
 @z
 
-@x
-```sh
-start /w "" "Docker Desktop Installer.exe" install
-```
-@y
-```sh
-start /w "" "Docker Desktop Installer.exe" install
-```
-@z
+% snip command...
 
 @x
 The `install` command accepts the following flags:

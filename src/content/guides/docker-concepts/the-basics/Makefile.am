@@ -4,14 +4,10 @@
 SUBDIRS = images
 
 bases = \
-	archlinux.md       \
-	debian.md          \
-	fedora.md          \
-	linux-install.md   \
-	mac-install.md     \
-	rhel.md            \
-	ubuntu.md          \
-	windows-install.md
+	what-is-a-container.md    \
+	what-is-a-registry.md     \
+	what-is-an-image.md       \
+	what-is-docker-compose.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

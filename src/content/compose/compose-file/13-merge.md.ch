@@ -9,7 +9,7 @@ description: Learn about merging rules
 keywords: compose, compose specification, merge, compose file reference
 @y
 title: Merge
-description: Learn about merging rules
+description: マージのルールについて学びます。
 keywords: compose, compose specification, merge, compose file reference
 @z
 
@@ -24,7 +24,7 @@ When doing so, Compose follows the rules declared in this section to merge Compo
 @x
 ## Mapping
 @y
-## Mapping
+## mapping
 @z
 
 @x
@@ -52,7 +52,7 @@ Results in a Compose application model equivalent to the YAML tree:
 @x
 ## Sequence
 @y
-## Sequence
+## sequence
 @z
 
 @x
@@ -86,7 +86,7 @@ Results in a Compose application model equivalent to the YAML tree:
 @x
 ### Shell commands
 @y
-### Shell commands
+### シェルコマンド {#shell-commands}
 @z
 
 @x
@@ -200,9 +200,9 @@ A base `compose.yaml` file:
 % snip code...
 
 @x
-And an `override.compose.yaml` file:
+And an `compose.override.yaml` file:
 @y
-And an `override.compose.yaml` file:
+And an `compose.override.yaml` file:
 @z
 
 % snip code...

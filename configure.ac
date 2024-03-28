@@ -44,8 +44,6 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/compose/v2/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/reference/Makefile
-	src/_vendor/github.com/docker/scout-cli/Makefile
-	src/_vendor/github.com/docker/scout-cli/docs/Makefile
 	src/_vendor/github.com/moby/Makefile
 	src/_vendor/github.com/moby/buildkit/Makefile
 	src/_vendor/github.com/moby/buildkit/docs/Makefile
@@ -179,6 +177,9 @@ AC_CONFIG_FILES([
 	src/content/get-started/Makefile
 	src/content/get-started/images/Makefile
 	src/content/guides/Makefile
+	src/content/guides/docker-concepts/Makefile
+	src/content/guides/docker-concepts/the-basics/Makefile
+	src/content/guides/docker-concepts/the-basics/images/Makefile
 	src/content/guides/get-started/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile

@@ -125,7 +125,7 @@ to your `/etc/docker/daemon.json` configuration file.
 ```json {hl_lines=3}
 {
   "features": {
-    "containerd-snapshotters": true
+    "containerd-snapshotter": true
   }
 }
 ```
@@ -133,7 +133,7 @@ to your `/etc/docker/daemon.json` configuration file.
 ```json {hl_lines=3}
 {
   "features": {
-    "containerd-snapshotters": true
+    "containerd-snapshotter": true
   }
 }
 ```
