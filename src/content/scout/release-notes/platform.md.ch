@@ -6,12 +6,16 @@
 title: Docker Scout release notes
 description: Learn about the latest features of Docker Scout
 keywords: docker scout, release notes, changelog, features, changes, delta, new, releases
+aliases:
+- /scout/release-notes/
 ---
 @y
 ---
 title: Docker Scout release notes
 description: Learn about the latest features of Docker Scout
 keywords: docker scout, release notes, changelog, features, changes, delta, new, releases
+aliases:
+- /scout/release-notes/
 ---
 @z
 
@@ -19,12 +23,12 @@ keywords: docker scout, release notes, changelog, features, changes, delta, new,
 This page contains information about the new features, improvements, known
 issues, and bug fixes in Docker Scout releases. These release notes cover the
 Docker Scout platform, including the Dashboard. For CLI release notes, refer to
-the `docker/scout-cli` [GitHub repository](https://github.com/docker/scout-cli/releases).
+[Docker Scout CLI release notes](./cli.md).
 @y
 This page contains information about the new features, improvements, known
 issues, and bug fixes in Docker Scout releases. These release notes cover the
 Docker Scout platform, including the Dashboard. For CLI release notes, refer to
-the `docker/scout-cli` [GitHub repository](https://github.com/docker/scout-cli/releases).
+[Docker Scout CLI release notes](./cli.md).
 @z
 
 @x
@@ -89,20 +93,20 @@ making the now-removed **All critical vulnerabilities** policy redundant.
 
 @x
 **Azure Container Registry** integration graduated from
-[Early Access](../release-lifecycle.md#early-access-ea) to
-[General Availability](../release-lifecycle.md#genera-availability-ga).
+[Early Access](../../release-lifecycle.md#early-access-ea) to
+[General Availability](../../release-lifecycle.md#genera-availability-ga).
 @y
 **Azure Container Registry** integration graduated from
-[Early Access](../release-lifecycle.md#early-access-ea) to
-[General Availability](../release-lifecycle.md#genera-availability-ga).
+[Early Access](../../release-lifecycle.md#early-access-ea) to
+[General Availability](../../release-lifecycle.md#genera-availability-ga).
 @z
 
 @x
 For more information and setup instructions, see
-[Integrate Azure Container Registry](./integrations/registry/acr.md).
+[Integrate Azure Container Registry](../integrations/registry/acr.md).
 @y
 For more information and setup instructions, see
-[Integrate Azure Container Registry](./integrations/registry/acr.md).
+[Integrate Azure Container Registry](../integrations/registry/acr.md).
 @z
 
 @x
@@ -125,10 +129,10 @@ cause the policy to fail.
 
 @x
 For more information, see
-[Unapproved base images](./policy/_index.md#unapproved-base-images).
+[Unapproved base images](../policy/_index.md#unapproved-base-images).
 @y
 For more information, see
-[Unapproved base images](./policy/_index.md#unapproved-base-images).
+[Unapproved base images](../policy/_index.md#unapproved-base-images).
 @z
 
 @x
@@ -150,9 +154,9 @@ runtime security.
 @z
 
 @x
-For more information, see [Default non-root user](./policy/_index.md#default-non-root-user).
+For more information, see [Default non-root user](../policy/_index.md#default-non-root-user).
 @y
-For more information, see [Default non-root user](./policy/_index.md#default-non-root-user).
+For more information, see [Default non-root user](../policy/_index.md#default-non-root-user).
 @z
 
 @x
@@ -162,11 +166,11 @@ For more information, see [Default non-root user](./policy/_index.md#default-non
 @z
 
 @x
-[Beta](../release-lifecycle.md#beta) launch of a new GitHub app for integrating
+[Beta](../../release-lifecycle.md#beta) launch of a new GitHub app for integrating
 Docker Scout with your source code management, and a remediation feature for
 helping you improve policy compliance.
 @y
-[Beta](../release-lifecycle.md#beta) launch of a new GitHub app for integrating
+[Beta](../../release-lifecycle.md#beta) launch of a new GitHub app for integrating
 Docker Scout with your source code management, and a remediation feature for
 helping you improve policy compliance.
 @z
@@ -196,21 +200,21 @@ more precise recommendations.
 @x
 For more information about the types of recommendations that Docker Scout can
 provide to help you improve policy compliance, see
-[Remediation](./policy/remediation.md).
+[Remediation](../policy/remediation.md).
 @y
 For more information about the types of recommendations that Docker Scout can
 provide to help you improve policy compliance, see
-[Remediation](./policy/remediation.md).
+[Remediation](../policy/remediation.md).
 @z
 
 @x
 For more information about how to authorize the Docker Scout GitHub app on your
 source repositories, see
-[Integrate Docker Scout with GitHub](./integrations/source-code-management/github.md).
+[Integrate Docker Scout with GitHub](../integrations/source-code-management/github.md).
 @y
 For more information about how to authorize the Docker Scout GitHub app on your
 source repositories, see
-[Integrate Docker Scout with GitHub](./integrations/source-code-management/github.md).
+[Integrate Docker Scout with GitHub](../integrations/source-code-management/github.md).
 @z
 
 @x
@@ -233,20 +237,20 @@ New features and enhancements released in the fourth quarter of 2023.
 
 @x
 **Azure Container Registry** integration graduated from
-[Beta](../release-lifecycle.md#beta) to
-[Early Access](../release-lifecycle.md#early-access-ea).
+[Beta](../../release-lifecycle.md#beta) to
+[Early Access](../../release-lifecycle.md#early-access-ea).
 @y
 **Azure Container Registry** integration graduated from
-[Beta](../release-lifecycle.md#beta) to
-[Early Access](../release-lifecycle.md#early-access-ea).
+[Beta](../../release-lifecycle.md#beta) to
+[Early Access](../../release-lifecycle.md#early-access-ea).
 @z
 
 @x
 For more information and setup instructions, see
-[Integrate Azure Container Registry](./integrations/registry/acr.md).
+[Integrate Azure Container Registry](../integrations/registry/acr.md).
 @y
 For more information and setup instructions, see
-[Integrate Azure Container Registry](./integrations/registry/acr.md).
+[Integrate Azure Container Registry](../integrations/registry/acr.md).
 @z
 
 @x
@@ -278,11 +282,11 @@ For more information, see:
 @z
 
 @x
-- [Integration and setup instructions](./integrations/code-quality/sonarqube.md)
-- [Quality gates passed policy](./policy/_index.md#quality-gates-passed)
+- [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
+- [Quality gates passed policy](../policy/_index.md#quality-gates-passed)
 @y
-- [Integration and setup instructions](./integrations/code-quality/sonarqube.md)
-- [Quality gates passed policy](./policy/_index.md#quality-gates-passed)
+- [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
+- [Quality gates passed policy](../policy/_index.md#quality-gates-passed)
 @z
 
 @x
@@ -292,21 +296,21 @@ For more information, see:
 @z
 
 @x
-[Beta](../release-lifecycle.md#beta) release of a new **Azure Container
+[Beta](../../release-lifecycle.md#beta) release of a new **Azure Container
 Registry** (ACR) integration, which lets Docker Scout pull and analyze images
 in ACR repositories automatically.
 @y
-[Beta](../release-lifecycle.md#beta) release of a new **Azure Container
+[Beta](../../release-lifecycle.md#beta) release of a new **Azure Container
 Registry** (ACR) integration, which lets Docker Scout pull and analyze images
 in ACR repositories automatically.
 @z
 
 @x
 To learn more about the integration and how to get started, see
-[Integrate Azure Container Registry](./integrations/registry/acr.md).
+[Integrate Azure Container Registry](../integrations/registry/acr.md).
 @y
 To learn more about the integration and how to get started, see
-[Integrate Azure Container Registry](./integrations/registry/acr.md).
+[Integrate Azure Container Registry](../integrations/registry/acr.md).
 @z
 
 @x
@@ -338,9 +342,9 @@ policies for your organization include:
 @z
 
 @x
-For more information, see [Configurable policies](./policy/configure.md).
+For more information, see [Configurable policies](../policy/configure.md).
 @y
-For more information, see [Configurable policies](./policy/configure.md).
+For more information, see [Configurable policies](../policy/configure.md).
 @z
 
 @x
@@ -362,10 +366,10 @@ often a prerequisite for doing more.
 @z
 
 @x
-See [Supply chain attestations policy](./policy/_index.md#supply-chain-attestations)
+See [Supply chain attestations policy](../policy/_index.md#supply-chain-attestations)
 for details.
 @y
-See [Supply chain attestations policy](./policy/_index.md#supply-chain-attestations)
+See [Supply chain attestations policy](../policy/_index.md#supply-chain-attestations)
 for details.
 @z
 
@@ -385,10 +389,10 @@ free from a curated list of vulnerabilities widely recognized to be risky.
 
 @x
 For more information, see
-[High-profile vulnerabilities policy](./policy/_index.md#high-profile-vulnerabilities).
+[High-profile vulnerabilities policy](../policy/_index.md#high-profile-vulnerabilities).
 @y
 For more information, see
-[High-profile vulnerabilities policy](./policy/_index.md#high-profile-vulnerabilities).
+[High-profile vulnerabilities policy](../policy/_index.md#high-profile-vulnerabilities).
 @z
 
 @x
@@ -438,9 +442,9 @@ with four out-of-the-box policies, enabled by default for all organizations.
 @z
 
 @x
-![Policy overview in Dashboard](./images/release-notes/policy-ea.webp)
+![Policy overview in Dashboard](../images/release-notes/policy-ea.webp)
 @y
-![Policy overview in Dashboard](./images/release-notes/policy-ea.webp)
+![Policy overview in Dashboard](../images/release-notes/policy-ea.webp)
 @z
 
 @x
@@ -470,11 +474,11 @@ with four out-of-the-box policies, enabled by default for all organizations.
 @x
 You can view and evaluate policy status for images using the Docker Scout
 Dashboard and the `docker scout policy` CLI command. For more information,
-refer to the [Policy Evaluation documentation](./policy/_index.md).
+refer to the [Policy Evaluation documentation](../policy/_index.md).
 @y
 You can view and evaluate policy status for images using the Docker Scout
 Dashboard and the `docker scout policy` CLI command. For more information,
-refer to the [Policy Evaluation documentation](./policy/_index.md).
+refer to the [Policy Evaluation documentation](../policy/_index.md).
 @z
 
 @x
@@ -507,12 +511,12 @@ metadata about the image contents, and not the container images themselves.
 The integration offers a straightforward process for adding additional
 repositories, activating Docker Scout for specific repositories, and removing
 the integration if needed. To learn more, refer to the [Amazon ECR integration
-documentation](./integrations/registry/ecr.md).
+documentation](../integrations/registry/ecr.md).
 @y
 The integration offers a straightforward process for adding additional
 repositories, activating Docker Scout for specific repositories, and removing
 the integration if needed. To learn more, refer to the [Amazon ECR integration
-documentation](./integrations/registry/ecr.md).
+documentation](../integrations/registry/ecr.md).
 @z
 
 @x
@@ -543,10 +547,10 @@ into memory, using VEX documents.
 
 @x
 For more information and getting started, see [Sysdig integration
-documentation](./integrations/environment/sysdig.md).
+documentation](../integrations/environment/sysdig.md).
 @y
 For more information and getting started, see [Sysdig integration
-documentation](./integrations/environment/sysdig.md).
+documentation](../integrations/environment/sysdig.md).
 @z
 
 @x
@@ -564,21 +568,21 @@ Artifactory registries.
 @z
 
 @x
-![Animation of how to integrate Artifactory](./images/release-notes/artifactory-agent.gif)
+![Animation of how to integrate Artifactory](../images/release-notes/artifactory-agent.gif)
 @y
-![Animation of how to integrate Artifactory](./images/release-notes/artifactory-agent.gif)
+![Animation of how to integrate Artifactory](../images/release-notes/artifactory-agent.gif)
 @z
 
 @x
 The integration involves deploying a Docker Scout Artifactory agent that polls
 for new images, performs analysis, and uploads results to Docker Scout, all
 while preserving the integrity of image data. Learn more in the [Artifactory
-integration documentation](./integrations/registry/artifactory.md)
+integration documentation](../integrations/registry/artifactory.md)
 @y
 The integration involves deploying a Docker Scout Artifactory agent that polls
 for new images, performs analysis, and uploads results to Docker Scout, all
 while preserving the integrity of image data. Learn more in the [Artifactory
-integration documentation](./integrations/registry/artifactory.md)
+integration documentation](../integrations/registry/artifactory.md)
 @z
 
 @x

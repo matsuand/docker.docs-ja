@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = guides images integrations policy
+SUBDIRS = guides images integrations policy release-notes
 
 bases = \
 	_index.md              \
@@ -14,7 +14,6 @@ bases = \
 	image-prefix.md        \
 	install.md             \
 	quickstart.md          \
-	release-notes.md       \
 	sbom.md
 
 include $(top_srcdir)/build-aux/common.mk

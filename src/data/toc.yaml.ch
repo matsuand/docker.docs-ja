@@ -3126,8 +3126,6 @@ Manuals:
         section:
         - title: GitHub
           path: /scout/integrations/source-code-management/github/
-    - path: /scout/release-notes/
-      title: Release notes
 @y
       - sectiontitle: Continuous integration
         section:
@@ -3149,8 +3147,22 @@ Manuals:
         section:
         - title: GitHub
           path: __SUBDIR__/scout/integrations/source-code-management/github/
-    - path: __SUBDIR__/scout/release-notes/
-      title: Release notes
+@z
+
+@x
+    - sectiontitle: Release notes
+      section:
+      - path: /scout/release-notes/cli/
+        title: CLI and GitHub Action
+      - path: /scout/release-notes/platform/
+        title: Platform
+@y
+    - sectiontitle: リリースノート
+      section:
+      - path: __SUBDIR__/scout/release-notes/cli/
+        title: CLI と GitHub アクション
+      - path: __SUBDIR__/scout/release-notes/platform/
+        title: プラットフォーム
 @z
 
 @x

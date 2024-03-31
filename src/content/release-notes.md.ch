@@ -23,9 +23,12 @@ grid:
 - title: Docker Hub
   icon: widgets
   link: /docker-hub/release-notes/
-- title: Docker Scout
+- title: Docker Scout (platform)
   icon: query_stats
-  link: /scout/release-notes/
+  link: /scout/release-notes/platform/
+- title: Docker Scout (CLI)
+  icon: query_stats
+  link: /scout/release-notes/cli/
 ---
 @y
 ---
@@ -48,9 +51,12 @@ grid:
 - title: Docker Hub
   icon: widgets
   link: __SUBDIR__/docker-hub/release-notes/
-- title: Docker Scout
+- title: Docker Scout (platform)
   icon: query_stats
-  link: __SUBDIR__/scout/release-notes/
+  link: __SUBDIR__/scout/release-notes/platform/
+- title: Docker Scout (CLI)
+  icon: query_stats
+  link: __SUBDIR__/scout/release-notes/cli/
 ---
 @z
 

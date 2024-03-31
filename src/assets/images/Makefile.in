@@ -238,14 +238,14 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	FacebookCircle.svg       \
-	InstagramCircle.svg      \
-	LinkedinCircle.svg       \
-	TwitterCircle.svg        \
-	YoutubeCircle.svg        \
-	build-cloud-light.svg    \
-	build-cloud-white.svg    \
-	docs-logo-white-full.svg
+	FacebookCircle.svg    \
+	InstagramCircle.svg   \
+	LinkedinCircle.svg    \
+	TwitterCircle.svg     \
+	YoutubeCircle.svg     \
+	build-cloud-light.svg \
+	build-cloud-white.svg \
+	docker-docs-white.svg
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

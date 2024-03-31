@@ -4,13 +4,17 @@
 % __SUBDIR__ 対応
 
 @x
+---
 description: Run the Docker daemon as a non-root user (Rootless mode)
 keywords: security, namespaces, rootless
 title: Run the Docker daemon as a non-root user (Rootless mode)
+---
 @y
+---
 description: Run the Docker daemon as a non-root user (Rootless mode)
 keywords: security, namespaces, rootless
 title: Run the Docker daemon as a non-root user (Rootless mode)
+---
 @z
 
 @x
@@ -146,12 +150,94 @@ testuser:231072:65536
 @z
 
 @x
-- Known to work on Ubuntu 18.04, 20.04, and 22.04.
+- Ubuntu 24.04 and later enables restricted unprivileged user namespaces by
+  default, which prevents unprivileged processes in creating user namespaces
+  unless an AppArmor profile is configured to allow programs to use
+  unprivileged user namespaces.
+@y
+- Ubuntu 24.04 and later enables restricted unprivileged user namespaces by
+  default, which prevents unprivileged processes in creating user namespaces
+  unless an AppArmor profile is configured to allow programs to use
+  unprivileged user namespaces.
+@z
+
+@x
+  If you install `docker-ce-rootless-extras` using the deb package (`apt-get
+  install docker-ce-rootless-extras`), then the AppArmor profile for
+  `rootlesskit` is already bundled with the `apparmor` deb package. With this
+  installation method, you don't need to add any manual the AppArmor
+  configuration. If you install the rootless extras using the [installation
+  script](https://get.docker.com/rootless), however, you must add an AppArmor
+  profile for `rootlesskit` manually:
+@y
+  If you install `docker-ce-rootless-extras` using the deb package (`apt-get
+  install docker-ce-rootless-extras`), then the AppArmor profile for
+  `rootlesskit` is already bundled with the `apparmor` deb package. With this
+  installation method, you don't need to add any manual the AppArmor
+  configuration. If you install the rootless extras using the [installation
+  script](https://get.docker.com/rootless), however, you must add an AppArmor
+  profile for `rootlesskit` manually:
+@z
+
+@x
+  1. Add the AppArmor profile to `/etc/apparmor.d/usr.local.bin.rootlesskit`:
+@y
+  1. Add the AppArmor profile to `/etc/apparmor.d/usr.local.bin.rootlesskit`:
+@z
+
+@x
+     ```console
+     $ cat <<EOF > /etc/apparmor.d/$(echo $HOME/bin/rootlesskit | sed -e s@^/@@ -e s@/@.@g)
+     abi <abi/4.0>,
+     include <tunables/global>
+@y
+     ```console
+     $ cat <<EOF > /etc/apparmor.d/$(echo $HOME/bin/rootlesskit | sed -e s@^/@@ -e s@/@.@g)
+     abi <abi/4.0>,
+     include <tunables/global>
+@z
+
+@x
+     $HOME/bin/rootlesskit flags=(unconfined) {
+       userns,
+@y
+     $HOME/bin/rootlesskit flags=(unconfined) {
+       userns,
+@z
+
+@x
+       include if exists <local/$(echo $HOME/bin/rootlesskit | sed -e s@^/@@ -e s@/@.@g)>
+     }
+     EOF
+     ```
+@y
+       include if exists <local/$(echo $HOME/bin/rootlesskit | sed -e s@^/@@ -e s@/@.@g)>
+     }
+     EOF
+     ```
+@z
+
+@x
+  2. Restart AppArmor.
+@y
+  2. Restart AppArmor.
+@z
+
+@x
+     ```console
+     $ systemctl restart apparmor.service
+     ```
+@y
+     ```console
+     $ systemctl restart apparmor.service
+     ```
+@z
+
+@x
 {{< /tab >}}
 {{< tab name="Debian GNU/Linux" >}}
 - Install `dbus-user-session` package if not installed. Run `sudo apt-get install -y dbus-user-session` and relogin.
 @y
-- Known to work on Ubuntu 18.04, 20.04, and 22.04.
 {{< /tab >}}
 {{< tab name="Debian GNU/Linux" >}}
 - Install `dbus-user-session` package if not installed. Run `sudo apt-get install -y dbus-user-session` and relogin.
