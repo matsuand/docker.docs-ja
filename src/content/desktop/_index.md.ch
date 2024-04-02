@@ -4,23 +4,25 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Explore more of Docker Desktop, what it has to offer, and its key features.
   Take the next step by downloading or find additional resources.
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
 title: Overview of Docker Desktop
-grid:
-- title: Install Docker Desktop
-  description: 'Install Docker Desktop on
 @y
----
 description: Explore more of Docker Desktop, what it has to offer, and its key features.
   Take the next step by downloading or find additional resources.
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
 title: Docker Desktop の概要
-grid:
+@z
+
+% grid:
+
+@x
+- title: Install Docker Desktop
+  description: 'Install Docker Desktop on
+@y
 - title: Docker Desktop のインストール
   description: '
 @z
@@ -46,6 +48,12 @@ grid:
 @x
     '
   icon: download
+@y
+    への Docker Desktop インストール'
+  icon: download
+@z
+
+@x
 - title: Explore Docker Desktop
   description: Navigate Docker Desktop and learn about its key features.
   icon: feature_search
@@ -67,16 +75,7 @@ grid:
   description: Provide feedback on Docker Desktop or Docker Desktop features.
   icon: sms
   link: /desktop/feedback
-aliases:
-- /desktop/opensource/
-- /docker-for-mac/dashboard/
-- /docker-for-mac/opensource/
-- /docker-for-windows/dashboard/
-- /docker-for-windows/opensource/
----
 @y
-    への Docker  Desktop インストール'
-  icon: download
 - title: Docker Desktop の確認
   description: Docker Desktop を始めて、その主要機能について学びます。
   icon: feature_search
@@ -97,13 +96,6 @@ aliases:
   description: Docker Desktop やその機能についてのフィードバックを行います。
   icon: sms
   link: __SUBDIR__/desktop/feedback
-aliases:
-- /desktop/opensource/
-- /docker-for-mac/dashboard/
-- /docker-for-mac/opensource/
-- /docker-for-windows/dashboard/
-- /docker-for-windows/opensource/
----
 @z
 
 @x
@@ -115,10 +107,9 @@ Docker Desktop は Mac、Linux、Windows にワンクリックでインストー
 @z
 
 @x
-It provides a straightforward GUI (Graphical User Interface) that lets you manage your containers, applications, and images directly from your machine. You can use Docker Desktop either on its own or as a complementary tool to the CLI. 
+It provides a straightforward GUI (Graphical User Interface) that lets you manage your containers, applications, and images directly from your machine. 
 @y
 自マシンから直接、コンテナー、アプリケーション、イメージを管理する簡単な GUI (グラフィカルユーザーインターフェース) を提供しています。
-Docker Desktop においては、CLI に対応する独自ツールや補助ツールの利用が可能です。
 @z
 
 @x

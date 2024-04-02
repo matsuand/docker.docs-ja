@@ -2614,6 +2614,14 @@ Manuals:
 @z
 
 @x
+    - path: /desktop/gpu/
+      title: GPU support
+@y
+    - path: __SUBDIR__/desktop/gpu/
+      title: GPU サポート
+@z
+
+@x
     - sectiontitle: Additional resources
       section:
         - path: /desktop/kubernetes/
