@@ -8,17 +8,15 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 Execute a command in a running container
 @y
-<!---MARKER_GEN_START-->
 Execute a command in a running container
 @z
 
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -28,7 +26,7 @@ Execute a command in a running container
 | `--dry-run`       |               |         | Execute command in dry run mode                                                  |
 | `-e`, `--env`     | `stringArray` |         | Set environment variables                                                        |
 | `--index`         | `int`         | `0`     | Index of the container if service has multiple replicas                          |
-| `-T`, `--no-TTY`  |               |         | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
+| `-T`, `--no-TTY`  | `bool`        | `true`  | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
 | `--privileged`    |               |         | Give extended privileges to the process                                          |
 | `-u`, `--user`    | `string`      |         | Run the command as this user                                                     |
 | `-w`, `--workdir` | `string`      |         | Path to workdir directory for this command                                       |
@@ -39,22 +37,16 @@ Execute a command in a running container
 | `--dry-run`       |               |         | Execute command in dry run mode                                                  |
 | `-e`, `--env`     | `stringArray` |         | Set environment variables                                                        |
 | `--index`         | `int`         | `0`     | Index of the container if service has multiple replicas                          |
-| `-T`, `--no-TTY`  |               |         | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
+| `-T`, `--no-TTY`  | `bool`        | `true`  | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
 | `--privileged`    |               |         | Give extended privileges to the process                                          |
 | `-u`, `--user`    | `string`      |         | Run the command as this user                                                     |
 | `-w`, `--workdir` | `string`      |         | Path to workdir directory for this command                                       |
 @z
 
 @x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
-@z
-
-@x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x

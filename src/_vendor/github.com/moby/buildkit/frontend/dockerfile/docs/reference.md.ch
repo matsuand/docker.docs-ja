@@ -556,15 +556,7 @@ directive in your Dockerfile:
   seeking from the start of the string.
 @z
 
-@x
-  ```bash
-  str=foobarbaz echo ${str#f*b}     # arbaz
-  ```
-@y
-  ```bash
-  str=foobarbaz echo ${str#f*b}     # arbaz
-  ```
-@z
+% snip code...
 
 @x
 - `${variable##pattern}` removes the longest match of `pattern` from `variable`,
@@ -574,15 +566,7 @@ directive in your Dockerfile:
   seeking from the start of the string.
 @z
 
-@x
-  ```bash
-  str=foobarbaz echo ${str##f*b}    # az
-  ```
-@y
-  ```bash
-  str=foobarbaz echo ${str##f*b}    # az
-  ```
-@z
+% snip code...
 
 @x
 - `${variable%pattern}` removes the shortest match of `pattern` from `variable`,
@@ -592,15 +576,7 @@ directive in your Dockerfile:
   seeking backwards from the end of the string.
 @z
 
-@x
-  ```bash
-  string=foobarbaz echo ${string%b*}    # foobar
-  ```
-@y
-  ```bash
-  string=foobarbaz echo ${string%b*}    # foobar
-  ```
-@z
+% snip code...
 
 @x
 - `${variable%%pattern}` removes the longest match of `pattern` from `variable`,
@@ -610,15 +586,7 @@ directive in your Dockerfile:
   seeking backwards from the end of the string.
 @z
 
-@x
-  ```bash
-  string=foobarbaz echo ${string%%b*}   # foo
-  ```
-@y
-  ```bash
-  string=foobarbaz echo ${string%%b*}   # foo
-  ```
-@z
+% snip code...
 
 @x
 - `${variable/pattern/replacement}` replace the first occurrence of `pattern`
@@ -628,15 +596,7 @@ directive in your Dockerfile:
   in `variable` with `replacement`
 @z
 
-@x
-  ```bash
-  string=foobarbaz echo ${string/ba/fo}  # fooforbaz
-  ```
-@y
-  ```bash
-  string=foobarbaz echo ${string/ba/fo}  # fooforbaz
-  ```
-@z
+% snip code...
 
 @x
 - `${variable//pattern/replacement}` replaces all occurrences of `pattern`
@@ -646,15 +606,7 @@ directive in your Dockerfile:
   in `variable` with `replacement`
 @z
 
-@x
-  ```bash
-  string=foobarbaz echo ${string//ba/fo}  # fooforfoz
-  ```
-@y
-  ```bash
-  string=foobarbaz echo ${string//ba/fo}  # fooforfoz
-  ```
-@z
+% snip code...
 
 @x
 In all cases, `word` can be any string, including additional environment
@@ -688,23 +640,7 @@ Example (parsed representation is displayed after the `#`):
 Example (parsed representation is displayed after the `#`):
 @z
 
-@x
-```dockerfile
-FROM busybox
-ENV FOO=/bar
-WORKDIR ${FOO}   # WORKDIR /bar
-ADD . $FOO       # ADD . /bar
-COPY \$FOO /quux # COPY $FOO /quux
-```
-@y
-```dockerfile
-FROM busybox
-ENV FOO=/bar
-WORKDIR ${FOO}   # WORKDIR /bar
-ADD . $FOO       # ADD . /bar
-COPY \$FOO /quux # COPY $FOO /quux
-```
-@z
+% snip code...
 
 @x
 Environment variables are supported by the following list of instructions in
@@ -764,19 +700,7 @@ throughout the entire instruction. Changing the value of a variable only takes
 effect in subsequent instructions. Consider the following example:
 @z
 
-@x
-```dockerfile
-ENV abc=hello
-ENV abc=bye def=$abc
-ENV ghi=$abc
-```
-@y
-```dockerfile
-ENV abc=hello
-ENV abc=bye def=$abc
-ENV ghi=$abc
-```
-@z
+% snip code...
 
 @x
 - The value of `def` becomes `hello`
@@ -858,15 +782,7 @@ The exec form is parsed as a JSON array, which means that
 you must use double-quotes (") around words, not single-quotes (').
 @z
 
-@x
-```dockerfile
-ENTRYPOINT ["/bin/bash", "-c", "echo", "hello"]
-```
-@y
-```dockerfile
-ENTRYPOINT ["/bin/bash", "-c", "echo", "hello"]
-```
-@z
+% snip code...
 
 @x
 The exec form is best used to specify an `ENTRYPOINT` instruction, combined
@@ -928,15 +844,7 @@ otherwise be treated as shell form due to not being valid JSON, and fail in an
 unexpected way:
 @z
 
-@x
-```dockerfile
-RUN ["c:\windows\system32\tasklist.exe"]
-```
-@y
-```dockerfile
-RUN ["c:\windows\system32\tasklist.exe"]
-```
-@z
+% snip code...
 
 @x
 The correct syntax for this example is:
@@ -944,15 +852,7 @@ The correct syntax for this example is:
 The correct syntax for this example is:
 @z
 
-@x
-```dockerfile
-RUN ["c:\\windows\\system32\\tasklist.exe"]
-```
-@y
-```dockerfile
-RUN ["c:\\windows\\system32\\tasklist.exe"]
-```
-@z
+% snip code...
 
 @x
 ### Shell form
@@ -978,17 +878,7 @@ it lets you split them up into multiple lines. For example, consider these two
 lines:
 @z
 
-@x
-```dockerfile
-RUN source $HOME/.bashrc && \
-echo $HOME
-```
-@y
-```dockerfile
-RUN source $HOME/.bashrc && \
-echo $HOME
-```
-@z
+% snip code...
 
 @x
 They're equivalent to the following line:
@@ -996,15 +886,7 @@ They're equivalent to the following line:
 They're equivalent to the following line:
 @z
 
-@x
-```dockerfile
-RUN source $HOME/.bashrc && echo $HOME
-```
-@y
-```dockerfile
-RUN source $HOME/.bashrc && echo $HOME
-```
-@z
+% snip code...
 
 @x
 You can also use heredocs with the shell form to break up a command:
@@ -1012,21 +894,7 @@ You can also use heredocs with the shell form to break up a command:
 You can also use heredocs with the shell form to break up a command:
 @z
 
-@x
-```dockerfile
-RUN <<EOF
-source $HOME/.bashrc && \
-echo $HOME
-EOF
-```
-@y
-```dockerfile
-RUN <<EOF
-source $HOME/.bashrc && \
-echo $HOME
-EOF
-```
-@z
+% snip code...
 
 @x
 For more information about heredocs, see [Here-documents](#here-documents).
@@ -1046,17 +914,7 @@ You can change the default shell using the `SHELL` command. For example:
 You can change the default shell using the `SHELL` command. For example:
 @z
 
-@x
-```dockerfile
-SHELL ["/bin/bash", "-c"]
-RUN echo hello
-```
-@y
-```dockerfile
-SHELL ["/bin/bash", "-c"]
-RUN echo hello
-```
-@z
+% snip code...
 
 @x
 For more information, see [SHELL](#shell).
@@ -1070,15 +928,7 @@ For more information, see [SHELL](#shell).
 ## FROM
 @z
 
-@x
-```dockerfile
-FROM [--platform=<platform>] <image> [AS <name>]
-```
-@y
-```dockerfile
-FROM [--platform=<platform>] <image> [AS <name>]
-```
-@z
+% snip code...
 
 @x
 Or
@@ -1086,15 +936,7 @@ Or
 Or
 @z
 
-@x
-```dockerfile
-FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
-```
-@y
-```dockerfile
-FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
-```
-@z
+% snip code...
 
 @x
 Or
@@ -1102,15 +944,7 @@ Or
 Or
 @z
 
-@x
-```dockerfile
-FROM [--platform=<platform>] <image>[@<digest>] [AS <name>]
-```
-@y
-```dockerfile
-FROM [--platform=<platform>] <image>[@<digest>] [AS <name>]
-```
-@z
+% snip code...
 
 @x
 The `FROM` instruction initializes a new build stage and sets the
@@ -1133,8 +967,10 @@ The image can be any valid image.
   `FROM` instruction. Each `FROM` instruction clears any state created by previous
   instructions.
 - Optionally a name can be given to a new build stage by adding `AS name` to the
-  `FROM` instruction. The name can be used in subsequent `FROM` and
-  `COPY --from=<name>` instructions to refer to the image built in this stage.
+  `FROM` instruction. The name can be used in subsequent `FROM <name>`,
+  [`COPY --from=<name>`](#copy---from),
+  and [`RUN --mount=type=bind,from=<name>`](#run---mounttypebind) instructions
+  to refer to the image built in this stage.
 - The `tag` or `digest` values are optional. If you omit either of them, the
   builder assumes a `latest` tag by default. The builder returns an error if it
   can't find the `tag` value.
@@ -1147,8 +983,10 @@ The image can be any valid image.
   `FROM` instruction. Each `FROM` instruction clears any state created by previous
   instructions.
 - Optionally a name can be given to a new build stage by adding `AS name` to the
-  `FROM` instruction. The name can be used in subsequent `FROM` and
-  `COPY --from=<name>` instructions to refer to the image built in this stage.
+  `FROM` instruction. The name can be used in subsequent `FROM <name>`,
+  [`COPY --from=<name>`](#copy---from),
+  and [`RUN --mount=type=bind,from=<name>`](#run---mounttypebind) instructions
+  to refer to the image built in this stage.
 - The `tag` or `digest` values are optional. If you omit either of them, the
   builder assumes a `latest` tag by default. The builder returns an error if it
   can't find the `tag` value.
@@ -1186,27 +1024,7 @@ instructions that occur before the first `FROM`.
 instructions that occur before the first `FROM`.
 @z
 
-@x
-```dockerfile
-ARG  CODE_VERSION=latest
-FROM base:${CODE_VERSION}
-CMD  /code/run-app
-@y
-```dockerfile
-ARG  CODE_VERSION=latest
-FROM base:${CODE_VERSION}
-CMD  /code/run-app
-@z
-
-@x
-FROM extras:${CODE_VERSION}
-CMD  /code/run-extras
-```
-@y
-FROM extras:${CODE_VERSION}
-CMD  /code/run-extras
-```
-@z
+% snip code...
 
 @x
 An `ARG` declared before a `FROM` is outside of a build stage, so it
@@ -1220,21 +1038,7 @@ an `ARG` declared before the first `FROM` use an `ARG` instruction without
 a value inside of a build stage:
 @z
 
-@x
-```dockerfile
-ARG VERSION=latest
-FROM busybox:$VERSION
-ARG VERSION
-RUN echo $VERSION > image_version
-```
-@y
-```dockerfile
-ARG VERSION=latest
-FROM busybox:$VERSION
-ARG VERSION
-RUN echo $VERSION > image_version
-```
-@z
+% snip code...
 
 @x
 ## RUN
@@ -1462,21 +1266,7 @@ is needed.
 #### Example: cache Go packages
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM golang
-RUN --mount=type=cache,target=/root/.cache/go-build \
-  go build ...
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM golang
-RUN --mount=type=cache,target=/root/.cache/go-build \
-  go build ...
-```
-@z
+% snip code...
 
 @x
 #### Example: cache apt packages
@@ -1484,25 +1274,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 #### Example: cache apt packages
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu
-RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,sharing=locked \
-  apt update && apt-get --no-install-recommends install -y gcc
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu
-RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,sharing=locked \
-  apt update && apt-get --no-install-recommends install -y gcc
-```
-@z
+% snip code...
 
 @x
 Apt needs exclusive access to its data, so the caches use the option
@@ -1584,33 +1356,8 @@ private keys without baking them into the image.
 #### Example: access to S3
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM python:3
-RUN pip install awscli
-RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-  aws s3 cp s3://... ...
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM python:3
-RUN pip install awscli
-RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-  aws s3 cp s3://... ...
-```
-@z
-
-@x
-```console
-$ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
-```
-@y
-```console
-$ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
-```
-@z
+% snip code...
+% snip command...
 
 @x
 ### RUN --mount=type=ssh
@@ -1647,50 +1394,13 @@ with support for passphrases.
 @z
 
 @x
-#### Example: access to Gitlab
+#### Example: access to GitLab
 @y
-#### Example: access to Gitlab
+#### Example: access to GitLab
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-RUN apk add --no-cache openssh-client
-RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-RUN --mount=type=ssh \
-  ssh -q -T git@gitlab.com 2>&1 | tee /hello
-# "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
-# with the type of build progress is defined as `plain`.
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-RUN apk add --no-cache openssh-client
-RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-RUN --mount=type=ssh \
-  ssh -q -T git@gitlab.com 2>&1 | tee /hello
-# "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
-# with the type of build progress is defined as `plain`.
-```
-@z
-
-@x
-```console
-$ eval $(ssh-agent)
-$ ssh-add ~/.ssh/id_rsa
-(Input your passphrase here)
-$ docker buildx build --ssh default=$SSH_AUTH_SOCK .
-```
-@y
-```console
-$ eval $(ssh-agent)
-$ ssh-add ~/.ssh/id_rsa
-(Input your passphrase here)
-$ docker buildx build --ssh default=$SSH_AUTH_SOCK .
-```
-@z
+% snip code...
+% snip command...
 
 @x
 You can also specify a path to `*.pem` file on the host directly instead of `$SSH_AUTH_SOCK`.
@@ -1770,21 +1480,7 @@ isolated to this process)
 #### Example: isolating external effects
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM python:3.6
-ADD mypackage.tgz wheels/
-RUN --network=none pip install --find-links wheels mypackage
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM python:3.6
-ADD mypackage.tgz wheels/
-RUN --network=none pip install --find-links wheels mypackage
-```
-@z
+% snip code...
 
 @x
 `pip` will only be able to install the packages provided in the tarfile, which
@@ -1880,29 +1576,8 @@ This is equivalent to running `docker run --privileged`.
 #### Example: check entitlements
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM ubuntu
-RUN --security=insecure cat /proc/self/status | grep CapEff
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM ubuntu
-RUN --security=insecure cat /proc/self/status | grep CapEff
-```
-@z
-
-@x
-```text
-#84 0.093 CapEff:	0000003fffffffff
-```
-@y
-```text
-#84 0.093 CapEff:	0000003fffffffff
-```
-@z
+% snip code...
+% snip text...
 
 @x
 ## CMD
@@ -1996,15 +1671,7 @@ both the `CMD` and `ENTRYPOINT` instructions should be specified in the
 ## LABEL
 @z
 
-@x
-```dockerfile
-LABEL <key>=<value> <key>=<value> <key>=<value> ...
-```
-@y
-```dockerfile
-LABEL <key>=<value> <key>=<value> <key>=<value> ...
-```
-@z
+% snip code...
 
 @x
 The `LABEL` instruction adds metadata to an image. A `LABEL` is a
@@ -2016,23 +1683,7 @@ key-value pair. To include spaces within a `LABEL` value, use quotes and
 backslashes as you would in command-line parsing. A few usage examples:
 @z
 
-@x
-```dockerfile
-LABEL "com.example.vendor"="ACME Incorporated"
-LABEL com.example.label-with-value="foo"
-LABEL version="1.0"
-LABEL description="This text illustrates \
-that label-values can span multiple lines."
-```
-@y
-```dockerfile
-LABEL "com.example.vendor"="ACME Incorporated"
-LABEL com.example.label-with-value="foo"
-LABEL version="1.0"
-LABEL description="This text illustrates \
-that label-values can span multiple lines."
-```
-@z
+% snip code...
 
 @x
 An image can have more than one label. You can specify multiple labels on a
@@ -2046,29 +1697,8 @@ but this is no longer the case. You may still choose to specify multiple labels
 in a single instruction, in one of the following two ways:
 @z
 
-@x
-```dockerfile
-LABEL multi.label1="value1" multi.label2="value2" other="value3"
-```
-@y
-```dockerfile
-LABEL multi.label1="value1" multi.label2="value2" other="value3"
-```
-@z
-
-@x
-```dockerfile
-LABEL multi.label1="value1" \
-      multi.label2="value2" \
-      other="value3"
-```
-@y
-```dockerfile
-LABEL multi.label1="value1" \
-      multi.label2="value2" \
-      other="value3"
-```
-@z
+% snip code...
+% snip code...
 
 @x
 > **Note**
@@ -2102,41 +1732,8 @@ To view an image's labels, use the `docker image inspect` command. You can use
 the `--format` option to show just the labels;
 @z
 
-@x
-```console
-$ docker image inspect --format='{{json .Config.Labels}}' myimage
-```
-@y
-```console
-$ docker image inspect --format='{{json .Config.Labels}}' myimage
-```
-@z
-
-@x
-```json
-{
-  "com.example.vendor": "ACME Incorporated",
-  "com.example.label-with-value": "foo",
-  "version": "1.0",
-  "description": "This text illustrates that label-values can span multiple lines.",
-  "multi.label1": "value1",
-  "multi.label2": "value2",
-  "other": "value3"
-}
-```
-@y
-```json
-{
-  "com.example.vendor": "ACME Incorporated",
-  "com.example.label-with-value": "foo",
-  "version": "1.0",
-  "description": "This text illustrates that label-values can span multiple lines.",
-  "multi.label1": "value1",
-  "multi.label2": "value2",
-  "other": "value3"
-}
-```
-@z
+% snip command...
+% snip code...
 
 @x
 ## MAINTAINER (deprecated)
@@ -2144,15 +1741,7 @@ $ docker image inspect --format='{{json .Config.Labels}}' myimage
 ## MAINTAINER (deprecated)
 @z
 
-@x
-```dockerfile
-MAINTAINER <name>
-```
-@y
-```dockerfile
-MAINTAINER <name>
-```
-@z
+% snip code...
 
 @x
 The `MAINTAINER` instruction sets the _Author_ field of the generated images.
@@ -2168,15 +1757,7 @@ easily, for example with `docker inspect`. To set a label corresponding to the
 `MAINTAINER` field you could use:
 @z
 
-@x
-```dockerfile
-LABEL org.opencontainers.image.authors="SvenDowideit@home.org.au"
-```
-@y
-```dockerfile
-LABEL org.opencontainers.image.authors="SvenDowideit@home.org.au"
-```
-@z
+% snip code...
 
 @x
 This will then be visible from `docker inspect` with the other labels.
@@ -2190,15 +1771,7 @@ This will then be visible from `docker inspect` with the other labels.
 ## EXPOSE
 @z
 
-@x
-```dockerfile
-EXPOSE <port> [<port>/<protocol>...]
-```
-@y
-```dockerfile
-EXPOSE <port> [<port>/<protocol>...]
-```
-@z
+% snip code...
 
 @x
 The `EXPOSE` instruction informs Docker that the container listens on the
@@ -2232,15 +1805,7 @@ By default, `EXPOSE` assumes TCP. You can also specify UDP:
 By default, `EXPOSE` assumes TCP. You can also specify UDP:
 @z
 
-@x
-```dockerfile
-EXPOSE 80/udp
-```
-@y
-```dockerfile
-EXPOSE 80/udp
-```
-@z
+% snip code...
 
 @x
 To expose on both TCP and UDP, include two lines:
@@ -2248,17 +1813,7 @@ To expose on both TCP and UDP, include two lines:
 To expose on both TCP and UDP, include two lines:
 @z
 
-@x
-```dockerfile
-EXPOSE 80/tcp
-EXPOSE 80/udp
-```
-@y
-```dockerfile
-EXPOSE 80/tcp
-EXPOSE 80/udp
-```
-@z
+% snip code...
 
 @x
 In this case, if you use `-P` with `docker run`, the port will be exposed once
@@ -2278,15 +1833,7 @@ Regardless of the `EXPOSE` settings, you can override them at runtime by using
 the `-p` flag. For example
 @z
 
-@x
-```console
-$ docker run -p 80:80/tcp -p 80:80/udp ...
-```
-@y
-```console
-$ docker run -p 80:80/tcp -p 80:80/udp ...
-```
-@z
+% snip command...
 
 @x
 To set up port redirection on the host system, see [using the -P flag](https://docs.docker.com/engine/reference/run/#expose-incoming-ports).
@@ -2310,15 +1857,7 @@ port. For detailed information, see the
 ## ENV
 @z
 
-@x
-```dockerfile
-ENV <key>=<value> ...
-```
-@y
-```dockerfile
-ENV <key>=<value> ...
-```
-@z
+% snip code...
 
 @x
 The `ENV` instruction sets the environment variable `<key>` to the value
@@ -2342,19 +1881,7 @@ Example:
 Example:
 @z
 
-@x
-```dockerfile
-ENV MY_NAME="John Doe"
-ENV MY_DOG=Rex\ The\ Dog
-ENV MY_CAT=fluffy
-```
-@y
-```dockerfile
-ENV MY_NAME="John Doe"
-ENV MY_DOG=Rex\ The\ Dog
-ENV MY_CAT=fluffy
-```
-@z
+% snip code...
 
 @x
 The `ENV` instruction allows for multiple `<key>=<value> ...` variables to be set
@@ -2366,17 +1893,7 @@ at one time, and the example below will yield the same net results in the final
 image:
 @z
 
-@x
-```dockerfile
-ENV MY_NAME="John Doe" MY_DOG=Rex\ The\ Dog \
-    MY_CAT=fluffy
-```
-@y
-```dockerfile
-ENV MY_NAME="John Doe" MY_DOG=Rex\ The\ Dog \
-    MY_CAT=fluffy
-```
-@z
+% snip code...
 
 @x
 The environment variables set using `ENV` will persist when a container is run
@@ -2416,15 +1933,7 @@ If an environment variable is only needed during build, and not in the final
 image, consider setting a value for a single command instead:
 @z
 
-@x
-```dockerfile
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
-```
-@y
-```dockerfile
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
-```
-@z
+% snip code...
 
 @x
 Or using [`ARG`](#arg), which is not persisted in the final image:
@@ -2432,17 +1941,7 @@ Or using [`ARG`](#arg), which is not persisted in the final image:
 Or using [`ARG`](#arg), which is not persisted in the final image:
 @z
 
-@x
-```dockerfile
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y ...
-```
-@y
-```dockerfile
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y ...
-```
-@z
+% snip code...
 
 @x
 > **Alternative syntax**
@@ -2580,15 +2079,7 @@ them from being treated as a matching pattern. For example, to add a file
 named `arr[0].txt`, use the following;
 @z
 
-@x
-```dockerfile
-ADD arr[[]0].txt /mydir/
-```
-@y
-```dockerfile
-ADD arr[[]0].txt /mydir/
-```
-@z
+% snip code...
 
 @x
 In the case where `<src>` is a remote file URL, the destination will
@@ -2800,19 +2291,7 @@ To add a private repository via SSH, create a Dockerfile with the following form
 To add a private repository via SSH, create a Dockerfile with the following form:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-ADD git@git.example.com:foo/bar.git /bar
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-ADD git@git.example.com:foo/bar.git /bar
-```
-@z
+% snip code...
 
 @x
 This Dockerfile can be built with `docker build --ssh` or `buildctl build --ssh`, e.g.,
@@ -2820,25 +2299,7 @@ This Dockerfile can be built with `docker build --ssh` or `buildctl build --ssh`
 This Dockerfile can be built with `docker build --ssh` or `buildctl build --ssh`, e.g.,
 @z
 
-@x
-```console
-$ docker build --ssh default
-```
-@y
-```console
-$ docker build --ssh default
-```
-@z
-
-@x
-```console
-$ buildctl build --frontend=dockerfile.v0 --local context=. --local dockerfile=. --ssh default
-```
-@y
-```console
-$ buildctl build --frontend=dockerfile.v0 --local context=. --local dockerfile=. --ssh default
-```
-@z
+% snip command...
 
 @x
 ### ADD --keep-git-dir
@@ -3158,15 +2619,7 @@ named `arr[0].txt`, use the following;
 > [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
 @z
 
-@x
-```dockerfile
-COPY [--chown=<user>:<group>] [--chmod=<perms> ...] <src> ... <dest>
-```
-@y
-```dockerfile
-COPY [--chown=<user>:<group>] [--chmod=<perms> ...] <src> ... <dest>
-```
-@z
+% snip code...
 
 @x
 The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
@@ -3206,23 +2659,7 @@ from name to integer UID or GID respectively. The following examples show
 valid definitions for the `--chown` flag:
 @z
 
-@x
-```dockerfile
-COPY --chown=55:mygroup files* /somedir/
-COPY --chown=bin files* /somedir/
-COPY --chown=1 files* /somedir/
-COPY --chown=10:11 files* /somedir/
-COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
-```
-@y
-```dockerfile
-COPY --chown=55:mygroup files* /somedir/
-COPY --chown=bin files* /somedir/
-COPY --chown=1 files* /somedir/
-COPY --chown=10:11 files* /somedir/
-COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
-```
-@z
+% snip code...
 
 @x
 If the container root filesystem doesn't contain either `/etc/passwd` or
@@ -3242,15 +2679,7 @@ no lookup and does not depend on container root filesystem content.
 ### COPY --link
 @z
 
-@x
-```dockerfile
-COPY [--link[=<boolean>]] <src> ... <dest>
-```
-@y
-```dockerfile
-COPY [--link[=<boolean>]] <src> ... <dest>
-```
-@z
+% snip code...
 
 @x
 Enabling this flag in `COPY` or `ADD` commands allows you to copy files with
@@ -3272,19 +2701,7 @@ directory. That directory is turned into a layer that is linked on top of your
 previous state.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-COPY --link /foo /bar
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-COPY --link /foo /bar
-```
-@z
+% snip code...
 
 @x
 Is equivalent of doing two builds:
@@ -3292,15 +2709,7 @@ Is equivalent of doing two builds:
 Is equivalent of doing two builds:
 @z
 
-@x
-```dockerfile
-FROM alpine
-```
-@y
-```dockerfile
-FROM alpine
-```
-@z
+% snip code...
 
 @x
 and
@@ -3308,17 +2717,7 @@ and
 and
 @z
 
-@x
-```dockerfile
-FROM scratch
-COPY /foo /bar
-```
-@y
-```dockerfile
-FROM scratch
-COPY /foo /bar
-```
-@z
+% snip code...
 
 @x
 and merging all the layers of both images together.
@@ -3422,15 +2821,7 @@ conditions for cache reuse.
 > Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @z
 
-@x
-```dockerfile
-COPY [--parents[=<boolean>]] <src> ... <dest>
-```
-@y
-```dockerfile
-COPY [--parents[=<boolean>]] <src> ... <dest>
-```
-@z
+% snip code...
 
 @x
 The `--parents` flag preserves parent directories for `src` entries. This flag defaults to `false`.
@@ -3438,35 +2829,7 @@ The `--parents` flag preserves parent directories for `src` entries. This flag d
 The `--parents` flag preserves parent directories for `src` entries. This flag defaults to `false`.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.7-labs
-FROM scratch
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.7-labs
-FROM scratch
-@z
-
-@x
-COPY ./x/a.txt ./y/a.txt /no_parents/
-COPY --parents ./x/a.txt ./y/a.txt /parents/
-@y
-COPY ./x/a.txt ./y/a.txt /no_parents/
-COPY --parents ./x/a.txt ./y/a.txt /parents/
-@z
-
-@x
-# /no_parents/a.txt
-# /parents/x/a.txt
-# /parents/y/a.txt
-```
-@y
-# /no_parents/a.txt
-# /parents/x/a.txt
-# /parents/y/a.txt
-```
-@z
+% snip code...
 
 @x
 This behavior is similar to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
@@ -3488,40 +2851,17 @@ directories after it will be preserved. This may be especially useful copies bet
 with `--from` where the source paths need to be absolute.
 @z
 
+% snip code...
 @x
-```dockerfile
-# syntax=docker/dockerfile:1.7-labs
-FROM scratch
+# Build context:
 @y
-```dockerfile
-# syntax=docker/dockerfile:1.7-labs
-FROM scratch
+# コンテキストのビルド:
 @z
 
 @x
-COPY --parents ./x/./y/*.txt /parents/
-@y
-COPY --parents ./x/./y/*.txt /parents/
-@z
-
-@x
-# Build context:
-# ./x/y/a.txt
-# ./x/y/b.txt
-#
 # Output:
-# /parents/y/a.txt
-# /parents/y/b.txt
-```
 @y
-# Build context:
-# ./x/y/a.txt
-# ./x/y/b.txt
-#
-# Output:
-# /parents/y/a.txt
-# /parents/y/b.txt
-```
+# 出力:
 @z
 
 @x
@@ -4731,24 +4071,6 @@ flag.
 @z
 
 @x
-If you specify a build argument that wasn't defined in the Dockerfile,
-the build outputs a warning.
-@y
-If you specify a build argument that wasn't defined in the Dockerfile,
-the build outputs a warning.
-@z
-
-@x
-```console
-[Warning] One or more build-args [foo] were not consumed.
-```
-@y
-```console
-[Warning] One or more build-args [foo] were not consumed.
-```
-@z
-
-@x
 A Dockerfile may include one or more `ARG` instructions. For example,
 the following is a valid Dockerfile:
 @y
@@ -5587,27 +4909,19 @@ ONBUILD RUN /usr/local/bin/python-build --dir /app/src
 @z
 
 @x
-> **Warning**
->
-> Chaining `ONBUILD` instructions using `ONBUILD ONBUILD` isn't allowed.
-{ .warning }
+### ONBUILD limitations
 @y
-> **Warning**
->
-> Chaining `ONBUILD` instructions using `ONBUILD ONBUILD` isn't allowed.
-{ .warning }
+### ONBUILD limitations
 @z
 
 @x
-> **Warning**
->
-> The `ONBUILD` instruction may not trigger `FROM` or `MAINTAINER` instructions.
-{ .warning }
+- Chaining `ONBUILD` instructions using `ONBUILD ONBUILD` isn't allowed.
+- The `ONBUILD` instruction may not trigger `FROM` or `MAINTAINER` instructions.
+- `ONBUILD COPY --from` is [not supported](https://github.com/moby/buildkit/issues/816).
 @y
-> **Warning**
->
-> The `ONBUILD` instruction may not trigger `FROM` or `MAINTAINER` instructions.
-{ .warning }
+- Chaining `ONBUILD` instructions using `ONBUILD ONBUILD` isn't allowed.
+- The `ONBUILD` instruction may not trigger `FROM` or `MAINTAINER` instructions.
+- `ONBUILD COPY --from` is [not supported](https://github.com/moby/buildkit/issues/816).
 @z
 
 @x

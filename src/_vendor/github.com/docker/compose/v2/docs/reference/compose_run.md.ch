@@ -8,17 +8,15 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 Run a one-off command on a service
 @y
-<!---MARKER_GEN_START-->
 Run a one-off command on a service
 @z
 
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -31,10 +29,10 @@ Run a one-off command on a service
 | `--dry-run`             |               |         | Execute command in dry run mode                                                  |
 | `--entrypoint`          | `string`      |         | Override the entrypoint of the image                                             |
 | `-e`, `--env`           | `stringArray` |         | Set environment variables                                                        |
-| `-i`, `--interactive`   |               |         | Keep STDIN open even if not attached                                             |
+| `-i`, `--interactive`   | `bool`        | `true`  | Keep STDIN open even if not attached                                             |
 | `-l`, `--label`         | `stringArray` |         | Add or override a label                                                          |
 | `--name`                | `string`      |         | Assign a name to the container                                                   |
-| `-T`, `--no-TTY`        |               |         | Disable pseudo-TTY allocation (default: auto-detected)                           |
+| `-T`, `--no-TTY`        | `bool`        | `true`  | Disable pseudo-TTY allocation (default: auto-detected)                           |
 | `--no-deps`             |               |         | Don't start linked services                                                      |
 | `-p`, `--publish`       | `stringArray` |         | Publish a container's port(s) to the host                                        |
 | `--quiet-pull`          |               |         | Pull without printing progress information                                       |
@@ -55,10 +53,10 @@ Run a one-off command on a service
 | `--dry-run`             |               |         | Execute command in dry run mode                                                  |
 | `--entrypoint`          | `string`      |         | Override the entrypoint of the image                                             |
 | `-e`, `--env`           | `stringArray` |         | Set environment variables                                                        |
-| `-i`, `--interactive`   |               |         | Keep STDIN open even if not attached                                             |
+| `-i`, `--interactive`   | `bool`        | `true`  | Keep STDIN open even if not attached                                             |
 | `-l`, `--label`         | `stringArray` |         | Add or override a label                                                          |
 | `--name`                | `string`      |         | Assign a name to the container                                                   |
-| `-T`, `--no-TTY`        |               |         | Disable pseudo-TTY allocation (default: auto-detected)                           |
+| `-T`, `--no-TTY`        | `bool`        | `true`  | Disable pseudo-TTY allocation (default: auto-detected)                           |
 | `--no-deps`             |               |         | Don't start linked services                                                      |
 | `-p`, `--publish`       | `stringArray` |         | Publish a container's port(s) to the host                                        |
 | `--quiet-pull`          |               |         | Pull without printing progress information                                       |
@@ -72,15 +70,9 @@ Run a one-off command on a service
 @z
 
 @x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
-@z
-
-@x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x

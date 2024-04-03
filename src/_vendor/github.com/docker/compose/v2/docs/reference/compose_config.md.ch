@@ -8,17 +8,15 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 Parse, resolve and render compose file in canonical format
 @y
-<!---MARKER_GEN_START-->
 Parse, resolve and render compose file in canonical format
 @z
 
 @x
 ### Aliases
 @y
-### Aliases
+### エイリアス {#aliases}
 @z
 
 @x
@@ -30,7 +28,7 @@ Parse, resolve and render compose file in canonical format
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -38,47 +36,43 @@ Parse, resolve and render compose file in canonical format
 |:--------------------------|:---------|:--------|:----------------------------------------------------------------------------|
 | `--dry-run`               |          |         | Execute command in dry run mode                                             |
 | `--format`                | `string` | `yaml`  | Format the output. Values: [yaml \| json]                                   |
-| `--hash`                  | `string` |         | Print the service config hash, one per line                                 |
-| `--images`                |          |         | Print the image names, one per line                                         |
+| `--hash`                  | `string` |         | Print the service config hash, one per line.                                |
+| `--images`                |          |         | Print the image names, one per line.                                        |
 | `--no-consistency`        |          |         | Don't check model consistency - warning: may produce invalid Compose output |
 | `--no-interpolate`        |          |         | Don't interpolate environment variables                                     |
 | `--no-normalize`          |          |         | Don't normalize compose model                                               |
 | `--no-path-resolution`    |          |         | Don't resolve file paths                                                    |
 | `-o`, `--output`          | `string` |         | Save to file (default to stdout)                                            |
-| `--profiles`              |          |         | Print the profile names, one per line                                       |
+| `--profiles`              |          |         | Print the profile names, one per line.                                      |
 | `-q`, `--quiet`           |          |         | Only validate the configuration, don't print anything                       |
 | `--resolve-image-digests` |          |         | Pin image tags to digests                                                   |
-| `--services`              |          |         | Print the service names, one per line                                       |
-| `--volumes`               |          |         | Print the volume names, one per line                                        |
+| `--services`              |          |         | Print the service names, one per line.                                      |
+| `--variables`             |          |         | Print model variables and default values.                                   |
+| `--volumes`               |          |         | Print the volume names, one per line.                                       |
 @y
 | Name                      | Type     | Default | Description                                                                 |
 |:--------------------------|:---------|:--------|:----------------------------------------------------------------------------|
 | `--dry-run`               |          |         | Execute command in dry run mode                                             |
 | `--format`                | `string` | `yaml`  | Format the output. Values: [yaml \| json]                                   |
-| `--hash`                  | `string` |         | Print the service config hash, one per line                                 |
-| `--images`                |          |         | Print the image names, one per line                                         |
+| `--hash`                  | `string` |         | Print the service config hash, one per line.                                |
+| `--images`                |          |         | Print the image names, one per line.                                        |
 | `--no-consistency`        |          |         | Don't check model consistency - warning: may produce invalid Compose output |
 | `--no-interpolate`        |          |         | Don't interpolate environment variables                                     |
 | `--no-normalize`          |          |         | Don't normalize compose model                                               |
 | `--no-path-resolution`    |          |         | Don't resolve file paths                                                    |
 | `-o`, `--output`          | `string` |         | Save to file (default to stdout)                                            |
-| `--profiles`              |          |         | Print the profile names, one per line                                       |
+| `--profiles`              |          |         | Print the profile names, one per line.                                      |
 | `-q`, `--quiet`           |          |         | Only validate the configuration, don't print anything                       |
 | `--resolve-image-digests` |          |         | Pin image tags to digests                                                   |
-| `--services`              |          |         | Print the service names, one per line                                       |
-| `--volumes`               |          |         | Print the volume names, one per line                                        |
-@z
-
-@x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
+| `--services`              |          |         | Print the service names, one per line.                                      |
+| `--variables`             |          |         | Print model variables and default values.                                   |
+| `--volumes`               |          |         | Print the volume names, one per line.                                       |
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x

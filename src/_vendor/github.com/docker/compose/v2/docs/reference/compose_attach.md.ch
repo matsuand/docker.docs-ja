@@ -8,17 +8,15 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 Attach local standard input, output, and error streams to a service's running container
 @y
-<!---MARKER_GEN_START-->
 Attach local standard input, output, and error streams to a service's running container
 @z
 
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -28,7 +26,7 @@ Attach local standard input, output, and error streams to a service's running co
 | `--dry-run`     |          |         | Execute command in dry run mode                           |
 | `--index`       | `int`    | `0`     | index of the container if service has multiple replicas.  |
 | `--no-stdin`    |          |         | Do not attach STDIN                                       |
-| `--sig-proxy`   |          |         | Proxy all received signals to the process                 |
+| `--sig-proxy`   | `bool`   | `true`  | Proxy all received signals to the process                 |
 @y
 | Name            | Type     | Default | Description                                               |
 |:----------------|:---------|:--------|:----------------------------------------------------------|
@@ -37,10 +35,4 @@ Attach local standard input, output, and error streams to a service's running co
 | `--index`       | `int`    | `0`     | index of the container if service has multiple replicas.  |
 | `--no-stdin`    |          |         | Do not attach STDIN                                       |
 | `--sig-proxy`   |          |         | Proxy all received signals to the process                 |
-@z
-
-@x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
 @z

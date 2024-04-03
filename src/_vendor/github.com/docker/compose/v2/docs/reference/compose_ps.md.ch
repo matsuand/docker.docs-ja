@@ -8,17 +8,15 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 List containers
 @y
-<!---MARKER_GEN_START-->
 List containers
 @z
 
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -29,7 +27,7 @@ List containers
 | [`--filter`](#filter) | `string`      |         | Filter services by a property (supported filters: status)                                                                                                                                                                                                                                                                                                                                                                            |
 | [`--format`](#format) | `string`      | `table` | Format output using a custom template:<br>'table':            Print output in table format with column headers (default)<br>'table TEMPLATE':   Print output in table format using the given Go template<br>'json':             Print in JSON format<br>'TEMPLATE':         Print output using the given Go template.<br>Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates |
 | `--no-trunc`          |               |         | Don't truncate output                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `--orphans`           |               |         | Include orphaned services (not declared by project)                                                                                                                                                                                                                                                                                                                                                                                  |
+| `--orphans`           | `bool`        | `true`  | Include orphaned services (not declared by project)                                                                                                                                                                                                                                                                                                                                                                                  |
 | `-q`, `--quiet`       |               |         | Only display IDs                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `--services`          |               |         | Display services                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [`--status`](#status) | `stringArray` |         | Filter services by status. Values: [paused \| restarting \| removing \| running \| dead \| created \| exited]                                                                                                                                                                                                                                                                                                                        |
@@ -41,22 +39,16 @@ List containers
 | [`--filter`](#filter) | `string`      |         | Filter services by a property (supported filters: status)                                                                                                                                                                                                                                                                                                                                                                            |
 | [`--format`](#format) | `string`      | `table` | Format output using a custom template:<br>'table':            Print output in table format with column headers (default)<br>'table TEMPLATE':   Print output in table format using the given Go template<br>'json':             Print in JSON format<br>'TEMPLATE':         Print output using the given Go template.<br>Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates |
 | `--no-trunc`          |               |         | Don't truncate output                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `--orphans`           |               |         | Include orphaned services (not declared by project)                                                                                                                                                                                                                                                                                                                                                                                  |
+| `--orphans`           | `bool`        | `true`  | Include orphaned services (not declared by project)                                                                                                                                                                                                                                                                                                                                                                                  |
 | `-q`, `--quiet`       |               |         | Only display IDs                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `--services`          |               |         | Display services                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [`--status`](#status) | `stringArray` |         | Filter services by status. Values: [paused \| restarting \| removing \| running \| dead \| created \| exited]                                                                                                                                                                                                                                                                                                                        |
 @z
 
 @x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
-@z
-
-@x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x

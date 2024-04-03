@@ -8,17 +8,15 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 Build or rebuild services
 @y
-<!---MARKER_GEN_START-->
 Build or rebuild services
 @z
 
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
@@ -50,21 +48,15 @@ Build or rebuild services
 @z
 
 @x
-<!---MARKER_GEN_END-->
+## Description
 @y
-<!---MARKER_GEN_END-->
+## 内容説明 {#description}
 @z
 
 @x
-## Description
+Services are built once and then tagged, by default as `project-service`.
 @y
-## Description
-@z
-
-@x
-Services are built once and then tagged, by default as `project_service`.
-@y
-Services are built once and then tagged, by default as `project_service`.
+Services are built once and then tagged, by default as `project-service`.
 @z
 
 @x

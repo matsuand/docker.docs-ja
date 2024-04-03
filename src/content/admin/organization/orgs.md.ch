@@ -134,20 +134,6 @@ to your organization's **Settings** page.
 @z
 
 @x
-   > **Note**
-   >
-   > If you've already paid for a subscription for the new organization through
-   > a Docker sales representative, then don't enter payment information.
-   > Instead, select **Back** to return to Docker Hub from the billing portal, then select **Organizations** to verify that the organization has been created.
-@y
-   > **Note**
-   >
-   > If you've already paid for a subscription for the new organization through
-   > a Docker sales representative, then don't enter payment information.
-   > Instead, select **Back** to return to Docker Hub from the billing portal, then select **Organizations** to verify that the organization has been created.
-@z
-
-@x
 You've now created an organization.
 @y
 You've now created an organization.
