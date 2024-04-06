@@ -5,13 +5,13 @@
 ---
 title: Build secrets
 description: Manage credentials and other secrets securely
-keywords: build, secrets, credentials, passwords, tokens
+keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
 ---
 @y
 ---
 title: Build secrets
 description: Manage credentials and other secrets securely
-keywords: build, secrets, credentials, passwords, tokens
+keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
 ---
 @z
 
@@ -296,5 +296,205 @@ $ docker buildx build --ssh default .
 @y
 ```console
 $ docker buildx build --ssh default .
+```
+@z
+
+@x
+## Git authentication for remote contexts
+@y
+## Git authentication for remote contexts
+@z
+
+@x
+BuildKit supports two pre-defined build secrets, `GIT_AUTH_TOKEN` and
+`GIT_AUTH_HEADER`. Use them to specify HTTP authentication parameters when
+building with remote, private Git repositories, including:
+@y
+BuildKit supports two pre-defined build secrets, `GIT_AUTH_TOKEN` and
+`GIT_AUTH_HEADER`. Use them to specify HTTP authentication parameters when
+building with remote, private Git repositories, including:
+@z
+
+@x
+- Building with a private Git repository as build context
+- Fetching private Git repositories in a build with `ADD`
+@y
+- Building with a private Git repository as build context
+- Fetching private Git repositories in a build with `ADD`
+@z
+
+@x
+For example, say you have a private GitLab project at
+`https://gitlab.com/example/todo-app.git`, and you want to run a build using
+that repository as the build context. An unauthenticated `docker build` command
+fails because the builder isn't authorized to pull the repository:
+@y
+For example, say you have a private GitLab project at
+`https://gitlab.com/example/todo-app.git`, and you want to run a build using
+that repository as the build context. An unauthenticated `docker build` command
+fails because the builder isn't authorized to pull the repository:
+@z
+
+@x
+```console
+$ docker build https://gitlab.com/example/todo-app.git
+[+] Building 0.4s (1/1) FINISHED
+ => ERROR [internal] load git source https://gitlab.com/dvdk/todo-app.git
+------
+ > [internal] load git source https://gitlab.com/dvdk/todo-app.git:
+0.313 fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
+------
+```
+@y
+```console
+$ docker build https://gitlab.com/example/todo-app.git
+[+] Building 0.4s (1/1) FINISHED
+ => ERROR [internal] load git source https://gitlab.com/dvdk/todo-app.git
+------
+ > [internal] load git source https://gitlab.com/dvdk/todo-app.git:
+0.313 fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
+------
+```
+@z
+
+@x
+To authenticate the builder to the Git server, set the `GIT_AUTH_TOKEN`
+environment variable to contain a valid GitLab access token, and pass it as a
+secret to the build:
+@y
+To authenticate the builder to the Git server, set the `GIT_AUTH_TOKEN`
+environment variable to contain a valid GitLab access token, and pass it as a
+secret to the build:
+@z
+
+@x
+```console
+$ GIT_AUTH_TOKEN=$(cat gitlab-token.txt) docker build \
+  --secret id=GIT_AUTH_TOKEN \
+  https://gitlab.com/example/todo-app.git
+```
+@y
+```console
+$ GIT_AUTH_TOKEN=$(cat gitlab-token.txt) docker build \
+  --secret id=GIT_AUTH_TOKEN \
+  https://gitlab.com/example/todo-app.git
+```
+@z
+
+@x
+The `GIT_AUTH_TOKEN` also works with `ADD` to fetch private Git repositories as
+part of your build:
+@y
+The `GIT_AUTH_TOKEN` also works with `ADD` to fetch private Git repositories as
+part of your build:
+@z
+
+@x
+```dockerfile
+FROM alpine
+ADD https://gitlab.com/example/todo-app.git /src
+```
+@y
+```dockerfile
+FROM alpine
+ADD https://gitlab.com/example/todo-app.git /src
+```
+@z
+
+@x
+### HTTP authentication scheme
+@y
+### HTTP authentication scheme
+@z
+
+@x
+By default, Git authentication over HTTP uses the Bearer authentication scheme:
+@y
+By default, Git authentication over HTTP uses the Bearer authentication scheme:
+@z
+
+@x
+```http
+Authorization: Bearer <GIT_AUTH_TOKEN>
+```
+@y
+```http
+Authorization: Bearer <GIT_AUTH_TOKEN>
+```
+@z
+
+@x
+If you need to use a Basic scheme, with a username and password, you can set
+the `GIT_AUTH_HEADER` build secret:
+@y
+If you need to use a Basic scheme, with a username and password, you can set
+the `GIT_AUTH_HEADER` build secret:
+@z
+
+@x
+```console
+$ export GIT_AUTH_TOKEN=$(cat gitlab-token.txt)
+$ export GIT_AUTH_HEADER=basic
+$ docker build \
+  --secret id=GIT_AUTH_TOKEN \
+  --secret id=GIT_AUTH_HEADER \
+  https://gitlab.com/example/todo-app.git
+```
+@y
+```console
+$ export GIT_AUTH_TOKEN=$(cat gitlab-token.txt)
+$ export GIT_AUTH_HEADER=basic
+$ docker build \
+  --secret id=GIT_AUTH_TOKEN \
+  --secret id=GIT_AUTH_HEADER \
+  https://gitlab.com/example/todo-app.git
+```
+@z
+
+@x
+BuildKit currently only supports the Bearer and Basic schemes.
+@y
+BuildKit currently only supports the Bearer and Basic schemes.
+@z
+
+@x
+### Multiple hosts
+@y
+### Multiple hosts
+@z
+
+@x
+You can set the `GIT_AUTH_TOKEN` and `GIT_AUTH_HEADER` secrets on a per-host
+basis, which lets you use different authentication parameters for different
+hostnames. To specify a hostname, append the hostname as a suffix to the secret
+ID:
+@y
+You can set the `GIT_AUTH_TOKEN` and `GIT_AUTH_HEADER` secrets on a per-host
+basis, which lets you use different authentication parameters for different
+hostnames. To specify a hostname, append the hostname as a suffix to the secret
+ID:
+@z
+
+@x
+```console
+$ export GITLAB_TOKEN=$(cat gitlab-token.txt)
+$ export GERRIT_TOKEN=$(cat gerrit-username-password.txt)
+$ export GERRIT_SCHEME=basic
+$ docker build \
+  --secret id=GIT_AUTH_TOKEN.gitlab.com,env=GITLAB_TOKEN \
+  --secret id=GIT_AUTH_TOKEN.gerrit.internal.example,env=GERRIT_TOKEN \
+  --secret id=GIT_AUTH_HEADER.gerrit.internal.example,env=GERRIT_SCHEME \
+  https://gitlab.com/example/todo-app.git
+```
+@y
+```console
+$ export GITLAB_TOKEN=$(cat gitlab-token.txt)
+$ export GERRIT_TOKEN=$(cat gerrit-username-password.txt)
+$ export GERRIT_SCHEME=basic
+$ docker build \
+  --secret id=GIT_AUTH_TOKEN.gitlab.com,env=GITLAB_TOKEN \
+  --secret id=GIT_AUTH_TOKEN.gerrit.internal.example,env=GERRIT_TOKEN \
+  --secret id=GIT_AUTH_HEADER.gerrit.internal.example,env=GERRIT_SCHEME \
+  https://gitlab.com/example/todo-app.git
 ```
 @z

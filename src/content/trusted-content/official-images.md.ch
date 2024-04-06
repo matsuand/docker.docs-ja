@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
-
 @x
 ---
 description: Guidelines for Official Images on Docker Hub
@@ -46,15 +44,15 @@ These include operating systems such as [Ubuntu](https://hub.docker.com/_/ubuntu
 @z
 
 @x
-The images are some of the most secure images on Docker Hub. This is particularly important as Docker Official Images are some of the most popular on Docker Hub. Typically, Docker Official images have few or no vulnerabilities.
+The images are some of the [most secure images](https://www.docker.com/blog/enhancing-security-and-transparency-with-docker-official-images/) on Docker Hub. This is particularly important as Docker Official Images are some of the most popular on Docker Hub. Typically, Docker Official images have few or no vulnerabilities.
 @y
-The images are some of the most secure images on Docker Hub. This is particularly important as Docker Official Images are some of the most popular on Docker Hub. Typically, Docker Official images have few or no vulnerabilities.
+The images are some of the [most secure images](https://www.docker.com/blog/enhancing-security-and-transparency-with-docker-official-images/) on Docker Hub. This is particularly important as Docker Official Images are some of the most popular on Docker Hub. Typically, Docker Official images have few or no vulnerabilities.
 @z
 
 @x
 The images exemplify [`Dockerfile` best practices](/engine/userguide/eng-image/dockerfile_best-practices/) and provide clear documentation to serve as a reference for other `Dockerfile` authors.
 @y
-The images exemplify [`Dockerfile` best practices](__SUBDIR__/engine/userguide/eng-image/dockerfile_best-practices/) and provide clear documentation to serve as a reference for other `Dockerfile` authors.
+The images exemplify [`Dockerfile` best practices](/engine/userguide/eng-image/dockerfile_best-practices/) and provide clear documentation to serve as a reference for other `Dockerfile` authors.
 @z
 
 @x
