@@ -18,17 +18,13 @@ keywords: enhanced container isolation, Docker Desktop, Docker socket, bind moun
 @x
 > **Note**
 >
-> This feature is currently in [Beta](../../../release-lifecycle.md/#beta).
-> It's available with Docker Desktop version 4.27 (and later) on Mac, Linux, and Windows (Hyper-V).
+> This feature is available with Docker Desktop version 4.27 (and later) on Mac, Linux, and Windows (Hyper-V).
 > For Windows with WSL 2, this feature requires Docker Desktop 4.28 and later.
-{ .experimental }
 @y
 > **Note**
 >
-> This feature is currently in [Beta](../../../release-lifecycle.md/#beta).
-> It's available with Docker Desktop version 4.27 (and later) on Mac, Linux, and Windows (Hyper-V).
+> This feature is available with Docker Desktop version 4.27 (and later) on Mac, Linux, and Windows (Hyper-V).
 > For Windows with WSL 2, this feature requires Docker Desktop 4.28 and later.
-{ .experimental }
 @z
 
 @x

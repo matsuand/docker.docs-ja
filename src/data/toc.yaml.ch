@@ -2520,6 +2520,8 @@ Manuals:
             title: What is Settings Management?
           - path: /desktop/hardened-desktop/settings-management/configure/
             title: Configure Settings Management
+          - path: /desktop/hardened-desktop/settings-management/air-gapped-containers/
+            title: Air-gapped containers (Beta)
         - sectiontitle: Enhanced Container Isolation
           section:
           - path: /desktop/hardened-desktop/enhanced-container-isolation/
@@ -2529,7 +2531,7 @@ Manuals:
           - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
             title: Key features and benefits
           - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced configuration options (Beta)
+            title: Advanced configuration options
 @y
     - sectiontitle: Hardened Docker Desktop
       section:
@@ -2541,6 +2543,8 @@ Manuals:
             title: What is Settings Management?
           - path: __SUBDIR__/desktop/hardened-desktop/settings-management/configure/
             title: Configure Settings Management
+          - path: __SUBDIR__/desktop/hardened-desktop/settings-management/air-gapped-containers/
+            title: Air-gapped containers (Beta)
         - sectiontitle: Enhanced Container Isolation
           section:
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
@@ -2550,7 +2554,7 @@ Manuals:
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
             title: Key features and benefits
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced configuration options (Beta)
+            title: Advanced configuration options
 @z
 
 @x
@@ -2587,7 +2591,17 @@ Manuals:
     - path: /desktop/wasm/
       title: Wasm workloads (Beta)
     - path: /desktop/synchronized-file-sharing/
-      title: Synchronized file shares {{< badge color=violet text=New >}}
+      title: Synchronized file shares
+@y
+    - path: __SUBDIR__/desktop/containerd/
+      title: containerd image store
+    - path: __SUBDIR__/desktop/wasm/
+      title: Wasm workloads (Beta)
+    - path: __SUBDIR__/desktop/synchronized-file-sharing/
+      title: Synchronized file shares
+@z
+
+@x
     - sectiontitle: WSL
       section:
         - path: /desktop/wsl/
@@ -2597,12 +2611,6 @@ Manuals:
         - path: /desktop/wsl/best-practices/
           title: Best practices
 @y
-    - path: __SUBDIR__/desktop/containerd/
-      title: containerd image store
-    - path: __SUBDIR__/desktop/wasm/
-      title: Wasm workloads (Beta)
-    - path: __SUBDIR__/desktop/synchronized-file-sharing/
-      title: Synchronized file shares {{< badge color=violet text=New >}}
     - sectiontitle: WSL
       section:
         - path: __SUBDIR__/desktop/wsl/

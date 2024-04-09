@@ -64,6 +64,360 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
+## 4.29.0
+@y
+## 4.29.0
+@z
+
+@x
+{{< release-date date="2024-04-08" >}}
+@y
+{{< release-date date="2024-04-08" >}}
+@z
+
+@x
+{{< desktop-install all=true version="4.29.0" build_path="/145265/" >}}
+@y
+{{< desktop-install all=true version="4.29.0" build_path="/145265/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- You can now enforce Rosetta usage via [Settings Management](hardened-desktop/settings-management/configure.md).
+- [Docker socket mount restrictions](hardened-desktop/enhanced-container-isolation/config.md) with ECI is now generally available.
+- Docker Desktop now takes advantage of the Moby 26 engine which includes Buildkit 0.13, sub volumes mounts, networking updates, and improvements to the containerd multi-platform image store UX.
+- New and improved Docker Desktop error screens: swift troubleshooting, easy diagnostics uploads, and actionable remediation.
+- Compose supports [Synchronized file shares (experimental)](synchronized-file-sharing.md).
+- New [interactive Compose CLI (experimental)](../compose/environment-variables/envvars.md#compose_menu).
+- Beta release of:
+  - Air-gapped containers with [Settings Management](hardened-desktop/settings-management/air-gapped-containers.md).
+  - [Host networking](../network/drivers/host.md#docker-desktop) in Docker Desktop.
+  - [Docker Debug](use-desktop/container.md#integrated-terminal) for running containers.
+  - [Volumes Backup & Share extension](use-desktop/volumes.md) functionality available in the **Volumes** tab.
+@y
+- You can now enforce Rosetta usage via [Settings Management](hardened-desktop/settings-management/configure.md).
+- [Docker socket mount restrictions](hardened-desktop/enhanced-container-isolation/config.md) with ECI is now generally available.
+- Docker Desktop now takes advantage of the Moby 26 engine which includes Buildkit 0.13, sub volumes mounts, networking updates, and improvements to the containerd multi-platform image store UX.
+- New and improved Docker Desktop error screens: swift troubleshooting, easy diagnostics uploads, and actionable remediation.
+- Compose supports [Synchronized file shares (experimental)](synchronized-file-sharing.md).
+- New [interactive Compose CLI (experimental)](../compose/environment-variables/envvars.md#compose_menu).
+- Beta release of:
+  - Air-gapped containers with [Settings Management](hardened-desktop/settings-management/air-gapped-containers.md).
+  - [Host networking](../network/drivers/host.md#docker-desktop) in Docker Desktop.
+  - [Docker Debug](use-desktop/container.md#integrated-terminal) for running containers.
+  - [Volumes Backup & Share extension](use-desktop/volumes.md) functionality available in the **Volumes** tab.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Compose v2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0)
+- [Docker Scout CLI v1.6.3](https://github.com/docker/scout-cli/releases/tag/v1.6.3)
+- [Docker Engine v26.0.0](https://docs.docker.com/engine/release-notes/26.0/#2600)
+- [Buildx v0.13.1](https://github.com/docker/buildx/releases/tag/v0.13.1)
+- [Docker Scout CLI v1.6.0](https://github.com/docker/scout-cli/releases/tag/v1.6.0)
+- [Kubernetes v1.29.2](https://github.com/kubernetes/kubernetes/releases/tag/v1.29.2)
+- [cri-dockerd v0.3.11](https://github.com/Mirantis/cri-dockerd/releases/tag/v0.3.11)
+- Docker Debug v0.0.27
+@y
+- [Docker Compose v2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0)
+- [Docker Scout CLI v1.6.3](https://github.com/docker/scout-cli/releases/tag/v1.6.3)
+- [Docker Engine v26.0.0](https://docs.docker.com/engine/release-notes/26.0/#2600)
+- [Buildx v0.13.1](https://github.com/docker/buildx/releases/tag/v0.13.1)
+- [Docker Scout CLI v1.6.0](https://github.com/docker/scout-cli/releases/tag/v1.6.0)
+- [Kubernetes v1.29.2](https://github.com/kubernetes/kubernetes/releases/tag/v1.29.2)
+- [cri-dockerd v0.3.11](https://github.com/Mirantis/cri-dockerd/releases/tag/v0.3.11)
+- Docker Debug v0.0.27
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed an issue with dropdown menu opening beyond the application window.
+- Docker Init:
+  - Updated the formatting of CLI output to improve legibility.
+  - Fixed an issue with `.dockerignore` to avoid ignoring application files that start with "compose".
+  - Improved how Java applications are started based on Spring Boot version. Fixes [docker/for-mac#7171](https://github.com/docker/for-mac/issues/7171).
+  - Removed non-official Docker image used for Rust cross-compilation.
+- The maximum number of files per [Synchronized file share](synchronized-file-sharing.md) now exceeds 2 million.
+- Fixed an issue that caused the warning: "_The value provided to Autocomplete is invalid._" when selecting the **Export to local image** field.
+- **Run Cloud** can now be accessed from the Docker Dashboard.
+- Opting out from sending analytics will now also disable collecting data for bug reports.
+- You can now share and unshare a port to the Cloud Engine in the **Containers** view.
+- Shared cloud can now be accessed from the footer in the right-hand side of the **Dashboard**.
+- Added beta support for host networking on macOS, Windows and Docker Desktop for Linux  [docker#238](https://github.com/docker/roadmap/issues/238).
+- Added a timestamp to new unread notifications.
+- Fixed typo in the virtualization support error message. Fixes [docker/desktop-linux#197](https://github.com/docker/desktop-linux/issues/197).
+- Docker Desktop now allows connections to `host.docker.internal` to be blocked by a rule in a PAC file.
+- Fixed the placement of the secondary menu in the **Images** and **Containers** lists.
+- Fixed a race condition that occurred when starting Docker Desktop with QEMU.
+- Improved the error message when an image pull is blocked by Registry Access Management policy.
+- Re-add `CONFIG_BONDING=y` in the kernel config.
+@y
+- Fixed an issue with dropdown menu opening beyond the application window.
+- Docker Init:
+  - Updated the formatting of CLI output to improve legibility.
+  - Fixed an issue with `.dockerignore` to avoid ignoring application files that start with "compose".
+  - Improved how Java applications are started based on Spring Boot version. Fixes [docker/for-mac#7171](https://github.com/docker/for-mac/issues/7171).
+  - Removed non-official Docker image used for Rust cross-compilation.
+- The maximum number of files per [Synchronized file share](synchronized-file-sharing.md) now exceeds 2 million.
+- Fixed an issue that caused the warning: "_The value provided to Autocomplete is invalid._" when selecting the **Export to local image** field.
+- **Run Cloud** can now be accessed from the Docker Dashboard.
+- Opting out from sending analytics will now also disable collecting data for bug reports.
+- You can now share and unshare a port to the Cloud Engine in the **Containers** view.
+- Shared cloud can now be accessed from the footer in the right-hand side of the **Dashboard**.
+- Added beta support for host networking on macOS, Windows and Docker Desktop for Linux  [docker#238](https://github.com/docker/roadmap/issues/238).
+- Added a timestamp to new unread notifications.
+- Fixed typo in the virtualization support error message. Fixes [docker/desktop-linux#197](https://github.com/docker/desktop-linux/issues/197).
+- Docker Desktop now allows connections to `host.docker.internal` to be blocked by a rule in a PAC file.
+- Fixed the placement of the secondary menu in the **Images** and **Containers** lists.
+- Fixed a race condition that occurred when starting Docker Desktop with QEMU.
+- Improved the error message when an image pull is blocked by Registry Access Management policy.
+- Re-add `CONFIG_BONDING=y` in the kernel config.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed Kubernetes not starting successfully. Fixes [docker/for-mac#7136](https://github.com/docker/for-mac/issues/7136) and [docker/for-mac#7031](https://github.com/docker/for-mac/issues/7031).
+- Fixed a bug when the browser was not able to send back authentication information to Docker Desktop. Fixes [docker/for-mac/issues#7160](https://github.com/docker/for-mac/issues/7160).
+@y
+- Fixed Kubernetes not starting successfully. Fixes [docker/for-mac#7136](https://github.com/docker/for-mac/issues/7136) and [docker/for-mac#7031](https://github.com/docker/for-mac/issues/7031).
+- Fixed a bug when the browser was not able to send back authentication information to Docker Desktop. Fixes [docker/for-mac/issues#7160](https://github.com/docker/for-mac/issues/7160).
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed a bug where `docker run -v` would fail after switching between WSL 2 and Hyper-V.
+@y
+- Fixed a bug where `docker run -v` would fail after switching between WSL 2 and Hyper-V.
+@z
+
+@x
+#### For Linux
+@y
+#### For Linux
+@z
+
+@x
+- Fixed an issue that caused the list of available experimental features in the UI to become out-of-sync with the backend data.
+@y
+- Fixed an issue that caused the list of available experimental features in the UI to become out-of-sync with the backend data.
+@z
+
+@x
+#### Security
+@y
+#### Security
+@z
+
+@x
+- Disabled Electron `runAsNode` fuse to improve security hardening. For more info, see [Electron's documentation.](https://www.electronjs.org/blog/statement-run-as-node-cves)
+@y
+- Disabled Electron `runAsNode` fuse to improve security hardening. For more info, see [Electron's documentation.](https://www.electronjs.org/blog/statement-run-as-node-cves)
+@z
+
+@x
+## 4.28.0
+@y
+## 4.28.0
+@z
+
+@x
+{{< release-date date="2024-02-26" >}}
+@y
+{{< release-date date="2024-02-26" >}}
+@z
+
+@x
+{{< desktop-install all=true version="4.28.0" build_path="/139021/" >}}
+@y
+{{< desktop-install all=true version="4.28.0" build_path="/139021/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- [Settings Management](hardened-desktop/settings-management/index.md) now allows admins to set the default file-sharing implementation and specify which paths developer can add file shares to.
+- Added support for `socks5://` HTTP and HTTPS proxy URLs when the [`SOCKS` proxy support beta feature](networking.md) is enabled.
+- Users can now filter volumes to see which ones are in use in the **Volumes** tab.
+@y
+- [Settings Management](hardened-desktop/settings-management/index.md) now allows admins to set the default file-sharing implementation and specify which paths developer can add file shares to.
+- Added support for `socks5://` HTTP and HTTPS proxy URLs when the [`SOCKS` proxy support beta feature](networking.md) is enabled.
+- Users can now filter volumes to see which ones are in use in the **Volumes** tab.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Compose v2.24.6](https://github.com/docker/compose/releases/tag/v2.24.6)
+- [Docker Engine v25.0.3](https://docs.docker.com/engine/release-notes/25.0/#2503)
+- [Docker Scout CLI v1.5.0](https://github.com/docker/scout-cli/releases/tag/v1.5.0)
+- [Qemu 8.1.5](https://wiki.qemu.org/ChangeLog/8.1) 
+- [Wasm](../desktop/wasm/_index.md) runtimes:
+  - Updated runwasi shims to `v0.4.0`, including:
+    - wasmtime `v17.0`, with initial support for WASI preview 2
+    - wasmedge `v0.13.5`
+    - wasmer `v4.1.2`
+  - Updated deislabs shims to `v0.11.1`, including:
+    - lunatic `v0.13.2`
+    - slight `v0.5.1`
+    - spin `v2.2.0`
+    - wws `v1.7.0`
+@y
+- [Compose v2.24.6](https://github.com/docker/compose/releases/tag/v2.24.6)
+- [Docker Engine v25.0.3](https://docs.docker.com/engine/release-notes/25.0/#2503)
+- [Docker Scout CLI v1.5.0](https://github.com/docker/scout-cli/releases/tag/v1.5.0)
+- [Qemu 8.1.5](https://wiki.qemu.org/ChangeLog/8.1) 
+- [Wasm](../desktop/wasm/_index.md) runtimes:
+  - Updated runwasi shims to `v0.4.0`, including:
+    - wasmtime `v17.0`, with initial support for WASI preview 2
+    - wasmedge `v0.13.5`
+    - wasmer `v4.1.2`
+  - Updated deislabs shims to `v0.11.1`, including:
+    - lunatic `v0.13.2`
+    - slight `v0.5.1`
+    - spin `v2.2.0`
+    - wws `v1.7.0`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed `postgis` with `Qemu`. Fixes [docker/for-mac#7172](https://github.com/docker/for-mac/issues/7172).
+- Re added `CONFIG_BLK_DEV_DM` kernel config for `kpartx`. Fixes [docker/for-mac#7197](https://github.com/docker/for-mac/issues/7197).
+- Allow `SOCKS` proxies to be set via a proxy autoconfig `pac file`.
+- Re added `CONFIG_AUDIT` kernel config.
+- Fixed a bug with the Rust build on `virtiofs`. See [rust-lang/docker-rust#161](https://github.com/rust-lang/docker-rust/issues/161).
+- Fixed an issue that caused the `missing registry authentication` error when pulling Kubernetes images.
+- Fixed an issue that caused Docker Compose commands to hang.
+- Fixed a bug in `docker build` that caused Docker Desktop to crash. Fixes [docker/for-win#13885](https://github.com/docker/for-win/issues/13885), [docker/for-win#13896](https://github.com/docker/for-win/issues/13896), [docker/for-win#13899](https://github.com/docker/for-win/issues/13899), [docker/for-mac#7164](https://github.com/docker/for-mac/issues/7164), [docker/for-mac#7169](https://github.com/docker/for-mac/issues/7169)
+- Docker Init:
+  - Improved how Java applications are started based on Spring Boot version. Fixes [docker/for-mac#7171](https://github.com/docker/for-mac/issues/7171).
+  - Removed non-official Docker image used for Rust cross-compilation
+- Build UI:
+  - Active and completed builds can be found in dedicated tabs.
+  - Build details now displays build duration and cache steps.
+  - OpenTelemetry traces are now displayed in the build results.
+  - Fixed an issue where context builders events were not always triggered.
+  - Restyle the empty state view to make the dashboard clearer.
+@y
+- Fixed `postgis` with `Qemu`. Fixes [docker/for-mac#7172](https://github.com/docker/for-mac/issues/7172).
+- Re added `CONFIG_BLK_DEV_DM` kernel config for `kpartx`. Fixes [docker/for-mac#7197](https://github.com/docker/for-mac/issues/7197).
+- Allow `SOCKS` proxies to be set via a proxy autoconfig `pac file`.
+- Re added `CONFIG_AUDIT` kernel config.
+- Fixed a bug with the Rust build on `virtiofs`. See [rust-lang/docker-rust#161](https://github.com/rust-lang/docker-rust/issues/161).
+- Fixed an issue that caused the `missing registry authentication` error when pulling Kubernetes images.
+- Fixed an issue that caused Docker Compose commands to hang.
+- Fixed a bug in `docker build` that caused Docker Desktop to crash. Fixes [docker/for-win#13885](https://github.com/docker/for-win/issues/13885), [docker/for-win#13896](https://github.com/docker/for-win/issues/13896), [docker/for-win#13899](https://github.com/docker/for-win/issues/13899), [docker/for-mac#7164](https://github.com/docker/for-mac/issues/7164), [docker/for-mac#7169](https://github.com/docker/for-mac/issues/7169)
+- Docker Init:
+  - Improved how Java applications are started based on Spring Boot version. Fixes [docker/for-mac#7171](https://github.com/docker/for-mac/issues/7171).
+  - Removed non-official Docker image used for Rust cross-compilation
+- Build UI:
+  - Active and completed builds can be found in dedicated tabs.
+  - Build details now displays build duration and cache steps.
+  - OpenTelemetry traces are now displayed in the build results.
+  - Fixed an issue where context builders events were not always triggered.
+  - Restyle the empty state view to make the dashboard clearer.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fix `httpd` issue with Rosetta. [docker/for-mac#7182](https://github.com/docker/for-mac/issues/7182)
+- Fixed a bug that caused a crash on the `virtualization.framework`. Fixes [docker/for-mac#7024](https://github.com/docker/for-mac/issues/7024)
+@y
+- Fix `httpd` issue with Rosetta. [docker/for-mac#7182](https://github.com/docker/for-mac/issues/7182)
+- Fixed a bug that caused a crash on the `virtualization.framework`. Fixes [docker/for-mac#7024](https://github.com/docker/for-mac/issues/7024)
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed an issue with DNS timeouts on Windows.
+- Added support for Enhanced Container Isolation Docker socket mount permission on WSL user distros.
+- Fixed an issue that caused the `failed to get console mode` error when redirecting output from the CLI.
+- Fixed an issue with the engine socket permissions when mounted inside containers. Fixes [docker/for-win#13898](https://github.com/docker/for-win/issues/13898)
+@y
+- Fixed an issue with DNS timeouts on Windows.
+- Added support for Enhanced Container Isolation Docker socket mount permission on WSL user distros.
+- Fixed an issue that caused the `failed to get console mode` error when redirecting output from the CLI.
+- Fixed an issue with the engine socket permissions when mounted inside containers. Fixes [docker/for-win#13898](https://github.com/docker/for-win/issues/13898)
+@z
+
+@x
+### Known Issues
+@y
+### Known Issues
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- In dark mode, the **Disk image location** in **Resources**>**Advanced** settings is not visible. As a workaround, change to light mode.
+@y
+- In dark mode, the **Disk image location** in **Resources**>**Advanced** settings is not visible. As a workaround, change to light mode.
+@z
+
+@x
 ## 4.27.2
 @y
 ## 4.27.2
@@ -1247,6 +1601,18 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 - Added support for new Wasm runtimes: wws and lunatic.
 - [`docker init`](../reference/cli/docker/init.md) now supports ASP.NET
 - Increased performance of exposed ports on macOS, for example with `docker run -p`.
+@z
+
+@x
+### Removed
+@y
+### Removed
+@z
+
+@x
+- Removed Compose V1 from Docker Desktop as it has stopped receiving updates.  Compose V2 has replaced it and is now integrated into all current Docker Desktop versions. For more information, see [Migrate to Compose V2](../compose/migrate.md).
+@y
+- Removed Compose V1 from Docker Desktop as it has stopped receiving updates.  Compose V2 has replaced it and is now integrated into all current Docker Desktop versions. For more information, see [Migrate to Compose V2](../compose/migrate.md).
 @z
 
 @x
@@ -4417,11 +4783,11 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 - IT Administrators can now install Docker Desktop remotely using the command line.
-- Add the Docker Software Bill of Materials (SBOM) CLI plugin. The new CLI plugin enables users to generate SBOMs for Docker images. For more information, see [Docker SBOM](../engine/sbom/index.md).
+- Add the Docker Software Bill of Materials (SBOM) CLI plugin. The new CLI plugin enables users to generate SBOMs for Docker images.
 - Use [cri-dockerd](https://github.com/Mirantis/cri-dockerd) for new Kubernetes clusters instead of `dockershim`. The change is transparent from the user's point of view and Kubernetes containers run on the Docker Engine as before. `cri-dockerd` allows Kubernetes to manage Docker containers using the standard [Container Runtime Interface](https://github.com/kubernetes/cri-api#readme), the same interface used to control other container runtimes. For more information, see [The Future of Dockershim is cri-dockerd](https://www.mirantis.com/blog/the-future-of-dockershim-is-cri-dockerd/).
 @y
 - IT Administrators can now install Docker Desktop remotely using the command line.
-- Add the Docker Software Bill of Materials (SBOM) CLI plugin. The new CLI plugin enables users to generate SBOMs for Docker images. For more information, see [Docker SBOM](../engine/sbom/index.md).
+- Add the Docker Software Bill of Materials (SBOM) CLI plugin. The new CLI plugin enables users to generate SBOMs for Docker images.
 - Use [cri-dockerd](https://github.com/Mirantis/cri-dockerd) for new Kubernetes clusters instead of `dockershim`. The change is transparent from the user's point of view and Kubernetes containers run on the Docker Engine as before. `cri-dockerd` allows Kubernetes to manage Docker containers using the standard [Container Runtime Interface](https://github.com/kubernetes/cri-api#readme), the same interface used to control other container runtimes. For more information, see [The Future of Dockershim is cri-dockerd](https://www.mirantis.com/blog/the-future-of-dockershim-is-cri-dockerd/).
 @z
 

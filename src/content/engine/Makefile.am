@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = api context install release-notes sbom security \
+SUBDIRS = api context install release-notes security \
 	swarm tutorials
 
 bases = \

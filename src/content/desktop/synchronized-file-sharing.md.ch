@@ -76,6 +76,16 @@ After creating a file share instance, any container using a bind mount that poin
 @z
 
 @x
+> **Note**
+>
+> Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop.
+@y
+> **Note**
+>
+> Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop.
+@z
+
+@x
 > **Important**
 >
 > Synchronized file shares isn't available on WSL or when using Windows containers. 
@@ -127,6 +137,20 @@ When the status indicator displays **Watching for filesystem changes**, your fil
 >**Note**
 >
 > When you create a new service, setting the [bind mount option consistency](../reference/cli/docker/service/create.md#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares. 
+@z
+
+@x
+> **Tip**
+>
+> Compose can now automatically create file shares for bind mounts. 
+> Ensure you're signed into Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+{ .tip }
+@y
+> **Tip**
+>
+> Compose can now automatically create file shares for bind mounts. 
+> Ensure you're signed into Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+{ .tip }
 @z
 
 @x
@@ -200,21 +224,15 @@ In general, use your `.syncignore` file to exclude items that aren't critical to
 @z
 
 @x
-- Case conflicts, due to Linux being case-sensitive and macOS/Windows only being case-preserving, display as **File exists** problems in the GUI. These can be ignored. However, if they persist, you can report the issue.
+- File share instances are currently limited to approximately 1-1.5 million files per share. Docker plans to increase this limit to 2 million in a future release. For best performance, if you have a file share instance of this size, try to decompose it into multiple shares corresponding to individual bind mount locations.
 @y
-- Case conflicts, due to Linux being case-sensitive and macOS/Windows only being case-preserving, display as **File exists** problems in the GUI. These can be ignored. However, if they persist, you can report the issue.
+- File share instances are currently limited to approximately 1-1.5 million files per share. Docker plans to increase this limit to 2 million in a future release. For best performance, if you have a file share instance of this size, try to decompose it into multiple shares corresponding to individual bind mount locations.
 @z
 
 @x
-- File share instances mounted into [ECI](hardened-desktop/enhanced-container-isolation/_index.md) containers are currently read-only.
+- Case conflicts, due to Linux being case-sensitive and macOS/Windows only being case-preserving, display as **File exists** problems in the GUI. These can be ignored. However, if they persist, you can report the issue.
 @y
-- File share instances mounted into [ECI](hardened-desktop/enhanced-container-isolation/_index.md) containers are currently read-only.
-@z
-
-@x
-- You cannot remove a file share instance during the initial synchronization. You have to wait for it to complete before **Delete** has any effect.
-@y
-- You cannot remove a file share instance during the initial synchronization. You have to wait for it to complete before **Delete** has any effect.
+- Case conflicts, due to Linux being case-sensitive and macOS/Windows only being case-preserving, display as **File exists** problems in the GUI. These can be ignored. However, if they persist, you can report the issue.
 @z
 
 @x

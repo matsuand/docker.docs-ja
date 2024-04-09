@@ -159,7 +159,6 @@ AC_CONFIG_FILES([
 	src/content/engine/context/Makefile
 	src/content/engine/install/Makefile
 	src/content/engine/release-notes/Makefile
-	src/content/engine/sbom/Makefile
 	src/content/engine/security/Makefile
 	src/content/engine/security/https/Makefile
 	src/content/engine/security/trust/Makefile

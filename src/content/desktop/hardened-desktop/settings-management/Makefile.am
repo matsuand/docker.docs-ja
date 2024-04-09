@@ -2,7 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index.md    \
+	_index.md                \
+	air-gapped-containers.md \
 	configure.md
 
 include $(top_srcdir)/build-aux/common.mk
