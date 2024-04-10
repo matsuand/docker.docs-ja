@@ -436,11 +436,15 @@ Guides:
 @z
 
 @x
+    - path: /guides/use-case/tensorflowjs/
+      title: Face detection with TensorFlow.js
     - path: /guides/use-case/jupyter/
       title: Data science with JupyterLab
     - path: /scout/guides/vex/
       title: Suppress CVEs with VEX
 @y
+    - path: __SUBDIR__/guides/use-case/tensorflowjs/
+      title: Face detection with TensorFlow.js
     - path: __SUBDIR__/guides/use-case/jupyter/
       title: Data science with JupyterLab
     - path: __SUBDIR__/scout/guides/vex/
@@ -1882,6 +1886,12 @@ Reference:
 @z
 
 @x
+      - path: /engine/api/v1.45/
+        title: v1.45 reference
+      - path: /engine/api/v1.44/
+        title: v1.44 reference
+      - path: /engine/api/v1.43/
+        title: v1.43 reference
       - path: /engine/api/v1.42/
         title: v1.42 reference
       - path: /engine/api/v1.41/
@@ -1921,6 +1931,12 @@ Reference:
       - path: /engine/api/v1.24/
         title: v1.24 reference
 @y
+      - path: __SUBDIR__/engine/api/v1.45/
+        title: v1.45 リファレンス
+      - path: __SUBDIR__/engine/api/v1.44/
+        title: v1.44 リファレンス
+      - path: __SUBDIR__/engine/api/v1.43/
+        title: v1.43 リファレンス
       - path: __SUBDIR__/engine/api/v1.42/
         title: v1.42 リファレンス
       - path: __SUBDIR__/engine/api/v1.41/
@@ -3060,6 +3076,8 @@ Manuals:
         title: Configure policies
       - path: /scout/policy/ci/
         title: Policy Evaluation in CI
+      - path: /scout/policy/remediation/
+        title: Remediation
 @y
     - sectiontitle: Policy Evaluation
       section:
@@ -3071,6 +3089,8 @@ Manuals:
         title: Configure policies
       - path: __SUBDIR__/scout/policy/ci/
         title: Policy Evaluation in CI
+      - path: __SUBDIR__/scout/policy/remediation/
+        title: Remediation
 @z
 
 @x

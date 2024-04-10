@@ -143,13 +143,13 @@ When the status indicator displays **Watching for filesystem changes**, your fil
 > **Tip**
 >
 > Compose can now automatically create file shares for bind mounts. 
-> Ensure you're signed into Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+> Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
 { .tip }
 @y
 > **Tip**
 >
 > Compose can now automatically create file shares for bind mounts. 
-> Ensure you're signed into Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+> Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
 { .tip }
 @z
 
@@ -224,9 +224,9 @@ In general, use your `.syncignore` file to exclude items that aren't critical to
 @z
 
 @x
-- File share instances are currently limited to approximately 1-1.5 million files per share. Docker plans to increase this limit to 2 million in a future release. For best performance, if you have a file share instance of this size, try to decompose it into multiple shares corresponding to individual bind mount locations.
+- File share instances are currently limited to approximately 2 million files per share. For best performance, if you have a file share instance of this size, try to decompose it into multiple shares corresponding to individual bind mount locations.
 @y
-- File share instances are currently limited to approximately 1-1.5 million files per share. Docker plans to increase this limit to 2 million in a future release. For best performance, if you have a file share instance of this size, try to decompose it into multiple shares corresponding to individual bind mount locations.
+- File share instances are currently limited to approximately 2 million files per share. For best performance, if you have a file share instance of this size, try to decompose it into multiple shares corresponding to individual bind mount locations.
 @z
 
 @x

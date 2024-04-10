@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Examples using the Docker Engine SDKs and Docker API
@@ -67,155 +68,7 @@ command prompt:
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"io"
-	"os"
-@y
-import (
-	"context"
-	"io"
-	"os"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-	"github.com/docker/docker/pkg/stdcopy"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-	"github.com/docker/docker/pkg/stdcopy"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	reader, err := cli.ImagePull(ctx, "docker.io/library/alpine", types.ImagePullOptions{})
-	if err != nil {
-		panic(err)
-	}
-@y
-	reader, err := cli.ImagePull(ctx, "docker.io/library/alpine", types.ImagePullOptions{})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	defer reader.Close()
-	// cli.ImagePull is asynchronous.
-	// The reader needs to be read completely for the pull operation to complete.
-	// If stdout is not required, consider using io.Discard instead of os.Stdout.
-	io.Copy(os.Stdout, reader)
-@y
-	defer reader.Close()
-	// cli.ImagePull is asynchronous.
-	// The reader needs to be read completely for the pull operation to complete.
-	// If stdout is not required, consider using io.Discard instead of os.Stdout.
-	io.Copy(os.Stdout, reader)
-@z
-
-@x
-	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: "alpine",
-		Cmd:   []string{"echo", "hello world"},
-		Tty:   false,
-	}, nil, nil, nil, "")
-	if err != nil {
-		panic(err)
-	}
-@y
-	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: "alpine",
-		Cmd:   []string{"echo", "hello world"},
-		Tty:   false,
-	}, nil, nil, nil, "")
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
-		panic(err)
-	}
-@y
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	statusCh, errCh := cli.ContainerWait(ctx, resp.ID, container.WaitConditionNotRunning)
-	select {
-	case err := <-errCh:
-		if err != nil {
-			panic(err)
-		}
-	case <-statusCh:
-	}
-@y
-	statusCh, errCh := cli.ContainerWait(ctx, resp.ID, container.WaitConditionNotRunning)
-	select {
-	case err := <-errCh:
-		if err != nil {
-			panic(err)
-		}
-	case <-statusCh:
-	}
-@z
-
-@x
-	out, err := cli.ContainerLogs(ctx, resp.ID, types.ContainerLogsOptions{ShowStdout: true})
-	if err != nil {
-		panic(err)
-	}
-@y
-	out, err := cli.ContainerLogs(ctx, resp.ID, types.ContainerLogsOptions{ShowStdout: true})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	stdcopy.StdCopy(os.Stdout, os.Stderr, out)
-}
-```
-@y
-	stdcopy.StdCopy(os.Stdout, os.Stderr, out)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -225,19 +78,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-print(client.containers.run("alpine", ["echo", "hello", "world"]))
-```
-@y
-```python
-import docker
-client = docker.from_env()
-print(client.containers.run("alpine", ["echo", "hello", "world"]))
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -247,43 +88,7 @@ print(client.containers.run("alpine", ["echo", "hello", "world"]))
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
-  -d '{"Image": "alpine", "Cmd": ["echo", "hello world"]}' \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/create
-{"Id":"1c6594faf5","Warnings":null}
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
-  -d '{"Image": "alpine", "Cmd": ["echo", "hello world"]}' \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/create
-{"Id":"1c6594faf5","Warnings":null}
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start
-@y
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/wait
-{"StatusCode":0}
-@y
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/wait
-{"StatusCode":0}
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/logs?stdout=1"
-hello world
-```
-@y
-$ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/logs?stdout=1"
-hello world
-```
-@z
+% snip command...
 
 @x
 When using cURL to connect over a Unix socket, the hostname isn't important. The
@@ -345,115 +150,7 @@ You can also run containers in the background, the equivalent of typing
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"fmt"
-	"io"
-	"os"
-@y
-import (
-	"context"
-	"fmt"
-	"io"
-	"os"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	imageName := "bfirsh/reticulate-splines"
-@y
-	imageName := "bfirsh/reticulate-splines"
-@z
-
-@x
-	out, err := cli.ImagePull(ctx, imageName, types.ImagePullOptions{})
-	if err != nil {
-		panic(err)
-	}
-	defer out.Close()
-	io.Copy(os.Stdout, out)
-@y
-	out, err := cli.ImagePull(ctx, imageName, types.ImagePullOptions{})
-	if err != nil {
-		panic(err)
-	}
-	defer out.Close()
-	io.Copy(os.Stdout, out)
-@z
-
-@x
-	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: imageName,
-	}, nil, nil, nil, "")
-	if err != nil {
-		panic(err)
-	}
-@y
-	resp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: imageName,
-	}, nil, nil, nil, "")
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
-		panic(err)
-	}
-@y
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	fmt.Println(resp.ID)
-}
-```
-@y
-	fmt.Println(resp.ID)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -463,21 +160,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-container = client.containers.run("bfirsh/reticulate-splines", detach=True)
-print(container.id)
-```
-@y
-```python
-import docker
-client = docker.from_env()
-container = client.containers.run("bfirsh/reticulate-splines", detach=True)
-print(container.id)
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -487,27 +170,7 @@ print(container.id)
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
-  -d '{"Image": "bfirsh/reticulate-splines"}' \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/create
-{"Id":"1c6594faf5","Warnings":null}
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
-  -d '{"Image": "bfirsh/reticulate-splines"}' \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/create
-{"Id":"1c6594faf5","Warnings":null}
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start
-```
-@y
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -539,77 +202,7 @@ You can use the API to list containers that are running, just like using
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"fmt"
-@y
-import (
-	"context"
-	"fmt"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
-	if err != nil {
-		panic(err)
-	}
-@y
-	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	for _, container := range containers {
-		fmt.Println(container.ID)
-	}
-}
-```
-@y
-	for _, container := range containers {
-		fmt.Println(container.ID)
-	}
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -619,21 +212,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-for container in client.containers.list():
-  print(container.id)
-```
-@y
-```python
-import docker
-client = docker.from_env()
-for container in client.containers.list():
-  print(container.id)
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -643,27 +222,7 @@ for container in client.containers.list():
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock http://localhost/v{{% param "latest_engine_api_version" %}}/containers/json
-[{
-  "Id":"ae63e8b89a26f01f6b4b2c9a7817c31a1b6196acf560f66586fbc8809ffcd772",
-  "Names":["/tender_wing"],
-  "Image":"bfirsh/reticulate-splines",
-  ...
-}]
-```
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock http://localhost/v{{% param "latest_engine_api_version" %}}/containers/json
-[{
-  "Id":"ae63e8b89a26f01f6b4b2c9a7817c31a1b6196acf560f66586fbc8809ffcd772",
-  "Names":["/tender_wing"],
-  "Image":"bfirsh/reticulate-splines",
-  ...
-}]
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -709,89 +268,7 @@ This example stops all running containers.
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"fmt"
-@y
-import (
-	"context"
-	"fmt"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	containertypes "github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	containertypes "github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
-	if err != nil {
-		panic(err)
-	}
-@y
-	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	for _, container := range containers {
-		fmt.Print("Stopping container ", container.ID[:10], "... ")
-		noWaitTimeout := 0 // to not wait for the container to exit gracefully
-		if err := cli.ContainerStop(ctx, container.ID, containertypes.StopOptions{Timeout: &noWaitTimeout}); err != nil {
-			panic(err)
-		}
-		fmt.Println("Success")
-	}
-}
-```
-@y
-	for _, container := range containers {
-		fmt.Print("Stopping container ", container.ID[:10], "... ")
-		noWaitTimeout := 0 // to not wait for the container to exit gracefully
-		if err := cli.ContainerStop(ctx, container.ID, containertypes.StopOptions{Timeout: &noWaitTimeout}); err != nil {
-			panic(err)
-		}
-		fmt.Println("Success")
-	}
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -801,21 +278,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-for container in client.containers.list():
-  container.stop()
-```
-@y
-```python
-import docker
-client = docker.from_env()
-for container in client.containers.list():
-  container.stop()
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -825,35 +288,7 @@ for container in client.containers.list():
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock http://localhost/v{{% param "latest_engine_api_version" %}}/containers/json
-[{
-  "Id":"ae63e8b89a26f01f6b4b2c9a7817c31a1b6196acf560f66586fbc8809ffcd772",
-  "Names":["/tender_wing"],
-  "Image":"bfirsh/reticulate-splines",
-  ...
-}]
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock http://localhost/v{{% param "latest_engine_api_version" %}}/containers/json
-[{
-  "Id":"ae63e8b89a26f01f6b4b2c9a7817c31a1b6196acf560f66586fbc8809ffcd772",
-  "Names":["/tender_wing"],
-  "Image":"bfirsh/reticulate-splines",
-  ...
-}]
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/ae63e8b89a26/stop
-```
-@y
-$ curl --unix-socket /var/run/docker.sock \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/ae63e8b89a26/stop
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -887,79 +322,7 @@ to change the hard-coded ID of the container to print the logs for.
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"io"
-	"os"
-@y
-import (
-	"context"
-	"io"
-	"os"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	options := types.ContainerLogsOptions{ShowStdout: true}
-	// Replace this ID with a container that really exists
-	out, err := cli.ContainerLogs(ctx, "f1064a8a4c82", options)
-	if err != nil {
-		panic(err)
-	}
-@y
-	options := types.ContainerLogsOptions{ShowStdout: true}
-	// Replace this ID with a container that really exists
-	out, err := cli.ContainerLogs(ctx, "f1064a8a4c82", options)
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	io.Copy(os.Stdout, out)
-}
-```
-@y
-	io.Copy(os.Stdout, out)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -969,21 +332,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-container = client.containers.get('f1064a8a4c82')
-print(container.logs())
-```
-@y
-```python
-import docker
-client = docker.from_env()
-container = client.containers.get('f1064a8a4c82')
-print(container.logs())
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -993,25 +342,7 @@ print(container.logs())
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_engine_api_version" %}}/containers/ca5f55cdb/logs?stdout=1"
-Reticulating spline 1...
-Reticulating spline 2...
-Reticulating spline 3...
-Reticulating spline 4...
-Reticulating spline 5...
-```
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_engine_api_version" %}}/containers/ca5f55cdb/logs?stdout=1"
-Reticulating spline 1...
-Reticulating spline 2...
-Reticulating spline 3...
-Reticulating spline 4...
-Reticulating spline 5...
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -1041,77 +372,7 @@ List the images on your Engine, similar to `docker image ls`:
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"fmt"
-@y
-import (
-	"context"
-	"fmt"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	images, err := cli.ImageList(ctx, types.ImageListOptions{})
-	if err != nil {
-		panic(err)
-	}
-@y
-	images, err := cli.ImageList(ctx, types.ImageListOptions{})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	for _, image := range images {
-		fmt.Println(image.ID)
-	}
-}
-```
-@y
-	for _, image := range images {
-		fmt.Println(image.ID)
-	}
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1121,21 +382,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-for image in client.images.list():
-  print(image.id)
-```
-@y
-```python
-import docker
-client = docker.from_env()
-for image in client.images.list():
-  print(image.id)
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1145,25 +392,7 @@ for image in client.images.list():
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock http://localhost/v{{% param "latest_engine_api_version" %}}/images/json
-[{
-  "Id":"sha256:31d9a31e1dd803470c5a151b8919ef1988ac3efd44281ac59d43ad623f275dcd",
-  "ParentId":"sha256:ee4603260daafe1a8c2f3b78fd760922918ab2441cbb2853ed5c439e59c52f96",
-  ...
-}]
-```
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock http://localhost/v{{% param "latest_engine_api_version" %}}/images/json
-[{
-  "Id":"sha256:31d9a31e1dd803470c5a151b8919ef1988ac3efd44281ac59d43ad623f275dcd",
-  "ParentId":"sha256:ee4603260daafe1a8c2f3b78fd760922918ab2441cbb2853ed5c439e59c52f96",
-  ...
-}]
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -1193,81 +422,7 @@ Pull an image, like `docker pull`:
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"io"
-	"os"
-@y
-import (
-	"context"
-	"io"
-	"os"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	out, err := cli.ImagePull(ctx, "alpine", types.ImagePullOptions{})
-	if err != nil {
-		panic(err)
-	}
-@y
-	out, err := cli.ImagePull(ctx, "alpine", types.ImagePullOptions{})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	defer out.Close()
-@y
-	defer out.Close()
-@z
-
-@x
-	io.Copy(os.Stdout, out)
-}
-```
-@y
-	io.Copy(os.Stdout, out)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1277,21 +432,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-image = client.images.pull("alpine")
-print(image.id)
-```
-@y
-```python
-import docker
-client = docker.from_env()
-image = client.images.pull("alpine")
-print(image.id)
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1301,25 +442,7 @@ print(image.id)
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock \
-  -X POST "http://localhost/v{{% param "latest_engine_api_version" %}}/images/create?fromImage=alpine"
-{"status":"Pulling from library/alpine","id":"3.1"}
-{"status":"Pulling fs layer","progressDetail":{},"id":"8f13703509f7"}
-{"status":"Downloading","progressDetail":{"current":32768,"total":2244027},"progress":"[\u003e                                                  ] 32.77 kB/2.244 MB","id":"8f13703509f7"}
-...
-```
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock \
-  -X POST "http://localhost/v{{% param "latest_engine_api_version" %}}/images/create?fromImage=alpine"
-{"status":"Pulling from library/alpine","id":"3.1"}
-{"status":"Pulling fs layer","progressDetail":{},"id":"8f13703509f7"}
-{"status":"Downloading","progressDetail":{"current":32768,"total":2244027},"progress":"[\u003e                                                  ] 32.77 kB/2.244 MB","id":"8f13703509f7"}
-...
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -1361,103 +484,7 @@ Pull an image, like `docker pull`, with authentication:
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"encoding/base64"
-	"encoding/json"
-	"io"
-	"os"
-@y
-import (
-	"context"
-	"encoding/base64"
-	"encoding/json"
-	"io"
-	"os"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	authConfig := types.AuthConfig{
-		Username: "username",
-		Password: "password",
-	}
-	encodedJSON, err := json.Marshal(authConfig)
-	if err != nil {
-		panic(err)
-	}
-	authStr := base64.URLEncoding.EncodeToString(encodedJSON)
-@y
-	authConfig := types.AuthConfig{
-		Username: "username",
-		Password: "password",
-	}
-	encodedJSON, err := json.Marshal(authConfig)
-	if err != nil {
-		panic(err)
-	}
-	authStr := base64.URLEncoding.EncodeToString(encodedJSON)
-@z
-
-@x
-	out, err := cli.ImagePull(ctx, "alpine", types.ImagePullOptions{RegistryAuth: authStr})
-	if err != nil {
-		panic(err)
-	}
-@y
-	out, err := cli.ImagePull(ctx, "alpine", types.ImagePullOptions{RegistryAuth: authStr})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	defer out.Close()
-	io.Copy(os.Stdout, out)
-}
-```
-@y
-	defer out.Close()
-	io.Copy(os.Stdout, out)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1483,21 +510,7 @@ scope for this example guide. After using `docker login`, the Python SDK
 uses these credentials automatically.
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-image = client.images.pull("alpine")
-print(image.id)
-```
-@y
-```python
-import docker
-client = docker.from_env()
-image = client.images.pull("alpine")
-print(image.id)
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1517,37 +530,7 @@ this a naive implementation. The credentials are passed as a Base-64-encoded
 JSON structure.
 @z
 
-@x
-```console
-$ JSON=$(echo '{"username": "string", "password": "string", "serveraddress": "string"}' | base64)
-@y
-```console
-$ JSON=$(echo '{"username": "string", "password": "string", "serveraddress": "string"}' | base64)
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock \
-  -H "Content-Type: application/tar"
-  -X POST "http://localhost/v{{% param "latest_engine_api_version" %}}/images/create?fromImage=alpine"
-  -H "X-Registry-Auth"
-  -d "$JSON"
-{"status":"Pulling from library/alpine","id":"3.1"}
-{"status":"Pulling fs layer","progressDetail":{},"id":"8f13703509f7"}
-{"status":"Downloading","progressDetail":{"current":32768,"total":2244027},"progress":"[\u003e                                                  ] 32.77 kB/2.244 MB","id":"8f13703509f7"}
-...
-```
-@y
-$ curl --unix-socket /var/run/docker.sock \
-  -H "Content-Type: application/tar"
-  -X POST "http://localhost/v{{% param "latest_engine_api_version" %}}/images/create?fromImage=alpine"
-  -H "X-Registry-Auth"
-  -d "$JSON"
-{"status":"Pulling from library/alpine","id":"3.1"}
-{"status":"Pulling fs layer","progressDetail":{},"id":"8f13703509f7"}
-{"status":"Downloading","progressDetail":{"current":32768,"total":2244027},"progress":"[\u003e                                                  ] 32.77 kB/2.244 MB","id":"8f13703509f7"}
-...
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -1577,123 +560,7 @@ Commit a container to create an image from its contents:
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"fmt"
-@y
-import (
-	"context"
-	"fmt"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-)
-@z
-
-@x
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@y
-func main() {
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
-@z
-
-@x
-	createResp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: "alpine",
-		Cmd:   []string{"touch", "/helloworld"},
-	}, nil, nil, nil, "")
-	if err != nil {
-		panic(err)
-	}
-@y
-	createResp, err := cli.ContainerCreate(ctx, &container.Config{
-		Image: "alpine",
-		Cmd:   []string{"touch", "/helloworld"},
-	}, nil, nil, nil, "")
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	if err := cli.ContainerStart(ctx, createResp.ID, types.ContainerStartOptions{}); err != nil {
-		panic(err)
-	}
-@y
-	if err := cli.ContainerStart(ctx, createResp.ID, types.ContainerStartOptions{}); err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	statusCh, errCh := cli.ContainerWait(ctx, createResp.ID, container.WaitConditionNotRunning)
-	select {
-	case err := <-errCh:
-		if err != nil {
-			panic(err)
-		}
-	case <-statusCh:
-	}
-@y
-	statusCh, errCh := cli.ContainerWait(ctx, createResp.ID, container.WaitConditionNotRunning)
-	select {
-	case err := <-errCh:
-		if err != nil {
-			panic(err)
-		}
-	case <-statusCh:
-	}
-@z
-
-@x
-	commitResp, err := cli.ContainerCommit(ctx, createResp.ID, types.ContainerCommitOptions{Reference: "helloworld"})
-	if err != nil {
-		panic(err)
-	}
-@y
-	commitResp, err := cli.ContainerCommit(ctx, createResp.ID, types.ContainerCommitOptions{Reference: "helloworld"})
-	if err != nil {
-		panic(err)
-	}
-@z
-
-@x
-	fmt.Println(commitResp.ID)
-}
-```
-@y
-	fmt.Println(commitResp.ID)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1703,25 +570,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-container = client.containers.run("alpine", ["touch", "/helloworld"], detach=True)
-container.wait()
-image = container.commit("helloworld")
-print(image.id)
-```
-@y
-```python
-import docker
-client = docker.from_env()
-container = client.containers.run("alpine", ["touch", "/helloworld"], detach=True)
-container.wait()
-image = container.commit("helloworld")
-print(image.id)
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -1731,23 +580,7 @@ print(image.id)
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ docker run -d alpine touch /helloworld
-0888269a9d584f0fa8fc96b3c0d8d57969ceea3a64acf47cd34eebb4744dbc52
-$ curl --unix-socket /var/run/docker.sock\
-  -X POST "http://localhost/v{{% param "latest_engine_api_version" %}}/commit?container=0888269a9d&repo=helloworld"
-{"Id":"sha256:6c86a5cd4b87f2771648ce619e319f3e508394b5bfc2cdbd2d60f59d52acda6c"}
-```
-@y
-```console
-$ docker run -d alpine touch /helloworld
-0888269a9d584f0fa8fc96b3c0d8d57969ceea3a64acf47cd34eebb4744dbc52
-$ curl --unix-socket /var/run/docker.sock\
-  -X POST "http://localhost/v{{% param "latest_engine_api_version" %}}/commit?container=0888269a9d&repo=helloworld"
-{"Id":"sha256:6c86a5cd4b87f2771648ce619e319f3e508394b5bfc2cdbd2d60f59d52acda6c"}
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}

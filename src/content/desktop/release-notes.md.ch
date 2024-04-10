@@ -217,8 +217,10 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 - Fixed a bug where `docker run -v` would fail after switching between WSL 2 and Hyper-V.
+- Fixed a bug where Docker Desktop was not stopping its WSL distros (`docker-desktop` and `docker-desktop-data`) when it was shutdown. Fixes [docker/for-win/issues/13443](https://github.com/docker/for-win/issues/13443) and [docker/for-win/issues/13938](https://github.com/docker/for-win/issues/13938).
 @y
 - Fixed a bug where `docker run -v` would fail after switching between WSL 2 and Hyper-V.
+- Fixed a bug where Docker Desktop was not stopping its WSL distros (`docker-desktop` and `docker-desktop-data`) when it was shutdown. Fixes [docker/for-win/issues/13443](https://github.com/docker/for-win/issues/13443) and [docker/for-win/issues/13938](https://github.com/docker/for-win/issues/13938).
 @z
 
 @x
@@ -1564,12 +1566,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
-{{< desktop-install all=true version="4.23.0" build_path="/120376/" >}}
-@y
-{{< desktop-install all=true version="4.23.0" build_path="/120376/" >}}
-@z
-
-@x
 ### Upgrades
 - [Compose v2.21.0](https://github.com/docker/compose/releases/tag/v2.21.0)
 - [Docker Engine v24.0.6](https://docs.docker.com/engine/release-notes/24.0/#2406)
@@ -1750,12 +1746,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
-{{< desktop-install all=true version="4.22.1" build_path="/118664/" >}}
-@y
-{{< desktop-install all=true version="4.22.1" build_path="/118664/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
@@ -1795,12 +1785,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 {{< release-date date="2023-08-03" >}}
 @y
 {{< release-date date="2023-08-03" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.22.0" build_path="/117440/" >}}
-@y
-{{< desktop-install all=true version="4.22.0" build_path="/117440/" >}}
 @z
 
 @x
@@ -1936,12 +1920,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
-{{< desktop-install all=true version="4.21.1" build_path="/114176/" >}}
-@y
-{{< desktop-install all=true version="4.21.1" build_path="/114176/" >}}
-@z
-
-@x
 #### For all platforms
 @y
 #### For all platforms
@@ -1975,12 +1953,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 {{< release-date date="2023-06-29" >}}
 @y
 {{< release-date date="2023-06-29" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.21.0" build_path="/113844/" >}}
-@y
-{{< desktop-install all=true version="4.21.0" build_path="/113844/" >}}
 @z
 
 @x
@@ -2110,12 +2082,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
-{{< desktop-install all=true version="4.20.1" build_path="/110738/" >}}
-@y
-{{< desktop-install all=true version="4.20.1" build_path="/110738/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
@@ -2157,12 +2123,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 {{< release-date date="2023-05-30" >}}
 @y
 {{< release-date date="2023-05-30" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.20.0" build_path="/109717/" >}}
-@y
-{{< desktop-install all=true version="4.20.0" build_path="/109717/" >}}
 @z
 
 @x
@@ -2267,12 +2227,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 {{< release-date date="2023-04-27" >}}
 @y
 {{< release-date date="2023-04-27" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.19.0" build_path="/106363/" >}}
-@y
-{{< desktop-install all=true version="4.19.0" build_path="/106363/" >}}
 @z
 
 @x
@@ -2455,12 +2409,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 {{< release-date date="2023-04-03" >}}
 @y
 {{< release-date date="2023-04-03" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.18.0" build_path="/104112/" >}}
-@y
-{{< desktop-install all=true version="4.18.0" build_path="/104112/" >}}
 @z
 
 @x

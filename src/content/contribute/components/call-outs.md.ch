@@ -4,17 +4,11 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: components and formatting examples used in Docker's docs
 title: Callouts
-toc_max: 3
----
 @y
----
 description: components and formatting examples used in Docker's docs
 title: Callouts
-toc_max: 3
----
 @z
 
 @x
@@ -150,9 +144,9 @@ For both of the following callouts, consult [the Docker release lifecycle](__SUB
 @z
 
 @x
-## HTML
+## Formatting 
 @y
-## HTML
+## Formatting 
 @z
 
 @x
