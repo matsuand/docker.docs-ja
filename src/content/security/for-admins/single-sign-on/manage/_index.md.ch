@@ -4,29 +4,19 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Learn how to manage Single Sign-On for your organization or company.
 keywords: manage, single sign-on, SSO, sign-on, docker hub, admin console, admin, security
 title: Manage Single Sign-On
-aliases:
-- /admin/company/settings/sso-management/
-- /single-sign-on/manage/
----
 @y
----
 description: Learn how to manage Single Sign-On for your organization or company.
 keywords: manage, single sign-on, SSO, sign-on, docker hub, admin console, admin, security
 title: Manage Single Sign-On
-aliases:
-- /admin/company/settings/sso-management/
-- /single-sign-on/manage/
----
 @z
 
 @x
 ## Manage organizations
 @y
-## Manage organizations
+## 組織の管理 {#manage-organizations}
 @z
 
 @x
@@ -40,45 +30,9 @@ aliases:
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-{{% admin-sso-management-orgs product="hub" %}}
-@y
-{{% admin-sso-management-orgs product="hub" %}}
-@z
-
-@x
-{{< /tab >}}
 {{< tab name="Admin Console" >}}
 @y
-{{< /tab >}}
 {{< tab name="Admin Console" >}}
-@z
-
-@x
-{{< include "admin-early-access.md" >}}
-@y
-{{< include "admin-early-access.md" >}}
-@z
-
-@x
-{{% admin-sso-management-orgs product="admin" %}}
-@y
-{{% admin-sso-management-orgs product="admin" %}}
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x
@@ -88,45 +42,15 @@ aliases:
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-{{% admin-sso-management product="hub" %}}
-@y
-{{% admin-sso-management product="hub" %}}
-@z
-
-@x
-{{< /tab >}}
 {{< tab name="Admin Console" >}}
 @y
-{{< /tab >}}
 {{< tab name="Admin Console" >}}
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{< tab name="Docker Hub" >}}
 @y
-{{< include "admin-early-access.md" >}}
-@z
-
-@x
-{{% admin-sso-management product="admin" %}}
-@y
-{{% admin-sso-management product="admin" %}}
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x

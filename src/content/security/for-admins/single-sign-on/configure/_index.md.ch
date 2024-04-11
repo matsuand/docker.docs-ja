@@ -67,9 +67,29 @@ This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+{{% admin-domains product="admin" %}}
+@y
+{{% admin-domains product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
@@ -77,26 +97,6 @@ This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
 {{% admin-domains product="hub" %}}
 @y
 {{% admin-domains product="hub" %}}
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-{{< include "admin-early-access.md" >}}
-@y
-{{< include "admin-early-access.md" >}}
-@z
-
-@x
-{{% admin-domains product="admin" %}}
-@y
-{{% admin-domains product="admin" %}}
 @z
 
 @x
@@ -115,9 +115,29 @@ This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+{{% admin-sso-config product="admin" %}}
+@y
+{{% admin-sso-config product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
@@ -125,26 +145,6 @@ This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
 {{% admin-sso-config product="hub" %}}
 @y
 {{% admin-sso-config product="hub" %}}
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-{{< include "admin-early-access.md" >}}
-@y
-{{< include "admin-early-access.md" >}}
-@z
-
-@x
-{{% admin-sso-config product="admin" %}}
-@y
-{{% admin-sso-config product="admin" %}}
 @z
 
 @x

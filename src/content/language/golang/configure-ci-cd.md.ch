@@ -76,22 +76,22 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
 @z
 
 @x
-3. Create a new secret named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository secrets** named `DOCKER_USERNAME` and your Docker ID as value.
 @y
-3. Create a new secret named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository secrets** named `DOCKER_USERNAME` and your Docker ID as value.
 @z
 
 @x
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`.
+4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`.
+4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @z
 
 @x
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a second **Repository secrets** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a second **Repository secrets** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @z
 
@@ -172,9 +172,9 @@ to Docker Hub.
 @z
 
 @x
-3. In the editor window, copy and paste the following YAML configuration.
+3. In the editor window, copy and paste the following YAML configuration and commit the changes.
 @y
-3. In the editor window, copy and paste the following YAML configuration.
+3. In the editor window, copy and paste the following YAML configuration and commit the changes.
 @z
 
 @x
@@ -247,6 +247,12 @@ to Docker Hub.
              push: true
              tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
    ```
+@z
+
+@x
+   If your Dockerfile is in a different directory, update the `context` with the path to the directory containing the Dockerfile. 
+@y
+   If your Dockerfile is in a different directory, update the `context` with the path to the directory containing the Dockerfile. 
 @z
 
 @x

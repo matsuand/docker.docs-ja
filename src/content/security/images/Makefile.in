@@ -238,8 +238,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	enforce-sign-in.png \
-	group-mapping.png   \
+	enforce-sign-in.png   \
+	jit-disabled-flow.svg \
+	jit-enabled-flow.svg  \
 	roles-and-permissions-member-editor-roles.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

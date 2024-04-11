@@ -60,6 +60,12 @@ Docker uses the email address of the user to identify them on the platform. Ever
 @z
 
 @x
+### SSO authentication with JIT provisioning enabled
+@y
+### SSO authentication with JIT provisioning enabled
+@z
+
+@x
 After every successful SSO sign-in authentication, the JIT provisioner performs the following actions:
 @y
 After every successful SSO sign-in authentication, the JIT provisioner performs the following actions:
@@ -84,9 +90,15 @@ After every successful SSO sign-in authentication, the JIT provisioner performs 
 @z
 
 @x
-2. Checks if the IdP shared group mappings while authenticating the user.
+2. Checks for any pending invitations to the SSO organization to auto-accept the invitation. If the invitation is specific to a group, the user is added to the invited group along with group mappings in the following step.
 @y
-2. Checks if the IdP shared group mappings while authenticating the user.
+2. Checks for any pending invitations to the SSO organization to auto-accept the invitation. If the invitation is specific to a group, the user is added to the invited group along with group mappings in the following step.
+@z
+
+@x
+3. Checks if the IdP shared group mappings while authenticating the user.
+@y
+3. Checks if the IdP shared group mappings while authenticating the user.
 @z
 
 @x
@@ -102,9 +114,81 @@ After every successful SSO sign-in authentication, the JIT provisioner performs 
 @z
 
 @x
-![JIT provisioning](../images/group-mapping.png)
+![JIT provisioning enabled](../images/jit-enabled-flow.svg)
 @y
-![JIT provisioning](../images/group-mapping.png)
+![JIT provisioning enabled](../images/jit-enabled-flow.svg)
+@z
+
+@x
+### SSO authentication with JIT provisioning disabled
+@y
+### SSO authentication with JIT provisioning disabled
+@z
+
+@x
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you have the option to turn off this default provisioning and disable JIT. This configuration is recommended if you're using SCIM to auto-provision users.
+{ .experimental }
+@y
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you have the option to turn off this default provisioning and disable JIT. This configuration is recommended if you're using SCIM to auto-provision users.
+{ .experimental }
+@z
+
+@x
+When you opt to disable JIT provisioning in your SSO connection, the following actions occur:
+@y
+When you opt to disable JIT provisioning in your SSO connection, the following actions occur:
+@z
+
+@x
+1. Checks if there's an existing Docker account with the email address of the user that just authenticated.
+@y
+1. Checks if there's an existing Docker account with the email address of the user that just authenticated.
+@z
+
+@x
+   a) If no account is found with the same email address, it creates a new Docker account using basic user attributes (email, name, and surname). Authentication with SSO generates a new username for this new account by using the email, name, and random numbers to make sure that all account usernames are unique in the platform.
+@y
+   a) If no account is found with the same email address, it creates a new Docker account using basic user attributes (email, name, and surname). Authentication with SSO generates a new username for this new account by using the email, name, and random numbers to make sure that all account usernames are unique in the platform.
+@z
+
+@x
+   b) If an account exists for this email address, it uses this account and updates the full name of the user’s profile if needed.
+@y
+   b) If an account exists for this email address, it uses this account and updates the full name of the user’s profile if needed.
+@z
+
+@x
+2. Checks if there are any pending invitations to the SSO organization (or, SSO organizations if the SSO connection is managed at the company level) in order to auto-accept the invitation.
+@y
+2. Checks if there are any pending invitations to the SSO organization (or, SSO organizations if the SSO connection is managed at the company level) in order to auto-accept the invitation.
+@z
+
+@x
+   a) If the user isn't already a member of the organization, or doesn't have a pending invitation to join, sign in fails and the user encounters an `Access denied` error. This blocks the user from joining the organization. They need to contact an administrator to invite them to join.
+@y
+   a) If the user isn't already a member of the organization, or doesn't have a pending invitation to join, sign in fails and the user encounters an `Access denied` error. This blocks the user from joining the organization. They need to contact an administrator to invite them to join.
+@z
+
+@x
+   b) If the user is a member of the organization, or has a pending invitation to join, then sign in is successful.
+@y
+   b) If the user is a member of the organization, or has a pending invitation to join, then sign in is successful.
+@z
+
+@x
+If you disable JIT provisioning when you create or edit your SSO connection, you can still use group mapping as long as you have also [enabled SCIM](/security/for-admins/scim/#enable-scim-in-docker). When JIT provisioning is disabled and SCIM isn't enabled, users won't be auto-provisioned to groups. For instructions on disabling JIT provisioning, see [Manage how users are provisioned](/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
+@y
+If you disable JIT provisioning when you create or edit your SSO connection, you can still use group mapping as long as you have also [enabled SCIM](/security/for-admins/scim/#enable-scim-in-docker). When JIT provisioning is disabled and SCIM isn't enabled, users won't be auto-provisioned to groups. For instructions on disabling JIT provisioning, see [Manage how users are provisioned](/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
+@z
+
+@x
+![JIT provisioning disabled](../images/jit-disabled-flow.svg)
+@y
+![JIT provisioning disabled](../images/jit-disabled-flow.svg)
 @z
 
 @x

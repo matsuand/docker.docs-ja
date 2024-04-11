@@ -6,33 +6,41 @@
 {{ $sso_navigation := `Navigate to the SSO settings page for your organization or company.
    - Organization: Select **Organizations**, your organization, **Settings**, and then **Security**.
    - Company: Select **Organizations**, your company, and then **Settings**.` }}
+{{ $provisioning_step := "4. Review your summary and select **Create Connection**." }}
 @y
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $sso_navigation := `Navigate to the SSO settings page for your organization or company.
    - Organization: Select **Organizations**, your organization, **Settings**, and then **Security**.
    - Company: Select **Organizations**, your company, and then **Settings**.` }}
+{{ $provisioning_step := "4. Review your summary and select **Create Connection**." }}
 @z
 
 @x
 {{ if eq (.Get "product") "admin" }}
   {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO & SCIM.**" }}
+  {{ $provisioning_step = `
+3. **Beta feature** - Choose how you want to provision users by enabling Just-in-Time (JIT) provisioning (default), or disabling JIT provisioning.
+4. Review your summary and select **Create Connection**.` }}
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
   {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO & SCIM.**" }}
+  {{ $provisioning_step = `
+3. **Beta feature** - Choose how you want to provision users by enabling Just-in-Time (JIT) provisioning (default), or disabling JIT provisioning.
+4. Review your summary and select **Create Connection**.` }}
 {{ end }}
 @z
 
 @x
 1. In {{ $product_link }}, select the verified domains you want to apply the connection to.
 2. To provision your users, select the organization(s) and/or team(s).
-3. Review your summary and select **Create Connection**.
+{{ $provisioning_step }}
 @y
 1. In {{ $product_link }}, select the verified domains you want to apply the connection to.
 2. To provision your users, select the organization(s) and/or team(s).
-3. Review your summary and select **Create Connection**.
+{{ $provisioning_step }}
 @z
 
 @x
@@ -58,7 +66,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 @x
 >**Important**
 >
-> SSO has Just-In-Time (JIT) Provisioning enabled by default. This means your users are auto-provisioned to your organization on Docker Hub.
+> SSO has Just-in-Time (JIT) provisioning enabled by default, unless you have [disabled it](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled). This means your users are auto-provisioned to your organization on Docker Hub.
 >
 > You can change this on a per-app basis. To prevent auto-provisioning users, you can create a security group in your IdP and configure the SSO app to authenticate and authorize only those users that are in the security group. Follow the instructions provided by your IdP:
 >
@@ -68,7 +76,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 @y
 >**Important**
 >
-> SSO has Just-In-Time (JIT) Provisioning enabled by default. This means your users are auto-provisioned to your organization on Docker Hub.
+> SSO has Just-in-Time (JIT) provisioning enabled by default, unless you have [disabled it](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled). This means your users are auto-provisioned to your organization on Docker Hub.
 >
 > You can change this on a per-app basis. To prevent auto-provisioning users, you can create a security group in your IdP and configure the SSO app to authenticate and authorize only those users that are in the security group. Follow the instructions provided by your IdP:
 >

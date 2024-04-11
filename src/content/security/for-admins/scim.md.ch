@@ -2,13 +2,31 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+---
 keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 title: SCIM overview
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
 @y
+---
 keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 title: SCIM overview
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
+@z
+
+@x
+direct_from:
+- /docker-hub/company-scim/
+- /docker-hub/scim/
+- /admin/company/settings/scim/
+- /admin/organization/security-settings/scim/
+---
+@y
+direct_from:
+- /docker-hub/company-scim/
+- /docker-hub/scim/
+- /admin/company/settings/scim/
+- /admin/organization/security-settings/scim/
+---
 @z
 
 @x
@@ -45,6 +63,12 @@ The following lists the supported provisioning features:
  - Deactivate users
  - Re-activate users
  - Group mapping
+@z
+
+@x
+## Supported attributes
+@y
+## Supported attributes
 @z
 
 @x
@@ -72,19 +96,31 @@ The following table lists the supported attributes. Note that your attribute map
 @x
 For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
 @y
-For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](__SUBDIR__/docker-hub/api/latest/#tag/scim).
+For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
 @z
 
 @x
 > **Important**
 >
->SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../for-admins/single-sign-on/configure/configure-idp.md#sso-attributes).
+> SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../for-admins/single-sign-on/configure/configure-idp.md#sso-attributes).
 {.important}
 @y
 > **Important**
 >
->SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../for-admins/single-sign-on/configure/configure-idp.md#sso-attributes).
+> SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../for-admins/single-sign-on/configure/configure-idp.md#sso-attributes).
 {.important}
+@z
+
+@x
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+{ .experimental }
+@y
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+{ .experimental }
 @z
 
 @x

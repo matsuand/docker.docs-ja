@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Single Sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
 title: Manage users
-aliases:
-- /single-sign-on/users-faqs/
----
 @y
----
 description: Single Sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
 title: Manage users
-aliases:
-- /single-sign-on/users-faqs/
----
 @z
 
 @x
@@ -172,9 +164,21 @@ When SSO is enabled and enforced, your users just have to sign in using the emai
 @z
 
 @x
-Docker SSO provides Just-In-Time (JIT) provisioning by default. This provisioning only happens when a user signs in. If a user leaves the organization, administrators must sign in to Docker Hub and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization. [SCIM](../../../security/for-admins/scim.md) is available to provide full synchronization with users and groups.
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning configuration is only available in Private Beta when you use the Admin Console. Otherwise, JIT is enabled by default. This feature will be available for all users soon.
+{ .experimental }
 @y
-Docker SSO provides Just-In-Time (JIT) provisioning by default. This provisioning only happens when a user signs in. If a user leaves the organization, administrators must sign in to Docker Hub and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization. [SCIM](../../../security/for-admins/scim.md) is available to provide full synchronization with users and groups.
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning configuration is only available in Private Beta when you use the Admin Console. Otherwise, JIT is enabled by default. This feature will be available for all users soon.
+{ .experimental }
+@z
+
+@x
+Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option to disable JIT. Users are provisioned when a user authenticates with SSO. If a user leaves the organization, administrators must sign in to Docker Hub and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
+@y
+Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option to disable JIT. Users are provisioned when a user authenticates with SSO. If a user leaves the organization, administrators must sign in to Docker Hub and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
 @z
 
 @x

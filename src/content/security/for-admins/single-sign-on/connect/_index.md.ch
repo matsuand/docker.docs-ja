@@ -74,24 +74,22 @@ Make sure you have completed the following before you begin:
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you have the option to turn off this default provisioning and disable JIT. This configuration is recommended if you're using SCIM to auto-provision users. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+{ .experimental }
 @y
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you have the option to turn off this default provisioning and disable JIT. This configuration is recommended if you're using SCIM to auto-provision users. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+{ .experimental }
 @z
 
 @x
-{{% admin-sso-connect product="hub" %}}
-@y
-{{% admin-sso-connect product="hub" %}}
-@z
-
-@x
-{{< /tab >}}
+{{< tabs >}}
 {{< tab name="Admin Console" >}}
 @y
-{{< /tab >}}
+{{< tabs >}}
 {{< tab name="Admin Console" >}}
 @z
 
@@ -99,6 +97,20 @@ Make sure you have completed the following before you begin:
 {{% admin-sso-connect product="admin" %}}
 @y
 {{% admin-sso-connect product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+{{% admin-sso-connect product="hub" %}}
+@y
+{{% admin-sso-connect product="hub" %}}
 @z
 
 @x

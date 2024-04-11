@@ -26,37 +26,53 @@
 @z
 
 @x
-### Remove a domain from an SSO connection
+### Edit a connection
 @y
-### Remove a domain from an SSO connection
+### Edit a connection
 @z
 
 @x
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
-3. In the SSO connections table, select the **Action** icon and then **Edit connection**.
-4. Select **Next** to navigate to the section where the connected domains are listed.
-5. In the **Domain** drop-down, select the **x** icon next to the domain that you want to remove.
-6. Select **Next** to confirm or change the connected organization(s).
-7. Select **Next** to confirm or change the default organization and team provisioning selections.
-8. Review the **Connection Summary** and select **Save**.
+3. In the SSO connections table, select the **Action** icon.
+4. Select **Edit connection** to edit your connection.
+5. Follow the on-screen instructions to edit the connection.
 @y
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
-3. In the SSO connections table, select the **Action** icon and then **Edit connection**.
-4. Select **Next** to navigate to the section where the connected domains are listed.
-5. In the **Domain** drop-down, select the **x** icon next to the domain that you want to remove.
-6. Select **Next** to confirm or change the connected organization(s).
-7. Select **Next** to confirm or change the default organization and team provisioning selections.
-8. Review the **Connection Summary** and select **Save**.
+3. In the SSO connections table, select the **Action** icon.
+4. Select **Edit connection** to edit your connection.
+5. Follow the on-screen instructions to edit the connection.
 @z
 
 @x
-> **Note**
->
-> If you want to re-add the domain, a new TXT record value is assigned. You must then complete the verification steps with the new TXT record value.
+### Delete a connection
 @y
-> **Note**
->
-> If you want to re-add the domain, a new TXT record value is assigned. You must then complete the verification steps with the new TXT record value.
+### Delete a connection
+@z
+
+@x
+1. Sign in to {{ $product_link }}.
+2. {{ $sso_navigation }}
+3. In the SSO connections table, select the **Action** icon.
+4. Select **Delete connection**.
+5. Follow the on-screen instructions to delete a connection.
+@y
+1. Sign in to {{ $product_link }}.
+2. {{ $sso_navigation }}
+3. In the SSO connections table, select the **Action** icon.
+4. Select **Delete connection**.
+5. Follow the on-screen instructions to delete a connection.
+@z
+
+@x
+### Deleting SSO
+@y
+### Deleting SSO
+@z
+
+@x
+When you disable SSO, you can delete the connection to remove the configuration settings and the added domains. Once you delete this connection, it can't be undone. Users must authenticate with their Docker ID and password or create a password reset if they don't have one.
+@y
+When you disable SSO, you can delete the connection to remove the configuration settings and the added domains. Once you delete this connection, it can't be undone. Users must authenticate with their Docker ID and password or create a password reset if they don't have one.
 @z
