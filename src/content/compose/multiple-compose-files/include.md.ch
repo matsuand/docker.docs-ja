@@ -16,13 +16,9 @@ title: Include
 @z
 
 @x
-> **Note**
->
-> `include` is available in Docker Compose version 2.20.3 and later, and Docker Desktop version 4.22 and later. 
+{{< introduced compose 2.20.3 "../release-notes.md#2203" >}}
 @y
-> **Note**
->
-> `include` is available in Docker Compose version 2.20.3 and later, and Docker Desktop version 4.22 and later. 
+{{< introduced compose 2.20.3 "../release-notes.md#2203" >}}
 @z
 
 @x

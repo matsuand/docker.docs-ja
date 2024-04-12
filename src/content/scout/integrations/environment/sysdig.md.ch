@@ -258,9 +258,9 @@ monitoring](./_index.md).
 @z
 
 @x
-To integrate more clusters, go to the [Sysdig integrations page](https://scout.docker.com/settings/integrations/sysdig/),
-select **Sysdig** > **Manage** and select the **Add** button.
+To integrate more clusters, go to the [Sysdig integrations page](https://scout.docker.com/settings/integrations/sysdig/)
+and select the **Add** button.
 @y
-To integrate more clusters, go to the [Sysdig integrations page](https://scout.docker.com/settings/integrations/sysdig/),
-select **Sysdig** > **Manage** and select the **Add** button.
+To integrate more clusters, go to the [Sysdig integrations page](https://scout.docker.com/settings/integrations/sysdig/)
+and select the **Add** button.
 @z

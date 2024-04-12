@@ -111,19 +111,13 @@ To activate image analysis:
 @z
 
 @x
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/)
-2. Sign in with your Docker ID.
-3. Make sure that the correct Docker organization is selected.
-4. Open the settings menu and select **Repository settings**.
-5. Select the repositories that you want to enable.
-6. Select **Enable image analysis**.
+1. Go to [Repository settings](https://scout.docker.com/settings/repos) in the Docker Scout Dashboard.
+2. Select the repositories that you want to enable.
+3. Select **Enable image analysis**.
 @y
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/)
-2. Sign in with your Docker ID.
-3. Make sure that the correct Docker organization is selected.
-4. Open the settings menu and select **Repository settings**.
-5. Select the repositories that you want to enable.
-6. Select **Enable image analysis**.
+1. Go to [Repository settings](https://scout.docker.com/settings/repos) in the Docker Scout Dashboard.
+2. Select the repositories that you want to enable.
+3. Select **Enable image analysis**.
 @z
 
 @x
@@ -199,22 +193,16 @@ analysis is activated.
 @z
 
 @x
-3. Go to the [Docker Scout Dashboard](https://scout.docker.com/)
-4. Sign in with your Docker ID.
-5. Select the Docker organization that contains the image you just pushed.
-6. Go to the **Images** tab. The image appears in the list shortly after you
-   push it to the registry.
+3. Go to the [Images page](https://scout.docker.com/reports/images) in the Docker Scout Dashboard.
 @y
-3. Go to the [Docker Scout Dashboard](https://scout.docker.com/)
-4. Sign in with your Docker ID.
-5. Select the Docker organization that contains the image you just pushed.
-6. Go to the **Images** tab. The image appears in the list shortly after you
-   push it to the registry.
+3. Go to the [Images page](https://scout.docker.com/reports/images) in the Docker Scout Dashboard.
 @z
 
 @x
+   The image appears in the list shortly after you push it to the registry.
    It may take a few minutes for the analysis results to appear.
 @y
+   The image appears in the list shortly after you push it to the registry.
    It may take a few minutes for the analysis results to appear.
 @z
 

@@ -4,27 +4,19 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Use File watch to automatically update running services as you work
 keywords: compose, file watch, experimental
 title: Use Compose Watch
----
 @y
----
 description: Use File watch to automatically update running services as you work
 keywords: compose, file watch, experimental
 title: Compose Watch の利用
----
 @z
 
 @x
-> **Note**
->
-> Compose Watch is available in Docker Compose version 2.22 and later.
+{{< introduced compose 2.22.0 "release-notes.md#2220" >}}
 @y
-> **メモ**
->
-> Compose Watch は Docker Compose バージョン 2.22 またはそれ以降において利用可能です。
+{{< introduced compose 2.22.0 "release-notes.md#2220" >}}
 @z
 
 @x

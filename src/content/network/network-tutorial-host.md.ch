@@ -64,11 +64,15 @@ host.
 @z
 
 @x
-- The `host` networking driver only works on Linux hosts, and is not supported
-  on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
+- The `host` networking driver only works on Linux hosts, but is availabe as a
+  [beta feature](../../release-lifecycle.md#beta) on Docker Desktop version 4.29
+  and later for Mac, Windows, and Linux. To enable this feature, navigate to the
+  **Features in development** tab in **Settings**, and then select **Enable host networking**.
 @y
-- The `host` networking driver only works on Linux hosts, and is not supported
-  on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
+- The `host` networking driver only works on Linux hosts, but is availabe as a
+  [beta feature](../../release-lifecycle.md#beta) on Docker Desktop version 4.29
+  and later for Mac, Windows, and Linux. To enable this feature, navigate to the
+  **Features in development** tab in **Settings**, and then select **Enable host networking**.
 @z
 
 @x

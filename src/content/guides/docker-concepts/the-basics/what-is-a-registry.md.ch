@@ -213,11 +213,11 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 
 @x
     ```console
-    cd hello-world-demo-node
+    cd helloworld-demo-node
     ```
 @y
     ```console
-    cd hello-world-demo-node
+    cd helloworld-demo-node
     ```
 @z
 

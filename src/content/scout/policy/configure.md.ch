@@ -60,48 +60,42 @@ To configure a policy:
 @z
 
 @x
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
-2. Go to the **Policies** section.
-3. Select the policy you want to configure.
-4. Select the **View configuration** button to open the policy configuration.
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select the policy you want to configure.
+3. Select **View policy details** to open the policy side panel.
 @y
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
-2. Go to the **Policies** section.
-3. Select the policy you want to configure.
-4. Select the **View configuration** button to open the policy configuration.
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select the policy you want to configure.
+3. Select **View policy details** to open the policy side panel.
 @z
 
 @x
-   If the button is disabled, the selected policy doesn't have any
+   If this button is grayed out, then the selected policy doesn't have any
    configuration parameters.
 @y
-   If the button is disabled, the selected policy doesn't have any
+   If this button is grayed out, then the selected policy doesn't have any
    configuration parameters.
 @z
 
 @x
-5. Select the **Edit policy** button. This prompts you to create a clone of the
-   default policy.
-6. Select **Copy and edit policy** to create a clone of the default policy.
-7. Update the policy parameters.
-8. Save the changes:
+4. In the side panel, select **Copy to customize** to open the policy configuration page.
+5. Update the policy parameters.
+6. Save the changes:
 @y
-5. Select the **Edit policy** button. This prompts you to create a clone of the
-   default policy.
-6. Select **Copy and edit policy** to create a clone of the default policy.
-7. Update the policy parameters.
-8. Save the changes:
+4. In the side panel, select **Copy to customize** to open the policy configuration page.
+5. Update the policy parameters.
+6. Save the changes:
 @z
 
 @x
    - Select **Save and enable** to commit the changes and enable the policy for
      your current organization.
-   - Select **Save changes** to save the policy configuration without enabling
+   - Select **Save policy** to save the policy configuration without enabling
      it.
 @y
    - Select **Save and enable** to commit the changes and enable the policy for
      your current organization.
-   - Select **Save changes** to save the policy configuration without enabling
+   - Select **Save policy** to save the policy configuration without enabling
      it.
 @z
 
@@ -132,13 +126,11 @@ To disable a policy:
 @z
 
 @x
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
-2. Go to the **Policies** section.
-3. Select the policy you want to disable.
-4. Select **Disable policy**.
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select the policy you want to disable.
+3. Select the **Disable** button.
 @y
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
-2. Go to the **Policies** section.
-3. Select the policy you want to disable.
-4. Select **Disable policy**.
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select the policy you want to disable.
+3. Select the **Disable** button.
 @z

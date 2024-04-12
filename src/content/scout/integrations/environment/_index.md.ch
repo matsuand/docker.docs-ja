@@ -236,15 +236,13 @@ To view the images for an environment:
 @z
 
 @x
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
-2. Select the **Images** tab.
-3. Open the **Environments** drop-down menu.
-4. Select the environment that you want to view.
+1. Go to the [Images page](https://scout.docker.com/) in the Docker Scout Dashboard.
+2. Open the **Environments** drop-down menu.
+3. Select the environment that you want to view.
 @y
-1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
-2. Select the **Images** tab.
-3. Open the **Environments** drop-down menu.
-4. Select the environment that you want to view.
+1. Go to the [Images page](https://scout.docker.com/) in the Docker Scout Dashboard.
+2. Open the **Environments** drop-down menu.
+3. Select the environment that you want to view.
 @z
 
 @x

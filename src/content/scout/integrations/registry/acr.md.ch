@@ -178,23 +178,19 @@ the Azure resources.
 @z
 
 @x
-1. Go to [Integrations](https://scout.docker.com/settings/integrations/) on the
+1. Go to [ACR integration page](https://scout.docker.com/settings/integrations/azure/) on the
    Docker Scout Dashboard.
-2. Select the **Analyze my images from another registry** filter option.
-3. Find **Azure Container Registry** in the list, and select **Integrate**.
-4. In the **How to integrate** section, enter the **Registry hostname** of the
+2. In the **How to integrate** section, enter the **Registry hostname** of the
    registry you want to integrate.
-5. Select **Next**.
-6. Select **Deploy to Azure** to open the template deployment wizard in Azure.
+3. Select **Next**.
+4. Select **Deploy to Azure** to open the template deployment wizard in Azure.
 @y
-1. Go to [Integrations](https://scout.docker.com/settings/integrations/) on the
+1. Go to [ACR integration page](https://scout.docker.com/settings/integrations/azure/) on the
    Docker Scout Dashboard.
-2. Select the **Analyze my images from another registry** filter option.
-3. Find **Azure Container Registry** in the list, and select **Integrate**.
-4. In the **How to integrate** section, enter the **Registry hostname** of the
+2. In the **How to integrate** section, enter the **Registry hostname** of the
    registry you want to integrate.
-5. Select **Next**.
-6. Select **Deploy to Azure** to open the template deployment wizard in Azure.
+3. Select **Next**.
+4. Select **Deploy to Azure** to open the template deployment wizard in Azure.
 @z
 
 @x
@@ -206,9 +202,9 @@ the Azure resources.
 @z
 
 @x
-7. In the template wizard, configure your deployment:
+5. In the template wizard, configure your deployment:
 @y
-7. In the template wizard, configure your deployment:
+5. In the template wizard, configure your deployment:
 @z
 
 @x
@@ -230,18 +226,18 @@ the Azure resources.
 @z
 
 @x
-8. Select **Review + create**, and then **Create** to deploy the template.
+6. Select **Review + create**, and then **Create** to deploy the template.
 @y
-8. Select **Review + create**, and then **Create** to deploy the template.
+6. Select **Review + create**, and then **Create** to deploy the template.
 @z
 
 @x
-9. Wait until the deployment is complete.
-10. In the **Deployment details** section click on the newly created resource
+7. Wait until the deployment is complete.
+8. In the **Deployment details** section click on the newly created resource
     of the type **Container registry token**. Generate a new password for this token.
 @y
-9. Wait until the deployment is complete.
-10. In the **Deployment details** section click on the newly created resource
+7. Wait until the deployment is complete.
+8. In the **Deployment details** section click on the newly created resource
     of the type **Container registry token**. Generate a new password for this token.
 @z
 
@@ -256,19 +252,19 @@ the Azure resources.
 @z
 
 @x
-11. Copy the generated password and head back to the Docker Scout Dashboard to
+9. Copy the generated password and head back to the Docker Scout Dashboard to
     finalize the integration.
 @y
-11. Copy the generated password and head back to the Docker Scout Dashboard to
+9. Copy the generated password and head back to the Docker Scout Dashboard to
     finalize the integration.
 @z
 
 @x
-12. Paste the generated password into the **Registry token** field.
-13. Select **Enable integration**.
+10. Paste the generated password into the **Registry token** field.
+11. Select **Enable integration**.
 @y
-12. Paste the generated password into the **Registry token** field.
-13. Select **Enable integration**.
+10. Paste the generated password into the **Registry token** field.
+11. Select **Enable integration**.
 @z
 
 @x
@@ -285,10 +281,10 @@ integrations for the current organization.
 
 @x
 Next, activate Docker Scout for the repositories that you want to analyze in
-[repository settings](https://scout.docker.com/settings/repos/).
+[Repository settings](https://scout.docker.com/settings/repos/).
 @y
 Next, activate Docker Scout for the repositories that you want to analyze in
-[repository settings](https://scout.docker.com/settings/repos/).
+[Repository settings](https://scout.docker.com/settings/repos/).
 @z
 
 @x

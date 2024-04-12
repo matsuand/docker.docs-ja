@@ -82,13 +82,11 @@ Dashboard. To get to this page:
 @z
 
 @x
-1. Open the [Docker Scout Dashboard](https://scout.docker.com/)
-2. Go to the **Policies** page.
-3. Select a policy in the list.
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select a policy in the list.
 @y
-1. Open the [Docker Scout Dashboard](https://scout.docker.com/)
-2. Go to the **Policies** page.
-3. Select a policy in the list.
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select a policy in the list.
 @z
 
 @x

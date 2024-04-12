@@ -222,9 +222,9 @@ Results in:
 @z
 
 @x
-> Available in Docker Compose version 2.24.4 and later
+{{< introduced compose 2.24.4 "../release-notes.md#2244" >}}
 @y
-> Available in Docker Compose version 2.24.4 and later
+{{< introduced compose 2.24.4 "../release-notes.md#2244" >}}
 @z
 
 @x

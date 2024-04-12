@@ -128,77 +128,7 @@ grid_apis:
   link: __SUBDIR__/docker-hub/api/dvp/
 @z
 
-@x
-grid_specs:
-- title: Image specification
-  description: Describes the various components of a Docker image.
-  icon: contract
-  link: /registry/spec/manifest-v2-2/
-@y
-grid_specs:
-- title: イメージ仕様
-  description: Describes the various components of a Docker image.
-  icon: contract
-  link: __SUBDIR__/registry/spec/manifest-v2-2/
-@z
-
-@x
-- title: Registry token authentication
-  description: Outlines the Docker Registry authentication schemes.
-  icon: key
-  link: /registry/spec/auth/
-@y
-- title: Registry token authentication
-  description: Outlines the Docker Registry authentication schemes.
-  icon: key
-  link: __SUBDIR__/registry/spec/auth/
-@z
-
-@x
-aliases:
-- /app/working-with-app/
-- /engine/reference/commandline/app/
-- /engine/reference/commandline/app_bundle/
-- /engine/reference/commandline/app_completion/
-- /engine/reference/commandline/app_init/
-- /engine/reference/commandline/app_inspect/
-- /engine/reference/commandline/app_install/
-- /engine/reference/commandline/app_list/
-- /engine/reference/commandline/app_merge/
-- /engine/reference/commandline/app_pull/
-- /engine/reference/commandline/app_push/
-- /engine/reference/commandline/app_render/
-- /engine/reference/commandline/app_split/
-- /engine/reference/commandline/app_status/
-- /engine/reference/commandline/app_uninstall/
-- /engine/reference/commandline/app_upgrade/
-- /engine/reference/commandline/app_validate/
-- /engine/reference/commandline/app_validate/
-- /engine/reference/commandline/app_version/
----
-@y
-aliases:
-- /app/working-with-app/
-- /engine/reference/commandline/app/
-- /engine/reference/commandline/app_bundle/
-- /engine/reference/commandline/app_completion/
-- /engine/reference/commandline/app_init/
-- /engine/reference/commandline/app_inspect/
-- /engine/reference/commandline/app_install/
-- /engine/reference/commandline/app_list/
-- /engine/reference/commandline/app_merge/
-- /engine/reference/commandline/app_pull/
-- /engine/reference/commandline/app_push/
-- /engine/reference/commandline/app_render/
-- /engine/reference/commandline/app_split/
-- /engine/reference/commandline/app_status/
-- /engine/reference/commandline/app_uninstall/
-- /engine/reference/commandline/app_upgrade/
-- /engine/reference/commandline/app_validate/
-- /engine/reference/commandline/app_validate/
-- /engine/reference/commandline/app_version/
----
-@z
+% snip aliases...
 
 @x
 This section includes the reference documentation for the Docker platform's
@@ -241,16 +171,4 @@ various APIs, CLIs, drivers and specifications, and file formats.
 {{< grid items="grid_apis" >}}
 @y
 {{< grid items="grid_apis" >}}
-@z
-
-@x
-## Drivers and specifications
-@y
-## ドライバーと仕様 {#drivers-and-specifications}
-@z
-
-@x
-{{< grid items="grid_specs" >}}
-@y
-{{< grid items="grid_specs" >}}
 @z

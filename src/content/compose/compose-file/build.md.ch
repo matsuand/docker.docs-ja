@@ -324,6 +324,12 @@ build:
 @z
 
 @x
+{{< introduced compose 2.17.0 "../release-notes.md#2170" >}}
+@y
+{{< introduced compose 2.17.0 "../release-notes.md#2170" >}}
+@z
+
+@x
 `dockerfile_inline` defines the Dockerfile content as an inlined string in a Compose file. When set, the `dockerfile`
 attribute is not allowed and Compose rejects any Compose file having both set.
 @y
@@ -626,6 +632,12 @@ Unsupported caches are ignored and don't prevent you from building images.
 @z
 
 @x
+{{< introduced compose 2.17.0 "../release-notes.md#2170" >}}
+@y
+{{< introduced compose 2.17.0 "../release-notes.md#2170" >}}
+@z
+
+@x
 `additional_contexts` defines a list of named contexts the image builder should use during image build.
 @y
 `additional_contexts` defines a list of named contexts the image builder should use during image build.
@@ -748,9 +760,9 @@ extra_hosts:
 @z
 
 @x
-The separator `=` is preferred, but `:` can also be used. For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](../release-notes.md#2241). For example:
 @y
-The separator `=` is preferred, but `:` can also be used. For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](../release-notes.md#2241). For example:
 @z
 
 @x
@@ -807,6 +819,12 @@ are platform specific.
 ### privileged
 @y
 ### privileged
+@z
+
+@x
+{{< introduced compose 2.15.0 "../release-notes.md#2" >}}
+@y
+{{< introduced compose 2.15.0 "../release-notes.md#2" >}}
 @z
 
 @x
@@ -1047,10 +1065,14 @@ build:
 
 @x
 ### secrets
-`secrets` grants access to sensitive data defined by [secrets](05-services.md#secrets) on a per-service build basis. Two
-different syntax variants are supported: the short syntax and the long syntax.
 @y
 ### secrets
+@z
+
+@x
+`secrets` grants access to sensitive data defined by [secrets](05-services.md#secrets) on a per-service build basis. Two
+different syntax variants are supported: the short syntax and the long syntax.
+@y
 `secrets` grants access to sensitive data defined by [secrets](05-services.md#secrets) on a per-service build basis. Two
 different syntax variants are supported: the short syntax and the long syntax.
 @z
@@ -1241,6 +1263,12 @@ tags:
 ### ulimits
 @y
 ### ulimits
+@z
+
+@x
+{{< introduced compose 2.23.1 "../release-notes.md#2231" >}}
+@y
+{{< introduced compose 2.23.1 "../release-notes.md#2231" >}}
 @z
 
 @x

@@ -83,9 +83,9 @@ If not implemented the `deploy` section is ignored and the Compose file is still
 @z
 
 @x
-> Available with Docker Compose version 2.20.0 and later
+{{< introduced compose 2.20.0 "../release-notes.md#2200" >}}
 @y
-> Available with Docker Compose version 2.20.0 and later
+{{< introduced compose 2.20.0 "../release-notes.md#2200" >}}
 @z
 
 @x
@@ -309,17 +309,17 @@ an integer value using microseconds as unit or a [duration](11-extension.md#spec
 @z
 
 @x
-_DEPRECATED: use [deploy.limits.cpus](deploy.md#cpus)_
+`cpus` define the number of (potentially virtual) CPUs to allocate to service containers. This is a fractional number.
+`0.000` means no limit.
 @y
-_DEPRECATED: use [deploy.limits.cpus](deploy.md#cpus)_
+`cpus` define the number of (potentially virtual) CPUs to allocate to service containers. This is a fractional number.
+`0.000` means no limit.
 @z
 
 @x
-`cpus` define the number of (potentially virtual) CPUs to allocate to service containers. This is a fractional number.
-`0.000` means no limit.
+When set, `cpus` must be consistent with the `cpus` attribute in the [Deploy Specification](deploy.md#cpus).
 @y
-`cpus` define the number of (potentially virtual) CPUs to allocate to service containers. This is a fractional number.
-`0.000` means no limit.
+When set, `cpus` must be consistent with the `cpus` attribute in the [Deploy Specification](deploy.md#cpus).
 @z
 
 @x
@@ -368,10 +368,20 @@ as strings.
 
 @x
 ## cgroup
+@y
+## cgroup
+@z
+
+@x
+{{< introduced compose 2.15.0 "../release-notes.md#2150" >}}
+@y
+{{< introduced compose 2.15.0 "../release-notes.md#2150" >}}
+@z
+
+@x
 `cgroup` specifies the cgroup namespace to join. When unset, it is the container runtime's decision to
 select which cgroup namespace to use, if supported.
 @y
-## cgroup
 `cgroup` specifies the cgroup namespace to join. When unset, it is the container runtime's decision to
 select which cgroup namespace to use, if supported.
 @z
@@ -723,11 +733,11 @@ expressed in the short form.
 @x
 - `restart`: When set to `true` Compose restarts this service after it updates the dependency service.
   This applies to an explicit restart controlled by a Compose operation, and excludes automated restart by the container runtime
-  after the container dies.
+  after the container dies. Introduced in Docker Compose version [2.17.0](../release-notes.md#2170).
 @y
 - `restart`: When set to `true` Compose restarts this service after it updates the dependency service.
   This applies to an explicit restart controlled by a Compose operation, and excludes automated restart by the container runtime
-  after the container dies.
+  after the container dies. Introduced in Docker Compose version [2.17.0](../release-notes.md#2170).
 @z
 
 @x
@@ -739,7 +749,7 @@ expressed in the short form.
   - `service_completed_successfully`: Specifies that a dependency is expected to run
     to successful completion before starting a dependent service.
 - `required`: When set to `false` Compose only warns you when the dependency service isn't started or available. If it's not defined
-    the default value of `required` is `true`.
+    the default value of `required` is `true`. Introduced in Docker Compose version [2.20.0](../release-notes.md#2200).
 @y
 - `condition`: Sets the condition under which dependency is considered satisfied
   - `service_started`: An equivalent of the short syntax described above
@@ -749,7 +759,7 @@ expressed in the short form.
   - `service_completed_successfully`: Specifies that a dependency is expected to run
     to successful completion before starting a dependent service.
 - `required`: When set to `false` Compose only warns you when the dependency service isn't started or available. If it's not defined
-    the default value of `required` is `true`.
+    the default value of `required` is `true`. Introduced in Docker Compose version [2.20.0](../release-notes.md#2200).
 @z
 
 @x
@@ -817,9 +827,9 @@ Compose guarantees dependency services marked with
 @z
 
 @x
-> Available with Docker Compose version 2.22.0 and later.
+{{< introduced compose 2.22.0 "../release-notes.md#2220" >}}
 @y
-> Available with Docker Compose version 2.22.0 and later.
+{{< introduced compose 2.22.0 "../release-notes.md#2220" >}}
 @z
 
 @x
@@ -1553,9 +1563,9 @@ IPv6 addresses can be enclosed in square brackets, for example:
 % snip code...
 
 @x
-The separator `=` is preferred, but `:` can also be used. For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](../release-notes.md#2241). For example:
 @y
-The separator `=` is preferred, but `:` can also be used. For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](../release-notes.md#2241). For example:
 @z
 
 % snip code...
@@ -1631,9 +1641,9 @@ set by the service's Docker image. Your Compose file can override the values set
 % snip code...
 
 @x
-`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](11-extension.md#specifying-durations).
+`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](11-extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](../release-notes.md#2202)
 @y
-`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](11-extension.md#specifying-durations).
+`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](11-extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](../release-notes.md#2202)
 @z
 
 @x
@@ -1927,9 +1937,15 @@ are platform specific. Driver specific options can be set with `options` as key-
 @z
 
 @x
-_DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
+`mem_limit` configures a limit on the amount of memory a container can allocate, set as a string expressing a [byte value](11-extension.md#specifying-byte-values).
 @y
-_DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
+`mem_limit` configures a limit on the amount of memory a container can allocate, set as a string expressing a [byte value](11-extension.md#specifying-byte-values).
+@z
+
+@x
+When set, `mem_limit` must be consistent with the `limits.memory` attribute in the [Deploy Specification](deploy.md#memory).
+@y
+When set, `mem_limit` must be consistent with the `limits.memory` attribute in the [Deploy Specification](deploy.md#memory).
 @z
 
 @x
@@ -1939,9 +1955,15 @@ _DEPRECATED: use [deploy.limits.memory](deploy.md#memory)_
 @z
 
 @x
-_DEPRECATED: use [deploy.reservations.memory](deploy.md#memory)_
+`mem_reservation` configures a reservation on the amount of memory a container can allocate, set as a string expressing a [byte value](11-extension.md#specifying-byte-values).
 @y
-_DEPRECATED: use [deploy.reservations.memory](deploy.md#memory)_
+`mem_reservation` configures a reservation on the amount of memory a container can allocate, set as a string expressing a [byte value](11-extension.md#specifying-byte-values).
+@z
+
+@x
+When set, `mem_reservation` must be consistent with the `reservations.memory` attribute in the [Deploy Specification](deploy.md#memory).
+@y
+When set, `mem_reservation` must be consistent with the `reservations.memory` attribute in the [Deploy Specification](deploy.md#memory).
 @z
 
 @x
@@ -2222,12 +2244,6 @@ Supported values are platform specific.
 ## pids_limit
 @y
 ## pids_limit
-@z
-
-@x
-_DEPRECATED: use [deploy.resources.limits.pids](deploy.md#pids)_
-@y
-_DEPRECATED: use [deploy.resources.limits.pids](deploy.md#pids)_
 @z
 
 @x
@@ -2383,7 +2399,7 @@ expressed in the short form.
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
 - `host_ip`: The Host IP mapping, unspecified means all network interfaces (`0.0.0.0`).
 - `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
-- `app_protocol`: The application procotol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands.
+- `app_protocol`: The application procotol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](../release-notes.md#2260).
 - `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
 - `name`: A human-readable name for the port, used to document it's usage within the service.
 @y
@@ -2391,7 +2407,7 @@ expressed in the short form.
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
 - `host_ip`: The Host IP mapping, unspecified means all network interfaces (`0.0.0.0`).
 - `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
-- `app_protocol`: The application procotol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands.
+- `app_protocol`: The application procotol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](../release-notes.md#2260).
 - `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
 - `name`: A human-readable name for the port, used to document it's usage within the service.
 @z
@@ -3003,9 +3019,10 @@ expressed in the short form.
   - `selinux`: The SELinux re-labeling option `z` (shared) or `Z` (private)
 - `volume`: Configures additional volume options:
   - `nocopy`: Flag to disable copying of data from a container when a volume is created.
+  - `subpath`: Path inside a volume to mount instead of the volume root.
 - `tmpfs`: Configures additional tmpfs options:
   - `size`: The size for the tmpfs mount in bytes (either numeric or as bytes unit).
-  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number.
+  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](../release-notes.md#2260).
 - `consistency`: The consistency requirements of the mount. Available values are platform specific.
 @y
 - `type`: The mount type. Either `volume`, `bind`, `tmpfs`, `npipe`, or `cluster`
@@ -3022,9 +3039,10 @@ expressed in the short form.
   - `selinux`: The SELinux re-labeling option `z` (shared) or `Z` (private)
 - `volume`: Configures additional volume options:
   - `nocopy`: Flag to disable copying of data from a container when a volume is created.
+  - `subpath`: Path inside a volume to mount instead of the volume root.
 - `tmpfs`: Configures additional tmpfs options:
   - `size`: The size for the tmpfs mount in bytes (either numeric or as bytes unit).
-  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number.
+  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](../release-notes.md#2260).
 - `consistency`: The consistency requirements of the mount. Available values are platform specific.
 @z
 

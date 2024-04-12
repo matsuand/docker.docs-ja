@@ -388,19 +388,19 @@ results through a different lens: the Docker Scout Dashboard.
 @x
 1. Open the [Docker Scout Dashboard](https://scout.docker.com/).
 2. Sign in with your Docker account.
-3. Go to the **Images** tab.
+3. Select **Images** in the left-hand navigation.
 @y
 1. Open the [Docker Scout Dashboard](https://scout.docker.com/).
 2. Sign in with your Docker account.
-3. Go to the **Images** tab.
+3. Select **Images** in the left-hand navigation.
 @z
 
 @x
-The images tab lists your Scout-enabled repositories.
+The images page lists your Scout-enabled repositories.
 Select the image in the list to open the **Image details** sidebar.
 The sidebar shows a compliance overview for the last pushed tag of a repository.
 @y
-The images tab lists your Scout-enabled repositories.
+The images page lists your Scout-enabled repositories.
 Select the image in the list to open the **Image details** sidebar.
 The sidebar shows a compliance overview for the last pushed tag of a repository.
 @z
