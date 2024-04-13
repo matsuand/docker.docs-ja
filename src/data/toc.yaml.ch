@@ -4994,8 +4994,14 @@ Manuals:
   section:
   - path: /trusted-content/
     title: Overview
-  - path: /trusted-content/official-images/
-    title: Docker Official images
+  - sectiontitle: Docker Official Images
+    section:
+    - path: /trusted-content/official-images/
+      title: Overview
+    - path: /trusted-content/official-images/using/
+      title: Using official images
+    - path: /trusted-content/official-images/contributing/
+      title: Contributing
   - path: /trusted-content/dvp-program/
     title: Docker Verified Publisher Program
   - path: /trusted-content/dsos-program/
@@ -5006,9 +5012,15 @@ Manuals:
 - sectiontitle: Trusted content
   section:
   - path: __SUBDIR__/trusted-content/
-    title: Overview
-  - path: __SUBDIR__/trusted-content/official-images/
-    title: Docker Official images
+    title: 概要
+  - sectiontitle: Docker 公式イメージ
+    section:
+    - path: __SUBDIR__/trusted-content/official-images/
+      title: 概要
+    - path: __SUBDIR__/trusted-content/official-images/using/
+      title: 公式イメージの利用
+    - path: __SUBDIR__/trusted-content/official-images/contributing/
+      title: 貢献
   - path: __SUBDIR__/trusted-content/dvp-program/
     title: Docker Verified Publisher Program
   - path: __SUBDIR__/trusted-content/dsos-program/
@@ -5026,11 +5038,11 @@ Manuals:
   title: Product release lifecycle
 @y
 - path: __SUBDIR__/release-notes/
-  title: Release notes
+  title: リリースノート
 - path: __SUBDIR__/support/
-  title: Get support
+  title: サポート
 - path: __SUBDIR__/release-lifecycle/
-  title: Product release lifecycle
+  title: 製品リリースのライフサイクル
 @z
 
 @x
@@ -5076,7 +5088,7 @@ FAQ:
     - path: __SUBDIR__/desktop/faqs/linuxfaqs/
       title: Linux
     - path: __SUBDIR__/desktop/faqs/releases/
-      title: Releases
+      title: リリース
 @z
 
 @x
@@ -5104,7 +5116,7 @@ FAQ:
     title: Subscription
 @y
   - path: __SUBDIR__/subscription/faq/
-    title: Subscription
+    title: サブスクリプション
 @z
 
 @x

@@ -2,11 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-> **Beta**
+> **Beta feature**
 >
-> Docker Debug is currently in [Beta](../../../release-lifecycle.md#beta). Docker recommends that you do not use this in production environments.
+> Docker Debug is currently in [Beta](../../../release-lifecycle.md#beta).
 @y
-> **Beta**
+> **ベータ機能**
 >
-> Docker Debug is currently in [Beta](../../../release-lifecycle.md#beta). Docker recommends that you do not use this in production environments.
+> Docker Debug は現時点において [ベータ機能](../../../release-lifecycle.md#beta) です。
 @z

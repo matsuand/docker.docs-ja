@@ -229,16 +229,14 @@ and select the **System default** option under **Choose your terminal**.
 @z
 
 @x
-> **Beta**
+> **Beta feature**
 >
-> The debug mode feature is in [Beta](../../release-lifecycle.md/#beta). Docker
-> recommends that you don't use this feature in production environments.
+> The debug mode feature is currently in [Beta](../../release-lifecycle.md/#beta).
 { .experimental }
 @y
-> **Beta**
+> **Beta feature**
 >
-> The debug mode feature is in [Beta](../../release-lifecycle.md/#beta). Docker
-> recommends that you don't use this feature in production environments.
+> The debug mode feature is currently in [Beta](../../release-lifecycle.md/#beta).
 { .experimental }
 @z
 

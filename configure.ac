@@ -267,6 +267,7 @@ AC_CONFIG_FILES([
 	src/content/subscription/images/Makefile
 	src/content/trusted-content/Makefile
 	src/content/trusted-content/images/Makefile
+	src/content/trusted-content/official-images/Makefile
 	src/data/Makefile
 	src/data/buildx/Makefile
 	src/data/debug-cli/Makefile

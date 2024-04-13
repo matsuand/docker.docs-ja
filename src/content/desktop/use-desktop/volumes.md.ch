@@ -254,16 +254,14 @@ To empty a volume:
 @z
 
 @x
-> **Beta**
+> **Beta feature**
 >
-> The export volume feature is in [Beta](../../release-lifecycle.md/#beta).
-> Docker recommends that you don't use this feature in production environments.
+> The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
 { .experimental }
 @y
-> **Beta**
+> **Beta feature**
 >
-> The export volume feature is in [Beta](../../release-lifecycle.md/#beta).
-> Docker recommends that you don't use this feature in production environments.
+> The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
 { .experimental }
 @z
 
@@ -332,16 +330,14 @@ To export a volume:
 @z
 
 @x
-> **Beta**
+> **Beta feature**
 >
-> The import volume feature is in [Beta](../../release-lifecycle.md/#beta).
-> Docker recommends that you don't use this feature in production environments.
+> The import volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
 { .experimental }
 @y
-> **Beta**
+> **Beta feature**
 >
-> The import volume feature is in [Beta](../../release-lifecycle.md/#beta).
-> Docker recommends that you don't use this feature in production environments.
+> The import volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
 { .experimental }
 @z
 

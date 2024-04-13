@@ -48,7 +48,7 @@ it small.
 
 @x
 Docker Hub has more than 8.3 million repositories. Some of these images are
-[Official Images](../trusted-content/official-images.md), which are published by
+[Official Images](../trusted-content/official-images/_index.md), which are published by
 Docker as a curated set of Docker open source and drop-in solution repositories.
 Docker also offers images that are published by
 [Verified Publishers](../trusted-content/dvp-program.md). These high-quality images
@@ -58,7 +58,7 @@ pick your base image, look out for the **Official Image** and **Verified Publish
 badges.
 @y
 Docker Hub には 830 万を超えるリポジトリが存在しています。
-その中には [公式イメージ](../trusted-content/official-images.md) を提供しているものがあります。
+その中には [公式イメージ](../trusted-content/official-images/_index.md) を提供しているものがあります。
 これは Docker が提供する公開オープンソースであり、気軽に利用できるリポジトリです。
 Docker ではさらに [検証済公開者](../trusted-content/dvp-program.md) が構築するイメージも提供しています。
 そのイメージは高品質なものであり、Docker と共同開発を行う組織が公開および保守を行っています。
