@@ -27,12 +27,6 @@ usage: docker scout cache prune
 
 % options:
 
-@x epss
-      description: Prune cached EPSS scores
-@y
-      description: Prune cached EPSS scores
-@z
-
 @x force
       description: Do not prompt for confirmation
 @y

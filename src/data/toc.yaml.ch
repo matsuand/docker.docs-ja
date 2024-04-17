@@ -1500,6 +1500,8 @@ Reference:
 @x
     - path: /reference/cli/docker/scout/policy/
       title: docker scout policy
+    - path: /reference/cli/docker/scout/push/
+      title: docker scout push
     - path: /reference/cli/docker/scout/quickview/
       title: docker scout quickview
     - path: /reference/cli/docker/scout/recommendations/
@@ -1511,6 +1513,8 @@ Reference:
 @y
     - path: __SUBDIR__/reference/cli/docker/scout/policy/
       title: docker scout policy
+    - path: __SUBDIR__/reference/cli/docker/scout/push/
+      title: docker scout push
     - path: __SUBDIR__/reference/cli/docker/scout/quickview/
       title: docker scout quickview
     - path: __SUBDIR__/reference/cli/docker/scout/recommendations/

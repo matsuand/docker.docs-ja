@@ -44,6 +44,8 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/compose/v2/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/reference/Makefile
+	src/_vendor/github.com/docker/scout-cli/Makefile
+	src/_vendor/github.com/docker/scout-cli/docs/Makefile
 	src/_vendor/github.com/moby/Makefile
 	src/_vendor/github.com/moby/buildkit/Makefile
 	src/_vendor/github.com/moby/buildkit/docs/Makefile

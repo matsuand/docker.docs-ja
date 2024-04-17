@@ -38,6 +38,15 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: platform
+      value_type: string
+      description: Platform of image to be pushed
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: sbom
       value_type: bool
       default_value: "false"
@@ -111,6 +120,15 @@ options:
       shorthand: o
       value_type: string
       description: Write the report to a file
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: platform
+      value_type: string
+      description: Platform of image to be pushed
       deprecated: false
       hidden: false
       experimental: false

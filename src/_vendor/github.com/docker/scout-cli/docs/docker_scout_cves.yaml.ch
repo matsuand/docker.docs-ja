@@ -109,12 +109,6 @@ usage: docker scout cves [OPTIONS] [IMAGE|DIRECTORY|ARCHIVE]
         Display the EPSS scores and organize the package's CVEs according to their EPSS score
 @z
 
-@x epss-date
-      description: Date to use for EPSS scores
-@y
-      description: Date to use for EPSS scores
-@z
-
 @x epss-percentile
       description: |
         Exclude CVEs with EPSS scores less than the specified percentile (0 to 1)
@@ -138,9 +132,21 @@ usage: docker scout cves [OPTIONS] [IMAGE|DIRECTORY|ARCHIVE]
 @z
 
 @x format
-      description: "Output format of the generated vulnerability report:\n- packages: default output, plain text with vulnerabilities grouped by packages\n- sarif: json Sarif output\n- spdx: json SPDX output \n- markdown: markdown output (including some html tags like collapsible sections)\n- sbom: json SBOM output"
+      description: |-
+        Output format of the generated vulnerability report:
+        - packages: default output, plain text with vulnerabilities grouped by packages
+        - sarif: json Sarif output
+        - spdx: json SPDX output
+        - markdown: markdown output (including some html tags like collapsible sections)
+        - sbom: json SBOM output
 @y
-      description: "Output format of the generated vulnerability report:\n- packages: default output, plain text with vulnerabilities grouped by packages\n- sarif: json Sarif output\n- spdx: json SPDX output \n- markdown: markdown output (including some html tags like collapsible sections)\n- sbom: json SBOM output"
+      description: |-
+        Output format of the generated vulnerability report:
+        - packages: default output, plain text with vulnerabilities grouped by packages
+        - sarif: json Sarif output
+        - spdx: json SPDX output
+        - markdown: markdown output (including some html tags like collapsible sections)
+        - sbom: json SBOM output
 @z
 
 @x ignore-base

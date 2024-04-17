@@ -11,6 +11,7 @@ copyfiles = \
 	enroll.md          \
 	environment.md     \
 	policy.md          \
+	push.md            \
 	quickview.md       \
 	recommendations.md \
 	sbom.md            \

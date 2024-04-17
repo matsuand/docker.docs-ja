@@ -26,6 +26,62 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 @z
 
 @x
+## 1.7.0
+@y
+## 1.7.0
+@z
+
+@x
+{{< release-date date="2024-04-15" >}}
+@y
+{{< release-date date="2024-04-15" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- The [`docker scout push` command](/reference/cli/docker/scout/push/) is now fully available: analyze images locally and push the SBOM to Docker Scout.
+@y
+- The [`docker scout push` command](/reference/cli/docker/scout/push/) is now fully available: analyze images locally and push the SBOM to Docker Scout.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix adding attestations with `docker scout attestation add` to images in private repositories
+- Fix image processing for images based on the empty `scratch` base image
+- A new `sbom://` protocol for Docker Scout CLI commands let you read a Docker Scout SBOM from standard input.
+@y
+- Fix adding attestations with `docker scout attestation add` to images in private repositories
+- Fix image processing for images based on the empty `scratch` base image
+- A new `sbom://` protocol for Docker Scout CLI commands let you read a Docker Scout SBOM from standard input.
+@z
+
+@x
+  ```console
+  $ docker scout sbom IMAGE | docker scout qv sbom://
+  ```
+@y
+  ```console
+  $ docker scout sbom IMAGE | docker scout qv sbom://
+  ```
+@z
+
+@x
+- Add classifier for Joomla packages
+@y
+- Add classifier for Joomla packages
+@z
+
+@x
 ## 1.6.4
 @y
 ## 1.6.4
@@ -38,15 +94,15 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 @z
 
 @x
-### Bug fix
+### Bug fixes and enhancements
 @y
-### Bug fix
+### Bug fixes and enhancements
 @z
 
 @x
-- Fix epoch handling for rpm-based images.
+- Fix epoch handling for RPM-based Linux distributions
 @y
-- Fix epoch handling for rpm-based images.
+- Fix epoch handling for RPM-based Linux distributions
 @z
 
 @x

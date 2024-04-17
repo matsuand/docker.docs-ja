@@ -37,7 +37,7 @@ For many projects, this allows for a hands-off development workflow once Compose
 * Directories are watched recursively
 * Glob patterns aren't supported
 * Rules from `.dockerignore` apply
-  * Use `ignore` to defined additional paths to be ignored (same syntax)
+  * Use `ignore` option to define additional paths to be ignored (same syntax)
   * Temporary/backup files for common IDEs (Vim, Emacs, JetBrains, & more) are ignored automatically
   * `.git` directories are ignored automatically
 @y
@@ -46,7 +46,7 @@ For many projects, this allows for a hands-off development workflow once Compose
 * Directories are watched recursively
 * Glob patterns aren't supported
 * Rules from `.dockerignore` apply
-  * Use `ignore` to defined additional paths to be ignored (same syntax)
+  * Use `ignore` option to define additional paths to be ignored (same syntax)
   * Temporary/backup files for common IDEs (Vim, Emacs, JetBrains, & more) are ignored automatically
   * `.git` directories are ignored automatically
 @z
@@ -113,10 +113,10 @@ the `action`, additional fields might be accepted or required.
 
 @x
 Watch mode can be used with many different languages and frameworks.
-The specific paths and rules will vary project to project, but the concepts remain the same. 
+The specific paths and rules will vary from project to project, but the concepts remain the same. 
 @y
 Watch mode can be used with many different languages and frameworks.
-The specific paths and rules will vary project to project, but the concepts remain the same. 
+The specific paths and rules will vary from project to project, but the concepts remain the same. 
 @z
 
 @x

@@ -244,27 +244,15 @@ To view a team's permissions across all repositories:
 @z
 
 @x
-## Videos
+## More resources
 @y
-## Videos
+## More resources
 @z
 
 @x
-You can also check out the following videos for information about creating Teams
-and Organizations in Docker Hub.
+- [Video: Docker teams](https://youtu.be/WKlT1O-4Du8?feature=shared&t=348)
+- [Video: Roles, teams, and repositories](https://youtu.be/WKlT1O-4Du8?feature=shared&t=435)
 @y
-You can also check out the following videos for information about creating Teams
-and Organizations in Docker Hub.
-@z
-
-@x
-- [Overview of organizations](https://www.youtube-nocookie.com/embed/G7lvSnAqed8)
-- [Create an organization](https://www.youtube-nocookie.com/embed/b0TKcIqa9Po)
-- [Working with Teams](https://www.youtube-nocookie.com/embed/MROKmtmWCVI)
-- [Create Teams](https://www.youtube-nocookie.com/embed/78wbbBoasIc)
-@y
-- [Overview of organizations](https://www.youtube-nocookie.com/embed/G7lvSnAqed8)
-- [Create an organization](https://www.youtube-nocookie.com/embed/b0TKcIqa9Po)
-- [Working with Teams](https://www.youtube-nocookie.com/embed/MROKmtmWCVI)
-- [Create Teams](https://www.youtube-nocookie.com/embed/78wbbBoasIc)
+- [Video: Docker teams](https://youtu.be/WKlT1O-4Du8?feature=shared&t=348)
+- [Video: Roles, teams, and repositories](https://youtu.be/WKlT1O-4Du8?feature=shared&t=435)
 @z

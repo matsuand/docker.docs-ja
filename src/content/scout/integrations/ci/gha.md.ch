@@ -138,106 +138,106 @@ jobs:
 @z
 
 @x
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
-    with:
-      ref: ${{ env.SHA }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SHA }}
 @y
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
-    with:
-      ref: ${{ env.SHA }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SHA }}
 @z
 
 @x
-  - name: Setup Docker buildx
-    uses: docker/setup-buildx-action@v3
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
 @y
-  - name: Setup Docker buildx
-    uses: docker/setup-buildx-action@v3
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
 @z
 
 @x
-  # Authenticate to the container registry
-  - name: Authenticate to registry ${{ env.REGISTRY }}
-    uses: docker/login-action@v3
-    with:
-      registry: ${{ env.REGISTRY }}
-      username: ${{ secrets.REGISTRY_USER }}
-      password: ${{ secrets.REGISTRY_TOKEN }}
+      # Authenticate to the container registry
+      - name: Authenticate to registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
 @y
-  # Authenticate to the container registry
-  - name: Authenticate to registry ${{ env.REGISTRY }}
-    uses: docker/login-action@v3
-    with:
-      registry: ${{ env.REGISTRY }}
-      username: ${{ secrets.REGISTRY_USER }}
-      password: ${{ secrets.REGISTRY_TOKEN }}
+      # Authenticate to the container registry
+      - name: Authenticate to registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
 @z
 
 @x
-  # Extract metadata (tags, labels) for Docker
-  - name: Extract Docker metadata
-    id: meta
-    uses: docker/metadata-action@v5
-    with:
-      images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-      labels: |
-        org.opencontainers.image.revision=${{ env.SHA }}
-      tags: |
-        type=edge,branch=$repo.default_branch
-        type=semver,pattern=v{{version}}
-        type=sha,prefix=,suffix=,format=short
+      # Extract metadata (tags, labels) for Docker
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          labels: |
+            org.opencontainers.image.revision=${{ env.SHA }}
+          tags: |
+            type=edge,branch=$repo.default_branch
+            type=semver,pattern=v{{version}}
+            type=sha,prefix=,suffix=,format=short
 @y
-  # Extract metadata (tags, labels) for Docker
-  - name: Extract Docker metadata
-    id: meta
-    uses: docker/metadata-action@v5
-    with:
-      images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-      labels: |
-        org.opencontainers.image.revision=${{ env.SHA }}
-      tags: |
-        type=edge,branch=$repo.default_branch
-        type=semver,pattern=v{{version}}
-        type=sha,prefix=,suffix=,format=short
+      # Extract metadata (tags, labels) for Docker
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          labels: |
+            org.opencontainers.image.revision=${{ env.SHA }}
+          tags: |
+            type=edge,branch=$repo.default_branch
+            type=semver,pattern=v{{version}}
+            type=sha,prefix=,suffix=,format=short
 @z
 
 @x
-  # Build and push Docker image with Buildx
-  # (don't push on PR, load instead)
-  - name: Build and push Docker image
-    id: build-and-push
-    uses: docker/build-push-action@v5
-    with:
-      context: .
-      sbom: ${{ github.event_name != 'pull_request' }}
-      provenance: ${{ github.event_name != 'pull_request' }}
-      push: ${{ github.event_name != 'pull_request' }}
-      load: ${{ github.event_name == 'pull_request' }}
-      tags: ${{ steps.meta.outputs.tags }}
-      labels: ${{ steps.meta.outputs.labels }}
-      cache-from: type=gha
-      cache-to: type=gha,mode=max
+      # Build and push Docker image with Buildx
+      # (don't push on PR, load instead)
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          sbom: ${{ github.event_name != 'pull_request' }}
+          provenance: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name != 'pull_request' }}
+          load: ${{ github.event_name == 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 ```
 @y
-  # Build and push Docker image with Buildx
-  # (don't push on PR, load instead)
-  - name: Build and push Docker image
-    id: build-and-push
-    uses: docker/build-push-action@v5
-    with:
-      context: .
-      sbom: ${{ github.event_name != 'pull_request' }}
-      provenance: ${{ github.event_name != 'pull_request' }}
-      push: ${{ github.event_name != 'pull_request' }}
-      load: ${{ github.event_name == 'pull_request' }}
-      tags: ${{ steps.meta.outputs.tags }}
-      labels: ${{ steps.meta.outputs.labels }}
-      cache-from: type=gha
-      cache-to: type=gha,mode=max
+      # Build and push Docker image with Buildx
+      # (don't push on PR, load instead)
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          sbom: ${{ github.event_name != 'pull_request' }}
+          provenance: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name != 'pull_request' }}
+          load: ${{ github.event_name == 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 ```
 @z
 
@@ -295,51 +295,51 @@ image comparison:
 
 @x
 ```yaml
-# You can skip this step if Docker Hub is your registry
-# and you already authenticated before
-- name: Authenticate to Docker
-  uses: docker/login-action@v3
-  with:
-    username: ${{ secrets.DOCKER_USER }}
-    password: ${{ secrets.DOCKER_PAT }}
+      # You can skip this step if Docker Hub is your registry
+      # and you already authenticated before
+      - name: Authenticate to Docker
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PAT }}
 @y
 ```yaml
-# You can skip this step if Docker Hub is your registry
-# and you already authenticated before
-- name: Authenticate to Docker
-  uses: docker/login-action@v3
-  with:
-    username: ${{ secrets.DOCKER_USER }}
-    password: ${{ secrets.DOCKER_PAT }}
+      # You can skip this step if Docker Hub is your registry
+      # and you already authenticated before
+      - name: Authenticate to Docker
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PAT }}
 @z
 
 @x
-# Compare the image built in the pull request with the one in production
-- name: Docker Scout
-  id: docker-scout
-  if: ${{ github.event_name == 'pull_request' }}
-  uses: docker/scout-action@v1
-  with:
-    command: compare
-    image: ${{ steps.meta.outputs.tags }}
-    to-env: production
-    ignore-unchanged: true
-    only-severities: critical,high
-    github-token: ${{ secrets.GITHUB_TOKEN }}
+      # Compare the image built in the pull request with the one in production
+      - name: Docker Scout
+        id: docker-scout
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: docker/scout-action@v1
+        with:
+          command: compare
+          image: ${{ steps.meta.outputs.tags }}
+          to-env: production
+          ignore-unchanged: true
+          only-severities: critical,high
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 @y
-# Compare the image built in the pull request with the one in production
-- name: Docker Scout
-  id: docker-scout
-  if: ${{ github.event_name == 'pull_request' }}
-  uses: docker/scout-action@v1
-  with:
-    command: compare
-    image: ${{ steps.meta.outputs.tags }}
-    to-env: production
-    ignore-unchanged: true
-    only-severities: critical,high
-    github-token: ${{ secrets.GITHUB_TOKEN }}
+      # Compare the image built in the pull request with the one in production
+      - name: Docker Scout
+        id: docker-scout
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: docker/scout-action@v1
+        with:
+          command: compare
+          image: ${{ steps.meta.outputs.tags }}
+          to-env: production
+          ignore-unchanged: true
+          only-severities: critical,high
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 @z
 
