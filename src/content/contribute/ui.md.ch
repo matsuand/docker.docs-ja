@@ -75,9 +75,13 @@ When practical, state instructions in terms of what the user should accomplish, 
 
 @x
 ## Refer to UI elements
-Don't use UI elements as if they were English verbs or nouns.
 @y
 ## Refer to UI elements
+@z
+
+@x
+Don't use UI elements as if they were English verbs or nouns.
+@y
 Don't use UI elements as if they were English verbs or nouns.
 @z
 

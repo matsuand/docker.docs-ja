@@ -204,6 +204,34 @@ Guides:
 @z
 
 @x
+  - sectiontitle: R
+    section:
+    - title: "Overview"
+      path: /language/r/
+    - title: "Containerize your app"
+      path: /language/r/containerize/
+    - title: "Develop your app"
+      path: /language/r/develop/
+    - title: "Configure CI/CD"
+      path: /language/r/configure-ci-cd/
+    - title: "Test your deployment"
+      path: /language/r/deploy/
+@y
+  - sectiontitle: R
+    section:
+    - title: "概要"
+      path: __SUBDIR__/language/r/
+    - title: "アプリのコンテナー化"
+      path: __SUBDIR__/language/r/containerize/
+    - title: "アプリの開発"
+      path: __SUBDIR__/language/r/develop/
+    - title: "CI/CD の設定"
+      path: __SUBDIR__/language/r/configure-ci-cd/
+    - title: "デプロイのテスト"
+      path: __SUBDIR__/language/r/deploy/
+@z
+
+@x
   - sectiontitle: Java
     section:
     - title: "Overview"

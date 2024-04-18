@@ -1546,9 +1546,13 @@ An alias of the form `SERVICE:ALIAS` can be specified.
 
 @x
 ### Short syntax
-Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME=IP`.
 @y
 ### Short syntax
+@z
+
+@x
+Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME=IP`.
+@y
 Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME=IP`.
 @z
 
@@ -1572,9 +1576,13 @@ The separator `=` is preferred, but `:` can also be used. Introduced in Docker C
 
 @x
 ### Long syntax
-Alternatively, `extra_hosts` can be set as a mapping between hostname(s) and IP(s)
 @y
 ### Long syntax
+@z
+
+@x
+Alternatively, `extra_hosts` can be set as a mapping between hostname(s) and IP(s)
+@y
 Alternatively, `extra_hosts` can be set as a mapping between hostname(s) and IP(s)
 @z
 

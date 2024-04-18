@@ -214,11 +214,15 @@ The following `admin-settings.json` code and table provides an example of the re
 
 @x
 ### Step three: Re-launch Docker Desktop
+@y
+### Step three: Re-launch Docker Desktop
+@z
+
+@x
 >**Note**
 >
 >Administrators should test the changes made through the `admin-settings.json` file locally to see if the settings work as expected.
 @y
-### Step three: Re-launch Docker Desktop
 >**Note**
 >
 >Administrators should test the changes made through the `admin-settings.json` file locally to see if the settings work as expected.

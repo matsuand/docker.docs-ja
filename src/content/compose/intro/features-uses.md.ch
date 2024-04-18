@@ -171,11 +171,15 @@ For details on using production-oriented features, see
 
 @x
 ## What's next?
+@y
+## What's next?
+@z
+
+@x
 - [Learn about the history of Compose](history.md)
 - [Understand how Compose works](../compose-application-model.md)
 - [Try Compose](../gettingstarted.md)
 @y
-## What's next?
 - [Learn about the history of Compose](history.md)
 - [Understand how Compose works](../compose-application-model.md)
 - [Try Compose](../gettingstarted.md)

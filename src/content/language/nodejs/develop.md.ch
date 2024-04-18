@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 title: Use containers for Node.js development
 keywords: node, node.js, development
 description: Learn how to develop your Node.js application locally using containers.
-aliases:
-- /get-started/nodejs/develop/
----
 @y
----
 title: コンテナーを利用した Node.js 開発
 keywords: node, node.js, development
 description: Learn how to develop your Node.js application locally using containers.
-aliases:
-- /get-started/nodejs/develop/
----
 @z
 
 @x

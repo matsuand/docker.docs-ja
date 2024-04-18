@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Run the Docker daemon as a non-root user (Rootless mode)
 keywords: security, namespaces, rootless
 title: Run the Docker daemon as a non-root user (Rootless mode)
----
 @y
----
 description: Run the Docker daemon as a non-root user (Rootless mode)
 keywords: security, namespaces, rootless
 title: Run the Docker daemon as a non-root user (Rootless mode)
----
 @z
 
 @x
@@ -399,6 +395,11 @@ testuser:231072:65536
 
 @x
 ## Install
+@y
+## Install
+@z
+
+@x
 > **Note**
 >
 > If the system-wide Docker daemon is already running, consider disabling it:
@@ -406,7 +407,6 @@ testuser:231072:65536
 >$ sudo systemctl disable --now docker.service docker.socket
 >```
 @y
-## Install
 > **Note**
 >
 > If the system-wide Docker daemon is already running, consider disabling it:
@@ -955,11 +955,15 @@ Or add `net.ipv4.ip_unprivileged_port_start=0` to `/etc/sysctl.conf` (or
 
 @x
 ### Limiting resources
-Limiting resources with cgroup-related `docker run` flags such as `--cpus`, `--memory`, `--pids-limit`
-is supported only when running with cgroup v2 and systemd.
-See [Changing cgroup version](../../config/containers/runmetrics.md) to enable cgroup v2.
 @y
 ### Limiting resources
+@z
+
+@x
+Limiting resources with cgroup-related `docker run` flags such as `--cpus`, `--memory`, `--pids-limit`
+is supported only when running with cgroup v2 and systemd.
+See [Changing cgroup version](../../config/containers/runmetrics.md) to enable cgroup v2.
+@y
 Limiting resources with cgroup-related `docker run` flags such as `--cpus`, `--memory`, `--pids-limit`
 is supported only when running with cgroup v2 and systemd.
 See [Changing cgroup version](../../config/containers/runmetrics.md) to enable cgroup v2.
@@ -1033,11 +1037,15 @@ EOF
 
 @x
 #### Limiting resources without cgroup
-Even when cgroup is not available, you can still use the traditional `ulimit` and [`cpulimit`](https://github.com/opsengine/cpulimit),
-though they work in process-granularity rather than in container-granularity,
-and can be arbitrarily disabled by the container process.
 @y
 #### Limiting resources without cgroup
+@z
+
+@x
+Even when cgroup is not available, you can still use the traditional `ulimit` and [`cpulimit`](https://github.com/opsengine/cpulimit),
+though they work in process-granularity rather than in container-granularity,
+and can be arbitrarily disabled by the container process.
+@y
 Even when cgroup is not available, you can still use the traditional `ulimit` and [`cpulimit`](https://github.com/opsengine/cpulimit),
 though they work in process-granularity rather than in container-granularity,
 and can be arbitrarily disabled by the container process.
@@ -1765,9 +1773,13 @@ For more information about networking options for RootlessKit, see:
 
 @x
 ### Tips for debugging
-**Entering into `dockerd` namespaces**
 @y
 ### Tips for debugging
+@z
+
+@x
+**Entering into `dockerd` namespaces**
+@y
 **Entering into `dockerd` namespaces**
 @z
 

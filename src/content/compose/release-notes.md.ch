@@ -4,23 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Docker Compose release notes
 description: Release notes for Docker Compose
 keywords: release notes, compose
-toc_max: 2
-aliases:
-- /release-notes/docker-compose/
----
 @y
----
 title: Docker Compose リリースノート
 description: Docker Compose のリリースノート。
 keywords: release notes, compose
-toc_max: 2
-aliases:
-- /release-notes/docker-compose/
----
 @z
 
 @x
@@ -36,20 +26,288 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.26.0
+@y
+## 2.26.0
+@z
+
+@x
+{{< release-date date="2024-03-29" >}}
+@y
+{{< release-date date="2024-03-29" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: opencontainers/image-spec v1.1.0
+@y
+- 依存パッケージの更新: opencontainers/image-spec v1.1.0
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added image pull failure reason in output
+- Fixed crash when running up with `--no-build` and `--watch`
+- Fixed crash when no TTY available and menu enabled
+- Improved legibility of menu actions
+@y
+- Added image pull failure reason in output
+- Fixed crash when running up with `--no-build` and `--watch`
+- Fixed crash when no TTY available and menu enabled
+- Improved legibility of menu actions
+@z
+
+@x
+## 2.26.0
+@y
+## 2.26.0
+@z
+
+@x
+{{< release-date date="2024-03-22" >}}
+@y
+{{< release-date date="2024-03-22" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go v2.0.2
+- Dependencies upgrade: bump docker v26.0.0
+@y
+- 依存パッケージの更新: compose-go v2.0.2
+- 依存パッケージの更新: docker v26.0.0
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Reduced timeout of the Otel tracing command
+- Fixed `config --format json`
+- Fixed documentation on default build image name
+- Introduced Synchronized file shares for bind mounts in Compose
+- Added support for `annotations`
+- Introduced `config --variables` to list Compose model variables
+- Added a navigation menu within `docker compose up`
+@y
+- Reduced timeout of the Otel tracing command
+- Fixed `config --format json`
+- Fixed documentation on default build image name
+- Introduced Synchronized file shares for bind mounts in Compose
+- Added support for `annotations`
+- Introduced `config --variables` to list Compose model variables
+- Added a navigation menu within `docker compose up`
+@z
+
+@x
+## 2.25.0
+@y
+## 2.25.0
+@z
+
+@x
+{{< release-date date="2024-03-15" >}}
+@y
+{{< release-date date="2024-03-15" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go v2.0.0
+@y
+- 依存パッケージの更新: compose-go v2.0.0
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Restored `config` hebaviour until `--no-interpolate` is set
+- Fixed service name shell completion
+- Added `--watch` flag to `up` command
+@y
+- Restored `config` hebaviour until `--no-interpolate` is set
+- Fixed service name shell completion
+- Added `--watch` flag to `up` command
+@z
+
+@x
+## 2.24.7
+@y
+## 2.24.7
+@z
+
+@x
+{{< release-date date="2024-03-06" >}}
+@y
+{{< release-date date="2024-03-06" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump golang to 1.21.8
+- Dependencies upgrade: bump compose-go to 2.0.0-rc8
+- Dependencies upgrade: bump docker to v24.0.4
+@y
+- 依存パッケージの更新: golang 1.21.8
+- 依存パッケージの更新: compose-go 2.0.0-rc8
+- 依存パッケージの更新: docker v24.0.4
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Compose now ensures stable priority sort order for networks 
+- Fixed interpolation with curly braces (e.g. JSON) in default values 
+- Fixed validation for non-unique `container_name` values
+- Fixed validation for `develop.watch`
+- Fixed environment loading for `include`
+- Fixed panic when merging labels/networks
+- Added support for `--no-path-resolution` when using `include`
+- Fixed missing project name errors
+- Fixed `--no-interpolate` flag on `config`
+- Added a workaround for file lock issues with Watch mode on Windows
+- Fixed duplicate exit code status messages
+- Compose now respects `COMPOSE_REMOVE_ORPHANS` on `up`
+@y
+- Compose now ensures stable priority sort order for networks 
+- Fixed interpolation with curly braces (e.g. JSON) in default values 
+- Fixed validation for non-unique `container_name` values
+- Fixed validation for `develop.watch`
+- Fixed environment loading for `include`
+- Fixed panic when merging labels/networks
+- Added support for `--no-path-resolution` when using `include`
+- Fixed missing project name errors
+- Fixed `--no-interpolate` flag on `config`
+- Added a workaround for file lock issues with Watch mode on Windows
+- Fixed duplicate exit code status messages
+- Compose now respects `COMPOSE_REMOVE_ORPHANS` on `up`
+@z
+
+@x
+## 2.24.6
+@y
+## 2.24.6
+@z
+
+@x
+{{< release-date date="2024-02-15" >}}
+@y
+{{< release-date date="2024-02-15" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump cli to 25.0.3
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.7
+@y
+- 依存パッケージの更新: cli 25.0.3
+- 依存パッケージの更新: compose-go 2.0.0-rc.7
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed issue of `.env` file loading when project file is set via `COMPOSE_FILE` variable
+- Aligned `ps --status=exited` behaviour with the Docker CLI behaviour
+- Fixed a deadlock when collecting large logs
+@y
+- Fixed issue of `.env` file loading when project file is set via `COMPOSE_FILE` variable
+- Aligned `ps --status=exited` behaviour with the Docker CLI behaviour
+- Fixed a deadlock when collecting large logs
+@z
+
+@x
+## 2.24.5
+@y
+## 2.24.5
+@z
+
+@x
+{{< release-date date="2024-01-30" >}}
+@y
+{{< release-date date="2024-01-30" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed "failed to solve: changes out of order" errors when building images on Windows.
+@y
+- Fixed "failed to solve: changes out of order" errors when building images on Windows.
+@z
+
+@x
 ## 2.24.4
-{{< release-date date="2024-01-29" >}}
 @y
 ## 2.24.4
+@z
+
+@x
+{{< release-date date="2024-01-29" >}}
+@y
 {{< release-date date="2024-01-29" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump cli to 25.0.1
 - Dependencies upgrade: bump docker to 25.0.1
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.3
 @y
-### 更新 {#update}
 - 依存パッケージの更新: cli 25.0.1
 - 依存パッケージの更新: docker 25.0.1
 - 依存パッケージの更新: compose-go 2.0.0-rc.3
@@ -57,19 +315,27 @@ For more detailed information, see the [release notes in the Compose repo](https
 
 @x
 ### Bug fixes and enhancements
-- Fixed issue when checking external network existence when swarm is enabled.
-- Added support for `storage_opt` attribute.
 @y
 ### Bug fixes and enhancements
+@z
+
+@x
+- Fixed issue when checking external network existence when swarm is enabled.
+- Added support for `storage_opt` attribute.
+@y
 - Fixed issue when checking external network existence when swarm is enabled.
 - Added support for `storage_opt` attribute.
 @z
 
 @x
 ## 2.24.3
-{{< release-date date="2024-01-24" >}}
 @y
 ## 2.24.3
+@z
+
+@x
+{{< release-date date="2024-01-24" >}}
+@y
 {{< release-date date="2024-01-24" >}}
 @z
 
@@ -81,46 +347,66 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Update
-- Compose now uses a custom version of `fsutils` library.
 @y
 ### 更新 {#update}
+@z
+
+@x
+- Compose now uses a custom version of `fsutils` library.
+@y
 - Compose now uses a custom version of `fsutils` library.
 @z
 
 @x
 ## 2.24.2
-{{< release-date date="2024-01-22" >}}
 @y
 ## 2.24.2
+@z
+
+@x
+{{< release-date date="2024-01-22" >}}
+@y
 {{< release-date date="2024-01-22" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump cli to 25.0.0 GA
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.2
 @y
-### 更新 {#update}
 - 依存パッケージの更新: cli 25.0.0 GA
 - 依存パッケージの更新: compose-go 2.0.0-rc.2
 @z
 
 @x
 ## 2.24.1
-{{< release-date date="2024-01-18" >}}
 @y
 ## 2.24.1
+@z
+
+@x
+{{< release-date date="2024-01-18" >}}
+@y
 {{< release-date date="2024-01-18" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump cli to 25.0.0-rc3
 - Dependencies upgrade: bump docker to 25.0.0-rc3
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.1
 - Dependencies upgrade: bump containerd to 1.7.12
 @y
-### 更新 {#update}
 - 依存パッケージの更新: cli 25.0.0-rc3
 - 依存パッケージの更新: docker 25.0.0-rc3
 - 依存パッケージの更新: compose-go 2.0.0-rc.1
@@ -129,12 +415,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Reworked the display of container status during `up`
 - Fixed the engine version required to use `healthcheck.start_interval`
 - Removed `watch` subcommand from the `alpha` command
 - Fixed a bug when handling received signals
 @y
-### Bug fixes and enhancements
 - Reworked the display of container status during `up`
 - Fixed the engine version required to use `healthcheck.start_interval`
 - Removed `watch` subcommand from the `alpha` command
@@ -143,19 +433,27 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.24.0
-{{< release-date date="2024-01-11" >}}
 @y
 ## 2.24.0
+@z
+
+@x
+{{< release-date date="2024-01-11" >}}
+@y
 {{< release-date date="2024-01-11" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump cli to 25.0.0-beta.3
 - Dependencies upgrade: bump compose-go to 2.0.0-beta.3
 - Dependencies upgrade: bump golang to 1.21.6 
 @y
-### 更新 {#update}
 - 依存パッケージの更新: cli 25.0.0-beta.3
 - 依存パッケージの更新: compose-go 2.0.0-beta.3
 - 依存パッケージの更新: golang 1.21.6 
@@ -163,6 +461,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Introduced `docker compose attach` to attach local standard input, output, and error streams to a service's running container.
 - Introduced `docker compose stats` to display a live stream of container(s) resource usage statistics.
 - Introduced `docker compose ps --orphans` to include/exclude services not declared.
@@ -180,7 +483,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Fixed race condition in log printer.
 - Fixed `docker compose up` teardown when command context is cancelled.
 @y
-### Bug fixes and enhancements
 - Introduced `docker compose attach` to attach local standard input, output, and error streams to a service's running container.
 - Introduced `docker compose stats` to display a live stream of container(s) resource usage statistics.
 - Introduced `docker compose ps --orphans` to include/exclude services not declared.
@@ -201,36 +503,52 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.23.3
-{{< release-date date="2023-11-22" >}}
 @y
 ## 2.23.3
+@z
+
+@x
+{{< release-date date="2023-11-22" >}}
+@y
 {{< release-date date="2023-11-22" >}}
 @z
 
 @x
 ### Update
-- Dependencies upgrade: bump buildx to v0.12.0
 @y
 ### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump buildx to v0.12.0
+@y
 - 依存パッケージの更新: buildx v0.12.0
 @z
 
 @x
 ## 2.23.2
-{{< release-date date="2023-11-21" >}}
 @y
 ## 2.23.2
+@z
+
+@x
+{{< release-date date="2023-11-21" >}}
+@y
 {{< release-date date="2023-11-21" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump buildkit 0.12.3 
 - Dependencies upgrade: bump docker 24.0.7 
 - Dependencies upgrade: bump cli 24.0.7 
 - Dependencies upgrade: bump 1.20.2
 @y
-### 更新 {#update}
 - 依存パッケージの更新: buildkit 0.12.3 
 - 依存パッケージの更新: docker 24.0.7 
 - 依存パッケージの更新: cli 24.0.7 
@@ -239,12 +557,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Compose now supports `builds.tags` with `push` command.
 - Compose Watch now re-builds service images at startup.
 - Now `--remove-orphans` doesn't manage disabled services as orphaned.
 - Compose displays `Building` output log only if there is at least one service to build.
 @y
-### Bug fixes and enhancements
 - Compose now supports `builds.tags` with `push` command.
 - Compose Watch now re-builds service images at startup.
 - Now `--remove-orphans` doesn't manage disabled services as orphaned.
@@ -253,22 +575,35 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.23.1
-{{< release-date date="2023-11-16" >}}
 @y
 ## 2.23.1
+@z
+
+@x
+{{< release-date date="2023-11-16" >}}
+@y
 {{< release-date date="2023-11-16" >}}
 @z
 
 @x
 ### Update
-- Dependencies upgrade: bump compose-go to v1.20.1
 @y
 ### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v1.20.1
+@y
 - 依存パッケージの更新: compose-go v1.20.1
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Aligned Compose with OCI artifact best practices.
 - Introduced `--resolve-image-digests` so users can seal service images by digest when publishing a Compose application.
 - Improved Compose Watch configuration logging.
@@ -282,7 +617,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Compose is rendered quiet after filtering applied.
 - Stripped project prefix from docker-compose up output.
 @y
-### Bug fixes and enhancements
 - Aligned Compose with OCI artifact best practices.
 - Introduced `--resolve-image-digests` so users can seal service images by digest when publishing a Compose application.
 - Improved Compose Watch configuration logging.
@@ -299,24 +633,37 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.23.0
-{{< release-date date="2023-10-18" >}}
 @y
 ## 2.23.0
+@z
+
+@x
+{{< release-date date="2023-10-18" >}}
+@y
 {{< release-date date="2023-10-18" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump compose-go to v1.20.0
 - Dependencies upgrade: bump containerd to 1.7.7
 @y
-### 更新 {#update}
 - 依存パッケージの更新: compose-go v1.20.0
 - 依存パッケージの更新: containerd 1.7.7
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added dry-run support for publish command
 - Added `COMPOSE_ENV_FILES` env variable to pass a list of env files
 - Added `sync+restart` action to `compose watch`
@@ -325,7 +672,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Enabled profiles when `down` ran with explicit service names
 - Fixed an issue when the pull policy provided was invalid
 @y
-### Bug fixes and enhancements
 - Added dry-run support for publish command
 - Added `COMPOSE_ENV_FILES` env variable to pass a list of env files
 - Added `sync+restart` action to `compose watch`
@@ -337,9 +683,13 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.22.0
-{{< release-date date="2023-09-21" >}}
 @y
 ## 2.22.0
+@z
+
+@x
+{{< release-date date="2023-09-21" >}}
+@y
 {{< release-date date="2023-09-21" >}}
 @z
 
@@ -357,11 +707,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump golang to 1.21.1
 - Dependencies upgrade: bump compose-go to v1.19.0
 - Dependencies upgrade: bump buildkit to v0.12.2
 @y
-### 更新 {#update}
 - 依存パッケージの更新: golang 1.21.1
 - 依存パッケージの更新: compose-go v1.19.0
 - 依存パッケージの更新: buildkit v0.12.2
@@ -369,6 +723,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added experimental support for the `publish` command.
 - The command `watch` now builds and launches the project during startup.
 - Added `policy` option to the `--pull` flag.
@@ -378,7 +737,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Fixed  a `config` issue when the declared `env_file` is missing.
 - Passed BuildOptions to `up` and `run` commands.
 @y
-### Bug fixes and enhancements
 - Added experimental support for the `publish` command.
 - The command `watch` now builds and launches the project during startup.
 - Added `policy` option to the `--pull` flag.
@@ -391,9 +749,13 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.21.0
-{{< release-date date="2023-08-30" >}}
 @y
 ## 2.21.0
+@z
+
+@x
+{{< release-date date="2023-08-30" >}}
+@y
 {{< release-date date="2023-08-30" >}}
 @z
 
@@ -409,14 +771,23 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Update
-- Dependencies upgrade: bump compose-go to v1.18.3
 @y
 ### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v1.18.3
+@y
 - 依存パッケージの更新: compose-go v1.18.3
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Changed `docker compose ps` and `docker compose ps --format=json` output to align with Docker CLI.
 - Added support for multi-document YAML files.
 - Added support for loading remote Compose files from Git repos with `include` (experimental).
@@ -425,7 +796,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Fixed "no such service" errors when using `include` with `--profile`.
 - Fixed `.env` overrides when using `include`.
 @y
-### Bug fixes and enhancements
 - Changed `docker compose ps` and `docker compose ps --format=json` output to align with Docker CLI.
 - Added support for multi-document YAML files.
 - Added support for loading remote Compose files from Git repos with `include` (experimental).
@@ -437,19 +807,27 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.20.3
-{{< release-date date="2023-08-11" >}}
 @y
 ## 2.20.3
+@z
+
+@x
+{{< release-date date="2023-08-11" >}}
+@y
 {{< release-date date="2023-08-11" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump golang to 1.21.0
 - Dependencies upgrade: bump compose-go to v1.18.1
 - Dependencies upgrade: bump buildkit to v0.12.1
 @y
-### 更新 {#update}
 - 依存パッケージの更新: golang 1.21.0
 - 依存パッケージの更新: compose-go v1.18.1
 - 依存パッケージの更新: buildkit v0.12.1
@@ -457,13 +835,17 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Improved speed and reliability of `watch` sync.
 - Added builder's name on the first build line.
 - Improved shell completion for `--project-directory` and `--profile`.
 - Fixed build issue with proxy configuration not passing to legacy builder.
 - Removed unnecessary warning when an option dependency exists successfully.
 @y
-### Bug fixes and enhancements
 - Improved speed and reliability of `watch` sync.
 - Added builder's name on the first build line.
 - Improved shell completion for `--project-directory` and `--profile`.
@@ -473,20 +855,28 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.20.2
-{{< release-date date="2023-07-19" >}}
 @y
 ## 2.20.2
+@z
+
+@x
+{{< release-date date="2023-07-19" >}}
+@y
 {{< release-date date="2023-07-19" >}}
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added support for the `depends_on.required` attribute.
 - Fixed an issue where build tries to push unnamed service images.
 - Fixed a bug which meant the target secret path on Windows was not checked.
 - Fixed a bug resolving build context path for services using `extends.file`.
 @y
-### Bug fixes and enhancements
 - Added support for the `depends_on.required` attribute.
 - Fixed an issue where build tries to push unnamed service images.
 - Fixed a bug which meant the target secret path on Windows was not checked.
@@ -495,20 +885,28 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.20.1
+@y
+## 2.20.1
+@z
+
+@x
 {{< release-date date="2023-07-18" >}}
 @y
-## 2.20.1
 {{< release-date date="2023-07-18" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump golang to 1.20.6
 - Dependencies upgrade: bump buildx to v0.11.2
 - Dependencies upgrade: bump buildkit to v0.12
 - Dependencies upgrade: bump docker-cli to v24.0.5-dev
 @y
-### 更新 {#update}
 - 依存パッケージの更新: golang 1.20.6
 - 依存パッケージの更新: buildx v0.11.2
 - 依存パッケージの更新: buildkit v0.12
@@ -517,19 +915,27 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.20.0
-{{< release-date date="2023-07-11" >}}
 @y
 ## 2.20.0
+@z
+
+@x
+{{< release-date date="2023-07-11" >}}
+@y
 {{< release-date date="2023-07-11" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump docker/cli-docs-tools to v0.6.0
 - Dependencies upgrade: bump docker to v24.0.4
 - Dependencies upgrade: bump buildx to v0.11.1
 @y
-### 更新 {#update}
 - 依存パッケージの更新: docker/cli-docs-tools v0.6.0
 - 依存パッケージの更新: docker v24.0.4
 - 依存パッケージの更新: buildx v0.11.1
@@ -537,6 +943,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 * Introduced the `wait` command.
 * Added support of `--builder` and `BUILDX_BUILDER` to the `build` command.
 * Added support for the `include` and `attach` attributes from the Compose Specification.
@@ -549,7 +960,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 * Fixed a process leak in the wait e2e test.
 * Improved some test speeds.
 @y
-### Bug fixes and enhancements
 * Introduced the `wait` command.
 * Added support of `--builder` and `BUILDX_BUILDER` to the `build` command.
 * Added support for the `include` and `attach` attributes from the Compose Specification.
@@ -565,27 +975,39 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.19.1
-{{< release-date date="2023-06-29" >}}
 @y
 ## 2.19.1
+@z
+
+@x
+{{< release-date date="2023-06-29" >}}
+@y
 {{< release-date date="2023-06-29" >}}
 @z
 
 @x
 ### Update
-- Dependencies upgrade: bump compose-go to v1.15.1
 @y
 ### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v1.15.1
+@y
 - 依存パッケージの更新: compose-go v1.15.1
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Fixed sporadic "container not connected to network" errors on `compose up`.
 - Fixed "please specify build context" errors on `compose build`.
 - Compose now warns if using a bind mount in a service `watch` configuration.
 @y
-### Bug fixes and enhancements
 - Fixed sporadic "container not connected to network" errors on `compose up`.
 - Fixed "please specify build context" errors on `compose build`.
 - Compose now warns if using a bind mount in a service `watch` configuration.
@@ -593,20 +1015,28 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.19.0
-{{< release-date date="2023-06-21" >}}
 @y
 ## 2.19.0
+@z
+
+@x
+{{< release-date date="2023-06-21" >}}
+@y
 {{< release-date date="2023-06-21" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump compose-go to v1.15.0
 - Dependencies upgrade: bump buildx to v0.11.0
 - Dependencies upgrade: bump docker to v24.0.2
 - Dependencies upgrade: bump golang to 1.20.5
 @y
-### 更新 {#update}
 - 依存パッケージの更新: compose-go v1.15.0
 - 依存パッケージの更新: buildx v0.11.0
 - 依存パッケージの更新: docker v24.0.2
@@ -615,6 +1045,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Introduced the ability to select a single service to be stopped by `compose down`.
 - Added `--progress` as top-level flag to configure progress UI style.
 - Introduced `run --cap-add` to run maintenance commands using service image.
@@ -643,7 +1078,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Added a GitHub action to trigger Docker Desktop e2e tests with Compose edge versions.
 - Added more ignore rules to dependabot.
 @y
-### Bug fixes and enhancements
 - Introduced the ability to select a single service to be stopped by `compose down`.
 - Added `--progress` as top-level flag to configure progress UI style.
 - Introduced `run --cap-add` to run maintenance commands using service image.
@@ -675,35 +1109,51 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.18.1
-{{< release-date date="2023-05-17" >}}
 @y
 ## 2.18.1
+@z
+
+@x
+{{< release-date date="2023-05-17" >}}
+@y
 {{< release-date date="2023-05-17" >}}
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Fixed "Image not found" errors when building images
 @y
-### Bug fixes and enhancements
 - Fixed "Image not found" errors when building images
 @z
 
 @x
 ## 2.18.0
+@y
+## 2.18.0
+@z
+
+@x
 {{< release-date date="2023-05-16" >}}
 @y
-## 2.18.0
 {{< release-date date="2023-05-16" >}}
 @z
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump compose-go to v1.13.5
 - Dependencies upgrade: bump buildkit to v0.11.6
 - Dependencies upgrade: bump docker to v23.0.5
 @y
-### 更新 {#update}
 - 依存パッケージの更新: compose-go v1.13.5
 - 依存パッケージの更新: buildkit v0.11.6
 - 依存パッケージの更新: docker v23.0.5
@@ -711,6 +1161,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added dry run support using `--dry-run`
 - Added the first (alpha) implementation of the `viz` sub-command
 - Introduced `--no-path-resolution` to skip relative path to be resolved
@@ -731,7 +1186,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - `--parallel` now has precedence over `COMPOSE_PARALLEL_LIMIT`
 - Compose now reports that the external network is not found when Swarm is disabled
 @y
-### Bug fixes and enhancements
 - Added dry run support using `--dry-run`
 - Added the first (alpha) implementation of the `viz` sub-command
 - Introduced `--no-path-resolution` to skip relative path to be resolved
@@ -755,39 +1209,63 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.17.2
-{{< release-date date="2023-03-26" >}}
 @y
 ## 2.17.2
+@z
+
+@x
+{{< release-date date="2023-03-26" >}}
+@y
 {{< release-date date="2023-03-26" >}}
 @z
 
 @x
 ### Update
-- Dependencies upgrade: bump compose-go to v1.13.2
 @y
 ### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v1.13.2
+@y
 - 依存パッケージの更新: compose-go v1.13.2
 @z
 
 @x
 ### Bug fixes and enhancements
-- Fixed invalid project name error for directories with uppercase characters or `.` in the name. Fixed [compose#10405](https://github.com/docker/compose/issues/10405)
 @y
 ### Bug fixes and enhancements
+@z
+
+@x
+- Fixed invalid project name error for directories with uppercase characters or `.` in the name. Fixed [compose#10405](https://github.com/docker/compose/issues/10405)
+@y
 - Fixed invalid project name error for directories with uppercase characters or `.` in the name. Fixed [compose#10405](https://github.com/docker/compose/issues/10405)
 @z
 
 @x
 ## 2.17.1
+@y
+## 2.17.1
+@z
+
+@x
 {{< release-date date="2023-03-24" >}}
+@y
+{{< release-date date="2023-03-24" >}}
+@z
+
+@x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump buildkit to v0.11.5
 - Dependencies upgrade: bump compose-go to v1.13.1
 - Dependencies upgrade: bump golang to 1.20.2
 @y
-## 2.17.1
-{{< release-date date="2023-03-24" >}}
-### 更新 {#update}
 - 依存パッケージの更新: buildkit v0.11.5
 - 依存パッケージの更新: compose-go v1.13.1
 - 依存パッケージの更新: golang 1.20.2
@@ -795,11 +1273,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Fixed panic on `alpha watch` command. Pull Request [compose#10393](https://github.com/docker/compose/pull/10393)
 - Prevented conflicts for services named `extensions`. Fixed [compose-go#247](https://github.com/compose-spec/compose-go/issues/247)
 - Compose now validates project names more consistently. Fixed [compose-go#363](https://github.com/compose-spec/compose-go/issues/363)
 @y
-### Bug fixes and enhancements
 - Fixed panic on `alpha watch` command. Pull Request [compose#10393](https://github.com/docker/compose/pull/10393)
 - Prevented conflicts for services named `extensions`. Fixed [compose-go#247](https://github.com/compose-spec/compose-go/issues/247)
 - Compose now validates project names more consistently. Fixed [compose-go#363](https://github.com/compose-spec/compose-go/issues/363)
@@ -807,15 +1289,27 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.17.0
+@y
+## 2.17.0
+@z
+
+@x
 {{< release-date date="2023-03-23" >}}
+@y
+{{< release-date date="2023-03-23" >}}
+@z
+
+@x
 ### Upgrade notes
+@y
+### Upgrade notes
+@z
+
+@x
 - Project name validation is more strictly enforced. Project names can only include letters, numbers, `_`, `-` and must be lowercase and start with a letter or number.
 - Boolean fields in YAML must be either `true` or `false`. Deprecated YAML 1.1 values such as "on" or "no" are not supported.
 - Duplicate YAML merge keys (`<<`) are rejected.
 @y
-## 2.17.0
-{{< release-date date="2023-03-23" >}}
-### Upgrade notes
 - Project name validation is more strictly enforced. Project names can only include letters, numbers, `_`, `-` and must be lowercase and start with a letter or number.
 - Boolean fields in YAML must be either `true` or `false`. Deprecated YAML 1.1 values such as "on" or "no" are not supported.
 - Duplicate YAML merge keys (`<<`) are rejected.
@@ -823,12 +1317,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump buildkit to v0.11.4
 - Dependencies upgrade: bump buildx to v0.10.4
 - Dependencies upgrade: bump containerd to 1.6.18
 - Dependencies upgrade: bump compose-go to v1.13.0
 @y
-### 更新 {#update}
 - 依存パッケージの更新: buildkit v0.11.4
 - 依存パッケージの更新: buildx v0.10.4
 - 依存パッケージの更新: containerd 1.6.18
@@ -837,6 +1335,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 * Introduced `--wait-timeout` on `up` command. Fixed [compose#10269](https://github.com/docker/compose/issues/10269)
 * Made `compose service --hash` output sort by service name. Pull Request [compose#10278](https://github.com/docker/compose/pull/10278)
 * Compose now renders a compact TUI progress report to monitor layers download. Pull Request [compose#10281](https://github.com/docker/compose/pull/10281)
@@ -865,7 +1368,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 * Compose now supports Dry Run mode for `exec` command. Pull Request [compose#10252](https://github.com/docker/compose/issues/10252)
 * Compose now supports Dry Run mode for `restart` command. Pull Request [compose#10339](https://github.com/docker/compose/issues/10339)
 @y
-### Bug fixes and enhancements
 * Introduced `--wait-timeout` on `up` command. Fixed [compose#10269](https://github.com/docker/compose/issues/10269)
 * Made `compose service --hash` output sort by service name. Pull Request [compose#10278](https://github.com/docker/compose/pull/10278)
 * Compose now renders a compact TUI progress report to monitor layers download. Pull Request [compose#10281](https://github.com/docker/compose/pull/10281)
@@ -897,8 +1399,23 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.16.0
+@y
+## 2.16.0
+@z
+
+@x
 {{< release-date date="2023-02-08" >}}
+@y
+{{< release-date date="2023-02-08" >}}
+@z
+
+@x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump docker to v23.0.0
 - Dependencies upgrade: bump docker-cli to v23.0.0
 - Dependencies upgrade: bump buildkit to v0.11.2
@@ -906,9 +1423,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump containerd to 1.6.16
 - Dependencies upgrade: bump golang to 1.20
 @y
-## 2.16.0
-{{< release-date date="2023-02-08" >}}
-### 更新 {#update}
 - 依存パッケージの更新: docker v23.0.0
 - 依存パッケージの更新: docker-cli v23.0.0
 - 依存パッケージの更新: buildkit v0.11.2
@@ -919,6 +1433,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 * Introduced `--remove-orphans` for the `compose create` command. Fixed [compose#9718](https://github.com/docker/compose/issues/9718)
 * Shortened the TTY output when the terminal is too small. Fixed [compose#9962](https://github.com/docker/compose/issues/9962)
 * Added `remove-orphans` functionality to run. Fixed [compose#9718](https://github.com/docker/compose/issues/9718#issuecomment-1209448445)
@@ -946,7 +1465,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 * Compose now supports Dry Run mode for `pause` command.Fixed [compose#10217](https://github.com/docker/compose/issues/10217)
 * Compose now supports Dry Run mode for `cp` command.Fixed [compose#10235](https://github.com/docker/compose/issues/10235)
 @y
-### Bug fixes and enhancements
 * Introduced `--remove-orphans` for the `compose create` command. Fixed [compose#9718](https://github.com/docker/compose/issues/9718)
 * Shortened the TTY output when the terminal is too small. Fixed [compose#9962](https://github.com/docker/compose/issues/9962)
 * Added `remove-orphans` functionality to run. Fixed [compose#9718](https://github.com/docker/compose/issues/9718#issuecomment-1209448445)
@@ -977,24 +1495,40 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.15.1
+@y
+## 2.15.1
+@z
+
+@x
 {{< release-date date="2023-01-09" >}}
+@y
+{{< release-date date="2023-01-09" >}}
+@z
+
+@x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade to fix Golan CVE-2022-27664 and CVE-2022-32149
 @y
-## 2.15.1
-{{< release-date date="2023-01-09" >}}
-### 更新 {#update}
 - Dependencies upgrade to fix Golan CVE-2022-27664 and CVE-2022-32149
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 * Added support for UTS namespace. Fixed [compose#8408](https://github.com/docker/compose/issues/8408)
 * Fixed filtering issue when no filter set. Fixed [roadmap#418](https://github.com/docker/roadmap/issues/418)
 * Fixed concurrent map writes issue during build step. Pull Request [compose#10151](https://github.com/docker/compose/pull/10151)
 * Fixed issue when stdin is not a terminal. Fixed [compose#9739](https://github.com/docker/compose/issues/9739)
 @y
-### Bug fixes and enhancements
 * Added support for UTS namespace. Fixed [compose#8408](https://github.com/docker/compose/issues/8408)
 * Fixed filtering issue when no filter set. Fixed [roadmap#418](https://github.com/docker/roadmap/issues/418)
 * Fixed concurrent map writes issue during build step. Pull Request [compose#10151](https://github.com/docker/compose/pull/10151)
@@ -1003,20 +1537,37 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.15.0
+@y
+## 2.15.0
+@z
+
+@x
 {{< release-date date="2023-01-05" >}}
+@y
+{{< release-date date="2023-01-05" >}}
+@z
+
+@x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump compose-go to v1.8.1
 - Dependencies upgrade: bump cli-docs-tool to 0.5.1
 @y
-## 2.15.0
-{{< release-date date="2023-01-05" >}}
-### 更新 {#update}
 - 依存パッケージの更新: compose-go v1.8.1
 - 依存パッケージの更新: cli-docs-tool 0.5.1
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 * Added support of the `privileged` attribute in the `service.build` section. Pull Request [compose#10112](https://github.com/docker/compose/pull/10112)
 * Introduced `--ignore-buildable` to ignore buildable images on pull. Fixed [compose#8805](https://github.com/docker/compose/issues/8805)
 * Introduceed `--no-attach` to ignore some service outputs. Fixed [compose#8546](https://github.com/docker/compose/issues/8546)
@@ -1030,7 +1581,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 * Compose should ignore not only auto-removed containers but also "removal in progress" for orphan containers. Pull Request [compose#10136](https://github.com/docker/compose/pull/10136)
 * Compose limits build concurrency according to `--parallel`. Fixed [compose#9091](https://github.com/docker/compose/issues/9091)
 @y
-### Bug fixes and enhancements
 * Added support of the `privileged` attribute in the `service.build` section. Pull Request [compose#10112](https://github.com/docker/compose/pull/10112)
 * Introduced `--ignore-buildable` to ignore buildable images on pull. Fixed [compose#8805](https://github.com/docker/compose/issues/8805)
 * Introduceed `--no-attach` to ignore some service outputs. Fixed [compose#8546](https://github.com/docker/compose/issues/8546)
@@ -1047,18 +1597,35 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.14.2
+@y
+## 2.14.2
+@z
+
+@x
 {{< release-date date="2022-12-20" >}}
+@y
+{{< release-date date="2022-12-20" >}}
+@z
+
+@x
 ### Update
+@y
+### 更新 {#update}
+@z
+
+@x
 - Dependencies upgrade: bump containerd to 1.6.14
 @y
-## 2.14.2
-{{< release-date date="2022-12-20" >}}
-### 更新 {#update}
-- 依存パッケージの更新: bump containerd to 1.6.14
+- 依存パッケージの更新: containerd 1.6.14
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 * Compose now uses DOCKER_DEFAULT_PLATFORM to determine the platform when creating a container. Fixed [compose#10041](https://github.com/docker/compose/pull/10041)
 * Compose now detects when dependency failed to start. Fixed [compose#9732](https://github.com/docker/compose/pull/9732)
 * Fixed WCOW volume mounts.  Fixed [compose#9577](https://github.com/docker/compose/pull/9577)
@@ -1068,7 +1635,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 * Fixed race condition on compose logs. Fixed [compose#8880](https://github.com/docker/compose/pull/8880)
 * Updated projectOptions to be public by renaming it to ProjectOptions. Fixed [compose#100102](https://github.com/docker/compose/pull/100102)
 @y
-### Bug fixes and enhancements
 * Compose now uses DOCKER_DEFAULT_PLATFORM to determine the platform when creating a container. Fixed [compose#10041](https://github.com/docker/compose/pull/10041)
 * Compose now detects when dependency failed to start. Fixed [compose#9732](https://github.com/docker/compose/pull/9732)
 * Fixed WCOW volume mounts.  Fixed [compose#9577](https://github.com/docker/compose/pull/9577)
@@ -1081,24 +1647,37 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.14.1
+@y
+## 2.14.1
+@z
+
+@x
 {{< release-date date="2022-12-15" >}}
 @y
-## 2.14.1
 {{< release-date date="2022-12-15" >}}
 @z
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - Dependencies upgrade: bump Go to 1.19.4
 - Dependencies upgrade: bump containerd to 1.6.12
 @y
-### 更新 {#updates}
-- 依存パッケージの更新: bump Go to 1.19.4
-- 依存パッケージの更新: bump containerd to 1.6.12
+- 依存パッケージの更新: Go 1.19.4
+- 依存パッケージの更新: containerd 1.6.12
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added `--parallel` to limit concurrent engine calls. Pull Request [compose#10030](https://github.com/docker/compose/pull/10030)
 - Distinguished stdout and stderr in `up` logs. Fixed [compose#8098](https://github.com/docker/compose/issues/8098)
 - Aligned `compose ps` output with `docker ps`. Fixed [compose#6867](https://github.com/docker/compose/issues/6867)
@@ -1114,7 +1693,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Fixed parsing of `repository:tag`. Fixed [compose#9208](https://github.com/docker/compose/pull/9208)
 - Load project from files when explicitly set by user. Fixed [compose#9554](https://github.com/docker/compose/pull/9554) 
 @y
-### Bug fixes and enhancements
 - Added `--parallel` to limit concurrent engine calls. Pull Request [compose#10030](https://github.com/docker/compose/pull/10030)
 - Distinguished stdout and stderr in `up` logs. Fixed [compose#8098](https://github.com/docker/compose/issues/8098)
 - Aligned `compose ps` output with `docker ps`. Fixed [compose#6867](https://github.com/docker/compose/issues/6867)
@@ -1133,24 +1711,37 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.14.0
+@y
+## 2.14.0
+@z
+
+@x
 {{< release-date date="2022-12-02" >}}
 @y
-## 2.14.0
 {{< release-date date="2022-12-02" >}}
 @z
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - Dependencies upgrade: bump compose-go to [v1.8.0](https://github.com/compose-spec/compose-go/releases/tag/v1.8.0)
 - Dependencies upgrade: bump Go to 1.19.3
 @y
-### 更新 {#updates}
-- 依存パッケージの更新: bump compose-go to [v1.8.0](https://github.com/compose-spec/compose-go/releases/tag/v1.8.0)
-- 依存パッケージの更新: bump Go to 1.19.3
+- 依存パッケージの更新: compose-go [v1.8.0](https://github.com/compose-spec/compose-go/releases/tag/v1.8.0)
+- 依存パッケージの更新: Go 1.19.3
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added `oom_score_adj` field to service definition. Pull Request [compose#10019](https://github.com/docker/compose/issues/10019)
 - Added mode field for tmpfs mount permissions. Pull Request [compose#10031](https://github.com/docker/compose/issues/10031)
 - Compose now only stops services started by `up` when interrupted. Fixed [compose#10028](https://github.com/docker/compose/issues/10028)
@@ -1161,7 +1752,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Compose now uses the correct image name separator in `convert`. Fixed [compose#9904](https://github.com/docker/compose/issues/9904)
 - Fixed `run` for services using `network_mode: service:NAME`. Fixed [compose#10036](https://github.com/docker/compose/issues/10036)
 @y
-### Bug fixes and enhancements
 - Added `oom_score_adj` field to service definition. Pull Request [compose#10019](https://github.com/docker/compose/issues/10019)
 - Added mode field for tmpfs mount permissions. Pull Request [compose#10031](https://github.com/docker/compose/issues/10031)
 - Compose now only stops services started by `up` when interrupted. Fixed [compose#10028](https://github.com/docker/compose/issues/10028)
@@ -1175,26 +1765,39 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.13.0
+@y
+## 2.13.0
+@z
+
+@x
 {{< release-date date="2022-11-23" >}}
 @y
-## 2.13.0
 {{< release-date date="2022-11-23" >}}
 @z
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - Dependencies upgrade: bump containerd to 1.6.10
 - Dependencies upgrade: bump docker-credential-helpers to v0.7.0
 - Update CI dependencies. Pull Request [compose#9982](https://github.com/docker/compose/pull/9982)
 @y
-### 更新 {#updates}
-- 依存パッケージの更新: bump containerd to 1.6.10
-- 依存パッケージの更新: bump docker-credential-helpers to v0.7.0
+- 依存パッケージの更新: containerd 1.6.10
+- 依存パッケージの更新: docker-credential-helpers v0.7.0
 - Update CI dependencies. Pull Request [compose#9982](https://github.com/docker/compose/pull/9982)
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added a `no-consistency` option to `convert` command. Fixed [compose#9963](https://github.com/docker/compose/issues/9963)
 - Added a `build` option to `run` command. Fixed [compose#10003](https://github.com/docker/compose/issues/10003)
 - Fixed mapping `restart_policy.condition` to engine supported values. Fixed [compose#8756](https://github.com/docker/compose/issues/8756), [docs#15936](https://github.com/docker/docs/pull/15936)
@@ -1206,7 +1809,6 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Removed usage of the deprecated dependency `gotest.tools` v2. Pull Request [compose#9935](https://github.com/docker/compose/pull/9935)
 - Excluded issues labeled with `kind/feature` from stale bot process. Fixed [compose#9988](https://github.com/docker/compose/pull/9988)
 @y
-### Bug fixes and enhancements
 - Added a `no-consistency` option to `convert` command. Fixed [compose#9963](https://github.com/docker/compose/issues/9963)
 - Added a `build` option to `run` command. Fixed [compose#10003](https://github.com/docker/compose/issues/10003)
 - Fixed mapping `restart_policy.condition` to engine supported values. Fixed [compose#8756](https://github.com/docker/compose/issues/8756), [docs#15936](https://github.com/docker/docs/pull/15936)
@@ -1221,17 +1823,25 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 
 @x
 ## 2.12.2
-{{< release-date date="2022-10-21" >}}
 @y
 ## 2.12.2
+@z
+
+@x
+{{< release-date date="2022-10-21" >}}
+@y
 {{< release-date date="2022-10-21" >}}
 @z
 
 @x
 ### Updates
-- Updated Docker Engine API to restore compatibility with Golang 1.18 needed for Linux packaging. Pull Request [compose#9940](https://github.com/docker/compose/pull/9940)
 @y
 ### 更新 {#updates}
+@z
+
+@x
+- Updated Docker Engine API to restore compatibility with Golang 1.18 needed for Linux packaging. Pull Request [compose#9940](https://github.com/docker/compose/pull/9940)
+@y
 - Updated Docker Engine API to restore compatibility with Golang 1.18 needed for Linux packaging. Pull Request [compose#9940](https://github.com/docker/compose/pull/9940)
 @z
 
@@ -1243,17 +1853,25 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.12.1
-{{< release-date date="2022-10-21" >}}
 @y
 ## 2.12.1
+@z
+
+@x
+{{< release-date date="2022-10-21" >}}
+@y
 {{< release-date date="2022-10-21" >}}
 @z
 
 @x
 ### Security
-- Updated Docker Engine API to apply fix of [CVE-2022-39253](https://nvd.nist.gov/vuln/detail/CVE-2022-39253). Pull Request [compose#9934](https://github.com/docker/compose/pull/9934)
 @y
 ### Security
+@z
+
+@x
+- Updated Docker Engine API to apply fix of [CVE-2022-39253](https://nvd.nist.gov/vuln/detail/CVE-2022-39253). Pull Request [compose#9934](https://github.com/docker/compose/pull/9934)
+@y
 - Updated Docker Engine API to apply fix of [CVE-2022-39253](https://nvd.nist.gov/vuln/detail/CVE-2022-39253). Pull Request [compose#9934](https://github.com/docker/compose/pull/9934)
 @z
 
@@ -1265,18 +1883,26 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.12.0
-{{< release-date date="2022-10-18" >}}
 @y
 ## 2.12.0
+@z
+
+@x
+{{< release-date date="2022-10-18" >}}
+@y
 {{< release-date date="2022-10-18" >}}
 @z
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - CI update to the documentation repository path
 - Upgraded to compose-go from [1.5.1 to 1.6.0](https://github.com/compose-spec/compose-go/releases/tag/v1.6.0)
 @y
-### 更新 {#updates}
 - CI update to the documentation repository path
 - Upgraded to compose-go from [1.5.1 to 1.6.0](https://github.com/compose-spec/compose-go/releases/tag/v1.6.0)
 @z
@@ -1289,12 +1915,16 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added a `quiet` option when pushing an image. Fixed [compose#9089](https://github.com/docker/compose/issues/9089)
 - Fixed a misleading error message for `port` command. Pull Request [compose#9909](https://github.com/docker/compose/pull/9909)
 - Fixed a bug to prevent failure when Compose tries to remove a non-existing container. Fixed by [compose#9896](https://github.com/docker/compose/pull/9896/)
 - Switched GitHub issue template form
 @y
-### Bug fixes and enhancements
 - Added a `quiet` option when pushing an image. Fixed [compose#9089](https://github.com/docker/compose/issues/9089)
 - Fixed a misleading error message for `port` command. Pull Request [compose#9909](https://github.com/docker/compose/pull/9909)
 - Fixed a bug to prevent failure when Compose tries to remove a non-existing container. Fixed by [compose#9896](https://github.com/docker/compose/pull/9896/)
@@ -1309,9 +1939,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.11.2
+@y
+## 2.11.2
+@z
+
+@x
 {{< release-date date="2022-09-27" >}}
 @y
-## 2.11.2
 {{< release-date date="2022-09-27" >}}
 @z
 
@@ -1329,14 +1963,23 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ### Updates
-- Upgraded to compose-go from [1.5.1 to 1.6.0](https://github.com/compose-spec/compose-go/releases/tag/v1.6.0)
 @y
 ### 更新 {#updates}
+@z
+
+@x
+- Upgraded to compose-go from [1.5.1 to 1.6.0](https://github.com/compose-spec/compose-go/releases/tag/v1.6.0)
+@y
 - Upgraded to compose-go from [1.5.1 to 1.6.0](https://github.com/compose-spec/compose-go/releases/tag/v1.6.0)
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Fixed a bug to prevent "invalid template" errors on valid environment variable values. Fixes [compose##9806](https://github.com/docker/compose/issues/9806), [compose##9746](https://github.com/docker/compose/issues/9746), [compose##9704](https://github.com/docker/compose/issues/9704), [compose##9294](https://github.com/docker/compose/issues/9294)
 - Fixed a bug to ensure new images from `docker compose build` are used. Fixes [compose#9856](https://github.com/docker/compose/issues/9856)
 - Fixed cross-architecture builds when `DOCKER_DEFAULT_PLATFORM` not set. Fixes [compose#9864](https://github.com/docker/compose/pull/9864)
@@ -1351,7 +1994,6 @@ For the full change log or additional information, check the [Compose repository
 - Added more information when `service.platform` isn't part of `service.build.platforms`
 - GitHub Workflows security hardening
 @y
-### Bug fixes and enhancements
 - Fixed a bug to prevent "invalid template" errors on valid environment variable values. Fixes [compose##9806](https://github.com/docker/compose/issues/9806), [compose##9746](https://github.com/docker/compose/issues/9746), [compose##9704](https://github.com/docker/compose/issues/9704), [compose##9294](https://github.com/docker/compose/issues/9294)
 - Fixed a bug to ensure new images from `docker compose build` are used. Fixes [compose#9856](https://github.com/docker/compose/issues/9856)
 - Fixed cross-architecture builds when `DOCKER_DEFAULT_PLATFORM` not set. Fixes [compose#9864](https://github.com/docker/compose/pull/9864)
@@ -1375,19 +2017,27 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.11.1
-{{< release-date date="2022-09-20" >}}
 @y
 ## 2.11.1
+@z
+
+@x
+{{< release-date date="2022-09-20" >}}
+@y
 {{< release-date date="2022-09-20" >}}
 @z
 
 @x
 ### Bug fixes and enhancements
-- Fixed a bug to keep `depends_on` condition when service has `volumes_from`. Fixes [compose#9843](https://github.com/docker/compose/issues/9843)
-- Fixed a bug to keep the platform defined at service level during build if no build platforms. Fixes [compose#9729](https://github.com/docker/compose/pull/9729#issuecomment-1246748144)
-- Fixed a bug to keep the platform defined via DOCKER_DEFAULT_PLATFORM during build if no build platforms provided. Fixes [compose#9853](https://github.com/docker/compose/issues/9853)
 @y
 ### Bug fixes and enhancements
+@z
+
+@x
+- Fixed a bug to keep `depends_on` condition when service has `volumes_from`. Fixes [compose#9843](https://github.com/docker/compose/issues/9843)
+- Fixed a bug to keep the platform defined at service level during build if no build platforms. Fixes [compose#9729](https://github.com/docker/compose/pull/9729#issuecomment-1246748144)
+- Fixed a bug to keep the platform defined via DOCKER_DEFAULT_PLATFORM during build if no build platforms provided. Fixes [compose#9853](https://github.com/docker/compose/issues/9853)
+@y
 - Fixed a bug to keep `depends_on` condition when service has `volumes_from`. Fixes [compose#9843](https://github.com/docker/compose/issues/9843)
 - Fixed a bug to keep the platform defined at service level during build if no build platforms. Fixes [compose#9729](https://github.com/docker/compose/pull/9729#issuecomment-1246748144)
 - Fixed a bug to keep the platform defined via DOCKER_DEFAULT_PLATFORM during build if no build platforms provided. Fixes [compose#9853](https://github.com/docker/compose/issues/9853)
@@ -1401,14 +2051,23 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.11.0
-{{< release-date date="2022-09-14" >}}
 @y
 ## 2.11.0
+@z
+
+@x
+{{< release-date date="2022-09-14" >}}
+@y
 {{< release-date date="2022-09-14" >}}
 @z
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - Dependencies upgrade: bump Golang to 1.19.1
 - Dependencies upgrade: bump github.com/docker/go-units from 0.4.0 to 0.5.0
 - Dependencies upgrade: bump github.com/cnabio/cnab-to-oci from 0.3.6 to 0.3.7
@@ -1417,18 +2076,22 @@ For the full change log or additional information, check the [Compose repository
 - Dependencies upgrade: bump go.opentelemetry.io/otel from 1.4.1 to 1.9.0
 - Dependencies upgrade: bump compose-go from [1.5.0 to 1.5.1](https://github.com/compose-spec/compose-go/releases/tag/v1.5.1)
 @y
-### 更新 {#updates}
-- 依存パッケージの更新: bump Golang to 1.19.1
-- 依存パッケージの更新: bump github.com/docker/go-units from 0.4.0 to 0.5.0
-- 依存パッケージの更新: bump github.com/cnabio/cnab-to-oci from 0.3.6 to 0.3.7
-- 依存パッケージの更新: bump go.opentelemetry.io/otel from 1.9.0 to 1.10.0
-- 依存パッケージの更新: bump github.com/AlecAivazis/survey/v2 from 2.3.5
-- 依存パッケージの更新: bump go.opentelemetry.io/otel from 1.4.1 to 1.9.0
-- 依存パッケージの更新: bump compose-go from [1.5.0 to 1.5.1](https://github.com/compose-spec/compose-go/releases/tag/v1.5.1)
+- 依存パッケージの更新: Golang 1.19.1
+- 依存パッケージの更新: github.com/docker/go-units from 0.4.0 to 0.5.0
+- 依存パッケージの更新: github.com/cnabio/cnab-to-oci from 0.3.6 to 0.3.7
+- 依存パッケージの更新: go.opentelemetry.io/otel from 1.9.0 to 1.10.0
+- 依存パッケージの更新: github.com/AlecAivazis/survey/v2 from 2.3.5
+- 依存パッケージの更新: go.opentelemetry.io/otel from 1.4.1 to 1.9.0
+- 依存パッケージの更新: compose-go from [1.5.0 to 1.5.1](https://github.com/compose-spec/compose-go/releases/tag/v1.5.1)
 @z
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Added platforms build. Fixes [compose-spec#267](https://github.com/compose-spec/compose-spec/pull/267)
 - Logs now filter to services from current Compose file. Fixes [compose#9801](https://github.com/docker/compose/issues/9801)
 - Added an improved output warning when pulling images. Fixes [compose#9820](https://github.com/docker/compose/issues/9820)
@@ -1440,7 +2103,6 @@ For the full change log or additional information, check the [Compose repository
 - Only attempt to start specified services on `compose start [services]`. Fixes [compose#9796](https://github.com/docker/compose/issues/9796) [compose#9807](https://github.com/docker/compose/issues/9807)
 - Label built images for reliable cleanup on `down`. Fixes [compose#9655](https://github.com/docker/compose/issues/9655)
 @y
-### Bug fixes and enhancements
 - Added platforms build. Fixes [compose-spec#267](https://github.com/compose-spec/compose-spec/pull/267)
 - Logs now filter to services from current Compose file. Fixes [compose#9801](https://github.com/docker/compose/issues/9801)
 - Added an improved output warning when pulling images. Fixes [compose#9820](https://github.com/docker/compose/issues/9820)
@@ -1461,9 +2123,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.10.2
+@y
+## 2.10.2
+@z
+
+@x
 {{< release-date date="2022-08-26" >}}
 @y
-## 2.10.2
 {{< release-date date="2022-08-26" >}}
 @z
 
@@ -1489,9 +2155,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.10.1
-{{< release-date date="2022-08-24" >}}
 @y
 ## 2.10.1
+@z
+
+@x
+{{< release-date date="2022-08-24" >}}
+@y
 {{< release-date date="2022-08-24" >}}
 @z
 
@@ -1509,13 +2179,17 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ### Bug fixes and enhancements
-- Fixed image pulls being skipped when `pull_policy` was not set. Fixes [compose#9773](https://github.com/docker/compose/issues/9773).
-- Restored `.sha256` checksum files in release artifacts. Fixes [compose#9772](https://github.com/docker/compose/issues/9772).
-- Removed error message showing exit code when using --exit-code-from. Fixes [compose#9782](https://github.com/docker/compose/issues/9782).
-- Fixed `compose pull` to pull images even when they existed locally if `tag=latest`.
-- CI: Fixed checksums checking and brought back individual checksum files.
 @y
 ### Bug fixes and enhancements
+@z
+
+@x
+- Fixed image pulls being skipped when `pull_policy` was not set. Fixes [compose#9773](https://github.com/docker/compose/issues/9773).
+- Restored `.sha256` checksum files in release artifacts. Fixes [compose#9772](https://github.com/docker/compose/issues/9772).
+- Removed error message showing exit code when using --exit-code-from. Fixes [compose#9782](https://github.com/docker/compose/issues/9782).
+- Fixed `compose pull` to pull images even when they existed locally if `tag=latest`.
+- CI: Fixed checksums checking and brought back individual checksum files.
+@y
 - Fixed image pulls being skipped when `pull_policy` was not set. Fixes [compose#9773](https://github.com/docker/compose/issues/9773).
 - Restored `.sha256` checksum files in release artifacts. Fixes [compose#9772](https://github.com/docker/compose/issues/9772).
 - Removed error message showing exit code when using --exit-code-from. Fixes [compose#9782](https://github.com/docker/compose/issues/9782).
@@ -1531,24 +2205,37 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.10.0
-{{< release-date date="2022-08-19" >}}
 @y
 ## 2.10.0
+@z
+
+@x
+{{< release-date date="2022-08-19" >}}
+@y
 {{< release-date date="2022-08-19" >}}
 @z
 
 @x
 ### New
+@y
+### New
+@z
+
+@x
 - Applied newly loaded environment variables to `DockerCli` and `APIClient`. Fixes [compose#9210](https://github.com/docker/compose/issues/9210).
 - Added support for windows/arm64 and linux/riscv64.
 @y
-### New
 - Applied newly loaded environment variables to `DockerCli` and `APIClient`. Fixes [compose#9210](https://github.com/docker/compose/issues/9210).
 - Added support for windows/arm64 and linux/riscv64.
 @z
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - Updated Dockerfile syntax to latest stable and renamed docs Dockerfile.
 - Dependencies update: Upgraded BuildKit & docker/distribution.
 - Dependencies update: Updated Docker CLI version used in CI to v20.10.17.
@@ -1557,7 +2244,6 @@ For the full change log or additional information, check the [Compose repository
 - Dependencies update: Bumped to Go 1.18.5.
 - Dependencies update: Bumped github.com/cnabio/cnab-to-oci from [0.3.5 to 0.3.6](https://github.com/cnabio/cnab-to-oci/releases/tag/v0.3.6).
 @y
-### 更新 {#updates}
 - Updated Dockerfile syntax to latest stable and renamed docs Dockerfile.
 - Dependencies update: Upgraded BuildKit & docker/distribution.
 - Dependencies update: Updated Docker CLI version used in CI to v20.10.17.
@@ -1569,6 +2255,11 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
 - Reverted environment variables precedence to OS over `.env` file. Fixes [compose#9737](https://github.com/docker/compose/issues/9737).
 - Updated usage strings for consistency.
 - Resolved environment variables case-insensitively on Windows. Fixes [compose#9431](https://github.com/docker/compose/issues/9431).
@@ -1583,7 +2274,6 @@ For the full change log or additional information, check the [Compose repository
 - Fixed `compose pull` to avoid pulling the same images multiple times. Fixes [compose#8768](https://github.com/docker/compose/issues/8768).
 - Fixed version of golangci-lint to v1.47.3, issue with v1.48.0 for now.
 @y
-### Bug fixes and enhancements
 - Reverted environment variables precedence to OS over `.env` file. Fixes [compose#9737](https://github.com/docker/compose/issues/9737).
 - Updated usage strings for consistency.
 - Resolved environment variables case-insensitively on Windows. Fixes [compose#9431](https://github.com/docker/compose/issues/9431).
@@ -1607,9 +2297,13 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 
 @x
 ## 2.9.0
+@y
+## 2.9.0
+@z
+
+@x
 {{< release-date date="2022-08-7" >}}
 @y
-## 2.9.0
 {{< release-date date="2022-08-7" >}}
 @z
 
@@ -1639,9 +2333,13 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 
 @x
 ### Updates
+@y
+### 更新 {#updates}
+@z
+
+@x
 - Updated [`compose-go` to v1.4.0](https://github.com/compose-spec/compose-go/releases/tag/v1.4.0) as previous version introduced breaking changes. Fixes [compose#9700](https://github.com/docker/compose/issues/9700).
 @y
-### 更新 {#updates}
 - Updated [`compose-go` to v1.4.0](https://github.com/compose-spec/compose-go/releases/tag/v1.4.0) as previous version introduced breaking changes. Fixes [compose#9700](https://github.com/docker/compose/issues/9700).
 @z
 
@@ -1669,9 +2367,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.8.0
+@y
+## 2.8.0
+@z
+
+@x
 {{< release-date date="2022-07-29" >}}
 @y
-## 2.8.0
 {{< release-date date="2022-07-29" >}}
 @z
 
@@ -1747,9 +2449,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.7.0
+@y
+## 2.7.0
+@z
+
+@x
 {{< release-date date="2022-07-20" >}}
 @y
-## 2.7.0
 {{< release-date date="2022-07-20" >}}
 @z
 
@@ -1829,9 +2535,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.6.1
-{{< release-date date="2022-06-23" >}}
 @y
 ## 2.6.1
+@z
+
+@x
+{{< release-date date="2022-06-23" >}}
+@y
 {{< release-date date="2022-06-23" >}}
 @z
 
@@ -1933,9 +2643,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.6.0
-{{< release-date date="2022-05-30" >}}
 @y
 ## 2.6.0
+@z
+
+@x
+{{< release-date date="2022-05-30" >}}
+@y
 {{< release-date date="2022-05-30" >}}
 @z
 
@@ -1999,9 +2713,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.5.1
-{{< release-date date="2022-05-17" >}}
 @y
 ## 2.5.1
+@z
+
+@x
+{{< release-date date="2022-05-17" >}}
+@y
 {{< release-date date="2022-05-17" >}}
 @z
 
@@ -2047,9 +2765,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.5.0
-{{< release-date date="2022-04-29" >}}
 @y
 ## 2.5.0
+@z
+
+@x
+{{< release-date date="2022-04-29" >}}
+@y
 {{< release-date date="2022-04-29" >}}
 @z
 
@@ -2097,9 +2819,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.4.1
-{{< release-date date="2022-04-04" >}}
 @y
 ## 2.4.1
+@z
+
+@x
+{{< release-date date="2022-04-04" >}}
+@y
 {{< release-date date="2022-04-04" >}}
 @z
 
@@ -2127,9 +2853,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.4.0 
-{{< release-date date="2022-04-1" >}}
 @y
 ## 2.4.0 
+@z
+
+@x
+{{< release-date date="2022-04-1" >}}
+@y
 {{< release-date date="2022-04-1" >}}
 @z
 
@@ -2185,9 +2915,13 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ## 2.3.4 
-{{< release-date date="2022-03-25" >}}
 @y
 ## 2.3.4 
+@z
+
+@x
+{{< release-date date="2022-03-25" >}}
+@y
 {{< release-date date="2022-03-25" >}}
 @z
 
@@ -2223,10 +2957,14 @@ For the full change log or additional information, check the [Compose repository
 
 @x
 ### Updates
-- Dependencies update: Bumped github.com/spf13/cobra from 1.3.0 to 1.4.0. Cobra library no longer requires Viper and all of its indirect dependencies [See cobra's release page](https://github.com/spf13/cobra/releases).
-- Dependencies update: Bumped buildx from v0.7.1 to v0.8.0.
 @y
 ### 更新 {#updates}
+@z
+
+@x
+- Dependencies update: Bumped github.com/spf13/cobra from 1.3.0 to 1.4.0. Cobra library no longer requires Viper and all of its indirect dependencies [See cobra's release page](https://github.com/spf13/cobra/releases).
+- Dependencies update: Bumped buildx from v0.7.1 to v0.8.0.
+@y
 - Dependencies update: Bumped github.com/spf13/cobra from 1.3.0 to 1.4.0. Cobra library no longer requires Viper and all of its indirect dependencies [See cobra's release page](https://github.com/spf13/cobra/releases).
 - Dependencies update: Bumped buildx from v0.7.1 to v0.8.0.
 @z
@@ -2277,9 +3015,13 @@ For the releases later than 1.29.2 and earlier than 2.3.4, please check the [Com
 
 @x
 ## 1.29.2
-(2021-05-10)
 @y
 ## 1.29.2
+@z
+
+@x
+(2021-05-10)
+@y
 (2021-05-10)
 @z
 
@@ -2303,9 +3045,13 @@ For the releases later than 1.29.2 and earlier than 2.3.4, please check the [Com
 
 @x
 ## 1.29.1
-(2021-04-13)
 @y
 ## 1.29.1
+@z
+
+@x
+(2021-04-13)
+@y
 (2021-04-13)
 @z
 
@@ -2341,9 +3087,13 @@ For the releases later than 1.29.2 and earlier than 2.3.4, please check the [Com
 
 @x
 ## 1.29.0
-(2021-04-06)
 @y
 ## 1.29.0
+@z
+
+@x
+(2021-04-06)
+@y
 (2021-04-06)
 @z
 
@@ -2457,9 +3207,13 @@ For the releases later than 1.29.2 and earlier than 2.3.4, please check the [Com
 
 @x
 ## 1.28.5
-(2021-02-26)
 @y
 ## 1.28.5
+@z
+
+@x
+(2021-02-26)
+@y
 (2021-02-26)
 @z
 
@@ -2495,9 +3249,13 @@ For the releases later than 1.29.2 and earlier than 2.3.4, please check the [Com
 
 @x
 ## 1.28.4
-(2021-02-18)
 @y
 ## 1.28.4
+@z
+
+@x
+(2021-02-18)
+@y
 (2021-02-18)
 @z
 
@@ -2527,9 +3285,13 @@ For the releases later than 1.29.2 and earlier than 2.3.4, please check the [Com
 
 @x
 ## 1.28.3
-(2021-02-17)
 @y
 ## 1.28.3
+@z
+
+@x
+(2021-02-17)
+@y
 (2021-02-17)
 @z
 
@@ -2589,9 +3351,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.28.2
-(2021-01-26)
 @y
 ## 1.28.2
+@z
+
+@x
+(2021-01-26)
+@y
 (2021-01-26)
 @z
 
@@ -2627,9 +3393,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.28.0 
-(2021-01-20)
 @y
 ## 1.28.0 
+@z
+
+@x
+(2021-01-20)
+@y
 (2021-01-20)
 @z
 
@@ -2815,9 +3585,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.27.4
-(2020-09-24)
 @y
 ## 1.27.4
+@z
+
+@x
+(2020-09-24)
+@y
 (2020-09-24)
 @z
 
@@ -2847,9 +3621,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.27.3
-(2020-09-16)
 @y
 ## 1.27.3
+@z
+
+@x
+(2020-09-16)
+@y
 (2020-09-16)
 @z
 
@@ -2891,9 +3669,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.27.2
-(2020-09-10)
 @y
 ## 1.27.2
+@z
+
+@x
+(2020-09-10)
+@y
 (2020-09-10)
 @z
 
@@ -2911,9 +3693,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.27.1
-(2020-09-10)
 @y
 ## 1.27.1
+@z
+
+@x
+(2020-09-10)
+@y
 (2020-09-10)
 @z
 
@@ -2949,9 +3735,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.27.0
+@y
+## 1.27.0
+@z
+
+@x
 (2020-09-07)
 @y
-## 1.27.0
 (2020-09-07)
 @z
 
@@ -3077,9 +3867,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.26.2
+@y
+## 1.26.2
+@z
+
+@x
 (2020-07-02)
 @y
-## 1.26.2
 (2020-07-02)
 @z
 
@@ -3097,9 +3891,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.26.1
+@y
+## 1.26.1
+@z
+
+@x
 (2020-06-30)
 @y
-## 1.26.1
 (2020-06-30)
 @z
 
@@ -3135,9 +3933,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.26.0
+@y
+## 1.26.0
+@z
+
+@x
 (2020-06-03)
 @y
-## 1.26.0
 (2020-06-03)
 @z
 
@@ -3251,9 +4053,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.25.5
+@y
+## 1.25.5
+@z
+
+@x
 (2020-04-10)
 @y
-## 1.25.5
 (2020-04-10)
 @z
 
@@ -3283,9 +4089,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.25.4
+@y
+## 1.25.4
+@z
+
+@x
 (2020-02-03)
 @y
-## 1.25.4
 (2020-02-03)
 @z
 
@@ -3309,9 +4119,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.25.3
+@y
+## 1.25.3
+@z
+
+@x
 (2020-01-23)
 @y
-## 1.25.3
 (2020-01-23)
 @z
 
@@ -3335,9 +4149,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.25.2
+@y
+## 1.25.2
+@z
+
+@x
 (2020-01-20)
 @y
-## 1.25.2
 (2020-01-20)
 @z
 
@@ -3373,9 +4191,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.25.1
+@y
+## 1.25.1
+@z
+
+@x
 (2020-01-06)
 @y
-## 1.25.1
 (2020-01-06)
 @z
 
@@ -3417,9 +4239,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.25.0
+@y
+## 1.25.0
+@z
+
+@x
 (2019-11-18)
 @y
-## 1.25.0
 (2019-11-18)
 @z
 
@@ -3671,9 +4497,13 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 
 @x
 ## 1.24.1
+@y
+## 1.24.1
+@z
+
+@x
 (2019-06-24)
 @y
-## 1.24.1
 (2019-06-24)
 @z
 
@@ -3685,9 +4515,13 @@ This release contains minor improvements and bug fixes.
 
 @x
 ## 1.24.0
+@y
+## 1.24.0
+@z
+
+@x
 (2019-03-28)
 @y
-## 1.24.0
 (2019-03-28)
 @z
 
@@ -3831,9 +4665,13 @@ This release contains minor improvements and bug fixes.
 
 @x
 ## 1.23.2
+@y
+## 1.23.2
+@z
+
+@x
 (2018-11-28)
 @y
-## 1.23.2
 (2018-11-28)
 @z
 
@@ -3895,9 +4733,13 @@ This release contains minor improvements and bug fixes.
 
 @x
 ## 1.23.1
+@y
+## 1.23.1
+@z
+
+@x
 (2018-11-01)
 @y
-## 1.23.1
 (2018-11-01)
 @z
 
@@ -3925,9 +4767,13 @@ This release contains minor improvements and bug fixes.
 
 @x
 ## 1.23.0
+@y
+## 1.23.0
+@z
+
+@x
 (2018-10-30)
 @y
-## 1.23.0
 (2018-10-30)
 @z
 
@@ -4125,9 +4971,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.22.0
+@y
+## 1.22.0
+@z
+
+@x
 (2018-07-17)
 @y
-## 1.22.0
 (2018-07-17)
 @z
 
@@ -4273,9 +5123,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.21.2
+@y
+## 1.21.2
+@z
+
+@x
 (2018-05-03)
 @y
-## 1.21.2
 (2018-05-03)
 @z
 
@@ -4295,9 +5149,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.21.1
+@y
+## 1.21.1
+@z
+
+@x
 (2018-04-27)
 @y
-## 1.21.1
 (2018-04-27)
 @z
 
@@ -4363,9 +5221,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.21.0
+@y
+## 1.21.0
+@z
+
+@x
 (2018-04-11)
 @y
-## 1.21.0
 (2018-04-11)
 @z
 
@@ -4537,9 +5399,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.20.0
+@y
+## 1.20.0
+@z
+
+@x
 (2018-03-20)
 @y
-## 1.20.0
 (2018-03-20)
 @z
 
@@ -4777,9 +5643,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.19.0
+@y
+## 1.19.0
+@z
+
+@x
 (2018-02-07)
 @y
-## 1.19.0
 (2018-02-07)
 @z
 
@@ -5027,9 +5897,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.18.0
+@y
+## 1.18.0
+@z
+
+@x
 (2017-12-18)
 @y
-## 1.18.0
 (2017-12-18)
 @z
 
@@ -5257,9 +6131,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.17.0
+@y
+## 1.17.0
+@z
+
+@x
 (2017-11-01)
 @y
-## 1.17.0
 (2017-11-01)
 @z
 
@@ -5417,9 +6295,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.16.0
+@y
+## 1.16.0
+@z
+
+@x
 (2017-08-31)
 @y
-## 1.16.0
 (2017-08-31)
 @z
 
@@ -5583,9 +6465,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.15.0
+@y
+## 1.15.0
+@z
+
+@x
 (2017-07-26)
 @y
-## 1.15.0
 (2017-07-26)
 @z
 
@@ -5713,9 +6599,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.14.0
+@y
+## 1.14.0
+@z
+
+@x
 (2017-06-19)
 @y
-## 1.14.0
 (2017-06-19)
 @z
 
@@ -5863,9 +6753,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.13.0
+@y
+## 1.13.0
+@z
+
+@x
 (2017-05-02)
 @y
-## 1.13.0
 (2017-05-02)
 @z
 
@@ -6013,9 +6907,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.12.0
+@y
+## 1.12.0
+@z
+
+@x
 (2017-04-04)
 @y
-## 1.12.0
 (2017-04-04)
 @z
 
@@ -6279,9 +7177,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.11.2
-(2017-02-17)
 @y
 ## 1.11.2
+@z
+
+@x
+(2017-02-17)
+@y
 (2017-02-17)
 @z
 
@@ -6335,9 +7237,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.11.1
-(2017-02-09)
 @y
 ## 1.11.1
+@z
+
+@x
+(2017-02-09)
+@y
 (2017-02-09)
 @z
 
@@ -6357,9 +7263,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.11.0
-(2017-02-08)
 @y
 ## 1.11.0
+@z
+
+@x
+(2017-02-08)
+@y
 (2017-02-08)
 @z
 
@@ -6423,9 +7333,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.10.1
-(2017-02-01)
 @y
 ## 1.10.1
+@z
+
+@x
+(2017-02-01)
+@y
 (2017-02-01)
 @z
 
@@ -6485,9 +7399,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.10.0
-(2017-01-18)
 @y
 ## 1.10.0
+@z
+
+@x
+(2017-01-18)
+@y
 (2017-01-18)
 @z
 
@@ -6615,9 +7533,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.9.0
-(2016-11-16)
 @y
 ## 1.9.0
+@z
+
+@x
+(2016-11-16)
+@y
 (2016-11-16)
 @z
 
@@ -6763,9 +7685,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.8.1
-(2016-09-22)
 @y
 ## 1.8.1
+@z
+
+@x
+(2016-09-22)
+@y
 (2016-09-22)
 @z
 
@@ -6873,9 +7799,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.8.0
-(2016-06-14)
 @y
 ## 1.8.0
+@z
+
+@x
+(2016-06-14)
+@y
 (2016-06-14)
 @z
 
@@ -7035,9 +7965,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.7.1
-(2016-05-04)
 @y
 ## 1.7.1
+@z
+
+@x
+(2016-05-04)
+@y
 (2016-05-04)
 @z
 
@@ -7141,9 +8075,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.7.0
-(2016-04-13)
 @y
 ## 1.7.0
+@z
+
+@x
+(2016-04-13)
+@y
 (2016-04-13)
 @z
 
@@ -7371,9 +8309,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.6.2
-(2016-02-23)
 @y
 ## 1.6.2
+@z
+
+@x
+(2016-02-23)
+@y
 (2016-02-23)
 @z
 
@@ -7387,9 +8329,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.6.1
-(2016-02-23)
 @y
 ## 1.6.1
+@z
+
+@x
+(2016-02-23)
+@y
 (2016-02-23)
 @z
 
@@ -7531,9 +8477,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.6.0
+@y
+## 1.6.0
+@z
+
+@x
 (2016-01-15)
 @y
-## 1.6.0
 (2016-01-15)
 @z
 
@@ -7835,9 +8785,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.5.2
+@y
+## 1.5.2
+@z
+
+@x
 (2015-12-03)
 @y
-## 1.5.2
 (2015-12-03)
 @z
 
@@ -7893,9 +8847,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.5.1
+@y
+## 1.5.1
+@z
+
+@x
 (2015-11-12)
 @y
-## 1.5.1
 (2015-11-12)
 @z
 
@@ -8033,9 +8991,13 @@ naming scheme accordingly before upgrading.
 
 @x
 ## 1.5.0
+@y
+## 1.5.0
+@z
+
+@x
 (2015-11-03)
 @y
-## 1.5.0
 (2015-11-03)
 @z
 
@@ -8297,9 +9259,13 @@ https://github.com/docker/compose/blob/8cc8e61/docs/compose-file.md#variable-sub
 
 @x
 ## 1.4.2
+@y
+## 1.4.2
+@z
+
+@x
 (2015-09-22)
 @y
-## 1.4.2
 (2015-09-22)
 @z
 
@@ -8313,9 +9279,13 @@ https://github.com/docker/compose/blob/8cc8e61/docs/compose-file.md#variable-sub
 
 @x
 ## 1.4.1
+@y
+## 1.4.1
+@z
+
+@x
 (2015-09-10)
 @y
-## 1.4.1
 (2015-09-10)
 @z
 
@@ -8349,9 +9319,13 @@ https://github.com/docker/compose/blob/8cc8e61/docs/compose-file.md#variable-sub
 
 @x
 ## 1.4.0
+@y
+## 1.4.0
+@z
+
+@x
 (2015-08-04)
 @y
-## 1.4.0
 (2015-08-04)
 @z
 
@@ -8465,9 +9439,13 @@ Thanks @mnowster, @dnephin, @ekristen, @funkyfuture, @jeffk and @lukemarsden!
 
 @x
 ## 1.3.3
+@y
+## 1.3.3
+@z
+
+@x
 (2015-07-15)
 @y
-## 1.3.3
 (2015-07-15)
 @z
 
@@ -8487,9 +9465,13 @@ Thanks @mnowster, @dnephin, @ekristen, @funkyfuture, @jeffk and @lukemarsden!
 
 @x
 ## 1.3.2
+@y
+## 1.3.2
+@z
+
+@x
 (2015-07-14)
 @y
-## 1.3.2
 (2015-07-14)
 @z
 
@@ -8525,9 +9507,13 @@ Thanks @dano, @josephpage, @kevinsimper, @lieryan, @phemmer, @soulrebel and @ssc
 
 @x
 ## 1.3.1
+@y
+## 1.3.1
+@z
+
+@x
 (2015-06-21)
 @y
-## 1.3.1
 (2015-06-21)
 @z
 
@@ -8549,9 +9535,13 @@ Thanks @dano, @josephpage, @kevinsimper, @lieryan, @phemmer, @soulrebel and @ssc
 
 @x
 ## 1.3.0
+@y
+## 1.3.0
+@z
+
+@x
 (2015-06-18)
 @y
-## 1.3.0
 (2015-06-18)
 @z
 
@@ -8671,9 +9661,13 @@ Thanks @ahromis, @albers, @aleksandr-vin, @antoineco, @ccverak, @chernjie, @dnep
 
 @x
 ## 1.2.0
-(2015-04-16)
 @y
 ## 1.2.0
+@z
+
+@x
+(2015-04-16)
+@y
 (2015-04-16)
 @z
 
@@ -8739,9 +9733,13 @@ Thanks, @abesto, @albers, @alunduil, @dnephin, @funkyfuture, @gilclark, @IanVS, 
 
 @x
 ## 1.1.0
-(2015-02-25)
 @y
 ## 1.1.0
+@z
+
+@x
+(2015-02-25)
+@y
 (2015-02-25)
 @z
 
@@ -8835,9 +9833,13 @@ Thanks @dnephin, @squebe, @jbalonso, @raulcd, @benlangfield, @albers, @ggtools, 
 
 @x
 ## 1.0.1
-(2014-11-04)
 @y
 ## 1.0.1
+@z
+
+@x
+(2014-11-04)
+@y
 (2014-11-04)
 @z
 
@@ -8853,9 +9855,13 @@ Thanks @dnephin, @squebe, @jbalonso, @raulcd, @benlangfield, @albers, @ggtools, 
 
 @x
 ## 1.0.0
-(2014-10-16)
 @y
 ## 1.0.0
+@z
+
+@x
+(2014-10-16)
+@y
 (2014-10-16)
 @z
 
@@ -8981,9 +9987,13 @@ Thanks @dnephin, @d11wtq, @marksteve, @rubbish, @jbalonso, @timfreund, @alunduil
 
 @x
 ## 0.5.2
-(2014-07-28)
 @y
 ## 0.5.2
+@z
+
+@x
+(2014-07-28)
+@y
 (2014-07-28)
 @z
 
@@ -9007,9 +10017,13 @@ Thanks @dnephin and @marksteve!
 
 @x
 ## 0.5.1
-(2014-07-11)
 @y
 ## 0.5.1
+@z
+
+@x
+(2014-07-11)
+@y
 (2014-07-11)
 @z
 
@@ -9033,9 +10047,13 @@ Thanks @ryanbrainard and @d11wtq!
 
 @x
 ## 0.5.0
-(2014-07-11)
 @y
 ## 0.5.0
+@z
+
+@x
+(2014-07-11)
+@y
 (2014-07-11)
 @z
 
@@ -9131,9 +10149,13 @@ Thanks to @d11wtq, @ryanbrainard, @rail44, @j0hnsmith, @binarin, @Elemecca, @moz
 
 @x
 ## 0.4.2
+@y
+## 0.4.2
+@z
+
+@x
 (2014-06-18)
 @y
-## 0.4.2
 (2014-06-18)
 @z
 
@@ -9145,9 +10167,13 @@ Thanks to @d11wtq, @ryanbrainard, @rail44, @j0hnsmith, @binarin, @Elemecca, @moz
 
 @x
 ## 0.4.1
+@y
+## 0.4.1
+@z
+
+@x
 (2014-05-08)
 @y
-## 0.4.1
 (2014-05-08)
 @z
 
@@ -9163,9 +10189,13 @@ Thanks to @d11wtq, @ryanbrainard, @rail44, @j0hnsmith, @binarin, @Elemecca, @moz
 
 @x
 ## 0.4.0
+@y
+## 0.4.0
+@z
+
+@x
 (2014-04-29)
 @y
-## 0.4.0
 (2014-04-29)
 @z
 
@@ -9191,9 +10221,13 @@ Thanks to @d11wtq, @ryanbrainard, @rail44, @j0hnsmith, @binarin, @Elemecca, @moz
 
 @x
 ## 0.3.2
+@y
+## 0.3.2
+@z
+
+@x
 (2014-03-05)
 @y
-## 0.3.2
 (2014-03-05)
 @z
 
@@ -9207,9 +10241,13 @@ Thanks to @d11wtq, @ryanbrainard, @rail44, @j0hnsmith, @binarin, @Elemecca, @moz
 
 @x
 ## 0.3.1
+@y
+## 0.3.1
+@z
+
+@x
 (2014-03-04)
 @y
-## 0.3.1
 (2014-03-04)
 @z
 
@@ -9225,9 +10263,13 @@ Thanks to @d11wtq, @ryanbrainard, @rail44, @j0hnsmith, @binarin, @Elemecca, @moz
 
 @x
 ## 0.3.0
+@y
+## 0.3.0
+@z
+
+@x
 (2014-03-03)
 @y
-## 0.3.0
 (2014-03-03)
 @z
 
@@ -9257,9 +10299,13 @@ Thanks @marksteve, @Gazler and @teozkr!
 
 @x
 ## 0.2.2
+@y
+## 0.2.2
+@z
+
+@x
 (2014-02-17)
 @y
-## 0.2.2
 (2014-02-17)
 @z
 
@@ -9283,9 +10329,13 @@ Thanks to @barnybug and @dustinlacewell for their work on this release.
 
 @x
 ## 0.2.1
+@y
+## 0.2.1
+@z
+
+@x
 (2014-02-04)
 @y
-## 0.2.1
 (2014-02-04)
 @z
 
@@ -9297,9 +10347,13 @@ Thanks to @barnybug and @dustinlacewell for their work on this release.
 
 @x
 ## 0.2.0
+@y
+## 0.2.0
+@z
+
+@x
 (2014-01-31)
 @y
-## 0.2.0
 (2014-01-31)
 @z
 
@@ -9323,9 +10377,13 @@ Big thanks to @cameronmaske, @mrchrisadams and @damianmoore for their help with 
 
 @x
 ## 0.1.4
+@y
+## 0.1.4
+@z
+
+@x
 (2014-01-27)
 @y
-## 0.1.4
 (2014-01-27)
 @z
 
@@ -9337,9 +10395,13 @@ Big thanks to @cameronmaske, @mrchrisadams and @damianmoore for their help with 
 
 @x
 ## 0.1.3
+@y
+## 0.1.3
+@z
+
+@x
 (2014-01-23)
 @y
-## 0.1.3
 (2014-01-23)
 @z
 
@@ -9353,9 +10415,13 @@ Big thanks to @cameronmaske, @mrchrisadams and @damianmoore for their help with 
 
 @x
 ## 0.1.2
+@y
+## 0.1.2
+@z
+
+@x
 (2014-01-22)
 @y
-## 0.1.2
 (2014-01-22)
 @z
 
@@ -9371,9 +10437,13 @@ Big thanks to @cameronmaske, @mrchrisadams and @damianmoore for their help with 
 
 @x
 ## 0.1.1
+@y
+## 0.1.1
+@z
+
+@x
 (2014-01-17)
 @y
-## 0.1.1
 (2014-01-17)
 @z
 
@@ -9385,9 +10455,13 @@ Big thanks to @cameronmaske, @mrchrisadams and @damianmoore for their help with 
 
 @x
 ## 0.1.0
+@y
+## 0.1.0
+@z
+
+@x
 (2014-01-16)
 @y
-## 0.1.0
 (2014-01-16)
 @z
 
@@ -9421,9 +10495,13 @@ Big thanks to @tomstuart, @EnTeQuAk, @schickling, @aronasorman and @GeoffreyPlit
 
 @x
 ## 0.0.2
+@y
+## 0.0.2
+@z
+
+@x
 (2014-01-02)
 @y
-## 0.0.2
 (2014-01-02)
 @z
 
@@ -9443,9 +10521,13 @@ Big thanks to @tomstuart, @EnTeQuAk, @schickling, @aronasorman and @GeoffreyPlit
 
 @x
 ## 0.0.1
+@y
+## 0.0.1
+@z
+
+@x
 (2013-12-20)
 @y
-## 0.0.1
 (2013-12-20)
 @z
 

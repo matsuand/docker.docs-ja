@@ -2,21 +2,14 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Language-specific guides overview
-keywords: guides, docker, language, node, java, python, go, golang, .net
+keywords: guides, docker, language, node, java, python, R, go, golang, .net
 title: Language-specific guides overview
-toc_min: 1
-toc_max: 2
----
 @y
 ---
 description: 言語別ガイドの概要。
-keywords: guides, docker, language, node, java, python, go, golang, .net
+keywords: guides, docker, language, node, java, python, R, go, golang, .net
 title: 言語別ガイドの概要
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -74,6 +67,9 @@ Docker を使ったアプリケーションのコンテナー化を学び、開�
         <a href="/language/python/"><img class="m-auto rounded" src="/language/images/python.webp" alt="Develop with Python"></a>
     </div>
     <div class="flex items-center flex-1 shadow p-4">
+        <a href="/language/r/"><img class="m-auto rounded" src="/language/images/r.webp" alt="Develop with R"></a>
+    </div>
+    <div class="flex items-center flex-1 shadow p-4">
         <a href="/language/java/"><img class="m-auto rounded" src="/language/images/java.webp" alt="Develop with Java"></a>
     </div>
     <div class="flex items-center flex-1 shadow p-4">
@@ -96,6 +92,9 @@ Docker を使ったアプリケーションのコンテナー化を学び、開�
     </div>
     <div class="flex items-center flex-1 shadow p-4">
         <a href="__SUBDIR__/language/python/"><img class="m-auto rounded" src="__SUBDIR__/language/images/python.webp" alt="Develop with Python"></a>
+    </div>
+    <div class="flex items-center flex-1 shadow p-4">
+        <a href="__SUBDIR__/language/r/"><img class="m-auto rounded" src="__SUBDIR__/language/images/r.webp" alt="Develop with R"></a>
     </div>
     <div class="flex items-center flex-1 shadow p-4">
         <a href="__SUBDIR__/language/java/"><img class="m-auto rounded" src="__SUBDIR__/language/images/java.webp" alt="Develop with Java"></a>

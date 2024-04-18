@@ -279,10 +279,14 @@ Hovering over an image tag reveals two options:
 
 @x
 ## Additional resources
+@y
+## Additional resources
+@z
+
+@x
 - [Run Docker Hub images](../../guides/walkthroughs/run-hub-images.md)
 - [Publish your image](../../guides/walkthroughs/publish-your-image.md)
 @y
-## Additional resources
 - [Run Docker Hub images](../../guides/walkthroughs/run-hub-images.md)
 - [Publish your image](../../guides/walkthroughs/publish-your-image.md)
 @z

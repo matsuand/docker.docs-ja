@@ -141,11 +141,15 @@ integration feature, enabled via the Dashboard's **Settings** > **Resources** > 
 
 @x
 ### Docker Build and Buildx have some restrictions
+@y
+### Docker Build and Buildx have some restrictions
+@z
+
+@x
 With ECI enabled, Docker build `--network=host` and Docker Buildx entitlements
 (`network.host`, `security.insecure`) are not allowed. Builds that require
 these won't work properly.
 @y
-### Docker Build and Buildx have some restrictions
 With ECI enabled, Docker build `--network=host` and Docker Buildx entitlements
 (`network.host`, `security.insecure`) are not allowed. Builds that require
 these won't work properly.
@@ -153,31 +157,43 @@ these won't work properly.
 
 @x
 ### Kubernetes pods are not yet protected
+@y
+### Kubernetes pods are not yet protected
+@z
+
+@x
 Kubernetes pods are not yet protected by ECI. A malicious or privileged pod can
 compromise the Docker Desktop Linux VM and bypass security controls.
 @y
-### Kubernetes pods are not yet protected
 Kubernetes pods are not yet protected by ECI. A malicious or privileged pod can
 compromise the Docker Desktop Linux VM and bypass security controls.
 @z
 
 @x
 ### Extension containers are not yet protected
+@y
+### Extension containers are not yet protected
+@z
+
+@x
 Extension containers are also not yet protected by ECI. Ensure you extension
 containers come from trusted entities to avoid issues.
 @y
-### Extension containers are not yet protected
 Extension containers are also not yet protected by ECI. Ensure you extension
 containers come from trusted entities to avoid issues.
 @z
 
 @x
 ### Docker Desktop dev environments are not yet protected
+@y
+### Docker Desktop dev environments are not yet protected
+@z
+
+@x
 Containers launched by the Docker Desktop Dev Environments feature are not yet
 protected either. We expect to improve on this in future versions of Docker
 Desktop.
 @y
-### Docker Desktop dev environments are not yet protected
 Containers launched by the Docker Desktop Dev Environments feature are not yet
 protected either. We expect to improve on this in future versions of Docker
 Desktop.
@@ -185,11 +201,15 @@ Desktop.
 
 @x
 ### Use in production
+@y
+### Use in production
+@z
+
+@x
 In general users should not experience differences between running a container
 in Docker Desktop with ECI enabled, which uses the Sysbox runtime, and running
 that same container in production, through the standard OCI `runc` runtime.
 @y
-### Use in production
 In general users should not experience differences between running a container
 in Docker Desktop with ECI enabled, which uses the Sysbox runtime, and running
 that same container in production, through the standard OCI `runc` runtime.

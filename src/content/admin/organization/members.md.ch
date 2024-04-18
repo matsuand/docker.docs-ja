@@ -123,11 +123,15 @@ To add a member to a team:
    > **Note**
    >
    > The invitee must first accept the invitation to join the organization before being added to the team.
-### Remove a member from a team
 @y
    > **Note**
    >
    > The invitee must first accept the invitation to join the organization before being added to the team.
+@z
+
+@x
+### Remove a member from a team
+@y
 ### Remove a member from a team
 @z
 

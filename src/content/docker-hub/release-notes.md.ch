@@ -585,9 +585,13 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 
 @x
 ### New features
-* **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
 @y
 ### New features
+@z
+
+@x
+* **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
+@y
 * **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
 @z
 
@@ -603,9 +607,13 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 
 @x
 ### Enhancements
-* As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
 @y
 ### Enhancements
+@z
+
+@x
+* As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
+@y
 * As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
 @z
 
@@ -629,6 +637,11 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 
 @x
 ### Enhancements
+@y
+### Enhancements
+@z
+
+@x
 * You can now manage teams and members straight from your [organization page](https://hub.docker.com/orgs).
 Each organization page now breaks down into these tabs:
   * **New:** Members - manage your members directly from this page (delete,
@@ -641,7 +654,6 @@ Each organization page now breaks down into these tabs:
   * Settings
   * Billing
 @y
-### Enhancements
 * You can now manage teams and members straight from your [organization page](https://hub.docker.com/orgs).
 Each organization page now breaks down into these tabs:
   * **New:** Members - manage your members directly from this page (delete,

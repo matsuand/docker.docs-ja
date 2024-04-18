@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 description: Find a quick reference for Docker Compose version 3, including Docker
@@ -79,223 +80,7 @@ topic on [Deploying an app to a Swarm](https://github.com/docker/labs/blob/maste
 {{< accordion title="Example Compose file version 3" >}}
 @z
 
-@x
-```yml
-version: "{{% param "compose_file_v3" %}}"
-services:
-@y
-```yml
-version: "{{% param "compose_file_v3" %}}"
-services:
-@z
-
-@x
-  redis:
-    image: redis:alpine
-    ports:
-      - "6379"
-    networks:
-      - frontend
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-@y
-  redis:
-    image: redis:alpine
-    ports:
-      - "6379"
-    networks:
-      - frontend
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-@z
-
-@x
-  db:
-    image: postgres:9.4
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - backend
-    deploy:
-      placement:
-        max_replicas_per_node: 1
-        constraints:
-          - "node.role==manager"
-@y
-  db:
-    image: postgres:9.4
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - backend
-    deploy:
-      placement:
-        max_replicas_per_node: 1
-        constraints:
-          - "node.role==manager"
-@z
-
-@x
-  vote:
-    image: dockersamples/examplevotingapp_vote:before
-    ports:
-      - "5000:80"
-    networks:
-      - frontend
-    depends_on:
-      - redis
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 2
-      restart_policy:
-        condition: on-failure
-@y
-  vote:
-    image: dockersamples/examplevotingapp_vote:before
-    ports:
-      - "5000:80"
-    networks:
-      - frontend
-    depends_on:
-      - redis
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 2
-      restart_policy:
-        condition: on-failure
-@z
-
-@x
-  result:
-    image: dockersamples/examplevotingapp_result:before
-    ports:
-      - "5001:80"
-    networks:
-      - backend
-    depends_on:
-      - db
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-@y
-  result:
-    image: dockersamples/examplevotingapp_result:before
-    ports:
-      - "5001:80"
-    networks:
-      - backend
-    depends_on:
-      - db
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-@z
-
-@x
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    networks:
-      - frontend
-      - backend
-    deploy:
-      mode: replicated
-      replicas: 1
-      labels: [APP=VOTING]
-      restart_policy:
-        condition: on-failure
-        delay: 10s
-        max_attempts: 3
-        window: 120s
-      placement:
-        constraints:
-          - "node.role==manager"
-@y
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    networks:
-      - frontend
-      - backend
-    deploy:
-      mode: replicated
-      replicas: 1
-      labels: [APP=VOTING]
-      restart_policy:
-        condition: on-failure
-        delay: 10s
-        max_attempts: 3
-        window: 120s
-      placement:
-        constraints:
-          - "node.role==manager"
-@z
-
-@x
-  visualizer:
-    image: dockersamples/visualizer:stable
-    ports:
-      - "8080:8080"
-    stop_grace_period: 1m30s
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    deploy:
-      placement:
-        constraints:
-          - "node.role==manager"
-@y
-  visualizer:
-    image: dockersamples/visualizer:stable
-    ports:
-      - "8080:8080"
-    stop_grace_period: 1m30s
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    deploy:
-      placement:
-        constraints:
-          - "node.role==manager"
-@z
-
-@x
-networks:
-  frontend:
-  backend:
-@y
-networks:
-  frontend:
-  backend:
-@z
-
-@x
-volumes:
-  db-data:
-```
-{{< /accordion >}}
-@y
-volumes:
-  db-data:
-```
-{{< /accordion >}}
-@z
+% snip code...
 
 @x
 The topics on this reference page are organized alphabetically by top-level key
@@ -401,21 +186,7 @@ context:
 context:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  webapp:
-    build: ./dir
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  webapp:
-    build: ./dir
-```
-@z
+% snip code...
 
 @x
 Or, as an object with the path specified under [context](#context) and
@@ -425,29 +196,7 @@ Or, as an object with the path specified under [context](#context) and
 optionally [Dockerfile](#dockerfile) and [args](#args):
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  webapp:
-    build:
-      context: ./dir
-      dockerfile: Dockerfile-alternate
-      args:
-        buildno: 1
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  webapp:
-    build:
-      context: ./dir
-      dockerfile: Dockerfile-alternate
-      args:
-        buildno: 1
-```
-@z
+% snip code...
 
 @x
 If you specify `image` as well as `build`, then Compose names the built image
@@ -457,17 +206,7 @@ If you specify `image` as well as `build`, then Compose names the built image
 with the `webapp` and optional `tag` specified in `image`:
 @z
 
-@x
-```yaml
-build: ./dir
-image: webapp:tag
-```
-@y
-```yaml
-build: ./dir
-image: webapp:tag
-```
-@z
+% snip code...
 
 @x
 This results in an image named `webapp` and tagged `tag`, built from `./dir`.
@@ -521,17 +260,7 @@ Compose builds and tags it with a generated name, and uses that image
 thereafter.
 @z
 
-@x
-```yaml
-build:
-  context: ./dir
-```
-@y
-```yaml
-build:
-  context: ./dir
-```
-@z
+% snip code...
 
 @x
 #### dockerfile
@@ -553,19 +282,7 @@ Compose uses an alternate file to build with. A build path must also be
 specified.
 @z
 
-@x
-```yaml
-build:
-  context: .
-  dockerfile: Dockerfile-alternate
-```
-@y
-```yaml
-build:
-  context: .
-  dockerfile: Dockerfile-alternate
-```
-@z
+% snip code...
 
 @x
 #### args
@@ -587,31 +304,7 @@ First, specify the arguments in your Dockerfile:
 First, specify the arguments in your Dockerfile:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-ARG buildno
-ARG gitcommithash
-@y
-ARG buildno
-ARG gitcommithash
-@z
-
-@x
-RUN echo "Build number: $buildno"
-RUN echo "Based on commit: $gitcommithash"
-```
-@y
-RUN echo "Build number: $buildno"
-RUN echo "Based on commit: $gitcommithash"
-```
-@z
+% snip code...
 
 @x
 Then specify the arguments under the `build` key. You can pass a mapping
@@ -621,41 +314,7 @@ Then specify the arguments under the `build` key. You can pass a mapping
 or a list:
 @z
 
-@x
-```yaml
-build:
-  context: .
-  args:
-    buildno: 1
-    gitcommithash: cdc3b19
-```
-@y
-```yaml
-build:
-  context: .
-  args:
-    buildno: 1
-    gitcommithash: cdc3b19
-```
-@z
-
-@x
-```yaml
-build:
-  context: .
-  args:
-    - buildno=1
-    - gitcommithash=cdc3b19
-```
-@y
-```yaml
-build:
-  context: .
-  args:
-    - buildno=1
-    - gitcommithash=cdc3b19
-```
-@z
+% snip code...
 
 @x
 > Scope of build-args
@@ -683,19 +342,7 @@ You can omit the value when specifying a build argument, in which case its value
 at build time is the value in the environment where Compose is running.
 @z
 
-@x
-```yaml
-args:
-  - buildno
-  - gitcommithash
-```
-@y
-```yaml
-args:
-  - buildno
-  - gitcommithash
-```
-@z
+% snip code...
 
 @x
 > Tip when using boolean values
@@ -729,23 +376,7 @@ A list of images that the engine uses for cache resolution.
 A list of images that the engine uses for cache resolution.
 @z
 
-@x
-```yaml
-build:
-  context: .
-  cache_from:
-    - alpine:latest
-    - corp/web_app:3.14
-```
-@y
-```yaml
-build:
-  context: .
-  cache_from:
-    - alpine:latest
-    - corp/web_app:3.14
-```
-@z
+% snip code...
 
 @x
 #### labels
@@ -775,45 +406,7 @@ It's recommended that you use reverse-DNS notation to prevent your labels from
 conflicting with those used by other software.
 @z
 
-@x
-```yaml
-build:
-  context: .
-  labels:
-    com.example.description: "Accounting webapp"
-    com.example.department: "Finance"
-    com.example.label-with-empty-value: ""
-```
-@y
-```yaml
-build:
-  context: .
-  labels:
-    com.example.description: "Accounting webapp"
-    com.example.department: "Finance"
-    com.example.label-with-empty-value: ""
-```
-@z
-
-@x
-```yaml
-build:
-  context: .
-  labels:
-    - "com.example.description=Accounting webapp"
-    - "com.example.department=Finance"
-    - "com.example.label-with-empty-value"
-```
-@y
-```yaml
-build:
-  context: .
-  labels:
-    - "com.example.description=Accounting webapp"
-    - "com.example.department=Finance"
-    - "com.example.label-with-empty-value"
-```
-@z
+% snip code...
 
 @x
 #### network
@@ -835,33 +428,7 @@ Set the network containers connect to for the `RUN` instructions during
 build.
 @z
 
-@x
-```yaml
-build:
-  context: .
-  network: host
-```
-@y
-```yaml
-build:
-  context: .
-  network: host
-```
-@z
-
-@x
-```yaml
-build:
-  context: .
-  network: custom_network_1
-```
-@y
-```yaml
-build:
-  context: .
-  network: custom_network_1
-```
-@z
+% snip code...
 
 @x
 Use `none` to disable networking during build:
@@ -869,19 +436,7 @@ Use `none` to disable networking during build:
 Use `none` to disable networking during build:
 @z
 
-@x
-```yaml
-build:
-  context: .
-  network: none
-```
-@y
-```yaml
-build:
-  context: .
-  network: none
-```
-@z
+% snip code...
 
 @x
 #### shm_size
@@ -905,33 +460,7 @@ as an integer value representing the number of bytes or as a string expressing
 a [byte value](#specifying-byte-values).
 @z
 
-@x
-```yaml
-build:
-  context: .
-  shm_size: '2gb'
-```
-@y
-```yaml
-build:
-  context: .
-  shm_size: '2gb'
-```
-@z
-
-@x
-```yaml
-build:
-  context: .
-  shm_size: 10000000
-```
-@y
-```yaml
-build:
-  context: .
-  shm_size: 10000000
-```
-@z
+% snip code...
 
 @x
 #### target
@@ -955,19 +484,7 @@ Build the specified stage as defined inside the `Dockerfile`. See the
 details.
 @z
 
-@x
-```yaml
-build:
-  context: .
-  target: prod
-```
-@y
-```yaml
-build:
-  context: .
-  target: prod
-```
-@z
+% snip code...
 
 @x
 ### cap_add, cap_drop
@@ -983,27 +500,7 @@ Add or drop container capabilities.
 See `man 7 capabilities` for a full list.
 @z
 
-@x
-```yaml
-cap_add:
-  - ALL
-@y
-```yaml
-cap_add:
-  - ALL
-@z
-
-@x
-cap_drop:
-  - NET_ADMIN
-  - SYS_ADMIN
-```
-@y
-cap_drop:
-  - NET_ADMIN
-  - SYS_ADMIN
-```
-@z
+% snip code...
 
 @x
 ### cgroup_parent
@@ -1017,15 +514,7 @@ Specify an optional parent cgroup for the container.
 Specify an optional parent cgroup for the container.
 @z
 
-@x
-```yaml
-cgroup_parent: m-executor-abcd
-```
-@y
-```yaml
-cgroup_parent: m-executor-abcd
-```
-@z
+% snip code...
 
 @x
 > Note when using docker stack deploy
@@ -1053,15 +542,7 @@ Override the default command.
 Override the default command.
 @z
 
-@x
-```yaml
-command: bundle exec thin -p 3000
-```
-@y
-```yaml
-command: bundle exec thin -p 3000
-```
-@z
+% snip code...
 
 @x
 The command can also be a list, in a manner similar to
@@ -1071,15 +552,7 @@ The command can also be a list, in a manner similar to
 [dockerfile](../../reference/dockerfile.md#cmd):
 @z
 
-@x
-```yaml
-command: ["bundle", "exec", "thin", "-p", "3000"]
-```
-@y
-```yaml
-command: ["bundle", "exec", "thin", "-p", "3000"]
-```
-@z
+% snip code...
 
 @x
 ### configs
@@ -1159,41 +632,7 @@ the stack deployment fails with a `config not found` error.
 > compose file format.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    configs:
-      - my_config
-      - my_other_config
-configs:
-  my_config:
-    file: ./my_config.txt
-  my_other_config:
-    external: true
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    configs:
-      - my_config
-      - my_other_config
-configs:
-  my_config:
-    file: ./my_config.txt
-  my_other_config:
-    external: true
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -1253,47 +692,7 @@ to `103`. The `redis` service does not have access to the `my_other_config`
 config.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    configs:
-      - source: my_config
-        target: /redis_config
-        uid: '103'
-        gid: '103'
-        mode: 0440
-configs:
-  my_config:
-    file: ./my_config.txt
-  my_other_config:
-    external: true
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    configs:
-      - source: my_config
-        target: /redis_config
-        uid: '103'
-        gid: '103'
-        mode: 0440
-configs:
-  my_config:
-    file: ./my_config.txt
-  my_other_config:
-    external: true
-```
-@z
+% snip code...
 
 @x
 You can grant a service access to multiple configs and you can mix long and
@@ -1315,15 +714,7 @@ Specify a custom container name, rather than a generated default name.
 Specify a custom container name, rather than a generated default name.
 @z
 
-@x
-```yaml
-container_name: my-web-container
-```
-@y
-```yaml
-container_name: my-web-container
-```
-@z
+% snip code...
 
 @x
 Because Docker container names must be unique, you cannot scale a service beyond
@@ -1391,17 +782,7 @@ on Windows. The following example loads the credential spec from a file named
 `C:\ProgramData\Docker\CredentialSpecs\my-credential-spec.json`.
 @z
 
-@x
-```yaml
-credential_spec:
-  file: my-credential-spec.json
-```
-@y
-```yaml
-credential_spec:
-  file: my-credential-spec.json
-```
-@z
+% snip code...
 
 @x
 When using `registry:`, the credential spec is read from the Windows registry on
@@ -1425,57 +806,23 @@ The following example load the credential spec from a value named `my-credential
 in the registry:
 @z
 
-@x
-```yaml
-credential_spec:
-  registry: my-credential-spec
-```
-@y
-```yaml
-credential_spec:
-  registry: my-credential-spec
-```
-@z
+% snip code...
 
 @x
 #### Example gMSA configuration
+@y
+#### Example gMSA configuration
+@z
+
+@x
 When configuring a gMSA credential spec for a service, you only need
 to specify a credential spec with `config`, as shown in the following example:
 @y
-#### Example gMSA configuration
 When configuring a gMSA credential spec for a service, you only need
 to specify a credential spec with `config`, as shown in the following example:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  myservice:
-    image: myimage:latest
-    credential_spec:
-      config: my_credential_spec
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  myservice:
-    image: myimage:latest
-    credential_spec:
-      config: my_credential_spec
-@z
-
-@x
-configs:
-  my_credentials_spec:
-    file: ./my-credential-spec.json|
-```
-@y
-configs:
-  my_credentials_spec:
-    file: ./my-credential-spec.json|
-```
-@z
+% snip code...
 
 @x
 ### depends_on
@@ -1515,35 +862,7 @@ Simple example:
 Simple example:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    build: .
-    depends_on:
-      - db
-      - redis
-  redis:
-    image: redis
-  db:
-    image: postgres
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    build: .
-    depends_on:
-      - db
-      - redis
-  redis:
-    image: redis
-  db:
-    image: postgres
-```
-@z
+% snip code...
 
 @x
 > There are several things to be aware of when using `depends_on`:
@@ -1591,39 +910,7 @@ sub-options only takes effect when deploying to a [swarm](../../engine/swarm/ind
 ignored by `docker-compose up` and `docker-compose run`, except for `resources`.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:alpine
-    deploy:
-      replicas: 6
-      placement:
-        max_replicas_per_node: 1
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:alpine
-    deploy:
-      replicas: 6
-      placement:
-        max_replicas_per_node: 1
-      update_config:
-        parallelism: 2
-        delay: 10s
-      restart_policy:
-        condition: on-failure
-```
-@z
+% snip code...
 
 @x
 Several sub-options are available:
@@ -1681,81 +968,7 @@ in cases where you want to use your own load balancer, or for Hybrid
 Windows and Linux applications.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@z
-
-@x
-services:
-  wordpress:
-    image: wordpress
-    ports:
-      - "8080:80"
-    networks:
-      - overlay
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: vip
-@y
-services:
-  wordpress:
-    image: wordpress
-    ports:
-      - "8080:80"
-    networks:
-      - overlay
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: vip
-@z
-
-@x
-  mysql:
-    image: mysql
-    volumes:
-       - db-data:/var/lib/mysql/data
-    networks:
-       - overlay
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: dnsrr
-@y
-  mysql:
-    image: mysql
-    volumes:
-       - db-data:/var/lib/mysql/data
-    networks:
-       - overlay
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: dnsrr
-@z
-
-@x
-volumes:
-  db-data:
-@y
-volumes:
-  db-data:
-@z
-
-@x
-networks:
-  overlay:
-```
-@y
-networks:
-  overlay:
-```
-@z
+% snip code...
 
 @x
 The options for `endpoint_mode` also work as flags on the swarm mode CLI command
@@ -1793,27 +1006,7 @@ Specify labels for the service. These labels are *only* set on the service,
 and *not* on any containers for the service.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: web
-    deploy:
-      labels:
-        com.example.description: "This label will appear on the web service"
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: web
-    deploy:
-      labels:
-        com.example.description: "This label will appear on the web service"
-```
-@z
+% snip code...
 
 @x
 To set labels on containers instead, use the `labels` key outside of `deploy`:
@@ -1821,25 +1014,7 @@ To set labels on containers instead, use the `labels` key outside of `deploy`:
 To set labels on containers instead, use the `labels` key outside of `deploy`:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: web
-    labels:
-      com.example.description: "This label will appear on all containers for the web service"
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: web
-    labels:
-      com.example.description: "This label will appear on all containers for the web service"
-```
-@z
+% snip code...
 
 @x
 #### mode
@@ -1859,25 +1034,7 @@ see [Replicated and global services](../../engine/swarm/how-swarm-mode-works/ser
 in the [swarm](../../engine/swarm/index.md) topics.)
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    deploy:
-      mode: global
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    deploy:
-      mode: global
-```
-@z
+% snip code...
 
 @x
 #### placement
@@ -1899,35 +1056,7 @@ documentation for a full description of the syntax and available types of
 and [specifying the maximum replicas per node](../../reference/cli/docker/service/create.md#replicas-max-per-node)
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  db:
-    image: postgres
-    deploy:
-      placement:
-        constraints:
-          - "node.role==manager"
-          - "engine.labels.operatingsystem==ubuntu 22.04"
-        preferences:
-          - spread: node.labels.zone
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  db:
-    image: postgres
-    deploy:
-      placement:
-        constraints:
-          - "node.role==manager"
-          - "engine.labels.operatingsystem==ubuntu 22.04"
-        preferences:
-          - spread: node.labels.zone
-```
-@z
+% snip code...
 
 @x
 #### max_replicas_per_node
@@ -1957,37 +1086,7 @@ When there are more tasks requested than running nodes, an error
 `no suitable node (max replicas per node limit exceed)` is raised.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    networks:
-      - frontend
-      - backend
-    deploy:
-      mode: replicated
-      replicas: 6
-      placement:
-        max_replicas_per_node: 1
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    networks:
-      - frontend
-      - backend
-    deploy:
-      mode: replicated
-      replicas: 6
-      placement:
-        max_replicas_per_node: 1
-```
-@z
+% snip code...
 
 @x
 #### replicas
@@ -2003,33 +1102,7 @@ If the service is `replicated` (which is the default), specify the number of
 containers that should be running at any given time.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    networks:
-      - frontend
-      - backend
-    deploy:
-      mode: replicated
-      replicas: 6
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  worker:
-    image: dockersamples/examplevotingapp_worker
-    networks:
-      - frontend
-      - backend
-    deploy:
-      mode: replicated
-      replicas: 6
-```
-@z
+% snip code...
 
 @x
 #### resources
@@ -2079,37 +1152,7 @@ In this general example, the `redis` service is constrained to use no more than
 and has `20M` of memory and `0.25` CPU time reserved (as always available to it).
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:alpine
-    deploy:
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 50M
-        reservations:
-          cpus: '0.25'
-          memory: 20M
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:alpine
-    deploy:
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 50M
-        reservations:
-          cpus: '0.25'
-          memory: 20M
-```
-@z
+% snip code...
 
 @x
 The topics below describe available options to set resource constraints on
@@ -2201,33 +1244,7 @@ Configures if and how to restart containers when they exit. Replaces
   decide immediately).
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:alpine
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:alpine
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
-```
-@z
+% snip code...
 
 @x
 #### rollback_config
@@ -2309,37 +1326,7 @@ updates.
 > file format.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  vote:
-    image: dockersamples/examplevotingapp_vote:before
-    depends_on:
-      - redis
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 2
-        delay: 10s
-        order: stop-first
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  vote:
-    image: dockersamples/examplevotingapp_vote:before
-    depends_on:
-      - redis
-    deploy:
-      replicas: 2
-      update_config:
-        parallelism: 2
-        delay: 10s
-        order: stop-first
-```
-@z
+% snip code...
 
 @x
 #### Not supported for `docker stack deploy`
@@ -2411,17 +1398,7 @@ List of device mappings.  Uses the same format as the `--device` docker
 client create option.
 @z
 
-@x
-```yaml
-devices:
-  - "/dev/ttyUSB0:/dev/ttyUSB0"
-```
-@y
-```yaml
-devices:
-  - "/dev/ttyUSB0:/dev/ttyUSB0"
-```
-@z
+% snip code...
 
 @x
 > Note when using docker stack deploy
@@ -2449,29 +1426,7 @@ Custom DNS servers. Can be a single value or a list.
 Custom DNS servers. Can be a single value or a list.
 @z
 
-@x
-```yaml
-dns: 8.8.8.8
-```
-@y
-```yaml
-dns: 8.8.8.8
-```
-@z
-
-@x
-```yaml
-dns:
-  - 8.8.8.8
-  - 9.9.9.9
-```
-@y
-```yaml
-dns:
-  - 8.8.8.8
-  - 9.9.9.9
-```
-@z
+% snip code...
 
 @x
 ### dns_search
@@ -2485,29 +1440,7 @@ Custom DNS search domains. Can be a single value or a list.
 Custom DNS search domains. Can be a single value or a list.
 @z
 
-@x
-```yaml
-dns_search: example.com
-```
-@y
-```yaml
-dns_search: example.com
-```
-@z
-
-@x
-```yaml
-dns_search:
-  - dc1.example.com
-  - dc2.example.com
-```
-@y
-```yaml
-dns_search:
-  - dc1.example.com
-  - dc2.example.com
-```
-@z
+% snip code...
 
 @x
 ### entrypoint
@@ -2521,15 +1454,7 @@ Override the default entrypoint.
 Override the default entrypoint.
 @z
 
-@x
-```yaml
-entrypoint: /code/entrypoint.sh
-```
-@y
-```yaml
-entrypoint: /code/entrypoint.sh
-```
-@z
+% snip code...
 
 @x
 The entrypoint can also be a list, in a manner similar to
@@ -2539,15 +1464,7 @@ The entrypoint can also be a list, in a manner similar to
 [dockerfile](../../reference/dockerfile.md#entrypoint):
 @z
 
-@x
-```yaml
-entrypoint: ["php", "-d", "memory_limit=-1", "vendor/bin/phpunit"]
-```
-@y
-```yaml
-entrypoint: ["php", "-d", "memory_limit=-1", "vendor/bin/phpunit"]
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -2595,31 +1512,7 @@ _override_ these values &ndash; this holds true even if those values are
 empty or undefined.
 @z
 
-@x
-```yaml
-env_file: .env
-```
-@y
-```yaml
-env_file: .env
-```
-@z
-
-@x
-```yaml
-env_file:
-  - ./common.env
-  - ./apps/web.env
-  - /opt/runtime_opts.env
-```
-@y
-```yaml
-env_file:
-  - ./common.env
-  - ./apps/web.env
-  - /opt/runtime_opts.env
-```
-@z
+% snip code...
 
 @x
 Compose expects each line in an env file to be in `VAR=VAL` format. Lines
@@ -2631,17 +1524,7 @@ beginning with `#` are treated as comments and are ignored. Blank lines are
 also ignored.
 @z
 
-@x
-```console
-# Set Rails/Rack environment
-RACK_ENV=development
-```
-@y
-```console
-# Set Rails/Rack environment
-RACK_ENV=development
-```
-@z
+% snip code...
 
 @x
 Compose also recognizes inline comments, like in:
@@ -2649,15 +1532,7 @@ Compose also recognizes inline comments, like in:
 Compose also recognizes inline comments, like in:
 @z
 
-@x
-```sh
-MY_VAR = value # this is a comment
-```
-@y
-```sh
-MY_VAR = value # this is a comment
-```
-@z
+% snip code...
 
 @x
 To avoid interpreting "#" as an inline comment, use the quotation marks:
@@ -2665,15 +1540,7 @@ To avoid interpreting "#" as an inline comment, use the quotation marks:
 To avoid interpreting "#" as an inline comment, use the quotation marks:
 @z
 
-@x
-```sh
-MY_VAR = "All the # inside are taken as part of the value"
-```
-@y
-```sh
-MY_VAR = "All the # inside are taken as part of the value"
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -2717,23 +1584,7 @@ listed below (after), then the value from `b.env` stands. For example, given the
 following declaration in `docker-compose.yml`:
 @z
 
-@x
-```yaml
-services:
-  some-service:
-    env_file:
-      - a.env
-      - b.env
-```
-@y
-```yaml
-services:
-  some-service:
-    env_file:
-      - a.env
-      - b.env
-```
-@z
+% snip code...
 
 @x
 And the following files:
@@ -2741,17 +1592,7 @@ And the following files:
 And the following files:
 @z
 
-@x
-```console
-# a.env
-VAR=1
-```
-@y
-```console
-# a.env
-VAR=1
-```
-@z
+% snip code...
 
 @x
 and
@@ -2759,17 +1600,7 @@ and
 and
 @z
 
-@x
-```console
-# b.env
-VAR=hello
-```
-@y
-```console
-# b.env
-VAR=hello
-```
-@z
+% snip code...
 
 @x
 `$VAR` is `hello`.
@@ -2801,37 +1632,7 @@ Environment variables with only a key are resolved to their values on the
 machine Compose is running on, which can be helpful for secret or host-specific values.
 @z
 
-@x
-```yaml
-environment:
-  RACK_ENV: development
-  SHOW: 'true'
-  SESSION_SECRET:
-```
-@y
-```yaml
-environment:
-  RACK_ENV: development
-  SHOW: 'true'
-  SESSION_SECRET:
-```
-@z
-
-@x
-```yaml
-environment:
-  - RACK_ENV=development
-  - SHOW=true
-  - SESSION_SECRET
-```
-@y
-```yaml
-environment:
-  - RACK_ENV=development
-  - SHOW=true
-  - SESSION_SECRET
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -2863,19 +1664,7 @@ Expose ports without publishing them to the host machine - they'll only be
 accessible to linked services. Only the internal port can be specified.
 @z
 
-@x
-```yaml
-expose:
-  - "3000"
-  - "8000"
-```
-@y
-```yaml
-expose:
-  - "3000"
-  - "8000"
-```
-@z
+% snip code...
 
 @x
 ### external_links
@@ -2895,21 +1684,7 @@ Compose, especially for containers that provide shared or common services.
 specifying both the container name and the link alias (`CONTAINER:ALIAS`).
 @z
 
-@x
-```yaml
-external_links:
-  - redis_1
-  - project_db_1:mysql
-  - project_db_1:postgresql
-```
-@y
-```yaml
-external_links:
-  - redis_1
-  - project_db_1:mysql
-  - project_db_1:postgresql
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -2951,19 +1726,7 @@ Add hostname mappings. Use the same values as the docker client `--add-host` par
 Add hostname mappings. Use the same values as the docker client `--add-host` parameter.
 @z
 
-@x
-```yaml
-extra_hosts:
-  - "somehost:162.242.195.82"
-  - "otherhost:50.31.209.229"
-```
-@y
-```yaml
-extra_hosts:
-  - "somehost:162.242.195.82"
-  - "otherhost:50.31.209.229"
-```
-@z
+% snip code...
 
 @x
 An entry with the ip address and hostname is created in `/etc/hosts` inside containers for this service, e.g:
@@ -2971,17 +1734,7 @@ An entry with the ip address and hostname is created in `/etc/hosts` inside cont
 An entry with the ip address and hostname is created in `/etc/hosts` inside containers for this service, e.g:
 @z
 
-@x
-```console
-162.242.195.82  somehost
-50.31.209.229   otherhost
-```
-@y
-```console
-162.242.195.82  somehost
-50.31.209.229   otherhost
-```
-@z
+% snip code...
 
 @x
 ### healthcheck
@@ -3001,25 +1754,7 @@ service are "healthy". See the docs for the
 for details on how healthchecks work.
 @z
 
-@x
-```yaml
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost"]
-  interval: 1m30s
-  timeout: 10s
-  retries: 3
-  start_period: 2m
-```
-@y
-```yaml
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost"]
-  interval: 1m30s
-  timeout: 10s
-  retries: 3
-  start_period: 2m
-```
-@z
+% snip code...
 
 @x
 `interval`, `timeout` and `start_period` are specified as
@@ -3049,17 +1784,7 @@ either `NONE`, `CMD` or `CMD-SHELL`. If it's a string, it's equivalent to
 specifying `CMD-SHELL` followed by that string.
 @z
 
-@x
-```yaml
-# Hit the local web app
-test: ["CMD", "curl", "-f", "http://localhost"]
-```
-@y
-```yaml
-# Hit the local web app
-test: ["CMD", "curl", "-f", "http://localhost"]
-```
-@z
+% snip code...
 
 @x
 As above, but wrapped in `/bin/sh`. Both forms below are equivalent.
@@ -3067,25 +1792,7 @@ As above, but wrapped in `/bin/sh`. Both forms below are equivalent.
 As above, but wrapped in `/bin/sh`. Both forms below are equivalent.
 @z
 
-@x
-```yaml
-test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
-```
-@y
-```yaml
-test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
-```
-@z
-
-@x
-```yaml
-test: curl -f https://localhost || exit 1
-```
-@y
-```yaml
-test: curl -f https://localhost || exit 1
-```
-@z
+% snip code...
 
 @x
 To disable any default healthcheck set by the image, you can use `disable: true`.
@@ -3095,17 +1802,7 @@ To disable any default healthcheck set by the image, you can use `disable: true`
 This is equivalent to specifying `test: ["NONE"]`.
 @z
 
-@x
-```yaml
-healthcheck:
-  disable: true
-```
-@y
-```yaml
-healthcheck:
-  disable: true
-```
-@z
+% snip code...
 
 @x
 ### image
@@ -3121,39 +1818,7 @@ Specify the image to start the container from. Can either be a repository/tag or
 a partial image ID.
 @z
 
-@x
-```yaml
-image: redis
-```
-```yaml
-image: ubuntu:22.04
-```
-```yaml
-image: tutum/influxdb
-```
-```yaml
-image: example-registry.com:4000/postgresql
-```
-```yaml
-image: a4bc65fd
-```
-@y
-```yaml
-image: redis
-```
-```yaml
-image: ubuntu:22.04
-```
-```yaml
-image: tutum/influxdb
-```
-```yaml
-image: example-registry.com:4000/postgresql
-```
-```yaml
-image: a4bc65fd
-```
-@z
+% snip code...
 
 @x
 If the image does not exist, Compose attempts to pull it, unless you have also
@@ -3185,23 +1850,7 @@ Run an init inside the container that forwards signals and reaps processes.
 Set this option to `true` to enable this feature for the service.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: alpine:latest
-    init: true
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: alpine:latest
-    init: true
-```
-@z
+% snip code...
 
 @x
 > The default init binary that is used is [Tini](https://github.com/krallin/tini),
@@ -3253,37 +1902,7 @@ It's recommended that you use reverse-DNS notation to prevent your labels from c
 It's recommended that you use reverse-DNS notation to prevent your labels from conflicting with those used by other software.
 @z
 
-@x
-```yaml
-labels:
-  com.example.description: "Accounting webapp"
-  com.example.department: "Finance"
-  com.example.label-with-empty-value: ""
-```
-@y
-```yaml
-labels:
-  com.example.description: "Accounting webapp"
-  com.example.department: "Finance"
-  com.example.label-with-empty-value: ""
-```
-@z
-
-@x
-```yaml
-labels:
-  - "com.example.description=Accounting webapp"
-  - "com.example.department=Finance"
-  - "com.example.label-with-empty-value"
-```
-@y
-```yaml
-labels:
-  - "com.example.description=Accounting webapp"
-  - "com.example.department=Finance"
-  - "com.example.label-with-empty-value"
-```
-@z
+% snip code...
 
 @x
 ### links
@@ -3327,23 +1946,7 @@ Link to containers in another service. Either specify both the service name and
 a link alias (`"SERVICE:ALIAS"`), or just the service name.
 @z
 
-@x
-```yaml
-web:
-  links:
-    - "db"
-    - "db:database"
-    - "redis"
-```
-@y
-```yaml
-web:
-  links:
-    - "db"
-    - "db:database"
-    - "redis"
-```
-@z
+% snip code...
 
 @x
 Containers for the linked service are reachable at a hostname identical to
@@ -3411,21 +2014,7 @@ Logging configuration for the service.
 Logging configuration for the service.
 @z
 
-@x
-```yaml
-logging:
-  driver: syslog
-  options:
-    syslog-address: "tcp://192.168.0.42:123"
-```
-@y
-```yaml
-logging:
-  driver: syslog
-  options:
-    syslog-address: "tcp://192.168.0.42:123"
-```
-@z
+% snip code...
 
 @x
 The `driver`  name specifies a logging driver for the service's
@@ -3443,27 +2032,7 @@ The default value is json-file.
 The default value is json-file.
 @z
 
-@x
-```yaml
-driver: "json-file"
-```
-```yaml
-driver: "syslog"
-```
-```yaml
-driver: "none"
-```
-@y
-```yaml
-driver: "json-file"
-```
-```yaml
-driver: "syslog"
-```
-```yaml
-driver: "none"
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -3491,19 +2060,7 @@ Logging options are key-value pairs. An example of `syslog` options:
 Logging options are key-value pairs. An example of `syslog` options:
 @z
 
-@x
-```yaml
-driver: "syslog"
-options:
-  syslog-address: "tcp://192.168.0.42:123"
-```
-@y
-```yaml
-driver: "syslog"
-options:
-  syslog-address: "tcp://192.168.0.42:123"
-```
-@z
+% snip code...
 
 @x
 The default driver [json-file](../../config/containers/logging/json-file.md), has options to limit the amount of logs stored. To do this, use a key-value pair for maximum storage size and maximum number of files:
@@ -3511,19 +2068,7 @@ The default driver [json-file](../../config/containers/logging/json-file.md), ha
 The default driver [json-file](../../config/containers/logging/json-file.md), has options to limit the amount of logs stored. To do this, use a key-value pair for maximum storage size and maximum number of files:
 @z
 
-@x
-```yaml
-options:
-  max-size: "200k"
-  max-file: "10"
-```
-@y
-```yaml
-options:
-  max-size: "200k"
-  max-file: "10"
-```
-@z
+% snip code...
 
 @x
 The example shown above would store log files until they reach a `max-size` of
@@ -3543,31 +2088,7 @@ Here is an example `docker-compose.yml` file that limits logging storage:
 Here is an example `docker-compose.yml` file that limits logging storage:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  some-service:
-    image: some-service
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  some-service:
-    image: some-service
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
-```
-@z
+% snip code...
 
 @x
 > Logging options available depend on which logging driver you use
@@ -3601,39 +2122,7 @@ Network mode. Use the same values as the docker client `--network` parameter, pl
 the special form `service:[service name]`.
 @z
 
-@x
-```yaml
-network_mode: "bridge"
-```
-```yaml
-network_mode: "host"
-```
-```yaml
-network_mode: "none"
-```
-```yaml
-network_mode: "service:[service name]"
-```
-```yaml
-network_mode: "container:[container name/id]"
-```
-@y
-```yaml
-network_mode: "bridge"
-```
-```yaml
-network_mode: "host"
-```
-```yaml
-network_mode: "none"
-```
-```yaml
-network_mode: "service:[service name]"
-```
-```yaml
-network_mode: "container:[container name/id]"
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -3665,23 +2154,7 @@ Networks to join, referencing entries under the
 [top-level `networks` key](#network-configuration-reference).
 @z
 
-@x
-```yaml
-services:
-  some-service:
-    networks:
-     - some-network
-     - other-network
-```
-@y
-```yaml
-services:
-  some-service:
-    networks:
-     - some-network
-     - other-network
-```
-@z
+% snip code...
 
 @x
 #### aliases
@@ -3721,33 +2194,7 @@ The general format is shown here.
 The general format is shown here.
 @z
 
-@x
-```yaml
-services:
-  some-service:
-    networks:
-      some-network:
-        aliases:
-          - alias1
-          - alias3
-      other-network:
-        aliases:
-          - alias2
-```
-@y
-```yaml
-services:
-  some-service:
-    networks:
-      some-network:
-        aliases:
-          - alias1
-          - alias3
-      other-network:
-        aliases:
-          - alias2
-```
-@z
+% snip code...
 
 @x
 In the example below, three services are provided (`web`, `worker`, and `db`),
@@ -3761,73 +2208,7 @@ the hostname `db` or `database` on the `new` network, and at `db` or `mysql` on
 the `legacy` network.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@z
-
-@x
-services:
-  web:
-    image: "nginx:alpine"
-    networks:
-      - new
-@y
-services:
-  web:
-    image: "nginx:alpine"
-    networks:
-      - new
-@z
-
-@x
-  worker:
-    image: "my-worker-image:latest"
-    networks:
-      - legacy
-@y
-  worker:
-    image: "my-worker-image:latest"
-    networks:
-      - legacy
-@z
-
-@x
-  db:
-    image: mysql
-    networks:
-      new:
-        aliases:
-          - database
-      legacy:
-        aliases:
-          - mysql
-@y
-  db:
-    image: mysql
-    networks:
-      new:
-        aliases:
-          - database
-      legacy:
-        aliases:
-          - mysql
-@z
-
-@x
-networks:
-  new:
-  legacy:
-```
-@y
-networks:
-  new:
-  legacy:
-```
-@z
+% snip code...
 
 @x
 #### ipv4_address, ipv6_address
@@ -3865,17 +2246,7 @@ Then, reload the docker daemon and edit docker-compose.yml to contain the follow
 Then, reload the docker daemon and edit docker-compose.yml to contain the following under the service:
 @z
 
-@x
-```yaml
-    sysctls:
-      - net.ipv6.conf.all.disable_ipv6=0
-```
-@y
-```yaml
-    sysctls:
-      - net.ipv6.conf.all.disable_ipv6=0
-```
-@z
+% snip code...
 
 @x
 > The [`enable_ipv6`](compose-file-v2.md#enable_ipv6)
@@ -3893,51 +2264,7 @@ An example:
 An example:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@z
-
-@x
-services:
-  app:
-    image: nginx:alpine
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.10
-        ipv6_address: 2001:3984:3989::10
-@y
-services:
-  app:
-    image: nginx:alpine
-    networks:
-      app_net:
-        ipv4_address: 172.16.238.10
-        ipv6_address: 2001:3984:3989::10
-@z
-
-@x
-networks:
-  app_net:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.16.238.0/24"
-        - subnet: "2001:3984:3989::/64"
-```
-@y
-networks:
-  app_net:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.16.238.0/24"
-        - subnet: "2001:3984:3989::/64"
-```
-@z
+% snip code...
 
 @x
 ### pid
@@ -3945,15 +2272,7 @@ networks:
 ### pid
 @z
 
-@x
-```yaml
-pid: "host"
-```
-@y
-```yaml
-pid: "host"
-```
-@z
+% snip code...
 
 @x
 Sets the PID mode to the host PID mode.  This turns on sharing between
@@ -4033,35 +2352,7 @@ There are three options:
 > we recommend always explicitly specifying your port mappings as strings.
 @z
 
-@x
-```yaml
-ports:
-  - "3000"
-  - "3000-3005"
-  - "8000:8000"
-  - "9090-9091:8080-8081"
-  - "49100:22"
-  - "127.0.0.1:8001:8001"
-  - "127.0.0.1:5000-5010:5000-5010"
-  - "127.0.0.1::5000"
-  - "6060:6060/udp"
-  - "12400-12500:1240"
-```
-@y
-```yaml
-ports:
-  - "3000"
-  - "3000-3005"
-  - "8000:8000"
-  - "9090-9091:8080-8081"
-  - "49100:22"
-  - "127.0.0.1:8001:8001"
-  - "127.0.0.1:5000-5010:5000-5010"
-  - "127.0.0.1::5000"
-  - "6060:6060/udp"
-  - "12400-12500:1240"
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -4091,23 +2382,7 @@ expressed in the short form.
    mode port to be load balanced.
 @z
 
-@x
-```yaml
-ports:
-  - target: 80
-    published: 8080
-    protocol: tcp
-    mode: host
-```
-@y
-```yaml
-ports:
-  - target: 80
-    published: 8080
-    protocol: tcp
-    mode: host
-```
-@z
+% snip code...
 
 @x
 > Added in [version 3.2](compose-versioning.md#version-32) file format.
@@ -4125,21 +2400,7 @@ ports:
 ### profiles
 @z
 
-@x
-```yaml
-profiles: ["frontend", "debug"]
-profiles:
-  - frontend
-  - debug
-```
-@y
-```yaml
-profiles: ["frontend", "debug"]
-profiles:
-  - frontend
-  - debug
-```
-@z
+% snip code...
 
 @x
 `profiles` defines a list of named profiles for the service to be enabled under.
@@ -4283,41 +2544,7 @@ command or by another stack deployment. If the external secret does not exist,
 the stack deployment fails with a `secret not found` error.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    secrets:
-      - my_secret
-      - my_other_secret
-secrets:
-  my_secret:
-    file: ./my_secret.txt
-  my_other_secret:
-    external: true
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    secrets:
-      - my_secret
-      - my_other_secret
-secrets:
-  my_secret:
-    file: ./my_secret.txt
-  my_other_secret:
-    external: true
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -4379,47 +2606,7 @@ to `103`. The `redis` service does not have access to the `my_other_secret`
 secret.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    secrets:
-      - source: my_secret
-        target: redis_secret
-        uid: '103'
-        gid: '103'
-        mode: 0440
-secrets:
-  my_secret:
-    file: ./my_secret.txt
-  my_other_secret:
-    external: true
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  redis:
-    image: redis:latest
-    deploy:
-      replicas: 1
-    secrets:
-      - source: my_secret
-        target: redis_secret
-        uid: '103'
-        gid: '103'
-        mode: 0440
-secrets:
-  my_secret:
-    file: ./my_secret.txt
-  my_other_secret:
-    external: true
-```
-@z
+% snip code...
 
 @x
 You can grant a service access to multiple secrets and you can mix long and
@@ -4441,19 +2628,7 @@ Override the default labeling scheme for each container.
 Override the default labeling scheme for each container.
 @z
 
-@x
-```yaml
-security_opt:
-  - label:user:USER
-  - label:role:ROLE
-```
-@y
-```yaml
-security_opt:
-  - label:user:USER
-  - label:role:ROLE
-```
-@z
+% snip code...
 
 @x
 > Note when using docker stack deploy
@@ -4487,25 +2662,7 @@ handle SIGTERM (or whatever stop signal has been specified with
 as a [duration](#specifying-durations).
 @z
 
-@x
-```yaml
-stop_grace_period: 1s
-```
-@y
-```yaml
-stop_grace_period: 1s
-```
-@z
-
-@x
-```yaml
-stop_grace_period: 1m30s
-```
-@y
-```yaml
-stop_grace_period: 1m30s
-```
-@z
+% snip code...
 
 @x
 By default, `stop` waits 10 seconds for the container to exit before sending
@@ -4531,15 +2688,7 @@ SIGTERM. Setting an alternative signal using `stop_signal` causes
 `stop` to send that signal instead.
 @z
 
-@x
-```yaml
-stop_signal: SIGUSR1
-```
-@y
-```yaml
-stop_signal: SIGUSR1
-```
-@z
+% snip code...
 
 @x
 ### sysctls
@@ -4555,33 +2704,7 @@ Kernel parameters to set in the container. You can use either an array or a
 dictionary.
 @z
 
-@x
-```yaml
-sysctls:
-  net.core.somaxconn: 1024
-  net.ipv4.tcp_syncookies: 0
-```
-@y
-```yaml
-sysctls:
-  net.core.somaxconn: 1024
-  net.ipv4.tcp_syncookies: 0
-```
-@z
-
-@x
-```yaml
-sysctls:
-  - net.core.somaxconn=1024
-  - net.ipv4.tcp_syncookies=0
-```
-@y
-```yaml
-sysctls:
-  - net.core.somaxconn=1024
-  - net.ipv4.tcp_syncookies=0
-```
-@z
+% snip code...
 
 @x
 You can only use sysctls that are namespaced in the kernel. Docker does not
@@ -4625,29 +2748,7 @@ Mount a temporary file system inside the container. Can be a single value or a l
 Mount a temporary file system inside the container. Can be a single value or a list.
 @z
 
-@x
-```yaml
-tmpfs: /run
-```
-@y
-```yaml
-tmpfs: /run
-```
-@z
-
-@x
-```yaml
-tmpfs:
-  - /run
-  - /tmp
-```
-@y
-```yaml
-tmpfs:
-  - /run
-  - /tmp
-```
-@z
+% snip code...
 
 @x
 > Note when using docker stack deploy
@@ -4671,21 +2772,7 @@ Mount a temporary file system inside the container. Size parameter specifies the
 of the tmpfs mount in bytes. Unlimited by default.
 @z
 
-@x
-```yaml
-- type: tmpfs
-  target: /app
-  tmpfs:
-    size: 1000
-```
-@y
-```yaml
-- type: tmpfs
-  target: /app
-  tmpfs:
-    size: 1000
-```
-@z
+% snip code...
 
 @x
 ### ulimits
@@ -4701,23 +2788,7 @@ Override the default ulimits for a container. You can either specify a single
 limit as an integer or soft/hard limits as a mapping.
 @z
 
-@x
-```yaml
-ulimits:
-  nproc: 65535
-  nofile:
-    soft: 20000
-    hard: 40000
-```
-@y
-```yaml
-ulimits:
-  nproc: 65535
-  nofile:
-    soft: 20000
-    hard: 40000
-```
-@z
+% snip code...
 
 @x
 ### userns_mode
@@ -4725,15 +2796,7 @@ ulimits:
 ### userns_mode
 @z
 
-@x
-```yaml
-userns_mode: "host"
-```
-@y
-```yaml
-userns_mode: "host"
-```
-@z
+% snip code...
 
 @x
 Disables the user namespace for this service, if Docker daemon is configured with user namespaces.
@@ -4821,63 +2884,7 @@ for mounting a named volume. Named volumes must be listed under the top-level
 `volumes` key, as shown.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: nginx:alpine
-    volumes:
-      - type: volume
-        source: mydata
-        target: /data
-        volume:
-          nocopy: true
-      - type: bind
-        source: ./static
-        target: /opt/app/static
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: nginx:alpine
-    volumes:
-      - type: volume
-        source: mydata
-        target: /data
-        volume:
-          nocopy: true
-      - type: bind
-        source: ./static
-        target: /opt/app/static
-@z
-
-@x
-  db:
-    image: postgres:latest
-    volumes:
-      - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
-      - "dbdata:/var/lib/postgresql/data"
-@y
-  db:
-    image: postgres:latest
-    volumes:
-      - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
-      - "dbdata:/var/lib/postgresql/data"
-@z
-
-@x
-volumes:
-  mydata:
-  dbdata:
-```
-@y
-volumes:
-  mydata:
-  dbdata:
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -5015,59 +3022,7 @@ expressed in the short form.
   - `size`: the size for the tmpfs mount in bytes
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - type: volume
-        source: mydata
-        target: /data
-        volume:
-          nocopy: true
-      - type: bind
-        source: ./static
-        target: /opt/app/static
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - type: volume
-        source: mydata
-        target: /data
-        volume:
-          nocopy: true
-      - type: bind
-        source: ./static
-        target: /opt/app/static
-@z
-
-@x
-networks:
-  webnet:
-@y
-networks:
-  webnet:
-@z
-
-@x
-volumes:
-  mydata:
-```
-@y
-volumes:
-  mydata:
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -5143,35 +3098,7 @@ as a named volume to persist the data on the swarm, _and_ is constrained to run
 only on `manager` nodes. Here is the relevant snip-it from that file:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  db:
-    image: postgres:9.4
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - backend
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  db:
-    image: postgres:9.4
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    networks:
-      - backend
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-```
-@z
+% snip code...
 
 @x
 ### domainname, hostname, ipc, mac\_address, privileged, read\_only, shm\_size, stdin\_open, tty, user, working\_dir
@@ -5187,47 +3114,7 @@ Each of these is a single value, analogous to its
 [docker run](../../reference/cli/docker/container/run.md) counterpart. Note that `mac_address` is a legacy option.
 @z
 
-@x
-```yaml
-user: postgresql
-working_dir: /code
-@y
-```yaml
-user: postgresql
-working_dir: /code
-@z
-
-@x
-domainname: foo.com
-hostname: foo
-ipc: host
-mac_address: 02:42:ac:11:65:43
-@y
-domainname: foo.com
-hostname: foo
-ipc: host
-mac_address: 02:42:ac:11:65:43
-@z
-
-@x
-privileged: true
-@y
-privileged: true
-@z
-
-@x
-read_only: true
-shm_size: 64M
-stdin_open: true
-tty: true
-```
-@y
-read_only: true
-shm_size: 64M
-stdin_open: true
-tty: true
-```
-@z
+% snip code...
 
 @x
 ## Specifying durations
@@ -5343,45 +3230,7 @@ shared with another service as a volume so that it can be periodically backed
 up:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@z
-
-@x
-services:
-  db:
-    image: db
-    volumes:
-      - data-volume:/var/lib/db
-  backup:
-    image: backup-service
-    volumes:
-      - data-volume:/var/lib/backup/data
-@y
-services:
-  db:
-    image: db
-    volumes:
-      - data-volume:/var/lib/db
-  backup:
-    image: backup-service
-    volumes:
-      - data-volume:/var/lib/backup/data
-@z
-
-@x
-volumes:
-  data-volume:
-```
-@y
-volumes:
-  data-volume:
-```
-@z
+% snip code...
 
 @x
 An entry under the top-level `volumes` key can be empty, in which case it
@@ -5411,15 +3260,7 @@ driver the Docker Engine has been configured to use, which in most cases is
 `docker-compose up` tries to create the volume.
 @z
 
-@x
-```yaml
-driver: foobar
-```
-@y
-```yaml
-driver: foobar
-```
-@z
+% snip code...
 
 @x
 ### driver_opts
@@ -5437,25 +3278,7 @@ volume. Those options are driver-dependent - consult the driver's
 documentation for more information. Optional.
 @z
 
-@x
-```yaml
-volumes:
-  example:
-    driver_opts:
-      type: "nfs"
-      o: "addr=10.40.0.199,nolock,soft,rw"
-      device: ":/docker/example"
-```
-@y
-```yaml
-volumes:
-  example:
-    driver_opts:
-      type: "nfs"
-      o: "addr=10.40.0.199,nolock,soft,rw"
-      device: ":/docker/example"
-```
-@z
+% snip code...
 
 @x
 ### external
@@ -5495,39 +3318,7 @@ In the example below, instead of attempting to create a volume called
 called `data` and mount it into the `db` service's containers.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@z
-
-@x
-services:
-  db:
-    image: postgres
-    volumes:
-      - data:/var/lib/postgresql/data
-@y
-services:
-  db:
-    image: postgres
-    volumes:
-      - data:/var/lib/postgresql/data
-@z
-
-@x
-volumes:
-  data:
-    external: true
-```
-@y
-volumes:
-  data:
-    external: true
-```
-@z
+% snip code...
 
 @x
 > Deprecated in [version 3.4](compose-versioning.md#version-34) file format.
@@ -5549,21 +3340,7 @@ You can also specify the name of the volume separately from the name used to
 refer to it within the Compose file:
 @z
 
-@x
-```yaml
-volumes:
-  data:
-    external:
-      name: actual-name-of-volume
-```
-@y
-```yaml
-volumes:
-  data:
-    external:
-      name: actual-name-of-volume
-```
-@z
+% snip code...
 
 @x
 > Note when using docker stack deploy
@@ -5611,37 +3388,7 @@ It's recommended that you use reverse-DNS notation to prevent your labels from
 conflicting with those used by other software.
 @z
 
-@x
-```yaml
-labels:
-  com.example.description: "Database volume"
-  com.example.department: "IT/Ops"
-  com.example.label-with-empty-value: ""
-```
-@y
-```yaml
-labels:
-  com.example.description: "Database volume"
-  com.example.department: "IT/Ops"
-  com.example.label-with-empty-value: ""
-```
-@z
-
-@x
-```yaml
-labels:
-  - "com.example.description=Database volume"
-  - "com.example.department=IT/Ops"
-  - "com.example.label-with-empty-value"
-```
-@y
-```yaml
-labels:
-  - "com.example.description=Database volume"
-  - "com.example.department=IT/Ops"
-  - "com.example.label-with-empty-value"
-```
-@z
+% snip code...
 
 @x
 ### name
@@ -5665,21 +3412,7 @@ volumes that contain special characters. The name is used as is
 and will **not** be scoped with the stack name.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-volumes:
-  data:
-    name: my-app-data
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-volumes:
-  data:
-    name: my-app-data
-```
-@z
+% snip code...
 
 @x
 It can also be used in conjunction with the `external` property:
@@ -5687,23 +3420,7 @@ It can also be used in conjunction with the `external` property:
 It can also be used in conjunction with the `external` property:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-volumes:
-  data:
-    external: true
-    name: my-app-data
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-volumes:
-  data:
-    external: true
-    name: my-app-data
-```
-@z
+% snip code...
 
 @x
 ## Network configuration reference
@@ -5757,15 +3474,7 @@ The Docker Engine returns an error if the driver is not available.
 The Docker Engine returns an error if the driver is not available.
 @z
 
-@x
-```yaml
-driver: overlay
-```
-@y
-```yaml
-driver: overlay
-```
-@z
+% snip code...
 
 @x
 #### bridge
@@ -5857,89 +3566,7 @@ Docker has already created automatically) and an alias that Compose can use
 network using the alias.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    networks:
-      hostnet: {}
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-services:
-  web:
-    networks:
-      hostnet: {}
-@z
-
-@x
-networks:
-  hostnet:
-    external: true
-    name: host
-```
-@y
-networks:
-  hostnet:
-    external: true
-    name: host
-```
-@z
-
-@x
-```yaml
-services:
-  web:
-    ...
-    build:
-      ...
-      network: host
-      context: .
-      ...
-```
-@y
-```yaml
-services:
-  web:
-    ...
-    build:
-      ...
-      network: host
-      context: .
-      ...
-```
-@z
-
-@x
-```yaml
-services:
-  web:
-    ...
-    networks:
-      nonet: {}
-@y
-```yaml
-services:
-  web:
-    ...
-    networks:
-      nonet: {}
-@z
-
-@x
-networks:
-  nonet:
-    external: true
-    name: none
-```
-@y
-networks:
-  nonet:
-    external: true
-    name: none
-```
-@z
+% snip code...
 
 @x
 ### driver_opts
@@ -5957,19 +3584,7 @@ network. Those options are driver-dependent - consult the driver's
 documentation for more information. Optional.
 @z
 
-@x
-```yaml
-driver_opts:
-  foo: "bar"
-  baz: 1
-```
-@y
-```yaml
-driver_opts:
-  foo: "bar"
-  baz: 1
-```
-@z
+% snip code...
 
 @x
 ### attachable
@@ -5997,21 +3612,7 @@ services and standalone containers that are also attached to the overlay
 network from other Docker daemons.
 @z
 
-@x
-```yaml
-networks:
-  mynet1:
-    driver: overlay
-    attachable: true
-```
-@y
-```yaml
-networks:
-  mynet1:
-    driver: overlay
-    attachable: true
-```
-@z
+% snip code...
 
 @x
 ### enable_ipv6
@@ -6071,21 +3672,7 @@ A full example:
 A full example:
 @z
 
-@x
-```yaml
-ipam:
-  driver: default
-  config:
-    - subnet: 172.28.0.0/16
-```
-@y
-```yaml
-ipam:
-  driver: default
-  config:
-    - subnet: 172.28.0.0/16
-```
-@z
+% snip code...
 
 @x
 > **Note**
@@ -6137,37 +3724,7 @@ It's recommended that you use reverse-DNS notation to prevent your labels from
 conflicting with those used by other software.
 @z
 
-@x
-```yaml
-labels:
-  com.example.description: "Financial transaction network"
-  com.example.department: "Finance"
-  com.example.label-with-empty-value: ""
-```
-@y
-```yaml
-labels:
-  com.example.description: "Financial transaction network"
-  com.example.department: "Finance"
-  com.example.label-with-empty-value: ""
-```
-@z
-
-@x
-```yaml
-labels:
-  - "com.example.description=Financial transaction network"
-  - "com.example.department=Finance"
-  - "com.example.label-with-empty-value"
-```
-@y
-```yaml
-labels:
-  - "com.example.description=Financial transaction network"
-  - "com.example.department=Finance"
-  - "com.example.label-with-empty-value"
-```
-@z
+% snip code...
 
 @x
 ### external
@@ -6209,49 +3766,7 @@ looks for an existing network simply called `outside` and connect the `proxy`
 service's containers to it.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-@z
-
-@x
-services:
-  proxy:
-    build: ./proxy
-    networks:
-      - outside
-      - default
-  app:
-    build: ./app
-    networks:
-      - default
-@y
-services:
-  proxy:
-    build: ./proxy
-    networks:
-      - outside
-      - default
-  app:
-    build: ./app
-    networks:
-      - default
-@z
-
-@x
-networks:
-  outside:
-    external: true
-```
-@y
-networks:
-  outside:
-    external: true
-```
-@z
+% snip code...
 
 @x
 > Deprecated in [version 3.5](compose-versioning.md#version-35) file format.
@@ -6273,23 +3788,7 @@ You can also specify the name of the network separately from the name used to
 refer to it within the Compose file:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-networks:
-  outside:
-    external:
-      name: actual-name-of-network
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-networks:
-  outside:
-    external:
-      name: actual-name-of-network
-```
-@z
+% snip code...
 
 @x
 ### name
@@ -6313,21 +3812,7 @@ networks which contain special characters. The name is used as is
 and will **not** be scoped with the stack name.
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-networks:
-  network1:
-    name: my-app-net
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-networks:
-  network1:
-    name: my-app-net
-```
-@z
+% snip code...
 
 @x
 It can also be used in conjunction with the `external` property:
@@ -6335,23 +3820,7 @@ It can also be used in conjunction with the `external` property:
 It can also be used in conjunction with the `external` property:
 @z
 
-@x
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-networks:
-  network1:
-    external: true
-    name: my-app-net
-```
-@y
-```yaml
-version: "{{% param "compose_file_v3" %}}"
-networks:
-  network1:
-    external: true
-    name: my-app-net
-```
-@z
+% snip code...
 
 @x
 ## configs configuration reference
@@ -6419,23 +3888,7 @@ In this example, `my_first_config` is created (as
 and `my_second_config` already exists in Docker.
 @z
 
-@x
-```yaml
-configs:
-  my_first_config:
-    file: ./config_data
-  my_second_config:
-    external: true
-```
-@y
-```yaml
-configs:
-  my_first_config:
-    file: ./config_data
-  my_second_config:
-    external: true
-```
-@z
+% snip code...
 
 @x
 Another variant for external configs is when the name of the config in Docker
@@ -6449,25 +3902,7 @@ example modifies the previous one to use the external config called
 `redis_config`.
 @z
 
-@x
-```yaml
-configs:
-  my_first_config:
-    file: ./config_data
-  my_second_config:
-    external:
-      name: redis_config
-```
-@y
-```yaml
-configs:
-  my_first_config:
-    file: ./config_data
-  my_second_config:
-    external:
-      name: redis_config
-```
-@z
+% snip code...
 
 @x
 You still need to [grant access to the config](#configs) to each service in the
@@ -6535,23 +3970,7 @@ In this example, `my_first_secret` is created as
 and `my_second_secret` already exists in Docker.
 @z
 
-@x
-```yaml
-secrets:
-  my_first_secret:
-    file: ./secret_data
-  my_second_secret:
-    external: true
-```
-@y
-```yaml
-secrets:
-  my_first_secret:
-    file: ./secret_data
-  my_second_secret:
-    external: true
-```
-@z
+% snip code...
 
 @x
 Another variant for external secrets is when the name of the secret in Docker
@@ -6571,25 +3990,7 @@ example modifies the previous one to use the external secret called
 ### Compose File v3.5 and above
 @z
 
-@x
-```yaml
-secrets:
-  my_first_secret:
-    file: ./secret_data
-  my_second_secret:
-    external: true
-    name: redis_secret
-```
-@y
-```yaml
-secrets:
-  my_first_secret:
-    file: ./secret_data
-  my_second_secret:
-    external: true
-    name: redis_secret
-```
-@z
+% snip code...
 
 @x
 ### Compose File v3.4 and under
@@ -6597,19 +3998,7 @@ secrets:
 ### Compose File v3.4 and under
 @z
 
-@x
-```yaml
-  my_second_secret:
-    external:
-      name: redis_secret
-```
-@y
-```yaml
-  my_second_secret:
-    external:
-      name: redis_secret
-```
-@z
+% snip code...
 
 @x
 You still need to [grant access to the secrets](#secrets) to each service in the

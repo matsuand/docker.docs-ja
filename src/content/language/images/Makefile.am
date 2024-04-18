@@ -8,6 +8,7 @@ copyfiles = \
 	nodejs.webp    \
 	php-logo.webp  \
 	python.webp    \
+	r.webp         \
 	rust-logo.webp
 
 include $(top_srcdir)/build-aux/common.mk

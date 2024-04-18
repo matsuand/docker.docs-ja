@@ -4,23 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Migrate to Compose V2
 description: How to migrate from Compose V1 to V2
 keywords: compose, upgrade, migration, v1, v2, docker compose vs docker-compose
-aliases:
-- /compose/compose-v2/
-- /compose/cli-command-compatibility/
----
 @y
----
 title: Compose V2 への移行
 description: How to migrate from Compose V1 to V2
 keywords: compose, upgrade, migration, v1, v2, docker compose vs docker-compose
-aliases:
-- /compose/compose-v2/
-- /compose/cli-command-compatibility/
----
 @z
 
 @x
@@ -361,11 +351,15 @@ Yes. You can still download and install Compose V1 packages, but you won't get s
 
 @x
 ## Additional Resources
+@y
+## Additional Resources
+@z
+
+@x
 - [docker-compose V1 on PyPI](https://pypi.org/project/docker-compose/1.29.2/)
 - [docker/compose V1 on Docker Hub](https://hub.docker.com/r/docker/compose)
 - [docker-compose V1 source on GitHub](https://github.com/docker/compose/releases/tag/1.29.2)
 @y
-## Additional Resources
 - [docker-compose V1 on PyPI](https://pypi.org/project/docker-compose/1.29.2/)
 - [docker/compose V1 on Docker Hub](https://hub.docker.com/r/docker/compose)
 - [docker-compose V1 source on GitHub](https://github.com/docker/compose/releases/tag/1.29.2)

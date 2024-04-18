@@ -783,17 +783,25 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 #### For all platforms
-- When using Setting Management, the settings that are not set in the `admin-settings.json` will be reset to default when Docker Desktop starts.
 @y
 #### For all platforms
+@z
+
+@x
+- When using Setting Management, the settings that are not set in the `admin-settings.json` will be reset to default when Docker Desktop starts.
+@y
 - When using Setting Management, the settings that are not set in the `admin-settings.json` will be reset to default when Docker Desktop starts.
 @z
 
 @x
 #### For Mac
-- Updating to 4.27.0 from the **Software updates** sometimes hangs. As a workaround, use the 4.27.0 installer from this page.
 @y
 #### For Mac
+@z
+
+@x
+- Updating to 4.27.0 from the **Software updates** sometimes hangs. As a workaround, use the 4.27.0 installer from this page.
+@y
 - Updating to 4.27.0 from the **Software updates** sometimes hangs. As a workaround, use the 4.27.0 installer from this page.
 @z
 
@@ -1323,9 +1331,13 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 #### For all platforms
-- Docker operations, such as pulling images or logging in, fail with 'connection refused' or 'timeout' errors if the Swap file size is set to 0MB. As a workaround, configure the swap file size to a non-zero value in the **Resources** tab in **Settings**. 
 @y
 #### For all platforms
+@z
+
+@x
+- Docker operations, such as pulling images or logging in, fail with 'connection refused' or 'timeout' errors if the Swap file size is set to 0MB. As a workaround, configure the swap file size to a non-zero value in the **Resources** tab in **Settings**. 
+@y
 - Docker operations, such as pulling images or logging in, fail with 'connection refused' or 'timeout' errors if the Swap file size is set to 0MB. As a workaround, configure the swap file size to a non-zero value in the **Resources** tab in **Settings**. 
 @z
 
@@ -1569,9 +1581,13 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 - Creating a container with the port 53 fails with the error address `already in use`. As a workaround, deactivate network acceleration by adding `"kernelForUDP": false`, in the `settings.json` file located at `~/Library/Group Containers/group.com.docker/settings.json`.
-## 4.23.0
 @y
 - Creating a container with the port 53 fails with the error address `already in use`. As a workaround, deactivate network acceleration by adding `"kernelForUDP": false`, in the `settings.json` file located at `~/Library/Group Containers/group.com.docker/settings.json`.
+@z
+
+@x
+## 4.23.0
+@y
 ## 4.23.0
 @z
 
@@ -1583,6 +1599,11 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 
 @x
 ### Upgrades
+@y
+### Upgrades
+@z
+
+@x
 - [Compose v2.21.0](https://github.com/docker/compose/releases/tag/v2.21.0)
 - [Docker Engine v24.0.6](https://docs.docker.com/engine/release-notes/24.0/#2406)
 - [Docker Scout CLI v0.24.1](https://github.com/docker/scout-cli/releases/tag/v0.24.1).
@@ -1590,7 +1611,6 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
   - wasmtime, wasmedge revision `d0a1a1cd`.
   - slight and spin wasm `v0.9.0`.
 @y
-### Upgrades
 - [Compose v2.21.0](https://github.com/docker/compose/releases/tag/v2.21.0)
 - [Docker Engine v24.0.6](https://docs.docker.com/engine/release-notes/24.0/#2406)
 - [Docker Scout CLI v0.24.1](https://github.com/docker/scout-cli/releases/tag/v0.24.1).

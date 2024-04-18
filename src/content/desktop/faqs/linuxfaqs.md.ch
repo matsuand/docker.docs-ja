@@ -219,9 +219,13 @@ ACL (see `setfacl(1)`) for folders shared with the Docker Desktop VM.
 
 @x
 ### Where does Docker Desktop store Linux containers?
-Docker Desktop stores Linux containers and images in a single, large "disk image" file in the Linux filesystem. This is different from Docker on Linux, which usually stores containers and images in the `/var/lib/docker` directory on the host's filesystem.
 @y
 ### Where does Docker Desktop store Linux containers?
+@z
+
+@x
+Docker Desktop stores Linux containers and images in a single, large "disk image" file in the Linux filesystem. This is different from Docker on Linux, which usually stores containers and images in the `/var/lib/docker` directory on the host's filesystem.
+@y
 Docker Desktop stores Linux containers and images in a single, large "disk image" file in the Linux filesystem. This is different from Docker on Linux, which usually stores containers and images in the `/var/lib/docker` directory on the host's filesystem.
 @z
 

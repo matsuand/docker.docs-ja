@@ -41,9 +41,13 @@ For more information, see [Environment variables precedence](envvars-precedence.
 
 @x
 ## Syntax
-The following syntax rules apply to environment files:
 @y
 ## Syntax
+@z
+
+@x
+The following syntax rules apply to environment files:
+@y
 The following syntax rules apply to environment files:
 @z
 
@@ -99,11 +103,15 @@ The following syntax rules apply to environment files:
 
 @x
 ### Interpolation
+@y
+### Interpolation
+@z
+
+@x
 Compose supports interpolation in environment files.
 Interpolation is applied for unquoted and double-quoted values.
 Both braced (`${VAR}`) and unbraced (`$VAR`) expressions are supported.
 @y
-### Interpolation
 Compose supports interpolation in environment files.
 Interpolation is applied for unquoted and double-quoted values.
 Both braced (`${VAR}`) and unbraced (`$VAR`) expressions are supported.
@@ -135,4 +143,10 @@ For braced expressions, the following formats are supported:
 - Alternative value
   - `${VAR:+replacement}` -> `replacement` if `VAR` is set and non-empty, otherwise empty
   - `${VAR+replacement}` -> `replacement` if `VAR` is set, otherwise empty
+@z
+
+@x
+For more information, see [Interpolation](../compose-file/12-interpolation.md) in the Compose Specification. 
+@y
+For more information, see [Interpolation](../compose-file/12-interpolation.md) in the Compose Specification. 
 @z

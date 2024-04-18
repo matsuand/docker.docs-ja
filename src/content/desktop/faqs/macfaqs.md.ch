@@ -71,9 +71,13 @@ runs in the background. The process does not consume any resources unless
 
 @x
 ### Where does Docker Desktop store Linux containers and images? 
-Docker Desktop stores Linux containers and images in a single, large "disk image" file in the Mac filesystem. This is different from Docker on Linux, which usually stores containers and images in the `/var/lib/docker` directory.
 @y
 ### Where does Docker Desktop store Linux containers and images? 
+@z
+
+@x
+Docker Desktop stores Linux containers and images in a single, large "disk image" file in the Mac filesystem. This is different from Docker on Linux, which usually stores containers and images in the `/var/lib/docker` directory.
+@y
 Docker Desktop stores Linux containers and images in a single, large "disk image" file in the Mac filesystem. This is different from Docker on Linux, which usually stores containers and images in the `/var/lib/docker` directory.
 @z
 
@@ -468,7 +472,6 @@ Desktop `xhyve` virtual machine).
 >   under insecure registries, and does not send client certificates. Commands
 >   like `docker run` that attempt to pull from the registry produce error
 >   messages on the command line, as well as on the registry.
-#### Directory structures for certificates
 @y
 > **Note**
 >
@@ -480,6 +483,11 @@ Desktop `xhyve` virtual machine).
 >   under insecure registries, and does not send client certificates. Commands
 >   like `docker run` that attempt to pull from the registry produce error
 >   messages on the command line, as well as on the registry.
+@z
+
+@x
+#### Directory structures for certificates
+@y
 #### Directory structures for certificates
 @z
 

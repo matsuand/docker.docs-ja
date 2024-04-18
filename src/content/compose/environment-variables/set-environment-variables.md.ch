@@ -257,6 +257,11 @@ See [`environment` attribute](../compose-file/05-services.md#environment) for mo
 
 @x
 #### Additional information 
+@y
+#### Additional information 
+@z
+
+@x
 - You can choose not to set a value and pass the environment variables from your shell straight through to your containers. It works in the same way as `docker run -e VARIABLE ...`:
   ```yaml
   web:
@@ -266,7 +271,6 @@ See [`environment` attribute](../compose-file/05-services.md#environment) for mo
   The value of the `DEBUG` variable in the container is taken from the value for the same variable in the shell in which Compose is run. 
   Note that in this case no warning is issued if the `DEBUG` variable in the shell environment is not set. 
 @y
-#### Additional information 
 - You can choose not to set a value and pass the environment variables from your shell straight through to your containers. It works in the same way as `docker run -e VARIABLE ...`:
   ```yaml
   web:
@@ -319,7 +323,21 @@ web:
   env_file:
     - web-variables.env
 ```
+@y
+```yaml
+web:
+  env_file:
+    - web-variables.env
+```
+@z
+
+@x
 #### Additional information 
+@y
+#### Additional information 
+@z
+
+@x
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
 - Environment variables declared in the `.env` file cannot then be referenced again separately in the Compose file.
 - If you use both the `env_file` and `environment` attribute, environment variables set by `environment` take precedence.
@@ -336,12 +354,6 @@ Compose silently ignores the entry.
       required: false
   ``` 
 @y
-```yaml
-web:
-  env_file:
-    - web-variables.env
-```
-#### Additional information 
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
 - Environment variables declared in the `.env` file cannot then be referenced again separately in the Compose file.
 - If you use both the `env_file` and `environment` attribute, environment variables set by `environment` take precedence.
@@ -465,10 +477,14 @@ $ docker compose --env-file ./config/.env.dev up
 
 @x
 #### Additional information 
+@y
+#### Additional information 
+@z
+
+@x
 - This method is useful if you want to temporarily override an `.env` file that is already referenced in your `compose.yml` file. For example you may have different `.env` files for production ( `.env.prod`) and testing (`.env.test`).
   In the following example, there are two environment files, `.env` and `.env.dev`. Both have different values set for `TAG`. 
 @y
-#### Additional information 
 - This method is useful if you want to temporarily override an `.env` file that is already referenced in your `compose.yml` file. For example you may have different `.env` files for production ( `.env.prod`) and testing (`.env.test`).
   In the following example, there are two environment files, `.env` and `.env.dev`. Both have different values set for `TAG`. 
 @z
@@ -603,11 +619,15 @@ Similar to `docker run --env`, you can set environment variables temporarily wit
 ```console
 $ docker compose run -e DEBUG=1 web python console.py
 ```
-#### Additional information 
 @y
 ```console
 $ docker compose run -e DEBUG=1 web python console.py
 ```
+@z
+
+@x
+#### Additional information 
+@y
 #### Additional information 
 @z
 
@@ -635,12 +655,16 @@ $ docker compose run -e DEBUG=1 web python console.py
 
 @x
 ## Further resources
+@y
+## Further resources
+@z
+
+@x
 - [Understand environment variable precedence](envvars-precedence.md).
 - [Set or change predefined environment variables](envvars.md)
 - [Explore best practices](best-practices.md)
 - [Understand the syntax and formatting guidelines for environment files](env-file.md)
 @y
-## Further resources
 - [Understand environment variable precedence](envvars-precedence.md).
 - [Set or change predefined environment variables](envvars.md)
 - [Explore best practices](best-practices.md)
