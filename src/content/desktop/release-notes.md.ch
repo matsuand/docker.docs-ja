@@ -6,6 +6,7 @@
 description: Release notes for Docker Desktop for Mac, Linux, and Windows
 keywords: Docker desktop, release notes, linux, mac, windows
 title: Docker Desktop release notes
+tags: [Release notes]
 toc_max: 2
 aliases:
 - /docker-for-mac/release-notes/
@@ -22,6 +23,7 @@ aliases:
 description: Release notes for Docker Desktop for Mac, Linux, and Windows
 keywords: Docker desktop, release notes, linux, mac, windows
 title: Docker Desktop release notes
+tags: [Release notes]
 toc_max: 2
 aliases:
 - /docker-for-mac/release-notes/
@@ -1764,9 +1766,9 @@ For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/re
 @z
 
 @x
-- Binding a priviledged port on Docker Desktop does not work on macOS. As a workaround you can expose the port on all interfaces (using `0.0.0.0`) or using localhost (using `127.0.0.1`).
+- Binding a privileged port on Docker Desktop does not work on macOS. As a workaround you can expose the port on all interfaces (using `0.0.0.0`) or using localhost (using `127.0.0.1`).
 @y
-- Binding a priviledged port on Docker Desktop does not work on macOS. As a workaround you can expose the port on all interfaces (using `0.0.0.0`) or using localhost (using `127.0.0.1`).
+- Binding a privileged port on Docker Desktop does not work on macOS. As a workaround you can expose the port on all interfaces (using `0.0.0.0`) or using localhost (using `127.0.0.1`).
 @z
 
 @x

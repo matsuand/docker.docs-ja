@@ -296,9 +296,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = admin billing build cloud compose config contribute \
-	desktop develop docker-id docker-hub engine faq get-started \
+	desktop develop docker-id docker-hub engine get-started \
 	guides includes language network reference samples scout \
-	security storage subscription trusted-content
+	security storage subscription tags trusted-content
 
 bases = \
 	_index.md            \
@@ -307,7 +307,6 @@ bases = \
 	manuals.md           \
 	registry.md          \
 	release-lifecycle.md \
-	release-notes.md     \
 	support.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

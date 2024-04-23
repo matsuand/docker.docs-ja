@@ -32,6 +32,130 @@ For more information about:
 @z
 
 @x
+## 26.0.2
+@y
+## 26.0.2
+@z
+
+@x
+{{< release-date date="2024-04-18" >}}
+@y
+{{< release-date date="2024-04-18" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+本リリースにおけるプルリクエストや変更点の一覧は、対応する GitHub のマイルストーンを参照してください。
+@z
+
+@x
+- [docker/cli, 26.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A26.0.2)
+- [moby/moby, 26.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A26.0.2)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v26.0.2/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v26.0.2/docs/api/version-history.md).
+@y
+- [docker/cli, 26.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A26.0.2)
+- [moby/moby, 26.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A26.0.2)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v26.0.2/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v26.0.2/docs/api/version-history.md).
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+This release contains a security fix for [CVE-2024-32473], an unexpected configuration of IPv6 on IPv4-only interfaces.
+@y
+This release contains a security fix for [CVE-2024-32473], an unexpected configuration of IPv6 on IPv4-only interfaces.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- [CVE-2024-32473]: Ensure IPv6 is disabled on interfaces only allocated an IPv4 address by the engine. [moby#GHSA-x84c-p2g9-rqv9](https://github.com/moby/moby/security/advisories/GHSA-x84c-p2g9-rqv9)
+
+  [CVE-2024-32473]: https://github.com/moby/moby/security/advisories/GHSA-x84c-p2g9-rqv9
+@y
+- [CVE-2024-32473]: Ensure IPv6 is disabled on interfaces only allocated an IPv4 address by the engine. [moby#GHSA-x84c-p2g9-rqv9](https://github.com/moby/moby/security/advisories/GHSA-x84c-p2g9-rqv9)
+
+  [CVE-2024-32473]: https://github.com/moby/moby/security/advisories/GHSA-x84c-p2g9-rqv9
+@z
+
+@x
+## 26.0.1
+@y
+## 26.0.1
+@z
+
+@x
+{{< release-date date="2024-04-11" >}}
+@y
+{{< release-date date="2024-04-11" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+本リリースにおけるプルリクエストや変更点の一覧は、対応する GitHub のマイルストーンを参照してください。
+@z
+
+@x
+- [docker/cli, 26.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A26.0.1)
+- [moby/moby, 26.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A26.0.1)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v26.0.1/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v26.0.1/docs/api/version-history.md).
+@y
+- [docker/cli, 26.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A26.0.1)
+- [moby/moby, 26.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A26.0.1)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v26.0.1/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v26.0.1/docs/api/version-history.md).
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression that meant network interface specific `--sysctl` options prevented container startup. [moby/moby#47646](https://github.com/moby/moby/pull/47646)
+- Remove erroneous `platform` from image `config` OCI descriptor in `docker save` output. [moby/moby#47694](https://github.com/moby/moby/pull/47694)
+- containerd image store: OCI archives produced by `docker save` will now have a non-empty `mediaType` field in `index.json` [moby/moby#47701](https://github.com/moby/moby/pull/47701)
+- Fix a regression that prevented the internal resolver from forwarding requests from IPvlan L3 networks to external resolvers. [moby/moby#47705](https://github.com/moby/moby/pull/47705)
+- Prevent the use of external resolvers in IPvlan and Macvlan networks created with no parent interface specified. [moby/moby#47705](https://github.com/moby/moby/pull/47705)
+@y
+- Fix a regression that meant network interface specific `--sysctl` options prevented container startup. [moby/moby#47646](https://github.com/moby/moby/pull/47646)
+- Remove erroneous `platform` from image `config` OCI descriptor in `docker save` output. [moby/moby#47694](https://github.com/moby/moby/pull/47694)
+- containerd image store: OCI archives produced by `docker save` will now have a non-empty `mediaType` field in `index.json` [moby/moby#47701](https://github.com/moby/moby/pull/47701)
+- Fix a regression that prevented the internal resolver from forwarding requests from IPvlan L3 networks to external resolvers. [moby/moby#47705](https://github.com/moby/moby/pull/47705)
+- Prevent the use of external resolvers in IPvlan and Macvlan networks created with no parent interface specified. [moby/moby#47705](https://github.com/moby/moby/pull/47705)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Go runtime to 1.21.9 [moby/moby#47671](https://github.com/moby/moby/pull/47671), [docker/cli#4987](https://github.com/docker/cli/pull/4987)
+- Update Compose to [v1.26.1 ](https://github.com/docker/compose/releases/tag/v2.26.1), [docker/docker-ce-packaging#1009](https://github.com/docker/docker-ce-packaging/pull/1009)
+- Update containerd to [v1.7.15](https://github.com/containerd/containerd/releases/tag/v1.7.15) (static binaries only) [moby/moby#47692](https://github.com/moby/moby/pull/47692)
+@y
+- Update Go runtime to 1.21.9 [moby/moby#47671](https://github.com/moby/moby/pull/47671), [docker/cli#4987](https://github.com/docker/cli/pull/4987)
+- Update Compose to [v1.26.1 ](https://github.com/docker/compose/releases/tag/v2.26.1), [docker/docker-ce-packaging#1009](https://github.com/docker/docker-ce-packaging/pull/1009)
+- Update containerd to [v1.7.15](https://github.com/containerd/containerd/releases/tag/v1.7.15) (static binaries only) [moby/moby#47692](https://github.com/moby/moby/pull/47692)
+@z
+
+@x
 ## 26.0.0
 @y
 ## 26.0.0
@@ -64,7 +188,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -265,8 +389,4 @@ This release contains a security fix for [CVE-2024-29018], a potential data exfi
 - cli/command: remove deprecated `DockerCliOption`, `InitializeOpt` [docker/cli#4810](https://github.com/docker/cli/pull/4810)
 @z
 
-@x
-  [CVE-2024-29018]: https://github.com/moby/moby/security/advisories/GHSA-mq39-4gv4-mvpx
-@y
-  [CVE-2024-29018]: https://github.com/moby/moby/security/advisories/GHSA-mq39-4gv4-mvpx
-@z
+% snip cve...

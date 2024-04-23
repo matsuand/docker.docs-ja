@@ -152,9 +152,9 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 @z
 
 @x iidfile
-      description: Write the image ID to the file
+      description: Write the image ID to a file
 @y
-      description: Write the image ID to the file
+      description: Write the image ID to a file
 @z
 
 @x isolation
@@ -190,9 +190,9 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 @z
 
 @x metadata-file
-      description: Write build result metadata to the file
+      description: Write build result metadata to a file
 @y
-      description: Write build result metadata to the file
+      description: Write build result metadata to a file
 @z
 
 @x network
@@ -982,9 +982,9 @@ examples: |-
 @z
 
 @x
-    ### Write build result metadata to the file (--metadata-file) {#metadata-file}
+    ### Write build result metadata to a file (--metadata-file) {#metadata-file}
 @y
-    ### Write build result metadata to the file (--metadata-file) {#metadata-file}
+    ### Write build result metadata to a file (--metadata-file) {#metadata-file}
 @z
 
 @x
@@ -1186,25 +1186,7 @@ examples: |-
     exporter and write to `stdout`.
 @z
 
-@x
-    ```console
-    $ docker buildx build -o . .
-    $ docker buildx build -o outdir .
-    $ docker buildx build -o - - > out.tar
-    $ docker buildx build -o type=docker .
-    $ docker buildx build -o type=docker,dest=- . > myimage.tar
-    $ docker buildx build -t tonistiigi/foo -o type=registry
-    ```
-@y
-    ```console
-    $ docker buildx build -o . .
-    $ docker buildx build -o outdir .
-    $ docker buildx build -o - - > out.tar
-    $ docker buildx build -o type=docker .
-    $ docker buildx build -o type=docker,dest=- . > myimage.tar
-    $ docker buildx build -t tonistiigi/foo -o type=registry
-    ```
-@z
+% snip code...
 
 @x
     Supported exported types are:
@@ -1693,17 +1675,37 @@ examples: |-
 @z
 
 @x
-    Exposes secret to the build. The secret can be used by the build using
-    [`RUN --mount=type=secret` mount](/reference/dockerfile/#run---mounttypesecret).
+    Exposes secrets (authentication credentials, tokens) to the build.
+    A secret can be mounted into the build using a `RUN --mount=type=secret` mount in the
+    [Dockerfile](/reference/dockerfile/#run---mounttypesecret).
+    For more information about how to use build secrets, see
+    [Build secrets](/build/building/secrets/).
 @y
-    Exposes secret to the build. The secret can be used by the build using
-    [`RUN --mount=type=secret` mount](__SUBDIR__/reference/dockerfile/#run---mounttypesecret).
+    Exposes secrets (authentication credentials, tokens) to the build.
+    A secret can be mounted into the build using a `RUN --mount=type=secret` mount in the
+    [Dockerfile](__SUBDIR__/reference/dockerfile/#run---mounttypesecret).
+    For more information about how to use build secrets, see
+    [Build secrets](__SUBDIR__/build/building/secrets/).
 @z
 
 @x
-    If `type` is unset it will be detected. Supported types are:
+    Supported types are:
 @y
-    If `type` is unset it will be detected. Supported types are:
+    Supported types are:
+@z
+
+@x
+    - [`file`](#file)
+    - [`env`](#env)
+@y
+    - [`file`](#file)
+    - [`env`](#env)
+@z
+
+@x
+    Buildx attempts to detect the `type` automatically if unset.
+@y
+    Buildx attempts to detect the `type` automatically if unset.
 @z
 
 @x

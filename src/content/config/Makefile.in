@@ -300,6 +300,7 @@ bases = \
 	filter.md                 \
 	formatting.md             \
 	labels-custom-metadata.md \
+	otel.md                   \
 	pruning.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

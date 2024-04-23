@@ -16,15 +16,15 @@ keywords: compose, compose specification, services, compose file reference
 @z
 
 @x
-## Version top-level element (optional)
+## Version top-level element (obsolete)
 @y
-## Version top-level element (optional)
+## Version top-level element (obsolete)
 @z
 
 @x
-The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative.
+The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative and you'll receive a warning message that it is obsolete if used. 
 @y
-The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative.
+The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative and you'll receive a warning message that it is obsolete if used. 
 @z
 
 @x
@@ -50,11 +50,11 @@ because the Compose file was written with fields defined by a newer version of t
 @z
 
 @x
-The top-level `name` property is defined by the Specification as the project name to be used if you don't set one explicitly.
+The top-level `name` property is defined by the Compose Specification as the project name to be used if you don't set one explicitly.
 Compose offers a way for you to override this name, and sets a
 default project name to be used if the top-level `name` element is not set.
 @y
-The top-level `name` property is defined by the Specification as the project name to be used if you don't set one explicitly.
+The top-level `name` property is defined by the Compose Specification as the project name to be used if you don't set one explicitly.
 Compose offers a way for you to override this name, and sets a
 default project name to be used if the top-level `name` element is not set.
 @z

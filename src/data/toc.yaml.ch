@@ -136,6 +136,34 @@ Guides:
 @z
 
 @x
+  - sectiontitle: "Building images"
+    section:
+    - title: "Understanding image layers"
+      path: /guides/docker-concepts/building-images/understanding-image-layers/
+    - title: "Writing a Dockerfile"
+      path: /guides/docker-concepts/building-images/writing-a-dockerfile/
+    - title: "Build, tag and publish an image"
+      path: /guides/docker-concepts/building-images/build-tag-and-publish-an-image/
+    - title: "Using the build cache"
+      path: /guides/docker-concepts/building-images/using-the-build-cache/
+    - title: "Multi-stage builds"
+      path: /guides/docker-concepts/building-images/multi-stage-builds/
+@y
+  - sectiontitle: "イメージのビルド"
+    section:
+    - title: "イメージレイヤーの理解"
+      path: __SUBDIR__/guides/docker-concepts/building-images/understanding-image-layers/
+    - title: "Dockerfile の書き方"
+      path: __SUBDIR__/guides/docker-concepts/building-images/writing-a-dockerfile/
+    - title: "イメージのビルド、タグづけ、公開"
+      path: __SUBDIR__/guides/docker-concepts/building-images/build-tag-and-publish-an-image/
+    - title: "ビルドキャッシュの利用"
+      path: __SUBDIR__/guides/docker-concepts/building-images/using-the-build-cache/
+    - title: "マルチステージビルド"
+      path: __SUBDIR__/guides/docker-concepts/building-images/multi-stage-builds/
+@z
+
+@x
 - sectiontitle: Language-specific guides
   section:
   - path: /language/
@@ -2242,209 +2270,211 @@ Reference:
 @z
 
 @x
-Samples:
-- path: /samples/
-  title: Overview
-- sectiontitle: Databases
+- sectiontitle: Samples
   section:
-    - path: /samples/mariadb/
-      title: MariaDB
-    - path: /samples/mongodb/
-      title: MongoDB
-    - path: /samples/ms-sql/
-      title: MS-SQL
-    - path: /samples/mysql/
-      title: MySQL
-    - path: /samples/postgres/
-      title: PostgreSQL
-    - path: /samples/redis/
-      title: Redis
+  - path: /samples/
+    title: Overview
+  - sectiontitle: Databases
+    section:
+      - path: /samples/mariadb/
+        title: MariaDB
+      - path: /samples/mongodb/
+        title: MongoDB
+      - path: /samples/ms-sql/
+        title: MS-SQL
+      - path: /samples/mysql/
+        title: MySQL
+      - path: /samples/postgres/
+        title: PostgreSQL
+      - path: /samples/redis/
+        title: Redis
 @y
-サンプル:
-- path: __SUBDIR__/samples/
-  title: 概要
-- sectiontitle: データベース
+- sectiontitle: サンプル
   section:
-    - path: __SUBDIR__/samples/mariadb/
-      title: MariaDB
-    - path: __SUBDIR__/samples/mongodb/
-      title: MongoDB
-    - path: __SUBDIR__/samples/ms-sql/
-      title: MS-SQL
-    - path: __SUBDIR__/samples/mysql/
-      title: MySQL
-    - path: __SUBDIR__/samples/postgres/
-      title: PostgreSQL
-    - path: __SUBDIR__/samples/redis/
-      title: Redis
+  - path: __SUBDIR__/samples/
+    title: 概要
+  - sectiontitle: データベース
+    section:
+      - path: __SUBDIR__/samples/mariadb/
+        title: MariaDB
+      - path: __SUBDIR__/samples/mongodb/
+        title: MongoDB
+      - path: __SUBDIR__/samples/ms-sql/
+        title: MS-SQL
+      - path: __SUBDIR__/samples/mysql/
+        title: MySQL
+      - path: __SUBDIR__/samples/postgres/
+        title: PostgreSQL
+      - path: __SUBDIR__/samples/redis/
+        title: Redis
 @z
 
 @x
-- sectiontitle: Frameworks
-  section:
-    - path: /samples/dotnet/
-      title: .NET
-    - path: /samples/angular/
-      title: Angular
-    - path: /samples/django/
-      title: Django
-    - path: /samples/express/
-      title: Express
-    - path: /samples/fastapi/
-      title: FastAPI
-    - path: /samples/flask/
-      title: Flask
-    - path: /samples/nodejs/
-      title: Node.js
-    - path: /samples/react/
-      title: React
-    - path: /samples/rails/
-      title: Rails
-    - path: /samples/spark/
-      title: Spark
-    - path: /samples/spring/
-      title: Spring Boot
-    - path: /samples/vuejs/
-      title: Vue.js
+  - sectiontitle: Frameworks
+    section:
+      - path: /samples/dotnet/
+        title: .NET
+      - path: /samples/angular/
+        title: Angular
+      - path: /samples/django/
+        title: Django
+      - path: /samples/express/
+        title: Express
+      - path: /samples/fastapi/
+        title: FastAPI
+      - path: /samples/flask/
+        title: Flask
+      - path: /samples/nodejs/
+        title: Node.js
+      - path: /samples/react/
+        title: React
+      - path: /samples/rails/
+        title: Rails
+      - path: /samples/spark/
+        title: Spark
+      - path: /samples/spring/
+        title: Spring Boot
+      - path: /samples/vuejs/
+        title: Vue.js
 @y
-- sectiontitle: フレームワーク
-  section:
-    - path: __SUBDIR__/samples/dotnet/
-      title: .NET
-    - path: __SUBDIR__/samples/angular/
-      title: Angular
-    - path: __SUBDIR__/samples/django/
-      title: Django
-    - path: __SUBDIR__/samples/express/
-      title: Express
-    - path: __SUBDIR__/samples/fastapi/
-      title: FastAPI
-    - path: __SUBDIR__/samples/flask/
-      title: Flask
-    - path: __SUBDIR__/samples/nodejs/
-      title: Node.js
-    - path: __SUBDIR__/samples/react/
-      title: React
-    - path: __SUBDIR__/samples/rails/
-      title: Rails
-    - path: __SUBDIR__/samples/spark/
-      title: Spark
-    - path: __SUBDIR__/samples/spring/
-      title: Spring Boot
-    - path: __SUBDIR__/samples/vuejs/
-      title: Vue.js
+  - sectiontitle: フレームワーク
+    section:
+      - path: __SUBDIR__/samples/dotnet/
+        title: .NET
+      - path: __SUBDIR__/samples/angular/
+        title: Angular
+      - path: __SUBDIR__/samples/django/
+        title: Django
+      - path: __SUBDIR__/samples/express/
+        title: Express
+      - path: __SUBDIR__/samples/fastapi/
+        title: FastAPI
+      - path: __SUBDIR__/samples/flask/
+        title: Flask
+      - path: __SUBDIR__/samples/nodejs/
+        title: Node.js
+      - path: __SUBDIR__/samples/react/
+        title: React
+      - path: __SUBDIR__/samples/rails/
+        title: Rails
+      - path: __SUBDIR__/samples/spark/
+        title: Spark
+      - path: __SUBDIR__/samples/spring/
+        title: Spring Boot
+      - path: __SUBDIR__/samples/vuejs/
+        title: Vue.js
 @z
 
 @x
-- sectiontitle: Languages
-  section:
-    - path: /samples/go/
-      title: Go
-    - path: /samples/java/
-      title: Java
-    - path: /samples/javascript/
-      title: JavaScript
-    - path: /samples/php/
-      title: PHP
-    - path: /samples/python/
-      title: Python
-    - path: /samples/ruby/
-      title: Ruby
-    - path: /samples/rust/
-      title: Rust
-    - path: /samples/typescript/
-      title: TypeScript
+  - sectiontitle: Languages
+    section:
+      - path: /samples/go/
+        title: Go
+      - path: /samples/java/
+        title: Java
+      - path: /samples/javascript/
+        title: JavaScript
+      - path: /samples/php/
+        title: PHP
+      - path: /samples/python/
+        title: Python
+      - path: /samples/ruby/
+        title: Ruby
+      - path: /samples/rust/
+        title: Rust
+      - path: /samples/typescript/
+        title: TypeScript
 @y
-- sectiontitle: 言語
-  section:
-    - path: __SUBDIR__/samples/go/
-      title: Go
-    - path: __SUBDIR__/samples/java/
-      title: Java
-    - path: __SUBDIR__/samples/javascript/
-      title: JavaScript
-    - path: __SUBDIR__/samples/php/
-      title: PHP
-    - path: __SUBDIR__/samples/python/
-      title: Python
-    - path: __SUBDIR__/samples/ruby/
-      title: Ruby
-    - path: __SUBDIR__/samples/rust/
-      title: Rust
-    - path: __SUBDIR__/samples/typescript/
-      title: TypeScript
+  - sectiontitle: 言語
+    section:
+      - path: __SUBDIR__/samples/go/
+        title: Go
+      - path: __SUBDIR__/samples/java/
+        title: Java
+      - path: __SUBDIR__/samples/javascript/
+        title: JavaScript
+      - path: __SUBDIR__/samples/php/
+        title: PHP
+      - path: __SUBDIR__/samples/python/
+        title: Python
+      - path: __SUBDIR__/samples/ruby/
+        title: Ruby
+      - path: __SUBDIR__/samples/rust/
+        title: Rust
+      - path: __SUBDIR__/samples/typescript/
+        title: TypeScript
 @z
 
 @x
-- sectiontitle: Platforms
-  section:
-    - path: /samples/gitea/
-      title: Gitea
-    - path: /samples/nextcloud/
-      title: Nextcloud
-    - path: /samples/portainer/
-      title: Portainer
-    - path: /samples/prometheus/
-      title: Prometheus
-    - path: /samples/wordpress/
-      title: WordPress
+  - sectiontitle: Platforms
+    section:
+      - path: /samples/gitea/
+        title: Gitea
+      - path: /samples/nextcloud/
+        title: Nextcloud
+      - path: /samples/portainer/
+        title: Portainer
+      - path: /samples/prometheus/
+        title: Prometheus
+      - path: /samples/wordpress/
+        title: WordPress
 @y
-- sectiontitle: プラットフォーム
-  section:
-    - path: __SUBDIR__/samples/gitea/
-      title: Gitea
-    - path: __SUBDIR__/samples/nextcloud/
-      title: Nextcloud
-    - path: __SUBDIR__/samples/portainer/
-      title: Portainer
-    - path: __SUBDIR__/samples/prometheus/
-      title: Prometheus
-    - path: __SUBDIR__/samples/wordpress/
-      title: WordPress
+  - sectiontitle: プラットフォーム
+    section:
+      - path: __SUBDIR__/samples/gitea/
+        title: Gitea
+      - path: __SUBDIR__/samples/nextcloud/
+        title: Nextcloud
+      - path: __SUBDIR__/samples/portainer/
+        title: Portainer
+      - path: __SUBDIR__/samples/prometheus/
+        title: Prometheus
+      - path: __SUBDIR__/samples/wordpress/
+        title: WordPress
 @z
 
 @x
-- sectiontitle: Other samples
-  section:
-    - path: /samples/ai-ml/
-      title: AI/ML
-    - path: /samples/cloudflared/
-      title: Cloudflared
-    - path: /samples/elasticsearch/
-      title: Elasticsearch / Logstash / Kibana
-    - path: /samples/minecraft/
-      title: Minecraft
-    - path: /samples/nginx/
-      title: NGINX
-    - path: /samples/pi-hole/
-      title: Pi-hole
-    - path: /samples/plex/
-      title: Plex
-    - path: /samples/traefik/
-      title: Traefik
-    - path: /samples/wireguard/
-      title: Wireguard
+  - sectiontitle: Other samples
+    section:
+      - path: /samples/ai-ml/
+        title: AI/ML
+      - path: /samples/cloudflared/
+        title: Cloudflared
+      - path: /samples/elasticsearch/
+        title: Elasticsearch / Logstash / Kibana
+      - path: /samples/minecraft/
+        title: Minecraft
+      - path: /samples/nginx/
+        title: NGINX
+      - path: /samples/pi-hole/
+        title: Pi-hole
+      - path: /samples/plex/
+        title: Plex
+      - path: /samples/traefik/
+        title: Traefik
+      - path: /samples/wireguard/
+        title: Wireguard
 @y
-- sectiontitle: その他のサンプル
-  section:
-    - path: __SUBDIR__/samples/ai-ml/
-      title: AI/ML
-    - path: __SUBDIR__/samples/cloudflared/
-      title: Cloudflared
-    - path: __SUBDIR__/samples/elasticsearch/
-      title: Elasticsearch / Logstash / Kibana
-    - path: __SUBDIR__/samples/minecraft/
-      title: Minecraft
-    - path: __SUBDIR__/samples/nginx/
-      title: NGINX
-    - path: __SUBDIR__/samples/pi-hole/
-      title: Pi-hole
-    - path: __SUBDIR__/samples/plex/
-      title: Plex
-    - path: __SUBDIR__/samples/traefik/
-      title: Traefik
-    - path: __SUBDIR__/samples/wireguard/
-      title: Wireguard
+  - sectiontitle: その他のサンプル
+    section:
+      - path: __SUBDIR__/samples/ai-ml/
+        title: AI/ML
+      - path: __SUBDIR__/samples/cloudflared/
+        title: Cloudflared
+      - path: __SUBDIR__/samples/elasticsearch/
+        title: Elasticsearch / Logstash / Kibana
+      - path: __SUBDIR__/samples/minecraft/
+        title: Minecraft
+      - path: __SUBDIR__/samples/nginx/
+        title: NGINX
+      - path: __SUBDIR__/samples/pi-hole/
+        title: Pi-hole
+      - path: __SUBDIR__/samples/plex/
+        title: Plex
+      - path: __SUBDIR__/samples/traefik/
+        title: Traefik
+      - path: __SUBDIR__/samples/wireguard/
+        title: Wireguard
 @z
 
 @x
@@ -2453,68 +2483,72 @@ Manuals:
   title: Overview
 - title: Get Docker
   path: /get-docker/
-- sectiontitle: Docker Desktop
-  section:
-    - path: /desktop/
-      title: Overview
-    - sectiontitle: Install Docker Desktop
-      section:
-       - path: /desktop/install/mac-install/
-         title: Install on Mac
-       - path: /desktop/mac/permission-requirements/
-         title: Understand permission requirements for Mac
-       - path: /desktop/install/windows-install/
-         title: Install on Windows
-       - path: /desktop/windows/permission-requirements/
-         title: Understand permission requirements for Windows
-       - path: /desktop/install/linux-install/
-         title: Install on Linux
 @y
 マニュアル:
 - path: __SUBDIR__/manuals/
   title: 概要
 - title: Docker の入手
   path: __SUBDIR__/get-docker/
+@z
+
+@x
+- sectiontitle: Docker Desktop
+  section:
+    - path: /desktop/
+      title: Overview
+    - sectiontitle: Install 
+      section:
+       - path: /desktop/install/mac-install/
+         title: Mac
+       - path: /desktop/mac/permission-requirements/
+         title: Understand permission requirements for Mac
+       - path: /desktop/install/windows-install/
+         title: Windows
+       - path: /desktop/windows/permission-requirements/
+         title: Understand permission requirements for Windows
+       - path: /desktop/install/linux-install/
+         title: Linux
+@y
 - sectiontitle: Docker Desktop
   section:
     - path: __SUBDIR__/desktop/
       title: 概要
-    - sectiontitle: Docker Desktop のインストール
+    - sectiontitle: インストール
       section:
        - path: __SUBDIR__/desktop/install/mac-install/
-         title: Mac へのインストール
+         title: Mac
        - path: __SUBDIR__/desktop/mac/permission-requirements/
          title: Mac におけるパーミッション要件への理解
        - path: __SUBDIR__/desktop/install/windows-install/
-         title: Windows へのインストール
+         title: Windows
        - path: __SUBDIR__/desktop/windows/permission-requirements/
          title: Windows におけるパーミッション要件への理解
        - path: __SUBDIR__/desktop/install/linux-install/
-         title: Linux へのインストール
+         title: Linux
 @z
 
 @x
        - sectiontitle: Installation per Linux distro
          section:
             - path: /desktop/install/ubuntu/
-              title: Install on Ubuntu
+              title: Ubuntu
             - path: /desktop/install/debian/
-              title: Install on Debian
+              title: Debian
             - path: /desktop/install/fedora/
-              title: Install on Fedora
+              title: Fedora
             - path: /desktop/install/archlinux/
-              title: Install on Arch
+              title: Arch
 @y
        - sectiontitle: Linux ディストロごとのインストール
          section:
             - path: __SUBDIR__/desktop/install/ubuntu/
-              title: Ubuntu へのインストール
+              title: Ubuntu
             - path: __SUBDIR__/desktop/install/debian/
-              title: Debian へのインストール
+              title: Debian
             - path: __SUBDIR__/desktop/install/fedora/
-              title: Fedora へのインストール
+              title: Fedora
             - path: __SUBDIR__/desktop/install/archlinux/
-              title: Arch へのインストール
+              title: Arch
 @z
 
 @x
@@ -2754,15 +2788,47 @@ Manuals:
       title: Uninstall Docker Desktop
     - path: /desktop/feedback/
       title: Give feedback
-    - path: /desktop/release-notes/
-      title: Release notes
 @y
     - path: __SUBDIR__/desktop/uninstall/
       title: Uninstall Docker Desktop
     - path: __SUBDIR__/desktop/feedback/
       title: Give feedback
-    - path: __SUBDIR__/desktop/release-notes/
+@z
+
+@x
+    - sectiontitle: Desktop FAQs
+      section:
+      - path: /desktop/faqs/general/
+        title: General
+      - path: /desktop/faqs/macfaqs/
+        title: Mac
+      - path: /desktop/faqs/windowsfaqs/
+        title: Windows
+      - path: /desktop/faqs/linuxfaqs/
+        title: Linux
+      - path: /desktop/faqs/releases/
+        title: Releases
+@y
+    - sectiontitle: Desktop FAQs
+      section:
+      - path: __SUBDIR__/desktop/faqs/general/
+        title: General
+      - path: __SUBDIR__/desktop/faqs/macfaqs/
+        title: Mac
+      - path: __SUBDIR__/desktop/faqs/windowsfaqs/
+        title: Windows
+      - path: __SUBDIR__/desktop/faqs/linuxfaqs/
+        title: Linux
+      - path: __SUBDIR__/desktop/faqs/releases/
+        title: Releases
+@z
+
+@x
+    - path: /desktop/release-notes/
       title: Release notes
+@y
+    - path: __SUBDIR__/desktop/release-notes/
+      title: リリースノート
 @z
 
 @x
@@ -2809,7 +2875,7 @@ Manuals:
 - sectiontitle: Docker Extensions
   section:
     - path: /desktop/extensions/
-      title: What are Docker Extensions?
+      title: Overview
     - sectiontitle: Extensions on Docker Desktop
       section:
         - path: /desktop/extensions/marketplace/
@@ -2824,8 +2890,8 @@ Manuals:
 - sectiontitle: Docker Extensions
   section:
     - path: __SUBDIR__/desktop/extensions/
-      title: Docker Extensions とは何か
-    - sectiontitle: Docker Desktop 上の Extensions
+      title: 概要
+    - sectiontitle: Extensions on Docker Desktop
       section:
         - path: __SUBDIR__/desktop/extensions/marketplace/
           title: マーケットプレースの Extensions 管理
@@ -3914,10 +3980,30 @@ Manuals:
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: /engine/release-notes/26.0/
-      title: Engine 26.0
+    - path: /engine/release-notes/26.1/
+      title: Engine 26.1
+@y
+  - path: __SUBDIR__/engine/deprecated/
+    title: Deprecated features
+  - sectiontitle: Release notes
+    section:
+    - path: __SUBDIR__/engine/release-notes/26.1/
+      title: Engine 26.1
+@z
+
+@x
     - sectiontitle: Previous versions
       section:
+      - path: /engine/release-notes/26.0/
+        title: Engine 26.0
+@y
+    - sectiontitle: Previous versions
+      section:
+      - path: __SUBDIR__/engine/release-notes/26.0/
+        title: Engine 26.0
+@z
+
+@x
       - path: /engine/release-notes/25.0/
         title: Engine 25.0
       - path: /engine/release-notes/24.0/
@@ -3943,14 +4029,6 @@ Manuals:
       - path: /engine/release-notes/18.01/
         title: Engine 18.01
 @y
-  - path: __SUBDIR__/engine/deprecated/
-    title: Deprecated features
-  - sectiontitle: Release notes
-    section:
-    - path: __SUBDIR__/engine/release-notes/26.0/
-      title: Engine 26.0
-    - sectiontitle: Previous versions
-      section:
       - path: __SUBDIR__/engine/release-notes/25.0/
         title: Engine 25.0
       - path: __SUBDIR__/engine/release-notes/24.0/
@@ -4432,22 +4510,6 @@ Manuals:
       title: Why use Compose?
     - path: /compose/intro/history/
       title: History and development of Compose
-  - sectiontitle: Install
-    section:
-      - path: /compose/install/
-        title: Overview
-      - path: /compose/install/linux/
-        title: Install Compose plugin
-      - path: /compose/install/standalone/
-        title: Install Compose standalone
-      - path: /compose/install/uninstall/
-        title: Uninstall Compose
-  - path: /compose/compose-application-model/
-    title: How Compose works
-  - path: /compose/gettingstarted/
-    title: Try Compose
-  - path: /compose/project-name/
-    title: Specify a project name
 @y
 - sectiontitle: Docker Compose
   section:
@@ -4459,6 +4521,20 @@ Manuals:
       title: Compose 利用はなぜ
     - path: __SUBDIR__/compose/intro/history/
       title: Compose のこれまでと開発
+@z
+
+@x
+  - sectiontitle: Install
+    section:
+      - path: /compose/install/
+        title: Overview
+      - path: /compose/install/linux/
+        title: Install Compose plugin
+      - path: /compose/install/standalone/
+        title: Install Compose standalone
+      - path: /compose/install/uninstall/
+        title: Uninstall Compose
+@y
   - sectiontitle: インストール
     section:
       - path: __SUBDIR__/compose/install/
@@ -4469,10 +4545,20 @@ Manuals:
         title: Compose のスタンドアローンインストール
       - path: __SUBDIR__/compose/install/uninstall/
         title: Compose のアンインストール
-  - path: __SUBDIR__/compose/compose-application-model/
+@z
+
+@x
+  - path: /compose/compose-application-model/
     title: How Compose works
+  - path: /compose/gettingstarted/
+    title: Quickstart
+  - path: /compose/project-name/
+    title: Specify a project name
+@y
+  - path: __SUBDIR__/compose/compose-application-model/
+    title: Compose はどのように動作するか
   - path: __SUBDIR__/compose/gettingstarted/
-    title: Compose を試そう
+    title: クィックスタート
   - path: __SUBDIR__/compose/project-name/
     title: プロジェクト名の指定
 @z
@@ -4570,6 +4656,8 @@ Manuals:
     title: Give feedback
   - path: /compose/migrate/
     title: Migrate to Compose V2
+  - path: /compose/faq/
+    title: Compose FAQ
   - path: /compose/release-notes/
     title: Release notes
 @y
@@ -4585,6 +4673,8 @@ Manuals:
     title: フィードバック
   - path: __SUBDIR__/compose/migrate/
     title: Migrate to Compose V2
+  - path: __SUBDIR__/compose/faq/
+    title: 共通 FAQ
   - path: __SUBDIR__/compose/release-notes/
     title: リリースノート
 @z
@@ -4766,10 +4856,6 @@ Manuals:
       title: Manage users
     - path: /admin/company/owners/
       title: Manage company owners
-  - path: /admin/convert-account/
-    title: Convert an account into an organization
-  - path: /admin/deactivate-account/
-    title: Deactivate an account or organization
 @y
   - sectiontitle: Company administration
     section:
@@ -4783,6 +4869,34 @@ Manuals:
       title: Manage users
     - path: __SUBDIR__/admin/company/owners/
       title: Manage company owners
+@z
+
+@x
+  - sectiontitle: Account and admin FAQ
+    section:
+    - path: /admin/faqs/general-faqs/
+      title: General
+    - path: /admin/faqs/organization-faqs/
+      title: Organization
+    - path: /admin/faqs/company-faqs/
+      title: Company
+@y
+  - sectiontitle: Account and admin FAQ
+    section:
+    - path: __SUBDIR__/admin/faqs/general-faqs/
+      title: General
+    - path: __SUBDIR__/admin/faqs/organization-faqs/
+      title: Organization
+    - path: __SUBDIR__/admin/faqs/company-faqs/
+      title: Company
+@z
+
+@x
+  - path: /admin/convert-account/
+    title: Convert an account into an organization
+  - path: /admin/deactivate-account/
+    title: Deactivate an account or organization
+@y
   - path: __SUBDIR__/admin/convert-account/
     title: Convert an account into an organization
   - path: __SUBDIR__/admin/deactivate-account/
@@ -5062,143 +5176,13 @@ Manuals:
 @z
 
 @x
-- path: /release-notes/
-  title: Release notes
 - path: /support/
   title: Get support
 - path: /release-lifecycle/
   title: Product release lifecycle
 @y
-- path: __SUBDIR__/release-notes/
-  title: リリースノート
 - path: __SUBDIR__/support/
   title: サポート
 - path: __SUBDIR__/release-lifecycle/
   title: 製品リリースのライフサイクル
-@z
-
-@x
-FAQ:
-  - path: /faq/
-    title: Overview
-  - path: /billing/faqs/
-    title: Billing
-  - path: /compose/faq/
-    title: Compose
-@y
-FAQ:
-  - path: __SUBDIR__/faq/
-    title: 概要
-  - path: __SUBDIR__/billing/faqs/
-    title: 支払い
-  - path: __SUBDIR__/compose/faq/
-    title: Compose
-@z
-
-@x
-  - sectiontitle: Desktop
-    section:
-    - path: /desktop/faqs/general/
-      title: General
-    - path: /desktop/faqs/macfaqs/
-      title: Mac
-    - path: /desktop/faqs/windowsfaqs/
-      title: Windows
-    - path: /desktop/faqs/linuxfaqs/
-      title: Linux
-    - path: /desktop/faqs/releases/
-      title: Releases
-@y
-  - sectiontitle: Desktop
-    section:
-    - path: __SUBDIR__/desktop/faqs/general/
-      title: General
-    - path: __SUBDIR__/desktop/faqs/macfaqs/
-      title: Mac
-    - path: __SUBDIR__/desktop/faqs/windowsfaqs/
-      title: Windows
-    - path: __SUBDIR__/desktop/faqs/linuxfaqs/
-      title: Linux
-    - path: __SUBDIR__/desktop/faqs/releases/
-      title: リリース
-@z
-
-@x
-  - sectiontitle: Docker account and admin
-    section:
-    - path: /faq/admin/general-faqs/
-      title: General
-    - path: /faq/admin/organization-faqs/
-      title: Organization
-    - path: /faq/admin/company-faqs/
-      title: Company
-@y
-  - sectiontitle: Docker account and admin
-    section:
-    - path: __SUBDIR__/faq/admin/general-faqs/
-      title: General
-    - path: __SUBDIR__/faq/admin/organization-faqs/
-      title: Organization
-    - path: __SUBDIR__/faq/admin/company-faqs/
-      title: Company
-@z
-
-@x
-  - path: /subscription/faq/
-    title: Subscription
-@y
-  - path: __SUBDIR__/subscription/faq/
-    title: サブスクリプション
-@z
-
-@x
-  - sectiontitle: Security
-    section:
-    - path: /faq/security/general/
-      title: General
-    - path: /faq/security/networking-and-vms/
-      title: Networking and VMs
-    - path: /faq/security/eci-faq/
-      title: Enhanced Container Isolation
-@y
-  - sectiontitle: Security
-    section:
-    - path: __SUBDIR__/faq/security/general/
-      title: General
-    - path: __SUBDIR__/faq/security/networking-and-vms/
-      title: Networking and VMs
-    - path: __SUBDIR__/faq/security/eci-faq/
-      title: Enhanced Container Isolation
-@z
-
-@x
-    - sectiontitle: Single Sign-On
-      section:
-      - path: /faq/security/single-sign-on/faqs/
-        title: General
-      - path: /faq/security/single-sign-on/saml-faqs/
-        title: SAML
-      - path: /faq/security/single-sign-on/idp-faqs/
-        title: Identity providers
-      - path: /faq/security/single-sign-on/domain-faqs/
-        title: Domains
-      - path: /faq/security/single-sign-on/enforcement-faqs/
-        title: Enforcement
-      - path: /faq/security/single-sign-on/users-faqs/
-        title: Manage users
-@y
-    - sectiontitle: Single Sign-On
-      section:
-      - path:  __SUBDIR__/faq/security/single-sign-on/faqs/
-        title: General
-      - path:  __SUBDIR__/faq/security/single-sign-on/saml-faqs/
-        title: SAML
-      - path:  __SUBDIR__/faq/security/single-sign-on/idp-faqs/
-        title: Identity providers
-      - path:  __SUBDIR__/faq/security/single-sign-on/domain-faqs/
-        title: Domains
-      - path:  __SUBDIR__/faq/security/single-sign-on/enforcement-faqs/
-        title: Enforcement
-      - path:  __SUBDIR__/faq/security/single-sign-on/users-faqs/
-        title: Manage users
 @z

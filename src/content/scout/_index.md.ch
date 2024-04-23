@@ -30,7 +30,7 @@ description:
 @y
   - title: クイックスタート
     link: __SUBDIR__/scout/quickstart/
-    description: Learn what Docker Scout can do, and how to get started.
+    description: Docker Scout では何ができるか、どのように始めたら良いかを学びます。
     icon: explore
 @z
 

@@ -13,19 +13,22 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	api-aside.html    \
-	aside.html        \
-	breadcrumbs.html  \
-	cli-aside.html    \
-	header.html       \
-	icon.html         \
-	mermaid.html      \
-	meta.html         \
-	sidebar.html      \
-	toc-api.html      \
-	toc-cli.html      \
-	toc-default.html  \
-	tooltip.html      \
+	api-aside.html      \
+	aside.html          \
+	breadcrumbs.html    \
+	category-links.html \
+	cli-aside.html      \
+	header.html         \
+	icon.html           \
+	mermaid.html        \
+	meta.html           \
+	pagemeta.html       \
+	pagination.html     \
+	sidebar.html        \
+	tags.html           \
+	toc-api.html        \
+	toc-cli.html        \
+	tooltip.html        \
 	top-nav.html
 
 include $(top_srcdir)/build-aux/copy.mk

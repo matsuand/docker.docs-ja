@@ -6508,10 +6508,10 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-- Added support for the `storage_opt` parameter in in service definitions.
+- Added support for the `storage_opt` parameter in service definitions.
   This option is not available for the v3 format
 @y
-- Added support for the `storage_opt` parameter in in service definitions.
+- Added support for the `storage_opt` parameter in service definitions.
   This option is not available for the v3 format
 @z
 

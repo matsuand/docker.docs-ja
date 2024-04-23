@@ -6,12 +6,14 @@
 title: Troubleshooting the Docker daemon
 description: Learn how to troubleshoot errors and misconfigurations in the Docker daemon
 keywords: docker, daemon, configuration, troubleshooting, error, fail to start
+tags: [ Troubleshooting ]
 ---
 @y
 ---
 title: Troubleshooting the Docker daemon
 description: Learn how to troubleshoot errors and misconfigurations in the Docker daemon
 keywords: docker, daemon, configuration, troubleshooting, error, fail to start
+tags: [ Troubleshooting ]
 ---
 @z
 

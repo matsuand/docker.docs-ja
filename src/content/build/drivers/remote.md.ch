@@ -68,19 +68,21 @@ pass to `--driver-opt`:
 @z
 
 @x
-| Parameter    | Type   | Default            | Description                                                            |
-| ------------ | ------ | ------------------ | ---------------------------------------------------------------------- |
-| `key`        | String |                    | Sets the TLS client key.                                               |
-| `cert`       | String |                    | Absolute path to the TLS client certificate to present to `buildkitd`. |
-| `cacert`     | String |                    | Absolute path to the TLS certificate authority used for validation.    |
-| `servername` | String | Endpoint hostname. | TLS server name used in requests.                                      |
+| Parameter      | Type    | Default            | Description                                                            |
+| -------------- | ------- | ------------------ | ---------------------------------------------------------------------- |
+| `key`          | String  |                    | Sets the TLS client key.                                               |
+| `cert`         | String  |                    | Absolute path to the TLS client certificate to present to `buildkitd`. |
+| `cacert`       | String  |                    | Absolute path to the TLS certificate authority used for validation.    |
+| `servername`   | String  | Endpoint hostname. | TLS server name used in requests.                                      |
+| `default-load` | Boolean | `false`            | Automatically load images to the Docker Engine image store.            |
 @y
-| Parameter    | Type   | Default            | Description                                                            |
-| ------------ | ------ | ------------------ | ---------------------------------------------------------------------- |
-| `key`        | String |                    | Sets the TLS client key.                                               |
-| `cert`       | String |                    | Absolute path to the TLS client certificate to present to `buildkitd`. |
-| `cacert`     | String |                    | Absolute path to the TLS certificate authority used for validation.    |
-| `servername` | String | Endpoint hostname. | TLS server name used in requests.                                      |
+| Parameter      | Type    | Default            | Description                                                            |
+| -------------- | ------- | ------------------ | ---------------------------------------------------------------------- |
+| `key`          | String  |                    | Sets the TLS client key.                                               |
+| `cert`         | String  |                    | Absolute path to the TLS client certificate to present to `buildkitd`. |
+| `cacert`       | String  |                    | Absolute path to the TLS certificate authority used for validation.    |
+| `servername`   | String  | Endpoint hostname. | TLS server name used in requests.                                      |
+| `default-load` | Boolean | `false`            | Automatically load images to the Docker Engine image store.            |
 @z
 
 @x

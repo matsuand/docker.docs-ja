@@ -4,35 +4,27 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Find the latest recommended version of the Docker Compose file format
   for defining multi-container applications.
 keywords: docker compose file, docker compose yml, docker compose reference, docker
   compose cmd, docker compose user, docker compose image, yaml spec, docker compose
   syntax, yaml specification, docker compose specification
-title: Overview
-toc_max: 4
-toc_min: 1
 @y
----
 description: Find the latest recommended version of the Docker Compose file format
   for defining multi-container applications.
 keywords: docker compose file, docker compose yml, docker compose reference, docker
   compose cmd, docker compose user, docker compose image, yaml spec, docker compose
   syntax, yaml specification, docker compose specification
-title: Overview
-toc_max: 4
-toc_min: 1
 @z
 
+% grid:
+
 @x
-grid:
 - title: Version and name top-level element
   description: Understand version and name attributes for Compose.
   icon: feed
   link: /compose/compose-file/04-version-and-name/
 @y
-grid:
 - title: Version and name top-level element
   description: Understand version and name attributes for Compose.
   icon: feed
@@ -99,27 +91,17 @@ grid:
   link: __SUBDIR__/compose/compose-file/09-secrets/
 @z
 
-@x
-aliases:
-- /compose/yaml/
-- /compose/compose-file/compose-file-v1/
----
-@y
-aliases:
-- /compose/yaml/
-- /compose/compose-file/compose-file-v1/
----
-@z
+% snip aliases...
 
 @x
->**New to Compose?**
+>**New to Docker Compose?**
 >
-> Find more information about the [key features and use cases of Docker Compose](../intro/features-uses.md) or [try the get started guide](../gettingstarted.md).
+> Find more information about the [key features and use cases of Docker Compose](../intro/features-uses.md) or [try the quickstart guide](../gettingstarted.md).
 { .tip }
 @y
->**New to Compose?**
+>**New to Docker Compose?**
 >
-> Find more information about the [key features and use cases of Docker Compose](../intro/features-uses.md) or [try the get started guide](../gettingstarted.md).
+> Find more information about the [key features and use cases of Docker Compose](../intro/features-uses.md) or [try the quickstart guide](../gettingstarted.md).
 { .tip }
 @z
 
@@ -142,29 +124,9 @@ The Compose Specification on Docker Docs is the Docker Compose implementation. I
 @z
 
 @x
-> **Note**
->
-> Compose V1 no longer receives updates and is not available in new releases of Docker Desktop.
->
-> Compose V2 is included with all currently supported versions of Docker Desktop.
-> For more information, see [Migrate to Compose V2](/compose/migrate).
-@y
-> **Note**
->
-> Compose V1 no longer receives updates and is not available in new releases of Docker Desktop.
->
-> Compose V2 is included with all currently supported versions of Docker Desktop.
-> For more information, see [Migrate to Compose V2](__SUBDIR__/compose/migrate).
-@z
-
-@x
 Use the following links to navigate key sections of the Compose Specification. 
 @y
 Use the following links to navigate key sections of the Compose Specification. 
 @z
 
-@x
-{{< grid >}}
-@y
-{{< grid >}}
-@z
+% snip grid...

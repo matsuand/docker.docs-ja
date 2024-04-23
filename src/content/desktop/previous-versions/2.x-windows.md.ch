@@ -4,23 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Docker Desktop for Windows 2.x Release notes
 keywords: Docker Desktop for Windows 2.x, release notes
 title: Docker for Windows 2.x release notes
-toc_min: 1
-toc_max: 2
-aliases: /desktop/windows/release-notes/2.x/
----
 @y
----
 description: Docker Desktop for Windows 2.x Release notes
 keywords: Docker Desktop for Windows 2.x, release notes
 title: Docker for Windows 2.x release notes
-toc_min: 1
-toc_max: 2
-aliases: /desktop/windows/release-notes/2.x/
----
 @z
 
 @x
@@ -1386,7 +1376,7 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
   - VPNKit: Improved scalability of port forwarding.
   - VPNKit: Limit the size of the UDP NAT table. This ensures port forwarding and regular TCP traffic continue even when running very chatty UDP protocols.
   - LCOW does not need --platform flag on multi-arch images any more
-  - Disk size can now be ajusted from 32GiB to drive space.
+  - Disk size can now be adjusted from 32GiB to drive space.
   - Fix dns update too verbose in logs
   - Fix panic in diagnose
 @y
@@ -1398,7 +1388,7 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
   - VPNKit: Improved scalability of port forwarding.
   - VPNKit: Limit the size of the UDP NAT table. This ensures port forwarding and regular TCP traffic continue even when running very chatty UDP protocols.
   - LCOW does not need --platform flag on multi-arch images any more
-  - Disk size can now be ajusted from 32GiB to drive space.
+  - Disk size can now be adjusted from 32GiB to drive space.
   - Fix dns update too verbose in logs
   - Fix panic in diagnose
 @z

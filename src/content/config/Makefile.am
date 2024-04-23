@@ -7,6 +7,7 @@ bases = \
 	filter.md                 \
 	formatting.md             \
 	labels-custom-metadata.md \
+	otel.md                   \
 	pruning.md
 
 include $(top_srcdir)/build-aux/common.mk

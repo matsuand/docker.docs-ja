@@ -8,6 +8,7 @@ keywords: cadvisor, troubleshooting, volumes, bind-mounts
 title: Troubleshoot storage errors
 aliases:
 - /engine/admin/troubleshooting_volume_errors/
+tags: [ Troubleshooting ]
 ---
 @y
 ---
@@ -16,6 +17,7 @@ keywords: cadvisor, troubleshooting, volumes, bind-mounts
 title: Troubleshoot storage errors
 aliases:
 - /engine/admin/troubleshooting_volume_errors/
+tags: [ Troubleshooting ]
 ---
 @z
 

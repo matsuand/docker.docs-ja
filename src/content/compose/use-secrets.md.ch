@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: How to use secrets in Docker Compose
 description: How to use secrets in Compose and their benefits
 keywords: secrets, compose, security, environment variables
----
 @y
----
 title: Docker Compose における Secrets の利用
 description: Compose における Secrets の利用方法と里程について説明します。
 keywords: secrets, compose, security, environment variables
----
 @z
 
 @x

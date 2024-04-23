@@ -6,12 +6,14 @@
 description: FAQs on Docker subscriptions
 keywords: Docker, Docker Hub, subscription FAQs, subscription, platform
 title: Subscription FAQs
+tags: [FAQ]
 ---
 @y
 ---
 description: FAQs on Docker subscriptions
 keywords: Docker, Docker Hub, subscription FAQs, subscription, platform
 title: Subscription FAQs
+tags: [FAQ]
 ---
 @z
 

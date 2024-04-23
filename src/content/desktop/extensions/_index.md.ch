@@ -6,11 +6,11 @@
 @x
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows
-title: What are Docker Extensions?
+title: Overview of Docker Extensions
 @y
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows
-title: Docker Extensions とは何か
+title: Docker Extensions 概要
 @z
 
 @x

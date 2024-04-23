@@ -65,6 +65,7 @@ AC_CONFIG_FILES([
 	src/content/Makefile
 	src/content/admin/Makefile
 	src/content/admin/company/Makefile
+	src/content/admin/faqs/Makefile
 	src/content/admin/images/Makefile
 	src/content/admin/organization/Makefile
 	src/content/billing/Makefile
@@ -171,14 +172,12 @@ AC_CONFIG_FILES([
 	src/content/engine/swarm/images/src/Makefile
 	src/content/engine/swarm/swarm-tutorial/Makefile
 	src/content/engine/tutorials/Makefile
-	src/content/faq/Makefile
-	src/content/faq/admin/Makefile
-	src/content/faq/security/Makefile
-	src/content/faq/security/single-sign-on/Makefile
 	src/content/get-started/Makefile
 	src/content/get-started/images/Makefile
 	src/content/guides/Makefile
 	src/content/guides/docker-concepts/Makefile
+	src/content/guides/docker-concepts/building-images/Makefile
+	src/content/guides/docker-concepts/building-images/images/Makefile
 	src/content/guides/docker-concepts/the-basics/Makefile
 	src/content/guides/docker-concepts/the-basics/images/Makefile
 	src/content/guides/get-started/Makefile
@@ -251,6 +250,8 @@ AC_CONFIG_FILES([
 	src/content/scout/policy/Makefile
 	src/content/scout/release-notes/Makefile
 	src/content/security/Makefile
+	src/content/security/faqs/Makefile
+	src/content/security/faqs/single-sign-on/Makefile
 	src/content/security/for-admins/Makefile
 	src/content/security/for-admins/single-sign-on/Makefile
 	src/content/security/for-admins/single-sign-on/configure/Makefile
@@ -268,6 +269,12 @@ AC_CONFIG_FILES([
 	src/content/subscription/build-cloud/Makefile
 	src/content/subscription/core-subscription/Makefile
 	src/content/subscription/images/Makefile
+	src/content/tags/Makefile
+	src/content/tags/best-practices/Makefile
+	src/content/tags/faq/Makefile
+	src/content/tags/release-notes/Makefile
+	src/content/tags/secrets/Makefile
+	src/content/tags/troubleshooting/Makefile
 	src/content/trusted-content/Makefile
 	src/content/trusted-content/images/Makefile
 	src/content/trusted-content/official-images/Makefile
@@ -286,5 +293,6 @@ AC_CONFIG_FILES([
 	src/layouts/partials/utils/Makefile
 	src/layouts/samples/Makefile
 	src/layouts/shortcodes/Makefile
+	src/layouts/tag/Makefile
 ])
 AC_OUTPUT

@@ -6,12 +6,14 @@
 title: Billing FAQs
 description: Frequently asked questions related to billing
 keywords: billing, renewal, payments, faq
+tags: [FAQ]
 ---
 @y
 ---
 title: Billing FAQs
 description: Frequently asked questions related to billing
 keywords: billing, renewal, payments, faq
+tags: [FAQ]
 ---
 @z
 

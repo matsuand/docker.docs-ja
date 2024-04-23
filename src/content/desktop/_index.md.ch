@@ -21,35 +21,18 @@ title: Docker Desktop の概要
 
 @x
 - title: Install Docker Desktop
-  description: 'Install Docker Desktop on
-@y
-- title: Docker Desktop のインストール
-  description: '
-@z
-
-@x
+  description: |
+    Install Docker Desktop on
     [Mac](/desktop/install/mac-install/),
-@y
-    [Mac](__SUBDIR__/desktop/install/mac-install/),
-@z
-
-@x
     [Windows](/desktop/install/windows-install/), or
-@y
-    [Windows](__SUBDIR__/desktop/install/windows-install/),
-@z
-
-@x
     [Linux](/desktop/install/linux-install/).
-@y
-    [Linux](__SUBDIR__/desktop/install/linux-install/)
-@z
-
-@x
-    '
   icon: download
 @y
-    への Docker Desktop インストール'
+- title: Install Docker Desktop
+  description: |
+    [Mac](__SUBDIR__/desktop/install/mac-install/),
+    [Windows](__SUBDIR__/desktop/install/windows-install/),
+    [Linux](__SUBDIR__/desktop/install/linux-install/) への Docker Desktop のインストール。
   icon: download
 @z
 
@@ -57,45 +40,61 @@ title: Docker Desktop の概要
 - title: Explore Docker Desktop
   description: Navigate Docker Desktop and learn about its key features.
   icon: feature_search
-  link: /desktop/use-desktop
-- title: View the release notes
-  description: Find out about new features, improvements, and bug fixes.
-  icon: note_add
-  link: /desktop/release-notes
-- title: Browse common FAQs
-  description: Explore general FAQs or FAQs for specific platforms.
-  icon: help
-  link: /desktop/faqs/
-- title: Find additional resources
-  description: Find information on networking features, deploying on Kubernetes, and
-    more.
-  icon: category
-  link: /desktop/kubernetes
-- title: Give feedback
-  description: Provide feedback on Docker Desktop or Docker Desktop features.
-  icon: sms
-  link: /desktop/feedback
+  link: /desktop/use-desktop/
 @y
 - title: Docker Desktop の確認
   description: Docker Desktop を始めて、その主要機能について学びます。
   icon: feature_search
-  link: __SUBDIR__/desktop/use-desktop
+  link: __SUBDIR__/desktop/use-desktop/
+@z
+
+@x
+- title: View the release notes
+  description: Find out about new features, improvements, and bug fixes.
+  icon: note_add
+  link: /desktop/release-notes/
+@y
 - title: リリースノートの確認
   description: 新機能、機能改善、バグフィックスを確認します。
   icon: note_add
-  link: __SUBDIR__/desktop/release-notes
+  link: __SUBDIR__/desktop/release-notes/
+@z
+
+@x
+- title: Browse common FAQs
+  description: Explore general FAQs or FAQs for specific platforms.
+  icon: help
+  link: /desktop/faqs/
+@y
 - title: 一般的な FAQ の確認
   description: 一般的な FAQ や特定プラットフォームの FAQ を確認します。
   icon: help
   link: __SUBDIR__/desktop/faqs/
+@z
+
+@x
+- title: Find additional resources
+  description: |
+    Find information on networking features, deploying on Kubernetes, and more.
+  icon: category
+  link: /desktop/kubernetes/
+@y
 - title: その他のリソースを探す
   description: ネットワーク機能、Kubernetes へのデプロイなどについての情報を調べます。
   icon: category
-  link: __SUBDIR__/desktop/kubernetes
+  link: __SUBDIR__/desktop/kubernetes/
+@z
+
+@x
+- title: Give feedback
+  description: Provide feedback on Docker Desktop or Docker Desktop features.
+  icon: sms
+  link: /desktop/feedback/
+@y
 - title: フィードバック
   description: Docker Desktop やその機能についてのフィードバックを行います。
   icon: sms
-  link: __SUBDIR__/desktop/feedback
+  link: __SUBDIR__/desktop/feedback/
 @z
 
 @x
@@ -128,23 +127,23 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @z
 
 @x
-- [Docker Engine](../engine/index.md)
+- [Docker Engine](../engine/_index.md)
 - Docker CLI client
 - [Docker Scout](../scout/_index.md) (additional subscription may apply)
-- [Docker Build](../build/index.md)
-- [Docker Extensions](extensions/index.md)
-- [Docker Compose](../compose/index.md)
-- [Docker Content Trust](../engine/security/trust/index.md)
+- [Docker Build](../build/_index.md)
+- [Docker Extensions](./extensions/_index.md)
+- [Docker Compose](../compose/_index.md)
+- [Docker Content Trust](../engine/security/trust/_index.md)
 - [Kubernetes](https://github.com/kubernetes/kubernetes/)
 - [Credential Helper](https://github.com/docker/docker-credential-helpers/)
 @y
-- [Docker Engine](../engine/index.md)
+- [Docker Engine](../engine/_index.md)
 - Docker CLI クライアント
 - [Docker Scout](../scout/_index.md) (追加のサブスクリプションを必要とする場合があります)
-- [Docker Build](../build/index.md)
-- [Docker Extensions](extensions/index.md)
-- [Docker Compose](../compose/index.md)
-- [Docker Content Trust](../engine/security/trust/index.md)
+- [Docker Build](../build/_index.md)
+- [Docker Extensions](./extensions/_index.md)
+- [Docker Compose](../compose/_index.md)
+- [Docker Content Trust](../engine/security/trust/_index.md)
 - [Kubernetes](https://github.com/kubernetes/kubernetes/)
 - [Credential Helper](https://github.com/docker/docker-credential-helpers/)
 @z

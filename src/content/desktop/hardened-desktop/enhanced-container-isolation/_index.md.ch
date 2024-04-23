@@ -154,14 +154,14 @@ For more information on how Enhanced Container Isolation work, see [How does it 
 >
 > Enhanced Container Isolation does not yet fully protect Docker builds,
 > Kubernetes pods and Extension containers. For more information on known
-> limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> limitations and workarounds, see [FAQs](../../../security/faqs/eci-faq.md).
 {.important }
 @y
 > **Important**
 >
 > Enhanced Container Isolation does not yet fully protect Docker builds,
 > Kubernetes pods and Extension containers. For more information on known
-> limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> limitations and workarounds, see [FAQs](../../../security/faqs/eci-faq.md).
 {.important }
 @z
 
@@ -230,12 +230,12 @@ To enable Enhanced Container Isolation as a developer:
 @x
 > **Important**
 >
-> Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../security/faqs/eci-faq.md).
 { .important }
 @y
 > **Important**
 >
-> Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../faq/security/eci-faq.md).
+> Enhanced Container Isolation does not protect containers created prior to enabling ECI. For more information on known limitations and workarounds, see [FAQs](../../../security/faqs/eci-faq.md).
 { .important }
 @z
 
@@ -455,4 +455,16 @@ sysbox-runc
 Without Enhanced Container Isolation, `docker inspect` outputs `runc`, which is the standard OCI runtime.
 @y
 Without Enhanced Container Isolation, `docker inspect` outputs `runc`, which is the standard OCI runtime.
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+- [Video: Enhanced Container Isolation](https://www.youtube.com/watch?v=oA1WQZWnTAk)
+@y
+- [Video: Enhanced Container Isolation](https://www.youtube.com/watch?v=oA1WQZWnTAk)
 @z

@@ -58,13 +58,13 @@ title: Docker Compose 概要
 @z
 
 @x
-- title: Try Compose
+- title: Quickstart
   description: Learn the key concepts of Docker Compose whilst building a simple Python
     web application.
   icon: explore
   link: /compose/gettingstarted
 @y
-- title: Compose を試す
+- title: クィックスタート
   description: Learn the key concepts of Docker Compose whilst building a simple Python
     web application.
   icon: explore

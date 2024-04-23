@@ -18,9 +18,8 @@ Docker Scout analyzes image contents and generates a detailed report of packages
 and vulnerabilities that it detects. It can provide you with
 suggestions for how to remediate issues discovered by image analysis.
 @y
-Docker Scout analyzes image contents and generates a detailed report of packages
-and vulnerabilities that it detects. It can provide you with
-suggestions for how to remediate issues discovered by image analysis.
+Docker Scout はイメージ内容を分析し、そこから検出されるパッケージ内容やぜい弱性に関するレポートを生成します。
+イメージの分析により問題が発見された場合には、これに対する修正提案が提供されます。
 @z
 
 @x
@@ -36,7 +35,7 @@ and share the results with your team.
 @x
 ## Step 1: Setup
 @y
-## Step 1: Setup
+## 手順 1: セットアップ {#step-1-setup}
 @z
 
 @x
@@ -50,7 +49,7 @@ a vulnerable Node.js application that you can use to follow along.
 @x
 1. Clone its repository:
 @y
-1. Clone its repository:
+1. このリポジトリをクローンします。
 @z
 
 % snip command...
@@ -58,7 +57,7 @@ a vulnerable Node.js application that you can use to follow along.
 @x
 2. Move into the directory:
 @y
-2. Move into the directory:
+2. ディレクトリに移動します。
 @z
 
 % snip command...
@@ -67,16 +66,16 @@ a vulnerable Node.js application that you can use to follow along.
 3. Make sure you're signed in to your Docker account,
    either by running the `docker login` command or by signing in with Docker Desktop.
 @y
-3. Make sure you're signed in to your Docker account,
-   either by running the `docker login` command or by signing in with Docker Desktop.
+3. Docker アカウントにサインインできているかどうかを確認します。
+   `docker login` コマンドを実行するか、Docker Desktop を使ってサインインします。
 @z
 
 @x
 4. Build the image and push it to a `<ORG_NAME>/scout-demo:v1`,
    where `<ORG_NAME>` is the Docker Hub namespace you push to.
 @y
-4. Build the image and push it to a `<ORG_NAME>/scout-demo:v1`,
-   where `<ORG_NAME>` is the Docker Hub namespace you push to.
+4. イメージをビルドして、これを `<ORG_NAME>/scout-demo:v1` にプッシュします。
+   `<ORG_NAME>` はプッシュする対象の Docker Hub 名前空間のことです。
 @z
 
 % snip command...
@@ -84,7 +83,7 @@ a vulnerable Node.js application that you can use to follow along.
 @x
 ## Step 2: Enable Docker Scout
 @y
-## Step 2: Enable Docker Scout
+## 手順 2: Docker Scout の有効化 {#step-2-enable-docker-scout}
 @z
 
 @x
@@ -116,7 +115,7 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 @x
 ## Step 3: Analyze image vulnerabilities
 @y
-## Step 3: Analyze image vulnerabilities
+## 手順 3: イメージぜい弱性の分析 {#step-3-analyze-image-vulnerabilities}
 @z
 
 @x
@@ -158,7 +157,7 @@ Learn more about the `docker scout cves` command in the
 @x
 ## Step 4: Fix application vulnerabilities
 @y
-## Step 4: Fix application vulnerabilities
+## 手順 4: アプリケーションのぜい弱性修正 {#step-4-fix-application-vulnerabilities}
 @z
 
 @x
@@ -172,7 +171,7 @@ the underlying vulnerable express version to 4.17.3 or later.
 @x
 1. Update the `package.json` file with the new package version.
 @y
-1. Update the `package.json` file with the new package version.
+1. パッケージバージョンを新たなものとなるように `package.json` ファイルを修正します。
 @z
 
 % snip code...
@@ -180,7 +179,8 @@ the underlying vulnerable express version to 4.17.3 or later.
 @x
 2. Rebuild the image with a new tag and push it to your Docker Hub repository:
 @y
-2. Rebuild the image with a new tag and push it to your Docker Hub repository:
+2. 新しいタグをつけてイメージを再ビルドします。
+   そして Docker Hub リポジトリにプッシュします。
 @z
 
 % snip command...
@@ -194,39 +194,12 @@ Dashboard, or CLI, you can see that you have fixed the vulnerability.
 @z
 
 % snip command...
-
-% snip output...
-
-@x
-                      │                  Analyzed Image                   
-  ────────────────────┼───────────────────────────────────────────────────
-    Target            │  mobywhale/scout-demo:v2                   
-      digest          │  ef68417b2866                                     
-      platform        │ linux/arm64                                       
-      provenance      │ https://github.com/docker/scout-demo-service.git  
-                      │  7c3a06793fc8f97961b4a40c73e0f7ed85501857         
-      vulnerabilities │    0C     0H     0M     0L                        
-      size            │ 19 MB                                             
-      packages        │ 1                                                 
-@y
-                      │                  Analyzed Image                   
-  ────────────────────┼───────────────────────────────────────────────────
-    Target            │  mobywhale/scout-demo:v2                   
-      digest          │  ef68417b2866                                     
-      platform        │ linux/arm64                                       
-      provenance      │ https://github.com/docker/scout-demo-service.git  
-                      │  7c3a06793fc8f97961b4a40c73e0f7ed85501857         
-      vulnerabilities │    0C     0H     0M     0L                        
-      size            │ 19 MB                                             
-      packages        │ 1                                                 
-@z
-
 % snip output...
 
 @x
 ## Step 5: Evaluate policy compliance
 @y
-## Step 5: Evaluate policy compliance
+## 手順 5: Evaluate policy compliance {#step-5-evaluate-policy-compliance}
 @z
 
 @x
@@ -288,7 +261,7 @@ A check mark indicates compliance.
 @x
 ## Step 6: Improve compliance
 @y
-## Step 6: Improve compliance
+## 手順 6: Improve compliance {#step-6-improve-compliance}
 @z
 
 @x
@@ -374,7 +347,7 @@ This time, add the `--provenance=true` and `--sbom=true` flags.
 @x
 ## Step 7: View in Dashboard
 @y
-## Step 7: View in Dashboard
+## 手順 7: View in Dashboard {#step-7-view-in-dashboard}
 @z
 
 @x
@@ -464,7 +437,7 @@ which helps keep your base images up-to-date automatically.
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -490,7 +463,7 @@ Docker Scout can support software supply chain management:
 @x
 ## What's next?
 @y
-## What's next?
+## What's next? {#whats-next}
 @z
 
 @x

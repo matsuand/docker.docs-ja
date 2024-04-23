@@ -20,9 +20,9 @@ aliases:
 @z
 
 @x
-Find information on how to get support, and the scope of Docker support.
+Find information on how to get support, and the scope of support.
 @y
-Find information on how to get support, and the scope of Docker support.
+Find information on how to get support, and the scope of support.
 @z
 
 @x
@@ -32,9 +32,9 @@ Find information on how to get support, and the scope of Docker support.
 @z
 
 @x
-If you have a paid Docker subscription, raise a ticket through [Docker support](https://hub.docker.com/support/contact/).
+If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/).
 @y
-If you have a paid Docker subscription, raise a ticket through [Docker support](https://hub.docker.com/support/contact/).
+If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/).
 @z
 
 @x
@@ -133,6 +133,7 @@ Docker excludes support for the following types of issues:
    * System/Server administration activities
    * Third-party applications not provided by Docker
    * Use on or in conjunction with hardware or software other than that specified in the applicable documentation
+   * Running multiple instances of Docker Desktop on a single machine
 @y
 Docker excludes support for the following types of issues:
    * Altered or modified Docker software
@@ -151,6 +152,7 @@ Docker excludes support for the following types of issues:
    * System/Server administration activities
    * Third-party applications not provided by Docker
    * Use on or in conjunction with hardware or software other than that specified in the applicable documentation
+   * Running multiple instances of Docker Desktop on a single machine
 @z
 
 @x
@@ -246,19 +248,7 @@ Before seeking support, you can perform basic troubleshooting. See [Diagnose and
 @z
 
 @x
-You can also see if an answer already exists in the following FAQs:
-- [Docker Business or Team onboarding](faq/admin/general-faqs.md)
-- [Docker Desktop](../desktop/faqs/general.md)
-- [Docker Desktop for Linux](../desktop/faqs/linuxfaqs.md)
-- [Docker Desktop for Mac](../desktop/faqs/macfaqs.md)
-- [Docker Desktop for Windows](../desktop/faqs/windowsfaqs.md)
-- [Single Sign-on](faq/security/single-sign-on/faqs.md)
+You can also see if an answer already exists in the [FAQs](/tags/faq/).
 @y
-You can also see if an answer already exists in the following FAQs:
-- [Docker Business or Team onboarding](faq/admin/general-faqs.md)
-- [Docker Desktop](../desktop/faqs/general.md)
-- [Docker Desktop for Linux](../desktop/faqs/linuxfaqs.md)
-- [Docker Desktop for Mac](../desktop/faqs/macfaqs.md)
-- [Docker Desktop for Windows](../desktop/faqs/windowsfaqs.md)
-- [Single Sign-on](faq/security/single-sign-on/faqs.md)
+You can also see if an answer already exists in the [FAQs](/tags/faq/).
 @z

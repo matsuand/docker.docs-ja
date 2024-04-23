@@ -177,14 +177,14 @@ You can use Docker Compose binary, `docker compose [-f <arg>...] [options]
 
 @x
 - [How Compose works](../compose-application-model.md)
-- [Try Compose](../gettingstarted.md)
+- [Quickstart](../gettingstarted.md)
 - [Specify a project name](../project-name.md)
 - [Using environment variables](../environment-variables/_index.md)
 - [Working with multiple Compose files](../multiple-compose-files/_index.md)
 - [Compose Specification](../compose-file/_index.md)
 @y
 - [How Compose works](../compose-application-model.md)
-- [Try Compose](../gettingstarted.md)
+- [Quickstart](../gettingstarted.md)
 - [Specify a project name](../project-name.md)
 - [Using environment variables](../environment-variables/_index.md)
 - [Working with multiple Compose files](../multiple-compose-files/_index.md)

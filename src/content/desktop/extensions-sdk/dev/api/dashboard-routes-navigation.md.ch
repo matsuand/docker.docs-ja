@@ -96,11 +96,11 @@ For more details about all navigation methods, see the [Navigation API reference
 @x
 > Deprecated navigation methods
 >
-> These methdos are deprecated and will be removed in a future version. Use the methods specified above.
+> These methods are deprecated and will be removed in a future version. Use the methods specified above.
 @y
 > Deprecated navigation methods
 >
-> These methdos are deprecated and will be removed in a future version. Use the methods specified above.
+> These methods are deprecated and will be removed in a future version. Use the methods specified above.
 @z
 
 @x

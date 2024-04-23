@@ -8,9 +8,6 @@ refLinksErrorLevel: ERROR
 enableGitInfo: true
 disablePathToLower: true
 enableInlineShortcodes: true
-disableKinds:
-  - taxonomy
-  - term
 @y
 title: Docker Docs
 baseURL: https://docs.docker.com
@@ -23,9 +20,6 @@ ignoreFiles:
   - Makefile$
   - Makefile\.sub$
   - copyfiles\.sub$
-disableKinds:
-  - taxonomy
-  - term
 defaultContentLanguage: ja
 languageCode: ja
 @z
@@ -76,12 +70,6 @@ menus:
   - name: Reference
     url: /reference/
     weight: 3
-  - name: Samples
-    url: /samples/
-    weight: 4
-  - name: FAQ
-    url: /faq/
-    weight: 5
 @y
 menus:
   main:
@@ -94,12 +82,6 @@ menus:
   - name: リファレンス
     url: /reference/
     weight: 3
-  - name: サンプル
-    url: /samples/
-    weight: 4
-  - name: FAQ
-    url: /faq/
-    weight: 5
 @z
 
 ------------------------------

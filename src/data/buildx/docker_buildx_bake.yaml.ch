@@ -62,9 +62,9 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 @z
 
 @x metadata-file
-      description: Write build result metadata to the file
+      description: Write build result metadata to a file
 @y
-      description: Write build result metadata to the file
+      description: Write build result metadata to a file
 @z
 
 @x no-cache
@@ -408,6 +408,7 @@ examples: |-
     * `context`
     * `dockerfile`
     * `labels`
+    * `load`
     * `no-cache`
     * `no-cache-filter`
     * `output`
@@ -425,6 +426,7 @@ examples: |-
     * `context`
     * `dockerfile`
     * `labels`
+    * `load`
     * `no-cache`
     * `no-cache-filter`
     * `output`

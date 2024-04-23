@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = for-admins for-developers images
+SUBDIRS = faqs for-admins for-developers images
 
 bases = \
 	_index.md                 \

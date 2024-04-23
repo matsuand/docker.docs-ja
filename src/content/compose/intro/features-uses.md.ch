@@ -178,9 +178,9 @@ For details on using production-oriented features, see
 @x
 - [Learn about the history of Compose](history.md)
 - [Understand how Compose works](../compose-application-model.md)
-- [Try Compose](../gettingstarted.md)
+- [Quickstart](../gettingstarted.md)
 @y
 - [Learn about the history of Compose](history.md)
 - [Understand how Compose works](../compose-application-model.md)
-- [Try Compose](../gettingstarted.md)
+- [Quickstart](../gettingstarted.md)
 @z

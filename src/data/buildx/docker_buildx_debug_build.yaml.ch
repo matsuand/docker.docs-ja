@@ -134,9 +134,9 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 @z
 
 @x iidfile
-      description: Write the image ID to the file
+      description: Write the image ID to a file
 @y
-      description: Write the image ID to the file
+      description: Write the image ID to a file
 @z
 
 @x isolation
@@ -172,9 +172,9 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 @z
 
 @x metadata-file
-      description: Write build result metadata to the file
+      description: Write build result metadata to a file
 @y
-      description: Write build result metadata to the file
+      description: Write build result metadata to a file
 @z
 
 @x network

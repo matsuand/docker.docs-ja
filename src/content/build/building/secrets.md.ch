@@ -6,12 +6,14 @@
 title: Build secrets
 description: Manage credentials and other secrets securely
 keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
+tags: [Secrets]
 ---
 @y
 ---
 title: Build secrets
 description: Manage credentials and other secrets securely
 keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
+tags: [Secrets]
 ---
 @z
 
@@ -176,12 +178,12 @@ $ docker build --secret id=kube,env=KUBECONFIG .
 @z
 
 @x
-When you secrets from environment variables, you can omit the `id` parameter
+When you secrets from environment variables, you can omit the `env` parameter
 to bind the secret to a file with the same name as the variable.
 In the following example, the value of the `API_TOKEN` variable
 is mounted to `/run/secrets/API_TOKEN` in the build container.
 @y
-When you secrets from environment variables, you can omit the `id` parameter
+When you secrets from environment variables, you can omit the `env` parameter
 to bind the secret to a file with the same name as the variable.
 In the following example, the value of the `API_TOKEN` variable
 is mounted to `/run/secrets/API_TOKEN` in the build container.

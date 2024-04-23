@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: How Enhanced Container Isolation works
 title: How does it work?
 keywords: set up, enhanced container isolation, rootless, security
----
 @y
----
 description: How Enhanced Container Isolation works
 title: How does it work?
 keywords: set up, enhanced container isolation, rootless, security
----
 @z
 
 @x
@@ -42,13 +38,13 @@ When [Enhanced Container Isolation is enabled](index.md#how-do-i-enable-enhanced
 created by users through `docker run` or `docker create` are automatically
 launched using Sysbox instead of the standard OCI runc runtime. Users need not
 do anything else and can continue to use containers as usual. For exceptions,
-see [FAQs](../../../faq/security/eci-faq.md).
+see [FAQs](../../../security/faqs/eci-faq.md).
 @y
 When [Enhanced Container Isolation is enabled](index.md#how-do-i-enable-enhanced-container-isolation), containers
 created by users through `docker run` or `docker create` are automatically
 launched using Sysbox instead of the standard OCI runc runtime. Users need not
 do anything else and can continue to use containers as usual. For exceptions,
-see [FAQs](../../../faq/security/eci-faq.md).
+see [FAQs](../../../security/faqs/eci-faq.md).
 @z
 
 @x

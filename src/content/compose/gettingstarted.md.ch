@@ -10,7 +10,6 @@ keywords: docker compose example, docker compose tutorial, how to use docker com
   running docker compose, how to run docker compose, docker compose build image, docker
   compose command example, run docker compose file, how to create a docker compose
   file, run a docker compose file
-title: Try Docker Compose
 @y
 description: Check out this tutorial on how to use Docker Compose from defining application
   dependencies to experimenting with commands.
@@ -18,7 +17,12 @@ keywords: docker compose example, docker compose tutorial, how to use docker com
   running docker compose, how to run docker compose, docker compose build image, docker
   compose command example, run docker compose file, how to create a docker compose
   file, run a docker compose file
-title: Docker Compose を試そう
+@z
+
+@x
+title: Docker Compose Quickstart
+@y
+title: Docker Compose クィックスタート
 @z
 
 @x

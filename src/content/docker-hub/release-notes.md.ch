@@ -9,6 +9,7 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker hub, whats new, release notes
 toc_min: 1
 toc_max: 2
+tags: [Release notes]
 ---
 @y
 ---
@@ -18,6 +19,7 @@ description: Learn about the new features, bug fixes, and breaking changes for D
 keywords: docker hub, whats new, release notes
 toc_min: 1
 toc_max: 2
+tags: [Release notes]
 ---
 @z
 

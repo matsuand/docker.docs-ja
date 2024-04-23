@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = company images organization
+SUBDIRS = company faqs images organization
 
 bases = \
 	_index.md             \

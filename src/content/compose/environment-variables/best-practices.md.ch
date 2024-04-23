@@ -7,6 +7,7 @@ title: Best practices for working with environment variables in Docker Compose
 description: Explainer on the best ways to set, use, and manage environment variables in
   Compose
 keywords: compose, orchestration, environment, env file, environment variables
+tags: [Best practices]
 ---
 @y
 ---
@@ -14,6 +15,7 @@ title: Best practices for working with environment variables in Docker Compose
 description: Explainer on the best ways to set, use, and manage environment variables in
   Compose
 keywords: compose, orchestration, environment, env file, environment variables
+tags: [Best practices]
 ---
 @z
 

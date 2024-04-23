@@ -256,12 +256,16 @@ Docker Desktop for Windows: |
 
 @x
 Docker Desktop for Linux: |
-  Docker Desktop for Linux is an an easy-to-install, lightweight Docker development environment designed specifically for Linux machines. It's the best solution if you want to build, debug, test, package, and ship Dockerized applications on a Linux machine.
+  Docker Desktop for Linux is an easy-to-install, lightweight Docker development environment designed specifically for Linux machines. It's the best solution if you want to build, debug, test, package, and ship Dockerized applications on a Linux machine.
+@y
+Docker Desktop for Linux: |
+  Docker Desktop for Linux is an easy-to-install, lightweight Docker development environment designed specifically for Linux machines. It's the best solution if you want to build, debug, test, package, and ship Dockerized applications on a Linux machine.
+@z
+
+@x
 Docker Hub: |
   [Docker Hub](https://hub.docker.com/) is a centralized resource for working with Docker and its components. It provides the following services:
 @y
-Docker Desktop for Linux: |
-  Docker Desktop for Linux is an an easy-to-install, lightweight Docker development environment designed specifically for Linux machines. It's the best solution if you want to build, debug, test, package, and ship Dockerized applications on a Linux machine.
 Docker Hub: |
   [Docker Hub](https://hub.docker.com/) is a centralized resource for working with Docker and its components. It provides the following services:
 @z

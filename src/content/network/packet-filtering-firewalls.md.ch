@@ -392,15 +392,17 @@ $ docker network create mybridge \
 @z
 
 @x
-If you are running Docker with [firewalld](https://firewalld.org)
-on your system with `--iptables` enabled, Docker automatically creates a `firewalld`
-zone called `docker` and inserts all the network interfaces it creates (for example,
-`docker0`) into the `docker` zone to allow seamless networking.
+If you are running Docker with the `iptables` option set to `true`, and
+[firewalld](https://firewalld.org) is enabled on your system, Docker
+automatically creates a `firewalld` zone called `docker` and inserts all the
+network interfaces it creates (for example, `docker0`) into the `docker` zone
+to allow seamless networking.
 @y
-If you are running Docker with [firewalld](https://firewalld.org)
-on your system with `--iptables` enabled, Docker automatically creates a `firewalld`
-zone called `docker` and inserts all the network interfaces it creates (for example,
-`docker0`) into the `docker` zone to allow seamless networking.
+If you are running Docker with the `iptables` option set to `true`, and
+[firewalld](https://firewalld.org) is enabled on your system, Docker
+automatically creates a `firewalld` zone called `docker` and inserts all the
+network interfaces it creates (for example, `docker0`) into the `docker` zone
+to allow seamless networking.
 @z
 
 @x

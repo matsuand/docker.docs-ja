@@ -2,9 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = admin billing build cloud compose config contribute \
-	desktop develop docker-id docker-hub engine faq get-started \
+	desktop develop docker-id docker-hub engine get-started \
 	guides includes language network reference samples scout \
-	security storage subscription trusted-content
+	security storage subscription tags trusted-content
 
 bases = \
 	_index.md            \
@@ -13,7 +13,6 @@ bases = \
 	manuals.md           \
 	registry.md          \
 	release-lifecycle.md \
-	release-notes.md     \
 	support.md
 
 include $(top_srcdir)/build-aux/common.mk

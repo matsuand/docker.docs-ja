@@ -4,19 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Build release notes
 description: Release notes for Buildx
 keywords: build, buildx, buildkit, release notes
-toc_max: 2
----
 @y
----
 title: Build リリースノート
 description: Buildx のリリースノート
 keywords: build, buildx, buildkit, release notes
-toc_max: 2
----
 @z
 
 @x

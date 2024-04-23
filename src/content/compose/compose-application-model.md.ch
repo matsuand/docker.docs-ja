@@ -312,11 +312,11 @@ networks:
 @z
 
 @x
-- [Try Compose](gettingstarted.md)
+- [Quickstart](gettingstarted.md)
 - [Explore some sample applications](samples-for-compose.md)
 - [Familiarize yourself with the Compose Specification](compose-file/_index.md)
 @y
-- [Try Compose](gettingstarted.md)
+- [Quickstart](gettingstarted.md)
 - [Explore some sample applications](samples-for-compose.md)
 - [Familiarize yourself with the Compose Specification](compose-file/_index.md)
 @z

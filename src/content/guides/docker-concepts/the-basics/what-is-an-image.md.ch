@@ -40,9 +40,9 @@ A container image is a standardized package that includes all of the files, bina
 @z
 
 @x
-For a [PostgreSQL](https://hub.docker.com/_/postgresql) image, that image will package the database binaries, config files, and other dependencies. For a Python web app, it'll include the Python runtime, your app code, and all of its dependencies.
+For a [PostgreSQL](https://hub.docker.com/_/postgres) image, that image will package the database binaries, config files, and other dependencies. For a Python web app, it'll include the Python runtime, your app code, and all of its dependencies.
 @y
-[PostgreSQL](https://hub.docker.com/_/postgresql) イメージについて言うと、このイメージにはデータベースバイナリー、設定ファイル、依存パッケージが含まれています。
+[PostgreSQL](https://hub.docker.com/_/postgres) イメージについて言うと、このイメージにはデータベースバイナリー、設定ファイル、依存パッケージが含まれています。
 Python ウェブアプリの場合であれば、Python ランタイム、アプリのコード、その依存パッケージということになるでしょう。
 @z
 

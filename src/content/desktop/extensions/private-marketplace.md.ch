@@ -2,19 +2,16 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
----
 description: How to configure and use Docker Extensions' private marketplace
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace, private, security
 title: Configure a private marketplace for extensions
----
 @y
----
 description: How to configure and use Docker Extensions' private marketplace
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace, private, security
 title: Configure a private marketplace for extensions
----
 @z
 
 @x
@@ -75,17 +72,7 @@ Docker Extensions' private marketplace is designed specifically for organization
 1. Create a folder locally for the content that will be deployed to your developers’ machines:
 @z
 
-@x
-   ```console
-   $ mkdir my-marketplace
-   $ cd my-marketplace
-   ```
-@y
-   ```console
-   $ mkdir my-marketplace
-   $ cd my-marketplace
-   ```
-@z
+% snip command...
 
 @x
 2. Initialize the configuration files for your marketplace:
@@ -101,15 +88,7 @@ Docker Extensions' private marketplace is designed specifically for organization
    {{< tab name="Mac" >}}
 @z
 
-@x
-   ```console
-   $ /Applications/Docker.app/Contents/Resources/bin/extension-admin init
-   ```
-@y
-   ```console
-   $ /Applications/Docker.app/Contents/Resources/bin/extension-admin init
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -119,15 +98,7 @@ Docker Extensions' private marketplace is designed specifically for organization
    {{< tab name="Windows" >}}
 @z
 
-@x
-   ```console
-   $ C:\Program Files\Docker\Docker\resources\bin\extension-admin init
-   ```
-@y
-   ```console
-   $ C:\Program Files\Docker\Docker\resources\bin\extension-admin init
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -137,15 +108,7 @@ Docker Extensions' private marketplace is designed specifically for organization
    {{< tab name="Linux" >}}
 @z
 
-@x
-   ```console
-   $ /opt/docker-desktop/extension-admin init
-   ```
-@y
-   ```console
-   $ /opt/docker-desktop/extension-admin init
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -199,21 +162,7 @@ Each setting has a `value` that you can set, including a `locked` field that let
 - `extensionsPrivateMarketplaceAdminContactURL` defines a contact link for developers to request new extensions in the private marketplace. If `value` is empty then no link is shown to your developers on Docker Desktop, otherwise this can be either an HTTP link or a “mailto:” link. For example,
 @z
 
-@x
-  ```json
-  "extensionsPrivateMarketplaceAdminContactURL": {
-    "locked": true,
-    "value": "mailto:admin@acme.com"
-  }
-  ```
-@y
-  ```json
-  "extensionsPrivateMarketplaceAdminContactURL": {
-    "locked": true,
-    "value": "mailto:admin@acme.com"
-  }
-  ```
-@z
+% snip code...
 
 @x
 To find out more information about the `admin-settings.json` file, see [Settings Management](../hardened-desktop/settings-management/_index.md).
@@ -245,15 +194,7 @@ For example, if you want to permit the Disk Usage extension you would enter the 
 For example, if you want to permit the Disk Usage extension you would enter the following into your `extensions.txt` file:
 @z
 
-@x
-```console
-docker/disk-usage-extension:0.2.8
-```
-@y
-```console
-docker/disk-usage-extension:0.2.8
-```
-@z
+% snip command...
 
 @x
 If no tag is provided, the latest tag available for the image is used. You can also comment out lines with `#` so the extension is ignored.
@@ -309,15 +250,7 @@ Once the list in `extensions.txt` is ready, you can generate the marketplace:
 {{< tab name="Mac" >}}
 @z
 
-@x
-```console
-$ /Applications/Docker.app/Contents/Resources/bin/extension-admin generate
-```
-@y
-```console
-$ /Applications/Docker.app/Contents/Resources/bin/extension-admin generate
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -327,15 +260,7 @@ $ /Applications/Docker.app/Contents/Resources/bin/extension-admin generate
 {{< tab name="Windows" >}}
 @z
 
-@x
-```console
-$ C:\Program Files\Docker\Docker\resources\bin\extension-admin generate
-```
-@y
-```console
-$ C:\Program Files\Docker\Docker\resources\bin\extension-admin generate
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -345,15 +270,7 @@ $ C:\Program Files\Docker\Docker\resources\bin\extension-admin generate
 {{< tab name="Linux" >}}
 @z
 
-@x
-```console
-$ /opt/docker-desktop/extension-admin generate
-```
-@y
-```console
-$ /opt/docker-desktop/extension-admin generate
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -388,9 +305,19 @@ It's recommended that you try the private marketplace on your Docker Desktop ins
 @z
 
 @x
-1. Copy the relevant generated files to the location where Docker Desktop reads its configuration files.
+1. Run the following command in your terminal. This command automatically copies the generated files to the location where Docker Desktop reads the configuration files. Depending on your operating system, the location is:
 @y
-1. Copy the relevant generated files to the location where Docker Desktop reads its configuration files.
+1. Run the following command in your terminal. This command automatically copies the generated files to the location where Docker Desktop reads the configuration files. Depending on your operating system, the location is:
+@z
+
+@x
+    - Mac: `/Library/Application\ Support/com.docker.docker`
+    - Windows: `C:\ProgramData\DockerDesktop`
+    - Linux: `/usr/share/docker-desktop`
+@y
+    - Mac: `/Library/Application\ Support/com.docker.docker`
+    - Windows: `C:\ProgramData\DockerDesktop`
+    - Linux: `/usr/share/docker-desktop`
 @z
 
 @x
@@ -401,15 +328,7 @@ It's recommended that you try the private marketplace on your Docker Desktop ins
    {{< tab name="Mac" >}}
 @z
 
-@x
-   ```console
-   $ sudo /Applications/Docker.app/Contents/Resources/bin/extension-admin apply
-   ```
-@y
-   ```console
-   $ sudo /Applications/Docker.app/Contents/Resources/bin/extension-admin apply
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -419,15 +338,7 @@ It's recommended that you try the private marketplace on your Docker Desktop ins
    {{< tab name="Windows (run as admin)" >}}
 @z
 
-@x
-   ```console
-   $ C:\Program Files\Docker\Docker\resources\bin\extension-admin apply
-   ```
-@y
-   ```console
-   $ C:\Program Files\Docker\Docker\resources\bin\extension-admin apply
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -437,15 +348,7 @@ It's recommended that you try the private marketplace on your Docker Desktop ins
    {{< tab name="Linux" >}}
 @z
 
-@x
-   ```console
-   $ sudo /opt/docker-desktop/extension-admin apply
-   ```
-@y
-   ```console
-   $ sudo /opt/docker-desktop/extension-admin apply
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
