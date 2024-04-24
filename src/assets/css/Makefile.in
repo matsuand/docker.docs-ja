@@ -239,7 +239,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	global.css
+	global.css     \
+	typography.css
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -255,8 +256,7 @@ copyfiles = \
 	styles.css       \
 	syntax-dark.css  \
 	syntax-light.css \
-	toc.css          \
-	typography.css
+	toc.css
 
 all: all-am
 

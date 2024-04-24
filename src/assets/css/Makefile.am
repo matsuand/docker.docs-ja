@@ -3,7 +3,8 @@
 ##
 
 bases = \
-	global.css
+	global.css     \
+	typography.css
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -17,7 +18,6 @@ copyfiles = \
 	styles.css       \
 	syntax-dark.css  \
 	syntax-light.css \
-	toc.css          \
-	typography.css
+	toc.css
 
 include $(top_srcdir)/build-aux/copy.mk
