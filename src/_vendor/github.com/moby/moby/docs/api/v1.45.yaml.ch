@@ -1,68 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
-# A Swagger 2.0 (a.k.a. OpenAPI) definition of the Engine API.
-#
-# This is used for generating API documentation and the types used by the
-# client/server. See api/README.md for more information.
-#
-# Some style notes:
-# - This file is used by ReDoc, which allows GitHub Flavored Markdown in
-#   descriptions.
-# - There is no maximum line length, for ease of editing and pretty diffs.
-# - operationIds are in the format "NounVerb", with a singular noun.
+  title: "Docker Engine API"
 @y
-# A Swagger 2.0 (a.k.a. OpenAPI) definition of the Engine API.
-#
-# This is used for generating API documentation and the types used by the
-# client/server. See api/README.md for more information.
-#
-# Some style notes:
-# - This file is used by ReDoc, which allows GitHub Flavored Markdown in
-#   descriptions.
-# - There is no maximum line length, for ease of editing and pretty diffs.
-# - operationIds are in the format "NounVerb", with a singular noun.
+  title: "Docker Engine API"
 @z
 
 @x
-swagger: "2.0"
-schemes:
-  - "http"
-  - "https"
-produces:
-  - "application/json"
-  - "text/plain"
-consumes:
-  - "application/json"
-  - "text/plain"
-basePath: "/v1.45"
-info:
-  title: "Docker Engine API"
-  version: "1.45"
-  x-logo:
-    url: "https://docs.docker.com/assets/images/logo-docker-main.png"
   description: |
     The Engine API is an HTTP API served by Docker Engine. It is the API the
     Docker client uses to communicate with the Engine, so everything the Docker
     client can do can be done with the API.
 @y
-swagger: "2.0"
-schemes:
-  - "http"
-  - "https"
-produces:
-  - "application/json"
-  - "text/plain"
-consumes:
-  - "application/json"
-  - "text/plain"
-basePath: "/v1.45"
-info:
-  title: "Docker Engine API"
-  version: "1.45"
-  x-logo:
-    url: "https://docs.docker.com/assets/images/logo-docker-main.png"
   description: |
     The Engine API is an HTTP API served by Docker Engine. It is the API the
     Docker client uses to communicate with the Engine, so everything the Docker
@@ -82,7 +34,7 @@ info:
 @x
     # Errors
 @y
-    # Errors
+    # エラー {#errors}
 @z
 
 @x
@@ -95,19 +47,7 @@ info:
     format:
 @z
 
-@x
-    ```
-    {
-      "message": "page not found"
-    }
-    ```
-@y
-    ```
-    {
-      "message": "page not found"
-    }
-    ```
-@z
+% snip code...
 
 @x
     # Versioning
@@ -166,7 +106,7 @@ info:
 @x
     # Authentication
 @y
-    # Authentication
+    # 認証 {#authentication}
 @z
 
 @x
@@ -183,25 +123,7 @@ info:
     (JSON) string with the following structure:
 @z
 
-@x
-    ```
-    {
-      "username": "string",
-      "password": "string",
-      "email": "string",
-      "serveraddress": "string"
-    }
-    ```
-@y
-    ```
-    {
-      "username": "string",
-      "password": "string",
-      "email": "string",
-      "serveraddress": "string"
-    }
-    ```
-@z
+% snip code...
 
 @x
     The `serveraddress` is a domain/IP without a protocol. Throughout this
@@ -219,19 +141,7 @@ info:
     you can just pass this instead of credentials:
 @z
 
-@x
-    ```
-    {
-      "identitytoken": "9cbaf023786cd7..."
-    }
-    ```
-@y
-    ```
-    {
-      "identitytoken": "9cbaf023786cd7..."
-    }
-    ```
-@z
+% snip code...
 
 @x
 # The tags on paths define the menu sections in the ReDoc documentation, so

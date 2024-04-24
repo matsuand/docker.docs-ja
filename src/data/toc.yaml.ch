@@ -3556,6 +3556,8 @@ Manuals:
       title: Filter commands
     - path: /config/formatting/
       title: Format command and log output
+    - path: /config/otel/
+      title: OpenTelemetry
 @y
   - sectiontitle: CLI
     section:
@@ -3565,6 +3567,8 @@ Manuals:
       title: フィルターコマンド
     - path: __SUBDIR__/config/formatting/
       title: フォーマットコマンドとログ出力
+    - path: __SUBDIR__/config/otel/
+      title: OpenTelemetry
 @z
 
 @x
@@ -5020,6 +5024,54 @@ Manuals:
 @z
 
 @x
+  - sectiontitle: Security FAQs
+    section:
+    - path: /security/faqs/general/
+      title: General
+    - path: /security/faqs/networking-and-vms/
+      title: Networking and VMs
+    - path: /security/faqs/eci-faq/
+      title: Enhanced Container Isolation
+    - sectiontitle: Single Sign-On
+      section:
+      - path: /security/faqs/single-sign-on/faqs/
+        title: General
+      - path: /security/faqs/single-sign-on/saml-faqs/
+        title: SAML
+      - path: /security/faqs/single-sign-on/idp-faqs/
+        title: Identity providers
+      - path: /security/faqs/single-sign-on/domain-faqs/
+        title: Domains
+      - path: /security/faqs/single-sign-on/enforcement-faqs/
+        title: Enforcement
+      - path: /security/faqs/single-sign-on/users-faqs/
+        title: Manage users
+@y
+  - sectiontitle: Security FAQs
+    section:
+    - path: __SUBDIR__/security/faqs/general/
+      title: General
+    - path: __SUBDIR__/security/faqs/networking-and-vms/
+      title: Networking and VMs
+    - path: __SUBDIR__/security/faqs/eci-faq/
+      title: Enhanced Container Isolation
+    - sectiontitle: Single Sign-On
+      section:
+      - path: __SUBDIR__/security/faqs/single-sign-on/faqs/
+        title: General
+      - path: __SUBDIR__/security/faqs/single-sign-on/saml-faqs/
+        title: SAML
+      - path: __SUBDIR__/security/faqs/single-sign-on/idp-faqs/
+        title: Identity providers
+      - path: __SUBDIR__/security/faqs/single-sign-on/domain-faqs/
+        title: Domains
+      - path: __SUBDIR__/security/faqs/single-sign-on/enforcement-faqs/
+        title: Enforcement
+      - path: __SUBDIR__/security/faqs/single-sign-on/users-faqs/
+        title: Manage users
+@z
+
+@x
 - sectiontitle: Billing
   section:
   - path: /billing/
@@ -5060,11 +5112,15 @@ Manuals:
     title: Docker Build Cloud billing
   - path: /billing/scout-billing/
     title: Docker Scout billing
+  - path: /billing/faqs/
+    title: Billing FAQs
 @y
   - path: __SUBDIR__/billing/build-billing/
     title: Docker Build Cloud billing
   - path: __SUBDIR__/billing/scout-billing/
     title: Docker Scout billing
+  - path: __SUBDIR__/billing/faqs/
+    title: Billing FAQs
 @z
 
 @x
@@ -5128,11 +5184,15 @@ Manuals:
     title: Docker Scout subscriptions and features
   - path: /subscription/desktop-license/
     title: Docker Desktop license agreement
+  - path: /subscription/faq/
+    title: Subscription FAQ
 @y
   - path: __SUBDIR__/subscription/scout-details/
     title: Docker Scout subscriptions and features
   - path: __SUBDIR__/subscription/desktop-license/
     title: Docker Desktop license agreement
+  - path: __SUBDIR__/subscription/faq/
+    title: Subscription FAQ
 @z
 
 @x

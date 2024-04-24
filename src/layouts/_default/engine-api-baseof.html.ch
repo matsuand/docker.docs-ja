@@ -86,7 +86,7 @@
 </body>
 @y
 <body>
-    <redoc spec-url="{{ site.BaseURL }}/reference/engine/{{ .File.BaseFileName }}.yaml" hide-hostname="true" suppress-warnings="true"
+    <redoc spec-url="__SUBDIR__/reference/engine/{{ .File.BaseFileName }}.yaml" hide-hostname="true" suppress-warnings="true"
         lazy-rendering></redoc>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
 </body>

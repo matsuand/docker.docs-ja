@@ -3,7 +3,7 @@
 
 % Comment out cookielaw scripts..
 
-@x
+@x L.4
 {{- if hugo.IsProduction -}}
   <script
     src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
@@ -21,4 +21,10 @@
     data-domain-script="{{ site.Params.analytics.onetrust }}"
   ></script>
 -->
+@z
+
+@x L.40
+<link href="/assets/fonts/RobotoFlex.woff2" rel="preload" as="font" type="font/woff2" crossorigin />
+@y
+<link href="__SUBDIR__/assets/fonts/RobotoFlex.woff2" rel="preload" as="font" type="font/woff2" crossorigin />
 @z

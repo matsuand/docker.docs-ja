@@ -4,63 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Develop with Docker Engine API
 description: Learn how you can use Docker Engine API and SDKs in the language of your choice.
 keywords: developing, api, Docker Engine API, API versions, SDK versions
-aliases:
-- /engine/reference/api/
-- /engine/reference/api/docker_remote_api/
-- /reference/api/
-- /reference/api/docker_remote_api/
-- /reference/api/docker_remote_api_v1.0/
-- /reference/api/docker_remote_api_v1.1/
-- /reference/api/docker_remote_api_v1.2/
-- /reference/api/docker_remote_api_v1.3/
-- /reference/api/docker_remote_api_v1.4/
-- /reference/api/docker_remote_api_v1.5/
-- /reference/api/docker_remote_api_v1.6/
-- /reference/api/docker_remote_api_v1.7/
-- /reference/api/docker_remote_api_v1.8/
-- /reference/api/docker_remote_api_v1.9/
-- /reference/api/docker_remote_api_v1.10/
-- /reference/api/docker_remote_api_v1.11/
-- /reference/api/docker_remote_api_v1.12/
-- /reference/api/docker_remote_api_v1.13/
-- /reference/api/docker_remote_api_v1.14/
-- /reference/api/docker_remote_api_v1.15/
-- /reference/api/docker_remote_api_v1.16/
-- /reference/api/docker_remote_api_v1.17/
----
 @y
----
 title: Develop with Docker Engine API
 description: Learn how you can use Docker Engine API and SDKs in the language of your choice.
 keywords: developing, api, Docker Engine API, API versions, SDK versions
-aliases:
-- /engine/reference/api/
-- /engine/reference/api/docker_remote_api/
-- /reference/api/
-- /reference/api/docker_remote_api/
-- /reference/api/docker_remote_api_v1.0/
-- /reference/api/docker_remote_api_v1.1/
-- /reference/api/docker_remote_api_v1.2/
-- /reference/api/docker_remote_api_v1.3/
-- /reference/api/docker_remote_api_v1.4/
-- /reference/api/docker_remote_api_v1.5/
-- /reference/api/docker_remote_api_v1.6/
-- /reference/api/docker_remote_api_v1.7/
-- /reference/api/docker_remote_api_v1.8/
-- /reference/api/docker_remote_api_v1.9/
-- /reference/api/docker_remote_api_v1.10/
-- /reference/api/docker_remote_api_v1.11/
-- /reference/api/docker_remote_api_v1.12/
-- /reference/api/docker_remote_api_v1.13/
-- /reference/api/docker_remote_api_v1.14/
-- /reference/api/docker_remote_api_v1.15/
-- /reference/api/docker_remote_api_v1.16/
-- /reference/api/docker_remote_api_v1.17/
----
 @z
 
 @x
@@ -171,55 +121,7 @@ To see the highest version of the API your Docker daemon and client support, use
 `docker version`:
 @z
 
-@x
-```console
-$ docker version
-Client: Docker Engine - Community
- Version:           26.0.0
- API version:       1.45
- Go version:        go1.21.8
- Git commit:        2ae903e
- Built:             Wed Mar 20 15:17:48 2024
- OS/Arch:           linux/amd64
- Context:           default
-@y
-```console
-$ docker version
-Client: Docker Engine - Community
- Version:           26.0.0
- API version:       1.45
- Go version:        go1.21.8
- Git commit:        2ae903e
- Built:             Wed Mar 20 15:17:48 2024
- OS/Arch:           linux/amd64
- Context:           default
-@z
-
-@x
-Server: Docker Engine - Community
- Engine:
-  Version:          26.0.0
-  API version:      1.45 (minimum version 1.24)
-  Go version:       go1.21.8
-  Git commit:       8b79278
-  Built:            Wed Mar 20 15:17:48 2024
-  OS/Arch:          linux/amd64
-  Experimental:     false
-  ...
-```
-@y
-Server: Docker Engine - Community
- Engine:
-  Version:          26.0.0
-  API version:      1.45 (minimum version 1.24)
-  Go version:       go1.21.8
-  Git commit:       8b79278
-  Built:            Wed Mar 20 15:17:48 2024
-  OS/Arch:          linux/amd64
-  Experimental:     false
-  ...
-```
-@z
+% snip command...
 
 @x
 You can specify the API version to use in any of the following ways:
@@ -249,15 +151,7 @@ You can specify the API version to use in any of the following ways:
   on Linux, Windows, or macOS clients.
 @z
 
-@x
-  ```console
-  $ DOCKER_API_VERSION='1.44'
-  ```
-@y
-  ```console
-  $ DOCKER_API_VERSION='1.44'
-  ```
-@z
+% snip command...
 
 @x
   While the environment variable is set, that version of the API is used, even
