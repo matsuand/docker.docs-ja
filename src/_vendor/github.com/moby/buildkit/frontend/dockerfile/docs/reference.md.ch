@@ -4,9 +4,9 @@
 % snip 対応
 
 @x
-# Dockerfile reference
+title: Dockerfile reference
 @y
-# Dockerfile リファレンス {#dockerfile-reference}
+title: Dockerfile リファレンス
 @z
 
 @x

@@ -437,7 +437,7 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
    $Env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + `
        [System.Environment]::GetEnvironmentVariable("Path","User")
    ```
-6. Start `buildkitd.exe`.
+6. Start the BuildKit daemon.
 @y
    ```powershell
    # after the binaries are extracted in the bin directory
@@ -450,26 +450,16 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
    $Env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + `
        [System.Environment]::GetEnvironmentVariable("Path","User")
    ```
-6. Start `buildkitd.exe`.
+6. Start the BuildKit daemon.
 @z
 
 @x
    ```console
    > buildkitd.exe
-   time="2024-02-26T10:42:16+03:00" level=warning msg="using null network as the default"
-   time="2024-02-26T10:42:16+03:00" level=info msg="found worker \"zcy8j5dyjn3gztjv6gv9kn037\", labels=map[org.mobyproject.buildkit.worker.containerd.namespace:buildkit org.mobyproject.buildkit.worker.containerd.uuid:c30661c1-5115-45de-9277-a6386185a283 org.mobyproject.buildkit.worker.executor:containerd org.mobyproject.buildkit.worker.hostname:[deducted] org.mobyproject.buildkit.worker.network: org.mobyproject.buildkit.worker.selinux.enabled:false org.mobyproject.buildkit.worker.snapshotter:windows], platforms=[windows/amd64]"
-   time="2024-02-26T10:42:16+03:00" level=info msg="found 1 workers, default=\"zcy8j5dyjn3gztjv6gv9kn037\""
-   time="2024-02-26T10:42:16+03:00" level=warning msg="currently, only the default worker can be used."
-   time="2024-02-26T10:42:16+03:00" level=info msg="running server on //./pipe/buildkitd"
    ```
 @y
    ```console
    > buildkitd.exe
-   time="2024-02-26T10:42:16+03:00" level=warning msg="using null network as the default"
-   time="2024-02-26T10:42:16+03:00" level=info msg="found worker \"zcy8j5dyjn3gztjv6gv9kn037\", labels=map[org.mobyproject.buildkit.worker.containerd.namespace:buildkit org.mobyproject.buildkit.worker.containerd.uuid:c30661c1-5115-45de-9277-a6386185a283 org.mobyproject.buildkit.worker.executor:containerd org.mobyproject.buildkit.worker.hostname:[deducted] org.mobyproject.buildkit.worker.network: org.mobyproject.buildkit.worker.selinux.enabled:false org.mobyproject.buildkit.worker.snapshotter:windows], platforms=[windows/amd64]"
-   time="2024-02-26T10:42:16+03:00" level=info msg="found 1 workers, default=\"zcy8j5dyjn3gztjv6gv9kn037\""
-   time="2024-02-26T10:42:16+03:00" level=warning msg="currently, only the default worker can be used."
-   time="2024-02-26T10:42:16+03:00" level=info msg="running server on //./pipe/buildkitd"
    ```
 @z
 
@@ -510,6 +500,23 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 @x
    ```console
    > docker buildx inspect
+   ```
+@y
+   ```console
+   > docker buildx inspect
+   ```
+@z
+
+@x
+   The output should indicate that the builder platform is Windows,
+   and that the endpoint of the builder is a named pipe.
+@y
+   The output should indicate that the builder platform is Windows,
+   and that the endpoint of the builder is a named pipe.
+@z
+
+@x
+   ```text
    Name:          buildkit-exp
     Driver:        remote
     Last Activity: 2024-04-15 17:51:58 +0000 UTC
@@ -522,8 +529,7 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
    ...
    ```
 @y
-   ```console
-   > docker buildx inspect
+   ```text
    Name:          buildkit-exp
     Driver:        remote
     Last Activity: 2024-04-15 17:51:58 +0000 UTC

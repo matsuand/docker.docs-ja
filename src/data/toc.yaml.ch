@@ -3,10 +3,14 @@
 
 @x
 Guides:
+- title: Overview
+  path: /guides/
 - title: Docker overview
   path: /get-started/overview/
 @y
 ガイド:
+- title: 概要
+  path: __SUBDIR__/guides/
 - title: Docker 概要
   path: __SUBDIR__/get-started/overview/
 @z

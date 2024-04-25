@@ -2,19 +2,16 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
----
 title: Configure CI/CD for your Node.js application
 keywords: ci/cd, github actions, node.js, node
 description: Learn how to configure CI/CD using GitHub Actions for your Node.js application.
----
 @y
----
 title: Configure CI/CD for your Node.js application
 keywords: ci/cd, github actions, node.js, node
 description: Learn how to configure CI/CD using GitHub Actions for your Node.js application.
----
 @z
 
 @x
@@ -86,18 +83,18 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
 @x
 4. Create a new [Personal Access Token
    (PAT)](/security/for-developers/access-tokens/#create-an-access-token) for Docker Hub. You
-   can name this token `node-docker`.
+   can name this token `node-docker`. Make sure access permissions include Read and Write.
 @y
 4. Create a new [Personal Access Token
    (PAT)](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token) for Docker Hub. You
-   can name this token `node-docker`.
+   can name this token `node-docker`. Make sure access permissions include Read and Write.
 @z
 
 @x
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a second **Repository secrets** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a second **Repository secrets** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @z
 
@@ -113,31 +110,15 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
    the repository you created.
 @z
 
-@x
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-@y
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-@z
+% snip command...
 
 @x
-7. Run the following command to push your local repository to GitHub.
+7. Run the following commands to stage, commit, and push your local repository to GitHub.
 @y
-7. Run the following command to push your local repository to GitHub.
+7. Run the following commands to stage, commit, and push your local repository to GitHub.
 @z
 
-@x
-   ```console
-   $ git push -u origin main
-   ```
-@y
-   ```console
-   $ git push -u origin main
-   ```
-@z
+% snip command...
 
 @x
 ## Step two: Set up the workflow
@@ -179,93 +160,7 @@ to Docker Hub.
 3. In the editor window, copy and paste the following YAML configuration.
 @z
 
-@x
-   ```yaml
-   name: ci
-@y
-   ```yaml
-   name: ci
-@z
-
-@x
-   on:
-     push:
-       branches:
-         - main
-@y
-   on:
-     push:
-       branches:
-         - main
-@z
-
-@x
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Checkout
-           uses: actions/checkout@v4
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@v3
-           with:
-             username: ${{ secrets.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@v3
-         -
-           name: Build and test
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             target: test
-             load: true
-         -
-           name: Build and push
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             push: true
-             target: prod
-             tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
-@y
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Checkout
-           uses: actions/checkout@v4
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@v3
-           with:
-             username: ${{ secrets.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@v3
-         -
-           name: Build and test
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             target: test
-             load: true
-         -
-           name: Build and push
-           uses: docker/build-push-action@v5
-           with:
-             context: .
-             push: true
-             target: prod
-             tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
-@z
+% snip code...
 
 @x
    For more information about the YAML syntax used here, see [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
@@ -360,7 +255,7 @@ Next, learn how you can locally test and debug your workloads on Kubernetes befo
 @z
 
 @x
-{{< button text="Develop using Kubernetes" url="./deploy.md" >}}
+{{< button text="Test your deployment" url="./deploy.md" >}}
 @y
-{{< button text="Develop using Kubernetes" url="./deploy.md" >}}
+{{< button text="Test your deployment" url="./deploy.md" >}}
 @z

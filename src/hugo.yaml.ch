@@ -62,7 +62,7 @@ suburldir 追加
 menus:
   main:
   - name: Guides
-    url: /get-started/overview/
+    url: /guides/
     weight: 1
   - name: Manuals
     url: /manuals/
@@ -74,7 +74,7 @@ menus:
 menus:
   main:
   - name: ガイド
-    url: /get-started/overview/
+    url: /guides/
     weight: 1
   - name: マニュアル
     url: /manuals/

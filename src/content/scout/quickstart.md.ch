@@ -101,13 +101,23 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 @x
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.
-2. Use the Docker CLI [`docker scout repo enable`](/reference/cli/docker/scout/repo/enable)
-   command to enable analysis on an existing repository:
 @y
 1. Sign in to your Docker account with the `docker login` command or use the
    **Sign in** button in Docker Desktop.
-2. Use the Docker CLI [`docker scout repo enable`](__SUBDIR__/reference/cli/docker/scout/repo/enable)
-   command to enable analysis on an existing repository:
+@z
+
+@x
+2. Next, enroll your organization with Docker Scout, using the `docker scout enroll` command.
+@y
+2. Next, enroll your organization with Docker Scout, using the `docker scout enroll` command.
+@z
+
+% snip command...
+
+@x
+3. Enable Docker Scout for your image repository with the `docker scout repo enable` command.
+@y
+3. Enable Docker Scout for your image repository with the `docker scout repo enable` command.
 @z
 
 % snip command...

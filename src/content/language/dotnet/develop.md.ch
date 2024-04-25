@@ -2,19 +2,16 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
----
 title: Use containers for .NET development
 keywords: .net, development
 description: Learn how to develop your .NET application locally using containers.
----
 @y
----
 title: Use containers for .NET development
 keywords: .net, development
 description: Learn how to develop your .NET application locally using containers.
----
 @z
 
 @x
@@ -77,15 +74,7 @@ To get the updated code, you need to checkout the `add-db` branch. For the chang
 1. Stash any previous changes.
 @z
 
-@x
-   ```console
-   $ git stash -u
-   ```
-@y
-   ```console
-   $ git stash -u
-   ```
-@z
+% snip command...
 
 @x
 2. Check out the new branch with the updated application.
@@ -93,15 +82,7 @@ To get the updated code, you need to checkout the `add-db` branch. For the chang
 2. Check out the new branch with the updated application.
 @z
 
-@x
-   ```console
-   $ git checkout add-db
-   ```
-@y
-   ```console
-   $ git checkout add-db
-   ```
-@z
+% snip command...
 
 @x
 In the `add-db` branch, only the .NET application has been updated. None of the Docker assets have been updated yet.
@@ -115,57 +96,7 @@ You should now have the following in your `docker-dotnet-sample` directory.
 You should now have the following in your `docker-dotnet-sample` directory.
 @z
 
-@x
-```text
-├── docker-dotnet-sample/
-│ ├── .git/
-│ ├── src/
-│ │ ├── Data/
-│ │ ├── Models/
-│ │ ├── Pages/
-│ │ ├── Properties/
-│ │ ├── wwwroot/
-│ │ ├── appsettings.Development.json
-│ │ ├── appsettings.json
-│ │ ├── myWebApp.csproj
-│ │ └── Program.cs
-│ ├── tests/
-│ │ ├── tests.csproj
-│ │ ├── UnitTest1.cs
-│ │ └── Usings.cs
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── README.Docker.md
-│ └── README.md
-```
-@y
-```text
-├── docker-dotnet-sample/
-│ ├── .git/
-│ ├── src/
-│ │ ├── Data/
-│ │ ├── Models/
-│ │ ├── Pages/
-│ │ ├── Properties/
-│ │ ├── wwwroot/
-│ │ ├── appsettings.Development.json
-│ │ ├── appsettings.json
-│ │ ├── myWebApp.csproj
-│ │ └── Program.cs
-│ ├── tests/
-│ │ ├── tests.csproj
-│ │ ├── UnitTest1.cs
-│ │ └── Usings.cs
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── README.Docker.md
-│ └── README.md
-```
-@z
+% snip text...
 
 @x
 ## Add a local database and persist data
@@ -237,15 +168,7 @@ In the `docker-dotnet-sample` directory, create a new directory named `db` and
 inside that directory create a file named `password.txt`. Open `password.txt` in an IDE or text editor and add the following password. The password must be on a single line, with no additional lines in the file.
 @z
 
-@x
-```text
-example
-```
-@y
-```text
-example
-```
-@z
+% snip code...
 
 @x
 Save and close the `password.txt` file.
@@ -259,37 +182,7 @@ You should now have the following in your `docker-dotnet-sample` directory.
 You should now have the following in your `docker-dotnet-sample` directory.
 @z
 
-@x
-```text
-├── docker-dotnet-sample/
-│ ├── .git/
-│ ├── db/
-│ │ └── password.txt
-│ ├── src/
-│ ├── tests/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── README.Docker.md
-│ └── README.md
-```
-@y
-```text
-├── docker-dotnet-sample/
-│ ├── .git/
-│ ├── db/
-│ │ └── password.txt
-│ ├── src/
-│ ├── tests/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── README.Docker.md
-│ └── README.md
-```
-@z
+% snip text...
 
 @x
 Run the following command to start your application.
@@ -297,15 +190,7 @@ Run the following command to start your application.
 Run the following command to start your application.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple web application with the text `Student name is`.
@@ -343,15 +228,7 @@ container. Open a new terminal window and run the following command to list all
 your running containers.
 @z
 
-@x
-```console
-$ docker container ls
-```
-@y
-```console
-$ docker container ls
-```
-@z
+% snip command...
 
 @x
 You should see output like the following.
@@ -359,51 +236,15 @@ You should see output like the following.
 You should see output like the following.
 @z
 
-@x
-```console
-CONTAINER ID   IMAGE                  COMMAND                  CREATED              STATUS                        PORTS                  NAMES
-cb36e310aa7e   docker-dotnet-server   "dotnet myWebApp.dll"    About a minute ago   Up About a minute             0.0.0.0:8080->80/tcp   docker-dotnet-server-1
-39fdcf0aff7b   postgres               "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   5432/tcp               docker-dotnet-db-1
-```
-@y
-```console
-CONTAINER ID   IMAGE                  COMMAND                  CREATED              STATUS                        PORTS                  NAMES
-cb36e310aa7e   docker-dotnet-server   "dotnet myWebApp.dll"    About a minute ago   Up About a minute             0.0.0.0:8080->80/tcp   docker-dotnet-server-1
-39fdcf0aff7b   postgres               "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   5432/tcp               docker-dotnet-db-1
-```
-@z
+% snip output...
 
 @x
-In the previous example, the container ID is `39fdcf0aff7b`. Run the following command to start a bash shell in the postgres container. Replace the container ID with your own container ID.
+In the previous example, the container ID is `39fdcf0aff7b`. Run the following command to connect to the postgres database in the container. Replace the container ID with your own container ID.
 @y
-In the previous example, the container ID is `39fdcf0aff7b`. Run the following command to start a bash shell in the postgres container. Replace the container ID with your own container ID.
+In the previous example, the container ID is `39fdcf0aff7b`. Run the following command to connect to the postgres database in the container. Replace the container ID with your own container ID.
 @z
 
-@x
-```console
-$ docker exec -it 39fdcf0aff7b bash
-```
-@y
-```console
-$ docker exec -it 39fdcf0aff7b bash
-```
-@z
-
-@x
-Then run the following command to connect to the database.
-@y
-Then run the following command to connect to the database.
-@z
-
-@x
-```console
-postgres@39fdcf0aff7b:/$ psql -d example -U postgres
-```
-@y
-```console
-postgres@39fdcf0aff7b:/$ psql -d example -U postgres
-```
-@z
+% snip command...
 
 @x
 And finally, insert a record into the database.
@@ -411,15 +252,7 @@ And finally, insert a record into the database.
 And finally, insert a record into the database.
 @z
 
-@x
-```console
-example=# INSERT INTO "Students" ("ID", "LastName", "FirstMidName", "EnrollmentDate") VALUES (DEFAULT, 'Whale', 'Moby', '2013-03-20');
-```
-@y
-```console
-example=# INSERT INTO "Students" ("ID", "LastName", "FirstMidName", "EnrollmentDate") VALUES (DEFAULT, 'Whale', 'Moby', '2013-03-20');
-```
-@z
+% snip command...
 
 @x
 You should see output like the following.
@@ -427,33 +260,15 @@ You should see output like the following.
 You should see output like the following.
 @z
 
-@x
-```console
-INSERT 0 1
-```
-@y
-```console
-INSERT 0 1
-```
-@z
+% snip output...
 
 @x
-Close the database connection and exit the container shell by running `exit` twice.
+Close the database connection and exit the container shell by running `exit`.
 @y
-Close the database connection and exit the container shell by running `exit` twice.
+Close the database connection and exit the container shell by running `exit`.
 @z
 
-@x
-```console
-example=# exit
-postgres@39fdcf0aff7b:/$ exit
-```
-@y
-```console
-example=# exit
-postgres@39fdcf0aff7b:/$ exit
-```
-@z
+% snip command...
 
 @x
 ## Verify that data persists in the database
@@ -479,17 +294,7 @@ In the terminal, run `docker compose rm` to remove your containers and then run 
 In the terminal, run `docker compose rm` to remove your containers and then run `docker compose up` to run your application again.
 @z
 
-@x
-```console
-$ docker compose rm
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose rm
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Refresh [http://localhost:8080](http://localhost:8080) in your browser and verify that the student name persisted, even after the containers were removed and ran again.
@@ -545,17 +350,7 @@ Open `docker-dotnet-sample/src/Pages/Index.cshtml` in an IDE or text editor and 
 Open `docker-dotnet-sample/src/Pages/Index.cshtml` in an IDE or text editor and update the student name text on line 13 from `Student name is` to `Student name:`.
 @z
 
-@x
-```diff
--    <p>Student Name is @Model.StudentName</p>
-+    <p>Student name: @Model.StudentName</p>
-```
-@y
-```diff
--    <p>Student Name is @Model.StudentName</p>
-+    <p>Student name: @Model.StudentName</p>
-```
-@z
+% snip diff...
 
 @x
 Save the changes to `Index.cshmtl` and then wait a few seconds for the application to rebuild. Refresh [http://localhost:8080](http://localhost:8080) in your browser and verify that the updated text appears.

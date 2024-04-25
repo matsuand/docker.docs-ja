@@ -11,15 +11,11 @@
 
 @x 暫定公開 タイトル文 追加
   <main class="flex min-h-screen w-full flex-col items-stretch self-center">
-    <div class="flex w-[1200px] flex-col items-stretch gap-20 self-center py-20 lg:w-full lg:px-4">
-      <div class="bg-pattern-blue relative overflow-hidden rounded drop-shadow">
 @y
   <main class="flex min-h-screen w-full flex-col items-stretch self-center">
     <div align="right" style="height:0px">
       暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__" target="_blank">__COMMITHASH__ 対応, __COMMITDATE__</a>)
     </div>
-    <div class="flex w-[1200px] flex-col items-stretch gap-20 self-center py-20 lg:w-full lg:px-4">
-      <div class="bg-pattern-blue relative overflow-hidden rounded drop-shadow">
 @z
 @x
             <h1 class="text-2xl">Get Docker</h1>
@@ -51,9 +47,9 @@
 @z
 
 @x
-            <a class="h-full" href="/get-started/overview/">
+            <a class="h-full" href="/guides/">
 @y
-            <a class="h-full" href="get-started/overview/">
+            <a class="h-full" href="guides/">
 @z
 @x
                       Guides
@@ -61,10 +57,9 @@
                       ガイド
 @z
 @x
-                  Learn the basics and benefits of containerizing your
-                  application.
+                  Get started and learn how Docker can optimize your development workflows
 @y
-                  アプリケーションのコンテナー化についてその基本と利点を学びます。
+                  Docker が開発ワークフローをいかに最適化できるかを学びます。
 @z
 
 @x
