@@ -34,7 +34,7 @@
 @x
     # Errors
 @y
-    # エラー {#errors}
+    # エラー
 @z
 
 @x
@@ -106,7 +106,7 @@
 @x
     # Authentication
 @y
-    # 認証 {#authentication}
+    # 認証
 @z
 
 @x

@@ -24,7 +24,8 @@ bases = \
 	v1.41.md  \
 	v1.42.md  \
 	v1.43.md  \
-	v1.44.md
+	v1.44.md  \
+	v1.45.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
