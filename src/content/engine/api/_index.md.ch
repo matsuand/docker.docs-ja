@@ -194,6 +194,7 @@ You can specify the API version to use in any of the following ways:
 @x
 | Docker version | Maximum API version        | Change log                                               |
 |:---------------|:---------------------------|:---------------------------------------------------------|
+| 26.1           | [1.45](/engine/api/v1.45/) | [changes](/engine/api/version-history/#v145-api-changes) |
 | 26.0           | [1.45](/engine/api/v1.45/) | [changes](/engine/api/version-history/#v145-api-changes) |
 | 25.0           | [1.44](/engine/api/v1.44/) | [changes](/engine/api/version-history/#v144-api-changes) |
 | 24.0           | [1.43](/engine/api/v1.43/) | [changes](/engine/api/version-history/#v143-api-changes) |
@@ -222,6 +223,7 @@ You can specify the API version to use in any of the following ways:
 @y
 | Docker version | Maximum API version        | Change log                                               |
 |:---------------|:---------------------------|:---------------------------------------------------------|
+| 26.1           | [1.45](__SUBDIR__/engine/api/v1.45/) | [changes](__SUBDIR__/engine/api/version-history/#v145-api-changes) |
 | 26.0           | [1.45](__SUBDIR__/engine/api/v1.45/) | [changes](__SUBDIR__/engine/api/version-history/#v145-api-changes) |
 | 25.0           | [1.44](__SUBDIR__/engine/api/v1.44/) | [changes](__SUBDIR__/engine/api/version-history/#v144-api-changes) |
 | 24.0           | [1.43](__SUBDIR__/engine/api/v1.43/) | [changes](__SUBDIR__/engine/api/version-history/#v143-api-changes) |

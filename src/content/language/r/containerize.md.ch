@@ -61,10 +61,10 @@ Clone the sample application to use with this guide. Open a terminal, change dir
 % snip code...
 
 @x
-You should now have the following contents in your `r-docker`
+You should now have the following contents in your `r-docker-dev`
 directory.
 @y
-上の結果として `r-docker` ディレクトリの中には以下の内容が生成されたはずです。
+上の結果として `r-docker-dev` ディレクトリの中には以下の内容が生成されたはずです。
 @z
 
 % snip text...
@@ -88,10 +88,10 @@ To learn more about the files in the repository, see the following:
 @z
 
 @x
-Inside the `r-docker` directory, run the following command in a
+Inside the `r-docker-dev` directory, run the following command in a
 terminal.
 @y
-端末画面内の `r-docker` ディレクトリから以下のコマンドを実行します。
+端末画面内の `r-docker-dev` ディレクトリから以下のコマンドを実行します。
 @z
 
 % snip command...
@@ -117,12 +117,12 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 @x
 You can run the application detached from the terminal by adding the `-d`
-option. Inside the `r-docker` directory, run the following command
+option. Inside the `r-docker-dev` directory, run the following command
 in a terminal.
 @y
 アプリケーションは端末から切り離して実行することができます。
 それには `-d` オプションをつけます。
-端末画面内の `r-docker` ディレクトリから以下のコマンドを実行します。
+端末画面内の `r-docker-dev` ディレクトリから以下のコマンドを実行します。
 @z
 
 % snip command...

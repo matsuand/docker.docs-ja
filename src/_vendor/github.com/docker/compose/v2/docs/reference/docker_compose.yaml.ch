@@ -41,15 +41,7 @@ long: |-
     For example, consider this command line:
 @z
 
-@x
-    ```console
-    $ docker compose -f docker-compose.yml -f docker-compose.admin.yml run backup_db
-    ```
-@y
-    ```console
-    $ docker compose -f docker-compose.yml -f docker-compose.admin.yml run backup_db
-    ```
-@z
+% snip command...
 
 @x
     The `docker-compose.yml` file might specify a `webapp` service.
@@ -57,49 +49,17 @@ long: |-
     The `docker-compose.yml` file might specify a `webapp` service.
 @z
 
+% snip code...
+
 @x
-    ```yaml
-    services:
-      webapp:
-        image: examples/web
-        ports:
-          - "8000:8000"
-        volumes:
-          - "/data"
-    ```
     If the `docker-compose.admin.yml` also specifies this same service, any matching fields override the previous file.
     New values, add to the `webapp` service configuration.
 @y
-    ```yaml
-    services:
-      webapp:
-        image: examples/web
-        ports:
-          - "8000:8000"
-        volumes:
-          - "/data"
-    ```
     If the `docker-compose.admin.yml` also specifies this same service, any matching fields override the previous file.
     New values, add to the `webapp` service configuration.
 @z
 
-@x
-    ```yaml
-    services:
-      webapp:
-        build: .
-        environment:
-          - DEBUG=1
-    ```
-@y
-    ```yaml
-    services:
-      webapp:
-        build: .
-        environment:
-          - DEBUG=1
-    ```
-@z
+% snip code...
 
 @x
     When you use multiple Compose files, all paths in the files are relative to the first configuration file specified
@@ -145,15 +105,7 @@ long: |-
     get the postgres image for the db service from anywhere by using the `-f` flag as follows:
 @z
 
-@x
-    ```console
-    $ docker compose -f ~/sandbox/rails/compose.yaml pull db
-    ```
-@y
-    ```console
-    $ docker compose -f ~/sandbox/rails/compose.yaml pull db
-    ```
-@z
+% snip command...
 
 @x
     ### Use `-p` to specify a project name
@@ -191,29 +143,7 @@ long: |-
     constraint, you must use one of the other mechanisms.
 @z
 
-@x
-    ```console
-    $ docker compose -p my_project ps -a
-    NAME                 SERVICE    STATUS     PORTS
-    my_project_demo_1    demo       running
-@y
-    ```console
-    $ docker compose -p my_project ps -a
-    NAME                 SERVICE    STATUS     PORTS
-    my_project_demo_1    demo       running
-@z
-
-@x
-    $ docker compose -p my_project logs
-    demo_1  | PING localhost (127.0.0.1): 56 data bytes
-    demo_1  | 64 bytes from 127.0.0.1: seq=0 ttl=64 time=0.095 ms
-    ```
-@y
-    $ docker compose -p my_project logs
-    demo_1  | PING localhost (127.0.0.1): 56 data bytes
-    demo_1  | 64 bytes from 127.0.0.1: seq=0 ttl=64 time=0.095 ms
-    ```
-@z
+% snip command...
 
 @x
     ### Use profiles to enable optional services
@@ -308,485 +238,131 @@ long: |-
 @x
     Use `--dry-run` flag to test a command without changing your application stack state.
     Dry Run mode shows you all the steps Compose applies when executing a command, for example:
-    ```console
-    $ docker compose --dry-run up --build -d
-    [+] Pulling 1/1
-     ✔ DRY-RUN MODE -  db Pulled                                                                                                                                                                                                               0.9s
-    [+] Running 10/8
-     ✔ DRY-RUN MODE -    build service backend                                                                                                                                                                                                 0.0s
-     ✔ DRY-RUN MODE -  ==> ==> writing image dryRun-754a08ddf8bcb1cf22f310f09206dd783d42f7dd                                                                                                                                                   0.0s
-     ✔ DRY-RUN MODE -  ==> ==> naming to nginx-golang-mysql-backend                                                                                                                                                                            0.0s
-     ✔ DRY-RUN MODE -  Network nginx-golang-mysql_default                                    Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Healthy                                                                                                                                           0.5s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Started                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Started                                     Started
-    ```
-    From the example above, you can see that the first step is to pull the image defined by `db` service, then build the `backend` service.
-    Next, the containers are created. The `db` service is started, and the `backend` and `proxy` wait until the `db` service is healthy before starting.
 @y
     Use `--dry-run` flag to test a command without changing your application stack state.
     Dry Run mode shows you all the steps Compose applies when executing a command, for example:
-    ```console
-    $ docker compose --dry-run up --build -d
-    [+] Pulling 1/1
-     ✔ DRY-RUN MODE -  db Pulled                                                                                                                                                                                                               0.9s
-    [+] Running 10/8
-     ✔ DRY-RUN MODE -    build service backend                                                                                                                                                                                                 0.0s
-     ✔ DRY-RUN MODE -  ==> ==> writing image dryRun-754a08ddf8bcb1cf22f310f09206dd783d42f7dd                                                                                                                                                   0.0s
-     ✔ DRY-RUN MODE -  ==> ==> naming to nginx-golang-mysql-backend                                                                                                                                                                            0.0s
-     ✔ DRY-RUN MODE -  Network nginx-golang-mysql_default                                    Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Created                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Healthy                                                                                                                                           0.5s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Started                                                                                                                                           0.0s
-     ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Started                                     Started
-    ```
+@z
+
+% snip command...
+
+@x
+    From the example above, you can see that the first step is to pull the image defined by `db` service, then build the `backend` service.
+    Next, the containers are created. The `db` service is started, and the `backend` and `proxy` wait until the `db` service is healthy before starting.
+@y
     From the example above, you can see that the first step is to pull the image defined by `db` service, then build the `backend` service.
     Next, the containers are created. The `db` service is started, and the `backend` and `proxy` wait until the `db` service is healthy before starting.
 @z
 
 @x
     Dry Run mode works with almost all commands. You cannot use Dry Run mode with a command that doesn't change the state of a Compose stack such as `ps`, `ls`, `logs` for example.
-usage: docker compose
-pname: docker
-plink: docker.yaml
-cname:
-    - docker compose attach
-    - docker compose build
-    - docker compose config
-    - docker compose cp
-    - docker compose create
-    - docker compose down
-    - docker compose events
-    - docker compose exec
-    - docker compose images
-    - docker compose kill
-    - docker compose logs
-    - docker compose ls
-    - docker compose pause
-    - docker compose port
-    - docker compose ps
-    - docker compose pull
-    - docker compose push
-    - docker compose restart
-    - docker compose rm
-    - docker compose run
-    - docker compose scale
-    - docker compose start
-    - docker compose stats
-    - docker compose stop
-    - docker compose top
-    - docker compose unpause
-    - docker compose up
-    - docker compose version
-    - docker compose wait
-    - docker compose watch
-clink:
-    - docker_compose_attach.yaml
-    - docker_compose_build.yaml
-    - docker_compose_config.yaml
-    - docker_compose_cp.yaml
-    - docker_compose_create.yaml
-    - docker_compose_down.yaml
-    - docker_compose_events.yaml
-    - docker_compose_exec.yaml
-    - docker_compose_images.yaml
-    - docker_compose_kill.yaml
-    - docker_compose_logs.yaml
-    - docker_compose_ls.yaml
-    - docker_compose_pause.yaml
-    - docker_compose_port.yaml
-    - docker_compose_ps.yaml
-    - docker_compose_pull.yaml
-    - docker_compose_push.yaml
-    - docker_compose_restart.yaml
-    - docker_compose_rm.yaml
-    - docker_compose_run.yaml
-    - docker_compose_scale.yaml
-    - docker_compose_start.yaml
-    - docker_compose_stats.yaml
-    - docker_compose_stop.yaml
-    - docker_compose_top.yaml
-    - docker_compose_unpause.yaml
-    - docker_compose_up.yaml
-    - docker_compose_version.yaml
-    - docker_compose_wait.yaml
-    - docker_compose_watch.yaml
-options:
-    - option: ansi
-      value_type: string
-      default_value: auto
-      description: |
-        Control when to print ANSI control characters ("never"|"always"|"auto")
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: compatibility
-      value_type: bool
-      default_value: "false"
-      description: Run compose in backward compatibility mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: stringArray
-      default_value: '[]'
-      description: Specify an alternate environment file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: stringArray
-      default_value: '[]'
-      description: Compose configuration files
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-ansi
-      value_type: bool
-      default_value: "false"
-      description: Do not print ANSI control characters (DEPRECATED)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: parallel
-      value_type: int
-      default_value: "-1"
-      description: Control max parallelism, -1 for unlimited
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: profile
-      value_type: stringArray
-      default_value: '[]'
-      description: Specify a profile to enable
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
-      description: Set type of progress output (auto, tty, plain, quiet)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: project-directory
-      value_type: string
-      description: |-
-        Specify an alternate working directory
-        (default: the path of the, first specified, Compose file)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: project-name
-      shorthand: p
-      value_type: string
-      description: Project name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Show more output
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: version
-      shorthand: v
-      value_type: bool
-      default_value: "false"
-      description: Show the Docker Compose version information
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      value_type: string
-      description: |-
-        DEPRECATED! USE --project-directory INSTEAD.
-        Specify an alternate working directory
-        (default: the path of the, first specified, Compose file)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     Dry Run mode works with almost all commands. You cannot use Dry Run mode with a command that doesn't change the state of a Compose stack such as `ps`, `ls`, `logs` for example.
+@z
+
+@x
 usage: docker compose
-pname: docker
-plink: docker.yaml
-cname:
-    - docker compose attach
-    - docker compose build
-    - docker compose config
-    - docker compose cp
-    - docker compose create
-    - docker compose down
-    - docker compose events
-    - docker compose exec
-    - docker compose images
-    - docker compose kill
-    - docker compose logs
-    - docker compose ls
-    - docker compose pause
-    - docker compose port
-    - docker compose ps
-    - docker compose pull
-    - docker compose push
-    - docker compose restart
-    - docker compose rm
-    - docker compose run
-    - docker compose scale
-    - docker compose start
-    - docker compose stats
-    - docker compose stop
-    - docker compose top
-    - docker compose unpause
-    - docker compose up
-    - docker compose version
-    - docker compose wait
-    - docker compose watch
-clink:
-    - docker_compose_attach.yaml
-    - docker_compose_build.yaml
-    - docker_compose_config.yaml
-    - docker_compose_cp.yaml
-    - docker_compose_create.yaml
-    - docker_compose_down.yaml
-    - docker_compose_events.yaml
-    - docker_compose_exec.yaml
-    - docker_compose_images.yaml
-    - docker_compose_kill.yaml
-    - docker_compose_logs.yaml
-    - docker_compose_ls.yaml
-    - docker_compose_pause.yaml
-    - docker_compose_port.yaml
-    - docker_compose_ps.yaml
-    - docker_compose_pull.yaml
-    - docker_compose_push.yaml
-    - docker_compose_restart.yaml
-    - docker_compose_rm.yaml
-    - docker_compose_run.yaml
-    - docker_compose_scale.yaml
-    - docker_compose_start.yaml
-    - docker_compose_stats.yaml
-    - docker_compose_stop.yaml
-    - docker_compose_top.yaml
-    - docker_compose_unpause.yaml
-    - docker_compose_up.yaml
-    - docker_compose_version.yaml
-    - docker_compose_wait.yaml
-    - docker_compose_watch.yaml
-options:
-    - option: ansi
-      value_type: string
-      default_value: auto
+@y
+usage: docker compose
+@z
+
+% cname:
+% clink:
+% options:
+
+@x ansi
       description: |
         Control when to print ANSI control characters ("never"|"always"|"auto")
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: compatibility
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        ANSI 制御文字の出力を制御します。（"never"|"always"|"auto"）
+@z
+
+@x compatibility
       description: Run compose in backward compatibility mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: Run compose in backward compatibility mode
+@z
+
+@x dry-run
       description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Execute command in dry run mode
+@z
+
+@x env-file
       description: Specify an alternate environment file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: file
-      shorthand: f
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: 別の環境ファイルを指定します。
+@z
+
+@x file
       description: Compose configuration files
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-ansi
-      value_type: bool
-      default_value: "false"
+@y
+      description: Compose 設定ファイル。
+@z
+
+@x no-ansi
       description: Do not print ANSI control characters (DEPRECATED)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: parallel
-      value_type: int
-      default_value: "-1"
+@y
+      description: ANSI 制御文字は表示しません。(廃止予定)
+@z
+
+@x parallel
       description: Control max parallelism, -1 for unlimited
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: profile
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Control max parallelism, -1 for unlimited
+@z
+
+@x profile
       description: Specify a profile to enable
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: progress
-      value_type: string
-      default_value: auto
+@y
+      description: プロファイルの有効化を指定します。
+@z
+
+@x progress
       description: Set type of progress output (auto, tty, plain, quiet)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: project-directory
-      value_type: string
+@y
+      description: Set type of progress output (auto, tty, plain, quiet)
+@z
+
+@x project-directory
       description: |-
         Specify an alternate working directory
         (default: the path of the, first specified, Compose file)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: project-name
-      shorthand: p
-      value_type: string
+@y
+      description: |-
+        別のワーキングディレクトリを指定します。
+        （デフォルトは初めに指定された Compose ファイルのあるパス。）
+@z
+
+@x project-name
       description: Project name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
+@y
+      description: プロジェクト名。
+@z
+
+@x verbose
       description: Show more output
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: version
-      shorthand: v
-      value_type: bool
-      default_value: "false"
+@y
+      description: 詳細出力を行います。
+@z
+
+@x version
       description: Show the Docker Compose version information
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      value_type: string
+@y
+      description: Show the Docker Compose version information
+@z
+
+@x workdir
       description: |-
         DEPRECATED! USE --project-directory INSTEAD.
         Specify an alternate working directory
         (default: the path of the, first specified, Compose file)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |-
+        **非推奨！** 代わりに --project-directory 利用すること。
+        別のワーキングディレクトリを指定します。
+        （デフォルトは初めに指定された Compose ファイルのあるパス。）
 @z
+
+% snip directives...

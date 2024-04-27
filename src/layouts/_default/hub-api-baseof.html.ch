@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
 <!DOCTYPE html>
 <html lang="en">
@@ -26,22 +27,6 @@
   <meta name="description"
     content="Reference documentation and Swagger (OpenAPI) specification for the {{ .File.BaseFileName }} API served by Docker Hub." />
   <meta charset="utf-8" />
-@z
-
-@x
-  <!-- favicon -->
-  <meta name="msapplication-TileImage" content="{{ site.BaseURL }}/assets/favicons/docs@2x.ico" />
-  <meta property="og:image" content="{{ site.BaseURL }}/assets/favicons/docs@2x.ico" />
-  <link rel="apple-touch-icon" type="image/x-icon" href="{{ site.BaseURL }}/assets/favicons/docs@2x.ico"
-    sizes="129x128" />
-  <link rel="icon" type="image/x-icon" href="{{ site.BaseURL }}/assets/favicons/docs@2x.ico" sizes="129x128" />
-@y
-  <!-- favicon -->
-  <meta name="msapplication-TileImage" content="__SUBDIR__/assets/favicons/docs@2x.ico" />
-  <meta property="og:image" content="__SUBDIR__/assets/favicons/docs@2x.ico" />
-  <link rel="apple-touch-icon" type="image/x-icon" href="__SUBDIR__/assets/favicons/docs@2x.ico"
-    sizes="129x128" />
-  <link rel="icon" type="image/x-icon" href="__SUBDIR__/assets/favicons/docs@2x.ico" sizes="129x128" />
 @z
 
 @x

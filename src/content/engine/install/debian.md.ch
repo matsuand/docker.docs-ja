@@ -366,13 +366,13 @@ Docker from the repository.
 @z
 
 @x
-   5:25.0.0-1~debian.12~bookworm
-   5:24.0.7-1~debian.12~bookworm
+   5:26.1.0-1~debian.12~bookworm
+   5:26.0.2-1~debian.12~bookworm
    ...
    ```
 @y
-   5:25.0.0-1~debian.12~bookworm
-   5:24.0.7-1~debian.12~bookworm
+   5:26.1.0-1~debian.12~bookworm
+   5:26.0.2-1~debian.12~bookworm
    ...
    ```
 @z
@@ -385,12 +385,12 @@ Docker from the repository.
 
 @x
    ```console
-   $ VERSION_STRING=5:25.0.0-1~debian.12~bookworm
+   $ VERSION_STRING=5:26.1.0-1~debian.12~bookworm
    $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 @y
    ```console
-   $ VERSION_STRING=5:25.0.0-1~debian.12~bookworm
+   $ VERSION_STRING=5:26.1.0-1~debian.12~bookworm
    $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 @z

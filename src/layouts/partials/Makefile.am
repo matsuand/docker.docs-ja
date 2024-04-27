@@ -18,6 +18,7 @@ copyfiles = \
 	breadcrumbs.html    \
 	category-links.html \
 	cli-aside.html      \
+	favicon.html        \
 	header.html         \
 	icon.html           \
 	mermaid.html        \

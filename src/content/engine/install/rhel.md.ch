@@ -94,11 +94,11 @@ RHEL versions:
 @z
 
 @x
-- RHEL 7 on s390x (IBM Z)
+- RHEL 7 on s390x (IBM Z) (EOL: [June 30, 2024](https://www.ibm.com/blog/announcement/ibm-is-announcing-red-hat-enterprise-linux-7-is-going-end-of-support-on-30-june-2024/))
 - RHEL 8 on s390x (IBM Z)
 - RHEL 9 on s390x (IBM Z)
 @y
-- RHEL 7 on s390x (IBM Z)
+- RHEL 7 on s390x (IBM Z) (EOL: [June 30, 2024](https://www.ibm.com/blog/announcement/ibm-is-announcing-red-hat-enterprise-linux-7-is-going-end-of-support-on-30-june-2024/))
 - RHEL 8 on s390x (IBM Z)
 - RHEL 9 on s390x (IBM Z)
 @z
@@ -326,33 +326,33 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @z
 
 @x
-   docker-ce.s390x    3:24.0.0-1.el8    docker-ce-stable
-   docker-ce.s390x    3:23.0.6-1.el8    docker-ce-stable
+   docker-ce.s390x    3:26.0.2-1.el9    docker-ce-stable
+   docker-ce.s390x    3:26.0.1-1.el9    docker-ce-stable
    <...>
    ```
 @y
-   docker-ce.s390x    3:24.0.0-1.el8    docker-ce-stable
-   docker-ce.s390x    3:23.0.6-1.el8    docker-ce-stable
+   docker-ce.s390x    3:26.0.2-1.el9    docker-ce-stable
+   docker-ce.s390x    3:26.0.1-1.el9    docker-ce-stable
    <...>
    ```
 @z
 
 @x
    The list returned depends on which repositories are enabled, and is specific
-   to your version of RHEL (indicated by the `.el8` suffix in this example).
+   to your version of RHEL (indicated by the `.el9` suffix in this example).
 @y
    The list returned depends on which repositories are enabled, and is specific
-   to your version of RHEL (indicated by the `.el8` suffix in this example).
+   to your version of RHEL (indicated by the `.el9` suffix in this example).
 @z
 
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0-1.el8`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:26.0.1-1.el9`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0-1.el8`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:26.0.1-1.el9`.
 @z
 
 @x

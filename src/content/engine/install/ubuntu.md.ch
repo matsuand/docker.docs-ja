@@ -94,11 +94,13 @@ versions:
 @z
 
 @x
-- Ubuntu Mantic 23.10
+- Ubuntu Noble 24.04 (LTS)
+- Ubuntu Mantic 23.10 (EOL: [July 12, 2024](https://wiki.ubuntu.com/Releases))
 - Ubuntu Jammy 22.04 (LTS)
 - Ubuntu Focal 20.04 (LTS)
 @y
-- Ubuntu Mantic 23.10
+- Ubuntu Noble 24.04 (LTS)
+- Ubuntu Mantic 23.10 (EOL: [July 12, 2024](https://wiki.ubuntu.com/Releases))
 - Ubuntu Jammy 22.04 (LTS)
 - Ubuntu Focal 20.04 (LTS)
 @z
@@ -370,13 +372,13 @@ Docker from the repository.
 @z
 
 @x
-   5:24.0.0-1~ubuntu.22.04~jammy
-   5:23.0.6-1~ubuntu.22.04~jammy
+   5:26.1.0-1~ubuntu.24.04~noble
+   5:26.0.2-1~ubuntu.24.04~noble
    ...
    ```
 @y
-   5:24.0.0-1~ubuntu.22.04~jammy
-   5:23.0.6-1~ubuntu.22.04~jammy
+   5:26.1.0-1~ubuntu.24.04~noble
+   5:26.0.2-1~ubuntu.24.04~noble
    ...
    ```
 @z
@@ -389,12 +391,12 @@ Docker from the repository.
 
 @x
    ```console
-   $ VERSION_STRING=5:24.0.0-1~ubuntu.22.04~jammy
+   $ VERSION_STRING=5:26.1.0-1~ubuntu.24.04~noble
    $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 @y
    ```console
-   $ VERSION_STRING=5:24.0.0-1~ubuntu.22.04~jammy
+   $ VERSION_STRING=5:26.1.0-1~ubuntu.24.04~noble
    $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 @z

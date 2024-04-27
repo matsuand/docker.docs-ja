@@ -14,6 +14,7 @@ copyfiles = \
 	code.css         \
 	hack.css         \
 	icons.css        \
+	kapa.css         \
 	search.css       \
 	styles.css       \
 	syntax-dark.css  \

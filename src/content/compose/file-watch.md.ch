@@ -130,13 +130,11 @@ In order to work properly, `watch` relies on common executables. Make sure your 
 * stat
 * mkdir
 * rmdir
-* tar
 @y
 In order to work properly, `watch` relies on common executables. Make sure your service image contains the following binaries:
 * stat
 * mkdir
 * rmdir
-* tar
 @z
 
 @x
@@ -304,10 +302,10 @@ myproject/
 % snip code...
 
 @x
-In this example, when running `docker compose watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.
+In this example, when running `docker compose up --watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.
 The `web` service runs `npm start` for its command, which then launches a development version of the application with Hot Module Reload enabled in the bundler (Webpack, Vite, Turbopack, etc).
 @y
-In this example, when running `docker compose watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.
+In this example, when running `docker compose up --watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.
 The `web` service runs `npm start` for its command, which then launches a development version of the application with Hot Module Reload enabled in the bundler (Webpack, Vite, Turbopack, etc).
 @z
 
@@ -349,11 +347,11 @@ This pattern can be followed for many languages and frameworks, such as Python w
 
 @x
 1. Add `watch` sections to one or more services in `compose.yaml`.
-2. Run `docker compose watch` to build and launch a Compose project and start the file watch mode.
+2. Run `docker compose up --watch` to build and launch a Compose project and start the file watch mode.
 3. Edit service source files using your preferred IDE or editor.
 @y
 1. Add `watch` sections to one or more services in `compose.yaml`.
-2. Run `docker compose watch` to build and launch a Compose project and start the file watch mode.
+2. Run `docker compose up --watch` to build and launch a Compose project and start the file watch mode.
 3. Edit service source files using your preferred IDE or editor.
 @z
 

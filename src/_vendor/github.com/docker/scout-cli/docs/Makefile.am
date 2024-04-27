@@ -12,6 +12,7 @@ bases = \
 	docker_scout_compare.yaml \
 	docker_scout_config.yaml \
 	docker_scout_cves.yaml \
+	docker_scout_docker-cli-plugin-hooks.yaml \
 	docker_scout_enroll.yaml \
 	docker_scout_environment.yaml \
 	docker_scout_help.yaml \
@@ -40,6 +41,7 @@ bases = \
 	scout_compare.md \
 	scout_config.md \
 	scout_cves.md \
+	scout_docker-cli-plugin-hooks.md \
 	scout_enroll.md \
 	scout_environment.md \
 	scout_help.md \

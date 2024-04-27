@@ -26,9 +26,57 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
-## 2.26.0
+## 2.27.0
 @y
-## 2.26.0
+## 2.27.0
+@z
+
+@x
+{{< release-date date="2024-04-24" >}}
+@y
+{{< release-date date="2024-04-24" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump golang to 1.21.9
+- Dependencies upgrade: bump compose-go to v2.1.0
+- Dependencies upgrade: bump docker engine and cli to v26.1.0
+@y
+- 依存パッケージの更新: golang 1.21.9
+- 依存パッケージの更新: compose-go v2.1.0
+- 依存パッケージの更新: docker engine, cli v26.1.0
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduced `--abort-on-container-failure` flag
+- Introduced `--all-resources` to not exclude resources not used by services
+- Introduced support for `build.entitlements`
+- Fixed a bug so Docker Compose now ignores missing containers when `docker compose down/stop -p` is run
+- Fixed support for `--flag=value` syntax in compatibility mode
+@y
+- Introduced `--abort-on-container-failure` flag
+- Introduced `--all-resources` to not exclude resources not used by services
+- Introduced support for `build.entitlements`
+- Fixed a bug so Docker Compose now ignores missing containers when `docker compose down/stop -p` is run
+- Fixed support for `--flag=value` syntax in compatibility mode
+@z
+
+@x
+## 2.26.1
+@y
+## 2.26.1
 @z
 
 @x
