@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = compose-file environment-variables images install \
-	intro multiple-compose-files reference
+SUBDIRS = bridge compose-file environment-variables images \
+	install intro multiple-compose-files reference
 
 bases = \
 	_index.md \

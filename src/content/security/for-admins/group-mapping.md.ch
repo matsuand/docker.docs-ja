@@ -1,26 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Group mapping for administrators
 keywords: Group Mapping, SCIM, Docker Hub, Docker Admin, admin, security
 title: Group Mapping
-aliases:
-- /admin/company/settings/group-mapping/
-- /admin/organization/security-settings/group-mapping/
-- /docker-hub/group-mapping/
----
 @y
----
 description: Group mapping for administrators
 keywords: Group Mapping, SCIM, Docker Hub, Docker Admin, admin, security
 title: Group Mapping
-aliases:
-- /admin/company/settings/group-mapping/
-- /admin/organization/security-settings/group-mapping/
-- /docker-hub/group-mapping/
----
 @z
 
 @x
@@ -182,7 +172,7 @@ When you opt to disable JIT provisioning in your SSO connection, the following a
 @x
 If you disable JIT provisioning when you create or edit your SSO connection, you can still use group mapping as long as you have also [enabled SCIM](/security/for-admins/scim/#enable-scim-in-docker). When JIT provisioning is disabled and SCIM isn't enabled, users won't be auto-provisioned to groups. For instructions on disabling JIT provisioning, see [Manage how users are provisioned](/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
 @y
-If you disable JIT provisioning when you create or edit your SSO connection, you can still use group mapping as long as you have also [enabled SCIM](/security/for-admins/scim/#enable-scim-in-docker). When JIT provisioning is disabled and SCIM isn't enabled, users won't be auto-provisioned to groups. For instructions on disabling JIT provisioning, see [Manage how users are provisioned](/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
+If you disable JIT provisioning when you create or edit your SSO connection, you can still use group mapping as long as you have also [enabled SCIM](__SUBDIR__/security/for-admins/scim/#enable-scim-in-docker). When JIT provisioning is disabled and SCIM isn't enabled, users won't be auto-provisioned to groups. For instructions on disabling JIT provisioning, see [Manage how users are provisioned](__SUBDIR__/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
 @z
 
 @x

@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Get support
 keywords: Support, Docker Desktop, Docker Hub, Hub, Linux, Mac, Windows
 title: Get support
-aliases:
-- /desktop/support/
----
 @y
----
 description: Get support
 keywords: Support, Docker Desktop, Docker Hub, Hub, Linux, Mac, Windows
 title: Get support
-aliases:
-- /desktop/support/
----
 @z
 
 @x
@@ -250,5 +244,5 @@ Before seeking support, you can perform basic troubleshooting. See [Diagnose and
 @x
 You can also see if an answer already exists in the [FAQs](/tags/faq/).
 @y
-You can also see if an answer already exists in the [FAQs](/tags/faq/).
+You can also see if an answer already exists in the [FAQs](__SUBDIR__/tags/faq/).
 @z

@@ -4,25 +4,17 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: >
   Use roles in your organization to control who has access to content,
   registry, and organization management permissions.
 keywords: members, teams, organization, company, roles, access, docker hub, admin console, security 
 title: Roles and permissions
-aliases:
-- /docker-hub/roles-and-permissions/
----
 @y
----
 description: >
   Use roles in your organization to control who has access to content,
   registry, and organization management permissions.
 keywords: members, teams, organization, company, roles, access, docker hub, admin console, security 
 title: Roles and permissions
-aliases:
-- /docker-hub/roles-and-permissions/
----
 @z
 
 @x
@@ -112,7 +104,7 @@ Company owners have the same access as organization owners for all associated or
 | View repository activity                              | ❌     | ❌     | ✅                 |
 | Set up Automated builds                               | ❌     | ❌     | ✅                 |
 | Edit build settings                                   | ❌     | ❌     | ✅                 |
-| View teams                                            | ❌     | ✅     | ✅                 |
+| View teams                                            | ✅     | ✅     | ✅                 |
 | Assign team permissions to repositories               | ❌     | ✅     | ✅                 |
 @y
 | Permission                                            | Member | Editor | Organization owner |
@@ -129,7 +121,7 @@ Company owners have the same access as organization owners for all associated or
 | View repository activity                              | ❌     | ❌     | ✅                 |
 | Set up Automated builds                               | ❌     | ❌     | ✅                 |
 | Edit build settings                                   | ❌     | ❌     | ✅                 |
-| View teams                                            | ❌     | ✅     | ✅                 |
+| View teams                                            | ✅     | ✅     | ✅                 |
 | Assign team permissions to repositories               | ❌     | ✅     | ✅                 |
 @z
 

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ ‘Î‰ž
+
 @x
----
 title: What is a registry?
 keywords: concepts, build, images, container, docker desktop
 description: What is a registry? This Docker Concept will explain what a registry is, explore their interoperability, and have you interact with registries.
----
 @y
----
 title: What is a registry?
 keywords: concepts, build, images, container, docker desktop
 description: What is a registry? This Docker Concept will explain what a registry is, explore their interoperability, and have you interact with registries.
----
 @z
 
 @x
@@ -306,7 +304,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 @x
 6. Use the [`docker tag`](/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
 @y
-6. Use the [`docker tag`](/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
+6. Use the [`docker tag`](__SUBDIR__/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
 @z
 
 @x
@@ -322,7 +320,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 @x
 7. Finally, it's time to push the newly built image to your Docker Hub repository by using the [`docker push`](/reference/cli/docker/image/push/) command:
 @y
-7. Finally, it's time to push the newly built image to your Docker Hub repository by using the [`docker push`](/reference/cli/docker/image/push/) command:
+7. Finally, it's time to push the newly built image to your Docker Hub repository by using the [`docker push`](__SUBDIR__/reference/cli/docker/image/push/) command:
 @z
 
 @x
@@ -363,8 +361,8 @@ In this walkthrough, you signed up for a Docker account, created your first Dock
 - [Docker Hub Quickstart](/docker-hub/quickstart/)
 - [Manage Docker Hub Repositories](/docker-hub/repos/)
 @y
-- [Docker Hub Quickstart](/docker-hub/quickstart/)
-- [Manage Docker Hub Repositories](/docker-hub/repos/)
+- [Docker Hub Quickstart](__SUBDIR__/docker-hub/quickstart/)
+- [Manage Docker Hub Repositories](__SUBDIR__/docker-hub/repos/)
 @z
 
 @x

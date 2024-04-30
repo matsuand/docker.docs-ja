@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Using the build cache
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the build cache, what changes invalidate the cache and how to effectively use the build cache.
----
 @y
----
 title: Using the build cache
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the build cache, what changes invalidate the cache and how to effectively use the build cache.
----
 @z
 
 @x
@@ -712,9 +710,9 @@ By following these optimization techniques, you can make your Docker builds fast
 * [Cache Storage Backend](/build/cache/backends/)
 * [Build cache invalidation](/build/cache/invalidation/)
 @y
-* [Optimizing builds with cache management](/build/cache/)
-* [Cache Storage Backend](/build/cache/backends/)
-* [Build cache invalidation](/build/cache/invalidation/)
+* [Optimizing builds with cache management](__SUBDIR__/build/cache/)
+* [Cache Storage Backend](__SUBDIR__/build/cache/backends/)
+* [Build cache invalidation](__SUBDIR__/build/cache/invalidation/)
 @z
 
 @x

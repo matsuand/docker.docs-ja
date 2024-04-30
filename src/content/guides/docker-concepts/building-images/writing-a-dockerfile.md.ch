@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Writing a Dockerfile
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to create image using Dockerfile.
----
 @y
----
 title: Writing a Dockerfile
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to create image using Dockerfile.
----
 @z
 
 @x
@@ -343,7 +341,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 > The `docker init` command will analyze your project and quickly create 
 > a Dockerfile, a `compose.yaml`, and a `.dockerignore`, helping you get
 > up and going. Since you're learning about Dockerfiles specifically here, 
-> you won't use it now. But, [learn more about it here](/engine/reference/commandline/init/).
+> you won't use it now. But, [learn more about it here](__SUBDIR__/engine/reference/commandline/init/).
 { .tip }
 @z
 
@@ -365,10 +363,10 @@ To learn more about writing a Dockerfile, visit the following resources:
 * [Create your own base image](/build/building/base-images/)
 * [Getting started with Docker Init](/reference/cli/docker/init/)
 @y
-* [Dockerfile reference](/reference/dockerfile/)
-* [Dockerfile best practices](/develop/develop-images/dockerfile_best-practices/)
-* [Create your own base image](/build/building/base-images/)
-* [Getting started with Docker Init](/reference/cli/docker/init/)
+* [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
+* [Dockerfile best practices](__SUBDIR__/develop/develop-images/dockerfile_best-practices/)
+* [Create your own base image](__SUBDIR__/build/building/base-images/)
+* [Getting started with Docker Init](__SUBDIR__/reference/cli/docker/init/)
 @z
 
 @x

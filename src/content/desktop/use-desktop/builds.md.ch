@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Explore Builds
 description: Understand how to use the Builds view in Docker Desktop
 keywords: Docker Dashboard, manage, gui, dashboard, builders, builds
----
 @y
----
 title: Explore Builds
 description: Understand how to use the Builds view in Docker Desktop
 keywords: Docker Dashboard, manage, gui, dashboard, builders, builds
----
 @z
 
 @x
@@ -266,7 +264,7 @@ The **Configuration** section of the Info tab shows parameters passed to the bui
 - Secrets, including their IDs (but not their values)
 - SSH sockets
 - Labels
-- [Additional contexts](/reference/cli/docker/buildx/build/#build-context)
+- [Additional contexts](__SUBDIR__/reference/cli/docker/buildx/build/#build-context)
 @z
 
 @x

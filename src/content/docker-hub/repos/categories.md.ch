@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Categories in Docker Hub
 description: |
@@ -27,7 +29,7 @@ keywords: hub, images, content, categories, explore, search
 @y
 > **早期アクセス**
 >
-> Categories is an [Early Access](/release-lifecycle/#early-access-ea)
+> Categories is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > feature of Docker Hub. It's currently only available to members of the
 > [Docker Verified Publisher](../../trusted-content/dvp-program.md)
 > and [Docker-Sponsored Open Source](../../trusted-content/dsos-program.md)

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 description: Understand what you can do with the Containers view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
@@ -243,7 +245,7 @@ and select the **System default** option under **Choose your terminal**.
 @x
 Debug mode requires a [Pro, Team, or Business subcription](/subscription/details/). Debug mode has several advantages, such as:
 @y
-Debug mode requires a [Pro, Team, or Business subcription](/subscription/details/). Debug mode has several advantages, such as:
+Debug mode requires a [Pro, Team, or Business subcription](__SUBDIR__/subscription/details/). Debug mode has several advantages, such as:
 @z
 
 @x
@@ -253,7 +255,7 @@ Debug mode requires a [Pro, Team, or Business subcription](/subscription/details
   distroless containers.
 @y
 - A customizable toolbox. The toolbox comes with many standard Linux tools
-  pre-installed, such as `vim`, `nano`, `htop`, and `curl`. For more details, see the [`docker debug` CLI reference](/reference/cli/docker/debug/).
+  pre-installed, such as `vim`, `nano`, `htop`, and `curl`. For more details, see the [`docker debug` CLI reference](__SUBDIR__/reference/cli/docker/debug/).
 - The ability to access containers that don't have a shell, for example, slim or
   distroless containers.
 @z

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Manage seats and invites
 description: Learn how to add and remove seats for your Docker Build Cloud subscription, and invite members to your team.
 keywords: subscription, team, business, features, build, cloud, Build Cloud, remote builder, manage users, add seats, remove seats
----
 @y
----
 title: Manage seats and invites
 description: Learn how to add and remove seats for your Docker Build Cloud subscription, and invite members to your team.
 keywords: subscription, team, business, features, build, cloud, Build Cloud, remote builder, manage users, add seats, remove seats
----
 @z
 
 @x
@@ -114,5 +112,5 @@ Invitees receive an email with instructions on how they can accept the invite. A
 @x
 For more information on the permissions granted to members, see [Roles and permissions](/security/for-admins/roles-and-permissions#docker-build-cloud).
 @y
-For more information on the permissions granted to members, see [Roles and permissions](/security/for-admins/roles-and-permissions#docker-build-cloud).
+For more information on the permissions granted to members, see [Roles and permissions](__SUBDIR__/security/for-admins/roles-and-permissions#docker-build-cloud).
 @z

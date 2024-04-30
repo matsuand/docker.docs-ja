@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Docker Scout CLI release notes
 description: Learn about the latest features of the Docker Scout CLI plugin
 keywords: docker scout, release notes, changelog, cli, features, changes, delta, new, releases, github actions
----
 @y
----
 title: Docker Scout CLI release notes
 description: Learn about the latest features of the Docker Scout CLI plugin
 keywords: docker scout, release notes, changelog, cli, features, changes, delta, new, releases, github actions
----
 @z
 
 @x
@@ -46,7 +44,7 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 @x
 - The [`docker scout push` command](/reference/cli/docker/scout/push/) is now fully available: analyze images locally and push the SBOM to Docker Scout.
 @y
-- The [`docker scout push` command](/reference/cli/docker/scout/push/) is now fully available: analyze images locally and push the SBOM to Docker Scout.
+- The [`docker scout push` command](__SUBDIR__/reference/cli/docker/scout/push/) is now fully available: analyze images locally and push the SBOM to Docker Scout.
 @z
 
 @x

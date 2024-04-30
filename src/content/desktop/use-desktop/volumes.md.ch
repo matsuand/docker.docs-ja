@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Understand what you can do with the Volumes view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
 title: Explore Volumes
----
 @y
----
 description: Understand what you can do with the Volumes view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
 title: Explore Volumes
----
 @z
 
 @x
@@ -314,7 +312,7 @@ To export a volume:
    - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
      repositories can be publicly accessible which means your data can be
      publicly accessible. For more details, see
-     [Change a repository from public to private](/docker-hub/repos/#change-a-repository-from-public-to-private).
+     [Change a repository from public to private](__SUBDIR__/docker-hub/repos/#change-a-repository-from-public-to-private).
 @z
 
 @x

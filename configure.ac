@@ -92,6 +92,7 @@ AC_CONFIG_FILES([
 	src/content/build/images/Makefile
 	src/content/cloud/Makefile
 	src/content/compose/Makefile
+	src/content/compose/bridge/Makefile
 	src/content/compose/compose-file/Makefile
 	src/content/compose/environment-variables/Makefile
 	src/content/compose/images/Makefile

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: What is Docker Compose?
 keywords: concepts, build, images, container, docker desktop
 description: What is Docker Compose?
----
 @y
----
 title: What is Docker Compose?
 keywords: concepts, build, images, container, docker desktop
 description: What is Docker Compose?
----
 @z
 
 @x
@@ -134,7 +132,7 @@ Follow the instructions to run the to-do list app on your system.
 @x
 4. Use the [`docker compose up`](/reference/cli/docker/compose/up/) command to start the application:
 @y
-4. Use the [`docker compose up`](/reference/cli/docker/compose/up/) command to start the application:
+4. Use the [`docker compose up`](__SUBDIR__/reference/cli/docker/compose/up/) command to start the application:
 @z
 
 @x
@@ -244,7 +242,7 @@ Since this application was started using Docker Compose, it's easy to tear it al
 @x
 1. In the CLI, use the [`docker compose down`](/reference/cli/docker/compose/down/) command to remove everything:
 @y
-1. In the CLI, use the [`docker compose down`](/reference/cli/docker/compose/down/) command to remove everything:
+1. In the CLI, use the [`docker compose down`](__SUBDIR__/reference/cli/docker/compose/down/) command to remove everything:
 @z
 
 @x
@@ -350,7 +348,7 @@ This page was a brief introduction to Compose. In the following resources, you c
 * [Overview of Docker Compose CLI](/compose/reference/)
 * [How Compose works](/compose/compose-application-model/)
 @y
-* [Overview of Docker Compose](/compose/)
-* [Overview of Docker Compose CLI](/compose/reference/)
-* [How Compose works](/compose/compose-application-model/)
+* [Overview of Docker Compose](__SUBDIR__/compose/)
+* [Overview of Docker Compose CLI](__SUBDIR__/compose/reference/)
+* [How Compose works](__SUBDIR__/compose/compose-application-model/)
 @z

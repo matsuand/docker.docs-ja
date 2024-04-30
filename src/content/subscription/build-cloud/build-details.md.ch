@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Subscriptions and features
 description: Learn about the Docker Build Cloud subscriptions plans and features
 keywords: subscription, pro, team, business, features, build, cloud, Build Cloud, remote builder
-aliases:
-- /subscription/build-details/
----
 @y
----
 title: Subscriptions and features
 description: Learn about the Docker Build Cloud subscriptions plans and features
 keywords: subscription, pro, team, business, features, build, cloud, Build Cloud, remote builder
-aliases:
-- /subscription/build-details/
----
 @z
 
 @x
@@ -34,7 +28,7 @@ You can enhance your teams' builds with a Build Cloud subscription. This page de
 @x
 If you have an existing [Docker Core subscription](/subscription/core-subscription/details/), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
 @y
-If you have an existing [Docker Core subscription](/subscription/core-subscription/details/), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
+If you have an existing [Docker Core subscription](__SUBDIR__/subscription/core-subscription/details/), a base level of Build Cloud minutes and cache are included. The features available vary depending on your Docker Core subscription tier.
 @z
 
 @x
@@ -128,7 +122,7 @@ shared cache of a Docker Build Cloud Team subscription, users must be a part of
 the organization associated with the subscription. See Manage seats and invites.
 @y
 The Docker Build Cloud Team subscription is tied to a Docker
-[organization](/admin/organization/). To use the build minutes or
+[organization](__SUBDIR__/admin/organization/). To use the build minutes or
 shared cache of a Docker Build Cloud Team subscription, users must be a part of
 the organization associated with the subscription. See Manage seats and invites.
 @z
@@ -136,13 +130,13 @@ the organization associated with the subscription. See Manage seats and invites.
 @x
 To learn how to buy this subscription for your Docker organization, see [Buy your subscription - existing account or organization](/billing/build-billing#existing-account-or-organization).
 @y
-To learn how to buy this subscription for your Docker organization, see [Buy your subscription - existing account or organization](/billing/build-billing#existing-account-or-organization).
+To learn how to buy this subscription for your Docker organization, see [Buy your subscription - existing account or organization](__SUBDIR__/billing/build-billing#existing-account-or-organization).
 @z
 
 @x
 If you haven’t created a Docker organization yet and don’t have an existing Docker Core subscription, see [Buy your subscription - new organization](/billing/build-billing#new-organization). For organizations without a Docker Core subscription, this plan also includes 50 shared minutes in addition to the Docker Build Cloud Team minutes.
 @y
-If you haven’t created a Docker organization yet and don’t have an existing Docker Core subscription, see [Buy your subscription - new organization](/billing/build-billing#new-organization). For organizations without a Docker Core subscription, this plan also includes 50 shared minutes in addition to the Docker Build Cloud Team minutes.
+If you haven’t created a Docker organization yet and don’t have an existing Docker Core subscription, see [Buy your subscription - new organization](__SUBDIR__/billing/build-billing#new-organization). For organizations without a Docker Core subscription, this plan also includes 50 shared minutes in addition to the Docker Build Cloud Team minutes.
 @z
 
 @x

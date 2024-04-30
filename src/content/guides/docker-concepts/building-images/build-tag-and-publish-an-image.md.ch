@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Build, tag, and publish an image
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to build, tag, and publish an image to Docker Hub or any other registry 
----
 @y
----
 title: Build, tag, and publish an image
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to build, tag, and publish an image to Docker Hub or any other registry 
----
 @z
 
 @x
@@ -444,7 +442,7 @@ Now that you have a repository on Docker Hub, it's time for you to build an imag
 @x
 3. You can actually view the history (or how the image was created) by using the [docker image history](/reference/cli/docker/image/history/) command:
 @y
-3. You can actually view the history (or how the image was created) by using the [docker image history](/reference/cli/docker/image/history/) command:
+3. You can actually view the history (or how the image was created) by using the [docker image history](__SUBDIR__/reference/cli/docker/image/history/) command:
 @z
 
 @x
@@ -518,7 +516,7 @@ Now that you have an image built, it's time to push the image to a registry.
 @x
 1. Push the image using the [docker push](/reference/cli/docker/image/push/) command:
 @y
-1. Push the image using the [docker push](/reference/cli/docker/image/push/) command:
+1. Push the image using the [docker push](__SUBDIR__/reference/cli/docker/image/push/) command:
 @z
 
 @x
@@ -562,11 +560,11 @@ To learn more about building, tagging, and publishing images, visit the followin
 * [docker push reference](/engine/reference/commandline/image_push/)
 * [What is a registry?](/guides/docker-concepts/the-basics/what-is-a-registry/)
 @y
-* [What is a build context?](/build/building/context/#what-is-a-build-context)
-* [docker build reference](/engine/reference/commandline/image_build/)
-* [docker image tag reference](/engine/reference/commandline/image_tag/)
-* [docker push reference](/engine/reference/commandline/image_push/)
-* [What is a registry?](/guides/docker-concepts/the-basics/what-is-a-registry/)
+* [What is a build context?](__SUBDIR__/build/building/context/#what-is-a-build-context)
+* [docker build reference](__SUBDIR__/engine/reference/commandline/image_build/)
+* [docker image tag reference](__SUBDIR__/engine/reference/commandline/image_tag/)
+* [docker push reference](__SUBDIR__/engine/reference/commandline/image_push/)
+* [What is a registry?](__SUBDIR__/guides/docker-concepts/the-basics/what-is-a-registry/)
 @z
 
 @x

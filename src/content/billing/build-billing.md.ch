@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Docker Build Cloud billing
 description: Learn how to buy a Docker Build Cloud subscription.
 keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder
----
 @y
----
 title: Docker Build Cloud billing
 description: Learn how to buy a Docker Build Cloud subscription.
 keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder
----
 @z
 
 @x
@@ -35,14 +33,14 @@ If you don’t have a Docker Core subscription, you can buy Docker Build Cloud T
 @y
 > **Tip**
 >
-> You can create a free Docker Personal account and [try Docker Build Cloud for free](/subscription/build-cloud/build-details#docker-personal). Team benefits aren't included.
+> You can create a free Docker Personal account and [try Docker Build Cloud for free](__SUBDIR__/subscription/build-cloud/build-details#docker-personal). Team benefits aren't included.
 { .tip }
 @z
 
 @x
 In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](/subscription/build-cloud/build-details).
 @y
-In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](/subscription/build-cloud/build-details).
+In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](__SUBDIR__/subscription/build-cloud/build-details).
 @z
 
 @x
@@ -124,7 +122,7 @@ You can buy a Docker Build Cloud Team subscription if you haven’t created an o
 @x
 When your payment is complete, you’ll be redirected to the dashboard for your new team in Docker Build Cloud. Here, you can [invite users](/subscription/build-cloud/manage-seats/) to your team.
 @y
-When your payment is complete, you’ll be redirected to the dashboard for your new team in Docker Build Cloud. Here, you can [invite users](/subscription/build-cloud/manage-seats/) to your team.
+When your payment is complete, you’ll be redirected to the dashboard for your new team in Docker Build Cloud. Here, you can [invite users](__SUBDIR__/subscription/build-cloud/manage-seats/) to your team.
 @z
 
 @x

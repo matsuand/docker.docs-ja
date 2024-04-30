@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Use containers for Java development
 keywords: Java, local, development, run,
 description: Learn how to develop your application locally.
----
 @y
----
 title: Use containers for Java development
 keywords: Java, local, development, run,
 description: Learn how to develop your application locally.
----
 @z
 
 @x
@@ -822,9 +820,9 @@ Related information:
  - [Compose Watch](../../compose/file-watch.md)
  - [Dockerfile reference](/reference/dockerfile/)
 @y
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](__SUBDIR__/compose/compose-file/)
  - [Compose Watch](../../compose/file-watch.md)
- - [Dockerfile reference](/reference/dockerfile/)
+ - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 @z
 
 @x

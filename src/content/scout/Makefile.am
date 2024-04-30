@@ -13,6 +13,7 @@ bases = \
 	image-details-view.md  \
 	image-prefix.md        \
 	install.md             \
+	metrics-exporter.md    \
 	quickstart.md          \
 	sbom.md
 

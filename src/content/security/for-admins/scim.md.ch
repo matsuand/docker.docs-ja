@@ -1,32 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-@x
----
-keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
-title: SCIM overview
-description: Learn how System for Cross-domain Identity Management works and how to set it up.
-@y
----
-keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
-title: SCIM overview
-description: Learn how System for Cross-domain Identity Management works and how to set it up.
-@z
+% __SUBDIR__ 対応
 
 @x
-direct_from:
-- /docker-hub/company-scim/
-- /docker-hub/scim/
-- /admin/company/settings/scim/
-- /admin/organization/security-settings/scim/
----
+keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
+title: SCIM overview
+description: Learn how System for Cross-domain Identity Management works and how to set it up.
 @y
-direct_from:
-- /docker-hub/company-scim/
-- /docker-hub/scim/
-- /admin/company/settings/scim/
-- /admin/organization/security-settings/scim/
----
+keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
+title: SCIM overview
+description: Learn how System for Cross-domain Identity Management works and how to set it up.
 @z
 
 @x
@@ -96,7 +80,7 @@ The following table lists the supported attributes. Note that your attribute map
 @x
 For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
 @y
-For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
+For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](__SUBDIR__/docker-hub/api/latest/#tag/scim).
 @z
 
 @x
@@ -119,7 +103,7 @@ For additional details about supported attributes and SCIM, see [Docker Hub API 
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
 { .experimental }
 @z
 
@@ -326,7 +310,7 @@ See the documentation for your IdP for additional details:
 @x
 You can assign [roles](/security/for-admins/roles-and-permissions/) to members in your organization in the IdP. To set up a role, you can use optional user-level attributes for the person you want to assign a role. In addition to roles, you can set an organization or team to override the default provisioning values set by the SSO connection.
 @y
-You can assign [roles](/security/for-admins/roles-and-permissions/) to members in your organization in the IdP. To set up a role, you can use optional user-level attributes for the person you want to assign a role. In addition to roles, you can set an organization or team to override the default provisioning values set by the SSO connection.
+You can assign [roles](__SUBDIR__/security/for-admins/roles-and-permissions/) to members in your organization in the IdP. To set up a role, you can use optional user-level attributes for the person you want to assign a role. In addition to roles, you can set an organization or team to override the default provisioning values set by the SSO connection.
 @z
 
 @x
@@ -354,9 +338,9 @@ The following table lists the supported optional user-level attributes.
 @y
 | Attribute | Possible values    | Considerations |
 | --------- | ------------------ | -------------- |
-| `dockerRole` | `member`, `editor`, or `owner`. For a list of permissions for each role, see [Roles and permissions](/security/for-admins/roles-and-permissions/). | If you don't assign a role in the IdP, the value of the `dockerRole` attribute defaults to `member`. When you set the attribute, this overrides the default value. |
+| `dockerRole` | `member`, `editor`, or `owner`. For a list of permissions for each role, see [Roles and permissions](__SUBDIR__/security/for-admins/roles-and-permissions/). | If you don't assign a role in the IdP, the value of the `dockerRole` attribute defaults to `member`. When you set the attribute, this overrides the default value. |
 | `dockerOrg` | `organizationName`. For example, an organization named "moby" would be `moby`. | Setting this attribute overrides the default organization configured by the SSO connection. Also, this won't add the user to the default team. If this attribute isn't set, the user is provisioned to the default organization and the default team. If set and `dockerTeam` is also set, this provisions the user to the team within that org. |
-| `dockerTeam` | `teamName`. For example, a team named "developers" would be `developers`. | Setting this attribute provisions the user to the default org and to the specified team, instead of the SSO connection's default team. This also creates the team if it doesn't exist. You can still use group mapping to provision users to teams in multiple orgs. See [Group mapping](/security/for-admins/group-mapping/). |
+| `dockerTeam` | `teamName`. For example, a team named "developers" would be `developers`. | Setting this attribute provisions the user to the default org and to the specified team, instead of the SSO connection's default team. This also creates the team if it doesn't exist. You can still use group mapping to provision users to teams in multiple orgs. See [Group mapping](__SUBDIR__/security/for-admins/group-mapping/). |
 @z
 
 @x

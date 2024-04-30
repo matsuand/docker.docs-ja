@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応。
+
 @x
----
 description: Learn how to set up SSO in your IdP and take the next steps for enabling SSO.
 keywords: configure, sso, docker hub, hub, docker admin, admin, security
 title: Configure your IdP
----
 @y
----
 description: Learn how to set up SSO in your IdP and take the next steps for enabling SSO.
 keywords: configure, sso, docker hub, hub, docker admin, admin, security
 title: Configure your IdP
----
 @z
 
 @x
@@ -27,10 +25,10 @@ The steps to set up your SSO configuration are:
 3. [Configure your IdP](#step-three-configure-your-idp-to-work-with-docker) to work with Docker.
 4. [Complete your SSO connection](/security/for-admins/single-sign-on/connect/) in Docker.
 @y
-1. [Add and verify the domain or domains](/security/for-admins/single-sign-on/configure#step-one-add-and-verify-your-domain) that your members use to sign in to Docker.
-2. [Create your SSO connection](/security/for-admins/single-sign-on/configure#step-two-create-an-sso-connection-in-docker) in Docker.
+1. [Add and verify the domain or domains](__SUBDIR__/security/for-admins/single-sign-on/configure#step-one-add-and-verify-your-domain) that your members use to sign in to Docker.
+2. [Create your SSO connection](__SUBDIR__/security/for-admins/single-sign-on/configure#step-two-create-an-sso-connection-in-docker) in Docker.
 3. [Configure your IdP](#step-three-configure-your-idp-to-work-with-docker) to work with Docker.
-4. [Complete your SSO connection](/security/for-admins/single-sign-on/connect/) in Docker.
+4. [Complete your SSO connection](__SUBDIR__/security/for-admins/single-sign-on/connect/) in Docker.
 @z
 
 @x
@@ -119,7 +117,7 @@ If you use SAML for your SSO connection, Docker obtains these attributes from th
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
 { .experimental }
 @z
 

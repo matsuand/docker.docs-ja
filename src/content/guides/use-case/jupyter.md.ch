@@ -1,20 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Run, develop, and share data science projects using JupyterLab and Docker
 keywords: getting started, jupyter, notebook, python, jupyterlab, data science
 title: Data science with JupyterLab
-toc_max: 2
----
 @y
----
 description: Run, develop, and share data science projects using JupyterLab and Docker
 keywords: getting started, jupyter, notebook, python, jupyterlab, data science
 title: Data science with JupyterLab
-toc_max: 2
----
 @z
 
 @x
@@ -136,7 +132,7 @@ The following are the notable parts of the command:
 @x
 For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](/reference/cli/docker/container/run/).
 @y
-For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](/reference/cli/docker/container/run/).
+For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](__SUBDIR__/reference/cli/docker/container/run/).
 @z
 
 @x
@@ -172,7 +168,7 @@ change directory to where your existing notebook is. Then,
 run the following command based on your operating system.
 @y
 To access an existing notebook on your system, you can use a
-[bind mount](/storage/bind-mounts/). Open a terminal and
+[bind mount](__SUBDIR__/storage/bind-mounts/). Open a terminal and
 change directory to where your existing notebook is. Then,
 run the following command based on your operating system.
 @z
@@ -304,7 +300,7 @@ When you remove a container, all data in that container is deleted. To save
 notebooks outside of the container, you can use a [volume](/storage/volumes/).
 @y
 When you remove a container, all data in that container is deleted. To save
-notebooks outside of the container, you can use a [volume](/storage/volumes/).
+notebooks outside of the container, you can use a [volume](__SUBDIR__/storage/volumes/).
 @z
 
 @x
@@ -572,7 +568,7 @@ RUN pip install --no-cache-dir matplotlib scikit-learn
 @x
 This Dockerfile uses the `quay.io/jupyter/base-notebook` image as the base, and then runs `pip` to install the dependencies. For more details about the instructions in the Dockerfile, see the [Dockerfile reference](/reference/dockerfile/).
 @y
-This Dockerfile uses the `quay.io/jupyter/base-notebook` image as the base, and then runs `pip` to install the dependencies. For more details about the instructions in the Dockerfile, see the [Dockerfile reference](/reference/dockerfile/).
+This Dockerfile uses the `quay.io/jupyter/base-notebook` image as the base, and then runs `pip` to install the dependencies. For more details about the instructions in the Dockerfile, see the [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
 @z
 
 @x
@@ -978,7 +974,7 @@ $ docker run --rm -p 8889:8888 YOUR-USER-NAME/my-jupyer-image start-notebook.py 
 @x
 This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/docker-hub/oci-artifacts/#push-a-volume).
 @y
-This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/docker-hub/oci-artifacts/#push-a-volume).
+This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](__SUBDIR__/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](__SUBDIR__/docker-hub/oci-artifacts/#push-a-volume).
 @z
 
 @x
@@ -1087,8 +1083,8 @@ Related information:
 - [Docker CLI reference](reference/cli/docker/)
 - [Jupyter Docker Stacks docs](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
 @y
-- [Dockerfile reference](/reference/dockerfile/)
-- [Compose file reference](/compose/compose-file/)
+- [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
+- [Compose file reference](__SUBDIR__/compose/compose-file/)
 - [Docker CLI reference](reference/cli/docker/)
 - [Jupyter Docker Stacks docs](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
 @z

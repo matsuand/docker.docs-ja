@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Multi-stage builds
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the purpose of the multi-stage build and its benefits
----
 @y
----
 title: Multi-stage builds
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the purpose of the multi-stage build and its benefits
----
 @z
 
 @x
@@ -783,8 +781,8 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 * [Creating a base image](/build/building/base-images/)
 * [Spring Boot Docker](https://spring.io/guides/topicals/spring-boot-docker)
 @y
-* [Multi-stage builds](/build/building/multi-stage/)
-* [Dockerfile best practices](/develop/develop-images/dockerfile_best-practices/)
-* [Creating a base image](/build/building/base-images/)
+* [Multi-stage builds](__SUBDIR__/build/building/multi-stage/)
+* [Dockerfile best practices](__SUBDIR__/develop/develop-images/dockerfile_best-practices/)
+* [Creating a base image](__SUBDIR__/build/building/base-images/)
 * [Spring Boot Docker](https://spring.io/guides/topicals/spring-boot-docker)
 @z
