@@ -1506,9 +1506,9 @@ You aren't going to cover any of these advanced use cases here.
 @z
 
 @x
-One of the really cool features of Docker Compose is [variable substitution](../../compose/compose-file/compose-file-v3.md#variable-substitution). You can see some examples in the Compose file, `environment` section. By means of an example:
+One of the really cool features of Docker Compose is [variable substitution](../../compose/compose-file/12-interpolation.md). You can see some examples in the Compose file, `environment` section. By means of an example:
 @y
-One of the really cool features of Docker Compose is [variable substitution](../../compose/compose-file/compose-file-v3.md#variable-substitution). You can see some examples in the Compose file, `environment` section. By means of an example:
+One of the really cool features of Docker Compose is [variable substitution](../../compose/compose-file/12-interpolation.md). You can see some examples in the Compose file, `environment` section. By means of an example:
 @z
 
 @x
@@ -1520,9 +1520,9 @@ One of the really cool features of Docker Compose is [variable substitution](../
 @z
 
 @x
-Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](../../compose/compose-file/compose-file-v3.md#variable-substitution) section of the Docker documentation.
+Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](../../compose/compose-file/12-interpolation.md) section of the Docker documentation.
 @y
-Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](../../compose/compose-file/compose-file-v3.md#variable-substitution) section of the Docker documentation.
+Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](../../compose/compose-file/12-interpolation.md) section of the Docker documentation.
 @z
 
 @x
@@ -1847,10 +1847,10 @@ If you are interested in experimenting with CockroachDB clusters, check out:
 
 @x
 * [Start a CockroachDB Cluster in Docker](https://www.cockroachlabs.com/docs/v20.2/start-a-local-cluster-in-docker-mac.html) article; and
-* Documentation for Docker Compose keywords [`deploy`](../../compose/compose-file/compose-file-v3.md#deploy) and [`replicas`](../../compose/compose-file/compose-file-v3.md#replicas).
+* Documentation for Docker Compose keywords [`deploy`](../../compose/compose-file/legacy-versions.md) and [`replicas`](../../compose/compose-file/legacy-versions.md).
 @y
 * [Start a CockroachDB Cluster in Docker](https://www.cockroachlabs.com/docs/v20.2/start-a-local-cluster-in-docker-mac.html) article; and
-* Documentation for Docker Compose keywords [`deploy`](../../compose/compose-file/compose-file-v3.md#deploy) and [`replicas`](../../compose/compose-file/compose-file-v3.md#replicas).
+* Documentation for Docker Compose keywords [`deploy`](../../compose/compose-file/legacy-versions.md) and [`replicas`](../../compose/compose-file/legacy-versions.md).
 @z
 
 @x

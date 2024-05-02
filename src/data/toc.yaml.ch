@@ -2243,32 +2243,24 @@ Reference:
     - path: /compose/compose-file/deploy/
       title: Compose Deploy Specification
     - path: /compose/compose-file/develop/
-      title: Compose Develop Specification 
-    - sectiontitle: Legacy versions
-      section:
-        - path: /compose/compose-file/compose-versioning/
-          title: About versions and upgrading
-        - path: /compose/compose-file/compose-file-v3/
-          title: Version 3
-        - path: /compose/compose-file/compose-file-v2/
-          title: Version 2
-- path: /glossary/
-  title: Glossary
+      title: Compose Develop Specification
+    - path: /compose/compose-file/legacy-versions/
+      title: Legacy versions
 @y
     - path: __SUBDIR__/compose/compose-file/build/
       title: Compose Build Specification
     - path: __SUBDIR__/compose/compose-file/deploy/
       title: Compose Deploy Specification
     - path: __SUBDIR__/compose/compose-file/develop/
-      title: Compose Develop Specification 
-    - sectiontitle: Legacy versions
-      section:
-        - path: __SUBDIR__/compose/compose-file/compose-versioning/
-          title: About versions and upgrading
-        - path: __SUBDIR__/compose/compose-file/compose-file-v3/
-          title: Version 3
-        - path: __SUBDIR__/compose/compose-file/compose-file-v2/
-          title: Version 2
+      title: Compose Develop Specification
+    - path: __SUBDIR__/compose/compose-file/legacy-versions/
+      title: Legacy versions
+@z
+
+@x
+- path: /glossary/
+  title: Glossary
+@y
 - path: __SUBDIR__/glossary/
   title: 用語集
 @z

@@ -7,7 +7,8 @@ bases = \
 	footer.html       \
 	head.html         \
 	heading.html      \
-	github-links.html
+	github-links.html \
+	search.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

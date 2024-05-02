@@ -6006,10 +6006,10 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-- Added support for the [long syntax](compose-file/compose-file-v3.md#long-syntax-3) for volume entries, as previously introduced in the 3.2 format.
+- Added support for the [long syntax](compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
   Using this syntax will create [mounts](../storage/bind-mounts.md) instead of volumes.
 @y
-- Added support for the [long syntax](compose-file/compose-file-v3.md#long-syntax-3) for volume entries, as previously introduced in the 3.2 format.
+- Added support for the [long syntax](compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
   Using this syntax will create [mounts](../storage/bind-mounts.md) instead of volumes.
 @z
 
@@ -8560,10 +8560,10 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-    Check the [upgrade guide](../compose/compose-file/compose-versioning.md#upgrading)
+    Check the [upgrade guide](../compose/compose-file/legacy-versions.md)
     for full details.
 @y
-    Check the [upgrade guide](../compose/compose-file/compose-versioning.md#upgrading)
+    Check the [upgrade guide](../compose/compose-file/legacy-versions.md)
     for full details.
 @z
 

@@ -8,7 +8,6 @@ bases = \
 	download-rate-limit.md    \
 	mirror.md                 \
 	oci-artifacts.md          \
-	onboard.md                \
 	quickstart.md             \
 	release-notes.md          \
 	service-accounts.md       \

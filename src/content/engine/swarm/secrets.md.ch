@@ -340,11 +340,11 @@ a similar way, see
 @x
 Both the `docker-compose` and `docker stack` commands support defining secrets
 in a compose file. See
-[the Compose file reference](../../compose/compose-file/compose-file-v3.md#secrets) for details.
+[the Compose file reference](../../compose/compose-file/legacy-versions.md) for details.
 @y
 Both the `docker-compose` and `docker stack` commands support defining secrets
 in a compose file. See
-[the Compose file reference](../../compose/compose-file/compose-file-v3.md#secrets) for details.
+[the Compose file reference](../../compose/compose-file/legacy-versions.md) for details.
 @z
 
 @x

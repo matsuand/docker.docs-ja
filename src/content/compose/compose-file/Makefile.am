@@ -16,11 +16,9 @@ bases = \
 	15-profiles.md         \
 	_index.md              \
 	build.md               \
-	compose-file-v2.md     \
-	compose-file-v3.md     \
-	compose-versioning.md  \
 	deploy.md              \
-	develop.md
+	develop.md             \
+	legacy-versions.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -301,7 +301,8 @@ bases = \
 	footer.html       \
 	head.html         \
 	heading.html      \
-	github-links.html
+	github-links.html \
+	search.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

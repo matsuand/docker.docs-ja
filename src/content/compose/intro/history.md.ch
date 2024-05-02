@@ -97,14 +97,14 @@ The Docker Compose CLIs are defined by specific file formats.
 
 @x
 Three major versions of the Compose file format for Compose V1 were released:
-- [Compose file format 1](../compose-file/compose-versioning.md##version-1-to-2x) with Compose 1.0.0 in 2014
-- [Compose file format 2.x](../compose-file/compose-file-v2.md) with Compose 1.6.0 in 2016
-- [Compose file format 3.x](../compose-file/compose-file-v3.md) with Compose 1.10.0 in 2017
+- Compose file format 1 with Compose 1.0.0 in 2014
+- Compose file format 2.x with Compose 1.6.0 in 2016
+- Compose file format 3.x with Compose 1.10.0 in 2017
 @y
 Three major versions of the Compose file format for Compose V1 were released:
-- [Compose file format 1](../compose-file/compose-versioning.md##version-1-to-2x) with Compose 1.0.0 in 2014
-- [Compose file format 2.x](../compose-file/compose-file-v2.md) with Compose 1.6.0 in 2016
-- [Compose file format 3.x](../compose-file/compose-file-v3.md) with Compose 1.10.0 in 2017
+- Compose file format 1 with Compose 1.0.0 in 2014
+- Compose file format 2.x with Compose 1.6.0 in 2016
+- Compose file format 3.x with Compose 1.10.0 in 2017
 @z
 
 @x

@@ -252,11 +252,9 @@ bases = \
 	15-profiles.md         \
 	_index.md              \
 	build.md               \
-	compose-file-v2.md     \
-	compose-file-v3.md     \
-	compose-versioning.md  \
 	deploy.md              \
-	develop.md
+	develop.md             \
+	legacy-versions.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
