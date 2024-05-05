@@ -5,18 +5,12 @@
 
 @x
 title: Docker Compose release notes
-description: Release notes for Docker Compose
+description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
 @y
 title: Docker Compose リリースノート
-description: Docker Compose のリリースノート。
+description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
-@z
-
-@x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
 @z
 
 @x

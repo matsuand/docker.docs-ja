@@ -18,12 +18,6 @@ tags: [FAQ]
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 ### What is the difference between `docker compose` and `docker-compose`
 @y
 ### What is the difference between `docker compose` and `docker-compose`

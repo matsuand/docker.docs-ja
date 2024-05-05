@@ -3,7 +3,7 @@
 
 @x
 ---
-description: Release notes for Docker Desktop for Mac, Linux, and Windows
+description: Find the Docker Desktop release notes for Mac, Linux, and Windows.
 keywords: Docker desktop, release notes, linux, mac, windows
 title: Docker Desktop release notes
 tags: [Release notes]
@@ -20,7 +20,7 @@ aliases:
 ---
 @y
 ---
-description: Release notes for Docker Desktop for Mac, Linux, and Windows
+description: Find the Docker Desktop release notes for Mac, Linux, and Windows.
 keywords: Docker desktop, release notes, linux, mac, windows
 title: Docker Desktop release notes
 tags: [Release notes]

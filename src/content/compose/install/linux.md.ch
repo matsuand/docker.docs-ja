@@ -32,12 +32,6 @@ aliases:
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 On this page you can find instructions on how to install the Compose plugin on Linux from the command line.
 @y
 On this page you can find instructions on how to install the Compose plugin on Linux from the command line.

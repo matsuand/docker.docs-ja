@@ -3,11 +3,11 @@
 
 @x
 title: Manuals
-description: Explore the Docker product user manuals
+description: Learn how to install, set up, configure, and use Docker products with this collection of user guides
 keywords: docker, docs, manuals, products, user guides, how-to
 @y
 title: マニュアル
-description: Docker 製品のユーザーマニュアルを確認します。
+description: Learn how to install, set up, configure, and use Docker products with this collection of user guides
 keywords: docker, docs, manuals, products, user guides, how-to
 @z
 

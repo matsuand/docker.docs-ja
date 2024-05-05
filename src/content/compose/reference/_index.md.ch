@@ -20,12 +20,6 @@ aliases:
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 This page provides usage information for the `docker compose` command.
 @y
 This page provides usage information for the `docker compose` command.

@@ -4,14 +4,12 @@
 % __SUBDIR__ 対応
 
 @x
-description: Explore more of Docker Desktop, what it has to offer, and its key features.
-  Take the next step by downloading or find additional resources.
+description: Explore Docker Desktop, what it has to offer, and its key features. Take the next step by downloading or find additional resources
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
 title: Overview of Docker Desktop
 @y
-description: Explore more of Docker Desktop, what it has to offer, and its key features.
-  Take the next step by downloading or find additional resources.
+description: Explore Docker Desktop, what it has to offer, and its key features. Take the next step by downloading or find additional resources
 keywords: how to use docker desktop, what is docker desktop used for, what does docker
   desktop do, using docker desktop
 title: Docker Desktop の概要

@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: Learn how to register for a Docker ID and log in to your account
+description: Learn how to register for a Docker ID and sign in to your account
 keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
   base, beta access, email, activation, verification
 title: Create an account
 @y
-description: Learn how to register for a Docker ID and log in to your account
+description: Learn how to register for a Docker ID and sign in to your account
 keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
   base, beta access, email, activation, verification
 title: アカウントの生成

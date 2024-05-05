@@ -32,12 +32,6 @@ aliases:
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 This page contains summary information about the available options for installing Docker Compose.
 @y
 This page contains summary information about the available options for installing Docker Compose.

@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: Understand what you can do with Docker Dashboard
+description: Learn how to use the Docker Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
 title: Explore Docker Desktop
 @y
-description: Understand what you can do with Docker Dashboard
+description: Learn how to use the Docker Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
 title: Docker Desktop の確認

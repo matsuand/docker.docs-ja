@@ -5,11 +5,10 @@
 
 @x
 title: Reference documentation
-description: This section includes the reference documentation for the Docker platform’s
-  various APIs, CLIs, and file formats.
+description: Find reference documentation for the Docker platform’s various APIs, CLIs, and file formats
 @y
 title: リファレンスドキュメント
-description: 本節はは Docker プラットフォームに API、CLI、ドライバー仕様、ファイルフォーマットについてのさまざまなリファレンスドキュメントを示すものです。
+description: Docker プラットフォームの API、CLI、ドライバー仕様、ファイルフォーマットについてドキュメントを確認してください。
 @z
 
 % grid_files:

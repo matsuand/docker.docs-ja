@@ -18,12 +18,6 @@ notoc: true
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 You can control the order of service startup and shutdown with the
 [depends_on](compose-file/05-services.md#depends_on) attribute. Compose always starts and stops
 containers in dependency order, where dependencies are determined by

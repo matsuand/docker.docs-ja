@@ -2,14 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
----
-description: Learn about organizations.
+description: Learn about managing organizations in Docker including how they relate to teams, how to onboard, and more
 keywords: organizations, admin, overview
 title: Organization administration overview
 @y
----
-description: Learn about organizations.
+description: Learn about managing organizations in Docker including how they relate to teams, how to onboard, and more
 keywords: organizations, admin, overview
 title: Organization administration overview
 @z

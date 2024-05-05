@@ -191,7 +191,7 @@ Docker は、ボリュームによって確保される保存領域を含め、�
 @x
 You can create the volume and start the container using the CLI or Docker Desktop's graphical interface.
 @y
-You can create the volume and start the container using the CLI or Docker Desktop's graphical interface.
+ボリュームを生成してコンテナーを起動するのは、CLI あるいは Docker Desktop のグラフィック画面のいずれからでも行うことができます。
 @z
 
 @x
@@ -205,25 +205,17 @@ You can create the volume and start the container using the CLI or Docker Deskto
 @x
 1. Create a volume by using the `docker volume create` command.
 @y
-1. Create a volume by using the `docker volume create` command.
+1. `docker volume create` コマンドを使ってボリュームを生成します。
 @z
 
-@x
-   ```console
-   $ docker volume create todo-db
-   ```
-@y
-   ```console
-   $ docker volume create todo-db
-   ```
-@z
+% snip command...
 
 @x
 2. Stop and remove the todo app container once again with `docker rm -f <id>`,
    as it is still running without using the persistent volume.
 @y
-2. Stop and remove the todo app container once again with `docker rm -f <id>`,
-   as it is still running without using the persistent volume.
+2. `docker rm -f <id>` を実行して todo アプリのコンテナーを再び停止させて削除します。
+   実行中のコンテナーは、まだ永続的なボリュームを利用していないからです。
 @z
 
 @x
@@ -231,43 +223,32 @@ You can create the volume and start the container using the CLI or Docker Deskto
    volume mount. Give the volume a name, and mount it to `/etc/todos` in the
    container, which captures all files created at the path.
 @y
-3. Start the todo app container, but add the `--mount` option to specify a
-   volume mount. Give the volume a name, and mount it to `/etc/todos` in the
-   container, which captures all files created at the path.
+3. todo アプリコンテナーを起動します。
+   今回は `--mount` オプションをつけてボリュームマウントを指定します。
+   そこではボリューム名を指定し、コンテナー内の `/etc/todos` へのマウントを行います。
+   このパス内に生成されるファイルをすべて把握することができます。
 @z
 
-@x
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=/etc/todos getting-started
-   ```
-@y
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=/etc/todos getting-started
-   ```
-@z
+% snip command...
 
 @x
    > **Note**
    >
    > If you're using Git Bash, you must use different syntax for this command.
+@y
+   > **メモ**
    >
-   > ```console
-   > $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=//etc/todos getting-started
-   > ```
+   > Git Bash を利用している場合は、このコマンドにおいて異なる文法を用いる必要があります。
    >
+@z
+
+% snip command...
+
+@x
    > For more details about Git Bash's syntax differences, see
    > [Working with Git Bash](../desktop/troubleshoot/topics/#working-with-git-bash).
 @y
-   > **Note**
-   >
-   > If you're using Git Bash, you must use different syntax for this command.
-   >
-   > ```console
-   > $ docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=todo-db,target=//etc/todos getting-started
-   > ```
-   >
-   > For more details about Git Bash's syntax differences, see
-   > [Working with Git Bash](../desktop/troubleshoot/topics/#working-with-git-bash).
+   > Git Bash の文法の相違に関しては [Git Bash を使った操作](../desktop/troubleshoot/topics/#working-with-git-bash) を参照してください。
 @z
 
 @x
@@ -281,7 +262,7 @@ You can create the volume and start the container using the CLI or Docker Deskto
 @x
 To create a volume:
 @y
-To create a volume:
+ボリューム生成のために以下を行います。
 @z
 
 @x
@@ -289,29 +270,29 @@ To create a volume:
 2. In **Volumes**, select **Create**.
 3. Specify `todo-db` as the volume name, and then select **Create**.
 @y
-1. Select **Volumes** in Docker Desktop.
-2. In **Volumes**, select **Create**.
-3. Specify `todo-db` as the volume name, and then select **Create**.
+1. Docker Desktop において **Volumes** (ボリューム) を開きます。
+2. **Volumes** (ボリューム) において **Create** (生成) をクリックします。
+3. ボリューム名として `todo-db` を入力し **Create** (生成) をクリックします。
 @z
 
 @x
 To stop and remove the app container:
 @y
-To stop and remove the app container:
+アプリコンテナーの停止と削除は以下を行います。
 @z
 
 @x
 1. Select **Containers** in Docker Desktop.
 2. Select **Delete** in the **Actions** column for the container.
 @y
-1. Select **Containers** in Docker Desktop.
-2. Select **Delete** in the **Actions** column for the container.
+1. Docker Desktop において **Containers** (コンテナー) を開きます。
+2. 対象コンテナーの **Actions** (動作) カラムにおいて **Delete** (削除) を選択します。
 @z
 
 @x
 To start the todo app container with the volume mounted:
 @y
-To start the todo app container with the volume mounted:
+ボリュームマウントを行った todo アプリコンテナーの起動は以下を行います。
 @z
 
 @x
@@ -319,9 +300,9 @@ To start the todo app container with the volume mounted:
 2. In the search window, select the **Images** tab.
 3. In the search box, specify the container name, `getting-started`.
 @y
-1. Select the search box at the top of Docker Desktop.
-2. In the search window, select the **Images** tab.
-3. In the search box, specify the container name, `getting-started`.
+1. Docker Desktop の最上段の検索欄を選択します。
+2. 検索画面にて **Images** タブを選択します。
+3. 検索欄においてコンテナー名として `getting-started` を入力します。
 @z
 
 @x
@@ -330,9 +311,9 @@ To start the todo app container with the volume mounted:
    >  Use the search filter to filter images and only show **Local images**.
    { .tip }
 @y
-   > **Tip**
+   > **ヒント**
    >
-   >  Use the search filter to filter images and only show **Local images**.
+   >  検索フィルターを用いてイメージの絞り込みを行えば **ローカルイメージ** のみを表示することができます。
    { .tip }
 @z
 
@@ -344,12 +325,12 @@ To start the todo app container with the volume mounted:
 8. In **Container path**, specify `/etc/todos`.
 9. Select **Run**.
 @y
-4. Select your image and then select **Run**.
-5. Select **Optional settings**.
-6. In **Host port**, specify the port, for example, `3000`.
-7. In **Host path**, specify the name of the volume, `todo-db`.
-8. In **Container path**, specify `/etc/todos`.
-9. Select **Run**.
+4. イメージを選択して **Run** (実行) をクリックします。
+5. **Optional settings** (オプション設定) をクリックします。
+6. **Host port** (ホストポート) にて、たとえば `3000` といったポートを入力します。
+7. **Host path** (ホストパス) にて、ボリューム名 `todo-db` を入力します。
+8. **Container path** (コンテナーパス) にて `/etc/todos` を入力します。
+9. **Run** (実行) をクリックします。
 @z
 
 @x
@@ -363,121 +344,95 @@ To start the todo app container with the volume mounted:
 @x
 ### Verify that the data persists
 @y
-### Verify that the data persists
+### データの保存確認 {#verify-that-the-data-persists}
 @z
 
 @x
 1. Once the container starts up, open the app and add a few items to your todo list.
 @y
-1. Once the container starts up, open the app and add a few items to your todo list.
+1. コンテナーが起動したら、アプリケーションを開いて todo リストにアイテムをいくつか追加します。
 @z
 
 @x
     ![Items added to todo list](images/items-added.webp)
 @y
-    ![Items added to todo list](images/items-added.webp)
+    ![todo リストに追加したアイテム](images/items-added.webp)
 @z
 
 @x
 2. Stop and remove the container for the todo app. Use Docker Desktop or `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
 @y
-2. Stop and remove the container for the todo app. Use Docker Desktop or `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
+2. todo アプリのコンテナーを停止して削除します。
+   これを行うには Docker Desktop を利用します。
+   または `docker ps` を実行して ID を確認した上で `docker rm -f <id>` により削除します。
 @z
 
 @x
 3. Start a new container using the previous steps.
 @y
-3. Start a new container using the previous steps.
+3. 以前行った手順を使って新たなコンテナーを起動します。
 @z
 
 @x
 4. Open the app. You should see your items still in your list.
 @y
-4. Open the app. You should see your items still in your list.
+4. アプリを開きます。
+   追加したアイテムがリストの中にあるはずです。
 @z
 
 @x
 5. Go ahead and remove the container when you're done checking out your list.
 @y
-5. Go ahead and remove the container when you're done checking out your list.
+5. リストの確認を終えたら、コンテナーを削除して先に進みます。
 @z
 
 @x
 You've now learned how to persist data.
 @y
-You've now learned how to persist data.
+ここまでにデータの保存方法について学びました。
 @z
 
 @x
 ## Dive into the volume
 @y
-## Dive into the volume
+## ボリュームの中身 {#dive-into-the-volume}
 @z
 
 @x
 A lot of people frequently ask "Where is Docker storing my data when I use a volume?" If you want to know, 
 you can use the `docker volume inspect` command.
 @y
-A lot of people frequently ask "Where is Docker storing my data when I use a volume?" If you want to know, 
-you can use the `docker volume inspect` command.
+多くの人からよく尋ねられます。
+「ボリューム利用時に Docker はデータをどこに保存するのか？」
+この答えを知りたければ `docker volume inspect` コマンドを実行してみてください。
 @z
 
-@x
-```console
-$ docker volume inspect todo-db
-[
-    {
-        "CreatedAt": "2019-09-26T02:18:36Z",
-        "Driver": "local",
-        "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/todo-db/_data",
-        "Name": "todo-db",
-        "Options": {},
-        "Scope": "local"
-    }
-]
-```
-@y
-```console
-$ docker volume inspect todo-db
-[
-    {
-        "CreatedAt": "2019-09-26T02:18:36Z",
-        "Driver": "local",
-        "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/todo-db/_data",
-        "Name": "todo-db",
-        "Options": {},
-        "Scope": "local"
-    }
-]
-```
-@z
+% snip command...
 
 @x
 The `Mountpoint` is the actual location of the data on the disk. Note that on most machines, you will
 need to have root access to access this directory from the host.
 @y
-The `Mountpoint` is the actual location of the data on the disk. Note that on most machines, you will
-need to have root access to access this directory from the host.
+`Mountpoint` というのが、ディスク上にデータが保存される実際の場所です。
+ほとんどのマシンにおいて、ホスト上からそのディレクトリにアクセスするには、root アクセス権限を必要とします。
 @z
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
 In this section, you learned how to persist container data.
 @y
-In this section, you learned how to persist container data.
+本節ではコンテナーデータの保存方法について学びました。
 @z
 
 @x
 Related information:
 @y
-Related information:
+関連情報
 @z
 
 @x
@@ -497,7 +452,7 @@ Related information:
 @x
 Next, you'll learn how you can develop your app more efficiently using bind mounts.
 @y
-Next, you'll learn how you can develop your app more efficiently using bind mounts.
+次は、より効果的にアプリ開発を行うためにバインドマウントの利用方法について学びます。
 @z
 
 @x

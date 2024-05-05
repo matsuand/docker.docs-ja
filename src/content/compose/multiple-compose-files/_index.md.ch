@@ -18,12 +18,6 @@ title: Overview
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 This section contains information on the ways you can work with multiple Compose files. 
 @y
 This section contains information on the ways you can work with multiple Compose files. 

@@ -72,15 +72,7 @@ Use the following command in a terminal to clone the sample application reposito
 端末画面から以下のコマンドを実行して、サンプルアプリケーションのリポジトリのクローンを取得します。
 @z
 
-@x
-```console
-$ git clone https://github.com/docker/bindmount-apps
-```
-@y
-```console
-$ git clone https://github.com/docker/bindmount-apps
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -99,7 +91,7 @@ Download the source and extract it.
 @x
 {{< button url="https://github.com/docker/bindmount-apps/archive/refs/heads/main.zip" text="Download the source" >}}
 @y
-{{< button url="https://github.com/docker/bindmount-apps/archive/refs/heads/main.zip" text="Download the source" >}}
+{{< button url="https://github.com/docker/bindmount-apps/archive/refs/heads/main.zip" text="ソースのダウンロード" >}}
 @z
 
 @x
@@ -135,27 +127,7 @@ To add a bind mount to this project, open the `compose.yaml` file in a code or t
 このプロジェクトにバインドマウントを追加するために、コードエディターまたはテキストエディターを使って `compose.yaml` ファイルを開き、以下のコメント行のコメント記号を取り除きます。
 @z
 
-@x
-```yaml
-todo-app:
-    # ...
-    volumes:
-      - ./app:/usr/src/app
-      - /usr/src/app/node_modules
-@y
-```yaml
-todo-app:
-    # ...
-    volumes:
-      - ./app:/usr/src/app
-      - /usr/src/app/node_modules
-@z
-
-@x
-```
-@y
-```
-@z
+% snip code...
 
 @x
 The `volumes` element tells Compose to mount the local folder `./app` to `/usr/src/app` in the container for the `todo-app` service. This particular bind mount overwrites the static contents of the `/usr/src/app` directory in the container and creates what is known as a development container. The second instruction, `/usr/src/app/node_modules`, prevents the bind mount from overwriting the container's `node_modules` directory to preserve the packages installed in the container.

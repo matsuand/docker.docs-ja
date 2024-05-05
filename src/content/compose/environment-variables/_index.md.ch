@@ -18,12 +18,6 @@ keywords: compose, orchestration, environment, env file
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 Use environment variables to pass configuration information to containers at runtime. 
 @y
 Use environment variables to pass configuration information to containers at runtime. 

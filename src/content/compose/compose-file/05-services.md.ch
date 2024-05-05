@@ -2528,11 +2528,11 @@ Optionally, limit the number of restart retries the Docker daemon attempts.
 
 @x
 You can find more detailed information on restart policies in the
-[Restart Policies (--restart)](/engine/reference/run/#restart-policies---restart)
+[Restart Policies (--restart)](../../reference/cli/docker/container/run.md#restart)
 section of the Docker run reference page.
 @y
 You can find more detailed information on restart policies in the
-[Restart Policies (--restart)](__SUBDIR__/engine/reference/run/#restart-policies---restart)
+[Restart Policies (--restart)](../../reference/cli/docker/container/run.md#restart)
 section of the Docker run reference page.
 @z
 
@@ -2703,9 +2703,9 @@ to the contents of the file `./server.cert`.
 % snip code...
 
 @x
-For further default labeling schemes you can override, see [Security configuration](https://docs.docker.com/engine/reference/run/#security-configuration).
+For further default labeling schemes you can override, see [Security configuration](../../reference/cli/docker/container/run.md#security-opt).
 @y
-For further default labeling schemes you can override, see [Security configuration](https://docs.docker.com/engine/reference/run/#security-configuration).
+For further default labeling schemes you can override, see [Security configuration](../../reference/cli/docker/container/run.md#security-opt).
 @z
 
 @x
@@ -2808,12 +2808,12 @@ If unset containers are stopped by Compose by sending `SIGTERM`.
 You can only use sysctls that are namespaced in the kernel. Docker does not
 support changing sysctls inside a container that also modify the host system.
 For an overview of supported sysctls, refer to [configure namespaced kernel
-parameters (sysctls) at runtime](https://docs.docker.com/engine/reference/commandline/run/#sysctl).
+parameters (sysctls) at runtime](../../reference/cli/docker/container/run.md#sysctl).
 @y
 You can only use sysctls that are namespaced in the kernel. Docker does not
 support changing sysctls inside a container that also modify the host system.
 For an overview of supported sysctls, refer to [configure namespaced kernel
-parameters (sysctls) at runtime](https://docs.docker.com/engine/reference/commandline/run/#sysctl).
+parameters (sysctls) at runtime](../../reference/cli/docker/container/run.md#sysctl).
 @z
 
 @x

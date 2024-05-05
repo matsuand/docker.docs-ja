@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: Overview of Docker Official Images
+description: Get an overview on Docker Official Images, what they are, and how they differ from other images available on Docker Hub
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, docs,
   official,image, documentation
 title: Docker Official Images
 @y
-description: Overview of Docker Official Images
+description: Get an overview on Docker Official Images, what they are, and how they differ from other images available on Docker Hub
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, docs,
   official,image, documentation
 title: Docker 公式イメージ

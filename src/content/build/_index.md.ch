@@ -5,11 +5,11 @@
 
 @x
 title: Overview of Docker Build
-description: Introduction and overview of Docker Build
+description: Get an overview of Docker Build to package and bundle your code and ship it anywhere
 keywords: build, buildx, buildkit
 @y
 title: Docker Build 概要
-description: Docker Build の導入と概要です。
+description: Get an overview of Docker Build to package and bundle your code and ship it anywhere
 keywords: build, buildx, buildkit
 @z
 

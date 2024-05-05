@@ -12,12 +12,6 @@ keywords: compose, orchestration, install, installation, docker, documentation
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 On this page you can find instructions on how to install Compose standalone on Linux or Windows Server, from the command line.
 @y
 このページでは Linux または Windows Server 上において、コマンドラインを使ってスタンドアローンの Compose をインストールする手順を示します。

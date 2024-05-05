@@ -16,12 +16,6 @@ title: Use Compose in production
 @z
 
 @x
-{{< include "compose-eol.md" >}}
-@y
-{{< include "compose-eol.md" >}}
-@z
-
-@x
 When you define your app with Compose in development, you can use this
 definition to run your application in different environments such as CI,
 staging, and production.

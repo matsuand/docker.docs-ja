@@ -1,16 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__対応
+
 @x
----
 title: Overview of get started
 keywords: get started, quick start, intro, concepts
-description: Learn how to get started with Docker and Docker Desktop
+description: Find quick, hands-on guides on containerization concepts and how to use Docker Desktop
 @y
----
 title: はじめるにあたって
 keywords: get started, quick start, intro, concepts
-description: Learn how to get started with Docker and Docker Desktop
+description: Find quick, hands-on guides on containerization concepts and how to use Docker Desktop
 @z
 
 @x

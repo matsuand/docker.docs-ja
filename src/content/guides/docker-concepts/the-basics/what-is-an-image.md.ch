@@ -274,7 +274,7 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @x
     This output shows you information about relevant images available on Docker Hub.
 @y
-    This output shows you information about relevant images available on Docker Hub.
+    この出力には Docker Hub において利用可能な関連イメージの情報が示されています。
 @z
 
 @x
@@ -296,7 +296,8 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @x
     Each of line represents a different downloaded layer of the image. Remember that each layer is a set of filesystem changes and provides functionality of the image.
 @y
-    Each of line represents a different downloaded layer of the image. Remember that each layer is a set of filesystem changes and provides functionality of the image.
+    ダウンロードしたイメージレイヤーについての情報が一行ずつ示されています。
+    各レイヤーはファイルシステムの変更情報であり、イメージの機能性を表したものであることを思い出してください。
 @z
 
 @x
@@ -335,13 +336,13 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @y
     > **イメージサイズ**
     > 
-    > The image size represented here reflects the uncompressed size of the image, not the download size of the layers.
+    > ここに示されるイメージサイズは、イメージを伸長 (解凍) したサイズを示しており、レイヤーのダウンロードサイズではありません。
 @z
 
 @x
 2. List the image's layers using the [`docker image history`](/reference/cli/docker/image/history/) command:
 @y
-2. List the image's layers using the [`docker image history`](__SUBDIR__/reference/cli/docker/image/history/) command:
+2. [`docker image history`](__SUBDIR__/reference/cli/docker/image/history/) コマンドを使ってイメージのレイヤーを一覧表示します。
 @z
 
 % snip command...
@@ -357,7 +358,7 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @x
     This output shows you all of the layers, their sizes, and the command used to create the layer. 
 @y
-    This output shows you all of the layers, their sizes, and the command used to create the layer. 
+    この出力によって全レイヤーの情報、そのサイズ、またレイヤー生成時のコマンドを見ることができます。
 @z
 
 @x
@@ -366,9 +367,10 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
     > If you add the `--no-trunc` flag to the command, you will see the full command. Note that, since the output is in a table-like format, longer commands will cause the output to be very difficult to navigate.
     { .tip }
 @y
-    > **Viewing the full command**
+    > **コマンドのフル表示**
     >
-    > If you add the `--no-trunc` flag to the command, you will see the full command. Note that, since the output is in a table-like format, longer commands will cause the output to be very difficult to navigate.
+    > 上のコマンドに対して `--no-trunc` フラグをつけると、コマンドをフル表示にすることができます。
+    > 出力結果は表形式で行われているため、コマンドが長ければ、出力結果がその分だけわかりにくくなります。
     { .tip }
 @z
 
@@ -383,7 +385,8 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @x
 In this walkthrough, you searched and pulled a Docker image. In addition to pulling a Docker image, you also learned about the layers of a Docker Image.
 @y
-In this walkthrough, you searched and pulled a Docker image. In addition to pulling a Docker image, you also learned about the layers of a Docker Image.
+このウォークスルーを通じて、Docker イメージの検索とプルを行いました。
+Docker イメージのプルに加えて、Docker イメージのレイヤー内容についても学びました。
 @z
 
 @x
@@ -395,7 +398,7 @@ In this walkthrough, you searched and pulled a Docker image. In addition to pull
 @x
 The following resources will help you learn more about exploring, finding, and building images:
 @y
-The following resources will help you learn more about exploring, finding, and building images:
+以下に示す情報では、イメージに対する情報、検索方法、ビルド方法をより詳しく学ぶことができます。
 @z
 
 @x
@@ -408,11 +411,11 @@ The following resources will help you learn more about exploring, finding, and b
 - [Docker Hub](https://hub.docker.com)
 @y
 - [Docker Trusted Content](__SUBDIR__/trusted-content/)
-  - [Docker Official Images docs](__SUBDIR__/trusted-content/official-images/)
-  - [Docker Verified Publisher docs](__SUBDIR__/trusted-content/dvp-program/)
-  - [Docker-Sponsored Open Source Program docs](__SUBDIR__/trusted-content/dsos-program/)
+  - [Docker 公式イメージのドキュメント](__SUBDIR__/trusted-content/official-images/)
+  - [Docker Verified Publisher のドキュメント](__SUBDIR__/trusted-content/dvp-program/)
+  - [Docker 提供のオープンソースプログラムのドキュメント](__SUBDIR__/trusted-content/dsos-program/)
 - [Explore the Image view in Docker Desktop](__SUBDIR__/desktop/use-desktop/images/)
-- [Packaging your software](__SUBDIR__/build/building/packaging/)
+- [ソフトウェアのパッケージング](__SUBDIR__/build/building/packaging/)
 - [Docker Hub](https://hub.docker.com)
 @z
 
@@ -425,7 +428,8 @@ The following resources will help you learn more about exploring, finding, and b
 @x
 Now that you have learned the basics of images, it's time to learn about distributing images through registries.
 @y
-Now that you have learned the basics of images, it's time to learn about distributing images through registries.
+イメージの基本について学んできました。
+次はレジストリを通じてイメージを配布する方法について学びます。
 @z
 
 @x

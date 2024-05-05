@@ -391,7 +391,8 @@ You will see output like the following:
 This container runs a web server that displays a simple website. When working with more complex projects, you'll run different parts in different containers. For example, a different container for the `frontend`, `backend`, and `database`.
 @y
 このコンテナーはウェブサーバーを起動するものであって、単純なウェブサイトを表示します。
-When working with more complex projects, you'll run different parts in different containers. For example, a different container for the `frontend`, `backend`, and `database`.
+これよりも複雑なプロジェクトで作業する場合には、さまざまなコンテナー内のさまざまな機能を実行することになります。
+たとえばフロントエンド、バックエンド、データベースといった用途でコンテナーを動作させることも出てくることでしょう。
 @z
 
 @x
