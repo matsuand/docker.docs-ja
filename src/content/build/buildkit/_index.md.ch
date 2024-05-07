@@ -584,18 +584,6 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 @z
 
 @x
-   > **Note**
-   >
-   > For a consistent experience, use forward-slashes `/` for paths, e.g. `C:/` instead of `C:\`.
-   > Support for Windows-style paths is tracked in [moby/buildkit#4696](https://github.com/moby/buildkit/issues/4696).
-@y
-   > **Note**
-   >
-   > For a consistent experience, use forward-slashes `/` for paths, e.g. `C:/` instead of `C:\`.
-   > Support for Windows-style paths is tracked in [moby/buildkit#4696](https://github.com/moby/buildkit/issues/4696).
-@z
-
-@x
 10. Build and push the image to a registry.
 @y
 10. Build and push the image to a registry.

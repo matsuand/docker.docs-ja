@@ -262,7 +262,7 @@ examples: |-
 @x
     For more information about build drivers, see [here](/build/drivers/).
 @y
-    For more information about build drivers, see [here](/build/drivers/).
+    For more information about build drivers, see [here](__SUBDIR__/build/drivers/).
 @z
 
 @x
@@ -278,7 +278,7 @@ examples: |-
     not currently supported.
 @y
     Uses the builder that is built into the Docker daemon. With this driver,
-    the [`--load`](/reference/cli/docker/buildx/build/#load) flag is implied by default on
+    the [`--load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) flag is implied by default on
     `buildx build`. However, building multi-platform images or exporting cache is
     not currently supported.
 @z
@@ -303,7 +303,7 @@ examples: |-
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
+    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -327,7 +327,7 @@ examples: |-
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
+    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -353,7 +353,7 @@ examples: |-
     to achieve that.
 @y
     Unlike `docker` driver, built images will not automatically appear in
-    `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
+    `docker images` and [`build --load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.
 @z
 
@@ -381,10 +381,10 @@ examples: |-
     * [`kubernetes` driver](/build/drivers/kubernetes/)
     * [`remote` driver](/build/drivers/remote/)
 @y
-    * [`docker` driver](/build/drivers/docker/)
-    * [`docker-container` driver](/build/drivers/docker-container/)
-    * [`kubernetes` driver](/build/drivers/kubernetes/)
-    * [`remote` driver](/build/drivers/remote/)
+    * [`docker` driver](__SUBDIR__/build/drivers/docker/)
+    * [`docker-container` driver](__SUBDIR__/build/drivers/docker-container/)
+    * [`kubernetes` driver](__SUBDIR__/build/drivers/kubernetes/)
+    * [`remote` driver](__SUBDIR__/build/drivers/remote/)
 @z
 
 @x

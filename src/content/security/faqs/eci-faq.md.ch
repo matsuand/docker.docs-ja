@@ -177,21 +177,41 @@ See [ECI Docker socket mount permissions](../../desktop/hardened-desktop/enhance
 
 @x
 Not yet. It protects all containers launched by users via `docker create` and
-`docker run`. In addition, it protects containers implicitly used by `docker build`, when
-using the [docker-container build driver](../../build/drivers/_index.md).
+`docker run`.
 @y
 Not yet. It protects all containers launched by users via `docker create` and
-`docker run`. In addition, it protects containers implicitly used by `docker build`, when
-using the [docker-container build driver](../../build/drivers/_index.md).
+`docker run`.
 @z
 
 @x
-It does not yet protect containers implicitly used by `docker build` with the
-`docker` build driver, nor Docker Desktop Kubernetes pods, Extension containers,
+Prior to Docker Desktop 4.30, it did not protect containers implicitly used by
+`docker build` with the `docker` build driver (the default driver). Starting
+with Docker Desktop 4.30, it protects such containers, except for Docker Desktop
+on WSL 2 (Windows hosts).
+@y
+Prior to Docker Desktop 4.30, it did not protect containers implicitly used by
+`docker build` with the `docker` build driver (the default driver). Starting
+with Docker Desktop 4.30, it protects such containers, except for Docker Desktop
+on WSL 2 (Windows hosts).
+@z
+
+@x
+Note that ECI always protects containers used by `docker build`, when using the
+[docker-container build driver](../../build/drivers/_index.md), since Docker
+Desktop 4.19 and on all supported platforms (Windows with WSL 2 or Hyper-V, Mac,
+and Linux).
+@y
+Note that ECI always protects containers used by `docker build`, when using the
+[docker-container build driver](../../build/drivers/_index.md), since Docker
+Desktop 4.19 and on all supported platforms (Windows with WSL 2 or Hyper-V, Mac,
+and Linux).
+@z
+
+@x
+ECI does not yet protect Docker Desktop Kubernetes pods, Extension containers,
 and [Dev Environments containers](../../desktop/dev-environments/_index.md).
 @y
-It does not yet protect containers implicitly used by `docker build` with the
-`docker` build driver, nor Docker Desktop Kubernetes pods, Extension containers,
+ECI does not yet protect Docker Desktop Kubernetes pods, Extension containers,
 and [Dev Environments containers](../../desktop/dev-environments/_index.md).
 @z
 

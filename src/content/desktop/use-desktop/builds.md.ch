@@ -275,10 +275,10 @@ The **Configuration** section of the Info tab shows parameters passed to the bui
 
 @x
 The **Build results** section shows a summary of the generated build artifacts,
-including image manifest details, attestations, and Open Telemetry traces.
+including image manifest details, attestations, and build traces.
 @y
 The **Build results** section shows a summary of the generated build artifacts,
-including image manifest details, attestations, and Open Telemetry traces.
+including image manifest details, attestations, and build traces.
 @z
 
 @x
@@ -294,15 +294,85 @@ For more information about attestations, see [Build attestations](../../build/at
 @z
 
 @x
-Open Telemetry traces for builds capture information about the build execution
-steps in Buildx and BuildKit. You can view and analyze the traces yourself
-using a trace visualization tool like Jaeger. Refer to
-[OpenTelemetry support](../../build/building/opentelemetry.md) for more information.
+Build traces capture information about the build execution steps in Buildx and
+BuildKit. The traces are available in two formats: OTLP and Jaeger. You can
+download build traces from Docker Desktop by opening the actions menu and
+selecting the format you want to download.
 @y
-Open Telemetry traces for builds capture information about the build execution
-steps in Buildx and BuildKit. You can view and analyze the traces yourself
-using a trace visualization tool like Jaeger. Refer to
-[OpenTelemetry support](../../build/building/opentelemetry.md) for more information.
+Build traces capture information about the build execution steps in Buildx and
+BuildKit. The traces are available in two formats: OTLP and Jaeger. You can
+download build traces from Docker Desktop by opening the actions menu and
+selecting the format you want to download.
+@z
+
+@x
+#### Inspect build traces with Jaeger
+@y
+#### Inspect build traces with Jaeger
+@z
+
+@x
+Using a Jaeger client, you can import and inspect build traces from Docker
+Desktop. The following steps show you how to export a trace from Docker Desktop
+and view it in [Jaeger](https://www.jaegertracing.io/):
+@y
+Using a Jaeger client, you can import and inspect build traces from Docker
+Desktop. The following steps show you how to export a trace from Docker Desktop
+and view it in [Jaeger](https://www.jaegertracing.io/):
+@z
+
+@x
+1. Start Jaeger UI:
+@y
+1. Start Jaeger UI:
+@z
+
+% snip command...
+
+@x
+2. Open the Builds view in Docker Desktop, and select a completed build.
+@y
+2. Open the Builds view in Docker Desktop, and select a completed build.
+@z
+
+@x
+3. Navigate to the **Build results** section, open the actions menu and select **Download as Jaeger format**.
+@y
+3. Navigate to the **Build results** section, open the actions menu and select **Download as Jaeger format**.
+@z
+
+@x
+   <video controls>
+     <source src="/assets/video/build-jaeger-export.mp4" type="video/mp4" />
+   </video>
+@y
+   <video controls>
+     <source src="__SUBDIR__/assets/video/build-jaeger-export.mp4" type="video/mp4" />
+   </video>
+@z
+
+@x
+4. Go to <http://localhost:16686> in your browser to open Jaeger UI.
+@y
+4. Go to <http://localhost:16686> in your browser to open Jaeger UI.
+@z
+
+@x
+5. Select the **Upload** tab and open the Jaeger build trace you just exported.
+@y
+5. Select the **Upload** tab and open the Jaeger build trace you just exported.
+@z
+
+@x
+Now you can analyze the build trace using the Jaeger UI:
+@y
+Now you can analyze the build trace using the Jaeger UI:
+@z
+
+@x
+![Jaeger UI screenshot](../images/build-ui-jaeger-screenshot.png "Screenshot of a build trace in the Jaeger UI")
+@y
+![Jaeger UI screenshot](../images/build-ui-jaeger-screenshot.png "Screenshot of a build trace in the Jaeger UI")
 @z
 
 @x

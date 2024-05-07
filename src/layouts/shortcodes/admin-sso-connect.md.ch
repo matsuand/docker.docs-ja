@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $sso_navigation := `Navigate to the SSO settings page for your organization or company.
@@ -76,7 +78,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 @y
 >**Important**
 >
-> SSO has Just-in-Time (JIT) provisioning enabled by default, unless you have [disabled it](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled). This means your users are auto-provisioned to your organization on Docker Hub.
+> SSO has Just-in-Time (JIT) provisioning enabled by default, unless you have [disabled it](__SUBDIR__/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled). This means your users are auto-provisioned to your organization on Docker Hub.
 >
 > You can change this on a per-app basis. To prevent auto-provisioning users, you can create a security group in your IdP and configure the SSO app to authenticate and authorize only those users that are in the security group. Follow the instructions provided by your IdP:
 >
@@ -88,7 +90,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 @x
 The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see [Set up SCIM](/security/for-admins/scim/).
 @y
-The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see [Set up SCIM](/security/for-admins/scim/).
+The SSO connection is now created. You can continue to set up SCIM without enforcing SSO log-in. For more information about setting up SCIM, see [Set up SCIM](__SUBDIR__/security/for-admins/scim/).
 @z
 
 @x

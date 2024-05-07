@@ -676,9 +676,9 @@ Run the image with a bind mount.
 2. In the search window, select the **Images** tab.
 3. In the search box, specify the container name, `getting-started`.
 @y
-1. Select the search box at the top of Docker Desktop.
-2. In the search window, select the **Images** tab.
-3. In the search box, specify the container name, `getting-started`.
+1. Docker Desktop の最上段の検索欄を選択します。
+2. 検索画面にて **Images** タブを選択します。
+3. 検索欄においてコンテナー名として `getting-started` を入力します。
 @z
 
 @x
@@ -689,7 +689,7 @@ Run the image with a bind mount.
 @y
    > **ヒント**
    >
-   >  Use the search filter to filter images and only show **Local images**.
+   >  検索フィルターを用いてイメージの絞り込みを行えば **ローカルイメージ** のみを表示することができます。
    { .tip }
 @z
 
@@ -700,31 +700,31 @@ Run the image with a bind mount.
 7. In **Container path**, specify `/app`.
 8. Select **Run**.
 @y
-4. Select your image and then select **Run**.
-5. Select **Optional settings**.
-6. In **Host path**, specify the path to the `getting-started-app` directory on your host machine.
-7. In **Container path**, specify `/app`.
-8. Select **Run**.
+4. イメージを選択して **Run** (実行) をクリックします。
+5. **Optional settings** (オプション設定) をクリックします。
+6. **Host path** (ホストパス) に、ホスト上の `getting-started-app` ディレクトリへのパスを入力します。
+7. **Container path** (コンテナーパス) に `/app` を入力します。
+8. **Run** (実行) をクリックします。
 @z
 
 @x
 You can watch the container logs using Docker Desktop.
 @y
-You can watch the container logs using Docker Desktop.
+Docker Desktop を使ってコンテナーログを確認します。
 @z
 
 @x
 1. Select **Containers** in Docker Desktop.
 2. Select your container name.
 @y
-1. Select **Containers** in Docker Desktop.
-2. Select your container name.
+1. Docker Desktop の **Containers** (コンテナー) を選択します。
+2. 対象のコンテナーを選択します。
 @z
 
 @x
 You'll know you're ready to go when you see this:
 @y
-You'll know you're ready to go when you see this:
+以下のようになっていれば成功です。
 @z
 
 % snip command...
@@ -740,21 +740,20 @@ You'll know you're ready to go when you see this:
 @x
 ### Develop your app with the development container
 @y
-### Develop your app with the development container
+### 開発用コンテナーを使ったアプリ開発 {#develop-your-app-with-the-development-container}
 @z
 
 @x
 Update your app on your host machine and see the changes reflected in the container.
 @y
-Update your app on your host machine and see the changes reflected in the container.
+ホスト上のアプリを更新して、その変更内容がコンテナーに反映されることを確認します。
 @z
 
 @x
 1. In the `src/static/js/app.js` file, on line
    109, change the "Add Item" button to simply say "Add":
 @y
-1. In the `src/static/js/app.js` file, on line
-   109, change the "Add Item" button to simply say "Add":
+1. ファイル `src/static/js/app.js` の 109 行めにある "Add Item" (アイテム追加) ボタン名を単に "Add" とします。
 @z
 
 % snip diff...
@@ -762,7 +761,7 @@ Update your app on your host machine and see the changes reflected in the contai
 @x
    Save the file.
 @y
-   Save the file.
+   ファイルを保存します。
 @z
 
 @x
@@ -771,16 +770,18 @@ Update your app on your host machine and see the changes reflected in the contai
    restarts the server. It might take a few seconds for the Node server to
    restart. If you get an error, try refreshing after a few seconds.
 @y
-2. Refresh the page in your web browser, and you should see the change reflected
-   almost immediately because of the bind mount. Nodemon detects the change and
-   restarts the server. It might take a few seconds for the Node server to
-   restart. If you get an error, try refreshing after a few seconds.
+2. ウェブブラウザーのページをリフレッシュします。
+   変更内容は即座に反映されているのがわかるはずです。
+   それはバインドマウントを行ったからです。
+   Nodemon は変更を検知しサーバーを再起動します。
+   Node サーバーの再起動には数秒程度かかるかもしれません。
+   もしエラーが発生したら、数秒待ってからリフレッシュを行ってください。
 @z
 
 @x
    ![Screenshot of updated label for Add button](images/updated-add-button.webp)
 @y
-   ![Screenshot of updated label for Add button](images/updated-add-button.webp)
+   ![Add ボタンのラベルを変更したスクリーンショット](images/updated-add-button.webp)
 @z
 
 @x
@@ -790,11 +791,10 @@ Update your app on your host machine and see the changes reflected in the contai
    container automatically. When you're done, stop the container and build your
    new image using:
 @y
-3. Feel free to make any other changes you'd like to make. Each time you make a
-   change and save a file, the change is reflected in the container because of
-   the bind mount. When Nodemon detects a change, it restarts the app inside the
-   container automatically. When you're done, stop the container and build your
-   new image using:
+3. 他にも変更したい内容があれば、自由に行ってみてください。
+   バインドマウントを使っているので、変更を行ってファイルを保存すればコンテナー内にそれが反映されます。
+   Nodemon が変更を検知したら、コンテナー内のアプリは自動的に再起動します。
+   確認を終えたら、コンテナーを停止して以下のようにして新たなイメージをビルドしてください。
 @z
 
 % snip command...
@@ -802,41 +802,41 @@ Update your app on your host machine and see the changes reflected in the contai
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
 At this point, you can persist your database and see changes in your app as you develop without rebuilding the image.
 @y
-At this point, you can persist your database and see changes in your app as you develop without rebuilding the image.
+ここまでにデータベースのデータを保存し、イメージを再ビルドすることなく開発作業を行い、アプリへの変更内容を確認しました。
 @z
 
 @x
 In addition to volume mounts and bind mounts, Docker also supports other mount
 types and storage drivers for handling more complex and specialized use cases.
 @y
-In addition to volume mounts and bind mounts, Docker also supports other mount
-types and storage drivers for handling more complex and specialized use cases.
+ボリュームマウントやバインドマウントの他にもタイプの異なるマウントがあります。
+それに合わせて、より複雑で特殊なユースケースに対応するストレージドライバーがサポートしています。
 @z
 
 @x
 Related information:
 @y
-Related information:
+関連情報
 @z
 
 @x
  - [docker CLI reference](/reference/cli/docker/)
  - [Manage data in Docker](https://docs.docker.com/storage/)
 @y
- - [docker CLI reference](__SUBDIR__/reference/cli/docker/)
- - [Manage data in Docker](https://docs.docker.com/storage/)
+ - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
+ - [Docker におけるデータ管理](__SUBDIR__/storage/)
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
@@ -846,15 +846,15 @@ simplicity, you'll keep using a relational database and switch your application
 to use MySQL. But, how should you run MySQL? How do you allow the containers to
 talk to each other? You'll learn about that in the next section.
 @y
-In order to prepare your app for production, you need to migrate your database
-from working in SQLite to something that can scale a little better. For
-simplicity, you'll keep using a relational database and switch your application
-to use MySQL. But, how should you run MySQL? How do you allow the containers to
-talk to each other? You'll learn about that in the next section.
+アプリの運用環境に向けた準備が整ったので、SQLite での作業から、よりスケールアップしたデータベースに移行していくことが必要になります。
+要はリレーショナルデータベースを使う方式はそのままに、アプリが利用するデータベースを MySQL に切り替えます。
+ではどうやって MySQL を動かしましょう？
+どうやってコンテナーとの間での通信を実現しましょう？
+このことを次のセクションで学んでいきます。
 @z
 
 @x
 {{< button text="Multi container apps" url="07_multi_container.md" >}}
 @y
-{{< button text="Multi container apps" url="07_multi_container.md" >}}
+{{< button text="マルチコンテナーアプリ" url="07_multi_container.md" >}}
 @z

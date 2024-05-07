@@ -908,6 +908,38 @@ examples: |-
 % snip command...
 
 @x
+    ### Disable namespace remapping for a container (--userns) {#userns}
+@y
+    ### Disable namespace remapping for a container (--userns) {#userns}
+@z
+
+@x
+    If you enable user namespaces on the daemon,
+    all containers are started with user namespaces enabled by default.
+    To disable user namespace remapping for a specific container,
+    you can set the `--userns` flag to `host`.
+@y
+    If you enable user namespaces on the daemon,
+    all containers are started with user namespaces enabled by default.
+    To disable user namespace remapping for a specific container,
+    you can set the `--userns` flag to `host`.
+@z
+
+% snip command...
+
+@x
+    `host` is the only valid value for the `--userns` flag.
+@y
+    `host` is the only valid value for the `--userns` flag.
+@z
+
+@x
+    For more information, refer to [Isolate containers with a user namespace](/engine/security/userns-remap/).
+@y
+    For more information, refer to [Isolate containers with a user namespace](__SUBDIR__/engine/security/userns-remap/).
+@z
+
+@x
     ### UTS settings (--uts) {#uts}
 @y
     ### UTS settings (--uts) {#uts}

@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Dev Environments
 keywords: Dev Environments, share, local, Compose
 title: Overview of Dev Environments
----
 @y
----
 description: Dev Environments
 keywords: Dev Environments, share, local, Compose
 title: Overview of Dev Environments
----
 @z
 
 @x
@@ -26,12 +22,12 @@ title: Overview of Dev Environments
 @x
 > **Beta**
 >
-> The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). We recommend that you do not use this in production environments.
+> The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
 { .experimental }
 @y
 > **Beta**
 >
-> The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). We recommend that you do not use this in production environments.
+> The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
 { .experimental }
 @z
 

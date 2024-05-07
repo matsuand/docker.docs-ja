@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $sso_navigation := `Navigate to the SSO settings page for your organization or company.
@@ -145,7 +147,7 @@ To remove a user:
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you have the option to turn off this default provisioning and disable JIT. This configuration is recommended if you're using SCIM to auto-provision users. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+> Optional Just-in-Time (JIT) provisioning is available in Private Beta when you use the Admin Console. If you're participating in this program, you have the option to turn off this default provisioning and disable JIT. This configuration is recommended if you're using SCIM to auto-provision users. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
 { .experimental }
 @z
 

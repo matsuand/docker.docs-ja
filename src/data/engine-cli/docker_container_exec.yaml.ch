@@ -224,6 +224,18 @@ examples: |-
 % snip command...
 
 @x
+    ### Escalate container privileges (--privileged) {#privileged}
+@y
+    ### Escalate container privileges (--privileged) {#privileged}
+@z
+
+@x
+    See [`docker run --privileged`](/reference/cli/docker/container/run/#privileged).
+@y
+    See [`docker run --privileged`](__SUBDIR__/reference/cli/docker/container/run/#privileged).
+@z
+
+@x
     ### Set the working directory for the exec process (--workdir, -w) {#workdir}
 @y
     ### Set the working directory for the exec process (--workdir, -w) {#workdir}

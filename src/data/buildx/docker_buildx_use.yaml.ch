@@ -52,7 +52,7 @@ examples: |-
 examples: |-
     ### Override the configured builder instance (--builder) {#builder}
 
-    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
+    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
 @z
 
 % snip directives...

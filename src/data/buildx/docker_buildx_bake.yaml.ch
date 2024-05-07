@@ -163,67 +163,8 @@ examples: |-
     defined in the `docker-bake.dev.hcl` file:
 @z
 
-@x
-    ```hcl
-    # docker-bake.dev.hcl
-    group "default" {
-      targets = ["db", "webapp-dev"]
-    }
-@y
-    ```hcl
-    # docker-bake.dev.hcl
-    group "default" {
-      targets = ["db", "webapp-dev"]
-    }
-@z
-
-@x
-    target "webapp-dev" {
-      dockerfile = "Dockerfile.webapp"
-      tags = ["docker.io/username/webapp"]
-    }
-@y
-    target "webapp-dev" {
-      dockerfile = "Dockerfile.webapp"
-      tags = ["docker.io/username/webapp"]
-    }
-@z
-
-@x
-    target "webapp-release" {
-      inherits = ["webapp-dev"]
-      platforms = ["linux/amd64", "linux/arm64"]
-    }
-@y
-    target "webapp-release" {
-      inherits = ["webapp-dev"]
-      platforms = ["linux/amd64", "linux/arm64"]
-    }
-@z
-
-@x
-    target "db" {
-      dockerfile = "Dockerfile.db"
-      tags = ["docker.io/username/db"]
-    }
-    ```
-@y
-    target "db" {
-      dockerfile = "Dockerfile.db"
-      tags = ["docker.io/username/db"]
-    }
-    ```
-@z
-
-@x
-    ```console
-    $ docker buildx bake -f docker-bake.dev.hcl db webapp-release
-    ```
-@y
-    ```console
-    $ docker buildx bake -f docker-bake.dev.hcl db webapp-release
-    ```
-@z
+% snip code...
+% snip command...
 
 @x
     See the [Bake file reference](/build/bake/reference/)

@@ -39,8 +39,10 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x add-host
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
+      details_url: /reference/cli/docker/image/build/#add-host
 @y
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
+      details_url: __SUBDIR__/reference/cli/docker/image/build/#add-host
 @z
 
 @x allow
@@ -93,8 +95,10 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x cgroup-parent
       description: Set the parent cgroup for the `RUN` instructions during build
+      details_url: /reference/cli/docker/image/build/#cgroup-parent
 @y
       description: Set the parent cgroup for the `RUN` instructions during build
+      details_url: __SUBDIR__/reference/cli/docker/image/build/#cgroup-parent
 @z
 
 @x compress
@@ -141,8 +145,10 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x file
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
+      details_url: /reference/cli/docker/image/build/#file
 @y
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
+      details_url: __SUBDIR__/reference/cli/docker/image/build/#file
 @z
 
 @x force-rm
@@ -325,14 +331,18 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x tag
       description: 'Name and optionally a tag (format: `name:tag`)'
+      details_url: /reference/cli/docker/image/build/#tag
 @y
       description: 'Name and optionally a tag (format: `name:tag`)'
+      details_url: __SUBDIR__/reference/cli/docker/image/build/#tag
 @z
 
 @x target
       description: Set the target build stage to build
+      details_url: /reference/cli/docker/image/build/#target
 @y
       description: Set the target build stage to build
+      details_url: __SUBDIR__/reference/cli/docker/image/build/#target
 @z
 
 @x ulimit

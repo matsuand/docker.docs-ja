@@ -58,153 +58,275 @@ You can use containers to set up local services, like a database. In this sectio
 @z
 
 @x
-Open the `compose.yaml` file in an IDE or text editor. You'll notice it
-already contains commented-out instructions for a Postgres database and volume.
+1. Open your `compose.yaml` file in an IDE or text editor.
 @y
-IDE またはテキストエディターを使って `compose.yaml` ファイルを開きます。
-中身を見ればわかりますが、そこには Postgres データベースとボリュームに関する命令がコメントアウトされているはずです。
+1. IDE またはテキストエディターを使って `compose.yaml` ファイルを開きます。
 @z
 
 @x
-Open `src/persistence/postgres.js` in an IDE or text editor. You'll notice that
-this application uses a Postgres database and requires some environment
+2. Uncomment the database related instructions. The following is the udpated
+   `compose.yaml` file.
+@y
+2. Uncomment the database related instructions. The following is the udpated
+   `compose.yaml` file.
+@z
+
+@x
+   > **Important**
+   >
+   > For this section, don't run `docker compose up` until you are instructed to. Running the command at intermediate points may incorrectly initialize your database.
+   { .important }
+@y
+   > **Important**
+   >
+   > For this section, don't run `docker compose up` until you are instructed to. Running the command at intermediate points may incorrectly initialize your database.
+   { .important }
+@z
+
+@x within code
+   # Comments are provided throughout this file to help you get started.
+   # If you need more help, visit the Docker Compose reference guide at
+   # https://docs.docker.com/go/compose-spec-reference/
+@y
+   # Comments are provided throughout this file to help you get started.
+   # If you need more help, visit the Docker Compose reference guide at
+   # https://docs.docker.com/go/compose-spec-reference/
+@z
+@x
+   # Here the instructions define your application as a service called "server".
+   # This service is built from the Dockerfile in the current directory.
+   # You can add other services your application may depend on here, such as a
+   # database or a cache. For examples, see the Awesome Compose repository:
+   # https://github.com/docker/awesome-compose
+@y
+   # Here the instructions define your application as a service called "server".
+   # This service is built from the Dockerfile in the current directory.
+   # You can add other services your application may depend on here, such as a
+   # database or a cache. For examples, see the Awesome Compose repository:
+   # https://github.com/docker/awesome-compose
+@z
+@x
+   # The commented out section below is an example of how to define a PostgreSQL
+   # database that your application can use. `depends_on` tells Docker Compose to
+   # start the database before your application. The `db-data` volume persists the
+   # database data between container restarts. The `db-password` secret is used
+   # to set the database password. You must create `db/password.txt` and add
+   # a password of your choosing to it before running `docker-compose up`.
+@y
+   # The commented out section below is an example of how to define a PostgreSQL
+   # database that your application can use. `depends_on` tells Docker Compose to
+   # start the database before your application. The `db-data` volume persists the
+   # database data between container restarts. The `db-password` secret is used
+   # to set the database password. You must create `db/password.txt` and add
+   # a password of your choosing to it before running `docker-compose up`.
+@z
+
+@x
+   > **Note**
+   >
+   > To learn more about the instructions in the Compose file, see [Compose file
+   > reference](/compose/compose-file/).
+@y
+   > **Note**
+   >
+   > To learn more about the instructions in the Compose file, see [Compose file
+   > reference](__SUBDIR__/compose/compose-file/).
+@z
+
+@x
+3. Open `src/persistence/postgres.js` in an IDE or text editor. You'll notice
+that this application uses a Postgres database and requires some environment
 variables in order to connect to the database. The `compose.yaml` file doesn't
-have these variables defined.
+have these variables defined yet.
 @y
-Open `src/persistence/postgres.js` in an IDE or text editor. You'll notice that
-this application uses a Postgres database and requires some environment
+3. Open `src/persistence/postgres.js` in an IDE or text editor. You'll notice
+that this application uses a Postgres database and requires some environment
 variables in order to connect to the database. The `compose.yaml` file doesn't
-have these variables defined.
+have these variables defined yet.
 @z
 
 @x
-You need to update the following items in the `compose.yaml` file:
- - Uncomment all of the database instructions.
- - Add the environment variables under the server service.
- - Add `secrets` to the server service for the database password.
+4. Add the environment variables that specify the database configuration. The
+   following is the updated `compose.yaml` file.
 @y
-You need to update the following items in the `compose.yaml` file:
- - Uncomment all of the database instructions.
- - Add the environment variables under the server service.
- - Add `secrets` to the server service for the database password.
+4. Add the environment variables that specify the database configuration. The
+   following is the updated `compose.yaml` file.
+@z
+
+@x within code
+   # Comments are provided throughout this file to help you get started.
+   # If you need more help, visit the Docker Compose reference guide at
+   # https://docs.docker.com/go/compose-spec-reference/
+@y
+   # Comments are provided throughout this file to help you get started.
+   # If you need more help, visit the Docker Compose reference guide at
+   # https://docs.docker.com/go/compose-spec-reference/
+@z
+@x
+   # Here the instructions define your application as a service called "server".
+   # This service is built from the Dockerfile in the current directory.
+   # You can add other services your application may depend on here, such as a
+   # database or a cache. For examples, see the Awesome Compose repository:
+   # https://github.com/docker/awesome-compose
+@y
+   # Here the instructions define your application as a service called "server".
+   # This service is built from the Dockerfile in the current directory.
+   # You can add other services your application may depend on here, such as a
+   # database or a cache. For examples, see the Awesome Compose repository:
+   # https://github.com/docker/awesome-compose
+@z
+@x
+   # The commented out section below is an example of how to define a PostgreSQL
+   # database that your application can use. `depends_on` tells Docker Compose to
+   # start the database before your application. The `db-data` volume persists the
+   # database data between container restarts. The `db-password` secret is used
+   # to set the database password. You must create `db/password.txt` and add
+   # a password of your choosing to it before running `docker-compose up`.
+@y
+   # The commented out section below is an example of how to define a PostgreSQL
+   # database that your application can use. `depends_on` tells Docker Compose to
+   # start the database before your application. The `db-data` volume persists the
+   # database data between container restarts. The `db-password` secret is used
+   # to set the database password. You must create `db/password.txt` and add
+   # a password of your choosing to it before running `docker-compose up`.
 @z
 
 @x
-The following is the updated `compose.yaml` file.
+5. Add the `secrets` section under the `server` service so that your application securely handles the database password. The following is the updated `compose.yaml` file.
 @y
-The following is the updated `compose.yaml` file.
+5. Add the `secrets` section under the `server` service so that your application securely handles the database password. The following is the updated `compose.yaml` file.
 @z
 
-% snip code...
-
-@x
-> **Note**
->
-> To learn more about the instructions in the Compose file, see [Compose file
-> reference](/compose/compose-file/).
+@x within code
+   # Comments are provided throughout this file to help you get started.
+   # If you need more help, visit the Docker Compose reference guide at
+   # https://docs.docker.com/go/compose-spec-reference/
 @y
-> **Note**
->
-> To learn more about the instructions in the Compose file, see [Compose file
-> reference](__SUBDIR__/compose/compose-file/).
+   # Comments are provided throughout this file to help you get started.
+   # If you need more help, visit the Docker Compose reference guide at
+   # https://docs.docker.com/go/compose-spec-reference/
 @z
-
 @x
-Before you run the application using Compose, notice that this Compose file uses
-`secrets` and specifies a `password.txt` file to hold the database's password.
-You must create this file as it's not included in the source repository.
+   # Here the instructions define your application as a service called "server".
+   # This service is built from the Dockerfile in the current directory.
+   # You can add other services your application may depend on here, such as a
+   # database or a cache. For examples, see the Awesome Compose repository:
+   # https://github.com/docker/awesome-compose
 @y
-Before you run the application using Compose, notice that this Compose file uses
-`secrets` and specifies a `password.txt` file to hold the database's password.
-You must create this file as it's not included in the source repository.
+   # Here the instructions define your application as a service called "server".
+   # This service is built from the Dockerfile in the current directory.
+   # You can add other services your application may depend on here, such as a
+   # database or a cache. For examples, see the Awesome Compose repository:
+   # https://github.com/docker/awesome-compose
 @z
-
 @x
-In the cloned repository's directory, create a new directory named `db`. Inside the `db` directory, create a file named `password.txt`. Open `password.txt` in an IDE or text editor and add a password of your choice. The password must be on a single line with no additional lines in the file.
+   # The commented out section below is an example of how to define a PostgreSQL
+   # database that your application can use. `depends_on` tells Docker Compose to
+   # start the database before your application. The `db-data` volume persists the
+   # database data between container restarts. The `db-password` secret is used
+   # to set the database password. You must create `db/password.txt` and add
+   # a password of your choosing to it before running `docker-compose up`.
 @y
-In the cloned repository's directory, create a new directory named `db`. Inside the `db` directory, create a file named `password.txt`. Open `password.txt` in an IDE or text editor and add a password of your choice. The password must be on a single line with no additional lines in the file.
-@z
-
-@x
-You should now have the following contents in your `docker-nodejs-sample`
-directory.
-@y
-You should now have the following contents in your `docker-nodejs-sample`
-directory.
-@z
-
-@x
-```text
-├── docker-nodejs-sample/
-│ ├── db/
-│ │ └── password.txt
-│ ├── spec/
-│ ├── src/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── package-lock.json
-│ ├── package.json
-│ ├── README.Docker.md
-│ └── README.md
-```
-@y
-```text
-├── docker-nodejs-sample/
-│ ├── db/
-│ │ └── password.txt
-│ ├── spec/
-│ ├── src/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── package-lock.json
-│ ├── package.json
-│ ├── README.Docker.md
-│ └── README.md
-```
+   # The commented out section below is an example of how to define a PostgreSQL
+   # database that your application can use. `depends_on` tells Docker Compose to
+   # start the database before your application. The `db-data` volume persists the
+   # database data between container restarts. The `db-password` secret is used
+   # to set the database password. You must create `db/password.txt` and add
+   # a password of your choosing to it before running `docker-compose up`.
 @z
 
 @x
-Run the following command to start your application.
+6. In the `docker-nodejs-sample` directory, create a directory named `db`.
 @y
-Run the following command to start your application.
+6. In the `docker-nodejs-sample` directory, create a directory named `db`.
+@z
+
+@x
+7. In the `db` directory, create a file named `password.txt`. This file will
+   contain your database password.
+@y
+7. In the `db` directory, create a file named `password.txt`. This file will
+   contain your database password.
+@z
+
+@x
+   You should now have at least the following contents in your
+   `docker-nodejs-sample` directory.
+@y
+   You should now have at least the following contents in your
+   `docker-nodejs-sample` directory.
+@z
+
+% snip text...
+
+@x
+8. Open the `password.txt` file in an IDE or text editor, and specify a password
+   of your choice. Your password must be on a single line with no additional
+   lines. Ensure that the file doesn't contain any newline characters or other
+   hidden characters.
+@y
+8. Open the `password.txt` file in an IDE or text editor, and specify a password
+   of your choice. Your password must be on a single line with no additional
+   lines. Ensure that the file doesn't contain any newline characters or other
+   hidden characters.
+@z
+
+@x
+9. Ensure that you save your changes to all the files that you have modified.
+@y
+9. Ensure that you save your changes to all the files that you have modified.
+@z
+
+@x
+10. Run the following command to start your application.
+@y
+10. Run the following command to start your application.
 @z
 
 % snip command...
 
 @x
-Open a browser and verify that the application is running at [http://localhost:3000](http://localhost:3000).
+11. Open a browser and verify that the application is running at
+    [http://localhost:3000](http://localhost:3000).
 @y
-Open a browser and verify that the application is running at [http://localhost:3000](http://localhost:3000).
+11. Open a browser and verify that the application is running at
+    [http://localhost:3000](http://localhost:3000).
 @z
 
 @x
-Add some items to the todo list to test data persistence.
+12. Add some items to the todo list to test data persistence.
 @y
-Add some items to the todo list to test data persistence.
+12. Add some items to the todo list to test data persistence.
 @z
 
 @x
-After adding some items to the todo list, press `ctrl+c` in the terminal to stop your application.
+13. After adding some items to the todo list, press `ctrl+c` in the terminal to
+    stop your application.
 @y
-After adding some items to the todo list, press `ctrl+c` in the terminal to stop your application.
+13. After adding some items to the todo list, press `ctrl+c` in the terminal to
+    stop your application.
 @z
 
 @x
-In the terminal, run `docker compose rm` to remove your containers and then run `docker compose up` to run your application again.
+14. In the terminal, run `docker compose rm` to remove your containers.
 @y
-In the terminal, run `docker compose rm` to remove your containers and then run `docker compose up` to run your application again.
+14. In the terminal, run `docker compose rm` to remove your containers.
 @z
 
 % snip command...
 
 @x
-Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
+15. Run `docker compose up` to run your application again.
 @y
-Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
+15. Run `docker compose up` to run your application again.
+@z
+
+% snip command...
+
+@x
+16. Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
+@y
+16. Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
 @z
 
 @x
@@ -314,9 +436,9 @@ Lastly, publish port `9229` for debugging.
 @z
 
 @x
-The following is the updated Compose file.
+The following is the updated Compose file. All comments have been removed.
 @y
-The following is the updated Compose file.
+The following is the updated Compose file. All comments have been removed.
 @z
 
 % snip code...

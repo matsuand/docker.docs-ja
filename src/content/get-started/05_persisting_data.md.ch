@@ -327,9 +327,9 @@ To start the todo app container with the volume mounted:
 @y
 4. イメージを選択して **Run** (実行) をクリックします。
 5. **Optional settings** (オプション設定) をクリックします。
-6. **Host port** (ホストポート) にて、たとえば `3000` といったポートを入力します。
-7. **Host path** (ホストパス) にて、ボリューム名 `todo-db` を入力します。
-8. **Container path** (コンテナーパス) にて `/etc/todos` を入力します。
+6. **Host port** (ホストポート) に、たとえば `3000` といったポートを入力します。
+7. **Host path** (ホストパス) にボリューム名 `todo-db` を入力します。
+8. **Container path** (コンテナーパス) に `/etc/todos` を入力します。
 9. **Run** (実行) をクリックします。
 @z
 

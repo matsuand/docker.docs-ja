@@ -68,15 +68,32 @@ to clone the repository:
 @z
 
 @x
-Now that you have an application, you can use `docker init` to create the
-necessary Docker assets to containerize your application. Inside the
-`docker-nodejs-sample` directory, run the `docker init` command in a terminal.
-`docker init` provides some default configuration, but you'll need to answer a
-few questions about your application. Refer to the following example to answer
-the prompts from `docker init` and use the same answers for your prompts.
+Now that you have an application, you can create the necessary Docker assets to
+containerize your application. You can use Docker Desktop's built-in Docker Init
+feature to help streamline the process, or you can manually create the assets.
+
 @y
 アプリケーションの入手はできました。
-次に `docker init` を実行して、アプリケーションのコンテナー化に必要となる Docker アセットを生成します。
+次はアプリケーションのコンテナー化に必要となる Docker アセットを生成します。
+Docker Desktop にはビルトインの Docker Init 機能があるので、効率的に作業を進められます。
+あるいは手動でアセットを生成することもできます。
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Use Docker Init" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Init の利用" >}}
+@z
+
+@x
+Inside the `docker-nodejs-sample` directory, run
+the `docker init` command in a terminal. `docker init` provides some default
+configuration, but you'll need to answer a few questions about your application.
+Refer to the following example to answer the prompts from `docker init` and use
+the same answers for your prompts.
+@y
 端末画面内の `docker-nodejs-sample` ディレクトリにおいて `docker init` コマンドを実行します。
 `docker init` はデフォルトの設定をいくつか行いますが、アプリケーション内容についていくつか質問が行われるので、それに答えます。
 以下の利用例において `docker init` の質問への答えを示しているので、これを参考に同様の入力を行ってください。
@@ -121,21 +138,159 @@ Let's get started!
 @z
 
 @x
-You should now have the following contents in your `docker-nodejs-sample`
-directory.
+{{< /tab >}}
+{{< tab name="Manually create assets" >}}
 @y
-上により `docker-nodejs-sample` ディレクトリ内は以下の構成となるはずです。
+{{< /tab >}}
+{{< tab name="手動によるアセット生成" >}}
+@z
+
+@x
+If you don't have Docker Desktop installed or prefer creating the assets manually, you can create the following files in your project directory.
+@y
+If you don't have Docker Desktop installed or prefer creating the assets manually, you can create the following files in your project directory.
+@z
+
+@x
+Create a file named `Dockerfile` with the following contents.
+@y
+Create a file named `Dockerfile` with the following contents.
+@z
+
+@x within code
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+@y
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+@z
+@x
+# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+@y
+# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+@z
+@x
+# Use production node environment by default.
+@y
+# Use production node environment by default.
+@z
+@x
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a cache mount to /root/.npm to speed up subsequent builds.
+# Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
+# into this layer.
+@y
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a cache mount to /root/.npm to speed up subsequent builds.
+# Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
+# into this layer.
+@z
+@x
+# Run the application as a non-root user.
+@y
+# Run the application as a non-root user.
+@z
+@x
+# Copy the rest of the source files into the image.
+@y
+# Copy the rest of the source files into the image.
+@z
+@x
+# Expose the port that the application listens on.
+@y
+# Expose the port that the application listens on.
+@z
+@x
+# Run the application.
+@y
+# Run the application.
+@z
+
+@x
+Create a file named `compose.yaml` with the following contents.
+@y
+Create a file named `compose.yaml` with the following contents.
+@z
+
+@x within code
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+@y
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+@z
+@x
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+@y
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+@z
+@x
+# The commented out section below is an example of how to define a PostgreSQL
+# database that your application can use. `depends_on` tells Docker Compose to
+# start the database before your application. The `db-data` volume persists the
+# database data between container restarts. The `db-password` secret is used
+# to set the database password. You must create `db/password.txt` and add
+# a password of your choosing to it before running `docker-compose up`.
+@y
+# The commented out section below is an example of how to define a PostgreSQL
+# database that your application can use. `depends_on` tells Docker Compose to
+# start the database before your application. The `db-data` volume persists the
+# database data between container restarts. The `db-password` secret is used
+# to set the database password. You must create `db/password.txt` and add
+# a password of your choosing to it before running `docker-compose up`.
+@z
+
+@x
+Create a file named `.dockerignore` with the following contents.
+@y
+Create a file named `.dockerignore` with the following contents.
+@z
+
+@x within code
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+@y
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+@z
+@x
+# For more help, visit the .dockerignore file reference guide at
+@y
+# For more help, visit the .dockerignore file reference guide at
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+You should now have at least the following contents in your
+`docker-nodejs-sample` directory.
+@y
+上により `docker-nodejs-sample` ディレクトリ内は、最低でも以下の構成となるはずです。
 @z
 
 % snip text...
 
 @x
-To learn more about the files that `docker init` added, see the following:
+To learn more about the files, see the following:
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
 @y
-`docker init` が追加したファイルについての詳細は、以下を参照してください。
+各ファイルについての詳細は以下を参照してください。
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
  - [compose.yaml](../../compose/compose-file/_index.md)
