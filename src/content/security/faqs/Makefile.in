@@ -297,9 +297,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = single-sign-on
 bases = \
-	eci-faq.md \
-	general.md \
-	networking-and-vms.md
+	general.md            \
+	networking-and-vms.md \
+	containers.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

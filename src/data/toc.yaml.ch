@@ -5026,8 +5026,20 @@ Manuals:
       title: General
     - path: /security/faqs/networking-and-vms/
       title: Networking and VMs
-    - path: /security/faqs/eci-faq/
-      title: Enhanced Container Isolation
+    - path: /security/faqs/containers/
+      title: Containers
+@y
+  - sectiontitle: Security FAQs
+    section:
+    - path: __SUBDIR__/security/faqs/general/
+      title: General
+    - path: __SUBDIR__/security/faqs/networking-and-vms/
+      title: Networking and VMs
+    - path: __SUBDIR__/security/faqs/containers/
+      title: Containers
+@z
+
+@x
     - sectiontitle: Single Sign-On
       section:
       - path: /security/faqs/single-sign-on/faqs/
@@ -5043,14 +5055,6 @@ Manuals:
       - path: /security/faqs/single-sign-on/users-faqs/
         title: Manage users
 @y
-  - sectiontitle: Security FAQs
-    section:
-    - path: __SUBDIR__/security/faqs/general/
-      title: General
-    - path: __SUBDIR__/security/faqs/networking-and-vms/
-      title: Networking and VMs
-    - path: __SUBDIR__/security/faqs/eci-faq/
-      title: Enhanced Container Isolation
     - sectiontitle: Single Sign-On
       section:
       - path: __SUBDIR__/security/faqs/single-sign-on/faqs/

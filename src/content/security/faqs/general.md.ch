@@ -3,11 +3,11 @@
 
 @x
 description: Find the answers to common security related FAQs
-keywords: Docker, Docker Hub, Docker Desktop secuirty FAQs, secuirty, platform, Docker Scout, admin, security
+keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
 title: General security FAQs
 @y
 description: Find the answers to common security related FAQs
-keywords: Docker, Docker Hub, Docker Desktop secuirty FAQs, secuirty, platform, Docker Scout, admin, security
+keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
 title: General security FAQs
 @z
 
@@ -207,18 +207,6 @@ If SCIM isn't enabled, you have to manually remove PAT users from the organizati
 For information about the metadata stored by Docker Scout, see [Data handling](../../scout/data-handling.md).
 @y
 For information about the metadata stored by Docker Scout, see [Data handling](../../scout/data-handling.md).
-@z
-
-@x
-### To which portions of the host filesystem do containers have read and write access? Can containers running as root gain access to admin-owned files or directories on the host? 
-@y
-### To which portions of the host filesystem do containers have read and write access? Can containers running as root gain access to admin-owned files or directories on the host? 
-@z
-
-@x
-File sharing (bind mount from the host filesystem) uses a user-space crafted file server (running in `com.docker.backend` as the user running Docker Desktop), so containers can’t gain any access that the user on the host doesn’t already have.
-@y
-File sharing (bind mount from the host filesystem) uses a user-space crafted file server (running in `com.docker.backend` as the user running Docker Desktop), so containers can’t gain any access that the user on the host doesn’t already have.
 @z
 
 @x

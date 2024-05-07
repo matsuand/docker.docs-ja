@@ -38,13 +38,13 @@ When [Enhanced Container Isolation is enabled](index.md#how-do-i-enable-enhanced
 created by users through `docker run` or `docker create` are automatically
 launched using Sysbox instead of the standard OCI runc runtime. Users need not
 do anything else and can continue to use containers as usual. For exceptions,
-see [FAQs](../../../security/faqs/eci-faq.md).
+see [FAQs](faq.md).
 @y
 When [Enhanced Container Isolation is enabled](index.md#how-do-i-enable-enhanced-container-isolation), containers
 created by users through `docker run` or `docker create` are automatically
 launched using Sysbox instead of the standard OCI runc runtime. Users need not
 do anything else and can continue to use containers as usual. For exceptions,
-see [FAQs](../../../security/faqs/eci-faq.md).
+see [FAQs](faq.md).
 @z
 
 @x
