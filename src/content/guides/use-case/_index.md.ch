@@ -39,7 +39,17 @@ description: Learn how to accomplish tasks with Docker.
   link: __SUBDIR__/guides/use-case/genai-video-bot/
 @z
 
-% grid_nlp:
+@x
+- title: Face detection with TensorFlow.js
+  description: Explore a face detection app built with TensorFlow.js and Docker.
+  icon: face
+  link: /guides/use-case/tensorflowjs/
+@y
+- title: Face detection with TensorFlow.js
+  description: Explore a face detection app built with TensorFlow.js and Docker.
+  icon: face
+  link: __SUBDIR__/guides/use-case/tensorflowjs/
+@z
 
 @x
 - title: Language translation
@@ -112,69 +122,25 @@ how Docker can streamline your projects and workflows.
 @z
 
 @x
-## Generative AI
-@y
-## Generative AI
-@z
-
-@x
-{{< grid items="grid_genai" >}}
-@y
-{{< grid items="grid_genai" >}}
-@z
-
-@x
-## Natural language processing
-@y
-## Natural language processing
-@z
-
-@x
-{{< grid items="grid_nlp" >}}
-@y
-{{< grid items="grid_nlp" >}}
-@z
-
-@x
 ## Data science
 @y
 ## Data science
 @z
 
 @x
-{{< card
-  title="Data science with JupyterLab"
-  icon=analytics
-  link=/guides/use-case/jupyter/
-  description="Set up a JupyterLab environment to conduct and share data science research, making your projects more reproducible and scalable."
->}}
+## Databases & storage
 @y
-{{< card
-  title="Data science with JupyterLab"
-  icon=analytics
-  link=__SUBDIR__/guides/use-case/jupyter/
-  description="Set up a JupyterLab environment to conduct and share data science research, making your projects more reproducible and scalable."
->}}
+## Databases & storage
+@z
+
+@x
+## Machine learning & AI
+@y
+## Machine learning & AI
 @z
 
 @x
 ## Security
 @y
 ## Security
-@z
-
-@x
-{{< card
-  title="Suppress CVEs with VEX"
-  icon=verified_user
-  link=/scout/guides/vex/
-  description="Learn how to suppress non-applicable or fixed vulnerabilities found in your images."
->}}
-@y
-{{< card
-  title="Suppress CVEs with VEX"
-  icon=verified_user
-  link=__SUBDIR__/scout/guides/vex/
-  description="Learn how to suppress non-applicable or fixed vulnerabilities found in your images."
->}}
 @z

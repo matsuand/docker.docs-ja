@@ -432,7 +432,15 @@ Guides:
   section:
     - path: /guides/use-case/
       title: Overview
-    - sectiontitle: Generative AI
+@y
+- sectiontitle: ユースケースガイド {{< badge color=violet text=New >}}
+  section:
+    - path: __SUBDIR__/guides/use-case/
+      title: 概要
+@z
+
+@x
+    - sectiontitle: Machine learning & AI
       section:
       - sectiontitle: PDF analysis and chat
         section:
@@ -442,14 +450,8 @@ Guides:
           title: Containerize your app
         - path: /guides/use-case/genai-pdf-bot/develop/
           title: Develop your app
-      - path: /guides/use-case/genai-video-bot/
-        title: Video transcription and chat
 @y
-- sectiontitle: ユースケースガイド {{< badge color=violet text=New >}}
-  section:
-    - path: __SUBDIR__/guides/use-case/
-      title: 概要
-    - sectiontitle: 生成 AI
+    - sectiontitle: マシン学習と AI
       section:
       - sectiontitle: PDF 分析とチャット
         section:
@@ -459,56 +461,66 @@ Guides:
           title: アプリのコンテナー化
         - path: __SUBDIR__/guides/use-case/genai-pdf-bot/develop/
           title: アプリの開発
+@z
+
+@x
+      - path: /guides/use-case/genai-video-bot/
+        title: Video transcription and chat
+      - path: /guides/use-case/tensorflowjs/
+        title: Face detection with TensorFlow.js
+@y
       - path: __SUBDIR__/guides/use-case/genai-video-bot/
         title: Video transcription and chat
+      - path: __SUBDIR__/guides/use-case/tensorflowjs/
+        title: Face detection with TensorFlow.js
 @z
 
 @x
-    - sectiontitle: Natural language processing
-      section:
-      - path: /guides/use-case/nlp/
-        title: Overview
-      - path: /guides/use-case/nlp/language-translation/
-        title: Language translation
-      - path: /guides/use-case/nlp/named-entity-recognition/
-        title: Named entity recognition
-      - path: /guides/use-case/nlp/sentiment-analysis/
-        title: Sentiment analysis
-      - path: /guides/use-case/nlp/text-classification/
-        title: Text classification
-      - path: /guides/use-case/nlp/text-summarization/
-        title: Text summarization
+      - sectiontitle: Natural language processing
+        section:
+        - path: /guides/use-case/nlp/
+          title: Overview
+        - path: /guides/use-case/nlp/language-translation/
+          title: Language translation
+        - path: /guides/use-case/nlp/named-entity-recognition/
+          title: Named entity recognition
+        - path: /guides/use-case/nlp/sentiment-analysis/
+          title: Sentiment analysis
+        - path: /guides/use-case/nlp/text-classification/
+          title: Text classification
+        - path: /guides/use-case/nlp/text-summarization/
+          title: Text summarization
 @y
-    - sectiontitle: 自然言語処理
-      section:
-      - path: __SUBDIR__/guides/use-case/nlp/
-        title: 概要
-      - path: __SUBDIR__/guides/use-case/nlp/language-translation/
-        title: Language translation
-      - path: __SUBDIR__/guides/use-case/nlp/named-entity-recognition/
-        title: Named entity recognition
-      - path: __SUBDIR__/guides/use-case/nlp/sentiment-analysis/
-        title: Sentiment analysis
-      - path: __SUBDIR__/guides/use-case/nlp/text-classification/
-        title: Text classification
-      - path: __SUBDIR__/guides/use-case/nlp/text-summarization/
-        title: Text summarization
+      - sectiontitle: 自然言語処理
+        section:
+        - path: __SUBDIR__/guides/use-case/nlp/
+          title: 概要
+        - path: __SUBDIR__/guides/use-case/nlp/language-translation/
+          title: Language translation
+        - path: __SUBDIR__/guides/use-case/nlp/named-entity-recognition/
+          title: Named entity recognition
+        - path: __SUBDIR__/guides/use-case/nlp/sentiment-analysis/
+          title: Sentiment analysis
+        - path: __SUBDIR__/guides/use-case/nlp/text-classification/
+          title: Text classification
+        - path: __SUBDIR__/guides/use-case/nlp/text-summarization/
+          title: Text summarization
 @z
 
 @x
-    - path: /guides/use-case/tensorflowjs/
-      title: Face detection with TensorFlow.js
     - path: /guides/use-case/jupyter/
       title: Data science with JupyterLab
     - path: /scout/guides/vex/
       title: Suppress CVEs with VEX
+    - path: /guides/use-case/databases/
+      title: Use containerized databases
 @y
-    - path: __SUBDIR__/guides/use-case/tensorflowjs/
-      title: Face detection with TensorFlow.js
     - path: __SUBDIR__/guides/use-case/jupyter/
       title: Data science with JupyterLab
     - path: __SUBDIR__/scout/guides/vex/
       title: Suppress CVEs with VEX
+    - path: __SUBDIR__/guides/use-case/databases/
+      title: コンテナー化データベースの利用
 @z
 
 @x

@@ -5,7 +5,7 @@
 ---
 description: Convert your Docker Hub user account into an organization
 title: Convert an account into an organization
-keywords: docker hub, hub, organization
+keywords: docker hub, hub, organization, convert account, migrate account
 aliases:
 - /docker-hub/convert-account/
 ---
@@ -13,22 +13,10 @@ aliases:
 ---
 description: Convert your Docker Hub user account into an organization
 title: Convert an account into an organization
-keywords: docker hub, hub, organization
+keywords: docker hub, hub, organization, convert account, migrate account
 aliases:
 - /docker-hub/convert-account/
 ---
-@z
-
-@x
-> **Tip**
->
-> You can convert your personal account with a Docker Personal subscription to an organization. If you need to convert a personal account with a Docker Pro subscription, [contact support](https://hub.docker.com/support/contact).
-{ .tip }
-@y
-> **Tip**
->
-> You can convert your personal account with a Docker Personal subscription to an organization. If you need to convert a personal account with a Docker Pro subscription, [contact support](https://hub.docker.com/support/contact).
-{ .tip }
 @z
 
 @x
