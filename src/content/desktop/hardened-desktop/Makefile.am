@@ -4,6 +4,7 @@
 SUBDIRS = enhanced-container-isolation settings-management
 
 bases = \
+	air-gapped-containers.md \
 	_index.md
 
 include $(top_srcdir)/build-aux/common.mk

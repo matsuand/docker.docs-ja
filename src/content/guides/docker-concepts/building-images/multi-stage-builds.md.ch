@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Multi-stage builds
@@ -13,11 +14,7 @@ keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the purpose of the multi-stage build and its benefits
 @z
 
-@x
-{{< youtube-embed vR185cjwxZ8 >}}
-@y
-{{< youtube-embed vR185cjwxZ8 >}}
-@z
+% snip youtube...
 
 @x
 ## Explanation
@@ -57,36 +54,34 @@ Here's a simplified example of a multi-stage build structure using pseudo-code. 
 Here's a simplified example of a multi-stage build structure using pseudo-code. Notice there are multiple `FROM` statements and a new `AS <stage-name>`. In addition, the `COPY` statement in the second stage is copying `--from` the previous stage.
 @z
 
-@x
-```dockerfile
+@x within code
 # Stage 1: Build Environment
-FROM builder-image AS build-stage 
+@y
+# Stage 1: Build Environment
+@z
+@x
 # Install build tools (e.g., Maven, Gradle)
 # Copy source code
 # Build commands (e.g., compile, package)
 @y
-```dockerfile
-# Stage 1: Build Environment
-FROM builder-image AS build-stage 
 # Install build tools (e.g., Maven, Gradle)
 # Copy source code
 # Build commands (e.g., compile, package)
 @z
-
 @x
 # Stage 2: Runtime environment
-FROM runtime-image AS final-stage  
-#  Copy application artifacts from the build stage (e.g., JAR file)
-COPY --from=build-stage /path/in/build/stage /path/to/place/in/final/stage
-# Define runtime configuration (e.g., CMD, ENTRYPOINT) 
-```
 @y
 # Stage 2: Runtime environment
-FROM runtime-image AS final-stage  
+@z
+@x
 #  Copy application artifacts from the build stage (e.g., JAR file)
-COPY --from=build-stage /path/in/build/stage /path/to/place/in/final/stage
+@y
+#  Copy application artifacts from the build stage (e.g., JAR file)
+@z
+@x
 # Define runtime configuration (e.g., CMD, ENTRYPOINT) 
-```
+@y
+# Define runtime configuration (e.g., CMD, ENTRYPOINT) 
 @z
 
 @x
@@ -157,67 +152,7 @@ In this hands-on guide, you'll unlock the power of multi-stage builds to create 
 3. Navigate the project directory. Once you unzip the file, you'll see the following project directory structure:
 @z
 
-@x
-    ```plaintext
-    spring-boot-docker
-    ├── Dockerfile
-    ├── Dockerfile.multi
-    ├── HELP.md
-    ├── mvnw
-    ├── mvnw.cmd
-    ├── pom.xml
-    └── src
-        ├── main
-        │   ├── java
-        │   │   └── com
-        │   │       └── example
-        │   │           └── springbootdocker
-        │   │               └── SpringBootDockerApplication.java
-        │   └── resources
-        │       ├── application.properties
-        │       ├── static
-        │       └── templates
-        └── test
-            └── java
-                └── com
-                    └── example
-                        └── springbootdocker
-                            └── SpringBootDockerApplicationTests.java
-@y
-    ```plaintext
-    spring-boot-docker
-    ├── Dockerfile
-    ├── Dockerfile.multi
-    ├── HELP.md
-    ├── mvnw
-    ├── mvnw.cmd
-    ├── pom.xml
-    └── src
-        ├── main
-        │   ├── java
-        │   │   └── com
-        │   │       └── example
-        │   │           └── springbootdocker
-        │   │               └── SpringBootDockerApplication.java
-        │   └── resources
-        │       ├── application.properties
-        │       ├── static
-        │       └── templates
-        └── test
-            └── java
-                └── com
-                    └── example
-                        └── springbootdocker
-                            └── SpringBootDockerApplicationTests.java
-@z
-
-@x
-    15 directories, 9 files
-    ```
-@y
-    15 directories, 9 files
-    ```
-@z
+% snip text...
 
 @x
    The `src/main/java` directory contains your project's source code, the `src/test/java` directory   
@@ -251,65 +186,7 @@ In this hands-on guide, you'll unlock the power of multi-stage builds to create 
     `SpringBootDockerApplication.java` file with the following content:
 @z
 
-@x
-    ```java
-    package com.example.springbootdocker;
-@y
-    ```java
-    package com.example.springbootdocker;
-@z
-
-@x
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
-    import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.RestController;
-@y
-    import org.springframework.boot.SpringApplication;
-    import org.springframework.boot.autoconfigure.SpringBootApplication;
-    import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.RestController;
-@z
-
-@x
-    @RestController
-    @SpringBootApplication
-    public class SpringBootDockerApplication {
-@y
-    @RestController
-    @SpringBootApplication
-    public class SpringBootDockerApplication {
-@z
-
-@x
-    @RequestMapping("/")
-    public String home() {
-    return "Hello World";
-    }
-@y
-    @RequestMapping("/")
-    public String home() {
-    return "Hello World";
-    }
-@z
-
-@x
-    	public static void main(String[] args) {
-    		SpringApplication.run(SpringBootDockerApplication.class, args);
-    	}
-@y
-    	public static void main(String[] args) {
-    		SpringApplication.run(SpringBootDockerApplication.class, args);
-    	}
-@z
-
-@x
-    }
-    ```
-@y
-    }
-    ```
-@z
+% snip code...
 
 @x
     The `SpringbootDockerApplication.java` file starts by declaring your `com.example.springbootdocker` package and importing necessary Spring frameworks. This Java file creates a simple Spring Boot web application that responds with "Hello World" when a user visits its homepage. 
@@ -341,15 +218,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  2. In the `Dockerfile`, define your base image by adding the following line:
 @z
 
-@x
-     ```dockerfile
-     FROM eclipse-temurin:21.0.2_13-jdk-jammy
-     ```
-@y
-     ```dockerfile
-     FROM eclipse-temurin:21.0.2_13-jdk-jammy
-     ```
-@z
+% snip code...
 
 @x
  3. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
@@ -357,15 +226,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  3. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
 @z
 
-@x
-     ```dockerfile
-     WORKDIR /app
-     ```
-@y
-     ```dockerfile
-     WORKDIR /app
-     ```
-@z
+% snip code...
 
 @x
  4. Copy both the Maven wrapper script and your project's `pom.xml` file into the current working directory `/app` within the Docker container.
@@ -373,17 +234,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  4. Copy both the Maven wrapper script and your project's `pom.xml` file into the current working directory `/app` within the Docker container.
 @z
 
-@x
-     ```dockerfile
-     COPY .mvn/ .mvn
-     COPY mvnw pom.xml ./
-     ```
-@y
-     ```dockerfile
-     COPY .mvn/ .mvn
-     COPY mvnw pom.xml ./
-     ```
-@z
+% snip code...
 
 @x
  5. Execute a command within the container. It runs the `./mvnw dependency:go-offline` command, which uses the Maven wrapper (`./mvnw`) to download all dependencies for your project without building the final JAR file (useful for faster builds).
@@ -391,15 +242,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  5. Execute a command within the container. It runs the `./mvnw dependency:go-offline` command, which uses the Maven wrapper (`./mvnw`) to download all dependencies for your project without building the final JAR file (useful for faster builds).
 @z
 
-@x
-     ```dockerfile
-     RUN ./mvnw dependency:go-offline
-     ```
-@y
-     ```dockerfile
-     RUN ./mvnw dependency:go-offline
-     ```
-@z
+% snip code...
 
 @x
  6. Copy the `src` directory from your project on the host machine to the `/app` directory within the container. 
@@ -407,15 +250,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  6. Copy the `src` directory from your project on the host machine to the `/app` directory within the container. 
 @z
 
-@x
-     ```dockerfile
-     COPY src ./src
-     ```
-@y
-     ```dockerfile
-     COPY src ./src
-     ```
-@z
+% snip code...
 
 @x
  7. Set the default command to be executed when the container starts. This command instructs the container to run the Maven wrapper (`./mvnw`) with the `spring-boot:run` goal, which will build and execute your Spring Boot application.
@@ -423,15 +258,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  7. Set the default command to be executed when the container starts. This command instructs the container to run the Maven wrapper (`./mvnw`) with the `spring-boot:run` goal, which will build and execute your Spring Boot application.
 @z
 
-@x
-     ```dockerfile
-     CMD ["./mvnw", "spring-boot:run"]
-     ```
-@y
-     ```dockerfile
-     CMD ["./mvnw", "spring-boot:run"]
-     ```
-@z
+% snip code...
 
 @x
     And with that, you should have the following Dockerfile:
@@ -439,27 +266,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     And with that, you should have the following Dockerfile:
 @z
 
-@x
-    ```dockerfile 
-    FROM eclipse-temurin:21.0.2_13-jdk-jammy
-    WORKDIR /app
-    COPY .mvn/ .mvn
-    COPY mvnw pom.xml ./
-    RUN ./mvnw dependency:go-offline
-    COPY src ./src
-    CMD ["./mvnw", "spring-boot:run"]
-    ```
-@y
-    ```dockerfile 
-    FROM eclipse-temurin:21.0.2_13-jdk-jammy
-    WORKDIR /app
-    COPY .mvn/ .mvn
-    COPY mvnw pom.xml ./
-    RUN ./mvnw dependency:go-offline
-    COPY src ./src
-    CMD ["./mvnw", "spring-boot:run"]
-    ```
-@z
+% snip code...
 
 @x
 ### Build the container image
@@ -473,15 +280,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  1. Execute the following command to build the Docker image:
 @z
 
-@x
-    ```console
-    $ docker build -t spring-helloworld .
-    ```
-@y
-    ```console
-    $ docker build -t spring-helloworld .
-    ```
-@z
+% snip command...
 
 @x
  2. Check the size of the Docker image by using the `docker images` command:
@@ -489,15 +288,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
  2. Check the size of the Docker image by using the `docker images` command:
 @z
 
-@x
-    ```console
-    $ docker images
-    ```
-@y
-    ```console
-    $ docker images
-    ```
-@z
+% snip command...
 
 @x
     Doing so will produce output like the following:
@@ -505,17 +296,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     Doing so will produce output like the following:
 @z
 
-@x
-    ```console
-    REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
-    spring-helloworld   latest    ff708d5ee194   3 minutes ago    880MB
-    ```
-@y
-    ```console
-    REPOSITORY          TAG       IMAGE ID       CREATED          SIZE
-    spring-helloworld   latest    ff708d5ee194   3 minutes ago    880MB
-    ```
-@z
+% snip output...
 
 @x
     This output shows that your image is 880MB in size. It contains the full JDK, Maven toolchain, and more. In production, you don’t need that in your final image.
@@ -535,15 +316,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 1. Now that you have an image built, it's time to run the container.
 @z
 
-@x
-    ```console
-    $ docker run -d -p 8080:8080 spring-helloworld
-    ```
-@y
-    ```console
-    $ docker run -d -p 8080:8080 spring-helloworld
-    ```
-@z
+% snip command...
 
 @x
     You'll then see output similar to the following in the container log:
@@ -551,47 +324,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     You'll then see output similar to the following in the container log:
 @z
 
-@x
-    ```plaintext
-    [INFO] --- spring-boot:3.3.0-M3:run (default-cli) @ spring-boot-docker ---
-    [INFO] Attaching agents: []
-     .   ____          _            __ _ _
-     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-     ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-     '  |____| .__|_| |_|_| |_\__, | / / / /
-      =========|_|==============|___/=/_/_/_/
-@y
-    ```plaintext
-    [INFO] --- spring-boot:3.3.0-M3:run (default-cli) @ spring-boot-docker ---
-    [INFO] Attaching agents: []
-     .   ____          _            __ _ _
-     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-     ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-     '  |____| .__|_| |_|_| |_\__, | / / / /
-      =========|_|==============|___/=/_/_/_/
-@z
-
-@x
-     :: Spring Boot ::             (v3.3.0-M3)
-@y
-     :: Spring Boot ::             (v3.3.0-M3)
-@z
-
-@x
-     2024-04-04T15:36:47.202Z  INFO 42 --- [spring-boot-docker] [           main]       
-     c.e.s.SpringBootDockerApplication        : Starting SpringBootDockerApplication using Java    
-     21.0.2 with PID 42 (/app/target/classes started by root in /app)
-     ….
-     ```
-@y
-     2024-04-04T15:36:47.202Z  INFO 42 --- [spring-boot-docker] [           main]       
-     c.e.s.SpringBootDockerApplication        : Starting SpringBootDockerApplication using Java    
-     21.0.2 with PID 42 (/app/target/classes started by root in /app)
-     ….
-     ```
-@z
+% snip output...
 
 @x
 2. Access your “Hello World” page through your web browser at [http://localhost:8080](http://localhost:8080), or via this curl command:
@@ -599,17 +332,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 2. Access your “Hello World” page through your web browser at [http://localhost:8080](http://localhost:8080), or via this curl command:
 @z
 
-@x
-    ```console
-    $ curl localhost:8080
-    Hello World
-    ```
-@y
-    ```console
-    $ curl localhost:8080
-    Hello World
-    ```
-@z
+% snip command...
 
 @x
 ### Use multi-stage builds
@@ -623,37 +346,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 1. Consider the following Dockerfile:
 @z
 
-@x
-    ```dockerfile
-    FROM eclipse-temurin:21.0.2_13-jdk-jammy as builder
-    WORKDIR /opt/app
-    COPY .mvn/ .mvn
-    COPY mvnw pom.xml ./
-    RUN ./mvnw dependency:go-offline
-    COPY ./src ./src
-    RUN ./mvnw clean install
-    FROM eclipse-temurin:21.0.2_13-jre-jammy as final
-    WORKDIR /opt/app
-    EXPOSE 8080
-    COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
-    ENTRYPOINT ["java", "-jar", "/opt/app/*.jar"]
-    ```
-@y
-    ```dockerfile
-    FROM eclipse-temurin:21.0.2_13-jdk-jammy as builder
-    WORKDIR /opt/app
-    COPY .mvn/ .mvn
-    COPY mvnw pom.xml ./
-    RUN ./mvnw dependency:go-offline
-    COPY ./src ./src
-    RUN ./mvnw clean install
-    FROM eclipse-temurin:21.0.2_13-jre-jammy as final
-    WORKDIR /opt/app
-    EXPOSE 8080
-    COPY --from=builder /opt/app/target/*.jar /opt/app/*.jar
-    ENTRYPOINT ["java", "-jar", "/opt/app/*.jar"]
-    ```
-@z
+% snip code...
 
 @x
     Notice that this Dockerfile has been split into two stages. 
@@ -668,9 +361,9 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 @z
 
 @x
-    - The second stage is a new stage named `final`. Since it starts `FROM builder`, it inherits everything from the base stage (JDK environment). It uses a slimmer `eclipse-temurin:21.0.2_13-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
+    - The second stage is a new stage named `final`. It uses a slimmer `eclipse-temurin:21.0.2_13-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
 @y
-    - The second stage is a new stage named `final`. Since it starts `FROM builder`, it inherits everything from the base stage (JDK environment). It uses a slimmer `eclipse-temurin:21.0.2_13-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
+    - The second stage is a new stage named `final`. It uses a slimmer `eclipse-temurin:21.0.2_13-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
 @z
 
 @x
@@ -693,15 +386,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 2. Now, rebuild your image and run your ready-to-use production build. 
 @z
 
-@x
-    ```console
-    $ docker build -t spring-helloworld-builder .
-    ```
-@y
-    ```console
-    $ docker build -t spring-helloworld-builder .
-    ```
-@z
+% snip command...
 
 @x
     This command builds a Docker image named `spring-helloworld-builder` using the final stage from your `Dockerfile` file located in the current directory.
@@ -725,15 +410,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 3. Look at the image size difference by using the `docker images` command:
 @z
 
-@x
-    ```console
-    $ docker images
-    ```
-@y
-    ```console
-    $ docker images
-    ```
-@z
+% snip command...
 
 @x
     You'll get output similar to the following:
@@ -741,17 +418,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
     You'll get output similar to the following:
 @z
 
-@x
-    ```console
-    spring-helloworld-builder latest    c5c76cb815c0   24 minutes ago      428MB
-    spring-helloworld         latest    ff708d5ee194   About an hour ago   880MB
-    ```
-@y
-    ```console
-    spring-helloworld-builder latest    c5c76cb815c0   24 minutes ago      428MB
-    spring-helloworld         latest    ff708d5ee194   About an hour ago   880MB
-    ```
-@z
+% snip output...
 
 @x
     Your final image is just 428 MB, compared to the original build size of 880 MB.

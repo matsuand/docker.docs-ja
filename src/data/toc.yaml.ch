@@ -2610,18 +2610,6 @@ Manuals:
             title: What is Settings Management?
           - path: /desktop/hardened-desktop/settings-management/configure/
             title: Configure Settings Management
-          - path: /desktop/hardened-desktop/settings-management/air-gapped-containers/
-            title: Air-gapped containers (Beta)
-        - sectiontitle: Enhanced Container Isolation
-          section:
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/
-            title: What is Enhanced Container Isolation?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
-            title: How does it work?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
-            title: Key features and benefits
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced configuration options
 @y
     - sectiontitle: Hardened Docker Desktop
       section:
@@ -2633,8 +2621,20 @@ Manuals:
             title: What is Settings Management?
           - path: __SUBDIR__/desktop/hardened-desktop/settings-management/configure/
             title: Configure Settings Management
-          - path: __SUBDIR__/desktop/hardened-desktop/settings-management/air-gapped-containers/
-            title: Air-gapped containers (Beta)
+@z
+
+@x
+        - sectiontitle: Enhanced Container Isolation
+          section:
+          - path: /desktop/hardened-desktop/enhanced-container-isolation/
+            title: What is Enhanced Container Isolation?
+          - path: /desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
+            title: How does it work?
+          - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
+            title: Key features and benefits
+          - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced configuration options
+@y
         - sectiontitle: Enhanced Container Isolation
           section:
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
@@ -2645,6 +2645,14 @@ Manuals:
             title: Key features and benefits
           - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/config/
             title: Advanced configuration options
+@z
+
+@x
+        - path: /desktop/hardened-desktop/air-gapped-containers/
+          title: Air-Gapped Containers
+@y
+        - path: __SUBDIR__/desktop/hardened-desktop/air-gapped-containers/
+          title: Air-Gapped Containers
 @z
 
 @x
@@ -3560,6 +3568,8 @@ Manuals:
     section:
     - path: /engine/reference/commandline/cli/
       title: Use the Docker CLI
+    - path: /config/completion/
+      title: Completion
     - path: /config/filter/
       title: Filter commands
     - path: /config/formatting/
@@ -3571,6 +3581,8 @@ Manuals:
     section:
     - path: __SUBDIR__/engine/reference/commandline/cli/
       title: Docker CLI の利用
+    - path: __SUBDIR__/config/completion/
+      title: 補完
     - path: __SUBDIR__/config/filter/
       title: フィルターコマンド
     - path: __SUBDIR__/config/formatting/

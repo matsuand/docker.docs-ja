@@ -4,6 +4,7 @@
 SUBDIRS = containers daemon
 
 bases = \
+	completion.md             \
 	filter.md                 \
 	formatting.md             \
 	labels-custom-metadata.md \

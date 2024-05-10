@@ -4,13 +4,19 @@
 @x
 ---
 description: How Docker Scout handles image metadata
-keywords: scanning, supply chain, security, data, metadata
+keywords: |
+  scout, scanning, supply chain, security, purl, sbom, provenance, environment,
+  materials, config, ports, labels, os, registry, timestamp, digest, layers,
+  architecture, license, dependencies, base image
 title: Data collection and storage in Docker Scout
 ---
 @y
 ---
 description: How Docker Scout handles image metadata
-keywords: scanning, supply chain, security, data, metadata
+keywords: |
+  scout, scanning, supply chain, security, purl, sbom, provenance, environment,
+  materials, config, ports, labels, os, registry, timestamp, digest, layers,
+  architecture, license, dependencies, base image
 title: Data collection and storage in Docker Scout
 ---
 @z

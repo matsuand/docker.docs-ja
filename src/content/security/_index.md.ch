@@ -23,6 +23,10 @@ grid_admins:
   description: Control the images developers can pull from Docker Hub.
   icon: photo_library
   link: /security/for-admins/image-access-management/
+- title: "Air-Gapped Containers"
+  description: Restrict containers from accessing unwanted network resources.
+  icon: "vpn_lock"
+  link: /desktop/hardened-desktop/air-gapped-containers/
 - title: Enforce sign-in
   description: Configure sign-in for members of your teams and organizations.
   link: /security/for-admins/configure-sign-in/
@@ -44,14 +48,14 @@ grid_admins:
   icon: checklist
   link: /security/for-admins/scim/
 - title: Roles and permissions
-  description: Assign roles to individuals giving them different permissions within an organization. 
+  description: Assign roles to individuals giving them different permissions within an organization.
   icon: badge
   link: /security/for-admins/roles-and-permissions/
 - title: Private marketplace for Extensions (Early Access)
   description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
   icon: storefront
   link: /desktop/extensions/private-marketplace/
-grid_developers: 
+grid_developers:
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: /security/for-developers/2fa/
@@ -108,6 +112,10 @@ grid_admins:
   description: Control the images developers can pull from Docker Hub.
   icon: photo_library
   link: /security/for-admins/image-access-management/
+- title: "Air-Gapped Containers"
+  description: Restrict containers from accessing unwanted network resources.
+  icon: "vpn_lock"
+  link: /desktop/hardened-desktop/air-gapped-containers/
 - title: Enforce sign-in
   description: Configure sign-in for members of your teams and organizations.
   link: /security/for-admins/configure-sign-in/
@@ -129,14 +137,14 @@ grid_admins:
   icon: checklist
   link: /security/for-admins/scim/
 - title: Roles and permissions
-  description: Assign roles to individuals giving them different permissions within an organization. 
+  description: Assign roles to individuals giving them different permissions within an organization.
   icon: badge
   link: /security/for-admins/roles-and-permissions/
 - title: Private marketplace for Extensions (Early Access)
   description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
   icon: storefront
   link: /desktop/extensions/private-marketplace/
-grid_developers: 
+grid_developers:
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: /security/for-developers/2fa/
@@ -174,23 +182,23 @@ grid_resources:
 @z
 
 @x
-Docker provides security guardrails for both administrators and developers. 
+Docker provides security guardrails for both administrators and developers.
 @y
-Docker provides security guardrails for both administrators and developers. 
+Docker provides security guardrails for both administrators and developers.
 @z
 
 @x
-If you're an administrator, you can enforce sign-in across Docker products for your developers, and 
-scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management. 
+If you're an administrator, you can enforce sign-in across Docker products for your developers, and
+scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management.
 @y
-If you're an administrator, you can enforce sign-in across Docker products for your developers, and 
-scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management. 
+If you're an administrator, you can enforce sign-in across Docker products for your developers, and
+scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management.
 @z
 
 @x
-For both administrators and developers, Docker provides security-specific products such as Docker Scout, for securing your software supply chain with proactive image vulnerability monitoring and remediation strategies. 
+For both administrators and developers, Docker provides security-specific products such as Docker Scout, for securing your software supply chain with proactive image vulnerability monitoring and remediation strategies.
 @y
-For both administrators and developers, Docker provides security-specific products such as Docker Scout, for securing your software supply chain with proactive image vulnerability monitoring and remediation strategies. 
+For both administrators and developers, Docker provides security-specific products such as Docker Scout, for securing your software supply chain with proactive image vulnerability monitoring and remediation strategies.
 @z
 
 @x
@@ -206,9 +214,9 @@ Explore the security features Docker offers to satisfy your company's security p
 @z
 
 @x
-{{< grid items="grid_admins" >}} 
+{{< grid items="grid_admins" >}}
 @y
-{{< grid items="grid_admins" >}} 
+{{< grid items="grid_admins" >}}
 @z
 
 @x

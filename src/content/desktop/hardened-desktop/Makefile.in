@@ -297,6 +297,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = enhanced-container-isolation settings-management
 bases = \
+	air-gapped-containers.md \
 	_index.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

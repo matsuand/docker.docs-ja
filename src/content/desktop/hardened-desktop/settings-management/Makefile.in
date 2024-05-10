@@ -239,7 +239,6 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md                \
-	air-gapped-containers.md \
 	configure.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

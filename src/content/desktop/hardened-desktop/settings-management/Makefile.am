@@ -3,7 +3,6 @@
 ##
 bases = \
 	_index.md                \
-	air-gapped-containers.md \
 	configure.md
 
 include $(top_srcdir)/build-aux/common.mk

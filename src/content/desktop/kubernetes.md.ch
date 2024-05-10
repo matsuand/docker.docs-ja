@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: See how you can deploy to Kubernetes on Docker Desktop
 keywords: deploy, kubernetes, kubectl, orchestration, Docker Desktop
 title: Deploy on Kubernetes with Docker Desktop
-aliases:
-- /docker-for-windows/kubernetes/
-- /docker-for-mac/kubernetes/
----
 @y
----
 description: See how you can deploy to Kubernetes on Docker Desktop
 keywords: deploy, kubernetes, kubectl, orchestration, Docker Desktop
 title: Docker Desktop を使った Kubernetes へのデプロイ
-aliases:
-- /docker-for-windows/kubernetes/
-- /docker-for-mac/kubernetes/
----
 @z
 
 @x
@@ -125,17 +117,7 @@ If you have already installed `kubectl` and it is
 pointing to some other environment, such as `minikube` or a GKE cluster, ensure you change the context so that `kubectl` is pointing to `docker-desktop`:
 @z
 
-@x
-```console
-$ kubectl config get-contexts
-$ kubectl config use-context docker-desktop
-```
-@y
-```console
-$ kubectl config get-contexts
-$ kubectl config use-context docker-desktop
-```
-@z
+% snip command...
 
 @x
 > **Tip**
@@ -167,23 +149,7 @@ You can test the command by listing the available nodes:
 You can test the command by listing the available nodes:
 @z
 
-@x
-```console
-$ kubectl get nodes
-@y
-```console
-$ kubectl get nodes
-@z
-
-@x
-NAME                 STATUS    ROLES     AGE       VERSION
-docker-desktop       Ready     master    3h        v1.19.7
-```
-@y
-NAME                 STATUS    ROLES     AGE       VERSION
-docker-desktop       Ready     master    3h        v1.19.7
-```
-@z
+% snip command...
 
 @x
 For more information about `kubectl`, see the

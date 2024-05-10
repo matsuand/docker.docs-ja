@@ -662,24 +662,23 @@ with your `docker run` command, specifying a volume name and the path where the
 database stores its data inside the container. If the volume doesn't exist,
 Docker automatically creates it for you.
 @y
-To run your database container with a volume attached, include the `-v` option
-with your `docker run` command, specifying a volume name and the path where the
-database stores its data inside the container. If the volume doesn't exist,
-Docker automatically creates it for you.
+ボリュームをアタッチしたデータベースコンテナーを起動するには、`docker run` コマンドに `-v` オプションを含めます。
+そこで指定するのはボリューム名と、コンテナー内部にデータベースデータが保存されているパスです。
+
+ボリュームがまだ存在していない場合、Docker は自動的に生成します。
 @z
 
 @x
 To run a database container with a volume attached, and then verify that the
 data persists:
 @y
-To run a database container with a volume attached, and then verify that the
-data persists:
+ボリュームをアタッチしたデータベースコンテナーを起動して、そのデータが保持されていることを確認するには以下を行います。
 @z
 
 @x
 1. Run the container and attach the volume.
 @y
-1. Run the container and attach the volume.
+1. ボリュームをアタッチしたコンテナーを起動します。
 @z
 
 % snip command...
@@ -687,15 +686,15 @@ data persists:
 @x
    This command mounts the volume named `my-db-volume` to the `/var/lib/mysql` directory in the container.
 @y
-   This command mounts the volume named `my-db-volume` to the `/var/lib/mysql` directory in the container.
+   このコマンドは `my-db-volume` という名前のボリュームを、コンテナー内の `/var/lib/mysql` ディレクトリにマウントします。
 @z
 
 @x
 2. Create some data in the database. Use the `docker exec` command to run
    `mysql` inside the container and create a table.
 @y
-2. Create some data in the database. Use the `docker exec` command to run
-   `mysql` inside the container and create a table.
+2. データベース内に何かデータを生成します。
+   ここでは `docker exec` コマンドを使い、コンテナー内にて `mysql` を実行してテーブルを生成します。
 @z
 
 % snip command...
@@ -705,17 +704,17 @@ data persists:
    `mytable` with a column named `column_name`, and finally inserts a value of
    `value`.
 @y
-   This command uses the `mysql` tool in the container to create a table named
-   `mytable` with a column named `column_name`, and finally inserts a value of
-   `value`.
+   このコマンドはコンテナー内にて `mysql` ツールを利用してテーブルを生成します。
+   テーブル名は `mytable` であり `column_name` というカラムを一つ持ちます。
+   そして `value` という値をインサートします。
 @z
 
 @x
 3. Stop and remove the container. Without a volume, the table you created would
    be lost when removing the container.
 @y
-3. Stop and remove the container. Without a volume, the table you created would
-   be lost when removing the container.
+3. コンテナーを停止し削除します。
+   ボリュームがなかったとしたら、コンテナーの削除とともに生成したテーブルも無くなります。
 @z
 
 % snip command...
@@ -725,9 +724,9 @@ data persists:
    specify any environment variables as the configuration is saved in the
    volume.
 @y
-4. Start a new container with the volume attached. This time, you don't need to
-   specify any environment variables as the configuration is saved in the
-   volume.
+4. ボリュームをアタッチした新たなコンテナーを起動します。
+   今回は環境変数を指定する必要はありません。
+   ボリューム内に設定が保存されているからです。
 @z
 
 % snip command...
@@ -736,8 +735,8 @@ data persists:
 5. Verify that the table you created still exists. Use the `docker exec` command
    again to run `mysql` inside the container.
 @y
-5. Verify that the table you created still exists. Use the `docker exec` command
-   again to run `mysql` inside the container.
+5. 先に生成したテーブルが存在していることを確認します。
+   再度 `docker exec` コマンドを使って、コンテナー内にて `mysql` を実行します。
 @z
 
 % snip command...
@@ -746,14 +745,13 @@ data persists:
    This command uses the `mysql` tool in the container to select all the
    records from the `mytable` table.
 @y
-   This command uses the `mysql` tool in the container to select all the
-   records from the `mytable` table.
+   このコマンドはコンテナー内にて `mysql` ツールを使い、テーブル `mytable` から全レコードを一覧取得するものです。
 @z
 
 @x
    You should see output like the following.
 @y
-   You should see output like the following.
+   その出力結果は以下のようなものになるはずです。
 @z
 
 % snip output...
@@ -770,12 +768,16 @@ data persists:
 To run a database container with a volume attached, and then verify that the
 data persists:
 @y
-To run a database container with a volume attached, and then verify that the
-data persists:
+ボリュームをアタッチしたデータベースコンテナーを起動して、データが保持されていることを確認するには以下を行います。
 @z
 
 @x
 1. Run a container with a volume attached.
+@y
+1. ボリュームをアタッチしたコンテナーを起動します。
+@z
+
+@x
    1. In the Docker Dashboard, select the global search at the top of the window.
    2. Specify `mysql` in the search box, and select the **Images** tab if not
    already selected.
@@ -784,14 +786,13 @@ data persists:
    4. Expand **Optional settings**.
    5. In the optional settings, specify the following:
 @y
-1. Run a container with a volume attached.
-   1. In the Docker Dashboard, select the global search at the top of the window.
-   2. Specify `mysql` in the search box, and select the **Images** tab if not
-   already selected.
-   3. Hover over the **mysql** image and select **Run**.
-   The **Run a new container** model appears.
-   4. Expand **Optional settings**.
-   5. In the optional settings, specify the following:
+   1. Docker Dashboard において、画面最上段のグローバル検索欄を選びます。
+   2. 検索欄に `mysql` を入力します。
+   `Images` (イメージ) タブが選択されていない場合は選択します。
+   3. `msyql` イメージ上にマウスカーソルを移動させて `Run` (実行) を選びます。
+   **Run a new container** (新規コンテナーの実行) 画面が開きます。
+   4. **Optional settings** (オプション設定) を展開します。
+   5. オプションの設定において以下を指定します。
 @z
 
 @x
@@ -802,40 +803,48 @@ data persists:
       - **Volumes**:
          - `my-db-volume`:`/var/lib/mysql`
 @y
-      - **Container name**: `my-mysql`
-      - **Environment variables**:
+      - **Container name** (コンテナー名): `my-mysql`
+      - **Environment variables (環境変数)**:
          - `MYSQL_ROOT_PASSWORD`:`my-secret-pw`
          - `MYSQL_DATABASE`:`mydb`
-      - **Volumes**:
+      - **Volumes** (ボリューム):
          - `my-db-volume`:`/var/lib/mysql`
 @z
 
 @x
       ![The optional settings screen with the options specified.](images/databases-3.webp)
 @y
-      ![The optional settings screen with the options specified.](images/databases-3.webp)
+      ![オプション設定画面にてオプションを設定](images/databases-3.webp)
 @z
 
 @x
       Here, the name of the volume is `my-db-volume` and it is mounted in the
      container at `/var/lib/mysql`.
 @y
-      Here, the name of the volume is `my-db-volume` and it is mounted in the
-     container at `/var/lib/mysql`.
+      ここでのボリューム名は `my-db-volume` です。
+     これがコンテナー内の `/var/lib/mysql` にマウントされます。
 @z
 
 @x
    6. Select `Run`.
+@y
+   6. `Run` (実行) を選びます。
+@z
+
+@x
 2. Create some data in the database.
+@y
+2. データベース内に何かデータを生成します。
+@z
+
+@x
    1. In the **Containers** view, next to your container select the **Show
       container actions** icon, and then select **Open in terminal**.
    2. Run the following command in the container's terminal to add a table.
 @y
-   6. Select `Run`.
-2. Create some data in the database.
-   1. In the **Containers** view, next to your container select the **Show
-      container actions** icon, and then select **Open in terminal**.
-   2. Run the following command in the container's terminal to add a table.
+   1. **Containers** (コンテナー) 画面にて、対象コンテナーの横にある **Show container actions** (コンテナー動作の確認) アイコンを選択します。
+      そして **Open in terminal** (端末を開く) を選びます。
+   2. コンテナーの端末から以下のコマンドを実行して、テーブルを追加します。
 @z
 
 % snip command...
@@ -845,9 +854,9 @@ data persists:
       named `mytable` with a column named `column_name`, and finally inserts a
       value of value`.
 @y
-      This command uses the `mysql` tool in the container to create a table
-      named `mytable` with a column named `column_name`, and finally inserts a
-      value of value`.
+     このコマンドはコンテナー内にて `mysql` ツールを利用してテーブルを生成します。
+     テーブル名は `mytable` であり `column_name` というカラムを一つ持ちます。
+     そして `value` という値をインサートします。
 @z
 
 @x
@@ -863,17 +872,17 @@ data persists:
    4. Expand **Optional settings**.
    5. In the optional settings, specify the following:
 @y
-3. In the **Containers** view, select the **Delete** icon next to your
-   container, and then select **Delete forever**. Without a volume, the table
-   you created would be lost when deleting the container.
-4. Run a container with a volume attached.
-   1. In the Docker Dashboard, select the global search at the top of the window.
-   2. Specify `mysql` in the search box, and select the **Images** tab if not
-   already selected.
-   3. Hover over the **mysql** image and select **Run**.
-   The **Run a new container** model appears.
-   4. Expand **Optional settings**.
-   5. In the optional settings, specify the following:
+3. **Containers** (コンテナー) 画面にて、対象コンテナーの横にある **Delete** (削除) アイコンを選択します。
+   そして **Delete forever** (完全に削除) を選びます。
+   ボリュームがなかったとしたら、コンテナーの削除とともに生成したテーブルも無くなります。
+4. ボリュームをアタッチした新たなコンテナーを起動します。
+   1. Docker Dashboard において、画面最上段のグローバル検索欄を選びます。
+   2. 検索欄に `mysql` を入力します。
+      `Images` (イメージ) タブが選択されていない場合は選択します。
+   3. `msyql` イメージ上にマウスカーソルを移動させて `Run` (実行) を選びます。
+      **Run a new container** (新規コンテナーの実行) 画面が開きます。
+   4. **Optional settings** (オプション設定) を展開します。
+   5. オプションの設定において以下を指定します。
 @z
 
 @x
@@ -884,34 +893,41 @@ data persists:
       - **Volumes**:
          - `my-db-volume`:`/var/lib/mysql`
 @y
-      - **Container name**: `my-mysql`
-      - **Environment variables**:
+      - **Container name** (コンテナー名): `my-mysql`
+      - **Environment variables** (環境変数):
          - `MYSQL_ROOT_PASSWORD`:`my-secret-pw`
          - `MYSQL_DATABASE`:`mydb`
-      - **Volumes**:
+      - **Volumes** (ボリューム):
          - `my-db-volume`:`/var/lib/mysql`
 @z
 
 @x
       ![The optional settings screen with the options specified.](images/databases-3.webp)
 @y
-      ![The optional settings screen with the options specified.](images/databases-3.webp)
+      ![オプション設定画面にてオプションを設定](images/databases-3.webp)
 @z
 
 @x
    6. Select `Run`.
+@y
+   6. `Run` (実行) を選びます。
+@z
+
+@x
 5. Verify that the table you created still exists.
+@y
+5. 先に生成したテーブルが存在していることを確認します。
+@z
+
+@x
    1. In the **Containers** view, next to your container select the **Show
       container actions** icon, and then select **Open in terminal**.
    2. Run the following command in the container's terminal to verify that table
       you created still exists.
 @y
-   6. Select `Run`.
-5. Verify that the table you created still exists.
-   1. In the **Containers** view, next to your container select the **Show
-      container actions** icon, and then select **Open in terminal**.
-   2. Run the following command in the container's terminal to verify that table
-      you created still exists.
+   1. **Containers** (コンテナー) 画面にて、対象コンテナーの横にある **Show container actions** (コンテナー動作の確認) アイコンを選択します。
+      そして **Open in terminal** (端末を開く) を選びます。
+   2. コンテナーの端末から以下のコマンドを実行して、先に生成したテーブルが存在していることを確認します。
 @z
 
 % snip command...
@@ -920,14 +936,13 @@ data persists:
       This command uses the `mysql` tool in the container to select all the
       records from the `mytable` table.
 @y
-      This command uses the `mysql` tool in the container to select all the
-      records from the `mytable` table.
+      このコマンドはコンテナー内にて `mysql` ツールを使い、テーブル `mytable` から全レコードを一覧取得するものです。
 @z
 
 @x
       You should see output like the following.
 @y
-      You should see output like the following.
+      その出力結果は以下のようなものになるはずです。
 @z
 
 % snip output...
@@ -944,7 +959,7 @@ data persists:
 At this point, any MySQL container that mounts the `my-db-volume` will be able
 to access and save persisted data.
 @y
-At this point, any MySQL container that mounts the `my-db-volume` will be able
+この時点においてany MySQL container that mounts the `my-db-volume` will be able
 to access and save persisted data.
 @z
 
