@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Using tmpfs mounts
 title: tmpfs mounts
 keywords: storage, persistence, data persistence, tmpfs
-aliases:
-- /engine/admin/volumes/tmpfs/
----
 @y
----
 description: Using tmpfs mounts
 title: tmpfs mounts
 keywords: storage, persistence, data persistence, tmpfs
-aliases:
-- /engine/admin/volumes/tmpfs/
----
 @z
 
 @x
@@ -181,23 +173,7 @@ second uses the `--tmpfs` flag.
 {{< tab name="`--mount`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  -it \
-  --name tmptest \
-  --mount type=tmpfs,destination=/app \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  -it \
-  --name tmptest \
-  --mount type=tmpfs,destination=/app \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -207,23 +183,7 @@ $ docker run -d \
 {{< tab name="`--tmpfs`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  -it \
-  --name tmptest \
-  --tmpfs /app \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  -it \
-  --name tmptest \
-  --tmpfs /app \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -241,17 +201,7 @@ Verify that the mount is a `tmpfs` mount by looking in the `Mounts` section of
 the `docker inspect` output:
 @z
 
-@x
-```console
-$ docker inspect tmptest --format '{{ json .Mounts }}'
-[{"Type":"tmpfs","Source":"","Destination":"/app","Mode":"","RW":true,"Propagation":""}]
-```
-@y
-```console
-$ docker inspect tmptest --format '{{ json .Mounts }}'
-[{"Type":"tmpfs","Source":"","Destination":"/app","Mode":"","RW":true,"Propagation":""}]
-```
-@z
+% snip command...
 
 @x
 Stop and remove the container:
@@ -259,17 +209,7 @@ Stop and remove the container:
 Stop and remove the container:
 @z
 
-@x
-```console
-$ docker stop tmptest
-$ docker rm tmptest
-```
-@y
-```console
-$ docker stop tmptest
-$ docker rm tmptest
-```
-@z
+% snip command...
 
 @x
 ### Specify tmpfs options
@@ -288,15 +228,15 @@ as the `--tmpfs` flag does not support them.
 @z
 
 @x
-| Option       | Description                                                                                           |
-|:-------------|:------------------------------------------------------------------------------------------------------|
-| `tmpfs-size` | Size of the tmpfs mount in bytes. Unlimited by default.                                               |
-| `tmpfs-mode` | File mode of the tmpfs in octal. For instance, `700` or `0770`. Defaults to `1777` or world-writable. |
+| Option       | Description                                                                                                               |
+|:-------------|:--------------------------------------------------------------------------------------------------------------------------|
+| `tmpfs-size` | Size of the tmpfs mount in bytes. If unset, the default maximum size of a tmpfs volume is 50% of the host's total RAM.    |
+| `tmpfs-mode` | File mode of the tmpfs in octal. For instance, `700` or `0770`. Defaults to `1777` or world-writable.                     |
 @y
-| Option       | Description                                                                                           |
-|:-------------|:------------------------------------------------------------------------------------------------------|
-| `tmpfs-size` | Size of the tmpfs mount in bytes. Unlimited by default.                                               |
-| `tmpfs-mode` | File mode of the tmpfs in octal. For instance, `700` or `0770`. Defaults to `1777` or world-writable. |
+| Option       | Description                                                                                                               |
+|:-------------|:--------------------------------------------------------------------------------------------------------------------------|
+| `tmpfs-size` | Size of the tmpfs mount in bytes. If unset, the default maximum size of a tmpfs volume is 50% of the host's total RAM.    |
+| `tmpfs-mode` | File mode of the tmpfs in octal. For instance, `700` or `0770`. Defaults to `1777` or world-writable.                     |
 @z
 
 @x
@@ -307,23 +247,7 @@ The following example sets the `tmpfs-mode` to `1770`, so that it is not
 world-readable within the container.
 @z
 
-@x
-```console
-docker run -d \
-  -it \
-  --name tmptest \
-  --mount type=tmpfs,destination=/app,tmpfs-mode=1770 \
-  nginx:latest
-```
-@y
-```console
-docker run -d \
-  -it \
-  --name tmptest \
-  --mount type=tmpfs,destination=/app,tmpfs-mode=1770 \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 ## Next steps

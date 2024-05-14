@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Build context
 description: Learn how to use the build context to access files from your Dockerfile
 keywords: build, buildx, buildkit, context, git, tarball, stdin
----
 @y
----
 title: Build context
 description: Learn how to use the build context to access files from your Dockerfile
 keywords: build, buildx, buildkit, context, git, tarball, stdin
----
 @z
 
 @x
@@ -39,17 +37,7 @@ The positional argument that you pass to the build command specifies the
 context that you want to use for the build:
 @z
 
-@x
-```console
-$ docker build [OPTIONS] PATH | URL | -
-                         ^^^^^^^^^^^^^^
-```
-@y
-```console
-$ docker build [OPTIONS] PATH | URL | -
-                         ^^^^^^^^^^^^^^
-```
-@z
+% snip command...
 
 @x
 You can pass any of the following inputs as the context for a build:
@@ -153,25 +141,7 @@ to the `docker build` command. The following example shows a build command that
 uses the current directory (`.`) as a build context:
 @z
 
-@x
-```console
-$ docker build .
-...
-#16 [internal] load build context
-#16 sha256:23ca2f94460dcbaf5b3c3edbaaa933281a4e0ea3d92fe295193e4df44dc68f85
-#16 transferring context: 13.16MB 2.2s done
-...
-```
-@y
-```console
-$ docker build .
-...
-#16 [internal] load build context
-#16 sha256:23ca2f94460dcbaf5b3c3edbaaa933281a4e0ea3d92fe295193e4df44dc68f85
-#16 transferring context: 13.16MB 2.2s done
-...
-```
-@z
+% snip command...
 
 @x
 This makes files and directories in the current working directory available to
@@ -203,25 +173,7 @@ Consider the following directory structure:
 Consider the following directory structure:
 @z
 
-@x
-```text
-.
-├── index.ts
-├── src/
-├── Dockerfile
-├── package.json
-└── package-lock.json
-```
-@y
-```text
-.
-├── index.ts
-├── src/
-├── Dockerfile
-├── package.json
-└── package-lock.json
-```
-@z
+% snip text...
 
 @x
 Dockerfile instructions can reference and include these files in the build if
@@ -231,35 +183,8 @@ Dockerfile instructions can reference and include these files in the build if
 you pass this directory as a context.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node:latest
-WORKDIR /src
-COPY package.json package-lock.json .
-RUN npm ci
-COPY index.ts src .
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node:latest
-WORKDIR /src
-COPY package.json package-lock.json .
-RUN npm ci
-COPY index.ts src .
-```
-@z
-
-@x
-```console
-$ docker build .
-```
-@y
-```console
-$ docker build .
-```
-@z
+% snip code...
+% snip command...
 
 @x
 ### Local context with Dockerfile from stdin
@@ -275,15 +200,7 @@ Use the following syntax to build an image using files on your local
 filesystem, while using a Dockerfile from stdin.
 @z
 
-@x
-```console
-$ docker build -f- <PATH>
-```
-@y
-```console
-$ docker build -f- <PATH>
-```
-@z
+% snip command...
 
 @x
 The syntax uses the -f (or --file) option to specify the Dockerfile to use, and
@@ -363,29 +280,7 @@ For example, given the following project directory:
 For example, given the following project directory:
 @z
 
-@x
-```text
-.
-├── Dockerfile
-├── Makefile
-├── README.md
-├── main.c
-├── scripts
-├── src
-└── test.Dockerfile
-```
-@y
-```text
-.
-├── Dockerfile
-├── Makefile
-├── README.md
-├── main.c
-├── scripts
-├── src
-└── test.Dockerfile
-```
-@z
+% snip text...
 
 @x
 You can create a tarball of the directory and pipe it to the build for use as
@@ -395,17 +290,7 @@ You can create a tarball of the directory and pipe it to the build for use as
 a context:
 @z
 
-@x
-```console
-$ tar czf foo.tar.gz *
-$ docker build - < foo.tar.gz
-```
-@y
-```console
-$ tar czf foo.tar.gz *
-$ docker build - < foo.tar.gz
-```
-@z
+% snip command...
 
 @x
 The build resolves the Dockerfile from the tarball context. You can use the
@@ -419,15 +304,7 @@ the root of the tarball. The following command builds using `test.Dockerfile`
 in the tarball:
 @z
 
-@x
-```console
-$ docker build --file test.Dockerfile - < foo.tar.gz
-```
-@y
-```console
-$ docker build --file test.Dockerfile - < foo.tar.gz
-```
-@z
+% snip command...
 
 @x
 ## Remote context
@@ -493,15 +370,7 @@ The builder recursively clones the repository and any submodules it contains.
 The builder recursively clones the repository and any submodules it contains.
 @z
 
-@x
-```console
-$ docker build https://github.com/user/myrepo.git
-```
-@y
-```console
-$ docker build https://github.com/user/myrepo.git
-```
-@z
+% snip command...
 
 @x
 By default, the builder clones the latest commit on the default branch of the
@@ -532,10 +401,10 @@ The format of the URL fragment is `#ref:dir`, where:
 @z
 
 @x
-- `ref` is the name of the branch, tag, or remote reference
+- `ref` is the name of the branch, tag, or commit hash
 - `dir` is a subdirectory inside the repository
 @y
-- `ref` is the name of the branch, tag, or remote reference
+- `ref` is the name of the branch, tag, or commit hash
 - `dir` is a subdirectory inside the repository
 @z
 
@@ -547,15 +416,7 @@ For example, the following command uses the `container` branch,
 and the `docker` subdirectory in that branch, as the build context:
 @z
 
-@x
-```console
-$ docker build https://github.com/user/myrepo.git#container:docker
-```
-@y
-```console
-$ docker build https://github.com/user/myrepo.git#container:docker
-```
-@z
+% snip command...
 
 @x
 The following table represents all the valid suffixes with their build
@@ -590,6 +451,32 @@ contexts:
 @z
 
 @x
+When you use a commit hash as the `ref` in the URL fragment, use the full,
+40-character string SHA-1 hash of the commit. A short hash, for example a hash
+truncated to 7 characters, is not supported.
+@y
+When you use a commit hash as the `ref` in the URL fragment, use the full,
+40-character string SHA-1 hash of the commit. A short hash, for example a hash
+truncated to 7 characters, is not supported.
+@z
+
+@x
+```bash
+# ✅ The following works:
+docker build github.com/docker/buildx#d4f088e689b41353d74f1a0bfcd6d7c0b213aed2
+# ❌ The following doesn't work because the commit hash is truncated:
+docker build github.com/docker/buildx#d4f088e
+```
+@y
+```bash
+# ✅ The following works:
+docker build github.com/docker/buildx#d4f088e689b41353d74f1a0bfcd6d7c0b213aed2
+# ❌ The following doesn't work because the commit hash is truncated:
+docker build github.com/docker/buildx#d4f088e
+```
+@z
+
+@x
 #### Keep `.git` directory
 @y
 #### Keep `.git` directory
@@ -607,37 +494,8 @@ You can configure BuildKit to keep the directory by setting the
 This can be useful to if you want to retrieve Git information during your build:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-WORKDIR /src
-RUN --mount=target=. \
-  make REVISION=$(git rev-parse HEAD) build
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-WORKDIR /src
-RUN --mount=target=. \
-  make REVISION=$(git rev-parse HEAD) build
-```
-@z
-
-@x
-```console
-$ docker build \
-  --build-arg BUILDKIT_CONTEXT_KEEP_GIT_DIR=1
-  https://github.com/user/myrepo.git#main
-```
-@y
-```console
-$ docker build \
-  --build-arg BUILDKIT_CONTEXT_KEEP_GIT_DIR=1
-  https://github.com/user/myrepo.git#main
-```
-@z
+% snip code...
+% snip command...
 
 @x
 #### Private repositories
@@ -667,15 +525,7 @@ You can configure the SSH credentials to use with the
 [`--ssh` flag](../../reference/cli/docker/buildx/build.md#ssh).
 @z
 
-@x
-```console
-$ docker buildx build --ssh default git@github.com:user/private.git
-```
-@y
-```console
-$ docker buildx build --ssh default git@github.com:user/private.git
-```
-@z
+% snip command...
 
 @x
 If you want to use token-based authentication instead, you can pass the token
@@ -687,19 +537,7 @@ using the
 [`--secret` flag](../../reference/cli/docker/buildx/build.md#secret).
 @z
 
-@x
-```console
-$ GIT_AUTH_TOKEN=<token> docker buildx build \
-  --secret id=GIT_AUTH_TOKEN \
-  https://github.com/user/private.git
-```
-@y
-```console
-$ GIT_AUTH_TOKEN=<token> docker buildx build \
-  --secret id=GIT_AUTH_TOKEN \
-  https://github.com/user/private.git
-```
-@z
+% snip command...
 
 @x
 > **Note**
@@ -725,15 +563,7 @@ Use the following syntax to build an image using files on your local
 filesystem, while using a Dockerfile from stdin.
 @z
 
-@x
-```console
-$ docker build -f- <URL>
-```
-@y
-```console
-$ docker build -f- <URL>
-```
-@z
+% snip command...
 
 @x
 The syntax uses the -f (or --file) option to specify the Dockerfile to use, and
@@ -765,21 +595,7 @@ the `hello.c` file from the [hello-world](https://github.com/docker-library/hell
 repository on GitHub.
 @z
 
-@x
-```bash
-docker build -t myimage:latest -f- https://github.com/docker-library/hello-world.git <<EOF
-FROM busybox
-COPY hello.c ./
-EOF
-```
-@y
-```bash
-docker build -t myimage:latest -f- https://github.com/docker-library/hello-world.git <<EOF
-FROM busybox
-COPY hello.c ./
-EOF
-```
-@z
+% snip command...
 
 @x
 ### Remote tarballs

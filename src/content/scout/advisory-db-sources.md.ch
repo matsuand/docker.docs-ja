@@ -2,15 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+---
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, packages, repositories, ecosystem
 title: Advisory database sources and matching service
+---
 @y
+---
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, packages, repositories, ecosystem
 title: Advisory database sources and matching service
+---
 @z
 
 @x
@@ -58,6 +62,7 @@ Docker Scout uses the following package repositories and security trackers:
 - [Bitnami Vulnerability Database](https://github.com/bitnami/vulndb)
 - [CISA Known Exploited Vulnerability
   Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+- [CISA Vulnrichment](https://github.com/cisagov/vulnrichment)
 - [Debian Security Bug Tracker](https://security-tracker.debian.org/tracker/)
 - [Exploit Prediction Scoring System (EPSS)](https://api.first.org/epss/)
 - [GitHub Advisory Database](https://github.com/advisories/)
@@ -84,6 +89,7 @@ Docker Scout uses the following package repositories and security trackers:
 - [Bitnami Vulnerability Database](https://github.com/bitnami/vulndb)
 - [CISA Known Exploited Vulnerability
   Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+- [CISA Vulnrichment](https://github.com/cisagov/vulnrichment)
 - [Debian Security Bug Tracker](https://security-tracker.debian.org/tracker/)
 - [Exploit Prediction Scoring System (EPSS)](https://api.first.org/epss/)
 - [GitHub Advisory Database](https://github.com/advisories/)

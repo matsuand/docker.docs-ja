@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ ‘Î‰ž
+% snip ‘Î‰ž
 
 @x
 title: What is a registry?
@@ -193,15 +194,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 1. Clone the GitHub repository using the following command:
 @z
 
-@x
-    ```console
-    git clone https://github.com/dockersamples/helloworld-demo-node
-    ```
-@y
-    ```console
-    git clone https://github.com/dockersamples/helloworld-demo-node
-    ```
-@z
+% snip command...
 
 @x
 2. Navigate into the newly created directory.
@@ -209,15 +202,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 2. Navigate into the newly created directory.
 @z
 
-@x
-    ```console
-    cd helloworld-demo-node
-    ```
-@y
-    ```console
-    cd helloworld-demo-node
-    ```
-@z
+% snip command...
 
 @x
 3. Run the following command to build a Docker image, swapping out `YOUR_DOCKER_USERNAME` with your username.
@@ -225,15 +210,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 3. Run the following command to build a Docker image, swapping out `YOUR_DOCKER_USERNAME` with your username.
 @z
 
-@x
-    ```console
-    docker build -t <YOUR_DOCKER_USERNAME>/docker-quickstart .
-    ```
-@y
-    ```console
-    docker build -t <YOUR_DOCKER_USERNAME>/docker-quickstart .
-    ```
-@z
+% snip command...
 
 @x
     >**Note**
@@ -251,15 +228,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 4. Run the following command to list the newly created Docker image:
 @z
 
-@x
-    ```console
-    docker images
-    ```
-@y
-    ```console
-    docker images
-    ```
-@z
+% snip command...
 
 @x
     You will see output like the following:
@@ -267,17 +236,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
     You will see output like the following:
 @z
 
-@x
-    ```console
-    REPOSITORY                                 TAG       IMAGE ID       CREATED         SIZE
-    <YOUR_DOCKER_USERNAME>/docker-quickstart   latest    476de364f70e   2 minutes ago   170MB
-    ```
-@y
-    ```console
-    REPOSITORY                                 TAG       IMAGE ID       CREATED         SIZE
-    <YOUR_DOCKER_USERNAME>/docker-quickstart   latest    476de364f70e   2 minutes ago   170MB
-    ```
-@z
+% snip output...
 
 @x
 5. Start a container to test the image by running the following command (swap out the username with your own username):
@@ -285,15 +244,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 5. Start a container to test the image by running the following command (swap out the username with your own username):
 @z
 
-@x
-    ```console
-    docker run -d -p 8080:8080 <YOUR_DOCKER_USERNAME>/docker-quickstart 
-    ```
-@y
-    ```console
-    docker run -d -p 8080:8080 <YOUR_DOCKER_USERNAME>/docker-quickstart 
-    ```
-@z
+% snip command...
 
 @x
     You can verify if the container is working by visiting [http://localhost:8080](http://localhost:8080) with your browser.
@@ -307,15 +258,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 6. Use the [`docker tag`](__SUBDIR__/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
 @z
 
-@x
-    ```console 
-    docker tag <YOUR_DOCKER_USERNAME>/docker-quickstart <YOUR_DOCKER_USERNAME>/docker-quickstart:1.0 
-    ```
-@y
-    ```console 
-    docker tag <YOUR_DOCKER_USERNAME>/docker-quickstart <YOUR_DOCKER_USERNAME>/docker-quickstart:1.0 
-    ```
-@z
+% snip command...
 
 @x
 7. Finally, it's time to push the newly built image to your Docker Hub repository by using the [`docker push`](/reference/cli/docker/image/push/) command:
@@ -323,15 +266,7 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 7. Finally, it's time to push the newly built image to your Docker Hub repository by using the [`docker push`](__SUBDIR__/reference/cli/docker/image/push/) command:
 @z
 
-@x
-    ```console 
-    docker push -u <YOUR_DOCKER_USERNAME>/docker-quickstart:1.0
-    ```
-@y
-    ```console 
-    docker push -u <YOUR_DOCKER_USERNAME>/docker-quickstart:1.0
-    ```
-@z
+% snip command...
 
 @x
 8. Open [Docker Hub](https://hub.docker.com) and navigate to your repository. Navigate to the **Tags** section and see your newly pushed image.

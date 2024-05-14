@@ -104,13 +104,13 @@ The available categories are:
 @x
 > **Note**
 >
-> Auto-generated categories only apply to Docker Official Images, Docker
-> Verified Publishers, and Docker-Sponsored Open Source program participants.
+> Auto-generated categories only apply to Docker Verified Publishers and
+> Docker-Sponsored Open Source program participants.
 @y
 > **メモ**
 >
-> Auto-generated categories only apply to Docker Official Images, Docker
-> Verified Publishers, and Docker-Sponsored Open Source program participants.
+> Auto-generated categories only apply to Docker Verified Publishers and
+> Docker-Sponsored Open Source program participants.
 @z
 
 @x

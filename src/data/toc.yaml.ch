@@ -428,12 +428,12 @@ Guides:
 @z
 
 @x
-- sectiontitle: Use-case guides {{< badge color=violet text=New >}}
+- sectiontitle: Use-case guides
   section:
     - path: /guides/use-case/
       title: Overview
 @y
-- sectiontitle: ユースケースガイド {{< badge color=violet text=New >}}
+- sectiontitle: ユースケースガイド
   section:
     - path: __SUBDIR__/guides/use-case/
       title: 概要
