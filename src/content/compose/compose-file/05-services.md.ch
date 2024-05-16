@@ -2729,9 +2729,17 @@ It's specified as a [byte value](11-extension.md#specifying-byte-values).
 @z
 
 @x
-`stdin_open` configures a service containers to run with an allocated stdin.
+`stdin_open` configures a service's container to run with an allocated stdin. This is the same as running a container with the 
+`-i` flag. For more information, see [Keep STDIN open](../../reference/cli/docker/container/run/#interactive).
 @y
-`stdin_open` configures a service containers to run with an allocated stdin.
+`stdin_open` configures a service's container to run with an allocated stdin. This is the same as running a container with the 
+`-i` flag. For more information, see [Keep STDIN open](../../reference/cli/docker/container/run/#interactive).
+@z
+
+@x
+Supported values are `true` or `false`.
+@y
+Supported values are `true` or `false`.
 @z
 
 @x
@@ -2837,9 +2845,17 @@ parameters (sysctls) at runtime](../../reference/cli/docker/container/run.md#sys
 @z
 
 @x
-`tty` configures service container to run with a TTY.
+`tty` configures a service's container to run with a TTY. This is the same as This is the same as running a container with the 
+`-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](../../reference/cli/docker/container/run/#tty).
 @y
-`tty` configures service container to run with a TTY.
+`tty` configures a service's container to run with a TTY. This is the same as This is the same as running a container with the 
+`-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](../../reference/cli/docker/container/run/#tty).
+@z
+
+@x
+Supported values are `true` or `false`.
+@y
+Supported values are `true` or `false`.
 @z
 
 @x

@@ -64,10 +64,10 @@ You can use containers to set up local services, like a database. In this sectio
 @z
 
 @x
-2. Uncomment the database related instructions. The following is the udpated
+2. Uncomment the database related instructions. The following is the updated
    `compose.yaml` file.
 @y
-2. Uncomment the database related instructions. The following is the udpated
+2. Uncomment the database related instructions. The following is the updated
    `compose.yaml` file.
 @z
 
