@@ -117,7 +117,7 @@ If you use SAML for your SSO connection, Docker obtains these attributes from th
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+> Optional Just-in-Time (JIT) provisioning is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
 { .experimental }
 @z
 

@@ -180,6 +180,8 @@ AC_CONFIG_FILES([
 	src/content/guides/docker-concepts/Makefile
 	src/content/guides/docker-concepts/building-images/Makefile
 	src/content/guides/docker-concepts/building-images/images/Makefile
+	src/content/guides/docker-concepts/running-containers/Makefile
+	src/content/guides/docker-concepts/running-containers/images/Makefile
 	src/content/guides/docker-concepts/the-basics/Makefile
 	src/content/guides/docker-concepts/the-basics/images/Makefile
 	src/content/guides/get-started/Makefile

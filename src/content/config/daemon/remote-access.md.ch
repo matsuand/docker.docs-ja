@@ -103,19 +103,7 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 2. Add or modify the following lines, substituting your own values.
 @z
 
-@x
-   ```systemd
-   [Service]
-   ExecStart=
-   ExecStart=/usr/bin/dockerd -H fd:// -H tcp://127.0.0.1:2375
-   ```
-@y
-   ```systemd
-   [Service]
-   ExecStart=
-   ExecStart=/usr/bin/dockerd -H fd:// -H tcp://127.0.0.1:2375
-   ```
-@z
+% snip code...
 
 @x
 3. Save the file.
@@ -129,15 +117,7 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 4. Reload the `systemctl` configuration.
 @z
 
-@x
-   ```console
-   $ sudo systemctl daemon-reload
-   ```
-@y
-   ```console
-   $ sudo systemctl daemon-reload
-   ```
-@z
+% snip command...
 
 @x
 5. Restart Docker.
@@ -145,15 +125,7 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 5. Restart Docker.
 @z
 
-@x
-   ```console
-   $ sudo systemctl restart docker.service
-   ```
-@y
-   ```console
-   $ sudo systemctl restart docker.service
-   ```
-@z
+% snip command...
 
 @x
 6. Verify that the change has gone through.
@@ -161,17 +133,7 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 6. Verify that the change has gone through.
 @z
 
-@x
-   ```console
-   $ sudo netstat -lntp | grep dockerd
-   tcp        0      0 127.0.0.1:2375          0.0.0.0:*               LISTEN      3758/dockerd
-   ```
-@y
-   ```console
-   $ sudo netstat -lntp | grep dockerd
-   tcp        0      0 127.0.0.1:2375          0.0.0.0:*               LISTEN      3758/dockerd
-   ```
-@z
+% snip command...
 
 @x
 ### Configuring remote access with `daemon.json`
@@ -187,19 +149,7 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
    socket and an IP address, as follows:
 @z
 
-@x
-   ```json
-   {
-     "hosts": ["unix:///var/run/docker.sock", "tcp://127.0.0.1:2375"]
-   }
-   ```
-@y
-   ```json
-   {
-     "hosts": ["unix:///var/run/docker.sock", "tcp://127.0.0.1:2375"]
-   }
-   ```
-@z
+% snip code...
 
 @x
 2. Restart Docker.
@@ -213,14 +163,4 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 3. Verify that the change has gone through.
 @z
 
-@x
-   ```console
-   $ sudo netstat -lntp | grep dockerd
-   tcp        0      0 127.0.0.1:2375          0.0.0.0:*               LISTEN      3758/dockerd
-   ```
-@y
-   ```console
-   $ sudo netstat -lntp | grep dockerd
-   tcp        0      0 127.0.0.1:2375          0.0.0.0:*               LISTEN      3758/dockerd
-   ```
-@z
+% snip command...

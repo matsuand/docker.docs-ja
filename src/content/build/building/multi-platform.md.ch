@@ -1,60 +1,68 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
----
 title: Multi-platform images
 description: Introduction to multi-platform images and how to build them
 keywords: build, buildx, buildkit, multi-platform images
-aliases:
-- /build/buildx/multiplatform-images/
-- /desktop/multi-arch/
-- /docker-for-mac/multi-arch/
-- /mackit/multi-arch/
----
 @y
----
 title: Multi-platform images
 description: Introduction to multi-platform images and how to build them
 keywords: build, buildx, buildkit, multi-platform images
-aliases:
-- /build/buildx/multiplatform-images/
-- /desktop/multi-arch/
-- /docker-for-mac/multi-arch/
-- /mackit/multi-arch/
----
 @z
 
 @x
-Docker images can support multiple platforms, which means that a single image
-may contain variants for different architectures, and sometimes for different
-operating systems, such as Windows.
+A multi-platform image refers to a single image that includes variants for
+multiple different architectures and, in some cases, different operating
+systems, like Windows. This means that whether you are using an ARM-based
+system or an x86 machine, Docker automatically detects and selects the
+appropriate variant for your hosts's operating system and architecture.
 @y
-Docker images can support multiple platforms, which means that a single image
-may contain variants for different architectures, and sometimes for different
-operating systems, such as Windows.
+A multi-platform image refers to a single image that includes variants for
+multiple different architectures and, in some cases, different operating
+systems, like Windows. This means that whether you are using an ARM-based
+system or an x86 machine, Docker automatically detects and selects the
+appropriate variant for your hosts's operating system and architecture.
 @z
 
 @x
-When you run an image with multi-platform support, Docker automatically selects
-the image that matches your OS and architecture.
+Many of the Docker Official Images available on Docker Hub support various
+architectures. For instance, the `busybox` image includes support for these
+platforms:
 @y
-When you run an image with multi-platform support, Docker automatically selects
-the image that matches your OS and architecture.
+Many of the Docker Official Images available on Docker Hub support various
+architectures. For instance, the `busybox` image includes support for these
+platforms:
 @z
 
 @x
-Most of the Docker Official Images on Docker Hub provide a [variety of architectures](https://github.com/docker-library/official-images#architectures-other-than-amd64).
-For example, the `busybox` image supports `amd64`, `arm32v5`, `arm32v6`,
-`arm32v7`, `arm64v8`, `i386`, `ppc64le`, and `s390x`. When running this image
-on an `x86_64` / `amd64` machine, the `amd64` variant is pulled and run.
+- x86-64 (`linux/amd64`, `linux/i386`)
+- ARM architectures (`linux/arm/v5`, `linux/arm/v6`, `linux/arm/v7`, `linux/arm64`)
+- PowerPC and IBM Z (`linux/ppc64le`, `linux/s390x`)
 @y
-Most of the Docker Official Images on Docker Hub provide a [variety of architectures](https://github.com/docker-library/official-images#architectures-other-than-amd64).
-For example, the `busybox` image supports `amd64`, `arm32v5`, `arm32v6`,
-`arm32v7`, `arm64v8`, `i386`, `ppc64le`, and `s390x`. When running this image
-on an `x86_64` / `amd64` machine, the `amd64` variant is pulled and run.
+- x86-64 (`linux/amd64`, `linux/i386`)
+- ARM architectures (`linux/arm/v5`, `linux/arm/v6`, `linux/arm/v7`, `linux/arm64`)
+- PowerPC and IBM Z (`linux/ppc64le`, `linux/s390x`)
+@z
+
+@x
+On an x86 machine, Docker will automatically use the `linux/amd64` variant
+when you run a container or invoke a build.
+@y
+On an x86 machine, Docker will automatically use the `linux/amd64` variant
+when you run a container or invoke a build.
+@z
+
+@x
+Most Docker images use the `linux/` OS prefix to indicate they are Linux-based.
+While Docker Desktop on macOS or Windows typically runs Linux containers using
+a Linux VM, Docker also supports Windows containers if you're operating in
+Windows container mode.
+@y
+Most Docker images use the `linux/` OS prefix to indicate they are Linux-based.
+While Docker Desktop on macOS or Windows typically runs Linux containers using
+a Linux VM, Docker also supports Windows containers if you're operating in
+Windows container mode.
 @z
 
 @x
@@ -64,29 +72,51 @@ on an `x86_64` / `amd64` machine, the `amd64` variant is pulled and run.
 @z
 
 @x
-When you invoke a build, you can set the `--platform` flag to specify the target
-platform for the build output. For example, `linux/amd64`, `linux/arm64`, or
-`darwin/amd64`.
+When triggering a build, use the `--platform` flag to define the target
+platforms for the build output, such as `linux/amd64` and `linux/arm64`:
 @y
-When you invoke a build, you can set the `--platform` flag to specify the target
-platform for the build output. For example, `linux/amd64`, `linux/arm64`, or
-`darwin/amd64`.
+When triggering a build, use the `--platform` flag to define the target
+platforms for the build output, such as `linux/amd64` and `linux/arm64`:
 @z
 
 @x
-By default, you can only build for a single platform at a time. If you want to
-build for multiple platforms at once, you can:
+```console
+$ docker build --platform linux/amd64,linux/arm64 .
+```
 @y
-By default, you can only build for a single platform at a time. If you want to
-build for multiple platforms at once, you can:
+```console
+$ docker build --platform linux/amd64,linux/arm64 .
+```
 @z
 
 @x
-- Create a new builder that uses the [`docker-container` driver](../drivers/docker-container.md)
-- Turn on the [containerd snapshotter storage](../../desktop/containerd/index.md)
+By default, Docker can build for only one platform at a time.
+To build for multiple platforms concurrently, you can:
 @y
-- Create a new builder that uses the [`docker-container` driver](../drivers/docker-container.md)
-- Turn on the [containerd snapshotter storage](../../desktop/containerd/index.md)
+By default, Docker can build for only one platform at a time.
+To build for multiple platforms concurrently, you can:
+@z
+
+@x
+- **Enable the containerd image store**:
+  The default image store in Docker Engine doesn't support multi-platform images.
+  The containerd image store does, and lets you create multi-platform images using the default builder.
+  Refer to the [containerd in Docker Desktop documentation](../../desktop/containerd.md).
+@y
+- **Enable the containerd image store**:
+  The default image store in Docker Engine doesn't support multi-platform images.
+  The containerd image store does, and lets you create multi-platform images using the default builder.
+  Refer to the [containerd in Docker Desktop documentation](../../desktop/containerd.md).
+@z
+
+@x
+- **Create a custom builder**:
+  Initialize a [builder](../builders/_index.md) that uses the `docker-container` driver, which supports multi-platform builds.
+  For more details, see the [`docker-container` driver documentation](../drivers/docker-container.md).
+@y
+- **Create a custom builder**:
+  Initialize a [builder](../builders/_index.md) that uses the `docker-container` driver, which supports multi-platform builds.
+  For more details, see the [`docker-container` driver documentation](../drivers/docker-container.md).
 @z
 
 @x
@@ -104,13 +134,13 @@ depending on your use case:
 @z
 
 @x
-1. Using the [QEMU emulation](#qemu) support in the kernel
+1. Using emulation, via [QEMU](#qemu) support in the Linux kernel
 2. Building on a single builder backed by
    [multiple nodes of different architectures](#multiple-native-nodes).
 3. Using a stage in your Dockerfile to [cross-compile](#cross-compilation) to
    different architectures
 @y
-1. Using the [QEMU emulation](#qemu) support in the kernel
+1. Using emulation, via [QEMU](#qemu) support in the Linux kernel
 2. Building on a single builder backed by
    [multiple nodes of different architectures](#multiple-native-nodes).
 3. Using a stage in your Dockerfile to [cross-compile](#cross-compilation) to
@@ -164,25 +194,27 @@ loads it through a binary registered in the `binfmt_misc` handler.
 @z
 
 @x
-[Docker Desktop](../../desktop/index.md) provides `binfmt_misc`
-multi-architecture support, which means you can run containers for different
-Linux architectures such as `arm`, `mips`, `ppc64le`, and even `s390x`.
+[Docker Desktop](../../desktop/_index.md) provides support for running and
+building multi-platform images under emulation by default, which means you can
+run containers for different Linux architectures such as `arm`, `mips`,
+`ppc64le`, and even `s390x`.
 @y
-[Docker Desktop](../../desktop/index.md) provides `binfmt_misc`
-multi-architecture support, which means you can run containers for different
-Linux architectures such as `arm`, `mips`, `ppc64le`, and even `s390x`.
+[Docker Desktop](../../desktop/_index.md) provides support for running and
+building multi-platform images under emulation by default, which means you can
+run containers for different Linux architectures such as `arm`, `mips`,
+`ppc64le`, and even `s390x`.
 @z
 
 @x
 This doesn't require any special configuration in the container itself as it
-uses [qemu-static](https://wiki.qemu.org/Main_Page)
-from the Docker Desktop VM. Because of this, you can run an ARM container,
-like the `arm32v7` or `ppc64le` variants of the busybox image.
+uses QEMU bundled within the Docker Desktop VM. Because of this, you can run
+containers of non-native architectures like the `arm32v7` or `ppc64le`
+automatically.
 @y
 This doesn't require any special configuration in the container itself as it
-uses [qemu-static](https://wiki.qemu.org/Main_Page)
-from the Docker Desktop VM. Because of this, you can run an ARM container,
-like the `arm32v7` or `ppc64le` variants of the busybox image.
+uses QEMU bundled within the Docker Desktop VM. Because of this, you can run
+containers of non-native architectures like the `arm32v7` or `ppc64le`
+automatically.
 @z
 
 @x
@@ -192,28 +224,34 @@ like the `arm32v7` or `ppc64le` variants of the busybox image.
 @z
 
 @x
-For QEMU binaries registered with `binfmt_misc` on the host OS to work
-transparently inside containers, they must be statically compiled and
-registered with the `fix_binary` flag. This requires a kernel version 4.8 or
-later, and `binfmt-support` version 2.1.7 or later.
+If you're running Docker Engine on Linux, without Docker Desktop, you must
+install statically compiled QEMU binaries and register them with
+[`binfmt_misc`](https://en.wikipedia.org/wiki/Binfmt_misc). This enables QEMU
+to execute non-native file formats for emulation. The QEMU binaries must be
+statically compiled and registered with the `fix_binary` flag. This requires a
+kernel version 4.8 or later, and `binfmt-support` version 2.1.7 or later.
 @y
-For QEMU binaries registered with `binfmt_misc` on the host OS to work
-transparently inside containers, they must be statically compiled and
-registered with the `fix_binary` flag. This requires a kernel version 4.8 or
-later, and `binfmt-support` version 2.1.7 or later.
+If you're running Docker Engine on Linux, without Docker Desktop, you must
+install statically compiled QEMU binaries and register them with
+[`binfmt_misc`](https://en.wikipedia.org/wiki/Binfmt_misc). This enables QEMU
+to execute non-native file formats for emulation. The QEMU binaries must be
+statically compiled and registered with the `fix_binary` flag. This requires a
+kernel version 4.8 or later, and `binfmt-support` version 2.1.7 or later.
 @z
 
 @x
-You can verify your registration by checking if `F` is among the flags in
-`/proc/sys/fs/binfmt_misc/qemu-*`. While Docker Desktop comes preconfigured
-with `binfmt_misc` support for additional platforms, for other installations it
-likely needs to be installed using
+Once QEMU is installed and the executable types are registered on the host OS,
+they work transparently inside containers. You can verify your registration by
+checking if `F` is among the flags in `/proc/sys/fs/binfmt_misc/qemu-*`. While
+Docker Desktop comes preconfigured with `binfmt_misc` support for additional
+platforms, for other installations it likely needs to be installed using
 [`tonistiigi/binfmt`](https://github.com/tonistiigi/binfmt) image:
 @y
-You can verify your registration by checking if `F` is among the flags in
-`/proc/sys/fs/binfmt_misc/qemu-*`. While Docker Desktop comes preconfigured
-with `binfmt_misc` support for additional platforms, for other installations it
-likely needs to be installed using
+Once QEMU is installed and the executable types are registered on the host OS,
+they work transparently inside containers. You can verify your registration by
+checking if `F` is among the flags in `/proc/sys/fs/binfmt_misc/qemu-*`. While
+Docker Desktop comes preconfigured with `binfmt_misc` support for additional
+platforms, for other installations it likely needs to be installed using
 [`tonistiigi/binfmt`](https://github.com/tonistiigi/binfmt) image:
 @z
 
@@ -276,19 +314,19 @@ $ docker buildx build --platform linux/amd64,linux/arm64 .
 @x
 While this approach has advantages over emulation, managing multi-node builders
 introduces some overhead of setting up and managing builder clusters.
-Alternatively, you can use [Docker Build Cloud](/build/cloud/), a service that
-provides managed multi-node builders on Docker's infrastructure. With Docker
-Build Cloud, you get native multi-platform Arm and X86-64 builders without the
-burden of maintaining them. Using cloud builders also provides additional
-benefits, such as a shared build cache.
+Alternatively, you can use Docker Build Cloud, a service that provides managed
+multi-node builders on Docker's infrastructure. With Docker Build Cloud, you
+get native multi-platform ARM and X86 builders without the burden of
+maintaining them. Using cloud builders also provides additional benefits, such
+as a shared build cache.
 @y
 While this approach has advantages over emulation, managing multi-node builders
 introduces some overhead of setting up and managing builder clusters.
-Alternatively, you can use [Docker Build Cloud](__SUBDIR__/build/cloud/), a service that
-provides managed multi-node builders on Docker's infrastructure. With Docker
-Build Cloud, you get native multi-platform Arm and X86-64 builders without the
-burden of maintaining them. Using cloud builders also provides additional
-benefits, such as a shared build cache.
+Alternatively, you can use Docker Build Cloud, a service that provides managed
+multi-node builders on Docker's infrastructure. With Docker Build Cloud, you
+get native multi-platform ARM and X86 builders without the burden of
+maintaining them. Using cloud builders also provides additional benefits, such
+as a shared build cache.
 @z
 
 @x
@@ -303,7 +341,8 @@ environment and start building.
 ```console
 $ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
 cloud-<ORG>-<BUILDER_NAME>
-$ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
+$ docker build \
+  --builder cloud-<ORG>-<BUILDER_NAME> \
   --platform linux/amd64,linux/arm64,linux/arm/v7 \
   --tag <IMAGE_NAME> \
   --push .
@@ -312,7 +351,8 @@ $ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
 ```console
 $ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
 cloud-<ORG>-<BUILDER_NAME>
-$ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
+$ docker build \
+  --builder cloud-<ORG>-<BUILDER_NAME> \
   --platform linux/amd64,linux/arm64,linux/arm/v7 \
   --tag <IMAGE_NAME> \
   --push .
@@ -320,6 +360,12 @@ $ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
 @z
 
 @x
+For more information, see [Docker Build Cloud](../cloud/_index.md).
+@y
+For more information, see [Docker Build Cloud](../cloud/_index.md).
+@z
+
+@x
 ### Cross-compilation
 @y
 ### Cross-compilation
@@ -327,18 +373,32 @@ $ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
 
 @x
 Depending on your project, if the programming language you use has good support
-for cross-compilation, multi-stage builds in Dockerfiles can be effectively
-used to build binaries for target platforms using the native architecture of
-the build node. Build arguments such as `BUILDPLATFORM` and `TARGETPLATFORM`
-are automatically available for use in your Dockerfile, and can be leveraged by
-the processes running as part of your build.
+for cross-compilation, you can leverage multi-stage builds to build binaries
+for target platforms from the native architecture of the builder. Special build
+arguments, such as `BUILDPLATFORM` and `TARGETPLATFORM`, are automatically
+available for use in your Dockerfile.
 @y
 Depending on your project, if the programming language you use has good support
-for cross-compilation, multi-stage builds in Dockerfiles can be effectively
-used to build binaries for target platforms using the native architecture of
-the build node. Build arguments such as `BUILDPLATFORM` and `TARGETPLATFORM`
-are automatically available for use in your Dockerfile, and can be leveraged by
-the processes running as part of your build.
+for cross-compilation, you can leverage multi-stage builds to build binaries
+for target platforms from the native architecture of the builder. Special build
+arguments, such as `BUILDPLATFORM` and `TARGETPLATFORM`, are automatically
+available for use in your Dockerfile.
+@z
+
+@x
+In the following example, the `FROM` instruction is pinned to the native
+platform of the builder (using the `--platform=$BUILDPLATFORM` option) to
+prevent emulation from kicking in. Then the pre-defined `$BUILDPLATFORM` and
+`$TARGETPLATFORM` build arguments are interpolated in a `RUN` instruction. In
+this case, the values are just printed to stdout with `echo`, but this
+illustrates how you would pass them to the compiler for cross-compilation.
+@y
+In the following example, the `FROM` instruction is pinned to the native
+platform of the builder (using the `--platform=$BUILDPLATFORM` option) to
+prevent emulation from kicking in. Then the pre-defined `$BUILDPLATFORM` and
+`$TARGETPLATFORM` build arguments are interpolated in a `RUN` instruction. In
+this case, the values are just printed to stdout with `echo`, but this
+illustrates how you would pass them to the compiler for cross-compilation.
 @z
 
 @x
@@ -395,10 +455,10 @@ default *  docker
 
 @x
 This displays the default builtin driver, that uses the BuildKit server
-components built directly into the docker engine, also known as the [`docker` driver](../drivers/docker.md).
+components built directly into the Docker Engine, also known as the [`docker` driver](../drivers/docker.md).
 @y
 This displays the default builtin driver, that uses the BuildKit server
-components built directly into the docker engine, also known as the [`docker` driver](../drivers/docker.md).
+components built directly into the Docker Engine, also known as the [`docker` driver](../drivers/docker.md).
 @z
 
 @x
@@ -424,10 +484,10 @@ $ docker buildx create --name mybuilder --bootstrap --use
 @z
 
 @x
-Now listing the existing builders again, we can see our new builder is
+Now listing the existing builders again, you can see that the new builder is
 registered:
 @y
-Now listing the existing builders again, we can see our new builder is
+Now listing the existing builders again, you can see that the new builder is
 registered:
 @z
 
@@ -560,8 +620,8 @@ $ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <userna
 > 
 > * `<username>` must be a valid Docker ID and `<image>` and valid repository on
 >   Docker Hub.
-> * The `--platform` flag informs buildx to create Linux images for AMD 64-bit,
->   Arm 64-bit, and Armv7 architectures.
+> * The `--platform` flag informs buildx to create Linux images for x86 64-bit,
+>   ARM 64-bit, and ARMv7 architectures.
 > * The `--push` flag generates a multi-arch manifest and pushes all the images
 >   to Docker Hub.
 @y
@@ -569,8 +629,8 @@ $ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <userna
 > 
 > * `<username>` must be a valid Docker ID and `<image>` and valid repository on
 >   Docker Hub.
-> * The `--platform` flag informs buildx to create Linux images for AMD 64-bit,
->   Arm 64-bit, and Armv7 architectures.
+> * The `--platform` flag informs buildx to create Linux images for x86 64-bit,
+>   ARM 64-bit, and ARMv7 architectures.
 > * The `--push` flag generates a multi-arch manifest and pushes all the images
 >   to Docker Hub.
 @z
@@ -633,23 +693,23 @@ Manifests:
 The image is now available on Docker Hub with the tag `<username>/<image>:latest`.
 You can use this image to run a container on Intel laptops, Amazon EC2 Graviton
 instances, Raspberry Pis, and on other architectures. Docker pulls the correct
-image for the current architecture, so Raspberry PIs run the 32-bit Arm version
-and EC2 Graviton instances run 64-bit Arm.
+image for the current architecture, so Raspberry PIs run the 32-bit ARM version
+and EC2 Graviton instances run 64-bit ARM.
 @y
 The image is now available on Docker Hub with the tag `<username>/<image>:latest`.
 You can use this image to run a container on Intel laptops, Amazon EC2 Graviton
 instances, Raspberry Pis, and on other architectures. Docker pulls the correct
-image for the current architecture, so Raspberry PIs run the 32-bit Arm version
-and EC2 Graviton instances run 64-bit Arm.
+image for the current architecture, so Raspberry PIs run the 32-bit ARM version
+and EC2 Graviton instances run 64-bit ARM.
 @z
 
 @x
 The digest identifies a fully qualified image variant. You can also run images
-targeted for a different architecture on Docker Desktop. For  example, when
+targeted for a different architecture on Docker Desktop. For example, when
 you run the following on a macOS:
 @y
 The digest identifies a fully qualified image variant. You can also run images
-targeted for a different architecture on Docker Desktop. For  example, when
+targeted for a different architecture on Docker Desktop. For example, when
 you run the following on a macOS:
 @z
 
@@ -678,9 +738,9 @@ armv7l
 @z
 
 @x
-In the above example, `uname -m` returns `aarch64` and `armv7l` as expected,
+In the previous example, `uname -m` returns `aarch64` and `armv7l` as expected,
 even when running the commands on a native macOS or Windows developer machine.
 @y
-In the above example, `uname -m` returns `aarch64` and `armv7l` as expected,
+In the previous example, `uname -m` returns `aarch64` and `armv7l` as expected,
 even when running the commands on a native macOS or Windows developer machine.
 @z

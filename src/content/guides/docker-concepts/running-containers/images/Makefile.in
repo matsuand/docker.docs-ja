@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/guides/docker-concepts/the-basics/images
+subdir = src/content/guides/docker-concepts/running-containers/images
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -238,23 +238,14 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	access-the-frontend.webp     \
-	click-image.webp             \
-	create-hub-repository.webp   \
-	dockerhub-signup.webp        \
-	dockerhub-tags.webp          \
-	explore-your-container.webp  \
-	image-layers.webp            \
-	pulled-image.webp            \
-	run-a-new-container.webp     \
-	search-image.webp            \
-	search-the-docker-image.webp \
-	select-image.webp            \
-	stop-your-container.webp     \
-	todo-list-app.webp           \
-	todo-list-containers.webp    \
-	todo-list-delete.webp        \
-	view-your-containers.webp
+	access-the-frontend.webp          \
+	delete-containers.webp            \
+	delete-multi-container-apps.webp  \
+	exec-into-postgres-container.webp \
+	list-containers.webp              \
+	multi-container-apps.webp         \
+	published-ports.webp              \
+	running-postgres-containers.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -270,9 +261,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/guides/docker-concepts/the-basics/images/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/guides/docker-concepts/running-containers/images/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/guides/docker-concepts/the-basics/images/Makefile
+	  $(AUTOMAKE) --foreign src/content/guides/docker-concepts/running-containers/images/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

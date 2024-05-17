@@ -99,9 +99,9 @@ This Dockerfile uses two stages:
 @z
 
 @x
-## Try it now
+## Try it out
 @y
-## Try it now
+## Try it out
 @z
 
 @x

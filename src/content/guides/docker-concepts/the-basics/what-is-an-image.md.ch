@@ -119,9 +119,9 @@ For example, [Redis](https://hub.docker.com/_/redis) and [Memcached](https://hub
 @z
 
 @x
-## Try it now
+## Try it out
 @y
-## 試してみよう {#try-it-now}
+## 試してみよう {#try-it-out}
 @z
 
 @x

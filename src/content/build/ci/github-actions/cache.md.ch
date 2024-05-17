@@ -62,13 +62,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -78,13 +74,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -95,19 +116,6 @@ jobs:
           cache-to: type=inline
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -144,13 +152,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -160,13 +164,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -177,19 +206,6 @@ jobs:
           cache-to: type=registry,ref=user/app:buildcache,mode=max
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -254,13 +270,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -270,13 +282,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -287,19 +324,6 @@ jobs:
           cache-to: type=gha,mode=max
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -345,10 +369,14 @@ The following example shows how to use this workaround with a Go project.
 
 @x
 Example Dockerfile in `build/package/Dockerfile`
-```Dockerfile
-FROM golang:1.21.1-alpine as base-build
 @y
 Example Dockerfile in `build/package/Dockerfile`
+@z
+
+@x
+```Dockerfile
+FROM golang:1.21.1-alpine as base-build
+@y
 ```Dockerfile
 FROM golang:1.21.1-alpine as base-build
 @z
@@ -383,20 +411,29 @@ RUN --mount=type=cache,target=/root/.cache/go-build go build -o /bin/app /build/
 
 @x
 Example CI action
-```yaml
-name: ci
-on: push
 @y
 Example CI action
+@z
+
+@x
 ```yaml
 name: ci
-on: push
+@y
+```yaml
+name: ci
+@z
+
+@x
+on:
+  push:
+@y
+on:
+  push:
 @z
 
 @x
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -404,7 +441,6 @@ jobs:
 @y
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -453,13 +489,13 @@ jobs:
 
 @x
       - name: Go Build Cache for Docker
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: go-build-cache
           key: ${{ runner.os }}-go-build-cache-${{ hashFiles('**/go.sum') }}
 @y
       - name: Go Build Cache for Docker
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: go-build-cache
           key: ${{ runner.os }}-go-build-cache-${{ hashFiles('**/go.sum') }}
@@ -467,16 +503,12 @@ jobs:
 
 @x
       - name: inject go-build-cache into docker
-        # v1 was composed of two actions: "inject" and "extract".
-        # v2 is unified to a single action.
-        uses: reproducible-containers/buildkit-cache-dance@v2.1.2
+        uses: reproducible-containers/buildkit-cache-dance@4b2444fec0c0fb9dbf175a96c094720a692ef810 # v2.1.4
         with:
           cache-source: go-build-cache
 @y
       - name: inject go-build-cache into docker
-        # v1 was composed of two actions: "inject" and "extract".
-        # v2 is unified to a single action.
-        uses: reproducible-containers/buildkit-cache-dance@v2.1.2
+        uses: reproducible-containers/buildkit-cache-dance@4b2444fec0c0fb9dbf175a96c094720a692ef810 # v2.1.4
         with:
           cache-source: go-build-cache
 @z
@@ -560,13 +592,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -576,20 +604,56 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Cache Docker layers
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
+@y
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+@z
+
+@x
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -598,6 +662,18 @@ jobs:
           tags: user/app:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+@y
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: user/app:latest
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+@z
+
+@x
       - # Temp fix
         # https://github.com/docker/build-push-action/issues/252
         # https://github.com/moby/buildkit/issues/1896
@@ -607,34 +683,6 @@ jobs:
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Cache Docker layers
-        uses: actions/cache@v3
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: user/app:latest
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
       - # Temp fix
         # https://github.com/docker/build-push-action/issues/252
         # https://github.com/moby/buildkit/issues/1896

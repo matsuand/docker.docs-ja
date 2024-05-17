@@ -79,9 +79,9 @@ A _registry_ is a centralized location that stores and manages container images,
 @z
 
 @x
-## Try it now
+## Try it out
 @y
-## Try it now
+## Try it out
 @z
 
 @x

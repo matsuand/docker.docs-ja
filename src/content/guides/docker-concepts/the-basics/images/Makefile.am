@@ -15,11 +15,8 @@ copyfiles = \
 	search-the-docker-image.webp \
 	select-image.webp            \
 	stop-your-container.webp     \
-	todo-list-app.png            \
 	todo-list-app.webp           \
-	todo-list-containers.png     \
 	todo-list-containers.webp    \
-	todo-list-delete.png         \
 	todo-list-delete.webp        \
 	view-your-containers.webp
 

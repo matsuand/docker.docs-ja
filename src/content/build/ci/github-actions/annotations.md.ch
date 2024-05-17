@@ -54,23 +54,19 @@ with [build-push-action] and [bake-action].
 @z
 
 @x
-```yaml {hl_lines=37}
+```yaml {hl_lines=35}
 name: ci
 @y
-```yaml {hl_lines=37}
+```yaml {hl_lines=35}
 name: ci
 @z
 
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -122,13 +118,13 @@ jobs:
 @x
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
 @y
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
 @z
@@ -160,23 +156,19 @@ jobs:
 @z
 
 @x
-```yaml {hl_lines=39}
+```yaml {hl_lines=37}
 name: ci
 @y
-```yaml {hl_lines=39}
+```yaml {hl_lines=37}
 name: ci
 @z
 
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -228,20 +220,20 @@ jobs:
 @x
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
 @y
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
 @z
 
 @x
       - name: Build
-        uses: docker/bake-action@v3
+        uses: docker/bake-action@v4
         with:
           files: |
             ./docker-bake.hcl
@@ -251,7 +243,7 @@ jobs:
 ```
 @y
       - name: Build
-        uses: docker/bake-action@v3
+        uses: docker/bake-action@v4
         with:
           files: |
             ./docker-bake.hcl
@@ -300,23 +292,19 @@ manifests.
 @z
 
 @x
-```yaml {hl_lines=33}
+```yaml {hl_lines=31}
 name: ci
 @y
-```yaml {hl_lines=33}
+```yaml {hl_lines=31}
 name: ci
 @z
 
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -368,7 +356,7 @@ jobs:
 @x
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
         env:
@@ -376,7 +364,7 @@ jobs:
 @y
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
         env:

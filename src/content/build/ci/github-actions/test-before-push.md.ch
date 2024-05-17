@@ -46,13 +46,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -72,24 +68,72 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+@y
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+@y
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+@z
+
+@x
       - name: Build and export to Docker
         uses: docker/build-push-action@v5
         with:
           context: .
           load: true
           tags: ${{ env.TEST_TAG }}
+@y
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: ${{ env.TEST_TAG }}
+@z
+
+@x
       - name: Test
         run: |
           docker run --rm ${{ env.TEST_TAG }}
+@y
+      - name: Test
+        run: |
+          docker run --rm ${{ env.TEST_TAG }}
+@z
+
+@x
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -99,30 +143,6 @@ jobs:
           tags: ${{ env.LATEST_TAG }}
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and export to Docker
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          load: true
-          tags: ${{ env.TEST_TAG }}
-      - name: Test
-        run: |
-          docker run --rm ${{ env.TEST_TAG }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

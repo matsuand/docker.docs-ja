@@ -34,13 +34,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -48,35 +44,51 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      - name: Build
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          load: true
-          tags: myimage:latest
-      - name: Inspect
-        run: |
-          docker image inspect myimage:latest
-```
 @y
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+@z
+
+@x
       - name: Checkout
         uses: actions/checkout@v4
+@y
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Build
         uses: docker/build-push-action@v5
         with:
           context: .
           load: true
           tags: myimage:latest
+@y
+      - name: Build
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: myimage:latest
+@z
+
+@x
+      - name: Inspect
+        run: |
+          docker image inspect myimage:latest
+```
+@y
       - name: Inspect
         run: |
           docker image inspect myimage:latest

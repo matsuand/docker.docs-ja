@@ -1056,7 +1056,7 @@ To build and run your custom image:
       container's `/docker-entrypoint-initdb.d/` directory. In this directory,
       `.sh`, `.sql`, and `.sql.gz` scripts are executed when the container is
       started for the first time. For more details about Dockerifles, see the
-      [Dockerfile reference](/reference/dockerfile/).
+      [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
 @z
 
 @x
@@ -1246,7 +1246,7 @@ To run your containers with Docker Compose:
       a service joins the default network and is both reachable by other
       containers on that network, and discoverable by the service's name.
       Therefore, in the `PMA_HOST` environment variable, you can specify the
-      service name, `db`, in order to connect to the database service. For more details about Compose, see the [Compose file reference](/compose/compose-file/).
+      service name, `db`, in order to connect to the database service. For more details about Compose, see the [Compose file reference](__SUBDIR__/compose/compose-file/).
 @z
 
 @x
@@ -1323,8 +1323,8 @@ Related information:
 - [Database samples](../../samples/_index.md#databases)
 @y
 - [Docker Hub database images](https://hub.docker.com/search?q=database&type=image)
-- [Dockerfile reference](/reference/dockerfile/)
-- [Compose file reference](/compose/compose-file/)
-- [CLI reference](/reference/cli/docker/)
+- [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
+- [Compose file reference](__SUBDIR__/compose/compose-file/)
+- [CLI reference](__SUBDIR__/reference/cli/docker/)
 - [Database samples](../../samples/_index.md#databases)
 @z

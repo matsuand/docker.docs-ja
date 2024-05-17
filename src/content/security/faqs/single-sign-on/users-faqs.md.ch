@@ -171,7 +171,7 @@ When SSO is enabled and enforced, your users just have to sign in using the emai
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning configuration is available in [beta](/release-lifecycle/#beta) when you use the Admin Console. Otherwise, JIT is enabled by default.
+> Optional Just-in-Time (JIT) provisioning configuration is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console. Otherwise, JIT is enabled by default.
 { .experimental }
 @z
 

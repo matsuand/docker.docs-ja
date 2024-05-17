@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 description: Single Sign-on IdP FAQs
@@ -145,7 +147,7 @@ Yes, bot accounts need a seat, similar to a regular end user, having a non-alias
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning configuration is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. Otherwise, JIT is enabled by default.
+> Optional Just-in-Time (JIT) provisioning configuration is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. Otherwise, JIT is enabled by default.
 { .experimental }
 @z
 

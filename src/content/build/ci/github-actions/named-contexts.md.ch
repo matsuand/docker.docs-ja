@@ -70,13 +70,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -86,8 +82,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -97,14 +109,6 @@ jobs:
           tags: myimage:latest
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -162,13 +166,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -178,10 +178,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
           driver: docker
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker
+@z
+
+@x
       - name: Build base image
         uses: docker/build-push-action@v5
         with:
@@ -189,6 +207,17 @@ jobs:
           file: ./base/Dockerfile
           load: true
           tags: my-base-image:latest
+@y
+      - name: Build base image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./base
+          file: ./base/Dockerfile
+          load: true
+          tags: my-base-image:latest
+@z
+
+@x
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -198,23 +227,6 @@ jobs:
           tags: myimage:latest
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          driver: docker
-      - name: Build base image
-        uses: docker/build-push-action@v5
-        with:
-          context: ./base
-          file: ./base/Dockerfile
-          load: true
-          tags: my-base-image:latest
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -270,13 +282,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -291,13 +299,43 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    services:
+      registry:
+        image: registry:2
+        ports:
+          - 5000:5000
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+@y
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
           # network=host driver-opt needed to push to local registry
           driver-opts: network=host
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          # network=host driver-opt needed to push to local registry
+          driver-opts: network=host
+@z
+
+@x
       - name: Build base image
         uses: docker/build-push-action@v5
         with:
@@ -305,6 +343,17 @@ jobs:
           file: ./base/Dockerfile
           tags: localhost:5000/my-base-image:latest
           push: true
+@y
+      - name: Build base image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./base
+          file: ./base/Dockerfile
+          tags: localhost:5000/my-base-image:latest
+          push: true
+@z
+
+@x
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -314,31 +363,6 @@ jobs:
           tags: myimage:latest
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    services:
-      registry:
-        image: registry:2
-        ports:
-          - 5000:5000
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          # network=host driver-opt needed to push to local registry
-          driver-opts: network=host
-      - name: Build base image
-        uses: docker/build-push-action@v5
-        with:
-          context: ./base
-          file: ./base/Dockerfile
-          tags: localhost:5000/my-base-image:latest
-          push: true
       - name: Build
         uses: docker/build-push-action@v5
         with:

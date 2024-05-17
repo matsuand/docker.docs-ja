@@ -168,6 +168,30 @@ Guides:
 @z
 
 @x
+  - sectiontitle: "Running containers"
+    section:
+    - title: "Publishing ports"
+      path: /guides/docker-concepts/running-containers/publishing-ports/
+    - title: "Overriding container defaults"
+      path: /guides/docker-concepts/running-containers/overriding-container-defaults/
+    - title: "Persisting container data"
+      path: /guides/docker-concepts/running-containers/persisting-container-data/
+    - title: "Multi-container applications"
+      path: /guides/docker-concepts/running-containers/multi-container-applications/
+@y
+  - sectiontitle: "Running containers"
+    section:
+    - title: "Publishing ports"
+      path: __SUBDIR__/guides/docker-concepts/running-containers/publishing-ports/
+    - title: "Overriding container defaults"
+      path: __SUBDIR__/guides/docker-concepts/running-containers/overriding-container-defaults/
+    - title: "Persisting container data"
+      path: __SUBDIR__/guides/docker-concepts/running-containers/persisting-container-data/
+    - title: "Multi-container applications"
+      path: __SUBDIR__/guides/docker-concepts/running-containers/multi-container-applications/
+@z
+
+@x
 - sectiontitle: Language-specific guides
   section:
   - path: /language/
@@ -3166,6 +3190,8 @@ Manuals:
         title: SBOM
       - path: /scout/env-vars/
         title: Environment variables
+      - path: /scout/metrics-exporter/
+        title: Metrics exporter
 @y
     - sectiontitle: Docker Scout の利用
       section:
@@ -3177,6 +3203,8 @@ Manuals:
         title: SBOM
       - path: __SUBDIR__/scout/env-vars/
         title: Environment variables
+      - path: __SUBDIR__/scout/metrics-exporter/
+        title: Metrics exporter
 @z
 
 @x

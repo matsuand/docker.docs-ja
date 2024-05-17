@@ -98,13 +98,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -114,10 +110,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+@z
+
+@x
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+@y
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+@z
+
+@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -128,16 +146,6 @@ jobs:
             "github_token=${{ secrets.GITHUB_TOKEN }}"
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
       - name: Build
         uses: docker/build-push-action@v5
         with:
@@ -400,13 +408,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -414,18 +418,35 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      -
-        name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@7bfdda6ef6839504e3a5b2625ad971b17461a0db # v3.0.0
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+@z
+
+@x
+      - name: Set up SSH
+        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
         with:
           host: github.com
           private-key: ${{ secrets.SSH_GITHUB_PPK }}
           private-key-name: github-ppk
-      -
-        name: Build and push
+@y
+      - name: Set up SSH
+        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
+        with:
+          host: github.com
+          private-key: ${{ secrets.SSH_GITHUB_PPK }}
+          private-key-name: github-ppk
+@z
+
+@x
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -434,22 +455,7 @@ jobs:
           tags: user/app:latest
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v3
-      -
-        name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@7bfdda6ef6839504e3a5b2625ad971b17461a0db # v3.0.0
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_GITHUB_PPK }}
-          private-key-name: github-ppk
-      -
-        name: Build and push
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -478,13 +484,9 @@ name: ci
 @x
 on:
   push:
-    branches:
-      - "main"
 @y
 on:
   push:
-    branches:
-      - "main"
 @z
 
 @x
@@ -492,40 +494,42 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
-      -
-        name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@7bfdda6ef6839504e3a5b2625ad971b17461a0db # v3.0.0
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+@z
+
+@x
+      - name: Set up SSH
+        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
         with:
           host: github.com
           private-key: ${{ secrets.SSH_GITHUB_PPK }}
           private-key-name: github-ppk
-      -
-        name: Build
+@y
+      - name: Set up SSH
+        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
+        with:
+          host: github.com
+          private-key: ${{ secrets.SSH_GITHUB_PPK }}
+          private-key-name: github-ppk
+@z
+
+@x
+      - name: Build
         uses: docker/bake-action@v4
         with:
           set: |
             *.ssh=default
 ```
 @y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v3
-      -
-        name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@7bfdda6ef6839504e3a5b2625ad971b17461a0db # v3.0.0
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_GITHUB_PPK }}
-          private-key-name: github-ppk
-      -
-        name: Build
+      - name: Build
         uses: docker/bake-action@v4
         with:
           set: |

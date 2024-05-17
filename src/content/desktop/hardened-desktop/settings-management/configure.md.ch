@@ -188,7 +188,7 @@ The following `admin-settings.json` code and table provides an example of the re
 @y
 | `linuxVM` |   |Parameters and settings related to Linux VM options - grouped together here for convenience. |
 | &nbsp; &nbsp; &nbsp; &nbsp;`wslEngineEnabled`  | Windows only | If `value` is set to true, Docker Desktop uses the WSL 2 based engine. This overrides anything that may have been set at installation using the `--backend=<backend name>` flag. |
-| &nbsp;&nbsp; &nbsp; &nbsp;`dockerDaemonOptions`|  |If `value` is set to true, it overrides the options in the Docker Engine config file. See the [Docker Engine reference](/reference/cli/dockerd/#daemon-configuration-file). Note that for added security, a few of the config attributes may be overridden when Enhanced Container Isolation is enabled. |
+| &nbsp;&nbsp; &nbsp; &nbsp;`dockerDaemonOptions`|  |If `value` is set to true, it overrides the options in the Docker Engine config file. See the [Docker Engine reference](__SUBDIR__/reference/cli/dockerd/#daemon-configuration-file). Note that for added security, a few of the config attributes may be overridden when Enhanced Container Isolation is enabled. |
 | &nbsp;&nbsp; &nbsp; &nbsp;`vpnkitCIDR` |  |Overrides the network range used for vpnkit DHCP/DNS for `*.docker.internal`  |
 @z
 
@@ -199,7 +199,7 @@ The following `admin-settings.json` code and table provides an example of the re
 @y
 |`kubernetes`|  | If `enabled` is set to true, a Kubernetes single-node cluster is started when Docker Desktop starts. If `showSystemContainers` is set to true, Kubernetes containers are displayed in the UI and when you run `docker ps`.  `imagesRepository` allows you to specify which repository Docker Desktop pulls the Kubernetes images from. For example, `"imagesRepository": "registry-1.docker.io/docker"`.  |
 | `windowsContainers` |  | Parameters and settings related to `windowsContainers` options - grouped together here for convenience.                  |
-| &nbsp; &nbsp; &nbsp; &nbsp;`dockerDaemonOptions` |  | Overrides the options in the Linux daemon config file. See the [Docker Engine reference](/reference/cli/dockerd/#daemon-configuration-file).|
+| &nbsp; &nbsp; &nbsp; &nbsp;`dockerDaemonOptions` |  | Overrides the options in the Linux daemon config file. See the [Docker Engine reference](__SUBDIR__/reference/cli/dockerd/#daemon-configuration-file).|
 @z
 
 @x
@@ -222,7 +222,7 @@ The following `admin-settings.json` code and table provides an example of the re
 @y
 | `allowExperimentalFeatures`| | If `value` is set to `false`, experimental features are disabled.|
 | `allowBetaFeatures`| | If `value` is set to `false`, beta features are disabled.|
-| `blockDockerLoad` | | If `value` is set to `true`, users are no longer able to run [`docker load`](/reference/cli/docker/image/load/) and receive an error if they try to.|
+| `blockDockerLoad` | | If `value` is set to `true`, users are no longer able to run [`docker load`](__SUBDIR__/reference/cli/docker/image/load/) and receive an error if they try to.|
 | `filesharingAllowedDirectories` |  | Specify which paths your developers can add file shares to. Also accepts `$HOME`, `$TMP`, or `$TEMP` as `path` variables. When a path is added, its subdirectories are allowed. If `sharedByDefault` is set to `true`, that path will be added upon factory reset or when Docker Desktop first starts. |
 @z
 

@@ -119,9 +119,9 @@ A container is simply an isolated process with all of the files it needs to run.
 @z
 
 @x
-## Try it now
+## Try it out
 @y
-## 試してみよう {#try-it-now}
+## 試してみよう {#try-it-out}
 @z
 
 @x
