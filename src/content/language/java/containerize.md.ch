@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Containerize a Java application
@@ -59,15 +60,7 @@ Clone the sample application that you'll be using to your local development mach
 Clone the sample application that you'll be using to your local development machine. Run the following command in a terminal to clone the repository.
 @z
 
-@x
-```console
-$ git clone https://github.com/spring-projects/spring-petclinic.git
-```
-@y
-```console
-$ git clone https://github.com/spring-projects/spring-petclinic.git
-```
-@z
+% snip command...
 
 @x
 The sample application is a Spring Boot application built using Maven. For more details, see `readme.md` in the repository.
@@ -101,55 +94,7 @@ The sample application already contains Docker assets. You'll be prompted to ove
 The sample application already contains Docker assets. You'll be prompted to overwrite the existing Docker assets. To continue with this guide, select `y` to overwrite them.
 @z
 
-@x
-```console
-$ docker init
-Welcome to the Docker Init CLI!
-@y
-```console
-$ docker init
-Welcome to the Docker Init CLI!
-@z
-
-@x
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@y
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@z
-
-@x
-Let's get started!
-@y
-Let's get started!
-@z
-
-@x
-WARNING: The following Docker files already exist in this directory:
-  - docker-compose.yml
-? Do you want to overwrite them? Yes
-? What application platform does your project use? Java
-? What's the relative directory (with a leading .) for your app? ./src
-? What version of Java do you want to use? 17
-? What port does your server listen on? 8080
-```
-@y
-WARNING: The following Docker files already exist in this directory:
-  - docker-compose.yml
-? Do you want to overwrite them? Yes
-? What application platform does your project use? Java
-? What's the relative directory (with a leading .) for your app? ./src
-? What version of Java do you want to use? 17
-? What port does your server listen on? 8080
-```
-@z
+% snip command...
 
 @x
 In the previous example, notice the `WARNING`. `docker-compose.yaml` already
@@ -205,15 +150,7 @@ Inside the `spring-petclinic` directory, run the following command in a
 terminal.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 The first time you build and run the app, Docker downloads dependencies and builds the app. It may take several minutes depending on your network connection.
@@ -241,23 +178,15 @@ In the terminal, press `ctrl`+`c` to stop the application.
 
 @x
 You can run the application detached from the terminal by adding the `-d`
-option. Inside the `docker-php-sample` directory, run the following command
+option. Inside the `spring-petclinic` directory, run the following command
 in a terminal.
 @y
 You can run the application detached from the terminal by adding the `-d`
-option. Inside the `docker-php-sample` directory, run the following command
+option. Inside the `spring-petclinic` directory, run the following command
 in a terminal.
 @z
 
-@x
-```console
-$ docker compose up --build -d
-```
-@y
-```console
-$ docker compose up --build -d
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple app for a pet clinic.
@@ -271,15 +200,7 @@ In the terminal, run the following command to stop the application.
 In the terminal, run the following command to stop the application.
 @z
 
-@x
-```console
-$ docker compose down
-```
-@y
-```console
-$ docker compose down
-```
-@z
+% snip command...
 
 @x
 For more information about Compose commands, see the

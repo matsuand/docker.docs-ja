@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = compose
+
 bases = \
 	aci-ecs-eol.md                    \
 	admin-company-overview.md         \

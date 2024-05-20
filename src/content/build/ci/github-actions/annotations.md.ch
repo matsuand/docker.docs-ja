@@ -2,25 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Add image annotations with GitHub Actions
 description: Add OCI annotations to image components using GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, annotations, oci
----
 @y
----
-title: Add image annotations with GitHub Actions
+title: GitHub Actions を使ったイメージアノテーションの追加
 description: Add OCI annotations to image components using GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx, annotations, oci
----
 @z
 
 @x
 Annotations let you specify arbitrary metadata for OCI image components, such
 as manifests, indexes, and descriptors.
 @y
-Annotations let you specify arbitrary metadata for OCI image components, such
-as manifests, indexes, and descriptors.
+アノテーション (annotation) は、OCI イメージコンポーネントに対して任意のメタデータを指定できるものです。
+たとえばマニフェスト、インデックス、内容説明などが利用されます。
 @z
 
 @x
@@ -29,21 +25,12 @@ To add annotations when building images with GitHub Actions, use the
 metadata action creates an `annotations` output that you can reference, both
 with [build-push-action] and [bake-action].
 @y
-To add annotations when building images with GitHub Actions, use the
-[metadata-action] to automatically create OCI-compliant annotations. The
-metadata action creates an `annotations` output that you can reference, both
-with [build-push-action] and [bake-action].
+GitHub Actions を用いてイメージのビルド時にアノテーションを追加するには、[メタデータアクション][metadata-action] を利用します。
+これによって自動的に OCI 互換のアノテーションが生成されます。
+メタデータアクション [build-push-action]、[bake-action] のいずれにおいても、参照する `annotations` をアノテーションとして生成します。
 @z
 
-@x
-[metadata-action]: https://github.com/docker/metadata-action#overwrite-labels-and-annotations
-[build-push-action]: https://github.com/docker/build-push-action/
-[bake-action]: https://github.com/docker/bake-action/
-@y
-[metadata-action]: https://github.com/docker/metadata-action#overwrite-labels-and-annotations
-[build-push-action]: https://github.com/docker/build-push-action/
-[bake-action]: https://github.com/docker/bake-action/
-@z
+% snip links...
 
 @x
 {{< tabs >}}
@@ -53,99 +40,7 @@ with [build-push-action] and [bake-action].
 {{< tab name="build-push-action" >}}
 @z
 
-@x
-```yaml {hl_lines=35}
-name: ci
-@y
-```yaml {hl_lines=35}
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-env:
-  IMAGE_NAME: user/app
-@y
-env:
-  IMAGE_NAME: user/app
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@y
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          push: true
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          push: true
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -155,103 +50,7 @@ jobs:
 {{< tab name="bake-action" >}}
 @z
 
-@x
-```yaml {hl_lines=37}
-name: ci
-@y
-```yaml {hl_lines=37}
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-env:
-  IMAGE_NAME: user/app
-@y
-env:
-  IMAGE_NAME: user/app
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@y
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@z
-
-@x
-      - name: Build
-        uses: docker/bake-action@v4
-        with:
-          files: |
-            ./docker-bake.hcl
-            ${{ steps.meta.outputs.bake-file-tags }}
-            ${{ steps.meta.outputs.bake-file-annotations }}
-          push: true
-```
-@y
-      - name: Build
-        uses: docker/bake-action@v4
-        with:
-          files: |
-            ./docker-bake.hcl
-            ${{ steps.meta.outputs.bake-file-tags }}
-            ${{ steps.meta.outputs.bake-file-annotations }}
-          push: true
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -264,7 +63,7 @@ jobs:
 @x
 ## Configure annotation level
 @y
-## Configure annotation level
+## アノテーションレベルの設定 {#configure-annotation-level}
 @z
 
 @x
@@ -275,116 +74,17 @@ the `DOCKER_METADATA_ANNOTATIONS_LEVELS` environment variable on the
 want to annotate. For example, setting `DOCKER_METADATA_ANNOTATIONS_LEVELS` to
 `index` results in annotations on the image index instead of the manifests.
 @y
-By default, annotations are placed on image manifests. To configure the
-[annotation level](../../building/annotations.md#specify-annotation-level), set
-the `DOCKER_METADATA_ANNOTATIONS_LEVELS` environment variable on the
-`metadata-action` step to a comma-separated list of all the levels that you
-want to annotate. For example, setting `DOCKER_METADATA_ANNOTATIONS_LEVELS` to
-`index` results in annotations on the image index instead of the manifests.
+デフォルトでアノテーションは、イメージマニフェストに置かれます。
+[アノテーションレベル](../../building/annotations.md#specify-annotation-level) (annotation level) を設定するには、`metadata-action` ステップ内において環境変数 `DOCKER_METADATA_ANNOTATIONS_LEVELS` を用います。
+指定したいアノテーションのレベルをカンマ区切りのリストとして指定します。
+たとえば `DOCKER_METADATA_ANNOTATIONS_LEVELS` に `index` を指定すると、そのアノテーションはイメージマニフェスト内ではなくイメージインデックス内に置かれます。
 @z
 
 @x
 The following example creates annotations on both the image index and
 manifests.
 @y
-The following example creates annotations on both the image index and
-manifests.
+以下の例は、アノテーション生成をイメージインデックスとイメージマニフェストの両方に生成するものです。
 @z
 
-@x
-```yaml {hl_lines=31}
-name: ci
-@y
-```yaml {hl_lines=31}
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-env:
-  IMAGE_NAME: user/app
-@y
-env:
-  IMAGE_NAME: user/app
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-        env:
-          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
-@y
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-        env:
-          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          push: true
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          push: true
-```
-@z
+% snip code...

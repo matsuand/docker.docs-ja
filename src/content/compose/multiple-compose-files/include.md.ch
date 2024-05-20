@@ -22,15 +22,15 @@ title: Include
 @z
 
 @x
-With the [`include` top-level element](../compose-file/14-include.md), you can include a separate Compose file directly in your local Compose file. This solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
+{{< include "compose/include.md" >}}
 @y
-With the [`include` top-level element](../compose-file/14-include.md), you can include a separate Compose file directly in your local Compose file. This solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
+{{< include "compose/include.md" >}}
 @z
 
 @x
-`include` makes it easier to modularize complex applications into sub-Compose files. This allows application configurations to be made simpler and more explicit. This also helps to reflect in the config file organization the engineering team responsible for the code.
+The [`include` top-level element](../compose-file/14-include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
 @y
-`include` makes it easier to modularize complex applications into sub-Compose files. This allows application configurations to be made simpler and more explicit. This also helps to reflect in the config file organization the engineering team responsible for the code.
+The [`include` top-level element](../compose-file/14-include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
 @z
 
 @x

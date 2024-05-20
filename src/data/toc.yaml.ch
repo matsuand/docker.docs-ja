@@ -4200,7 +4200,7 @@ Manuals:
         - path: __SUBDIR__/build/building/secrets/
           title: secrets のビルド
         - path: __SUBDIR__/build/building/annotations/
-          title: Annotations
+          title: アノテーション
         - path: __SUBDIR__/build/building/opentelemetry/
           title: OpenTelemetry support
         - path: __SUBDIR__/build/building/base-images/

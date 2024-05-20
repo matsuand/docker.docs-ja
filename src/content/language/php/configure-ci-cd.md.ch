@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Configure CI/CD for your PHP application
 keywords: php, CI/CD
@@ -78,9 +80,9 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
 @z
 
 @x
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `tutorial-docker`.
+4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `tutorial-docker`. Make sure access permissions include Read and Write.
 @y
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `tutorial-docker`.
+4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `tutorial-docker`. Make sure access permissions include Read and Write.
 @z
 
 @x
@@ -103,15 +105,7 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
    the repository you created.
 @z
 
-@x
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-@y
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-@z
+% snip command...
 
 @x
 7. In your local repository on your machine, run the following command to rename

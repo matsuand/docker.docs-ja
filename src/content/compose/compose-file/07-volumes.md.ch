@@ -16,15 +16,31 @@ keywords: compose, compose specification, volumes, compose file reference
 @z
 
 @x
-Volumes are persistent data stores implemented by the container engine. Compose offers a neutral way for services to mount volumes, and configuration parameters to allocate them to infrastructure.
+{{< include "compose/volumes.md" >}}
 @y
-Volumes are persistent data stores implemented by the container engine. Compose offers a neutral way for services to mount volumes, and configuration parameters to allocate them to infrastructure.
+{{< include "compose/volumes.md" >}}
 @z
 
 @x
-The top-level `volumes` declaration lets you configure named volumes that can be reused across multiple services. To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](05-services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
+To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](05-services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
 @y
-The top-level `volumes` declaration lets you configure named volumes that can be reused across multiple services. To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](05-services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
+To use a volume across multiple services, you must explicitly grant each service access by using the [volumes](05-services.md#volumes) attribute within the `services` top-level element. The `volumes` attribute has additional syntax that provides more granular control.
+@z
+
+@x
+> **Tip**
+>
+> Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase? 
+> Compose now takes advantage of [Synchronized file shares](../../desktop/synchronized-file-sharing.md) and automatically creates file shares for bind mounts. 
+> Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+{ .tip }
+@y
+> **Tip**
+>
+> Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase? 
+> Compose now takes advantage of [Synchronized file shares](../../desktop/synchronized-file-sharing.md) and automatically creates file shares for bind mounts. 
+> Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
+{ .tip }
 @z
 
 @x

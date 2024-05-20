@@ -16,27 +16,9 @@ keywords: compose, compose specification, compose file reference, compose build 
 @z
 
 @x
-> **Note:** 
->
-> Build is an optional part of the Compose Specification
+{{< include "compose/build.md" >}}
 @y
-> **Note:** 
->
-> Build is an optional part of the Compose Specification
-@z
-
-@x
-A Compose implementation which focuses on running an application on a local machine needs to also support (re)building the application from source. The Compose Build Specification lets you define the build process within a Compose file
-in a portable way.
-@y
-A Compose implementation which focuses on running an application on a local machine needs to also support (re)building the application from source. The Compose Build Specification lets you define the build process within a Compose file
-in a portable way.
-@z
-
-@x
-`build` can be either specified as a single string defining a context path, or as a detailed build definition.
-@y
-`build` can be either specified as a single string defining a context path, or as a detailed build definition.
+{{< include "compose/build.md" >}}
 @z
 
 @x

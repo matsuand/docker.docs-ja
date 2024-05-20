@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Introduction to GitHub Actions
 description: Docker maintains a set of official GitHub Actions for building Docker images.
 keywords: ci, github actions, gha,  build, introduction, tutorial
-aliases:
-  - /ci-cd/github-actions/
-  - /build/ci/github-actions/examples/
----
 @y
----
-title: Introduction to GitHub Actions
-description: Docker maintains a set of official GitHub Actions for building Docker images.
+title: GitHub Actions について
+description: Docker では Docker イメージをビルドする公式の GitHub Actions を提供しています。
 keywords: ci, github actions, gha,  build, introduction, tutorial
-aliases:
-  - /ci-cd/github-actions/
-  - /build/ci/github-actions/examples/
----
 @z
 
 @x
@@ -27,16 +17,15 @@ deployment pipeline. Docker provides a set of official GitHub Actions for you to
 use in your workflows. These official actions are reusable, easy-to-use
 components for building, annotating, and pushing images.
 @y
-GitHub Actions is a popular CI/CD platform for automating your build, test, and
-deployment pipeline. Docker provides a set of official GitHub Actions for you to
-use in your workflows. These official actions are reusable, easy-to-use
-components for building, annotating, and pushing images.
+GitHub Actions はビルド、テスト、デプロイの連携作業を自動化する、一般的な CI/CD プラットフォームです。
+Docker では、開発ワークフロー内で利用可能な GitHub Actions を公式に提供しています。
+この Actions は、イメージのビルド、アノテーション、プッシュを行うための、再利用可能で使い方も簡単なコンポーネントです。
 @z
 
 @x
 The following GitHub Actions are available:
 @y
-The following GitHub Actions are available:
+以下のような GitHub Actions が利用できます。
 @z
 
 @x
@@ -57,42 +46,40 @@ The following GitHub Actions are available:
   analyze Docker images for security vulnerabilities.
 @y
 - [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
-  build and push Docker images with BuildKit.
+  BuildKit を利用して Docker イメージのビルドとプッシュを行います。
 - [Docker Login](https://github.com/marketplace/actions/docker-login):
-  sign in to a Docker registry.
+  Docker レジストリへのサインインを行います。
 - [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
-  initiates a BuildKit builder.
+  BuildKit ビルダーの初期化を行います。
 - [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
-  extracts metadata from Git reference and GitHub events.
+  Git リファレンスや GitHub イベントからメタデータを抽出します。
 - [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
-  installs [QEMU](https://github.com/qemu/qemu) static binaries for multi-arch
-  builds.
+  マルチアーキテクチャービルド向けに [QEMU](https://github.com/qemu/qemu) のスタティックバイナリをインストールします。
 - [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  enables using high-level builds with [Bake](../../bake/index.md).
+  [Bake](../../bake/index.md) を使った高度なビルドを可能にします。
 - [Docker Scout](https://github.com/docker/scout-action):
-  analyze Docker images for security vulnerabilities.
+  Docker イメージのセキュリティぜい弱性を分析します。
 @z
 
 @x
 Using Docker's actions provides an easy-to-use interface, while still allowing
 flexibility for customizing build parameters.
 @y
-Using Docker's actions provides an easy-to-use interface, while still allowing
-flexibility for customizing build parameters.
+Docker のアクションでは簡単なインターフェースを提供します。
+それでもビルドパラメーターをカスタマイズできる機能は十分に維持しています。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 利用例 {#examples}
 @z
 
 @x
 If you're looking for examples on how to use the Docker GitHub Actions,
 refer to the following sections:
 @y
-If you're looking for examples on how to use the Docker GitHub Actions,
-refer to the following sections:
+Docker GitHub Actions を使った利用例を確認したい場合は、以下の節を参照してください。
 @z
 
 @x
@@ -104,7 +91,7 @@ refer to the following sections:
 @x
 ## Get started with GitHub Actions
 @y
-## Get started with GitHub Actions
+## GitHub Actions を使ってみよう {#get-started-with-gitHub-actions}
 @z
 
 @x
@@ -116,7 +103,7 @@ refer to the following sections:
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x

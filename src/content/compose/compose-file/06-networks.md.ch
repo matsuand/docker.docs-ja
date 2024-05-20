@@ -16,15 +16,15 @@ keywords: compose, compose specification, networks, compose file reference
 @z
 
 @x
-Networks are the layer that allow services to communicate with each other.
+{{< include "compose/networks.md" >}}
 @y
-Networks are the layer that allow services to communicate with each other.
+{{< include "compose/networks.md" >}}
 @z
 
 @x
-The top-level `networks` element lets you configure named networks that can be reused across multiple services. To use a network across multiple services, you must explicitly grant each service access by using the [networks](05-services.md) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
+To use a network across multiple services, you must explicitly grant each service access by using the [networks](05-services.md) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
 @y
-The top-level `networks` element lets you configure named networks that can be reused across multiple services. To use a network across multiple services, you must explicitly grant each service access by using the [networks](05-services.md) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
+To use a network across multiple services, you must explicitly grant each service access by using the [networks](05-services.md) attribute within the `services` top-level element. The `networks` top-level element has additional syntax that provides more granular control.
 @z
 
 @x
@@ -295,11 +295,6 @@ queries the platform for an existing network simply called `outside` and connect
 
 @x
 ```yml
-@y
-```yml
-@z
-
-@x
 services:
   proxy:
     image: example/proxy
@@ -311,6 +306,7 @@ services:
     networks:
       - default
 @y
+```yml
 services:
   proxy:
     image: example/proxy

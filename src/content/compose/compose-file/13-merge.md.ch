@@ -13,12 +13,12 @@ description: マージのルールについて学びます。
 keywords: compose, compose specification, merge, compose file reference
 @z
 
+% snip include...
+
 @x
-Compose lets you define a Compose application model through [multiple Compose files](https://docs.docker.com/compose/multiple-compose-files/). 
-When doing so, Compose follows the rules declared in this section to merge Compose files.
+These rules are outlined below. 
 @y
-Compose lets you define a Compose application model through [multiple Compose files](https://docs.docker.com/compose/multiple-compose-files/). 
-When doing so, Compose follows the rules declared in this section to merge Compose files.
+These rules are outlined below. 
 @z
 
 @x

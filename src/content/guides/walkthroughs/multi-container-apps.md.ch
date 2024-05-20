@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応 (workaround?)
 
 @x
----
 title: Run multi-container applications
 keywords: get started, quick start, intro, concepts
 description: Learn how to use Docker to run multi-container applications
----
 @y
----
 title: マルチコンテナーアプリの実行
 keywords: get started, quick start, intro, concepts
 description: Learn how to use Docker to run multi-container applications
----
 @z
 
 @x
@@ -222,27 +218,28 @@ Compose Watch を実行してリアルタイムに変更を確認します。
 
 @x
 1. Open a terminal and run the following commands. Replace `/path/to/multi-container-app/` with the path to your application's directory.
-   ```console
-   $ cd /path/to/multi-container-app/
-   ```
-   ```console
-   $ docker compose watch
-   ```
-2. Open `app/views/todos.ejs` in a text or code editor, then change the text on line 18.
-3. Save the changes in `app/views/todos.ejs`.
-4. View your application at [http://localhost:3000](http://localhost:3000) to see the changes in real-time.
 @y
 1. 端末画面を開いて以下のコマンドを実行します。
-   `/path/to/multi-container-app/` の部分は実際のアプリケーションディレクトリに置き換えてください。
-   ```console
-   $ cd /path/to/multi-container-app/
-   ```
-   ```console
-   $ docker compose watch
-   ```
+@z
+
+% snip command...
+
+@x
+2. Open `app/views/todos.ejs` in a text or code editor, then change the text on line 21.
+@y
 2. コードエディターあるいはテキストエディターを使って `app/views/todos.ejs` を開きます。
-   そして 18 行めのテキストを変更します。
+   そして 21 行めのテキストを変更します。
+@z
+
+@x
+3. Save the changes in `app/views/todos.ejs`.
+@y
 3. `app/views/todos.ejs` の変更を保存します。
+@z
+
+@x
+4. View your application at [http://localhost:3000](http://localhost:3000) to see the changes in real-time.
+@y
 4. [http://localhost:3000](http://localhost:3000) においてアプリケーションを参照します。
    リアルタイムに変更を確認することができます。
 @z

@@ -15,20 +15,6 @@ keywords: compose, compose specification, services, compose file reference
 @z
 
 @x
-A service is an abstract definition of a computing resource within an application which can be scaled or replaced
-independently from other components. Services are backed by a set of containers, run by the platform
-according to replication requirements and placement constraints. As services are backed by containers, they are defined
-by a Docker image and set of runtime arguments. All containers within a service are identically created with these
-arguments.
-@y
-A service is an abstract definition of a computing resource within an application which can be scaled or replaced
-independently from other components. Services are backed by a set of containers, run by the platform
-according to replication requirements and placement constraints. As services are backed by containers, they are defined
-by a Docker image and set of runtime arguments. All containers within a service are identically created with these
-arguments.
-@z
-
-@x
 A Compose file must declare a `services` top-level element as a map whose keys are string representations of service names,
 and whose values are service definitions. A service  definition contains the configuration that is applied to each
 service container.
@@ -660,11 +646,7 @@ to specify a credential spec with `config`, as shown in the following example:
 ## depends_on
 @z
 
-@x
-`depends_on` expresses startup and shutdown dependencies between services.
-@y
-`depends_on` expresses startup and shutdown dependencies between services.
-@z
+% snip include...
 
 @x
 ### Short syntax
@@ -992,11 +974,7 @@ i.e. overridden to be empty.
 ## env_file
 @z
 
-@x
-`env_file` adds environment variables to the container based on the file content.
-@y
-`env_file` adds environment variables to the container based on the file content.
-@z
+% snip include...
 
 % snip code...
 
@@ -1146,15 +1124,7 @@ VAR="quoted"
 ## environment
 @z
 
-@x
-`environment` defines environment variables set in the container. `environment` can use either an array or a
-map. Any boolean values; true, false, yes, no, should be enclosed in quotes to ensure
-they are not converted to True or False by the YAML parser.
-@y
-`environment` defines environment variables set in the container. `environment` can use either an array or a
-map. Any boolean values; true, false, yes, no, should be enclosed in quotes to ensure
-they are not converted to True or False by the YAML parser.
-@z
+% snip include...
 
 @x
 Environment variables can be declared by a single key (no value to equals sign). In this case Compose
@@ -1636,16 +1606,7 @@ been the case if `group_add` were not declared.
 ## healthcheck
 @z
 
-@x
-`healthcheck` declares a check that's run to determine whether or not the service containers are "healthy". It works in the same way, and has the same default values, as the
-[HEALTHCHECK Dockerfile instruction](https://docs.docker.com/reference/dockerfile/#healthcheck)
-set by the service's Docker image. Your Compose file can override the values set in the Dockerfile. 
-@y
-`healthcheck` declares a check that's run to determine whether or not the service containers are "healthy". It works in the same way, and has the same default values, as the
-[HEALTHCHECK Dockerfile instruction](https://docs.docker.com/reference/dockerfile/#healthcheck)
-set by the service's Docker image. Your Compose file can override the values set in the Dockerfile. 
-@z
-
+% snip include...
 % snip code...
 
 @x
@@ -2072,14 +2033,7 @@ Compose file containing both attributes.
 ## networks
 @z
 
-@x
-`networks` defines the networks that service containers are attached to, referencing entries under the
-[top-level `networks` key](06-networks.md).
-@y
-`networks` defines the networks that service containers are attached to, referencing entries under the
-[top-level `networks` key](06-networks.md).
-@z
-
+% snip include...
 % snip code...
 
 @x
@@ -2296,11 +2250,7 @@ and/or on which platform the service’s build is performed.
 ## ports
 @z
 
-@x
-Exposes container ports.
-@y
-Exposes container ports.
-@z
+% snip include...
 
 @x
 > **Note**
@@ -2582,29 +2532,27 @@ When both are set, `scale` must be consistent with the `replicas` attribute in t
 ## secrets
 @z
 
+% snip include...
+
 @x
-`secrets` grants access to sensitive data defined by [secrets](09-secrets.md) on a per-service basis. Two
-different syntax variants are supported; the short syntax and the long syntax.
+Two different syntax variants are supported; the short syntax and the long syntax. Long and short syntax for secrets may be used in the same Compose file.
 @y
-`secrets` grants access to sensitive data defined by [secrets](09-secrets.md) on a per-service basis. Two
-different syntax variants are supported; the short syntax and the long syntax.
+Two different syntax variants are supported; the short syntax and the long syntax. Long and short syntax for secrets may be used in the same Compose file.
 @z
 
 @x
 Compose reports an error if the secret doesn't exist on the platform or isn't defined in the
-[`secrets`](09-secrets.md) section of the Compose file.
+`secrets` top-level section of the Compose file.
 @y
 Compose reports an error if the secret doesn't exist on the platform or isn't defined in the
-[`secrets`](09-secrets.md) section of the Compose file.
+`secrets` top-level section of the Compose file.
 @z
 
 @x
-Services can be granted access to multiple secrets. Long and short syntax for secrets may be used in the
-same Compose file. Defining a secret in the top-level `secrets` must not imply granting any service access to it.
+Defining a secret in the top-level `secrets` must not imply granting any service access to it.
 Such grant must be explicit within service specification as [secrets](09-secrets.md) service element.
 @y
-Services can be granted access to multiple secrets. Long and short syntax for secrets may be used in the
-same Compose file. Defining a secret in the top-level `secrets` must not imply granting any service access to it.
+Defining a secret in the top-level `secrets` must not imply granting any service access to it.
 Such grant must be explicit within service specification as [secrets](09-secrets.md) service element.
 @z
 
@@ -2930,21 +2878,7 @@ it is the runtime's decision to assign a UTS namespace, if supported. Available 
 ## volumes
 @z
 
-@x
-`volumes` define mount host paths or named volumes that are accessible by service containers. You can use `volumes` to define multiple types of mounts; `volume`, `bind`, `tmpfs`, or `npipe`. 
-@y
-`volumes` define mount host paths or named volumes that are accessible by service containers. You can use `volumes` to define multiple types of mounts; `volume`, `bind`, `tmpfs`, or `npipe`. 
-@z
-
-@x
-If the mount is a host path and is only used by a single service, it can be declared as part of the service
-definition. To reuse a volume across multiple services, a named
-volume must be declared in the [top-level `volumes` key](07-volumes.md).
-@y
-If the mount is a host path and is only used by a single service, it can be declared as part of the service
-definition. To reuse a volume across multiple services, a named
-volume must be declared in the [top-level `volumes` key](07-volumes.md).
-@z
+% snip include...
 
 @x
 The following example shows a named volume (`db-data`) being used by the `backend` service,

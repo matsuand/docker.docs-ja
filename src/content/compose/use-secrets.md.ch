@@ -17,11 +17,11 @@ A secret is any piece of data, such as a password, certificate, or API key, that
 Secrets というのは、パスワード、証明書、API キーといった種類のデータを扱うものであり、ネットワークを介して送信することが不適切であったり、Dockerfile 内やアプリケーションソースコード内に暗号化せずにそのまま保存することが不適切であるような、あらゆるデータを指します。
 @z
 
+% snip include...
+
 @x
-Docker Compose provides a way for you to use secrets without having to use environment variables to store information. If you’re injecting passwords and API keys as environment variables, you risk unintentional information exposure. Environment variables are often available to all processes, and it can be difficult to track access. They can also be printed in logs when debugging errors without your knowledge. Using secrets mitigates these risks.
+Environment variables are often available to all processes, and it can be difficult to track access. They can also be printed in logs when debugging errors without your knowledge. Using secrets mitigates these risks.
 @y
-Docker Compose では、そういった機密情報を保存する先として環境変数を用いるのではない、別の方法を提供しています。
-パスワードや API キーを環境変数に設定すると、意図しない情報漏洩のリスクにさらされます。
 環境変数は場合によっては全プロセスからの利用が可能であるため、アクセスをすべて追跡することは困難です。
 また感知していないところで、エラーデバッグを行う際に出力されてしまうかもしれません。
 Secrets を利用すれば、こういったリスクは軽減されます。

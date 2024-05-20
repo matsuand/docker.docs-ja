@@ -194,6 +194,7 @@ AC_CONFIG_FILES([
 	src/content/guides/walkthroughs/Makefile
 	src/content/guides/walkthroughs/images/Makefile
 	src/content/includes/Makefile
+	src/content/includes/compose/Makefile
 	src/content/language/Makefile
 	src/content/language/dotnet/Makefile
 	src/content/language/golang/Makefile

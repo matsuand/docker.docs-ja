@@ -19,17 +19,7 @@ title: Compose Watch の利用
 {{< introduced compose 2.22.0 "release-notes.md#2220" >}}
 @z
 
-@x
-Use `watch` to automatically update and preview your running Compose services as you edit and save your code. 
-@y
-Use `watch` to automatically update and preview your running Compose services as you edit and save your code. 
-@z
-
-@x
-For many projects, this allows for a hands-off development workflow once Compose is running, as services automatically update themselves when you save your work.
-@y
-For many projects, this allows for a hands-off development workflow once Compose is running, as services automatically update themselves when you save your work.
-@z
+% snip include...
 
 @x
 `watch` adheres to the following file path rules:
@@ -345,14 +335,20 @@ This pattern can be followed for many languages and frameworks, such as Python w
 ## Use `watch`
 @z
 
+% snip include...
+
 @x
-1. Add `watch` sections to one or more services in `compose.yaml`.
-2. Run `docker compose up --watch` to build and launch a Compose project and start the file watch mode.
-3. Edit service source files using your preferred IDE or editor.
+> **Tip**
+>
+> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
+> get the application logs mixed with the (re)build logs and filesystem sync events.
+{ .tip }
 @y
-1. Add `watch` sections to one or more services in `compose.yaml`.
-2. Run `docker compose up --watch` to build and launch a Compose project and start the file watch mode.
-3. Edit service source files using your preferred IDE or editor.
+> **Tip**
+>
+> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
+> get the application logs mixed with the (re)build logs and filesystem sync events.
+{ .tip }
 @z
 
 @x
@@ -361,14 +357,12 @@ This pattern can be followed for many languages and frameworks, such as Python w
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
 > or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
 > for a demonstration of Compose `watch`.
-{ .tip }
 @y
 > **Looking for a sample project to test things out?**
 >
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
 > or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
 > for a demonstration of Compose `watch`.
-{ .tip }
 @z
 
 @x

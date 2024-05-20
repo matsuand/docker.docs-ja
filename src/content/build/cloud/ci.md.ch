@@ -719,6 +719,84 @@ pipeline {
 
 @x
 {{< /tab >}}
+{{< tab name="Travis CI" >}}
+@y
+{{< /tab >}}
+{{< tab name="Travis CI" >}}
+@z
+
+@x
+```yaml
+language: minimal 
+dist: jammy 
+@y
+```yaml
+language: minimal 
+dist: jammy 
+@z
+
+@x
+services:
+  - docker
+@y
+services:
+  - docker
+@z
+
+@x
+env:
+  global:
+    - IMAGE_NAME=username/repo
+@y
+env:
+  global:
+    - IMAGE_NAME=username/repo
+@z
+
+@x
+before_install: |
+  echo "$DOCKER_PAT" | docker login --username "$DOCKER_USER" --password-stdin
+@y
+before_install: |
+  echo "$DOCKER_PAT" | docker login --username "$DOCKER_USER" --password-stdin
+@z
+
+@x
+install: |
+  set -e 
+  BUILDX_URL=$(curl -s https://raw.githubusercontent.com/docker/actions-toolkit/main/.github/buildx-lab-releases.json | jq -r ".latest.assets[] | select(endswith(\"linux-$TRAVIS_CPU_ARCH\"))")
+  mkdir -vp ~/.docker/cli-plugins/
+  curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
+  chmod a+x ~/.docker/cli-plugins/docker-buildx
+  docker buildx create --use --driver cloud "<ORG>/default"
+@y
+install: |
+  set -e 
+  BUILDX_URL=$(curl -s https://raw.githubusercontent.com/docker/actions-toolkit/main/.github/buildx-lab-releases.json | jq -r ".latest.assets[] | select(endswith(\"linux-$TRAVIS_CPU_ARCH\"))")
+  mkdir -vp ~/.docker/cli-plugins/
+  curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
+  chmod a+x ~/.docker/cli-plugins/docker-buildx
+  docker buildx create --use --driver cloud "<ORG>/default"
+@z
+
+@x
+script: |
+  docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  --push \
+  --tag "$IMAGE_NAME" .
+```
+@y
+script: |
+  docker buildx build \
+  --platform linux/amd64,linux/arm64 \
+  --push \
+  --tag "$IMAGE_NAME" .
+```
+@z
+
+@x
+{{< /tab >}}
 {{< tab name="BitBucket Pipelines" >}}
 @y
 {{< /tab >}}

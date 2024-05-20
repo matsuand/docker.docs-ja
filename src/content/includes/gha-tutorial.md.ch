@@ -18,55 +18,55 @@ complete the following steps:
 2. Define the GitHub Actions workflow.
 3. Run the workflow.
 @y
-1. Create a new repository on GitHub.
-2. Define the GitHub Actions workflow.
-3. Run the workflow.
+1. GitHub 上に新たなリポジトリを生成します。
+2. GitHub Actions ワークフローを定義しあｍす。
+3. ワークフローを実行します。
 @z
 
 @x
 To follow this tutorial, you need a Docker ID and a GitHub account.
 @y
-To follow this tutorial, you need a Docker ID and a GitHub account.
+この手順を実施するためには Docker ID と GitHub アカウントが必要です。
 @z
 
 @x
 ### Step one: Create the repository
 @y
-### Step one: Create the repository
+### ステップ 1: リポジトリの生成 {#step-one-create-the-repository}
 @z
 
 @x
 Create a GitHub repository and configure the Docker Hub secrets.
 @y
-Create a GitHub repository and configure the Docker Hub secrets.
+GitHub リポジトリを生成して Docker Hub シークレットを設定します。
 @z
 
 @x
 1. Create a new GitHub repository using
    [this template repository](https://github.com/dvdksn/clockbox/generate).
 @y
-1. Create a new GitHub repository using
-   [this template repository](https://github.com/dvdksn/clockbox/generate).
+1. [このテンプレートリポジトリ](https://github.com/dvdksn/clockbox/generate) を使って、新規に GitHub リポジトリを生成します。
 @z
 
 @x
    The repository contains a simple Dockerfile, and nothing else. Feel free to
    use another repository containing a working Dockerfile if you prefer.
 @y
-   The repository contains a simple Dockerfile, and nothing else. Feel free to
-   use another repository containing a working Dockerfile if you prefer.
+   このリポジトリには単純な Dockerfile だけがあり、他には何もありません。
+   もし必要なら、別の Dockerfile を含んだリポジトリを利用するのでもかまいません。
 @z
 
 @x
 2. Open the repository **Settings**, and go to **Secrets and variables** > **Actions**.
 @y
-2. Open the repository **Settings**, and go to **Secrets and variables** > **Actions**.
+2. リポジトリの **Settings** (設定) を開きます。
+   そして **Secrets and variables** > **Actions** を開きます。
 @z
 
 @x
 3. Create a new secret named `DOCKERHUB_USERNAME` and your Docker ID as value.
 @y
-3. Create a new secret named `DOCKERHUB_USERNAME` and your Docker ID as value.
+3. `DOCKERHUB_USERNAME` という名のシークレットを新規に生成して、その値に Docker ID を入力します。
 @z
 
 @x
@@ -98,7 +98,7 @@ action!
 @x
 ### Step two: Set up the workflow
 @y
-### Step two: Set up the workflow
+### ステップ 2: Set up the workflow {#step-two-set-up-the-workflow}
 @z
 
 @x
@@ -188,7 +188,7 @@ For more information about the YAML syntax used here, see
 @x
 ### Step three: Define the workflow steps
 @y
-### Step three: Define the workflow steps
+### ステップ 3: Define the workflow steps {#step-three-define-the-workflow-steps}
 @z
 
 @x
@@ -382,7 +382,7 @@ jobs:
 @x
 ### Run the workflow
 @y
-### Run the workflow
+### Run the workflow {#run-the-workflow}
 @z
 
 @x

@@ -16,6 +16,7 @@ bases = \
 	multi-platform.md        \
 	named-contexts.md        \
 	push-multi-registries.md \
+	reproducible-builds.md   \
 	secrets.md               \
 	share-image-jobs.md      \
 	test-before-push.md      \
