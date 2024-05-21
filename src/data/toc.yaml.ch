@@ -4532,15 +4532,15 @@ Manuals:
           - path: __SUBDIR__/build/ci/github-actions/named-contexts/
             title: Named contexts
           - path: __SUBDIR__/build/ci/github-actions/copy-image-registries/
-            title: Copy image between registries
+            title: レジストリ間でのイメージコピー
           - path: __SUBDIR__/build/ci/github-actions/update-dockerhub-desc/
             title: Update Docker Hub repo description
           - path: __SUBDIR__/build/ci/github-actions/attestations/
             title: SBOM and provenance attestations
           - path: __SUBDIR__/build/ci/github-actions/annotations/
-            title: Annotations
+            title: アノテーション
           - path: __SUBDIR__/build/ci/github-actions/reproducible-builds/
-            title: Reproducible builds
+            title: 再現可能なビルド
 @z
 
 @x

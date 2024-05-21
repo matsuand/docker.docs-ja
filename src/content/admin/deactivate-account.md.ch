@@ -2,27 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Deactivating an account or an organization
 description: Learn how to deactivate a Docker Hub account or an organization
 keywords: Docker Hub, delete, deactivate, account, organization
-aliases:
-- /docker-hub/deactivate-account/
----
 @y
----
 title: Deactivating an account or an organization
 description: Learn how to deactivate a Docker Hub account or an organization
 keywords: Docker Hub, delete, deactivate, account, organization
-aliases:
-- /docker-hub/deactivate-account/
----
 @z
 
 @x
 You can deactivate an account at any time. 
 @y
-You can deactivate an account at any time. 
+アカウントはいつでも無効化することができます。
 @z
 
 @x
@@ -31,7 +23,7 @@ You can deactivate an account at any time.
 > All Docker products and services that use your Docker account or organization account will be inaccessible after deactivating your account.
 { .warning }
 @y
->**Warning**
+>**警告**
 >
 > All Docker products and services that use your Docker account or organization account will be inaccessible after deactivating your account.
 { .warning }
@@ -40,7 +32,7 @@ You can deactivate an account at any time.
 @x
 ## Deactivate a user account
 @y
-## Deactivate a user account
+## ユーザーアカウントの無効化 {#deactivate-a-user-account}
 @z
 
 @x
@@ -188,19 +180,9 @@ Before deactivating an organization, complete the following:
 @z
 
 @x
-Once you have completed all the steps above, you can deactivate your organization. 
+Once you have completed all the previous the steps, you can deactivate your organization.
 @y
-Once you have completed all the steps above, you can deactivate your organization. 
-@z
-
-@x
-1. On Docker Hub, select **Organizations**.
-2. Choose the organization you want to deactivate. 
-3. In **Settings**, select the **Deactivate Org** tab and then **Deactivate organization**.
-@y
-1. On Docker Hub, select **Organizations**.
-2. Choose the organization you want to deactivate. 
-3. In **Settings**, select the **Deactivate Org** tab and then **Deactivate organization**.
+Once you have completed all the previous the steps, you can deactivate your organization.
 @z
 
 @x
@@ -209,4 +191,50 @@ Once you have completed all the steps above, you can deactivate your organizatio
 @y
 > This cannot be undone. Be sure you've gathered all the data you need from your organization before deactivating it.
 { .warning }
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+1. In Admin Console, choose the organization you want to deactivate.
+2. Under **Organization settings**, select **Deactivate**.
+3. Enter the organization name to confirm deactivation.
+4. Select **Deactivate organization**.
+@y
+1. In Admin Console, choose the organization you want to deactivate.
+2. Under **Organization settings**, select **Deactivate**.
+3. Enter the organization name to confirm deactivation.
+4. Select **Deactivate organization**.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Hub" >}}
+@y
+{{< /tab >}}
+{{< tab name="Hub" >}}
+@z
+
+@x
+1. On Docker Hub, select **Organizations**.
+2. Choose the organization you want to deactivate.
+3. In **Settings**, select the **Deactivate Org** tab and then **Deactivate organization**.
+@y
+1. On Docker Hub, select **Organizations**.
+2. Choose the organization you want to deactivate.
+3. In **Settings**, select the **Deactivate Org** tab and then **Deactivate organization**.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
