@@ -3,13 +3,10 @@
 ##
 copyfiles = \
 	ipvlan-l3.gliffy                \
-	ipvlan-l3.svg                   \
 	ipvlan-l3.webp                  \
 	ipvlan_l2_simple.gliffy         \
 	ipvlan_l2_simple.png            \
-	ipvlan_l2_simple.svg            \
 	macvlan-bridge-ipvlan-l2.gliffy \
-	macvlan-bridge-ipvlan-l2.svg    \
 	macvlan-bridge-ipvlan-l2.webp   \
 	vlans-deeper-look.gliffy        \
 	vlans-deeper-look.webp

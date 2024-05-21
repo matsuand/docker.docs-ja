@@ -241,8 +241,7 @@ copyfiles = \
 	compose-logs.webp        \
 	connect-debugger.webp    \
 	debug-menu.webp          \
-	debugger-breakpoint.webp \
-	java-compose-output.webp
+	debugger-breakpoint.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

@@ -5,8 +5,7 @@ copyfiles = \
 	compose-logs.webp        \
 	connect-debugger.webp    \
 	debug-menu.webp          \
-	debugger-breakpoint.webp \
-	java-compose-output.webp
+	debugger-breakpoint.webp
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

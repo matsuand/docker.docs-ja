@@ -240,10 +240,7 @@ top_srcdir = @top_srcdir@
 copyfiles = \
 	extensions-arch-2.png       \
 	extensions-arch-3.png       \
-	extensions-architecture.png \
-	frontend-backend.svg        \
-	frontend-executables.svg    \
-	overview.svg
+	extensions-architecture.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

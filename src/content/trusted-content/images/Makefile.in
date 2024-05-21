@@ -248,10 +248,10 @@ copyfiles = \
 	dvp-icon.svg                     \
 	insights-and-analytics-tab.png   \
 	official-image-badge-iso.png     \
-	official-image-badge.png         \
 	organization-tabs.png            \
 	sponsored-badge-iso.png          \
 	sponsored-badge.png              \
+	supported_tags.webp              \
 	upload_logo_sm.png               \
 	verified-publisher-badge-iso.png \
 	verified-publisher-badge.png

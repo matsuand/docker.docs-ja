@@ -171,7 +171,6 @@ AC_CONFIG_FILES([
 	src/content/engine/swarm/Makefile
 	src/content/engine/swarm/how-swarm-mode-works/Makefile
 	src/content/engine/swarm/images/Makefile
-	src/content/engine/swarm/images/src/Makefile
 	src/content/engine/swarm/swarm-tutorial/Makefile
 	src/content/engine/tutorials/Makefile
 	src/content/get-started/Makefile

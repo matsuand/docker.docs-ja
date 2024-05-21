@@ -238,12 +238,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	diagnose-support.png   \
-	docker-menu-switch.png \
-	hyperv-manager.png     \
-	settings-general.png   \
-	whale-icon-systray.png \
-	whale-x.png
+	diagnose-support.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

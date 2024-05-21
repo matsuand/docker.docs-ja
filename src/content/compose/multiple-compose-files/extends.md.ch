@@ -105,17 +105,17 @@ services:
 
 @x
 This instructs Compose to re-use only the properties of the `webapp` service
-defined in the `common-services.yaml` file. The `webapp` service itself is not part of the final project.
+defined in the `common-services.yml` file. The `webapp` service itself is not part of the final project.
 @y
 This instructs Compose to re-use only the properties of the `webapp` service
-defined in the `common-services.yaml` file. The `webapp` service itself is not part of the final project.
+defined in the `common-services.yml` file. The `webapp` service itself is not part of the final project.
 @z
 
 @x
-If `common-services.yaml`
+If `common-services.yml`
 looks like this:
 @y
-If `common-services.yaml`
+If `common-services.yml`
 looks like this:
 @z
 

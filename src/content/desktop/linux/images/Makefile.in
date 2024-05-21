@@ -297,9 +297,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = menu
 copyfiles = \
-	diagnose-support.png  \
-	whale-in-menu-bar.png \
-	whale-x.png
+	diagnose-support.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

@@ -4,7 +4,6 @@
 copyfiles = \
 	azure-create-connection.png \
 	create-connection.png       \
-	index-create-repo.png       \
 	index-report.png            \
 	index-tag.webp              \
 	oci-artifact.png            \

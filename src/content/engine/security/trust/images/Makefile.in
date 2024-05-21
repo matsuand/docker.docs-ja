@@ -243,7 +243,6 @@ copyfiles = \
 	trust_components.gliffy \
 	trust_components.png    \
 	trust_signing.gliffy    \
-	trust_signing.png       \
 	trust_view.gliffy       \
 	trust_view.png
 

@@ -4,9 +4,7 @@
 SUBDIRS = menu
 
 copyfiles = \
-	diagnose-support.png  \
-	whale-in-menu-bar.png \
-	whale-x.png
+	diagnose-support.png
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk
