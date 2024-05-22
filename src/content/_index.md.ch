@@ -286,7 +286,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "SSO"
         url: "/security/for-admins/single-sign-on/"
       - text: "SCIM"
-        url: "/security/for-admins/scim/"
+        url: "/security/for-admins/provisioning/scim/"
 @y
   - title: Security
     icon: shield
@@ -298,5 +298,5 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "SSO"
         url: "security/for-admins/single-sign-on/"
       - text: "SCIM"
-        url: "security/for-admins/scim/"
+        url: "security/for-admins/provisioning/scim/"
 @z

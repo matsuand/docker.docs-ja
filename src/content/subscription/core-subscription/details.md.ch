@@ -187,7 +187,7 @@ Docker Business includes:
 - [Registry Access Management](../../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
 - [Company layer](../../admin/company/_index.md) to manage multiple organizations and settings
 - [Single Sign-On](../../security/for-admins/single-sign-on/index.md)
-- [System for Cross-domain Identity Management](../../security/for-admins/scim.md) and more.
+- [System for Cross-domain Identity Management](../../security/for-admins/provisioning/scim.md) and more.
 @y
 Docker Business includes:
 - Everything included in Docker Team
@@ -196,7 +196,7 @@ Docker Business includes:
 - [Registry Access Management](../../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
 - [Company layer](../../admin/company/_index.md) to manage multiple organizations and settings
 - [Single Sign-On](../../security/for-admins/single-sign-on/index.md)
-- [System for Cross-domain Identity Management](../../security/for-admins/scim.md) and more.
+- [System for Cross-domain Identity Management](../../security/for-admins/provisioning/scim.md) and more.
 @z
 
 @x

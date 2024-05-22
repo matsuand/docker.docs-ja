@@ -1080,6 +1080,74 @@ examples: |-
 @z
 
 @x
+    The `--privileged` flag gives the following capabilities to a container:
+@y
+    The `--privileged` flag gives the following capabilities to a container:
+@z
+
+@x
+    - Enables all Linux kernel capabilities
+    - Disables the default seccomp profile
+    - Disables the default AppArmor profile
+    - Disables the SELinux process label
+    - Grants access to all host devices
+    - Makes `/sys` read-write
+    - Makes cgroups mounts read-write
+@y
+    - Enables all Linux kernel capabilities
+    - Disables the default seccomp profile
+    - Disables the default AppArmor profile
+    - Disables the SELinux process label
+    - Grants access to all host devices
+    - Makes `/sys` read-write
+    - Makes cgroups mounts read-write
+@z
+
+@x
+    In other words, the container can then do almost everything that the host can
+    do. This flag exists to allow special use-cases, like running Docker within
+    Docker.
+@y
+    In other words, the container can then do almost everything that the host can
+    do. This flag exists to allow special use-cases, like running Docker within
+    Docker.
+@z
+
+@x
+    > **Warning**
+    >
+    > Use the `--privileged` flag with caution.
+    > A container with `--privileged` is not a securely sandboxed process.
+    > Containers in this mode can get a root shell on the host
+    > and take control over the system.
+    >
+    > For most use cases, this flag should not be the preferred solution.
+    > If your container requires escalated privileges,
+    > you should prefer to explicitly grant the necessary permissions,
+    > for example by adding individual kernel capabilities with `--cap-add`.
+    >
+    > For more information, see
+    > [Runtime privilege and Linux capabilities](/engine/reference/run/#runtime-privilege-and-linux-capabilities)
+    { .warning }
+@y
+    > **Warning**
+    >
+    > Use the `--privileged` flag with caution.
+    > A container with `--privileged` is not a securely sandboxed process.
+    > Containers in this mode can get a root shell on the host
+    > and take control over the system.
+    >
+    > For most use cases, this flag should not be the preferred solution.
+    > If your container requires escalated privileges,
+    > you should prefer to explicitly grant the necessary permissions,
+    > for example by adding individual kernel capabilities with `--cap-add`.
+    >
+    > For more information, see
+    > [Runtime privilege and Linux capabilities](__SUBDIR__/engine/reference/run/#runtime-privilege-and-linux-capabilities)
+    { .warning }
+@z
+
+@x
     The following example doesn't work, because by default, Docker drops most
     potentially dangerous kernel capabilities, including `CAP_SYS_ADMIN ` (which is
     required to mount filesystems).

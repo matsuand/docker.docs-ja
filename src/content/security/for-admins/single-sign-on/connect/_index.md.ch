@@ -74,12 +74,12 @@ Make sure you have completed the following before you begin:
 @x
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you have the option to disable JIT provisioning. See [SSO authentication with JIT provisioning disabled](/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+> Optional Just-in-Time (JIT) provisioning is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you have the option to disable JIT provisioning. See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
 { .experimental }
 @y
 > **Beta feature**
 >
-> Optional Just-in-Time (JIT) provisioning is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you have the option to disable JIT provisioning. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/group-mapping/#sso-authentication-with-jit-provisioning-disabled).
+> Optional Just-in-Time (JIT) provisioning is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you have the option to disable JIT provisioning. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
 { .experimental }
 @z
 
@@ -117,6 +117,26 @@ Make sure you have completed the following before you begin:
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+The following videos demonstrate how to enforce SSO.
+@y
+The following videos demonstrate how to enforce SSO.
+@z
+
+@x
+- [Video: Enforce SSO with Okta SAML](https://youtu.be/c56YECO4YP4?feature=shared&t=1072)
+- [Video: Enforce SSO with Azure AD (OIDC)](https://youtu.be/bGquA8qR9jU?feature=shared&t=1087)
+@y
+- [Video: Enforce SSO with Okta SAML](https://youtu.be/c56YECO4YP4?feature=shared&t=1072)
+- [Video: Enforce SSO with Azure AD (OIDC)](https://youtu.be/bGquA8qR9jU?feature=shared&t=1087)
 @z
 
 @x

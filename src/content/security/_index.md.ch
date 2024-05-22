@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 description: Learn about security features Docker has to offer and explore best practices
 keywords: docker, docker hub, docker desktop, security
@@ -125,12 +127,12 @@ title: Security
 - title: SCIM
   description: Set up SCIM to automatically provision and deprovision users.
   icon: checklist
-  link: /security/for-admins/scim/
+  link: /security/for-admins/provisioning/scim/
 @y
 - title: SCIM
   description: Set up SCIM to automatically provision and deprovision users.
   icon: checklist
-  link: __SUBDIR__/security/for-admins/scim/
+  link: __SUBDIR__/security/for-admins/provisioning/scim/
 @z
 
 @x

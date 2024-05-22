@@ -257,6 +257,7 @@ AC_CONFIG_FILES([
 	src/content/security/faqs/Makefile
 	src/content/security/faqs/single-sign-on/Makefile
 	src/content/security/for-admins/Makefile
+	src/content/security/for-admins/provisioning/Makefile
 	src/content/security/for-admins/single-sign-on/Makefile
 	src/content/security/for-admins/single-sign-on/configure/Makefile
 	src/content/security/for-admins/single-sign-on/connect/Makefile

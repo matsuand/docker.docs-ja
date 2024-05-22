@@ -164,3 +164,17 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 @z
 
 % snip command...
+
+@x
+## Additional information
+@y
+## Additional information
+@z
+
+@x
+For more detailed information on configuration options for remote access to the daemon, refer to the
+[dockerd CLI reference](/reference/cli/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket).
+@y
+For more detailed information on configuration options for remote access to the daemon, refer to the
+[dockerd CLI reference](__SUBDIR__/reference/cli/dockerd/#bind-docker-to-another-hostport-or-a-unix-socket).
+@z

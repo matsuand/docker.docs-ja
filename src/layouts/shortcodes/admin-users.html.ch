@@ -10,7 +10,7 @@
 {{ $remove_button := "**Remove member**" }}
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $update_role := "Select the role you want to assign, then select **Save**." }}
-{{ $role_mapping_link := "[SCIM for role mapping](/security/for-admins/scim/)" }}
+{{ $role_mapping_link := "[SCIM for role mapping](/security/for-admins/provisioning/scim/)" }}
 {{ $export_fields := `The CSV file for an organization contains the following fields:
 * **Name**: The user's name.
 * **Username**: The user's Docker ID.
@@ -27,7 +27,7 @@
 {{ $remove_button := "**Remove member**" }}
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $update_role := "Select the role you want to assign, then select **Save**." }}
-{{ $role_mapping_link := "[SCIM for role mapping](__SUBDIR__/security/for-admins/scim/)" }}
+{{ $role_mapping_link := "[SCIM for role mapping](__SUBDIR__/security/for-admins/provisioning/scim/)" }}
 {{ $export_fields := `The CSV file for an organization contains the following fields:
 * **Name**: The user's name.
 * **Username**: The user's Docker ID.
@@ -46,7 +46,7 @@
 {{ $member_navigation = "Select your organization in the left navigation drop-down menu, and then select **Members**." }}
 {{ $remove_button = "**Remove member**" }}
 {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-{{ $role_mapping_link = "[SCIM for role mapping](/security/for-admins/scim/)" }}
+{{ $role_mapping_link = "[SCIM for role mapping](/security/for-admins/provisioning/scim/)" }}
 {{ if eq (.Get "layer") "company" }}
 {{ $export_fields = `The CSV file for a company contains the following fields:
 * **Name**: The user's name.
@@ -58,7 +58,7 @@
 {{ $member_navigation = "Select your company in the left navigation drop-down menu, and then select **Users**." }}
 {{ $remove_button = "**Remove user**" }}
 {{ $update_role = "Select their organization, select the role you want to assign, and then select **Save**." }}
-{{ $role_mapping_link = "[SCIM for role mapping](/security/for-admins/scim/)"}}
+{{ $role_mapping_link = "[SCIM for role mapping](/security/for-admins/provisioning/scim/)"}}
 {{ end }}
 {{ end }}
 @y
@@ -68,7 +68,7 @@
 {{ $member_navigation = "Select your organization in the left navigation drop-down menu, and then select **Members**." }}
 {{ $remove_button = "**Remove member**" }}
 {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-{{ $role_mapping_link = "[SCIM for role mapping](__SUBDIR__/security/for-admins/scim/)" }}
+{{ $role_mapping_link = "[SCIM for role mapping](__SUBDIR__/security/for-admins/provisioning/scim/)" }}
 {{ if eq (.Get "layer") "company" }}
 {{ $export_fields = `The CSV file for a company contains the following fields:
 * **Name**: The user's name.
@@ -80,7 +80,7 @@
 {{ $member_navigation = "Select your company in the left navigation drop-down menu, and then select **Users**." }}
 {{ $remove_button = "**Remove user**" }}
 {{ $update_role = "Select their organization, select the role you want to assign, and then select **Save**." }}
-{{ $role_mapping_link = "[SCIM for role mapping](__SUBDIR__/security/for-admins/scim/)"}}
+{{ $role_mapping_link = "[SCIM for role mapping](__SUBDIR__/security/for-admins/provisioning/scim/)"}}
 {{ end }}
 {{ end }}
 @z

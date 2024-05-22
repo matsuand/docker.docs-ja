@@ -5000,22 +5000,28 @@ Manuals:
 @z
 
 @x
-    - path: /security/for-admins/scim/
-      title: SCIM
-    - path: /security/for-admins/group-mapping/
-      title: Group mapping
-    - path: /security/for-admins/configure-sign-in/
-      title: Enforce sign in
+    - sectiontitle: Provisioning
+      section:
+      - path: /security/for-admins/provisioning/scim/
+        title: SCIM
+      - path: /security/for-admins/provisioning/just-in-time/
+        title: Just-in-Time
+      - path: /security/for-admins/provisioning/group-mapping/
+        title: Group mapping
 @y
-    - path: __SUBDIR__/security/for-admins/scim/
-      title: SCIM
-    - path: __SUBDIR__/security/for-admins/group-mapping/
-      title: Group mapping
-    - path: __SUBDIR__/security/for-admins/configure-sign-in/
-      title: Enforce sign in
+    - sectiontitle: Provisioning
+      section:
+      - path: __SUBDIR__/security/for-admins/provisioning/scim/
+        title: SCIM
+      - path: __SUBDIR__/security/for-admins/provisioning/just-in-time/
+        title: Just-in-Time
+      - path: __SUBDIR__/security/for-admins/provisioning/group-mapping/
+        title: Group mapping
 @z
 
 @x
+    - path: /security/for-admins/configure-sign-in/
+      title: Enforce sign in
     - path: /security/for-admins/roles-and-permissions/
       title: Roles and permissions
     - path: /security/for-admins/domain-audit/
@@ -5025,6 +5031,8 @@ Manuals:
     - path: /security/for-admins/registry-access-management/
       title: Registry Access Management
 @y
+    - path: __SUBDIR__/security/for-admins/configure-sign-in/
+      title: Enforce sign in
     - path: __SUBDIR__/security/for-admins/roles-and-permissions/
       title: Roles and permissions
     - path: __SUBDIR__/security/for-admins/domain-audit/

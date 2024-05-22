@@ -60,9 +60,9 @@ title: Manage Single Sign-On
 @z
 
 @x
-- [Set up SCIM](../../scim.md)
-- [Enable Group mapping](../../group-mapping.md)
+- [Set up SCIM](../../provisioning/scim.md)
+- [Enable Group mapping](../../provisioning/group-mapping.md)
 @y
-- [Set up SCIM](../../scim.md)
-- [Enable Group mapping](../../group-mapping.md)
+- [Set up SCIM](../../provisioning/scim.md)
+- [Enable Group mapping](../../provisioning/group-mapping.md)
 @z

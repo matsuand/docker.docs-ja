@@ -136,7 +136,7 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [Create and manage teams and organizations](orgs.md)
 * [Create a company](../admin/company/new-company.md)
 * [Enforce sign in](configure-sign-in.md)
-* Set up [SSO](../security/for-admins/single-sign-on/index.md) and [SCIM](../security/for-admins/scim.md)
+* Set up [SSO](../security/for-admins/single-sign-on/index.md) and [SCIM](../security/for-admins/provisioning/scim.md)
 * Use [Group mapping](group-mapping.md)
 * [Carry out domain audits](domain-audit.md)
 * [Use Image Access Management](image-access-management.md) to control developers' access to certain types of images
@@ -148,7 +148,7 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [チームや組織の生成と管理](orgs.md)
 * [企業の生成](../admin/company/new-company.md)
 * [サインインの強制](configure-sign-in.md)
-* [SSO](../security/for-admins/single-sign-on/index.md) と [SCIM](../security/for-admins/scim.md) のセットアップ
+* [SSO](../security/for-admins/single-sign-on/index.md) と [SCIM](../security/for-admins/provisioning/scim.md) のセットアップ
 * [グループマッピング](group-mapping.md) の利用
 * [ドメイン監査の実行](domain-audit.md)
 * [イメージアクセス管理の利用](image-access-management.md) による特定タイプのイメージに対する開発者アクセス制御

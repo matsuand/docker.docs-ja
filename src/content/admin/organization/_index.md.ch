@@ -90,11 +90,11 @@ title: Organization administration overview
 @x
 - title: SSO & SCIM
   description: 'Set up [Single Sign-On](/security/for-admins/single-sign-on/)
-    and [SCIM](/security/for-admins/scim/) for your organization.
+    and [SCIM](/security/for-admins/provisioning/scim/) for your organization.
 @y
 - title: SSO & SCIM
   description: 'Set up [Single Sign-On](__SUBDIR__/security/for-admins/single-sign-on/)
-    and [SCIM](__SUBDIR__/security/for-admins/scim/) for your organization.
+    and [SCIM](__SUBDIR__/security/for-admins/provisioning/scim/) for your organization.
 @z
 
 @x

@@ -182,9 +182,51 @@ Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option t
 @z
 
 @x
+[SCIM](../../../security/for-admins/provisioning/scim/) is available to provide full synchronization with users and groups. When you auto-provision users with SCIM, the recommended configuration is to disable JIT so that all auto-provisioning is handled by SCIM.
+@y
+[SCIM](../../../security/for-admins/provisioning/scim/) is available to provide full synchronization with users and groups. When you auto-provision users with SCIM, the recommended configuration is to disable JIT so that all auto-provisioning is handled by SCIM.
+@z
+
+@x
 Additionally, you can use the [Docker Hub API](/docker-hub/api/latest/) to complete this process.
 @y
 Additionally, you can use the [Docker Hub API](__SUBDIR__/docker-hub/api/latest/) to complete this process.
+@z
+
+@x
+### How does disabling Just-in-Time provisioning impact user sign-in?
+@y
+### How does disabling Just-in-Time provisioning impact user sign-in?
+@z
+
+@x
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning configuration is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. Otherwise, JIT is enabled by default.
+{ .experimental }
+@y
+> **Beta feature**
+>
+> Optional Just-in-Time (JIT) provisioning configuration is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. Otherwise, JIT is enabled by default.
+{ .experimental }
+@z
+
+@x
+If a user attempts to sign in to Docker using an email address that is a verified domain for your SSO connection, they need to be a member of the organization to access it, or have a pending invitation to the organization. Users who don't meet these criteria will encounter an `Access denied` error, and will need an administrator to invite them to the organization.
+@y
+If a user attempts to sign in to Docker using an email address that is a verified domain for your SSO connection, they need to be a member of the organization to access it, or have a pending invitation to the organization. Users who don't meet these criteria will encounter an `Access denied` error, and will need an administrator to invite them to the organization.
+@z
+
+@x
+See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
+@y
+See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
+@z
+
+@x
+To auto-provision users without JIT provisioning, you can use [SCIM](/security/for-admins/provisioning/scim/).
+@y
+To auto-provision users without JIT provisioning, you can use [SCIM](__SUBDIR__/security/for-admins/provisioning/scim/).
 @z
 
 @x

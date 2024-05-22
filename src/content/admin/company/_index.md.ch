@@ -82,13 +82,13 @@ title: 概要
   description: Set up SCIM to automatically provision and deprovision users in your
     company.
   icon: checklist
-  link: /security/for-admins/scim/
+  link: /security/for-admins/provisioning/scim/
 @y
 - title: Set up SCIM
   description: Set up SCIM to automatically provision and deprovision users in your
     company.
   icon: checklist
-  link: __SUBDIR__/security/for-admins/scim/
+  link: __SUBDIR__/security/for-admins/provisioning/scim/
 @z
 
 @x

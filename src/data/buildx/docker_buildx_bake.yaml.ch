@@ -175,6 +175,44 @@ examples: |-
 @z
 
 @x
+    ### Write build results metadata to a file (--metadata-file) {#metadata-file}
+@y
+    ### Write build results metadata to a file (--metadata-file) {#metadata-file}
+@z
+
+@x
+    Similar to [`buildx build --metadata-file`](/reference/cli/docker/buildx/build/#metadata-file) but
+    writes a map of results for each target such as:
+@y
+    Similar to [`buildx build --metadata-file`](__SUBDIR__/reference/cli/docker/buildx/build/#metadata-file) but
+    writes a map of results for each target such as:
+@z
+
+% snip code...
+% snip command...
+% snip code...
+
+@x
+    > **Note**
+    >
+    > Build record [provenance](/build/attestations/slsa-provenance/#provenance-attestation-example)
+    > (`buildx.build.provenance`) includes minimal provenance by default. Set the
+    > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
+    > * `min` sets minimal provenance (default).
+    > * `max` sets full provenance.
+    > * `disabled`, `false` or `0` does not set any provenance.
+@y
+    > **Note**
+    >
+    > Build record [provenance](__SUBDIR__/build/attestations/slsa-provenance/#provenance-attestation-example)
+    > (`buildx.build.provenance`) includes minimal provenance by default. Set the
+    > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
+    > * `min` sets minimal provenance (default).
+    > * `max` sets full provenance.
+    > * `disabled`, `false` or `0` does not set any provenance.
+@z
+
+@x
     ### Don't use cache when building the image (--no-cache) {#no-cache}
 @y
     ### Don't use cache when building the image (--no-cache) {#no-cache}

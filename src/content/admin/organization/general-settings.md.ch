@@ -80,7 +80,7 @@ To edit this information:
 @z
 
 @x
-In the **Organization settings** menu, you can also [configure SSO](../../security/for-admins/single-sign-on/configure/) and [set up SCIM](../../security/for-admins/scim.md). If your organization isn't part of a company, from here you can also [audit your domains](../../security/for-admins/domain-audit.md) or [create a company](new-company.md).
+In the **Organization settings** menu, you can also [configure SSO](../../security/for-admins/single-sign-on/configure/) and [set up SCIM](../../security/for-admins/provisioning/scim.md). If your organization isn't part of a company, from here you can also [audit your domains](../../security/for-admins/domain-audit.md) or [create a company](new-company.md).
 @y
-In the **Organization settings** menu, you can also [configure SSO](../../security/for-admins/single-sign-on/configure/) and [set up SCIM](../../security/for-admins/scim.md). If your organization isn't part of a company, from here you can also [audit your domains](../../security/for-admins/domain-audit.md) or [create a company](new-company.md).
+In the **Organization settings** menu, you can also [configure SSO](../../security/for-admins/single-sign-on/configure/) and [set up SCIM](../../security/for-admins/provisioning/scim.md). If your organization isn't part of a company, from here you can also [audit your domains](../../security/for-admins/domain-audit.md) or [create a company](new-company.md).
 @z

@@ -217,7 +217,7 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
 2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @y
-2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
+2. [Create a Docker access token](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @z
 
@@ -317,4 +317,322 @@ and sign in using the credentials defined in the Docker Compose file (username: 
 The dashboards are pre-configured to visualize the vulnerability and policy metrics scraped by Prometheus.
 @y
 The dashboards are pre-configured to visualize the vulnerability and policy metrics scraped by Prometheus.
+@z
+
+@x
+## Datadog
+@y
+## Datadog
+@z
+
+@x
+This section describes how to scrape the metrics endpoint using Datadog.
+Datadog pulls data for monitoring by running a customizable
+[agent](https://docs.datadoghq.com/agent/?tab=Linux) that scrapes available
+endpoints for any exposed metrics. The OpenMetrics and Prometheus checks are
+included in the agent, so you don’t need to install anything else on your
+containers or hosts.
+@y
+This section describes how to scrape the metrics endpoint using Datadog.
+Datadog pulls data for monitoring by running a customizable
+[agent](https://docs.datadoghq.com/agent/?tab=Linux) that scrapes available
+endpoints for any exposed metrics. The OpenMetrics and Prometheus checks are
+included in the agent, so you don’t need to install anything else on your
+containers or hosts.
+@z
+
+@x
+This guide assumes you have a Datadog account and a Datadog API Key. Refer to
+the [Datadog documentation](https://docs.datadoghq.com/agent) to get started.
+@y
+This guide assumes you have a Datadog account and a Datadog API Key. Refer to
+the [Datadog documentation](https://docs.datadoghq.com/agent) to get started.
+@z
+
+@x
+### Configure the Datadog agent
+@y
+### Configure the Datadog agent
+@z
+
+@x
+To start collecting the metrics, you will need to edit the agent’s
+configuration file for the OpenMetrics check. If you're running the agent as a
+container, such file must be mounted at
+`/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml`.
+@y
+To start collecting the metrics, you will need to edit the agent’s
+configuration file for the OpenMetrics check. If you're running the agent as a
+container, such file must be mounted at
+`/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml`.
+@z
+
+@x
+The following example shows a Datadog configuration that:
+@y
+The following example shows a Datadog configuration that:
+@z
+
+@x
+- Specifies the OpenMetrics endpoint targeting the `dockerscoutpolicy` Docker organization
+- A `namespace` that all collected metrics will be prefixed with
+- The [`metrics`](#metrics) you want the agent to scrape (`scout_*`)
+- An `auth_token` section for the Datadog agent to authenticate to the Metrics
+  endpoint, using a Docker PAT as a Bearer token.
+@y
+- Specifies the OpenMetrics endpoint targeting the `dockerscoutpolicy` Docker organization
+- A `namespace` that all collected metrics will be prefixed with
+- The [`metrics`](#metrics) you want the agent to scrape (`scout_*`)
+- An `auth_token` section for the Datadog agent to authenticate to the Metrics
+  endpoint, using a Docker PAT as a Bearer token.
+@z
+
+% snip code...
+
+@x
+> **Important**
+>
+> Do not replace the `<TOKEN>` placeholder in the previous configuration
+> example. It must stay as it is. Only make sure the Docker PAT is correctly
+> mounted into the Datadog agent in the specified filesystem path. Save the
+> file as `conf.yaml` and restart the agent.
+{ .important }
+@y
+> **Important**
+>
+> Do not replace the `<TOKEN>` placeholder in the previous configuration
+> example. It must stay as it is. Only make sure the Docker PAT is correctly
+> mounted into the Datadog agent in the specified filesystem path. Save the
+> file as `conf.yaml` and restart the agent.
+{ .important }
+@z
+
+@x
+When creating a Datadog agent configuration of your own, make sure to edit the
+`openmetrics_endpoint` property to target your organization, by replacing
+`dockerscoutpolicy` with the namespace of your Docker organization.
+@y
+When creating a Datadog agent configuration of your own, make sure to edit the
+`openmetrics_endpoint` property to target your organization, by replacing
+`dockerscoutpolicy` with the namespace of your Docker organization.
+@z
+
+@x
+### Datadog sample project
+@y
+### Datadog sample project
+@z
+
+@x
+If you don't have a Datadog server set up, you can run a [sample project](https://github.com/dockersamples/scout-metrics-exporter)
+using Docker Compose. The sample includes a Datadog agent, running as a
+container, that scrapes metrics for a Docker organization enrolled in Docker
+Scout. This sample project assumes that you have a Datadog account, an API key,
+and a Datadog site.
+@y
+If you don't have a Datadog server set up, you can run a [sample project](https://github.com/dockersamples/scout-metrics-exporter)
+using Docker Compose. The sample includes a Datadog agent, running as a
+container, that scrapes metrics for a Docker organization enrolled in Docker
+Scout. This sample project assumes that you have a Datadog account, an API key,
+and a Datadog site.
+@z
+
+@x
+1. Clone the starter template for bootstrapping a Datadog Compose service for
+   scraping the Docker Scout metrics endpoint:
+@y
+1. Clone the starter template for bootstrapping a Datadog Compose service for
+   scraping the Docker Scout metrics endpoint:
+@z
+
+% snip command...
+
+@x
+2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
+   and store it in a plain text file at `/datadog/token` under the template directory.
+@y
+2. [Create a Docker access token](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token)
+   and store it in a plain text file at `/datadog/token` under the template directory.
+@z
+
+% snip code...
+
+@x
+3. In the `/datadog/compose.yaml` file, update the `DD_API_KEY` and `DD_SITE` environment variables
+   with the values for your Datadog deployment.
+@y
+3. In the `/datadog/compose.yaml` file, update the `DD_API_KEY` and `DD_SITE` environment variables
+   with the values for your Datadog deployment.
+@z
+
+% snip code...
+
+@x
+   The `volumes` section mounts the Docker socket from the host to the
+   container. This is required to obtain an accurate hostname when running as a
+   container ([more details here](https://docs.datadoghq.com/agent/troubleshooting/hostname_containers/)).
+@y
+   The `volumes` section mounts the Docker socket from the host to the
+   container. This is required to obtain an accurate hostname when running as a
+   container ([more details here](https://docs.datadoghq.com/agent/troubleshooting/hostname_containers/)).
+@z
+
+@x
+   It also mounts the agent's config file and the Docker access token.
+@y
+   It also mounts the agent's config file and the Docker access token.
+@z
+
+@x
+4. Edit the `/datadog/config.yaml` file by replacing the placeholder `<ORG>` in
+   the `openmetrics_endpoint` property with the namespace of the Docker
+   organization that you want to collect metrics for.
+@y
+4. Edit the `/datadog/config.yaml` file by replacing the placeholder `<ORG>` in
+   the `openmetrics_endpoint` property with the namespace of the Docker
+   organization that you want to collect metrics for.
+@z
+
+% snip code...
+
+@x
+5. Start the Compose services.
+@y
+5. Start the Compose services.
+@z
+
+% snip code...
+
+@x
+If configured properly, you should see the OpenMetrics check under Running
+Checks when you run the agent’s status command whose output should look similar
+to:
+@y
+If configured properly, you should see the OpenMetrics check under Running
+Checks when you run the agent’s status command whose output should look similar
+to:
+@z
+
+% snip text...
+
+@x
+For a comprehensive list of options, take a look at this [example config file](https://github.com/DataDog/integrations-core/blob/master/openmetrics/datadog_checks/openmetrics/data/conf.yaml.example) for the generic OpenMetrics check.
+@y
+For a comprehensive list of options, take a look at this [example config file](https://github.com/DataDog/integrations-core/blob/master/openmetrics/datadog_checks/openmetrics/data/conf.yaml.example) for the generic OpenMetrics check.
+@z
+
+@x
+### Visualizing your data
+@y
+### Visualizing your data
+@z
+
+@x
+Once the agent is configured to grab Prometheus metrics, you can use them to build comprehensive Datadog graphs, dashboards, and alerts.
+@y
+Once the agent is configured to grab Prometheus metrics, you can use them to build comprehensive Datadog graphs, dashboards, and alerts.
+@z
+
+@x
+Go into your [Metric summary page](https://app.datadoghq.com/metric/summary?filter=scout_prometheus_exporter)
+to see the metrics collected from this example. This configuration will collect
+all exposed metrics starting with `scout_` under the namespace
+`scout_metrics_exporter`.
+@y
+Go into your [Metric summary page](https://app.datadoghq.com/metric/summary?filter=scout_prometheus_exporter)
+to see the metrics collected from this example. This configuration will collect
+all exposed metrics starting with `scout_` under the namespace
+`scout_metrics_exporter`.
+@z
+
+@x
+![datadog_metrics_summary](images/datadog_metrics_summary.png)
+@y
+![datadog_metrics_summary](images/datadog_metrics_summary.png)
+@z
+
+@x
+The following screenshots show examples of a Datadog dashboard containing
+graphs about vulnerability and policy compliance for a specific [stream](#stream).
+@y
+The following screenshots show examples of a Datadog dashboard containing
+graphs about vulnerability and policy compliance for a specific [stream](#stream).
+@z
+
+@x
+![datadog_dashboard_1](images/datadog_dashboard_1.png)
+![datadog_dashboard_2](images/datadog_dashboard_2.png)
+@y
+![datadog_dashboard_1](images/datadog_dashboard_1.png)
+![datadog_dashboard_2](images/datadog_dashboard_2.png)
+@z
+
+@x
+> The reason why the lines in the graphs look flat is due to the own nature of
+> vulnerabilities (they don't change too often) and the short time interval
+> selected in the date picker.
+@y
+> The reason why the lines in the graphs look flat is due to the own nature of
+> vulnerabilities (they don't change too often) and the short time interval
+> selected in the date picker.
+@z
+
+@x
+## Scrape interval
+@y
+## Scrape interval
+@z
+
+@x
+By default, Prometheus and Datadog scrape metrics at a 15 second interval.
+Because of the own nature of vulnerability data, the metrics exposed through this API are unlikely to change at a high frequency.
+For this reason, the metrics endpoint has a 60-minute cache by default,
+which means a scraping interval of 60 minutes or higher is recommended.
+If you set the scrape interval to less than 60 minutes, you will see the same data in the metrics for multiple scrapes during that time window.
+@y
+By default, Prometheus and Datadog scrape metrics at a 15 second interval.
+Because of the own nature of vulnerability data, the metrics exposed through this API are unlikely to change at a high frequency.
+For this reason, the metrics endpoint has a 60-minute cache by default,
+which means a scraping interval of 60 minutes or higher is recommended.
+If you set the scrape interval to less than 60 minutes, you will see the same data in the metrics for multiple scrapes during that time window.
+@z
+
+@x
+To change the scrape interval:
+@y
+To change the scrape interval:
+@z
+
+@x
+- Prometheus: set the `scrape_interval` field in the Prometheus configuration
+  file at the global or job level.
+- Datadog: set the `min_collection_interval` property in the Datadog agent
+  configuration file, see [Datadog documentation](https://docs.datadoghq.com/developers/custom_checks/write_agent_check/#updating-the-collection-interval).
+@y
+- Prometheus: set the `scrape_interval` field in the Prometheus configuration
+  file at the global or job level.
+- Datadog: set the `min_collection_interval` property in the Datadog agent
+  configuration file, see [Datadog documentation](https://docs.datadoghq.com/developers/custom_checks/write_agent_check/#updating-the-collection-interval).
+@z
+
+@x
+## Revoke an access token
+@y
+## Revoke an access token
+@z
+
+@x
+If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
+To revoke a PAT, follow the steps in the [Create and manage access tokens](/security/for-developers/access-tokens/#modify-existing-tokens).
+@y
+If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
+To revoke a PAT, follow the steps in the [Create and manage access tokens](__SUBDIR__/security/for-developers/access-tokens/#modify-existing-tokens).
+@z
+
+@x
+Revoking a PAT immediately invalidates the token, and prevents Prometheus from scraping metrics using that token.
+You will need to create a new PAT and update the Prometheus configuration to use the new token.
+@y
+Revoking a PAT immediately invalidates the token, and prevents Prometheus from scraping metrics using that token.
+You will need to create a new PAT and update the Prometheus configuration to use the new token.
 @z
