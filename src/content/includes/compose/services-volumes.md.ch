@@ -10,9 +10,9 @@ The `volumes` attribute define mount host paths or named volumes that are access
 @x
 If the mount is a host path and is only used by a single service, it can be declared as part of the service
 definition. To reuse a volume across multiple services, a named
-volume must be declared in the [top-level `volumes` key](07-volumes.md).
+volume must be declared in the `volumes` top-level element.
 @y
 If the mount is a host path and is only used by a single service, it can be declared as part of the service
 definition. To reuse a volume across multiple services, a named
-volume must be declared in the [top-level `volumes` key](07-volumes.md).
+volume must be declared in the `volumes` top-level element.
 @z

@@ -2,9 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-As with [Fragments](10-fragments.md), Extensions can be used to make your Compose file more efficient and easier to maintain. Extensions can also be used with [anchors and aliases](10-fragments.md).
+Extensions can be used to make your Compose file more efficient and easier to maintain. 
 @y
-As with [Fragments](10-fragments.md), Extensions can be used to make your Compose file more efficient and easier to maintain. Extensions can also be used with [anchors and aliases](10-fragments.md).
+Extensions can be used to make your Compose file more efficient and easier to maintain. 
 @z
 
 @x

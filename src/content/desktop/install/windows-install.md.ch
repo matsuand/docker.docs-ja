@@ -112,23 +112,11 @@ _チェックサムについては [リリースノート](../release-notes.md)_
 @x
 > **Note**
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @y
 > **メモ**
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
-@z
-
-@x
-> **Should I use Hyper-V or WSL?**
->
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
-{ .tip }
-@y
-> **Should I use Hyper-V or WSL?**
->
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
-{ .tip }
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @z
 
 @x
@@ -198,11 +186,11 @@ _チェックサムについては [リリースノート](../release-notes.md)_
 @x
 > **Note**
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @y
 > **メモ**
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @z
 
 @x
@@ -294,19 +282,11 @@ For more information on Windows containers, refer to the following documentation
 @x
 > **Note**
 >
-> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers. These are:
->
->  * [General](../settings/windows.md#general)
->  * [Proxies](../settings/windows.md#proxies)
->  * [Daemon](../settings/windows.md#docker-engine)
+> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers.
 @y
 > **Note**
 >
-> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers. These are:
->
->  * [General](../settings/windows.md#general)
->  * [Proxies](../settings/windows.md#proxies)
->  * [Daemon](../settings/windows.md#docker-engine)
+> When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers.
 @z
 
 @x
@@ -584,7 +564,8 @@ Docker Desktop を起動するには、以下を実行します。
 @z
 
 @x
-- [Get started with Docker](../../guides/get-started/_index.md).
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- [Get started with Docker](../../get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, and
   how to get support.
@@ -592,10 +573,11 @@ Docker Desktop を起動するには、以下を実行します。
 - [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
 - [Back up and restore data](../backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
-- [Docker をはじめよう](../../guides/get-started/_index.md)。
-- [Docker Desktop の確認](../use-desktop/index.md) とその全機能。
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- [Docker をはじめよう](../../get-started/_index.md).
+- [Docker Desktop の確認](../use-desktop/index.md) and all its features.
 - [トラブルシューティング](../troubleshoot/overview.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
-- [FAQ](../faqs/general.md) ではよくたずねられる質問を示しています。
+- [FAQ](../faqs/general.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
 - [リリースノート](../release-notes.md) では、Docker Desktop リリースにおけるコンポーネントアップデート、新機能、改善項目を一覧にしています。
 - [データのバックアップとリストア](../backup-and-restore.md) では Docker に関するデータのバックアップやリストアの手順を説明しています。
 @z

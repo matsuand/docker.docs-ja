@@ -6,12 +6,16 @@
 title: Persisting container data
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of data persistence in Docker
+aliases:
+- /guides/walkthroughs/persist-data/
 ---
 @y
 ---
 title: Persisting container data
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of data persistence in Docker
+aliases:
+- /guides/walkthroughs/persist-data/
 ---
 @z
 

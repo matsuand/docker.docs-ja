@@ -40,17 +40,9 @@ use.
 @z
 
 @x
-## Networking features
+## Networking features for all platforms
 @y
-## Networking features
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="For all platforms" >}}
-@y
-{{< tabs >}}
-{{< tab name="For all platforms" >}}
+## Networking features for all platforms
 @z
 
 @x
@@ -140,11 +132,61 @@ See:
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="For Mac and Linux" >}}
+### SOCKS5 proxy support 
 @y
-{{< /tab >}}
-{{< tab name="For Mac and Linux" >}}
+### SOCKS5 proxy support 
+@z
+
+@x
+{{< introduced desktop 4.28.0 "release-notes.md#4280" >}}
+@y
+{{< introduced desktop 4.28.0 "release-notes.md#4280" >}}
+@z
+
+@x
+> **Note**
+>
+> Requires a Business subscription.
+@y
+> **Note**
+>
+> Requires a Business subscription.
+@z
+
+@x
+SOCKS (Socket Secure) is a protocol that facilitates the routing of network packets between a client and a server through a proxy server. It provides a way to enhance privacy, security, and network performance for users and applications. 
+@y
+SOCKS (Socket Secure) is a protocol that facilitates the routing of network packets between a client and a server through a proxy server. It provides a way to enhance privacy, security, and network performance for users and applications. 
+@z
+
+@x
+You can enable SOCKS proxy support to allow outgoing requests, such as pulling images, and access Linux container backend IPs from the host. 
+@y
+You can enable SOCKS proxy support to allow outgoing requests, such as pulling images, and access Linux container backend IPs from the host. 
+@z
+
+@x
+To enable and set up SOCKS proxy support:
+@y
+To enable and set up SOCKS proxy support:
+@z
+
+@x
+1. Navigate to the **Resources** tab in **Settings**. 
+2. From the dropdown menu select **Proxies**.
+3. Switch on the **Manual proxy configuration** toggle. 
+4. In the **Secure Web Server HTTPS** box, paste your `socks5://host:port` URL.
+@y
+1. Navigate to the **Resources** tab in **Settings**. 
+2. From the dropdown menu select **Proxies**.
+3. Switch on the **Manual proxy configuration** toggle. 
+4. In the **Secure Web Server HTTPS** box, paste your `socks5://host:port` URL.
+@z
+
+@x
+## Networking features for Mac and Linux
+@y
+## Networking features for Mac and Linux
 @z
 
 @x
@@ -221,14 +263,6 @@ services:
     environment:
       - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
  ```
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x
@@ -447,6 +481,14 @@ $ docker run -d -P --name webserver nginx
 ```console
 $ docker run -d -P --name webserver nginx
 ```
+@z
+
+@x
+Alternatively, you can also use [host networking](../network/drivers/host.md#docker-desktop)
+to give the container direct access to the network stack of the host.
+@y
+Alternatively, you can also use [host networking](../network/drivers/host.md#docker-desktop)
+to give the container direct access to the network stack of the host.
 @z
 
 @x

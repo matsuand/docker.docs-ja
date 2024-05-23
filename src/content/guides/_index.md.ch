@@ -30,12 +30,12 @@ description: Explore the Docker guides
 @x
 - title: Get started
   description: Get started with the basics and the benefits of containerizing your applications.
-  link: /guides/get-started/
+  link: /get-started/
   icon: rocket
 @y
 - title: はじめよう
   description: アプリケーションをコンテナー化する利点について学びます。
-  link: __SUBDIR__/guides/get-started/
+  link: __SUBDIR__/get-started/
   icon: rocket
 @z
 

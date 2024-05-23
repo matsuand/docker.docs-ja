@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = docker-concepts get-started use-case walkthroughs
+SUBDIRS = docker-concepts use-case
 
 bases = \
 	_index.md

@@ -18,97 +18,49 @@ Guides:
 @x
 - sectiontitle: Get started
   section:
-    - title: "Overview"
-      path: /guides/get-started/
-    - sectiontitle: "Quick hands-on guides"
-      section:
-      - title: "What is a container?"
-        path: /guides/walkthroughs/what-is-a-container/
-      - title: "Run a container"
-        path: /guides/walkthroughs/run-a-container/
-      - title: "Run Docker Hub images"
-        path: /guides/walkthroughs/run-hub-images/
-      - title: "Run multi-container applications"
-        path: /guides/walkthroughs/multi-container-apps/
-      - title: "Persist container data"
-        path: /guides/walkthroughs/persist-data/
-      - title: "Access a local folder"
-        path: /guides/walkthroughs/access-local-folder/
-      - title: "Containerize your application"
-        path: /guides/walkthroughs/containerize-your-app/
-      - title: "Publish your image"
-        path: /guides/walkthroughs/publish-your-image/
+  - title: "Part 1: Overview"
+    path: /get-started/
+  - title: "Part 2: Containerize an application"
+    path: /get-started/02_our_app/
+  - title: "Part 3: Update the application"
+    path: /get-started/03_updating_app/
+  - title: "Part 4: Share the application"
+    path: /get-started/04_sharing_app/
+  - title: "Part 5: Persist the DB"
+    path: /get-started/05_persisting_data/
+  - title: "Part 6: Use bind mounts"
+    path: /get-started/06_bind_mounts/
+  - title: "Part 7: Multi-container apps"
+    path: /get-started/07_multi_container/
+  - title: "Part 8: Use Docker Compose"
+    path: /get-started/08_using_compose/
+  - title: "Part 9: Image-building best practices"
+    path: /get-started/09_image_best/
+  - title: "Part 10: What next?"
+    path: /get-started/11_what_next/
 @y
 - sectiontitle: はじめよう
   section:
-    - title: "概要"
-      path:  __SUBDIR__/guides/get-started/
-    - sectiontitle: "かんたん実践ガイド"
-      section:
-      - title: "コンテナーとは何か"
-        path:  __SUBDIR__/guides/walkthroughs/what-is-a-container/
-      - title: "コンテナーの実行"
-        path:  __SUBDIR__/guides/walkthroughs/run-a-container/
-      - title: "Docker Hub イメージの実行"
-        path:  __SUBDIR__/guides/walkthroughs/run-hub-images/
-      - title: "マルチコンテナーアプリの実行"
-        path:  __SUBDIR__/guides/walkthroughs/multi-container-apps/
-      - title: "コンテナーデータの保存"
-        path:  __SUBDIR__/guides/walkthroughs/persist-data/
-      - title: "ローカルフォルダーへのアクセス"
-        path:  __SUBDIR__/guides/walkthroughs/access-local-folder/
-      - title: "アプリケーションのコンテナー化"
-        path:  __SUBDIR__/guides/walkthroughs/containerize-your-app/
-      - title: "Docker Hub へのイメージ公開"
-        path:  __SUBDIR__/guides/walkthroughs/publish-your-image/
-@z
-
-@x
-    - sectiontitle: "Getting started guide"
-      section:
-      - title: "Part 1: Overview"
-        path: /get-started/
-      - title: "Part 2: Containerize an application"
-        path: /get-started/02_our_app/
-      - title: "Part 3: Update the application"
-        path: /get-started/03_updating_app/
-      - title: "Part 4: Share the application"
-        path: /get-started/04_sharing_app/
-      - title: "Part 5: Persist the DB"
-        path: /get-started/05_persisting_data/
-      - title: "Part 6: Use bind mounts"
-        path: /get-started/06_bind_mounts/
-      - title: "Part 7: Multi-container apps"
-        path: /get-started/07_multi_container/
-      - title: "Part 8: Use Docker Compose"
-        path: /get-started/08_using_compose/
-      - title: "Part 9: Image-building best practices"
-        path: /get-started/09_image_best/
-      - title: "Part 10: What next?"
-        path: /get-started/11_what_next/
-@y
-    - sectiontitle: "スタートガイド"
-      section:
-      - title: "1部: 概要"
-        path: __SUBDIR__/get-started/
-      - title: "2部: アプリのコンテナー化"
-        path: __SUBDIR__/get-started/02_our_app/
-      - title: "3部: アプリの更新"
-        path: __SUBDIR__/get-started/03_updating_app/
-      - title: "4部: アプリの共有"
-        path: __SUBDIR__/get-started/04_sharing_app/
-      - title: "5部: DB への保存"
-        path: __SUBDIR__/get-started/05_persisting_data/
-      - title: "6部: バインドマウントの利用"
-        path: __SUBDIR__/get-started/06_bind_mounts/
-      - title: "7部: マルチコンテナーアプリ"
-        path: __SUBDIR__/get-started/07_multi_container/
-      - title: "8部: Docker Compose の利用"
-        path: __SUBDIR__/get-started/08_using_compose/
-      - title: "9部: イメージビルドのベストプラクティス"
-        path: __SUBDIR__/get-started/09_image_best/
-      - title: "10部: 次は何？"
-        path: __SUBDIR__/get-started/11_what_next/
+  - title: "1部: 概要"
+    path: __SUBDIR__/get-started/
+  - title: "2部: アプリのコンテナー化"
+    path: __SUBDIR__/get-started/02_our_app/
+  - title: "3部: アプリの更新"
+    path: __SUBDIR__/get-started/03_updating_app/
+  - title: "4部: アプリの共有"
+    path: __SUBDIR__/get-started/04_sharing_app/
+  - title: "5部: DB への保存"
+    path: __SUBDIR__/get-started/05_persisting_data/
+  - title: "6部: バインドマウントの利用"
+    path: __SUBDIR__/get-started/06_bind_mounts/
+  - title: "7部: マルチコンテナーアプリ"
+    path: __SUBDIR__/get-started/07_multi_container/
+  - title: "8部: Docker Compose の利用"
+    path: __SUBDIR__/get-started/08_using_compose/
+  - title: "9部: イメージビルドのベストプラクティス"
+    path: __SUBDIR__/get-started/09_image_best/
+  - title: "10部: 次は何？"
+    path: __SUBDIR__/get-started/11_what_next/
 @z
 
 @x

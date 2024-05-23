@@ -2,39 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Install Docker for Mac to get started. This guide covers system requirements,
   where to download, and instructions on how to install and update.
 keywords: docker for mac, install docker macos, docker mac, docker mac install, docker
   install macos, install docker on mac, install docker macbook, docker desktop for
   mac, how to install docker on mac, setup docker on mac
 title: Install Docker Desktop on Mac
-aliases:
-- /desktop/mac/install/
-- /docker-for-mac/install/
-- /engine/installation/mac/
-- /installation/mac/
-- /docker-for-mac/apple-m1/
-- /docker-for-mac/apple-silicon/
-- /desktop/mac/apple-silicon/
----
 @y
----
 description: Install Docker for Mac to get started. This guide covers system requirements,
   where to download, and instructions on how to install and update.
 keywords: docker for mac, install docker macos, docker mac, docker mac install, docker
   install macos, install docker on mac, install docker macbook, docker desktop for
   mac, how to install docker on mac, setup docker on mac
 title: Mac への Docker Desktop のインストール
-aliases:
-- /desktop/mac/install/
-- /docker-for-mac/install/
-- /engine/installation/mac/
-- /installation/mac/
-- /docker-for-mac/apple-m1/
-- /docker-for-mac/apple-silicon/
-- /desktop/mac/apple-silicon/
----
 @z
 
 @x
@@ -145,16 +125,12 @@ Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to ins
 Beginning with Docker Desktop 4.3.0, we have removed the hard requirement to install Rosetta 2. There are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](../troubleshoot/known-issues.md). However, to get the best experience, we recommend that you install Rosetta 2. To install Rosetta 2 manually from the command line, run the following command:
 @z
 
+% snip command...
+
 @x
-  ```console
-  $ softwareupdate --install-rosetta
-  ```
 {{< /tab >}}
 {{< /tabs >}}
 @y
-  ```console
-  $ softwareupdate --install-rosetta
-  ```
 {{< /tab >}}
 {{< /tabs >}}
 @z
@@ -259,19 +235,7 @@ After downloading `Docker.dmg` from either the download buttons at the top of th
 After downloading `Docker.dmg` from either the download buttons at the top of the page or from the [release notes](../release-notes.md), run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
 @z
 
-@x
-```console
-$ sudo hdiutil attach Docker.dmg
-$ sudo /Volumes/Docker/Docker.app/Contents/MacOS/install
-$ sudo hdiutil detach /Volumes/Docker
-```
-@y
-```console
-$ sudo hdiutil attach Docker.dmg
-$ sudo /Volumes/Docker/Docker.app/Contents/MacOS/install
-$ sudo hdiutil detach /Volumes/Docker
-```
-@z
+% snip command...
 
 @x
 By default, Docker Desktop is installed at `/Applications/Docker.app`. As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
@@ -322,7 +286,8 @@ The `install` command accepts the following flags:
 @z
 
 @x
-- [Get started with Docker](../../guides/get-started/_index.md).
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
+- [Get started with Docker](../../get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.
@@ -331,7 +296,8 @@ The `install` command accepts the following flags:
 - [Back up and restore data](../backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- [Get started with Docker](../../guides/get-started/_index.md).
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
+- [Get started with Docker](../../get-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.

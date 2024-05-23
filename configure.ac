@@ -183,15 +183,12 @@ AC_CONFIG_FILES([
 	src/content/guides/docker-concepts/running-containers/images/Makefile
 	src/content/guides/docker-concepts/the-basics/Makefile
 	src/content/guides/docker-concepts/the-basics/images/Makefile
-	src/content/guides/get-started/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/images/Makefile
 	src/content/guides/use-case/images/Makefile
 	src/content/guides/use-case/nlp/Makefile
-	src/content/guides/walkthroughs/Makefile
-	src/content/guides/walkthroughs/images/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/language/Makefile

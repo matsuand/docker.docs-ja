@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: Instructions for installing Docker Desktop on Debian
 keywords: debian, install, uninstall, upgrade, update, linux, desktop, docker desktop,
@@ -69,15 +71,7 @@ To install Docker Desktop successfully, you must:
 - For non-Gnome Desktop environments, `gnome-terminal` must be installed:
 @z
 
-@x
-  ```console
-  $ sudo apt install gnome-terminal
-  ```
-@y
-  ```console
-  $ sudo apt install gnome-terminal
-  ```
-@z
+% snip command...
 
 @x
 ## Install Docker Desktop
@@ -111,17 +105,7 @@ Recommended approach to install Docker Desktop on Debian:
 3. Install the package with apt as follows:
 @z
 
-@x
-  ```console
-  $ sudo apt-get update
-  $ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-  ```
-@y
-  ```console
-  $ sudo apt-get update
-  $ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-  ```
-@z
+% snip command...
 
 @x
   > **Note**
@@ -193,15 +177,7 @@ Once a new version for Docker Desktop is released, the Docker UI shows a notific
 You need to download the new package each time you want to upgrade Docker Desktop and run:
 @z
 
-@x
-```console
-$ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-```
-@y
-```console
-$ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
-```
-@z
+% snip command...
 
 @x
 ## Next steps
@@ -210,11 +186,11 @@ $ sudo apt-get install ./docker-desktop-<version>-<arch>.deb
 @z
 
 @x
-- Take a look at the [Get started](../../guides/get-started/_index.md) training modules to learn how to build an image and run it as a containerized application.
+- Take a look at the [Get started](../../get-started/_index.md) training modules to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - Review the topics in [Develop with Docker](../../develop/index.md) to learn how to build new applications using Docker.
 @y
-- Take a look at the [Get started](../../guides/get-started/_index.md) training modules to learn how to build an image and run it as a containerized application.
+- Take a look at the [Get started](../../get-started/_index.md) training modules to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - Review the topics in [Develop with Docker](../../develop/index.md) to learn how to build new applications using Docker.
 @z

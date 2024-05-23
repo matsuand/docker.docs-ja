@@ -38,31 +38,21 @@ aliases:
 @z
 
 @x
-This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases.
+This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases. For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/releases.md).
 @y
-This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases.
+This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases. For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/releases.md).
 @z
 
 @x
-> **Note**
->
-> The information below is applicable to all platforms, unless stated otherwise.
+Docker Desktop versions older than 6 months from the latest release are not available for download. 
 @y
-> **Note**
->
-> The information below is applicable to all platforms, unless stated otherwise.
+Docker Desktop versions older than 6 months from the latest release are not available for download. 
 @z
 
 @x
 Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/projects/1) to see what's coming next.
 @y
 Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/projects/1) to see what's coming next.
-@z
-
-@x
-For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/releases.md).
-@y
-For frequently asked questions about Docker Desktop releases, see [FAQs](faqs/releases.md).
 @z
 
 @x

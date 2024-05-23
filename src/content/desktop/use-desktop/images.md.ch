@@ -284,9 +284,7 @@ Hovering over an image tag reveals two options:
 @z
 
 @x
-- [Run Docker Hub images](../../guides/walkthroughs/run-hub-images.md)
-- [Publish your image](../../guides/walkthroughs/publish-your-image.md)
+- [What is an image?](../../guides/docker-concepts/the-basics/what-is-an-image.md)
 @y
-- [Run Docker Hub images](../../guides/walkthroughs/run-hub-images.md)
-- [Publish your image](../../guides/walkthroughs/publish-your-image.md)
+- [What is an image?](../../guides/docker-concepts/the-basics/what-is-an-image.md)
 @z

@@ -446,9 +446,9 @@ to confirm.
 @z
 
 @x
-- [Persist container data](../../guides/walkthroughs/persist-data.md)
+- [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
 - [Use volumes](../../storage/volumes.md)
 @y
-- [Persist container data](../../guides/walkthroughs/persist-data.md)
+- [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
 - [Use volumes](../../storage/volumes.md)
 @z

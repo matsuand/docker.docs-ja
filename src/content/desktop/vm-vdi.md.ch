@@ -84,9 +84,9 @@ For steps on how to expose hardware-assisted virtualization to the guest OS, [se
 @z
 
 @x
-### Turn on nested virtualization on Microsoft Hyper-V
+### Turn on nested virtualization on an Azure Virtual Machine
 @y
-### Turn on nested virtualization on Microsoft Hyper-V {#turn-on-nested-virtualization-on-microsoft-hyper-v}
+### Turn on nested virtualization on an Azure Virtual Machine
 @z
 
 @x

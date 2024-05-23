@@ -107,9 +107,9 @@
                 アプリケーションのコンテナー化についてその基本と利点を学びます。
 @z
 @x
-              <a href="/guides/get-started/"
+              <a href="/get-started/"
 @y
-              <a href="guides/get-started/"
+              <a href="get-started/"
 @z
 @x
                 Get started

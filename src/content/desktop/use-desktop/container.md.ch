@@ -207,11 +207,11 @@ To open the integrated terminal, either:
 @z
 
 @x
-- Hover over your running container and select the **Show container actions**
+- Hover over your running container and under the **Actions** column, select the **Show container actions**
   menu. From the drop-down menu, select **Open in terminal**.
 - Or, select the container and then select the **Exec** tab.
 @y
-- Hover over your running container and select the **Show container actions**
+- Hover over your running container and under the **Actions** column, select the **Show container actions**
   menu. From the drop-down menu, select **Open in terminal**.
 - Or, select the container and then select the **Exec** tab.
 @z
@@ -277,13 +277,13 @@ To open the integrated terminal in debug mode:
 @z
 
 @x
-   - Hover over your running container and select the **Show container actions**
+   - Hover over your running container and under the **Actions** column, select the **Show container actions**
      menu. From the drop-down menu, select **Use Docker Debug**.
    - Or, select the container and then select the **Debug** tab. If the
      **Debug** tab isn't visible, select the **Exec** tab and then enable the
      **Debug mode** setting.
 @y
-   - Hover over your running container and select the **Show container actions**
+   - Hover over your running container and under the **Actions** column, select the **Show container actions**
      menu. From the drop-down menu, select **Use Docker Debug**.
    - Or, select the container and then select the **Debug** tab. If the
      **Debug** tab isn't visible, select the **Exec** tab and then enable the
@@ -335,11 +335,9 @@ can also:
 @z
 
 @x
-- [What is a container](../../guides/walkthroughs/what-is-a-container.md)
-- [Run a container](../../guides/walkthroughs/run-a-container.md)
-- [Run multi-container applications](../../guides/walkthroughs/multi-container-apps.md)
+- [What is a container](../../guides/docker-concepts/the-basics/what-is-a-container.md)
+- [Run multi-container applications](../../guides/docker-concepts/running-containers/multi-container-applications.md)
 @y
-- [コンテナーとは何か](../../guides/walkthroughs/what-is-a-container.md)
-- [コンテナーの実行](../../guides/walkthroughs/run-a-container.md)
-- [マルチコンテナーアプリの実行](../../guides/walkthroughs/multi-container-apps.md)
+- [コンテナーとは何か](../../guides/docker-concepts/the-basics/what-is-a-container.md)
+- [マルチコンテナーアプリの実行](../../guides/docker-concepts/running-containers/multi-container-applications.md)
 @z

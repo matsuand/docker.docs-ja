@@ -6,7 +6,7 @@ title: What is an image?
 keywords: concepts, build, images, container, docker desktop
 description: What is an image
 @y
-title: イメージとは?
+title: イメージとは？
 keywords: concepts, build, images, container, docker desktop
 description: イメージとは何か。
 @z
@@ -121,7 +121,7 @@ For example, [Redis](https://hub.docker.com/_/redis) and [Memcached](https://hub
 @x
 ## Try it out
 @y
-## 試してみよう {#try-it-out}
+## ためしてみよう {#try-it-out}
 @z
 
 @x

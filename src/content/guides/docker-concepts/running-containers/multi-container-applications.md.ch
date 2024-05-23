@@ -557,10 +557,8 @@ In this guide, you learned how easy it is to use Docker Compose to start and sto
 
 @x
 * [`docker container run` CLI reference](reference/cli/docker/container/run/)
-* [Run multi-container applications](/guides/walkthroughs/multi-container-apps/)
 * [What is Docker Compose](/guides/docker-concepts/the-basics/what-is-docker-compose/)
 @y
 * [`docker container run` CLI reference](reference/cli/docker/container/run/)
-* [Run multi-container applications](/guides/walkthroughs/multi-container-apps/)
 * [What is Docker Compose](/guides/docker-concepts/the-basics/what-is-docker-compose/)
 @z
