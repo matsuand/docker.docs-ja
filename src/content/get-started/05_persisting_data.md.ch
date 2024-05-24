@@ -90,7 +90,7 @@ What you'll see is that the file created in one container isn't available in ano
 % snip command...
 
 @x
-   You should see output similiar to the following that indicates the file does not exist in the new container.
+   You should see output similar to the following that indicates the file does not exist in the new container.
 @y
    以下のようなメッセージが表示されるはずです。
    これは、新たなコンテナー内にはそのファイルが含まれていないことを示しています。

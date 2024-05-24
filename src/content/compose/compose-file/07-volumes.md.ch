@@ -3,13 +3,13 @@
 
 @x
 ---
-title: Volumes top-level elements
+title: Volumes top-level element
 description: Explore all the attributes the volumes top-level element can have.
 keywords: compose, compose specification, volumes, compose file reference
 ---
 @y
 ---
-title: Volumes top-level elements
+title: Volumes top-level element
 description: Explore all the attributes the volumes top-level element can have.
 keywords: compose, compose specification, volumes, compose file reference
 ---

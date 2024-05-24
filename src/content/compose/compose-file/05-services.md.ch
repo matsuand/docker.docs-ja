@@ -2542,10 +2542,10 @@ Two different syntax variants are supported; the short syntax and the long synta
 
 @x
 Compose reports an error if the secret doesn't exist on the platform or isn't defined in the
-`secrets` top-level section of the Compose file.
+[`secrets` top-level section](09-secrets.md) of the Compose file.
 @y
 Compose reports an error if the secret doesn't exist on the platform or isn't defined in the
-`secrets` top-level section of the Compose file.
+[`secrets` top-level section](09-secrets.md) of the Compose file.
 @z
 
 @x

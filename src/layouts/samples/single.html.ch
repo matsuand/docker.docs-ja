@@ -2,41 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-      <p><strong>Note</strong></p>
-@y
-      <p><strong>メモ</strong></p>
-@z
-
-@x
-        Samples compatible with
-        <a href="{{ absURL "/desktop/dev-environments/" }}"
-          >Docker Dev Environments</a
-        >
-        require
-        <a href="{{ absURL "/get-docker/" }}">Docker Desktop</a>
-        version 4.10 or later.
-@y
-        <a href="{{ absURL "/desktop/dev-environments/" }}"
-          >Docker Dev Environments</a
-        > と互換性のあるサンプルは
-        <a href="{{ absURL "/get-docker/" }}">Docker Desktop</a>
-        バージョン 4.10 またはそれ以降が必要です。
-@z
-
-@x
           <th>Name</th>
           <th>Description</th>
-          <th>Docker Dev Environment (if compatible)</th>
 @y
           <th>名前</th>
           <th>内容説明</th>
-          <th>Docker Dev 環境 (互換性有りの場合)</th>
-@z
-
-@x
-                  {{ printf "[Open in Docker Dev Environment](https://open.docker.com/dashboard/dev-envs?url=%s)" .url | markdownify }}
-@y
-                  {{ printf "[Open in Docker Dev Environment](https://open.docker.com/dashboard/dev-envs?url=%s)" .url | markdownify }}
 @z
 
 @x

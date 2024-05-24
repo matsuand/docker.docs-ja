@@ -454,13 +454,13 @@ The following resources will help you learn more about volumes:
 @z
 
 @x
-Now that you have learned about sharing local files with containers, it’s time to learn about multi-container applications.
+Now that you have learned about persisting container data, it’s time to learn about sharing local files with containers.
 @y
-Now that you have learned about sharing local files with containers, it’s time to learn about multi-container applications.
+Now that you have learned about persisting container data, it’s time to learn about sharing local files with containers.
 @z
 
 @x
-{{< button text="Multi-container applications" url="Multi-container applications" >}}
+{{< button text="Sharing local files with containers" url="sharing-local-files" >}}
 @y
-{{< button text="Multi-container applications" url="Multi-container applications" >}}
+{{< button text="Sharing local files with containers" url="sharing-local-files" >}}
 @z
