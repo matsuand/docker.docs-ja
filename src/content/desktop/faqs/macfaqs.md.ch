@@ -242,9 +242,9 @@ This command removes all stopped containers, unused networks, dangling images, a
 @z
 
 @x
-It might take a few minutes to reclaim space on the host depending on the format of the disk image file. If the file is name:
+It might take a few minutes to reclaim space on the host depending on the format of the disk image file. If the file is named:
 @y
-It might take a few minutes to reclaim space on the host depending on the format of the disk image file. If the file is name:
+It might take a few minutes to reclaim space on the host depending on the format of the disk image file. If the file is named:
 @z
 
 @x

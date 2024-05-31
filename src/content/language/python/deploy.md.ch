@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Test your Python deployment
 keywords: deploy, kubernetes, python
 description: Learn how to develop locally using Kubernetes
----
 @y
----
 title: Test your Python deployment
 keywords: deploy, kubernetes, python
 description: Learn how to develop locally using Kubernetes
----
 @z
 
 @x
@@ -98,8 +94,8 @@ spec:
   selector:
     service: flask
   ports:
-  - port: 5000
-    targetPort: 5000
+  - port: 8001
+    targetPort: 8001
     nodePort: 30001
 ```
 @y
@@ -137,8 +133,8 @@ spec:
   selector:
     service: flask
   ports:
-  - port: 5000
-    targetPort: 5000
+  - port: 8001
+    targetPort: 8001
     nodePort: 30001
 ```
 @z
@@ -156,7 +152,7 @@ In this Kubernetes YAML file, there are two objects, separated by the `---`:
     container is created from the image built by GitHub Actions in [Configure CI/CD for
     your Python application](configure-ci-cd.md).
  - A NodePort service, which will route traffic from port 30001 on your host to
-   port 5000 inside the pods it routes to, allowing you to reach your app
+   port 8001 inside the pods it routes to, allowing you to reach your app
    from the network.
 @y
  - A Deployment, describing a scalable group of identical pods. In this case,
@@ -165,7 +161,7 @@ In this Kubernetes YAML file, there are two objects, separated by the `---`:
     container is created from the image built by GitHub Actions in [Configure CI/CD for
     your Python application](configure-ci-cd.md).
  - A NodePort service, which will route traffic from port 30001 on your host to
-   port 5000 inside the pods it routes to, allowing you to reach your app
+   port 8001 inside the pods it routes to, allowing you to reach your app
    from the network.
 @z
 
@@ -277,13 +273,13 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    ```shell
    NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
    kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          23h
-   service-entrypoint   NodePort    10.99.128.230   <none>        5000:30001/TCP   75s
+   service-entrypoint   NodePort    10.99.128.230   <none>        8001:30001/TCP   75s
    ```
 @y
    ```shell
    NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
    kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          23h
-   service-entrypoint   NodePort    10.99.128.230   <none>        5000:30001/TCP   75s
+   service-entrypoint   NodePort    10.99.128.230   <none>        8001:30001/TCP   75s
    ```
 @z
 

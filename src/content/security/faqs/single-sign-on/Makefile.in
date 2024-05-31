@@ -242,7 +242,6 @@ bases = \
 	enforcement-faqs.md \
 	faqs.md             \
 	idp-faqs.md         \
-	saml-faqs.md        \
 	users-faqs.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

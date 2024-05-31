@@ -7,7 +7,6 @@ bases = \
 	enforcement-faqs.md \
 	faqs.md             \
 	idp-faqs.md         \
-	saml-faqs.md        \
 	users-faqs.md
 
 include $(top_srcdir)/build-aux/common.mk

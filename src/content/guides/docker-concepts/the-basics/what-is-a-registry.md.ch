@@ -62,7 +62,7 @@ Docker Hub がもっとも人気のあるレジストリですが、利用可能
 @z
 
 @x
-While you're working with registries, you might hear the terms **registry** and **repository** as if they're interchangeable. Even though they're related, they're not quite the same thing.
+While you're working with registries, you might hear the terms _registry_ and _repository_ as if they're interchangeable. Even though they're related, they're not quite the same thing.
 @y
 レジストリを使った作業をしていると、**レジストリ** と **リポジトリ** という用語がどちらも同じものと思ってくるかもしれません。
 確かに両者には関係がありますが、まるで違うものです。

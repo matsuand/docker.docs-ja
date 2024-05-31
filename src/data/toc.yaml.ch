@@ -5060,8 +5060,6 @@ Manuals:
       section:
       - path: /security/faqs/single-sign-on/faqs/
         title: General
-      - path: /security/faqs/single-sign-on/saml-faqs/
-        title: SAML
       - path: /security/faqs/single-sign-on/idp-faqs/
         title: Identity providers
       - path: /security/faqs/single-sign-on/domain-faqs/
@@ -5075,8 +5073,6 @@ Manuals:
       section:
       - path: __SUBDIR__/security/faqs/single-sign-on/faqs/
         title: General
-      - path: __SUBDIR__/security/faqs/single-sign-on/saml-faqs/
-        title: SAML
       - path: __SUBDIR__/security/faqs/single-sign-on/idp-faqs/
         title: Identity providers
       - path: __SUBDIR__/security/faqs/single-sign-on/domain-faqs/

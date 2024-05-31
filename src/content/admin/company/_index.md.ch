@@ -4,13 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
-description: Learn about managing companies in Docker including how they relate to organizations, their key features, and more
+description: Learn how to manage multiple organizations using companies, including managing users, owners, and security.
 keywords: company, multiple organizations, manage companies
-title: Overview
+title: Company overview
 @y
-description: Learn about managing companies in Docker including how they relate to organizations, their key features, and more
+description: Learn how to manage multiple organizations using companies, including managing users, owners, and security.
 keywords: company, multiple organizations, manage companies
-title: 概要
+title: Company overview
 @z
 
 % grid:

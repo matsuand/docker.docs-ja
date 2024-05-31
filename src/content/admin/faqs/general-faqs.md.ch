@@ -5,12 +5,10 @@
 % snip 対応
 
 @x
----
 title: General FAQs for Docker accounts
 description: Frequently asked Docker account and administration questions
 keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
 @y
----
 title: General FAQs for Docker accounts
 description: Frequently asked Docker account and administration questions
 keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
@@ -34,9 +32,9 @@ numbers and lowercase letters. You can't use any special characters or spaces.
 @z
 
 @x
-For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [Single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
+For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
 @y
-For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [Single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
+For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
 @z
 
 @x
@@ -76,9 +74,9 @@ An organization in Docker is a collection of teams and repositories that are man
 @z
 
 @x
-The organization name, sometimes referred to as the organization namespace or the org ID, is the unique identifier of a Docker organization. The organization name can't be the same as an existing Docker ID.
+The organization name, sometimes referred to as the organization namespace or the organization ID, is the unique identifier of a Docker organization. The organization name can't be the same as an existing Docker ID.
 @y
-The organization name, sometimes referred to as the organization namespace or the org ID, is the unique identifier of a Docker organization. The organization name can't be the same as an existing Docker ID.
+The organization name, sometimes referred to as the organization namespace or the organization ID, is the unique identifier of a Docker organization. The organization name can't be the same as an existing Docker ID.
 @z
 
 @x

@@ -36,18 +36,6 @@ All Docker IDs are first-come, first-served except for companies that have a US 
 @z
 
 @x
-### What if I want to create more than 3 organizations?
-@y
-### What if I want to create more than 3 organizations?
-@z
-
-@x
-You can create multiple organizations or multiple teams under a single company. SSO is available at the company level.
-@y
-You can create multiple organizations or multiple teams under a single company. SSO is available at the company level.
-@z
-
-@x
 ### How do I add an organization owner?
 @y
 ### How do I add an organization owner?
@@ -78,9 +66,9 @@ If your organization uses a Software Asset Management tool, you can use it to fi
 @z
 
 @x
-No. Organization owners can invite users through email and also choose a team for them to join within the invite.
+No. Organization owners can invite users with their email address, and also assign them to a team during the invite process.
 @y
-No. Organization owners can invite users through email and also choose a team for them to join within the invite.
+No. Organization owners can invite users with their email address, and also assign them to a team during the invite process.
 @z
 
 @x
@@ -142,11 +130,11 @@ revert it to a personal user account. For prerequisites and instructions, see
 @x
 There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team
 members exceed the number of licenses, you will receive an error informing you
-to contact the administrator due to lack of seats.
+to contact the administrator due to lack of seats. You can [add seats](/subscription/core-subscription/add-seats/) if needed.
 @y
 There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team
 members exceed the number of licenses, you will receive an error informing you
-to contact the administrator due to lack of seats.
+to contact the administrator due to lack of seats. You can [add seats](/subscription/core-subscription/add-seats/) if needed.
 @z
 
 @x

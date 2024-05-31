@@ -4,13 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
-description: Single Sign-on user management FAQs
+description: Single sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
 title: Manage users
+tags: [FAQ]
 @y
-description: Single Sign-on user management FAQs
+description: Single sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
 title: Manage users
+tags: [FAQ]
 @z
 
 @x
@@ -20,9 +22,9 @@ title: Manage users
 @z
 
 @x
-You can manage users through organizations in Docker Hub. When you configure SSO in Docker, you need to make sure an account exists for each user in your IdP account. When a user signs in to Docker for the first time using their domain email address, they will be automatically added to the organization after a successful authentication.
+You can manage users through organizations in Docker Hub or Admin Console. When you configure SSO in Docker, you need to make sure an account exists for each user in your IdP account. When a user signs in to Docker for the first time using their domain email address, they will be automatically added to the organization after a successful authentication.
 @y
-You can manage users through organizations in Docker Hub. When you configure SSO in Docker, you need to make sure an account exists for each user in your IdP account. When a user signs in to Docker for the first time using their domain email address, they will be automatically added to the organization after a successful authentication.
+You can manage users through organizations in Docker Hub or Admin Console. When you configure SSO in Docker, you need to make sure an account exists for each user in your IdP account. When a user signs in to Docker for the first time using their domain email address, they will be automatically added to the organization after a successful authentication.
 @z
 
 @x
@@ -32,9 +34,9 @@ You can manage users through organizations in Docker Hub. When you configure SSO
 @z
 
 @x
-No, you don’t need to manually add users to your organization in Docker Hub. You just need to make sure an account for your users exists in your IdP. When users sign in to Docker Hub, they're automatically assigned to the organization using their domain email address.
+No, you don’t need to manually add users to your organization in Docker or Admin Console. You just need to make sure an account for your users exists in your IdP. When users sign in to Docker, they're automatically assigned to the organization using their domain email address.
 @y
-No, you don’t need to manually add users to your organization in Docker Hub. You just need to make sure an account for your users exists in your IdP. When users sign in to Docker Hub, they're automatically assigned to the organization using their domain email address.
+No, you don’t need to manually add users to your organization in Docker or Admin Console. You just need to make sure an account for your users exists in your IdP. When users sign in to Docker, they're automatically assigned to the organization using their domain email address.
 @z
 
 @x
@@ -56,21 +58,21 @@ During the SSO setup, you’ll have to specify the company email domains that ar
 @z
 
 @x
-Users with a public domain email address will be added as guests.
+If SSO isn't enforced, users with an email address that doesn't match the verified email domain can sign in with username and password to join the organization as guests.
 @y
-Users with a public domain email address will be added as guests.
+If SSO isn't enforced, users with an email address that doesn't match the verified email domain can sign in with username and password to join the organization as guests.
 @z
 
 @x
-### Can Docker org owners/admins/company owners approve users to an organization and use a seat, rather than having them automatically added when SSO is enabled?
+### Can Docker organization and company owners approve users to join an organization and use a seat, rather than having them automatically added when SSO is enabled?
 @y
-### Can Docker org owners/admins/company owners approve users to an organization and use a seat, rather than having them automatically added when SSO is enabled?
+### Can Docker organization and company owners approve users to join an organization and use a seat, rather than having them automatically added when SSO is enabled?
 @z
 
 @x
-Admins, organization owners, and company owners can approve users by configuring their permissions through their IdP. If the user account is configured in the IdP, the user will be automatically added to the organization in Docker Hub as long as there’s an available seat.
+Organization owners and company owners can approve users by configuring their permissions through their IdP. If the user account is configured in the IdP, the user will be automatically added to the organization in Docker Hub as long as there’s an available seat.
 @y
-Admins, organization owners, and company owners can approve users by configuring their permissions through their IdP. If the user account is configured in the IdP, the user will be automatically added to the organization in Docker Hub as long as there’s an available seat.
+Organization owners and company owners can approve users by configuring their permissions through their IdP. If the user account is configured in the IdP, the user will be automatically added to the organization in Docker Hub as long as there’s an available seat.
 @z
 
 @x
@@ -98,9 +100,9 @@ If users attempt to sign in through the CLI, they must authenticate using a pers
 @z
 
 @x
-Yes. Admins can force users to authenticate with Docker Desktop by provisioning a [`registry.json`](../../../security/for-admins/configure-sign-in.md) configuration file. The `registry.json` file will force users to authenticate as a user that's configured in the `allowedOrgs` list in the `registry.json` file.
+Yes. Administrators can force users to authenticate with Docker Desktop by provisioning a [`registry.json`](../../../security/for-admins/configure-sign-in.md) configuration file. The `registry.json` file will force users to authenticate as a user that's configured in the `allowedOrgs` list in the `registry.json` file.
 @y
-Yes. Admins can force users to authenticate with Docker Desktop by provisioning a [`registry.json`](../../../security/for-admins/configure-sign-in.md) configuration file. The `registry.json` file will force users to authenticate as a user that's configured in the `allowedOrgs` list in the `registry.json` file.
+Yes. Administrators can force users to authenticate with Docker Desktop by provisioning a [`registry.json`](../../../security/for-admins/configure-sign-in.md) configuration file. The `registry.json` file will force users to authenticate as a user that's configured in the `allowedOrgs` list in the `registry.json` file.
 @z
 
 @x
@@ -110,9 +112,9 @@ Once SSO enforcement is set up on their Docker Business organization or company 
 @z
 
 @x
-Users may still be able to authenticate as a "guest" account using a non-domain email address. However, they can only authenticate as guests if that non-domain email was invited.
+Users may still be able to authenticate as a guest account using an email address that doesn't match the verified domain. However, they can only authenticate as guests if that non-domain email was invited.
 @y
-Users may still be able to authenticate as a "guest" account using a non-domain email address. However, they can only authenticate as guests if that non-domain email was invited.
+Users may still be able to authenticate as a guest account using an email address that doesn't match the verified domain. However, they can only authenticate as guests if that non-domain email was invited.
 @z
 
 @x
@@ -152,9 +154,9 @@ For detailed prerequisites and instructions on how to enable SSO, see [Configure
 @z
 
 @x
-When SSO is enabled and enforced, your users just have to sign in using the email address and password.
+When SSO is enabled and enforced, your users just have to sign in using the verified domain email address.
 @y
-When SSO is enabled and enforced, your users just have to sign in using the email address and password.
+When SSO is enabled and enforced, your users just have to sign in using the verified domain email address.
 @z
 
 @x
@@ -176,9 +178,9 @@ When SSO is enabled and enforced, your users just have to sign in using the emai
 @z
 
 @x
-Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option to disable JIT. Users are provisioned when a user authenticates with SSO. If a user leaves the organization, administrators must sign in to Docker Hub and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
+Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option to disable JIT. Users are provisioned when a user authenticates with SSO. If a user leaves the organization, administrators must sign in to Docker and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
 @y
-Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option to disable JIT. Users are provisioned when a user authenticates with SSO. If a user leaves the organization, administrators must sign in to Docker Hub and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
+Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option to disable JIT. Users are provisioned when a user authenticates with SSO. If a user leaves the organization, administrators must sign in to Docker and manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
 @z
 
 @x
@@ -236,21 +238,9 @@ To auto-provision users without JIT provisioning, you can use [SCIM](__SUBDIR__/
 @z
 
 @x
-Company or organization owners can invite users through Docker Hub UI, by email address (for any user) or by Docker ID (assuming the user has created a user account on Hub already).
+Company or organization owners can invite users through Docker Hub or Admin Console, by email address (for any user) or by Docker ID (assuming the user has an existing Docker account).
 @y
-Company or organization owners can invite users through Docker Hub UI, by email address (for any user) or by Docker ID (assuming the user has created a user account on Hub already).
-@z
-
-@x
-### If we add a user manually for the first time, can I register in the dashboard and will the user get an invitation link through email?
-@y
-### If we add a user manually for the first time, can I register in the dashboard and will the user get an invitation link through email?
-@z
-
-@x
-Yes, if you add the user via email address to an org, they will receive an email invite. If invited through Docker ID as an existing user instead, they'll be added to the organization automatically. A new invite flow will occur in the near future that will require an email invite (so the user can choose to opt out). If the org later sets up SSO for their domain, the user will automatically be added to the domain SSO org the next time they sign and SSO authentication is required.
-@y
-Yes, if you add the user via email address to an org, they will receive an email invite. If invited through Docker ID as an existing user instead, they'll be added to the organization automatically. A new invite flow will occur in the near future that will require an email invite (so the user can choose to opt out). If the org later sets up SSO for their domain, the user will automatically be added to the domain SSO org the next time they sign and SSO authentication is required.
+Company or organization owners can invite users through Docker Hub or Admin Console, by email address (for any user) or by Docker ID (assuming the user has an existing Docker account).
 @z
 
 @x
@@ -290,15 +280,15 @@ We only support one email per user on the Docker platform.
 @z
 
 @x
-### How can I remove invitees to the org who haven't signed in?
+### How can I remove invitees to the organization who haven't signed in?
 @y
-### How can I remove invitees to the org who haven't signed in?
+### How can I remove invitees to the organization who haven't signed in?
 @z
 
 @x
-You can go to the invitee list in the org view and remove them.
+You can go to the **Members** page for your organization in Docker Hub or Admin Console, view pending invites, and remove invitees as needed.
 @y
-You can go to the invitee list in the org view and remove them.
+You can go to the **Members** page for your organization in Docker Hub or Admin Console, view pending invites, and remove invitees as needed.
 @z
 
 @x

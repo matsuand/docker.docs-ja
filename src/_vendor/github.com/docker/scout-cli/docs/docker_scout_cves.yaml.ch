@@ -137,6 +137,7 @@ usage: docker scout cves [OPTIONS] [IMAGE|DIRECTORY|ARCHIVE]
         - packages: default output, plain text with vulnerabilities grouped by packages
         - sarif: json Sarif output
         - spdx: json SPDX output
+        - gitlab: json GitLab output
         - markdown: markdown output (including some html tags like collapsible sections)
         - sbom: json SBOM output
 @y
@@ -145,6 +146,7 @@ usage: docker scout cves [OPTIONS] [IMAGE|DIRECTORY|ARCHIVE]
         - packages: default output, plain text with vulnerabilities grouped by packages
         - sarif: json Sarif output
         - spdx: json SPDX output
+        - gitlab: json GitLab output
         - markdown: markdown output (including some html tags like collapsible sections)
         - sbom: json SBOM output
 @z

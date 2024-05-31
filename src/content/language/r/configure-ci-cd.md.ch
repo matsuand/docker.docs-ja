@@ -219,6 +219,7 @@ to Docker Hub.
            uses: docker/build-push-action@v5
            with:
              context: .
+             platforms: linux/amd64,linux/arm64
              push: true
              tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
    ```
@@ -244,6 +245,7 @@ to Docker Hub.
            uses: docker/build-push-action@v5
            with:
              context: .
+             platforms: linux/amd64,linux/arm64
              push: true
              tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
    ```

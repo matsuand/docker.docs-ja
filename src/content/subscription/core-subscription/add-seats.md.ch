@@ -80,9 +80,9 @@ When you add seats to your subscription in the middle of your billing cycle, you
 @z
 
 @x
-6. Navigate to the **Members** tab to add new members. For more information, see [Add a member to a team](../../admin/organization/members.md#add-a-member-to-a-team).
+6. Navigate to the **Members** tab to add new members. For more information, see [Manage organization members](../../admin/organization/members.md).
 @y
-6. Navigate to the **Members** tab to add new members. For more information, see [Add a member to a team](../../admin/organization/members.md#add-a-member-to-a-team).
+6. Navigate to the **Members** tab to add new members. For more information, see [Manage organization members](../../admin/organization/members.md).
 @z
 
 @x

@@ -4,7 +4,7 @@
 @x
 ---
 title: Create a company
-description: Learn how to create a company.
+description: Learn how to create a company to centrally manage multiple organizations.
 keywords: company, hub, organization, company owner, Admin Console, company management
 aliases:
 - /docker-hub/new-company/
@@ -12,7 +12,7 @@ aliases:
 @y
 ---
 title: Create a company
-description: Learn how to create a company.
+description: Learn how to create a company to centrally manage multiple organizations.
 keywords: company, hub, organization, company owner, Admin Console, company management
 aliases:
 - /docker-hub/new-company/
@@ -171,4 +171,16 @@ For more information on how you can add organizations to your company, see [Add 
 - [Manage organizations](./organizations.md)
 - [Manage company users](./users.md)
 - [Manage company owners](./owners.md)
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+- [Video: Create a company](https://youtu.be/XZ5_i6qiKho?feature=shared&t=359)
+@y
+- [Video: Create a company](https://youtu.be/XZ5_i6qiKho?feature=shared&t=359)
 @z

@@ -4,25 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
-description: Single Sign-on IdP FAQs
+description: Single sign-on IdP FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, IdP
 title: Identity providers
 tags: [FAQ]
-aliases:
-- /single-sign-on/idp-faqs/
-- /faq/security/single-sign-on/idp-faqs/
----
 @y
----
-description: Single Sign-on IdP FAQs
+description: Single sign-on IdP FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, IdP
 title: Identity providers
 tags: [FAQ]
-aliases:
-- /single-sign-on/idp-faqs/
-- /faq/security/single-sign-on/idp-faqs/
----
 @z
 
 @x
@@ -44,9 +34,9 @@ No. You can only configure Docker SSO to work with a single IdP. A domain can on
 @z
 
 @x
-Yes. You must delete your existing IdP configuration in Docker Hub and follow the instructions to Configure SSO using your IdP. If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
+Yes. You must delete your existing IdP configuration in your Docker SSO connection and then [configure SSO using your new IdP](/security/for-admins/single-sign-on/configure/configure-idp/). If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
 @y
-Yes. You must delete your existing IdP configuration in Docker Hub and follow the instructions to Configure SSO using your IdP. If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
+Yes. You must delete your existing IdP configuration in your Docker SSO connection and then [configure SSO using your new IdP](__SUBDIR__/security/for-admins/single-sign-on/configure/configure-idp/). If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
 @z
 
 @x
@@ -80,9 +70,9 @@ To enable SSO in Docker, you need the following from your IdP:
 @z
 
 @x
-If your existing certificate has expired, you may need to contact your identity provider to retrieve a new x509 certificate. Then, you need to update the certificate in the SSO configuration settings page on Docker Hub.
+If your existing certificate has expired, you may need to contact your identity provider to retrieve a new X.509 certificate. Then, you need to update the certificate in the [SSO configuration settings](/security/for-admins/single-sign-on/manage/#manage-sso-connections) in Docker Hub or Docker Admin Console.
 @y
-If your existing certificate has expired, you may need to contact your identity provider to retrieve a new x509 certificate. Then, you need to update the certificate in the SSO configuration settings page on Docker Hub.
+If your existing certificate has expired, you may need to contact your identity provider to retrieve a new X.509 certificate. Then, you need to update the certificate in the [SSO configuration settings](__SUBDIR__/security/for-admins/single-sign-on/manage/#manage-sso-connections) in Docker Hub or Docker Admin Console.
 @z
 
 @x
@@ -98,33 +88,21 @@ It's not possible to access Docker Hub when your IdP is down. However, you can a
 @z
 
 @x
-### What happens when I turn off SSO for my organization(s) or company?
-@y
-### What happens when I turn off SSO for my organization(s) or company?
-@z
-
-@x
-When you turn off SSO, authentication through your Identity Provider isn't required to access Docker. Users may continue to sign in through Single Sign-on as well as Docker ID and password.
-@y
-When you turn off SSO, authentication through your Identity Provider isn't required to access Docker. Users may continue to sign in through Single Sign-on as well as Docker ID and password.
-@z
-
-@x
 ### How do I handle accounts using Docker Hub as a secondary registry? Do I need a bot account?
 @y
 ### How do I handle accounts using Docker Hub as a secondary registry? Do I need a bot account?
 @z
 
 @x
-You can add a bot account to your IDP and create an access token for it to replace the other credentials.
+You can add a bot account to your IdP and create an access token for it to replace the other credentials.
 @y
-You can add a bot account to your IDP and create an access token for it to replace the other credentials.
+You can add a bot account to your IdP and create an access token for it to replace the other credentials.
 @z
 
 @x
-### Build agents - For customers using SSO, do they need to create a bot account to fill a seat within the dockerorg?
+### Does a bot account need a seat to access an organization using SSO?
 @y
-### Build agents - For customers using SSO, do they need to create a bot account to fill a seat within the dockerorg?
+### Does a bot account need a seat to access an organization using SSO?
 @z
 
 @x
@@ -152,21 +130,21 @@ Yes, bot accounts need a seat, similar to a regular end user, having a non-alias
 @z
 
 @x
-The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally disable JIT if you prefer not to auto-provision users, or if you opt for auto-provisioning using SCIM.
+The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally disable JIT if you prefer not to auto-provision users, or if you opt for auto-provisioning using SCIM. See [Just-in-Time provisioning](/security/for-admins/provisioning/just-in-time/).
 @y
-The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally disable JIT if you prefer not to auto-provision users, or if you opt for auto-provisioning using SCIM.
+The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally disable JIT if you prefer not to auto-provision users, or if you opt for auto-provisioning using SCIM. See [Just-in-Time provisioning](__SUBDIR__/security/for-admins/provisioning/just-in-time/).
 @z
 
 @x
-### Will there be IdP-initiated logins?
+### Is IdP-initiated sign-in available?
 @y
-### Will there be IdP-initiated logins?
+### Is IdP-initiated sign-in available?
 @z
 
 @x
-We currently don't have any plans to enable IdP-initiated logins.
+Docker SSO doesn't support IdP-initiated sign-in, only Service Provider Initiated (SP-initiated) sign-in.
 @y
-We currently don't have any plans to enable IdP-initiated logins.
+Docker SSO doesn't support IdP-initiated sign-in, only Service Provider Initiated (SP-initiated) sign-in.
 @z
 
 @x
@@ -182,9 +160,9 @@ Yes, Entra ID (formerly Azure AD) is supported with SSO for Docker Business, bot
 @z
 
 @x
-### My SSO connection with Entra ID (formerly Azure AD) isn't working and I receive an error that the application is misconfigured. How can I troubleshoot this?
+### My SSO connection with Entra ID isn't working and I receive an error that the application is misconfigured. How can I troubleshoot this?
 @y
-### My SSO connection with Entra ID (formerly Azure AD) isn't working and I receive an error that the application is misconfigured. How can I troubleshoot this?
+### My SSO connection with Entra ID isn't working and I receive an error that the application is misconfigured. How can I troubleshoot this?
 @z
 
 @x

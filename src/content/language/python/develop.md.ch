@@ -2,19 +2,16 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
----
 title: Use containers for Python development
 keywords: python, local, development
 description: Learn how to develop your Python application locally.
----
 @y
----
 title: Use containers for Python development
 keywords: python, local, development
 description: Learn how to develop your Python application locally.
----
 @z
 
 @x
@@ -67,65 +64,15 @@ You'll need to clone a new repository to get a sample application that includes 
 1. Change to a directory where you want to clone the repository and run the following command.
 @z
 
-@x
-   ```console
-   $ git clone https://github.com/docker/python-docker-dev
-   ```
-@y
-   ```console
-   $ git clone https://github.com/docker/python-docker-dev
-   ```
-@z
+% snip command...
 
 @x
-2. In the cloned repository's directory, run `docker init` to create the necessary Docker files. Refer to the following example to answer the prompts from `docker init`.
+2. In the cloned repository's directory, manually create the Docker assets or run `docker init` to create the necessary Docker assets.
 @y
-2. In the cloned repository's directory, run `docker init` to create the necessary Docker files. Refer to the following example to answer the prompts from `docker init`.
+2. In the cloned repository's directory, manually create the Docker assets or run `docker init` to create the necessary Docker assets.
 @z
 
-@x
-   ```console
-   $ docker init
-   Welcome to the Docker Init CLI!
-@y
-   ```console
-   $ docker init
-   Welcome to the Docker Init CLI!
-@z
-
-@x
-   This utility will walk you through creating the following files with sensible defaults for your project:
-     - .dockerignore
-     - Dockerfile
-     - compose.yaml
-     - README.Docker.md
-@y
-   This utility will walk you through creating the following files with sensible defaults for your project:
-     - .dockerignore
-     - Dockerfile
-     - compose.yaml
-     - README.Docker.md
-@z
-
-@x
-   Let's get started!
-@y
-   Let's get started!
-@z
-
-@x
-   ? What application platform does your project use? Python
-   ? What version of Python do you want to use? 3.11.4
-   ? What port do you want your app to listen on? 5000
-   ? What is the command to run your app? python3 -m flask run --host=0.0.0.0
-   ```
-@y
-   ? What application platform does your project use? Python
-   ? What version of Python do you want to use? 3.11.4
-   ? What port do you want your app to listen on? 5000
-   ? What is the command to run your app? python3 -m flask run --host=0.0.0.0
-   ```
-@z
+% snip command...
 
 @x
 ## Add a local database and persist data
@@ -183,15 +130,7 @@ In the cloned repository's directory, create a new directory named `db` and insi
 In the cloned repository's directory, create a new directory named `db` and inside that directory create a file named `password.txt` that contains the password for the database. Using your favorite IDE or text editor, add the following contents to the `password.txt` file.
 @z
 
-@x
-```text
-mysecretpassword
-```
-@y
-```text
-mysecretpassword
-```
-@z
+% snip text...
 
 @x
 Save and close the `password.txt` file.
@@ -207,33 +146,7 @@ You should now have the following contents in your `python-docker-dev`
 directory.
 @z
 
-@x
-```text
-├── python-docker-dev/
-│ ├── db/
-│ │ └── password.txt
-│ ├── app.py
-│ ├── requirements.txt
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── README.Docker.md
-│ └── README.md
-```
-@y
-```text
-├── python-docker-dev/
-│ ├── db/
-│ │ └── password.txt
-│ ├── app.py
-│ ├── requirements.txt
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── Dockerfile
-│ ├── README.Docker.md
-│ └── README.md
-```
-@z
+% snip text...
 
 @x
 Now, run the following `docker compose up` command to start your application.
@@ -241,15 +154,7 @@ Now, run the following `docker compose up` command to start your application.
 Now, run the following `docker compose up` command to start your application.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Now test your API endpoint. Open a new terminal then make a request to the server using the curl commands:
@@ -257,17 +162,7 @@ Now test your API endpoint. Open a new terminal then make a request to the serve
 Now test your API endpoint. Open a new terminal then make a request to the server using the curl commands:
 @z
 
-@x
-```console
-$ curl http://localhost:5000/initdb
-$ curl http://localhost:5000/widgets
-```
-@y
-```console
-$ curl http://localhost:5000/initdb
-$ curl http://localhost:5000/widgets
-```
-@z
+% snip command...
 
 @x
 You should receive the following response:
@@ -275,15 +170,7 @@ You should receive the following response:
 You should receive the following response:
 @z
 
-@x
-```json
-[]
-```
-@y
-```json
-[]
-```
-@z
+% snip code...
 
 @x
 The response is empty because your database is empty.
@@ -329,15 +216,7 @@ Run the following command to run your application with Compose Watch.
 Run the following command to run your application with Compose Watch.
 @z
 
-@x
-```console
-$ docker compose watch
-```
-@y
-```console
-$ docker compose watch
-```
-@z
+% snip command...
 
 @x
 In a terminal, curl the application to get a response.
@@ -345,17 +224,7 @@ In a terminal, curl the application to get a response.
 In a terminal, curl the application to get a response.
 @z
 
-@x
-```console
-$ curl http://localhost:5000
-Hello, Docker!
-```
-@y
-```console
-$ curl http://localhost:5000
-Hello, Docker!
-```
-@z
+% snip command...
 
 @x
 Any changes to the application's source files on your local machine will now be immediately reflected in the running container.
@@ -369,17 +238,7 @@ Open `python-docker-dev/app.py` in an IDE or text editor and update the `Hello, 
 Open `python-docker-dev/app.py` in an IDE or text editor and update the `Hello, Docker!` string by adding a few more exclamation marks.
 @z
 
-@x
-```diff
--    return 'Hello, Docker!'
-+    return 'Hello, Docker!!!'
-```
-@y
-```diff
--    return 'Hello, Docker!'
-+    return 'Hello, Docker!!!'
-```
-@z
+% snip code...
 
 @x
 Save the changes to `app.py` and then wait a few seconds for the application to rebuild. Curl the application again and verify that the updated text appears.
@@ -387,17 +246,7 @@ Save the changes to `app.py` and then wait a few seconds for the application to 
 Save the changes to `app.py` and then wait a few seconds for the application to rebuild. Curl the application again and verify that the updated text appears.
 @z
 
-@x
-```console
-$ curl http://localhost:5000
-Hello, Docker!!!
-```
-@y
-```console
-$ curl http://localhost:5000
-Hello, Docker!!!
-```
-@z
+% snip command...
 
 @x
 Press `ctrl+c` in the terminal to stop your application.
