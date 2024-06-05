@@ -2,49 +2,42 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Build architecture
 description: Learn about Docker Build and its components.
 keywords: build, buildkit, buildx, architecture
-aliases:
-- /build/install-buildx/
----
 @y
----
-title: Docker Build architecture
+title: Docker Build アーキテクチャー
 description: Learn about Docker Build and its components.
 keywords: build, buildkit, buildx, architecture
-aliases:
-- /build/install-buildx/
----
 @z
 
 @x
 Docker Build implements a client-server architecture, where:
 @y
-Docker Build implements a client-server architecture, where:
+Docker Build はクライアントサーバーアーキテクチャーを実装しています。
+これは以下により構成されます。
 @z
 
 @x
 - Buildx is the client and the user interface for running and managing builds
 - BuildKit is the server, or builder, that handles the build execution.
 @y
-- Buildx is the client and the user interface for running and managing builds
-- BuildKit is the server, or builder, that handles the build execution.
+- Buildx はクライアントであり、ビルドを実行し管理するためのユーザーインターフェースです。
+- BuildKit はサーバーであり builder とも言います。
+  ビルド実行を制御します。
 @z
 
 @x
 ![Build high-level architecture](./images/build-high-level-arch.png)
 @y
-![Build high-level architecture](./images/build-high-level-arch.png)
+![Build ハイレベルアーキテクチャー](./images/build-high-level-arch.png)
 @z
 
 @x
 As of Docker Engine 23.0 and Docker Desktop 4.19, Buildx is the default build
 client.
 @y
-As of Docker Engine 23.0 and Docker Desktop 4.19, Buildx is the default build
-client.
+Docker Engine 23.0 と Docker Desktop 4.19 において Buildx はデフォルトのビルドクライアントとなっています。
 @z
 
 @x
@@ -61,26 +54,24 @@ Desktop and Docker Engine, you're using Buildx by default when you invoke the
 `docker build` command. In earlier versions, to build using Buildx you would
 use the `docker buildx build` command.
 @y
-Buildx is a CLI tool that provides a user interface for working with builds.
-Buildx is a drop-in replacement for the legacy build client used in earlier
-versions of Docker Engine and Docker Desktop. In newer versions of Docker
-Desktop and Docker Engine, you're using Buildx by default when you invoke the
-`docker build` command. In earlier versions, to build using Buildx you would
-use the `docker buildx build` command.
+Buildx は CLI ツールであり、ビルド操作を行うユーザーインターフェースを提供します。
+Buildx は Docker Engine や Docker Desktop の従来版において用いられていた古いビルドクライアントに置き換わるものです。
+Docker Desktop や Docker Engine の最新版では、`docker build` コマンドを実行する際のデフォルトとして Buildx が利用されています。
+従来版において Buildx を使ったビルドを行うには `docker buildx build` コマンドを用いることになります。
 @z
 
 @x
 Buildx is more than just an updated `build` command. It also contains utilities
 for creating and managing [builders](#builders).
 @y
-Buildx is more than just an updated `build` command. It also contains utilities
-for creating and managing [builders](#builders).
+Buildx は単に `build` コマンドが改善されただけではありません。
+Buildx には [ビルダー](#builders) の生成や管理を行うユーティリティーが含まれています。
 @z
 
 @x
 ### Install Buildx
 @y
-### Install Buildx
+### Buildx のインストール {#install-buildx}
 @z
 
 @x
@@ -110,7 +101,7 @@ for more information
 @x
 ## Builders
 @y
-## Builders
+## ビルダー {#builders}
 @z
 
 @x

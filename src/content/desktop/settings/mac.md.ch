@@ -446,7 +446,7 @@ HTTP/HTTPS proxies can be used when:
 @z
 
 @x
-If the host uses a HTTP/HTTPS proxy configuration (static or via Proxy Auto-Configuration), Docker Desktop reads
+If the host uses a HTTP/HTTPS proxy configuration (static or via Proxy Auto-Configuration (PAC)), Docker Desktop reads
 this configuration
 and automatically uses these settings for signing in to Docker, for pulling and pushing images, and for
 container Internet access. If the proxy requires authorization then Docker Desktop dynamically asks
@@ -455,7 +455,7 @@ Note that only the `Basic` proxy authentication method is supported so we recomm
 URL for your HTTP/HTTPS proxies to protect passwords while in transit on the network. Docker Desktop
 supports TLS 1.3 when communicating with proxies.
 @y
-If the host uses a HTTP/HTTPS proxy configuration (static or via Proxy Auto-Configuration), Docker Desktop reads
+If the host uses a HTTP/HTTPS proxy configuration (static or via Proxy Auto-Configuration (PAC)), Docker Desktop reads
 this configuration
 and automatically uses these settings for signing in to Docker, for pulling and pushing images, and for
 container Internet access. If the proxy requires authorization then Docker Desktop dynamically asks

@@ -5,8 +5,7 @@
 ---
 description: Learn how to install Docker Engine on CentOS. These instructions cover
   the different installation methods, how to uninstall, and next steps.
-keywords: install docker centos, centos install docker, docker install centos, yum
-  install docker, install docker centos 7, install docker centos 8, centos docker-ce
+keywords: requirements, yum, installation, centos, install, uninstall, docker engine, upgrade, update
 title: Install Docker Engine on CentOS
 toc_max: 4
 aliases:
@@ -24,8 +23,7 @@ download-url-base: https://download.docker.com/linux/centos
 ---
 description: Learn how to install Docker Engine on CentOS. These instructions cover
   the different installation methods, how to uninstall, and next steps.
-keywords: install docker centos, centos install docker, docker install centos, yum
-  install docker, install docker centos 7, install docker centos 8, centos docker-ce
+keywords: requirements, yum, installation, centos, install, uninstall, docker engine, upgrade, update
 title: Install Docker Engine on CentOS
 toc_max: 4
 aliases:
@@ -73,11 +71,9 @@ CentOS versions:
 
 @x
 - CentOS 7 (EOL: [June 30, 2024](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/#centos-linux-7-end-of-life-june-30-2024))
-- CentOS 8 (stream) (EOL: [May 31, 2024](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/#centos-stream-8-end-of-builds-may-31-2024))
 - CentOS 9 (stream)
 @y
 - CentOS 7 (EOL: [June 30, 2024](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/#centos-linux-7-end-of-life-june-30-2024))
-- CentOS 8 (stream) (EOL: [May 31, 2024](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/#centos-stream-8-end-of-builds-may-31-2024))
 - CentOS 9 (stream)
 @z
 
@@ -306,33 +302,33 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @z
 
 @x
-   docker-ce.x86_64    3:25.0.0-1.el8    docker-ce-stable
-   docker-ce.x86_64    3:24.0.7-1.el8    docker-ce-stable
+   docker-ce.x86_64    3:26.1.3-1.el9    docker-ce-stable
+   docker-ce.x86_64    3:26.1.2-1.el9    docker-ce-stable
    <...>
    ```
 @y
-   docker-ce.x86_64    3:25.0.0-1.el8    docker-ce-stable
-   docker-ce.x86_64    3:24.0.7-1.el8    docker-ce-stable
+   docker-ce.x86_64    3:26.1.3-1.el9    docker-ce-stable
+   docker-ce.x86_64    3:26.1.2-1.el9    docker-ce-stable
    <...>
    ```
 @z
 
 @x
    The list returned depends on which repositories are enabled, and is specific
-   to your version of CentOS (indicated by the `.el8` suffix in this example).
+   to your version of CentOS (indicated by the `.el9` suffix in this example).
 @y
    The list returned depends on which repositories are enabled, and is specific
-   to your version of CentOS (indicated by the `.el8` suffix in this example).
+   to your version of CentOS (indicated by the `.el9` suffix in this example).
 @z
 
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0-1.el8`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:26.1.2-1.el9`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:25.0.0-1.el8`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:26.1.2-1.el9`.
 @z
 
 @x

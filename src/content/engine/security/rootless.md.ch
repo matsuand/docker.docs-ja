@@ -242,13 +242,21 @@ UIDs/GIDs to be used in the user namespace.
 
 @x
 - Known to work on openSUSE 15 and SLES 15.
-{{< /tab >}}
-{{< tab name="CentOS 8, RHEL 8, and Fedora" >}}
-- Installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
 @y
 - Known to work on openSUSE 15 and SLES 15.
+@z
+
+@x
 {{< /tab >}}
-{{< tab name="CentOS 8, RHEL 8, and Fedora" >}}
+{{< tab name="CentOS 9 (stream), RHEL 8, and Fedora" >}}
+@y
+{{< /tab >}}
+{{< tab name="CentOS 9 (stream), RHEL 8, and Fedora" >}}
+@z
+
+@x
+- Installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
+@y
 - Installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
 @z
 
@@ -259,15 +267,17 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-- Known to work on CentOS 8, RHEL 8, and Fedora 34.
 {{< /tab >}}
 {{< tab name="CentOS 7 and RHEL 7" >}}
+@y
+{{< /tab >}}
+{{< tab name="CentOS 7 and RHEL 7" >}}
+@z
+
+@x
 - Add `user.max_user_namespaces=28633` to `/etc/sysctl.conf` (or 
   `/etc/sysctl.d`) and run `sudo sysctl --system`.
 @y
-- Known to work on CentOS 8, RHEL 8, and Fedora 34.
-{{< /tab >}}
-{{< tab name="CentOS 7 and RHEL 7" >}}
 - Add `user.max_user_namespaces=28633` to `/etc/sysctl.conf` (or 
   `/etc/sysctl.d`) and run `sudo sysctl --system`.
 @z

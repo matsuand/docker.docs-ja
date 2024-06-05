@@ -1,34 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Docker Engine 26.1 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
-skip_read_time: true
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
----
 @y
----
 title: Docker Engine 26.1 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
-skip_read_time: true
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
----
 @z
 
 @x

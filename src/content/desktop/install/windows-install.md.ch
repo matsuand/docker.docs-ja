@@ -434,15 +434,7 @@ The `install` command accepts the following flags:
   - For example:
 @z
 
-@x
-    ```text
-    --allowed-org=<org name> --admin-settings='{"configurationFileVersion": 2, "enhancedContainerIsolation": {"value": true, "locked": false}}'
-    ```
-@y
-    ```text
-    --allowed-org=<org name> --admin-settings='{"configurationFileVersion": 2, "enhancedContainerIsolation": {"value": true, "locked": false}}'
-    ```
-@z
+% snip text...
 
 @x
 - `--proxy-http-mode=<mode>`: Sets the HTTP Proxy mode, `system` (default) or `manual`
@@ -452,7 +444,7 @@ The `install` command accepts the following flags:
 - `--hyper-v-default-data-root=<path>`: Specifies the default location for the Hyper-V VM disk. 
 - `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
 - `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
-- `--always-run-service`: Lets users switch to Windows containers without needing admin rights. 
+- `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @y
 - `--proxy-http-mode=<mode>`: Sets the HTTP Proxy mode, `system` (default) or `manual`
 - `--override-proxy-http=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests, requires `--proxy-http-mode` to be `manual`
@@ -461,7 +453,7 @@ The `install` command accepts the following flags:
 - `--hyper-v-default-data-root=<path>`: Specifies the default location for the Hyper-V VM disk. 
 - `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
 - `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
-- `--always-run-service`: Lets users switch to Windows containers without needing admin rights. 
+- `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @z
 
 @x
@@ -488,16 +480,12 @@ If your admin account is different to your user account, you must add the user t
 ユーザーアカウントが管理者アカウントと異なる場合は、ユーザーを **docker-users** グループに追加することが必要です。
 @z
 
+% snip command...
+
 @x
-```console
-$ net localgroup docker-users <user> /add
-```
 {{< /tab >}}
 {{< /tabs >}}
 @y
-```console
-$ net localgroup docker-users <user> /add
-```
 {{< /tab >}}
 {{< /tabs >}}
 @z
