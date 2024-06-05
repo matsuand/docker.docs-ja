@@ -238,9 +238,10 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	cycle.md          \
-	details.md        \
-	history.md        \
+	cycle.md            \
+	details.md          \
+	get-started-core.md \
+	history.md          \
 	payment-method.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

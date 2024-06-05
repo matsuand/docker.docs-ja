@@ -5098,6 +5098,8 @@ Manuals:
 @x
   - sectiontitle: Docker Core billing
     section:
+    - path: /billing/core-billing/get-started-core/
+      title: Get started with Docker Core
     - path: /billing/core-billing/payment-method/
       title: Add or update a payment method
     - path: /billing/core-billing/details/
@@ -5109,6 +5111,8 @@ Manuals:
 @y
   - sectiontitle: Docker Core billing
     section:
+    - path: __SUBDIR__/billing/core-billing/get-started-core/
+      title: Get started with Docker Core
     - path: __SUBDIR__/billing/core-billing/payment-method/
       title: Add or update a payment method
     - path: __SUBDIR__/billing/core-billing/details/

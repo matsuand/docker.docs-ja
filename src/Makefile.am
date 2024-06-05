@@ -35,6 +35,7 @@ copyfiles = \
 	hugo_stats.json    \
 	netlify.toml       \
 	package-lock.json  \
+	pagefind.yml       \
 	postcss.config.js  \
 	tailwind.config.js
 

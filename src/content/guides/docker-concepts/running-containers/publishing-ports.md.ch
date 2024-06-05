@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Publishing and exposing ports
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of publishing and exposing ports in Docker 
----
 @y
----
 title: Publishing and exposing ports
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of publishing and exposing ports in Docker 
----
 @z
 
 @x
@@ -218,7 +216,7 @@ In this step, you will run a container and publish its port using the Docker CLI
 @x
 1. [Download and install](/get-docker/) Docker Desktop.
 @y
-1. [Download and install](/get-docker/) Docker Desktop.
+1. [Download and install](__SUBDIR__/get-docker/) Docker Desktop.
 @z
 
 @x
@@ -264,7 +262,7 @@ In this step, you will run a container and publish its port using the Docker CLI
 @x
    ![A screenshot of the landing page of the Nginx web server running in a container](/guides/docker-concepts/the-basics/images/access-the-frontend.webp?border=true)
 @y
-   ![A screenshot of the landing page of the Nginx web server running in a container](/guides/docker-concepts/the-basics/images/access-the-frontend.webp?border=true)
+   ![A screenshot of the landing page of the Nginx web server running in a container](__SUBDIR__/guides/docker-concepts/the-basics/images/access-the-frontend.webp?border=true)
 @z
 
 @x
@@ -343,8 +341,8 @@ If you’d like to dive in deeper on this topic, be sure to check out the follow
 * [`docker container port` CLI reference](/reference/cli/docker/container/port/)
 * [Published ports](/network/#published-ports)
 @y
-* [`docker container port` CLI reference](/reference/cli/docker/container/port/)
-* [Published ports](/network/#published-ports)
+* [`docker container port` CLI reference](__SUBDIR__/reference/cli/docker/container/port/)
+* [Published ports](__SUBDIR__/network/#published-ports)
 @z
 
 @x

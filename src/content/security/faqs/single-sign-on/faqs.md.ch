@@ -1,32 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Single sign-on FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, administration, security
 title: General FAQs on SSO
 tags: [FAQ]
-aliases:
-- /single-sign-on/faqs/
-- /faq/security/single-sign-on/faqs/
-- /single-sign-on/saml-faqs/
-- /faq/security/single-sign-on/saml-faqs/
-- /security/faqs/single-sign-on/saml-faqs/
----
 @y
----
 description: Single sign-on FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, administration, security
 title: General FAQs on SSO
 tags: [FAQ]
-aliases:
-- /single-sign-on/faqs/
-- /faq/security/single-sign-on/faqs/
-- /single-sign-on/saml-faqs/
-- /faq/security/single-sign-on/saml-faqs/
-- /security/faqs/single-sign-on/saml-faqs/
----
 @z
 
 @x
@@ -38,7 +24,7 @@ aliases:
 @x
 Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](/subscription/core-subscription/upgrade/) to start using Docker SSO.
 @y
-Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](/subscription/core-subscription/upgrade/) to start using Docker SSO.
+Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](__SUBDIR__/subscription/core-subscription/upgrade/) to start using Docker SSO.
 @z
 
 @x

@@ -4,14 +4,14 @@
 @x
 ---
 title: Docker Scout billing
-description: Learn how to buy Docker Scout and manage your subscription
-keywords: payments, billing, subscription, scout
+description: Learn how to get started with and manage you Docker Scout subscription.
+keywords: payments, billing, subscription, scout, buy docker scout, subscribe to docker scout
 ---
 @y
 ---
 title: Docker Scout billing
-description: Learn how to buy Docker Scout and manage your subscription
-keywords: payments, billing, subscription, scout
+description: Learn how to get started with and manage you Docker Scout subscription.
+keywords: payments, billing, subscription, scout, buy docker scout, subscribe to docker scout
 ---
 @z
 
@@ -40,9 +40,9 @@ In this section, learn how to buy and manage a Docker Scout Team subscription fo
 @z
 
 @x
-## Buy Docker Scout Team
+## Set up Docker Scout Team subscription
 @y
-## Buy Docker Scout Team
+## Set up Docker Scout Team subscription
 @z
 
 @x

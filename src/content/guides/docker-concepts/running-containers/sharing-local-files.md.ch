@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Sharing local files with containers
 keywords: concepts, images, container, docker desktop
 description: This concept page will teach you the various storage options available in Docker and their common usage.
----
 @y
----
 title: Sharing local files with containers
 keywords: concepts, images, container, docker desktop
 description: This concept page will teach you the various storage options available in Docker and their common usage.
----
 @z
 
 @x
@@ -54,7 +52,7 @@ Docker offers two primary storage options for persisting data and sharing files 
 @x
 If you want to ensure that data generated or modified inside the container persists even after the container stops running, you would opt for a volume. See [Persisting container data](/guides/docker-concepts/running-containers/persisting-container-data/) to learn more about volumes and their use cases.
 @y
-If you want to ensure that data generated or modified inside the container persists even after the container stops running, you would opt for a volume. See [Persisting container data](/guides/docker-concepts/running-containers/persisting-container-data/) to learn more about volumes and their use cases.
+If you want to ensure that data generated or modified inside the container persists even after the container stops running, you would opt for a volume. See [Persisting container data](__SUBDIR__/guides/docker-concepts/running-containers/persisting-container-data/) to learn more about volumes and their use cases.
 @z
 
 @x
@@ -167,7 +165,7 @@ Read-only bind mounts let the container access the mounted files on the host for
 @y
 > **Synchronised File Share**
 >
-> As your codebase grows larger, traditional methods of file sharing like bind mounts may become inefficient or slow, especially in development environments where frequent access to files is necessary. [Synchronized file shares](/desktop/synchronized-file-sharing/) improve bind mount performance by leveraging synchronized filesystem caches. This optimization ensures that file access between the host and virtual machine (VM) is fast and efficient.
+> As your codebase grows larger, traditional methods of file sharing like bind mounts may become inefficient or slow, especially in development environments where frequent access to files is necessary. [Synchronized file shares](__SUBDIR__/desktop/synchronized-file-sharing/) improve bind mount performance by leveraging synchronized filesystem caches. This optimization ensures that file access between the host and virtual machine (VM) is fast and efficient.
 { .tip }
 @z
 
@@ -192,7 +190,7 @@ In this hands-on guide, you’ll practice how to create and use a bind mount to 
 @x
 1. [Download and install](/get-docker/) Docker Desktop.
 @y
-1. [Download and install](/get-docker/) Docker Desktop.
+1. [Download and install](__SUBDIR__/get-docker/) Docker Desktop.
 @z
 
 @x
@@ -493,12 +491,12 @@ The following resources will help you learn more about bind mounts:
 * [Troubleshoot storage errors](/storage/troubleshooting_volume_errors/)
 * [Persisting container data](/guides/docker-concepts/running-containers/persisting-container-data/)
 @y
-* [Manage data in Docker](/storage/)
-* [Volumes](/storage/volumes/)
-* [Bind mounts](/storage/bind-mounts/)
-* [Running containers](/reference/run/)
-* [Troubleshoot storage errors](/storage/troubleshooting_volume_errors/)
-* [Persisting container data](/guides/docker-concepts/running-containers/persisting-container-data/)
+* [Manage data in Docker](__SUBDIR__/storage/)
+* [Volumes](__SUBDIR__/storage/volumes/)
+* [Bind mounts](__SUBDIR__/storage/bind-mounts/)
+* [Running containers](__SUBDIR__/reference/run/)
+* [Troubleshoot storage errors](__SUBDIR__/storage/troubleshooting_volume_errors/)
+* [Persisting container data](__SUBDIR__/guides/docker-concepts/running-containers/persisting-container-data/)
 @z
 
 @x

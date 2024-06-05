@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Multi-container applications
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of multi-container application and how it is different from single-container application
----
 @y
----
 title: Multi-container applications
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of multi-container application and how it is different from single-container application
----
 @z
 
 @x
@@ -226,7 +224,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 @x
 2. [Download and install](/get-docker/) Docker Desktop.
 @y
-2. [Download and install](/get-docker/) Docker Desktop.
+2. [Download and install](__SUBDIR__/get-docker/) Docker Desktop.
 @z
 
 @x
@@ -560,5 +558,5 @@ In this guide, you learned how easy it is to use Docker Compose to start and sto
 * [What is Docker Compose](/guides/docker-concepts/the-basics/what-is-docker-compose/)
 @y
 * [`docker container run` CLI reference](reference/cli/docker/container/run/)
-* [What is Docker Compose](/guides/docker-concepts/the-basics/what-is-docker-compose/)
+* [What is Docker Compose](__SUBDIR__/guides/docker-concepts/the-basics/what-is-docker-compose/)
 @z

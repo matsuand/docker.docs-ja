@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Persisting container data
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of data persistence in Docker
-aliases:
-- /guides/walkthroughs/persist-data/
----
 @y
----
 title: Persisting container data
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of data persistence in Docker
-aliases:
-- /guides/walkthroughs/persist-data/
----
 @z
 
 @x
@@ -154,7 +148,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 @x
 1. [Download and install](/get-docker/) Docker Desktop.
 @y
-1. [Download and install](/get-docker/) Docker Desktop.
+1. [Download and install](__SUBDIR__/get-docker/) Docker Desktop.
 @z
 
 @x
@@ -442,9 +436,9 @@ The following resources will help you learn more about volumes:
 - [Volumes](/storage/volumes)
 - [Volume mounts (`docker run` reference)](/engine/reference/run/#volume-mounts)
 @y
-- [Manage data in Docker](/storage)
-- [Volumes](/storage/volumes)
-- [Volume mounts (`docker run` reference)](/engine/reference/run/#volume-mounts)
+- [Manage data in Docker](__SUBDIR__/storage)
+- [Volumes](__SUBDIR__/storage/volumes)
+- [Volume mounts (`docker run` reference)](__SUBDIR__/engine/reference/run/#volume-mounts)
 @z
 
 @x

@@ -1,26 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Single sign-on domain FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
 title: Domains
 tags: [FAQ]
-aliases:
-- /single-sign-on/domain-faqs/
-- /faq/security/single-sign-on/domain-faqs/
----
 @y
----
 description: Single sign-on domain FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
 title: Domains
 tags: [FAQ]
-aliases:
-- /single-sign-on/domain-faqs/
-- /faq/security/single-sign-on/domain-faqs/
----
 @z
 
 @x
@@ -56,7 +48,7 @@ You can do it one time to add the domain to a connection. If your organization e
 @x
 Adding and verifying a domain is required to enable and enforce SSO. See [Step one: Add and verify your domain](/security/for-admins/single-sign-on/configure/#step-one-add-and-verify-your-domain) to learn how to specify the email domains that are allowed to authenticate through your server. This should include all email domains users will use to access Docker. Public domains, for example `gmail.com` or `outlook.com`, are not permitted. Also, the email domain should be set as the primary email.
 @y
-Adding and verifying a domain is required to enable and enforce SSO. See [Step one: Add and verify your domain](/security/for-admins/single-sign-on/configure/#step-one-add-and-verify-your-domain) to learn how to specify the email domains that are allowed to authenticate through your server. This should include all email domains users will use to access Docker. Public domains, for example `gmail.com` or `outlook.com`, are not permitted. Also, the email domain should be set as the primary email.
+Adding and verifying a domain is required to enable and enforce SSO. See [Step one: Add and verify your domain](__SUBDIR__/security/for-admins/single-sign-on/configure/#step-one-add-and-verify-your-domain) to learn how to specify the email domains that are allowed to authenticate through your server. This should include all email domains users will use to access Docker. Public domains, for example `gmail.com` or `outlook.com`, are not permitted. Also, the email domain should be set as the primary email.
 @z
 
 @x

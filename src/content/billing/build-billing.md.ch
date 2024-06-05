@@ -5,12 +5,12 @@
 
 @x
 title: Docker Build Cloud billing
-description: Learn how to buy a Docker Build Cloud subscription.
-keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder
+description: Learn how to get started with a Docker Build Cloud subscription.
+keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder, buy docker build cloud
 @y
 title: Docker Build Cloud billing
-description: Learn how to buy a Docker Build Cloud subscription.
-keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder
+description: Learn how to get started with a Docker Build Cloud subscription.
+keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder, buy docker build cloud
 @z
 
 @x
@@ -38,21 +38,21 @@ If you don’t have a Docker Core subscription, you can buy Docker Build Cloud T
 @z
 
 @x
-In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](/subscription/build-cloud/build-details).
+In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](/subscription/build-cloud/build-details). To buy Docker Build Cloud Business, [contact sales](https://www.docker.com/products/build-cloud/#contact_sales).
 @y
-In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](__SUBDIR__/subscription/build-cloud/build-details).
+In this section, learn how to set up and manage billing for your Build Cloud subscription. For more information about the subscription tiers, see [Build Cloud subscriptions and features](__SUBDIR__/subscription/build-cloud/build-details). To buy Docker Build Cloud Business, [contact sales](https://www.docker.com/products/build-cloud/#contact_sales).
 @z
 
 @x
-## Buy your subscription
+## Set up Docker Build Cloud Team subscription
 @y
-## Buy your subscription
+## Set up Docker Build Cloud Team subscription
 @z
 
 @x
-You can buy a Build Cloud subscription on a monthly or annual plan.
+You can set up a Build Cloud subscription on a monthly or annual plan. To upgrade a Build Cloud Starter subscription, see [Upgrade your subscription](#upgrade-your-subscription).
 @y
-You can buy a Build Cloud subscription on a monthly or annual plan.
+You can set up a Build Cloud subscription on a monthly or annual plan. To upgrade a Build Cloud Starter subscription, see [Upgrade your subscription](#upgrade-your-subscription).
 @z
 
 @x
@@ -126,9 +126,21 @@ When your payment is complete, you’ll be redirected to the dashboard for your 
 @z
 
 @x
-## View billing history and manage your billing information
+## Manage your subscription
 @y
-## View billing history and manage your billing information
+## Manage your subscription
+@z
+
+@x
+You can manage your subscription in the Build Cloud dashboard in the **Settings and billing** section. Here you can view your current plan, upgrade your plan, and review build minute usage.
+@y
+You can manage your subscription in the Build Cloud dashboard in the **Settings and billing** section. Here you can view your current plan, upgrade your plan, and review build minute usage.
+@z
+
+@x
+### View billing history and manage your billing information
+@y
+### View billing history and manage your billing information
 @z
 
 @x
@@ -154,9 +166,35 @@ Here you can find your invoice history, download your invoices, and manage your 
 @z
 
 @x
-## Downgrade your subscription
+### Upgrade your subscription
 @y
-## Downgrade your subscription
+### Upgrade your subscription
+@z
+
+@x
+You can upgrade your Docker Build Cloud Starter subscription to a Docker Build Cloud Team subscription in the Build Cloud dashboard.
+@y
+You can upgrade your Docker Build Cloud Starter subscription to a Docker Build Cloud Team subscription in the Build Cloud dashboard.
+@z
+
+@x
+1. Sign in to [Docker Build Cloud](https://build.docker.com/).
+2. Select **Settings and billing**.
+3. Next to the name of your current plan, select **Upgrade plan**.
+4. Select **Upgrade now**.
+5. Follow the on-screen instructions to buy your subscription.
+@y
+1. Sign in to [Docker Build Cloud](https://build.docker.com/).
+2. Select **Settings and billing**.
+3. Next to the name of your current plan, select **Upgrade plan**.
+4. Select **Upgrade now**.
+5. Follow the on-screen instructions to buy your subscription.
+@z
+
+@x
+### Downgrade your subscription
+@y
+### Downgrade your subscription
 @z
 
 @x

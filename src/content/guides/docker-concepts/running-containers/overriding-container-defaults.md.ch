@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Overriding container defaults
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to override the container defaults using the `docker run` command.
----
 @y
----
 title: Overriding container defaults
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to override the container defaults using the `docker run` command.
----
 @z
 
 @x
@@ -192,7 +190,7 @@ In this hands-on guide, you'll see how to use the `docker run` command to overri
 @x
 1. [Download and install](/get-docker/) Docker Desktop.
 @y
-1. [Download and install](/get-docker/) Docker Desktop.
+1. [Download and install](__SUBDIR__/get-docker/) Docker Desktop.
 @z
 
 @x
@@ -350,7 +348,7 @@ Follow the steps to see how to connect a Postgres container to a custom network.
 @y
     > **Key difference between default bridge and custom networks**
     >
-    > 1. DNS resolution: By default, containers connected to the default bridge network can communicate with each other, but only by IP address. (unless you use `--link` option which is considered legacy). It is not recommended for production use due to the various [technical shortcomings](/network/drivers/bridge/#differences-between-user-defined-bridges-and-the-default-bridge). On a custom network, containers can resolve each other by name or alias.
+    > 1. DNS resolution: By default, containers connected to the default bridge network can communicate with each other, but only by IP address. (unless you use `--link` option which is considered legacy). It is not recommended for production use due to the various [technical shortcomings](__SUBDIR__/network/drivers/bridge/#differences-between-user-defined-bridges-and-the-default-bridge). On a custom network, containers can resolve each other by name or alias.
     > 2. Isolation: All containers without a `--network` specified are attached to the default bridge network, hence can be a risk, as unrelated containers are then able to communicate. Using a custom network provides a scoped network in which only containers attached to that network are able to communicate, hence providing better isolation.
     { .tip }
 @z
@@ -533,8 +531,8 @@ This command runs a Postgres container, sets an environment variable for passwor
 * [Ways to set environment variables with Compose](/compose/environment-variables/set-environment-variables/)
 * [What is a container](/guides/docker-concepts/the-basics/what-is-a-container/)
 @y
-* [Ways to set environment variables with Compose](/compose/environment-variables/set-environment-variables/)
-* [What is a container](/guides/docker-concepts/the-basics/what-is-a-container/)
+* [Ways to set environment variables with Compose](__SUBDIR__/compose/environment-variables/set-environment-variables/)
+* [What is a container](__SUBDIR__/guides/docker-concepts/the-basics/what-is-a-container/)
 @z
 
 @x

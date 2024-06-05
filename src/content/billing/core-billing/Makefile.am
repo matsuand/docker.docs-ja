@@ -3,9 +3,10 @@
 ##
 
 bases = \
-	cycle.md          \
-	details.md        \
-	history.md        \
+	cycle.md            \
+	details.md          \
+	get-started-core.md \
+	history.md          \
 	payment-method.md
 
 include $(top_srcdir)/build-aux/common.mk

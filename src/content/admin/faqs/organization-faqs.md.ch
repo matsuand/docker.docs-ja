@@ -1,26 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Organization FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
 title: FAQs on organizations
 tags: [FAQ]
-aliases:
-- /docker-hub/organization-faqs/
-- /faq/admin/organization-faqs/
----
 @y
----
 description: Organization FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
 title: FAQs on organizations
 tags: [FAQ]
-aliases:
-- /docker-hub/organization-faqs/
-- /faq/admin/organization-faqs/
----
 @z
 
 @x
@@ -134,7 +126,7 @@ to contact the administrator due to lack of seats. You can [add seats](/subscrip
 @y
 There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team
 members exceed the number of licenses, you will receive an error informing you
-to contact the administrator due to lack of seats. You can [add seats](/subscription/core-subscription/add-seats/) if needed.
+to contact the administrator due to lack of seats. You can [add seats](__SUBDIR__/subscription/core-subscription/add-seats/) if needed.
 @z
 
 @x
