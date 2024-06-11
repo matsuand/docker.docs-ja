@@ -64,15 +64,7 @@ Before you can run the application, you need to get the application source code 
 1. 以下のコマンドを実行して [getting-started-app リポジトリ](https://github.com/docker/getting-started-app/tree/main) のクローンを行います。
 @z
 
-@x
-   ```console
-   $ git clone https://github.com/docker/getting-started-app.git
-   ```
-@y
-   ```console
-   $ git clone https://github.com/docker/getting-started-app.git
-   ```
-@z
+% snip command...
 
 @x
 2. View the contents of the cloned repository. You should see the following files and sub-directories.
@@ -81,25 +73,7 @@ Before you can run the application, you need to get the application source code 
    以下のようなファイルやサブディレクトリが確認できます。
 @z
 
-@x
-   ```text
-   ├── getting-started-app/
-   │ ├── package.json
-   │ ├── README.md
-   │ ├── spec/
-   │ ├── src/
-   │ └── yarn.lock
-   ```
-@y
-   ```text
-   ├── getting-started-app/
-   │ ├── package.json
-   │ ├── README.md
-   │ ├── spec/
-   │ ├── src/
-   │ └── yarn.lock
-   ```
-@z
+% snip text...
 
 @x
 ## Build the app's image
@@ -145,15 +119,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `/path/to/getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
 @z
 
-@x
-   ```console
-   $ cd /path/to/getting-started-app
-   ```
-@y
-   ```console
-   $ cd /path/to/getting-started-app
-   ```
-@z
+% snip command...
 
 @x
    Create an empty file named `Dockerfile`.
@@ -161,15 +127,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `Dockerfile` という名の空のファイルを生成します。
 @z
 
-@x
-   ```console
-   $ touch Dockerfile
-   ```
-@y
-   ```console
-   $ touch Dockerfile
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -192,15 +150,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `\path\to\getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
 @z
 
-@x
-   ```console
-   $ cd \path\to\getting-started-app
-   ```
-@y
-   ```console
-   $ cd \path\to\getting-started-app
-   ```
-@z
+% snip command...
 
 @x
    Create an empty file named `Dockerfile`.
@@ -208,15 +158,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `Dockerfile` という名の空のファイルを生成します。
 @z
 
-@x
-   ```console
-   $ type nul > Dockerfile
-   ```
-@y
-   ```console
-   $ type nul > Dockerfile
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -239,15 +181,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `\path\to\getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
 @z
 
-@x
-   ```console
-   $ cd \path\to\getting-started-app
-   ```
-@y
-   ```console
-   $ cd \path\to\getting-started-app
-   ```
-@z
+% snip command...
 
 @x
    Create an empty file named `Dockerfile`.
@@ -255,15 +189,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `Dockerfile` という名の空のファイルを生成します。
 @z
 
-@x
-   ```powershell
-   $ New-Item -Path . -Name Dockerfile -ItemType File
-   ```
-@y
-   ```powershell
-   $ New-Item -Path . -Name Dockerfile -ItemType File
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -279,31 +205,7 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 2. テキストエディターまたコードエディターを使って、Dockerfile に以下の内容を記述します。
 @z
 
-@x
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-@y
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-@z
-
-@x
-   FROM node:18-alpine
-   WORKDIR /app
-   COPY . .
-   RUN yarn install --production
-   CMD ["node", "src/index.js"]
-   EXPOSE 3000
-   ```
-@y
-   FROM node:18-alpine
-   WORKDIR /app
-   COPY . .
-   RUN yarn install --production
-   CMD ["node", "src/index.js"]
-   EXPOSE 3000
-   ```
-@z
+% snip code...
 
 @x
 3. Build the image using the following commands:
@@ -318,27 +220,15 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    `/path/to/getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
 @z
 
-@x
-   ```console
-   $ cd /path/to/getting-started-app
-   ```
-@y
-   ```console
-   $ cd /path/to/getting-started-app
-   ```
-@z
+% snip command...
 
 @x
    Build the image.
-   ```console
-   $ docker build -t getting-started .
-   ```
 @y
    イメージをビルドします。
-   ```console
-   $ docker build -t getting-started .
-   ```
 @z
+
+% snip command...
 
 @x
    The `docker build` command uses the Dockerfile to build a new image. You might have noticed that Docker downloaded a lot of "layers". This is because you instructed the builder that you wanted to start from the `node:18-alpine` image. But, since you didn't have that on your machine, Docker needed to download the image.
@@ -389,15 +279,7 @@ Now that you have an image, you can run the application in a container using the
    実行にあたっては、上で生成したイメージの名前を指定します。
 @z
 
-@x
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
-   ```
-@y
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
-   ```
-@z
+% snip command...
 
 @x
    The `-d` flag (short for `--detach`) runs the container in the background.
@@ -477,15 +359,7 @@ Run the following `docker ps` command in a terminal to list your containers.
 端末画面から `docker ps` コマンドを実行すると、コンテナーを一覧表示できます。
 @z
 
-@x
-```console
-$ docker ps
-```
-@y
-```console
-$ docker ps
-```
-@z
+% snip command...
 
 @x
 Output similar to the following should appear.
@@ -493,17 +367,7 @@ Output similar to the following should appear.
 出力結果は以下のようなものになるはずです。
 @z
 
-@x
-```console
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                      NAMES
-df784548666d        getting-started     "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        127.0.0.1:3000->3000/tcp   priceless_mcclintock
-```
-@y
-```console
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                      NAMES
-df784548666d        getting-started     "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        127.0.0.1:3000->3000/tcp   priceless_mcclintock
-```
-@z
+% snip output...
 
 @x
 {{< /tab >}}

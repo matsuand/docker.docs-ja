@@ -4,21 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Compose pre-defined environment variables
 keywords: fig, composition, compose, docker, orchestration, cli, reference
 title: Set or change pre-defined environment variables in Docker Compose
-aliases:
-- /compose/reference/envvars/
----
 @y
----
 description: Compose pre-defined environment variables
 keywords: fig, composition, compose, docker, orchestration, cli, reference
 title: Set or change pre-defined environment variables in Docker Compose
-aliases:
-- /compose/reference/envvars/
----
 @z
 
 @x
@@ -70,15 +62,15 @@ This page contains information on how you can set or change the following pre-de
 @x
 You can set or change the pre-defined environment variables:
 - Within your Compose file using the [`environment` attribute](set-environment-variables.md#use-the-environment-attribute)
-- With an [environment file](env-file.md) 
+- With the `env-file` attribute and an [environment file](set-environment-variables.md#use-the-env_file-attribute) 
 - From the command line
-- From your [shell](set-environment-variables.md#substitute-from-the-shell)
+- From your [shell](variable-interpolation.md#substitute-from-the-shell)
 @y
 You can set or change the pre-defined environment variables:
 - Within your Compose file using the [`environment` attribute](set-environment-variables.md#use-the-environment-attribute)
-- With an [environment file](env-file.md) 
+- With the `env-file` attribute and an [environment file](set-environment-variables.md#use-the-env_file-attribute) 
 - From the command line
-- From your [shell](set-environment-variables.md#substitute-from-the-shell)
+- From your [shell](variable-interpolation.md#substitute-from-the-shell)
 @z
 
 @x
@@ -416,10 +408,10 @@ If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI
 @z
 
 @x
-The environment variables listed below have no effect in Compose V2.
+The following environment variables have no effect in Compose V2.
 For more information, see [Migrate to Compose V2](../migrate.md).
 @y
-The environment variables listed below have no effect in Compose V2.
+The following environment variables have no effect in Compose V2.
 For more information, see [Migrate to Compose V2](../migrate.md).
 @z
 

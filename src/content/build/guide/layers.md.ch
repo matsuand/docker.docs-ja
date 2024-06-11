@@ -145,10 +145,10 @@ Related information:
 
 @x
 - [Docker build cache](../cache/_index.md)
-- [Dockerfile best practices](../../develop/develop-images/dockerfile_best-practices.md)
+- [Dockerfile best practices](../../build/building/best-practices.md)
 @y
 - [Docker build cache](../cache/_index.md)
-- [Dockerfile ベストプラクティス](../../develop/develop-images/dockerfile_best-practices.md)
+- [Dockerfile ベストプラクティス](../../build/building/best-practices.md)
 @z
 
 @x

@@ -3,11 +3,11 @@
 
 @x
 description: Language-specific guides overview
-keywords: guides, docker, language, node, java, python, R, go, golang, .net
+keywords: guides, docker, language, node, java, python, R, go, golang, .net, c++
 title: Language-specific guides overview
 @y
 description: 言語別ガイドの概要。
-keywords: guides, docker, language, node, java, python, R, go, golang, .net
+keywords: guides, docker, language, node, java, python, R, go, golang, .net, c++
 title: 言語別ガイドの概要
 @z
 
@@ -33,13 +33,11 @@ In addition to the language-specific modules, Docker documentation also provides
 @z
 
 @x
-* [Best practices for writing Dockerfiles](../develop/develop-images/dockerfile_best-practices.md)
-* [Docker development best practices](../develop/dev-best-practices.md)
+* [Building best practices](../build/building/best-practices.md)
 * [Build images with BuildKit](../build/buildkit/index.md#getting-started)
 * [Build with Docker](../build/guide/_index.md)
 @y
-* [Dockerfile 記述のベストプラクティス](../develop/develop-images/dockerfile_best-practices.md)
-* [Docker 開発のベストプラクティス](../develop/dev-best-practices.md)
+* [イメージビルドのベストプラクティス](../build/building/best-practices.md)
 * [BuildKit を使ったイメージビルド](../build/buildkit/index.md#getting-started)
 * [Docker を使ったビルド](../build/guide/_index.md)
 @z

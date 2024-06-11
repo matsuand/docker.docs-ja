@@ -70,10 +70,10 @@ few or no packages containing CVEs.
 @z
 
 @x
-The images exemplify [`Dockerfile` best practices](../../develop/develop-images/dockerfile_best-practices.md)
+The images exemplify [`Dockerfile` best practices](../../build/building/best-practices.md)
 and provide clear documentation to serve as a reference for other `Dockerfile` authors.
 @y
-The images exemplify [`Dockerfile` best practices](../../develop/develop-images/dockerfile_best-practices.md)
+The images exemplify [`Dockerfile` best practices](../../build/building/best-practices.md)
 and provide clear documentation to serve as a reference for other `Dockerfile` authors.
 @z
 

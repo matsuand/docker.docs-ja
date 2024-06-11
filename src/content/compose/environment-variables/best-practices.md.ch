@@ -62,9 +62,9 @@ Consider how your application adapts to different environments. For example deve
 @z
 
 @x
-Understand how [interpolation](env-file.md#interpolation) works within compose files for dynamic configurations.
+Understand how [interpolation](variable-interpolation.md) works within compose files for dynamic configurations.
 @y
-Understand how [interpolation](env-file.md#interpolation) works within compose files for dynamic configurations.
+Understand how [interpolation](variable-interpolation.md) works within compose files for dynamic configurations.
 @z
 
 @x

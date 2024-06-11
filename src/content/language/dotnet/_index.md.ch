@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Containerize and develop .NET apps using Docker
 keywords: getting started, .net
 title: .NET language-specific guide
-toc_min: 1
-toc_max: 2
----
 @y
----
 description: Containerize and develop .NET apps using Docker
 keywords: getting started, .net
 title: .NET 向けガイド
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -43,7 +35,7 @@ The .NET getting started guide teaches you how to create a containerized .NET ap
 @x
 After completing the .NET getting started modules, you should be able to containerize your own .NET application based on the examples and instructions provided in this guide.
 @y
-After completing the .NET getting started modules, you should be able to containerize your own .NET application based on the examples and instructions provided in this guide.
+この .NET 向けガイドのモジュール実行を完了させれば、このガイドの示す例や手順に基づいて、独自の .NET アプリケーションのコンテナー化ができるようになるはずです。
 @z
 
 @x

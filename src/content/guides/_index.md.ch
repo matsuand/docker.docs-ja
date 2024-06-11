@@ -78,18 +78,6 @@ description: Explore the Docker guides
 @z
 
 @x
-- title: Develop with Docker
-  description: Master Docker best practices for efficient, secure development.
-  link: /develop/
-  icon: rule
-@y
-- title: Docker を使った開発
-  description: 効果的でセキュアな Docker 開発のベストプラクティスをマスターします。
-  link: __SUBDIR__/develop/
-  icon: rule
-@z
-
-@x
 - title: Build with Docker
   description: Deep-dive into building software with Docker.
   link: /build/guide/

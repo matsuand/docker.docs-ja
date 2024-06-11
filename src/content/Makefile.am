@@ -2,8 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = admin billing build cloud compose config contribute \
-	desktop develop docker-id docker-hub engine get-started \
-	guides includes language network reference samples scout \
+	desktop docker-id docker-hub engine get-started guides \
+	includes language network reference samples scout \
 	security storage subscription tags trusted-content
 
 bases = \

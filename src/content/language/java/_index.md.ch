@@ -35,13 +35,13 @@ The Java getting started guide teaches you how to create a containerized Spring 
 @x
 After completing the Java getting started modules, you should be able to containerize your own Java application based on the examples and instructions provided in this guide.
 @y
-After completing the Java getting started modules, you should be able to containerize your own Java application based on the examples and instructions provided in this guide.
+この Java 向けガイドのモジュール実行を完了させれば、このガイドの示す例や手順に基づいて、独自の Java アプリケーションのコンテナー化ができるようになるはずです。
 @z
 
 @x
 Get started containerizing your first Java app.
 @y
-Get started containerizing your first Java app.
+では手元にある Java アプリケーションのコンテナー化からはじめます。
 @z
 
 @x

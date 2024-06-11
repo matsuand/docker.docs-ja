@@ -13,6 +13,7 @@ copyfiles = \
 	cache-stack.png                 \
 	cache-stack.svg                 \
 	cache.excalidraw                \
+	hub-official-images.webp        \
 	opentelemetry.png               \
 	set-default-builder-gui.webp
 

@@ -187,7 +187,7 @@ Press `ctrl+c` in the terminal to stop your application.
 @x
 ## Automatically update services
 @y
-## Automatically update services
+## サービスの自動更新 {#automatically-update-services}
 @z
 
 @x

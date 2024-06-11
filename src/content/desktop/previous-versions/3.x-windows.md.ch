@@ -2,29 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Docker Desktop for Windows 3.x Release notes
 keywords: Docker Desktop for Windows 3.x, release notes
 title: Docker for Windows 3.x release notes
-toc_min: 1
-toc_max: 2
-aliases:
-- /desktop/windows/previous-versions/
-- /docker-for-windows/previous-versions/
-- /desktop/windows/release-notes/3.x/
----
 @y
----
 description: Docker Desktop for Windows 3.x Release notes
 keywords: Docker Desktop for Windows 3.x, release notes
 title: Docker for Windows 3.x release notes
-toc_min: 1
-toc_max: 2
-aliases:
-- /desktop/windows/previous-versions/
-- /docker-for-windows/previous-versions/
-- /desktop/windows/release-notes/3.x/
----
 @z
 
 @x

@@ -2,29 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Change log / release notes for Docker Desktop for Mac 3.x
 keywords: Docker Desktop for Mac 3.x release notes
 title: Docker Desktop for Mac 3.x release notes
-toc_min: 1
-toc_max: 2
-aliases:
-- /desktop/mac/previous-versions/
-- /docker-for-mac/previous-versions/
-- /desktop/mac/release-notes/3.x/
----
 @y
----
 description: Change log / release notes for Docker Desktop for Mac 3.x
 keywords: Docker Desktop for Mac 3.x release notes
 title: Docker Desktop for Mac 3.x release notes
-toc_min: 1
-toc_max: 2
-aliases:
-- /desktop/mac/previous-versions/
-- /docker-for-mac/previous-versions/
-- /desktop/mac/release-notes/3.x/
----
 @z
 
 @x

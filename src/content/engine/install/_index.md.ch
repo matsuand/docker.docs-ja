@@ -44,27 +44,27 @@ through Docker Desktop. For instructions on how to install Docker Desktop, see:
 @z
 
 @x
-| Platform                                       | x86_64 / amd64    | arm64 / aarch64   | arm (32-bit)             | ppc64le         | s390x           |
-| :--------------------------------------------- | :---------------- | :---------------- | :----------------------- | :-------------- | :-------------- |
-| [CentOS](centos.md)                            | [✅](centos.md)   | [✅](centos.md)   |                          | [✅](centos.md) |                 |
-| [Debian](debian.md)                            | [✅](debian.md)   | [✅](debian.md)   | [✅](debian.md)          | [✅](debian.md) |                 |
-| [Fedora](fedora.md)                            | [✅](fedora.md)   | [✅](fedora.md)   |                          | [✅](fedora.md) |                 |
-| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                   |                   | [✅](raspberry-pi-os.md) |                 |                 |
-| [RHEL (s390x)](rhel.md)                        |                   |                   |                          |                 | [✅](rhel.md)   |
-| [SLES](sles.md)                                |                   |                   |                          |                 | [✅](sles.md)   |
-| [Ubuntu](ubuntu.md)                            | [✅](ubuntu.md)   | [✅](ubuntu.md)   | [✅](ubuntu.md)          | [✅](ubuntu.md) | [✅](ubuntu.md) |
-| [Binaries](binaries.md)                        | [✅](binaries.md) | [✅](binaries.md) | [✅](binaries.md)        |                 |                 |
+| Platform                                       | x86_64 / amd64 | arm64 / aarch64 | arm (32-bit) | ppc64le | s390x |
+| :--------------------------------------------- | :------------: | :-------------: | :----------: | :-----: | :---: |
+| [CentOS](centos.md)                            |       ✅       |       ✅        |              |   ✅    |       |
+| [Debian](debian.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |       |
+| [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
+| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
+| [RHEL](rhel.md)                                |       🚧       |       🚧        |              |         |  ✅   |
+| [SLES](sles.md)                                |                |                 |              |         |  ✅   |
+| [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |
+| [Binaries](binaries.md)                        |       ✅       |       ✅        |      ✅      |         |       |
 @y
-| プラットフォーム                                 | x86_64 / amd64    | arm64 / aarch64   | arm (32ビット)           | ppc64le         | s390x           |
-| :----------------------------------------------- | :---------------- | :---------------- | :----------------------- | :-------------- | :-------------- |
-| [CentOS](centos.md)                              | [✅](centos.md)   | [✅](centos.md)   |                          | [✅](centos.md) |                 |
-| [Debian](debian.md)                              | [✅](debian.md)   | [✅](debian.md)   | [✅](debian.md)          | [✅](debian.md) |                 |
-| [Fedora](fedora.md)                              | [✅](fedora.md)   | [✅](fedora.md)   |                          | [✅](fedora.md) |                 |
-| [Raspberry Pi OS (32ビット)](raspberry-pi-os.md) |                   |                   | [✅](raspberry-pi-os.md) |                 |                 |
-| [RHEL (s390x)](rhel.md)                          |                   |                   |                          |                 | [✅](rhel.md)   |
-| [SLES](sles.md)                                  |                   |                   |                          |                 | [✅](sles.md)   |
-| [Ubuntu](ubuntu.md)                              | [✅](ubuntu.md)   | [✅](ubuntu.md)   | [✅](ubuntu.md)          | [✅](ubuntu.md) | [✅](ubuntu.md) |
-| [バイナリー](binaries.md)                        | [✅](binaries.md) | [✅](binaries.md) | [✅](binaries.md)        |                 |                 |
+| プラットフォーム                               | x86_64 / amd64 | arm64 / aarch64 | arm (32ビット)| ppc64le| s390x |
+| :--------------------------------------------- | :------------: | :-------------: | :----------: | :-----: | :---: |
+| [CentOS](centos.md)                            |       ✅       |       ✅        |              |   ✅    |       |
+| [Debian](debian.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |       |
+| [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
+| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
+| [RHEL](rhel.md)                                |       🚧       |       🚧        |              |         |  ✅   |
+| [SLES](sles.md)                                |                |                 |              |         |  ✅   |
+| [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |
+| [バイナリー](binaries.md)                      |       ✅       |       ✅        |      ✅      |         |       |
 @z
 
 @x

@@ -23,12 +23,10 @@ aliases:
 - /docker-for-windows/index/
 - /docker-for-windows/started/
 - /mac/
-- /mac/started/
 - /mackit/
 - /mackit/getting-started/
 - /win/
 - /windows/
-- /windows/started/
 - /winkit/
 - /winkit/getting-started/
 ---
@@ -38,7 +36,7 @@ description: Explore the Learning center and understand the benefits of signing 
   to Docker Desktop
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   learning center, guide, sign in
-title: Docker Desktop へのサインイン
+title: Sign in to Docker Desktop
 aliases:
 - /desktop/linux/
 - /desktop/linux/index/
@@ -54,21 +52,19 @@ aliases:
 - /docker-for-windows/index/
 - /docker-for-windows/started/
 - /mac/
-- /mac/started/
 - /mackit/
 - /mackit/getting-started/
 - /win/
 - /windows/
-- /windows/started/
 - /winkit/
 - /winkit/getting-started/
 ---
 @z
 
 @x
-Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard.
+Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard. 
 @y
-Docker の利用にあたっては、Docker Dashboard の右上にある **サインイン** オプションを使って認証操作を行うことをお勧めします。
+Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard. 
 @z
 
 @x
@@ -80,11 +76,11 @@ In large enterprises where admin access is restricted, administrators can [Confi
 @x
 > **Tip**
 >
-> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
 @y
-> **情報**
+> **Tip**
 >
-> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
 @z
 
 @x
@@ -116,7 +112,7 @@ In large enterprises where admin access is restricted, administrators can [Confi
 >
 > Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity. 
 @y
-> **メモ**
+> **Note**
 >
 > Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity. 
 @z
@@ -124,7 +120,7 @@ In large enterprises where admin access is restricted, administrators can [Confi
 @x
 ## Signing in with Docker Desktop for Linux
 @y
-## Docker Desktop for Linux におけるサインイン  {#signing-in-with-docker-desktop-for-linux}
+## Signing in with Docker Desktop for Linux
 @z
 
 @x
@@ -262,7 +258,7 @@ docker.io/molly/privateimage:latest
 @x
 ## What's next?
 @y
-## 次は何？ {#whats-next}
+## What's next?
 @z
 
 @x
@@ -270,7 +266,7 @@ docker.io/molly/privateimage:latest
 - Change your Docker Desktop settings
 - [Browse common FAQs](faqs/general.md)
 @y
-- [Docker Desktop の確認](use-desktop/index.md) とその機能。
-- Docker Desktop 設定の変更
-- [一般的な FAQ の確認](faqs/general.md)
+- [Explore Docker Desktop](use-desktop/index.md) and its features. 
+- Change your Docker Desktop settings
+- [Browse common FAQs](faqs/general.md)
 @z

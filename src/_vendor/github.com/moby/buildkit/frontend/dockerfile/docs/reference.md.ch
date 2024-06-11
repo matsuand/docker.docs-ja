@@ -2636,7 +2636,7 @@ Linux OS-based containers.
 @z
 
 @x
-All files and directories copied from the build context are created with a UID and GID of 0.unless the
+All files and directories copied from the build context are created with a UID and GID of `0` unless the
 optional `--chown` flag specifies a given username, groupname, or UID/GID
 combination to request specific ownership of the copied content. The
 format of the `--chown` flag allows for either username and groupname strings
@@ -2647,7 +2647,7 @@ username or groupname is provided, the container's root filesystem
 from name to integer UID or GID respectively. The following examples show
 valid definitions for the `--chown` flag:
 @y
-All files and directories copied from the build context are created with a UID and GID of 0.unless the
+All files and directories copied from the build context are created with a UID and GID of `0` unless the
 optional `--chown` flag specifies a given username, groupname, or UID/GID
 combination to request specific ownership of the copied content. The
 format of the `--chown` flag allows for either username and groupname strings

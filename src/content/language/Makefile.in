@@ -295,7 +295,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = dotnet golang images java nodejs php python r rust
+SUBDIRS = cpp dotnet golang images java nodejs php python r rust
 bases = \
 	_index.md
 

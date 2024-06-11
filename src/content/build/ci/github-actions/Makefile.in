@@ -300,6 +300,7 @@ bases = \
 	_index.md                \
 	annotations.md           \
 	attestations.md          \
+	build-summary.md         \
 	cache.md                 \
 	configure-builder.md     \
 	copy-image-registries.md \

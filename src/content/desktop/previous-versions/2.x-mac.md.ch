@@ -4,23 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Change log / release notes for Docker Desktop Mac 2.x
 keywords: Docker Desktop for Mac 2.x release notes
 title: Docker Desktop for Mac 2.x release notes
-toc_min: 1
-toc_max: 2
-aliases: /desktop/mac/release-notes/2.x/
----
 @y
----
 description: Change log / release notes for Docker Desktop Mac 2.x
 keywords: Docker Desktop for Mac 2.x release notes
 title: Docker Desktop for Mac 2.x release notes
-toc_min: 1
-toc_max: 2
-aliases: /desktop/mac/release-notes/2.x/
----
 @z
 
 @x

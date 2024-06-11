@@ -1,15 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
-% snip 対応
-
 @x
 title: Configure CI/CD for your Node.js application
 keywords: ci/cd, github actions, node.js, node
 description: Learn how to configure CI/CD using GitHub Actions for your Node.js application.
 @y
-title: Configure CI/CD for your Node.js application
+title: Node.js アプリケーション向けの CI/CD 設定
 keywords: ci/cd, github actions, node.js, node
 description: Learn how to configure CI/CD using GitHub Actions for your Node.js application.
 @z
@@ -17,25 +14,27 @@ description: Learn how to configure CI/CD using GitHub Actions for your Node.js 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
 @y
-Complete all the previous sections of this guide, starting with [Containerize a Node.js application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
+[Node.js アプリケーションのコンテナー化](containerize.md) から始まる、ここまでのガイドすべてを終えていること。
+本節を進めるには [GitHub](https://github.com/signup) アカウントと [Docker](https://hub.docker.com/signup) アカウントを持っていることが必要です。
 @z
 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
 In this section, you'll learn how to set up and use GitHub Actions to build and test your Docker image as well as push it to Docker Hub. You will complete the following steps:
 @y
-In this section, you'll learn how to set up and use GitHub Actions to build and test your Docker image as well as push it to Docker Hub. You will complete the following steps:
+本節では GitHub アクションを利用した CI/CD パイプラインの設定と利用方法について学び、Docker イメージのビルドとテストを行った上で Docker Hub へのプッシュを行います。
+これより以下の手順を進めます。
 @z
 
 @x
@@ -43,35 +42,34 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 2. Define the GitHub Actions workflow.
 3. Run the workflow.
 @y
-1. Create a new repository on GitHub.
-2. Define the GitHub Actions workflow.
-3. Run the workflow.
+1. GitHub 上に新たなリポジトリを生成します。
+2. GitHub アクションワークフローを定義します。
+3. ワークフローを実行します。
 @z
 
 @x
 ## Step one: Create the repository
 @y
-## Step one: Create the repository
+## 手順1: リポジトリの生成 {#step-one-create-the-repository}
 @z
 
 @x
 Create a GitHub repository, configure the Docker Hub secrets, and push your source code.
 @y
-Create a GitHub repository, configure the Docker Hub secrets, and push your source code.
+GitHub リポジトリの生成、Docker Hub シークレットの設定、ソースコードのプッシュを行います。
 @z
 
 @x
 1. [Create a new repository](https://github.com/new) on GitHub.
 @y
-1. [Create a new repository](https://github.com/new) on GitHub.
+1. GitHub 上に [新たなリポジトリを生成](https://github.com/new) します。
 @z
 
 @x
 2. Open the repository **Settings**, and go to **Secrets and variables** >
    **Actions**.
 @y
-2. Open the repository **Settings**, and go to **Secrets and variables** >
-   **Actions**.
+2. リポジトリの **Settings** (設定) を開き、**Secrets and variables** > **Actions** に進みます。
 @z
 
 @x

@@ -53,6 +53,7 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/moby/buildkit/frontend/Makefile
 	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/Makefile
 	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/docs/Makefile
+	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/docs/rules/Makefile
 	src/_vendor/github.com/moby/moby/Makefile
 	src/_vendor/github.com/moby/moby/docs/Makefile
 	src/_vendor/github.com/moby/moby/docs/api/Makefile
@@ -147,9 +148,6 @@ AC_CONFIG_FILES([
 	src/content/desktop/windows/Makefile
 	src/content/desktop/windows/images/Makefile
 	src/content/desktop/wsl/Makefile
-	src/content/develop/Makefile
-	src/content/develop/develop-images/Makefile
-	src/content/develop/images/Makefile
 	src/content/docker-hub/Makefile
 	src/content/docker-hub/api/Makefile
 	src/content/docker-hub/builds/Makefile
@@ -192,6 +190,7 @@ AC_CONFIG_FILES([
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/language/Makefile
+	src/content/language/cpp/Makefile
 	src/content/language/dotnet/Makefile
 	src/content/language/golang/Makefile
 	src/content/language/images/Makefile

@@ -178,12 +178,12 @@ $ docker build --secret id=kube,env=KUBECONFIG .
 @z
 
 @x
-When you secrets from environment variables, you can omit the `env` parameter
+When you use secrets from environment variables, you can omit the `env` parameter
 to bind the secret to a file with the same name as the variable.
 In the following example, the value of the `API_TOKEN` variable
 is mounted to `/run/secrets/API_TOKEN` in the build container.
 @y
-When you secrets from environment variables, you can omit the `env` parameter
+When you use secrets from environment variables, you can omit the `env` parameter
 to bind the secret to a file with the same name as the variable.
 In the following example, the value of the `API_TOKEN` variable
 is mounted to `/run/secrets/API_TOKEN` in the build container.

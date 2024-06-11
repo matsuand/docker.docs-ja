@@ -238,7 +238,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	continuous-integration.svg
+	build_summary_error.png    \
+	continuous-integration.svg \
+	gha_build_summary.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

@@ -4,6 +4,7 @@
 bases = \
 	annotations.md    \
 	base-images.md    \
+	best-practices.md \
 	context.md        \
 	multi-platform.md \
 	multi-stage.md    \

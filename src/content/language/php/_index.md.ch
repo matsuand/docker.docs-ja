@@ -35,7 +35,7 @@ The PHP language-specific guide teaches you how to create a containerized PHP ap
 @x
 After completing the PHP language-specific guide, you should be able to containerize your own PHP application based on the examples and instructions provided in this guide.
 @y
-After completing the PHP language-specific guide, you should be able to containerize your own PHP application based on the examples and instructions provided in this guide.
+この PHP 向けガイドのモジュール実行を完了させれば、このガイドの示す例や手順に基づいて、独自の PHP アプリケーションのコンテナー化ができるようになるはずです。
 @z
 
 @x

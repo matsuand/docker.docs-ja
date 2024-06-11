@@ -1,32 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: Find the recommended Docker Engine post-installation steps for Linux
   users, including how to run Docker as a non-root user and more.
 keywords: run docker without sudo, docker running as root, docker post install, docker
   post installation, run docker as non root, docker non root user, how to run docker
   in linux, how to run docker linux, how to start docker in linux, run docker on linux
 title: Linux post-installation steps for Docker Engine
-aliases:
-- /engine/installation/linux/docker-ee/linux-postinstall/
-- /engine/installation/linux/linux-postinstall/
-- /install/linux/linux-postinstall/
----
 @y
----
 description: Find the recommended Docker Engine post-installation steps for Linux
   users, including how to run Docker as a non-root user and more.
 keywords: run docker without sudo, docker running as root, docker post install, docker
   post installation, run docker as non root, docker non root user, how to run docker
   in linux, how to run docker linux, how to start docker in linux, run docker on linux
 title: Linux における Docker Engine インストール後の作業
-aliases:
-- /engine/installation/linux/docker-ee/linux-postinstall/
-- /engine/installation/linux/linux-postinstall/
-- /install/linux/linux-postinstall/
----
 @z
 
 @x
@@ -111,15 +101,7 @@ To create the `docker` group and add your user:
 1. Create the `docker` group.
 @z
 
-@x
-   ```console
-   $ sudo groupadd docker
-   ```
-@y
-   ```console
-   $ sudo groupadd docker
-   ```
-@z
+% snip command...
 
 @x
 2. Add your user to the `docker` group.
@@ -127,15 +109,7 @@ To create the `docker` group and add your user:
 2. Add your user to the `docker` group.
 @z
 
-@x
-   ```console
-   $ sudo usermod -aG docker $USER
-   ```
-@y
-   ```console
-   $ sudo usermod -aG docker $USER
-   ```
-@z
+% snip command...
 
 @x
 3. Log out and log back in so that your group membership is re-evaluated.
@@ -157,15 +131,7 @@ To create the `docker` group and add your user:
    You can also run the following command to activate the changes to groups:
 @z
 
-@x
-   ```console
-   $ newgrp docker
-   ```
-@y
-   ```console
-   $ newgrp docker
-   ```
-@z
+% snip command...
 
 @x
 4. Verify that you can run `docker` commands without `sudo`.
@@ -173,15 +139,7 @@ To create the `docker` group and add your user:
 4. Verify that you can run `docker` commands without `sudo`.
 @z
 
-@x
-   ```console
-   $ docker run hello-world
-   ```
-@y
-   ```console
-   $ docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -199,17 +157,7 @@ To create the `docker` group and add your user:
    to the `docker` group, you may see the following error:
 @z
 
-@x
-   ```none
-   WARNING: Error loading config file: /home/user/.docker/config.json -
-   stat /home/user/.docker/config.json: permission denied
-   ```
-@y
-   ```none
-   WARNING: Error loading config file: /home/user/.docker/config.json -
-   stat /home/user/.docker/config.json: permission denied
-   ```
-@z
+% snip output...
 
 @x
    This error indicates that the permission settings for the `~/.docker/`
@@ -229,17 +177,7 @@ To create the `docker` group and add your user:
    permissions using the following commands:
 @z
 
-@x
-   ```console
-   $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-   $ sudo chmod g+rwx "$HOME/.docker" -R
-   ```
-@y
-   ```console
-   $ sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-   $ sudo chmod g+rwx "$HOME/.docker" -R
-   ```
-@z
+% snip command...
 
 @x
 ## Configure Docker to start on boot with systemd
@@ -261,17 +199,7 @@ containerd on boot for other Linux distributions using systemd, run the
 following commands:
 @z
 
-@x
-```console
-$ sudo systemctl enable docker.service
-$ sudo systemctl enable containerd.service
-```
-@y
-```console
-$ sudo systemctl enable docker.service
-$ sudo systemctl enable containerd.service
-```
-@z
+% snip command...
 
 @x
 To stop this behavior, use `disable` instead.
@@ -279,17 +207,7 @@ To stop this behavior, use `disable` instead.
 To stop this behavior, use `disable` instead.
 @z
 
-@x
-```console
-$ sudo systemctl disable docker.service
-$ sudo systemctl disable containerd.service
-```
-@y
-```console
-$ sudo systemctl disable docker.service
-$ sudo systemctl disable containerd.service
-```
-@z
+% snip command...
 
 @x
 If you need to add an HTTP proxy, set a different directory or partition for the
@@ -356,11 +274,7 @@ options:
 @x
 - Read the [Get started](../../get-started/index.md) training modules
   to learn how to build an image and run it as a containerized application.
-- Review the topics in [Develop with Docker](../../develop/index.md) to learn
-  how to build new applications using Docker.
 @y
 - Read the [Get started](../../get-started/index.md) training modules
   to learn how to build an image and run it as a containerized application.
-- Review the topics in [Develop with Docker](../../develop/index.md) to learn
-  how to build new applications using Docker.
 @z

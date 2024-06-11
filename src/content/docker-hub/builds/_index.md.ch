@@ -184,13 +184,13 @@ when the tests succeed.
 @z
 
 @x
-    [Build caching](../../develop/develop-images/dockerfile_best-practices.md#leverage-build-cache)
+    [Build caching](../../build/building/best-practices.md#leverage-build-cache)
     can save time if you are building a large image frequently or have
     many dependencies. Leave the build caching disabled to
     make sure all of your dependencies are resolved at build time, or if
     you have a large layer that's quicker to build locally.
 @y
-    [Build caching](../../develop/develop-images/dockerfile_best-practices.md#leverage-build-cache)
+    [Build caching](../../build/building/best-practices.md#leverage-build-cache)
     can save time if you are building a large image frequently or have
     many dependencies. Leave the build caching disabled to
     make sure all of your dependencies are resolved at build time, or if

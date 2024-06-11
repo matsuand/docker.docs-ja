@@ -96,15 +96,15 @@ For additional details about supported attributes and SCIM, see [Docker Hub API 
 @z
 
 @x
-> **Beta feature**
+> **Tip**
 >
-> Optional Just-in-Time (JIT) provisioning is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .experimental }
+> Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
+{ .tip }
 @y
-> **Beta feature**
+> **Tip**
 >
-> Optional Just-in-Time (JIT) provisioning is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .experimental }
+> Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
+{ .tip }
 @z
 
 @x

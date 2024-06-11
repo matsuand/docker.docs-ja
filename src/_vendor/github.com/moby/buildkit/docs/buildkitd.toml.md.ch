@@ -311,10 +311,62 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
 # optionally mirror configuration can be done by defining it as a registry.
 [registry."yourmirror.local:5000"]
   http = true
-```
 @y
 # optionally mirror configuration can be done by defining it as a registry.
 [registry."yourmirror.local:5000"]
   http = true
+@z
+
+@x
+# Frontend control
+[frontend."dockerfile.v0"]
+  enabled = true
+@y
+# Frontend control
+[frontend."dockerfile.v0"]
+  enabled = true
+@z
+
+@x
+[frontend."gateway.v0"]
+  enabled = true
+@y
+[frontend."gateway.v0"]
+  enabled = true
+@z
+
+@x
+  # If allowedRepositories is empty, all gateway sources are allowed.
+  # Otherwise, only the listed repositories are allowed as a gateway source.
+  # 
+  # NOTE: Only the repository name (without tag) is compared.
+  #
+  # Example:
+  # allowedRepositories = [ "docker-registry.wikimedia.org/repos/releng/blubber/buildkit" ]
+  allowedRepositories = []
+@y
+  # If allowedRepositories is empty, all gateway sources are allowed.
+  # Otherwise, only the listed repositories are allowed as a gateway source.
+  # 
+  # NOTE: Only the repository name (without tag) is compared.
+  #
+  # Example:
+  # allowedRepositories = [ "docker-registry.wikimedia.org/repos/releng/blubber/buildkit" ]
+  allowedRepositories = []
+@z
+
+@x
+[system]
+  # how often buildkit scans for changes in the supported emulated platforms
+  platformsCacheMaxAge = "1h"
+@y
+[system]
+  # how often buildkit scans for changes in the supported emulated platforms
+  platformsCacheMaxAge = "1h"
+@z
+
+@x
+```
+@y
 ```
 @z

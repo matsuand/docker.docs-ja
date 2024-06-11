@@ -117,31 +117,9 @@ dependencies if there was a change to the `package.json`.
 % snip code...
 
 @x
-2. Create a file named `.dockerignore` in the same folder as the Dockerfile with the following contents.
+2. Build a new image using `docker build`.
 @y
-2. Create a file named `.dockerignore` in the same folder as the Dockerfile with the following contents.
-@z
-
-% snip code...
-
-@x
-    `.dockerignore` files are an easy way to selectively copy only image relevant files.
-    You can read more about this
-    [here](../build/building/context.md#dockerignore-files).
-    In this case, the `node_modules` folder should be omitted in the second `COPY` step because otherwise,
-    it would possibly overwrite files which were created by the command in the `RUN` step.
-@y
-    `.dockerignore` files are an easy way to selectively copy only image relevant files.
-    You can read more about this
-    [here](../build/building/context.md#dockerignore-files).
-    In this case, the `node_modules` folder should be omitted in the second `COPY` step because otherwise,
-    it would possibly overwrite files which were created by the command in the `RUN` step.
-@z
-
-@x
-3. Build a new image using `docker build`.
-@y
-3. Build a new image using `docker build`.
+2. Build a new image using `docker build`.
 @z
 
 % snip command...
@@ -155,15 +133,15 @@ dependencies if there was a change to the `package.json`.
 % snip output...
 
 @x
-4. Now, make a change to the `src/static/index.html` file. For example, change the `<title>` to "The Awesome Todo App".
+3. Now, make a change to the `src/static/index.html` file. For example, change the `<title>` to "The Awesome Todo App".
 @y
-4. Now, make a change to the `src/static/index.html` file. For example, change the `<title>` to "The Awesome Todo App".
+3. Now, make a change to the `src/static/index.html` file. For example, change the `<title>` to "The Awesome Todo App".
 @z
 
 @x
-5. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
+4. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
 @y
-5. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
+4. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
 @z
 
 % snip output...
@@ -268,16 +246,14 @@ In this section, you learned a few image building best practices, including laye
 
 @x
 Related information:
- - [.dockerignore](../build/building/context.md#dockerignore-files)
  - [Dockerfile reference](../reference/dockerfile.md)
  - [Build with Docker guide](../build/guide/index.md)
- - [Dockerfile best practices](../develop/develop-images/dockerfile_best-practices.md)
+ - [Dockerfile best practices](../build/building/best-practices.md)
 @y
 関連情報
- - [.dockerignore](../build/building/context.md#dockerignore-files)
  - [Dockerfile リファレンス](../reference/dockerfile.md)
  - [Docker を使ったビルドガイド](../build/guide/index.md)
- - [Dockerfile ベストプラクティス](../develop/develop-images/dockerfile_best-practices.md)
+ - [Dockerfile ベストプラクティス](../build/building/best-practices.md)
 @z
 
 @x

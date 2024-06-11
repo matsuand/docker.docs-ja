@@ -56,6 +56,276 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
+## 4.31.1
+@y
+## 4.31.1
+@z
+
+@x
+{{< release-date date="2024-06-10" >}}
+@y
+{{< release-date date="2024-06-10" >}}
+@z
+
+@x
+{{< desktop-install win=true beta_win_arm=true version="4.31.1" build_path="/153621/" >}}
+@y
+{{< desktop-install win=true beta_win_arm=true version="4.31.1" build_path="/153621/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed a bug where containers, images and volumes created before the update were potentially invisible for users. Fixes [docker/for-win#14118](https://github.com/docker/for-win/issues/14118).
+@y
+- Fixed a bug where containers, images and volumes created before the update were potentially invisible for users. Fixes [docker/for-win#14118](https://github.com/docker/for-win/issues/14118).
+@z
+
+@x
+## 4.31.0
+@y
+## 4.31.0
+@z
+
+@x
+{{< release-date date="2024-06-06" >}}
+@y
+{{< release-date date="2024-06-06" >}}
+@z
+
+@x
+{{< desktop-install all=true beta_win_arm=true version="4.31.0" build_path="/153195/" >}}
+@y
+{{< desktop-install all=true beta_win_arm=true version="4.31.0" build_path="/153195/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- [Air-Gapped Containers](desktop/hardened-desktop/air-gapped-containers.md) is now generally available. 
+- Docker Compose File Viewer shows your Compose YAML with syntax highlighting and contextual links to relevant docs (Beta, progressive rollout).
+- New Sidebar user experience.
+@y
+- [Air-Gapped Containers](desktop/hardened-desktop/air-gapped-containers.md) is now generally available. 
+- Docker Compose File Viewer shows your Compose YAML with syntax highlighting and contextual links to relevant docs (Beta, progressive rollout).
+- New Sidebar user experience.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Engine and CLI v26.1.4](https://github.com/moby/moby/releases/tag/v26.1.4).
+- [Docker Scout CLI v1.9.1](https://github.com/docker/scout-cli/releases/tag/v1.9.1)
+- [Docker Compose v2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1)
+- [Docker Buildx v0.14.1](https://github.com/docker/buildx/releases/tag/v0.14.1)
+- [Containerd v1.6.33](https://github.com/containerd/containerd/releases/tag/v1.6.33)
+- [Credential Helpers v0.8.2](https://github.com/docker/docker-credential-helpers/releases/tag/v0.8.2)
+- [NVIDIA Container Toolkit v1.15.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.15.0)
+- [Go 1.22.4](https://github.com/golang/go/releases/tag/go1.22.4)
+- Linux kernel `v6.6.31`
+@y
+- [Docker Engine and CLI v26.1.4](https://github.com/moby/moby/releases/tag/v26.1.4).
+- [Docker Scout CLI v1.9.1](https://github.com/docker/scout-cli/releases/tag/v1.9.1)
+- [Docker Compose v2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1)
+- [Docker Buildx v0.14.1](https://github.com/docker/buildx/releases/tag/v0.14.1)
+- [Containerd v1.6.33](https://github.com/containerd/containerd/releases/tag/v1.6.33)
+- [Credential Helpers v0.8.2](https://github.com/docker/docker-credential-helpers/releases/tag/v0.8.2)
+- [NVIDIA Container Toolkit v1.15.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.15.0)
+- [Go 1.22.4](https://github.com/golang/go/releases/tag/go1.22.4)
+- Linux kernel `v6.6.31`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Newer releases are now displayed in the **Software updates** settings tab when an update has already been downloaded.
+- Added `proxyEnableKerberosNTLM` config to `settings.json` to enable fallback to basic proxy authentication if Kerberos/NTLM environment is not properly set up.
+- Fixed a bug where Docker Debug was not working properly with Enhanced Container Isolation enabled.
+- Fixed a bug where UDP responses were not truncated properly.
+- Fixed a bug where the **Update** screen was hidden when using [Settings Management](hardened-desktop/settings-management/_index.md).
+- Fixed a bug where proxy settings defined in `admin-settings.json` were not applied correctly on startup.
+- Fixed a bug where the **Manage Synchronized file shares with Compose** toggle did not correctly reflect the value with the feature.
+- Fixed a bug where a bind mounted file modified on host is not updated after the container restarts, when gRPC FUSE file sharing is used on macOS and on Windows with Hyper-V. Fixes [docker/for-mac#7274](https://github.com/docker/for-mac/issues/7274), [docker/for-win#14060](https://github.com/docker/for-win/issues/14060).
+- Builds view:
+  - New [Import builds](use-desktop/builds.md#import-builds) feature that lets you import build records for builds by other people, or [builds in a CI environment](../build/ci/github-actions/build-summary.md).
+  - Fixed missing OpenTelemetry traces in build results for failed builds.
+  - Fixed `default-load` appearing as invalid driver-opt for the container driver.
+  - Fixed deep link to build details.
+@y
+- Newer releases are now displayed in the **Software updates** settings tab when an update has already been downloaded.
+- Added `proxyEnableKerberosNTLM` config to `settings.json` to enable fallback to basic proxy authentication if Kerberos/NTLM environment is not properly set up.
+- Fixed a bug where Docker Debug was not working properly with Enhanced Container Isolation enabled.
+- Fixed a bug where UDP responses were not truncated properly.
+- Fixed a bug where the **Update** screen was hidden when using [Settings Management](hardened-desktop/settings-management/_index.md).
+- Fixed a bug where proxy settings defined in `admin-settings.json` were not applied correctly on startup.
+- Fixed a bug where the **Manage Synchronized file shares with Compose** toggle did not correctly reflect the value with the feature.
+- Fixed a bug where a bind mounted file modified on host is not updated after the container restarts, when gRPC FUSE file sharing is used on macOS and on Windows with Hyper-V. Fixes [docker/for-mac#7274](https://github.com/docker/for-mac/issues/7274), [docker/for-win#14060](https://github.com/docker/for-win/issues/14060).
+- Builds view:
+  - New [Import builds](use-desktop/builds.md#import-builds) feature that lets you import build records for builds by other people, or [builds in a CI environment](../build/ci/github-actions/build-summary.md).
+  - Fixed missing OpenTelemetry traces in build results for failed builds.
+  - Fixed `default-load` appearing as invalid driver-opt for the container driver.
+  - Fixed deep link to build details.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Changed the `--allowed-org` installer flag to write a policy registry key instead of to the `registry.json`.
+@y
+- Changed the `--allowed-org` installer flag to write a policy registry key instead of to the `registry.json`.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Moved the setting **Automatically check configuration** from **Advanced** settings to **General** settings.
+- Improved VirtioFS caching by implementing longer attributes timeout and invalidation.
+@y
+- Moved the setting **Automatically check configuration** from **Advanced** settings to **General** settings.
+- Improved VirtioFS caching by implementing longer attributes timeout and invalidation.
+@z
+
+@x
+#### For Linux
+@y
+#### For Linux
+@z
+
+@x
+- Added Linux headers to the VM, to ease the compilation of custom kernel modules.
+@y
+- Added Linux headers to the VM, to ease the compilation of custom kernel modules.
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed a security bug in Enhanced Container Isolation (ECI) mode where a user could create Docker volumes sourced from restricted directories inside the Docker Desktop VM and mount them into containers, thereby giving the container access to such restricted VM directories.
+- By default, only extensions listed in the marketplace can be installed in Docker Desktop. This can be changed in Docker Desktop's settings. Extension developers will need to change this option in order to test their extensions.
+@y
+- Fixed a security bug in Enhanced Container Isolation (ECI) mode where a user could create Docker volumes sourced from restricted directories inside the Docker Desktop VM and mount them into containers, thereby giving the container access to such restricted VM directories.
+- By default, only extensions listed in the marketplace can be installed in Docker Desktop. This can be changed in Docker Desktop's settings. Extension developers will need to change this option in order to test their extensions.
+@z
+
+@x
+### For Windows
+@y
+### For Windows
+@z
+
+@x
+- Fixed [CVE-2024-5652](https://www.cve.org/cverecord?id=CVE-2024-5652) in which a user in the `docker-users` group can cause a Windows Denial-of-Service through the `exec-path` Docker daemon config option in Windows containers mode. This vulnerability was discovered by Hashim Jawad ([@ihack4falafel](https://github.com/ihack4falafel)) working with Trend Micro Zero Day Initiative.
+@y
+- Fixed [CVE-2024-5652](https://www.cve.org/cverecord?id=CVE-2024-5652) in which a user in the `docker-users` group can cause a Windows Denial-of-Service through the `exec-path` Docker daemon config option in Windows containers mode. This vulnerability was discovered by Hashim Jawad ([@ihack4falafel](https://github.com/ihack4falafel)) working with Trend Micro Zero Day Initiative.
+@z
+
+@x
+### Deprecation
+@y
+### Deprecation
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- The CLI binary that used to be shipped as `com.docker.cli` is now shipped simply as `docker`. This release leaves the CLI binary as `com.docker.cli`, but it will be removed next release.
+@y
+- The CLI binary that used to be shipped as `com.docker.cli` is now shipped simply as `docker`. This release leaves the CLI binary as `com.docker.cli`, but it will be removed next release.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Removed support for legacy version packs from the WSL2 engine.
+@y
+- Removed support for legacy version packs from the WSL2 engine.
+@z
+
+@x
+### Known Issues
+@y
+### Known Issues
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- When upgrading to Docker Desktop 4.31.0, existing containers, images and volumes become invisible for users that created those containers and images using Docker Desktop 4.8.0 or lower, on Windows hosts with WSL only. The data is not lost, it just becomes invisible to Docker Desktop 4.31.0. If impacted, downgrade to version 4.30 or earlier. For more information see: [docker/for-win#14118](https://github.com/docker/for-win/issues/14118).
+@y
+- When upgrading to Docker Desktop 4.31.0, existing containers, images and volumes become invisible for users that created those containers and images using Docker Desktop 4.8.0 or lower, on Windows hosts with WSL only. The data is not lost, it just becomes invisible to Docker Desktop 4.31.0. If impacted, downgrade to version 4.30 or earlier. For more information see: [docker/for-win#14118](https://github.com/docker/for-win/issues/14118).
+@z
+
+@x
+#### For Linux
+@y
+#### For Linux
+@z
+
+@x
+- Ubuntu 24.04 LTS is not yet supported, Docker Desktop will fail to start. Due to a change in how the latest Ubuntu release restricts the unprivileged namespaces, `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` needs to be ran at least once. Refer to the [Ubuntu Blog](https://ubuntu.com/blog/).
+@y
+- Ubuntu 24.04 LTS is not yet supported, Docker Desktop will fail to start. Due to a change in how the latest Ubuntu release restricts the unprivileged namespaces, `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` needs to be ran at least once. Refer to the [Ubuntu Blog](https://ubuntu.com/blog/).
+@z
+
+@x
 ## 4.30.0
 @y
 ## 4.30.0
@@ -68,9 +338,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
-{{< desktop-install all=true version="4.30.0" build_path="/149282/" >}}
+{{< desktop-install all=true beta_win_arm=true version="4.30.0" build_path="/149282/" >}}
 @y
-{{< desktop-install all=true version="4.30.0" build_path="/149282/" >}}
+{{< desktop-install all=true beta_win_arm=true version="4.30.0" build_path="/149282/" >}}
 @z
 
 @x
@@ -156,7 +426,7 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 - Fixed CLI-plugin symlinks not being removed when CLI apps were removed.
 - Fixed a bug in the shared ports drawer to show the right message for local engines.
 - Dev Environments is being sunset and has moved to the **Beta** tab in **Features in development**.
-- Build UI:
+- Builds view:
   - Better bulk delete for build records.
   - Added action to open the relevant web page for container images and Git sources in build dependencies.
   - Added action to download Provenance and OpenTelemetry traces in Jaeger or OTLP format.
@@ -171,7 +441,7 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 - Fixed CLI-plugin symlinks not being removed when CLI apps were removed.
 - Fixed a bug in the shared ports drawer to show the right message for local engines.
 - Dev Environments is being sunset and has moved to the **Beta** tab in **Features in development**.
-- Build UI:
+- Builds view:
   - Better bulk delete for build records.
   - Added action to open the relevant web page for container images and Git sources in build dependencies.
   - Added action to download Provenance and OpenTelemetry traces in Jaeger or OTLP format.
@@ -563,7 +833,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 - Docker Init:
   - Improved how Java applications are started based on Spring Boot version. Fixes [docker/for-mac#7171](https://github.com/docker/for-mac/issues/7171).
   - Removed non-official Docker image used for Rust cross-compilation
-- Build UI:
+- Builds view:
   - Active and completed builds can be found in dedicated tabs.
   - Build details now displays build duration and cache steps.
   - OpenTelemetry traces are now displayed in the build results.
@@ -581,7 +851,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 - Docker Init:
   - Improved how Java applications are started based on Spring Boot version. Fixes [docker/for-mac#7171](https://github.com/docker/for-mac/issues/7171).
   - Removed non-official Docker image used for Rust cross-compilation
-- Build UI:
+- Builds view:
   - Active and completed builds can be found in dedicated tabs.
   - Build details now displays build duration and cache steps.
   - OpenTelemetry traces are now displayed in the build results.
@@ -882,7 +1152,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 - Builder settings:
   - You can now refresh storage data for your builder at any point in time.
   - You can now delete the build history for a builder.
-- Build UI:
+- Builds view:
   - An error message is now shown when a build record cannot be removed.
   - Fixed an issue where a cloud builder could not be created in rootless mode on macOS.
   - Inline cache and Git source are now properly handled in the **Build timing** section of the **Info** tab.
@@ -912,7 +1182,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 - Builder settings:
   - You can now refresh storage data for your builder at any point in time.
   - You can now delete the build history for a builder.
-- Build UI:
+- Builds view:
   - An error message is now shown when a build record cannot be removed.
   - Fixed an issue where a cloud builder could not be created in rootless mode on macOS.
   - Inline cache and Git source are now properly handled in the **Build timing** section of the **Info** tab.

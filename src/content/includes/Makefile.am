@@ -30,7 +30,8 @@ bases = \
 	open-terminal.md                  \
 	root-errors.md                    \
 	swarm-compose-compat.md           \
-	swarm-mode.md
+	swarm-mode.md                     \
+	tax-compliance.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

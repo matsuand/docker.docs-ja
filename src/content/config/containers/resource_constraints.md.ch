@@ -7,7 +7,6 @@ title: Runtime options with Memory, CPUs, and GPUs
 description: Specify the runtime options for a container
 keywords: docker, daemon, configuration, runtime
 aliases:
-  - /engine/articles/systemd/
   - /engine/admin/resource_constraints/
 ---
 @y
@@ -16,7 +15,6 @@ title: Runtime options with Memory, CPUs, and GPUs
 description: Specify the runtime options for a container
 keywords: docker, daemon, configuration, runtime
 aliases:
-  - /engine/articles/systemd/
   - /engine/admin/resource_constraints/
 ---
 @z

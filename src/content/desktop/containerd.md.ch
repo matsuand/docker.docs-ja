@@ -26,6 +26,22 @@ image and file system management in the Docker Engine.
 @z
 
 @x
+> **Note**
+> 
+> After switching to the containerd image store,
+> images and containers in the classic image store won't be visible.
+> All of those containers and images still exist.
+> To see them again, turn off the containerd image store feature.
+@y
+> **Note**
+> 
+> After switching to the containerd image store,
+> images and containers in the classic image store won't be visible.
+> All of those containers and images still exist.
+> To see them again, turn off the containerd image store feature.
+@z
+
+@x
 ## What is containerd?
 @y
 ## What is containerd?
@@ -117,18 +133,6 @@ it's a prerequisite for unlocking a range of new use cases, including:
 ## Enable the containerd image store
 @y
 ## Enable the containerd image store
-@z
-
-@x
-After switching to the containerd image store,
-images and containers in the classic image store won't be visible.
-All of those containers and images still exist.
-To see them again, turn off the containerd image store feature.
-@y
-After switching to the containerd image store,
-images and containers in the classic image store won't be visible.
-All of those containers and images still exist.
-To see them again, turn off the containerd image store feature.
 @z
 
 @x

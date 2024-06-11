@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = dotnet golang images java nodejs php python r rust
+SUBDIRS = cpp dotnet golang images java nodejs php python r rust
 
 bases = \
 	_index.md

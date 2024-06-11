@@ -10,7 +10,6 @@ aliases:
 - /config/containers/bridges/
 - /engine/userguide/networking/default_network/build-bridges/
 - /engine/userguide/networking/default_network/custom-docker0/
-- /engine/userguide/networking/default_network/dockerlinks/
 - /engine/userguide/networking/work-with-networks/
 - /network/bridge/
 ---
@@ -23,7 +22,6 @@ aliases:
 - /config/containers/bridges/
 - /engine/userguide/networking/default_network/build-bridges/
 - /engine/userguide/networking/default_network/custom-docker0/
-- /engine/userguide/networking/default_network/dockerlinks/
 - /engine/userguide/networking/work-with-networks/
 - /network/bridge/
 ---

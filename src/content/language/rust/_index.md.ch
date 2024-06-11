@@ -47,13 +47,13 @@ The Rust language-specific guide teaches you how to create a containerized Rust 
 @x
 After completing the Rust modules, you should be able to containerize your own Rust application based on the examples and instructions provided in this guide.
 @y
-After completing the Rust modules, you should be able to containerize your own Rust application based on the examples and instructions provided in this guide.
+この Rust 向けガイドのモジュール実行を完了させれば、このガイドの示す例や手順に基づいて、独自の Rust アプリケーションのコンテナー化ができるようになるはずです。
 @z
 
 @x
 Start with building your first Rust image.
 @y
-Start with building your first Rust image.
+では手元にある Rust イメージのビルドからはじめます。
 @z
 
 @x

@@ -190,9 +190,9 @@ Make sure you have:
 @z
 
 @x
-   For more information on how to write Dockerfiles, see the [Docker user guide](../develop/index.md) and the [Dockerfile reference](/reference/dockerfile/).
+   For more information on how to write Dockerfiles, see the [Dockerfile reference](/reference/dockerfile/).
 @y
-   Dockerfile の書き方の詳細は [Docker ユーザーガイド](../develop/index.md) や [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/) を参照してください。
+   Dockerfile の書き方の詳細は [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/) を参照してください。
 @z
 
 @x

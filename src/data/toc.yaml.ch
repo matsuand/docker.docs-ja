@@ -344,6 +344,34 @@ Guides:
 @z
 
 @x
+  - sectiontitle: C++
+    section:
+    - title: "Overview"
+      path: /language/cpp/
+    - title: "Containerize your app"
+      path: /language/cpp/containerize/
+    - title: "Develop your app"
+      path: /language/cpp/develop/
+    - title: "Configure CI/CD"
+      path: /language/cpp/configure-ci-cd/
+    - title: "Test your deployment"
+      path: /language/cpp/deploy/
+@y
+  - sectiontitle: C++
+    section:
+    - title: "概要"
+      path: __SUBDIR__/language/cpp/
+    - title: "アプリのコンテナー化"
+      path: __SUBDIR__/language/cpp/containerize/
+    - title: "アプリの開発"
+      path: __SUBDIR__/language/cpp/develop/
+    - title: "CI/CD の設定"
+      path: __SUBDIR__/language/cpp/configure-ci-cd/
+    - title: "デプロイのテスト"
+      path: __SUBDIR__/language/cpp/deploy/
+@z
+
+@x
   - sectiontitle: Rust
     section:
     - title: "Overview"
@@ -501,42 +529,6 @@ Guides:
       title: Suppress CVEs with VEX
     - path: __SUBDIR__/guides/use-case/databases/
       title: コンテナー化データベースの利用
-@z
-
-@x
-- sectiontitle: Develop with Docker
-  section:
-  - path: /develop/
-    title: Overview
-  - path: /develop/dev-best-practices/
-    title: Development best practices
-  - sectiontitle: Dockerfile best practices
-    section:
-    - path: /develop/develop-images/dockerfile_best-practices/
-      title: Overview
-    - path: /develop/develop-images/guidelines/
-      title: General guidelines 
-    - path: /develop/develop-images/instructions/
-      title: Best practices for Dockerfile instructions
-  - path: /develop/security-best-practices/
-    title: Security best practices
-@y
-- sectiontitle: Docker を使った開発
-  section:
-  - path: __SUBDIR__/develop/
-    title: 概要
-  - path: __SUBDIR__/develop/dev-best-practices/
-    title: 開発ベストプラクティス
-  - sectiontitle: Dockerfile ベストプラクティス
-    section:
-    - path: __SUBDIR__/develop/develop-images/dockerfile_best-practices/
-      title: 概要
-    - path: __SUBDIR__/develop/develop-images/guidelines/
-      title: 一般的ガイドライン
-    - path: __SUBDIR__/develop/develop-images/instructions/
-      title: Dockerfile 命令のベストプラクティス
-  - path: __SUBDIR__/develop/security-best-practices/
-    title: セキュリティのベストプラクティス
 @z
 
 @x
@@ -1888,11 +1880,91 @@ Reference:
 @x
 - title: Dockerfile reference
   path: /reference/dockerfile/
-- title: Daemon CLI (dockerd)
-  path: /reference/cli/dockerd/
 @y
 - title: Dockerfile リファレンス
   path: __SUBDIR__/reference/dockerfile/
+@z
+
+@x
+- sectiontitle: Build checks
+  section:
+  - path: /reference/build-checks/
+    title: Overview
+  - path: /reference/build-checks/stage-name-casing/
+    title: StageNameCasing
+  - path: /reference/build-checks/from-as-casing/
+    title: FromAsCasing
+  - path: /reference/build-checks/no-empty-continuations/
+    title: NoEmptyContinuations
+  - path: /reference/build-checks/consistent-instruction-casing/
+    title: ConsistentInstructionCasing
+@y
+- sectiontitle: Build checks
+  section:
+  - path: __SUBDIR__/reference/build-checks/
+    title: Overview
+  - path: __SUBDIR__/reference/build-checks/stage-name-casing/
+    title: StageNameCasing
+  - path: __SUBDIR__/reference/build-checks/from-as-casing/
+    title: FromAsCasing
+  - path: __SUBDIR__/reference/build-checks/no-empty-continuations/
+    title: NoEmptyContinuations
+  - path: __SUBDIR__/reference/build-checks/consistent-instruction-casing/
+    title: ConsistentInstructionCasing
+@z
+
+@x
+  - path: /reference/build-checks/file-consistent-command-casing/
+    title: FileConsistentCommandCasing
+  - path: /reference/build-checks/duplicate-stage-name/
+    title: DuplicateStageName
+  - path: /reference/build-checks/reserved-stage-name/
+    title: ReservedStageName
+  - path: /reference/build-checks/json-args-recommended/
+    title: JSONArgsRecommended
+  - path: /reference/build-checks/maintainer-deprecated/
+    title: MaintainerDeprecated
+@y
+  - path: __SUBDIR__/reference/build-checks/file-consistent-command-casing/
+    title: FileConsistentCommandCasing
+  - path: __SUBDIR__/reference/build-checks/duplicate-stage-name/
+    title: DuplicateStageName
+  - path: __SUBDIR__/reference/build-checks/reserved-stage-name/
+    title: ReservedStageName
+  - path: __SUBDIR__/reference/build-checks/json-args-recommended/
+    title: JSONArgsRecommended
+  - path: __SUBDIR__/reference/build-checks/maintainer-deprecated/
+    title: MaintainerDeprecated
+@z
+
+@x
+  - path: /reference/build-checks/undefined-arg-in-from/
+    title: UndefinedArgInFrom
+  - path: /reference/build-checks/workdir-relative-path/
+    title: WorkdirRelativePath
+  - path: /reference/build-checks/undefined-var/
+    title: UndefinedVar
+  - path: /reference/build-checks/multiple-instructions-disallowed/
+    title: MultipleInstructionsDisallowed
+  - path: /reference/build-checks/legacy-key-value-format/
+    title: LegacyKeyValueFormat
+@y
+  - path: __SUBDIR__/reference/build-checks/undefined-arg-in-from/
+    title: UndefinedArgInFrom
+  - path: __SUBDIR__/reference/build-checks/workdir-relative-path/
+    title: WorkdirRelativePath
+  - path: __SUBDIR__/reference/build-checks/undefined-var/
+    title: UndefinedVar
+  - path: __SUBDIR__/reference/build-checks/multiple-instructions-disallowed/
+    title: MultipleInstructionsDisallowed
+  - path: __SUBDIR__/reference/build-checks/legacy-key-value-format/
+    title: LegacyKeyValueFormat
+@z
+
+@x
+- title: Daemon CLI (dockerd)
+  path: /reference/cli/dockerd/
+@y
 - title: デーモン CLI (dockerd)
   path: __SUBDIR__/reference/cli/dockerd/
 @z
@@ -3315,13 +3387,13 @@ Manuals:
     - path: /engine/install/fedora/
       title: Fedora
     - path: /engine/install/rhel/
-      title: RHEL (s390x)
+      title: RHEL
 @y
 - sectiontitle: Docker Engine
   section:
   - path: __SUBDIR__/engine/
     title: 概要
-  - sectiontitle: インストール
+  - sectiontitle: Install
     section:
     - path: __SUBDIR__/engine/install/
       title: 概要
@@ -3332,7 +3404,7 @@ Manuals:
     - path: __SUBDIR__/engine/install/fedora/
       title: Fedora
     - path: __SUBDIR__/engine/install/rhel/
-      title: RHEL (s390x)
+      title: RHEL
 @z
 
 @x
@@ -4122,18 +4194,6 @@ Manuals:
           title: Context
         - path: /build/building/multi-stage/
           title: Multi-stage builds
-        - path: /build/building/variables/
-          title: Variables
-        - path: /build/building/multi-platform/
-          title: Multi-platform images
-        - path: /build/building/secrets/
-          title: Build secrets
-        - path: /build/building/annotations/
-          title: Annotations
-        - path: /build/building/opentelemetry/
-          title: OpenTelemetry support
-        - path: /build/building/base-images/
-          title: Create your own base image
 @y
 - sectiontitle: Docker Build
   section:
@@ -4149,8 +4209,28 @@ Manuals:
           title: コンテキスト
         - path: __SUBDIR__/build/building/multi-stage/
           title: マルチステージビルド
+@z
+
+@x
+        - path: /build/building/variables/
+          title: Variables
+        - path: /build/building/best-practices/
+          title: Best practices
+        - path: /build/building/multi-platform/
+          title: Multi-platform images
+        - path: /build/building/secrets/
+          title: Build secrets
+        - path: /build/building/annotations/
+          title: Annotations
+        - path: /build/building/opentelemetry/
+          title: OpenTelemetry support
+        - path: /build/building/base-images/
+          title: Create your own base image
+@y
         - path: __SUBDIR__/build/building/variables/
           title: 変数
+        - path: __SUBDIR__/build/building/best-practices/
+          title: ベストプラクティス
         - path: __SUBDIR__/build/building/multi-platform/
           title: マルチプラットフォームイメージ
         - path: __SUBDIR__/build/building/secrets/
@@ -4416,6 +4496,8 @@ Manuals:
           section:
           - path: /build/ci/github-actions/
             title: Introduction
+          - path: /build/ci/github-actions/build-summary/
+            title: Build summary {{< badge color=blue text=Beta >}}
           - path: /build/ci/github-actions/configure-builder/
             title: Configuring your builder
           - path: /build/ci/github-actions/multi-platform/
@@ -4437,6 +4519,8 @@ Manuals:
           section:
           - path: __SUBDIR__/build/ci/github-actions/
             title: はじめに
+          - path: __SUBDIR__/build/ci/github-actions/build-summary/
+            title: Build summary {{< badge color=blue text=Beta >}}
           - path: __SUBDIR__/build/ci/github-actions/configure-builder/
             title: Configuring your builder
           - path: __SUBDIR__/build/ci/github-actions/multi-platform/
@@ -4580,10 +4664,10 @@ Manuals:
       title: Explore ways to set environment variables
     - path: /compose/environment-variables/envvars-precedence/
       title: Understand environment variables precedence
-    - path: /compose/environment-variables/env-file/
-      title: Syntax for environment files
     - path: /compose/environment-variables/envvars/
       title: Set or change pre-defined environment variables
+    - path: /compose/environment-variables/variable-interpolation/
+      title: Interpolation
     - path: /compose/environment-variables/best-practices/
       title: Best practices
 @y
@@ -4595,10 +4679,10 @@ Manuals:
       title: Explore ways to set environment variables
     - path: __SUBDIR__/compose/environment-variables/envvars-precedence/
       title: Understand environment variables precedence
-    - path: __SUBDIR__/compose/environment-variables/env-file/
-      title: Syntax for environment files
     - path: __SUBDIR__/compose/environment-variables/envvars/
       title: Set or change pre-defined environment variables
+    - path: __SUBDIR__/compose/environment-variables/variable-interpolation/
+      title: Interpolation
     - path: __SUBDIR__/compose/environment-variables/best-practices/
       title: ベストプラクティス
 @z

@@ -800,27 +800,3 @@ On the **Advanced** tab, you can reconfigure your initial installation settings:
 @y
   For more information on each configuration and use case, see [Permission requirements](../mac/permission-requirements.md).
 @z
-
-@x
-- **Automatically check configuration**. Regularly checks your configuration to ensure no unexpected changes have been made by another application.
-@y
-- **Automatically check configuration**. Regularly checks your configuration to ensure no unexpected changes have been made by another application.
-@z
-
-@x
-  Docker Desktop checks if your setup, configured during installation, has been altered by external apps like Orbstack. Docker Desktop checks:
-    - The symlinks of Docker binaries to `/usr/local/bin`.
-    - The symlink of the default Docker socket. 
-  Additionally, Docker Desktop ensures that the context is switched to `desktop-linux` on startup.
-@y
-  Docker Desktop checks if your setup, configured during installation, has been altered by external apps like Orbstack. Docker Desktop checks:
-    - The symlinks of Docker binaries to `/usr/local/bin`.
-    - The symlink of the default Docker socket. 
-  Additionally, Docker Desktop ensures that the context is switched to `desktop-linux` on startup.
-@z
-
-@x
-  You are notified if changes are found and are able to restore the configuration directly from the notification.
-@y
-  You are notified if changes are found and are able to restore the configuration directly from the notification.
-@z

@@ -8,7 +8,7 @@ keywords: build, buildx, buildkit, exporter, oci, docker
 description: >
   The OCI and Docker exporters create an image layout tarball on the local filesystem
 aliases:
-  - /build/building/exporters/local-tar/
+  - /build/building/exporters/oci-docker/
 ---
 @y
 ---
@@ -17,7 +17,7 @@ keywords: build, buildx, buildkit, exporter, oci, docker
 description: >
   The OCI and Docker exporters create an image layout tarball on the local filesystem
 aliases:
-  - /build/building/exporters/local-tar/
+  - /build/building/exporters/oci-docker/
 ---
 @z
 

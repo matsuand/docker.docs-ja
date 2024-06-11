@@ -72,18 +72,6 @@ Make sure you have completed the following before you begin:
 @z
 
 @x
-> **Beta feature**
->
-> Optional Just-in-Time (JIT) provisioning is available in [beta](/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you have the option to disable JIT provisioning. See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .experimental }
-@y
-> **Beta feature**
->
-> Optional Just-in-Time (JIT) provisioning is available in [beta](__SUBDIR__/release-lifecycle/#beta) when you use the Admin Console and enable SCIM. With this feature, you have the option to disable JIT provisioning. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .experimental }
-@z
-
-@x
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
 @y

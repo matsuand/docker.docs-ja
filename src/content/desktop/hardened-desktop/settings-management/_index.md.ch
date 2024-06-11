@@ -104,7 +104,7 @@ Using the `admin-settings.json` file, admins can:
 - Turn off Docker Desktop's onboarding survey
 - Control the file sharing implementation for your developers on macOS
 - Specify which paths your developers can add file shares to
-- Configure air-gapped containers (Beta)
+- Configure Air-Gapped Containers
 @y
 - Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/index.md)
 - Configure HTTP proxies
@@ -120,7 +120,7 @@ Using the `admin-settings.json` file, admins can:
 - Turn off Docker Desktop's onboarding survey
 - Control the file sharing implementation for your developers on macOS
 - Specify which paths your developers can add file shares to
-- Configure air-gapped containers (Beta)
+- Configure Air-Gapped Containers
 @z
 
 @x
