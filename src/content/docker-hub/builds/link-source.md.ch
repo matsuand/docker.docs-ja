@@ -68,9 +68,9 @@ If you are linking a source code provider to create autobuilds for a team, follo
 @z
 
 @x
-2. Select **My Account** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
 @y
-2. Select **My Account** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
 @z
 
 @x
@@ -264,10 +264,10 @@ from Docker Hub, and from your GitHub account.
 @z
 
 @x
-1. Select **My Account** in the top-right drop-down navigation, then open
+1. Select **Account settings** in the top-right drop-down navigation, then open
 the **Linked Accounts** section.
 @y
-1. Select **My Account** in the top-right drop-down navigation, then open
+1. Select **Account settings** in the top-right drop-down navigation, then open
 the **Linked Accounts** section.
 @z
 
@@ -324,9 +324,9 @@ code provider.
 @z
 
 @x
-2. Select **My Account** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
 @y
-2. Select **My Account** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
 @z
 
 @x
@@ -368,10 +368,10 @@ unlink it both from Docker Hub, and from your Bitbucket account.
 @z
 
 @x
-2. Select **My Account** in the top-right drop-down navigation, then open
+2. Select **Account settings** in the top-right drop-down navigation, then open
 the **Linked Accounts** section.
 @y
-2. Select **My Account** in the top-right drop-down navigation, then open
+2. Select **Account settings** in the top-right drop-down navigation, then open
 the **Linked Accounts** section.
 @z
 

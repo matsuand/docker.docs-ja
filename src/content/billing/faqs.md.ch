@@ -1,26 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Billing FAQs
 description: Frequently asked questions related to billing
 keywords: billing, renewal, payments, faq
-tags: [FAQ]
----
 @y
----
-title: Billing FAQs
+title: 支払いに関する FAQ
 description: Frequently asked questions related to billing
 keywords: billing, renewal, payments, faq
-tags: [FAQ]
----
 @z
 
 @x
 For more information on billing, see [Billing and payments](_index.md).
 @y
-For more information on billing, see [Billing and payments](_index.md).
+支払いに関する詳細は [Billing and payments](_index.md) を参照してください。
 @z
 
 @x
@@ -56,7 +52,7 @@ For more information on billing, see [Billing and payments](_index.md).
 @x
 United States dollar (USD).
 @y
-United States dollar (USD).
+US ドル (USD) です。
 @z
 
 @x
@@ -91,6 +87,36 @@ Docker also sends an email notification `Action Required - Credit Card Payment F
 Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
 @y
 Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+@z
+
+@x
+### Does Docker collect sales tax and/or VAT?
+@y
+### Does Docker collect sales tax and/or VAT?
+@z
+
+@x
+Starting July 1, 2024, Docker will begin collecting sales tax on subscription fees in compliance with state regulations for customers in the United States. For global customers subject to VAT, the implementation will start rolling out on July 1, 2024. Note that while the rollout begins on this date, VAT charges may not apply to all applicable subscriptions immediately.
+@y
+Starting July 1, 2024, Docker will begin collecting sales tax on subscription fees in compliance with state regulations for customers in the United States. For global customers subject to VAT, the implementation will start rolling out on July 1, 2024. Note that while the rollout begins on this date, VAT charges may not apply to all applicable subscriptions immediately.
+@z
+
+@x
+To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](/billing/core-billing/details/).
+@y
+To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](__SUBDIR__/billing/core-billing/details/).
+@z
+
+@x
+### How do I certify my tax exempt status?
+@y
+### How do I certify my tax exempt status?
+@z
+
+@x
+If you're exempt from sales tax, you can register a valid tax exemption certificate with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
+@y
+If you're exempt from sales tax, you can register a valid tax exemption certificate with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
 @z
 
 @x

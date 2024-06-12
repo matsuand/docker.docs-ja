@@ -53,10 +53,10 @@ To install Docker Desktop successfully, you must:
 
 @x
 - Meet the [system requirements](linux-install.md#general-system-requirements).
-- Have a 64-bit version of either Fedora 38 or Fedora 39.
+- Have a 64-bit version of Fedora 39 or Fedora 40.
 @y
 - Meet the [system requirements](linux-install.md#general-system-requirements).
-- Have a 64-bit version of either Fedora 38 or Fedora 39.
+- Have a 64-bit version of Fedora 39 or Fedora 40.
 @z
 
 @x

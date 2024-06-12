@@ -16,51 +16,27 @@ Guides:
 @z
 
 @x
-- sectiontitle: Get started
+- sectiontitle: "Getting started"
   section:
-  - title: "Part 1: Overview"
-    path: /get-started/
-  - title: "Part 2: Containerize an application"
-    path: /get-started/02_our_app/
-  - title: "Part 3: Update the application"
-    path: /get-started/03_updating_app/
-  - title: "Part 4: Share the application"
-    path: /get-started/04_sharing_app/
-  - title: "Part 5: Persist the DB"
-    path: /get-started/05_persisting_data/
-  - title: "Part 6: Use bind mounts"
-    path: /get-started/06_bind_mounts/
-  - title: "Part 7: Multi-container apps"
-    path: /get-started/07_multi_container/
-  - title: "Part 8: Use Docker Compose"
-    path: /get-started/08_using_compose/
-  - title: "Part 9: Image-building best practices"
-    path: /get-started/09_image_best/
-  - title: "Part 10: What next?"
-    path: /get-started/11_what_next/
+  - title: "Get Docker Desktop"
+    path: /guides/getting-started/get-docker-desktop/
+  - title: "Develop with containers"
+    path: /guides/getting-started/develop-with-containers/
+  - title: "Build and push your first image"
+    path: /guides/getting-started/build-and-push-first-image/
+  - title: "What's next"
+    path: /guides/getting-started/whats-next/
 @y
-- sectiontitle: はじめよう
+- sectiontitle: "はじめよう"
   section:
-  - title: "1部: 概要"
-    path: __SUBDIR__/get-started/
-  - title: "2部: アプリのコンテナー化"
-    path: __SUBDIR__/get-started/02_our_app/
-  - title: "3部: アプリの更新"
-    path: __SUBDIR__/get-started/03_updating_app/
-  - title: "4部: アプリの共有"
-    path: __SUBDIR__/get-started/04_sharing_app/
-  - title: "5部: DB への保存"
-    path: __SUBDIR__/get-started/05_persisting_data/
-  - title: "6部: バインドマウントの利用"
-    path: __SUBDIR__/get-started/06_bind_mounts/
-  - title: "7部: マルチコンテナーアプリ"
-    path: __SUBDIR__/get-started/07_multi_container/
-  - title: "8部: Docker Compose の利用"
-    path: __SUBDIR__/get-started/08_using_compose/
-  - title: "9部: イメージビルドのベストプラクティス"
-    path: __SUBDIR__/get-started/09_image_best/
-  - title: "10部: 次は何？"
-    path: __SUBDIR__/get-started/11_what_next/
+  - title: "Docker Desktop の入手"
+    path: __SUBDIR__/guides/getting-started/get-docker-desktop/
+  - title: "Develop with containers"
+    path: __SUBDIR__/guides/getting-started/develop-with-containers/
+  - title: "Build and push your first image"
+    path: __SUBDIR__/guides/getting-started/build-and-push-first-image/
+  - title: "What's next"
+    path: __SUBDIR__/guides/getting-started/whats-next/
 @z
 
 @x
@@ -590,8 +566,6 @@ Guides:
     path: /get-started/swarm-deploy/
   - title: Cloud integrations
     path: /cloud/
-- path: /get-started/resources/
-  title: "Educational resources"
 @y
 - sectiontitle: デプロイとオーケストレーション
   section:
@@ -603,8 +577,58 @@ Guides:
     path: __SUBDIR__/get-started/swarm-deploy/
   - title: クラウドインテグレーション
     path: __SUBDIR__/cloud/
-- path: __SUBDIR__/get-started/resources/
-  title: "学習情報"
+@z
+
+@x
+- sectiontitle: Docker workshop
+  section:
+  - title: "Part 1: Overview"
+    path: /get-started/
+  - title: "Part 2: Containerize an application"
+    path: /get-started/02_our_app/
+  - title: "Part 3: Update the application"
+    path: /get-started/03_updating_app/
+  - title: "Part 4: Share the application"
+    path: /get-started/04_sharing_app/
+  - title: "Part 5: Persist the DB"
+    path: /get-started/05_persisting_data/
+@y
+- sectiontitle: Docker ワークショップ
+  section:
+  - title: "1部: 概要"
+    path: __SUBDIR__/get-started/
+  - title: "2部: アプリのコンテナー化"
+    path: __SUBDIR__/get-started/02_our_app/
+  - title: "3部: アプリの更新"
+    path: __SUBDIR__/get-started/03_updating_app/
+  - title: "4部: アプリの共有"
+    path: __SUBDIR__/get-started/04_sharing_app/
+  - title: "5部: DB への保存"
+    path: __SUBDIR__/get-started/05_persisting_data/
+@z
+
+@x
+  - title: "Part 6: Use bind mounts"
+    path: /get-started/06_bind_mounts/
+  - title: "Part 7: Multi-container apps"
+    path: /get-started/07_multi_container/
+  - title: "Part 8: Use Docker Compose"
+    path: /get-started/08_using_compose/
+  - title: "Part 9: Image-building best practices"
+    path: /get-started/09_image_best/
+  - title: "Part 10: What next?"
+    path: /get-started/11_what_next/
+@y
+  - title: "6部: バインドマウントの利用"
+    path: __SUBDIR__/get-started/06_bind_mounts/
+  - title: "7部: マルチコンテナーアプリ"
+    path: __SUBDIR__/get-started/07_multi_container/
+  - title: "8部: Docker Compose の利用"
+    path: __SUBDIR__/get-started/08_using_compose/
+  - title: "9部: イメージビルドのベストプラクティス"
+    path: __SUBDIR__/get-started/09_image_best/
+  - title: "10部: 次は何？"
+    path: __SUBDIR__/get-started/11_what_next/
 @z
 
 @x
@@ -1894,8 +1918,8 @@ Reference:
     title: StageNameCasing
   - path: /reference/build-checks/from-as-casing/
     title: FromAsCasing
-  - path: /reference/build-checks/no-empty-continuations/
-    title: NoEmptyContinuations
+  - path: /reference/build-checks/no-empty-continuation/
+    title: NoEmptyContinuation
   - path: /reference/build-checks/consistent-instruction-casing/
     title: ConsistentInstructionCasing
 @y
@@ -1907,8 +1931,8 @@ Reference:
     title: StageNameCasing
   - path: __SUBDIR__/reference/build-checks/from-as-casing/
     title: FromAsCasing
-  - path: __SUBDIR__/reference/build-checks/no-empty-continuations/
-    title: NoEmptyContinuations
+  - path: __SUBDIR__/reference/build-checks/no-empty-continuation/
+    title: NoEmptyContinuation
   - path: __SUBDIR__/reference/build-checks/consistent-instruction-casing/
     title: ConsistentInstructionCasing
 @z
@@ -5220,7 +5244,7 @@ Manuals:
   - path: __SUBDIR__/billing/scout-billing/
     title: Docker Scout billing
   - path: __SUBDIR__/billing/faqs/
-    title: Billing FAQs
+    title: 支払いに関する FAQ
 @z
 
 @x

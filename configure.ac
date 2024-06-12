@@ -181,6 +181,8 @@ AC_CONFIG_FILES([
 	src/content/guides/docker-concepts/running-containers/images/Makefile
 	src/content/guides/docker-concepts/the-basics/Makefile
 	src/content/guides/docker-concepts/the-basics/images/Makefile
+	src/content/guides/getting-started/Makefile
+	src/content/guides/getting-started/images/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/Makefile
@@ -247,6 +249,7 @@ AC_CONFIG_FILES([
 	src/content/scout/integrations/environment/Makefile
 	src/content/scout/integrations/registry/Makefile
 	src/content/scout/integrations/source-code-management/Makefile
+	src/content/scout/integrations/team-collaboration/Makefile
 	src/content/scout/policy/Makefile
 	src/content/scout/release-notes/Makefile
 	src/content/security/Makefile

@@ -2,26 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Overview of the get started guide
+title: Overview of the Docker workshop
 keywords: docker basics, how to start a docker container, container settings, setup
   docker, how to setup docker, setting up docker, docker container guide, how to get
   started with docker
-description: Get started with the Docker basics in this comprehensive overview, You'll
+description: Get started with the Docker basics in this workshop, You'll
   learn about containers, images, and how to containerize your first application.
 @y
-title: スタートガイド概要
+title: Docker ワークショップ概要
 keywords: docker basics, how to start a docker container, container settings, setup
   docker, how to setup docker, setting up docker, docker container guide, how to get
   started with docker
-description: Get started with the Docker basics in this comprehensive overview, You'll
+description: Get started with the Docker basics in this workshop, You'll
   learn about containers, images, and how to containerize your first application.
 @z
 
 @x
-This guide contains step-by-step instructions on how to get started with Docker. This guide shows you how to:
+This 45-minute workshop contains step-by-step instructions on how to get started with Docker. This workshop shows you how to:
 @y
-このページでは順を追って作業を進めていくことで Docker を学んでいきます。
-本ガイドで学ぶのは以下の内容です。
+This 45-minute workshop contains step-by-step instructions on how to get started with Docker. This workshop shows you how to:
 @z
 
 @x

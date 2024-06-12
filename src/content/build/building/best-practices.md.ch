@@ -268,12 +268,34 @@ Also consider [pinning base image versions](#pin-base-image-versions).
 @x
 To exclude files not relevant to the build, without restructuring your source
 repository, use a `.dockerignore` file. This file supports exclusion patterns
-similar to `.gitignore` files. For information on creating one, see
-[Dockerignore file](../../build/building/context.md#dockerignore-files).
+similar to `.gitignore` files.
 @y
 To exclude files not relevant to the build, without restructuring your source
 repository, use a `.dockerignore` file. This file supports exclusion patterns
-similar to `.gitignore` files. For information on creating one, see
+similar to `.gitignore` files.
+@z
+
+@x
+For example, to exclude all files with the `.md` extension:
+@y
+For example, to exclude all files with the `.md` extension:
+@z
+
+@x
+```plaintext
+*.md
+```
+@y
+```plaintext
+*.md
+```
+@z
+
+@x
+For information on creating one, see
+[Dockerignore file](../../build/building/context.md#dockerignore-files).
+@y
+For information on creating one, see
 [Dockerignore file](../../build/building/context.md#dockerignore-files).
 @z
 
@@ -778,33 +800,11 @@ maintainable.
 @z
 
 @x
-For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../reference/dockerfile.md#run).
+For example, you can chain commands with the `&&` operator, and use
+use escape characters to break long commands into multiple lines.
 @y
-For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../reference/dockerfile.md#run).
-@z
-
-@x
-#### apt-get
-@y
-#### apt-get
-@z
-
-@x
-Probably the most common use case for `RUN` is an application of `apt-get`.
-Because it installs packages, the `RUN apt-get` command has several counter-intuitive behaviors to
-look out for.
-@y
-Probably the most common use case for `RUN` is an application of `apt-get`.
-Because it installs packages, the `RUN apt-get` command has several counter-intuitive behaviors to
-look out for.
-@z
-
-@x
-Always combine `RUN apt-get update` with `apt-get install` in the same `RUN`
-statement. For example:
-@y
-Always combine `RUN apt-get update` with `apt-get install` in the same `RUN`
-statement. For example:
+For example, you can chain commands with the `&&` operator, and use
+use escape characters to break long commands into multiple lines.
 @z
 
 @x
@@ -812,16 +812,98 @@ statement. For example:
 RUN apt-get update && apt-get install -y \
     package-bar \
     package-baz \
-    package-foo  \
-    && rm -rf /var/lib/apt/lists/*
+    package-foo
 ```
 @y
 ```dockerfile
 RUN apt-get update && apt-get install -y \
     package-bar \
     package-baz \
-    package-foo  \
-    && rm -rf /var/lib/apt/lists/*
+    package-foo
+```
+@z
+
+@x
+By default, backslash escapes a newline character, but you can change it with
+the [`escape` directive](../../reference/dockerfile.md#escape).
+@y
+By default, backslash escapes a newline character, but you can change it with
+the [`escape` directive](../../reference/dockerfile.md#escape).
+@z
+
+@x
+You can also use here documents to run multiple commands without chaining them
+with a pipeline operator:
+@y
+You can also use here documents to run multiple commands without chaining them
+with a pipeline operator:
+@z
+
+@x
+```dockerfile
+RUN <<EOF
+apt-get update
+apt-get install -y \
+    package-bar \
+    package-baz \
+    package-foo
+EOF
+```
+@y
+```dockerfile
+RUN <<EOF
+apt-get update
+apt-get install -y \
+    package-bar \
+    package-baz \
+    package-foo
+EOF
+```
+@z
+
+@x
+For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../reference/dockerfile.md#run).
+@y
+For more information about `RUN`, see [Dockerfile reference for the RUN instruction](../../reference/dockerfile.md#run).
+@z
+
+@x
+#### apt-get
+@y
+#### apt-get
+@z
+
+@x
+One common use case for `RUN` instructions in Debian-based images is to install
+software using `apt-get`. Because `apt-get` installs packages, the `RUN
+apt-get` command has several counter-intuitive behaviors to look out for.
+@y
+One common use case for `RUN` instructions in Debian-based images is to install
+software using `apt-get`. Because `apt-get` installs packages, the `RUN
+apt-get` command has several counter-intuitive behaviors to look out for.
+@z
+
+@x
+Always combine `RUN apt-get update` with `apt-get install` in the same `RUN`
+statement. For example:
+@y
+Always combine `RUN apt-get update` with `apt-get install` in the same `RUN`
+statement. For example:
+@z
+
+@x
+```dockerfile
+RUN apt-get update && apt-get install -y \
+    package-bar \
+    package-baz \
+    package-foo
+```
+@y
+```dockerfile
+RUN apt-get update && apt-get install -y \
+    package-bar \
+    package-baz \
+    package-foo
 ```
 @z
 
@@ -958,7 +1040,7 @@ RUN apt-get update && apt-get install -y \
     ruby1.9.1 \
     ruby1.9.1-dev \
     s3cmd=1.1.* \
- && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 ```
 @y
 ```dockerfile
@@ -975,7 +1057,7 @@ RUN apt-get update && apt-get install -y \
     ruby1.9.1 \
     ruby1.9.1-dev \
     s3cmd=1.1.* \
- && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 ```
 @z
 

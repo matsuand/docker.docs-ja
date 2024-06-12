@@ -12,7 +12,7 @@ bases = \
 	legacy-key-value-format.md          \
 	maintainer-deprecated.md            \
 	multiple-instructions-disallowed.md \
-	no-empty-continuations.md           \
+	no-empty-continuation.md            \
 	reserved-stage-name.md              \
 	stage-name-casing.md                \
 	undefined-arg-in-from.md            \

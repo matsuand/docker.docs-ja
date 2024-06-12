@@ -2,19 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: NoEmptyContinuations
+title: NoEmptyContinuation
 description: Empty continuation lines will become errors in a future release
-aliases:
-  - /go/dockerfile/rule/no-empty-continuations/
----
 @y
----
-title: NoEmptyContinuations
+title: NoEmptyContinuation
 description: Empty continuation lines will become errors in a future release
-aliases:
-  - /go/dockerfile/rule/no-empty-continuations/
----
 @z
 
 @x

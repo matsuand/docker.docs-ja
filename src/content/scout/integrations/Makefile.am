@@ -1,7 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = ci code-quality environment registry source-code-management
+SUBDIRS = ci code-quality environment registry source-code-management \
+	team-collaboration
 
 bases = \
 	_index.md

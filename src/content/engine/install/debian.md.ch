@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to install Docker Engine on Debian. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, debian, install, uninstall, install debian, docker engine, install docker engine, upgrade, update
 title: Install Docker Engine on Debian
-toc_max: 4
-aliases:
-- /engine/installation/debian/
-- /engine/installation/linux/debian/
-- /engine/installation/linux/docker-ce/debian/
-- /install/linux/docker-ce/debian/
-download-url-base: https://download.docker.com/linux/debian
----
 @y
----
 description: Learn how to install Docker Engine on Debian. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, debian, install, uninstall, install debian, docker engine, install docker engine, upgrade, update
-title: Install Docker Engine on Debian
-toc_max: 4
-aliases:
-- /engine/installation/debian/
-- /engine/installation/linux/debian/
-- /engine/installation/linux/docker-ce/debian/
-- /install/linux/docker-ce/debian/
-download-url-base: https://download.docker.com/linux/debian
----
+title: Debian への Docker Engine インストール
 @z
 
 @x
@@ -44,7 +26,7 @@ To get started with Docker Engine on Debian, make sure you
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -96,7 +78,7 @@ and ppc64le (ppc64el) architectures.
 @x
 ### Uninstall old versions
 @y
-### Uninstall old versions
+### 旧バージョンのアンインストール {#uninstall-old-versions}
 @z
 
 @x
@@ -151,15 +133,7 @@ Run the following command to uninstall all conflicting packages:
 Run the following command to uninstall all conflicting packages:
 @z
 
-@x
-```console
-$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-@y
-```console
-$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-@z
+% snip command...
 
 @x
 `apt-get` might report that you have none of these packages installed.
@@ -182,7 +156,7 @@ clean installation, and prefer to clean up any existing data, read the
 @x
 ## Installation methods
 @y
-## Installation methods
+## インストール方法 {#installation-methods}
 @z
 
 @x
@@ -245,40 +219,15 @@ Docker from the repository.
 1. Set up Docker's `apt` repository.
 @z
 
-@x
-   ```bash
+@x comment in command
    # Add Docker's official GPG key:
-   sudo apt-get update
-   sudo apt-get install ca-certificates curl
-   sudo install -m 0755 -d /etc/apt/keyrings
-   sudo curl -fsSL {{% param "download-url-base" %}}/gpg -o /etc/apt/keyrings/docker.asc
-   sudo chmod a+r /etc/apt/keyrings/docker.asc
 @y
-   ```bash
    # Add Docker's official GPG key:
-   sudo apt-get update
-   sudo apt-get install ca-certificates curl
-   sudo install -m 0755 -d /etc/apt/keyrings
-   sudo curl -fsSL {{% param "download-url-base" %}}/gpg -o /etc/apt/keyrings/docker.asc
-   sudo chmod a+r /etc/apt/keyrings/docker.asc
-@z
-
+@x
 @x
    # Add the repository to Apt sources:
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
-     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt-get update
-   ```
 @y
    # Add the repository to Apt sources:
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
-     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt-get update
-   ```
 @z
 
 @x
@@ -329,15 +278,7 @@ Docker from the repository.
    To install the latest version, run:
 @z
 
-@x
-   ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -355,26 +296,10 @@ Docker from the repository.
    available versions in the repository:
 @z
 
-@x
-   ```console
+@x comment in command
    # List the available versions:
-   $ apt-cache madison docker-ce | awk '{ print $3 }'
 @y
-   ```console
    # List the available versions:
-   $ apt-cache madison docker-ce | awk '{ print $3 }'
-@z
-
-@x
-   5:26.1.0-1~debian.12~bookworm
-   5:26.0.2-1~debian.12~bookworm
-   ...
-   ```
-@y
-   5:26.1.0-1~debian.12~bookworm
-   5:26.0.2-1~debian.12~bookworm
-   ...
-   ```
 @z
 
 @x
@@ -383,17 +308,7 @@ Docker from the repository.
    Select the desired version and install:
 @z
 
-@x
-   ```console
-   $ VERSION_STRING=5:26.1.0-1~debian.12~bookworm
-   $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ VERSION_STRING=5:26.1.0-1~debian.12~bookworm
-   $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -411,15 +326,7 @@ Docker from the repository.
    image:
 @z
 
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -525,23 +432,7 @@ download a new file each time you want to upgrade Docker Engine.
    where you downloaded the Docker packages.
 @z
 
-@x
-   ```console
-   $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
-     ./docker-ce_<version>_<arch>.deb \
-     ./docker-ce-cli_<version>_<arch>.deb \
-     ./docker-buildx-plugin_<version>_<arch>.deb \
-     ./docker-compose-plugin_<version>_<arch>.deb
-   ```
-@y
-   ```console
-   $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
-     ./docker-ce_<version>_<arch>.deb \
-     ./docker-ce-cli_<version>_<arch>.deb \
-     ./docker-buildx-plugin_<version>_<arch>.deb \
-     ./docker-compose-plugin_<version>_<arch>.deb
-   ```
-@z
+% snip command...
 
 @x
    The Docker daemon starts automatically.
@@ -557,17 +448,7 @@ download a new file each time you want to upgrade Docker Engine.
    `hello-world` image:
 @z
 
-@x
-   ```console
-   $ sudo service docker start
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo service docker start
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -612,7 +493,7 @@ To upgrade Docker Engine, download the newer package files and repeat the
 @x
 ## Uninstall Docker Engine
 @y
-## Uninstall Docker Engine
+## Docker Engine のアンインストール {#uninstall-docker-engine}
 @z
 
 @x
@@ -621,15 +502,7 @@ To upgrade Docker Engine, download the newer package files and repeat the
 1.  Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @z
 
-@x
-    ```console
-    $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-    ```
-@y
-    ```console
-    $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-    ```
-@z
+% snip command...
 
 @x
 2.  Images, containers, volumes, or custom configuration files on your host
@@ -639,17 +512,7 @@ To upgrade Docker Engine, download the newer package files and repeat the
     aren't automatically removed. To delete all images, containers, and volumes:
 @z
 
-@x
-    ```console
-    $ sudo rm -rf /var/lib/docker
-    $ sudo rm -rf /var/lib/containerd
-    ```
-@y
-    ```console
-    $ sudo rm -rf /var/lib/docker
-    $ sudo rm -rf /var/lib/containerd
-    ```
-@z
+% snip command...
 
 @x
 You have to delete any edited configuration files manually.
@@ -660,7 +523,7 @@ You have to delete any edited configuration files manually.
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x

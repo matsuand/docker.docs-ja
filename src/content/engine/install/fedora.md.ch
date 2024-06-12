@@ -1,36 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: Learn how to install Docker Engine on Fedora. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, fedora, install fedora, install docker engine, rpm, install, uninstall, upgrade,
   update
 title: Install Docker Engine on Fedora
-toc_max: 4
-aliases:
-- /engine/installation/fedora/
-- /engine/installation/linux/fedora/
-- /engine/installation/linux/docker-ce/fedora/
-- /install/linux/docker-ce/fedora/
-download-url-base: https://download.docker.com/linux/fedora
----
 @y
----
 description: Learn how to install Docker Engine on Fedora. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, fedora, install fedora, install docker engine, rpm, install, uninstall, upgrade,
   update
-title: Install Docker Engine on Fedora
-toc_max: 4
-aliases:
-- /engine/installation/fedora/
-- /engine/installation/linux/fedora/
-- /engine/installation/linux/docker-ce/fedora/
-- /install/linux/docker-ce/fedora/
-download-url-base: https://download.docker.com/linux/fedora
----
+title: Fedora への Docker Engine インストール
 @z
 
 @x
@@ -46,7 +30,7 @@ To get started with Docker Engine on Fedora, make sure you
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -64,11 +48,9 @@ Fedora versions:
 @z
 
 @x
-- Fedora 38 (EOL: [May 14, 2024](https://fedorapeople.org/groups/schedule/f-38/f-38-key-tasks.html))
 - Fedora 39
 - Fedora 40
 @y
-- Fedora 38 (EOL: [May 14, 2024](https://fedorapeople.org/groups/schedule/f-38/f-38-key-tasks.html))
 - Fedora 39
 - Fedora 40
 @z
@@ -76,7 +58,7 @@ Fedora versions:
 @x
 ### Uninstall old versions
 @y
-### Uninstall old versions
+### 旧バージョンのアンインストール {#uninstall-old-versions}
 @z
 
 @x
@@ -89,33 +71,7 @@ Uninstall any such older versions before attempting to install a new version,
 along with associated dependencies.
 @z
 
-@x
-```console
-$ sudo dnf remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-selinux \
-                  docker-engine-selinux \
-                  docker-engine
-```
-@y
-```console
-$ sudo dnf remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-selinux \
-                  docker-engine-selinux \
-                  docker-engine
-```
-@z
+% snip command...
 
 @x
 `dnf` might report that you have none of these packages installed.
@@ -134,7 +90,7 @@ automatically removed when you uninstall Docker.
 @x
 ## Installation methods
 @y
-## Installation methods
+## インストール方法 {#installation-methods}
 @z
 
 @x
@@ -194,7 +150,7 @@ Docker from the repository.
 @x
 #### Set up the repository
 @y
-#### Set up the repository
+#### リポジトリの設定 {#set-up-the-repository}
 @z
 
 @x
@@ -205,22 +161,12 @@ Install the `dnf-plugins-core` package (which provides the commands to manage
 your DNF repositories) and set up the repository.
 @z
 
-@x
-```console
-$ sudo dnf -y install dnf-plugins-core
-$ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce.repo
-```
-@y
-```console
-$ sudo dnf -y install dnf-plugins-core
-$ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce.repo
-```
-@z
+% snip command...
 
 @x
 #### Install Docker Engine
 @y
-#### Install Docker Engine
+#### Docker Engine のインストール {#install-docker-engine}
 @z
 
 @x
@@ -243,15 +189,7 @@ $ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    To install the latest version, run:
 @z
 
-@x
-   ```console
-   $ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    If prompted to accept the GPG key, verify that the fingerprint matches
@@ -285,25 +223,7 @@ $ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    the repository:
 @z
 
-@x
-   ```console
-   $ dnf list docker-ce --showduplicates | sort -r
-@y
-   ```console
-   $ dnf list docker-ce --showduplicates | sort -r
-@z
-
-@x
-   docker-ce.x86_64    3:26.1.0-1.fc40    docker-ce-stable
-   docker-ce.x86_64    3:26.0.2-1.fc40    docker-ce-stable
-   <...>
-   ```
-@y
-   docker-ce.x86_64    3:26.1.0-1.fc40    docker-ce-stable
-   docker-ce.x86_64    3:26.0.2-1.fc40    docker-ce-stable
-   <...>
-   ```
-@z
+% snip command...
 
 @x
    The list returned depends on which repositories are enabled, and is specific
@@ -331,15 +251,7 @@ $ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    command to install:
 @z
 
-@x
-   ```console
-   $ sudo dnf -y install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo dnf -y install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    This command installs Docker, but it doesn't start Docker. It also creates a
@@ -363,15 +275,7 @@ $ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 2. Start Docker.
 @z
 
-@x
-   ```console
-   $ sudo systemctl start docker
-   ```
-@y
-   ```console
-   $ sudo systemctl start docker
-   ```
-@z
+% snip command...
 
 @x
 3. Verify that the Docker Engine installation is successful by running the
@@ -381,15 +285,7 @@ $ sudo dnf config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    `hello-world` image.
 @z
 
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -414,7 +310,7 @@ You have now successfully installed and started Docker Engine.
 @x
 #### Upgrade Docker Engine
 @y
-#### Upgrade Docker Engine
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
@@ -428,7 +324,7 @@ choosing the new version you want to install.
 @x
 ### Install from a package
 @y
-### Install from a package
+### パッケージからのインストール {#install-from-a-package}
 @z
 
 @x
@@ -461,15 +357,7 @@ download a new file each time you want to upgrade Docker Engine.
    the Docker package.
 @z
 
-@x
-   ```console
-   $ sudo dnf -y install /path/to/package.rpm
-   ```
-@y
-   ```console
-   $ sudo dnf -y install /path/to/package.rpm
-   ```
-@z
+% snip command...
 
 @x
    Docker is installed but not started. The `docker` group is created, but no
@@ -482,18 +370,10 @@ download a new file each time you want to upgrade Docker Engine.
 @x
 3. Start Docker.
 @y
-3. Start Docker.
+3. Docker を起動します。
 @z
 
-@x
-   ```console
-   $ sudo systemctl start docker
-   ```
-@y
-   ```console
-   $ sudo systemctl start docker
-   ```
-@z
+% snip command...
 
 @x
 4. Verify that the Docker Engine installation is successful by running the
@@ -503,15 +383,7 @@ download a new file each time you want to upgrade Docker Engine.
    `hello-world` image.
 @z
 
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -536,7 +408,7 @@ You have now successfully installed and started Docker Engine.
 @x
 #### Upgrade Docker Engine
 @y
-#### Upgrade Docker Engine
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
@@ -544,9 +416,8 @@ To upgrade Docker Engine, download the newer package files and repeat the
 [installation procedure](#install-from-a-package), using `dnf -y upgrade`
 instead of `dnf -y install`, and point to the new files.
 @y
-To upgrade Docker Engine, download the newer package files and repeat the
-[installation procedure](#install-from-a-package), using `dnf -y upgrade`
-instead of `dnf -y install`, and point to the new files.
+Docker Engine をアップグレードするには、より最新のパッケージファイルをダウンロードして [インストール手順](#install-from-a-package) を再度行います。
+その際には `dnf -y install` ではなく `dnf -y upgrade` を用いて新たなファイルを指定します。
 @z
 
 @x
@@ -558,7 +429,7 @@ instead of `dnf -y install`, and point to the new files.
 @x
 ## Uninstall Docker Engine
 @y
-## Uninstall Docker Engine
+## Docker Engine のアンインストール {#uninstall-docker-engine}
 @z
 
 @x
@@ -567,15 +438,7 @@ instead of `dnf -y install`, and point to the new files.
 1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @z
 
-@x
-   ```console
-   $ sudo dnf remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@y
-   ```console
-   $ sudo dnf remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@z
+% snip command...
 
 @x
 2. Images, containers, volumes, or custom configuration files on your host
@@ -585,28 +448,18 @@ instead of `dnf -y install`, and point to the new files.
    aren't automatically removed. To delete all images, containers, and volumes:
 @z
 
-@x
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@y
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@z
+% snip command...
 
 @x
 You have to delete any edited configuration files manually.
 @y
-You have to delete any edited configuration files manually.
+手動で編集した設定ファイルは削除する必要があります。
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x

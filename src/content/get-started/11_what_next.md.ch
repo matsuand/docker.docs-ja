@@ -3,14 +3,14 @@
 
 @x
 ---
-title: What next after getting started
+title: What next after the Docker workshop
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making sure you have more ideas of what you could do next with your application
 ---
 @y
 ---
-title: What next after getting started
+title: What next after the Docker workshop
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making sure you have more ideas of what you could do next with your application
@@ -18,9 +18,9 @@ description: Making sure you have more ideas of what you could do next with your
 @z
 
 @x
-Although you're done with the get started guide, there's still a lot more to learn about containers.
+Although you're done with the workshop, there's still a lot more to learn about containers.
 @y
-Although you're done with the get started guide, there's still a lot more to learn about containers.
+Although you're done with the workshop, there's still a lot more to learn about containers.
 @z
 
 @x

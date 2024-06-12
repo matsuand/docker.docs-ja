@@ -74,9 +74,9 @@ any time.
 @z
 
 @x
-2. Select your avatar in the top-right corner and from the drop-down menu select **My Account**.
+2. Select your avatar in the top-right corner and from the drop-down menu select **Account settings**.
 @y
-2. Select your avatar in the top-right corner and from the drop-down menu select **My Account**.
+2. Select your avatar in the top-right corner and from the drop-down menu select **Account settings**.
 @z
 
 @x
@@ -174,11 +174,11 @@ You can rename, activate, deactivate, or delete a token as needed.
 @z
 
 @x
-1. Access your tokens under **My Account > Security**.
+1. Access your tokens under **Account settings > Security**.
    This page shows an overview of all your tokens, and lists if the token was generated manually or if it was [auto-generated](#auto-generated-tokens). You can also view the number
    of tokens that are activated and deactivated in the toolbar.
 @y
-1. Access your tokens under **My Account > Security**.
+1. Access your tokens under **Account settings > Security**.
    This page shows an overview of all your tokens, and lists if the token was generated manually or if it was [auto-generated](#auto-generated-tokens). You can also view the number
    of tokens that are activated and deactivated in the toolbar.
 @z

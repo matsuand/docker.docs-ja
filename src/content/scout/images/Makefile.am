@@ -23,6 +23,7 @@ copyfiles = \
 	scout-metrics-grafana-vulns.png  \
 	scout-metrics-prom-target.png    \
 	scout-policy-eval-ci.webp        \
+	scout-slack-notification.png     \
 	scout-sq-commit-sha.webp
 
 include $(top_srcdir)/build-aux/common.mk

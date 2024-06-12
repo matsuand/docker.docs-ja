@@ -57,12 +57,12 @@ keywords: build, buildx, buildkit
 
 @x
 - title: Build Cloud
-  description: Orchestrate your builds with Bake.
+  description: Build your images faster in the cloud.
   icon: /assets/images/logo-build-cloud.svg
   link: /build/cloud/
 @y
 - title: Build Cloud
-  description: Orchestrate your builds with Bake.
+  description: Build your images faster in the cloud.
   icon: /assets/images/logo-build-cloud.svg
   link: __SUBDIR__/build/cloud/
 @z

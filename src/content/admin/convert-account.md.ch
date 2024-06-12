@@ -146,9 +146,9 @@ Consider the following effects of converting your account:
 @z
 
 @x
-2. In the top-right of Docker Hub, select your account name and then from the drop-down menu, select **My Account**.
+2. In the top-right of Docker Hub, select your account name and then from the drop-down menu, select **Account settings**.
 @y
-2. In the top-right of Docker Hub, select your account name and then from the drop-down menu, select **My Account**.
+2. In the top-right of Docker Hub, select your account name and then from the drop-down menu, select **Account settings**.
 @z
 
 @x

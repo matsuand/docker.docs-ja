@@ -154,9 +154,9 @@ Docker Compose can interpolate variables into your Compose file from multiple so
 @z
 
 @x
-An `.env` file in Docker Compose is a text file used to define variables that should be made available to Docker containers when running `docker compose up`. This file typically contains key-value pairs of variables, and it lets you  centralize and manage configuration in one place. The `.env` file is useful if you have multiple variables you need to store.
+An `.env` file in Docker Compose is a text file used to define variables that should be made available for interpolation when running `docker compose up`. This file typically contains key-value pairs of variables, and it lets you  centralize and manage configuration in one place. The `.env` file is useful if you have multiple variables you need to store.
 @y
-An `.env` file in Docker Compose is a text file used to define variables that should be made available to Docker containers when running `docker compose up`. This file typically contains key-value pairs of variables, and it lets you  centralize and manage configuration in one place. The `.env` file is useful if you have multiple variables you need to store.
+An `.env` file in Docker Compose is a text file used to define variables that should be made available for interpolation when running `docker compose up`. This file typically contains key-value pairs of variables, and it lets you  centralize and manage configuration in one place. The `.env` file is useful if you have multiple variables you need to store.
 @z
 
 @x
@@ -216,13 +216,35 @@ services:
 @z
 
 @x
+When same variable is declare by multiple sources, precedence applies as:
+@y
+When same variable is declare by multiple sources, precedence applies as:
+@z
+
+@x
+1. Variables from shell environment
+2. If `--env-file` is not set, variables set by an `.env` file in local working directory (`PWD`)
+3. Variables from file set by `--env-file` or an `.env` file in project directory
+@y
+1. Variables from shell environment
+2. If `--env-file` is not set, variables set by an `.env` file in local working directory (`PWD`)
+3. Variables from file set by `--env-file` or an `.env` file in project directory
+@z
+
+@x
+You can check variables and values used by Compose to interpolate the compose model by running `docker compose config --environment`.
+@y
+You can check variables and values used by Compose to interpolate the compose model by running `docker compose config --environment`.
+@z
+
+@x
 #### Additional information 
 @y
 #### Additional information 
 @z
 
 @x
-- If you define an environment variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
+- If you define a variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
    ```yaml
     services:
       webapp:
@@ -232,7 +254,7 @@ services:
    ```
    Docker Compose replaces `${DEBUG}` with the value from the `.env` file
 @y
-- If you define an environment variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
+- If you define a variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
    ```yaml
     services:
       webapp:
@@ -509,4 +531,72 @@ If an environment variable is not set, Compose substitutes with an empty string.
 > **Note**
 >
 > `postgres:` is not a valid image reference. Docker expects either a reference without a tag, like `postgres` which defaults to the latest image, or with a tag such as `postgres:15`.
+@z
+
+@x
+### local `.env` file _vs_ <project directory> `.env` file
+@y
+### local `.env` file _vs_ <project directory> `.env` file
+@z
+
+@x
+An `.env` file can also be used to declare [pre-defined environment variables](envvars.md) used to control Compose behavior and files to be loaded. When executed without an
+explicit `--env-file` flag, Compose will search for a `.env` file in working directory ([PWD](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-PWD)) and load values 
+both for self-configuration and interpolation. If those values define `COMPOSE_FILE` variable which results into project directory being set to another folder, 
+then the latter is also used to load a second `.env` file, which will have lower precedence. 
+@y
+An `.env` file can also be used to declare [pre-defined environment variables](envvars.md) used to control Compose behavior and files to be loaded. When executed without an
+explicit `--env-file` flag, Compose will search for a `.env` file in working directory ([PWD](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-PWD)) and load values 
+both for self-configuration and interpolation. If those values define `COMPOSE_FILE` variable which results into project directory being set to another folder, 
+then the latter is also used to load a second `.env` file, which will have lower precedence. 
+@z
+
+@x
+This mechanism makes it possible to invoke an existing Compose project with a custom set of variables as overrides, without the need to pass environment 
+variables by the command line.
+@y
+This mechanism makes it possible to invoke an existing Compose project with a custom set of variables as overrides, without the need to pass environment 
+variables by the command line.
+@z
+
+@x
+```console
+$ cat .env
+COMPOSE_FILE=../compose.yaml
+POSTGRES_VERSION=9.3
+@y
+```console
+$ cat .env
+COMPOSE_FILE=../compose.yaml
+POSTGRES_VERSION=9.3
+@z
+
+@x
+$ cat ../compose.yaml 
+services:
+  db:
+    image: "postgres:${POSTGRES_VERSION}"
+$ cat ../.env
+POSTGRES_VERSION=9.2
+@y
+$ cat ../compose.yaml 
+services:
+  db:
+    image: "postgres:${POSTGRES_VERSION}"
+$ cat ../.env
+POSTGRES_VERSION=9.2
+@z
+
+@x
+$ docker compose config
+services:
+  db:
+    image: "postgres:9.3"
+```
+@y
+$ docker compose config
+services:
+  db:
+    image: "postgres:9.3"
+```
 @z

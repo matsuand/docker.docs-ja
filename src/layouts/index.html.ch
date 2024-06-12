@@ -107,9 +107,9 @@
                 アプリケーションのコンテナー化についてその基本と利点を学びます。
 @z
 @x
-              <a href="/get-started/"
+              <a href="/guides/getting-started/get-docker-desktop/"
 @y
-              <a href="get-started/"
+              <a href="guides/getting-started/get-docker-desktop/"
 @z
 @x
                 Get started
