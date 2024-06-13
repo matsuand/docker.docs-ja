@@ -2,33 +2,20 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
----
 description: Learn how to create, manage, and use volumes instead of bind mounts for
   persisting data generated and used by Docker.
 title: Volumes
 keywords: docker compose volumes, docker volumes, docker compose volume, docker volume
   mount, docker mount volume, docker volume create, docker volume location
-aliases:
-- /userguide/dockervolumes/
-- /engine/tutorials/dockervolumes/
-- /engine/userguide/dockervolumes/
-- /engine/admin/volumes/volumes/
----
 @y
----
 description: Learn how to create, manage, and use volumes instead of bind mounts for
   persisting data generated and used by Docker.
 title: Volumes
 keywords: docker compose volumes, docker volumes, docker compose volume, docker volume
   mount, docker mount volume, docker volume create, docker volume location
-aliases:
-- /userguide/dockervolumes/
-- /engine/tutorials/dockervolumes/
-- /engine/userguide/dockervolumes/
-- /engine/admin/volumes/volumes/
----
 @z
 
 @x
@@ -275,15 +262,7 @@ Create a volume:
 Create a volume:
 @z
 
-@x
-```console
-$ docker volume create my-vol
-```
-@y
-```console
-$ docker volume create my-vol
-```
-@z
+% snip command...
 
 @x
 List volumes:
@@ -291,21 +270,7 @@ List volumes:
 List volumes:
 @z
 
-@x
-```console
-$ docker volume ls
-@y
-```console
-$ docker volume ls
-@z
-
-@x
-local               my-vol
-```
-@y
-local               my-vol
-```
-@z
+% snip command...
 
 @x
 Inspect a volume:
@@ -313,35 +278,7 @@ Inspect a volume:
 Inspect a volume:
 @z
 
-@x
-```console
-$ docker volume inspect my-vol
-[
-    {
-        "Driver": "local",
-        "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
-        "Name": "my-vol",
-        "Options": {},
-        "Scope": "local"
-    }
-]
-```
-@y
-```console
-$ docker volume inspect my-vol
-[
-    {
-        "Driver": "local",
-        "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
-        "Name": "my-vol",
-        "Options": {},
-        "Scope": "local"
-    }
-]
-```
-@z
+% snip command...
 
 @x
 Remove a volume:
@@ -349,15 +286,7 @@ Remove a volume:
 Remove a volume:
 @z
 
-@x
-```console
-$ docker volume rm my-vol
-```
-@y
-```console
-$ docker volume rm my-vol
-```
-@z
+% snip command...
 
 @x
 ## Start a container with a volume
@@ -393,21 +322,7 @@ after running the first one.
 {{< tab name="`--mount`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  --name devtest \
-  --mount source=myvol2,target=/app \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name devtest \
-  --mount source=myvol2,target=/app \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -417,21 +332,7 @@ $ docker run -d \
 {{< tab name="`-v`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  --name devtest \
-  -v myvol2:/app \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name devtest \
-  -v myvol2:/app \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -449,37 +350,7 @@ Use `docker inspect devtest` to verify that Docker created the volume and it mou
 correctly. Look for the `Mounts` section:
 @z
 
-@x
-```json
-"Mounts": [
-    {
-        "Type": "volume",
-        "Name": "myvol2",
-        "Source": "/var/lib/docker/volumes/myvol2/_data",
-        "Destination": "/app",
-        "Driver": "local",
-        "Mode": "",
-        "RW": true,
-        "Propagation": ""
-    }
-],
-```
-@y
-```json
-"Mounts": [
-    {
-        "Type": "volume",
-        "Name": "myvol2",
-        "Source": "/var/lib/docker/volumes/myvol2/_data",
-        "Destination": "/app",
-        "Driver": "local",
-        "Mode": "",
-        "RW": true,
-        "Propagation": ""
-    }
-],
-```
-@z
+% snip code...
 
 @x
 This shows that the mount is a volume, it shows the correct source and
@@ -497,27 +368,7 @@ Stop the container and remove the volume. Note volume removal is a separate
 step.
 @z
 
-@x
-```console
-$ docker container stop devtest
-@y
-```console
-$ docker container stop devtest
-@z
-
-@x
-$ docker container rm devtest
-@y
-$ docker container rm devtest
-@z
-
-@x
-$ docker volume rm myvol2
-```
-@y
-$ docker volume rm myvol2
-```
-@z
+% snip command...
 
 @x
 ## Use a volume with Docker Compose
@@ -531,27 +382,7 @@ The example below shows a single Docker Compose service with a volume:
 The example below shows a single Docker Compose service with a volume:
 @z
 
-@x
-```yaml
-services:
-  frontend:
-    image: node:lts
-    volumes:
-      - myapp:/home/node/app
-volumes:
-  myapp:
-```
-@y
-```yaml
-services:
-  frontend:
-    image: node:lts
-    volumes:
-      - myapp:/home/node/app
-volumes:
-  myapp:
-```
-@z
+% snip code...
 
 @x
 Running `docker compose up` for the first time creates a volume. Docker reuses the same volume when you run the command subsequently.
@@ -567,29 +398,7 @@ You can create a volume directly outside of Compose using `docker volume create`
 then reference it inside `compose.yaml` as follows:
 @z
 
-@x
-```yaml
-services:
-  frontend:
-    image: node:lts
-    volumes:
-      - myapp:/home/node/app
-volumes:
-  myapp:
-    external: true
-```
-@y
-```yaml
-services:
-  frontend:
-    image: node:lts
-    volumes:
-      - myapp:/home/node/app
-volumes:
-  myapp:
-    external: true
-```
-@z
+% snip code...
 
 @x
 For more information about using volumes with Compose, refer to the
@@ -625,23 +434,7 @@ The following example starts an `nginx` service with four replicas, each of whic
 uses a local volume called `myvol2`.
 @z
 
-@x
-```console
-$ docker service create -d \
-  --replicas=4 \
-  --name devtest-service \
-  --mount source=myvol2,target=/app \
-  nginx:latest
-```
-@y
-```console
-$ docker service create -d \
-  --replicas=4 \
-  --name devtest-service \
-  --mount source=myvol2,target=/app \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 Use `docker service ps devtest-service` to verify that the service is running:
@@ -649,23 +442,7 @@ Use `docker service ps devtest-service` to verify that the service is running:
 Use `docker service ps devtest-service` to verify that the service is running:
 @z
 
-@x
-```console
-$ docker service ps devtest-service
-@y
-```console
-$ docker service ps devtest-service
-@z
-
-@x
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
-4d7oz1j85wwn        devtest-service.1   nginx:latest        moby                Running             Running 14 seconds ago
-```
-@y
-ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE            ERROR               PORTS
-4d7oz1j85wwn        devtest-service.1   nginx:latest        moby                Running             Running 14 seconds ago
-```
-@z
+% snip command...
 
 @x
 You can remove the service to stop the running tasks:
@@ -673,15 +450,7 @@ You can remove the service to stop the running tasks:
 You can remove the service to stop the running tasks:
 @z
 
-@x
-```console
-$ docker service rm devtest-service
-```
-@y
-```console
-$ docker service rm devtest-service
-```
-@z
+% snip command...
 
 @x
 Removing the service doesn't remove any volumes created by the service.
@@ -753,21 +522,7 @@ The `--mount` and `-v` examples have the same end result.
 {{< tab name="`--mount`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  --name=nginxtest \
-  --mount source=nginx-vol,destination=/usr/share/nginx/html \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name=nginxtest \
-  --mount source=nginx-vol,destination=/usr/share/nginx/html \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -777,21 +532,7 @@ $ docker run -d \
 {{< tab name="`-v`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  --name=nginxtest \
-  -v nginx-vol:/usr/share/nginx/html \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name=nginxtest \
-  -v nginx-vol:/usr/share/nginx/html \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -809,27 +550,7 @@ After running either of these examples, run the following commands to clean up
 the containers and volumes. Note volume removal is a separate step.
 @z
 
-@x
-```console
-$ docker container stop nginxtest
-@y
-```console
-$ docker container stop nginxtest
-@z
-
-@x
-$ docker container rm nginxtest
-@y
-$ docker container rm nginxtest
-@z
-
-@x
-$ docker volume rm nginx-vol
-```
-@y
-$ docker volume rm nginx-vol
-```
-@z
+% snip command...
 
 @x
 ## Use a read-only volume
@@ -877,21 +598,7 @@ The `--mount` and `-v` examples have the same result.
 {{< tab name="`--mount`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  --name=nginxtest \
-  --mount source=nginx-vol,destination=/usr/share/nginx/html,readonly \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name=nginxtest \
-  --mount source=nginx-vol,destination=/usr/share/nginx/html,readonly \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -901,21 +608,7 @@ $ docker run -d \
 {{< tab name="`-v`" >}}
 @z
 
-@x
-```console
-$ docker run -d \
-  --name=nginxtest \
-  -v nginx-vol:/usr/share/nginx/html:ro \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name=nginxtest \
-  -v nginx-vol:/usr/share/nginx/html:ro \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -933,37 +626,7 @@ Use `docker inspect nginxtest` to verify that Docker created the read-only mount
 correctly. Look for the `Mounts` section:
 @z
 
-@x
-```json
-"Mounts": [
-    {
-        "Type": "volume",
-        "Name": "nginx-vol",
-        "Source": "/var/lib/docker/volumes/nginx-vol/_data",
-        "Destination": "/usr/share/nginx/html",
-        "Driver": "local",
-        "Mode": "",
-        "RW": false,
-        "Propagation": ""
-    }
-],
-```
-@y
-```json
-"Mounts": [
-    {
-        "Type": "volume",
-        "Name": "nginx-vol",
-        "Source": "/var/lib/docker/volumes/nginx-vol/_data",
-        "Destination": "/usr/share/nginx/html",
-        "Driver": "local",
-        "Mode": "",
-        "RW": false,
-        "Propagation": ""
-    }
-],
-```
-@z
+% snip code...
 
 @x
 Stop and remove the container, and remove the volume. Volume removal is a
@@ -973,27 +636,7 @@ Stop and remove the container, and remove the volume. Volume removal is a
 separate step.
 @z
 
-@x
-```console
-$ docker container stop nginxtest
-@y
-```console
-$ docker container stop nginxtest
-@z
-
-@x
-$ docker container rm nginxtest
-@y
-$ docker container rm nginxtest
-@z
-
-@x
-$ docker volume rm nginx-vol
-```
-@y
-$ docker volume rm nginx-vol
-```
-@z
+% snip command...
 
 @x
 ## Share data between machines
@@ -1079,15 +722,7 @@ On the Docker host, install the `vieux/sshfs` plugin:
 On the Docker host, install the `vieux/sshfs` plugin:
 @z
 
-@x
-```console
-$ docker plugin install --grant-all-permissions vieux/sshfs
-```
-@y
-```console
-$ docker plugin install --grant-all-permissions vieux/sshfs
-```
-@z
+% snip command...
 
 @x
 ### Create a volume using a volume driver
@@ -1105,21 +740,7 @@ configured, you can exclude the password. Each volume driver may have zero or mo
 configurable options, you specify each of them using an `-o` flag.
 @z
 
-@x
-```console
-$ docker volume create --driver vieux/sshfs \
-  -o sshcmd=test@node2:/home/test \
-  -o password=testpassword \
-  sshvolume
-```
-@y
-```console
-$ docker volume create --driver vieux/sshfs \
-  -o sshcmd=test@node2:/home/test \
-  -o password=testpassword \
-  sshvolume
-```
-@z
+% snip command...
 
 @x
 ### Start a container which creates a volume using a volume driver
@@ -1149,23 +770,7 @@ Each volume driver may have zero or more configurable options.
 > you must use the `--mount` flag to mount the volume, and not `-v`.
 @z
 
-@x
-```console
-$ docker run -d \
-  --name sshfs-container \
-  --volume-driver vieux/sshfs \
-  --mount src=sshvolume,target=/app,volume-opt=sshcmd=test@node2:/home/test,volume-opt=password=testpassword \
-  nginx:latest
-```
-@y
-```console
-$ docker run -d \
-  --name sshfs-container \
-  --volume-driver vieux/sshfs \
-  --mount src=sshvolume,target=/app,volume-opt=sshcmd=test@node2:/home/test,volume-opt=password=testpassword \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 ### Create a service which creates an NFS volume
@@ -1189,21 +794,7 @@ Note that the volume driver specified is `local`.
 #### NFSv3
 @z
 
-@x
-```console
-$ docker service create -d \
-  --name nfs-service \
-  --mount 'type=volume,source=nfsvolume,target=/app,volume-driver=local,volume-opt=type=nfs,volume-opt=device=:/var/docker-nfs,volume-opt=o=addr=10.0.0.10' \
-  nginx:latest
-```
-@y
-```console
-$ docker service create -d \
-  --name nfs-service \
-  --mount 'type=volume,source=nfsvolume,target=/app,volume-driver=local,volume-opt=type=nfs,volume-opt=device=:/var/docker-nfs,volume-opt=o=addr=10.0.0.10' \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 #### NFSv4
@@ -1211,21 +802,7 @@ $ docker service create -d \
 #### NFSv4
 @z
 
-@x
-```console
-$ docker service create -d \
-    --name nfs-service \
-    --mount 'type=volume,source=nfsvolume,target=/app,volume-driver=local,volume-opt=type=nfs,volume-opt=device=:/var/docker-nfs,"volume-opt=o=addr=10.0.0.10,rw,nfsvers=4,async"' \
-    nginx:latest
-```
-@y
-```console
-$ docker service create -d \
-    --name nfs-service \
-    --mount 'type=volume,source=nfsvolume,target=/app,volume-driver=local,volume-opt=type=nfs,volume-opt=device=:/var/docker-nfs,"volume-opt=o=addr=10.0.0.10,rw,nfsvers=4,async"' \
-    nginx:latest
-```
-@z
+% snip command...
 
 @x
 ### Create CIFS/Samba volumes
@@ -1239,25 +816,7 @@ You can mount a Samba share directly in Docker without configuring a mount point
 You can mount a Samba share directly in Docker without configuring a mount point on your host.
 @z
 
-@x
-```console
-$ docker volume create \
-	--driver local \
-	--opt type=cifs \
-	--opt device=//uxxxxx.your-server.de/backup \
-	--opt o=addr=uxxxxx.your-server.de,username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
-	--name cif-volume
-```
-@y
-```console
-$ docker volume create \
-	--driver local \
-	--opt type=cifs \
-	--opt device=//uxxxxx.your-server.de/backup \
-	--opt o=addr=uxxxxx.your-server.de,username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
-	--name cif-volume
-```
-@z
+% snip command...
 
 @x
 The `addr` option is required if you specify a hostname instead of an IP.
@@ -1325,15 +884,7 @@ If you're familiar with the
 you can think of the `--mount` options as forwarded to the `mount` command in the following manner:
 @z
 
-@x
-```console
-$ mount -t <mount.volume-opt.type> <mount.volume-opt.device> <mount.dst> -o <mount.volume-opts.o>
-```
-@y
-```console
-$ mount -t <mount.volume-opt.type> <mount.volume-opt.device> <mount.dst> -o <mount.volume-opts.o>
-```
-@z
+% snip command...
 
 @x
 To explain this further, consider the following `mount` command example.
@@ -1343,15 +894,7 @@ To explain this further, consider the following `mount` command example.
 This command mounts the `/dev/loop5` device to the path `/external-drive` on the system. 
 @z
 
-@x
-```console
-$ mount -t ext4 /dev/loop5 /external-drive
-```
-@y
-```console
-$ mount -t ext4 /dev/loop5 /external-drive
-```
-@z
+% snip command...
 
 @x
 The following `docker run` command achieves a similar result, from the point of view of the container being run.
@@ -1363,17 +906,7 @@ Running a container with this `--mount` option sets up the mount in the same way
 `mount` command from the previous example.
 @z
 
-@x
-```console
-$ docker run \
-  --mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4'
-```
-@y
-```console
-$ docker run \
-  --mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4'
-```
-@z
+% snip command...
 
 @x
 You can't run the `mount` command inside the container directly,
@@ -1405,15 +938,7 @@ The filesystem support of your system depends on the version of the Linux kernel
 1. Create a file and allocate some space to it:
 @z
 
-@x
-   ```console
-   $ fallocate -l 1G disk.raw
-   ```
-@y
-   ```console
-   $ fallocate -l 1G disk.raw
-   ```
-@z
+% snip command...
 
 @x
 2. Build a filesystem onto the `disk.raw` file:
@@ -1421,15 +946,7 @@ The filesystem support of your system depends on the version of the Linux kernel
 2. Build a filesystem onto the `disk.raw` file:
 @z
 
-@x
-   ```console
-   $ mkfs.ext4 disk.raw
-   ```
-@y
-   ```console
-   $ mkfs.ext4 disk.raw
-   ```
-@z
+% snip command...
 
 @x
 3. Create a loop device:
@@ -1437,17 +954,7 @@ The filesystem support of your system depends on the version of the Linux kernel
 3. Create a loop device:
 @z
 
-@x
-   ```console
-   $ losetup -f --show disk.raw
-   /dev/loop5
-   ```
-@y
-   ```console
-   $ losetup -f --show disk.raw
-   /dev/loop5
-   ```
-@z
+% snip command...
 
 @x
    > **Note**
@@ -1467,19 +974,7 @@ The filesystem support of your system depends on the version of the Linux kernel
 4. Run a container that mounts the loop device as a volume:
 @z
 
-@x
-   ```console
-   $ docker run -it --rm \
-     --mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4' \
-     ubuntu bash
-   ```
-@y
-   ```console
-   $ docker run -it --rm \
-     --mount='type=volume,dst=/external-drive,volume-driver=local,volume-opt=device=/dev/loop5,volume-opt=type=ext4' \
-     ubuntu bash
-   ```
-@z
+% snip command...
 
 @x
    When the container starts, the path `/external-drive` mounts the
@@ -1497,15 +992,7 @@ The filesystem support of your system depends on the version of the Linux kernel
    detach the loop device to remove the device from the host system:
 @z
 
-@x
-   ```console
-   $ losetup -d /dev/loop5
-   ```
-@y
-   ```console
-   $ losetup -d /dev/loop5
-   ```
-@z
+% snip command...
 
 @x
 ## Back up, restore, or migrate data volumes
@@ -1533,15 +1020,7 @@ For example, create a new container named `dbstore`:
 For example, create a new container named `dbstore`:
 @z
 
-@x
-```console
-$ docker run -v /dbdata --name dbstore ubuntu /bin/bash
-```
-@y
-```console
-$ docker run -v /dbdata --name dbstore ubuntu /bin/bash
-```
-@z
+% snip command...
 
 @x
 In the next command:
@@ -1559,15 +1038,7 @@ In the next command:
 - Pass a command that tars the contents of the `dbdata` volume to a `backup.tar` file inside our `/backup` directory.
 @z
 
-@x
-```console
-$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
-```
-@y
-```console
-$ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
-```
-@z
+% snip command...
 
 @x
 When the command completes and the container stops, it creates a backup of
@@ -1597,15 +1068,7 @@ For example, create a new container named `dbstore2`:
 For example, create a new container named `dbstore2`:
 @z
 
-@x
-```console
-$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
-```
-@y
-```console
-$ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
-```
-@z
+% snip command...
 
 @x
 Then, un-tar the backup file in the new container’s data volume:
@@ -1613,15 +1076,7 @@ Then, un-tar the backup file in the new container’s data volume:
 Then, un-tar the backup file in the new container’s data volume:
 @z
 
-@x
-```console
-$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
-```
-@y
-```console
-$ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
-```
-@z
+% snip command...
 
 @x
 You can use the techniques above to automate backup, migration, and restore
@@ -1669,15 +1124,7 @@ this command creates an anonymous `/foo` volume. When you remove the container,
 the Docker Engine removes the `/foo` volume but not the `awesome` volume.
 @z
 
-@x
-```console
-$ docker run --rm -v /foo -v awesome:/bar busybox top
-```
-@y
-```console
-$ docker run --rm -v /foo -v awesome:/bar busybox top
-```
-@z
+% snip command...
 
 @x
 > **Note**
@@ -1705,15 +1152,7 @@ To remove all unused volumes and free up space:
 To remove all unused volumes and free up space:
 @z
 
-@x
-```console
-$ docker volume prune
-```
-@y
-```console
-$ docker volume prune
-```
-@z
+% snip command...
 
 @x
 ## Next steps

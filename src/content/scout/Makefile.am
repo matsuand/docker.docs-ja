@@ -15,7 +15,8 @@ bases = \
 	install.md             \
 	metrics-exporter.md    \
 	quickstart.md          \
-	sbom.md
+	sbom.md                \
+	scores.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

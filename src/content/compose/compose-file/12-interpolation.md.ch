@@ -22,39 +22,31 @@ keywords: compose, compose specification, interpolation, compose file reference
 @z
 
 @x
-Default values can be defined inline using typical shell syntax:
+For braced expressions, the following formats are supported:
+- Direct substitution
+  - `${VAR}` -> value of `VAR`
+- Default value
+  - `${VAR:-default}` -> value of `VAR` if set and non-empty, otherwise `default`
+  - `${VAR-default}` -> value of `VAR` if set, otherwise `default`
+- Required value
+  - `${VAR:?error}` -> value of `VAR` if set and non-empty, otherwise exit with error
+  - `${VAR?error}` -> value of `VAR` if set, otherwise exit with error
+- Alternative value
+  - `${VAR:+replacement}` -> `replacement` if `VAR` is set and non-empty, otherwise empty
+  - `${VAR+replacement}` -> `replacement` if `VAR` is set, otherwise empty
 @y
-Default values can be defined inline using typical shell syntax:
-@z
-
-@x
-- `${VARIABLE:-default}` evaluates to `default` if `VARIABLE` is unset or
-  empty in the environment.
-- `${VARIABLE-default}` evaluates to `default` only if `VARIABLE` is unset
-  in the environment.
-@y
-- `${VARIABLE:-default}` evaluates to `default` if `VARIABLE` is unset or
-  empty in the environment.
-- `${VARIABLE-default}` evaluates to `default` only if `VARIABLE` is unset
-  in the environment.
-@z
-
-@x
-Similarly, the following syntax allows you to specify mandatory variables:
-@y
-Similarly, the following syntax allows you to specify mandatory variables:
-@z
-
-@x
-- `${VARIABLE:?err}` exits with an error message containing `err` if
-  `VARIABLE` is unset or empty in the environment.
-- `${VARIABLE?err}` exits with an error message containing `err` only if
-  `VARIABLE` is unset in the environment.
-@y
-- `${VARIABLE:?err}` exits with an error message containing `err` if
-  `VARIABLE` is unset or empty in the environment.
-- `${VARIABLE?err}` exits with an error message containing `err` only if
-  `VARIABLE` is unset in the environment.
+For braced expressions, the following formats are supported:
+- Direct substitution
+  - `${VAR}` -> value of `VAR`
+- Default value
+  - `${VAR:-default}` -> value of `VAR` if set and non-empty, otherwise `default`
+  - `${VAR-default}` -> value of `VAR` if set, otherwise `default`
+- Required value
+  - `${VAR:?error}` -> value of `VAR` if set and non-empty, otherwise exit with error
+  - `${VAR?error}` -> value of `VAR` if set, otherwise exit with error
+- Alternative value
+  - `${VAR:+replacement}` -> `replacement` if `VAR` is set and non-empty, otherwise empty
+  - `${VAR+replacement}` -> `replacement` if `VAR` is set, otherwise empty
 @z
 
 @x
