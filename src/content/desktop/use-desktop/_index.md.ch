@@ -68,11 +68,11 @@ In addition, the Docker Dashboard allows you to:
 @z
 
 @x
-  For a more detailed guide about getting started, see [Get started](../../get-started/index.md).
+  For a more detailed guide about getting started, see [Get started](../../guides/getting-started/_index.md).
 - Get to the [Docker Scout](../../scout/_index.md) dashboard.
 - Check the status of Docker services.
 @y
-  For a more detailed guide about getting started, see [Get started](../../get-started/index.md).
+  For a more detailed guide about getting started, see [Get started](../../guides/getting-started/_index.md).
 - Get to the [Docker Scout](../../scout/_index.md) dashboard.
 - Check the status of Docker services.
 @z

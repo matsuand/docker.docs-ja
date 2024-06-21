@@ -246,14 +246,14 @@ In this section, you learned a few image building best practices, including laye
 
 @x
 Related information:
- - [Dockerfile reference](../reference/dockerfile.md)
- - [Build with Docker guide](../build/guide/index.md)
- - [Dockerfile best practices](../build/building/best-practices.md)
+ - [Dockerfile reference](/reference/dockerfile/)
+ - [Build with Docker guide](../../build/guide/_index.md)
+ - [Dockerfile best practices](../../build/building/best-practices.md)
 @y
 関連情報
- - [Dockerfile リファレンス](../reference/dockerfile.md)
- - [Docker を使ったビルドガイド](../build/guide/index.md)
- - [Dockerfile ベストプラクティス](../build/building/best-practices.md)
+ - [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
+ - [Docker を使ったビルドガイド](../../build/guide/_index.md)
+ - [Dockerfile ベストプラクティス](../../build/building/best-practices.md)
 @z
 
 @x
@@ -269,7 +269,7 @@ In the next section, you'll learn about additional resources you can use to cont
 @z
 
 @x
-{{< button text="What next" url="11_what_next.md" >}}
+{{< button text="What next" url="10_what_next.md" >}}
 @y
-{{< button text="次は何？" url="11_what_next.md" >}}
+{{< button text="次は何？" url="10_what_next.md" >}}
 @z

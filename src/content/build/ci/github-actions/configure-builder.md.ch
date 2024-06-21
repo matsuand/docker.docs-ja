@@ -124,23 +124,15 @@ jobs:
   buildx:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          buildkitd-flags: --debug
 @y
 jobs:
   buildx:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          buildkitd-flags: --debug
-@y
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
@@ -149,15 +141,11 @@ jobs:
 
 @x
       - name: Build
-        uses: docker/build-push-action@v5
-        with:
-          context: .
+        uses: docker/build-push-action@v6
 ```
 @y
       - name: Build
-        uses: docker/build-push-action@v5
-        with:
-          context: .
+        uses: docker/build-push-action@v6
 ```
 @z
 
@@ -224,18 +212,6 @@ jobs:
   buildx:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  buildx:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
@@ -244,6 +220,10 @@ jobs:
               mirrors = ["mirror.gcr.io"]
 ```
 @y
+jobs:
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
@@ -318,24 +298,16 @@ jobs:
   buildx:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  buildx:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
           config: .github/buildkitd.toml
 ```
 @y
+jobs:
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
         with:
@@ -766,22 +738,14 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
       - name: Set up builder1
         uses: docker/setup-buildx-action@v3
         id: builder1
 @y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
       - name: Set up builder1
         uses: docker/setup-buildx-action@v3
         id: builder1
@@ -799,34 +763,30 @@ jobs:
 
 @x
       - name: Build against builder1
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           builder: ${{ steps.builder1.outputs.name }}
-          context: .
           target: mytarget1
 @y
       - name: Build against builder1
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           builder: ${{ steps.builder1.outputs.name }}
-          context: .
           target: mytarget1
 @z
 
 @x
       - name: Build against builder2
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           builder: ${{ steps.builder2.outputs.name }}
-          context: .
           target: mytarget2
 ```
 @y
       - name: Build against builder2
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           builder: ${{ steps.builder2.outputs.name }}
-          context: .
           target: mytarget2
 ```
 @z

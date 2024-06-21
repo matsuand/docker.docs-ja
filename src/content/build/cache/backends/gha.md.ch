@@ -96,6 +96,8 @@ The following table describes the available CSV parameters that you can pass to
 | `mode`         | `cache-to`              | `min`,`max` | `min`                    | Cache layers to export, see [cache mode][3].                         |
 | `ignore-error` | `cache-to`              | Boolean     | `false`                  | Ignore errors caused by failed cache exports.                        |
 | `timeout`      | `cache-to`,`cache-from` | String      | `10m`                    | Max duration for importing or exporting cache before it's timed out. |
+| `repository`   | `cache-to`              | String      |                          | GitHub repository used for cache storage.                            |
+| `ghtoken`      | `cache-to`              | String      |                          | GitHub token required for accessing the GitHub API.                  |
 @y
 | Name           | Option                  | Type        | Default                  | Description                                                          |
 | -------------- | ----------------------- | ----------- | ------------------------ | -------------------------------------------------------------------- |
@@ -105,6 +107,8 @@ The following table describes the available CSV parameters that you can pass to
 | `mode`         | `cache-to`              | `min`,`max` | `min`                    | Cache layers to export, see [cache mode][3].                         |
 | `ignore-error` | `cache-to`              | Boolean     | `false`                  | Ignore errors caused by failed cache exports.                        |
 | `timeout`      | `cache-to`,`cache-from` | String      | `10m`                    | Max duration for importing or exporting cache before it's timed out. |
+| `repository`   | `cache-to`              | String      |                          | GitHub repository used for cache storage.                            |
+| `ghtoken`      | `cache-to`              | String      |                          | GitHub token required for accessing the GitHub API.                  |
 @z
 
 @x
@@ -222,7 +226,7 @@ For example:
 @x
 ```yaml
 - name: Build and push
-  uses: docker/build-push-action@v5
+  uses: docker/build-push-action@v6
   with:
     context: .
     push: true
@@ -233,13 +237,129 @@ For example:
 @y
 ```yaml
 - name: Build and push
-  uses: docker/build-push-action@v5
+  uses: docker/build-push-action@v6
   with:
     context: .
     push: true
     tags: "<registry>/<image>:latest"
     cache-from: type=gha
     cache-to: type=gha,mode=max
+```
+@z
+
+@x
+## Avoid GitHub Actions cache API throttling
+@y
+## Avoid GitHub Actions cache API throttling
+@z
+
+@x
+GitHub's [usage limits and eviction policy](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy)
+causes stale cache entries to be removed after a certain period of time. By
+default, the `gha` cache backend uses the GitHub Actions cache API to check the
+status of cache entries.
+@y
+GitHub's [usage limits and eviction policy](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy)
+causes stale cache entries to be removed after a certain period of time. By
+default, the `gha` cache backend uses the GitHub Actions cache API to check the
+status of cache entries.
+@z
+
+@x
+The GitHub Actions cache API is subject to rate limiting if you make too many
+requests in a short period of time, which may happen as a result of cache
+lookups during a build using the `gha` cache backend.
+@y
+The GitHub Actions cache API is subject to rate limiting if you make too many
+requests in a short period of time, which may happen as a result of cache
+lookups during a build using the `gha` cache backend.
+@z
+
+@x
+```text
+#31 exporting to GitHub Actions Cache
+#31 preparing build cache for export
+#31 preparing build cache for export 600.3s done
+#31 ERROR: maximum timeout reached
+------
+ > exporting to GitHub Actions Cache:
+------
+ERROR: failed to solve: maximum timeout reached
+make: *** [Makefile:35: release] Error 1
+Error: Process completed with exit code 2.
+```
+@y
+```text
+#31 exporting to GitHub Actions Cache
+#31 preparing build cache for export
+#31 preparing build cache for export 600.3s done
+#31 ERROR: maximum timeout reached
+------
+ > exporting to GitHub Actions Cache:
+------
+ERROR: failed to solve: maximum timeout reached
+make: *** [Makefile:35: release] Error 1
+Error: Process completed with exit code 2.
+```
+@z
+
+@x
+To mitigate this issue, you can supply a GitHub token to BuildKit. This lets
+BuildKit utilize the standard GitHub API for checking cache keys, thereby
+reducing the number of requests made to the cache API.
+@y
+To mitigate this issue, you can supply a GitHub token to BuildKit. This lets
+BuildKit utilize the standard GitHub API for checking cache keys, thereby
+reducing the number of requests made to the cache API.
+@z
+
+@x
+To provide a GitHub token, you can use the `ghtoken` parameter, and a
+`repository` parameter to specify the repository to use for cache storage. The
+`ghtoken` parameter is a GitHub token with the `repo` scope, which is required
+to access the GitHub Actions cache API.
+@y
+To provide a GitHub token, you can use the `ghtoken` parameter, and a
+`repository` parameter to specify the repository to use for cache storage. The
+`ghtoken` parameter is a GitHub token with the `repo` scope, which is required
+to access the GitHub Actions cache API.
+@z
+
+@x
+The `ghtoken` parameter is automatically set to the value of
+`secrets.GITHUB_TOKEN` when you build with the `docker/build-push-action`
+action. You can also set the `ghtoken` parameter manually using the
+`github-token` input, as shown in the following example:
+@y
+The `ghtoken` parameter is automatically set to the value of
+`secrets.GITHUB_TOKEN` when you build with the `docker/build-push-action`
+action. You can also set the `ghtoken` parameter manually using the
+`github-token` input, as shown in the following example:
+@z
+
+@x
+```yaml
+- name: Build and push
+  uses: docker/build-push-action@v6
+  with:
+    context: .
+    push: true
+    tags: "<registry>/<image>:latest"
+    cache-from: type=gha
+    cache-to: type=gha,mode=max
+    github-token: ${{ secrets.MY_CUSTOM_TOKEN }}
+```
+@y
+```yaml
+- name: Build and push
+  uses: docker/build-push-action@v6
+  with:
+    context: .
+    push: true
+    tags: "<registry>/<image>:latest"
+    cache-from: type=gha
+    cache-to: type=gha,mode=max
+    github-token: ${{ secrets.MY_CUSTOM_TOKEN }}
 ```
 @z
 

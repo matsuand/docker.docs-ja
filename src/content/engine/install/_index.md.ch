@@ -246,8 +246,8 @@ Docker では公開で感謝の意を表わすものとします。
 
 @x
 After setting up Docker, you can learn the basics with
-[Getting started with Docker](../../get-started/index.md).
+[Getting started with Docker](../../guides/getting-started/_index.md).
 @y
 After setting up Docker, you can learn the basics with
-[Getting started with Docker](../../get-started/index.md).
+[Getting started with Docker](../../guides/getting-started/_index.md).
 @z

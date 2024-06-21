@@ -3,7 +3,6 @@
 ##
 copyfiles = \
 	dashboard-two-containers.webp \
-	docker-architecture.webp      \
 	items-added.webp              \
 	multi-container.webp          \
 	push-command.webp             \

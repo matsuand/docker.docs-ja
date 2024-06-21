@@ -13,7 +13,7 @@ long: |-
 @y
 command: docker buildx build
 aliases: docker buildx build, docker buildx b
-short: Start a build
+short: ビルドの開始
 long: |-
     The `buildx build` command starts a build using BuildKit. This command is similar
     to the UI of `docker build` command and takes the same flags and arguments.
@@ -239,10 +239,10 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @z
 
 @x provenance
@@ -367,17 +367,7 @@ examples: |-
     ### Create annotations (--annotation) {#annotation}
 @z
 
-@x
-    ```text
-    --annotation="key=value"
-    --annotation="[type:]key=value"
-    ```
-@y
-    ```text
-    --annotation="key=value"
-    --annotation="[type:]key=value"
-    ```
-@z
+% snip text...
 
 @x
     Add OCI annotations to the image index, manifest, or descriptor.
@@ -387,15 +377,7 @@ examples: |-
     The following example adds the `foo=bar` annotation to the image manifests:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     You can optionally add a type prefix to specify the level of the annotation. By
@@ -407,15 +389,7 @@ examples: |-
     `foo=bar` annotation the image index instead of the manifests:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "index:foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "index:foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     You can specify multiple types, separated by a comma (,) to add the annotation
@@ -427,15 +401,7 @@ examples: |-
     annotation to image index, descriptors, manifests:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "index,manifest,manifest-descriptor:foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "index,manifest,manifest-descriptor:foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     You can also specify a platform qualifier in square brackets (`[os/arch]`) in
@@ -449,15 +415,7 @@ examples: |-
     the manifest with the `linux/amd64` platform:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "manifest[linux/amd64]:foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "manifest[linux/amd64]:foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     Wildcards are not supported in the platform qualifier; you can't specify a type
@@ -483,17 +441,7 @@ examples: |-
     ### Create attestations (--attest) {#attest}
 @z
 
-@x
-    ```text
-    --attest=type=sbom,...
-    --attest=type=provenance,...
-    ```
-@y
-    ```text
-    --attest=type=sbom,...
-    --attest=type=provenance,...
-    ```
-@z
+% snip text...
 
 @x
     Create [image attestations](/build/attestations/).
@@ -557,15 +505,7 @@ examples: |-
     ### Allow extra privileged entitlement (--allow) {#allow}
 @z
 
-@x
-    ```text
-    --allow=ENTITLEMENT
-    ```
-@y
-    ```text
-    --allow=ENTITLEMENT
-    ```
-@z
+% snip text...
 
 @x
     Allow extra privileged entitlement. List of entitlements:
@@ -591,17 +531,7 @@ examples: |-
     with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-flags)).
 @z
 
-@x
-    ```console
-    $ docker buildx create --use --name insecure-builder --buildkitd-flags '--allow-insecure-entitlement security.insecure'
-    $ docker buildx build --allow security.insecure .
-    ```
-@y
-    ```console
-    $ docker buildx create --use --name insecure-builder --buildkitd-flags '--allow-insecure-entitlement security.insecure'
-    $ docker buildx build --allow security.insecure .
-    ```
-@z
+% snip command...
 
 @x
     ### Set build-time variables (--build-arg) {#build-arg}
@@ -631,15 +561,7 @@ examples: |-
     * `BUILDKIT_MULTI_PLATFORM=<bool>`: opt into deterministic output regardless of multi-platform output or not
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-arg BUILDKIT_MULTI_PLATFORM=1 .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-arg BUILDKIT_MULTI_PLATFORM=1 .
-    ```
-@z
+% snip command...
 
 @x
     Learn more about the built-in build arguments in the [Dockerfile reference docs](/reference/dockerfile/#buildkit-built-in-build-args).
@@ -653,15 +575,7 @@ examples: |-
     ### Additional build contexts (--build-context) {#build-context}
 @z
 
-@x
-    ```text
-    --build-context=name=VALUE
-    ```
-@y
-    ```text
-    --build-context=name=VALUE
-    ```
-@z
+% snip text...
 
 @x
     Define additional build context with specified contents. In Dockerfile the context can be accessed when `FROM name` or `--from=name` is used.
@@ -683,15 +597,7 @@ examples: |-
     Replace `alpine:latest` with a pinned one:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
-    ```
-@z
+% snip command...
 
 @x
     Expose a secondary local source directory:
@@ -699,31 +605,9 @@ examples: |-
     Expose a secondary local source directory:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-context project=path/to/project/source .
-    # docker buildx build --build-context project=https://github.com/myuser/project.git .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-context project=path/to/project/source .
-    # docker buildx build --build-context project=https://github.com/myuser/project.git .
-    ```
-@z
+% snip command...
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    COPY --from=project myfile /
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    COPY --from=project myfile /
-    ```
-@z
+% snip code...
 
 @x
     #### Use an OCI layout directory as build context {#source-oci-layout}
@@ -739,39 +623,9 @@ examples: |-
     either by tag, or by digest:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout:<tag>
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout@sha256:<digest>
-    ```
-@y
-    ```console
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout:<tag>
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout@sha256:<digest>
-    ```
-@z
+% snip command...
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    RUN apk add git
-    COPY --from=foo myfile /
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    RUN apk add git
-    COPY --from=foo myfile /
-@z
-
-@x
-    FROM foo
-    ```
-@y
-    FROM foo
-    ```
-@z
+% snip code...
 
 @x
     The OCI layout directory must be compliant with the [OCI layout specification](https://github.com/opencontainers/image-spec/blob/main/image-layout.md).
@@ -799,15 +653,7 @@ examples: |-
     ### Use an external cache source for a build (--cache-from) {#cache-from}
 @z
 
-@x
-    ```text
-    --cache-from=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@y
-    ```text
-    --cache-from=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@z
+% snip text...
 
 @x
     Use an external cache source for a build. Supported types are `registry`,
@@ -855,25 +701,7 @@ examples: |-
     `docker` driver currently only supports importing build cache from the registry.
 @z
 
-@x
-    ```console
-    $ docker buildx build --cache-from=user/app:cache .
-    $ docker buildx build --cache-from=user/app .
-    $ docker buildx build --cache-from=type=registry,ref=user/app .
-    $ docker buildx build --cache-from=type=local,src=path/to/cache .
-    $ docker buildx build --cache-from=type=gha .
-    $ docker buildx build --cache-from=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@y
-    ```console
-    $ docker buildx build --cache-from=user/app:cache .
-    $ docker buildx build --cache-from=user/app .
-    $ docker buildx build --cache-from=type=registry,ref=user/app .
-    $ docker buildx build --cache-from=type=local,src=path/to/cache .
-    $ docker buildx build --cache-from=type=gha .
-    $ docker buildx build --cache-from=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@z
+% snip command...
 
 @x
     More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
@@ -887,15 +715,7 @@ examples: |-
     ### Export build cache to an external cache destination (--cache-to) {#cache-to}
 @z
 
-@x
-    ```text
-    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@y
-    ```text
-    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@z
+% snip text...
 
 @x
     Export build cache to an external cache destination. Supported types are
@@ -951,25 +771,7 @@ examples: |-
       all stages. Metadata is always exported for the whole build.
 @z
 
-@x
-    ```console
-    $ docker buildx build --cache-to=user/app:cache .
-    $ docker buildx build --cache-to=type=inline .
-    $ docker buildx build --cache-to=type=registry,ref=user/app .
-    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
-    $ docker buildx build --cache-to=type=gha .
-    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@y
-    ```console
-    $ docker buildx build --cache-to=user/app:cache .
-    $ docker buildx build --cache-to=type=inline .
-    $ docker buildx build --cache-to=type=registry,ref=user/app .
-    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
-    $ docker buildx build --cache-to=type=gha .
-    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@z
+% snip command...
 
 @x
     More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
@@ -1046,15 +848,7 @@ examples: |-
     use a comma-separated syntax:
 @z
 
-@x
-    ```console
-    $ docker buildx build --no-cache-filter stage1,stage2,stage3 .
-    ```
-@y
-    ```console
-    $ docker buildx build --no-cache-filter stage1,stage2,stage3 .
-    ```
-@z
+% snip command...
 
 @x
     For example, the following Dockerfile contains four stages:
@@ -1074,63 +868,7 @@ examples: |-
     - `release`
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-@z
-
-@x
-    FROM oven/bun:1 as base
-    WORKDIR /app
-@y
-    FROM oven/bun:1 as base
-    WORKDIR /app
-@z
-
-@x
-    FROM base AS install
-    WORKDIR /temp/dev
-    RUN --mount=type=bind,source=package.json,target=package.json \
-        --mount=type=bind,source=bun.lockb,target=bun.lockb \
-        bun install --frozen-lockfile
-@y
-    FROM base AS install
-    WORKDIR /temp/dev
-    RUN --mount=type=bind,source=package.json,target=package.json \
-        --mount=type=bind,source=bun.lockb,target=bun.lockb \
-        bun install --frozen-lockfile
-@z
-
-@x
-    FROM base AS test
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    RUN bun test
-@y
-    FROM base AS test
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    RUN bun test
-@z
-
-@x
-    FROM base AS release
-    ENV NODE_ENV=production
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    ENTRYPOINT ["bun", "run", "index.js"]
-    ```
-@y
-    FROM base AS release
-    ENV NODE_ENV=production
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    ENTRYPOINT ["bun", "run", "index.js"]
-    ```
-@z
+% snip code...
 
 @x
     To ignore the cache for the `install` stage:
@@ -1138,15 +876,7 @@ examples: |-
     To ignore the cache for the `install` stage:
 @z
 
-@x
-    ```console
-    $ docker buildx build --no-cache-filter install .
-    ```
-@y
-    ```console
-    $ docker buildx build --no-cache-filter install .
-    ```
-@z
+% snip command...
 
 @x
     To ignore the cache the `install` and `release` stages:
@@ -1154,15 +884,7 @@ examples: |-
     To ignore the cache the `install` and `release` stages:
 @z
 
-@x
-    ```console
-    $ docker buildx build --no-cache-filter install,release .
-    ```
-@y
-    ```console
-    $ docker buildx build --no-cache-filter install,release .
-    ```
-@z
+% snip command...
 
 @x
     The arguments for the `--no-cache-filter` flag must be names of stages.
@@ -1176,15 +898,7 @@ examples: |-
     ### Set the export action for the build result (-o, --output) {#output}
 @z
 
-@x
-    ```text
-    -o, --output=[PATH,-,type=TYPE[,KEY=VALUE]
-    ```
-@y
-    ```text
-    -o, --output=[PATH,-,type=TYPE[,KEY=VALUE]
-    ```
-@z
+% snip code...
 
 @x
     Sets the export action for the build result. In `docker build` all builds finish
@@ -1396,15 +1110,7 @@ examples: |-
     ### Set the target platforms for the build (--platform) {#platform}
 @z
 
-@x
-    ```text
-    --platform=value[,value]
-    ```
-@y
-    ```text
-    --platform=value[,value]
-    ```
-@z
+% snip text...
 
 @x
     Set the target platform for the build. All `FROM` commands inside the Dockerfile
@@ -1482,19 +1188,7 @@ examples: |-
     [containerd source code](https://github.com/containerd/containerd/blob/v1.4.3/platforms/platforms.go#L63).
 @z
 
-@x
-    ```console
-    $ docker buildx build --platform=linux/arm64 .
-    $ docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 .
-    $ docker buildx build --platform=darwin .
-    ```
-@y
-    ```console
-    $ docker buildx build --platform=linux/arm64 .
-    $ docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 .
-    $ docker buildx build --platform=darwin .
-    ```
-@z
+% snip command...
 
 @x
     ### Set type of progress output (--progress) {#progress}
@@ -1502,22 +1196,14 @@ examples: |-
     ### Set type of progress output (--progress) {#progress}
 @z
 
-@x
-    ```text
-    --progress=VALUE
-    ```
-@y
-    ```text
-    --progress=VALUE
-    ```
-@z
+% snip text...
 
 @x
-    Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container
-    output (default "auto").
+    Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use `plain` to show container
+    output (default `auto`).
 @y
-    Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container
-    output (default "auto").
+    Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use `plain` to show container
+    output (default `auto`).
 @z
 
 @x
@@ -1536,48 +1222,26 @@ examples: |-
     The following example uses `plain` output during the build:
 @z
 
-@x
-    ```console
-    $ docker buildx build --load --progress=plain .
-@y
-    ```console
-    $ docker buildx build --load --progress=plain .
-@z
-
-@x
-    #1 [internal] load build definition from Dockerfile
-    #1 transferring dockerfile: 227B 0.0s done
-    #1 DONE 0.1s
-@y
-    #1 [internal] load build definition from Dockerfile
-    #1 transferring dockerfile: 227B 0.0s done
-    #1 DONE 0.1s
-@z
-
-@x
-    #2 [internal] load .dockerignore
-    #2 transferring context: 129B 0.0s done
-    #2 DONE 0.0s
-    ...
-    ```
-@y
-    #2 [internal] load .dockerignore
-    #2 transferring context: 129B 0.0s done
-    #2 DONE 0.0s
-    ...
-    ```
-@z
+% snip command...
 
 @x
     > **Note**
     >
-    > Check also our [Color output controls guide](https://github.com/docker/buildx/blob/master/docs/guides/color-output.md)
-    > for modifying the colors that are used to output information to the terminal.
+    > Check also the [`BUILDKIT_COLORS`](/build/building/variables/#buildkit_colors)
+    > environment variable for modifying the colors of the terminal output.
 @y
     > **Note**
     >
-    > Check also our [Color output controls guide](https://github.com/docker/buildx/blob/master/docs/guides/color-output.md)
-    > for modifying the colors that are used to output information to the terminal.
+    > Check also the [`BUILDKIT_COLORS`](__SUBDIR__/build/building/variables/#buildkit_colors)
+    > environment variable for modifying the colors of the terminal output.
+@z
+
+@x
+    The `rawjson` output marshals the solve status events from BuildKit to JSON lines.
+    This mode is designed to be read by an external program.
+@y
+    The `rawjson` output marshals the solve status events from BuildKit to JSON lines.
+    This mode is designed to be read by an external program.
 @z
 
 @x
@@ -1694,15 +1358,7 @@ examples: |-
     ### Secret to expose to the build (--secret) {#secret}
 @z
 
-@x
-    ```text
-    --secret=[type=TYPE[,KEY=VALUE]
-    ```
-@y
-    ```text
-    --secret=[type=TYPE[,KEY=VALUE]
-    ```
-@z
+% snip text...
 
 @x
     Exposes secrets (authentication credentials, tokens) to the build.
@@ -1758,33 +1414,9 @@ examples: |-
     - `src`, `source` - Secret filename. `id` used if unset.
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM python:3
-    RUN pip install awscli
-    RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-      aws s3 cp s3://... ...
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM python:3
-    RUN pip install awscli
-    RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-      aws s3 cp s3://... ...
-    ```
-@z
+% snip code...
 
-@x
-    ```console
-    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
-    ```
-@y
-    ```console
-    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
-    ```
-@z
+% snip command...
 
 @x
     #### `env`
@@ -1806,33 +1438,9 @@ examples: |-
     - `env` - Secret environment variable. `id` used if unset, otherwise will look for `src`, `source` if `id` unset.
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM node:alpine
-    RUN --mount=type=bind,target=. \
-      --mount=type=secret,id=SECRET_TOKEN \
-      SECRET_TOKEN=$(cat /run/secrets/SECRET_TOKEN) yarn run test
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM node:alpine
-    RUN --mount=type=bind,target=. \
-      --mount=type=secret,id=SECRET_TOKEN \
-      SECRET_TOKEN=$(cat /run/secrets/SECRET_TOKEN) yarn run test
-    ```
-@z
+% snip code...
 
-@x
-    ```console
-    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
-    ```
-@y
-    ```console
-    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
-    ```
-@z
+% snip command...
 
 @x
     ### Shared memory size for build containers (--shm-size) {#shm-size}
@@ -1856,15 +1464,7 @@ examples: |-
     ### SSH agent socket or keys to expose to the build (--ssh) {#ssh}
 @z
 
-@x
-    ```text
-    --ssh=default|<id>[=<socket>|<key>[,<key>]]
-    ```
-@y
-    ```text
-    --ssh=default|<id>[=<socket>|<key>[,<key>]]
-    ```
-@z
+% snip text...
 
 @x
     This can be useful when some commands in your Dockerfile need specific SSH
@@ -1888,43 +1488,9 @@ examples: |-
     Example to access Gitlab using an SSH agent socket:
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    RUN apk add --no-cache openssh-client
-    RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-    RUN --mount=type=ssh ssh -q -T git@gitlab.com 2>&1 | tee /hello
-    # "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
-    # with the type of build progress is defined as `plain`.
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    RUN apk add --no-cache openssh-client
-    RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
-    RUN --mount=type=ssh ssh -q -T git@gitlab.com 2>&1 | tee /hello
-    # "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
-    # with the type of build progress is defined as `plain`.
-    ```
-@z
+% snip code...
 
-@x
-    ```console
-    $ eval $(ssh-agent)
-    $ ssh-add ~/.ssh/id_rsa
-    (Input your passphrase here)
-    $ docker buildx build --ssh default=$SSH_AUTH_SOCK .
-    ```
-@y
-    ```console
-    $ eval $(ssh-agent)
-    $ ssh-add ~/.ssh/id_rsa
-    (Input your passphrase here)
-    $ docker buildx build --ssh default=$SSH_AUTH_SOCK .
-    ```
-@z
+% snip command...
 
 @x
     ### Set ulimits (--ulimit) {#ulimit}
@@ -1942,15 +1508,7 @@ examples: |-
     `<type>=<soft limit>[:<hard limit>]`, for example:
 @z
 
-@x
-    ```console
-    $ docker buildx build --ulimit nofile=1024:1024 .
-    ```
-@y
-    ```console
-    $ docker buildx build --ulimit nofile=1024:1024 .
-    ```
-@z
+% snip command...
 
 @x
     > **Note**
@@ -1964,6 +1522,20 @@ examples: |-
     > If you don't provide a `hard limit`, the `soft limit` is used
     > for both values. If no `ulimits` are set, they're inherited from
     > the default `ulimits` set on the daemon.
+@z
+
+@x
+    > **Note**
+    >
+    > In most cases, it is recommended to let the builder automatically determine
+    > the appropriate configurations. Manual adjustments should only be considered
+    > when specific performance tuning is required for complex build scenarios.
+@y
+    > **Note**
+    >
+    > In most cases, it is recommended to let the builder automatically determine
+    > the appropriate configurations. Manual adjustments should only be considered
+    > when specific performance tuning is required for complex build scenarios.
 @z
 
 % snip directives...

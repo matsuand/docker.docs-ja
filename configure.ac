@@ -171,9 +171,8 @@ AC_CONFIG_FILES([
 	src/content/engine/swarm/images/Makefile
 	src/content/engine/swarm/swarm-tutorial/Makefile
 	src/content/engine/tutorials/Makefile
-	src/content/get-started/Makefile
-	src/content/get-started/images/Makefile
 	src/content/guides/Makefile
+	src/content/guides/deployment-orchestration/Makefile
 	src/content/guides/docker-concepts/Makefile
 	src/content/guides/docker-concepts/building-images/Makefile
 	src/content/guides/docker-concepts/building-images/images/Makefile
@@ -189,6 +188,8 @@ AC_CONFIG_FILES([
 	src/content/guides/use-case/genai-video-bot/images/Makefile
 	src/content/guides/use-case/images/Makefile
 	src/content/guides/use-case/nlp/Makefile
+	src/content/guides/workshop/Makefile
+	src/content/guides/workshop/images/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/language/Makefile

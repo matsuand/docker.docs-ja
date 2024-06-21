@@ -8,8 +8,8 @@ long: Start debugger
 usage: docker buildx debug
 @y
 command: docker buildx debug
-short: Start debugger
-long: Start debugger
+short: デバッガーの開始
+long: デバッガーの開始。
 usage: docker buildx debug
 @z
 
@@ -37,10 +37,10 @@ usage: docker buildx debug
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`) for the monitor. Use plain to show container output
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`) for the monitor. Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`) for the monitor. Use plain to show container output
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`) for the monitor. Use plain to show container output
 @z
 
 @x root

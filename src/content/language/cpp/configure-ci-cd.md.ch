@@ -54,9 +54,9 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 @z
 
 @x
-Create a GitHub repository, configure the Docker Hub secrets, and push your source code.
+Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
 @y
-GitHub リポジトリの生成、Docker Hub シークレットの設定、ソースコードのプッシュを行います。
+GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソースコードのプッシュを行います。
 @z
 
 @x
@@ -73,9 +73,9 @@ GitHub リポジトリの生成、Docker Hub シークレットの設定、ソ�
 @z
 
 @x
-3. Create a new **Repository secrets** named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
 @y
-3. 新たな **Repository secrets** (リポジトリシークレット) として、名称を `DOCKER_USERNAME`、その値に自身の Docker ID を設定して生成します。
+3. 新たな **リポジトリ変数** として、名称を `DOCKER_USERNAME`、その値に自身の Docker ID を設定して生成します。
 @z
 
 @x
@@ -87,10 +87,10 @@ GitHub リポジトリの生成、Docker Hub シークレットの設定、ソ�
 @z
 
 @x
-5. Add the PAT as a second **Repository secrets** in your GitHub repository, with the name
+5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. GitHub リポジトリの 2 つめの **Repository secrets** (リポジトリシークレット) として PAT を追加します。
+5. GitHub リポジトリの **Repository secrets** (リポジトリシークレット) として PAT を追加します。
    その名前は `DOCKERHUB_TOKEN` とします。
 @z
 
@@ -157,15 +157,10 @@ Docker Hub に対してのイメージビルド、テスト、プッシュを行
 % snip code...
 
 @x
-   If your Dockerfile is in a different directory, update the `context` with the path to the directory containing the Dockerfile. 
+   For more information about the YAML syntax for `docker/build-push-action`,
+   refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
 @y
-   Dockerfile を別のディレクトリに置いている場合は、`context` の部分を Dockerfile が存在するディレクトリへのパスに変更します。
-@z
-
-@x
-   For more information about the YAML syntax used here, see [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
-@y
-   ここで利用している YAML 文法についての詳細は [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) (GitHub アクションワークフローの文法) を参照してください。
+   `docker/build-push-action` で利用している YAML 文法についての詳細は [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md) を参照してください。
 @z
 
 @x

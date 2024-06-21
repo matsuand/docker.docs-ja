@@ -1,6 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 SUBDIRS = images
 
 bases = \
@@ -12,13 +13,8 @@ bases = \
 	07_multi_container.md \
 	08_using_compose.md   \
 	09_image_best.md      \
-	11_what_next.md       \
-	_index.md             \
-	kube-deploy.md        \
-	orchestration.md      \
-	overview.md           \
-	resources.md          \
-	swarm-deploy.md
+	10_what_next.md       \
+	_index.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

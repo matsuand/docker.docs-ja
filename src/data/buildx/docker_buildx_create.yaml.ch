@@ -12,7 +12,7 @@ long: |-
     the address for Docker socket (eg. `DOCKER_HOST` value).
 @y
 command: docker buildx create
-short: Create a new builder instance
+short: 新規ビルダーインスタンスの生成
 long: |-
     Create makes a new builder instance pointing to a Docker context or endpoint,
     where context is the name of a context from `docker context ls` and endpoint is

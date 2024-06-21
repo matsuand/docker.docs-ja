@@ -49,8 +49,8 @@ jobs:
         ports:
           - 5000:5000
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 @y
 jobs:
   docker:
@@ -61,14 +61,6 @@ jobs:
         ports:
           - 5000:5000
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-@y
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 @z
@@ -87,16 +79,14 @@ jobs:
 
 @x
       - name: Build and push to local registry
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
-          context: .
           push: true
           tags: localhost:5000/name/app:latest
 @y
       - name: Build and push to local registry
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
-          context: .
           push: true
           tags: localhost:5000/name/app:latest
 @z

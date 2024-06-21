@@ -2,35 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Get an in-depth overview of the Docker platform including what it can
   be used for, the architecture it employs, and its underlying technology.
 keywords: what is a docker, docker daemon, why use docker, docker architecture, what
   to use docker for, docker client, what is docker for, why docker, uses for docker,
   what is docker container used for, what are docker containers used for
 title: Docker overview
-aliases:
-- /introduction/understanding-docker/
-- /engine/userguide/basics/
-- /engine/introduction/understanding-docker/
-- /engine/understanding-docker/
-- /engine/docker-overview/
----
 @y
----
 description: Get an in-depth overview of the Docker platform including what it can
   be used for, the architecture it employs, and its underlying technology.
 keywords: what is a docker, docker daemon, why use docker, docker architecture, what
   to use docker for, docker client, what is docker for, why docker, uses for docker,
   what is docker container used for, what are docker containers used for
 title: Docker 概要
-aliases:
-- /introduction/understanding-docker/
-- /engine/userguide/basics/
-- /engine/introduction/understanding-docker/
-- /engine/understanding-docker/
-- /engine/docker-overview/
----
 @z
 
 @x

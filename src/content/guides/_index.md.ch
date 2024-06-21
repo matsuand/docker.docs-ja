@@ -18,24 +18,24 @@ description: Explore the Docker guides
 @x
 - title: Docker overview
   description: Learn about the Docker platform.
-  link: /get-started/overview/
+  link: /guides/docker-overview/
   icon: summarize
 @y
 - title: Docker 概要
   description: Docker プラットフォームについて学びます。
-  link: __SUBDIR__/get-started/overview/
+  link: __SUBDIR__/guides/docker-overview/
   icon: summarize
 @z
 
 @x
 - title: Get started
   description: Get started with the basics and the benefits of containerizing your applications.
-  link: /guides/getting-started/get-docker-desktop/
+  link: /guides/getting-started/
   icon: rocket
 @y
 - title: はじめよう
   description: アプリケーションをコンテナー化する利点について学びます。
-  link: __SUBDIR__/guides/getting-started/get-docker-desktop/
+  link: __SUBDIR__/guides/getting-started/
   icon: rocket
 @z
 
@@ -92,12 +92,12 @@ description: Explore the Docker guides
 @x
 - title: Deployment and Orchestration
   description: Deploy and manage Docker containers at scale.
-  link: /get-started/orchestration/
+  link: /guides/deployment-orchestration/orchestration/
   icon: workspaces
 @y
 - title: デプロイとオーケストレーション
   description: Docker コンテナーのデプロイやスケーリング管理を行います。
-  link: __SUBDIR__/get-started/orchestration/
+  link: __SUBDIR__/guides/deployment-orchestration/orchestration/
   icon: workspaces
 @z
 
@@ -106,12 +106,12 @@ description: Explore the Docker guides
 @x
 - title: Educational resources
   description: Explore diverse Docker training and hands-on experiences.
-  link: /get-started/resources/
+  link: /guides/resources/
   icon: book
 @y
 - title: 学習情報
   description: Docker の多様なトレーニングと実践的な体験を確認します。
-  link: __SUBDIR__/get-started/resources/
+  link: __SUBDIR__/guides/resources/
   icon: book
 @z
 

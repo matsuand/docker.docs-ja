@@ -4,19 +4,15 @@
 % __SUBDIR__ ‘Î‰ž
 
 @x
----
 title: Educational resources
 keywords: get started, setup, orientation, quickstart, intro, concepts, kubernetes,
   docker desktop
 description: Get started resources learning docker
----
 @y
----
 title: Educational resources
 keywords: get started, setup, orientation, quickstart, intro, concepts, kubernetes,
   docker desktop
 description: Get started resources learning docker
----
 @z
 
 @x

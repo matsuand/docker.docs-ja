@@ -7,6 +7,8 @@ title: What next after the Docker workshop
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making sure you have more ideas of what you could do next with your application
+aliases:
+- /get-started/11_what_next/
 ---
 @y
 ---
@@ -14,6 +16,8 @@ title: What next after the Docker workshop
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making sure you have more ideas of what you could do next with your application
+aliases:
+- /get-started/11_what_next/
 ---
 @z
 
@@ -136,7 +140,7 @@ If you'd like to see how containers are built from scratch, Liz Rice from Aqua S
 @z
 
 @x
-If you are looking for information on how to containerize an application using your favorite language, see the [Language-specific guides](../language/index.md).
+If you are looking for information on how to containerize an application using your favorite language, see the [Language-specific guides](../../language/_index.md).
 @y
-If you are looking for information on how to containerize an application using your favorite language, see the [Language-specific guides](../language/index.md).
+If you are looking for information on how to containerize an application using your favorite language, see the [Language-specific guides](../../language/_index.md).
 @z

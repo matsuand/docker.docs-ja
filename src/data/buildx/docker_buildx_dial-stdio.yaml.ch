@@ -26,9 +26,9 @@ usage: docker buildx dial-stdio
 @z
 
 @x progress
-      description: Set type of progress output (auto, plain, tty).
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @y
-      description: Set type of progress output (auto, plain, tty).
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @z
 
 % inherited_options:

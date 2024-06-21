@@ -114,9 +114,9 @@ To ensure that tax assessments are correct, make sure that your billing informat
 @z
 
 @x
-If you're exempt from sales tax, you can register a valid tax exemption certificate with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
+If you're exempt from sales tax, you can [register a valid tax exemption certificate](./tax-certificate.md) with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
 @y
-If you're exempt from sales tax, you can register a valid tax exemption certificate with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
+If you're exempt from sales tax, you can [register a valid tax exemption certificate](./tax-certificate.md) with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
 @z
 
 @x

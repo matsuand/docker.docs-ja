@@ -308,8 +308,7 @@ bases = \
 	install.md             \
 	metrics-exporter.md    \
 	quickstart.md          \
-	sbom.md                \
-	scores.md
+	sbom.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

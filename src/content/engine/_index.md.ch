@@ -159,9 +159,9 @@ CLI は [Docker API](api/index.md) を利用して、Docker デーモンの制�
 
 @x
 For more details, see
-[Docker Architecture](../get-started/overview.md#docker-architecture).
+[Docker Architecture](../guides/docker-overview.md#docker-architecture).
 @y
-詳細は [Docker アーキテクチャー](../get-started/overview.md#docker-architecture) を参照してください。
+詳細は [Docker アーキテクチャー](../guides/docker-overview.md#docker-architecture) を参照してください。
 @z
 
 % {{< grid >}}

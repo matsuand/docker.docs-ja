@@ -123,12 +123,12 @@ and Docker isolates all changes to that container. With volumes, you can change 
 @z
 
 @x
-[Volumes](../storage/volumes.md) provide the ability to connect specific filesystem paths of 
+[Volumes](../../storage/volumes.md) provide the ability to connect specific filesystem paths of 
 the container back to the host machine. If you mount a directory in the container, changes in that
 directory are also seen on the host machine. If you mount that same directory across container restarts, you'd see
 the same files.
 @y
-[ボリューム](../storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
+[ボリューム](../../storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
 コンテナー内のあるディレクトリがマウントされていると、そのディレクトリ内で行われた変更がホストマシンからも見ることができます。
 仮にコンテナーの再起動の前後で 1 つのディレクトリをマウントしておけば、同一のファイルを維持できることになります。
 @z
@@ -246,9 +246,9 @@ You can create the volume and start the container using the CLI or Docker Deskto
 
 @x
    > For more details about Git Bash's syntax differences, see
-   > [Working with Git Bash](../desktop/troubleshoot/topics/#working-with-git-bash).
+   > [Working with Git Bash](../../desktop/troubleshoot/topics/#working-with-git-bash).
 @y
-   > Git Bash の文法の相違に関しては [Git Bash を使った操作](../desktop/troubleshoot/topics/#working-with-git-bash) を参照してください。
+   > Git Bash の文法の相違に関しては [Git Bash を使った操作](../../desktop/troubleshoot/topics/#working-with-git-bash) を参照してください。
 @z
 
 @x
@@ -437,10 +437,10 @@ Related information:
 
 @x
  - [docker CLI reference](/reference/cli/docker/)
- - [Volumes](../storage/volumes.md)
+ - [Volumes](../../storage/volumes.md)
 @y
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [ボリューム](../storage/volumes.md)
+ - [ボリューム](../../storage/volumes.md)
 @z
 
 @x

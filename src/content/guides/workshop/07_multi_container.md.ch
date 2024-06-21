@@ -466,11 +466,11 @@ container. You learned a little bit about container networking and service disco
 @x
 Related information:
  - [docker CLI reference](/reference/cli/docker/)
- - [Networking overview](../network/index.md)
+ - [Networking overview](../../network/_index.md)
 @y
 関連情報
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [Networking overview](../network/index.md)
+ - [Networking overview](../../network/_index.md)
 @z
 
 @x

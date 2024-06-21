@@ -8,8 +8,8 @@ long: Disk usage
 usage: docker buildx du
 @y
 command: docker buildx du
-short: Disk usage
-long: Disk usage
+short: ディスク使用量
+long: ディスク使用量。
 usage: docker buildx du
 @z
 
@@ -40,7 +40,7 @@ examples: |-
     ### Show disk usage
 @y
 examples: |-
-    ### Show disk usage
+    ### ディスク使用量の表示 {#show-disk-usage}
 @z
 
 @x

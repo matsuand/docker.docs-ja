@@ -8,8 +8,8 @@ long: Install buildx as a 'docker builder' alias
 usage: docker buildx install
 @y
 command: docker buildx install
-short: Install buildx as a 'docker builder' alias
-long: Install buildx as a 'docker builder' alias
+short: "'docker builder' のエイリアスとして buildx インストール"
+long: "'docker builder' のエイリアスとして buildx インストール。"
 usage: docker buildx install
 @z
 

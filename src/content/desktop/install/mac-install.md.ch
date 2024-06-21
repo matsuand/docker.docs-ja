@@ -287,7 +287,7 @@ The `install` command accepts the following flags:
 
 @x
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
-- [Get started with Docker](../../get-started/_index.md).
+- [Get started with Docker](../../guides/getting-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.
@@ -297,7 +297,7 @@ The `install` command accepts the following flags:
   on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
-- [Get started with Docker](../../get-started/_index.md).
+- [Get started with Docker](../../guides/getting-started/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.

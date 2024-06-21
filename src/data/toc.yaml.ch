@@ -6,18 +6,20 @@ Guides:
 - title: Overview
   path: /guides/
 - title: Docker overview
-  path: /get-started/overview/
+  path: /guides/docker-overview/
 @y
 ガイド:
 - title: 概要
   path: __SUBDIR__/guides/
 - title: Docker 概要
-  path: __SUBDIR__/get-started/overview/
+  path: __SUBDIR__/guides/docker-overview/
 @z
 
 @x
 - sectiontitle: "Getting started"
   section:
+  - title: "Overview"
+    path: /guides/getting-started/
   - title: "Get Docker Desktop"
     path: /guides/getting-started/get-docker-desktop/
   - title: "Develop with containers"
@@ -29,6 +31,8 @@ Guides:
 @y
 - sectiontitle: "はじめよう"
   section:
+  - title: "Overview"
+    path: __SUBDIR__/guides/getting-started/
   - title: "Docker Desktop の入手"
     path: __SUBDIR__/guides/getting-started/get-docker-desktop/
   - title: "Develop with containers"
@@ -559,22 +563,22 @@ Guides:
 - sectiontitle: Deployment and orchestration
   section:
   - title: "Overview"
-    path: /get-started/orchestration/
+    path: /guides/deployment-orchestration/orchestration/
   - title: "Deploy to Kubernetes"
-    path: /get-started/kube-deploy/
+    path: /guides/deployment-orchestration/kube-deploy/
   - title: "Deploy to Swarm"
-    path: /get-started/swarm-deploy/
+    path: /guides/deployment-orchestration/swarm-deploy/
   - title: Cloud integrations
     path: /cloud/
 @y
 - sectiontitle: デプロイとオーケストレーション
   section:
   - title: "概要"
-    path: __SUBDIR__/get-started/orchestration/
+    path: __SUBDIR__/guides/deployment-orchestration/orchestration/
   - title: "Kubernetes へのデプロイ"
-    path: __SUBDIR__/get-started/kube-deploy/
+    path: __SUBDIR__/guides/deployment-orchestration/kube-deploy/
   - title: "Swarm へのデプロイ"
-    path: __SUBDIR__/get-started/swarm-deploy/
+    path: __SUBDIR__/guides/deployment-orchestration/swarm-deploy/
   - title: クラウドインテグレーション
     path: __SUBDIR__/cloud/
 @z
@@ -583,52 +587,52 @@ Guides:
 - sectiontitle: Docker workshop
   section:
   - title: "Part 1: Overview"
-    path: /get-started/
+    path: /guides/workshop/
   - title: "Part 2: Containerize an application"
-    path: /get-started/02_our_app/
+    path: /guides/workshop/02_our_app/
   - title: "Part 3: Update the application"
-    path: /get-started/03_updating_app/
+    path: /guides/workshop/03_updating_app/
   - title: "Part 4: Share the application"
-    path: /get-started/04_sharing_app/
+    path: /guides/workshop/04_sharing_app/
   - title: "Part 5: Persist the DB"
-    path: /get-started/05_persisting_data/
+    path: /guides/workshop/05_persisting_data/
 @y
 - sectiontitle: Docker ワークショップ
   section:
   - title: "1部: 概要"
-    path: __SUBDIR__/get-started/
+    path: __SUBDIR__/guides/workshop/
   - title: "2部: アプリのコンテナー化"
-    path: __SUBDIR__/get-started/02_our_app/
+    path: __SUBDIR__/guides/workshop/02_our_app/
   - title: "3部: アプリの更新"
-    path: __SUBDIR__/get-started/03_updating_app/
+    path: __SUBDIR__/guides/workshop/03_updating_app/
   - title: "4部: アプリの共有"
-    path: __SUBDIR__/get-started/04_sharing_app/
+    path: __SUBDIR__/guides/workshop/04_sharing_app/
   - title: "5部: DB への保存"
-    path: __SUBDIR__/get-started/05_persisting_data/
+    path: __SUBDIR__/guides/workshop/05_persisting_data/
 @z
 
 @x
   - title: "Part 6: Use bind mounts"
-    path: /get-started/06_bind_mounts/
+    path: /guides/workshop/06_bind_mounts/
   - title: "Part 7: Multi-container apps"
-    path: /get-started/07_multi_container/
+    path: /guides/workshop/07_multi_container/
   - title: "Part 8: Use Docker Compose"
-    path: /get-started/08_using_compose/
+    path: /guides/workshop/08_using_compose/
   - title: "Part 9: Image-building best practices"
-    path: /get-started/09_image_best/
+    path: /guides/workshop/09_image_best/
   - title: "Part 10: What next?"
-    path: /get-started/11_what_next/
+    path: /guides/workshop/10_what_next/
 @y
   - title: "6部: バインドマウントの利用"
-    path: __SUBDIR__/get-started/06_bind_mounts/
+    path: __SUBDIR__/guides/workshop/06_bind_mounts/
   - title: "7部: マルチコンテナーアプリ"
-    path: __SUBDIR__/get-started/07_multi_container/
+    path: __SUBDIR__/guides/workshop/07_multi_container/
   - title: "8部: Docker Compose の利用"
-    path: __SUBDIR__/get-started/08_using_compose/
+    path: __SUBDIR__/guides/workshop/08_using_compose/
   - title: "9部: イメージビルドのベストプラクティス"
-    path: __SUBDIR__/get-started/09_image_best/
+    path: __SUBDIR__/guides/workshop/09_image_best/
   - title: "10部: 次は何？"
-    path: __SUBDIR__/get-started/11_what_next/
+    path: __SUBDIR__/guides/workshop/10_what_next/
 @z
 
 @x
@@ -3264,6 +3268,8 @@ Manuals:
       section:
       - path: /scout/policy/
         title: Overview
+      - path: /scout/policy/scores/
+        title: Health scores {{< badge color=blue text=Beta >}}
       - path: /scout/policy/view/
         title: View policy status
       - path: /scout/policy/configure/
@@ -3277,6 +3283,8 @@ Manuals:
       section:
       - path: __SUBDIR__/scout/policy/
         title: Overview
+      - path: __SUBDIR__/scout/policy/scores/
+        title: Health scores {{< badge color=blue text=Beta >}}
       - path: __SUBDIR__/scout/policy/view/
         title: View policy status
       - path: __SUBDIR__/scout/policy/configure/
@@ -5236,6 +5244,8 @@ Manuals:
     title: Docker Build Cloud billing
   - path: /billing/scout-billing/
     title: Docker Scout billing
+  - path: /billing/tax-certificate/
+    title: Register a tax certificate
   - path: /billing/faqs/
     title: Billing FAQs
 @y
@@ -5243,6 +5253,8 @@ Manuals:
     title: Docker Build Cloud billing
   - path: __SUBDIR__/billing/scout-billing/
     title: Docker Scout billing
+  - path: __SUBDIR__/billing/tax-certificate/
+    title: Register a tax certificate
   - path: __SUBDIR__/billing/faqs/
     title: 支払いに関する FAQ
 @z

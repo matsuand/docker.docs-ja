@@ -5,10 +5,11 @@
 SUBDIRS = core-billing
 
 bases = \
-	_index.md         \
-	build-billing.md  \
-	faqs.md           \
-	scout-billing.md
+	_index.md          \
+	build-billing.md   \
+	faqs.md            \
+	scout-billing.md   \
+	tax-certificate.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

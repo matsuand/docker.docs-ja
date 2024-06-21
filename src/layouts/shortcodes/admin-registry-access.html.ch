@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
-
 % snip code...
 
 @x
@@ -13,11 +12,11 @@ To configure Registry Access Management permissions, perform the following steps
 
 @x
 1. Sign in to {{ $product_link }}.
-2. Select **Organizations**, your organization, then in the **Access management** menu, select **Registry access**.
+2. {{ $ram_navigation }}
 3. Enable Registry Access Management to set the permissions for your registry.
 @y
 1. Sign in to {{ $product_link }}.
-2. Select **Organizations**, your organization, then in the **Access management** menu, select **Registry access**.
+2. {{ $ram_navigation }}
 3. Enable Registry Access Management to set the permissions for your registry.
 @z
 

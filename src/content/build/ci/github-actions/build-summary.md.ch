@@ -52,11 +52,11 @@ GitHub Actions:
 @z
 
 @x
-- `docker/build-push-action@v5.5.0` or `docker/build-push-action@v5`
-- `docker/bake-action@v4.7.0` or `docker/bake-action@v4`
+- `docker/build-push-action@v6`
+- `docker/bake-action@v5`
 @y
-- `docker/build-push-action@v5.5.0` or `docker/build-push-action@v5`
-- `docker/bake-action@v4.7.0` or `docker/bake-action@v4`
+- `docker/build-push-action@v6`
+- `docker/bake-action@v5`
 @z
 
 @x
@@ -199,11 +199,10 @@ variable in the YAML configuration for your build step:
 ```yaml {hl_lines=5}
       -
         name: Build
-        uses: docker/docker-build-push-action@v5
+        uses: docker/docker-build-push-action@v6
         env:
           DOCKER_BUILD_NO_SUMMARY: true
         with:
-          context: .
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 ```
@@ -211,11 +210,10 @@ variable in the YAML configuration for your build step:
 ```yaml {hl_lines=5}
       -
         name: Build
-        uses: docker/docker-build-push-action@v5
+        uses: docker/docker-build-push-action@v6
         env:
           DOCKER_BUILD_NO_SUMMARY: true
         with:
-          context: .
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 ```

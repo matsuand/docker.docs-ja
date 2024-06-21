@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Containerize Go apps using Docker
 keywords: docker, getting started, go, golang, language, dockerfile
 title: Go language-specific guide
-toc_min: 1
-toc_max: 2
----
 @y
----
 description: Containerize Go apps using Docker
 keywords: docker, getting started, go, golang, language, dockerfile
 title: Go 向けガイド
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -80,10 +72,10 @@ so *go* (pun intended) check it out!
 @z
 
 @x
-You also must know some basic [Docker concepts](../../get-started/overview.md) as well as to 
+You also must know some basic [Docker concepts](../../guides/docker-concepts/the-basics/what-is-a-container.md) as well as to 
 be at least vaguely familiar with the [Dockerfile format](../../build/building/packaging.md#dockerfile).
 @y
-You also must know some basic [Docker concepts](../../get-started/overview.md) as well as to 
+You also must know some basic [Docker concepts](../../guides/docker-concepts/the-basics/what-is-a-container.md) as well as to 
 be at least vaguely familiar with the [Dockerfile format](../../build/building/packaging.md#dockerfile).
 @z
 

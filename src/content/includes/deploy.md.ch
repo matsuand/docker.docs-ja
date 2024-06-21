@@ -84,7 +84,7 @@ To enable Kubernetes:
 @z
 
 @x
-For detailed information, see [Deploy on Kubernetes](/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](/get-started/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
 @y
-For detailed information, see [Deploy on Kubernetes](__SUBDIR__/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](__SUBDIR__/get-started/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](__SUBDIR__/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](__SUBDIR__/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
 @z

@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
 This tutorial walks you through the process of setting up and using Docker GitHub
@@ -36,9 +37,9 @@ To follow this tutorial, you need a Docker ID and a GitHub account.
 @z
 
 @x
-Create a GitHub repository and configure the Docker Hub secrets.
+Create a GitHub repository and configure the Docker Hub credentials.
 @y
-GitHub リポジトリを生成して Docker Hub シークレットを設定します。
+GitHub リポジトリを生成して Docker Hub の機密情報を設定します。
 @z
 
 @x
@@ -64,9 +65,9 @@ GitHub リポジトリを生成して Docker Hub シークレットを設定し�
 @z
 
 @x
-3. Create a new secret named `DOCKERHUB_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
 @y
-3. `DOCKERHUB_USERNAME` という名のシークレットを新規に生成して、その値に Docker ID を入力します。
+3. `DOCKERHUB_USERNAME` という名の **リポジトリ変数** を新規に生成して、その値に Docker ID を入力します。
 @z
 
 @x
@@ -80,18 +81,18 @@ GitHub リポジトリを生成して Docker Hub シークレットを設定し�
 @z
 
 @x
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @z
 
 @x
-With your repository created, and secrets configured, you're now ready for
+With your repository created, and credentials configured, you're now ready for
 action!
 @y
-With your repository created, and secrets configured, you're now ready for
+With your repository created, and credentials configured, you're now ready for
 action!
 @z
 
@@ -197,61 +198,7 @@ Now the essentials: what steps to run, and in what order to run them.
 Now the essentials: what steps to run, and in what order to run them.
 @z
 
-@x
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
-```
-@y
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
-```
-@z
+% snip code...
 
 @x
 The previous YAML snippet contains a sequence of steps that:
@@ -260,20 +207,18 @@ The previous YAML snippet contains a sequence of steps that:
 @z
 
 @x
-1. Checks out the repository on the build machine.
-2. Signs in to Docker Hub, using the
+1. Signs in to Docker Hub, using the
    [Docker Login](https://github.com/marketplace/actions/docker-login) action and your Docker Hub credentials.
-3. Creates a BuildKit builder instance using the
+2. Creates a BuildKit builder instance using the
    [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx) action.
-4. Builds the container image and pushes it to the Docker Hub repository, using
+3. Builds the container image and pushes it to the Docker Hub repository, using
    [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images).
 @y
-1. Checks out the repository on the build machine.
-2. Signs in to Docker Hub, using the
+1. Signs in to Docker Hub, using the
    [Docker Login](https://github.com/marketplace/actions/docker-login) action and your Docker Hub credentials.
-3. Creates a BuildKit builder instance using the
+2. Creates a BuildKit builder instance using the
    [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx) action.
-4. Builds the container image and pushes it to the Docker Hub repository, using
+3. Builds the container image and pushes it to the Docker Hub repository, using
    [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images).
 @z
 
@@ -284,14 +229,10 @@ The previous YAML snippet contains a sequence of steps that:
 @z
 
 @x
-   - `context`: the [build context](/build/building/context/).
-   - `file`: filepath to the Dockerfile.
    - `push`: tells the action to upload the image to a registry after building
      it.
    - `tags`: tags that specify where to push the image.
 @y
-   - `context`: the [build context](__SUBDIR__/build/building/context/).
-   - `file`: filepath to the Dockerfile.
    - `push`: tells the action to upload the image to a registry after building
      it.
    - `tags`: tags that specify where to push the image.
@@ -305,79 +246,7 @@ Add these steps to your workflow file. The full workflow configuration should
 look as follows:
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-    branches:
-      - "main"
-@y
-on:
-  push:
-    branches:
-      - "main"
-@z
-
-@x
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
-```
-@y
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
-```
-@z
+% snip code...
 
 @x
 ### Run the workflow

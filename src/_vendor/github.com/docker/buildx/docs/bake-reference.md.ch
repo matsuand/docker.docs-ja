@@ -2,9 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Bake file reference
+title: Bake file reference
 @y
-# Bake ファイルリファレンス {#bake-file-reference}
+title: Bake ファイルリファレンス
 @z
 
 @x

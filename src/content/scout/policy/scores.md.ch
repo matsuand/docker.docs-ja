@@ -19,18 +19,18 @@ keywords: scout, health scores, evaluation, checks, grades, docker hub
 @z
 
 @x
-> **Early Access**
+> **Beta**
 >
-> Health scores is an [Early Access](/release-lifecycle/#early-access-ea)
-> feature of Docker Scout. The feature is only available to organizations
-> participating in the early access program for this feature.
+> Health scores is a [Beta](/release-lifecycle/#beta) feature of Docker Scout.
+> The feature is only available to organizations selected to participate in the
+> early access program.
 { .restricted }
 @y
-> **早期アクセス**
+> **Beta**
 >
-> Health scores is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
-> feature of Docker Scout. The feature is only available to organizations
-> participating in the early access program for this feature.
+> Health scores is a [Beta](__SUBDIR__/release-lifecycle/#beta) feature of Docker Scout.
+> The feature is only available to organizations selected to participate in the
+> early access program.
 { .restricted }
 @z
 
@@ -68,12 +68,12 @@ score is not visible to users outside the organization or members without
 
 @x
 Health scores are determined by evaluating images against a set of Docker Scout
-[policies](./policy/_index.md). These policies align with best practices for
+[policies](./_index.md). These policies align with best practices for
 the software supply chain and are recommended by Docker as foundational
 standards for images.
 @y
 Health scores are determined by evaluating images against a set of Docker Scout
-[policies](./policy/_index.md). These policies align with best practices for
+[policies](./_index.md). These policies align with best practices for
 the software supply chain and are recommended by Docker as foundational
 standards for images.
 @z
@@ -151,23 +151,23 @@ The policies that influence the score, and their respective weights, are as foll
 @x
 | Policy                                                                                                    | Points |
 | --------------------------------------------------------------------------------------------------------- | ------ |
-| [Fixable Critical and High Vulnerabilities](./policy/_index.md#fixable-critical-and-high-vulnerabilities) | 20     |
-| [High-Profile Vulnerabilities](./policy/_index.md#high-profile-vulnerabilities)                           | 20     |
-| [Supply Chain Attestations](./policy/_index.md#supply-chain-attestations)                                 | 15     |
-| [Unapproved Base Images](./policy/_index.md#unapproved-base-images)                                       | 15     |
-| [Outdated Base Images](./policy/_index.md#outdated-base-images)                                           | 10     |
-| [Default Non-Root User](./policy/_index.md#default-non-root-user)                                         | 5      |
-| [Copyleft Licenses](./policy/_index.md#copyleft-licenses)                                                 | 5      |
+| [Fixable Critical and High Vulnerabilities](./_index.md#fixable-critical-and-high-vulnerabilities) | 20     |
+| [High-Profile Vulnerabilities](./_index.md#high-profile-vulnerabilities)                           | 20     |
+| [Supply Chain Attestations](./_index.md#supply-chain-attestations)                                 | 15     |
+| [Unapproved Base Images](./_index.md#unapproved-base-images)                                       | 15     |
+| [Outdated Base Images](./_index.md#outdated-base-images)                                           | 10     |
+| [Default Non-Root User](./_index.md#default-non-root-user)                                         | 5      |
+| [Copyleft Licenses](./_index.md#copyleft-licenses)                                                 | 5      |
 @y
 | Policy                                                                                                    | Points |
 | --------------------------------------------------------------------------------------------------------- | ------ |
-| [Fixable Critical and High Vulnerabilities](./policy/_index.md#fixable-critical-and-high-vulnerabilities) | 20     |
-| [High-Profile Vulnerabilities](./policy/_index.md#high-profile-vulnerabilities)                           | 20     |
-| [Supply Chain Attestations](./policy/_index.md#supply-chain-attestations)                                 | 15     |
-| [Unapproved Base Images](./policy/_index.md#unapproved-base-images)                                       | 15     |
-| [Outdated Base Images](./policy/_index.md#outdated-base-images)                                           | 10     |
-| [Default Non-Root User](./policy/_index.md#default-non-root-user)                                         | 5      |
-| [Copyleft Licenses](./policy/_index.md#copyleft-licenses)                                                 | 5      |
+| [Fixable Critical and High Vulnerabilities](./_index.md#fixable-critical-and-high-vulnerabilities) | 20     |
+| [High-Profile Vulnerabilities](./_index.md#high-profile-vulnerabilities)                           | 20     |
+| [Supply Chain Attestations](./_index.md#supply-chain-attestations)                                 | 15     |
+| [Unapproved Base Images](./_index.md#unapproved-base-images)                                       | 15     |
+| [Outdated Base Images](./_index.md#outdated-base-images)                                           | 10     |
+| [Default Non-Root User](./_index.md#default-non-root-user)                                         | 5      |
+| [Copyleft Licenses](./_index.md#copyleft-licenses)                                                 | 5      |
 @z
 
 @x
@@ -234,10 +234,10 @@ For an image with a total possible score of 90 points:
 
 @x
 To improve the health score of an image, take steps to ensure that the image is
-compliant with the Docker Scout recommended [policies](./policy/_index.md).
+compliant with the Docker Scout recommended [policies](./_index.md).
 @y
 To improve the health score of an image, take steps to ensure that the image is
-compliant with the Docker Scout recommended [policies](./policy/_index.md).
+compliant with the Docker Scout recommended [policies](./_index.md).
 @z
 
 @x
@@ -245,14 +245,14 @@ compliant with the Docker Scout recommended [policies](./policy/_index.md).
 2. Sign in using your Docker ID.
 3. Go to [Repository settings](https://scout.docker.com/settings/repos) and
    enable Docker Scout for your Docker Hub image repositories.
-4. Analyze the [policy compliance](./policy/_index.md) for your repositories,
+4. Analyze the [policy compliance](./_index.md) for your repositories,
    and take actions to ensure your images are policy-compliant.
 @y
 1. Go to the [Docker Scout Dashboard](https://scout.docker.com/).
 2. Sign in using your Docker ID.
 3. Go to [Repository settings](https://scout.docker.com/settings/repos) and
    enable Docker Scout for your Docker Hub image repositories.
-4. Analyze the [policy compliance](./policy/_index.md) for your repositories,
+4. Analyze the [policy compliance](./_index.md) for your repositories,
    and take actions to ensure your images are policy-compliant.
 @z
 
@@ -262,24 +262,4 @@ highest scores for a greater impact on your image's overall score.
 @y
 Since policies are weighted differently, prioritize the policies with the
 highest scores for a greater impact on your image's overall score.
-@z
-
-@x
-## Known limitations
-@y
-## Known limitations
-@z
-
-@x
-Health score can currently only be evaluated for:
-@y
-Health score can currently only be evaluated for:
-@z
-
-@x
-- Images with a `linux/amd64` or `linux/arm64` architecture.
-- Images up to 4GB in compressed size.
-@y
-- Images with a `linux/amd64` or `linux/arm64` architecture.
-- Images up to 4GB in compressed size.
 @z

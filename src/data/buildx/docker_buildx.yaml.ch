@@ -8,7 +8,7 @@ long: Extended build capabilities with BuildKit
 @y
 command: docker buildx
 short: Docker Buildx
-long: Extended build capabilities with BuildKit
+long: BuildKit を用いた拡張ビルド機能。
 @z
 
 % cname:
@@ -18,7 +18,7 @@ long: Extended build capabilities with BuildKit
 @x builder
       description: Override the configured builder instance
 @y
-      description: Override the configured builder instance
+      description: 設定済みビルダーインスタンスをオーバーライドします。
 @z
 
 @x
@@ -28,9 +28,9 @@ examples: |-
     You can also use the `BUILDX_BUILDER` environment variable.
 @y
 examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
+    ### 設定済みビルダーインスタンスのオーバーライド (--builder) {#builder}
 
-    You can also use the `BUILDX_BUILDER` environment variable.
+    環境変数 `BUILDX_BUILDER` を用いることもできます。
 @z
 
 % snip directives...

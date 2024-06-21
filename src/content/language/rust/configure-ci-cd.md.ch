@@ -56,9 +56,9 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 @z
 
 @x
-Create a GitHub repository, configure the Docker Hub secrets, and push your source code.
+Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
 @y
-Create a GitHub repository, configure the Docker Hub secrets, and push your source code.
+Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
 @z
 
 @x
@@ -76,22 +76,22 @@ Create a GitHub repository, configure the Docker Hub secrets, and push your sour
 @z
 
 @x
-3. Create a new secret named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
 @y
-3. Create a new secret named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
 @z
 
 @x
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `rust-docker`. Make sure access permissions include Read and Write.
+4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `rust-docker`. Make sure access permissions include Read and Write.
+4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @z
 
 @x
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. Add the PAT as a second secret in your GitHub repository, with the name
+5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @z
 
@@ -203,24 +203,20 @@ to Docker Hub.
        runs-on: ubuntu-latest
        steps:
          -
-           name: Checkout
-           uses: actions/checkout@v4
-         -
            name: Login to Docker Hub
            uses: docker/login-action@v3
            with:
-             username: ${{ secrets.DOCKER_USERNAME }}
+             username: ${{ vars.DOCKER_USERNAME }}
              password: ${{ secrets.DOCKERHUB_TOKEN }}
          -
            name: Set up Docker Buildx
            uses: docker/setup-buildx-action@v3
          -
            name: Build and push
-           uses: docker/build-push-action@v5
+           uses: docker/build-push-action@v6
            with:
-             context: .
              push: true
-             tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+             tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
    ```
 @y
    jobs:
@@ -228,37 +224,29 @@ to Docker Hub.
        runs-on: ubuntu-latest
        steps:
          -
-           name: Checkout
-           uses: actions/checkout@v4
-         -
            name: Login to Docker Hub
            uses: docker/login-action@v3
            with:
-             username: ${{ secrets.DOCKER_USERNAME }}
+             username: ${{ vars.DOCKER_USERNAME }}
              password: ${{ secrets.DOCKERHUB_TOKEN }}
          -
            name: Set up Docker Buildx
            uses: docker/setup-buildx-action@v3
          -
            name: Build and push
-           uses: docker/build-push-action@v5
+           uses: docker/build-push-action@v6
            with:
-             context: .
              push: true
-             tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+             tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
    ```
 @z
 
 @x
-   If your Dockerfile is in a different directory, update the `context` with the path to the directory containing the Dockerfile.
+   For more information about the YAML syntax for `docker/build-push-action`,
+   refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
 @y
-   If your Dockerfile is in a different directory, update the `context` with the path to the directory containing the Dockerfile.
-@z
-
-@x
-   For more information about the YAML syntax used here, see [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
-@y
-   For more information about the YAML syntax used here, see [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
+   For more information about the YAML syntax for `docker/build-push-action`,
+   refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
 @z
 
 @x

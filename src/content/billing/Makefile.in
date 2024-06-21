@@ -297,10 +297,11 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = core-billing
 bases = \
-	_index.md         \
-	build-billing.md  \
-	faqs.md           \
-	scout-billing.md
+	_index.md          \
+	build-billing.md   \
+	faqs.md            \
+	scout-billing.md   \
+	tax-certificate.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

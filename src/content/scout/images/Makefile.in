@@ -312,6 +312,8 @@ copyfiles = \
 	policy-overview.webp             \
 	policy-tag-view.webp             \
 	remediation.png                  \
+	score-a-shiny.png                \
+	score-badges-repolist.png        \
 	scout-metrics-grafana-policy.png \
 	scout-metrics-grafana-vulns.png  \
 	scout-metrics-prom-target.png    \

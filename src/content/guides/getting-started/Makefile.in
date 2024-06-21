@@ -297,6 +297,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = images
 bases = \
+	_index.md                     \
 	build-and-push-first-image.md \
 	develop-with-containers.md    \
 	get-docker-desktop.md         \

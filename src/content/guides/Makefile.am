@@ -1,10 +1,13 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = docker-concepts getting-started use-case
+SUBDIRS = deployment-orchestration docker-concepts getting-started \
+	use-case workshop
 
 bases = \
-	_index.md
+	_index.md          \
+	docker-overview.md \
+	resources.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

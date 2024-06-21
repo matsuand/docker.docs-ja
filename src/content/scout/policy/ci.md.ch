@@ -228,19 +228,11 @@ jobs:
 @x
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-@y
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-@z
-
-@x
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v3
 @y
+    runs-on: ubuntu-latest
+    steps:
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v3
 @z
@@ -280,7 +272,6 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v4
         with:
-          context: .
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           sbom: ${{ github.event_name != 'pull_request' }}
@@ -292,7 +283,6 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v4
         with:
-          context: .
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           sbom: ${{ github.event_name != 'pull_request' }}

@@ -6,6 +6,7 @@ bases = \
 	ci.md          \
 	configure.md   \
 	remediation.md \
+	scores.md      \
 	view.md
 
 include $(top_srcdir)/build-aux/common.mk

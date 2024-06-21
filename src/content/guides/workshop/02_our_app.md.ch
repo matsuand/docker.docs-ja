@@ -36,11 +36,11 @@ JavaScript の知識などなくてもかまいません。
 @z
 
 @x
-- You have installed the latest version of [Docker Desktop](../get-docker.md).
+- You have installed the latest version of [Docker Desktop](../../get-docker.md).
 - You have installed a [Git client](https://git-scm.com/downloads).
 - You have an IDE or a text editor to edit files. Docker recommends using [Visual Studio Code](https://code.visualstudio.com/).
 @y
-- 最新バージョンの [Docker Desktop](../get-docker.md) をインストールしていること。
+- 最新バージョンの [Docker Desktop](../../get-docker.md) をインストールしていること。
 - [Git クライアント](https://git-scm.com/downloads) をインストールしていること。
 - ファイル編集のために IDE あるいはテキストエディターを用意していること。
   Docker では [Visual Studio Code](https://code.visualstudio.com/) の利用を推奨。
@@ -417,13 +417,13 @@ Related information:
 @z
 
 @x
- - [Dockerfile reference](../reference/dockerfile.md)
+ - [Dockerfile reference](/reference/dockerfile/)
  - [docker CLI reference](/reference/cli/docker/)
- - [Build with Docker guide](../build/guide/index.md)
+ - [Build with Docker guide](../../build/guide/_index.md)
 @y
- - [Dockerfile リファレンス](../reference/dockerfile.md)
+ - [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [Docker ガイドを使ったビルド](../build/guide/index.md)
+ - [Docker ガイドを使ったビルド](../../build/guide/_index.md)
 @z
 
 @x

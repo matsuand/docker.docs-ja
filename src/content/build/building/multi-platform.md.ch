@@ -6,7 +6,7 @@ title: Multi-platform images
 description: Introduction to multi-platform images and how to build them
 keywords: build, buildx, buildkit, multi-platform images
 @y
-title: Multi-platform images
+title: マルチプラットフォームイメージ
 description: Introduction to multi-platform images and how to build them
 keywords: build, buildx, buildkit, multi-platform images
 @z
@@ -18,11 +18,8 @@ systems, like Windows. This means that whether you are using an ARM-based
 system or an x86 machine, Docker automatically detects and selects the
 appropriate variant for your hosts's operating system and architecture.
 @y
-A multi-platform image refers to a single image that includes variants for
-multiple different architectures and, in some cases, different operating
-systems, like Windows. This means that whether you are using an ARM-based
-system or an x86 machine, Docker automatically detects and selects the
-appropriate variant for your hosts's operating system and architecture.
+マルチプラットフォームイメージとは、一つのイメージ内に複数の異なるアーキテクチャーを含むもの、また場合によっては Windows のような異なるオペレーティングシステムを含むもののことを指します。
+たとえば ARM ベースのシステムと x86 マシンを利用している場合に、ホストのオペレーティングシステムやアーキテクチャーに合わせて、Docker が自動的に適切なものを検出して利用するというものです。
 @z
 
 @x
@@ -30,9 +27,8 @@ Many of the Docker Official Images available on Docker Hub support various
 architectures. For instance, the `busybox` image includes support for these
 platforms:
 @y
-Many of the Docker Official Images available on Docker Hub support various
-architectures. For instance, the `busybox` image includes support for these
-platforms:
+Docker Hub から入手できる Docker の公式イメージでは、さまざまなアーキテクチャーに対応するものが多々あります。
+たとえば `busybox` イメージでは、以下のようなプラットフォームへのサポートが含まれています。
 @z
 
 @x
@@ -41,16 +37,15 @@ platforms:
 - PowerPC and IBM Z (`linux/ppc64le`, `linux/s390x`)
 @y
 - x86-64 (`linux/amd64`, `linux/i386`)
-- ARM architectures (`linux/arm/v5`, `linux/arm/v6`, `linux/arm/v7`, `linux/arm64`)
-- PowerPC and IBM Z (`linux/ppc64le`, `linux/s390x`)
+- ARM アーキテクチャー (`linux/arm/v5`, `linux/arm/v6`, `linux/arm/v7`, `linux/arm64`)
+- PowerPC と IBM Z (`linux/ppc64le`, `linux/s390x`)
 @z
 
 @x
 On an x86 machine, Docker will automatically use the `linux/amd64` variant
 when you run a container or invoke a build.
 @y
-On an x86 machine, Docker will automatically use the `linux/amd64` variant
-when you run a container or invoke a build.
+x86 マシンにおいて Docker は、コンテナー起動時やビルド処理時に自動的に `linux/amd64` を利用します。
 @z
 
 @x
@@ -59,42 +54,31 @@ While Docker Desktop on macOS or Windows typically runs Linux containers using
 a Linux VM, Docker also supports Windows containers if you're operating in
 Windows container mode.
 @y
-Most Docker images use the `linux/` OS prefix to indicate they are Linux-based.
-While Docker Desktop on macOS or Windows typically runs Linux containers using
-a Linux VM, Docker also supports Windows containers if you're operating in
-Windows container mode.
+Docker イメージのほとんどは、Linux ベースであることを表す OS プレフィックス `linux/` がついています。
+macOS あるいは Windows 上の Docker Desktop では、Linux VM を使って Linux コンテナーを動作させていますが、Windows コンテナーモードを利用していれば Windows コンテナーもサポートします。
 @z
 
 @x
 ## Building multi-platform images
 @y
-## Building multi-platform images
+## マルチプラットフォームイメージのビルド {#building-multi-platform-images}
 @z
 
 @x
 When triggering a build, use the `--platform` flag to define the target
 platforms for the build output, such as `linux/amd64` and `linux/arm64`:
 @y
-When triggering a build, use the `--platform` flag to define the target
-platforms for the build output, such as `linux/amd64` and `linux/arm64`:
+ビルドを実行する際に `--platform` フラグを用いれば、ビルド出力を行うターゲットプラットフォーム、たとえば `linux/amd64` や `linux/arm64` などを指定することができます。
 @z
 
-@x
-```console
-$ docker build --platform linux/amd64,linux/arm64 .
-```
-@y
-```console
-$ docker build --platform linux/amd64,linux/arm64 .
-```
-@z
+% snip command...
 
 @x
 By default, Docker can build for only one platform at a time.
 To build for multiple platforms concurrently, you can:
 @y
-By default, Docker can build for only one platform at a time.
-To build for multiple platforms concurrently, you can:
+デフォルトで Docker は一度に一つのプラットフォームのみをビルドします。
+マルチプラットフォーム向けに正しくビルドするには、以下を行います。
 @z
 
 @x
@@ -255,15 +239,7 @@ platforms, for other installations it likely needs to be installed using
 [`tonistiigi/binfmt`](https://github.com/tonistiigi/binfmt) image:
 @z
 
-@x
-```console
-$ docker run --privileged --rm tonistiigi/binfmt --install all
-```
-@y
-```console
-$ docker run --privileged --rm tonistiigi/binfmt --install all
-```
-@z
+% snip command...
 
 @x
 ### Multiple native nodes
@@ -295,21 +271,7 @@ The following command creates a multi-node builder from Docker contexts named
 those contexts.
 @z
 
-@x
-```console
-$ docker buildx create --use --name mybuild node-amd64
-mybuild
-$ docker buildx create --append --name mybuild node-arm64
-$ docker buildx build --platform linux/amd64,linux/arm64 .
-```
-@y
-```console
-$ docker buildx create --use --name mybuild node-amd64
-mybuild
-$ docker buildx create --append --name mybuild node-arm64
-$ docker buildx build --platform linux/amd64,linux/arm64 .
-```
-@z
+% snip command...
 
 @x
 While this approach has advantages over emulation, managing multi-node builders
@@ -337,27 +299,7 @@ After signing up for Docker Build Cloud, add the builder to your local
 environment and start building.
 @z
 
-@x
-```console
-$ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
-cloud-<ORG>-<BUILDER_NAME>
-$ docker build \
-  --builder cloud-<ORG>-<BUILDER_NAME> \
-  --platform linux/amd64,linux/arm64,linux/arm/v7 \
-  --tag <IMAGE_NAME> \
-  --push .
-```
-@y
-```console
-$ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
-cloud-<ORG>-<BUILDER_NAME>
-$ docker build \
-  --builder cloud-<ORG>-<BUILDER_NAME> \
-  --platform linux/amd64,linux/arm64,linux/arm/v7 \
-  --tag <IMAGE_NAME> \
-  --push .
-```
-@z
+% snip command...
 
 @x
 For more information, see [Docker Build Cloud](../cloud/_index.md).
@@ -401,27 +343,7 @@ this case, the values are just printed to stdout with `echo`, but this
 illustrates how you would pass them to the compiler for cross-compilation.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM golang:alpine AS build
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
-RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
-FROM alpine
-COPY --from=build /log /log
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM golang:alpine AS build
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
-RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
-FROM alpine
-COPY --from=build /log /log
-```
-@z
+% snip code...
 
 @x
 ## Getting started
@@ -437,21 +359,7 @@ Run the [`docker buildx ls` command](../../reference/cli/docker/buildx/ls.md)
 to list the existing builders:
 @z
 
-@x
-```console
-$ docker buildx ls
-NAME/NODE  DRIVER/ENDPOINT  STATUS   BUILDKIT PLATFORMS
-default *  docker
-  default  default          running  v0.11.6  linux/amd64, linux/arm64, linux/arm/v7, linux/arm/v6
-```
-@y
-```console
-$ docker buildx ls
-NAME/NODE  DRIVER/ENDPOINT  STATUS   BUILDKIT PLATFORMS
-default *  docker
-  default  default          running  v0.11.6  linux/amd64, linux/arm64, linux/arm/v7, linux/arm/v6
-```
-@z
+% snip command...
 
 @x
 This displays the default builtin driver, that uses the BuildKit server
@@ -473,15 +381,7 @@ and the more advanced cache exporters, which are currently unsupported in the
 default `docker` driver:
 @z
 
-@x
-```console
-$ docker buildx create --name mybuilder --bootstrap --use
-```
-@y
-```console
-$ docker buildx create --name mybuilder --bootstrap --use
-```
-@z
+% snip command...
 
 @x
 Now listing the existing builders again, you can see that the new builder is
@@ -491,25 +391,7 @@ Now listing the existing builders again, you can see that the new builder is
 registered:
 @z
 
-@x
-```console
-$ docker buildx ls
-NAME/NODE     DRIVER/ENDPOINT              STATUS   BUILDKIT PLATFORMS
-mybuilder *   docker-container
-  mybuilder0  unix:///var/run/docker.sock  running  v0.12.1  linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/mips64le, linux/mips64, linux/arm/v7, linux/arm/v6
-default       docker
-  default     default                      running  v{{% param "buildkit_version" %}}  linux/amd64, linux/arm64, linux/arm/v7, linux/arm/v6
-```
-@y
-```console
-$ docker buildx ls
-NAME/NODE     DRIVER/ENDPOINT              STATUS   BUILDKIT PLATFORMS
-mybuilder *   docker-container
-  mybuilder0  unix:///var/run/docker.sock  running  v0.12.1  linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/mips64le, linux/mips64, linux/arm/v7, linux/arm/v6
-default       docker
-  default     default                      running  v{{% param "buildkit_version" %}}  linux/amd64, linux/arm64, linux/arm/v7, linux/arm/v6
-```
-@z
+% snip command...
 
 @x
 ## Example
@@ -535,19 +417,7 @@ The following example uses a single `Dockerfile` to build an Alpine image with
 cURL installed for multiple architectures:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine:{{% param "example_alpine_version" %}}
-RUN apk add curl
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine:{{% param "example_alpine_version" %}}
-RUN apk add curl
-```
-@z
+% snip code...
 
 @x
 Build the Dockerfile with buildx, passing the list of architectures to
@@ -557,63 +427,7 @@ Build the Dockerfile with buildx, passing the list of architectures to
 build for:
 @z
 
-@x
-```console
-$ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <username>/<image>:latest --push .
-...
-#16 exporting to image
-#16 exporting layers
-#16 exporting layers 0.5s done
-#16 exporting manifest sha256:71d7ecf3cd12d9a99e73ef448bf63ae12751fe3a436a007cb0969f0dc4184c8c 0.0s done
-#16 exporting config sha256:a26f329a501da9e07dd9cffd9623e49229c3bb67939775f936a0eb3059a3d045 0.0s done
-#16 exporting manifest sha256:5ba4ceea65579fdd1181dfa103cc437d8e19d87239683cf5040e633211387ccf 0.0s done
-#16 exporting config sha256:9fcc6de03066ac1482b830d5dd7395da781bb69fe8f9873e7f9b456d29a9517c 0.0s done
-#16 exporting manifest sha256:29666fb23261b1f77ca284b69f9212d69fe5b517392dbdd4870391b7defcc116 0.0s done
-#16 exporting config sha256:92cbd688027227473d76e705c32f2abc18569c5cfabd00addd2071e91473b2e4 0.0s done
-#16 exporting manifest list sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48 0.0s done
-#16 ...
-@y
-```console
-$ docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t <username>/<image>:latest --push .
-...
-#16 exporting to image
-#16 exporting layers
-#16 exporting layers 0.5s done
-#16 exporting manifest sha256:71d7ecf3cd12d9a99e73ef448bf63ae12751fe3a436a007cb0969f0dc4184c8c 0.0s done
-#16 exporting config sha256:a26f329a501da9e07dd9cffd9623e49229c3bb67939775f936a0eb3059a3d045 0.0s done
-#16 exporting manifest sha256:5ba4ceea65579fdd1181dfa103cc437d8e19d87239683cf5040e633211387ccf 0.0s done
-#16 exporting config sha256:9fcc6de03066ac1482b830d5dd7395da781bb69fe8f9873e7f9b456d29a9517c 0.0s done
-#16 exporting manifest sha256:29666fb23261b1f77ca284b69f9212d69fe5b517392dbdd4870391b7defcc116 0.0s done
-#16 exporting config sha256:92cbd688027227473d76e705c32f2abc18569c5cfabd00addd2071e91473b2e4 0.0s done
-#16 exporting manifest list sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48 0.0s done
-#16 ...
-@z
-
-@x
-#17 [auth] <username>/<image>:pull,push token for registry-1.docker.io
-#17 DONE 0.0s
-@y
-#17 [auth] <username>/<image>:pull,push token for registry-1.docker.io
-#17 DONE 0.0s
-@z
-
-@x
-#16 exporting to image
-#16 pushing layers
-#16 pushing layers 3.6s done
-#16 pushing manifest for docker.io/<username>/<image>:latest@sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48
-#16 pushing manifest for docker.io/<username>/<image>:latest@sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48 1.4s done
-#16 DONE 5.6s
-```
-@y
-#16 exporting to image
-#16 pushing layers
-#16 pushing layers 3.6s done
-#16 pushing manifest for docker.io/<username>/<image>:latest@sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48
-#16 pushing manifest for docker.io/<username>/<image>:latest@sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48 1.4s done
-#16 DONE 5.6s
-```
-@z
+% snip command...
 
 @x
 > **Note**
@@ -641,53 +455,7 @@ Inspect the image using [`docker buildx imagetools` command](../../reference/cli
 Inspect the image using [`docker buildx imagetools` command](../../reference/cli/docker/buildx/imagetools/_index.md):
 @z
 
-@x
-```console
-$ docker buildx imagetools inspect <username>/<image>:latest
-Name:      docker.io/<username>/<image>:latest
-MediaType: application/vnd.docker.distribution.manifest.list.v2+json
-Digest:    sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48
-@y
-```console
-$ docker buildx imagetools inspect <username>/<image>:latest
-Name:      docker.io/<username>/<image>:latest
-MediaType: application/vnd.docker.distribution.manifest.list.v2+json
-Digest:    sha256:f3b552e65508d9203b46db507bb121f1b644e53a22f851185d8e53d873417c48
-@z
-
-@x
-Manifests:
-  Name:      docker.io/<username>/<image>:latest@sha256:71d7ecf3cd12d9a99e73ef448bf63ae12751fe3a436a007cb0969f0dc4184c8c
-  MediaType: application/vnd.docker.distribution.manifest.v2+json
-  Platform:  linux/amd64
-@y
-Manifests:
-  Name:      docker.io/<username>/<image>:latest@sha256:71d7ecf3cd12d9a99e73ef448bf63ae12751fe3a436a007cb0969f0dc4184c8c
-  MediaType: application/vnd.docker.distribution.manifest.v2+json
-  Platform:  linux/amd64
-@z
-
-@x
-  Name:      docker.io/<username>/<image>:latest@sha256:5ba4ceea65579fdd1181dfa103cc437d8e19d87239683cf5040e633211387ccf
-  MediaType: application/vnd.docker.distribution.manifest.v2+json
-  Platform:  linux/arm64
-@y
-  Name:      docker.io/<username>/<image>:latest@sha256:5ba4ceea65579fdd1181dfa103cc437d8e19d87239683cf5040e633211387ccf
-  MediaType: application/vnd.docker.distribution.manifest.v2+json
-  Platform:  linux/arm64
-@z
-
-@x
-  Name:      docker.io/<username>/<image>:latest@sha256:29666fb23261b1f77ca284b69f9212d69fe5b517392dbdd4870391b7defcc116
-  MediaType: application/vnd.docker.distribution.manifest.v2+json
-  Platform:  linux/arm/v7
-```
-@y
-  Name:      docker.io/<username>/<image>:latest@sha256:29666fb23261b1f77ca284b69f9212d69fe5b517392dbdd4870391b7defcc116
-  MediaType: application/vnd.docker.distribution.manifest.v2+json
-  Platform:  linux/arm/v7
-```
-@z
+% snip command...
 
 @x
 The image is now available on Docker Hub with the tag `<username>/<image>:latest`.
@@ -713,29 +481,8 @@ targeted for a different architecture on Docker Desktop. For example, when
 you run the following on a macOS:
 @z
 
-@x
- ```console
-$ docker run --rm docker.io/<username>/<image>:latest@sha256:2b77acdfea5dc5baa489ffab2a0b4a387666d1d526490e31845eb64e3e73ed20 uname -m
-aarch64
-```
-@y
- ```console
-$ docker run --rm docker.io/<username>/<image>:latest@sha256:2b77acdfea5dc5baa489ffab2a0b4a387666d1d526490e31845eb64e3e73ed20 uname -m
-aarch64
-```
-@z
-
-@x
-```console
-$ docker run --rm docker.io/<username>/<image>:latest@sha256:723c22f366ae44e419d12706453a544ae92711ae52f510e226f6467d8228d191 uname -m
-armv7l
-```
-@y
-```console
-$ docker run --rm docker.io/<username>/<image>:latest@sha256:723c22f366ae44e419d12706453a544ae92711ae52f510e226f6467d8228d191 uname -m
-armv7l
-```
-@z
+% snip command...
+% snip command...
 
 @x
 In the previous example, `uname -m` returns `aarch64` and `armv7l` as expected,

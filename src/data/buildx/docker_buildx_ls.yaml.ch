@@ -8,7 +8,7 @@ long: |-
     Lists all builder instances and the nodes for each instance.
 @y
 command: docker buildx ls
-short: List builder instances
+short: ビルダーインスタンスの一覧表示
 long: |-
     Lists all builder instances and the nodes for each instance.
 @z

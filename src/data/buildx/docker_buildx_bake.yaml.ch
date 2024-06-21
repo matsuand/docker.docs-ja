@@ -13,7 +13,7 @@ long: |-
 @y
 command: docker buildx bake
 aliases: docker buildx bake, docker buildx f
-short: Build from a file
+short: ファイルからのビルド
 long: |-
     Bake is a high-level build command. Each specified target runs in parallel
     as part of the build.
@@ -81,10 +81,10 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @z
 
 @x provenance

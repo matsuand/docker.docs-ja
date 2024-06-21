@@ -31,10 +31,10 @@ Learn by example:
 * [Network containers](networkingcontainers.md)
 * [Manage data in containers](../../storage/volumes.md)
 * [Samples](../../samples/index.md)
-* [Get Started](../../get-started/index.md)
+* [Get Started](../../guides/getting-started/_index.md)
 @y
 * [Network containers](networkingcontainers.md)
 * [Manage data in containers](../../storage/volumes.md)
 * [Samples](../../samples/index.md)
-* [Get Started](../../get-started/index.md)
+* [Get Started](../../guides/getting-started/_index.md)
 @z

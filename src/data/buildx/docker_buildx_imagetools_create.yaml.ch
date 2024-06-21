@@ -9,17 +9,33 @@ short: Create a new image based on source images
 long: |-
     Create a new manifest list based on source manifests. The source manifests can
     be manifest lists or single platform distribution manifests and must already
-    exist in the registry where the new manifest is created. If only one source is
-    specified, create performs a carbon copy.
-usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
+    exist in the registry where the new manifest is created.
 @y
 command: docker buildx imagetools create
 short: Create a new image based on source images
 long: |-
     Create a new manifest list based on source manifests. The source manifests can
     be manifest lists or single platform distribution manifests and must already
-    exist in the registry where the new manifest is created. If only one source is
-    specified, create performs a carbon copy.
+    exist in the registry where the new manifest is created.
+@z
+
+@x
+    If only one source is specified and that source is a manifest list or image index,
+    create performs a carbon copy. If one source is specified and that source is *not*
+    a list or index, the output will be a manifest list, however you can disable this
+    behavior with `--prefer-index=false` which attempts to preserve the source manifest
+    format in the output.
+@y
+    If only one source is specified and that source is a manifest list or image index,
+    create performs a carbon copy. If one source is specified and that source is *not*
+    a list or index, the output will be a manifest list, however you can disable this
+    behavior with `--prefer-index=false` which attempts to preserve the source manifest
+    format in the output.
+@z
+
+@x
+usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
+@y
 usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
 @z
 
@@ -49,12 +65,16 @@ usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
       description: Read source descriptor from file
 @z
 
-@x progress
-      description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+@x prefer-index
+        When only a single source is specified, prefer outputting an image index or manifest list instead of performing a carbon copy
 @y
-      description: |
-        Set type of progress output (`auto`, `plain`, `tty`). Use plain to show container output
+        When only a single source is specified, prefer outputting an image index or manifest list instead of performing a carbon copy
+@z
+
+@x progress
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+@y
+        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @z
 
 @x tag
