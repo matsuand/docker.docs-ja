@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
 % snip 対応
 
 @x
@@ -24,14 +25,14 @@ Docker Scout automatically analyzes new images that you push to that repository.
 リポジトリにおいてイメージ分析をアクティブにした場合、そのリポジトリへのプッシュが行われると Docker Scout は新たなイメージに対して自動的に分析を行います。
 @z
 
-@x
+@x (no slash) 対応
 Image analysis extracts the Software Bill of Material (SBOM)
 and other image metadata,and evaluates it against vulnerability data from
-[security advisories](./advisory-db-sources.md).
+[security advisories](/scout/deep-dive/advisory-db-sources.md).
 @y
 Image analysis extracts the Software Bill of Material (SBOM)
 and other image metadata,and evaluates it against vulnerability data from
-[security advisories](./advisory-db-sources.md).
+[security advisories](scout/deep-dive/advisory-db-sources.md).
 @z
 
 @x
@@ -52,14 +53,14 @@ which means your security status for images is updated in real-time.
 This dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed.
 @z
 
-@x
+@x (no slash) 対応
 Docker Scout image analysis is available by default for Docker Hub repositories.
 You can also integrate third-party registries and other services. To learn more,
-see [Integrating Docker Scout with other systems](./integrations/_index.md).
+see [Integrating Docker Scout with other systems](/scout/integrations/_index.md).
 @y
 Docker Scout image analysis is available by default for Docker Hub repositories.
 You can also integrate third-party registries and other services. To learn more,
-see [Integrating Docker Scout with other systems](./integrations/_index.md).
+see [Integrating Docker Scout with other systems](scout/integrations/_index.md).
 @z
 
 @x
@@ -68,28 +69,28 @@ see [Integrating Docker Scout with other systems](./integrations/_index.md).
 ## Activate Docker Scout on a repository
 @z
 
-@x
+@x (no slash) 対応
 The free tier of Docker Scout lets you use Docker Scout for up to 3
 repositories per Docker organization. You can update your Docker Scout plan if
 you need additional repositories, see [Docker Scout
-billing](../billing/scout-billing.md).
+billing](/billing/scout-billing.md).
 @y
 The free tier of Docker Scout lets you use Docker Scout for up to 3
 repositories per Docker organization. You can update your Docker Scout plan if
 you need additional repositories, see [Docker Scout
-billing](../billing/scout-billing.md).
+billing](billing/scout-billing.md).
 @z
 
-@x
+@x (no slash) 対応
 Before you can activate image analysis on a repository in a third-party registry,
 the registry must be integrated with Docker Scout for your Docker organization.
 Docker Hub is integrated by default. For more information, see
-See [Container registry integrations](./integrations/_index.md#container-registries)
+See [Container registry integrations](/scout/integrations/_index.md#container-registries)
 @y
 Before you can activate image analysis on a repository in a third-party registry,
 the registry must be integrated with Docker Scout for your Docker organization.
 Docker Hub is integrated by default. For more information, see
-See [Container registry integrations](./integrations/_index.md#container-registries)
+See [Container registry integrations](scout/integrations/_index.md#container-registries)
 @z
 
 @x
@@ -170,26 +171,26 @@ analysis is activated.
 
 % snip command...
 
-@x
+@x (no slash) 対応
    Building with the `--provenance=true` and `--sbom=true` flags attaches
-   [build attestations](../build/attestations/_index.md) to the image. Docker
+   [build attestations](/build/attestations/_index.md) to the image. Docker
    Scout uses attestations to provide more fine-grained analysis results.
 @y
    Building with the `--provenance=true` and `--sbom=true` flags attaches
-   [build attestations](../build/attestations/_index.md) to the image. Docker
+   [build attestations](build/attestations/_index.md) to the image. Docker
    Scout uses attestations to provide more fine-grained analysis results.
 @z
 
-@x
+@x (no slash) 対応
    > **Note**
    >
    > The default `docker` driver only supports build attestations if you use the
-   > [containerd image store](../desktop/containerd.md).
+   > [containerd image store](/desktop/containerd.md).
 @y
    > **Note**
    >
    > The default `docker` driver only supports build attestations if you use the
-   > [containerd image store](../desktop/containerd.md).
+   > [containerd image store](desktop/containerd.md).
 @z
 
 @x
@@ -352,12 +353,12 @@ For more information about these commands and how to use them, refer to the CLI
 reference documentation:
 @z
 
-@x
-- [`docker scout quickview`](../reference/cli/docker/scout/quickview.md)
-- [`docker scout cves`](../reference/cli/docker/scout/cves.md)
+@x (no slash) 対応
+- [`docker scout quickview`](/reference/cli/docker/scout/quickview.md)
+- [`docker scout cves`](/reference/cli/docker/scout/cves.md)
 @y
-- [`docker scout quickview`](../reference/cli/docker/scout/quickview.md)
-- [`docker scout cves`](../reference/cli/docker/scout/cves.md)
+- [`docker scout quickview`](reference/cli/docker/scout/quickview.md)
+- [`docker scout cves`](reference/cli/docker/scout/cves.md)
 @z
 
 @x
@@ -366,16 +367,16 @@ reference documentation:
 ## Vulnerability severity assessment
 @z
 
-@x
+@x (no slash) 対応
 Docker Scout assigns a severity rating to vulnerabilities based on
-vulnerability data from [advisory sources](./advisory-db-sources.md).
+vulnerability data from [advisory sources](/scout/deep-dive/advisory-db-sources.md).
 Advisories are ranked and prioritized depending on the type of package that's
 affected by a vulnerability. For example, if a vulnerability affects an OS
 package, the severity level assigned by the distribution maintainer is
 prioritized.
 @y
 Docker Scout assigns a severity rating to vulnerabilities based on
-vulnerability data from [advisory sources](./advisory-db-sources.md).
+vulnerability data from [advisory sources](scout/deep-dive/advisory-db-sources.md).
 Advisories are ranked and prioritized depending on the type of package that's
 affected by a vulnerability. For example, if a vulnerability affects an OS
 package, the severity level assigned by the distribution maintainer is
@@ -470,11 +471,11 @@ indexing in Docker Desktop, has an image file size limit of 10 GB (uncompressed)
 To analyze images larger than that, you can either:
 @z
 
-@x
-- Attach [SBOM attestations](../build/attestations/sbom.md) at build-time
+@x (no slash) 対応
+- Attach [SBOM attestations](/build/attestations/sbom.md) at build-time
 - Use the [CLI](#cli) to analyze the image locally
 @y
-- Attach [SBOM attestations](../build/attestations/sbom.md) at build-time
+- Attach [SBOM attestations](build/attestations/sbom.md) at build-time
 - Use the [CLI](#cli) to analyze the image locally
 @z
 

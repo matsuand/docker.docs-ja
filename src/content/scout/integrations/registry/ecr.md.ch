@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 description: Integrate Amazon Elastic Container Registry with Docker Scout
 keywords: docker scout, ecr, integration, image analysis, security, cves
 title: Integrate Docker Scout with Amazon ECR
----
 @y
----
 description: Integrate Amazon Elastic Container Registry with Docker Scout
 keywords: docker scout, ecr, integration, image analysis, security, cves
 title: Integrate Docker Scout with Amazon ECR
----
 @z
 
 @x
@@ -61,18 +59,18 @@ The following diagram shows how the Docker Scout ECR integration works.
 ![How the ECR integration works](../../images/Scout-ECR.png)
 @z
 
-@x
+@x (no slash) 対応
 After the integration, Docker Scout automatically pulls and analyzes images
 that you push to the ECR registry. Metadata about your images are stored on the
 Docker Scout platform, but Docker Scout doesn't store the container images
 themselves. For more information about how Docker Scout handles image data, see
-[Data handling](../../data-handling.md).
+[Data handling](/scout/deep-dive/data-handling.md).
 @y
 After the integration, Docker Scout automatically pulls and analyzes images
 that you push to the ECR registry. Metadata about your images are stored on the
 Docker Scout platform, but Docker Scout doesn't store the container images
 themselves. For more information about how Docker Scout handles image data, see
-[Data handling](../../data-handling.md).
+[Data handling](scout/deep-dive/data-handling.md).
 @z
 
 @x

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 description: How to integrate Docker Scout with Jenkins
 keywords: supply chain, security, ci, continuous integration, jenkins
 title: Integrate Docker Scout with Jenkins
----
 @y
----
 description: How to integrate Docker Scout with Jenkins
 keywords: supply chain, security, ci, continuous integration, jenkins
 title: Integrate Docker Scout with Jenkins
----
 @z
 
 @x
@@ -103,18 +101,18 @@ generate a CVE report for an image and tag. It only shows critical or
 high-severity vulnerabilities.
 @z
 
-@x
+@x (no slash) 対応
 > **Note**
 >
 > If you're seeing a `permission denied` error related to the image cache, try
-> setting the [`DOCKER_SCOUT_CACHE_DIR`](../../env-vars.md) environment
+> setting the [`DOCKER_SCOUT_CACHE_DIR`](/scout/how-tos/configure-cli.md) environment
 > variable to a writable directory. Or alternatively, disable local caching
 > entirely with `DOCKER_SCOUT_NO_CACHE=true`.
 @y
 > **Note**
 >
 > If you're seeing a `permission denied` error related to the image cache, try
-> setting the [`DOCKER_SCOUT_CACHE_DIR`](../../env-vars.md) environment
+> setting the [`DOCKER_SCOUT_CACHE_DIR`](scout/how-tos/configure-cli.md) environment
 > variable to a writable directory. Or alternatively, disable local caching
 > entirely with `DOCKER_SCOUT_NO_CACHE=true`.
 @z

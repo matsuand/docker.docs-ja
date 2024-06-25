@@ -20,6 +20,178 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.28.1
+@y
+## 2.28.1
+@z
+
+@x
+{{< release-date date="2024-06-24" >}}
+@y
+{{< release-date date="2024-06-24" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+- Fixed progress display, broken in `v2.28.0`, when TTY mode available.
+@y
+- Fixed progress display, broken in `v2.28.0`, when TTY mode available.
+@z
+
+@x
+## 2.28.0
+@y
+## 2.28.0
+@z
+
+@x
+{{< release-date date="2024-06-21" >}}
+@y
+{{< release-date date="2024-06-21" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.1.3
+- Dependencies upgrade: bump docker engine and cli to v27.0.1-rc.1
+@y
+- 依存パッケージの更新: compose-go v2.1.3
+- 依存パッケージの更新: docker engine, cli v27.0.1-rc.1
+@z
+
+@x
+## 2.27.3
+@y
+## 2.27.3
+@z
+
+@x
+{{< release-date date="2024-06-21" >}}
+@y
+{{< release-date date="2024-06-21" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump buildx to 0.15.1
+- Dependencies upgrade: bump buildkit to 0.14.1
+@y
+- 依存パッケージの更新: buildx 0.15.1
+- 依存パッケージの更新: buildkit 0.14.1
+@z
+
+@x
+## 2.27.2
+@y
+## 2.27.2
+@z
+
+@x
+{{< release-date date="2024-06-20" >}}
+@y
+{{< release-date date="2024-06-20" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump golang to 1.21.11
+- Dependencies upgrade: bump docker engine and cli to v26.1.4
+- Dependencies upgrade: bump buildx to 0.15.0
+- Dependencies upgrade: bump buildkit to 0.14.0
+- Dependencies upgrade: bump containerd to 1.7.18
+@y
+- 依存パッケージの更新: golang 1.21.11
+- 依存パッケージの更新: docker engine, cli v26.1.4
+- 依存パッケージの更新: buildx 0.15.0
+- 依存パッケージの更新: buildkit 0.14.0
+- 依存パッケージの更新: containerd 1.7.18
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+- Added an `--environment` flag to the `config` command
+- Fixed a bug which caused the  `watch` process to hang when used as flag with the `up` command
+- Fixed usage of `COMPOSE_PROFILES` in `.env` file
+@y
+- Added an `--environment` flag to the `config` command
+- Fixed a bug which caused the  `watch` process to hang when used as flag with the `up` command
+- Fixed usage of `COMPOSE_PROFILES` in `.env` file
+@z
+
+@x
+## 2.27.1
+@y
+## 2.27.1
+@z
+
+@x
+{{< release-date date="2024-05-24" >}}
+@y
+{{< release-date date="2024-05-24" >}}
+@z
+
+@x
+### Update
+@y
+### 更新 {#update}
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.1.1
+- Dependencies upgrade: bump docker engine and cli to v26.1.3
+- Dependencies upgrade: bump buildx to 0.14.1
+- Dependencies upgrade: bump containerd to 1.7.17
+@y
+- 依存パッケージの更新: compose-go v2.1.1
+- 依存パッケージの更新: docker engine, cli v26.1.3
+- 依存パッケージの更新: buildx 0.14.1
+- 依存パッケージの更新: containerd 1.7.17
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+- Added a navigation menu in the CLI where you can open your Compose file in Docker Desktop
+- Added documentation for `--menu` flag in `docker compose up`
+- Fixed a bug with `--resolve-image-digests` used with `--no-interpolate`
+- You can now use a local `.env` file to override `COMPOSE_*` environment variables
+@y
+- Added a navigation menu in the CLI where you can open your Compose file in Docker Desktop
+- Added documentation for `--menu` flag in `docker compose up`
+- Fixed a bug with `--resolve-image-digests` used with `--no-interpolate`
+- You can now use a local `.env` file to override `COMPOSE_*` environment variables
+@z
+
+@x
 ## 2.27.0
 @y
 ## 2.27.0
@@ -50,7 +222,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -94,7 +266,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -138,7 +310,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -186,7 +358,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -230,7 +402,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -290,7 +462,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -318,7 +490,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -358,7 +530,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -458,7 +630,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -504,7 +676,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -600,7 +772,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -642,7 +814,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -702,7 +874,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -766,7 +938,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -826,7 +998,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -878,7 +1050,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -910,7 +1082,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -986,7 +1158,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1042,7 +1214,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1088,7 +1260,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1164,7 +1336,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1204,7 +1376,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1276,7 +1448,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1316,7 +1488,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1378,7 +1550,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1476,7 +1648,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1562,7 +1734,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1606,7 +1778,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1664,7 +1836,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1716,7 +1888,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1780,7 +1952,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1836,7 +2008,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -1958,7 +2130,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2018,7 +2190,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2072,7 +2244,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2130,7 +2302,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2178,7 +2350,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2222,7 +2394,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2298,7 +2470,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2388,7 +2560,7 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2456,7 +2628,7 @@ In this release, Docker Compose recreates new resources (networks, volumes, secr
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2530,7 +2702,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2636,7 +2808,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2730,7 +2902,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2780,7 +2952,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2820,7 +2992,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2874,7 +3046,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -2920,7 +3092,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -3014,7 +3186,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x

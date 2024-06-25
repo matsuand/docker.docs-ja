@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 title: Docker Scout release notes
 description: Learn about the latest features of Docker Scout
 keywords: docker scout, release notes, changelog, features, changes, delta, new, releases
-aliases:
-- /scout/release-notes/
-tags: [Release notes]
----
 @y
----
 title: Docker Scout release notes
 description: Learn about the latest features of Docker Scout
 keywords: docker scout, release notes, changelog, features, changes, delta, new, releases
-aliases:
-- /scout/release-notes/
-tags: [Release notes]
----
 @z
 
 @x
@@ -39,6 +31,34 @@ for what's coming next.
 @y
 Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/projects/1)
 for what's coming next.
+@z
+
+@x
+## Q2 2024
+@y
+## Q2 2024
+@z
+
+@x
+New features and enhancements released in the second quarter of 2024.
+@y
+New features and enhancements released in the second quarter of 2024.
+@z
+
+@x
+### 2024-05-06
+@y
+### 2024-05-06
+@z
+
+@x (no slash) 対応
+New HTTP endpoint that lets you scrape data from Docker Scout with Prometheus,
+to create your own vulnerability and policy dashboards with Grafana.
+For more information, see [Docker Scout metrics exporter](/scout/explore/metrics-exporter.md).
+@y
+New HTTP endpoint that lets you scrape data from Docker Scout with Prometheus,
+to create your own vulnerability and policy dashboards with Grafana.
+For more information, see [Docker Scout metrics exporter](scout/explore/metrics-exporter.md).
 @z
 
 @x

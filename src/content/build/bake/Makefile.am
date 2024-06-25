@@ -3,11 +3,17 @@
 ##
 bases = \
 	_index.md            \
-	advanced.md          \
-	build-contexts.md    \
 	compose-file.md      \
-	configuring-build.md \
-	remote-definition.md
+	contexts.md          \
+	expressions.md       \
+	funcs.md             \
+	inheritance.md       \
+	introduction.md      \
+	matrices.md          \
+	overrides.md         \
+	remote-definition.md \
+	targets.md           \
+	variables.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

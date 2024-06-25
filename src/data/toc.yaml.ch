@@ -3204,16 +3204,12 @@ Manuals:
       title: Quickstart
     - path: /scout/install/
       title: Install
-    - sectiontitle: Explore Docker Scout
+    - sectiontitle: Concepts
       section:
-      - path: /scout/dashboard/
-        title: Dashboard
-      - path: /scout/image-details-view/
-        title: Image details view
-      - path: /scout/advisory-db-sources/
-        title: Advisory database
-      - path: /scout/data-handling/
-        title: Data handling
+        - path: /scout/concepts/s3c/
+          title: Software supply chain security
+        - path: /scout/concepts/sbom/
+          title: Software Bill of Materials
 @y
 - sectiontitle: Docker Scout
   section:
@@ -3222,45 +3218,73 @@ Manuals:
     - path: __SUBDIR__/scout/quickstart/
       title: クィックスタート
     - path: __SUBDIR__/scout/install/
-      title: インストール
-    - sectiontitle: Explore Docker Scout
+      title: Install
+    - sectiontitle: 考え方
       section:
-      - path: __SUBDIR__/scout/dashboard/
-        title: ダッシュボード
-      - path: __SUBDIR__/scout/image-details-view/
-        title: Image details view
-      - path: __SUBDIR__/scout/advisory-db-sources/
-        title: Advisory database
-      - path: __SUBDIR__/scout/data-handling/
-        title: Data handling
+        - path: __SUBDIR__/scout/concepts/s3c/
+          title: Software supply chain security
+        - path: __SUBDIR__/scout/concepts/sbom/
+          title: Software Bill of Materials
 @z
 
 @x
-    - sectiontitle: Use Docker Scout
+    - sectiontitle: Explore
       section:
-      - path: /scout/image-analysis/
-        title: Image analysis
-      - path: /scout/image-prefix/
-        title: Specify artifact type or location
-      - path: /scout/sbom/
-        title: SBOM
-      - path: /scout/env-vars/
-        title: Environment variables
-      - path: /scout/metrics-exporter/
+      - path: /scout/explore/analysis/
+        title: Analysis
+      - path: /scout/explore/dashboard/
+        title: Dashboard
+      - path: /scout/explore/image-details-view/
+        title: Image details view
+      - path: /scout/explore/metrics-exporter/
         title: Metrics exporter
 @y
-    - sectiontitle: Docker Scout の利用
+    - sectiontitle: Explore
       section:
-      - path: __SUBDIR__/scout/image-analysis/
-        title: イメージ分析
-      - path: __SUBDIR__/scout/image-prefix/
-        title: Specify artifact type or location
-      - path: __SUBDIR__/scout/sbom/
-        title: SBOM
-      - path: __SUBDIR__/scout/env-vars/
-        title: Environment variables
-      - path: __SUBDIR__/scout/metrics-exporter/
+      - path: __SUBDIR__/scout/explore/analysis/
+        title: Analysis
+      - path: __SUBDIR__/scout/explore/dashboard/
+        title: ダッシュボード
+      - path: __SUBDIR__/scout/explore/image-details-view/
+        title: Image details view
+      - path: __SUBDIR__/scout/explore/metrics-exporter/
         title: Metrics exporter
+@z
+
+@x
+    - sectiontitle: How-tos
+      section:
+      - path: /scout/how-tos/artifact-types/
+        title: Specify artifact type or location
+      - path: /scout/how-tos/view-create-sboms/
+        title: View and create SBOMs
+      - path: /scout/how-tos/configure-cli/
+        title: Configure the CLI
+@y
+    - sectiontitle: How-tos
+      section:
+      - path: __SUBDIR__/scout/how-tos/artifact-types/
+        title: Specify artifact type or location
+      - path: __SUBDIR__/scout/how-tos/view-create-sboms/
+        title: View and create SBOMs
+      - path: __SUBDIR__/scout/how-tos/configure-cli/
+        title: Configure the CLI
+@z
+
+@x
+    - sectiontitle: Deep dive
+      section:
+      - path: /scout/deep-dive/advisory-db-sources/
+        title: Advisory database
+      - path: /scout/deep-dive/data-handling/
+        title: Data handling
+@y
+    - sectiontitle: Deep dive
+      section:
+      - path: __SUBDIR__/scout/deep-dive/advisory-db-sources/
+        title: Advisory database
+      - path: __SUBDIR__/scout/deep-dive/data-handling/
+        title: Data handling
 @z
 
 @x
@@ -3356,14 +3380,6 @@ Manuals:
           path: /scout/integrations/ci/circle-ci/
         - title: Jenkins
           path: /scout/integrations/ci/jenkins/
-      - sectiontitle: Code quality
-        section:
-        - title: SonarQube
-          path: /scout/integrations/code-quality/sonarqube/
-      - sectiontitle: Source code management
-        section:
-        - title: GitHub
-          path: /scout/integrations/source-code-management/github/
 @y
       - sectiontitle: Continuous integration
         section:
@@ -3377,6 +3393,18 @@ Manuals:
           path: __SUBDIR__/scout/integrations/ci/circle-ci/
         - title: Jenkins
           path: __SUBDIR__/scout/integrations/ci/jenkins/
+@z
+
+@x
+      - sectiontitle: Code quality
+        section:
+        - title: SonarQube
+          path: /scout/integrations/code-quality/sonarqube/
+      - sectiontitle: Source code management
+        section:
+        - title: GitHub
+          path: /scout/integrations/source-code-management/github/
+@y
       - sectiontitle: Code quality
         section:
         - title: SonarQube
@@ -3706,8 +3734,8 @@ Manuals:
       title: Start the daemon
     - path: /config/daemon/
       title: Configure the daemon
-    - path: /config/daemon/systemd/
-      title: Configure with systemd
+    - path: /config/daemon/proxy/
+      title: HTTP proxy
     - path: /config/containers/live-restore/
       title: Live restore
     - path: /config/daemon/troubleshoot/
@@ -3723,8 +3751,8 @@ Manuals:
       title: Start the daemon
     - path: __SUBDIR__/config/daemon/
       title: Configure the daemon
-    - path: __SUBDIR__/config/daemon/systemd/
-      title: Configure with systemd
+    - path: __SUBDIR__/config/daemon/proxy/
+      title: HTTP proxy
     - path: __SUBDIR__/config/containers/live-restore/
       title: Live restore
     - path: __SUBDIR__/config/daemon/troubleshoot/
@@ -4257,7 +4285,7 @@ Manuals:
         - path: /build/building/opentelemetry/
           title: OpenTelemetry support
         - path: /build/building/base-images/
-          title: Create your own base image
+          title: Base images
 @y
         - path: __SUBDIR__/build/building/variables/
           title: 変数
@@ -4272,7 +4300,7 @@ Manuals:
         - path: __SUBDIR__/build/building/opentelemetry/
           title: OpenTelemetry support
         - path: __SUBDIR__/build/building/base-images/
-          title: 独自のベースイメージの生成
+          title: ベースイメージ
 @z
 
 @x
@@ -4428,31 +4456,59 @@ Manuals:
       section:
         - path: /build/bake/
           title: Overview
-        - path: /build/bake/reference/
-          title: Bake file reference
-        - path: /build/bake/configuring-build/
-          title: Configuring builds
-        - path: /build/bake/advanced/
-          title: Advanced patterns
-        - path: /build/bake/build-contexts/
-          title: Build contexts and linking targets
-        - path: /build/bake/compose-file/
-          title: Building from Compose file
-        - path: /build/bake/remote-definition/
-          title: Remote Bake file definition
+        - path: /build/bake/introduction/
+          title: Introduction
+        - path: /build/bake/targets/
+          title: Targets
+        - path: /build/bake/inheritance/
+          title: Inheritance
+        - path: /build/bake/variables/
+          title: Variables
+        - path: /build/bake/expressions/
+          title: Expressions
 @y
     - sectiontitle: Bake
       section:
         - path: __SUBDIR__/build/bake/
           title: Overview
+        - path: __SUBDIR__/build/bake/introduction/
+          title: Introduction
+        - path: __SUBDIR__/build/bake/targets/
+          title: Targets
+        - path: __SUBDIR__/build/bake/inheritance/
+          title: Inheritance
+        - path: __SUBDIR__/build/bake/variables/
+          title: Variables
+        - path: __SUBDIR__/build/bake/expressions/
+          title: Expressions
+@z
+
+@x
+        - path: /build/bake/funcs/
+          title: Functions
+        - path: /build/bake/matrices/
+          title: Matrices
+        - path: /build/bake/contexts/
+          title: Contexts
+        - path: /build/bake/overrides/
+          title: Overriding configuration
+        - path: /build/bake/reference/
+          title: Bake file reference
+        - path: /build/bake/compose-file/
+          title: Building from Compose file
+        - path: /build/bake/remote-definition/
+          title: Remote Bake file definition
+@y
+        - path: __SUBDIR__/build/bake/funcs/
+          title: Functions
+        - path: __SUBDIR__/build/bake/matrices/
+          title: Matrices
+        - path: __SUBDIR__/build/bake/contexts/
+          title: Contexts
+        - path: __SUBDIR__/build/bake/overrides/
+          title: Overriding configuration
         - path: __SUBDIR__/build/bake/reference/
           title: Bake file reference
-        - path: __SUBDIR__/build/bake/configuring-build/
-          title: Configuring builds
-        - path: __SUBDIR__/build/bake/advanced/
-          title: Advanced patterns
-        - path: __SUBDIR__/build/bake/build-contexts/
-          title: Build contexts and linking targets
         - path: __SUBDIR__/build/bake/compose-file/
           title: Building from Compose file
         - path: __SUBDIR__/build/bake/remote-definition/

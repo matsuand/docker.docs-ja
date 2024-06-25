@@ -1,21 +1,27 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 ---
-title: Specify artifact type or location with prefixes
+title: Use Scout with different artifact types
 description: |
   Some of the Docker Scout commands support image references prefixes
   for controlling the location of the images or files that you want to analyze.
 keywords: scout, vulnerabilities, analyze, analysis, cli, packages, sbom, cve, security, local, source, code, supply chain
+aliases:
+  - /scout/image-prefix/
 ---
 @y
 ---
-title: Specify artifact type or location with prefixes
+title: Use Scout with different artifact types
 description: |
   Some of the Docker Scout commands support image references prefixes
   for controlling the location of the images or files that you want to analyze.
 keywords: scout, vulnerabilities, analyze, analysis, cli, packages, sbom, cve, security, local, source, code, supply chain
+aliases:
+  - /scout/image-prefix/
 ---
 @z
 
@@ -427,12 +433,12 @@ Read about the commands and supported flags in the CLI reference documentation:
 Read about the commands and supported flags in the CLI reference documentation:
 @z
 
-@x
-- [`docker scout quickview`](../reference/cli/docker/scout/compare.md)
-- [`docker scout cves`](../reference/cli/docker/scout/compare.md)
-- [`docker scout compare`](../reference/cli/docker/scout/compare.md)
+@x (no slash) 対応
+- [`docker scout quickview`](/reference/cli/docker/scout/quickview.md)
+- [`docker scout cves`](/reference/cli/docker/scout/cves.md)
+- [`docker scout compare`](/reference/cli/docker/scout/compare.md)
 @y
-- [`docker scout quickview`](../reference/cli/docker/scout/compare.md)
-- [`docker scout cves`](../reference/cli/docker/scout/compare.md)
-- [`docker scout compare`](../reference/cli/docker/scout/compare.md)
+- [`docker scout quickview`](reference/cli/docker/scout/quickview.md)
+- [`docker scout cves`](reference/cli/docker/scout/cves.md)
+- [`docker scout compare`](reference/cli/docker/scout/compare.md)
 @z

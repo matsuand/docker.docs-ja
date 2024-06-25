@@ -1,17 +1,10 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images
-
 bases = \
-	_index.md        \
-	ipv6.md          \
-	logs.md          \
-	prometheus.md    \
-	proxy.md         \
-	remote-access.md \
-	start.md         \
-	troubleshoot.md
+	artifact-types.md    \
+	configure-cli.md     \
+	view-create-sboms.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

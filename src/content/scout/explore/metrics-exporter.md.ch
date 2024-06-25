@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% (no slash) 対応
 % snip 対応
 
 @x
@@ -56,17 +56,17 @@ The metrics endpoint exposes the following metrics:
 | `scout_policy_evaluated_images` | Total images evaluated against a policy in a stream | `id`, `displayName`, `streamName` | Gauge |
 @z
 
-@x
+@x (no slash) 対応
 > **Streams**
 >
-> In Docker Scout, the streams concept is a superset of [environments](./integrations/environment/_index.md).
+> In Docker Scout, the streams concept is a superset of [environments](/scout/integrations/environment/_index.md).
 > Streams include all runtime environments that you've defined,
 > as well as the special `latest-indexed` stream.
 > The `latest-indexed` stream contains the most recently pushed (and analyzed) tag for each repository.
 @y
 > **Streams**
 >
-> In Docker Scout, the streams concept is a superset of [environments](./integrations/environment/_index.md).
+> In Docker Scout, the streams concept is a superset of [environments](scout/integrations/environment/_index.md).
 > Streams include all runtime environments that you've defined,
 > as well as the special `latest-indexed` stream.
 > The `latest-indexed` stream contains the most recently pushed (and analyzed) tag for each repository.
@@ -95,12 +95,12 @@ To export metrics from your organization, first make sure your organization is e
 Then, create a Personal Access Token (PAT) - a secret token that allows the exporter to authenticate with the Docker Scout API.
 @z
 
-@x
+@x (no slash) 対応
 The PAT does not require any specific permissions, but it must be created by a user who is an owner of the Docker organization.
 To create a PAT, follow the steps in [Create an access token](/security/for-developers/access-tokens/#create-an-access-token).
 @y
 The PAT does not require any specific permissions, but it must be created by a user who is an owner of the Docker organization.
-To create a PAT, follow the steps in [Create an access token](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token).
+To create a PAT, follow the steps in [Create an access token](security/for-developers/access-tokens/#create-an-access-token).
 @z
 
 @x
@@ -213,11 +213,11 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
 
 % snip command...
 
-@x
+@x (no slash) 対応
 2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @y
-2. [Create a Docker access token](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token)
+2. [Create a Docker access token](security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @z
 
@@ -282,9 +282,9 @@ Prometheus UI at <http://localhost:9090/targets>.
 @z
 
 @x
-![Docker Scout metrics exporter Prometheus target](./images/scout-metrics-prom-target.png "Docker Scout metrics exporter Prometheus target")
+![Docker Scout metrics exporter Prometheus target](../images/scout-metrics-prom-target.png "Docker Scout metrics exporter Prometheus target")
 @y
-![Docker Scout metrics exporter Prometheus target](./images/scout-metrics-prom-target.png "Docker Scout metrics exporter Prometheus target")
+![Docker Scout metrics exporter Prometheus target](../images/scout-metrics-prom-target.png "Docker Scout metrics exporter Prometheus target")
 @z
 
 @x
@@ -302,15 +302,15 @@ and sign in using the credentials defined in the Docker Compose file (username: 
 @z
 
 @x
-![Vulnerability dashboard in Grafana](./images/scout-metrics-grafana-vulns.png "Vulnerability dashboard in Grafana")
+![Vulnerability dashboard in Grafana](../images/scout-metrics-grafana-vulns.png "Vulnerability dashboard in Grafana")
 @y
-![Vulnerability dashboard in Grafana](./images/scout-metrics-grafana-vulns.png "Vulnerability dashboard in Grafana")
+![Vulnerability dashboard in Grafana](../images/scout-metrics-grafana-vulns.png "Vulnerability dashboard in Grafana")
 @z
 
 @x
-![Policy dashboard in Grafana](images/scout-metrics-grafana-policy.png "Policy dashboard in Grafana")
+![Policy dashboard in Grafana](../images/scout-metrics-grafana-policy.png "Policy dashboard in Grafana")
 @y
-![Policy dashboard in Grafana](images/scout-metrics-grafana-policy.png "Policy dashboard in Grafana")
+![Policy dashboard in Grafana](../images/scout-metrics-grafana-policy.png "Policy dashboard in Grafana")
 @z
 
 @x
@@ -447,11 +447,11 @@ and a Datadog site.
 
 % snip command...
 
-@x
+@x (no slash) 対応
 2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/datadog/token` under the template directory.
 @y
-2. [Create a Docker access token](__SUBDIR__/security/for-developers/access-tokens/#create-an-access-token)
+2. [Create a Docker access token](security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/datadog/token` under the template directory.
 @z
 
@@ -546,9 +546,9 @@ all exposed metrics starting with `scout_` under the namespace
 @z
 
 @x
-![datadog_metrics_summary](images/datadog_metrics_summary.png)
+![datadog_metrics_summary](../images/datadog_metrics_summary.png)
 @y
-![datadog_metrics_summary](images/datadog_metrics_summary.png)
+![datadog_metrics_summary](../images/datadog_metrics_summary.png)
 @z
 
 @x
@@ -560,11 +560,11 @@ graphs about vulnerability and policy compliance for a specific [stream](#stream
 @z
 
 @x
-![datadog_dashboard_1](images/datadog_dashboard_1.png)
-![datadog_dashboard_2](images/datadog_dashboard_2.png)
+![datadog_dashboard_1](../images/datadog_dashboard_1.png)
+![datadog_dashboard_2](../images/datadog_dashboard_2.png)
 @y
-![datadog_dashboard_1](images/datadog_dashboard_1.png)
-![datadog_dashboard_2](images/datadog_dashboard_2.png)
+![datadog_dashboard_1](../images/datadog_dashboard_1.png)
+![datadog_dashboard_2](../images/datadog_dashboard_2.png)
 @z
 
 @x
@@ -621,12 +621,12 @@ To change the scrape interval:
 ## Revoke an access token
 @z
 
-@x
+@x (no slash) 対応
 If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
 To revoke a PAT, follow the steps in the [Create and manage access tokens](/security/for-developers/access-tokens/#modify-existing-tokens).
 @y
 If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
-To revoke a PAT, follow the steps in the [Create and manage access tokens](__SUBDIR__/security/for-developers/access-tokens/#modify-existing-tokens).
+To revoke a PAT, follow the steps in the [Create and manage access tokens](security/for-developers/access-tokens/#modify-existing-tokens).
 @z
 
 @x

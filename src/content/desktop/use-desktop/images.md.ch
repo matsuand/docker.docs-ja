@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 description: Understand what you can do with the Images view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
 title: Explore the Images view in Docker Desktop
----
 @y
----
 description: Understand what you can do with the Images view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
 title: Explore the Images view in Docker Desktop
----
 @z
 
 @x
@@ -145,12 +143,12 @@ To inspect an image, select the image row. Inspecting an image displays detailed
 - Packages inside the image
 @z
 
-@x
-[Docker Scout](../../scout/index.md) powers this vulnerability information.
-For more information about this view, see [Image details view](../../scout/image-details-view.md)
+@x (no slash) 対応
+[Docker Scout](/scout/_index.md) powers this vulnerability information.
+For more information about this view, see [Image details view](/scout/explore/image-details-view.md)
 @y
-[Docker Scout](../../scout/index.md) powers this vulnerability information.
-For more information about this view, see [Image details view](../../scout/image-details-view.md)
+[Docker Scout](scout/_index.md) powers this vulnerability information.
+For more information about this view, see [Image details view](scout/explore/image-details-view.md)
 @z
 
 @x

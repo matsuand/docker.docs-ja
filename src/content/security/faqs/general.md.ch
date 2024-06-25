@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 description: Find the answers to common security related FAQs
 keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
@@ -24,21 +26,21 @@ If you’ve discovered a security vulnerability in Docker, we encourage you to r
 @z
 
 @x
-### How are passwords managed when SSO isn't used? 
+### How are passwords managed when SSO isn't used?
 @y
-### How are passwords managed when SSO isn't used? 
+### How are passwords managed when SSO isn't used?
 @z
 
 @x
-Passwords are encrypted and salt-hashed. If you use application-level passwords instead of SSO, you are responsible for ensuring that your employees know how to pick strong passwords, don't share passwords, and don't reuse passwords across multiple systems. 
+Passwords are encrypted and salt-hashed. If you use application-level passwords instead of SSO, you are responsible for ensuring that your employees know how to pick strong passwords, don't share passwords, and don't reuse passwords across multiple systems.
 @y
-Passwords are encrypted and salt-hashed. If you use application-level passwords instead of SSO, you are responsible for ensuring that your employees know how to pick strong passwords, don't share passwords, and don't reuse passwords across multiple systems. 
+Passwords are encrypted and salt-hashed. If you use application-level passwords instead of SSO, you are responsible for ensuring that your employees know how to pick strong passwords, don't share passwords, and don't reuse passwords across multiple systems.
 @z
 
 @x
-### Does Docker require password resets when SSO isn't used? 
+### Does Docker require password resets when SSO isn't used?
 @y
-### Does Docker require password resets when SSO isn't used? 
+### Does Docker require password resets when SSO isn't used?
 @z
 
 @x
@@ -48,9 +50,9 @@ Passwords aren't required to be periodically reset. NIST no longer recommends pa
 @z
 
 @x
-### Does Docker lockout users after failed sign-ins? 
+### Does Docker lockout users after failed sign-ins?
 @y
-### Does Docker lockout users after failed sign-ins? 
+### Does Docker lockout users after failed sign-ins?
 @z
 
 @x
@@ -60,9 +62,9 @@ Docker Hub’s global setting for system lockout is after 10 failed sign in atte
 @z
 
 @x
-### Do you support physical MFA with YubiKeys? 
+### Do you support physical MFA with YubiKeys?
 @y
-### Do you support physical MFA with YubiKeys? 
+### Do you support physical MFA with YubiKeys?
 @z
 
 @x
@@ -96,9 +98,9 @@ Custom settings per organization for sessions aren't supported.
 @z
 
 @x
-### How does Docker attribute downloads to us and what data is used to classify or verify the user is part of our organization? 
+### How does Docker attribute downloads to us and what data is used to classify or verify the user is part of our organization?
 @y
-### How does Docker attribute downloads to us and what data is used to classify or verify the user is part of our organization? 
+### How does Docker attribute downloads to us and what data is used to classify or verify the user is part of our organization?
 @z
 
 @x
@@ -108,9 +110,9 @@ Docker Desktop downloads are linked to a specific organization by the user's ema
 @z
 
 @x
-### How do you attribute that number of downloads to us from IP data if most of our engineers work from home and aren’t allowed to use VPNs? 
+### How do you attribute that number of downloads to us from IP data if most of our engineers work from home and aren’t allowed to use VPNs?
 @y
-### How do you attribute that number of downloads to us from IP data if most of our engineers work from home and aren’t allowed to use VPNs? 
+### How do you attribute that number of downloads to us from IP data if most of our engineers work from home and aren’t allowed to use VPNs?
 @z
 
 @x
@@ -126,9 +128,9 @@ Some users authenticate by signing in to Docker Desktop and joining their domain
 @z
 
 @x
-### How does Docker distinguish between employee users and contractor users? 
+### How does Docker distinguish between employee users and contractor users?
 @y
-### How does Docker distinguish between employee users and contractor users? 
+### How does Docker distinguish between employee users and contractor users?
 @z
 
 @x
@@ -138,15 +140,15 @@ Organizations set up in Docker use verified domains and any team member with an 
 @z
 
 @x
-### How long are Docker Hub logs available? 
+### How long are Docker Hub logs available?
 @y
-### How long are Docker Hub logs available? 
+### How long are Docker Hub logs available?
 @z
 
 @x
-Docker provides various types of audit logs and log retention varies. For example, Docker Hub Activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.  
+Docker provides various types of audit logs and log retention varies. For example, Docker Hub Activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
 @y
-Docker provides various types of audit logs and log retention varies. For example, Docker Hub Activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.  
+Docker provides various types of audit logs and log retention varies. For example, Docker Hub Activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
 @z
 
 @x
@@ -156,9 +158,9 @@ Docker provides various types of audit logs and log retention varies. For exampl
 @z
 
 @x
-Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information. 
+Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information.
 @y
-Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information. 
+Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information.
 @z
 
 @x
@@ -168,15 +170,15 @@ Using the [Export Members](../../admin/organization/members.md#export-members) f
 @z
 
 @x
-Docker Desktop utilizes the host operating system's secure key management for handling and storing authentication tokens necessary for authenticating with image registries. On macOS, this is [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web); on Windows, this is [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/); and on Linux, this is [Pass](https://www.passwordstore.org/). 
+Docker Desktop utilizes the host operating system's secure key management for handling and storing authentication tokens necessary for authenticating with image registries. On macOS, this is [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web); on Windows, this is [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/); and on Linux, this is [Pass](https://www.passwordstore.org/).
 @y
-Docker Desktop utilizes the host operating system's secure key management for handling and storing authentication tokens necessary for authenticating with image registries. On macOS, this is [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web); on Windows, this is [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/); and on Linux, this is [Pass](https://www.passwordstore.org/). 
+Docker Desktop utilizes the host operating system's secure key management for handling and storing authentication tokens necessary for authenticating with image registries. On macOS, this is [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web); on Windows, this is [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/); and on Linux, this is [Pass](https://www.passwordstore.org/).
 @z
 
 @x
-### How does Docker Hub secure passwords in storage and in transit? 
+### How does Docker Hub secure passwords in storage and in transit?
 @y
-### How does Docker Hub secure passwords in storage and in transit? 
+### How does Docker Hub secure passwords in storage and in transit?
 @z
 
 @x
@@ -203,22 +205,22 @@ If SCIM isn't enabled, you have to manually remove PAT users from the organizati
 ### What metadata is collected from container images that Scout analyzes?
 @z
 
-@x
-For information about the metadata stored by Docker Scout, see [Data handling](../../scout/data-handling.md).
+@x (no slash) 対応
+For information about the metadata stored by Docker Scout, see [Data handling](/scout/deep-dive/data-handling.md).
 @y
-For information about the metadata stored by Docker Scout, see [Data handling](../../scout/data-handling.md).
+For information about the metadata stored by Docker Scout, see [Data handling](scout/deep-dive/data-handling.md).
 @z
 
 @x
-### How are extensions within the Marketplace vetted for security prior to placement? 
+### How are extensions within the Marketplace vetted for security prior to placement?
 @y
-### How are extensions within the Marketplace vetted for security prior to placement? 
+### How are extensions within the Marketplace vetted for security prior to placement?
 @z
 
 @x
-Security vetting for extensions is on our roadmap however this vetting isn't currently done. 
+Security vetting for extensions is on our roadmap however this vetting isn't currently done.
 @y
-Security vetting for extensions is on our roadmap however this vetting isn't currently done. 
+Security vetting for extensions is on our roadmap however this vetting isn't currently done.
 @z
 
 @x
@@ -228,13 +230,13 @@ Extensions are not covered as part of Docker’s Third-Party Risk Management Pro
 @z
 
 @x
-### Can I disable private repos in my organization via a setting to make sure nobody is pushing images into Docker Hub? 
+### Can I disable private repos in my organization via a setting to make sure nobody is pushing images into Docker Hub?
 @y
-### Can I disable private repos in my organization via a setting to make sure nobody is pushing images into Docker Hub? 
+### Can I disable private repos in my organization via a setting to make sure nobody is pushing images into Docker Hub?
 @z
 
 @x
-No. With [Registry Access Management](../../security/for-admins/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub. 
+No. With [Registry Access Management](../../security/for-admins/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
 @y
-No. With [Registry Access Management](../../security/for-admins/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub. 
+No. With [Registry Access Management](../../security/for-admins/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
 @z

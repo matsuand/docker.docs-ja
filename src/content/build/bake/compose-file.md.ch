@@ -20,17 +20,11 @@ aliases:
 @z
 
 @x
-## Specification
+Bake supports the [Compose file format](../../compose/compose-file/_index.md)
+to parse a Compose file and translate each service to a [target](reference.md#target).
 @y
-## Specification
-@z
-
-@x
-Bake uses the [compose-spec](../../compose/compose-file/index.md) to
-parse a compose file and translate each service to a [target](reference.md#target).
-@y
-Bake uses the [compose-spec](../../compose/compose-file/index.md) to
-parse a compose file and translate each service to a [target](reference.md#target).
+Bake supports the [Compose file format](../../compose/compose-file/_index.md)
+to parse a Compose file and translate each service to a [target](reference.md#target).
 @z
 
 @x

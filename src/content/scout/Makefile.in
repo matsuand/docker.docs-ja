@@ -295,20 +295,13 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = guides images integrations policy release-notes
+SUBDIRS = concepts deep-dive explore guides how-tos images \
+	integrations policy release-notes
+
 bases = \
-	_index.md              \
-	advisory-db-sources.md \
-	dashboard.md           \
-	data-handling.md       \
-	env-vars.md            \
-	image-analysis.md      \
-	image-details-view.md  \
-	image-prefix.md        \
-	install.md             \
-	metrics-exporter.md    \
-	quickstart.md          \
-	sbom.md
+	_index.md     \
+	install.md    \
+	quickstart.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

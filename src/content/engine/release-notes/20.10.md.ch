@@ -4,23 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Docker Engine 20.10 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Docker Engine 20.10 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -975,7 +967,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to [Configure the daemon to use a proxy](../../config/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -986,7 +978,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to [Configure the daemon to use a proxy](../../config/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z
@@ -1047,7 +1039,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -1058,7 +1050,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z
@@ -1149,7 +1141,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -1160,7 +1152,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z
@@ -1257,7 +1249,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -1268,7 +1260,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/systemd.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z

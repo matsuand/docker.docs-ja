@@ -272,15 +272,9 @@ services:
 @z
 
 @x
-## Further examples
+## Additional example
 @y
-## Further examples
-@z
-
-@x
-### Example one
-@y
-### Example one
+## Additional example
 @z
 
 @x
@@ -377,106 +371,6 @@ services:
     depends_on:
       - queue
 ```
-@z
-
-@x
-### Example two
-@y
-### Example two
-@z
-
-@x
-Another common use case for `extends` is running one off or administrative tasks
-against one or more services in a Compose app. This example demonstrates running
-a database backup.
-@y
-Another common use case for `extends` is running one off or administrative tasks
-against one or more services in a Compose app. This example demonstrates running
-a database backup.
-@z
-
-@x
-The `docker-compose.yml` defines the base configuration.
-@y
-The `docker-compose.yml` defines the base configuration.
-@z
-
-@x
-```yaml
-services:
-  web:
-    image: example/my_web_app:latest
-    depends_on:
-      - db
-@y
-```yaml
-services:
-  web:
-    image: example/my_web_app:latest
-    depends_on:
-      - db
-@z
-
-@x
-  db:
-    image: postgres:latest
-```
-@y
-  db:
-    image: postgres:latest
-```
-@z
-
-@x
-`docker-compose.admin.yml` adds a new service to run the database export or
-backup.
-@y
-`docker-compose.admin.yml` adds a new service to run the database export or
-backup.
-@z
-
-@x
-```yaml
-services:
-  dbadmin:
-    build: database_admin/
-    depends_on:
-      - db
-```
-@y
-```yaml
-services:
-  dbadmin:
-    build: database_admin/
-    depends_on:
-      - db
-```
-@z
-
-@x
-To start a normal environment, run `docker compose up -d`. To run a database
-backup, include the `docker-compose.admin.yml` as well.
-@y
-To start a normal environment, run `docker compose up -d`. To run a database
-backup, include the `docker-compose.admin.yml` as well.
-@z
-
-@x
-```console
-$ docker compose -f docker-compose.yml -f docker-compose.admin.yml \
-  run dbadmin db-backup
-```
-@y
-```console
-$ docker compose -f docker-compose.yml -f docker-compose.admin.yml \
-  run dbadmin db-backup
-```
-@z
-
-@x
-Compose extends files in the order they're specified on the command line.
-@y
-Compose extends files in the order they're specified on the command line.
 @z
 
 @x

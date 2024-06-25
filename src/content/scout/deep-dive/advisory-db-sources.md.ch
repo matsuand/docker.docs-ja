@@ -1,12 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 ---
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, packages, repositories, ecosystem
 title: Advisory database sources and matching service
+aliases:
+  /scout/advisory-db-sources/
 ---
 @y
 ---
@@ -14,6 +18,8 @@ description: More details on the advisory database and CVE-to-package matching s
   behind Docker Scout analysis.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, packages, repositories, ecosystem
 title: Advisory database sources and matching service
+aliases:
+  /scout/advisory-db-sources/
 ---
 @z
 
@@ -125,10 +131,10 @@ When a security advisory has new information about a vulnerability,
 your SBOM is cross-referenced with the CVE information to detect how it affects you.
 @z
 
-@x
-For more details on how image analysis works, see the [image analysis page](./image-analysis.md).
+@x (no slash) 対応
+For more details on how image analysis works, see the [image analysis page](/scout/explore/analysis.md).
 @y
-For more details on how image analysis works, see the [image analysis page](./image-analysis.md).
+For more details on how image analysis works, see the [image analysis page](scout/explore/analysis.md).
 @z
 
 @x

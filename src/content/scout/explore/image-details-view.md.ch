@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 ---
 title: Image details view
@@ -8,6 +10,8 @@ keywords: scout, supply chain, vulnerabilities, packages, cves, image, tag, scan
   analysis, analyze
 description: The Docker Scout image detail view analyzes images to show their heirachy,
   layers, packages, and vulnerabilities
+aliases:
+  - /scout/image-details-view
 ---
 @y
 ---
@@ -16,6 +20,8 @@ keywords: scout, supply chain, vulnerabilities, packages, cves, image, tag, scan
   analysis, analyze
 description: The Docker Scout image detail view analyzes images to show their heirachy,
   layers, packages, and vulnerabilities
+aliases:
+  - /scout/image-details-view
 ---
 @z
 
@@ -34,19 +40,19 @@ and vulnerabilities.
 @z
 
 @x
-![The image details view in Docker Desktop](./images/dd-image-view.png)
+![The image details view in Docker Desktop](../images/dd-image-view.png)
 @y
-![The image details view in Docker Desktop](./images/dd-image-view.png)
+![The image details view in Docker Desktop](../images/dd-image-view.png)
 @z
 
-@x
+@x (no slash) 対応
 Docker Desktop first analyzes images locally, where it generates a software bill of materials (SBOM).
 Docker Desktop, Docker Hub, and the Docker Scout Dashboard and CLI all use the [package URL (PURL) links](https://github.com/package-url/purl-spec)
-in this SBOM to query for matching Common Vulnerabilities and Exposures (CVEs) in [Docker Scout's advisory database](./advisory-db-sources.md).
+in this SBOM to query for matching Common Vulnerabilities and Exposures (CVEs) in [Docker Scout's advisory database](/scout/deep-dive/advisory-db-sources.md).
 @y
 Docker Desktop first analyzes images locally, where it generates a software bill of materials (SBOM).
 Docker Desktop, Docker Hub, and the Docker Scout Dashboard and CLI all use the [package URL (PURL) links](https://github.com/package-url/purl-spec)
-in this SBOM to query for matching Common Vulnerabilities and Exposures (CVEs) in [Docker Scout's advisory database](./advisory-db-sources.md).
+in this SBOM to query for matching Common Vulnerabilities and Exposures (CVEs) in [Docker Scout's advisory database](scout/deep-dive/advisory-db-sources.md).
 @z
 
 @x
@@ -370,9 +376,9 @@ one to use.
 @z
 
 @x
-![Base image recommendations](./images/change-base-image.png)
+![Base image recommendations](../images/change-base-image.png)
 @y
-![Base image recommendations](./images/change-base-image.png)
+![Base image recommendations](../images/change-base-image.png)
 @z
 
 @x

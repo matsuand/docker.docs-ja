@@ -239,11 +239,17 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md            \
-	advanced.md          \
-	build-contexts.md    \
 	compose-file.md      \
-	configuring-build.md \
-	remote-definition.md
+	contexts.md          \
+	expressions.md       \
+	funcs.md             \
+	inheritance.md       \
+	introduction.md      \
+	matrices.md          \
+	overrides.md         \
+	remote-definition.md \
+	targets.md           \
+	variables.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

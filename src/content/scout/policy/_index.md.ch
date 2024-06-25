@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% (no slash) 対応
 % snip 対応
 
 @x
@@ -20,7 +20,7 @@ description: |
   requirements over time
 @z
 
-@x
+@x (no slash) 対応
 > **Early Access**
 >
 > Policy Evaluation is an [Early Access](/release-lifecycle/#early-access-ea)
@@ -29,7 +29,7 @@ description: |
 @y
 > **早期アクセス**
 >
-> Policy Evaluation is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
+> Policy Evaluation is an [Early Access](release-lifecycle/#early-access-ea)
 > feature of Docker Scout.
 { .restricted }
 @z
@@ -62,16 +62,16 @@ with established best practices.
 ## How Policy Evaluation works
 @z
 
-@x
+@x (no slash) 対応
 When you activate Docker Scout for a repository, images that you push are
-[automatically analyzed](../image-analysis.md). The analysis gives you insights
+[automatically analyzed](/scout/explore/analysis.md). The analysis gives you insights
 about the composition of your images, including what packages they contain and
 what vulnerabilities they're exposed to. Policy Evaluation builds on top of the
 image analysis feature, interpreting the analysis results against the rules
 defined by policies.
 @y
 When you activate Docker Scout for a repository, images that you push are
-[automatically analyzed](../image-analysis.md). The analysis gives you insights
+[automatically analyzed](scout/explore/analysis.md). The analysis gives you insights
 about the composition of your images, including what packages they contain and
 what vulnerabilities they're exposed to. Policy Evaluation builds on top of the
 image analysis feature, interpreting the analysis results against the rules

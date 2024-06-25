@@ -2793,10 +2793,10 @@ parameters (sysctls) at runtime](../../reference/cli/docker/container/run.md#sys
 @z
 
 @x
-`tty` configures a service's container to run with a TTY. This is the same as This is the same as running a container with the 
+`tty` configures a service's container to run with a TTY. This is the same as running a container with the 
 `-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](../../reference/cli/docker/container/run/#tty).
 @y
-`tty` configures a service's container to run with a TTY. This is the same as This is the same as running a container with the 
+`tty` configures a service's container to run with a TTY. This is the same as running a container with the 
 `-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](../../reference/cli/docker/container/run/#tty).
 @z
 

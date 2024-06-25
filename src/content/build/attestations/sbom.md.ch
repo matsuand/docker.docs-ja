@@ -1,22 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 title: SBOM attestations
 keywords: build, attestations, sbom, spdx, metadata, packages
 description: |
   SBOM build attestations describe the contents of your image,
   and the packages used to build it.
----
 @y
----
 title: SBOM attestations
 keywords: build, attestations, sbom, spdx, metadata, packages
 description: |
   SBOM build attestations describe the contents of your image,
   and the packages used to build it.
----
 @z
 
 @x
@@ -468,92 +466,104 @@ $ docker buildx imagetools inspect <namespace>/<image>:<version> \
   "SPDXID": "SPDXRef-DOCUMENT",
   ...
 }
-```
-@z
-
-@x
-You can also construct more complex expressions using the full functionality
-of Go templates. For example, you can list all the installed packages and their
-version identifiers:
-@y
-You can also construct more complex expressions using the full functionality
-of Go templates. For example, you can list all the installed packages and their
-version identifiers:
-@z
-
-@x
-```console
-$ docker buildx imagetools inspect <namespace>/<image>:<version> \
-    --format "{{ range .SBOM.SPDX.packages }}{{ .name }}@{{ .versionInfo }}{{ println }}{{ end }}"
-adduser@3.118ubuntu2
-apt@2.0.9
-base-files@11ubuntu5.6
-base-passwd@3.5.47
-...
-```
-@y
-```console
-$ docker buildx imagetools inspect <namespace>/<image>:<version> \
-    --format "{{ range .SBOM.SPDX.packages }}{{ .name }}@{{ .versionInfo }}{{ println }}{{ end }}"
-adduser@3.118ubuntu2
-apt@2.0.9
-base-files@11ubuntu5.6
-base-passwd@3.5.47
-...
-```
-@z
-
-@x
-## SBOM generator
-@y
-## SBOM generator
-@z
-
-@x
-BuildKit generates the SBOM using a scanner plugin. By default, it uses is the
-[BuildKit Syft scanner](https://github.com/docker/buildkit-syft-scanner)
-plugin. This plugin is built on top of
-[Anchore's Syft](https://github.com/anchore/syft),
-an open source tool for generating an SBOM.
-@y
-BuildKit generates the SBOM using a scanner plugin. By default, it uses is the
-[BuildKit Syft scanner](https://github.com/docker/buildkit-syft-scanner)
-plugin. This plugin is built on top of
-[Anchore's Syft](https://github.com/anchore/syft),
-an open source tool for generating an SBOM.
-@z
-
-@x
-You can select a different plugin to use with the `generator` option, specifying
-an image that implements the
-[BuildKit SBOM scanner protocol](https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md).
-@y
-You can select a different plugin to use with the `generator` option, specifying
-an image that implements the
-[BuildKit SBOM scanner protocol](https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md).
-@z
-
-@x
-```console
-$ docker buildx build --attest type=sbom,generator=<image> .
-```
-@y
-```console
-$ docker buildx build --attest type=sbom,generator=<image> .
 ```
 @z
 
 @x
 > **Tip**
 >
+> If the image is multi-platform, you can check the SBOM for a platform-specific index using `--format '{{ json (index .SBOM "linux/amd64").SPDX }}'`.
+{ .tip }
+@y
+> **Tip**
+>
+> If the image is multi-platform, you can check the SBOM for a platform-specific index using `--format '{{ json (index .SBOM "linux/amd64").SPDX }}'`.
+{ .tip }
+@z
+
+@x
+You can also construct more complex expressions using the full functionality
+of Go templates. For example, you can list all the installed packages and their
+version identifiers:
+@y
+You can also construct more complex expressions using the full functionality
+of Go templates. For example, you can list all the installed packages and their
+version identifiers:
+@z
+
+@x
+```console
+$ docker buildx imagetools inspect <namespace>/<image>:<version> \
+    --format "{{ range .SBOM.SPDX.packages }}{{ .name }}@{{ .versionInfo }}{{ println }}{{ end }}"
+adduser@3.118ubuntu2
+apt@2.0.9
+base-files@11ubuntu5.6
+base-passwd@3.5.47
+...
+```
+@y
+```console
+$ docker buildx imagetools inspect <namespace>/<image>:<version> \
+    --format "{{ range .SBOM.SPDX.packages }}{{ .name }}@{{ .versionInfo }}{{ println }}{{ end }}"
+adduser@3.118ubuntu2
+apt@2.0.9
+base-files@11ubuntu5.6
+base-passwd@3.5.47
+...
+```
+@z
+
+@x
+## SBOM generator
+@y
+## SBOM generator
+@z
+
+@x
+BuildKit generates the SBOM using a scanner plugin. By default, it uses is the
+[BuildKit Syft scanner](https://github.com/docker/buildkit-syft-scanner)
+plugin. This plugin is built on top of
+[Anchore's Syft](https://github.com/anchore/syft),
+an open source tool for generating an SBOM.
+@y
+BuildKit generates the SBOM using a scanner plugin. By default, it uses is the
+[BuildKit Syft scanner](https://github.com/docker/buildkit-syft-scanner)
+plugin. This plugin is built on top of
+[Anchore's Syft](https://github.com/anchore/syft),
+an open source tool for generating an SBOM.
+@z
+
+@x
+You can select a different plugin to use with the `generator` option, specifying
+an image that implements the
+[BuildKit SBOM scanner protocol](https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md).
+@y
+You can select a different plugin to use with the `generator` option, specifying
+an image that implements the
+[BuildKit SBOM scanner protocol](https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md).
+@z
+
+@x
+```console
+$ docker buildx build --attest type=sbom,generator=<image> .
+```
+@y
+```console
+$ docker buildx build --attest type=sbom,generator=<image> .
+```
+@z
+
+@x (no slash) 対応
+> **Tip**
+>
 > The Docker Scout SBOM generator is available. See
-> [Docker Scout SBOMs](../../scout/sbom.md#attest).
+> [Docker Scout SBOMs](/scout/how-tos/view-create-sboms.md).
 { .tip }
 @y
 > **Tip**
 >
 > The Docker Scout SBOM generator is available. See
-> [Docker Scout SBOMs](../../scout/sbom.md#attest).
+> [Docker Scout SBOMs](scout/how-tos/view-create-sboms.md).
 { .tip }
 @z
 

@@ -38,11 +38,11 @@ For instructions on configuring Docker Desktop to use HTTP/HTTPS proxies, see
 
 @x
 If you're running Docker Engine without Docker Desktop, refer to
-[Configure the Docker daemon to use a proxy server](../config/daemon/systemd.md#httphttps-proxy)
+[Configure the Docker daemon to use a proxy](../config/daemon/proxy.md)
 to learn how to configure a proxy server for the Docker daemon (`dockerd`) itself.
 @y
 If you're running Docker Engine without Docker Desktop, refer to
-[Configure the Docker daemon to use a proxy server](../config/daemon/systemd.md#httphttps-proxy)
+[Configure the Docker daemon to use a proxy](../config/daemon/proxy.md)
 to learn how to configure a proxy server for the Docker daemon (`dockerd`) itself.
 @z
 
@@ -187,14 +187,14 @@ These settings are used to configure proxy environment variables for containers
 only, and not used as proxy settings for the Docker CLI or the Docker Engine
 itself.
 Refer to the [environment variables](/engine/reference/commandline/cli/#environment-variables)
-and [configure the Docker daemon to use a proxy server](../config/daemon/systemd.md#httphttps-proxy)
+and [configure the Docker daemon to use a proxy server](../config/daemon/proxy.md#httphttps-proxy)
 sections for configuring proxy settings for the CLI and daemon.
 @y
 These settings are used to configure proxy environment variables for containers
 only, and not used as proxy settings for the Docker CLI or the Docker Engine
 itself.
 Refer to the [environment variables](__SUBDIR__/engine/reference/commandline/cli/#environment-variables)
-and [configure the Docker daemon to use a proxy server](../config/daemon/systemd.md#httphttps-proxy)
+and [configure the Docker daemon to use a proxy server](../config/daemon/proxy.md#httphttps-proxy)
 sections for configuring proxy settings for the CLI and daemon.
 @z
 

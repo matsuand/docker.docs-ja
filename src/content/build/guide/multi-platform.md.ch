@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Multi-platform
 description: Building for multiple operating systems and architectures
 keywords: build, buildkit, buildx, guide, tutorial, multi-platform, emulation, cross-compilation
----
 @y
----
-title: Multi-platform
+title: マルチプラットフォーム
 description: Building for multiple operating systems and architectures
 keywords: build, buildkit, buildx, guide, tutorial, multi-platform, emulation, cross-compilation
----
 @z
 
 @x
@@ -20,9 +16,9 @@ Up until this point in the guide, you've built Linux binaries. This section
 describes how you can support other operating systems, and architectures, using
 multi-platform builds via emulation and cross-compilation.
 @y
-Up until this point in the guide, you've built Linux binaries. This section
-describes how you can support other operating systems, and architectures, using
-multi-platform builds via emulation and cross-compilation.
+本ガイドのここに至るまでに、ビルドしてきたものと言えば Linux バイナリーでした。
+本節では別のオペレーティングシステム、別のアーキテクチャーに対応する方法について説明します。
+ここで用いるのはエミュレーションやクロスコンパイルを活用したマルチプラットフォームビルドです。
 @z
 
 @x
@@ -32,28 +28,19 @@ without having to make any changes to your Dockerfile. All you need to do is to
 pass the `--platform` flag to the build command, specifying the OS and
 architecture you want to build for.
 @y
-The easiest way to get started with building for multiple platforms is using
-emulation. With emulation, you can build your app to multiple architectures
-without having to make any changes to your Dockerfile. All you need to do is to
-pass the `--platform` flag to the build command, specifying the OS and
-architecture you want to build for.
+マルチプラットフォーム向けにビルドを行う方法として、手始めとなる単純な方法はエミュレーションです。
+エミュレーションを使えば、Dockerfile を何も変更することなく、アプリケーションをマルチアーキテクチャー対応化したビルドを行うことができます。
+必要となる作業は、単にビルドコマンドのフラグとして `--platform` を指定するだけです。
+このフラグを通じて、ビルドしたい OS やアーキテクチャーを指定します。
 @z
 
 @x
 The following command builds the server image for the `linux/arm/v7` platform:
 @y
-The following command builds the server image for the `linux/arm/v7` platform:
+以下に示すコマンドは `linux/arm/v7` プラットフォーム用のサーバーイメージをビルドするものです。
 @z
 
-@x
-```console
-$ docker build --target=server --platform=linux/arm/v7 .
-```
-@y
-```console
-$ docker build --target=server --platform=linux/arm/v7 .
-```
-@z
+% snip command...
 
 @x
 You can also use emulation to produce outputs for multiple platforms at once.
@@ -61,16 +48,15 @@ However, the default image store in Docker Engine doesn't support building
 and loading multi-platform images. You need to enable the containerd image store
 which supports concurrent multi-platform builds.
 @y
-You can also use emulation to produce outputs for multiple platforms at once.
-However, the default image store in Docker Engine doesn't support building
-and loading multi-platform images. You need to enable the containerd image store
-which supports concurrent multi-platform builds.
+エミュレーションを使うにあたっては、マルチプラットフォーム用のビルド結果を一度に得ることもできます。
+ただし Docker Engine におけるデフォルトのイメージストアでは、マルチプラットフォームイメージのビルドやロードはサポートしていません。
+マルチプラットフォームの同時ビルドをサポートするためには、コンテナードイメージストア (containerd image store) を有効にする必要があります。
 @z
 
 @x
 ## Enable the containerd image store
 @y
-## Enable the containerd image store
+## コンテナードイメージストアの有効化 {#enable-the-containerd-image-store}
 @z
 
 @x
@@ -121,23 +107,7 @@ enable the containerd image store by adding the following feature configuration
 to your `/etc/docker/daemon.json` configuration file.
 @z
 
-@x
-```json {hl_lines=3}
-{
-  "features": {
-    "containerd-snapshotter": true
-  }
-}
-```
-@y
-```json {hl_lines=3}
-{
-  "features": {
-    "containerd-snapshotter": true
-  }
-}
-```
-@z
+% snip code...
 
 @x
 Restart the daemon after updating the configuration file.
@@ -145,15 +115,7 @@ Restart the daemon after updating the configuration file.
 Restart the daemon after updating the configuration file.
 @z
 
-@x
-```console
-$ systemctl restart docker
-```
-@y
-```console
-$ systemctl restart docker
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -179,21 +141,7 @@ and pass it the same arguments as you did before.
 Only this time, also add a `--platform` flag specifying multiple architectures.
 @z
 
-@x
-```console {hl_lines=4}
-$ docker build \
-    --target=binaries \
-    --output=bin \
-    --platform=linux/amd64,linux/arm64,linux/arm/v7 .
-```
-@y
-```console {hl_lines=4}
-$ docker build \
-    --target=binaries \
-    --output=bin \
-    --platform=linux/amd64,linux/arm64,linux/arm/v7 .
-```
-@z
+% snip command...
 
 @x
 This command uses emulation to run the same build three times, once for each
@@ -203,33 +151,7 @@ This command uses emulation to run the same build three times, once for each
 platform. The build results are exported to a `bin` directory.
 @z
 
-@x
-```text
-bin
-├── linux_amd64
-│   ├── client
-│   └── server
-├── linux_arm64
-│   ├── client
-│   └── server
-└── linux_arm_v7
-    ├── client
-    └── server
-```
-@y
-```text
-bin
-├── linux_amd64
-│   ├── client
-│   └── server
-├── linux_arm64
-│   ├── client
-│   └── server
-└── linux_arm_v7
-    ├── client
-    └── server
-```
-@z
+% snip text...
 
 @x
 When you build for multiple platforms concurrently,
@@ -395,111 +317,7 @@ follows:
   cross-compilation.
 @z
 
-@x
-```diff
-  # syntax=docker/dockerfile:1
-  ARG GO_VERSION={{% param "example_go_version" %}}
-  ARG GOLANGCI_LINT_VERSION={{% param "example_golangci_lint_version" %}}
-- FROM golang:${GO_VERSION}-alpine AS base
-+ FROM --platform=$BUILDPLATFORM golang:${GO_VERSION}-alpine AS base
-  WORKDIR /src
-  RUN --mount=type=cache,target=/go/pkg/mod \
-      --mount=type=bind,source=go.mod,target=go.mod \
-      --mount=type=bind,source=go.sum,target=go.sum \
-      go mod download -x
-@y
-```diff
-  # syntax=docker/dockerfile:1
-  ARG GO_VERSION={{% param "example_go_version" %}}
-  ARG GOLANGCI_LINT_VERSION={{% param "example_golangci_lint_version" %}}
-- FROM golang:${GO_VERSION}-alpine AS base
-+ FROM --platform=$BUILDPLATFORM golang:${GO_VERSION}-alpine AS base
-  WORKDIR /src
-  RUN --mount=type=cache,target=/go/pkg/mod \
-      --mount=type=bind,source=go.mod,target=go.mod \
-      --mount=type=bind,source=go.sum,target=go.sum \
-      go mod download -x
-@z
-
-@x
-  FROM base AS build-client
-+ ARG TARGETOS
-+ ARG TARGETARCH
-  RUN --mount=type=cache,target=/go/pkg/mod \
-      --mount=type=bind,target=. \
--     go build -o /bin/client ./cmd/client
-+     GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o /bin/client ./cmd/client
-@y
-  FROM base AS build-client
-+ ARG TARGETOS
-+ ARG TARGETARCH
-  RUN --mount=type=cache,target=/go/pkg/mod \
-      --mount=type=bind,target=. \
--     go build -o /bin/client ./cmd/client
-+     GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o /bin/client ./cmd/client
-@z
-
-@x
-  FROM base AS build-server
-+ ARG TARGETOS
-+ ARG TARGETARCH
-  RUN --mount=type=cache,target=/go/pkg/mod \
-      --mount=type=bind,target=. \
--     go build -o /bin/server ./cmd/server
-+     GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o /bin/server ./cmd/server
-@y
-  FROM base AS build-server
-+ ARG TARGETOS
-+ ARG TARGETARCH
-  RUN --mount=type=cache,target=/go/pkg/mod \
-      --mount=type=bind,target=. \
--     go build -o /bin/server ./cmd/server
-+     GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o /bin/server ./cmd/server
-@z
-
-@x
-  FROM scratch AS client
-  COPY --from=build-client /bin/client /bin/
-  ENTRYPOINT [ "/bin/client" ]
-@y
-  FROM scratch AS client
-  COPY --from=build-client /bin/client /bin/
-  ENTRYPOINT [ "/bin/client" ]
-@z
-
-@x
-  FROM scratch AS server
-  COPY --from=build-server /bin/server /bin/
-  ENTRYPOINT [ "/bin/server" ]
-@y
-  FROM scratch AS server
-  COPY --from=build-server /bin/server /bin/
-  ENTRYPOINT [ "/bin/server" ]
-@z
-
-@x
-  FROM scratch AS binaries
-  COPY --from=build-client /bin/client /
-  COPY --from=build-server /bin/server /
-@y
-  FROM scratch AS binaries
-  COPY --from=build-client /bin/client /
-  COPY --from=build-server /bin/server /
-@z
-
-@x
-  FROM golangci/golangci-lint:${GOLANGCI_LINT_VERSION} as lint
-  WORKDIR /test
-  RUN --mount=type=bind,target=. \
-      golangci-lint run
-```
-@y
-  FROM golangci/golangci-lint:${GOLANGCI_LINT_VERSION} as lint
-  WORKDIR /test
-  RUN --mount=type=bind,target=. \
-      golangci-lint run
-```
-@z
+% snip code...
 
 @x
 The only thing left to do now is to run the actual build. To run a
@@ -515,21 +333,7 @@ illustrates how to build, and export, binaries for Mac (ARM64), Windows, and
 Linux:
 @z
 
-@x
-```console
-$ docker build \
-  --target=binaries \
-  --output=bin \
-  --platform=darwin/arm64,windows/amd64,linux/amd64 .
-```
-@y
-```console
-$ docker build \
-  --target=binaries \
-  --output=bin \
-  --platform=darwin/arm64,windows/amd64,linux/amd64 .
-```
-@z
+% snip command...
 
 @x
 When the build finishes, you’ll find client and server binaries for all of the
@@ -539,38 +343,12 @@ When the build finishes, you’ll find client and server binaries for all of the
 selected platforms in the `bin` directory:
 @z
 
-@x
-```diff
-bin
-├── darwin_arm64
-│   ├── client
-│   └── server
-├── linux_amd64
-│   ├── client
-│   └── server
-└── windows_amd64
-    ├── client
-    └── server
-```
-@y
-```diff
-bin
-├── darwin_arm64
-│   ├── client
-│   └── server
-├── linux_amd64
-│   ├── client
-│   └── server
-└── windows_amd64
-    ├── client
-    └── server
-```
-@z
+% snip code...
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -584,7 +362,7 @@ using emulation and cross-compilation.
 @x
 Related information:
 @y
-Related information:
+関連情報
 @z
 
 @x
@@ -592,7 +370,7 @@ Related information:
 - [containerd image store (Docker Desktop)](../../desktop/containerd.md)
 - [containerd image store (Docker Engine)](../../storage/containerd.md)
 @y
-- [Multi-platfom images](../building/multi-platform.md)
+- [マルチプラットフォームイメージ](../building/multi-platform.md)
 - [containerd image store (Docker Desktop)](../../desktop/containerd.md)
 - [containerd image store (Docker Engine)](../../storage/containerd.md)
 @z
@@ -610,7 +388,7 @@ You may also want to consider checking out
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x

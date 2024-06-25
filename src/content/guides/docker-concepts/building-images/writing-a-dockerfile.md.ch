@@ -360,12 +360,12 @@ To learn more about writing a Dockerfile, visit the following resources:
 @x
 * [Dockerfile reference](/reference/dockerfile/)
 * [Dockerfile best practices](/develop/develop-images/dockerfile_best-practices/)
-* [Create your own base image](/build/building/base-images/)
+* [Base images](/build/building/base-images/)
 * [Getting started with Docker Init](/reference/cli/docker/init/)
 @y
 * [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 * [Dockerfile best practices](__SUBDIR__/develop/develop-images/dockerfile_best-practices/)
-* [Create your own base image](__SUBDIR__/build/building/base-images/)
+* [Base images](__SUBDIR__/build/building/base-images/)
 * [Getting started with Docker Init](__SUBDIR__/reference/cli/docker/init/)
 @z
 

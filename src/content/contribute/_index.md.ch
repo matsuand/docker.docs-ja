@@ -116,6 +116,6 @@ See also:
 - A [writing checklist](checklist.md) to help you when you're contributing to Docker's documentation.
 @y
 - A section of useful components you can add to your documentation.
-- Information on Docker's [tone and voice](__SUBDIR__/style/voice-tone.md).
-- A [writing checklist](__SUBDIR__/checklist.md) to help you when you're contributing to Docker's documentation.
+- Information on Docker's [tone and voice](style/voice-tone.md).
+- A [writing checklist](checklist.md) to help you when you're contributing to Docker's documentation.
 @z

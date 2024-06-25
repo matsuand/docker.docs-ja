@@ -241,7 +241,11 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/volume/Makefile
 	src/content/samples/Makefile
 	src/content/scout/Makefile
+	src/content/scout/concepts/Makefile
+	src/content/scout/deep-dive/Makefile
+	src/content/scout/explore/Makefile
 	src/content/scout/guides/Makefile
+	src/content/scout/how-tos/Makefile
 	src/content/scout/images/Makefile
 	src/content/scout/images/release-notes/Makefile
 	src/content/scout/integrations/Makefile

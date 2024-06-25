@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 title: Integrate Docker Scout with Slack
 description: |
@@ -65,12 +67,12 @@ to the Slack channels associated with the webhook.
 > is not by a newly disclosed CVE, then no notification will be triggered.
 @z
 
-@x
+@x (no slash) 対応
 For more information about Docker Scout notifications,
-see [Notification settings](../../dashboard.md#notification-settings)
+see [Notification settings](/scout/explore/dashboard.md#notification-settings)
 @y
 For more information about Docker Scout notifications,
-see [Notification settings](../../dashboard.md#notification-settings)
+see [Notification settings](scout/explore/dashboard.md#notification-settings)
 @z
 
 @x

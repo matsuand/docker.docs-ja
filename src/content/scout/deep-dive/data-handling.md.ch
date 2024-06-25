@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 ---
 description: How Docker Scout handles image metadata
@@ -9,6 +11,8 @@ keywords: |
   materials, config, ports, labels, os, registry, timestamp, digest, layers,
   architecture, license, dependencies, base image
 title: Data collection and storage in Docker Scout
+aliases:
+  /scout/data-handling/
 ---
 @y
 ---
@@ -18,6 +22,8 @@ keywords: |
   materials, config, ports, labels, os, registry, timestamp, digest, layers,
   architecture, license, dependencies, base image
 title: Data collection and storage in Docker Scout
+aliases:
+  /scout/data-handling/
 ---
 @z
 
@@ -169,13 +175,13 @@ and packages, and application-level packages such as maven, npm, and so on.
 ### Environment metadata
 @z
 
-@x
+@x (no slash) 対応
 If you integrate Docker Scout with your runtime environment via the
-[Sysdig integration](./integrations/environment/sysdig.md),
+[Sysdig integration](/scout/integrations/environment/sysdig.md),
 Docker Scout collects the following data points about your deployments:
 @y
 If you integrate Docker Scout with your runtime environment via the
-[Sysdig integration](./integrations/environment/sysdig.md),
+[Sysdig integration](scout/integrations/environment/sysdig.md),
 Docker Scout collects the following data points about your deployments:
 @z
 
@@ -211,11 +217,11 @@ Docker Scout platform; it's only used to run the analysis.
 ### Provenance
 @z
 
-@x
-For images with [provenance attestations](../build/attestations/slsa-provenance.md),
+@x (no slash) 対応
+For images with [provenance attestations](/build/attestations/slsa-provenance.md),
 Docker Scout stores the following data in addition to the SBOM:
 @y
-For images with [provenance attestations](../build/attestations/slsa-provenance.md),
+For images with [provenance attestations](build/attestations/slsa-provenance.md),
 Docker Scout stores the following data in addition to the SBOM:
 @z
 

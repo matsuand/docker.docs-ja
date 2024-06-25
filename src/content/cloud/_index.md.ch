@@ -2,35 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Cloud integrations
 description: ACI and ECS integration information
 keywords: compose, ACI, ECS, amazon, cloud integration
-aliases:
-- /engine/context/aci-integration/
-- /cloud/aci-integration/
-- /cloud/ecs-integration/
-- /cloud/ecs-compose-examples/
-- /cloud/ecs-compose-features/
-- /cloud/ecs-architecture/
-- /cloud/aci-compose-features/
-- /cloud/aci-container-features/
----
 @y
----
 title: Cloud integrations
 description: ACI and ECS integration information
 keywords: compose, ACI, ECS, amazon, cloud integration
-aliases:
-- /engine/context/aci-integration/
-- /cloud/aci-integration/
-- /cloud/ecs-integration/
-- /cloud/ecs-compose-examples/
-- /cloud/ecs-compose-features/
-- /cloud/ecs-architecture/
-- /cloud/aci-compose-features/
-- /cloud/aci-container-features/
----
 @z
 
 @x

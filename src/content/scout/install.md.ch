@@ -48,15 +48,155 @@ To install the latest version of the plugin, run the following commands:
 @z
 
 @x
-If you want to install the plugin manually, you can find full instructions
-and links to download in the [scout-cli repository](https://github.com/docker/scout-cli).
+## Manual installation
 @y
-プラグインを手動インストールしたい場合は、[scout-cli リポジトリ](https://github.com/docker/scout-cli) にある手順に従って、そのリンクからダウンロードしてください。
+## Manual installation
 @z
 
 @x
-The Docker Scout CLI plugin is also available as [a container image](https://hub.docker.com/r/docker/scout-cli)
-and as [a GitHub action](https://github.com/docker/scout-action).
+{{< tabs >}}
+{{< tab name="Linux" >}}
 @y
-Docker Scout CLI プラグインは [コンテナーイメージ](https://hub.docker.com/r/docker/scout-cli) として、または [GitHub アクション](https://github.com/docker/scout-action) として入手できます。
+{{< tabs >}}
+{{< tab name="Linux" >}}
+@z
+
+@x
+1. Download the latest release from the [releases page](https://github.com/docker/scout-cli/releases).
+2. Create a subdirectory under `$HOME/.docker` called `scout`.
+@y
+1. Download the latest release from the [releases page](https://github.com/docker/scout-cli/releases).
+2. Create a subdirectory under `$HOME/.docker` called `scout`.
+@z
+
+% snip command...
+
+@x
+3. Extract the archive and move the `docker-scout` binary to the `$HOME/.docker/scout` directory.
+4. Make the binary executable: `chmod +x $HOME/.docker/scout/docker-scout`.
+5. Add the `scout` subdirectory to your `.docker/config.json` as a plugin directory:
+@y
+3. Extract the archive and move the `docker-scout` binary to the `$HOME/.docker/scout` directory.
+4. Make the binary executable: `chmod +x $HOME/.docker/scout/docker-scout`.
+5. Add the `scout` subdirectory to your `.docker/config.json` as a plugin directory:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< tab name="macOS" >}}
+@y
+{{< /tab >}}
+{{< tab name="macOS" >}}
+@z
+
+@x
+1. Download the latest release from the [releases page](https://github.com/docker/scout-cli/releases).
+2. Create a subdirectory under `$HOME/.docker` called `scout`.
+@y
+1. Download the latest release from the [releases page](https://github.com/docker/scout-cli/releases).
+2. Create a subdirectory under `$HOME/.docker` called `scout`.
+@z
+
+% snip command...
+
+@x
+3. Extract the archive and move the `docker-scout` binary to the `$HOME/.docker/scout` directory.
+4. Make the binary executable:
+@y
+3. Extract the archive and move the `docker-scout` binary to the `$HOME/.docker/scout` directory.
+4. Make the binary executable:
+@z
+
+% snip command...
+
+@x
+5. Authorize the binary to be executable on macOS:
+@y
+5. Authorize the binary to be executable on macOS:
+@z
+
+% snip command...
+
+@x
+6. Add the `scout` subdirectory to your `.docker/config.json` as a plugin directory:
+@y
+6. Add the `scout` subdirectory to your `.docker/config.json` as a plugin directory:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@y
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@z
+
+@x
+1. Download the latest release from the [releases page](https://github.com/docker/scout-cli/releases).
+2. Create a subdirectory under `%USERPROFILE%/.docker` called `scout`.
+@y
+1. Download the latest release from the [releases page](https://github.com/docker/scout-cli/releases).
+2. Create a subdirectory under `%USERPROFILE%/.docker` called `scout`.
+@z
+
+% snip command...
+
+@x
+3. Extract the archive and move the `docker-scout.exe` binary to the `%USERPROFILE%\.docker\scout` directory.
+4. Add the `scout` subdirectory to your `.docker\config.json` as a plugin directory:
+@y
+3. Extract the archive and move the `docker-scout.exe` binary to the `%USERPROFILE%\.docker\scout` directory.
+4. Add the `scout` subdirectory to your `.docker\config.json` as a plugin directory:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Container image
+@y
+## Container image
+@z
+
+@x
+The Docker Scout CLI plugin is also available as a [container image](https://hub.docker.com/r/docker/scout-cli).
+Use the `docker/scout-cli` to run `docker scout` commands without installing the CLI plugin on your host.
+@y
+The Docker Scout CLI plugin is also available as a [container image](https://hub.docker.com/r/docker/scout-cli).
+Use the `docker/scout-cli` to run `docker scout` commands without installing the CLI plugin on your host.
+@z
+
+% snip command...
+
+@x
+## GitHub Action
+@y
+## GitHub Action
+@z
+
+@x
+The Docker Scout CLI plugin is also available as a [GitHub action](https://github.com/docker/scout-action).
+You can use it in your GitHub workflows to automatically analyze images and evaluate policy compliance with each push.
+@y
+The Docker Scout CLI plugin is also available as a [GitHub action](https://github.com/docker/scout-action).
+You can use it in your GitHub workflows to automatically analyze images and evaluate policy compliance with each push.
+@z
+
+@x
+Docker Scout also integrates with many more CI/CD tools, such as Jenkins, GitLab, and Azure DevOps.
+Learn more about the [integrations](./integrations/_index.md) available for Docker Scout.
+@y
+Docker Scout also integrates with many more CI/CD tools, such as Jenkins, GitLab, and Azure DevOps.
+Learn more about the [integrations](./integrations/_index.md) available for Docker Scout.
 @z

@@ -3,23 +3,25 @@
 
 @x
 ---
-title: Defining additional build contexts and linking targets
+title: Using Bake with additional contexts
 description: |
   Additional contexts are useful when you want to pin image versions,
   or reference the output of other targets
 keywords: build, buildx, bake, buildkit, hcl
 aliases:
   - /build/customize/bake/build-contexts/
+  - /build/bake/build-contexts/
 ---
 @y
 ---
-title: Defining additional build contexts and linking targets
+title: Using Bake with additional contexts
 description: |
   Additional contexts are useful when you want to pin image versions,
   or reference the output of other targets
 keywords: build, buildx, bake, buildkit, hcl
 aliases:
   - /build/customize/bake/build-contexts/
+  - /build/bake/build-contexts/
 ---
 @z
 
@@ -150,16 +152,16 @@ target "app" {
 @z
 
 @x
-## Using a result of one target as a base image in another target
+## Using a target as a build context
 @y
-## Using a result of one target as a base image in another target
+## Using a target as a build context
 @z
 
 @x
-To use a result of one target as a build context of another, specity the target
+To use a result of one target as a build context of another, specify the target
 name with `target:` prefix.
 @y
-To use a result of one target as a build context of another, specity the target
+To use a result of one target as a build context of another, specify the target
 name with `target:` prefix.
 @z
 

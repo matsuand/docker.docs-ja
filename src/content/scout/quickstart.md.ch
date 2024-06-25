@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% (no slash) 対応
 
 @x
 title: Docker Scout quickstart
@@ -86,7 +86,7 @@ a vulnerable Node.js application that you can use to follow along.
 ## 手順 2: Docker Scout の有効化 {#step-2-enable-docker-scout}
 @z
 
-@x
+@x (no slash) 対応
 Docker Scout analyzes all local images by default. To analyze images in
 remote repositories, you need to enable it first.
 You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
@@ -95,7 +95,7 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 Docker Scout analyzes all local images by default. To analyze images in
 remote repositories, you need to enable it first.
 You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
-[Find out how in the overview guide](__SUBDIR__/scout).
+[Find out how in the overview guide](scout).
 @z
 
 @x
@@ -156,12 +156,12 @@ Docker Scout analyzes the image you built most recently by default,
 so there's no need to specify the name of the image in this case.
 @z
 
-@x
+@x (no slash) 対応
 Learn more about the `docker scout cves` command in the
 [`CLI reference documentation`](/reference/cli/docker/scout/cves).
 @y
 Learn more about the `docker scout cves` command in the
-[`CLI reference documentation`](__SUBDIR__/reference/cli/docker/scout/cves).
+[`CLI reference documentation`](reference/cli/docker/scout/cves).
 @z
 
 @x
@@ -490,16 +490,16 @@ Check out the following sections:
 Check out the following sections:
 @z
 
-@x
-- [Image analysis](./image-analysis.md)
+@x (no slash) 対応
+- [Image analysis](/scout/explore/analysis.md)
 - [Data sources](/scout/advisory-db-sources)
 - [Docker Scout Dashboard](/scout/dashboard)
 - [Integrations](./integrations/_index.md)
 - [Policy evaluation](./policy/_index.md)
 @y
-- [Image analysis](./image-analysis.md)
-- [Data sources](__SUBDIR__/scout/advisory-db-sources)
-- [Docker Scout Dashboard](__SUBDIR__/scout/dashboard)
+- [Image analysis](scout/explore/analysis.md)
+- [Data sources](scout/deep-dive/advisory-db-sources.md)
+- [Docker Scout Dashboard](scout/explore/dashboard.md)
 - [Integrations](./integrations/_index.md)
 - [Policy evaluation](./policy/_index.md)
 @z

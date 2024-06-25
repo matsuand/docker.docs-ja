@@ -24,15 +24,6 @@ arm64: |
 @z
 
 @x
-base image: |
-  A base image has no parent image specified in its Dockerfile. It is created using a Dockerfile with the `FROM scratch` directive.
-@y
-ベースイメージ: |
-  ベースイメージとは Dockerfile において親を持たないイメージとして記述されるものです。
-  Dockerfile における `FROM scratch` ディレクティブを使って生成されます。
-@z
-
-@x
 btrfs: |
   btrfs (B-tree file system) is a Linux [filesystem](#filesystem) that Docker
   supports as a storage backend. It is a [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) filesystem.
@@ -491,11 +482,11 @@ overlay storage driver: |
   OverlayFS is a [filesystem](#filesystem) service for Linux which implements a
   [union mount](https://en.wikipedia.org/wiki/Union_mount) for other file systems.
   It is supported by the Docker daemon as a storage driver.
-parent image: |
-  An image's parent image is the image designated in the `FROM` directive
-  in the image's Dockerfile. All subsequent commands are based on this parent
-  image. A Dockerfile with the `FROM scratch` directive uses no parent image, and creates
-  a base image.
+base image: |
+  A base image is an image you designate in a `FROM` directive in a Dockerfile.
+  It defines the starting point for your build.
+  Dockerfile instructions create additional layers on top of the base image.
+  A Dockerfile with the `FROM scratch` directive uses an empty base image.
 persistent storage: |
   Persistent storage or volume storage provides a way for a user to add a
   persistent layer to the running container's file system. This persistent layer
@@ -517,11 +508,11 @@ overlay storage driver: |
   OverlayFS is a [filesystem](#filesystem) service for Linux which implements a
   [union mount](https://en.wikipedia.org/wiki/Union_mount) for other file systems.
   It is supported by the Docker daemon as a storage driver.
-parent image: |
-  An image's parent image is the image designated in the `FROM` directive
-  in the image's Dockerfile. All subsequent commands are based on this parent
-  image. A Dockerfile with the `FROM scratch` directive uses no parent image, and creates
-  a base image.
+base image: |
+  A base image is an image you designate in a `FROM` directive in a Dockerfile.
+  It defines the starting point for your build.
+  Dockerfile instructions create additional layers on top of the base image.
+  A Dockerfile with the `FROM scratch` directive uses an empty base image.
 persistent storage: |
   Persistent storage or volume storage provides a way for a user to add a
   persistent layer to the running container's file system. This persistent layer
