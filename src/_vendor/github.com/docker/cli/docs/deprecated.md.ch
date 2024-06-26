@@ -124,7 +124,10 @@ The table below provides an overview of the current status of deprecated feature
 @x
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
-| Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v27.0  |
+| Deprecated | [Non-standard fields in image inspect](#non-standard-fields-in-image-inspect)                                                      | v27.0      | v28.0  |
+| Deprecated | [API CORS headers](#api-cors-headers)                                                                                              | v27.0      | v28.0  |
+| Deprecated | [Graphdriver plugins (experimental)](#graphdriver-plugins-experimental)                                                            | v27.0      | v28.0  |
+| Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v28.0  |
 | Deprecated | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
 | Deprecated | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
 | Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
@@ -188,7 +191,10 @@ The table below provides an overview of the current status of deprecated feature
 @y
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
-| Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v27.0  |
+| Deprecated | [Non-standard fields in image inspect](#non-standard-fields-in-image-inspect)                                                      | v27.0      | v28.0  |
+| Deprecated | [API CORS headers](#api-cors-headers)                                                                                              | v27.0      | v28.0  |
+| Deprecated | [Graphdriver plugins (experimental)](#graphdriver-plugins-experimental)                                                            | v27.0      | v28.0  |
+| Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v28.0  |
 | Deprecated | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
 | Deprecated | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
 | Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
@@ -252,6 +258,194 @@ The table below provides an overview of the current status of deprecated feature
 @z
 
 @x
+### Non-standard fields in image inspect
+@y
+### Non-standard fields in image inspect
+@z
+
+@x
+**Deprecated in Release: v27.0**
+**Target For Removal In Release: v28.0**
+@y
+**Deprecated in Release: v27.0**
+**Target For Removal In Release: v28.0**
+@z
+
+@x
+The `Config` field returned shown in `docker image inspect` (and as returned by
+the `GET /images/{name}/json` API endpoint) returns additional fields that are
+not part of the image's configuration and not part of the [Docker Image Spec]
+and [OCI Image Specification].
+@y
+The `Config` field returned shown in `docker image inspect` (and as returned by
+the `GET /images/{name}/json` API endpoint) returns additional fields that are
+not part of the image's configuration and not part of the [Docker Image Spec]
+and [OCI Image Specification].
+@z
+
+@x
+These fields are never set (and always return the default value for the type),
+but are not omitted in the response when left empty. As these fields were not
+intended to be part of the image configuration response, they are deprecated,
+and will be removed from the API in thee next release.
+@y
+These fields are never set (and always return the default value for the type),
+but are not omitted in the response when left empty. As these fields were not
+intended to be part of the image configuration response, they are deprecated,
+and will be removed from the API in thee next release.
+@z
+
+@x
+The following fields are currently included in the API response, but are not
+part of the underlying image's Config, and deprecated:
+@y
+The following fields are currently included in the API response, but are not
+part of the underlying image's Config, and deprecated:
+@z
+
+@x
+- `Hostname`
+- `Domainname`
+- `AttachStdin`
+- `AttachStdout`
+- `AttachStderr`
+- `Tty`
+- `OpenStdin`
+- `StdinOnce`
+- `Image`
+- `NetworkDisabled` (already omitted unless set)
+- `MacAddress` (already omitted unless set)
+- `StopTimeout` (already omitted unless set)
+@y
+- `Hostname`
+- `Domainname`
+- `AttachStdin`
+- `AttachStdout`
+- `AttachStderr`
+- `Tty`
+- `OpenStdin`
+- `StdinOnce`
+- `Image`
+- `NetworkDisabled` (already omitted unless set)
+- `MacAddress` (already omitted unless set)
+- `StopTimeout` (already omitted unless set)
+@z
+
+@x
+[Docker image spec]: https://github.com/moby/docker-image-spec/blob/v1.3.1/specs-go/v1/image.go#L19-L32
+[OCI Image Spec]: https://github.com/opencontainers/image-spec/blob/v1.1.0/specs-go/v1/config.go#L24-L62
+@y
+[Docker image spec]: https://github.com/moby/docker-image-spec/blob/v1.3.1/specs-go/v1/image.go#L19-L32
+[OCI Image Spec]: https://github.com/opencontainers/image-spec/blob/v1.1.0/specs-go/v1/config.go#L24-L62
+@z
+
+@x
+### Graphdriver plugins (experimental)
+@y
+### Graphdriver plugins (experimental)
+@z
+
+@x
+**Deprecated in Release: v27.0**
+**Disabled by default in Release: v27.0**
+**Target For Removal In Release: v28.0**
+@y
+**Deprecated in Release: v27.0**
+**Disabled by default in Release: v27.0**
+**Target For Removal In Release: v28.0**
+@z
+
+@x
+[Graphdriver plugins](https://github.com/docker/cli/blob/v26.1.4/docs/extend/plugins_graphdriver.md)
+are an experimental feature that allow extending the Docker Engine with custom
+storage drivers for storing images and containers. This feature was not
+maintained since its inception, and will no longer be supported in upcoming
+releases.
+@y
+[Graphdriver plugins](https://github.com/docker/cli/blob/v26.1.4/docs/extend/plugins_graphdriver.md)
+are an experimental feature that allow extending the Docker Engine with custom
+storage drivers for storing images and containers. This feature was not
+maintained since its inception, and will no longer be supported in upcoming
+releases.
+@z
+
+@x
+Support for graphdriver plugins is disabled by default in v27.0, and will be
+removed v28.0. An `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable
+is provided in v27.0 to re-enable the feature. This environment variable must
+be set to a non-empty value in the daemon's environment.
+@y
+Support for graphdriver plugins is disabled by default in v27.0, and will be
+removed v28.0. An `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable
+is provided in v27.0 to re-enable the feature. This environment variable must
+be set to a non-empty value in the daemon's environment.
+@z
+
+@x
+The `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable, along with
+support for graphdriver plugins, will be removed in v28.0. Users of this feature
+are recommended to instead configure the Docker Engine to use the [containerd image store](https://docs.docker.com/storage/containerd/)
+and a custom [snapshotter](https://github.com/containerd/containerd/tree/v1.7.18/docs/snapshotters)
+@y
+The `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable, along with
+support for graphdriver plugins, will be removed in v28.0. Users of this feature
+are recommended to instead configure the Docker Engine to use the [containerd image store](https://docs.docker.com/storage/containerd/)
+and a custom [snapshotter](https://github.com/containerd/containerd/tree/v1.7.18/docs/snapshotters)
+@z
+
+@x
+### API CORS headers
+@y
+### API CORS headers
+@z
+
+@x
+**Deprecated in Release: v27.0**
+**Target For Removal In Release: v28.0**
+@y
+**Deprecated in Release: v27.0**
+**Target For Removal In Release: v28.0**
+@z
+
+@x
+The `api-cors-header` configuration option for the Docker daemon is insecure,
+and is therefore deprecated and scheduled for removal.
+Incorrectly setting this option could leave a window of opportunity
+for unauthenticated cross-origin requests to be accepted by the daemon.
+@y
+The `api-cors-header` configuration option for the Docker daemon is insecure,
+and is therefore deprecated and scheduled for removal.
+Incorrectly setting this option could leave a window of opportunity
+for unauthenticated cross-origin requests to be accepted by the daemon.
+@z
+
+@x
+Starting in Docker Engine v27.0, this flag can still be set,
+but it has no effect unless the environment variable
+`DOCKERD_DEPRECATED_CORS_HEADER` is also set to a non-empty value.
+@y
+Starting in Docker Engine v27.0, this flag can still be set,
+but it has no effect unless the environment variable
+`DOCKERD_DEPRECATED_CORS_HEADER` is also set to a non-empty value.
+@z
+
+@x
+This flag will be removed altogether in v28.0.
+@y
+This flag will be removed altogether in v28.0.
+@z
+
+@x
+This is a breaking change for authorization plugins and other programs
+that depend on this option for accessing the Docker API from a browser.
+If you need to access the API through a browser, use a reverse proxy.
+@y
+This is a breaking change for authorization plugins and other programs
+that depend on this option for accessing the Docker API from a browser.
+If you need to access the API through a browser, use a reverse proxy.
+@z
+
+@x
 ### Unauthenticated TCP connections
 @y
 ### Unauthenticated TCP connections
@@ -259,10 +453,10 @@ The table below provides an overview of the current status of deprecated feature
 
 @x
 **Deprecated in Release: v26.0**
-**Target For Removal In Release: v27.0**
+**Target For Removal In Release: v28.0**
 @y
 **Deprecated in Release: v26.0**
-**Target For Removal In Release: v27.0**
+**Target For Removal In Release: v28.0**
 @z
 
 @x
@@ -436,12 +630,14 @@ CLI to use API version 1.23, which produces an error:
 @x
 ```console
 DOCKER_API_VERSION=1.23 docker version
-Error response from daemon: client version 1.23 is too old. Minimum supported API version is 1.24, please upgrade your client to a newer version
+Error response from daemon: client version 1.23 is too old. Minimum supported API version is 1.24, 
+upgrade your client to a newer version
 ```
 @y
 ```console
 DOCKER_API_VERSION=1.23 docker version
-Error response from daemon: client version 1.23 is too old. Minimum supported API version is 1.24, please upgrade your client to a newer version
+Error response from daemon: client version 1.23 is too old. Minimum supported API version is 1.24, 
+upgrade your client to a newer version
 ```
 @z
 
@@ -1459,11 +1655,11 @@ A deprecation message is logged in the daemon logs if the old option is used:
 
 @x
 ```console
-fluent#New: AsyncConnect is now deprecated, please use Async instead
+fluent#New: AsyncConnect is now deprecated, use Async instead
 ```
 @y
 ```console
-fluent#New: AsyncConnect is now deprecated, please use Async instead
+fluent#New: AsyncConnect is now deprecated, use Async instead
 ```
 @z
 
@@ -1548,14 +1744,14 @@ An environment variable (`DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE`) is
 added in Docker v26.0 that allows re-enabling support for these image formats
 in the daemon. This environment variable must be set to a non-empty value in
 the daemon's environment (for example, through a [systemd override file](https://docs.docker.com/config/daemon/systemd/)).
-Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment-variable
+Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment variable
 will be removed in Docker v27.0 after which this functionality is removed permanently.
 @y
 An environment variable (`DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE`) is
 added in Docker v26.0 that allows re-enabling support for these image formats
 in the daemon. This environment variable must be set to a non-empty value in
 the daemon's environment (for example, through a [systemd override file](https://docs.docker.com/config/daemon/systemd/)).
-Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment-variable
+Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment variable
 will be removed in Docker v27.0 after which this functionality is removed permanently.
 @z
 

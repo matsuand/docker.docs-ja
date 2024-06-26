@@ -282,7 +282,7 @@ We have to put the following JSON to `$TMPDIR/config.json`:
 @z
 
 @x
-Please note a couple of points:
+Note a couple of points:
 - `PropagatedMount` is needed so that the docker daemon can see mounts done by the
 rexray plugin from within the container, otherwise the docker daemon is not able
 to mount a docker volume.
@@ -293,7 +293,7 @@ true for proper access.
 `EBS_ACCESSKEY` and `EBS_SECRETKEY`. This is because of the reduced scope of this
 plugin. Ideally other rexray parameters could also be set.
 @y
-Please note a couple of points:
+Note a couple of points:
 - `PropagatedMount` is needed so that the docker daemon can see mounts done by the
 rexray plugin from within the container, otherwise the docker daemon is not able
 to mount a docker volume.

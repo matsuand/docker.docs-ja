@@ -11,7 +11,6 @@ bases = \
 	legacy_plugins.md        \
 	plugin_api.md            \
 	plugins_authorization.md \
-	plugins_graphdriver.md   \
 	plugins_logging.md       \
 	plugins_metrics.md       \
 	plugins_network.md       \

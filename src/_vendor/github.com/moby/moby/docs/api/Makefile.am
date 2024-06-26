@@ -25,6 +25,7 @@ bases = \
 	v1.43.yaml \
 	v1.44.yaml \
 	v1.45.yaml \
+	v1.46.yaml \
 	version-history.md
 
 include $(top_srcdir)/build-aux/common.mk

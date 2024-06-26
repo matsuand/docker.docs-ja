@@ -8173,7 +8173,7 @@ paths:
           default: false
         - name: "stream"
           in: "query"
-          description: "Stream attached streams from the the time the request was made onwards"
+          description: "Stream attached streams from the time the request was made onwards"
           type: "boolean"
           default: false
         - name: "stdin"
@@ -8544,7 +8544,7 @@ paths:
           default: false
         - name: "stream"
           in: "query"
-          description: "Stream attached streams from the the time the request was made onwards"
+          description: "Stream attached streams from the time the request was made onwards"
           type: "boolean"
           default: false
         - name: "stdin"
