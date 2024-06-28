@@ -60,16 +60,6 @@ GitHub Actions:
 @z
 
 @x
-> **Note**
->
-> Job summaries are not yet supported with [Docker Build Cloud](../../cloud/_index.md).
-@y
-> **Note**
->
-> Job summaries are not yet supported with [Docker Build Cloud](../../cloud/_index.md).
-@z
-
-@x
 To view the job summary, open the details page for the job in GitHub after the
 job has finished. The summary is available for both failed and successful
 builds. In the case of a failed build, the summary also displays the error
@@ -217,4 +207,28 @@ variable in the YAML configuration for your build step:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 ```
+@z
+
+@x
+## Limitations
+@y
+## Limitations
+@z
+
+@x
+Build summaries are currently not supported for:
+@y
+Build summaries are currently not supported for:
+@z
+
+@x
+- Builds using [Docker Build Cloud](/build/cloud/_index.md). Support for Docker
+  Build Cloud is planned for a future release.
+- Repositories hosted on GitHub Enterprise Servers. Summaries can only be
+  viewed for repositories hosted on GitHub.com.
+@y
+- Builds using [Docker Build Cloud](/build/cloud/_index.md). Support for Docker
+  Build Cloud is planned for a future release.
+- Repositories hosted on GitHub Enterprise Servers. Summaries can only be
+  viewed for repositories hosted on GitHub.com.
 @z

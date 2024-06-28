@@ -92,6 +92,14 @@ Organization owners can add a member to one or more teams within an organization
 @z
 
 @x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
 To add a member to a team:
 @y
 To add a member to a team:
@@ -122,17 +130,85 @@ To add a member to a team:
 @x
    > **Note**
    >
-   > The invitee must first accept the invitation to join the organization before being added to the team.
+   > An invitee must first accept the invitation to join the organization before being added to the team.
 @y
    > **Note**
    >
-   > The invitee must first accept the invitation to join the organization before being added to the team.
+   > An invitee must first accept the invitation to join the organization before being added to the team.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+To add a member to a team:
+@y
+To add a member to a team:
+@z
+
+@x
+1. In the Admin Console, select your organization.
+2. Select the team name.
+3. Select **Add member**. You can add the member by searching for their email address or username.
+@y
+1. In the Admin Console, select your organization.
+2. Select the team name.
+3. Select **Add member**. You can add the member by searching for their email address or username.
+@z
+
+@x
+   > **Note**
+   >
+   > An invitee must first accept the invitation to join the organization before being added to the team.
+@y
+   > **Note**
+   >
+   > An invitee must first accept the invitation to join the organization before being added to the team.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
 ### Remove a member from a team
 @y
 ### Remove a member from a team
+@z
+
+@x
+Organization owners can remove a member from a team in Docker Hub or Admin Console. Removing the member from the team will revoke their access to the permitted resources.
+@y
+Organization owners can remove a member from a team in Docker Hub or Admin Console. Removing the member from the team will revoke their access to the permitted resources.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+To add a member to a team:
+@y
+To add a member to a team:
 @z
 
 @x
@@ -151,4 +227,44 @@ To remove a member from a specific team:
 2. Select **Organizations**, your organization, **Teams**, and then the team.
 3. Select the **X** next to the user’s name to remove them from the team.
 4. When prompted, select **Remove** to confirm.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+To remove a member from a specific team:
+@y
+To remove a member from a specific team:
+@z
+
+@x
+1. In the Admin Console, select your organization.
+2. Select the team name.
+3. Select the **X** next to the user's name to remove them from the team.
+4. When prompted, select **Remove** to confirm.
+@y
+1. In the Admin Console, select your organization.
+2. Select the team name.
+3. Select the **X** next to the user's name to remove them from the team.
+4. When prompted, select **Remove** to confirm.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z

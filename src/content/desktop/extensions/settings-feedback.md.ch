@@ -142,19 +142,19 @@ Feedback can be given to an extension author through a dedicated Slack channel o
 @z
 
 @x
-1. Navigate to Docker Dashboard and from the menu bar select the ellipsis to the right of **Extensions**.
-2. Select the **Manage** tab.
-3. Select the extension you want to provide feedback on. 
-4. Scroll down to the bottom of the extension's description and, depending on the 
+1. Navigate to Docker Dashboard and select the **Manage** tab.
+   This displays a list of extensions you've installed.
+2. Select the extension you want to provide feedback on. 
+3. Scroll down to the bottom of the extension's description and, depending on the 
 extension, select:
     - Support
     - Slack
     - Issues. You'll be sent to a page outside of Docker Desktop to submit your feedback.
 @y
-1. Navigate to Docker Dashboard and from the menu bar select the ellipsis to the right of **Extensions**.
-2. Select the **Manage** tab.
-3. Select the extension you want to provide feedback on. 
-4. Scroll down to the bottom of the extension's description and, depending on the 
+1. Navigate to Docker Dashboard and select the **Manage** tab.
+   This displays a list of extensions you've installed.
+2. Select the extension you want to provide feedback on. 
+3. Scroll down to the bottom of the extension's description and, depending on the 
 extension, select:
     - Support
     - Slack

@@ -86,248 +86,6 @@ long: |-
     - `oci-dir://` use an OCI layout directory
     - `archive://` use a tarball archive, as created by `docker save`
     - `fs://` use a local directory or file
-usage: docker scout compare --to IMAGE|DIRECTORY|ARCHIVE [IMAGE|DIRECTORY|ARCHIVE]
-pname: docker scout
-plink: docker_scout.yaml
-options:
-    - option: exit-code
-      shorthand: e
-      value_type: bool
-      default_value: "false"
-      description: Return exit code '2' if vulnerability changes are detected
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: exit-on
-      shorthand: x
-      value_type: stringSlice
-      default_value: '[]'
-      description: |
-        Comma separated list of conditions to fail the action step if worse, options are: vulnerability, policy
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      default_value: text
-      description: |-
-        Output format of the generated vulnerability report:
-        - text: default output, plain text with or without colors depending on the terminal
-        - markdown: Markdown output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: hide-policies
-      value_type: bool
-      default_value: "false"
-      description: Hide policy status from the output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ignore-base
-      value_type: bool
-      default_value: "false"
-      description: Filter out CVEs introduced from base image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ignore-unchanged
-      value_type: bool
-      default_value: "false"
-      description: Filter out unchanged packages
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: multi-stage
-      value_type: bool
-      default_value: "false"
-      description: Show packages from multi-stage Docker builds
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-fixed
-      value_type: bool
-      default_value: "false"
-      description: Filter to fixable CVEs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-package-type
-      value_type: stringSlice
-      default_value: '[]'
-      description: |
-        Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-severity
-      value_type: stringSlice
-      default_value: '[]'
-      description: |
-        Comma separated list of severities (critical, high, medium, low, unspecified) to filter CVEs by
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-stage
-      value_type: stringSlice
-      default_value: '[]'
-      description: Comma separated list of multi-stage Docker build stage names
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-unfixed
-      value_type: bool
-      default_value: "false"
-      description: Filter to unfixed CVEs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: org
-      value_type: string
-      description: Namespace of the Docker organization
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: string
-      description: Write the report to a file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Platform of image to analyze
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ref
-      value_type: string
-      description: |-
-        Reference to use if the provided tarball contains multiple references.
-        Can only be used with archive
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to
-      value_type: string
-      description: Image, directory, or archive to compare to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-env
-      value_type: string
-      description: Name of environment to compare to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-latest
-      value_type: bool
-      default_value: "false"
-      description: Latest image processed to compare to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-ref
-      value_type: string
-      description: |-
-        Reference to use if the provided tarball contains multiple references.
-        Can only be used with archive.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-stream
-      value_type: string
-      description: Name of stream to compare to
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
-      description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
-      description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Compare the most recently built image to the latest tag
 @y
     - `image://` (default) use a local image, or fall back to a registry lookup
     - `local://` use an image from the local image store (don't do a registry lookup)
@@ -335,246 +93,184 @@ examples: |-
     - `oci-dir://` use an OCI layout directory
     - `archive://` use a tarball archive, as created by `docker save`
     - `fs://` use a local directory or file
+@z
+
+@x
 usage: docker scout compare --to IMAGE|DIRECTORY|ARCHIVE [IMAGE|DIRECTORY|ARCHIVE]
 pname: docker scout
 plink: docker_scout.yaml
-options:
-    - option: exit-code
-      shorthand: e
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker scout compare --to IMAGE|DIRECTORY|ARCHIVE [IMAGE|DIRECTORY|ARCHIVE]
+pname: docker scout
+plink: docker_scout.yaml
+@z
+
+% options:
+
+@x exit-code
       description: Return exit code '2' if vulnerability changes are detected
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: exit-on
-      shorthand: x
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: Return exit code '2' if vulnerability changes are detected
+@z
+
+@x exit-on
       description: |
         Comma separated list of conditions to fail the action step if worse, options are: vulnerability, policy
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      default_value: text
+@y
+      description: |
+        Comma separated list of conditions to fail the action step if worse, options are: vulnerability, policy
+@z
+
+@x format
       description: |-
         Output format of the generated vulnerability report:
         - text: default output, plain text with or without colors depending on the terminal
         - markdown: Markdown output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: hide-policies
-      value_type: bool
-      default_value: "false"
+@y
+      description: |-
+        Output format of the generated vulnerability report:
+        - text: default output, plain text with or without colors depending on the terminal
+        - markdown: Markdown output
+@z
+
+@x hide-policies
       description: Hide policy status from the output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ignore-base
-      value_type: bool
-      default_value: "false"
+@y
+      description: Hide policy status from the output
+@z
+
+@x ignore-base
       description: Filter out CVEs introduced from base image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ignore-unchanged
-      value_type: bool
-      default_value: "false"
+@y
+      description: Filter out CVEs introduced from base image
+@z
+
+@x ignore-unchanged
       description: Filter out unchanged packages
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: multi-stage
-      value_type: bool
-      default_value: "false"
+@y
+      description: Filter out unchanged packages
+@z
+
+@x multi-stage
       description: Show packages from multi-stage Docker builds
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-fixed
-      value_type: bool
-      default_value: "false"
+@y
+      description: Show packages from multi-stage Docker builds
+@z
+
+@x only-fixed
       description: Filter to fixable CVEs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-package-type
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: Filter to fixable CVEs
+@z
+
+@x only-package-type
       description: |
         Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-severity
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: |
+        Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)
+@z
+
+@x only-severity
       description: |
         Comma separated list of severities (critical, high, medium, low, unspecified) to filter CVEs by
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-stage
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: |
+        Comma separated list of severities (critical, high, medium, low, unspecified) to filter CVEs by
+@z
+
+@x only-stage
       description: Comma separated list of multi-stage Docker build stage names
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-unfixed
-      value_type: bool
-      default_value: "false"
+@y
+      description: Comma separated list of multi-stage Docker build stage names
+@z
+
+@x only-unfixed
       description: Filter to unfixed CVEs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: org
-      value_type: string
+@y
+      description: Filter to unfixed CVEs
+@z
+
+@x org
       description: Namespace of the Docker organization
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: string
+@y
+      description: Namespace of the Docker organization
+@z
+
+@x output
       description: Write the report to a file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
+@y
+      description: Write the report to a file
+@z
+
+@x platform
       description: Platform of image to analyze
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ref
-      value_type: string
+@y
+      description: Platform of image to analyze
+@z
+
+@x ref
       description: |-
         Reference to use if the provided tarball contains multiple references.
         Can only be used with archive
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to
-      value_type: string
+@y
+      description: |-
+        Reference to use if the provided tarball contains multiple references.
+        Can only be used with archive
+@z
+
+@x to
       description: Image, directory, or archive to compare to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-env
-      value_type: string
+@y
+      description: Image, directory, or archive to compare to
+@z
+
+@x to-env
       description: Name of environment to compare to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-latest
-      value_type: bool
-      default_value: "false"
+@y
+      description: Name of environment to compare to
+@z
+
+@x to-latest
       description: Latest image processed to compare to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-ref
-      value_type: string
+@y
+      description: Latest image processed to compare to
+@z
+
+@x to-ref
       description: |-
         Reference to use if the provided tarball contains multiple references.
         Can only be used with archive.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: to-stream
-      value_type: string
+@y
+      description: |-
+        Reference to use if the provided tarball contains multiple references.
+        Can only be used with archive.
+@z
+
+@x to-stream
       description: Name of stream to compare to
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: Name of stream to compare to
+@z
+
+% inherited_options:
+
+@x debug
       description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: Debug messages
+@z
+
+@x verbose-debug
       description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Verbose debug
+@z
+
+@x
+examples: |-
+    ### Compare the most recently built image to the latest tag
+@y
 examples: |-
     ### Compare the most recently built image to the latest tag
 @z

@@ -22,9 +22,9 @@ aliases:
 @z
 
 @x
-You can manage teams for your organization in Docker Hub.
+You can create teams for your organization in Docker Hub and the Docker Admin Console. You can [configure repository access for a team](#configure-repository-permissions-for-a-team) in Docker Hub.
 @y
-You can manage teams for your organization in Docker Hub.
+You can create teams for your organization in Docker Hub and the Docker Admin Console. You can [configure repository access for a team](#configure-repository-permissions-for-a-team) in Docker Hub.
 @z
 
 @x
@@ -40,29 +40,9 @@ using their Docker ID or email address and by selecting a team the user should b
 @z
 
 @x
-The organization owner can add additional organization owners to help them
-manage users, teams, and repositories in the organization by assigning them the owner role.
+The organization owner can add additional organization owners to help them manage users, teams, and repositories in the organization by assigning them the owner role.
 @y
-The organization owner can add additional organization owners to help them
-manage users, teams, and repositories in the organization by assigning them the owner role.
-@z
-
-@x
-## Create a team
-@y
-## Create a team
-@z
-
-@x
-1. Go to **Organizations** in Docker Hub, and select your organization.
-2. Select the **Teams** tab and then select **Create Team**.
-3. Fill out your team's information and select **Create**.
-4. [Add members to your team](members.md#add-a-member-to-a-team)
-@y
-1. Go to **Organizations** in Docker Hub, and select your organization.
-2. Select the **Teams** tab and then select **Create Team**.
-3. Fill out your team's information and select **Create**.
-4. [Add members to your team](members.md#add-a-member-to-a-team)
+The organization owner can add additional organization owners to help them manage users, teams, and repositories in the organization by assigning them the owner role.
 @z
 
 @x
@@ -99,6 +79,68 @@ enforcement.
 The org owner can also add additional org owners to help them manage users, teams, and repositories in the organization.
 @y
 The org owner can also add additional org owners to help them manage users, teams, and repositories in the organization.
+@z
+
+@x
+## Create a team
+@y
+## Create a team
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+1. Go to **Organizations** in Docker Hub, and select your organization.
+2. Select the **Teams** tab and then select **Create Team**.
+3. Fill out your team's information and select **Create**.
+4. [Add members to your team](members.md#add-a-member-to-a-team).
+@y
+1. Go to **Organizations** in Docker Hub, and select your organization.
+2. Select the **Teams** tab and then select **Create Team**.
+3. Fill out your team's information and select **Create**.
+4. [Add members to your team](members.md#add-a-member-to-a-team).
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+1. In Admin Console, select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select **Create team**.
+4. Fill out your team's information and select **Create**.
+5. [Add members to your team](members.md#add-a-member-to-a-team).
+@y
+1. In Admin Console, select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select **Create team**.
+4. Fill out your team's information and select **Create**.
+5. [Add members to your team](members.md#add-a-member-to-a-team).
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -241,6 +283,78 @@ To view a team's permissions across all repositories:
 @y
 1. Open **Organizations** > **_Your Organization_** > **Teams** > **_Team Name_**.
 2. Select the **Permissions** tab, where you can view the repositories this team can access.
+@z
+
+@x
+## Delete a team
+@y
+## Delete a team
+@z
+
+@x
+Organization owners can delete a team in Docker Hub or Admin Console. When you remove a team from your organization, this action revokes the members' access to the team's permitted resources. It won't remove users from other teams that they belong to, nor will it delete any resources.
+@y
+Organization owners can delete a team in Docker Hub or Admin Console. When you remove a team from your organization, this action revokes the members' access to the team's permitted resources. It won't remove users from other teams that they belong to, nor will it delete any resources.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+1. Go to **Organizations** in Docker Hub, and select your organization.
+2. Select the **Teams** tab.
+3. Select the name of the team that you want to delete.
+4. Select **Settings**.
+5. Select **Delete Team**.
+6. Review the confirmation message, then select **Delete**.
+@y
+1. Go to **Organizations** in Docker Hub, and select your organization.
+2. Select the **Teams** tab.
+3. Select the name of the team that you want to delete.
+4. Select **Settings**.
+5. Select **Delete Team**.
+6. Review the confirmation message, then select **Delete**.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+1. In Admin Console, select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select the **Actions** icon next to the name of the team you want to delete.
+4. Select **Delete team**.
+5. Review the confirmation message, then select **Delete**.
+@y
+1. In Admin Console, select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select the **Actions** icon next to the name of the team you want to delete.
+4. Select **Delete team**.
+5. Review the confirmation message, then select **Delete**.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x

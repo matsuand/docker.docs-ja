@@ -2,25 +2,18 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % (no slash) 対応
+% snip 対応
 
 @x
----
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, packages, repositories, ecosystem
 title: Advisory database sources and matching service
-aliases:
-  /scout/advisory-db-sources/
----
 @y
----
 description: More details on the advisory database and CVE-to-package matching service
   behind Docker Scout analysis.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, packages, repositories, ecosystem
 title: Advisory database sources and matching service
-aliases:
-  /scout/advisory-db-sources/
----
 @z
 
 @x
@@ -87,7 +80,7 @@ Docker Scout uses the following package repositories and security trackers:
 - [SUSE Security CVRF](http://ftp.suse.com/pub/projects/security/cvrf/)
 - [Ubuntu CVE Tracker](https://people.canonical.com/~ubuntu-security/cve/)
 - [Wolfi Security Feed](https://packages.wolfi.dev/os/security.json)
-- [Chainguard Security Feed](https://packages.cgr.dev/chainguard/security.json)
+- [Chainguard Security Feed](https://packages.cgr.dev/chainguard/osv/all.json)
 @y
 - [Alpine secdb](https://secdb.alpinelinux.org/)
 - [AlmaLinux Security Advisory](https://errata.almalinux.org/)
@@ -114,7 +107,7 @@ Docker Scout uses the following package repositories and security trackers:
 - [SUSE Security CVRF](http://ftp.suse.com/pub/projects/security/cvrf/)
 - [Ubuntu CVE Tracker](https://people.canonical.com/~ubuntu-security/cve/)
 - [Wolfi Security Feed](https://packages.wolfi.dev/os/security.json)
-- [Chainguard Security Feed](https://packages.cgr.dev/chainguard/security.json)
+- [Chainguard Security Feed](https://packages.cgr.dev/chainguard/osv/all.json)
 @z
 
 @x

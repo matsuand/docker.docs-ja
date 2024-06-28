@@ -2,25 +2,16 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
----
 title: Develop with Docker Engine SDKs
 description: Learn how to use Docker Engine SDKs to automate Docker tasks in your language of choice
 keywords: developing, sdk, Docker Engine SDKs, install SDKs, SDK versions
-aliases:
-- /engine/api/sdks/
-- /develop/sdk/
----
 @y
----
 title: Develop with Docker Engine SDKs
 description: Learn how to use Docker Engine SDKs to automate Docker tasks in your language of choice
 keywords: developing, sdk, Docker Engine SDKs, install SDKs, SDK versions
-aliases:
-- /engine/api/sdks/
-- /develop/sdk/
----
 @z
 
 @x
@@ -63,15 +54,7 @@ installed and coexist together.
 ### Go SDK
 @z
 
-@x
-```console
-$ go get github.com/docker/docker/client
-```
-@y
-```console
-$ go get github.com/docker/docker/client
-```
-@z
+% snip command...
 
 @x
 The client requires a recent version of Go. Run `go version` and ensure that you're running a currently supported version of Go.
@@ -197,141 +180,7 @@ Docker API directly, or using the Python or Go SDK.
 {{< tab name="Go" >}}
 @z
 
-@x
-```go
-package main
-@y
-```go
-package main
-@z
-
-@x
-import (
-	"context"
-	"io"
-	"os"
-@y
-import (
-	"context"
-	"io"
-	"os"
-@z
-
-@x
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-	"github.com/docker/docker/pkg/stdcopy"
-)
-@y
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/container"
-	"github.com/docker/docker/client"
-	"github.com/docker/docker/pkg/stdcopy"
-)
-@z
-
-@x
-func main() {
-    ctx := context.Background()
-    cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-    if err != nil {
-        panic(err)
-    }
-    defer cli.Close()
-@y
-func main() {
-    ctx := context.Background()
-    cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-    if err != nil {
-        panic(err)
-    }
-    defer cli.Close()
-@z
-
-@x
-    reader, err := cli.ImagePull(ctx, "docker.io/library/alpine", types.ImagePullOptions{})
-    if err != nil {
-        panic(err)
-    }
-    io.Copy(os.Stdout, reader)
-@y
-    reader, err := cli.ImagePull(ctx, "docker.io/library/alpine", types.ImagePullOptions{})
-    if err != nil {
-        panic(err)
-    }
-    io.Copy(os.Stdout, reader)
-@z
-
-@x
-    resp, err := cli.ContainerCreate(ctx, &container.Config{
-        Image: "alpine",
-        Cmd:   []string{"echo", "hello world"},
-    }, nil, nil, nil, "")
-    if err != nil {
-        panic(err)
-    }
-@y
-    resp, err := cli.ContainerCreate(ctx, &container.Config{
-        Image: "alpine",
-        Cmd:   []string{"echo", "hello world"},
-    }, nil, nil, nil, "")
-    if err != nil {
-        panic(err)
-    }
-@z
-
-@x
-    if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
-        panic(err)
-    }
-@y
-    if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
-        panic(err)
-    }
-@z
-
-@x
-    statusCh, errCh := cli.ContainerWait(ctx, resp.ID, container.WaitConditionNotRunning)
-    select {
-    case err := <-errCh:
-        if err != nil {
-            panic(err)
-        }
-    case <-statusCh:
-    }
-@y
-    statusCh, errCh := cli.ContainerWait(ctx, resp.ID, container.WaitConditionNotRunning)
-    select {
-    case err := <-errCh:
-        if err != nil {
-            panic(err)
-        }
-    case <-statusCh:
-    }
-@z
-
-@x
-    out, err := cli.ContainerLogs(ctx, resp.ID, types.ContainerLogsOptions{ShowStdout: true})
-    if err != nil {
-        panic(err)
-    }
-@y
-    out, err := cli.ContainerLogs(ctx, resp.ID, types.ContainerLogsOptions{ShowStdout: true})
-    if err != nil {
-        panic(err)
-    }
-@z
-
-@x
-    stdcopy.StdCopy(os.Stdout, os.Stderr, out)
-}
-```
-@y
-    stdcopy.StdCopy(os.Stdout, os.Stderr, out)
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -341,19 +190,7 @@ func main() {
 {{< tab name="Python" >}}
 @z
 
-@x
-```python
-import docker
-client = docker.from_env()
-print(client.containers.run("alpine", ["echo", "hello", "world"]))
-```
-@y
-```python
-import docker
-client = docker.from_env()
-print(client.containers.run("alpine", ["echo", "hello", "world"]))
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -363,43 +200,7 @@ print(client.containers.run("alpine", ["echo", "hello", "world"]))
 {{< tab name="HTTP" >}}
 @z
 
-@x
-```console
-$ curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
-  -d '{"Image": "alpine", "Cmd": ["echo", "hello world"]}' \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/create
-{"Id":"1c6594faf5","Warnings":null}
-@y
-```console
-$ curl --unix-socket /var/run/docker.sock -H "Content-Type: application/json" \
-  -d '{"Image": "alpine", "Cmd": ["echo", "hello world"]}' \
-  -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/create
-{"Id":"1c6594faf5","Warnings":null}
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start
-@y
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/start
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/wait
-{"StatusCode":0}
-@y
-$ curl --unix-socket /var/run/docker.sock -X POST http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/wait
-{"StatusCode":0}
-@z
-
-@x
-$ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/logs?stdout=1"
-hello world
-```
-@y
-$ curl --unix-socket /var/run/docker.sock "http://localhost/v{{% param "latest_engine_api_version" %}}/containers/1c6594faf5/logs?stdout=1"
-hello world
-```
-@z
+% snip command...
 
 @x
 When using cURL to connect over a Unix socket, the hostname is not important. The previous

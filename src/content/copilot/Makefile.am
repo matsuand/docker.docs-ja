@@ -2,11 +2,13 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	analysis.md           \
-	dashboard.md          \
-	exceptions.md         \
-	image-details-view.md \
-	metrics-exporter.md
+	index.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
+
+copyfiles = \
+	copilot-action-prompt.png \
+	copilot-button.png
+
+include $(top_srcdir)/build-aux/copy.mk

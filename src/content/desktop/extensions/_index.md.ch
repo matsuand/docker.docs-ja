@@ -33,9 +33,9 @@ Docker Extensions は誰でも利用できるものであり、ツールの追�
 @z
 
 @x
-![Extensions Marketplace](/assets/images/extensions4.25.webp)
+![Extensions Marketplace](/assets/images/extensions.webp)
 @y
-![Extensions マーケットプレース](__SUBDIR__/assets/images/extensions4.25.webp)
+![Extensions マーケットプレース](__SUBDIR__/assets/images/extensions.webp)
 @z
 
 @x

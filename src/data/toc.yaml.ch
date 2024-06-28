@@ -3236,6 +3236,8 @@ Manuals:
         title: Dashboard
       - path: /scout/explore/image-details-view/
         title: Image details view
+      - path: /scout/explore/exceptions/
+        title: Exceptions {{< badge color=violet text=New >}}
       - path: /scout/explore/metrics-exporter/
         title: Metrics exporter
 @y
@@ -3247,6 +3249,8 @@ Manuals:
         title: ダッシュボード
       - path: __SUBDIR__/scout/explore/image-details-view/
         title: Image details view
+      - path: __SUBDIR__/scout/explore/exceptions/
+        title: Exceptions {{< badge color=violet text=New >}}
       - path: __SUBDIR__/scout/explore/metrics-exporter/
         title: Metrics exporter
 @z

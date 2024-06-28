@@ -109,6 +109,7 @@ AC_CONFIG_FILES([
 	src/content/contribute/Makefile
 	src/content/contribute/components/Makefile
 	src/content/contribute/style/Makefile
+	src/content/copilot/Makefile
 	src/content/desktop/Makefile
 	src/content/desktop/dev-environments/Makefile
 	src/content/desktop/enterprise/Makefile
