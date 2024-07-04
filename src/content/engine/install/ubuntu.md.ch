@@ -372,13 +372,13 @@ Docker from the repository.
 @z
 
 @x
-   5:26.1.0-1~ubuntu.24.04~noble
-   5:26.0.2-1~ubuntu.24.04~noble
+   5:27.0.3-1~ubuntu.24.04~noble
+   5:27.0.2-1~ubuntu.24.04~noble
    ...
    ```
 @y
-   5:26.1.0-1~ubuntu.24.04~noble
-   5:26.0.2-1~ubuntu.24.04~noble
+   5:27.0.3-1~ubuntu.24.04~noble
+   5:27.0.2-1~ubuntu.24.04~noble
    ...
    ```
 @z
@@ -391,12 +391,12 @@ Docker from the repository.
 
 @x
    ```console
-   $ VERSION_STRING=5:26.1.0-1~ubuntu.24.04~noble
+   $ VERSION_STRING=5:27.0.3-1~ubuntu.24.04~noble
    $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 @y
    ```console
-   $ VERSION_STRING=5:26.1.0-1~ubuntu.24.04~noble
+   $ VERSION_STRING=5:27.0.3-1~ubuntu.24.04~noble
    $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 @z

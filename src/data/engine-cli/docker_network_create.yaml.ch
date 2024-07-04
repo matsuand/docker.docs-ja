@@ -31,7 +31,15 @@ long: |-
     create new ones using the `network create` command.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create -d bridge my-bridge-network
+    ```
+@y
+    ```console
+    $ docker network create -d bridge my-bridge-network
+    ```
+@z
 
 @x
     Bridge networks are isolated networks on a single Docker Engine installation. If you
@@ -51,7 +59,15 @@ long: |-
     Once you have enabled swarm mode, you can create a swarm-scoped overlay network:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create --scope=swarm --attachable -d overlay my-multihost-network
+    ```
+@y
+    ```console
+    $ docker network create --scope=swarm --attachable -d overlay my-multihost-network
+    ```
+@z
 
 @x
     By default, swarm-scoped networks do not allow manually started containers to
@@ -101,6 +117,189 @@ long: |-
     smaller overlay networks. See
     [Configure service discovery](/engine/swarm/networking/#configure-service-discovery)
     for more information about different endpoint modes.
+usage: docker network create [OPTIONS] NETWORK
+pname: docker network
+plink: docker_network.yaml
+options:
+    - option: attachable
+      value_type: bool
+      default_value: "false"
+      description: Enable manual container attachment
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: aux-address
+      value_type: map
+      default_value: map[]
+      description: Auxiliary IPv4 or IPv6 addresses used by Network driver
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: config-from
+      value_type: string
+      description: The network from which to copy the configuration
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: config-only
+      value_type: bool
+      default_value: "false"
+      description: Create a configuration only network
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: driver
+      shorthand: d
+      value_type: string
+      default_value: bridge
+      description: Driver to manage the Network
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: gateway
+      value_type: stringSlice
+      default_value: '[]'
+      description: IPv4 or IPv6 Gateway for the master subnet
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ingress
+      value_type: bool
+      default_value: "false"
+      description: Create swarm routing-mesh network
+      details_url: '#ingress'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: internal
+      value_type: bool
+      default_value: "false"
+      description: Restrict external access to the network
+      details_url: '#internal'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ip-range
+      value_type: stringSlice
+      default_value: '[]'
+      description: Allocate container ip from a sub-range
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ipam-driver
+      value_type: string
+      default_value: default
+      description: IP Address Management Driver
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ipam-opt
+      value_type: map
+      default_value: map[]
+      description: Set IPAM driver specific options
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ipv6
+      value_type: bool
+      default_value: "false"
+      description: Enable or disable IPv6 networking
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: label
+      value_type: list
+      description: Set metadata on a network
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: opt
+      shorthand: o
+      value_type: map
+      default_value: map[]
+      description: Set driver specific options
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: scope
+      value_type: string
+      description: Control the network's scope
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: subnet
+      value_type: stringSlice
+      default_value: '[]'
+      description: Subnet in CIDR format that represents a network segment
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
+      description: Print usage
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ### Connect containers
 @y
     You should create overlay networks with `/24` blocks (the default), which limits
     you to 256 IP addresses, when you create networks using the default VIP-based
@@ -111,124 +310,187 @@ long: |-
     smaller overlay networks. See
     [Configure service discovery](__SUBDIR__/engine/swarm/networking/#configure-service-discovery)
     for more information about different endpoint modes.
-@z
-
-@x
 usage: docker network create [OPTIONS] NETWORK
-@y
-usage: docker network create [OPTIONS] NETWORK
-@z
-
-% options:
-
-@x attachable
+pname: docker network
+plink: docker_network.yaml
+options:
+    - option: attachable
+      value_type: bool
+      default_value: "false"
       description: Enable manual container attachment
-@y
-      description: Enable manual container attachment
-@z
-
-@x aux-address
+      deprecated: false
+      hidden: false
+      min_api_version: "1.25"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: aux-address
+      value_type: map
+      default_value: map[]
       description: Auxiliary IPv4 or IPv6 addresses used by Network driver
-@y
-      description: Auxiliary IPv4 or IPv6 addresses used by Network driver
-@z
-
-@x config-from
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: config-from
+      value_type: string
       description: The network from which to copy the configuration
-@y
-      description: The network from which to copy the configuration
-@z
-
-@x config-only
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: config-only
+      value_type: bool
+      default_value: "false"
       description: Create a configuration only network
-@y
-      description: Create a configuration only network
-@z
-
-@x driver
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: driver
+      shorthand: d
+      value_type: string
+      default_value: bridge
       description: Driver to manage the Network
-@y
-      description: Driver to manage the Network
-@z
-
-@x gateway
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: gateway
+      value_type: stringSlice
+      default_value: '[]'
       description: IPv4 or IPv6 Gateway for the master subnet
-@y
-      description: IPv4 or IPv6 Gateway for the master subnet
-@z
-
-@x ingress
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ingress
+      value_type: bool
+      default_value: "false"
       description: Create swarm routing-mesh network
-@y
-      description: Create swarm routing-mesh network
-@z
-
-@x internal
+      details_url: '#ingress'
+      deprecated: false
+      hidden: false
+      min_api_version: "1.29"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: internal
+      value_type: bool
+      default_value: "false"
       description: Restrict external access to the network
-@y
-      description: Restrict external access to the network
-@z
-
-@x ip-range
+      details_url: '#internal'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ip-range
+      value_type: stringSlice
+      default_value: '[]'
       description: Allocate container ip from a sub-range
-@y
-      description: Allocate container ip from a sub-range
-@z
-
-@x ipam-driver
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ipam-driver
+      value_type: string
+      default_value: default
       description: IP Address Management Driver
-@y
-      description: IP Address Management Driver
-@z
-
-@x ipam-opt
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ipam-opt
+      value_type: map
+      default_value: map[]
       description: Set IPAM driver specific options
-@y
-      description: Set IPAM driver specific options
-@z
-
-@x ipv6
-      description: Enable IPv6 networking
-@y
-      description: Enable IPv6 networking
-@z
-
-@x label
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: ipv6
+      value_type: bool
+      default_value: "false"
+      description: Enable or disable IPv6 networking
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: label
+      value_type: list
       description: Set metadata on a network
-@y
-      description: Set metadata on a network
-@z
-
-@x opt
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: opt
+      shorthand: o
+      value_type: map
+      default_value: map[]
       description: Set driver specific options
-@y
-      description: Set driver specific options
-@z
-
-@x scope
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: scope
+      value_type: string
       description: Control the network's scope
-@y
-      description: Control the network's scope
-@z
-
-@x subnet
+      deprecated: false
+      hidden: false
+      min_api_version: "1.30"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: subnet
+      value_type: stringSlice
+      default_value: '[]'
       description: Subnet in CIDR format that represents a network segment
-@y
-      description: Subnet in CIDR format that represents a network segment
-@z
-
-% inherited_options:
-
-@x help
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
       description: Print usage
-@y
-      description: Print usage
-@z
-
-@x
-examples: |-
-    ### Connect containers
-@y
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
 examples: |-
     ### Connect containers
 @z
@@ -241,7 +503,15 @@ examples: |-
     This example adds the `busybox` container to the `mynet` network:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker run -itd --network=mynet busybox
+    ```
+@y
+    ```console
+    $ docker run -itd --network=mynet busybox
+    ```
+@z
 
 @x
     If you want to add a container to a network after the container is already
@@ -293,7 +563,15 @@ examples: |-
     `bridge` network you can only create a single subnet:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create --driver=bridge --subnet=192.168.0.0/16 br0
+    ```
+@y
+    ```console
+    $ docker network create --driver=bridge --subnet=192.168.0.0/16 br0
+    ```
+@z
 
 @x
     Additionally, you also specify the `--gateway` `--ip-range` and `--aux-address`
@@ -303,7 +581,25 @@ examples: |-
     options.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create \
+      --driver=bridge \
+      --subnet=172.28.0.0/16 \
+      --ip-range=172.28.5.0/24 \
+      --gateway=172.28.5.254 \
+      br0
+    ```
+@y
+    ```console
+    $ docker network create \
+      --driver=bridge \
+      --subnet=172.28.0.0/16 \
+      --ip-range=172.28.5.0/24 \
+      --gateway=172.28.5.254 \
+      br0
+    ```
+@z
 
 @x
     If you omit the `--gateway` flag, Docker Engine selects one for you from inside
@@ -319,7 +615,29 @@ examples: |-
     a single overlay network. Each of the subnetworks has 126 usable addresses.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create -d overlay \
+      --subnet=192.168.10.0/25 \
+      --subnet=192.168.20.0/25 \
+      --gateway=192.168.10.100 \
+      --gateway=192.168.20.100 \
+      --aux-address="my-router=192.168.10.5" --aux-address="my-switch=192.168.10.6" \
+      --aux-address="my-printer=192.168.20.5" --aux-address="my-nas=192.168.20.6" \
+      my-multihost-network
+    ```
+@y
+    ```console
+    $ docker network create -d overlay \
+      --subnet=192.168.10.0/25 \
+      --subnet=192.168.20.0/25 \
+      --gateway=192.168.10.100 \
+      --gateway=192.168.20.100 \
+      --aux-address="my-router=192.168.10.5" --aux-address="my-switch=192.168.10.6" \
+      --aux-address="my-printer=192.168.20.5" --aux-address="my-nas=192.168.20.6" \
+      my-multihost-network
+    ```
+@z
 
 @x
     Be sure that your subnetworks do not overlap. If they do, the network create
@@ -381,7 +699,7 @@ examples: |-
     | `--gateway`  | -              | IPv4 or IPv6 Gateway for the master subnet |
     | `--ip-range` | `--fixed-cidr` | Allocate IPs from a range                  |
     | `--internal` | -              | Restrict external access to the network    |
-    | `--ipv6`     | `--ipv6`       | Enable IPv6 networking                     |
+    | `--ipv6`     | `--ipv6`       | Enable or disable IPv6 networking          |
     | `--subnet`   | `--bip`        | Subnet for network                         |
 @y
     | Argument     | Equivalent     | Description                                |
@@ -389,7 +707,7 @@ examples: |-
     | `--gateway`  | -              | IPv4 or IPv6 Gateway for the master subnet |
     | `--ip-range` | `--fixed-cidr` | Allocate IPs from a range                  |
     | `--internal` | -              | Restrict external access to the network    |
-    | `--ipv6`     | `--ipv6`       | Enable IPv6 networking                     |
+    | `--ipv6`     | `--ipv6`       | Enable or disable IPv6 networking          |
     | `--subnet`   | `--bip`        | Subnet for network                         |
 @z
 
@@ -401,12 +719,38 @@ examples: |-
     when publishing ports:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create \
+        -o "com.docker.network.bridge.host_binding_ipv4"="172.19.0.1" \
+        simple-network
+    ```
+@y
+    ```console
+    $ docker network create \
+        -o "com.docker.network.bridge.host_binding_ipv4"="172.19.0.1" \
+        simple-network
+    ```
+@z
 
 @x
     ### Network internal mode (--internal) {#internal}
 @y
     ### Network internal mode (--internal) {#internal}
+@z
+
+@x
+    Containers on an internal network may communicate between each other, but not
+    with any other network, as no default route is configured and firewall rules
+    are set up to drop all traffic to or from other networks. Communication with
+    the gateway IP  address (and thus appropriately configured host services) is
+    possible, and the host may communicate with any container IP directly.
+@y
+    Containers on an internal network may communicate between each other, but not
+    with any other network, as no default route is configured and firewall rules
+    are set up to drop all traffic to or from other networks. Communication with
+    the gateway IP  address (and thus appropriately configured host services) is
+    possible, and the host may communicate with any container IP directly.
 @z
 
 @x
@@ -441,7 +785,25 @@ examples: |-
     is also available when creating the ingress network, besides the `--attachable` option.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create -d overlay \
+      --subnet=10.11.0.0/16 \
+      --ingress \
+      --opt com.docker.network.driver.mtu=9216 \
+      --opt encrypted=true \
+      my-ingress-network
+    ```
+@y
+    ```console
+    $ docker network create -d overlay \
+      --subnet=10.11.0.0/16 \
+      --ingress \
+      --opt com.docker.network.driver.mtu=9216 \
+      --opt encrypted=true \
+      my-ingress-network
+    ```
+@z
 
 @x
     ### Run services on predefined networks
@@ -455,7 +817,21 @@ examples: |-
     You can create services on the predefined Docker networks `bridge` and `host`.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker service create --name my-service \
+      --network host \
+      --replicas 2 \
+      busybox top
+    ```
+@y
+    ```console
+    $ docker service create --name my-service \
+      --network host \
+      --replicas 2 \
+      busybox top
+    ```
+@z
 
 @x
     ### Swarm networks with local scope drivers
@@ -473,7 +849,21 @@ examples: |-
     You will then be able to use this network when creating services.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker network create -d bridge \
+      --scope swarm \
+      --attachable \
+      swarm-network
+    ```
+@y
+    ```console
+    $ docker network create -d bridge \
+      --scope swarm \
+      --attachable \
+      swarm-network
+    ```
+@z
 
 @x
     For network drivers which provide connectivity across hosts (ex. macvlan), if
@@ -489,5 +879,30 @@ examples: |-
     network which contains the configuration.
 @z
 
-% snip command...
-% snip directives...
+@x
+    ```console
+    node1$ docker network create --config-only --subnet 192.168.100.0/24 --gateway 192.168.100.115 mv-config
+    node2$ docker network create --config-only --subnet 192.168.200.0/24 --gateway 192.168.200.202 mv-config
+    node1$ docker network create -d macvlan --scope swarm --config-from mv-config --attachable swarm-network
+    ```
+deprecated: false
+hidden: false
+min_api_version: "1.21"
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+    ```console
+    node1$ docker network create --config-only --subnet 192.168.100.0/24 --gateway 192.168.100.115 mv-config
+    node2$ docker network create --config-only --subnet 192.168.200.0/24 --gateway 192.168.200.202 mv-config
+    node1$ docker network create -d macvlan --scope swarm --config-from mv-config --attachable swarm-network
+    ```
+deprecated: false
+hidden: false
+min_api_version: "1.21"
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

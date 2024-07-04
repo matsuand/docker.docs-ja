@@ -4,10 +4,11 @@
 SUBDIRS = components utils
 
 bases = \
-	footer.html       \
-	head.html         \
-	heading.html      \
-	github-links.html \
+	footer.html         \
+	head.html           \
+	heading.html        \
+	github-links.html   \
+	guides-stepper.html \
 	search.html
 
 include $(top_srcdir)/build-aux/common.mk

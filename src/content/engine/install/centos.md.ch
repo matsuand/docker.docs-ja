@@ -44,10 +44,8 @@ CentOS versions:
 @z
 
 @x
-- CentOS 7 (EOL: [June 30, 2024](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/#centos-linux-7-end-of-life-june-30-2024))
 - CentOS 9 (stream)
 @y
-- CentOS 7 (EOL: [June 30, 2024](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/#centos-linux-7-end-of-life-june-30-2024))
 - CentOS 9 (stream)
 @z
 
@@ -240,11 +238,11 @@ utility) and set up the repository.
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:26.1.2-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.0.3-1.el9`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:26.1.2-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.0.3-1.el9`.
 @z
 
 @x

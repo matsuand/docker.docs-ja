@@ -66,9 +66,15 @@ Yes. You must verify a domain before using it with an SSO connection.
 @z
 
 @x
-Yes. When SSO is enforced, you can access the Docker CLI through Personal Access Tokens (PATs).  Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](../../../security/for-developers/access-tokens.md).
+When SSO is enforced, you can't use passwords to access the Docker CLI, but you can still access the Docker CLI using a personal access token (PAT) for authentication.
 @y
-Yes. When SSO is enforced, you can access the Docker CLI through Personal Access Tokens (PATs).  Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](../../../security/for-developers/access-tokens.md).
+When SSO is enforced, you can't use passwords to access the Docker CLI, but you can still access the Docker CLI using a personal access token (PAT) for authentication.
+@z
+
+@x
+Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
+@y
+Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
 @z
 
 @x
@@ -138,20 +144,20 @@ Yes, you can create a test organization. Companies can set up a new 5 seat Busin
 @z
 
 @x
-If you enable SSO, there is no impact. Both username/password or personal access token sign-in are supported.
+If you enable SSO, there is no impact. Both username/password or personal access token (PAT) sign-in are supported.
 However, if you enforce SSO:
 @y
-If you enable SSO, there is no impact. Both username/password or personal access token sign-in are supported.
+If you enable SSO, there is no impact. Both username/password or personal access token (PAT) sign-in are supported.
 However, if you enforce SSO:
 @z
 
 @x
 - Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password and personal access token will still work (but only if they exist, which they won't for new accounts)
+- Username/password authentication won’t work, so you should update the build system to use a PAT instead of a password
 - Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
 @y
 - Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password and personal access token will still work (but only if they exist, which they won't for new accounts)
+- Username/password authentication won’t work, so you should update the build system to use a PAT instead of a password
 - Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
 @z
 

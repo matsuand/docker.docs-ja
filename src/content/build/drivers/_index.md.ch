@@ -67,7 +67,7 @@ The following table outlines some differences between drivers.
 | Feature                      |  `docker`   | `docker-container` | `kubernetes` |      `remote`      |
 | :--------------------------- | :---------: | :----------------: | :----------: | :----------------: |
 | **Automatically load image** |     ✅      |                    |              |                    |
-| **Cache export**             | Inline only |         ✅         |      ✅      |         ✅         |
+| **Cache export**             |     ✓\*     |         ✅         |      ✅      |         ✅         |
 | **Tarball output**           |             |         ✅         |      ✅      |         ✅         |
 | **Multi-arch images**        |             |         ✅         |      ✅      |         ✅         |
 | **BuildKit configuration**   |             |         ✅         |      ✅      | Managed externally |
@@ -75,10 +75,130 @@ The following table outlines some differences between drivers.
 | Feature                      |  `docker`   | `docker-container` | `kubernetes` |      `remote`      |
 | :--------------------------- | :---------: | :----------------: | :----------: | :----------------: |
 | **Automatically load image** |     ✅      |                    |              |                    |
-| **Cache export**             | Inline only |         ✅         |      ✅      |         ✅         |
+| **Cache export**             |     ✓\*     |         ✅         |      ✅      |         ✅         |
 | **Tarball output**           |             |         ✅         |      ✅      |         ✅         |
 | **Multi-arch images**        |             |         ✅         |      ✅      |         ✅         |
 | **BuildKit configuration**   |             |         ✅         |      ✅      | Managed externally |
+@z
+
+@x
+\* _The `docker` driver doesn't support all cache export options.
+See [Cache storage backends](../cache/backends/_index.md) for more information._
+@y
+\* _The `docker` driver doesn't support all cache export options.
+See [Cache storage backends](../cache/backends/_index.md) for more information._
+@z
+
+@x
+## Loading to local image store
+@y
+## Loading to local image store
+@z
+
+@x
+Unlike when using the default `docker` driver, images built using other drivers
+aren't automatically loaded into the local image store. If you don't specify an
+output, the build result is exported to the build cache only.
+@y
+Unlike when using the default `docker` driver, images built using other drivers
+aren't automatically loaded into the local image store. If you don't specify an
+output, the build result is exported to the build cache only.
+@z
+
+@x
+To build an image using a non-default driver and load it to the image store,
+use the `--load` flag with the build command:
+@y
+To build an image using a non-default driver and load it to the image store,
+use the `--load` flag with the build command:
+@z
+
+@x
+```console
+$ docker buildx build --load -t <image> --builder=container .
+...
+ => exporting to oci image format                                                                                                      7.7s
+ => => exporting layers                                                                                                                4.9s
+ => => exporting manifest sha256:4e4ca161fa338be2c303445411900ebbc5fc086153a0b846ac12996960b479d3                                      0.0s
+ => => exporting config sha256:adf3eec768a14b6e183a1010cb96d91155a82fd722a1091440c88f3747f1f53f                                        0.0s
+ => => sending tarball                                                                                                                 2.8s
+ => importing to docker
+```
+@y
+```console
+$ docker buildx build --load -t <image> --builder=container .
+...
+ => exporting to oci image format                                                                                                      7.7s
+ => => exporting layers                                                                                                                4.9s
+ => => exporting manifest sha256:4e4ca161fa338be2c303445411900ebbc5fc086153a0b846ac12996960b479d3                                      0.0s
+ => => exporting config sha256:adf3eec768a14b6e183a1010cb96d91155a82fd722a1091440c88f3747f1f53f                                        0.0s
+ => => sending tarball                                                                                                                 2.8s
+ => importing to docker
+```
+@z
+
+@x
+With this option, the image is available in the image store after the build finishes:
+@y
+With this option, the image is available in the image store after the build finishes:
+@z
+
+@x
+```console
+$ docker image ls
+REPOSITORY                       TAG               IMAGE ID       CREATED             SIZE
+<image>                          latest            adf3eec768a1   2 minutes ago       197MB
+```
+@y
+```console
+$ docker image ls
+REPOSITORY                       TAG               IMAGE ID       CREATED             SIZE
+<image>                          latest            adf3eec768a1   2 minutes ago       197MB
+```
+@z
+
+@x
+### Load by default
+@y
+### Load by default
+@z
+
+@x
+{{< introduced buildx 0.14.0 >}}
+@y
+{{< introduced buildx 0.14.0 >}}
+@z
+
+@x
+You can configure the custom build drivers to behave in a similar way to the
+default `docker` driver, and load images to the local image store by default.
+To do so, set the `default-load` driver option when creating the builder:
+@y
+You can configure the custom build drivers to behave in a similar way to the
+default `docker` driver, and load images to the local image store by default.
+To do so, set the `default-load` driver option when creating the builder:
+@z
+
+@x
+```console
+$ docker buildx create --driver-opt default-load=true
+```
+@y
+```console
+$ docker buildx create --driver-opt default-load=true
+```
+@z
+
+@x
+Note that, just like with the `docker` driver, if you specify a different
+output format with `--output`, the result will not be loaded to the image store
+unless you also explicitly specify `--output type=docker` or use the `--load`
+flag.
+@y
+Note that, just like with the `docker` driver, if you specify a different
+output format with `--output`, the result will not be loaded to the image store
+unless you also explicitly specify `--output type=docker` or use the `--load`
+flag.
 @z
 
 @x

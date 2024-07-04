@@ -288,9 +288,9 @@ examples: |-
 @z
 
 @x
-    Copy a file from container to stdout. Please note `cp` command produces a tar stream
+    Copy a file from container to stdout. Note `cp` command produces a tar stream
 @y
-    Copy a file from container to stdout. Please note `cp` command produces a tar stream
+    Copy a file from container to stdout. Note `cp` command produces a tar stream
 @z
 
 @x

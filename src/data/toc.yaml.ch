@@ -3482,8 +3482,6 @@ Manuals:
       title: Binaries
     - path: /engine/install/linux-postinstall/
       title: Post-installation steps
-    - path: /engine/install/troubleshoot/
-      title: Troubleshoot installation
 @y
     - path: __SUBDIR__/engine/install/sles/
       title: SLES
@@ -3495,8 +3493,6 @@ Manuals:
       title: Binaries
     - path: __SUBDIR__/engine/install/linux-postinstall/
       title: インストール後の作業
-    - path: __SUBDIR__/engine/install/troubleshoot/
-      title: インストール時のトラブルシューティング
 @z
 
 @x
@@ -3510,8 +3506,6 @@ Manuals:
       title: Bind mounts
     - path: /storage/tmpfs/
       title: tmpfs mounts
-    - path: /storage/troubleshooting_volume_errors/
-      title: Troubleshoot
 @y
   - sectiontitle: ストレージ
     section:
@@ -3523,8 +3517,6 @@ Manuals:
       title: バインドマウント
     - path: __SUBDIR__/storage/tmpfs/
       title: tmpfs マウント
-    - path: __SUBDIR__/storage/troubleshooting_volume_errors/
-      title: トラブルシューティング
 @z
 
 @x

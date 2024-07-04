@@ -121,7 +121,55 @@ To see the highest version of the API your Docker daemon and client support, use
 `docker version`:
 @z
 
-% snip command...
+@x
+```console
+$ docker version
+Client: Docker Engine - Community
+ Version:           27.0.3
+ API version:       1.46
+ Go version:        go1.21.11
+ Git commit:        7d4bcd8
+ Built:             Sat Jun 29 00:02:23 2024
+ OS/Arch:           linux/arm64
+ Context:           default
+@y
+```console
+$ docker version
+Client: Docker Engine - Community
+ Version:           27.0.3
+ API version:       1.46
+ Go version:        go1.21.11
+ Git commit:        7d4bcd8
+ Built:             Sat Jun 29 00:02:23 2024
+ OS/Arch:           linux/arm64
+ Context:           default
+@z
+
+@x
+Server: Docker Engine - Community
+ Engine:
+  Version:          27.0.3
+  API version:      1.46 (minimum version 1.24)
+  Go version:       go1.21.11
+  Git commit:       662f78c
+  Built:            Sat Jun 29 00:02:23 2024
+  OS/Arch:          linux/arm64
+  Experimental:     false
+  ...
+```
+@y
+Server: Docker Engine - Community
+ Engine:
+  Version:          27.0.3
+  API version:      1.46 (minimum version 1.24)
+  Go version:       go1.21.11
+  Git commit:       662f78c
+  Built:            Sat Jun 29 00:02:23 2024
+  OS/Arch:          linux/arm64
+  Experimental:     false
+  ...
+```
+@z
 
 @x
 You can specify the API version to use in any of the following ways:
@@ -134,7 +182,7 @@ You can specify the API version to use in any of the following ways:
   that incorporates the API version with the features you need.
 - When using `curl` directly, specify the version as the first part of the URL.
   For instance, if the endpoint is `/containers/` you can use
-  `/v1.45/containers/`.
+  `/v1.46/containers/`.
 - To force the Docker CLI or the Docker Engine SDKs to use an older version
   of the API than the version reported by `docker version`, set the
   environment variable `DOCKER_API_VERSION` to the correct version. This works
@@ -144,14 +192,22 @@ You can specify the API version to use in any of the following ways:
   that incorporates the API version with the features you need.
 - When using `curl` directly, specify the version as the first part of the URL.
   For instance, if the endpoint is `/containers/` you can use
-  `/v1.45/containers/`.
+  `/v1.46/containers/`.
 - To force the Docker CLI or the Docker Engine SDKs to use an older version
   of the API than the version reported by `docker version`, set the
   environment variable `DOCKER_API_VERSION` to the correct version. This works
   on Linux, Windows, or macOS clients.
 @z
 
-% snip command...
+@x
+  ```console
+  $ DOCKER_API_VERSION='1.44'
+  ```
+@y
+  ```console
+  $ DOCKER_API_VERSION='1.44'
+  ```
+@z
 
 @x
   While the environment variable is set, that version of the API is used, even
@@ -194,6 +250,7 @@ You can specify the API version to use in any of the following ways:
 @x
 | Docker version | Maximum API version        | Change log                                               |
 |:---------------|:---------------------------|:---------------------------------------------------------|
+| 27.0           | [1.46](/engine/api/v1.46/) | [changes](/engine/api/version-history/#v146-api-changes) |
 | 26.1           | [1.45](/engine/api/v1.45/) | [changes](/engine/api/version-history/#v145-api-changes) |
 | 26.0           | [1.45](/engine/api/v1.45/) | [changes](/engine/api/version-history/#v145-api-changes) |
 | 25.0           | [1.44](/engine/api/v1.44/) | [changes](/engine/api/version-history/#v144-api-changes) |
@@ -223,6 +280,7 @@ You can specify the API version to use in any of the following ways:
 @y
 | Docker version | Maximum API version        | Change log                                               |
 |:---------------|:---------------------------|:---------------------------------------------------------|
+| 27.0           | [1.46](__SUBDIR__/engine/api/v1.46/) | [changes](__SUBDIR__/engine/api/version-history/#v146-api-changes) |
 | 26.1           | [1.45](__SUBDIR__/engine/api/v1.45/) | [changes](__SUBDIR__/engine/api/version-history/#v145-api-changes) |
 | 26.0           | [1.45](__SUBDIR__/engine/api/v1.45/) | [changes](__SUBDIR__/engine/api/version-history/#v145-api-changes) |
 | 25.0           | [1.44](__SUBDIR__/engine/api/v1.44/) | [changes](__SUBDIR__/engine/api/version-history/#v144-api-changes) |

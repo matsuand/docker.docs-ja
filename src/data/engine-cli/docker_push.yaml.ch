@@ -31,6 +31,18 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: platform
+      value_type: string
+      description: |-
+        Push a platform-specific manifest as a single-platform image to the registry.
+        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.46"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: quiet
       shorthand: q
       value_type: bool
@@ -85,6 +97,18 @@ options:
       description: Skip image signing
       deprecated: false
       hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: platform
+      value_type: string
+      description: |-
+        Push a platform-specific manifest as a single-platform image to the registry.
+        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.46"
       experimental: false
       experimentalcli: false
       kubernetes: false

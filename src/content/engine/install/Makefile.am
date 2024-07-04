@@ -11,7 +11,6 @@ bases = \
 	raspberry-pi-os.md   \
 	rhel.md              \
 	sles.md              \
-	troubleshoot.md      \
 	ubuntu.md
 
 include $(top_srcdir)/build-aux/common.mk

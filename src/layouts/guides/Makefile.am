@@ -1,14 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images storagedriver
-
 bases = \
-	_index.md      \
-	bind-mounts.md \
-	containerd.md  \
-	tmpfs.md       \
-	volumes.md
+	series.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

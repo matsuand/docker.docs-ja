@@ -298,6 +298,7 @@ AC_CONFIG_FILES([
 	src/layouts/Makefile
 	src/layouts/_default/Makefile
 	src/layouts/_default/_markup/Makefile
+	src/layouts/guides/Makefile
 	src/layouts/partials/Makefile
 	src/layouts/partials/components/Makefile
 	src/layouts/partials/utils/Makefile

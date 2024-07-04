@@ -45,7 +45,7 @@ inherited_options:
 examples: |-
     ```console
     $ docker swarm unlock
-    Please enter unlock key:
+    Enter unlock key:
     ```
 deprecated: false
 hidden: false
@@ -78,7 +78,7 @@ inherited_options:
 examples: |-
     ```console
     $ docker swarm unlock
-    Please enter unlock key:
+    Enter unlock key:
     ```
 deprecated: false
 hidden: false

@@ -68,7 +68,7 @@ long: |-
     a given date. You can specify the date as an RFC 3339 date, a UNIX
     timestamp, or a Go duration string (e.g. `1m30s`, `3h`). Besides RFC3339 date
     format you may also use RFC3339Nano, `2006-01-02T15:04:05`,
-    `2006-01-02T15:04:05.999999999`, `2006-01-02Z07:00`, and `2006-01-02`. The local
+    `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local
     timezone on the client will be used if you do not provide either a `Z` or a
     `+-00:00` timezone offset at the end of the timestamp. When providing Unix
     timestamps enter seconds[.nanoseconds], where seconds is the number of seconds
@@ -163,7 +163,7 @@ examples: |-
     a given date. You can specify the date as an RFC 3339 date, a UNIX
     timestamp, or a Go duration string (e.g. `1m30s`, `3h`). Besides RFC3339 date
     format you may also use RFC3339Nano, `2006-01-02T15:04:05`,
-    `2006-01-02T15:04:05.999999999`, `2006-01-02Z07:00`, and `2006-01-02`. The local
+    `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local
     timezone on the client will be used if you do not provide either a `Z` or a
     `+-00:00` timezone offset at the end of the timestamp. When providing Unix
     timestamps enter seconds[.nanoseconds], where seconds is the number of seconds
@@ -271,6 +271,12 @@ examples: |-
     Tue 14 Nov 2017 16:40:01 CET
     Tue 14 Nov 2017 16:40:02 CET
     ```
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
 @y
     ```console
     $ docker run --name test -d busybox sh -c "while true; do $(echo date); sleep 1; done"
@@ -281,4 +287,10 @@ examples: |-
     Tue 14 Nov 2017 16:40:01 CET
     Tue 14 Nov 2017 16:40:02 CET
     ```
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
 @z

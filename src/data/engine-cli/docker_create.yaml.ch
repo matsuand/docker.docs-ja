@@ -549,9 +549,11 @@ usage: docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x rm
-      description: Automatically remove the container when it exits
+      description: |
+        Automatically remove the container and its associated anonymous volumes when it exits
 @y
-      description: 終了時に中間コンテナーを自動的に削除します。
+      description: |
+        終了時にコンテナーと関連づく匿名ボリュームを自動的に削除します。
 @z
 
 @x runtime

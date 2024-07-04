@@ -136,11 +136,11 @@ examples: |-
 @z
 
 @x
-    Please remember to store this key in a password manager, since without it you
+    Remember to store this key in a password manager, since without it you
     will not be able to restart the manager.
     ```
 @y
-    Please remember to store this key in a password manager, since without it you
+    Remember to store this key in a password manager, since without it you
     will not be able to restart the manager.
     ```
 @z
@@ -182,11 +182,11 @@ examples: |-
 @z
 
 @x
-    Please remember to store this key in a password manager, since without it you
+    Remember to store this key in a password manager, since without it you
     will not be able to restart the manager.
     ```
 @y
-    Please remember to store this key in a password manager, since without it you
+    Remember to store this key in a password manager, since without it you
     will not be able to restart the manager.
     ```
 @z

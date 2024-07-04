@@ -62,65 +62,26 @@ long: |-
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-uploads` daemon option. See the
     [daemon documentation](/reference/cli/dockerd/) for more details.
-usage: docker image push [OPTIONS] NAME[:TAG]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Push all tags of an image to the repository
-      details_url: '#all-tags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image signing
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Push a new image to a registry
 @y
     By default the Docker daemon will push five layers of an image at a time.
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-uploads` daemon option. See the
     [daemon documentation](__SUBDIR__/reference/cli/dockerd/) for more details.
+@z
+
+@x
 usage: docker image push [OPTIONS] NAME[:TAG]
 pname: docker image
 plink: docker_image.yaml
-options:
+@y
+usage: docker image push [OPTIONS] NAME[:TAG]
+pname: docker image
+plink: docker_image.yaml
+@z
+
+% options:
+
+@x
     - option: all-tags
       shorthand: a
       value_type: bool
@@ -143,6 +104,18 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: platform
+      value_type: string
+      description: |-
+        Push a platform-specific manifest as a single-platform image to the registry.
+        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.46"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: quiet
       shorthand: q
       value_type: bool
@@ -154,6 +127,55 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+@y
+    - option: all-tags
+      shorthand: a
+      value_type: bool
+      default_value: "false"
+      description: Push all tags of an image to the repository
+      details_url: '#all-tags'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: disable-content-trust
+      value_type: bool
+      default_value: "true"
+      description: Skip image signing
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: platform
+      value_type: string
+      description: |-
+        Push a platform-specific manifest as a single-platform image to the registry.
+        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
+      deprecated: false
+      hidden: false
+      min_api_version: "1.46"
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: quiet
+      shorthand: q
+      value_type: bool
+      default_value: "false"
+      description: Suppress verbose output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+@z
+
+@x
 inherited_options:
     - option: help
       value_type: bool
@@ -165,6 +187,24 @@ inherited_options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+@y
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
+      description: Print usage
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+@z
+
+@x
+examples: |-
+    ### Push a new image to a registry
+@y
 examples: |-
     ### Push a new image to a registry
 @z

@@ -5,52 +5,84 @@
 ---
 title: Getting started
 keywords: get started, getting started, how to get started
-description: Get started with Docker. You'll learn about Docker Desktop, developing with Docker, as well as how to build and push your first image.
+description: |
+  Get started with Docker. You'll learn about Docker Desktop, developing with
+  Docker, as well as how to build and push your first image.
+summary: |
+  Embark on a comprehensive learning path to understand Docker and
+  containerization, beginning with foundational concepts and installation
+  procedures. Progress through hands-on exercises that cover essential Docker
+  commands, image creation, and container orchestration.
 aliases:
-- /get-started/
+  - /get-started/
+layout: series
+params:
+  skill: Beginner
+  time: 15 minutes
+  prereq: None
 ---
 @y
 ---
 title: Getting started
 keywords: get started, getting started, how to get started
-description: Get started with Docker. You'll learn about Docker Desktop, developing with Docker, as well as how to build and push your first image.
+description: |
+  Get started with Docker. You'll learn about Docker Desktop, developing with
+  Docker, as well as how to build and push your first image.
+summary: |
+  Embark on a comprehensive learning path to understand Docker and
+  containerization, beginning with foundational concepts and installation
+  procedures. Progress through hands-on exercises that cover essential Docker
+  commands, image creation, and container orchestration.
 aliases:
-- /get-started/
+  - /get-started/
+layout: series
+params:
+  skill: Beginner
+  time: 15 minutes
+  prereq: None
 ---
 @z
 
 @x
-This getting started guide is a series of quick topics that show you how to:
+## About this series
 @y
-This getting started guide is a series of quick topics that show you how to:
+## About this series
 @z
 
 @x
-* Install Docker Desktop
-* Develop with containers
-* Build and push your first image
+In this guide series, you will gain hands-on experience with Docker, starting
+with installing and setting up Docker Desktop on your local machine. You will
+learn how to run your first container, understanding the basics of
+containerization and its benefits. This series guides you through building your
+first Docker image, providing insights into creating efficient and reusable
+images. Finally, you will explore how to publish your image on Docker Hub,
+enabling you to share your work with the broader community and leverage
+Docker's powerful ecosystem for collaborative development and deployment.
 @y
-* Install Docker Desktop
-* Develop with containers
-* Build and push your first image
+In this guide series, you will gain hands-on experience with Docker, starting
+with installing and setting up Docker Desktop on your local machine. You will
+learn how to run your first container, understanding the basics of
+containerization and its benefits. This series guides you through building your
+first Docker image, providing insights into creating efficient and reusable
+images. Finally, you will explore how to publish your image on Docker Hub,
+enabling you to share your work with the broader community and leverage
+Docker's powerful ecosystem for collaborative development and deployment.
 @z
 
 @x
-By the end of this guide, you'll have hands-on experience using Docker Desktop
-and a better understanding of the benefits of containerizing your applications.
+## What you'll learn
 @y
-By the end of this guide, you'll have hands-on experience using Docker Desktop
-and a better understanding of the benefits of containerizing your applications.
+## What you'll learn
 @z
 
 @x
-Get started by installing Docker Desktop and running your first container.
+- Set up Docker Desktop
+- Run your first container
+- Build your first image
+- Publish your image on Docker Hub
 @y
-Get started by installing Docker Desktop and running your first container.
-@z
-
-@x
-{{< button text="Get Docker Desktop" url="get-docker-desktop.md" >}}
-@y
-{{< button text="Get Docker Desktop" url="get-docker-desktop.md" >}}
+- Set up Docker Desktop
+- Run your first container
+- Build your first image
+- Publish your image on Docker Hub
 @z

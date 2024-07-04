@@ -1,32 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: Learn how to install Docker Engine on a 32-bit Raspberry Pi OS system. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, install docker engine, Raspberry Pi OS, install, uninstall, upgrade,
   update
 title: Install Docker Engine on Raspberry Pi OS (32-bit)
-toc_max: 4
-aliases:
-- /engine/installation/linux/raspbian/
-- /engine/install/raspbian/
-download-url-base: https://download.docker.com/linux/raspbian
----
 @y
----
 description: Learn how to install Docker Engine on a 32-bit Raspberry Pi OS system. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, install docker engine, Raspberry Pi OS, install, uninstall, upgrade,
   update
 title: Install Docker Engine on Raspberry Pi OS (32-bit)
-toc_max: 4
-aliases:
-- /engine/installation/linux/raspbian/
-- /engine/install/raspbian/
-download-url-base: https://download.docker.com/linux/raspbian
----
 @z
 
 @x
@@ -335,20 +323,18 @@ Docker from the repository.
    ```console
    # List the available versions:
    $ apt-cache madison docker-ce | awk '{ print $3 }'
+
+   5:27.0.3-1~raspbian.12~bookworm
+   5:27.0.2-1~raspbian.12~bookworm
+   ...
+   ```
 @y
    ```console
    # List the available versions:
    $ apt-cache madison docker-ce | awk '{ print $3 }'
-@z
 
-@x
-   5:25.0.0-1~raspbian.12~bookworm
-   5:24.0.7-1~raspbian.12~bookworm
-   ...
-   ```
-@y
-   5:25.0.0-1~raspbian.12~bookworm
-   5:24.0.7-1~raspbian.12~bookworm
+   5:27.0.3-1~raspbian.12~bookworm
+   5:27.0.2-1~raspbian.12~bookworm
    ...
    ```
 @z
@@ -359,17 +345,7 @@ Docker from the repository.
    Select the desired version and install:
 @z
 
-@x
-   ```console
-   $ VERSION_STRING=5:25.0.0-1~raspbian.12~bookworm
-   $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ VERSION_STRING=5:25.0.0-1~raspbian.12~bookworm
-   $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}

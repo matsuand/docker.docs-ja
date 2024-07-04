@@ -6,13 +6,23 @@
 title: What's next 
 keywords: concepts, build, images, container, docker desktop
 description: Explore step-by-step guides to hep you understand core Docker concepts, building images, and running containers.
+summary: |
+  Now that you have set up Docker Desktop, developed with containers, and built
+  and pushed your first image, you are ready to take the next step and dive
+  deep into what a container is and how it works.
 notoc: true
+weight: 4
 @y
 ---
 title: What's next 
 keywords: concepts, build, images, container, docker desktop
 description: Explore step-by-step guides to hep you understand core Docker concepts, building images, and running containers.
+summary: |
+  Now that you have set up Docker Desktop, developed with containers, and built
+  and pushed your first image, you are ready to take the next step and dive
+  deep into what a container is and how it works.
 notoc: true
+weight: 4
 @z
 
 @x

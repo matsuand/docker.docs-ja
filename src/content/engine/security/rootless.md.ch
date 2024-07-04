@@ -248,10 +248,10 @@ UIDs/GIDs to be used in the user namespace.
 
 @x
 {{< /tab >}}
-{{< tab name="CentOS 9 (stream), RHEL 8, and Fedora" >}}
+{{< tab name="CentOS, RHEL, and Fedora" >}}
 @y
 {{< /tab >}}
-{{< tab name="CentOS 9 (stream), RHEL 8, and Fedora" >}}
+{{< tab name="CentOS, RHEL, and Fedora" >}}
 @z
 
 @x
@@ -267,29 +267,9 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="CentOS 7 and RHEL 7" >}}
-@y
-{{< /tab >}}
-{{< tab name="CentOS 7 and RHEL 7" >}}
-@z
-
-@x
-- Add `user.max_user_namespaces=28633` to `/etc/sysctl.conf` (or 
-  `/etc/sysctl.d`) and run `sudo sysctl --system`.
-@y
-- Add `user.max_user_namespaces=28633` to `/etc/sysctl.conf` (or 
-  `/etc/sysctl.d`) and run `sudo sysctl --system`.
-@z
-
-@x
-- `systemctl --user` does not work by default. 
-  Run `dockerd-rootless.sh` directly without systemd.
 {{< /tab >}}
 {{< /tabs >}}
 @y
-- `systemctl --user` does not work by default. 
-  Run `dockerd-rootless.sh` directly without systemd.
 {{< /tab >}}
 {{< /tabs >}}
 @z

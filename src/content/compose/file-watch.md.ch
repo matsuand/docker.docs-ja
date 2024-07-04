@@ -10,7 +10,7 @@ title: Use Compose Watch
 @y
 description: Use File watch to automatically update running services as you work
 keywords: compose, file watch, experimental
-title: Compose Watch の利用
+title: Use Compose Watch
 @z
 
 @x
@@ -19,7 +19,11 @@ title: Compose Watch の利用
 {{< introduced compose 2.22.0 "release-notes.md#2220" >}}
 @z
 
-% snip include...
+@x
+{{< include "compose/watch.md" >}}
+@y
+{{< include "compose/watch.md" >}}
+@z
 
 @x
 `watch` adheres to the following file path rules:
@@ -137,7 +141,41 @@ initial content to be copied into the container using the `COPY` instruction in 
 by the configured user, use the `COPY --chown` flag:
 @z
 
-% snip code...
+@x
+```dockerfile
+# Run as a non-privileged user
+FROM node:18-alpine
+RUN useradd -ms /bin/sh -u 1001 app
+USER app
+@y
+```dockerfile
+# Run as a non-privileged user
+FROM node:18-alpine
+RUN useradd -ms /bin/sh -u 1001 app
+USER app
+@z
+
+@x
+# Install dependencies
+WORKDIR /app
+COPY package.json package.lock .
+RUN npm install
+@y
+# Install dependencies
+WORKDIR /app
+COPY package.json package.lock .
+RUN npm install
+@z
+
+@x
+# Copy source files into application directory
+COPY --chown=app:app . /app
+```
+@y
+# Copy source files into application directory
+COPY --chown=app:app . /app
+```
+@z
 
 @x
 ### `action`
@@ -260,9 +298,9 @@ For `path: ./app/html` and a change to `./app/html/index.html`:
 @z
 
 @x
-## Example
+## Example 1
 @y
-## Example
+## Example 1
 @z
 
 @x
@@ -289,7 +327,39 @@ myproject/
 ```
 @z
 
-% snip code...
+@x
+```yaml
+services:
+  web:
+    build: .
+    command: npm start
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /src/web
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+```
+@y
+```yaml
+services:
+  web:
+    build: .
+    command: npm start
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /src/web
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+```
+@z
 
 @x
 In this example, when running `docker compose up --watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.
@@ -330,12 +400,82 @@ This pattern can be followed for many languages and frameworks, such as Python w
 @z
 
 @x
+## Example 2 
+@y
+## Example 2 
+@z
+
+@x
+Adapting the previous example to demonstrate `sync+restart`:
+@y
+Adapting the previous example to demonstrate `sync+restart`:
+@z
+
+@x
+```yaml
+services:
+  web:
+    build: .
+    command: npm start
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /app/web
+          ignore:
+            - node_modules/
+        - action: sync+restart
+          path: ./proxy/nginx.conf
+          target: /etc/nginx/conf.d/default.conf
+@y
+```yaml
+services:
+  web:
+    build: .
+    command: npm start
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /app/web
+          ignore:
+            - node_modules/
+        - action: sync+restart
+          path: ./proxy/nginx.conf
+          target: /etc/nginx/conf.d/default.conf
+@z
+
+@x
+  backend:
+    build:
+      context: backend
+      target: builder
+```
+@y
+  backend:
+    build:
+      context: backend
+      target: builder
+```
+@z
+
+@x
+This setup demonstrates how to use the `sync+restart` action in Docker Compose to efficiently develop and test a Node.js application with a frontend web server and backend service. The configuration ensures that changes to the application code and configuration files are quickly synchronized and applied, with the `web` service restarting as needed to reflect the changes.
+@y
+This setup demonstrates how to use the `sync+restart` action in Docker Compose to efficiently develop and test a Node.js application with a frontend web server and backend service. The configuration ensures that changes to the application code and configuration files are quickly synchronized and applied, with the `web` service restarting as needed to reflect the changes.
+@z
+
+@x
 ## Use `watch`
 @y
 ## Use `watch`
 @z
 
-% snip include...
+@x
+{{< include "compose/configure-watch.md" >}}
+@y
+{{< include "compose/configure-watch.md" >}}
+@z
 
 @x
 > **Tip**
@@ -375,4 +515,16 @@ This pattern can be followed for many languages and frameworks, such as Python w
 We are actively looking for feedback on this feature. Give feedback or report any bugs you may find in the [Compose Specification repository](https://github.com/compose-spec/compose-spec/pull/253).
 @y
 We are actively looking for feedback on this feature. Give feedback or report any bugs you may find in the [Compose Specification repository](https://github.com/compose-spec/compose-spec/pull/253).
+@z
+
+@x
+## Reference
+@y
+## Reference
+@z
+
+@x
+- [Compose Develop Specification](compose-file/develop.md)
+@y
+- [Compose Develop Specification](compose-file/develop.md)
 @z

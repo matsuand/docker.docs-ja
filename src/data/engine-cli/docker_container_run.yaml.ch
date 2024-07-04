@@ -578,9 +578,11 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x rm
-      description: Automatically remove the container when it exits
+      description: |
+        Automatically remove the container and its associated anonymous volumes when it exits
 @y
-      description: Automatically remove the container when it exits
+      description: |
+        Automatically remove the container and its associated anonymous volumes when it exits
 @z
 
 @x runtime
@@ -1728,14 +1730,10 @@ examples: |-
 @z
 
 @x
-    The following commands create a network named `my-net` and adds a `busybox` container
-    to the `my-net` network.
+    If you want to add a running container to a network use the `docker network connect` subcommand.
 @y
-    The following commands create a network named `my-net` and adds a `busybox` container
-    to the `my-net` network.
+    If you want to add a running container to a network use the `docker network connect` subcommand.
 @z
-
-% snip command...
 
 @x
     You can also choose the IP addresses for the container with `--ip` and `--ip6`
@@ -1750,51 +1748,33 @@ examples: |-
 % snip command...
 
 @x
-    If you want to add a running container to a network use the `docker network connect` subcommand.
+    To connect the container to more than one network, repeat the `--network` option.
 @y
-    If you want to add a running container to a network use the `docker network connect` subcommand.
+    To connect the container to more than one network, repeat the `--network` option.
 @z
 
-@x
-    You can connect multiple containers to the same network. Once connected, the
-    containers can communicate using only another container's IP address
-    or name. For `overlay` networks or custom plugins that support multi-host
-    connectivity, containers connected to the same multi-host network but launched
-    from different Engines can also communicate in this way.
-@y
-    You can connect multiple containers to the same network. Once connected, the
-    containers can communicate using only another container's IP address
-    or name. For `overlay` networks or custom plugins that support multi-host
-    connectivity, containers connected to the same multi-host network but launched
-    from different Engines can also communicate in this way.
-@z
+% snip command...
+
+
 
 @x
     > **Note**
     >
-    > The default bridge network only allow containers to communicate with each other using
-    > internal IP addresses. User-created bridge networks provide DNS resolution between
-    > containers using container names.
+    > Network drivers may restrict the sysctl settings that can be modified and, to protect
+    > the operation of the network, new restrictions may be added in the future.
 @y
     > **Note**
     >
-    > The default bridge network only allow containers to communicate with each other using
-    > internal IP addresses. User-created bridge networks provide DNS resolution between
-    > containers using container names.
+    > Network drivers may restrict the sysctl settings that can be modified and, to protect
+    > the operation of the network, new restrictions may be added in the future.
 @z
 
 @x
-    You can disconnect a container from a network using the `docker network
-    disconnect` command.
+    For more information on connecting a container to a network when using the `run` command,
+    see the [Docker network overview](/network/).
 @y
-    You can disconnect a container from a network using the `docker network
-    disconnect` command.
-@z
-
-@x
-    For more information on connecting a container to a network when using the `run` command, see the ["*Docker network overview*"](/network/).
-@y
-    For more information on connecting a container to a network when using the `run` command, see the ["*Docker network overview*"](__SUBDIR__/network/).
+    For more information on connecting a container to a network when using the `run` command,
+    see the [Docker network overview](/network/).
 @z
 
 @x
@@ -2066,35 +2046,39 @@ examples: |-
 @x
     > **Note**
     >
-    > This is experimental feature and as such doesn't represent a stable API.
+    > The CDI feature is experimental, and potentially subject to change.
+    > CDI is currently only supported for Linux containers.
 @y
     > **Note**
     >
-    > This is experimental feature and as such doesn't represent a stable API.
+    > The CDI feature is experimental, and potentially subject to change.
+    > CDI is currently only supported for Linux containers.
 @z
 
 @x
-    Container Device Interface (CDI) is a
-    [standardized](https://github.com/cncf-tags/container-device-interface/blob/main/SPEC.md)
-    mechanism for container runtimes to create containers which are able to
-    interact with third party devices.
+    [Container Device Interface
+    (CDI)](https://github.com/cncf-tags/container-device-interface/blob/main/SPEC.md)
+    is a standardized mechanism for container runtimes to create containers which
+    are able to interact with third party devices.
 @y
-    Container Device Interface (CDI) is a
-    [standardized](https://github.com/cncf-tags/container-device-interface/blob/main/SPEC.md)
-    mechanism for container runtimes to create containers which are able to
-    interact with third party devices.
+    [Container Device Interface
+    (CDI)](https://github.com/cncf-tags/container-device-interface/blob/main/SPEC.md)
+    is a standardized mechanism for container runtimes to create containers which
+    are able to interact with third party devices.
 @z
 
 @x
-    With CDI, device configurations are defined using a JSON file. In addition to
-    enabling the container to interact with the device node, it also lets you
-    specify additional configuration for the device, such as kernel modules, host
-    libraries, and environment variables.
+    With CDI, device configurations are declaratively defined using a JSON or YAML
+    file. In addition to enabling the container to interact with the device node,
+    it also lets you specify additional configuration for the device, such as
+    environment variables, host mounts (such as shared objects), and executable
+    hooks.
 @y
-    With CDI, device configurations are defined using a JSON file. In addition to
-    enabling the container to interact with the device node, it also lets you
-    specify additional configuration for the device, such as kernel modules, host
-    libraries, and environment variables.
+    With CDI, device configurations are declaratively defined using a JSON or YAML
+    file. In addition to enabling the container to interact with the device node,
+    it also lets you specify additional configuration for the device, such as
+    environment variables, host mounts (such as shared objects), and executable
+    hooks.
 @z
 
 @x
@@ -2116,16 +2100,16 @@ examples: |-
 @z
 
 @x
-    - A valid CDI specification (JSON file) for the requested device is available
-      on the system running the daemon, in one of the configured CDI specification
-      directories.
-    - The CDI feature has been enabled on the daemon side, see [Enable CDI
+    - A valid CDI specification (JSON or YAML file) for the requested device is
+      available on the system running the daemon, in one of the configured CDI
+      specification directories.
+    - The CDI feature has been enabled in the daemon; see [Enable CDI
       devices](/reference/cli/dockerd/#enable-cdi-devices).
 @y
-    - A valid CDI specification (JSON file) for the requested device is available
-      on the system running the daemon, in one of the configured CDI specification
-      directories.
-    - The CDI feature has been enabled on the daemon side, see [Enable CDI
+    - A valid CDI specification (JSON or YAML file) for the requested device is
+      available on the system running the daemon, in one of the configured CDI
+      specification directories.
+    - The CDI feature has been enabled in the daemon; see [Enable CDI
       devices](__SUBDIR__/reference/cli/dockerd/#enable-cdi-devices).
 @z
 

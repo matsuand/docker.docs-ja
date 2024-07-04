@@ -409,10 +409,10 @@ examples: |-
 
 @x
     If you specify a volume name already in use on the current driver, Docker
-    assumes you want to re-use the existing volume and doesn't return an error.
+    assumes you want to reuse the existing volume and doesn't return an error.
 @y
     If you specify a volume name already in use on the current driver, Docker
-    assumes you want to re-use the existing volume and doesn't return an error.
+    assumes you want to reuse the existing volume and doesn't return an error.
 @z
 
 @x

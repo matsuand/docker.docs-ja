@@ -27,11 +27,11 @@ token, consumed as part of your application's build process.
 
 @x
 Build arguments and environment variables are inappropriate for passing secrets
-to your build, because they persist in the final image. Instead, should use
+to your build, because they persist in the final image. Instead, you should use
 secret mounts or SSH mounts, which expose secrets to your builds securely.
 @y
 Build arguments and environment variables are inappropriate for passing secrets
-to your build, because they persist in the final image. Instead, should use
+to your build, because they persist in the final image. Instead, you should use
 secret mounts or SSH mounts, which expose secrets to your builds securely.
 @z
 
@@ -341,9 +341,9 @@ fails because the builder isn't authorized to pull the repository:
 ```console
 $ docker build https://gitlab.com/example/todo-app.git
 [+] Building 0.4s (1/1) FINISHED
- => ERROR [internal] load git source https://gitlab.com/dvdk/todo-app.git
+ => ERROR [internal] load git source https://gitlab.com/example/todo-app.git
 ------
- > [internal] load git source https://gitlab.com/dvdk/todo-app.git:
+ > [internal] load git source https://gitlab.com/example/todo-app.git:
 0.313 fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
 ------
 ```
@@ -351,9 +351,9 @@ $ docker build https://gitlab.com/example/todo-app.git
 ```console
 $ docker build https://gitlab.com/example/todo-app.git
 [+] Building 0.4s (1/1) FINISHED
- => ERROR [internal] load git source https://gitlab.com/dvdk/todo-app.git
+ => ERROR [internal] load git source https://gitlab.com/example/todo-app.git
 ------
- > [internal] load git source https://gitlab.com/dvdk/todo-app.git:
+ > [internal] load git source https://gitlab.com/example/todo-app.git:
 0.313 fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
 ------
 ```
