@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: Instructions for installing Docker Desktop Arch package. Mostly meant
   for hackers who want to try out Docker Desktop on a variety of Arch-based distributions.
@@ -28,15 +30,15 @@ title: Install Docker Desktop on Arch-based distributions
 @z
 
 @x
-This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/149282/docker-desktop-4.30.0-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
+This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
 @y
-This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/149282/docker-desktop-4.30.0-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
+This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
 @z
 
 @x
-{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/149282/docker-desktop-4.30.0-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @y
-{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/149282/docker-desktop-4.30.0-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @z
 
 @x
@@ -63,15 +65,7 @@ Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be insta
 Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be installed:
 @z
 
-@x
-```console
-$ sudo pacman -S gnome-terminal
-```
-@y
-```console
-$ sudo pacman -S gnome-terminal
-```
-@z
+% snip command...
 
 @x
 ## Install Docker Desktop
@@ -105,15 +99,7 @@ $ sudo pacman -S gnome-terminal
 4. Install the package:
 @z
 
-@x
-   ```console
-   $ sudo pacman -U ./docker-desktop-<version>-<arch>.pkg.tar.zst
-   ```
-@y
-   ```console
-   $ sudo pacman -U ./docker-desktop-<version>-<arch>.pkg.tar.zst
-   ```
-@z
+% snip command...
 
 @x
 ## Launch Docker Desktop

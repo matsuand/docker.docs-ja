@@ -172,14 +172,14 @@ Dockerfile are re-ordered later, the `COPY` doesn't break.
 @x
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM golang:{{% param "example_go_version" %}} as build
+FROM golang:{{% param "example_go_version" %}} AS build
 WORKDIR /src
 COPY <<EOF /src/main.go
 package main
 @y
 ```dockerfile
 # syntax=docker/dockerfile:1
-FROM golang:{{% param "example_go_version" %}} as build
+FROM golang:{{% param "example_go_version" %}} AS build
 WORKDIR /src
 COPY <<EOF /src/main.go
 package main

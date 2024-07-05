@@ -46,7 +46,7 @@ This page contains the download URL, information about system requirements, and 
 @x
 _For checksums, see [Release notes](../release-notes.md)_
 @y
-_チェックサムについては [リリースノート](../release-notes.md)_ を参照してください。
+チェックサムについては [リリースノート](../release-notes.md)_ を参照してください。
 @z
 
 @x
@@ -73,6 +73,10 @@ _チェックサムについては [リリースノート](../release-notes.md)_
   [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 - The following hardware prerequisites are required to successfully run
   WSL 2 on Windows 10 or Windows 11:
+  - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
+  - 4GB system RAM
+  - Enable hardware virtualization in BIOS. For more information, see
+    [Virtualization](../troubleshoot/topics.md#virtualization).
 @y
 - WSL version 1.1.3.0 or later.
 - Windows 11 64-bit: Home or Pro version 21H2 or higher, or Enterprise or Education version 21H2 or higher.
@@ -83,18 +87,16 @@ _チェックサムについては [リリースノート](../release-notes.md)_
   [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 - The following hardware prerequisites are required to successfully run
   WSL 2 on Windows 10 or Windows 11:
+  - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
+  - 4GB system RAM
+  - Enable hardware virtualization in BIOS. For more information, see
+    [Virtualization](../troubleshoot/topics.md#virtualization).
 @z
 
 @x
-  - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
-  - 4GB system RAM
-  - Enable hardware virtualization in BIOS. For more information, see
-    [Virtualization](../troubleshoot/topics.md#virtualization).
+For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_index.md).
 @y
-  - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
-  - 4GB system RAM
-  - Enable hardware virtualization in BIOS. For more information, see
-    [Virtualization](../troubleshoot/topics.md#virtualization).
+For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_index.md).
 @z
 
 @x
@@ -226,18 +228,14 @@ _チェックサムについては [リリースノート](../release-notes.md)_
 @x
 > **Important**
 >
-> The installer and the [privileged service](../windows/permission-requirements.md#privileged-helper) are still built for `x86_64`. These are not performance critical components and currently run with [`x86` emulation](https://learn.microsoft.com/en-us/windows/arm/apps-on-arm-x86-emulation#wow64-apis).
-> 
-> Also, the following features are not supported:
+> The following features are not supported:
 > - Hyper-V backend
 > - Windows containers
 { .important }
 @y
 > **Important**
 >
-> The installer and the [privileged service](../windows/permission-requirements.md#privileged-helper) are still built for `x86_64`. These are not performance critical components and currently run with [`x86` emulation](https://learn.microsoft.com/en-us/windows/arm/apps-on-arm-x86-emulation#wow64-apis).
-> 
-> Also, the following features are not supported:
+> The following features are not supported:
 > - Hyper-V backend
 > - Windows containers
 { .important }
@@ -249,6 +247,18 @@ _チェックサムについては [リリースノート](../release-notes.md)_
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+> **Should I use Hyper-V or WSL?**
+>
+> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
+{ .tip }
+@y
+> **Should I use Hyper-V or WSL?**
+>
+> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
+{ .tip }
 @z
 
 @x
@@ -412,20 +422,16 @@ again when you switch back.
 
 @x
 If your admin account is different to your user account, you must add the user to the **docker-users** group:
-@y
-管理アカウントが利用しているアカウントと異なる場合、そのアカウントを **docker-users** グループに追加する必要があります。
-@z
-
-@x
 1. Run **Computer Management** as an **administrator**.
 2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
 3. Right-click to add the user to the group.
 4. Sign out and sign back in for the changes to take effect.
 @y
-1. **administrator**（管理者）として **Computer Management**（コンピューターの管理）を実行します。
-2. **Local Users and Groups** > **Groups** > **docker-users** を選びます。
-3. このグループに対して、右クリックメニューからユーザーを追加します。
-4. 変更を有効にするため、いったんサインアウトしてからサインインし直します。
+If your admin account is different to your user account, you must add the user to the **docker-users** group:
+1. Run **Computer Management** as an **administrator**.
+2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
+3. Right-click to add the user to the group.
+4. Sign out and sign back in for the changes to take effect.
 @z
 
 @x
@@ -461,6 +467,12 @@ Windows コマンドプロンプトの利用時は以下を実行します。
 % snip command...
 
 @x
+By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+@y
+By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+@z
+
+@x
 The `install` command accepts the following flags:
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
@@ -491,6 +503,7 @@ The `install` command accepts the following flags:
 - `--override-proxy-http=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests, requires `--proxy-http-mode` to be `manual`
 - `--override-proxy-https=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests, requires `--proxy-http-mode` to be `manual`
 - `--override-proxy-exclude=<hosts/domains>`: Bypasses proxy settings for the hosts and domains. Uses a comma-separated list.
+- `--proxy-enable-kerberosntlm`: Enables Kerberos and NTLM proxy authentication. If you are enabling this, ensure your proxy server is properly configured for Kerberos/NTLM authentication.
 - `--hyper-v-default-data-root=<path>`: Specifies the default location for the Hyper-V VM disk. 
 - `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
 - `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
@@ -500,6 +513,7 @@ The `install` command accepts the following flags:
 - `--override-proxy-http=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests, requires `--proxy-http-mode` to be `manual`
 - `--override-proxy-https=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests, requires `--proxy-http-mode` to be `manual`
 - `--override-proxy-exclude=<hosts/domains>`: Bypasses proxy settings for the hosts and domains. Uses a comma-separated list.
+- `--proxy-enable-kerberosntlm`: Enables Kerberos and NTLM proxy authentication. If you are enabling this, ensure your proxy server is properly configured for Kerberos/NTLM authentication.
 - `--hyper-v-default-data-root=<path>`: Specifies the default location for the Hyper-V VM disk. 
 - `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
 - `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
@@ -593,6 +607,28 @@ Docker Desktop を起動するには、以下を実行します。
    For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
 @y
    For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
+@z
+
+@x
+> **Tip**
+>
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/configure-sign-in.md).
+> - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
+> - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
+> - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
+> - [Kolide](https://www.kolide.com/features/device-inventory/properties/mac-apps)
+> - [Workspace One](https://blogs.vmware.com/euc/2022/11/how-to-use-workspace-one-intelligence-to-manage-app-licenses-and-reduce-costs.html)
+{ .tip }
+@y
+> **Tip**
+>
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/configure-sign-in.md).
+> - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
+> - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
+> - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
+> - [Kolide](https://www.kolide.com/features/device-inventory/properties/mac-apps)
+> - [Workspace One](https://blogs.vmware.com/euc/2022/11/how-to-use-workspace-one-intelligence-to-manage-app-licenses-and-reduce-costs.html)
+{ .tip }
 @z
 
 @x
