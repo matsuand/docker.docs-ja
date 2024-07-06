@@ -1,28 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 title: Cache storage backends
 description: |
   Cache backends let you manage your build cache externally.
   External cache is useful to create a shared cache that can help
   speed up inner loop and CI builds.
 keywords: build, buildx, cache, backend, gha, azblob, s3, registry, local
-aliases:
-  - /build/building/cache/backends/
----
 @y
----
 title: Cache storage backends
 description: |
   Cache backends let you manage your build cache externally.
   External cache is useful to create a shared cache that can help
   speed up inner loop and CI builds.
 keywords: build, buildx, cache, backend, gha, azblob, s3, registry, local
-aliases:
-  - /build/building/cache/backends/
----
 @z
 
 @x
@@ -51,7 +45,7 @@ The default `docker` driver supports the `inline`, `local`, `registry`, and
 Other cache backends require you to select a different [driver](../../drivers/_index.md).
 @y
 The default `docker` driver supports the `inline`, `local`, `registry`, and
-`gha` cache backends, but only if you have enabled the [containerd image store](/desktop/containerd.md).
+`gha` cache backends, but only if you have enabled the [containerd image store](desktop/containerd.md).
 Other cache backends require you to select a different [driver](../../drivers/_index.md).
 @z
 

@@ -1,9 +1,9 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admin billing build cloud compose config contribute \
-	copilot desktop docker-id docker-hub engine guides    \
-	includes language network reference samples scout     \
+SUBDIRS = admin billing build build-cloud cloud compose config   \
+	contribute copilot desktop docker-id docker-hub engine   \
+	guides includes language network reference samples scout \
 	security storage subscription tags trusted-content
 
 bases = \

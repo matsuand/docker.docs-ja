@@ -1,7 +1,7 @@
-%This is the change file for the original Docker's Documentation file.
+3%This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% (no slash) 対応
 
 @x
 ---
@@ -10,6 +10,7 @@ description: Invoke your cloud builds with the Buildx CLI client
 keywords: build, cloud build, usage, cli, buildx, client
 aliases:
   - /hydrobuild/usage/
+  - /build/cloud/usage/
 ---
 @y
 ---
@@ -18,6 +19,7 @@ description: Invoke your cloud builds with the Buildx CLI client
 keywords: build, cloud build, usage, cli, buildx, client
 aliases:
   - /hydrobuild/usage/
+  - /build/cloud/usage/
 ---
 @z
 
@@ -98,7 +100,7 @@ $ docker buildx use cloud-<ORG>-<BUILDER_NAME> --global
 @x
    ![Selecting the cloud builder as default using the Docker Desktop GUI](/build/images/set-default-builder-gui.webp)
 @y
-   ![Selecting the cloud builder as default using the Docker Desktop GUI](__SUBDIR__/build/images/set-default-builder-gui.webp)
+   ![Selecting the cloud builder as default using the Docker Desktop GUI](build/images/set-default-builder-gui.webp)
 @z
 
 @x
@@ -131,6 +133,54 @@ build commands from `docker build` to `docker buildx build`, to avoid any
 confusion with regards to builder selection. Alternatively, you can run `docker
 buildx install` to make the default `docker build` command behave like `docker
 buildx build`, without discrepancies.
+@z
+
+@x
+## Use with Docker Compose
+@y
+## Use with Docker Compose
+@z
+
+@x
+To build with Docker Build Cloud using `docker compose build`, first set the
+cloud builder as your selected builder, then run your build.
+@y
+To build with Docker Build Cloud using `docker compose build`, first set the
+cloud builder as your selected builder, then run your build.
+@z
+
+@x
+> **Note**
+>
+> Make sure you're using a supported version of Docker Compose, see
+> [Prerequisites](setup.md#prerequisites).
+@y
+> **Note**
+>
+> Make sure you're using a supported version of Docker Compose, see
+> [Prerequisites](setup.md#prerequisites).
+@z
+
+@x
+```console
+$ docker buildx use cloud-<ORG>-<BUILDER_NAME>
+$ docker compose build
+```
+@y
+```console
+$ docker buildx use cloud-<ORG>-<BUILDER_NAME>
+$ docker compose build
+```
+@z
+
+@x
+In addition to `docker buildx use`, you can also use the `docker compose build
+--builder` flag or the [`BUILDX_BUILDER` environment
+variable](/build/building/variables.md#buildx_builder) to select the cloud builder.
+@y
+In addition to `docker buildx use`, you can also use the `docker compose build
+--builder` flag or the [`BUILDX_BUILDER` environment
+variable](build/building/variables.md#buildx_builder) to select the cloud builder.
 @z
 
 @x
@@ -242,7 +292,7 @@ To learn more about building for multiple platforms, refer to [Multi-platform
 builds](/build/building/multi-platform/).
 @y
 To learn more about building for multiple platforms, refer to [Multi-platform
-builds](__SUBDIR__/build/building/multi-platform/).
+builds](build/building/multi-platform/).
 @z
 
 @x
@@ -257,7 +307,7 @@ Docker Build Cloud out of the box. This view can show information about not only
 own builds, but also builds initiated by your team members using the same
 builder.
 @y
-The Docker Desktop [Builds view](__SUBDIR__/desktop/use-desktop/builds/) works with
+The Docker Desktop [Builds view](desktop/use-desktop/builds/) works with
 Docker Build Cloud out of the box. This view can show information about not only your
 own builds, but also builds initiated by your team members using the same
 builder.
@@ -314,7 +364,7 @@ The traffic is encrypted and secrets are never stored in the build cache.
 >
 > If you're misusing build arguments to pass credentials, authentication
 > tokens, or other secrets, you should refactor your build to pass the secrets using
-> [secret mounts](../../reference/cli/docker/buildx/build.md#secret) instead.
+> [secret mounts](/reference/cli/docker/buildx/build.md#secret) instead.
 > Build arguments are stored in the cache and their values are exposed through attestations.
 > Secret mounts don't leak outside of the build and are never included in attestations.
 {.warning}
@@ -323,7 +373,7 @@ The traffic is encrypted and secrets are never stored in the build cache.
 >
 > If you're misusing build arguments to pass credentials, authentication
 > tokens, or other secrets, you should refactor your build to pass the secrets using
-> [secret mounts](../../reference/cli/docker/buildx/build.md#secret) instead.
+> [secret mounts](reference/cli/docker/buildx/build.md#secret) instead.
 > Build arguments are stored in the cache and their values are exposed through attestations.
 > Secret mounts don't leak outside of the build and are never included in attestations.
 {.warning}
@@ -339,8 +389,8 @@ For more information, refer to:
 - [`docker buildx build --secret`](/reference/cli/docker/buildx/build/#secret)
 - [`docker buildx build --ssh`](/reference/cli/docker/buildx/build/#ssh)
 @y
-- [`docker buildx build --secret`](__SUBDIR__/reference/cli/docker/buildx/build/#secret)
-- [`docker buildx build --ssh`](__SUBDIR__/reference/cli/docker/buildx/build/#ssh)
+- [`docker buildx build --secret`](reference/cli/docker/buildx/build/#secret)
+- [`docker buildx build --ssh`](reference/cli/docker/buildx/build/#ssh)
 @z
 
 @x
@@ -354,7 +404,7 @@ You don't need to manage Docker Build Cloud cache manually.
 The system manages it for you through [garbage collection](/build/cache/garbage-collection/).
 @y
 You don't need to manage Docker Build Cloud cache manually.
-The system manages it for you through [garbage collection](__SUBDIR__/build/cache/garbage-collection/).
+The system manages it for you through [garbage collection](build/cache/garbage-collection/).
 @z
 
 @x
@@ -364,7 +414,7 @@ You can check your current cache state using the
 @y
 Old cache is automatically removed if you hit your storage limit.
 You can check your current cache state using the
-[`docker buildx du` command](__SUBDIR__/reference/cli/docker/buildx/du/).
+[`docker buildx du` command](reference/cli/docker/buildx/du/).
 @z
 
 @x
@@ -373,7 +423,7 @@ use the [`docker buildx prune` command](/reference/cli/docker/buildx/prune/).
 This works like pruning the cache for any other builder.
 @y
 To clear the builder's cache manually,
-use the [`docker buildx prune` command](__SUBDIR__/reference/cli/docker/buildx/prune/).
+use the [`docker buildx prune` command](reference/cli/docker/buildx/prune/).
 This works like pruning the cache for any other builder.
 @z
 

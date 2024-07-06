@@ -84,13 +84,13 @@ AC_CONFIG_FILES([
 	src/content/build/ci/github-actions/Makefile
 	src/content/build/ci/github-actions/images/Makefile
 	src/content/build/ci/images/Makefile
-	src/content/build/cloud/Makefile
 	src/content/build/dockerfile/Makefile
 	src/content/build/drivers/Makefile
 	src/content/build/exporters/Makefile
 	src/content/build/guide/Makefile
 	src/content/build/guide/images/Makefile
 	src/content/build/images/Makefile
+	src/content/build-cloud/Makefile
 	src/content/cloud/Makefile
 	src/content/compose/Makefile
 	src/content/compose/bridge/Makefile
@@ -183,6 +183,7 @@ AC_CONFIG_FILES([
 	src/content/guides/docker-concepts/the-basics/images/Makefile
 	src/content/guides/getting-started/Makefile
 	src/content/guides/getting-started/images/Makefile
+	src/content/guides/images/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/Makefile

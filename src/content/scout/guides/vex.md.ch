@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 ---
 title: Suppress image vulnerabilities with VEX
@@ -717,8 +719,10 @@ For more information about VEX:
 - [VEX Status Justifications (CISA)](https://www.cisa.gov/sites/default/files/publications/VEX_Status_Justification_Jun22.pdf)
 - [VEX Use Cases (CISA)](https://www.cisa.gov/sites/default/files/publications/VEX_Use_Cases_Document_508c.pdf)
 - [OpenVEX specification](https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md)
+- [Manage vulnerability exceptions](/scout/explore/exceptions.md)
 @y
 - [VEX Status Justifications (CISA)](https://www.cisa.gov/sites/default/files/publications/VEX_Status_Justification_Jun22.pdf)
 - [VEX Use Cases (CISA)](https://www.cisa.gov/sites/default/files/publications/VEX_Use_Cases_Document_508c.pdf)
 - [OpenVEX specification](https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md)
+- [Manage vulnerability exceptions](scout/explore/exceptions.md)
 @z

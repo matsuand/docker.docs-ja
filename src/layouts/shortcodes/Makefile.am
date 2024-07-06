@@ -14,7 +14,8 @@ bases = \
 	admin-sso-management-users.md       \
 	admin-sso-management.md             \
 	admin-users.html                    \
-	desktop-install.html
+	desktop-install.html                \
+	desktop-install-v2.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 ---
 title: Docker for GitHub Copilot
@@ -258,7 +260,7 @@ To use the Docker Extension in the GitHub web interface:
 @x
    ![Copilot chat button](/copilot/copilot-button.png?w=400px)
 @y
-   ![Copilot chat button](/copilot/copilot-button.png?w=400px)
+   ![Copilot chat button](__SUBDIR__/copilot/copilot-button.png?w=400px)
 @z
 
 @x
@@ -348,7 +350,7 @@ operation. You can always roll back or back out of the changes.
 @x
 ![Copilot action prompt](/copilot/copilot-action-prompt.png?w=400px)
 @y
-![Copilot action prompt](/copilot/copilot-action-prompt.png?w=400px)
+![Copilot action prompt](__SUBDIR__/copilot/copilot-action-prompt.png?w=400px)
 @z
 
 @x

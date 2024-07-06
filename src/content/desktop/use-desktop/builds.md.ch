@@ -44,11 +44,11 @@ You can switch to **Active builds** to view any ongoing builds.
 @z
 
 @x
-If you're connected to a cloud builder through [Docker Build Cloud](../../build/cloud/_index.md),
+If you're connected to a cloud builder through [Docker Build Cloud](../../build-cloud/_index.md),
 the Builds view also lists any active or completed cloud builds by other team members
 connected to the same cloud builder.
 @y
-If you're connected to a cloud builder through [Docker Build Cloud](../../build/cloud/_index.md),
+If you're connected to a cloud builder through [Docker Build Cloud](../../build-cloud/_index.md),
 the Builds view also lists any active or completed cloud builds by other team members
 connected to the same cloud builder.
 @z

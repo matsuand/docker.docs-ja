@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 title: Multi-platform images
 description: Introduction to multi-platform images and how to build them
@@ -302,9 +304,9 @@ environment and start building.
 % snip command...
 
 @x
-For more information, see [Docker Build Cloud](../cloud/_index.md).
+For more information, see [Docker Build Cloud](/build-cloud/_index.md).
 @y
-For more information, see [Docker Build Cloud](../cloud/_index.md).
+For more information, see [Docker Build Cloud](build-cloud/_index.md).
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 title: Docker Build Cloud
 description: Find documentation on Docker Build Cloud to help you build your container images faster, both locally and in CI
@@ -111,12 +113,12 @@ infrastructure. Just connect to your builders, and start building.
 
 @x
 To get started with Docker Build Cloud,
-[create a Docker account](../../docker-id/_index.md)
+[create a Docker account](/docker-id/_index.md)
 and sign up for the starter plan on the
 [Docker Build Cloud Dashboard](https://build.docker.com/).
 @y
 To get started with Docker Build Cloud,
-[create a Docker account](../../docker-id/_index.md)
+[create a Docker account](docker-id/_index.md)
 and sign up for the starter plan on the
 [Docker Build Cloud Dashboard](https://build.docker.com/).
 @z
@@ -143,12 +145,12 @@ Once you've signed up and created a builder, continue by
 
 @x
 For more information about the available subscription plans, see
-[Docker Build Cloud subscriptions and features](../../subscription/build-cloud/build-details.md).
+[Docker Build Cloud subscriptions and features](/subscription/build-cloud/build-details.md).
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](../../security/for-admins/roles-and-permissions.md#docker-build-cloud).
+[Roles and Permissions](/security/for-admins/roles-and-permissions.md#docker-build-cloud).
 @y
 For more information about the available subscription plans, see
-[Docker Build Cloud subscriptions and features](../../subscription/build-cloud/build-details.md).
+[Docker Build Cloud subscriptions and features](subscription/build-cloud/build-details.md).
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](../../security/for-admins/roles-and-permissions.md#docker-build-cloud).
+[Roles and Permissions](security/for-admins/roles-and-permissions.md#docker-build-cloud).
 @z

@@ -1774,7 +1774,7 @@ examples: |-
     see the [Docker network overview](/network/).
 @y
     For more information on connecting a container to a network when using the `run` command,
-    see the [Docker network overview](/network/).
+    see the [Docker network overview](__SUBDIR__/network/).
 @z
 
 @x

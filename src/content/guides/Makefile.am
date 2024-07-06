@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = deployment-orchestration docker-concepts getting-started \
-	use-case workshop
+	images use-case workshop
 
 bases = \
 	_index.md          \

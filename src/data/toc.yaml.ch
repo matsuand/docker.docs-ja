@@ -4310,6 +4310,16 @@ Manuals:
           title: Builders overview
         - path: /build/builders/manage/
           title: Manage builders
+@y
+    - sectiontitle: Builders
+      section:
+        - path: __SUBDIR__/build/builders/
+          title: Builders 概要
+        - path: __SUBDIR__/build/builders/manage/
+          title: Manage builders
+@z
+
+@x
     - sectiontitle: Drivers
       section:
         - path: /build/drivers/
@@ -4323,12 +4333,6 @@ Manuals:
         - path: /build/drivers/remote/
           title: Remote driver
 @y
-    - sectiontitle: Builders
-      section:
-        - path: __SUBDIR__/build/builders/
-          title: Builders 概要
-        - path: __SUBDIR__/build/builders/manage/
-          title: Manage builders
     - sectiontitle: ドライバー
       section:
         - path: __SUBDIR__/build/drivers/
@@ -4341,34 +4345,6 @@ Manuals:
           title: Kubernetes ドライバー
         - path: __SUBDIR__/build/drivers/remote/
           title: リモートドライバー
-@z
-
-@x
-    - sectiontitle: Build Cloud {{< badge color=violet text=New >}}
-      section:
-        - path: /build/cloud/
-          title: Overview
-        - path: /build/cloud/setup/
-          title: Setup
-        - path: /build/cloud/usage/
-          title: Usage
-        - path: /build/cloud/ci/
-          title: Build Cloud in CI
-        - path: /build/cloud/optimization/
-          title: Optimize for cloud builds
-@y
-    - sectiontitle: Build Cloud {{< badge color=violet text=New >}}
-      section:
-        - path: __SUBDIR__/build/cloud/
-          title: 概要
-        - path: __SUBDIR__/build/cloud/setup/
-          title: 設定
-        - path: __SUBDIR__/build/cloud/usage/
-          title: 利用方法
-        - path: __SUBDIR__/build/cloud/ci/
-          title: CI における Build Cloud
-        - path: __SUBDIR__/build/cloud/optimization/
-          title: Optimize for cloud builds
 @z
 
 @x

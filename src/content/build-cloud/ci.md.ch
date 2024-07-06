@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 title: Use Docker Build Cloud in CI
 description: Speed up your continuous integration pipelines with Docker Build Cloud in CI
 keywords: build, cloud build, ci, gha, gitlab, buildkite, jenkins, circle ci
-aliases:
-  - /hydrobuild/ci/
----
 @y
----
 title: Use Docker Build Cloud in CI
 description: Speed up your continuous integration pipelines with Docker Build Cloud in CI
 keywords: build, cloud build, ci, gha, gitlab, buildkite, jenkins, circle ci
-aliases:
-  - /hydrobuild/ci/
----
 @z
 
 @x
@@ -92,7 +86,7 @@ See [Loading build results](./usage/#loading-build-results) for details.
 >
 > Version 4.0.0 and later of `docker/build-push-action` and
 > `docker/bake-action` builds images with [provenance attestations by
-> default](../ci/github-actions/attestations.md#default-provenance). Docker
+> default](/build/ci/github-actions/attestations.md#default-provenance). Docker
 > Build Cloud automatically attempts to load images to the local image store if
 > you don't explicitly push them to a registry.
 >
@@ -110,7 +104,7 @@ See [Loading build results](./usage/#loading-build-results) for details.
 >
 > Version 4.0.0 and later of `docker/build-push-action` and
 > `docker/bake-action` builds images with [provenance attestations by
-> default](../ci/github-actions/attestations.md#default-provenance). Docker
+> default](build/ci/github-actions/attestations.md#default-provenance). Docker
 > Build Cloud automatically attempts to load images to the local image store if
 > you don't explicitly push them to a registry.
 >
@@ -125,77 +119,7 @@ See [Loading build results](./usage/#loading-build-results) for details.
 > you use Bake).
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-    branches:
-      - "main"
-@y
-on:
-  push:
-    branches:
-      - "main"
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PAT }}
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          version: "lab:latest"
-          driver: cloud
-          endpoint: "<ORG>/default"
-          install: true
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          tags: "<IMAGE>"
-          # For pull requests, export results to the build cache.
-          # Otherwise, push to a registry.
-          outputs: ${{ github.event_name == 'pull_request' && 'type=cacheonly' || 'type=registry' }}
-```
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PAT }}
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          version: "lab:latest"
-          driver: cloud
-          endpoint: "<ORG>/default"
-          install: true
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          tags: "<IMAGE>"
-          # For pull requests, export results to the build cache.
-          # Otherwise, push to a registry.
-          outputs: ${{ github.event_name == 'pull_request' && 'type=cacheonly' || 'type=registry' }}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}

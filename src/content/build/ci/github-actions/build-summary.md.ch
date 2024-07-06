@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 title: GitHub Actions build summary
 descripion: Get an overview of your Docker Builds with GitHub Actions
 keywords: github actions, gha, build, summary, annotation
----
 @y
----
 title: GitHub Actions build summary
 descripion: Get an overview of your Docker Builds with GitHub Actions
 keywords: github actions, gha, build, summary, annotation
----
 @z
 
 @x
@@ -270,12 +268,12 @@ Build summaries are currently not supported for:
 @z
 
 @x
-- Builds using [Docker Build Cloud](/build/cloud/_index.md). Support for Docker
+- Builds using [Docker Build Cloud](/build-cloud/_index.md). Support for Docker
   Build Cloud is planned for a future release.
 - Repositories hosted on GitHub Enterprise Servers. Summaries can only be
   viewed for repositories hosted on GitHub.com.
 @y
-- Builds using [Docker Build Cloud](/build/cloud/_index.md). Support for Docker
+- Builds using [Docker Build Cloud](build-cloud/_index.md). Support for Docker
   Build Cloud is planned for a future release.
 - Repositories hosted on GitHub Enterprise Servers. Summaries can only be
   viewed for repositories hosted on GitHub.com.

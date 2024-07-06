@@ -250,7 +250,8 @@ bases = \
 	admin-sso-management-users.md       \
 	admin-sso-management.md             \
 	admin-users.html                    \
-	desktop-install.html
+	desktop-install.html                \
+	desktop-install-v2.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

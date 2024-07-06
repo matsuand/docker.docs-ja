@@ -56,18 +56,6 @@ keywords: build, buildx, buildkit
 @z
 
 @x
-- title: Build Cloud
-  description: Build your images faster in the cloud.
-  icon: /assets/images/logo-build-cloud.svg
-  link: /build/cloud/
-@y
-- title: Build Cloud
-  description: Build your images faster in the cloud.
-  icon: /assets/images/logo-build-cloud.svg
-  link: __SUBDIR__/build/cloud/
-@z
-
-@x
 - title: Architecture
   description: Explore BuildKit, the open source build engine.
   icon: construction

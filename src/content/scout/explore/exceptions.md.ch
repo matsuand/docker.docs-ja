@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
 ---
 title: Manage vulnerability exceptions
@@ -386,7 +388,7 @@ For an introduction to VEX, you may also want to check out this use-case guide:
 [Suppress image vulnerabilities with VEX](/scout/guides/vex.md).
 @y
 For an introduction to VEX, you may also want to check out this use-case guide:
-[Suppress image vulnerabilities with VEX](/scout/guides/vex.md).
+[Suppress image vulnerabilities with VEX](scout/guides/vex.md).
 @z
 
 @x
