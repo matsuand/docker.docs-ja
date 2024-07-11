@@ -301,6 +301,7 @@ SUBDIRS = attestations bake builders building buildkit cache ci \
 bases = \
 	_index.md        \
 	architecture.md  \
+	checks.md        \
 	release-notes.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

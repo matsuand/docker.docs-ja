@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Use containers for Java development
@@ -60,9 +61,9 @@ You can use containers to set up local services, like a database. In this sectio
 @z
 
 @x
-In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. `docker init` added an example database service, but it'll require a few changes for your unique app.
+In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
 @y
-In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. `docker init` added an example database service, but it'll require a few changes for your unique app.
+In the cloned repository's directory, open the `docker-compose.yaml` file in an IDE or text editor. Your Compose file has an example database service, but it'll require a few changes for your unique app.
 @z
 
 @x
@@ -102,9 +103,9 @@ In the `docker-compose.yaml` file, you need to do the following:
 @z
 
 @x
-The following is the updated `compose.yaml` file. All comments have been removed.
+The following is the updated `docker-compose.yaml` file. All comments have been removed.
 @y
-The following is the updated `compose.yaml` file. All comments have been removed.
+The following is the updated `docker-compose.yaml` file. All comments have been removed.
 @z
 
 @x
@@ -271,115 +272,7 @@ Replace the contents of your Dockerfile with the following.
 Replace the contents of your Dockerfile with the following.
 @z
 
-@x
-```dockerfile {hl_lines="22-28"}
-# syntax=docker/dockerfile:1
-@y
-```dockerfile {hl_lines="22-28"}
-# syntax=docker/dockerfile:1
-@z
-
-@x
-FROM eclipse-temurin:17-jdk-jammy as deps
-WORKDIR /build
-COPY --chmod=0755 mvnw mvnw
-COPY .mvn/ .mvn/
-RUN --mount=type=bind,source=pom.xml,target=pom.xml \
-    --mount=type=cache,target=/root/.m2 ./mvnw dependency:go-offline -DskipTests
-@y
-FROM eclipse-temurin:17-jdk-jammy as deps
-WORKDIR /build
-COPY --chmod=0755 mvnw mvnw
-COPY .mvn/ .mvn/
-RUN --mount=type=bind,source=pom.xml,target=pom.xml \
-    --mount=type=cache,target=/root/.m2 ./mvnw dependency:go-offline -DskipTests
-@z
-
-@x
-FROM deps as package
-WORKDIR /build
-COPY ./src src/
-RUN --mount=type=bind,source=pom.xml,target=pom.xml \
-    --mount=type=cache,target=/root/.m2 \
-    ./mvnw package -DskipTests && \
-    mv target/$(./mvnw help:evaluate -Dexpression=project.artifactId -q -DforceStdout)-$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout).jar target/app.jar
-@y
-FROM deps as package
-WORKDIR /build
-COPY ./src src/
-RUN --mount=type=bind,source=pom.xml,target=pom.xml \
-    --mount=type=cache,target=/root/.m2 \
-    ./mvnw package -DskipTests && \
-    mv target/$(./mvnw help:evaluate -Dexpression=project.artifactId -q -DforceStdout)-$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout).jar target/app.jar
-@z
-
-@x
-FROM package as extract
-WORKDIR /build
-RUN java -Djarmode=layertools -jar target/app.jar extract --destination target/extracted
-@y
-FROM package as extract
-WORKDIR /build
-RUN java -Djarmode=layertools -jar target/app.jar extract --destination target/extracted
-@z
-
-@x
-FROM extract as development
-WORKDIR /build
-RUN cp -r /build/target/extracted/dependencies/. ./
-RUN cp -r /build/target/extracted/spring-boot-loader/. ./
-RUN cp -r /build/target/extracted/snapshot-dependencies/. ./
-RUN cp -r /build/target/extracted/application/. ./
-CMD [ "java", "-Dspring.profiles.active=postgres", "-Dspring-boot.run.jvmArguments='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000'", "org.springframework.boot.loader.launch.JarLauncher" ]
-@y
-FROM extract as development
-WORKDIR /build
-RUN cp -r /build/target/extracted/dependencies/. ./
-RUN cp -r /build/target/extracted/spring-boot-loader/. ./
-RUN cp -r /build/target/extracted/snapshot-dependencies/. ./
-RUN cp -r /build/target/extracted/application/. ./
-CMD [ "java", "-Dspring.profiles.active=postgres", "-Dspring-boot.run.jvmArguments='-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000'", "org.springframework.boot.loader.launch.JarLauncher" ]
-@z
-
-@x
-FROM eclipse-temurin:17-jre-jammy AS final
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
-USER appuser
-COPY --from=extract build/target/extracted/dependencies/ ./
-COPY --from=extract build/target/extracted/spring-boot-loader/ ./
-COPY --from=extract build/target/extracted/snapshot-dependencies/ ./
-COPY --from=extract build/target/extracted/application/ ./
-EXPOSE 8080
-ENTRYPOINT [ "java", "-Dspring.profiles.active=postgres", "org.springframework.boot.loader.launch.JarLauncher" ]
-```
-@y
-FROM eclipse-temurin:17-jre-jammy AS final
-ARG UID=10001
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    appuser
-USER appuser
-COPY --from=extract build/target/extracted/dependencies/ ./
-COPY --from=extract build/target/extracted/spring-boot-loader/ ./
-COPY --from=extract build/target/extracted/snapshot-dependencies/ ./
-COPY --from=extract build/target/extracted/application/ ./
-EXPOSE 8080
-ENTRYPOINT [ "java", "-Dspring.profiles.active=postgres", "org.springframework.boot.loader.launch.JarLauncher" ]
-```
-@z
+% snip code...
 
 @x
 Save and close the `Dockerfile`.
@@ -406,84 +299,12 @@ The current Compose file doesn't start your development container. To do that, y
 @z
 
 @x
-Open the `petclinic` in your IDE or a text editor and create a new file named
-`docker-compose.dev.yml`. Copy and paste the following instructions into the
-file.
+Open the `docker-compose.yaml` and add the following instructions into the file.
 @y
-Open the `petclinic` in your IDE or a text editor and create a new file named
-`docker-compose.dev.yml`. Copy and paste the following instructions into the
-file.
+Open the `docker-compose.yaml` and add the following instructions into the file.
 @z
 
-@x
-```yaml {hl_lines=["5","8"]}
-services:
-  server:
-    build:
-      context: .
-      target: development
-    ports:
-      - 8080:8080
-      - 8000:8000
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      - POSTGRES_URL=jdbc:postgresql://db:5432/petclinic
-  db:
-    image: postgres
-    restart: always
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=petclinic
-      - POSTGRES_USER=petclinic
-      - POSTGRES_PASSWORD=petclinic
-    ports:
-      - 5432:5432
-    healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "petclinic" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-```
-@y
-```yaml {hl_lines=["5","8"]}
-services:
-  server:
-    build:
-      context: .
-      target: development
-    ports:
-      - 8080:8080
-      - 8000:8000
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      - POSTGRES_URL=jdbc:postgresql://db:5432/petclinic
-  db:
-    image: postgres
-    restart: always
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=petclinic
-      - POSTGRES_USER=petclinic
-      - POSTGRES_PASSWORD=petclinic
-    ports:
-      - 5432:5432
-    healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "petclinic" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-volumes:
-  db-data:
-```
-@z
+% snip code...
 
 @x
 Now, start your application and to confirm that it's running.

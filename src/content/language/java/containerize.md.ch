@@ -75,17 +75,21 @@ The sample application is a Spring Boot application built using Maven. For more 
 @z
 
 @x
-Now that you have an application, you can use `docker init` to create the
-necessary Docker assets to containerize your application. Inside the
-`spring-petclinic` directory, run the `docker init` command in a terminal.
-`docker init` provides some default configuration, but you'll need to answer a
-few questions about your application. Use the answers in the following example in order to follow along with this guide.
+Now that you have an application, you can create the necessary Docker assets to
+containerize your application. You can use Docker Desktop's built-in Docker Init
+feature to help streamline the process, or you can manually create the assets.
 @y
-Now that you have an application, you can use `docker init` to create the
-necessary Docker assets to containerize your application. Inside the
-`spring-petclinic` directory, run the `docker init` command in a terminal.
-`docker init` provides some default configuration, but you'll need to answer a
-few questions about your application. Use the answers in the following example in order to follow along with this guide.
+Now that you have an application, you can create the necessary Docker assets to
+containerize your application. You can use Docker Desktop's built-in Docker Init
+feature to help streamline the process, or you can manually create the assets.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Use Docker Init" >}}
+@y
+{{< tabs >}}
+{{< tab name="Use Docker Init" >}}
 @z
 
 @x
@@ -111,10 +115,52 @@ directory. Both names are supported, but Compose prefers the canonical
 @z
 
 @x
-You should now have the following three new files in your `spring-petclinic`
+{{< /tab >}}
+{{< tab name="Manually create assets" >}}
+@y
+{{< /tab >}}
+{{< tab name="Manually create assets" >}}
+@z
+
+@x
+If you don't have Docker Desktop installed or prefer creating the assets
+manually, you can create the following files in your project directory. 
+@y
+If you don't have Docker Desktop installed or prefer creating the assets
+manually, you can create the following files in your project directory. 
+@z
+
+@x
+Create a file named `Dockerfile` with the following contents.
+@y
+Create a file named `Dockerfile` with the following contents.
+@z
+
+@x
+The sample already contains a Compose file. Overwrite this file to follow along with the guide. Update the`docker-compose.yaml` with the following contents.
+@y
+The sample already contains a Compose file. Overwrite this file to follow along with the guide. Update the`docker-compose.yaml` with the following contents.
+@z
+
+@x
+Create a file named `.dockerignore` with the following contents.
+@y
+Create a file named `.dockerignore` with the following contents.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+You should now have the following three files in your `spring-petclinic`
 directory.
 @y
-You should now have the following three new files in your `spring-petclinic`
+You should now have the following three files in your `spring-petclinic`
 directory.
 @z
 
@@ -126,14 +172,6 @@ directory.
 - [Dockerfile](__SUBDIR__/reference/dockerfile/)
 - [.dockerignore](__SUBDIR__/reference/dockerfile/#dockerignore-file)
 - [docker-compose.yaml](../../compose/compose-file/_index.md)
-@z
-
-@x
-You can open the files in a code or text editor, then read the comments to learn
-more about the instructions, or visit the links in the previous list.
-@y
-You can open the files in a code or text editor, then read the comments to learn
-more about the instructions, or visit the links in the previous list.
 @z
 
 @x

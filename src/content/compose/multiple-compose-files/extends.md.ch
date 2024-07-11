@@ -130,7 +130,7 @@ services:
       - "/data"
 ```
 You get exactly the same result as if you wrote
-`docker-compose.yml` with the same `build`, `ports` and `volumes` configuration
+`docker-compose.yml` with the same `build`, `ports`, and `volumes` configuration
 values defined directly under `web`.
 @y
 ```yaml
@@ -143,7 +143,7 @@ services:
       - "/data"
 ```
 You get exactly the same result as if you wrote
-`docker-compose.yml` with the same `build`, `ports` and `volumes` configuration
+`docker-compose.yml` with the same `build`, `ports`, and `volumes` configuration
 values defined directly under `web`.
 @z
 
@@ -395,13 +395,13 @@ ensures that changes to the referenced file don't break anything.
 
 @x
 `extends` is useful if you only need a single service to be shared and you are
-familiar with the file you're extending to, so you can to tweak the
+familiar with the file you're extending to, so you can tweak the
 configuration. But this isn’t an acceptable solution when you want to re-use
 someone else's unfamiliar configurations and you don’t know about its own
 dependencies.
 @y
 `extends` is useful if you only need a single service to be shared and you are
-familiar with the file you're extending to, so you can to tweak the
+familiar with the file you're extending to, so you can tweak the
 configuration. But this isn’t an acceptable solution when you want to re-use
 someone else's unfamiliar configurations and you don’t know about its own
 dependencies.

@@ -7,6 +7,7 @@ SUBDIRS = attestations bake builders building buildkit cache ci \
 bases = \
 	_index.md        \
 	architecture.md  \
+	checks.md        \
 	release-notes.md
 
 include $(top_srcdir)/build-aux/common.mk

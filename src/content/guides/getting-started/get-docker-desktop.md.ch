@@ -141,10 +141,10 @@ For this container, the frontend is accessible on port `8080`. To open the websi
 @z
 
 @x
-1. Open Docker Desktop and select the **Container** field on the left sidebar.
+1. Open Docker Desktop and select the **Containers** field on the left sidebar.
 2. You can view information about your container including logs, and files, and even access the shell by selecting the **Exec** tab.
 @y
-1. Docker Desktop を開き、左側サイドバーにある **Container** (コンテナー) を選びます。
+1. Docker Desktop を開き、左側サイドバーにある **Containers** (コンテナー) を選びます。
 2. そこではコンテナーについての情報としてログやファイルなどが確認できます。
    また **Exec** (実行) タブを選べばシェルにアクセスすることもできます。
 @z

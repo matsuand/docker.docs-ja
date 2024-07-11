@@ -6,6 +6,7 @@ SUBDIRS = core-billing
 
 bases = \
 	_index.md          \
+	3d-secure.md       \
 	build-billing.md   \
 	faqs.md            \
 	scout-billing.md   \

@@ -64,19 +64,45 @@ To get started with Docker Engine on Ubuntu, make sure you
 @z
 
 @x
-> **Note**
->
-> If you use ufw or firewalld to manage firewall settings, be aware that
-> when you expose container ports using Docker, these ports bypass your
-> firewall rules. For more information, refer to
-> [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+### Firewall limitations
 @y
-> **Note**
+### Firewall limitations
+@z
+
+@x
+> **Warning**
 >
-> If you use ufw or firewalld to manage firewall settings, be aware that
-> when you expose container ports using Docker, these ports bypass your
-> firewall rules. For more information, refer to
-> [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+> Before you install Docker, make sure you consider the following
+> security implications and firewall incompatibilities.
+{ .warning }
+@y
+> **Warning**
+>
+> Before you install Docker, make sure you consider the following
+> security implications and firewall incompatibilities.
+{ .warning }
+@z
+
+@x
+- If you use ufw or firewalld to manage firewall settings, be aware that
+  when you expose container ports using Docker, these ports bypass your
+  firewall rules. For more information, refer to
+  [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+- Docker is only compatible with `iptables-nft` and `iptables-legacy`.
+  Firewall rules created with `nft` are not supported on a system with Docker installed.
+  Make sure that any firewall rulesets you use are created with `iptables` or `iptables6`,
+  and that you add them to the `DOCKER-USER` chain,
+  see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
+@y
+- If you use ufw or firewalld to manage firewall settings, be aware that
+  when you expose container ports using Docker, these ports bypass your
+  firewall rules. For more information, refer to
+  [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+- Docker is only compatible with `iptables-nft` and `iptables-legacy`.
+  Firewall rules created with `nft` are not supported on a system with Docker installed.
+  Make sure that any firewall rulesets you use are created with `iptables` or `iptables6`,
+  and that you add them to the `DOCKER-USER` chain,
+  see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
 @z
 
 @x

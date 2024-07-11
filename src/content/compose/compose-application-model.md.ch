@@ -22,15 +22,15 @@ aliases:
 @z
 
 @x
-Docker Compose relies on a YAML configuration file, usually named `compose.yaml`. 
+With Docker Compose you use a YAML configuration file, known as the [Compose file](#the-compose-file), to configure your application’s services, and then you create and start all the services from your configuration with the [Compose CLI](#cli). 
 @y
-Docker Compose relies on a YAML configuration file, usually named `compose.yaml`. 
+With Docker Compose you use a YAML configuration file, known as the [Compose file](#the-compose-file), to configure your application’s services, and then you create and start all the services from your configuration with the [Compose CLI](#cli). 
 @z
 
 @x
-The `compose.yaml` file follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
+The Compose file, or `compose.yaml` file, follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
 @y
-The `compose.yaml` file follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
+The Compose file, or `compose.yaml` file, follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
 @z
 
 @x
@@ -96,15 +96,9 @@ Compose offers a way for you to set a custom project name and override this name
 @z
 
 @x
-{{< /accordion >}}
+{{< /accordion >}} 
 @y
-{{< /accordion >}}
-@z
-
-@x
-You then interact with your Compose application through the [Compose CLI](reference/_index.md). Commands such as `docker compose up` are used to start the application, while `docker compose down` stops and removes the containers.
-@y
-You then interact with your Compose application through the [Compose CLI](reference/_index.md). Commands such as `docker compose up` are used to start the application, while `docker compose down` stops and removes the containers.
+{{< /accordion >}} 
 @z
 
 @x
@@ -147,6 +141,94 @@ the expanded form. For more information, see [Working with multiple Compose file
 If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](compose-file/14-include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
 @y
 If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](compose-file/14-include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
+@z
+
+@x
+## CLI
+@y
+## CLI
+@z
+
+@x
+The Docker CLI lets you to interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+@y
+The Docker CLI lets you to interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+@z
+
+@x
+### Key commands 
+@y
+### Key commands 
+@z
+
+@x
+To start all the services defined in your `compose.yaml` file:
+@y
+To start all the services defined in your `compose.yaml` file:
+@z
+
+@x
+```console
+$ docker compose up
+```
+@y
+```console
+$ docker compose up
+```
+@z
+
+@x
+To stop and remove the running services:
+@y
+To stop and remove the running services:
+@z
+
+@x
+```console
+$ docker compose down 
+```
+@y
+```console
+$ docker compose down 
+```
+@z
+
+@x
+If you want to monitor the output of your running containers and debug issues, you can view the logs with: 
+@y
+If you want to monitor the output of your running containers and debug issues, you can view the logs with: 
+@z
+
+@x
+```console
+$ docker compose logs
+```
+@y
+```console
+$ docker compose logs
+```
+@z
+
+@x
+To lists all the services along with their current status:
+@y
+To lists all the services along with their current status:
+@z
+
+@x
+```console
+$ docker compose ps
+```
+@y
+```console
+$ docker compose ps
+```
+@z
+
+@x
+For a full list of all the Compose CLI commands, see the [reference documentation](../reference/cli/docker/compose/_index.md).
+@y
+For a full list of all the Compose CLI commands, see the [reference documentation](../reference/cli/docker/compose/_index.md).
 @z
 
 @x
@@ -302,6 +384,38 @@ networks:
   # The presence of these objects is sufficient to define them
   front-tier: {}
   back-tier: {}
+```
+@z
+
+@x
+The `docker compose up` command starts the `frontend` and `backend` services, create the necessary networks and volumes, and injects the configuration and secret into the frontend service.
+@y
+The `docker compose up` command starts the `frontend` and `backend` services, create the necessary networks and volumes, and injects the configuration and secret into the frontend service.
+@z
+
+@x
+`docker compose ps` provides a snapshot of the current state of your services, making it easy to see which containers are running, their status, and the ports they are using:
+@y
+`docker compose ps` provides a snapshot of the current state of your services, making it easy to see which containers are running, their status, and the ports they are using:
+@z
+
+@x
+```text
+$ docker compose ps
+@y
+```text
+$ docker compose ps
+@z
+
+@x
+NAME                IMAGE                COMMAND                  SERVICE             CREATED             STATUS              PORTS
+example-frontend-1  example/webapp       "nginx -g 'daemon of…"   frontend            2 minutes ago       Up 2 minutes        0.0.0.0:443->8043/tcp
+example-backend-1   example/database     "docker-entrypoint.s…"   backend             2 minutes ago       Up 2 minutes
+```
+@y
+NAME                IMAGE                COMMAND                  SERVICE             CREATED             STATUS              PORTS
+example-frontend-1  example/webapp       "nginx -g 'daemon of…"   frontend            2 minutes ago       Up 2 minutes        0.0.0.0:443->8043/tcp
+example-backend-1   example/database     "docker-entrypoint.s…"   backend             2 minutes ago       Up 2 minutes
 ```
 @z
 

@@ -5278,6 +5278,8 @@ Manuals:
     title: Docker Scout billing
   - path: /billing/tax-certificate/
     title: Register a tax certificate
+  - path: /billing/3d-secure/
+    title: 3D Secure authentication
   - path: /billing/faqs/
     title: Billing FAQs
 @y
@@ -5287,6 +5289,8 @@ Manuals:
     title: Docker Scout billing
   - path: __SUBDIR__/billing/tax-certificate/
     title: Register a tax certificate
+  - path: __SUBDIR__/billing/3d-secure/
+    title: 3D Secure authentication
   - path: __SUBDIR__/billing/faqs/
     title: 支払いに関する FAQ
 @z
