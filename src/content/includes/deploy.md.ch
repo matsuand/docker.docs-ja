@@ -4,12 +4,6 @@
 % __SUBDIR__ 対応。
 
 @x
-Now that we have configured a CI/CD pipeline, let's look at how we can deploy the application. Docker supports deploying containers on Azure ACI and AWS ECS. You can also deploy your application to Kubernetes if you have enabled Kubernetes in Docker Desktop.
-@y
-Now that we have configured a CI/CD pipeline, let's look at how we can deploy the application. Docker supports deploying containers on Azure ACI and AWS ECS. You can also deploy your application to Kubernetes if you have enabled Kubernetes in Docker Desktop.
-@z
-
-@x
 ## Docker and Azure ACI
 @y
 ## Docker and Azure ACI

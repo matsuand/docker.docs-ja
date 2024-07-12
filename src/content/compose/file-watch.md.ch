@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 description: Use File watch to automatically update running services as you work
@@ -141,40 +142,20 @@ initial content to be copied into the container using the `COPY` instruction in 
 by the configured user, use the `COPY --chown` flag:
 @z
 
-@x
-```dockerfile
+@x within code
 # Run as a non-privileged user
-FROM node:18-alpine
-RUN useradd -ms /bin/sh -u 1001 app
-USER app
 @y
-```dockerfile
 # Run as a non-privileged user
-FROM node:18-alpine
-RUN useradd -ms /bin/sh -u 1001 app
-USER app
 @z
-
 @x
 # Install dependencies
-WORKDIR /app
-COPY package.json package.lock .
-RUN npm install
 @y
 # Install dependencies
-WORKDIR /app
-COPY package.json package.lock .
-RUN npm install
 @z
-
 @x
 # Copy source files into application directory
-COPY --chown=app:app . /app
-```
 @y
 # Copy source files into application directory
-COPY --chown=app:app . /app
-```
 @z
 
 @x
@@ -305,61 +286,12 @@ For `path: ./app/html` and a change to `./app/html/index.html`:
 
 @x
 This minimal example targets a Node.js application with the following structure:
-```text
-myproject/
-├── web/
-│   ├── App.jsx
-│   └── index.js
-├── Dockerfile
-├── compose.yaml
-└── package.json
-```
 @y
 This minimal example targets a Node.js application with the following structure:
-```text
-myproject/
-├── web/
-│   ├── App.jsx
-│   └── index.js
-├── Dockerfile
-├── compose.yaml
-└── package.json
-```
 @z
 
-@x
-```yaml
-services:
-  web:
-    build: .
-    command: npm start
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /src/web
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
-```
-@y
-```yaml
-services:
-  web:
-    build: .
-    command: npm start
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /src/web
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
-```
-@z
+% snip text...
+% snip code...
 
 @x
 In this example, when running `docker compose up --watch`, a container for the `web` service is launched using an image built from the `Dockerfile` in the project's root.
@@ -411,53 +343,7 @@ Adapting the previous example to demonstrate `sync+restart`:
 Adapting the previous example to demonstrate `sync+restart`:
 @z
 
-@x
-```yaml
-services:
-  web:
-    build: .
-    command: npm start
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /app/web
-          ignore:
-            - node_modules/
-        - action: sync+restart
-          path: ./proxy/nginx.conf
-          target: /etc/nginx/conf.d/default.conf
-@y
-```yaml
-services:
-  web:
-    build: .
-    command: npm start
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /app/web
-          ignore:
-            - node_modules/
-        - action: sync+restart
-          path: ./proxy/nginx.conf
-          target: /etc/nginx/conf.d/default.conf
-@z
-
-@x
-  backend:
-    build:
-      context: backend
-      target: builder
-```
-@y
-  backend:
-    build:
-      context: backend
-      target: builder
-```
-@z
+% snip code...
 
 @x
 This setup demonstrates how to use the `sync+restart` action in Docker Compose to efficiently develop and test a Node.js application with a frontend web server and backend service. The configuration ensures that changes to the application code and configuration files are quickly synchronized and applied, with the `web` service restarting as needed to reflect the changes.

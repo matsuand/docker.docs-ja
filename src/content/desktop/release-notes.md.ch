@@ -56,6 +56,172 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
+## 4.32.0
+@y
+## 4.32.0
+@z
+
+@x
+{{< release-date date="2024-07-04" >}}
+@y
+{{< release-date date="2024-07-04" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.32.0" build_path="/157355/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.32.0" build_path="/157355/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Docker Desktop now takes advantage of Moby 27.
+- Docker Desktop now supports moving data to a different drive on macOS and Windows with WSL2 backend. See [docker/for-win#13384](https://github.com/docker/for-win/issues/13384).
+- You can now [schedule backups for volume exports](use-desktop/volumes.md) in the **Volumes** tab (Beta). 
+- Access a terminal shell directly from Docker Desktop (Beta).
+@y
+- Docker Desktop now takes advantage of Moby 27.
+- Docker Desktop now supports moving data to a different drive on macOS and Windows with WSL2 backend. See [docker/for-win#13384](https://github.com/docker/for-win/issues/13384).
+- You can now [schedule backups for volume exports](use-desktop/volumes.md) in the **Volumes** tab (Beta). 
+- Access a terminal shell directly from Docker Desktop (Beta).
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Buildx v0.15.1](https://github.com/docker/buildx/releases/tag/v0.15.1)
+- [Docker Compose v2.28.1](https://github.com/docker/compose/releases/tag/v2.28.1)
+- [Docker Scout CLI v1.10.0](https://github.com/docker/scout-cli/releases/tag/v1.10.0)
+- [Docker Engine v27.0.3](https://docs.docker.com/engine/release-notes/27.0/#2703)
+- Docker Init v1.3.0
+@y
+- [Docker Buildx v0.15.1](https://github.com/docker/buildx/releases/tag/v0.15.1)
+- [Docker Compose v2.28.1](https://github.com/docker/compose/releases/tag/v2.28.1)
+- [Docker Scout CLI v1.10.0](https://github.com/docker/scout-cli/releases/tag/v1.10.0)
+- [Docker Engine v27.0.3](https://docs.docker.com/engine/release-notes/27.0/#2703)
+- Docker Init v1.3.0
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Improved instructions for `watch` in the Compose File Viewer
+- Added support for Golang projects that don't have dependencies in Docker Init. Addresses [docker/roadmap#611](https://github.com/docker/roadmap/issues/611)
+- [Settings Management](hardened-desktop/settings-management/index.md) now lets admins set the default value to `ProxyEnableKerberosNTLM`.
+- Removed a temporary compatibility fix for older versions of Visual Studio Code.
+- Builds view:
+  - Changed icon for imported build record to a "files" icon.
+  - Improved the error message when trying to connect to an already connected Docker Build Cloud builder.
+  - Fixed an issue where build records would disappear unexpectedly.
+  - Fixed an issue that prevented users from being able to re-open an [imported build](use-desktop/builds.md#import-builds).
+  - Fixed an issue where build details were not displayed when a build's state had changed from running to completed.
+  - Fixed malformed build source link in build details.
+  - Fixed missing build stats for named contexts.
+  - Fixed image index/manifest not being displayed anymore in build results.
+  - Fixed an issue where build traces exported from the UI would appear as a single, flattened list when imported to Jaeger
+  - Fixed truncated digest/sha in build details. 
+  - Fixed final status animation of active builds.
+@y
+- Improved instructions for `watch` in the Compose File Viewer
+- Added support for Golang projects that don't have dependencies in Docker Init. Addresses [docker/roadmap#611](https://github.com/docker/roadmap/issues/611)
+- [Settings Management](hardened-desktop/settings-management/index.md) now lets admins set the default value to `ProxyEnableKerberosNTLM`.
+- Removed a temporary compatibility fix for older versions of Visual Studio Code.
+- Builds view:
+  - Changed icon for imported build record to a "files" icon.
+  - Improved the error message when trying to connect to an already connected Docker Build Cloud builder.
+  - Fixed an issue where build records would disappear unexpectedly.
+  - Fixed an issue that prevented users from being able to re-open an [imported build](use-desktop/builds.md#import-builds).
+  - Fixed an issue where build details were not displayed when a build's state had changed from running to completed.
+  - Fixed malformed build source link in build details.
+  - Fixed missing build stats for named contexts.
+  - Fixed image index/manifest not being displayed anymore in build results.
+  - Fixed an issue where build traces exported from the UI would appear as a single, flattened list when imported to Jaeger
+  - Fixed truncated digest/sha in build details. 
+  - Fixed final status animation of active builds.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed an issue on the WSL 2 engine where Docker Desktop would not detect the existence of the `docker-desktop-data` distribution if it had been manually moved by the user.
+- The Windows on ARM installer and the [privileged service](windows/permission-requirements.md#privileged-helper) are now built for ARM64.
+@y
+- Fixed an issue on the WSL 2 engine where Docker Desktop would not detect the existence of the `docker-desktop-data` distribution if it had been manually moved by the user.
+- The Windows on ARM installer and the [privileged service](windows/permission-requirements.md#privileged-helper) are now built for ARM64.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Re-added `CONFIG_DM_CRYPT` kernel module.
+- Re-added `CONFIG_PSI` kernel module.
+- Re-added `CONFIG_GTP` kernel module.
+- Re-added `CONFIG_NFT_BRIDGE_META` kernel module.
+- Fixed a regression where the **Another application changed your Desktop configuration** warning message appeared whenever `/var/run/docker.socket` was pointing to an unexpected path.
+- Changed the Configuration Check menu entry and banner to a notification.
+- Improved the performance of read and write operations on bind mounts.
+- Fixed fatal errors with some `AMD64` Java images. Fixes [docker/for-mac/7286](https://github.com/docker/for-mac/issues/7286) and [docker/for-mac/7006](https://github.com/docker/for-mac/issues/7006).
+- Fixed an issue that caused Docker Desktop to remove `Docker.app` when installing from `/Applications`.
+- Fixed an issue that caused bind mounts to fail. Fixes [docker/for-mac#7274](https://github.com/docker/for-mac/issues/7274).
+@y
+- Re-added `CONFIG_DM_CRYPT` kernel module.
+- Re-added `CONFIG_PSI` kernel module.
+- Re-added `CONFIG_GTP` kernel module.
+- Re-added `CONFIG_NFT_BRIDGE_META` kernel module.
+- Fixed a regression where the **Another application changed your Desktop configuration** warning message appeared whenever `/var/run/docker.socket` was pointing to an unexpected path.
+- Changed the Configuration Check menu entry and banner to a notification.
+- Improved the performance of read and write operations on bind mounts.
+- Fixed fatal errors with some `AMD64` Java images. Fixes [docker/for-mac/7286](https://github.com/docker/for-mac/issues/7286) and [docker/for-mac/7006](https://github.com/docker/for-mac/issues/7006).
+- Fixed an issue that caused Docker Desktop to remove `Docker.app` when installing from `/Applications`.
+- Fixed an issue that caused bind mounts to fail. Fixes [docker/for-mac#7274](https://github.com/docker/for-mac/issues/7274).
+@z
+
+@x
+### Known issues
+@y
+### Known issues
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- When running `docker-compose` after an update, it will return `command not found`. As a workaround, you can create the following symlink: `sudo ln -sf /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose`
+@y
+- When running `docker-compose` after an update, it will return `command not found`. As a workaround, you can create the following symlink: `sudo ln -sf /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose`
+@z
+
+@x
 ## 4.31.1
 @y
 ## 4.31.1
@@ -714,9 +880,11 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-- Disabled Electron `runAsNode` fuse to improve security hardening. For more info, see [Electron's documentation.](https://www.electronjs.org/blog/statement-run-as-node-cves)
+- Disabled Electron `runAsNode` fuse to improve security hardening. For more info, see [Electron's documentation.](https://www.electronjs.org/blog/statement-run-as-node-cves).
+- Fixed [CVE-2024-6222](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-6222) which allows an attacker who has gained access to the Docker Desktop VM through a container breakout to further escape to the host by passing extensions and dashboard related IPC messages. Reported by Billy Jheng Bing-Jhong, Đỗ Minh Tuấn, Muhammad Alifa Ramdhan working with Trend Micro Zero Day Initiative.
 @y
-- Disabled Electron `runAsNode` fuse to improve security hardening. For more info, see [Electron's documentation.](https://www.electronjs.org/blog/statement-run-as-node-cves)
+- Disabled Electron `runAsNode` fuse to improve security hardening. For more info, see [Electron's documentation.](https://www.electronjs.org/blog/statement-run-as-node-cves).
+- Fixed [CVE-2024-6222](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-6222) which allows an attacker who has gained access to the Docker Desktop VM through a container breakout to further escape to the host by passing extensions and dashboard related IPC messages. Reported by Billy Jheng Bing-Jhong, Đỗ Minh Tuấn, Muhammad Alifa Ramdhan working with Trend Micro Zero Day Initiative.
 @z
 
 @x

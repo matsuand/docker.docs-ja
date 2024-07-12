@@ -160,7 +160,7 @@ samples:
       - java
   - title: VueJS
     url: https://github.com/docker/awesome-compose/tree/master/vuejs
-    description: A sample Vue.jus application.
+    description: A sample Vue.js application.
     services:
       - vuejs
       - javascript
@@ -514,7 +514,7 @@ samples:
       - java
   - title: VueJS
     url: https://github.com/docker/awesome-compose/tree/master/vuejs
-    description: A sample Vue.jus application.
+    description: A sample Vue.js application.
     services:
       - vuejs
       - javascript
