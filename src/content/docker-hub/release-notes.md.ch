@@ -38,6 +38,24 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
+## 2024-03-23
+@y
+## 2024-03-23
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+ - You can tag Docker Hub repositories with [categories](./repos/categories.md).
+@y
+ - You can tag Docker Hub repositories with [categories](./repos/categories.md).
+@z
+
+@x
 ## 2023-12-11
 @y
 ## 2023-12-11
@@ -188,9 +206,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
-- In Docker Hub, you can now download a [registry.json](../security/for-admins/configure-sign-in.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
+- In Docker Hub, you can now download a [registry.json](../security/for-admins/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
 @y
-- In Docker Hub, you can now download a [registry.json](../security/for-admins/configure-sign-in.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
+- In Docker Hub, you can now download a [registry.json](../security/for-admins/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
 @z
 
 @x

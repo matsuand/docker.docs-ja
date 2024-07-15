@@ -100,9 +100,9 @@ If users attempt to sign in through the CLI, they must authenticate using a pers
 @z
 
 @x
-Yes. Administrators can force users to authenticate with Docker Desktop by provisioning a [`registry.json`](../../../security/for-admins/configure-sign-in.md) configuration file. The `registry.json` file will force users to authenticate as a user that's configured in the `allowedOrgs` list in the `registry.json` file.
+Yes. Admins can [force users to authenticate with Docker Desktop](../../for-admins/enforce-sign-in/_index.md) using a registry key, `.plist` file, or `registry.json` file. 
 @y
-Yes. Administrators can force users to authenticate with Docker Desktop by provisioning a [`registry.json`](../../../security/for-admins/configure-sign-in.md) configuration file. The `registry.json` file will force users to authenticate as a user that's configured in the `allowedOrgs` list in the `registry.json` file.
+Yes. Admins can [force users to authenticate with Docker Desktop](../../for-admins/enforce-sign-in/_index.md) using a registry key, `.plist` file, or `registry.json` file. 
 @z
 
 @x
@@ -142,9 +142,9 @@ Yes, you can convert existing users to an SSO account. To convert users from a n
 @z
 
 @x
-For detailed prerequisites and instructions on how to enable SSO, see [Configure Single Sign-on](../../../security/for-admins/configure-sign-in.md).
+For detailed prerequisites and instructions on how to enable SSO, see [Configure Single Sign-on](../../../security/for-admins/single-sign-on/configure/_index.md).
 @y
-For detailed prerequisites and instructions on how to enable SSO, see [Configure Single Sign-on](../../../security/for-admins/configure-sign-in.md).
+For detailed prerequisites and instructions on how to enable SSO, see [Configure Single Sign-on](../../../security/for-admins/single-sign-on/configure/_index.md).
 @z
 
 @x

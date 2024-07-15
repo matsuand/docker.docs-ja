@@ -70,9 +70,9 @@ No. Organization owners can invite users with their email address, and also assi
 @z
 
 @x
-Yes. You can [enforce sign-in](../../security/for-admins/configure-sign-in.md) and some benefits are:
+Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md) and some benefits are:
 @y
-Yes. You can [enforce sign-in](../../security/for-admins/configure-sign-in.md) and some benefits are:
+Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md) and some benefits are:
 @z
 
 @x

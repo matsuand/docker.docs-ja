@@ -494,25 +494,25 @@ download a new file each time you want to upgrade Docker Engine.
 @z
 
 @x
-4. Download the following `deb` files for the Docker Engine, CLI, containerd,
+4. Download the following `rpm` files for the Docker Engine, CLI, containerd,
    and Docker Compose packages:
 @y
-4. Download the following `deb` files for the Docker Engine, CLI, containerd,
+4. Download the following `rpm` files for the Docker Engine, CLI, containerd,
    and Docker Compose packages:
 @z
 
 @x
-   - `containerd.io_<version>_<arch>.deb`
-   - `docker-ce_<version>_<arch>.deb`
-   - `docker-ce-cli_<version>_<arch>.deb`
-   - `docker-buildx-plugin_<version>_<arch>.deb`
-   - `docker-compose-plugin_<version>_<arch>.deb`
+   - `containerd.io-<version>.<arch>.rpm`
+   - `docker-ce-<version>.<arch>.rpm`
+   - `docker-ce-cli-<version>.<arch>.rpm`
+   - `docker-buildx-plugin-<version>.<arch>.rpm`
+   - `docker-compose-plugin-<version>.<arch>.rpm`
 @y
-   - `containerd.io_<version>_<arch>.deb`
-   - `docker-ce_<version>_<arch>.deb`
-   - `docker-ce-cli_<version>_<arch>.deb`
-   - `docker-buildx-plugin_<version>_<arch>.deb`
-   - `docker-compose-plugin_<version>_<arch>.deb`
+   - `containerd.io-<version>.<arch>.rpm`
+   - `docker-ce-<version>.<arch>.rpm`
+   - `docker-ce-cli-<version>.<arch>.rpm`
+   - `docker-buildx-plugin-<version>.<arch>.rpm`
+   - `docker-compose-plugin-<version>.<arch>.rpm`
 @z
 
 @x
@@ -525,19 +525,19 @@ download a new file each time you want to upgrade Docker Engine.
 
 @x
    ```console
-   $ sudo yum install ./containerd.io_<version>_<arch>.rpm \
-     ./docker-ce_<version>_<arch>.rpm \
-     ./docker-ce-cli_<version>_<arch>.rpm \
-     ./docker-buildx-plugin_<version>_<arch>.rpm \
-     ./docker-compose-plugin_<version>_<arch>.rpm
+   $ sudo yum install ./containerd.io-<version>.<arch>.rpm \
+     ./docker-ce-<version>.<arch>.rpm \
+     ./docker-ce-cli-<version>.<arch>.rpm \
+     ./docker-buildx-plugin-<version>.<arch>.rpm \
+     ./docker-compose-plugin-<version>.<arch>.rpm
    ```
 @y
    ```console
-   $ sudo yum install ./containerd.io_<version>_<arch>.rpm \
-     ./docker-ce_<version>_<arch>.rpm \
-     ./docker-ce-cli_<version>_<arch>.rpm \
-     ./docker-buildx-plugin_<version>_<arch>.rpm \
-     ./docker-compose-plugin_<version>_<arch>.rpm
+   $ sudo yum install ./containerd.io-<version>.<arch>.rpm \
+     ./docker-ce-<version>.<arch>.rpm \
+     ./docker-ce-cli-<version>.<arch>.rpm \
+     ./docker-buildx-plugin-<version>.<arch>.rpm \
+     ./docker-compose-plugin-<version>.<arch>.rpm
    ```
 @z
 

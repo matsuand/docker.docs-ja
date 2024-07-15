@@ -74,7 +74,7 @@ When SSO is enforced, you can't use passwords to access the Docker CLI, but you 
 @x
 Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
 @y
-Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](__SUBDIR__/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
+Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
 @z
 
 @x
@@ -193,8 +193,12 @@ Enforcing SSO ensures that users sign in using their SSO credentials instead of 
 
 @x
 Enforcing sign-in to Docker Desktop ensures that users always sign in to an
-account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/configure-sign-in.md).
 @y
 Enforcing sign-in to Docker Desktop ensures that users always sign in to an
-account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/configure-sign-in.md).
+@z
+
+@x
+account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/enforce-sign-in/_index.md).
+@y
+account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/enforce-sign-in/_index.md).
 @z

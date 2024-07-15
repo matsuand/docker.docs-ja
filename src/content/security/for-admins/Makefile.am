@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = provisioning single-sign-on
+SUBDIRS = enforce-sign-in provisioning single-sign-on
 
 bases = \
 	configure-sign-in.md          \

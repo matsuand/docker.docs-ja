@@ -66,9 +66,9 @@ Example registries administrators can allow include:
 @z
 
 @x
-You need to [configure a registry.json to enforce sign-in](/docker-hub/configure-sign-in/). For Registry Access Management to take effect, Docker Desktop users must authenticate to your organization.
+You need to [configure a registry.json to enforce sign-in](enforce-sign-in/_index.md). For Registry Access Management to take effect, Docker Desktop users must authenticate to your organization.
 @y
-You need to [configure a registry.json to enforce sign-in](__SUBDIR__/docker-hub/configure-sign-in/). For Registry Access Management to take effect, Docker Desktop users must authenticate to your organization.
+You need to [configure a registry.json to enforce sign-in](enforce-sign-in/_index.md). For Registry Access Management to take effect, Docker Desktop users must authenticate to your organization.
 @z
 
 @x

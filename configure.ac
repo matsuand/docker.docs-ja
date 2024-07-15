@@ -136,6 +136,7 @@ AC_CONFIG_FILES([
 	src/content/desktop/images/Makefile
 	src/content/desktop/install/Makefile
 	src/content/desktop/install/images/Makefile
+	src/content/desktop/install/msi/Makefile
 	src/content/desktop/linux/Makefile
 	src/content/desktop/linux/images/Makefile
 	src/content/desktop/linux/images/menu/Makefile
@@ -263,6 +264,7 @@ AC_CONFIG_FILES([
 	src/content/security/faqs/Makefile
 	src/content/security/faqs/single-sign-on/Makefile
 	src/content/security/for-admins/Makefile
+	src/content/security/for-admins/enforce-sign-in/Makefile
 	src/content/security/for-admins/provisioning/Makefile
 	src/content/security/for-admins/single-sign-on/Makefile
 	src/content/security/for-admins/single-sign-on/configure/Makefile

@@ -2592,10 +2592,6 @@ Manuals:
          title: Understand permission requirements for Mac
        - path: /desktop/install/windows-install/
          title: Windows
-       - path: /desktop/windows/permission-requirements/
-         title: Understand permission requirements for Windows
-       - path: /desktop/install/linux-install/
-         title: Linux
 @y
 - sectiontitle: Docker Desktop
   section:
@@ -2609,6 +2605,38 @@ Manuals:
          title: Mac におけるパーミッション要件への理解
        - path: __SUBDIR__/desktop/install/windows-install/
          title: Windows
+@z
+
+@x
+       - sectiontitle: Use the MSI installer {{< badge color=violet text="Early Access" >}}
+         section:
+         - path: /desktop/install/msi/
+           title: Overview
+         - path: /desktop/install/msi/install-and-configure/
+           title: Install and configure
+         - path: /desktop/install/msi/use-intune/
+           title: Use Intune
+         - path: /desktop/install/msi/faq/
+           title: FAQs
+@y
+       - sectiontitle: Use the MSI installer {{< badge color=violet text="Early Access" >}}
+         section:
+         - path: __SUBDIR__/desktop/install/msi/
+           title: Overview
+         - path: __SUBDIR__/desktop/install/msi/install-and-configure/
+           title: Install and configure
+         - path: __SUBDIR__/desktop/install/msi/use-intune/
+           title: Use Intune
+         - path: __SUBDIR__/desktop/install/msi/faq/
+           title: FAQs
+@z
+
+@x
+       - path: /desktop/windows/permission-requirements/
+         title: Understand permission requirements for Windows
+       - path: /desktop/install/linux-install/
+         title: Linux
+@y
        - path: __SUBDIR__/desktop/windows/permission-requirements/
          title: Windows におけるパーミッション要件への理解
        - path: __SUBDIR__/desktop/install/linux-install/
@@ -5124,8 +5152,22 @@ Manuals:
 @z
 
 @x
-    - path: /security/for-admins/configure-sign-in/
-      title: Enforce sign in
+    - sectiontitle: Enforce sign-in
+      section:
+      - path: /security/for-admins/enforce-sign-in/
+        title: Overview
+      - path: /security/for-admins/enforce-sign-in/methods/
+        title: Methods
+@y
+    - sectiontitle: Enforce sign-in
+      section:
+      - path: __SUBDIR__/security/for-admins/enforce-sign-in/
+        title: Overview
+      - path: __SUBDIR__/security/for-admins/enforce-sign-in/methods/
+        title: Methods
+@z
+
+@x
     - path: /security/for-admins/roles-and-permissions/
       title: Roles and permissions
     - path: /security/for-admins/domain-audit/
@@ -5135,8 +5177,6 @@ Manuals:
     - path: /security/for-admins/registry-access-management/
       title: Registry Access Management
 @y
-    - path: __SUBDIR__/security/for-admins/configure-sign-in/
-      title: Enforce sign in
     - path: __SUBDIR__/security/for-admins/roles-and-permissions/
       title: Roles and permissions
     - path: __SUBDIR__/security/for-admins/domain-audit/

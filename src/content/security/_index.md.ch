@@ -78,12 +78,12 @@ title: Security
 @x
 - title: Enforce sign-in
   description: Configure sign-in for members of your teams and organizations.
-  link: /security/for-admins/configure-sign-in/
+  link: /security/for-admins/enforce-sign-in/
   icon: passkey
 @y
 - title: Enforce sign-in
   description: Configure sign-in for members of your teams and organizations.
-  link: __SUBDIR__/security/for-admins/configure-sign-in/
+  link: __SUBDIR__/security/for-admins/enforce-sign-in/
   icon: passkey
 @z
 

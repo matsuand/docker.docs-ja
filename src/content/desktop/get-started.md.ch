@@ -68,9 +68,9 @@ Docker recommends that you authenticate using the **Sign in** option in the top-
 @z
 
 @x
-In large enterprises where admin access is restricted, administrators can [Configure registry.json to enforce sign-in](../security/for-admins/configure-sign-in.md). 
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](../security/for-admins/enforce-sign-in/_index.md). 
 @y
-In large enterprises where admin access is restricted, administrators can [Configure registry.json to enforce sign-in](../security/for-admins/configure-sign-in.md). 
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](../security/for-admins/enforce-sign-in/_index.md). 
 @z
 
 @x

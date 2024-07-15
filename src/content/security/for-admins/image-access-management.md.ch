@@ -52,9 +52,9 @@ For example, a developer, who is part of an organization, building a new contain
 @z
 
 @x
-You need to [configure a registry.json to enforce sign-in](configure-sign-in.md). For Image Access Management to take effect, Docker Desktop users must authenticate to your organization.
+You need to [configure a registry.json to enforce sign-in](enforce-sign-in/_index.md). For Image Access Management to take effect, Docker Desktop users must authenticate to your organization.
 @y
-You need to [configure a registry.json to enforce sign-in](configure-sign-in.md). For Image Access Management to take effect, Docker Desktop users must authenticate to your organization.
+You need to [configure a registry.json to enforce sign-in](enforce-sign-in/_index.md). For Image Access Management to take effect, Docker Desktop users must authenticate to your organization.
 @z
 
 @x
@@ -103,4 +103,16 @@ You need to [configure a registry.json to enforce sign-in](configure-sign-in.md)
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+- [Video: Hardened Desktop Image Access Management](https://www.youtube.com/watch?v=r3QRKHA1A5U)
+@y
+- [Video: Hardened Desktop Image Access Management](https://www.youtube.com/watch?v=r3QRKHA1A5U)
 @z
