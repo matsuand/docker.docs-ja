@@ -3,13 +3,13 @@
 
 @x
 command: docker build
-aliases: docker image build, docker build, docker buildx build, docker builder build
+aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: Build an image from a Dockerfile
 usage: docker build [OPTIONS] PATH | URL | -
 @y
 command: docker build
-aliases: docker image build, docker build, docker buildx build, docker builder build
+aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: Build an image from a Dockerfile
 usage: docker build [OPTIONS] PATH | URL | -

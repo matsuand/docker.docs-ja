@@ -239,7 +239,6 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
 	_index.md  \
-	build.md   \
 	history.md \
 	import.md  \
 	inspect.md \

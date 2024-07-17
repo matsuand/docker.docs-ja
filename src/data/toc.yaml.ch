@@ -4780,27 +4780,23 @@ Manuals:
 @z
 
 @x
-  - sectiontitle: Use...
-    section:
-    - path: /compose/profiles/
-      title: ...service profiles
-    - path: /compose/file-watch/
-      title: ...Compose Watch
-    - path: /compose/production/
-      title: ...Compose in production
-    - path: /compose/use-secrets/
-      title: ...secrets in Compose
+  - path: /compose/profiles/
+    title: Use service profiles
+  - path: /compose/file-watch/
+    title: Use Compose Watch
+  - path: /compose/production/
+    title: Compose in production
+  - path: /compose/use-secrets/
+    title: Secrets in Compose
 @y
-  - sectiontitle: ～～～の利用
-    section:
-    - path: __SUBDIR__/compose/profiles/
-      title: サービスプロファイル
-    - path: __SUBDIR__/compose/file-watch/
-      title: Compose Watch
-    - path: __SUBDIR__/compose/production/
-      title: 本番環境での Compose
-    - path: __SUBDIR__/compose/use-secrets/
-      title: Compose における Secrets
+  - path: __SUBDIR__/compose/profiles/
+    title: サービスプロファイルの利用
+  - path: __SUBDIR__/compose/file-watch/
+    title: Compose Watch の利用
+  - path: __SUBDIR__/compose/production/
+    title: 本番環境での Compose
+  - path: __SUBDIR__/compose/use-secrets/
+    title: Compose における Secrets
 @z
 
 @x

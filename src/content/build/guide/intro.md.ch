@@ -425,11 +425,11 @@ Related information:
 
 @x
 - [Dockerfile reference](../../reference/dockerfile.md)
-- [`docker build` CLI reference](../../reference/cli/docker/image/build.md)
+- [`docker build` CLI reference](../../reference/cli/docker/buildx/build.md)
 - [`docker run` CLI reference](../../reference/cli/docker/container/run.md)
 @y
 - [Dockerfile reference](../../reference/dockerfile.md)
-- [`docker build` CLI reference](../../reference/cli/docker/image/build.md)
+- [`docker build` CLI reference](../../reference/cli/docker/buildx/build.md)
 - [`docker run` CLI reference](../../reference/cli/docker/container/run.md)
 @z
 

@@ -5,28 +5,14 @@
 
 @x
 command: docker buildx build
-aliases: docker buildx build, docker buildx b
+aliases: docker build, docker builder build, docker image build, docker buildx b
 short: Start a build
-long: |-
-    The `buildx build` command starts a build using BuildKit. This command is similar
-    to the UI of `docker build` command and takes the same flags and arguments.
+long: The `docker buildx build` command starts a build using BuildKit.
 @y
 command: docker buildx build
-aliases: docker buildx build, docker buildx b
+aliases: docker build, docker builder build, docker image build, docker buildx b
 short: ビルドの開始
-long: |-
-    The `buildx build` command starts a build using BuildKit. This command is similar
-    to the UI of `docker build` command and takes the same flags and arguments.
-@z
-
-@x
-    For documentation on most of these flags, refer to the [`docker build`
-    documentation](/reference/cli/docker/image/build/).
-    This page describes a subset of the new flags.
-@y
-    For documentation on most of these flags, refer to the [`docker build`
-    documentation](__SUBDIR__/reference/cli/docker/image/build/).
-    This page describes a subset of the new flags.
+long: The `docker buildx build` command starts a build using BuildKit.
 @z
 
 @x
@@ -39,10 +25,8 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x add-host
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: /reference/cli/docker/image/build/#add-host
 @y
       description: 'Add a custom host-to-IP mapping (format: `host:ip`)'
-      details_url: __SUBDIR__/reference/cli/docker/image/build/#add-host
 @z
 
 @x allow
@@ -95,10 +79,8 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x cgroup-parent
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: /reference/cli/docker/image/build/#cgroup-parent
 @y
       description: Set the parent cgroup for the `RUN` instructions during build
-      details_url: __SUBDIR__/reference/cli/docker/image/build/#cgroup-parent
 @z
 
 @x compress
@@ -145,10 +127,8 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x file
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: /reference/cli/docker/image/build/#file
 @y
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
-      details_url: __SUBDIR__/reference/cli/docker/image/build/#file
 @z
 
 @x force-rm
@@ -331,18 +311,14 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x tag
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: /reference/cli/docker/image/build/#tag
 @y
       description: 'Name and optionally a tag (format: `name:tag`)'
-      details_url: __SUBDIR__/reference/cli/docker/image/build/#tag
 @z
 
 @x target
       description: Set the target build stage to build
-      details_url: /reference/cli/docker/image/build/#target
 @y
       description: Set the target build stage to build
-      details_url: __SUBDIR__/reference/cli/docker/image/build/#target
 @z
 
 @x ulimit
@@ -361,9 +337,51 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
 
 @x
 examples: |-
-    ### Create annotations (--annotation) {#annotation}
+    ### Add entries to container hosts file (--add-host) {#add-host}
 @y
 examples: |-
+    ### Add entries to container hosts file (--add-host) {#add-host}
+@z
+
+@x
+    You can add other hosts into a build container's `/etc/hosts` file by using one
+    or more `--add-host` flags. This example adds static addresses for hosts named
+    `my-hostname` and `my_hostname_v6`:
+@y
+    You can add other hosts into a build container's `/etc/hosts` file by using one
+    or more `--add-host` flags. This example adds static addresses for hosts named
+    `my-hostname` and `my_hostname_v6`:
+@z
+
+% snip command...
+
+@x
+    If you need your build to connect to services running on the host, you can use
+    the special `host-gateway` value for `--add-host`. In the following example,
+    build containers resolve `host.docker.internal` to the host's gateway IP.
+@y
+    If you need your build to connect to services running on the host, you can use
+    the special `host-gateway` value for `--add-host`. In the following example,
+    build containers resolve `host.docker.internal` to the host's gateway IP.
+@z
+
+% snip command...
+
+@x
+    You can wrap an IPv6 address in square brackets.
+    `=` and `:` are both valid separators.
+    Both formats in the following example are valid:
+@y
+    You can wrap an IPv6 address in square brackets.
+    `=` and `:` are both valid separators.
+    Both formats in the following example are valid:
+@z
+
+% snip command...
+
+@x
+    ### Create annotations (--annotation) {#annotation}
+@y
     ### Create annotations (--annotation) {#annotation}
 @z
 
@@ -540,9 +558,73 @@ examples: |-
 @z
 
 @x
-    Same as [`docker build` command](/reference/cli/docker/image/build/#build-arg).
+    You can use `ENV` instructions in a Dockerfile to define variable values. These
+    values persist in the built image. Often persistence isn't what you want. Users
+    want to specify variables differently depending on which host they build an
+    image on.
 @y
-    Same as [`docker build` command](__SUBDIR__/reference/cli/docker/image/build/#build-arg).
+    You can use `ENV` instructions in a Dockerfile to define variable values. These
+    values persist in the built image. Often persistence isn't what you want. Users
+    want to specify variables differently depending on which host they build an
+    image on.
+@z
+
+@x
+    A good example is `http_proxy` or source versions for pulling intermediate
+    files. The `ARG` instruction lets Dockerfile authors define values that users
+    can set at build-time using the  `--build-arg` flag:
+@y
+    A good example is `http_proxy` or source versions for pulling intermediate
+    files. The `ARG` instruction lets Dockerfile authors define values that users
+    can set at build-time using the  `--build-arg` flag:
+@z
+
+% snip command...
+
+@x
+    This flag allows you to pass the build-time variables that are
+    accessed like regular environment variables in the `RUN` instruction of the
+    Dockerfile. These values don't persist in the intermediate or final images
+    like `ENV` values do. You must add `--build-arg` for each build argument.
+@y
+    This flag allows you to pass the build-time variables that are
+    accessed like regular environment variables in the `RUN` instruction of the
+    Dockerfile. These values don't persist in the intermediate or final images
+    like `ENV` values do. You must add `--build-arg` for each build argument.
+@z
+
+@x
+    Using this flag doesn't alter the output you see when the build process echoes the`ARG` lines from the
+    Dockerfile.
+@y
+    Using this flag doesn't alter the output you see when the build process echoes the`ARG` lines from the
+    Dockerfile.
+@z
+
+@x
+    For detailed information on using `ARG` and `ENV` instructions, see the
+    [Dockerfile reference](/reference/dockerfile/).
+@y
+    For detailed information on using `ARG` and `ENV` instructions, see the
+    [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
+@z
+
+@x
+    You can also use the `--build-arg` flag without a value, in which case the daemon
+    propagates the value from the local environment into the Docker container it's building:
+@y
+    You can also use the `--build-arg` flag without a value, in which case the daemon
+    propagates the value from the local environment into the Docker container it's building:
+@z
+
+% snip command...
+
+@x
+    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](/reference/cli/docker/container/run/#env)
+    for more information.
+@y
+    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](__SUBDIR__/reference/cli/docker/container/run/#env)
+    for more information.
 @z
 
 @x
@@ -818,18 +900,22 @@ examples: |-
     > Build record [provenance](/build/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
-    > * `min` sets minimal provenance (default).
-    > * `max` sets full provenance.
-    > * `disabled`, `false` or `0` does not set any provenance.
 @y
     > **Note**
     >
     > Build record [provenance](__SUBDIR__/build/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
-    > * `min` sets minimal provenance (default).
-    > * `max` sets full provenance.
-    > * `disabled`, `false` or `0` does not set any provenance.
+@z
+
+@x
+    > - `min` sets minimal provenance (default).
+    > - `max` sets full provenance.
+    > - `disabled`, `false` or `0` doesn't set any provenance.
+@y
+    > - `min` sets minimal provenance (default).
+    > - `max` sets full provenance.
+    > - `disabled`, `false` or `0` doesn't set any provenance.
 @z
 
 @x
@@ -901,33 +987,37 @@ examples: |-
 % snip code...
 
 @x
-    Sets the export action for the build result. In `docker build` all builds finish
-    by creating a container image and exporting it to `docker images`. `buildx` makes
-    this step configurable allowing results to be exported directly to the client,
-    OCI image tarballs, registry etc.
+    Sets the export action for the build result. The default output, when using the
+    `docker` [build driver](/build/drivers/), is a container
+    image exported to the local image store. The `--output` flag makes this step
+    configurable allows export of results directly to the client's filesystem, an
+    OCI image tarball, a registry, and more.
 @y
-    Sets the export action for the build result. In `docker build` all builds finish
-    by creating a container image and exporting it to `docker images`. `buildx` makes
-    this step configurable allowing results to be exported directly to the client,
-    OCI image tarballs, registry etc.
+    Sets the export action for the build result. The default output, when using the
+    `docker` [build driver](__SUBDIR__/build/drivers/), is a container
+    image exported to the local image store. The `--output` flag makes this step
+    configurable allows export of results directly to the client's filesystem, an
+    OCI image tarball, a registry, and more.
 @z
 
 @x
-    Buildx with `docker` driver currently only supports local, tarball exporter and
-    image exporter. `docker-container` driver supports all the exporters.
+    Buildx with `docker` driver only supports the local, tarball, and image
+    [exporters](/build/exporters/). The `docker-container`
+    driver supports all exporters.
 @y
-    Buildx with `docker` driver currently only supports local, tarball exporter and
-    image exporter. `docker-container` driver supports all the exporters.
+    Buildx with `docker` driver only supports the local, tarball, and image
+    [exporters](__SUBDIR__/build/exporters/). The `docker-container`
+    driver supports all exporters.
 @z
 
 @x
-    If just the path is specified as a value, `buildx` will use the local exporter
-    with this path as the destination. If the value is "-", `buildx` will use `tar`
-    exporter and write to `stdout`.
+    If you only specify a filepath as the argument to `--output`, Buildx uses the
+    local exporter. If the value is `-`, Buildx uses the `tar` exporter and writes
+    the output to stdout.
 @y
-    If just the path is specified as a value, `buildx` will use the local exporter
-    with this path as the destination. If the value is "-", `buildx` will use `tar`
-    exporter and write to `stdout`.
+    If you only specify a filepath as the argument to `--output`, Buildx uses the
+    local exporter. If the value is `-`, Buildx uses the `tar` exporter and writes
+    the output to stdout.
 @z
 
 % snip code...
@@ -1154,7 +1244,7 @@ examples: |-
     commands for your system architecture.
     If your kernel supports [`binfmt_misc`](https://en.wikipedia.org/wiki/Binfmt_misc)
     launchers for secondary architectures, buildx will pick them up automatically.
-    Docker desktop releases come with `binfmt_misc` automatically configured for `arm64`
+    Docker Desktop releases come with `binfmt_misc` automatically configured for `arm64`
     and `arm` architectures. You can see what runtime platforms your current builder
     instance supports by running `docker buildx inspect --bootstrap`.
 @y
@@ -1163,20 +1253,18 @@ examples: |-
     commands for your system architecture.
     If your kernel supports [`binfmt_misc`](https://en.wikipedia.org/wiki/Binfmt_misc)
     launchers for secondary architectures, buildx will pick them up automatically.
-    Docker desktop releases come with `binfmt_misc` automatically configured for `arm64`
+    Docker Desktop releases come with `binfmt_misc` automatically configured for `arm64`
     and `arm` architectures. You can see what runtime platforms your current builder
     instance supports by running `docker buildx inspect --bootstrap`.
 @z
 
 @x
     Inside a `Dockerfile`, you can access the current platform value through
-    `TARGETPLATFORM` build argument. Refer to the [`docker build`
-    documentation](/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
+    `TARGETPLATFORM` build argument. Refer to the [Dockerfile reference](/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
     for the full description of automatic platform argument variants .
 @y
     Inside a `Dockerfile`, you can access the current platform value through
-    `TARGETPLATFORM` build argument. Refer to the [`docker build`
-    documentation](__SUBDIR__/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
+    `TARGETPLATFORM` build argument. Refer to the [Dockerfile reference](__SUBDIR__/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
     for the full description of automatic platform argument variants .
 @z
 

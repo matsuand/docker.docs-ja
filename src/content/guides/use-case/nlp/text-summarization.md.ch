@@ -702,9 +702,9 @@ To run the application using Docker:
 @z
 
 @x
-   For more details, see the [docker build CLI reference](/reference/cli/docker/image/build/).
+   For more details, see the [docker build CLI reference](/reference/cli/docker/buildx/build/).
 @y
-   For more details, see the [docker build CLI reference](__SUBDIR__/reference/cli/docker/image/build/).
+   For more details, see the [docker build CLI reference](__SUBDIR__/reference/cli/docker/buildx/build/).
 @z
 
 @x

@@ -5,14 +5,14 @@
 
 @x
 command: docker builder build
-aliases: docker image build, docker build, docker buildx build, docker builder build
+aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |
     See [docker build](/reference/cli/docker/image/build/) for more information.
 usage: docker builder build [OPTIONS] PATH | URL | -
 @y
 command: docker builder build
-aliases: docker image build, docker build, docker buildx build, docker builder build
+aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |
     See [docker build](__SUBDIR__/reference/cli/docker/image/build/) for more information.

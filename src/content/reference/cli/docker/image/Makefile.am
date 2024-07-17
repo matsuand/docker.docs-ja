@@ -4,7 +4,6 @@
 
 copyfiles = \
 	_index.md  \
-	build.md   \
 	history.md \
 	import.md  \
 	inspect.md \

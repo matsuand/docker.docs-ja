@@ -301,10 +301,10 @@ For more information on how to use build arguments, refer to:
 
 @x
 - [`ARG` Dockerfile reference](../../reference/dockerfile.md#arg)
-- [`docker build --build-arg` reference](../../reference/cli/docker/image/build.md#build-arg)
+- [`docker build --build-arg` reference](../../reference/cli/docker/buildx/build.md#build-arg)
 @y
 - [`ARG` Dockerfile reference](../../reference/dockerfile.md#arg)
-- [`docker build --build-arg` reference](../../reference/cli/docker/image/build.md#build-arg)
+- [`docker build --build-arg` reference](../../reference/cli/docker/buildx/build.md#build-arg)
 @z
 
 @x

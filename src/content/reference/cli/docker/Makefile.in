@@ -310,12 +310,13 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	_index.md  \
-	init.md    \
-	inspect.md \
-	login.md   \
-	logout.md  \
-	search.md  \
+	_index.md       \
+	build-legacy.md \
+	init.md         \
+	inspect.md      \
+	login.md        \
+	logout.md       \
+	search.md       \
 	version.md
 
 all: all-recursive

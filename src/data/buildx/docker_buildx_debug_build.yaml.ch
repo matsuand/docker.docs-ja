@@ -5,13 +5,13 @@
 
 @x
 command: docker buildx debug build
-aliases: docker buildx debug build, docker buildx debug b
+aliases: docker build, docker builder build, docker image build, docker buildx b
 short: Start a build
 long: Start a build
 usage: docker buildx debug build [OPTIONS] PATH | URL | -
 @y
 command: docker buildx debug build
-aliases: docker buildx debug build, docker buildx debug b
+aliases: docker build, docker builder build, docker image build, docker buildx b
 short: Start a build
 long: Start a build
 usage: docker buildx debug build [OPTIONS] PATH | URL | -

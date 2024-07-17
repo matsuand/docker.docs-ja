@@ -1,238 +1,194 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 command: docker image build
-aliases: docker image build, docker build, docker buildx build, docker builder build
+aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |-
-    The `docker build` command builds Docker images from a Dockerfile and a
-    "context". A build's context is the set of files located in the specified
-    `PATH` or `URL`. The build process can refer to any of the files in the
-    context. For example, your build can use a [*COPY*](/reference/dockerfile/#copy)
-    instruction to reference a file in the context.
-@y
-command: docker image build
-aliases: docker image build, docker build, docker buildx build, docker builder build
-short: Dockerfile からイメージをビルドします。
-long: |-
-    `docker build` コマンドは Dockerfile と "コンテキスト" (context) から Docker イメージをビルドします。
-    ビルド時のコンテキストとは、`PATH` または `URL` によって指定された場所にあるファイルの集まりのことです。
-    ビルド処理においては、コンテキスト内のどのファイルでも参照できます。
-    たとえばビルドにおいて [*COPY*](__SUBDIR__/reference/dockerfile/#copy) 命令を使う場合、コンテキスト内のファイルを参照することができます。
-@z
-
-@x
-    The `URL` parameter can refer to three kinds of resources: Git repositories,
-    pre-packaged tarball contexts, and plain text files.
-@y
-    `URL` パラメーターは 3 種類のリソースを参照します。
-    Git リポジトリ、パッケージングされた tarball コンテキスト、プレーンなテキストファイルの 3 つです。
-@z
-
-@x
-    ### Git repositories
-@y
-    ### Git リポジトリ {#git-repositories}
-@z
-
-@x
-    When the `URL` parameter points to the location of a Git repository, the
-    repository acts as the build context. The system recursively fetches the
-    repository and its submodules. The commit history isn't preserved. A
-    repository is first pulled into a temporary directory on your local host. After
-    that succeeds, the command sends the directory to the Docker daemon as the context.
-    Local copy gives you the ability to access private repositories using local
-    user credentials, VPNs, and so forth.
-@y
-    `URL` パラメーターが Git リポジトリの場所を指している場合、そのリポジトリがビルドコンテキストとして扱われます。
-    システムはリポジトリとサブモジュールを再帰的にフェッチします。
-    コミット履歴は保持されません。
-    リポジトリは初めに、ローカルホスト内の一時的なディレクトリにプルされます。
-    これが正常処理されると、ディレクトリ内容がコンテキストとして Docker デーモンに送信されます。
-    ローカルにコピーが存在しているなら、プライベートリポジトリにもアクセス可能になります。
-    その際にはローカルにあるユーザー認証情報、VPN 情報などが用いられます。
-@z
-
-@x
     > **Note**
     >
-    > If the `URL` parameter contains a fragment the system recursively clones
-    > the repository and its submodules.
-@y
-    > **メモ**
+    > This page refers to the **legacy implementation** of `docker build`,
+    > using the legacy (pre-BuildKit) build backend.
+    > This configuration is only relevant if you're building Windows containers.
     >
-    > `URL` パラメーターが部分的なものであった場合、システムはそのリポジトリやサブモジュールを再帰的にクローンします。
+    > For information about the default `docker build`, using Buildx,
+    > see [`docker buildx build`](/reference/cli/docker/build/).
+@y
+command: docker image build
+aliases: docker image build, docker build, docker builder build
+short: Build an image from a Dockerfile
+long: |-
+    > **Note**
+    >
+    > This page refers to the **legacy implementation** of `docker build`,
+    > using the legacy (pre-BuildKit) build backend.
+    > This configuration is only relevant if you're building Windows containers.
+    >
+    > For information about the default `docker build`, using Buildx,
+    > see [`docker buildx build`](/reference/cli/docker/build/).
 @z
 
 @x
-    Git URLs accept context configuration in their fragment section, separated by a
-    colon (`:`).  The first part represents the reference that Git checks out,
-    and can be either a branch, a tag, or a remote reference. The second part
-    represents a subdirectory inside the repository used as a build
-    context.
+    When building with legacy builder, images are created from a Dockerfile by
+    running a sequence of [commits](/reference/cli/docker/container/commit/). This process is
+    inefficient and slow compared to using BuildKit, which is why this build
+    strategy is deprecated for all use cases except for building Windows
+    containers. It's still useful for building Windows containers because BuildKit
+    doesn't yet have full feature parity for Windows.
 @y
-    Git URL では、コンテキスト設定にあたって URL の部分指定が可能です。
-    部分指定にはコロン（`:`）を使って区切ります。
-    コロンより前の 1 つめの項目として Git がチェックアウトを行う URL を指定します。
-    これはブランチ、タグ、リモートリファレンスのいずれでも可能です。
-    2 つめの項目には、そのリポジトリ内のサブディレクトリを指定します。
-    このサブディレクトリがビルドコンテキストとして用いられることになります。
+    When building with legacy builder, images are created from a Dockerfile by
+    running a sequence of [commits](/reference/cli/docker/container/commit/). This process is
+    inefficient and slow compared to using BuildKit, which is why this build
+    strategy is deprecated for all use cases except for building Windows
+    containers. It's still useful for building Windows containers because BuildKit
+    doesn't yet have full feature parity for Windows.
 @z
 
 @x
-    For example, run this command to use a directory called `docker` in the branch
-    `container`:
+    Builds invoked with `docker build` use Buildx (and BuildKit) by default, unless:
 @y
-    たとえば `container` ブランチ内の `docker` というディレクトリを利用するには、以下のように実行します。
-@z
-
-% snip command...
-
-@x
-    The following table represents all the valid suffixes with their build
-    contexts:
-@y
-    以下に示す表は、ビルドコンテキストとして有効なサフィックス指定の例です。
+    Builds invoked with `docker build` use Buildx (and BuildKit) by default, unless:
 @z
 
 @x
-    | Build Syntax Suffix            | Commit Used           | Build Context Used |
-    |--------------------------------|-----------------------|--------------------|
-    | `myrepo.git`                   | `refs/heads/master`   | `/`                |
-    | `myrepo.git#mytag`             | `refs/tags/mytag`     | `/`                |
-    | `myrepo.git#mybranch`          | `refs/heads/mybranch` | `/`                |
-    | `myrepo.git#pull/42/head`      | `refs/pull/42/head`   | `/`                |
-    | `myrepo.git#:myfolder`         | `refs/heads/master`   | `/myfolder`        |
-    | `myrepo.git#master:myfolder`   | `refs/heads/master`   | `/myfolder`        |
-    | `myrepo.git#mytag:myfolder`    | `refs/tags/mytag`     | `/myfolder`        |
-    | `myrepo.git#mybranch:myfolder` | `refs/heads/mybranch` | `/myfolder`        |
+    - You're running Docker Engine in Windows container mode
+    - You explicitly opt out of using BuildKit by setting the environment variable `DOCKER_BUILDKIT=0`.
 @y
-    | ビルド時のサフィックス指定例   | 利用されるコミット    | 利用されるビルドコンテキスト |
-    |--------------------------------|-----------------------|--------------------|
-    | `myrepo.git`                   | `refs/heads/master`   | `/`                |
-    | `myrepo.git#mytag`             | `refs/tags/mytag`     | `/`                |
-    | `myrepo.git#mybranch`          | `refs/heads/mybranch` | `/`                |
-    | `myrepo.git#pull/42/head`      | `refs/pull/42/head`   | `/`                |
-    | `myrepo.git#:myfolder`         | `refs/heads/master`   | `/myfolder`        |
-    | `myrepo.git#master:myfolder`   | `refs/heads/master`   | `/myfolder`        |
-    | `myrepo.git#mytag:myfolder`    | `refs/tags/mytag`     | `/myfolder`        |
-    | `myrepo.git#mybranch:myfolder` | `refs/heads/mybranch` | `/myfolder`        |
+    - You're running Docker Engine in Windows container mode
+    - You explicitly opt out of using BuildKit by setting the environment variable `DOCKER_BUILDKIT=0`.
 @z
 
 @x
-    ### Tarball contexts
+    The descriptions on this page only covers information that's exclusive to the
+    legacy builder, and cases where behavior in the legacy builder deviates from
+    behavior in BuildKit. For information about features and flags that are common
+    between the legacy builder and BuildKit, such as `--tag` and `--target`, refer
+    to the documentation for [`docker buildx build`](/reference/cli/docker/buildx/build/).
 @y
-    ### Tarball コンテキスト {#tarball-contexts}
+    The descriptions on this page only covers information that's exclusive to the
+    legacy builder, and cases where behavior in the legacy builder deviates from
+    behavior in BuildKit. For information about features and flags that are common
+    between the legacy builder and BuildKit, such as `--tag` and `--target`, refer
+    to the documentation for [`docker buildx build`](/reference/cli/docker/buildx/build/).
 @z
 
 @x
-    If you pass a URL to a remote tarball, the command sends the URL itself to the
-    daemon:
+    ### Build context with the legacy builder
 @y
-    URL にリモートの tarball を指定した場合、URL がそのままデーモンに送信されます。
-@z
-
-% snip command...
-
-@x
-    The host running the Docker daemon performs the download operation,
-    which isn't necessarily the same host that issued the build command.
-    The Docker daemon fetches `context.tar.gz` and uses it as the
-    build context. Tarball contexts must be tar archives conforming to the standard
-    `tar` Unix format and can be compressed with any one of the `xz`, `bzip2`,
-    `gzip` or `identity` (no compression) formats.
-@y
-    Docker デーモンが稼働しているホストは、ダウンロード処理を実現します。
-    そのホストは build コマンドが実行されたホストと同じである必要はありません。
-    Docker デーモンは `context.tar.gz` を取得して、これをビルドコンテキストとして利用します。
-    Tarball コンテキストは UNIX `tar` フォーマット標準に適合した tar アーカイブである必要があります。
-    これを `xz`、`bzip2`、`gzip` により圧縮したフォーマットも受け付けます。
-    `identity`（圧縮なし）のフォーマットも利用できます。
+    ### Build context with the legacy builder
 @z
 
 @x
-    ### Text files
+    The build context is the positional argument you pass when invoking the build
+    command. In the following example, the context is `.`, meaning current the
+    working directory.
 @y
-    ### テキストファイル {#text-files}
+    The build context is the positional argument you pass when invoking the build
+    command. In the following example, the context is `.`, meaning current the
+    working directory.
 @z
 
 @x
-    Instead of specifying a context, you can pass a single `Dockerfile` in the
-    `URL` or pipe the file in via `STDIN`. To pipe a `Dockerfile` from `STDIN`:
+    ```console
+    $ docker build .
+    ```
 @y
-    コンテキストを指定するのではなく、1 つの Dockerfile を指定することができます。
-    つまりそのファイル内容を、`STDIN` を介してパイプ入力します。
-    `Dockerfile` を `STDIN` からパイプ入力するには、以下のようにします。
-@z
-
-% snip command...
-
-@x
-    With PowerShell on Windows, you run:
-@y
-    Windows における Powershell 上では以下のようにします。
-@z
-
-% snip command...
-
-@x
-    If you use `STDIN` or specify a `URL` pointing to a plain text file, the daemon
-    places the contents into a `Dockerfile`, and ignores any `-f`, `--file`
-    option. In this scenario, there is no context.
-@y
-    `STDIN` を利用するか `URL` によりプレーンテキストファイルを指定した場合、デーモンはその内容を `Dockerfile` に書き入れます。
-    この場合 `-f` や `--file` オプションは無視されます。
-    この状況では、コンテキストは存在しないものとなります。
+    ```console
+    $ docker build .
+    ```
 @z
 
 @x
-    By default the `docker build` command looks for a `Dockerfile` at the root
-    of the build context. The `-f`, `--file`, option lets you specify the path to
-    an alternative file to use instead. This is useful in cases that use the same
-    set of files for multiple builds. The path must be to a file within the
-    build context. Relative path are interpreted as relative to the root of the
-    context.
+    When using the legacy builder, the build context is sent over to the daemon in
+    its entirety. With BuildKit, only the files you use in your builds are
+    transmitted. The legacy builder doesn't calculate which files it needs
+    beforehand. This means that for builds with a large context, context transfer
+    can take a long time, even if you're only using a subset of the files included
+    in the context.
 @y
-    `docker build` コマンドが `Dockerfile` を探しにいく場所は、デフォルトではビルドコンテキストのルートディレクトリです。
-    `-f` や `--file` オプションを使うと、別のファイルを利用するように指定できます。
-    これは同一のファイル群を使って、ビルドを何度か行う場合に便利です。
-    パスはビルドコンテキスト内のファイルを表わしていなければなりません。
-    相対パスが指定された場合は、コンテキストのルートからの相対パスと解釈されます。
+    When using the legacy builder, the build context is sent over to the daemon in
+    its entirety. With BuildKit, only the files you use in your builds are
+    transmitted. The legacy builder doesn't calculate which files it needs
+    beforehand. This means that for builds with a large context, context transfer
+    can take a long time, even if you're only using a subset of the files included
+    in the context.
 @z
 
 @x
-    In most cases, it's best to put each Dockerfile in an empty directory. Then,
-    add to that directory only the files needed for building the Dockerfile. To
-    increase the build's performance, you can exclude files and directories by
-    adding a `.dockerignore` file to that directory as well. For information on
-    creating one, see the [.dockerignore file](/reference/dockerfile/#dockerignore-file).
+    When using the legacy builder, it's therefore extra important that you
+    carefully consider what files you include in the context you specify. Use a
+    [`.dockerignore`](/build/building/context/#dockerignore-files)
+    file to exclude files and directories that you don't require in your build from
+    being sent as part of the build context.
 @y
-    In most cases, it's best to put each Dockerfile in an empty directory. Then,
-    add to that directory only the files needed for building the Dockerfile. To
-    increase the build's performance, you can exclude files and directories by
-    adding a `.dockerignore` file to that directory as well. For information on
-    creating one, see the [.dockerignore file](__SUBDIR__/reference/dockerfile/#dockerignore-file).
+    When using the legacy builder, it's therefore extra important that you
+    carefully consider what files you include in the context you specify. Use a
+    [`.dockerignore`](/build/building/context/#dockerignore-files)
+    file to exclude files and directories that you don't require in your build from
+    being sent as part of the build context.
 @z
 
 @x
-    If the Docker client loses connection to the daemon, it cancels the build.
-    This happens if you interrupt the Docker client with `CTRL-c` or if the Docker
-    client is killed for any reason. If the build initiated a pull which is still
-    running at the time the build is cancelled, the client also cancels the pull.
+    #### Accessing paths outside the build context
 @y
-    If the Docker client loses connection to the daemon, it cancels the build.
-    This happens if you interrupt the Docker client with `CTRL-c` or if the Docker
-    client is killed for any reason. If the build initiated a pull which is still
-    running at the time the build is cancelled, the client also cancels the pull.
+    #### Accessing paths outside the build context
+@z
+
+@x
+    The legacy builder will error out if you try to access files outside of the
+    build context using relative paths in your Dockerfile.
+@y
+    The legacy builder will error out if you try to access files outside of the
+    build context using relative paths in your Dockerfile.
+@z
+
+@x
+    ```dockerfile
+    FROM alpine
+    COPY ../../some-dir .
+    ```
+@y
+    ```dockerfile
+    FROM alpine
+    COPY ../../some-dir .
+    ```
+@z
+
+@x
+    ```console
+    $ docker build .
+    ...
+    Step 2/2 : COPY ../../some-dir .
+    COPY failed: forbidden path outside the build context: ../../some-dir ()
+    ```
+@y
+    ```console
+    $ docker build .
+    ...
+    Step 2/2 : COPY ../../some-dir .
+    COPY failed: forbidden path outside the build context: ../../some-dir ()
+    ```
+@z
+
+@x
+    BuildKit on the other hand strips leading relative paths that traverse outside
+    of the build context. Re-using the previous example, the path `COPY
+    ../../some-dir .` evaluates to `COPY some-dir .` with BuildKit.
+@y
+    BuildKit on the other hand strips leading relative paths that traverse outside
+    of the build context. Re-using the previous example, the path `COPY
+    ../../some-dir .` evaluates to `COPY some-dir .` with BuildKit.
 @z
 
 @x
 usage: docker image build [OPTIONS] PATH | URL | -
+pname: docker image
+plink: docker_image.yaml
 @y
 usage: docker image build [OPTIONS] PATH | URL | -
+pname: docker image
+plink: docker_image.yaml
 @z
 
 % options:
@@ -427,397 +383,9 @@ usage: docker image build [OPTIONS] PATH | URL | -
 
 @x
 examples: |-
-    ### Build with PATH
+    ### Specify isolation technology for container (--isolation) {#isolation}
 @y
 examples: |-
-    ### Build with PATH
-@z
-
-% snip command...
-
-@x
-    This example specifies that the `PATH` is `.`, and so `tar`s all the files in the
-    local directory and sends them to the Docker daemon. The `PATH` specifies
-    where to find the files for the "context" of the build on the Docker daemon.
-    Remember that the daemon could be running on a remote machine and that no
-    parsing of the Dockerfile happens at the client side (where you're running
-    `docker build`). That means that all the files at `PATH` are sent, not just
-    the ones listed to [`ADD`](/reference/dockerfile/#add)
-    in the Dockerfile.
-@y
-    This example specifies that the `PATH` is `.`, and so `tar`s all the files in the
-    local directory and sends them to the Docker daemon. The `PATH` specifies
-    where to find the files for the "context" of the build on the Docker daemon.
-    Remember that the daemon could be running on a remote machine and that no
-    parsing of the Dockerfile happens at the client side (where you're running
-    `docker build`). That means that all the files at `PATH` are sent, not just
-    the ones listed to [`ADD`](__SUBDIR__/reference/dockerfile/#add)
-    in the Dockerfile.
-@z
-
-@x
-    The transfer of context from the local machine to the Docker daemon is what the
-    `docker` client means when you see the "Sending build context" message.
-@y
-    The transfer of context from the local machine to the Docker daemon is what the
-    `docker` client means when you see the "Sending build context" message.
-@z
-
-@x
-    If you wish to keep the intermediate containers after the build is complete,
-    you must use `--rm=false`. This doesn't affect the build cache.
-@y
-    If you wish to keep the intermediate containers after the build is complete,
-    you must use `--rm=false`. This doesn't affect the build cache.
-@z
-
-@x
-    ### Build with URL
-@y
-    ### Build with URL
-@z
-
-% snip command...
-
-@x
-    This clones the GitHub repository, using the cloned repository as context,
-    and the Dockerfile at the root of the repository. You can
-    specify an arbitrary Git repository by using the `git://` or `git@` scheme.
-@y
-    This clones the GitHub repository, using the cloned repository as context,
-    and the Dockerfile at the root of the repository. You can
-    specify an arbitrary Git repository by using the `git://` or `git@` scheme.
-@z
-
-% snip command...
-
-@x
-    This sends the URL `http://server/ctx.tar.gz` to the Docker daemon, which
-    downloads and extracts the referenced tarball. The `-f ctx/Dockerfile`
-    parameter specifies a path inside `ctx.tar.gz` to the `Dockerfile` used
-    to build the image. Any `ADD` commands in that `Dockerfile` that refer to local
-    paths must be relative to the root of the contents inside `ctx.tar.gz`. In the
-    example above, the tarball contains a directory `ctx/`, so the `ADD
-    ctx/container.cfg /` operation works as expected.
-@y
-    This sends the URL `http://server/ctx.tar.gz` to the Docker daemon, which
-    downloads and extracts the referenced tarball. The `-f ctx/Dockerfile`
-    parameter specifies a path inside `ctx.tar.gz` to the `Dockerfile` used
-    to build the image. Any `ADD` commands in that `Dockerfile` that refer to local
-    paths must be relative to the root of the contents inside `ctx.tar.gz`. In the
-    example above, the tarball contains a directory `ctx/`, so the `ADD
-    ctx/container.cfg /` operation works as expected.
-@z
-
-@x
-    ### Build with `-`
-@y
-    ### Build with `-`
-@z
-
-% snip command...
-
-@x
-    This example reads a Dockerfile from `STDIN` without context. Due to the lack of a
-    context, the command doesn't send contents of any local directory to the Docker daemon.
-    Since there is no context, a Dockerfile `ADD` only works if it refers to a
-    remote URL.
-@y
-    This example reads a Dockerfile from `STDIN` without context. Due to the lack of a
-    context, the command doesn't send contents of any local directory to the Docker daemon.
-    Since there is no context, a Dockerfile `ADD` only works if it refers to a
-    remote URL.
-@z
-
-% snip command...
-
-@x
-    This example builds an image for a compressed context read from `STDIN`.
-    Supported formats are: `bzip2`, `gzip` and `xz`.
-@y
-    This example builds an image for a compressed context read from `STDIN`.
-    Supported formats are: `bzip2`, `gzip` and `xz`.
-@z
-
-@x
-    ### Use a .dockerignore file
-@y
-    ### Use a .dockerignore file
-@z
-
-% snip command...
-
-@x
-    This example shows the use of the `.dockerignore` file to exclude the `.git`
-    directory from the context. You can see its effect in the changed size of the
-    uploaded context. The builder reference contains detailed information on
-    [creating a .dockerignore file](/reference/dockerfile/#dockerignore-file).
-@y
-    This example shows the use of the `.dockerignore` file to exclude the `.git`
-    directory from the context. You can see its effect in the changed size of the
-    uploaded context. The builder reference contains detailed information on
-    [creating a .dockerignore file](__SUBDIR__/reference/dockerfile/#dockerignore-file).
-@z
-
-@x
-    When using the [BuildKit backend](/build/buildkit/),
-    `docker build` searches for a `.dockerignore` file relative to the Dockerfile
-    name. For example, running `docker build -f myapp.Dockerfile .` first looks
-    for an ignore file named `myapp.Dockerfile.dockerignore`. If it can't find such a file,
-    if present, it uses the `.dockerignore` file. Using a Dockerfile based
-    `.dockerignore` is useful if a project contains multiple Dockerfiles that expect
-    to ignore different sets of files.
-@y
-    When using the [BuildKit backend](__SUBDIR__/build/buildkit/),
-    `docker build` searches for a `.dockerignore` file relative to the Dockerfile
-    name. For example, running `docker build -f myapp.Dockerfile .` first looks
-    for an ignore file named `myapp.Dockerfile.dockerignore`. If it can't find such a file,
-    if present, it uses the `.dockerignore` file. Using a Dockerfile based
-    `.dockerignore` is useful if a project contains multiple Dockerfiles that expect
-    to ignore different sets of files.
-@z
-
-@x
-    ### Tag an image (-t, --tag) {#tag}
-@y
-    ### Tag an image (-t, --tag) {#tag}
-@z
-
-% snip command...
-
-@x
-    This examples builds in the same way as the previous example, but it then tags the resulting
-    image. The repository name will be `vieux/apache` and the tag `2.0`.
-@y
-    This examples builds in the same way as the previous example, but it then tags the resulting
-    image. The repository name will be `vieux/apache` and the tag `2.0`.
-@z
-
-@x
-    [Read more about valid tags](/reference/cli/docker/image/tag/).
-@y
-    [Read more about valid tags](__SUBDIR__/reference/cli/docker/image/tag/).
-@z
-
-@x
-    You can apply multiple tags to an image. For example, you can apply the `latest`
-    tag to a newly built image and add another tag that references a specific
-    version.
-@y
-    You can apply multiple tags to an image. For example, you can apply the `latest`
-    tag to a newly built image and add another tag that references a specific
-    version.
-@z
-
-@x
-    For example, to tag an image both as `whenry/fedora-jboss:latest` and
-    `whenry/fedora-jboss:v2.1`, use the following:
-@y
-    For example, to tag an image both as `whenry/fedora-jboss:latest` and
-    `whenry/fedora-jboss:v2.1`, use the following:
-@z
-
-% snip command...
-
-@x
-    ### Specify a Dockerfile (-f, --file) {#file}
-@y
-    ### Specify a Dockerfile (-f, --file) {#file}
-@z
-
-% snip command...
-
-@x
-    This uses a file called `Dockerfile.debug` for the build instructions
-    instead of `Dockerfile`.
-@y
-    This uses a file called `Dockerfile.debug` for the build instructions
-    instead of `Dockerfile`.
-@z
-
-% snip command...
-
-@x
-    The above command uses the current directory as the build context and reads
-    a Dockerfile from stdin.
-@y
-    The above command uses the current directory as the build context and reads
-    a Dockerfile from stdin.
-@z
-
-% snip command...
-
-@x
-    The above commands build the current build context (as specified by the
-    `.`) twice. Once using a debug version of a `Dockerfile` and once using a
-    production version.
-@y
-    The above commands build the current build context (as specified by the
-    `.`) twice. Once using a debug version of a `Dockerfile` and once using a
-    production version.
-@z
-
-% snip command...
-
-@x
-    These two `docker build` commands do the exact same thing. They both use the
-    contents of the `debug` file instead of looking for a `Dockerfile` and use
-    `/home/me/myapp` as the root of the build context. Note that `debug` is in the
-    directory structure of the build context, regardless of how you refer to it on
-    the command line.
-@y
-    These two `docker build` commands do the exact same thing. They both use the
-    contents of the `debug` file instead of looking for a `Dockerfile` and use
-    `/home/me/myapp` as the root of the build context. Note that `debug` is in the
-    directory structure of the build context, regardless of how you refer to it on
-    the command line.
-@z
-
-@x
-    > **Note**
-    >
-    > `docker build` returns a `no such file or directory` error if the
-    > file or directory doesn't exist in the uploaded context. This may
-    > happen if there is no context, or if you specify a file that's
-    > elsewhere on the Host system. The context is limited to the current
-    > directory (and its children) for security reasons, and to ensure
-    > repeatable builds on remote Docker hosts. This is also the reason why
-    > `ADD ../file` doesn't work.
-@y
-    > **Note**
-    >
-    > `docker build` returns a `no such file or directory` error if the
-    > file or directory doesn't exist in the uploaded context. This may
-    > happen if there is no context, or if you specify a file that's
-    > elsewhere on the Host system. The context is limited to the current
-    > directory (and its children) for security reasons, and to ensure
-    > repeatable builds on remote Docker hosts. This is also the reason why
-    > `ADD ../file` doesn't work.
-@z
-
-@x
-    ### Use a custom parent cgroup (--cgroup-parent) {#cgroup-parent}
-@y
-    ### Use a custom parent cgroup (--cgroup-parent) {#cgroup-parent}
-@z
-
-@x
-    When you run `docker build` with the `--cgroup-parent` option, the daemon runs the containers
-    used in the build with the [corresponding `docker run` flag](/reference/cli/docker/container/run/#cgroup-parent).
-@y
-    When you run `docker build` with the `--cgroup-parent` option, the daemon runs the containers
-    used in the build with the [corresponding `docker run` flag](__SUBDIR__/reference/cli/docker/container/run/#cgroup-parent).
-@z
-
-@x
-    ### Set ulimits in container (--ulimit) {#ulimit}
-@y
-    ### Set ulimits in container (--ulimit) {#ulimit}
-@z
-
-@x
-    Using the `--ulimit` option with `docker build` causes the daemon to start each build step's
-    container using those [`--ulimit` flag values](/reference/cli/docker/container/run/#ulimit).
-@y
-    Using the `--ulimit` option with `docker build` causes the daemon to start each build step's
-    container using those [`--ulimit` flag values](__SUBDIR__/reference/cli/docker/container/run/#ulimit).
-@z
-
-@x
-    ### Set build-time variables (--build-arg) {#build-arg}
-@y
-    ### Set build-time variables (--build-arg) {#build-arg}
-@z
-
-@x
-    You can use `ENV` instructions in a Dockerfile to define variable values. These
-    values persist in the built image. Often persistence isn't what you want. Users
-    want to specify variables differently depending on which host they build an
-    image on.
-@y
-    You can use `ENV` instructions in a Dockerfile to define variable values. These
-    values persist in the built image. Often persistence isn't what you want. Users
-    want to specify variables differently depending on which host they build an
-    image on.
-@z
-
-@x
-    A good example is `http_proxy` or source versions for pulling intermediate
-    files. The `ARG` instruction lets Dockerfile authors define values that users
-    can set at build-time using the  `--build-arg` flag:
-@y
-    A good example is `http_proxy` or source versions for pulling intermediate
-    files. The `ARG` instruction lets Dockerfile authors define values that users
-    can set at build-time using the  `--build-arg` flag:
-@z
-
-% snip command...
-
-@x
-    This flag allows you to pass the build-time variables that are
-    accessed like regular environment variables in the `RUN` instruction of the
-    Dockerfile. These values don't persist in the intermediate or final images
-    like `ENV` values do. You must add `--build-arg` for each build argument.
-@y
-    This flag allows you to pass the build-time variables that are
-    accessed like regular environment variables in the `RUN` instruction of the
-    Dockerfile. These values don't persist in the intermediate or final images
-    like `ENV` values do. You must add `--build-arg` for each build argument.
-@z
-
-@x
-    Using this flag doesn't alter the output you see when the build process echoes the`ARG` lines from the
-    Dockerfile.
-@y
-    Using this flag doesn't alter the output you see when the build process echoes the`ARG` lines from the
-    Dockerfile.
-@z
-
-@x
-    For detailed information on using `ARG` and `ENV` instructions, see the
-    [Dockerfile reference](/reference/dockerfile/).
-@y
-    For detailed information on using `ARG` and `ENV` instructions, see the
-    [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
-@z
-
-@x
-    You can also use the `--build-arg` flag without a value, in which case the daemon
-    propagates the value from the local environment into the Docker container it's building:
-@y
-    You can also use the `--build-arg` flag without a value, in which case the daemon
-    propagates the value from the local environment into the Docker container it's building:
-@z
-
-% snip command...
-
-@x
-    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](/reference/cli/docker/container/run/#env)
-    for more information.
-@y
-    This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](__SUBDIR__/reference/cli/docker/container/run/#env)
-    for more information.
-@z
-
-@x
-    ### Optional security options (--security-opt) {#security-opt}
-@y
-    ### Optional security options (--security-opt) {#security-opt}
-@z
-
-@x
-    This flag is only supported on a daemon running on Windows, and only supports
-    the `credentialspec` option. The `credentialspec` must be in the format
-    `file://spec.txt` or `registry://keyname`.
-@y
-    This flag is only supported on a daemon running on Windows, and only supports
-    the `credentialspec` option. The `credentialspec` must be in the format
-    `file://spec.txt` or `registry://keyname`.
-@z
-
-@x
-    ### Specify isolation technology for container (--isolation) {#isolation}
-@y
     ### Specify isolation technology for container (--isolation) {#isolation}
 @z
 
@@ -854,328 +422,19 @@ examples: |-
 @z
 
 @x
-    ### Add entries to container hosts file (--add-host) {#add-host}
+    ### Optional security options (--security-opt) {#security-opt}
 @y
-    ### Add entries to container hosts file (--add-host) {#add-host}
+    ### Optional security options (--security-opt) {#security-opt}
 @z
 
 @x
-    You can add other hosts into a build container's `/etc/hosts` file by using one
-    or more `--add-host` flags. This example adds static addresses for hosts named
-    `my-hostname` and `my_hostname_v6`:
+    This flag is only supported on a daemon running on Windows, and only supports
+    the `credentialspec` option. The `credentialspec` must be in the format
+    `file://spec.txt` or `registry://keyname`.
 @y
-    You can add other hosts into a build container's `/etc/hosts` file by using one
-    or more `--add-host` flags. This example adds static addresses for hosts named
-    `my-hostname` and `my_hostname_v6`:
-@z
-
-% snip command...
-
-@x
-    If you need your build to connect to services running on the host, you can use
-    the special `host-gateway` value for `--add-host`. In the following example,
-    build containers resolve `host.docker.internal` to the host's gateway IP.
-@y
-    If you need your build to connect to services running on the host, you can use
-    the special `host-gateway` value for `--add-host`. In the following example,
-    build containers resolve `host.docker.internal` to the host's gateway IP.
-@z
-
-% snip command...
-
-@x
-    You can wrap an IPv6 address in square brackets.
-    `=` and `:` are both valid separators.
-    Both formats in the following example are valid:
-@y
-    You can wrap an IPv6 address in square brackets.
-    `=` and `:` are both valid separators.
-    Both formats in the following example are valid:
-@z
-
-% snip command...
-
-@x
-    ### Specifying target build stage (--target) {#target}
-@y
-    ### Specifying target build stage (--target) {#target}
-@z
-
-@x
-    When building a Dockerfile with multiple build stages, you can use the `--target`
-    option to specify an intermediate build stage by name as a final stage for the
-    resulting image. The daemon skips commands after the target stage.
-@y
-    When building a Dockerfile with multiple build stages, you can use the `--target`
-    option to specify an intermediate build stage by name as a final stage for the
-    resulting image. The daemon skips commands after the target stage.
-@z
-
-% snip code...
-% snip command...
-
-@x
-    ### Custom build outputs (--output) {#output}
-@y
-    ### Custom build outputs (--output) {#output}
-@z
-
-@x
-    > **Note**
-    >
-    > This feature requires the BuildKit backend. You can either
-    > [enable BuildKit](/build/buildkit/#getting-started) or
-    > use the [buildx](https://github.com/docker/buildx) plugin which provides more
-    > output type options.
-@y
-    > **Note**
-    >
-    > This feature requires the BuildKit backend. You can either
-    > [enable BuildKit](__SUBDIR__/build/buildkit/#getting-started) or
-    > use the [buildx](https://github.com/docker/buildx) plugin which provides more
-    > output type options.
-@z
-
-@x
-    By default, a local container image is created from the build result. The
-    `--output` (or `-o`) flag allows you to override this behavior, and specify a
-    custom exporter. Custom exporters allow you to export the build
-    artifacts as files on the local filesystem instead of a Docker image, which can
-    be useful for generating local binaries, code generation etc.
-@y
-    By default, a local container image is created from the build result. The
-    `--output` (or `-o`) flag allows you to override this behavior, and specify a
-    custom exporter. Custom exporters allow you to export the build
-    artifacts as files on the local filesystem instead of a Docker image, which can
-    be useful for generating local binaries, code generation etc.
-@z
-
-@x
-    The value for `--output` is a CSV-formatted string defining the exporter type
-    and options that supports `local` and `tar` exporters.
-@y
-    The value for `--output` is a CSV-formatted string defining the exporter type
-    and options that supports `local` and `tar` exporters.
-@z
-
-@x
-    The `local` exporter writes the resulting build files to a directory on the client side. The
-    `tar` exporter is similar but writes the files as a single tarball (`.tar`).
-@y
-    The `local` exporter writes the resulting build files to a directory on the client side. The
-    `tar` exporter is similar but writes the files as a single tarball (`.tar`).
-@z
-
-@x
-    If you specify no type, the value defaults to the output directory of the local
-    exporter. Use a hyphen (`-`) to write the output tarball to standard output
-    (`STDOUT`).
-@y
-    If you specify no type, the value defaults to the output directory of the local
-    exporter. Use a hyphen (`-`) to write the output tarball to standard output
-    (`STDOUT`).
-@z
-
-@x
-    The following example builds an image using the current directory (`.`) as a build
-    context, and exports the files to a directory named `out` in the current directory.
-    If the directory does not exist, Docker creates the directory automatically:
-@y
-    The following example builds an image using the current directory (`.`) as a build
-    context, and exports the files to a directory named `out` in the current directory.
-    If the directory does not exist, Docker creates the directory automatically:
-@z
-
-% snip command...
-
-@x
-    The example above uses the short-hand syntax, omitting the `type` options, and
-    thus uses the default (`local`) exporter. The example below shows the equivalent
-    using the long-hand CSV syntax, specifying both `type` and `dest` (destination
-    path):
-@y
-    The example above uses the short-hand syntax, omitting the `type` options, and
-    thus uses the default (`local`) exporter. The example below shows the equivalent
-    using the long-hand CSV syntax, specifying both `type` and `dest` (destination
-    path):
-@z
-
-% snip command...
-
-@x
-    Use the `tar` type to export the files as a `.tar` archive:
-@y
-    Use the `tar` type to export the files as a `.tar` archive:
-@z
-
-% snip command...
-
-@x
-    The example below shows the equivalent when using the short-hand syntax. In this
-    case, `-` is specified as destination, which automatically selects the `tar` type,
-    and writes the output tarball to standard output, which is then redirected to
-    the `out.tar` file:
-@y
-    The example below shows the equivalent when using the short-hand syntax. In this
-    case, `-` is specified as destination, which automatically selects the `tar` type,
-    and writes the output tarball to standard output, which is then redirected to
-    the `out.tar` file:
-@z
-
-% snip command...
-
-@x
-    The `--output` option exports all files from the target stage. A common pattern
-    for exporting only specific files is to do multi-stage builds and to copy the
-    desired files to a new scratch stage with [`COPY --from`](/reference/dockerfile/#copy).
-@y
-    The `--output` option exports all files from the target stage. A common pattern
-    for exporting only specific files is to do multi-stage builds and to copy the
-    desired files to a new scratch stage with [`COPY --from`](__SUBDIR__/reference/dockerfile/#copy).
-@z
-
-@x
-    The example, the `Dockerfile` below uses a separate stage to collect the
-    build artifacts for exporting:
-@y
-    The example, the `Dockerfile` below uses a separate stage to collect the
-    build artifacts for exporting:
-@z
-
-% snip code...
-
-@x
-    When building the Dockerfile with the `-o` option, the command only exports the files from the final
-    stage to the `out` directory, in this case, the `vndr` binary:
-@y
-    When building the Dockerfile with the `-o` option, the command only exports the files from the final
-    stage to the `out` directory, in this case, the `vndr` binary:
-@z
-
-% snip command...
-
-@x
-    ### Specifying external cache sources (--cache-from) {#cache-from}
-@y
-    ### Specifying external cache sources (--cache-from) {#cache-from}
-@z
-
-@x
-    > **Note**
-    >
-    > This feature requires the BuildKit backend. You can either
-    > [enable BuildKit](/build/buildkit/#getting-started) or
-    > use the [buildx](https://github.com/docker/buildx) plugin. The previous
-    > builder has limited support for reusing cache from pre-pulled images.
-@y
-    > **Note**
-    >
-    > This feature requires the BuildKit backend. You can either
-    > [enable BuildKit](__SUBDIR__/build/buildkit/#getting-started) or
-    > use the [buildx](https://github.com/docker/buildx) plugin. The previous
-    > builder has limited support for reusing cache from pre-pulled images.
-@z
-
-@x
-    In addition to local build cache, the builder can reuse the cache generated from
-    previous builds with the `--cache-from` flag pointing to an image in the registry.
-@y
-    In addition to local build cache, the builder can reuse the cache generated from
-    previous builds with the `--cache-from` flag pointing to an image in the registry.
-@z
-
-@x
-    To use an image as a cache source, cache metadata needs to be written into the
-    image on creation. You can do this by setting `--build-arg BUILDKIT_INLINE_CACHE=1`
-    when building the image. After that, you can use the built image as a cache source
-    for subsequent builds.
-@y
-    To use an image as a cache source, cache metadata needs to be written into the
-    image on creation. You can do this by setting `--build-arg BUILDKIT_INLINE_CACHE=1`
-    when building the image. After that, you can use the built image as a cache source
-    for subsequent builds.
-@z
-
-@x
-    Upon importing the cache, the builder only pulls the JSON metadata from the
-    registry and determine possible cache hits based on that information. If there
-    is a cache hit, the builder pulls the matched layers into the local environment.
-@y
-    Upon importing the cache, the builder only pulls the JSON metadata from the
-    registry and determine possible cache hits based on that information. If there
-    is a cache hit, the builder pulls the matched layers into the local environment.
-@z
-
-@x
-    In addition to images, the cache can also be pulled from special cache manifests
-    generated by [`buildx`](https://github.com/docker/buildx) or the BuildKit CLI
-    (`buildctl`). These manifests (when built with the `type=registry` and `mode=max`
-    options) allow pulling layer data for intermediate stages in multi-stage builds.
-@y
-    In addition to images, the cache can also be pulled from special cache manifests
-    generated by [`buildx`](https://github.com/docker/buildx) or the BuildKit CLI
-    (`buildctl`). These manifests (when built with the `type=registry` and `mode=max`
-    options) allow pulling layer data for intermediate stages in multi-stage builds.
-@z
-
-@x
-    The following example builds an image with inline-cache metadata and pushes it
-    to a registry, then uses the image as a cache source on another machine:
-@y
-    The following example builds an image with inline-cache metadata and pushes it
-    to a registry, then uses the image as a cache source on another machine:
-@z
-
-% snip command...
-
-@x
-    After pushing the image, the image is used as cache source on another machine.
-    BuildKit automatically pulls the image from the registry if needed.
-@y
-    After pushing the image, the image is used as cache source on another machine.
-    BuildKit automatically pulls the image from the registry if needed.
-@z
-
-@x
-    On another machine:
-@y
-    On another machine:
-@z
-
-% snip command...
-
-@x
-    ### Set the networking mode for the RUN instructions during build (--network) {#network}
-@y
-    ### Set the networking mode for the RUN instructions during build (--network) {#network}
-@z
-
-@x
-    #### Overview
-@y
-    #### Overview
-@z
-
-@x
-    Available options for the networking mode are:
-@y
-    Available options for the networking mode are:
-@z
-
-@x
-    - `default` (default): Run in the default network.
-    - `none`: Run with no network access.
-    - `host`: Run in the host’s network environment.
-@y
-    - `default` (default): Run in the default network.
-    - `none`: Run with no network access.
-    - `host`: Run in the host’s network environment.
-@z
-
-@x
-    Find more details in the [Dockerfile documentation](/reference/dockerfile/#run---network).
-@y
-    Find more details in the [Dockerfile documentation](__SUBDIR__/reference/dockerfile/#run---network).
+    This flag is only supported on a daemon running on Windows, and only supports
+    the `credentialspec` option. The `credentialspec` must be in the format
+    `file://spec.txt` or `registry://keyname`.
 @z
 
 @x
@@ -1238,7 +497,7 @@ examples: |-
 @y
     For most use cases, multi-stage builds are a better alternative, as they give more
     fine-grained control over your build, and can take advantage of future
-    optimizations in the builder. Refer to the [Multi-stage builds](__SUBDIR__/build/building/multi-stage/)
+    optimizations in the builder. Refer to the [Multi-stage builds](/build/building/multi-stage/)
     section for more information.
 @z
 
@@ -1314,7 +573,53 @@ examples: |-
     line in the `Engine` section:
 @z
 
-% snip output...
+@x
+    ```console
+    Client: Docker Engine - Community
+     Version:           23.0.3
+     API version:       1.42
+     Go version:        go1.19.7
+     Git commit:        3e7cbfd
+     Built:             Tue Apr  4 22:05:41 2023
+     OS/Arch:           darwin/amd64
+     Context:           default
+@y
+    ```console
+    Client: Docker Engine - Community
+     Version:           23.0.3
+     API version:       1.42
+     Go version:        go1.19.7
+     Git commit:        3e7cbfd
+     Built:             Tue Apr  4 22:05:41 2023
+     OS/Arch:           darwin/amd64
+     Context:           default
+@z
+
+@x
+    Server: Docker Engine - Community
+     Engine:
+      Version:          23.0.3
+      API version:      1.42 (minimum version 1.12)
+      Go version:       go1.19.7
+      Git commit:       59118bf
+      Built:            Tue Apr  4 22:05:41 2023
+      OS/Arch:          linux/amd64
+      Experimental:     true
+     [...]
+    ```
+@y
+    Server: Docker Engine - Community
+     Engine:
+      Version:          23.0.3
+      API version:      1.42 (minimum version 1.12)
+      Go version:       go1.19.7
+      Git commit:       59118bf
+      Built:            Tue Apr  4 22:05:41 2023
+      OS/Arch:          linux/amd64
+      Experimental:     true
+     [...]
+    ```
+@z
 
 @x
     #### Build an image with the `--squash` flag
@@ -1330,7 +635,25 @@ examples: |-
     `Dockerfile`:
 @z
 
-% snip code...
+@x
+    ```dockerfile
+    FROM busybox
+    RUN echo hello > /hello
+    RUN echo world >> /hello
+    RUN touch remove_me /remove_me
+    ENV HELLO=world
+    RUN rm /remove_me
+    ```
+@y
+    ```dockerfile
+    FROM busybox
+    RUN echo hello > /hello
+    RUN echo world >> /hello
+    RUN touch remove_me /remove_me
+    ENV HELLO=world
+    RUN rm /remove_me
+    ```
+@z
 
 @x
     Next, build an image named `test` using the `--squash` flag.
@@ -1338,7 +661,15 @@ examples: |-
     Next, build an image named `test` using the `--squash` flag.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker build --squash -t test .
+    ```
+@y
+    ```console
+    $ docker build --squash -t test .
+    ```
+@z
 
 @x
     After the build completes, the history looks like the below. The history could show that a layer's
@@ -1348,14 +679,54 @@ examples: |-
     name is `<missing>`, and there is a new layer with COMMENT `merge`.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker history test
+@y
+    ```console
+    $ docker history test
+@z
+
+@x
+    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+    4e10cb5b4cac        3 seconds ago                                                       12 B                merge sha256:88a7b0112a41826885df0e7072698006ee8f621c6ab99fca7fe9151d7b599702 to sha256:47bcc53f74dc94b1920f0b34f6036096526296767650f223433fe65c35f149eb
+    <missing>           5 minutes ago       /bin/sh -c rm /remove_me                        0 B
+    <missing>           5 minutes ago       /bin/sh -c #(nop) ENV HELLO=world               0 B
+    <missing>           5 minutes ago       /bin/sh -c touch remove_me /remove_me           0 B
+    <missing>           5 minutes ago       /bin/sh -c echo world >> /hello                 0 B
+    <missing>           6 minutes ago       /bin/sh -c echo hello > /hello                  0 B
+    <missing>           7 weeks ago         /bin/sh -c #(nop) CMD ["sh"]                    0 B
+    <missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:47ca6e777c36a4cfff   1.113 MB
+    ```
+@y
+    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
+    4e10cb5b4cac        3 seconds ago                                                       12 B                merge sha256:88a7b0112a41826885df0e7072698006ee8f621c6ab99fca7fe9151d7b599702 to sha256:47bcc53f74dc94b1920f0b34f6036096526296767650f223433fe65c35f149eb
+    <missing>           5 minutes ago       /bin/sh -c rm /remove_me                        0 B
+    <missing>           5 minutes ago       /bin/sh -c #(nop) ENV HELLO=world               0 B
+    <missing>           5 minutes ago       /bin/sh -c touch remove_me /remove_me           0 B
+    <missing>           5 minutes ago       /bin/sh -c echo world >> /hello                 0 B
+    <missing>           6 minutes ago       /bin/sh -c echo hello > /hello                  0 B
+    <missing>           7 weeks ago         /bin/sh -c #(nop) CMD ["sh"]                    0 B
+    <missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:47ca6e777c36a4cfff   1.113 MB
+    ```
+@z
 
 @x
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
 @y
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
 @z
-
-% snip directives...

@@ -280,22 +280,22 @@ $ docker build --build-arg CUSTOM=$VAR -f $DOCKERFILE_PATH -t $IMAGE_NAME .
 @x
 > **Important**
 >
-> A `hooks/build` file overrides the basic [docker build](../../reference/cli/docker/image/build.md) command used by the builder, so you must include a similar build command in the hook or
+> A `hooks/build` file overrides the basic `docker build` command used by the builder, so you must include a similar build command in the hook or
 the automated build fails.
 { .important }
 @y
 > **Important**
 >
-> A `hooks/build` file overrides the basic [docker build](../../reference/cli/docker/image/build.md) command used by the builder, so you must include a similar build command in the hook or
+> A `hooks/build` file overrides the basic `docker build` command used by the builder, so you must include a similar build command in the hook or
 the automated build fails.
 { .important }
 @z
 
 @x
-Refer to the [docker build documentation](../../reference/cli/docker/image/build.md#build-arg)
+Refer to the [docker build documentation](../../reference/cli/docker/buildx/build.md#build-arg)
 to learn more about Docker build-time variables.
 @y
-Refer to the [docker build documentation](../../reference/cli/docker/image/build.md#build-arg)
+Refer to the [docker build documentation](../../reference/cli/docker/buildx/build.md#build-arg)
 to learn more about Docker build-time variables.
 @z
 

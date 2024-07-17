@@ -13,12 +13,13 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	_index.md  \
-	init.md    \
-	inspect.md \
-	login.md   \
-	logout.md  \
-	search.md  \
+	_index.md       \
+	build-legacy.md \
+	init.md         \
+	inspect.md      \
+	login.md        \
+	logout.md       \
+	search.md       \
 	version.md
 
 include $(top_srcdir)/build-aux/copy.mk
