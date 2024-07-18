@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Stop services
+Stops running containers without removing them. They can be started again with `docker compose start`.
 @y
 <!---MARKER_GEN_START-->
-Stop services
+Stops running containers without removing them. They can be started again with `docker compose start`.
 @z
 
 @x
@@ -22,15 +22,15 @@ Stop services
 @z
 
 @x
-| Name              | Type  | Default | Description                           |
-|:------------------|:------|:--------|:--------------------------------------|
-| `--dry-run`       |       |         | Execute command in dry run mode       |
-| `-t`, `--timeout` | `int` | `0`     | Specify a shutdown timeout in seconds |
+| Name              | Type   | Default | Description                           |
+|:------------------|:-------|:--------|:--------------------------------------|
+| `--dry-run`       | `bool` |         | Execute command in dry run mode       |
+| `-t`, `--timeout` | `int`  | `0`     | Specify a shutdown timeout in seconds |
 @y
-| Name              | Type  | Default | Description                           |
-|:------------------|:------|:--------|:--------------------------------------|
-| `--dry-run`       |       |         | Execute command in dry run mode       |
-| `-t`, `--timeout` | `int` | `0`     | Specify a shutdown timeout in seconds |
+| Name              | Type   | Default | Description                           |
+|:------------------|:-------|:--------|:--------------------------------------|
+| `--dry-run`       | `bool` |         | Execute command in dry run mode       |
+| `-t`, `--timeout` | `int`  | `0`     | Specify a shutdown timeout in seconds |
 @z
 
 @x

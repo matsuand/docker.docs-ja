@@ -8,47 +8,91 @@
 @z
 
 @x
-List containers
+<!---MARKER_GEN_START-->
+Lists containers for a Compose project, with current status and exposed ports.
 @y
-List containers
+<!---MARKER_GEN_START-->
+Lists containers for a Compose project, with current status and exposed ports.
+@z
+
+@x
+```console
+$ docker compose ps
+NAME            IMAGE     COMMAND           SERVICE    CREATED         STATUS          PORTS
+example-foo-1   alpine    "/entrypoint.…"   foo        4 seconds ago   Up 2 seconds    0.0.0.0:8080->80/tcp
+```
+@y
+```console
+$ docker compose ps
+NAME            IMAGE     COMMAND           SERVICE    CREATED         STATUS          PORTS
+example-foo-1   alpine    "/entrypoint.…"   foo        4 seconds ago   Up 2 seconds    0.0.0.0:8080->80/tcp
+```
+@z
+
+@x
+By default, only running containers are shown. `--all` flag can be used to include stopped containers.
+@y
+By default, only running containers are shown. `--all` flag can be used to include stopped containers.
+@z
+
+@x
+```console
+$ docker compose ps --all
+NAME            IMAGE     COMMAND           SERVICE    CREATED         STATUS          PORTS
+example-foo-1   alpine    "/entrypoint.…"   foo        4 seconds ago   Up 2 seconds    0.0.0.0:8080->80/tcp
+example-bar-1   alpine    "/entrypoint.…"   bar        4 seconds ago   exited (0)
+```
+@y
+```console
+$ docker compose ps --all
+NAME            IMAGE     COMMAND           SERVICE    CREATED         STATUS          PORTS
+example-foo-1   alpine    "/entrypoint.…"   foo        4 seconds ago   Up 2 seconds    0.0.0.0:8080->80/tcp
+example-bar-1   alpine    "/entrypoint.…"   bar        4 seconds ago   exited (0)
+```
 @z
 
 @x
 ### Options
 @y
-### オプション {#options}
+### Options
 @z
 
 @x
 | Name                  | Type          | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |:----------------------|:--------------|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `-a`, `--all`         |               |         | Show all stopped containers (including those created by the run command)                                                                                                                                                                                                                                                                                                                                                             |
-| `--dry-run`           |               |         | Execute command in dry run mode                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `-a`, `--all`         | `bool`        |         | Show all stopped containers (including those created by the run command)                                                                                                                                                                                                                                                                                                                                                             |
+| `--dry-run`           | `bool`        |         | Execute command in dry run mode                                                                                                                                                                                                                                                                                                                                                                                                      |
 | [`--filter`](#filter) | `string`      |         | Filter services by a property (supported filters: status)                                                                                                                                                                                                                                                                                                                                                                            |
 | [`--format`](#format) | `string`      | `table` | Format output using a custom template:<br>'table':            Print output in table format with column headers (default)<br>'table TEMPLATE':   Print output in table format using the given Go template<br>'json':             Print in JSON format<br>'TEMPLATE':         Print output using the given Go template.<br>Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates |
-| `--no-trunc`          |               |         | Don't truncate output                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `--no-trunc`          | `bool`        |         | Don't truncate output                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `--orphans`           | `bool`        | `true`  | Include orphaned services (not declared by project)                                                                                                                                                                                                                                                                                                                                                                                  |
-| `-q`, `--quiet`       |               |         | Only display IDs                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `--services`          |               |         | Display services                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `-q`, `--quiet`       | `bool`        |         | Only display IDs                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `--services`          | `bool`        |         | Display services                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [`--status`](#status) | `stringArray` |         | Filter services by status. Values: [paused \| restarting \| removing \| running \| dead \| created \| exited]                                                                                                                                                                                                                                                                                                                        |
 @y
 | Name                  | Type          | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |:----------------------|:--------------|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `-a`, `--all`         |               |         | Show all stopped containers (including those created by the run command)                                                                                                                                                                                                                                                                                                                                                             |
-| `--dry-run`           |               |         | Execute command in dry run mode                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `-a`, `--all`         | `bool`        |         | Show all stopped containers (including those created by the run command)                                                                                                                                                                                                                                                                                                                                                             |
+| `--dry-run`           | `bool`        |         | Execute command in dry run mode                                                                                                                                                                                                                                                                                                                                                                                                      |
 | [`--filter`](#filter) | `string`      |         | Filter services by a property (supported filters: status)                                                                                                                                                                                                                                                                                                                                                                            |
 | [`--format`](#format) | `string`      | `table` | Format output using a custom template:<br>'table':            Print output in table format with column headers (default)<br>'table TEMPLATE':   Print output in table format using the given Go template<br>'json':             Print in JSON format<br>'TEMPLATE':         Print output using the given Go template.<br>Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates |
-| `--no-trunc`          |               |         | Don't truncate output                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `--no-trunc`          | `bool`        |         | Don't truncate output                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `--orphans`           | `bool`        | `true`  | Include orphaned services (not declared by project)                                                                                                                                                                                                                                                                                                                                                                                  |
-| `-q`, `--quiet`       |               |         | Only display IDs                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `--services`          |               |         | Display services                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `-q`, `--quiet`       | `bool`        |         | Only display IDs                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `--services`          | `bool`        |         | Display services                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | [`--status`](#status) | `stringArray` |         | Filter services by status. Values: [paused \| restarting \| removing \| running \| dead \| created \| exited]                                                                                                                                                                                                                                                                                                                        |
+@z
+
+@x
+<!---MARKER_GEN_END-->
+@y
+<!---MARKER_GEN_END-->
 @z
 
 @x
 ## Description
 @y
-## 内容説明 {#description}
+## Description
 @z
 
 @x

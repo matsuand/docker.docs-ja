@@ -238,16 +238,17 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	azure-create-connection.png \
-	create-connection.png       \
-	index-report.png            \
-	index-tag.webp              \
-	oci-artifact.png            \
-	oci-helm-tagview.png        \
-	oci-helm.png                \
-	oci-volume.png              \
-	saml-create-connection.png  \
-	vuln-scan-details.png       \
+	azure-create-connection.png       \
+	create-connection.png             \
+	docker-hub-repo-settings-menu.png \
+	index-report.png                  \
+	index-tag.webp                    \
+	oci-artifact.png                  \
+	oci-helm-tagview.png              \
+	oci-helm.png                      \
+	oci-volume.png                    \
+	saml-create-connection.png        \
+	vuln-scan-details.png             \
 	vuln-scan-report.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

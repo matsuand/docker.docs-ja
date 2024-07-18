@@ -65,6 +65,7 @@ AC_CONFIG_FILES([
 	src/assets/js/src/Makefile
 	src/assets/scss/Makefile
 	src/content/Makefile
+	src/content/accounts/Makefile
 	src/content/admin/Makefile
 	src/content/admin/company/Makefile
 	src/content/admin/faqs/Makefile

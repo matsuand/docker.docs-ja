@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-List running compose projects
+Lists running Compose projects
 @y
 <!---MARKER_GEN_START-->
-List running compose projects
+Lists running Compose projects
 @z
 
 @x
@@ -24,19 +24,19 @@ List running compose projects
 @x
 | Name            | Type     | Default | Description                                |
 |:----------------|:---------|:--------|:-------------------------------------------|
-| `-a`, `--all`   |          |         | Show all stopped Compose projects          |
-| `--dry-run`     |          |         | Execute command in dry run mode            |
+| `-a`, `--all`   | `bool`   |         | Show all stopped Compose projects          |
+| `--dry-run`     | `bool`   |         | Execute command in dry run mode            |
 | `--filter`      | `filter` |         | Filter output based on conditions provided |
 | `--format`      | `string` | `table` | Format the output. Values: [table \| json] |
-| `-q`, `--quiet` |          |         | Only display IDs                           |
+| `-q`, `--quiet` | `bool`   |         | Only display IDs                           |
 @y
 | Name            | Type     | Default | Description                                |
 |:----------------|:---------|:--------|:-------------------------------------------|
-| `-a`, `--all`   |          |         | Show all stopped Compose projects          |
-| `--dry-run`     |          |         | Execute command in dry run mode            |
+| `-a`, `--all`   | `bool`   |         | Show all stopped Compose projects          |
+| `--dry-run`     | `bool`   |         | Execute command in dry run mode            |
 | `--filter`      | `filter` |         | Filter output based on conditions provided |
 | `--format`      | `string` | `table` | Format the output. Values: [table \| json] |
-| `-q`, `--quiet` |          |         | Only display IDs                           |
+| `-q`, `--quiet` | `bool`   |         | Only display IDs                           |
 @z
 
 @x

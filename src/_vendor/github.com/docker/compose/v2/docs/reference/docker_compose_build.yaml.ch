@@ -94,9 +94,9 @@ usage: docker compose build [OPTIONS] [SERVICE...]
 @z
 
 @x progress
-      description: Set type of ui output (auto, tty, plain, quiet)
+      description: Set type of ui output (auto, tty, plain, json, quiet)
 @y
-      description: Set type of ui output (auto, tty, plain, quiet)
+      description: Set type of ui output (auto, tty, plain, json, quiet)
 @z
 
 @x pull

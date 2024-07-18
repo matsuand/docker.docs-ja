@@ -9,10 +9,32 @@
 
 @x
 <!---MARKER_GEN_START-->
-Restart service containers
+Restarts all stopped and running services, or the specified services only.
 @y
 <!---MARKER_GEN_START-->
-Restart service containers
+Restarts all stopped and running services, or the specified services only.
+@z
+
+@x
+If you make changes to your `compose.yml` configuration, these changes are not reflected
+after running this command. For example, changes to environment variables (which are added
+after a container is built, but before the container's command is executed) are not updated
+after restarting.
+@y
+If you make changes to your `compose.yml` configuration, these changes are not reflected
+after running this command. For example, changes to environment variables (which are added
+after a container is built, but before the container's command is executed) are not updated
+after restarting.
+@z
+
+@x
+If you are looking to configure a service's restart policy, refer to
+[restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
+or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
+@y
+If you are looking to configure a service's restart policy, refer to
+[restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
+or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
 @z
 
 @x
@@ -22,17 +44,17 @@ Restart service containers
 @z
 
 @x
-| Name              | Type  | Default | Description                           |
-|:------------------|:------|:--------|:--------------------------------------|
-| `--dry-run`       |       |         | Execute command in dry run mode       |
-| `--no-deps`       |       |         | Don't restart dependent services      |
-| `-t`, `--timeout` | `int` | `0`     | Specify a shutdown timeout in seconds |
+| Name              | Type   | Default | Description                           |
+|:------------------|:-------|:--------|:--------------------------------------|
+| `--dry-run`       | `bool` |         | Execute command in dry run mode       |
+| `--no-deps`       | `bool` |         | Don't restart dependent services      |
+| `-t`, `--timeout` | `int`  | `0`     | Specify a shutdown timeout in seconds |
 @y
-| Name              | Type  | Default | Description                           |
-|:------------------|:------|:--------|:--------------------------------------|
-| `--dry-run`       |       |         | Execute command in dry run mode       |
-| `--no-deps`       |       |         | Don't restart dependent services      |
-| `-t`, `--timeout` | `int` | `0`     | Specify a shutdown timeout in seconds |
+| Name              | Type   | Default | Description                           |
+|:------------------|:-------|:--------|:--------------------------------------|
+| `--dry-run`       | `bool` |         | Execute command in dry run mode       |
+| `--no-deps`       | `bool` |         | Don't restart dependent services      |
+| `-t`, `--timeout` | `int`  | `0`     | Specify a shutdown timeout in seconds |
 @z
 
 @x

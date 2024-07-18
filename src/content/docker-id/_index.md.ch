@@ -38,9 +38,9 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @z
 
 @x
-1. Go to the [Docker sign-up page](https://hub.docker.com/signup/).
+1. Go to the [Docker sign-up page](https://app.docker.com/signup/).
 @y
-1. [Docker サインアップページ](https://hub.docker.com/signup/) にアクセスします。
+1. [Docker サインアップページ](https://app.docker.com/signup/) にアクセスします。
 @z
 
 @x
@@ -114,9 +114,9 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @z
 
 @x
-1. Go to the [Docker sign-up page](https://hub.docker.com/signup/).
+1. Go to the [Docker sign-up page](https://app.docker.com/signup/).
 @y
-1. [Docker サインアップページ](https://hub.docker.com/signup/) にアクセスします。
+1. [Docker サインアップページ](https://app.docker.com/signup/) にアクセスします。
 @z
 
 @x

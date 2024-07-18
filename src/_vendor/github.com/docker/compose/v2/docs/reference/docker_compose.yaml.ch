@@ -320,9 +320,9 @@ usage: docker compose
 @z
 
 @x progress
-      description: Set type of progress output (auto, tty, plain, quiet)
+      description: Set type of progress output (auto, tty, plain, json, quiet)
 @y
-      description: Set type of progress output (auto, tty, plain, quiet)
+      description: Set type of progress output (auto, tty, plain, json, quiet)
 @z
 
 @x project-directory

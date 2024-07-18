@@ -22,17 +22,19 @@ Watch build context for service and rebuild/refresh containers when files are up
 @z
 
 @x
-| Name        | Type | Default | Description                                   |
-|:------------|:-----|:--------|:----------------------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode               |
-| `--no-up`   |      |         | Do not build & start services before watching |
-| `--quiet`   |      |         | hide build output                             |
+| Name        | Type   | Default | Description                                   |
+|:------------|:-------|:--------|:----------------------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode               |
+| `--no-up`   | `bool` |         | Do not build & start services before watching |
+| `--prune`   | `bool` |         | Prune dangling images on rebuild              |
+| `--quiet`   | `bool` |         | hide build output                             |
 @y
-| Name        | Type | Default | Description                                   |
-|:------------|:-----|:--------|:----------------------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode               |
-| `--no-up`   |      |         | Do not build & start services before watching |
-| `--quiet`   |      |         | hide build output                             |
+| Name        | Type   | Default | Description                                   |
+|:------------|:-------|:--------|:----------------------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode               |
+| `--no-up`   | `bool` |         | Do not build & start services before watching |
+| `--prune`   | `bool` |         | Prune dangling images on rebuild              |
+| `--quiet`   | `bool` |         | hide build output                             |
 @z
 
 @x

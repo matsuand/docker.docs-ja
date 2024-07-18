@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Unpause services
+Unpauses paused containers of a service
 @y
 <!---MARKER_GEN_START-->
-Unpause services
+Unpauses paused containers of a service
 @z
 
 @x
@@ -22,13 +22,13 @@ Unpause services
 @z
 
 @x
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @y
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @z
 
 @x

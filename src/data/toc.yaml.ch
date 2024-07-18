@@ -4864,8 +4864,6 @@ Manuals:
   section:
   - path: /docker-hub/
     title: Overview
-  - path: /docker-id/
-    title: Create an account
   - path: /docker-hub/quickstart/
     title: Quickstart
 @y
@@ -4873,8 +4871,6 @@ Manuals:
   section:
   - path: __SUBDIR__/docker-hub/
     title: 概要
-  - path: __SUBDIR__/docker-id/
-    title: アカウントの生成
   - path: __SUBDIR__/docker-hub/quickstart/
     title: クィックスタート
 @z
@@ -5075,12 +5071,12 @@ Manuals:
   - path: /admin/convert-account/
     title: Convert an account into an organization
   - path: /admin/deactivate-account/
-    title: Deactivate an account or organization
+    title: Deactivate an organization
 @y
   - path: __SUBDIR__/admin/convert-account/
     title: Convert an account into an organization
   - path: __SUBDIR__/admin/deactivate-account/
-    title: Deactivate an account or organization
+    title: Deactivate an organization
 @z
 
 @x
@@ -5191,11 +5187,11 @@ Manuals:
     - sectiontitle: Two-factor authentication
       section:
       - path: /security/for-developers/2fa/
-        title: Enable two-factor authentication 
+        title: Enable two-factor authentication
       - path: /security/for-developers/2fa/disable-2fa/
         title: Disable two-factor authentication
       - path: /security/for-developers/2fa/recover-hub-account/
-        title: Recover your Docker Hub account
+        title: Recover your Docker account
       - path: /security/for-developers/2fa/new-recovery-code/
         title: Generate a new recovery code
   - path: /security/security-announcements/
@@ -5208,11 +5204,11 @@ Manuals:
     - sectiontitle: Two-factor authentication
       section:
       - path: __SUBDIR__/security/for-developers/2fa/
-        title: Enable two-factor authentication 
+        title: Enable two-factor authentication
       - path: __SUBDIR__/security/for-developers/2fa/disable-2fa/
         title: Disable two-factor authentication
       - path: __SUBDIR__/security/for-developers/2fa/recover-hub-account/
-        title: Recover your Docker Hub account
+        title: Recover your Docker account
       - path: __SUBDIR__/security/for-developers/2fa/new-recovery-code/
         title: Generate a new recovery code
   - path: __SUBDIR__/security/security-announcements/

@@ -24,15 +24,15 @@ Publish compose application
 @x
 | Name                      | Type     | Default | Description                                                                    |
 |:--------------------------|:---------|:--------|:-------------------------------------------------------------------------------|
-| `--dry-run`               |          |         | Execute command in dry run mode                                                |
+| `--dry-run`               | `bool`   |         | Execute command in dry run mode                                                |
 | `--oci-version`           | `string` |         | OCI Image/Artifact specification version (automatically determined by default) |
-| `--resolve-image-digests` |          |         | Pin image tags to digests                                                      |
+| `--resolve-image-digests` | `bool`   |         | Pin image tags to digests                                                      |
 @y
 | Name                      | Type     | Default | Description                                                                    |
 |:--------------------------|:---------|:--------|:-------------------------------------------------------------------------------|
-| `--dry-run`               |          |         | Execute command in dry run mode                                                |
+| `--dry-run`               | `bool`   |         | Execute command in dry run mode                                                |
 | `--oci-version`           | `string` |         | OCI Image/Artifact specification version (automatically determined by default) |
-| `--resolve-image-digests` |          |         | Pin image tags to digests                                                      |
+| `--resolve-image-digests` | `bool`   |         | Pin image tags to digests                                                      |
 @z
 
 @x

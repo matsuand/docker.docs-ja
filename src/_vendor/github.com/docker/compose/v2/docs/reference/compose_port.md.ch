@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Print the public port for a port binding
+Prints the public port for a port binding
 @y
 <!---MARKER_GEN_START-->
-Print the public port for a port binding
+Prints the public port for a port binding
 @z
 
 @x
@@ -24,13 +24,13 @@ Print the public port for a port binding
 @x
 | Name         | Type     | Default | Description                                             |
 |:-------------|:---------|:--------|:--------------------------------------------------------|
-| `--dry-run`  |          |         | Execute command in dry run mode                         |
+| `--dry-run`  | `bool`   |         | Execute command in dry run mode                         |
 | `--index`    | `int`    | `0`     | Index of the container if service has multiple replicas |
 | `--protocol` | `string` | `tcp`   | tcp or udp                                              |
 @y
 | Name         | Type     | Default | Description                                             |
 |:-------------|:---------|:--------|:--------------------------------------------------------|
-| `--dry-run`  |          |         | Execute command in dry run mode                         |
+| `--dry-run`  | `bool`   |         | Execute command in dry run mode                         |
 | `--index`    | `int`    | `0`     | Index of the container if service has multiple replicas |
 | `--protocol` | `string` | `tcp`   | tcp or udp                                              |
 @z

@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Start services
+Starts existing containers for a service
 @y
 <!---MARKER_GEN_START-->
-Start services
+Starts existing containers for a service
 @z
 
 @x
@@ -22,13 +22,13 @@ Start services
 @z
 
 @x
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @y
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @z
 
 @x

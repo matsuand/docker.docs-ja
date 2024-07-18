@@ -9,10 +9,20 @@
 
 @x
 <!---MARKER_GEN_START-->
-Force stop service containers
+Forces running containers to stop by sending a `SIGKILL` signal. Optionally the signal can be passed, for example:
 @y
 <!---MARKER_GEN_START-->
-Force stop service containers
+Forces running containers to stop by sending a `SIGKILL` signal. Optionally the signal can be passed, for example:
+@z
+
+@x
+```console
+$ docker-compose kill -s SIGINT
+```
+@y
+```console
+$ docker-compose kill -s SIGINT
+```
 @z
 
 @x
@@ -24,14 +34,14 @@ Force stop service containers
 @x
 | Name               | Type     | Default   | Description                                                    |
 |:-------------------|:---------|:----------|:---------------------------------------------------------------|
-| `--dry-run`        |          |           | Execute command in dry run mode                                |
-| `--remove-orphans` |          |           | Remove containers for services not defined in the Compose file |
+| `--dry-run`        | `bool`   |           | Execute command in dry run mode                                |
+| `--remove-orphans` | `bool`   |           | Remove containers for services not defined in the Compose file |
 | `-s`, `--signal`   | `string` | `SIGKILL` | SIGNAL to send to the container                                |
 @y
 | Name               | Type     | Default   | Description                                                    |
 |:-------------------|:---------|:----------|:---------------------------------------------------------------|
-| `--dry-run`        |          |           | Execute command in dry run mode                                |
-| `--remove-orphans` |          |           | Remove containers for services not defined in the Compose file |
+| `--dry-run`        | `bool`   |           | Execute command in dry run mode                                |
+| `--remove-orphans` | `bool`   |           | Remove containers for services not defined in the Compose file |
 | `-s`, `--signal`   | `string` | `SIGKILL` | SIGNAL to send to the container                                |
 @z
 

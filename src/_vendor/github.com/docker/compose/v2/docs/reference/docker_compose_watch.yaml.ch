@@ -21,6 +21,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: prune
+      value_type: bool
+      default_value: "false"
+      description: Prune dangling images on rebuild
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: quiet
       value_type: bool
       default_value: "false"
@@ -62,6 +72,16 @@ options:
       value_type: bool
       default_value: "false"
       description: Do not build & start services before watching
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: prune
+      value_type: bool
+      default_value: "false"
+      description: Prune dangling images on rebuild
       deprecated: false
       hidden: false
       experimental: false

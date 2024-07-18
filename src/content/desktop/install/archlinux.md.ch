@@ -30,15 +30,15 @@ title: Install Docker Desktop on Arch-based distributions
 @z
 
 @x
-This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
+This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
 @y
-This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
+This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
 @z
 
 @x
-{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @y
-{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/157355/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
+{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
 @z
 
 @x

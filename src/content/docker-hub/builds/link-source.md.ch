@@ -68,15 +68,21 @@ If you are linking a source code provider to create autobuilds for a team, follo
 @z
 
 @x
-2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @y
-2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @z
 
 @x
-3. Select **Link provider** for the source provider you want to link.
+    ![Repository settings menu](../images/docker-hub-repo-settings-menu.png)
 @y
-3. Select **Link provider** for the source provider you want to link.
+    ![Repository settings menu](../images/docker-hub-repo-settings-menu.png)
+@z
+
+@x
+3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
+@y
+3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
 @z
 
 @x
@@ -264,17 +270,15 @@ from Docker Hub, and from your GitHub account.
 @z
 
 @x
-1. Select **Account settings** in the top-right drop-down navigation, then open
-the **Linked Accounts** section.
+1. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @y
-1. Select **Account settings** in the top-right drop-down navigation, then open
-the **Linked Accounts** section.
+1. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @z
 
 @x
-2. Select the plug icon next to the source provider you want to remove.
+2. From the **Linked accounts** tab, select the plug icon next to the source provider you want to remove.
 @y
-2. Select the plug icon next to the source provider you want to remove.
+2. From the **Linked accounts** tab, select the plug icon next to the source provider you want to remove.
 @z
 
 @x
@@ -324,15 +328,15 @@ code provider.
 @z
 
 @x
-2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @y
-2. Select **Account settings** in the top-right drop-down navigation, then select the **Linked Accounts** tab.
+2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @z
 
 @x
-3. Select **Link provider** for the source provider you want to link.
+3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
 @y
-3. Select **Link provider** for the source provider you want to link.
+3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
 @z
 
 @x
@@ -368,17 +372,15 @@ unlink it both from Docker Hub, and from your Bitbucket account.
 @z
 
 @x
-2. Select **Account settings** in the top-right drop-down navigation, then open
-the **Linked Accounts** section.
+2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @y
-2. Select **Account settings** in the top-right drop-down navigation, then open
-the **Linked Accounts** section.
+2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
 @z
 
 @x
-3. Select the **Plug** icon next to the source provider you want to remove.
+3. From the **Linked accounts** tab, select the **Plug** icon next to the source provider you want to remove.
 @y
-3. Select the **Plug** icon next to the source provider you want to remove.
+3. From the **Linked accounts** tab, select the **Plug** icon next to the source provider you want to remove.
 @z
 
 @x

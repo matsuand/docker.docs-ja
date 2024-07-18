@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Pause services
+Pauses running containers of a service. They can be unpaused with `docker compose unpause`.
 @y
 <!---MARKER_GEN_START-->
-Pause services
+Pauses running containers of a service. They can be unpaused with `docker compose unpause`.
 @z
 
 @x
@@ -22,13 +22,13 @@ Pause services
 @z
 
 @x
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @y
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @z
 
 @x

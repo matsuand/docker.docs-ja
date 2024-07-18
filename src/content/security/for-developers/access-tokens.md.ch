@@ -4,7 +4,7 @@
 @x
 ---
 title: Create and manage access tokens
-description: Learn how to create and manage your personal Docker Hub access tokens
+description: Learn how to create and manage your personal Docker access tokens
   to securely push and pull images programmatically.
 keywords: docker hub, hub, security, PAT, personal access token
 aliases: 
@@ -13,7 +13,7 @@ aliases:
 @y
 ---
 title: Create and manage access tokens
-description: Learn how to create and manage your personal Docker Hub access tokens
+description: Learn how to create and manage your personal Docker access tokens
   to securely push and pull images programmatically.
 keywords: docker hub, hub, security, PAT, personal access token
 aliases: 
@@ -68,9 +68,9 @@ any time.
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com).
+1. Sign in to your [Docker account](https://app.docker.com/login).
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com).
+1. Sign in to your [Docker account](https://app.docker.com/login).
 @z
 
 @x
@@ -80,36 +80,42 @@ any time.
 @z
 
 @x
-3. Select the **Security** tab and then **New Access Token**.
+3. In the **Security** section, select **Personal access tokens**.
 @y
-3. Select the **Security** tab and then **New Access Token**.
+3. In the **Security** section, select **Personal access tokens**.
 @z
 
 @x
-4. Add a description for your token. Use something that indicates the use case or purpose of the token.
+4. Select **Generate new token**.
 @y
-4. Add a description for your token. Use something that indicates the use case or purpose of the token.
+4. Select **Generate new token**.
 @z
 
 @x
-5. Set the access permissions.
+5. Add a description for your token. Use something that indicates the use case or purpose of the token.
+@y
+5. Add a description for your token. Use something that indicates the use case or purpose of the token.
+@z
+
+@x
+6. Set the access permissions.
    The access permissions are scopes that set restrictions in your
    repositories. For example, for Read & Write permissions, an automation
    pipeline can build an image and then push it to a repository. However, it
-   can not delete the repository.
+   can't delete the repository.
 @y
-5. Set the access permissions.
+6. Set the access permissions.
    The access permissions are scopes that set restrictions in your
    repositories. For example, for Read & Write permissions, an automation
    pipeline can build an image and then push it to a repository. However, it
-   can not delete the repository.
+   can't delete the repository.
 @z
 
 @x
-6. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able
+7. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able
    to retrieve the token once you close this prompt.
 @y
-6. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able
+7. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able
    to retrieve the token once you close this prompt.
 @z
 
@@ -168,33 +174,43 @@ When prompted for a password, enter your personal access token instead of a pass
 @z
 
 @x
-You can rename, activate, deactivate, or delete a token as needed.
+You can rename, activate, deactivate, or delete a token as needed. You can manage your tokens in your account settings.
 @y
-You can rename, activate, deactivate, or delete a token as needed.
+You can rename, activate, deactivate, or delete a token as needed. You can manage your tokens in your account settings.
 @z
 
 @x
-1. Access your tokens under **Account settings > Security**.
+1. Sign in to your [Docker account](https://app.docker.com/login).
+@y
+1. Sign in to your [Docker account](https://app.docker.com/login).
+@z
+
+@x
+2. Select your avatar in the top-right corner and from the drop-down menu select **Account settings**.
+@y
+2. Select your avatar in the top-right corner and from the drop-down menu select **Account settings**.
+@z
+
+@x
+3. In the **Security** section, select **Personal access tokens**.
    This page shows an overview of all your tokens, and lists if the token was generated manually or if it was [auto-generated](#auto-generated-tokens). You can also view the number
    of tokens that are activated and deactivated in the toolbar.
 @y
-1. Access your tokens under **Account settings > Security**.
+3. In the **Security** section, select **Personal access tokens**.
    This page shows an overview of all your tokens, and lists if the token was generated manually or if it was [auto-generated](#auto-generated-tokens). You can also view the number
    of tokens that are activated and deactivated in the toolbar.
 @z
 
 @x
-2. Select a token and then select **Delete** or **Edit**, or use the actions menu on the far right of a token row to bring up the edit screen.
-   You can also select multiple tokens to delete at once.
+4. Select the actions menu on the far right of a token row, then select **Deactivate**, **Edit**, or **Delete** to modify the token.
 @y
-2. Select a token and then select **Delete** or **Edit**, or use the actions menu on the far right of a token row to bring up the edit screen.
-   You can also select multiple tokens to delete at once.
+4. Select the actions menu on the far right of a token row, then select **Deactivate**, **Edit**, or **Delete** to modify the token.
 @z
 
 @x
-3. After modifying the token, select **Save**.
+5. After modifying the token, select **Save token**.
 @y
-3. After modifying the token, select **Save**.
+5. After modifying the token, select **Save token**.
 @z
 
 @x

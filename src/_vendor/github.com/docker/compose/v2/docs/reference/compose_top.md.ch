@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Display the running processes
+Displays the running processes
 @y
 <!---MARKER_GEN_START-->
-Display the running processes
+Displays the running processes
 @z
 
 @x
@@ -22,13 +22,13 @@ Display the running processes
 @z
 
 @x
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @y
-| Name        | Type | Default | Description                     |
-|:------------|:-----|:--------|:--------------------------------|
-| `--dry-run` |      |         | Execute command in dry run mode |
+| Name        | Type   | Default | Description                     |
+|:------------|:-------|:--------|:--------------------------------|
+| `--dry-run` | `bool` |         | Execute command in dry run mode |
 @z
 
 @x
