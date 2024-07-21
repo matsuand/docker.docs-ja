@@ -295,7 +295,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = _vendor assets content data i18n layouts
+SUBDIRS = _vendor assets content data i18n layouts static
 bases = \
 	hugo.yaml    \
 	package.json
@@ -308,8 +308,7 @@ EXTRA_DIST = $(changes)
 copydirs = \
 	_releaser \
 	assets    \
-	scripts   \
-	static
+	scripts
 
 copyfiles = \
 	.dockerignore      \

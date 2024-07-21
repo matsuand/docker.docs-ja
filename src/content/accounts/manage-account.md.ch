@@ -40,11 +40,11 @@ You can centrally manage the settings for your Docker account. Here you can also
 @z
 
 @x
-1. Sign in to your [Docker account](https://account.docker.com/login).
+1. Sign in to your [Docker account](https://app.docker.com/login).
 2. In Docker Home, select your avatar in the top-right corner to open the drop-down.
 3. Select **Account settings**.
 @y
-1. Sign in to your [Docker account](https://account.docker.com/login).
+1. Sign in to your [Docker account](https://app.docker.com/login).
 2. In Docker Home, select your avatar in the top-right corner to open the drop-down.
 3. Select **Account settings**.
 @z

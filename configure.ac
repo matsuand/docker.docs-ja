@@ -309,5 +309,6 @@ AC_CONFIG_FILES([
 	src/layouts/samples/Makefile
 	src/layouts/shortcodes/Makefile
 	src/layouts/tag/Makefile
+	src/static/Makefile
 ])
 AC_OUTPUT

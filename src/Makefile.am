@@ -3,7 +3,7 @@
 ##
 absORIGDIR=@absORIGDIR@
 
-SUBDIRS = _vendor assets content data i18n layouts
+SUBDIRS = _vendor assets content data i18n layouts static
 
 bases = \
 	hugo.yaml    \
@@ -15,8 +15,7 @@ include $(top_srcdir)/build-aux/main.mk
 copydirs = \
 	_releaser \
 	assets    \
-	scripts   \
-	static
+	scripts
 
 copyfiles = \
 	.dockerignore      \
