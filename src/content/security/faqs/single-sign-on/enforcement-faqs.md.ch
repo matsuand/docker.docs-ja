@@ -66,9 +66,9 @@ Yes. You must verify a domain before using it with an SSO connection.
 @z
 
 @x
-When SSO is enforced, you can't use passwords to access the Docker CLI, but you can still access the Docker CLI using a personal access token (PAT) for authentication.
+When SSO is enforced, [passwords are prevented from accessing the Docker CLI](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You can still access the Docker CLI using a personal access token (PAT) for authentication.
 @y
-When SSO is enforced, you can't use passwords to access the Docker CLI, but you can still access the Docker CLI using a personal access token (PAT) for authentication.
+When SSO is enforced, [passwords are prevented from accessing the Docker CLI](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You can still access the Docker CLI using a personal access token (PAT) for authentication.
 @z
 
 @x
@@ -114,15 +114,15 @@ Yes, you can choose to not enforce, and users have the option to use either Dock
 @z
 
 @x
-### SSO is enforced, but one of our users is connected to several organizations (and several email addresses) and is able to bypass SSO and sign in through username and password. Why is this happening?
+### SSO is enforced, but one of our users is able to sign in through username and password. Why is this happening?
 @y
-### SSO is enforced, but one of our users is connected to several organizations (and several email addresses) and is able to bypass SSO and sign in through username and password. Why is this happening?
+### SSO is enforced, but one of our users is able to sign in through username and password. Why is this happening?
 @z
 
 @x
-Users can bypass SSO if the email they're using to sign in doesn't match the organization email that's used for SSO enforcement.
+Guest users who are not part of your registered domain but have been invited to your organization do not sign in through your SSO Identity Provider. SSO enforcement only requires that users which do belong to your domain, must go through the SSO IdP.
 @y
-Users can bypass SSO if the email they're using to sign in doesn't match the organization email that's used for SSO enforcement.
+Guest users who are not part of your registered domain but have been invited to your organization do not sign in through your SSO Identity Provider. SSO enforcement only requires that users which do belong to your domain, must go through the SSO IdP.
 @z
 
 @x
@@ -153,11 +153,11 @@ However, if you enforce SSO:
 
 @x
 - Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password authentication won’t work, so you should update the build system to use a PAT instead of a password
+- Username/password authentication [won’t work](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced), so you should update the build system to use a PAT instead of a password
 - Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
 @y
 - Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password authentication won’t work, so you should update the build system to use a PAT instead of a password
+- Username/password authentication [won’t work](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced), so you should update the build system to use a PAT instead of a password
 - Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
 @z
 

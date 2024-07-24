@@ -84,13 +84,13 @@ To get started with Docker Engine on Raspberry Pi OS, make sure you
 @x
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
-  Make sure that any firewall rulesets you use are created with `iptables` or `iptables6`,
+  Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
   see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
 @y
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
-  Make sure that any firewall rulesets you use are created with `iptables` or `iptables6`,
+  Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
   see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
 @z
@@ -286,7 +286,7 @@ Docker from the repository.
 @z
 
 @x
-   # Set up Docker's APT repository:
+   # Add the repository to Apt sources:
    echo \
      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
@@ -294,7 +294,7 @@ Docker from the repository.
    sudo apt-get update
    ```
 @y
-   # Set up Docker's APT repository:
+   # Add the repository to Apt sources:
    echo \
      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
@@ -354,8 +354,8 @@ Docker from the repository.
    # List the available versions:
    $ apt-cache madison docker-ce | awk '{ print $3 }'
 
-   5:27.0.3-1~raspbian.12~bookworm
-   5:27.0.2-1~raspbian.12~bookworm
+   5:27.1.1-1~raspbian.12~bookworm
+   5:27.1.0-1~raspbian.12~bookworm
    ...
    ```
 @y
@@ -363,8 +363,8 @@ Docker from the repository.
    # List the available versions:
    $ apt-cache madison docker-ce | awk '{ print $3 }'
 
-   5:27.0.3-1~raspbian.12~bookworm
-   5:27.0.2-1~raspbian.12~bookworm
+   5:27.1.1-1~raspbian.12~bookworm
+   5:27.1.0-1~raspbian.12~bookworm
    ...
    ```
 @z

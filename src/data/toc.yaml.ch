@@ -4144,20 +4144,22 @@ Manuals:
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: /engine/release-notes/27.0/
-      title: Engine 27.0
+    - path: /engine/release-notes/27.1/
+      title: Engine 27.1
 @y
   - path: __SUBDIR__/engine/deprecated/
     title: Deprecated features
   - sectiontitle: Release notes
     section:
-    - path: __SUBDIR__/engine/release-notes/27.0/
-      title: Engine 27.0
+    - path: __SUBDIR__/engine/release-notes/27.1/
+      title: Engine 27.1
 @z
 
 @x
     - sectiontitle: Previous versions
       section:
+      - path: /engine/release-notes/27.0/
+        title: Engine 27.0
       - path: /engine/release-notes/26.1/
         title: Engine 26.1
       - path: /engine/release-notes/26.0/
@@ -4165,6 +4167,8 @@ Manuals:
 @y
     - sectiontitle: Previous versions
       section:
+      - path: __SUBDIR__/engine/release-notes/27.0/
+        title: Engine 27.0
       - path: __SUBDIR__/engine/release-notes/26.1/
         title: Engine 26.1
       - path: __SUBDIR__/engine/release-notes/26.0/

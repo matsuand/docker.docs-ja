@@ -9,13 +9,6 @@ keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
 skip_read_time: true
-tags:
-  - Release notes
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
 ---
 @y
 ---
@@ -25,13 +18,6 @@ keywords: docker, docker engine, ce, whats new, release notes
 toc_min: 1
 toc_max: 2
 skip_read_time: true
-tags:
-  - Release notes
-aliases:
-- /engine/release-notes/
-- /engine/release-notes/latest/
-- /release-notes/docker-ce/
-- /release-notes/docker-engine/
 ---
 @z
 
@@ -53,6 +39,106 @@ For more information about:
 @y
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
 - Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+@z
+
+@x
+## 27.0.3
+@y
+## 27.0.3
+@z
+
+@x
+{{< release-date date="2024-07-01" >}}
+@y
+{{< release-date date="2024-07-01" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.0.3)
+- [moby/moby, 27.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.0.3)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.0.3/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.0.3/docs/api/version-history.md).
+@y
+- [docker/cli, 27.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.0.3)
+- [moby/moby, 27.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.0.3)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.0.3/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.0.3/docs/api/version-history.md).
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression that incorrectly reported a port mapping from a host IPv6 address to an IPv4-only container as an error. [moby/moby#48090](https://github.com/moby/moby/pull/48090)
+- Fix a regression that caused duplicate subnet allocations when creating networks. [moby/moby#48089](https://github.com/moby/moby/pull/48089)
+- Fix a regression resulting in `fail to register layer: failed to Lchown` errors when trying to pull an image with rootless enabled on a system that supports native overlay with user-namespaces. [moby/moby#48086](https://github.com/moby/moby/pull/48086)
+@y
+- Fix a regression that incorrectly reported a port mapping from a host IPv6 address to an IPv4-only container as an error. [moby/moby#48090](https://github.com/moby/moby/pull/48090)
+- Fix a regression that caused duplicate subnet allocations when creating networks. [moby/moby#48089](https://github.com/moby/moby/pull/48089)
+- Fix a regression resulting in `fail to register layer: failed to Lchown` errors when trying to pull an image with rootless enabled on a system that supports native overlay with user-namespaces. [moby/moby#48086](https://github.com/moby/moby/pull/48086)
+@z
+
+@x
+## 27.0.2
+@y
+## 27.0.2
+@z
+
+@x
+{{< release-date date="2024-06-27" >}}
+@y
+{{< release-date date="2024-06-27" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.0.2)
+- [moby/moby, 27.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.0.2)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.0.2/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.0.2/docs/api/version-history.md).
+@y
+- [docker/cli, 27.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.0.2)
+- [moby/moby, 27.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.0.2)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.0.2/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.0.2/docs/api/version-history.md).
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression that caused port numbers to be ignored when parsing a Docker registry URL. [docker/cli#5197](https://github.com/docker/cli/pull/5197), [docker/cli#5198](https://github.com/docker/cli/pull/5198)
+@y
+- Fix a regression that caused port numbers to be ignored when parsing a Docker registry URL. [docker/cli#5197](https://github.com/docker/cli/pull/5197), [docker/cli#5198](https://github.com/docker/cli/pull/5198)
+@z
+
+@x
+### Removed
+@y
+### Removed
+@z
+
+@x
+- api/types: deprecate `ContainerJSONBase.Node` field and `ContainerNode` type. These definitions were used by the standalone ("classic") Swarm API, but never implemented in the Docker Engine itself. [moby/moby#48055](https://github.com/moby/moby/pull/48055)
+@y
+- api/types: deprecate `ContainerJSONBase.Node` field and `ContainerNode` type. These definitions were used by the standalone ("classic") Swarm API, but never implemented in the Docker Engine itself. [moby/moby#48055](https://github.com/moby/moby/pull/48055)
 @z
 
 @x

@@ -64,13 +64,13 @@ To get started with Docker Engine on Debian, make sure you
 @x
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
-  Make sure that any firewall rulesets you use are created with `iptables` or `iptables6`,
+  Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
   see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
 @y
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
-  Make sure that any firewall rulesets you use are created with `iptables` or `iptables6`,
+  Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
   see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
 @z
