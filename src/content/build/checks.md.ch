@@ -38,7 +38,7 @@ You can find the list of checks available, and a description of each, in the
 [Build checks reference](/reference/build-checks/).
 @y
 You can find the list of checks available, and a description of each, in the
-[Build checks reference](/reference/build-checks/).
+[Build checks reference](__SUBDIR__/reference/build-checks/).
 @z
 
 @x
@@ -127,7 +127,7 @@ In this example, the build ran successfully, but a
 was reported, because `CMD` instructions should use JSON array syntax.
 @y
 In this example, the build ran successfully, but a
-[JSONArgsRecommended](/reference/build-checks/json-args-recommended/) warning
+[JSONArgsRecommended](__SUBDIR__/reference/build-checks/json-args-recommended/) warning
 was reported, because `CMD` instructions should use JSON array syntax.
 @z
 

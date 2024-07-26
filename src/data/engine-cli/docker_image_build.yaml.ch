@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image build
 aliases: docker image build, docker build, docker builder build
@@ -26,7 +28,7 @@ long: |-
     > This configuration is only relevant if you're building Windows containers.
     >
     > For information about the default `docker build`, using Buildx,
-    > see [`docker buildx build`](/reference/cli/docker/build/).
+    > see [`docker buildx build`](__SUBDIR__/reference/cli/docker/build/).
 @z
 
 @x
@@ -38,7 +40,7 @@ long: |-
     doesn't yet have full feature parity for Windows.
 @y
     When building with legacy builder, images are created from a Dockerfile by
-    running a sequence of [commits](/reference/cli/docker/container/commit/). This process is
+    running a sequence of [commits](__SUBDIR__/reference/cli/docker/container/commit/). This process is
     inefficient and slow compared to using BuildKit, which is why this build
     strategy is deprecated for all use cases except for building Windows
     containers. It's still useful for building Windows containers because BuildKit
@@ -70,7 +72,7 @@ long: |-
     legacy builder, and cases where behavior in the legacy builder deviates from
     behavior in BuildKit. For information about features and flags that are common
     between the legacy builder and BuildKit, such as `--tag` and `--target`, refer
-    to the documentation for [`docker buildx build`](/reference/cli/docker/buildx/build/).
+    to the documentation for [`docker buildx build`](__SUBDIR__/reference/cli/docker/buildx/build/).
 @z
 
 @x
@@ -124,7 +126,7 @@ long: |-
 @y
     When using the legacy builder, it's therefore extra important that you
     carefully consider what files you include in the context you specify. Use a
-    [`.dockerignore`](/build/building/context/#dockerignore-files)
+    [`.dockerignore`](__SUBDIR__/build/building/context/#dockerignore-files)
     file to exclude files and directories that you don't require in your build from
     being sent as part of the build context.
 @z
@@ -497,7 +499,7 @@ examples: |-
 @y
     For most use cases, multi-stage builds are a better alternative, as they give more
     fine-grained control over your build, and can take advantage of future
-    optimizations in the builder. Refer to the [Multi-stage builds](/build/building/multi-stage/)
+    optimizations in the builder. Refer to the [Multi-stage builds](__SUBDIR__/build/building/multi-stage/)
     section for more information.
 @z
 

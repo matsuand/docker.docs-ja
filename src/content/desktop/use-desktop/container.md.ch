@@ -231,18 +231,6 @@ and select the **System default** option under **Choose your terminal**.
 @z
 
 @x
-> **Beta feature**
->
-> The debug mode feature is currently in [Beta](../../release-lifecycle.md/#beta).
-{ .experimental }
-@y
-> **Beta feature**
->
-> The debug mode feature is currently in [Beta](../../release-lifecycle.md/#beta).
-{ .experimental }
-@z
-
-@x
 Debug mode requires a [Pro, Team, or Business subcription](/subscription/details/). Debug mode has several advantages, such as:
 @y
 Debug mode requires a [Pro, Team, or Business subcription](__SUBDIR__/subscription/details/). Debug mode has several advantages, such as:

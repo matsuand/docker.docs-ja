@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 command: docker buildx build
 aliases: docker build, docker builder build, docker image build, docker buildx b
@@ -11,14 +9,8 @@ long: The `docker buildx build` command starts a build using BuildKit.
 @y
 command: docker buildx build
 aliases: docker build, docker builder build, docker image build, docker buildx b
-short: ビルドの開始
+short: Start a build
 long: The `docker buildx build` command starts a build using BuildKit.
-@z
-
-@x
-usage: docker buildx build [OPTIONS] PATH | URL | -
-@y
-usage: docker buildx build [OPTIONS] PATH | URL | -
 @z
 
 % options:
@@ -77,10 +69,22 @@ usage: docker buildx build [OPTIONS] PATH | URL | -
         Cache export destinations (e.g., `user/app:cache`, `type=local,dest=path/to/dir`)
 @z
 
+@x call
+      description: Set method for evaluating build (`check`, `outline`, `targets`)
+@y
+      description: Set method for evaluating build (`check`, `outline`, `targets`)
+@z
+
 @x cgroup-parent
       description: Set the parent cgroup for the `RUN` instructions during build
 @y
       description: Set the parent cgroup for the `RUN` instructions during build
+@z
+
+@x check
+      description: Shorthand for `--call=check`
+@y
+      description: Shorthand for `--call=check`
 @z
 
 @x compress
@@ -353,7 +357,15 @@ examples: |-
     `my-hostname` and `my_hostname_v6`:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --add-host my_hostname=8.8.8.8 --add-host my_hostname_v6=2001:4860:4860::8888 .
+    ```
+@y
+    ```console
+    $ docker buildx build --add-host my_hostname=8.8.8.8 --add-host my_hostname_v6=2001:4860:4860::8888 .
+    ```
+@z
 
 @x
     If you need your build to connect to services running on the host, you can use
@@ -365,7 +377,15 @@ examples: |-
     build containers resolve `host.docker.internal` to the host's gateway IP.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --add-host host.docker.internal=host-gateway .
+    ```
+@y
+    ```console
+    $ docker buildx build --add-host host.docker.internal=host-gateway .
+    ```
+@z
 
 @x
     You can wrap an IPv6 address in square brackets.
@@ -377,7 +397,15 @@ examples: |-
     Both formats in the following example are valid:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --add-host my-hostname:10.180.0.1 --add-host my-hostname_v6=[2001:4860:4860::8888] .
+    ```
+@y
+    ```console
+    $ docker buildx build --add-host my-hostname:10.180.0.1 --add-host my-hostname_v6=[2001:4860:4860::8888] .
+    ```
+@z
 
 @x
     ### Create annotations (--annotation) {#annotation}
@@ -385,7 +413,17 @@ examples: |-
     ### Create annotations (--annotation) {#annotation}
 @z
 
-% snip text...
+@x
+    ```text
+    --annotation="key=value"
+    --annotation="[type:]key=value"
+    ```
+@y
+    ```text
+    --annotation="key=value"
+    --annotation="[type:]key=value"
+    ```
+@z
 
 @x
     Add OCI annotations to the image index, manifest, or descriptor.
@@ -395,7 +433,15 @@ examples: |-
     The following example adds the `foo=bar` annotation to the image manifests:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build -t TAG --annotation "foo=bar" --push .
+    ```
+@y
+    ```console
+    $ docker buildx build -t TAG --annotation "foo=bar" --push .
+    ```
+@z
 
 @x
     You can optionally add a type prefix to specify the level of the annotation. By
@@ -407,7 +453,15 @@ examples: |-
     `foo=bar` annotation the image index instead of the manifests:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build -t TAG --annotation "index:foo=bar" --push .
+    ```
+@y
+    ```console
+    $ docker buildx build -t TAG --annotation "index:foo=bar" --push .
+    ```
+@z
 
 @x
     You can specify multiple types, separated by a comma (,) to add the annotation
@@ -419,7 +473,15 @@ examples: |-
     annotation to image index, descriptors, manifests:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build -t TAG --annotation "index,manifest,manifest-descriptor:foo=bar" --push .
+    ```
+@y
+    ```console
+    $ docker buildx build -t TAG --annotation "index,manifest,manifest-descriptor:foo=bar" --push .
+    ```
+@z
 
 @x
     You can also specify a platform qualifier in square brackets (`[os/arch]`) in
@@ -433,7 +495,15 @@ examples: |-
     the manifest with the `linux/amd64` platform:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build -t TAG --annotation "manifest[linux/amd64]:foo=bar" --push .
+    ```
+@y
+    ```console
+    $ docker buildx build -t TAG --annotation "manifest[linux/amd64]:foo=bar" --push .
+    ```
+@z
 
 @x
     Wildcards are not supported in the platform qualifier; you can't specify a type
@@ -459,7 +529,17 @@ examples: |-
     ### Create attestations (--attest) {#attest}
 @z
 
-% snip text...
+@x
+    ```text
+    --attest=type=sbom,...
+    --attest=type=provenance,...
+    ```
+@y
+    ```text
+    --attest=type=sbom,...
+    --attest=type=provenance,...
+    ```
+@z
 
 @x
     Create [image attestations](/build/attestations/).
@@ -523,7 +603,15 @@ examples: |-
     ### Allow extra privileged entitlement (--allow) {#allow}
 @z
 
-% snip text...
+@x
+    ```text
+    --allow=ENTITLEMENT
+    ```
+@y
+    ```text
+    --allow=ENTITLEMENT
+    ```
+@z
 
 @x
     Allow extra privileged entitlement. List of entitlements:
@@ -549,7 +637,17 @@ examples: |-
     with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-flags)).
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx create --use --name insecure-builder --buildkitd-flags '--allow-insecure-entitlement security.insecure'
+    $ docker buildx build --allow security.insecure .
+    ```
+@y
+    ```console
+    $ docker buildx create --use --name insecure-builder --buildkitd-flags '--allow-insecure-entitlement security.insecure'
+    $ docker buildx build --allow security.insecure .
+    ```
+@z
 
 @x
     ### Set build-time variables (--build-arg) {#build-arg}
@@ -579,7 +677,15 @@ examples: |-
     can set at build-time using the  `--build-arg` flag:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --build-arg HTTP_PROXY=http://10.20.30.2:1234 --build-arg FTP_PROXY=http://40.50.60.5:4567 .
+    ```
+@y
+    ```console
+    $ docker buildx build --build-arg HTTP_PROXY=http://10.20.30.2:1234 --build-arg FTP_PROXY=http://40.50.60.5:4567 .
+    ```
+@z
 
 @x
     This flag allows you to pass the build-time variables that are
@@ -617,7 +723,17 @@ examples: |-
     propagates the value from the local environment into the Docker container it's building:
 @z
 
-% snip command...
+@x
+    ```console
+    $ export HTTP_PROXY=http://10.20.30.2:1234
+    $ docker buildx build --build-arg HTTP_PROXY .
+    ```
+@y
+    ```console
+    $ export HTTP_PROXY=http://10.20.30.2:1234
+    $ docker buildx build --build-arg HTTP_PROXY .
+    ```
+@z
 
 @x
     This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](/reference/cli/docker/container/run/#env)
@@ -643,7 +759,15 @@ examples: |-
     * `BUILDKIT_MULTI_PLATFORM=<bool>`: opt into deterministic output regardless of multi-platform output or not
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --build-arg BUILDKIT_MULTI_PLATFORM=1 .
+    ```
+@y
+    ```console
+    $ docker buildx build --build-arg BUILDKIT_MULTI_PLATFORM=1 .
+    ```
+@z
 
 @x
     Learn more about the built-in build arguments in the [Dockerfile reference docs](/reference/dockerfile/#buildkit-built-in-build-args).
@@ -657,7 +781,15 @@ examples: |-
     ### Additional build contexts (--build-context) {#build-context}
 @z
 
-% snip text...
+@x
+    ```text
+    --build-context=name=VALUE
+    ```
+@y
+    ```text
+    --build-context=name=VALUE
+    ```
+@z
 
 @x
     Define additional build context with specified contents. In Dockerfile the context can be accessed when `FROM name` or `--from=name` is used.
@@ -679,7 +811,15 @@ examples: |-
     Replace `alpine:latest` with a pinned one:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
+    ```
+@y
+    ```console
+    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
+    ```
+@z
 
 @x
     Expose a secondary local source directory:
@@ -687,9 +827,31 @@ examples: |-
     Expose a secondary local source directory:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --build-context project=path/to/project/source .
+    # docker buildx build --build-context project=https://github.com/myuser/project.git .
+    ```
+@y
+    ```console
+    $ docker buildx build --build-context project=path/to/project/source .
+    # docker buildx build --build-context project=https://github.com/myuser/project.git .
+    ```
+@z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM alpine
+    COPY --from=project myfile /
+    ```
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM alpine
+    COPY --from=project myfile /
+    ```
+@z
 
 @x
     #### Use an OCI layout directory as build context {#source-oci-layout}
@@ -705,9 +867,39 @@ examples: |-
     either by tag, or by digest:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout:<tag>
+    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout@sha256:<digest>
+    ```
+@y
+    ```console
+    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout:<tag>
+    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout@sha256:<digest>
+    ```
+@z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM alpine
+    RUN apk add git
+    COPY --from=foo myfile /
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM alpine
+    RUN apk add git
+    COPY --from=foo myfile /
+@z
+
+@x
+    FROM foo
+    ```
+@y
+    FROM foo
+    ```
+@z
 
 @x
     The OCI layout directory must be compliant with the [OCI layout specification](https://github.com/opencontainers/image-spec/blob/main/image-layout.md).
@@ -735,7 +927,15 @@ examples: |-
     ### Use an external cache source for a build (--cache-from) {#cache-from}
 @z
 
-% snip text...
+@x
+    ```text
+    --cache-from=[NAME|type=TYPE[,KEY=VALUE]]
+    ```
+@y
+    ```text
+    --cache-from=[NAME|type=TYPE[,KEY=VALUE]]
+    ```
+@z
 
 @x
     Use an external cache source for a build. Supported types are `registry`,
@@ -783,7 +983,25 @@ examples: |-
     `docker` driver currently only supports importing build cache from the registry.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --cache-from=user/app:cache .
+    $ docker buildx build --cache-from=user/app .
+    $ docker buildx build --cache-from=type=registry,ref=user/app .
+    $ docker buildx build --cache-from=type=local,src=path/to/cache .
+    $ docker buildx build --cache-from=type=gha .
+    $ docker buildx build --cache-from=type=s3,region=eu-west-1,bucket=mybucket .
+    ```
+@y
+    ```console
+    $ docker buildx build --cache-from=user/app:cache .
+    $ docker buildx build --cache-from=user/app .
+    $ docker buildx build --cache-from=type=registry,ref=user/app .
+    $ docker buildx build --cache-from=type=local,src=path/to/cache .
+    $ docker buildx build --cache-from=type=gha .
+    $ docker buildx build --cache-from=type=s3,region=eu-west-1,bucket=mybucket .
+    ```
+@z
 
 @x
     More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
@@ -792,12 +1010,414 @@ examples: |-
 @z
 
 @x
+    ### Invoke a frontend method (--call) {#call}
+@y
+    ### Invoke a frontend method (--call) {#call}
+@z
+
+@x
+    ```text
+    --call=[build|check|outline|targets]
+    ```
+@y
+    ```text
+    --call=[build|check|outline|targets]
+    ```
+@z
+
+@x
+    BuildKit frontends can support alternative modes of executions for builds,
+    using frontend methods. Frontend methods are a way to change or extend the
+    behavior of a build invocation, which lets you, for example, inspect, validate,
+    or generate alternative outputs from a build.
+@y
+    BuildKit frontends can support alternative modes of executions for builds,
+    using frontend methods. Frontend methods are a way to change or extend the
+    behavior of a build invocation, which lets you, for example, inspect, validate,
+    or generate alternative outputs from a build.
+@z
+
+@x
+    The `--call` flag for `docker buildx build` lets you specify the frontend
+    method that you want to execute. If this flag is unspecified, it defaults to
+    executing the build and evaluating [build checks](/reference/build-checks/).
+@y
+    The `--call` flag for `docker buildx build` lets you specify the frontend
+    method that you want to execute. If this flag is unspecified, it defaults to
+    executing the build and evaluating [build checks](__SUBDIR__/reference/build-checks/).
+@z
+
+@x
+    For Dockerfiles, the available methods are:
+@y
+    For Dockerfiles, the available methods are:
+@z
+
+@x
+    | Command                        | Description                                                                                                         |
+    | ------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+    | `build` (default)              | Execute the build and evaluate build checks for the current build target.                                           |
+    | `check`                        | Evaluate build checks for the either the entire Dockerfile or the selected target, without executing a build.       |
+    | `outline`                      | Show the build arguments that you can set for a target, and their default values.                                   |
+    | `targets`                      | List all the build targets in the Dockerfile.                                                                       |
+    | `subrequests.describe`         | List all the frontend methods that the current frontend supports.                                                   |
+@y
+    | Command                        | Description                                                                                                         |
+    | ------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+    | `build` (default)              | Execute the build and evaluate build checks for the current build target.                                           |
+    | `check`                        | Evaluate build checks for the either the entire Dockerfile or the selected target, without executing a build.       |
+    | `outline`                      | Show the build arguments that you can set for a target, and their default values.                                   |
+    | `targets`                      | List all the build targets in the Dockerfile.                                                                       |
+    | `subrequests.describe`         | List all the frontend methods that the current frontend supports.                                                   |
+@z
+
+@x
+    Note that other frontends may implement these or other methods.
+    To see the list of available methods for the frontend you're using,
+    use `--call=subrequests.describe`.
+@y
+    Note that other frontends may implement these or other methods.
+    To see the list of available methods for the frontend you're using,
+    use `--call=subrequests.describe`.
+@z
+
+@x
+    ```console
+    $ docker buildx build -q --call=subrequests.describe .
+@y
+    ```console
+    $ docker buildx build -q --call=subrequests.describe .
+@z
+
+@x
+    NAME                 VERSION DESCRIPTION
+    outline              1.0.0   List all parameters current build target supports
+    targets              1.0.0   List all targets current build supports
+    subrequests.describe 1.0.0   List available subrequest types
+    ```
+@y
+    NAME                 VERSION DESCRIPTION
+    outline              1.0.0   List all parameters current build target supports
+    targets              1.0.0   List all targets current build supports
+    subrequests.describe 1.0.0   List available subrequest types
+    ```
+@z
+
+@x
+    #### Descriptions
+@y
+    #### Descriptions
+@z
+
+@x
+    The [`--call=targets`](#call-targets) and [`--call=outline`](#call-outline)
+    methods include descriptions for build targets and arguments, if available.
+    Descriptions are generated from comments in the Dockerfile. A comment on the
+    line before a `FROM` instruction becomes the description of a build target, and
+    a comment before an `ARG` instruction the description of a build argument. The
+    comment must lead with the name of the stage or argument, for example:
+@y
+    The [`--call=targets`](#call-targets) and [`--call=outline`](#call-outline)
+    methods include descriptions for build targets and arguments, if available.
+    Descriptions are generated from comments in the Dockerfile. A comment on the
+    line before a `FROM` instruction becomes the description of a build target, and
+    a comment before an `ARG` instruction the description of a build argument. The
+    comment must lead with the name of the stage or argument, for example:
+@z
+
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@z
+
+@x
+    # GO_VERSION sets the Go version for the build
+    ARG GO_VERSION=1.22
+@y
+    # GO_VERSION sets the Go version for the build
+    ARG GO_VERSION=1.22
+@z
+
+@x
+    # base-builder is the base stage for building the project
+    FROM golang:${GO_VERSION} AS base-builder
+    ```
+@y
+    # base-builder is the base stage for building the project
+    FROM golang:${GO_VERSION} AS base-builder
+    ```
+@z
+
+@x
+    When you run `docker buildx build --call=outline`, the output includes the
+    descriptions, as follows:
+@y
+    When you run `docker buildx build --call=outline`, the output includes the
+    descriptions, as follows:
+@z
+
+@x
+    ```console
+    $ docker buildx build -q --call=outline .
+@y
+    ```console
+    $ docker buildx build -q --call=outline .
+@z
+
+@x
+    TARGET:      base-builder
+    DESCRIPTION: is the base stage for building the project
+@y
+    TARGET:      base-builder
+    DESCRIPTION: is the base stage for building the project
+@z
+
+@x
+    BUILD ARG    VALUE   DESCRIPTION
+    GO_VERSION   1.22    sets the Go version for the build
+    ```
+@y
+    BUILD ARG    VALUE   DESCRIPTION
+    GO_VERSION   1.22    sets the Go version for the build
+    ```
+@z
+
+@x
+    For more examples on how to write Dockerfile docstrings,
+    check out [the Dockerfile for Docker docs](https://github.com/docker/docs/blob/main/Dockerfile).
+@y
+    For more examples on how to write Dockerfile docstrings,
+    check out [the Dockerfile for Docker docs](https://github.com/docker/docs/blob/main/Dockerfile).
+@z
+
+@x
+    #### Call: check (--check) {#check}
+@y
+    #### Call: check (--check) {#check}
+@z
+
+@x
+    The `check` method evaluates build checks without executing the build. The
+    `--check` flag is a convenient shorthand for `--call=check`. Use the `check`
+    method to validate the build configuration before starting the build.
+@y
+    The `check` method evaluates build checks without executing the build. The
+    `--check` flag is a convenient shorthand for `--call=check`. Use the `check`
+    method to validate the build configuration before starting the build.
+@z
+
+@x
+    ```console
+    $ docker buildx build -q --check https://github.com/docker/docs.git
+@y
+    ```console
+    $ docker buildx build -q --check https://github.com/docker/docs.git
+@z
+
+@x
+    WARNING: InvalidBaseImagePlatform
+    Base image wjdp/htmltest:v0.17.0 was pulled with platform "linux/amd64", expected "linux/arm64" for current build
+    Dockerfile:43
+    --------------------
+      41 |         "#content/desktop/previous-versions/*.md"
+      42 |
+      43 | >>> FROM wjdp/htmltest:v${HTMLTEST_VERSION} AS test
+      44 |     WORKDIR /test
+      45 |     COPY --from=build /out ./public
+    --------------------
+    ```
+@y
+    WARNING: InvalidBaseImagePlatform
+    Base image wjdp/htmltest:v0.17.0 was pulled with platform "linux/amd64", expected "linux/arm64" for current build
+    Dockerfile:43
+    --------------------
+      41 |         "#content/desktop/previous-versions/*.md"
+      42 |
+      43 | >>> FROM wjdp/htmltest:v${HTMLTEST_VERSION} AS test
+      44 |     WORKDIR /test
+      45 |     COPY --from=build /out ./public
+    --------------------
+    ```
+@z
+
+@x
+    Using `--check` without specifying a target evaluates the entire Dockerfile.
+    If you want to evaluate a specific target, use the `--target` flag.
+@y
+    Using `--check` without specifying a target evaluates the entire Dockerfile.
+    If you want to evaluate a specific target, use the `--target` flag.
+@z
+
+@x
+    #### Call: outline
+@y
+    #### Call: outline
+@z
+
+@x
+    The `outline` method prints the name of the specified target (or the default
+    target, if `--target` isn't specified), and the build arguments that the target
+    consumes, along with their default values, if set.
+@y
+    The `outline` method prints the name of the specified target (or the default
+    target, if `--target` isn't specified), and the build arguments that the target
+    consumes, along with their default values, if set.
+@z
+
+@x
+    The following example shows the default target `release` and its build arguments:
+@y
+    The following example shows the default target `release` and its build arguments:
+@z
+
+@x
+    ```console
+    $ docker buildx build -q --call=outline https://github.com/docker/docs.git
+@y
+    ```console
+    $ docker buildx build -q --call=outline https://github.com/docker/docs.git
+@z
+
+@x
+    TARGET:      release
+    DESCRIPTION: is an empty scratch image with only compiled assets
+@y
+    TARGET:      release
+    DESCRIPTION: is an empty scratch image with only compiled assets
+@z
+
+@x
+    BUILD ARG          VALUE     DESCRIPTION
+    GO_VERSION         1.22      sets the Go version for the base stage
+    HUGO_VERSION       0.127.0
+    HUGO_ENV                     sets the hugo.Environment (production, development, preview)
+    DOCS_URL                     sets the base URL for the site
+    PAGEFIND_VERSION   1.1.0
+    ```
+@y
+    BUILD ARG          VALUE     DESCRIPTION
+    GO_VERSION         1.22      sets the Go version for the base stage
+    HUGO_VERSION       0.127.0
+    HUGO_ENV                     sets the hugo.Environment (production, development, preview)
+    DOCS_URL                     sets the base URL for the site
+    PAGEFIND_VERSION   1.1.0
+    ```
+@z
+
+@x
+    This means that the `release` target is configurable using these build arguments:
+@y
+    This means that the `release` target is configurable using these build arguments:
+@z
+
+@x
+    ```console
+    $ docker buildx build \
+      --build-arg GO_VERSION=1.22 \
+      --build-arg HUGO_VERSION=0.127.0 \
+      --build-arg HUGO_ENV=production \
+      --build-arg DOCS_URL=https://example.com \
+      --build-arg PAGEFIND_VERSION=1.1.0 \
+      --target release https://github.com/docker/docs.git
+    ```
+@y
+    ```console
+    $ docker buildx build \
+      --build-arg GO_VERSION=1.22 \
+      --build-arg HUGO_VERSION=0.127.0 \
+      --build-arg HUGO_ENV=production \
+      --build-arg DOCS_URL=https://example.com \
+      --build-arg PAGEFIND_VERSION=1.1.0 \
+      --target release https://github.com/docker/docs.git
+    ```
+@z
+
+@x
+    #### Call: targets
+@y
+    #### Call: targets
+@z
+
+@x
+    The `targets` method lists all the build targets in the Dockerfile. These are
+    the stages that you can build using the `--target` flag. It also indicates the
+    default target, which is the target that will be built when you don't specify a
+    target.
+@y
+    The `targets` method lists all the build targets in the Dockerfile. These are
+    the stages that you can build using the `--target` flag. It also indicates the
+    default target, which is the target that will be built when you don't specify a
+    target.
+@z
+
+@x
+    ```console
+    $ docker buildx build -q --call=targets https://github.com/docker/docs.git
+@y
+    ```console
+    $ docker buildx build -q --call=targets https://github.com/docker/docs.git
+@z
+
+@x
+    TARGET            DESCRIPTION
+    base              is the base stage with build dependencies
+    node              installs Node.js dependencies
+    hugo              downloads and extracts the Hugo binary
+    build-base        is the base stage for building the site
+    dev               is for local development with Docker Compose
+    build             creates production builds with Hugo
+    lint              lints markdown files
+    test              validates HTML output and checks for broken links
+    update-modules    downloads and vendors Hugo modules
+    vendor            is an empty stage with only vendored Hugo modules
+    build-upstream    builds an upstream project with a replacement module
+    validate-upstream validates HTML output for upstream builds
+    unused-media      checks for unused graphics and other media
+    pagefind          installs the Pagefind runtime
+    index             generates a Pagefind index
+    test-go-redirects checks that the /go/ redirects are valid
+    release (default) is an empty scratch image with only compiled assets
+    ```
+@y
+    TARGET            DESCRIPTION
+    base              is the base stage with build dependencies
+    node              installs Node.js dependencies
+    hugo              downloads and extracts the Hugo binary
+    build-base        is the base stage for building the site
+    dev               is for local development with Docker Compose
+    build             creates production builds with Hugo
+    lint              lints markdown files
+    test              validates HTML output and checks for broken links
+    update-modules    downloads and vendors Hugo modules
+    vendor            is an empty stage with only vendored Hugo modules
+    build-upstream    builds an upstream project with a replacement module
+    validate-upstream validates HTML output for upstream builds
+    unused-media      checks for unused graphics and other media
+    pagefind          installs the Pagefind runtime
+    index             generates a Pagefind index
+    test-go-redirects checks that the /go/ redirects are valid
+    release (default) is an empty scratch image with only compiled assets
+    ```
+@z
+
+@x
     ### Export build cache to an external cache destination (--cache-to) {#cache-to}
 @y
     ### Export build cache to an external cache destination (--cache-to) {#cache-to}
 @z
 
-% snip text...
+@x
+    ```text
+    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
+    ```
+@y
+    ```text
+    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
+    ```
+@z
 
 @x
     Export build cache to an external cache destination. Supported types are
@@ -853,12 +1473,86 @@ examples: |-
       all stages. Metadata is always exported for the whole build.
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --cache-to=user/app:cache .
+    $ docker buildx build --cache-to=type=inline .
+    $ docker buildx build --cache-to=type=registry,ref=user/app .
+    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
+    $ docker buildx build --cache-to=type=gha .
+    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
+    ```
+@y
+    ```console
+    $ docker buildx build --cache-to=user/app:cache .
+    $ docker buildx build --cache-to=type=inline .
+    $ docker buildx build --cache-to=type=registry,ref=user/app .
+    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
+    $ docker buildx build --cache-to=type=gha .
+    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
+    ```
+@z
 
 @x
     More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
 @y
     More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
+@z
+
+@x
+    ### Use a custom parent cgroup (--cgroup-parent) {#cgroup-parent}
+@y
+    ### Use a custom parent cgroup (--cgroup-parent) {#cgroup-parent}
+@z
+
+@x
+    When you run `docker buildx build` with the `--cgroup-parent` option,
+    the daemon runs the containers used in the build with the
+    [corresponding `docker run` flag](/reference/cli/docker/container/run/#cgroup-parent).
+@y
+    When you run `docker buildx build` with the `--cgroup-parent` option,
+    the daemon runs the containers used in the build with the
+    [corresponding `docker run` flag](__SUBDIR__/reference/cli/docker/container/run/#cgroup-parent).
+@z
+
+@x
+    ### Specify a Dockerfile (-f, --file) {#file}
+@y
+    ### Specify a Dockerfile (-f, --file) {#file}
+@z
+
+@x
+    ```console
+    $ docker buildx build -f <filepath> .
+    ```
+@y
+    ```console
+    $ docker buildx build -f <filepath> .
+    ```
+@z
+
+@x
+    Specifies the filepath of the Dockerfile to use.
+    If unspecified, a file named `Dockerfile` at the root of the build context is used by default.
+@y
+    Specifies the filepath of the Dockerfile to use.
+    If unspecified, a file named `Dockerfile` at the root of the build context is used by default.
+@z
+
+@x
+    To read a Dockerfile from stdin, you can use `-` as the argument for `--file`.
+@y
+    To read a Dockerfile from stdin, you can use `-` as the argument for `--file`.
+@z
+
+@x
+    ```console
+    $ cat Dockerfile | docker buildx build -f - .
+    ```
+@y
+    ```console
+    $ cat Dockerfile | docker buildx build -f - .
+    ```
 @z
 
 @x
@@ -891,8 +1585,57 @@ examples: |-
     directory of the specified file must already exist and be writable.
 @z
 
-% snip command...
-% snip code...
+@x
+    ```console
+    $ docker buildx build --load --metadata-file metadata.json .
+    $ cat metadata.json
+    ```
+@y
+    ```console
+    $ docker buildx build --load --metadata-file metadata.json .
+    $ cat metadata.json
+    ```
+@z
+
+@x
+    ```json
+    {
+      "buildx.build.provenance": {},
+      "buildx.build.ref": "mybuilder/mybuilder0/0fjb6ubs52xx3vygf6fgdl611",
+      "buildx.build.warnings": {},
+      "containerimage.config.digest": "sha256:2937f66a9722f7f4a2df583de2f8cb97fc9196059a410e7f00072fc918930e66",
+      "containerimage.descriptor": {
+        "annotations": {
+          "config.digest": "sha256:2937f66a9722f7f4a2df583de2f8cb97fc9196059a410e7f00072fc918930e66",
+          "org.opencontainers.image.created": "2022-02-08T21:28:03Z"
+        },
+        "digest": "sha256:19ffeab6f8bc9293ac2c3fdf94ebe28396254c993aea0b5a542cfb02e0883fa3",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "size": 506
+      },
+      "containerimage.digest": "sha256:19ffeab6f8bc9293ac2c3fdf94ebe28396254c993aea0b5a542cfb02e0883fa3"
+    }
+    ```
+@y
+    ```json
+    {
+      "buildx.build.provenance": {},
+      "buildx.build.ref": "mybuilder/mybuilder0/0fjb6ubs52xx3vygf6fgdl611",
+      "buildx.build.warnings": {},
+      "containerimage.config.digest": "sha256:2937f66a9722f7f4a2df583de2f8cb97fc9196059a410e7f00072fc918930e66",
+      "containerimage.descriptor": {
+        "annotations": {
+          "config.digest": "sha256:2937f66a9722f7f4a2df583de2f8cb97fc9196059a410e7f00072fc918930e66",
+          "org.opencontainers.image.created": "2022-02-08T21:28:03Z"
+        },
+        "digest": "sha256:19ffeab6f8bc9293ac2c3fdf94ebe28396254c993aea0b5a542cfb02e0883fa3",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "size": 506
+      },
+      "containerimage.digest": "sha256:19ffeab6f8bc9293ac2c3fdf94ebe28396254c993aea0b5a542cfb02e0883fa3"
+    }
+    ```
+@z
 
 @x
     > **Note**
@@ -900,22 +1643,62 @@ examples: |-
     > Build record [provenance](/build/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
+    >
+    > - `min` sets minimal provenance (default).
+    > - `max` sets full provenance.
+    > - `disabled`, `false` or `0` doesn't set any provenance.
 @y
     > **Note**
     >
     > Build record [provenance](__SUBDIR__/build/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
+    >
+    > - `min` sets minimal provenance (default).
+    > - `max` sets full provenance.
+    > - `disabled`, `false` or `0` doesn't set any provenance.
 @z
 
 @x
-    > - `min` sets minimal provenance (default).
-    > - `max` sets full provenance.
-    > - `disabled`, `false` or `0` doesn't set any provenance.
+    ### Set the networking mode for the RUN instructions during build (--network) {#network}
 @y
-    > - `min` sets minimal provenance (default).
-    > - `max` sets full provenance.
-    > - `disabled`, `false` or `0` doesn't set any provenance.
+    ### Set the networking mode for the RUN instructions during build (--network) {#network}
+@z
+
+@x
+    Available options for the networking mode are:
+@y
+    Available options for the networking mode are:
+@z
+
+@x
+    - `default` (default): Run in the default network.
+    - `none`: Run with no network access.
+    - `host`: Run in the host’s network environment.
+@y
+    - `default` (default): Run in the default network.
+    - `none`: Run with no network access.
+    - `host`: Run in the host’s network environment.
+@z
+
+@x
+    Find more details in the [Dockerfile reference](/reference/dockerfile/#run---network).
+@y
+    Find more details in the [Dockerfile reference](__SUBDIR__/reference/dockerfile/#run---network).
+@z
+
+@x
+    > **Note**
+    >
+    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
+    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
+    > include them.
+@y
+    > **Note**
+    >
+    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
+    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
+    > include them.
 @z
 
 @x
@@ -934,7 +1717,15 @@ examples: |-
     use a comma-separated syntax:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --no-cache-filter stage1,stage2,stage3 .
+    ```
+@y
+    ```console
+    $ docker buildx build --no-cache-filter stage1,stage2,stage3 .
+    ```
+@z
 
 @x
     For example, the following Dockerfile contains four stages:
@@ -954,7 +1745,63 @@ examples: |-
     - `release`
 @z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@z
+
+@x
+    FROM oven/bun:1 as base
+    WORKDIR /app
+@y
+    FROM oven/bun:1 as base
+    WORKDIR /app
+@z
+
+@x
+    FROM base AS install
+    WORKDIR /temp/dev
+    RUN --mount=type=bind,source=package.json,target=package.json \
+        --mount=type=bind,source=bun.lockb,target=bun.lockb \
+        bun install --frozen-lockfile
+@y
+    FROM base AS install
+    WORKDIR /temp/dev
+    RUN --mount=type=bind,source=package.json,target=package.json \
+        --mount=type=bind,source=bun.lockb,target=bun.lockb \
+        bun install --frozen-lockfile
+@z
+
+@x
+    FROM base AS test
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    RUN bun test
+@y
+    FROM base AS test
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    RUN bun test
+@z
+
+@x
+    FROM base AS release
+    ENV NODE_ENV=production
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    ENTRYPOINT ["bun", "run", "index.js"]
+    ```
+@y
+    FROM base AS release
+    ENV NODE_ENV=production
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    ENTRYPOINT ["bun", "run", "index.js"]
+    ```
+@z
 
 @x
     To ignore the cache for the `install` stage:
@@ -962,7 +1809,15 @@ examples: |-
     To ignore the cache for the `install` stage:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --no-cache-filter install .
+    ```
+@y
+    ```console
+    $ docker buildx build --no-cache-filter install .
+    ```
+@z
 
 @x
     To ignore the cache the `install` and `release` stages:
@@ -970,7 +1825,15 @@ examples: |-
     To ignore the cache the `install` and `release` stages:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --no-cache-filter install,release .
+    ```
+@y
+    ```console
+    $ docker buildx build --no-cache-filter install,release .
+    ```
+@z
 
 @x
     The arguments for the `--no-cache-filter` flag must be names of stages.
@@ -984,7 +1847,15 @@ examples: |-
     ### Set the export action for the build result (-o, --output) {#output}
 @z
 
-% snip code...
+@x
+    ```text
+    -o, --output=[PATH,-,type=TYPE[,KEY=VALUE]
+    ```
+@y
+    ```text
+    -o, --output=[PATH,-,type=TYPE[,KEY=VALUE]
+    ```
+@z
 
 @x
     Sets the export action for the build result. The default output, when using the
@@ -1020,12 +1891,52 @@ examples: |-
     the output to stdout.
 @z
 
-% snip code...
+@x
+    ```console
+    $ docker buildx build -o . .
+    $ docker buildx build -o outdir .
+    $ docker buildx build -o - . > out.tar
+    $ docker buildx build -o type=docker .
+    $ docker buildx build -o type=docker,dest=- . > myimage.tar
+    $ docker buildx build -t tonistiigi/foo -o type=registry
+    ```
+@y
+    ```console
+    $ docker buildx build -o . .
+    $ docker buildx build -o outdir .
+    $ docker buildx build -o - . > out.tar
+    $ docker buildx build -o type=docker .
+    $ docker buildx build -o type=docker,dest=- . > myimage.tar
+    $ docker buildx build -t tonistiigi/foo -o type=registry
+    ```
+@z
+
+@x
+    You can export multiple outputs by repeating the flag.
+@y
+    You can export multiple outputs by repeating the flag.
+@z
 
 @x
     Supported exported types are:
 @y
     Supported exported types are:
+@z
+
+@x
+    - [`local`](#local)
+    - [`tar`](#tar)
+    - [`oci`](#oci)
+    - [`docker`](#docker)
+    - [`image`](#image)
+    - [`registry`](#registry)
+@y
+    - [`local`](#local)
+    - [`tar`](#tar)
+    - [`oci`](#oci)
+    - [`docker`](#docker)
+    - [`image`](#image)
+    - [`registry`](#registry)
 @z
 
 @x
@@ -1057,6 +1968,14 @@ examples: |-
 @z
 
 @x
+    For more information, see
+    [Local and tar exporters](/build/exporters/local-tar/).
+@y
+    For more information, see
+    [Local and tar exporters](__SUBDIR__/build/exporters/local-tar/).
+@z
+
+@x
     #### `tar`
 @y
     #### `tar`
@@ -1080,6 +1999,14 @@ examples: |-
     - `dest` - destination path where tarball will be written. “-” writes to stdout.
 @y
     - `dest` - destination path where tarball will be written. “-” writes to stdout.
+@z
+
+@x
+    For more information, see
+    [Local and tar exporters](/build/exporters/local-tar/).
+@y
+    For more information, see
+    [Local and tar exporters](__SUBDIR__/build/exporters/local-tar/).
 @z
 
 @x
@@ -1108,6 +2035,14 @@ examples: |-
     - `dest` - destination path where tarball will be written. “-” writes to stdout.
 @y
     - `dest` - destination path where tarball will be written. “-” writes to stdout.
+@z
+
+@x
+    For more information, see
+    [OCI and Docker exporters](/build/exporters/oci-docker/).
+@y
+    For more information, see
+    [OCI and Docker exporters](__SUBDIR__/build/exporters/oci-docker/).
 @z
 
 @x
@@ -1153,6 +2088,14 @@ examples: |-
 @z
 
 @x
+    For more information, see
+    [OCI and Docker exporters](/build/exporters/oci-docker/).
+@y
+    For more information, see
+    [OCI and Docker exporters](__SUBDIR__/build/exporters/oci-docker/).
+@z
+
+@x
     #### `image`
 @y
     #### `image`
@@ -1183,6 +2126,14 @@ examples: |-
 @z
 
 @x
+    For more information, see
+    [Image and registry exporters](/build/exporters/image-registry/).
+@y
+    For more information, see
+    [Image and registry exporters](__SUBDIR__/build/exporters/image-registry/).
+@z
+
+@x
     #### `registry`
 @y
     #### `registry`
@@ -1195,12 +2146,28 @@ examples: |-
 @z
 
 @x
+    For more information, see
+    [Image and registry exporters](/build/exporters/image-registry/).
+@y
+    For more information, see
+    [Image and registry exporters](__SUBDIR__/build/exporters/image-registry/).
+@z
+
+@x
     ### Set the target platforms for the build (--platform) {#platform}
 @y
     ### Set the target platforms for the build (--platform) {#platform}
 @z
 
-% snip text...
+@x
+    ```text
+    --platform=value[,value]
+    ```
+@y
+    ```text
+    --platform=value[,value]
+    ```
+@z
 
 @x
     Set the target platform for the build. All `FROM` commands inside the Dockerfile
@@ -1276,7 +2243,19 @@ examples: |-
     [containerd source code](https://github.com/containerd/containerd/blob/v1.4.3/platforms/platforms.go#L63).
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --platform=linux/arm64 .
+    $ docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 .
+    $ docker buildx build --platform=darwin .
+    ```
+@y
+    ```console
+    $ docker buildx build --platform=linux/arm64 .
+    $ docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 .
+    $ docker buildx build --platform=darwin .
+    ```
+@z
 
 @x
     ### Set type of progress output (--progress) {#progress}
@@ -1284,7 +2263,15 @@ examples: |-
     ### Set type of progress output (--progress) {#progress}
 @z
 
-% snip text...
+@x
+    ```text
+    --progress=VALUE
+    ```
+@y
+    ```text
+    --progress=VALUE
+    ```
+@z
 
 @x
     Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use `plain` to show container
@@ -1310,7 +2297,37 @@ examples: |-
     The following example uses `plain` output during the build:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --load --progress=plain .
+@y
+    ```console
+    $ docker buildx build --load --progress=plain .
+@z
+
+@x
+    #1 [internal] load build definition from Dockerfile
+    #1 transferring dockerfile: 227B 0.0s done
+    #1 DONE 0.1s
+@y
+    #1 [internal] load build definition from Dockerfile
+    #1 transferring dockerfile: 227B 0.0s done
+    #1 DONE 0.1s
+@z
+
+@x
+    #2 [internal] load .dockerignore
+    #2 transferring context: 129B 0.0s done
+    #2 DONE 0.0s
+    ...
+    ```
+@y
+    #2 [internal] load .dockerignore
+    #2 transferring context: 129B 0.0s done
+    #2 DONE 0.0s
+    ...
+    ```
+@z
 
 @x
     > **Note**
@@ -1446,7 +2463,15 @@ examples: |-
     ### Secret to expose to the build (--secret) {#secret}
 @z
 
-% snip text...
+@x
+    ```text
+    --secret=[type=TYPE[,KEY=VALUE]
+    ```
+@y
+    ```text
+    --secret=[type=TYPE[,KEY=VALUE]
+    ```
+@z
 
 @x
     Exposes secrets (authentication credentials, tokens) to the build.
@@ -1502,9 +2527,33 @@ examples: |-
     - `src`, `source` - Secret filename. `id` used if unset.
 @z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM python:3
+    RUN pip install awscli
+    RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
+      aws s3 cp s3://... ...
+    ```
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM python:3
+    RUN pip install awscli
+    RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
+      aws s3 cp s3://... ...
+    ```
+@z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
+    ```
+@y
+    ```console
+    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
+    ```
+@z
 
 @x
     #### `env`
@@ -1526,14 +2575,46 @@ examples: |-
     - `env` - Secret environment variable. `id` used if unset, otherwise will look for `src`, `source` if `id` unset.
 @z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM node:alpine
+    RUN --mount=type=bind,target=. \
+      --mount=type=secret,id=SECRET_TOKEN \
+      SECRET_TOKEN=$(cat /run/secrets/SECRET_TOKEN) yarn run test
+    ```
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM node:alpine
+    RUN --mount=type=bind,target=. \
+      --mount=type=secret,id=SECRET_TOKEN \
+      SECRET_TOKEN=$(cat /run/secrets/SECRET_TOKEN) yarn run test
+    ```
+@z
 
-% snip command...
+@x
+    ```console
+    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
+    ```
+@y
+    ```console
+    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
+    ```
+@z
 
 @x
     ### Shared memory size for build containers (--shm-size) {#shm-size}
 @y
     ### Shared memory size for build containers (--shm-size) {#shm-size}
+@z
+
+@x
+    Sets the size of the shared memory allocated for build containers when using
+    `RUN` instructions.
+@y
+    Sets the size of the shared memory allocated for build containers when using
+    `RUN` instructions.
 @z
 
 @x
@@ -1547,12 +2628,34 @@ examples: |-
 @z
 
 @x
+    > **Note**
+    >
+    > In most cases, it is recommended to let the builder automatically determine
+    > the appropriate configurations. Manual adjustments should only be considered
+    > when specific performance tuning is required for complex build scenarios.
+@y
+    > **Note**
+    >
+    > In most cases, it is recommended to let the builder automatically determine
+    > the appropriate configurations. Manual adjustments should only be considered
+    > when specific performance tuning is required for complex build scenarios.
+@z
+
+@x
     ### SSH agent socket or keys to expose to the build (--ssh) {#ssh}
 @y
     ### SSH agent socket or keys to expose to the build (--ssh) {#ssh}
 @z
 
-% snip text...
+@x
+    ```text
+    --ssh=default|<id>[=<socket>|<key>[,<key>]]
+    ```
+@y
+    ```text
+    --ssh=default|<id>[=<socket>|<key>[,<key>]]
+    ```
+@z
 
 @x
     This can be useful when some commands in your Dockerfile need specific SSH
@@ -1576,9 +2679,147 @@ examples: |-
     Example to access Gitlab using an SSH agent socket:
 @z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM alpine
+    RUN apk add --no-cache openssh-client
+    RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    RUN --mount=type=ssh ssh -q -T git@gitlab.com 2>&1 | tee /hello
+    # "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
+    # with the type of build progress is defined as `plain`.
+    ```
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM alpine
+    RUN apk add --no-cache openssh-client
+    RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    RUN --mount=type=ssh ssh -q -T git@gitlab.com 2>&1 | tee /hello
+    # "Welcome to GitLab, @GITLAB_USERNAME_ASSOCIATED_WITH_SSHKEY" should be printed here
+    # with the type of build progress is defined as `plain`.
+    ```
+@z
 
-% snip command...
+@x
+    ```console
+    $ eval $(ssh-agent)
+    $ ssh-add ~/.ssh/id_rsa
+    (Input your passphrase here)
+    $ docker buildx build --ssh default=$SSH_AUTH_SOCK .
+    ```
+@y
+    ```console
+    $ eval $(ssh-agent)
+    $ ssh-add ~/.ssh/id_rsa
+    (Input your passphrase here)
+    $ docker buildx build --ssh default=$SSH_AUTH_SOCK .
+    ```
+@z
+
+@x
+    ### Tag an image (-t, --tag) {#tag}
+@y
+    ### Tag an image (-t, --tag) {#tag}
+@z
+
+@x
+    ```console
+    $ docker buildx build -t docker/apache:2.0 .
+    ```
+@y
+    ```console
+    $ docker buildx build -t docker/apache:2.0 .
+    ```
+@z
+
+@x
+    This examples builds in the same way as the previous example, but it then tags the resulting
+    image. The repository name will be `docker/apache` and the tag `2.0`.
+@y
+    This examples builds in the same way as the previous example, but it then tags the resulting
+    image. The repository name will be `docker/apache` and the tag `2.0`.
+@z
+
+@x
+    [Read more about valid tags](/reference/cli/docker/image/tag/).
+@y
+    [Read more about valid tags](__SUBDIR__/reference/cli/docker/image/tag/).
+@z
+
+@x
+    You can apply multiple tags to an image. For example, you can apply the `latest`
+    tag to a newly built image and add another tag that references a specific
+    version.
+@y
+    You can apply multiple tags to an image. For example, you can apply the `latest`
+    tag to a newly built image and add another tag that references a specific
+    version.
+@z
+
+@x
+    For example, to tag an image both as `docker/fedora-jboss:latest` and
+    `docker/fedora-jboss:v2.1`, use the following:
+@y
+    For example, to tag an image both as `docker/fedora-jboss:latest` and
+    `docker/fedora-jboss:v2.1`, use the following:
+@z
+
+@x
+    ```console
+    $ docker buildx build -t docker/fedora-jboss:latest -t docker/fedora-jboss:v2.1 .
+    ```
+@y
+    ```console
+    $ docker buildx build -t docker/fedora-jboss:latest -t docker/fedora-jboss:v2.1 .
+    ```
+@z
+
+@x
+    ### Specifying target build stage (--target) {#target}
+@y
+    ### Specifying target build stage (--target) {#target}
+@z
+
+@x
+    When building a Dockerfile with multiple build stages, use the `--target`
+    option to specify an intermediate build stage by name as a final stage for the
+    resulting image. The builder skips commands after the target stage.
+@y
+    When building a Dockerfile with multiple build stages, use the `--target`
+    option to specify an intermediate build stage by name as a final stage for the
+    resulting image. The builder skips commands after the target stage.
+@z
+
+@x
+    ```dockerfile
+    FROM debian AS build-env
+    # ...
+@y
+    ```dockerfile
+    FROM debian AS build-env
+    # ...
+@z
+
+@x
+    FROM alpine AS production-env
+    # ...
+    ```
+@y
+    FROM alpine AS production-env
+    # ...
+    ```
+@z
+
+@x
+    ```console
+    $ docker buildx build -t mybuildimage --target build-env .
+    ```
+@y
+    ```console
+    $ docker buildx build -t mybuildimage --target build-env .
+    ```
+@z
 
 @x
     ### Set ulimits (--ulimit) {#ulimit}
@@ -1596,7 +2837,15 @@ examples: |-
     `<type>=<soft limit>[:<hard limit>]`, for example:
 @z
 
-% snip command...
+@x
+    ```console
+    $ docker buildx build --ulimit nofile=1024:1024 .
+    ```
+@y
+    ```console
+    $ docker buildx build --ulimit nofile=1024:1024 .
+    ```
+@z
 
 @x
     > **Note**
@@ -1618,12 +2867,22 @@ examples: |-
     > In most cases, it is recommended to let the builder automatically determine
     > the appropriate configurations. Manual adjustments should only be considered
     > when specific performance tuning is required for complex build scenarios.
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
 @y
     > **Note**
     >
     > In most cases, it is recommended to let the builder automatically determine
     > the appropriate configurations. Manual adjustments should only be considered
     > when specific performance tuning is required for complex build scenarios.
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
 @z
-
-% snip directives...

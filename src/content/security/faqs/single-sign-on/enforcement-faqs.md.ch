@@ -1,26 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
 title: Enforcement
-tags: [FAQ]
-aliases:
-- /single-sign-on/enforcement-faqs/
-- /faq/security/single-sign-on/enforcement-faqs/
----
 @y
----
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
 title: Enforcement
-tags: [FAQ]
-aliases:
-- /single-sign-on/enforcement-faqs/
-- /faq/security/single-sign-on/enforcement-faqs/
----
 @z
 
 @x
@@ -68,13 +58,13 @@ Yes. You must verify a domain before using it with an SSO connection.
 @x
 When SSO is enforced, [passwords are prevented from accessing the Docker CLI](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You can still access the Docker CLI using a personal access token (PAT) for authentication.
 @y
-When SSO is enforced, [passwords are prevented from accessing the Docker CLI](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You can still access the Docker CLI using a personal access token (PAT) for authentication.
+When SSO is enforced, [passwords are prevented from accessing the Docker CLI](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You can still access the Docker CLI using a personal access token (PAT) for authentication.
 @z
 
 @x
 Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
 @y
-Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
+Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage access tokens](__SUBDIR__/security/for-developers/access-tokens/). Users who already used a PAT to sign in before SSO enforcement will still be able to use that PAT to authenticate.
 @z
 
 @x
@@ -157,7 +147,7 @@ However, if you enforce SSO:
 - Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
 @y
 - Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password authentication [won’t work](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced), so you should update the build system to use a PAT instead of a password
+- Username/password authentication [won’t work](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced), so you should update the build system to use a PAT instead of a password
 - Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
 @z
 

@@ -138,6 +138,30 @@ examples: |-
 @z
 
 @x
+    ### Invoke a frontend method (--call) {#call}
+@y
+    ### Invoke a frontend method (--call) {#call}
+@z
+
+@x
+    Same as [`build --call`](/reference/cli/docker/buildx/build/#call).
+@y
+    Same as [`build --call`](__SUBDIR__/reference/cli/docker/buildx/build/#call).
+@z
+
+@x
+    #### Call: check (--check) {#check}
+@y
+    #### Call: check (--check) {#check}
+@z
+
+@x
+    Same as [`build --check`](/reference/cli/docker/buildx/build/#check).
+@y
+    Same as [`build --check`](__SUBDIR__/reference/cli/docker/buildx/build/#check).
+@z
+
+@x
     ### Specify a build definition file (-f, --file) {#file}
 @y
     ### Specify a build definition file (-f, --file) {#file}

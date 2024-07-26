@@ -301,8 +301,7 @@ SUBDIRS = builder buildx checkpoint compose config container context \
 	swarm system trust volume
 
 bases = \
-	README.md \
-	debug.md
+	README.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -312,6 +311,7 @@ EXTRA_DIST = $(changes)
 copyfiles = \
 	_index.md       \
 	build-legacy.md \
+	debug.md        \
 	init.md         \
 	inspect.md      \
 	login.md        \

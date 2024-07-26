@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Test your Python deployment
@@ -20,10 +21,10 @@ description: Learn how to develop locally using Kubernetes
 @z
 
 @x
-- Complete all the previous sections of this guide, starting with [Containerize a Python application](containerize.md).
+- Complete all the previous sections of this guide, starting with [Use containers for python development](develop.md).
 - [Turn on Kubernetes](/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @y
-- Complete all the previous sections of this guide, starting with [Containerize a Python application](containerize.md).
+- Complete all the previous sections of this guide, starting with [Use containers for python development](develop.md).
 - [Turn on Kubernetes](__SUBDIR__/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker Desktop.
 @z
 
@@ -46,103 +47,31 @@ In this section, you'll learn how to use Docker Desktop to deploy your applicati
 @z
 
 @x
-In your `python-docker-dev` directory, create a file named
-`docker-python-kubernetes.yaml`. Open the file in an IDE or text editor and add
+In your `python-docker-dev-example` directory, create a file named `docker-postgres-kubernetes.yaml`. Open the file in an IDE or text editor and add
 the following contents. Replace `DOCKER_USERNAME/REPO_NAME` with your Docker
 username and the name of the repository that you created in [Configure CI/CD for
 your Python application](configure-ci-cd.md).
 @y
-In your `python-docker-dev` directory, create a file named
-`docker-python-kubernetes.yaml`. Open the file in an IDE or text editor and add
+In your `python-docker-dev-example` directory, create a file named `docker-postgres-kubernetes.yaml`. Open the file in an IDE or text editor and add
 the following contents. Replace `DOCKER_USERNAME/REPO_NAME` with your Docker
 username and the name of the repository that you created in [Configure CI/CD for
 your Python application](configure-ci-cd.md).
 @z
 
-@x
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-python-demo
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      service: flask
-  template:
-    metadata:
-      labels:
-        service: flask
-    spec:
-      containers:
-       - name: flask-service
-         image: DOCKER_USERNAME/REPO_NAME
-         imagePullPolicy: Always
-         env:
-          - name: POSTGRES_PASSWORD
-            value: mysecretpassword
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: service-entrypoint
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    service: flask
-  ports:
-  - port: 8001
-    targetPort: 8001
-    nodePort: 30001
-```
-@y
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-python-demo
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      service: flask
-  template:
-    metadata:
-      labels:
-        service: flask
-    spec:
-      containers:
-       - name: flask-service
-         image: DOCKER_USERNAME/REPO_NAME
-         imagePullPolicy: Always
-         env:
-          - name: POSTGRES_PASSWORD
-            value: mysecretpassword
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: service-entrypoint
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    service: flask
-  ports:
-  - port: 8001
-    targetPort: 8001
-    nodePort: 30001
-```
-@z
+% snip code...
 
 @x
-In this Kubernetes YAML file, there are two objects, separated by the `---`:
+In your `python-docker-dev-example` directory, create a file named `docker-python-kubernetes.yaml`.
 @y
-In this Kubernetes YAML file, there are two objects, separated by the `---`:
+In your `python-docker-dev-example` directory, create a file named `docker-python-kubernetes.yaml`.
+@z
+
+% snip code...
+
+@x
+In these Kubernetes YAML file, there are various objects, separated by the `---`:
+@y
+In these Kubernetes YAML file, there are various objects, separated by the `---`:
 @z
 
 @x
@@ -151,6 +80,9 @@ In this Kubernetes YAML file, there are two objects, separated by the `---`:
    described under `template`, has just one container in it. The
     container is created from the image built by GitHub Actions in [Configure CI/CD for
     your Python application](configure-ci-cd.md).
+ - A Service, which will define how the ports are mapped in the containers.
+ - A PersistentVolumeClaim, to define a storage that will be persistent through restarts for the database.
+ - A Secret, Keeping the database password as a example using secret kubernetes resource.
  - A NodePort service, which will route traffic from port 30001 on your host to
    port 8001 inside the pods it routes to, allowing you to reach your app
    from the network.
@@ -160,6 +92,9 @@ In this Kubernetes YAML file, there are two objects, separated by the `---`:
    described under `template`, has just one container in it. The
     container is created from the image built by GitHub Actions in [Configure CI/CD for
     your Python application](configure-ci-cd.md).
+ - A Service, which will define how the ports are mapped in the containers.
+ - A PersistentVolumeClaim, to define a storage that will be persistent through restarts for the database.
+ - A Secret, Keeping the database password as a example using secret kubernetes resource.
  - A NodePort service, which will route traffic from port 30001 on your host to
    port 8001 inside the pods it routes to, allowing you to reach your app
    from the network.
@@ -172,28 +107,30 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 @z
 
 @x
+> **Note**
+>
+> * The `NodePort` service is good for development/testing purposes. For production you should implement an [ingress-controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/).
+@y
+> **Note**
+>
+> * The `NodePort` service is good for development/testing purposes. For production you should implement an [ingress-controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/).
+@z
+
+@x
 ## Deploy and check your application
 @y
 ## Deploy and check your application
 @z
 
 @x
-1. In a terminal, navigate to `python-docker-dev` and deploy your application to
+1. In a terminal, navigate to `python-docker-dev-example` and deploy your database to
    Kubernetes.
 @y
-1. In a terminal, navigate to `python-docker-dev` and deploy your application to
+1. In a terminal, navigate to `python-docker-dev-example` and deploy your database to
    Kubernetes.
 @z
 
-@x
-   ```console
-   $ kubectl apply -f docker-python-kubernetes.yaml
-   ```
-@y
-   ```console
-   $ kubectl apply -f docker-python-kubernetes.yaml
-   ```
-@z
+% snip command...
 
 @x
    You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
@@ -201,17 +138,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
 @z
 
-@x
-   ```shell
-   deployment.apps/docker-python-demo created
-   service/service-entrypoint created
-   ```
-@y
-   ```shell
-   deployment.apps/docker-python-demo created
-   service/service-entrypoint created
-   ```
-@z
+% snip output...
 
 @x
 2. Make sure everything worked by listing your deployments.
@@ -219,15 +146,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 2. Make sure everything worked by listing your deployments.
 @z
 
-@x
-   ```console
-   $ kubectl get deployments
-   ```
-@y
-   ```console
-   $ kubectl get deployments
-   ```
-@z
+% snip command...
 
 @x
    Your deployment should be listed as follows:
@@ -235,17 +154,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    Your deployment should be listed as follows:
 @z
 
-@x
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-   docker-python-demo   1/1     1            1           15s
-   ```
-@y
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-   docker-python-demo   1/1     1            1           15s
-   ```
-@z
+% snip output...
 
 @x
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
@@ -253,15 +162,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
 @z
 
-@x
-   ```console
-   $ kubectl get services
-   ```
-@y
-   ```console
-   $ kubectl get services
-   ```
-@z
+% snip command...
 
 @x
    You should get output like the following.
@@ -269,24 +170,12 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    You should get output like the following.
 @z
 
-@x
-   ```shell
-   NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-   kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          23h
-   service-entrypoint   NodePort    10.99.128.230   <none>        8001:30001/TCP   75s
-   ```
-@y
-   ```shell
-   NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-   kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          23h
-   service-entrypoint   NodePort    10.99.128.230   <none>        8001:30001/TCP   75s
-   ```
-@z
+% snip output...
 
 @x
-   In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP.
+   In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP and the internal `ClusterIP` `postgres` with the port `5432` open to accept connections from you python app.
 @y
-   In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP.
+   In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP and the internal `ClusterIP` `postgres` with the port `5432` open to accept connections from you python app.
 @z
 
 @x
@@ -297,33 +186,15 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    this example.
 @z
 
-@x
-   ```console
-   $ curl http://localhost:30001/
-   Hello, Docker!!!
-   ```
-@y
-   ```console
-   $ curl http://localhost:30001/
-   Hello, Docker!!!
-   ```
-@z
+% snip command...
 
 @x
-4. Run the following command to tear down your application.
+4. Run the following commands to tear down your application.
 @y
-4. Run the following command to tear down your application.
+4. Run the following commands to tear down your application.
 @z
 
-@x
-   ```console
-   $ kubectl delete -f docker-python-kubernetes.yaml
-   ```
-@y
-   ```console
-   $ kubectl delete -f docker-python-kubernetes.yaml
-   ```
-@z
+% snip command...
 
 @x
 ## Summary

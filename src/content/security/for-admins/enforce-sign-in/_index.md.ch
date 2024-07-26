@@ -1,26 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Understand what happens when you force users to sign in to Docker Desktop
 toc_max: 2
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security,
 title: Enforce sign-in for Docker Desktop
-aliases:
-- /docker-hub/configure-sign-in/
-- /security/for-admins/configure-sign-in/
----
 @y
----
 description: Understand what happens when you force users to sign in to Docker Desktop
 toc_max: 2
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security,
 title: Enforce sign-in for Docker Desktop
-aliases:
-- /docker-hub/configure-sign-in/
-- /security/for-admins/configure-sign-in/
----
 @z
 
 @x
@@ -103,6 +95,6 @@ following occurs:
 > If your organization is also using single sign-on (SSO), you can optionally enforce SSO.
 > This means that your users must use SSO to sign in, instead of a username and password.
 > When you enforce sign-in and enforce SSO, your users must sign in and must use SSO to do so.
-> See [Enforce SSO](/security/for-admins/single-sign-on/connect#optional-enforce-sso) for details on how to enable this for your SSO connection.
+> See [Enforce SSO](__SUBDIR__/security/for-admins/single-sign-on/connect#optional-enforce-sso) for details on how to enable this for your SSO connection.
 { .tip }
 @z

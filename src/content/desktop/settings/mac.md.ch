@@ -500,9 +500,9 @@ The HTTPS proxy settings used for scanning images are set using the `HTTPS_PROXY
 @z
 
 @x
-You can also select **Use kernel networking for UDP**. This lets you use a more efficient kernel networking path for UDP by changing the value of `kernelForUDP` in the `settings.json` file.
+You can also select the **Use kernel networking for UDP** setting. This lets you use a more efficient kernel networking path for UDP. This may not be compatible with your VPN software.
 @y
-You can also select **Use kernel networking for UDP**. This lets you use a more efficient kernel networking path for UDP by changing the value of `kernelForUDP` in the `settings.json` file.
+You can also select the **Use kernel networking for UDP** setting. This lets you use a more efficient kernel networking path for UDP. This may not be compatible with your VPN software.
 @z
 
 @x

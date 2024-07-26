@@ -1,22 +1,46 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Docker security announcements
 keywords: Docker, CVEs, security, notice, Log4J 2, Log4Shell, Text4Shell, announcements
 title: Docker security announcements
-toc_min: 1
-toc_max: 2
----
 @y
----
 description: Docker security announcements
 keywords: Docker, CVEs, security, notice, Log4J 2, Log4Shell, Text4Shell, announcements
 title: Docker security announcements
-toc_min: 1
-toc_max: 2
----
+@z
+
+@x
+## Deprecation of password logins on CLI when SSO enforced
+@y
+## Deprecation of password logins on CLI when SSO enforced
+@z
+
+@x
+_Last updated July, 2024_
+@y
+_Last updated July, 2024_
+@z
+
+@x
+When [SSO enforcement](/security/for-admins/single-sign-on/connect/#optional-enforce-sso) was first introduced, Docker provided a grace period to continue to let passwords be used on the Docker CLI when authenticating to Docker Hub. This was allowed so organizations could more easily use SSO enforcement. It is recommended that administrators configuring SSO encourage users using the CLI [to switch over to Personal Access Tokens](/security/for-admins/single-sign-on/#prerequisites) in anticipation of this grace period ending.
+@y
+When [SSO enforcement](__SUBDIR__/security/for-admins/single-sign-on/connect/#optional-enforce-sso) was first introduced, Docker provided a grace period to continue to let passwords be used on the Docker CLI when authenticating to Docker Hub. This was allowed so organizations could more easily use SSO enforcement. It is recommended that administrators configuring SSO encourage users using the CLI [to switch over to Personal Access Tokens](__SUBDIR__/security/for-admins/single-sign-on/#prerequisites) in anticipation of this grace period ending.
+@z
+
+@x
+On September 16, 2024 the grace period will end and passwords will no longer be able to authenticate to Docker Hub via the Docker CLI when SSO is enforced. Affected users are required to switch over to using PATs to continue signing in.
+@y
+On September 16, 2024 the grace period will end and passwords will no longer be able to authenticate to Docker Hub via the Docker CLI when SSO is enforced. Affected users are required to switch over to using PATs to continue signing in.
+@z
+
+@x
+At Docker, we want the experience to be the most secure for our developers and organizations and this deprecation is an essential step in that direction.
+@y
+At Docker, we want the experience to be the most secure for our developers and organizations and this deprecation is an essential step in that direction.
 @z
 
 @x

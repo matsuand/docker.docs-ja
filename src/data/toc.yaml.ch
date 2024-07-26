@@ -1219,12 +1219,12 @@ Reference:
 
 @x
   - path: /reference/cli/docker/debug/
-    title: docker debug (Beta)
+    title: docker debug
   - path: /reference/cli/docker/exec/
     title: docker exec
 @y
   - path: __SUBDIR__/reference/cli/docker/debug/
-    title: docker debug (ベータ)
+    title: docker debug
   - path: __SUBDIR__/reference/cli/docker/exec/
     title: docker exec
 @z

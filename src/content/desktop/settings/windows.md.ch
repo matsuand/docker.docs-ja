@@ -780,37 +780,9 @@ Docker menu or in the **Updates** section in the Docker Dashboard.
 @z
 
 @x
-Use the **Extensions** tab to:
+On the **Features in development** tab you can control your settings for **Beta features** and **Experimental features**.
 @y
-Use the **Extensions** tab to:
-@z
-
-@x
-- **Enable Docker Extensions**
-- **Allow only extensions distributed through the Docker Marketplace**
-- **Show Docker Extensions system containers**
-@y
-- **Enable Docker Extensions**
-- **Allow only extensions distributed through the Docker Marketplace**
-- **Show Docker Extensions system containers**
-@z
-
-@x
-For more information about Docker extensions, see [Extensions](../extensions/index.md).
-@y
-For more information about Docker extensions, see [Extensions](../extensions/index.md).
-@z
-
-@x
-## Feature control
-@y
-## Feature control
-@z
-
-@x
-On the **Feature control** tab you can control your settings for **Beta features** and **Experimental features**.
-@y
-On the **Feature control** tab you can control your settings for **Beta features** and **Experimental features**.
+On the **Features in development** tab you can control your settings for **Beta features** and **Experimental features**.
 @z
 
 @x

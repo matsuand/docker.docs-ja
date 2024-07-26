@@ -402,13 +402,13 @@ policy.
 Docker Scout uses [provenance](../../build/attestations/slsa-provenance.md)
 attestations or the `org.opencontainers.image.revision` OCI annotation to link
 SonarQube analysis results with container images. In addition to enabling the
-SonarQube integration, you must also make sure that your images have either the
+SonarQube integration, you must also make sure that your images has either the
 attestation or the label.
 @y
 Docker Scout uses [provenance](../../build/attestations/slsa-provenance.md)
 attestations or the `org.opencontainers.image.revision` OCI annotation to link
 SonarQube analysis results with container images. In addition to enabling the
-SonarQube integration, you must also make sure that your images have either the
+SonarQube integration, you must also make sure that your images has either the
 attestation or the label.
 @z
 

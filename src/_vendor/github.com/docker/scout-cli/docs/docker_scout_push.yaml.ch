@@ -3,7 +3,7 @@
 
 @x
 command: docker scout push
-short: Push an image or image index to Docker Scout (experimental)
+short: Push an image or image index to Docker Scout
 long: |
     The `docker scout push` command lets you push an image or analysis result to Docker Scout.
 usage: docker scout push IMAGE
@@ -13,6 +13,16 @@ options:
     - option: author
       value_type: string
       description: Name of the author of the image
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: dry-run
+      value_type: bool
+      default_value: "false"
+      description: Do not push the image but process it
       deprecated: false
       hidden: false
       experimental: false
@@ -91,7 +101,7 @@ examples: |-
     ### Push an image to Docker Scout
 @y
 command: docker scout push
-short: Push an image or image index to Docker Scout (experimental)
+short: Push an image or image index to Docker Scout
 long: |
     The `docker scout push` command lets you push an image or analysis result to Docker Scout.
 usage: docker scout push IMAGE
@@ -101,6 +111,16 @@ options:
     - option: author
       value_type: string
       description: Name of the author of the image
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: dry-run
+      value_type: bool
+      default_value: "false"
+      description: Do not push the image but process it
       deprecated: false
       hidden: false
       experimental: false
@@ -185,7 +205,7 @@ examples: |-
     ```
 deprecated: false
 experimental: false
-experimentalcli: true
+experimentalcli: false
 kubernetes: false
 swarm: false
 @y
@@ -194,7 +214,7 @@ swarm: false
     ```
 deprecated: false
 experimental: false
-experimentalcli: true
+experimentalcli: false
 kubernetes: false
 swarm: false
 @z

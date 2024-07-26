@@ -108,6 +108,24 @@ If your administrator account is different to your user account, you must add th
 @z
 
 @x
+> **Note**
+>
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This feature ensures your organization maintains the required Docker Desktop version. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
+>
+> Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy Docker Desktop** page > under **Security and access**. 
+>
+> To keep up to date with new releases, check the [release notes](https://docs.docker.com/desktop/release-notes/) page.
+@y
+> **Note**
+>
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This feature ensures your organization maintains the required Docker Desktop version. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
+>
+> Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy Docker Desktop** page > under **Security and access**. 
+>
+> To keep up to date with new releases, check the [release notes](https://docs.docker.com/desktop/release-notes/) page.
+@z
+
+@x
 ## Install from the command line
 @y
 ## Install from the command line
@@ -473,6 +491,7 @@ msiexec /x "DockerDesktop.msi" /quiet
 | `ALWAYSRUNSERVICE` | Lets users switch to Windows containers without needing admin rights | 0 |
 | `DISABLEWINDOWSCONTAINERS` | Disables the Windows containers integration | 0 |
 | `ENGINE` | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows` | `wsl` |
+| `PROXYENABLEKERBEROSNTLM` | When set to 1, enables support for Kerberos and NTLM proxy authentication. Available with Docker Desktop 4.33 and later| 0 |
 | `PROXYHTTPMODE` | Sets the HTTP Proxy mode. This can be either `system` or `manual` | `system` |
 | `OVERRIDEPROXYHTTP` | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests. | None |
 | `OVERRIDEPROXYHTTPS` | Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests. | None |
@@ -491,6 +510,7 @@ msiexec /x "DockerDesktop.msi" /quiet
 | `ALWAYSRUNSERVICE` | Lets users switch to Windows containers without needing admin rights | 0 |
 | `DISABLEWINDOWSCONTAINERS` | Disables the Windows containers integration | 0 |
 | `ENGINE` | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows` | `wsl` |
+| `PROXYENABLEKERBEROSNTLM` | When set to 1, enables support for Kerberos and NTLM proxy authentication. Available with Docker Desktop 4.33 and later| 0 |
 | `PROXYHTTPMODE` | Sets the HTTP Proxy mode. This can be either `system` or `manual` | `system` |
 | `OVERRIDEPROXYHTTP` | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests. | None |
 | `OVERRIDEPROXYHTTPS` | Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests. | None |
@@ -511,30 +531,6 @@ Additionally, you can also use `/norestart` or `/forcerestart` to control reboot
 By default, the installer reboots the machine after a successful installation. When ran silently, the reboot is automatic and the user is not prompted.
 @y
 By default, the installer reboots the machine after a successful installation. When ran silently, the reboot is automatic and the user is not prompted.
-@z
-
-@x
-## Updates 
-@y
-## Updates 
-@z
-
-@x
-When installing Docker Desktop with the MSI, in-app updates are disabled.
-@y
-When installing Docker Desktop with the MSI, in-app updates are disabled.
-@z
-
-@x
-Docker Desktop will notify you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy Docker Desktop** page under **Security and access**. 
-@y
-Docker Desktop will notify you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy Docker Desktop** page under **Security and access**. 
-@z
-
-@x
-To keep up to date with new releases, you can check use the [release notes](https://docs.docker.com/desktop/release-notes/) page.
-@y
-To keep up to date with new releases, you can check use the [release notes](https://docs.docker.com/desktop/release-notes/) page.
 @z
 
 @x

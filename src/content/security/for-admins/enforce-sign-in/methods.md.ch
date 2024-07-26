@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Learn about the different ways you can force users to sign in to Docker Desktop
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security 
 title: Ways to enforce sign-in for Docker Desktop
----
 @y
----
 description: Learn about the different ways you can force users to sign in to Docker Desktop
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security 
 title: Ways to enforce sign-in for Docker Desktop
----
 @z
 
 @x
@@ -318,7 +316,7 @@ The following instructions explain how to create and deploy a `registry.json` fi
 details, see [Manage members](/admin/organization/members/).
 @y
 1. Ensure that the user is a member of your organization in Docker. For more
-details, see [Manage members](/admin/organization/members/).
+details, see [Manage members](__SUBDIR__/admin/organization/members/).
 @z
 
 @x

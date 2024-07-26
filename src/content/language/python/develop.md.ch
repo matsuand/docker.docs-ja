@@ -139,10 +139,10 @@ Save and close the `password.txt` file.
 @z
 
 @x
-You should now have the following contents in your `python-docker-dev`
+You should now have the following contents in your `python-docker-dev-example`
 directory.
 @y
-You should now have the following contents in your `python-docker-dev`
+You should now have the following contents in your `python-docker-dev-example`
 directory.
 @z
 
@@ -173,10 +173,20 @@ You should receive the following response:
 % snip code...
 
 @x
-The response is empty because your database is empty.
+Let's make a get request with the next curl command:
 @y
-The response is empty because your database is empty.
+Let's make a get request with the next curl command:
 @z
+
+% snip code...
+
+@x
+You should receive the same response as above because it's the only one object we have in database.
+@y
+You should receive the same response as above because it's the only one object we have in database.
+@z
+
+% snip code...
 
 @x
 Press `ctrl+c` in the terminal to stop your application.
@@ -233,9 +243,9 @@ Any changes to the application's source files on your local machine will now be 
 @z
 
 @x
-Open `python-docker-dev/app.py` in an IDE or text editor and update the `Hello, Docker!` string by adding a few more exclamation marks.
+Open `python-docker-dev-example/app.py` in an IDE or text editor and update the `Hello, Docker!` string by adding a few more exclamation marks.
 @y
-Open `python-docker-dev/app.py` in an IDE or text editor and update the `Hello, Docker!` string by adding a few more exclamation marks.
+Open `python-docker-dev-example/app.py` in an IDE or text editor and update the `Hello, Docker!` string by adding a few more exclamation marks.
 @z
 
 % snip code...

@@ -1,18 +1,15 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 @x
----
 title: 3D Secure authentication
 description: Learn about 3D Secure support for Docker billing.
 keywords: billing, renewal, payments, subscriptions
----
 @y
----
 title: 3D Secure authentication
 description: Learn about 3D Secure support for Docker billing.
 keywords: billing, renewal, payments, subscriptions
----
 @z
 
 @x
@@ -22,7 +19,7 @@ keywords: billing, renewal, payments, subscriptions
 @y
 > **Note**
 >
-> [Docker Core subscription](/billing/core-billing/get-started-core/) payments support 3D secure authentication.
+> [Docker Core subscription](__SUBDIR__/billing/core-billing/get-started-core/) payments support 3D secure authentication.
 @z
 
 @x
@@ -43,10 +40,10 @@ The following transactions will use 3DS authentication if your payment method re
 - [Upgrading your subscription](/subscription/core-subscription/upgrade/)
 - [Adding seats](/subscription/core-subscription/add-seats/) to an existing subscription
 @y
-- Starting a [new paid subscription](/billing/core-billing/get-started-core/)
-- Changing your [billing cycle](/billing/core-billing/cycle/) from monthly to annual
-- [Upgrading your subscription](/subscription/core-subscription/upgrade/)
-- [Adding seats](/subscription/core-subscription/add-seats/) to an existing subscription
+- Starting a [new paid subscription](__SUBDIR__/billing/core-billing/get-started-core/)
+- Changing your [billing cycle](__SUBDIR__/billing/core-billing/cycle/) from monthly to annual
+- [Upgrading your subscription](__SUBDIR__/subscription/core-subscription/upgrade/)
+- [Adding seats](__SUBDIR__/subscription/core-subscription/add-seats/) to an existing subscription
 @z
 
 @x

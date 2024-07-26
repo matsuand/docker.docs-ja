@@ -1,6 +1,9 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+% snip 対応
+
 @x
 # docker compose events
 @y
@@ -21,40 +24,11 @@ With the `--json` flag, a json object is printed one per line with the format:
 With the `--json` flag, a json object is printed one per line with the format:
 @z
 
-@x
-```json
-{
-    "time": "2015-11-20T18:01:03.615550",
-    "type": "container",
-    "action": "create",
-    "id": "213cf7...5fc39a",
-    "service": "web",
-    "attributes": {
-      "name": "application_web_1",
-      "image": "alpine:edge"
-    }
-}
-```
-@y
-```json
-{
-    "time": "2015-11-20T18:01:03.615550",
-    "type": "container",
-    "action": "create",
-    "id": "213cf7...5fc39a",
-    "service": "web",
-    "attributes": {
-      "name": "application_web_1",
-      "image": "alpine:edge"
-    }
-}
-```
-@z
-
+% snip code...
 @x
 The events that can be received using this can be seen [here](/reference/cli/docker/system/events/#object-types).
 @y
-The events that can be received using this can be seen [here](/reference/cli/docker/system/events/#object-types).
+The events that can be received using this can be seen [here](__SUBDIR__/reference/cli/docker/system/events/#object-types).
 @z
 
 @x
@@ -99,35 +73,7 @@ With the `--json` flag, a json object is printed one per line with the format:
 With the `--json` flag, a json object is printed one per line with the format:
 @z
 
-@x
-```json
-{
-    "time": "2015-11-20T18:01:03.615550",
-    "type": "container",
-    "action": "create",
-    "id": "213cf7...5fc39a",
-    "service": "web",
-    "attributes": {
-      "name": "application_web_1",
-      "image": "alpine:edge"
-    }
-}
-```
-@y
-```json
-{
-    "time": "2015-11-20T18:01:03.615550",
-    "type": "container",
-    "action": "create",
-    "id": "213cf7...5fc39a",
-    "service": "web",
-    "attributes": {
-      "name": "application_web_1",
-      "image": "alpine:edge"
-    }
-}
-```
-@z
+% snip code...
 
 @x
 The events that can be received using this can be seen [here](https://docs.docker.com/reference/cli/docker/system/events/#object-types).

@@ -6,8 +6,7 @@ SUBDIRS = builder buildx checkpoint compose config container context \
 	swarm system trust volume
 
 bases = \
-	README.md \
-	debug.md
+	README.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -15,6 +14,7 @@ include $(top_srcdir)/build-aux/main.mk
 copyfiles = \
 	_index.md       \
 	build-legacy.md \
+	debug.md        \
 	init.md         \
 	inspect.md      \
 	login.md        \
