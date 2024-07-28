@@ -1,310 +1,114 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応
-
 @x
-description: Overview of Docker Compose Bridge
+description: Understand what Compose Bridge is and how it can be useful
 keywords: compose, orchestration, kubernetes, bridge
-title: Overview of Docker Compose Bridge
+title: Overview of Compose Bridge
 @y
-description: Overview of Docker Compose Bridge
+description: Understand what Compose Bridge is and how it can be useful
 keywords: compose, orchestration, kubernetes, bridge
-title: Overview of Docker Compose Bridge
+title: Overview of Compose Bridge
 @z
 
-% snip include...
+% snip include ...
 
 @x
-## Introduction
+Compose Bridge lets you transform your Compose configuration file into configuration files for different platforms, primarily focusing on Kubernetes. The default transformation generates Kubernetes manifests and a Kustomize overlay which are designed for deployment on Docker Desktop with Kubernetes enabled.  
 @y
-## Introduction
-@z
-
-@x
-Docker Compose makes it easy to define a multi-container application
-to be run on a single-node Docker Engine, relying on a `compose.yaml` file to
-describe resources with a simple abstraction.
-@y
-Docker Compose makes it easy to define a multi-container application
-to be run on a single-node Docker Engine, relying on a `compose.yaml` file to
-describe resources with a simple abstraction.
+Compose Bridge lets you transform your Compose configuration file into configuration files for different platforms, primarily focusing on Kubernetes. The default transformation generates Kubernetes manifests and a Kustomize overlay which are designed for deployment on Docker Desktop with Kubernetes enabled.  
 @z
 
 @x
-Compose Bridge lets you reuse this exact same `compose.yaml` file but
-translate it into another platform's definition format, with a primary
-focus on Kubernetes. This transformation can be customized to match
-specific needs and requirements.
+It's a flexible tool that lets you either take advantage of the [default transformation](usage.md) or [create a custom transformation](customize.md) to suit specific project needs and requirements.  
 @y
-Compose Bridge lets you reuse this exact same `compose.yaml` file but
-translate it into another platform's definition format, with a primary
-focus on Kubernetes. This transformation can be customized to match
-specific needs and requirements.
+It's a flexible tool that lets you either take advantage of the [default transformation](usage.md) or [create a custom transformation](customize.md) to suit specific project needs and requirements.  
 @z
 
 @x
-## Usage
+Compose Bridge significantly simplifies the transition from Docker Compose to Kubernetes, making it easier for you to leverage the power of Kubernetes while maintaining the simplicity and efficiency of Docker Compose.
 @y
-## Usage
+Compose Bridge significantly simplifies the transition from Docker Compose to Kubernetes, making it easier for you to leverage the power of Kubernetes while maintaining the simplicity and efficiency of Docker Compose.
 @z
 
 @x
-Compose Bridge is a command line tool that consumes a `compose.yaml` file  
-and runs a transformation to produce resource definitions for another platform.
-[By default](transformation.md), it produces Kubernetes manifests and a Kustomize overlay for Docker Desktop. For example: 
+## How it works
 @y
-Compose Bridge is a command line tool that consumes a `compose.yaml` file  
-and runs a transformation to produce resource definitions for another platform.
-[By default](transformation.md), it produces Kubernetes manifests and a Kustomize overlay for Docker Desktop. For example: 
-@z
-
-% snip command...
-
-@x
-Such manifests can then be used to run the application on Kubernetes using
-the standard deployment command `kubectl apply -k out/overlays/desktop/`.
-@y
-Such manifests can then be used to run the application on Kubernetes using
-the standard deployment command `kubectl apply -k out/overlays/desktop/`.
+## How it works
 @z
 
 @x
-## Customization
+Compose Bridge uses transformations to let you convert a Compose model into another form. 
 @y
-## Customization
+Compose Bridge uses transformations to let you convert a Compose model into another form. 
 @z
 
 @x
-The Kubernetes manifests produced by Compose Bridge 
-are designed to allow deployment on Docker Desktop with Kubernetes enabled. 
+A transformation is packaged as a Docker image that receives the fully resolved Compose model as `/in/compose.yaml` and can produce any target format file under `/out`.
 @y
-The Kubernetes manifests produced by Compose Bridge 
-are designed to allow deployment on Docker Desktop with Kubernetes enabled. 
+A transformation is packaged as a Docker image that receives the fully resolved Compose model as `/in/compose.yaml` and can produce any target format file under `/out`.
 @z
 
 @x
-Kubernetes is such a versatile platform that there are many ways
-to map Compose concepts into a Kubernetes resource definitions. Compose
-Bridge lets you customize the transformation to match your own infrastructure
-decisions and preferences, with various level of flexibility / investment.
+Compose Bridge provides its own transformation for Kubernetes using Go templates, so that it is easy to extend for customization by replacing or appending your own templates.
 @y
-Kubernetes is such a versatile platform that there are many ways
-to map Compose concepts into a Kubernetes resource definitions. Compose
-Bridge lets you customize the transformation to match your own infrastructure
-decisions and preferences, with various level of flexibility / investment.
+Compose Bridge provides its own transformation for Kubernetes using Go templates, so that it is easy to extend for customization by replacing or appending your own templates.
 @z
 
 @x
-### Modify the default templates
+For more detailed information on how these transformations work and how you can customize them for your projects, see [Customize](customize.md).
 @y
-### Modify the default templates
+For more detailed information on how these transformations work and how you can customize them for your projects, see [Customize](customize.md).
 @z
 
 @x
-You can extract templates used by default transformation `docker/compose-bridge-kubernetes`
-by running `compose-bridge transformations create my-template --from docker/compose-bridge-kubernetes` 
-and adjusting those to match your needs.
+## Setup
 @y
-You can extract templates used by default transformation `docker/compose-bridge-kubernetes`
-by running `compose-bridge transformations create my-template --from docker/compose-bridge-kubernetes` 
-and adjusting those to match your needs.
+## Setup
 @z
 
 @x
-The templates will be extracted into a directory named after your template name (ie `my-template`).  
-Inside, you will find a Dockerfile that allows you to create your own image to distribute your template, as well as a directory containing the templating files.  
-You are free to edit the existing files, delete them, or [add new ones](#add-your-own-templates) to subsequently generate Kubernetes manifests that meet your needs.  
-You can then use the generated Dockerfile to package your changes into a new Transformer image, which you can then use with Compose Bridge:
+To get started with Compose Bridge, you need to:
 @y
-The templates will be extracted into a directory named after your template name (ie `my-template`).  
-Inside, you will find a Dockerfile that allows you to create your own image to distribute your template, as well as a directory containing the templating files.  
-You are free to edit the existing files, delete them, or [add new ones](#add-your-own-templates) to subsequently generate Kubernetes manifests that meet your needs.  
-You can then use the generated Dockerfile to package your changes into a new Transformer image, which you can then use with Compose Bridge:
-@z
-
-% snip command...
-
-@x
-You can then use your transformation as a replacement:
-@y
-You can then use your transformation as a replacement:
-@z
-
-% snip command...
-
-@x
-For more information, see [Templates](./templates.md).
-@y
-For more information, see [Templates](./templates.md).
+To get started with Compose Bridge, you need to:
 @z
 
 @x
-### Add your own templates
+1. Download and install a version of Docker Desktop that supports Compose Bridge.
+2. Sign in to your Docker account.
+3. Navigate to the **Features in development** tab in **Settings**. 
+4. From the **Experimental features** tab, select **Enable Compose Bridge**.
 @y
-### Add your own templates
+1. Download and install a version of Docker Desktop that supports Compose Bridge.
+2. Sign in to your Docker account.
+3. Navigate to the **Features in development** tab in **Settings**. 
+4. From the **Experimental features** tab, select **Enable Compose Bridge**.
 @z
 
 @x
-For resources that are not managed by Compose Bridge's default transformation, 
-you can build your own templates. The `compose.yaml` model may not offer all 
-the configuration attributes required to populate the target manifest. If this is the case, you can
-then rely on Compose custom extensions to let developers better describe the
-application, and offer an agnostic transformation.
+## Feedback
 @y
-For resources that are not managed by Compose Bridge's default transformation, 
-you can build your own templates. The `compose.yaml` model may not offer all 
-the configuration attributes required to populate the target manifest. If this is the case, you can
-then rely on Compose custom extensions to let developers better describe the
-application, and offer an agnostic transformation.
+## Feedback
 @z
 
 @x
-As an illustration, if developers add `x-virtual-host` metadata
-to service definitions in the `compose.yaml` file, you can use the following custom attribute
-to produce Ingress rules:
+To give feedback, report bugs, or receive support, email `desktop-preview@docker.com`. There is also a dedicated Slack channel. To join, simply send an email to the provided address.
 @y
-As an illustration, if developers add `x-virtual-host` metadata
-to service definitions in the `compose.yaml` file, you can use the following custom attribute
-to produce Ingress rules:
-@z
-
-% snip code...
-
-@x
-Once packaged into a Docker image, you can use this custom template
-when transforming Compose models into Kubernetes in addition to other
-transformations:
-@y
-Once packaged into a Docker image, you can use this custom template
-when transforming Compose models into Kubernetes in addition to other
-transformations:
-@z
-
-% snip command...
-
-@x
-### Build your own transformation
-@y
-### Build your own transformation
+To give feedback, report bugs, or receive support, email `desktop-preview@docker.com`. There is also a dedicated Slack channel. To join, simply send an email to the provided address.
 @z
 
 @x
-While Compose Bridge templates make it easy to customize with minimal changes,
-you may want to make significant changes, or rely on an existing conversion tool.
+## What's next?
 @y
-While Compose Bridge templates make it easy to customize with minimal changes,
-you may want to make significant changes, or rely on an existing conversion tool.
+## What's next?
 @z
 
 @x
-A Compose Bridge transformation is a Docker image that is designed to get a Compose model
-from `/in/compose.yaml` and produce platform manifests under `/out`. This simple 
-contract makes it easy to bundle an alternate transformation, as illustrated below using 
-[Kompose](https://kompose.io/):
+- [Use Compose Bridge](usage.md)
+- [Explore how you can customize Compose Bridge](customize.md)
+- [Explore the advanced integration](advanced-integration.md)
 @y
-A Compose Bridge transformation is a Docker image that is designed to get a Compose model
-from `/in/compose.yaml` and produce platform manifests under `/out`. This simple 
-contract makes it easy to bundle an alternate transformation, as illustrated below using 
-[Kompose](https://kompose.io/):
-@z
-
-@x
-```Dockerfile
-FROM alpine
-@y
-```Dockerfile
-FROM alpine
-@z
-
-@x
-# Get kompose from github release page
-RUN apk add --no-cache curl
-ARG VERSION=1.32.0
-RUN ARCH=$(uname -m | sed 's/armv7l/arm/g' | sed 's/aarch64/arm64/g' | sed 's/x86_64/amd64/g') && \
-    curl -fsL \
-    "https://github.com/kubernetes/kompose/releases/download/v${VERSION}/kompose-linux-${ARCH}" \
-    -o /usr/bin/kompose
-RUN chmod +x /usr/bin/kompose
-@y
-# Get kompose from github release page
-RUN apk add --no-cache curl
-ARG VERSION=1.32.0
-RUN ARCH=$(uname -m | sed 's/armv7l/arm/g' | sed 's/aarch64/arm64/g' | sed 's/x86_64/amd64/g') && \
-    curl -fsL \
-    "https://github.com/kubernetes/kompose/releases/download/v${VERSION}/kompose-linux-${ARCH}" \
-    -o /usr/bin/kompose
-RUN chmod +x /usr/bin/kompose
-@z
-
-@x
-CMD ["/usr/bin/kompose", "convert", "-f", "/in/compose.yaml", "--out", "/out"]
-```
-@y
-CMD ["/usr/bin/kompose", "convert", "-f", "/in/compose.yaml", "--out", "/out"]
-```
-@z
-
-@x
-This Dockerfile bundles Kompose and defines the command to run this tool according
-to the Compose Bridge transformation contract.
-@y
-This Dockerfile bundles Kompose and defines the command to run this tool according
-to the Compose Bridge transformation contract.
-@z
-
-@x
-## Use `compose-bridge` as a `kubectl` plugin
-@y
-## Use `compose-bridge` as a `kubectl` plugin
-@z
-
-@x
-To use the `compose-bridge` binary as a `kubectl` plugin, you need to make sure that the binary is available in your PATH and the name of the binary is prefixed with `kubectl-`. 
-@y
-To use the `compose-bridge` binary as a `kubectl` plugin, you need to make sure that the binary is available in your PATH and the name of the binary is prefixed with `kubectl-`. 
-@z
-
-@x
-1. Rename or copy the `compose-bridge` binary to `kubectl-compose_bridge`:
-@y
-1. Rename or copy the `compose-bridge` binary to `kubectl-compose_bridge`:
-@z
-
-% snip command...
-
-@x
-2. Ensure that the binary is executable:
-@y
-2. Ensure that the binary is executable:
-@z
-
-% snip command...
-
-@x
-3. Verify that the plugin is recognized by `kubectl`:
-@y
-3. Verify that the plugin is recognized by `kubectl`:
-@z
-
-% snip command...
-
-@x
-    In the output, you should see `kubectl-compose_bridge`.
-@y
-    In the output, you should see `kubectl-compose_bridge`.
-@z
-
-@x
-4. Now you can use `compose-bridge` as a `kubectl` plugin:
-@y
-4. Now you can use `compose-bridge` as a `kubectl` plugin:
-@z
-
-% snip command...
-
-@x
-Replace `[command]` with any `compose-bridge` command you want to use.
-@y
-Replace `[command]` with any `compose-bridge` command you want to use.
+- [Use Compose Bridge](usage.md)
+- [Explore how you can customize Compose Bridge](customize.md)
+- [Explore the advanced integration](advanced-integration.md)
 @z

@@ -1836,14 +1836,14 @@ the `-p` flag. For example
 % snip command...
 
 @x
-To set up port redirection on the host system, see [using the -P flag](https://docs.docker.com/engine/reference/run/#expose-incoming-ports).
+To set up port redirection on the host system, see [using the -P flag](https://docs.docker.com/reference/cli/docker/container/run/#publish).
 The `docker network` command supports creating networks for communication among
 containers without the need to expose or publish specific ports, because the
 containers connected to the network can communicate with each other over any
 port. For detailed information, see the
 [overview of this feature](https://docs.docker.com/engine/userguide/networking/).
 @y
-To set up port redirection on the host system, see [using the -P flag](https://docs.docker.com/engine/reference/run/#expose-incoming-ports).
+To set up port redirection on the host system, see [using the -P flag](https://docs.docker.com/reference/cli/docker/container/run/#publish).
 The `docker network` command supports creating networks for communication among
 containers without the need to expose or publish specific ports, because the
 containers connected to the network can communicate with each other over any
@@ -1907,12 +1907,12 @@ change them using `docker run --env <key>=<value>`.
 
 @x
 A stage inherits any environment variables that were set using `ENV` by its
-parent stage or any ancestor. Refer [here](https://docs.docker.com/build/building/multi-stage/)
-for more on multi-staged builds.
+parent stage or any ancestor. Refer to the [multi-stage builds section](https://docs.docker.com/build/building/multi-stage/)
+in the manual for more information.
 @y
 A stage inherits any environment variables that were set using `ENV` by its
-parent stage or any ancestor. Refer [here](https://docs.docker.com/build/building/multi-stage/)
-for more on multi-staged builds.
+parent stage or any ancestor. Refer to the [multi-stage builds section](https://docs.docker.com/build/building/multi-stage/)
+in the manual for more information.
 @z
 
 @x
@@ -2002,70 +2002,250 @@ The latter form is required for paths containing whitespace.
 % snip code...
 
 @x
-The `ADD` instruction copies new files, directories or remote file URLs from `<src>`
-and adds them to the filesystem of the image at the path `<dest>`.
+The available `[OPTIONS]` are:
+
+- [`--keep-git-dir`](#add---keep-git-dir)
+- [`--checksum`](#add---checksum)
+- [`--chown`](#add---chown---chmod)
+- [`--chmod`](#add---chown---chmod)
+- [`--link`](#add---link)
+- [`--exclude`](#add---exclude)
 @y
-The `ADD` instruction copies new files, directories or remote file URLs from `<src>`
-and adds them to the filesystem of the image at the path `<dest>`.
+The available `[OPTIONS]` are:
+
+- [`--keep-git-dir`](#add---keep-git-dir)
+- [`--checksum`](#add---checksum)
+- [`--chown`](#add---chown---chmod)
+- [`--chmod`](#add---chown---chmod)
+- [`--link`](#add---link)
+- [`--exclude`](#add---exclude)
 @z
 
 @x
-Multiple `<src>` resources may be specified but if they are files or
-directories, their paths are interpreted as relative to the source of
-the context of the build.
+The `ADD` instruction copies new files or directories from `<src>` and adds
+them to the filesystem of the image at the path `<dest>`. Files and directories
+can be copied from the build context, a remote URL, or a Git repository.
 @y
-Multiple `<src>` resources may be specified but if they are files or
-directories, their paths are interpreted as relative to the source of
-the context of the build.
+The `ADD` instruction copies new files or directories from `<src>` and adds
+them to the filesystem of the image at the path `<dest>`. Files and directories
+can be copied from the build context, a remote URL, or a Git repository.
 @z
 
 @x
-Each `<src>` may contain wildcards and matching will be done using Go's
-[filepath.Match](https://golang.org/pkg/path/filepath#Match) rules. For example:
+The `ADD` and `COPY` instructions are functionally similar, but serve slightly different purposes.
+Learn more about the [differences between `ADD` and `COPY`](https://docs.docker.com/build/building/best-practices/#add-or-copy).
 @y
-Each `<src>` may contain wildcards and matching will be done using Go's
-[filepath.Match](https://golang.org/pkg/path/filepath#Match) rules. For example:
+The `ADD` and `COPY` instructions are functionally similar, but serve slightly different purposes.
+Learn more about the [differences between `ADD` and `COPY`](https://docs.docker.com/build/building/best-practices/#add-or-copy).
 @z
 
 @x
-To add all files in the root of the build context starting with "hom":
+### Source
 @y
-To add all files in the root of the build context starting with "hom":
-@z
-
-% snip code...
-
-@x
-In the following example, `?` is a single-character wildcard, matching e.g. "home.txt".
-@y
-In the following example, `?` is a single-character wildcard, matching e.g. "home.txt".
-@z
-
-% snip code...
-
-@x
-The `<dest>` is an absolute path, or a path relative to `WORKDIR`, into which
-the source will be copied inside the destination container.
-@y
-The `<dest>` is an absolute path, or a path relative to `WORKDIR`, into which
-the source will be copied inside the destination container.
+### Source
 @z
 
 @x
-The example below uses a relative path, and adds "test.txt" to `<WORKDIR>/relativeDir/`:
+You can specify multiple source files or directories with `ADD`. The last
+argument must always be the destination. For example, to add two files,
+`file1.txt` and `file2.txt`, from the build context to `/usr/src/things/` in
+the build container:
 @y
-以下の例では相対パスを使っているので "test.txt" を `<WORKDIR>/relativeDir/` に追加します。
+You can specify multiple source files or directories with `ADD`. The last
+argument must always be the destination. For example, to add two files,
+`file1.txt` and `file2.txt`, from the build context to `/usr/src/things/` in
+the build container:
 @z
-
-% snip code...
 
 @x
-Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
+```dockerfile
+ADD file1.txt file2.txt /usr/src/things/
+```
 @y
-一方、以下の例では絶対パスを使っているので "test.txt" を `/absoluteDir/` に追加します。
+```dockerfile
+ADD file1.txt file2.txt /usr/src/things/
+```
 @z
 
-% snip code...
+@x
+If you specify multiple source files, either directly or using a wildcard, then
+the destination must be a directory (must end with a slash `/`).
+@y
+If you specify multiple source files, either directly or using a wildcard, then
+the destination must be a directory (must end with a slash `/`).
+@z
+
+@x
+To add files from a remote location, you can specify a URL or the address of a
+Git repository as the source. For example:
+@y
+To add files from a remote location, you can specify a URL or the address of a
+Git repository as the source. For example:
+@z
+
+@x
+```dockerfile
+ADD https://example.com/archive.zip /usr/src/things/
+ADD git@github.com:user/repo.git /usr/src/things/
+```
+@y
+```dockerfile
+ADD https://example.com/archive.zip /usr/src/things/
+ADD git@github.com:user/repo.git /usr/src/things/
+```
+@z
+
+@x
+BuildKit detects the type of `<src>` and processes it accordingly.
+@y
+BuildKit detects the type of `<src>` and processes it accordingly.
+@z
+
+@x
+- If `<src>` is a local file or directory, the contents of the directory are
+  copied to the specified destination. See [Adding files from the build context](#adding-files-from-the-build-context).
+- If `<src>` is a local tar archive, it is decompressed and extracted to the
+  specified destination. See [Adding local tar archives](#adding-local-tar-archives).
+- If `<src>` is a URL, the contents of the URL are downloaded and placed at
+  the specified destination. See [Adding files from a URL](#adding-files-from-a-url).
+- If `<src>` is a Git repository, the repository is cloned to the specified
+  destination. See [Adding files from a Git repository](#adding-files-from-a-git-repository).
+@y
+- If `<src>` is a local file or directory, the contents of the directory are
+  copied to the specified destination. See [Adding files from the build context](#adding-files-from-the-build-context).
+- If `<src>` is a local tar archive, it is decompressed and extracted to the
+  specified destination. See [Adding local tar archives](#adding-local-tar-archives).
+- If `<src>` is a URL, the contents of the URL are downloaded and placed at
+  the specified destination. See [Adding files from a URL](#adding-files-from-a-url).
+- If `<src>` is a Git repository, the repository is cloned to the specified
+  destination. See [Adding files from a Git repository](#adding-files-from-a-git-repository).
+@z
+
+@x
+#### Adding files from the build context
+@y
+#### Adding files from the build context
+@z
+
+@x
+Any relative or local path that doesn't begin with a `http://`, `https://`, or
+`git@` protocol prefix is considered a local file path. The local file path is
+relative to the build context. For example, if the build context is the current
+directory, `ADD file.txt /` adds the file at `./file.txt` to the root of the
+filesystem in the build container.
+@y
+Any relative or local path that doesn't begin with a `http://`, `https://`, or
+`git@` protocol prefix is considered a local file path. The local file path is
+relative to the build context. For example, if the build context is the current
+directory, `ADD file.txt /` adds the file at `./file.txt` to the root of the
+filesystem in the build container.
+@z
+
+@x
+When adding source files from the build context, their paths are interpreted as
+relative to the root of the context. If you specify a relative path leading
+outside of the build context, such as `ADD ../something /something`, parent
+directory paths are stripped out automatically. The effective source path in
+this example becomes `ADD something /something`.
+@y
+When adding source files from the build context, their paths are interpreted as
+relative to the root of the context. If you specify a relative path leading
+outside of the build context, such as `ADD ../something /something`, parent
+directory paths are stripped out automatically. The effective source path in
+this example becomes `ADD something /something`.
+@z
+
+@x
+If the source is a directory, the contents of the directory are copied,
+including filesystem metadata. The directory itself isn't copied, only its
+contents. If it contains subdirectories, these are also copied, and merged with
+any existing directories at the destination. Any conflicts are resolved in
+favor of the content being added, on a file-by-file basis, except if you're
+trying to copy a directory onto an existing file, in which case an error is
+raised.
+@y
+If the source is a directory, the contents of the directory are copied,
+including filesystem metadata. The directory itself isn't copied, only its
+contents. If it contains subdirectories, these are also copied, and merged with
+any existing directories at the destination. Any conflicts are resolved in
+favor of the content being added, on a file-by-file basis, except if you're
+trying to copy a directory onto an existing file, in which case an error is
+raised.
+@z
+
+@x
+If the source is a file, the file and its metadata are copied to the
+destination. File permissions are preserved. If the source is a file and a
+directory with the same name exists at the destination, an error is raised.
+@y
+If the source is a file, the file and its metadata are copied to the
+destination. File permissions are preserved. If the source is a file and a
+directory with the same name exists at the destination, an error is raised.
+@z
+
+@x
+If you pass a Dockerfile through stdin to the build (`docker build - <
+Dockerfile`), there is no build context. In this case, you can only use the
+`ADD` instruction to copy remote files. You can also pass a tar archive through
+stdin: (`docker build - < archive.tar`), the Dockerfile at the root of the
+archive and the rest of the archive will be used as the context of the build.
+@y
+If you pass a Dockerfile through stdin to the build (`docker build - <
+Dockerfile`), there is no build context. In this case, you can only use the
+`ADD` instruction to copy remote files. You can also pass a tar archive through
+stdin: (`docker build - < archive.tar`), the Dockerfile at the root of the
+archive and the rest of the archive will be used as the context of the build.
+@z
+
+@x
+##### Pattern matching
+@y
+##### Pattern matching
+@z
+
+@x
+For local files, each `<src>` may contain wildcards and matching will be done
+using Go's [filepath.Match](https://golang.org/pkg/path/filepath#Match) rules.
+@y
+For local files, each `<src>` may contain wildcards and matching will be done
+using Go's [filepath.Match](https://golang.org/pkg/path/filepath#Match) rules.
+@z
+
+@x
+For example, to add all files and directories in the root of the build context
+ending with `.png`:
+@y
+For example, to add all files and directories in the root of the build context
+ending with `.png`:
+@z
+
+@x
+```dockerfile
+ADD *.png /dest/
+```
+@y
+```dockerfile
+ADD *.png /dest/
+```
+@z
+
+@x
+In the following example, `?` is a single-character wildcard, matching e.g.
+`index.js` and `index.ts`.
+@y
+In the following example, `?` is a single-character wildcard, matching e.g.
+`index.js` and `index.ts`.
+@z
+
+@x
+```dockerfile
+ADD index.?s /dest/
+```
+@y
+```dockerfile
+ADD index.?s /dest/
+```
+@z
 
 @x
 When adding files or directories that contain special characters (such as `[`
@@ -2079,42 +2259,114 @@ them from being treated as a matching pattern. For example, to add a file
 named `arr[0].txt`, use the following;
 @z
 
-% snip code...
+@x
+```dockerfile
+ADD arr[[]0].txt /dest/
+```
+@y
+```dockerfile
+ADD arr[[]0].txt /dest/
+```
+@z
 
 @x
-In the case where `<src>` is a remote file URL, the destination will
-have permissions of 600. If the remote file being retrieved has an HTTP
-`Last-Modified` header, the timestamp from that header will be used
-to set the `mtime` on the destination file. However, like any other file
-processed during an `ADD`, `mtime` isn't included in the determination
-of whether or not the file has changed and the cache should be updated.
+#### Adding local tar archives
 @y
-In the case where `<src>` is a remote file URL, the destination will
-have permissions of 600. If the remote file being retrieved has an HTTP
-`Last-Modified` header, the timestamp from that header will be used
-to set the `mtime` on the destination file. However, like any other file
-processed during an `ADD`, `mtime` isn't included in the determination
-of whether or not the file has changed and the cache should be updated.
+#### Adding local tar archives
+@z
+
+@x
+When using a local tar archive as the source for `ADD`, and the archive is in a
+recognized compression format (`gzip`, `bzip2` or `xz`, or uncompressed), the
+archive is decompressed and extracted into the specified destination. Only
+local tar archives are extracted. If the tar archive is a remote URL, the
+archive is not extracted, but downloaded and placed at the destination.
+@y
+When using a local tar archive as the source for `ADD`, and the archive is in a
+recognized compression format (`gzip`, `bzip2` or `xz`, or uncompressed), the
+archive is decompressed and extracted into the specified destination. Only
+local tar archives are extracted. If the tar archive is a remote URL, the
+archive is not extracted, but downloaded and placed at the destination.
+@z
+
+@x
+When a directory is extracted, it has the same behavior as `tar -x`.
+The result is the union of:
+@y
+When a directory is extracted, it has the same behavior as `tar -x`.
+The result is the union of:
+@z
+
+@x
+1. Whatever existed at the destination path, and
+2. The contents of the source tree, with conflicts resolved in favor of the
+   content being added, on a file-by-file basis.
+@y
+1. Whatever existed at the destination path, and
+2. The contents of the source tree, with conflicts resolved in favor of the
+   content being added, on a file-by-file basis.
 @z
 
 @x
 > **Note**
 >
-> If you build by passing a Dockerfile through STDIN (`docker
-build - < somefile`), there is no build context, so the Dockerfile
-> can only contain a URL based `ADD` instruction. You can also pass a
-> compressed archive through STDIN: (`docker build - < archive.tar.gz`),
-> the Dockerfile at the root of the archive and the rest of the
-> archive will be used as the context of the build.
+> Whether a file is identified as a recognized compression format or not is
+> done solely based on the contents of the file, not the name of the file. For
+> example, if an empty file happens to end with `.tar.gz` this isn't recognized
+> as a compressed file and doesn't generate any kind of decompression error
+> message, rather the file will simply be copied to the destination.
 @y
 > **Note**
 >
-> If you build by passing a Dockerfile through STDIN (`docker
-build - < somefile`), there is no build context, so the Dockerfile
-> can only contain a URL based `ADD` instruction. You can also pass a
-> compressed archive through STDIN: (`docker build - < archive.tar.gz`),
-> the Dockerfile at the root of the archive and the rest of the
-> archive will be used as the context of the build.
+> Whether a file is identified as a recognized compression format or not is
+> done solely based on the contents of the file, not the name of the file. For
+> example, if an empty file happens to end with `.tar.gz` this isn't recognized
+> as a compressed file and doesn't generate any kind of decompression error
+> message, rather the file will simply be copied to the destination.
+@z
+
+@x
+#### Adding files from a URL
+@y
+#### Adding files from a URL
+@z
+
+@x
+In the case where source is a remote file URL, the destination will have
+permissions of 600. If the HTTP response contains a `Last-Modified` header, the
+timestamp from that header will be used to set the `mtime` on the destination
+file. However, like any other file processed during an `ADD`, `mtime` isn't
+included in the determination of whether or not the file has changed and the
+cache should be updated.
+@y
+In the case where source is a remote file URL, the destination will have
+permissions of 600. If the HTTP response contains a `Last-Modified` header, the
+timestamp from that header will be used to set the `mtime` on the destination
+file. However, like any other file processed during an `ADD`, `mtime` isn't
+included in the determination of whether or not the file has changed and the
+cache should be updated.
+@z
+
+@x
+If the destination ends with a trailing slash, then the filename is inferred
+from the URL path. For example, `ADD http://example.com/foobar /` would create
+the file `/foobar`. The URL must have a nontrivial path so that an appropriate
+filename can be discovered (`http://example.com` doesn't work).
+@y
+If the destination ends with a trailing slash, then the filename is inferred
+from the URL path. For example, `ADD http://example.com/foobar /` would create
+the file `/foobar`. The URL must have a nontrivial path so that an appropriate
+filename can be discovered (`http://example.com` doesn't work).
+@z
+
+@x
+If the destination doesn't end with a trailing slash, the destination path
+becomes the filename of the file downloaded from the URL. For example, `ADD
+http://example.com/foo /bar` creates the file `/bar`.
+@y
+If the destination doesn't end with a trailing slash, the destination path
+becomes the filename of the file downloaded from the URL. For example, `ADD
+http://example.com/foo /bar` creates the file `/bar`.
 @z
 
 @x
@@ -2128,178 +2380,194 @@ doesn't support authentication.
 @z
 
 @x
-> **Note**
->
-> The first encountered `ADD` instruction will invalidate the cache for all
-> following instructions from the Dockerfile if the contents of `<src>` have
-> changed. This includes invalidating the cache for `RUN` instructions.
-> See the [Dockerfile Best Practices
-> guide – Leverage build cache](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache)
-> for more information.
+#### Adding files from a Git repository
 @y
-> **Note**
->
-> The first encountered `ADD` instruction will invalidate the cache for all
-> following instructions from the Dockerfile if the contents of `<src>` have
-> changed. This includes invalidating the cache for `RUN` instructions.
-> See the [Dockerfile Best Practices
-> guide – Leverage build cache](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache)
-> for more information.
+#### Adding files from a Git repository
 @z
 
 @x
-`ADD` obeys the following rules:
+To use a Git repository as the source for `ADD`, you can reference the
+repository's HTTP or SSH address as the source. The repository is cloned to the
+specified destination in the image.
 @y
-`ADD` obeys the following rules:
+To use a Git repository as the source for `ADD`, you can reference the
+repository's HTTP or SSH address as the source. The repository is cloned to the
+specified destination in the image.
 @z
 
 @x
-- The `<src>` path must be inside the build context;
-  you can't use `ADD ../something /something`, because the builder can only
-  access files from the context, and `../something` specifies a parent file or
-  directory of the build context root.
+```dockerfile
+ADD https://github.com/user/repo.git /mydir/
+```
 @y
-- The `<src>` path must be inside the build context;
-  you can't use `ADD ../something /something`, because the builder can only
-  access files from the context, and `../something` specifies a parent file or
-  directory of the build context root.
+```dockerfile
+ADD https://github.com/user/repo.git /mydir/
+```
 @z
 
 @x
-- If `<src>` is a URL and `<dest>` does end with a trailing slash, then the
-  filename is inferred from the URL and the file is downloaded to
-  `<dest>/<filename>`. For instance, `ADD http://example.com/foobar /` would
-  create the file `/foobar`. The URL must have a nontrivial path so that an
-  appropriate filename can be discovered in this case (`http://example.com`
-  doesn't work).
+You can use URL fragments to specify a specific branch, tag, commit, or
+subdirectory. For example, to add the `docs` directory of the `v0.14.1` tag of
+the `buildkit` repository:
 @y
-- If `<src>` is a URL and `<dest>` does end with a trailing slash, then the
-  filename is inferred from the URL and the file is downloaded to
-  `<dest>/<filename>`. For instance, `ADD http://example.com/foobar /` would
-  create the file `/foobar`. The URL must have a nontrivial path so that an
-  appropriate filename can be discovered in this case (`http://example.com`
-  doesn't work).
+You can use URL fragments to specify a specific branch, tag, commit, or
+subdirectory. For example, to add the `docs` directory of the `v0.14.1` tag of
+the `buildkit` repository:
 @z
 
 @x
-- If `<src>` is a directory, the entire contents of the directory are copied,
-  including filesystem metadata.
+```dockerfile
+ADD git@github.com:moby/buildkit.git#v0.14.1:docs /buildkit-docs
+```
 @y
-- If `<src>` is a directory, the entire contents of the directory are copied,
-  including filesystem metadata.
+```dockerfile
+ADD git@github.com:moby/buildkit.git#v0.14.1:docs /buildkit-docs
+```
 @z
 
 @x
-  > **Note**
-  >
-  > The directory itself isn't copied, only its contents.
+For more information about Git URL fragments,
+see [URL fragments](https://docs.docker.com/build/building/context/#url-fragments).
 @y
-  > **Note**
-  >
-  > The directory itself isn't copied, only its contents.
+For more information about Git URL fragments,
+see [URL fragments](https://docs.docker.com/build/building/context/#url-fragments).
 @z
 
 @x
-- If `<src>` is a local `tar` archive in a recognized compression format
-  (`identity`, `gzip`, `bzip2` or `xz`) then it's unpacked as a directory. Resources
-  from remote URLs aren't decompressed. When a directory is copied or
-  unpacked, it has the same behavior as `tar -x`. The result is the union of:
+When adding from a Git repository, the permissions bits for files
+are 644. If a file in the repository has the executable bit set, it will have
+permissions set to 755. Directories have permissions set to 755.
 @y
-- If `<src>` is a local `tar` archive in a recognized compression format
-  (`identity`, `gzip`, `bzip2` or `xz`) then it's unpacked as a directory. Resources
-  from remote URLs aren't decompressed. When a directory is copied or
-  unpacked, it has the same behavior as `tar -x`. The result is the union of:
+When adding from a Git repository, the permissions bits for files
+are 644. If a file in the repository has the executable bit set, it will have
+permissions set to 755. Directories have permissions set to 755.
 @z
 
 @x
-  1. Whatever existed at the destination path and
-  2. The contents of the source tree, with conflicts resolved in favor
-     of "2." on a file-by-file basis.
+When using a Git repository as the source, the repository must be accessible
+from the build context. To add a repository via SSH, whether public or private,
+you must pass an SSH key for authentication. For example, given the following
+Dockerfile:
 @y
-  1. Whatever existed at the destination path and
-  2. The contents of the source tree, with conflicts resolved in favor
-     of "2." on a file-by-file basis.
+When using a Git repository as the source, the repository must be accessible
+from the build context. To add a repository via SSH, whether public or private,
+you must pass an SSH key for authentication. For example, given the following
+Dockerfile:
 @z
 
 @x
-  > **Note**
-  >
-  > Whether a file is identified as a recognized compression format or not
-  > is done solely based on the contents of the file, not the name of the file.
-  > For example, if an empty file happens to end with `.tar.gz` this isn't
-  > recognized as a compressed file and doesn't generate any kind of
-  > decompression error message, rather the file will simply be copied to the
-  > destination.
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ADD git@git.example.com:foo/bar.git /bar
+```
 @y
-  > **Note**
-  >
-  > Whether a file is identified as a recognized compression format or not
-  > is done solely based on the contents of the file, not the name of the file.
-  > For example, if an empty file happens to end with `.tar.gz` this isn't
-  > recognized as a compressed file and doesn't generate any kind of
-  > decompression error message, rather the file will simply be copied to the
-  > destination.
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ADD git@git.example.com:foo/bar.git /bar
+```
 @z
 
 @x
-- If `<src>` is any other kind of file, it's copied individually along with
-  its metadata. In this case, if `<dest>` ends with a trailing slash `/`, it
-  will be considered a directory and the contents of `<src>` will be written
-  at `<dest>/base(<src>)`.
+To build this Dockerfile, pass the `--ssh` flag to the `docker build` to mount
+the SSH agent socket to the build. For example:
 @y
-- If `<src>` is any other kind of file, it's copied individually along with
-  its metadata. In this case, if `<dest>` ends with a trailing slash `/`, it
-  will be considered a directory and the contents of `<src>` will be written
-  at `<dest>/base(<src>)`.
+To build this Dockerfile, pass the `--ssh` flag to the `docker build` to mount
+the SSH agent socket to the build. For example:
 @z
 
 @x
-- If multiple `<src>` resources are specified, either directly or due to the
-  use of a wildcard, then `<dest>` must be a directory, and it must end with
-  a slash `/`.
+```console
+$ docker build --ssh default .
+```
 @y
-- If multiple `<src>` resources are specified, either directly or due to the
-  use of a wildcard, then `<dest>` must be a directory, and it must end with
-  a slash `/`.
+```console
+$ docker build --ssh default .
+```
 @z
 
 @x
-- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
-  the contents of `<src>` will be written as filename `<dest>`.
+For more information about building with secrets,
+see [Build secrets](https://docs.docker.com/build/building/secrets/).
 @y
-- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
-  the contents of `<src>` will be written as filename `<dest>`.
+For more information about building with secrets,
+see [Build secrets](https://docs.docker.com/build/building/secrets/).
 @z
 
 @x
-- If `<dest>` doesn't exist, it's created, along with all missing directories
-  in its path.
+### Destination
 @y
-- If `<dest>` doesn't exist, it's created, along with all missing directories
-  in its path.
+### Destination
 @z
 
 @x
-### Adding private Git repositories
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to the root of the current build stage.
 @y
-### Adding private Git repositories
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to the root of the current build stage.
 @z
 
 @x
-To add a private repository via SSH, create a Dockerfile with the following form:
+```dockerfile
+# create /abs/test.txt
+ADD test.txt /abs/
+```
 @y
-To add a private repository via SSH, create a Dockerfile with the following form:
+```dockerfile
+# create /abs/test.txt
+ADD test.txt /abs/
+```
 @z
-
-% snip code...
 
 @x
-This Dockerfile can be built with `docker build --ssh` or `buildctl build --ssh`, e.g.,
+Trailing slashes are significant. For example, `ADD test.txt /abs` creates a
+file at `/abs`, whereas `ADD test.txt /abs/` creates `/abs/test.txt`.
 @y
-This Dockerfile can be built with `docker build --ssh` or `buildctl build --ssh`, e.g.,
+Trailing slashes are significant. For example, `ADD test.txt /abs` creates a
+file at `/abs`, whereas `ADD test.txt /abs/` creates `/abs/test.txt`.
 @z
 
-% snip command...
+@x
+If the destination path doesn't begin with a leading slash, it's interpreted as
+relative to the working directory of the build container.
+@y
+If the destination path doesn't begin with a leading slash, it's interpreted as
+relative to the working directory of the build container.
+@z
+
+@x
+```dockerfile
+WORKDIR /usr/src/app
+# create /usr/src/app/rel/test.txt
+ADD test.txt rel/
+```
+@y
+```dockerfile
+WORKDIR /usr/src/app
+# create /usr/src/app/rel/test.txt
+ADD test.txt rel/
+```
+@z
+
+@x
+If destination doesn't exist, it's created, along with all missing directories
+in its path.
+@y
+If destination doesn't exist, it's created, along with all missing directories
+in its path.
+@z
+
+@x
+If the source is a file, and the destination doesn't end with a trailing slash,
+the source file will be written to the destination path as a file.
+@y
+If the source is a file, and the destination doesn't end with a trailing slash,
+the source file will be written to the destination path as a file.
+@z
 
 @x
 ### ADD --keep-git-dir
@@ -2307,7 +2575,15 @@ This Dockerfile can be built with `docker build --ssh` or `buildctl build --ssh`
 ### ADD --keep-git-dir
 @z
 
-% snip code...
+@x
+```dockerfile
+ADD [--keep-git-dir=<boolean>] <src> ... <dir>
+```
+@y
+```dockerfile
+ADD [--keep-git-dir=<boolean>] <src> ... <dir>
+```
+@z
 
 @x
 When `<src>` is the HTTP or SSH address of a remote Git repository,
@@ -2325,7 +2601,19 @@ The `--keep-git-dir=true` flag lets you preserve the `.git` directory.
 The `--keep-git-dir=true` flag lets you preserve the `.git` directory.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ADD --keep-git-dir=true https://github.com/moby/buildkit.git#v0.10.1 /buildkit
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ADD --keep-git-dir=true https://github.com/moby/buildkit.git#v0.10.1 /buildkit
+```
+@z
 
 @x
 ### ADD --checksum
@@ -2333,7 +2621,15 @@ The `--keep-git-dir=true` flag lets you preserve the `.git` directory.
 ### ADD --checksum
 @z
 
-% snip code...
+@x
+```dockerfile
+ADD [--checksum=<hash>] <src> ... <dir>
+```
+@y
+```dockerfile
+ADD [--checksum=<hash>] <src> ... <dir>
+```
+@z
 
 @x
 The `--checksum` flag lets you verify the checksum of a remote resource:
@@ -2341,12 +2637,20 @@ The `--checksum` flag lets you verify the checksum of a remote resource:
 The `--checksum` flag lets you verify the checksum of a remote resource:
 @z
 
-% snip code...
+@x
+```dockerfile
+ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
+```
+@y
+```dockerfile
+ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
+```
+@z
 
 @x
-The `--checksum` flag only supports HTTP sources currently.
+The `--checksum` flag only supports HTTP(S) sources.
 @y
-The `--checksum` flag only supports HTTP sources currently.
+The `--checksum` flag only supports HTTP(S) sources.
 @z
 
 @x
@@ -2395,11 +2699,21 @@ See [`COPY --exclude`](#copy---exclude).
 COPY has two forms.
 The latter form is required for paths containing whitespace.
 @y
-COPY には 2 つの書式があります。
-2 つめの書式は、パス文字列内にホワイトスペースを含む場合に用います。
+COPY has two forms.
+The latter form is required for paths containing whitespace.
 @z
 
-% snip code...
+@x
+```dockerfile
+COPY [OPTIONS] <src> ... <dest>
+COPY [OPTIONS] ["<src>", ... "<dest>"]
+```
+@y
+```dockerfile
+COPY [OPTIONS] <src> ... <dest>
+COPY [OPTIONS] ["<src>", ... "<dest>"]
+```
+@z
 
 @x
 The available `[OPTIONS]` are:
@@ -2408,12 +2722,14 @@ The available `[OPTIONS]` are:
 @z
 
 @x
+- [`--from`](#copy---from)
 - [`--chown`](#copy---chown---chmod)
 - [`--chmod`](#copy---chown---chmod)
 - [`--link`](#copy---link)
 - [`--parents`](#copy---parents)
 - [`--exclude`](#copy---exclude)
 @y
+- [`--from`](#copy---from)
 - [`--chown`](#copy---chown---chmod)
 - [`--chmod`](#copy---chown---chmod)
 - [`--link`](#copy---link)
@@ -2421,184 +2737,410 @@ The available `[OPTIONS]` are:
 - [`--exclude`](#copy---exclude)
 @z
 
-% @x
-% > **Note**
-% >
-% > The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
-% > and doesn't work on Windows containers. Since user and group ownership concepts do
-% > not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for
-% > translating user and group names to IDs restricts this feature to only be viable for
-% > Linux OS-based containers.
-% @y
-% > **メモ**
-% >
-% > `--chown` と `--chmod` の機能は Linux コンテナーをビルドする Dockerfile においてのみサポートされるものであり、Windows コンテナーに対しては動作しません。
-% > Linux と Windows の間で、ユーザーやグループの所有権という考え方が共有されないためです。
-% > この機能では `/etc/passwd` や `/etc/group` を使って、ユーザーやグループの名前を ID に変換するため、この機能が実現できるのは Linux OS をベースとするコンテナーに限定されます。
-% @z
-
 @x
-The `COPY` instruction copies new files or directories from `<src>`
-and adds them to the filesystem of the container at the path `<dest>`.
+The `COPY` instruction copies new files or directories from `<src>` and adds
+them to the filesystem of the image at the path `<dest>`. Files and directories
+can be copied from the build context, build stage, named context, or an image.
 @y
-`COPY` 命令は `<src>` からファイルやディレクトリを新たにコピーして、コンテナー内のファイルシステムのパス `<dest>` に追加します。
+The `COPY` instruction copies new files or directories from `<src>` and adds
+them to the filesystem of the image at the path `<dest>`. Files and directories
+can be copied from the build context, build stage, named context, or an image.
 @z
 
 @x
-Multiple `<src>` resources may be specified but the paths of files and
-directories will be interpreted as relative to the source of the context
-of the build.
+The `ADD` and `COPY` instructions are functionally similar, but serve slightly different purposes.
+Learn more about the [differences between `ADD` and `COPY`](https://docs.docker.com/build/building/best-practices/#add-or-copy).
 @y
-`<src>` には複数のソースを指定することが可能です。
-ソースとしてファイルあるいはディレクトリが指定されている場合、そのパスはビルドコンテキストからの相対パスとして解釈されます。
+The `ADD` and `COPY` instructions are functionally similar, but serve slightly different purposes.
+Learn more about the [differences between `ADD` and `COPY`](https://docs.docker.com/build/building/best-practices/#add-or-copy).
 @z
 
 @x
-Each `<src>` may contain wildcards and matching will be done using Go's
-[filepath.Match](https://golang.org/pkg/path/filepath#Match) rules. For example:
+### Source
 @y
-`<src>` にはワイルドカードを含めることができます。
-その場合、マッチング処理は Go 言語の [filepath.Match](https://golang.org/pkg/path/filepath#Match) ルールに従って行われます。
-記述例は以下のとおりです。
+### Source
 @z
 
 @x
-To add all files in the root of the build context starting with "hom":
+You can specify multiple source files or directories with `COPY`. The last
+argument must always be the destination. For example, to copy two files,
+`file1.txt` and `file2.txt`, from the build context to `/usr/src/things/` in
+the build container:
 @y
-ビルドコンテキストのルート内において、"hom" で始まるファイルをすべて追加するには以下とします。
-@z
-
-% snip code...
-
-@x
-In the following example, `?` is a single-character wildcard, matching e.g. "home.txt".
-@y
-以下の例における `?` はただ 1 つの文字の何にでもマッチします。
-したがってたとえば "home.txt" となります。
-@z
-
-% snip code...
-
-@x
-The `<dest>` is an absolute path, or a path relative to `WORKDIR`, into which
-the source will be copied inside the destination container.
-@y
-`<dest>` は絶対パスか、あるいは `WORKDIR` からの相対パスにより指定します。
-対象としているコンテナー内において、そのパスに対してソースがコピーされます。
+You can specify multiple source files or directories with `COPY`. The last
+argument must always be the destination. For example, to copy two files,
+`file1.txt` and `file2.txt`, from the build context to `/usr/src/things/` in
+the build container:
 @z
 
 @x
-The example below uses a relative path, and adds "test.txt" to `<WORKDIR>/relativeDir/`:
+```dockerfile
+COPY file1.txt file2.txt /usr/src/things/
+```
 @y
-以下の例では相対パスを用いています。
-"test.txt" は `<WORKDIR>/relativeDir/` に対して追加されることになります。
+```dockerfile
+COPY file1.txt file2.txt /usr/src/things/
+```
 @z
 
-% snip code...
-
 @x
-Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
+If you specify multiple source files, either directly or using a wildcard, then
+the destination must be a directory (must end with a slash `/`).
 @y
-Whereas this example uses an absolute path, and adds "test.txt" to `/absoluteDir/`
+If you specify multiple source files, either directly or using a wildcard, then
+the destination must be a directory (must end with a slash `/`).
 @z
 
-% snip code...
+@x
+`COPY` accepts a flag `--from=<name>` that lets you specify the source location
+to be a build stage, context, or image. The following example copies files from
+a stage named `build`:
+@y
+`COPY` accepts a flag `--from=<name>` that lets you specify the source location
+to be a build stage, context, or image. The following example copies files from
+a stage named `build`:
+@z
 
 @x
-When copying files or directories that contain special characters (such as `[`
+```dockerfile
+FROM golang AS build
+WORKDIR /app
+RUN --mount=type=bind,target=. go build -o /myapp ./cmd
+@y
+```dockerfile
+FROM golang AS build
+WORKDIR /app
+RUN --mount=type=bind,target=. go build -o /myapp ./cmd
+@z
+
+@x
+COPY --from=build /myapp /usr/bin/
+```
+@y
+COPY --from=build /myapp /usr/bin/
+```
+@z
+
+@x
+For more information about copying from named sources, see the
+[`--from` flag](#copy---from).
+@y
+For more information about copying from named sources, see the
+[`--from` flag](#copy---from).
+@z
+
+@x
+#### Copying from the build context
+@y
+#### Copying from the build context
+@z
+
+@x
+When copying source files from the build context, their paths are interpreted as
+relative to the root of the context. If you specify a relative path leading
+outside of the build context, such as `COPY ../something /something`, parent
+directory paths are stripped out automatically. The effective source path in
+this example becomes `COPY something /something`.
+@y
+When copying source files from the build context, their paths are interpreted as
+relative to the root of the context. If you specify a relative path leading
+outside of the build context, such as `COPY ../something /something`, parent
+directory paths are stripped out automatically. The effective source path in
+this example becomes `COPY something /something`.
+@z
+
+@x
+If the source is a directory, the contents of the directory are copied,
+including filesystem metadata. The directory itself isn't copied, only its
+contents. If it contains subdirectories, these are also copied, and merged with
+any existing directories at the destination. Any conflicts are resolved in
+favor of the content being added, on a file-by-file basis, except if you're
+trying to copy a directory onto an existing file, in which case an error is
+raised.
+@y
+If the source is a directory, the contents of the directory are copied,
+including filesystem metadata. The directory itself isn't copied, only its
+contents. If it contains subdirectories, these are also copied, and merged with
+any existing directories at the destination. Any conflicts are resolved in
+favor of the content being added, on a file-by-file basis, except if you're
+trying to copy a directory onto an existing file, in which case an error is
+raised.
+@z
+
+@x
+If the source is a file, the file and its metadata are copied to the
+destination. File permissions are preserved. If the source is a file and a
+directory with the same name exists at the destination, an error is raised.
+@y
+If the source is a file, the file and its metadata are copied to the
+destination. File permissions are preserved. If the source is a file and a
+directory with the same name exists at the destination, an error is raised.
+@z
+
+@x
+If you pass a Dockerfile through stdin to the build (`docker build - <
+Dockerfile`), there is no build context. In this case, you can only use the
+`COPY` instruction to copy files from other stages, named contexts, or images,
+using the [`--from` flag](#copy---from). You can also pass a tar archive
+through stdin: (`docker build - < archive.tar`), the Dockerfile at the root of
+the archive and the rest of the archive will be used as the context of the
+build.
+@y
+If you pass a Dockerfile through stdin to the build (`docker build - <
+Dockerfile`), there is no build context. In this case, you can only use the
+`COPY` instruction to copy files from other stages, named contexts, or images,
+using the [`--from` flag](#copy---from). You can also pass a tar archive
+through stdin: (`docker build - < archive.tar`), the Dockerfile at the root of
+the archive and the rest of the archive will be used as the context of the
+build.
+@z
+
+@x
+When using a Git repository as the build context, the permissions bits for
+copied files are 644. If a file in the repository has the executable bit set,
+it will have permissions set to 755. Directories have permissions set to 755.
+@y
+When using a Git repository as the build context, the permissions bits for
+copied files are 644. If a file in the repository has the executable bit set,
+it will have permissions set to 755. Directories have permissions set to 755.
+@z
+
+@x
+##### Pattern matching
+@y
+##### Pattern matching
+@z
+
+@x
+For local files, each `<src>` may contain wildcards and matching will be done
+using Go's [filepath.Match](https://golang.org/pkg/path/filepath#Match) rules.
+@y
+For local files, each `<src>` may contain wildcards and matching will be done
+using Go's [filepath.Match](https://golang.org/pkg/path/filepath#Match) rules.
+@z
+
+@x
+For example, to add all files and directories in the root of the build context
+ending with `.png`:
+@y
+For example, to add all files and directories in the root of the build context
+ending with `.png`:
+@z
+
+@x
+```dockerfile
+COPY *.png /dest/
+```
+@y
+```dockerfile
+COPY *.png /dest/
+```
+@z
+
+@x
+In the following example, `?` is a single-character wildcard, matching e.g.
+`index.js` and `index.ts`.
+@y
+In the following example, `?` is a single-character wildcard, matching e.g.
+`index.js` and `index.ts`.
+@z
+
+@x
+```dockerfile
+COPY index.?s /dest/
+```
+@y
+```dockerfile
+COPY index.?s /dest/
+```
+@z
+
+@x
+When adding files or directories that contain special characters (such as `[`
 and `]`), you need to escape those paths following the Golang rules to prevent
-them from being treated as a matching pattern. For example, to copy a file
+them from being treated as a matching pattern. For example, to add a file
 named `arr[0].txt`, use the following;
 @y
-When copying files or directories that contain special characters (such as `[`
+When adding files or directories that contain special characters (such as `[`
 and `]`), you need to escape those paths following the Golang rules to prevent
-them from being treated as a matching pattern. For example, to copy a file
+them from being treated as a matching pattern. For example, to add a file
 named `arr[0].txt`, use the following;
 @z
 
-% snip code...
-
-
 @x
-> **Note**
->
-> If you build using STDIN (`docker build - < somefile`), there is no
-> build context, so `COPY` can't be used.
+```dockerfile
+COPY arr[[]0].txt /dest/
+```
 @y
-> **Note**
->
-> If you build using STDIN (`docker build - < somefile`), there is no
-> build context, so `COPY` can't be used.
-@z
-
-
-
-@x
-  > **Note**
-  >
-  > The directory itself isn't copied, only its contents.
-@y
-  > **Note**
-  >
-  > The directory itself isn't copied, only its contents.
+```dockerfile
+COPY arr[[]0].txt /dest/
+```
 @z
 
 @x
-- If `<src>` is any other kind of file, it's copied individually along with
-  its metadata. In this case, if `<dest>` ends with a trailing slash `/`, it
-  will be considered a directory and the contents of `<src>` will be written
-  at `<dest>/base(<src>)`.
+### Destination
 @y
-- If `<src>` is any other kind of file, it's copied individually along with
-  its metadata. In this case, if `<dest>` ends with a trailing slash `/`, it
-  will be considered a directory and the contents of `<src>` will be written
-  at `<dest>/base(<src>)`.
+### Destination
 @z
 
 @x
-- If multiple `<src>` resources are specified, either directly or due to the
-  use of a wildcard, then `<dest>` must be a directory, and it must end with
-  a slash `/`.
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to the root of the current build stage.
 @y
-- If multiple `<src>` resources are specified, either directly or due to the
-  use of a wildcard, then `<dest>` must be a directory, and it must end with
-  a slash `/`.
+If the destination path begins with a forward slash, it's interpreted as an
+absolute path, and the source files are copied into the specified destination
+relative to the root of the current build stage.
 @z
 
 @x
-- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
-  the contents of `<src>` will be written as filename `<dest>`.
+```dockerfile
+# create /abs/test.txt
+ADD test.txt /abs/
+```
 @y
-- If `<src>` is a file, and `<dest>` doesn't end with a trailing slash,
-  the contents of `<src>` will be written as filename `<dest>`.
+```dockerfile
+# create /abs/test.txt
+ADD test.txt /abs/
+```
 @z
 
 @x
-- If `<dest>` doesn't exist, it's created, along with all missing directories
-  in its path.
+Trailing slashes are significant. For example, `ADD test.txt /abs` creates a
+file at `/abs`, whereas `ADD test.txt /abs/` creates `/abs/test.txt`.
 @y
-- If `<dest>` doesn't exist, it's created, along with all missing directories
-  in its path.
+Trailing slashes are significant. For example, `ADD test.txt /abs` creates a
+file at `/abs`, whereas `ADD test.txt /abs/` creates `/abs/test.txt`.
 @z
 
 @x
-> **Note**
->
-> The first encountered `COPY` instruction will invalidate the cache for all
-> following instructions from the Dockerfile if the contents of `<src>` have
-> changed. This includes invalidating the cache for `RUN` instructions.
-> See the [Dockerfile Best Practices
-> guide – Leverage build cache](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache)
-> for more information.
+If the destination path doesn't begin with a leading slash, it's interpreted as
+relative to the working directory of the build container.
 @y
-> **Note**
->
-> The first encountered `COPY` instruction will invalidate the cache for all
-> following instructions from the Dockerfile if the contents of `<src>` have
-> changed. This includes invalidating the cache for `RUN` instructions.
-> See the [Dockerfile Best Practices
-> guide – Leverage build cache](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache)
-> for more information.
+If the destination path doesn't begin with a leading slash, it's interpreted as
+relative to the working directory of the build container.
+@z
+
+@x
+```dockerfile
+WORKDIR /usr/src/app
+# create /usr/src/app/rel/test.txt
+ADD test.txt rel/
+```
+@y
+```dockerfile
+WORKDIR /usr/src/app
+# create /usr/src/app/rel/test.txt
+ADD test.txt rel/
+```
+@z
+
+@x
+If destination doesn't exist, it's created, along with all missing directories
+in its path.
+@y
+If destination doesn't exist, it's created, along with all missing directories
+in its path.
+@z
+
+@x
+If the source is a file, and the destination doesn't end with a trailing slash,
+the source file will be written to the destination path as a file.
+@y
+If the source is a file, and the destination doesn't end with a trailing slash,
+the source file will be written to the destination path as a file.
+@z
+
+@x
+### COPY --from
+@y
+### COPY --from
+@z
+
+@x
+By default, the `COPY` instruction copies files from the build context. The
+`COPY --from` flag lets you copy files from an image, a build stage,
+or a named context instead.
+@y
+By default, the `COPY` instruction copies files from the build context. The
+`COPY --from` flag lets you copy files from an image, a build stage,
+or a named context instead.
+@z
+
+@x
+```dockerfile
+COPY [--from=<image|stage|context>] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--from=<image|stage|context>] <src> ... <dest>
+```
+@z
+
+@x
+To copy from a build stage in a
+[multi-stage build](https://docs.docker.com/build/building/multi-stage/),
+specify the name of the stage you want to copy from. You specify stage names
+using the `AS` keyword with the `FROM` instruction.
+@y
+To copy from a build stage in a
+[multi-stage build](https://docs.docker.com/build/building/multi-stage/),
+specify the name of the stage you want to copy from. You specify stage names
+using the `AS` keyword with the `FROM` instruction.
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine AS build
+COPY . .
+RUN apk add clang
+RUN clang -o /hello hello.c
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine AS build
+COPY . .
+RUN apk add clang
+RUN clang -o /hello hello.c
+@z
+
+@x
+FROM scratch
+COPY --from=build /hello /
+```
+@y
+FROM scratch
+COPY --from=build /hello /
+```
+@z
+
+@x
+You can also copy files directly from named contexts (specified with
+`--build-context <name>=<source>`) or images. The following example copies an
+`nginx.conf` file from the official Nginx image.
+@y
+You can also copy files directly from named contexts (specified with
+`--build-context <name>=<source>`) or images. The following example copies an
+`nginx.conf` file from the official Nginx image.
+@z
+
+@x
+```dockerfile
+COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf
+```
+@y
+```dockerfile
+COPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf
+```
+@z
+
+@x
+The source path of `COPY --from` is always resolved from filesystem root of the
+image or stage that you specify.
+@y
+The source path of `COPY --from` is always resolved from filesystem root of the
+image or stage that you specify.
 @z
 
 @x
@@ -2619,7 +3161,15 @@ named `arr[0].txt`, use the following;
 > [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
 @z
 
-% snip code...
+@x
+```dockerfile
+COPY [--chown=<user>:<group>] [--chmod=<perms> ...] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--chown=<user>:<group>] [--chmod=<perms> ...] <src> ... <dest>
+```
+@z
 
 @x
 The `--chown` and `--chmod` features are only supported on Dockerfiles used to build Linux containers,
@@ -2659,7 +3209,23 @@ from name to integer UID or GID respectively. The following examples show
 valid definitions for the `--chown` flag:
 @z
 
-% snip code...
+@x
+```dockerfile
+COPY --chown=55:mygroup files* /somedir/
+COPY --chown=bin files* /somedir/
+COPY --chown=1 files* /somedir/
+COPY --chown=10:11 files* /somedir/
+COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
+```
+@y
+```dockerfile
+COPY --chown=55:mygroup files* /somedir/
+COPY --chown=bin files* /somedir/
+COPY --chown=1 files* /somedir/
+COPY --chown=10:11 files* /somedir/
+COPY --chown=myuser:mygroup --chmod=644 files* /somedir/
+```
+@z
 
 @x
 If the container root filesystem doesn't contain either `/etc/passwd` or
@@ -2679,7 +3245,15 @@ no lookup and does not depend on container root filesystem content.
 ### COPY --link
 @z
 
-% snip code...
+@x
+```dockerfile
+COPY [--link[=<boolean>]] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--link[=<boolean>]] <src> ... <dest>
+```
+@z
 
 @x
 Enabling this flag in `COPY` or `ADD` commands allows you to copy files with
@@ -2701,7 +3275,19 @@ directory. That directory is turned into a layer that is linked on top of your
 previous state.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+COPY --link /foo /bar
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+COPY --link /foo /bar
+```
+@z
 
 @x
 Is equivalent of doing two builds:
@@ -2709,7 +3295,15 @@ Is equivalent of doing two builds:
 Is equivalent of doing two builds:
 @z
 
-% snip code...
+@x
+```dockerfile
+FROM alpine
+```
+@y
+```dockerfile
+FROM alpine
+```
+@z
 
 @x
 and
@@ -2717,7 +3311,17 @@ and
 and
 @z
 
-% snip code...
+@x
+```dockerfile
+FROM scratch
+COPY /foo /bar
+```
+@y
+```dockerfile
+FROM scratch
+COPY /foo /bar
+```
+@z
 
 @x
 and merging all the layers of both images together.
@@ -2821,7 +3425,15 @@ conditions for cache reuse.
 > Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @z
 
-% snip code...
+@x
+```dockerfile
+COPY [--parents[=<boolean>]] <src> ... <dest>
+```
+@y
+```dockerfile
+COPY [--parents[=<boolean>]] <src> ... <dest>
+```
+@z
 
 @x
 The `--parents` flag preserves parent directories for `src` entries. This flag defaults to `false`.
@@ -2829,7 +3441,35 @@ The `--parents` flag preserves parent directories for `src` entries. This flag d
 The `--parents` flag preserves parent directories for `src` entries. This flag defaults to `false`.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+FROM scratch
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+FROM scratch
+@z
+
+@x
+COPY ./x/a.txt ./y/a.txt /no_parents/
+COPY --parents ./x/a.txt ./y/a.txt /parents/
+@y
+COPY ./x/a.txt ./y/a.txt /no_parents/
+COPY --parents ./x/a.txt ./y/a.txt /parents/
+@z
+
+@x
+# /no_parents/a.txt
+# /parents/x/a.txt
+# /parents/y/a.txt
+```
+@y
+# /no_parents/a.txt
+# /parents/x/a.txt
+# /parents/y/a.txt
+```
+@z
 
 @x
 This behavior is similar to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
@@ -2851,17 +3491,40 @@ directories after it will be preserved. This may be especially useful copies bet
 with `--from` where the source paths need to be absolute.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+FROM scratch
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.7-labs
+FROM scratch
+@z
+
+@x
+COPY --parents ./x/./y/*.txt /parents/
+@y
+COPY --parents ./x/./y/*.txt /parents/
+@z
+
 @x
 # Build context:
-@y
-# コンテキストのビルド:
-@z
-
-@x
+# ./x/y/a.txt
+# ./x/y/b.txt
+#
 # Output:
+# /parents/y/a.txt
+# /parents/y/b.txt
+```
 @y
-# 出力:
+# Build context:
+# ./x/y/a.txt
+# ./x/y/b.txt
+#
+# Output:
+# /parents/y/a.txt
+# /parents/y/b.txt
+```
 @z
 
 @x

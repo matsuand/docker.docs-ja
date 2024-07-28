@@ -112,7 +112,7 @@ from debian:latest as deb-builder
 @z
 
 @x
-- [`FileConsistenCommandCasing`](./file-consistent-command-casing.md)
+- [`FileConsistentCommandCasing`](./consistent-instruction-casing.md)
 @y
-- [`FileConsistenCommandCasing`](./file-consistent-command-casing.md)
+- [`FileConsistentCommandCasing`](./consistent-instruction-casing.md)
 @z

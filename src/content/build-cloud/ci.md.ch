@@ -119,7 +119,77 @@ See [Loading build results](./usage/#loading-build-results) for details.
 > you use Bake).
 @z
 
-% snip code...
+@x
+```yaml
+name: ci
+@y
+```yaml
+name: ci
+@z
+
+@x
+on:
+  push:
+    branches:
+      - "main"
+@y
+on:
+  push:
+    branches:
+      - "main"
+@z
+
+@x
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PAT }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          version: "lab:latest"
+          driver: cloud
+          endpoint: "<ORG>/default"
+          install: true
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          tags: "<IMAGE>"
+          # For pull requests, export results to the build cache.
+          # Otherwise, push to a registry.
+          outputs: ${{ github.event_name == 'pull_request' && 'type=cacheonly' || 'type=registry' }}
+```
+@y
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PAT }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          version: "lab:latest"
+          driver: cloud
+          endpoint: "<ORG>/default"
+          install: true
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          tags: "<IMAGE>"
+          # For pull requests, export results to the build cache.
+          # Otherwise, push to a registry.
+          outputs: ${{ github.event_name == 'pull_request' && 'type=cacheonly' || 'type=registry' }}
+```
+@z
 
 @x
 {{< /tab >}}
@@ -504,11 +574,11 @@ BUILDX_URL=$(curl -s https://raw.githubusercontent.com/docker/actions-toolkit/ma
 @z
 
 @x
-# Download docker buildx with Hyrdobuild support
+# Download docker buildx with Build Cloud support
 curl --silent -L --output $DOCKER_DIR/cli-plugins/docker-buildx $BUILDX_URL
 chmod a+x ~/.docker/cli-plugins/docker-buildx
 @y
-# Download docker buildx with Hyrdobuild support
+# Download docker buildx with Build Cloud support
 curl --silent -L --output $DOCKER_DIR/cli-plugins/docker-buildx $BUILDX_URL
 chmod a+x ~/.docker/cli-plugins/docker-buildx
 @z
@@ -810,12 +880,12 @@ BUILDX_URL=$(curl -s https://raw.githubusercontent.com/docker/actions-toolkit/ma
 @z
 
 @x
-# Download docker buildx with Hyrdobuild support
+# Download docker buildx with Build Cloud support
 mkdir -vp ~/.docker/cli-plugins/
 curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
 chmod a+x ~/.docker/cli-plugins/docker-buildx
 @y
-# Download docker buildx with Hyrdobuild support
+# Download docker buildx with Build Cloud support
 mkdir -vp ~/.docker/cli-plugins/
 curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
 chmod a+x ~/.docker/cli-plugins/docker-buildx
@@ -916,14 +986,14 @@ COMPOSE_URL=$(curl -sL \
 @z
 
 @x
-# Download docker buildx with Hyrdobuild support
+# Download docker buildx with Build Cloud support
 mkdir -vp ~/.docker/cli-plugins/
 curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
 curl --silent -L --output ~/.docker/cli-plugins/docker-compose $COMPOSE_URL
 chmod a+x ~/.docker/cli-plugins/docker-buildx
 chmod a+x ~/.docker/cli-plugins/docker-compose
 @y
-# Download docker buildx with Hyrdobuild support
+# Download docker buildx with Build Cloud support
 mkdir -vp ~/.docker/cli-plugins/
 curl --silent -L --output ~/.docker/cli-plugins/docker-buildx $BUILDX_URL
 curl --silent -L --output ~/.docker/cli-plugins/docker-compose $COMPOSE_URL

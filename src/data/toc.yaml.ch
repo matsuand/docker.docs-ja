@@ -1918,75 +1918,95 @@ Reference:
   section:
   - path: /reference/build-checks/
     title: Overview
-  - path: /reference/build-checks/stage-name-casing/
-    title: StageNameCasing
-  - path: /reference/build-checks/from-as-casing/
-    title: FromAsCasing
-  - path: /reference/build-checks/no-empty-continuation/
-    title: NoEmptyContinuation
   - path: /reference/build-checks/consistent-instruction-casing/
     title: ConsistentInstructionCasing
+  - path: /reference/build-checks/copy-ignored-file/
+    title: CopyIgnoredFile
+  - path: /reference/build-checks/duplicate-stage-name/
+    title: DuplicateStageName
 @y
 - sectiontitle: Build checks
   section:
-  - path: __SUBDIR__/reference/build-checks/
+  - path: __SUBDIR/reference/build-checks/
     title: Overview
-  - path: __SUBDIR__/reference/build-checks/stage-name-casing/
-    title: StageNameCasing
-  - path: __SUBDIR__/reference/build-checks/from-as-casing/
-    title: FromAsCasing
-  - path: __SUBDIR__/reference/build-checks/no-empty-continuation/
-    title: NoEmptyContinuation
-  - path: __SUBDIR__/reference/build-checks/consistent-instruction-casing/
+  - path: __SUBDIR/reference/build-checks/consistent-instruction-casing/
     title: ConsistentInstructionCasing
+  - path: __SUBDIR/reference/build-checks/copy-ignored-file/
+    title: CopyIgnoredFile
+  - path: __SUBDIR/reference/build-checks/duplicate-stage-name/
+    title: DuplicateStageName
 @z
 
 @x
-  - path: /reference/build-checks/file-consistent-command-casing/
-    title: FileConsistentCommandCasing
-  - path: /reference/build-checks/duplicate-stage-name/
-    title: DuplicateStageName
-  - path: /reference/build-checks/reserved-stage-name/
-    title: ReservedStageName
+  - path: /reference/build-checks/from-as-casing/
+    title: FromAsCasing
+  - path: /reference/build-checks/from-platform-flag-const-disallowed/
+    title: FromPlatformConstDisallowed
+  - path: /reference/build-checks/invalid-default-arg-in-from/
+    title: InvalidDefaultArgInFrom
   - path: /reference/build-checks/json-args-recommended/
     title: JSONArgsRecommended
-  - path: /reference/build-checks/maintainer-deprecated/
-    title: MaintainerDeprecated
-@y
-  - path: __SUBDIR__/reference/build-checks/file-consistent-command-casing/
-    title: FileConsistentCommandCasing
-  - path: __SUBDIR__/reference/build-checks/duplicate-stage-name/
-    title: DuplicateStageName
-  - path: __SUBDIR__/reference/build-checks/reserved-stage-name/
-    title: ReservedStageName
-  - path: __SUBDIR__/reference/build-checks/json-args-recommended/
-    title: JSONArgsRecommended
-  - path: __SUBDIR__/reference/build-checks/maintainer-deprecated/
-    title: MaintainerDeprecated
-@z
-
-@x
-  - path: /reference/build-checks/undefined-arg-in-from/
-    title: UndefinedArgInFrom
-  - path: /reference/build-checks/workdir-relative-path/
-    title: WorkdirRelativePath
-  - path: /reference/build-checks/undefined-var/
-    title: UndefinedVar
-  - path: /reference/build-checks/multiple-instructions-disallowed/
-    title: MultipleInstructionsDisallowed
   - path: /reference/build-checks/legacy-key-value-format/
     title: LegacyKeyValueFormat
 @y
-  - path: __SUBDIR__/reference/build-checks/undefined-arg-in-from/
-    title: UndefinedArgInFrom
-  - path: __SUBDIR__/reference/build-checks/workdir-relative-path/
-    title: WorkdirRelativePath
-  - path: __SUBDIR__/reference/build-checks/undefined-var/
-    title: UndefinedVar
-  - path: __SUBDIR__/reference/build-checks/multiple-instructions-disallowed/
-    title: MultipleInstructionsDisallowed
-  - path: __SUBDIR__/reference/build-checks/legacy-key-value-format/
+  - path: __SUBDIR/reference/build-checks/from-as-casing/
+    title: FromAsCasing
+  - path: __SUBDIR/reference/build-checks/from-platform-flag-const-disallowed/
+    title: FromPlatformConstDisallowed
+  - path: __SUBDIR/reference/build-checks/invalid-default-arg-in-from/
+    title: InvalidDefaultArgInFrom
+  - path: __SUBDIR/reference/build-checks/json-args-recommended/
+    title: JSONArgsRecommended
+  - path: __SUBDIR/reference/build-checks/legacy-key-value-format/
     title: LegacyKeyValueFormat
+@z
+
+@x
+  - path: /reference/build-checks/maintainer-deprecated/
+    title: MaintainerDeprecated
+  - path: /reference/build-checks/multiple-instructions-disallowed/
+    title: MultipleInstructionsDisallowed
+  - path: /reference/build-checks/no-empty-continuation/
+    title: NoEmptyContinuation
+  - path: /reference/build-checks/redundant-target-platform/
+    title: RedundantTargetPlatform
+  - path: /reference/build-checks/reserved-stage-name/
+    title: ReservedStageName
+@y
+  - path: __SUBDIR/reference/build-checks/maintainer-deprecated/
+    title: MaintainerDeprecated
+  - path: __SUBDIR/reference/build-checks/multiple-instructions-disallowed/
+    title: MultipleInstructionsDisallowed
+  - path: __SUBDIR/reference/build-checks/no-empty-continuation/
+    title: NoEmptyContinuation
+  - path: __SUBDIR/reference/build-checks/redundant-target-platform/
+    title: RedundantTargetPlatform
+  - path: __SUBDIR/reference/build-checks/reserved-stage-name/
+    title: ReservedStageName
+@z
+
+@x
+  - path: /reference/build-checks/secrets-used-in-arg-or-env/
+    title: SecretsUsedInArgOrEnv
+  - path: /reference/build-checks/stage-name-casing/
+    title: StageNameCasing
+  - path: /reference/build-checks/undefined-arg-in-from/
+    title: UndefinedArgInFrom
+  - path: /reference/build-checks/undefined-var/
+    title: UndefinedVar
+  - path: /reference/build-checks/workdir-relative-path/
+    title: WorkdirRelativePath
+@y
+  - path: __SUBDIR/reference/build-checks/secrets-used-in-arg-or-env/
+    title: SecretsUsedInArgOrEnv
+  - path: __SUBDIR/reference/build-checks/stage-name-casing/
+    title: StageNameCasing
+  - path: __SUBDIR/reference/build-checks/undefined-arg-in-from/
+    title: UndefinedArgInFrom
+  - path: __SUBDIR/reference/build-checks/undefined-var/
+    title: UndefinedVar
+  - path: __SUBDIR/reference/build-checks/workdir-relative-path/
+    title: WorkdirRelativePath
 @z
 
 @x
@@ -4841,26 +4861,54 @@ Manuals:
   - path: /compose/migrate/
     title: Migrate to Compose V2
   - path: /compose/faq/
-    title: Compose FAQ
+    title: FAQs
+@y
+  - path: __SUBDIR/compose/startup-order/
+    title: Control startup order
+  - path: __SUBDIR/compose/gpu-support/
+    title: GPU サポート
+  - path: __SUBDIR/compose/networking/
+    title: ネットワーク
+  - path: __SUBDIR/compose/samples-for-compose/
+    title: サンプルアプリ
+  - path: __SUBDIR/compose/feedback/
+    title: フィードバック
+  - path: __SUBDIR/compose/migrate/
+    title: Migrate to Compose V2
+  - path: __SUBDIR/compose/faq/
+    title: FAQ
+@z
+
+@x
+  - sectiontitle: Compose Bridge (Early Access)
+    section:
+    - path: /compose/bridge/
+      title: Overview
+    - path: /compose/bridge/usage/
+      title: Usage
+    - path: /compose/bridge/customize/
+      title: Customize
+    - path: /compose/bridge/advanced-integration/
+      title: Advanced
+@y
+  - sectiontitle: Compose Bridge (Early Access)
+    section:
+    - path: __SUBDIR/compose/bridge/
+      title: Overview
+    - path: __SUBDIR/compose/bridge/usage/
+      title: Usage
+    - path: __SUBDIR/compose/bridge/customize/
+      title: Customize
+    - path: __SUBDIR/compose/bridge/advanced-integration/
+      title: Advanced
+@z
+
+@x
   - path: /compose/release-notes/
     title: Release notes
 @y
-  - path: __SUBDIR__/compose/startup-order/
-    title: Control startup order
-  - path: __SUBDIR__/compose/gpu-support/
-    title: GPU サポート
-  - path: __SUBDIR__/compose/networking/
-    title: ネットワーク
-  - path: __SUBDIR__/compose/samples-for-compose/
-    title: サンプルアプリ
-  - path: __SUBDIR__/compose/feedback/
-    title: フィードバック
-  - path: __SUBDIR__/compose/migrate/
-    title: Migrate to Compose V2
-  - path: __SUBDIR__/compose/faq/
-    title: 共通 FAQ
-  - path: __SUBDIR__/compose/release-notes/
-    title: リリースノート
+  - path: __SUBDIR/compose/release-notes/
+    title: Release notes
 @z
 
 @x

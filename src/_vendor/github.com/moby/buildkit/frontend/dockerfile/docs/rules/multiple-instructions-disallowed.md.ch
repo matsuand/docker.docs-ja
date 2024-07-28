@@ -64,34 +64,34 @@ Dockerfile, only the last occurrence is used. An image can only ever have one
 @x
 ```dockerfile
 FROM alpine
-CMD echo "Hello, Norway!"
-CMD echo "Hello, Sweden!"
+ENTRYPOINT ["echo", "Hello, Norway!"]
+ENTRYPOINT ["echo", "Hello, Sweden!"]
 # Only "Hello, Sweden!" will be printed
 ```
 @y
 ```dockerfile
 FROM alpine
-CMD echo "Hello, Norway!"
-CMD echo "Hello, Sweden!"
+ENTRYPOINT ["echo", "Hello, Norway!"]
+ENTRYPOINT ["echo", "Hello, Sweden!"]
 # Only "Hello, Sweden!" will be printed
 ```
 @z
 
 @x
-✅ Good: only one `CMD` instruction.
+✅ Good: only one `ENTRYPOINT` instruction.
 @y
-✅ Good: only one `CMD` instruction.
+✅ Good: only one `ENTRYPOINT` instruction.
 @z
 
 @x
 ```dockerfile
 FROM alpine
-CMD echo "Hello, Norway!"; echo "Hello, Sweden!"
+ENTRYPOINT ["echo", "Hello, Norway!\nHello, Sweden!"]
 ```
 @y
 ```dockerfile
 FROM alpine
-CMD echo "Hello, Norway!"; echo "Hello, Sweden!"
+ENTRYPOINT ["echo", "Hello, Norway!\nHello, Sweden!"]
 ```
 @z
 
@@ -114,15 +114,15 @@ and a separate `CMD` for a `HEALTHCHECK` instruction.
 FROM python:alpine
 RUN apk add curl
 HEALTHCHECK --interval=1s --timeout=3s \
-  CMD curl -f http://localhost:8080 || exit 1
-CMD python -m http.server 8080
+  CMD ["curl", "-f", "http://localhost:8080"]
+CMD ["python", "-m", "http.server", "8080"]
 ```
 @y
 ```dockerfile
 FROM python:alpine
 RUN apk add curl
 HEALTHCHECK --interval=1s --timeout=3s \
-  CMD curl -f http://localhost:8080 || exit 1
-CMD python -m http.server 8080
+  CMD ["curl", "-f", "http://localhost:8080"]
+CMD ["python", "-m", "http.server", "8080"]
 ```
 @z

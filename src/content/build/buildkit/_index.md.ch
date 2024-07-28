@@ -544,9 +544,9 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 @z
 
 @x
-9. Create a Dockerfile and build a `hello-world` image.
+9. Create a Dockerfile and build a `hello-buildkit` image.
 @y
-9. Create a Dockerfile and build a `hello-world` image.
+9. Create a Dockerfile and build a `hello-buildkit` image.
 @z
 
 @x
@@ -607,10 +607,10 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 
 @x
     ```console
-    > docker run <username>/hello-world
+    > docker run <username>/hello-buildkit
     ```
 @y
     ```console
-    > docker run <username>/hello-world
+    > docker run <username>/hello-buildkit
     ```
 @z
