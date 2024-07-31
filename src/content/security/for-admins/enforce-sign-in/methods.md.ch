@@ -202,11 +202,11 @@ There are many ways to deploy the registry key, for example using an MDM solutio
 @x
 >**Note**
 >
-> If a `plist` and `registry.json` file both exist, the registry key takes precedence.
+> If a `plist` and `registry.json` file both exist, the `plist` file takes precedence.
 @y
 >**Note**
 >
-> If a `plist` and `registry.json` file both exist, the registry key takes precedence.
+> If a `plist` and `registry.json` file both exist, the `plist` file takes precedence.
 @z
 
 @x

@@ -3683,16 +3683,16 @@ Manuals:
       title: Packet filtering and firewalls
     - path: __SUBDIR__/config/daemon/ipv6/
       title: Use IPv6
-    - sectiontitle: Networking tutorials
+    - sectiontitle: ネットワークのチュートリアル
       section:
       - path: __SUBDIR__/network/network-tutorial-standalone/
-        title: Bridge network tutorial
+        title: ブリッジネットワークのチュートリアル
       - path: __SUBDIR__/network/network-tutorial-host/
-        title: Host networking tutorial
+        title: ホストネットワークのチュートリアル
       - path: __SUBDIR__/network/network-tutorial-overlay/
-        title: Overlay networking tutorial
+        title: オーバーレイネットワークのチュートリアル
       - path: __SUBDIR__/network/network-tutorial-macvlan/
-        title: Macvlan network tutorial
+        title: Macvlan ネットワークのチュートリアル
     - sectiontitle: Legacy networking content
       section:
       - path: __SUBDIR__/network/links/

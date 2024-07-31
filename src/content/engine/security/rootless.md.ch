@@ -189,13 +189,11 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-- Installing `fuse-overlayfs` is recommended. Run `sudo apt-get install -y fuse-overlayfs`.
-  Using `overlay2` storage driver with Debian-specific modprobe option `sudo modprobe overlay permit_mounts_in_userns=1` is also possible,
-  however, highly discouraged due to [instability](https://github.com/moby/moby/issues/42302).
+- For Debian 11, installing `fuse-overlayfs` is recommended. Run `sudo apt-get install -y fuse-overlayfs`.
+  This step is not required on Debian 12.
 @y
-- Installing `fuse-overlayfs` is recommended. Run `sudo apt-get install -y fuse-overlayfs`.
-  Using `overlay2` storage driver with Debian-specific modprobe option `sudo modprobe overlay permit_mounts_in_userns=1` is also possible,
-  however, highly discouraged due to [instability](https://github.com/moby/moby/issues/42302).
+- For Debian 11, installing `fuse-overlayfs` is recommended. Run `sudo apt-get install -y fuse-overlayfs`.
+  This step is not required on Debian 12.
 @z
 
 @x
@@ -223,13 +221,15 @@ UIDs/GIDs to be used in the user namespace.
   `/etc/sysctl.d`) and run `sudo sysctl --system`
 {{< /tab >}}
 {{< tab name="openSUSE and SLES" >}}
-- Installing `fuse-overlayfs` is recommended. Run `sudo zypper install -y fuse-overlayfs`.
+- For openSUSE 15 and SLES 15, Installing `fuse-overlayfs` is recommended. Run `sudo zypper install -y fuse-overlayfs`.
+  This step is not required on openSUSE Tumbleweed.
 @y
 - Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.conf` (or
   `/etc/sysctl.d`) and run `sudo sysctl --system`
 {{< /tab >}}
 {{< tab name="openSUSE and SLES" >}}
-- Installing `fuse-overlayfs` is recommended. Run `sudo zypper install -y fuse-overlayfs`.
+- For openSUSE 15 and SLES 15, Installing `fuse-overlayfs` is recommended. Run `sudo zypper install -y fuse-overlayfs`.
+  This step is not required on openSUSE Tumbleweed.
 @z
 
 @x
@@ -255,9 +255,11 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-- Installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
+- For RHEL 8 and similar distributions, installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
+  This step is not required on RHEL 9 and similar distributions.
 @y
-- Installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
+- For RHEL 8 and similar distributions, installing `fuse-overlayfs` is recommended. Run `sudo dnf install -y fuse-overlayfs`.
+  This step is not required on RHEL 9 and similar distributions.
 @z
 
 @x
