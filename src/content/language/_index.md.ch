@@ -86,6 +86,11 @@ Docker を使ったアプリケーションのコンテナー化を学び、開�
         <a href="__SUBDIR__/language/dotnet/"><img class="m-auto rounded" src="__SUBDIR__/language/images/c-sharp.webp" alt="Develop with C#"></a>
 @z
 @x
+        <a href="/language/cpp/"><img class="m-auto rounded" src="/language/images/cpp.webp" alt="Develop with C++"></a>
+@y
+        <a href="__SUBDIR__/language/cpp/"><img class="m-auto rounded" src="__SUBDIR__/language/images/cpp.webp" alt="Develop with C++"></a>
+@z
+@x
         <a href="/language/rust/"><img class="m-auto rounded" src="/language/images/rust-logo.webp" alt="Develop with Rust"></a>
 @y
         <a href="__SUBDIR__/language/rust/"><img class="m-auto rounded" src="__SUBDIR__/language/images/rust-logo.webp" alt="Develop with Rust"></a>
@@ -94,4 +99,9 @@ Docker を使ったアプリケーションのコンテナー化を学び、開�
         <a href="/language/php/"><img class="m-auto rounded" src="/language/images/php-logo.webp" alt="Develop with PHP"></a>
 @y
         <a href="__SUBDIR__/language/php/"><img class="m-auto rounded" src="__SUBDIR__/language/images/php-logo.webp" alt="Develop with PHP"></a>
+@z
+@x
+        <a href="/language/ruby/"><img class="m-auto rounded" src="/language/images/ruby-on-rails.webp" alt="Develop with Ruby"></a>
+@y
+        <a href="__SUBDIR__/language/ruby/"><img class="m-auto rounded" src="__SUBDIR__/language/images/ruby-on-rails.webp" alt="Develop with Ruby"></a>
 @z

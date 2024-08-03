@@ -3,6 +3,7 @@
 ##
 copyfiles = \
 	c-sharp.webp       \
+	cpp.webp           \
 	golang.webp        \
 	java.webp          \
 	nodejs.webp        \
