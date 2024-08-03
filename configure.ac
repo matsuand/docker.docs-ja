@@ -207,6 +207,7 @@ AC_CONFIG_FILES([
 	src/content/language/php/Makefile
 	src/content/language/python/Makefile
 	src/content/language/r/Makefile
+	src/content/language/ruby/Makefile
 	src/content/language/rust/Makefile
 	src/content/network/Makefile
 	src/content/network/drivers/Makefile

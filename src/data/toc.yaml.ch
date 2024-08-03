@@ -416,6 +416,34 @@ Guides:
 @z
 
 @x
+  - sectiontitle: Ruby
+    section:
+    - title: "Overview"
+      path: /language/ruby/
+    - title: "Containerize your app"
+      path: /language/ruby/containerize/
+    - title: "Develop your app"
+      path: /language/ruby/develop/
+    - title: "Configure CI/CD"
+      path: /language/ruby/configure-ci-cd/
+    - title: "Test your deployment"
+      path: /language/ruby/deploy/
+@y
+  - sectiontitle: Ruby
+    section:
+    - title: "概要"
+      path: __SUBDIR__/language/ruby/
+    - title: "アプリのコンテナー化"
+      path: __SUBDIR__/language/ruby/containerize/
+    - title: "アプリの開発"
+      path: __SUBDIR__/language/ruby/develop/
+    - title: "CI/CD の設定"
+      path: __SUBDIR__/language/ruby/configure-ci-cd/
+    - title: "デプロイのテスト"
+      path: __SUBDIR__/language/ruby/deploy/
+@z
+
+@x
 - sectiontitle: Use-case guides
   section:
     - path: /guides/use-case/
