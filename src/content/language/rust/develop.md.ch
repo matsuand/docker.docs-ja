@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Develop your Rust application
@@ -102,7 +102,7 @@ Now you can run PostgreSQL in a container and attach to the volume and network t
 In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](/engine/storage/volumes.md).
 @y
 Now you can run PostgreSQL in a container and attach to the volume and network that you created previously. Docker pulls the image from Hub and runs it for you locally.
-In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](/engine/storage/volumes.md).
+In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](engine/storage/volumes.md).
 @z
 
 @x
@@ -777,7 +777,7 @@ Related information:
  - [Compose overview](../../compose/index.md)
 @y
 Related information:
- - [Docker volumes](/engine/storage/volumes.md)
+ - [Docker volumes](engine/storage/volumes.md)
  - [Compose overview](../../compose/index.md)
 @z
 

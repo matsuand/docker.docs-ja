@@ -491,7 +491,7 @@ node: |
   machine running an instance of the Docker Engine in [swarm mode](#swarm-mode).
 @y
 node: |
-  A [node](/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
+  A [node](__SUBDIR__/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
   machine running an instance of the Docker Engine in [swarm mode](#swarm-mode).
 @z
 

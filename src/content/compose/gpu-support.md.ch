@@ -1,24 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Understand GPU support in Docker Compose
 keywords: documentation, docs, docker, compose, GPU access, NVIDIA, samples
 title: Turn on GPU access with Docker Compose
----
 @y
----
 description: Understand GPU support in Docker Compose
 keywords: documentation, docs, docker, compose, GPU access, NVIDIA, samples
 title: Turn on GPU access with Docker Compose
----
 @z
 
 @x
 Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](/engine/containers/resource_constraints.md#gpu) if you haven't already done so.
 @y
-Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](/engine/containers/resource_constraints.md#gpu) if you haven't already done so.
+Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](engine/containers/resource_constraints.md#gpu) if you haven't already done so.
 @z
 
 @x

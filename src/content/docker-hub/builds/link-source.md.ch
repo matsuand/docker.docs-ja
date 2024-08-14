@@ -10,7 +10,6 @@ title: Configure automated builds from GitHub and BitBucket
 aliases:
 - /docker-hub/github/
 - /docker-hub/bitbucket/
-- /docker-cloud/builds/link-source/
 ---
 @y
 ---
@@ -21,7 +20,6 @@ title: Configure automated builds from GitHub and BitBucket
 aliases:
 - /docker-hub/github/
 - /docker-hub/bitbucket/
-- /docker-cloud/builds/link-source/
 ---
 @z
 

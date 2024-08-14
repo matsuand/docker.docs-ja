@@ -27,7 +27,6 @@ copyfiles = \
 	admin-org-audit-log.html   \
 	admin-scim-disable.html    \
 	badge.html                 \
-	build-feature-state.html   \
 	button.html                \
 	card.html                  \
 	cta.html                   \
@@ -37,7 +36,6 @@ copyfiles = \
 	introduced.html            \
 	release-date.html          \
 	sectionlinks.html          \
-	siblings.html              \
 	tab.html                   \
 	tabs.html                  \
 	youtube-embed.html

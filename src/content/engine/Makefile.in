@@ -299,9 +299,7 @@ SUBDIRS = api cli containers daemon install logging manage-resources \
 	network release-notes security storage swarm tutorials
 
 bases = \
-	_index.md           \
-	breaking_changes.md \
-	faq.md
+	_index.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

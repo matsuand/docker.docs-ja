@@ -1,42 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+
 @x
----
 description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
   check the logs.
 keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
-toc_max: 2
-title: Troubleshoot Docker Desktop
-aliases:
-- /desktop/linux/troubleshoot/
-- /desktop/mac/troubleshoot/
-- /desktop/windows/troubleshoot/
-- /docker-for-mac/troubleshoot/
-- /mackit/troubleshoot/
-- /windows/troubleshoot/
-- /docker-for-win/troubleshoot/
-- /docker-for-windows/troubleshoot/
-tags: [ Troubleshooting ]
----
 @y
----
 description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
   check the logs.
 keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
-toc_max: 2
-title: Troubleshoot Docker Desktop
-aliases:
-- /desktop/linux/troubleshoot/
-- /desktop/mac/troubleshoot/
-- /desktop/windows/troubleshoot/
-- /docker-for-mac/troubleshoot/
-- /mackit/troubleshoot/
-- /windows/troubleshoot/
-- /docker-for-win/troubleshoot/
-- /docker-for-windows/troubleshoot/
-tags: [ Troubleshooting ]
----
 @z
 
 @x
@@ -821,7 +795,7 @@ Desktop at `$HOME/.docker/desktop/log/`.
 Refer to the [Read the daemon logs](/engine/daemon/logs.md) section
 to learn how to view the Docker Daemon logs.
 @y
-Refer to the [Read the daemon logs](/engine/daemon/logs.md) section
+Refer to the [Read the daemon logs](engine/daemon/logs.md) section
 to learn how to view the Docker Daemon logs.
 @z
 

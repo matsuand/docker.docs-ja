@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 description: Docker Desktop for Windows 2.x Release notes
 keywords: Docker Desktop for Windows 2.x, release notes
@@ -1174,10 +1172,10 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features:
 @z
 
 @x
-* Docker App: Docker App is a CLI plugin that helps configure, share, and install applications. For more information, see [Working with Docker App](/app/working-with-app/).
+* Docker App: Docker App is a CLI plugin that helps configure, share, and install applications.
 * Docker Buildx: Docker Buildx is a CLI plugin for extended build capabilities with BuildKit. For more information, see the [Build page](../../build/index.md).
 @y
-* Docker App: Docker App is a CLI plugin that helps configure, share, and install applications. For more information, see [Working with Docker App](__SUBDIR__/app/working-with-app/).
+* Docker App: Docker App is a CLI plugin that helps configure, share, and install applications.
 * Docker Buildx: Docker Buildx is a CLI plugin for extended build capabilities with BuildKit. For more information, see the [Build page](../../build/index.md).
 @z
 

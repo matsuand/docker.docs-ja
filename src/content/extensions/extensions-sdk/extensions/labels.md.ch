@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Extension image labels
 description: Docker extension labels
 keywords: Docker, extensions, sdk, labels
-aliases: 
- - /desktop/extensions-sdk/extensions/labels/
----
 @y
----
 title: Extension image labels
 description: Docker extension labels
 keywords: Docker, extensions, sdk, labels
-aliases: 
- - /desktop/extensions-sdk/extensions/labels/
----
 @z
 
 @x
@@ -40,7 +34,7 @@ This information is then displayed as an overview of the extension, so users can
 @x
 You can define [image labels](/reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @y
-You can define [image labels](/reference/dockerfile.md#label) in the extension's `Dockerfile`.
+You can define [image labels](reference/dockerfile.md#label) in the extension's `Dockerfile`.
 @z
 
 @x

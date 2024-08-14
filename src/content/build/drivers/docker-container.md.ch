@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Docker container build driver
 description: The Docker container driver runs BuildKit in a container image.
 keywords: build, buildx, driver, builder, docker-container
-aliases:
-  - /build/buildx/drivers/docker-container/
-  - /build/building/drivers/docker-container/
----
 @y
----
 title: Docker container build driver
 description: The Docker container driver runs BuildKit in a container image.
 keywords: build, buildx, driver, builder, docker-container
-aliases:
-  - /build/buildx/drivers/docker-container/
-  - /build/building/drivers/docker-container/
----
 @z
 
 @x
@@ -117,7 +109,7 @@ pass to `--driver-opt`:
 | `default-load`   | Boolean | `false`          | Automatically load images to the Docker Engine image store.                                                            |
 | `network`        | String  |                  | Sets the network mode for the container.                                                                               |
 | `cgroup-parent`  | String  | `/docker/buildx` | Sets the cgroup parent of the container if Docker is using the "cgroupfs" driver.                                      |
-| `restart-policy` | String  | `unless-stopped` | Sets the container's [restart policy](/engine/containers/start-containers-automatically.md#use-a-restart-policy).      |
+| `restart-policy` | String  | `unless-stopped` | Sets the container's [restart policy](engine/containers/start-containers-automatically.md#use-a-restart-policy).      |
 | `env.<key>`      | String  |                  | Sets the environment variable `key` to the specified `value` in the container.                                         |
 @z
 
@@ -126,7 +118,7 @@ Before you configure the resource limits for the container,
 read about [configuring runtime resource constraints for containers](/engine/containers/resource_constraints/).
 @y
 Before you configure the resource limits for the container,
-read about [configuring runtime resource constraints for containers](/engine/containers/resource_constraints/).
+read about [configuring runtime resource constraints for containers](__SUBDIR__/engine/containers/resource_constraints/).
 @z
 
 @x

@@ -346,13 +346,17 @@ The `mode` log option controls whether to use the `blocking` (default) or
 @z
 
 @x
-The `max-buffer-size` log option controls the size of the buffer used for
-intermediate message storage when `mode` is set to `non-blocking`. `max-buffer-size`
-defaults to 1 megabyte.
+The `max-buffer-size` controls the size of the buffer used for
+intermediate message storage when `mode` is set to `non-blocking`.
+The default is `1m` meaning 1 MB (1 million bytes).
+See [function `FromHumanSize()` in the `go-units` package](https://pkg.go.dev/github.com/docker/go-units#FromHumanSize) for the allowed format strings,
+some examples are `1KiB` for 1024 bytes, `2g` for 2 billion bytes.
 @y
-The `max-buffer-size` log option controls the size of the buffer used for
-intermediate message storage when `mode` is set to `non-blocking`. `max-buffer-size`
-defaults to 1 megabyte.
+The `max-buffer-size` controls the size of the buffer used for
+intermediate message storage when `mode` is set to `non-blocking`.
+The default is `1m` meaning 1 MB (1 million bytes).
+See [function `FromHumanSize()` in the `go-units` package](https://pkg.go.dev/github.com/docker/go-units#FromHumanSize) for the allowed format strings,
+some examples are `1KiB` for 1024 bytes, `2g` for 2 billion bytes.
 @z
 
 @x

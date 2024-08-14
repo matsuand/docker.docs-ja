@@ -4,23 +4,13 @@
 % (no slash) 対応
 
 @x
----
 title: Building with Docker Build Cloud
 description: Invoke your cloud builds with the Buildx CLI client
 keywords: build, cloud build, usage, cli, buildx, client
-aliases:
-  - /hydrobuild/usage/
-  - /build/cloud/usage/
----
 @y
----
 title: Building with Docker Build Cloud
 description: Invoke your cloud builds with the Buildx CLI client
 keywords: build, cloud build, usage, cli, buildx, client
-aliases:
-  - /hydrobuild/usage/
-  - /build/cloud/usage/
----
 @z
 
 @x

@@ -80,12 +80,12 @@ Palo Alto, CA 94306
 @z
 
 @x
-1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact) to initiate the process to register a tax certificate.
-2. Enter the required information. Select **Billing** from the **Topic** drop-down.
+1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information) to initiate the process to register a tax certificate.
+2. Enter the required information.
 3. In the **Additional Information** field, list the Docker ID/namespace(s) of the accounts that you want to apply the tax exemption certificate to.  
 @y
-1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact) to initiate the process to register a tax certificate.
-2. Enter the required information. Select **Billing** from the **Topic** drop-down.
+1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information) to initiate the process to register a tax certificate.
+2. Enter the required information.
 3. In the **Additional Information** field, list the Docker ID/namespace(s) of the accounts that you want to apply the tax exemption certificate to.  
 @z
 
@@ -94,17 +94,27 @@ Palo Alto, CA 94306
    >
    > You can list multiple namespaces that share the same tax exemption certificate, if applicable.
    { .tip }
-4. Select **Submit**.
 @y
    > **Tip**
    >
    > You can list multiple namespaces that share the same tax exemption certificate, if applicable.
    { .tip }
-4. Select **Submit**.
 @z
 
 @x
-Docker's Support team will reach out for you to submit your certificate once a ticket is open. You'll receive a confirmation from Docker once your tax exemption status has processed and is applied to your account.
+4. Add the tax certificate from your system by dragging and dropping them onto the file area, or select the **Browse Files** button to open a file dialog.
 @y
-Docker's Support team will reach out for you to submit your certificate once a ticket is open. You'll receive a confirmation from Docker once your tax exemption status has processed and is applied to your account.
+4. Add the tax certificate from your system by dragging and dropping them onto the file area, or select the **Browse Files** button to open a file dialog.
+@z
+
+@x
+5. Select **Submit**.
+@y
+5. Select **Submit**.
+@z
+
+@x
+Docker's support team will reach out to you if any additional information is required. You'll receive an e-mail confirmation from Docker once your tax exemption status is applied to your account.
+@y
+Docker's support team will reach out to you if any additional information is required. You'll receive an e-mail confirmation from Docker once your tax exemption status is applied to your account.
 @z

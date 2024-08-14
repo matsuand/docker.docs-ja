@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Quickstart
 description: Guide on how to build an extension quickly
 keywords: quickstart, extensions
-aliases:
- - desktop/extensions-sdk/tutorials/initialize/
- - /desktop/extensions-sdk/quickstart/
----
 @y
----
 title: Quickstart
 description: Guide on how to build an extension quickly
 keywords: quickstart, extensions
-aliases:
- - desktop/extensions-sdk/tutorials/initialize/
- - /desktop/extensions-sdk/quickstart/
----
 @z
 
 @x
@@ -38,7 +30,7 @@ Follow this guide to get started with creating a basic Docker extension. The Qui
 - [NodeJS](https://nodejs.org/)
 - [Go](https://go.dev/dl/)
 @y
-- [Docker Desktop](/desktop/release-notes.md)
+- [Docker Desktop](desktop/release-notes.md)
 - [NodeJS](https://nodejs.org/)
 - [Go](https://go.dev/dl/)
 @z

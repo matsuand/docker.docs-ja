@@ -84,6 +84,12 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
+- **Enable Docker Debug by default**. Check this option to use Docker Debug by default when accessing the integrated terminal. For more information, see [Explore containers](../use-desktop/container.md#integrated-terminal).
+@y
+- **Enable Docker Debug by default**. Check this option to use Docker Debug by default when accessing the integrated terminal. For more information, see [Explore containers](../use-desktop/container.md#integrated-terminal).
+@z
+
+@x
 - **Expose daemon on tcp://localhost:2375 without TLS**. Check this option to
   enable legacy clients to connect to the Docker daemon. You must use this option
   with caution as exposing the daemon without TLS can result in remote code
@@ -329,6 +335,30 @@ Advanced settings are:
 >
 > The **File sharing** tab is only available in Hyper-V mode because the files
 > are automatically shared in WSL 2 mode and Windows container mode.
+@z
+
+@x
+#### Synchronized file shares 
+@y
+#### Synchronized file shares 
+@z
+
+@x
+Synchronized file shares is an alternative file sharing mechanism that provides fast and flexible host-to-VM file sharing, enhancing bind mount performance through the use of synchronized filesystem caches. Available with Pro, Team, and Business subscriptions.
+@y
+Synchronized file shares is an alternative file sharing mechanism that provides fast and flexible host-to-VM file sharing, enhancing bind mount performance through the use of synchronized filesystem caches. Available with Pro, Team, and Business subscriptions.
+@z
+
+@x
+To learn more, see [Synchronized file share](../synchronized-file-sharing.md).
+@y
+To learn more, see [Synchronized file share](../synchronized-file-sharing.md).
+@z
+
+@x
+#### Virtual file shares
+@y
+#### Virtual file shares
 @z
 
 @x
@@ -478,6 +508,12 @@ containers. Alternatively, you can opt not to share it by selecting **Cancel**.
 @z
 
 @x
+Docker Desktop on Windows supports the use of HTTP/HTTPS and [SOCKS5 proxies](../networking.md#socks5-proxy-support).
+@y
+Docker Desktop on Windows supports the use of HTTP/HTTPS and [SOCKS5 proxies](../networking.md#socks5-proxy-support).
+@z
+
+@x
 HTTP/HTTPS proxies can be used when:
 @y
 HTTP/HTTPS proxies can be used when:
@@ -537,6 +573,80 @@ This is useful when a corporate proxy that requires authentication is manually c
 @y
 If you are running Windows containers in Docker, you can allow the Windows Docker daemon to use Docker Desktop's internal proxy, with the **Use proxy for Windows Docker daemon** setting.
 This is useful when a corporate proxy that requires authentication is manually configured or set at the system level. If you are an admin for your organization and have a Docker Business subscription, you can control this setting with [Settings management](../hardened-desktop/settings-management/configure.md) using the `windowsDockerdPort` parameter.
+@z
+
+@x
+> **Note**
+>
+> If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
+@y
+> **Note**
+>
+> If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
+@z
+
+@x
+#### Proxy authentication
+@y
+#### Proxy authentication
+@z
+
+@x
+Docker Desktop supports Basic, Kerberos and NTLM proxy authentication methods. 
+@y
+Docker Desktop supports Basic, Kerberos and NTLM proxy authentication methods. 
+@z
+
+@x
+##### Basic authentication
+@y
+##### Basic authentication
+@z
+
+@x
+If your proxy uses Basic authentication, Docker Desktop prompts developers for a username and password and caches the credentials. All passwords are stored securely in the OS credential store. It will request re-authentication if that cache is removed.
+@y
+If your proxy uses Basic authentication, Docker Desktop prompts developers for a username and password and caches the credentials. All passwords are stored securely in the OS credential store. It will request re-authentication if that cache is removed.
+@z
+
+@x
+It's recommended that you use an `https://` URL for HTTP/HTTPS proxies to protect passwords during network transit. Docker Desktop also supports TLS 1.3 for communication with proxies.
+@y
+It's recommended that you use an `https://` URL for HTTP/HTTPS proxies to protect passwords during network transit. Docker Desktop also supports TLS 1.3 for communication with proxies.
+@z
+
+@x
+##### Kerberos and NTLM authentication
+@y
+##### Kerberos and NTLM authentication
+@z
+
+@x
+Kerberos and NTLM proxy authentication are available for Business subscribers with Docker Desktop version 4.30 and later. No additional configuration is needed beyond specifying the proxy IP address and port.
+@y
+Kerberos and NTLM proxy authentication are available for Business subscribers with Docker Desktop version 4.30 and later. No additional configuration is needed beyond specifying the proxy IP address and port.
+@z
+
+@x
+Developers are no longer interrupted by prompts for proxy credentials as authentication is centralized. This also reduces the risk of account lockouts due to incorrect sign in attempts.
+@y
+Developers are no longer interrupted by prompts for proxy credentials as authentication is centralized. This also reduces the risk of account lockouts due to incorrect sign in attempts.
+@z
+
+@x
+If your proxy offers multiple authentication schemes in 407(Proxy Authentication Required) response, Docker Desktop by default selects Basic authentication scheme. If your proxy server is properly configured for Kerberos or NTLM authentication, you can enable Kerberos/NTLM proxy authentication during Docker Desktop installation. To do that, you will have install Docker Deskop from command line and pass the installer flag '--proxy-enable-kerberosntlm'. Available with Docker Desktop 4.32 and later.
+@y
+If your proxy offers multiple authentication schemes in 407(Proxy Authentication Required) response, Docker Desktop by default selects Basic authentication scheme. If your proxy server is properly configured for Kerberos or NTLM authentication, you can enable Kerberos/NTLM proxy authentication during Docker Desktop installation. To do that, you will have install Docker Deskop from command line and pass the installer flag '--proxy-enable-kerberosntlm'. Available with Docker Desktop 4.32 and later.
+@z
+
+@x
+> **Note**
+>
+> Docker Desktop also supports the use of [SOCKS5 proxies](../networking.md#socks5-proxy-support).
+@y
+> **Note**
+>
+> Docker Desktop also supports the use of [SOCKS5 proxies](../networking.md#socks5-proxy-support).
 @z
 
 @x
@@ -771,6 +881,34 @@ select **Always download updates**. This downloads newer versions of Docker Desk
 when an update becomes available. After downloading the update, select
 **Apply and Restart** to install the update. You can do this either through the
 Docker menu or in the **Updates** section in the Docker Dashboard.
+@z
+
+@x
+## Extensions
+@y
+## Extensions
+@z
+
+@x
+Use the **Extensions** tab to:
+@y
+Use the **Extensions** tab to:
+@z
+
+@x
+- **Enable Docker Extensions**
+- **Allow only extensions distributed through the Docker Marketplace**
+- **Show Docker Extensions system containers**
+@y
+- **Enable Docker Extensions**
+- **Allow only extensions distributed through the Docker Marketplace**
+- **Show Docker Extensions system containers**
+@z
+
+@x
+For more information about Docker extensions, see [Extensions](/extensions/index.md).
+@y
+For more information about Docker extensions, see [Extensions](extensions/index.md).
 @z
 
 @x

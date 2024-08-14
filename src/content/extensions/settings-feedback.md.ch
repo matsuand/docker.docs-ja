@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, feedback
 title: Settings and feedback for Docker Extensions
-aliases:
- - /desktop/extensions/settings-feedback/
----
 @y
----
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, feedback
 title: Settings and feedback for Docker Extensions
-aliases:
- - /desktop/extensions/settings-feedback/
----
 @z
 
 @x
@@ -61,12 +55,12 @@ Docker Extensions is switched on by default. To change your settings:
 @y
 >**Note**
 >
-> If you are an [organization owner](/admin/organization/manage-a-team.md#organization-owner), you can turn off extensions for your users. Open the `settings.json` file, and set `"extensionsEnabled"` to `false`. 
+> If you are an [organization owner](admin/organization/manage-a-team.md#organization-owner), you can turn off extensions for your users. Open the `settings.json` file, and set `"extensionsEnabled"` to `false`. 
 > The `settings.json` file is located at:
 >   - `~/Library/Group Containers/group.com.docker/settings.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](/desktop/hardened-desktop/index.md)
+> This can also be done with [Hardened Docker Desktop](desktop/hardened-desktop/index.md)
 @z
 
 @x

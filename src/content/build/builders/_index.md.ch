@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Builders
 keywords: build, buildx, builders, buildkit, drivers, backend
 description: Learn about builders and how to manage them
----
 @y
----
 title: Builders
 keywords: build, buildx, builders, buildkit, drivers, backend
 description: Learn about builders and how to manage them
----
 @z
 
 @x
@@ -55,7 +53,7 @@ The default builder is directly bound to the Docker daemon and its
 Docker context, your `default` builder refers to the new Docker context.
 @y
 The default builder is directly bound to the Docker daemon and its
-[context](/engine/manage-resources/contexts.md). If you change the
+[context](engine/manage-resources/contexts.md). If you change the
 Docker context, your `default` builder refers to the new Docker context.
 @z
 
