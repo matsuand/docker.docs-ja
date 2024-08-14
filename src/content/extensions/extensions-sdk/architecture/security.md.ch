@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Extension security
 description: Aspects of the security model of extensions
 keywords: Docker, extensions, sdk, security
-aliases:
-- /desktop/extensions-sdk/guides/security/
----
 @y
----
 title: Extension security
 description: Aspects of the security model of extensions
 keywords: Docker, extensions, sdk, security
-aliases:
-- /desktop/extensions-sdk/guides/security/
----
 @z
 
 @x
