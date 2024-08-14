@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Persist the DB
@@ -123,12 +123,12 @@ and Docker isolates all changes to that container. With volumes, you can change 
 @z
 
 @x
-[Volumes](../../storage/volumes.md) provide the ability to connect specific filesystem paths of 
+[Volumes](/engine/storage/volumes.md) provide the ability to connect specific filesystem paths of 
 the container back to the host machine. If you mount a directory in the container, changes in that
 directory are also seen on the host machine. If you mount that same directory across container restarts, you'd see
 the same files.
 @y
-[ボリューム](../../storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
+[ボリューム](engine//storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
 コンテナー内のあるディレクトリがマウントされていると、そのディレクトリ内で行われた変更がホストマシンからも見ることができます。
 仮にコンテナーの再起動の前後で 1 つのディレクトリをマウントしておけば、同一のファイルを維持できることになります。
 @z
@@ -437,10 +437,10 @@ Related information:
 
 @x
  - [docker CLI reference](/reference/cli/docker/)
- - [Volumes](../../storage/volumes.md)
+ - [Volumes](/engine/storage/volumes.md)
 @y
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [ボリューム](../../storage/volumes.md)
+ - [ボリューム](engine/storage/volumes.md)
 @z
 
 @x

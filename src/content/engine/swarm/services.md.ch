@@ -1,20 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: Deploy services to a swarm
 keywords: guide, swarm mode, swarm, service
 title: Deploy services to a swarm
-toc_max: 4
----
 @y
----
 description: Deploy services to a swarm
 keywords: guide, swarm mode, swarm, service
 title: Deploy services to a swarm
-toc_max: 4
----
 @z
 
 @x
@@ -1406,11 +1402,11 @@ $ docker service update --network-rm my-network my-web
 @x
 For more information on overlay networking and service discovery, refer to
 [Attach services to an overlay network](networking.md) and
-[Docker swarm mode overlay network security model](../../network/drivers/overlay.md).
+[Docker swarm mode overlay network security model](/engine/network/drivers/overlay.md).
 @y
 For more information on overlay networking and service discovery, refer to
 [Attach services to an overlay network](networking.md) and
-[Docker swarm mode overlay network security model](../../network/drivers/overlay.md).
+[Docker swarm mode overlay network security model](engine/network/drivers/overlay.md).
 @z
 
 @x
@@ -1721,14 +1717,14 @@ you may experience an Out Of Memory Exception (OOME) and a container, or the
 Docker daemon, might be killed by the kernel OOM killer. To prevent this from
 happening, ensure that your application runs on hosts with adequate memory and
 see
-[Understand the risks of running out of memory](../../config/containers/resource_constraints.md#understand-the-risks-of-running-out-of-memory).
+[Understand the risks of running out of memory](/engine/containers/resource_constraints.md#understand-the-risks-of-running-out-of-memory).
 @y
 If your service attempts to use more memory than the swarm node has available,
 you may experience an Out Of Memory Exception (OOME) and a container, or the
 Docker daemon, might be killed by the kernel OOM killer. To prevent this from
 happening, ensure that your application runs on hosts with adequate memory and
 see
-[Understand the risks of running out of memory](../../config/containers/resource_constraints.md#understand-the-risks-of-running-out-of-memory).
+[Understand the risks of running out of memory](engine/containers/resource_constraints.md#understand-the-risks-of-running-out-of-memory).
 @z
 
 @x
@@ -2353,10 +2349,10 @@ $ docker service create \
 
 @x
 For more information on how to create data volumes and the use of volume
-drivers, see [Use volumes](../../storage/volumes.md).
+drivers, see [Use volumes](/engine/storage/volumes.md).
 @y
 For more information on how to create data volumes and the use of volume
-drivers, see [Use volumes](../../storage/volumes.md).
+drivers, see [Use volumes](engine/storage/volumes.md).
 @z
 
 @x
@@ -2602,9 +2598,9 @@ $ docker inspect --format="{{.Config.Hostname}}" hosttempl.1.wo41w8hg8qanxwjwsg4
 @x
 * [Swarm administration guide](admin_guide.md)
 * [Docker Engine command line reference](../../reference/cli/docker/)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 @y
 * [Swarm administration guide](admin_guide.md)
 * [Docker Engine command line reference](../../reference/cli/docker/)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 @z

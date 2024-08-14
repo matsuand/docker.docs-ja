@@ -1129,7 +1129,7 @@ examples: |-
     > for example by adding individual kernel capabilities with `--cap-add`.
     >
     > For more information, see
-    > [Runtime privilege and Linux capabilities](/engine/reference/run/#runtime-privilege-and-linux-capabilities)
+    > [Runtime privilege and Linux capabilities](/engine/containers/run/#runtime-privilege-and-linux-capabilities)
     { .warning }
 @y
     > **Warning**
@@ -1145,7 +1145,7 @@ examples: |-
     > for example by adding individual kernel capabilities with `--cap-add`.
     >
     > For more information, see
-    > [Runtime privilege and Linux capabilities](__SUBDIR__/engine/reference/run/#runtime-privilege-and-linux-capabilities)
+    > [Runtime privilege and Linux capabilities](__SUBDIR__/engine/containers/run/#runtime-privilege-and-linux-capabilities)
     { .warning }
 @z
 
@@ -1938,11 +1938,11 @@ examples: |-
 @x
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](/engine/reference/commandline/cli/#configuration-files).
+    containers, see [**Configuration file** section](/reference/cli/docker/#configuration-files).
 @y
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](__SUBDIR__/engine/reference/commandline/cli/#configuration-files).
+    containers, see [**Configuration file** section](__SUBDIR__/reference/cli/docker/#configuration-files).
 @z
 
 @x
@@ -2745,10 +2745,10 @@ examples: |-
 
 @x
     To learn about the supported logging drivers and how to use them, refer to
-    [Configure logging drivers](/config/containers/logging/configure/).
+    [Configure logging drivers](/engine/logging/configure/).
 @y
     To learn about the supported logging drivers and how to use them, refer to
-    [Configure logging drivers](__SUBDIR__/config/containers/logging/configure/).
+    [Configure logging drivers](__SUBDIR__/engine/logging/configure/).
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
 title: Services top-level elements
 description: Explore all the attributes the services top-level element can have.
@@ -2602,11 +2604,11 @@ There is a performance penalty for applications that swap memory to disk often.
 @x
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
-- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](../../network/_index.md#container-networks).
+- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](/engine/network/_index.md#container-networks).
 @y
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
-- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](../../network/_index.md#container-networks).
+- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](engine/network/_index.md#container-networks).
 @z
 
 @x
@@ -3492,9 +3494,9 @@ web:
 @z
 
 @x
-The default is `runc`. To use a different runtime, see [Alternative runtimes](../../engine/alternative-runtimes.md).
+The default is `runc`. To use a different runtime, see [Alternative runtimes](/engine/daemon/alternative-runtimes.md).
 @y
-The default is `runc`. To use a different runtime, see [Alternative runtimes](../../engine/alternative-runtimes.md).
+The default is `runc`. To use a different runtime, see [Alternative runtimes](engine/daemon/alternative-runtimes.md).
 @z
 
 @x

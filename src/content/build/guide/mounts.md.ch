@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Mounts
 description: Introduction to cache mounts and bind mounts in builds
 keywords: build, buildkit, buildx, guide, tutorial, mounts, cache mounts, bind mounts
----
 @y
----
 title: Mounts
 description: Introduction to cache mounts and bind mounts in builds
 keywords: build, buildkit, buildx, guide, tutorial, mounts, cache mounts, bind mounts
----
 @z
 
 @x
@@ -521,10 +519,10 @@ Related information:
 
 @x
 - [Dockerfile reference](../../reference/dockerfile.md#run---mount)
-- [Bind mounts](../../storage/bind-mounts.md)
+- [Bind mounts](/engine/storage/bind-mounts.md)
 @y
 - [Dockerfile reference](../../reference/dockerfile.md#run---mount)
-- [Bind mounts](../../storage/bind-mounts.md)
+- [Bind mounts](engine/storage/bind-mounts.md)
 @z
 
 @x

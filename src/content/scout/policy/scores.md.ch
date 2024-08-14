@@ -149,25 +149,49 @@ The policies that influence the score, and their respective weights, are as foll
 @z
 
 @x
-| Policy                                                                                                    | Points |
-| --------------------------------------------------------------------------------------------------------- | ------ |
-| [Fixable critical and high vulnerabilities](./_index.md#fixable-critical-and-high-vulnerabilities)        | 20     |
-| [High-profile vulnerabilities](./_index.md#high-profile-vulnerabilities)                                  | 20     |
-| [Supply chain attestations](./_index.md#supply-chain-attestations)                                        | 15     |
-| [Unapproved base images](./_index.md#unapproved-base-images)                                              | 15     |
-| [Outdated base images](./_index.md#outdated-base-images)                                                  | 10     |
-| [Default non-root user](./_index.md#default-non-root-user)                                                | 5      |
-| AGPL v3-licensed software \*                                                                              | 5      |
+| Policy                                                                                                     | Points |
+| ---------------------------------------------------------------------------------------------------------- | ------ |
+| [No fixable critical or high vulnerabilities](/scout/policy#no-fixable-critical-or-high-vulnerabilities)   | 20     |
+| [No high-profile vulnerabilities](/scout/policy#no-high-profile-vulnerabilities)                           | 20     |
+| [Supply chain attestations](/scout/policy#supply-chain-attestations)                                       | 15     |
+| [No unapproved base images](/scout/policy/#no-unapproved-base-images) \*                                   | 15     |
+| [No outdated base images](/scout/policy#no-outdated-base-images)                                           | 10     |
+| [Default non-root user](/scout/policy#default-non-root-user)                                               | 5      |
+| No AGPL v3 licenses \*\*                                                                                   | 5      |
 @y
-| Policy                                                                                                    | Points |
-| --------------------------------------------------------------------------------------------------------- | ------ |
-| [Fixable critical and high vulnerabilities](./_index.md#fixable-critical-and-high-vulnerabilities)        | 20     |
-| [High-profile vulnerabilities](./_index.md#high-profile-vulnerabilities)                                  | 20     |
-| [Supply chain attestations](./_index.md#supply-chain-attestations)                                        | 15     |
-| [Unapproved base images](./_index.md#unapproved-base-images)                                              | 15     |
-| [Outdated base images](./_index.md#outdated-base-images)                                                  | 10     |
-| [Default non-root user](./_index.md#default-non-root-user)                                                | 5      |
-| AGPL v3-licensed software \*                                                                              | 5      |
+| Policy                                                                                                     | Points |
+| ---------------------------------------------------------------------------------------------------------- | ------ |
+| [No fixable critical or high vulnerabilities](__SUBDIR__/scout/policy#no-fixable-critical-or-high-vulnerabilities)   | 20     |
+| [No high-profile vulnerabilities](__SUBDIR__/scout/policy#no-high-profile-vulnerabilities)                           | 20     |
+| [Supply chain attestations](__SUBDIR__/scout/policy#supply-chain-attestations)                                       | 15     |
+| [No unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images) \*                                   | 15     |
+| [No outdated base images](__SUBDIR__/scout/policy#no-outdated-base-images)                                           | 10     |
+| [Default non-root user](__SUBDIR__/scout/policy#default-non-root-user)                                               | 5      |
+| No AGPL v3 licenses \*\*                                                                                   | 5      |
+@z
+
+@x
+\* _The **No unapproved base images** policy used for health score evaluation also
+checks that the tags of Docker Official Images use supported tags and, where
+applicable, that the Linux distro that the image uses is a supported distro
+version. This is a policy configuration option that's enabled by default for
+health score evaluation. For more information, refer to the
+[Unapproved base images](/scout/policy/#no-unapproved-base-images) policy._
+@y
+\* _The **No unapproved base images** policy used for health score evaluation also
+checks that the tags of Docker Official Images use supported tags and, where
+applicable, that the Linux distro that the image uses is a supported distro
+version. This is a policy configuration option that's enabled by default for
+health score evaluation. For more information, refer to the
+[Unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images) policy._
+@z
+
+@x
+\*\* _The **No AGPL v3 licenses** policy is a subset of the
+[Copyleft licenses](./_index.md#no-copyleft-licenses) policy._
+@y
+\*\* _The **No AGPL v3 licenses** policy is a subset of the
+[Copyleft licenses](./_index.md#no-copyleft-licenses) policy._
 @z
 
 @x

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Deploying Notary
 keywords: trust, security, notary, deployment
 title: Deploy Notary Server with Compose
----
 @y
----
 description: Deploying Notary
 keywords: trust, security, notary, deployment
 title: Deploy Notary Server with Compose
----
 @z
 
 @x
@@ -66,10 +64,10 @@ The easiest way to deploy Notary Server is by using Docker Compose. To follow th
 @z
 
 @x
-See the instructions for [Docker](../../../engine/reference/commandline/cli.md#notary) or
+See the instructions for [Docker](/reference/cli/docker/#notary) or
 for [Notary](https://github.com/docker/notary#using-notary) depending on which one you are using.
 @y
-See the instructions for [Docker](../../../engine/reference/commandline/cli.md#notary) or
+See the instructions for [Docker](__SUBDIR__/reference/cli/docker/#notary) or
 for [Notary](https://github.com/docker/notary#using-notary) depending on which one you are using.
 @z
 

@@ -1,50 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Jumpstart your client-side server applications with Docker Engine on
   Ubuntu. This guide details prerequisites and multiple methods to install Docker Engine on Ubuntu.
 keywords: docker install script, ubuntu docker server, ubuntu server docker, install
   docker engine ubuntu, install docker on ubuntu server, ubuntu 22.04 docker-ce, install
   docker engine on ubuntu, ubuntu install docker ce, ubuntu install docker engine
 title: Install Docker Engine on Ubuntu
-toc_max: 4
-aliases:
-- /ee/docker-ee/ubuntu/
-- /engine/installation/linux/docker-ce/ubuntu/
-- /engine/installation/linux/docker-ee/ubuntu/
-- /engine/installation/linux/ubuntu/
-- /engine/installation/linux/ubuntulinux/
-- /engine/installation/ubuntulinux/
-- /install/linux/docker-ce/ubuntu/
-- /install/linux/docker-ee/ubuntu/
-- /install/linux/ubuntu/
-- /installation/ubuntulinux/
-download-url-base: https://download.docker.com/linux/ubuntu
----
 @y
----
 description: Jumpstart your client-side server applications with Docker Engine on
   Ubuntu. This guide details prerequisites and multiple methods to install Docker Engine on Ubuntu.
 keywords: docker install script, ubuntu docker server, ubuntu server docker, install
   docker engine ubuntu, install docker on ubuntu server, ubuntu 22.04 docker-ce, install
   docker engine on ubuntu, ubuntu install docker ce, ubuntu install docker engine
 title: Install Docker Engine on Ubuntu
-toc_max: 4
-aliases:
-- /ee/docker-ee/ubuntu/
-- /engine/installation/linux/docker-ce/ubuntu/
-- /engine/installation/linux/docker-ee/ubuntu/
-- /engine/installation/linux/ubuntu/
-- /engine/installation/linux/ubuntulinux/
-- /engine/installation/ubuntulinux/
-- /install/linux/docker-ce/ubuntu/
-- /install/linux/docker-ee/ubuntu/
-- /install/linux/ubuntu/
-- /installation/ubuntulinux/
-download-url-base: https://download.docker.com/linux/ubuntu
----
 @z
 
 @x
@@ -87,22 +59,22 @@ To get started with Docker Engine on Ubuntu, make sure you
 - If you use ufw or firewalld to manage firewall settings, be aware that
   when you expose container ports using Docker, these ports bypass your
   firewall rules. For more information, refer to
-  [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+  [Docker and ufw](/engine/network/packet-filtering-firewalls.md#docker-and-ufw).
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
   Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
-  see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
+  see [Packet filtering and firewalls](/engine/network/packet-filtering-firewalls.md).
 @y
 - If you use ufw or firewalld to manage firewall settings, be aware that
   when you expose container ports using Docker, these ports bypass your
   firewall rules. For more information, refer to
-  [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+  [Docker and ufw](engine/network/packet-filtering-firewalls.md#docker-and-ufw).
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
   Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
-  see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
+  see [Packet filtering and firewalls](engine/network/packet-filtering-firewalls.md).
 @z
 
 @x

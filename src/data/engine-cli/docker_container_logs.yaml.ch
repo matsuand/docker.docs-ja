@@ -19,10 +19,10 @@ long: |-
 
 @x
     For more information about selecting and configuring logging drivers, refer to
-    [Configure logging drivers](/config/containers/logging/configure/).
+    [Configure logging drivers](/engine/logging/configure/).
 @y
     For more information about selecting and configuring logging drivers, refer to
-    [Configure logging drivers](__SUBDIR__/config/containers/logging/configure/).
+    [Configure logging drivers](__SUBDIR__/engine/logging/configure/).
 @z
 
 @x
@@ -76,88 +76,6 @@ long: |-
     seconds (aka Unix epoch or Unix time), and the optional .nanoseconds field is a
     fraction of a second no more than nine digits long. You can combine the
     `--since` option with either or both of the `--follow` or `--tail` options.
-usage: docker container logs [OPTIONS] CONTAINER
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: details
-      value_type: bool
-      default_value: "false"
-      description: Show extra details provided to logs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: follow
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Follow log output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: since
-      value_type: string
-      description: |
-        Show logs since timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tail
-      shorthand: "n"
-      value_type: string
-      default_value: all
-      description: Number of lines to show from the end of the logs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timestamps
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Show timestamps
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: until
-      value_type: string
-      description: |
-        Show logs before a timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
-      details_url: '#until'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.35"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Retrieve logs until a specific point in time (--until) {#until}
 @y
     The `--since` option shows only the container logs generated after
     a given date. You can specify the date as an RFC 3339 date, a UNIX
@@ -171,86 +89,68 @@ examples: |-
     seconds (aka Unix epoch or Unix time), and the optional .nanoseconds field is a
     fraction of a second no more than nine digits long. You can combine the
     `--since` option with either or both of the `--follow` or `--tail` options.
+@z
+
+@x
 usage: docker container logs [OPTIONS] CONTAINER
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: details
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker container logs [OPTIONS] CONTAINER
+@z
+
+% options:
+
+@x details
       description: Show extra details provided to logs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: follow
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@y
+      description: Show extra details provided to logs
+@z
+
+@x follow
       description: Follow log output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: since
-      value_type: string
+@y
+      description: Follow log output
+@z
+
+@x since
       description: |
         Show logs since timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tail
-      shorthand: "n"
-      value_type: string
-      default_value: all
+@y
+      description: |
+        Show logs since timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
+@z
+
+@x tail
       description: Number of lines to show from the end of the logs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timestamps
-      shorthand: t
-      value_type: bool
-      default_value: "false"
+@y
+      description: Number of lines to show from the end of the logs
+@z
+
+@x timestamps
       description: Show timestamps
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: until
-      value_type: string
+@y
+      description: Show timestamps
+@z
+
+@x until
       description: |
         Show logs before a timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
-      details_url: '#until'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.35"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Show logs before a timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Retrieve logs until a specific point in time (--until) {#until}
+@y
 examples: |-
     ### Retrieve logs until a specific point in time (--until) {#until}
 @z
@@ -261,16 +161,9 @@ examples: |-
     In order to retrieve logs before a specific point in time, run:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker run --name test -d busybox sh -c "while true; do $(echo date); sleep 1; done"
-    $ date
-    Tue 14 Nov 2017 16:40:00 CET
-    $ docker logs -f --until=2s test
-    Tue 14 Nov 2017 16:40:00 CET
-    Tue 14 Nov 2017 16:40:01 CET
-    Tue 14 Nov 2017 16:40:02 CET
-    ```
 deprecated: false
 hidden: false
 experimental: false
@@ -278,15 +171,6 @@ experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-    ```console
-    $ docker run --name test -d busybox sh -c "while true; do $(echo date); sleep 1; done"
-    $ date
-    Tue 14 Nov 2017 16:40:00 CET
-    $ docker logs -f --until=2s test
-    Tue 14 Nov 2017 16:40:00 CET
-    Tue 14 Nov 2017 16:40:01 CET
-    Tue 14 Nov 2017 16:40:02 CET
-    ```
 deprecated: false
 hidden: false
 experimental: false

@@ -262,10 +262,10 @@ managed by Docker.
 
 @x
 When you remove a container, all data in that container is deleted. To save
-notebooks outside of the container, you can use a [volume](/storage/volumes/).
+notebooks outside of the container, you can use a [volume](/engine/storage/volumes/).
 @y
 When you remove a container, all data in that container is deleted. To save
-notebooks outside of the container, you can use a [volume](__SUBDIR__/storage/volumes/).
+notebooks outside of the container, you can use a [volume](__SUBDIR__/engine/storage/volumes/).
 @z
 
 @x
@@ -767,9 +767,9 @@ Other users can now download and run your image using the `docker run` command. 
 @z
 
 @x
-This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/docker-hub/oci-artifacts/#push-a-volume).
+This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/docker-hub/oci-artifacts/#push-a-volume).
 @y
-This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](__SUBDIR__/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](__SUBDIR__/docker-hub/oci-artifacts/#push-a-volume).
+This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](__SUBDIR__/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](__SUBDIR__/docker-hub/oci-artifacts/#push-a-volume).
 @z
 
 @x

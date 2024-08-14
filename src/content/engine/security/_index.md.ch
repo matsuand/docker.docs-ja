@@ -1,28 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: Review of the Docker Daemon attack surface
 keywords: Docker, Docker documentation, security
 title: Docker security
-aliases:
-- /articles/security/
-- /engine/articles/security/
-- /engine/security/security/
-- /security/security/
----
 @y
----
 description: Review of the Docker Daemon attack surface
 keywords: Docker, Docker documentation, security
 title: Docker security
-aliases:
-- /articles/security/
-- /engine/articles/security/
-- /engine/security/security/
-- /security/security/
----
 @z
 
 @x
@@ -86,7 +74,7 @@ of another container. Of course, if the host system is setup
 accordingly, containers can interact with each other through their
 respective network interfaces — just like they can interact with
 external hosts. When you specify public ports for your containers or use
-[links](../../network/links.md)
+[links](/engine/network/links.md)
 then IP traffic is allowed between containers. They can ping each other,
 send/receive UDP packets, and establish TCP connections, but that can be
 restricted if necessary. From a network architecture point of view, all
@@ -100,7 +88,7 @@ of another container. Of course, if the host system is setup
 accordingly, containers can interact with each other through their
 respective network interfaces — just like they can interact with
 external hosts. When you specify public ports for your containers or use
-[links](../../network/links.md)
+[links](engine/network/links.md)
 then IP traffic is allowed between containers. They can ping each other,
 send/receive UDP packets, and establish TCP connections, but that can be
 restricted if necessary. From a network architecture point of view, all
@@ -660,11 +648,11 @@ pull requests, or comments on the Docker community forums.
 * [Seccomp security profiles for Docker](seccomp.md)
 * [AppArmor security profiles for Docker](apparmor.md)
 * [On the Security of Containers (2014)](https://medium.com/@ewindisch/on-the-security-of-containers-2c60ffe25a9e)
-* [Docker swarm mode overlay network security model](../../network/drivers/overlay.md)
+* [Docker swarm mode overlay network security model](/engine/network/drivers/overlay.md)
 @y
 * [Use trusted images](trust/index.md)
 * [Seccomp security profiles for Docker](seccomp.md)
 * [AppArmor security profiles for Docker](apparmor.md)
 * [On the Security of Containers (2014)](https://medium.com/@ewindisch/on-the-security-of-containers-2c60ffe25a9e)
-* [Docker swarm mode overlay network security model](../../network/drivers/overlay.md)
+* [Docker swarm mode overlay network security model](engine/network/drivers/overlay.md)
 @z

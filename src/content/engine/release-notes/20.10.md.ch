@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker Engine 20.10 release notes
@@ -967,7 +967,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to [Configure the daemon to use a proxy](../../config/daemon/proxy.md)
+> Refer to [Configure the daemon to use a proxy](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -978,7 +978,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to [Configure the daemon to use a proxy](../../config/daemon/proxy.md)
+> Refer to [Configure the daemon to use a proxy](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z
@@ -1039,7 +1039,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -1050,7 +1050,7 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z
@@ -1141,7 +1141,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -1152,7 +1152,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z
@@ -1249,7 +1249,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @y
@@ -1260,7 +1260,7 @@ well as updated versions of the containerd.io package.
 > longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
 > environment variable for handling requests to `https://` URLs.
 >
-> Refer to the [HTTP/HTTPS proxy section](../../config/daemon/proxy.md#httphttps-proxy)
+> Refer to the [HTTP/HTTPS proxy section](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
 { .important }
 @z

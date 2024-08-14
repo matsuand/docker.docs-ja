@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -73,12 +74,12 @@ To get started with Docker Engine on Raspberry Pi OS, make sure you
 - If you use ufw or firewalld to manage firewall settings, be aware that
   when you expose container ports using Docker, these ports bypass your
   firewall rules. For more information, refer to
-  [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+  [Docker and ufw](/engine/network/packet-filtering-firewalls.md#docker-and-ufw).
 @y
 - If you use ufw or firewalld to manage firewall settings, be aware that
   when you expose container ports using Docker, these ports bypass your
   firewall rules. For more information, refer to
-  [Docker and ufw](../../network/packet-filtering-firewalls.md#docker-and-ufw).
+  [Docker and ufw](engine/network/packet-filtering-firewalls.md#docker-and-ufw).
 @z
 
 @x
@@ -86,13 +87,13 @@ To get started with Docker Engine on Raspberry Pi OS, make sure you
   Firewall rules created with `nft` are not supported on a system with Docker installed.
   Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
-  see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
+  see [Packet filtering and firewalls](/engine/network/packet-filtering-firewalls.md).
 @y
 - Docker is only compatible with `iptables-nft` and `iptables-legacy`.
   Firewall rules created with `nft` are not supported on a system with Docker installed.
   Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
   and that you add them to the `DOCKER-USER` chain,
-  see [Packet filtering and firewalls](../../network/packet-filtering-firewalls.md).
+  see [Packet filtering and firewalls](engine/network/packet-filtering-firewalls.md).
 @z
 
 @x

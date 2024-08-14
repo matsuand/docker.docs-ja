@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Develop your Rust application
 keywords: rust, local, development, run,
 description: Learn how to develop your Rust application locally.
----
 @y
----
 title: Develop your Rust application
 keywords: rust, local, development, run,
 description: Learn how to develop your Rust application locally.
----
 @z
 
 @x
@@ -101,10 +99,10 @@ $ docker network create postgresnet
 
 @x
 Now you can run PostgreSQL in a container and attach to the volume and network that you created previously. Docker pulls the image from Hub and runs it for you locally.
-In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](../../storage/volumes.md).
+In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](/engine/storage/volumes.md).
 @y
 Now you can run PostgreSQL in a container and attach to the volume and network that you created previously. Docker pulls the image from Hub and runs it for you locally.
-In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](../../storage/volumes.md).
+In the following command, option `--mount` is for starting the container with a volume. For more information, see [Docker volumes](/engine/storage/volumes.md).
 @z
 
 @x
@@ -775,11 +773,11 @@ In this section, you took a look at setting up your Compose file to run your Rus
 
 @x
 Related information:
- - [Docker volumes](../../storage/volumes.md)
+ - [Docker volumes](/engine/storage/volumes.md)
  - [Compose overview](../../compose/index.md)
 @y
 Related information:
- - [Docker volumes](../../storage/volumes.md)
+ - [Docker volumes](/engine/storage/volumes.md)
  - [Compose overview](../../compose/index.md)
 @z
 

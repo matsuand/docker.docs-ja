@@ -1046,7 +1046,7 @@ To build and run your custom image:
       example, files from your host's `./scripts/` directory are copied into the
       container's `/docker-entrypoint-initdb.d/` directory. In this directory,
       `.sh`, `.sql`, and `.sql.gz` scripts are executed when the container is
-      started for the first time. For more details about Dockerifles, see the
+      started for the first time. For more details about Dockerfiles, see the
       [Dockerfile reference](/reference/dockerfile/).
 @y
       In this Dockerfile, you've set the environment variable for the MySQL
@@ -1055,7 +1055,7 @@ To build and run your custom image:
       example, files from your host's `./scripts/` directory are copied into the
       container's `/docker-entrypoint-initdb.d/` directory. In this directory,
       `.sh`, `.sql`, and `.sql.gz` scripts are executed when the container is
-      started for the first time. For more details about Dockerifles, see the
+      started for the first time. For more details about Dockerfiles, see the
       [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
 @z
 

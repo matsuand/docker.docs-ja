@@ -1,28 +1,26 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Integrate Docker Scout with SonarQube
 description: Evaluate your images with the SonarQube quality gates defined in your projects
 keywords: scout, supply chain, integration, code quality
----
 @y
----
 title: Integrate Docker Scout with SonarQube
 description: Evaluate your images with the SonarQube quality gates defined in your projects
 keywords: scout, supply chain, integration, code quality
----
 @z
 
 @x
 The SonarQube integration enables Docker Scout to surface SonarQube quality
-gate checks through Policy Evaluation, under a new [Quality gates passed
-policy](../../policy/_index.md#quality-gates-passed).
+gate checks through Policy Evaluation, under a new [SonarQube quality gates passed
+policy](/scout/policy/#sonarqube-quality-gates-passed).
 @y
 The SonarQube integration enables Docker Scout to surface SonarQube quality
-gate checks through Policy Evaluation, under a new [Quality gates passed
-policy](../../policy/_index.md#quality-gates-passed).
+gate checks through Policy Evaluation, under a new [SonarQube quality gates passed
+policy](__SUBDIR__/scout/policy/#sonarqube-quality-gates-passed).
 @z
 
 @x
@@ -166,15 +164,17 @@ To integrate Docker Scout with SonarQube, ensure that:
 @z
 
 @x
-From the integration overview page, you can go directly to the Quality gates
-passed policy. This policy will have no results initially. To start seeing
-evaluation results for this policy, trigger a new SonarQube analysis of your
-project and push the corresponding image to a repository. For more information,
-refer to the [Quality gates passed policy](../../policy/_index.md#quality-gates-passed).
+From the integration overview page, you can go directly to the
+**SonarQube quality gates passed** policy.
+This policy will have no results initially. To start seeing evaluation results
+for this policy, trigger a new SonarQube analysis of your project and push the
+corresponding image to a repository. For more information, refer to the
+[policy description](../../policy/_index.md#sonarqube-quality-gates-passed).
 @y
-From the integration overview page, you can go directly to the Quality gates
-passed policy. This policy will have no results initially. To start seeing
-evaluation results for this policy, trigger a new SonarQube analysis of your
-project and push the corresponding image to a repository. For more information,
-refer to the [Quality gates passed policy](../../policy/_index.md#quality-gates-passed).
+From the integration overview page, you can go directly to the
+**SonarQube quality gates passed** policy.
+This policy will have no results initially. To start seeing evaluation results
+for this policy, trigger a new SonarQube analysis of your project and push the
+corresponding image to a repository. For more information, refer to the
+[policy description](../../policy/_index.md#sonarqube-quality-gates-passed).
 @z

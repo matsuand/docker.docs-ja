@@ -178,18 +178,6 @@ Don't use `currently` when talking about the product or its features. The docume
 @z
 
 @x
-#### deselect
-@y
-#### deselect
-@z
-
-@x
-Don’t use `deselect`. Instead, use `clear`.
-@y
-Don’t use `deselect`. Instead, use `clear`.
-@z
-
-@x
 #### disable
 @y
 #### disable

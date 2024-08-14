@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Most frequently asked questions.
@@ -241,10 +241,10 @@ thousands or even millions of containers.
 
 @x
 Currently the recommended way to connect containers is via the Docker network
-feature. You can see details of [how to work with Docker networks](../network/drivers/bridge.md).
+feature. You can see details of [how to work with Docker networks](/engine/network/drivers/bridge.md).
 @y
 Currently the recommended way to connect containers is via the Docker network
-feature. You can see details of [how to work with Docker networks](../network/drivers/bridge.md).
+feature. You can see details of [how to work with Docker networks](engine/network/drivers/bridge.md).
 @z
 
 @x
@@ -257,12 +257,12 @@ feature. You can see details of [how to work with Docker networks](../network/dr
 This approach is discouraged for most use cases. For maximum efficiency and
 isolation, each container should address one specific area of concern. However,
 if you need to run multiple services within a single container, see
-[Run multiple services in a container](../config/containers/multi-service_container.md).
+[Run multiple services in a container](/engine/containers/multi-service_container.md).
 @y
 This approach is discouraged for most use cases. For maximum efficiency and
 isolation, each container should address one specific area of concern. However,
 if you need to run multiple services within a single container, see
-[Run multiple services in a container](../config/containers/multi-service_container.md).
+[Run multiple services in a container](engine/containers/multi-service_container.md).
 @z
 
 @x

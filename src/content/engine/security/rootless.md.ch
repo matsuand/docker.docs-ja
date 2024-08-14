@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -707,11 +707,11 @@ Or add `net.ipv4.ip_unprivileged_port_start=0` to `/etc/sysctl.conf` (or
 @x
 Limiting resources with cgroup-related `docker run` flags such as `--cpus`, `--memory`, `--pids-limit`
 is supported only when running with cgroup v2 and systemd.
-See [Changing cgroup version](../../config/containers/runmetrics.md) to enable cgroup v2.
+See [Changing cgroup version](/engine/containers/runmetrics.md) to enable cgroup v2.
 @y
 Limiting resources with cgroup-related `docker run` flags such as `--cpus`, `--memory`, `--pids-limit`
 is supported only when running with cgroup v2 and systemd.
-See [Changing cgroup version](../../config/containers/runmetrics.md) to enable cgroup v2.
+See [Changing cgroup version](engine/containers/runmetrics.md) to enable cgroup v2.
 @z
 
 @x

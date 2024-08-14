@@ -51,11 +51,11 @@ daemon. This builder requires no configuration.
 
 @x
 The default builder is directly bound to the Docker daemon and its
-[context](../../engine/context/working-with-contexts.md). If you change the
+[context](/engine/manage-resources/contexts.md). If you change the
 Docker context, your `default` builder refers to the new Docker context.
 @y
 The default builder is directly bound to the Docker daemon and its
-[context](../../engine/context/working-with-contexts.md). If you change the
+[context](/engine/manage-resources/contexts.md). If you change the
 Docker context, your `default` builder refers to the new Docker context.
 @z
 

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Networks top-level elements
 description: Explore all the attributes the networks top-level element can have.
 keywords: compose, compose specification, networks, compose file reference
----
 @y
----
 title: Networks top-level elements
 description: Explore all the attributes the networks top-level element can have.
 keywords: compose, compose specification, networks, compose file reference
----
 @z
 
 @x
@@ -184,9 +182,9 @@ networks:
 @z
 
 @x
-For more information on drivers and available options, see [Network drivers](../../network/drivers/_index.md).
+For more information on drivers and available options, see [Network drivers](/engine/network/drivers/_index.md).
 @y
-For more information on drivers and available options, see [Network drivers](../../network/drivers/_index.md).
+For more information on drivers and available options, see [Network drivers](engine/network/drivers/_index.md).
 @z
 
 @x
@@ -260,9 +258,9 @@ networks:
 @z
 
 @x
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](../../config/daemon/ipv6.md).
+`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](/engine/daemon/ipv6.md).
 @y
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](../../config/daemon/ipv6.md).
+`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](engine/daemon/ipv6.md).
 @z
 
 @x

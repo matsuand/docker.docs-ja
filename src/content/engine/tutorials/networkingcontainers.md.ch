@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: How to network Docker containers.
 keywords: Examples, Usage, volume, docker, documentation, user guide, data, volumes
 title: Network containers
-aliases:
-- /engine/userguide/containers/networkigncontainers/
-- /engine/userguide/networkigncontainers/
----
 @y
----
 description: How to network Docker containers.
 keywords: Examples, Usage, volume, docker, documentation, user guide, data, volumes
 title: Network containers
-aliases:
-- /engine/userguide/containers/networkigncontainers/
-- /engine/userguide/networkigncontainers/
----
 @z
 
 @x
@@ -522,7 +514,7 @@ The `ping` shows it is contacting a different IP address, the address on the `my
 @z
 
 @x
-Now that you know how to network containers, see [how to manage data in containers](../../storage/volumes.md).
+Now that you know how to network containers, see [how to manage data in containers](/engine/storage/volumes.md).
 @y
-Now that you know how to network containers, see [how to manage data in containers](../../storage/volumes.md).
+Now that you know how to network containers, see [how to manage data in containers](engine/storage/volumes.md).
 @z

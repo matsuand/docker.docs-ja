@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Writing a Dockerfile
@@ -37,52 +38,20 @@ As an example, the following Dockerfile would produce a ready-to-run Python appl
 As an example, the following Dockerfile would produce a ready-to-run Python application:
 @z
 
-@x
-```dockerfile
-FROM python:3.12
-WORKDIR /usr/local/app
-@y
-```dockerfile
-FROM python:3.12
-WORKDIR /usr/local/app
-@z
-
-@x
+@x within code
 # Install the application dependencies
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
 @y
 # Install the application dependencies
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
 @z
-
 @x
 # Copy in the source code
-COPY src ./src
-EXPOSE 5000
 @y
 # Copy in the source code
-COPY src ./src
-EXPOSE 5000
 @z
-
 @x
 # Setup an app user so the container doesn't run as the root user
-RUN useradd app
-USER app
 @y
 # Setup an app user so the container doesn't run as the root user
-RUN useradd app
-USER app
-@z
-
-@x
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
-```
-@y
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
-```
 @z
 
 @x
@@ -209,15 +178,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 3. In the `Dockerfile`, define your base image by adding the following line:
 @z
 
-@x
-    ```dockerfile
-    FROM node:20-alpine
-    ```
-@y
-    ```dockerfile
-    FROM node:20-alpine
-    ```
-@z
+% snip code...
 
 @x
 4. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
@@ -225,15 +186,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 4. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
 @z
 
-@x
-    ```dockerfile
-    WORKDIR /usr/local/app
-    ```
-@y
-    ```dockerfile
-    WORKDIR /usr/local/app
-    ```
-@z
+% snip code...
 
 @x
 5. Copy all of the files from your project on your machine into the container image by using the `COPY` instruction:
@@ -241,15 +194,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 5. Copy all of the files from your project on your machine into the container image by using the `COPY` instruction:
 @z
 
-@x
-    ```dockerfile
-    COPY . .
-    ```
-@y
-    ```dockerfile
-    COPY . .
-    ```
-@z
+% snip code...
 
 @x
 6. Install the app's dependencies by using the `yarn` CLI and package manager. To do so, run a command using the `RUN` instruction:
@@ -257,15 +202,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 6. Install the app's dependencies by using the `yarn` CLI and package manager. To do so, run a command using the `RUN` instruction:
 @z
 
-@x
-    ```dockerfile
-    RUN yarn install --production
-    ```
-@y
-    ```dockerfile
-    RUN yarn install --production
-    ```
-@z
+% snip code...
 
 @x
 7. Finally, specify the default command to run by using the `CMD` instruction:
@@ -273,43 +210,22 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 7. Finally, specify the default command to run by using the `CMD` instruction:
 @z
 
+% snip code...
+
 @x
-    ```dockerfile
-    CMD ["node", "./src/index.js"]
-    ```
     And with that, you should have the following Dockerfile:
 @y
-    ```dockerfile
-    CMD ["node", "./src/index.js"]
-    ```
     And with that, you should have the following Dockerfile:
 @z
 
-@x
-    ```dockerfile
-    FROM node:20-alpine
-    WORKDIR /app
-    COPY . .
-    RUN yarn install --production
-    CMD ["node", "./src/index.js"]
-    ```
-@y
-    ```dockerfile
-    FROM node:20-alpine
-    WORKDIR /app
-    COPY . .
-    RUN yarn install --production
-    CMD ["node", "./src/index.js"]
-    ```
-@z
+% snip code...
 
 @x
 > **This Dockerfile isn't production-ready yet**
 >
 > It's important to note that this Dockerfile is _not_ following all
 > of the best practices yet (by design). It will build the app, but the
-> builds won't be as fast as they could be and the image could be made
-> more secure.
+> builds won't be as fast, or the images as secure, as they could be.
 >
 > Keep reading to learn more about how to make the image maximize the
 > build cache, run as a non-root user, and multi-stage builds.
@@ -319,8 +235,7 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 >
 > It's important to note that this Dockerfile is _not_ following all
 > of the best practices yet (by design). It will build the app, but the
-> builds won't be as fast as they could be and the image could be made
-> more secure.
+> builds won't be as fast, or the images as secure, as they could be.
 >
 > Keep reading to learn more about how to make the image maximize the
 > build cache, run as a non-root user, and multi-stage builds.

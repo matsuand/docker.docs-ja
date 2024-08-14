@@ -295,13 +295,12 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = api context install release-notes security \
-	swarm tutorials
+SUBDIRS = api cli containers daemon install logging manage-resources \
+	network release-notes security storage swarm tutorials
 
 bases = \
-	_index.md               \
-	alternative-runtimes.md \
-	breaking_changes.md     \
+	_index.md           \
+	breaking_changes.md \
 	faq.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

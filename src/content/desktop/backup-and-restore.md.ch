@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: How to back up and restore your Docker Desktop data
 keywords: Docker Desktop, backup, restore, migration, reinstall, containers, images,
   volumes
----
 @y
----
 title: How to back up and restore your Docker Desktop data
 keywords: Docker Desktop, backup, restore, migration, reinstall, containers, images,
   volumes
----
 @z
 
 @x
@@ -68,9 +66,9 @@ computer, for example.
 @z
 
 @x
-   If you used a [named volume](../storage/index.md#more-details-about-mount-types) to store container data, such as databases, refer to the [back up, restore, or migrate data volumes](../storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section.
+   If you used a [named volume](/engine/storage/index.md#more-details-about-mount-types) to store container data, such as databases, refer to the [back up, restore, or migrate data volumes](/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section.
 @y
-   If you used a [named volume](../storage/index.md#more-details-about-mount-types) to store container data, such as databases, refer to the [back up, restore, or migrate data volumes](../storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section.
+   If you used a [named volume](engine/storage/index.md#more-details-about-mount-types) to store container data, such as databases, refer to the [back up, restore, or migrate data volumes](engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section.
 @z
 
 @x
@@ -136,7 +134,7 @@ and [install a different version](release-notes.md) or reset Docker Desktop to f
 @z
 
 @x
-Refer to the [backup, restore, or migrate data volumes](../storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section to restore volume data.
+Refer to the [backup, restore, or migrate data volumes](/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section to restore volume data.
 @y
-Refer to the [backup, restore, or migrate data volumes](../storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section to restore volume data.
+Refer to the [backup, restore, or migrate data volumes](engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes) page in the storage section to restore volume data.
 @z

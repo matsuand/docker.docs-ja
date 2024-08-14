@@ -294,24 +294,22 @@ to [the `daemon.json` file](#daemon-configuration-file).
 @x
 The following list of environment variables are supported by the `dockerd` daemon.
 Some of these environment variables are supported both by the Docker Daemon and
-the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/engine/reference/commandline/cli/#environment-variables)
-in the CLI section to learn about environment variables supported by the
-`docker` CLI.
+the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/reference/cli/docker/#environment-variables)
+to learn about environment variables supported by the `docker` CLI.
 @y
 The following list of environment variables are supported by the `dockerd` daemon.
 Some of these environment variables are supported both by the Docker Daemon and
-the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/engine/reference/commandline/cli/#environment-variables)
-in the CLI section to learn about environment variables supported by the
-`docker` CLI.
+the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/reference/cli/docker/#environment-variables)
+to learn about environment variables supported by the `docker` CLI.
 @z
 
 @x
 | Variable            | Description                                                                                                                                                                             |
 | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DOCKER_CERT_PATH`  | Location of your authentication keys. This variable is used both by the [`docker` CLI](https://docs.docker.com/engine/reference/commandline/cli/) and the `dockerd` daemon.             |
+| `DOCKER_CERT_PATH`  | Location of your authentication keys. This variable is used both by the [`docker` CLI](https://docs.docker.com/reference/cli/docker/) and the `dockerd` daemon.             |
 | `DOCKER_DRIVER`     | The storage driver to use.                                                                                                                                                              |
 | `DOCKER_RAMDISK`    | If set this disables `pivot_root`.                                                                                                                                                      |
-| `DOCKER_TLS_VERIFY` | When set Docker uses TLS and verifies the remote. This variable is used both by the [`docker` CLI](https://docs.docker.com/engine/reference/commandline/cli/) and the `dockerd` daemon. |
+| `DOCKER_TLS_VERIFY` | When set Docker uses TLS and verifies the remote. This variable is used both by the [`docker` CLI](https://docs.docker.com/reference/cli/docker/) and the `dockerd` daemon. |
 | `DOCKER_TMPDIR`     | Location for temporary files created by the daemon.                                                                                                                                     |
 | `HTTP_PROXY`        | Proxy URL for HTTP requests unless overridden by NoProxy. See the [Go specification](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config) for details.                            |
 | `HTTPS_PROXY`       | Proxy URL for HTTPS requests unless overridden by NoProxy. See the [Go specification](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config) for details.                           |
@@ -320,10 +318,10 @@ in the CLI section to learn about environment variables supported by the
 @y
 | Variable            | Description                                                                                                                                                                             |
 | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `DOCKER_CERT_PATH`  | Location of your authentication keys. This variable is used both by the [`docker` CLI](https://docs.docker.com/engine/reference/commandline/cli/) and the `dockerd` daemon.             |
+| `DOCKER_CERT_PATH`  | Location of your authentication keys. This variable is used both by the [`docker` CLI](https://docs.docker.com/reference/cli/docker/) and the `dockerd` daemon.             |
 | `DOCKER_DRIVER`     | The storage driver to use.                                                                                                                                                              |
 | `DOCKER_RAMDISK`    | If set this disables `pivot_root`.                                                                                                                                                      |
-| `DOCKER_TLS_VERIFY` | When set Docker uses TLS and verifies the remote. This variable is used both by the [`docker` CLI](https://docs.docker.com/engine/reference/commandline/cli/) and the `dockerd` daemon. |
+| `DOCKER_TLS_VERIFY` | When set Docker uses TLS and verifies the remote. This variable is used both by the [`docker` CLI](https://docs.docker.com/reference/cli/docker/) and the `dockerd` daemon. |
 | `DOCKER_TMPDIR`     | Location for temporary files created by the daemon.                                                                                                                                     |
 | `HTTP_PROXY`        | Proxy URL for HTTP requests unless overridden by NoProxy. See the [Go specification](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config) for details.                            |
 | `HTTPS_PROXY`       | Proxy URL for HTTPS requests unless overridden by NoProxy. See the [Go specification](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config) for details.                           |
@@ -383,11 +381,11 @@ in three ways:
 
 @x
 The command-line and configuration file options take precedence over environment
-variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
+variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/engine/daemon/proxy/)
 to set these environment variables on a host using `systemd`.
 @y
 The command-line and configuration file options take precedence over environment
-variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
+variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/engine/daemon/proxy/)
 to set these environment variables on a host using `systemd`.
 @z
 
@@ -788,9 +786,9 @@ and is selected by default. Unless users have a strong reason to prefer another 
 @z
 
 @x
-You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/storage/storagedriver/select-storage-driver/).
+You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/engine/storage/drivers/select-storage-driver/).
 @y
-You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/storage/storagedriver/select-storage-driver/).
+You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/engine/storage/drivers/select-storage-driver/).
 @z
 
 @x
@@ -1031,10 +1029,10 @@ configuration file or using the `--add-runtime` command line flag.
 
 @x
 For examples on how to use other container runtimes, see
-[Alternative container runtimes](https://docs.docker.com/engine/alternative-runtimes/)
+[Alternative container runtimes](https://docs.docker.com/engine/daemon/alternative-runtimes/)
 @y
 For examples on how to use other container runtimes, see
-[Alternative container runtimes](https://docs.docker.com/engine/alternative-runtimes/)
+[Alternative container runtimes](https://docs.docker.com/engine/daemon/alternative-runtimes/)
 @z
 
 @x
@@ -1475,10 +1473,10 @@ Defining runtime arguments via the command line is not supported.
 
 @x
 For an example configuration for a runc drop-in replacment, see
-[Alternative container runtimes > youki](https://docs.docker.com/engine/alternative-runtimes/#youki)
+[Alternative container runtimes > youki](https://docs.docker.com/engine/daemon/alternative-runtimes/#youki)
 @y
 For an example configuration for a runc drop-in replacment, see
-[Alternative container runtimes > youki](https://docs.docker.com/engine/alternative-runtimes/#youki)
+[Alternative container runtimes > youki](https://docs.docker.com/engine/daemon/alternative-runtimes/#youki)
 @z
 
 @x
@@ -1916,11 +1914,11 @@ Docker host's configuration:
 @x
 This only adds the proxy and authentication to the Docker daemon's requests.
 To use the proxy when building images and running containers, see
-[Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/)
+[Configure Docker to use a proxy server](https://docs.docker.com/engine/cli/proxy/)
 @y
 This only adds the proxy and authentication to the Docker daemon's requests.
 To use the proxy when building images and running containers, see
-[Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/)
+[Configure Docker to use a proxy server](https://docs.docker.com/engine/cli/proxy/)
 @z
 
 @x
@@ -2334,11 +2332,11 @@ to avoid collisions with other Prometheus exporters and services.
 @x
 If you are running a Prometheus server you can add this address to your scrape configs
 to have Prometheus collect metrics on Docker. For more information, see
-[Collect Docker metrics with Prometheus](https://docs.docker.com/config/daemon/prometheus/).
+[Collect Docker metrics with Prometheus](https://docs.docker.com/engine/daemon/prometheus/).
 @y
 If you are running a Prometheus server you can add this address to your scrape configs
 to have Prometheus collect metrics on Docker. For more information, see
-[Collect Docker metrics with Prometheus](https://docs.docker.com/config/daemon/prometheus/).
+[Collect Docker metrics with Prometheus](https://docs.docker.com/engine/daemon/prometheus/).
 @z
 
 @x
@@ -2764,7 +2762,7 @@ The following is a full example of the allowed configuration options on Linux:
 > daemon startup as a flag.
 > On systems that use systemd to start the Docker daemon, `-H` is already set, so
 > you can't use the `hosts` key in `daemon.json` to add listening addresses.
-> See [custom Docker daemon options](https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options)
+> See [custom Docker daemon options](https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file)
 > for an example on how to configure the daemon using systemd drop-in files.
 @y
 > **Note**
@@ -2773,7 +2771,7 @@ The following is a full example of the allowed configuration options on Linux:
 > daemon startup as a flag.
 > On systems that use systemd to start the Docker daemon, `-H` is already set, so
 > you can't use the `hosts` key in `daemon.json` to add listening addresses.
-> See [custom Docker daemon options](https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options)
+> See [custom Docker daemon options](https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file)
 > for an example on how to configure the daemon using systemd drop-in files.
 @z
 
@@ -2957,7 +2955,7 @@ The list of feature options include:
 - `containerd-snapshotter`: when set to `true`, the daemon uses containerd
   snapshotters instead of the classic storage drivers for storing image and
   container data. For more information, see
-  [containerd storage](https://docs.docker.com/storage/containerd/).
+  [containerd storage](https://docs.docker.com/engine/storage/containerd/).
 - `windows-dns-proxy`: when set to `true`, the daemon's internal DNS resolver
   will forward requests to external servers. Without this, most applications
   running in the container will still be able to use secondary DNS servers
@@ -2968,7 +2966,7 @@ The list of feature options include:
 - `containerd-snapshotter`: when set to `true`, the daemon uses containerd
   snapshotters instead of the classic storage drivers for storing image and
   container data. For more information, see
-  [containerd storage](https://docs.docker.com/storage/containerd/).
+  [containerd storage](https://docs.docker.com/engine/storage/containerd/).
 - `windows-dns-proxy`: when set to `true`, the daemon's internal DNS resolver
   will forward requests to external servers. Without this, most applications
   running in the container will still be able to use secondary DNS servers
@@ -3018,7 +3016,7 @@ The list of currently supported options that can be reconfigured is this:
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `debug`                            | Toggles debug mode of the daemon.                                                                           |
 | `labels`                           | Replaces the daemon labels with a new set of labels.                                                        |
-| `live-restore`                     | Toggles [live restore](https://docs.docker.com/config/containers/live-restore/).                            |
+| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/containers/live-restore/).                            |
 | `max-concurrent-downloads`         | Configures the max concurrent downloads for each pull.                                                      |
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
@@ -3035,7 +3033,7 @@ The list of currently supported options that can be reconfigured is this:
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `debug`                            | Toggles debug mode of the daemon.                                                                           |
 | `labels`                           | Replaces the daemon labels with a new set of labels.                                                        |
-| `live-restore`                     | Toggles [live restore](https://docs.docker.com/config/containers/live-restore/).                            |
+| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/containers/live-restore/).                            |
 | `max-concurrent-downloads`         | Configures the max concurrent downloads for each pull.                                                      |
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
@@ -3253,11 +3251,11 @@ using the `daemon.json` file.
 
 @x
 This example uses the `bridge` network driver. Refer to the
-[bridge network driver page](https://docs.docker.com/network/drivers/bridge/#options)
+[bridge network driver page](https://docs.docker.com/engine/network/drivers/bridge/#options)
 for an overview of available driver options.
 @y
 This example uses the `bridge` network driver. Refer to the
-[bridge network driver page](https://docs.docker.com/network/drivers/bridge/#options)
+[bridge network driver page](https://docs.docker.com/engine/network/drivers/bridge/#options)
 for an overview of available driver options.
 @z
 

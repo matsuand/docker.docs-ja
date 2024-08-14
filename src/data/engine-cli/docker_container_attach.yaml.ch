@@ -256,11 +256,11 @@ examples: |-
 @x
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](/engine/reference/commandline/cli/#configuration-files).
+    containers, see [**Configuration file** section](/reference/cli/docker/#configuration-files).
 @y
     These `a`, `ctrl-a`, `X`, or `ctrl-\\` values are all examples of valid key
     sequences. To configure a different configuration default key sequence for all
-    containers, see [**Configuration file** section](__SUBDIR__/engine/reference/commandline/cli/#configuration-files).
+    containers, see [**Configuration file** section](__SUBDIR__/reference/cli/docker/#configuration-files).
 @z
 
 % snip directives...

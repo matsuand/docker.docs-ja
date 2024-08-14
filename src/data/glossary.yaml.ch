@@ -90,7 +90,7 @@ Compose: |
 @x
 copy-on-write: |
   Docker uses a
-  [copy-on-write](/storage/storagedriver/#the-copy-on-write-cow-strategy)
+  [copy-on-write](/engine/storage/drivers/#the-copy-on-write-cow-strategy)
   technique and a [union file system](#union-file-system) for both images and
   containers to optimize resources and speed performance. Multiple copies of an
   entity share the same instance and each one makes only specific changes to its
@@ -98,7 +98,7 @@ copy-on-write: |
 @y
 copy-on-write: |
   Docker uses a
-  [copy-on-write](__SUBDIR__/storage/storagedriver/#the-copy-on-write-cow-strategy)
+  [copy-on-write](__SUBDIR__/engine/storage/drivers/#the-copy-on-write-cow-strategy)
   technique and a [union file system](#union-file-system) for both images and
   containers to optimize resources and speed performance. Multiple copies of an
   entity share the same instance and each one makes only specific changes to its
@@ -130,11 +130,11 @@ copy-on-write: |
 @x
   For more about copy-on-write in the context of Docker, see [Understand images,
   containers, and storage
-  drivers](/storage/storagedriver/).
+  drivers](/engine/storage/drivers/).
 @y
   For more about copy-on-write in the context of Docker, see [Understand images,
   containers, and storage
-  drivers](__SUBDIR__/storage/storagedriver/).
+  drivers](__SUBDIR__/engine/storage/drivers/).
 @z
 
 @x
@@ -403,63 +403,95 @@ filesystem: |
   - Linux : overlay2, extfs, btrfs, zfs
   - Windows : NTFS
   - macOS : APFS
-image: |
-  Docker images are the basis of [containers](#container). An Image is an
-  ordered collection of root filesystem changes and the corresponding
-  execution parameters for use within a container runtime. An image typically
-  contains a union of layered filesystems stacked on top of each other. An image
-  does not have state and it never changes.
-invitee: |
-  People who have been invited to join an [organization](#organization), but have not yet accepted their invitation.
-layer: |
-  In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image.
-  When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
-libcontainer: |
-  libcontainer provides a native Go implementation for creating containers with
-  namespaces, cgroups, capabilities, and filesystem access controls. It allows
-  you to manage the lifecycle of the container performing additional operations
-  after the container is created.
-libnetwork: |
-  libnetwork provides a native Go implementation for creating and managing container network namespaces and other network resources. It manages the networking lifecycle of the container performing additional operations after the container is created.
-member: |
-  The people who have received and accepted invitations to join an [organization](#organization). Member can also refer to members of a [team](#team) within an organization.
-namespace: |
-  A [Linux namespace](https://man7.org/linux/man-pages/man7/namespaces.7.html)
-  is a Linux kernel feature that isolates and virtualizes system resources. Processes which are restricted to a namespace can only interact with resources or processes that are part of the same namespace. Namespaces
-  are an important part of Docker's isolation model. Namespaces exist for each type of resource, including `net` (networking), `mnt` (storage), `pid` (processes), `uts` (hostname control), and `user` (UID mapping). For more information about namespaces, see [Docker run reference](/engine/reference/run/) and [Isolate containers with a user namespace](/engine/security/userns-remap/).
-node: |
-  A [node](/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
-  machine running an instance of the Docker Engine in [swarm mode](#swarm-mode).
 @y
   - Linux : overlay2, extfs, btrfs, zfs
   - Windows : NTFS
   - macOS : APFS
+@z
+
+@x
 image: |
   Docker images are the basis of [containers](#container). An Image is an
   ordered collection of root filesystem changes and the corresponding
   execution parameters for use within a container runtime. An image typically
   contains a union of layered filesystems stacked on top of each other. An image
   does not have state and it never changes.
+@y
+image: |
+  Docker images are the basis of [containers](#container). An Image is an
+  ordered collection of root filesystem changes and the corresponding
+  execution parameters for use within a container runtime. An image typically
+  contains a union of layered filesystems stacked on top of each other. An image
+  does not have state and it never changes.
+@z
+
+@x
 invitee: |
   People who have been invited to join an [organization](#organization), but have not yet accepted their invitation.
+@y
+invitee: |
+  People who have been invited to join an [organization](#organization), but have not yet accepted their invitation.
+@z
+
+@x
 layer: |
   In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image.
   When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
+@y
+layer: |
+  In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image.
+  When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
+@z
+
+@x
 libcontainer: |
   libcontainer provides a native Go implementation for creating containers with
   namespaces, cgroups, capabilities, and filesystem access controls. It allows
   you to manage the lifecycle of the container performing additional operations
   after the container is created.
+@y
+libcontainer: |
+  libcontainer provides a native Go implementation for creating containers with
+  namespaces, cgroups, capabilities, and filesystem access controls. It allows
+  you to manage the lifecycle of the container performing additional operations
+  after the container is created.
+@z
+
+@x
 libnetwork: |
   libnetwork provides a native Go implementation for creating and managing container network namespaces and other network resources. It manages the networking lifecycle of the container performing additional operations after the container is created.
+@y
+libnetwork: |
+  libnetwork provides a native Go implementation for creating and managing container network namespaces and other network resources. It manages the networking lifecycle of the container performing additional operations after the container is created.
+@z
+
+@x
 member: |
   The people who have received and accepted invitations to join an [organization](#organization). Member can also refer to members of a [team](#team) within an organization.
+@y
+member: |
+  The people who have received and accepted invitations to join an [organization](#organization). Member can also refer to members of a [team](#team) within an organization.
+@z
+
+@x
 namespace: |
   A [Linux namespace](https://man7.org/linux/man-pages/man7/namespaces.7.html)
   is a Linux kernel feature that isolates and virtualizes system resources. Processes which are restricted to a namespace can only interact with resources or processes that are part of the same namespace. Namespaces
-  are an important part of Docker's isolation model. Namespaces exist for each type of resource, including `net` (networking), `mnt` (storage), `pid` (processes), `uts` (hostname control), and `user` (UID mapping). For more information about namespaces, see [Docker run reference](__SUBDIR__/engine/reference/run/) and [Isolate containers with a user namespace](__SUBDIR__/engine/security/userns-remap/).
+  are an important part of Docker's isolation model. Namespaces exist for each type of resource, including `net` (networking), `mnt` (storage), `pid` (processes), `uts` (hostname control), and `user` (UID mapping). For more information about namespaces, see [Docker run reference](/engine/containers/run/) and [Isolate containers with a user namespace](/engine/security/userns-remap/).
+@y
+namespace: |
+  A [Linux namespace](https://man7.org/linux/man-pages/man7/namespaces.7.html)
+  is a Linux kernel feature that isolates and virtualizes system resources. Processes which are restricted to a namespace can only interact with resources or processes that are part of the same namespace. Namespaces
+  are an important part of Docker's isolation model. Namespaces exist for each type of resource, including `net` (networking), `mnt` (storage), `pid` (processes), `uts` (hostname control), and `user` (UID mapping). For more information about namespaces, see [Docker run reference](__SUBDIR__/engine/containers/run/) and [Isolate containers with a user namespace](__SUBDIR__/engine/security/userns-remap/).
+@z
+
+@x
 node: |
-  A [node](__SUBDIR__/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
+  A [node](/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
+  machine running an instance of the Docker Engine in [swarm mode](#swarm-mode).
+@y
+node: |
+  A [node](/engine/swarm/how-swarm-mode-works/nodes/) is a physical or virtual
   machine running an instance of the Docker Engine in [swarm mode](#swarm-mode).
 @z
 
@@ -558,19 +590,27 @@ service: |
   application. Examples of services might include an HTTP server, a database, or
   any other type of executable program that you wish to run in a distributed
   environment.
-service account: |
-  A service account is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and do not share Docker IDs with the members in a Docker Team or Docker Business subscription plan.
-service discovery: |
-  Swarm mode [container discovery](/network/drivers/overlay/#container-discovery) is a DNS component internal to the swarm that automatically assigns each service on an overlay network in the swarm a VIP and DNS entry. Containers on the network share DNS mappings for the service through gossip so any container on the network can access the service through its service name.
 @y
   Frequently a service is a microservice within the context of some larger
   application. Examples of services might include an HTTP server, a database, or
   any other type of executable program that you wish to run in a distributed
   environment.
+@z
+
+@x
 service account: |
   A service account is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and do not share Docker IDs with the members in a Docker Team or Docker Business subscription plan.
+@y
+service account: |
+  A service account is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and do not share Docker IDs with the members in a Docker Team or Docker Business subscription plan.
+@z
+
+@x
 service discovery: |
-  Swarm mode [container discovery](__SUBDIR__/network/drivers/overlay/#container-discovery) is a DNS component internal to the swarm that automatically assigns each service on an overlay network in the swarm a VIP and DNS entry. Containers on the network share DNS mappings for the service through gossip so any container on the network can access the service through its service name.
+  Swarm mode [container discovery](/engine/network/drivers/overlay/#container-discovery) is a DNS component internal to the swarm that automatically assigns each service on an overlay network in the swarm a VIP and DNS entry. Containers on the network share DNS mappings for the service through gossip so any container on the network can access the service through its service name.
+@y
+service discovery: |
+  Swarm mode [container discovery](__SUBDIR__/engine/network/drivers/overlay/#container-discovery) is a DNS component internal to the swarm that automatically assigns each service on an overlay network in the swarm a VIP and DNS entry. Containers on the network share DNS mappings for the service through gossip so any container on the network can access the service through its service name.
 @z
 
 @x

@@ -16,9 +16,9 @@ title: Turn on GPU access with Docker Compose
 @z
 
 @x
-Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](../config/containers/resource_constraints.md#gpu) if you haven't already done so.
+Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](/engine/containers/resource_constraints.md#gpu) if you haven't already done so.
 @y
-Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](../config/containers/resource_constraints.md#gpu) if you haven't already done so.
+Compose services can define GPU device reservations if the Docker host contains such devices and the Docker Daemon is set accordingly. For this, make sure you install the [prerequisites](/engine/containers/resource_constraints.md#gpu) if you haven't already done so.
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker Compose release notes
@@ -6173,10 +6173,10 @@ naming scheme accordingly before upgrading.
 
 @x
 - Added support for the [long syntax](compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
-  Using this syntax will create [mounts](../storage/bind-mounts.md) instead of volumes.
+  Using this syntax will create [mounts](/engine/storage/bind-mounts.md) instead of volumes.
 @y
 - Added support for the [long syntax](compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
-  Using this syntax will create [mounts](../storage/bind-mounts.md) instead of volumes.
+  Using this syntax will create [mounts](engine/storage/bind-mounts.md) instead of volumes.
 @z
 
 @x

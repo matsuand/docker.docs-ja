@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Multi container apps
@@ -466,11 +466,11 @@ container. You learned a little bit about container networking and service disco
 @x
 Related information:
  - [docker CLI reference](/reference/cli/docker/)
- - [Networking overview](../../network/_index.md)
+ - [Networking overview](/engine/network/_index.md)
 @y
 関連情報
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [Networking overview](../../network/_index.md)
+ - [Networking 概要](engine/network/_index.md)
 @z
 
 @x

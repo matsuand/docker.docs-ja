@@ -46,9 +46,9 @@ New features and enhancements released in the second quarter of 2024.
 @z
 
 @x
-### 2024-05-0x
+### 2024-06-27
 @y
-### 2024-05-0x
+### 2024-06-27
 @z
 
 @x
@@ -124,16 +124,16 @@ New features and enhancements released in the first quarter of 2024.
 @z
 
 @x
-The **High-profile vulnerabilities** policy now reports the `xz` backdoor
+The **No high-profile vulnerabilities** policy now reports the `xz` backdoor
 vulnerability [CVE-2024-3094](https://scout.docker.com/v/CVE-2024-3094). Any
 images in your Docker organization containing the version of `xz/liblzma` with
-the backdoor will be non-compliant with the **High-profile vulnerabilities**
+the backdoor will be non-compliant with the **No high-profile vulnerabilities**
 policy.
 @y
-The **High-profile vulnerabilities** policy now reports the `xz` backdoor
+The **No high-profile vulnerabilities** policy now reports the `xz` backdoor
 vulnerability [CVE-2024-3094](https://scout.docker.com/v/CVE-2024-3094). Any
 images in your Docker organization containing the version of `xz/liblzma` with
-the backdoor will be non-compliant with the **High-profile vulnerabilities**
+the backdoor will be non-compliant with the **No high-profile vulnerabilities**
 policy.
 @z
 
@@ -144,11 +144,11 @@ policy.
 @z
 
 @x
-The **Fixable critical and high vulnerabilities** policy now supports a
+The **No fixable critical or high vulnerabilities** policy now supports a
 **Fixable vulnerabilities only** configuration option, which lets you decide
 whether or not to only flag vulnerabilities with an available fix version.
 @y
-The **Fixable critical and high vulnerabilities** policy now supports a
+The **No fixable critical or high vulnerabilities** policy now supports a
 **Fixable vulnerabilities only** configuration option, which lets you decide
 whether or not to only flag vulnerabilities with an available fix version.
 @z
@@ -161,12 +161,12 @@ whether or not to only flag vulnerabilities with an available fix version.
 
 @x
 The **All critical vulnerabilities** policy has been removed.
-The **Fixable critical and high vulnerabilities** policy provides similar functionality,
+The **No fixable critical or high vulnerabilities** policy provides similar functionality,
 and will be updated in the future to allow for more extensive customization,
 making the now-removed **All critical vulnerabilities** policy redundant.
 @y
 The **All critical vulnerabilities** policy has been removed.
-The **Fixable critical and high vulnerabilities** policy provides similar functionality,
+The **No fixable critical or high vulnerabilities** policy provides similar functionality,
 and will be updated in the future to allow for more extensive customization,
 making the now-removed **All critical vulnerabilities** policy redundant.
 @z
@@ -202,12 +202,12 @@ For more information and setup instructions, see
 @z
 
 @x
-New **Unapproved base images** policy, which lets you restrict which base
+New **No unapproved base images** policy, which lets you restrict which base
 images you allow in your builds. You define the allowed base images using a
 pattern. Base images whose image reference don't match the specified patterns
 cause the policy to fail.
 @y
-New **Unapproved base images** policy, which lets you restrict which base
+New **No unapproved base images** policy, which lets you restrict which base
 images you allow in your builds. You define the allowed base images using a
 pattern. Base images whose image reference don't match the specified patterns
 cause the policy to fail.
@@ -215,10 +215,10 @@ cause the policy to fail.
 
 @x
 For more information, see
-[Unapproved base images](../policy/_index.md#unapproved-base-images).
+[No unapproved base images](/scout/policy/#no-unapproved-base-images).
 @y
 For more information, see
-[Unapproved base images](../policy/_index.md#unapproved-base-images).
+[No unapproved base images](scout/policy/#no-unapproved-base-images).
 @z
 
 @x
@@ -240,9 +240,9 @@ runtime security.
 @z
 
 @x
-For more information, see [Default non-root user](../policy/_index.md#default-non-root-user).
+For more information, see [Default non-root user](/scout/policy/#default-non-root-user).
 @y
-For more information, see [Default non-root user](../policy/_index.md#default-non-root-user).
+For more information, see [Default non-root user](scout/policy/#default-non-root-user).
 @z
 
 @x
@@ -351,14 +351,14 @@ and related policy. SonarQube is an open-source platform for continuous
 inspection of code quality. This integration lets you add SonarQube's quality
 gates as a policy evaluation in Docker Scout. Enable the integration, push your
 images, and see the SonarQube quality gate conditions surfaced in the new
-**Quality gates passed** policy.
+**SonarQube quality gates passed** policy.
 @y
 New [SonarQube](https://www.sonarsource.com/products/sonarqube/) integration
 and related policy. SonarQube is an open-source platform for continuous
 inspection of code quality. This integration lets you add SonarQube's quality
 gates as a policy evaluation in Docker Scout. Enable the integration, push your
 images, and see the SonarQube quality gate conditions surfaced in the new
-**Quality gates passed** policy.
+**SonarQube quality gates passed** policy.
 @z
 
 @x
@@ -369,10 +369,10 @@ For more information, see:
 
 @x
 - [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
-- [Quality gates passed policy](../policy/_index.md#quality-gates-passed)
+- [SonarQube quality gates passed policy](/scout/policy/#sonarqube-quality-gates-passed)
 @y
 - [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
-- [Quality gates passed policy](../policy/_index.md#quality-gates-passed)
+- [SonarQube quality gates passed policy](scout/policy/#sonarqube-quality-gates-passed)
 @z
 
 @x
@@ -452,10 +452,10 @@ often a prerequisite for doing more.
 @z
 
 @x
-See [Supply chain attestations policy](../policy/_index.md#supply-chain-attestations)
+See [Supply chain attestations policy](/scout/policy/#supply-chain-attestations)
 for details.
 @y
-See [Supply chain attestations policy](../policy/_index.md#supply-chain-attestations)
+See [Supply chain attestations policy](scout/policy/#supply-chain-attestations)
 for details.
 @z
 
@@ -466,19 +466,19 @@ for details.
 @z
 
 @x
-New **High-profile vulnerabilities** policy, which ensures your artifacts are
+New **No high-profile vulnerabilities** policy, which ensures your artifacts are
 free from a curated list of vulnerabilities widely recognized to be risky.
 @y
-New **High-profile vulnerabilities** policy, which ensures your artifacts are
+New **No high-profile vulnerabilities** policy, which ensures your artifacts are
 free from a curated list of vulnerabilities widely recognized to be risky.
 @z
 
 @x
 For more information, see
-[High-profile vulnerabilities policy](../policy/_index.md#high-profile-vulnerabilities).
+[No high-profile vulnerabilities policy](/scout/policy/#no-high-profile-vulnerabilities).
 @y
 For more information, see
-[High-profile vulnerabilities policy](../policy/_index.md#high-profile-vulnerabilities).
+[No high-profile vulnerabilities policy](scout/policy/#no-high-profile-vulnerabilities).
 @z
 
 @x
@@ -560,11 +560,11 @@ with four out-of-the-box policies, enabled by default for all organizations.
 @x
 You can view and evaluate policy status for images using the Docker Scout
 Dashboard and the `docker scout policy` CLI command. For more information,
-refer to the [Policy Evaluation documentation](../policy/_index.md).
+refer to the [Policy Evaluation documentation](/scout/policy/).
 @y
 You can view and evaluate policy status for images using the Docker Scout
 Dashboard and the `docker scout policy` CLI command. For more information,
-refer to the [Policy Evaluation documentation](../policy/_index.md).
+refer to the [Policy Evaluation documentation](scout/policy/).
 @z
 
 @x

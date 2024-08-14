@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Share the application
@@ -285,7 +285,7 @@ new instance that has never seen this container image. To do this, you will use 
     > on all interfaces of the host, making it available to the outside world.
     >
     > For more information about how port mapping works, see
-    > [Networking](../../network/_index.md#published-ports).
+    > [Networking](/engine/network/_index.md#published-ports).
     { .tip }
 @y
     > **情報**
@@ -298,7 +298,7 @@ new instance that has never seen this container image. To do this, you will use 
     > 一方で `0.0.0.0` へのバインディングは、コンテナーのポートが全インターフェースにバインドすることができます。
     > この場合は外部への接続が可能となります。
     >
-    > ポートマッピングが動作する様子に関しての詳細は [ネットワーク処理](../../network/_index.md#published-ports) を参照してください。
+    > ポートマッピングが動作する様子に関しての詳細は [ネットワーク処理](engine/network/_index.md#published-ports) を参照してください。
     { .tip }
 @z
 

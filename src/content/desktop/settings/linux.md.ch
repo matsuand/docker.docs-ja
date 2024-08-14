@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Change your Docker Desktop settings on Linux
@@ -327,8 +327,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](../../storage/volumes.md)
->   (named volume) or [data container](../../storage/volumes.md).
+>   better if they are stored in the Linux VM, using a [data volume](/engine/storage/volumes.md)
+>   (named volume) or [data container](/engine/storage/volumes.md).
 { .tip }
 @y
 > Tips on shared folders, permissions, and volume mounts
@@ -340,8 +340,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](../../storage/volumes.md)
->   (named volume) or [data container](../../storage/volumes.md).
+>   better if they are stored in the Linux VM, using a [data volume](engine/storage/volumes.md)
+>   (named volume) or [data container](engine/storage/volumes.md).
 { .tip }
 @z
 
@@ -478,16 +478,16 @@ edit the file using your favorite text editor.
 >
 > Only the **Docker Desktop** daemon uses the configuration file under `$HOME/.docker`.
 > If you manually install Docker Engine alongside Docker Desktop, the manually
-> installed instance uses a `daemon.json` configuration file in a  different location.
-> Refer to [Configure the daemon](../../config/daemon/index.md) for more information
+> installed instance uses a `daemon.json` configuration file in a different location.
+> Refer to [Configure the daemon](/engine/daemon/_index.md) for more information
 > about how to configure the Docker daemon on a manually installed Docker Engine.
 @y
 > **Note**
 >
 > Only the **Docker Desktop** daemon uses the configuration file under `$HOME/.docker`.
 > If you manually install Docker Engine alongside Docker Desktop, the manually
-> installed instance uses a `daemon.json` configuration file in a  different location.
-> Refer to [Configure the daemon](../../config/daemon/index.md) for more information
+> installed instance uses a `daemon.json` configuration file in a different location.
+> Refer to [Configure the daemon](engine/daemon/_index.md) for more information
 > about how to configure the Docker daemon on a manually installed Docker Engine.
 @z
 
@@ -622,9 +622,9 @@ Use the **Extensions** tab to:
 @z
 
 @x
-For more information about Docker extensions, see [Extensions](../extensions/index.md).
+For more information about Docker extensions, see [Extensions](/extensions/index.md).
 @y
-For more information about Docker extensions, see [Extensions](../extensions/index.md).
+For more information about Docker extensions, see [Extensions](extensions/index.md).
 @z
 
 @x

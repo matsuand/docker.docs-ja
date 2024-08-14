@@ -1,18 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Docker Engine 18.06 release notes
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Docker Engine 18.06 release notes
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -399,7 +393,7 @@ toc_max: 2
 * Set item-type for ExecIDs. [moby/moby#37121](https://github.com/moby/moby/pull/37121)
 * Use go-systemd const instead of magic string in Linux version of dockerd. [moby/moby#37136](https://github.com/moby/moby/pull/37136)
 * Use stdlib TLS dialer. [moby/moby#36687](https://github.com/moby/moby/pull/36687)
-* Warn when an engine label using a reserved namespace (com.docker.\*, io.docker.\*, or org.dockerproject.\*) is configured, as per [Docker object labels](../../config/labels-custom-metadata.md). [moby/moby#36921](https://github.com/moby/moby/pull/36921)
+* Warn when an engine label using a reserved namespace (com.docker.\*, io.docker.\*, or org.dockerproject.\*) is configured, as per [Docker object labels](/engine/manage-resources/labels.md). [moby/moby#36921](https://github.com/moby/moby/pull/36921)
 - Fix missing plugin name in message. [moby/moby#37052](https://github.com/moby/moby/pull/37052)
 - Fix link anchors in CONTRIBUTING.md. [moby/moby#37276](https://github.com/moby/moby/pull/37276)
 - Fix link to Docker Toolbox. [moby/moby#37240](https://github.com/moby/moby/pull/37240)
@@ -461,7 +455,7 @@ toc_max: 2
 * Set item-type for ExecIDs. [moby/moby#37121](https://github.com/moby/moby/pull/37121)
 * Use go-systemd const instead of magic string in Linux version of dockerd. [moby/moby#37136](https://github.com/moby/moby/pull/37136)
 * Use stdlib TLS dialer. [moby/moby#36687](https://github.com/moby/moby/pull/36687)
-* Warn when an engine label using a reserved namespace (com.docker.\*, io.docker.\*, or org.dockerproject.\*) is configured, as per [Docker object labels](../../config/labels-custom-metadata.md). [moby/moby#36921](https://github.com/moby/moby/pull/36921)
+* Warn when an engine label using a reserved namespace (com.docker.\*, io.docker.\*, or org.dockerproject.\*) is configured, as per [Docker object labels](engine/manage-resources/labels.md). [moby/moby#36921](https://github.com/moby/moby/pull/36921)
 - Fix missing plugin name in message. [moby/moby#37052](https://github.com/moby/moby/pull/37052)
 - Fix link anchors in CONTRIBUTING.md. [moby/moby#37276](https://github.com/moby/moby/pull/37276)
 - Fix link to Docker Toolbox. [moby/moby#37240](https://github.com/moby/moby/pull/37240)

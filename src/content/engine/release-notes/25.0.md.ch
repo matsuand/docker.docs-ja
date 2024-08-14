@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Docker Engine 25.0 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
@@ -356,7 +358,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 >
 > This option isn't supported with the `-v` or `--volume` flag.
 > For more information, see
-> [Recursive mounts](../../storage/bind-mounts.md#recursive-mounts).
+> [Recursive mounts](/engine/storage/bind-mounts.md#recursive-mounts).
 @y
 > **Note**
 >
@@ -374,7 +376,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 >
 > This option isn't supported with the `-v` or `--volume` flag.
 > For more information, see
-> [Recursive mounts](../../storage/bind-mounts.md#recursive-mounts).
+> [Recursive mounts](engine/storage/bind-mounts.md#recursive-mounts).
 @z
 
 @x

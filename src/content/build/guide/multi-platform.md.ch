@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Multi-platform
 description: Building for multiple operating systems and architectures
@@ -368,11 +370,11 @@ Related information:
 @x
 - [Multi-platfom images](../building/multi-platform.md)
 - [containerd image store (Docker Desktop)](../../desktop/containerd.md)
-- [containerd image store (Docker Engine)](../../storage/containerd.md)
+- [containerd image store (Docker Engine)](/engine/storage/containerd.md)
 @y
 - [マルチプラットフォームイメージ](../building/multi-platform.md)
 - [containerd image store (Docker Desktop)](../../desktop/containerd.md)
-- [containerd image store (Docker Engine)](../../storage/containerd.md)
+- [containerd image store (Docker Engine)](engine/storage/containerd.md)
 @z
 
 @x

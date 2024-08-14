@@ -818,10 +818,10 @@ Desktop at `$HOME/.docker/desktop/log/`.
 @z
 
 @x
-Refer to the [Read the daemon logs](../../config/daemon/logs.md) section
+Refer to the [Read the daemon logs](/engine/daemon/logs.md) section
 to learn how to view the Docker Daemon logs.
 @y
-Refer to the [Read the daemon logs](../../config/daemon/logs.md) section
+Refer to the [Read the daemon logs](/engine/daemon/logs.md) section
 to learn how to view the Docker Daemon logs.
 @z
 

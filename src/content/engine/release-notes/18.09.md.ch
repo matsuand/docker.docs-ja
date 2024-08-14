@@ -1,20 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
----
 title: Docker Engine 18.09 release notes
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Docker Engine 18.09 release notes
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -952,9 +944,9 @@ supported at this time, but support will be removed in a future release.
 @z
 
 @x
-    The [Overlay2 storage driver](../../storage/storagedriver/overlayfs-driver.md) is now the default for Docker engine implementations.
+  The [Overlay2 storage driver](/engine/storage/drivers/overlayfs-driver.md) is now the default for Docker Engine implementations.
 @y
-    The [Overlay2 storage driver](../../storage/storagedriver/overlayfs-driver.md) is now the default for Docker engine implementations.
+  The [Overlay2 storage driver](engine/storage/drivers/overlayfs-driver.md) is now the default for Docker Engine implementations.
 @z
 
 @x

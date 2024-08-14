@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Test your R deployment
@@ -59,85 +60,7 @@ username and the name of the repository that you created in [Configure CI/CD for
 your R application](configure-ci-cd.md).
 @z
 
-@x
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-r-demo
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      service: shiny
-  template:
-    metadata:
-      labels:
-        service: shiny
-    spec:
-      containers:
-       - name: shimy-service
-         image: DOCKER_USERNAME/REPO_NAME
-         imagePullPolicy: Always
-         env:
-          - name: POSTGRES_PASSWORD
-            value: mysecretpassword
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: service-entrypoint
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    service: shiny
-  ports:
-  - port: 3838
-    targetPort: 3838
-    nodePort: 30001
-```
-@y
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: docker-r-demo
-  namespace: default
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      service: shiny
-  template:
-    metadata:
-      labels:
-        service: shiny
-    spec:
-      containers:
-       - name: shimy-service
-         image: DOCKER_USERNAME/REPO_NAME
-         imagePullPolicy: Always
-         env:
-          - name: POSTGRES_PASSWORD
-            value: mysecretpassword
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: service-entrypoint
-  namespace: default
-spec:
-  type: NodePort
-  selector:
-    service: shiny
-  ports:
-  - port: 3838
-    targetPort: 3838
-    nodePort: 30001
-```
-@z
+% snip code...
 
 @x
 In this Kubernetes YAML file, there are two objects, separated by the `---`:
@@ -185,15 +108,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    Kubernetes.
 @z
 
-@x
-   ```console
-   $ kubectl apply -f docker-r-kubernetes.yaml
-   ```
-@y
-   ```console
-   $ kubectl apply -f docker-r-kubernetes.yaml
-   ```
-@z
+% snip command...
 
 @x
    You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
@@ -201,17 +116,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    You should see output that looks like the following, indicating your Kubernetes objects were created successfully.
 @z
 
-@x
-   ```text
-   deployment.apps/docker-r-demo created
-   service/service-entrypoint created
-   ```
-@y
-   ```text
-   deployment.apps/docker-r-demo created
-   service/service-entrypoint created
-   ```
-@z
+% snip text...
 
 @x
 2. Make sure everything worked by listing your deployments.
@@ -219,15 +124,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 2. Make sure everything worked by listing your deployments.
 @z
 
-@x
-   ```console
-   $ kubectl get deployments
-   ```
-@y
-   ```console
-   $ kubectl get deployments
-   ```
-@z
+% snip command...
 
 @x
    Your deployment should be listed as follows:
@@ -235,17 +132,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    Your deployment should be listed as follows:
 @z
 
-@x
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-   docker-r-demo   1/1     1            1           15s
-   ```
-@y
-   ```shell
-   NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
-   docker-r-demo   1/1     1            1           15s
-   ```
-@z
+% snip output...
 
 @x
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
@@ -253,15 +140,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    This indicates all one of the pods you asked for in your YAML are up and running. Do the same check for your services.
 @z
 
-@x
-   ```console
-   $ kubectl get services
-   ```
-@y
-   ```console
-   $ kubectl get services
-   ```
-@z
+% snip command...
 
 @x
    You should get output like the following.
@@ -269,19 +148,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    You should get output like the following.
 @z
 
-@x
-   ```shell
-   NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-   kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          23h
-   service-entrypoint   NodePort    10.99.128.230   <none>        3838:30001/TCP   75s
-   ```
-@y
-   ```shell
-   NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-   kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          23h
-   service-entrypoint   NodePort    10.99.128.230   <none>        3838:30001/TCP   75s
-   ```
-@z
+% snip output...
 
 @x
    In addition to the default `kubernetes` service, you can see your `service-entrypoint` service, accepting traffic on port 30001/TCP.
@@ -297,15 +164,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
    this example.
 @z
 
-@x
-   ```console
-   http://localhost:30001/
-   ```
-@y
-   ```console
-   http://localhost:30001/
-   ```
-@z
+% snip command...
 
 @x
 4. Run the following command to tear down your application.
@@ -313,15 +172,7 @@ To learn more about Kubernetes objects, see the [Kubernetes documentation](https
 4. Run the following command to tear down your application.
 @z
 
-@x
-   ```console
-   $ kubectl delete -f docker-r-kubernetes.yaml
-   ```
-@y
-   ```console
-   $ kubectl delete -f docker-r-kubernetes.yaml
-   ```
-@z
+% snip command...
 
 @x
 ## Summary

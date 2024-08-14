@@ -140,6 +140,50 @@ integration feature, enabled via the Dashboard's **Settings** > **Resources** > 
 @z
 
 @x
+### ECI protection for Docker Builds with the "Docker" driver
+@y
+### ECI protection for Docker Builds with the "Docker" driver
+@z
+
+@x
+Prior to Docker Desktop 4.30, `docker build` commands that use the buildx
+`docker` driver (the default) are not protected by ECI (i.e., the build runs
+rootful inside the Docker Desktop VM).
+@y
+Prior to Docker Desktop 4.30, `docker build` commands that use the buildx
+`docker` driver (the default) are not protected by ECI (i.e., the build runs
+rootful inside the Docker Desktop VM).
+@z
+
+@x
+Starting with Docker Desktop 4.30, `docker build` commands that use the buildx
+`docker` driver are protected by ECI (i.e., the build runs rootless inside
+the Docker Desktop VM), except when Docker Desktop is configured to use WSL 2
+(on Windows hosts). We expect to improve on this in future versions of Docker
+Desktop.
+@y
+Starting with Docker Desktop 4.30, `docker build` commands that use the buildx
+`docker` driver are protected by ECI (i.e., the build runs rootless inside
+the Docker Desktop VM), except when Docker Desktop is configured to use WSL 2
+(on Windows hosts). We expect to improve on this in future versions of Docker
+Desktop.
+@z
+
+@x
+Note that `docker build` commands that use the `docker-container` driver are
+always protected by ECI (i.e., the build runs inside a rootless Docker
+container). This is true since Docker Desktop 4.19 (when ECI was introduced) and
+on all platforms where Docker Desktop is supported (Windows with WSL or Hyper-V,
+Mac, and Linux).
+@y
+Note that `docker build` commands that use the `docker-container` driver are
+always protected by ECI (i.e., the build runs inside a rootless Docker
+container). This is true since Docker Desktop 4.19 (when ECI was introduced) and
+on all platforms where Docker Desktop is supported (Windows with WSL or Hyper-V,
+Mac, and Linux).
+@z
+
+@x
 ### Docker Build and Buildx have some restrictions
 @y
 ### Docker Build and Buildx have some restrictions
@@ -162,11 +206,27 @@ these won't work properly.
 @z
 
 @x
-Kubernetes pods are not yet protected by ECI. A malicious or privileged pod can
-compromise the Docker Desktop Linux VM and bypass security controls.
+When using the Docker Desktop integrated Kubernetes, pods are not yet protected
+by ECI. Therefore a malicious or privileged pod can compromise the Docker
+Desktop Linux VM and bypass security controls.
 @y
-Kubernetes pods are not yet protected by ECI. A malicious or privileged pod can
-compromise the Docker Desktop Linux VM and bypass security controls.
+When using the Docker Desktop integrated Kubernetes, pods are not yet protected
+by ECI. Therefore a malicious or privileged pod can compromise the Docker
+Desktop Linux VM and bypass security controls.
+@z
+
+@x
+As an alternative, you can use the [K8s.io KinD](https://kind.sigs.k8s.io/) tool
+with ECI. In this case, each Kubernetes node runs inside an ECI-protected
+container, thereby more strongly isolating the Kubernetes cluster away from the
+underlying Docker Desktop Linux VM (and Docker Engine within). No special
+arrangements are needed, just enable ECI and run the KinD tool as usual.
+@y
+As an alternative, you can use the [K8s.io KinD](https://kind.sigs.k8s.io/) tool
+with ECI. In this case, each Kubernetes node runs inside an ECI-protected
+container, thereby more strongly isolating the Kubernetes cluster away from the
+underlying Docker Desktop Linux VM (and Docker Engine within). No special
+arrangements are needed, just enable ECI and run the KinD tool as usual.
 @z
 
 @x
@@ -197,6 +257,40 @@ Desktop.
 Containers launched by the Docker Desktop Dev Environments feature are not yet
 protected either. We expect to improve on this in future versions of Docker
 Desktop.
+@z
+
+@x
+### Docker Debug containers are not yet protected
+@y
+### Docker Debug containers are not yet protected
+@z
+
+@x
+[Docker Debug](https://docs.docker.com/reference/cli/docker/debug/) containers
+are not yet protected by ECI. We expect to improve on this in future versions of
+Docker Desktop.
+@y
+[Docker Debug](https://docs.docker.com/reference/cli/docker/debug/) containers
+are not yet protected by ECI. We expect to improve on this in future versions of
+Docker Desktop.
+@z
+
+@x
+### Native Windows containers are not supported
+@y
+### Native Windows containers are not supported
+@z
+
+@x
+ECI only works when Docker Desktop is in Linux containers mode (the default,
+most common mode). It's not supported when Docker Desktop is configured in
+native Windows containers mode (i.e., it's not supported on Windows hosts, when
+Docker Desktop is switched from its default Linux mode to native Windows mode).
+@y
+ECI only works when Docker Desktop is in Linux containers mode (the default,
+most common mode). It's not supported when Docker Desktop is configured in
+native Windows containers mode (i.e., it's not supported on Windows hosts, when
+Docker Desktop is switched from its default Linux mode to native Windows mode).
 @z
 
 @x

@@ -1955,13 +1955,13 @@ Reference:
 @y
 - sectiontitle: Build checks
   section:
-  - path: __SUBDIR/reference/build-checks/
+  - path: __SUBDIR__/reference/build-checks/
     title: Overview
-  - path: __SUBDIR/reference/build-checks/consistent-instruction-casing/
+  - path: __SUBDIR__/reference/build-checks/consistent-instruction-casing/
     title: ConsistentInstructionCasing
-  - path: __SUBDIR/reference/build-checks/copy-ignored-file/
+  - path: __SUBDIR__/reference/build-checks/copy-ignored-file/
     title: CopyIgnoredFile
-  - path: __SUBDIR/reference/build-checks/duplicate-stage-name/
+  - path: __SUBDIR__/reference/build-checks/duplicate-stage-name/
     title: DuplicateStageName
 @z
 
@@ -1977,15 +1977,15 @@ Reference:
   - path: /reference/build-checks/legacy-key-value-format/
     title: LegacyKeyValueFormat
 @y
-  - path: __SUBDIR/reference/build-checks/from-as-casing/
+  - path: __SUBDIR__/reference/build-checks/from-as-casing/
     title: FromAsCasing
-  - path: __SUBDIR/reference/build-checks/from-platform-flag-const-disallowed/
+  - path: __SUBDIR__/reference/build-checks/from-platform-flag-const-disallowed/
     title: FromPlatformConstDisallowed
-  - path: __SUBDIR/reference/build-checks/invalid-default-arg-in-from/
+  - path: __SUBDIR__/reference/build-checks/invalid-default-arg-in-from/
     title: InvalidDefaultArgInFrom
-  - path: __SUBDIR/reference/build-checks/json-args-recommended/
+  - path: __SUBDIR__/reference/build-checks/json-args-recommended/
     title: JSONArgsRecommended
-  - path: __SUBDIR/reference/build-checks/legacy-key-value-format/
+  - path: __SUBDIR__/reference/build-checks/legacy-key-value-format/
     title: LegacyKeyValueFormat
 @z
 
@@ -2001,15 +2001,15 @@ Reference:
   - path: /reference/build-checks/reserved-stage-name/
     title: ReservedStageName
 @y
-  - path: __SUBDIR/reference/build-checks/maintainer-deprecated/
+  - path: __SUBDIR__/reference/build-checks/maintainer-deprecated/
     title: MaintainerDeprecated
-  - path: __SUBDIR/reference/build-checks/multiple-instructions-disallowed/
+  - path: __SUBDIR__/reference/build-checks/multiple-instructions-disallowed/
     title: MultipleInstructionsDisallowed
-  - path: __SUBDIR/reference/build-checks/no-empty-continuation/
+  - path: __SUBDIR__/reference/build-checks/no-empty-continuation/
     title: NoEmptyContinuation
-  - path: __SUBDIR/reference/build-checks/redundant-target-platform/
+  - path: __SUBDIR__/reference/build-checks/redundant-target-platform/
     title: RedundantTargetPlatform
-  - path: __SUBDIR/reference/build-checks/reserved-stage-name/
+  - path: __SUBDIR__/reference/build-checks/reserved-stage-name/
     title: ReservedStageName
 @z
 
@@ -2025,15 +2025,15 @@ Reference:
   - path: /reference/build-checks/workdir-relative-path/
     title: WorkdirRelativePath
 @y
-  - path: __SUBDIR/reference/build-checks/secrets-used-in-arg-or-env/
+  - path: __SUBDIR__/reference/build-checks/secrets-used-in-arg-or-env/
     title: SecretsUsedInArgOrEnv
-  - path: __SUBDIR/reference/build-checks/stage-name-casing/
+  - path: __SUBDIR__/reference/build-checks/stage-name-casing/
     title: StageNameCasing
-  - path: __SUBDIR/reference/build-checks/undefined-arg-in-from/
+  - path: __SUBDIR__/reference/build-checks/undefined-arg-in-from/
     title: UndefinedArgInFrom
-  - path: __SUBDIR/reference/build-checks/undefined-var/
+  - path: __SUBDIR__/reference/build-checks/undefined-var/
     title: UndefinedVar
-  - path: __SUBDIR/reference/build-checks/workdir-relative-path/
+  - path: __SUBDIR__/reference/build-checks/workdir-relative-path/
     title: WorkdirRelativePath
 @z
 
@@ -2204,108 +2204,116 @@ Reference:
 @x
   - sectiontitle: Docker Extension SDK API
     section:
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
         title: DesktopUI
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Dialog/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Dialog/
         title: Dialog
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Docker/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Docker/
         title: Docker
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
         title: DockerCommand
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
         title: DockerDesktopClient
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Exec/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Exec/
         title: Exec
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
         title: ExecProcess
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecResult/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecResult/
         title: ExecResult
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
         title: ExecStreamOptions
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Extension/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Extension/
         title: Extension
 @y
   - sectiontitle: Docker Extension SDK API
     section:
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
         title: DesktopUI
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Dialog/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Dialog/
         title: Dialog
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Docker/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Docker/
         title: Docker
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
         title: DockerCommand
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
         title: DockerDesktopClient
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Exec/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Exec/
         title: Exec
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
         title: ExecProcess
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResult/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecResult/
         title: ExecResult
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
         title: ExecStreamOptions
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Extension/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Extension/
         title: Extension
 @z
 
 @x
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
         title: ExtensionCli
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
         title: ExtensionHost
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
         title: ExtensionVM
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Host/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Host/
         title: Host
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/HttpService/
         title: HttpService
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
         title: NavigationIntents
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
         title: OpenDialogResult
 @y
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
         title: ExtensionCli
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
         title: ExtensionHost
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
         title: ExtensionVM
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Host/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Host/
         title: Host
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/HttpService/
         title: HttpService
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
         title: NavigationIntents
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
         title: OpenDialogResult
 @z
 
 @x
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
         title: RawExecResult
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
         title: RequestConfig
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
         title: RequestConfigV0
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/Toast/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+        title: ServiceError
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+        title: SpawnOptions
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Toast/
         title: Toast
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
         title: ExecResultV0
-      - path: /desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/
+      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/BackendV0/
         title: BackendV0
 @y
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
         title: RawExecResult
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
         title: RequestConfig
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
         title: RequestConfigV0
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/Toast/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+        title: ServiceError
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+        title: SpawnOptions
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Toast/
         title: Toast
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
         title: ExecResultV0
-      - path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/
+      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/BackendV0/
         title: BackendV0
 @z
 
@@ -3046,52 +3054,52 @@ Manuals:
 @x
 - sectiontitle: Docker Extensions
   section:
-    - path: /desktop/extensions/
+    - path: /extensions/
       title: Overview
     - sectiontitle: Extensions on Docker Desktop
       section:
-        - path: /desktop/extensions/marketplace/
+        - path: /extensions/marketplace/
           title: Manage Marketplace extensions
-        - path: /desktop/extensions/non-marketplace/
+        - path: /extensions/non-marketplace/
           title: Manage non-Marketplace extensions
-        - path: /desktop/extensions/settings-feedback/
+        - path: /extensions/settings-feedback/
           title: Change settings and give feedback
-        - path: /desktop/extensions/private-marketplace/
+        - path: /extensions/private-marketplace/
           title: Configure a private Marketplace (Beta)
 @y
 - sectiontitle: Docker Extensions
   section:
-    - path: __SUBDIR__/desktop/extensions/
+    - path: __SUBDIR__/extensions/
       title: 概要
     - sectiontitle: Extensions on Docker Desktop
       section:
-        - path: __SUBDIR__/desktop/extensions/marketplace/
+        - path: __SUBDIR__/extensions/marketplace/
           title: マーケットプレースの Extensions 管理
-        - path: __SUBDIR__/desktop/extensions/non-marketplace/
+        - path: __SUBDIR__/extensions/non-marketplace/
           title: マーケットプレース以外の Extensions 管理
-        - path: __SUBDIR__/desktop/extensions/settings-feedback/
+        - path: __SUBDIR__/extensions/settings-feedback/
           title: Change settings and give feedback
-        - path: __SUBDIR__/desktop/extensions/private-marketplace/
+        - path: __SUBDIR__/extensions/private-marketplace/
           title: Configure a private Marketplace (Beta)
 @z
 
 @x
     - sectiontitle: Extensions SDK
       section:
-        - path: /desktop/extensions-sdk/
+        - path: /extensions/extensions-sdk/
           title: Overview
-        - path: /desktop/extensions-sdk/process/
+        - path: /extensions/extensions-sdk/process/
           title: The build and publish process
-        - path: /desktop/extensions-sdk/quickstart/
+        - path: /extensions/extensions-sdk/quickstart/
           title: Quickstart
 @y
     - sectiontitle: Extensions SDK
       section:
-        - path: __SUBDIR__/desktop/extensions-sdk/
+        - path: __SUBDIR__/extensions/extensions-sdk/
           title: 概要
-        - path: __SUBDIR__/desktop/extensions-sdk/process/
+        - path: __SUBDIR__/extensions/extensions-sdk/process/
           title: The build and publish process
-        - path: __SUBDIR__/desktop/extensions-sdk/quickstart/
+        - path: __SUBDIR__/extensions/extensions-sdk/quickstart/
           title: クィックスタート
 @z
 
@@ -3099,176 +3107,176 @@ Manuals:
         - sectiontitle: "Part one: Build"
           section:
             - title: Create a simple extension
-              path: /desktop/extensions-sdk/build/minimal-frontend-extension/
+              path: /extensions/extensions-sdk/build/minimal-frontend-extension/
             - title: Create an advanced frontend extension
-              path: /desktop/extensions-sdk/build/frontend-extension-tutorial/
+              path: /extensions/extensions-sdk/build/frontend-extension-tutorial/
             - title: Add a backend to your extension
-              path: /desktop/extensions-sdk/build/backend-extension-tutorial/
+              path: /extensions/extensions-sdk/build/backend-extension-tutorial/
 @y
         - sectiontitle: "Part one: Build"
           section:
             - title: Create a simple extension
-              path: __SUBDIR__/desktop/extensions-sdk/build/minimal-frontend-extension/
+              path: __SUBDIR__/extensions/extensions-sdk/build/minimal-frontend-extension/
             - title: Create an advanced frontend extension
-              path: __SUBDIR__/desktop/extensions-sdk/build/frontend-extension-tutorial/
+              path: __SUBDIR__/extensions/extensions-sdk/build/frontend-extension-tutorial/
             - title: Add a backend to your extension
-              path: __SUBDIR__/desktop/extensions-sdk/build/backend-extension-tutorial/
+              path: __SUBDIR__/extensions/extensions-sdk/build/backend-extension-tutorial/
 @z
 
 @x
         - sectiontitle: "Part two: Publish"
           section:
             - title: Overview
-              path: /desktop/extensions-sdk/extensions/
+              path: /extensions/extensions-sdk/extensions/
             - title: Labels
-              path: /desktop/extensions-sdk/extensions/labels/
+              path: /extensions/extensions-sdk/extensions/labels/
             - title: Validate
-              path: /desktop/extensions-sdk/extensions/validate/
+              path: /extensions/extensions-sdk/extensions/validate/
             - title: Package and release your extension
-              path: /desktop/extensions-sdk/extensions/DISTRIBUTION/
+              path: /extensions/extensions-sdk/extensions/DISTRIBUTION/
             - title: Generate a share link
-              path: /desktop/extensions-sdk/extensions/share/
+              path: /extensions/extensions-sdk/extensions/share/
             - title: Publish in the Marketplace
-              path: /desktop/extensions-sdk/extensions/publish/
+              path: /extensions/extensions-sdk/extensions/publish/
             - title: Build multi-arch extensions
-              path: /desktop/extensions-sdk/extensions/multi-arch/
+              path: /extensions/extensions-sdk/extensions/multi-arch/
 @y
         - sectiontitle: "Part two: Publish"
           section:
             - title: Overview
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/
             - title: Labels
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/labels/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/labels/
             - title: Validate
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/validate/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/validate/
             - title: Package and release your extension
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/DISTRIBUTION/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/DISTRIBUTION/
             - title: Generate a share link
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/share/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/share/
             - title: Publish in the Marketplace
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/publish/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/publish/
             - title: Build multi-arch extensions
-              path: __SUBDIR__/desktop/extensions-sdk/extensions/multi-arch/
+              path: __SUBDIR__/extensions/extensions-sdk/extensions/multi-arch/
 @z
 
 @x
         - sectiontitle: "Architecture"
           section:
             - title: Overview
-              path: /desktop/extensions-sdk/architecture/
+              path: /extensions/extensions-sdk/architecture/
             - title: Metadata
-              path: /desktop/extensions-sdk/architecture/metadata/
+              path: /extensions/extensions-sdk/architecture/metadata/
             - title: Security
-              path: /desktop/extensions-sdk/architecture/security/
+              path: /extensions/extensions-sdk/architecture/security/
 @y
         - sectiontitle: "Architecture"
           section:
             - title: Overview
-              path: __SUBDIR__/desktop/extensions-sdk/architecture/
+              path: __SUBDIR__/extensions/extensions-sdk/architecture/
             - title: Metadata
-              path: __SUBDIR__/desktop/extensions-sdk/architecture/metadata/
+              path: __SUBDIR__/extensions/extensions-sdk/architecture/metadata/
             - title: Security
-              path: __SUBDIR__/desktop/extensions-sdk/architecture/security/
+              path: __SUBDIR__/extensions/extensions-sdk/architecture/security/
 @z
 
 @x
         - sectiontitle: "Design and UI styling"
           section:
              - title: UI styling guidelines
-               path: /desktop/extensions-sdk/design/
+               path: /extensions/extensions-sdk/design/
              - title: Guidelines
-               path: /desktop/extensions-sdk/design/design-guidelines/
+               path: /extensions/extensions-sdk/design/design-guidelines/
              - title: Docker design principles
-               path: /desktop/extensions-sdk/design/design-principles/
+               path: /extensions/extensions-sdk/design/design-principles/
              - title: MUI best practices
-               path: /desktop/extensions-sdk/design/mui-best-practices/
+               path: /extensions/extensions-sdk/design/mui-best-practices/
 @y
         - sectiontitle: "Design and UI styling"
           section:
              - title: UI styling guidelines
-               path: __SUBDIR__/desktop/extensions-sdk/design/
+               path: __SUBDIR__/extensions/extensions-sdk/design/
              - title: Guidelines
-               path: __SUBDIR__/desktop/extensions-sdk/design/design-guidelines/
+               path: __SUBDIR__/extensions/extensions-sdk/design/design-guidelines/
              - title: Docker design principles
-               path: __SUBDIR__/desktop/extensions-sdk/design/design-principles/
+               path: __SUBDIR__/extensions/extensions-sdk/design/design-principles/
              - title: MUI best practices
-               path: __SUBDIR__/desktop/extensions-sdk/design/mui-best-practices/
+               path: __SUBDIR__/extensions/extensions-sdk/design/mui-best-practices/
 @z
 
 @x
         - sectiontitle: "Developer Guides"
           section:
             - title: Invoke host binaries
-              path: /desktop/extensions-sdk/guides/invoke-host-binaries/
+              path: /extensions/extensions-sdk/guides/invoke-host-binaries/
             - title: Use the Docker socket from the extension backend
-              path: /desktop/extensions-sdk/guides/use-docker-socket-from-backend/
+              path: /extensions/extensions-sdk/guides/use-docker-socket-from-backend/
             - title: Interacting with Kubernetes
-              path: /desktop/extensions-sdk/guides/kubernetes/
+              path: /extensions/extensions-sdk/guides/kubernetes/
             - title: Authentication
-              path: /desktop/extensions-sdk/guides/oauth2-flow/
+              path: /extensions/extensions-sdk/guides/oauth2-flow/
 @y
         - sectiontitle: "Developer Guides"
           section:
             - title: Invoke host binaries
-              path: __SUBDIR__/desktop/extensions-sdk/guides/invoke-host-binaries/
+              path: __SUBDIR__/extensions/extensions-sdk/guides/invoke-host-binaries/
             - title: Use the Docker socket from the extension backend
-              path: __SUBDIR__/desktop/extensions-sdk/guides/use-docker-socket-from-backend/
+              path: __SUBDIR__/extensions/extensions-sdk/guides/use-docker-socket-from-backend/
             - title: Interacting with Kubernetes
-              path: __SUBDIR__/desktop/extensions-sdk/guides/kubernetes/
+              path: __SUBDIR__/extensions/extensions-sdk/guides/kubernetes/
             - title: Authentication
-              path: __SUBDIR__/desktop/extensions-sdk/guides/oauth2-flow/
+              path: __SUBDIR__/extensions/extensions-sdk/guides/oauth2-flow/
 @z
 
 @x
         - sectiontitle: Developer SDK tools
           section:
             - title: "Test and debug"
-              path: /desktop/extensions-sdk/dev/test-debug/
+              path: /extensions/extensions-sdk/dev/test-debug/
             - title: "Continuous integration"
-              path: /desktop/extensions-sdk/dev/continuous-integration/
+              path: /extensions/extensions-sdk/dev/continuous-integration/
             - title: CLI reference
-              path: /desktop/extensions-sdk/dev/usage/
+              path: /extensions/extensions-sdk/dev/usage/
 @y
         - sectiontitle: Developer SDK tools
           section:
             - title: "Test and debug"
-              path: __SUBDIR__/desktop/extensions-sdk/dev/test-debug/
+              path: __SUBDIR__/extensions/extensions-sdk/dev/test-debug/
             - title: "Continuous integration"
-              path: __SUBDIR__/desktop/extensions-sdk/dev/continuous-integration/
+              path: __SUBDIR__/extensions/extensions-sdk/dev/continuous-integration/
             - title: CLI reference
-              path: __SUBDIR__/desktop/extensions-sdk/dev/usage/
+              path: __SUBDIR__/extensions/extensions-sdk/dev/usage/
 @z
 
 @x
             - sectiontitle: Extension APIs
               section:
                 - title: Overview
-                  path: /desktop/extensions-sdk/dev/api/overview/
+                  path: /extensions/extensions-sdk/dev/api/overview/
                 - title: Extension Backend
-                  path: /desktop/extensions-sdk/dev/api/backend/
+                  path: /extensions/extensions-sdk/dev/api/backend/
                 - title: Docker
-                  path: /desktop/extensions-sdk/dev/api/docker/
+                  path: /extensions/extensions-sdk/dev/api/docker/
                 - title: Dashboard
-                  path: /desktop/extensions-sdk/dev/api/dashboard/
+                  path: /extensions/extensions-sdk/dev/api/dashboard/
                 - title: Navigation
-                  path: /desktop/extensions-sdk/dev/api/dashboard-routes-navigation/
+                  path: /extensions/extensions-sdk/dev/api/dashboard-routes-navigation/
                 - title: API Reference
-                  path: /desktop/extensions-sdk/dev/api/reference/README/
+                  path: /extensions/extensions-sdk/dev/api/reference/README/
 @y
             - sectiontitle: Extension APIs
               section:
                 - title: Overview
-                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/overview/
+                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/overview/
                 - title: Extension Backend
-                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/backend/
+                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/backend/
                 - title: Docker
-                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/docker/
+                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/docker/
                 - title: Dashboard
-                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/dashboard/
+                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/dashboard/
                 - title: Navigation
-                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/dashboard-routes-navigation/
+                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/dashboard-routes-navigation/
                 - title: API Reference
-                  path: __SUBDIR__/desktop/extensions-sdk/dev/api/reference/README/
+                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/README/
 @z
 
 @x
@@ -3574,305 +3582,317 @@ Manuals:
 @x
   - sectiontitle: Storage
     section:
-    - path: /storage/
+    - path: /engine/storage/
       title: Overview
-    - path: /storage/volumes/
+    - path: /engine/storage/volumes/
       title: Volumes
-    - path: /storage/bind-mounts/
+    - path: /engine/storage/bind-mounts/
       title: Bind mounts
-    - path: /storage/tmpfs/
+    - path: /engine/storage/tmpfs/
       title: tmpfs mounts
 @y
   - sectiontitle: ストレージ
     section:
-    - path: __SUBDIR__/storage/
+    - path: __SUBDIR__/engine/storage/
       title: 概要
-    - path: __SUBDIR__/storage/volumes/
+    - path: __SUBDIR__/engine/storage/volumes/
       title: ボリューム
-    - path: __SUBDIR__/storage/bind-mounts/
+    - path: __SUBDIR__/engine/storage/bind-mounts/
       title: バインドマウント
-    - path: __SUBDIR__/storage/tmpfs/
+    - path: __SUBDIR__/engine/storage/tmpfs/
       title: tmpfs マウント
 @z
 
 @x
     - sectiontitle: Storage drivers
       section:
-      - path: /storage/storagedriver/
+      - path: /engine/storage/drivers/
         title: Overview
-      - path: /storage/storagedriver/select-storage-driver/
+      - path: /engine/storage/drivers/select-storage-driver/
         title: Select a storage driver
-      - path: /storage/storagedriver/btrfs-driver/
+      - path: /engine/storage/drivers/btrfs-driver/
         title: Use the Btrfs storage driver
-      - path: /storage/storagedriver/device-mapper-driver/
+      - path: /engine/storage/drivers/device-mapper-driver/
         title: Use the Device mapper storage driver
-      - path: /storage/storagedriver/overlayfs-driver/
+      - path: /engine/storage/drivers/overlayfs-driver/
         title: Use the OverlayFS storage driver
-      - path: /storage/storagedriver/zfs-driver/
+      - path: /engine/storage/drivers/zfs-driver/
         title: Use the ZFS storage driver
-      - path: /storage/storagedriver/vfs-driver/
+      - path: /engine/storage/drivers/vfs-driver/
         title: Use the VFS storage driver
-      - path: /storage/storagedriver/aufs-driver/
+      - path: /engine/storage/drivers/aufs-driver/
         title: Use the AUFS storage driver (deprecated)
-      - path: /storage/containerd/
-        title: containerd snapshotters
+    - path: /engine/storage/containerd/
+      title: containerd snapshotters
 @y
     - sectiontitle: ストレージドライバー
       section:
-      - path: __SUBDIR__/storage/storagedriver/
+      - path: __SUBDIR__/engine/storage/drivers/
         title: 概要
-      - path: __SUBDIR__/storage/storagedriver/select-storage-driver/
+      - path: __SUBDIR__/engine/storage/drivers/select-storage-driver/
         title: ストレージドライバー選び
-      - path: __SUBDIR__/storage/storagedriver/btrfs-driver/
+      - path: __SUBDIR__/engine/storage/drivers/btrfs-driver/
         title: Btrfs ストレージドライバーの利用
-      - path: __SUBDIR__/storage/storagedriver/device-mapper-driver/
+      - path: __SUBDIR__/engine/storage/drivers/device-mapper-driver/
         title: Device mapper ストレージドライバーの利用
-      - path: __SUBDIR__/storage/storagedriver/overlayfs-driver/
+      - path: __SUBDIR__/engine/storage/drivers/overlayfs-driver/
         title: OverlayFS ストレージドライバーの利用
-      - path: __SUBDIR__/storage/storagedriver/zfs-driver/
+      - path: __SUBDIR__/engine/storage/drivers/zfs-driver/
         title: ZFS ストレージドライバーの利用
-      - path: __SUBDIR__/storage/storagedriver/vfs-driver/
+      - path: __SUBDIR__/engine/storage/drivers/vfs-driver/
         title: VFS ストレージドライバーの利用
-      - path: __SUBDIR__/storage/storagedriver/aufs-driver/
+      - path: __SUBDIR__/engine/storage/drivers/aufs-driver/
         title: AUFS ストレージドライバーの利用 (非推奨)
-      - path: __SUBDIR__/storage/containerd/
-        title: containerd snapshotters
+    - path: __SUBDIR__/engine/storage/containerd/
+      title: containerd snapshotters
 @z
 
 @x
   - sectiontitle: Networking
     section:
-    - path: /network/
+    - path: /engine/network/
       title: Overview
     - sectiontitle: Network drivers
       section:
-      - path: /network/drivers/
+      - path: /engine/network/drivers/
         title: Overview
-      - path: /network/drivers/bridge/
+      - path: /engine/network/drivers/bridge/
         title: Bridge
-      - path: /network/drivers/overlay/
+      - path: /engine/network/drivers/overlay/
         title: Overlay
-      - path: /network/drivers/host/
+      - path: /engine/network/drivers/host/
         title: Host
-      - path: /network/drivers/ipvlan/
+      - path: /engine/network/drivers/ipvlan/
         title: IPvlan
-      - path: /network/drivers/macvlan/
+      - path: /engine/network/drivers/macvlan/
         title: Macvlan
-      - path: /network/drivers/none/
+      - path: /engine/network/drivers/none/
         title: None (no networking)
 @y
   - sectiontitle: ネットワーク
     section:
-    - path: __SUBDIR__/network/
+    - path: __SUBDIR__/engine/network/
       title: 概要
-    - sectiontitle: Network drivers
+    - sectiontitle: ネットワークドライバー
       section:
-      - path: __SUBDIR__/network/drivers/
+      - path: __SUBDIR__/engine/network/drivers/
         title: 概要
-      - path: __SUBDIR__/network/drivers/bridge/
+      - path: __SUBDIR__/engine/network/drivers/bridge/
         title: Bridge
-      - path: __SUBDIR__/network/drivers/overlay/
+      - path: __SUBDIR__/engine/network/drivers/overlay/
         title: Overlay
-      - path: __SUBDIR__/network/drivers/host/
+      - path: __SUBDIR__/engine/network/drivers/host/
         title: Host
-      - path: __SUBDIR__/network/drivers/ipvlan/
+      - path: __SUBDIR__/engine/network/drivers/ipvlan/
         title: IPvlan
-      - path: __SUBDIR__/network/drivers/macvlan/
+      - path: __SUBDIR__/engine/network/drivers/macvlan/
         title: Macvlan
-      - path: __SUBDIR__/network/drivers/none/
+      - path: __SUBDIR__/engine/network/drivers/none/
         title: ネットワークなし
 @z
 
 @x
-    - path: /network/proxy/
-      title: Configure Docker to use a proxy server
-    - path: /network/packet-filtering-firewalls/
+    - path: /engine/network/packet-filtering-firewalls/
       title: Packet filtering and firewalls
-    - path: /config/daemon/ipv6/
-      title: Use IPv6
+@y
+    - path: __SUBDIR__/engine/network/packet-filtering-firewalls/
+      title: Packet filtering and firewalls
+@z
+
+@x
     - sectiontitle: Networking tutorials
       section:
-      - path: /network/network-tutorial-standalone/
+      - path: /engine/network/tutorials/standalone/
         title: Bridge network tutorial
-      - path: /network/network-tutorial-host/
+      - path: /engine/network/tutorials/host/
         title: Host networking tutorial
-      - path: /network/network-tutorial-overlay/
+      - path: /engine/network/tutorials/overlay/
         title: Overlay networking tutorial
-      - path: /network/network-tutorial-macvlan/
+      - path: /engine/network/tutorials/macvlan/
         title: Macvlan network tutorial
     - sectiontitle: Legacy networking content
       section:
-      - path: /network/links/
+      - path: /engine/network/links/
         title: (Legacy) Container links
 @y
-    - path: __SUBDIR__/network/proxy/
-      title: Configure Docker to use a proxy server
-    - path: __SUBDIR__/network/packet-filtering-firewalls/
-      title: Packet filtering and firewalls
-    - path: __SUBDIR__/config/daemon/ipv6/
-      title: Use IPv6
     - sectiontitle: ネットワークのチュートリアル
       section:
-      - path: __SUBDIR__/network/network-tutorial-standalone/
+      - path: __SUBDIR__/engine/network/tutorials/standalone/
         title: ブリッジネットワークのチュートリアル
-      - path: __SUBDIR__/network/network-tutorial-host/
+      - path: __SUBDIR__/engine/network/tutorials/host/
         title: ホストネットワークのチュートリアル
-      - path: __SUBDIR__/network/network-tutorial-overlay/
+      - path: __SUBDIR__/engine/network/tutorials/overlay/
         title: オーバーレイネットワークのチュートリアル
-      - path: __SUBDIR__/network/network-tutorial-macvlan/
+      - path: __SUBDIR__/engine/network/tutorials/macvlan/
         title: Macvlan ネットワークのチュートリアル
     - sectiontitle: Legacy networking content
       section:
-      - path: __SUBDIR__/network/links/
+      - path: __SUBDIR__/engine/network/links/
         title: (Legacy) Container links
 @z
 
 @x
   - sectiontitle: Containers
     section:
-    - path: /engine/reference/run/
+    - path: /engine/containers/run/
       title: Running containers
-    - path: /config/containers/resource_constraints/
+    - path: /engine/containers/resource_constraints/
       title: Configure resource constraints
-    - path: /config/containers/multi-service_container/
+    - path: /engine/containers/multi-service_container/
       title: Run multiple processes in a container
-    - path: /config/containers/start-containers-automatically/
+    - path: /engine/containers/start-containers-automatically/
       title: Start containers automatically
+    - path: /engine/containers/runmetrics/
+      title: Runtime metrics
 @y
   - sectiontitle: コンテナー
     section:
-    - path: __SUBDIR__/engine/reference/run/
+    - path: __SUBDIR__/engine/containers/run/
       title: コンテナーの実行
-    - path: __SUBDIR__/config/containers/resource_constraints/
+    - path: __SUBDIR__/engine/containers/resource_constraints/
       title: リソース制約の設定
-    - path: __SUBDIR__/config/containers/multi-service_container/
+    - path: __SUBDIR__/engine/containers/multi-service_container/
       title: コンテナーでのマルチプロセス実行
-    - path: __SUBDIR__/config/containers/start-containers-automatically/
+    - path: __SUBDIR__/engine/containers/start-containers-automatically/
       title: コンテナーの自動実行
+    - path: __SUBDIR__/engine/containers/runmetrics/
+      title: ランタイムメトリックス
 @z
 
 @x
   - sectiontitle: CLI
     section:
-    - path: /engine/reference/commandline/cli/
-      title: Use the Docker CLI
-    - path: /config/completion/
+    - path: /engine/cli/completion/
       title: Completion
-    - path: /config/filter/
+    - path: /engine/cli/proxy/
+      title: Client proxy configuration
+    - path: /engine/cli/filter/
       title: Filter commands
-    - path: /config/formatting/
+    - path: /engine/cli/formatting/
       title: Format command and log output
-    - path: /config/otel/
+    - path: /engine/cli/otel/
       title: OpenTelemetry
 @y
   - sectiontitle: CLI
     section:
-    - path: __SUBDIR__/engine/reference/commandline/cli/
-      title: Docker CLI の利用
-    - path: __SUBDIR__/config/completion/
+    - path: __SUBDIR__/engine/cli/completion/
       title: 補完
-    - path: __SUBDIR__/config/filter/
+    - path: __SUBDIR__/engine/cli/proxy/
+      title: クライアントプロキシー設定
+    - path: __SUBDIR__/engine/cli/filter/
       title: フィルターコマンド
-    - path: __SUBDIR__/config/formatting/
+    - path: __SUBDIR__/engine/cli/formatting/
       title: フォーマットコマンドとログ出力
-    - path: __SUBDIR__/config/otel/
+    - path: __SUBDIR__/engine/cli/otel/
       title: OpenTelemetry
 @z
 
 @x
   - sectiontitle: Manage resources
     section:
-    - path: /config/pruning/
+    - path: /engine/manage-resources/pruning/
       title: Prune unused objects
-    - path: /config/labels-custom-metadata/
+    - path: /engine/manage-resources/labels/
       title: Labels
-    - path: /engine/context/working-with-contexts/
+    - path: /engine/manage-resources/contexts/
       title: Contexts
 @y
-  - sectiontitle: Manage resources
+  - sectiontitle: リソース管理
     section:
-    - path: __SUBDIR__/config/pruning/
-      title: Prune unused objects
-    - path: __SUBDIR__/config/labels-custom-metadata/
-      title: Labels
-    - path: __SUBDIR__/engine/context/working-with-contexts/
-      title: Contexts
+    - path: __SUBDIR__/engine/manage-resources/pruning/
+      title: 未使用オブジェクトの削除
+    - path: __SUBDIR__/engine/manage-resources/labels/
+      title: ラベル
+    - path: __SUBDIR__/engine/manage-resources/contexts/
+      title: コンテキスト
 @z
 
 @x
   - sectiontitle: Daemon
     section:
-    - path: /config/daemon/start/
+    - path: /engine/daemon/start/
       title: Start the daemon
-    - path: /config/daemon/
+    - path: /engine/daemon/
       title: Configure the daemon
-    - path: /config/daemon/proxy/
-      title: HTTP proxy
-    - path: /config/containers/live-restore/
+    - path: /engine/daemon/ipv6/
+      title: Use IPv6
+    - path: /engine/daemon/proxy/
+      title: Daemon proxy configuration
+    - path: /engine/containers/live-restore/
       title: Live restore
-    - path: /config/daemon/troubleshoot/
+    - path: /engine/daemon/troubleshoot/
       title: Troubleshoot
-    - path: /config/daemon/remote-access/
+    - path: /engine/daemon/remote-access/
       title: Remote access
-    - path: /engine/alternative-runtimes/
+    - path: /engine/daemon/alternative-runtimes/
       title: Alternative container runtimes
+    - path: /engine/daemon/logs/
+      title: Daemon logs
+    - path: /engine/daemon/prometheus/
+      title: Collect metrics with Prometheus
 @y
   - sectiontitle: Daemon
     section:
-    - path: __SUBDIR__/config/daemon/start/
+    - path: __SUBDIR__/engine/daemon/start/
       title: Start the daemon
-    - path: __SUBDIR__/config/daemon/
+    - path: __SUBDIR__/engine/daemon/
       title: Configure the daemon
-    - path: __SUBDIR__/config/daemon/proxy/
-      title: HTTP proxy
-    - path: __SUBDIR__/config/containers/live-restore/
+    - path: __SUBDIR__/engine/daemon/ipv6/
+      title: Use IPv6
+    - path: __SUBDIR__/engine/daemon/proxy/
+      title: Daemon proxy configuration
+    - path: __SUBDIR__/engine/containers/live-restore/
       title: Live restore
-    - path: __SUBDIR__/config/daemon/troubleshoot/
+    - path: __SUBDIR__/engine/daemon/troubleshoot/
       title: Troubleshoot
-    - path: __SUBDIR__/config/daemon/remote-access/
+    - path: __SUBDIR__/engine/daemon/remote-access/
       title: Remote access
-    - path: __SUBDIR__/engine/alternative-runtimes/
+    - path: __SUBDIR__/engine/daemon/alternative-runtimes/
       title: Alternative container runtimes
+    - path: __SUBDIR__/engine/daemon/logs/
+      title: Daemon logs
+    - path: __SUBDIR__/engine/daemon/prometheus/
+      title: Collect metrics with Prometheus
 @z
 
 @x
-    - sectiontitle: Engine plugins
-      section:
-      - path: /engine/extend/
-        title: Managed plugin system
-      - path: /engine/extend/plugins_authorization/
-        title: Access authorization plugin
-      - path: /engine/extend/legacy_plugins/
-        title: Extending Docker with plugins
-      - path: /engine/extend/plugins_network/
-        title: Network plugins
-      - path: /engine/extend/plugins_logging/
-        title: Logging plugins
-      - path: /engine/extend/plugins_volume/
-        title: Volume plugins
-      - title: Plugin configuration
-        path: /engine/extend/config/
-      - path: /engine/extend/plugin_api/
-        title: Plugin API
+  - sectiontitle: Engine plugins
+    section:
+    - path: /engine/extend/
+      title: Managed plugin system
+    - path: /engine/extend/plugins_authorization/
+      title: Access authorization plugin
+    - path: /engine/extend/legacy_plugins/
+      title: Extending Docker with plugins
+    - path: /engine/extend/plugins_network/
+      title: Network plugins
+    - path: /engine/extend/plugins_logging/
+      title: Logging plugins
+    - path: /engine/extend/plugins_volume/
+      title: Volume plugins
+    - title: Plugin configuration
+      path: /engine/extend/config/
+    - path: /engine/extend/plugin_api/
+      title: Plugin API
 @y
-    - sectiontitle: Engine plugins
-      section:
-      - path: __SUBDIR__/engine/extend/
-        title: Managed plugin system
-      - path: __SUBDIR__/engine/extend/plugins_authorization/
-        title: Access authorization plugin
-      - path: __SUBDIR__/engine/extend/legacy_plugins/
-        title: Extending Docker with plugins
-      - path: __SUBDIR__/engine/extend/plugins_network/
-        title: Network plugins
-      - path: __SUBDIR__/engine/extend/plugins_logging/
-        title: Logging plugins
-      - path: __SUBDIR__/engine/extend/plugins_volume/
-        title: Volume plugins
-      - title: Plugin configuration
-        path: __SUBDIR__/engine/extend/config/
-      - path: __SUBDIR__/engine/extend/plugin_api/
-        title: Plugin API
+  - sectiontitle: Engine plugins
+    section:
+    - path: __SUBDIR__/engine/extend/
+      title: Managed plugin system
+    - path: __SUBDIR__/engine/extend/plugins_authorization/
+      title: Access authorization plugin
+    - path: __SUBDIR__/engine/extend/legacy_plugins/
+      title: Extending Docker with plugins
+    - path: __SUBDIR__/engine/extend/plugins_network/
+      title: Network plugins
+    - path: __SUBDIR__/engine/extend/plugins_logging/
+      title: Logging plugins
+    - path: __SUBDIR__/engine/extend/plugins_volume/
+      title: Volume plugins
+    - title: Plugin configuration
+      path: __SUBDIR__/engine/extend/config/
+    - path: __SUBDIR__/engine/extend/plugin_api/
+      title: Plugin API
 @z
 
 @x
@@ -3880,95 +3900,79 @@ Manuals:
     section:
     - sectiontitle: Container logs
       section:
-      - path: /config/containers/logging/
+      - path: /engine/logging/
         title: View container logs
-      - path: /config/containers/logging/configure/
+      - path: /engine/logging/configure/
         title: Configure logging drivers
-      - path: /config/containers/logging/dual-logging/
+      - path: /engine/logging/dual-logging/
         title: Use a remote logging driver
-      - path: /config/containers/logging/plugins/
+      - path: /engine/logging/plugins/
         title: Use a logging driver plugin
-      - path: /config/containers/logging/log_tags/
+      - path: /engine/logging/log_tags/
         title: Customize log driver output
 @y
   - sectiontitle: Logs and metrics
     section:
     - sectiontitle: Container logs
       section:
-      - path: __SUBDIR__/config/containers/logging/
+      - path: __SUBDIR__/engine/logging/
         title: View container logs
-      - path: __SUBDIR__/config/containers/logging/configure/
+      - path: __SUBDIR__/engine/logging/configure/
         title: Configure logging drivers
-      - path: __SUBDIR__/config/containers/logging/dual-logging/
+      - path: __SUBDIR__/engine/logging/dual-logging/
         title: Use a remote logging driver
-      - path: __SUBDIR__/config/containers/logging/plugins/
+      - path: __SUBDIR__/engine/logging/plugins/
         title: Use a logging driver plugin
-      - path: __SUBDIR__/config/containers/logging/log_tags/
+      - path: __SUBDIR__/engine/logging/log_tags/
         title: Customize log driver output
 @z
 
 @x
       - sectiontitle: Logging drivers
         section:
-        - path: /config/containers/logging/local/
+        - path: /engine/logging/drivers/local/
           title: Local file logging driver
-        - path: /config/containers/logging/json-file/
+        - path: /engine/logging/drivers/json-file/
           title: JSON File logging driver
-        - path: /config/containers/logging/gelf/
+        - path: /engine/logging/drivers/gelf/
           title: Graylog Extended Format (GELF) logging driver
-        - path: /config/containers/logging/syslog/
+        - path: /engine/logging/drivers/syslog/
           title: Syslog logging driver
-        - path: /config/containers/logging/awslogs/
+        - path: /engine/logging/drivers/awslogs/
           title: Amazon CloudWatch logs logging driver
-        - path: /config/containers/logging/etwlogs/
+        - path: /engine/logging/drivers/etwlogs/
           title: ETW logging driver
-        - path: /config/containers/logging/fluentd/
+        - path: /engine/logging/drivers/fluentd/
           title: Fluentd logging driver
-        - path: /config/containers/logging/gcplogs/
+        - path: /engine/logging/drivers/gcplogs/
           title: Google Cloud logging driver
-        - path: /config/containers/logging/journald/
+        - path: /engine/logging/drivers/journald/
           title: Journald logging driver
-        - path: /config/containers/logging/splunk/
+        - path: /engine/logging/drivers/splunk/
           title: Splunk logging driver
 @y
       - sectiontitle: Logging drivers
         section:
-        - path: __SUBDIR__/config/containers/logging/local/
+        - path: __SUBDIR__/engine/logging/drivers/local/
           title: Local file logging driver
-        - path: __SUBDIR__/config/containers/logging/json-file/
+        - path: __SUBDIR__/engine/logging/drivers/json-file/
           title: JSON File logging driver
-        - path: __SUBDIR__/config/containers/logging/gelf/
+        - path: __SUBDIR__/engine/logging/drivers/gelf/
           title: Graylog Extended Format (GELF) logging driver
-        - path: __SUBDIR__/config/containers/logging/syslog/
+        - path: __SUBDIR__/engine/logging/drivers/syslog/
           title: Syslog logging driver
-        - path: __SUBDIR__/config/containers/logging/awslogs/
+        - path: __SUBDIR__/engine/logging/drivers/awslogs/
           title: Amazon CloudWatch logs logging driver
-        - path: __SUBDIR__/config/containers/logging/etwlogs/
+        - path: __SUBDIR__/engine/logging/drivers/etwlogs/
           title: ETW logging driver
-        - path: __SUBDIR__/config/containers/logging/fluentd/
+        - path: __SUBDIR__/engine/logging/drivers/fluentd/
           title: Fluentd logging driver
-        - path: __SUBDIR__/config/containers/logging/gcplogs/
+        - path: __SUBDIR__/engine/logging/drivers/gcplogs/
           title: Google Cloud logging driver
-        - path: __SUBDIR__/config/containers/logging/journald/
+        - path: __SUBDIR__/engine/logging/drivers/journald/
           title: Journald logging driver
-        - path: __SUBDIR__/config/containers/logging/splunk/
+        - path: __SUBDIR__/engine/logging/drivers/splunk/
           title: Splunk logging driver
-@z
-
-@x
-    - path: /config/daemon/logs/
-      title: Daemon logs
-    - path: /config/containers/runmetrics/
-      title: Runtime metrics
-    - path: /config/daemon/prometheus/
-      title: Collect metrics with Prometheus
-@y
-    - path: __SUBDIR__/config/daemon/logs/
-      title: Daemon logs
-    - path: __SUBDIR__/config/containers/runmetrics/
-      title: Runtime metrics
-    - path: __SUBDIR__/config/daemon/prometheus/
-      title: Collect metrics with Prometheus
 @z
 
 @x
@@ -4736,6 +4740,34 @@ Manuals:
 @z
 
 @x
+- sectiontitle: Docker Build Cloud
+  section:
+    - path: /build-cloud/
+      title: Overview
+    - path: /build-cloud/setup/
+      title: Setup
+    - path: /build-cloud/usage/
+      title: Usage
+    - path: /build-cloud/ci/
+      title: Continuous integration
+    - path: /build-cloud/optimization/
+      title: Optimization
+@y
+- sectiontitle: Docker Build Cloud
+  section:
+    - path: __SUBDIR__/build-cloud/
+      title: Overview
+    - path: __SUBDIR__/build-cloud/setup/
+      title: Setup
+    - path: __SUBDIR__/build-cloud/usage/
+      title: Usage
+    - path: __SUBDIR__/build-cloud/ci/
+      title: Continuous integration
+    - path: __SUBDIR__/build-cloud/optimization/
+      title: Optimization
+@z
+
+@x
 - sectiontitle: Docker Compose
   section:
   - path: /compose/
@@ -4891,24 +4923,24 @@ Manuals:
   - path: /compose/faq/
     title: FAQs
 @y
-  - path: __SUBDIR/compose/startup-order/
-    title: Control startup order
-  - path: __SUBDIR/compose/gpu-support/
+  - path: __SUBDIR__/compose/startup-order/
+    title: 起動順の制御
+  - path: __SUBDIR__/compose/gpu-support/
     title: GPU サポート
-  - path: __SUBDIR/compose/networking/
+  - path: __SUBDIR__/compose/networking/
     title: ネットワーク
-  - path: __SUBDIR/compose/samples-for-compose/
+  - path: __SUBDIR__/compose/samples-for-compose/
     title: サンプルアプリ
-  - path: __SUBDIR/compose/feedback/
+  - path: __SUBDIR__/compose/feedback/
     title: フィードバック
-  - path: __SUBDIR/compose/migrate/
-    title: Migrate to Compose V2
-  - path: __SUBDIR/compose/faq/
+  - path: __SUBDIR__/compose/migrate/
+    title: Compose V2 への移行
+  - path: __SUBDIR__/compose/faq/
     title: FAQ
 @z
 
 @x
-  - sectiontitle: Compose Bridge (Early Access)
+  - sectiontitle: Compose Bridge {{< badge color=violet text="Early Access" >}}
     section:
     - path: /compose/bridge/
       title: Overview
@@ -4919,15 +4951,15 @@ Manuals:
     - path: /compose/bridge/advanced-integration/
       title: Advanced
 @y
-  - sectiontitle: Compose Bridge (Early Access)
+  - sectiontitle: Compose Bridge {{< badge color=violet text="早期アクセス" >}}
     section:
-    - path: __SUBDIR/compose/bridge/
+    - path: __SUBDIR__/compose/bridge/
       title: Overview
-    - path: __SUBDIR/compose/bridge/usage/
+    - path: __SUBDIR__/compose/bridge/usage/
       title: Usage
-    - path: __SUBDIR/compose/bridge/customize/
+    - path: __SUBDIR__/compose/bridge/customize/
       title: Customize
-    - path: __SUBDIR/compose/bridge/advanced-integration/
+    - path: __SUBDIR__/compose/bridge/advanced-integration/
       title: Advanced
 @z
 
@@ -4935,7 +4967,7 @@ Manuals:
   - path: /compose/release-notes/
     title: Release notes
 @y
-  - path: __SUBDIR/compose/release-notes/
+  - path: __SUBDIR__/compose/release-notes/
     title: Release notes
 @z
 
@@ -5049,6 +5081,38 @@ Manuals:
     title: OCI artifacts
   - path: __SUBDIR__/docker-hub/release-notes/
     title: リリースノート
+@z
+
+@x
+- title: Docker for GitHub Copilot {{< badge color=violet text="Early Access" >}}
+  path: /copilot/
+@y
+- title: Docker for GitHub Copilot {{< badge color=violet text="早期アクセス" >}}
+  path: __SUBDIR__/copilot/
+@z
+
+@x
+- sectiontitle: Docker accounts
+  section:
+  - path: /accounts/
+    title: Overview
+  - path: /docker-id/
+    title: Create an account
+  - path: /accounts/manage-account/
+    title: Manage an account
+  - path: /accounts/deactivate-user-account/
+    title: Deactivate an account
+@y
+- sectiontitle: Docker accounts
+  section:
+  - path: __SUBDIR__/accounts/
+    title: Overview
+  - path: __SUBDIR__/docker-id/
+    title: Create an account
+  - path: __SUBDIR__/accounts/manage-account/
+    title: Manage an account
+  - path: __SUBDIR__/accounts/deactivate-user-account/
+    title: Deactivate an account
 @z
 
 @x

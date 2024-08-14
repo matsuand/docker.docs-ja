@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Change your Docker Desktop settings on Mac
@@ -369,8 +369,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](../../storage/volumes.md)
->   (named volume) or [data container](../../storage/volumes.md).
+>   better if they are stored in the Linux VM, using a [data volume](/engine/storage/volumes.md)
+>   (named volume) or [data container](/engine/storage/volumes.md).
 > * If you share the whole of your home directory into a container, MacOS may
 >   prompt you to give Docker access to personal areas of your home directory such as
 >   your Reminders or Downloads.
@@ -398,8 +398,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](../../storage/volumes.md)
->   (named volume) or [data container](../../storage/volumes.md).
+>   better if they are stored in the Linux VM, using a [data volume](engine/storage/volumes.md)
+>   (named volume) or [data container](engine/storage/volumes.md).
 > * If you share the whole of your home directory into a container, MacOS may
 >   prompt you to give Docker access to personal areas of your home directory such as
 >   your Reminders or Downloads.
@@ -690,9 +690,9 @@ Use the **Extensions** tab to:
 @z
 
 @x
-For more information about Docker extensions, see [Extensions](../extensions/index.md).
+For more information about Docker extensions, see [Extensions](/extensions/index.md).
 @y
-For more information about Docker extensions, see [Extensions](../extensions/index.md).
+For more information about Docker extensions, see [Extensions](extensions/index.md).
 @z
 
 @x

@@ -92,12 +92,12 @@ Now, any traffic sent to port `8080` on your host machine will be forwarded to p
 @x
 > **Important**
 >
-> When a port is published, it's published to all network interfaces by default. This means any traffic that reaches your machine can access the published application. Be mindful of publishing databases or any sensitive information. [Learn more about published ports here](https://docs.docker.com/network/#published-ports).
+> When a port is published, it's published to all network interfaces by default. This means any traffic that reaches your machine can access the published application. Be mindful of publishing databases or any sensitive information. [Learn more about published ports here](/engine/network/#published-ports).
 { .important }
 @y
 > **Important**
 >
-> When a port is published, it's published to all network interfaces by default. This means any traffic that reaches your machine can access the published application. Be mindful of publishing databases or any sensitive information. [Learn more about published ports here](https://docs.docker.com/network/#published-ports).
+> When a port is published, it's published to all network interfaces by default. This means any traffic that reaches your machine can access the published application. Be mindful of publishing databases or any sensitive information. [Learn more about published ports here](__SUBDIR__/engine/network/#published-ports).
 { .important }
 @z
 
@@ -339,10 +339,10 @@ If you’d like to dive in deeper on this topic, be sure to check out the follow
 
 @x
 * [`docker container port` CLI reference](/reference/cli/docker/container/port/)
-* [Published ports](/network/#published-ports)
+* [Published ports](/engine/network/#published-ports)
 @y
 * [`docker container port` CLI reference](__SUBDIR__/reference/cli/docker/container/port/)
-* [Published ports](__SUBDIR__/network/#published-ports)
+* [Published ports](__SUBDIR__/engine/network/#published-ports)
 @z
 
 @x

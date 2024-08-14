@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Integrate Docker Scout with GitHub
 description: Integrate Docker Scout using the GitHub app to get remediation advice directly in your repositories
 keywords: scout, github, integration, image analysis, supply chain, remediation, source code
----
 @y
----
 title: Integrate Docker Scout with GitHub
 description: Integrate Docker Scout using the GitHub app to get remediation advice directly in your repositories
 keywords: scout, github, integration, image analysis, supply chain, remediation, source code
----
 @z
 
 @x
@@ -87,14 +85,14 @@ out-of-date; the `alpine:3.18` you're using is no longer the latest.
 
 @x
 When this happens, Docker Scout detects the discrepancy and surfaces it through
-the [Outdated base images](../../policy/_index.md#outdated-base-images) policy.
+the [No outdated base images](/scout/policy/#no-outdated-base-images) policy.
 When the GitHub integration's enabled, you'll also get automated suggestions on
 how to update your base image. For more information about how Docker Scout can
 help you automatically improve your supply chain conduct and security posture,
 see [Remediation](../../policy/remediation.md).
 @y
 When this happens, Docker Scout detects the discrepancy and surfaces it through
-the [Outdated base images](../../policy/_index.md#outdated-base-images) policy.
+the [No outdated base images](__SUBDIR__/scout/policy/#no-outdated-base-images) policy.
 When the GitHub integration's enabled, you'll also get automated suggestions on
 how to update your base image. For more information about how Docker Scout can
 help you automatically improve your supply chain conduct and security posture,

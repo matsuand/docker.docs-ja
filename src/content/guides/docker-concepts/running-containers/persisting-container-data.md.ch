@@ -432,13 +432,13 @@ The following resources will help you learn more about volumes:
 @z
 
 @x
-- [Manage data in Docker](/storage)
-- [Volumes](/storage/volumes)
-- [Volume mounts (`docker run` reference)](/engine/reference/run/#volume-mounts)
+- [Manage data in Docker](/engine/storage)
+- [Volumes](/engine/storage/volumes)
+- [Volume mounts](/engine/containers/run/#volume-mounts)
 @y
-- [Manage data in Docker](__SUBDIR__/storage)
-- [Volumes](__SUBDIR__/storage/volumes)
-- [Volume mounts (`docker run` reference)](__SUBDIR__/engine/reference/run/#volume-mounts)
+- [Manage data in Docker](__SUBDIR__/engine/storage)
+- [Volumes](__SUBDIR__/engine/storage/volumes)
+- [Volume mounts](__SUBDIR__/engine/containers/run/#volume-mounts)
 @z
 
 @x

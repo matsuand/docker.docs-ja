@@ -1,42 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% (no slash) 対応
+
 @x
----
 description: Hints, tips and guidelines for writing clean, reliable Dockerfiles
 keywords: base images, dockerfile, best practices, hub, official image
 title: Building best practices
 tags: [Best practices]
-aliases:
-  - /articles/dockerfile_best-practices/
-  - /engine/articles/dockerfile_best-practices/
-  - /docker-cloud/getting-started/intermediate/optimize-dockerfiles/
-  - /docker-cloud/tutorials/optimize-dockerfiles/
-  - /engine/userguide/eng-image/dockerfile_best-practices/
-  - /develop/develop-images/dockerfile_best-practices/
-  - /develop/develop-images/guidelines/
-  - /develop/develop-images/instructions/
-  - /develop/dev-best-practices/
-  - /develop/security-best-practices/
----
 @y
----
 description: Hints, tips and guidelines for writing clean, reliable Dockerfiles
 keywords: base images, dockerfile, best practices, hub, official image
 title: Building best practices
 tags: [Best practices]
-aliases:
-  - /articles/dockerfile_best-practices/
-  - /engine/articles/dockerfile_best-practices/
-  - /docker-cloud/getting-started/intermediate/optimize-dockerfiles/
-  - /docker-cloud/tutorials/optimize-dockerfiles/
-  - /engine/userguide/eng-image/dockerfile_best-practices/
-  - /develop/develop-images/dockerfile_best-practices/
-  - /develop/develop-images/guidelines/
-  - /develop/develop-images/instructions/
-  - /develop/dev-best-practices/
-  - /develop/security-best-practices/
----
 @z
 
 @x
@@ -368,7 +344,7 @@ database, and an in-memory cache in a decoupled manner.
 @x
 Limiting each container to one process is a good rule of thumb, but it's not a
 hard and fast rule. For example, not only can containers be
-[spawned with an init process](../../engine/reference/run.md#specify-an-init-process),
+[spawned with an init process](/engine/containers/run.md#specify-an-init-process),
 some programs might spawn additional processes of their own accord. For
 instance, [Celery](https://docs.celeryproject.org/) can spawn multiple worker
 processes, and [Apache](https://httpd.apache.org/) can create one process per
@@ -376,7 +352,7 @@ request.
 @y
 Limiting each container to one process is a good rule of thumb, but it's not a
 hard and fast rule. For example, not only can containers be
-[spawned with an init process](../../engine/reference/run.md#specify-an-init-process),
+[spawned with an init process](engine/containers/run.md#specify-an-init-process),
 some programs might spawn additional processes of their own accord. For
 instance, [Celery](https://docs.celeryproject.org/) can spawn multiple worker
 processes, and [Apache](https://httpd.apache.org/) can create one process per
@@ -385,11 +361,11 @@ request.
 
 @x
 Use your best judgment to keep containers as clean and modular as possible. If
-containers depend on each other, you can use [Docker container networks](../../network/index.md)
+containers depend on each other, you can use [Docker container networks](/engine/network/_index.md)
 to ensure that these containers can communicate.
 @y
 Use your best judgment to keep containers as clean and modular as possible. If
-containers depend on each other, you can use [Docker container networks](../../network/index.md)
+containers depend on each other, you can use [Docker container networks](engine/network/_index.md)
 to ensure that these containers can communicate.
 @z
 
@@ -576,16 +552,16 @@ which is likely something you want to get.
 @z
 
 @x
-Docker Scout has a built-in [**Outdated base images**
-policy](../../scout/policy/_index.md#outdated-base-images) that checks for
+Docker Scout has a built-in [**No outdated base images**
+policy](../../scout/policy/_index.md#no-outdated-base-images) that checks for
 whether the base image version you're using is in fact the latest version. This
 policy also checks if pinned digests in your Dockerfile correspond to the
 correct version. If a publisher updates an image that you've pinned, the policy
 evaluation returns a non-compliant status, indicating that you should update
 your image.
 @y
-Docker Scout has a built-in [**Outdated base images**
-policy](../../scout/policy/_index.md#outdated-base-images) that checks for
+Docker Scout has a built-in [**No outdated base images**
+policy](../../scout/policy/_index.md#no-outdated-base-images) that checks for
 whether the base image version you're using is in fact the latest version. This
 policy also checks if pinned digests in your Dockerfile correspond to the
 correct version. If a publisher updates an image that you've pinned, the policy
@@ -770,16 +746,16 @@ LABEL vendor=ACME\ Incorporated \
 @z
 
 @x
-See [Understanding object labels](../../config/labels-custom-metadata.md)
+See [Understanding object labels](/engine/manage-resources/labels.md)
 for guidelines about acceptable label keys and values. For information about
 querying labels, refer to the items related to filtering in
-[Managing labels on objects](../../config/labels-custom-metadata.md#manage-labels-on-objects).
+[Managing labels on objects](/engine/manage-resources/labels.md#manage-labels-on-objects).
 See also [LABEL](../../reference/dockerfile.md#label) in the Dockerfile reference.
 @y
-See [Understanding object labels](../../config/labels-custom-metadata.md)
+See [Understanding object labels](engine/manage-resources/labels.md)
 for guidelines about acceptable label keys and values. For information about
 querying labels, refer to the items related to filtering in
-[Managing labels on objects](../../config/labels-custom-metadata.md#manage-labels-on-objects).
+[Managing labels on objects](engine/manage-resources/labels.md#manage-labels-on-objects).
 See also [LABEL](../../reference/dockerfile.md#label) in the Dockerfile reference.
 @z
 

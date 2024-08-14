@@ -14,9 +14,9 @@ title: Set or change pre-defined environment variables in Docker Compose
 @z
 
 @x
-Compose already comes with pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](/engine/reference/commandline/cli/#environment-variables) for details.
+Compose already comes with pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](/reference/cli/docker/#environment-variables) for details.
 @y
-Compose already comes with pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](__SUBDIR__/engine/reference/commandline/cli/#environment-variables) for details.
+Compose already comes with pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](__SUBDIR__/reference/cli/docker/#environment-variables) for details.
 @z
 
 @x
@@ -418,7 +418,7 @@ For more information, see [Migrate to Compose V2](../migrate.md).
 @x
 - `COMPOSE_API_VERSION`
     By default the API version is negotiated with the server. Use `DOCKER_API_VERSION`.  
-    See the [Docker CLI environment variable reference](../../../engine/reference/commandline/cli/#environment-variables) page.
+    See the [Docker CLI environment variable reference](/reference/cli/docker/#environment-variables) page.
 - `COMPOSE_HTTP_TIMEOUT`
 - `COMPOSE_TLS_VERSION`
 - `COMPOSE_FORCE_WINDOWS_HOST`
@@ -428,7 +428,7 @@ For more information, see [Migrate to Compose V2](../migrate.md).
 @y
 - `COMPOSE_API_VERSION`
     By default the API version is negotiated with the server. Use `DOCKER_API_VERSION`.  
-    See the [Docker CLI environment variable reference](../../../engine/reference/commandline/cli/#environment-variables) page.
+    See the [Docker CLI environment variable reference](__SUBDIR__/reference/cli/docker/#environment-variables) page.
 - `COMPOSE_HTTP_TIMEOUT`
 - `COMPOSE_TLS_VERSION`
 - `COMPOSE_FORCE_WINDOWS_HOST`

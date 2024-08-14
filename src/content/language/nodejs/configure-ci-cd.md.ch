@@ -75,21 +75,24 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 @x
 3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
 @y
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
+3. **Repository variable** (リポジトリ変数) として新たに `DOCKER_USERNAME` という名前の変数を生成します。
+   その変数値にはご自身の Docker ID を設定します。
 @z
 
 @x
 4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-4. Create a new [Personal Access Token (PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
+4. Docker Hub に対する新たな [パーソナルアクセストークン (Personal Access Token; PAT)](../../security/for-developers/access-tokens.md/#create-an-access-token) を生成します。
+   このトークンの名前を `docker-tutorial` とします。
+   アクセス権限は読み書き可能としてください。
 @z
 
 @x
 5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
-   `DOCKERHUB_TOKEN`.
+5. GitHub リポジトリにおいて、この PAT を **Repository secret** (リポジトリの機密情報) として追加します。
+   その名前を `DOCKERHUB_TOKEN` とします。
 @z
 
 @x
@@ -98,10 +101,8 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
    `your-username` to your GitHub username and `your-repository` to the name of
    the repository you created.
 @y
-6. In your local repository on your machine, run the following command to change
-   the origin to the repository you just created. Make sure you change
-   `your-username` to your GitHub username and `your-repository` to the name of
-   the repository you created.
+6. 手元のマシン上にあるローカルリポジトリにおいて以下のコマンドを実行し、ここで生成した新たなリポジトリを origin として設定します。
+   なお `your-username` は自身の GitHub ユーザー名に、また `your-repository` は生成したリポジトリ名としてください。
 @z
 
 % snip command...
@@ -109,7 +110,7 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 @x
 7. Run the following commands to stage, commit, and push your local repository to GitHub.
 @y
-7. Run the following commands to stage, commit, and push your local repository to GitHub.
+7. 以下のコマンドを実行して、ローカルリポジトリの内容を GitHub に対してステージング、コミット、プッシュを行います。
 @z
 
 % snip command...
@@ -117,41 +118,40 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 @x
 ## Step two: Set up the workflow
 @y
-## Step two: Set up the workflow
+## 手順 2: ワークフローの設定 {#step-one-create-the-repository}
 @z
 
 @x
 Set up your GitHub Actions workflow for building, testing, and pushing the image
 to Docker Hub.
 @y
-Set up your GitHub Actions workflow for building, testing, and pushing the image
-to Docker Hub.
+イメージのビルド、テスト、Docker Hub へのプッシュを行う GitHub アクションワークフローを設定します。
 @z
 
 @x
 1. Go to your repository on GitHub and then select the **Actions** tab.
 @y
-1. Go to your repository on GitHub and then select the **Actions** tab.
+1. GitHub 上の対象リポジトリにアクセスして **Actions** (アクション) タブを選びます。
 @z
 
 @x
 2. Select **set up a workflow yourself**.
 @y
-2. Select **set up a workflow yourself**.
+2. **set up a workflow yourself** (ワークフローの独自設定) を選びます。
 @z
 
 @x
    This takes you to a page for creating a new GitHub actions workflow file in
    your repository, under `.github/workflows/main.yml` by default.
 @y
-   This takes you to a page for creating a new GitHub actions workflow file in
-   your repository, under `.github/workflows/main.yml` by default.
+   これを選ぶと、リポジトリ内に GitHub アクションワークフロー用のファイルを生成するためのページが開きます。
+   そのファイル名はデフォルトでは `.github/workflows/main.yml` となっています。
 @z
 
 @x
 3. In the editor window, copy and paste the following YAML configuration.
 @y
-3. In the editor window, copy and paste the following YAML configuration.
+3. 編集ウィンドウにおいて、以下に示す YAML 設定をコピーペーストします。
 @z
 
 % snip code...
@@ -160,72 +160,69 @@ to Docker Hub.
    For more information about the YAML syntax for `docker/build-push-action`,
    refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
 @y
-   For more information about the YAML syntax for `docker/build-push-action`,
-   refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
+   `docker/build-push-action` の YAML 文法についての詳細は [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md) を参照してください。
 @z
 
 @x
 ## Step three: Run the workflow
 @y
-## Step three: Run the workflow
+## 手順 3: ワークフローの実行 {#step-three-run-the-workflow}
 @z
 
 @x
 Save the workflow file and run the job.
 @y
-Save the workflow file and run the job.
+ワークフローファイルを保存してジョブ実行します。
 @z
 
 @x
 1. Select **Commit changes...** and push the changes to the `main` branch.
 @y
-1. Select **Commit changes...** and push the changes to the `main` branch.
+1. **Commit changes...** (変更のコミット) を選んで、変更内容を `main` ブランチにプッシュします。
 @z
 
 @x
    After pushing the commit, the workflow starts automatically.
 @y
-   After pushing the commit, the workflow starts automatically.
+   コミット内容をプッシュすると、ワークフローが自動的に実行されます。
 @z
 
 @x
 2. Go to the **Actions** tab. It displays the workflow.
 @y
-2. Go to the **Actions** tab. It displays the workflow.
+2. **Actions** (アクション) タブに進み、ワークフローを表示します。
 @z
 
 @x
    Selecting the workflow shows you the breakdown of all the steps.
 @y
-   Selecting the workflow shows you the breakdown of all the steps.
+   ワークフローを選ぶと、すべてのステップを確認することができます。
 @z
 
 @x
 3. When the workflow is complete, go to your
    [repositories on Docker Hub](https://hub.docker.com/repositories).
 @y
-3. When the workflow is complete, go to your
-   [repositories on Docker Hub](https://hub.docker.com/repositories).
+3. ワークフローが終了したら、ご自身の [Docker Hub のリポジトリ](https://hub.docker.com/repositories) にアクセスします。
 @z
 
 @x
    If you see the new repository in that list, it means the GitHub Actions
    successfully pushed the image to Docker Hub.
 @y
-   If you see the new repository in that list, it means the GitHub Actions
-   successfully pushed the image to Docker Hub.
+   その一覧リスト内に新たなリポジトリ名があれば、GitHub アクションによる Docker Hub へのイメージプッシュが成功したことを意味しています。
 @z
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
 In this section, you learned how to set up a GitHub Actions workflow for your Node.js application.
 @y
-In this section, you learned how to set up a GitHub Actions workflow for your Node.js application.
+本節では、Node.js アプリケーションに対する GitHub アクションワークフローの設定方法について学びました。
 @z
 
 @x
@@ -233,25 +230,25 @@ Related information:
  - [Introduction to GitHub Actions](../../build/ci/github-actions/index.md)
  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
-Related information:
- - [Introduction to GitHub Actions](../../build/ci/github-actions/index.md)
+関連情報
+ - [GitHub アクション導入](../../build/ci/github-actions/index.md)
  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
 Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
 @y
-Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
+次はデプロイを行う前に、Kubernetes 上でのローカルなテストとデバッグ方法について学びます。
 @z
 
 @x
 {{< button text="Test your deployment" url="./deploy.md" >}}
 @y
-{{< button text="Test your deployment" url="./deploy.md" >}}
+{{< button text="デプロイのテスト" url="./deploy.md" >}}
 @z

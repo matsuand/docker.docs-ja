@@ -24,6 +24,385 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 @z
 
 @x
+## 1.13.0
+@y
+## 1.13.0
+@z
+
+@x
+{{< release-date date="2024-08-05" >}}
+@y
+{{< release-date date="2024-08-05" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `--only-policy` filter option to the `docker scout quickview`, `docker scout policy` and `docker scout compare` commands.
+- Add `--ignore-suppressed` filter option to `docker scout cves` and `docker scout quickview`  commands to filter out CVEs affected by [exceptions](/scout/explore/exceptions/).
+@y
+- Add `--only-policy` filter option to the `docker scout quickview`, `docker scout policy` and `docker scout compare` commands.
+- Add `--ignore-suppressed` filter option to `docker scout cves` and `docker scout quickview`  commands to filter out CVEs affected by [exceptions](__SUBDIR__/scout/explore/exceptions/).
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Use conditional policy name in checks.
+- Add support for detecting the version of a Go project set using linker flags,
+  for example:
+@y
+- Use conditional policy name in checks.
+- Add support for detecting the version of a Go project set using linker flags,
+  for example:
+@z
+
+@x
+  ```console
+  $ go build -ldflags "-X main.Version=1.2.3"
+  ```
+@y
+  ```console
+  $ go build -ldflags "-X main.Version=1.2.3"
+  ```
+@z
+
+@x
+## 1.12.0
+@y
+## 1.12.0
+@z
+
+@x
+{{< release-date date="2024-07-31" >}}
+@y
+{{< release-date date="2024-07-31" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Only display vulnerabilities from the base image:
+@y
+- Only display vulnerabilities from the base image:
+@z
+
+@x
+  ```console {title="CLI"}
+  $ docker scout cves --only-base IMAGE
+  ```
+@y
+  ```console {title="CLI"}
+  $ docker scout cves --only-base IMAGE
+  ```
+@z
+
+@x
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: cves
+    image: [IMAGE]
+    only-base: true
+  ```
+@y
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: cves
+    image: [IMAGE]
+    only-base: true
+  ```
+@z
+
+@x
+- Account for VEX in `quickview` command.
+@y
+- Account for VEX in `quickview` command.
+@z
+
+% snip command...
+% snip code...
+
+@x
+- Account for VEX in `cves` command (GitHub Actions).
+@y
+- Account for VEX in `cves` command (GitHub Actions).
+@z
+
+% snip code...
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Update `github.com/docker/docker` to `v26.1.5+incompatible` to fix CVE-2024-41110.
+- Update Syft to 1.10.0.
+@y
+- Update `github.com/docker/docker` to `v26.1.5+incompatible` to fix CVE-2024-41110.
+- Update Syft to 1.10.0.
+@z
+
+@x
+## 1.11.0
+@y
+## 1.11.0
+@z
+
+@x
+{{< release-date date="2024-07-25" >}}
+@y
+{{< release-date date="2024-07-25" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Filter CVEs listed in the CISA Known Exploited Vulnerabilities catalog.
+@y
+- Filter CVEs listed in the CISA Known Exploited Vulnerabilities catalog.
+@z
+
+% snip command...
+% snip code...
+
+@x
+- Add new classifiers:
+  - `spiped`
+  - `swift`
+  - `eclipse-mosquitto`
+  - `znc`
+@y
+- Add new classifiers:
+  - `spiped`
+  - `swift`
+  - `eclipse-mosquitto`
+  - `znc`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Allow VEX matching when no subcomponents.
+- Fix panic when attaching an invalid VEX document.
+- Fix SPDX document root.
+- Fix base image detection when image uses SCRATCH as the base image.
+@y
+- Allow VEX matching when no subcomponents.
+- Fix panic when attaching an invalid VEX document.
+- Fix SPDX document root.
+- Fix base image detection when image uses SCRATCH as the base image.
+@z
+
+@x
+## 1.10.0
+@y
+## 1.10.0
+@z
+
+@x
+{{< release-date date="2024-06-26" >}}
+@y
+{{< release-date date="2024-06-26" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Add new classifiers:
+  - `irssi`
+  - `Backdrop`
+  - `CrateDB CLI (Crash)`
+  - `monica`
+  - `Openliberty`
+  - `dumb-init`
+  - `friendica`
+  - `redmine`
+- Fix whitespace-only originator on package breaking BuildKit exporters
+- Fix parsing image references in SPDX statement for images with a digest
+- Support `sbom://` prefix for image comparison:
+@y
+- Add new classifiers:
+  - `irssi`
+  - `Backdrop`
+  - `CrateDB CLI (Crash)`
+  - `monica`
+  - `Openliberty`
+  - `dumb-init`
+  - `friendica`
+  - `redmine`
+- Fix whitespace-only originator on package breaking BuildKit exporters
+- Fix parsing image references in SPDX statement for images with a digest
+- Support `sbom://` prefix for image comparison:
+@z
+
+% snip command...
+% snip code...
+
+@x
+## 1.9.3
+@y
+## 1.9.3
+@z
+
+@x
+{{< release-date date="2024-05-28" >}}
+@y
+{{< release-date date="2024-05-28" >}}
+@z
+
+@x
+### Bug fix
+@y
+### Bug fix
+@z
+
+@x
+- Fix a panic while retrieving cached SBOMs.
+@y
+- Fix a panic while retrieving cached SBOMs.
+@z
+
+@x
+## 1.9.1
+@y
+## 1.9.1
+@z
+
+@x
+{{< release-date date="2024-05-27" >}}
+@y
+{{< release-date date="2024-05-27" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add support for the [GitLab container scanning file format](https://docs.gitlab.com/ee/development/integrations/secure.html#container-scanning) with `--format gitlab` on `docker scout cves` command.
+@y
+- Add support for the [GitLab container scanning file format](https://docs.gitlab.com/ee/development/integrations/secure.html#container-scanning) with `--format gitlab` on `docker scout cves` command.
+@z
+
+@x
+  Here is an example pipeline:
+@y
+  Here is an example pipeline:
+@z
+
+% snip code...
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Support single-architecture images for `docker scout attest add` command
+- Indicate on the `docker scout quickview` and `docker scout recommendations` commands if image provenance was not created using `mode=max`.
+  Without `mode=max`, base images may be incorrectly detected, resulting in less accurate results.
+@y
+- Support single-architecture images for `docker scout attest add` command
+- Indicate on the `docker scout quickview` and `docker scout recommendations` commands if image provenance was not created using `mode=max`.
+  Without `mode=max`, base images may be incorrectly detected, resulting in less accurate results.
+@z
+
+@x
+## 1.9.0
+@y
+## 1.9.0
+@z
+
+@x
+{{< release-date date="2024-05-24" >}}
+@y
+{{< release-date date="2024-05-24" >}}
+@z
+
+@x
+Discarded in favor of [1.9.1](#191).
+@y
+Discarded in favor of [1.9.1](#191).
+@z
+
+@x
+## 1.8.0
+@y
+## 1.8.0
+@z
+
+@x
+{{< release-date date="2024-04-25" >}}
+@y
+{{< release-date date="2024-04-25" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Improve format of EPSS score and percentile.
+@y
+- Improve format of EPSS score and percentile.
+@z
+
+@x
+  Before:
+@y
+  Before:
+@z
+
+% snip text...
+
+@x
+  After:
+@y
+  After:
+@z
+
+% snip text...
+
+@x
+- Fix markdown output of the `docker scout cves` command when analyzing local filesystem. [docker/scout-cli#113](https://github.com/docker/scout-cli/issues/113)
+@y
+- Fix markdown output of the `docker scout cves` command when analyzing local filesystem. [docker/scout-cli#113](https://github.com/docker/scout-cli/issues/113)
+@z
+
+@x
 ## 1.7.0
 @y
 ## 1.7.0

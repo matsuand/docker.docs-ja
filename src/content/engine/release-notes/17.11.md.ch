@@ -1,18 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Docker Engine 17.11 release notes
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Docker Engine 17.11 release notes
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -28,7 +22,7 @@ toc_max: 2
 [containerd 1.0 beta](https://github.com/containerd/containerd/releases/tag/v1.0.0-beta.2).
 Docker CE 17.11 and later don't recognize containers started with
 previous Docker versions. If using
-[Live Restore](../../config/containers/live-restore.md),
+[Live Restore](/engine/containers/live-restore.md),
 you must stop all containers before upgrading to Docker CE 17.11.
 If you don't, any containers started by Docker versions that predate
 17.11 aren't recognized by Docker after the upgrade and keep
@@ -39,7 +33,7 @@ running, un-managed, on the system.
 [containerd 1.0 beta](https://github.com/containerd/containerd/releases/tag/v1.0.0-beta.2).
 Docker CE 17.11 and later don't recognize containers started with
 previous Docker versions. If using
-[Live Restore](../../config/containers/live-restore.md),
+[Live Restore](engine/containers/live-restore.md),
 you must stop all containers before upgrading to Docker CE 17.11.
 If you don't, any containers started by Docker versions that predate
 17.11 aren't recognized by Docker after the upgrade and keep

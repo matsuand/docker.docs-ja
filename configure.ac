@@ -39,7 +39,6 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/cli/docs/extend/Makefile
 	src/_vendor/github.com/docker/cli/docs/extend/images/Makefile
 	src/_vendor/github.com/docker/cli/docs/reference/Makefile
-	src/_vendor/github.com/docker/cli/docs/reference/commandline/Makefile
 	src/_vendor/github.com/docker/compose/Makefile
 	src/_vendor/github.com/docker/compose/v2/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/Makefile
@@ -102,11 +101,6 @@ AC_CONFIG_FILES([
 	src/content/compose/intro/Makefile
 	src/content/compose/multiple-compose-files/Makefile
 	src/content/compose/reference/Makefile
-	src/content/config/Makefile
-	src/content/config/containers/Makefile
-	src/content/config/containers/logging/Makefile
-	src/content/config/daemon/Makefile
-	src/content/config/daemon/images/Makefile
 	src/content/contribute/Makefile
 	src/content/contribute/components/Makefile
 	src/content/contribute/style/Makefile
@@ -114,22 +108,6 @@ AC_CONFIG_FILES([
 	src/content/desktop/Makefile
 	src/content/desktop/dev-environments/Makefile
 	src/content/desktop/enterprise/Makefile
-	src/content/desktop/extensions/Makefile
-	src/content/desktop/extensions-sdk/Makefile
-	src/content/desktop/extensions-sdk/architecture/Makefile
-	src/content/desktop/extensions-sdk/architecture/images/Makefile
-	src/content/desktop/extensions-sdk/build/Makefile
-	src/content/desktop/extensions-sdk/build/images/Makefile
-	src/content/desktop/extensions-sdk/design/Makefile
-	src/content/desktop/extensions-sdk/design/images/Makefile
-	src/content/desktop/extensions-sdk/dev/Makefile
-	src/content/desktop/extensions-sdk/dev/api/Makefile
-	src/content/desktop/extensions-sdk/dev/api/reference/Makefile
-	src/content/desktop/extensions-sdk/dev/api/reference/interfaces/Makefile
-	src/content/desktop/extensions-sdk/extensions/Makefile
-	src/content/desktop/extensions-sdk/extensions/images/Makefile
-	src/content/desktop/extensions-sdk/guides/Makefile
-	src/content/desktop/extensions-sdk/guides/images/Makefile
 	src/content/desktop/faqs/Makefile
 	src/content/desktop/hardened-desktop/Makefile
 	src/content/desktop/hardened-desktop/enhanced-container-isolation/Makefile
@@ -162,18 +140,48 @@ AC_CONFIG_FILES([
 	src/content/engine/api/Makefile
 	src/content/engine/api/latest/Makefile
 	src/content/engine/api/sdk/Makefile
-	src/content/engine/context/Makefile
+	src/content/engine/cli/Makefile
+	src/content/engine/containers/Makefile
+	src/content/engine/daemon/Makefile
+	src/content/engine/daemon/images/Makefile
 	src/content/engine/install/Makefile
+	src/content/engine/logging/Makefile
+	src/content/engine/logging/drivers/Makefile
+	src/content/engine/manage-resources/Makefile
+	src/content/engine/network/Makefile
+	src/content/engine/network/drivers/Makefile
+	src/content/engine/network/drivers/images/Makefile
+	src/content/engine/network/tutorials/Makefile
 	src/content/engine/release-notes/Makefile
 	src/content/engine/security/Makefile
 	src/content/engine/security/https/Makefile
 	src/content/engine/security/trust/Makefile
 	src/content/engine/security/trust/images/Makefile
+	src/content/engine/storage/Makefile
+	src/content/engine/storage/drivers/Makefile
+	src/content/engine/storage/drivers/images/Makefile
+	src/content/engine/storage/images/Makefile
 	src/content/engine/swarm/Makefile
 	src/content/engine/swarm/how-swarm-mode-works/Makefile
 	src/content/engine/swarm/images/Makefile
 	src/content/engine/swarm/swarm-tutorial/Makefile
 	src/content/engine/tutorials/Makefile
+	src/content/extensions/Makefile
+	src/content/extensions/extensions-sdk/Makefile
+	src/content/extensions/extensions-sdk/architecture/Makefile
+	src/content/extensions/extensions-sdk/architecture/images/Makefile
+	src/content/extensions/extensions-sdk/build/Makefile
+	src/content/extensions/extensions-sdk/build/images/Makefile
+	src/content/extensions/extensions-sdk/design/Makefile
+	src/content/extensions/extensions-sdk/design/images/Makefile
+	src/content/extensions/extensions-sdk/dev/Makefile
+	src/content/extensions/extensions-sdk/dev/api/Makefile
+	src/content/extensions/extensions-sdk/dev/api/reference/Makefile
+	src/content/extensions/extensions-sdk/dev/api/reference/interfaces/Makefile
+	src/content/extensions/extensions-sdk/extensions/Makefile
+	src/content/extensions/extensions-sdk/extensions/images/Makefile
+	src/content/extensions/extensions-sdk/guides/Makefile
+	src/content/extensions/extensions-sdk/guides/images/Makefile
 	src/content/guides/Makefile
 	src/content/guides/deployment-orchestration/Makefile
 	src/content/guides/docker-concepts/Makefile
@@ -209,9 +217,6 @@ AC_CONFIG_FILES([
 	src/content/language/r/Makefile
 	src/content/language/ruby/Makefile
 	src/content/language/rust/Makefile
-	src/content/network/Makefile
-	src/content/network/drivers/Makefile
-	src/content/network/drivers/images/Makefile
 	src/content/reference/Makefile
 	src/content/reference/cli/Makefile
 	src/content/reference/cli/docker/Makefile
@@ -276,10 +281,6 @@ AC_CONFIG_FILES([
 	src/content/security/for-developers/Makefile
 	src/content/security/for-developers/2fa/Makefile
 	src/content/security/images/Makefile
-	src/content/storage/Makefile
-	src/content/storage/images/Makefile
-	src/content/storage/storagedriver/Makefile
-	src/content/storage/storagedriver/images/Makefile
 	src/content/subscription/Makefile
 	src/content/subscription/build-cloud/Makefile
 	src/content/subscription/core-subscription/Makefile

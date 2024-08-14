@@ -71,134 +71,48 @@ long: |-
 
 @x
 usage: docker image push [OPTIONS] NAME[:TAG]
-pname: docker image
-plink: docker_image.yaml
 @y
 usage: docker image push [OPTIONS] NAME[:TAG]
-pname: docker image
-plink: docker_image.yaml
 @z
 
 % options:
 
-@x
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
+@x all-tags
       description: Push all tags of an image to the repository
-      details_url: '#all-tags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image signing
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: |-
-        Push a platform-specific manifest as a single-platform image to the registry.
-        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.46"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 @y
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
       description: Push all tags of an image to the repository
-      details_url: '#all-tags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image signing
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: |-
-        Push a platform-specific manifest as a single-platform image to the registry.
-        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.46"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 @z
 
-@x
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@x disable-content-trust
+      description: Skip image signing
 @y
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+      description: Skip image signing
+@z
+
+@x platform
+      description: |-
+        Push a platform-specific manifest as a single-platform image to the registry.
+        Image index won't be pushed, meaning that other manifests, including attestations won't be preserved.
+        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
+@y
+      description: |-
+        Push a platform-specific manifest as a single-platform image to the registry.
+        Image index won't be pushed, meaning that other manifests, including attestations won't be preserved.
+        'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)
+@z
+
+@x quiet
+      description: Suppress verbose output
+@y
+      description: Suppress verbose output
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
 @z
 
 @x

@@ -507,7 +507,7 @@ Reference information:
 [config]: https://github.com/opencontainers/image-spec/blob/main/config.md
 [descriptors]: https://github.com/opencontainers/image-spec/blob/main/descriptor.md
 [indexes]: https://github.com/opencontainers/image-spec/blob/main/image-index.md
-[labels]: ../../config/labels-custom-metadata.md
+[labels]: /engine/manage-resources/labels.md
 [manifests]: https://github.com/opencontainers/image-spec/blob/main/manifest.md
 @y
 [specification]: https://github.com/opencontainers/image-spec/blob/main/annotations.md
@@ -515,6 +515,6 @@ Reference information:
 [config]: https://github.com/opencontainers/image-spec/blob/main/config.md
 [descriptors]: https://github.com/opencontainers/image-spec/blob/main/descriptor.md
 [indexes]: https://github.com/opencontainers/image-spec/blob/main/image-index.md
-[labels]: ../../config/labels-custom-metadata.md
+[labels]: /engine/manage-resources/labels.md
 [manifests]: https://github.com/opencontainers/image-spec/blob/main/manifest.md
 @z

@@ -403,12 +403,12 @@ The sidebar shows a compliance overview for the last pushed tag of a repository.
 @z
 
 @x
-Inspect the **Outdated base images** policy.
+Inspect the **No outdated base images** policy.
 This policy checks whether base images you use are up-to-date.
 It currently has a non-compliant status,
 because the example image uses an old version `alpine` as a base image.
 @y
-Inspect the **Outdated base images** policy.
+Inspect the **No outdated base images** policy.
 This policy checks whether base images you use are up-to-date.
 It currently has a non-compliant status,
 because the example image uses an old version `alpine` as a base image.

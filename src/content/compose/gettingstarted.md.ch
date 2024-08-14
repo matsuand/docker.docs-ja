@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Check out this tutorial on how to use Docker Compose from defining application
@@ -386,9 +386,9 @@ Whenever a file is changed, Compose syncs the file to the corresponding location
 @z
 
 @x
-For more information on how Compose Watch works, see [Use Compose Watch](file-watch.md). Alternatively, see [Manage data in containers](../storage/volumes.md) for other options.
+For more information on how Compose Watch works, see [Use Compose Watch](file-watch.md). Alternatively, see [Manage data in containers](/engine/storage/volumes.md) for other options.
 @y
-For more information on how Compose Watch works, see [Use Compose Watch](file-watch.md). Alternatively, see [Manage data in containers](../storage/volumes.md) for other options.
+For more information on how Compose Watch works, see [Use Compose Watch](file-watch.md). Alternatively, see [Manage data in containers](engine/storage/volumes.md) for other options.
 @z
 
 @x

@@ -1,10 +1,10 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = accounts admin billing build build-cloud cloud compose      \
-	config contribute copilot desktop docker-id docker-hub engine \
-	guides includes language network reference samples scout      \
-	security storage subscription tags trusted-content
+SUBDIRS = accounts admin billing build build-cloud cloud compose \
+	contribute copilot desktop docker-id docker-hub engine   \
+	extensions guides includes language reference samples    \
+	scout security subscription tags trusted-content
 
 bases = \
 	_index.md            \

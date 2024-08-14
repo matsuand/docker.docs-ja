@@ -1,20 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
----
 description: How Docker Compose sets up networking between containers
 keywords: documentation, docs, docker, compose, orchestration, containers, networking
 title: Networking in Compose
----
 @y
----
 description: How Docker Compose sets up networking between containers
 keywords: documentation, docs, docker, compose, orchestration, containers, networking
 title: Networking in Compose
----
 @z
 
 @x
@@ -25,12 +21,12 @@ title: Networking in Compose
 
 @x
 By default Compose sets up a single
-[network](../reference/cli/docker/network/create.md) for your app. Each
+[network](/reference/cli/docker/network/create.md) for your app. Each
 container for a service joins the default network and is both reachable by
 other containers on that network, and discoverable by the service's name.
 @y
 By default Compose sets up a single
-[network](../reference/cli/docker/network/create.md) for your app. Each
+[network](reference/cli/docker/network/create.md) for your app. Each
 container for a service joins the default network and is both reachable by
 other containers on that network, and discoverable by the service's name.
 @z
@@ -220,10 +216,10 @@ See the [links reference](compose-file/05-services.md#links) for more informatio
 @z
 
 @x
-When deploying a Compose application on a Docker Engine with [Swarm mode enabled](../engine/swarm/index.md),
+When deploying a Compose application on a Docker Engine with [Swarm mode enabled](../engine/swarm/_index.md),
 you can make use of the built-in `overlay` driver to enable multi-host communication.
 @y
-When deploying a Compose application on a Docker Engine with [Swarm mode enabled](../engine/swarm/index.md),
+When deploying a Compose application on a Docker Engine with [Swarm mode enabled](../engine/swarm/_index.md),
 you can make use of the built-in `overlay` driver to enable multi-host communication.
 @z
 
@@ -234,12 +230,12 @@ Overlay networks are always created as `attachable`. You can optionally set the 
 @z
 
 @x
-Consult the [Swarm mode section](../engine/swarm/index.md), to see how to set up
-a Swarm cluster, and the [Getting started with multi-host networking](../network/network-tutorial-overlay.md)
+Consult the [Swarm mode section](../engine/swarm/_index.md), to see how to set up
+a Swarm cluster, and the [Getting started with multi-host networking](/engine/network/tutorials/overlay.md)
 to learn about multi-host overlay networks.
 @y
-Consult the [Swarm mode section](../engine/swarm/index.md), to see how to set up
-a Swarm cluster, and the [Getting started with multi-host networking](../network/network-tutorial-overlay.md)
+Consult the [Swarm mode section](../engine/swarm/_index.md), to see how to set up
+a Swarm cluster, and the [Getting started with multi-host networking](engine/network/tutorials/overlay.md)
 to learn about multi-host overlay networks.
 @z
 

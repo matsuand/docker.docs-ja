@@ -9,7 +9,7 @@ title: Use containers for Python development
 keywords: python, local, development
 description: Learn how to develop your Python application locally.
 @y
-title: Use containers for Python development
+title: コンテナーを利用した Python 開発
 keywords: python, local, development
 description: Learn how to develop your Python application locally.
 @z
@@ -17,39 +17,40 @@ description: Learn how to develop your Python application locally.
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 Complete [Containerize a Python application](containerize.md).
 @y
-Complete [Containerize a Python application](containerize.md).
+[Python アプリケーションのコンテナー化](containerize.md)を完了していること。
 @z
 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
 In this section, you'll learn how to set up a development environment for your containerized application. This includes:
 @y
-In this section, you'll learn how to set up a development environment for your containerized application. This includes:
+本節ではコンテナー化したアプリケーションに対する開発環境の構築方法を学びます。
+ここでは以下を行います。
 @z
 
 @x
 - Adding a local database and persisting data
 - Configuring Compose to automatically update your running Compose services as you edit and save your code
 @y
-- Adding a local database and persisting data
+ - ローカルデータベースを追加して、そのデータを維持します。
 - Configuring Compose to automatically update your running Compose services as you edit and save your code
 @z
 
 @x
 ## Get the sample application
 @y
-## Get the sample application
+## サンプルアプリケーションの入手 {#get-the-sample-application}
 @z
 
 @x
@@ -77,13 +78,14 @@ You'll need to clone a new repository to get a sample application that includes 
 @x
 ## Add a local database and persist data
 @y
-## Add a local database and persist data
+## ローカルデータベースの追加とデータ維持 {#add-a-local-database-and-persist-data}
 @z
 
 @x
 You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data.
 @y
-You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data.
+コンテナーでは、ローカルサービスとしてたとえばデータベースを構築することができます。
+本節では `compose.yaml` ファイルを編集して、データベースサービスを追加してデータ保存のためのボリュームを定義します。
 @z
 
 @x
@@ -101,7 +103,7 @@ In the `compose.yaml` file, you need to uncomment all of the database instructio
 @x
 The following is the updated `compose.yaml` file.
 @y
-The following is the updated `compose.yaml` file.
+書き換えた `compose.yaml` ファイルは以下のようになります。
 @z
 
 % snip code...
@@ -267,7 +269,7 @@ Press `ctrl+c` in the terminal to stop your application.
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
@@ -284,16 +286,16 @@ Related information:
  - [Compose file watch](../../compose/file-watch.md)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @y
-Related information:
- - [Compose file reference](__SUBDIR__/compose/compose-file/)
+関連情報
+ - [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
- - [Multi-stage builds](../../build/building/multi-stage.md)
+ - [マルチステージビルド](../../build/building/multi-stage.md)
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
@@ -305,5 +307,5 @@ In the next section, you'll take a look at how to set up a CI/CD pipeline using 
 @x
 {{< button text="Configure CI/CD" url="configure-ci-cd.md" >}}
 @y
-{{< button text="Configure CI/CD" url="configure-ci-cd.md" >}}
+{{< button text="CI/CD の設定" url="configure-ci-cd.md" >}}
 @z

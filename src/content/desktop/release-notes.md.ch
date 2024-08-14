@@ -1,40 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Find the Docker Desktop release notes for Mac, Linux, and Windows.
 keywords: Docker desktop, release notes, linux, mac, windows
 title: Docker Desktop release notes
 tags: [Release notes]
-toc_max: 2
-aliases:
-- /docker-for-mac/release-notes/
-- /docker-for-mac/edge-release-notes/
-- /desktop/mac/release-notes/
-- /docker-for-windows/edge-release-notes/
-- /docker-for-windows/release-notes/
-- /desktop/windows/release-notes/
-- /desktop/linux/release-notes/
-- /mackit/release-notes/
----
 @y
----
 description: Find the Docker Desktop release notes for Mac, Linux, and Windows.
 keywords: Docker desktop, release notes, linux, mac, windows
 title: Docker Desktop release notes
 tags: [Release notes]
-toc_max: 2
-aliases:
-- /docker-for-mac/release-notes/
-- /docker-for-mac/edge-release-notes/
-- /desktop/mac/release-notes/
-- /docker-for-windows/edge-release-notes/
-- /docker-for-windows/release-notes/
-- /desktop/windows/release-notes/
-- /desktop/linux/release-notes/
-- /mackit/release-notes/
----
 @z
 
 @x
@@ -53,6 +31,232 @@ Docker Desktop versions older than 6 months from the latest release are not avai
 Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/projects/1) to see what's coming next.
 @y
 Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/projects/1) to see what's coming next.
+@z
+
+@x
+## 4.33.1
+@y
+## 4.33.1
+@z
+
+@x
+{{< release-date date="2024-07-31" >}}
+@y
+{{< release-date date="2024-07-31" >}}
+@z
+
+@x
+{{< desktop-install-v2 win=true beta_win_arm=true version="4.33.0" build_path="/161083/" >}}
+@y
+{{< desktop-install-v2 win=true beta_win_arm=true version="4.33.0" build_path="/161083/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Added support for WSL2 2.3.11 and above, which includes loadable kernel modules. Fixes [docker/for-win#14222](https://github.com/docker/for-win/issues/14222)
+@y
+- Added support for WSL2 2.3.11 and above, which includes loadable kernel modules. Fixes [docker/for-win#14222](https://github.com/docker/for-win/issues/14222)
+@z
+
+@x
+## 4.33.0
+@y
+## 4.33.0
+@z
+
+@x
+{{< release-date date="2024-07-25" >}}
+@y
+{{< release-date date="2024-07-25" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.33.0" build_path="/160616/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.33.0" build_path="/160616/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- [Docker Debug](../reference/cli/docker/debug.md) is now generally available.
+- BuildKit now evaluates Dockerfile rules to inform you of potential issues.
+- **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
+@y
+- [Docker Debug](../reference/cli/docker/debug.md) is now generally available.
+- BuildKit now evaluates Dockerfile rules to inform you of potential issues.
+- **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Compose v2.29.1](https://github.com/docker/compose/releases/tag/v2.29.1)
+- [Docker Engine v27.1.1](https://docs.docker.com/engine/release-notes/27.1/#2711)
+- [containerd v1.7.19](https://github.com/containerd/containerd/releases/tag/v1.7.19)
+- [NVIDIA Container Toolkit v1.16.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.16.0)
+- [Docker Scout CLI v1.11.0](https://github.com/docker/scout-cli/releases/tag/v1.11.0)
+- [Kubernetes v1.30.2](https://github.com/kubernetes/kubernetes/releases/tag/v1.30.2)
+- Linux kernel `v6.10`
+@y
+- [Docker Compose v2.29.1](https://github.com/docker/compose/releases/tag/v2.29.1)
+- [Docker Engine v27.1.1](https://docs.docker.com/engine/release-notes/27.1/#2711)
+- [containerd v1.7.19](https://github.com/containerd/containerd/releases/tag/v1.7.19)
+- [NVIDIA Container Toolkit v1.16.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.16.0)
+- [Docker Scout CLI v1.11.0](https://github.com/docker/scout-cli/releases/tag/v1.11.0)
+- [Kubernetes v1.30.2](https://github.com/kubernetes/kubernetes/releases/tag/v1.30.2)
+- Linux kernel `v6.10`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed an issue that caused containers started with `--net=host` and listening on an IPv6 address to be accessible from the host.
+- Improved the UX for enabling the containerd image store in the **Settings** tab.
+- Fixed an issue that caused a deadlock seen while using the `grpcfuse` filesharing option under heavy load.
+- Fixed a bug where Mac-specific admin settings were impacting other platforms.
+- IPv6 address blocks can now be specified in Docker Engine's `default-address-pools`.
+- Fixed an issue with the validation of the Docker Engine's `bip`, `fixed-cidr` and `fixed-cidr-v6`. Fixes  [docker/for-mac#7104](https://github.com/docker/for-mac/issues/7104).
+- Docker Engine's `default-network-opts` parameter is now properly validated.
+- VirtioFS performance improvements include increasing directory cache timeout, handling change notifications from the host, removing extra FUSE operations for security.capability attributes, optimizing host event detection, and providing an API to clean caches after container termination.
+- Docker Desktop now notifies when there is a port conflict in a host networking container.
+- Compose Bridge command line option is now available via Experimental features. When enabled, run `compose-bridge` to convert your Compose configuration to Kubernetes resources.
+- Builds view:
+  - Added [build checks](../build/checks.md) to the build details' **Source** tab.
+  - Added build tags to the build details' **Info** tab under the **Source details** section.
+  - Newly imported builds are now highlighted.
+  - Improved performance of error message handling.
+  - Fixed a connection issue to the builder which prevented build records from displaying.
+  - Fixed the navigation when opening builds through the CLI.
+@y
+- Fixed an issue that caused containers started with `--net=host` and listening on an IPv6 address to be accessible from the host.
+- Improved the UX for enabling the containerd image store in the **Settings** tab.
+- Fixed an issue that caused a deadlock seen while using the `grpcfuse` filesharing option under heavy load.
+- Fixed a bug where Mac-specific admin settings were impacting other platforms.
+- IPv6 address blocks can now be specified in Docker Engine's `default-address-pools`.
+- Fixed an issue with the validation of the Docker Engine's `bip`, `fixed-cidr` and `fixed-cidr-v6`. Fixes  [docker/for-mac#7104](https://github.com/docker/for-mac/issues/7104).
+- Docker Engine's `default-network-opts` parameter is now properly validated.
+- VirtioFS performance improvements include increasing directory cache timeout, handling change notifications from the host, removing extra FUSE operations for security.capability attributes, optimizing host event detection, and providing an API to clean caches after container termination.
+- Docker Desktop now notifies when there is a port conflict in a host networking container.
+- Compose Bridge command line option is now available via Experimental features. When enabled, run `compose-bridge` to convert your Compose configuration to Kubernetes resources.
+- Builds view:
+  - Added [build checks](../build/checks.md) to the build details' **Source** tab.
+  - Added build tags to the build details' **Info** tab under the **Source details** section.
+  - Newly imported builds are now highlighted.
+  - Improved performance of error message handling.
+  - Fixed a connection issue to the builder which prevented build records from displaying.
+  - Fixed the navigation when opening builds through the CLI.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- The Configuration integrity check feature now provides more context around what has changed with your Docker Desktop configuration. For more information, see the [FAQs](faqs/macfaqs.md).
+- The Configuration integrity check feature shows an error when it fails to repair Docker Desktop.
+- Fixed a bug where the IPv6 TCP was set to `host.docker.internal`. Fixes [docker/for-mac#7332](https://github.com/docker/for-mac/issues/7332).
+- Fixed an issue where the `docker-compose` symlink pointed to an empty location. Fixes [docker/for-mac#7345](https://github.com/docker/for-mac/issues/7345).
+@y
+- The Configuration integrity check feature now provides more context around what has changed with your Docker Desktop configuration. For more information, see the [FAQs](faqs/macfaqs.md).
+- The Configuration integrity check feature shows an error when it fails to repair Docker Desktop.
+- Fixed a bug where the IPv6 TCP was set to `host.docker.internal`. Fixes [docker/for-mac#7332](https://github.com/docker/for-mac/issues/7332).
+- Fixed an issue where the `docker-compose` symlink pointed to an empty location. Fixes [docker/for-mac#7345](https://github.com/docker/for-mac/issues/7345).
+@z
+
+@x
+#### For Linux
+@y
+#### For Linux
+@z
+
+@x
+- Fixed an issue where some `wincred` values were persisted after uninstall. Reported by Javier Yong [@Javiery3889](https://github.com/Javiery3889).
+- Fixed an issue where the notification **Another application changed your Desktop configurations** is incorrectly triggered.
+@y
+- Fixed an issue where some `wincred` values were persisted after uninstall. Reported by Javier Yong [@Javiery3889](https://github.com/Javiery3889).
+- Fixed an issue where the notification **Another application changed your Desktop configurations** is incorrectly triggered.
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Includes a fix for AuthZ Plugin Bypass Regression in Docker Engine. For more information, see [CVE-2024-41110](https://www.cve.org/cverecord?id=CVE-2024-41110).
+@y
+- Includes a fix for AuthZ Plugin Bypass Regression in Docker Engine. For more information, see [CVE-2024-41110](https://www.cve.org/cverecord?id=CVE-2024-41110).
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed an issue where some `wincred` values were persisted after uninstall. Reported by Javier Yong [@Javiery3889](https://github.com/Javiery3889).
+@y
+- Fixed an issue where some `wincred` values were persisted after uninstall. Reported by Javier Yong [@Javiery3889](https://github.com/Javiery3889).
+@z
+
+@x
+### Known Issues
+@y
+### Known Issues
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Docker Desktop fails to start with WSL pre-releases `v2.3.11.0` and `v2.3.12.0`, which is included in Windows 11 Insider. To fix this ensure WSL `v2.2.4.0` is installed.
+For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL/issues/11794). This affects Docker Desktop 4.33.0 and earlier.
+@y
+- Docker Desktop fails to start with WSL pre-releases `v2.3.11.0` and `v2.3.12.0`, which is included in Windows 11 Insider. To fix this ensure WSL `v2.2.4.0` is installed.
+For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL/issues/11794). This affects Docker Desktop 4.33.0 and earlier.
 @z
 
 @x
@@ -80,12 +284,12 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
-- Docker Desktop now takes advantage of Moby 27.
+- Docker Engine and CLI updated to [Moby 27.0](../engine/release-notes/27.0.md#2700).
 - Docker Desktop now supports moving data to a different drive on macOS and Windows with WSL2 backend. See [docker/for-win#13384](https://github.com/docker/for-win/issues/13384).
 - You can now [schedule backups for volume exports](use-desktop/volumes.md) in the **Volumes** tab (Beta). 
 - Access a terminal shell directly from Docker Desktop (Beta).
 @y
-- Docker Desktop now takes advantage of Moby 27.
+- Docker Engine and CLI updated to [Moby 27.0](../engine/release-notes/27.0.md#2700).
 - Docker Desktop now supports moving data to a different drive on macOS and Windows with WSL2 backend. See [docker/for-win#13384](https://github.com/docker/for-win/issues/13384).
 - You can now [schedule backups for volume exports](use-desktop/volumes.md) in the **Volumes** tab (Beta). 
 - Access a terminal shell directly from Docker Desktop (Beta).
@@ -207,6 +411,18 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 ### Known issues
 @y
 ### Known issues
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- The **Manage Synchronized File Shares with Compose** setting is automatically enabled for all users who opt into **Access experimental features**. This converts all bind mounts into synchronized file shares. To disable this behavior, deselect **Access experimental features**. Then, manually delete any file shares by going to the **File sharing** tab within **Resources**, navigating to the **Synchronized file shares** section, selecting the file shares you want to remove, and selecting **Delete**.
+@y
+- The **Manage Synchronized File Shares with Compose** setting is automatically enabled for all users who opt into **Access experimental features**. This converts all bind mounts into synchronized file shares. To disable this behavior, deselect **Access experimental features**. Then, manually delete any file shares by going to the **File sharing** tab within **Resources**, navigating to the **Synchronized file shares** section, selecting the file shares you want to remove, and selecting **Delete**.
 @z
 
 @x
@@ -730,25 +946,25 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 - You can now enforce Rosetta usage via [Settings Management](hardened-desktop/settings-management/configure.md).
 - [Docker socket mount restrictions](hardened-desktop/enhanced-container-isolation/config.md) with ECI is now generally available.
-- Docker Desktop now takes advantage of the Moby 26 engine which includes Buildkit 0.13, sub volumes mounts, networking updates, and improvements to the containerd multi-platform image store UX.
+- Docker Engine and CLI updated to [Moby 26.0](https://github.com/moby/moby/releases/tag/v26.0.0). This includes Buildkit 0.13, sub volumes mounts, networking updates, and improvements to the containerd multi-platform image store UX.
 - New and improved Docker Desktop error screens: swift troubleshooting, easy diagnostics uploads, and actionable remediation.
 - Compose supports [Synchronized file shares (experimental)](synchronized-file-sharing.md).
 - New [interactive Compose CLI (experimental)](../compose/environment-variables/envvars.md#compose_menu).
 - Beta release of:
   - Air-Gapped Containers with [Settings Management](hardened-desktop/air-gapped-containers/_index.md).
-  - [Host networking](../network/drivers/host.md#docker-desktop) in Docker Desktop.
+  - [Host networking](/engine/network/drivers/host.md#docker-desktop) in Docker Desktop.
   - [Docker Debug](use-desktop/container.md#integrated-terminal) for running containers.
   - [Volumes Backup & Share extension](use-desktop/volumes.md) functionality available in the **Volumes** tab.
 @y
 - You can now enforce Rosetta usage via [Settings Management](hardened-desktop/settings-management/configure.md).
 - [Docker socket mount restrictions](hardened-desktop/enhanced-container-isolation/config.md) with ECI is now generally available.
-- Docker Desktop now takes advantage of the Moby 26 engine which includes Buildkit 0.13, sub volumes mounts, networking updates, and improvements to the containerd multi-platform image store UX.
+- Docker Engine and CLI updated to [Moby 26.0](https://github.com/moby/moby/releases/tag/v26.0.0). This includes Buildkit 0.13, sub volumes mounts, networking updates, and improvements to the containerd multi-platform image store UX.
 - New and improved Docker Desktop error screens: swift troubleshooting, easy diagnostics uploads, and actionable remediation.
 - Compose supports [Synchronized file shares (experimental)](synchronized-file-sharing.md).
 - New [interactive Compose CLI (experimental)](../compose/environment-variables/envvars.md#compose_menu).
 - Beta release of:
   - Air-Gapped Containers with [Settings Management](hardened-desktop/air-gapped-containers/_index.md).
-  - [Host networking](../network/drivers/host.md#docker-desktop) in Docker Desktop.
+  - [Host networking](engine/network/drivers/host.md#docker-desktop) in Docker Desktop.
   - [Docker Debug](use-desktop/container.md#integrated-terminal) for running containers.
   - [Volumes Backup & Share extension](use-desktop/volumes.md) functionality available in the **Volumes** tab.
 @z

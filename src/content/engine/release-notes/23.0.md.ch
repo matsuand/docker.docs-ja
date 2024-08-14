@@ -1,24 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Docker Engine 23.0 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Docker Engine 23.0 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -1110,9 +1104,9 @@ To mitigate this, the previous build cache must be discarded. `docker builder pr
 @z
 
 @x
-When upgrading to the 23.0 branch, the existence of any [ipvlan](../../network/drivers/ipvlan.md) networks will prevent the daemon from starting:
+When upgrading to the 23.0 branch, the existence of any [ipvlan](/engine/network/drivers/ipvlan.md) networks will prevent the daemon from starting:
 @y
-When upgrading to the 23.0 branch, the existence of any [ipvlan](../../network/drivers/ipvlan.md) networks will prevent the daemon from starting:
+When upgrading to the 23.0 branch, the existence of any [ipvlan](engine/network/drivers/ipvlan.md) networks will prevent the daemon from starting:
 @z
 
 @x

@@ -80,15 +80,15 @@ defined by policies.
 
 @x
 A policy defines image quality criteria that your artifacts should fulfill.
-For example, the **Copyleft licenses** policy flags packages distributed under a copyleft license.
+For example, the **No copyleft licenses** policy flags packages distributed under a copyleft license.
 If an image contains a copyleft-licensed package, that image is non-compliant with this policy.
-Some policies, such as the **Copyleft licenses** policy, are configurable.
+Some policies, such as the **No copyleft licenses** policy, are configurable.
 Configurable policies let you adjust the criteria to better match your organization's needs.
 @y
 A policy defines image quality criteria that your artifacts should fulfill.
-For example, the **Copyleft licenses** policy flags packages distributed under a copyleft license.
+For example, the **No copyleft licenses** policy flags packages distributed under a copyleft license.
 If an image contains a copyleft-licensed package, that image is non-compliant with this policy.
-Some policies, such as the **Copyleft licenses** policy, are configurable.
+Some policies, such as the **No copyleft licenses** policy, are configurable.
 Configurable policies let you adjust the criteria to better match your organization's needs.
 @z
 
@@ -135,17 +135,17 @@ Docker Scout ships the following out-of-the-box policies:
 @z
 
 @x
-- [Fixable critical and high vulnerabilities](#fixable-critical-and-high-vulnerabilities)
-- [Copyleft licenses](#copyleft-licenses)
-- [Outdated base images](#outdated-base-images)
-- [High-profile vulnerabilities](#high-profile-vulnerabilities)
+- [No fixable critical or high vulnerabilities](#no-fixable-critical-or-high-vulnerabilities)
+- [No copyleft licenses](#no-copyleft-licenses)
+- [No outdated base images](#no-outdated-base-images)
+- [No high-profile vulnerabilities](#no-high-profile-vulnerabilities)
 - [Supply chain attestations](#supply-chain-attestations)
 - [Default non-root user](#default-non-root-user)
 @y
-- [Fixable critical and high vulnerabilities](#fixable-critical-and-high-vulnerabilities)
-- [Copyleft licenses](#copyleft-licenses)
-- [Outdated base images](#outdated-base-images)
-- [High-profile vulnerabilities](#high-profile-vulnerabilities)
+- [No fixable critical or high vulnerabilities](#no-fixable-critical-or-high-vulnerabilities)
+- [No copyleft licenses](#no-copyleft-licenses)
+- [No outdated base images](#no-outdated-base-images)
+- [No high-profile vulnerabilities](#no-high-profile-vulnerabilities)
 - [Supply chain attestations](#supply-chain-attestations)
 - [Default non-root user](#default-non-root-user)
 @z
@@ -165,19 +165,19 @@ policies](./configure.md).
 @z
 
 @x
-### Fixable critical and high vulnerabilities
+### No fixable critical or high vulnerabilities
 @y
-### Fixable critical and high vulnerabilities
+### No fixable critical or high vulnerabilities
 @z
 
 @x
-The **Fixable critical and high vulnerabilities** policy requires that your
+The **No fixable critical or high vulnerabilities** policy requires that your
 artifacts aren't exposed to known vulnerabilities where there's a fix version
 available. Essentially, this means that there's an easy fix that you can deploy
 for images that fail this policy: upgrade the vulnerable package to a version
 containing a fix for the vulnerability.
 @y
-The **Fixable critical and high vulnerabilities** policy requires that your
+The **No fixable critical or high vulnerabilities** policy requires that your
 artifacts aren't exposed to known vulnerabilities where there's a fix version
 available. Essentially, this means that there's an easy fix that you can deploy
 for images that fail this policy: upgrade the vulnerable package to a version
@@ -215,18 +215,36 @@ The following policy parameters are configurable in a custom version:
 @z
 
 @x
-### Copyleft licenses
+- Name and description of the policy
+- Severity levels to consider
+- Age threshold (set to `0` to flag all vulnerabilities, regardless of age)
+- Whether or not to only report vulnerabilities with a fix version available
 @y
-### Copyleft licenses
+- Name and description of the policy
+- Severity levels to consider
+- Age threshold (set to `0` to flag all vulnerabilities, regardless of age)
+- Whether or not to only report vulnerabilities with a fix version available
 @z
 
 @x
-The **Copyleft licenses** policy requires that your artifacts don't contain
+For more information about configuring policies, see [Configure policies](./configure.md).
+@y
+For more information about configuring policies, see [Configure policies](./configure.md).
+@z
+
+@x
+### No copyleft licenses
+@y
+### No copyleft licenses
+@z
+
+@x
+The **No copyleft licenses** policy requires that your artifacts don't contain
 packages distributed under an AGPLv3 or GPLv3 license. These licenses are
 protective [copyleft](https://en.wikipedia.org/wiki/Copyleft), and may be
 unsuitable for use in your software because of the restrictions they enforce.
 @y
-The **Copyleft licenses** policy requires that your artifacts don't contain
+The **No copyleft licenses** policy requires that your artifacts don't contain
 packages distributed under an AGPLv3 or GPLv3 license. These licenses are
 protective [copyleft](https://en.wikipedia.org/wiki/Copyleft), and may be
 unsuitable for use in your software because of the restrictions they enforce.
@@ -251,16 +269,16 @@ See [Configure policies](./configure.md).
 @z
 
 @x
-### Outdated base images
+### No outdated base images
 @y
-### Outdated base images
+### No outdated base images
 @z
 
 @x
-The **Outdated base images** policy requires that the base images you use are
+The **No outdated base images** policy requires that the base images you use are
 up-to-date.
 @y
-The **Outdated base images** policy requires that the base images you use are
+The **No outdated base images** policy requires that the base images you use are
 up-to-date.
 @z
 
@@ -283,18 +301,18 @@ evaluate. For more information, see [No base image data](#no-base-image-data).
 @z
 
 @x
-### High-profile vulnerabilities
+### No high-profile vulnerabilities
 @y
-### High-profile vulnerabilities
+### No high-profile vulnerabilities
 @z
 
 @x
-The **High-profile vulnerabilities** policy requires that your artifacts don't
+The **No high-profile vulnerabilities** policy requires that your artifacts don't
 contain vulnerabilities from Docker Scout’s curated list. This list is kept
 up-to-date with newly disclosed vulnerabilities that are widely recognized to
 be risky.
 @y
-The **High-profile vulnerabilities** policy requires that your artifacts don't
+The **No high-profile vulnerabilities** policy requires that your artifacts don't
 contain vulnerabilities from Docker Scout’s curated list. This list is kept
 up-to-date with newly disclosed vulnerabilities that are widely recognized to
 be risky.
@@ -367,18 +385,366 @@ building with attestations, see
 @z
 
 @x
-### Quality gates passed
+### Default non-root user
 @y
-### Quality gates passed
+### Default non-root user
 @z
 
 @x
-The Quality gates passed policy builds on the [SonarQube
+By default, containers run as the `root` superuser with full system
+administration privileges inside the container, unless the Dockerfile specifies
+a different default user. Running containers as a privileged user weakens their
+runtime security, as it means any code that runs in the container can perform
+administrative actions.
+@y
+By default, containers run as the `root` superuser with full system
+administration privileges inside the container, unless the Dockerfile specifies
+a different default user. Running containers as a privileged user weakens their
+runtime security, as it means any code that runs in the container can perform
+administrative actions.
+@z
+
+@x
+The **Default non-root user** policy detects images that are set to run as the
+default `root` user. To comply with this policy, images must specify a non-root
+user in the image configuration. Images violate this policy if they don't
+specify a non-root default user for the runtime stage.
+@y
+The **Default non-root user** policy detects images that are set to run as the
+default `root` user. To comply with this policy, images must specify a non-root
+user in the image configuration. Images violate this policy if they don't
+specify a non-root default user for the runtime stage.
+@z
+
+@x
+For non-compliant images, evaluation results show whether or not the `root`
+user was set explicitly for the image. This helps you distinguish between
+policy violations caused by images where the `root` user is implicit, and
+images where `root` is set on purpose.
+@y
+For non-compliant images, evaluation results show whether or not the `root`
+user was set explicitly for the image. This helps you distinguish between
+policy violations caused by images where the `root` user is implicit, and
+images where `root` is set on purpose.
+@z
+
+@x
+The following Dockerfile runs as `root` by default despite not being explicitly set:
+@y
+The following Dockerfile runs as `root` by default despite not being explicitly set:
+@z
+
+@x
+```Dockerfile
+FROM alpine
+RUN echo "Hi"
+```
+@y
+```Dockerfile
+FROM alpine
+RUN echo "Hi"
+```
+@z
+
+@x
+Whereas in the following case, the `root` user is explicitly set:
+@y
+Whereas in the following case, the `root` user is explicitly set:
+@z
+
+@x
+```Dockerfile
+FROM alpine
+USER root
+RUN echo "Hi"
+```
+@y
+```Dockerfile
+FROM alpine
+USER root
+RUN echo "Hi"
+```
+@z
+
+@x
+> **Note**
+>
+> This policy only checks for the default user of the image, as set in the
+> image configuration blob. Even if you do specify a non-root default user,
+> it's still possible to override the default user at runtime, for example by
+> using the `--user` flag for the `docker run` command.
+@y
+> **Note**
+>
+> This policy only checks for the default user of the image, as set in the
+> image configuration blob. Even if you do specify a non-root default user,
+> it's still possible to override the default user at runtime, for example by
+> using the `--user` flag for the `docker run` command.
+@z
+
+@x
+To make your images compliant with this policy, use the
+[`USER`](../../reference/dockerfile.md#user) Dockerfile instruction to set
+a default user that doesn't have root privileges for the runtime stage.
+@y
+To make your images compliant with this policy, use the
+[`USER`](../../reference/dockerfile.md#user) Dockerfile instruction to set
+a default user that doesn't have root privileges for the runtime stage.
+@z
+
+@x
+The following Dockerfile snippets shows the difference between a compliant and
+non-compliant image.
+@y
+The following Dockerfile snippets shows the difference between a compliant and
+non-compliant image.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Non-compliant" >}}
+@y
+{{< tabs >}}
+{{< tab name="Non-compliant" >}}
+@z
+
+@x
+```dockerfile
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@y
+```dockerfile
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@z
+
+@x
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+ENTRYPOINT ["/app/production"]
+```
+@y
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+ENTRYPOINT ["/app/production"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Compliant" >}}
+@y
+{{< /tab >}}
+{{< tab name="Compliant" >}}
+@z
+
+@x
+```dockerfile {hl_lines=7}
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@y
+```dockerfile {hl_lines=7}
+FROM alpine AS builder
+COPY Makefile ./src /
+RUN make build
+@z
+
+@x
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+USER nonroot
+ENTRYPOINT ["/app/production"]
+```
+@y
+FROM alpine AS runtime
+COPY --from=builder bin/production /app
+USER nonroot
+ENTRYPOINT ["/app/production"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Additional policies
+@y
+## Additional policies
+@z
+
+@x
+In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
+by default, Docker Scout supports the following optional policies. Before you
+can enable these policies, you need to either configure the policies, or
+configure the integration that the policy requires.
+@y
+In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
+by default, Docker Scout supports the following optional policies. Before you
+can enable these policies, you need to either configure the policies, or
+configure the integration that the policy requires.
+@z
+
+@x
+- [No unapproved base images](#no-unapproved-base-images)
+- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
+@y
+- [No unapproved base images](#no-unapproved-base-images)
+- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
+@z
+
+@x
+### No unapproved base images
+@y
+### No unapproved base images
+@z
+
+@x
+The **No unapproved base images** policy lets you restrict which base
+images you allow in your builds.
+@y
+The **No unapproved base images** policy lets you restrict which base
+images you allow in your builds.
+@z
+
+@x
+This policy checks whether the base images used in your builds match any of the
+patterns specified in the policy configuration. The following table shows a few
+example patterns for this policy.
+@y
+This policy checks whether the base images used in your builds match any of the
+patterns specified in the policy configuration. The following table shows a few
+example patterns for this policy.
+@z
+
+@x
+| Use case                                                        | Pattern                          |
+| --------------------------------------------------------------- | -------------------------------- |
+| Allow all images from Docker Hub                                | `docker.io/*`                    |
+| Allow all Docker Official Images                                | `docker.io/library/*`            |
+| Allow images from a specific organization                       | `docker.io/orgname/*`            |
+| Allow tags of a specific repository                             | `docker.io/orgname/repository:*` |
+| Allow images on a registry with hostname `registry.example.com` | `registry.example.com/*`         |
+| Allow slim tags of NodeJS images                                | `docker.io/library/node:*-slim`  |
+@y
+| Use case                                                        | Pattern                          |
+| --------------------------------------------------------------- | -------------------------------- |
+| Allow all images from Docker Hub                                | `docker.io/*`                    |
+| Allow all Docker Official Images                                | `docker.io/library/*`            |
+| Allow images from a specific organization                       | `docker.io/orgname/*`            |
+| Allow tags of a specific repository                             | `docker.io/orgname/repository:*` |
+| Allow images on a registry with hostname `registry.example.com` | `registry.example.com/*`         |
+| Allow slim tags of NodeJS images                                | `docker.io/library/node:*-slim`  |
+@z
+
+@x
+An asterisk (`*`) matches up until the character that follows, or until the end
+of the image reference. Note that the `docker.io` prefix is required in order
+to match Docker Hub images. This is the registry hostname of Docker Hub.
+@y
+An asterisk (`*`) matches up until the character that follows, or until the end
+of the image reference. Note that the `docker.io` prefix is required in order
+to match Docker Hub images. This is the registry hostname of Docker Hub.
+@z
+
+@x
+You can also configure the policy to:
+@y
+You can also configure the policy to:
+@z
+
+@x
+- Allow only supported tags of Docker Official Images.
+@y
+- Allow only supported tags of Docker Official Images.
+@z
+
+@x
+  When this option is enabled, images using unsupported tags of official images
+  trigger a policy violation. Supported tags for official images are listed in
+  the **Supported tags** section of the repository overview on Docker Hub.
+@y
+  When this option is enabled, images using unsupported tags of official images
+  trigger a policy violation. Supported tags for official images are listed in
+  the **Supported tags** section of the repository overview on Docker Hub.
+@z
+
+@x
+- Allow only Docker Official Images of supported distro versions
+@y
+- Allow only Docker Official Images of supported distro versions
+@z
+
+@x
+  When this option is enabled, images using unsupported Linux distributions
+  that have reached end of life (such as `ubuntu:18.04`) trigger a policy violation.
+@y
+  When this option is enabled, images using unsupported Linux distributions
+  that have reached end of life (such as `ubuntu:18.04`) trigger a policy violation.
+@z
+
+@x
+  Enabling this option may cause the policy to report no data
+  if the operating system version cannot be determined.
+@y
+  Enabling this option may cause the policy to report no data
+  if the operating system version cannot be determined.
+@z
+
+@x
+This policy isn't enabled by default. To enable the policy:
+@y
+This policy isn't enabled by default. To enable the policy:
+@z
+
+@x
+1. [Create a new policy](https://scout.docker.com/reports/policies/create?fromDefinition=approved-base-images&fromNamespace=docker) in the Docker Scout Dashboard.
+2. Under **Approved base image sources**, specify the image reference patterns that you want to allow.
+3. Select whether you want to allow only supported tags for official images,
+   and supported Linux distribution versions.
+4. Select **Save and enable**.
+@y
+1. [Create a new policy](https://scout.docker.com/reports/policies/create?fromDefinition=approved-base-images&fromNamespace=docker) in the Docker Scout Dashboard.
+2. Under **Approved base image sources**, specify the image reference patterns that you want to allow.
+3. Select whether you want to allow only supported tags for official images,
+   and supported Linux distribution versions.
+4. Select **Save and enable**.
+@z
+
+@x
+   The policy is now enabled for your current organization.
+@y
+   The policy is now enabled for your current organization.
+@z
+
+@x
+Your images need provenance attestations for this policy to successfully
+evaluate. For more information, see [No base image data](#no-base-image-data).
+@y
+Your images need provenance attestations for this policy to successfully
+evaluate. For more information, see [No base image data](#no-base-image-data).
+@z
+
+@x
+### SonarQube quality gates passed
+@y
+### SonarQube quality gates passed
+@z
+
+@x
+The **SonarQube quality gates passed** policy builds on the [SonarQube
 integration](../integrations/code-quality/sonarqube.md) to assess the quality
 of your source code. This policy works by ingesting the SonarQube code analysis
 results into Docker Scout.
 @y
-The Quality gates passed policy builds on the [SonarQube
+The **SonarQube quality gates passed** policy builds on the [SonarQube
 integration](../integrations/code-quality/sonarqube.md) to assess the quality
 of your source code. This policy works by ingesting the SonarQube code analysis
 results into Docker Scout.
@@ -402,13 +768,13 @@ policy.
 Docker Scout uses [provenance](../../build/attestations/slsa-provenance.md)
 attestations or the `org.opencontainers.image.revision` OCI annotation to link
 SonarQube analysis results with container images. In addition to enabling the
-SonarQube integration, you must also make sure that your images has either the
+SonarQube integration, you must also make sure that your images have either the
 attestation or the label.
 @y
 Docker Scout uses [provenance](../../build/attestations/slsa-provenance.md)
 attestations or the `org.opencontainers.image.revision` OCI annotation to link
 SonarQube analysis results with container images. In addition to enabling the
-SonarQube integration, you must also make sure that your images has either the
+SonarQube integration, you must also make sure that your images have either the
 attestation or the label.
 @z
 
@@ -452,12 +818,12 @@ in the CLI.
 
 @x
 There are cases when it's not possible to determine information about the base
-images used in your builds. In such cases, the **Outdated base images** and
-**Unapproved base images** policies get flagged as having **No data**.
+images used in your builds. In such cases, the **No outdated base images** and
+**No unapproved base images** policies get flagged as having **No data**.
 @y
 There are cases when it's not possible to determine information about the base
-images used in your builds. In such cases, the **Outdated base images** and
-**Unapproved base images** policies get flagged as having **No data**.
+images used in your builds. In such cases, the **No outdated base images** and
+**No unapproved base images** policies get flagged as having **No data**.
 @z
 
 @x

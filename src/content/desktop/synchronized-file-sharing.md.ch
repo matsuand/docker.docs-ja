@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Synchronized file shares
 description: Get started with Synchronized file shares on Docker Desktop.
 keyword: mutagen, file sharing, docker desktop, bind mounts
----
 @y
----
 title: Synchronized file shares
 description: Get started with Synchronized file shares on Docker Desktop.
 keyword: mutagen, file sharing, docker desktop, bind mounts
----
 @z
 
 @x
@@ -70,9 +68,9 @@ A Synchronized file share behaves just like a virtual file share, but takes adva
 @z
 
 @x
-After creating a file share instance, any container using a bind mount that points to a location on the host filesystem matching the specified synchronized file share location, or a subdirectory within it,  utilizes the Synchronized File Shares feature. Bind mounts that don't satisfy this condition are passed to the normal virtual filesystem [bind-mounting mechanism](../storage/bind-mounts.md), for example VirtioFS or gRPC-FUSE.
+After creating a file share instance, any container using a bind mount that points to a location on the host filesystem matching the specified synchronized file share location, or a subdirectory within it,  utilizes the Synchronized File Shares feature. Bind mounts that don't satisfy this condition are passed to the normal virtual filesystem [bind-mounting mechanism](/engine/storage/bind-mounts.md), for example VirtioFS or gRPC-FUSE.
 @y
-After creating a file share instance, any container using a bind mount that points to a location on the host filesystem matching the specified synchronized file share location, or a subdirectory within it,  utilizes the Synchronized File Shares feature. Bind mounts that don't satisfy this condition are passed to the normal virtual filesystem [bind-mounting mechanism](../storage/bind-mounts.md), for example VirtioFS or gRPC-FUSE.
+After creating a file share instance, any container using a bind mount that points to a location on the host filesystem matching the specified synchronized file share location, or a subdirectory within it,  utilizes the Synchronized File Shares feature. Bind mounts that don't satisfy this condition are passed to the normal virtual filesystem [bind-mounting mechanism](engine/storage/bind-mounts.md), for example VirtioFS or gRPC-FUSE.
 @z
 
 @x

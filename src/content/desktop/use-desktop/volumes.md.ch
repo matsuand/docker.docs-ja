@@ -15,12 +15,12 @@ title: Explore Volumes
 
 @x
 The **Volumes** view in Docker Dashboard lets you create, delete, and perform
-other actions on your [volumes](../../storage/volumes.md). You can also see
+other actions on your [volumes](/engine/storage/volumes.md). You can also see
 which volumes are being used as well as inspect the files and folders in your
 volumes.
 @y
 The **Volumes** view in Docker Dashboard lets you create, delete, and perform
-other actions on your [volumes](../../storage/volumes.md). You can also see
+other actions on your [volumes](engine/storage/volumes.md). You can also see
 which volumes are being used as well as inspect the files and folders in your
 volumes.
 @z
@@ -89,11 +89,11 @@ doing the following:
 
 @x
 You use the following steps to create an empty volume. Alternatively, if you
-[start a container with a volume](../../storage/volumes.md#start-a-container-with-a-volume)
+[start a container with a volume](/engine/storage/volumes.md#start-a-container-with-a-volume)
 that doesn't yet exist, Docker creates the volume for you.
 @y
 You use the following steps to create an empty volume. Alternatively, if you
-[start a container with a volume](../../storage/volumes.md#start-a-container-with-a-volume)
+[start a container with a volume](engine/storage/volumes.md#start-a-container-with-a-volume)
 that doesn't yet exist, Docker creates the volume for you.
 @z
 
@@ -114,9 +114,9 @@ To create a volume:
 @z
 
 @x
-To use the volume with a container, see [Use volumes](../../storage/volumes.md#start-a-container-with-a-volume).
+To use the volume with a container, see [Use volumes](/engine/storage/volumes.md#start-a-container-with-a-volume).
 @y
-To use the volume with a container, see [Use volumes](../../storage/volumes.md#start-a-container-with-a-volume).
+To use the volume with a container, see [Use volumes](engine/storage/volumes.md#start-a-container-with-a-volume).
 @z
 
 @x
@@ -386,7 +386,7 @@ You can either [export a volume now](#export-a-volume-now) or [schedule a recurr
    - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
      repositories can be publicly accessible which means your data can be
      publicly accessible. For more details, see
-     [Change a repository from public to private](__SUBDIR__/docker-hub/repos/#change-a-repository-from-public-to-private).
+     [Change a repository from public to private](docker-hub/repos/#change-a-repository-from-public-to-private).
 @z
 
 @x
@@ -508,7 +508,7 @@ You can either [export a volume now](#export-a-volume-now) or [schedule a recurr
    - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
      repositories can be publicly accessible which means your data can be
      publicly accessible. For more details, see
-     [Change a repository from public to private](__SUBDIR__/docker-hub/repos/#change-a-repository-from-public-to-private).
+     [Change a repository from public to private](docker-hub/repos/#change-a-repository-from-public-to-private).
 @z
 
 @x
@@ -627,8 +627,8 @@ To import a volume:
 
 @x
 - [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
-- [Use volumes](../../storage/volumes.md)
+- [Use volumes](/engine/storage/volumes.md)
 @y
 - [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
-- [Use volumes](../../storage/volumes.md)
+- [Use volumes](engine/storage/volumes.md)
 @z

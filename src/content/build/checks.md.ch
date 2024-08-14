@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Checking your build configuration
 description: Learn how to use build checks to validate your build configuration.
 keywords: build, buildx, buildkit, checks, validate, configuration, lint
----
 @y
----
 title: Checking your build configuration
 description: Learn how to use build checks to validate your build configuration.
 keywords: build, buildx, buildkit, checks, validate, configuration, lint
----
 @z
 
 @x
@@ -86,13 +84,29 @@ Build checks are useful for:
 @z
 
 @x
-Build checks are supported in Buildx version 0.15.0 and later. Invoking a build
-runs the checks by default, and displays any violations in the build output.
-For example, the following command both builds the image and runs the checks:
+Build checks are supported in:
 @y
-Build checks are supported in Buildx version 0.15.0 and later. Invoking a build
-runs the checks by default, and displays any violations in the build output.
-For example, the following command both builds the image and runs the checks:
+Build checks are supported in:
+@z
+
+@x
+- Buildx version 0.15.0 and later
+- [docker/build-push-action](https://github.com/docker/build-push-action) version 6.6.0 and later
+- [docker/bake-action](https://github.com/docker/bake-action) version 5.6.0 and later
+@y
+- Buildx version 0.15.0 and later
+- [docker/build-push-action](https://github.com/docker/build-push-action) version 6.6.0 and later
+- [docker/bake-action](https://github.com/docker/bake-action) version 5.6.0 and later
+@z
+
+@x
+Invoking a build runs the checks by default, and displays any violations in the
+build output. For example, the following command both builds the image and runs
+the checks:
+@y
+Invoking a build runs the checks by default, and displays any violations in the
+build output. For example, the following command both builds the image and runs
+the checks:
 @z
 
 @x
@@ -127,11 +141,52 @@ In this example, the build ran successfully, but a
 was reported, because `CMD` instructions should use JSON array syntax.
 @y
 In this example, the build ran successfully, but a
-[JSONArgsRecommended](__SUBDIR__/reference/build-checks/json-args-recommended/) warning
 was reported, because `CMD` instructions should use JSON array syntax.
 @z
 
 @x
+With the GitHub Actions, the checks display in the diff view of pull requests.
+@y
+With the GitHub Actions, the checks display in the diff view of pull requests.
+@z
+
+@x
+```yaml
+name: Build and push Docker images
+on:
+  push:
+@y
+```yaml
+name: Build and push Docker images
+on:
+  push:
+@z
+
+@x
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and push
+        uses: docker/build-push-action@v6.6.0
+```
+@y
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and push
+        uses: docker/build-push-action@v6.6.0
+```
+@z
+
+@x
+![GitHub Actions build check annotations](./images/gha-check-annotations.png)
+@y
+![GitHub Actions build check annotations](./images/gha-check-annotations.png)
+@z
+
+@x
 ### More verbose output
 @y
 ### More verbose output
@@ -151,12 +206,12 @@ about the checks, you can use the `--debug` flag. For example:
 
 @x
 ```console
-$ docker build --debug .
+$ docker --debug build .
 [+] Building 3.5s (11/11) FINISHED
 ...
 @y
 ```console
-$ docker build --debug .
+$ docker --debug build .
 [+] Building 3.5s (11/11) FINISHED
 ...
 @z

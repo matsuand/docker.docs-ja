@@ -8,7 +8,7 @@ title: Use containers for Ruby on Rails development
 keywords: ruby, local, development
 description: Learn how to develop your Ruby on Rails application locally.
 @y
-title: Use containers for Ruby on Rails development
+title: Ruby on Rails 開発のためのコンテナー利用
 keywords: ruby, local, development
 description: Learn how to develop your Ruby on Rails application locally.
 @z
@@ -16,19 +16,19 @@ description: Learn how to develop your Ruby on Rails application locally.
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 Complete [Containerize a Ruby on Rails application](containerize.md).
 @y
-Complete [Containerize a Ruby on Rails application](containerize.md).
+[Ruby on Rails アプリケーションのコンテナー化](containerize.md) を完了していること。
 @z
 
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x

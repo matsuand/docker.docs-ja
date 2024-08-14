@@ -57,10 +57,10 @@ long: |-
 
 @x
     For more information about selecting and configuring logging drivers, refer to
-    [Configure logging drivers](/config/containers/logging/configure/).
+    [Configure logging drivers](/engine/logging/configure/).
 @y
     For more information about selecting and configuring logging drivers, refer to
-    [Configure logging drivers](__SUBDIR__/config/containers/logging/configure/).
+    [Configure logging drivers](__SUBDIR__/engine/logging/configure/).
 @z
 
 @x
@@ -114,123 +114,6 @@ long: |-
     seconds (aka Unix epoch or Unix time), and the optional .nanoseconds field is a
     fraction of a second no more than nine digits long. You can combine the
     `--since` option with either or both of the `--follow` or `--tail` options.
-usage: docker service logs [OPTIONS] SERVICE|TASK
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: details
-      value_type: bool
-      default_value: "false"
-      description: Show extra details provided to logs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: follow
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Follow log output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-resolve
-      value_type: bool
-      default_value: "false"
-      description: Do not map IDs to Names in output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-task-ids
-      value_type: bool
-      default_value: "false"
-      description: Do not include task IDs in output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Do not truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: raw
-      value_type: bool
-      default_value: "false"
-      description: Do not neatly format logs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: since
-      value_type: string
-      description: |
-        Show logs since timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tail
-      shorthand: "n"
-      value_type: string
-      default_value: all
-      description: Number of lines to show from the end of the logs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timestamps
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Show timestamps
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.29"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
     The `--since` option shows only the service logs generated after
     a given date. You can specify the date as an RFC 3339 date, a UNIX
@@ -244,121 +127,78 @@ swarm: true
     seconds (aka Unix epoch or Unix time), and the optional .nanoseconds field is a
     fraction of a second no more than nine digits long. You can combine the
     `--since` option with either or both of the `--follow` or `--tail` options.
+@z
+
+@x
 usage: docker service logs [OPTIONS] SERVICE|TASK
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: details
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker service logs [OPTIONS] SERVICE|TASK
+@z
+
+% options:
+
+@x details
       description: Show extra details provided to logs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: follow
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@y
+      description: Show extra details provided to logs
+@z
+
+@x follow
       description: Follow log output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-resolve
-      value_type: bool
-      default_value: "false"
+@y
+      description: Follow log output
+@z
+
+@x no-resolve
       description: Do not map IDs to Names in output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-task-ids
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not map IDs to Names in output
+@z
+
+@x no-task-ids
       description: Do not include task IDs in output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not include task IDs in output
+@z
+
+@x no-trunc
       description: Do not truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: raw
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not truncate output
+@z
+
+@x raw
       description: Do not neatly format logs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.30"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: since
-      value_type: string
+@y
+      description: Do not neatly format logs
+@z
+
+@x since
       description: |
         Show logs since timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tail
-      shorthand: "n"
-      value_type: string
-      default_value: all
-      description: Number of lines to show from the end of the logs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timestamps
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Show timestamps
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.29"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
+@y
+      description: |
+        Show logs since timestamp (e.g. `2013-01-02T13:23:37Z`) or relative (e.g. `42m` for 42 minutes)
 @z
+
+@x tail
+      description: Number of lines to show from the end of the logs
+@y
+      description: Number of lines to show from the end of the logs
+@z
+
+@x timestamps
+      description: Show timestamps
+@y
+      description: Show timestamps
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+% snip directives...

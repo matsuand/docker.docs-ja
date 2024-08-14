@@ -1,34 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Understand how networking works on Docker Desktop and see the known limitations
 keywords: networking, docker desktop, proxy, vpn, Linux, Mac, Windows
 title: Explore networking features on Docker Desktop
-aliases:
-- /desktop/linux/networking/
-- /docker-for-mac/networking/
-- /mackit/networking/
-- /desktop/mac/networking/
-- /docker-for-win/networking/
-- /docker-for-windows/networking/
-- /desktop/windows/networking/
----
 @y
----
 description: Understand how networking works on Docker Desktop and see the known limitations
 keywords: networking, docker desktop, proxy, vpn, Linux, Mac, Windows
 title: Explore networking features on Docker Desktop
-aliases:
-- /desktop/linux/networking/
-- /docker-for-mac/networking/
-- /mackit/networking/
-- /desktop/mac/networking/
-- /docker-for-win/networking/
-- /docker-for-windows/networking/
-- /desktop/windows/networking/
----
 @z
 
 @x
@@ -484,10 +466,10 @@ $ docker run -d -P --name webserver nginx
 @z
 
 @x
-Alternatively, you can also use [host networking](../network/drivers/host.md#docker-desktop)
+Alternatively, you can also use [host networking](/engine/network/drivers/host.md#docker-desktop)
 to give the container direct access to the network stack of the host.
 @y
-Alternatively, you can also use [host networking](../network/drivers/host.md#docker-desktop)
+Alternatively, you can also use [host networking](engine/network/drivers/host.md#docker-desktop)
 to give the container direct access to the network stack of the host.
 @z
 

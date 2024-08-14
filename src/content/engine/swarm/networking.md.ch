@@ -1,20 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: Use swarm mode overlay networking features
 keywords: swarm, networking, ingress, overlay, service discovery
 title: Manage swarm service networks
-toc_max: 3
----
 @y
----
 description: Use swarm mode overlay networking features
 keywords: swarm, networking, ingress, overlay, service discovery
 title: Manage swarm service networks
-toc_max: 3
----
 @z
 
 @x
@@ -132,12 +128,12 @@ The following three network concepts are important to swarm services:
 @x
 > **Tip**
 >
-> See also [Networking overview](../../network/index.md) for more details about Swarm networking in general.
+> See also [Networking overview](/engine/network/_index.md) for more details about Swarm networking in general.
 { .tip }
 @y
 > **Tip**
 >
-> See also [Networking overview](../../network/index.md) for more details about Swarm networking in general.
+> See also [Networking overview](engine/network/_index.md) for more details about Swarm networking in general.
 { .tip }
 @z
 
@@ -594,11 +590,11 @@ endpoint mode with an external load balancer, or use multiple smaller overlay ne
 @x
 Management and control plane data related to a swarm is always encrypted.
 For more details about the encryption mechanisms, see the
-[Docker swarm mode overlay network security model](../../network/drivers/overlay.md).
+[Docker swarm mode overlay network security model](/engine/network/drivers/overlay.md).
 @y
 Management and control plane data related to a swarm is always encrypted.
 For more details about the encryption mechanisms, see the
-[Docker swarm mode overlay network security model](../../network/drivers/overlay.md).
+[Docker swarm mode overlay network security model](engine/network/drivers/overlay.md).
 @z
 
 @x
@@ -1147,12 +1143,12 @@ preferred because it is somewhat self-documenting.
 * [Deploy services to a swarm](services.md)
 * [Swarm administration guide](admin_guide.md)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
-* [Networking overview](../../network/index.md)
+* [Networking overview](/engine/network/_index.md)
 * [Docker CLI reference](../../reference/cli/docker/)
 @y
 * [Deploy services to a swarm](services.md)
 * [Swarm administration guide](admin_guide.md)
 * [Swarm mode tutorial](swarm-tutorial/index.md)
-* [Networking overview](../../network/index.md)
+* [Networking overview](engine/network/_index.md)
 * [Docker CLI reference](../../reference/cli/docker/)
 @z

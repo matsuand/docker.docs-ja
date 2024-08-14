@@ -48,10 +48,10 @@ Docker Scout provides remediation advice for the following policies:
 @z
 
 @x
-- [Outdated base images](#outdated-base-image-remediation)
+- [No outdated base images](#no-outdated-base-image-remediation)
 - [Supply chain attestations](#supply-chain-attestations-remediation)
 @y
-- [Outdated base images](#outdated-base-image-remediation)
+- [No outdated base images](#no-outdated-base-image-remediation)
 - [Supply chain attestations](#supply-chain-attestations-remediation)
 @z
 
@@ -160,18 +160,18 @@ available recommendations.
 @z
 
 @x
-## Outdated base image remediation
+## No outdated base image remediation
 @y
-## Outdated base image remediation
+## No outdated base image remediation
 @z
 
 @x
-The **Outdated base images** policy checks whether the base image you use is
+The **No outdated base images** policy checks whether the base image you use is
 up-to-date. The recommended actions displayed in the remediation side panel
 depend on how much information Docker Scout has about your image. The more
 information that's available, the better the recommendations.
 @y
-The **Outdated base images** policy checks whether the base image you use is
+The **No outdated base images** policy checks whether the base image you use is
 up-to-date. The recommended actions displayed in the remediation side panel
 depend on how much information Docker Scout has about your image. The more
 information that's available, the better the recommendations.

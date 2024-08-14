@@ -101,6 +101,18 @@ description: Explore the Docker guides
   icon: workspaces
 @z
 
+@x
+- title: Docker workshop
+  description: Get guided through a 45-minute workshop to learn about Docker.
+  link: /guides/workshop/
+  icon: desk
+@y
+- title: Docker ワークショップ
+  description: Docker 学習のための 45 分間ワークショップを学びます。
+  link: __SUBDIR__/guides/workshop/
+  icon: desk
+@z
+
 % resources:
 
 @x

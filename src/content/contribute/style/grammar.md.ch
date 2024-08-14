@@ -188,6 +188,26 @@ Following our conversational approach, it's acceptable to use contractions in al
 @z
 
 @x
+## Dangling modifiers
+@y
+## Dangling modifiers
+@z
+
+@x
+Avoid [dangling modifiers](https://en.wikipedia.org/wiki/Dangling_modifier), where the subject of a clause's verb is unclear:
+@y
+Avoid [dangling modifiers](https://en.wikipedia.org/wiki/Dangling_modifier), where the subject of a clause's verb is unclear:
+@z
+
+@x
+- ❌ After enabling auto-log-out, your users are logged out.
+- ✅ When you enable auto-log-out, your users are logged out.
+@y
+- ❌ After enabling auto-log-out, your users are logged out.
+- ✅ When you enable auto-log-out, your users are logged out.
+@z
+
+@x
 ## Dates
 @y
 ## Dates
@@ -439,16 +459,4 @@ Avoid the use of exclamation marks.
 Don't use parentheses in technical documentation. They can reduce the readability of a sentence.
 @y
 Don't use parentheses in technical documentation. They can reduce the readability of a sentence.
-@z
-
-@x
-## Third party documentation
-@y
-## Third party documentation
-@z
-
-@x
-If you are documenting a task that requires the use of a third-party product, link out to the third-party's documentation. Don't copy the content because it might violate copyright. It can also result in an unnecessary maintenance burden of having to keep the docs up-to-date when the third-party changes or updates their product. It is best practice to link to the single source of truth.
-@y
-If you are documenting a task that requires the use of a third-party product, link out to the third-party's documentation. Don't copy the content because it might violate copyright. It can also result in an unnecessary maintenance burden of having to keep the docs up-to-date when the third-party changes or updates their product. It is best practice to link to the single source of truth.
 @z

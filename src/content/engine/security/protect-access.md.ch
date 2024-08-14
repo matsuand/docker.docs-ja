@@ -1,28 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
----
 description: How to setup and run Docker with SSH or HTTPS
 keywords: docker, docs, article, example, ssh, https, daemon, tls, ca,  certificate
 title: Protect the Docker daemon socket
-aliases:
-- /articles/https/
-- /engine/articles/https/
-- /engine/security/https/
----
 @y
----
 description: How to setup and run Docker with SSH or HTTPS
 keywords: docker, docs, article, example, ssh, https, daemon, tls, ca,  certificate
 title: Protect the Docker daemon socket
-aliases:
-- /articles/https/
-- /engine/articles/https/
-- /engine/security/https/
----
 @z
 
 @x
@@ -54,11 +42,11 @@ optionally communicate using SSH or a TLS (HTTPS) socket.
 @z
 
 @x
-The following example creates a [`docker context`](../context/working-with-contexts.md)
+The following example creates a [`docker context`](/engine/manage-resources/contexts.md)
 to connect with a remote `dockerd` daemon on `host1.example.com` using SSH, and
 as the `docker-user` user on the remote machine:
 @y
-The following example creates a [`docker context`](../context/working-with-contexts.md)
+The following example creates a [`docker context`](engine/manage-resources/contexts.md)
 to connect with a remote `dockerd` daemon on `host1.example.com` using SSH, and
 as the `docker-user` user on the remote machine:
 @z

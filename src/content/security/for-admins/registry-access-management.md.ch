@@ -60,15 +60,25 @@ Example registries administrators can allow include:
 @z
 
 @x
-## Prerequisites 
+## Prerequisites
 @y
-## Prerequisites 
+## Prerequisites
 @z
 
 @x
-You need to [configure a registry.json to enforce sign-in](enforce-sign-in/_index.md). For Registry Access Management to take effect, Docker Desktop users must authenticate to your organization.
+You need to [enforce sign-in](enforce-sign-in/_index.md). For Registry Access
+Management to take effect, Docker Desktop users must authenticate to your
+organization. Enforcing sign-in ensures that your Docker Desktop developers
+always authenticate to your organization, even though they can authenticate
+without it and the feature will take effect. Enforcing sign-in guarantees the
+feature always takes effect.
 @y
-You need to [configure a registry.json to enforce sign-in](enforce-sign-in/_index.md). For Registry Access Management to take effect, Docker Desktop users must authenticate to your organization.
+You need to [enforce sign-in](enforce-sign-in/_index.md). For Registry Access
+Management to take effect, Docker Desktop users must authenticate to your
+organization. Enforcing sign-in ensures that your Docker Desktop developers
+always authenticate to your organization, even though they can authenticate
+without it and the feature will take effect. Enforcing sign-in guarantees the
+feature always takes effect.
 @z
 
 @x

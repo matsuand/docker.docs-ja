@@ -65,12 +65,12 @@ keywords: docker, docs, manuals, products, user guides, how-to
 - title: Docker Extensions
   description: Customize your Docker Desktop workflow.
   icon: extension
-  link: /desktop/extensions/
+  link: /extensions/
 @y
 - title: Docker Extensions
   description: Docker Desktop ワークフローをカスタマイズします。
   icon: extension
-  link: __SUBDIR__/desktop/extensions/
+  link: __SUBDIR__/extensions/
 @z
 
 % services:

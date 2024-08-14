@@ -2,29 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Containerize a Ruby on Rails application
 keywords: ruby, flask, containerize, initialize
 description: Learn how to containerize a Ruby on Rails application.
-aliases:
-  - /language/ruby/build-images/
-  - /language/ruby/run-containers/
----
 @y
----
 title: Containerize a Ruby on Rails application
 keywords: ruby, flask, containerize, initialize
 description: Learn how to containerize a Ruby on Rails application.
-aliases:
-  - /language/ruby/build-images/
-  - /language/ruby/run-containers/
----
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
@@ -38,7 +28,7 @@ aliases:
 @x
 ## Overview
 @y
-## Overview
+## 概要 {#overview}
 @z
 
 @x
@@ -50,35 +40,29 @@ This section walks you through containerizing and running a Ruby on Rails applic
 @x
 ## Get the sample application
 @y
-## Get the sample application
+## サンプルアプリケーションの入手 {#get-the-sample-application}
 @z
 
 @x
 The sample application uses the popular [Ruby on Rails](https://rubyonrails.org/) framework.
 @y
-The sample application uses the popular [Ruby on Rails](https://rubyonrails.org/) framework.
+サンプルアプリケーションでは、人気の [Ruby on Rails](https://rubyonrails.org/) フレームワークを利用しています。
 @z
 
 @x
 Clone the sample application to use with this guide. Open a terminal, change directory to a directory that you want to work in, and run the following command to clone the repository:
 @y
-Clone the sample application to use with this guide. Open a terminal, change directory to a directory that you want to work in, and run the following command to clone the repository:
+本ガイドにおいて利用するサンプルアプリケーションをクローンします。
+端末画面を開いて、作業を行うディレクトリに移動します。
+そして以下のコマンドを実行してリポジトリをクローンします。
 @z
 
-@x
-```console
-$ git clone https://github.com/falconcr/docker-ruby-on-rails.git
-```
-@y
-```console
-$ git clone https://github.com/falconcr/docker-ruby-on-rails.git
-```
-@z
+% snip command...
 
 @x
 ## Initialize Docker assets
 @y
-## Initialize Docker assets
+## Docker アセットの初期化 {#initialize-docker-assets}
 @z
 
 @x
@@ -86,9 +70,10 @@ Now that you have an application, you can create the necessary Docker assets to
 containerize your application. You can use Docker Desktop's built-in Docker Init
 feature to help streamline the process, or you can manually create the assets.
 @y
-Now that you have an application, you can create the necessary Docker assets to
-containerize your application. You can use Docker Desktop's built-in Docker Init
-feature to help streamline the process, or you can manually create the assets.
+アプリケーションの入手はできました。
+次はアプリケーションのコンテナー化に必要となる Docker アセットを生成します。
+Docker Desktop にはビルトインの Docker Init 機能があるので、効率的に作業を進められます。
+あるいは手動でアセットを生成することもできます。
 @z
 
 @x
@@ -109,110 +94,50 @@ Create a file named `Dockerfile` with the following contents.
 Create a file named `Dockerfile` with the following contents.
 @z
 
-@x
-```dockerfile {collapse=true,title=Dockerfile}
-# syntax=docker/dockerfile:1
-@y
-```dockerfile {collapse=true,title=Dockerfile}
-# syntax=docker/dockerfile:1
-@z
-
-@x
+@x コード内コメント
 # Use the official Ruby image with version 3.2.0
-FROM ruby:3.2.0
 @y
-# Use the official Ruby image with version 3.2.0
-FROM ruby:3.2.0
+# Ruby の公式イメージ、バージョン 3.2.0 を利用
 @z
-
 @x
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y \
-  nodejs \
-  postgresql-client \
-  libssl-dev \
-  libreadline-dev \
-  zlib1g-dev \
-  build-essential \
-  curl
 @y
-# Install dependencies
-RUN apt-get update -qq && apt-get install -y \
-  nodejs \
-  postgresql-client \
-  libssl-dev \
-  libreadline-dev \
-  zlib1g-dev \
-  build-essential \
-  curl
+# 依存パッケージのインストール
 @z
-
 @x
 # Install rbenv
-RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv && \
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc && \
-  echo 'eval "$(rbenv init -)"' >> ~/.bashrc && \
-  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build && \
-  echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 @y
-# Install rbenv
-RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv && \
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc && \
-  echo 'eval "$(rbenv init -)"' >> ~/.bashrc && \
-  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build && \
-  echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+# rbenv のインストール
 @z
-
 @x
 # Install the specified Ruby version using rbenv
-ENV PATH="/root/.rbenv/bin:/root/.rbenv/shims:$PATH"
-RUN rbenv install 3.2.0 && rbenv global 3.2.0
 @y
-# Install the specified Ruby version using rbenv
-ENV PATH="/root/.rbenv/bin:/root/.rbenv/shims:$PATH"
-RUN rbenv install 3.2.0 && rbenv global 3.2.0
+# rbenv を用いた Ruby の指定バージョンのインストール
 @z
-
 @x
 # Set the working directory
-WORKDIR /myapp
 @y
-# Set the working directory
-WORKDIR /myapp
+# ワーキングディレクトリの設定
 @z
-
 @x
 # Copy the Gemfile and Gemfile.lock
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
 @y
-# Copy the Gemfile and Gemfile.lock
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+# Gemfile と Gemfile.lock のコピー
 @z
-
 @x
 # Install Gems dependencies
-RUN gem install bundler && bundle install
 @y
-# Install Gems dependencies
-RUN gem install bundler && bundle install
+# 依存 Gem のインストール
 @z
-
 @x
 # Copy the application code
-COPY . /myapp
 @y
-# Copy the application code
-COPY . /myapp
+# アプリケーションコードのコピー
 @z
-
 @x
 # Precompile assets (optional, if using Rails with assets)
-RUN bundle exec rake assets:precompile
 @y
 # Precompile assets (optional, if using Rails with assets)
-RUN bundle exec rake assets:precompile
 @z
 
 @x

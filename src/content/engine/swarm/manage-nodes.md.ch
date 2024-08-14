@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Manage existing nodes in a swarm
@@ -328,13 +328,13 @@ node-1
 @z
 
 @x
-The labels you set for nodes using docker node update apply only to the node
-entity within the swarm. Do not confuse them with the docker daemon labels for
-[dockerd](../../config/labels-custom-metadata.md).
+The labels you set for nodes using `docker node update` apply only to the node
+entity within the swarm. Do not confuse them with the Docker daemon labels for
+[dockerd](/engine/manage-resources/labels.md).
 @y
-The labels you set for nodes using docker node update apply only to the node
-entity within the swarm. Do not confuse them with the docker daemon labels for
-[dockerd](../../config/labels-custom-metadata.md).
+The labels you set for nodes using `docker node update` apply only to the node
+entity within the swarm. Do not confuse them with the Docker daemon labels for
+[dockerd](engine/manage-resources/labels.md).
 @z
 
 @x

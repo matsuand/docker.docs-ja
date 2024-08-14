@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 command: docker image pull
@@ -315,10 +316,10 @@ examples: |-
 
 @x
     For more information about images, layers, and the content-addressable store,
-    refer to [understand images, containers, and storage drivers](/storage/storagedriver/).
+    refer to [understand images, containers, and storage drivers](/engine/storage/drivers/).
 @y
     For more information about images, layers, and the content-addressable store,
-    refer to [understand images, containers, and storage drivers](__SUBDIR__/storage/storagedriver/).
+    refer to [understand images, containers, and storage drivers](__SUBDIR__/engine/storage/drivers/).
 @z
 
 @x
@@ -331,14 +332,14 @@ examples: |-
     So far, you've pulled images by their name (and "tag"). Using names and tags is
     a convenient way to work with images. When using tags, you can `docker pull` an
     image again to make sure you have the most up-to-date version of that image.
-    For example, `docker pull ubuntu:22.04` pulls the latest version of the Ubuntu
-    22.04 image.
+    For example, `docker pull ubuntu:24.04` pulls the latest version of the Ubuntu
+    24.04 image.
 @y
     So far, you've pulled images by their name (and "tag"). Using names and tags is
     a convenient way to work with images. When using tags, you can `docker pull` an
     image again to make sure you have the most up-to-date version of that image.
-    For example, `docker pull ubuntu:22.04` pulls the latest version of the Ubuntu
-    22.04 image.
+    For example, `docker pull ubuntu:24.04` pulls the latest version of the Ubuntu
+    24.04 image.
 @z
 
 @x
@@ -357,35 +358,13 @@ examples: |-
 
 @x
     To know the digest of an image, pull the image first. Let's pull the latest
-    `ubuntu:22.04` image from Docker Hub:
+    `ubuntu:24.04` image from Docker Hub:
 @y
     To know the digest of an image, pull the image first. Let's pull the latest
-    `ubuntu:22.04` image from Docker Hub:
+    `ubuntu:24.04` image from Docker Hub:
 @z
 
-@x
-    ```console
-    $ docker pull ubuntu:22.04
-@y
-    ```console
-    $ docker pull ubuntu:22.04
-@z
-
-@x
-    22.04: Pulling from library/ubuntu
-    125a6e411906: Pull complete
-    Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    Status: Downloaded newer image for ubuntu:22.04
-    docker.io/library/ubuntu:22.04
-    ```
-@y
-    22.04: Pulling from library/ubuntu
-    125a6e411906: Pull complete
-    Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    Status: Downloaded newer image for ubuntu:22.04
-    docker.io/library/ubuntu:22.04
-    ```
-@z
+% snip command...
 
 @x
     Docker prints the digest of the image after the pull has finished. In the example
@@ -395,15 +374,7 @@ examples: |-
     above, the digest of the image is:
 @z
 
-@x
-    ```console
-    sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    ```
-@y
-    ```console
-    sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    ```
-@z
+% snip output...
 
 @x
     Docker also prints the digest of an image when pushing to a registry. This
@@ -421,27 +392,7 @@ examples: |-
     pull the above image by digest, run the following command:
 @z
 
-@x
-    ```console
-    $ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-@y
-    ```console
-    $ docker pull ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-@z
-
-@x
-    docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d: Pulling from library/ubuntu
-    Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    Status: Image is up to date for ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    ```
-@y
-    docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d: Pulling from library/ubuntu
-    Digest: sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    Status: Image is up to date for ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    docker.io/library/ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    ```
-@z
+% snip command...
 
 @x
     Digest can also be used in the `FROM` of a Dockerfile, for example:
@@ -449,17 +400,7 @@ examples: |-
     Digest can also be used in the `FROM` of a Dockerfile, for example:
 @z
 
-@x
-    ```dockerfile
-    FROM ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    LABEL org.opencontainers.image.authors="some maintainer <maintainer@example.com>"
-    ```
-@y
-    ```dockerfile
-    FROM ubuntu@sha256:26c68657ccce2cb0a31b330cb0be2b5e108d467f641c62e13ab40cbec258c68d
-    LABEL org.opencontainers.image.authors="some maintainer <maintainer@example.com>"
-    ```
-@z
+% snip code...
 
 @x
     > **Note**
@@ -503,15 +444,7 @@ examples: |-
     listening on port 5000 (`myregistry.local:5000`):
 @z
 
-@x
-    ```console
-    $ docker image pull myregistry.local:5000/testing/test-image
-    ```
-@y
-    ```console
-    $ docker image pull myregistry.local:5000/testing/test-image
-    ```
-@z
+% snip command...
 
 @x
     Registry credentials are managed by [docker login](/reference/cli/docker/login/).
@@ -551,37 +484,7 @@ examples: |-
     This command pulls all images from the `ubuntu` repository:
 @z
 
-@x
-    ```console
-    $ docker image pull --all-tags ubuntu
-@y
-    ```console
-    $ docker image pull --all-tags ubuntu
-@z
-
-@x
-    Pulling repository ubuntu
-    ad57ef8d78d7: Download complete
-    105182bb5e8b: Download complete
-    511136ea3c5a: Download complete
-    73bd853d2ea5: Download complete
-    ....
-@y
-    Pulling repository ubuntu
-    ad57ef8d78d7: Download complete
-    105182bb5e8b: Download complete
-    511136ea3c5a: Download complete
-    73bd853d2ea5: Download complete
-    ....
-@z
-
-@x
-    Status: Downloaded newer image for ubuntu
-    ```
-@y
-    Status: Downloaded newer image for ubuntu
-    ```
-@z
+% snip command...
 
 @x
     After the pull has completed use the `docker image ls` command (or the `docker images`
@@ -593,31 +496,7 @@ examples: |-
     `ubuntu` images that are present locally:
 @z
 
-@x
-    ```console
-    $ docker image ls --filter reference=ubuntu
-    REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
-    ubuntu       18.04     c6ad7e71ba7d   5 weeks ago    63.2MB
-    ubuntu       bionic    c6ad7e71ba7d   5 weeks ago    63.2MB
-    ubuntu       22.04     5ccefbfc0416   2 months ago   78MB
-    ubuntu       focal     ff0fea8310f3   2 months ago   72.8MB
-    ubuntu       latest    ff0fea8310f3   2 months ago   72.8MB
-    ubuntu       jammy     41ba606c8ab9   3 months ago   79MB
-    ubuntu       20.04     ba6acccedd29   7 months ago   72.8MB
-    ```
-@y
-    ```console
-    $ docker image ls --filter reference=ubuntu
-    REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
-    ubuntu       18.04     c6ad7e71ba7d   5 weeks ago    63.2MB
-    ubuntu       bionic    c6ad7e71ba7d   5 weeks ago    63.2MB
-    ubuntu       22.04     5ccefbfc0416   2 months ago   78MB
-    ubuntu       focal     ff0fea8310f3   2 months ago   72.8MB
-    ubuntu       latest    ff0fea8310f3   2 months ago   72.8MB
-    ubuntu       jammy     41ba606c8ab9   3 months ago   79MB
-    ubuntu       20.04     ba6acccedd29   7 months ago   72.8MB
-    ```
-@z
+% snip command...
 
 @x
     ### Cancel a pull
@@ -633,48 +512,16 @@ examples: |-
     running in a terminal, will terminate the pull operation.
 @z
 
-@x
-    ```console
-    $ docker pull ubuntu
-@y
-    ```console
-    $ docker pull ubuntu
-@z
-
-@x
-    Using default tag: latest
-    latest: Pulling from library/ubuntu
-    a3ed95caeb02: Pulling fs layer
-    236608c7b546: Pulling fs layer
-    ^C
-    ```
-@y
-    Using default tag: latest
-    latest: Pulling from library/ubuntu
-    a3ed95caeb02: Pulling fs layer
-    236608c7b546: Pulling fs layer
-    ^C
-    ```
-@z
+% snip command...
 
 @x
     The Engine terminates a pull operation when the connection between the daemon
     and the client (initiating the pull) is cut or lost for any reason or the
     command is manually terminated.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     The Engine terminates a pull operation when the connection between the daemon
     and the client (initiating the pull) is cut or lost for any reason or the
     command is manually terminated.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

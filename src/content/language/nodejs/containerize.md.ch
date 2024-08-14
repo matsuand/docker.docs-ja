@@ -71,7 +71,6 @@ to clone the repository:
 Now that you have an application, you can create the necessary Docker assets to
 containerize your application. You can use Docker Desktop's built-in Docker Init
 feature to help streamline the process, or you can manually create the assets.
-
 @y
 アプリケーションの入手はできました。
 次はアプリケーションのコンテナー化に必要となる Docker アセットを生成します。
@@ -112,31 +111,34 @@ the same answers for your prompts.
 @x
 If you don't have Docker Desktop installed or prefer creating the assets manually, you can create the following files in your project directory.
 @y
-If you don't have Docker Desktop installed or prefer creating the assets manually, you can create the following files in your project directory.
+Docker Desktop をインストールしていない場合やアセットを手動で生成したい場合は、以下に示すファイルをプロジェクトディレクトリ内に生成します。
 @z
 
 @x
 Create a file named `Dockerfile` with the following contents.
 @y
-Create a file named `Dockerfile` with the following contents.
+`Dockerfile` という名前のファイルを生成して、内容を以下のようにします。
 @z
 
 @x within code
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/go/dockerfile-reference/
 @y
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
+# 本ファイル全体にコメントをつけてわかりやすくしています。
+# もっと情報が必要な場合は https://docs.docker.com/go/dockerfile-reference/
+# にある Dockerfile リファレンスガイドを参照してください。
 @z
 @x
 # Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
 @y
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+# このテンプレートをより良いものにするお手伝いをしていただけますか？
+# フィードバックがあれば以下にお伝えください。: https://forms.gle/ybq9Krt8jtBL3iCk7
 @z
 @x
 # Use production node environment by default.
 @y
-# Use production node environment by default.
+# デフォルトで node の本番環境を利用します。
 @z
 @x
 # Download dependencies as a separate step to take advantage of Docker's caching.
@@ -144,36 +146,36 @@ Create a file named `Dockerfile` with the following contents.
 # Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
 # into this layer.
 @y
-# Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.npm to speed up subsequent builds.
-# Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into
-# into this layer.
+# Docker キャッシュ機能を最大限活用するために依存パッケージを個別のステップで
+# ダウンロードします。キャッシュマウントを /root/.npm にしてこれ以降のビルドを
+# 高速化します。package.json と package-lock.json をバインドマウントすることで
+# これらがこのレイヤーにコピーされないようにしています。
 @z
 @x
 # Run the application as a non-root user.
 @y
-# Run the application as a non-root user.
+# 非rootユーザーとしてアプリケーションを実行します。
 @z
 @x
 # Copy the rest of the source files into the image.
 @y
-# Copy the rest of the source files into the image.
+# 残りのソースファイルをイメージにコピーします。
 @z
 @x
 # Expose the port that the application listens on.
 @y
-# Expose the port that the application listens on.
+# アプリケーションが利用するポートを開放します。
 @z
 @x
 # Run the application.
 @y
-# Run the application.
+# アプリケーションを実行します。
 @z
 
 @x
 Create a file named `compose.yaml` with the following contents.
 @y
-Create a file named `compose.yaml` with the following contents.
+`compose.yaml` という名前のファイルを生成して、内容を以下のようにします。
 @z
 
 @x within code
@@ -215,7 +217,7 @@ Create a file named `compose.yaml` with the following contents.
 @x
 Create a file named `.dockerignore` with the following contents.
 @y
-Create a file named `.dockerignore` with the following contents.
+`.dockerignore` という名前のファイルを生成して、内容を以下のようにします。
 @z
 
 @x within code

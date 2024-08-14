@@ -305,12 +305,12 @@ enabled, and use it to create a volume.
 To disable a plugin, use the `docker plugin disable` command. To completely
 remove it, use the `docker plugin remove` command. For other available
 commands and options, see the
-[command line reference](https://docs.docker.com/engine/reference/commandline/cli/).
+[command line reference](https://docs.docker.com/reference/cli/docker/).
 @y
 To disable a plugin, use the `docker plugin disable` command. To completely
 remove it, use the `docker plugin remove` command. For other available
 commands and options, see the
-[command line reference](https://docs.docker.com/engine/reference/commandline/cli/).
+[command line reference](https://docs.docker.com/reference/cli/docker/).
 @z
 
 @x

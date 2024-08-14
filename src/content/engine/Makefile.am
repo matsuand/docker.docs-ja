@@ -1,13 +1,12 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = api context install release-notes security \
-	swarm tutorials
+SUBDIRS = api cli containers daemon install logging manage-resources \
+	network release-notes security storage swarm tutorials
 
 bases = \
-	_index.md               \
-	alternative-runtimes.md \
-	breaking_changes.md     \
+	_index.md           \
+	breaking_changes.md \
 	faq.md
 
 include $(top_srcdir)/build-aux/common.mk
