@@ -13,19 +13,7 @@ keywords: Docker, docker, docker hub, hub, repositories, docker account
 title: Docker Hub 概要
 @z
 
-@x
-grid:
-- title: Create a Docker ID
-  description: Register and create a new Docker ID.
-  icon: fingerprint
-  link: /docker-id
-@y
-grid:
-- title: Docker ID の生成
-  description: 新規 Docker ID を生成登録します。
-  icon: fingerprint
-  link: __SUBDIR__/docker-id
-@z
+% grid:
 
 @x
 - title: Quickstart
@@ -118,7 +106,7 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [Webhooks](webhooks.md): Trigger actions after a successful push
   to a repository to integrate Docker Hub with other services.
 * [Docker Hub CLI](https://github.com/docker/hub-tool#readme) tool (currently experimental) and an API that allows you to interact with Docker Hub.
-  * Browse through the [Docker Hub API](/docker-hub/api/latest/) documentation to explore the supported endpoints.
+  * Browse through the [Docker Hub API](/reference/api/hub/latest/) documentation to explore the supported endpoints.
 {{< /tab >}}
 @y
 {{< tabs >}}
@@ -127,7 +115,7 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [ビルド](builds/index.md): GitHub や Bitbucket にあるコンテナーイメージをを自動ビルドして Docker Hub にプッシュします。
 * [ウェブフック](webhooks.md): リポジトリへのプッシュが正常終了した際にアクションを起動することで、Docker Hub と他サービスの統合を図ります。
 * [Docker Hub CLI](https://github.com/docker/hub-tool#readme) ツール (現時点は試験的な提供) と API により、Docker Hub との対話処理を実現します。
-  * [Docker Hub API](__SUBDIR__/docker-hub/api/latest/) ドキュメントを一とおり見てみることで、サポートされているエンドポイントを確認します。
+  * [Docker Hub API](__SUBDIR__//reference/api/hub/latest/) ドキュメントを一とおり見てみることで、サポートされているエンドポイントを確認します。
 {{< /tab >}}
 @z
 
@@ -139,8 +127,8 @@ GitHub and Bitbucket and push them to Docker Hub.
 * Set up [SSO](../security/for-admins/single-sign-on/index.md) and [SCIM](../security/for-admins/provisioning/scim.md)
 * Use [Group mapping](group-mapping.md)
 * [Carry out domain audits](domain-audit.md)
-* [Use Image Access Management](image-access-management.md) to control developers' access to certain types of images
-* [Turn on Registry Access Management](../security/for-admins/registry-access-management.md)
+* [Use Image Access Management](/security/for-admins/hardened-desktop/image-access-management.md) to control developers' access to certain types of images
+* [Turn on Registry Access Management](/security/for-admins/hardened-desktop/registry-access-management.md)
 {{< /tab >}}
 {{< /tabs >}}
 @y
@@ -151,8 +139,8 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [SSO](../security/for-admins/single-sign-on/index.md) と [SCIM](../security/for-admins/provisioning/scim.md) のセットアップ
 * [グループマッピング](group-mapping.md) の利用
 * [ドメイン監査の実行](domain-audit.md)
-* [イメージアクセス管理の利用](image-access-management.md) による特定タイプのイメージに対する開発者アクセス制御
-* [レジストリアクセス管理の有効化](../security/for-admins/registry-access-management.md)
+* [イメージアクセス管理の利用](security/for-admins/hardened-desktop/image-access-management.md) による特定タイプのイメージに対する開発者アクセス制御
+* [レジストリアクセス管理の有効化](security/for-admins/hardened-desktop/registry-access-management.md)
 {{< /tab >}}
 {{< /tabs >}}
 @z

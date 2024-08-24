@@ -128,7 +128,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Overview"
         url: "/docker-hub/"
       - text: "Create an account"
-        url: "/docker-id/"
+        url: "/accounts/create-account/"
       - text: "Create a repository"
         url: "/docker-hub/repos/create/"
 @y
@@ -140,7 +140,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "概要"
         url: "docker-hub/"
       - text: "アカウントの生成"
-        url: "docker-id/"
+        url: "__SUBDIR__/accounts/create-account/"
       - text: "リポジトリの生成"
         url: "docker-hub/repos/create/"
 @z

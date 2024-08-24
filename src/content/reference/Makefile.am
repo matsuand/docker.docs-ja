@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = cli
+SUBDIRS = api cli compose-file
 
 bases = \
 	_index.md

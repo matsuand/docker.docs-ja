@@ -56,19 +56,17 @@ download-url-base: https://download.docker.com/linux/sles
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The installation instructions on this page refer to packages for SLES on the
 > **s390x** architecture (IBM Z). Other architectures, including x86_64, aren't
 > supported for SLES.
-{ .warning }
 @y
-> **Note**
+> [!NOTE]
 >
 > The installation instructions on this page refer to packages for SLES on the
 > **s390x** architecture (IBM Z). Other architectures, including x86_64, aren't
 > supported for SLES.
-{ .warning }
 @z
 
 @x

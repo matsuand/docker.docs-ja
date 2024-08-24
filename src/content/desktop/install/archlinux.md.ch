@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -30,21 +31,9 @@ title: Install Docker Desktop on Arch-based distributions
 @z
 
 @x
-This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
+This page contains information on how to install, launch and upgrade Docker Desktop on an Arch-based distribution. Docker has not tested or verified the installation.
 @y
-This topic discusses installation of Docker Desktop from an [Arch package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst) that Docker provides in addition to the supported platforms. Docker has not tested or verified the installation.
-@z
-
-@x
-{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
-@y
-{{< button text="Arch package (experimental)" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
-@z
-
-@x
-_For checksums, see [Release notes](../release-notes.md)_
-@y
-_For checksums, see [Release notes](../release-notes.md)_
+This page contains information on how to install, launch and upgrade Docker Desktop on an Arch-based distribution. Docker has not tested or verified the installation.
 @z
 
 @x
@@ -54,9 +43,9 @@ _For checksums, see [Release notes](../release-notes.md)_
 @z
 
 @x
-To install Docker Desktop successfully, you must meet the [system requirements](linux-install.md#system-requirements).
+To install Docker Desktop successfully, you must meet the [general system requirements](linux-install.md#general-system-requirements).
 @y
-To install Docker Desktop successfully, you must meet the [system requirements](linux-install.md#system-requirements).
+To install Docker Desktop successfully, you must meet the [general system requirements](linux-install.md#general-system-requirements).
 @z
 
 @x
@@ -88,9 +77,9 @@ Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be insta
 @z
 
 @x
-3. Download the Arch package from the [release](../release-notes.md) page.
+3. Download the latest Arch package from the [Release notes](../release-notes.md).
 @y
-3. Download the Arch package from the [release](../release-notes.md) page.
+3. Download the latest Arch package from the [Release notes](../release-notes.md).
 @z
 
 @x
@@ -120,9 +109,21 @@ Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be insta
 @z
 
 @x
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @y
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @z

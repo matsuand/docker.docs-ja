@@ -20,15 +20,13 @@ title: Overview of Dev Environments
 @z
 
 @x
-> **Beta**
->
-> The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
-{ .experimental }
+{{% experimental title="Beta" %}}
+The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
+{{% /experimental %}}
 @y
-> **Beta**
->
-> The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
-{ .experimental }
+{{% experimental title="Beta" %}}
+The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
+{{% /experimental %}}
 @z
 
 @x
@@ -47,6 +45,30 @@ It uses tools built into code editors that allows Docker to access code mounted 
 You can use Dev Environments through the intuitive GUI in Docker Dashboard or straight from your terminal with the new [`docker dev` CLI plugin](dev-cli.md).
 @y
 You can use Dev Environments through the intuitive GUI in Docker Dashboard or straight from your terminal with the new [`docker dev` CLI plugin](dev-cli.md).
+@z
+
+@x
+## Use Dev Environments
+@y
+## Use Dev Environments
+@z
+
+@x
+To use Dev Environments: 
+1. Navigate to the **Features in Development** tab in **Settings**. 
+2. On the **Beta** tab, select **Turn on Dev Environments**. 
+3. Select **Apply & restart**. 
+@y
+To use Dev Environments: 
+1. Navigate to the **Features in Development** tab in **Settings**. 
+2. On the **Beta** tab, select **Turn on Dev Environments**. 
+3. Select **Apply & restart**. 
+@z
+
+@x
+The Dev Environments tab is now visible in Docker Dashboard. 
+@y
+The Dev Environments tab is now visible in Docker Dashboard. 
 @z
 
 @x

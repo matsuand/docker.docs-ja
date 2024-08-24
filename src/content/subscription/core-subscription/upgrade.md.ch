@@ -24,6 +24,12 @@ aliases:
 @z
 
 @x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
+@z
+
+@x
 When you upgrade to a paid subscription, you immediately have access to all the features and entitlements available in your new chosen subscription. For detailed information on features available in each subscription, see [Docker Pricing](https://www.docker.com/pricing).
 @y
 When you upgrade to a paid subscription, you immediately have access to all the features and entitlements available in your new chosen subscription. For detailed information on features available in each subscription, see [Docker Pricing](https://www.docker.com/pricing).
@@ -66,15 +72,13 @@ When you upgrade to a paid subscription, you immediately have access to all the 
 @z
 
 @x
-   > **Tip**
+   > [!TIP]
    >
    > If your current plan is a free plan, select **Buy now**.
-   {.tip}
 @y
-   > **Tip**
+   > [!TIP]
    >
    > If your current plan is a free plan, select **Buy now**.
-   {.tip}
 @z
 
 @x

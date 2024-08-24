@@ -1,9 +1,9 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = dev-environments enterprise faqs hardened-desktop images \
-	install linux mac previous-versions settings troubleshoot  \
-	use-desktop windows wsl
+SUBDIRS = dev-environments enterprise faqs images install linux mac \
+	previous-versions settings troubleshoot use-desktop windows \
+	wsl
 
 bases = \
 	_index.md                    \
@@ -24,4 +24,3 @@ bases = \
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
-

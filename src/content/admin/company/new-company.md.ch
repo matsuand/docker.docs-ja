@@ -62,15 +62,13 @@ To create a new company:
 @z
 
 @x
-    > **Tip**
+    > [!TIP]
     >
     > The name for your company can't be the same as an existing user, organization, or company namespace.
-    { .tip }
 @y
-    > **Tip**
+    > [!TIP]
     >
     > The name for your company can't be the same as an existing user, organization, or company namespace.
-    { .tip }
 @z
 
 @x
@@ -122,15 +120,13 @@ To create a new company:
 @z
 
 @x
-    > **Tip**
+    > [!TIP]
     >
     > The name for your company can't be the same as an existing user, organization, or company namespace.
-    { .tip }
 @y
-    > **Tip**
+    > [!TIP]
     >
     > The name for your company can't be the same as an existing user, organization, or company namespace.
-    { .tip }
 @z
 
 @x

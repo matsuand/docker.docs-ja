@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Learn how to use the Docker Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
@@ -68,11 +70,11 @@ In addition, the Docker Dashboard allows you to:
 @z
 
 @x
-  For a more detailed guide about getting started, see [Get started](../../guides/getting-started/_index.md).
+  For a more detailed guide about getting started, see [Get started](/get-started/introduction/_index.md).
 - Get to the [Docker Scout](../../scout/_index.md) dashboard.
 - Check the status of Docker services.
 @y
-  For a more detailed guide about getting started, see [Get started](../../guides/getting-started/_index.md).
+  For a more detailed guide about getting started, see [Get started](get-started/introduction/_index.md).
 - Get to the [Docker Scout](../../scout/_index.md) dashboard.
 - Check the status of Docker services.
 @z

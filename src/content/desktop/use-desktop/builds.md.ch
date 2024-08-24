@@ -110,15 +110,13 @@ Docker Desktop settings.
 @z
 
 @x
-> **Beta feature**
->
-> Import builds is currently in [Beta](../../release-lifecycle.md#Beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+Import builds is currently in [Beta](../../release-lifecycle.md#Beta).
+{{% /experimental %}}
 @y
-> **Beta feature**
->
-> Import builds is currently in [Beta](../../release-lifecycle.md#Beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+Import builds is currently in [Beta](../../release-lifecycle.md#Beta).
+{{% /experimental %}}
 @z
 
 @x
@@ -177,11 +175,11 @@ platform:
 
 @x
 The **Source details** section shows information about the frontend
-[frontend](../../build/dockerfile/frontend.md) and, if available,
+[frontend](../../build/buildkit/frontend.md) and, if available,
 the source code repository used for the build.
 @y
 The **Source details** section shows information about the frontend
-[frontend](../../build/dockerfile/frontend.md) and, if available,
+[frontend](../../build/buildkit/frontend.md) and, if available,
 the source code repository used for the build.
 @z
 
@@ -235,7 +233,7 @@ operations are defined as follows:
 | HTTP                 | Remote artifact downloads using `ADD`.                                                                                                                                          |
 | Git                  | Same as **HTTP** but for Git URLs.                                                                                                                                              |
 | Result exports       | Time spent exporting the build results.                                                                                                                                         |
-| SBOM                 | Time spent generating the [SBOM attestation](../../build/attestations/sbom.md).                                                                                                 |
+| SBOM                 | Time spent generating the [SBOM attestation](../../build/metadata/attestations/sbom.md).                                                                                                 |
 | Idle                 | Idle time for build workers, which can happen if you have configured a [max parallelism limit](../../build/buildkit/configure.md#max-parallelism).                              |
 @y
 | Build operation      | Description                                                                                                                                                                     |
@@ -247,7 +245,7 @@ operations are defined as follows:
 | HTTP                 | Remote artifact downloads using `ADD`.                                                                                                                                          |
 | Git                  | Same as **HTTP** but for Git URLs.                                                                                                                                              |
 | Result exports       | Time spent exporting the build results.                                                                                                                                         |
-| SBOM                 | Time spent generating the [SBOM attestation](../../build/attestations/sbom.md).                                                                                                 |
+| SBOM                 | Time spent generating the [SBOM attestation](../../build/metadata/attestations/sbom.md).                                                                                                 |
 | Idle                 | Idle time for build workers, which can happen if you have configured a [max parallelism limit](../../build/buildkit/configure.md#max-parallelism).                              |
 @z
 
@@ -319,12 +317,12 @@ including image manifest details, attestations, and build traces.
 Attestations are metadata records attached to a container image.
 The metadata describes something about the image,
 for example how it was built or what packages it contains.
-For more information about attestations, see [Build attestations](../../build/attestations/_index.md).
+For more information about attestations, see [Build attestations](../../build/metadata/attestations/_index.md).
 @y
 Attestations are metadata records attached to a container image.
 The metadata describes something about the image,
 for example how it was built or what packages it contains.
-For more information about attestations, see [Build attestations](../../build/attestations/_index.md).
+For more information about attestations, see [Build attestations](../../build/metadata/attestations/_index.md).
 @z
 
 @x
@@ -425,11 +423,11 @@ Now you can analyze the build trace using the Jaeger UI:
 
 @x
 When inspecting a successful completed build or an ongoing active build,
-the **Source** tab shows the [frontend](../../build/dockerfile/frontend.md)
+the **Source** tab shows the [frontend](../../build/buildkit/frontend.md)
 used to create the build.
 @y
 When inspecting a successful completed build or an ongoing active build,
-the **Source** tab shows the [frontend](../../build/dockerfile/frontend.md)
+the **Source** tab shows the [frontend](../../build/buildkit/frontend.md)
 used to create the build.
 @z
 

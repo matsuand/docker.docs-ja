@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Extensions
@@ -51,7 +51,7 @@ Docker Extensions is switched on by default. To change your settings:
 >   - `~/Library/Group Containers/group.com.docker/settings.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](/desktop/hardened-desktop/index.md)
+> This can also be done with [Hardened Docker Desktop](/security/for-admins/hardened-desktop/index.md)
 @y
 >**Note**
 >
@@ -60,7 +60,7 @@ Docker Extensions is switched on by default. To change your settings:
 >   - `~/Library/Group Containers/group.com.docker/settings.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](desktop/hardened-desktop/index.md)
+> This can also be done with [Hardened Docker Desktop](security/for-admins/hardened-desktop/index.md)
 @z
 
 @x
@@ -114,13 +114,13 @@ update your settings:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Enabling extensions doesn't use computer resources (CPU / Memory) by itself.
 >
 > Specific extensions might use computer resources, depending on the features and implementation of each extension, but there is no reserved resources or usage cost associated with enabling extensions.
 @y
-> **Note**
+> [!NOTE]
 >
 > Enabling extensions doesn't use computer resources (CPU / Memory) by itself.
 >

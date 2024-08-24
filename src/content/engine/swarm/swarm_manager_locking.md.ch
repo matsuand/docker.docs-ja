@@ -56,12 +56,12 @@ rotate this key encryption key at any time.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You don't need to unlock the swarm when a new node joins the swarm,
 > because the key is propagated to it over mutual TLS.
 @y
-> **Note**
+> [!NOTE]
 >
 > You don't need to unlock the swarm when a new node joins the swarm,
 > because the key is propagated to it over mutual TLS.
@@ -406,17 +406,15 @@ will not be able to restart the manager.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > When you rotate the unlock key, keep a record of the old key
 > around for a few minutes, so that if a manager goes down before it gets the new
 > key, it may still be unlocked with the old one.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > When you rotate the unlock key, keep a record of the old key
 > around for a few minutes, so that if a manager goes down before it gets the new
 > key, it may still be unlocked with the old one.
-{ .warning }
 @z

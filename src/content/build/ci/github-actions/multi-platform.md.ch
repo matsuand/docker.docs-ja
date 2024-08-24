@@ -24,14 +24,14 @@ the `platforms` option, as shown in the following example:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > - For a list of available platforms, see the [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx)
 >   action.
 > - If you want support for more platforms, you can use QEMU with the [Docker Setup QEMU](https://github.com/docker/setup-qemu-action)
 >   action.
 @y
-> **Note**
+> [!NOTE]
 >
 > - For a list of available platforms, see the [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx)
 >   action.

@@ -30,17 +30,17 @@
 @z
 
 @x
-    <link rel="canonical" href="{{ site.BaseURL }}/engine/api/v{{ site.Params.latest_engine_api_version }}/" />
+    <link rel="canonical" href="{{ site.BaseURL }}/reference/api/engine/v{{ site.Params.latest_engine_api_version }}/" />
 @y
-    <link rel="canonical" href="__SUBDIR__/engine/api/v{{ site.Params.latest_engine_api_version }}/" />
+    <link rel="canonical" href="__SUBDIR__/reference/api/engine/v{{ site.Params.latest_engine_api_version }}/" />
 @z
 
 @x
-    <redoc spec-url="/reference/engine/{{ .File.BaseFileName }}.yaml" hide-hostname="true" suppress-warnings="true"
+    <redoc spec-url="/reference/api/engine/{{ .File.BaseFileName }}.yaml" hide-hostname="true" suppress-warnings="true"
         lazy-rendering></redoc>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
 @y
-    <redoc spec-url="__SUBDIR__/reference/engine/{{ .File.BaseFileName }}.yaml" hide-hostname="true" suppress-warnings="true"
+    <redoc spec-url="__SUBDIR__/reference/api/engine/{{ .File.BaseFileName }}.yaml" hide-hostname="true" suppress-warnings="true"
         lazy-rendering></redoc>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
 @z

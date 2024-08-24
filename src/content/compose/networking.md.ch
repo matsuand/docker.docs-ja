@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: How Docker Compose sets up networking between containers
@@ -32,14 +33,14 @@ other containers on that network, and discoverable by the service's name.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Your app's network is given a name based on the "project name",
 > which is based on the name of the directory it lives in. You can override the
 > project name with either the [`--project-name` flag](reference/index.md)
 > or the [`COMPOSE_PROJECT_NAME` environment variable](environment-variables/envvars.md#compose_project_name).
 @y
-> **Note**
+> [!NOTE]
 >
 > Your app's network is given a name based on the "project name",
 > which is based on the name of the directory it lives in. You can override the
@@ -53,31 +54,7 @@ For example, suppose your app is in a directory called `myapp`, and your `compos
 For example, suppose your app is in a directory called `myapp`, and your `compose.yml` looks like this:
 @z
 
-@x
-```yaml
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-  db:
-    image: postgres
-    ports:
-      - "8001:5432"
-```
-@y
-```yaml
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-  db:
-    image: postgres
-    ports:
-      - "8001:5432"
-```
-@z
+% snip code...
 
 @x
 When you run `docker compose up`, the following happens:
@@ -154,15 +131,13 @@ If any containers have connections open to the old container, they are closed. I
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Reference containers by name, not IP, whenever possible. Otherwise you’ll need to constantly update the IP address you use.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Reference containers by name, not IP, whenever possible. Otherwise you’ll need to constantly update the IP address you use.
-{ .tip }
 @z
 
 @x
@@ -177,36 +152,12 @@ Links allow you to define extra aliases by which a service is reachable from ano
 Links allow you to define extra aliases by which a service is reachable from another service. They are not required to enable services to communicate. By default, any service can reach any other service at that service's name. In the following example, `db` is reachable from `web` at the hostnames `db` and `database`:
 @z
 
-@x
-```yaml
-services:
-@y
-```yaml
-services:
-@z
+% snip code...
 
 @x
-  web:
-    build: .
-    links:
-      - "db:database"
-  db:
-    image: postgres
-```
+See the [links reference](/reference/compose-file/services.md#links) for more information.
 @y
-  web:
-    build: .
-    links:
-      - "db:database"
-  db:
-    image: postgres
-```
-@z
-
-@x
-See the [links reference](compose-file/05-services.md#links) for more information.
-@y
-See the [links reference](compose-file/05-services.md#links) for more information.
+See the [links reference](reference/compose-file/services.md#links) for more information.
 @z
 
 @x
@@ -224,9 +175,9 @@ you can make use of the built-in `overlay` driver to enable multi-host communica
 @z
 
 @x
-Overlay networks are always created as `attachable`. You can optionally set the [`attachable`](compose-file/06-networks.md#attachable) property to `false`.
+Overlay networks are always created as `attachable`. You can optionally set the [`attachable`](/reference/compose-file/networks.md#attachable) property to `false`.
 @y
-Overlay networks are always created as `attachable`. You can optionally set the [`attachable`](compose-file/06-networks.md#attachable) property to `false`.
+Overlay networks are always created as `attachable`. You can optionally set the [`attachable`](reference/compose-file/networks.md#attachable) property to `false`.
 @z
 
 @x
@@ -263,97 +214,21 @@ The following example shows a Compose file which defines two custom networks. Th
 The following example shows a Compose file which defines two custom networks. The `proxy` service is isolated from the `db` service, because they do not share a network in common. Only `app` can talk to both.
 @z
 
+% snip code...
+
 @x
-```yaml
-services:
-  proxy:
-    build: ./proxy
-    networks:
-      - frontend
-  app:
-    build: ./app
-    networks:
-      - frontend
-      - backend
-  db:
-    image: postgres
-    networks:
-      - backend
+Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](/reference/compose-file/services.md#ipv4_address-ipv6_address) for each attached network.
 @y
-```yaml
-services:
-  proxy:
-    build: ./proxy
-    networks:
-      - frontend
-  app:
-    build: ./app
-    networks:
-      - frontend
-      - backend
-  db:
-    image: postgres
-    networks:
-      - backend
+Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](reference/compose-file/services.md#ipv4_address-ipv6_address) for each attached network.
 @z
 
 @x
-networks:
-  frontend:
-    # Use a custom driver
-    driver: custom-driver-1
-  backend:
-    # Use a custom driver which takes special options
-    driver: custom-driver-2
-    driver_opts:
-      foo: "1"
-      bar: "2"
-```
+Networks can also be given a [custom name](/reference/compose-file/networks.md#name):
 @y
-networks:
-  frontend:
-    # Use a custom driver
-    driver: custom-driver-1
-  backend:
-    # Use a custom driver which takes special options
-    driver: custom-driver-2
-    driver_opts:
-      foo: "1"
-      bar: "2"
-```
+Networks can also be given a [custom name](reference/compose-file/networks.md#name):
 @z
 
-@x
-Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](compose-file/05-services.md#ipv4_address-ipv6_address) for each attached network.
-@y
-Networks can be configured with static IP addresses by setting the [ipv4_address and/or ipv6_address](compose-file/05-services.md#ipv4_address-ipv6_address) for each attached network.
-@z
-
-@x
-Networks can also be given a [custom name](compose-file/06-networks.md#name):
-@y
-Networks can also be given a [custom name](compose-file/06-networks.md#name):
-@z
-
-@x
-```yaml
-services:
-  # ...
-networks:
-  frontend:
-    name: custom_frontend
-    driver: custom-driver-1
-```
-@y
-```yaml
-services:
-  # ...
-networks:
-  frontend:
-    name: custom_frontend
-    driver: custom-driver-1
-```
-@z
+% snip code...
 
 @x
 ## Configure the default network
@@ -367,39 +242,7 @@ Instead of, or as well as, specifying your own networks, you can also change the
 Instead of, or as well as, specifying your own networks, you can also change the settings of the app-wide default network by defining an entry under `networks` named `default`:
 @z
 
-@x
-```yaml
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-  db:
-    image: postgres
-@y
-```yaml
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-  db:
-    image: postgres
-@z
-
-@x
-networks:
-  default:
-    # Use a custom driver
-    driver: custom-driver-1
-```
-@y
-networks:
-  default:
-    # Use a custom driver
-    driver: custom-driver-1
-```
-@z
+% snip code...
 
 @x
 ## Use a pre-existing network
@@ -408,26 +251,12 @@ networks:
 @z
 
 @x
-If you want your containers to join a pre-existing network, use the [`external` option](compose-file/06-networks.md#external)
-```yaml
-services:
-  # ...
-networks:
-  network1:
-    name: my-pre-existing-network
-    external: true
-```
+If you want your containers to join a pre-existing network, use the [`external` option](/reference/compose-file/networks.md#external)
 @y
-If you want your containers to join a pre-existing network, use the [`external` option](compose-file/06-networks.md#external)
-```yaml
-services:
-  # ...
-networks:
-  network1:
-    name: my-pre-existing-network
-    external: true
-```
+If you want your containers to join a pre-existing network, use the [`external` option](reference/compose-file/networks.md#external)
 @z
+
+% snip code...
 
 @x
 Instead of attempting to create a network called `[projectname]_default`, Compose looks for a network called `my-pre-existing-network` and connects your app's containers to it.
@@ -448,9 +277,9 @@ For full details of the network configuration options available, see the followi
 @z
 
 @x
-- [Top-level `networks` element](compose-file/06-networks.md)
-- [Service-level `networks` attribute](compose-file/05-services.md#networks)
+- [Top-level `networks` element](/reference/compose-file/networks.md)
+- [Service-level `networks` attribute](/reference/compose-file/services.md#networks)
 @y
-- [Top-level `networks` element](compose-file/06-networks.md)
-- [Service-level `networks` attribute](compose-file/05-services.md#networks)
+- [Top-level `networks` element](reference/compose-file/networks.md)
+- [Service-level `networks` attribute](reference/compose-file/services.md#networks)
 @z

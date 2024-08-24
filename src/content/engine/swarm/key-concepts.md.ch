@@ -125,21 +125,21 @@ A node is an instance of the Docker engine participating in the swarm. You can a
 
 @x
 To deploy your application to a swarm, you submit a service definition to a
-manager node*. The manager node dispatches units of work called
+manager node. The manager node dispatches units of work called
 [tasks](#services-and-tasks) to worker nodes.
 @y
 To deploy your application to a swarm, you submit a service definition to a
-manager node*. The manager node dispatches units of work called
+manager node. The manager node dispatches units of work called
 [tasks](#services-and-tasks) to worker nodes.
 @z
 
 @x
 Manager nodes also perform the orchestration and cluster management functions
-required to maintain the desired state of the swarm. Manager nodes elect a
+required to maintain the desired state of the swarm. Manager nodes select a
 single leader to conduct orchestration tasks.
 @y
 Manager nodes also perform the orchestration and cluster management functions
-required to maintain the desired state of the swarm. Manager nodes elect a
+required to maintain the desired state of the swarm. Manager nodes select a
 single leader to conduct orchestration tasks.
 @z
 

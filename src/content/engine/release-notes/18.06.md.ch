@@ -138,9 +138,9 @@ title: Docker Engine 18.06 release notes
 @z
 
 @x
-- Docker 18.06 CE will be the last release with a 4-month maintenance lifecycle. The planned Docker 18.09 CE release will be supported for 7 months with Docker 19.03 CE being the next release in line. More details about the release process can be found [here](../../get-docker.md).
+- Docker 18.06 CE will be the last release with a 4-month maintenance lifecycle. The planned Docker 18.09 CE release will be supported for 7 months with Docker 19.03 CE being the next release in line. More details about the release process can be found [here](/get-started/get-docker.md).
 @y
-- Docker 18.06 CE will be the last release with a 4-month maintenance lifecycle. The planned Docker 18.09 CE release will be supported for 7 months with Docker 19.03 CE being the next release in line. More details about the release process can be found [here](../../get-docker.md).
+- Docker 18.06 CE will be the last release with a 4-month maintenance lifecycle. The planned Docker 18.09 CE release will be supported for 7 months with Docker 19.03 CE being the next release in line. More details about the release process can be found [here](get-started/get-docker.md).
 @z
 
 @x

@@ -657,10 +657,10 @@ Union file system: |
 
 @x
   For more on Docker and union file systems, see [Docker and OverlayFS in
-  practice](/engine/userguide/storagedriver/overlayfs-driver/).
+  practice](/engine/storage/drivers/overlayfs-driver/).
 @y
   For more on Docker and union file systems, see [Docker and OverlayFS in
-  practice](__SUBDIR__/engine/userguide/storagedriver/overlayfs-driver/).
+  practice](__SUBDIR__/engine/storage/drivers/overlayfs-driver/).
 @z
 
 @x

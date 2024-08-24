@@ -22,6 +22,12 @@ aliases:
 @z
 
 @x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
+@z
+
+@x
 You can add seats at anytime to your existing subscription.
 @y
 You can add seats at anytime to your existing subscription.
@@ -37,12 +43,10 @@ When you add seats to your subscription in the middle of your billing cycle, you
 >**Important**
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription. 
-{ .important }
 @y
 >**Important**
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription. 
-{ .important }
 @z
 
 @x

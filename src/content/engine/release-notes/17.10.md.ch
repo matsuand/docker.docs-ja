@@ -24,15 +24,13 @@ toc_max: 2
 @z
 
 @x
-> **Important**: Starting with this release, `docker service create`, `docker service update`,
+> [!IMPORTANT]: Starting with this release, `docker service create`, `docker service update`,
 `docker service scale` and `docker service rollback` use non-detached mode as default,
 use `--detach` to keep the old behaviour.
-{ .important }
 @y
-> **Important**: Starting with this release, `docker service create`, `docker service update`,
+> [!IMPORTANT]: Starting with this release, `docker service create`, `docker service update`,
 `docker service scale` and `docker service rollback` use non-detached mode as default,
 use `--detach` to keep the old behaviour.
-{ .important }
 @z
 
 @x

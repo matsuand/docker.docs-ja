@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -18,15 +19,13 @@ title: Install Docker Desktop on RHEL
 @z
 
 @x
-> **Early Access**
->
-> Docker Desktop on RHEL is in [Early Access](../../release-lifecycle.md).
-{ .restricted }
+{{% restricted title="Early Access" %}}
+Docker Desktop on RHEL is in [Early Access](../../release-lifecycle.md).
+{{% /restricted %}}
 @y
-> **Early Access**
->
-> Docker Desktop on RHEL is in [Early Access](../../release-lifecycle.md).
-{ .restricted }
+{{% restricted title="Early Access" %}}
+Docker Desktop on RHEL is in [Early Access](../../release-lifecycle.md).
+{{% /restricted %}}
 @z
 
 @x
@@ -62,10 +61,10 @@ To install Docker Desktop successfully, you must:
 @z
 
 @x
-- Meet the [system requirements](linux-install.md#general-system-requirements).
+- Meet the [general system requirements](linux-install.md#general-system-requirements).
 - Have a 64-bit version of either RHEL 8 or RHEL 9.
 @y
-- Meet the [system requirements](linux-install.md#general-system-requirements).
+- Meet the [general system requirements](linux-install.md#general-system-requirements).
 - Have a 64-bit version of either RHEL 8 or RHEL 9.
 @z
 
@@ -190,7 +189,6 @@ The post-install script:
 > ```console
 > $ docker run --rm -it -v "/etc/pki/entitlement:/etc/pki/entitlement" -v "/etc/rhsm:/etc/rhsm-host" -v "/etc/yum.repos.d/redhat.repo:/etc/yum.repos.d/redhat.repo" registry.access.redhat.com/ubi9
 > ```
-{ .tip }
 @y
 >**Tip**
 >
@@ -200,7 +198,6 @@ The post-install script:
 > ```console
 > $ docker run --rm -it -v "/etc/pki/entitlement:/etc/pki/entitlement" -v "/etc/rhsm:/etc/rhsm-host" -v "/etc/yum.repos.d/redhat.repo:/etc/yum.repos.d/redhat.repo" registry.access.redhat.com/ubi9
 > ```
-{ .tip }
 @z
 
 @x
@@ -226,9 +223,21 @@ You need to first remove the previous version and then download the new package 
 @z
 
 @x
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @y
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @z

@@ -251,11 +251,11 @@ long: |-
 
 @x
     For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
-    to API version 1.40 (refer to the [API version matrix](/engine/api/#api-version-matrix)
+    to API version 1.40 (refer to the [API version matrix](/reference/api/engine/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @y
     For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
-    to API version 1.40 (refer to the [API version matrix](__SUBDIR__/engine/api/#api-version-matrix)
+    to API version 1.40 (refer to the [API version matrix](__SUBDIR__/reference/api/engine/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @z
 

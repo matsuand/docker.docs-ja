@@ -18,12 +18,12 @@ tags: [ Troubleshooting ]
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
@@ -50,12 +50,12 @@ If a build fails, a **Retry** icon appears next to the build report line on the
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you are viewing the build details for a repository that belongs to an
 > organization, the **Cancel** and **Retry** buttons only appear if you have `Read & Write` access to the repository.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you are viewing the build details for a repository that belongs to an
 > organization, the **Cancel** and **Retry** buttons only appear if you have `Read & Write` access to the repository.
@@ -120,14 +120,14 @@ system access to the repositories.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you are using autobuild for teams, use the process below
 > instead, and configure a service user for your source code provider. You can
 > also do this for an individual account to limit Docker Hub's access to your
 > source repositories.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you are using autobuild for teams, use the process below
 > instead, and configure a service user for your source code provider. You can
@@ -164,12 +164,12 @@ system access to the repositories.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must configure your private git submodules using git clone over SSH
 > (`git@submodule.tld:some-submodule.git`) rather than HTTPS.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must configure your private git submodules using git clone over SSH
 > (`git@submodule.tld:some-submodule.git`) rather than HTTPS.

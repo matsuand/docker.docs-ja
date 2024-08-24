@@ -1,7 +1,7 @@
-3%This is the change file for the original Docker's Documentation file.
+%This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Building with Docker Build Cloud
@@ -140,12 +140,12 @@ cloud builder as your selected builder, then run your build.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Make sure you're using a supported version of Docker Compose, see
 > [Prerequisites](setup.md#prerequisites).
 @y
-> **Note**
+> [!NOTE]
 >
 > Make sure you're using a supported version of Docker Compose, see
 > [Prerequisites](setup.md#prerequisites).
@@ -282,7 +282,7 @@ To learn more about building for multiple platforms, refer to [Multi-platform
 builds](/build/building/multi-platform/).
 @y
 To learn more about building for multiple platforms, refer to [Multi-platform
-builds](build/building/multi-platform/).
+builds](__SUBDIR__/build/building/multi-platform/).
 @z
 
 @x
@@ -297,7 +297,7 @@ Docker Build Cloud out of the box. This view can show information about not only
 own builds, but also builds initiated by your team members using the same
 builder.
 @y
-The Docker Desktop [Builds view](desktop/use-desktop/builds/) works with
+The Docker Desktop [Builds view](__SUBDIR__/desktop/use-desktop/builds/) works with
 Docker Build Cloud out of the box. This view can show information about not only your
 own builds, but also builds initiated by your team members using the same
 builder.
@@ -350,23 +350,21 @@ The traffic is encrypted and secrets are never stored in the build cache.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > If you're misusing build arguments to pass credentials, authentication
 > tokens, or other secrets, you should refactor your build to pass the secrets using
 > [secret mounts](/reference/cli/docker/buildx/build.md#secret) instead.
 > Build arguments are stored in the cache and their values are exposed through attestations.
 > Secret mounts don't leak outside of the build and are never included in attestations.
-{.warning}
 @y
-> **Warning**
+> [!WARNING]
 >
 > If you're misusing build arguments to pass credentials, authentication
 > tokens, or other secrets, you should refactor your build to pass the secrets using
 > [secret mounts](reference/cli/docker/buildx/build.md#secret) instead.
 > Build arguments are stored in the cache and their values are exposed through attestations.
 > Secret mounts don't leak outside of the build and are never included in attestations.
-{.warning}
 @z
 
 @x
@@ -379,8 +377,8 @@ For more information, refer to:
 - [`docker buildx build --secret`](/reference/cli/docker/buildx/build/#secret)
 - [`docker buildx build --ssh`](/reference/cli/docker/buildx/build/#ssh)
 @y
-- [`docker buildx build --secret`](reference/cli/docker/buildx/build/#secret)
-- [`docker buildx build --ssh`](reference/cli/docker/buildx/build/#ssh)
+- [`docker buildx build --secret`](__SUBDIR__/reference/cli/docker/buildx/build/#secret)
+- [`docker buildx build --ssh`](__SUBDIR__/reference/cli/docker/buildx/build/#ssh)
 @z
 
 @x
@@ -394,7 +392,7 @@ You don't need to manage Docker Build Cloud cache manually.
 The system manages it for you through [garbage collection](/build/cache/garbage-collection/).
 @y
 You don't need to manage Docker Build Cloud cache manually.
-The system manages it for you through [garbage collection](build/cache/garbage-collection/).
+The system manages it for you through [garbage collection](__SUBDIR__/build/cache/garbage-collection/).
 @z
 
 @x
@@ -404,7 +402,7 @@ You can check your current cache state using the
 @y
 Old cache is automatically removed if you hit your storage limit.
 You can check your current cache state using the
-[`docker buildx du` command](reference/cli/docker/buildx/du/).
+[`docker buildx du` command](__SUBDIR__/reference/cli/docker/buildx/du/).
 @z
 
 @x
@@ -413,22 +411,20 @@ use the [`docker buildx prune` command](/reference/cli/docker/buildx/prune/).
 This works like pruning the cache for any other builder.
 @y
 To clear the builder's cache manually,
-use the [`docker buildx prune` command](reference/cli/docker/buildx/prune/).
+use the [`docker buildx prune` command](__SUBDIR__/reference/cli/docker/buildx/prune/).
 This works like pruning the cache for any other builder.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Pruning a cloud builder's cache also removes the cache for other team members
 > using the same builder.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Pruning a cloud builder's cache also removes the cache for other team members
 > using the same builder.
-{ .warning }
 @z
 
 @x
@@ -481,4 +477,18 @@ It isn't possible to use Docker Build Cloud with a private registry
 or registry mirror on an internal network behind a VPN.
 All endpoints that a cloud builder interacts with,
 including OCI registries, must be accessible over the internet.
+@z
+
+@x
+> **Interested in trying out an experimental feature?**
+>
+>We are currently testing an experimental feature which lets cloud builders access internal resources. 
+>
+> If you're interested in trying this feature, contact us using the [Support form](https://hub.docker.com/support/contact?topic=Docker+Build+Cloud&subject=Private+registry+access).
+@y
+> **Interested in trying out an experimental feature?**
+>
+>We are currently testing an experimental feature which lets cloud builders access internal resources. 
+>
+> If you're interested in trying this feature, contact us using the [Support form](https://hub.docker.com/support/contact?topic=Docker+Build+Cloud&subject=Private+registry+access).
 @z

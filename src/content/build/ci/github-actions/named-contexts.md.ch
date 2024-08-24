@@ -223,13 +223,13 @@ jobs:
 
 @x
 As shown in the previous section we are not using the default
-[`docker-container` driver](../../drivers/docker-container.md) for building with
+[`docker-container` driver](../../builders/drivers/docker-container.md) for building with
 named contexts. That's because this driver can't load an image from the Docker
 store as it's isolated. To solve this problem you can use a [local registry](local-registry.md)
 to push your base image in your workflow:
 @y
 As shown in the previous section we are not using the default
-[`docker-container` driver](../../drivers/docker-container.md) for building with
+[`docker-container` driver](../../builders/drivers/docker-container.md) for building with
 named contexts. That's because this driver can't load an image from the Docker
 store as it's isolated. To solve this problem you can use a [local registry](local-registry.md)
 to push your base image in your workflow:

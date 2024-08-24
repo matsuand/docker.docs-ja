@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Containerize a .NET application
 keywords: .net, containerize, initialize
 description: Learn how to containerize an ASP.NET application.
-aliases:
-- /language/dotnet/build-images/
-- /language/dotnet/run-containers/
----
 @y
----
 title: Containerize a .NET application
 keywords: .net, containerize, initialize
 description: Learn how to containerize an ASP.NET application.
-aliases:
-- /language/dotnet/build-images/
-- /language/dotnet/run-containers/
----
 @z
 
 @x
@@ -29,12 +21,12 @@ aliases:
 
 @x
 * You have installed the latest version of [Docker
-  Desktop](../../get-docker.md).
+  Desktop](/get-started/get-docker.md).
 * You have a [git client](https://git-scm.com/downloads). The examples in this
   section use a command-line based git client, but you can use any client.
 @y
 * You have installed the latest version of [Docker
-  Desktop](../../get-docker.md).
+  Desktop](get-started/get-docker.md).
 * You have a [git client](https://git-scm.com/downloads). The examples in this
   section use a command-line based git client, but you can use any client.
 @z
@@ -191,12 +183,12 @@ directory.
 To learn more about the files that `docker init` added, see the following:
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
- - [compose.yaml](../../compose/compose-file/_index.md)
+ - [compose.yaml](/reference/compose-file/_index.md)
 @y
 To learn more about the files that `docker init` added, see the following:
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
- - [compose.yaml](../../compose/compose-file/_index.md)
+ - [compose.yaml](reference/compose-file/_index.md)
 @z
 
 @x
@@ -285,10 +277,10 @@ $ docker compose down
 
 @x
 For more information about Compose commands, see the [Compose CLI
-reference](../../compose/reference/_index.md).
+reference](/reference/cli/docker/compose/_index.md).
 @y
 For more information about Compose commands, see the [Compose CLI
-reference](../../compose/reference/_index.md).
+reference](reference/cli/docker/compose/_index.md).
 @z
 
 @x

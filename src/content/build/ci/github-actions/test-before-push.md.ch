@@ -142,14 +142,14 @@ jobs:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `linux/amd64` image is only built once in this workflow. The image is
 > built once, and the following steps use the internal cache from the first
 > `Build and push` step. The second `Build and push` step only builds
 > `linux/arm64`.
 @y
-> **Note**
+> [!NOTE]
 >
 > The `linux/amd64` image is only built once in this workflow. The image is
 > built once, and the following steps use the internal cache from the first

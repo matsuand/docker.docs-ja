@@ -100,7 +100,7 @@ Make sure you have:
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > Note the way the `get_hit_count` function is written. This basic retry
    > loop attempts the request multiple times if the Redis service is
@@ -110,7 +110,7 @@ Make sure you have:
    > cluster, this also helps handling momentary connection drops between
    > nodes.
 @y
-   > **メモ**
+   > [!メモ]
    >
    > Note the way the `get_hit_count` function is written. This basic retry
    > loop attempts the request multiple times if the Redis service is
@@ -177,16 +177,14 @@ Make sure you have:
 @z
 
 @x
-   > **Important**
+   > [!IMPORTANT]
    >
    >Check that the `Dockerfile` has no file extension like `.txt`. Some editors may append this file extension automatically which results in an error when you run the application.
-   { .important }
 @y
-   > **重要**
+   > [!重要]
    >
    >`Dockerfile` には `.txt` などのような拡張子がないことを確認してください。
    >エディターの中には自動的に拡張子をつけてしまうものがあり、その場合にはアプリケーション実行時にエラーとなってしまいます。
-   { .important }
 @z
 
 @x
@@ -392,12 +390,12 @@ For more information on how Compose Watch works, see [Use Compose Watch](file-wa
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > For this example to work, the `--debug` option is added to the `Dockerfile`. The `--debug` option in Flask enables automatic code reload, making it possible to work on the backend API without the need to restart or rebuild the container.
 > After changing the `.py` file, subsequent API calls will use the new code, but the browser UI will not automatically refresh in this small example. Most frontend development servers include native live reload support that works with Compose.
 @y
-> **Note**
+> [!NOTE]
 >
 > For this example to work, the `--debug` option is added to the `Dockerfile`. The `--debug` option in Flask enables automatic code reload, making it possible to work on the backend API without the need to restart or rebuild the container.
 > After changing the `.py` file, subsequent API calls will use the new code, but the browser UI will not automatically refresh in this small example. Most frontend development servers include native live reload support that works with Compose.
@@ -564,9 +562,11 @@ This is a simplified example, but it demonstrates the basic principle of `includ
 @x
 - Try the [Sample apps with Compose](https://github.com/docker/awesome-compose)
 - [Explore the full list of Compose commands](reference/index.md)
-- [Explore the Compose file reference](compose-file/index.md)
+- [Explore the Compose file reference](/reference/compose-file/index.md)
+- [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
 @y
 - Try the [Sample apps with Compose](https://github.com/docker/awesome-compose)
 - [Explore the full list of Compose commands](reference/index.md)
-- [Explore the Compose file reference](compose-file/index.md)
+- [Explore the Compose file reference](reference/compose-file/index.md)
+- [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
 @z

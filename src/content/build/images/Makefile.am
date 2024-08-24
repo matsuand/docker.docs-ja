@@ -2,8 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 copyfiles = \
-	build-execution.png             \
-	build-high-level-arch.png       \
+	build_summary_error.png         \
 	build-variables.svg             \
 	buildkit-dag.svg                \
 	cache-stack-invalidate-copy.dot \
@@ -13,6 +12,8 @@ copyfiles = \
 	cache-stack.png                 \
 	cache-stack.svg                 \
 	cache.excalidraw                \
+	continuous-integration.svg      \
+	gha_build_summary.png           \
 	gha-check-annotations.png       \
 	hub-official-images.webp        \
 	opentelemetry.png               \

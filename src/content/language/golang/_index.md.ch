@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
 description: Containerize Go apps using Docker
 keywords: docker, getting started, go, golang, language, dockerfile
@@ -72,11 +74,11 @@ so *go* (pun intended) check it out!
 @z
 
 @x
-You also must know some basic [Docker concepts](../../guides/docker-concepts/the-basics/what-is-a-container.md) as well as to 
-be at least vaguely familiar with the [Dockerfile format](../../build/building/packaging.md#dockerfile).
+You also must know some basic [Docker concepts](/get-started/docker-concepts/the-basics/what-is-a-container.md) as well as to 
+be at least vaguely familiar with the [Dockerfile format](../../build/concepts/dockerfile.md).
 @y
-You also must know some basic [Docker concepts](../../guides/docker-concepts/the-basics/what-is-a-container.md) as well as to 
-be at least vaguely familiar with the [Dockerfile format](../../build/building/packaging.md#dockerfile).
+You also must know some basic [Docker concepts](get-started/docker-concepts/the-basics/what-is-a-container.md) as well as to 
+be at least vaguely familiar with the [Dockerfile format](../../build/concepts/dockerfile.md).
 @z
 
 @x

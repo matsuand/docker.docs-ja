@@ -55,7 +55,6 @@ included with Docker, you can also implement and use [logging driver plugins](pl
 > section below to learn how to configure the `local` logging driver as a default,
 > and the [local file logging driver](drivers/local.md) page for more details about the
 > `local` logging driver.
-{ .tip }
 @y
 > **Tip: use the `local` logging driver to prevent disk-exhaustion**
 >
@@ -74,7 +73,6 @@ included with Docker, you can also implement and use [logging driver plugins](pl
 > section below to learn how to configure the `local` logging driver as a default,
 > and the [local file logging driver](drivers/local.md) page for more details about the
 > `local` logging driver.
-{ .tip }
 @z
 
 @x
@@ -164,13 +162,13 @@ Existing containers don't use the new logging configuration automatically.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for
 > `max-file` in the example above) must therefore be enclosed in quotes (`"`).
 @y
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for
@@ -206,7 +204,7 @@ json-file
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Changing the default logging driver or logging driver options in the daemon
 > configuration only affects containers that are created after the configuration
@@ -217,7 +215,7 @@ json-file
 > section below to learn how to find the logging-driver configuration of a
 > container.
 @y
-> **Note**
+> [!NOTE]
 >
 > Changing the default logging driver or logging driver options in the daemon
 > configuration only affects containers that are created after the configuration
@@ -324,17 +322,15 @@ STDERR or STDOUT streams block.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > When the buffer is full, new messages will not be enqueued. Dropping messages is often preferred to blocking the
 > log-writing process of an application.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > When the buffer is full, new messages will not be enqueued. Dropping messages is often preferred to blocking the
 > log-writing process of an application.
-{ .warning }
 @z
 
 @x

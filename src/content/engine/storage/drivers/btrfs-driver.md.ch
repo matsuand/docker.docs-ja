@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 description: Learn how to optimize your use of Btrfs driver.
@@ -44,12 +44,12 @@ Btrfs Filesystem as Btrfs.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `btrfs` storage driver is only supported with Docker Engine CE on SLES,
 > Ubuntu, and Debian systems.
 @y
-> **Note**
+> [!NOTE]
 >
 > The `btrfs` storage driver is only supported with Docker Engine CE on SLES,
 > Ubuntu, and Debian systems.
@@ -222,12 +222,12 @@ This procedure is essentially identical on SLES and Ubuntu.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > Make the change permanent across reboots by adding an entry to
    > `/etc/fstab`.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > Make the change permanent across reboots by adding an entry to
    > `/etc/fstab`.
@@ -382,12 +382,12 @@ $ sudo btrfs filesystem balance /var/lib/docker
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > While you can do these operations with Docker running, performance suffers.
 > It might be best to plan an outage window to balance the Btrfs filesystem.
 @y
-> **Note**
+> [!NOTE]
 >
 > While you can do these operations with Docker running, performance suffers.
 > It might be best to plan an outage window to balance the Btrfs filesystem.
@@ -662,14 +662,14 @@ storage driver.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Many of these factors are mitigated by using Docker volumes for write-heavy
 > workloads, rather than relying on storing data in the container's writable
 > layer. However, in the case of Btrfs, Docker volumes still suffer from these
 > draw-backs unless `/var/lib/docker/volumes/` isn't backed by Btrfs.
 @y
-> **Note**
+> [!NOTE]
 >
 > Many of these factors are mitigated by using Docker volumes for write-heavy
 > workloads, rather than relying on storing data in the container's writable

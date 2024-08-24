@@ -158,13 +158,13 @@ context information. The timestamp is also available within the ETW event.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This ETW provider only emits a message string, and not a specially structured
 > ETW event. Therefore, you don't have to register a manifest file with the
 > system to read and interpret its ETW events.
 @y
-> **Note**
+> [!NOTE]
 >
 > This ETW provider only emits a message string, and not a specially structured
 > ETW event. Therefore, you don't have to register a manifest file with the

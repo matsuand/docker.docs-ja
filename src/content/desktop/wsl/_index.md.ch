@@ -75,7 +75,6 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 > setting available since WSL 1.3.10 (experimental).
 >
 > This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
-{ .tip }
 @y
 >**Tip**
 >
@@ -84,7 +83,6 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 > setting available since WSL 1.3.10 (experimental).
 >
 > This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
-{ .tip }
 @z
 
 @x
@@ -94,15 +92,13 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > To avoid any potential conflicts with using WSL 2 on Docker Desktop, you must uninstall any previous versions of Docker Engine and CLI installed directly through Linux distributions before installing Docker Desktop.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > To avoid any potential conflicts with using WSL 2 on Docker Desktop, you must uninstall any previous versions of Docker Engine and CLI installed directly through Linux distributions before installing Docker Desktop.
-{ .important }
 @z
 
 @x
@@ -131,6 +127,20 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 Now `docker` commands work from Windows using the new WSL 2 engine.
 @y
 Now `docker` commands work from Windows using the new WSL 2 engine.
+@z
+
+@x
+>**Tip**
+>
+> By default, Docker Desktop stores the data for the WSL 2 engine at `C:\Users\[USERNAME]\AppData\Local\Docker\wsl`.
+> If you want to change the location, for example, to another drive you can do so via the `Settings -> Resources -> Advanced` page from the Docker Dashboard.
+> Read more about this and other Windows settings at [Changing Docker Desktop settings on Windows](../settings/windows.md)
+@y
+>**Tip**
+>
+> By default, Docker Desktop stores the data for the WSL 2 engine at `C:\Users\[USERNAME]\AppData\Local\Docker\wsl`.
+> If you want to change the location, for example, to another drive you can do so via the `Settings -> Resources -> Advanced` page from the Docker Dashboard.
+> Read more about this and other Windows settings at [Changing Docker Desktop settings on Windows](../settings/windows.md)
 @z
 
 @x
@@ -230,11 +240,11 @@ Docker Desktop does not require any particular Linux distros to be installed. Th
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop installs two special-purpose internal Linux distros `docker-desktop` and `docker-desktop-data`. The first (`docker-desktop`) is used to run the Docker engine (`dockerd`) while the second (`docker-desktop-data`) stores containers and images. Neither can be used for general development.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop installs two special-purpose internal Linux distros `docker-desktop` and `docker-desktop-data`. The first (`docker-desktop`) is used to run the Docker engine (`dockerd`) while the second (`docker-desktop-data`) stores containers and images. Neither can be used for general development.
 @z

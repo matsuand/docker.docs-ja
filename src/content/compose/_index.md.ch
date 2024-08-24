@@ -88,13 +88,13 @@ title: Docker Compose 概要
   description: Find information on defining services, networks, and volumes for a
     Docker application.
   icon: polyline
-  link: /compose/compose-file
+  link: /reference/compose-file
 @y
 - title: Compose ファイルリファレンスの確認
   description: Find information on defining services, networks, and volumes for a
     Docker application.
   icon: polyline
-  link: __SUBDIR__/compose/compose-file
+  link: __SUBDIR__/reference/compose-file
 @z
 
 @x

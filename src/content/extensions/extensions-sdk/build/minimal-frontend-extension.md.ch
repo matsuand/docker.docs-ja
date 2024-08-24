@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Create a simple extension
@@ -29,12 +29,10 @@ Before you start, make sure you have installed the latest version of [Docker Des
 > Tip
 >
 > If you want to start a codebase for your new extension, our [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>` provides a better base for your extension.
-{ .tip }
 @y
 > Tip
 >
 > If you want to start a codebase for your new extension, our [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>` provides a better base for your extension.
-{ .tip }
 @z
 
 @x

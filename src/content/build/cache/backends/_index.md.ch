@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Cache storage backends
@@ -42,31 +42,29 @@ important to keep the runtime of image builds as low as possible.
 @x
 The default `docker` driver supports the `inline`, `local`, `registry`, and
 `gha` cache backends, but only if you have enabled the [containerd image store](/desktop/containerd.md).
-Other cache backends require you to select a different [driver](../../drivers/_index.md).
+Other cache backends require you to select a different [driver](/build/builders/drivers/_index.md).
 @y
 The default `docker` driver supports the `inline`, `local`, `registry`, and
 `gha` cache backends, but only if you have enabled the [containerd image store](desktop/containerd.md).
-Other cache backends require you to select a different [driver](../../drivers/_index.md).
+Other cache backends require you to select a different [driver](build/builders/drivers/_index.md).
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > If you use secrets or credentials inside your build process, ensure you
 > manipulate them using the dedicated
 > [`--secret` option](../../../reference/cli/docker/buildx/build.md#secret).
 > Manually managing secrets using `COPY` or `ARG` could result in leaked
 > credentials.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > If you use secrets or credentials inside your build process, ensure you
 > manipulate them using the dedicated
 > [`--secret` option](../../../reference/cli/docker/buildx/build.md#secret).
 > Manually managing secrets using `COPY` or `ARG` could result in leaked
 > credentials.
-{ .warning }
 @z
 
 @x
@@ -182,14 +180,14 @@ $ docker buildx build --push -t <registry>/<image> \
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > As a general rule, each cache writes to some location. No location can be
 > written to twice, without overwriting the previously cached data. If you want
 > to maintain multiple scoped caches (for example, a cache per Git branch), then
 > ensure that you use different locations for exported cache.
 @y
-> **Warning**
+> [!WARNING]
 >
 > As a general rule, each cache writes to some location. No location can be
 > written to twice, without overwriting the previously cached data. If you want
@@ -419,4 +417,34 @@ cache, BuildKit will auto-detect the correct media types to use.
 @y
 This property is only meaningful with the `--cache-to` flag. When fetching
 cache, BuildKit will auto-detect the correct media types to use.
+@z
+
+@x
+By default, the OCI media type generates an image index for the cache image.
+Some OCI registries, such as Amazon ECR, don't support the image index media
+type: `application/vnd.oci.image.index.v1+json`. If you export cache images to
+ECR, or any other registry that doesn't support image indices, set the
+`image-manifest` parameter to `true` to generate a single image manifest
+instead of an image index for the cache image:
+@y
+By default, the OCI media type generates an image index for the cache image.
+Some OCI registries, such as Amazon ECR, don't support the image index media
+type: `application/vnd.oci.image.index.v1+json`. If you export cache images to
+ECR, or any other registry that doesn't support image indices, set the
+`image-manifest` parameter to `true` to generate a single image manifest
+instead of an image index for the cache image:
+@z
+
+@x
+```console
+$ docker buildx build --push -t <registry>/<image> \
+  --cache-to type=registry,ref=<registry>/<cache-image>,oci-mediatypes=true,image-manifest=true \
+  --cache-from type=registry,ref=<registry>/<cache-image> .
+```
+@y
+```console
+$ docker buildx build --push -t <registry>/<image> \
+  --cache-to type=registry,ref=<registry>/<cache-image>,oci-mediatypes=true,image-manifest=true \
+  --cache-from type=registry,ref=<registry>/<cache-image> .
+```
 @z

@@ -1,28 +1,26 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: How to deploy a stack to a swarm
 keywords: guide, swarm mode, composefile, stack, compose, deploy
 title: Deploy a stack to a swarm
----
 @y
----
 description: How to deploy a stack to a swarm
 keywords: guide, swarm mode, composefile, stack, compose, deploy
 title: Deploy a stack to a swarm
----
 @z
 
 @x
 When running Docker Engine in swarm mode, you can use `docker stack deploy` to
 deploy a complete application stack to the swarm. The `deploy` command accepts
-a stack description in the form of a [Compose file](../../compose/compose-file/legacy-versions.md).
+a stack description in the form of a [Compose file](/reference/compose-file/legacy-versions.md).
 @y
 When running Docker Engine in swarm mode, you can use `docker stack deploy` to
 deploy a complete application stack to the swarm. The `deploy` command accepts
-a stack description in the form of a [Compose file](../../compose/compose-file/legacy-versions.md).
+a stack description in the form of a [Compose file](reference/compose-file/legacy-versions.md).
 @z
 
 @x
@@ -50,7 +48,7 @@ To run through this tutorial, you need:
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > If you're trying things out on a local development environment,
     > you can put your engine into Swarm mode with `docker swarm init`.
@@ -59,7 +57,7 @@ To run through this tutorial, you need:
     > `docker stack` and `docker service` commands must be run from a manager
     > node.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > If you're trying things out on a local development environment,
     > you can put your engine into Swarm mode with `docker swarm init`.

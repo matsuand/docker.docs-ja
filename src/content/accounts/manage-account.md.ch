@@ -22,15 +22,13 @@ You can centrally manage the settings for your Docker account. Here you can also
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > If your account is associated with an organization that enforces single sign-on (SSO), you may not have permissions to update your account settings. You need to contact your administrator to update your settings.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > If your account is associated with an organization that enforces single sign-on (SSO), you may not have permissions to update your account settings. You need to contact your administrator to update your settings.
-{ .tip }
 @z
 
 @x

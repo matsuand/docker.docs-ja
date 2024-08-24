@@ -44,21 +44,19 @@ for each file and a default count of 5 for the number of such files (to account 
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > The `local` logging driver uses file-based storage. These files are designed
 > to be exclusively accessed by the Docker daemon. Interacting with these files
 > with external tools may interfere with Docker's logging system and result in
 > unexpected behavior, and should be avoided.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > The `local` logging driver uses file-based storage. These files are designed
 > to be exclusively accessed by the Docker daemon. Interacting with these files
 > with external tools may interfere with Docker's logging system and result in
 > unexpected behavior, and should be avoided.
-{ .warning }
 @z
 
 @x

@@ -114,17 +114,15 @@ Good practice is to create two encrypted USB keys.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > It is very important that you back up your keys to a safe, secure location.
 The loss of the repository key is recoverable, but the loss of the root key is not.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > It is very important that you back up your keys to a safe, secure location.
 The loss of the repository key is recoverable, but the loss of the root key is not.
-{ .warning }
 @z
 
 @x
@@ -180,19 +178,17 @@ Prior to Docker Engine 1.11, this feature was only in the experimental branch.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > If a publisher loses keys it means losing the ability to sign images for the repositories in
 question. If you lose a key, send an email to [Docker Hub Support](mailto:hub-support@docker.com).
 As a reminder, the loss of a root key is not recoverable.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > If a publisher loses keys it means losing the ability to sign images for the repositories in
 question. If you lose a key, send an email to [Docker Hub Support](mailto:hub-support@docker.com).
 As a reminder, the loss of a root key is not recoverable.
-{ .warning }
 @z
 
 @x

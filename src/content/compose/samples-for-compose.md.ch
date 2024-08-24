@@ -1,20 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
----
 description: Summary of samples related to Compose
 keywords: documentation, docs, docker, compose, samples
 title: Sample apps with Compose
----
 @y
----
 description: Summary of samples related to Compose
 keywords: documentation, docs, docker, compose, samples
 title: Sample apps with Compose
----
 @z
 
 @x
@@ -41,7 +37,7 @@ The samples should help you to:
 
 @x
 - Define services based on Docker images using
-  [Compose files](compose-file/index.md): `compose.yml` and
+  [Compose files](/reference/compose-file/index.md): `compose.yml` and
   `docker-stack.yml`
 - Understand the relationship between `compose.yml` and
   [Dockerfiles](/reference/dockerfile/)
@@ -49,10 +45,10 @@ The samples should help you to:
 - Learn how to deploy applications and services to a [swarm](../engine/swarm/index.md)
 @y
 - Define services based on Docker images using
-  [Compose files](compose-file/index.md): `compose.yml` and
+  [Compose files](reference/compose-file/index.md): `compose.yml` and
   `docker-stack.yml`
 - Understand the relationship between `compose.yml` and
-  [Dockerfiles](__SUBDIR__/reference/dockerfile/)
+  [Dockerfiles](reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](../engine/swarm/index.md)
 @z

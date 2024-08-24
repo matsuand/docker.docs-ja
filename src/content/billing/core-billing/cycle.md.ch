@@ -20,6 +20,12 @@ aliases:
 @z
 
 @x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
+@z
+
+@x
 You can pay for a Pro or Team subscription on a monthly or yearly billing cycle. You select your preferred billing cycle when you buy your subscription.
 @y
 You can pay for a Pro or Team subscription on a monthly or yearly billing cycle. You select your preferred billing cycle when you buy your subscription.
@@ -68,11 +74,11 @@ When you change the billing cycle's duration:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must be an organization owner to make changes to the payment information.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must be an organization owner to make changes to the payment information.
 @z

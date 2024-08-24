@@ -450,11 +450,11 @@ To add Wasmtime as a container runtime, follow these steps:
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > This is an experimental feature.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > This is an experimental feature.
 @z

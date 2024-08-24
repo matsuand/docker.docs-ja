@@ -302,7 +302,8 @@ bases = \
 	cli.html               \
 	engine-api-baseof.html \
 	glossary.html          \
-	hub-api-baseof.html
+	hub-api-baseof.html    \
+	series.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

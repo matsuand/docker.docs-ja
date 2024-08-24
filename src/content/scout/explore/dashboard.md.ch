@@ -1,30 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
----
 description: The Docker Scout Dashboard helps review and share the analysis of images.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, report,
   reports, dashboard
 title: Dashboard
-aliases:
-- /scout/reports/
-- /scout/web-app/
-- /scout/dashboard/
----
 @y
----
 description: The Docker Scout Dashboard helps review and share the analysis of images.
 keywords: scout, scanning, analysis, vulnerabilities, Hub, supply chain, security, report,
   reports, dashboard
 title: Dashboard
-aliases:
-- /scout/reports/
-- /scout/web-app/
-- /scout/dashboard/
----
 @z
 
 @x
@@ -63,7 +51,7 @@ The **Overview** tab provides a summary for the repositories in the selected
 organization.
 @z
 
-@x (no slash) 対応
+@x
 At the top of this page, you can select which **Environment** to view.
 By default, the most recently pushed images are shown. To learn more about
 environments, see [Environment monitoring](/scout/integrations/environment/_index.md).
@@ -73,7 +61,7 @@ By default, the most recently pushed images are shown. To learn more about
 environments, see [Environment monitoring](scout/integrations/environment/_index.md).
 @z
 
-@x (no slash) 対応
+@x
 The **Policy** boxes show your current compliance rating for each policy, and a
 trend indication for the selected environment. The trend describes the policy
 delta for the most recent images compared to the previous version.
@@ -137,7 +125,7 @@ images in the selected organization and environment. You can use the **Image**
 drop-down menu to view a policy breakdown for a specific environment.
 @z
 
-@x (no slash) 対応
+@x
 For more information about policies, see [Policy Evaluation](/scout/policy/_index.md).
 @y
 For more information about policies, see [Policy Evaluation](scout/policy/_index.md).
@@ -209,7 +197,7 @@ This view contains two tabs that detail the composition and policy compliance fo
   Here you also have links for details about the policy violations.
 @z
 
-@x (no slash) 対応
+@x
   For more information about policy, see [Policy Evaluation](/scout/policy/_index.md).
 @y
   For more information about policy, see [Policy Evaluation](scout/policy/_index.md).
@@ -231,7 +219,7 @@ This view contains two tabs that detail the composition and policy compliance fo
 ## Vulnerabilities
 @z
 
-@x (no slash) 対応
+@x
 The **Vulnerabilities** view shows a list of all vulnerabilities for images in the organization.
 This list includes details about CVE such as the severity and Common Vulnerability Scoring System (CVSS) score,
 as well as whether there's a fix version available.
@@ -269,7 +257,7 @@ affected by the CVE.
 ## Integrations
 @z
 
-@x (no slash) 対応
+@x
 The **Integrations** page lets you create and manage your Docker Scout
 integrations, such as environment integrations and registry integrations. For
 more information on how to get started with integrations, see
@@ -321,7 +309,7 @@ included in your plan, compare it with other available plans, and change the
 plan if you're an organization owner.
 @z
 
-@x (no slash) 対応
+@x
 For more information about subscription plans, see
 [Docker Scout subscriptions and features](/subscription/scout-details.md)
 @y
@@ -335,7 +323,7 @@ For more information about subscription plans, see
 ### Repository settings
 @z
 
-@x (no slash) 対応
+@x
 When you enable Docker Scout for a repository,
 Docker Scout analyzes new tags automatically when you push to that repository.
 To enable repositories in Amazon ECR, Azure ACR, or other third-party registries,
@@ -382,7 +370,7 @@ vulnerability exposure or policy compliance as a result of pushing a new image.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Notifications are only triggered for the *last pushed* image tags for each
 > repository. "Last pushed" refers to the image tag that was most recently
@@ -390,7 +378,7 @@ vulnerability exposure or policy compliance as a result of pushing a new image.
 > is not affected by a newly disclosed CVE, then no notification will be
 > triggered.
 @y
-> **Note**
+> [!NOTE]
 >
 > Notifications are only triggered for the *last pushed* image tags for each
 > repository. "Last pushed" refers to the image tag that was most recently
@@ -473,7 +461,7 @@ The available notification settings are:
   notifications using the browser API.
 @z
 
-@x (no slash) 対応
+@x
 From this page, you can also go to the settings for Team collaboration
 integrations, such as the [Slack](/scout/integrations/team-collaboration/slack.md)
 integration.

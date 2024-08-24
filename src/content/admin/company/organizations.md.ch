@@ -55,12 +55,10 @@ You can manage the organizations in a company in Docker Hub and the Docker Admin
 >**Important**
 >
 > You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
-{ .important }
 @y
 >**Important**
 >
 > You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
-{ .important }
 @z
 
 @x
@@ -73,12 +71,10 @@ There is no limit to the number of organizations you can have under a company la
 >**Important**
 >
 > Once you add an organization to a company, you can't remove it from the company.
-{ .important }
 @y
 >**Important**
 >
 > Once you add an organization to a company, you can't remove it from the company.
-{ .important }
 @z
 
 @x
@@ -159,12 +155,10 @@ When you have a [self-serve](../../subscription/core-subscription/details.md#sel
 >**Important**
 >
 > You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
-{ .important }
 @y
 >**Important**
 >
 > You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
-{ .important }
 @z
 
 @x
@@ -177,12 +171,10 @@ There is no limit to the number of organizations you can have under a company la
 >**Important**
 >
 > Once you add an organization to a company, you can't remove it from the company.
-{ .important }
 @y
 >**Important**
 >
 > Once you add an organization to a company, you can't remove it from the company.
-{ .important }
 @z
 
 @x
@@ -227,4 +219,18 @@ For more details about managing an organization, see [Organization administratio
 {{< /tabs >}}
 @y
 {{< /tabs >}}
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+- [Video: Managing a company and nested organizations](https://youtu.be/XZ5_i6qiKho?feature=shared&t=229)
+- [Video: Adding nested organizations to a company](https://youtu.be/XZ5_i6qiKho?feature=shared&t=454)
+@y
+- [Video: Managing a company and nested organizations](https://youtu.be/XZ5_i6qiKho?feature=shared&t=229)
+- [Video: Adding nested organizations to a company](https://youtu.be/XZ5_i6qiKho?feature=shared&t=454)
 @z

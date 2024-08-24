@@ -412,11 +412,11 @@ connect a service to each of them.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > Services can only be created on a manager.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > Services can only be created on a manager.
 @z
@@ -544,12 +544,12 @@ connect a service to each of them.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > Even though overlay networks are automatically created on swarm
     > worker nodes as needed, they are not automatically removed.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > Even though overlay networks are automatically created on swarm
     > worker nodes as needed, they are not automatically removed.
@@ -924,11 +924,11 @@ example also uses Linux hosts, but the same commands work on Windows.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > Automatic DNS container discovery only works with unique container names.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > Automatic DNS container discovery only works with unique container names.
 @z

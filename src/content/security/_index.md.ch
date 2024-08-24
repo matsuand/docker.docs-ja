@@ -8,9 +8,6 @@ description: Learn about security features Docker has to offer and explore best 
 keywords: docker, docker hub, docker desktop, security
 title: Security
 @y
-description: Learn about security features Docker has to offer and explore best practices
-keywords: docker, docker hub, docker desktop, security
-title: Security
 @z
 
 % grid_admins:
@@ -19,60 +16,60 @@ title: Security
 - title: Settings Management
   description: Learn how Settings Management can secure your developers' workflows.
   icon: shield_locked
-  link: /desktop/hardened-desktop/settings-management/
+  link: /security/for-admins/hardened-desktop/settings-management/
 @y
 - title: Settings Management
   description: Learn how Settings Management can secure your developers' workflows.
   icon: shield_locked
-  link: __SUBDIR__/desktop/hardened-desktop/settings-management/
+  link: __SUBDIR__/security/for-admins/hardened-desktop/settings-management/
 @z
 
 @x
 - title: Enhanced Container Isolation
   description: Understand how Enhanced Container Isolation can prevent container attacks.
   icon: security
-  link: /desktop/hardened-desktop/enhanced-container-isolation/
+  link: /security/for-admins/hardened-desktop/enhanced-container-isolation/
 @y
 - title: Enhanced Container Isolation
   description: Understand how Enhanced Container Isolation can prevent container attacks.
   icon: security
-  link: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
+  link: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/
 @z
 
 @x
 - title: Registry Access Management
   description: Control the registries developers can access while using Docker Desktop.
   icon: home_storage
-  link: /security/for-admins/registry-access-management/
+  link: /security/for-admins/hardened-desktop/registry-access-management/
 @y
 - title: Registry Access Management
   description: Control the registries developers can access while using Docker Desktop.
   icon: home_storage
-  link: __SUBDIR__/security/for-admins/registry-access-management/
+  link: __SUBDIR__/security/for-admins/hardened-desktop/registry-access-management/
 @z
 
 @x
 - title: Image Access Management
   description: Control the images developers can pull from Docker Hub.
   icon: photo_library
-  link: /security/for-admins/image-access-management/
+  link: /security/for-admins/hardened-desktop/image-access-management/
 @y
 - title: Image Access Management
   description: Control the images developers can pull from Docker Hub.
   icon: photo_library
-  link: __SUBDIR__/security/for-admins/image-access-management/
+  link: __SUBDIR__/security/for-admins/hardened-desktop/image-access-management/
 @z
 
 @x
 - title: "Air-Gapped Containers"
   description: Restrict containers from accessing unwanted network resources.
   icon: "vpn_lock"
-  link: /desktop/hardened-desktop/air-gapped-containers/
+  link: /security/for-admins/hardened-desktop/air-gapped-containers/
 @y
 - title: "Air-Gapped Containers"
   description: Restrict containers from accessing unwanted network resources.
   icon: "vpn_lock"
-  link: __SUBDIR__/desktop/hardened-desktop/air-gapped-containers/
+  link: __SUBDIR__/security/for-admins/hardened-desktop/air-gapped-containers/
 @z
 
 @x
@@ -148,12 +145,12 @@ title: Security
 @z
 
 @x
-- title: Private marketplace for Extensions (Early Access)
+- title: Private marketplace for Extensions (Beta)
   description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
   icon: storefront
   link: /desktop/extensions/private-marketplace/
 @y
-- title: Private marketplace for Extensions (Early Access)
+- title: Private marketplace for Extensions (Beta)
   description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
   icon: storefront
   link: __SUBDIR__/desktop/extensions/private-marketplace/

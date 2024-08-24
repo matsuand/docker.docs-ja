@@ -32,33 +32,29 @@ as the Unix socket.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Configuring Docker to accept connections from remote clients can leave you
 > vulnerable to unauthorized access to the host and other attacks.
+>
+> It's critically important that you understand the security implications of opening Docker to the network.
+> If steps aren't taken to secure the connection, it's possible for remote non-root users to gain root access on the host.
+>
+> Remote access without TLS is **not recommended**, and will require explicit opt-in in a future release.
+> For more information on how to use TLS certificates to secure this connection, see
+> [Protect the Docker daemon socket](../../engine/security/protect-access.md).
 @y
-> **Warning**
+> [!WARNING]
 >
 > Configuring Docker to accept connections from remote clients can leave you
 > vulnerable to unauthorized access to the host and other attacks.
-@z
-@x
+>
 > It's critically important that you understand the security implications of opening Docker to the network.
 > If steps aren't taken to secure the connection, it's possible for remote non-root users to gain root access on the host.
-@y
-> It's critically important that you understand the security implications of opening Docker to the network.
-> If steps aren't taken to secure the connection, it's possible for remote non-root users to gain root access on the host.
-@z
-@x
+>
 > Remote access without TLS is **not recommended**, and will require explicit opt-in in a future release.
 > For more information on how to use TLS certificates to secure this connection, see
 > [Protect the Docker daemon socket](../../engine/security/protect-access.md).
-{ .warning }
-@y
-> Remote access without TLS is **not recommended**, and will require explicit opt-in in a future release.
-> For more information on how to use TLS certificates to secure this connection, see
-> [Protect the Docker daemon socket](../../engine/security/protect-access.md).
-{ .warning }
 @z
 
 @x

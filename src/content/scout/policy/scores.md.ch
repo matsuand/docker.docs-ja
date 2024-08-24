@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -19,19 +19,17 @@ keywords: scout, health scores, evaluation, checks, grades, docker hub
 @z
 
 @x
-> **Beta**
->
-> Health scores is a [Beta](/release-lifecycle/#beta) feature of Docker Scout.
-> The feature is only available to organizations selected to participate in the
-> early access program.
-{ .restricted }
+{{% restricted title="Beta" %}}
+Health scores is a [Beta](/release-lifecycle/#beta) feature of Docker Scout.
+The feature is only available to organizations selected to participate in the
+early access program.
+{{% /restricted %}}
 @y
-> **Beta**
->
-> Health scores is a [Beta](__SUBDIR__/release-lifecycle/#beta) feature of Docker Scout.
-> The feature is only available to organizations selected to participate in the
-> early access program.
-{ .restricted }
+{{% restricted title="Beta" %}}
+Health scores is a [Beta](/release-lifecycle/#beta) feature of Docker Scout.
+The feature is only available to organizations selected to participate in the
+early access program.
+{{% /restricted %}}
 @z
 
 @x
@@ -154,44 +152,20 @@ The policies that influence the score, and their respective weights, are as foll
 | [No fixable critical or high vulnerabilities](/scout/policy#no-fixable-critical-or-high-vulnerabilities)   | 20     |
 | [No high-profile vulnerabilities](/scout/policy#no-high-profile-vulnerabilities)                           | 20     |
 | [Supply chain attestations](/scout/policy#supply-chain-attestations)                                       | 15     |
-| [No unapproved base images](/scout/policy/#no-unapproved-base-images) \*                                   | 15     |
+| [No unapproved base images](/scout/policy/#no-unapproved-base-images)                                      | 15     |
 | [No outdated base images](/scout/policy#no-outdated-base-images)                                           | 10     |
 | [Default non-root user](/scout/policy#default-non-root-user)                                               | 5      |
-| No AGPL v3 licenses \*\*                                                                                   | 5      |
+| [No AGPL v3 licenses](/scout/policy/_index.md#no-agpl-v3-licenses)                                         | 5      |
 @y
 | Policy                                                                                                     | Points |
 | ---------------------------------------------------------------------------------------------------------- | ------ |
 | [No fixable critical or high vulnerabilities](__SUBDIR__/scout/policy#no-fixable-critical-or-high-vulnerabilities)   | 20     |
 | [No high-profile vulnerabilities](__SUBDIR__/scout/policy#no-high-profile-vulnerabilities)                           | 20     |
 | [Supply chain attestations](__SUBDIR__/scout/policy#supply-chain-attestations)                                       | 15     |
-| [No unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images) \*                                   | 15     |
+| [No unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images)                                      | 15     |
 | [No outdated base images](__SUBDIR__/scout/policy#no-outdated-base-images)                                           | 10     |
 | [Default non-root user](__SUBDIR__/scout/policy#default-non-root-user)                                               | 5      |
-| No AGPL v3 licenses \*\*                                                                                   | 5      |
-@z
-
-@x
-\* _The **No unapproved base images** policy used for health score evaluation also
-checks that the tags of Docker Official Images use supported tags and, where
-applicable, that the Linux distro that the image uses is a supported distro
-version. This is a policy configuration option that's enabled by default for
-health score evaluation. For more information, refer to the
-[Unapproved base images](/scout/policy/#no-unapproved-base-images) policy._
-@y
-\* _The **No unapproved base images** policy used for health score evaluation also
-checks that the tags of Docker Official Images use supported tags and, where
-applicable, that the Linux distro that the image uses is a supported distro
-version. This is a policy configuration option that's enabled by default for
-health score evaluation. For more information, refer to the
-[Unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images) policy._
-@z
-
-@x
-\*\* _The **No AGPL v3 licenses** policy is a subset of the
-[Copyleft licenses](./_index.md#no-copyleft-licenses) policy._
-@y
-\*\* _The **No AGPL v3 licenses** policy is a subset of the
-[Copyleft licenses](./_index.md#no-copyleft-licenses) policy._
+| [No AGPL v3 licenses](scout/policy/_index.md#no-agpl-v3-licenses)                                         | 5      |
 @z
 
 @x

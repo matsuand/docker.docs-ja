@@ -28,12 +28,12 @@ In this section, learn how to buy and manage a Docker Scout Team subscription fo
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You need to be an owner to manage billing for an organization.
 >
 @y
-> **Note**
+> [!NOTE]
 >
 > You need to be an owner to manage billing for an organization.
 >
@@ -160,12 +160,12 @@ The number of repositories updates on your next billing cycle.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can't add repositories while repository removal is pending. You can add repositories again during the next billing cycle.
 >
 @y
-> **Note**
+> [!NOTE]
 >
 > You can't add repositories while repository removal is pending. You can add repositories again during the next billing cycle.
 >
@@ -184,17 +184,15 @@ You can downgrade from Docker Scout Team or Docker Scout Business to a Docker Sc
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > To downgrade from Docker Scout Business to Docker Scout Team, [contact](https://hub.docker.com/support/contact) your account manager to cancel so you can start a Docker Scout Team subscription.
 >
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > To downgrade from Docker Scout Business to Docker Scout Team, [contact](https://hub.docker.com/support/contact) your account manager to cancel so you can start a Docker Scout Team subscription.
 >
-{ .tip }
 @z
 
 @x

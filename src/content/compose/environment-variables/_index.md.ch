@@ -24,15 +24,13 @@ By leveraging environment variables and interpolation in Docker Compose, you can
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Before using environment variables, read through all of the information first to get a full picture of environment variables in Docker Compose.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Before using environment variables, read through all of the information first to get a full picture of environment variables in Docker Compose.
-{ .tip }
 @z
 
 @x

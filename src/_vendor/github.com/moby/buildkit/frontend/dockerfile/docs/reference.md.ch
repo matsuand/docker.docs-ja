@@ -111,7 +111,7 @@ declare arguments that are used in `FROM` lines in the Dockerfile.
 Docker は Dockerfile 内の命令を記述順に実行します。
 Dockerfile は **必ず `FROM` 命令で始めなければなりません** 。
 この命令より前に記述できるのは、[パーサーディレクティブ](#parser-directives)、[コメント](#format)、グローバル定義された [ARG](#arg) です。
-`FROM` 命令は、ビルドするイメージに対しての [親イメージ](glossary.md#parent-image) を指定するものです。
+`FROM` 命令は、ビルドするイメージに対しての [親イメージ]({{ site.BaseURL }}/reference/glossary.md#parent-image) を指定するものです。
 `FROM` よりも先に記述できる命令として `ARG` があります。
 これは `FROM` において用いられる引数を宣言するものです。
 @z

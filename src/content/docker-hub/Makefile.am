@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = api builds images repos
+SUBDIRS = builds images repos
 
 bases = \
 	_index.md                 \

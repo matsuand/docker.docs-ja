@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: GitHub Actions build summary
@@ -88,15 +88,13 @@ message that caused the build to fail:
 @z
 
 @x
-> **Beta feature**
->
-> Import builds is currently in [Beta](../../../release-lifecycle.md#Beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+Import builds is currently in [Beta](../../../release-lifecycle.md#Beta).
+{{% /experimental %}}
 @y
-> **Beta feature**
->
-> Import builds is currently in [Beta](../../../release-lifecycle.md#Beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+Import builds is currently in [Beta](../../../release-lifecycle.md#Beta).
+{{% /experimental %}}
 @z
 
 @x
@@ -122,9 +120,9 @@ To import the build record archive into Docker Desktop:
 @z
 
 @x
-1. Download and install [Docker Desktop](../../../get-docker.md).
+1. Download and install [Docker Desktop](/get-started/get-docker.md).
 @y
-1. Download and install [Docker Desktop](../../../get-docker.md).
+1. Download and install [Docker Desktop](get-started/get-docker.md).
 @z
 
 @x

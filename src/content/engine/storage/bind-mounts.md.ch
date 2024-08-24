@@ -54,17 +54,15 @@ manage bind mounts.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase?
 > Check out [Synchronized file shares](/desktop/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase?
-> Check out [Synchronized file shares](desktop/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
-{ .tip }
+> Check out [Synchronized file shares](/desktop/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
 @z
 
 @x
@@ -89,14 +87,12 @@ syntax separates them. Here is a comparison of the syntax for each flag.
 > New users should use the `--mount` syntax. Experienced users may
 > be more familiar with the `-v` or `--volume` syntax, but are encouraged to
 > use `--mount`, because research has shown it to be easier to use.
-{ .tip }
 @y
 > Tip
 >
 > New users should use the `--mount` syntax. Experienced users may
 > be more familiar with the `-v` or `--volume` syntax, but are encouraged to
 > use `--mount`, because research has shown it to be easier to use.
-{ .tip }
 @z
 
 @x
@@ -748,15 +744,13 @@ control whether `/mnt/a` and/or `/tmp/a` would exist.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Mount propagation doesn't work with Docker Desktop.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Mount propagation doesn't work with Docker Desktop.
-{ .warning }
 @z
 
 @x
@@ -920,19 +914,17 @@ inoperable and you may need to relabel the host machine files by hand.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > When using bind mounts with services, selinux labels
 > (`:Z` and `:z`), as well as `:ro` are ignored. See
 > [moby/moby #32579](https://github.com/moby/moby/issues/32579) for details.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > When using bind mounts with services, selinux labels
 > (`:Z` and `:z`), as well as `:ro` are ignored. See
 > [moby/moby #32579](https://github.com/moby/moby/issues/32579) for details.
-{ .important }
 @z
 
 @x
@@ -1007,14 +999,14 @@ volumes:
 
 @x
 For more information about using volumes of the `bind` type with Compose, see
-[Compose reference on volumes](/compose/compose-file/05-services.md#volumes).
+[Compose reference on volumes](/reference/compose-file/services.md#volumes).
 and
-[Compose reference on volume configuration](/compose/compose-file/05-services.md#volumes).
+[Compose reference on volume configuration](/reference/compose-file/services.md#volumes).
 @y
 For more information about using volumes of the `bind` type with Compose, see
-[Compose reference on volumes](compose/compose-file/05-services.md#volumes).
+[Compose reference on volumes](reference/compose-file/services.md#volumes).
 and
-[Compose reference on volume configuration](compose/compose-file/05-services.md#volumes).
+[Compose reference on volume configuration](reference/compose-file/services.md#volumes).
 @z
 
 @x

@@ -232,13 +232,13 @@ conflict.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you see this specific error message about `hosts`, continue to the
 > [next section](#configure-the-daemon-host-with-systemd)
 > for a workaround.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you see this specific error message about `hosts`, continue to the
 > [next section](#configure-the-daemon-host-with-systemd)
@@ -310,13 +310,13 @@ such as [configuring a HTTP or HTTPS proxy](./proxy.md).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you override this option without specifying a `hosts` entry in the
 > `daemon.json` or a `-H` flag when starting Docker manually, Docker fails to
 > start.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you override this option without specifying a `hosts` entry in the
 > `daemon.json` or a `-H` flag when starting Docker manually, Docker fails to
@@ -334,17 +334,15 @@ starts successfully, it's now listening on the IP address specified in the
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Setting `hosts` in the `daemon.json` isn't supported on Docker
 > Desktop for Windows or Docker Desktop for Mac.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Setting `hosts` in the `daemon.json` isn't supported on Docker
 > Desktop for Windows or Docker Desktop for Mac.
-{ .important }
 @z
 
 @x

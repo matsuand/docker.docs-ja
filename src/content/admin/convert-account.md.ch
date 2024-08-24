@@ -32,15 +32,13 @@ When you convert a user account to an organization, the account is migrated to a
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Once you convert your account to an organization, you can’t revert it to a user account. 
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Once you convert your account to an organization, you can’t revert it to a user account. 
-{ .important }
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
 description: How swarm nodes work
@@ -64,11 +64,11 @@ Manager nodes handle cluster management tasks:
 @x
 * Maintaining cluster state
 * Scheduling services
-* Serving Swarm mode [HTTP API endpoints](../../api/index.md)
+* Serving Swarm mode [HTTP API endpoints](/reference/api/engine/_index.md)
 @y
 * Maintaining cluster state
 * Scheduling services
-* Serving Swarm mode [HTTP API endpoints](../../api/index.md)
+* Serving Swarm mode [HTTP API endpoints](reference/api/engine/_index.md)
 @z
 
 @x
@@ -116,13 +116,11 @@ Docker recommends a maximum of seven manager nodes for a swarm.
     >
     > Adding more managers does NOT mean increased
     > scalability or higher performance. In general, the opposite is true.
-    { .important }
 @y
     >**Important**
     >
     > Adding more managers does NOT mean increased
     > scalability or higher performance. In general, the opposite is true.
-    { .important }
 @z
 
 @x

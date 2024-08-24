@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Set environment variables within your container's environment
 description: How to set, use, and manage environment variables with Compose
 keywords: compose, orchestration, environment, environment variables, container environment variables
-aliases:
-- /compose/env/
-- /compose/link-env-deprecated/
----
 @y
----
 title: Set environment variables within your container's environment
 description: How to set, use, and manage environment variables with Compose
 keywords: compose, orchestration, environment, environment variables, container environment variables
-aliases:
-- /compose/env/
-- /compose/link-env-deprecated/
----
 @z
 
 @x
@@ -31,12 +23,10 @@ A container's environment is not set until there's an explicit entry in the serv
 >**Tip**
 >
 > Don't use environment variables to pass sensitive information, such as passwords, in to your containers. Use [secrets](../use-secrets.md) instead.
-{ .tip }
 @y
 >**Tip**
 >
 > Don't use environment variables to pass sensitive information, such as passwords, in to your containers. Use [secrets](../use-secrets.md) instead.
-{ .tip }
 @z
 
 @x
@@ -47,10 +37,10 @@ A container's environment is not set until there's an explicit entry in the serv
 
 @x
 You can set environment variables directly in your container's environment with the
-[`environment` attribute](../compose-file/05-services.md#environment) in your `compose.yml`. 
+[`environment` attribute](/reference/compose-file/services.md#environment) in your `compose.yml`. 
 @y
 You can set environment variables directly in your container's environment with the
-[`environment` attribute](../compose-file/05-services.md#environment) in your `compose.yml`. 
+[`environment` attribute](reference/compose-file/services.md#environment) in your `compose.yml`. 
 @z
 
 @x
@@ -90,9 +80,9 @@ services:
 @z
 
 @x
-See [`environment` attribute](../compose-file/05-services.md#environment) for more examples on how to use it. 
+See [`environment` attribute](/reference/compose-file/services.md#environment) for more examples on how to use it. 
 @y
-See [`environment` attribute](../compose-file/05-services.md#environment) for more examples on how to use it. 
+See [`environment` attribute](reference/compose-file/services.md#environment) for more examples on how to use it. 
 @z
 
 @x
@@ -146,9 +136,9 @@ The value of the `DEBUG` variable in the container is taken from the value for t
 @z
 
 @x
-A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](../compose-file/05-services.md#env_file).
+A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](/reference/compose-file/services.md#env_file).
 @y
-A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](../compose-file/05-services.md#env_file).
+A container's environment can also be set using [`.env` files](variable-interpolation.md#env-file) along with the [`env_file` attribute](reference/compose-file/services.md#env_file).
 @z
 
 @x
@@ -178,9 +168,9 @@ It can also help you keep your environment variables separate from your main con
 @z
 
 @x
-The [`env_file` attribute](../compose-file/05-services.md#env_file) also lets you use multiple `.env` files in your Compose application.  
+The [`env_file` attribute](/reference/compose-file/services.md#env_file) also lets you use multiple `.env` files in your Compose application.  
 @y
-The [`env_file` attribute](../compose-file/05-services.md#env_file) also lets you use multiple `.env` files in your Compose application.  
+The [`env_file` attribute](reference/compose-file/services.md#env_file) also lets you use multiple `.env` files in your Compose application.  
 @z
 
 @x
@@ -190,19 +180,17 @@ The paths to your `.env` file, specified in the `env_file` attribute, are relati
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Interpolation in `.env` files is a Docker Compose CLI feature.
 >
 > It is not supported when running `docker run --env-file ...`.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Interpolation in `.env` files is a Docker Compose CLI feature.
 >
 > It is not supported when running `docker run --env-file ...`.
-{ .important }
 @z
 
 @x

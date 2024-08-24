@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Explains how to work with containers
@@ -25,10 +25,10 @@ Learn by example:
 * [Network containers](networkingcontainers.md)
 * [Manage data in containers](/engine/storage/volumes.md)
 * [Samples](../../samples/index.md)
-* [Get Started](../../guides/getting-started/_index.md)
+* [Get Started](/get-started/introduction/_index.md)
 @y
 * [Network containers](networkingcontainers.md)
 * [Manage data in containers](engine/storage/volumes.md)
 * [Samples](../../samples/index.md)
-* [Get Started](../../guides/getting-started/_index.md)
+* [Get Started](get-started/introduction/_index.md)
 @z

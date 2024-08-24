@@ -637,11 +637,11 @@ Related information:
 @z
 
 @x
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](/reference/compose-file/)
  - [Compose Watch](../../compose/file-watch.md)
  - [Dockerfile reference](/reference/dockerfile/)
 @y
- - [Compose file reference](__SUBDIR__/compose/compose-file/)
+ - [Compose file reference](__SUBDIR__/reference/compose-file/)
  - [Compose Watch](../../compose/file-watch.md)
  - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 @z

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Use Docker Build Cloud in CI
@@ -62,12 +62,12 @@ See [Loading build results](./usage/#loading-build-results) for details.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Builds on Docker Build Cloud have a timeout limit of two hours. Builds that
 > run for longer than two hours are automatically cancelled.
 @y
-> **Note**
+> [!NOTE]
 >
 > Builds on Docker Build Cloud have a timeout limit of two hours. Builds that
 > run for longer than two hours are automatically cancelled.
@@ -82,7 +82,7 @@ See [Loading build results](./usage/#loading-build-results) for details.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Version 4.0.0 and later of `docker/build-push-action` and
 > `docker/bake-action` builds images with [provenance attestations by
@@ -100,7 +100,7 @@ See [Loading build results](./usage/#loading-build-results) for details.
 > `provenance: false` in the GitHub Action inputs (or in `docker-bake.hcl` if
 > you use Bake).
 @y
-> **Note**
+> [!NOTE]
 >
 > Version 4.0.0 and later of `docker/build-push-action` and
 > `docker/bake-action` builds images with [provenance attestations by

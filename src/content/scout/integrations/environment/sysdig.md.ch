@@ -52,19 +52,17 @@ integration uses Sysdig's Risk Spotlight feature. For more information, see
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Sysdig offers a free trial for Docker users to try out the new Docker Scout integration.
 >
 > {{< button url=`https://sysdig.com/free-trial-for-docker-customers/` text="Sign up" >}}
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Sysdig offers a free trial for Docker users to try out the new Docker Scout integration.
 >
 > {{< button url=`https://sysdig.com/free-trial-for-docker-customers/` text="Sign up" >}}
-{ .tip }
 @z
 
 @x
@@ -238,7 +236,7 @@ monitoring](./_index.md).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Scout only detects images that have been analyzed. To trigger an image
 > analysis, enable a [registry integration](../_index.md#container-registries)
@@ -247,7 +245,7 @@ monitoring](./_index.md).
 > If you created a new environment for this integration, the environment
 > appears in Docker Scout when at least one image has been analyzed.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Scout only detects images that have been analyzed. To trigger an image
 > analysis, enable a [registry integration](../_index.md#container-registries)

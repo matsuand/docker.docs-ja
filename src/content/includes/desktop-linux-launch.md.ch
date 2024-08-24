@@ -2,15 +2,48 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応。
+% snip 対応
 
 @x
-To start Docker Desktop for Linux, search **Docker Desktop** on the
-**Applications** menu and open it. This launches the Docker menu icon and opens
-the Docker Dashboard, reporting the status of Docker Desktop.
+To start Docker Desktop for Linux:
 @y
-To start Docker Desktop for Linux, search **Docker Desktop** on the
-**Applications** menu and open it. This launches the Docker menu icon and opens
-the Docker Dashboard, reporting the status of Docker Desktop.
+To start Docker Desktop for Linux:
+@z
+
+@x
+1. Open your **Applications** menu in Gnome/KDE Desktop and search for **Docker Desktop**.
+@y
+1. Open your **Applications** menu in Gnome/KDE Desktop and search for **Docker Desktop**.
+@z
+
+@x
+2. Select **Docker Desktop** to start Docker.
+@y
+2. Select **Docker Desktop** to start Docker.
+@z
+
+@x
+   The Docker Subscription Service Agreement displays.
+@y
+   The Docker Subscription Service Agreement displays.
+@z
+
+@x
+3. Select **Accept** to continue. Docker Desktop starts after you accept the terms.
+@y
+3. Select **Accept** to continue. Docker Desktop starts after you accept the terms.
+@z
+
+@x
+   Note that Docker Desktop won't run if you do not agree to the terms. You can choose to accept the terms at a later date by opening Docker Desktop.
+@y
+   Note that Docker Desktop won't run if you do not agree to the terms. You can choose to accept the terms at a later date by opening Docker Desktop.
+@z
+
+@x
+   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). It is recommended that you also read the [FAQs](https://www.docker.com/pricing/faq).
+@y
+   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). It is recommended that you also read the [FAQs](https://www.docker.com/pricing/faq).
 @z
 
 @x
@@ -19,15 +52,7 @@ Alternatively, open a terminal and run:
 Alternatively, open a terminal and run:
 @z
 
-@x
-```console
-$ systemctl --user start docker-desktop
-```
-@y
-```console
-$ systemctl --user start docker-desktop
-```
-@z
+% snip command...
 
 @x
 When Docker Desktop starts, it creates a dedicated [context](/engine/context/working-with-contexts) that the Docker CLI
@@ -65,41 +90,7 @@ After you’ve successfully installed Docker Desktop, you can check the versions
 of these binaries by running the following commands:
 @z
 
-@x
-```console
-$ docker compose version
-Docker Compose version v2.17.3
-@y
-```console
-$ docker compose version
-Docker Compose version v2.17.3
-@z
-
-@x
-$ docker --version
-Docker version 23.0.5, build bc4487a
-@y
-$ docker --version
-Docker version 23.0.5, build bc4487a
-@z
-
-@x
-$ docker version
-Client: Docker Engine - Community
- Cloud integration: v1.0.31
- Version:           23.0.5
- API version:       1.42
-<...>
-```
-@y
-$ docker version
-Client: Docker Engine - Community
- Cloud integration: v1.0.31
- Version:           23.0.5
- API version:       1.42
-<...>
-```
-@z
+% snip command...
 
 @x
 To enable Docker Desktop to start on sign in, from the Docker menu, select
@@ -115,15 +106,7 @@ Alternatively, open a terminal and run:
 Alternatively, open a terminal and run:
 @z
 
-@x
-```console
-$ systemctl --user enable docker-desktop
-```
-@y
-```console
-$ systemctl --user enable docker-desktop
-```
-@z
+% snip command...
 
 @x
 To stop Docker Desktop, select the Docker menu icon to open the Docker menu and select **Quit Docker Desktop**.
@@ -137,12 +120,4 @@ Alternatively, open a terminal and run:
 Alternatively, open a terminal and run:
 @z
 
-@x
-```console
-$ systemctl --user stop docker-desktop
-```
-@y
-```console
-$ systemctl --user stop docker-desktop
-```
-@z
+% snip command...

@@ -12,11 +12,11 @@ keywords: gpu, gpu support, nvidia, wsl2, docker desktop, windows
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Currently GPU support in Docker Desktop is only available on Windows with the WSL2 backend.
 @y
-> **メモ**
+> [!メモ]
 >
 > 現時点において Docker Desktop における GPU サポートは、WSL2 バックエンドを使った Windows 上においてのみ利用可能です。
 @z

@@ -29,12 +29,12 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
 - title: Compose file
   description: Defines a multi-container application.
   icon: polyline
-  link: /compose/compose-file/
+  link: /reference/compose-file/
 @y
 - title: Compose ファイル
   description: Defines a multi-container application.
   icon: polyline
-  link: __SUBDIR__/compose/compose-file/
+  link: __SUBDIR__/reference/compose-file/
 @z
 
 % grid_clis:
@@ -43,12 +43,12 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
 - title: Docker CLI
   description: The main Docker CLI, includes all `docker` commands.
   icon: terminal
-  link: /engine/reference/commandline/cli/
+  link: /reference/cli/docker/
 @y
 - title: Docker CLI
   description: The main Docker CLI, includes all `docker` commands.
   icon: terminal
-  link: __SUBDIR__/engine/reference/commandline/cli/
+  link: __SUBDIR__/reference/cli/docker/
 @z
 
 @x
@@ -56,13 +56,13 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
   description: The CLI for Docker Compose, for building and running multi-container
     applications.
   icon: subtitles
-  link: /compose/reference/
+  link: /reference/cli/docker/compose/
 @y
 - title: Compose CLI
   description: The CLI for Docker Compose, for building and running multi-container
     applications.
   icon: subtitles
-  link: __SUBDIR__/compose/reference/
+  link: __SUBDIR__/reference/cli/docker/compose/
 @z
 
 @x
@@ -77,54 +77,42 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
   link: __SUBDIR__/reference/cli/dockerd/
 @z
 
-@x
-grid_apis:
-- title: Engine API
-  description: The main API for Docker, provides programmatic access to a daemon.
-  icon: api
-  link: /engine/api/
-@y
-grid_apis:
-- title: Engine API
-  description: The main API for Docker, provides programmatic access to a daemon.
-  icon: api
-  link: __SUBDIR__/engine/api/
-@z
+% grid_apis:
 
 @x
-- title: Registry API
-  description: Facilitates distribution of images to the engine.
-  icon: storage
-  link: /registry/spec/api/
+- title: Engine API
+  description: The main API for Docker, provides programmatic access to a daemon.
+  icon: api
+  link: /reference/api/engine/
 @y
-- title: Registry API
-  description: Facilitates distribution of images to the engine.
-  icon: storage
-  link: __SUBDIR__/registry/spec/api/
+- title: Engine API
+  description: The main API for Docker, provides programmatic access to a daemon.
+  icon: api
+  link: __SUBDIR__/reference/api/engine/
 @z
 
 @x
 - title: Docker Hub API
   description: API to interact with Docker Hub.
   icon: communities
-  link: /docker-hub/api/latest/
+  link: /reference/api/hub/latest/
 @y
 - title: Docker Hub API
   description: API to interact with Docker Hub.
   icon: communities
-  link: __SUBDIR__/docker-hub/api/latest/
+  link: __SUBDIR__/reference/api/hub/latest/
 @z
 
 @x
 - title: DVP Data API
   description: API for Docker Verified Publishers to fetch analytics data.
   icon: area_chart
-  link: /docker-hub/api/dvp/
+  link: /reference/api/hub/dvp/
 @y
 - title: DVP Data API
   description: API for Docker Verified Publishers to fetch analytics data.
   icon: area_chart
-  link: __SUBDIR__/docker-hub/api/dvp/
+  link: __SUBDIR__/reference/api/hub/dvp/
 @z
 
 % snip aliases...

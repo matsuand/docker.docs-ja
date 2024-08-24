@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Understand permission requirements for Docker Desktop for Windows
 keywords: Docker Desktop, Windows, security, install
 title: Understand permission requirements for Windows
-aliases:
-- /desktop/windows/privileged-helper/
----
 @y
----
 description: Understand permission requirements for Docker Desktop for Windows
 keywords: Docker Desktop, Windows, security, install
 title: Understand permission requirements for Windows
-aliases:
-- /desktop/windows/privileged-helper/
----
 @z
 
 @x
@@ -135,12 +129,12 @@ you access to any files that it doesn’t already have access to.
 
 @x
 In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](../hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
+mode](/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
 available to Business customers only, which further secures containers without
 impacting developer workflows.
 @y
 In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](../hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
+mode](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
 available to Business customers only, which further secures containers without
 impacting developer workflows.
 @z

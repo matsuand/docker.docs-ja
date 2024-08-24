@@ -22,6 +22,40 @@ aliases:
 @z
 
 @x
+## Manage default repository settings
+@y
+## Manage default repository settings
+@z
+
+@x
+You can manage the default repository settings for your personal account in Docker Hub. Select the **Settings** icon, then select **Repository Settings**.
+@y
+You can manage the default repository settings for your personal account in Docker Hub. Select the **Settings** icon, then select **Repository Settings**.
+@z
+
+@x
+![Repository settings menu](../images/docker-hub-repo-settings-menu.png)
+@y
+![Repository settings menu](../images/docker-hub-repo-settings-menu.png)
+@z
+
+@x
+Here you can manage the following:
+@y
+Here you can manage the following:
+@z
+
+@x
+- Default privacy: set the default repository privacy to either **Public** or **Private**.
+- Linked accounts: for users with a Docker Pro, Team, or Business subscription, manage your source provider accounts to enable Automated Builds.
+- Notifications: for users with a Docker Pro, Team, or Business subscription, manage how you receive notifications from autobuilds.
+@y
+- Default privacy: set the default repository privacy to either **Public** or **Private**.
+- Linked accounts: for users with a Docker Pro, Team, or Business subscription, manage your source provider accounts to enable Automated Builds.
+- Notifications: for users with a Docker Pro, Team, or Business subscription, manage how you receive notifications from autobuilds.
+@z
+
+@x
 ## Change a repository from public to private
 @y
 ## Change a repository from public to private
@@ -174,15 +208,13 @@ The private images that existed in your user account are now available for your 
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Deleting a repository deletes all the images it contains and its build settings. This action can't be undone.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Deleting a repository deletes all the images it contains and its build settings. This action can't be undone.
-{ .warning }
 @z
 
 @x

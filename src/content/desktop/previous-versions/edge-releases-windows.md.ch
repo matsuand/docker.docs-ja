@@ -1308,11 +1308,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop Edge 2.1.7.0 is the release candidate for the upcoming major Stable release. Please help us test this version before the wider release and report any issues in the [docker/for-win](https://github.com/docker/for-win/issues) GitHub repository.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop Edge 2.1.7.0 is the release candidate for the upcoming major Stable release. Please help us test this version before the wider release and report any issues in the [docker/for-win](https://github.com/docker/for-win/issues) GitHub repository.
 @z
@@ -3142,11 +3142,11 @@ TCP connection is idle for more than 5 minutes (related to
 @z
 
 @x
-> **Note**: The link above goes to Docker for Mac issues because a
+> [!NOTE]: The link above goes to Docker for Mac issues because a
 Mac user reported this problem, which applied to both Mac and Windows
 and was fixed on both.
 @y
-> **Note**: The link above goes to Docker for Mac issues because a
+> [!NOTE]: The link above goes to Docker for Mac issues because a
 Mac user reported this problem, which applied to both Mac and Windows
 and was fixed on both.
 @z

@@ -303,6 +303,7 @@ bases = \
 	heading.html        \
 	github-links.html   \
 	guides-stepper.html \
+	post-links.html     \
 	search.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -311,24 +312,21 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	api-aside.html      \
 	aside.html          \
 	breadcrumbs.html    \
-	category-links.html \
 	cli-aside.html      \
 	favicon.html        \
 	header.html         \
 	icon.html           \
-	mermaid.html        \
 	meta.html           \
 	pagemeta.html       \
 	pagination.html     \
 	sidebar.html        \
 	tags.html           \
-	toc-api.html        \
 	toc-cli.html        \
 	tooltip.html        \
-	top-nav.html
+	top-nav.html        \
+	youtube-script.html
 
 all: all-recursive
 

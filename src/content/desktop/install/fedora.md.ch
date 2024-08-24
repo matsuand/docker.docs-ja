@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -34,12 +35,6 @@ This page contains information on how to install, launch and upgrade Docker Desk
 @z
 
 @x
-{{< button text="RPM package" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
-@y
-{{< button text="RPM パッケージ" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
-@z
-
-@x
 ## Prerequisites
 @y
 ## 前提条件 {#prerequisites}
@@ -52,10 +47,10 @@ To install Docker Desktop successfully, you must:
 @z
 
 @x
-- Meet the [system requirements](linux-install.md#general-system-requirements).
+- Meet the [general system requirements](linux-install.md#general-system-requirements).
 - Have a 64-bit version of Fedora 39 or Fedora 40.
 @y
-- Meet the [system requirements](linux-install.md#general-system-requirements).
+- Meet the [general system requirements](linux-install.md#general-system-requirements).
 - Have a 64-bit version of Fedora 39 or Fedora 40.
 @z
 
@@ -92,9 +87,9 @@ To install Docker Desktop on Fedora:
 @z
 
 @x
-2. Download latest [RPM package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download the latest [RPM package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64). For checksums, see the [Release notes](../release-notes.md).
 @y
-2. Download latest [RPM package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download the latest [RPM package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64). For checksums, see the [Release notes](../release-notes.md).
 @z
 
 @x
@@ -164,9 +159,21 @@ You need to first remove the previous version and then download the new package 
 @z
 
 @x
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @y
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @z

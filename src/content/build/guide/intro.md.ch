@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Introduction
 description: An introduction to the Docker Build guide
 keywords: build, buildkit, buildx, guide, tutorial, introduction
----
 @y
----
 title: Introduction
 description: An introduction to the Docker Build guide
 keywords: build, buildkit, buildx, guide, tutorial, introduction
----
 @z
 
 @x
@@ -38,11 +36,11 @@ To follow this guide:
 @z
 
 @x
-1. Install [Docker Desktop or Docker Engine](../../get-docker.md)
+1. Install [Docker Desktop or Docker Engine](/get-started/get-docker.md)
 2. Clone or create a new repository from the
    [application example on GitHub](https://github.com/dockersamples/buildme)
 @y
-1. Install [Docker Desktop or Docker Engine](../../get-docker.md)
+1. Install [Docker Desktop or Docker Engine](get-started/get-docker.md)
 2. Clone or create a new repository from the
    [application example on GitHub](https://github.com/dockersamples/buildme)
 @z

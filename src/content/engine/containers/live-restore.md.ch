@@ -36,12 +36,12 @@ or upgrades.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Live restore isn't supported for Windows containers, but it does work for
 > Linux containers running on Docker Desktop for Windows.
 @y
-> **Note**
+> [!NOTE]
 >
 > Live restore isn't supported for Windows containers, but it does work for
 > Linux containers running on Docker Desktop for Windows.

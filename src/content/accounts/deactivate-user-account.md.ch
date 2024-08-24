@@ -25,12 +25,10 @@ You can deactivate an account at any time. This section describes the prerequisi
 >**Warning**
 >
 > All Docker products and services that use your Docker account will be inaccessible after deactivating your account.
-{ .warning }
 @y
 >**Warning**
 >
 > All Docker products and services that use your Docker account will be inaccessible after deactivating your account.
-{ .warning }
 @z
 
 @x
@@ -112,15 +110,13 @@ Once you have completed all the previous steps, you can deactivate your account.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > This cannot be undone. Be sure you've gathered all the data you need from your account before deactivating it.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > This cannot be undone. Be sure you've gathered all the data you need from your account before deactivating it.
-{ .warning }
 @z
 
 @x

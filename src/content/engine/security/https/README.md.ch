@@ -56,9 +56,9 @@ lots of things to see and manually answer, as openssl wants to be interactive
 @z
 
 @x
-> **Note**: make sure you enter the hostname (`boot2docker` in my case) when prompted for `Computer Name`)
+> [!NOTE]: make sure you enter the hostname (`boot2docker` in my case) when prompted for `Computer Name`)
 @y
-> **Note**: make sure you enter the hostname (`boot2docker` in my case) when prompted for `Computer Name`)
+> [!NOTE]: make sure you enter the hostname (`boot2docker` in my case) when prompted for `Computer Name`)
 @z
 
 @x

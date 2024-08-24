@@ -107,16 +107,14 @@ If you choose the integrated terminal, you can run commands in a running contain
 
 @x
 - **Use Virtualization framework**. Select to allow Docker Desktop to use the `virtualization.framework` instead of the `hypervisor.framework`.
-    > **Tip**
+    > [!TIP]
     >
     > Turn this setting on to make Docker Desktop run faster.
-    { .tip }
 @y
 - **Use Virtualization framework**. Select to allow Docker Desktop to use the `virtualization.framework` instead of the `hypervisor.framework`.
-    > **Tip**
+    > [!TIP]
     >
     > Turn this setting on to make Docker Desktop run faster.
-    { .tip }
 @z
 
 @x
@@ -124,13 +122,11 @@ If you choose the integrated terminal, you can run commands in a running contain
     >**Tip**
     >
     > Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206)
-    { .tip }
 @y
 - **Choose file sharing implementation for your containers**. Choose whether you want to share files using **VirtioFS**, **gRPC FUSE**, or **osxfs**. VirtioFS is only available for macOS versions 12.5 and above, and is turned on by default.
     >**Tip**
     >
     > Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206)
-    { .tip }
 @z
 
 @x
@@ -152,12 +148,12 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](../hardened-desktop/enhanced-container-isolation/index.md).
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/security/for-admins/hardened-desktop/enhanced-container-isolation/index.md).
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
 @y
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](../hardened-desktop/enhanced-container-isolation/index.md).
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md).
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
@@ -264,13 +260,11 @@ Advanced settings are:
 >
 > If you feel Docker Desktop starting to get slow or you're running
 > multi-container workloads, increase the memory and disk image space allocation
-{ .tip }
 @y
 >**Tip**
 >
 > If you feel Docker Desktop starting to get slow or you're running
 > multi-container workloads, increase the memory and disk image space allocation
-{ .tip }
 @z
 
 @x
@@ -387,7 +381,6 @@ File share settings are:
 >   `Test` will fail.
 >
 > For more information, see [Volume mounting requires file sharing for any project directories outside of `/Users`](../troubleshoot/topics.md)
-{ .tip }
 @y
 > Tips on shared folders, permissions, and volume mounts
 >
@@ -398,8 +391,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](engine/storage/volumes.md)
->   (named volume) or [data container](engine/storage/volumes.md).
+>   better if they are stored in the Linux VM, using a [data volume](/engine/storage/volumes.md)
+>   (named volume) or [data container](/engine/storage/volumes.md).
 > * If you share the whole of your home directory into a container, MacOS may
 >   prompt you to give Docker access to personal areas of your home directory such as
 >   your Reminders or Downloads.
@@ -416,7 +409,6 @@ File share settings are:
 >   `Test` will fail.
 >
 > For more information, see [Volume mounting requires file sharing for any project directories outside of `/Users`](../troubleshoot/topics.md)
-{ .tip }
 @z
 
 @x
@@ -475,10 +467,10 @@ upstream proxy URL of the form `http://proxy:port` or `https://proxy:port`.
 
 @x
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](../hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](/security/for-admins/hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
 @y
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](../hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](security/for-admins/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @z
 
 @x

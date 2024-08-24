@@ -8,7 +8,7 @@ keywords: 'container, storage, driver, AUFS '
 title: Use the AUFS storage driver
 sitemap: false
 aliases:
-- /engine/userguide/storagedriver/aufs-driver/
+  - /storage/storagedriver/aufs-driver/
 ---
 @y
 ---
@@ -17,7 +17,7 @@ keywords: 'container, storage, driver, AUFS '
 title: Use the AUFS storage driver
 sitemap: false
 aliases:
-- /engine/userguide/storagedriver/aufs-driver/
+  - /storage/storagedriver/aufs-driver/
 ---
 @z
 
@@ -28,7 +28,6 @@ aliases:
 > v24.0. If you are using AufS, you must migrate to a supported storage driver
 > before upgrading to Docker Engine v24.0. Read the [Docker storage drivers](select-storage-driver.md)
 > page for supported storage drivers.
-{ .warning }
 @y
 > **Deprecated**
 >
@@ -36,7 +35,6 @@ aliases:
 > v24.0. If you are using AufS, you must migrate to a supported storage driver
 > before upgrading to Docker Engine v24.0. Read the [Docker storage drivers](select-storage-driver.md)
 > page for supported storage drivers.
-{ .warning }
 @z
 
 @x
@@ -272,10 +270,10 @@ Status: Downloaded newer image for ubuntu:latest
 @z
 
 @x
-> **Warning**: Do not directly manipulate any files or directories within
+> [!WARNING]: Do not directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
 @y
-> **Warning**: Do not directly manipulate any files or directories within
+> [!WARNING]: Do not directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
 @z
 

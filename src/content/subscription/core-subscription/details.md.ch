@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Docker Core subscriptions and features
 description: Learn about Docker Core subscription tiers and their features
 keywords: subscription, personal, pro, team, business, features, docker core subscription, docker core
-aliases:
-- /subscription/details/
----
 @y
----
 title: Docker Core subscriptions and features
 description: Learn about Docker Core subscription tiers and their features
 keywords: subscription, personal, pro, team, business, features, docker core subscription, docker core
-aliases:
-- /subscription/details/
----
 @z
 
 @x
@@ -182,18 +176,18 @@ For a list of features available in each tier, see [Docker Pricing](https://www.
 @x
 Docker Business includes:
 - Everything included in Docker Team
-- [Hardened Docker Desktop](../../desktop/hardened-desktop/index.md) 
-- [Image Access Management](../../security/for-admins/image-access-management.md) which lets admins control what content developers can access
-- [Registry Access Management](../../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
+- [Hardened Docker Desktop](/security/for-admins/hardened-desktop/index.md) 
+- [Image Access Management](/security/for-admins/hardened-desktop/image-access-management.md) which lets admins control what content developers can access
+- [Registry Access Management](/security/for-admins/hardened-desktop/registry-access-management.md) which lets admins control what registries developers can access
 - [Company layer](../../admin/company/_index.md) to manage multiple organizations and settings
 - [Single Sign-On](../../security/for-admins/single-sign-on/index.md)
 - [System for Cross-domain Identity Management](../../security/for-admins/provisioning/scim.md) and more.
 @y
 Docker Business includes:
 - Everything included in Docker Team
-- [Hardened Docker Desktop](../../desktop/hardened-desktop/index.md) 
-- [Image Access Management](../../security/for-admins/image-access-management.md) which lets admins control what content developers can access
-- [Registry Access Management](../../security/for-admins/registry-access-management.md) which lets admins control what registries developers can access
+- [Hardened Docker Desktop](security/for-admins/hardened-desktop/index.md) 
+- [Image Access Management](security/for-admins/hardened-desktop/image-access-management.md) which lets admins control what content developers can access
+- [Registry Access Management](security/for-admins/hardened-desktop/registry-access-management.md) which lets admins control what registries developers can access
 - [Company layer](../../admin/company/_index.md) to manage multiple organizations and settings
 - [Single Sign-On](../../security/for-admins/single-sign-on/index.md)
 - [System for Cross-domain Identity Management](../../security/for-admins/provisioning/scim.md) and more.

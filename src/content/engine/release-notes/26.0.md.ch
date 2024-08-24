@@ -25,10 +25,10 @@ For more information about:
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history.md).
 @y
 - 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
-- Engine API の変更点。詳細は [Engine API バージョン履歴](../api/version-history.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](reference/api/engine/version-history.md) を参照。
 @z
 
 @x
@@ -234,12 +234,12 @@ This release contains a security fix for [CVE-2024-29018], a potential data exfi
 @z
 
 @x
-  > **Warning**
+  > [!WARNING]
   >
   > Containers created using Docker Engine 25.0.0 may have duplicate MAC addresses, they must be re-created.
   > Containers created using version 25.0.0 or 25.0.1 with user-defined MAC addresses will get generated MAC addresses when they are started using 25.0.2. They must also be re-created.
 @y
-  > **Warning**
+  > [!WARNING]
   >
   > Containers created using Docker Engine 25.0.0 may have duplicate MAC addresses, they must be re-created.
   > Containers created using version 25.0.0 or 25.0.1 with user-defined MAC addresses will get generated MAC addresses when they are started using 25.0.2. They must also be re-created.
@@ -252,7 +252,7 @@ This release contains a security fix for [CVE-2024-29018], a potential data exfi
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > By default, IPv6 will remain enabled on a container's loopback interface when the container is not connected to an IPv6-enabled network.
   > For example, containers that are only connected to an IPv4-only network now have the `::1` address on their loopback interface.
@@ -265,7 +265,7 @@ This release contains a security fix for [CVE-2024-29018], a potential data exfi
   > or the host's networking stack does not have IPv6 enabled (or for any other reason)
   > the container's `/etc/hosts` file will not include IPv6 entries.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > By default, IPv6 will remain enabled on a container's loopback interface when the container is not connected to an IPv6-enabled network.
   > For example, containers that are only connected to an IPv4-only network now have the `::1` address on their loopback interface.

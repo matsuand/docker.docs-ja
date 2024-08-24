@@ -60,9 +60,9 @@ AC_CONFIG_FILES([
 	src/assets/css/Makefile
 	src/assets/favicons/Makefile
 	src/assets/images/Makefile
+	src/assets/images/learning-paths/Makefile
 	src/assets/js/Makefile
 	src/assets/js/src/Makefile
-	src/assets/scss/Makefile
 	src/content/Makefile
 	src/content/accounts/Makefile
 	src/content/admin/Makefile
@@ -73,9 +73,9 @@ AC_CONFIG_FILES([
 	src/content/billing/Makefile
 	src/content/billing/core-billing/Makefile
 	src/content/build/Makefile
-	src/content/build/attestations/Makefile
 	src/content/build/bake/Makefile
 	src/content/build/builders/Makefile
+	src/content/build/builders/drivers/Makefile
 	src/content/build/building/Makefile
 	src/content/build/buildkit/Makefile
 	src/content/build/cache/Makefile
@@ -84,23 +84,22 @@ AC_CONFIG_FILES([
 	src/content/build/ci/github-actions/Makefile
 	src/content/build/ci/github-actions/images/Makefile
 	src/content/build/ci/images/Makefile
-	src/content/build/dockerfile/Makefile
-	src/content/build/drivers/Makefile
+	src/content/build/concepts/Makefile
 	src/content/build/exporters/Makefile
 	src/content/build/guide/Makefile
 	src/content/build/guide/images/Makefile
 	src/content/build/images/Makefile
+	src/content/build/metadata/Makefile
+	src/content/build/metadata/attestations/Makefile
 	src/content/build-cloud/Makefile
 	src/content/cloud/Makefile
 	src/content/compose/Makefile
 	src/content/compose/bridge/Makefile
-	src/content/compose/compose-file/Makefile
 	src/content/compose/environment-variables/Makefile
 	src/content/compose/images/Makefile
 	src/content/compose/install/Makefile
 	src/content/compose/intro/Makefile
 	src/content/compose/multiple-compose-files/Makefile
-	src/content/compose/reference/Makefile
 	src/content/contribute/Makefile
 	src/content/contribute/components/Makefile
 	src/content/contribute/style/Makefile
@@ -109,9 +108,6 @@ AC_CONFIG_FILES([
 	src/content/desktop/dev-environments/Makefile
 	src/content/desktop/enterprise/Makefile
 	src/content/desktop/faqs/Makefile
-	src/content/desktop/hardened-desktop/Makefile
-	src/content/desktop/hardened-desktop/enhanced-container-isolation/Makefile
-	src/content/desktop/hardened-desktop/settings-management/Makefile
 	src/content/desktop/images/Makefile
 	src/content/desktop/install/Makefile
 	src/content/desktop/install/images/Makefile
@@ -130,16 +126,11 @@ AC_CONFIG_FILES([
 	src/content/desktop/windows/images/Makefile
 	src/content/desktop/wsl/Makefile
 	src/content/docker-hub/Makefile
-	src/content/docker-hub/api/Makefile
 	src/content/docker-hub/builds/Makefile
 	src/content/docker-hub/builds/images/Makefile
 	src/content/docker-hub/images/Makefile
 	src/content/docker-hub/repos/Makefile
-	src/content/docker-id/Makefile
 	src/content/engine/Makefile
-	src/content/engine/api/Makefile
-	src/content/engine/api/latest/Makefile
-	src/content/engine/api/sdk/Makefile
 	src/content/engine/cli/Makefile
 	src/content/engine/containers/Makefile
 	src/content/engine/daemon/Makefile
@@ -176,32 +167,30 @@ AC_CONFIG_FILES([
 	src/content/extensions/extensions-sdk/design/images/Makefile
 	src/content/extensions/extensions-sdk/dev/Makefile
 	src/content/extensions/extensions-sdk/dev/api/Makefile
-	src/content/extensions/extensions-sdk/dev/api/reference/Makefile
-	src/content/extensions/extensions-sdk/dev/api/reference/interfaces/Makefile
 	src/content/extensions/extensions-sdk/extensions/Makefile
 	src/content/extensions/extensions-sdk/extensions/images/Makefile
 	src/content/extensions/extensions-sdk/guides/Makefile
 	src/content/extensions/extensions-sdk/guides/images/Makefile
+	src/content/get-started/Makefile
+	src/content/get-started/docker-concepts/Makefile
+	src/content/get-started/docker-concepts/building-images/Makefile
+	src/content/get-started/docker-concepts/building-images/images/Makefile
+	src/content/get-started/docker-concepts/running-containers/Makefile
+	src/content/get-started/docker-concepts/running-containers/images/Makefile
+	src/content/get-started/docker-concepts/the-basics/Makefile
+	src/content/get-started/docker-concepts/the-basics/images/Makefile
+	src/content/get-started/introduction/Makefile
+	src/content/get-started/introduction/images/Makefile
+	src/content/get-started/workshop/Makefile
+	src/content/get-started/workshop/images/Makefile
 	src/content/guides/Makefile
 	src/content/guides/deployment-orchestration/Makefile
-	src/content/guides/docker-concepts/Makefile
-	src/content/guides/docker-concepts/building-images/Makefile
-	src/content/guides/docker-concepts/building-images/images/Makefile
-	src/content/guides/docker-concepts/running-containers/Makefile
-	src/content/guides/docker-concepts/running-containers/images/Makefile
-	src/content/guides/docker-concepts/the-basics/Makefile
-	src/content/guides/docker-concepts/the-basics/images/Makefile
-	src/content/guides/getting-started/Makefile
-	src/content/guides/getting-started/images/Makefile
-	src/content/guides/images/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/images/Makefile
 	src/content/guides/use-case/images/Makefile
 	src/content/guides/use-case/nlp/Makefile
-	src/content/guides/workshop/Makefile
-	src/content/guides/workshop/images/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/language/Makefile
@@ -217,7 +206,14 @@ AC_CONFIG_FILES([
 	src/content/language/r/Makefile
 	src/content/language/ruby/Makefile
 	src/content/language/rust/Makefile
+	src/content/learning-paths/Makefile
 	src/content/reference/Makefile
+	src/content/reference/api/Makefile
+	src/content/reference/api/engine/Makefile
+	src/content/reference/api/engine/latest/Makefile
+	src/content/reference/api/engine/sdk/Makefile
+	src/content/reference/api/extensions-sdk/Makefile
+	src/content/reference/api/hub/Makefile
 	src/content/reference/cli/Makefile
 	src/content/reference/cli/docker/Makefile
 	src/content/reference/cli/docker/builder/Makefile
@@ -249,6 +245,8 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/trust/key/Makefile
 	src/content/reference/cli/docker/trust/signer/Makefile
 	src/content/reference/cli/docker/volume/Makefile
+	src/content/reference/compose-file/Makefile
+	src/content/run-cloud/Makefile
 	src/content/samples/Makefile
 	src/content/scout/Makefile
 	src/content/scout/concepts/Makefile
@@ -272,6 +270,9 @@ AC_CONFIG_FILES([
 	src/content/security/faqs/single-sign-on/Makefile
 	src/content/security/for-admins/Makefile
 	src/content/security/for-admins/enforce-sign-in/Makefile
+	src/content/security/for-admins/hardened-desktop/Makefile
+	src/content/security/for-admins/hardened-desktop/enhanced-container-isolation/Makefile
+	src/content/security/for-admins/hardened-desktop/settings-management/Makefile
 	src/content/security/for-admins/provisioning/Makefile
 	src/content/security/for-admins/single-sign-on/Makefile
 	src/content/security/for-admins/single-sign-on/configure/Makefile
@@ -304,7 +305,7 @@ AC_CONFIG_FILES([
 	src/layouts/Makefile
 	src/layouts/_default/Makefile
 	src/layouts/_default/_markup/Makefile
-	src/layouts/guides/Makefile
+	src/layouts/learning-paths/Makefile
 	src/layouts/partials/Makefile
 	src/layouts/partials/components/Makefile
 	src/layouts/partials/utils/Makefile

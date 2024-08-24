@@ -13,13 +13,13 @@ keywords: billing, renewal, payments, subscriptions
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > [Docker Core subscription](/billing/core-billing/get-started-core/) payments support 3D secure authentication.
 @y
-> **Note**
+> [!NOTE]
 >
-> [Docker Core subscription](__SUBDIR__/billing/core-billing/get-started-core/) payments support 3D secure authentication.
+> [Docker Core subscription](/billing/core-billing/get-started-core/) payments support 3D secure authentication.
 @z
 
 @x
@@ -69,13 +69,11 @@ If you encounter errors completing payments due to 3DS, you can troubleshoot in 
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Make sure you allow third-party scripts in your browser and that any ad blocker you may use is disabled when attempting to complete payments.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Make sure you allow third-party scripts in your browser and that any ad blocker you may use is disabled when attempting to complete payments.
-{ .tip }
 @z

@@ -1,26 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+
 @x
----
 description: Understand permission requirements for Docker Desktop for Mac and the
   differences between versions
 keywords: Docker Desktop, mac, security, install, permissions
 title: Understand permission requirements for Docker Desktop on Mac
-aliases:
-- /docker-for-mac/privileged-helper/
-- /desktop/mac/privileged-helper/
----
 @y
----
 description: Understand permission requirements for Docker Desktop for Mac and the
   differences between versions
 keywords: Docker Desktop, mac, security, install, permissions
 title: Understand permission requirements for Docker Desktop on Mac
-aliases:
-- /docker-for-mac/privileged-helper/
-- /desktop/mac/privileged-helper/
----
 @z
 
 @x
@@ -292,11 +284,11 @@ ERRO[0003] error waiting for container: context canceled
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The command may fail with the same error if you take too long to authorize the prompt to start the helper process, as it may timeout.
 @y
-> **Note**
+> [!NOTE]
 >
 > The command may fail with the same error if you take too long to authorize the prompt to start the helper process, as it may timeout.
 @z
@@ -471,12 +463,12 @@ retain their original permissions.
 
 @x
 In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](../hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
+mode](/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
 available to Business customers only, which further secures containers without
 impacting developer workflows.
 @y
 In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](../hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
+mode](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
 available to Business customers only, which further secures containers without
 impacting developer workflows.
 @z

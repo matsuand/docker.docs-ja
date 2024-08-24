@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: containerd image store with Docker Engine
@@ -14,13 +14,13 @@ description: Learn how to enable the containerd image store on Docker Engine
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The containerd image store is an experimental feature of Docker Engine.
 > If you're using Docker Desktop, refer to the instructions on the
 > [containerd image store with Docker Desktop page](/desktop/containerd.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > The containerd image store is an experimental feature of Docker Engine.
 > If you're using Docker Desktop, refer to the instructions on the

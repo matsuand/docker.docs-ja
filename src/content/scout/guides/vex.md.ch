@@ -1,20 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
----
 title: Suppress image vulnerabilities with VEX
 description: An introduction to using VEX with Docker Scout
 keywords: scout, vex, Vulnerability Exploitability eXchange, openvex, vulnerabilities, cves
----
 @y
----
 title: Suppress image vulnerabilities with VEX
 description: An introduction to using VEX with Docker Scout
 keywords: scout, vex, Vulnerability Exploitability eXchange, openvex, vulnerabilities, cves
----
 @z
 
 @x
@@ -69,13 +65,13 @@ If you want to follow along the steps of this guide, you'll need the following:
 - The latest version of Docker Desktop
 - The [containerd image store](../../desktop/containerd.md) must be enabled
 - Git
-- A [Docker account](../../docker-id/_index.md)
+- A [Docker account](/accounts/create-account/)
 - A GitHub account
 @y
 - The latest version of Docker Desktop
 - The [containerd image store](../../desktop/containerd.md) must be enabled
 - Git
-- A [Docker account](../../docker-id/_index.md)
+- A [Docker account](__SUBDIR__/accounts/create-account/)
 - A GitHub account
 @z
 
@@ -660,13 +656,13 @@ Instead, `products` should refer to the packages that contain the vulnerabilitie
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > This only works when analyzing remote images in a registry.
    > To force Docker Scout to analyze a registry image instead of a local one,
    > specify the image reference with a `registry://` prefix.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > This only works when analyzing remote images in a registry.
    > To force Docker Scout to analyze a registry image instead of a local one,

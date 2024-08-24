@@ -92,15 +92,13 @@ If you already have Docker Engine and Docker CLI installed, you can install the 
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 >This is only available on Linux
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 >This is only available on Linux
-{ .important }
 @z
 
 @x
@@ -116,13 +114,11 @@ You can [install the Compose standalone](standalone.md) on Linux or on Windows S
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 >This install scenario is not recommended and is only supported for backward compatibility purposes.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 >This install scenario is not recommended and is only supported for backward compatibility purposes.
-{ .warning }
 @z

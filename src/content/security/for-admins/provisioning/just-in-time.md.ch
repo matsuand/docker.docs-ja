@@ -160,15 +160,13 @@ You may want to disable JIT provisioning for reasons such as the following:
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Disabling JIT provisioning could potentially disrupt your users' workflows. Users must already be a member of the organization or have an invitation to the organization when they authenticate with SSO in order to sign in successfully. To auto-provision users with JIT disabled, you can [use SCIM](./scim.md).
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Disabling JIT provisioning could potentially disrupt your users' workflows. Users must already be a member of the organization or have an invitation to the organization when they authenticate with SSO in order to sign in successfully. To auto-provision users with JIT disabled, you can [use SCIM](./scim.md).
-{ .warning }
 @z
 
 @x

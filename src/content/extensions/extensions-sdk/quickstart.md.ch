@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Quickstart
@@ -36,11 +36,11 @@ Follow this guide to get started with creating a basic Docker extension. The Qui
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > NodeJS and Go are only required when you follow the quickstart guide to create an extension. It uses the `docker extension init` command to automatically generate boilerplate files. This command uses a template based on a ReactJS and Go application.
 @y
-> **Note**
+> [!NOTE]
 >
 > NodeJS and Go are only required when you follow the quickstart guide to create an extension. It uses the `docker extension init` command to automatically generate boilerplate files. This command uses a template based on a ReactJS and Go application.
 @z
@@ -174,17 +174,15 @@ see a **Quickstart** item underneath the **Extensions** menu. Selecting this ite
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire
 > extension. See [Preview whilst developing the UI](dev/test-debug.md#hot-reloading-whilst-developing-the-ui) for more information.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > During UI development, it’s helpful to use hot reloading to test your changes without rebuilding your entire
 > extension. See [Preview whilst developing the UI](dev/test-debug.md#hot-reloading-whilst-developing-the-ui) for more information.
-{ .tip }
 @z
 
 @x

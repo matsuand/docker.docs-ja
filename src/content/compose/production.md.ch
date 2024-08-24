@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Guide to using Docker Compose in production
 keywords: compose, orchestration, containers, production
 title: Use Compose in production
----
 @y
----
 description: Guide to using Docker Compose in production
 keywords: compose, orchestration, containers, production
 title: Use Compose in production
----
 @z
 
 @x
@@ -55,7 +53,7 @@ production. These changes might include:
 - Binding to different ports on the host
 - Setting environment variables differently, such as reducing the verbosity of
   logging, or to specify settings for external services such as an email server
-- Specifying a restart policy like [`restart: always`](compose-file/05-services.md#restart)to avoid downtime
+- Specifying a restart policy like [`restart: always`](/reference/compose-file/services.md#restart)to avoid downtime
 - Adding extra services such as a log aggregator
 @y
 - Removing any volume bindings for application code, so that code stays inside
@@ -63,7 +61,6 @@ production. These changes might include:
 - Binding to different ports on the host
 - Setting environment variables differently, such as reducing the verbosity of
   logging, or to specify settings for external services such as an email server
-- Specifying a restart policy like [`restart: always`](compose-file/05-services.md#restart)to avoid downtime
 - Adding extra services such as a log aggregator
 @z
 

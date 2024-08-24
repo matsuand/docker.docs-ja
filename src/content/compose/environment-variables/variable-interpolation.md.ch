@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Set, use, and manage variables in a Compose file with interpolation
 description: How to set, use, and manage variables in your Compose file with interpolation
 keywords: compose, orchestration, environment, variables, interpolation
-aliases:
-- /compose/env-file/
-- /compose/environment-variables/env-file/
----
 @y
----
 title: Set, use, and manage variables in a Compose file with interpolation
 description: How to set, use, and manage variables in your Compose file with interpolation
 keywords: compose, orchestration, environment, variables, interpolation
-aliases:
-- /compose/env-file/
-- /compose/environment-variables/env-file/
----
 @z
 
 @x
@@ -130,9 +122,9 @@ For braced expressions, the following formats are supported:
 @z
 
 @x
-For more information, see [Interpolation](../compose-file/12-interpolation.md) in the Compose Specification. 
+For more information, see [Interpolation](/reference/compose-file/interpolation.md) in the Compose Specification. 
 @y
-For more information, see [Interpolation](../compose-file/12-interpolation.md) in the Compose Specification. 
+For more information, see [Interpolation](reference/compose-file/interpolation.md) in the Compose Specification. 
 @z
 
 @x
@@ -244,7 +236,7 @@ services:
 @z
 
 @x
-- If you define a variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
+- If you define a variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](/reference/compose-file/services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
    ```yaml
     services:
       webapp:
@@ -254,7 +246,7 @@ services:
    ```
    Docker Compose replaces `${DEBUG}` with the value from the `.env` file
 @y
-- If you define a variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](../compose-file/05-services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
+- If you define a variable in your `.env` file, you can reference it directly in your `compose.yml` with the [`environment` attribute](reference/compose-file/services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yml` file looks like this:
    ```yaml
     services:
       webapp:
@@ -266,15 +258,13 @@ services:
 @z
 
 @x
-   > **Important**
+   > [!IMPORTANT]
    >
    > Be aware of [Environment variables precedence](envvars-precedence.md) when using variables in an `.env` file that  as environment variables in your container's environment.
-   { .important }
 @y
-   > **Important**
+   > [!IMPORTANT]
    >
    > Be aware of [Environment variables precedence](envvars-precedence.md) when using variables in an `.env` file that  as environment variables in your container's environment.
-   { .important }
 @z
 
 @x
@@ -290,19 +280,17 @@ services:
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Substitution from `.env` files is a Docker Compose CLI feature.
 >
 > It is not supported by Swarm when running `docker stack deploy`.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Substitution from `.env` files is a Docker Compose CLI feature.
 >
 > It is not supported by Swarm when running `docker stack deploy`.
-{ .important }
 @z
 
 @x
@@ -594,11 +582,11 @@ If an environment variable is not set, Compose substitutes with an empty string.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `postgres:` is not a valid image reference. Docker expects either a reference without a tag, like `postgres` which defaults to the latest image, or with a tag such as `postgres:15`.
 @y
-> **Note**
+> [!NOTE]
 >
 > `postgres:` is not a valid image reference. Docker expects either a reference without a tag, like `postgres` which defaults to the latest image, or with a tag such as `postgres:15`.
 @z

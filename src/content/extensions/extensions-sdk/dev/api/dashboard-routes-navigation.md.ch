@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Navigation
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases:
- - /desktop/extensions-sdk/dev/api/dashboard-routes-navigation/
----
 @y
----
 title: Navigation
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases:
- - /desktop/extensions-sdk/dev/api/dashboard-routes-navigation/
----
 @z
 
 @x
@@ -92,9 +86,9 @@ A promise that fails if the container doesn't exist.
 @z
 
 @x
-For more details about all navigation methods, see the [Navigation API reference](reference/interfaces/NavigationIntents.md).
+For more details about all navigation methods, see the [Navigation API reference](/reference/api/extensions-sdk/NavigationIntents.md).
 @y
-For more details about all navigation methods, see the [Navigation API reference](reference/interfaces/NavigationIntents.md).
+For more details about all navigation methods, see the [Navigation API reference](reference/api/extensions-sdk/NavigationIntents.md).
 @z
 
 @x

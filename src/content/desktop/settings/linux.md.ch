@@ -110,12 +110,12 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](../hardened-desktop/enhanced-container-isolation/index.md)
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/security/for-admins/hardened-desktop/enhanced-container-isolation/index.md)
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
 @y
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](../hardened-desktop/enhanced-container-isolation/index.md)
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
@@ -222,13 +222,11 @@ Advanced settings are:
 >
 > If you feel Docker Desktop starting to get slow or you're running
 > multi-container workloads, increase the memory and disk image space allocation
-{ .tip }
 @y
 >**Tip**
 >
 > If you feel Docker Desktop starting to get slow or you're running
 > multi-container workloads, increase the memory and disk image space allocation
-{ .tip }
 @z
 
 @x
@@ -329,7 +327,6 @@ File share settings are:
 >   such as cache directories or databases, the performance will be much
 >   better if they are stored in the Linux VM, using a [data volume](/engine/storage/volumes.md)
 >   (named volume) or [data container](/engine/storage/volumes.md).
-{ .tip }
 @y
 > Tips on shared folders, permissions, and volume mounts
 >
@@ -340,9 +337,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](engine/storage/volumes.md)
->   (named volume) or [data container](engine/storage/volumes.md).
-{ .tip }
+>   better if they are stored in the Linux VM, using a [data volume](/engine/storage/volumes.md)
+>   (named volume) or [data container](/engine/storage/volumes.md).
 @z
 
 @x
@@ -401,10 +397,10 @@ upstream proxy URL of the form `http://proxy:port` or `https://proxy:port`.
 
 @x
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](../hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](/security/for-admins/hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
 @y
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](../hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](security/for-admins/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @z
 
 @x
@@ -474,7 +470,7 @@ edit the file using your favorite text editor.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Only the **Docker Desktop** daemon uses the configuration file under `$HOME/.docker`.
 > If you manually install Docker Engine alongside Docker Desktop, the manually
@@ -482,12 +478,12 @@ edit the file using your favorite text editor.
 > Refer to [Configure the daemon](/engine/daemon/_index.md) for more information
 > about how to configure the Docker daemon on a manually installed Docker Engine.
 @y
-> **Note**
+> [!NOTE]
 >
 > Only the **Docker Desktop** daemon uses the configuration file under `$HOME/.docker`.
 > If you manually install Docker Engine alongside Docker Desktop, the manually
 > installed instance uses a `daemon.json` configuration file in a different location.
-> Refer to [Configure the daemon](engine/daemon/_index.md) for more information
+> Refer to [Configure the daemon](/engine/daemon/_index.md) for more information
 > about how to configure the Docker daemon on a manually installed Docker Engine.
 @z
 

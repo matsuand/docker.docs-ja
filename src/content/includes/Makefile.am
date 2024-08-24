@@ -5,6 +5,7 @@
 SUBDIRS = compose
 
 bases = \
+	_index.md                         \
 	aci-ecs-eol.md                    \
 	admin-company-overview.md         \
 	admin-early-access.md             \
@@ -35,8 +36,3 @@ bases = \
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
-
-copyfiles = \
-	index.md
-
-include $(top_srcdir)/build-aux/copy.mk

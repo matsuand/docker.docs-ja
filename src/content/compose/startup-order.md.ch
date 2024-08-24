@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: How to control service startup and shutdown order in Docker Compose
 keywords: documentation, docs, docker, compose, startup, shutdown, order
@@ -13,11 +15,11 @@ title: Compose における起動、停止順の制御
 
 @x
 You can control the order of service startup and shutdown with the
-[depends_on](compose-file/05-services.md#depends_on) attribute. Compose always starts and stops
+[depends_on](/reference/compose-file/services.md#depends_on) attribute. Compose always starts and stops
 containers in dependency order, where dependencies are determined by
 `depends_on`, `links`, `volumes_from`, and `network_mode: "service:..."`.
 @y
-サービスの起動順や停止順は [depends_on](compose-file/05-services.md#depends_on) 属性を使って制御することができます。
+サービスの起動順や停止順は [depends_on](reference/compose-file/services.md#depends_on) 属性を使って制御することができます。
 Compose では必ず依存順に応じて、コンテナーの起動または停止を行いますが、この依存順とは `depends_on`、`links`、`volumes_from`、`network_mode: "service:..."` によって決定されます。
 @z
 
@@ -101,9 +103,9 @@ Compose でのサービスの削除もまた、サービス依存の順に行わ
 @z
 
 @x
-- [`depends_on`](compose-file/05-services.md#depends_on)
-- [`healthcheck`](compose-file/05-services.md#healthcheck)
+- [`depends_on`](/reference/compose-file/services.md#depends_on)
+- [`healthcheck`](/reference/compose-file/services.md#healthcheck)
 @y
-- [`depends_on`](compose-file/05-services.md#depends_on)
-- [`healthcheck`](compose-file/05-services.md#healthcheck)
+- [`depends_on`](reference/compose-file/services.md#depends_on)
+- [`healthcheck`](reference/compose-file/services.md#healthcheck)
 @z

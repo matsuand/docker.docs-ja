@@ -238,7 +238,7 @@ Here are some examples:
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Publishing container ports is insecure by default. Meaning, when you publish
 > a container's ports it becomes available not only to the Docker host, but to
@@ -252,16 +252,14 @@ Here are some examples:
 > $ docker run -p 127.0.0.1:8080:80 -p '[::1]:8080:80' nginx
 > ```
 >
-> > **Warning**
+> > [!WARNING]
 > >
 > > Hosts within the same L2 segment (for example, hosts connected to the same
 > > network switch) can reach ports published to localhost.
 > > For more information, see
 > > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
-> { .warning }
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Publishing container ports is insecure by default. Meaning, when you publish
 > a container's ports it becomes available not only to the Docker host, but to
@@ -275,14 +273,12 @@ Here are some examples:
 > $ docker run -p 127.0.0.1:8080:80 -p '[::1]:8080:80' nginx
 > ```
 >
-> > **Warning**
+> > [!WARNING]
 > >
 > > Hosts within the same L2 segment (for example, hosts connected to the same
 > > network switch) can reach ports published to localhost.
 > > For more information, see
 > > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
-> { .warning }
-{ .important }
 @z
 
 @x

@@ -38,7 +38,6 @@ between containers in a more controlled way.
 >
 > See [Differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
 > for some alternatives to using `--link`.
-{ .warning }
 @y
 >**Warning**
 > 
@@ -52,7 +51,6 @@ between containers in a more controlled way.
 >
 > See [Differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
 > for some alternatives to using `--link`.
-{ .warning }
 @z
 
 @x
@@ -112,13 +110,13 @@ $ docker run -d -P training/webapp python app.py
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Containers have an internal network and an IP address.
 > Docker can have a variety of network configurations. You can see more
 > information on Docker networking [here](index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Containers have an internal network and an IP address.
 > Docker can have a variety of network configurations. You can see more
@@ -302,11 +300,11 @@ $ docker port nostalgic_morse 5000
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `-p` flag can be used multiple times to configure multiple ports.
 @y
-> **Note**
+> [!NOTE]
 >
 > The `-p` flag can be used multiple times to configure multiple ports.
 @z
@@ -318,13 +316,13 @@ $ docker port nostalgic_morse 5000
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This section covers the legacy link feature in the default `bridge` network.
 > Refer to [differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
 > for more information on links in user-defined networks.
 @y
-> **Note**
+> [!NOTE]
 >
 > This section covers the legacy link feature in the default `bridge` network.
 > Refer to [differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
@@ -436,7 +434,7 @@ You can also use `docker inspect` to return the container's name.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Container names must be unique. That means you can only call
 > one container `web`. If you want to re-use a container name you must delete
@@ -445,7 +443,7 @@ You can also use `docker inspect` to return the container's name.
 > flag with the `docker run` command. This deletes the container
 > immediately after it is stopped.
 @y
-> **Note**
+> [!NOTE]
 >
 > Container names must be unique. That means you can only call
 > one container `web`. If you want to re-use a container name you must delete
@@ -678,21 +676,19 @@ target container of information related to the source container.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > It is important to understand that all environment variables originating
 > from Docker within a container are made available to any container
 > that links to it. This could have serious security implications if sensitive
 > data is stored in them.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > It is important to understand that all environment variables originating
 > from Docker within a container are made available to any container
 > that links to it. This could have serious security implications if sensitive
 > data is stored in them.
-{ .warning }
 @z
 
 @x
@@ -958,12 +954,12 @@ PING webdb (172.17.0.5): 48 data bytes
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > In the example, you had to install `ping` because it was not included
 > in the container initially.
 @y
-> **Note**
+> [!NOTE]
 >
 > In the example, you had to install `ping` because it was not included
 > in the container initially.
@@ -980,13 +976,13 @@ to make use of your `db` container.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can link multiple recipient containers to a single source. For
 > example, you could have multiple (differently named) web containers attached to your
 >`db` container.
 @y
-> **Note**
+> [!NOTE]
 >
 > You can link multiple recipient containers to a single source. For
 > example, you could have multiple (differently named) web containers attached to your

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Understand what you can do with the Volumes view on Docker Dashboard
@@ -306,15 +306,13 @@ To empty a volume:
 @z
 
 @x
-> **Beta feature**
->
-> The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
+{{% /experimental %}}
 @y
-> **Beta feature**
->
-> The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
+{{% /experimental %}}
 @z
 
 @x
@@ -626,9 +624,9 @@ To import a volume:
 @z
 
 @x
-- [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
+- [Persisting container data](/get-started/docker-concepts/running-containers/persisting-container-data.md)
 - [Use volumes](/engine/storage/volumes.md)
 @y
-- [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
+- [Persisting container data](get-started/docker-concepts/running-containers/persisting-container-data.md)
 - [Use volumes](engine/storage/volumes.md)
 @z

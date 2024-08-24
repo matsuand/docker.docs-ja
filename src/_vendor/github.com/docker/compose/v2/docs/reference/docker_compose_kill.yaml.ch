@@ -13,96 +13,34 @@ long: |-
     Forces running containers to stop by sending a `SIGKILL` signal. Optionally the signal can be passed, for example:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker-compose kill -s SIGINT
-    ```
 usage: docker compose kill [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: remove-orphans
-      value_type: bool
-      default_value: "false"
-      description: Remove containers for services not defined in the Compose file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: signal
-      shorthand: s
-      value_type: string
-      default_value: SIGKILL
-      description: SIGNAL to send to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    ```console
-    $ docker-compose kill -s SIGINT
-    ```
 usage: docker compose kill [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: remove-orphans
-      value_type: bool
-      default_value: "false"
-      description: Remove containers for services not defined in the Compose file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: signal
-      shorthand: s
-      value_type: string
-      default_value: SIGKILL
-      description: SIGNAL to send to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x remove-orphans
+      description: Remove containers for services not defined in the Compose file
+@y
+      description: Remove containers for services not defined in the Compose file
+@z
+
+@x signal
+      description: SIGNAL to send to the container
+@y
+      description: SIGNAL to send to the container
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+snip directives...

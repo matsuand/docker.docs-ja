@@ -219,7 +219,7 @@ examples: |-
 @x
     > **Note**
     >
-    > Build record [provenance](/build/attestations/slsa-provenance/#provenance-attestation-example)
+    > Build record [provenance](/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
     > * `min` sets minimal provenance (default).
@@ -228,12 +228,26 @@ examples: |-
 @y
     > **Note**
     >
-    > Build record [provenance](__SUBDIR__/build/attestations/slsa-provenance/#provenance-attestation-example)
+    > Build record [provenance](build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
     > * `min` sets minimal provenance (default).
     > * `max` sets full provenance.
     > * `disabled`, `false` or `0` does not set any provenance.
+@z
+
+@x
+    > **Note**
+    >
+    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
+    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
+    > include them.
+@y
+    > **Note**
+    >
+    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
+    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
+    > include them.
 @z
 
 @x

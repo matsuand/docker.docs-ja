@@ -94,14 +94,14 @@ configuring Docker using `daemon.json`, see
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for
 > `splunk-gzip` or `splunk-gzip-level`) must therefore be enclosed in quotes
 > (`"`).
 @y
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for

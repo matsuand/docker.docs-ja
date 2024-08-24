@@ -199,12 +199,10 @@ Below there are different ways to persist and read the `kubeconfig` file from th
 > Warning
 >
 > The `kubeconfig` file is very sensitive and if found can give an attacker administrative access to the Kubernetes Cluster.
-{ .warning }
 @y
 > Warning
 >
 > The `kubeconfig` file is very sensitive and if found can give an attacker administrative access to the Kubernetes Cluster.
-{ .warning }
 @z
 
 @x

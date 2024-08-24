@@ -323,9 +323,9 @@ can also:
 @z
 
 @x
-- [What is a container](../../guides/docker-concepts/the-basics/what-is-a-container.md)
-- [Run multi-container applications](../../guides/docker-concepts/running-containers/multi-container-applications.md)
+- [What is a container](/get-started/docker-concepts/the-basics/what-is-a-container.md)
+- [Run multi-container applications](/get-started/docker-concepts/running-containers/multi-container-applications.md)
 @y
-- [コンテナーとは何か](../../guides/docker-concepts/the-basics/what-is-a-container.md)
-- [マルチコンテナーアプリの実行](../../guides/docker-concepts/running-containers/multi-container-applications.md)
+- [コンテナーとは何か](get-started/docker-concepts/the-basics/what-is-a-container.md)
+- [マルチコンテナーアプリの実行](get-started/docker-concepts/running-containers/multi-container-applications.md)
 @z

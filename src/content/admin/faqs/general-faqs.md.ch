@@ -32,9 +32,9 @@ numbers and lowercase letters. You can't use any special characters or spaces.
 @z
 
 @x
-For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
+For more information, see [Docker ID](/accounts/create-account/). If your administrator enforces [single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
 @y
-For more information, see [Docker ID](../../docker-id/index.md). If your administrator enforces [single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
+For more information, see [Docker ID](__SUBDIR__/accounts/create-account/). If your administrator enforces [single sign-on (SSO)](../../security/for-admins/single-sign-on/index.md), this provisions a Docker ID for new users.
 @z
 
 @x

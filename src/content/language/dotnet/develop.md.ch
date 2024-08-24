@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 % snip 対応
 
 @x
@@ -139,15 +139,15 @@ The following is the updated `compose.yaml` file.
 % snip code...
 
 @x
-> **Note**
+> [!NOTE]
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](/compose/compose-file/).
+> reference](/reference/compose-file/).
 @y
-> **Note**
+> [!NOTE]
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](__SUBDIR__/compose/compose-file/).
+> reference](reference/compose-file/).
 @z
 
 @x
@@ -420,12 +420,12 @@ database and persist data. You also learned how to use Compose Watch to automati
 
 @x
 Related information:
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @y
 Related information:
- - [Compose file reference](__SUBDIR__/compose/compose-file/)
+ - [Compose file reference](reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @z

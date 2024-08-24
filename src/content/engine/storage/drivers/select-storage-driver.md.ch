@@ -116,7 +116,7 @@ the final decision.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Modifying the storage driver by editing the daemon configuration file isn't
 > supported on Docker Desktop. Only the default `overlay2` driver or the
@@ -125,14 +125,14 @@ the final decision.
 > mode. For the drivers available in rootless mode, see the [Rootless mode
 > documentation](/engine/security/rootless.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Modifying the storage driver by editing the daemon configuration file isn't
 > supported on Docker Desktop. Only the default `overlay2` driver or the
-> [containerd storage](desktop/containerd.md) are supported. The
+> [containerd storage](/desktop/containerd.md) are supported. The
 > following table is also not applicable for the Docker Engine in rootless
 > mode. For the drivers available in rootless mode, see the [Rootless mode
-> documentation](engine/security/rootless.md).
+> documentation](/engine/security/rootless.md).
 @z
 
 @x
@@ -432,23 +432,21 @@ to physical or logical disks on the Docker host.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > When you change the storage driver, any existing images and containers become
 > inaccessible. This is because their layers can't be used by the new storage
 > driver. If you revert your changes, you can access the old images and containers
 > again, but any that you pulled or created using the new driver are then
 > inaccessible.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > When you change the storage driver, any existing images and containers become
 > inaccessible. This is because their layers can't be used by the new storage
 > driver. If you revert your changes, you can access the old images and containers
 > again, but any that you pulled or created using the new driver are then
 > inaccessible.
-{ .important }
 @z
 
 @x

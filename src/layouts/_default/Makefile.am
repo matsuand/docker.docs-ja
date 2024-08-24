@@ -8,7 +8,8 @@ bases = \
 	cli.html               \
 	engine-api-baseof.html \
 	glossary.html          \
-	hub-api-baseof.html
+	hub-api-baseof.html    \
+	series.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

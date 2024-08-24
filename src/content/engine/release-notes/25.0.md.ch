@@ -27,10 +27,10 @@ For more information about:
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history.md).
 @y
 - 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
-- Engine API の変更点。詳細は [Engine API バージョン履歴](../api/version-history.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](reference/api/engine/version-history.md) を参照。
 @z
 
 @x
@@ -74,7 +74,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > - Containers created with Docker Engine version 25.0.0 may have duplicate MAC addresses.
   >   They must be re-created.
@@ -82,7 +82,7 @@ For a full list of pull requests and changes in this release, refer to the relev
   >   receive new MAC addresses when started using Docker Engine version 25.0.2.
   >   They must also be re-created.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > - Containers created with Docker Engine version 25.0.0 may have duplicate MAC addresses.
   >   They must be re-created.
@@ -342,7 +342,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > In earlier versions of Docker Engine, recursive mounts (submounts) would
 > always be mounted as writable, even when specifying a read-only mount. This
@@ -360,7 +360,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 > For more information, see
 > [Recursive mounts](/engine/storage/bind-mounts.md#recursive-mounts).
 @y
-> **Note**
+> [!NOTE]
 >
 > In earlier versions of Docker Engine, recursive mounts (submounts) would
 > always be mounted as writable, even when specifying a read-only mount. This

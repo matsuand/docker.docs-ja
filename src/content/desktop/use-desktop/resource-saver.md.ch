@@ -110,7 +110,7 @@ to zero when Resource Saver mode is on.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop exits the Resource Saver mode automatically when it needs to.
 > Commands that cause an exit from Resource Saver take a little longer to execute
@@ -118,7 +118,7 @@ to zero when Resource Saver mode is on.
 > It's generally faster on Mac and Linux, and slower on Windows with Hyper-V.
 > Once the Linux VM is restarted, subsequent container runs occur immediately as usual.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop exits the Resource Saver mode automatically when it needs to.
 > Commands that cause an exit from Resource Saver take a little longer to execute

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 description: Learn how to optimize your use of ZFS driver.
@@ -86,12 +86,12 @@ use unless you have substantial experience with ZFS on Linux.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > There is no need to use `MountFlags=slave` because `dockerd` and `containerd`
 > are in different mount namespaces. 
 @y
-> **Note**
+> [!NOTE]
 >
 > There is no need to use `MountFlags=slave` because `dockerd` and `containerd`
 > are in different mount namespaces. 

@@ -188,17 +188,15 @@ Here are a few examples of when a service might remain in state `pending`.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 > If your only intention is to prevent a service from
 > being deployed, scale the service to 0 instead of trying to configure it in
 > such a way that it remains in `pending`.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 > If your only intention is to prevent a service from
 > being deployed, scale the service to 0 instead of trying to configure it in
 > such a way that it remains in `pending`.
-{ .tip }
 @z
 
 @x

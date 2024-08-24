@@ -16,7 +16,7 @@ keywords: docker, docker engine, ce, whats new, release notes
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > From Docker Engine version 23.0.0, Buildx is distributed in a separate package: `docker-buildx-plugin`.
 > In earlier versions, Buildx was included in the `docker-ce-cli` package.
@@ -30,7 +30,7 @@ keywords: docker, docker engine, ce, whats new, release notes
 > Refer to the [Docker Engine installation instructions][1] for your operating system
 > for more details on upgrading Docker Engine.
 @y
-> **Note**
+> [!NOTE]
 >
 > From Docker Engine version 23.0.0, Buildx is distributed in a separate package: `docker-buildx-plugin`.
 > In earlier versions, Buildx was included in the `docker-ce-cli` package.
@@ -65,10 +65,10 @@ For more information about:
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history.md).
 @y
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- Changes to the Engine API, see [Engine API version history](reference/api/engine/version-history.md).
 @z
 
 @x
@@ -282,13 +282,13 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-> **Note**
+> [!NOTE]
 > 
 > Due to an issue with CentOS 9 Stream's package repositories, packages for
 > CentOS 9 are currently unavailable. Packages for CentOS 9 may be added later,
 > or as part of the next (23.0.4) patch release.
 @y
-> **Note**
+> [!NOTE]
 > 
 > Due to an issue with CentOS 9 Stream's package repositories, packages for
 > CentOS 9 are currently unavailable. Packages for CentOS 9 may be added later,

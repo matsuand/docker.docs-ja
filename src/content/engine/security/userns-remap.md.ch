@@ -88,7 +88,7 @@ has no privileges on the host system at all.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > It is possible to assign multiple subordinate ranges for a given user or group
 > by adding multiple non-overlapping mappings for the same user or group in the
@@ -96,7 +96,7 @@ has no privileges on the host system at all.
 > five mappings, in accordance with the kernel's limitation of only five entries
 > in `/proc/self/uid_map` and `/proc/self/gid_map`.
 @y
-> **Note**
+> [!NOTE]
 >
 > It is possible to assign multiple subordinate ranges for a given user or group
 > by adding multiple non-overlapping mappings for the same user or group in the
@@ -118,21 +118,19 @@ purpose.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Some distributions do not automatically add the new group to the
 > `/etc/subuid` and `/etc/subgid` files. If that's the case, you are may have
 > to manually edit these files and assign non-overlapping ranges. This step is
 > covered in [Prerequisites](#prerequisites).
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Some distributions do not automatically add the new group to the
 > `/etc/subuid` and `/etc/subgid` files. If that's the case, you are may have
 > to manually edit these files and assign non-overlapping ranges. This step is
 > covered in [Prerequisites](#prerequisites).
-{ .warning }
 @z
 
 @x
@@ -394,12 +392,12 @@ $ dockerd --userns-remap="testuser:testuser"
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > To use the `dockremap` user and have Docker create it for you,
     > set the value to `default` rather than `testuser`.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > To use the `dockremap` user and have Docker create it for you,
     > set the value to `default` rather than `testuser`.

@@ -396,7 +396,7 @@ size `/64`, from an IPv6 pool of prefix length `/56`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The address `2001:db8::` in this example is
 > [reserved for use in documentation][wikipedia-ipv6-reserved].
@@ -405,7 +405,7 @@ size `/64`, from an IPv6 pool of prefix length `/56`.
 > The default IPv4 pools are from the private address range,
 > similar to the default IPv6 [ULA][wikipedia-ipv6-ula] networks.
 @y
-> **Note**
+> [!NOTE]
 >
 > The address `2001:db8::` in this example is
 > [reserved for use in documentation][wikipedia-ipv6-reserved].

@@ -295,12 +295,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = attestations bake builders building buildkit cache ci \
-	dockerfile drivers exporters guide images
+SUBDIRS = bake builders building buildkit cache ci concepts exporters \
+	guide images metadata
 
 bases = \
 	_index.md        \
-	architecture.md  \
 	checks.md        \
 	release-notes.md
 

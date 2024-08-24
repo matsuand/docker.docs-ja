@@ -240,14 +240,12 @@ It will work well when you update a database configuration or your `nginx.conf` 
 > Optimize your `Dockerfile` for speedy
 incremental rebuilds with [image layer caching](/build/cache)
 and [multi-stage builds](/build/building/multi-stage/).
-{ .tip }
 @y
 >**Tip**
 >
 > Optimize your `Dockerfile` for speedy
 incremental rebuilds with [image layer caching](__SUBDIR__/build/cache)
 and [multi-stage builds](__SUBDIR__/build/building/multi-stage/).
-{ .tip }
 @z
 
 @x
@@ -364,26 +362,22 @@ This setup demonstrates how to use the `sync+restart` action in Docker Compose t
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
 > get the application logs mixed with the (re)build logs and filesystem sync events.
-{ .tip }
-@y
-> **Tip**
->
-> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
-> get the application logs mixed with the (re)build logs and filesystem sync events.
-{ .tip }
-@z
 
-@x
 > **Looking for a sample project to test things out?**
 >
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
 > or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
 > for a demonstration of Compose `watch`.
 @y
+> [!TIP]
+>
+> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
+> get the application logs mixed with the (re)build logs and filesystem sync events.
+
 > **Looking for a sample project to test things out?**
 >
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
@@ -410,7 +404,7 @@ We are actively looking for feedback on this feature. Give feedback or report an
 @z
 
 @x
-- [Compose Develop Specification](compose-file/develop.md)
+- [Compose Develop Specification](/reference/compose-file/develop.md)
 @y
-- [Compose Develop Specification](compose-file/develop.md)
+- [Compose Develop Specification](reference/compose-file/develop.md)
 @z

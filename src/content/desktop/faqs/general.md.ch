@@ -1,30 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: General FAQs for Desktop
-tags: [FAQ]
-aliases:
-- /mackit/faqs/
-- /docker-for-mac/faqs/
-- /docker-for-windows/faqs/
-- /desktop/faqs/
----
 @y
----
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: General FAQs for Desktop
-tags: [FAQ]
-aliases:
-- /mackit/faqs/
-- /docker-for-mac/faqs/
-- /docker-for-windows/faqs/
-- /desktop/faqs/
----
 @z
 
 @x
@@ -126,9 +112,9 @@ Docker Desktop Windows users can connect to the Docker Engine through a **named 
 @z
 
 @x
-For details, see [Docker Engine API](../../engine/api/index.md).
+For details, see [Docker Engine API](/reference/api/engine/_index.md).
 @y
-For details, see [Docker Engine API](../../engine/api/index.md).
+For details, see [Docker Engine API](reference/api/engine/_index.md).
 @z
 
 @x

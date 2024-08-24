@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = api cli containers daemon install logging manage-resources \
+SUBDIRS = cli containers daemon install logging manage-resources \
 	network release-notes security storage swarm tutorials
 
 bases = \

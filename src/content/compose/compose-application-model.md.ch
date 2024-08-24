@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: How Compose works
 description: Understand how Compose works and the Compose application model with an illustrative example 
 keywords: compose, docker compose, compose specification, compose model 
-aliases:
-- /compose/compose-file/02-model/
-- /compose/compose-yaml-file/
----
 @y
----
 title: Compose はどのように動作するか
 description: Understand how Compose works and the Compose application model with an illustrative example 
 keywords: compose, docker compose, compose specification, compose model 
-aliases:
-- /compose/compose-file/02-model/
-- /compose/compose-yaml-file/
----
 @z
 
 @x
@@ -28,9 +20,9 @@ With Docker Compose you use a YAML configuration file, known as the [Compose fil
 @z
 
 @x
-The Compose file, or `compose.yaml` file, follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
+The Compose file, or `compose.yaml` file, follows the rules provided by the [Compose Specification](/reference/compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
 @y
-The Compose file, or `compose.yaml` file, follows the rules provided by the [Compose Specification](compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
+The Compose file, or `compose.yaml` file, follows the rules provided by the [Compose Specification](reference/compose-file/_index.md) in how to define multi-container applications. This is the Docker Compose implementation of the formal [Compose Specification](https://github.com/compose-spec/compose-spec). 
 @z
 
 @x
@@ -40,33 +32,33 @@ The Compose file, or `compose.yaml` file, follows the rules provided by the [Com
 @z
 
 @x
-Computing components of an application are defined as [services](compose-file/05-services.md). A service is an abstract concept implemented on platforms by running the same container image, and configuration, one or more times.
+Computing components of an application are defined as [services](/reference/compose-file/services.md). A service is an abstract concept implemented on platforms by running the same container image, and configuration, one or more times.
 @y
-Computing components of an application are defined as [services](compose-file/05-services.md). A service is an abstract concept implemented on platforms by running the same container image, and configuration, one or more times.
+Computing components of an application are defined as [services](reference/compose-file/services.md). A service is an abstract concept implemented on platforms by running the same container image, and configuration, one or more times.
 @z
 
 @x
-Services communicate with each other through [networks](compose-file/06-networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together.
+Services communicate with each other through [networks](/reference/compose-file/networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together.
 @y
-Services communicate with each other through [networks](compose-file/06-networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together.
+Services communicate with each other through [networks](reference/compose-file/networks.md). In the Compose Specification, a network is a platform capability abstraction to establish an IP route between containers within services connected together.
 @z
 
 @x
-Services store and share persistent data into [volumes](compose-file/07-volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. 
+Services store and share persistent data into [volumes](/reference/compose-file/volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. 
 @y
-Services store and share persistent data into [volumes](compose-file/07-volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. 
+Services store and share persistent data into [volumes](reference/compose-file/volumes.md). The Specification describes such a persistent data as a high-level filesystem mount with global options. 
 @z
 
 @x
-Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](compose-file/08-configs.md) concept. From a service container point of view, configs are comparable to volumes, in that they are files mounted into the container. But the actual definition involves distinct platform resources and services, which are abstracted by this type.
+Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](/reference/compose-file/configs.md) concept. From a service container point of view, configs are comparable to volumes, in that they are files mounted into the container. But the actual definition involves distinct platform resources and services, which are abstracted by this type.
 @y
-Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](compose-file/08-configs.md) concept. From a service container point of view, configs are comparable to volumes, in that they are files mounted into the container. But the actual definition involves distinct platform resources and services, which are abstracted by this type.
+Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](reference/compose-file/configs.md) concept. From a service container point of view, configs are comparable to volumes, in that they are files mounted into the container. But the actual definition involves distinct platform resources and services, which are abstracted by this type.
 @z
 
 @x
-A [secret](compose-file/09-secrets.md) is a specific flavor of configuration data for sensitive data that should not be exposed without security considerations. Secrets are made available to services as files mounted into their containers, but the platform-specific resources to provide sensitive data are specific enough to deserve a distinct concept and definition within the Compose specification.
+A [secret](/reference/compose-file/secrets.md) is a specific flavor of configuration data for sensitive data that should not be exposed without security considerations. Secrets are made available to services as files mounted into their containers, but the platform-specific resources to provide sensitive data are specific enough to deserve a distinct concept and definition within the Compose specification.
 @y
-A [secret](compose-file/09-secrets.md) is a specific flavor of configuration data for sensitive data that should not be exposed without security considerations. Secrets are made available to services as files mounted into their containers, but the platform-specific resources to provide sensitive data are specific enough to deserve a distinct concept and definition within the Compose specification.
+A [secret](reference/compose-file/secrets.md) is a specific flavor of configuration data for sensitive data that should not be exposed without security considerations. Secrets are made available to services as files mounted into their containers, but the platform-specific resources to provide sensitive data are specific enough to deserve a distinct concept and definition within the Compose specification.
 @z
 
 @x
@@ -80,11 +72,11 @@ A [secret](compose-file/09-secrets.md) is a specific flavor of configuration dat
 @z
 
 @x
-A project is an individual deployment of an application specification on a platform. A project's name, set with the top-level [`name`](compose-file/04-version-and-name.md) attribute, is used to group
+A project is an individual deployment of an application specification on a platform. A project's name, set with the top-level [`name`](/reference/compose-file/version-and-name.md) attribute, is used to group
 resources together and isolate them from other applications or other installation of the same Compose-specified application with distinct parameters. If you are creating resources on a platform, you must prefix resource names by project and
 set the label `com.docker.compose.project`.
 @y
-A project is an individual deployment of an application specification on a platform. A project's name, set with the top-level [`name`](compose-file/04-version-and-name.md) attribute, is used to group
+A project is an individual deployment of an application specification on a platform. A project's name, set with the top-level [`name`](reference/compose-file/version-and-name.md) attribute, is used to group
 resources together and isolate them from other applications or other installation of the same Compose-specified application with distinct parameters. If you are creating resources on a platform, you must prefix resource names by project and
 set the label `com.docker.compose.project`.
 @z
@@ -118,19 +110,19 @@ If both files exist, Compose prefers the canonical `compose.yaml`.
 @z
 
 @x
-You can use [fragments](compose-file/10-fragments.md) and [extensions](compose-file/11-extension.md) to keep your Compose file efficient and easy to maintain.
+You can use [fragments](/reference/compose-file/fragments.md) and [extensions](/reference/compose-file/extension.md) to keep your Compose file efficient and easy to maintain.
 @y
-You can use [fragments](compose-file/10-fragments.md) and [extensions](compose-file/11-extension.md) to keep your Compose file efficient and easy to maintain.
+You can use [fragments](reference/compose-file/fragments.md) and [extensions](reference/compose-file/extension.md) to keep your Compose file efficient and easy to maintain.
 @z
 
 @x
-Multiple Compose files can be [merged](13-merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
+Multiple Compose files can be [merged](/reference/compose-file/merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
 Simple attributes and maps get overridden by the highest order Compose file, lists get merged by appending. Relative
 paths are resolved based on the first Compose file's parent folder, whenever complimentary files being
 merged are hosted in other folders. As some Compose file elements can both be expressed as single strings or complex objects, merges apply to
 the expanded form. For more information, see [Working with multiple Compose files](multiple-compose-files/_index.md)
 @y
-Multiple Compose files can be [merged](13-merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
+Multiple Compose files can be [merged](reference/compose-file/merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
 Simple attributes and maps get overridden by the highest order Compose file, lists get merged by appending. Relative
 paths are resolved based on the first Compose file's parent folder, whenever complimentary files being
 merged are hosted in other folders. As some Compose file elements can both be expressed as single strings or complex objects, merges apply to
@@ -138,9 +130,9 @@ the expanded form. For more information, see [Working with multiple Compose file
 @z
 
 @x
-If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](compose-file/14-include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
+If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](/reference/compose-file/include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
 @y
-If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](compose-file/14-include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
+If you want to reuse other Compose files, or factor out parts of your application model into separate Compose files, you can also use [`include`](reference/compose-file/include.md). This is useful if your Compose application is dependent on another application which is managed by a different team, or needs to be shared with others.
 @z
 
 @x
@@ -150,9 +142,9 @@ If you want to reuse other Compose files, or factor out parts of your applicatio
 @z
 
 @x
-The Docker CLI lets you to interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
 @y
-The Docker CLI lets you to interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
 @z
 
 @x
@@ -428,9 +420,9 @@ example-backend-1   example/database     "docker-entrypoint.s…"   backend     
 @x
 - [Quickstart](gettingstarted.md)
 - [Explore some sample applications](samples-for-compose.md)
-- [Familiarize yourself with the Compose Specification](compose-file/_index.md)
+- [Familiarize yourself with the Compose Specification](/reference/compose-file/_index.md)
 @y
 - [Quickstart](gettingstarted.md)
 - [Explore some sample applications](samples-for-compose.md)
-- [Familiarize yourself with the Compose Specification](compose-file/_index.md)
+- [Familiarize yourself with the Compose Specification](reference/compose-file/_index.md)
 @z

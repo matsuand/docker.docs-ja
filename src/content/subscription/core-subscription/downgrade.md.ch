@@ -4,25 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Learn how to downgrade your Docker subscription
 keywords: Docker Hub, downgrade, subscription, Pro, Team, pricing plan, pause subscription, docker core
 title: Downgrade your subscription
-aliases:
-- /docker-hub/cancel-downgrade/
-- /docker-hub/billing/downgrade/
-- /subscription/downgrade/
----
 @y
----
 description: Learn how to downgrade your Docker subscription
 keywords: Docker Hub, downgrade, subscription, Pro, Team, pricing plan, pause subscription, docker core
 title: Downgrade your subscription
-aliases:
-- /docker-hub/cancel-downgrade/
-- /docker-hub/billing/downgrade/
-- /subscription/downgrade/
----
 @z
 
 @x
@@ -38,15 +26,13 @@ When you downgrade your subscription, access to paid features is available until
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only 1 private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only 1 private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
-{ .important }
 @z
 
 @x
@@ -80,8 +66,9 @@ You may need to reduce the number of team members and convert any private reposi
 @z
 
 @x
-If you want to downgrade a Docker Business subscription and your organization uses single sign-on (SSO) for user authentication, you need to remove your SSO connection and verified domains before downgrading. After removing the SSO connection, any organization members that were auto-provisioned (for example, with SCIM) need to set up a password to sign in without SSO. To do this, users can [reset their password at sign in](/docker-id/#reset-your-password-at-sign-in).
+If you want to downgrade a Docker Business subscription and your organization uses single sign-on (SSO) for user authentication, you need to remove your SSO connection and verified domains before downgrading. After removing the SSO connection, any organization members that were auto-provisioned (for example, with SCIM) need to set up a password to sign in without SSO. To do this, users can [reset their password at sign in](/accounts/create-account/#reset-your-password-at-sign-in).
 @y
+If you want to downgrade a Docker Business subscription and your organization uses single sign-on (SSO) for user authentication, you need to remove your SSO connection and verified domains before downgrading. After removing the SSO connection, any organization members that were auto-provisioned (for example, with SCIM) need to set up a password to sign in without SSO. To do this, users can [reset their password at sign in](__SUBDIR__/accounts/create-account/#reset-your-password-at-sign-in).
 @z
 
 @x
@@ -94,12 +81,10 @@ If you want to downgrade a Docker Business subscription and your organization us
 >**Important**
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription. 
-{ .important }
 @y
 >**Important**
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription. 
-{ .important }
 @z
 
 @x

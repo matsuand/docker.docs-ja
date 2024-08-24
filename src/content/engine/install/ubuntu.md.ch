@@ -42,17 +42,15 @@ To get started with Docker Engine on Ubuntu, make sure you
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Before you install Docker, make sure you consider the following
 > security implications and firewall incompatibilities.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Before you install Docker, make sure you consider the following
 > security implications and firewall incompatibilities.
-{ .warning }
 @z
 
 @x
@@ -300,12 +298,12 @@ Docker from the repository.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > If you use an Ubuntu derivative distro, such as Linux Mint,
    > you may need to use `UBUNTU_CODENAME` instead of `VERSION_CODENAME`.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > If you use an Ubuntu derivative distro, such as Linux Mint,
    > you may need to use `UBUNTU_CODENAME` instead of `VERSION_CODENAME`.

@@ -4,7 +4,6 @@
 
 bases = \
 	admin-domain-audit.md               \
-	admin-org-onboarding.md             \
 	admin-registry-access.html          \
 	admin-scim.html                     \
 	admin-sso-config.md                 \
@@ -15,7 +14,9 @@ bases = \
 	admin-sso-management.md             \
 	admin-users.html                    \
 	desktop-install.html                \
-	desktop-install-v2.html
+	desktop-install-v2.html             \
+	experimental.html                   \
+	restricted.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -29,6 +30,7 @@ copyfiles = \
 	badge.html                 \
 	button.html                \
 	card.html                  \
+	columns.html               \
 	cta.html                   \
 	grid.html                  \
 	include.html               \

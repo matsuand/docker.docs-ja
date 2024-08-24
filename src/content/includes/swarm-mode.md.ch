@@ -4,7 +4,7 @@
 % __SUBDIR__ 対応。
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Swarm mode is an advanced feature for managing a cluster of Docker daemons.
 >
@@ -15,7 +15,7 @@
 > If you're developing for a Kubernetes deployment, consider using the
 > [integrated Kubernetes feature](/desktop/kubernetes/) in Docker Desktop.
 @y
-> **Note**
+> [!NOTE]
 >
 > Swarm mode is an advanced feature for managing a cluster of Docker daemons.
 >

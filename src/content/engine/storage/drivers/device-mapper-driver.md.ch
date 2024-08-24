@@ -21,7 +21,6 @@ title: Use the Device Mapper storage driver (deprecated)
 > you must migrate to a supported storage driver before upgrading to Docker
 > Engine v25.0. Read the [Docker storage drivers](select-storage-driver.md)
 > page for supported storage drivers.
-{ .warning }
 @y
 > **Deprecated**
 >
@@ -30,7 +29,6 @@ title: Use the Device Mapper storage driver (deprecated)
 > you must migrate to a supported storage driver before upgrading to Docker
 > Engine v25.0. Read the [Docker storage drivers](select-storage-driver.md)
 > page for supported storage drivers.
-{ .warning }
 @z
 
 @x
@@ -344,12 +342,12 @@ below to configure Docker to use the `devicemapper` storage driver in
 @z
 
 @x
-> **Warning**: Changing the storage driver makes any containers you have already
+> [!WARNING]: Changing the storage driver makes any containers you have already
   created inaccessible on the local system. Use `docker save` to save containers,
   and push existing images to Docker Hub or a private repository, so you do not
   need to recreate them later.
 @y
-> **Warning**: Changing the storage driver makes any containers you have already
+> [!WARNING]: Changing the storage driver makes any containers you have already
   created inaccessible on the local system. Use `docker save` to save containers,
   and push existing images to Docker Hub or a private repository, so you do not
   need to recreate them later.
@@ -452,10 +450,10 @@ configure the block device for you.
 @z
 
 @x
-> **Warning**: Changing these values after Docker has prepared the block device
+> [!WARNING]: Changing these values after Docker has prepared the block device
 > for you is not supported and causes an error.
 @y
-> **Warning**: Changing these values after Docker has prepared the block device
+> [!WARNING]: Changing these values after Docker has prepared the block device
 > for you is not supported and causes an error.
 @z
 
@@ -546,10 +544,10 @@ assumes that the Docker daemon is in the `stopped` state.
 @z
 
 @x
-    > **Warning**: The next few steps are destructive, so be sure that you have
+    > [!WARNING]: The next few steps are destructive, so be sure that you have
     > specified the correct device!
 @y
-    > **Warning**: The next few steps are destructive, so be sure that you have
+    > [!WARNING]: The next few steps are destructive, so be sure that you have
     > specified the correct device!
 @z
 
@@ -1618,10 +1616,10 @@ $ sudo lvchange -ay docker/thinpool
 @z
 
 @x
-> **Warning**: Do not directly manipulate any files or directories within
+> [!WARNING]: Do not directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
 @y
-> **Warning**: Do not directly manipulate any files or directories within
+> [!WARNING]: Do not directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
 @z
 

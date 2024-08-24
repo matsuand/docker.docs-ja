@@ -46,11 +46,11 @@ Read the [Blog](https://www.docker.com/blog/updating-product-subscriptions/) and
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The licensing and distribution terms for Docker and Moby open-source projects, such as Docker Engine, aren't changing.
 @y
-> **Note**
+> [!NOTE]
 >
 > The licensing and distribution terms for Docker and Moby open-source projects, such as Docker Engine, aren't changing.
 @z
@@ -70,13 +70,11 @@ GNU General Public License. Select [here](https://download.docker.com/opensource
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Explore [Docker subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Explore [Docker subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
-{ .tip }
 @z

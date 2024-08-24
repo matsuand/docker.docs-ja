@@ -1,22 +1,166 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Docker Compose release notes
 description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
+tags: [Release notes]
 @y
-title: Docker Compose リリースノート
+title: Docker Compose release notes
 description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
+tags: [Release notes]
 @z
 
 @x
 For more detailed information, see the [release notes in the Compose repo](https://github.com/docker/compose/releases/).
 @y
-詳細は [Compose リポジトリ内のリリースノート](https://github.com/docker/compose/releases/) を参照してください。
+For more detailed information, see the [release notes in the Compose repo](https://github.com/docker/compose/releases/).
+@z
+
+@x
+## 2.29.2
+@y
+## 2.29.2
+@z
+
+@x
+{{< release-date date="2024-08-16" >}}
+@y
+{{< release-date date="2024-08-16" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.1.6
+- Dependencies upgrade: bump docker engine and cli to v27.1.2
+- Dependencies upgrade: bump buildx to v0.16.2
+- Dependencies upgrade: bump buildkit to v0.15.2
+- Dependencies upgrade: bump golang to v1.21.12
+- Dependencies upgrade: bump sys to v0.22.0
+- Dependencies upgrade: bump flock to v0.12.1
+@y
+- Dependencies upgrade: bump compose-go to v2.1.6
+- Dependencies upgrade: bump docker engine and cli to v27.1.2
+- Dependencies upgrade: bump buildx to v0.16.2
+- Dependencies upgrade: bump buildkit to v0.15.2
+- Dependencies upgrade: bump golang to v1.21.12
+- Dependencies upgrade: bump sys to v0.22.0
+- Dependencies upgrade: bump flock to v0.12.1
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed the docs on `docker compose kill` usage.
+- Fixed redundant condition from `toAPIBuildOptions` in build.go.
+- Fixed initial Watch `sync` after Compose restarts with introduction of `x-initSync`.
+- Fixed an issue which stopped the Compose process for a single container on `sync-restart` Watch action.
+@y
+- Fixed the docs on `docker compose kill` usage.
+- Fixed redundant condition from `toAPIBuildOptions` in build.go.
+- Fixed initial Watch `sync` after Compose restarts with introduction of `x-initSync`.
+- Fixed an issue which stopped the Compose process for a single container on `sync-restart` Watch action.
+@z
+
+@x
+## 2.29.1
+@y
+## 2.29.1
+@z
+
+@x
+{{< release-date date="2024-07-23" >}}
+@y
+{{< release-date date="2024-07-23" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.1.5.
+- Dependencies upgrade: bump docker engine and cli to v27.1.0.
+@y
+- Dependencies upgrade: bump compose-go to v2.1.5.
+- Dependencies upgrade: bump docker engine and cli to v27.1.0.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Enhance JSON progress events with more fields.
+@y
+- Enhance JSON progress events with more fields.
+@z
+
+@x
+## 2.29.0
+@y
+## 2.29.0
+@z
+
+@x
+{{< release-date date="2024-07-17" >}}
+@y
+{{< release-date date="2024-07-17" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.1.4
+- Dependencies upgrade: bump docker engine and cli to v27.0.3
+- Dependencies upgrade: bump buildx to 0.16.0
+- Dependencies upgrade: bump buildkit to 0.15.0
+- Dependencies upgrade: bump containerd to 1.7.19
+@y
+- Dependencies upgrade: bump compose-go to v2.1.4
+- Dependencies upgrade: bump docker engine and cli to v27.0.3
+- Dependencies upgrade: bump buildx to 0.16.0
+- Dependencies upgrade: bump buildkit to 0.15.0
+- Dependencies upgrade: bump containerd to 1.7.19
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added a JSON stream progress writer.
+- Added a `--prune` flag to the `docker compose watch` command.
+- Unnecessary resources are now excluded after services have been selected.
+- Empty variables with no value are unset in containers.
+@y
+- Added a JSON stream progress writer.
+- Added a `--prune` flag to the `docker compose watch` command.
+- Unnecessary resources are now excluded after services have been selected.
+- Empty variables with no value are unset in containers.
 @z
 
 @x
@@ -34,7 +178,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -58,15 +202,15 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v2.1.3
 - Dependencies upgrade: bump docker engine and cli to v27.0.1-rc.1
 @y
-- 依存パッケージの更新: compose-go v2.1.3
-- 依存パッケージの更新: docker engine, cli v27.0.1-rc.1
+- Dependencies upgrade: bump compose-go to v2.1.3
+- Dependencies upgrade: bump docker engine and cli to v27.0.1-rc.1
 @z
 
 @x
@@ -84,15 +228,15 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump buildx to 0.15.1
 - Dependencies upgrade: bump buildkit to 0.14.1
 @y
-- 依存パッケージの更新: buildx 0.15.1
-- 依存パッケージの更新: buildkit 0.14.1
+- Dependencies upgrade: bump buildx to 0.15.1
+- Dependencies upgrade: bump buildkit to 0.14.1
 @z
 
 @x
@@ -110,7 +254,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -120,17 +264,17 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Dependencies upgrade: bump buildkit to 0.14.0
 - Dependencies upgrade: bump containerd to 1.7.18
 @y
-- 依存パッケージの更新: golang 1.21.11
-- 依存パッケージの更新: docker engine, cli v26.1.4
-- 依存パッケージの更新: buildx 0.15.0
-- 依存パッケージの更新: buildkit 0.14.0
-- 依存パッケージの更新: containerd 1.7.18
+- Dependencies upgrade: bump golang to 1.21.11
+- Dependencies upgrade: bump docker engine and cli to v26.1.4
+- Dependencies upgrade: bump buildx to 0.15.0
+- Dependencies upgrade: bump buildkit to 0.14.0
+- Dependencies upgrade: bump containerd to 1.7.18
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -158,7 +302,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -167,16 +311,16 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Dependencies upgrade: bump buildx to 0.14.1
 - Dependencies upgrade: bump containerd to 1.7.17
 @y
-- 依存パッケージの更新: compose-go v2.1.1
-- 依存パッケージの更新: docker engine, cli v26.1.3
-- 依存パッケージの更新: buildx 0.14.1
-- 依存パッケージの更新: containerd 1.7.17
+- Dependencies upgrade: bump compose-go to v2.1.1
+- Dependencies upgrade: bump docker engine and cli to v26.1.3
+- Dependencies upgrade: bump buildx to 0.14.1
+- Dependencies upgrade: bump containerd to 1.7.17
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -206,7 +350,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -214,15 +358,15 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Dependencies upgrade: bump compose-go to v2.1.0
 - Dependencies upgrade: bump docker engine and cli to v26.1.0
 @y
-- 依存パッケージの更新: golang 1.21.9
-- 依存パッケージの更新: compose-go v2.1.0
-- 依存パッケージの更新: docker engine, cli v26.1.0
+- Dependencies upgrade: bump golang to 1.21.9
+- Dependencies upgrade: bump compose-go to v2.1.0
+- Dependencies upgrade: bump docker engine and cli to v26.1.0
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -254,19 +398,19 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: opencontainers/image-spec v1.1.0
 @y
-- 依存パッケージの更新: opencontainers/image-spec v1.1.0
+- Dependencies upgrade: opencontainers/image-spec v1.1.0
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -296,21 +440,21 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go v2.0.2
 - Dependencies upgrade: bump docker v26.0.0
 @y
-- 依存パッケージの更新: compose-go v2.0.2
-- 依存パッケージの更新: docker v26.0.0
+- Dependencies upgrade: bump compose-go v2.0.2
+- Dependencies upgrade: bump docker v26.0.0
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -346,19 +490,19 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go v2.0.0
 @y
-- 依存パッケージの更新: compose-go v2.0.0
+- Dependencies upgrade: bump compose-go v2.0.0
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -366,7 +510,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Fixed service name shell completion
 - Added `--watch` flag to `up` command
 @y
-- Restored `config` hebaviour until `--no-interpolate` is set
+- Restored `config` behaviour until `--no-interpolate` is set
 - Fixed service name shell completion
 - Added `--watch` flag to `up` command
 @z
@@ -386,7 +530,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -394,15 +538,15 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Dependencies upgrade: bump compose-go to 2.0.0-rc8
 - Dependencies upgrade: bump docker to v24.0.4
 @y
-- 依存パッケージの更新: golang 1.21.8
-- 依存パッケージの更新: compose-go 2.0.0-rc8
-- 依存パッケージの更新: docker v24.0.4
+- Dependencies upgrade: bump golang to 1.21.8
+- Dependencies upgrade: bump compose-go to 2.0.0-rc8
+- Dependencies upgrade: bump docker to v24.0.4
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -448,21 +592,21 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump cli to 25.0.3
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.7
 @y
-- 依存パッケージの更新: cli 25.0.3
-- 依存パッケージの更新: compose-go 2.0.0-rc.7
+- Dependencies upgrade: bump cli to 25.0.3
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.7
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -490,7 +634,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -514,7 +658,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -522,15 +666,15 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Dependencies upgrade: bump docker to 25.0.1
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.3
 @y
-- 依存パッケージの更新: cli 25.0.1
-- 依存パッケージの更新: docker 25.0.1
-- 依存パッケージの更新: compose-go 2.0.0-rc.3
+- Dependencies upgrade: bump cli to 25.0.1
+- Dependencies upgrade: bump docker to 25.0.1
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.3
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -562,7 +706,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -586,15 +730,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump cli to 25.0.0 GA
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.2
 @y
-- 依存パッケージの更新: cli 25.0.0 GA
-- 依存パッケージの更新: compose-go 2.0.0-rc.2
+- Dependencies upgrade: bump cli to 25.0.0 GA
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.2
 @z
 
 @x
@@ -612,7 +756,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -621,16 +765,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump compose-go to 2.0.0-rc.1
 - Dependencies upgrade: bump containerd to 1.7.12
 @y
-- 依存パッケージの更新: cli 25.0.0-rc3
-- 依存パッケージの更新: docker 25.0.0-rc3
-- 依存パッケージの更新: compose-go 2.0.0-rc.1
-- 依存パッケージの更新: containerd 1.7.12
+- Dependencies upgrade: bump cli to 25.0.0-rc3
+- Dependencies upgrade: bump docker to 25.0.0-rc3
+- Dependencies upgrade: bump compose-go to 2.0.0-rc.1
+- Dependencies upgrade: bump containerd to 1.7.12
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -660,7 +804,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -668,15 +812,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump compose-go to 2.0.0-beta.3
 - Dependencies upgrade: bump golang to 1.21.6 
 @y
-- 依存パッケージの更新: cli 25.0.0-beta.3
-- 依存パッケージの更新: compose-go 2.0.0-beta.3
-- 依存パッケージの更新: golang 1.21.6 
+- Dependencies upgrade: bump cli to 25.0.0-beta.3
+- Dependencies upgrade: bump compose-go to 2.0.0-beta.3
+- Dependencies upgrade: bump golang to 1.21.6 
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -730,13 +874,13 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump buildx to v0.12.0
 @y
-- 依存パッケージの更新: buildx v0.12.0
+- Dependencies upgrade: bump buildx to v0.12.0
 @z
 
 @x
@@ -754,7 +898,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -763,16 +907,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump cli 24.0.7 
 - Dependencies upgrade: bump 1.20.2
 @y
-- 依存パッケージの更新: buildkit 0.12.3 
-- 依存パッケージの更新: docker 24.0.7 
-- 依存パッケージの更新: cli 24.0.7 
-- 依存パッケージの更新: 1.20.2
+- Dependencies upgrade: bump buildkit 0.12.3 
+- Dependencies upgrade: bump docker 24.0.7 
+- Dependencies upgrade: bump cli 24.0.7 
+- Dependencies upgrade: bump 1.20.2
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -802,19 +946,19 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v1.20.1
 @y
-- 依存パッケージの更新: compose-go v1.20.1
+- Dependencies upgrade: bump compose-go to v1.20.1
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -860,21 +1004,21 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v1.20.0
 - Dependencies upgrade: bump containerd to 1.7.7
 @y
-- 依存パッケージの更新: compose-go v1.20.0
-- 依存パッケージの更新: containerd 1.7.7
+- Dependencies upgrade: bump compose-go to v1.20.0
+- Dependencies upgrade: bump containerd to 1.7.7
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -908,12 +1052,12 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `watch` command is now generally available (GA). You can directly use it from the root command `docker compose watch`.
 > For more information, see [File watch](./file-watch.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > The `watch` command is now generally available (GA). You can directly use it from the root command `docker compose watch`.
 > For more information, see [File watch](./file-watch.md).
@@ -922,7 +1066,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -930,15 +1074,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump compose-go to v1.19.0
 - Dependencies upgrade: bump buildkit to v0.12.2
 @y
-- 依存パッケージの更新: golang 1.21.1
-- 依存パッケージの更新: compose-go v1.19.0
-- 依存パッケージの更新: buildkit v0.12.2
+- Dependencies upgrade: bump golang to 1.21.1
+- Dependencies upgrade: bump compose-go to v1.19.0
+- Dependencies upgrade: bump buildkit to v0.12.2
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -974,11 +1118,11 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The format of `docker compose ps` and `docker compose ps --format=json` changed to better align with `docker ps` output. See [compose#10918](https://github.com/docker/compose/pull/10918).
 @y
-> **Note**
+> [!NOTE]
 >
 > The format of `docker compose ps` and `docker compose ps --format=json` changed to better align with `docker ps` output. See [compose#10918](https://github.com/docker/compose/pull/10918).
 @z
@@ -986,19 +1130,19 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v1.18.3
 @y
-- 依存パッケージの更新: compose-go v1.18.3
+- Dependencies upgrade: bump compose-go to v1.18.3
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1034,7 +1178,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1042,15 +1186,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump compose-go to v1.18.1
 - Dependencies upgrade: bump buildkit to v0.12.1
 @y
-- 依存パッケージの更新: golang 1.21.0
-- 依存パッケージの更新: compose-go v1.18.1
-- 依存パッケージの更新: buildkit v0.12.1
+- Dependencies upgrade: bump golang to 1.21.0
+- Dependencies upgrade: bump compose-go to v1.18.1
+- Dependencies upgrade: bump buildkit to v0.12.1
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1082,7 +1226,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1112,7 +1256,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1121,10 +1265,10 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump buildkit to v0.12
 - Dependencies upgrade: bump docker-cli to v24.0.5-dev
 @y
-- 依存パッケージの更新: golang 1.20.6
-- 依存パッケージの更新: buildx v0.11.2
-- 依存パッケージの更新: buildkit v0.12
-- 依存パッケージの更新: docker-cli v24.0.5-dev
+- Dependencies upgrade: bump golang to 1.20.6
+- Dependencies upgrade: bump buildx to v0.11.2
+- Dependencies upgrade: bump buildkit to v0.12
+- Dependencies upgrade: bump docker-cli to v24.0.5-dev
 @z
 
 @x
@@ -1142,7 +1286,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1150,15 +1294,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump docker to v24.0.4
 - Dependencies upgrade: bump buildx to v0.11.1
 @y
-- 依存パッケージの更新: docker/cli-docs-tools v0.6.0
-- 依存パッケージの更新: docker v24.0.4
-- 依存パッケージの更新: buildx v0.11.1
+- Dependencies upgrade: bump docker/cli-docs-tools to v0.6.0
+- Dependencies upgrade: bump docker to v24.0.4
+- Dependencies upgrade: bump buildx to v0.11.1
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1202,19 +1346,19 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v1.15.1
 @y
-- 依存パッケージの更新: compose-go v1.15.1
+- Dependencies upgrade: bump compose-go to v1.15.1
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1242,7 +1386,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1251,16 +1395,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump docker to v24.0.2
 - Dependencies upgrade: bump golang to 1.20.5
 @y
-- 依存パッケージの更新: compose-go v1.15.0
-- 依存パッケージの更新: buildx v0.11.0
-- 依存パッケージの更新: docker v24.0.2
-- 依存パッケージの更新: golang 1.20.5
+- Dependencies upgrade: bump compose-go to v1.15.0
+- Dependencies upgrade: bump buildx to v0.11.0
+- Dependencies upgrade: bump docker to v24.0.2
+- Dependencies upgrade: bump golang to 1.20.5
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1336,7 +1480,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1360,7 +1504,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1368,15 +1512,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump buildkit to v0.11.6
 - Dependencies upgrade: bump docker to v23.0.5
 @y
-- 依存パッケージの更新: compose-go v1.13.5
-- 依存パッケージの更新: buildkit v0.11.6
-- 依存パッケージの更新: docker v23.0.5
+- Dependencies upgrade: bump compose-go to v1.13.5
+- Dependencies upgrade: bump buildkit to v0.11.6
+- Dependencies upgrade: bump docker to v23.0.5
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1436,19 +1580,19 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v1.13.2
 @y
-- 依存パッケージの更新: compose-go v1.13.2
+- Dependencies upgrade: bump compose-go to v1.13.2
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1472,7 +1616,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1480,15 +1624,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump compose-go to v1.13.1
 - Dependencies upgrade: bump golang to 1.20.2
 @y
-- 依存パッケージの更新: buildkit v0.11.5
-- 依存パッケージの更新: compose-go v1.13.1
-- 依存パッケージの更新: golang 1.20.2
+- Dependencies upgrade: bump buildkit to v0.11.5
+- Dependencies upgrade: bump compose-go to v1.13.1
+- Dependencies upgrade: bump golang to 1.20.2
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1532,7 +1676,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1541,16 +1685,16 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump containerd to 1.6.18
 - Dependencies upgrade: bump compose-go to v1.13.0
 @y
-- 依存パッケージの更新: buildkit v0.11.4
-- 依存パッケージの更新: buildx v0.10.4
-- 依存パッケージの更新: containerd 1.6.18
-- 依存パッケージの更新: compose-go v1.13.0
+- Dependencies upgrade: bump buildkit to v0.11.4
+- Dependencies upgrade: bump buildx to v0.10.4
+- Dependencies upgrade: bump containerd to 1.6.18
+- Dependencies upgrade: bump compose-go to v1.13.0
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1626,7 +1770,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1637,18 +1781,18 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump containerd to 1.6.16
 - Dependencies upgrade: bump golang to 1.20
 @y
-- 依存パッケージの更新: docker v23.0.0
-- 依存パッケージの更新: docker-cli v23.0.0
-- 依存パッケージの更新: buildkit v0.11.2
-- 依存パッケージの更新: buildx v0.10.2
-- 依存パッケージの更新: containerd 1.6.16
-- 依存パッケージの更新: golang 1.20
+- Dependencies upgrade: bump docker to v23.0.0
+- Dependencies upgrade: bump docker-cli to v23.0.0
+- Dependencies upgrade: bump buildkit to v0.11.2
+- Dependencies upgrade: bump buildx to v0.10.2
+- Dependencies upgrade: bump containerd to 1.6.16
+- Dependencies upgrade: bump golang to 1.20
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1722,7 +1866,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
@@ -1734,7 +1878,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1764,21 +1908,21 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to v1.8.1
 - Dependencies upgrade: bump cli-docs-tool to 0.5.1
 @y
-- 依存パッケージの更新: compose-go v1.8.1
-- 依存パッケージの更新: cli-docs-tool 0.5.1
+- Dependencies upgrade: bump compose-go to v1.8.1
+- Dependencies upgrade: bump cli-docs-tool to 0.5.1
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1824,19 +1968,19 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Update
 @y
-### 更新 {#update}
+### Update
 @z
 
 @x
 - Dependencies upgrade: bump containerd to 1.6.14
 @y
-- 依存パッケージの更新: containerd 1.6.14
+- Dependencies upgrade: bump containerd to 1.6.14
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1874,21 +2018,21 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
 - Dependencies upgrade: bump Go to 1.19.4
 - Dependencies upgrade: bump containerd to 1.6.12
 @y
-- 依存パッケージの更新: Go 1.19.4
-- 依存パッケージの更新: containerd 1.6.12
+- Dependencies upgrade: bump Go to 1.19.4
+- Dependencies upgrade: bump containerd to 1.6.12
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1938,21 +2082,21 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
 - Dependencies upgrade: bump compose-go to [v1.8.0](https://github.com/compose-spec/compose-go/releases/tag/v1.8.0)
 - Dependencies upgrade: bump Go to 1.19.3
 @y
-- 依存パッケージの更新: compose-go [v1.8.0](https://github.com/compose-spec/compose-go/releases/tag/v1.8.0)
-- 依存パッケージの更新: Go 1.19.3
+- Dependencies upgrade: bump compose-go to [v1.8.0](https://github.com/compose-spec/compose-go/releases/tag/v1.8.0)
+- Dependencies upgrade: bump Go to 1.19.3
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -1992,7 +2136,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2000,15 +2144,15 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 - Dependencies upgrade: bump docker-credential-helpers to v0.7.0
 - Update CI dependencies. Pull Request [compose#9982](https://github.com/docker/compose/pull/9982)
 @y
-- 依存パッケージの更新: containerd 1.6.10
-- 依存パッケージの更新: docker-credential-helpers v0.7.0
+- Dependencies upgrade: bump containerd to 1.6.10
+- Dependencies upgrade: bump docker-credential-helpers to v0.7.0
 - Update CI dependencies. Pull Request [compose#9982](https://github.com/docker/compose/pull/9982)
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2050,7 +2194,7 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2110,7 +2254,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2130,7 +2274,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2164,12 +2308,12 @@ For the full change log or additional information, check the [Compose repository
 @z
 
 @x
-> **Note**     
+> [!NOTE]     
 > 
 > - Updates on environment file syntax & interpolation: see [compose#9879](https://github.com/docker/compose/issues/9879)  
 > - Setting `DOCKER_HOST` via `.env` files is not supported in Compose v2
 @y
-> **Note**     
+> [!NOTE]     
 > 
 > - Updates on environment file syntax & interpolation: see [compose#9879](https://github.com/docker/compose/issues/9879)  
 > - Setting `DOCKER_HOST` via `.env` files is not supported in Compose v2
@@ -2178,7 +2322,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2190,7 +2334,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2244,7 +2388,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2278,7 +2422,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2290,19 +2434,19 @@ For the full change log or additional information, check the [Compose repository
 - Dependencies upgrade: bump go.opentelemetry.io/otel from 1.4.1 to 1.9.0
 - Dependencies upgrade: bump compose-go from [1.5.0 to 1.5.1](https://github.com/compose-spec/compose-go/releases/tag/v1.5.1)
 @y
-- 依存パッケージの更新: Golang 1.19.1
-- 依存パッケージの更新: github.com/docker/go-units from 0.4.0 to 0.5.0
-- 依存パッケージの更新: github.com/cnabio/cnab-to-oci from 0.3.6 to 0.3.7
-- 依存パッケージの更新: go.opentelemetry.io/otel from 1.9.0 to 1.10.0
-- 依存パッケージの更新: github.com/AlecAivazis/survey/v2 from 2.3.5
-- 依存パッケージの更新: go.opentelemetry.io/otel from 1.4.1 to 1.9.0
-- 依存パッケージの更新: compose-go from [1.5.0 to 1.5.1](https://github.com/compose-spec/compose-go/releases/tag/v1.5.1)
+- Dependencies upgrade: bump Golang to 1.19.1
+- Dependencies upgrade: bump github.com/docker/go-units from 0.4.0 to 0.5.0
+- Dependencies upgrade: bump github.com/cnabio/cnab-to-oci from 0.3.6 to 0.3.7
+- Dependencies upgrade: bump go.opentelemetry.io/otel from 1.9.0 to 1.10.0
+- Dependencies upgrade: bump github.com/AlecAivazis/survey/v2 from 2.3.5
+- Dependencies upgrade: bump go.opentelemetry.io/otel from 1.4.1 to 1.9.0
+- Dependencies upgrade: bump compose-go from [1.5.0 to 1.5.1](https://github.com/compose-spec/compose-go/releases/tag/v1.5.1)
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2350,7 +2494,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2382,7 +2526,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2394,7 +2538,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2446,7 +2590,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2470,7 +2614,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2522,25 +2666,23 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Compose v2.9.0 contains changes to the environment variable's precedence that have since been reverted. We recommend using v2.10+ to avoid compatibility issues.
 >
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Compose v2.9.0 contains changes to the environment variable's precedence that have since been reverted. We recommend using v2.10+ to avoid compatibility issues.
 >
-{ .important }
 @z
 
 @x
-> **Note**
+> [!NOTE]
 > 
 > This release reverts the breaking changes introduced in [Compose v2.8.0](#280) by [`compose-go v1.3.0`](https://github.com/compose-spec/compose-go/releases/tag/v1.3.0).
 @y
-> **Note**
+> [!NOTE]
 > 
 > This release reverts the breaking changes introduced in [Compose v2.8.0](#280) by [`compose-go v1.3.0`](https://github.com/compose-spec/compose-go/releases/tag/v1.3.0).
 @z
@@ -2548,7 +2690,7 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2560,7 +2702,7 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2592,23 +2734,21 @@ For the full change log or additional information, check the [Compose repository
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 >This release introduced a breaking change via `compose-go v1.3.0` and this [PR](https://github.com/compose-spec/compose-go/pull/294).
 In this release, Docker Compose recreates new resources (networks, volumes, secrets, configs, etc.) with new names, using a `-` (dash) instead an `_` (underscore) and tries to connect to or use these newly created resources instead of your existing ones!
 >
 > Please use Compose the v2.9.0 release instead.
 >
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 >This release introduced a breaking change via `compose-go v1.3.0` and this [PR](https://github.com/compose-spec/compose-go/pull/294).
 In this release, Docker Compose recreates new resources (networks, volumes, secrets, configs, etc.) with new names, using a `-` (dash) instead an `_` (underscore) and tries to connect to or use these newly created resources instead of your existing ones!
 >
 > Please use Compose the v2.9.0 release instead.
 >
-{ .important }
 @z
 
 @x
@@ -2628,7 +2768,7 @@ In this release, Docker Compose recreates new resources (networks, volumes, secr
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2688,21 +2828,21 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
 - Dependencies upgrade: bumped [go to 1.18.4](https://github.com/golang/go/compare/go1.18.3...go1.18.4). 
 - Dependencies upgrade: bumped [compose-go to v1.2.9](https://github.com/compose-spec/compose-go/releases/tag/v1.2.9).
 @y
-- 依存パッケージの更新: bumped [go to 1.18.4](https://github.com/golang/go/compare/go1.18.3...go1.18.4). 
-- 依存パッケージの更新: bumped [compose-go to v1.2.9](https://github.com/compose-spec/compose-go/releases/tag/v1.2.9).
+- Dependencies upgrade: bumped [go to 1.18.4](https://github.com/golang/go/compare/go1.18.3...go1.18.4). 
+- Dependencies upgrade: bumped [compose-go to v1.2.9](https://github.com/compose-spec/compose-go/releases/tag/v1.2.9).
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2774,7 +2914,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2793,22 +2933,22 @@ For the full change log or additional information, check the [Compose repository
 @y
 - Upgrade: compose-go [v1.2.8](https://github.com/compose-spec/compose-go/releases/tag/v1.2.8).
 - Upgrade: buildx [v0.8.2](https://github.com/docker/buildx/releases/tag/v0.8.2).
-- 依存パッケージの更新: bumped runc [to 1.1.2](https://github.com/opencontainers/runc/releases/tag/v1.1.2).
-- 依存パッケージの更新: bumped golang to [1.18.3](https://go.dev/doc/devel/release#go1.18.minor).
-- 依存パッケージの更新: bumped compose-go to [v1.2.8](https://github.com/compose-spec/compose-go/releases/tag/v1.2.8).
-- 依存パッケージの更新: bumped github.com/theupdateframework/notary from 0.6.1 to 0.7.0.
-- 依存パッケージの更新: bumped github.com/cnabio/cnab-to-oci from 0.3.1-beta1 to 0.3.3.
-- 依存パッケージの更新: bumped github.com/hashicorp/go-version from 1.3.0 to 1.5.0.
-- 依存パッケージの更新: bumped github.com/stretchr/testify from 1.7.0 to 1.7.2.
-- 依存パッケージの更新: bumped github.com/docker/buildx from 0.8.1 to 0.8.2.
-- 依存パッケージの更新: bumped github.com/AlecAivazis/survey/v2 from 2.3.2 to 2.3.5.
-- 依存パッケージの更新: bumped github.com/containerd/containerd from 1.6.2 to 1.6.6.
+- Dependencies upgrade: bumped runc [to 1.1.2](https://github.com/opencontainers/runc/releases/tag/v1.1.2).
+- Dependencies upgrade: bumped golang to [1.18.3](https://go.dev/doc/devel/release#go1.18.minor).
+- Dependencies upgrade: bumped compose-go to [v1.2.8](https://github.com/compose-spec/compose-go/releases/tag/v1.2.8).
+- Dependencies upgrade: bumped github.com/theupdateframework/notary from 0.6.1 to 0.7.0.
+- Dependencies upgrade: bumped github.com/cnabio/cnab-to-oci from 0.3.1-beta1 to 0.3.3.
+- Dependencies upgrade: bumped github.com/hashicorp/go-version from 1.3.0 to 1.5.0.
+- Dependencies upgrade: bumped github.com/stretchr/testify from 1.7.0 to 1.7.2.
+- Dependencies upgrade: bumped github.com/docker/buildx from 0.8.1 to 0.8.2.
+- Dependencies upgrade: bumped github.com/AlecAivazis/survey/v2 from 2.3.2 to 2.3.5.
+- Dependencies upgrade: bumped github.com/containerd/containerd from 1.6.2 to 1.6.6.
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2886,7 +3026,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2902,7 +3042,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2940,7 +3080,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -2952,7 +3092,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -2992,7 +3132,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -3046,7 +3186,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -3080,7 +3220,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -3092,7 +3232,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -3172,7 +3312,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Updates
 @y
-### 更新 {#updates}
+### Updates
 @z
 
 @x
@@ -3186,7 +3326,7 @@ For the full change log or additional information, check the [Compose repository
 @x
 ### Bug fixes and enhancements
 @y
-### バグフィックスと機能拡張 {#bug-fixes-and-enhancements}
+### Bug fixes and enhancements
 @z
 
 @x
@@ -4898,12 +5038,12 @@ This release contains minor improvements and bug fixes.
 @x
 - Reverted a 1.23.0 change that appended random strings to container names
   created by `docker-compose up`, causing addressability issues.
-  > **Note**: Containers created by `docker-compose run` will continue to use
+  > [!NOTE]: Containers created by `docker-compose run` will continue to use
   randomly generated names to avoid collisions during parallel runs.
 @y
 - Reverted a 1.23.0 change that appended random strings to container names
   created by `docker-compose up`, causing addressability issues.
-  > **Note**: Containers created by `docker-compose run` will continue to use
+  > [!NOTE]: Containers created by `docker-compose run` will continue to use
   randomly generated names to avoid collisions during parallel runs.
 @z
 
@@ -6172,10 +6312,10 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-- Added support for the [long syntax](compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
+- Added support for the [long syntax](/reference/compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
   Using this syntax will create [mounts](/engine/storage/bind-mounts.md) instead of volumes.
 @y
-- Added support for the [long syntax](compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
+- Added support for the [long syntax](reference/compose-file/legacy-versions.md) for volume entries, as previously introduced in the 3.2 format.
   Using this syntax will create [mounts](engine/storage/bind-mounts.md) instead of volumes.
 @z
 
@@ -8726,10 +8866,10 @@ naming scheme accordingly before upgrading.
 @z
 
 @x
-    Check the [upgrade guide](../compose/compose-file/legacy-versions.md)
+    Check the [upgrade guide](/reference/compose-file/legacy-versions.md)
     for full details.
 @y
-    Check the [upgrade guide](../compose/compose-file/legacy-versions.md)
+    Check the [upgrade guide](reference/compose-file/legacy-versions.md)
     for full details.
 @z
 
@@ -9841,8 +9981,8 @@ Several new configuration keys have been added to `docker-compose.yml`:
 - `pid: host`, like `docker run --pid=host`, lets you reuse the same PID namespace as the host machine.
 - `cpuset`, like `docker run --cpuset-cpus`, lets you specify which CPUs to allow execution in.
 - `read_only`, like `docker run --read-only`, lets you mount a container's filesystem as read-only.
-- `security_opt`, like `docker run --security-opt`, lets you specify [security options](__SUBDIR__/reference/cli/docker/container/run/#security-opt).
-- `log_driver`, like `docker run --log-driver`, lets you specify a [log driver](__SUBDIR__/reference/cli/docker/container/run/#log-driver).
+- `security_opt`, like `docker run --security-opt`, lets you specify [security options](reference/cli/docker/container/run/#security-opt).
+- `log_driver`, like `docker run --log-driver`, lets you specify a [log driver](reference/cli/docker/container/run/#log-driver).
 @z
 
 @x

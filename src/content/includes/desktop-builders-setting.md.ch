@@ -153,12 +153,12 @@ the build cache is also removed, along with the builder.
 
 @x
 Builders that use the
-[`docker-container` driver](/build/drivers/docker-container/)
+[`docker-container` driver](/build/builders/drivers/docker-container/)
 run the BuildKit daemon in a container.
 You can start and stop the BuildKit container using the drop-down menu.
 @y
 Builders that use the
-[`docker-container` driver](__SUBDIR__/build/drivers/docker-container/)
+[`docker-container` driver](__SUBDIR__/build/builders/drivers/docker-container/)
 run the BuildKit daemon in a container.
 You can start and stop the BuildKit container using the drop-down menu.
 @z

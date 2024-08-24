@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Build your Rust image
 keywords: rust, build, images, dockerfile
 description: Learn how to build your first Rust Docker image
----
 @y
----
 title: Build your Rust image
 keywords: rust, build, images, dockerfile
 description: Learn how to build your first Rust Docker image
----
 @z
 
 @x
@@ -22,10 +20,10 @@ description: Learn how to build your first Rust Docker image
 @z
 
 @x
-* You have installed the latest version of [Docker Desktop](../../get-docker.md).
+* You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
 * You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @y
-* You have installed the latest version of [Docker Desktop](../../get-docker.md).
+* You have installed the latest version of [Docker Desktop](get-started/get-docker.md).
 * You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @z
 

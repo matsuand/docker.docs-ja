@@ -94,19 +94,17 @@ deployed on the host, through the [Extensions SDK](https://www.npmjs.com/package
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a React based extension. But you can still use it as a starting point for
 > your own extension and use any other frontend framework, like Vue, Angular, Svelte, etc. or event stay with
 > vanilla Javascript.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a React based extension. But you can still use it as a starting point for
 > your own extension and use any other frontend framework, like Vue, Angular, Svelte, etc. or event stay with
 > vanilla Javascript.
-{ .tip }
 @z
 
 @x
@@ -142,17 +140,15 @@ file
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a Go backend. But you can still use it as a starting point for
 > your own extension and use any other language like Node.js, Python, Java, .Net, or any other language and framework.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a Go backend. But you can still use it as a starting point for
 > your own extension and use any other language like Node.js, Python, Java, .Net, or any other language and framework.
-{ .tip }
 @z
 
 @x
@@ -180,12 +176,12 @@ Note that, if the Compose file defines many services, the SDK can only contact t
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > In some cases, it is useful to also interact with the Docker engine from the backend.
 > See [How to use the Docker socket](../guides/use-docker-socket-from-backend.md) from the backend.
 @y
-> **Note**
+> [!NOTE]
 >
 > In some cases, it is useful to also interact with the Docker engine from the backend.
 > See [How to use the Docker socket](../guides/use-docker-socket-from-backend.md) from the backend.

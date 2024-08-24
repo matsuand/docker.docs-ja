@@ -1,27 +1,25 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Automated tests
 keywords: Automated, testing, repository
 title: Automated repository tests
----
 @y
----
 description: Automated tests
 keywords: Automated, testing, repository
 title: Automated repository tests
----
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
@@ -108,20 +106,20 @@ Tests pass if the `sut` service returns `0`, and fail otherwise.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 > 
 > Only the `sut` service and all other services listed in
-> [`depends_on`](../../compose/compose-file/05-services.md#depends_on) are
+> [`depends_on`](/reference/compose-file/services.md#depends_on) are
 > started. If you have services that poll for changes in other services, be sure
-> to include the polling services in the [`depends_on`](../../compose/compose-file/05-services.md#depends_on)
+> to include the polling services in the [`depends_on`](/reference/compose-file/services.md#depends_on)
 > list to make sure all of your services start.
 @y
-> **Note**
+> [!NOTE]
 > 
 > Only the `sut` service and all other services listed in
-> [`depends_on`](../../compose/compose-file/05-services.md#depends_on) are
+> [`depends_on`](reference/compose-file/services.md#depends_on) are
 > started. If you have services that poll for changes in other services, be sure
-> to include the polling services in the [`depends_on`](../../compose/compose-file/05-services.md#depends_on)
+> to include the polling services in the [`depends_on`](reference/compose-file/services.md#depends_on)
 > list to make sure all of your services start.
 @z
 
@@ -138,12 +136,12 @@ to further customize your test behavior.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you enable Automated builds, they also run any tests defined
 in the `test.yml` files.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you enable Automated builds, they also run any tests defined
 in the `test.yml` files.
@@ -264,21 +262,19 @@ Docker repository, regardless of the Autotest settings.
 @z
 
 @x
-    > **Important**
+    > [!IMPORTANT]
     >
     >For security purposes, autotest on external pull requests is
     limited on public repositories. Private images are not pulled and
     environment variables defined in Docker Hub are not
     available. Automated builds continue to work as usual.
-    { .important }
 @y
-    > **Important**
+    > [!IMPORTANT]
     >
     >For security purposes, autotest on external pull requests is
     limited on public repositories. Private images are not pulled and
     environment variables defined in Docker Hub are not
     available. Automated builds continue to work as usual.
-    { .important }
 @z
 
 @x

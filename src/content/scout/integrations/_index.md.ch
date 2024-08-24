@@ -220,7 +220,35 @@ The following source code management integrations are available:
 @z
 
 @x
-- [GitHub](source-code-management/github.md) {{< badge color=violet text=Beta >}}
+- [GitHub](source-code-management/github.md) {{< badge color=blue text=Beta >}}
 @y
-- [GitHub](source-code-management/github.md) {{< badge color=violet text=Beta >}}
+- [GitHub](source-code-management/github.md) {{< badge color=blue text=Beta >}}
+@z
+
+@x
+### Team collaboration
+@y
+### Team collaboration
+@z
+
+@x
+Integrations in this category let you integrate Docker Scout with collaboration
+platforms for broadcasting notifications about your software supply chain in
+real-time to team communication platforms.
+@y
+Integrations in this category let you integrate Docker Scout with collaboration
+platforms for broadcasting notifications about your software supply chain in
+real-time to team communication platforms.
+@z
+
+@x
+The following team collaboration integrations are available:
+@y
+The following team collaboration integrations are available:
+@z
+
+@x
+- [Slack](./team-collaboration/slack.md)
+@y
+- [Slack](./team-collaboration/slack.md)
 @z

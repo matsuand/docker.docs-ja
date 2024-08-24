@@ -26,14 +26,14 @@ image and file system management in the Docker Engine.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 > 
 > After switching to the containerd image store,
 > images and containers in the classic image store won't be visible.
 > All of those containers and images still exist.
 > To see them again, turn off the containerd image store feature.
 @y
-> **Note**
+> [!NOTE]
 > 
 > After switching to the containerd image store,
 > images and containers in the classic image store won't be visible.

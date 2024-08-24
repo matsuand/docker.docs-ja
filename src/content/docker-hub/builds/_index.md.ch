@@ -22,12 +22,12 @@ aliases:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
@@ -300,14 +300,14 @@ For each source:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When Docker Hub pulls a branch from a source code repository, it performs a
 > shallow clone - only the tip of the specified branch. Refer to
 > [Advanced options for Autobuild and Autotest](advanced.md#source-repository-or-branch-clones)
 > for more information.
 @y
-> **Note**
+> [!NOTE]
 >
 > When Docker Hub pulls a branch from a source code repository, it performs a
 > shallow clone - only the tip of the specified branch. Refer to
@@ -346,13 +346,13 @@ should remain secret.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The variables set on the build configuration screen are used during
 > the build processes only and shouldn't get confused with the environment
 > values used by your service, for example to create service links.
 @y
-> **Note**
+> [!NOTE]
 >
 > The variables set on the build configuration screen are used during
 > the build processes only and shouldn't get confused with the environment
@@ -500,14 +500,14 @@ the root of the repository. Enter the path to these files in the **Build context
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you delete the default path `/` from the **Build context** field and leave
 > it blank, the build system uses the path to the Dockerfile as the build
 > context. However, to avoid confusion it's recommended that you specify the
 > complete path.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you delete the default path `/` from the **Build context** field and leave
 > it blank, the build system uses the path to the Dockerfile as the build
@@ -646,11 +646,11 @@ including any testing settings.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Only owners can set up Automated builds for teams.
 @y
-> **Note**
+> [!NOTE]
 >
 > Only owners can set up Automated builds for teams.
 @z
@@ -732,11 +732,11 @@ variable to automated builds associated with the account. For more information, 
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > You may need to log out of your individual account on the source code provider to create the link to the service account.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > You may need to log out of your individual account on the source code provider to create the link to the service account.
 @z

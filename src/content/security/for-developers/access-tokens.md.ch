@@ -56,15 +56,13 @@ any time.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Treat access tokens like your password and keep them secret. Store your tokens securely in a credential manager for example.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Treat access tokens like your password and keep them secret. Store your tokens securely in a credential manager for example.
-{ .important }
 @z
 
 @x
@@ -154,13 +152,13 @@ When prompted for a password, enter your personal access token instead of a pass
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you have [two-factor authentication (2FA)](2fa/index.md) enabled, you must
 > use a personal access token when logging in from the Docker CLI. 2FA is an
 > optional, but more secure method of authentication.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you have [two-factor authentication (2FA)](2fa/index.md) enabled, you must
 > use a personal access token when logging in from the Docker CLI. 2FA is an

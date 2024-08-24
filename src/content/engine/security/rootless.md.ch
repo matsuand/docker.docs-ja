@@ -95,15 +95,13 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > We recommend that you use the Ubuntu kernel.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > We recommend that you use the Ubuntu kernel.
-{ .tip }
 @z
 
 @x
@@ -327,20 +325,24 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If the system-wide Docker daemon is already running, consider disabling it:
-@y
-> **Note**
->
-> If the system-wide Docker daemon is already running, consider disabling it:
-@z
-% snip command...
-@x
+>```console
+>$ sudo systemctl disable --now docker.service docker.socket
+>$ sudo rm /var/run/docker.sock
+>```
 > Should you choose not to shut down the `docker` service and socket, you will need to use the `--force`
 > parameter in the next section. There are no known issues, but until you shutdown and disable you're
 > still running rootful Docker. 
 @y
+> [!NOTE]
+>
+> If the system-wide Docker daemon is already running, consider disabling it:
+>```console
+>$ sudo systemctl disable --now docker.service docker.socket
+>$ sudo rm /var/run/docker.sock
+>```
 > Should you choose not to shut down the `docker` service and socket, you will need to use the `--force`
 > parameter in the next section. There are no known issues, but until you shutdown and disable you're
 > still running rootful Docker. 
@@ -743,11 +745,11 @@ To allow delegation of all controllers, you need to change the systemd configura
 % snip command...
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Delegating `cpuset` requires systemd 244 or later.
 @y
-> **Note**
+> [!NOTE]
 >
 > Delegating `cpuset` requires systemd 244 or later.
 @z
@@ -885,11 +887,11 @@ On a non-systemd host, you need to create a directory and then set the path:
 % snip command...
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must remove the directory every time you log out.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must remove the directory every time you log out.
 @z

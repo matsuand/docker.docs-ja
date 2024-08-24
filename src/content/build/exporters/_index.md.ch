@@ -614,12 +614,12 @@ the previous compression algorithm.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `gzip` and `estargz` compression methods use the [`compress/gzip` package](https://pkg.go.dev/compress/gzip),
 > while `zstd` uses the [`github.com/klauspost/compress/zstd` package](https://github.com/klauspost/compress/tree/master/zstd).
 @y
-> **Note**
+> [!NOTE]
 >
 > The `gzip` and `estargz` compression methods use the [`compress/gzip` package](https://pkg.go.dev/compress/gzip),
 > while `zstd` uses the [`github.com/klauspost/compress/zstd` package](https://github.com/klauspost/compress/tree/master/zstd).

@@ -194,13 +194,13 @@ with the provided endpoint.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `awslogs-region` log option or detected region controls the
 > region used for signing. You may experience signature errors if the
 > endpoint you've specified with `awslogs-endpoint` uses a different region.
 @y
-> **Note**
+> [!NOTE]
 >
 > The `awslogs-region` log option or detected region controls the
 > region used for signing. You may experience signature errors if the
@@ -254,13 +254,13 @@ specified, the container ID is used as the log stream.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Log streams within a given log group should only be used by one container
 > at a time. Using the same log stream for multiple containers concurrently
 > can cause reduced logging performance.
 @y
-> **Note**
+> [!NOTE]
 >
 > Log streams within a given log group should only be used by one container
 > at a time. Using the same log stream for multiple containers concurrently
@@ -304,12 +304,12 @@ $ docker run \
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Your AWS IAM policy must include the `logs:CreateLogGroup` permission before
 > you attempt to use `awslogs-create-group`.
 @y
-> **Note**
+> [!NOTE]
 >
 > Your AWS IAM policy must include the `logs:CreateLogGroup` permission before
 > you attempt to use `awslogs-create-group`.
@@ -354,12 +354,12 @@ This option always takes precedence if both `awslogs-datetime-format` and
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Multi-line logging performs regular expression parsing and matching of all log
 > messages, which may have a negative impact on logging performance.
 @y
-> **Note**
+> [!NOTE]
 >
 > Multi-line logging performs regular expression parsing and matching of all log
 > messages, which may have a negative impact on logging performance.
@@ -536,12 +536,12 @@ This option is ignored if `awslogs-datetime-format` is also configured.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Multi-line logging performs regular expression parsing and matching of all log
 > messages. This may have a negative impact on logging performance.
 @y
-> **Note**
+> [!NOTE]
 >
 > Multi-line logging performs regular expression parsing and matching of all log
 > messages. This may have a negative impact on logging performance.
@@ -668,7 +668,7 @@ If not specified, the container ID is used as the log stream.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The CloudWatch log API doesn't support `:` in the log name. This can cause
 > some issues when using the `{{ .ImageName }}` as a tag,
@@ -682,7 +682,7 @@ If not specified, the container ID is used as the log stream.
 >
 > the output is something like: `alpine_latest-bf0072049c76`
 @y
-> **Note**
+> [!NOTE]
 >
 > The CloudWatch log API doesn't support `:` in the log name. This can cause
 > some issues when using the `{{ .ImageName }}` as a tag,

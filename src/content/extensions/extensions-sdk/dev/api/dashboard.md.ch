@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Dashboard
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases:
- - /desktop/extensions-sdk/dev/api/dashboard/
----
 @y
----
 title: Dashboard
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases:
- - /desktop/extensions-sdk/dev/api/dashboard/
----
 @z
 
 @x
@@ -118,9 +112,9 @@ ddClient.desktopUI.toast.error("message");
 @z
 
 @x
-For more details about method parameters and the return types available, see [Toast API reference](reference/interfaces/Toast.md).
+For more details about method parameters and the return types available, see [Toast API reference](/reference/api/extensions-sdk/Toast.md).
 @y
-For more details about method parameters and the return types available, see [Toast API reference](reference/interfaces/Toast.md).
+For more details about method parameters and the return types available, see [Toast API reference](reference/api/extensions-sdk/Toast.md).
 @z
 
 @x
@@ -160,9 +154,9 @@ This function opens a file selector dialog that asks the user to select a file o
 @z
 
 @x
-▸ **showOpenDialog**(`dialogProperties`): `Promise`<[`OpenDialogResult`](reference/interfaces/OpenDialogResult.md)\>:
+▸ **showOpenDialog**(`dialogProperties`): `Promise`<[`OpenDialogResult`](/reference/api/extensions-sdk/OpenDialogResult.md)\>:
 @y
-▸ **showOpenDialog**(`dialogProperties`): `Promise`<[`OpenDialogResult`](reference/interfaces/OpenDialogResult.md)\>:
+▸ **showOpenDialog**(`dialogProperties`): `Promise`<[`OpenDialogResult`](reference/api/extensions-sdk/OpenDialogResult.md)\>:
 @z
 
 @x
@@ -226,9 +220,9 @@ ddClient.host.openExternal("https://docker.com");
 @z
 
 @x
-For more details about method parameters and the return types available, see [Desktop host API reference](reference/interfaces/Host.md).
+For more details about method parameters and the return types available, see [Desktop host API reference](/reference/api/extensions-sdk/Host.md).
 @y
-For more details about method parameters and the return types available, see [Desktop host API reference](reference/interfaces/Host.md).
+For more details about method parameters and the return types available, see [Desktop host API reference](reference/api/extensions-sdk/Host.md).
 @z
 
 @x

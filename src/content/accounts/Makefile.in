@@ -239,6 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md                  \
+	create-account.md          \
 	deactivate-user-account.md \
 	manage-account.md
 

@@ -148,7 +148,7 @@ jobs:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can also expose a secret file to the build with the `secret-files` input:
 >
@@ -157,7 +157,7 @@ jobs:
 >   "MY_SECRET=./secret.txt"
 > ```
 @y
-> **Note**
+> [!NOTE]
 >
 > You can also expose a secret file to the build with the `secret-files` input:
 >
@@ -232,11 +232,11 @@ secrets: |
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Double escapes are needed for quote signs.
 @y
-> **Note**
+> [!NOTE]
 >
 > Double escapes are needed for quote signs.
 @z

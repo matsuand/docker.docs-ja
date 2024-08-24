@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Configure BuildKit
 description: Learn how to configure BuildKit for your builder.
 keywords: build, buildkit, configuration, buildx, network, cni, registry
----
 @y
----
 title: Configure BuildKit
 description: Learn how to configure BuildKit for your builder.
 keywords: build, buildkit, configuration, buildx, network, cni, registry
----
 @z
 
 @x
@@ -64,12 +62,12 @@ defining a mirror for `docker.io` (Docker Hub) to `mirror.gcr.io`.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > `debug = true` turns on debug requests in the BuildKit daemon, which logs a
    > message that shows when a mirror is being used.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > `debug = true` turns on debug requests in the BuildKit daemon, which logs a
    > message that shows when a mirror is being used.
@@ -476,10 +474,10 @@ while creating a builder with the [`--config` flags](../../reference/cli/docker/
 @z
 
 @x
-Now you can [create a `docker-container` builder](../drivers/docker-container.md)
+Now you can [create a `docker-container` builder](/build/builders/drivers/docker-container.md)
 that will use this BuildKit configuration to limit parallelism.
 @y
-Now you can [create a `docker-container` builder](../drivers/docker-container.md)
+Now you can [create a `docker-container` builder]/build/builders/drivers/docker-container.md)
 that will use this BuildKit configuration to limit parallelism.
 @z
 

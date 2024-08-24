@@ -1,8 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
-% snip 対応
+% .md リン クへの (no slash) 対応
 
 @x
 title: Docker Scout metrics exporter
@@ -56,13 +55,17 @@ The metrics endpoint exposes the following metrics:
 | `scout_policy_evaluated_images` | Total images evaluated against a policy in a stream | `id`, `displayName`, `streamName` | Gauge |
 @z
 
-@x (no slash) 対応
+@x
 > **Streams**
 >
 > In Docker Scout, the streams concept is a superset of [environments](/scout/integrations/environment/_index.md).
 > Streams include all runtime environments that you've defined,
 > as well as the special `latest-indexed` stream.
 > The `latest-indexed` stream contains the most recently pushed (and analyzed) tag for each repository.
+>
+> Streams is mostly an internal concept in Docker Scout,
+> with the exception of the data exposed through this metrics endpoint.
+{ #stream }
 @y
 > **Streams**
 >
@@ -70,15 +73,10 @@ The metrics endpoint exposes the following metrics:
 > Streams include all runtime environments that you've defined,
 > as well as the special `latest-indexed` stream.
 > The `latest-indexed` stream contains the most recently pushed (and analyzed) tag for each repository.
-@z
-@x
+>
 > Streams is mostly an internal concept in Docker Scout,
 > with the exception of the data exposed through this metrics endpoint.
-{ .tip #stream }
-@y
-> Streams is mostly an internal concept in Docker Scout,
-> with the exception of the data exposed through this metrics endpoint.
-{ .tip #stream }
+{ #stream }
 @z
 
 @x
@@ -95,7 +93,7 @@ To export metrics from your organization, first make sure your organization is e
 Then, create a Personal Access Token (PAT) - a secret token that allows the exporter to authenticate with the Docker Scout API.
 @z
 
-@x (no slash) 対応
+@x
 The PAT does not require any specific permissions, but it must be created by a user who is an owner of the Docker organization.
 To create a PAT, follow the steps in [Create an access token](/security/for-developers/access-tokens/#create-an-access-token).
 @y
@@ -118,6 +116,12 @@ You will need to provide this token to the exporter when scraping metrics.
 @z
 
 @x
+This section describes how to scrape the metrics endpoint using Prometheus.
+@y
+This section describes how to scrape the metrics endpoint using Prometheus.
+@z
+
+@x
 ### Add a job for your organization
 @y
 ### Add a job for your organization
@@ -133,7 +137,27 @@ The job should include the following configuration;
 replace `ORG` with your organization name:
 @z
 
-% snip code...
+@x
+```yaml
+scrape_configs:
+  - job_name: <ORG>
+    metrics_path: /v1/exporter/org/<ORG>/metrics
+    scheme: https
+    static_configs:
+      - targets:
+          - api.scout.docker.com
+```
+@y
+```yaml
+scrape_configs:
+  - job_name: <ORG>
+    metrics_path: /v1/exporter/org/<ORG>/metrics
+    scheme: https
+    static_configs:
+      - targets:
+          - api.scout.docker.com
+```
+@z
 
 @x
 The address in the `targets` field is set to the domain name of the Docker Scout API, `api.scout.docker.com`.
@@ -165,7 +189,23 @@ Update the Prometheus configuration file to include the `authorization` configur
 This block defines the PAT as a bearer token stored in a file:
 @z
 
-% snip code...
+@x
+```yaml
+scrape_configs:
+  - job_name: $ORG
+    authorization:
+      type: Bearer
+      credentials_file: /etc/prometheus/token
+```
+@y
+```yaml
+scrape_configs:
+  - job_name: $ORG
+    authorization:
+      type: Bearer
+      credentials_file: /etc/prometheus/token
+```
+@z
 
 @x
 The content of the file should be the PAT in plain text:
@@ -173,7 +213,15 @@ The content of the file should be the PAT in plain text:
 The content of the file should be the PAT in plain text:
 @z
 
-% snip command...
+@x
+```console
+dckr_pat_...
+```
+@y
+```console
+dckr_pat_...
+```
+@z
 
 @x
 If you are running Prometheus in a Docker container or Kubernetes pod, mount the file into the container using a volume or secret.
@@ -211,9 +259,19 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
    for scraping and visualizing the Docker Scout metrics endpoint:
 @z
 
-% snip command...
+@x
+   ```console
+   $ git clone git@github.com:dockersamples/scout-metrics-exporter.git
+   $ cd scout-metrics-exporter/prometheus
+   ```
+@y
+   ```console
+   $ git clone git@github.com:dockersamples/scout-metrics-exporter.git
+   $ cd scout-metrics-exporter/prometheus
+   ```
+@z
 
-@x (no slash) 対応
+@x
 2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @y
@@ -221,7 +279,15 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @z
 
-% snip command...
+@x
+   ```plaintext {title=token}
+   $ echo $DOCKER_PAT > ./prometheus/token
+   ```
+@y
+   ```plaintext {title=token}
+   $ echo $DOCKER_PAT > ./prometheus/token
+   ```
+@z
 
 @x
 3. In the Prometheus configuration file at `/prometheus/prometheus/prometheus.yml`,
@@ -231,7 +297,39 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
    replace `ORG` in the `metrics_path` property on line 6 with the namespace of your Docker organization.
 @z
 
-% snip code...
+@x
+   ```yaml {title="prometheus/prometheus.yml",hl_lines="6",linenos=1}
+   global:
+     scrape_interval: 60s
+     scrape_timeout: 40s
+   scrape_configs:
+     - job_name: Docker Scout policy
+       metrics_path: /v1/exporter/org/<ORG>/metrics
+       scheme: https
+       static_configs:
+         - targets:
+             - api.scout.docker.com
+       authorization:
+         type: Bearer
+         credentials_file: /etc/prometheus/token
+   ```
+@y
+   ```yaml {title="prometheus/prometheus.yml",hl_lines="6",linenos=1}
+   global:
+     scrape_interval: 60s
+     scrape_timeout: 40s
+   scrape_configs:
+     - job_name: Docker Scout policy
+       metrics_path: /v1/exporter/org/<ORG>/metrics
+       scheme: https
+       static_configs:
+         - targets:
+             - api.scout.docker.com
+       authorization:
+         type: Bearer
+         credentials_file: /etc/prometheus/token
+   ```
+@z
 
 @x
 4. Start the compose services.
@@ -239,7 +337,15 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
 4. Start the compose services.
 @z
 
-% snip command...
+@x
+   ```console
+   docker compose up -d
+   ```
+@y
+   ```console
+   docker compose up -d
+   ```
+@z
 
 @x
    This command starts two services: the Prometheus server and Grafana.
@@ -257,7 +363,15 @@ To stop the demo and clean up any resources created, run:
 To stop the demo and clean up any resources created, run:
 @z
 
-% snip command...
+@x
+```console
+docker compose down -v
+```
+@y
+```console
+docker compose down -v
+```
+@z
 
 @x
 ### Access to Prometheus
@@ -387,24 +501,54 @@ The following example shows a Datadog configuration that:
   endpoint, using a Docker PAT as a Bearer token.
 @z
 
-% snip code...
+@x
+```yaml
+instances:
+  - openmetrics_endpoint: "https://api.scout.docker.com/v1/exporter/org/dockerscoutpolicy/metrics"
+    namespace: "scout-metrics-exporter"
+    metrics:
+      - scout_*
+    auth_token:
+      reader:
+        type: file
+        path: /var/run/secrets/scout-metrics-exporter/token
+      writer:
+        type: header
+        name: Authorization
+        value: Bearer <TOKEN>
+```
+@y
+```yaml
+instances:
+  - openmetrics_endpoint: "https://api.scout.docker.com/v1/exporter/org/dockerscoutpolicy/metrics"
+    namespace: "scout-metrics-exporter"
+    metrics:
+      - scout_*
+    auth_token:
+      reader:
+        type: file
+        path: /var/run/secrets/scout-metrics-exporter/token
+      writer:
+        type: header
+        name: Authorization
+        value: Bearer <TOKEN>
+```
+@z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Do not replace the `<TOKEN>` placeholder in the previous configuration
 > example. It must stay as it is. Only make sure the Docker PAT is correctly
 > mounted into the Datadog agent in the specified filesystem path. Save the
 > file as `conf.yaml` and restart the agent.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Do not replace the `<TOKEN>` placeholder in the previous configuration
 > example. It must stay as it is. Only make sure the Docker PAT is correctly
 > mounted into the Datadog agent in the specified filesystem path. Save the
 > file as `conf.yaml` and restart the agent.
-{ .important }
 @z
 
 @x
@@ -445,9 +589,19 @@ and a Datadog site.
    scraping the Docker Scout metrics endpoint:
 @z
 
-% snip command...
+@x
+   ```console
+   $ git clone git@github.com:dockersamples/scout-metrics-exporter.git
+   $ cd scout-metrics-exporter/datadog
+   ```
+@y
+   ```console
+   $ git clone git@github.com:dockersamples/scout-metrics-exporter.git
+   $ cd scout-metrics-exporter/datadog
+   ```
+@z
 
-@x (no slash) 対応
+@x
 2. [Create a Docker access token](/security/for-developers/access-tokens/#create-an-access-token)
    and store it in a plain text file at `/datadog/token` under the template directory.
 @y
@@ -455,7 +609,15 @@ and a Datadog site.
    and store it in a plain text file at `/datadog/token` under the template directory.
 @z
 
-% snip code...
+@x
+   ```plaintext {title=token}
+   $ echo $DOCKER_PAT > ./token
+   ```
+@y
+   ```plaintext {title=token}
+   $ echo $DOCKER_PAT > ./token
+   ```
+@z
 
 @x
 3. In the `/datadog/compose.yaml` file, update the `DD_API_KEY` and `DD_SITE` environment variables
@@ -465,7 +627,35 @@ and a Datadog site.
    with the values for your Datadog deployment.
 @z
 
-% snip code...
+@x
+   ```yaml {hl_lines="5-6"}
+     datadog-agent:
+       container_name: datadog-agent
+       image: gcr.io/datadoghq/agent:7
+       environment:
+         - DD_API_KEY=${DD_API_KEY} # e.g. 1b6b3a42...
+         - DD_SITE=${DD_SITE} # e.g. datadoghq.com
+         - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock:ro
+         - ./conf.yaml:/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml:ro
+         - ./token:/var/run/secrets/scout-metrics-exporter/token:ro
+   ```
+@y
+   ```yaml {hl_lines="5-6"}
+     datadog-agent:
+       container_name: datadog-agent
+       image: gcr.io/datadoghq/agent:7
+       environment:
+         - DD_API_KEY=${DD_API_KEY} # e.g. 1b6b3a42...
+         - DD_SITE=${DD_SITE} # e.g. datadoghq.com
+         - DD_DOGSTATSD_NON_LOCAL_TRAFFIC=true
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock:ro
+         - ./conf.yaml:/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml:ro
+         - ./token:/var/run/secrets/scout-metrics-exporter/token:ro
+   ```
+@z
 
 @x
    The `volumes` section mounts the Docker socket from the host to the
@@ -493,7 +683,21 @@ and a Datadog site.
    organization that you want to collect metrics for.
 @z
 
-% snip code...
+@x
+   ```yaml {hl_lines=2}
+   instances:
+     - openmetrics_endpoint: "https://api.scout.docker.com/v1/exporter/org/<<ORG>>/metrics"
+       namespace: "scout-metrics-exporter"
+   # ...
+   ```
+@y
+   ```yaml {hl_lines=2}
+   instances:
+     - openmetrics_endpoint: "https://api.scout.docker.com/v1/exporter/org/<<ORG>>/metrics"
+       namespace: "scout-metrics-exporter"
+   # ...
+   ```
+@z
 
 @x
 5. Start the Compose services.
@@ -501,7 +705,15 @@ and a Datadog site.
 5. Start the Compose services.
 @z
 
-% snip code...
+@x
+   ```console
+   docker compose up -d
+   ```
+@y
+   ```console
+   docker compose up -d
+   ```
+@z
 
 @x
 If configured properly, you should see the OpenMetrics check under Running
@@ -513,7 +725,35 @@ Checks when you run the agent’s status command whose output should look simila
 to:
 @z
 
-% snip text...
+@x
+```text
+openmetrics (4.2.0)
+-------------------
+  Instance ID: openmetrics:scout-prometheus-exporter:6393910f4d92f7c2 [OK]
+  Configuration Source: file:/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml
+  Total Runs: 1
+  Metric Samples: Last Run: 236, Total: 236
+  Events: Last Run: 0, Total: 0
+  Service Checks: Last Run: 1, Total: 1
+  Average Execution Time : 2.537s
+  Last Execution Date : 2024-05-08 10:41:07 UTC (1715164867000)
+  Last Successful Execution Date : 2024-05-08 10:41:07 UTC (1715164867000)
+```
+@y
+```text
+openmetrics (4.2.0)
+-------------------
+  Instance ID: openmetrics:scout-prometheus-exporter:6393910f4d92f7c2 [OK]
+  Configuration Source: file:/etc/datadog-agent/conf.d/openmetrics.d/conf.yaml
+  Total Runs: 1
+  Metric Samples: Last Run: 236, Total: 236
+  Events: Last Run: 0, Total: 0
+  Service Checks: Last Run: 1, Total: 1
+  Average Execution Time : 2.537s
+  Last Execution Date : 2024-05-08 10:41:07 UTC (1715164867000)
+  Last Successful Execution Date : 2024-05-08 10:41:07 UTC (1715164867000)
+```
+@z
 
 @x
 For a comprehensive list of options, take a look at this [example config file](https://github.com/DataDog/integrations-core/blob/master/openmetrics/datadog_checks/openmetrics/data/conf.yaml.example) for the generic OpenMetrics check.
@@ -621,7 +861,7 @@ To change the scrape interval:
 ## Revoke an access token
 @z
 
-@x (no slash) 対応
+@x
 If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
 To revoke a PAT, follow the steps in the [Create and manage access tokens](/security/for-developers/access-tokens/#modify-existing-tokens).
 @y

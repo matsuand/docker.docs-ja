@@ -1,26 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% .md リン クへの (no slash) 対応
 
 @x
----
 title: Insights and analytics
 description: Discover how to access usage statistics of your images on Docker Hub
 keywords: docker hub, hub, insights, analytics, api, verified publisher
-aliases:
-- /docker-hub/publish/insights-analytics/
-- /docker-hub/insights-analytics/
----
 @y
----
 title: Insights and analytics
 description: Discover how to access usage statistics of your images on Docker Hub
 keywords: docker hub, hub, insights, analytics, api, verified publisher
-aliases:
-- /docker-hub/publish/insights-analytics/
-- /docker-hub/insights-analytics/
----
 @z
 
 @x
@@ -33,20 +23,18 @@ Publisher (DVP) and Docker-Sponsored Open Source (DSOS) images on Docker Hub. Th
 
 @x
 <!-- prettier-ignore -->
-> **Tip**
+> [!TIP]
 >
 > Head to the
 [Docker Verified Publisher Program](https://www.docker.com/partners/programs/) or [Docker-Sponsored Open Source](https://www.docker.com/community/open-source/application/#) pages
 to learn more about the programs.
-{ .tip }
 @y
 <!-- prettier-ignore -->
-> **Tip**
+> [!TIP]
 >
 > Head to the
 [Docker Verified Publisher Program](https://www.docker.com/partners/programs/) or [Docker-Sponsored Open Source](https://www.docker.com/community/open-source/application/#) pages
 to learn more about the programs.
-{ .tip }
 @z
 
 @x
@@ -93,18 +81,16 @@ To view data in the chart:
 
 @x
 <!-- prettier-ignore -->
-> **Tip**
+> [!TIP]
 >
 > Hovering your cursor over the chart displays a tooltip, showing precise data
 > for points in time.
-{ .tip }
 @y
 <!-- prettier-ignore -->
-> **Tip**
+> [!TIP]
 >
 > Hovering your cursor over the chart displays a tooltip, showing precise data
 > for points in time.
-{ .tip }
 @z
 
 @x
@@ -163,10 +149,10 @@ You can download extension CSV reports from the **Insights and analytics** dashb
 
 @x
 You can export the analytics data either from the web dashboard, or using the
-[DVP Data API](/docker-hub/api/dvp/). All members of an organization have access to the analytics data.
+[DVP Data API](/reference/api/hub/dvp.md). All members of an organization have access to the analytics data.
 @y
 You can export the analytics data either from the web dashboard, or using the
-[DVP Data API](__SUBDIR__/docker-hub/api/dvp/). All members of an organization have access to the analytics data.
+[DVP Data API](reference/api/hub/dvp.md). All members of an organization have access to the analytics data.
 @z
 
 @x
@@ -240,11 +226,11 @@ Export usage data for your organization's images using the Docker Hub website by
 @x
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
-using the API in the [DVP Data API documentation](/docker-hub/api/dvp/).
+using the API in the [DVP Data API documentation](/reference/api/hub/dvp.md).
 @y
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
-using the API in the [DVP Data API documentation](__SUBDIR__/docker-hub/api/dvp/).
+using the API in the [DVP Data API documentation](reference/api/hub/dvp.md).
 @z
 
 @x
@@ -585,18 +571,16 @@ consumers of content on Docker Hub remain completely anonymous.
 
 @x
 <!-- prettier-ignore -->
-> **Important**
+> [!IMPORTANT]
 >
 > Docker never shares any Personally Identifiable Information (PII) as part of
 > analytics data.
-{ .important }
 @y
 <!-- prettier-ignore -->
-> **Important**
+> [!IMPORTANT]
 >
 > Docker never shares any Personally Identifiable Information (PII) as part of
 > analytics data.
-{ .important }
 @z
 
 @x

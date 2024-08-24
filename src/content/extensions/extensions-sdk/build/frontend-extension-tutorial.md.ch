@@ -40,19 +40,17 @@ The quickest way to create a new extension is to run `docker extension init my-e
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a React based extension. But you can still use it as a starting point for
 > your own extension and use any other frontend framework, like Vue, Angular, Svelte, etc. or even stay with
 > vanilla Javascript.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a React based extension. But you can still use it as a starting point for
 > your own extension and use any other frontend framework, like Vue, Angular, Svelte, etc. or even stay with
 > vanilla Javascript.
-{ .tip }
 @z
 
 @x
@@ -120,12 +118,12 @@ it's highly recommended that you start from the `docker extension init` command 
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When using the `docker extension init`, it creates a `Dockerfile` that already contains what is needed for a React
 > extension.
 @y
-> **Note**
+> [!NOTE]
 >
 > When using the `docker extension init`, it creates a `Dockerfile` that already contains what is needed for a React
 > extension.
@@ -236,17 +234,15 @@ COPY --from=client-builder /ui/build ui
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Vue yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Vue)
 > and let us know if you'd like a Dockerfile for Vue.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Vue yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Vue)
 > and let us know if you'd like a Dockerfile for Vue.
-{ .important }
 @z
 
 @x
@@ -258,17 +254,15 @@ COPY --from=client-builder /ui/build ui
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Angular yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Angular)
 > and let us know if you'd like a Dockerfile for Angular.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Angular yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Angular)
 > and let us know if you'd like a Dockerfile for Angular.
-{ .important }
 @z
 
 @x
@@ -280,17 +274,15 @@ COPY --from=client-builder /ui/build ui
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Svelte yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Svelte)
 > and let us know if you'd like a Dockerfile for Svelte.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Svelte yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Svelte)
 > and let us know if you'd like a Dockerfile for Svelte.
-{ .important }
 @z
 
 @x
@@ -684,17 +676,15 @@ export function App() {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Vue yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Vue)
 > and let us know if you'd like a sample with Vue.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Vue yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Vue)
 > and let us know if you'd like a sample with Vue.
-{ .important }
 @z
 
 @x
@@ -706,17 +696,15 @@ export function App() {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Angular yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Angular)
 > and let us know if you'd like a sample with Angular.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Angular yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Angular)
 > and let us know if you'd like a sample with Angular.
-{ .important }
 @z
 
 @x
@@ -728,17 +716,15 @@ export function App() {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Svelte yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Svelte)
 > and let us know if you'd like a sample with Svelte.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Svelte yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Svelte)
 > and let us know if you'd like a sample with Svelte.
-{ .important }
 @z
 
 @x
@@ -840,17 +826,15 @@ when you need to debug it.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > You can turn on [hot reloading](../dev/test-debug.md#hot-reloading-whilst-developing-the-ui) to avoid the need to
 > rebuild the extension every time you make a change.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > You can turn on [hot reloading](../dev/test-debug.md#hot-reloading-whilst-developing-the-ui) to avoid the need to
 > rebuild the extension every time you make a change.
-{ .tip }
 @z
 
 @x

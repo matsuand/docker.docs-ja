@@ -138,13 +138,13 @@ Restart Docker for the changes to take effect.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Numeric and Boolean values (such as the value for
 > `syslog-tls-skip-verify`) must therefore be enclosed in quotes (`"`).
 @y
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Numeric and Boolean values (such as the value for

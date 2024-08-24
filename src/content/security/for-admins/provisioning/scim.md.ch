@@ -78,33 +78,29 @@ The following table lists the supported attributes. Note that your attribute map
 @z
 
 @x
-For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/docker-hub/api/latest/#tag/scim).
+For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](/reference/api/hub/latest/#tag/scim).
 @y
-For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](__SUBDIR__/docker-hub/api/latest/#tag/scim).
+For additional details about supported attributes and SCIM, see [Docker Hub API SCIM reference](__SUBDIR__/reference/api/hub/latest/#tag/scim).
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../single-sign-on/configure/configure-idp.md#sso-attributes).
-{.important}
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../single-sign-on/configure/configure-idp.md#sso-attributes).
-{.important}
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .tip }
 @z
 
 @x
@@ -314,11 +310,11 @@ You can assign [roles](__SUBDIR__/security/for-admins/roles-and-permissions/) to
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > These mappings are supported for both SCIM and JIT provisioning. With JIT provisioning, role mapping only applies when a user is initially provisioned to the organization.
 @y
-> **Note**
+> [!NOTE]
 >
 > These mappings are supported for both SCIM and JIT provisioning. With JIT provisioning, role mapping only applies when a user is initially provisioned to the organization.
 @z

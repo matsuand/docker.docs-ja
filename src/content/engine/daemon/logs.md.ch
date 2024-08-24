@@ -278,14 +278,14 @@ The Docker daemon log can be viewed by using one of the following methods:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > It isn't possible to manually generate a stack trace on Docker Desktop for
 > Mac or Docker Desktop for Windows. However, you can click the Docker taskbar
 > icon and choose **Troubleshoot** to send information to Docker if you run into
 > issues.
 @y
-> **Note**
+> [!NOTE]
 >
 > It isn't possible to manually generate a stack trace on Docker Desktop for
 > Mac or Docker Desktop for Windows. However, you can click the Docker taskbar

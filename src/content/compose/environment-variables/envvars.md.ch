@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
 description: Compose pre-defined environment variables
@@ -144,9 +144,9 @@ constraint, you must use one of the other mechanisms.
 @z
 
 @x
-See also the [command-line options overview](../reference/index.md#command-options-overview-and-help) and [using `-p` to specify a project name](../reference/index.md#use--p-to-specify-a-project-name).
+See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](/reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
 @y
-See also the [command-line options overview](../reference/index.md#command-options-overview-and-help) and [using `-p` to specify a project name](../reference/index.md#use--p-to-specify-a-project-name).
+See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
 @z
 
 @x
@@ -186,9 +186,9 @@ Example: `COMPOSE_FILE=docker-compose.yml:docker-compose.prod.yml`.
 @z
 
 @x
-See also the [command-line options overview](../reference/index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](../reference/index.md#use--f-to-specify-name-and-path-of-one-or-more-compose-files).
+See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/_index.md#use--f-to-specify-name-and-path-of-one-or-more-compose-files).
 @y
-See also the [command-line options overview](../reference/index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](../reference/index.md#use--f-to-specify-name-and-path-of-one-or-more-compose-files).
+See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](reference/cli/docker/compose/_index.md#use--f-to-specify-name-and-path-of-one-or-more-compose-files).
 @z
 
 @x
@@ -228,9 +228,9 @@ This example enables all services matching both the `frontend` and `debug` profi
 @z
 
 @x
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](../reference/index.md#use---profile-to-specify-one-or-more-active-profiles).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use---profile-to-specify-one-or-more-active-profiles).
 @y
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](../reference/index.md#use---profile-to-specify-one-or-more-active-profiles).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](reference/cli/docker/compose/_index.md#use---profile-to-specify-one-or-more-active-profiles).
 @z
 
 @x

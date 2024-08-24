@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Build the extensions for multiple architectures
@@ -138,15 +138,13 @@ Manifests:
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > If you're having trouble pushing the image, make sure you're signed in to Docker Hub. Otherwise, run `docker login` to authenticate.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > If you're having trouble pushing the image, make sure you're signed in to Docker Hub. Otherwise, run `docker login` to authenticate.
-{ .tip }
 @z
 
 @x
@@ -330,11 +328,11 @@ As a result, when `TARGETARCH` equals:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The binary destination path for Darwin is `darwin/kubectl` in both cases. The only change is the architecture-specific binary that is downloaded.
 @y
-> **Note**
+> [!NOTE]
 >
 > The binary destination path for Darwin is `darwin/kubectl` in both cases. The only change is the architecture-specific binary that is downloaded.
 @z

@@ -1,12 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 ### Install using the convenience script
 @y
-### 便利スクリプトを利用したインストール {#install-using-the-convenience-script}
+### Install using the convenience script
 @z
 
 @x
@@ -36,13 +36,11 @@ for the script is open source, and you can find it in the
 Always examine scripts downloaded from the internet before running them locally.
 Before installing, make yourself familiar with potential risks and limitations
 of the convenience script:
-{ .warning }
 @y
 <!-- prettier-ignore -->
 Always examine scripts downloaded from the internet before running them locally.
 Before installing, make yourself familiar with potential risks and limitations
 of the convenience script:
-{ .warning }
 @z
 
 @x
@@ -82,14 +80,22 @@ of the convenience script:
 >
 > You can run the script with the `--dry-run` option to learn what steps the
 > script will run when invoked:
+>
+> ```console
+> $ curl -fsSL https://get.docker.com -o get-docker.sh
+> $ sudo sh ./get-docker.sh --dry-run
+> ```
 @y
 > **Tip: preview script steps before running**
 >
 > You can run the script with the `--dry-run` option to learn what steps the
 > script will run when invoked:
+>
+> ```console
+> $ curl -fsSL https://get.docker.com -o get-docker.sh
+> $ sudo sh ./get-docker.sh --dry-run
+> ```
 @z
-
-% snip command...
 
 @x
 This example downloads the script from
@@ -101,7 +107,21 @@ This example downloads the script from
 latest stable release of Docker on Linux:
 @z
 
-% snip command...
+@x
+```console
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+Executing docker install script, commit: 7cae5f8b0decc17d6571f9f52eb840fbc13b2737
+<...>
+```
+@y
+```console
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+Executing docker install script, commit: 7cae5f8b0decc17d6571f9f52eb840fbc13b2737
+<...>
+```
+@z
 
 @x
 You have now successfully installed and started Docker Engine. The `docker`
@@ -169,7 +189,17 @@ To install the latest version of Docker on Linux from the test channel, run:
 To install the latest version of Docker on Linux from the test channel, run:
 @z
 
-% snip command...
+@x
+```console
+$ curl -fsSL https://test.docker.com -o test-docker.sh
+$ sudo sh test-docker.sh
+```
+@y
+```console
+$ curl -fsSL https://test.docker.com -o test-docker.sh
+$ sudo sh test-docker.sh
+```
+@z
 
 @x
 #### Upgrade Docker after using the convenience script

@@ -34,9 +34,9 @@ Secrets を利用すれば、こういったリスクは軽減されます。
 @z
 
 @x
-Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](compose-file/09-secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](compose-file/05-services.md#secrets). Compose grants access to secrets on a per-service basis.
+Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](/reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
 @y
-Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](compose-file/09-secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](compose-file/05-services.md#secrets). Compose grants access to secrets on a per-service basis.
+Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
 @z
 
 @x
@@ -190,11 +190,11 @@ In the advanced example above:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `_FILE` environment variables demonstrated here are a convention used by some images, including Docker Official Images like [mysql](https://hub.docker.com/_/mysql) and [postgres](https://hub.docker.com/_/postgres).
 @y
-> **Note**
+> [!NOTE]
 >
 > The `_FILE` environment variables demonstrated here are a convention used by some images, including Docker Official Images like [mysql](https://hub.docker.com/_/mysql) and [postgres](https://hub.docker.com/_/postgres).
 @z
@@ -206,9 +206,11 @@ In the advanced example above:
 @z
 
 @x
-- [Secrets top-level element](compose-file/09-secrets.md)
-- [Secrets attribute for services top-level element](compose-file/05-services.md#secrets)
+- [Secrets top-level element](/reference/compose-file/secrets.md)
+- [Secrets attribute for services top-level element](/reference/compose-file/services.md#secrets)
+- [Build secrets](https://docs.docker.com/build/building/secrets/)
 @y
-- [Secrets top-level element](compose-file/09-secrets.md)
-- [Secrets attribute for services top-level element](compose-file/05-services.md#secrets)
+- [Secrets top-level element](reference/compose-file/secrets.md)
+- [Secrets attribute for services top-level element](reference/compose-file/services.md#secrets)
+- [Build secrets](https://docs.docker.com/build/building/secrets/)
 @z

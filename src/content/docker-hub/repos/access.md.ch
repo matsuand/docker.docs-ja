@@ -52,12 +52,12 @@ repository from that repository's **Settings** page.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > A collaborator can't add other collaborators. Only the owner of
 > the repository has administrative access.
 @y
-> **Note**
+> [!NOTE]
 >
 > A collaborator can't add other collaborators. Only the owner of
 > the repository has administrative access.
@@ -92,12 +92,12 @@ To delete a tag, select the corresponding checkbox and select **Delete** from th
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Only a user with administrative access (owner or team member with Admin
 > permission) over the repository can delete tags.
 @y
-> **Note**
+> [!NOTE]
 >
 > Only a user with administrative access (owner or team member with Admin
 > permission) over the repository can delete tags.

@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Docker
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases: 
- - /desktop/extensions-sdk/dev/api/docker/
----
 @y
----
 title: Docker
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases: 
- - /desktop/extensions-sdk/dev/api/docker/
----
 @z
 
 @x
@@ -34,7 +28,7 @@ aliases:
 @x
 To get the list of containers:
 @y
-To get the list of containers:
+コンテナー一覧を取得するには以下のようにします。
 @z
 
 @x
@@ -70,9 +64,9 @@ const images = await ddClient.docker.listImages();
 @z
 
 @x
-See the [Docker API reference](reference/interfaces/Docker.md) for details about these methods.
+See the [Docker API reference](/reference/api/extensions-sdk/Docker.md) for details about these methods.
 @y
-See the [Docker API reference](reference/interfaces/Docker.md) for details about these methods.
+See the [Docker API reference](reference/api/extensions-sdk/Docker.md) for details about these methods.
 @z
 
 @x
@@ -114,9 +108,9 @@ Extensions can also directly execute the `docker` command line.
 @z
 
 @x
-▸ **exec**(`cmd`, `args`): `Promise`<[`ExecResult`](reference/interfaces/ExecResult.md)\>
+▸ **exec**(`cmd`, `args`): `Promise`<[`ExecResult`](/reference/api/extensions-sdk/ExecResult.md)\>
 @y
-▸ **exec**(`cmd`, `args`): `Promise`<[`ExecResult`](reference/interfaces/ExecResult.md)\>
+▸ **exec**(`cmd`, `args`): `Promise`<[`ExecResult`](reference/api/extensions-sdk/ExecResult.md)\>
 @z
 
 @x
@@ -322,13 +316,13 @@ await ddClient.docker.cli.exec(
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 >You cannot use this to chain commands in a single `exec()` invocation (like `docker kill $(docker ps -q)` or using pipe between commands).
 >
 > You need to invoke `exec()` for each command and parse results to pass parameters to the next command if needed.
 @y
-> **Note**
+> [!NOTE]
 >
 >You cannot use this to chain commands in a single `exec()` invocation (like `docker kill $(docker ps -q)` or using pipe between commands).
 >
@@ -336,9 +330,9 @@ await ddClient.docker.cli.exec(
 @z
 
 @x
-See the [Exec API reference](reference/interfaces/Exec.md) for details about these methods.
+See the [Exec API reference](/reference/api/extensions-sdk/Exec.md) for details about these methods.
 @y
-See the [Exec API reference](reference/interfaces/Exec.md) for details about these methods.
+See the [Exec API reference](reference/api/extensions-sdk/Exec.md) for details about these methods.
 @z
 
 @x

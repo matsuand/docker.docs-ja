@@ -22,6 +22,24 @@ Docker and the broader community of Docker experts have put together many differ
 @z
 
 @x
+## Docker Training
+@y
+## Docker Training
+@z
+
+@x
+Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/resources/trainings/). 
+@y
+Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/resources/trainings/). 
+@z
+
+@x
+You can find recorded content at your own convenience, or register for a live session to participate in Q&A.
+@y
+You can find recorded content at your own convenience, or register for a live session to participate in Q&A.
+@z
+
+@x
 ## Hosted labs
 @y
 ## Hosted labs
@@ -172,13 +190,13 @@ A number of Docker Captains have also created video courses on Docker and Kubern
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The following section contains a subset of Docker docs that are translated by community
 > members. This is not an officially translated version of Docker docs and it may not be up to date.
 > You must use the community-translated docs at your own discretion.
 @y
-> **Note**
+> [!NOTE]
 >
 > The following section contains a subset of Docker docs that are translated by community
 > members. This is not an officially translated version of Docker docs and it may not be up to date.

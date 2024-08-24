@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Install and configure
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure
----
 @y
----
 title: Install and configure
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure
----
 @z
 
 @x
@@ -108,7 +106,7 @@ If your administrator account is different to your user account, you must add th
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This feature ensures your organization maintains the required Docker Desktop version. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
 >
@@ -116,7 +114,7 @@ If your administrator account is different to your user account, you must add th
 >
 > To keep up to date with new releases, check the [release notes](https://docs.docker.com/desktop/release-notes/) page.
 @y
-> **Note**
+> [!NOTE]
 >
 > When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This feature ensures your organization maintains the required Docker Desktop version. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
 >
@@ -182,15 +180,13 @@ Non-interactive installations are silent and any additional configuration must b
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Admin rights are required to run any of the following commands.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Admin rights are required to run any of the following commands.
-{ .important }
 @z
 
 @x
@@ -308,7 +304,7 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Some useful tips to remember when creating a value that expects a JSON string as it’s value:
 > 
@@ -316,9 +312,8 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
 > - The string should be wrapped in double quotes
 > - The string shouldn't contain any whitespace
 > - Property names are expected to be in double quotes
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Some useful tips to remember when creating a value that expects a JSON string as it’s value:
 > 
@@ -326,7 +321,6 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
 > - The string should be wrapped in double quotes
 > - The string shouldn't contain any whitespace
 > - Property names are expected to be in double quotes
-{ .tip }
 @z
 
 @x
@@ -369,7 +363,7 @@ IdentifyingNumber                      Name
 -----------------                      ----
 {10FC87E2-9145-4D7D-B493-2E99E8D8E103} Docker Desktop
 ```
-> **Note**
+> [!NOTE]
 >
 > This command can take some time to return, depending on the number of installed applications.
 @y
@@ -378,7 +372,7 @@ IdentifyingNumber                      Name
 -----------------                      ----
 {10FC87E2-9145-4D7D-B493-2E99E8D8E103} Docker Desktop
 ```
-> **Note**
+> [!NOTE]
 >
 > This command can take some time to return, depending on the number of installed applications.
 @z
@@ -470,15 +464,13 @@ msiexec /x "DockerDesktop.msi" /quiet
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > In addition to the following custom properties, the Docker Desktop MSI installer also supports the standard [Windows Installer command line options](https://learn.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options).
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > In addition to the following custom properties, the Docker Desktop MSI installer also supports the standard [Windows Installer command line options](https://learn.microsoft.com/en-us/windows/win32/msi/standard-installer-command-line-options).
-{ .important }
 @z
 
 @x
@@ -486,7 +478,7 @@ msiexec /x "DockerDesktop.msi" /quiet
 | :--- | :--- | :--- |
 | `ENABLEDESKTOPSHORTCUT` | Creates a desktop shortcut. | 1 |
 | `INSTALLFOLDER` | Specifies a custom location where Docker Desktop will be installed. | C:\Program Files\Docker |
-| `ADMINSETTINGS` | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](../../hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None |
+| `ADMINSETTINGS` | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](/security/for-admins/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None |
 | `ALLOWEDORG` | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`. | None |
 | `ALWAYSRUNSERVICE` | Lets users switch to Windows containers without needing admin rights | 0 |
 | `DISABLEWINDOWSCONTAINERS` | Disables the Windows containers integration | 0 |
@@ -505,7 +497,7 @@ msiexec /x "DockerDesktop.msi" /quiet
 | :--- | :--- | :--- |
 | `ENABLEDESKTOPSHORTCUT` | Creates a desktop shortcut. | 1 |
 | `INSTALLFOLDER` | Specifies a custom location where Docker Desktop will be installed. | C:\Program Files\Docker |
-| `ADMINSETTINGS` | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](../../hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None |
+| `ADMINSETTINGS` | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](security/for-admins/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None |
 | `ALLOWEDORG` | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`. | None |
 | `ALWAYSRUNSERVICE` | Lets users switch to Windows containers without needing admin rights | 0 |
 | `DISABLEWINDOWSCONTAINERS` | Disables the Windows containers integration | 0 |

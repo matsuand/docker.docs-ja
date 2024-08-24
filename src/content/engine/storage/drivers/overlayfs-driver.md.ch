@@ -28,13 +28,13 @@ storage driver as `overlay2`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > For `fuse-overlayfs` driver, check [Rootless mode documentation](/engine/security/rootless.md).
 @y
-> **Note**
+> [!NOTE]
 >
-> For `fuse-overlayfs` driver, check [Rootless mode documentation](engine/security/rootless.md).
+> For `fuse-overlayfs` driver, check [Rootless mode documentation](/engine/security/rootless.md).
 @z
 
 @x
@@ -300,17 +300,15 @@ six directories under `/var/lib/docker/overlay2`.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Don't directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Don't directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
-{ .warning }
 @z
 
 @x
@@ -628,17 +626,15 @@ don't correspond to the directory IDs.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Don't directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Don't directly manipulate any files or directories within
 > `/var/lib/docker/`. These files and directories are managed by Docker.
-{ .warning }
 @z
 
 @x

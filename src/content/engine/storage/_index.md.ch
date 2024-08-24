@@ -235,7 +235,7 @@ Docker アプリケーションを新規開発する際には、これではな�
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Bind mounts allow write access to files on the host by default.
 >
@@ -244,30 +244,26 @@ Docker アプリケーションを新規開発する際には、これではな�
 > modifying, or deleting important system files or directories. This is a
 > powerful ability which can have security implications, including impacting
 > non-Docker processes on the host system.
-{ .important }
 @y
-> **重要**
+> [!重要]
 >
 > バインドマウントはデフォルトで、ホスト上のファイルへの書き込みアクセスも行います。
 >
 > バインドマウントを利用する際の副作用として、これが良いことか悪いことかはわかりませんが、コンテナー内に動作するプロセスを通じてホストのファイルシステムに変更がかけられるということです。
 > たとえばシステムにとって重要なファイル、ディレクトリを生成、編集、削除ができてしまいます。
 > セキュリティに影響を及ぼしかねない強力な能力がここにあって、ホストシステム上の Docker 以外のプロセスへも影響します。
-{ .important }
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase?
 > Check out [Synchronized file shares](/desktop/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase?
 > Check out [Synchronized file shares](desktop/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
-{ .tip }
 @z
 
 @x

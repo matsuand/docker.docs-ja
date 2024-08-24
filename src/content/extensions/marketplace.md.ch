@@ -43,11 +43,11 @@ Self-published extensions are autonomously published by extension developers and
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > For some extensions, a separate account needs to be created before use.
 @y
-> **メモ**
+> [!メモ]
 >
 > Extension の中には、利用にあたって独自のアカウントを生成することが必要となります。
 @z
@@ -112,11 +112,11 @@ You can uninstall an extension at any time.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Any data used by the extension that's stored in a volume must be manually deleted.
 @y
-> **Note**
+> [!NOTE]
 >
 > Any data used by the extension that's stored in a volume must be manually deleted.
 @z

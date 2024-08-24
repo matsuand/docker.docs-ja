@@ -92,13 +92,11 @@ the Docker CLI to see details about the service running in the swarm.
     >
     > To return the service details in json format, run the same command
     without the `--pretty` flag.
-    { .tip }
 @y
     >**Tip**
     >
     > To return the service details in json format, run the same command
     without the `--pretty` flag.
-    { .tip }
 @z
 
 @x
@@ -260,13 +258,11 @@ the Docker CLI to see details about the service running in the swarm.
     >
     > If `helloworld` is running on a node other than your manager node,
     you must ssh to that node.
-    { .tip }
 @y
     >**Tip**
     >
     > If `helloworld` is running on a node other than your manager node,
     you must ssh to that node.
-    { .tip }
 @z
 
 @x

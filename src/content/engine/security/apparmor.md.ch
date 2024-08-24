@@ -38,11 +38,11 @@ loads it into the kernel.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This profile is used on containers, not on the Docker daemon.
 @y
-> **Note**
+> [!NOTE]
 >
 > This profile is used on containers, not on the Docker daemon.
 @z

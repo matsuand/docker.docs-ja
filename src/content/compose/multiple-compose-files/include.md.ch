@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: How to use Docker Compose's include top-level element
 keywords: compose, docker, include, compose file
 title: Include
----
 @y
----
 description: How to use Docker Compose's include top-level element
 keywords: compose, docker, include, compose file
 title: Include
----
 @z
 
 @x
@@ -28,9 +26,9 @@ title: Include
 @z
 
 @x
-The [`include` top-level element](../compose-file/14-include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
+The [`include` top-level element](/reference/compose-file/include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
 @y
-The [`include` top-level element](../compose-file/14-include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
+The [`include` top-level element](reference/compose-file/include.md) helps to reflect the engineering team responsible for the code directly in the config file's organization. It also solves the relative path problem that [`extends`](extends.md) and [merge](merge.md) present. 
 @z
 
 @x
@@ -46,11 +44,11 @@ Once the included Compose application loads, all resources are copied into the c
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `include` applies recursively so an included Compose file which declares its own `include` section, results in those other files being included as well.
 @y
-> **Note**
+> [!NOTE]
 >
 > `include` applies recursively so an included Compose file which declares its own `include` section, results in those other files being included as well.
 @z
@@ -200,7 +198,7 @@ Combined together, this allows you to benefit from third-party reusable componen
 @z
 
 @x
-[`include` top-level element](../compose-file/14-include.md)
+[`include` top-level element](/reference/compose-file/include.md)
 @y
-[`include` top-level element](../compose-file/14-include.md)
+[`include` top-level element](reference/compose-file/include.md)
 @z

@@ -13,44 +13,6 @@ keywords: Docker guides
 description: Explore the Docker guides
 @z
 
-% get-started:
-
-@x
-- title: Docker overview
-  description: Learn about the Docker platform.
-  link: /guides/docker-overview/
-  icon: summarize
-@y
-- title: Docker 概要
-  description: Docker プラットフォームについて学びます。
-  link: __SUBDIR__/guides/docker-overview/
-  icon: summarize
-@z
-
-@x
-- title: Get started
-  description: Get started with the basics and the benefits of containerizing your applications.
-  link: /guides/getting-started/
-  icon: rocket
-@y
-- title: はじめよう
-  description: アプリケーションをコンテナー化する利点について学びます。
-  link: __SUBDIR__/guides/getting-started/
-  icon: rocket
-@z
-
-@x
-- title: Docker concepts
-  description: Gain a better understanding of foundational Docker concepts.
-  link: /guides/docker-concepts/the-basics/what-is-a-container/
-  icon: foundation
-@y
-- title: Docker の考え方
-  description: 基本的な Docker の考え方についての理解を深めます。
-  link: __SUBDIR__/guides/docker-concepts/the-basics/what-is-a-container/
-  icon: foundation
-@z
-
 % dive-deeper:
 
 @x
@@ -101,18 +63,6 @@ description: Explore the Docker guides
   icon: workspaces
 @z
 
-@x
-- title: Docker workshop
-  description: Get guided through a 45-minute workshop to learn about Docker.
-  link: /guides/workshop/
-  icon: desk
-@y
-- title: Docker ワークショップ
-  description: Docker 学習のための 45 分間ワークショップを学びます。
-  link: __SUBDIR__/guides/workshop/
-  icon: desk
-@z
-
 % resources:
 
 @x
@@ -140,50 +90,43 @@ description: Explore the Docker guides
 @z
 
 @x
-This section contains guides to help you get started and learn how Docker can optimize your development workflows.
+This section contains more advanced guides to help you learn how Docker can optimize your development workflows.
 @y
-本節では Docker を始める方に向けての情報を、また Docker が開発ワークフローをいかにして最適化するのかを学ぶ方法について示します。
+This section contains more advanced guides to help you learn how Docker can optimize your development workflows.
 @z
-
-@x
-## Foundations of Docker
-@y
-## Docker の基本 {#foundations-of-docker}
-@z
-
-@x
-Get started learning the foundational concepts and workflows of Docker.
-@y
-Docker の基本的な考え方やワークフローについて学びます。
-@z
-
-% snip grid...
 
 @x
 ## Advancing with Docker
 @y
-## Docker の応用 {#advancing-with-docker}
+## Advancing with Docker
 @z
 
 @x
 Explore more advanced concepts and scenarios in Docker.
 @y
-Docker の応用的な考え方やシナリオについて確認していきます。
+Explore more advanced concepts and scenarios in Docker.
 @z
 
-% snip grid...
+@x
+{{< grid items="dive-deeper" >}}
+@y
+{{< grid items="dive-deeper" >}}
+@z
 
 @x
 ## Educational resources and contributions
 @y
-## 学習情報や貢献について {#educational-resources-and-contributions}
+## Educational resources and contributions
 @z
 
 @x
 Discover community-driven resources and learn how to contribute to Docker docs.
 @y
-コミュニティ発信の公開情報を確認します。。
-また Docker ドキュメントへの貢献方法について学びます。
+Discover community-driven resources and learn how to contribute to Docker docs.
 @z
 
-% snip grid...
+@x
+{{< grid items="resources" >}}
+@y
+{{< grid items="resources" >}}
+@z

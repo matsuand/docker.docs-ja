@@ -34,9 +34,9 @@ You can use either `docker-compose` or `docker compose` commands. For more infor
 @z
 
 @x
-GPUs are referenced in a `compose.yml` file using the [device](compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them. 
+GPUs are referenced in a `compose.yml` file using the [device](/reference/compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them. 
 @y
-GPUs are referenced in a `compose.yml` file using the [device](compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them. 
+GPUs are referenced in a `compose.yml` file using the [device](reference/compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them. 
 @z
 
 @x
@@ -60,25 +60,23 @@ This provides more granular control over a GPU reservation as custom values can 
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > You must set the `capabilities` field. Otherwise, it returns an error on service deployment.
 >
 > `count` and `device_ids` are mutually exclusive. You must only define one field at a time.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > You must set the `capabilities` field. Otherwise, it returns an error on service deployment.
 >
 > `count` and `device_ids` are mutually exclusive. You must only define one field at a time.
-{ .important }
 @z
 
 @x
-For more information on these properties, see the [Compose Deploy Specification](compose-file/deploy.md#devices).
+For more information on these properties, see the [Compose Deploy Specification](/reference/compose-file/deploy.md#devices).
 @y
-For more information on these properties, see the [Compose Deploy Specification](compose-file/deploy.md#devices).
+For more information on these properties, see the [Compose Deploy Specification](reference/compose-file/deploy.md#devices).
 @z
 
 @x

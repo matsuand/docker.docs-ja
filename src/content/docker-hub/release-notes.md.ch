@@ -1,26 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Docker Hub release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Hub
 keywords: docker hub, whats new, release notes
-toc_min: 1
-toc_max: 2
-tags: [Release notes]
----
 @y
----
 title: Docker Hub release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Hub
 keywords: docker hub, whats new, release notes
-toc_min: 1
-toc_max: 2
-tags: [Release notes]
----
 @z
 
 @x
@@ -296,9 +288,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/pro
 @z
 
 @x
-- [Registry Access Management](registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
+- [Registry Access Management](/security/for-admins/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
 @y
-- [Registry Access Management](registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
+- [Registry Access Management](security/for-admins/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
 @z
 
 @x
@@ -402,9 +394,9 @@ When managing the content of your repositories, you can now filter the results b
 @z
 
 @x
-For Docker Hub API documentation, see [Docker Hub API Reference](api/latest.md#operation/GetNamespacesRepositoriesImages).
+For Docker Hub API documentation, see [Docker Hub API Reference](/reference/api/hub/latest.md#operation/GetNamespacesRepositoriesImages).
 @y
-For Docker Hub API documentation, see [Docker Hub API Reference](api/latest.md#operation/GetNamespacesRepositoriesImages).
+For Docker Hub API documentation, see [Docker Hub API Reference](reference/api/hub/latest.md#operation/GetNamespacesRepositoriesImages).
 @z
 
 @x
@@ -618,11 +610,9 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 @x
     > If you lose both your 2FA authentication device and recovery code, you may
     > not be able to recover your account.
-    { .important }
 @y
     > If you lose both your 2FA authentication device and recovery code, you may
     > not be able to recover your account.
-    { .important }
 @z
 
 @x

@@ -110,14 +110,14 @@ $ docker service create \
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The older form of this syntax is a colon-separated string, where
 > the published port is first and the target port is second, such as
 > `-p 8080:80`. The new syntax is preferred because it is easier to read and
 > allows more flexibility.
 @y
-> **Note**
+> [!NOTE]
 >
 > The older form of this syntax is a colon-separated string, where
 > the published port is first and the target port is second, such as

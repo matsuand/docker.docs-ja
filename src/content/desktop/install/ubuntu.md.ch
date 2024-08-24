@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Learn how to install, launch and upgrade Docker Desktop on Ubuntu. This
   quick guide will cover prerequisites, installation methods, and more.
@@ -38,18 +40,6 @@ This page contains information on how to install, launch and upgrade Docker Desk
 @z
 
 @x
-{{< button text="DEB package" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
-@y
-{{< button text="DEB パッケージ" url="https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >}}
-@z
-
-@x
-_For checksums, see [Release notes](../release-notes.md)_
-@y
-_チェックサムについては [リリースノート](../release-notes.md) を参照してください。_
-@z
-
-@x
 ## Prerequisites
 @y
 ## 前提要件 {#prerequisites}
@@ -62,15 +52,15 @@ Docker Desktop のインストールを正常に行うためには以下が必�
 @z
 
 @x
-- Meet the [system requirements](linux-install.md#system-requirements)
+- Meet the [general system requirements](linux-install.md#general-system-requirements).
 - Have a 64-bit version of either the LTS version Ubuntu Jammy Jellyfish 22.04, or the current non-LTS version. Docker Desktop is supported on `x86_64` (or `amd64`) architecture.
-   > **Note**
+   > [!NOTE]
    >
    > The latest Ubuntu 24.04 LTS is not yet supported. Docker Desktop will fail to start. Due to a change in how the latest Ubuntu release restricts the unprivileged namespaces, `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` needs to be run at least once. Refer to the [Ubuntu Blog](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces) for more details.
 @y
-- [システム要件](linux-install.md#system-requirements) を満たしていること。
+- [一般的なシステム要件](linux-install.md#general-system-requirements) を満たしていること。
 - Have a 64-bit version of either the LTS version Ubuntu Jammy Jellyfish 22.04, or the current non-LTS version. Docker Desktop is supported on `x86_64` (or `amd64`) architecture.
-   > **Note**
+   > [!NOTE]
    >
    > The latest Ubuntu 24.04 LTS is not yet supported. Docker Desktop will fail to start. Due to a change in how the latest Ubuntu release restricts the unprivileged namespaces, `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` needs to be run at least once. Refer to the [Ubuntu Blog](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces) for more details.
 @z
@@ -104,9 +94,9 @@ Recommended approach to install Docker Desktop on Ubuntu:
 @z
 
 @x
-2. Download latest [DEB package](https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download the latest [DEB package](https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64). For checksums, see the [Release notes](../release-notes.md).
 @y
-2. Download latest [DEB package](https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
+2. Download the latest [DEB package](https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64). For checksums, see the [Release notes](../release-notes.md).
 @z
 
 @x
@@ -118,7 +108,13 @@ Recommended approach to install Docker Desktop on Ubuntu:
 % snip command...
 
 @x
-   > **Note**
+   Don't forget to substitute `<arch>` with the architecture you want.
+@y
+   Don't forget to substitute `<arch>` with the architecture you want.
+@z
+
+@x
+   > [!NOTE]
    >
    > At the end of the installation process, `apt` displays an error due to installing a downloaded package. You
    > can ignore this error message.
@@ -127,7 +123,7 @@ Recommended approach to install Docker Desktop on Ubuntu:
    > N: Download is performed unsandboxed as root, as file '/home/user/Downloads/docker-desktop.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
    > ```
 @y
-   > **Note**
+   > [!NOTE]
    >
    > At the end of the installation process, `apt` displays an error due to installing a downloaded package. You
    > can ignore this error message.
@@ -135,6 +131,12 @@ Recommended approach to install Docker Desktop on Ubuntu:
    > ```text
    > N: Download is performed unsandboxed as root, as file '/home/user/Downloads/docker-desktop.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
    > ```
+@z
+
+@x
+   By default, Docker Desktop is installed at `/opt/docker-desktop`.
+@y
+   By default, Docker Desktop is installed at `/opt/docker-desktop`.
 @z
 
 @x
@@ -196,9 +198,21 @@ You need to download the new package each time you want to upgrade Docker Deskto
 @z
 
 @x
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @y
-- Take a look at the [Docker workshop](../../guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
+- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
+- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](../backup-and-restore.md) provides instructions
+  on backing up and restoring data related to Docker.
 @z

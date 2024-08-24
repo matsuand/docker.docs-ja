@@ -132,14 +132,14 @@ Restart Docker for the changes to take effect.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for
 > `fluentd-async` or `fluentd-max-retries`) must therefore be enclosed
 > in quotes (`"`).
 @y
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for

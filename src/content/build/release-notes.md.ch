@@ -1,16 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
-
 @x
+---
 title: Build release notes
 description: Learn about the new features, bug fixes, and breaking changes for the newest Buildx release
 keywords: build, buildx, buildkit, release notes
+tags: [Release notes]
+toc_max: 2
+---
 @y
+---
 title: Build release notes
 description: Learn about the new features, bug fixes, and breaking changes for the newest Buildx release
 keywords: build, buildx, buildkit, release notes
+tags: [Release notes]
+toc_max: 2
+---
 @z
 
 @x
@@ -254,14 +260,14 @@ The full release note for this release is available
   - [`--call=outline`](/reference/cli/docker/buildx/build.md#call-outline): Show configuration that would be used by current build, including all build arguments, secrets, SSH mounts, etc., that your build would use.
   - [`--call=targets`](/reference/cli/docker/buildx/build.md#call-targets): Show all available targets and their descriptions.
 @y
-  - [`--call=check`](reference/cli/docker/buildx/build.md#check): Run validation routines for your build configuration. For more information about build checks, see [Build checks](build/checks.md)
+  - [`--call=check`](reference/cli/docker/buildx/build.md#check): Run validation routines for your build configuration. For more information about build checks, see [Build checks](/build/checks.md)
   - [`--call=outline`](reference/cli/docker/buildx/build.md#call-outline): Show configuration that would be used by current build, including all build arguments, secrets, SSH mounts, etc., that your build would use.
   - [`--call=targets`](reference/cli/docker/buildx/build.md#call-targets): Show all available targets and their descriptions.
 @z
 
 @x
 - New `--prefer-index` flag has been added to the `docker buildx imagetools create` command to control the behavior of creating image out of one single-platform image manifest. [docker/buildx#2482](https://github.com/docker/buildx/pull/2482/)
-- The [`kubernetes` driver](/build/drivers/kubernetes.md) now supports a `timeout` option for configuring deployment timeout. [docker/buildx#2492](https://github.com/docker/buildx/pull/2492/)
+- The [`kubernetes` driver](/build/builders/drivers/kubernetes.md) now supports a `timeout` option for configuring deployment timeout. [docker/buildx#2492](https://github.com/docker/buildx/pull/2492/)
 - New metrics definitions have been added for build warning types. [docker/buildx#2482](https://github.com/docker/buildx/pull/2482/), [docker/buildx#2507](https://github.com/docker/buildx/pull/2507/)
 - The [`buildx prune`](/reference/cli/docker/buildx/prune.md) and [`buildx du`](/reference/cli/docker/buildx/du.md) commands now support negative and prefix filters. [docker/buildx#2473](https://github.com/docker/buildx/pull/2473/)
 - Building Compose files with Bake now supports passing SSH forwarding configuration. [docker/buildx#2445](https://github.com/docker/buildx/pull/2445/)
@@ -269,7 +275,7 @@ The full release note for this release is available
 - Fix concurrent kubeconfig access when loading nodes. [docker/buildx#2497](https://github.com/docker/buildx/pull/2497/)
 @y
 - New `--prefer-index` flag has been added to the `docker buildx imagetools create` command to control the behavior of creating image out of one single-platform image manifest. [docker/buildx#2482](https://github.com/docker/buildx/pull/2482/)
-- The [`kubernetes` driver](build/drivers/kubernetes.md) now supports a `timeout` option for configuring deployment timeout. [docker/buildx#2492](https://github.com/docker/buildx/pull/2492/)
+- The [`kubernetes` driver](build/builders/drivers/kubernetes.md) now supports a `timeout` option for configuring deployment timeout. [docker/buildx#2492](https://github.com/docker/buildx/pull/2492/)
 - New metrics definitions have been added for build warning types. [docker/buildx#2482](https://github.com/docker/buildx/pull/2482/), [docker/buildx#2507](https://github.com/docker/buildx/pull/2507/)
 - The [`buildx prune`](reference/cli/docker/buildx/prune.md) and [`buildx du`](reference/cli/docker/buildx/du.md) commands now support negative and prefix filters. [docker/buildx#2473](https://github.com/docker/buildx/pull/2473/)
 - Building Compose files with Bake now supports passing SSH forwarding configuration. [docker/buildx#2445](https://github.com/docker/buildx/pull/2445/)
@@ -327,7 +333,7 @@ The full release note for this release is available
   [docker/buildx#2363](https://github.com/docker/buildx/pull/2363)
 - New `default-load` driver option for the `docker-container`, `remote`, and `kubernetes` drivers to load build results to the Docker Engine image store by default.
   [docker/buildx#2259](https://github.com/docker/buildx/pull/2259)
-- Add `requests.ephemeral-storage`, `limits.ephemeral-storage` and `schedulername` options to the [`kubernetes` driver](./drivers/kubernetes.md).
+- Add `requests.ephemeral-storage`, `limits.ephemeral-storage` and `schedulername` options to the [`kubernetes` driver](/build/builders/drivers/kubernetes.md).
   [docker/buildx#2370](https://github.com/docker/buildx/pull/2370),
   [docker/buildx#2415](https://github.com/docker/buildx/pull/2415)
 - Add `indexof` function for `docker-bake.hcl` files.
@@ -351,7 +357,7 @@ The full release note for this release is available
   [docker/buildx#2363](https://github.com/docker/buildx/pull/2363)
 - New `default-load` driver option for the `docker-container`, `remote`, and `kubernetes` drivers to load build results to the Docker Engine image store by default.
   [docker/buildx#2259](https://github.com/docker/buildx/pull/2259)
-- Add `requests.ephemeral-storage`, `limits.ephemeral-storage` and `schedulername` options to the [`kubernetes` driver](./drivers/kubernetes.md).
+- Add `requests.ephemeral-storage`, `limits.ephemeral-storage` and `schedulername` options to the [`kubernetes` driver](build/builders/drivers/kubernetes.md).
   [docker/buildx#2370](https://github.com/docker/buildx/pull/2370),
   [docker/buildx#2415](https://github.com/docker/buildx/pull/2415)
 - Add `indexof` function for `docker-bake.hcl` files.
@@ -1216,8 +1222,8 @@ The full release note for this release is available
   shorthands `--sbom` and `--provenance`, for adding attestations for your
   current build. [docker/buildx#1412](https://github.com/docker/buildx/issues/1412)
   [docker/buildx#1475](https://github.com/docker/buildx/issues/1475)
-  - `--attest type=sbom` or `--sbom=true` adds [SBOM attestations](attestations/sbom.md).
-  - `--attest type=provenance` or `--provenance=true` adds [SLSA provenance attestation](attestations/slsa-provenance.md).
+  - `--attest type=sbom` or `--sbom=true` adds [SBOM attestations](/build/metadata/attestations/sbom.md).
+  - `--attest type=provenance` or `--provenance=true` adds [SLSA provenance attestation](/build/metadata/attestations/slsa-provenance.md).
   - When creating OCI images, a minimal provenance attestation is included
     with the image by default.
 - When building with BuildKit that supports provenance attestations Buildx will
@@ -1255,7 +1261,7 @@ The full release note for this release is available
   [docker/buildx#1454](https://github.com/docker/buildx/issues/1454),
   [docker/buildx#1455](https://github.com/docker/buildx/issues/1455),
   [docker/buildx#1345](https://github.com/docker/buildx/issues/1345)
-- Adding extra hosts with [Docker driver](drivers/docker.md) now supports
+- Adding extra hosts with [Docker driver](/build/builders/drivers/docker.md) now supports
   Docker-specific `host-gateway` special value. [docker/buildx#1446](https://github.com/docker/buildx/issues/1446)
 - [OCI exporter](exporters/oci-docker.md) now supports `tar=false` option for
   exporting OCI format directly in a directory. [docker/buildx#1420](https://github.com/docker/buildx/issues/1420)
@@ -1264,8 +1270,8 @@ The full release note for this release is available
   shorthands `--sbom` and `--provenance`, for adding attestations for your
   current build. [docker/buildx#1412](https://github.com/docker/buildx/issues/1412)
   [docker/buildx#1475](https://github.com/docker/buildx/issues/1475)
-  - `--attest type=sbom` or `--sbom=true` adds [SBOM attestations](attestations/sbom.md).
-  - `--attest type=provenance` or `--provenance=true` adds [SLSA provenance attestation](attestations/slsa-provenance.md).
+  - `--attest type=sbom` or `--sbom=true` adds [SBOM attestations](build/metadata/attestations/sbom.md).
+  - `--attest type=provenance` or `--provenance=true` adds [SLSA provenance attestation](build/metadata/attestations/slsa-provenance.md).
   - When creating OCI images, a minimal provenance attestation is included
     with the image by default.
 - When building with BuildKit that supports provenance attestations Buildx will
@@ -1303,7 +1309,7 @@ The full release note for this release is available
   [docker/buildx#1454](https://github.com/docker/buildx/issues/1454),
   [docker/buildx#1455](https://github.com/docker/buildx/issues/1455),
   [docker/buildx#1345](https://github.com/docker/buildx/issues/1345)
-- Adding extra hosts with [Docker driver](drivers/docker.md) now supports
+- Adding extra hosts with [Docker driver](build/builders/drivers/docker.md) now supports
   Docker-specific `host-gateway` special value. [docker/buildx#1446](https://github.com/docker/buildx/issues/1446)
 - [OCI exporter](exporters/oci-docker.md) now supports `tar=false` option for
   exporting OCI format directly in a directory. [docker/buildx#1420](https://github.com/docker/buildx/issues/1420)
@@ -1408,7 +1414,7 @@ For more details, see the complete release notes in the [Buildx GitHub repositor
 @z
 
 @x
-- Support for a new [`remote` driver](drivers/remote.md) that you can use
+- Support for a new [`remote` driver](/build/builders/drivers/remote.md) that you can use
   to connect to any already running BuildKit instance.
   [docker/buildx#1078](https://github.com/docker/buildx/issues/1078),
   [docker/buildx#1093](https://github.com/docker/buildx/issues/1093),
@@ -1456,7 +1462,7 @@ For more details, see the complete release notes in the [Buildx GitHub repositor
 - Inspecting builder now shows current driver options configuration. [docker/buildx#1003](https://github.com/docker/buildx/issues/1003),
   [docker/buildx#1066](https://github.com/docker/buildx/issues/1066)
 @y
-- Support for a new [`remote` driver](drivers/remote.md) that you can use
+- Support for a new [`remote` driver](build/builders/drivers/remote.md) that you can use
   to connect to any already running BuildKit instance.
   [docker/buildx#1078](https://github.com/docker/buildx/issues/1078),
   [docker/buildx#1093](https://github.com/docker/buildx/issues/1093),

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: How to start containers automatically
@@ -162,7 +162,7 @@ Keep the following in mind when using restart policies:
 @y
 - Restart policies only apply to containers. To configure restart policies for
   Swarm services, see
-  [flags related to service restart](reference/cli/docker/service/create.md).
+  [flags related to service restart](/reference/cli/docker/service/create.md).
 @z
 
 @x
@@ -344,17 +344,15 @@ Docker depend on Docker containers, you can use a process manager such as
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Don't combine Docker restart policies with host-level process managers,
 > as this creates conflicts.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Don't combine Docker restart policies with host-level process managers,
 > as this creates conflicts.
-{ .warning }
 @z
 
 @x
@@ -384,19 +382,17 @@ running and starts/restart it if not.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > These aren't Docker-aware, and only monitor operating system processes within
 > the container. Docker doesn't recommend this approach, because it's
 > platform-dependent and may differ between versions of a given Linux
 > distribution.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > These aren't Docker-aware, and only monitor operating system processes within
 > the container. Docker doesn't recommend this approach, because it's
 > platform-dependent and may differ between versions of a given Linux
 > distribution.
-{ .warning }
 @z

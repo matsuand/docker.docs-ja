@@ -68,14 +68,14 @@ GitHub Actions を用いてイメージのビルド時にアノテーション�
 
 @x
 By default, annotations are placed on image manifests. To configure the
-[annotation level](../../building/annotations.md#specify-annotation-level), set
+[annotation level](../../metadata/annotations.md#specify-annotation-level), set
 the `DOCKER_METADATA_ANNOTATIONS_LEVELS` environment variable on the
 `metadata-action` step to a comma-separated list of all the levels that you
 want to annotate. For example, setting `DOCKER_METADATA_ANNOTATIONS_LEVELS` to
 `index` results in annotations on the image index instead of the manifests.
 @y
 デフォルトでアノテーションは、イメージマニフェストに置かれます。
-[アノテーションレベル](../../building/annotations.md#specify-annotation-level) (annotation level) を設定するには、`metadata-action` ステップ内において環境変数 `DOCKER_METADATA_ANNOTATIONS_LEVELS` を用います。
+[アノテーションレベル](../../metadata/annotations.md#specify-annotation-level) (annotation level) を設定するには、`metadata-action` ステップ内において環境変数 `DOCKER_METADATA_ANNOTATIONS_LEVELS` を用います。
 指定したいアノテーションのレベルをカンマ区切りのリストとして指定します。
 たとえば `DOCKER_METADATA_ANNOTATIONS_LEVELS` に `index` を指定すると、そのアノテーションはイメージマニフェスト内ではなくイメージインデックス内に置かれます。
 @z

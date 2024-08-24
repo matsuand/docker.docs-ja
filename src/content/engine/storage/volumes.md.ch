@@ -124,7 +124,7 @@ If you need to specify volume driver options, you must use `--mount`.
   - In the case of named volumes, the first field is the name of the volume, and is
     unique on a given host machine. For anonymous volumes, the first field is
     omitted.
-  - The second field is the path where the file or directory are mounted in
+  - The second field is the path where the file or directory is mounted in
     the container.
   - The third field is optional, and is a comma-separated list of options, such
     as `ro`. These options are discussed below.
@@ -132,7 +132,7 @@ If you need to specify volume driver options, you must use `--mount`.
   - In the case of named volumes, the first field is the name of the volume, and is
     unique on a given host machine. For anonymous volumes, the first field is
     omitted.
-  - The second field is the path where the file or directory are mounted in
+  - The second field is the path where the file or directory is mounted in
     the container.
   - The third field is optional, and is a comma-separated list of options, such
     as `ro`. These options are discussed below.
@@ -185,7 +185,7 @@ If you need to specify volume driver options, you must use `--mount`.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > If your volume driver accepts a comma-separated list as an option,
 > you must escape the value from the outer CSV parser. To escape a `volume-opt`,
@@ -201,9 +201,8 @@ If you need to specify volume driver options, you must use `--mount`.
 >  --name myservice \
 >  <IMAGE>
 > ```
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > If your volume driver accepts a comma-separated list as an option,
 > you must escape the value from the outer CSV parser. To escape a `volume-opt`,
@@ -219,7 +218,6 @@ If you need to specify volume driver options, you must use `--mount`.
 >  --name myservice \
 >  <IMAGE>
 > ```
-{ .warning }
 @z
 
 @x
@@ -410,11 +408,11 @@ then reference it inside `compose.yaml` as follows:
 
 @x
 For more information about using volumes with Compose, refer to the
-[Volumes](/compose/compose-file/07-volumes.md)
+[Volumes](/reference/compose-file/volumes.md)
 section in the Compose specification.
 @y
 For more information about using volumes with Compose, refer to the
-[Volumes](compose/compose-file/07-volumes.md)
+[Volumes](reference/compose-file/volumes.md)
 section in the Compose specification.
 @z
 
@@ -767,12 +765,12 @@ Each volume driver may have zero or more configurable options.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If the volume driver requires you to pass any options,
 > you must use the `--mount` flag to mount the volume, and not `-v`.
 @y
-> **Note**
+> [!NOTE]
 >
 > If the volume driver requires you to pass any options,
 > you must use the `--mount` flag to mount the volume, and not `-v`.
@@ -851,19 +849,17 @@ and how to mount the block device as a container volume.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > The following procedure is only an example.
 > The solution illustrated here isn't recommended as a general practice.
 > Don't attempt this approach unless you're confident about what you're doing.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > The following procedure is only an example.
 > The solution illustrated here isn't recommended as a general practice.
 > Don't attempt this approach unless you're confident about what you're doing.
-{ .important }
 @z
 
 @x
@@ -965,12 +961,12 @@ The filesystem support of your system depends on the version of the Linux kernel
 % snip command...
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > `losetup` creates an ephemeral loop device that's removed after
    > system reboot, or manually removed with `losetup -d`.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > `losetup` creates an ephemeral loop device that's removed after
    > system reboot, or manually removed with `losetup -d`.
@@ -1135,13 +1131,13 @@ the Docker Engine removes the `/foo` volume but not the `awesome` volume.
 % snip command...
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If another container binds the volumes with
 > `--volumes-from`, the volume definitions are _copied_ and the
 > anonymous volume also stays after the first container is removed.
 @y
-> **Note**
+> [!NOTE]
 >
 > If another container binds the volumes with
 > `--volumes-from`, the volume definitions are _copied_ and the

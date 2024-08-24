@@ -2,60 +2,75 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
----
 description: components and formatting examples used in Docker's docs
 title: Cards
-toc_max: 3
-grid:
+@y
+description: components and formatting examples used in Docker's docs
+title: Cards
+@z
+
+% grid:
+
+@x
 - title: Docker Desktop
   description: Docker on your Desktop.
   icon: install_desktop
   link: /desktop/
-- title: Docker Engine
-  description: Vrrrrooooommm
-  icon: developer_board
-  link: /engine/
-- title: Docker Build
-  description: Clang bang
-  icon: build
-  link: /build/
-- title: Docker Compose
-  description: Figgy!
-  icon: account_tree
-  link: /compose/
-- title: Docker Hub
-  description: so much content, oh wow
-  icon: hub
-  link: /docker-hub/
----
 @y
----
-description: components and formatting examples used in Docker's docs
-title: Cards
-toc_max: 3
-grid:
 - title: Docker Desktop
   description: Docker on your Desktop.
   icon: install_desktop
   link: __SUBDIR__/desktop/
+@z
+
+@x
+- title: Docker Engine
+  description: Vrrrrooooommm
+  icon: developer_board
+  link: /engine/
+@y
 - title: Docker Engine
   description: Vrrrrooooommm
   icon: developer_board
   link: __SUBDIR__/engine/
+@z
+
+@x
+- title: Docker Build
+  description: Clang bang
+  icon: build
+  link: /build/
+@y
 - title: Docker Build
   description: Clang bang
   icon: build
   link: __SUBDIR__/build/
+@z
+
+@x
+- title: Docker Compose
+  description: Figgy!
+  icon: account_tree
+  link: /compose/
+@y
 - title: Docker Compose
   description: Figgy!
   icon: account_tree
   link: __SUBDIR__/compose/
+@z
+
+@x
+- title: Docker Hub
+  description: so much content, oh wow
+  icon: hub
+  link: /docker-hub/
+@y
 - title: Docker Hub
   description: so much content, oh wow
   icon: hub
   link: __SUBDIR__/docker-hub/
----
 @z
 
 @x
@@ -85,7 +100,7 @@ The parameters for this shortcode are:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > There's a known limitation with the Markdown description of cards,
 > in that they can't contain relative links, pointing to other .md documents.
@@ -95,7 +110,7 @@ The parameters for this shortcode are:
 > For example, instead of linking to `../install/linux.md`, write:
 > `/engine/install/linux/`.
 @y
-> **Note**
+> [!NOTE]
 >
 > There's a known limitation with the Markdown description of cards,
 > in that they can't contain relative links, pointing to other .md documents.

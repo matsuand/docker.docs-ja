@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: understand what pausing Docker Dashboard means
 keywords: Docker Dashboard, manage, containers, gui, dashboard, pause, user manual
 title: Pause Docker Desktop
----
 @y
----
 description: understand what pausing Docker Dashboard means
 keywords: Docker Dashboard, manage, containers, gui, dashboard, pause, user manual
 title: Pause Docker Desktop
----
 @z
 
 @x
@@ -38,11 +34,9 @@ When you manually pause Docker Desktop, a paused status displays on the Docker m
 >
 > The Resource Saver feature, available in Docker Desktop version 4.24 and later, is enabled by default and provides better
 > CPU and memory savings than the manual Pause feature. See [here](resource-saver.md) for more info.
-{ .tip }
 @y
 >**Tip**
 >
 > The Resource Saver feature, available in Docker Desktop version 4.24 and later, is enabled by default and provides better
 > CPU and memory savings than the manual Pause feature. See [here](resource-saver.md) for more info.
-{ .tip }
 @z

@@ -26,17 +26,15 @@ aliases:
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Docker Extensions that are not in the Marketplace haven't gone through Docker's review process.
 > Extensions can install binaries, invoke commands and access files on your machine. Installing them is at your own risk.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Docker Extensions that are not in the Marketplace haven't gone through Docker's review process.
 > Extensions can install binaries, invoke commands and access files on your machine. Installing them is at your own risk.
-{ .warning }
 @z
 
 @x
@@ -54,12 +52,12 @@ You can install an extension that has been developed by the community or interna
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Ensure the option **Allow only extensions distributed through the Docker Marketplace** is disabled. Otherwise, this prevents any extension not listed in the Marketplace, via the Extension SDK tools from, being installed.
 > You can change this option in **Settings**. 
 @y
-> **Note**
+> [!NOTE]
 >
 > Ensure the option **Allow only extensions distributed through the Docker Marketplace** is disabled. Otherwise, this prevents any extension not listed in the Marketplace, via the Extension SDK tools from, being installed.
 > You can change this option in **Settings**. 
@@ -140,11 +138,11 @@ Go to the Docker Dashboard to see the new extension updated.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Extensions that aren't installed through the Marketplace don't receive update notifications from Docker Desktop.
 @y
-> **Note**
+> [!NOTE]
 >
 > Extensions that aren't installed through the Marketplace don't receive update notifications from Docker Desktop.
 @z

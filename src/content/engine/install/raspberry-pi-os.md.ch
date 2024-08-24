@@ -29,19 +29,17 @@ To get started with Docker Engine on Raspberry Pi OS, make sure you
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > This installation instruction refers to the 32-bit (armhf) version of
 > Raspberry Pi OS. If you're using the 64-bit (arm64) version, follow the
 > instructions for [Debian](debian.md).
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > This installation instruction refers to the 32-bit (armhf) version of
 > Raspberry Pi OS. If you're using the 64-bit (arm64) version, follow the
 > instructions for [Debian](debian.md).
-{ .important }
 @z
 
 @x
@@ -57,17 +55,15 @@ To get started with Docker Engine on Raspberry Pi OS, make sure you
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Before you install Docker, make sure you consider the following
 > security implications and firewall incompatibilities.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Before you install Docker, make sure you consider the following
 > security implications and firewall incompatibilities.
-{ .warning }
 @z
 
 @x

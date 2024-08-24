@@ -236,7 +236,7 @@ Extensions are not covered as part of Docker’s Third-Party Risk Management Pro
 @z
 
 @x
-No. With [Registry Access Management](../../security/for-admins/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
+No. With [Registry Access Management](/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
 @y
-No. With [Registry Access Management](../../security/for-admins/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
+No. With [Registry Access Management](security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
 @z

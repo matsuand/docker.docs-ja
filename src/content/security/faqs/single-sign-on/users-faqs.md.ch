@@ -7,12 +7,10 @@
 description: Single sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
 title: Manage users
-tags: [FAQ]
 @y
 description: Single sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
 title: Manage users
-tags: [FAQ]
 @z
 
 @x
@@ -178,9 +176,9 @@ Docker SSO provides Just-in-Time (JIT) provisioning by default, with an option t
 @z
 
 @x
-Additionally, you can use the [Docker Hub API](/docker-hub/api/latest/) to complete this process.
+Additionally, you can use the [Docker Hub API](/reference/api/hub/latest/) to complete this process.
 @y
-Additionally, you can use the [Docker Hub API](__SUBDIR__/docker-hub/api/latest/) to complete this process.
+Additionally, you can use the [Docker Hub API](__SUBDIR__/reference/api/hub/latest/) to complete this process.
 @z
 
 @x

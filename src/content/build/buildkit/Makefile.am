@@ -3,7 +3,8 @@
 ##
 bases = \
 	_index.md    \
-	configure.md
+	configure.md \
+	frontend.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

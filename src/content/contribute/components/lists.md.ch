@@ -52,9 +52,9 @@ Use dashes (`-`) or asterisks (`*`) for bullet points.
 @z
 
 @x
-    > **Note**: We did it!
+    > [!NOTE]: We did it!
 @y
-    > **Note**: We did it!
+    > [!NOTE]: We did it!
 @z
 
 @x
@@ -146,9 +146,9 @@ Use dashes (`-`) or asterisks (`*`) for bullet points.
 @z
 
 @x
-    > **Note**: We did it!
+    > [!NOTE]: We did it!
 @y
-    > **Note**: We did it!
+    > [!NOTE]: We did it!
 @z
 
 @x

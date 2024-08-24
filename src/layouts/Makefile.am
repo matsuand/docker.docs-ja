@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = _default guides partials samples shortcodes tag
+SUBDIRS = _default learning-paths partials samples shortcodes tag
 
 bases = \
 	404.html

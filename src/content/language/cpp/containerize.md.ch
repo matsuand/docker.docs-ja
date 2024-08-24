@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
 % snip 対応
 
 @x
@@ -67,12 +68,12 @@ directory.
 To learn more about the files in the repository, see the following:
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
- - [compose.yml](../../compose/compose-file/_index.md)
+ - [compose.yml](/reference/compose-file/_index.md)
 @y
 リポジトリ内の各ファイルについての詳細は以下を参照してください。
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
- - [compose.yml](../../compose/compose-file/_index.md)
+ - [compose.yml](reference/compose-file/_index.md)
 @z
 
 @x
@@ -137,9 +138,9 @@ In the terminal, run the following command to stop the application.
 
 @x
 For more information about Compose commands, see the [Compose CLI
-reference](../../compose/reference/_index.md).
+reference](/reference/cli/docker/compose/_index.md).
 @y
-Compose コマンドの詳細は [Compose CLI リファレンス](../../compose/reference/_index.md) を参照してください。
+Compose コマンドの詳細は [Compose CLI リファレンス](reference/cli/docker/compose/_index.md) を参照してください。
 @z
 
 @x

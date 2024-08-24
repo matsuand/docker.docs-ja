@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Using profiles with Compose
 desription: How to use profiles with Docker Compose
 keywords: cli, compose, profile, profiles reference
----
 @y
----
 title: Using profiles with Compose
 desription: How to use profiles with Docker Compose
 keywords: cli, compose, profile, profiles reference
----
 @z
 
 @x
@@ -29,11 +27,11 @@ keywords: cli, compose, profile, profiles reference
 
 @x
 Services are associated with profiles through the
-[`profiles` attribute](compose-file/05-services.md#profiles) which takes an
+[`profiles` attribute](/reference/compose-file/services.md#profiles) which takes an
 array of profile names:
 @y
 Services are associated with profiles through the
-[`profiles` attribute](compose-file/05-services.md#profiles) which takes an
+[`profiles` attribute](reference/compose-file/services.md#profiles) which takes an
 array of profile names:
 @z
 
@@ -106,17 +104,15 @@ Valid profiles names follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > The core services of your application shouldn't be assigned `profiles` so
 > they are always enabled and automatically started.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > The core services of your application shouldn't be assigned `profiles` so
 > they are always enabled and automatically started.
-{ .tip }
 @z
 
 @x
@@ -442,7 +438,7 @@ $ COMPOSE_PROFILES=dev docker compose up phpmyadmin
 @z
 
 @x
-[`profiles`](compose-file/05-services.md#profiles)
+[`profiles`](/reference/compose-file/services.md#profiles)
 @y
-[`profiles`](compose-file/05-services.md#profiles)
+[`profiles`](reference/compose-file/services.md#profiles)
 @z

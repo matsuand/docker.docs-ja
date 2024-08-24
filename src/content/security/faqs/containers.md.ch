@@ -62,7 +62,7 @@ However note the following:
 @z
 
 @x
-* If [Enhanced Container Isolation (ECI)](../../desktop/hardened-desktop/enhanced-container-isolation/_index.md)
+* If [Enhanced Container Isolation (ECI)](/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
   mode is enabled, then each container runs within a dedicated Linux User
   Namespace inside the Docker Desktop VM, which means the container has no
   privileges within the Docker Desktop VM. Even when using the `--privileged`
@@ -73,7 +73,7 @@ However note the following:
   info). No changes to the containers or user workflows are required as the
   extra protection is added under the covers.
 @y
-* If [Enhanced Container Isolation (ECI)](../../desktop/hardened-desktop/enhanced-container-isolation/_index.md)
+* If [Enhanced Container Isolation (ECI)](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
   mode is enabled, then each container runs within a dedicated Linux User
   Namespace inside the Docker Desktop VM, which means the container has no
   privileges within the Docker Desktop VM. Even when using the `--privileged`

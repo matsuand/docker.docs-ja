@@ -248,14 +248,14 @@ as a default, with dual logging caching enabled:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > For logging drivers that support reading logs, such as the `local`, `json-file`
 > and `journald` drivers, there is no difference in functionality before or after
 > the dual logging capability became available. For these drivers, Logs can be
 > read using `docker logs` in both scenarios.
 @y
-> **Note**
+> [!NOTE]
 >
 > For logging drivers that support reading logs, such as the `local`, `json-file`
 > and `journald` drivers, there is no difference in functionality before or after
@@ -278,7 +278,7 @@ the [daemon configuration file](/reference/cli/dockerd/#daemon-configuration-fil
 The dual logging cache accepts the same configuration options as the
 [`local` logging driver](drivers/local.md), but with a `cache-` prefix. These options
 can be specified per container, and defaults for new containers can be set using
-the [daemon configuration file](__SUBDIR__/reference/cli/dockerd/#daemon-configuration-file).
+the [daemon configuration file](reference/cli/dockerd/#daemon-configuration-file).
 @z
 
 @x
@@ -330,6 +330,7 @@ Caching can be disabled for individual containers or by default for new containe
 when using the [daemon configuration file](/reference/cli/dockerd/#daemon-configuration-file).
 @y
 Caching can be disabled for individual containers or by default for new containers,
+when using the [daemon configuration file](reference/cli/dockerd/#daemon-configuration-file).
 @z
 
 @x
@@ -365,13 +366,13 @@ $ cat /etc/docker/daemon.json
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > For logging drivers that support reading logs, such as the `local`, `json-file`
 > and `journald` drivers, dual logging isn't used, and disabling the option has
 > no effect.
 @y
-> **Note**
+> [!NOTE]
 >
 > For logging drivers that support reading logs, such as the `local`, `json-file`
 > and `journald` drivers, dual logging isn't used, and disabling the option has

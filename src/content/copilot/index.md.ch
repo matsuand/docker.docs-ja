@@ -4,31 +4,39 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Docker for GitHub Copilot
 description: Learn how to use the Docker Extension for GitHub Copilot to streamline Docker-related tasks.
 keywords: Docker, GitHub Copilot, extension, Visual Studio Code, chat, ai, containerization
----
 @y
----
 title: Docker for GitHub Copilot
 description: Learn how to use the Docker Extension for GitHub Copilot to streamline Docker-related tasks.
 keywords: Docker, GitHub Copilot, extension, Visual Studio Code, chat, ai, containerization
----
 @z
 
 @x
-> **Early Access**
->
-> The Docker for GitHub Copilot extension is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
-> for GitHub Copilot Extensions. Only members of the beta program are eligible to use this extension.
-{ .restricted }
+{{% restricted title="Early access" %}}
 @y
-> **Early Access**
->
-> The Docker for GitHub Copilot extension is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
-> for GitHub Copilot Extensions. Only members of the beta program are eligible to use this extension.
-{ .restricted }
+{{% restricted title="Early access" %}}
+@z
+
+@x
+The Docker for GitHub Copilot extension is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
+for GitHub Copilot Extensions.
+@y
+The Docker for GitHub Copilot extension is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
+for GitHub Copilot Extensions.
+@z
+
+@x
+To get access, [sign up for the Copilot Extensions waitlist](https://github.com/github-copilot/copilot_extensions_waitlist_signup).
+@y
+To get access, [sign up for the Copilot Extensions waitlist](https://github.com/github-copilot/copilot_extensions_waitlist_signup).
+@z
+
+@x
+{{% /restricted %}}
+@y
+{{% /restricted %}}
 @z
 
 @x

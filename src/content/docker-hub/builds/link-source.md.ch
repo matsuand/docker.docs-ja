@@ -24,12 +24,12 @@ aliases:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
@@ -298,14 +298,14 @@ from Docker Hub, and from your GitHub account.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Each repository that is configured as an automated build source
 contains a webhook that notifies Docker Hub of changes in the repository.
 This webhook is not automatically removed when you revoke access to a source
 code provider.
 @y
-> **Note**
+> [!NOTE]
 >
 > Each repository that is configured as an automated build source
 contains a webhook that notifies Docker Hub of changes in the repository.
@@ -400,14 +400,14 @@ unlink it both from Docker Hub, and from your Bitbucket account.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Each repository that is configured as an automated build source
 contains a webhook that notifies Docker Hub of changes in the repository. This
 webhook is not automatically removed when you revoke access to a source code
 provider.
 @y
-> **Note**
+> [!NOTE]
 >
 > Each repository that is configured as an automated build source
 contains a webhook that notifies Docker Hub of changes in the repository. This

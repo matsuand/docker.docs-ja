@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
+---
 title: Build a text summarization app
 keywords: nlp, natural language processing, text summarization, python, bert extractive summarizer
 description: Learn how to build and run a text summarization application using Python, Bert Extractive Summarizer, and Docker.
+---
 @y
+---
 title: Build a text summarization app
 keywords: nlp, natural language processing, text summarization, python, bert extractive summarizer
 description: Learn how to build and run a text summarization application using Python, Bert Extractive Summarizer, and Docker.
+---
 @z
 
 @x
@@ -52,10 +54,10 @@ cluster's centroids.
 @z
 
 @x
-* You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
+* You have installed the latest version of [Docker Desktop](/get-started/get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 * You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
 @y
-* You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
+* You have installed the latest version of [Docker Desktop](get-started/get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 * You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
 @z
 
@@ -790,13 +792,13 @@ To run the application using Docker:
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > For Windows users, you may get an error when running the container. Verify
    > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),
    > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](/desktop/troubleshoot/topics/#avoid-unexpected-syntax-errors-use-unix-style-line-endings-for-files-in-containers).
 @y
-   > **Note**
+   > [!NOTE]
    >
    > For Windows users, you may get an error when running the container. Verify
    > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),

@@ -168,7 +168,7 @@ so you should test this option before using it in production.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Don't attach Windows containers to encrypted overlay networks.
 >
@@ -179,9 +179,8 @@ so you should test this option before using it in production.
 >
 > - Windows containers can't communicate with Linux containers on the network
 > - Data traffic between Windows containers on the network isn't encrypted
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Don't attach Windows containers to encrypted overlay networks.
 >
@@ -192,7 +191,6 @@ so you should test this option before using it in production.
 >
 > - Windows containers can't communicate with Linux containers on the network
 > - Data traffic between Windows containers on the network isn't encrypted
-{ .warning }
 @z
 
 @x
@@ -228,12 +226,12 @@ $ docker run --network multi-host-network busybox sh
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This only works if the overlay network is attachable
 > (created with the `--attachable` flag).
 @y
-> **Note**
+> [!NOTE]
 >
 > This only works if the overlay network is attachable
 > (created with the `--attachable` flag).

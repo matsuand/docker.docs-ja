@@ -43,10 +43,10 @@ It also introduces support for handling more complex scenarios:
 - Detect and skip executing unused build stages
 - Parallelize building independent build stages
 - Incrementally transfer only the changed files in your
-  [build context](../building/context.md) between builds
+  [build context](../concepts/context.md) between builds
 - Detect and skip transferring unused files in your
-  [build context](../building/context.md)
-- Use [Dockerfile frontend](../dockerfile/frontend.md) implementations with many
+  [build context](../concepts/context.md)
+- Use [Dockerfile frontend](frontend.md) implementations with many
   new features
 - Avoid side effects with rest of the API (intermediate images and containers)
 - Prioritize your build cache for automatic pruning
@@ -54,10 +54,10 @@ It also introduces support for handling more complex scenarios:
 - Detect and skip executing unused build stages
 - Parallelize building independent build stages
 - Incrementally transfer only the changed files in your
-  [build context](../building/context.md) between builds
+  [build context](../concepts/context.md) between builds
 - Detect and skip transferring unused files in your
-  [build context](../building/context.md)
-- Use [Dockerfile frontend](../dockerfile/frontend.md) implementations with many
+  [build context](../concepts/context.md)
+- Use [Dockerfile frontend](frontend.md) implementations with many
   new features
 - Avoid side effects with rest of the API (intermediate images and containers)
 - Prioritize your build cache for automatic pruning
@@ -164,11 +164,11 @@ work for the features used by their definition.
 @x
 For example, to build a [Dockerfile](../../reference/dockerfile.md) with
 BuildKit, you would
-[use an external Dockerfile frontend](../dockerfile/frontend.md).
+[use an external Dockerfile frontend](frontend.md).
 @y
 For example, to build a [Dockerfile](../../reference/dockerfile.md) with
 BuildKit, you would
-[use an external Dockerfile frontend](../dockerfile/frontend.md).
+[use an external Dockerfile frontend](frontend.md).
 @z
 
 @x
@@ -216,13 +216,13 @@ $ DOCKER_BUILDKIT=1 docker build .
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
-> [Buildx](../architecture.md#buildx) always uses BuildKit.
+> Buildx always uses BuildKit.
 @y
-> **Note**
+> [!NOTE]
 >
-> [Buildx](../architecture.md#buildx) always uses BuildKit.
+> Buildx always uses BuildKit.
 @z
 
 @x
@@ -268,19 +268,17 @@ daemon.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > BuildKit only fully supports building Linux containers.
 > Windows container support is experimental, and is tracked in
 > [`moby/buildkit#616`](https://github.com/moby/buildkit/issues/616).
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > BuildKit only fully supports building Linux containers.
 > Windows container support is experimental, and is tracked in
 > [`moby/buildkit#616`](https://github.com/moby/buildkit/issues/616).
-{ .warning }
 @z
 
 @x
@@ -334,11 +332,11 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The following commands require administrator (elevated) privileges in a PowerShell terminal.
 @y
-> **Note**
+> [!NOTE]
 >
 > The following commands require administrator (elevated) privileges in a PowerShell terminal.
 @z
@@ -470,11 +468,11 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > This requires Docker Desktop version 4.29 or later.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > This requires Docker Desktop version 4.29 or later.
 @z

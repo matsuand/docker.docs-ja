@@ -892,7 +892,7 @@ $ docker run --net=ipnet210 --ip=10.1.214.9 -it --rm alpine ping -c 2 192.168.21
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Notice that there is no `--gateway=` option in the network create. The field
 > is ignored if one is specified `l3` mode. Take a look at the container routing
@@ -905,7 +905,7 @@ $ docker run --net=ipnet210 --ip=10.1.214.9 -it --rm alpine ping -c 2 192.168.21
 >   192.168.214.0/24 dev eth0  src 192.168.214.10
 > ```
 @y
-> **Note**
+> [!NOTE]
 >
 > Notice that there is no `--gateway=` option in the network create. The field
 > is ignored if one is specified `l3` mode. Take a look at the container routing
@@ -1206,14 +1206,14 @@ $ docker run --net=ipvlan140 --ip=192.168.140.10 -it --rm alpine /bin/sh
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Different subnets on the same parent interface in IPvlan `L2` mode cannot ping
 > one another. That requires a router to proxy-arp the requests with a secondary
 > subnet. However, IPvlan `L3` will route the unicast traffic between disparate
 > subnets as long as they share the same `-o parent` parent link.
 @y
-> **Note**
+> [!NOTE]
 >
 > Different subnets on the same parent interface in IPvlan `L2` mode cannot ping
 > one another. That requires a router to proxy-arp the requests with a secondary
@@ -1364,14 +1364,14 @@ default dev eth0  metric 1024
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > There may be a bug when specifying `--ip6=` addresses when you delete a
 > container with a specified v6 address and then start a new container with the
 > same v6 address it throws the following like the address isn't properly being
 > released to the v6 pool. It will fail to unmount the container and be left dead.
 @y
-> **Note**
+> [!NOTE]
 >
 > There may be a bug when specifying `--ip6=` addresses when you delete a
 > container with a specified v6 address and then start a new container with the

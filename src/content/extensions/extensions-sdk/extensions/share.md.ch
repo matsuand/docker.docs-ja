@@ -96,11 +96,11 @@ To generate this link you can either:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Previews of the extension description or screenshots, for example, are created using [extension labels](labels.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Previews of the extension description or screenshots, for example, are created using [extension labels](labels.md).
 @z

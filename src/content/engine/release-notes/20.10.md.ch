@@ -848,12 +848,12 @@ scan your images for this vulnerability.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `docker scan` command on Linux is currently only supported on x86 platforms.
 > We do not yet provide a package for other hardware architectures on Linux.
 @y
-> **Note**
+> [!NOTE]
 >
 > The `docker scan` command on Linux is currently only supported on x86 platforms.
 > We do not yet provide a package for other hardware architectures on Linux.
@@ -969,7 +969,6 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 >
 > Refer to [Configure the daemon to use a proxy](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @y
 > **IMPORTANT**
 >
@@ -980,7 +979,6 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 >
 > Refer to [Configure the daemon to use a proxy](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @z
 
 @x
@@ -1041,7 +1039,6 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 >
 > Refer to the [HTTP/HTTPS proxy section](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @y
 > **IMPORTANT**
 >
@@ -1052,7 +1049,6 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 >
 > Refer to the [HTTP/HTTPS proxy section](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @z
 
 @x
@@ -1143,7 +1139,6 @@ well as updated versions of the containerd.io package.
 >
 > Refer to the [HTTP/HTTPS proxy section](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @y
 > **IMPORTANT**
 >
@@ -1154,7 +1149,6 @@ well as updated versions of the containerd.io package.
 >
 > Refer to the [HTTP/HTTPS proxy section](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @z
 
 @x
@@ -1251,7 +1245,6 @@ well as updated versions of the containerd.io package.
 >
 > Refer to the [HTTP/HTTPS proxy section](/engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @y
 > **IMPORTANT**
 >
@@ -1262,7 +1255,6 @@ well as updated versions of the containerd.io package.
 >
 > Refer to the [HTTP/HTTPS proxy section](engine/daemon/proxy.md)
 > to learn how to configure the Docker Daemon to use a proxy server.
-{ .important }
 @z
 
 @x

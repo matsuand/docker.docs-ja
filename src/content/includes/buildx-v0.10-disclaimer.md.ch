@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Buildx v0.10 enables support for a minimal [SLSA Provenance](https://slsa.dev/provenance/)
 > attestation, which requires support for [OCI-compliant](https://github.com/opencontainers/image-spec)
@@ -11,7 +11,7 @@
 > You can optionally disable the default provenance attestation functionality
 > using `--provenance=false`.
 @y
-> **Note**
+> [!NOTE]
 >
 > Buildx v0.10 enables support for a minimal [SLSA Provenance](https://slsa.dev/provenance/)
 > attestation, which requires support for [OCI-compliant](https://github.com/opencontainers/image-spec)

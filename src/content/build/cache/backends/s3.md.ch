@@ -1,36 +1,28 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Amazon S3 cache
 description: Manage build cache with Amazon S3 buckets
 keywords: build, buildx, cache, backend, s3, buckets, aws
-aliases:
-  - /build/building/cache/backends/s3/
----
 @y
----
 title: Amazon S3 cache
 description: Manage build cache with Amazon S3 buckets
 keywords: build, buildx, cache, backend, s3, buckets, aws
-aliases:
-  - /build/building/cache/backends/s3/
----
 @z
 
 @x
-> **Experimental**
->
-> This is an experimental feature. The interface and behavior are unstable and
-> may change in future releases.
-{ .restricted }
+{{% restricted %}}
+This is an experimental feature. The interface and behavior are unstable and
+may change in future releases.
+{{% /restricted %}}
 @y
-> **Experimental**
->
-> This is an experimental feature. The interface and behavior are unstable and
-> may change in future releases.
-{ .restricted }
+{{% restricted %}}
+This is an experimental feature. The interface and behavior are unstable and
+may change in future releases.
+{{% /restricted %}}
 @z
 
 @x
@@ -46,11 +38,11 @@ or other S3-compatible services, such as [MinIO](https://min.io/).
 @x
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
-[Build drivers](../../drivers/_index.md) for more information.
+[Build drivers](/build/builders/drivers/_index.md) for more information.
 @y
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
-[Build drivers](../../drivers/_index.md) for more information.
+[Build drivers](build/builders/drivers/_index.md) for more information.
 @z
 
 @x

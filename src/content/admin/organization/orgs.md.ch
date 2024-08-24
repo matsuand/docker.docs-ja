@@ -1,24 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: Learn how to create an organization.
 keywords: Docker, docker, registry, teams, organizations, plans, Dockerfile, Docker
   Hub, docs, documentation
 title: Create your organization
-aliases:
-- /docker-hub/orgs/
----
 @y
----
 description: Learn how to create an organization.
 keywords: Docker, docker, registry, teams, organizations, plans, Dockerfile, Docker
   Hub, docs, documentation
 title: Create your organization
-aliases:
-- /docker-hub/orgs/
----
 @z
 
 @x
@@ -28,10 +22,10 @@ This section describes how to create an organization. Before you begin:
 @z
 
 @x
-- You need a [Docker ID](../../docker-id/_index.md).
+- You need a [Docker ID](/accounts/create-account/).
 - Review the [Docker subscriptions and features](../../subscription/core-subscription/details.md) to determine what plan to choose for your organization.
 @y
-- You need a [Docker ID](../../docker-id/_index.md).
+- You need a [Docker ID](__SUBDIR__/accounts/create-account/).
 - Review the [Docker subscriptions and features](../../subscription/core-subscription/details.md) to determine what plan to choose for your organization.
 @z
 
@@ -64,14 +58,14 @@ To create an organization:
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../../docker-id/_index.md), your email address, or your social provider.
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
 2. Select **Organizations** and then **Create Organization** to create a new
    organization.
 3. Choose a plan for your organization and select **Buy Now**. See
 [Docker Pricing](https://www.docker.com/pricing/)
 for details on the features offered in the Team and Business plan.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your [Docker ID](../../docker-id/_index.md), your email address, or your social provider.
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
 2. Select **Organizations** and then **Create Organization** to create a new
    organization.
 3. Choose a plan for your organization and select **Buy Now**. See
@@ -80,12 +74,12 @@ for details on the features offered in the Team and Business plan.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > Selecting **Buy Now** isn't an obligation to pay. You can complete
    > this step without incurring a payment.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > Selecting **Buy Now** isn't an obligation to pay. You can complete
    > this step without incurring a payment.
@@ -102,11 +96,11 @@ organization after you've created it.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](../convert-account.md).
 @y
-   > **Note**
+   > [!NOTE]
    >
    > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](../convert-account.md).
 @z
@@ -162,7 +156,7 @@ To view an organization:
 @z
 
 @x
-      > **Note**
+      > [!NOTE]
       >
       > You can't _directly_ log in to an organization. This is especially
       > important to note if you create an organization by
@@ -174,7 +168,7 @@ To view an organization:
       > then you are neither a member or an owner of it. An organization
       > administrator needs to add you as a member of the organization.
 @y
-      > **Note**
+      > [!NOTE]
       >
       > You can't _directly_ log in to an organization. This is especially
       > important to note if you create an organization by
@@ -245,13 +239,13 @@ configure your organization.
 - **Settings**: Displays information about your
   organization, and allows you to view and change your repository privacy
   settings, configure org permissions such as
-  [Image Access Management](../../security/for-admins/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
+  [Image Access Management](/security/for-admins/hardened-desktop/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
    organization's **Settings** page.
 @y
 - **Settings**: Displays information about your
   organization, and allows you to view and change your repository privacy
   settings, configure org permissions such as
-  [Image Access Management](../../security/for-admins/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
+  [Image Access Management](security/for-admins/hardened-desktop/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
    organization's **Settings** page.
 @z
 
@@ -288,17 +282,15 @@ If you have multiple organizations that you want to merge into one, complete the
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > If your organization has a Docker Core Business subscription with a purchase order, contact Support or your Account Manager at Docker.
 >
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > If your organization has a Docker Core Business subscription with a purchase order, contact Support or your Account Manager at Docker.
 >
-{ .tip }
 @z
 
 @x

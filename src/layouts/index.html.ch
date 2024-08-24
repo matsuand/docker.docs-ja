@@ -29,9 +29,9 @@
             Docker for Mac, Windows, Linux のインストール方法を学び、開発ツール類を確認していきます。
 @z
 @x
-          <a href="/get-docker/"
+          <a href="/get-started/get-docker/"
 @y
-          <a href="get-docker/"
+          <a href="get-started/get-docker/"
 @z
 @x
             Get Docker
@@ -107,9 +107,9 @@
                 アプリケーションのコンテナー化についてその基本と利点を学びます。
 @z
 @x
-              <a href="/guides/getting-started/"
+              <a href="/get-started/"
 @y
-              <a href="guides/getting-started/"
+              <a href="get-started/"
 @z
 @x
                 Get started

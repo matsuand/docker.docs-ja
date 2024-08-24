@@ -4,26 +4,22 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Manage autobuilds
 description: How to manage autobuilds in Docker Hub
 keywords: autobuilds, automated, docker hub, registry
----
 @y
----
 title: Manage autobuilds
 description: How to manage autobuilds in Docker Hub
 keywords: autobuilds, automated, docker hub, registry
----
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).

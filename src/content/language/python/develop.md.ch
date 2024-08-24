@@ -109,15 +109,15 @@ The following is the updated `compose.yaml` file.
 % snip code...
 
 @x
-> **Note**
+> [!NOTE]
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](/compose/compose-file/).
+> reference](/reference/compose-file/).
 @y
-> **Note**
+> [!NOTE]
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](__SUBDIR__/compose/compose-file/).
+> reference](__SUBDIR__/reference/compose-file/).
 @z
 
 @x
@@ -282,12 +282,12 @@ database and persist data. You also learned how to use Compose Watch to automati
 
 @x
 Related information:
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @y
 関連情報
- - [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/)
+ - [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [マルチステージビルド](../../build/building/multi-stage.md)
 @z

@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = learning-paths
+
 copyfiles = \
 	FacebookCircle.svg      \
 	home-abstract-faint.svg \

@@ -140,11 +140,11 @@ that you can use for this purpose.
 @x
 Docker maintains a set of official GitHub Actions that you can use to build,
 annotate, and push container images on the GitHub Actions platform. See
-[Introduction to GitHub Actions](./github-actions/index.md) to learn more and
+[Introduction to GitHub Actions](github-actions/_index.md) to learn more and
 get started.
 @y
 Docker maintains a set of official GitHub Actions that you can use to build,
 annotate, and push container images on the GitHub Actions platform. See
-[Introduction to GitHub Actions](./github-actions/index.md) to learn more and
+[Introduction to GitHub Actions](github-actions/_index.md) to learn more and
 get started.
 @z

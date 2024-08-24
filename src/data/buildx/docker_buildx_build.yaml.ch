@@ -542,10 +542,10 @@ examples: |-
 @z
 
 @x
-    Create [image attestations](/build/attestations/).
+    Create [image attestations](/build/metadata/attestations/).
     BuildKit currently supports:
 @y
-    Create [image attestations](__SUBDIR__/build/attestations/).
+    Create [image attestations](__SUBDIR__/build/metadata/attestations/).
     BuildKit currently supports:
 @z
 
@@ -564,9 +564,9 @@ examples: |-
 @z
 
 @x
-      For more information, see [here](/build/attestations/sbom/).
+      For more information, see [here](/build/metadata/attestations/sbom/).
 @y
-      For more information, see [here](__SUBDIR__/build/attestations/sbom/).
+      For more information, see [here](__SUBDIR__/build/metadata/attestations/sbom/).
 @z
 
 @x
@@ -592,9 +592,9 @@ examples: |-
 @z
 
 @x
-      For more information, see [here](/build/attestations/slsa-provenance/).
+      For more information, see [here](/build/metadata/attestations/slsa-provenance/).
 @y
-      For more information, see [here](__SUBDIR__/build/attestations/slsa-provenance/).
+      For more information, see [here](__SUBDIR__/build/metadata/attestations/slsa-provenance/).
 @z
 
 @x
@@ -1640,7 +1640,7 @@ examples: |-
 @x
     > **Note**
     >
-    > Build record [provenance](/build/attestations/slsa-provenance/#provenance-attestation-example)
+    > Build record [provenance](/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
     >
@@ -1650,13 +1650,27 @@ examples: |-
 @y
     > **Note**
     >
-    > Build record [provenance](__SUBDIR__/build/attestations/slsa-provenance/#provenance-attestation-example)
+    > Build record [provenance](__SUBDIR__/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
     >
     > - `min` sets minimal provenance (default).
     > - `max` sets full provenance.
     > - `disabled`, `false` or `0` doesn't set any provenance.
+@z
+
+@x
+    > **Note**
+    >
+    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
+    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
+    > include them.
+@y
+    > **Note**
+    >
+    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
+    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
+    > include them.
 @z
 
 @x
@@ -1688,20 +1702,6 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
-    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
-    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
-    > include them.
-@y
-    > **Note**
-    >
-    > Build warnings (`buildx.build.warnings`) are not included by default. Set the
-    > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
-    > include them.
-@z
-
-@x
     ### Ignore build cache for specific stages (--no-cache-filter) {#no-cache-filter}
 @y
     ### Ignore build cache for specific stages (--no-cache-filter) {#no-cache-filter}
@@ -1859,13 +1859,13 @@ examples: |-
 
 @x
     Sets the export action for the build result. The default output, when using the
-    `docker` [build driver](/build/drivers/), is a container
+    `docker` [build driver](/build/builders/drivers/), is a container
     image exported to the local image store. The `--output` flag makes this step
     configurable allows export of results directly to the client's filesystem, an
     OCI image tarball, a registry, and more.
 @y
     Sets the export action for the build result. The default output, when using the
-    `docker` [build driver](__SUBDIR__/build/drivers/), is a container
+    `docker` [build driver](__SUBDIR__/build/builders/drivers/), is a container
     image exported to the local image store. The `--output` flag makes this step
     configurable allows export of results directly to the client's filesystem, an
     OCI image tarball, a registry, and more.
@@ -2393,10 +2393,10 @@ examples: |-
 
 @x
     For more information about provenance attestations, see
-    [here](/build/attestations/slsa-provenance/).
+    [here](/build/metadata/attestations/slsa-provenance/).
 @y
     For more information about provenance attestations, see
-    [here](__SUBDIR__/build/attestations/slsa-provenance/).
+    [here](__SUBDIR__/build/metadata/attestations/slsa-provenance/).
 @z
 
 @x
@@ -2452,9 +2452,9 @@ examples: |-
 @z
 
 @x
-    For more information, see [here](/build/attestations/sbom/).
+    For more information, see [here](/build/metadata/attestations/sbom/).
 @y
-    For more information, see [here](__SUBDIR__/build/attestations/sbom/).
+    For more information, see [here](__SUBDIR__/build/metadata/attestations/sbom/).
 @z
 
 @x

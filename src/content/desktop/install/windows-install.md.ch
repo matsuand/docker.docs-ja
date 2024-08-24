@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Get started with Docker for Windows. This guide covers system requirements,
   where to download, and instructions on how to install and update.
@@ -56,6 +58,20 @@ _For checksums, see [Release notes](../release-notes.md)_
 @z
 
 @x
+> [!TIP]
+>
+> **Should I use Hyper-V or WSL?**
+>
+> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
+@y
+> [!TIP]
+>
+> **Should I use Hyper-V or WSL?**
+>
+> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
+@z
+
+@x
 {{< tabs >}}
 {{< tab name="WSL 2 backend, x86_64" >}}
 @y
@@ -100,27 +116,25 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @z
 
 @x
-> **Important**
+> [!NOTE]
 >
-> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
-> Windows Home or Education editions only allow you to run Linux containers.
-{ .important }
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @y
-> **重要**
+> [!NOTE]
 >
-> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
-> Windows Home or Education editions only allow you to run Linux containers.
-{ .important }
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @z
 
 @x
-> **Note**
+> [!IMPORTANT]
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
+> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
+> Windows Home or Education editions only allow you to run Linux containers.
 @y
-> **メモ**
+> [!重要]
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
+> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
+> Windows Home or Education editions only allow you to run Linux containers.
 @z
 
 @x
@@ -134,7 +148,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @x
 - Windows 11 64-bit: Home or Pro version 21H2 or higher, or Enterprise or Education version 21H2 or higher.
 - Windows 10 64-bit:
-  - We recommend Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher. 
+  - Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher is recommended. 
   - Minimum required is Home or Pro 21H2 (build 19044) or higher, or Enterprise or Education 21H2 (build 19044) or higher.
 - Turn on Hyper-V and Containers Windows features.
 - The following hardware prerequisites are required to successfully run Client
@@ -142,7 +156,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @y
 - Windows 11 64-bit: Home or Pro version 21H2 or higher, or Enterprise or Education version 21H2 or higher.
 - Windows 10 64-bit:
-  - We recommend Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher. 
+  - Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher is recommended. 
   - Minimum required is Home or Pro 21H2 (build 19044) or higher, or Enterprise or Education 21H2 (build 19044) or higher.
 - Turn on Hyper-V and Containers Windows features.
 - The following hardware prerequisites are required to successfully run Client
@@ -164,27 +178,25 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @z
 
 @x
-> **Important**
+> [!NOTE]
 >
-> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
-> Windows Home or Education editions only allow you to run Linux containers.
-{ .important }
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @y
-> **重要**
+> [!NOTE]
 >
-> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
-> Windows Home or Education editions only allow you to run Linux containers.
-{ .important }
+> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
 @z
 
 @x
-> **Note**
+> [!IMPORTANT]
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
+> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
+> Windows Home or Education editions only allow you to run Linux containers.
 @y
-> **メモ**
+> [!重要]
 >
-> Docker only supports Docker Desktop on Windows for those versions of Windows that are still within [Microsoft’s servicing timeline](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet). Docker Desktop is not supported on server versions of Windows, such as Windows Server 2019 or Windows Server 2022. For more information on how to run containers on Windows Server, see [Microsoft's official documentation](https://learn.microsoft.com/virtualization/windowscontainers/quick-start/set-up-environment).
+> To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
+> Windows Home or Education editions only allow you to run Linux containers.
 @z
 
 @x
@@ -199,7 +211,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 - WSL version 1.1.3.0 or later.
 - Windows 11 64-bit: Home or Pro version 21H2 or higher, or Enterprise or Education version 21H2 or higher.
 - Windows 10 64-bit: 
-  - We recommend Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher. 
+  - Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher is recommended. 
   - Minimum required is Home or Pro 21H2 (build 19044) or higher, or Enterprise or Education 21H2 (build 19044) or higher.
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
   [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
@@ -213,7 +225,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 - WSL version 1.1.3.0 or later.
 - Windows 11 64-bit: Home or Pro version 21H2 or higher, or Enterprise or Education version 21H2 or higher.
 - Windows 10 64-bit: 
-  - We recommend Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher. 
+  - Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher is recommended. 
   - Minimum required is Home or Pro 21H2 (build 19044) or higher, or Enterprise or Education 21H2 (build 19044) or higher.
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
   [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
@@ -226,19 +238,17 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > The following features are not supported:
 > - Hyper-V backend
 > - Windows containers
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > The following features are not supported:
 > - Hyper-V backend
 > - Windows containers
-{ .important }
 @z
 
 @x
@@ -247,18 +257,6 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @y
 {{< /tab >}}
 {{< /tabs >}}
-@z
-
-@x
-> **Should I use Hyper-V or WSL?**
->
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
-{ .tip }
-@y
-> **Should I use Hyper-V or WSL?**
->
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
-{ .tip }
 @z
 
 @x
@@ -340,11 +338,11 @@ For more information on Windows containers, refer to the following documentation
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers.
 @y
-> **Note**
+> [!NOTE]
 >
 > When you switch to Windows containers, **Settings** only shows those tabs that are active and apply to your Windows containers.
 @z
@@ -376,11 +374,9 @@ again when you switch back.
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Install interactively" >}}
+### Install interactively
 @y
-{{< tabs >}}
-{{< tab name="Install interactively" >}}
+### Install interactively
 @z
 
 @x
@@ -403,7 +399,7 @@ again when you switch back.
 @z
 
 @x
-   If your system only supports one of the two options, you will not be able to select which backend to use.
+   If your system only supports one of the two options, you won't be able to select which backend to use.
 @y
    利用するシステムが 2 つのオプションの 1 つのみをサポートしている場合は、バックエンドにおいて選択することはできません。
 @z
@@ -421,13 +417,13 @@ again when you switch back.
 @z
 
 @x
-If your admin account is different to your user account, you must add the user to the **docker-users** group:
+If your administrator account is different to your user account, you must add the user to the **docker-users** group:
 1. Run **Computer Management** as an **administrator**.
 2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
 3. Right-click to add the user to the group.
 4. Sign out and sign back in for the changes to take effect.
 @y
-If your admin account is different to your user account, you must add the user to the **docker-users** group:
+If your administrator account is different to your user account, you must add the user to the **docker-users** group:
 1. Run **Computer Management** as an **administrator**.
 2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
 3. Right-click to add the user to the group.
@@ -435,11 +431,9 @@ If your admin account is different to your user account, you must add the user t
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Install from the command line" >}}
+### Install from the command line
 @y
-{{< /tab >}}
-{{< tab name="コマンドラインからのインストール" >}}
+### コマンドラインからのインストール {#install-from-the-command-line}
 @z
 
 @x
@@ -480,18 +474,18 @@ The `install` command accepts the following flags:
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
 - `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](../hardened-desktop/settings-management/index.md).
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/security/for-admins/hardened-desktop/settings-management/index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
 @y
 `install` コマンドでは以下のフラグ指定が可能です。
 - `--quiet`: インストーラーの起動時に情報出力を省略します。
-- `--accept-license`: [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) に関して、アプリケーションの初回実行時に同意するのではなく、この場で同意するものとします。
+- `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
 - `--no-windows-containers`: Disables the Windows containers integration
-- `--allowed-org=<org name>`: アプリケーションを実行するにあたって、ユーザーのサインインを要求して、指定した Docker Hub 組織の一員であることを要求します。
-- `--backend=<backend name>`: Docker Desktop において利用するデフォルトのバックエンドを選択します。`hyper-v`、`windows`、`wsl-2`(デフォルト) のいずれかとします。
+- `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
+- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](../hardened-desktop/settings-management/index.md).
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
 @z
@@ -521,7 +515,7 @@ The `install` command accepts the following flags:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
 > For example:
@@ -529,7 +523,7 @@ The `install` command accepts the following flags:
 > Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--accept-license'
 > ```
 @y
-> **メモ**
+> [!メモ]
 >
 > If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
 > For example:
@@ -545,14 +539,6 @@ If your admin account is different to your user account, you must add the user t
 @z
 
 % snip command...
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
 
 @x
 ## Start Docker Desktop
@@ -571,12 +557,6 @@ Docker Desktop を起動するには、以下を実行します。
 1. Search for Docker, and select **Docker Desktop** in the search results.
 @y
 1. Search for Docker, and select **Docker Desktop** in the search results.
-@z
-
-@x
-   ![Search for Docker app](images/docker-app-search.png)
-@y
-   ![Search for Docker app](images/docker-app-search.png)
 @z
 
 @x
@@ -604,31 +584,29 @@ Docker Desktop を起動するには、以下を実行します。
 @z
 
 @x
-   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
+   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/). It is recommended that you read the [FAQs](https://www.docker.com/pricing/faq).
 @y
-   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
+   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/). It is recommended that you read the [FAQs](https://www.docker.com/pricing/faq).
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/configure-sign-in.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
 > - [Kolide](https://www.kolide.com/features/device-inventory/properties/mac-apps)
 > - [Workspace One](https://blogs.vmware.com/euc/2022/11/how-to-use-workspace-one-intelligence-to-manage-app-licenses-and-reduce-costs.html)
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/configure-sign-in.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
 > - [Kolide](https://www.kolide.com/features/device-inventory/properties/mac-apps)
 > - [Workspace One](https://blogs.vmware.com/euc/2022/11/how-to-use-workspace-one-intelligence-to-manage-app-licenses-and-reduce-costs.html)
-{ .tip }
 @z
 
 @x
@@ -639,7 +617,7 @@ Docker Desktop を起動するには、以下を実行します。
 
 @x
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- [Get started with Docker](../../guides/getting-started/_index.md).
+- [Get started with Docker](/get-started/introduction/_index.md).
 - [Explore Docker Desktop](../use-desktop/index.md) and all its features.
 - [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, and
   how to get support.
@@ -648,7 +626,7 @@ Docker Desktop を起動するには、以下を実行します。
 - [Back up and restore data](../backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- [Docker をはじめよう](../../guides/getting-started/_index.md)
+- [Docker をはじめよう](/get-started/introduction/_index.md).
 - [Docker Desktop の確認](../use-desktop/index.md) and all its features.
 - [トラブルシューティング](../troubleshoot/overview.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
 - [FAQ](../faqs/general.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。

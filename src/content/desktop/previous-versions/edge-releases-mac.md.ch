@@ -1024,11 +1024,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-> **Note** 
+> [!NOTE] 
 >
 > Docker Desktop Edge 2.1.7.0 is the release candidate for the upcoming major Stable release. Please help us test this version before the wider release and report any issues in the [docker/for-mac](https://github.com/docker/for-mac/issues) GitHub repository.
 @y
-> **Note** 
+> [!NOTE] 
 >
 > Docker Desktop Edge 2.1.7.0 is the release candidate for the upcoming major Stable release. Please help us test this version before the wider release and report any issues in the [docker/for-mac](https://github.com/docker/for-mac/issues) GitHub repository.
 @z

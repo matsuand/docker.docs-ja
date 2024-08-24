@@ -32,27 +32,27 @@ the following resources:
 @z
 
 @x
-- [BuildKit](../buildkit/index.md): deep-dive into the open source build engine
+- [BuildKit](../buildkit/_index.md): deep-dive into the open source build engine
   that powers your Docker builds
-- [Drivers](../drivers/index.md): configure for how and where your Docker builds
+- [Drivers](../builders/drivers/_index.md): configure for how and where your Docker builds
   run
-- [Exporters](../exporters/index.md): save your build results to different
+- [Exporters](../exporters/_index.md): save your build results to different
   output formats
-- [Bake](../bake/index.md): orchestrate your build workflows
-- [Attestations](../attestations/index.md): annotate your build artifacts with
+- [Bake](../bake/_index.md): orchestrate your build workflows
+- [Attestations](../metadata/attestations/_index.md): annotate your build artifacts with
   metadata
-- [Continuous integration](../ci/index.md): run Docker builds in CI
+- [GitHub Actions](../ci/github-actions/_index.md): run Docker builds in CI
 @y
-- [BuildKit](../buildkit/index.md): deep-dive into the open source build engine
+- [BuildKit](../buildkit/_index.md): deep-dive into the open source build engine
   that powers your Docker builds
-- [Drivers](../drivers/index.md): configure for how and where your Docker builds
+- [Drivers](../builders/drivers/_index.md): configure for how and where your Docker builds
   run
-- [Exporters](../exporters/index.md): save your build results to different
+- [Exporters](../exporters/_index.md): save your build results to different
   output formats
-- [Bake](../bake/index.md): orchestrate your build workflows
-- [Attestations](../attestations/index.md): annotate your build artifacts with
+- [Bake](../bake/_index.md): orchestrate your build workflows
+- [Attestations](../metadata/attestations/_index.md): annotate your build artifacts with
   metadata
-- [Continuous integration](../ci/index.md): run Docker builds in CI
+- [GitHub Actions](../ci/github-actions/_index.md): run Docker builds in CI
 @z
 
 @x

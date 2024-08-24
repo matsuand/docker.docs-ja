@@ -520,19 +520,17 @@ before you can [configure the Docker daemon](#configure-the-docker-daemon) or
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > CPU scheduling and prioritization are advanced kernel-level features. Most
 > users don't need to change these values from their defaults. Setting these
 > values incorrectly can cause your host system to become unstable or unusable.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > CPU scheduling and prioritization are advanced kernel-level features. Most
 > users don't need to change these values from their defaults. Setting these
 > values incorrectly can cause your host system to become unstable or unusable.
-{ .warning }
 @z
 
 @x
@@ -800,11 +798,11 @@ Exposes the first and third GPUs.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > NVIDIA GPUs can only be accessed by systems running a single engine.
 @y
-> **Note**
+> [!NOTE]
 >
 > NVIDIA GPUs can only be accessed by systems running a single engine.
 @z

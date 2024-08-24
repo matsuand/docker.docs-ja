@@ -228,13 +228,13 @@ differently, but all drivers use stackable image layers and the copy-on-write
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Use Docker volumes if you need multiple containers to have shared access to
 > the exact same data. Refer to the [volumes section](../volumes.md) to learn
 > about volumes.
 @y
-> **Note**
+> [!NOTE]
 >
 > Use Docker volumes if you need multiple containers to have shared access to
 > the exact same data. Refer to the [volumes section](../volumes.md) to learn
@@ -848,7 +848,7 @@ layers are the same.
 @z
 
 @x
-   > **Tip**
+   > [!TIP]
    >
    > Format output of Docker commands with the `--format` option.
    > 
@@ -861,9 +861,8 @@ layers are the same.
    > [format command and log output section](/engine/cli/formatting.md).
    > We also pretty-printed the JSON output using the [`jq` utility](https://stedolan.github.io/jq/)
    > for readability.
-   { .tip }
 @y
-   > **Tip**
+   > [!TIP]
    >
    > Format output of Docker commands with the `--format` option.
    > 
@@ -873,10 +872,9 @@ layers are the same.
    > extract and format specific information from the output, without requiring
    > additional tools such as `awk` or `sed`. To learn more about formatting
    > the output of docker commands using the `--format` flag, refer to the
-   > [format command and log output section](engine/cli/formatting.md).
+   > [format command and log output section](/engine/cli/formatting.md).
    > We also pretty-printed the JSON output using the [`jq` utility](https://stedolan.github.io/jq/)
    > for readability.
-   { .tip }
 @z
 
 @x
@@ -952,7 +950,7 @@ in a `copy_up` operation, therefore duplicating the file to the writable layer.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Use volumes for write-heavy applications.
 >
@@ -966,9 +964,8 @@ in a `copy_up` operation, therefore duplicating the file to the writable layer.
 > among containers and don't increase the size of your container's writable
 > layer. Refer to the [use volumes](../volumes.md) section to learn about
 > volumes.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Use volumes for write-heavy applications.
 >
@@ -982,7 +979,6 @@ in a `copy_up` operation, therefore duplicating the file to the writable layer.
 > among containers and don't increase the size of your container's writable
 > layer. Refer to the [use volumes](../volumes.md) section to learn about
 > volumes.
-{ .tip }
 @z
 
 @x
@@ -1100,12 +1096,12 @@ examines how much room they take up.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > This step requires a Linux machine, and doesn't work on Docker Desktop, as
    > it requires access to the Docker Daemon's file storage.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > This step requires a Linux machine, and doesn't work on Docker Desktop, as
    > it requires access to the Docker Daemon's file storage.

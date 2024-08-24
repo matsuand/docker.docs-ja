@@ -30,11 +30,11 @@ If you want to uninstall Compose and you have installed Docker Desktop, see [Uni
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
 @y
-> **メモ**
+> [!メモ]
 >
 > Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
 @z
@@ -101,14 +101,12 @@ Or, if you have installed Compose for all users, run:
 > If you get a **Permission denied** error using either of the above
 > methods, you do not have the permissions allowing you to remove
 > `docker-compose`. To force the removal, prepend `sudo` to either of the above instructions and run it again.
-{ .tip }
 @y
 > Got a **Permission denied** error?
 >
 > If you get a **Permission denied** error using either of the above
 > methods, you do not have the permissions allowing you to remove
 > `docker-compose`. To force the removal, prepend `sudo` to either of the above instructions and run it again.
-{ .tip }
 @z
 
 @x

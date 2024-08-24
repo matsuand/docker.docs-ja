@@ -16,12 +16,12 @@ title: Service accounts
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Service accounts require a
 > [Docker Team, or Business subscription](../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Service accounts require a
 > [Docker Team, or Business subscription](../subscription/index.md).
@@ -34,11 +34,11 @@ A service account is a Docker ID used for automated management of container imag
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > All paid Docker subscriptions include up to 5000 pulls per day per authenticated user. If you require a higher number of pulls, you can purchase an Enhanced Service Account add-on.
 @y
-> **Note**
+> [!NOTE]
 >
 > All paid Docker subscriptions include up to 5000 pulls per day per authenticated user. If you require a higher number of pulls, you can purchase an Enhanced Service Account add-on.
 @z
@@ -128,12 +128,12 @@ To create a new service account for your Team account:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you want a read-only PAT just for your open-source repositories, or to access
 official images and other public images, you don't have to grant any access permissions to the new Docker ID.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you want a read-only PAT just for your open-source repositories, or to access
 official images and other public images, you don't have to grant any access permissions to the new Docker ID.

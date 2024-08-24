@@ -903,13 +903,13 @@ Now, run your container. This time you'll need to set some environment variables
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Since you're running your CockroachDB cluster in insecure mode, the value for the password can be anything.
 >
 > In production, don't run in insecure mode.
 @y
-> **Note**
+> [!NOTE]
 >
 > Since you're running your CockroachDB cluster in insecure mode, the value for the password can be anything.
 >
@@ -1501,9 +1501,9 @@ You aren't going to cover any of these advanced use cases here.
 @z
 
 @x
-One of the really cool features of Docker Compose is [variable substitution](../../compose/compose-file/12-interpolation.md). You can see some examples in the Compose file, `environment` section. By means of an example:
+One of the really cool features of Docker Compose is [variable substitution](/reference/compose-file/interpolation.md). You can see some examples in the Compose file, `environment` section. By means of an example:
 @y
-One of the really cool features of Docker Compose is [variable substitution](../../compose/compose-file/12-interpolation.md). You can see some examples in the Compose file, `environment` section. By means of an example:
+One of the really cool features of Docker Compose is [variable substitution](reference/compose-file/interpolation.md). You can see some examples in the Compose file, `environment` section. By means of an example:
 @z
 
 @x
@@ -1515,9 +1515,9 @@ One of the really cool features of Docker Compose is [variable substitution](../
 @z
 
 @x
-Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](../../compose/compose-file/12-interpolation.md) section of the Docker documentation.
+Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](/reference/compose-file/interpolation.md) section of the Docker documentation.
 @y
-Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](../../compose/compose-file/12-interpolation.md) section of the Docker documentation.
+Other ways of dealing with undefined or empty values exist, as documented in the [variable substitution](reference/compose-file/interpolation.md) section of the Docker documentation.
 @z
 
 @x
@@ -1577,11 +1577,11 @@ You passed the `--build` flag so Docker will compile your image and then start i
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Compose is a useful tool, but it has its own quirks. For example, no rebuild is triggered on the update to the source code unless the `--build` flag is provided. It is a very common pitfall to edit one's source code, and forget to use the `--build` flag when running `docker compose up`.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Compose is a useful tool, but it has its own quirks. For example, no rebuild is triggered on the update to the source code unless the `--build` flag is provided. It is a very common pitfall to edit one's source code, and forget to use the `--build` flag when running `docker compose up`.
 @z
@@ -1842,10 +1842,10 @@ If you are interested in experimenting with CockroachDB clusters, check out:
 
 @x
 * [Start a CockroachDB Cluster in Docker](https://www.cockroachlabs.com/docs/v20.2/start-a-local-cluster-in-docker-mac.html) article; and
-* Documentation for Docker Compose keywords [`deploy`](../../compose/compose-file/legacy-versions.md) and [`replicas`](../../compose/compose-file/legacy-versions.md).
+* Documentation for Docker Compose keywords [`deploy`](/reference/compose-file/legacy-versions.md) and [`replicas`](/reference/compose-file/legacy-versions.md).
 @y
 * [Start a CockroachDB Cluster in Docker](https://www.cockroachlabs.com/docs/v20.2/start-a-local-cluster-in-docker-mac.html) article; and
-* Documentation for Docker Compose keywords [`deploy`](../../compose/compose-file/legacy-versions.md) and [`replicas`](../../compose/compose-file/legacy-versions.md).
+* Documentation for Docker Compose keywords [`deploy`](reference/compose-file/legacy-versions.md) and [`replicas`](reference/compose-file/legacy-versions.md).
 @z
 
 @x

@@ -40,21 +40,19 @@ node and launches replica tasks on a node with `Active` availability.
 @z
 
 @x
-> **Important**: 
+> [!IMPORTANT]: 
 >
 > Setting a node to `Drain` does not remove standalone containers from that node,
 > such as those created with `docker run`, `docker compose up`, or the Docker Engine
 > API. A node's status, including `Drain`, only affects the node's ability to schedule
 > swarm service workloads.
-{ .important }
 @y
-> **Important**: 
+> [!IMPORTANT]: 
 >
 > Setting a node to `Drain` does not remove standalone containers from that node,
 > such as those created with `docker run`, `docker compose up`, or the Docker Engine
 > API. A node's status, including `Drain`, only affects the node's ability to schedule
 > swarm service workloads.
-{ .important }
 @z
 
 @x

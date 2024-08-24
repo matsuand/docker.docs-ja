@@ -2,13 +2,23 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+---
 title: Extension security
 description: Aspects of the security model of extensions
 keywords: Docker, extensions, sdk, security
+aliases:
+ - /desktop/extensions-sdk/guides/security/
+ - /desktop/extensions-sdk/architecture/security/
+---
 @y
+---
 title: Extension security
 description: Aspects of the security model of extensions
 keywords: Docker, extensions, sdk, security
+aliases:
+ - /desktop/extensions-sdk/guides/security/
+ - /desktop/extensions-sdk/architecture/security/
+---
 @z
 
 @x
@@ -42,13 +52,11 @@ The Extensions SDK provides a set of JavaScript APIs to invoke commands or invok
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Make sure you trust the publisher or author of the extension when you install it, as the extension has the same access rights as the user running Docker Desktop.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Make sure you trust the publisher or author of the extension when you install it, as the extension has the same access rights as the user running Docker Desktop.
-{ .important }
 @z

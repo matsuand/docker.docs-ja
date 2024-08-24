@@ -28,13 +28,13 @@ optionally communicate using SSH or a TLS (HTTPS) socket.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The given `USERNAME` must have permissions to access the docker socket on the
 > remote machine. Refer to [manage Docker as a non-root user](../install/linux-postinstall.md#manage-docker-as-a-non-root-user)
 > to learn how to give a non-root user access to the docker socket.
 @y
-> **Note**
+> [!NOTE]
 >
 > The given `USERNAME` must have permissions to access the docker socket on the
 > remote machine. Refer to [manage Docker as a non-root user](../install/linux-postinstall.md#manage-docker-as-a-non-root-user)
@@ -206,17 +206,15 @@ it only connects to servers with a certificate signed by that CA.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Using TLS and managing a CA is an advanced topic. Familiarize yourself
 > with OpenSSL, x509, and TLS before using it in production.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Using TLS and managing a CA is an advanced topic. Familiarize yourself
 > with OpenSSL, x509, and TLS before using it in production.
-{ .important }
 @z
 
 @x
@@ -226,12 +224,12 @@ it only connects to servers with a certificate signed by that CA.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @y
-> **Note**
+> [!NOTE]
 >
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
@@ -312,12 +310,12 @@ to connect to Docker:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @y
-> **Note**
+> [!NOTE]
 >
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
@@ -440,12 +438,12 @@ request:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > For simplicity of the next couple of steps, you may perform this
 > step on the Docker daemon's host machine as well.
 @y
-> **Note**
+> [!NOTE]
 >
 > For simplicity of the next couple of steps, you may perform this
 > step on the Docker daemon's host machine as well.
@@ -618,28 +616,26 @@ certificates and trusted CA:
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > This step should be run on your Docker client machine. As such, you
 > need to copy your CA certificate, your server certificate, and your client
 > certificate to that machine.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > This step should be run on your Docker client machine. As such, you
 > need to copy your CA certificate, your server certificate, and your client
 > certificate to that machine.
-{ .tip }
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
 @y
-> **Note**
+> [!NOTE]
 >
 > Replace all instances of `$HOST` in the following example with the
 > DNS name of your Docker daemon's host.
@@ -664,33 +660,31 @@ $ docker --tlsverify \
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker over TLS should run on TCP port 2376.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker over TLS should run on TCP port 2376.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > As shown in the example above, you don't need to run the `docker` client
 > with `sudo` or the `docker` group when you use certificate authentication.
 > That means anyone with the keys can give any instructions to your Docker
 > daemon, giving them root access to the machine hosting the daemon. Guard
 > these keys as you would a root password!
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > As shown in the example above, you don't need to run the `docker` client
 > with `sudo` or the `docker` group when you use certificate authentication.
 > That means anyone with the keys can give any instructions to your Docker
 > daemon, giving them root access to the machine hosting the daemon. Guard
 > these keys as you would a root password!
-{ .warning }
 @z
 
 @x

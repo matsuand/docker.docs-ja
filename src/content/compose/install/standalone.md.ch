@@ -52,7 +52,7 @@ On this page you can find instructions on how to install Compose standalone on L
 @z
 
 @x
-   > **Tip**
+   > [!TIP]
    >
    > If the command `docker-compose` fails after installation, check your path.
    > You can also create a symbolic link to `/usr/bin` or any other directory in your path.
@@ -60,9 +60,8 @@ On this page you can find instructions on how to install Compose standalone on L
    > ```console
    > $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
    > ```
-   { .tip }
 @y
-   > **ヒント**
+   > [!ヒント]
    >
    > インストール後に `docker-compose` コマンドが失敗した場合は、インストールパスを確認してください。
    > また `/usr/bin` あるいはパスとしている別のディレクトリへのリンクを生成して対処することもできます。
@@ -70,7 +69,6 @@ On this page you can find instructions on how to install Compose standalone on L
    > ```console
    > $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
    > ```
-   { .tip }
 @z
 
 @x
@@ -112,13 +110,13 @@ Microsoft Windows Server において Docker デーモンおよびクライア�
 % snip code...
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > On Windows Server 2019 you can add the Compose executable to `$Env:ProgramFiles\Docker`.
      Because this directory is registered in the system `PATH`, you can run the `docker-compose --version` 
      command on the subsequent step with no additional configuration.
 @y
-    > **メモ**
+    > [!メモ]
     >
     > Windows Server 2019 においては、Compose 実行ファイルを `$Env:ProgramFiles\Docker` にインストールすることもできます。
     > このディレクトリはシステムの `PATH` に登録されているため、この後の手順においては、特になにも設定せずに `docker-compose --version` コマンドを実行することができます。

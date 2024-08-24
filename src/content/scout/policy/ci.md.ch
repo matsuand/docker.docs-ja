@@ -142,7 +142,7 @@ once.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Due to a limitation in the Docker Engine, loading multi-platform images or
 > images with attestations to the image store isn't supported.
@@ -152,7 +152,7 @@ once.
 > without attestations, and that you're loading the build results. Otherwise,
 > the policy evaluation fails.
 @y
-> **Note**
+> [!NOTE]
 >
 > Due to a limitation in the Docker Engine, loading multi-platform images or
 > images with attestations to the image store isn't supported.

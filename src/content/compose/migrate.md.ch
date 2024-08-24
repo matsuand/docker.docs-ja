@@ -88,15 +88,13 @@ For example, `docker --log-level=debug --tls compose up` enables debug logging f
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Update scripts to use Compose V2 by replacing the hyphen (`-`) with a space, using `docker compose` instead of `docker-compose`.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Update scripts to use Compose V2 by replacing the hyphen (`-`) with a space, using `docker compose` instead of `docker-compose`.
-{ .tip }
 @z
 
 @x
@@ -134,17 +132,14 @@ For example, running the Compose command `-p myproject up --scale=1 svc` results
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 >In Compose V2, the global `--compatibility` flag or `COMPOSE_COMPATIBILITY` environment variable preserves the Compose V1 behavior to use underscores (`_`) as the word separator.
 As this option must be specified for every Compose V2 command run, it's recommended that you only use this as a temporary measure while transitioning to Compose V2.
-{ .tip }
 @y
-> **Tip**
 >
 >In Compose V2, the global `--compatibility` flag or `COMPOSE_COMPATIBILITY` environment variable preserves the Compose V1 behavior to use underscores (`_`) as the word separator.
 As this option must be specified for every Compose V2 command run, it's recommended that you only use this as a temporary measure while transitioning to Compose V2.
-{ .tip }
 @z
 
 @x
@@ -232,23 +227,21 @@ Check if:
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Run `docker compose config` on the project to preview the configuration after Compose V2 has performed interpolation to
 verify that values appear as expected.
 >
 > Maintaining backwards compatibility with Compose V1 is typically achievable by ensuring that literal values (no
 interpolation) are single-quoted and values that should have interpolation applied are double-quoted.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Run `docker compose config` on the project to preview the configuration after Compose V2 has performed interpolation to
 verify that values appear as expected.
 >
 > Maintaining backwards compatibility with Compose V1 is typically achievable by ensuring that literal values (no
 interpolation) are single-quoted and values that should have interpolation applied are double-quoted.
-{ .tip }
 @z
 
 @x
@@ -341,12 +334,10 @@ Yes. You can still download and install Compose V1 packages, but you won't get s
 >**Warning**
 >
 > The final Compose V1 release, version 1.29.2, was May 10, 2021. These packages haven't received any security updates since then. Use at your own risk. 
-{ .warning }
 @y
 >**Warning**
 >
 > The final Compose V1 release, version 1.29.2, was May 10, 2021. These packages haven't received any security updates since then. Use at your own risk. 
-{ .warning }
 @z
 
 @x

@@ -1,64 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 description: Explore the Learning center and understand the benefits of signing in
   to Docker Desktop
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   learning center, guide, sign in
 title: Sign in to Docker Desktop
-aliases:
-- /desktop/linux/
-- /desktop/linux/index/
-- /desktop/mac/
-- /desktop/mac/index/
-- /desktop/windows/
-- /desktop/windows/index/
-- /docker-for-mac/
-- /docker-for-mac/index/
-- /docker-for-mac/osx/
-- /docker-for-mac/started/
-- /docker-for-windows/
-- /docker-for-windows/index/
-- /docker-for-windows/started/
-- /mac/
-- /mackit/
-- /mackit/getting-started/
-- /win/
-- /windows/
-- /winkit/
-- /winkit/getting-started/
----
 @y
----
 description: Explore the Learning center and understand the benefits of signing in
   to Docker Desktop
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
   learning center, guide, sign in
 title: Sign in to Docker Desktop
-aliases:
-- /desktop/linux/
-- /desktop/linux/index/
-- /desktop/mac/
-- /desktop/mac/index/
-- /desktop/windows/
-- /desktop/windows/index/
-- /docker-for-mac/
-- /docker-for-mac/index/
-- /docker-for-mac/osx/
-- /docker-for-mac/started/
-- /docker-for-windows/
-- /docker-for-windows/index/
-- /docker-for-windows/started/
-- /mac/
-- /mackit/
-- /mackit/getting-started/
-- /win/
-- /windows/
-- /winkit/
-- /winkit/getting-started/
----
 @z
 
 @x
@@ -74,11 +30,11 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
 @y
-> **Tip**
+> [!TIP]
 >
 > Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
 @z
@@ -102,17 +58,17 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](hardened-desktop/index.md).
+- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](/security/for-admins/hardened-desktop/index.md).
 @y
-- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](hardened-desktop/index.md).
+- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](security/for-admins/hardened-desktop/_index.md).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity. 
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity. 
 @z
@@ -125,11 +81,11 @@ In large enterprises where admin access is restricted, administrators can [enfor
 
 @x
 Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in gpg2-encrypted files.
-Before signing in to Docker Desktop with your [Docker ID](../docker-id/_index.md), you must initialize `pass`.
+Before signing in to Docker Desktop with your [Docker ID](/accounts/create-account/), you must initialize `pass`.
 Docker Desktop displays a warning if you've not initialized `pass`.
 @y
 Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in gpg2-encrypted files.
-Before signing in to Docker Desktop with your [Docker ID](../docker-id/_index.md), you must initialize `pass`.
+Before signing in to Docker Desktop with your [Docker ID](__SUBDIR__/accounts/create-account/), you must initialize `pass`.
 Docker Desktop displays a warning if you've not initialized `pass`.
 @z
 

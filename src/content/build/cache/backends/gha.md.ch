@@ -1,36 +1,28 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: GitHub Actions cache
 description: Use the GitHub Actions cache to manage your build cache in CI
 keywords: build, buildx, cache, backend, gha, github, actions
-aliases:
-  - /build/building/cache/backends/gha/
----
 @y
----
 title: GitHub Actions cache
 description: Use the GitHub Actions cache to manage your build cache in CI
 keywords: build, buildx, cache, backend, gha, github, actions
-aliases:
-  - /build/building/cache/backends/gha/
----
 @z
 
 @x
-> **Experimental**
->
-> This is an experimental feature. The interface and behavior are unstable and
-> may change in future releases.
-{ .restricted }
+{{% restricted %}}
+This is an experimental feature. The interface and behavior are unstable and
+may change in future releases.
+{{% /restricted %}}
 @y
-> **Experimental**
->
-> This is an experimental feature. The interface and behavior are unstable and
-> may change in future releases.
-{ .restricted }
+{{% restricted %}}
+This is an experimental feature. The interface and behavior are unstable and
+may change in future releases.
+{{% /restricted %}}
 @z
 
 @x
@@ -52,11 +44,11 @@ use case falls within the
 @x
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
-[Build drivers](../../drivers/_index.md) for more information.
+[Build drivers](/build/builders/drivers/_index.md) for more information.
 @y
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
-[Build drivers](../../drivers/_index.md) for more information.
+[Build drivers](build/builders/drivers/_index.md) for more information.
 @z
 
 @x

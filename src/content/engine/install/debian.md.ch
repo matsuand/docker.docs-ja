@@ -38,17 +38,15 @@ To get started with Docker Engine on Debian, make sure you
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Before you install Docker, make sure you consider the following
 > security implications and firewall incompatibilities.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Before you install Docker, make sure you consider the following
 > security implications and firewall incompatibilities.
-{ .warning }
 @z
 
 @x
@@ -263,7 +261,7 @@ Docker from the repository.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > If you use a derivative distro, such as Kali Linux,
    > you may need to substitute the part of this command that's expected to
@@ -276,7 +274,7 @@ Docker from the repository.
    > Replace this part with the codename of the corresponding Debian release,
    > such as `bookworm`.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > If you use a derivative distro, such as Kali Linux,
    > you may need to substitute the part of this command that's expected to

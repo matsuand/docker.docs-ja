@@ -22,11 +22,11 @@ aliases:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This page assumes that you already have an Identity Provider (IdP), such as Google, Entra ID (formerly Azure AD) or Okta, which handles the authentication process and returns an access token.
 @y
-> **Note**
+> [!NOTE]
 >
 > This page assumes that you already have an Identity Provider (IdP), such as Google, Entra ID (formerly Azure AD) or Okta, which handles the authentication process and returns an access token.
 @z
@@ -154,15 +154,13 @@ You can get the authorization code from the extension UI by listing `docker-desk
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Using this feature requires the extension SDK 0.3.3 in Docker Desktop. You need to ensure that the required SDK version for your extension set with `com.docker.desktop.extension.api.version` in [image labels](../extensions/labels.md) is higher than 0.3.3.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Using this feature requires the extension SDK 0.3.3 in Docker Desktop. You need to ensure that the required SDK version for your extension set with `com.docker.desktop.extension.api.version` in [image labels](../extensions/labels.md) is higher than 0.3.3.
-{ .important }
 @z
 
 @x
@@ -214,11 +212,11 @@ POST https://authorization-server.com/token
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The client's credentials are included in the `POST` query params in this example. OAuth authorization servers may require that the credentials are sent as a HTTP Basic Authentication header or might support different formats. See your OAuth provider docs for details.
 @y
-> **Note**
+> [!NOTE]
 >
 > The client's credentials are included in the `POST` query params in this example. OAuth authorization servers may require that the credentials are sent as a HTTP Basic Authentication header or might support different formats. See your OAuth provider docs for details.
 @z
@@ -242,11 +240,11 @@ It's highly recommended that you use an external source of storage to store the 
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The user interface Local Storage is isolated between extensions (an extension can't access another extension's local storage), and each extension's local storage gets deleted when users uninstall an extension.
 @y
-> **Note**
+> [!NOTE]
 >
 > The user interface Local Storage is isolated between extensions (an extension can't access another extension's local storage), and each extension's local storage gets deleted when users uninstall an extension.
 @z

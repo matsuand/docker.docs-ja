@@ -1,12 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = attestations bake builders building buildkit cache ci \
-	dockerfile drivers exporters guide images
+SUBDIRS = bake builders building buildkit cache ci concepts exporters \
+	guide images metadata
 
 bases = \
 	_index.md        \
-	architecture.md  \
 	checks.md        \
 	release-notes.md
 

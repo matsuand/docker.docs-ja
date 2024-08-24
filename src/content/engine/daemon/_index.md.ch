@@ -21,7 +21,7 @@ This page shows you how to customize the Docker daemon, `dockerd`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This page is for users who've installed Docker Engine manually. If you're
 > using Docker Desktop, refer to the following pages instead:
@@ -30,7 +30,7 @@ This page shows you how to customize the Docker daemon, `dockerd`.
 > - [Change preferences on Windows](../../desktop/settings/windows#docker-engine)
 > - [Change preferences on Linux](../../desktop/settings/linux#docker-engine)
 @y
-> **Note**
+> [!NOTE]
 >
 > This page is for users who've installed Docker Engine manually. If you're
 > using Docker Desktop, refer to the following pages instead:

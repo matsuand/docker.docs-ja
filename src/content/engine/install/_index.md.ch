@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Install Docker Engine
 description: Learn how to choose the best method for you to install Docker Engine. This client-server
@@ -74,12 +76,12 @@ through Docker Desktop. For instructions on how to install Docker Desktop, see:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > While the following instructions may work, Docker doesn't test or verify
 > installation on distro derivatives.
 @y
-> **メモ**
+> [!メモ]
 >
 > 以降に示す手順は他の派生ディストリビューションで動作するかもしれませんが、Docker ではそういったディストリビューションへのインストールの確認検証は行っていません。
 @z
@@ -246,8 +248,8 @@ Docker では公開で感謝の意を表わすものとします。
 
 @x
 After setting up Docker, you can learn the basics with
-[Getting started with Docker](../../guides/getting-started/_index.md).
+[Getting started with Docker](/get-started/introduction/_index.md).
 @y
 After setting up Docker, you can learn the basics with
-[Getting started with Docker](../../guides/getting-started/_index.md).
+[Getting started with Docker](get-started/introduction/_index.md).
 @z

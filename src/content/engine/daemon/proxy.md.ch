@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Learn how to configure the Docker daemon to use an HTTP proxy
@@ -38,6 +38,7 @@ Docker CLI to use a proxy server](/engine/cli/proxy.md).
 @y
 This page describes how to configure a proxy for the Docker daemon. For
 instructions on configuring proxy settings for the Docker CLI, see [Configure
+Docker CLI to use a proxy server](engine/cli/proxy.md).
 @z
 
 @x
@@ -267,7 +268,7 @@ systemd drop-in file that sets the variables for the `docker` service.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > Special characters in the proxy value, such as `#?!()[]{}`, must be double
    > escaped using `%%`. For example:
@@ -277,7 +278,7 @@ systemd drop-in file that sets the variables for the `docker` service.
    > Environment="HTTP_PROXY=http://domain%%5Cuser:complex%%23pass@proxy.example.com:3128/"
    > ```
 @y
-   > **Note**
+   > [!NOTE]
    >
    > Special characters in the proxy value, such as `#?!()[]{}`, must be double
    > escaped using `%%`. For example:
@@ -481,7 +482,7 @@ systemd drop-in file that sets the variables for the `docker` service.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > Special characters in the proxy value, such as `#?!()[]{}`, must be double
    > escaped using `%%`. For example:
@@ -491,7 +492,7 @@ systemd drop-in file that sets the variables for the `docker` service.
    > Environment="HTTP_PROXY=http://domain%%5Cuser:complex%%23pass@proxy.example.com:3128/"
    > ```
 @y
-   > **Note**
+   > [!NOTE]
    >
    > Special characters in the proxy value, such as `#?!()[]{}`, must be double
    > escaped using `%%`. For example:

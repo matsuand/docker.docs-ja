@@ -10,7 +10,6 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	callouts.css     \
 	code.css         \
 	hack.css         \
 	icons.css        \

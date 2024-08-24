@@ -50,13 +50,13 @@ to achieve that, and the caveats you need to be aware of.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 > 
 > Docker creates `iptables` rules for bridge networks.
 > 
 > No `iptables` rules are created for `ipvlan`, `macvlan` or `host` networking.
 @y
-> **Note**
+> [!NOTE]
 > 
 > Docker creates `iptables` rules for bridge networks.
 > 
@@ -176,15 +176,13 @@ $ sudo iptables -I DOCKER-USER -p tcp -m conntrack --ctorigdst 198.51.100.2 --ct
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Using the `conntrack` extension may result in degraded performance.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Using the `conntrack` extension may result in degraded performance.
-{ .important }
 @z
 
 @x
@@ -528,21 +526,19 @@ configure the daemon to use the loopback address (`127.0.0.1`) instead.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Hosts within the same L2 segment (for example, hosts connected to the same
 > network switch) can reach ports published to localhost.
 > For more information, see
 > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Hosts within the same L2 segment (for example, hosts connected to the same
 > network switch) can reach ports published to localhost.
 > For more information, see
 > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
-{ .warning }
 @z
 
 @x
@@ -568,7 +564,7 @@ $ docker network create mybridge \
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > - Setting the default binding address to `::` means port bindings with no host
 >   address specified will work for any IPv6 address on the host. But, `0.0.0.0`
@@ -576,7 +572,7 @@ $ docker network create mybridge \
 > - Changing the default bind address doesn't have any effect on Swarm services.
 >   Swarm services are always exposed on the `0.0.0.0` network interface.
 @y
-> **Note**
+> [!NOTE]
 >
 > - Setting the default binding address to `::` means port bindings with no host
 >   address specified will work for any IPv6 address on the host. But, `0.0.0.0`

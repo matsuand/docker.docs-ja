@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Configuring your GitHub Actions builder
 description: Configuring BuildKit instances for building in CI with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx
----
 @y
----
 title: Configuring your GitHub Actions builder
 description: Configuring BuildKit instances for building in CI with GitHub Actions
 keywords: ci, github actions, gha, buildkit, buildx
----
 @z
 
 @x
@@ -169,11 +167,11 @@ Logs will be available at the end of a job:
 
 @x
 You can provide a [BuildKit configuration](../../buildkit/toml-configuration.md)
-to your builder if you're using the [`docker-container` driver](../../drivers/docker-container.md)
+to your builder if you're using the [`docker-container` driver](/build/builders/drivers/docker-container.md)
 (default) with the `config` or `config-inline` inputs:
 @y
 You can provide a [BuildKit configuration](../../buildkit/toml-configuration.md)
-to your builder if you're using the [`docker-container` driver](../../drivers/docker-container.md)
+to your builder if you're using the [`docker-container` driver](build/builders/drivers/docker-container.md)
 (default) with the `config` or `config-inline` inputs:
 @z
 
@@ -366,10 +364,10 @@ fields:
 @z
 
 @x
-Here is an example using remote nodes with the [`remote` driver](../../drivers/remote.md)
+Here is an example using remote nodes with the [`remote` driver](/build/builders/drivers/remote.md)
 and [TLS authentication](#tls-authentication):
 @y
-Here is an example using remote nodes with the [`remote` driver](../../drivers/remote.md)
+Here is an example using remote nodes with the [`remote` driver](build/builders/drivers/remote.md)
 and [TLS authentication](#tls-authentication):
 @z
 
@@ -464,10 +462,10 @@ using SSH or TLS.
 @z
 
 @x
-To be able to connect to an SSH endpoint using the [`docker-container` driver](../../drivers/docker-container.md),
+To be able to connect to an SSH endpoint using the [`docker-container` driver](/build/builders/drivers/docker-container.md),
 you have to set up the SSH private key and configuration on the GitHub Runner:
 @y
-To be able to connect to an SSH endpoint using the [`docker-container` driver](../../drivers/docker-container.md),
+To be able to connect to an SSH endpoint using the [`docker-container` driver](build/builders/drivers/docker-container.md),
 you have to set up the SSH private key and configuration on the GitHub Runner:
 @z
 
@@ -532,12 +530,12 @@ jobs:
 @z
 
 @x
-You can also [set up a remote BuildKit instance](../../drivers/remote.md#example-remote-buildkit-in-docker-container)
+You can also [set up a remote BuildKit instance](/build/builders/drivers/remote.md#example-remote-buildkit-in-docker-container)
 using the remote driver. To ease the integration in your workflow, you can use
 an environment variables that sets up authentication using the BuildKit client
 certificates for the `tcp://`:
 @y
-You can also [set up a remote BuildKit instance](../../drivers/remote.md#example-remote-buildkit-in-docker-container)
+You can also [set up a remote BuildKit instance](build/builders/drivers/remote.md#example-remote-buildkit-in-docker-container)
 using the remote driver. To ease the integration in your workflow, you can use
 an environment variables that sets up authentication using the BuildKit client
 certificates for the `tcp://`:
@@ -710,10 +708,10 @@ hardware.
 @z
 
 @x
-For more information about remote builder, see [`remote` driver](../../drivers/remote.md)
+For more information about remote builder, see [`remote` driver](/build/builders/drivers/remote.md)
 and the [append builder nodes example](#append-additional-nodes-to-the-builder).
 @y
-For more information about remote builder, see [`remote` driver](../../drivers/remote.md)
+For more information about remote builder, see [`remote` driver](build/builders/drivers/remote.md)
 and the [append builder nodes example](#append-additional-nodes-to-the-builder).
 @z
 

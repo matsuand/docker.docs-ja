@@ -126,15 +126,13 @@ The following three network concepts are important to swarm services:
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > See also [Networking overview](/engine/network/_index.md) for more details about Swarm networking in general.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > See also [Networking overview](engine/network/_index.md) for more details about Swarm networking in general.
-{ .tip }
 @z
 
 @x
@@ -548,11 +546,11 @@ The default mask length can be configured and is the same for all networks. It i
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Default address pools can only be configured on `swarm init` and cannot be altered after cluster creation.
 @y
-> **Note**
+> [!NOTE]
 >
 > Default address pools can only be configured on `swarm init` and cannot be altered after cluster creation.
 @z
@@ -612,13 +610,13 @@ option before using it in production.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must [customize the automatically created ingress](#customize-ingress)
 > to enable encryption. By default, all ingress traffic is unencrypted, as encryption
 > is a network-level option.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must [customize the automatically created ingress](#customize-ingress)
 > to enable encryption. By default, all ingress traffic is unencrypted, as encryption
@@ -874,13 +872,13 @@ services which publish ports, such as a WordPress service which publishes port
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > You can name your `ingress` network something other than
     > `ingress`, but you can only have one. An attempt to create a second one
     > fails.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > You can name your `ingress` network something other than
     > `ingress`, but you can only have one. An attempt to create a second one

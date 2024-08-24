@@ -16,12 +16,12 @@ title: How Automated builds work
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
@@ -56,12 +56,12 @@ image. The built image is then pushed to Docker Hub.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can still use `docker push` to push pre-built images to
 repositories with Automated builds configured.
 @y
-> **Note**
+> [!NOTE]
 >
 > You can still use `docker push` to push pre-built images to
 repositories with Automated builds configured.
@@ -95,8 +95,10 @@ are running, any additional builds go into a queue to be run later.
 The maximum number of pending builds in the queue is 30 and Docker Hub discards further
 requests. The number of concurrent builds for Pro is 5 and
 for Team and Business is 15.
+Automated builds can handle images of up to 10 GB in size.
 @y
 The maximum number of pending builds in the queue is 30 and Docker Hub discards further
 requests. The number of concurrent builds for Pro is 5 and
 for Team and Business is 15.
+Automated builds can handle images of up to 10 GB in size.
 @z

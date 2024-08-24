@@ -500,15 +500,13 @@ therefore don't have a Notary root key, `$ docker trust` will create one for you
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Be sure to protect and back up your [Notary Canonical Root Key](trust_key_mng.md).
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Be sure to protect and back up your [Notary Canonical Root Key](trust_key_mng.md).
-{ .important }
 @z
 
 @x
@@ -770,12 +768,12 @@ will automatically handle adding this new key to `targets/releases`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You will need the passphrase for the repository key; this would have been
 > configured when you first initiated the repository.
 @y
-> **Note**
+> [!NOTE]
 >
 > You will need the passphrase for the repository key; this would have been
 > configured when you first initiated the repository.
@@ -868,12 +866,12 @@ attached to the `targets/releases` role, you can use the
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Tags that were signed by the removed delegation will need to be resigned 
 > by an active delegation
 @y
-> **Note**
+> [!NOTE]
 >
 > Tags that were signed by the removed delegation will need to be resigned 
 > by an active delegation

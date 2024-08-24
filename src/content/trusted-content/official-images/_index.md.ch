@@ -22,11 +22,11 @@ are a curated set of Docker repositories hosted on Docker Hub.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Use of Docker Official Images is subject to [Docker's Terms of Service](https://www.docker.com/legal/docker-terms-service/).
 @y
-> **メモ**
+> [!メモ]
 >
 > Use of Docker Official Images is subject to [Docker's Terms of Service](https://www.docker.com/legal/docker-terms-service/).
 @z

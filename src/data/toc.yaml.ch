@@ -2,45 +2,49 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-Guides:
+Get started:
 - title: Overview
-  path: /guides/
-- title: Docker overview
-  path: /guides/docker-overview/
+  path: /get-started/
+- title: Get Docker
+  path: /get-started/get-docker/
+- title: What is Docker?
+  path: /get-started/docker-overview/
 @y
-ガイド:
+はじめよう:
 - title: 概要
-  path: __SUBDIR__/guides/
-- title: Docker 概要
-  path: __SUBDIR__/guides/docker-overview/
+  path: __SUBDIR__/get-started/
+- title: Docker の入手
+  path: __SUBDIR__/get-started/get-docker/
+- title: Docker って何？
+  path: __SUBDIR__/get-started/docker-overview/
 @z
 
 @x
-- sectiontitle: "Getting started"
+- sectiontitle: "Introduction"
   section:
   - title: "Overview"
-    path: /guides/getting-started/
+    path: /get-started/introduction/
   - title: "Get Docker Desktop"
-    path: /guides/getting-started/get-docker-desktop/
+    path: /get-started/introduction/get-docker-desktop/
   - title: "Develop with containers"
-    path: /guides/getting-started/develop-with-containers/
+    path: /get-started/introduction/develop-with-containers/
   - title: "Build and push your first image"
-    path: /guides/getting-started/build-and-push-first-image/
+    path: /get-started/introduction/build-and-push-first-image/
   - title: "What's next"
-    path: /guides/getting-started/whats-next/
+    path: /get-started/introduction/whats-next/
 @y
-- sectiontitle: "はじめよう"
+- sectiontitle: "はじめに"
   section:
-  - title: "Overview"
-    path: __SUBDIR__/guides/getting-started/
+  - title: "概要"
+    path: __SUBDIR__/get-started/introduction/
   - title: "Docker Desktop の入手"
-    path: __SUBDIR__/guides/getting-started/get-docker-desktop/
-  - title: "Develop with containers"
-    path: __SUBDIR__/guides/getting-started/develop-with-containers/
-  - title: "Build and push your first image"
-    path: __SUBDIR__/guides/getting-started/build-and-push-first-image/
-  - title: "What's next"
-    path: __SUBDIR__/guides/getting-started/whats-next/
+    path: __SUBDIR__/get-started/introduction/get-docker-desktop/
+  - title: "コンテナーを用いた開発"
+    path: __SUBDIR__/get-started/introduction/develop-with-containers/
+  - title: "初めてのイメージ作りとプッシュ"
+    path: __SUBDIR__/get-started/introduction/build-and-push-first-image/
+  - title: "次は何？"
+    path: __SUBDIR__/get-started/introduction/whats-next/
 @z
 
 @x
@@ -49,82 +53,134 @@ Guides:
   - sectiontitle: "The basics"
     section:
     - title: "What is a container?"
-      path: /guides/docker-concepts/the-basics/what-is-a-container/
+      path: /get-started/docker-concepts/the-basics/what-is-a-container/
     - title: "What is an image?"
-      path: /guides/docker-concepts/the-basics/what-is-an-image/
+      path: /get-started/docker-concepts/the-basics/what-is-an-image/
     - title: "What is a registry?"
-      path: /guides/docker-concepts/the-basics/what-is-a-registry/
+      path: /get-started/docker-concepts/the-basics/what-is-a-registry/
     - title: "What is Docker Compose?"
-      path: /guides/docker-concepts/the-basics/what-is-docker-compose/
+      path: /get-started/docker-concepts/the-basics/what-is-docker-compose/
 @y
 - sectiontitle: "Docker の考え方"
   section:
   - sectiontitle: "基本"
     section:
     - title: "コンテナーとは?"
-      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-a-container/
+      path: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/
     - title: "イメージとは?"
-      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-an-image/
+      path: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-an-image/
     - title: "レジストリとは?"
-      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-a-registry/
+      path: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-registry/
     - title: "Docker Compose とは?"
-      path: __SUBDIR__/guides/docker-concepts/the-basics/what-is-docker-compose/
+      path: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-docker-compose/
 @z
 
 @x
   - sectiontitle: "Building images"
     section:
+    - title: Overview
+      path: /get-started/docker-concepts/building-images/
     - title: "Understanding image layers"
-      path: /guides/docker-concepts/building-images/understanding-image-layers/
+      path: /get-started/docker-concepts/building-images/understanding-image-layers/
     - title: "Writing a Dockerfile"
-      path: /guides/docker-concepts/building-images/writing-a-dockerfile/
+      path: /get-started/docker-concepts/building-images/writing-a-dockerfile/
     - title: "Build, tag and publish an image"
-      path: /guides/docker-concepts/building-images/build-tag-and-publish-an-image/
+      path: /get-started/docker-concepts/building-images/build-tag-and-publish-an-image/
     - title: "Using the build cache"
-      path: /guides/docker-concepts/building-images/using-the-build-cache/
+      path: /get-started/docker-concepts/building-images/using-the-build-cache/
     - title: "Multi-stage builds"
-      path: /guides/docker-concepts/building-images/multi-stage-builds/
+      path: /get-started/docker-concepts/building-images/multi-stage-builds/
 @y
   - sectiontitle: "イメージのビルド"
     section:
+    - title: 概要
+      path: __SUBDIR__/get-started/docker-concepts/building-images/
     - title: "イメージレイヤーの理解"
-      path: __SUBDIR__/guides/docker-concepts/building-images/understanding-image-layers/
+      path: __SUBDIR__/get-started/docker-concepts/building-images/understanding-image-layers/
     - title: "Dockerfile の書き方"
-      path: __SUBDIR__/guides/docker-concepts/building-images/writing-a-dockerfile/
+      path: __SUBDIR__/get-started/docker-concepts/building-images/writing-a-dockerfile/
     - title: "イメージのビルド、タグづけ、公開"
-      path: __SUBDIR__/guides/docker-concepts/building-images/build-tag-and-publish-an-image/
+      path: __SUBDIR__/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/
     - title: "ビルドキャッシュの利用"
-      path: __SUBDIR__/guides/docker-concepts/building-images/using-the-build-cache/
+      path: __SUBDIR__/get-started/docker-concepts/building-images/using-the-build-cache/
     - title: "マルチステージビルド"
-      path: __SUBDIR__/guides/docker-concepts/building-images/multi-stage-builds/
+      path: __SUBDIR__/get-started/docker-concepts/building-images/multi-stage-builds/
 @z
 
 @x
   - sectiontitle: "Running containers"
     section:
     - title: "Publishing ports"
-      path: /guides/docker-concepts/running-containers/publishing-ports/
+      path: /get-started/docker-concepts/running-containers/publishing-ports/
     - title: "Overriding container defaults"
-      path: /guides/docker-concepts/running-containers/overriding-container-defaults/
+      path: /get-started/docker-concepts/running-containers/overriding-container-defaults/
     - title: "Persisting container data"
-      path: /guides/docker-concepts/running-containers/persisting-container-data/
+      path: /get-started/docker-concepts/running-containers/persisting-container-data/
     - title: "Sharing local files with containers"
-      path: /guides/docker-concepts/running-containers/sharing-local-files/
+      path: /get-started/docker-concepts/running-containers/sharing-local-files/
     - title: "Multi-container applications"
-      path: /guides/docker-concepts/running-containers/multi-container-applications/
+      path: /get-started/docker-concepts/running-containers/multi-container-applications/
 @y
   - sectiontitle: "Running containers"
     section:
     - title: "Publishing ports"
-      path: __SUBDIR__/guides/docker-concepts/running-containers/publishing-ports/
+      path: __SUBDIR__/get-started/docker-concepts/running-containers/publishing-ports/
     - title: "Overriding container defaults"
-      path: __SUBDIR__/guides/docker-concepts/running-containers/overriding-container-defaults/
+      path: __SUBDIR__/get-started/docker-concepts/running-containers/overriding-container-defaults/
     - title: "Persisting container data"
-      path: __SUBDIR__/guides/docker-concepts/running-containers/persisting-container-data/
+      path: __SUBDIR__/get-started/docker-concepts/running-containers/persisting-container-data/
     - title: "Sharing local files with containers"
-      path: __SUBDIR__/guides/docker-concepts/running-containers/sharing-local-files/
+      path: __SUBDIR__/get-started/docker-concepts/running-containers/sharing-local-files/
     - title: "Multi-container applications"
-      path: __SUBDIR__/guides/docker-concepts/running-containers/multi-container-applications/
+      path: __SUBDIR__/get-started/docker-concepts/running-containers/multi-container-applications/
+@z
+
+@x
+- sectiontitle: Docker workshop
+  section:
+  - title: "Part 1: Overview"
+    path: /get-started/workshop/
+  - title: "Part 2: Containerize an application"
+    path: /get-started/workshop/02_our_app/
+  - title: "Part 3: Update the application"
+    path: /get-started/workshop/03_updating_app/
+  - title: "Part 4: Share the application"
+    path: /get-started/workshop/04_sharing_app/
+  - title: "Part 5: Persist the DB"
+    path: /get-started/workshop/05_persisting_data/
+  - title: "Part 6: Use bind mounts"
+    path: /get-started/workshop/06_bind_mounts/
+  - title: "Part 7: Multi-container apps"
+    path: /get-started/workshop/07_multi_container/
+  - title: "Part 8: Use Docker Compose"
+    path: /get-started/workshop/08_using_compose/
+  - title: "Part 9: Image-building best practices"
+    path: /get-started/workshop/09_image_best/
+  - title: "Part 10: What next?"
+    path: /get-started/workshop/10_what_next/
+@y
+- sectiontitle: Docker workshop
+  section:
+  - title: "1部: 概要"
+    path: __SUBDIR__/get-started/workshop/
+  - title: "2部: アプリのコンテナー化"
+    path: __SUBDIR__/get-started/workshop/02_our_app/
+  - title: "3部: アプリの更新"
+    path: __SUBDIR__/get-started/workshop/03_updating_app/
+  - title: "4部: アプリの共有"
+    path: __SUBDIR__/get-started/workshop/04_sharing_app/
+  - title: "5部: DB への保存"
+    path: __SUBDIR__/get-started/workshop/05_persisting_data/
+  - title: "6部: バインドマウントの利用"
+    path: __SUBDIR__/get-started/workshop/06_bind_mounts/
+  - title: "7部: マルチコンテナーアプリ"
+    path: __SUBDIR__/get-started/workshop/07_multi_container/
+  - title: "8部: Docker Compose の利用"
+    path: __SUBDIR__/get-started/workshop/08_using_compose/
+  - title: "9部: イメージビルドのベストプラクティス"
+    path: __SUBDIR__/get-started/workshop/09_image_best/
+  - title: "10部: 次は何？"
+    path: __SUBDIR__/get-started/workshop/10_what_next/
 @z
 
 @x
@@ -612,58 +668,6 @@ Guides:
 @z
 
 @x
-- sectiontitle: Docker workshop
-  section:
-  - title: "Part 1: Overview"
-    path: /guides/workshop/
-  - title: "Part 2: Containerize an application"
-    path: /guides/workshop/02_our_app/
-  - title: "Part 3: Update the application"
-    path: /guides/workshop/03_updating_app/
-  - title: "Part 4: Share the application"
-    path: /guides/workshop/04_sharing_app/
-  - title: "Part 5: Persist the DB"
-    path: /guides/workshop/05_persisting_data/
-@y
-- sectiontitle: Docker ワークショップ
-  section:
-  - title: "1部: 概要"
-    path: __SUBDIR__/guides/workshop/
-  - title: "2部: アプリのコンテナー化"
-    path: __SUBDIR__/guides/workshop/02_our_app/
-  - title: "3部: アプリの更新"
-    path: __SUBDIR__/guides/workshop/03_updating_app/
-  - title: "4部: アプリの共有"
-    path: __SUBDIR__/guides/workshop/04_sharing_app/
-  - title: "5部: DB への保存"
-    path: __SUBDIR__/guides/workshop/05_persisting_data/
-@z
-
-@x
-  - title: "Part 6: Use bind mounts"
-    path: /guides/workshop/06_bind_mounts/
-  - title: "Part 7: Multi-container apps"
-    path: /guides/workshop/07_multi_container/
-  - title: "Part 8: Use Docker Compose"
-    path: /guides/workshop/08_using_compose/
-  - title: "Part 9: Image-building best practices"
-    path: /guides/workshop/09_image_best/
-  - title: "Part 10: What next?"
-    path: /guides/workshop/10_what_next/
-@y
-  - title: "6部: バインドマウントの利用"
-    path: __SUBDIR__/guides/workshop/06_bind_mounts/
-  - title: "7部: マルチコンテナーアプリ"
-    path: __SUBDIR__/guides/workshop/07_multi_container/
-  - title: "8部: Docker Compose の利用"
-    path: __SUBDIR__/guides/workshop/08_using_compose/
-  - title: "9部: イメージビルドのベストプラクティス"
-    path: __SUBDIR__/guides/workshop/09_image_best/
-  - title: "10部: 次は何？"
-    path: __SUBDIR__/guides/workshop/10_what_next/
-@z
-
-@x
 - sectiontitle: Contribute
   section:
   - path: /contribute/
@@ -916,8 +920,8 @@ Reference:
 @x
   - sectiontitle: docker compose
     section:
-      - path: /compose/reference/
-        title: overview
+      - path: /reference/cli/docker/compose/
+        title: docker compose
       - path: /reference/cli/docker/compose/alpha/
         title: docker compose alpha
       - path: /reference/cli/docker/compose/alpha/dry-run/
@@ -928,8 +932,6 @@ Reference:
         title: docker compose alpha scale
       - path: /reference/cli/docker/compose/alpha/viz/
         title: docker compose alpha viz
-      - path: /reference/cli/docker/compose/
-        title: docker compose
       - path: /reference/cli/docker/compose/build/
         title: docker compose build
       - path: /reference/cli/docker/compose/config/
@@ -987,8 +989,8 @@ Reference:
 @y
   - sectiontitle: docker compose
     section:
-      - path: __SUBDIR__/compose/reference/
-        title: overview
+      - path: __SUBDIR__/reference/cli/docker/compose/
+        title: docker compose
       - path: __SUBDIR__/reference/cli/docker/compose/alpha/
         title: docker compose alpha
       - path: __SUBDIR__/reference/cli/docker/compose/alpha/dry-run/
@@ -999,8 +1001,6 @@ Reference:
         title: docker compose alpha scale
       - path: __SUBDIR__/reference/cli/docker/compose/alpha/viz/
         title: docker compose alpha viz
-      - path: __SUBDIR__/reference/cli/docker/compose/
-        title: docker compose
       - path: __SUBDIR__/reference/cli/docker/compose/build/
         title: docker compose build
       - path: __SUBDIR__/reference/cli/docker/compose/config/
@@ -2050,134 +2050,138 @@ Reference:
   section:
   - sectiontitle: Docker Engine API
     section:
-    - path: /engine/api/
+    - path: /reference/api/engine/
       title: Overview
-    - path: /engine/api/sdk/
+    - path: /reference/api/engine/sdk/
       title: SDKs
-    - path: /engine/api/sdk/examples/
+    - path: /reference/api/engine/sdk/examples/
       title: SDK examples
 @y
 - sectiontitle: API リファレンス
   section:
   - sectiontitle: Docker Engine API
     section:
-    - path: __SUBDIR__/engine/api/
-      title: Overview
-    - path: __SUBDIR__/engine/api/sdk/
-      title: SDKs
-    - path: __SUBDIR__/engine/api/sdk/examples/
+    - path: __SUBDIR__/reference/api/engine/
+      title: 概要
+    - path: __SUBDIR__/reference/api/engine/sdk/
+      title: SDK
+    - path: __SUBDIR__/reference/api/engine/sdk/examples/
       title: SDK 利用例
 @z
 
 @x
-    - path: /engine/api/latest/
+    - path: /reference/api/engine/latest/
       title: v{{< param latest_engine_api_version >}} reference (latest)
 @y
-    - path: __SUBDIR__/engine/api/latest/
+    - path: __SUBDIR__/reference/api/engine/latest/
       title: v{{< param latest_engine_api_version >}} リファレンス (最新)
 @z
 
 @x
     - sectiontitle: API reference by version
       section:
-      - path: /engine/api/version-history/
+      - path: /reference/api/engine/version-history/
         title: Version history overview
 @y
     - sectiontitle: 各バージョンの API
       section:
-      - path: __SUBDIR__/engine/api/version-history/
+      - path: __SUBDIR__/reference/api/engine/version-history/
         title: バージョンの履歴概要
 @z
 
 @x
-      - path: /engine/api/v1.45/
+      - path: /reference/api/engine/v1.46/
+        title: v1.46 reference
+      - path: /reference/api/engine/v1.45/
         title: v1.45 reference
-      - path: /engine/api/v1.44/
+      - path: /reference/api/engine/v1.44/
         title: v1.44 reference
-      - path: /engine/api/v1.43/
+      - path: /reference/api/engine/v1.43/
         title: v1.43 reference
-      - path: /engine/api/v1.42/
+      - path: /reference/api/engine/v1.42/
         title: v1.42 reference
-      - path: /engine/api/v1.41/
+      - path: /reference/api/engine/v1.41/
         title: v1.41 reference
-      - path: /engine/api/v1.40/
+      - path: /reference/api/engine/v1.40/
         title: v1.40 reference
-      - path: /engine/api/v1.39/
+      - path: /reference/api/engine/v1.39/
         title: v1.39 reference
-      - path: /engine/api/v1.38/
+      - path: /reference/api/engine/v1.38/
         title: v1.38 reference
-      - path: /engine/api/v1.37/
+      - path: /reference/api/engine/v1.37/
         title: v1.37 reference
-      - path: /engine/api/v1.36/
+      - path: /reference/api/engine/v1.36/
         title: v1.36 reference
-      - path: /engine/api/v1.35/
+      - path: /reference/api/engine/v1.35/
         title: v1.35 reference
-      - path: /engine/api/v1.34/
+      - path: /reference/api/engine/v1.34/
         title: v1.34 reference
-      - path: /engine/api/v1.33/
+      - path: /reference/api/engine/v1.33/
         title: v1.33 reference
-      - path: /engine/api/v1.32/
+      - path: /reference/api/engine/v1.32/
         title: v1.32 Reference
-      - path: /engine/api/v1.31/
+      - path: /reference/api/engine/v1.31/
         title: v1.31 Reference
-      - path: /engine/api/v1.30/
+      - path: /reference/api/engine/v1.30/
         title: v1.30 Reference
-      - path: /engine/api/v1.29/
+      - path: /reference/api/engine/v1.29/
         title: v1.29 Reference
-      - path: /engine/api/v1.28/
+      - path: /reference/api/engine/v1.28/
         title: v1.28 reference
-      - path: /engine/api/v1.27/
+      - path: /reference/api/engine/v1.27/
         title: v1.27 reference
-      - path: /engine/api/v1.26/
+      - path: /reference/api/engine/v1.26/
         title: v1.26 reference
-      - path: /engine/api/v1.25/
+      - path: /reference/api/engine/v1.25/
         title: v1.25 reference
-      - path: /engine/api/v1.24/
+      - path: /reference/api/engine/v1.24/
         title: v1.24 reference
 @y
-      - path: __SUBDIR__/engine/api/v1.45/
+      - path: __SUBDIR__/reference/api/engine/v1.46/
+        title: v1.46 リファレンス
+      - path: __SUBDIR__/reference/api/engine/v1.45/
         title: v1.45 リファレンス
-      - path: __SUBDIR__/engine/api/v1.44/
+      - path: __SUBDIR__/reference/api/engine/v1.44/
         title: v1.44 リファレンス
-      - path: __SUBDIR__/engine/api/v1.43/
+      - path: __SUBDIR__/reference/api/engine/v1.43/
         title: v1.43 リファレンス
-      - path: __SUBDIR__/engine/api/v1.42/
+      - path: __SUBDIR__/reference/api/engine/v1.42/
         title: v1.42 リファレンス
-      - path: __SUBDIR__/engine/api/v1.41/
+      - path: __SUBDIR__/reference/api/engine/v1.41/
         title: v1.41 リファレンス
-      - path: __SUBDIR__/engine/api/v1.40/
+      - path: __SUBDIR__/reference/api/engine/v1.40/
         title: v1.40 リファレンス
-      - path: __SUBDIR__/engine/api/v1.39/
+      - path: __SUBDIR__/reference/api/engine/v1.39/
         title: v1.39 リファレンス
-      - path: __SUBDIR__/engine/api/v1.38/
+      - path: __SUBDIR__/reference/api/engine/v1.38/
         title: v1.38 リファレンス
-      - path: __SUBDIR__/engine/api/v1.37/
+      - path: __SUBDIR__/reference/api/engine/v1.37/
         title: v1.37 リファレンス
-      - path: __SUBDIR__/engine/api/v1.36/
+      - path: __SUBDIR__/reference/api/engine/v1.36/
         title: v1.36 リファレンス
-      - path: __SUBDIR__/engine/api/v1.35/
+      - path: __SUBDIR__/reference/api/engine/v1.35/
         title: v1.35 リファレンス
-      - path: __SUBDIR__/engine/api/v1.34/
+      - path: __SUBDIR__/reference/api/engine/v1.34/
         title: v1.34 リファレンス
-      - path: __SUBDIR__/engine/api/v1.33/
+      - path: __SUBDIR__/reference/api/engine/v1.33/
         title: v1.33 リファレンス
-      - path: __SUBDIR__/engine/api/v1.32/
+      - path: __SUBDIR__/reference/api/engine/v1.32/
         title: v1.32 リファレンス
-      - path: __SUBDIR__/engine/api/v1.31/
+      - path: __SUBDIR__/reference/api/engine/v1.31/
         title: v1.31 リファレンス
-      - path: __SUBDIR__/engine/api/v1.30/
+      - path: __SUBDIR__/reference/api/engine/v1.30/
         title: v1.30 リファレンス
-      - path: __SUBDIR__/engine/api/v1.29/
+      - path: __SUBDIR__/reference/api/engine/v1.29/
         title: v1.29 リファレンス
-      - path: __SUBDIR__/engine/api/v1.28/
+      - path: __SUBDIR__/reference/api/engine/v1.28/
         title: v1.28 リファレンス
-      - path: __SUBDIR__/engine/api/v1.27/
+      - path: __SUBDIR__/reference/api/engine/v1.27/
         title: v1.27 リファレンス
-      - path: __SUBDIR__/engine/api/v1.26/
+      - path: __SUBDIR__/reference/api/engine/v1.26/
         title: v1.26 リファレンス
-      - path: __SUBDIR__/engine/api/v1.25/
+      - path: __SUBDIR__/reference/api/engine/v1.25/
         title: v1.25 リファレンス
-      - path: __SUBDIR__/engine/api/v1.24/
+      - path: __SUBDIR__/reference/api/engine/v1.24/
         title: v1.24 リファレンス
 @z
 
@@ -2185,135 +2189,139 @@ Reference:
   - sectiontitle: Docker Hub API
     section:
       - title: Docker Hub API
-        path: /docker-hub/api/latest/
+        path: /reference/api/hub/latest/
       - title: DVP Data API
-        path: /docker-hub/api/dvp/
+        path: /reference/api/hub/dvp/
       - title: Deprecated API
-        path: /docker-hub/api/deprecated/
+        path: /reference/api/hub/deprecated/
 @y
   - sectiontitle: Docker Hub API
     section:
       - title: Docker Hub API
-        path: __SUBDIR__/docker-hub/api/latest/
+        path: __SUBDIR__/reference/api/hub/latest/
       - title: DVP Data API
-        path: __SUBDIR__/docker-hub/api/dvp/
+        path: __SUBDIR__/reference/api/hub/dvp/
       - title: 非推奨となった API
-        path: __SUBDIR__/docker-hub/api/deprecated/
+        path: __SUBDIR__/reference/api/hub/deprecated/
 @z
 
 @x
   - sectiontitle: Docker Extension SDK API
     section:
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
+      - path: /reference/api/extensions-sdk/
+        title: API Reference
+      - path: /reference/api/extensions-sdk/DesktopUI/
         title: DesktopUI
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Dialog/
+      - path: /reference/api/extensions-sdk/Dialog/
         title: Dialog
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Docker/
+      - path: /reference/api/extensions-sdk/Docker/
         title: Docker
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
+      - path: /reference/api/extensions-sdk/DockerCommand/
         title: DockerCommand
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
+      - path: /reference/api/extensions-sdk/DockerDesktopClient/
         title: DockerDesktopClient
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Exec/
+      - path: /reference/api/extensions-sdk/Exec/
         title: Exec
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
+      - path: /reference/api/extensions-sdk/ExecProcess/
         title: ExecProcess
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecResult/
+      - path: /reference/api/extensions-sdk/ExecResult/
         title: ExecResult
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
+      - path: /reference/api/extensions-sdk/ExecStreamOptions/
         title: ExecStreamOptions
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Extension/
+      - path: /reference/api/extensions-sdk/Extension/
         title: Extension
 @y
   - sectiontitle: Docker Extension SDK API
     section:
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
+      - path: __SUBDIR__/reference/api/extensions-sdk/
+        title: API Reference
+      - path: __SUBDIR__/reference/api/extensions-sdk/DesktopUI/
         title: DesktopUI
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Dialog/
+      - path: __SUBDIR__/reference/api/extensions-sdk/Dialog/
         title: Dialog
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Docker/
+      - path: __SUBDIR__/reference/api/extensions-sdk/Docker/
         title: Docker
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
+      - path: __SUBDIR__/reference/api/extensions-sdk/DockerCommand/
         title: DockerCommand
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
+      - path: __SUBDIR__/reference/api/extensions-sdk/DockerDesktopClient/
         title: DockerDesktopClient
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Exec/
+      - path: __SUBDIR__/reference/api/extensions-sdk/Exec/
         title: Exec
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExecProcess/
         title: ExecProcess
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecResult/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExecResult/
         title: ExecResult
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExecStreamOptions/
         title: ExecStreamOptions
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Extension/
+      - path: __SUBDIR__/reference/api/extensions-sdk/Extension/
         title: Extension
 @z
 
 @x
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
+      - path: /reference/api/extensions-sdk/ExtensionCli/
         title: ExtensionCli
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
+      - path: /reference/api/extensions-sdk/ExtensionHost/
         title: ExtensionHost
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
+      - path: /reference/api/extensions-sdk/ExtensionVM/
         title: ExtensionVM
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Host/
+      - path: /reference/api/extensions-sdk/Host/
         title: Host
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/HttpService/
+      - path: /reference/api/extensions-sdk/HttpService/
         title: HttpService
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
+      - path: /reference/api/extensions-sdk/NavigationIntents/
         title: NavigationIntents
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
+      - path: /reference/api/extensions-sdk/OpenDialogResult/
         title: OpenDialogResult
 @y
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExtensionCli/
         title: ExtensionCli
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionHost/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExtensionHost/
         title: ExtensionHost
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionVM/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExtensionVM/
         title: ExtensionVM
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Host/
+      - path: __SUBDIR__/reference/api/extensions-sdk/Host/
         title: Host
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/HttpService/
+      - path: __SUBDIR__/reference/api/extensions-sdk/HttpService/
         title: HttpService
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
+      - path: __SUBDIR__/reference/api/extensions-sdk/NavigationIntents/
         title: NavigationIntents
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/OpenDialogResult/
+      - path: __SUBDIR__/reference/api/extensions-sdk/OpenDialogResult/
         title: OpenDialogResult
 @z
 
 @x
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
+      - path: /reference/api/extensions-sdk/RawExecResult/
         title: RawExecResult
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
+      - path: /reference/api/extensions-sdk/RequestConfig/
         title: RequestConfig
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
+      - path: /reference/api/extensions-sdk/RequestConfigV0/
         title: RequestConfigV0
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+      - path: /reference/api/extensions-sdk/ServiceError/
         title: ServiceError
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+      - path: /reference/api/extensions-sdk/ServiceError/
         title: SpawnOptions
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/Toast/
+      - path: /reference/api/extensions-sdk/Toast/
         title: Toast
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
+      - path: /reference/api/extensions-sdk/ExecResultV0/
         title: ExecResultV0
-      - path: /extensions/extensions-sdk/dev/api/reference/interfaces/BackendV0/
+      - path: /reference/api/extensions-sdk/BackendV0/
         title: BackendV0
 @y
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
+      - path: __SUBDIR__/reference/api/extensions-sdk/RawExecResult/
         title: RawExecResult
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfig/
+      - path: __SUBDIR__/reference/api/extensions-sdk/RequestConfig/
         title: RequestConfig
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/
+      - path: __SUBDIR__/reference/api/extensions-sdk/RequestConfigV0/
         title: RequestConfigV0
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ServiceError/
         title: ServiceError
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ServiceError/
         title: SpawnOptions
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/Toast/
+      - path: __SUBDIR__/reference/api/extensions-sdk/Toast/
         title: Toast
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
+      - path: __SUBDIR__/reference/api/extensions-sdk/ExecResultV0/
         title: ExecResultV0
-      - path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/interfaces/BackendV0/
+      - path: __SUBDIR__/reference/api/extensions-sdk/BackendV0/
         title: BackendV0
 @z
 
@@ -2322,94 +2330,94 @@ Reference:
   section:
     - sectiontitle: Compose Specification
       section:
-      - path: /compose/compose-file/
+      - path: /reference/compose-file/
         title: Overview
-      - path: /compose/compose-file/04-version-and-name/
+      - path: /reference/compose-file/version-and-name/
         title: Version and name top-level element
-      - path: /compose/compose-file/05-services/
+      - path: /reference/compose-file/services/
         title: Services top-level element
-      - path: /compose/compose-file/06-networks/
+      - path: /reference/compose-file/networks/
         title: Network top-level element
-      - path: /compose/compose-file/07-volumes/
+      - path: /reference/compose-file/volumes/
         title: Volumes top-level element
 @y
 - sectiontitle: Compose ファイルリファレンス
   section:
     - sectiontitle: Compose 仕様
       section:
-      - path: __SUBDIR__/compose/compose-file/
+      - path: __SUBDIR__/reference/compose-file/
         title: 概要
-      - path: __SUBDIR__/compose/compose-file/04-version-and-name/
+      - path: __SUBDIR__/reference/compose-file/version-and-name/
         title: Version and name top-level element
-      - path: __SUBDIR__/compose/compose-file/05-services/
+      - path: __SUBDIR__/reference/compose-file/services/
         title: Services top-level element
-      - path: __SUBDIR__/compose/compose-file/06-networks/
+      - path: __SUBDIR__/reference/compose-file/networks/
         title: Network top-level element
-      - path: __SUBDIR__/compose/compose-file/07-volumes/
+      - path: __SUBDIR__/reference/compose-file/volumes/
         title: Volumes top-level element
 @z
 
 @x
-      - path: /compose/compose-file/08-configs/
+      - path: /reference/compose-file/configs/
         title: Configs top-level element
-      - path: /compose/compose-file/09-secrets/
+      - path: /reference/compose-file/secrets/
         title: Secrets top-level element
-      - path: /compose/compose-file/10-fragments/
+      - path: /reference/compose-file/fragments/
         title: Fragments
-      - path: /compose/compose-file/11-extension/
+      - path: /reference/compose-file/extension/
         title: Extensions
-      - path: /compose/compose-file/12-interpolation/
+      - path: /reference/compose-file/interpolation/
         title: Interpolation
-      - path: /compose/compose-file/13-merge/
+      - path: /reference/compose-file/merge/
         title: Merge
-      - path: /compose/compose-file/14-include/
+      - path: /reference/compose-file/include/
         title: Include
-      - path: /compose/compose-file/15-profiles/
+      - path: /reference/compose-file/profiles/
         title: Profiles
 @y
-      - path: __SUBDIR__/compose/compose-file/08-configs/
+      - path: __SUBDIR__/reference/compose-file/configs/
         title: Configs top-level element
-      - path: __SUBDIR__/compose/compose-file/09-secrets/
+      - path: __SUBDIR__/reference/compose-file/secrets/
         title: Secrets top-level element
-      - path: __SUBDIR__/compose/compose-file/10-fragments/
+      - path: __SUBDIR__/reference/compose-file/fragments/
         title: Fragments
-      - path: __SUBDIR__/compose/compose-file/11-extension/
+      - path: __SUBDIR__/reference/compose-file/extension/
         title: Extensions
-      - path: __SUBDIR__/compose/compose-file/12-interpolation/
+      - path: __SUBDIR__/reference/compose-file/interpolation/
         title: Interpolation
-      - path: __SUBDIR__/compose/compose-file/13-merge/
+      - path: __SUBDIR__/reference/compose-file/merge/
         title: Merge
-      - path: __SUBDIR__/compose/compose-file/14-include/
+      - path: __SUBDIR__/reference/compose-file/include/
         title: Include
-      - path: __SUBDIR__/compose/compose-file/15-profiles/
+      - path: __SUBDIR__/reference/compose-file/profiles/
         title: Profiles
 @z
 
 @x
-    - path: /compose/compose-file/build/
+    - path: /reference/compose-file/build/
       title: Compose Build Specification
-    - path: /compose/compose-file/deploy/
+    - path: /reference/compose-file/deploy/
       title: Compose Deploy Specification
-    - path: /compose/compose-file/develop/
+    - path: /reference/compose-file/develop/
       title: Compose Develop Specification
-    - path: /compose/compose-file/legacy-versions/
+    - path: /reference/compose-file/legacy-versions/
       title: Legacy versions
 @y
-    - path: __SUBDIR__/compose/compose-file/build/
+    - path: __SUBDIR__/reference/compose-file/build/
       title: Compose Build Specification
-    - path: __SUBDIR__/compose/compose-file/deploy/
+    - path: __SUBDIR__/reference/compose-file/deploy/
       title: Compose Deploy Specification
-    - path: __SUBDIR__/compose/compose-file/develop/
+    - path: __SUBDIR__/reference/compose-file/develop/
       title: Compose Develop Specification
-    - path: __SUBDIR__/compose/compose-file/legacy-versions/
+    - path: __SUBDIR__/reference/compose-file/legacy-versions/
       title: Legacy versions
 @z
 
 @x
-- path: /glossary/
+- path: /reference/glossary/
   title: Glossary
 @y
-- path: __SUBDIR__/glossary/
+- path: __SUBDIR__/reference/glossary/
   title: 用語集
 @z
 
@@ -2625,14 +2633,10 @@ Reference:
 Manuals:
 - path: /manuals/
   title: Overview
-- title: Get Docker
-  path: /get-docker/
 @y
 マニュアル:
 - path: __SUBDIR__/manuals/
   title: 概要
-- title: Docker の入手
-  path: __SUBDIR__/get-docker/
 @z
 
 @x
@@ -2664,7 +2668,7 @@ Manuals:
 @z
 
 @x
-       - sectiontitle: Use the MSI installer {{< badge color=violet text="Early Access" >}}
+       - sectiontitle: Use the MSI installer {{< badge color=green text="New" >}}
          section:
          - path: /desktop/install/msi/
            title: Overview
@@ -2675,7 +2679,7 @@ Manuals:
          - path: /desktop/install/msi/faq/
            title: FAQs
 @y
-       - sectiontitle: Use the MSI installer {{< badge color=violet text="Early Access" >}}
+       - sectiontitle: Use the MSI installer {{< badge color=green text="New" >}}
          section:
          - path: __SUBDIR__/desktop/install/msi/
            title: Overview
@@ -2761,62 +2765,6 @@ Manuals:
           title: Resource Saver mode
         - path: __SUBDIR__/desktop/use-desktop/pause/
           title: Docker Desktop の一時停止
-@z
-
-@x
-    - sectiontitle: Hardened Docker Desktop
-      section:
-        - path: /desktop/hardened-desktop/
-          title: Overview
-        - sectiontitle: Settings Management
-          section:
-          - path: /desktop/hardened-desktop/settings-management/
-            title: What is Settings Management?
-          - path: /desktop/hardened-desktop/settings-management/configure/
-            title: Configure Settings Management
-@y
-    - sectiontitle: Hardened Docker Desktop
-      section:
-        - path: __SUBDIR__/desktop/hardened-desktop/
-          title: 概要
-        - sectiontitle: Settings Management
-          section:
-          - path: __SUBDIR__/desktop/hardened-desktop/settings-management/
-            title: What is Settings Management?
-          - path: __SUBDIR__/desktop/hardened-desktop/settings-management/configure/
-            title: Configure Settings Management
-@z
-
-@x
-        - sectiontitle: Enhanced Container Isolation
-          section:
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/
-            title: What is Enhanced Container Isolation?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
-            title: How does it work?
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
-            title: Key features and benefits
-          - path: /desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced configuration options
-@y
-        - sectiontitle: Enhanced Container Isolation
-          section:
-          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/
-            title: What is Enhanced Container Isolation?
-          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/how-eci-works/
-            title: How does it work?
-          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
-            title: Key features and benefits
-          - path: __SUBDIR__/desktop/hardened-desktop/enhanced-container-isolation/config/
-            title: Advanced configuration options
-@z
-
-@x
-        - path: /desktop/hardened-desktop/air-gapped-containers/
-          title: Air-Gapped Containers
-@y
-        - path: __SUBDIR__/desktop/hardened-desktop/air-gapped-containers/
-          title: Air-Gapped Containers
 @z
 
 @x
@@ -3260,8 +3208,6 @@ Manuals:
                   path: /extensions/extensions-sdk/dev/api/dashboard/
                 - title: Navigation
                   path: /extensions/extensions-sdk/dev/api/dashboard-routes-navigation/
-                - title: API Reference
-                  path: /extensions/extensions-sdk/dev/api/reference/README/
 @y
             - sectiontitle: Extension APIs
               section:
@@ -3275,8 +3221,6 @@ Manuals:
                   path: __SUBDIR__/extensions/extensions-sdk/dev/api/dashboard/
                 - title: Navigation
                   path: __SUBDIR__/extensions/extensions-sdk/dev/api/dashboard-routes-navigation/
-                - title: API Reference
-                  path: __SUBDIR__/extensions/extensions-sdk/dev/api/reference/README/
 @z
 
 @x
@@ -3321,7 +3265,7 @@ Manuals:
       - path: /scout/explore/image-details-view/
         title: Image details view
       - path: /scout/explore/exceptions/
-        title: Exceptions {{< badge color=violet text=New >}}
+        title: Exceptions {{< badge color=green text=New >}}
       - path: /scout/explore/metrics-exporter/
         title: Metrics exporter
 @y
@@ -3334,7 +3278,7 @@ Manuals:
       - path: __SUBDIR__/scout/explore/image-details-view/
         title: Image details view
       - path: __SUBDIR__/scout/explore/exceptions/
-        title: Exceptions {{< badge color=violet text=New >}}
+        title: Exceptions {{< badge color=green text=New >}}
       - path: __SUBDIR__/scout/explore/metrics-exporter/
         title: Metrics exporter
 @z
@@ -4328,63 +4272,71 @@ Manuals:
   section:
     - path: /build/
       title: Overview
-    - path: /build/architecture/
-      title: Architecture
-    - sectiontitle: Building images
-      section:
-        - path: /build/building/packaging/
-          title: Packaging your software
-        - path: /build/building/context/
-          title: Context
-        - path: /build/building/multi-stage/
-          title: Multi-stage builds
 @y
 - sectiontitle: Docker Build
   section:
     - path: __SUBDIR__/build/
       title: 概要
-    - path: __SUBDIR__/build/architecture/
-      title: アーキテクチャー
-    - sectiontitle: Building images
-      section:
-        - path: __SUBDIR__/build/building/packaging/
-          title: Packaging your software
-        - path: __SUBDIR__/build/building/context/
-          title: コンテキスト
-        - path: __SUBDIR__/build/building/multi-stage/
-          title: マルチステージビルド
 @z
 
 @x
+    - sectiontitle: Core concepts
+      section:
+        - path: /build/concepts/overview/
+          title: Build overview
+        - path: /build/concepts/dockerfile/
+          title: Dockerfile
+        - path: /build/concepts/context/
+          title: Build context
+@y
+    - sectiontitle: Core concepts
+      section:
+        - path: __SUBDIR__/build/concepts/overview/
+          title: ビルド概要
+        - path: __SUBDIR__/build/concepts/dockerfile/
+          title: Dockerfile
+        - path: __SUBDIR__/build/concepts/context/
+          title: ビルドコンテキスト
+@z
+
+@x
+    - sectiontitle: Building
+      section:
+        - path: /build/building/multi-stage/
+          title: Multi-stage builds
         - path: /build/building/variables/
           title: Variables
-        - path: /build/building/best-practices/
-          title: Best practices
         - path: /build/building/multi-platform/
           title: Multi-platform images
         - path: /build/building/secrets/
           title: Build secrets
-        - path: /build/building/annotations/
-          title: Annotations
-        - path: /build/building/opentelemetry/
-          title: OpenTelemetry support
+        - path: /build/building/best-practices/
+          title: Best practices
         - path: /build/building/base-images/
           title: Base images
 @y
+    - sectiontitle: ビルド
+      section:
+        - path: __SUBDIR__/build/building/multi-stage/
+          title: マルチステージビルド
         - path: __SUBDIR__/build/building/variables/
           title: 変数
-        - path: __SUBDIR__/build/building/best-practices/
-          title: ベストプラクティス
         - path: __SUBDIR__/build/building/multi-platform/
           title: マルチプラットフォームイメージ
         - path: __SUBDIR__/build/building/secrets/
-          title: secrets のビルド
-        - path: __SUBDIR__/build/building/annotations/
-          title: アノテーション
-        - path: __SUBDIR__/build/building/opentelemetry/
-          title: OpenTelemetry support
+          title: Build secrets
+        - path: __SUBDIR__/build/building/best-practices/
+          title: ベストプラクティス
         - path: __SUBDIR__/build/building/base-images/
           title: ベースイメージ
+@z
+
+@x
+    - path: /build/checks/
+      title: Build checks  {{< badge color=green text=New >}}
+@y
+    - path: __SUBDIR__/build/checks/
+      title: ビルドチェック  {{< badge color=green text=New >}}
 @z
 
 @x
@@ -4404,111 +4356,31 @@ Manuals:
 @z
 
 @x
-    - sectiontitle: Drivers
-      section:
-        - path: /build/drivers/
-          title: Drivers overview
-        - path: /build/drivers/docker/
-          title: Docker driver
-        - path: /build/drivers/docker-container/
-          title: Docker container driver
-        - path: /build/drivers/kubernetes/
-          title: Kubernetes driver
-        - path: /build/drivers/remote/
-          title: Remote driver
-@y
-    - sectiontitle: ドライバー
-      section:
-        - path: __SUBDIR__/build/drivers/
-          title: ドライバー概要
-        - path: __SUBDIR__/build/drivers/docker/
-          title: Docker ドライバー
-        - path: __SUBDIR__/build/drivers/docker-container/
-          title: Docker コンテナードライバー
-        - path: __SUBDIR__/build/drivers/kubernetes/
-          title: Kubernetes ドライバー
-        - path: __SUBDIR__/build/drivers/remote/
-          title: リモートドライバー
-@z
-
-@x
-    - sectiontitle: Exporters
-      section:
-        - path: /build/exporters/
-          title: Overview
-        - path: /build/exporters/image-registry/
-          title: Image and registry exporters
-        - path: /build/exporters/local-tar/
-          title: Local and tar exporters
-        - path: /build/exporters/oci-docker/
-          title: OCI and Docker exporters
-@y
-    - sectiontitle: Exporters
-      section:
-        - path: __SUBDIR__/build/exporters/
-          title: Overview
-        - path: __SUBDIR__/build/exporters/image-registry/
-          title: Image and registry exporters
-        - path: __SUBDIR__/build/exporters/local-tar/
-          title: Local and tar exporters
-        - path: __SUBDIR__/build/exporters/oci-docker/
-          title: OCI and Docker exporters
-@z
-
-@x
-    - sectiontitle: Cache
-      section:
-        - path: /build/cache/
-          title: Overview
-        - path: /build/cache/invalidation/
-          title: Cache invalidation
-        - path: /build/cache/garbage-collection/
-          title: Garbage collection
-@y
-    - sectiontitle: Cache
-      section:
-        - path: __SUBDIR__/build/cache/
-          title: Overview
-        - path: __SUBDIR__/build/cache/invalidation/
-          title: Cache invalidation
-        - path: __SUBDIR__/build/cache/garbage-collection/
-          title: Garbage collection
-@z
-
-@x
-        - sectiontitle: Cache backends
+        - sectiontitle: Build drivers
           section:
-            - path: /build/cache/backends/
+            - path: /build/builders/drivers/
               title: Overview
-            - path: /build/cache/backends/inline/
-              title: Inline
-            - path: /build/cache/backends/local/
-              title: Local
-            - path: /build/cache/backends/registry/
-              title: Registry
-            - path: /build/cache/backends/gha/
-              title: GitHub Actions
-            - path: /build/cache/backends/azblob/
-              title: Azure Blob Storage
-            - path: /build/cache/backends/s3/
-              title: Amazon S3
+            - path: /build/builders/drivers/docker/
+              title: Docker driver
+            - path: /build/builders/drivers/docker-container/
+              title: Docker container driver
+            - path: /build/builders/drivers/kubernetes/
+              title: Kubernetes driver
+            - path: /build/builders/drivers/remote/
+              title: Remote driver
 @y
-        - sectiontitle: Cache backends
+        - sectiontitle: ビルドドライバー
           section:
-            - path: __SUBDIR__/build/cache/backends/
-              title: Overview
-            - path: __SUBDIR__/build/cache/backends/inline/
-              title: Inline
-            - path: __SUBDIR__/build/cache/backends/local/
-              title: Local
-            - path: __SUBDIR__/build/cache/backends/registry/
-              title: Registry
-            - path: __SUBDIR__/build/cache/backends/gha/
-              title: GitHub Actions
-            - path: __SUBDIR__/build/cache/backends/azblob/
-              title: Azure Blob Storage
-            - path: __SUBDIR__/build/cache/backends/s3/
-              title: Amazon S3
+            - path: __SUBDIR__/build/builders/drivers/
+              title: 概要
+            - path: __SUBDIR__/build/builders/drivers/docker/
+              title: Docker ドライバー
+            - path: __SUBDIR__/build/builders/drivers/docker-container/
+              title: Docker コンテナードライバー
+            - path: __SUBDIR__/build/builders/drivers/kubernetes/
+              title: Kubernetes ドライバー
+            - path: __SUBDIR__/build/builders/drivers/remote/
+              title: リモートドライバー
 @z
 
 @x
@@ -4576,40 +4448,202 @@ Manuals:
 @z
 
 @x
-    - sectiontitle: Attestations
+    - sectiontitle: Cache
       section:
-        - path: /build/attestations/
+        - path: /build/cache/
           title: Overview
-        - path: /build/attestations/sbom/
-          title: SBOM
-        - path: /build/attestations/slsa-provenance/
-          title: Provenance
-        - path: /build/attestations/slsa-definitions/
-          title: SLSA definitions
-        - path: /build/attestations/attestation-storage/
-          title: Attestation storage
+        - path: /build/cache/invalidation/
+          title: Cache invalidation
+        - path: /build/cache/garbage-collection/
+          title: Garbage collection
 @y
-    - sectiontitle: Attestations
+    - sectiontitle: Cache
       section:
-        - path: __SUBDIR__/build/attestations/
+        - path: __SUBDIR__/build/cache/
           title: Overview
-        - path: __SUBDIR__/build/attestations/sbom/
-          title: SBOM
-        - path: __SUBDIR__/build/attestations/slsa-provenance/
-          title: Provenance
-        - path: __SUBDIR__/build/attestations/slsa-definitions/
-          title: SLSA definitions
-        - path: __SUBDIR__/build/attestations/attestation-storage/
-          title: Attestation storage
+        - path: __SUBDIR__/build/cache/invalidation/
+          title: Cache invalidation
+        - path: __SUBDIR__/build/cache/garbage-collection/
+          title: Garbage collection
 @z
 
 @x
-    - sectiontitle: Dockerfile
+        - sectiontitle: Cache backends
+          section:
+            - path: /build/cache/backends/
+              title: Overview
+            - path: /build/cache/backends/inline/
+              title: Inline
+            - path: /build/cache/backends/local/
+              title: Local
+            - path: /build/cache/backends/registry/
+              title: Registry
+            - path: /build/cache/backends/gha/
+              title: GitHub Actions
+            - path: /build/cache/backends/azblob/
+              title: Azure Blob Storage
+            - path: /build/cache/backends/s3/
+              title: Amazon S3
+@y
+        - sectiontitle: Cache backends
+          section:
+            - path: __SUBDIR__/build/cache/backends/
+              title: Overview
+            - path: __SUBDIR__/build/cache/backends/inline/
+              title: Inline
+            - path: __SUBDIR__/build/cache/backends/local/
+              title: Local
+            - path: __SUBDIR__/build/cache/backends/registry/
+              title: Registry
+            - path: __SUBDIR__/build/cache/backends/gha/
+              title: GitHub Actions
+            - path: __SUBDIR__/build/cache/backends/azblob/
+              title: Azure Blob Storage
+            - path: __SUBDIR__/build/cache/backends/s3/
+              title: Amazon S3
+@z
+
+@x
+    - sectiontitle: GitHub Actions
       section:
-        - path: /build/dockerfile/frontend/
-          title: Custom Dockerfile syntax
-        - path: /build/dockerfile/release-notes/
-          title: Release notes
+      - path: /build/ci/github-actions/
+        title: Introduction
+      - path: /build/ci/github-actions/build-summary/
+        title: Build summary {{< badge color=blue text=Beta >}}
+      - path: /build/ci/github-actions/configure-builder/
+        title: Configuring your builder
+      - path: /build/ci/github-actions/multi-platform/
+        title: Multi-platform image
+      - path: /build/ci/github-actions/secrets/
+        title: Secrets
+      - path: /build/ci/github-actions/push-multi-registries/
+        title: Push to multiple registries
+      - path: /build/ci/github-actions/manage-tags-labels/
+        title: Manage tags and labels
+      - path: /build/ci/github-actions/cache/
+        title: Cache management
+      - path: /build/ci/github-actions/export-docker/
+        title: Export to Docker
+      - path: /build/ci/github-actions/test-before-push/
+        title: Test before push
+      - path: /build/ci/github-actions/local-registry/
+        title: Local registry
+      - path: /build/ci/github-actions/share-image-jobs/
+        title: Share built image between jobs
+      - path: /build/ci/github-actions/named-contexts/
+        title: Named contexts
+      - path: /build/ci/github-actions/copy-image-registries/
+        title: Copy image between registries
+      - path: /build/ci/github-actions/update-dockerhub-desc/
+        title: Update Docker Hub repo description
+      - path: /build/ci/github-actions/attestations/
+        title: SBOM and provenance attestations
+      - path: /build/ci/github-actions/annotations/
+        title: Annotations
+      - path: /build/ci/github-actions/reproducible-builds/
+        title: Reproducible builds
+@y
+    - sectiontitle: GitHub Actions
+      section:
+      - path: __SUBDIR__/build/ci/github-actions/
+        title: Introduction
+      - path: __SUBDIR__/build/ci/github-actions/build-summary/
+        title: Build summary {{< badge color=blue text=Beta >}}
+      - path: __SUBDIR__/build/ci/github-actions/configure-builder/
+        title: Configuring your builder
+      - path: __SUBDIR__/build/ci/github-actions/multi-platform/
+        title: Multi-platform image
+      - path: __SUBDIR__/build/ci/github-actions/secrets/
+        title: Secrets
+      - path: __SUBDIR__/build/ci/github-actions/push-multi-registries/
+        title: Push to multiple registries
+      - path: __SUBDIR__/build/ci/github-actions/manage-tags-labels/
+        title: Manage tags and labels
+      - path: __SUBDIR__/build/ci/github-actions/cache/
+        title: Cache management
+      - path: __SUBDIR__/build/ci/github-actions/export-docker/
+        title: Export to Docker
+      - path: __SUBDIR__/build/ci/github-actions/test-before-push/
+        title: Test before push
+      - path: __SUBDIR__/build/ci/github-actions/local-registry/
+        title: Local registry
+      - path: __SUBDIR__/build/ci/github-actions/share-image-jobs/
+        title: Share built image between jobs
+      - path: __SUBDIR__/build/ci/github-actions/named-contexts/
+        title: Named contexts
+      - path: __SUBDIR__/build/ci/github-actions/copy-image-registries/
+        title: Copy image between registries
+      - path: __SUBDIR__/build/ci/github-actions/update-dockerhub-desc/
+        title: Update Docker Hub repo description
+      - path: __SUBDIR__/build/ci/github-actions/attestations/
+        title: SBOM and provenance attestations
+      - path: __SUBDIR__/build/ci/github-actions/annotations/
+        title: Annotations
+      - path: __SUBDIR__/build/ci/github-actions/reproducible-builds/
+        title: Reproducible builds
+@z
+
+@x
+    - sectiontitle: Metadata
+      section:
+        - path: /build/metadata/annotations/
+          title: Annotations
+        - sectiontitle: Attestations
+          section:
+            - path: /build/metadata/attestations/
+              title: Overview
+            - path: /build/metadata/attestations/sbom/
+              title: SBOM
+            - path: /build/metadata/attestations/slsa-provenance/
+              title: Provenance
+            - path: /build/metadata/attestations/slsa-definitions/
+              title: SLSA definitions
+            - path: /build/metadata/attestations/attestation-storage/
+              title: Attestation storage
+@y
+    - sectiontitle: Metadata
+      section:
+        - path: __SUBDIR__/build/metadata/annotations/
+          title: Annotations
+        - sectiontitle: Attestations
+          section:
+            - path: __SUBDIR__/build/metadata/attestations/
+              title: Overview
+            - path: __SUBDIR__/build/metadata/attestations/sbom/
+              title: SBOM
+            - path: __SUBDIR__/build/metadata/attestations/slsa-provenance/
+              title: Provenance
+            - path: __SUBDIR__/build/metadata/attestations/slsa-definitions/
+              title: SLSA definitions
+            - path: __SUBDIR__/build/metadata/attestations/attestation-storage/
+              title: Attestation storage
+@z
+
+@x
+    - sectiontitle: Exporters
+      section:
+        - path: /build/exporters/
+          title: Overview
+        - path: /build/exporters/image-registry/
+          title: Image and registry exporters
+        - path: /build/exporters/local-tar/
+          title: Local and tar exporters
+        - path: /build/exporters/oci-docker/
+          title: OCI and Docker exporters
+@y
+    - sectiontitle: Exporters
+      section:
+        - path: __SUBDIR__/build/exporters/
+          title: Overview
+        - path: __SUBDIR__/build/exporters/image-registry/
+          title: Image and registry exporters
+        - path: __SUBDIR__/build/exporters/local-tar/
+          title: Local and tar exporters
+        - path: __SUBDIR__/build/exporters/oci-docker/
+          title: OCI and Docker exporters
+@z
+
+@x
     - sectiontitle: BuildKit
       section:
         - path: /build/buildkit/
@@ -4618,13 +4652,11 @@ Manuals:
           title: Configure
         - path: /build/buildkit/toml-configuration/
           title: TOML configuration
+        - path: /build/buildkit/frontend/
+          title: Custom Dockerfile syntax
+        - path: /build/buildkit/dockerfile-release-notes/
+          title: Dockerfile release notes
 @y
-    - sectiontitle: Dockerfile
-      section:
-        - path: __SUBDIR__/build/dockerfile/frontend/
-          title: カスタム Dockerfile 文法
-        - path: __SUBDIR__/build/dockerfile/release-notes/
-          title: リリースノート
     - sectiontitle: BuildKit
       section:
         - path: __SUBDIR__/build/buildkit/
@@ -4633,110 +4665,26 @@ Manuals:
           title: 設定
         - path: __SUBDIR__/build/buildkit/toml-configuration/
           title: TOML 設定
+        - path: __SUBDIR__/build/buildkit/frontend/
+          title: カスタム Dockerfile 文法
+        - path: __SUBDIR__/build/buildkit/dockerfile-release-notes/
+          title: Dockerfile リリースノート
 @z
 
 @x
-    - sectiontitle: Continuous integration
+    - sectiontitle: Debugging
       section:
-        - path: /build/ci/
-          title: CI with Docker
-        - sectiontitle: GitHub Actions
-          section:
-          - path: /build/ci/github-actions/
-            title: Introduction
-          - path: /build/ci/github-actions/build-summary/
-            title: Build summary {{< badge color=blue text=Beta >}}
-          - path: /build/ci/github-actions/configure-builder/
-            title: Configuring your builder
-          - path: /build/ci/github-actions/multi-platform/
-            title: Multi-platform image
-          - path: /build/ci/github-actions/secrets/
-            title: Secrets
-          - path: /build/ci/github-actions/push-multi-registries/
-            title: Push to multiple registries
-          - path: /build/ci/github-actions/manage-tags-labels/
-            title: Manage tags and labels
-          - path: /build/ci/github-actions/cache/
-            title: Cache management
-@y
-    - sectiontitle: Continuous integration
-      section:
-        - path: __SUBDIR__/build/ci/
-          title: Docker を使った CI
-        - sectiontitle: GitHub Actions
-          section:
-          - path: __SUBDIR__/build/ci/github-actions/
-            title: はじめに
-          - path: __SUBDIR__/build/ci/github-actions/build-summary/
-            title: Build summary {{< badge color=blue text=Beta >}}
-          - path: __SUBDIR__/build/ci/github-actions/configure-builder/
-            title: Configuring your builder
-          - path: __SUBDIR__/build/ci/github-actions/multi-platform/
-            title: マルチプラットフォームイメージ
-          - path: __SUBDIR__/build/ci/github-actions/secrets/
-            title: Secrets
-          - path: __SUBDIR__/build/ci/github-actions/push-multi-registries/
-            title: Push to multiple registries
-          - path: __SUBDIR__/build/ci/github-actions/manage-tags-labels/
-            title: タグとラベルの管理
-          - path: __SUBDIR__/build/ci/github-actions/cache/
-            title: キャッシュ管理
-@z
-
-@x
-          - path: /build/ci/github-actions/export-docker/
-            title: Export to Docker
-          - path: /build/ci/github-actions/test-before-push/
-            title: Test before push
-          - path: /build/ci/github-actions/local-registry/
-            title: Local registry
-          - path: /build/ci/github-actions/share-image-jobs/
-            title: Share built image between jobs
-@y
-          - path: __SUBDIR__/build/ci/github-actions/export-docker/
-            title: Export to Docker
-          - path: __SUBDIR__/build/ci/github-actions/test-before-push/
-            title: Test before push
-          - path: __SUBDIR__/build/ci/github-actions/local-registry/
-            title: Local registry
-          - path: __SUBDIR__/build/ci/github-actions/share-image-jobs/
-            title: Share built image between jobs
-@z
-
-@x
-          - path: /build/ci/github-actions/named-contexts/
-            title: Named contexts
-          - path: /build/ci/github-actions/copy-image-registries/
-            title: Copy image between registries
-          - path: /build/ci/github-actions/update-dockerhub-desc/
-            title: Update Docker Hub repo description
-          - path: /build/ci/github-actions/attestations/
-            title: SBOM and provenance attestations
-          - path: /build/ci/github-actions/annotations/
-            title: Annotations
-          - path: /build/ci/github-actions/reproducible-builds/
-            title: Reproducible builds
-@y
-          - path: __SUBDIR__/build/ci/github-actions/named-contexts/
-            title: Named contexts
-          - path: __SUBDIR__/build/ci/github-actions/copy-image-registries/
-            title: レジストリ間でのイメージコピー
-          - path: __SUBDIR__/build/ci/github-actions/update-dockerhub-desc/
-            title: Update Docker Hub repo description
-          - path: __SUBDIR__/build/ci/github-actions/attestations/
-            title: SBOM and provenance attestations
-          - path: __SUBDIR__/build/ci/github-actions/annotations/
-            title: アノテーション
-          - path: __SUBDIR__/build/ci/github-actions/reproducible-builds/
-            title: 再現可能なビルド
-@z
-
-@x
+      - path: /build/debug/opentelemetry/
+        title: OpenTelemetry support
     - path: /build/release-notes/
       title: Release notes
 @y
+    - sectiontitle: Debugging
+      section:
+      - path: __SUBDIR__/build/debug/opentelemetry/
+        title: OpenTelemetry support
     - path: __SUBDIR__/build/release-notes/
-      title: リリースノート
+      title: Release notes
 @z
 
 @x
@@ -5096,7 +5044,7 @@ Manuals:
   section:
   - path: /accounts/
     title: Overview
-  - path: /docker-id/
+  - path: /accounts/create-account/
     title: Create an account
   - path: /accounts/manage-account/
     title: Manage an account
@@ -5107,7 +5055,7 @@ Manuals:
   section:
   - path: __SUBDIR__/accounts/
     title: Overview
-  - path: __SUBDIR__/docker-id/
+  - path: __SUBDIR__/accounts/create-account/
     title: Create an account
   - path: __SUBDIR__/accounts/manage-account/
     title: Manage an account
@@ -5238,7 +5186,7 @@ Manuals:
 @x
   - sectiontitle: For admins
     section:
-    - sectiontitle: Single Sign-on
+    - sectiontitle: Single sign-on
       section:
       -  path: /security/for-admins/single-sign-on/
          title: Overview
@@ -5250,10 +5198,12 @@ Manuals:
          title: Connect
       -  path: /security/for-admins/single-sign-on/manage/
          title: Manage
+      -  path: /security/for-admins/single-sign-on/troubleshoot/
+         title: Troubleshoot
 @y
   - sectiontitle: For admins
     section:
-    - sectiontitle: Single Sign-on
+    - sectiontitle: Single sign-on
       section:
       -  path: __SUBDIR__/security/for-admins/single-sign-on/
          title: Overview
@@ -5265,6 +5215,8 @@ Manuals:
          title: Connect
       -  path: __SUBDIR__/security/for-admins/single-sign-on/manage/
          title: Manage
+      -  path: __SUBDIR__/security/for-admins/single-sign-on/troubleshoot/
+         title: Troubleshoot
 @z
 
 @x
@@ -5308,19 +5260,83 @@ Manuals:
       title: Roles and permissions
     - path: /security/for-admins/domain-audit/
       title: Domain audit
-    - path: /security/for-admins/image-access-management/
-      title: Image Access Management
-    - path: /security/for-admins/registry-access-management/
-      title: Registry Access Management
 @y
     - path: __SUBDIR__/security/for-admins/roles-and-permissions/
       title: Roles and permissions
     - path: __SUBDIR__/security/for-admins/domain-audit/
       title: Domain audit
-    - path: __SUBDIR__/security/for-admins/image-access-management/
-      title: Image Access Management
-    - path: __SUBDIR__/security/for-admins/registry-access-management/
-      title: Registry Access Management
+@z
+
+@x
+    - sectiontitle: Hardened Docker Desktop
+      section:
+        - path: /security/for-admins/hardened-desktop/
+          title: Overview
+        - sectiontitle: Settings Management
+          section:
+          - path: /security/for-admins/hardened-desktop/settings-management/
+            title: What is Settings Management?
+          - path: /security/for-admins/hardened-desktop/settings-management/configure/
+            title: Configure Settings Management
+@y
+    - sectiontitle: Hardened Docker Desktop
+      section:
+        - path: __SUBDIR__/security/for-admins/hardened-desktop/
+          title: 概要
+        - sectiontitle: Settings Management
+          section:
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/settings-management/
+            title: What is Settings Management?
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/settings-management/configure/
+            title: Configure Settings Management
+@z
+
+@x
+        - sectiontitle: Enhanced Container Isolation
+          section:
+          - path: /security/for-admins/hardened-desktop/enhanced-container-isolation/
+            title: What is Enhanced Container Isolation?
+          - path: /security/for-admins/hardened-desktop/enhanced-container-isolation/how-eci-works/
+            title: How does it work?
+          - path: /security/for-admins/hardened-desktop/enhanced-container-isolation/features-benefits/
+            title: Key features and benefits
+          - path: /security/for-admins/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced configuration options
+          - path: /security/for-admins/hardened-desktop/enhanced-container-isolation/limitations/
+            title: Limitations
+          - path: /security/for-admins/hardened-desktop/enhanced-container-isolation/faq/
+            title: FAQ
+@y
+        - sectiontitle: Enhanced Container Isolation
+          section:
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/
+            title: What is Enhanced Container Isolation?
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/how-eci-works/
+            title: How does it work?
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/features-benefits/
+            title: Key features and benefits
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/config/
+            title: Advanced configuration options
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/limitations/
+            title: Limitations
+          - path: __SUBDIR__/security/for-admins/hardened-desktop/enhanced-container-isolation/faq/
+            title: FAQ
+@z
+
+@x
+        - path: /security/for-admins/hardened-desktop/air-gapped-containers/
+          title: Air-Gapped Containers
+        - path: /security/for-admins/hardened-desktop/image-access-management/
+          title: Image Access Management
+        - path: /security/for-admins/hardened-desktop/registry-access-management/
+          title: Registry Access Management
+@y
+        - path: __SUBDIR__/security/for-admins/hardened-desktop/air-gapped-containers/
+          title: Air-Gapped Containers
+        - path: __SUBDIR__/security/for-admins/hardened-desktop/image-access-management/
+          title: Image Access Management
+        - path: __SUBDIR__/security/for-admins/hardened-desktop/registry-access-management/
+          title: Registry Access Management
 @z
 
 @x

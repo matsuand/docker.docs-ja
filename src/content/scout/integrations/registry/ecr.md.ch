@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
 description: Integrate Amazon Elastic Container Registry with Docker Scout
@@ -59,7 +59,7 @@ The following diagram shows how the Docker Scout ECR integration works.
 ![How the ECR integration works](../../images/Scout-ECR.png)
 @z
 
-@x (no slash) 対応
+@x
 After the integration, Docker Scout automatically pulls and analyzes images
 that you push to the ECR registry. Metadata about your images are stored on the
 Docker Scout platform, but Docker Scout doesn't store the container images
@@ -86,7 +86,7 @@ The following table describes the configuration resources.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Creating these resources incurs a small, recurring cost on the AWS account.
 > The **Cost** column in the table represents an estimated monthly cost of the
@@ -95,7 +95,7 @@ The following table describes the configuration resources.
 > Additionally, an egress cost also applies when Docker Scout pulls the images
 > from ECR. The egress cost is around $0.09 per GB.
 @y
-> **Note**
+> [!NOTE]
 >
 > Creating these resources incurs a small, recurring cost on the AWS account.
 > The **Cost** column in the table represents an estimated monthly cost of the
@@ -340,7 +340,7 @@ organization.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Removing the integration from the Docker Scout dashboard doesn't remove the
 > AWS resources in your account.
@@ -348,9 +348,8 @@ organization.
 > After removing the integration in Docker Scout, go to the AWS console and
 > delete the **DockerScoutECRIntegration** CloudFormation stack for the integration
 > that you want to remove.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Removing the integration from the Docker Scout dashboard doesn't remove the
 > AWS resources in your account.
@@ -358,7 +357,6 @@ organization.
 > After removing the integration in Docker Scout, go to the AWS console and
 > delete the **DockerScoutECRIntegration** CloudFormation stack for the integration
 > that you want to remove.
-{ .important }
 @z
 
 @x

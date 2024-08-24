@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
 description:
@@ -103,20 +103,20 @@ Docker Scout supports the following runtime integrations:
 - [Sysdig integration](./sysdig.md)
 @z
 
-@x (no slash) 対応
-> **Note**
+@x
+> [!NOTE]
 >
 > Only organization owners can create new environments and set up integrations.
 > Additionally, Docker Scout only assigns an image to an environment if the
 > image [has been analyzed](/scout/explore/analysis.md), either manually or
 > through a [registry integration](/scout/integrations/_index.md#container-registries).
 @y
-> **Note**
+> [!NOTE]
 >
 > Only organization owners can create new environments and set up integrations.
 > Additionally, Docker Scout only assigns an image to an environment if the
 > image [has been analyzed](scout/explore/analysis.md), either manually or
-> through a [registry integration](scout/integrations/_index.md#container-registries).
+> through a [registry integration]/scout/integrations/_index.md#container-registries).
 @z
 
 @x
@@ -201,7 +201,7 @@ comparing the image built from the code in the PR to the corresponding image in
 staging or production.
 @z
 
-@x (no slash) 対応
+@x
 You can also compare with streams using the `--to-env` flag on the
 [`docker scout compare`](/reference/cli/docker/scout/compare.md)
 CLI command:

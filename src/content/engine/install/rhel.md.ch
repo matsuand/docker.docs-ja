@@ -2,65 +2,37 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to install Docker Engine on RHEL. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
   update
 title: Install Docker Engine on RHEL
-toc_max: 4
-aliases:
-- /ee/docker-ee/rhel/
-- /engine/installation/linux/docker-ce/rhel/
-- /engine/installation/linux/docker-ee/rhel/
-- /engine/installation/linux/rhel/
-- /engine/installation/rhel/
-- /install/linux/docker-ee/rhel/
-- /installation/rhel/
-download-url-base: https://download.docker.com/linux/rhel
----
 @y
----
 description: Learn how to install Docker Engine on RHEL. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
   update
 title: Install Docker Engine on RHEL
-toc_max: 4
-aliases:
-- /ee/docker-ee/rhel/
-- /engine/installation/linux/docker-ce/rhel/
-- /engine/installation/linux/docker-ee/rhel/
-- /engine/installation/linux/rhel/
-- /engine/installation/rhel/
-- /install/linux/docker-ee/rhel/
-- /installation/rhel/
-download-url-base: https://download.docker.com/linux/rhel
----
 @z
 
 @x
-> **Experimental**
->
-> Support for Docker Engine on RHEL x86_64 and aarch64 is experimental.
-{ .experimental }
+{{% experimental %}}
+Support for Docker Engine on RHEL x86_64 and aarch64 is experimental.
+{{% /experimental %}}
 @y
-> **Experimental**
->
-> Support for Docker Engine on RHEL x86_64 and aarch64 is experimental.
-{ .experimental }
+{{% experimental %}}
+Support for Docker Engine on RHEL x86_64 and aarch64 is experimental.
+{{% /experimental %}}
 @z
 
 @x
-> **Docker Desktop for Linux** is also available for RHEL.
-> 
-> To get access, join the [Early Access Program](https://www.docker.com/docker-desktop-preview-program/).
-{ .restricted }
+{{% restricted title="Docker Desktop for Linux is also available for RHEL." %}}
+To get access, join the [Early Access Program](https://www.docker.com/docker-desktop-preview-program/).
+{{% /restricted %}}
 @y
-> **Docker Desktop for Linux** is also available for RHEL.
-> 
-> To get access, join the [Early Access Program](https://www.docker.com/docker-desktop-preview-program/).
-{ .restricted }
+{{% restricted title="Docker Desktop for Linux is also available for RHEL." %}}
+To get access, join the [Early Access Program](https://www.docker.com/docker-desktop-preview-program/).
+{{% /restricted %}}
 @z
 
 @x

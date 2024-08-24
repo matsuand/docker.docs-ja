@@ -68,11 +68,11 @@ When creating a new repository:
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > You can't rename a Docker Hub repository once it's created.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > You can't rename a Docker Hub repository once it's created.
 @z
@@ -92,11 +92,11 @@ When creating a new repository:
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > For organizations creating a new repository, it's recommended you select **Private**.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > For organizations creating a new repository, it's recommended you select **Private**.
 @z

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Store configuration data using Docker Configs
 description: How to store configuration data separate from the runtime
 keywords: swarm, configuration, configs
----
 @y
----
 title: Store configuration data using Docker Configs
 description: How to store configuration data separate from the runtime
 keywords: swarm, configuration, configs
----
 @z
 
 @x
@@ -50,13 +48,13 @@ Config values can be generic strings or binary content (up to 500 kb in size).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker configs are only available to swarm services, not to
 > standalone containers. To use this feature, consider adapting your container
 > to run as a service with a scale of 1.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker configs are only available to swarm services, not to
 > standalone containers. To use this feature, consider adapting your container
@@ -308,13 +306,13 @@ Docker configs.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > These examples use a single-engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
 > support configs.
 @y
-> **Note**
+> [!NOTE]
 >
 > These examples use a single-engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
@@ -330,11 +328,11 @@ Docker configs.
 @x
 The `docker stack` command supports defining configs in a Compose file.
 However, the `configs` key is not supported for `docker compose`. See
-[the Compose file reference](../../compose/compose-file/legacy-versions.md) for details.
+[the Compose file reference](/reference/compose-file/legacy-versions.md) for details.
 @y
 The `docker stack` command supports defining configs in a Compose file.
 However, the `configs` key is not supported for `docker compose`. See
-[the Compose file reference](../../compose/compose-file/legacy-versions.md) for details.
+[the Compose file reference](reference/compose-file/legacy-versions.md) for details.
 @z
 
 @x

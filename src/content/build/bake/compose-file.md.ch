@@ -1,29 +1,23 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Building with Bake from a Compose file
 description: Build your compose services with Bake
 keywords: build, buildx, bake, buildkit, compose, yaml
-aliases:
-  - /build/customize/bake/compose-file/
----
 @y
----
 title: Building with Bake from a Compose file
 description: Build your compose services with Bake
 keywords: build, buildx, bake, buildkit, compose, yaml
-aliases:
-  - /build/customize/bake/compose-file/
----
 @z
 
 @x
-Bake supports the [Compose file format](../../compose/compose-file/_index.md)
+Bake supports the [Compose file format](/reference/compose-file/_index.md)
 to parse a Compose file and translate each service to a [target](reference.md#target).
 @y
-Bake supports the [Compose file format](../../compose/compose-file/_index.md)
+Bake supports the [Compose file format](reference/compose-file/_index.md)
 to parse a Compose file and translate each service to a [target](reference.md#target).
 @z
 
@@ -171,11 +165,11 @@ The compose format has some limitations compared to the HCL format:
 
 @x
 - Specifying variables or global scope attributes is not yet supported
-- `inherits` service field is not supported, but you can use [YAML anchors](../../compose/compose-file/10-fragments.md)
+- `inherits` service field is not supported, but you can use [YAML anchors](/reference/compose-file/fragments.md)
   to reference other services, as demonstrated in the previous example with `&build-dev`.
 @y
 - Specifying variables or global scope attributes is not yet supported
-- `inherits` service field is not supported, but you can use [YAML anchors](../../compose/compose-file/10-fragments.md)
+- `inherits` service field is not supported, but you can use [YAML anchors](reference/compose-file/fragments.md)
   to reference other services, as demonstrated in the previous example with `&build-dev`.
 @z
 
@@ -276,12 +270,12 @@ $ docker buildx bake --print
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > System environment variables take precedence over environment variables
 > in `.env` file.
 @y
-> **Note**
+> [!NOTE]
 >
 > System environment variables take precedence over environment variables
 > in `.env` file.
@@ -295,11 +289,11 @@ $ docker buildx bake --print
 
 @x
 Where some fields are not available in the compose specification, you can use
-the [special extension](../../compose/compose-file/11-extension.md) field
+the [special extension](/reference/compose-file/extension.md) field
 `x-bake` in your compose file to evaluate extra fields:
 @y
 Where some fields are not available in the compose specification, you can use
-the [special extension](../../compose/compose-file/11-extension.md) field
+the [special extension](reference/compose-file/extension.md) field
 `x-bake` in your compose file to evaluate extra fields:
 @z
 

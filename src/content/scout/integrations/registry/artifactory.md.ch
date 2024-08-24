@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 description: Integrate JFrog Artifactory and JFrog Container Registry with Docker Scout
@@ -44,17 +44,15 @@ docker login {URL}
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > For cloud-hosted Artifactory you can find the credentials for your Artifactory repository by
 > selecting it in the Artifactory UI and then the **Set Me Up** button.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > For cloud-hosted Artifactory you can find the credentials for your Artifactory repository by
 > selecting it in the Artifactory UI and then the **Set Me Up** button.
-{ .tip }
 @z
 
 @x
@@ -347,18 +345,16 @@ the container. Make sure the mount path you use is the directory containing the
 
 @x
 <!-- prettier-ignore -->
-> **Important**
+> [!IMPORTANT]
 >
 > Use the `v1` tag of the Artifactory agent image. Don't use the `latest` tag as
 > doing so may incur breaking changes.
-{ .important }
 @y
 <!-- prettier-ignore -->
-> **Important**
+> [!IMPORTANT]
 >
 > Use the `v1` tag of the Artifactory agent image. Don't use the `latest` tag as
 > doing so may incur breaking changes.
-{ .important }
 @z
 
 @x
@@ -441,11 +437,13 @@ You can view the image analysis results in the Docker Scout Dashboard.
 
 @x
 1. Go to [Images page](https://scout.docker.com/reports/images/) in the Docker Scout Dashboard.
+@y
+1. Go to [Images page](https://scout.docker.com/reports/images/) in the Docker Scout Dashboard.
+@z
 
+@x
    This page displays the Docker Scout-enabled repositories in your organization.
 @y
-1. Go to [Images page](https://scout.docker.com/reports/images/) in the Docker Scout Dashboard.
-
    This page displays the Docker Scout-enabled repositories in your organization.
 @z
 

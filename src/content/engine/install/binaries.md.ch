@@ -14,7 +14,7 @@ title: Install Docker Engine from binaries
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > This page contains information on how to install Docker using binaries. These
 > instructions are mostly suitable for testing purposes. We do not recommend
@@ -34,9 +34,8 @@ title: Install Docker Engine from binaries
 > On Windows and Mac, we recommend that you install [Docker Desktop](../../desktop/index.md)
 > instead. For Linux, we recommend that you follow the instructions specific for
 > your distribution.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > This page contains information on how to install Docker using binaries. These
 > instructions are mostly suitable for testing purposes. We do not recommend
@@ -56,7 +55,6 @@ title: Install Docker Engine from binaries
 > On Windows and Mac, we recommend that you install [Docker Desktop](../../desktop/index.md)
 > instead. For Linux, we recommend that you follow the instructions specific for
 > your distribution.
-{ .important }
 @z
 
 @x
@@ -185,14 +183,12 @@ instructions for enabling and configuring AppArmor or SELinux.
 > If either of the security mechanisms is enabled, do not disable it as a
 > work-around to make Docker or its containers run. Instead, configure it
 > correctly to fix any problems.
-{ .warning }
 @y
 > **Security warning**
 >
 > If either of the security mechanisms is enabled, do not disable it as a
 > work-around to make Docker or its containers run. Instead, configure it
 > correctly to fix any problems.
-{ .warning }
 @z
 
 @x
@@ -344,14 +340,14 @@ You have now successfully installed and started Docker Engine.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The following instructions are mostly suitable for testing purposes. The macOS
 > binary includes the Docker client only. It does not include the `dockerd` daemon
 > which is required to run containers. Therefore, we recommend that you install
 > [Docker Desktop](../../desktop/index.md) instead.
 @y
-> **Note**
+> [!NOTE]
 >
 > The following instructions are mostly suitable for testing purposes. The macOS
 > binary includes the Docker client only. It does not include the `dockerd` daemon
@@ -496,7 +492,7 @@ To install client binaries, perform the following steps:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The following section describes how to install the Docker daemon on Windows
 > Server which allows you to run Windows containers only. When you install the
@@ -504,7 +500,7 @@ To install client binaries, perform the following steps:
 > such as `buildx` and `compose`. If you're running Windows 10 or 11,
 > we recommend that you install [Docker Desktop](../../desktop/index.md) instead.
 @y
-> **Note**
+> [!NOTE]
 >
 > The following section describes how to install the Docker daemon on Windows
 > Server which allows you to run Windows containers only. When you install the

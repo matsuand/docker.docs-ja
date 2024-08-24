@@ -32,7 +32,7 @@ include examples of customizing the output format.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When using the `--format` flag, you need observe your shell environment.
 > In a POSIX shell, you can run the following with a single quote:
@@ -47,10 +47,8 @@ include examples of customizing the output format.
 > ```console
 > $ docker inspect --format '{{join .Args \" , \"}}'
 > ```
->
-{ .important }
 @y
-> **Note**
+> [!NOTE]
 >
 > When using the `--format` flag, you need observe your shell environment.
 > In a POSIX shell, you can run the following with a single quote:
@@ -65,8 +63,6 @@ include examples of customizing the output format.
 > ```console
 > $ docker inspect --format '{{join .Args \" , \"}}'
 > ```
->
-{ .important }
 @z
 
 @x

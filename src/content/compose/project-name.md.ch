@@ -25,12 +25,12 @@ This page offers examples of scenarios where custom project names can be helpful
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The default project directory is the base directory of the Compose file. A custom value can also be set
 > for it using the [`--project-directory` command line option](reference/_index.md).
 @y
-> **メモ**
+> [!メモ]
 >
 > デフォルトのプロジェクトディレクトリは、Compose ファイルがあるベースディレクトリです。
 > これについても [コマンドラインオプション `--project-directory`](reference/_index.md) を使って、独自のものに設定することができます。
@@ -86,13 +86,13 @@ The precedence order for each method, from highest to lowest, is as follows:
 @x
 1. The `-p` command line flag. 
 2. The [COMPOSE_PROJECT_NAME environment variable](environment-variables/envvars.md).
-3. The [top-level `name:` attribute](compose-file/04-version-and-name.md) in your Compose file. Or the last `name:` if you [specify multiple Compose files](multiple-compose-files/merge.md) in the command line with the `-f` flag.
+3. The [top-level `name:` attribute](/reference/compose-file/version-and-name.md) in your Compose file. Or the last `name:` if you [specify multiple Compose files](multiple-compose-files/merge.md) in the command line with the `-f` flag.
 4. The base name of the project directory containing your Compose file. Or the base name of the first Compose file if you [specify multiple Compose files](multiple-compose-files/merge.md) in the command line with the `-f` flag. 
 5. The base name of the current directory if no Compose file is specified.
 @y
 1. The `-p` command line flag. 
 2. The [COMPOSE_PROJECT_NAME environment variable](environment-variables/envvars.md).
-3. The [top-level `name:` attribute](compose-file/04-version-and-name.md) in your Compose file. Or the last `name:` if you [specify multiple Compose files](multiple-compose-files/merge.md) in the command line with the `-f` flag.
+3. The [top-level `name:` attribute](reference/compose-file/version-and-name.md) in your Compose file. Or the last `name:` if you [specify multiple Compose files](multiple-compose-files/merge.md) in the command line with the `-f` flag.
 4. The base name of the project directory containing your Compose file. Or the base name of the first Compose file if you [specify multiple Compose files](multiple-compose-files/merge.md) in the command line with the `-f` flag. 
 5. The base name of the current directory if no Compose file is specified.
 @z

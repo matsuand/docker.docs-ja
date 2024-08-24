@@ -296,12 +296,12 @@ has all necessary tools and libraries to compile and run a Go application.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you are curious about creating your own base images, you can check out the following section of this guide: [creating base images](../../build/building/base-images.md#create-a-base-image).
 > Note, however, that this isn't necessary to continue with your task at hand.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you are curious about creating your own base images, you can check out the following section of this guide: [creating base images](../../build/building/base-images.md#create-a-base-image).
 > Note, however, that this isn't necessary to continue with your task at hand.
@@ -394,14 +394,14 @@ COPY go.mod go.sum ./
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you'd like to familiarize yourself with the trailing slash treatment by the
 > `COPY` command, see [Dockerfile
 > reference](../../reference/dockerfile.md#copy). This trailing slash can
 > cause issues in more ways than you can imagine.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you'd like to familiarize yourself with the trailing slash treatment by the
 > `COPY` command, see [Dockerfile

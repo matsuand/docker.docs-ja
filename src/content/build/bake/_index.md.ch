@@ -18,17 +18,23 @@ aliases:
 @z
 
 @x
-> **Experimental**
->
-> Bake is an experimental feature, and we are looking for
-> [feedback from users](https://github.com/docker/buildx/issues).
-{ .experimental }
+{{% experimental %}}
 @y
-> **Experimental**
->
-> Bake is an experimental feature, and we are looking for
-> [feedback from users](https://github.com/docker/buildx/issues).
-{ .experimental }
+{{% experimental %}}
+@z
+
+@x
+Bake is an experimental feature, and we are looking for
+[feedback from users](https://github.com/docker/buildx/issues).
+@y
+Bake is an experimental feature, and we are looking for
+[feedback from users](https://github.com/docker/buildx/issues).
+@z
+
+@x
+{{% /experimental %}}
+@y
+{{% /experimental %}}
 @z
 
 @x

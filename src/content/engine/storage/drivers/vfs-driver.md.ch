@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to optimize your use of VFS driver.
 keywords: container, storage, driver, vfs
 title: Use the VFS storage driver
-aliases:
-- /engine/userguide/storagedriver/vfs-driver/
----
 @y
----
 description: Learn how to optimize your use of VFS driver.
 keywords: container, storage, driver, vfs
 title: Use the VFS storage driver
-aliases:
-- /engine/userguide/storagedriver/vfs-driver/
----
 @z
 
 @x

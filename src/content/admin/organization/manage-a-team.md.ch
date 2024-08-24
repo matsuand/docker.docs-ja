@@ -252,13 +252,13 @@ you automatically have "Read-only" permissions:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > A user who hasn't verified their email address only has
 > `Read-only` access to the repository, regardless of the rights their team
 > membership has given them.
 @y
-> **Note**
+> [!NOTE]
 >
 > A user who hasn't verified their email address only has
 > `Read-only` access to the repository, regardless of the rights their team

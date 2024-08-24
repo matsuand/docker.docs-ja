@@ -88,7 +88,7 @@ The following table describes the configuration resources.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Creating these resources incurs a small, recurring cost on the Azure account.
 > The **Cost** column in the table represents an estimated monthly cost of the
@@ -98,7 +98,7 @@ The following table describes the configuration resources.
 > The Egress cost varies depending on usage, but it’s around $0.1 per GB, and
 > the first 100 GB are free.
 @y
-> **Note**
+> [!NOTE]
 >
 > Creating these resources incurs a small, recurring cost on the Azure account.
 > The **Cost** column in the table represents an estimated monthly cost of the
@@ -306,17 +306,15 @@ latest image version automatically.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Removing the integration in the Docker Scout Dashboard doesn't automatically
 > remove the resources created in Azure.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Removing the integration in the Docker Scout Dashboard doesn't automatically
 > remove the resources created in Azure.
-{ .important }
 @z
 
 @x

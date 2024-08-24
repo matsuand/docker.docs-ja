@@ -20,6 +20,12 @@ billing:
 @z
 
 @x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
+@z
+
+@x
 This page describes how to add or update a payment method for your personal account or for an organization.
 @y
 This page describes how to add or update a payment method for your personal account or for an organization.
@@ -108,11 +114,11 @@ All currency, for example the amount listed on your billing invoice, is in Unite
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must be an organization owner to make changes to the payment information.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must be an organization owner to make changes to the payment information.
 @z

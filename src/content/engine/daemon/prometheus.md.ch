@@ -34,17 +34,15 @@ alerting toolkit. You can configure Docker as a Prometheus target.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > The available metrics and the names of those metrics are in active
 > development and may change at any time.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > The available metrics and the names of those metrics are in active
 > development and may change at any time.
-{ .warning }
 @z
 
 @x
@@ -304,12 +302,12 @@ Verify that the Docker target is listed at `http://localhost:9090/targets/`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can't access the endpoint URLs on this page directly if you use Docker
 > Desktop.
 @y
-> **Note**
+> [!NOTE]
 >
 > You can't access the endpoint URLs on this page directly if you use Docker
 > Desktop.

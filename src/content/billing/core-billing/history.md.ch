@@ -20,6 +20,12 @@ aliases:
 @z
 
 @x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
+@z
+
+@x
 In this section, learn how you can view your billing history, manage your invoices, and verify your renewal date. All monthly and annual subscriptions are automatically renewed at the end of the term using the original form of payment.
 @y
 In this section, learn how you can view your billing history, manage your invoices, and verify your renewal date. All monthly and annual subscriptions are automatically renewed at the end of the term using the original form of payment.
@@ -184,11 +190,11 @@ From here you can download an invoice.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must be an owner of the organization to view the billing history. 
 @y
-> **Note**
+> [!NOTE]
 >
 > You must be an owner of the organization to view the billing history. 
 @z

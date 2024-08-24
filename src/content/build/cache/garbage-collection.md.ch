@@ -50,19 +50,19 @@ parameters by defining garbage collection policies.
 @z
 
 @x
-Depending on the [driver](../drivers/index.md) used by your builder instance,
+Depending on the [driver](../builders/drivers/_index.md) used by your builder instance,
 the garbage collection will use a different configuration file.
 @y
-Depending on the [driver](../drivers/index.md) used by your builder instance,
+Depending on the [driver](../builders/drivers/_index.md) used by your builder instance,
 the garbage collection will use a different configuration file.
 @z
 
 @x
-If you're using the [`docker` driver](../drivers/docker.md), garbage collection
+If you're using the [`docker` driver](../builders/drivers/docker.md), garbage collection
 can be configured in the [Docker Daemon configuration](../../reference/cli/dockerd.md#daemon-configuration-file).
 file:
 @y
-If you're using the [`docker` driver](../drivers/docker.md), garbage collection
+If you're using the [`docker` driver](../builders/drivers/docker.md), garbage collection
 can be configured in the [Docker Daemon configuration](../../reference/cli/dockerd.md#daemon-configuration-file).
 file:
 @z
@@ -204,12 +204,12 @@ GC Policy rule#3:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `Keep Bytes` defaults to 10% of the size of the disk. If the disk size cannot
 > be determined, it uses 2GB as a fallback.
 @y
-> **Note**
+> [!NOTE]
 >
 > `Keep Bytes` defaults to 10% of the size of the disk. If the disk size cannot
 > be determined, it uses 2GB as a fallback.

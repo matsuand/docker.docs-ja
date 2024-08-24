@@ -22,12 +22,12 @@ Actions.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > See [Cache storage backends](../../cache/backends/_index.md) for more
 > details about cache storage backends.
 @y
-> **Note**
+> [!NOTE]
 >
 > See [Cache storage backends](../../cache/backends/_index.md) for more
 > details about cache storage backends.
@@ -210,17 +210,17 @@ jobs:
 @z
 
 @x
-> Experimental
->
-> This cache exporter is experimental. Please provide feedback on [BuildKit repository](https://github.com/moby/buildkit)
-> if you experience any issues.
-{ .experimental }
+{{% experimental %}}
+This cache exporter is experimental. Please provide feedback on the
+[BuildKit repository](https://github.com/moby/buildkit)
+if you experience any issues.
+{{% /experimental %}}
 @y
-> Experimental
->
-> This cache exporter is experimental. Please provide feedback on [BuildKit repository](https://github.com/moby/buildkit)
-> if you experience any issues.
-{ .experimental }
+{{% experimental %}}
+This cache exporter is experimental. Please provide feedback on the
+[BuildKit repository](https://github.com/moby/buildkit)
+if you experience any issues.
+{{% /experimental %}}
 @z
 
 @x
@@ -516,19 +516,17 @@ For more information about this workaround, refer to the
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > At the moment, old cache entries aren't deleted, so the cache size [keeps growing](https://github.com/docker/build-push-action/issues/252).
 > The following example uses the `Move cache` step as a workaround (see [`moby/buildkit#1896`](https://github.com/moby/buildkit/issues/1896)
 > for more info).
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > At the moment, old cache entries aren't deleted, so the cache size [keeps growing](https://github.com/docker/build-push-action/issues/252).
 > The following example uses the `Move cache` step as a workaround (see [`moby/buildkit#1896`](https://github.com/moby/buildkit/issues/1896)
 > for more info).
-{ .warning }
 @z
 
 @x

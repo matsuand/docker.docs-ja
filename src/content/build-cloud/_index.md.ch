@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker Build Cloud
@@ -82,13 +82,21 @@ Docker Build Cloud provides several benefits over local builds:
 @x
 And the best part: you don't need to worry about managing builders or
 infrastructure. Just connect to your builders, and start building.
+Each cloud builder provisioned to an organization is completely
+isolated to a single Amazon EC2 instance, with a dedicated EBS volume for build
+cache, and encryption in transit. That means there are no shared processes or
+data between cloud builders.
 @y
 And the best part: you don't need to worry about managing builders or
 infrastructure. Just connect to your builders, and start building.
+Each cloud builder provisioned to an organization is completely
+isolated to a single Amazon EC2 instance, with a dedicated EBS volume for build
+cache, and encryption in transit. That means there are no shared processes or
+data between cloud builders.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Build Cloud is currently only available in the US East region. Users
 > in Europe and Asia may experience increased latency compared to users based
@@ -96,7 +104,7 @@ infrastructure. Just connect to your builders, and start building.
 >
 > Support for multi-region builders is on the roadmap.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Build Cloud is currently only available in the US East region. Users
 > in Europe and Asia may experience increased latency compared to users based
@@ -108,17 +116,17 @@ infrastructure. Just connect to your builders, and start building.
 @x
 ## Get Docker Build Cloud
 @y
-## Docker Build Cloud の入手 {#get-docker-build-cloud}
+## Get Docker Build Cloud
 @z
 
 @x
 To get started with Docker Build Cloud,
-[create a Docker account](/docker-id/_index.md)
+[create a Docker account](/accounts/create-account/)
 and sign up for the starter plan on the
 [Docker Build Cloud Dashboard](https://build.docker.com/).
 @y
 To get started with Docker Build Cloud,
-[create a Docker account](docker-id/_index.md)
+[create a Docker account](__SUBDIR__/accounts/create-account/)
 and sign up for the starter plan on the
 [Docker Build Cloud Dashboard](https://build.docker.com/).
 @z

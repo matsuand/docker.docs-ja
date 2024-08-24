@@ -28,7 +28,7 @@
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > If your IdP setup requires an Entity ID and the ACS URL, you must select the
 > **SAML** tab in the **Authentication Method** section. For example, if your
@@ -36,9 +36,8 @@
 > AD, you must select **SAML**. If you are [configuring Open ID Connect with Entra ID (formerly Azure AD)](https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-openid-settings) select
 > **Azure AD (OIDC)** as the authentication method. Also, IdP initiated connections
 > aren't supported at this time.
-{ .important}
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > If your IdP setup requires an Entity ID and the ACS URL, you must select the
 > **SAML** tab in the **Authentication Method** section. For example, if your
@@ -46,7 +45,6 @@
 > AD, you must select **SAML**. If you are [configuring Open ID Connect with Entra ID (formerly Azure AD)](https://docs.microsoft.com/en-us/powerapps/maker/portals/configure/configure-openid-settings) select
 > **Azure AD (OIDC)** as the authentication method. Also, IdP initiated connections
 > aren't supported at this time.
-{ .important}
 @z
 
 @x
@@ -58,19 +56,39 @@ After your domain is verified, create an SSO connection.
 @x
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
-3. In the SSO connections table select **Create Connection**, and create a name for the connection.
 @y
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
+@z
+
+@x
+   > [!NOTE]
+   >
+   > When an organization is part of a company, you must select the company and
+   > configure SSO for that organization at the company level. Each organization
+   > can have its own SSO configuration and domain, but it must be configured at
+   > the company level.
+@y
+   > [!NOTE]
+   >
+   > When an organization is part of a company, you must select the company and
+   > configure SSO for that organization at the company level. Each organization
+   > can have its own SSO configuration and domain, but it must be configured at
+   > the company level.
+@z
+
+@x
+3. In the SSO connections table select **Create Connection**, and create a name for the connection.
+@y
 3. In the SSO connections table select **Create Connection**, and create a name for the connection.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > You have to verify at least one domain before creating the connections.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > You have to verify at least one domain before creating the connections.
 @z

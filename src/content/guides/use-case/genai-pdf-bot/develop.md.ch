@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
 title: Use containers for generative AI development
 keywords: python, local, development, generative ai, genai, llm, neo4j, ollama, langchain, openai
@@ -45,11 +47,11 @@ In this section, you'll learn how to set up a development environment to access 
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can see more samples of containerized GenAI applications in the [GenAI Stack](https://github.com/docker/genai-stack) demo applications.
 @y
-> **メモ**
+> [!メモ]
 >
 > コンテナー化した GenAI アプリケーションのより詳細なサンプルについては、[GenAI スタック](https://github.com/docker/genai-stack) のデモアプリケーションにおいて見ることができます。
 @z
@@ -99,11 +101,11 @@ To run the database service:
 % snip code...
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > To learn more about Neo4j, see the [Neo4j Official Docker Image](https://hub.docker.com/_/neo4j).
 @y
-   > **メモ**
+   > [!メモ]
    >
    > Neo4j についての詳細は [Neo4j 公式 Docker イメージ](https://hub.docker.com/_/neo4j) を参照してください。
 @z
@@ -212,11 +214,11 @@ To run Ollama in a container and provide GPU access:
 % snip code...
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](../../../compose/gpu-support.md).
 @y
-   > **Note**
+   > [!メモ]
    >
    > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](../../../compose/gpu-support.md).
 @z
@@ -276,15 +278,13 @@ To run Ollama outside of a container:
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Using OpenAI requires an [OpenAI account](https://platform.openai.com/login). OpenAI is a third-party hosted service and charges may apply.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Using OpenAI requires an [OpenAI account](https://platform.openai.com/login). OpenAI is a third-party hosted service and charges may apply.
-{ .important }
 @z
 
 @x
@@ -392,13 +392,14 @@ access all the services that your GenAI application needs.
 @x
 Related information:
  - [Dockerfile reference](../../../reference/dockerfile.md)
- - [Compose file reference](../../../compose/compose-file/_index.md)
+ - [Compose file reference](/reference/compose-file/_index.md)
  - [Ollama Docker image](https://hub.docker.com/r/ollama/ollama)
  - [Neo4j Official Docker Image](https://hub.docker.com/_/neo4j)
  - [GenAI Stack demo applications](https://github.com/docker/genai-stack)
 @y
+Related information:
  - [Dockerfile reference](../../../reference/dockerfile.md)
- - [Compose file reference](../../../compose/compose-file/_index.md)
+ - [Compose file reference](reference/compose-file/_index.md)
  - [Ollama Docker image](https://hub.docker.com/r/ollama/ollama)
  - [Neo4j Official Docker Image](https://hub.docker.com/_/neo4j)
  - [GenAI Stack demo applications](https://github.com/docker/genai-stack)

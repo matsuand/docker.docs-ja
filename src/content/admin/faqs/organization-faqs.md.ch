@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Organization FAQs
@@ -76,10 +76,10 @@ Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.
 @z
 
 @x
-- Administrators can enforce features like [Image Access Management](../../security/for-admins/image-access-management.md) and [Registry Access Management](../../security/for-admins/registry-access-management.md).
+- Administrators can enforce features like [Image Access Management](/security/for-admins/hardened-desktop/image-access-management.md) and [Registry Access Management](../../security/for-admins/hardened-desktop/registry-access-management.md).
  - Administrators can ensure compliance by blocking Docker Desktop usage for users who don't sign in as members of the organization.
 @y
-- Administrators can enforce features like [Image Access Management](../../security/for-admins/image-access-management.md) and [Registry Access Management](../../security/for-admins/registry-access-management.md).
+- Administrators can enforce features like [Image Access Management](security/for-admins/hardened-desktop/image-access-management.md) and [Registry Access Management](../../security/for-admins/hardened-desktop/registry-access-management.md).
  - Administrators can ensure compliance by blocking Docker Desktop usage for users who don't sign in as members of the organization.
 @z
 

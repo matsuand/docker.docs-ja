@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
 title: Docker Scout quickstart
@@ -389,13 +389,13 @@ The sidebar shows a compliance overview for the last pushed tag of a repository.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If policy results haven't appeared yet, try refreshing the page.
 > It might take a few minutes before the results appear if this is your
 > first time using the Docker Scout Dashboard.
 @y
-> **Note**
+> [!NOTE]
 >
 > If policy results haven't appeared yet, try refreshing the page.
 > It might take a few minutes before the results appear if this is your
@@ -429,19 +429,17 @@ which helps keep your base images up-to-date automatically.
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > You can't enable this integration for the demo app used in this guide.
 > Feel free to push the code to a GitHub repository that you own,
 > and try out the integration there!
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > You can't enable this integration for the demo app used in this guide.
 > Feel free to push the code to a GitHub repository that you own,
 > and try out the integration there!
-{ .tip }
 @z
 
 @x

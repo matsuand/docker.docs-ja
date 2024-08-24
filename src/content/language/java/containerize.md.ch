@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 % snip 対応
 
 @x
@@ -21,13 +21,13 @@ description: Learn how to containerize a Java application.
 @z
 
 @x
-- You have installed the latest version of [Docker Desktop](../../../get-docker.md).
+- You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
   Docker adds new features regularly and some parts of this guide may
   work only with the latest version of Docker Desktop.
 * You have a [Git client](https://git-scm.com/downloads). The examples in this
   section use a command-line based Git client, but you can use any client.
 @y
-- You have installed the latest version of [Docker Desktop](../../../get-docker.md).
+- You have installed the latest version of [Docker Desktop](get-started/get-docker.md).
   Docker adds new features regularly and some parts of this guide may
   work only with the latest version of Docker Desktop.
 * You have a [Git client](https://git-scm.com/downloads). The examples in this
@@ -167,11 +167,11 @@ directory.
 @x
 - [Dockerfile](/reference/dockerfile/)
 - [.dockerignore](/reference/dockerfile/#dockerignore-file)
-- [docker-compose.yaml](../../compose/compose-file/_index.md)
+- [docker-compose.yaml](/reference/compose-file/_index.md)
 @y
 - [Dockerfile](__SUBDIR__/reference/dockerfile/)
 - [.dockerignore](__SUBDIR__/reference/dockerfile/#dockerignore-file)
-- [docker-compose.yaml](../../compose/compose-file/_index.md)
+- [docker-compose.yaml](reference/compose-file/_index.md)
 @z
 
 @x
@@ -242,10 +242,10 @@ In the terminal, run the following command to stop the application.
 
 @x
 For more information about Compose commands, see the
-[Compose CLI reference](../../compose/reference/_index.md).
+[Compose CLI reference](/reference/cli/docker/compose/_index.md).
 @y
 For more information about Compose commands, see the
-[Compose CLI reference](../../compose/reference/_index.md).
+[Compose CLI reference](reference/cli/docker/compose/_index.md).
 @z
 
 @x

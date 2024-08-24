@@ -26,15 +26,13 @@ If you don’t have a Docker Core subscription, you can buy Docker Build Cloud T
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > You can create a free Docker Personal account and [try Docker Build Cloud for free](/subscription/build-cloud/build-details#docker-personal). Team benefits aren't included.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > You can create a free Docker Personal account and [try Docker Build Cloud for free](__SUBDIR__/subscription/build-cloud/build-details#docker-personal). Team benefits aren't included.
-{ .tip }
 @z
 
 @x
@@ -94,11 +92,11 @@ You can buy a Docker Build Cloud Team subscription if you haven’t created an o
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > To create a new organization and start a Docker Build Cloud Team subscription, you need a personal Docker account. You can [sign up](https://hub.docker.com/signup) for free.
 @y
-> **Note**
+> [!NOTE]
 >
 > To create a new organization and start a Docker Build Cloud Team subscription, you need a personal Docker account. You can [sign up](https://hub.docker.com/signup) for free.
 @z

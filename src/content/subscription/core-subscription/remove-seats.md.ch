@@ -49,12 +49,10 @@ For example, if you receive your billing on the 8th of every month for 10 seats 
 >**Important**
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to remove seats from your subscription. 
-{ .important }
 @y
 >**Important**
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to remove seats from your subscription. 
-{ .important }
 @z
 
 @x

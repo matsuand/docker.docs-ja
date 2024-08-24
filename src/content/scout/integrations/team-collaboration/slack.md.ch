@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
 title: Integrate Docker Scout with Slack
@@ -52,14 +52,14 @@ to the Slack channels associated with the webhook.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Notifications are only triggered for the *last pushed* image tags for each
 > repository. "Last pushed" refers to the image tag that was most recently
 > pushed to the registry and analyzed by Docker Scout. If the last pushed image
 > is not by a newly disclosed CVE, then no notification will be triggered.
 @y
-> **Note**
+> [!NOTE]
 >
 > Notifications are only triggered for the *last pushed* image tags for each
 > repository. "Last pushed" refers to the image tag that was most recently
@@ -67,7 +67,7 @@ to the Slack channels associated with the webhook.
 > is not by a newly disclosed CVE, then no notification will be triggered.
 @z
 
-@x (no slash) 対応
+@x
 For more information about Docker Scout notifications,
 see [Notification settings](/scout/explore/dashboard.md#notification-settings)
 @y

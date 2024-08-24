@@ -36,11 +36,11 @@ there, to avoid this extra internet traffic.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Official Images are an intellectual property of Docker.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Official Images are an intellectual property of Docker.
 @z
@@ -82,11 +82,11 @@ Hub can be mirrored.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Mirrors of Docker Hub are still subject to Docker's [fair usage policy](https://www.docker.com/pricing/resource-consumption-updates).
 @y
-> **Note**
+> [!NOTE]
 >
 > Mirrors of Docker Hub are still subject to Docker's [fair usage policy](https://www.docker.com/pricing/resource-consumption-updates).
 @z
@@ -194,11 +194,11 @@ but this property does not hold true for a registry cache cluster.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When using Docker Hub, all paid Docker subscriptions are limited to 5000 pulls per day. If you require a higher number of pulls, you can purchase an Enhanced Service Account add-on. See [Service Accounts](/docker-hub/service-accounts/) for more details.
 @y
-> **Note**
+> [!NOTE]
 >
 > When using Docker Hub, all paid Docker subscriptions are limited to 5000 pulls per day. If you require a higher number of pulls, you can purchase an Enhanced Service Account add-on. See [Service Accounts](__SUBDIR__/docker-hub/service-accounts/) for more details.
 @z
@@ -242,35 +242,31 @@ proxy:
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > If you specify a username and password, it's very important to understand that
 > private resources that this user has access to Docker Hub is made available on
 > your mirror. You must secure your mirror by implementing authentication if
 > you expect these resources to stay private!
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > If you specify a username and password, it's very important to understand that
 > private resources that this user has access to Docker Hub is made available on
 > your mirror. You must secure your mirror by implementing authentication if
 > you expect these resources to stay private!
-{ .warning }
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > For the scheduler to clean up old entries, `delete` must be enabled in the
 > registry configuration.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > For the scheduler to clean up old entries, `delete` must be enabled in the
 > registry configuration.
-{ .warning }
 @z
 
 @x
@@ -310,7 +306,7 @@ Save the file and reload Docker for the change to take effect.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Some log messages that appear to be errors are actually informational
 > messages.
@@ -326,7 +322,7 @@ Save the file and reload Docker for the change to take effect.
 > It's telling you that the file doesn't exist yet in the local cache and is
 > being pulled from upstream.
 @y
-> **Note**
+> [!NOTE]
 >
 > Some log messages that appear to be errors are actually informational
 > messages.

@@ -24,6 +24,42 @@ aliases:
 @z
 
 @x
+### Why do I keep getting a notification telling me an application has changed my Desktop configurations?
+@y
+### Why do I keep getting a notification telling me an application has changed my Desktop configurations?
+@z
+
+@x
+You receive this notification because the Configuration integrity check feature has detected that a third-party application has altered your Docker Desktop configuration. This usually happens due to incorrect or missing symlinks. The notification ensures you are aware of these changes so you can review and repair any potential issues to maintain system reliability.
+@y
+You receive this notification because the Configuration integrity check feature has detected that a third-party application has altered your Docker Desktop configuration. This usually happens due to incorrect or missing symlinks. The notification ensures you are aware of these changes so you can review and repair any potential issues to maintain system reliability.
+@z
+
+@x
+Opening the notification presents a pop-up window which provides detailed information about the detected integrity issues.
+@y
+Opening the notification presents a pop-up window which provides detailed information about the detected integrity issues.
+@z
+
+@x
+If you choose to ignore the notification, it will be shown again only at the next Docker Desktop startup. If you choose to repair your configuration, you won't be prompted again.
+@y
+If you choose to ignore the notification, it will be shown again only at the next Docker Desktop startup. If you choose to repair your configuration, you won't be prompted again.
+@z
+
+@x
+If you want to switch off Configuration integrity check notifications, navigate to Docker Desktop's settings and in the **General** tab, clear the **Automatically check configuration** setting. 
+@y
+If you want to switch off Configuration integrity check notifications, navigate to Docker Desktop's settings and in the **General** tab, clear the **Automatically check configuration** setting. 
+@z
+
+@x
+If you have feedback on how to further improve the Configuration integrity check feature, [fill out the feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeD_Odqc__4ihRXDtH_ba52QJuaKZ00qGnNa_tM72MmH32CZw/viewform).
+@y
+If you have feedback on how to further improve the Configuration integrity check feature, [fill out the feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeD_Odqc__4ihRXDtH_ba52QJuaKZ00qGnNa_tM72MmH32CZw/viewform).
+@z
+
+@x
 ### What is HyperKit?
 @y
 ### What is HyperKit?
@@ -157,12 +193,10 @@ To move the disk image file to a different location:
 >**Important**
 >
 > Do not move the file directly in Finder as this can cause Docker Desktop to lose track of the file.
-{ .important }
 @y
 >**Important**
 >
 > Do not move the file directly in Finder as this can cause Docker Desktop to lose track of the file.
-{ .important }
 @z
 
 @x
@@ -416,12 +450,12 @@ certificates](#directory-structures-for-certificates).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You need to restart Docker Desktop after making any changes to the keychain or
 > to the `~/.docker/certs.d` directory in order for the changes to take effect.
 @y
-> **Note**
+> [!NOTE]
 >
 > You need to restart Docker Desktop after making any changes to the keychain or
 > to the `~/.docker/certs.d` directory in order for the changes to take effect.
@@ -464,7 +498,7 @@ Desktop `xhyve` virtual machine).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > * You need to restart Docker Desktop after making any changes to the keychain
 >   or to the `~/.docker/certs.d` directory in order for the changes to take
@@ -475,7 +509,7 @@ Desktop `xhyve` virtual machine).
 >   like `docker run` that attempt to pull from the registry produce error
 >   messages on the command line, as well as on the registry.
 @y
-> **Note**
+> [!NOTE]
 >
 > * You need to restart Docker Desktop after making any changes to the keychain
 >   or to the `~/.docker/certs.d` directory in order for the changes to take

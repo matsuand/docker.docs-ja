@@ -146,12 +146,12 @@ Docker Engine はクライアントサーバーアプリケーションとして
 @z
 
 @x
-The CLI uses [Docker APIs](api/index.md) to control or interact with the Docker
+The CLI uses [Docker APIs](/reference/api/engine/_index.md) to control or interact with the Docker
 daemon through scripting or direct CLI commands. Many other Docker applications
 use the underlying API and CLI. The daemon creates and manages Docker objects,
 such as images, containers, networks, and volumes.
 @y
-CLI は [Docker API](api/index.md) を利用して、Docker デーモンの制御ややりとりを行います。
+CLI は [Docker API](reference/api/engine/_index.md) を利用して、Docker デーモンの制御ややりとりを行います。
 これはスクリプト処理や CLI コマンドの直接操作によって行います。
 これ以外の Docker アプリケーションの多くが API や CLI を利用しています。
 デーモンからは、イメージ、コンテナー、ネットワーク、ボリュームといった Docker オブジェクトが生成され管理されます。
@@ -159,9 +159,9 @@ CLI は [Docker API](api/index.md) を利用して、Docker デーモンの制�
 
 @x
 For more details, see
-[Docker Architecture](../guides/docker-overview.md#docker-architecture).
+[Docker Architecture](/get-started/docker-overview.md#docker-architecture).
 @y
-詳細は [Docker アーキテクチャー](../guides/docker-overview.md#docker-architecture) を参照してください。
+詳細は [Docker アーキテクチャー](get-started/docker-overview.md#docker-architecture) を参照してください。
 @z
 
 % {{< grid >}}

@@ -30,7 +30,7 @@ address.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Given that the container does not have its own IP-address when using
 > `host` mode networking, [port-mapping](overlay.md#publish-ports) doesn't
@@ -41,7 +41,7 @@ address.
 > WARNING: Published ports are discarded when using host network mode
 > ```
 @y
-> **Note**
+> [!NOTE]
 >
 > Given that the container does not have its own IP-address when using
 > `host` mode networking, [port-mapping](overlay.md#publish-ports) doesn't

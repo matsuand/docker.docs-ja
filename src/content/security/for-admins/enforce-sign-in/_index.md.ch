@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
 description: Understand what happens when you force users to sign in to Docker Desktop
@@ -20,24 +20,24 @@ By default, members of your organization can use Docker Desktop without signing
 in. When users don’t sign in as a member of your organization, they don’t
 receive the [benefits of your organization’s
 subscription](../../../subscription/core-subscription/details.md) and they can circumvent [Docker’s
-security features](../../../desktop/hardened-desktop/_index.md) for your organization.
+security features](/security/for-admins/hardened-desktop/_index.md) for your organization.
 @y
 By default, members of your organization can use Docker Desktop without signing
 in. When users don’t sign in as a member of your organization, they don’t
 receive the [benefits of your organization’s
 subscription](../../../subscription/core-subscription/details.md) and they can circumvent [Docker’s
-security features](../../../desktop/hardened-desktop/_index.md) for your organization.
+security features](security/for-admins/hardened-desktop/_index.md) for your organization.
 @z
 
 @x
 There are multiple ways you can enforce sign-in, depending on your companies' set up and preferences:
-- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=violet text="Early Access" >}}
-- [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=violet text="Early Access" >}}
+- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=green text="New" >}}
+- [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=green text="New" >}}
 - [`registry.json` method (All)](methods.md#registryjson-method-all)
 @y
 There are multiple ways you can enforce sign-in, depending on your companies' set up and preferences:
-- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=violet text="Early Access" >}}
-- [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=violet text="Early Access" >}}
+- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=green text="New" >}}
+- [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=green text="New" >}}
 - [`registry.json` method (All)](methods.md#registryjson-method-all)
 @z
 
@@ -87,7 +87,6 @@ following occurs:
 > This means that your users must use SSO to sign in, instead of a username and password.
 > When you enforce sign-in and enforce SSO, your users must sign in and must use SSO to do so.
 > See [Enforce SSO](/security/for-admins/single-sign-on/connect#optional-enforce-sso) for details on how to enable this for your SSO connection.
-{ .tip }
 @y
 > **Enforce sign-in versus enforce SSO**
 >
@@ -96,5 +95,4 @@ following occurs:
 > This means that your users must use SSO to sign in, instead of a username and password.
 > When you enforce sign-in and enforce SSO, your users must sign in and must use SSO to do so.
 > See [Enforce SSO](__SUBDIR__/security/for-admins/single-sign-on/connect#optional-enforce-sso) for details on how to enable this for your SSO connection.
-{ .tip }
 @z

@@ -129,12 +129,12 @@ In this section, you also learned how to use Compose Watch to automatically rebu
 
 @x
 Related information:
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @y
 関連情報
- - [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/)
+ - [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [マルチステージビルド](../../build/building/multi-stage.md)
 @z

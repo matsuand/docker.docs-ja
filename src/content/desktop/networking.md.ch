@@ -126,11 +126,11 @@ See:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Requires a Business subscription.
 @y
-> **Note**
+> [!NOTE]
 >
 > Requires a Business subscription.
 @z

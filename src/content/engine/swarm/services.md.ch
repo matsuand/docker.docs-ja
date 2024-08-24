@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Deploy services to a swarm
@@ -192,11 +192,11 @@ For more details about image tag resolution, see
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This example only works for a Windows container.
 @y
-> **Note**
+> [!NOTE]
 >
 > This example only works for a Windows container.
 @z
@@ -314,11 +314,11 @@ nodes are able to log into the registry and pull the image.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This option is only applicable to services using Windows containers.
 @y
-> **Note**
+> [!NOTE]
 >
 > This option is only applicable to services using Windows containers.
 @z
@@ -778,7 +778,7 @@ of the image.
 @z
 
 @x
-> **Note**>
+> [!NOTE]>
 >
 > If [content trust](../security/trust/index.md) is
 > enabled, the client actually resolves the image's tag to a digest before
@@ -787,7 +787,7 @@ of the image.
 > pre-resolved. In this case, if the client cannot resolve the image to a
 > digest, the request fails.
 @y
-> **Note**>
+> [!NOTE]>
 >
 > If [content trust](../security/trust/index.md) is
 > enabled, the client actually resolves the image's tag to a digest before
@@ -902,13 +902,13 @@ points to and updates the service tasks to use that digest.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you use [content trust](../security/trust/index.md), the Docker
 > client resolves image and the swarm manager receives the image and digest,
 >  rather than a tag.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you use [content trust](../security/trust/index.md), the Docker
 > client resolves image and the swarm manager receives the image and digest,
@@ -1202,7 +1202,7 @@ option to the `--publish` flag.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you publish a service's ports directly on the swarm node using
 > `mode=host` and also set `published=<PORT>` this creates an implicit
@@ -1214,7 +1214,7 @@ option to the `--publish` flag.
 > `--mode=global` flag on `docker service create`, it is difficult to know
 > which nodes are running the service to route work to them.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you publish a service's ports directly on the swarm node using
 > `mode=host` and also set `published=<PORT>` this creates an implicit
@@ -1282,13 +1282,13 @@ service or container on any swarm node which binds to port 8080.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This is a purely illustrative example. Creating an application-layer
 > routing framework for a multi-tiered service is complex and out of scope for
 > this topic.
 @y
-> **Note**
+> [!NOTE]
 >
 > This is a purely illustrative example. Creating an application-layer
 > routing framework for a multi-tiered service is complex and out of scope for
@@ -1432,15 +1432,13 @@ flag. For more information, see
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > This setting applies to Windows hosts only and is ignored for Linux hosts.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > This setting applies to Windows hosts only and is ignored for Linux hosts.
-{ .important }
 @z
 
 @x
@@ -1472,12 +1470,12 @@ mode. The isolation mode can be one of the following:
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > `process` isolation mode is only supported on Windows Server.
   > Windows 10 only supports `hyperv` isolation mode.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > `process` isolation mode is only supported on Windows Server.
   > Windows 10 only supports `hyperv` isolation mode.
@@ -1870,11 +1868,11 @@ preference were not set.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Placement preferences are ignored for global services.
 @y
-> **Note**
+> [!NOTE]
 >
 > Placement preferences are ignored for global services.
 @z
@@ -1910,7 +1908,7 @@ $ docker service create \
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Nodes which are missing the label used to spread still receive
 > task assignments. As a group, these nodes receive tasks in equal
@@ -1920,7 +1918,7 @@ $ docker service create \
 > nodes with the label being used for the spread preference, the
 > preference should be combined with a constraint.
 @y
-> **Note**
+> [!NOTE]
 >
 > Nodes which are missing the label used to spread still receive
 > task assignments. As a group, these nodes receive tasks in equal
@@ -2424,7 +2422,7 @@ The following examples show bind mount syntax:
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Bind mounts can be useful but they can also cause problems. In
 > most cases, it is recommended that you architect your application such that
@@ -2442,9 +2440,8 @@ The following examples show bind mount syntax:
 > - Host bind mounts are non-portable. When you use bind mounts, there is no
 >   guarantee that your application runs the same way in development as it does
 >   in production.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Bind mounts can be useful but they can also cause problems. In
 > most cases, it is recommended that you architect your application such that
@@ -2462,7 +2459,6 @@ The following examples show bind mount syntax:
 > - Host bind mounts are non-portable. When you use bind mounts, there is no
 >   guarantee that your application runs the same way in development as it does
 >   in production.
-{ .important }
 @z
 
 @x

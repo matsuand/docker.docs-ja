@@ -4,39 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 description: Enabling content trust in Docker
 keywords: content, trust, security, docker, documentation
 title: Content trust in Docker
-aliases:
-- /engine/security/trust/content_trust/
-- /notary/getting_started/
-- /notary/advanced_usage/
-- /notary/service_architecture/
-- /notary/running_a_service/
-- /notary/changelog/
-- /notary/reference/server-config/
-- /notary/reference/signer-config/
-- /notary/reference/client-config/
-- /notary/reference/common-configs/
----
 @y
----
 description: Enabling content trust in Docker
 keywords: content, trust, security, docker, documentation
 title: Content trust in Docker
-aliases:
-- /engine/security/trust/content_trust/
-- /notary/getting_started/
-- /notary/advanced_usage/
-- /notary/service_architecture/
-- /notary/running_a_service/
-- /notary/changelog/
-- /notary/reference/server-config/
-- /notary/reference/signer-config/
-- /notary/reference/client-config/
-- /notary/reference/common-configs/
----
 @z
 
 @x
@@ -240,17 +214,15 @@ The following image depicts the various signing keys and their relationships:
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 >The root key once lost is not recoverable. If you lose any other key, send an email to [Docker Hub Support](mailto:hub-support@docker.com). This loss also requires manual intervention from every
 consumer that used a signed tag from this repository prior to the loss.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 >The root key once lost is not recoverable. If you lose any other key, send an email to [Docker Hub Support](mailto:hub-support@docker.com). This loss also requires manual intervention from every
 consumer that used a signed tag from this repository prior to the loss.
-{ .warning }
 @z
 
 @x

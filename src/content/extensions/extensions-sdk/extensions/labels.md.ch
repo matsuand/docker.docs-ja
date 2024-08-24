@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Extension image labels
@@ -38,15 +38,13 @@ You can define [image labels](reference/dockerfile.md#label) in the extension's 
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > If any of the **required** labels are missing in the `Dockerfile`, Docker Desktop considers the extension invalid and doesn't list it in the Marketplace.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > If any of the **required** labels are missing in the `Dockerfile`, Docker Desktop considers the extension invalid and doesn't list it in the Marketplace.
-{ .important }
 @z
 
 @x
@@ -88,19 +86,17 @@ Here is the list of labels you can or need to specify when building your extensi
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
 > [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
 > [styling guidelines](../design/index.md).
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
 > [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
 > [styling guidelines](../design/index.md).
-{ .tip }
 @z
 
 @x

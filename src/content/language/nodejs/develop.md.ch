@@ -73,16 +73,14 @@ You can use containers to set up local services, like a database. In this sectio
 @z
 
 @x
-   > **Important**
+   > [!IMPORTANT]
    >
    > For this section, don't run `docker compose up` until you are instructed to. Running the command at intermediate points may incorrectly initialize your database.
-   { .important }
 @y
-   > **重要**
+   > [!重要]
    >
    > 本節においては、指示があるまで `docker compose up` は実行しないでください。
    > 作業の途中においてコマンド実行してしまうと、データベースが誤って初期化されてしまう場合があります。
-   { .important }
 @z
 
 @x within code
@@ -124,14 +122,14 @@ You can use containers to set up local services, like a database. In this sectio
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > To learn more about the instructions in the Compose file, see [Compose file
-   > reference](/compose/compose-file/).
+   > reference](/reference/compose-file/).
 @y
-   > **メモ**
+   > [!メモ]
    >
-   > Compose ファイル内の命令について詳しく学ぶには [Compose ファイルリファレンス](__SUBDIR__/compose/compose-file/) を参照してください。
+   > Compose ファイル内の命令について詳しく学ぶには [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/) を参照してください。
 @z
 
 @x
@@ -515,13 +513,13 @@ Dockerfile and set up a bind mount for development.
 
 @x
 Related information:
- - [Volumes top-level element](/compose/compose-file/07-volumes/)
- - [Services top-level element](/compose/compose-file/05-services/)
+ - [Volumes top-level element](/reference/compose-file/volumes/)
+ - [Services top-level element](/reference/compose-file/services/)
  - [Multi-stage builds](../../build/building/multi-stage.md)
 @y
 関連情報
- - [ボリュームの最上位項目](__SUBDIR__/compose/compose-file/07-volumes/)
- - [サービスの最上位項目](__SUBDIR__/compose/compose-file/05-services/)
+ - [ボリュームの最上位項目](__SUBDIR__/reference/compose-file/volumes/)
+ - [サービスの最上位項目](__SUBDIR__/reference/compose-file/services/)
  - [マルチステージビルド](../../build/building/multi-stage.md)
 @z
 

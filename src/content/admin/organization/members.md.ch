@@ -116,23 +116,23 @@ To add a member to a team:
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > You can also navigate to **Organizations** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
 4. Select the team and then select **Add**.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > You can also navigate to **Organizations** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
 4. Select the team and then select **Add**.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > An invitee must first accept the invitation to join the organization before being added to the team.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > An invitee must first accept the invitation to join the organization before being added to the team.
 @z
@@ -168,11 +168,11 @@ To add a member to a team:
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > An invitee must first accept the invitation to join the organization before being added to the team.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > An invitee must first accept the invitation to join the organization before being added to the team.
 @z

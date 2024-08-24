@@ -32,15 +32,13 @@ You can update the billing information for your personal account or for an organ
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > You can't update an existing invoice, including paid and unpaid invoices.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > You can't update an existing invoice, including paid and unpaid invoices.
-{ .important }
 @z
 
 @x
@@ -82,11 +80,11 @@ The billing information provided appears on all your billing invoices. The email
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must be an organization owner to make changes to the billing information.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must be an organization owner to make changes to the billing information.
 @z

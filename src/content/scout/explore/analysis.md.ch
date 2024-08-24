@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 % snip 対応
 
 @x
@@ -53,7 +53,7 @@ which means your security status for images is updated in real-time.
 This dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed.
 @z
 
-@x (no slash) 対応
+@x
 Docker Scout image analysis is available by default for Docker Hub repositories.
 You can also integrate third-party registries and other services. To learn more,
 see [Integrating Docker Scout with other systems](/scout/integrations/_index.md).
@@ -69,7 +69,7 @@ see [Integrating Docker Scout with other systems](scout/integrations/_index.md).
 ## Activate Docker Scout on a repository
 @z
 
-@x (no slash) 対応
+@x
 The free tier of Docker Scout lets you use Docker Scout for up to 3
 repositories per Docker organization. You can update your Docker Scout plan if
 you need additional repositories, see [Docker Scout
@@ -81,7 +81,7 @@ you need additional repositories, see [Docker Scout
 billing](billing/scout-billing.md).
 @z
 
-@x (no slash) 対応
+@x
 Before you can activate image analysis on a repository in a third-party registry,
 the registry must be integrated with Docker Scout for your Docker organization.
 Docker Hub is integrated by default. For more information, see
@@ -94,12 +94,12 @@ See [Container registry integrations](scout/integrations/_index.md#container-reg
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must have the **Editor** or **Owner** role in the Docker organization to
 > activate image analysis on a repository.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must have the **Editor** or **Owner** role in the Docker organization to
 > activate image analysis on a repository.
@@ -146,13 +146,13 @@ analysis is activated.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Image analysis on the Docker Scout platform has a maximum image file size
 > limit of 10 GB, unless the image has an SBOM attestation.
 > See [Maximum image size](#maximum-image-size).
 @y
-> **Note**
+> [!NOTE]
 >
 > Image analysis on the Docker Scout platform has a maximum image file size
 > limit of 10 GB, unless the image has an SBOM attestation.
@@ -171,23 +171,23 @@ analysis is activated.
 
 % snip command...
 
-@x (no slash) 対応
+@x
    Building with the `--provenance=true` and `--sbom=true` flags attaches
-   [build attestations](/build/attestations/_index.md) to the image. Docker
+   [build attestations](/build/metadata/attestations/_index.md) to the image. Docker
    Scout uses attestations to provide more fine-grained analysis results.
 @y
    Building with the `--provenance=true` and `--sbom=true` flags attaches
-   [build attestations](build/attestations/_index.md) to the image. Docker
+   [build attestations](build/metadata/attestations/_index.md) to the image. Docker
    Scout uses attestations to provide more fine-grained analysis results.
 @z
 
-@x (no slash) 対応
-   > **Note**
+@x
+   > [!NOTE]
    >
    > The default `docker` driver only supports build attestations if you use the
    > [containerd image store](/desktop/containerd.md).
 @y
-   > **Note**
+   > [!NOTE]
    >
    > The default `docker` driver only supports build attestations if you use the
    > [containerd image store](desktop/containerd.md).
@@ -228,12 +228,12 @@ You can analyze local images with Docker Scout using Docker Desktop or the
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop background indexing supports images up to 10 GB in size.
 > See [Maximum image size](#maximum-image-size).
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop background indexing supports images up to 10 GB in size.
 > See [Maximum image size](#maximum-image-size).
@@ -471,11 +471,11 @@ indexing in Docker Desktop, has an image file size limit of 10 GB (uncompressed)
 To analyze images larger than that, you can either:
 @z
 
-@x (no slash) 対応
-- Attach [SBOM attestations](/build/attestations/sbom.md) at build-time
+@x
+- Attach [SBOM attestations](/build/metadata/attestations/sbom.md) at build-time
 - Use the [CLI](#cli) to analyze the image locally
 @y
-- Attach [SBOM attestations](build/attestations/sbom.md) at build-time
+- Attach [SBOM attestations](build/metadata/attestations/sbom.md) at build-time
 - Use the [CLI](#cli) to analyze the image locally
 @z
 

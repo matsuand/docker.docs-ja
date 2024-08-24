@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 description: Explore a generative AI video analysis app that uses Docker, OpenAI, and Pinecone.
 keywords:  python, generative ai, genai, llm, whisper, pinecone, openai, whisper
 title: GenAI video transcription and chat
----
 @y
----
 description: Explore a generative AI video analysis app that uses Docker, OpenAI, and Pinecone.
 keywords:  python, generative ai, genai, llm, whisper, pinecone, openai, whisper
 title: GenAI video transcription and chat
----
 @z
 
 @x
@@ -78,22 +76,22 @@ The project showcases the following technologies:
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > OpenAI is a third-party hosted service and [charges](https://openai.com/pricing) may apply.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > OpenAI is a third-party hosted service and [charges](https://openai.com/pricing) may apply.
 @z
 
 @x
 - You have a [Pinecone API Key](https://app.pinecone.io/).
-- You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
+- You have installed the latest version of [Docker Desktop](/get-started/get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
 @y
 - You have a [Pinecone API Key](https://app.pinecone.io/).
-- You have installed the latest version of [Docker Desktop](../../../get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
+- You have installed the latest version of [Docker Desktop](get-started/get-docker.md). Docker adds new features regularly and some parts of this guide may work only with the latest version of Docker Desktop.
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
 @z
 
@@ -314,13 +312,13 @@ how to use the service.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You must process at least one video via the
 > [yt-whisper service](#using-the-yt-whisper-service) before using
 > the dockerbot service.
 @y
-> **Note**
+> [!NOTE]
 >
 > You must process at least one video via the
 > [yt-whisper service](#using-the-yt-whisper-service) before using
@@ -443,12 +441,12 @@ The following image shows the application's high-level service architecture, whi
 The application uses Docker to run the application in containers, providing a
 consistent and isolated environment for running it. This means the application
 will operate as intended within its Docker containers, regardless of the
-underlying system differences. To learn more about Docker, see the [Getting started overview](../../getting-started/_index.md).
+underlying system differences. To learn more about Docker, see the [Getting started overview](/get-started/introduction/_index.md).
 @y
 The application uses Docker to run the application in containers, providing a
 consistent and isolated environment for running it. This means the application
 will operate as intended within its Docker containers, regardless of the
-underlying system differences. To learn more about Docker, see the [Getting started overview](../../getting-started/_index.md).
+underlying system differences. To learn more about Docker, see the [Getting started overview](get-started/introduction/_index.md).
 @z
 
 @x

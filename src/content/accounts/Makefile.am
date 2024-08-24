@@ -4,6 +4,7 @@
 
 bases = \
 	_index.md                  \
+	create-account.md          \
 	deactivate-user-account.md \
 	manage-account.md
 

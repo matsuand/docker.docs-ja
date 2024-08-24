@@ -246,7 +246,7 @@ This creates workflow steps to:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This CI workflow runs a local analysis and evaluation of your image. To
 > evaluate the image locally, you must ensure that the image is loaded the
@@ -257,7 +257,7 @@ This creates workflow steps to:
 > example, multi-platform images or images with SBOM or provenance attestation
 > can't be loaded to the local image store.
 @y
-> **Note**
+> [!NOTE]
 >
 > This CI workflow runs a local analysis and evaluation of your image. To
 > evaluate the image locally, you must ensure that the image is loaded the

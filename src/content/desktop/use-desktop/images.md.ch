@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Understand what you can do with the Images view on Docker Dashboard
@@ -164,11 +164,11 @@ Select the image from the list, select the **More options** button and select **
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The repository must exist on Docker Hub in order to pull the latest version of an image. You must be signed in to pull private images.
 @y
-> **Note**
+> [!NOTE]
 >
 > The repository must exist on Docker Hub in order to pull the latest version of an image. You must be signed in to pull private images.
 @z
@@ -186,11 +186,11 @@ Select the image from the list, select the **More options** button and select **
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > You can only push an image to Docker Hub if the image belongs to your Docker ID or your organization. That is, the image must contain the correct username/organization in its tag to be able to push it to Docker Hub.
 @y
-> **Note**
+> [!NOTE]
 >
 > You can only push an image to Docker Hub if the image belongs to your Docker ID or your organization. That is, the image must contain the correct username/organization in its tag to be able to push it to Docker Hub.
 @z
@@ -202,11 +202,11 @@ Select the image from the list, select the **More options** button and select **
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > To remove an image used by a running or a stopped container, you must first remove the associated container.
 @y
-> **Note**
+> [!NOTE]
 >
 > To remove an image used by a running or a stopped container, you must first remove the associated container.
 @z
@@ -282,7 +282,7 @@ Hovering over an image tag reveals two options:
 @z
 
 @x
-- [What is an image?](../../guides/docker-concepts/the-basics/what-is-an-image.md)
+- [What is an image?](/get-started/docker-concepts/the-basics/what-is-an-image.md)
 @y
-- [What is an image?](../../guides/docker-concepts/the-basics/what-is-an-image.md)
+- [What is an image?](get-started/docker-concepts/the-basics/what-is-an-image.md)
 @z

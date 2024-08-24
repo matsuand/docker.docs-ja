@@ -20,11 +20,11 @@ description: Learn how to develop your Rust application locally.
 @z
 
 @x
-* You have installed the latest version of [Docker Desktop](../../get-docker.md).
+* You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
 * You have completed the walkthroughs in the Docker Desktop [Learning Center](../../desktop/get-started.md) to learn about Docker concepts.
 * You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @y
-* You have installed the latest version of [Docker Desktop](../../get-docker.md).
+* You have installed the latest version of [Docker Desktop](get-started/get-docker.md).
 * You have completed the walkthroughs in the Docker Desktop [Learning Center](../../desktop/get-started.md) to learn about Docker concepts.
 * You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @z
@@ -555,12 +555,12 @@ The following is the updated `compose.yaml` file.
 ```yaml {hl_lines=["17-23","30-55"]}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker compose reference guide at
-# https://docs.docker.com/compose/compose-file/
+# https://docs.docker.com/reference/compose-file/
 @y
 ```yaml {hl_lines=["17-23","30-55"]}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker compose reference guide at
-# https://docs.docker.com/compose/compose-file/
+# https://docs.docker.com/reference/compose-file/
 @z
 
 @x

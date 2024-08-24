@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: History and development of Docker Compose
 description: History of Compose V1 and Compose YAML schema versioning
 keywords: compose, compose yaml, swarm, migration, compatibility, docker compose vs docker-compose
-aliases:
-- /compose/history/
----
 @y
----
 title: History and development of Docker Compose
 description: History of Compose V1 and Compose YAML schema versioning
 keywords: compose, compose yaml, swarm, migration, compatibility, docker compose vs docker-compose
-aliases:
-- /compose/history/
----
 @z
 
 @x
@@ -44,9 +38,9 @@ This page provides:
 @z
 
 @x
-The image above shows that the currently supported version of the Docker Compose CLI is Compose V2 which is defined by the [Compose Specification](../compose-file/_index.md).
+The image above shows that the currently supported version of the Docker Compose CLI is Compose V2 which is defined by the [Compose Specification](/reference/compose-file/_index.md).
 @y
-The image above shows that the currently supported version of the Docker Compose CLI is Compose V2 which is defined by the [Compose Specification](../compose-file/_index.md).
+The image above shows that the currently supported version of the Docker Compose CLI is Compose V2 which is defined by the [Compose Specification](reference/compose-file/_index.md).
 @z
 
 @x
@@ -116,15 +110,15 @@ Compose file format 2.x and 3.x are very similar to each other, but the latter i
 @z
 
 @x
-To address confusion around Compose CLI versioning, Compose file format versioning, and feature parity depending on whether Swarm mode was in use, file format 2.x and 3.x were merged into the [Compose Specification](../compose-file/_index.md). 
+To address confusion around Compose CLI versioning, Compose file format versioning, and feature parity depending on whether Swarm mode was in use, file format 2.x and 3.x were merged into the [Compose Specification](/reference/compose-file/_index.md). 
 @y
-To address confusion around Compose CLI versioning, Compose file format versioning, and feature parity depending on whether Swarm mode was in use, file format 2.x and 3.x were merged into the [Compose Specification](../compose-file/_index.md). 
+To address confusion around Compose CLI versioning, Compose file format versioning, and feature parity depending on whether Swarm mode was in use, file format 2.x and 3.x were merged into the [Compose Specification](reference/compose-file/_index.md). 
 @z
 
 @x
-Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose V2 also makes use of optional specifications - [Deploy](../compose-file/deploy.md), [Develop](../compose-file/develop.md) and [Build](../compose-file/build.md).
+Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose V2 also makes use of optional specifications - [Deploy](/reference/compose-file/deploy.md), [Develop](/reference/compose-file/develop.md) and [Build](/reference/compose-file/build.md).
 @y
-Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose V2 also makes use of optional specifications - [Deploy](../compose-file/deploy.md), [Develop](../compose-file/develop.md) and [Build](../compose-file/build.md).
+Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose V2 also makes use of optional specifications - [Deploy](reference/compose-file/deploy.md), [Develop](reference/compose-file/develop.md) and [Build](reference/compose-file/build.md).
 @z
 
 @x

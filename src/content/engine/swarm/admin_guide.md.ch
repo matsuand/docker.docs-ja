@@ -372,12 +372,12 @@ worker nodes that do not meet these requirements cannot run these tasks.
 @x
 You can monitor the health of manager nodes by querying the docker `nodes` API
 in JSON format through the `/nodes` HTTP endpoint. Refer to the
-[nodes API documentation](/engine/api/v1.25/#tag/Node)
+[nodes API documentation](/reference/api/engine/v1.25/#tag/Node)
 for more information.
 @y
 You can monitor the health of manager nodes by querying the docker `nodes` API
 in JSON format through the `/nodes` HTTP endpoint. Refer to the
-[nodes API documentation](__SUBDIR__/engine/api/v1.25/#tag/Node)
+[nodes API documentation](__SUBDIR__/reference/api/engine/v1.25/#tag/Node)
 for more information.
 @z
 
@@ -620,7 +620,7 @@ You can back up the swarm using any manager. Use the following procedure.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     > 
     > Be sure to maintain the quorum of swarm managers. During the
     > time that a manager is shut down, your swarm is more vulnerable to
@@ -629,7 +629,7 @@ You can back up the swarm using any manager. Use the following procedure.
     > consider running a five manager swarm, so that you can lose an additional
     > manager while the backup is running, without disrupting your services.
 @y
-    > **Note**
+    > [!NOTE]
     > 
     > Be sure to maintain the quorum of swarm managers. During the
     > time that a manager is shut down, your swarm is more vulnerable to
@@ -702,7 +702,7 @@ restore the data to a new swarm.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     > 
     > The new node uses the same encryption key for on-disk
     > storage as the old one. It is not possible to change the on-disk storage
@@ -712,7 +712,7 @@ restore the data to a new swarm.
     > same as on the old swarm, and the unlock key is needed to restore the
     > swarm.
 @y
-    > **Note**
+    > [!NOTE]
     > 
     > The new node uses the same encryption key for on-disk
     > storage as the old one. It is not possible to change the on-disk storage

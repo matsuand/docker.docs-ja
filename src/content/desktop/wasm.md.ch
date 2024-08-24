@@ -18,19 +18,17 @@ toc_max: 3
 @z
 
 @x
-> **Beta**
->
-> The Wasm feature is currently in [Beta](../release-lifecycle.md/#beta).
-> We recommend that you do not use this feature in production environments as
-> this feature may change or be removed from future releases.
-{ .experimental }
+{{% experimental title="Beta" %}}
+The Wasm feature is currently in [Beta](../release-lifecycle.md/#beta).
+We recommend that you do not use this feature in production environments as
+this feature may change or be removed from future releases.
+{{% /experimental %}}
 @y
-> **Beta**
->
-> The Wasm feature is currently in [Beta](../release-lifecycle.md/#beta).
-> We recommend that you do not use this feature in production environments as
-> this feature may change or be removed from future releases.
-{ .experimental }
+{{% experimental title="Beta" %}}
+The Wasm feature is currently in [Beta](../release-lifecycle.md/#beta).
+We recommend that you do not use this feature in production environments as
+this feature may change or be removed from future releases.
+{{% /experimental %}}
 @z
 
 @x

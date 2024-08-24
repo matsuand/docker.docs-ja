@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: How merging Compose files works
 keywords: compose, docker, merge, compose file
 title: Merge Compose files
----
 @y
----
 description: How merging Compose files works
 keywords: compose, docker, merge, compose file
 title: Merge Compose files
----
 @z
 
 @x
@@ -38,11 +36,11 @@ services.
 @x
 If a service is defined in both files, Compose merges the configurations using
 the rules described below and in the 
-[Compose Specification](../compose-file/13-merge.md).
+[Compose Specification](/reference/compose-file/merge.md).
 @y
 If a service is defined in both files, Compose merges the configurations using
 the rules described below and in the 
-[Compose Specification](../compose-file/13-merge.md).
+[Compose Specification](reference/compose-file/merge.md).
 @z
 
 @x
@@ -168,7 +166,7 @@ webapp:
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > When you use multiple Compose files, you must make sure all paths in the
 files are relative to the base Compose file (the first Compose file specified
@@ -177,9 +175,8 @@ Compose files. Override files can contain small fragments of configuration.
 Tracking which fragment of a service is relative to which path is difficult and
 confusing, so to keep paths easier to understand, all paths must be defined
 relative to the base file.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > When you use multiple Compose files, you must make sure all paths in the
 files are relative to the base Compose file (the first Compose file specified
@@ -188,7 +185,6 @@ Compose files. Override files can contain small fragments of configuration.
 Tracking which fragment of a service is relative to which path is difficult and
 confusing, so to keep paths easier to understand, all paths must be defined
 relative to the base file.
-{ .important }
 @z
 
 @x
@@ -664,9 +660,9 @@ services:
 @z
 
 @x
-For more merging rules, see [Merge and override](../compose-file/13-merge.md) in the Compose Specification. 
+For more merging rules, see [Merge and override](/reference/compose-file/merge.md) in the Compose Specification. 
 @y
-For more merging rules, see [Merge and override](../compose-file/13-merge.md) in the Compose Specification. 
+For more merging rules, see [Merge and override](reference/compose-file/merge.md) in the Compose Specification. 
 @z
 
 @x
@@ -902,7 +898,7 @@ With such a constraint, code organization in a monorepo can become hard as a nat
 @z
 
 @x
-- [Merge rules](../compose-file/13-merge.md)
+- [Merge rules](/reference/compose-file/merge.md)
 @y
-- [Merge rules](../compose-file/13-merge.md)
+- [Merge rules](reference/compose-file/merge.md)
 @z

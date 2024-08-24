@@ -32,15 +32,13 @@ With directory group-to-team provisioning from your IdP, user updates will autom
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Group mapping is ideal for adding a user to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, you can use [user-level attributes](scim.md#set-up-role-mapping).
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Group mapping is ideal for adding a user to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, you can use [user-level attributes](scim.md#set-up-role-mapping).
-{ .tip }
 @z
 
 @x
@@ -89,12 +87,10 @@ You can use this format to add a user to multiple organizations. For example, if
 >**Tip**
 >
 >Use the same names for the Docker teams as your group names in the IdP to prevent further configuration. When you sync groups, this creates a group if it doesn’t already exist.
-{ .tip}
 @y
 >**Tip**
 >
 >Use the same names for the Docker teams as your group names in the IdP to prevent further configuration. When you sync groups, this creates a group if it doesn’t already exist.
-{ .tip}
 @z
 
 @x
@@ -436,15 +432,13 @@ Once complete, a user who signs in to Docker through SSO is automatically added 
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > [Enable SCIM](scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > [Enable SCIM](scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
-{ .tip }
 @z
 
 @x

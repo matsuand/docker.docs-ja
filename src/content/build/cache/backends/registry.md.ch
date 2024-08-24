@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Registry cache
 description: Manage build cache with an OCI registry
 keywords: build, buildx, cache, backend, registry
-aliases:
-  - /build/building/cache/backends/registry/
----
 @y
----
 title: Registry cache
 description: Manage build cache with an OCI registry
 keywords: build, buildx, cache, backend, registry
-aliases:
-  - /build/building/cache/backends/registry/
----
 @z
 
 @x
@@ -50,11 +44,11 @@ everything that the inline cache can do, and more:
 @x
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
-[Build drivers](../../drivers/_index.md) for more information.
+[Build drivers](/build/builders/drivers/_index.md) for more information.
 @y
 This cache storage backend is not supported with the default `docker` driver.
 To use this feature, create a new builder using a different driver. See
-[Build drivers](../../drivers/_index.md) for more information.
+[Build drivers](build/builders/drivers/_index.md) for more information.
 @z
 
 @x

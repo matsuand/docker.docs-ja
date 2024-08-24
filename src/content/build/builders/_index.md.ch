@@ -64,13 +64,13 @@ Docker context, your `default` builder refers to the new Docker context.
 @z
 
 @x
-Buildx implements a concept of [build drivers](../drivers/index.md) to refer to
+Buildx implements a concept of [build drivers](drivers/_index.md) to refer to
 different builder configurations. The default builder created by the daemon
-uses the [`docker` driver](../drivers/docker.md).
+uses the [`docker` driver](drivers/docker.md).
 @y
-Buildx implements a concept of [build drivers](../drivers/index.md) to refer to
+Buildx implements a concept of [build drivers](drivers/_index.md) to refer to
 different builder configurations. The default builder created by the daemon
-uses the [`docker` driver](../drivers/docker.md).
+uses the [`docker` driver](drivers/docker.md).
 @z
 
 @x
@@ -177,10 +177,10 @@ selected when you invoke builds.
 - For information about how to interact with and manage builders,
   see [Manage builders](./manage.md)
 - To learn about different types of builders,
-  see [Build drivers](../drivers/index.md)
+  see [Build drivers](drivers/index.md)
 @y
 - For information about how to interact with and manage builders,
   see [Manage builders](./manage.md)
 - To learn about different types of builders,
-  see [Build drivers](../drivers/index.md)
+  see [Build drivers](drivers/index.md)
 @z

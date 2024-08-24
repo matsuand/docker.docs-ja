@@ -25,14 +25,14 @@ or [using Docker Desktop](#manage-builders-with-docker-desktop).
 @z
 
 @x
-The default builder uses the [`docker` driver](../drivers/docker.md).
+The default builder uses the [`docker` driver](drivers/docker.md).
 You can't manually create new `docker` builders, but you can create builders
 that use other drivers, such as the
-[`docker-container` driver](../drivers/docker-container.md),
+[`docker-container` driver](drivers/docker-container.md),
 which runs the BuildKit daemon in a container.
 @y
-デフォルトのビルダーは [`docker` ドライバー](../drivers/docker.md) を用います。
-`docker` ビルダーは自作することはできませんが、[`docker-container` ドライバー](../drivers/docker-container.md) といった別のドライバーを利用するビルダーなら生成することができます。
+デフォルトのビルダーは [`docker` ドライバー](drivers/docker.md) を用います。
+`docker` ビルダーは自作することはできませんが、[`docker-container` ドライバー](drivers/docker-container.md) といった別のドライバーを利用するビルダーなら生成することができます。
 `docker-container` ドライバーとは、コンテナー内において BuilKit デーモンを起動させるものです。
 @z
 
@@ -49,10 +49,10 @@ command to create a builder.
 @x
 Buildx uses the `docker-container` driver by default if you omit the `--driver`
 flag. For more information about available drivers, see
-[Build drivers](../drivers/index.md).
+[Build drivers](drivers/_index.md).
 @y
 Buildx は `--driver` フラグを指定しなければ、デフォルトで `docker-container` ドライバーを用います。
-利用可能なドライバーについては [ドライバーのビルド](../drivers/index.md) を参照してください。
+利用可能なドライバーについては [ドライバーのビルド](drivers/_index.md) を参照してください。
 @z
 
 @x
@@ -73,10 +73,10 @@ the drivers they're using.
 
 @x
 The asterisk (`*`) next to the builder name indicates the
-[selected builder](index.md#selected-builder).
+[selected builder](_index.md#selected-builder).
 @y
 The asterisk (`*`) next to the builder name indicates the
-[selected builder](index.md#selected-builder).
+[selected builder](_index.md#selected-builder).
 @z
 
 @x

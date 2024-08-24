@@ -62,7 +62,7 @@ configure it in different ways:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Unfortunately, there's no standard that defines how web clients should handle proxy 
 > environment variables, or the format for defining them.
@@ -71,7 +71,7 @@ configure it in different ways:
 > post on the subject, by the GitLab team:
 > [We need to talk: Can we standardize NO_PROXY?](https://about.gitlab.com/blog/2021/01/27/we-need-to-talk-no-proxy/).
 @y
-> **Note**
+> [!NOTE]
 >
 > Unfortunately, there's no standard that defines how web clients should handle proxy 
 > environment variables, or the format for defining them.
@@ -124,7 +124,7 @@ Builds and containers use the configuration specified in this file.
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Proxy settings may contain sensitive information. For example, some proxy servers
 > require authentication information to be included in their URL, or their
@@ -133,9 +133,8 @@ Builds and containers use the configuration specified in this file.
 > Environment variables are stored as plain text in the container's configuration,
 > and as such can be inspected through the remote API or committed to an image
 > when using `docker commit`.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Proxy settings may contain sensitive information. For example, some proxy servers
 > require authentication information to be included in their URL, or their
@@ -144,7 +143,6 @@ Builds and containers use the configuration specified in this file.
 > Environment variables are stored as plain text in the container's configuration,
 > and as such can be inspected through the remote API or committed to an image
 > when using `docker commit`.
-{ .warning }
 @z
 
 @x

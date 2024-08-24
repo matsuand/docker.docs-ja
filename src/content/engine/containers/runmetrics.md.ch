@@ -362,12 +362,12 @@ container, take a look at the following paths:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This section isn't yet updated for cgroup v2.
 > For further information about cgroup v2, refer to [the kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
 @y
-> **Note**
+> [!NOTE]
 >
 > This section isn't yet updated for cgroup v2.
 > For further information about cgroup v2, refer to [the kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).

@@ -61,30 +61,26 @@ manually create the group.
 @z
 
 @x
-<!-- prettier-ignore -->
-> **Warning**
+> [!WARNING]
 >
 > The `docker` group grants root-level privileges to the user. For
 > details on how this impacts security in your system, see
 > [Docker Daemon Attack Surface](../security/index.md#docker-daemon-attack-surface).
-{ .warning }
 @y
-<!-- prettier-ignore -->
-> **Warning**
+> [!WARNING]
 >
 > The `docker` group grants root-level privileges to the user. For
 > details on how this impacts security in your system, see
 > [Docker Daemon Attack Surface](../security/index.md#docker-daemon-attack-surface).
-{ .warning }
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > To run Docker without root privileges, see
 > [Run the Docker daemon as a non-root user (Rootless mode)](../security/rootless.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > To run Docker without root privileges, see
 > [Run the Docker daemon as a non-root user (Rootless mode)](../security/rootless.md).
@@ -275,7 +271,7 @@ options:
 @z
 
 @x
-- Take a look at the [Docker workshop](/guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 @y
-- Take a look at the [Docker workshop](guides/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 @z

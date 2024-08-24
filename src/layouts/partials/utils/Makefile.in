@@ -250,7 +250,6 @@ copyfiles = \
 	css.html         \
 	description.html \
 	keywords.html    \
-	resources.html   \
 	title.html
 
 all: all-am

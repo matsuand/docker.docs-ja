@@ -39,29 +39,31 @@ This page contains information about general system requirements, supported plat
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 >Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
 >
 >This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux. 
 >
->For more information see [What is the difference between Docker Desktop for Linux and Docker Engine](../faqs/linuxfaqs.md#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine). 
-{ .important } 
+> {{< accordion title=" What is the difference between Docker Desktop for Linux and Docker Engine?" >}}
 @y
-> **重要**
+> [!重要]
 >
 >Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
 >
 >This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux. 
 >
->For more information see [What is the difference between Docker Desktop for Linux and Docker Engine](../faqs/linuxfaqs.md#what-is-the-difference-between-docker-desktop-for-linux-and-docker-engine). 
-{ .important } 
+> {{< accordion title=" What is the difference between Docker Desktop for Linux and Docker Engine?" >}}
 @z
 
 @x
-{{< accordion title=" What is the difference between Docker Desktop for Linux and Docker Engine?" >}}
+> [!IMPORTANT]
+>
+> For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
 @y
-{{< accordion title=" What is the difference between Docker Desktop for Linux and Docker Engine?" >}}
+> [!重要]
+>
+> For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
 @z
 
 @x
@@ -295,11 +297,11 @@ Docker Desktop for Linux runs a Virtual Machine (VM). For more information on wh
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker does not provide support for running Docker Desktop for Linux in nested virtualization scenarios. We recommend that you run Docker Desktop for Linux natively on supported distributions.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker does not provide support for running Docker Desktop for Linux in nested virtualization scenarios. We recommend that you run Docker Desktop for Linux natively on supported distributions.
 @z
@@ -391,99 +393,23 @@ Sign out and sign back in so that your group membership is re-evaluated.
 @z
 
 @x
-## Generic installation steps
-@y
-## Generic installation steps
-@z
-
-@x
-> **Important**
->
-> Make sure you meet the system requirements outlined earlier and follow the distro-specific prerequisites.
-{ .important } 
-@y
-> **Important**
->
-> Make sure you meet the system requirements outlined earlier and follow the distro-specific prerequisites.
-{ .important } 
-@z
-
-@x
-1. Download the correct package for your Linux distribution and install it with the corresponding package manager.
-   - [Install on Ubuntu](ubuntu.md)
-   - [Install on Debian](debian.md)
-   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
-   - [Install on Fedora](fedora.md)
-   - [Install on Arch](archlinux.md)
-  By default, Docker Desktop is installed at `/opt/docker-desktop`.
-@y
-1. Download the correct package for your Linux distribution and install it with the corresponding package manager.
-   - [Install on Ubuntu](ubuntu.md)
-   - [Install on Debian](debian.md)
-   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
-   - [Install on Fedora](fedora.md)
-   - [Install on Arch](archlinux.md)
-  By default, Docker Desktop is installed at `/opt/docker-desktop`.
-@z
-
-@x
-2. Open your **Applications** menu in Gnome/KDE Desktop and search for **Docker Desktop**.
-@y
-2. Open your **Applications** menu in Gnome/KDE Desktop and search for **Docker Desktop**.
-@z
-
-@x
-   ![Docker app in Applications](images/docker-app-in-apps.png)
-@y
-   ![Docker app in Applications](images/docker-app-in-apps.png)
-@z
-
-@x
-3. Select **Docker Desktop** to start Docker. <br> The Docker menu ({{< inline-image src="images/whale-x.svg" alt="whale menu" >}}) displays the Docker Subscription Service Agreement.
-@y
-3. Select **Docker Desktop** to start Docker. <br> The Docker menu ({{< inline-image src="images/whale-x.svg" alt="whale menu" >}}) displays the Docker Subscription Service Agreement.
-@z
-
-@x
-4. Select **Accept** to continue. Docker Desktop starts after you accept the terms.
-@y
-4. Select **Accept** to continue. Docker Desktop starts after you accept the terms.
-@z
-
-@x
-   Note that Docker Desktop will not run if you do not agree to the terms. You can choose to accept the terms at a later date by opening Docker Desktop.
-@y
-   Note that Docker Desktop will not run if you do not agree to the terms. You can choose to accept the terms at a later date by opening Docker Desktop.
-@z
-
-@x
-   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
-@y
-   For more information, see [Docker Desktop Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement). We recommend that you also read the [FAQs](https://www.docker.com/pricing/faq).
-@z
-
-@x
 ## Where to go next
 @y
 ## Where to go next
 @z
 
 @x
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- [Get started with Docker](../../guides/getting-started/_index.md).
-- [Explore Docker Desktop](../use-desktop/_index.md) and all its features.
-- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
-- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
-- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
-- [Back up and restore data](../backup-and-restore.md) provides instructions
-  on backing up and restoring data related to Docker.
+- Install Docker Desktop for Linux for your specific Linux distribution:
+   - [Install on Ubuntu](ubuntu.md)
+   - [Install on Debian](debian.md)
+   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
+   - [Install on Fedora](fedora.md)
+   - [Install on Arch](archlinux.md)
 @y
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- [Get started with Docker](../../guides/getting-started/_index.md).
-- [Explore Docker Desktop](../use-desktop/_index.md) and all its features.
-- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
-- [FAQs](../faqs/general.md) provide answers to frequently asked questions.
-- [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
-- [Back up and restore data](../backup-and-restore.md) provides instructions
-  on backing up and restoring data related to Docker.
+- Install Docker Desktop for Linux for your specific Linux distribution:
+   - [Install on Ubuntu](ubuntu.md)
+   - [Install on Debian](debian.md)
+   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
+   - [Install on Fedora](fedora.md)
+   - [Install on Arch](archlinux.md)
 @z

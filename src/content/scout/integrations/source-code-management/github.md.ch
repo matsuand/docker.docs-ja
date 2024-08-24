@@ -14,15 +14,13 @@ keywords: scout, github, integration, image analysis, supply chain, remediation,
 @z
 
 @x
-> **Beta feature**
->
-> The GitHub integration is currently in [Beta](../../../release-lifecycle.md#Beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+The GitHub integration is currently in [Beta](../../../release-lifecycle.md#Beta).
+{{% /experimental %}}
 @y
-> **Beta feature**
->
-> The GitHub integration is currently in [Beta](../../../release-lifecycle.md#Beta).
-{ .experimental }
+{{% experimental title="Beta feature" %}}
+The GitHub integration is currently in [Beta](../../../release-lifecycle.md#Beta).
+{{% /experimental %}}
 @z
 
 @x
@@ -53,13 +51,13 @@ between the image analysis results and the source.
 
 @x
 When analyzing your image, Docker Scout checks for [provenance
-attestations](../../../build/attestations/slsa-provenance.md) to detect the
+attestations](../../../build/metadata/attestations/slsa-provenance.md) to detect the
 location of the source code repository for the image. If the source location is
 found, and you've enabled the GitHub app, Docker Scout parses the Dockerfile
 used to create the image.
 @y
 When analyzing your image, Docker Scout checks for [provenance
-attestations](../../../build/attestations/slsa-provenance.md) to detect the
+attestations](../../../build/metadata/attestations/slsa-provenance.md) to detect the
 location of the source code repository for the image. If the source location is
 found, and you've enabled the GitHub app, Docker Scout parses the Dockerfile
 used to create the image.

@@ -120,13 +120,13 @@ long: |-
 @x
     When using the legacy builder, it's therefore extra important that you
     carefully consider what files you include in the context you specify. Use a
-    [`.dockerignore`](/build/building/context/#dockerignore-files)
+    [`.dockerignore`](/build/concepts/context/#dockerignore-files)
     file to exclude files and directories that you don't require in your build from
     being sent as part of the build context.
 @y
     When using the legacy builder, it's therefore extra important that you
     carefully consider what files you include in the context you specify. Use a
-    [`.dockerignore`](__SUBDIR__/build/building/context/#dockerignore-files)
+    [`.dockerignore`](__SUBDIR__/build/concepts/context/#dockerignore-files)
     file to exclude files and directories that you don't require in your build from
     being sent as part of the build context.
 @z

@@ -1,24 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Docker Engine 24.0 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
----
 @y
----
 title: Docker Engine 24.0 リリースノート
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x
@@ -35,10 +29,10 @@ For more information about:
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history.md).
 @y
 - 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
-- Engine API の変更点。詳細は [Engine API バージョン履歴](../api/version-history.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](reference/api/engine/version-history.md) を参照。
 @z
 
 @x
@@ -94,7 +88,7 @@ affecting Docker Engine and its components.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Note that this release of Docker Engine doesn't include fixes for
 > the following known vulnerabilities in BuildKit:
@@ -106,9 +100,8 @@ affecting Docker Engine and its components.
 >
 > To address these vulnerabilities,
 > upgrade to [Docker Engine v25.0.2](./25.0.md#2502).
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Note that this release of Docker Engine doesn't include fixes for
 > the following known vulnerabilities in BuildKit:
@@ -120,7 +113,6 @@ affecting Docker Engine and its components.
 >
 > To address these vulnerabilities,
 > upgrade to [Docker Engine v25.0.2](./25.0.md#2502).
-{ .important }
 @z
 
 @x

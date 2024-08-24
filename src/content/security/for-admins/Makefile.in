@@ -295,12 +295,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = enforce-sign-in provisioning single-sign-on
+SUBDIRS = enforce-sign-in hardened-desktop provisioning single-sign-on
 bases = \
-	configure-sign-in.md          \
-	domain-audit.md               \
-	image-access-management.md    \
-	registry-access-management.md \
+	domain-audit.md          \
 	roles-and-permissions.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

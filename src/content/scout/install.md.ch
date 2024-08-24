@@ -35,13 +35,13 @@ To install the latest version of the plugin, run the following commands:
 % snip command...
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Always examine scripts downloaded from the internet before running them
 > locally. Before installing, make yourself familiar with potential risks and
 > limitations of the convenience script.
 @y
-> **メモ**
+> [!メモ]
 >
 > インターネットからローカルにダウンロードしたスクリプトは、実行前に充分に内容を確認してください。
 > インストールするにあたっては、この便利スクリプトが抱える潜在的リスクや制約について充分に理解しておいてください。

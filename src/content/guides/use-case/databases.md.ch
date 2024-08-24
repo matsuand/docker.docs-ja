@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+
 @x
 description: Learn how to run, connect to, and persist data in a local containerized database.
 keywords: database, mysql
@@ -63,10 +65,10 @@ This guide uses the MySQL image for examples, but the concepts can be applied to
 @z
 
 @x
-To follow along with this guide, you must have Docker installed. To install Docker, see [Get Docker](../../get-docker.md).
+To follow along with this guide, you must have Docker installed. To install Docker, see [Get Docker](/get-started/get-docker.md).
 @y
 このガイドの作業を進めるには Docker をすでにインストールしていることが必要です。
-Docker のインストールについては [Docker の入手](../../get-docker.md) を参照してください。
+Docker のインストールについては [Docker の入手](get-started/get-docker.md) を参照してください。
 @z
 
 @x
@@ -1239,14 +1241,14 @@ To run your containers with Docker Compose:
       a service joins the default network and is both reachable by other
       containers on that network, and discoverable by the service's name.
       Therefore, in the `PMA_HOST` environment variable, you can specify the
-      service name, `db`, in order to connect to the database service. For more details about Compose, see the [Compose file reference](/compose/compose-file/).
+      service name, `db`, in order to connect to the database service. For more details about Compose, see the [Compose file reference](/reference/compose-file/).
 @y
       In addition to the database service, there is a phpMyAdmin service. By
       default Compose sets up a single network for your app. Each container for
       a service joins the default network and is both reachable by other
       containers on that network, and discoverable by the service's name.
       Therefore, in the `PMA_HOST` environment variable, you can specify the
-      service name, `db`, in order to connect to the database service. For more details about Compose, see the [Compose file reference](__SUBDIR__/compose/compose-file/).
+      service name, `db`, in order to connect to the database service. For more details about Compose, see the [Compose file reference](__SUBDIR__/reference/compose-file/).
 @z
 
 @x
@@ -1318,13 +1320,13 @@ Related information:
 @x
 - [Docker Hub database images](https://hub.docker.com/search?q=database&type=image)
 - [Dockerfile reference](/reference/dockerfile/)
-- [Compose file reference](/compose/compose-file/)
+- [Compose file reference](/reference/compose-file/)
 - [CLI reference](/reference/cli/docker/)
 - [Database samples](../../samples/_index.md#databases)
 @y
 - [Docker Hub database images](https://hub.docker.com/search?q=database&type=image)
 - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
-- [Compose file reference](__SUBDIR__/compose/compose-file/)
+- [Compose file reference](__SUBDIR__/reference/compose-file/)
 - [CLI reference](__SUBDIR__/reference/cli/docker/)
 - [Database samples](../../samples/_index.md#databases)
 @z

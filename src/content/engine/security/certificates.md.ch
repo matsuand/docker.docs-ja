@@ -68,14 +68,14 @@ A custom certificate is configured by creating a directory under
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > On Linux any root certificates authorities are merged with the system defaults,
 > including the host's root CA set. If you are running Docker on Windows Server,
 > or Docker Desktop for Windows with Windows containers, the system default
 > certificates are only used when no custom root certificates are configured.
 @y
-> **Note**
+> [!NOTE]
 >
 > On Linux any root certificates authorities are merged with the system defaults,
 > including the host's root CA set. If you are running Docker on Windows Server,
@@ -94,13 +94,13 @@ repository.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If multiple certificates exist, each is tried in alphabetical
 > order. If there is a 4xx-level or 5xx-level authentication error, Docker
 > continues to try with the next certificate.
 @y
-> **Note**
+> [!NOTE]
 >
 > If multiple certificates exist, each is tried in alphabetical
 > order. If there is a 4xx-level or 5xx-level authentication error, Docker
@@ -170,13 +170,13 @@ $ openssl req -new -x509 -text -key client.key -out client.cert
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > These TLS commands only generate a working set of certificates on Linux.
 > The version of OpenSSL in macOS is incompatible with the type of
 > certificate Docker requires.
 @y
-> **Note**
+> [!NOTE]
 >
 > These TLS commands only generate a working set of certificates on Linux.
 > The version of OpenSSL in macOS is incompatible with the type of

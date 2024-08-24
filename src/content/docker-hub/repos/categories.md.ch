@@ -82,12 +82,12 @@ The available categories are:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Auto-generated categories only apply to Docker Verified Publishers and
 > Docker-Sponsored Open Source program participants.
 @y
-> **メモ**
+> [!メモ]
 >
 > Auto-generated categories only apply to Docker Verified Publishers and
 > Docker-Sponsored Open Source program participants.

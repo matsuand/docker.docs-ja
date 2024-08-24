@@ -4,17 +4,13 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Use containers for PHP development
 keywords: php, development
 description: Learn how to develop your PHP application locally using containers.
----
 @y
----
 title: Use containers for PHP development
 keywords: php, development
 description: Learn how to develop your PHP application locally using containers.
----
 @z
 
 @x
@@ -262,15 +258,15 @@ secrets:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](/compose/compose-file/).
+> reference](/reference/compose-file/).
 @y
-> **Note**
+> [!NOTE]
 >
 > To learn more about the instructions in the Compose file, see [Compose file
-> reference](__SUBDIR__/compose/compose-file/).
+> reference](__SUBDIR__/reference/compose-file/).
 @z
 
 @x
@@ -564,7 +560,7 @@ Press `ctrl+c` in the terminal to stop your application.
 @x
 ## Automatically update services
 @y
-## サービスの自動更新 {#automatically-update-services}
+## Automatically update services
 @z
 
 @x
@@ -998,14 +994,14 @@ database and persist data. You also learned how to use Compose Watch to automati
 @x
 Related information:
  - [Build with Docker guide](../../build/guide/index.md)
- - [Compose file reference](/compose/compose-file/)
+ - [Compose file reference](/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Dockerfile reference](../../reference/dockerfile.md)
  - [Official Docker Image for PHP](https://hub.docker.com/_/php)
 @y
 Related information:
  - [Build with Docker guide](../../build/guide/index.md)
- - [Compose file reference](__SUBDIR__/compose/compose-file/)
+ - [Compose file reference](__SUBDIR__/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Dockerfile reference](../../reference/dockerfile.md)
  - [Official Docker Image for PHP](https://hub.docker.com/_/php)

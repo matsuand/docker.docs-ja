@@ -396,13 +396,13 @@ maintenance. Similarly, you can demote a manager node to the worker role.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Regardless of your reason to promote or demote
 > a node, you must always maintain a quorum of manager nodes in the
 > swarm. For more information refer to the [Swarm administration guide](admin_guide.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Regardless of your reason to promote or demote
 > a node, you must always maintain a quorum of manager nodes in the
@@ -492,13 +492,13 @@ a `PluginSpec` instead of a `ContainerSpec`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > There is currently no way to deploy a plugin to a swarm using the
 > Docker CLI or Docker Compose. In addition, it is not possible to install
 > plugins from a private repository.
 @y
-> **Note**
+> [!NOTE]
 >
 > There is currently no way to deploy a plugin to a swarm using the
 > Docker CLI or Docker Compose. In addition, it is not possible to install
@@ -508,12 +508,12 @@ a `PluginSpec` instead of a `ContainerSpec`.
 @x
 The [`PluginSpec`](/engine/extend/plugin_api/#json-specification)
 is defined by the plugin developer. To add the plugin to all Docker nodes, use
-the [`service/create`](/engine/api/v1.31/#operation/ServiceCreate) API, passing
+the [`service/create`](/reference/api/engine/v1.31/#operation/ServiceCreate) API, passing
 the `PluginSpec` JSON defined in the `TaskTemplate`.
 @y
-The [`PluginSpec`](__SUBDIR__/engine/extend/plugin_api/#json-specification)
+The [`PluginSpec`](/engine/extend/plugin_api/#json-specification)
 is defined by the plugin developer. To add the plugin to all Docker nodes, use
-the [`service/create`](__SUBDIR__/engine/api/v1.31/#operation/ServiceCreate) API, passing
+the [`service/create`](__SUBDIR__/reference/api/engine/v1.31/#operation/ServiceCreate) API, passing
 the `PluginSpec` JSON defined in the `TaskTemplate`.
 @z
 

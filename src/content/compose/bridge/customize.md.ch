@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Customize Compose Bridge 
 description: Learn about the Compose Bridge templates syntax
 keywords: compose, bridge, templates
----
 @y
----
 title: Customize Compose Bridge 
 description: Learn about the Compose Bridge templates syntax
 keywords: compose, bridge, templates
----
 @z
 
 @x
@@ -166,7 +164,7 @@ As part of the Go templating syntax, Compose Bridge offers a set of YAML helper 
 @z
 
 @x
-- `seconds`: Converts a [duration](https://github.com/compose-spec/compose-spec/blob/master/11-extension.md#specifying-durations) into an integer
+- `seconds`: Converts a [duration](/reference/compose-file/extension.md#specifying-durations) into an integer
 - `uppercase`: Converts a string into upper case characters
 - `title`: Converts a string by capitalizing the first letter of each word
 - `safe`: Converts a string into a safe identifier, replacing all characters (except lowercase a-z) with `-`
@@ -177,7 +175,7 @@ As part of the Go templating syntax, Compose Bridge offers a set of YAML helper 
 - `indent`: Writes string content indented by N spaces
 - `helmValue`: Writes the string content as a template value in the final file
 @y
-- `seconds`: Converts a [duration](https://github.com/compose-spec/compose-spec/blob/master/11-extension.md#specifying-durations) into an integer
+- `seconds`: Converts a [duration](reference/compose-file/extension.md#specifying-durations) into an integer
 - `uppercase`: Converts a string into upper case characters
 - `title`: Converts a string by capitalizing the first letter of each word
 - `safe`: Converts a string into a safe identifier, replacing all characters (except lowercase a-z) with `-`

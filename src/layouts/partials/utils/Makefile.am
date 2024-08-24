@@ -12,7 +12,6 @@ copyfiles = \
 	css.html         \
 	description.html \
 	keywords.html    \
-	resources.html   \
 	title.html
 
 include $(top_srcdir)/build-aux/copy.mk

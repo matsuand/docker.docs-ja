@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 description: Learn how to set up SSO in your IdP and take the next steps for enabling SSO.
@@ -98,27 +98,22 @@ If you use SAML for your SSO connection, Docker obtains these attributes from th
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 >SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](../../provisioning/scim.md), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For example, to make sure that the full name of a user displays in your organization, you would set a `name` attribute in your SAML attributes and ensure the value includes their first name and last name. The exact method for setting these values (for example, constructing it with `user.firstName + " " + user.lastName`) varies depending on your IdP.
-{.important}
 @y
-> **Important**
+> [!IMPORTANT]
 >
 >SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](../../provisioning/scim.md), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For example, to make sure that the full name of a user displays in your organization, you would set a `name` attribute in your SAML attributes and ensure the value includes their first name and last name. The exact method for setting these values (for example, constructing it with `user.firstName + " " + user.lastName`) varies depending on your IdP.
-{.important}
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
-> Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
-{ .tip }
 @z
 
 @x
@@ -148,15 +143,13 @@ You can also configure attributes to override default values, such as default te
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > If none of the email address attributes listed in the previous table are found, SSO returns an error. Also, if the `Full name` attribute isn't set, then the name will be displayed as the value of the `Email address`.
-{ .important}
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > If none of the email address attributes listed in the previous table are found, SSO returns an error. Also, if the `Full name` attribute isn't set, then the name will be displayed as the value of the `Email address`.
-{ .important}
 @z
 
 @x
@@ -244,19 +237,17 @@ See [More resources](#more-resources) for a video overview on how to set up SSO 
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > When you create the application for your SSO connection in Entra ID (formerly Azure AD) we recommend that you don't assign the app to all the users in the directory.
 > Instead, you can create a security group and assign the app to the group. This way, you can control who in your organization has access to Docker.
 > To change the default setting for assignment, go to the main properties for your app and find the **Assignment required** setting. Set it to **Yes**.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > When you create the application for your SSO connection in Entra ID (formerly Azure AD) we recommend that you don't assign the app to all the users in the directory.
 > Instead, you can create a security group and assign the app to the group. This way, you can control who in your organization has access to Docker.
 > To change the default setting for assignment, go to the main properties for your app and find the **Assignment required** setting. Set it to **Yes**.
-{ .tip }
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Multi-platform images
@@ -98,11 +98,11 @@ To build for multiple platforms concurrently, you can:
 @x
 - **Create a custom builder**:
   Initialize a [builder](../builders/_index.md) that uses the `docker-container` driver, which supports multi-platform builds.
-  For more details, see the [`docker-container` driver documentation](../drivers/docker-container.md).
+  For more details, see the [`docker-container` driver documentation](/build/builders/drivers/docker-container.md).
 @y
 - **Create a custom builder**:
   Initialize a [builder](../builders/_index.md) that uses the `docker-container` driver, which supports multi-platform builds.
-  For more details, see the [`docker-container` driver documentation](../drivers/docker-container.md).
+  For more details, see the [`docker-container` driver documentation](build/builders/drivers/docker-container.md).
 @z
 
 @x
@@ -156,7 +156,7 @@ loads it through a binary registered in the `binfmt_misc` handler.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Emulation with QEMU can be much slower than native builds, especially for
 > compute-heavy tasks like compilation and compression or decompression.
@@ -164,7 +164,7 @@ loads it through a binary registered in the `binfmt_misc` handler.
 > Use [multiple native nodes](#multiple-native-nodes) or
 > [cross-compilation](#cross-compilation) instead, if possible.
 @y
-> **Note**
+> [!NOTE]
 >
 > Emulation with QEMU can be much slower than native builds, especially for
 > compute-heavy tasks like compilation and compression or decompression.
@@ -365,19 +365,19 @@ to list the existing builders:
 
 @x
 This displays the default builtin driver, that uses the BuildKit server
-components built directly into the Docker Engine, also known as the [`docker` driver](../drivers/docker.md).
+components built directly into the Docker Engine, also known as the [`docker` driver](/build/builders/drivers/docker.md).
 @y
 This displays the default builtin driver, that uses the BuildKit server
-components built directly into the Docker Engine, also known as the [`docker` driver](../drivers/docker.md).
+components built directly into the Docker Engine, also known as the [`docker` driver](build/builders/drivers/docker.md).
 @z
 
 @x
-Create a new builder using the [`docker-container` driver](../drivers/docker-container.md)
+Create a new builder using the [`docker-container` driver](/build/builders/drivers/docker-container.md)
 which gives you access to more complex features like multi-platform builds
 and the more advanced cache exporters, which are currently unsupported in the
 default `docker` driver:
 @y
-Create a new builder using the [`docker-container` driver](../drivers/docker-container.md)
+Create a new builder using the [`docker-container` driver](build/builders/drivers/docker-container.md)
 which gives you access to more complex features like multi-platform builds
 and the more advanced cache exporters, which are currently unsupported in the
 default `docker` driver:
@@ -432,7 +432,7 @@ build for:
 % snip command...
 
 @x
-> **Note**
+> [!NOTE]
 > 
 > * `<username>` must be a valid Docker ID and `<image>` and valid repository on
 >   Docker Hub.
@@ -441,7 +441,7 @@ build for:
 > * The `--push` flag generates a multi-arch manifest and pushes all the images
 >   to Docker Hub.
 @y
-> **Note**
+> [!NOTE]
 > 
 > * `<username>` must be a valid Docker ID and `<image>` and valid repository on
 >   Docker Hub.

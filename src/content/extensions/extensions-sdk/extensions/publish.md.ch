@@ -40,27 +40,25 @@ Whenever you are [ready to publish](DISTRIBUTION.md) your extension in the Marke
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > As the Extension Marketplace continues to add new features for both Extension users and publishers, you are expected
 > to maintain your extension over time to ensure it stays available in the Marketplace.
 @y
-> **Note**
+> [!NOTE]
 >
 > As the Extension Marketplace continues to add new features for both Extension users and publishers, you are expected
 > to maintain your extension over time to ensure it stays available in the Marketplace.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > The Docker manual review process for extensions is paused at the moment. Submit your extension through the [automated submission process](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > The Docker manual review process for extensions is paused at the moment. Submit your extension through the [automated submission process](https://github.com/docker/extensions-submissions/issues/new?assignees=&labels=&template=1_automatic_review.yaml&title=%5BSubmission%5D%3A+)
-{ .important }
 @z
 
 @x
@@ -124,15 +122,13 @@ evolve/polish your extension.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Docker Desktop caches the list of extensions available in the Marketplace for 12 hours. If you don't see your
 > extension in the Marketplace, you can restart Docker Desktop to force the cache to refresh.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Docker Desktop caches the list of extensions available in the Marketplace for 12 hours. If you don't see your
 > extension in the Marketplace, you can restart Docker Desktop to force the cache to refresh.
-{ .important }
 @z

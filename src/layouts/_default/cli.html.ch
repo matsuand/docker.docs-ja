@@ -31,33 +31,31 @@
 @z
 
 @x
-          <a href="https://github.com/docker/roadmap/issues/209"
-            >Docker roadmap</a
-          >
+> [!WARNING]
+> This command is deprecated
+>
+> It may be removed in a future Docker version. For more information, see the
+> [Docker roadmap](https://github.com/docker/roadmap/issues/209)`
 @y
-          <a href="https://github.com/docker/roadmap/issues/209"
-            >Docker ロードマップ</a
-          >
+> [!WARNING]
+> This command is deprecated
+>
+> It may be removed in a future Docker version. For more information, see the
+> [Docker roadmap](https://github.com/docker/roadmap/issues/209)`
 @z
 
 @x
-      <blockquote class="important">
-        <p><strong>This command is experimental</strong></p>
-        <p>
-          Experimental features are intended for testing and feedback as their
-          functionality or design may change between releases without warning or
-          can be removed entirely in a future release.
-        </p>
-      </blockquote>
+**This command is experimental.**
+
+Experimental features are intended for testing and feedback as their
+functionality or design may change between releases without warning or
+can be removed entirely in a future release.
 @y
-      <blockquote class="important">
-        <p><strong>This command is experimental</strong></p>
-        <p>
-          Experimental features are intended for testing and feedback as their
-          functionality or design may change between releases without warning or
-          can be removed entirely in a future release.
-        </p>
-      </blockquote>
+**This command is experimental.**
+
+Experimental features are intended for testing and feedback as their
+functionality or design may change between releases without warning or
+can be removed entirely in a future release.
 @z
 
 @x

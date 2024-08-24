@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
 ---
@@ -89,19 +89,19 @@ An SBOM typically includes the following information:
 ## How Docker Scout uses SBOMs
 @z
 
-@x (no slash) 対応
+@x
 Docker Scout uses SBOMs to determine the components that are used in a Docker
 image. When you analyze an image, Docker Scout will either use the SBOM that is
-attached to the image (using [attestations](/build/attestations/_index.md)), or
+attached to the image (using [attestations](/build/metadata/attestations/_index.md)), or
 it will generate an SBOM on the fly by analyzing the contents of the image.
 @y
 Docker Scout uses SBOMs to determine the components that are used in a Docker
 image. When you analyze an image, Docker Scout will either use the SBOM that is
-attached to the image (using [attestations](build/attestations/_index.md)), or
+attached to the image (using [attestations](build/metadata/attestations/_index.md)), or
 it will generate an SBOM on the fly by analyzing the contents of the image.
 @z
 
-@x (no slash) 対応
+@x
 The SBOM is cross-referenced with the [advisory database](/scout/deep-dive/advisory-db-sources.md)
 to determine if any of the components in the image have known vulnerabilities.
 @y

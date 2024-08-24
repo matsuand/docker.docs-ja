@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Hints, tips and guidelines for writing clean, reliable Dockerfiles
 keywords: base images, dockerfile, best practices, hub, official image
 title: Building best practices
-tags: [Best practices]
 @y
 description: Hints, tips and guidelines for writing clean, reliable Dockerfiles
 keywords: base images, dockerfile, best practices, hub, official image
 title: Building best practices
-tags: [Best practices]
 @z
 
 @x
@@ -269,10 +267,10 @@ For example, to exclude all files with the `.md` extension:
 
 @x
 For information on creating one, see
-[Dockerignore file](../../build/building/context.md#dockerignore-files).
+[Dockerignore file](/build/concepts/context.md#dockerignore-files).
 @y
 For information on creating one, see
-[Dockerignore file](../../build/building/context.md#dockerignore-files).
+[Dockerignore file](build/concepts/context.md#dockerignore-files).
 @z
 
 @x
@@ -1122,7 +1120,7 @@ RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Not all shells support the `-o pipefail` option.
 >
@@ -1134,7 +1132,7 @@ RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
 > RUN ["/bin/bash", "-c", "set -o pipefail && wget -O - https://some.site | wc -l > /number"]
 > ```
 @y
-> **Note**
+> [!NOTE]
 >
 > Not all shells support the `-o pipefail` option.
 >
@@ -1407,14 +1405,14 @@ For more information about `ENV`, see [Dockerfile reference for the ENV instruct
 
 @x
 `ADD` and `COPY` are functionally similar. `COPY` supports basic copying of
-files into the container, from the [build context](../../build/building/context.md)
-or from a stage in a [multi-stage build](../../build/building/multi-stage.md).
+files into the container, from the [build context](/build/concepts/context.md)
+or from a stage in a [multi-stage build](/build/building/multi-stage.md).
 `ADD` supports features for fetching files from remote HTTPS and Git URLs, and
 extracting tar files automatically when adding files from the build context.
 @y
 `ADD` and `COPY` are functionally similar. `COPY` supports basic copying of
-files into the container, from the [build context](../../build/building/context.md)
-or from a stage in a [multi-stage build](../../build/building/multi-stage.md).
+files into the container, from the [build context](build/concepts/context.md)
+or from a stage in a [multi-stage build](build/building/multi-stage.md).
 `ADD` supports features for fetching files from remote HTTPS and Git URLs, and
 extracting tar files automatically when adding files from the build context.
 @z
@@ -1826,7 +1824,7 @@ RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Consider an explicit UID/GID.
 >
@@ -1834,7 +1832,7 @@ RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
 > the "next" UID/GID is assigned regardless of image rebuilds. So, if it’s
 > critical, you should assign an explicit UID/GID.
 @y
-> **Note**
+> [!NOTE]
 >
 > Consider an explicit UID/GID.
 >
@@ -1844,7 +1842,7 @@ RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Due to an [unresolved bug](https://github.com/golang/go/issues/13548) in the
 > Go archive/tar package's handling of sparse files, attempting to create a user
@@ -1853,7 +1851,7 @@ RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
 > NULL (\0) characters. A workaround is to pass the `--no-log-init` flag to
 > useradd. The Debian/Ubuntu `adduser` wrapper does not support this flag.
 @y
-> **Note**
+> [!NOTE]
 >
 > Due to an [unresolved bug](https://github.com/golang/go/issues/13548) in the
 > Go archive/tar package's handling of sparse files, attempting to create a user

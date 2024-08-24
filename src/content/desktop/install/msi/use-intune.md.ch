@@ -38,23 +38,21 @@ Learn how to deploy Docker Desktop using Intune, Microsoft's cloud-based device 
 @z
 
 @x
-   > **Tip**
+   > [!TIP]
    >
    > It's recommended you configure the Intune deployment to schedule a reboot of the machine on successful installs.
    >
    > This is because the Docker Desktop installer installs Windows features depending on your engine selection and also updates the membership of the `docker-users` local group.
    >
    > You may also want to set Intune to determine behaviour based on return codes and watch for a return code of `3010`. 
-   { .tip }
 @y
-   > **Tip**
+   > [!TIP]
    >
    > It's recommended you configure the Intune deployment to schedule a reboot of the machine on successful installs.
    >
    > This is because the Docker Desktop installer installs Windows features depending on your engine selection and also updates the membership of the `docker-users` local group.
    >
    > You may also want to set Intune to determine behaviour based on return codes and watch for a return code of `3010`. 
-   { .tip }
 @z
 
 @x

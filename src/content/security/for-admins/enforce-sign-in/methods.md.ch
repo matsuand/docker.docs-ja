@@ -26,17 +26,13 @@ This page outlines the different ways you can enforce sign-in for Docker Desktop
 @z
 
 @x
-> **Early Access**
+> [!NOTE]
 >
-> The registry key method is an [early access](../../../release-lifecycle.md#early-access-ea) feature for Docker Business subscribers. 
-> It's available with Docker Desktop version 4.32 and later.
-{ .restricted }
+> The registry key method is available with Docker Desktop version 4.32 and later.
 @y
-> **Early Access**
+> [!NOTE]
 >
-> The registry key method is an [early access](../../../release-lifecycle.md#early-access-ea) feature for Docker Business subscribers. 
-> It's available with Docker Desktop version 4.32 and later.
-{ .restricted }
+> The registry key method is available with Docker Desktop version 4.32 and later.
 @z
 
 @x
@@ -50,10 +46,9 @@ This page outlines the different ways you can enforce sign-in for Docker Desktop
    $ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Docker\Docker Desktop
    ```
 2. Create a multi-string value `allowedOrgs`. 
-   > **Important**
+   > [!IMPORTANT]
    >
    > Only one entry for `allowedOrgs` is currently supported. If you add more than one value, sign-in enforcement silently fails.
-   { .important }
 3. As string data use your organization’s name, all lowercase.
 4. Restart Docker Desktop.
 5. Open Docker Desktop and when Docker Desktop starts, verify that the **Sign in required!** prompt appears.
@@ -62,10 +57,9 @@ This page outlines the different ways you can enforce sign-in for Docker Desktop
    $ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Docker\Docker Desktop
    ```
 2. Create a multi-string value `allowedOrgs`. 
-   > **Important**
+   > [!IMPORTANT]
    >
    > Only one entry for `allowedOrgs` is currently supported. If you add more than one value, sign-in enforcement silently fails.
-   { .important }
 3. As string data use your organization’s name, all lowercase.
 4. Restart Docker Desktop.
 5. Open Docker Desktop and when Docker Desktop starts, verify that the **Sign in required!** prompt appears.
@@ -78,11 +72,11 @@ In some cases, a system reboot may be necessary for enforcement to take effect.
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
 > If a registry key and a `registry.json` file both exist, the registry key takes precedence.
 @y
->**Note**
+> [!NOTE]
 >
 > If a registry key and a `registry.json` file both exist, the registry key takes precedence.
 @z
@@ -132,17 +126,13 @@ There are many ways to deploy the registry key, for example using an MDM solutio
 @z
 
 @x
-> **Early Access**
+> [!NOTE]
 >
-> The plist method is an [early access](../../../release-lifecycle.md#early-access-ea) feature for Docker Business subscribers. 
-> It's available with Docker Desktop version 4.32 and later.
-{ .restricted }
+> The registry key method is available with Docker Desktop version 4.32 and later.
 @y
-> **Early Access**
+> [!NOTE]
 >
-> The plist method is an [early access](../../../release-lifecycle.md#early-access-ea) feature for Docker Business subscribers. 
-> It's available with Docker Desktop version 4.32 and later.
-{ .restricted }
+> The registry key method is available with Docker Desktop version 4.32 and later.
 @z
 
 @x
@@ -166,10 +156,9 @@ There are many ways to deploy the registry key, for example using an MDM solutio
      </dict>
    </plist>
    ```
-   > **Important**
+   > [!IMPORTANT]
    >
    > Only one entry for `allowedOrgs` is currently supported. If you add more than one value, sign-in enforcement silently fails.
-   { .important }
 @y
    ```xml
    <?xml version="1.0" encoding="UTF-8"?>
@@ -183,10 +172,9 @@ There are many ways to deploy the registry key, for example using an MDM solutio
      </dict>
    </plist>
    ```
-   > **Important**
+   > [!IMPORTANT]
    >
    > Only one entry for `allowedOrgs` is currently supported. If you add more than one value, sign-in enforcement silently fails.
-   { .important }
 @z
 
 @x
@@ -200,11 +188,11 @@ There are many ways to deploy the registry key, for example using an MDM solutio
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
 > If a `plist` and `registry.json` file both exist, the `plist` file takes precedence.
 @y
->**Note**
+> [!NOTE]
 >
 > If a `plist` and `registry.json` file both exist, the `plist` file takes precedence.
 @z
@@ -300,9 +288,9 @@ There are many ways to deploy the `.plist` file. The method you choose is depend
 @z
 
 @x
-The following instructions explain how to create and deploy a `registry.json` file to a single device. There are many ways to deploy the `regitry.json` file. You can follow the example deployments outlined in the `.plist` file section.  The method you choose is dependent on your organization's infrastructure, security policies, and the administrative rights of the end-users.
+The following instructions explain how to create and deploy a `registry.json` file to a single device. There are many ways to deploy the `registry.json` file. You can follow the example deployments outlined in the `.plist` file section.  The method you choose is dependent on your organization's infrastructure, security policies, and the administrative rights of the end-users.
 @y
-The following instructions explain how to create and deploy a `registry.json` file to a single device. There are many ways to deploy the `regitry.json` file. You can follow the example deployments outlined in the `.plist` file section.  The method you choose is dependent on your organization's infrastructure, security policies, and the administrative rights of the end-users.
+The following instructions explain how to create and deploy a `registry.json` file to a single device. There are many ways to deploy the `registry.json` file. You can follow the example deployments outlined in the `.plist` file section.  The method you choose is dependent on your organization's infrastructure, security policies, and the administrative rights of the end-users.
 @z
 
 @x
@@ -363,20 +351,18 @@ details, see [Manage members](__SUBDIR__/admin/organization/members/).
     "allowedOrgs": ["myorg"]
     }
     ```
-   > **Important**
+   > [!IMPORTANT]
    >
    > Only one entry for `allowedOrgs` is currently supported. If you add more than one value, sign-in enforcement silently fails.
-   { .important }
 @y
     ```json
     {
     "allowedOrgs": ["myorg"]
     }
     ```
-   > **Important**
+   > [!IMPORTANT]
    >
    > Only one entry for `allowedOrgs` is currently supported. If you add more than one value, sign-in enforcement silently fails.
-   { .important }
 @z
 
 @x
@@ -400,15 +386,13 @@ details, see [Manage members](__SUBDIR__/admin/organization/members/).
 @z
 
 @x
-    > **Tip**
+    > [!TIP]
     >
     > If your users have issues starting Docker Desktop after you enforce sign-in, they may need to update to the latest version.
-    { .tip }
 @y
-    > **Tip**
+    > [!TIP]
     >
     > If your users have issues starting Docker Desktop after you enforce sign-in, they may need to update to the latest version.
-    { .tip }
 @z
 
 @x
@@ -765,4 +749,16 @@ $ sudo ls -l /usr/share/docker-desktop/registry/registry.json
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+- [Video: Enforce sign-in with a registry.json](https://www.youtube.com/watch?v=CIOQ6wDnJnM)
+@y
+- [Video: Enforce sign-in with a registry.json](https://www.youtube.com/watch?v=CIOQ6wDnJnM)
 @z

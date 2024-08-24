@@ -41,12 +41,10 @@ Before you start, make sure you have installed the latest version of [Docker Des
 > Tip
 >
 > Check the [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>`. They provide a better base for your extension as it's more up-to-date and related to your install of Docker Desktop.
-{ .tip }
 @y
 > Tip
 >
 > Check the [Quickstart guide](../quickstart.md) and `docker extension init <my-extension>`. They provide a better base for your extension as it's more up-to-date and related to your install of Docker Desktop.
-{ .tip }
 @z
 
 @x
@@ -144,17 +142,15 @@ it is highly recommended that you start from the `docker extension init` command
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a Go backend. But you can still use it as a starting point for
 > your own extension and use any other language like Node.js, Python, Java, .Net, or any other language and framework.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > The `docker extension init` generates a Go backend. But you can still use it as a starting point for
 > your own extension and use any other language like Node.js, Python, Java, .Net, or any other language and framework.
-{ .tip }
 @z
 
 @x
@@ -174,23 +170,21 @@ In this tutorial, the backend service simply exposes one route that returns a JS
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We recommend that, the frontend and the backend communicate through sockets, and named pipes on Windows, instead of
 > HTTP. This prevents port collision with any other running application or container running
 > on the host. Also, some Docker Desktop users are running in constrained environments where they
 > can't open ports on their machines. When choosing the language and framework for your backend, make sure it
 > supports sockets connection.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We recommend that, the frontend and the backend communicate through sockets, and named pipes on Windows, instead of
 > HTTP. This prevents port collision with any other running application or container running
 > on the host. Also, some Docker Desktop users are running in constrained environments where they
 > can't open ports on their machines. When choosing the language and framework for your backend, make sure it
 > supports sockets connection.
-{ .important }
 @z
 
 @x
@@ -338,17 +332,15 @@ type HTTPMessageBody struct {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for Node yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Node)
 > and let us know if you'd like a sample for Node.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for Node yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Node)
 > and let us know if you'd like a sample for Node.
-{ .important }
 @z
 
 @x
@@ -360,17 +352,15 @@ type HTTPMessageBody struct {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for Python yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Python)
 > and let us know if you'd like a sample for Python.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for Python yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Python)
 > and let us know if you'd like a sample for Python.
-{ .important }
 @z
 
 @x
@@ -382,17 +372,15 @@ type HTTPMessageBody struct {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for Java yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Java)
 > and let us know if you'd like a sample for Java.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for Java yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Java)
 > and let us know if you'd like a sample for Java.
-{ .important }
 @z
 
 @x
@@ -404,17 +392,15 @@ type HTTPMessageBody struct {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for .NET. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=.Net)
 > and let us know if you'd like a sample for .NET.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working example for .NET. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=.Net)
 > and let us know if you'd like a sample for .NET.
-{ .important }
 @z
 
 @x
@@ -432,11 +418,11 @@ type HTTPMessageBody struct {
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > When using the `docker extension init`, it creates a `Dockerfile` that already contains what is needed for a Go backend.
 @y
-> **Note**
+> [!NOTE]
 >
 > When using the `docker extension init`, it creates a `Dockerfile` that already contains what is needed for a Go backend.
 @z
@@ -462,17 +448,15 @@ To deploy your Go backend when installing the extension, you need first to confi
 @z
 
 @x
-> **Tip**
+> [!TIP]
 > 
 > To ease version management, you can reuse the same image to build the frontend, build the
 backend service, and package the extension.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 > 
 > To ease version management, you can reuse the same image to build the frontend, build the
 backend service, and package the extension.
-{ .tip }
 @z
 
 @x
@@ -542,17 +526,15 @@ CMD /service -socket /run/guest-services/extension-allthethings-extension.sock
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Node yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Node)
 > and let us know if you'd like a Dockerfile for Node.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Node yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Node)
 > and let us know if you'd like a Dockerfile for Node.
-{ .important }
 @z
 
 @x
@@ -564,17 +546,15 @@ CMD /service -socket /run/guest-services/extension-allthethings-extension.sock
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Python yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Python)
 > and let us know if you'd like a Dockerfile for Python.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Python yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Python)
 > and let us know if you'd like a Dockerfile for Python.
-{ .important }
 @z
 
 @x
@@ -586,17 +566,15 @@ CMD /service -socket /run/guest-services/extension-allthethings-extension.sock
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Java yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Java)
 > and let us know if you'd like a Dockerfile for Java.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for Java yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=Java)
 > and let us know if you'd like a Dockerfile for Java.
-{ .important }
 @z
 
 @x
@@ -608,17 +586,15 @@ CMD /service -socket /run/guest-services/extension-allthethings-extension.sock
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for .Net. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=.Net)
 > and let us know if you'd like a Dockerfile for .Net.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have a working Dockerfile for .Net. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.25798127=.Net)
 > and let us know if you'd like a Dockerfile for .Net.
-{ .important }
 @z
 
 @x
@@ -676,15 +652,13 @@ For more information on the `vm` section of the `metadata.json`, see [Metadata](
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Do not replace the `${DESKTOP_PLUGIN_IMAGE}` placeholder in the `metadata.json` file. The placeholder is replaced automatically with the correct image name when the extension is installed.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Do not replace the `${DESKTOP_PLUGIN_IMAGE}` placeholder in the `metadata.json` file. The placeholder is replaced automatically with the correct image name when the extension is installed.
-{ .warning }
 @z
 
 @x
@@ -800,17 +774,15 @@ export function App() {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Vue yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Vue)
 > and let us know if you'd like a sample with Vue.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Vue yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Vue)
 > and let us know if you'd like a sample with Vue.
-{ .important }
 @z
 
 @x
@@ -822,17 +794,15 @@ export function App() {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Angular yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Angular)
 > and let us know if you'd like a sample with Angular.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Angular yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Angular)
 > and let us know if you'd like a sample with Angular.
-{ .important }
 @z
 
 @x
@@ -844,17 +814,15 @@ export function App() {
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Svelte yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Svelte)
 > and let us know if you'd like a sample with Svelte.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > We don't have an example for Svelte yet. [Fill out the form](https://docs.google.com/forms/d/e/1FAIpQLSdxJDGFJl5oJ06rG7uqtw1rsSBZpUhv_s9HHtw80cytkh2X-Q/viewform?usp=pp_url&entry.1333218187=Svelte)
 > and let us know if you'd like a sample with Svelte.
-{ .important }
 @z
 
 @x
@@ -910,17 +878,15 @@ Now you can see the backend service running in the **Containers8* tab of the Doc
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > You may need to turn on the **Show system containers** option in **Settings** to see the backend container running.
 > See [Show extension containers](../dev/test-debug.md#show-the-extension-containers) for more information.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > You may need to turn on the **Show system containers** option in **Settings** to see the backend container running.
 > See [Show extension containers](../dev/test-debug.md#show-the-extension-containers) for more information.
-{ .tip }
 @z
 
 @x

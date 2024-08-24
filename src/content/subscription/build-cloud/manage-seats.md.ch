@@ -20,11 +20,11 @@ You can add seats and manage invitations to your Docker Build Cloud Team in the 
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 >If you have a Docker Build Cloud Business subscription, you can add and remove seats by working with your account executive, then assign your purchased seats in the Docker Build Cloud dashboard.
 @y
-> **Note**
+> [!NOTE]
 >
 >If you have a Docker Build Cloud Business subscription, you can add and remove seats by working with your account executive, then assign your purchased seats in the Docker Build Cloud dashboard.
 @z

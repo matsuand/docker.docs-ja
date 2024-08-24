@@ -239,7 +239,6 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
 	docker-app-in-apps.png \
-	docker-app-search.png  \
 	whale-x.svg
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

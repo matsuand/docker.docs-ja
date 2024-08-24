@@ -22,17 +22,15 @@ aliases:
 @z
 
 @x
-> **Warning**
+> [!WARNING]
 >
 > Disabling two-factor authentication results in decreased security for your
 > Docker account.
-{ .warning }
 @y
-> **Warning**
+> [!WARNING]
 >
 > Disabling two-factor authentication results in decreased security for your
 > Docker account.
-{ .warning }
 @z
 
 @x

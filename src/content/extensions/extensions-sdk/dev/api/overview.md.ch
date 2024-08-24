@@ -92,7 +92,7 @@ The `ddClient` object gives access to various APIs:
 @z
 
 @x
-Find the Extensions API reference [here](reference/README.md).
+Find the Extensions API reference [here](reference/api/extensions-sdk/_index.md).
 @y
-Find the Extensions API reference [here](reference/README.md).
+Find the Extensions API reference [here](reference/api/extensions-sdk/_index.md).
 @z

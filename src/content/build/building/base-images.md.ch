@@ -1,28 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Base images
 description: Learn about base images and how they're created
 keywords: images, base image, examples
-aliases:
-- /articles/baseimages/
-- /engine/articles/baseimages/
-- /engine/userguide/eng-image/baseimages/
-- /develop/develop-images/baseimages/
----
 @y
----
 title: Base images
 description: Learn about base images and how they're created
 keywords: images, base image, examples
-aliases:
-- /articles/baseimages/
-- /engine/articles/baseimages/
-- /engine/userguide/eng-image/baseimages/
-- /develop/develop-images/baseimages/
----
 @z
 
 @x
@@ -156,10 +144,10 @@ CMD ["/hello"]
 @z
 
 @x
-Assuming an executable binary named `hello` exists at the root of the [build context](../../build/building/context.md).
+Assuming an executable binary named `hello` exists at the root of the [build context](/build/concepts/context.md).
 You can build this Docker image using the following `docker build` command:
 @y
-Assuming an executable binary named `hello` exists at the root of the [build context](../../build/building/context.md).
+Assuming an executable binary named `hello` exists at the root of the [build context](build/concepts/context.md).
 You can build this Docker image using the following `docker build` command:
 @z
 

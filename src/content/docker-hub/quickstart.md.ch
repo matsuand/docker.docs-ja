@@ -32,9 +32,9 @@ Start by creating a [Docker ID](https://hub.docker.com/signup).
 @z
 
 @x
-A [Docker ID](../docker-id/_index.md) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
+A [Docker ID](/accounts/create-account/) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
 @y
-[Docker ID](../docker-id/_index.md) は Docker Hub リポジトリへのアクセス権を定めるものであり、コミュニティや認証済み公開者が提供するイメージを参照できるようになります。
+[Docker ID](__SUBDIR__/accounts/create-account/) は Docker Hub リポジトリへのアクセス権を定めるものであり、コミュニティや認証済み公開者が提供するイメージを参照できるようになります。
 また Docker ID は Docker Hub 上においてイメージを共有するために必要となります。
 @z
 

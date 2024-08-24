@@ -19,12 +19,12 @@ title: Docker account overview
 - title: Create a Docker ID
   description: Get started with Docker and create an account.
   icon: fingerprint
-  link: /docker-id/
+  link: /accounts/create-account/
 @y
-- title: Create a Docker ID
+- title: Docker ID の生成
   description: Get started with Docker and create an account.
   icon: fingerprint
-  link: __SUBDIR__/docker-id/
+  link: __SUBDIR__/accounts/create-account/
 @z
 
 @x
@@ -33,7 +33,7 @@ title: Docker account overview
   icon: manage_accounts
   link: /accounts/manage-account/
 @y
-- title: Manage account
+- title: アカウント管理
   description: Learn how to manage the settings for your account.
   icon: manage_accounts
   link: __SUBDIR__/accounts/manage-account/
@@ -45,7 +45,7 @@ title: Docker account overview
   icon: help
   link: /faq/admin/general-faqs/
 @y
-- title: Account FAQ
+- title: アカウント FAQ
   description: Explore popular FAQ topics about organizations.
   icon: help
   link: __SUBDIR__/faq/admin/general-faqs/
@@ -57,7 +57,7 @@ title: Docker account overview
   icon: password
   link: /security/for-developers/access-tokens/
 @y
-- title: Personal access tokens
+- title: パーソナルアクセストークン
   description: Learn how to create and manage access tokens for your account.
   icon: password
   link: __SUBDIR__/security/for-developers/access-tokens/

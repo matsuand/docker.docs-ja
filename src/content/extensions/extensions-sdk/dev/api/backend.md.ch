@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Extension Backend
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases: 
- - /desktop/extensions-sdk/dev/api/backend/
----
 @y
----
 title: Extension Backend
 description: Docker extension API
 keywords: Docker, extensions, sdk, API
-aliases: 
- - /desktop/extensions-sdk/dev/api/backend/
----
 @z
 
 @x
@@ -58,9 +50,9 @@ ddClient.extension.vm.service
 @z
 
 @x
-See [Service API Reference](reference/interfaces/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
+See [Service API Reference](/reference/api/extensions-sdk/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
 @y
-See [Service API Reference](reference/interfaces/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
+See [Service API Reference](reference/api/extensions-sdk/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
 @z
 
 @x
@@ -234,9 +226,9 @@ await ddClient.extension.vm.cli.exec("ls", ["-l"], {
 @z
 
 @x
-For more details, refer to the [Extension VM API Reference](reference/interfaces/ExtensionVM.md)
+For more details, refer to the [Extension VM API Reference](/reference/api/extensions-sdk/ExtensionVM.md)
 @y
-For more details, refer to the [Extension VM API Reference](reference/interfaces/ExtensionVM.md)
+For more details, refer to the [Extension VM API Reference](reference/api/extensions-sdk/ExtensionVM.md)
 @z
 
 @x
@@ -358,9 +350,9 @@ You can stream the output of the command executed in the backend container or in
 @z
 
 @x
-For more details, refer to the [Extension Host API Reference](reference/interfaces/ExtensionHost.md)
+For more details, refer to the [Extension Host API Reference](/reference/api/extensions-sdk/ExtensionHost.md)
 @y
-For more details, refer to the [Extension Host API Reference](reference/interfaces/ExtensionHost.md)
+For more details, refer to the [Extension Host API Reference](reference/api/extensions-sdk/ExtensionHost.md)
 @z
 
 @x
@@ -430,13 +422,13 @@ window.ddClient.spawnHostCmd(
 @z
 
 @x
-> **Note**
+> [!NOTE]
 > 
 >You cannot use this to chain commands in a single `exec()` invocation (like `cmd1 $(cmd2)` or using pipe between commands).
 >
 > You need to invoke `exec()` for each command and parse results to pass parameters to the next command if needed.
 @y
-> **Note**
+> [!NOTE]
 > 
 >You cannot use this to chain commands in a single `exec()` invocation (like `cmd1 $(cmd2)` or using pipe between commands).
 >

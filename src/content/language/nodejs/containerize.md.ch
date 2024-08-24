@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
 % snip 対応
 
 @x
@@ -21,11 +22,11 @@ description: Node.js アプリケーションのコンテナー化について�
 
 @x
 * You have installed the latest version of [Docker
-  Desktop](../../get-docker.md).
+  Desktop](/get-started/get-docker.md).
 * You have a [git client](https://git-scm.com/downloads). The examples in this
   section use a command-line based git client, but you can use any client.
 @y
-* [Docker Desktop](../../get-docker.md) の最新版をインストールしていること。
+* [Docker Desktop](get-started/get-docker.md) の最新版をインストールしていること。
 * [git クライアント](https://git-scm.com/downloads) が利用可能であること。
   本節の利用例ではコマンドラインベースの git クライアントを用いていきますが、別のクライアントを用いてもかまいません。
 @z
@@ -254,12 +255,12 @@ You should now have at least the following contents in your
 To learn more about the files, see the following:
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
- - [compose.yaml](../../compose/compose-file/_index.md)
+ - [compose.yaml](/reference/compose-file/_index.md)
 @y
 各ファイルについての詳細は以下を参照してください。
  - [Dockerfile](../../reference/dockerfile.md)
  - [.dockerignore](../../reference/dockerfile.md#dockerignore-file)
- - [compose.yaml](../../compose/compose-file/_index.md)
+ - [compose.yaml](reference/compose-file/_index.md)
 @z
 
 @x
@@ -330,9 +331,9 @@ In the terminal, run the following command to stop the application.
 
 @x
 For more information about Compose commands, see the [Compose CLI
-reference](../../compose/reference/_index.md).
+reference](/reference/cli/docker/compose/_index.md).
 @y
-Compose コマンドの詳細は [Compose CLI リファレンス](../../compose/reference/_index.md) を参照してください。
+Compose コマンドの詳細は [Compose CLI リファレンス](reference/cli/docker/compose/_index.md) を参照してください。
 @z
 
 @x

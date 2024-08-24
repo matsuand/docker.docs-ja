@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Manage sensitive data with Docker secrets
 description: How to securely store, retrieve, and use sensitive data with Docker services
@@ -60,14 +62,14 @@ runtime but you don't want to store in the image or in source control, such as:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker secrets are only available to swarm services, not to
 > standalone containers. To use this feature, consider adapting your container
 > to run as a service. Stateful containers can typically run with a scale of 1
 > without changing the container code.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker secrets are only available to swarm services, not to
 > standalone containers. To use this feature, consider adapting your container
@@ -318,13 +320,13 @@ a similar way, see
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > These examples use a single-Engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
 > support secrets. See [Windows support](#windows-support).
 @y
-> **Note**
+> [!NOTE]
 >
 > These examples use a single-Engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
@@ -340,11 +342,11 @@ a similar way, see
 @x
 Both the `docker-compose` and `docker stack` commands support defining secrets
 in a compose file. See
-[the Compose file reference](../../compose/compose-file/legacy-versions.md) for details.
+[the Compose file reference](/reference/compose-file/legacy-versions.md) for details.
 @y
 Both the `docker-compose` and `docker stack` commands support defining secrets
 in a compose file. See
-[the Compose file reference](../../compose/compose-file/legacy-versions.md) for details.
+[the Compose file reference](reference/compose-file/legacy-versions.md) for details.
 @z
 
 @x
@@ -760,13 +762,13 @@ This example assumes that you have PowerShell installed.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > There is technically no reason to use secrets for this
     > example; [configs](configs.md) are a better fit. This example is
     > for illustration only.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > There is technically no reason to use secrets for this
     > example; [configs](configs.md) are a better fit. This example is
@@ -1168,14 +1170,14 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > Normally you would create a Dockerfile which copies the `site.conf`
     > into place, build the image, and run a container using your custom image.
     > This example does not require a custom image. It puts the `site.conf`
     > into place and runs the container all in one step.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > Normally you would create a Dockerfile which copies the `site.conf`
     > into place, build the image, and run a container using your custom image.
@@ -1534,7 +1536,7 @@ line.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This example uses a single-Engine swarm for simplicity, and uses a
 > single-node MySQL service because a single MySQL server instance cannot be
@@ -1545,7 +1547,7 @@ line.
 > a file on disk. You must use a query or a `mysqladmin` command to change the
 > password in MySQL.
 @y
-> **Note**
+> [!NOTE]
 >
 > This example uses a single-Engine swarm for simplicity, and uses a
 > single-node MySQL service because a single MySQL server instance cannot be
@@ -1574,7 +1576,7 @@ line.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > After you create a secret, you cannot update it. You can only
     > remove and re-create it, and you cannot remove a secret that a service is
@@ -1584,7 +1586,7 @@ line.
     > can later add a new version, update the service to use it, then remove the
     > old version.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > After you create a secret, you cannot update it. You can only
     > remove and re-create it, and you cannot remove a secret that a service is
@@ -2012,7 +2014,7 @@ use it, then remove the old secret.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Changing the password on a MySQL database involves running extra
 > queries or commands, as opposed to just changing a single environment variable
@@ -2021,7 +2023,7 @@ use it, then remove the old secret.
 > Rotating passwords or other secrets may involve additional steps outside of
 > Docker.
 @y
-> **Note**
+> [!NOTE]
 >
 > Changing the password on a MySQL database involves running extra
 > queries or commands, as opposed to just changing a single environment variable
@@ -2102,11 +2104,11 @@ use it, then remove the old secret.
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     >
     > This example does not rotate the MySQL `root` password.
 @y
-    > **Note**
+    > [!NOTE]
     >
     > This example does not rotate the MySQL `root` password.
 @z
@@ -2344,13 +2346,13 @@ the information from a Docker-managed secret instead of being passed directly.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker secrets do not set environment variables directly. This was a
 > conscious decision, because environment variables can unintentionally be leaked
 > between containers (for instance, if you use `--link`).
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker secrets do not set environment variables directly. This was a
 > conscious decision, because environment variables can unintentionally be leaked
@@ -2499,8 +2501,8 @@ for that secret data.
 
 @x
 More information on short and long syntax for secrets can be found in the
-[Compose Specification](../../compose/compose-file/09-secrets.md).
+[Compose Specification](/reference/compose-file/secrets.md).
 @y
 More information on short and long syntax for secrets can be found in the
-[Compose Specification](../../compose/compose-file/09-secrets.md).
+[Compose Specification](reference/compose-file/secrets.md).
 @z

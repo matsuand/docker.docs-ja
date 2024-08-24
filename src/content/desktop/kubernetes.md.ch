@@ -58,15 +58,13 @@ Kubernetes サーバーの有効、無効は、他の開発内容へは影響し
 @z
 
 @x
-   > **Important**
+   > [!IMPORTANT]
    >
    > The `kubectl` binary is not automatically packaged with Docker Desktop for Linux. To install the kubectl command for Linux, see [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). It should be installed at `/usr/local/bin/kubectl`.
-   { .important}
 @y
-   > **Important**
+   > [!IMPORTANT]
    >
    > The `kubectl` binary is not automatically packaged with Docker Desktop for Linux. To install the kubectl command for Linux, see [Kubernetes documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/). It should be installed at `/usr/local/bin/kubectl`.
-   { .important}
 @z
 
 @x
@@ -82,11 +80,11 @@ When Kubernetes is turned on and running, an additional status bar in the Docker
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop does not upgrade your Kubernetes cluster automatically after a new update. To upgrade your Kubernetes cluster to the latest version, select **Reset Kubernetes Cluster**.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop does not upgrade your Kubernetes cluster automatically after a new update. To upgrade your Kubernetes cluster to the latest version, select **Reset Kubernetes Cluster**.
 @z
@@ -120,19 +118,17 @@ pointing to some other environment, such as `minikube` or a GKE cluster, ensure 
 % snip command...
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Run the `kubectl` command in a CMD or PowerShell terminal, otherwise `kubectl config get-contexts` may return an empty result. 
 >
 > If you are using a different terminal and this happens, you can try setting the `kubeconfig` environment variable to the location of the `.kube/config` file. 
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Run the `kubectl` command in a CMD or PowerShell terminal, otherwise `kubectl config get-contexts` may return an empty result. 
 >
 > If you are using a different terminal and this happens, you can try setting the `kubeconfig` environment variable to the location of the `.kube/config` file. 
-{ .tip }
 @z
 
 @x

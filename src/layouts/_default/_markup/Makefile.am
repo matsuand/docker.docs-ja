@@ -9,8 +9,9 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	render-codeblock.html \
-	render-heading.html   \
+	render-blockquote.html \
+	render-codeblock.html  \
+	render-heading.html    \
 	render-link.html
 
 include $(top_srcdir)/build-aux/copy.mk

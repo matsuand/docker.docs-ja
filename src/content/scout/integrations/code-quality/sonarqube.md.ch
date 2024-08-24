@@ -46,23 +46,23 @@ them in the database.
 @x
 When you push a new image to a repository, Docker Scout evaluates the results
 of the SonarQube analysis record corresponding to the image. Docker Scout uses
-Git provenance metadata on the images, from  provenance attestations or an OCI
+Git provenance metadata on the images, from provenance attestations or an OCI
 annotations, to link image repositories with SonarQube analysis results.
 @y
 When you push a new image to a repository, Docker Scout evaluates the results
 of the SonarQube analysis record corresponding to the image. Docker Scout uses
-Git provenance metadata on the images, from  provenance attestations or an OCI
+Git provenance metadata on the images, from provenance attestations or an OCI
 annotations, to link image repositories with SonarQube analysis results.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Scout doesn't have access to historic SonarQube analysis records. Only
 > analysis results recorded after the integration is enabled will be available
 > to Docker Scout.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Scout doesn't have access to historic SonarQube analysis records. Only
 > analysis results recorded after the integration is enabled will be available
@@ -83,12 +83,12 @@ To integrate Docker Scout with SonarQube, ensure that:
 
 @x
 - Your image repository is [integrated with Docker Scout](../_index.md#container-registries).
-- Your images are built with [provenance attestations](../../../build/attestations/slsa-provenance.md),
+- Your images are built with [provenance attestations](../../../build/metadata/attestations/slsa-provenance.md),
   or the `org.opencontainers.image.revision` annotation,
   containing information about the Git repository.
 @y
 - Your image repository is [integrated with Docker Scout](../_index.md#container-registries).
-- Your images are built with [provenance attestations](../../../build/attestations/slsa-provenance.md),
+- Your images are built with [provenance attestations](../../../build/metadata/attestations/slsa-provenance.md),
   or the `org.opencontainers.image.revision` annotation,
   containing information about the Git repository.
 @z

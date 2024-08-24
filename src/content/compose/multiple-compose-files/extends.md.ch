@@ -1,32 +1,26 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: How to use Docker Compose's extends keyword to share configuration between
   files and projects
 keywords: fig, composition, compose, docker, orchestration, documentation, docs
 title: Extend your Compose file
-aliases:
-- /compose/extends/
----
 @y
----
 description: How to use Docker Compose's extends keyword to share configuration between
   files and projects
 keywords: fig, composition, compose, docker, orchestration, documentation, docs
 title: Extend your Compose file
-aliases:
-- /compose/extends/
----
 @z
 
 @x
-Docker Compose's [`extends` attribute](../compose-file/05-services.md#extends)
+Docker Compose's [`extends` attribute](/reference/compose-file/services.md#extends)
 lets you share common configurations among different files, or even different
 projects entirely.
 @y
-Docker Compose's [`extends` attribute](../compose-file/05-services.md#extends)
+Docker Compose's [`extends` attribute](reference/compose-file/services.md#extends)
 lets you share common configurations among different files, or even different
 projects entirely.
 @z
@@ -46,7 +40,7 @@ application, with the ability to override some attributes for your own needs.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > When you use multiple Compose files, you must make sure all paths in the files
 are relative to the base Compose file (i.e. the Compose file in your main-project folder). This is required because extend files
@@ -54,9 +48,8 @@ need not be valid Compose files. Extend files can contain small fragments of
 configuration. Tracking which fragment of a service is relative to which path is
 difficult and confusing, so to keep paths easier to understand, all paths must
 be defined relative to the base file. 
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > When you use multiple Compose files, you must make sure all paths in the files
 are relative to the base Compose file (i.e. the Compose file in your main-project folder). This is required because extend files
@@ -64,7 +57,6 @@ need not be valid Compose files. Extend files can contain small fragments of
 configuration. Tracking which fragment of a service is relative to which path is
 difficult and confusing, so to keep paths easier to understand, all paths must
 be defined relative to the base file. 
-{ .important }
 @z
 
 @x
@@ -492,7 +484,7 @@ services:
 @z
 
 @x
-- [`extends`](../compose-file/05-services.md#extends)
+- [`extends`](/reference/compose-file/services.md#extends)
 @y
-- [`extends`](../compose-file/05-services.md#extends)
+- [`extends`](reference/compose-file/services.md#extends)
 @z

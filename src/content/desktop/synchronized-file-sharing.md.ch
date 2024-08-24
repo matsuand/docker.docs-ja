@@ -14,11 +14,11 @@ keyword: mutagen, file sharing, docker desktop, bind mounts
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Synchronized file shares is available with Docker Desktop version 4.27 and later. It is available for customers with a Docker Pro, Team, or Business subscription. 
 @y
-> **Note**
+> [!NOTE]
 >
 > Synchronized file shares is available with Docker Desktop version 4.27 and later. It is available for customers with a Docker Pro, Team, or Business subscription. 
 @z
@@ -74,25 +74,23 @@ After creating a file share instance, any container using a bind mount that poin
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop.
 @y
-> **Note**
+> [!NOTE]
 >
 > Synchronized file shares is not used by Kubernetes' `hostPath` volumes in Docker Desktop.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > Synchronized file shares isn't available on WSL or when using Windows containers. 
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > Synchronized file shares isn't available on WSL or when using Windows containers. 
-{ .important }
 @z
 
 @x
@@ -138,17 +136,15 @@ When the status indicator displays **Watching for filesystem changes**, your fil
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Compose can now automatically create file shares for bind mounts. 
 > Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Compose can now automatically create file shares for bind mounts. 
 > Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
-{ .tip }
 @z
 
 @x

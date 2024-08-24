@@ -108,13 +108,13 @@ Restart Docker for the changes to take effect.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for
 > `gelf-tcp-max-reconnect`) must therefore be enclosed in quotes (`"`).
 @y
-> **Note**
+> [!NOTE]
 >
 > `log-opts` configuration options in the `daemon.json` configuration file must
 > be provided as strings. Boolean and numeric values (such as the value for
@@ -184,11 +184,11 @@ The `gelf` logging driver supports the following options:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The `gelf` driver doesn't support TLS for TCP connections. Messages sent to TLS-protected inputs can silently fail.
 @y
-> **Note**
+> [!NOTE]
 >
 > The `gelf` driver doesn't support TLS for TCP connections. Messages sent to TLS-protected inputs can silently fail.
 @z

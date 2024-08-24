@@ -1,12 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
 title: Docker Engine 27.1 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @y
-title: Docker Engine 27.1 release notes
+title: Docker Engine 27.1 リリースノート
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @z
@@ -14,21 +16,21 @@ keywords: docker, docker engine, ce, whats new, release notes
 @x
 This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 27.1.
 @y
-This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 27.1.
+本ページでは Docker Engine バージョン 27.1 に関する最新の変更、追加、既知の問題、バグフィックスについて示します。
 @z
 
 @x
 For more information about:
 @y
-For more information about:
+さらに以下の情報についても示します。
 @z
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history.md).
 @y
-- Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](../api/version-history.md).
+- 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](reference/api/engine/version-history.md) を参照。
 @z
 
 @x

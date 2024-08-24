@@ -26,15 +26,13 @@ In order to help validate your extension and ensure it's functional, the Extensi
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > The [Docker Desktop Action](https://github.com/docker/desktop-action) and the [extension-test-helper library](https://www.npmjs.com/package/@docker/extension-test-helper) are both [experimental](https://docs.docker.com/release-lifecycle/#experimental).
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > The [Docker Desktop Action](https://github.com/docker/desktop-action) and the [extension-test-helper library](https://www.npmjs.com/package/@docker/extension-test-helper) are both [experimental](https://docs.docker.com/release-lifecycle/#experimental).
-{ .important }
 @z
 
 @x
@@ -66,11 +64,11 @@ steps:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This action supports only Github Action macOS runners at the moment. You need to specify `runs-on: macOS-latest` for your end to end tests.
 @y
-> **Note**
+> [!NOTE]
 >
 > This action supports only Github Action macOS runners at the moment. You need to specify `runs-on: macOS-latest` for your end to end tests.
 @z

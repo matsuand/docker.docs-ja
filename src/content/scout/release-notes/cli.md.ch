@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
 title: Docker Scout CLI release notes
@@ -133,8 +133,35 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 - Account for VEX in `quickview` command.
 @z
 
-% snip command...
-% snip code...
+@x
+  ```console {title="CLI"}
+  $ docker scout quickview IMAGE --only-vex-affected --vex-location ./path/to/my.vex.json
+  ```
+@y
+  ```console {title="CLI"}
+  $ docker scout quickview IMAGE --only-vex-affected --vex-location ./path/to/my.vex.json
+  ```
+@z
+
+@x
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: quickview
+    image: [IMAGE]
+    only-vex-affected: true
+    vex-location: ./path/to/my.vex.json
+  ```
+@y
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: quickview
+    image: [IMAGE]
+    only-vex-affected: true
+    vex-location: ./path/to/my.vex.json
+  ```
+@z
 
 @x
 - Account for VEX in `cves` command (GitHub Actions).
@@ -142,7 +169,25 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 - Account for VEX in `cves` command (GitHub Actions).
 @z
 
-% snip code...
+@x
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: cves
+    image: [IMAGE]
+    only-vex-affected: true
+    vex-location: ./path/to/my.vex.json
+  ```
+@y
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: cves
+    image: [IMAGE]
+    only-vex-affected: true
+    vex-location: ./path/to/my.vex.json
+  ```
+@z
 
 @x
 ### Bug fixes and enhancements
@@ -182,8 +227,67 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 - Filter CVEs listed in the CISA Known Exploited Vulnerabilities catalog.
 @z
 
-% snip command...
-% snip code...
+@x
+  ```console {title="CLI"}
+  $ docker scout cves [IMAGE] --only-cisa-kev
+@y
+  ```console {title="CLI"}
+  $ docker scout cves [IMAGE] --only-cisa-kev
+@z
+
+@x
+  ... (cropped output) ...
+  ## Packages and Vulnerabilities
+@y
+  ... (cropped output) ...
+  ## Packages and Vulnerabilities
+@z
+
+@x
+  0C     1H     0M     0L  io.netty/netty-codec-http2 4.1.97.Final
+  pkg:maven/io.netty/netty-codec-http2@4.1.97.Final
+@y
+  0C     1H     0M     0L  io.netty/netty-codec-http2 4.1.97.Final
+  pkg:maven/io.netty/netty-codec-http2@4.1.97.Final
+@z
+
+@x
+  ✗ HIGH CVE-2023-44487  CISA KEV  [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+    https://scout.docker.com/v/CVE-2023-44487
+    Affected range  : <4.1.100
+    Fixed version   : 4.1.100.Final
+    CVSS Score      : 7.5
+    CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  ... (cropped output) ...
+  ```
+@y
+  ✗ HIGH CVE-2023-44487  CISA KEV  [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+    https://scout.docker.com/v/CVE-2023-44487
+    Affected range  : <4.1.100
+    Fixed version   : 4.1.100.Final
+    CVSS Score      : 7.5
+    CVSS Vector     : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+  ... (cropped output) ...
+  ```
+@z
+
+@x
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: cves
+    image: [IMAGE]
+    only-cisa-kev: true
+  ```
+@y
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: cves
+    image: [IMAGE]
+    only-cisa-kev: true
+  ```
+@z
 
 @x
 - Add new classifiers:
@@ -263,8 +367,33 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 - Support `sbom://` prefix for image comparison:
 @z
 
-% snip command...
-% snip code...
+@x
+  ```console {title="CLI"}
+  $ docker scout compare sbom://image1.json --to sbom://image2.json
+  ```
+@y
+  ```console {title="CLI"}
+  $ docker scout compare sbom://image1.json --to sbom://image2.json
+  ```
+@z
+
+@x
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: compare
+    image: sbom://image1.json
+    to: sbom://image2.json
+  ```
+@y
+  ```yaml {title="GitHub Action"}
+  uses: docker/scout-action@v1
+  with:
+    command: compare
+    image: sbom://image1.json
+    to: sbom://image2.json
+  ```
+@z
 
 @x
 ## 1.9.3
@@ -320,7 +449,95 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
   Here is an example pipeline:
 @z
 
-% snip code...
+@x
+  ```yaml
+     docker-build:
+    # Use the official docker image.
+    image: docker:cli
+    stage: build
+    services:
+      - docker:dind
+    variables:
+      DOCKER_IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    before_script:
+      - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+@y
+  ```yaml
+     docker-build:
+    # Use the official docker image.
+    image: docker:cli
+    stage: build
+    services:
+      - docker:dind
+    variables:
+      DOCKER_IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    before_script:
+      - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+@z
+
+@x
+      # Install curl and the Docker Scout CLI
+      - |
+        apk add --update curl
+        curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
+        apk del curl
+        rm -rf /var/cache/apk/*
+      # Login to Docker Hub required for Docker Scout CLI
+      - echo "$DOCKER_HUB_PAT" | docker login --username "$DOCKER_HUB_USER" --password-stdin
+@y
+      # Install curl and the Docker Scout CLI
+      - |
+        apk add --update curl
+        curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
+        apk del curl
+        rm -rf /var/cache/apk/*
+      # Login to Docker Hub required for Docker Scout CLI
+      - echo "$DOCKER_HUB_PAT" | docker login --username "$DOCKER_HUB_USER" --password-stdin
+@z
+
+@x
+    # All branches are tagged with $DOCKER_IMAGE_NAME (defaults to commit ref slug)
+    # Default branch is also tagged with `latest`
+    script:
+      - docker buildx b --pull -t "$DOCKER_IMAGE_NAME" .
+      - docker scout cves "$DOCKER_IMAGE_NAME" --format gitlab --output gl-container-scanning-report.json
+      - docker push "$DOCKER_IMAGE_NAME"
+      - |
+        if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+          docker tag "$DOCKER_IMAGE_NAME" "$CI_REGISTRY_IMAGE:latest"
+          docker push "$CI_REGISTRY_IMAGE:latest"
+        fi
+    # Run this job in a branch where a Dockerfile exists
+    rules:
+      - if: $CI_COMMIT_BRANCH
+        exists:
+          - Dockerfile
+    artifacts:
+      reports:
+        container_scanning: gl-container-scanning-report.json
+  ```
+@y
+    # All branches are tagged with $DOCKER_IMAGE_NAME (defaults to commit ref slug)
+    # Default branch is also tagged with `latest`
+    script:
+      - docker buildx b --pull -t "$DOCKER_IMAGE_NAME" .
+      - docker scout cves "$DOCKER_IMAGE_NAME" --format gitlab --output gl-container-scanning-report.json
+      - docker push "$DOCKER_IMAGE_NAME"
+      - |
+        if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
+          docker tag "$DOCKER_IMAGE_NAME" "$CI_REGISTRY_IMAGE:latest"
+          docker push "$CI_REGISTRY_IMAGE:latest"
+        fi
+    # Run this job in a branch where a Dockerfile exists
+    rules:
+      - if: $CI_COMMIT_BRANCH
+        exists:
+          - Dockerfile
+    artifacts:
+      reports:
+        container_scanning: gl-container-scanning-report.json
+  ```
+@z
 
 @x
 ### Bug fixes and enhancements
@@ -386,7 +603,17 @@ Discarded in favor of [1.9.1](#191).
   Before:
 @z
 
-% snip text...
+@x
+  ```text
+  EPSS Score      : 0.000440
+  EPSS Percentile : 0.092510
+  ```
+@y
+  ```text
+  EPSS Score      : 0.000440
+  EPSS Percentile : 0.092510
+  ```
+@z
 
 @x
   After:
@@ -394,7 +621,17 @@ Discarded in favor of [1.9.1](#191).
   After:
 @z
 
-% snip text...
+@x
+  ```text
+  EPSS Score      : 0.04%
+  EPSS Percentile : 9th percentile
+  ```
+@y
+  ```text
+  EPSS Score      : 0.04%
+  EPSS Percentile : 9th percentile
+  ```
+@z
 
 @x
 - Fix markdown output of the `docker scout cves` command when analyzing local filesystem. [docker/scout-cli#113](https://github.com/docker/scout-cli/issues/113)
@@ -557,11 +794,11 @@ Discarded in favor of [1.9.1](#191).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This release only affects the `docker/scout-action` GitHub Action.
 @y
-> **Note**
+> [!NOTE]
 >
 > This release only affects the `docker/scout-action` GitHub Action.
 @z
@@ -629,11 +866,11 @@ Discarded in favor of [1.9.1](#191).
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This release only affects the CLI plugin, not the GitHub Action
 @y
-> **Note**
+> [!NOTE]
 >
 > This release only affects the CLI plugin, not the GitHub Action
 @z
@@ -725,11 +962,15 @@ Discarded in favor of [1.9.1](#191).
   uses the cache from Windows. That way, if an image has been indexed for
   instance by Docker Desktop there's no need anymore to re-index it on WSL2
   side.
+- Indexing is now blocked in the CLI if it has been disabled using
+  [Settings Management](/security/for-admins/hardened-desktop/settings-management/configure.md) feature.
 @y
   When inside WSL2 with Docker Desktop running, the Docker Scout CLI plugin now
   uses the cache from Windows. That way, if an image has been indexed for
   instance by Docker Desktop there's no need anymore to re-index it on WSL2
   side.
+- Indexing is now blocked in the CLI if it has been disabled using
+  [Settings Management](security/for-admins/hardened-desktop/settings-management/configure.md) feature.
 @z
 
 @x

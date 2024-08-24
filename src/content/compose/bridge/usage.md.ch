@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Use the default Compose Bridge transformation
 description: Learn about and use the Compose Bridge default transformation
 keywords: compose, bridge, kubernetes
----
 @y
----
 title: Use the default Compose Bridge transformation
 description: Learn about and use the Compose Bridge default transformation
 keywords: compose, bridge, kubernetes
----
 @z
 
 @x
@@ -29,7 +27,7 @@ Compose Bridge supplies an out-of-the box transformation for your Compose config
 
 @x
 - A [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) so all your resources are isolated and don't conflict with resources from other deployments.
-- A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) with an entry for each and every [config](../compose-file/08-configs.md) resource in your Compose application.
+- A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) with an entry for each and every [config](/reference/compose-file/configs.md) resource in your Compose application.
 - [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for application services. This ensures that the specified number of instances of your application are maintained in the Kubernetes cluster.
 - [Services](https://kubernetes.io/docs/concepts/services-networking/service/) for ports exposed by your services, used for service-to-service communication.
 - [Services](https://kubernetes.io/docs/concepts/services-networking/service/) for ports published by your services, with type `LoadBalancer` so that Docker Desktop will also expose the same port on the host.
@@ -38,7 +36,7 @@ Compose Bridge supplies an out-of-the box transformation for your Compose config
 - [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) with your secret encoded. This is designed for local use in a testing environment.
 @y
 - A [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) so all your resources are isolated and don't conflict with resources from other deployments.
-- A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) with an entry for each and every [config](../compose-file/08-configs.md) resource in your Compose application.
+- A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) with an entry for each and every [config](reference/compose-file/configs.md) resource in your Compose application.
 - [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for application services. This ensures that the specified number of instances of your application are maintained in the Kubernetes cluster.
 - [Services](https://kubernetes.io/docs/concepts/services-networking/service/) for ports exposed by your services, used for service-to-service communication.
 - [Services](https://kubernetes.io/docs/concepts/services-networking/service/) for ports published by your services, with type `LoadBalancer` so that Docker Desktop will also expose the same port on the host.
@@ -150,11 +148,11 @@ the standard deployment command `kubectl apply -k out/overlays/desktop/`.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Make sure you have enabled Kubernetes in Docker Desktop before you deploy your Compose Bridge transformations.
 @y
-> **Note**
+> [!NOTE]
 >
 > Make sure you have enabled Kubernetes in Docker Desktop before you deploy your Compose Bridge transformations.
 @z
@@ -176,15 +174,13 @@ $ compose-bridge convert -f <path-to-file>/compose.yaml
 @z
 
 @x
-> **Tip**
+> [!TIP]
 >
 > Run `compose-bridge convert --help` to see all available flags. 
-{ .tip }
 @y
-> **Tip**
+> [!TIP]
 >
 > Run `compose-bridge convert --help` to see all available flags. 
-{ .tip }
 @z
 
 @x

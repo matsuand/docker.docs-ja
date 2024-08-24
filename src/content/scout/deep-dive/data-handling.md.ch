@@ -1,30 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
----
 description: How Docker Scout handles image metadata
 keywords: |
   scout, scanning, supply chain, security, purl, sbom, provenance, environment,
   materials, config, ports, labels, os, registry, timestamp, digest, layers,
   architecture, license, dependencies, base image
 title: Data collection and storage in Docker Scout
-aliases:
-  /scout/data-handling/
----
 @y
----
 description: How Docker Scout handles image metadata
 keywords: |
   scout, scanning, supply chain, security, purl, sbom, provenance, environment,
   materials, config, ports, labels, os, registry, timestamp, digest, layers,
   architecture, license, dependencies, base image
 title: Data collection and storage in Docker Scout
-aliases:
-  /scout/data-handling/
----
 @z
 
 @x
@@ -217,11 +209,11 @@ Docker Scout platform; it's only used to run the analysis.
 ### Provenance
 @z
 
-@x (no slash) 対応
-For images with [provenance attestations](/build/attestations/slsa-provenance.md),
+@x
+For images with [provenance attestations](/build/metadata/attestations/slsa-provenance.md),
 Docker Scout stores the following data in addition to the SBOM:
 @y
-For images with [provenance attestations](build/attestations/slsa-provenance.md),
+For images with [provenance attestations](build/metadata/attestations/slsa-provenance.md),
 Docker Scout stores the following data in addition to the SBOM:
 @z
 

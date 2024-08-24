@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -20,18 +20,16 @@ description: |
   requirements over time
 @z
 
-@x (no slash) 対応
-> **Early Access**
->
-> Policy Evaluation is an [Early Access](/release-lifecycle/#early-access-ea)
-> feature of Docker Scout.
-{ .restricted }
+@x
+{{% restricted title="Early Access" %}}
+Policy Evaluation is an [Early Access](/release-lifecycle/#early-access-ea)
+feature of Docker Scout.
+{{% /restricted %}}
 @y
-> **早期アクセス**
->
-> Policy Evaluation is an [Early Access](release-lifecycle/#early-access-ea)
-> feature of Docker Scout.
-{ .restricted }
+{{% restricted title="Early Access" %}}
+Policy Evaluation is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
+feature of Docker Scout.
+{{% /restricted %}}
 @z
 
 @x
@@ -80,15 +78,15 @@ defined by policies.
 
 @x
 A policy defines image quality criteria that your artifacts should fulfill.
-For example, the **No copyleft licenses** policy flags packages distributed under a copyleft license.
-If an image contains a copyleft-licensed package, that image is non-compliant with this policy.
-Some policies, such as the **No copyleft licenses** policy, are configurable.
+For example, the **No AGPL v3 licenses** policy flags any image containing packages distributed under the AGPL v3 license.
+If an image contains such a package, that image is non-compliant with this policy.
+Some policies, such as the **No AGPL v3 licenses** policy, are configurable.
 Configurable policies let you adjust the criteria to better match your organization's needs.
 @y
 A policy defines image quality criteria that your artifacts should fulfill.
-For example, the **No copyleft licenses** policy flags packages distributed under a copyleft license.
-If an image contains a copyleft-licensed package, that image is non-compliant with this policy.
-Some policies, such as the **No copyleft licenses** policy, are configurable.
+For example, the **No AGPL v3 licenses** policy flags any image containing packages distributed under the AGPL v3 license.
+If an image contains such a package, that image is non-compliant with this policy.
+Some policies, such as the **No AGPL v3 licenses** policy, are configurable.
 Configurable policies let you adjust the criteria to better match your organization's needs.
 @z
 
@@ -136,18 +134,20 @@ Docker Scout ships the following out-of-the-box policies:
 
 @x
 - [No fixable critical or high vulnerabilities](#no-fixable-critical-or-high-vulnerabilities)
-- [No copyleft licenses](#no-copyleft-licenses)
+- [No AGPL v3 licenses](#no-agpl-v3-licenses)
 - [No outdated base images](#no-outdated-base-images)
 - [No high-profile vulnerabilities](#no-high-profile-vulnerabilities)
 - [Supply chain attestations](#supply-chain-attestations)
 - [Default non-root user](#default-non-root-user)
+- [No unapproved base images](#no-unapproved-base-images)
 @y
 - [No fixable critical or high vulnerabilities](#no-fixable-critical-or-high-vulnerabilities)
-- [No copyleft licenses](#no-copyleft-licenses)
+- [No AGPL v3 licenses](#no-agpl-v3-licenses)
 - [No outdated base images](#no-outdated-base-images)
 - [No high-profile vulnerabilities](#no-high-profile-vulnerabilities)
 - [Supply chain attestations](#supply-chain-attestations)
 - [Default non-root user](#default-non-root-user)
+- [No unapproved base images](#no-unapproved-base-images)
 @z
 
 @x
@@ -185,24 +185,16 @@ containing a fix for the vulnerability.
 @z
 
 @x
-By default, this policy only flags critical and high severity vulnerabilities
-disclosed more than 30 days ago. The rationale for only flagging
-vulnerabilities of a certain age is that newly discovered vulnerabilities
-shouldn't cause your evaluations to fail until you've had a chance to address
-them.
+By default, this policy only flags critical and high severity vulnerabilities.
 @y
-By default, this policy only flags critical and high severity vulnerabilities
-disclosed more than 30 days ago. The rationale for only flagging
-vulnerabilities of a certain age is that newly discovered vulnerabilities
-shouldn't cause your evaluations to fail until you've had a chance to address
-them.
+By default, this policy only flags critical and high severity vulnerabilities.
 @z
 
 @x
-This policy is unfulfilled if an artifact is affected by one or more critical-
+This policy is violated if an artifact is affected by one or more critical-
 or high-severity vulnerability, where a fix version is available.
 @y
-This policy is unfulfilled if an artifact is affected by one or more critical-
+This policy is violated if an artifact is affected by one or more critical-
 or high-severity vulnerability, where a fix version is available.
 @z
 
@@ -215,15 +207,37 @@ The following policy parameters are configurable in a custom version:
 @z
 
 @x
-- Name and description of the policy
-- Severity levels to consider
-- Age threshold (set to `0` to flag all vulnerabilities, regardless of age)
-- Whether or not to only report vulnerabilities with a fix version available
+- **Age**: The minimum number of days since the vulnerability was first published
 @y
-- Name and description of the policy
-- Severity levels to consider
-- Age threshold (set to `0` to flag all vulnerabilities, regardless of age)
-- Whether or not to only report vulnerabilities with a fix version available
+- **Age**: The minimum number of days since the vulnerability was first published
+@z
+
+@x
+  The rationale for only flagging vulnerabilities of a certain minimum age is
+  that newly discovered vulnerabilities shouldn't cause your evaluations to
+  fail until you've had a chance to address them.
+@y
+  The rationale for only flagging vulnerabilities of a certain minimum age is
+  that newly discovered vulnerabilities shouldn't cause your evaluations to
+  fail until you've had a chance to address them.
+@z
+
+@x
+<!-- vale Vale.Spelling = NO -->
+- **Severities**: Severity levels to consider (default: `Critical, High`)
+<!-- vale Vale.Spelling = YES -->
+@y
+<!-- vale Vale.Spelling = NO -->
+- **Severities**: Severity levels to consider (default: `Critical, High`)
+<!-- vale Vale.Spelling = YES -->
+@z
+
+@x
+- **Fixable vulnerabilities only**: Whether or not to only report
+  vulnerabilities with a fix version available (enabled by default).
+@y
+- **Fixable vulnerabilities only**: Whether or not to only report
+  vulnerabilities with a fix version available (enabled by default).
 @z
 
 @x
@@ -233,29 +247,19 @@ For more information about configuring policies, see [Configure policies](./conf
 @z
 
 @x
-### No copyleft licenses
+### No AGPL v3 licenses
 @y
-### No copyleft licenses
+### No AGPL v3 licenses
 @z
 
 @x
-The **No copyleft licenses** policy requires that your artifacts don't contain
-packages distributed under an AGPLv3 or GPLv3 license. These licenses are
-protective [copyleft](https://en.wikipedia.org/wiki/Copyleft), and may be
-unsuitable for use in your software because of the restrictions they enforce.
+The **No AGPL v3 licenses** policy requires that your artifacts don't contain
+packages distributed under an AGPLv3 license. This policy is violated if
+your artifacts contain one or more packages with this license.
 @y
-The **No copyleft licenses** policy requires that your artifacts don't contain
-packages distributed under an AGPLv3 or GPLv3 license. These licenses are
-protective [copyleft](https://en.wikipedia.org/wiki/Copyleft), and may be
-unsuitable for use in your software because of the restrictions they enforce.
-@z
-
-@x
-This policy is unfulfilled if your artifacts contain one or more packages with
-a violating license.
-@y
-This policy is unfulfilled if your artifacts contain one or more packages with
-a violating license.
+The **No AGPL v3 licenses** policy requires that your artifacts don't contain
+packages distributed under an AGPLv3 license. This policy is violated if
+your artifacts contain one or more packages with this license.
 @z
 
 @x
@@ -283,11 +287,11 @@ up-to-date.
 @z
 
 @x
-It's unfulfilled when the tag you used to build your image points to a
+It's violated when the tag you used to build your image points to a
 different digest than what you're using. If there's a mismatch in digests, that
 means the base image you're using is out of date.
 @y
-It's unfulfilled when the tag you used to build your image points to a
+It's violated when the tag you used to build your image points to a
 different digest than what you're using. If there's a mismatch in digests, that
 means the base image you're using is out of date.
 @z
@@ -328,22 +332,62 @@ The list includes the following vulnerabilities:
 - [CVE-2014-0160 (OpenSSL Heartbleed)](https://scout.docker.com/v/CVE-2014-0160)
 - [CVE-2021-44228 (Log4Shell)](https://scout.docker.com/v/CVE-2021-44228)
 - [CVE-2023-38545 (cURL SOCKS5 heap buffer overflow)](https://scout.docker.com/v/CVE-2023-38545)
-:cc
+- [CVE-2023-44487 (HTTP/2 Rapid Reset)](https://scout.docker.com/v/CVE-2023-44487)
 - [CVE-2024-3094 (XZ backdoor)](https://scout.docker.com/v/CVE-2024-3094)
 @y
 - [CVE-2014-0160 (OpenSSL Heartbleed)](https://scout.docker.com/v/CVE-2014-0160)
 - [CVE-2021-44228 (Log4Shell)](https://scout.docker.com/v/CVE-2021-44228)
 - [CVE-2023-38545 (cURL SOCKS5 heap buffer overflow)](https://scout.docker.com/v/CVE-2023-38545)
-:cc
+- [CVE-2023-44487 (HTTP/2 Rapid Reset)](https://scout.docker.com/v/CVE-2023-44487)
 - [CVE-2024-3094 (XZ backdoor)](https://scout.docker.com/v/CVE-2024-3094)
 @z
 
 @x
 You can configure the CVEs included in this list by creating a custom policy.
-For more information, see [Configure policies](./configure.md).
+Custom configuration options include:
 @y
 You can configure the CVEs included in this list by creating a custom policy.
-For more information, see [Configure policies](./configure.md).
+Custom configuration options include:
+@z
+
+@x
+- **CVEs to avoid**: Specify the CVEs that you want to avoid in your artifacts.
+@y
+- **CVEs to avoid**: Specify the CVEs that you want to avoid in your artifacts.
+@z
+
+@x
+  Default: `CVE-2014-0160`, `CVE-2021-44228`, `CVE-2023-38545`, `CVE-2023-44487`, `CVE-2024-3094`
+@y
+  Default: `CVE-2014-0160`, `CVE-2021-44228`, `CVE-2023-38545`, `CVE-2023-44487`, `CVE-2024-3094`
+@z
+
+@x
+- **CISA KEV**: Enable tracking of vulnerabilities from CISA's Known Exploited Vulnerabilities (KEV) catalog
+@y
+- **CISA KEV**: Enable tracking of vulnerabilities from CISA's Known Exploited Vulnerabilities (KEV) catalog
+@z
+
+@x
+  The [CISA KEV catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+  includes vulnerabilities that are actively exploited in the wild. When enabled,
+  the policy flags images that contain vulnerabilities from the CISA KEV catalog.
+@y
+  The [CISA KEV catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+  includes vulnerabilities that are actively exploited in the wild. When enabled,
+  the policy flags images that contain vulnerabilities from the CISA KEV catalog.
+@z
+
+@x
+  Enabled by default.
+@y
+  Enabled by default.
+@z
+
+@x
+For more information on policy configuration, see [Configure policies](./configure.md).
+@y
+For more information on policy configuration, see [Configure policies](./configure.md).
 @z
 
 @x
@@ -354,34 +398,50 @@ For more information, see [Configure policies](./configure.md).
 
 @x
 The **Supply chain attestations** policy requires that your artifacts have
-[SBOM](../../build/attestations/sbom.md) and
-[provenance](../../build/attestations/slsa-provenance.md) attestations.
+[SBOM](../../build/metadata/attestations/sbom.md) and
+[provenance](../../build/metadata/attestations/slsa-provenance.md) attestations.
 @y
 The **Supply chain attestations** policy requires that your artifacts have
-[SBOM](../../build/attestations/sbom.md) and
-[provenance](../../build/attestations/slsa-provenance.md) attestations.
+[SBOM](../../build/metadata/attestations/sbom.md) and
+[provenance](../../build/metadata/attestations/slsa-provenance.md) attestations.
 @z
 
 @x
-This policy is unfulfilled if an artifact lacks either an SBOM attestation or a
+This policy is violated if an artifact lacks either an SBOM attestation or a
 provenance attestation with max mode. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @y
-This policy is unfulfilled if an artifact lacks either an SBOM attestation or a
+This policy is violated if an artifact lacks either an SBOM attestation or a
 provenance attestation with max mode. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @z
 
-% snip command...
+@x
+```console
+$ docker buildx build --provenance=true --sbom=true -t <IMAGE> --push .
+```
+@y
+```console
+$ docker buildx build --provenance=true --sbom=true -t <IMAGE> --push .
+```
+@z
 
 @x
-For more information about
-building with attestations, see
-[Attestations](../../build/attestations/_index.md).
+For more information about building with attestations, see
+[Attestations](../../build/metadata/attestations/_index.md).
 @y
-For more information about
-building with attestations, see
-[Attestations](../../build/attestations/_index.md).
+For more information about building with attestations, see
+[Attestations](../../build/metadata/attestations/_index.md).
+@z
+
+@x
+If you're using GitHub Actions to build and push your images,
+learn how you can [configure the action](/build/ci/github-actions/attestations.md)
+to apply SBOM and provenance attestations.
+@y
+If you're using GitHub Actions to build and push your images,
+learn how you can [configure the action](/build/ci/github-actions/attestations.md)
+to apply SBOM and provenance attestations.
 @z
 
 @x
@@ -467,14 +527,14 @@ RUN echo "Hi"
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > This policy only checks for the default user of the image, as set in the
 > image configuration blob. Even if you do specify a non-root default user,
 > it's still possible to override the default user at runtime, for example by
 > using the `--user` flag for the `docker run` command.
 @y
-> **Note**
+> [!NOTE]
 >
 > This policy only checks for the default user of the image, as set in the
 > image configuration blob. Even if you do specify a non-root default user,
@@ -575,43 +635,17 @@ ENTRYPOINT ["/app/production"]
 @z
 
 @x
-## Additional policies
-@y
-## Additional policies
-@z
-
-@x
-In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
-by default, Docker Scout supports the following optional policies. Before you
-can enable these policies, you need to either configure the policies, or
-configure the integration that the policy requires.
-@y
-In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
-by default, Docker Scout supports the following optional policies. Before you
-can enable these policies, you need to either configure the policies, or
-configure the integration that the policy requires.
-@z
-
-@x
-- [No unapproved base images](#no-unapproved-base-images)
-- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
-@y
-- [No unapproved base images](#no-unapproved-base-images)
-- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
-@z
-
-@x
 ### No unapproved base images
 @y
 ### No unapproved base images
 @z
 
 @x
-The **No unapproved base images** policy lets you restrict which base
-images you allow in your builds.
+The **No unapproved base images** policy ensures that the base images you use
+in your builds are maintained and secure.
 @y
-The **No unapproved base images** policy lets you restrict which base
-images you allow in your builds.
+The **No unapproved base images** policy ensures that the base images you use
+in your builds are maintained and secure.
 @z
 
 @x
@@ -655,31 +689,71 @@ to match Docker Hub images. This is the registry hostname of Docker Hub.
 @z
 
 @x
-You can also configure the policy to:
+This policy is configurable with the following options:
 @y
-You can also configure the policy to:
+This policy is configurable with the following options:
 @z
 
 @x
-- Allow only supported tags of Docker Official Images.
+- **Approved base image sources**
 @y
-- Allow only supported tags of Docker Official Images.
+- **Approved base image sources**
+@z
+
+@x
+  Specify the image reference patterns that you want to allow. The policy
+  evaluates the base image references against these patterns.
+@y
+  Specify the image reference patterns that you want to allow. The policy
+  evaluates the base image references against these patterns.
+@z
+
+@x
+  Default: `[*]` (any reference is an allowed base image)
+@y
+  Default: `[*]` (any reference is an allowed base image)
+@z
+
+@x
+- **Only supported tags**
+@y
+- **Only supported tags**
+@z
+
+@x
+  Allow only supported tags when using Docker Official Images.
+@y
+  Allow only supported tags when using Docker Official Images.
 @z
 
 @x
   When this option is enabled, images using unsupported tags of official images
-  trigger a policy violation. Supported tags for official images are listed in
-  the **Supported tags** section of the repository overview on Docker Hub.
+  as their base image trigger a policy violation. Supported tags for official
+  images are listed in the **Supported tags** section of the repository
+  overview on Docker Hub.
 @y
   When this option is enabled, images using unsupported tags of official images
-  trigger a policy violation. Supported tags for official images are listed in
-  the **Supported tags** section of the repository overview on Docker Hub.
+  as their base image trigger a policy violation. Supported tags for official
+  images are listed in the **Supported tags** section of the repository
+  overview on Docker Hub.
 @z
 
 @x
-- Allow only Docker Official Images of supported distro versions
+  Enabled by default.
 @y
-- Allow only Docker Official Images of supported distro versions
+  Enabled by default.
+@z
+
+@x
+- **Only supported OS distributions**
+@y
+- **Only supported OS distributions**
+@z
+
+@x
+  Allow only Docker Official Images of supported Linux distribution versions.
+@y
+  Allow only Docker Official Images of supported Linux distribution versions.
 @z
 
 @x
@@ -699,29 +773,9 @@ You can also configure the policy to:
 @z
 
 @x
-This policy isn't enabled by default. To enable the policy:
+  Enabled by default.
 @y
-This policy isn't enabled by default. To enable the policy:
-@z
-
-@x
-1. [Create a new policy](https://scout.docker.com/reports/policies/create?fromDefinition=approved-base-images&fromNamespace=docker) in the Docker Scout Dashboard.
-2. Under **Approved base image sources**, specify the image reference patterns that you want to allow.
-3. Select whether you want to allow only supported tags for official images,
-   and supported Linux distribution versions.
-4. Select **Save and enable**.
-@y
-1. [Create a new policy](https://scout.docker.com/reports/policies/create?fromDefinition=approved-base-images&fromNamespace=docker) in the Docker Scout Dashboard.
-2. Under **Approved base image sources**, specify the image reference patterns that you want to allow.
-3. Select whether you want to allow only supported tags for official images,
-   and supported Linux distribution versions.
-4. Select **Save and enable**.
-@z
-
-@x
-   The policy is now enabled for your current organization.
-@y
-   The policy is now enabled for your current organization.
+  Enabled by default.
 @z
 
 @x
@@ -730,6 +784,30 @@ evaluate. For more information, see [No base image data](#no-base-image-data).
 @y
 Your images need provenance attestations for this policy to successfully
 evaluate. For more information, see [No base image data](#no-base-image-data).
+@z
+
+@x
+## Additional policies
+@y
+## Additional policies
+@z
+
+@x
+In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
+by default, Docker Scout supports the following optional policies. Before you
+can enable these policies, you need to either configure the policies, or
+configure the integration that the policy requires.
+@y
+In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
+by default, Docker Scout supports the following optional policies. Before you
+can enable these policies, you need to either configure the policies, or
+configure the integration that the policy requires.
+@z
+
+@x
+- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
+@y
+- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
 @z
 
 @x
@@ -765,13 +843,13 @@ policy.
 @z
 
 @x
-Docker Scout uses [provenance](../../build/attestations/slsa-provenance.md)
+Docker Scout uses [provenance](../../build/metadata/attestations/slsa-provenance.md)
 attestations or the `org.opencontainers.image.revision` OCI annotation to link
 SonarQube analysis results with container images. In addition to enabling the
 SonarQube integration, you must also make sure that your images have either the
 attestation or the label.
 @y
-Docker Scout uses [provenance](../../build/attestations/slsa-provenance.md)
+Docker Scout uses [provenance](../../build/metadata/attestations/slsa-provenance.md)
 attestations or the `org.opencontainers.image.revision` OCI annotation to link
 SonarQube analysis results with container images. In addition to enabling the
 SonarQube integration, you must also make sure that your images have either the
@@ -795,14 +873,14 @@ in the CLI.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Scout can only access SonarQube analyses created after the integration
 > is enabled. Docker Scout doesn't have access to historic evaluations. Trigger
 > a SonarQube analysis and policy evaluation after enabling the integration to
 > view the results in Docker Scout.
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Scout can only access SonarQube analyses created after the integration
 > is enabled. Docker Scout doesn't have access to historic evaluations. Trigger
@@ -844,12 +922,12 @@ This "no data" state occurs when:
 
 @x
 To make sure that Docker Scout always knows about your base image, you can
-attach [provenance attestations](../../build/attestations/slsa-provenance.md)
+attach [provenance attestations](../../build/metadata/attestations/slsa-provenance.md)
 at build-time. Docker Scout uses provenance attestations to find out the base
 image version.
 @y
 To make sure that Docker Scout always knows about your base image, you can
-attach [provenance attestations](../../build/attestations/slsa-provenance.md)
+attach [provenance attestations](../../build/metadata/attestations/slsa-provenance.md)
 at build-time. Docker Scout uses provenance attestations to find out the base
 image version.
 @z

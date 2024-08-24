@@ -21,11 +21,11 @@ To configure Registry Access Management permissions, perform the following steps
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > When enabled, the Docker Hub registry is set by default, however you can also restrict this registry for your developers.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > When enabled, the Docker Hub registry is set by default, however you can also restrict this registry for your developers.
 @z
@@ -39,23 +39,21 @@ To configure Registry Access Management permissions, perform the following steps
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > Once you add a registry, it can take up to 24 hours for the changes to be enforced on your developers’ machines. If you want to apply the changes sooner, you must force a Docker logout on your developers’ machine and have the developers re-authenticate for Docker Desktop. Also, there is no limit on the number of registries you can add. See the Caveats section below to learn more about limitations when using this feature.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > Once you add a registry, it can take up to 24 hours for the changes to be enforced on your developers’ machines. If you want to apply the changes sooner, you must force a Docker logout on your developers’ machine and have the developers re-authenticate for Docker Desktop. Also, there is no limit on the number of registries you can add. See the Caveats section below to learn more about limitations when using this feature.
 @z
 
 @x
-   > **Tip**
+   > [!TIP]
    >
    > Since RAM sets policies about where content can be fetched from, the [ADD](/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
-   { .tip }
 @y
-   > **Tip**
+   > [!TIP]
    >
-   > Since RAM sets policies about where content can be fetched from, the [ADD](__SUBDIR__/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
-   { .tip }
+   > Since RAM sets policies about where content can be fetched from, the [ADD](/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
 @z

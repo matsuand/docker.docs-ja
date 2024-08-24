@@ -1,24 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: OCI and Docker exporters
 keywords: build, buildx, buildkit, exporter, oci, docker
 description: >
   The OCI and Docker exporters create an image layout tarball on the local filesystem
-aliases:
-  - /build/building/exporters/oci-docker/
----
 @y
----
 title: OCI and Docker exporters
 keywords: build, buildx, buildkit, exporter, oci, docker
 description: >
   The OCI and Docker exporters create an image layout tarball on the local filesystem
-aliases:
-  - /build/building/exporters/oci-docker/
----
 @z
 
 @x
@@ -34,11 +28,11 @@ image layout instead.
 @z
 
 @x
-The [`docker` driver](../drivers/docker.md) doesn't support these exporters. You
+The [`docker` driver](/build/builders/drivers/docker.md) doesn't support these exporters. You
 must use `docker-container` or some other driver if you want to generate these
 outputs.
 @y
-The [`docker` driver](../drivers/docker.md) doesn't support these exporters. You
+The [`docker` driver](build/builders/drivers/docker.md) doesn't support these exporters. You
 must use `docker-container` or some other driver if you want to generate these
 outputs.
 @z

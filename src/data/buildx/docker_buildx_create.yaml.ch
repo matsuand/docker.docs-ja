@@ -260,9 +260,9 @@ examples: |-
 @z
 
 @x
-    For more information about build drivers, see [here](/build/drivers/).
+    For more information about build drivers, see [here](/build/builders/drivers/).
 @y
-    For more information about build drivers, see [here](__SUBDIR__/build/drivers/).
+    For more information about build drivers, see [here](__SUBDIR__/build/builders/drivers/).
 @z
 
 @x
@@ -376,15 +376,15 @@ examples: |-
 @z
 
 @x
-    * [`docker` driver](/build/drivers/docker/)
-    * [`docker-container` driver](/build/drivers/docker-container/)
-    * [`kubernetes` driver](/build/drivers/kubernetes/)
-    * [`remote` driver](/build/drivers/remote/)
+    * [`docker` driver](/build/builders/drivers/docker/)
+    * [`docker-container` driver](/build/builders/drivers/docker-container/)
+    * [`kubernetes` driver](/build/builders/drivers/kubernetes/)
+    * [`remote` driver](/build/builders/drivers/remote/)
 @y
-    * [`docker` driver](__SUBDIR__/build/drivers/docker/)
-    * [`docker-container` driver](__SUBDIR__/build/drivers/docker-container/)
-    * [`kubernetes` driver](__SUBDIR__/build/drivers/kubernetes/)
-    * [`remote` driver](__SUBDIR__/build/drivers/remote/)
+    * [`docker` driver](__SUBDIR__/build/builders/drivers/docker/)
+    * [`docker-container` driver](__SUBDIR__/build/builders/drivers/docker-container/)
+    * [`kubernetes` driver](__SUBDIR__/build/builders/drivers/kubernetes/)
+    * [`remote` driver](__SUBDIR__/build/builders/drivers/remote/)
 @z
 
 @x

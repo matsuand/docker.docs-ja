@@ -142,12 +142,12 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](../hardened-desktop/enhanced-container-isolation/index.md)
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/security/for-admins/hardened-desktop/enhanced-container-isolation/index.md)
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
 @y
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](../hardened-desktop/enhanced-container-isolation/index.md)
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
@@ -198,14 +198,14 @@ containers.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The **Resource allocation** options in the **Advanced** tab are only available in Hyper-V mode, because Windows manages
 > the resources in WSL 2 mode and Windows container mode. In WSL 2
 > mode, you can configure limits on the memory, CPU, and swap size allocated
 > to the [WSL 2 utility VM](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig).
 @y
-> **Note**
+> [!NOTE]
 >
 > The **Resource allocation** options in the **Advanced** tab are only available in Hyper-V mode, because Windows manages
 > the resources in WSL 2 mode and Windows container mode. In WSL 2
@@ -276,13 +276,11 @@ Advanced settings are:
 >
 > If you feel Docker Desktop starting to get slow or you're running
 > multi-container workloads, increase the memory and disk image space allocation
-{ .tip }
 @y
 >**Tip**
 >
 > If you feel Docker Desktop starting to get slow or you're running
 > multi-container workloads, increase the memory and disk image space allocation
-{ .tip }
 @z
 
 @x
@@ -326,12 +324,12 @@ Advanced settings are:
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The **File sharing** tab is only available in Hyper-V mode because the files
 > are automatically shared in WSL 2 mode and Windows container mode.
 @y
-> **Note**
+> [!NOTE]
 >
 > The **File sharing** tab is only available in Hyper-V mode because the files
 > are automatically shared in WSL 2 mode and Windows container mode.
@@ -435,7 +433,6 @@ File share settings are:
 >   open `Test` will fail with the error "No such file or directory". Similarly,
 >   once a file called `test` is created, attempts to create a second file called
 >   `Test` will fail.
-{ .tip }
 @y
 > Tips on shared folders, permissions, and volume mounts
 >
@@ -446,8 +443,8 @@ File share settings are:
 > * Shared folders are designed to allow application code to be edited
 >   on the host while being executed in containers. For non-code items
 >   such as cache directories or databases, the performance will be much
->   better if they are stored in the Linux VM, using a [data volume](engine/storage/volumes.md)
->   (named volume) or [data container](engine/storage/volumes.md).
+>   better if they are stored in the Linux VM, using a [data volume](/engine/storage/volumes.md)
+>   (named volume) or [data container](/engine/storage/volumes.md).
 > * Docker Desktop sets permissions to read/write/execute for users, groups and
 >   others [0777 or a+rwx](https://chmodcommand.com/chmod-0777/).
 >   This is not configurable. See [Permissions errors on data directories for shared volumes](../troubleshoot/topics.md).
@@ -462,7 +459,6 @@ File share settings are:
 >   open `Test` will fail with the error "No such file or directory". Similarly,
 >   once a file called `test` is created, attempts to create a second file called
 >   `Test` will fail.
-{ .tip }
 @z
 
 @x
@@ -555,10 +551,10 @@ upstream proxy URL of the form `http://proxy:port` or `https://proxy:port`.
 
 @x
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](../hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](/security/for-admins/hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
 @y
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](../hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](security/for-admins/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @z
 
 @x
@@ -569,18 +565,18 @@ The HTTPS proxy settings used for scanning images are set using the `HTTPS_PROXY
 
 @x
 If you are running Windows containers in Docker, you can allow the Windows Docker daemon to use Docker Desktop's internal proxy, with the **Use proxy for Windows Docker daemon** setting.
-This is useful when a corporate proxy that requires authentication is manually configured or set at the system level. If you are an admin for your organization and have a Docker Business subscription, you can control this setting with [Settings management](../hardened-desktop/settings-management/configure.md) using the `windowsDockerdPort` parameter.
+This is useful when a corporate proxy that requires authentication is manually configured or set at the system level. If you are an admin for your organization and have a Docker Business subscription, you can control this setting with [Settings management](/security/for-admins/hardened-desktop/settings-management/configure.md) using the `windowsDockerdPort` parameter.
 @y
 If you are running Windows containers in Docker, you can allow the Windows Docker daemon to use Docker Desktop's internal proxy, with the **Use proxy for Windows Docker daemon** setting.
-This is useful when a corporate proxy that requires authentication is manually configured or set at the system level. If you are an admin for your organization and have a Docker Business subscription, you can control this setting with [Settings management](../hardened-desktop/settings-management/configure.md) using the `windowsDockerdPort` parameter.
+This is useful when a corporate proxy that requires authentication is manually configured or set at the system level. If you are an admin for your organization and have a Docker Business subscription, you can control this setting with [Settings management](security/for-admins/hardened-desktop/settings-management/configure.md) using the `windowsDockerdPort` parameter.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
 @y
-> **Note**
+> [!NOTE]
 >
 > If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
 @z
@@ -640,11 +636,11 @@ If your proxy offers multiple authentication schemes in 407(Proxy Authentication
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop also supports the use of [SOCKS5 proxies](../networking.md#socks5-proxy-support).
 @y
-> **Note**
+> [!NOTE]
 >
 > Docker Desktop also supports the use of [SOCKS5 proxies](../networking.md#socks5-proxy-support).
 @z
@@ -656,12 +652,12 @@ If your proxy offers multiple authentication schemes in 407(Proxy Authentication
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The **Network** tab isn't available in the Windows container mode because
 > Windows manages networking.
 @y
-> **Note**
+> [!NOTE]
 >
 > The **Network** tab isn't available in the Windows container mode because
 > Windows manages networking.
@@ -798,11 +794,11 @@ Select **Apply & Restart** to save your settings and restart Docker Desktop.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > The **Kubernetes** tab is not available in Windows container mode.
 @y
-> **Note**
+> [!NOTE]
 >
 > The **Kubernetes** tab is not available in Windows container mode.
 @z

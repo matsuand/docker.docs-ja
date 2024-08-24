@@ -16,12 +16,12 @@ title: Advanced options for Autobuild and Autotest
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
 @y
-> **Note**
+> [!NOTE]
 >
 > Automated builds require a
 > [Docker Pro, Team, or Business subscription](../../subscription/index.md).
@@ -52,12 +52,12 @@ hooks.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > These environment variables are only available to the build and test
 processes and don't affect your service's run environment.
 @y
-> **Note**
+> [!NOTE]
 >
 > These environment variables are only available to the build and test
 processes and don't affect your service's run environment.
@@ -132,19 +132,17 @@ to perform actions in between these commands.
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 >Use these hooks with caution. The contents of these hook files replace the
 basic `docker` commands, so you must include a similar build, test or push
 command in the hook or your automated process does not complete.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 >Use these hooks with caution. The contents of these hook files replace the
 basic `docker` commands, so you must include a similar build, test or push
 command in the hook or your automated process does not complete.
-{ .important }
 @z
 
 @x
@@ -274,17 +272,15 @@ $ docker build --build-arg CUSTOM=$VAR -f $DOCKERFILE_PATH -t $IMAGE_NAME .
 @z
 
 @x
-> **Important**
+> [!IMPORTANT]
 >
 > A `hooks/build` file overrides the basic `docker build` command used by the builder, so you must include a similar build command in the hook or
 the automated build fails.
-{ .important }
 @y
-> **Important**
+> [!IMPORTANT]
 >
 > A `hooks/build` file overrides the basic `docker build` command used by the builder, so you must include a similar build command in the hook or
 the automated build fails.
-{ .important }
 @z
 
 @x
