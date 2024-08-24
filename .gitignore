@@ -1,4 +1,4 @@
-autom4te.cache/
-build/
-configure~
-src/node_modules/
+/autom4te.cache/
+/build
+/configure~
+/src/node_modules/
