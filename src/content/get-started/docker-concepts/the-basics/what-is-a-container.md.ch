@@ -400,7 +400,7 @@ This container runs a web server that displays a simple website. When working wi
 >
 > The `docker ps` command will show you _only_ running containers. To view stopped containers, add the `-a` flag to list all containers: `docker ps -a`
 @y
-> [!ヒント]
+> [!TIP]
 >
 > `docker ps` コマンドが表示するのは実行中のコンテナー **のみ** です。
 > 停止中のコンテナーも含めて確認するには `-a` フラグを使って `docker ps -a` とします。
@@ -469,7 +469,7 @@ The `docker/welcome-to-docker` container continues to run until you stop it. You
 > docker stop a1f
 > ```
 @y
-> [!ヒント]
+> [!TIP]
 >
 > コンテナー ID を用いるにあたっては ID をフルで指定する必要はありません。
 > コンテナー ID が唯一のものとして特定できる桁数だけ与えれば充分です。

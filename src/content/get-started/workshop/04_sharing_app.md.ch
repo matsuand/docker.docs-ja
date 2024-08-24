@@ -287,7 +287,7 @@ new instance that has never seen this container image. To do this, you will use 
     > For more information about how port mapping works, see
     > [Networking](/engine/network/_index.md#published-ports).
 @y
-    > [!情報]
+    > [!TIP]
     >
     > お気づきかと思いますが、このコマンドにてポートマッピングを行っているのは別 IP アドレスに対してです。
     > その前に実行した `docker run` コマンドでは、ホスト上の `127.0.0.1:3000` にポート公開を行っていました。

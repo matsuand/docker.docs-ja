@@ -181,7 +181,7 @@ Make sure you have:
    >
    >Check that the `Dockerfile` has no file extension like `.txt`. Some editors may append this file extension automatically which results in an error when you run the application.
 @y
-   > [!重要]
+   > [!IMPORTANT]
    >
    >`Dockerfile` には `.txt` などのような拡張子がないことを確認してください。
    >エディターの中には自動的に拡張子をつけてしまうものがあり、その場合にはアプリケーション実行時にエラーとなってしまいます。

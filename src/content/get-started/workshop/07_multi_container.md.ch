@@ -167,7 +167,7 @@ In the following steps, you'll create the network first and then attach the MySQ
    >
    > You'll notice a volume named `todo-mysql-data` in the above command that is mounted at `/var/lib/mysql`, which is where MySQL stores its data. However, you never ran a `docker volume create` command. Docker recognizes you want to use a named volume and creates one automatically for you.
 @y
-   > [!ヒント]
+   > [!TIP]
    >
    > 上ではボリューム名として `todo-mysql-data` を指定し `/var/lib/mysql` にマウントしています。
    > このディレクトリは MySQL がデータを保存する場所です。

@@ -131,7 +131,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 > To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
 > Windows Home or Education editions only allow you to run Linux containers.
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 > To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
 > Windows Home or Education editions only allow you to run Linux containers.
@@ -193,7 +193,7 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 > To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
 > Windows Home or Education editions only allow you to run Linux containers.
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 > To run Windows containers, you need Windows 10 or Windows 11 Professional or Enterprise edition.
 > Windows Home or Education editions only allow you to run Linux containers.

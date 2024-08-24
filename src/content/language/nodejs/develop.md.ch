@@ -77,7 +77,7 @@ You can use containers to set up local services, like a database. In this sectio
    >
    > For this section, don't run `docker compose up` until you are instructed to. Running the command at intermediate points may incorrectly initialize your database.
 @y
-   > [!重要]
+   > [!IMPORTANT]
    >
    > 本節においては、指示があるまで `docker compose up` は実行しないでください。
    > 作業の途中においてコマンド実行してしまうと、データベースが誤って初期化されてしまう場合があります。

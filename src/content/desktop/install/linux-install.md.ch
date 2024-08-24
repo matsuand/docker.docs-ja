@@ -47,7 +47,7 @@ This page contains information about general system requirements, supported plat
 >
 > {{< accordion title=" What is the difference between Docker Desktop for Linux and Docker Engine?" >}}
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 >Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
 >
@@ -61,7 +61,7 @@ This page contains information about general system requirements, supported plat
 >
 > For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 > For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees OR with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
 @z

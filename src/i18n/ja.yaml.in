@@ -9,6 +9,15 @@ tableOfContents:
 relatedContent:
   other: Related content
 
+## callout titles:
+
+experimental: 試験的
+restricted: 制約事項
+important: 重要
+note: メモ
+tip: 情報
+warning: 警告
+
 ## openapi strings:
 
 apiExampleResponse:

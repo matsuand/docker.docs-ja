@@ -106,7 +106,7 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 >
 > To sign up with your social provider, make sure you verify your email address with your provider before you begin.
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 > To sign up with your social provider, make sure you verify your email address with your provider before you begin.
 @z

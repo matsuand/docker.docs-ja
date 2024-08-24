@@ -8,7 +8,7 @@
 >
 > Effective July 2023, Compose V1 stopped receiving updates and is no longer in new Docker Desktop releases. Compose V2 has replaced it and is now integrated into all current Docker Desktop versions. For more information, see [Migrate to Compose V2](/compose/migrate).
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 > Docker のドキュメントでは Compose V2 の機能について説明しています。
 >

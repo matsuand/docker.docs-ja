@@ -13,7 +13,7 @@
 > For Mac, select the **Launchpad** icon in the Dock, specify `Terminal` in the
 > search field, then select **Terminal**.
 @y
-> [!情報]
+> [!TIP]
 >
 > Docker コマンドを実行するには端末画面が必要です。
 > オペレーティングシステムに応じて、端末画面を開いて以降の操作を行っていきます。

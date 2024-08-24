@@ -61,7 +61,7 @@ On this page you can find instructions on how to install Compose standalone on L
    > $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
    > ```
 @y
-   > [!ヒント]
+   > [!TIP]
    >
    > インストール後に `docker-compose` コマンドが失敗した場合は、インストールパスを確認してください。
    > また `/usr/bin` あるいはパスとしている別のディレクトリへのリンクを生成して対処することもできます。

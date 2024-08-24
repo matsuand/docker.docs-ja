@@ -245,7 +245,7 @@ Docker アプリケーションを新規開発する際には、これではな�
 > powerful ability which can have security implications, including impacting
 > non-Docker processes on the host system.
 @y
-> [!重要]
+> [!IMPORTANT]
 >
 > バインドマウントはデフォルトで、ホスト上のファイルへの書き込みアクセスも行います。
 >

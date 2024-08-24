@@ -686,7 +686,7 @@ Run the image with a bind mount.
    >
    >  Use the search filter to filter images and only show **Local images**.
 @y
-   > [!ヒント]
+   > [!TIP]
    >
    >  検索フィルターを用いてイメージの絞り込みを行えば **ローカルイメージ** のみを表示することができます。
 @z
