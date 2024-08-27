@@ -205,7 +205,7 @@ new instance that has never seen this container image. To do this, you will use 
 >
 > Docker buildx also supports building multi-platform images. To learn more, see [Multi-platform images](/build/building/multi-platform.md).
 @y
-> [!メモ]
+> [!NOTE]
 >
 > Play with Docker は amd64 プラットフォームを利用しています。
 > Apple silicon による ARM ベースの Mac を利用している場合、Play with Docker と互換性のあるイメージを再ビルドして、新たなイメージとしてリポジトリにプッシュする必要があります。

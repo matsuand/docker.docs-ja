@@ -511,7 +511,7 @@ is defined by the plugin developer. To add the plugin to all Docker nodes, use
 the [`service/create`](/reference/api/engine/v1.31/#operation/ServiceCreate) API, passing
 the `PluginSpec` JSON defined in the `TaskTemplate`.
 @y
-The [`PluginSpec`](/engine/extend/plugin_api/#json-specification)
+The [`PluginSpec`](__SUBDIR__/engine/extend/plugin_api/#json-specification)
 is defined by the plugin developer. To add the plugin to all Docker nodes, use
 the [`service/create`](__SUBDIR__/reference/api/engine/v1.31/#operation/ServiceCreate) API, passing
 the `PluginSpec` JSON defined in the `TaskTemplate`.

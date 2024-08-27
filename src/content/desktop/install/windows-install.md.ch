@@ -523,7 +523,7 @@ The `install` command accepts the following flags:
 > Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--accept-license'
 > ```
 @y
-> [!メモ]
+> [!NOTE]
 >
 > If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
 > For example:
@@ -626,7 +626,7 @@ Docker Desktop を起動するには、以下を実行します。
 - [Back up and restore data](../backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- [Docker をはじめよう](/get-started/introduction/_index.md).
+- [Docker をはじめよう](get-started/introduction/_index.md).
 - [Docker Desktop の確認](../use-desktop/index.md) and all its features.
 - [トラブルシューティング](../troubleshoot/overview.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
 - [FAQ](../faqs/general.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。

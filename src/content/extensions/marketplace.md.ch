@@ -47,7 +47,7 @@ Self-published extensions are autonomously published by extension developers and
 >
 > For some extensions, a separate account needs to be created before use.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > Extension の中には、利用にあたって独自のアカウントを生成することが必要となります。
 @z

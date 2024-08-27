@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Include
 description: Learn about include
 keywords: compose, compose specification, include, compose file reference
-aliases: 
- - /compose/compose-file/14-include/
----
 @y
----
 title: Include
 description: Learn about include
 keywords: compose, compose specification, include, compose file reference
-aliases: 
- - /compose/compose-file/14-include/
----
 @z
 
 @x
@@ -302,5 +296,5 @@ override values for customization.
 @x
 For more information on using `include`, see [Working with multiple Compose files](/compose/multiple-compose-files/_index.md)
 @y
-For more information on using `include`, see [Working with multiple Compose files](/compose/multiple-compose-files/_index.md)
+For more information on using `include`, see [Working with multiple Compose files](compose/multiple-compose-files/_index.md)
 @z

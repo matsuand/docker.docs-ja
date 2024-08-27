@@ -19,7 +19,7 @@ keywords: billing, renewal, payments, subscriptions
 @y
 > [!NOTE]
 >
-> [Docker Core subscription](/billing/core-billing/get-started-core/) payments support 3D secure authentication.
+> [Docker Core subscription](__SUBDIR__/billing/core-billing/get-started-core/) payments support 3D secure authentication.
 @z
 
 @x

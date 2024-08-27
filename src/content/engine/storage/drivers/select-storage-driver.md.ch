@@ -129,10 +129,10 @@ the final decision.
 >
 > Modifying the storage driver by editing the daemon configuration file isn't
 > supported on Docker Desktop. Only the default `overlay2` driver or the
-> [containerd storage](/desktop/containerd.md) are supported. The
+> [containerd storage](desktop/containerd.md) are supported. The
 > following table is also not applicable for the Docker Engine in rootless
 > mode. For the drivers available in rootless mode, see the [Rootless mode
-> documentation](/engine/security/rootless.md).
+> documentation](engine/security/rootless.md).
 @z
 
 @x

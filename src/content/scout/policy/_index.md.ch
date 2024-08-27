@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 % snip 対応
 
 @x
@@ -440,7 +440,7 @@ learn how you can [configure the action](/build/ci/github-actions/attestations.m
 to apply SBOM and provenance attestations.
 @y
 If you're using GitHub Actions to build and push your images,
-learn how you can [configure the action](/build/ci/github-actions/attestations.md)
+learn how you can [configure the action](build/ci/github-actions/attestations.md)
 to apply SBOM and provenance attestations.
 @z
 

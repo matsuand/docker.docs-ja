@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 title: View Docker Scout policy status
@@ -24,7 +24,7 @@ feature of Docker Scout.
 {{% /restricted %}}
 @y
 {{% restricted title="Earyl Access" %}}
-Policy Evaluation is an [Early Access](/release-lifecycle/#early-access-ea)
+Policy Evaluation is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
 feature of Docker Scout.
 {{% /restricted %}}
 @z

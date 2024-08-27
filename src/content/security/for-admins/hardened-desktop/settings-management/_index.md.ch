@@ -158,7 +158,7 @@ feature always takes effect.
 @x
 Next, you must either manually [create and configure the admin-settings.json file](configure.md), or use the `--admin-settings` installer flag on [macOS](/desktop/install/mac-install.md#install-from-the-command-line) or [Windows](/desktop/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
 @y
-Next, you must either manually [create and configure the admin-settings.json file](configure.md), or use the `--admin-settings` installer flag on [macOS](/desktop/install/mac-install.md#install-from-the-command-line) or [Windows](/desktop/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
+Next, you must either manually [create and configure the admin-settings.json file](configure.md), or use the `--admin-settings` installer flag on [macOS](desktop/install/mac-install.md#install-from-the-command-line) or [Windows](desktop/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
 @z
 
 @x

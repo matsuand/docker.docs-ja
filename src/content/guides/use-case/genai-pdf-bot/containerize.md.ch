@@ -57,7 +57,7 @@ This section walks you through containerizing a generative AI (GenAI) applicatio
 >
 > You can see more samples of containerized GenAI applications in the [GenAI Stack](https://github.com/docker/genai-stack) demo applications.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > コンテナー化した GenAI アプリケーションのより詳細なサンプルについては、[GenAI スタック](https://github.com/docker/genai-stack) のデモアプリケーションにおいて見ることができます。
 @z

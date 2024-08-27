@@ -26,7 +26,7 @@ early access program.
 {{% /restricted %}}
 @y
 {{% restricted title="Beta" %}}
-Health scores is a [Beta](/release-lifecycle/#beta) feature of Docker Scout.
+Health scores is a [Beta](__SUBDIR__/release-lifecycle/#beta) feature of Docker Scout.
 The feature is only available to organizations selected to participate in the
 early access program.
 {{% /restricted %}}

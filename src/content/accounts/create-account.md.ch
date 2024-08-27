@@ -90,7 +90,7 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 >
 > You have limited actions available until you verify your email address.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > メールアドレスを確認しないでおくと、利用できる操作が限定されます。
 @z

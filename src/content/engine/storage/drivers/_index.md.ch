@@ -872,7 +872,7 @@ layers are the same.
    > extract and format specific information from the output, without requiring
    > additional tools such as `awk` or `sed`. To learn more about formatting
    > the output of docker commands using the `--format` flag, refer to the
-   > [format command and log output section](/engine/cli/formatting.md).
+   > [format command and log output section](engine/cli/formatting.md).
    > We also pretty-printed the JSON output using the [`jq` utility](https://stedolan.github.io/jq/)
    > for readability.
 @z

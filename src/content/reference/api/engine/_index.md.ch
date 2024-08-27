@@ -234,34 +234,34 @@ You can specify the API version to use in any of the following ways:
 @y
 | Docker version | Maximum API version        | Change log                                                                   |
 |:---------------|:---------------------------|:-----------------------------------------------------------------------------|
-| 27.1           | [1.46](/__SUBDIR__/reference/api/engine/v1.46/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |
-| 27.0           | [1.46](/__SUBDIR__/reference/api/engine/v1.46/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |
-| 26.1           | [1.45](/__SUBDIR__/reference/api/engine/v1.45/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v145-api-changes) |
-| 26.0           | [1.45](/__SUBDIR__/reference/api/engine/v1.45/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v145-api-changes) |
-| 25.0           | [1.44](/__SUBDIR__/reference/api/engine/v1.44/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v144-api-changes) |
-| 24.0           | [1.43](/__SUBDIR__/reference/api/engine/v1.43/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v143-api-changes) |
-| 23.0           | [1.42](/__SUBDIR__/reference/api/engine/v1.42/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v142-api-changes) |
-| 20.10          | [1.41](/__SUBDIR__/reference/api/engine/v1.41/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v141-api-changes) |
-| 19.03          | [1.40](/__SUBDIR__/reference/api/engine/v1.40/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v140-api-changes) |
-| 18.09          | [1.39](/__SUBDIR__/reference/api/engine/v1.39/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v139-api-changes) |
-| 18.06          | [1.38](/__SUBDIR__/reference/api/engine/v1.38/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v138-api-changes) |
-| 18.05          | [1.37](/__SUBDIR__/reference/api/engine/v1.37/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v137-api-changes) |
-| 18.04          | [1.37](/__SUBDIR__/reference/api/engine/v1.37/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v137-api-changes) |
-| 18.03          | [1.37](/__SUBDIR__/reference/api/engine/v1.37/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v137-api-changes) |
-| 18.02          | [1.36](/__SUBDIR__/reference/api/engine/v1.36/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v136-api-changes) |
-| 17.12          | [1.35](/__SUBDIR__/reference/api/engine/v1.35/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v135-api-changes) |
-| 17.11          | [1.34](/__SUBDIR__/reference/api/engine/v1.34/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v134-api-changes) |
-| 17.10          | [1.33](/__SUBDIR__/reference/api/engine/v1.33/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v133-api-changes) |
-| 17.09          | [1.32](/__SUBDIR__/reference/api/engine/v1.32/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v132-api-changes) |
-| 17.07          | [1.31](/__SUBDIR__/reference/api/engine/v1.31/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v131-api-changes) |
-| 17.06          | [1.30](/__SUBDIR__/reference/api/engine/v1.30/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v130-api-changes) |
-| 17.05          | [1.29](/__SUBDIR__/reference/api/engine/v1.29/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v129-api-changes) |
-| 17.04          | [1.28](/__SUBDIR__/reference/api/engine/v1.28/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v128-api-changes) |
-| 17.03.1        | [1.27](/__SUBDIR__/reference/api/engine/v1.27/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v127-api-changes) |
-| 17.03          | [1.26](/__SUBDIR__/reference/api/engine/v1.27/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v126-api-changes) |
-| 1.13.1         | [1.26](/__SUBDIR__/reference/api/engine/v1.26/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v126-api-changes) |
-| 1.13           | [1.25](/__SUBDIR__/reference/api/engine/v1.26/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v125-api-changes) |
-| 1.12           | [1.24](/__SUBDIR__/reference/api/engine/v1.24/) | [changes](/__SUBDIR__/reference/api/engine/version-history/#v124-api-changes) |
+| 27.1           | [1.46](__SUBDIR__/reference/api/engine/v1.46/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |
+| 27.0           | [1.46](__SUBDIR__/reference/api/engine/v1.46/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |
+| 26.1           | [1.45](__SUBDIR__/reference/api/engine/v1.45/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v145-api-changes) |
+| 26.0           | [1.45](__SUBDIR__/reference/api/engine/v1.45/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v145-api-changes) |
+| 25.0           | [1.44](__SUBDIR__/reference/api/engine/v1.44/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v144-api-changes) |
+| 24.0           | [1.43](__SUBDIR__/reference/api/engine/v1.43/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v143-api-changes) |
+| 23.0           | [1.42](__SUBDIR__/reference/api/engine/v1.42/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v142-api-changes) |
+| 20.10          | [1.41](__SUBDIR__/reference/api/engine/v1.41/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v141-api-changes) |
+| 19.03          | [1.40](__SUBDIR__/reference/api/engine/v1.40/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v140-api-changes) |
+| 18.09          | [1.39](__SUBDIR__/reference/api/engine/v1.39/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v139-api-changes) |
+| 18.06          | [1.38](__SUBDIR__/reference/api/engine/v1.38/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v138-api-changes) |
+| 18.05          | [1.37](__SUBDIR__/reference/api/engine/v1.37/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v137-api-changes) |
+| 18.04          | [1.37](__SUBDIR__/reference/api/engine/v1.37/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v137-api-changes) |
+| 18.03          | [1.37](__SUBDIR__/reference/api/engine/v1.37/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v137-api-changes) |
+| 18.02          | [1.36](__SUBDIR__/reference/api/engine/v1.36/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v136-api-changes) |
+| 17.12          | [1.35](__SUBDIR__/reference/api/engine/v1.35/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v135-api-changes) |
+| 17.11          | [1.34](__SUBDIR__/reference/api/engine/v1.34/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v134-api-changes) |
+| 17.10          | [1.33](__SUBDIR__/reference/api/engine/v1.33/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v133-api-changes) |
+| 17.09          | [1.32](__SUBDIR__/reference/api/engine/v1.32/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v132-api-changes) |
+| 17.07          | [1.31](__SUBDIR__/reference/api/engine/v1.31/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v131-api-changes) |
+| 17.06          | [1.30](__SUBDIR__/reference/api/engine/v1.30/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v130-api-changes) |
+| 17.05          | [1.29](__SUBDIR__/reference/api/engine/v1.29/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v129-api-changes) |
+| 17.04          | [1.28](__SUBDIR__/reference/api/engine/v1.28/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v128-api-changes) |
+| 17.03.1        | [1.27](__SUBDIR__/reference/api/engine/v1.27/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v127-api-changes) |
+| 17.03          | [1.26](__SUBDIR__/reference/api/engine/v1.27/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v126-api-changes) |
+| 1.13.1         | [1.26](__SUBDIR__/reference/api/engine/v1.26/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v126-api-changes) |
+| 1.13           | [1.25](__SUBDIR__/reference/api/engine/v1.26/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v125-api-changes) |
+| 1.12           | [1.24](__SUBDIR__/reference/api/engine/v1.24/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v124-api-changes) |
 @z
 
 @x

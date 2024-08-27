@@ -26,7 +26,7 @@ title: Manage Single Sign-On
 @y
 > [!NOTE]
 >
-> You must have a [company](/admin/company/) to manage more than one organization.
+> You must have a [company](__SUBDIR__/admin/company/) to manage more than one organization.
 @z
 
 @x

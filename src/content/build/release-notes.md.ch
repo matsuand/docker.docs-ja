@@ -260,7 +260,7 @@ The full release note for this release is available
   - [`--call=outline`](/reference/cli/docker/buildx/build.md#call-outline): Show configuration that would be used by current build, including all build arguments, secrets, SSH mounts, etc., that your build would use.
   - [`--call=targets`](/reference/cli/docker/buildx/build.md#call-targets): Show all available targets and their descriptions.
 @y
-  - [`--call=check`](reference/cli/docker/buildx/build.md#check): Run validation routines for your build configuration. For more information about build checks, see [Build checks](/build/checks.md)
+  - [`--call=check`](reference/cli/docker/buildx/build.md#check): Run validation routines for your build configuration. For more information about build checks, see [Build checks](build/checks.md)
   - [`--call=outline`](reference/cli/docker/buildx/build.md#call-outline): Show configuration that would be used by current build, including all build arguments, secrets, SSH mounts, etc., that your build would use.
   - [`--call=targets`](reference/cli/docker/buildx/build.md#call-targets): Show all available targets and their descriptions.
 @z

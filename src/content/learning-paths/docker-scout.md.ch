@@ -116,21 +116,23 @@ other CI solutions.
 @z
 
 @x
-DevOps engineers who need to integrate automated security checks into CI/CD
-pipelines to enhance the security and efficiency of their workflows. Developers
-who want to use Docker Scout to identify and remediate vulnerabilities early in
-the development process, ensuring the production of secure container images.
-Security professionals who must enforce security compliance, conduct
-vulnerability assessments, and ensure the overall security of containerized
-applications.
+- DevOps engineers who need to integrate automated security checks into CI/CD
+  pipelines to enhance the security and efficiency of their workflows.
+- Developers who want to use Docker Scout to identify and remediate
+  vulnerabilities early in the development process, ensuring the production of
+  secure container images.
+- Security professionals who must enforce security compliance, conduct
+  vulnerability assessments, and ensure the overall security of containerized
+  applications.
 @y
-DevOps engineers who need to integrate automated security checks into CI/CD
-pipelines to enhance the security and efficiency of their workflows. Developers
-who want to use Docker Scout to identify and remediate vulnerabilities early in
-the development process, ensuring the production of secure container images.
-Security professionals who must enforce security compliance, conduct
-vulnerability assessments, and ensure the overall security of containerized
-applications.
+- DevOps engineers who need to integrate automated security checks into CI/CD
+  pipelines to enhance the security and efficiency of their workflows.
+- Developers who want to use Docker Scout to identify and remediate
+  vulnerabilities early in the development process, ensuring the production of
+  secure container images.
+- Security professionals who must enforce security compliance, conduct
+  vulnerability assessments, and ensure the overall security of containerized
+  applications.
 @z
 
 @x
@@ -167,11 +169,11 @@ Docker Scout provides several benefits:
 
 @x
 - Secure and trusted content
-- A system of record for your SDLC
+- A system of record for your Software Development Lifecycle (SDLC)
 - Continuous security posture improvement
 @y
 - Secure and trusted content
-- A system of record for your SDLC
+- A system of record for your Software Development Lifecycle (SDLC)
 - Continuous security posture improvement
 @z
 
@@ -187,6 +189,12 @@ organizations identify and fix security issues in container images early in the
 development process. It also integrates with popular development tools like
 Docker Desktop and GitHub Actions, providing seamless security management and
 compliance checks within existing workflows.
+@z
+
+@x
+**Duration**: 5 minutes
+@y
+**Duration**: 5 minutes
 @z
 
 @x
@@ -208,47 +216,35 @@ compliance checks within existing workflows.
 @z
 
 @x
-Organizations face significant challenges from data breaches,
-including financial losses, operational disruptions, and long-term damage to
-brand reputation and customer trust. Docker Scout addresses critical problems
-such as identifying insecure container images, preventing security breaches,
-and reducing the risk of operational downtime due to vulnerabilities.
+Docker Scout has powerful features for enhancing containerized application
+security and ensuring a robust software supply chain.
 @y
-Organizations face significant challenges from data breaches,
-including financial losses, operational disruptions, and long-term damage to
-brand reputation and customer trust. Docker Scout addresses critical problems
-such as identifying insecure container images, preventing security breaches,
-and reducing the risk of operational downtime due to vulnerabilities.
+Docker Scout has powerful features for enhancing containerized application
+security and ensuring a robust software supply chain.
 @z
 
 @x
-Docker Scout provides several benefits:
+- Define vulnerability remediation
+- Discuss why remediation is essential to maintain the security and integrity
+  of containerized applications
+- Discuss common vulnerabilities
+- Implement remediation techniques: updating base images, applying patches,
+  removing unnecessary packages
+- Verify and validate remediation efforts using Docker Scout
 @y
-Docker Scout provides several benefits:
+- Define vulnerability remediation
+- Discuss why remediation is essential to maintain the security and integrity
+  of containerized applications
+- Discuss common vulnerabilities
+- Implement remediation techniques: updating base images, applying patches,
+  removing unnecessary packages
+- Verify and validate remediation efforts using Docker Scout
 @z
 
 @x
-- Secure and trusted content
-- A system of record for your SDLC
-- Continuous security posture improvement
+**Duration**: 5 minutes
 @y
-- Secure and trusted content
-- A system of record for your SDLC
-- Continuous security posture improvement
-@z
-
-@x
-Docker Scout offers automated vulnerability detection and remediation, helping
-organizations identify and fix security issues in container images early in the
-development process. It also integrates with popular development tools like
-Docker Desktop and GitHub Actions, providing seamless security management and
-compliance checks within existing workflows.
-@y
-Docker Scout offers automated vulnerability detection and remediation, helping
-organizations identify and fix security issues in container images early in the
-development process. It also integrates with popular development tools like
-Docker Desktop and GitHub Actions, providing seamless security management and
-compliance checks within existing workflows.
+**Duration**: 5 minutes
 @z
 
 @x

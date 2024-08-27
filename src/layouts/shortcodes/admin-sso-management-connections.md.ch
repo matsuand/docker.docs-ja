@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $sso_navigation := `Navigate to the SSO settings page for your organization or company.
@@ -94,7 +96,7 @@
    > delete the SSO connection for that organization at the company level. If a
    > connection is used by mulitple organizations and you only want to delete
    > the connection for specific organizations, you can [remove those
-   > organizations](/security/for-admins/single-sign-on/manage/#remove-an-organization).
+   > organizations](__SUBDIR__/security/for-admins/single-sign-on/manage/#remove-an-organization).
 @z
 
 @x

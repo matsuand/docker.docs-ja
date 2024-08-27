@@ -110,7 +110,7 @@ Make sure you have:
    > cluster, this also helps handling momentary connection drops between
    > nodes.
 @y
-   > [!メモ]
+   > [!NOTE]
    >
    > Note the way the `get_hit_count` function is written. This basic retry
    > loop attempts the request multiple times if the Redis service is

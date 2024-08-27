@@ -127,7 +127,7 @@ You can use containers to set up local services, like a database. In this sectio
    > To learn more about the instructions in the Compose file, see [Compose file
    > reference](/reference/compose-file/).
 @y
-   > [!メモ]
+   > [!NOTE]
    >
    > Compose ファイル内の命令について詳しく学ぶには [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/) を参照してください。
 @z

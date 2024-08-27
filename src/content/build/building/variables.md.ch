@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Build variables
 description: Using build arguments and environment variables to configure builds
 keywords: build, args, variables, parameters, env, environment variables, config
-aliases:
-- /build/buildkit/color-output-controls/
-- /build/building/env-vars/
----
 @y
----
 title: Build variables
 description: Using build arguments and environment variables to configure builds
 keywords: build, args, variables, parameters, env, environment variables, config
-aliases:
-- /build/buildkit/color-output-controls/
-- /build/building/env-vars/
----
 @z
 
 @x
@@ -1324,7 +1316,7 @@ When set to true, checks for dirty state in source control information for
 [provenance attestations](/build/metadata/attestations/slsa-provenance.md).
 @y
 When set to true, checks for dirty state in source control information for
-[provenance attestations](/build/metadata/attestations/slsa-provenance.md).
+[provenance attestations](build/metadata/attestations/slsa-provenance.md).
 @z
 
 @x
@@ -1360,7 +1352,7 @@ When set to false, removes source control information from
 [provenance attestations](/build/metadata/attestations/slsa-provenance.md).
 @y
 When set to false, removes source control information from
-[provenance attestations](/build/metadata/attestations/slsa-provenance.md).
+[provenance attestations](build/metadata/attestations/slsa-provenance.md).
 @z
 
 @x
@@ -1474,7 +1466,7 @@ build. Set `BUILDX_NO_DEFAULT_ATTESTATIONS=1` to disable the default provenance
 attestations.
 @y
 By default, BuildKit v0.11 and later adds
-[provenance attestations](/build/metadata/attestations/slsa-provenance.md) to images you
+[provenance attestations](build/metadata/attestations/slsa-provenance.md) to images you
 build. Set `BUILDX_NO_DEFAULT_ATTESTATIONS=1` to disable the default provenance
 attestations.
 @z

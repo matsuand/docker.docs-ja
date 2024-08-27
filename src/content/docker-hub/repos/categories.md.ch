@@ -87,7 +87,7 @@ The available categories are:
 > Auto-generated categories only apply to Docker Verified Publishers and
 > Docker-Sponsored Open Source program participants.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > Auto-generated categories only apply to Docker Verified Publishers and
 > Docker-Sponsored Open Source program participants.

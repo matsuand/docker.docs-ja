@@ -34,7 +34,7 @@ If you want to uninstall Compose and you have installed Docker Desktop, see [Uni
 >
 > Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
 @z

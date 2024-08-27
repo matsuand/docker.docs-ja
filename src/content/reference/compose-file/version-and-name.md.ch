@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
----
 title: Version and name top-level elements
 description: Understand when and if to set the version and name top-level element
 keywords: compose, compose specification, services, compose file reference
-aliases:
- - /compose/compose-file/04-version-and-name/
----
 @y
----
 title: Version and name top-level elements
 description: Understand when and if to set the version and name top-level element
 keywords: compose, compose specification, services, compose file reference
-aliases:
- - /compose/compose-file/04-version-and-name/
----
 @z
 
 @x
@@ -96,5 +90,5 @@ services:
 @x
 For more information on other ways to name Compose projects, see [Specify a project name](/compose/project-name.md).
 @y
-For more information on other ways to name Compose projects, see [Specify a project name](/compose/project-name.md).
+For more information on other ways to name Compose projects, see [Specify a project name](compose/project-name.md).
 @z

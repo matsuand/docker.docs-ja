@@ -69,7 +69,7 @@
 @y
 > [!IMPORTANT]
 >
-> SSO has Just-In-Time (JIT) Provisioning enabled by default unless you have [disabled it](/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled). This means your users are auto-provisioned to your organization.
+> SSO has Just-In-Time (JIT) Provisioning enabled by default unless you have [disabled it](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled). This means your users are auto-provisioned to your organization.
 >
 > You can change this on a per-app basis. To prevent auto-provisioning users, you can create a security group in your IdP and configure the SSO app to authenticate and authorize only those users that are in the security group. Follow the instructions provided by your IdP:
 >

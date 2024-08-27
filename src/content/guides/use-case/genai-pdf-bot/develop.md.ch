@@ -51,7 +51,7 @@ In this section, you'll learn how to set up a development environment to access 
 >
 > You can see more samples of containerized GenAI applications in the [GenAI Stack](https://github.com/docker/genai-stack) demo applications.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > コンテナー化した GenAI アプリケーションのより詳細なサンプルについては、[GenAI スタック](https://github.com/docker/genai-stack) のデモアプリケーションにおいて見ることができます。
 @z
@@ -105,7 +105,7 @@ To run the database service:
    >
    > To learn more about Neo4j, see the [Neo4j Official Docker Image](https://hub.docker.com/_/neo4j).
 @y
-   > [!メモ]
+   > [!NOTE]
    >
    > Neo4j についての詳細は [Neo4j 公式 Docker イメージ](https://hub.docker.com/_/neo4j) を参照してください。
 @z
@@ -218,7 +218,7 @@ To run Ollama in a container and provide GPU access:
    >
    > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](../../../compose/gpu-support.md).
 @y
-   > [!メモ]
+   > [!NOTE]
    >
    > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](../../../compose/gpu-support.md).
 @z

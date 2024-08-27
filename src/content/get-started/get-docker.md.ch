@@ -107,7 +107,7 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 >
 > If you're looking for information on how to install Docker Engine, see [Docker Engine installation overview](/engine/install/).
 @y
-> [!メモ]
+> [!NOTE]
 >
 > Docker Engine のインストール方法についてお調べになっている方は [Docker Engine インストール概要](__SUBDIR__/engine/install/) を参照してください。
 @z

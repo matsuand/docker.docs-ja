@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Get started
 keywords: Docker, get started
@@ -88,7 +90,7 @@ Follow the guides to help you get started and learn how Docker can optimize your
 @x
 For more advanced concepts and scenarios in Docker, see [Guides](/guides/).
 @y
-For more advanced concepts and scenarios in Docker, see [Guides](/guides/).
+For more advanced concepts and scenarios in Docker, see [Guides](__SUBDIR__/guides/).
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リン クへの (no slash) 対応
+
 @x
 title: Overview of the Docker workshop
 keywords: docker basics, how to start a docker container, container settings, setup
@@ -33,6 +35,18 @@ This 45-minute workshop contains step-by-step instructions on how to get started
 - Docker Hub を使ってイメージを共有します。
 - 複数コンテナーによりデータベースを利用する Docker アプリケーションをデプロイします。
 - Docker Compose を使ってアプリケーションを実行します。
+@z
+
+@x
+> [!NOTE]
+>
+> For a quick introduction to Docker and the benefits of containerizing your
+> applications, see [Getting started](/get-started/introduction/_index.md).
+@y
+> [!NOTE]
+>
+> For a quick introduction to Docker and the benefits of containerizing your
+> applications, see [Getting started](get-started/introduction/_index.md).
 @z
 
 @x

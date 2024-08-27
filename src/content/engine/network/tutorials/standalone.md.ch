@@ -376,7 +376,7 @@ connected to both networks.
     > 
     > Automatic service discovery can only resolve custom container names, not default automatically generated container names,
 @y
-    > [!メモ]
+    > [!NOTE]
     > 
     > 自動サービス検出 (automatic service discovery) によって解決される名前は、カスタム指定した名前のみであって、デフォルトで自動的に生成されたコンテナー名に対しては行われません。
 @z

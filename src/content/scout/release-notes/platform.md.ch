@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リン クへの (no slash) 対応
 
 @x
 title: Docker Scout release notes
@@ -31,6 +31,66 @@ for what's coming next.
 @y
 Take a look at the [Docker Public Roadmap](https://github.com/docker/roadmap/projects/1)
 for what's coming next.
+@z
+
+@x
+## Q3 2024
+@y
+## Q3 2024
+@z
+
+@x
+New features and enhancements released in the third quarter of 2024.
+@y
+New features and enhancements released in the third quarter of 2024.
+@z
+
+@x
+### 2024-08-13
+@y
+### 2024-08-13
+@z
+
+@x
+This release changes the out-of-the-box policies to align with the policy
+configurations used to evaluate Docker Scout [health scores](/scout/policy/scores.md).
+@y
+This release changes the out-of-the-box policies to align with the policy
+configurations used to evaluate Docker Scout [health scores](scout/policy/scores.md).
+@z
+
+@x
+The default out-of-the-box policies are now:
+@y
+The default out-of-the-box policies are now:
+@z
+
+@x
+- **No high-profile vulnerabilities**
+- **No fixable critical or high vulnerabilities**
+- **No unapproved base images**
+- **Default non-root user**
+- **Supply chain attestations**
+- **No outdated base images**
+- **No AGPL v3 licenses**
+@y
+- **No high-profile vulnerabilities**
+- **No fixable critical or high vulnerabilities**
+- **No unapproved base images**
+- **Default non-root user**
+- **Supply chain attestations**
+- **No outdated base images**
+- **No AGPL v3 licenses**
+@z
+
+@x
+The configurations for these policies are now the same as the configurations
+used to calculate health scores. Previously, the out-of-the-box policies had
+different configurations than the health score policies.
+@y
+The configurations for these policies are now the same as the configurations
+used to calculate health scores. Previously, the out-of-the-box policies had
+different configurations than the health score policies.
 @z
 
 @x

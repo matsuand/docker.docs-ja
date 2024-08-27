@@ -236,7 +236,7 @@ You can create the volume and start the container using the CLI or Docker Deskto
    >
    > If you're using Git Bash, you must use different syntax for this command.
 @y
-   > [!メモ]
+   > [!NOTE]
    >
    > Git Bash を利用している場合は、このコマンドにおいて異なる文法を用いる必要があります。
    >

@@ -41,7 +41,7 @@ To install the latest version of the plugin, run the following commands:
 > locally. Before installing, make yourself familiar with potential risks and
 > limitations of the convenience script.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > インターネットからローカルにダウンロードしたスクリプトは、実行前に充分に内容を確認してください。
 > インストールするにあたっては、この便利スクリプトが抱える潜在的リスクや制約について充分に理解しておいてください。

@@ -327,7 +327,7 @@ todo アプリは環境変数をいくつか設定することによって MySQL
 > as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
 > the variable and get the file contents.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > While using env vars to set connection settings is generally accepted for development, it's highly discouraged
 > when running applications in production. Diogo Monica, a former lead of security at Docker,

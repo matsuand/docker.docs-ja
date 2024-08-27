@@ -36,7 +36,7 @@ Secrets を利用すれば、こういったリスクは軽減されます。
 @x
 Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](/reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
 @y
-Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
+Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
 @z
 
 @x

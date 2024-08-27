@@ -81,7 +81,7 @@ through Docker Desktop. For instructions on how to install Docker Desktop, see:
 > While the following instructions may work, Docker doesn't test or verify
 > installation on distro derivatives.
 @y
-> [!メモ]
+> [!NOTE]
 >
 > 以降に示す手順は他の派生ディストリビューションで動作するかもしれませんが、Docker ではそういったディストリビューションへのインストールの確認検証は行っていません。
 @z

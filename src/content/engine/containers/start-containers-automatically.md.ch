@@ -162,7 +162,7 @@ Keep the following in mind when using restart policies:
 @y
 - Restart policies only apply to containers. To configure restart policies for
   Swarm services, see
-  [flags related to service restart](/reference/cli/docker/service/create.md).
+  [flags related to service restart](reference/cli/docker/service/create.md).
 @z
 
 @x

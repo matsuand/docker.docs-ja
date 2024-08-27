@@ -116,7 +116,7 @@ Microsoft Windows Server において Docker デーモンおよびクライア�
      Because this directory is registered in the system `PATH`, you can run the `docker-compose --version` 
      command on the subsequent step with no additional configuration.
 @y
-    > [!メモ]
+    > [!NOTE]
     >
     > Windows Server 2019 においては、Compose 実行ファイルを `$Env:ProgramFiles\Docker` にインストールすることもできます。
     > このディレクトリはシステムの `PATH` に登録されているため、この後の手順においては、特になにも設定せずに `docker-compose --version` コマンドを実行することができます。

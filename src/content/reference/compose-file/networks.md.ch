@@ -107,6 +107,12 @@ driver-dependent.
 % snip code...
 
 @x
+Consult the [network drivers documentation](/engine/network/_index.md) for more information.
+@y
+Consult the [network drivers documentation](engine/network/_index.md) for more information.
+@z
+
+@x
 ### attachable
 @y
 ### attachable
