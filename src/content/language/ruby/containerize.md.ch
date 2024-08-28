@@ -892,11 +892,9 @@ application using Docker.
 
 @x
 Related information:
- - [Build with Docker guide](../../build/guide/index.md)
  - [Docker Compose overview](../../compose/_index.md)
 @y
 Related information:
- - [Build with Docker guide](../../build/guide/index.md)
  - [Docker Compose overview](../../compose/_index.md)
 @z
 

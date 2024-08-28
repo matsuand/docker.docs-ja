@@ -40,18 +40,6 @@ description: Explore the Docker guides
 @z
 
 @x
-- title: Build with Docker
-  description: Deep-dive into building software with Docker.
-  link: /build/guide/
-  icon: build
-@y
-- title: Docker を使ったビルド
-  description: Docker を使ってソフトウェアを構築していく方法を学びます。
-  link: __SUBDIR__/build/guide/
-  icon: build
-@z
-
-@x
 - title: Deployment and Orchestration
   description: Deploy and manage Docker containers at scale.
   link: /guides/deployment-orchestration/orchestration/

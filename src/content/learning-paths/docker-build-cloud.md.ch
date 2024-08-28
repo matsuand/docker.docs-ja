@@ -146,12 +146,16 @@ members.
 @z
 
 @x
-- Docker Build Cloud provides several benefits over local builds:
+Docker Build Cloud provides several benefits over local builds:
+@y
+Docker Build Cloud provides several benefits over local builds:
+@z
+
+@x
 - Improved build speed
 - Shared build cache
 - Native multi-platform builds
 @y
-- Docker Build Cloud provides several benefits over local builds:
 - Improved build speed
 - Shared build cache
 - Native multi-platform builds
@@ -172,9 +176,63 @@ there are no shared processes or data between cloud builders.
 @z
 
 @x
+**Duration**: 2.5 minutes
+@y
+**Duration**: 2.5 minutes
+@z
+
+@x
 {{< youtube-embed "8AqKhEO2PQA" >}}
 @y
 {{< youtube-embed "8AqKhEO2PQA" >}}
+@z
+
+@x
+{{< /accordion >}}
+@y
+{{< /accordion >}}
+@z
+
+@x
+{{< accordion large=true title=`Demo: set up and use Docker Build Cloud in development` icon=`play_circle` >}}
+@y
+{{< accordion large=true title=`Demo: set up and use Docker Build Cloud in development` icon=`play_circle` >}}
+@z
+
+@x
+With Docker Build Cloud, you can easily shift the build workload from local machines 
+to the cloud, helping you achieve faster build times, especially for multi-platform builds.
+@y
+With Docker Build Cloud, you can easily shift the build workload from local machines 
+to the cloud, helping you achieve faster build times, especially for multi-platform builds.
+@z
+
+@x
+In this demo, you'll see:
+@y
+In this demo, you'll see:
+@z
+
+@x
+- How to setup the builder locally
+- How to use Docker Build Cloud with Docker Compose
+- How the image cache speeds up builds for others on your team
+@y
+- How to setup the builder locally
+- How to use Docker Build Cloud with Docker Compose
+- How the image cache speeds up builds for others on your team
+@z
+
+@x
+**Duration**: 4 minutes
+@y
+**Duration**: 4 minutes
+@z
+
+@x
+{{< youtube-embed "oPGq2AP5OtQ" >}}
+@y
+{{< youtube-embed "oPGq2AP5OtQ" >}}
 @z
 
 @x
@@ -190,9 +248,43 @@ there are no shared processes or data between cloud builders.
 @z
 
 @x
-Speed up your build pipelines — delegate the build execution to Docker Build Cloud in CI.
+Docker Build Cloud can significantly decrease the time it takes for your CI builds
+take to run, saving you time and money. 
 @y
-Speed up your build pipelines — delegate the build execution to Docker Build Cloud in CI.
+Docker Build Cloud can significantly decrease the time it takes for your CI builds
+take to run, saving you time and money. 
+@z
+
+@x
+Since the builds run remotely, your CI runner can still use the Docker tooling CLI
+without needing elevated permissions, making your builds more secure by default.
+@y
+Since the builds run remotely, your CI runner can still use the Docker tooling CLI
+without needing elevated permissions, making your builds more secure by default.
+@z
+
+@x
+In this demo, you will see:
+@y
+In this demo, you will see:
+@z
+
+@x
+- How to integrate Docker Build Cloud into a variety of CI platforms
+- How to use Docker Build Cloud in GitHub Actions to build multi-architecture images
+- Speed differences between a workflow using Docker Build Cloud and a workflow running natively
+- How to use Docker Build Cloud in a GitLab Pipeline
+@y
+- How to integrate Docker Build Cloud into a variety of CI platforms
+- How to use Docker Build Cloud in GitHub Actions to build multi-architecture images
+- Speed differences between a workflow using Docker Build Cloud and a workflow running natively
+- How to use Docker Build Cloud in a GitLab Pipeline
+@z
+
+@x
+**Duration**: 4 minutes
+@y
+**Duration**: 4 minutes
 @z
 
 @x
@@ -291,12 +383,12 @@ build minutes from that plan.
 
 @x
 For example, if a Docker Team customer purchases 5 Build Cloud Team seats, they
-will have 400 minutes from their Docker Team plan plus 1000 minutes (200 min/mo
-* 5 seats) for a total of 1400 minutes per month.
+will have 400 minutes from their Docker Team plan plus 1000 minutes (200 min/mo * 5 seats) 
+for a total of 1400 minutes per month.
 @y
 For example, if a Docker Team customer purchases 5 Build Cloud Team seats, they
-will have 400 minutes from their Docker Team plan plus 1000 minutes (200 min/mo
-* 5 seats) for a total of 1400 minutes per month.
+will have 400 minutes from their Docker Team plan plus 1000 minutes (200 min/mo * 5 seats) 
+for a total of 1400 minutes per month.
 @z
 
 @x

@@ -86,8 +86,6 @@ AC_CONFIG_FILES([
 	src/content/build/ci/images/Makefile
 	src/content/build/concepts/Makefile
 	src/content/build/exporters/Makefile
-	src/content/build/guide/Makefile
-	src/content/build/guide/images/Makefile
 	src/content/build/images/Makefile
 	src/content/build/metadata/Makefile
 	src/content/build/metadata/attestations/Makefile
@@ -179,6 +177,7 @@ AC_CONFIG_FILES([
 	src/content/get-started/docker-concepts/running-containers/images/Makefile
 	src/content/get-started/docker-concepts/the-basics/Makefile
 	src/content/get-started/docker-concepts/the-basics/images/Makefile
+	src/content/get-started/images/Makefile
 	src/content/get-started/introduction/Makefile
 	src/content/get-started/introduction/images/Makefile
 	src/content/get-started/workshop/Makefile

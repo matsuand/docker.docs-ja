@@ -419,11 +419,9 @@ Related information:
 @x
  - [Dockerfile reference](/reference/dockerfile/)
  - [docker CLI reference](/reference/cli/docker/)
- - [Build with Docker guide](/build/guide/_index.md)
 @y
  - [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [Docker ガイドを使ったビルド](build/guide/_index.md)
 @z
 
 @x

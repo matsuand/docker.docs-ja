@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+
 @x
 title: Image-building best practices
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
@@ -247,12 +249,10 @@ In this section, you learned a few image building best practices, including laye
 @x
 Related information:
  - [Dockerfile reference](/reference/dockerfile/)
- - [Build with Docker guide](/build/guide/_index.md)
  - [Dockerfile best practices](/build/building/best-practices.md)
 @y
 関連情報
  - [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
- - [Docker を使ったビルドガイド](build/guide/_index.md)
  - [Dockerfile ベストプラクティス](build/building/best-practices.md)
 @z
 

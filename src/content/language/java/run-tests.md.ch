@@ -278,26 +278,6 @@ You should see output containing the following
 @z
 
 @x
-## Summary
-@y
-## Summary
-@z
-
-@x
-In this section, you learned how to run tests when building your image.
-@y
-In this section, you learned how to run tests when building your image.
-@z
-
-@x
-Related information:
- - [Build with Docker guide](../../build/guide/index.md)
-@y
-Related information:
- - [Build with Docker guide](../../build/guide/index.md)
-@z
-
-@x
 ## Next steps
 @y
 ## Next steps

@@ -158,11 +158,9 @@ application using Docker.
 
 @x
 Related information:
- - [Build with Docker guide](../../build/guide/index.md)
  - [Docker Compose overview](../../compose/_index.md)
 @y
 関連情報
- - [Docker ガイドを使ったビルド](../../build/guide/index.md)
  - [Docker Compose 概要](../../compose/_index.md)
 @z
 

@@ -35,11 +35,9 @@ In addition to the language-specific modules, Docker documentation also provides
 @x
 * [Building best practices](../build/building/best-practices.md)
 * [Build images with BuildKit](../build/buildkit/index.md#getting-started)
-* [Build with Docker](../build/guide/_index.md)
 @y
 * [イメージビルドのベストプラクティス](../build/building/best-practices.md)
 * [BuildKit を使ったイメージビルド](../build/buildkit/index.md#getting-started)
-* [Docker を使ったビルド](../build/guide/_index.md)
 @z
 
 @x

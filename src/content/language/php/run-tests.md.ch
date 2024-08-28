@@ -237,12 +237,6 @@ You should see output containing the following.
 @z
 
 @x
-To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
-@y
-To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -257,11 +251,9 @@ In this section, you learned how to run tests when developing locally using Comp
 @x
 Related information:
  - [docker compose run](/reference/cli/docker/compose/run/)
- - [Build with Docker guide](../../build/guide/index.md)
 @y
 Related information:
  - [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/)
- - [Build with Docker guide](../../build/guide/index.md)
 @z
 
 @x

@@ -60,6 +60,24 @@ orchestrated.
 @z
 
 @x
+## What you’ll learn
+@y
+## What you’ll learn
+@z
+
+@x
+- What Docker Compose is and what it does
+- How to define services
+- Use cases for Docker Compose
+- How things would be different without Docker Compose
+@y
+- What Docker Compose is and what it does
+- How to define services
+- Use cases for Docker Compose
+- How things would be different without Docker Compose
+@z
+
+@x
 ## Who’s this for?
 @y
 ## Who’s this for?
@@ -140,6 +158,12 @@ Docker Compose provides several benefits:
 @z
 
 @x
+**Duration**: 2.5 minutes
+@y
+**Duration**: 2.5 minutes
+@z
+
+@x
 {{< youtube-embed 2EqarOM2V4U >}}
 @y
 {{< youtube-embed 2EqarOM2V4U >}}
@@ -155,6 +179,30 @@ Docker Compose provides several benefits:
 {{< accordion large=true title=`Demo: Set up and use Docker Compose` icon=`play_circle` >}}
 @y
 {{< accordion large=true title=`Demo: Set up and use Docker Compose` icon=`play_circle` >}}
+@z
+
+@x
+This Docker Compose demo shows how to orchestrate a multi-container application
+environment, streamlining development and deployment processes.
+@y
+This Docker Compose demo shows how to orchestrate a multi-container application
+environment, streamlining development and deployment processes.
+@z
+
+@x
+- Compare Docker Compose to the `docker run` command
+- Configure a multi-container web app using a Compose file
+- Run a multi-container web app using one command
+@y
+- Compare Docker Compose to the `docker run` command
+- Configure a multi-container web app using a Compose file
+- Run a multi-container web app using one command
+@z
+
+@x
+**Duration**: 2.5 minutes
+@y
+**Duration**: 2.5 minutes
 @z
 
 @x
@@ -190,13 +238,13 @@ Docker Compose provides several benefits:
 @x
 You don't necessarily need to maintain entirely separate Compose files for your
 development, testing, and staging environments. You can define all your
-services in a single Compose file (`compose.yml`). You can use profiles to
+services in a single Compose file (`compose.yaml`). You can use profiles to
 group service configurations specific to each environment (`dev`, `test`,
 `staging`).
 @y
 You don't necessarily need to maintain entirely separate Compose files for your
 development, testing, and staging environments. You can define all your
-services in a single Compose file (`compose.yml`). You can use profiles to
+services in a single Compose file (`compose.yaml`). You can use profiles to
 group service configurations specific to each environment (`dev`, `test`,
 `staging`).
 @z
@@ -298,12 +346,12 @@ easier to run by defining all the `docker run` options in a file.
 @z
 
 @x
-To use Compose, you need a `compose.yml` file. In this file, you can specify
+To use Compose, you need a `compose.yaml` file. In this file, you can specify
 the build context and Dockerfile for each service. When you run the command
 `docker compose up --build`, Docker Compose will build the images for each
 service and then start the containers.
 @y
-To use Compose, you need a `compose.yml` file. In this file, you can specify
+To use Compose, you need a `compose.yaml` file. In this file, you can specify
 the build context and Dockerfile for each service. When you run the command
 `docker compose up --build`, Docker Compose will build the images for each
 service and then start the containers.

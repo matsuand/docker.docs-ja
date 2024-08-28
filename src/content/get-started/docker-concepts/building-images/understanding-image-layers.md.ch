@@ -371,12 +371,10 @@ If you’d like to dive deeper into the things you learned, check out the follow
 @z
 
 @x
-* [docker image history CLI reference](/reference/cli/docker/image/history/)
-* [docker image layers](/build/guide/layers/)
+* [`docker image history`](/reference/cli/docker/image/history/)
 * [`docker container commit`](/reference/cli/docker/container/commit/)
 @y
-* [docker image history CLI リファレンス](__SUBDIR__/reference/cli/docker/image/history/)
-* [docker image layers](__SUBDIR__/build/guide/layers/)
+* [`docker image history`](__SUBDIR__/reference/cli/docker/image/history/)
 * [`docker container commit`](__SUBDIR__/reference/cli/docker/container/commit/)
 @z
 

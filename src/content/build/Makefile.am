@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = bake builders building buildkit cache ci concepts exporters \
-	guide images metadata
+	images metadata
 
 bases = \
 	_index.md        \

@@ -228,12 +228,6 @@ You should see output containing the following.
 @z
 
 @x
-To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
-@y
-To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
-@z
-
-@x
 ## Next steps
 @y
 ## Next steps

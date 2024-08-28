@@ -184,6 +184,16 @@ Get started:
 @z
 
 @x
+Guides:
+- title: Overview
+  path: /guides/
+@y
+ガイド:
+- title: 概要
+  path: __SUBDIR__/guides/
+@z
+
+@x
 - sectiontitle: Language-specific guides
   section:
   - path: /language/
@@ -593,54 +603,6 @@ Get started:
       title: Suppress CVEs with VEX
     - path: __SUBDIR__/guides/use-case/databases/
       title: コンテナー化データベースの利用
-@z
-
-@x
-- sectiontitle: Build with Docker
-  section:
-  - path: /build/guide/
-    title: Overview
-  - path: /build/guide/intro/
-    title: 1. Introduction
-  - path: /build/guide/layers/
-    title: 2. Layers
-  - path: /build/guide/multi-stage/
-    title: 3. Multi-stage
-  - path: /build/guide/mounts/
-    title: 4. Mounts
-  - path: /build/guide/build-args/
-    title: 5. Build arguments
-  - path: /build/guide/export/
-    title: 6. Export binaries
-  - path: /build/guide/test/
-    title: 7. Test
-  - path: /build/guide/multi-platform/
-    title: 8. Multi-platform
-  - path: /build/guide/next-steps/
-    title: Next steps
-@y
-- sectiontitle: Docker を使ったビルド
-  section:
-  - path: __SUBDIR__/build/guide/
-    title: 概要
-  - path: __SUBDIR__/build/guide/intro/
-    title: 1. はじめに
-  - path: __SUBDIR__/build/guide/layers/
-    title: 2. レイヤー
-  - path: __SUBDIR__/build/guide/multi-stage/
-    title: 3. マルチステージ
-  - path: __SUBDIR__/build/guide/mounts/
-    title: 4. マウント
-  - path: __SUBDIR__/build/guide/build-args/
-    title: 5. ビルド引数
-  - path: __SUBDIR__/build/guide/export/
-    title: 6. バイナリのエクスポート
-  - path: __SUBDIR__/build/guide/test/
-    title: 7. テスト
-  - path: __SUBDIR__/build/guide/multi-platform/
-    title: 8. マルチプラットフォーム
-  - path: __SUBDIR__/build/guide/next-steps/
-    title: 次のステップ
 @z
 
 @x
@@ -4310,6 +4272,8 @@ Manuals:
           title: Multi-platform images
         - path: /build/building/secrets/
           title: Build secrets
+        - path: /build/building/export/
+          title: Export binaries
         - path: /build/building/best-practices/
           title: Best practices
         - path: /build/building/base-images/
@@ -4325,6 +4289,8 @@ Manuals:
           title: マルチプラットフォームイメージ
         - path: __SUBDIR__/build/building/secrets/
           title: Build secrets
+        - path: __SUBDIR__/build/building/export/
+          title: バイナリのエクスポート
         - path: __SUBDIR__/build/building/best-practices/
           title: ベストプラクティス
         - path: __SUBDIR__/build/building/base-images/
@@ -4454,6 +4420,8 @@ Manuals:
           title: Overview
         - path: /build/cache/invalidation/
           title: Cache invalidation
+        - path: /build/cache/optimize/
+          title: Optimize cache usage
         - path: /build/cache/garbage-collection/
           title: Garbage collection
 @y
@@ -4463,6 +4431,8 @@ Manuals:
           title: Overview
         - path: __SUBDIR__/build/cache/invalidation/
           title: Cache invalidation
+        - path: __SUBDIR__/build/cache/optimize/
+          title: Optimize cache usage
         - path: __SUBDIR__/build/cache/garbage-collection/
           title: Garbage collection
 @z

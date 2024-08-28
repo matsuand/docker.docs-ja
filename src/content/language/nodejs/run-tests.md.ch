@@ -119,12 +119,6 @@ Run the following command to build a new image using the test stage as the targe
 % snip command...
 
 @x
-To learn more about building and running tests, see the [Build with Docker guide](../../build/guide/_index.md).
-@y
-テストのビルドや実行についての詳細は [Docker を使ったビルドガイド](../../build/guide/_index.md) を参照してください。
-@z
-
-@x
 You should see output containing the following.
 @y
 上のコマンドの出力は以下のようになるはずです。
@@ -147,11 +141,9 @@ In this section, you learned how to run tests when developing locally using Comp
 @x
 Related information:
  - [docker compose run](/reference/cli/docker/compose/run/)
- - [Build with Docker guide](../../build/guide/index.md)
 @y
 関連情報
  - [docker compose run](__SUBDIR__/reference/cli/docker/compose/run/)
- - [Docker を使ったビルドガイド](../../build/guide/index.md)
 @z
 
 @x

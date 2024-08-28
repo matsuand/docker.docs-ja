@@ -17,7 +17,8 @@ copyfiles = \
 	gha-check-annotations.png       \
 	hub-official-images.webp        \
 	opentelemetry.png               \
-	set-default-builder-gui.webp
+	set-default-builder-gui.webp    \
+	single-vs-multiplatform-image.svg
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

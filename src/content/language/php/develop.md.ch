@@ -993,14 +993,12 @@ database and persist data. You also learned how to use Compose Watch to automati
 
 @x
 Related information:
- - [Build with Docker guide](../../build/guide/index.md)
  - [Compose file reference](/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Dockerfile reference](../../reference/dockerfile.md)
  - [Official Docker Image for PHP](https://hub.docker.com/_/php)
 @y
 Related information:
- - [Build with Docker guide](../../build/guide/index.md)
  - [Compose file reference](__SUBDIR__/reference/compose-file/)
  - [Compose file watch](../../compose/file-watch.md)
  - [Dockerfile reference](../../reference/dockerfile.md)

@@ -4,6 +4,7 @@
 bases = \
 	base-images.md    \
 	best-practices.md \
+	export.md         \
 	multi-platform.md \
 	multi-stage.md    \
 	secrets.md        \

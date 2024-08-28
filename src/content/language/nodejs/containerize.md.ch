@@ -352,13 +352,11 @@ application using Docker.
 @x
 Related information:
  - [Dockerfile reference](../../reference/dockerfile.md)
- - [Build with Docker guide](../../build/guide/index.md)
  - [.dockerignore file reference](../../reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](../../compose/_index.md)
 @y
 関連情報
  - [Dockerfile リファレンス](../../reference/dockerfile.md)
- - [Docker ガイドを使ったビルド](../../build/guide/index.md)
  - [.dockerignore ファイルリファレンス](../../reference/dockerfile.md#dockerignore-file)
  - [Docker Compose 概要](../../compose/_index.md)
 @z
