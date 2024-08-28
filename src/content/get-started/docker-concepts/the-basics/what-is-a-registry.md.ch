@@ -78,6 +78,14 @@ A _registry_ is a centralized location that stores and manages container images,
 @z
 
 @x
+The following diagram shows the relationship between a registry, repositories, and images.
+@y
+以下の図は、レジストリ、リポジトリ、イメージの関係を示すものです。
+@z
+
+% snip text...
+
+@x
 >**Note**
 >
 > You can create one private repository and unlimited public repositories using the free version of Docker Hub. For more information, visit the [Docker Hub subscription page](https://www.docker.com/pricing/).
@@ -115,7 +123,7 @@ In this hands-on, you will learn how to build and push a Docker image to the Doc
 @x
     ![Screenshot of the official Docker Hub page showing the Sign up page](images/dockerhub-signup.webp?border)
 @y
-    ![公式 Docker Hub でのサインアップページのスクリーンショット](images/dockerhub-signup.webp?border)
+    ![公式 Docker Hub でのサインアップページのスクリーンショット](./images/dockerhub-signup.webp?border)
 @z
 
 @x

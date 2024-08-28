@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = images
+
 bases = \
 	what-is-a-container.md    \
 	what-is-a-registry.md     \

@@ -630,6 +630,14 @@ Guides:
 @z
 
 @x
+- path: /guides/resources/
+  title: "Educational resources"
+@y
+- path: __SUBDIR__/guides/resources/
+  title: "学習リソース"
+@z
+
+@x
 - sectiontitle: Contribute
   section:
   - path: /contribute/
