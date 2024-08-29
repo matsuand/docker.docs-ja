@@ -4,17 +4,17 @@
 @x
       <span><strong>Skill level</strong></span>
 @y
-      <span><strong>Skill level</strong></span>
+      <span><strong>スキルレベル</strong></span>
 @z
 
 @x
       <span><strong>Time to complete</strong></span>
 @y
-      <span><strong>Time to complete</strong></span>
+      <span><strong>所要時間</strong></span>
 @z
 
 @x
       <span><strong>Prerequisites</strong></span>
 @y
-      <span><strong>Prerequisites</strong></span>
+      <span><strong>前提条件</strong></span>
 @z
