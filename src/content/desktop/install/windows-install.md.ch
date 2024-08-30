@@ -240,15 +240,11 @@ For more information on setting up WSL 2 with Docker Desktop, see [WSL](../wsl/_
 @x
 > [!IMPORTANT]
 >
-> The following features are not supported:
-> - Hyper-V backend
-> - Windows containers
+> Windows containers are not supported.
 @y
 > [!IMPORTANT]
 >
-> The following features are not supported:
-> - Hyper-V backend
-> - Windows containers
+> Windows containers are not supported.
 @z
 
 @x

@@ -9,6 +9,7 @@ include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
 	copilot-action-prompt.png \
-	copilot-button.png
+	copilot-button.png        \
+	docker-agent-copilot.png
 
 include $(top_srcdir)/build-aux/copy.mk

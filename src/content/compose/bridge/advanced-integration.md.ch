@@ -16,9 +16,9 @@ keywords: kubernetes, compose, compose bridge, plugin, advanced
 @z
 
 @x
-{{< include "compose-bridge-early-access.md" >}}
+{{< include "compose-bridge-experimental.md" >}}
 @y
-{{< include "compose-bridge-early-access.md" >}}
+{{< include "compose-bridge-experimental.md" >}}
 @z
 
 @x

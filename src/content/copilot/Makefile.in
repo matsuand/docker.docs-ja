@@ -248,7 +248,8 @@ transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
 	copilot-action-prompt.png \
-	copilot-button.png
+	copilot-button.png        \
+	docker-agent-copilot.png
 
 all: all-am
 

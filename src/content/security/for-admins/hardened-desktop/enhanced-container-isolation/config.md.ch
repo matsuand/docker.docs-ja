@@ -4,7 +4,7 @@
 @x
 ---
 description: Advanced Configuration for Enhanced Container Isolation
-title: Advanced configuration options
+title: Advanced configuration options for ECI
 keywords: enhanced container isolation, Docker Desktop, Docker socket, bind mount, configuration
 aliases:
  - /desktop/hardened-desktop/enhanced-container-isolation/config/
@@ -12,7 +12,7 @@ aliases:
 @y
 ---
 description: Advanced Configuration for Enhanced Container Isolation
-title: Advanced configuration options
+title: Advanced configuration options for ECI
 keywords: enhanced container isolation, Docker Desktop, Docker socket, bind mount, configuration
 aliases:
  - /desktop/hardened-desktop/enhanced-container-isolation/config/
@@ -73,12 +73,16 @@ push malicious images into the organization's repositories) or similar.
 However, some legitimate use cases require containers to have access to the
 Docker Engine socket. For example, the popular [Testcontainers](https://testcontainers.com/)
 framework sometimes bind-mounts the Docker Engine socket into containers to
-manage them or perform post-test cleanup.
+manage them or perform post-test cleanup. Similarly, some Buildpack frameworks,
+for example [Paketo](https://paketo.io/), require Docker socket bind-mounts into
+containers.
 @y
 However, some legitimate use cases require containers to have access to the
 Docker Engine socket. For example, the popular [Testcontainers](https://testcontainers.com/)
 framework sometimes bind-mounts the Docker Engine socket into containers to
-manage them or perform post-test cleanup.
+manage them or perform post-test cleanup. Similarly, some Buildpack frameworks,
+for example [Paketo](https://paketo.io/), require Docker socket bind-mounts into
+containers.
 @z
 
 @x
@@ -90,11 +94,11 @@ bind mounting the Docker Engine socket into containers, but in a controlled way.
 @z
 
 @x
-This can be done via the `admin-settings.json` file, as described in
-[Settings Management](../settings-management/configure.md). For example:
+This can be done via the Docker Socket mount permissions section in the
+[admin-settings.json](../settings-management/configure.md) file. For example:
 @y
-This can be done via the `admin-settings.json` file, as described in
-[Settings Management](../settings-management/configure.md). For example:
+This can be done via the Docker Socket mount permissions section in the
+[admin-settings.json](../settings-management/configure.md) file. For example:
 @z
 
 @x
@@ -322,29 +326,191 @@ ones in the repository.
 @z
 
 @x
+### Docker Socket Mount Permissions for derived images
+@y
+### Docker Socket Mount Permissions for derived images
+@z
+
+@x
+> [!NOTE]
+>
+> This feature is available with Docker Desktop version 4.34 and later.
+@y
+> [!NOTE]
+>
+> This feature is available with Docker Desktop version 4.34 and later.
+@z
+
+@x
+As described in the prior section, admins can configure the list of container
+images that are allowed to mount the Docker socket via the `imageList`.
+@y
+As described in the prior section, admins can configure the list of container
+images that are allowed to mount the Docker socket via the `imageList`.
+@z
+
+@x
+This works for most scenarios, but not always, because it requires knowing upfront
+the name of the image(s) on which the Docker socket mounts should be allowed.
+Some container tools such as [Paketo](https://paketo.io/) buildpacks,
+build ephemeral local images that require Docker socket bind mounts. Since the name of
+those ephemeral images is not known upfront, the `imageList` is not sufficient.
+@y
+This works for most scenarios, but not always, because it requires knowing upfront
+the name of the image(s) on which the Docker socket mounts should be allowed.
+Some container tools such as [Paketo](https://paketo.io/) buildpacks,
+build ephemeral local images that require Docker socket bind mounts. Since the name of
+those ephemeral images is not known upfront, the `imageList` is not sufficient.
+@z
+
+@x
+To overcome this, starting with Docker Desktop version 4.34, the Docker Socket
+mount permissions not only apply to the images listed in the `imageList`; they
+also apply to any local images derived (i.e., built from) an image in the
+`imageList`.
+@y
+To overcome this, starting with Docker Desktop version 4.34, the Docker Socket
+mount permissions not only apply to the images listed in the `imageList`; they
+also apply to any local images derived (i.e., built from) an image in the
+`imageList`.
+@z
+
+@x
+That is, if a local image called "myLocalImage" is built from "myBaseImage"
+(i.e., has a Dockerfile with a `FROM myBaseImage`), then if "myBaseImage" is in
+the `imageList`, both "myBaseImage" and "myLocalImage" are allowed to mount the
+Docker socket (i.e., ECI won't block the mount).
+@y
+That is, if a local image called "myLocalImage" is built from "myBaseImage"
+(i.e., has a Dockerfile with a `FROM myBaseImage`), then if "myBaseImage" is in
+the `imageList`, both "myBaseImage" and "myLocalImage" are allowed to mount the
+Docker socket (i.e., ECI won't block the mount).
+@z
+
+@x
+For example, to enable Paketo buildpacks to work with Docker Desktop and ECI,
+simply add the following image to the `imageList`:
+@y
+For example, to enable Paketo buildpacks to work with Docker Desktop and ECI,
+simply add the following image to the `imageList`:
+@z
+
+@x
+```json
+"imageList": {
+  "images": [
+    "paketobuildpacks/builder:base",
+  ],
+  "allowDerivedImages": true
+}
+```
+@y
+```json
+"imageList": {
+  "images": [
+    "paketobuildpacks/builder:base",
+  ],
+  "allowDerivedImages": true
+}
+```
+@z
+
+@x
+When the buildpack runs, it will create an ephemeral image derived from
+`paketobuildpacks/builder:base` and mount the Docker socket to it. ECI will
+allow this because it will notice that the ephemeral image is derived from an
+allowed image.
+@y
+When the buildpack runs, it will create an ephemeral image derived from
+`paketobuildpacks/builder:base` and mount the Docker socket to it. ECI will
+allow this because it will notice that the ephemeral image is derived from an
+allowed image.
+@z
+
+@x
+The behavior is enabled by default. It can be disabled by setting
+`allowDerivedImages=false` in the `admin-settings.json` file. In general it is
+not recommended that you disable this setting unless you know it won't be
+required.
+@y
+The behavior is enabled by default. It can be disabled by setting
+`allowDerivedImages=false` in the `admin-settings.json` file. In general it is
+not recommended that you disable this setting unless you know it won't be
+required.
+@z
+
+@x
+A couple of caveats:
+@y
+A couple of caveats:
+@z
+
+@x
+* The `allowDerivedImages` setting only applies to local-only images built from
+  an allowed image. That is, the derived image must not be present in a remote
+  repository (because if it were, you would just list it's name in the `imageList`).
+@y
+* The `allowDerivedImages` setting only applies to local-only images built from
+  an allowed image. That is, the derived image must not be present in a remote
+  repository (because if it were, you would just list it's name in the `imageList`).
+@z
+
+@x
+* For derived image checking to work, the parent image (i.e., the image in the
+  `imageList`) must be present locally (i.e., must have been explicitly pulled
+  from a repository). This is usually not a problem as the tools that need this
+  feature (e.g., Paketo buildpacks) will do the pre-pull of the parent image.
+@y
+* For derived image checking to work, the parent image (i.e., the image in the
+  `imageList`) must be present locally (i.e., must have been explicitly pulled
+  from a repository). This is usually not a problem as the tools that need this
+  feature (e.g., Paketo buildpacks) will do the pre-pull of the parent image.
+@z
+
+@x
+* The `allowDerivedImages` setting applies to all images in the `imageList`
+  specified with an explicit tag (e.g., `<name>:<tag>`). It does not apply to
+  images specified using the tag wildcard (e.g., `<name>:*`) described in the
+  prior section, because Docker Desktop needs to know the tag in order to
+  perform ancestor-descendant image checks. Therefore, if you want Docker socket
+  mounts to be allowed for images derived from a parent image in the
+  `imageList`, make sure the parent image is listed with name and tag.
+@y
+* The `allowDerivedImages` setting applies to all images in the `imageList`
+  specified with an explicit tag (e.g., `<name>:<tag>`). It does not apply to
+  images specified using the tag wildcard (e.g., `<name>:*`) described in the
+  prior section, because Docker Desktop needs to know the tag in order to
+  perform ancestor-descendant image checks. Therefore, if you want Docker socket
+  mounts to be allowed for images derived from a parent image in the
+  `imageList`, make sure the parent image is listed with name and tag.
+@z
+
+@x
 ### Command list
 @y
 ### Command list
 @z
 
 @x
-The `commandList` restricts the Docker commands that a container can issue via a
-bind-mounted Docker socket when ECI is enabled. It acts as a complementary
-security mechanism to the `imageList` (i.e., like a second line of defense).
+In addition to the `imageList` described in the prior sections, ECI can further
+restrict the commands that a container can issue via a bind mounted Docker
+socket. This is done via the Docker socket mount permission `commandList`, and
+acts as a complementary security mechanism to the `imageList` (i.e., like a
+second line of defense).
 @y
-The `commandList` restricts the Docker commands that a container can issue via a
-bind-mounted Docker socket when ECI is enabled. It acts as a complementary
-security mechanism to the `imageList` (i.e., like a second line of defense).
+In addition to the `imageList` described in the prior sections, ECI can further
+restrict the commands that a container can issue via a bind mounted Docker
+socket. This is done via the Docker socket mount permission `commandList`, and
+acts as a complementary security mechanism to the `imageList` (i.e., like a
+second line of defense).
 @z
 
 @x
-For example, say the `imageList` is configured to allow
-image `docker:cli` to mount the Docker socket, and a container is started with
-it:
+For example, say the `imageList` is configured to allow image `docker:cli` to
+mount the Docker socket, and a container is started with it:
 @y
-For example, say the `imageList` is configured to allow
-image `docker:cli` to mount the Docker socket, and a container is started with
-it:
+For example, say the `imageList` is configured to allow image `docker:cli` to
+mount the Docker socket, and a container is started with it:
 @z
 
 @x
@@ -361,11 +527,11 @@ $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock sh
 
 @x
 By default, this allows the container to issue any command via that Docker
-socket (e.g., build and push images to the organisation's repositories), which
+socket (e.g., build and push images to the organization's repositories), which
 is generally not desirable.
 @y
 By default, this allows the container to issue any command via that Docker
-socket (e.g., build and push images to the organisation's repositories), which
+socket (e.g., build and push images to the organization's repositories), which
 is generally not desirable.
 @z
 
@@ -511,16 +677,18 @@ Whether to configure the list as an allow or deny list depends on the use case.
 
 @x
 * In the `commandList`, block commands that you don't expect the container to
-  execute. For example, for local testing (e.g., Testcontainers), containers that bind-mount the Docker
-  socket typically create / run / remove containers, volumes, and networks, but
-  don't typically build images or push them into repositories (though some may
-  legitimately do this). What commands to allow or block depends on the use case.
+  execute. For example, for local testing (e.g., Testcontainers), containers
+  that bind-mount the Docker socket typically create / run / remove containers,
+  volumes, and networks, but don't typically build images or push them into
+  repositories (though some may legitimately do this). What commands to allow or
+  block depends on the use case.
 @y
 * In the `commandList`, block commands that you don't expect the container to
-  execute. For example, for local testing (e.g., Testcontainers), containers that bind-mount the Docker
-  socket typically create / run / remove containers, volumes, and networks, but
-  don't typically build images or push them into repositories (though some may
-  legitimately do this). What commands to allow or block depends on the use case.
+  execute. For example, for local testing (e.g., Testcontainers), containers
+  that bind-mount the Docker socket typically create / run / remove containers,
+  volumes, and networks, but don't typically build images or push them into
+  repositories (though some may legitimately do this). What commands to allow or
+  block depends on the use case.
 @z
 
 @x
@@ -560,17 +728,15 @@ Whether to configure the list as an allow or deny list depends on the use case.
 @z
 
 @x
-* It's not possible to allow Docker socket bind-mounts on images that are not on
-  a registry (e.g., images built locally and not yet pushed to a
-  registry). That's because Docker Desktop pulls the digests for the allowed
-  images from the registry, and then uses that to compare against the local copy
-  of the image.
+* It's not possible to allow Docker socket bind-mounts on local images (i.e., images that are not on
+  a registry) unless they are [derived from an allowed image](#docker-socket-mount-permissions-for-derived-images).
+  That's because Docker Desktop pulls the digests for the allowed images from the
+  registry, and then uses that to compare against the local copy of the image.
 @y
-* It's not possible to allow Docker socket bind-mounts on images that are not on
-  a registry (e.g., images built locally and not yet pushed to a
-  registry). That's because Docker Desktop pulls the digests for the allowed
-  images from the registry, and then uses that to compare against the local copy
-  of the image.
+* It's not possible to allow Docker socket bind-mounts on local images (i.e., images that are not on
+  a registry) unless they are [derived from an allowed image](#docker-socket-mount-permissions-for-derived-images).
+  That's because Docker Desktop pulls the digests for the allowed images from the
+  registry, and then uses that to compare against the local copy of the image.
 @z
 
 @x

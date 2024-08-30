@@ -74,9 +74,9 @@ This is because it doesn't require network address translation (NAT), and no "us
 @z
 
 @x
-The host networking driver only works on Linux hosts, but is available as a Beta feature, on Docker Desktop version 4.29 and later.
+The host networking driver is supported on Docker Engine (Linux only) and Docker Desktop version 4.34 and later.
 @y
-The host networking driver only works on Linux hosts, but is available as a Beta feature, on Docker Desktop version 4.29 and later.
+The host networking driver is supported on Docker Engine (Linux only) and Docker Desktop version 4.34 and later.
 @z
 
 @x
@@ -104,11 +104,25 @@ given swarm node.
 @z
 
 @x
-Host networking is also supported on Docker Desktop version 4.29 and later for Mac,
-Windows, and Linux as a [beta feature](/release-lifecycle.md#beta). To enable this feature, navigate to the **Features in development** tab in **Settings**, and then select **Enable host networking**.
+Host networking is supported on Docker Desktop version 4.34 and later.
+To enable this feature:
 @y
-Host networking is also supported on Docker Desktop version 4.29 and later for Mac,
-Windows, and Linux as a [beta feature](release-lifecycle.md#beta). To enable this feature, navigate to the **Features in development** tab in **Settings**, and then select **Enable host networking**.
+Host networking is supported on Docker Desktop version 4.34 and later.
+To enable this feature:
+@z
+
+@x
+1. Sign in to your Docker account in Docker Desktop.
+2. Navigate to **Settings**.
+3. Under the **Resources** tab, select **Network**.
+4. Check the **Enable host networking** option.
+5. Select **Apply and restart**.
+@y
+1. Sign in to your Docker account in Docker Desktop.
+2. Navigate to **Settings**.
+3. Under the **Resources** tab, select **Network**.
+4. Check the **Enable host networking** option.
+5. Select **Apply and restart**.
 @z
 
 @x

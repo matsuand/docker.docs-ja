@@ -14,9 +14,9 @@ keywords: compose, bridge, kubernetes
 @z
 
 @x
-{{< include "compose-bridge-early-access.md" >}}
+{{< include "compose-bridge-experimental.md" >}}
 @y
-{{< include "compose-bridge-early-access.md" >}}
+{{< include "compose-bridge-experimental.md" >}}
 @z
 
 @x
@@ -174,13 +174,33 @@ $ compose-bridge convert -f <path-to-file>/compose.yaml
 @z
 
 @x
+To see all available flags, run:
+@y
+To see all available flags, run:
+@z
+
+@x
+```console
+$ compose-bridge convert --help
+```
+@y
+```console
+$ compose-bridge convert --help
+```
+@z
+
+@x
 > [!TIP]
 >
-> Run `compose-bridge convert --help` to see all available flags. 
+> You can now convert and deploy your Compose project to a Kubernetes cluster from the Compose file viewer.
+> 
+> Make sure you are signed in to your Docker account, navigate to your container in the **Containers** view, and in the top-right corner select **View configurations** and then **Convert and Deploy to Kubernetes**. 
 @y
 > [!TIP]
 >
-> Run `compose-bridge convert --help` to see all available flags. 
+> You can now convert and deploy your Compose project to a Kubernetes cluster from the Compose file viewer.
+> 
+> Make sure you are signed in to your Docker account, navigate to your container in the **Containers** view, and in the top-right corner select **View configurations** and then **Convert and Deploy to Kubernetes**. 
 @z
 
 @x

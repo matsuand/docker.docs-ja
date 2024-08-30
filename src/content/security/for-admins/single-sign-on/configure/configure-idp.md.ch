@@ -114,6 +114,7 @@ If you use SAML for your SSO connection, Docker obtains these attributes from th
 @y
 > [!TIP]
 >
+> Optional Just-in-Time (JIT) provisioning is available when you use the Admin Console and enable SCIM. With this feature, you can avoid conflicts between SCIM and JIT by disabling JIT provisioning in your SSO connection. See [SSO authentication with JIT provisioning disabled](__SUBDIR__/security/for-admins/provisioning/just-in-time/#sso-authentication-with-jit-provisioning-disabled).
 @z
 
 @x
@@ -354,18 +355,16 @@ See [More resources](#more-resources) for a video overview on how to set up SSO 
 3. Select **Grant admin consent for YOUR TENANT NAME > Yes**.
 4. Next, you need to add additional permissions. Select **Add a permission**.
 5. Select **Delegated permissions**.
-6. Search for `Directory.Read.All`, and select this option.
-7. Then, search for `User.Read`, and select this option.
-8. Select **Add permissions**.
+6. Then, search for `User.Read`, and select this option.
+7. Select **Add permissions**.
 @y
 1. Go to the Docker Hub SSO app that you created in the previous steps.
 2. Navigate to the **API permission** category in your app settings.
 3. Select **Grant admin consent for YOUR TENANT NAME > Yes**.
 4. Next, you need to add additional permissions. Select **Add a permission**.
 5. Select **Delegated permissions**.
-6. Search for `Directory.Read.All`, and select this option.
-7. Then, search for `User.Read`, and select this option.
-8. Select **Add permissions**.
+6. Then, search for `User.Read`, and select this option.
+7. Select **Add permissions**.
 @z
 
 @x

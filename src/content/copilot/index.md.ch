@@ -20,10 +20,10 @@ keywords: Docker, GitHub Copilot, extension, Visual Studio Code, chat, ai, conta
 @z
 
 @x
-The Docker for GitHub Copilot extension is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
+The Docker Extension for GitHub Copilot is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
 for GitHub Copilot Extensions.
 @y
-The Docker for GitHub Copilot extension is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
+The Docker Extension for GitHub Copilot is a part of the [Limited Public Beta](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/)
 for GitHub Copilot Extensions.
 @z
 
@@ -131,24 +131,80 @@ Before you start, ensure that:
 
 @x
 - You have been granted access to GitHub's [limited public beta program](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/).
-- The [Docker for GitHub Copilot](https://github.com/marketplace/docker-for-github-copilot)
-  app is installed in your GitHub organization.
+- You're signed in to your GitHub account on GitHub.com.
 @y
 - You have been granted access to GitHub's [limited public beta program](https://github.blog/changelog/2024-05-21-copilot-extensions-now-in-limited-public-beta/).
-- The [Docker for GitHub Copilot](https://github.com/marketplace/docker-for-github-copilot)
-  app is installed in your GitHub organization.
+- You're signed in to your GitHub account on GitHub.com.
 @z
 
 @x
-### Setup
+### Install the extension for your organization
 @y
-### Setup
+### Install the extension for your organization
 @z
 
 @x
-Select where you want to use the Docker Extension for GitHub Copilot:
+1. Go to the [Docker for GitHub Copilot](https://github.com/marketplace/docker-for-github-copilot)
+   app in the GitHub Marketplace.
 @y
-Select where you want to use the Docker Extension for GitHub Copilot:
+1. Go to the [Docker for GitHub Copilot](https://github.com/marketplace/docker-for-github-copilot)
+   app in the GitHub Marketplace.
+@z
+
+@x
+2. Select the **Add** button at the top of the page.
+@y
+2. Select the **Add** button at the top of the page.
+@z
+
+@x
+3. Under **Pricing and setup**, select the organization that you want to
+   install the extension for and select **Install it for free**.
+@y
+3. Under **Pricing and setup**, select the organization that you want to
+   install the extension for and select **Install it for free**.
+@z
+
+@x
+4. Select the **Complete order and begin installation** button.
+@y
+4. Select the **Complete order and begin installation** button.
+@z
+
+@x
+5. Select the repositories where you want to use the Docker Extension for
+   GitHub Copilot and finish with **Install**.
+@y
+5. Select the repositories where you want to use the Docker Extension for
+   GitHub Copilot and finish with **Install**.
+@z
+
+@x
+> [!NOTE]
+> Before you can use Copilot Extensions in your organization, you need to
+> enable the Copilot Extensions policy. For more information, see
+> [Setting a policy for GitHub Copilot Extensions in your organization](https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/setting-policies-for-copilot-in-your-organization/managing-policies-for-copilot-in-your-organization#setting-a-policy-for-github-copilot-extensions-in-your-organization).
+@y
+> [!NOTE]
+> Before you can use Copilot Extensions in your organization, you need to
+> enable the Copilot Extensions policy. For more information, see
+> [Setting a policy for GitHub Copilot Extensions in your organization](https://docs.github.com/en/copilot/managing-copilot/managing-github-copilot-in-your-organization/setting-policies-for-copilot-in-your-organization/managing-policies-for-copilot-in-your-organization#setting-a-policy-for-github-copilot-extensions-in-your-organization).
+@z
+
+@x
+### Set up Copilot Chat
+@y
+### Set up Copilot Chat
+@z
+
+@x
+Once you've installed the Docker Extension for GitHub Copilot and enabled the
+Copilot Extensions policy, you can use the extension in your editor or IDE, or
+on GitHub.com.
+@y
+Once you've installed the Docker Extension for GitHub Copilot and enabled the
+Copilot Extensions policy, you can use the extension in your editor or IDE, or
+on GitHub.com.
 @z
 
 @x
@@ -204,9 +260,25 @@ see [Using the extension](#using-the-extension).
 @z
 
 @x
-## Using the Extension
+You can verify that the extension has been properly installed by typing
+`@docker` in the Copilot Chat window. As you type, you should see the Docker
+agent appear in the chat interface.
 @y
-## Using the Extension
+You can verify that the extension has been properly installed by typing
+`@docker` in the Copilot Chat window. As you type, you should see the Docker
+agent appear in the chat interface.
+@z
+
+@x
+![Docker agent in chat](/copilot/docker-agent-copilot.png)
+@y
+![Docker agent in chat](__SUBDIR__/copilot/docker-agent-copilot.png)
+@z
+
+@x
+## Using the extension
+@y
+## Using the extension
 @z
 
 @x
@@ -234,13 +306,19 @@ guidance on Dockerfiles, Docker Compose files, and other Docker assets.
 @z
 
 @x
+To use the extension in your editor or IDE:
+@y
+To use the extension in your editor or IDE:
+@z
+
+@x
 1. Open your project in your editor.
-2. Open the Copilot extension or plugin.
-3. Interact with the Docker agent using the `/docker` slash prompt, followed by your question.
+2. Open the Copilot chat interface.
+3. Interact with the Docker agent using the `/docker` or `@docker`, followed by your question.
 @y
 1. Open your project in your editor.
-2. Open the Copilot extension or plugin.
-3. Interact with the Docker agent using the `/docker` slash prompt, followed by your question.
+2. Open the Copilot chat interface.
+3. Interact with the Docker agent using the `/docker` or `@docker`, followed by your question.
 @z
 
 @x
@@ -250,9 +328,9 @@ guidance on Dockerfiles, Docker Compose files, and other Docker assets.
 @z
 
 @x
-To use the Docker Extension in the GitHub web interface:
+To use the extension in the GitHub web interface:
 @y
-To use the Docker Extension in the GitHub web interface:
+To use the extension in the GitHub web interface:
 @z
 
 @x

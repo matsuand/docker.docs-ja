@@ -147,7 +147,7 @@ If you choose the integrated terminal, you can run commands in a running contain
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
 @y
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](security/for-admins/hardened-desktop/enhanced-container-isolation/index.md)
     >**Note**
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
@@ -554,7 +554,7 @@ To prevent developers from accidentally changing the proxy settings, see
 [Settings Management](/security/for-admins/hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
 @y
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](security/for-admins/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](security/for-admins/hardened-desktop/settings-management/index.md#what-features-can-i-configure-with-settings-management).
 @z
 
 @x
@@ -618,29 +618,57 @@ It's recommended that you use an `https://` URL for HTTP/HTTPS proxies to protec
 @z
 
 @x
-Kerberos and NTLM proxy authentication are available for Business subscribers with Docker Desktop version 4.30 and later. No additional configuration is needed beyond specifying the proxy IP address and port.
-@y
-Kerberos and NTLM proxy authentication are available for Business subscribers with Docker Desktop version 4.30 and later. No additional configuration is needed beyond specifying the proxy IP address and port.
-@z
-
-@x
-Developers are no longer interrupted by prompts for proxy credentials as authentication is centralized. This also reduces the risk of account lockouts due to incorrect sign in attempts.
-@y
-Developers are no longer interrupted by prompts for proxy credentials as authentication is centralized. This also reduces the risk of account lockouts due to incorrect sign in attempts.
-@z
-
-@x
-If your proxy offers multiple authentication schemes in 407(Proxy Authentication Required) response, Docker Desktop by default selects Basic authentication scheme. If your proxy server is properly configured for Kerberos or NTLM authentication, you can enable Kerberos/NTLM proxy authentication during Docker Desktop installation. To do that, you will have install Docker Deskop from command line and pass the installer flag '--proxy-enable-kerberosntlm'. Available with Docker Desktop 4.32 and later.
-@y
-If your proxy offers multiple authentication schemes in 407(Proxy Authentication Required) response, Docker Desktop by default selects Basic authentication scheme. If your proxy server is properly configured for Kerberos or NTLM authentication, you can enable Kerberos/NTLM proxy authentication during Docker Desktop installation. To do that, you will have install Docker Deskop from command line and pass the installer flag '--proxy-enable-kerberosntlm'. Available with Docker Desktop 4.32 and later.
-@z
-
-@x
 > [!NOTE]
+>
+> Available for Docker Business subscribers with Docker Desktop version 4.30 and later.
+@y
+> [!NOTE]
+>
+> Available for Docker Business subscribers with Docker Desktop version 4.30 and later.
+@z
+
+@x
+Developers are no longer interrupted by prompts for proxy credentials as authentication is centralized. This also reduces the risk of account lockouts due to incorrect sign in attempts.
+@y
+Developers are no longer interrupted by prompts for proxy credentials as authentication is centralized. This also reduces the risk of account lockouts due to incorrect sign in attempts.
+@z
+
+@x
+If your proxy offers multiple authentication schemes in 407 (Proxy Authentication Required) response, Docker Desktop by default selects the Basic authentication scheme.
+@y
+If your proxy offers multiple authentication schemes in 407 (Proxy Authentication Required) response, Docker Desktop by default selects the Basic authentication scheme.
+@z
+
+@x
+For Docker Desktop version 4.30 to 4.31: 
+@y
+For Docker Desktop version 4.30 to 4.31: 
+@z
+
+@x
+To enable Kerberos or NTLM proxy authentication, no additional configuration is needed beyond specifying the proxy IP address and port.
+@y
+To enable Kerberos or NTLM proxy authentication, no additional configuration is needed beyond specifying the proxy IP address and port.
+@z
+
+@x
+For Docker Desktop version 4.32 and later: 
+@y
+For Docker Desktop version 4.32 and later: 
+@z
+
+@x
+To enable Kerberos or NTLM proxy authentication you must pass the `--proxy-enable-kerberosntlm` installer flag during installation via the command line, and ensure your proxy server is properly configured for Kerberos or NTLM authentication.
+@y
+To enable Kerberos or NTLM proxy authentication you must pass the `--proxy-enable-kerberosntlm` installer flag during installation via the command line, and ensure your proxy server is properly configured for Kerberos or NTLM authentication.
+@z
+
+@x
+> [!TIP]
 >
 > Docker Desktop also supports the use of [SOCKS5 proxies](../networking.md#socks5-proxy-support).
 @y
-> [!NOTE]
+> [!TIP]
 >
 > Docker Desktop also supports the use of [SOCKS5 proxies](../networking.md#socks5-proxy-support).
 @z

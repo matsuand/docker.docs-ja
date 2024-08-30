@@ -39,7 +39,7 @@ Get started:
     path: __SUBDIR__/get-started/introduction/
   - title: "Docker Desktop の入手"
     path: __SUBDIR__/get-started/introduction/get-docker-desktop/
-  - title: "コンテナーを用いた開発"
+  - title: "コンテナーを使った開発"
     path: __SUBDIR__/get-started/introduction/develop-with-containers/
   - title: "初めてのイメージ作りとプッシュ"
     path: __SUBDIR__/get-started/introduction/build-and-push-first-image/
@@ -4866,7 +4866,7 @@ Manuals:
 @z
 
 @x
-  - sectiontitle: Compose Bridge {{< badge color=violet text="Early Access" >}}
+  - sectiontitle: Compose Bridge
     section:
     - path: /compose/bridge/
       title: Overview
@@ -4877,7 +4877,7 @@ Manuals:
     - path: /compose/bridge/advanced-integration/
       title: Advanced
 @y
-  - sectiontitle: Compose Bridge {{< badge color=violet text="早期アクセス" >}}
+  - sectiontitle: Compose Bridge
     section:
     - path: __SUBDIR__/compose/bridge/
       title: Overview

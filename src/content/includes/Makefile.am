@@ -12,7 +12,7 @@ bases = \
 	admin-org-overview.md             \
 	beta.md                           \
 	buildx-v0.10-disclaimer.md        \
-	compose-bridge-early-access.md    \
+	compose-bridge-experimental.md    \
 	compose-eol.md                    \
 	deploy.md                         \
 	desktop-builders-setting.md       \
