@@ -50,12 +50,12 @@ You can use them to parameterize the build, allowing for more flexible and confi
 @x
 Build arguments and environment variables are similar.
 They're both declared in the Dockerfile and can be set using flags for the `docker build` command.
-Both can be used to parametrize the build.
+Both can be used to parameterize the build.
 But they each serve a distinct purpose.
 @y
 Build arguments and environment variables are similar.
 They're both declared in the Dockerfile and can be set using flags for the `docker build` command.
-Both can be used to parametrize the build.
+Both can be used to parameterize the build.
 But they each serve a distinct purpose.
 @z
 
@@ -67,11 +67,11 @@ But they each serve a distinct purpose.
 
 @x
 Build arguments are variables for the Dockerfile itself.
-Use them to parametrize values of Dockerfile instructions.
+Use them to parameterize values of Dockerfile instructions.
 For example, you might use a build argument to specify the version of a dependency to install.
 @y
 Build arguments are variables for the Dockerfile itself.
-Use them to parametrize values of Dockerfile instructions.
+Use them to parameterize values of Dockerfile instructions.
 For example, you might use a build argument to specify the version of a dependency to install.
 @z
 

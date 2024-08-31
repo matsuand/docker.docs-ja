@@ -89,11 +89,11 @@ reference to create or run a container based on an image.
 @x
 An image tag is the image version, which defaults to `latest` when omitted. Use
 the tag to run a container from specific version of an image. For example, to
-run version `23.10` of the `ubuntu` image: `docker run ubuntu:23.10`.
+run version `24.04` of the `ubuntu` image: `docker run ubuntu:24.04`.
 @y
 イメージタグ (image tag) とはイメージのバージョンのことであり、これが省略された際のデフォルトは `latest` となります。
 特定バージョンのイメージに基づいてコンテナーを実行するには、このタグを利用します。
-たとえば `ubuntu` イメージのバージョン `23.10` を実行する場合は `docker run ubuntu:23.10` とします。
+たとえば `ubuntu` イメージのバージョン `24.04` を実行する場合は `docker run ubuntu:24.04` とします。
 @z
 
 @x
@@ -163,8 +163,7 @@ to start an interactive shell in the container (if the image you select has an
 % snip command...
 
 @x
-> **Note**
->
+> [!NOTE]
 > Depending on your Docker system configuration, you may be
 > required to preface the `docker run` command with `sudo`. To avoid
 > having to use `sudo` with the `docker` command, your system
@@ -172,8 +171,7 @@ to start an interactive shell in the container (if the image you select has an
 > it. For more information about this configuration, refer to the Docker
 > installation documentation for your operating system.
 @y
-> **Note**
->
+> [!NOTE]
 > Depending on your Docker system configuration, you may be
 > required to preface the `docker run` command with `sudo`. To avoid
 > having to use `sudo` with the `docker` command, your system
@@ -1373,13 +1371,11 @@ containers using the `--blkio-weight` flag.
 @z
 
 @x
-> **Note:**
->
+> [!NOTE]
 > The blkio weight setting is only available for direct IO. Buffered IO is not
 > currently supported.
 @y
-> **Note:**
->
+> [!NOTE]
 > The blkio weight setting is only available for direct IO. Buffered IO is not
 > currently supported.
 @z
@@ -1949,13 +1945,11 @@ $ docker run -it --entrypoint="" mysql bash
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Passing `--entrypoint` clears out any default command set on the image. That
 > is, any `CMD` instruction in the Dockerfile used to build it.
 @y
-> **Note**
->
+> [!NOTE]
 > Passing `--entrypoint` clears out any default command set on the image. That
 > is, any `CMD` instruction in the Dockerfile used to build it.
 @z
@@ -2371,13 +2365,11 @@ The followings examples are all valid:
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > If you pass a numeric user ID, it must be in the range of 0-2147483647. If
 > you pass a username, the user must exist in the container.
 @y
-> **Note**
->
+> [!NOTE]
 > If you pass a numeric user ID, it must be in the range of 0-2147483647. If
 > you pass a username, the user must exist in the container.
 @z

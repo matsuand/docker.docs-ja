@@ -274,11 +274,13 @@ to [the `daemon.json` file](#daemon-configuration-file).
 @z
 
 @x
+> [!NOTE]
 > **Enabling experimental features**
 >
 > Enable experimental features by starting `dockerd` with the `--experimental`
 > flag or adding `"experimental": true` to the `daemon.json` file.
 @y
+> [!NOTE]
 > **Enabling experimental features**
 >
 > Enable experimental features by starting `dockerd` with the `--experimental`
@@ -294,12 +296,12 @@ to [the `daemon.json` file](#daemon-configuration-file).
 @x
 The following list of environment variables are supported by the `dockerd` daemon.
 Some of these environment variables are supported both by the Docker Daemon and
-the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/engine/reference/commandline/cli/#environment-variables)
+the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/reference/cli/docker/#environment-variables)
 to learn about environment variables supported by the `docker` CLI.
 @y
 The following list of environment variables are supported by the `dockerd` daemon.
 Some of these environment variables are supported both by the Docker Daemon and
-the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/engine/reference/commandline/cli/#environment-variables)
+the `docker` CLI. Refer to [Environment variables](https://docs.docker.com/reference/cli/docker/#environment-variables)
 to learn about environment variables supported by the `docker` CLI.
 @z
 
@@ -342,13 +344,11 @@ to learn about environment variables supported by the `docker` CLI.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Refer to the [Docker Desktop manual](https://docs.docker.com/desktop/networking/#httphttps-proxy-support)
 > if you are running [Docker Desktop](https://docs.docker.com/desktop/).
 @y
-> **Note**
->
+> [!NOTE]
 > Refer to the [Docker Desktop manual](https://docs.docker.com/desktop/networking/#httphttps-proxy-support)
 > if you are running [Docker Desktop](https://docs.docker.com/desktop/).
 @z
@@ -381,11 +381,11 @@ in three ways:
 
 @x
 The command-line and configuration file options take precedence over environment
-variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
+variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/engine/daemon/proxy/)
 to set these environment variables on a host using `systemd`.
 @y
 The command-line and configuration file options take precedence over environment
-variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
+variables. Refer to [control and configure Docker with systemd](https://docs.docker.com/engine/daemon/proxy/)
 to set these environment variables on a host using `systemd`.
 @z
 
@@ -436,14 +436,12 @@ communication with the daemon.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > If you're using an HTTPS encrypted socket, keep in mind that only
 > TLS version 1.0 and higher is supported. Protocols SSLv3 and below are not
 > supported for security reasons.
 @y
-> **Note**
->
+> [!NOTE]
 > If you're using an HTTPS encrypted socket, keep in mind that only
 > TLS version 1.0 and higher is supported. Protocols SSLv3 and below are not
 > supported for security reasons.
@@ -604,8 +602,7 @@ supported. If your key is protected with passphrase, you need to set up
 @z
 
 @x
-> **Warning**
->
+> [!WARNING]
 > Changing the default `docker` daemon binding to a TCP port or Unix `docker`
 > user group introduces security risks, as it may allow non-root users to gain
 > root access on the host. Make sure you control access to `docker`. If you are
@@ -613,8 +610,7 @@ supported. If your key is protected with passphrase, you need to set up
 > access; so it's not advisable on an open network.
 { .warning }
 @y
-> **Warning**
->
+> [!WARNING]
 > Changing the default `docker` daemon binding to a TCP port or Unix `docker`
 > user group introduces security risks, as it may allow non-root users to gain
 > root access on the host. Make sure you control access to `docker`. If you are
@@ -786,9 +782,9 @@ and is selected by default. Unless users have a strong reason to prefer another 
 @z
 
 @x
-You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/storage/storagedriver/select-storage-driver/).
+You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/engine/storage/drivers/select-storage-driver/).
 @y
-You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/storage/storagedriver/select-storage-driver/).
+You can find out more about storage drivers and how to select one in [Select a storage driver](https://docs.docker.com/engine/storage/drivers/select-storage-driver/).
 @z
 
 @x
@@ -1029,10 +1025,10 @@ configuration file or using the `--add-runtime` command line flag.
 
 @x
 For examples on how to use other container runtimes, see
-[Alternative container runtimes](https://docs.docker.com/engine/alternative-runtimes/)
+[Alternative container runtimes](https://docs.docker.com/engine/daemon/alternative-runtimes/)
 @y
 For examples on how to use other container runtimes, see
-[Alternative container runtimes](https://docs.docker.com/engine/alternative-runtimes/)
+[Alternative container runtimes](https://docs.docker.com/engine/daemon/alternative-runtimes/)
 @z
 
 @x
@@ -1473,10 +1469,10 @@ Defining runtime arguments via the command line is not supported.
 
 @x
 For an example configuration for a runc drop-in replacment, see
-[Alternative container runtimes > youki](https://docs.docker.com/engine/alternative-runtimes/#youki)
+[Alternative container runtimes > youki](https://docs.docker.com/engine/daemon/alternative-runtimes/#youki)
 @y
 For an example configuration for a runc drop-in replacment, see
-[Alternative container runtimes > youki](https://docs.docker.com/engine/alternative-runtimes/#youki)
+[Alternative container runtimes > youki](https://docs.docker.com/engine/daemon/alternative-runtimes/#youki)
 @z
 
 @x
@@ -1738,16 +1734,14 @@ images without connecting to another server.
 @z
 
 @x
-> **Warning**
->
+> [!WARNING]
 > Non-distributable artifacts typically have restrictions on how
 > and where they can be distributed and shared. Only use this feature to push
 > artifacts to private registries and ensure that you are in compliance with
 > any terms that cover redistributing non-distributable artifacts.
 { .warning }
 @y
-> **Warning**
->
+> [!WARNING]
 > Non-distributable artifacts typically have restrictions on how
 > and where they can be distributed and shared. Only use this feature to push
 > artifacts to private registries and ensure that you are in compliance with
@@ -1914,11 +1908,11 @@ Docker host's configuration:
 @x
 This only adds the proxy and authentication to the Docker daemon's requests.
 To use the proxy when building images and running containers, see
-[Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/)
+[Configure Docker to use a proxy server](https://docs.docker.com/engine/cli/proxy/)
 @y
 This only adds the proxy and authentication to the Docker daemon's requests.
 To use the proxy when building images and running containers, see
-[Configure Docker to use a proxy server](https://docs.docker.com/network/proxy/)
+[Configure Docker to use a proxy server](https://docs.docker.com/engine/cli/proxy/)
 @z
 
 @x
@@ -2102,15 +2096,13 @@ PING host.docker.internal (192.0.2.0): 56 data bytes
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > This is experimental feature and as such doesn't represent a stable API.
 >
 > This feature isn't enabled by default. To this feature, set `features.cdi` to
 > `true` in the `daemon.json` configuration file.
 @y
-> **Note**
->
+> [!NOTE]
 > This is experimental feature and as such doesn't represent a stable API.
 >
 > This feature isn't enabled by default. To this feature, set `features.cdi` to
@@ -2332,11 +2324,11 @@ to avoid collisions with other Prometheus exporters and services.
 @x
 If you are running a Prometheus server you can add this address to your scrape configs
 to have Prometheus collect metrics on Docker. For more information, see
-[Collect Docker metrics with Prometheus](https://docs.docker.com/config/daemon/prometheus/).
+[Collect Docker metrics with Prometheus](https://docs.docker.com/engine/daemon/prometheus/).
 @y
 If you are running a Prometheus server you can add this address to your scrape configs
 to have Prometheus collect metrics on Docker. For more information, see
-[Collect Docker metrics with Prometheus](https://docs.docker.com/config/daemon/prometheus/).
+[Collect Docker metrics with Prometheus](https://docs.docker.com/engine/daemon/prometheus/).
 @z
 
 @x
@@ -2756,22 +2748,20 @@ The following is a full example of the allowed configuration options on Linux:
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > You can't set options in `daemon.json` that have already been set on
 > daemon startup as a flag.
 > On systems that use systemd to start the Docker daemon, `-H` is already set, so
 > you can't use the `hosts` key in `daemon.json` to add listening addresses.
-> See [custom Docker daemon options](https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options)
+> See [custom Docker daemon options](https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file)
 > for an example on how to configure the daemon using systemd drop-in files.
 @y
-> **Note**
->
+> [!NOTE]
 > You can't set options in `daemon.json` that have already been set on
 > daemon startup as a flag.
 > On systems that use systemd to start the Docker daemon, `-H` is already set, so
 > you can't use the `hosts` key in `daemon.json` to add listening addresses.
-> See [custom Docker daemon options](https://docs.docker.com/config/daemon/systemd/#custom-docker-daemon-options)
+> See [custom Docker daemon options](https://docs.docker.com/engine/daemon/proxy/#systemd-unit-file)
 > for an example on how to configure the daemon using systemd drop-in files.
 @z
 
@@ -2955,7 +2945,7 @@ The list of feature options include:
 - `containerd-snapshotter`: when set to `true`, the daemon uses containerd
   snapshotters instead of the classic storage drivers for storing image and
   container data. For more information, see
-  [containerd storage](https://docs.docker.com/storage/containerd/).
+  [containerd storage](https://docs.docker.com/engine/storage/containerd/).
 - `windows-dns-proxy`: when set to `true`, the daemon's internal DNS resolver
   will forward requests to external servers. Without this, most applications
   running in the container will still be able to use secondary DNS servers
@@ -2966,7 +2956,7 @@ The list of feature options include:
 - `containerd-snapshotter`: when set to `true`, the daemon uses containerd
   snapshotters instead of the classic storage drivers for storing image and
   container data. For more information, see
-  [containerd storage](https://docs.docker.com/storage/containerd/).
+  [containerd storage](https://docs.docker.com/engine/storage/containerd/).
 - `windows-dns-proxy`: when set to `true`, the daemon's internal DNS resolver
   will forward requests to external servers. Without this, most applications
   running in the container will still be able to use secondary DNS servers
@@ -2976,10 +2966,10 @@ The list of feature options include:
 @z
 
 @x
-  > **Warning**
+  > [!WARNING]
   > The `windows-dns-proxy` feature flag will be removed in a future release.
 @y
-  > **Warning**
+  > [!WARNING]
   > The `windows-dns-proxy` feature flag will be removed in a future release.
 @z
 
@@ -3016,7 +3006,7 @@ The list of currently supported options that can be reconfigured is this:
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `debug`                            | Toggles debug mode of the daemon.                                                                           |
 | `labels`                           | Replaces the daemon labels with a new set of labels.                                                        |
-| `live-restore`                     | Toggles [live restore](https://docs.docker.com/config/containers/live-restore/).                            |
+| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/containers/live-restore/).                            |
 | `max-concurrent-downloads`         | Configures the max concurrent downloads for each pull.                                                      |
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
@@ -3033,7 +3023,7 @@ The list of currently supported options that can be reconfigured is this:
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `debug`                            | Toggles debug mode of the daemon.                                                                           |
 | `labels`                           | Replaces the daemon labels with a new set of labels.                                                        |
-| `live-restore`                     | Toggles [live restore](https://docs.docker.com/config/containers/live-restore/).                            |
+| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/containers/live-restore/).                            |
 | `max-concurrent-downloads`         | Configures the max concurrent downloads for each pull.                                                      |
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
@@ -3054,13 +3044,11 @@ The list of currently supported options that can be reconfigured is this:
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Running multiple daemons on a single host is considered experimental.
 > You may encounter unsolved problems, and things may not work as expected in some cases.
 @y
-> **Note**
->
+> [!NOTE]
 > Running multiple daemons on a single host is considered experimental.
 > You may encounter unsolved problems, and things may not work as expected in some cases.
 @z
@@ -3251,11 +3239,11 @@ using the `daemon.json` file.
 
 @x
 This example uses the `bridge` network driver. Refer to the
-[bridge network driver page](https://docs.docker.com/network/drivers/bridge/#options)
+[bridge network driver page](https://docs.docker.com/engine/network/drivers/bridge/#options)
 for an overview of available driver options.
 @y
 This example uses the `bridge` network driver. Refer to the
-[bridge network driver page](https://docs.docker.com/network/drivers/bridge/#options)
+[bridge network driver page](https://docs.docker.com/engine/network/drivers/bridge/#options)
 for an overview of available driver options.
 @z
 

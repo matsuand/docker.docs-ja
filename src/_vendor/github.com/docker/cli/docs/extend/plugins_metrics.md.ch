@@ -26,14 +26,12 @@ socket at a predefined path where the plugin can scrape the metrics.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > While the plugin interface for metrics is non-experimental, the naming of the
 > metrics and metric labels is still considered experimental and may change in a
 > future version.
 @y
-> **Note**
->
+> [!NOTE]
 > While the plugin interface for metrics is non-experimental, the naming of the
 > metrics and metric labels is still considered experimental and may change in a
 > future version.

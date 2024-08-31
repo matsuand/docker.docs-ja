@@ -1378,8 +1378,7 @@ take no effect.
 @z
 
 @x
-> **Note**
-> 
+> [!NOTE]
 > While not deprecated (yet) in Docker, the OCI runtime specification also
 > deprecated the `memory.kmem.tcp.limit_in_bytes` option. When using `runc` as
 > runtime, this option takes no effect. The linux kernel did not explicitly
@@ -1391,8 +1390,7 @@ take no effect.
 > and not available on installations running with cgroups v2. This option is
 > only supported by the API, and not exposed on the `docker` command-line.
 @y
-> **Note**
-> 
+> [!NOTE]
 > While not deprecated (yet) in Docker, the OCI runtime specification also
 > deprecated the `memory.kmem.tcp.limit_in_bytes` option. When using `runc` as
 > runtime, this option takes no effect. The linux kernel did not explicitly

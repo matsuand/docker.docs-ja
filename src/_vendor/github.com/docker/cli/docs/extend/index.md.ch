@@ -46,12 +46,10 @@ For information about legacy (non-managed) plugins, refer to
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Docker Engine managed plugins are currently not supported on Windows daemons.
 @y
-> **Note**
->
+> [!NOTE]
 > Docker Engine managed plugins are currently not supported on Windows daemons.
 @z
 
@@ -104,15 +102,13 @@ enabled, and use it to create a volume.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > This example is intended for instructional purposes only. Once the volume is
 > created, your SSH password to the remote host is exposed as plaintext when
 > inspecting the volume. Delete the volume as soon as you are done with the
 > example.
 @y
-> **Note**
->
+> [!NOTE]
 > This example is intended for instructional purposes only. Once the volume is
 > created, your SSH password to the remote host is exposed as plaintext when
 > inspecting the volume. Delete the volume as soon as you are done with the
@@ -334,13 +330,11 @@ example, it was created from a Dockerfile:
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > The `/run/docker/plugins` directory is mandatory inside of the
 > plugin's filesystem for Docker to communicate with the plugin.
 @y
-> **Note**
->
+> [!NOTE]
 > The `/run/docker/plugins` directory is mandatory inside of the
 > plugin's filesystem for Docker to communicate with the plugin.
 @z

@@ -214,14 +214,12 @@ the volumes available by bind-mounting the provided paths into the containers.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Volume plugins should *not* write data to the `/var/lib/docker/` directory,
 > including `/var/lib/docker/volumes`. The `/var/lib/docker/` directory is
 > reserved for Docker.
 @y
-> **Note**
->
+> [!NOTE]
 > Volume plugins should *not* write data to the `/var/lib/docker/` directory,
 > including `/var/lib/docker/volumes`. The `/var/lib/docker/` directory is
 > reserved for Docker.

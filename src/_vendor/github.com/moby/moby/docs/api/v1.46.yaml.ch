@@ -12257,7 +12257,6 @@ definitions:
           - "/var/run/cdi"
       Containerd:
         $ref: "#/definitions/ContainerdInfo"
-        x-nullable: true
 @y
           Note that since using CDI device injection requires the daemon to have
           experimental enabled. For non-experimental daemons an empty list will
@@ -12270,7 +12269,6 @@ definitions:
           - "/var/run/cdi"
       Containerd:
         $ref: "#/definitions/ContainerdInfo"
-        x-nullable: true
 @z
 
 @x
@@ -12279,6 +12277,7 @@ definitions:
       Information for connecting to the containerd instance that is used by the daemon.
       This is included for debugging purposes only.
     type: "object"
+    x-nullable: true
     properties:
       Address:
         description: "The address of the containerd socket."
@@ -12297,6 +12296,7 @@ definitions:
       Information for connecting to the containerd instance that is used by the daemon.
       This is included for debugging purposes only.
     type: "object"
+    x-nullable: true
     properties:
       Address:
         description: "The address of the containerd socket."
@@ -19976,9 +19976,9 @@ paths:
 @z
 
 @x
-        Images report these events: `create, `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
+        Images report these events: `create`, `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
 @y
-        Images report these events: `create, `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
+        Images report these events: `create`, `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
 @z
 
 @x

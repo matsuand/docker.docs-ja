@@ -4,19 +4,19 @@
 % .md リン クへの (no slash) 対応
 
 @x
-title: Docker Engine 27.0 release notes
+title: Docker Engine version 27 release notes
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @y
-title: Docker Engine 27.0 リリースノート
+title: Docker Engine バージョン 27 リリースノート
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @z
 
 @x
-This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 27.0.
+This page describes the latest changes, additions, known issues, and fixes for Docker Engine version 27.
 @y
-本ページでは Docker Engine バージョン 27.0 に関する最新の変更、追加、既知の問題、バグフィックスについて示します。
+本ページでは Docker Engine バージョン 27 に関する最新の変更、追加、既知の問題、バグフィックスについて示します。
 @z
 
 @x
@@ -34,9 +34,449 @@ For more information about:
 @z
 
 @x
-## 27.0.3
+## 27.2
 @y
-## 27.0.3
+## 27.2
+@z
+
+@x
+Release notes for Docker Engine version 27.2 releases.
+@y
+Release notes for Docker Engine version 27.2 releases.
+@z
+
+@x
+### 27.2.0
+@y
+### 27.2.0
+@z
+
+@x
+{{< release-date date="2024-08-27" >}}
+@y
+{{< release-date date="2024-08-27" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.2.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.2.0)
+- [moby/moby, 27.2.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.2.0)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.2.0/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.2.0/docs/api/version-history.md).
+@y
+- [docker/cli, 27.2.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.2.0)
+- [moby/moby, 27.2.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.2.0)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.2.0/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.2.0/docs/api/version-history.md).
+@z
+
+@x
+#### New
+@y
+#### New
+@z
+
+@x
+The new features in this release are:
+@y
+The new features in this release are:
+@z
+
+@x
+- [Device code login](#device-code-login)
+- [Multi-platform support for `docker image ls`](#multi-platform-support-for-docker-image-ls)
+@y
+- [Device code login](#device-code-login)
+- [Multi-platform support for `docker image ls`](#multi-platform-support-for-docker-image-ls)
+@z
+
+@x
+##### Device code login
+@y
+##### Device code login
+@z
+
+@x
+This release adds support for using device code login when authenticating to
+Docker Hub.
+@y
+This release adds support for using device code login when authenticating to
+Docker Hub.
+@z
+
+@x
+You can still use the old method of logging in with a username and password or
+access token, but device code login is more secure and doesn't require you to
+enter your password in the CLI.
+@y
+You can still use the old method of logging in with a username and password or
+access token, but device code login is more secure and doesn't require you to
+enter your password in the CLI.
+@z
+
+@x
+![device-code-login](https://i.imgur.com/GRGjSjV.gif "Device code login")
+@y
+![device-code-login](https://i.imgur.com/GRGjSjV.gif "Device code login")
+@z
+
+@x
+To use the old method, use `docker login -u <username>`.
+@y
+To use the old method, use `docker login -u <username>`.
+@z
+
+@x
+##### Multi-platform support for `docker image ls`
+@y
+##### Multi-platform support for `docker image ls`
+@z
+
+@x
+{{< experimental >}}
+This is experimental and may change at any time without any backward compatibility.
+{{< /experimental >}}
+@y
+{{< experimental >}}
+This is experimental and may change at any time without any backward compatibility.
+{{< /experimental >}}
+@z
+
+@x
+With the containerd image store enabled, the `docker image ls` command (or
+`docker images` shorthand) now supports a `--tree` flag that now shows
+if an image is a multi-platform image.
+@y
+With the containerd image store enabled, the `docker image ls` command (or
+`docker images` shorthand) now supports a `--tree` flag that now shows
+if an image is a multi-platform image.
+@z
+
+@x
+<script src="https://asciinema.org/a/PyE57rUPdNh7LvOMhULtE0Ek2.js" id="asciicast-PyE57rUPdNh7LvOMhULtE0Ek2" async="true"></script>
+@y
+<script src="https://asciinema.org/a/PyE57rUPdNh7LvOMhULtE0Ek2.js" id="asciicast-PyE57rUPdNh7LvOMhULtE0Ek2" async="true"></script>
+@z
+
+@x
+#### API
+@y
+#### API
+@z
+
+@x
+- `GET /images/json` response now includes `Manifests` field, which contains information about the sub-manifests included in the image index. This includes things like platform-specific manifests and build attestations.
+@y
+- `GET /images/json` response now includes `Manifests` field, which contains information about the sub-manifests included in the image index. This includes things like platform-specific manifests and build attestations.
+@z
+
+@x
+  The new field will only be populated if the request also sets the `manifests` query parameter to `true`.
+@y
+  The new field will only be populated if the request also sets the `manifests` query parameter to `true`.
+@z
+
+@x
+  {{< experimental >}}
+  This is experimental and may change at any time without any backward compatibility.
+  {{< /experimental >}}
+@y
+  {{< experimental >}}
+  This is experimental and may change at any time without any backward compatibility.
+  {{< /experimental >}}
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- CLI: Fix issue with remote contexts over SSH where the CLI would allocate a pseudo-TTY when connecting to the remote host, which causes issues in rare situations. [docker/cli#5351](https://github.com/docker/cli/pull/5351)
+- Fix an issue that prevented network creation with a `--ip-range` ending on a 64-bit boundary. [moby/moby#48326](https://github.com/moby/moby/pull/48326)
+- CLI: IPv6 addresses shown by `docker ps` in port bindings are now bracketed. [docker/cli#5365](https://github.com/docker/cli/pull/5365)
+- containerd image store: Fix early error exit from `docker load` in cases where unpacking the image would fail. [moby/moby#48376](https://github.com/moby/moby/pull/48376)
+- containerd image store: Fix the previous image not being persisted as dangling after `docker pull`. [moby/moby#48380](https://github.com/moby/moby/pull/48380)
+@y
+- CLI: Fix issue with remote contexts over SSH where the CLI would allocate a pseudo-TTY when connecting to the remote host, which causes issues in rare situations. [docker/cli#5351](https://github.com/docker/cli/pull/5351)
+- Fix an issue that prevented network creation with a `--ip-range` ending on a 64-bit boundary. [moby/moby#48326](https://github.com/moby/moby/pull/48326)
+- CLI: IPv6 addresses shown by `docker ps` in port bindings are now bracketed. [docker/cli#5365](https://github.com/docker/cli/pull/5365)
+- containerd image store: Fix early error exit from `docker load` in cases where unpacking the image would fail. [moby/moby#48376](https://github.com/moby/moby/pull/48376)
+- containerd image store: Fix the previous image not being persisted as dangling after `docker pull`. [moby/moby#48380](https://github.com/moby/moby/pull/48380)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.15.2](https://github.com/moby/buildkit/releases/tag/v0.15.2). [moby/moby#48341](https://github.com/moby/moby/pull/48341)
+- Update Compose to [v2.29.2](https://github.com/docker/compose/releases/tag/v2.29.2). [docker/docker-ce-packaging#1050](https://github.com/docker/docker-ce-packaging/pull/1050)
+- Update containerd to [v1.7.21](https://github.com/containerd/containerd/releases/tag/v1.7.21). [moby/moby#48383](https://github.com/moby/moby/pull/48383), [docker/containerd-packaging#389](https://github.com/docker/containerd-packaging/pull/389)
+@y
+- Update BuildKit to [v0.15.2](https://github.com/moby/buildkit/releases/tag/v0.15.2). [moby/moby#48341](https://github.com/moby/moby/pull/48341)
+- Update Compose to [v2.29.2](https://github.com/docker/compose/releases/tag/v2.29.2). [docker/docker-ce-packaging#1050](https://github.com/docker/docker-ce-packaging/pull/1050)
+- Update containerd to [v1.7.21](https://github.com/containerd/containerd/releases/tag/v1.7.21). [moby/moby#48383](https://github.com/moby/moby/pull/48383), [docker/containerd-packaging#389](https://github.com/docker/containerd-packaging/pull/389)
+@z
+
+@x
+### Known Issues
+@y
+### Known Issues
+@z
+
+@x
+- There is a known issue when authenticating against a registry in the Docker CLI (`docker login [registry address]`) where, if the provided registry address includes a repository/image name (such as `docker login index.docker.io/docker/welcome-to-docker`), the repository part (`docker/welcome-to-docker`) is not normalized and results in credentials being stored incorrectly, which causes subsequent pulls from the registry (`docker pull index.docker.io/docker/welcome-to-docker`) to not be authenticated. To prevent this, don't include any extraneous suffix in the registry address when running `docker login`.
+  > [!NOTE]
+  > Using `docker login` with an address that includes URL path segments is not a documented use case and is considered unsupported. The recommended usage is to specify only a registry hostname, and optionally a port, as the address for `docker login`.
+@y
+- There is a known issue when authenticating against a registry in the Docker CLI (`docker login [registry address]`) where, if the provided registry address includes a repository/image name (such as `docker login index.docker.io/docker/welcome-to-docker`), the repository part (`docker/welcome-to-docker`) is not normalized and results in credentials being stored incorrectly, which causes subsequent pulls from the registry (`docker pull index.docker.io/docker/welcome-to-docker`) to not be authenticated. To prevent this, don't include any extraneous suffix in the registry address when running `docker login`.
+  > [!NOTE]
+  > Using `docker login` with an address that includes URL path segments is not a documented use case and is considered unsupported. The recommended usage is to specify only a registry hostname, and optionally a port, as the address for `docker login`.
+@z
+
+@x
+## 27.1
+@y
+## 27.1
+@z
+
+@x
+Release notes for Docker Engine version 27.1 releases.
+@y
+Release notes for Docker Engine version 27.1 releases.
+@z
+
+@x
+### 27.1.2
+@y
+### 27.1.2
+@z
+
+@x
+{{< release-date date="2024-08-13" >}}
+@y
+{{< release-date date="2024-08-13" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.1.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.1.2)
+- [moby/moby, 27.1.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.1.2)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.1.2/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.1.2/docs/api/version-history.md).
+@y
+- [docker/cli, 27.1.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.1.2)
+- [moby/moby, 27.1.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.1.2)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.1.2/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.1.2/docs/api/version-history.md).
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression that could result in a `ResourceExhausted desc = grpc: received message larger than max` error when building from a large Dockerfile. [moby/moby#48245](https://github.com/moby/moby/pull/48245)
+- CLI: Fix `docker attach` printing a spurious `context cancelled` error message. [docker/cli#5296](https://github.com/docker/cli/pull/5296)
+- CLI: Fix `docker attach` exiting on `SIGINT` instead of forwarding the signal to the container and waiting for it to exit. [docker/cli#5302](https://github.com/docker/cli/pull/5302)
+- CLI: Fix `--device-read-bps` and `--device-write-bps` options not taking effect. [docker/cli#5339](https://github.com/docker/cli/pull/5339)
+- CLI: Fix a panic happening in some cases while running a plugin. [docker/cli#5337](https://github.com/docker/cli/pull/5337)
+@y
+- Fix a regression that could result in a `ResourceExhausted desc = grpc: received message larger than max` error when building from a large Dockerfile. [moby/moby#48245](https://github.com/moby/moby/pull/48245)
+- CLI: Fix `docker attach` printing a spurious `context cancelled` error message. [docker/cli#5296](https://github.com/docker/cli/pull/5296)
+- CLI: Fix `docker attach` exiting on `SIGINT` instead of forwarding the signal to the container and waiting for it to exit. [docker/cli#5302](https://github.com/docker/cli/pull/5302)
+- CLI: Fix `--device-read-bps` and `--device-write-bps` options not taking effect. [docker/cli#5339](https://github.com/docker/cli/pull/5339)
+- CLI: Fix a panic happening in some cases while running a plugin. [docker/cli#5337](https://github.com/docker/cli/pull/5337)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.15.1](https://github.com/moby/buildkit/releases/tag/v0.15.1). [moby/moby#48246](https://github.com/moby/moby/pull/48246)
+- Update Buildx to [v0.16.2](https://github.com/docker/buildx/releases/tag/v0.16.2). [docker/docker-ce-packaging#1043](https://github.com/docker/docker-ce-packaging/pull/1043)
+- Update Go runtime to 1.21.13. [moby/moby#48301](https://github.com/moby/moby/pull/48301), [docker/cli#5325](https://github.com/docker/cli/pull/5325), [docker/docker-ce-packaging#1046](https://github.com/docker/docker-ce-packaging/pull/1046)
+- Remove unused `docker-proxy.exe` binary from Windows packages. [docker/docker-ce-packaging#1045](https://github.com/docker/docker-ce-packaging/pull/1045)
+@y
+- Update BuildKit to [v0.15.1](https://github.com/moby/buildkit/releases/tag/v0.15.1). [moby/moby#48246](https://github.com/moby/moby/pull/48246)
+- Update Buildx to [v0.16.2](https://github.com/docker/buildx/releases/tag/v0.16.2). [docker/docker-ce-packaging#1043](https://github.com/docker/docker-ce-packaging/pull/1043)
+- Update Go runtime to 1.21.13. [moby/moby#48301](https://github.com/moby/moby/pull/48301), [docker/cli#5325](https://github.com/docker/cli/pull/5325), [docker/docker-ce-packaging#1046](https://github.com/docker/docker-ce-packaging/pull/1046)
+- Remove unused `docker-proxy.exe` binary from Windows packages. [docker/docker-ce-packaging#1045](https://github.com/docker/docker-ce-packaging/pull/1045)
+@z
+
+@x
+### 27.1.1
+@y
+### 27.1.1
+@z
+
+@x
+{{< release-date date="2024-07-23" >}}
+@y
+{{< release-date date="2024-07-23" >}}
+@z
+
+@x
+#### Security
+@y
+#### Security
+@z
+
+@x
+This release contains a fix for [CVE-2024-41110](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-41110) / [GHSA-v23v-6jw2-98fq](https://github.com/moby/moby/security/advisories/GHSA-v23v-6jw2-98fq)
+that impacted setups using [authorization plugins (AuthZ)](https://docs.docker.com/engine/extend/plugins_authorization/)
+for access control. No other changes are included in this release, and this
+release is otherwise identical for users not using AuthZ plugins.
+@y
+This release contains a fix for [CVE-2024-41110](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-41110) / [GHSA-v23v-6jw2-98fq](https://github.com/moby/moby/security/advisories/GHSA-v23v-6jw2-98fq)
+that impacted setups using [authorization plugins (AuthZ)](https://docs.docker.com/engine/extend/plugins_authorization/)
+for access control. No other changes are included in this release, and this
+release is otherwise identical for users not using AuthZ plugins.
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update Compose to [v2.29.1](https://github.com/docker/compose/releases/tag/v2.29.1). [moby/docker-ce-packaging#1041](https://github.com/docker/docker-ce-packaging/pull/1041)
+@y
+- Update Compose to [v2.29.1](https://github.com/docker/compose/releases/tag/v2.29.1). [moby/docker-ce-packaging#1041](https://github.com/docker/docker-ce-packaging/pull/1041)
+@z
+
+@x
+### 27.1.0
+@y
+### 27.1.0
+@z
+
+@x
+{{< release-date date="2024-07-22" >}}
+@y
+{{< release-date date="2024-07-22" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.1.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.1.0)
+- [moby/moby, 27.1.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.1.0)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.1.0/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.1.0/docs/api/version-history.md).
+@y
+- [docker/cli, 27.1.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.1.0)
+- [moby/moby, 27.1.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.1.0)
+- Deprecated and removed features, see [Deprecated Features](https://github.com/docker/cli/blob/v27.1.0/docs/deprecated.md).
+- Changes to the Engine API, see [API version history](https://github.com/moby/moby/blob/v27.1.0/docs/api/version-history.md).
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- rootless: add `Requires=dbus.socket` to prevent errors when starting the daemon on a cgroup v2 host with systemd [moby/moby#48141](https://github.com/moby/moby/pull/48141)
+- containerd integration: `image tag` event is now properly emitted when building images with BuildKit [moby/moby#48182](https://github.com/moby/moby/pull/48182)
+- CLI: enable shell completion for `docker image rm`, `docker image history`, and `docker image inspect` [moby/moby#5261](https://github.com/moby/moby/pull/5261)
+- CLI: add and improve shell completions for various flags [moby/moby#5261](https://github.com/moby/moby/pull/5261)
+- CLI: add OOMScoreAdj to `docker service create` and `docker stack` [docker/cli#5274](https://github.com/docker/cli/pull/5274)
+- CLI: add support for `DOCKER_CUSTOM_HEADERS` environment variable (experimental) [docker/cli#5271](https://github.com/docker/cli/pull/5271)
+- CLI: containerd-integration: Fix `docker push` defaulting the `--platform` flag to a value of `DOCKER_DEFAULT_PLATFORM` environment variable on unsupported API versions [docker/cli#5248](https://github.com/docker/cli/pull/5248)
+- CLI: fix: context cancellation on `login` prompt [docker/cli#5260](https://github.com/docker/cli/pull/5260)
+- CLI: fix: wait for the container to exit before closing the stream when sending a termination request to the CLI while attached to a container [docker/cli#5250](https://github.com/docker/cli/pull/5250)
+@y
+- rootless: add `Requires=dbus.socket` to prevent errors when starting the daemon on a cgroup v2 host with systemd [moby/moby#48141](https://github.com/moby/moby/pull/48141)
+- containerd integration: `image tag` event is now properly emitted when building images with BuildKit [moby/moby#48182](https://github.com/moby/moby/pull/48182)
+- CLI: enable shell completion for `docker image rm`, `docker image history`, and `docker image inspect` [moby/moby#5261](https://github.com/moby/moby/pull/5261)
+- CLI: add and improve shell completions for various flags [moby/moby#5261](https://github.com/moby/moby/pull/5261)
+- CLI: add OOMScoreAdj to `docker service create` and `docker stack` [docker/cli#5274](https://github.com/docker/cli/pull/5274)
+- CLI: add support for `DOCKER_CUSTOM_HEADERS` environment variable (experimental) [docker/cli#5271](https://github.com/docker/cli/pull/5271)
+- CLI: containerd-integration: Fix `docker push` defaulting the `--platform` flag to a value of `DOCKER_DEFAULT_PLATFORM` environment variable on unsupported API versions [docker/cli#5248](https://github.com/docker/cli/pull/5248)
+- CLI: fix: context cancellation on `login` prompt [docker/cli#5260](https://github.com/docker/cli/pull/5260)
+- CLI: fix: wait for the container to exit before closing the stream when sending a termination request to the CLI while attached to a container [docker/cli#5250](https://github.com/docker/cli/pull/5250)
+@z
+
+@x
+#### Deprecated
+@y
+#### Deprecated
+@z
+
+@x
+- The `pkg/rootless/specconv` package is deprecated, and will be removed in the next release [moby/moby#48185](https://github.com/moby/moby/pull/48185)
+- The `pkg/containerfs` package is deprecated, and will be removed in the next release [moby/moby#48185](https://github.com/moby/moby/pull/48185)
+- The `pkg/directory` package is deprecated, and will be removed in the next release [moby/moby#48185](https://github.com/moby/moby/pull/48185)
+- `api/types/system`: remove deprecated `Info.ExecutionDriver` [moby/moby#48184](https://github.com/moby/moby/pull/48184)
+@y
+- The `pkg/rootless/specconv` package is deprecated, and will be removed in the next release [moby/moby#48185](https://github.com/moby/moby/pull/48185)
+- The `pkg/containerfs` package is deprecated, and will be removed in the next release [moby/moby#48185](https://github.com/moby/moby/pull/48185)
+- The `pkg/directory` package is deprecated, and will be removed in the next release [moby/moby#48185](https://github.com/moby/moby/pull/48185)
+- `api/types/system`: remove deprecated `Info.ExecutionDriver` [moby/moby#48184](https://github.com/moby/moby/pull/48184)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update Buildx to [v0.16.1](https://github.com/docker/buildx/releases/tag/v0.16.1). [moby/docker-ce-packaging#1039](https://github.com/docker/docker-ce-packaging/pull/1039)
+- Update Compose to [v2.29.0](https://github.com/docker/compose/releases/tag/v2.29.0). [moby/docker-ce-packaging#1038](https://github.com/docker/docker-ce-packaging/pull/1038)
+- Update Containerd (static binaries only) to [v1.7.20](https://github.com/containerd/containerd/releases/tag/v1.7.20). [moby/moby#48191](https://github.com/moby/moby/pull/48191)
+- Update BuildKit to [v0.15.0](https://github.com/moby/buildkit/releases/tag/v0.15.0). [moby/moby#48175](https://github.com/moby/moby/pull/48175)
+- Update Go runtime to 1.21.12, which contains security fixes for [CVE-2024-24791](https://github.com/advisories/GHSA-hw49-2p59-3mhj) [moby/moby#48120](https://github.com/moby/moby/pull/48120)
+@y
+- Update Buildx to [v0.16.1](https://github.com/docker/buildx/releases/tag/v0.16.1). [moby/docker-ce-packaging#1039](https://github.com/docker/docker-ce-packaging/pull/1039)
+- Update Compose to [v2.29.0](https://github.com/docker/compose/releases/tag/v2.29.0). [moby/docker-ce-packaging#1038](https://github.com/docker/docker-ce-packaging/pull/1038)
+- Update Containerd (static binaries only) to [v1.7.20](https://github.com/containerd/containerd/releases/tag/v1.7.20). [moby/moby#48191](https://github.com/moby/moby/pull/48191)
+- Update BuildKit to [v0.15.0](https://github.com/moby/buildkit/releases/tag/v0.15.0). [moby/moby#48175](https://github.com/moby/moby/pull/48175)
+- Update Go runtime to 1.21.12, which contains security fixes for [CVE-2024-24791](https://github.com/advisories/GHSA-hw49-2p59-3mhj) [moby/moby#48120](https://github.com/moby/moby/pull/48120)
+@z
+
+@x
+## 27.0
+@y
+## 27.0
+@z
+
+@x
+Release notes for Docker Engine 27.0.
+@y
+Release notes for Docker Engine 27.0.
+@z
+
+@x
+### 27.0.3
+@y
+### 27.0.3
 @z
 
 @x
@@ -64,9 +504,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### Bug fixes and enhancements
+#### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+#### Bug fixes and enhancements
 @z
 
 @x
@@ -80,9 +520,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-## 27.0.2
+### 27.0.2
 @y
-## 27.0.2
+### 27.0.2
 @z
 
 @x
@@ -110,9 +550,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### Bug fixes and enhancements
+#### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+#### Bug fixes and enhancements
 @z
 
 @x
@@ -122,9 +562,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### Removed
+#### Removed
 @y
-### Removed
+#### Removed
 @z
 
 @x
@@ -134,9 +574,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-## 27.0.1
+### 27.0.1
 @y
-## 27.0.1
+### 27.0.1
 @z
 
 @x
@@ -164,9 +604,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### New
+#### New
 @y
-### New
+#### New
 @z
 
 @x
@@ -180,9 +620,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### Bug fixes and enhancements
+#### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+#### Bug fixes and enhancements
 @z
 
 @x
@@ -218,9 +658,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### Networking
+#### Networking
 @y
-### Networking
+#### Networking
 @z
 
 @x
@@ -236,9 +676,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-#### IPv6
+##### IPv6
 @y
-#### IPv6
+##### IPv6
 @z
 
 @x
@@ -260,9 +700,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-#### IPv6 network configuration improvements
+##### IPv6 network configuration improvements
 @y
-#### IPv6 network configuration improvements
+##### IPv6 network configuration improvements
 @z
 
 @x
@@ -314,9 +754,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### Removed
+#### Removed
 @y
-### Removed
+#### Removed
 @z
 
 @x
@@ -342,9 +782,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-### API
+#### API
 @y
-### API
+#### API
 @z
 
 @x
@@ -404,9 +844,9 @@ The following deprecated fields are currently included in the API response, but 
 @z
 
 @x
-### Go SDK changes
+#### Go SDK changes
 @y
-### Go SDK changes
+#### Go SDK changes
 @z
 
 @x
@@ -544,9 +984,9 @@ Move and rename types, changing their import paths and exported names.
 @z
 
 @x
-### Packaging updates
+#### Packaging updates
 @y
-### Packaging updates
+#### Packaging updates
 @z
 
 @x
@@ -570,9 +1010,9 @@ Move and rename types, changing their import paths and exported names.
 @z
 
 @x
-## 27.0.0
+### 27.0.0
 @y
-## 27.0.0
+### 27.0.0
 @z
 
 @x

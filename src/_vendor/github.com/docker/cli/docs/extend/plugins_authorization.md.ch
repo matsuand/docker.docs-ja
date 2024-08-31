@@ -110,13 +110,11 @@ Each plugin must reside within directories described under the
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > The abbreviations `AuthZ` and `AuthN` mean authorization and authentication
 > respectively.
 @y
-> **Note**
->
+> [!NOTE]
 > The abbreviations `AuthZ` and `AuthN` mean authorization and authentication
 > respectively.
 @z
