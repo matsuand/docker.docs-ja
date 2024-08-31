@@ -3455,7 +3455,7 @@ Manuals:
   section:
   - path: __SUBDIR__/engine/
     title: 概要
-  - sectiontitle: Install
+  - sectiontitle: インストール
     section:
     - path: __SUBDIR__/engine/install/
       title: 概要
