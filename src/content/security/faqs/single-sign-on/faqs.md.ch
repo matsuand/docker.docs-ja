@@ -122,3 +122,27 @@ The preferred format is your email address, which should also be your Name ID.
 @y
 The preferred format is your email address, which should also be your Name ID.
 @z
+
+@x
+### Can I use group mapping with SSO and the Azure AD (OIDC) authentication method?
+@y
+### Can I use group mapping with SSO and the Azure AD (OIDC) authentication method?
+@z
+
+@x
+No. Group mapping with SSO isn't supported with the Azure AD (OIDC)
+authentication method because it requires granting the OIDC app the
+Directory.Read.All permission, which provides access to all users, groups, and
+other sensitive data in the directory. Due to potential security risks, Docker
+doesn't support this configuration. Instead, Docker recommends [configuring SCIM
+to enable group sync
+securely](/security/for-admins/provisioning/group-mapping/#use-group-mapping-with-scim).
+@y
+No. Group mapping with SSO isn't supported with the Azure AD (OIDC)
+authentication method because it requires granting the OIDC app the
+Directory.Read.All permission, which provides access to all users, groups, and
+other sensitive data in the directory. Due to potential security risks, Docker
+doesn't support this configuration. Instead, Docker recommends [configuring SCIM
+to enable group sync
+securely](__SUBDIR__/security/for-admins/provisioning/group-mapping/#use-group-mapping-with-scim).
+@z
