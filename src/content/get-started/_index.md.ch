@@ -8,9 +8,9 @@ title: Get started
 keywords: Docker, get started
 description: Get started with Docker
 @y
-title: Get started
+title: はじめよう
 keywords: Docker, get started
-description: Get started with Docker
+description: Docker を使ってはじめよう
 @z
 
 % get-started:
@@ -20,8 +20,8 @@ description: Get started with Docker
   description: Choose the best installation path for your setup.
   icon: download
 @y
-- title: Get Docker
-  description: Choose the best installation path for your setup.
+- title: Docker の入手
+  description: 環境に合わせて適切なインストールを行ないます。
   icon: download
 @z
 
@@ -31,8 +31,8 @@ description: Get started with Docker
   link: /get-started/docker-overview/
   icon: summarize
 @y
-- title: What is Docker?
-  description: Learn about the Docker platform.
+- title: Docker って何？
+  description: Docker プラットフォームについて学びます。
   link: __SUBDIR__/get-started/docker-overview/
   icon: summarize
 @z
@@ -45,8 +45,8 @@ description: Get started with Docker
   link: /get-started/introduction/
   icon: rocket
 @y
-- title: Introduction
-  description: Get started with the basics and the benefits of containerizing your applications.
+- title: はじめに
+  description: アプリケーションのコンテナー化の基本と利点について学んでいきます。
   link: __SUBDIR__/get-started/introduction/
   icon: rocket
 @z
@@ -57,8 +57,8 @@ description: Get started with Docker
   link: /get-started/docker-concepts/the-basics/what-is-a-container/
   icon: foundation
 @y
-- title: Docker concepts
-  description: Gain a better understanding of foundational Docker concepts.
+- title: Docker の考え方
+  description: 基本的な Docker の考え方について、より深く理解していきます。
   link: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/
   icon: foundation
 @z
@@ -69,8 +69,8 @@ description: Get started with Docker
   link: /get-started/workshop/
   icon: desk
 @y
-- title: Docker workshop
-  description: Get guided through a 45-minute workshop to learn about Docker.
+- title: Docker ワークショップ
+  description: 45 分間のワークショップガイドを通じて Docker を学んでいきます。
   link: __SUBDIR__/get-started/workshop/
   icon: desk
 @z
@@ -78,31 +78,31 @@ description: Get started with Docker
 @x
 If you're new to Docker, this section guides you through the essential resources to get started.
 @y
-If you're new to Docker, this section guides you through the essential resources to get started.
+Docker 初心者であれば、本節から重要な情報を取得して理解を進めていくことができます。
 @z
 
 @x
 Follow the guides to help you get started and learn how Docker can optimize your development workflows. 
 @y
-Follow the guides to help you get started and learn how Docker can optimize your development workflows. 
+本ガイドに従っていけば Docker をはじめていき、開発ワークフローを適正化できるようになります。
 @z
 
 @x
 For more advanced concepts and scenarios in Docker, see [Guides](/guides/).
 @y
-For more advanced concepts and scenarios in Docker, see [Guides](__SUBDIR__/guides/).
+Docker のより詳しい考え方や手法については [ガイド](__SUBDIR__/guides/) を参照してください。
 @z
 
 @x
 ## Foundations of Docker
 @y
-## Foundations of Docker
+## Docker の基本 {#foundations-of-docker}
 @z
 
 @x
 Install Docker and jump into discovering what Docker is. 
 @y
-Install Docker and jump into discovering what Docker is. 
+Docker をインストールして Docker がどのようなものかを学んでいきます。
 @z
 
 % snip grid...
@@ -110,7 +110,7 @@ Install Docker and jump into discovering what Docker is.
 @x
 Learn the foundational concepts and workflows of Docker.
 @y
-Learn the foundational concepts and workflows of Docker.
+Docker の基本的な考え方やワークフローについて学んでいきます。
 @z
 
 % snip grid...
