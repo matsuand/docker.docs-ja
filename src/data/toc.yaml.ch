@@ -4931,14 +4931,14 @@ Manuals:
 
 @x
   - path: /docker-hub/download-rate-limit/
-    title: Download rate limit
+    title: Usage and rate limits
   - path: /docker-hub/webhooks/
     title: Webhooks
   - path: /docker-hub/service-accounts/
     title: Service accounts
 @y
   - path: __SUBDIR__/docker-hub/download-rate-limit/
-    title: ダウンロードレート制限
+    title: レートの利用と制限
   - path: __SUBDIR__/docker-hub/webhooks/
     title: ウェブフック
   - path: __SUBDIR__/docker-hub/service-accounts/
