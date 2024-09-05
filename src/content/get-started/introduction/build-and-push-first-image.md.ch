@@ -8,27 +8,24 @@ title: Build and push your first image
 keywords: concepts, container, docker desktop
 description: This concept page will teach you how to build and push your first image
 @y
-title: Build and push your first image
+title: 初めてのイメージ作りとプッシュ
 keywords: concepts, container, docker desktop
 description: This concept page will teach you how to build and push your first image
 @z
 
-@x
-{{< youtube-embed 7ge1s5nAa34 >}}
-@y
-{{< youtube-embed 7ge1s5nAa34 >}}
-@z
+% snip youbute...
 
 @x
 ## Explanation
 @y
-## Explanation
+## 説明 {#explanation}
 @z
 
 @x
 Now that you've updated the [to-do list app](develop-with-containers.md), you’re ready to create a container image for the application and share it on Docker Hub. To do so, you will need to do the following:
 @y
-Now that you've updated the [to-do list app](develop-with-containers.md), you’re ready to create a container image for the application and share it on Docker Hub. To do so, you will need to do the following:
+ここまでに [todo リストのアプリ](develop-with-containers.md) を更新してきたので、このアプリケーションに対応するコンテナーイメージを生成して、Docker Hub 上にて共有することにします。
+そのためには、以下のことを行っていく必要があります。
 @z
 
 @x
@@ -37,28 +34,30 @@ Now that you've updated the [to-do list app](develop-with-containers.md), you’
 3. Build the container image
 4. Push the image to Docker Hub
 @y
-1. Sign in with your Docker account
-2. Create an image repository on Docker Hub
-3. Build the container image
-4. Push the image to Docker Hub
+1. Docker アカウントを使ってサインイン
+2. Docker Hub 上でのイメージリポジトリの生成
+3. コンテナーイメージのビルド
+4. Docker Hub へのイメージのプッシュ
 @z
 
 @x
 Before you dive into the hands-on guide, the following are a few core concepts that you should be aware of.
 @y
-Before you dive into the hands-on guide, the following are a few core concepts that you should be aware of.
+この実践的なガイドに進んでいくにあたり、確認しておくべき基本的な考え方について、以下に見ておくことにしましょう。
 @z
 
 @x
 ### Container images
 @y
-### Container images
+### コンテナーイメージ {#container-images}
 @z
 
 @x
 If you’re new to container images, think of them as a standardized package that contains everything needed to run an application, including its files, configuration, and dependencies. These packages can then be distributed and shared with others.
 @y
-If you’re new to container images, think of them as a standardized package that contains everything needed to run an application, including its files, configuration, and dependencies. These packages can then be distributed and shared with others.
+コンテナーイメージについてよく分かっていないなら、以下のように考えてください。
+つまりコンテナーイメージとはパッケージが標準化されたものであり、そこにはアプリケーションの実行に必要なファイル、設定、依存パッケージがすべて含まれているものです。
+このようなパッケージは他者への配布や共有を容易にしてくれます。
 @z
 
 @x
@@ -70,13 +69,16 @@ If you’re new to container images, think of them as a standardized package tha
 @x
 To share your Docker images, you need a place to store them. This is where registries come in. While there are many registries, Docker Hub is the default and go-to registry for images. Docker Hub provides both a place for you to store your own images and to find images from others to either run or use as the bases for your own images.
 @y
-To share your Docker images, you need a place to store them. This is where registries come in. While there are many registries, Docker Hub is the default and go-to registry for images. Docker Hub provides both a place for you to store your own images and to find images from others to either run or use as the bases for your own images.
+Docker イメージを共有したいなら、それを保存しておく場所が必要になります。
+ですからレジストリの登場となります。
+While there are many registries, Docker Hub is the default and go-to registry for images. Docker Hub provides both a place for you to store your own images and to find images from others to either run or use as the bases for your own images.
 @z
 
 @x
 In [Develop with containers](develop-with-containers.md), you used the following images that came from Docker Hub, each of which are [Docker Official Images](/trusted-content/official-images/):
 @y
-In [Develop with containers](develop-with-containers.md), you used the following images that came from Docker Hub, each of which are [Docker Official Images](__SUBDIR__/trusted-content/official-images/):
+[コンテナーを使った開発](develop-with-containers.md) では Docker Hub から入手した以下のイメージを利用しました。
+すべては [Docker 公式イメージ](__SUBDIR__/trusted-content/official-images/) です。
 @z
 
 @x
@@ -100,7 +102,7 @@ Explore the full catalog of [Docker Official Images](https://hub.docker.com/sear
 @x
 ## Try it out
 @y
-## Try it out
+## Try it out {#try-it-out}
 @z
 
 @x

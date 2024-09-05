@@ -18,10 +18,12 @@ description: Docker を使ってはじめよう
 @x
 - title: Get Docker
   description: Choose the best installation path for your setup.
+  link: /get-started/get-docker/
   icon: download
 @y
 - title: Docker の入手
   description: 環境に合わせて適切なインストールを行ないます。
+  link: __SUBDIR__/get-started/get-docker/
   icon: download
 @z
 

@@ -93,15 +93,19 @@ programming languages:
 
 @x
 - Dockerfile
+- Go
 - Java
 - JavaScript
 - Python
+- Rust
 - TypeScript
 @y
 - Dockerfile
+- Go
 - Java
 - JavaScript
 - Python
+- Rust
 - TypeScript
 @z
 
@@ -272,7 +276,7 @@ agent appear in the chat interface.
 @x
 ![Docker agent in chat](/copilot/docker-agent-copilot.png)
 @y
-![Docker agent in chat](__SUBDIR__/copilot/docker-agent-copilot.png)
+![Docker agent in chat](copilot/docker-agent-copilot.png)
 @z
 
 @x
@@ -346,7 +350,7 @@ To use the extension in the GitHub web interface:
 @x
    ![Copilot chat button](/copilot/copilot-button.png?w=400px)
 @y
-   ![Copilot chat button](__SUBDIR__/copilot/copilot-button.png?w=400px)
+   ![Copilot chat button](copilot/copilot-button.png?w=400px)
 @z
 
 @x
@@ -436,7 +440,7 @@ operation. You can always roll back or back out of the changes.
 @x
 ![Copilot action prompt](/copilot/copilot-action-prompt.png?w=400px)
 @y
-![Copilot action prompt](__SUBDIR__/copilot/copilot-action-prompt.png?w=400px)
+![Copilot action prompt](copilot/copilot-action-prompt.png?w=400px)
 @z
 
 @x

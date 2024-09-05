@@ -18,11 +18,11 @@ keywords: msi, docker desktop, windows, installation
 @x
 > [!NOTE]
 >
-> The MSI installer is available to all company owners and organization owners with Docker Desktop version 4.32 and later.
+> The MSI installer is available to all company and organization owners with a Business subscription and Docker Desktop version 4.32 and later.
 @y
 > [!NOTE]
 >
-> The MSI installer is available to all company owners and organization owners with Docker Desktop version 4.32 and later.
+> The MSI installer is available to all company and organization owners with a Business subscription and Docker Desktop version 4.32 and later.
 @z
 
 @x
