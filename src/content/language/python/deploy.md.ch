@@ -48,14 +48,10 @@ In this section, you'll learn how to use Docker Desktop to deploy your applicati
 
 @x
 In your `python-docker-dev-example` directory, create a file named `docker-postgres-kubernetes.yaml`. Open the file in an IDE or text editor and add
-the following contents. Replace `DOCKER_USERNAME/REPO_NAME` with your Docker
-username and the name of the repository that you created in [Configure CI/CD for
-your Python application](configure-ci-cd.md).
+the following contents.
 @y
 In your `python-docker-dev-example` directory, create a file named `docker-postgres-kubernetes.yaml`. Open the file in an IDE or text editor and add
-the following contents. Replace `DOCKER_USERNAME/REPO_NAME` with your Docker
-username and the name of the repository that you created in [Configure CI/CD for
-your Python application](configure-ci-cd.md).
+the following contents.
 @z
 
 % snip code...
