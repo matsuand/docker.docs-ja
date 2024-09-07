@@ -6,7 +6,8 @@ SUBDIRS = genai-pdf-bot genai-video-bot images nlp
 bases = \
 	_index.md    \
 	databases.md \
-	jupyter.md
+	jupyter.md   \
+	kafka.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

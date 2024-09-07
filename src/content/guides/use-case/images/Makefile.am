@@ -4,7 +4,8 @@
 copyfiles = \
 	databases-1.webp \
 	databases-2.webp \
-	databases-3.webp
+	databases-3.webp \
+	kafka-1.webp
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

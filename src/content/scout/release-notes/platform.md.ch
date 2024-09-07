@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
 title: Docker Scout release notes
@@ -141,12 +141,8 @@ image.
 
 @x
 For more information, see [Manage vulnerability exceptions](/scout/explore/exceptions.md).
-If you're new to VEX, check out this use-case guide:
-[Suppress image vulnerabilities with VEX](/scout/guides/vex.md).
 @y
 For more information, see [Manage vulnerability exceptions](scout/explore/exceptions.md).
-If you're new to VEX, check out this use-case guide:
-[Suppress image vulnerabilities with VEX](scout/guides/vex.md).
 @z
 
 @x
@@ -278,7 +274,7 @@ For more information, see
 [No unapproved base images](/scout/policy/#no-unapproved-base-images).
 @y
 For more information, see
-[No unapproved base images](scout/policy/#no-unapproved-base-images).
+[No unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images).
 @z
 
 @x
@@ -302,7 +298,7 @@ runtime security.
 @x
 For more information, see [Default non-root user](/scout/policy/#default-non-root-user).
 @y
-For more information, see [Default non-root user](scout/policy/#default-non-root-user).
+For more information, see [Default non-root user](__SUBDIR__/scout/policy/#default-non-root-user).
 @z
 
 @x
@@ -432,7 +428,7 @@ For more information, see:
 - [SonarQube quality gates passed policy](/scout/policy/#sonarqube-quality-gates-passed)
 @y
 - [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
-- [SonarQube quality gates passed policy](scout/policy/#sonarqube-quality-gates-passed)
+- [SonarQube quality gates passed policy](__SUBDIR__/scout/policy/#sonarqube-quality-gates-passed)
 @z
 
 @x
@@ -515,7 +511,7 @@ often a prerequisite for doing more.
 See [Supply chain attestations policy](/scout/policy/#supply-chain-attestations)
 for details.
 @y
-See [Supply chain attestations policy](scout/policy/#supply-chain-attestations)
+See [Supply chain attestations policy](__SUBDIR__/scout/policy/#supply-chain-attestations)
 for details.
 @z
 
@@ -538,7 +534,7 @@ For more information, see
 [No high-profile vulnerabilities policy](/scout/policy/#no-high-profile-vulnerabilities).
 @y
 For more information, see
-[No high-profile vulnerabilities policy](scout/policy/#no-high-profile-vulnerabilities).
+[No high-profile vulnerabilities policy](__SUBDIR__/scout/policy/#no-high-profile-vulnerabilities).
 @z
 
 @x
@@ -624,7 +620,7 @@ refer to the [Policy Evaluation documentation](/scout/policy/).
 @y
 You can view and evaluate policy status for images using the Docker Scout
 Dashboard and the `docker scout policy` CLI command. For more information,
-refer to the [Policy Evaluation documentation](scout/policy/).
+refer to the [Policy Evaluation documentation](__SUBDIR__/scout/policy/).
 @z
 
 @x

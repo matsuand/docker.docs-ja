@@ -240,7 +240,8 @@ top_srcdir = @top_srcdir@
 copyfiles = \
 	databases-1.webp \
 	databases-2.webp \
-	databases-3.webp
+	databases-3.webp \
+	kafka-1.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

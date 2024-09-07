@@ -592,15 +592,15 @@ Guides:
 @x
     - path: /guides/use-case/jupyter/
       title: Data science with JupyterLab
-    - path: /scout/guides/vex/
-      title: Suppress CVEs with VEX
+    - path: /guides/use-case/kafka/
+      title: Event-driven applications with Kafka
     - path: /guides/use-case/databases/
       title: Use containerized databases
 @y
     - path: __SUBDIR__/guides/use-case/jupyter/
       title: Data science with JupyterLab
-    - path: __SUBDIR__/scout/guides/vex/
-      title: Suppress CVEs with VEX
+    - path: __SUBDIR__/guides/use-case/kafka/
+      title: Event-driven applications with Kafka
     - path: __SUBDIR__/guides/use-case/databases/
       title: コンテナー化データベースの利用
 @z
@@ -3256,6 +3256,10 @@ Manuals:
 @x
     - sectiontitle: How-tos
       section:
+      - path: /scout/how-tos/create-exceptions-gui/
+        title: Create exceptions (GUI)
+      - path: /scout/how-tos/create-exceptions-vex/
+        title: Create exceptions (VEX)
       - path: /scout/how-tos/artifact-types/
         title: Specify artifact type or location
       - path: /scout/how-tos/view-create-sboms/
@@ -3265,6 +3269,10 @@ Manuals:
 @y
     - sectiontitle: How-tos
       section:
+      - path: __SUBDIR__/scout/how-tos/create-exceptions-gui/
+        title: Create exceptions (GUI)
+      - path: __SUBDIR__/scout/how-tos/create-exceptions-vex/
+        title: Create exceptions (VEX)
       - path: __SUBDIR__/scout/how-tos/artifact-types/
         title: Specify artifact type or location
       - path: __SUBDIR__/scout/how-tos/view-create-sboms/

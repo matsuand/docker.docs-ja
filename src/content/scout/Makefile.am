@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = concepts deep-dive explore guides how-tos images \
+SUBDIRS = concepts deep-dive explore how-tos images \
 	integrations policy release-notes
 
 bases = \

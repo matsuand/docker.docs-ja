@@ -166,13 +166,33 @@ Configuring SSO and SCIM is optional and only available to Docker Business subsc
 @x
 You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
    - [Configure SSO](/security/for-admins/single-sign-on/) to authenticate and add members when they sign in to Docker through your identity provider.
-   - Optional: [Enforce SSO](/security/for-admins/single-sign-on/connect/#optional-enforce-sso) to ensure that users must sign in to Docker with SSO.
-   - [Configure SCIM](/security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
+   - Optional: [Enforce SSO](/security/for-admins/single-sign-on/connect/#optional-enforce-sso) to ensure that when users sign in to Docker, they must use SSO.
 @y
 You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
-   - [Configure SSO](__SUBDIR__/security/for-admins/single-sign-on/) to authenticate and add members when they sign in to Docker through your identity provider.
-   - Optional: [Enforce SSO](__SUBDIR__/security/for-admins/single-sign-on/connect/#optional-enforce-sso) to ensure that users must sign in to Docker with SSO.
-   - [Configure SCIM](__SUBDIR__/security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
+   - [Configure SSO](security/for-admins/single-sign-on/) to authenticate and add members when they sign in to Docker through your identity provider.
+   - Optional: [Enforce SSO](security/for-admins/single-sign-on/connect/#optional-enforce-sso) to ensure that when users sign in to Docker, they must use SSO.
+@z
+
+@x
+     > [!NOTE]
+     >
+     > Enforcing single sign-on (SSO) and [Step 5: Enforce sign-in for Docker
+     > Desktop](#step-5-enforce-sign-in-for-docker-desktop) are different
+     > features. For more details, see
+     > [Enforcing sign-in versus enforcing single sign-on (SSO)](/security/for-admins/enforce-sign-in/#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
+@y
+     > [!NOTE]
+     >
+     > Enforcing single sign-on (SSO) and [Step 5: Enforce sign-in for Docker
+     > Desktop](#step-5-enforce-sign-in-for-docker-desktop) are different
+     > features. For more details, see
+     > [Enforcing sign-in versus enforcing single sign-on (SSO)](/security/for-admins/enforce-sign-in/#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
+@z
+
+@x
+   - [Configure SCIM](/security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
+@y
+   - [Configure SCIM](security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
 @z
 
 @x

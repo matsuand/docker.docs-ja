@@ -26,7 +26,8 @@ copyfiles = \
 	scout-metrics-prom-target.png    \
 	scout-policy-eval-ci.webp        \
 	scout-slack-notification.png     \
-	scout-sq-commit-sha.webp
+	scout-sq-commit-sha.webp         \
+	suppressed-cve-cli.png
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

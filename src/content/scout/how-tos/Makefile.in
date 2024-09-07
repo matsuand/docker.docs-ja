@@ -238,8 +238,10 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	artifact-types.md    \
-	configure-cli.md     \
+	artifact-types.md        \
+	configure-cli.md         \
+	create-exceptions-gui.md \
+	create-exceptions-vex.md \
 	view-create-sboms.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
