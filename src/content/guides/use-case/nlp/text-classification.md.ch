@@ -4,13 +4,19 @@
 % __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
+---
 title: Build a text recognition app
+linkTitle: Text classification
 keywords: nlp, natural language processing, sentiment analysis, python, nltk, scikit-learn, text classification
 description: Learn how to build and run a text recognition application using Python, NLTK, scikit-learn, and Docker.
+---
 @y
+---
 title: Build a text recognition app
+linkTitle: Text classification
 keywords: nlp, natural language processing, sentiment analysis, python, nltk, scikit-learn, text classification
 description: Learn how to build and run a text recognition application using Python, NLTK, scikit-learn, and Docker.
+---
 @z
 
 @x

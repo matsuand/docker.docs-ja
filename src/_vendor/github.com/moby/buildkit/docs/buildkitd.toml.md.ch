@@ -2,9 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# buildkitd.toml
+---
+title: buildkitd.toml
+---
 @y
-# buildkitd.toml
+---
+title: buildkitd.toml
+---
 @z
 
 @x
@@ -229,6 +233,8 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
   # maintain a pool of reusable CNI network namespaces to amortize the overhead
   # of allocating and releasing the namespaces
   cniPoolSize = 16
+  # defaultCgroupParent sets the parent cgroup of all containers.
+  defaultCgroupParent = "buildkit"
 @y
 [worker.containerd]
   address = "/run/containerd/containerd.sock"
@@ -241,6 +247,8 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
   # maintain a pool of reusable CNI network namespaces to amortize the overhead
   # of allocating and releasing the namespaces
   cniPoolSize = 16
+  # defaultCgroupParent sets the parent cgroup of all containers.
+  defaultCgroupParent = "buildkit"
 @z
 
 @x

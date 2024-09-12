@@ -4,6 +4,12 @@
 @x
 title: Introduction
 keywords: get started, getting started, how to get started
+@y
+title: 概要
+keywords: get started, getting started, how to get started
+@z
+
+@x
 description: |
   Get started with Docker. You'll learn about Docker Desktop, developing with
   Docker, as well as how to build and push your first image.
@@ -13,8 +19,6 @@ summary: |
   procedures. Progress through hands-on exercises that cover essential Docker
   commands, image creation, and container orchestration.
 @y
-title: 概要
-keywords: get started, getting started, how to get started
 description: |
   Get started with Docker. You'll learn about Docker Desktop, developing with
   Docker, as well as how to build and push your first image.

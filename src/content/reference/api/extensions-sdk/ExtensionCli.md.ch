@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: ExtensionCli"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases: 
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: ExtensionCli"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases: 
  - /desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/
 ---
-@z
-
-@x
-# Interface: ExtensionCli
-@y
-# Interface: ExtensionCli
 @z
 
 @x

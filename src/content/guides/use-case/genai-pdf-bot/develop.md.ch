@@ -5,10 +5,16 @@
 
 @x
 title: Use containers for generative AI development
+linkTitle: Develop your app
+@y
+title: コンテナーを利用した生成 AI 開発
+linkTitle: Develop your app
+@z
+
+@x
 keywords: python, local, development, generative ai, genai, llm, neo4j, ollama, langchain, openai
 description: Learn how to develop your generative AI (GenAI) application locally.
 @y
-title: コンテナーを利用した生成 AI 開発
 keywords: python, local, development, generative ai, genai, llm, neo4j, ollama, langchain, openai
 description: Learn how to develop your generative AI (GenAI) application locally.
 @z
@@ -199,14 +205,14 @@ When running Ollama in a container, you should have a CUDA-supported GPU. While 
 To run Ollama in a container and provide GPU access:
 1. Install the prerequisites.
    - For Docker Engine on Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
-   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](../../../desktop/wsl/index.md/#turn-on-docker-desktop-wsl-2)
+   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](/manuals/desktop/wsl/index.md#turn-on-docker-desktop-wsl-2)
 2. Add the Ollama service and a volume in your `compose.yaml`. The following is
    the updated `compose.yaml`:
 @y
 To run Ollama in a container and provide GPU access:
 1. Install the prerequisites.
    - For Docker Engine on Linux, install the [NVIDIA Container Toolkilt](https://github.com/NVIDIA/nvidia-container-toolkit).
-   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](../../../desktop/wsl/index.md/#turn-on-docker-desktop-wsl-2)
+   - For Docker Desktop on Windows 10/11, install the latest [NVIDIA driver](https://www.nvidia.com/Download/index.aspx) and make sure you are using the [WSL2 backend](manuals/desktop/wsl/index.md#turn-on-docker-desktop-wsl-2)
 2. Add the Ollama service and a volume in your `compose.yaml`. The following is
    the updated `compose.yaml`:
 @z
@@ -216,11 +222,11 @@ To run Ollama in a container and provide GPU access:
 @x
    > [!NOTE]
    >
-   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](../../../compose/gpu-support.md).
+   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](/manuals/compose/gpu-support.md).
 @y
    > [!NOTE]
    >
-   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](../../../compose/gpu-support.md).
+   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](manuals/compose/gpu-support.md).
 @z
 
 @x

@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: DockerCommand"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: DockerCommand"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/DockerCommand/
 ---
-@z
-
-@x
-# Interface: DockerCommand
-@y
-# Interface: DockerCommand
 @z
 
 @x

@@ -4,7 +4,6 @@
 
 copyfiles = \
 	alpine.js  \
-	sidebar.js \
 	toc.js     \
 	tooltip.js \
 	vars.js

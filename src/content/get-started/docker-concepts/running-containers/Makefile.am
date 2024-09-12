@@ -5,6 +5,7 @@
 SUBDIRS = images
 
 bases = \
+	_index.md                        \
 	multi-container-applications.md  \
 	overriding-container-defaults.md \
 	persisting-container-data.md     \

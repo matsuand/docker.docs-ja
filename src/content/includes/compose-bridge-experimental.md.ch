@@ -5,10 +5,10 @@
 
 @x
 {{% experimental %}}
-Compose Bridge is an [Experimental](/release-lifecycle.md#experimental) product.
+Compose Bridge is an [Experimental](/manuals/release-lifecycle.md#experimental) product.
 {{% /experimental %}}
 @y
 {{% experimental %}}
-Compose Bridge は [試験的](release-lifecycle.md#experimental) な製品です。
+Compose Bridge は [試験的](manuals/release-lifecycle.md#experimental) な製品です。
 {{% /experimental %}}
 @z

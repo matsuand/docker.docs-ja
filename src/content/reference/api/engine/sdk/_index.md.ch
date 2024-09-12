@@ -6,10 +6,16 @@
 
 @x
 title: Develop with Docker Engine SDKs
+linkTitle: SDK
+@y
+title: Develop with Docker Engine SDKs
+linkTitle: SDK
+@z
+
+@x
 description: Learn how to use Docker Engine SDKs to automate Docker tasks in your language of choice
 keywords: developing, sdk, Docker Engine SDKs, install SDKs, SDK versions
 @y
-title: Develop with Docker Engine SDKs
 description: Learn how to use Docker Engine SDKs to automate Docker tasks in your language of choice
 keywords: developing, sdk, Docker Engine SDKs, install SDKs, SDK versions
 @z

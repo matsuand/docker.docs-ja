@@ -5,10 +5,14 @@
 
 @x
 title: What is a container?
+@y
+title: コンテナーとは?
+@z
+
+@x
 keywords: concepts, build, images, container, docker desktop
 description: What is a container? This concept page will teach you about containers and provide a quick hands-on where you will run your first container.
 @y
-title: コンテナーとは?
 keywords: concepts, build, images, container, docker desktop
 description: What is a container? This concept page will teach you about containers and provide a quick hands-on where you will run your first container.
 @z

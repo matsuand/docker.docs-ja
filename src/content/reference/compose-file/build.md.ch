@@ -212,9 +212,9 @@ Alternatively `build` can be an object with fields defined as follows:
 @z
 
 @x
-{{< introduced compose 2.17.0 "/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
 @y
-{{< introduced compose 2.17.0 "/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
 @z
 
 @x
@@ -582,9 +582,9 @@ build:
 @z
 
 @x
-{{< introduced compose 2.17.0 "/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
 @y
-{{< introduced compose 2.17.0 "/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
 @z
 
 @x
@@ -626,9 +626,9 @@ build:
 @z
 
 @x
-{{< introduced compose 2.27.1 "/compose/release-notes.md#2271" >}}
+{{< introduced compose 2.27.1 "/manuals/compose/release-notes.md#2271" >}}
 @y
-{{< introduced compose 2.27.1 "/compose/release-notes.md#2271" >}}
+{{< introduced compose 2.27.1 "/manuals/compose/release-notes.md#2271" >}}
 @z
 
 @x
@@ -694,9 +694,9 @@ extra_hosts:
 @z
 
 @x
-The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/compose/release-notes.md#2241). For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/manuals/compose/release-notes.md#2241). For example:
 @y
-The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](compose/release-notes.md#2241). For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](manuals/compose/release-notes.md#2241). For example:
 @z
 
 @x
@@ -988,9 +988,9 @@ Composes reports an error in the following cases:
 @z
 
 @x
-{{< introduced compose 2.15.0 "/compose/release-notes.md#2" >}}
+{{< introduced compose 2.15.0 "/manuals/compose/release-notes.md#2" >}}
 @y
-{{< introduced compose 2.15.0 "/compose/release-notes.md#2" >}}
+{{< introduced compose 2.15.0 "/manuals/compose/release-notes.md#2" >}}
 @z
 
 @x
@@ -1374,9 +1374,9 @@ build:
 @z
 
 @x
-{{< introduced compose 2.23.1 "/compose/release-notes.md#2231" >}}
+{{< introduced compose 2.23.1 "/manuals/compose/release-notes.md#2231" >}}
 @y
-{{< introduced compose 2.23.1 "/compose/release-notes.md#2231" >}}
+{{< introduced compose 2.23.1 "/manuals/compose/release-notes.md#2231" >}}
 @z
 
 @x

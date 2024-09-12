@@ -153,7 +153,6 @@ am__define_uniq_tagged_files = \
 DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/copy.mk \
 	$(top_srcdir)/build-aux/main.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
@@ -296,7 +295,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = latest sdk
+SUBDIRS = latest sdk version
 bases = \
 	_index.md
 
@@ -305,34 +304,10 @@ abs_thisdir = @abs_srcdir@
 changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
-copyfiles = \
-	v1.25.md \
-	v1.26.md \
-	v1.27.md \
-	v1.28.md \
-	v1.29.md \
-	v1.30.md \
-	v1.31.md \
-	v1.32.md \
-	v1.33.md \
-	v1.34.md \
-	v1.35.md \
-	v1.36.md \
-	v1.37.md \
-	v1.38.md \
-	v1.39.md \
-	v1.40.md \
-	v1.41.md \
-	v1.42.md \
-	v1.43.md \
-	v1.44.md \
-	v1.45.md \
-	v1.46.md
-
 all: all-recursive
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -352,7 +327,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -661,13 +636,6 @@ $(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddi
 @MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
 @MAINT@	    -e "s|\.ch$$||"` $@; \
 @MAINT@	fi
-
-.PHONY: all
-all: $(copyfiles)
-
--include copyfiles.sub
-copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

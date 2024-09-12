@@ -62,37 +62,37 @@ suburldir 追加
 menus:
   main:
   - name: Get started
-    url: /get-started/
+    pageRef: /get-started/
     weight: 1
   - name: Guides
-    url: /guides/
+    pageRef: /guides/
     weight: 2
   - name: Manuals
-    url: /manuals/
+    pageRef: /manuals/
     weight: 3
   - name: Reference
-    url: /reference/
+    pageRef: /reference/
     weight: 4
   - name: Learning paths
-    url: /learning-paths/
+    pageRef: /learning-paths/
     weight: 5
 @y
 menus:
   main:
   - name: はじめよう
-    url: /get-started/
+    pageRef: /get-started/
     weight: 1
   - name: ガイド
-    url: /guides/
+    pageRef: /guides/
     weight: 2
   - name: マニュアル
-    url: /manuals/
+    pageRef: /manuals/
     weight: 3
   - name: リファレンス
-    url: /reference/
+    pageRef: /reference/
     weight: 4
   - name: ラーニングパス
-    url: /learning-paths/
+    pageRef: /learning-paths/
     weight: 5
 @z
 

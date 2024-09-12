@@ -5,6 +5,7 @@
 SUBDIRS = images
 
 bases = \
+	_index.md                 \
 	what-is-a-container.md    \
 	what-is-a-registry.md     \
 	what-is-an-image.md       \

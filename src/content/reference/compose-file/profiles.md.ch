@@ -160,7 +160,7 @@ In the above example:
 @z
 
 @x
-See how you can use `profiles` in [Docker Compose](/compose/profiles.md).
+See how you can use `profiles` in [Docker Compose](/manuals/compose/profiles.md).
 @y
-See how you can use `profiles` in [Docker Compose](compose/profiles.md).
+See how you can use `profiles` in [Docker Compose](manuals/compose/profiles.md).
 @z

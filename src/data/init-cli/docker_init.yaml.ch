@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 command: docker init
 short: Creates Docker-related starter files for your project
@@ -92,13 +94,13 @@ long: |-
 @z
 
 @x
-    * [.dockerignore](../../../reference/dockerfile.md#dockerignore-file)
-    * [Dockerfile](../../../reference/dockerfile.md)
-    * [compose.yaml](../../../compose/compose-application-model.md)
+    * [.dockerignore](/reference/dockerfile.md#dockerignore-file)
+    * [Dockerfile](/reference/dockerfile.md)
+    * [compose.yaml](/manuals/compose/compose-application-model.md)
 @y
-    * [.dockerignore](../../../reference/dockerfile.md#dockerignore-file)
-    * [Dockerfile](../../../reference/dockerfile.md)
-    * [compose.yaml](../../../compose/compose-application-model.md)
+    * [.dockerignore](reference/dockerfile.md#dockerignore-file)
+    * [Dockerfile](reference/dockerfile.md)
+    * [compose.yaml](manuals/compose/compose-application-model.md)
 @z
 
 @x

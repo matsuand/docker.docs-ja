@@ -3,12 +3,16 @@
 
 @x
 ---
+title: Deprecated Docker Engine features
+linkTitle: Deprecated features
 aliases: ["/engine/misc/deprecated/"]
 description: "Deprecated Features."
 keywords: "docker, documentation, about, technology, deprecate"
 ---
 @y
 ---
+title: Deprecated Docker Engine features
+linkTitle: Deprecated features
 aliases: ["/engine/misc/deprecated/"]
 description: "Deprecated Features."
 keywords: "docker, documentation, about, technology, deprecate"
@@ -33,12 +37,6 @@ keywords: "docker, documentation, about, technology, deprecate"
      requests which include edits to this file in other repositories
      will be rejected.
 -->
-@z
-
-@x
-# Deprecated Engine Features
-@y
-# Deprecated Engine Features
 @z
 
 @x

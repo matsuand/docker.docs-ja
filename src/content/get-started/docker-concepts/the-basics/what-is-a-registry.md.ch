@@ -6,10 +6,14 @@
 
 @x
 title: What is a registry?
+@y
+title: レジストリとは？
+@z
+
+@x
 keywords: concepts, build, images, container, docker desktop
 description: What is a registry? This Docker Concept will explain what a registry is, explore their interoperability, and have you interact with registries.
 @y
-title: レジストリとは？
 keywords: concepts, build, images, container, docker desktop
 description: レジストリとは何か？ Docker の考え方ではレジストリとは何か、その利用方法、レジストリとの対話方法を説明します。
 @z

@@ -3,10 +3,14 @@
 
 @x
 title: What is an image?
+@y
+title: イメージとは？
+@z
+
+@x
 keywords: concepts, build, images, container, docker desktop
 description: What is an image
 @y
-title: イメージとは？
 keywords: concepts, build, images, container, docker desktop
 description: イメージとは何か。
 @z

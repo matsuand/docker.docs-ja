@@ -5,11 +5,15 @@
 
 @x
 title: Persist the DB
+@y
+title: DB への保存
+@z
+
+@x
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
 @y
-title: DB への保存
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
@@ -123,12 +127,12 @@ and Docker isolates all changes to that container. With volumes, you can change 
 @z
 
 @x
-[Volumes](/engine/storage/volumes.md) provide the ability to connect specific filesystem paths of 
+[Volumes](/manuals/engine/storage/volumes.md) provide the ability to connect specific filesystem paths of 
 the container back to the host machine. If you mount a directory in the container, changes in that
 directory are also seen on the host machine. If you mount that same directory across container restarts, you'd see
 the same files.
 @y
-[ボリューム](engine//storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
+[ボリューム](manuals/engine//storage/volumes.md) とは、コンテナー内に特別なファイルシステムがホストシステムに向けて生成され、そこにアクセスする機能を提供するものです。
 コンテナー内のあるディレクトリがマウントされていると、そのディレクトリ内で行われた変更がホストマシンからも見ることができます。
 仮にコンテナーの再起動の前後で 1 つのディレクトリをマウントしておけば、同一のファイルを維持できることになります。
 @z
@@ -246,9 +250,9 @@ You can create the volume and start the container using the CLI or Docker Deskto
 
 @x
    > For more details about Git Bash's syntax differences, see
-   > [Working with Git Bash](../../desktop/troubleshoot/topics/#working-with-git-bash).
+   > [Working with Git Bash](/desktop/troubleshoot/topics/#working-with-git-bash).
 @y
-   > Git Bash の文法の相違に関しては [Git Bash を使った操作](../../desktop/troubleshoot/topics/#working-with-git-bash) を参照してください。
+   > Git Bash の文法の相違に関しては [Git Bash を使った操作](__SUBDIR__/desktop/troubleshoot/topics/#working-with-git-bash) を参照してください。
 @z
 
 @x
@@ -435,10 +439,10 @@ Related information:
 
 @x
  - [docker CLI reference](/reference/cli/docker/)
- - [Volumes](/engine/storage/volumes.md)
+ - [Volumes](/manuals/engine/storage/volumes.md)
 @y
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [ボリューム](engine/storage/volumes.md)
+ - [ボリューム](manuals/engine/storage/volumes.md)
 @z
 
 @x

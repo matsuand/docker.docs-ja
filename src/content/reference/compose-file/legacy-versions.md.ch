@@ -20,7 +20,7 @@ The legacy versions of the Compose file reference has moved to the [V1 branch of
 @z
 
 @x
-The latest and recommended version of the Compose file format is defined by the [Compose Specification](_index.md). This format merges the 2.x and 3.x versions and is implemented by **Compose 1.27.0+**. For more information, see the[History and development of Docker Compose](/compose/intro/history.md). 
+The latest and recommended version of the Compose file format is defined by the [Compose Specification](_index.md). This format merges the 2.x and 3.x versions and is implemented by **Compose 1.27.0+**. For more information, see the[History and development of Docker Compose](/manuals/compose/intro/history.md). 
 @y
-The latest and recommended version of the Compose file format is defined by the [Compose Specification](_index.md). This format merges the 2.x and 3.x versions and is implemented by **Compose 1.27.0+**. For more information, see the[History and development of Docker Compose](compose/intro/history.md). 
+The latest and recommended version of the Compose file format is defined by the [Compose Specification](_index.md). This format merges the 2.x and 3.x versions and is implemented by **Compose 1.27.0+**. For more information, see the[History and development of Docker Compose](manuals/compose/intro/history.md). 
 @z

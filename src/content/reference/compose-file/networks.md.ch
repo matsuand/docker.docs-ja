@@ -85,9 +85,9 @@ driver is not available on the platform.
 % snip code...
 
 @x
-For more information on drivers and available options, see [Network drivers](/engine/network/drivers/_index.md).
+For more information on drivers and available options, see [Network drivers](/manuals/engine/network/drivers/_index.md).
 @y
-For more information on drivers and available options, see [Network drivers](engine/network/drivers/_index.md).
+For more information on drivers and available options, see [Network drivers](manuals/engine/network/drivers/_index.md).
 @z
 
 @x
@@ -107,9 +107,9 @@ driver-dependent.
 % snip code...
 
 @x
-Consult the [network drivers documentation](/engine/network/_index.md) for more information.
+Consult the [network drivers documentation](/manuals/engine/network/_index.md) for more information.
 @y
-Consult the [network drivers documentation](engine/network/_index.md) for more information.
+Consult the [network drivers documentation](manuals/engine/network/_index.md) for more information.
 @z
 
 @x
@@ -137,9 +137,9 @@ that are also attached to the network.
 @z
 
 @x
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](/engine/daemon/ipv6.md).
+`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](/manuals/engine/daemon/ipv6.md).
 @y
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](engine/daemon/ipv6.md).
+`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](manuals/engine/daemon/ipv6.md).
 @z
 
 @x
@@ -277,7 +277,7 @@ should retrieve, typically by using a parameter so the Compose file doesn't need
 @z
 
 @x
-For more examples, see [Networking in Compose](/compose/networking.md).
+For more examples, see [Networking in Compose](/manuals/compose/networking.md).
 @y
-For more examples, see [Networking in Compose](compose/networking.md).
+For more examples, see [Networking in Compose](manuals/compose/networking.md).
 @z

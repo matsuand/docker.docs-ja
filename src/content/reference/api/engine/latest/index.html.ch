@@ -2,17 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
----
-<html>
-<head><meta http-equiv="refresh" content="0;url=/reference/api/engine/v{{< param latest_engine_api_version >}}/" /></head>
+<head><meta http-equiv="refresh" content="0;url=/reference/api/engine/version/v{{< param latest_engine_api_version >}}/" /></head>
 <body><p>Redirecting to the latest version of the Docker Engine API reference.</body>
-</html>
 @y
----
----
-<html>
-<head><meta http-equiv="refresh" content="0;url=__SUBDIR__/reference/api/engine/v{{< param latest_engine_api_version >}}/" /></head>
+<head><meta http-equiv="refresh" content="0;url=__SUBDIR__/reference/api/engine/version/v{{< param latest_engine_api_version >}}/" /></head>
 <body><p>Docker Engine API リファレンスの最新バージョンにリダイレクトします。</body>
-</html>
 @z

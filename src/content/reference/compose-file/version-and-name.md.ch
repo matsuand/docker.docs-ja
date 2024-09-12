@@ -88,7 +88,7 @@ services:
 @z
 
 @x
-For more information on other ways to name Compose projects, see [Specify a project name](/compose/project-name.md).
+For more information on other ways to name Compose projects, see [Specify a project name](/manuals/compose/project-name.md).
 @y
-For more information on other ways to name Compose projects, see [Specify a project name](compose/project-name.md).
+For more information on other ways to name Compose projects, see [Specify a project name](manuals/compose/project-name.md).
 @z

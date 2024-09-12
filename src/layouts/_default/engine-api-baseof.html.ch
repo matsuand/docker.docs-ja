@@ -14,14 +14,18 @@
 @x
 <head>
     <title>Docker Engine API {{ .File.BaseFileName }} Reference</title>
+@y
+<head>
+    <title>Docker Engine API {{ .File.BaseFileName }} リファレンス</title>
+@z
+
+@x
     <!-- needed for adaptive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="Reference documentation and Swagger (OpenAPI) specification for the {{ .File.BaseFileName }} version of the API served by Docker Engine." />
     <meta charset="utf-8" />
 @y
-<head>
-    <title>Docker Engine API {{ .File.BaseFileName }} リファレンス</title>
     <!-- needed for adaptive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
@@ -30,9 +34,9 @@
 @z
 
 @x
-    <link rel="canonical" href="{{ site.BaseURL }}/reference/api/engine/v{{ site.Params.latest_engine_api_version }}/" />
+    <link rel="canonical" href="{{ site.BaseURL }}/reference/api/engine/version/v{{ site.Params.latest_engine_api_version }}/" />
 @y
-    <link rel="canonical" href="__SUBDIR__/reference/api/engine/v{{ site.Params.latest_engine_api_version }}/" />
+    <link rel="canonical" href="__SUBDIR__/reference/api/engine/version/v{{ site.Params.latest_engine_api_version }}/" />
 @z
 
 @x

@@ -972,9 +972,9 @@ $ docker run --rm -p 8889:8888 YOUR-USER-NAME/my-jupyer-image start-notebook.py 
 @z
 
 @x
-This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/docker-hub/oci-artifacts/#push-a-volume).
+This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/manuals/docker-hub/oci-artifacts.md#push-a-volume).
 @y
-This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](__SUBDIR__/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](__SUBDIR__/docker-hub/oci-artifacts/#push-a-volume).
+This example uses the Docker Desktop [Volumes Backup & Share](https://hub.docker.com/extensions/docker/volumes-backup-extension) extension. Alternatively, in the CLI you can [back up the volume](__SUBDIR__/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](manuals/docker-hub/oci-artifacts.md#push-a-volume).
 @z
 
 @x

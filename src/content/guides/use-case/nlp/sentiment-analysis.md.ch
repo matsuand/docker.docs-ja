@@ -4,13 +4,19 @@
 % __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
+---
 title: Build a sentiment analysis app
+linkTitle: Sentiment analysis
 keywords: nlp, natural language processing, sentiment analysis, python, nltk
 description: Learn how to build and run a sentiment analysis application using Python, NLTK, and Docker.
+---
 @y
+---
 title: Build a sentiment analysis app
+linkTitle: Sentiment analysis
 keywords: nlp, natural language processing, sentiment analysis, python, nltk
 description: Learn how to build and run a sentiment analysis application using Python, NLTK, and Docker.
+---
 @z
 
 @x

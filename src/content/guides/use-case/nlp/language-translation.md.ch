@@ -5,10 +5,12 @@
 
 @x
 title: Build a language translation app
+linkTitle: Language translation
 keywords: nlp, natural language processing, text summarization, python, language translation, googletrans
 description: Learn how to build and run a language translation application using Python, Googletrans, and Docker.
 @y
 title: Build a language translation app
+linkTitle: Language translation
 keywords: nlp, natural language processing, text summarization, python, language translation, googletrans
 description: Learn how to build and run a language translation application using Python, Googletrans, and Docker.
 @z

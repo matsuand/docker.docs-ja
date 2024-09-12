@@ -5,12 +5,16 @@
 
 @x
 title: Share the application
+@y
+title: アプリケーションの共有
+@z
+
+@x
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop, docker hub, sharing
 description: Sharing your image you built for your example application so you can
   run it else where and other developers can use it
 @y
-title: アプリケーションの共有
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop, docker hub, sharing
 description: Sharing your image you built for your example application so you can
@@ -203,7 +207,7 @@ new instance that has never seen this container image. To do this, you will use 
 > $ docker build --platform linux/amd64 -t YOUR-USER-NAME/getting-started .
 > ```
 >
-> Docker buildx also supports building multi-platform images. To learn more, see [Multi-platform images](/build/building/multi-platform.md).
+> Docker buildx also supports building multi-platform images. To learn more, see [Multi-platform images](/manuals/build/building/multi-platform.md).
 @y
 > [!NOTE]
 >
@@ -216,7 +220,7 @@ new instance that has never seen this container image. To do this, you will use 
 > ```
 >
 > Docker buildx ではマルチプラットフォームのビルドをサポートしています。
-> 詳しくは [マルチプラットフォームイメージ](build/building/multi-platform.md) を参照してください。
+> 詳しくは [マルチプラットフォームイメージ](manuals/build/building/multi-platform.md) を参照してください。
 @z
 
 @x
@@ -257,15 +261,7 @@ new instance that has never seen this container image. To do this, you will use 
 5. 端末ウィンドウにて、プッシュしたばかりのアプリを起動します。
 @z
 
-@x
-   ```console
-   $ docker run -dp 0.0.0.0:3000:3000 YOUR-USER-NAME/getting-started
-   ```
-@y
-   ```console
-   $ docker run -dp 0.0.0.0:3000:3000 YOUR-USER-NAME/getting-started
-   ```
-@z
+% snip command...
 
 @x
     You should see the image get pulled down and eventually start up.
@@ -285,7 +281,7 @@ new instance that has never seen this container image. To do this, you will use 
     > on all interfaces of the host, making it available to the outside world.
     >
     > For more information about how port mapping works, see
-    > [Networking](/engine/network/_index.md#published-ports).
+    > [Networking](/manuals/engine/network/_index.md#published-ports).
 @y
     > [!TIP]
     >
@@ -297,7 +293,7 @@ new instance that has never seen this container image. To do this, you will use 
     > 一方で `0.0.0.0` へのバインディングは、コンテナーのポートが全インターフェースにバインドすることができます。
     > この場合は外部への接続が可能となります。
     >
-    > ポートマッピングが動作する様子に関しての詳細は [ネットワーク処理](engine/network/_index.md#published-ports) を参照してください。
+    > ポートマッピングが動作する様子に関しての詳細は [ネットワーク処理](manuals/engine/network/_index.md#published-ports) を参照してください。
 @z
 
 @x
@@ -339,12 +335,12 @@ Related information:
 
 @x
  - [docker CLI reference](/reference/cli/docker/)
- - [Multi-platform images](/build/building/multi-platform.md)
- - [Docker Hub overview](/docker-hub/_index.md)
+ - [Multi-platform images](/manuals/build/building/multi-platform.md)
+ - [Docker Hub overview](/manuals/docker-hub/_index.md)
 @y
  - [Docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [マルチプラットフォームイメージ](build/building/multi-platform.md)
- - [Docker Hub 概要](docker-hub/_index.md)
+ - [マルチプラットフォームイメージ](manuals/build/building/multi-platform.md)
+ - [Docker Hub 概要](manuals/docker-hub/_index.md)
 @z
 
 @x

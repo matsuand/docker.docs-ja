@@ -3,20 +3,13 @@
 
 @x
 ---
+title: PDF analysis and chat
 description: Containerize generative AI (GenAI) apps using Docker
 keywords:  python, generative ai, genai, llm, neo4j, ollama, langchain
-title: Generative AI guide
-toc_min: 1
-toc_max: 2
----
 @y
----
-description: Docker を使って 生成 AI (generative AI; GenAI) をコンテナー化します。
+title: PDF analysis and chat
+description: Containerize generative AI (GenAI) apps using Docker
 keywords:  python, generative ai, genai, llm, neo4j, ollama, langchain
-title: 生成 AI ガイド
-toc_min: 1
-toc_max: 2
----
 @z
 
 @x

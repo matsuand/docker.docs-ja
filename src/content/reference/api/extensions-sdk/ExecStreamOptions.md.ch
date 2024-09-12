@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: ExecStreamOptions"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases: 
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: ExecStreamOptions"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases: 
  - /desktop/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/ExecStreamOptions/
 ---
-@z
-
-@x
-# Interface: ExecStreamOptions
-@y
-# Interface: ExecStreamOptions
 @z
 
 @x

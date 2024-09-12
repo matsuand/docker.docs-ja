@@ -1,15 +1,19 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / md リン クへの (no slash) 対応
+
 @x
 ---
 title: Build a text summarization app
+linkTitle: Text summarization
 keywords: nlp, natural language processing, text summarization, python, bert extractive summarizer
 description: Learn how to build and run a text summarization application using Python, Bert Extractive Summarizer, and Docker.
 ---
 @y
 ---
 title: Build a text summarization app
+linkTitle: Text summarization
 keywords: nlp, natural language processing, text summarization, python, bert extractive summarizer
 description: Learn how to build and run a text summarization application using Python, Bert Extractive Summarizer, and Docker.
 ---

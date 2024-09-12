@@ -5,11 +5,15 @@
 
 @x
 title: Update the application
+@y
+title: アプリケーションの更新
+@z
+
+@x
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making changes to your application
 @y
-title: アプリケーションの更新
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: アプリケーションに変更を加えます。

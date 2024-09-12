@@ -43,8 +43,8 @@ The top-level `configs` declaration defines or references configuration data tha
 
 @x
 - `file`: The config is created with the contents of the file at the specified path.
-- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](/compose/release-notes.md#2231).
-- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](/compose/release-notes.md#2231).
+- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](/manuals/compose/release-notes.md#2231).
+- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](/manuals/compose/release-notes.md#2231).
 - `external`: If set to true, `external` specifies that this config has already been created. Compose does not
   attempt to create it, and if it does not exist, an error occurs.
 - `name`: The name of the config object in the container engine to look up. This field can be used to
@@ -52,8 +52,8 @@ The top-level `configs` declaration defines or references configuration data tha
   and will **not** be scoped with the project name.
 @y
 - `file`: The config is created with the contents of the file at the specified path.
-- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](compose/release-notes.md#2231).
-- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](compose/release-notes.md#2231).
+- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](manuals/compose/release-notes.md#2231).
+- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](manuals/compose/release-notes.md#2231).
 - `external`: If set to true, `external` specifies that this config has already been created. Compose does not
   attempt to create it, and if it does not exist, an error occurs.
 - `name`: The name of the config object in the container engine to look up. This field can be used to

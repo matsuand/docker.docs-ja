@@ -5,11 +5,15 @@
 
 @x
 title: Multi container apps
+@y
+title: マルチコンテナーアプリ
+@z
+
+@x
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using more than one container in your application
 @y
-title: マルチコンテナーアプリ
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using more than one container in your application
@@ -464,11 +468,11 @@ container. You learned a little bit about container networking and service disco
 @x
 Related information:
  - [docker CLI reference](/reference/cli/docker/)
- - [Networking overview](/engine/network/_index.md)
+ - [Networking overview](/manuals/engine/network/_index.md)
 @y
 関連情報
  - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
- - [Networking 概要](engine/network/_index.md)
+ - [Networking 概要](manuals/engine/network/_index.md)
 @z
 
 @x

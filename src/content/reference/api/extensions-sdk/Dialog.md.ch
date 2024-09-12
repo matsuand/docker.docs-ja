@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: Dialog"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: Dialog"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/Dialog/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/Dialog/
 ---
-@z
-
-@x
-# Interface: Dialog
-@y
-# Interface: Dialog
 @z
 
 @x

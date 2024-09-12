@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: ExecProcess"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: ExecProcess"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/ExecProcess/
 ---
-@z
-
-@x
-# Interface: ExecProcess
-@y
-# Interface: ExecProcess
 @z
 
 @x

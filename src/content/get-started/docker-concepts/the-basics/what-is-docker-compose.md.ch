@@ -5,10 +5,14 @@
 
 @x
 title: What is Docker Compose?
+@y
+title: What is Docker Compose?
+@z
+
+@x
 keywords: concepts, build, images, container, docker desktop
 description: What is Docker Compose?
 @y
-title: What is Docker Compose?
 keywords: concepts, build, images, container, docker desktop
 description: What is Docker Compose?
 @z

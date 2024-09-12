@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	_index.md        \
 	kube-deploy.md   \
 	orchestration.md \
 	swarm-deploy.md

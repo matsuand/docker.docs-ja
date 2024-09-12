@@ -64,111 +64,9 @@ AC_CONFIG_FILES([
 	src/assets/js/Makefile
 	src/assets/js/src/Makefile
 	src/content/Makefile
-	src/content/accounts/Makefile
-	src/content/admin/Makefile
-	src/content/admin/company/Makefile
-	src/content/admin/faqs/Makefile
-	src/content/admin/images/Makefile
-	src/content/admin/organization/Makefile
-	src/content/billing/Makefile
-	src/content/billing/core-billing/Makefile
-	src/content/build/Makefile
-	src/content/build/bake/Makefile
-	src/content/build/builders/Makefile
-	src/content/build/builders/drivers/Makefile
-	src/content/build/building/Makefile
-	src/content/build/buildkit/Makefile
-	src/content/build/cache/Makefile
-	src/content/build/cache/backends/Makefile
-	src/content/build/ci/Makefile
-	src/content/build/ci/github-actions/Makefile
-	src/content/build/ci/github-actions/images/Makefile
-	src/content/build/ci/images/Makefile
-	src/content/build/concepts/Makefile
-	src/content/build/exporters/Makefile
-	src/content/build/images/Makefile
-	src/content/build/metadata/Makefile
-	src/content/build/metadata/attestations/Makefile
-	src/content/build-cloud/Makefile
-	src/content/cloud/Makefile
-	src/content/compose/Makefile
-	src/content/compose/bridge/Makefile
-	src/content/compose/environment-variables/Makefile
-	src/content/compose/images/Makefile
-	src/content/compose/install/Makefile
-	src/content/compose/intro/Makefile
-	src/content/compose/multiple-compose-files/Makefile
 	src/content/contribute/Makefile
 	src/content/contribute/components/Makefile
 	src/content/contribute/style/Makefile
-	src/content/copilot/Makefile
-	src/content/desktop/Makefile
-	src/content/desktop/dev-environments/Makefile
-	src/content/desktop/enterprise/Makefile
-	src/content/desktop/faqs/Makefile
-	src/content/desktop/images/Makefile
-	src/content/desktop/install/Makefile
-	src/content/desktop/install/images/Makefile
-	src/content/desktop/install/msi/Makefile
-	src/content/desktop/linux/Makefile
-	src/content/desktop/linux/images/Makefile
-	src/content/desktop/linux/images/menu/Makefile
-	src/content/desktop/mac/Makefile
-	src/content/desktop/mac/images/Makefile
-	src/content/desktop/mac/images/menu/Makefile
-	src/content/desktop/previous-versions/Makefile
-	src/content/desktop/settings/Makefile
-	src/content/desktop/troubleshoot/Makefile
-	src/content/desktop/use-desktop/Makefile
-	src/content/desktop/windows/Makefile
-	src/content/desktop/windows/images/Makefile
-	src/content/desktop/wsl/Makefile
-	src/content/docker-hub/Makefile
-	src/content/docker-hub/builds/Makefile
-	src/content/docker-hub/builds/images/Makefile
-	src/content/docker-hub/images/Makefile
-	src/content/docker-hub/repos/Makefile
-	src/content/engine/Makefile
-	src/content/engine/cli/Makefile
-	src/content/engine/containers/Makefile
-	src/content/engine/daemon/Makefile
-	src/content/engine/daemon/images/Makefile
-	src/content/engine/install/Makefile
-	src/content/engine/logging/Makefile
-	src/content/engine/logging/drivers/Makefile
-	src/content/engine/manage-resources/Makefile
-	src/content/engine/network/Makefile
-	src/content/engine/network/drivers/Makefile
-	src/content/engine/network/drivers/images/Makefile
-	src/content/engine/network/tutorials/Makefile
-	src/content/engine/release-notes/Makefile
-	src/content/engine/security/Makefile
-	src/content/engine/security/https/Makefile
-	src/content/engine/security/trust/Makefile
-	src/content/engine/security/trust/images/Makefile
-	src/content/engine/storage/Makefile
-	src/content/engine/storage/drivers/Makefile
-	src/content/engine/storage/drivers/images/Makefile
-	src/content/engine/storage/images/Makefile
-	src/content/engine/swarm/Makefile
-	src/content/engine/swarm/how-swarm-mode-works/Makefile
-	src/content/engine/swarm/images/Makefile
-	src/content/engine/swarm/swarm-tutorial/Makefile
-	src/content/engine/tutorials/Makefile
-	src/content/extensions/Makefile
-	src/content/extensions/extensions-sdk/Makefile
-	src/content/extensions/extensions-sdk/architecture/Makefile
-	src/content/extensions/extensions-sdk/architecture/images/Makefile
-	src/content/extensions/extensions-sdk/build/Makefile
-	src/content/extensions/extensions-sdk/build/images/Makefile
-	src/content/extensions/extensions-sdk/design/Makefile
-	src/content/extensions/extensions-sdk/design/images/Makefile
-	src/content/extensions/extensions-sdk/dev/Makefile
-	src/content/extensions/extensions-sdk/dev/api/Makefile
-	src/content/extensions/extensions-sdk/extensions/Makefile
-	src/content/extensions/extensions-sdk/extensions/images/Makefile
-	src/content/extensions/extensions-sdk/guides/Makefile
-	src/content/extensions/extensions-sdk/guides/images/Makefile
 	src/content/get-started/Makefile
 	src/content/get-started/docker-concepts/Makefile
 	src/content/get-started/docker-concepts/building-images/Makefile
@@ -184,6 +82,19 @@ AC_CONFIG_FILES([
 	src/content/get-started/workshop/images/Makefile
 	src/content/guides/Makefile
 	src/content/guides/deployment-orchestration/Makefile
+	src/content/guides/language/Makefile
+	src/content/guides/language/cpp/Makefile
+	src/content/guides/language/dotnet/Makefile
+	src/content/guides/language/golang/Makefile
+	src/content/guides/language/images/Makefile
+	src/content/guides/language/java/Makefile
+	src/content/guides/language/java/images/Makefile
+	src/content/guides/language/nodejs/Makefile
+	src/content/guides/language/php/Makefile
+	src/content/guides/language/python/Makefile
+	src/content/guides/language/r/Makefile
+	src/content/guides/language/ruby/Makefile
+	src/content/guides/language/rust/Makefile
 	src/content/guides/use-case/Makefile
 	src/content/guides/use-case/genai-pdf-bot/Makefile
 	src/content/guides/use-case/genai-video-bot/Makefile
@@ -192,25 +103,157 @@ AC_CONFIG_FILES([
 	src/content/guides/use-case/nlp/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
-	src/content/language/Makefile
-	src/content/language/cpp/Makefile
-	src/content/language/dotnet/Makefile
-	src/content/language/golang/Makefile
-	src/content/language/images/Makefile
-	src/content/language/java/Makefile
-	src/content/language/java/images/Makefile
-	src/content/language/nodejs/Makefile
-	src/content/language/php/Makefile
-	src/content/language/python/Makefile
-	src/content/language/r/Makefile
-	src/content/language/ruby/Makefile
-	src/content/language/rust/Makefile
 	src/content/learning-paths/Makefile
+	src/content/manuals/Makefile
+	src/content/manuals/accounts/Makefile
+	src/content/manuals/admin/Makefile
+	src/content/manuals/admin/company/Makefile
+	src/content/manuals/admin/faqs/Makefile
+	src/content/manuals/admin/images/Makefile
+	src/content/manuals/admin/organization/Makefile
+	src/content/manuals/billing/Makefile
+	src/content/manuals/billing/core-billing/Makefile
+	src/content/manuals/build/Makefile
+	src/content/manuals/build/bake/Makefile
+	src/content/manuals/build/builders/Makefile
+	src/content/manuals/build/builders/drivers/Makefile
+	src/content/manuals/build/building/Makefile
+	src/content/manuals/build/buildkit/Makefile
+	src/content/manuals/build/cache/Makefile
+	src/content/manuals/build/cache/backends/Makefile
+	src/content/manuals/build/ci/Makefile
+	src/content/manuals/build/ci/github-actions/Makefile
+	src/content/manuals/build/ci/github-actions/images/Makefile
+	src/content/manuals/build/ci/images/Makefile
+	src/content/manuals/build/concepts/Makefile
+	src/content/manuals/build/debug/Makefile
+	src/content/manuals/build/exporters/Makefile
+	src/content/manuals/build/images/Makefile
+	src/content/manuals/build/metadata/Makefile
+	src/content/manuals/build/metadata/attestations/Makefile
+	src/content/manuals/build-cloud/Makefile
+	src/content/manuals/cloud/Makefile
+	src/content/manuals/compose/Makefile
+	src/content/manuals/compose/bridge/Makefile
+	src/content/manuals/compose/environment-variables/Makefile
+	src/content/manuals/compose/images/Makefile
+	src/content/manuals/compose/install/Makefile
+	src/content/manuals/compose/intro/Makefile
+	src/content/manuals/compose/multiple-compose-files/Makefile
+	src/content/manuals/copilot/Makefile
+	src/content/manuals/desktop/Makefile
+	src/content/manuals/desktop/dev-environments/Makefile
+	src/content/manuals/desktop/enterprise/Makefile
+	src/content/manuals/desktop/faqs/Makefile
+	src/content/manuals/desktop/images/Makefile
+	src/content/manuals/desktop/install/Makefile
+	src/content/manuals/desktop/install/images/Makefile
+	src/content/manuals/desktop/install/msi/Makefile
+	src/content/manuals/desktop/linux/Makefile
+	src/content/manuals/desktop/linux/images/Makefile
+	src/content/manuals/desktop/linux/images/menu/Makefile
+	src/content/manuals/desktop/mac/Makefile
+	src/content/manuals/desktop/mac/images/Makefile
+	src/content/manuals/desktop/mac/images/menu/Makefile
+	src/content/manuals/desktop/previous-versions/Makefile
+	src/content/manuals/desktop/settings/Makefile
+	src/content/manuals/desktop/troubleshoot/Makefile
+	src/content/manuals/desktop/use-desktop/Makefile
+	src/content/manuals/desktop/windows/Makefile
+	src/content/manuals/desktop/windows/images/Makefile
+	src/content/manuals/desktop/wsl/Makefile
+	src/content/manuals/docker-hub/Makefile
+	src/content/manuals/docker-hub/builds/Makefile
+	src/content/manuals/docker-hub/builds/images/Makefile
+	src/content/manuals/docker-hub/images/Makefile
+	src/content/manuals/docker-hub/repos/Makefile
+	src/content/manuals/engine/Makefile
+	src/content/manuals/engine/cli/Makefile
+	src/content/manuals/engine/containers/Makefile
+	src/content/manuals/engine/daemon/Makefile
+	src/content/manuals/engine/daemon/images/Makefile
+	src/content/manuals/engine/install/Makefile
+	src/content/manuals/engine/logging/Makefile
+	src/content/manuals/engine/logging/drivers/Makefile
+	src/content/manuals/engine/manage-resources/Makefile
+	src/content/manuals/engine/network/Makefile
+	src/content/manuals/engine/network/drivers/Makefile
+	src/content/manuals/engine/network/drivers/images/Makefile
+	src/content/manuals/engine/network/tutorials/Makefile
+	src/content/manuals/engine/release-notes/Makefile
+	src/content/manuals/engine/security/Makefile
+	src/content/manuals/engine/security/https/Makefile
+	src/content/manuals/engine/security/trust/Makefile
+	src/content/manuals/engine/security/trust/images/Makefile
+	src/content/manuals/engine/storage/Makefile
+	src/content/manuals/engine/storage/drivers/Makefile
+	src/content/manuals/engine/storage/drivers/images/Makefile
+	src/content/manuals/engine/storage/images/Makefile
+	src/content/manuals/engine/swarm/Makefile
+	src/content/manuals/engine/swarm/how-swarm-mode-works/Makefile
+	src/content/manuals/engine/swarm/images/Makefile
+	src/content/manuals/engine/swarm/swarm-tutorial/Makefile
+	src/content/manuals/extensions/Makefile
+	src/content/manuals/extensions/extensions-sdk/Makefile
+	src/content/manuals/extensions/extensions-sdk/architecture/Makefile
+	src/content/manuals/extensions/extensions-sdk/architecture/images/Makefile
+	src/content/manuals/extensions/extensions-sdk/build/Makefile
+	src/content/manuals/extensions/extensions-sdk/build/images/Makefile
+	src/content/manuals/extensions/extensions-sdk/design/Makefile
+	src/content/manuals/extensions/extensions-sdk/design/images/Makefile
+	src/content/manuals/extensions/extensions-sdk/dev/Makefile
+	src/content/manuals/extensions/extensions-sdk/dev/api/Makefile
+	src/content/manuals/extensions/extensions-sdk/extensions/Makefile
+	src/content/manuals/extensions/extensions-sdk/extensions/images/Makefile
+	src/content/manuals/extensions/extensions-sdk/guides/Makefile
+	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
+	src/content/manuals/run-cloud/Makefile
+	src/content/manuals/scout/Makefile
+	src/content/manuals/scout/concepts/Makefile
+	src/content/manuals/scout/deep-dive/Makefile
+	src/content/manuals/scout/explore/Makefile
+	src/content/manuals/scout/how-tos/Makefile
+	src/content/manuals/scout/images/Makefile
+	src/content/manuals/scout/images/release-notes/Makefile
+	src/content/manuals/scout/integrations/Makefile
+	src/content/manuals/scout/integrations/ci/Makefile
+	src/content/manuals/scout/integrations/code-quality/Makefile
+	src/content/manuals/scout/integrations/environment/Makefile
+	src/content/manuals/scout/integrations/registry/Makefile
+	src/content/manuals/scout/integrations/source-code-management/Makefile
+	src/content/manuals/scout/integrations/team-collaboration/Makefile
+	src/content/manuals/scout/policy/Makefile
+	src/content/manuals/scout/release-notes/Makefile
+	src/content/manuals/security/Makefile
+	src/content/manuals/security/faqs/Makefile
+	src/content/manuals/security/faqs/single-sign-on/Makefile
+	src/content/manuals/security/for-admins/Makefile
+	src/content/manuals/security/for-admins/enforce-sign-in/Makefile
+	src/content/manuals/security/for-admins/hardened-desktop/Makefile
+	src/content/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/Makefile
+	src/content/manuals/security/for-admins/hardened-desktop/settings-management/Makefile
+	src/content/manuals/security/for-admins/provisioning/Makefile
+	src/content/manuals/security/for-admins/single-sign-on/Makefile
+	src/content/manuals/security/for-admins/single-sign-on/configure/Makefile
+	src/content/manuals/security/for-admins/single-sign-on/connect/Makefile
+	src/content/manuals/security/for-admins/single-sign-on/images/Makefile
+	src/content/manuals/security/for-admins/single-sign-on/manage/Makefile
+	src/content/manuals/security/for-developers/Makefile
+	src/content/manuals/security/for-developers/2fa/Makefile
+	src/content/manuals/security/images/Makefile
+	src/content/manuals/subscription/Makefile
+	src/content/manuals/subscription/build-cloud/Makefile
+	src/content/manuals/subscription/core-subscription/Makefile
+	src/content/manuals/subscription/images/Makefile
+	src/content/manuals/trusted-content/Makefile
+	src/content/manuals/trusted-content/images/Makefile
+	src/content/manuals/trusted-content/official-images/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/engine/Makefile
 	src/content/reference/api/engine/latest/Makefile
 	src/content/reference/api/engine/sdk/Makefile
+	src/content/reference/api/engine/version/Makefile
 	src/content/reference/api/extensions-sdk/Makefile
 	src/content/reference/api/hub/Makefile
 	src/content/reference/cli/Makefile
@@ -245,54 +288,13 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/trust/signer/Makefile
 	src/content/reference/cli/docker/volume/Makefile
 	src/content/reference/compose-file/Makefile
-	src/content/run-cloud/Makefile
 	src/content/samples/Makefile
-	src/content/scout/Makefile
-	src/content/scout/concepts/Makefile
-	src/content/scout/deep-dive/Makefile
-	src/content/scout/explore/Makefile
-	src/content/scout/how-tos/Makefile
-	src/content/scout/images/Makefile
-	src/content/scout/images/release-notes/Makefile
-	src/content/scout/integrations/Makefile
-	src/content/scout/integrations/ci/Makefile
-	src/content/scout/integrations/code-quality/Makefile
-	src/content/scout/integrations/environment/Makefile
-	src/content/scout/integrations/registry/Makefile
-	src/content/scout/integrations/source-code-management/Makefile
-	src/content/scout/integrations/team-collaboration/Makefile
-	src/content/scout/policy/Makefile
-	src/content/scout/release-notes/Makefile
-	src/content/security/Makefile
-	src/content/security/faqs/Makefile
-	src/content/security/faqs/single-sign-on/Makefile
-	src/content/security/for-admins/Makefile
-	src/content/security/for-admins/enforce-sign-in/Makefile
-	src/content/security/for-admins/hardened-desktop/Makefile
-	src/content/security/for-admins/hardened-desktop/enhanced-container-isolation/Makefile
-	src/content/security/for-admins/hardened-desktop/settings-management/Makefile
-	src/content/security/for-admins/provisioning/Makefile
-	src/content/security/for-admins/single-sign-on/Makefile
-	src/content/security/for-admins/single-sign-on/configure/Makefile
-	src/content/security/for-admins/single-sign-on/connect/Makefile
-	src/content/security/for-admins/single-sign-on/images/Makefile
-	src/content/security/for-admins/single-sign-on/manage/Makefile
-	src/content/security/for-developers/Makefile
-	src/content/security/for-developers/2fa/Makefile
-	src/content/security/images/Makefile
-	src/content/subscription/Makefile
-	src/content/subscription/build-cloud/Makefile
-	src/content/subscription/core-subscription/Makefile
-	src/content/subscription/images/Makefile
 	src/content/tags/Makefile
 	src/content/tags/best-practices/Makefile
 	src/content/tags/faq/Makefile
 	src/content/tags/release-notes/Makefile
 	src/content/tags/secrets/Makefile
 	src/content/tags/troubleshooting/Makefile
-	src/content/trusted-content/Makefile
-	src/content/trusted-content/images/Makefile
-	src/content/trusted-content/official-images/Makefile
 	src/data/Makefile
 	src/data/buildx/Makefile
 	src/data/debug-cli/Makefile

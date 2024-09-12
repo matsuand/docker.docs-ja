@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: DesktopUI"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: DesktopUI"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/DesktopUI/
 ---
-@z
-
-@x
-# Interface: DesktopUI
-@y
-# Interface: DesktopUI
 @z
 
 @x

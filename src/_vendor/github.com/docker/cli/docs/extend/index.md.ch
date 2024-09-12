@@ -4,6 +4,7 @@
 @x
 ---
 title: Docker Engine managed plugin system
+linkTitle: Docker Engine plugins
 description: Develop and use a plugin with the managed plugin system
 keywords: "API, Usage, plugins, documentation, developer"
 aliases:
@@ -12,6 +13,7 @@ aliases:
 @y
 ---
 title: Docker Engine managed plugin system
+linkTitle: Docker Engine plugins
 description: Develop and use a plugin with the managed plugin system
 keywords: "API, Usage, plugins, documentation, developer"
 aliases:

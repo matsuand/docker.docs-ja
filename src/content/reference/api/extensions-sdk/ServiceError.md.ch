@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: ServiceError"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: ServiceError"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/ServiceError/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/ServiceError/
 ---
-@z
-
-@x
-# Interface: ServiceError
-@y
-# Interface: ServiceError
 @z
 
 @x

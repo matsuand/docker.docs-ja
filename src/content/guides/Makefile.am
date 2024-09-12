@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = deployment-orchestration use-case
+SUBDIRS = deployment-orchestration language use-case
 
 bases = \
 	_index.md          \

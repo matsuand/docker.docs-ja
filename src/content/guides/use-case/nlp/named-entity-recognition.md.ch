@@ -4,13 +4,19 @@
 % __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
 
 @x
+---
 title: Build a named entity recognition app
+linkTitle: Named entity recognition
 keywords: nlp, natural language processing, named entity recognition, python, spacy, ner
 description: Learn how to build and run a named entity recognition application using Python, spaCy, and Docker.
+---
 @y
+---
 title: Build a named entity recognition app
+linkTitle: Named entity recognition
 keywords: nlp, natural language processing, named entity recognition, python, spacy, ner
 description: Learn how to build and run a named entity recognition application using Python, spaCy, and Docker.
+---
 @z
 
 @x

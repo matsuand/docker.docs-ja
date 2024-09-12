@@ -5,10 +5,14 @@
 
 @x
 title: Use-case guides
+@y
+title: Use-case guides
+@z
+
+@x
 keywords: guide, use-case
 description: Learn how to accomplish tasks with Docker.
 @y
-title: Use-case guides
 keywords: guide, use-case
 description: Learn how to accomplish tasks with Docker.
 @z

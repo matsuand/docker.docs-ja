@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: NavigationIntents"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: NavigationIntents"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
 ---
-@z
-
-@x
-# Interface: NavigationIntents
-@y
-# Interface: NavigationIntents
 @z
 
 @x

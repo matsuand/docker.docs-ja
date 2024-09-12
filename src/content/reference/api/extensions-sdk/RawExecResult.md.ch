@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: RawExecResult"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: RawExecResult"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/RawExecResult/
 ---
-@z
-
-@x
-# Interface: RawExecResult
-@y
-# Interface: RawExecResult
 @z
 
 @x

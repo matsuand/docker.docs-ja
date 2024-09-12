@@ -3,6 +3,7 @@
 
 @x
 ---
+title: "Interface: ExecResultV0"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
@@ -11,18 +12,13 @@ aliases:
 ---
 @y
 ---
+title: "Interface: ExecResultV0"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
 aliases:
  - /desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
  - /extensions/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/
 ---
-@z
-
-@x
-# Interface: ExecResultV0
-@y
-# Interface: ExecResultV0
 @z
 
 @x

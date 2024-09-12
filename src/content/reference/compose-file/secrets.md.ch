@@ -104,7 +104,7 @@ secrets:
 @z
 
 @x
-For more information, see [How to use secrets in Compose](/compose/use-secrets.md).
+For more information, see [How to use secrets in Compose](/manuals/compose/use-secrets.md).
 @y
-For more information, see [How to use secrets in Compose](compose/use-secrets.md).
+For more information, see [How to use secrets in Compose](manuals/compose/use-secrets.md).
 @z

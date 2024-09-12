@@ -274,15 +274,15 @@ Further documentation for all new Swarm objects and CLI commands used in this ar
 @z
 
 @x
- - [Swarm Mode](/engine/swarm/_index.md)
- - [Swarm Mode Services](/engine/swarm/how-swarm-mode-works/services.md)
- - [Swarm Stacks](/engine/swarm/stack-deploy.md)
+ - [Swarm Mode](/manuals/engine/swarm/_index.md)
+ - [Swarm Mode Services](/manuals/engine/swarm/how-swarm-mode-works/services.md)
+ - [Swarm Stacks](/manuals/engine/swarm/stack-deploy.md)
  - [`docker stack *`](/reference/cli/docker/stack/)
  - [`docker service *`](/reference/cli/docker/service/)
 @y
- - [Swarm Mode](engine/swarm/_index.md)
- - [Swarm Mode Services](engine/swarm/how-swarm-mode-works/services.md)
- - [Swarm Stacks](engine/swarm/stack-deploy.md)
- - [`docker stack *`](__SUBDIR__/reference/cli/docker/stack/)
+ - [Swarm Mode](manuals/engine/swarm/_index.md)
+ - [Swarm Mode Services](manuals/engine/swarm/how-swarm-mode-works/services.md)
+ - [Swarm Stacks](manuals/engine/swarm/stack-deploy.md)
+ - [`docker stack *`](__SUBDIR__reference/cli/docker/stack/)
  - [`docker service *`](__SUBDIR__/reference/cli/docker/service/)
 @z

@@ -2,6 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
+	_index.md     \
 	deprecated.md \
 	dvp.md        \
 	latest.md

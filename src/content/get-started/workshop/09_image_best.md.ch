@@ -5,11 +5,15 @@
 
 @x
 title: Image-building best practices
+@y
+title: イメージビルドのベストプラクティス
+@z
+
+@x
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Tips for building images for your application
 @y
-title: イメージビルドのベストプラクティス
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Tips for building images for your application
@@ -249,11 +253,11 @@ In this section, you learned a few image building best practices, including laye
 @x
 Related information:
  - [Dockerfile reference](/reference/dockerfile/)
- - [Dockerfile best practices](/build/building/best-practices.md)
+ - [Dockerfile best practices](/manuals/build/building/best-practices.md)
 @y
 関連情報
  - [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
- - [Dockerfile ベストプラクティス](build/building/best-practices.md)
+ - [Dockerfile ベストプラクティス](manuals/build/building/best-practices.md)
 @z
 
 @x
