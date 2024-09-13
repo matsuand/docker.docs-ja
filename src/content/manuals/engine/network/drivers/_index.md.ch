@@ -104,10 +104,10 @@ exist by default, and provide core networking functionality:
 @z
 
 @x
-- [Network plugins](/engine/extend/plugins_services/): You can install and use
+- [Network plugins](/engine/extend/plugins_network/): You can install and use
   third-party network plugins with Docker.
 @y
-- [Network plugins](__SUBDIR__/engine/extend/plugins_services/): You can install and use
+- [Network plugins](__SUBDIR__/engine/extend/plugins_network/): You can install and use
   third-party network plugins with Docker.
 @z
 

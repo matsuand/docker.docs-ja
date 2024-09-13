@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: Extension release process
+title: "Part two: Publish"
 description: General steps in how to publish an extension
 keywords: Docker, Extensions, sdk, publish
-aliases: 
- - /desktop/extensions-sdk/extensions/
----
 @y
----
-title: Extension release process
+title: "Part two: Publish"
 description: General steps in how to publish an extension
 keywords: Docker, Extensions, sdk, publish
-aliases: 
- - /desktop/extensions-sdk/extensions/
----
 @z
 
 @x

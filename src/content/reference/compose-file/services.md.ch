@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リン クへの (no slash) 対応
+% snip 対応
 
 @x
 title: Services top-level elements
@@ -4137,37 +4138,7 @@ to `103`. The value of `server-certificate` is set
 to the contents of the file `./server.cert`.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    secrets:
-      - source: server-certificate
-        target: server.cert
-        uid: "103"
-        gid: "103"
-        mode: 0440
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    secrets:
-      - source: server-certificate
-        target: server.cert
-        uid: "103"
-        gid: "103"
-        mode: 0440
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@z
+% snip code...
 
 @x
 ### security_opt

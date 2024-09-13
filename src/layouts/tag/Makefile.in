@@ -238,7 +238,6 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	baseof.html   \
 	taxonomy.html \
 	term.html
 

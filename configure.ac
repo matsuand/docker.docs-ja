@@ -101,6 +101,7 @@ AC_CONFIG_FILES([
 	src/content/guides/use-case/genai-video-bot/images/Makefile
 	src/content/guides/use-case/images/Makefile
 	src/content/guides/use-case/nlp/Makefile
+	src/content/guides/use-case/rag-ollama/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/learning-paths/Makefile
@@ -148,19 +149,11 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/images/Makefile
 	src/content/manuals/desktop/install/Makefile
 	src/content/manuals/desktop/install/images/Makefile
+	src/content/manuals/desktop/install/linux/Makefile
 	src/content/manuals/desktop/install/msi/Makefile
-	src/content/manuals/desktop/linux/Makefile
-	src/content/manuals/desktop/linux/images/Makefile
-	src/content/manuals/desktop/linux/images/menu/Makefile
-	src/content/manuals/desktop/mac/Makefile
-	src/content/manuals/desktop/mac/images/Makefile
-	src/content/manuals/desktop/mac/images/menu/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile
-	src/content/manuals/desktop/settings/Makefile
 	src/content/manuals/desktop/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
-	src/content/manuals/desktop/windows/Makefile
-	src/content/manuals/desktop/windows/images/Makefile
 	src/content/manuals/desktop/wsl/Makefile
 	src/content/manuals/docker-hub/Makefile
 	src/content/manuals/docker-hub/builds/Makefile
@@ -251,7 +244,6 @@ AC_CONFIG_FILES([
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/engine/Makefile
-	src/content/reference/api/engine/latest/Makefile
 	src/content/reference/api/engine/sdk/Makefile
 	src/content/reference/api/engine/version/Makefile
 	src/content/reference/api/extensions-sdk/Makefile

@@ -102,15 +102,9 @@ syntax for `-p` is `HOST_PORT:CLIENT_PORT`.
 @z
 
 @x
-See:
-- [Proxies on Linux](settings/linux.md#proxies)
-- [Proxies on Mac](settings/mac.md#proxies)
-- [Proxies on Windows](settings/windows.md#proxies)
+See [Proxies](/manuals/desktop/settings.md#proxies)
 @y
-See:
-- [Proxies on Linux](settings/linux.md#proxies)
-- [Proxies on Mac](settings/mac.md#proxies)
-- [Proxies on Windows](settings/windows.md#proxies)
+See [Proxies](manuals/desktop/settings.md#proxies)
 @z
 
 @x

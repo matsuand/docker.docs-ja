@@ -342,7 +342,7 @@ have these variables defined yet.
 @z
 
 @x
-You can use a bind mount to mount your source code into the container. The container can then see the changes you make to the code immediately, as soon as you save a file. This means that you can run processes, like nodemon, in the container that watch for filesystem changes and respond to them. To learn more about bind mounts, see [Storage overview](/manuals/engine/storage/index.md).
+You can use a bind mount to mount your source code into the container. The container can then see the changes you make to the code immediately, as soon as you save a file. This means that you can run processes, like nodemon, in the container that watch for filesystem changes and respond to them. To learn more about bind mounts, see [Storage overview](/manuals/engine/storage/_index.md).
 @y
 バインドマウントを利用すれば、ソースコードをコンテナー内にマウントすることができます。
 コードに対して変更を行って保存すれば、即座にコンテナー側でそれを利用することができます。

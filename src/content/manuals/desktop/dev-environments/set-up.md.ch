@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Set up a dev Environments
 keywords: Dev Environments, share, set up, Compose, Docker Desktop
 title: Set up a dev environment
----
 @y
----
 description: Set up a dev Environments
 keywords: Dev Environments, share, set up, Compose, Docker Desktop
 title: Set up a dev environment
----
 @z
 
 @x

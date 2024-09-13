@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Find known issues for Docker Desktop
 keywords: mac, troubleshooting, known issues, Docker Desktop
 title: Known issues
-tags: [ Troubleshooting ]
----
 @y
----
 description: Find known issues for Docker Desktop
 keywords: mac, troubleshooting, known issues, Docker Desktop
 title: Known issues
-tags: [ Troubleshooting ]
----
 @z
 
 @x

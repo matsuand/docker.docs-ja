@@ -14,15 +14,15 @@ keywords: billing, renewal, payments, tax
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
-@y
-{{< include "tax-compliance.md" >}}
-@z
-
-@x
 If you're a customer in the United States and you're exempt from sales tax, you can register a valid tax exemption certificate with Docker's Support team. If you're a global customer subject to VAT, make sure that you provide your [VAT number](/billing/core-billing/history/#include-your-vat-number-on-your-invoice).
 @y
 If you're a customer in the United States and you're exempt from sales tax, you can register a valid tax exemption certificate with Docker's Support team. If you're a global customer subject to VAT, make sure that you provide your [VAT number](__SUBDIR__/billing/core-billing/history/#include-your-vat-number-on-your-invoice).
+@z
+
+@x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
 @z
 
 @x

@@ -2,25 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: UI styling overview for Docker extensions
+linkTitle: Design and UI styling
 description: Docker extension design
 keywords: Docker, extensions, design
-aliases:
- - /desktop/extensions-sdk/design/design-overview/
- - /desktop/extensions-sdk/design/overview/
- - /desktop/extensions-sdk/design/
----
 @y
----
 title: UI styling overview for Docker extensions
+linkTitle: Design and UI styling
 description: Docker extension design
 keywords: Docker, extensions, design
-aliases:
- - /desktop/extensions-sdk/design/design-overview/
- - /desktop/extensions-sdk/design/overview/
- - /desktop/extensions-sdk/design/
----
 @z
 
 @x
@@ -145,8 +135,8 @@ Our colors have been chosen so that the counterpart colors in each variant of th
 
 @x
 - Take a look at our [MUI best practices](mui-best-practices.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @y
 - Take a look at our [MUI best practices](mui-best-practices.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @z

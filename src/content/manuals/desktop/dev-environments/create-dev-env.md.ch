@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Dev Environments
 keywords: Dev Environments, share, Docker Desktop, Compose, launch
 title: Launch a dev environment
-aliases:
-- /desktop/dev-environments/create-compose-dev-env/
----
 @y
----
 description: Dev Environments
 keywords: Dev Environments, share, Docker Desktop, Compose, launch
 title: Launch a dev environment
-aliases:
-- /desktop/dev-environments/create-compose-dev-env/
----
 @z
 
 @x

@@ -347,11 +347,11 @@ with both parameters to find the results that work best for you.
 
 @x
 The cache compression options are the same as the
-[exporter compression options](../../exporters/index.md#compression). This is
+[exporter compression options](../../exporters/_index.md#compression). This is
 supported by the `local` and `registry` cache backends.
 @y
 The cache compression options are the same as the
-[exporter compression options](../../exporters/index.md#compression). This is
+[exporter compression options](../../exporters/_index.md#compression). This is
 supported by the `local` and `registry` cache backends.
 @z
 
@@ -383,11 +383,11 @@ $ docker buildx build --push -t <registry>/<image> \
 
 @x
 The cache OCI options are the same as the
-[exporter OCI options](../../exporters/index.md#oci-media-types). These are
+[exporter OCI options](../../exporters/_index.md#oci-media-types). These are
 supported by the `local` and `registry` cache backends.
 @y
 The cache OCI options are the same as the
-[exporter OCI options](../../exporters/index.md#oci-media-types). These are
+[exporter OCI options](../../exporters/_index.md#oci-media-types). These are
 supported by the `local` and `registry` cache backends.
 @z
 

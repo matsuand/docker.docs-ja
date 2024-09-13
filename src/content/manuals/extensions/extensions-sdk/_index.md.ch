@@ -118,10 +118,10 @@ It's a fundamental element of a Docker extension.
 
 @x
 An extension can contain a UI part and backend parts that run either on the host or in the Desktop virtual machine.
-For further information, see [Architecture](architecture/index.md).
+For further information, see [Architecture](architecture/_index.md).
 @y
 An extension can contain a UI part and backend parts that run either on the host or in the Desktop virtual machine.
-For further information, see [Architecture](architecture/index.md).
+For further information, see [Architecture](architecture/_index.md).
 @z
 
 @x

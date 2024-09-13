@@ -16,17 +16,59 @@ linkTitle: Usage and rate limits
 @z
 
 @x
-Understanding your Docker Hub usage and rate limits helps you manage your and
-your organization's usage effectively.
+{{< include "new-plans.md" >}}
 @y
-Understanding your Docker Hub usage and rate limits helps you manage your and
-your organization's usage effectively.
+{{< include "new-plans.md" >}}
 @z
 
 @x
-## View Docker Hub usage
+Docker may impose usage and rate limits for Docker Hub to ensure fair resource
+consumption and maintain service quality. Understanding your usage helps you
+manage your and your organization's usage effectively.
 @y
-## View Docker Hub usage
+Docker may impose usage and rate limits for Docker Hub to ensure fair resource
+consumption and maintain service quality. Understanding your usage helps you
+manage your and your organization's usage effectively.
+@z
+
+@x
+## Usage
+@y
+## Usage
+@z
+
+@x
+Usage refers to the amount of data transferred from Docker Hub and the amount of
+data stored on Docker Hub.
+@y
+Usage refers to the amount of data transferred from Docker Hub and the amount of
+data stored on Docker Hub.
+@z
+
+@x
+### Fair use
+@y
+### Fair use
+@z
+
+@x
+When utilizing the Docker Platform, users should be aware that excessive data
+transfer, pull rates, or data storage can lead to throttling, or additional
+charges. To ensure fair resource usage and maintain service quality, we reserve
+the right to impose restrictions or apply additional charges to accounts
+exhibiting excessive data and storage consumption.
+@y
+When utilizing the Docker Platform, users should be aware that excessive data
+transfer, pull rates, or data storage can lead to throttling, or additional
+charges. To ensure fair resource usage and maintain service quality, we reserve
+the right to impose restrictions or apply additional charges to accounts
+exhibiting excessive data and storage consumption.
+@z
+
+@x
+### View Docker Hub usage
+@y
+### View Docker Hub usage
 @z
 
 @x
@@ -104,6 +146,108 @@ The file contains the following comma separated values.
 @z
 
 @x
+### Optimize and manage Docker Hub usage
+@y
+### Optimize and manage Docker Hub usage
+@z
+
+@x
+Use the following steps to help optimize and manage your Docker Hub usage for
+both individuals and organizations.
+@y
+Use the following steps to help optimize and manage your Docker Hub usage for
+both individuals and organizations.
+@z
+
+@x
+1. [View your Docker Hub usage](#view-docker-hub-usage).
+@y
+1. [View your Docker Hub usage](#view-docker-hub-usage).
+@z
+
+@x
+2. Use the Docker Hub usage data to identify which accounts consume the most
+   data, determine peak usage times, and identify which images are related to
+   the most data usage. In addition, look for usage trends, such as the
+   following:
+@y
+2. Use the Docker Hub usage data to identify which accounts consume the most
+   data, determine peak usage times, and identify which images are related to
+   the most data usage. In addition, look for usage trends, such as the
+   following:
+@z
+
+@x
+   - Inefficient pull behavior: Identify frequently accessed repositories to
+     assess whether you can optimize caching practices or consolidate usage to
+     reduce pulls.
+   - Inefficient automated systems: Check which automated tools, such as CI/CD
+     pipelines, may be causing higher pull rates, and configure them to avoid
+     unnecessary image pulls.
+@y
+   - Inefficient pull behavior: Identify frequently accessed repositories to
+     assess whether you can optimize caching practices or consolidate usage to
+     reduce pulls.
+   - Inefficient automated systems: Check which automated tools, such as CI/CD
+     pipelines, may be causing higher pull rates, and configure them to avoid
+     unnecessary image pulls.
+@z
+
+@x
+3. Optimize image pulls by doing the following:
+@y
+3. Optimize image pulls by doing the following:
+@z
+
+@x
+   - Use caching: Implement local image caching via
+     [mirroring](/docker-hub/mirror/) or within your CI/CD pipelines to reduce
+     redundant pulls.
+   - Automate manual workflows: Avoid unnecessary pulls by configuring automated
+     systems to pull only when a new version of an image is available.
+@y
+   - Use caching: Implement local image caching via
+     [mirroring](__SUBDIR__/docker-hub/mirror/) or within your CI/CD pipelines to reduce
+     redundant pulls.
+   - Automate manual workflows: Avoid unnecessary pulls by configuring automated
+     systems to pull only when a new version of an image is available.
+@z
+
+@x
+4. Optimize the size of repositories by regularly auditing and removing
+   untagged, unused, or outdated images.
+@y
+4. Optimize the size of repositories by regularly auditing and removing
+   untagged, unused, or outdated images.
+@z
+
+@x
+5. Increase your limits by upgrading or purchasing add-ons. For details, see
+   [Docker pricing](https://www.docker.com/pricing/).
+@y
+5. Increase your limits by upgrading or purchasing add-ons. For details, see
+   [Docker pricing](https://www.docker.com/pricing/).
+@z
+
+@x
+6. For organizations, monitor and enforce organizational policies by doing the
+   following:
+@y
+6. For organizations, monitor and enforce organizational policies by doing the
+   following:
+@z
+
+@x
+   - Routinely [view Docker Hub usage](#view-docker-hub-usage) to monitor usage.
+   - [Enforce sign-in](/security/for-admins/enforce-sign-in/) to ensure that you
+     can monitor the usage of your users and users receive higher usage limits.
+@y
+   - Routinely [view Docker Hub usage](#view-docker-hub-usage) to monitor usage.
+   - [Enforce sign-in](__SUBDIR__/security/for-admins/enforce-sign-in/) to ensure that you
+     can monitor the usage of your users and users receive higher usage limits.
+@z
+
+@x
 ## Rate limit
 @y
 ## Rate limit
@@ -147,6 +291,70 @@ URLs (`/v2/*/manifests/*`).
   Source](https://www.docker.com/blog/expanded-support-for-open-source-software-projects/)
   and [Docker Verified Publisher](https://www.docker.com/partners/programs)
   programs.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Docker is introducing enhanced subscription plans. Our new plans are packed
+> with more features, higher usage limits, and simplified pricing. The new
+> subscription plans take effect at your next renewal date that occurs on or
+> after November 1, 2024. No charges on Docker Hub image pulls or storage will
+> be incurred between November 15, 2024, and January 31, 2025. See [Announcing
+> Upgraded Docker
+> Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/)
+> for more details and learn how your usage fits into these updates.
+>
+> Note that when these changes take effect, the following new definition of a
+> pull request and limits will take effect:
+>
+> - A Docker pull request includes both a version check and any download that
+>   occurs as a result of the pull. Depending on the client, a `docker pull` can
+>   verify the existence of an image or tag without downloading it by performing
+>   a version check.
+> - A pull request for a normal image makes one pull for a [single
+>   manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
+> - A pull request for a multi-arch image will count as one pull for each
+>   different architecture.
+> - Pulls are accounted to the user doing the pull, not to the owner of the
+>   image.
+>
+> There will be no image pull rate limit for users or automated systems with a
+> paid subscription. Anonymous and Docker Personal users using Docker Hub will
+> experience rate limits on image pull requests. For authenticated users, there
+> will be a 40 pull/hour rate limit per user; for unauthenticated usage, there
+> will be a 10 pull/hour rate limit per IP address.
+@y
+> [!IMPORTANT]
+>
+> Docker is introducing enhanced subscription plans. Our new plans are packed
+> with more features, higher usage limits, and simplified pricing. The new
+> subscription plans take effect at your next renewal date that occurs on or
+> after November 1, 2024. No charges on Docker Hub image pulls or storage will
+> be incurred between November 15, 2024, and January 31, 2025. See [Announcing
+> Upgraded Docker
+> Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/)
+> for more details and learn how your usage fits into these updates.
+>
+> Note that when these changes take effect, the following new definition of a
+> pull request and limits will take effect:
+>
+> - A Docker pull request includes both a version check and any download that
+>   occurs as a result of the pull. Depending on the client, a `docker pull` can
+>   verify the existence of an image or tag without downloading it by performing
+>   a version check.
+> - A pull request for a normal image makes one pull for a [single
+>   manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
+> - A pull request for a multi-arch image will count as one pull for each
+>   different architecture.
+> - Pulls are accounted to the user doing the pull, not to the owner of the
+>   image.
+>
+> There will be no image pull rate limit for users or automated systems with a
+> paid subscription. Anonymous and Docker Personal users using Docker Hub will
+> experience rate limits on image pull requests. For authenticated users, there
+> will be a 40 pull/hour rate limit per user; for unauthenticated usage, there
+> will be a 10 pull/hour rate limit per IP address.
 @z
 
 @x

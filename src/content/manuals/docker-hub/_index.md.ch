@@ -100,8 +100,8 @@ Docker チームに参加、または Business サブスクリプションを購
 @x __SUBDIR__ 対応
 {{< tabs >}}
 {{< tab name="What key features are included in Docker Hub?" >}}
-* [Repositories](../docker-hub/repos/index.md): Push and pull container images.
-* [Builds](builds/index.md): Automatically build container images from
+* [Repositories](../docker-hub/repos/_index.md): Push and pull container images.
+* [Builds](builds/_index.md): Automatically build container images from
 GitHub and Bitbucket and push them to Docker Hub.
 * [Webhooks](webhooks.md): Trigger actions after a successful push
   to a repository to integrate Docker Hub with other services.
@@ -111,8 +111,8 @@ GitHub and Bitbucket and push them to Docker Hub.
 @y
 {{< tabs >}}
 {{< tab name="Docker Hub の主要機能は何か" >}}
-* [リポジトリ](../docker-hub/repos/index.md): コンテナーイメージをプッシュおよびプルします。
-* [ビルド](builds/index.md): GitHub や Bitbucket にあるコンテナーイメージをを自動ビルドして Docker Hub にプッシュします。
+* [リポジトリ](../docker-hub/repos/_index.md): コンテナーイメージをプッシュおよびプルします。
+* [ビルド](builds/_index.md): GitHub や Bitbucket にあるコンテナーイメージをを自動ビルドして Docker Hub にプッシュします。
 * [ウェブフック](webhooks.md): リポジトリへのプッシュが正常終了した際にアクションを起動することで、Docker Hub と他サービスの統合を図ります。
 * [Docker Hub CLI](https://github.com/docker/hub-tool#readme) ツール (現時点は試験的な提供) と API により、Docker Hub との対話処理を実現します。
   * [Docker Hub API](__SUBDIR__//reference/api/hub/latest/) ドキュメントを一とおり見てみることで、サポートされているエンドポイントを確認します。
@@ -124,7 +124,7 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [Create and manage teams and organizations](orgs.md)
 * [Create a company](../admin/company/new-company.md)
 * [Enforce sign in](../security/for-admins/enforce-sign-in/_index.md)
-* Set up [SSO](../security/for-admins/single-sign-on/index.md) and [SCIM](../security/for-admins/provisioning/scim.md)
+* Set up [SSO](../security/for-admins/single-sign-on/_index.md) and [SCIM](../security/for-admins/provisioning/scim.md)
 * Use [Group mapping](group-mapping.md)
 * [Carry out domain audits](domain-audit.md)
 * [Use Image Access Management](/manuals/security/for-admins/hardened-desktop/image-access-management.md) to control developers' access to certain types of images
@@ -136,7 +136,7 @@ GitHub and Bitbucket and push them to Docker Hub.
 * [チームや組織の生成と管理](orgs.md)
 * [企業の生成](../admin/company/new-company.md)
 * [サインインの強制](../security/for-admins/enforce-sign-in/_index.md)
-* [SSO](../security/for-admins/single-sign-on/index.md) と [SCIM](../security/for-admins/provisioning/scim.md) のセットアップ
+* [SSO](../security/for-admins/single-sign-on/_index.md) と [SCIM](../security/for-admins/provisioning/scim.md) のセットアップ
 * [グループマッピング](group-mapping.md) の利用
 * [ドメイン監査の実行](domain-audit.md)
 * [イメージアクセス管理の利用](manuals/security/for-admins/hardened-desktop/image-access-management.md) による特定タイプのイメージに対する開発者アクセス制御

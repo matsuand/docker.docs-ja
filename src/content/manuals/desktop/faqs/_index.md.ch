@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Desktop FAQs
+title: FAQs
 @y
-title: Desktop FAQ
+title: FAQ
 @z

@@ -49,12 +49,12 @@ includes Docker Compose along with Docker Engine and Docker CLI which are Compos
 
 @x
 Docker Desktop is available on:
-- [Linux](/manuals/desktop/install/linux-install.md)
+- [Linux](/manuals/desktop/install/linux/_index.md)
 - [Mac](/manuals/desktop/install/mac-install.md)
 - [Windows](/manuals/desktop/install/windows-install.md)
 @y
 Docker Desktop is available on:
-- [Linux](manuals/desktop/install/linux-install.md)
+- [Linux](manuals/desktop/install/linux/_index.md)
 - [Mac](manuals/desktop/install/mac-install.md)
 - [Windows](manuals/desktop/install/windows-install.md)
 @z

@@ -94,10 +94,10 @@ workers, or both.
 @z
 
 @x
-In the same way that you can use [Docker Compose](/manuals/compose/index.md) to define and run
+In the same way that you can use [Docker Compose](/manuals/compose/_index.md) to define and run
 containers, you can define and run [Swarm service](services.md) stacks.
 @y
-In the same way that you can use [Docker Compose](manuals/compose/index.md) to define and run
+In the same way that you can use [Docker Compose](manuals/compose/_index.md) to define and run
 containers, you can define and run [Swarm service](services.md) stacks.
 @z
 
@@ -269,8 +269,8 @@ the service.
 
 @x
 * Read the [Swarm mode overview](index.md).
-* Get started with the [Swarm mode tutorial](swarm-tutorial/index.md).
+* Get started with the [Swarm mode tutorial](swarm-tutorial/_index.md).
 @y
 * Read the [Swarm mode overview](index.md).
-* Get started with the [Swarm mode tutorial](swarm-tutorial/index.md).
+* Get started with the [Swarm mode tutorial](swarm-tutorial/_index.md).
 @z

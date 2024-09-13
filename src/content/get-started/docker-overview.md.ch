@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Get an in-depth overview of the Docker platform including what it can
@@ -233,13 +233,12 @@ Docker クライアントは複数のデーモンと通信することができ�
 @z
 
 @x
-Docker Desktop is an easy-to-install application for your Mac, Windows or Linux environment that enables you to build and share containerized applications and microservices. Docker Desktop includes the Docker daemon (`dockerd`), the Docker client (`docker`), Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper. For more information, see [Docker Desktop](/manuals/desktop/index.md).
-
+Docker Desktop is an easy-to-install application for your Mac, Windows or Linux environment that enables you to build and share containerized applications and microservices. Docker Desktop includes the Docker daemon (`dockerd`), the Docker client (`docker`), Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper. For more information, see [Docker Desktop](/manuals/desktop/_index.md).
 @y
 Docker Desktop は Mac、Windows、Linux の各環境に簡単にインストールできるアプリケーションです。
 これを使って、コンテナー化アプリケーションやマイクロサービスをビルドし共有することができます。
 Docker Desktop には Docker daemon (`dockerd`)、Docker クライアント (`docker`)、Docker Compose、Docker Content Trust、Kubernetes、Credential Helper が含まれます。
-より詳しくは [Docker Desktop](manuals/desktop/index.md) を参照してください。
+より詳しくは [Docker Desktop](manuals/desktop/_index.md) を参照してください。
 @z
 
 @x

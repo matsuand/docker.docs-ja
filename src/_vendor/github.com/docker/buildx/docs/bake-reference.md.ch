@@ -528,14 +528,12 @@ a context based on the pattern of the context value.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > You should prefer to use regular multi-stage builds over this option. You can
 > Use this feature when you have multiple Dockerfiles that can't be easily
 > merged into one.
 @y
-> **Note**
->
+> [!NOTE]
 > You should prefer to use regular multi-stage builds over this option. You can
 > Use this feature when you have multiple Dockerfiles that can't be easily
 > merged into one.
@@ -1131,12 +1129,10 @@ are also supported:
 % snip code...
 
 @x
-> **Note**
->
+> [!NOTE]
 > See [User defined HCL functions][hcl-funcs] page for more details.
 @y
-> **Note**
->
+> [!NOTE]
 > See [User defined HCL functions][hcl-funcs] page for more details.
 @z
 

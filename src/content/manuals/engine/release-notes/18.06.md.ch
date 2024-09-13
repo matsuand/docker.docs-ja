@@ -5,8 +5,10 @@
 
 @x
 title: Docker Engine 18.06 release notes
+linkTitle: Engine v18.06
 @y
 title: Docker Engine 18.06 release notes
+linkTitle: Engine v18.06
 @z
 
 @x

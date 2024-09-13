@@ -304,7 +304,7 @@ bases = \
 	github-links.html   \
 	guides-stepper.html \
 	post-links.html     \
-	search.html
+	search-bar.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -323,9 +323,7 @@ copyfiles = \
 	pagination.html     \
 	sidebar.html        \
 	tags.html           \
-	toc-cli.html        \
 	tooltip.html        \
-	top-nav.html        \
 	youtube-script.html
 
 all: all-recursive

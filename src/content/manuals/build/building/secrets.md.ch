@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Build secrets
@@ -46,30 +47,22 @@ secret mounts or SSH mounts, which expose secrets to your builds securely.
 @z
 
 @x
-Secret mounts expose secrets to the build containers as files. You [mount the
-secrets to the `RUN`
-instructions](/reference/dockerfile.md#run---mounttypesecret) that
+Secret mounts expose secrets to the build containers, as files or environment
+variables. You can use secret mounts to pass sensitive information to your
+builds, such as API tokens, passwords, or SSH keys. You [mount the secrets to
+the `RUN` instructions](/reference/dockerfile.md#run---mounttypesecret) that
 need to access them, similar to how you would define a bind mount or cache
 mount.
 @y
-Secret mounts expose secrets to the build containers as files. You [mount the
-secrets to the `RUN`
-instructions](reference/dockerfile.md#run---mounttypesecret) that
+Secret mounts expose secrets to the build containers, as files or environment
+variables. You can use secret mounts to pass sensitive information to your
+builds, such as API tokens, passwords, or SSH keys. You [mount the secrets to
+the `RUN` instructions](reference/dockerfile.md#run---mounttypesecret) that
 need to access them, similar to how you would define a bind mount or cache
 mount.
 @z
 
-@x
-```dockerfile
-RUN --mount=type=secret,id=mytoken \
-    TOKEN=$(cat /run/secrets/mytoken) ...
-```
-@y
-```dockerfile
-RUN --mount=type=secret,id=mytoken \
-    TOKEN=$(cat /run/secrets/mytoken) ...
-```
-@z
+% snip code...
 
 @x
 To pass a secret to a build, use the [`docker build --secret`
@@ -210,42 +203,25 @@ $ docker build --secret id=API_TOKEN .
 @z
 
 @x
-By default, secrets are mounted to `/run/secrets/<id>`. You can customize the
-mount point in the build container using the `target` option in the Dockerfile.
+By default, secrets are mounted as files located at `/run/secrets/<id>`. You
+can customize how the secrets get mounted in the build container using the
+`target` and `env` options for the `RUN --mount` flag in the Dockerfile.
 @y
-By default, secrets are mounted to `/run/secrets/<id>`. You can customize the
-mount point in the build container using the `target` option in the Dockerfile.
+By default, secrets are mounted as files located at `/run/secrets/<id>`. You
+can customize how the secrets get mounted in the build container using the
+`target` and `env` options for the `RUN --mount` flag in the Dockerfile.
 @z
 
 @x
-The following example mounts the secret to a `/root/.aws/credentials` file in
-the build container.
+The following example takes secret id `aws` and mounts it to `/run/secrets/aws`
+in the build container.
 @y
-The following example mounts the secret to a `/root/.aws/credentials` file in
-the build container.
+The following example takes secret id `aws` and mounts it to `/run/secrets/aws`
+in the build container.
 @z
 
-@x
-```console
-$ docker build --secret id=aws,src=/root/.aws/credentials .
-```
-@y
-```console
-$ docker build --secret id=aws,src=/root/.aws/credentials .
-```
-@z
-
-@x
-```dockerfile
-RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-    aws s3 cp ...
-```
-@y
-```dockerfile
-RUN --mount=type=secret,id=aws,target=/root/.aws/credentials \
-    aws s3 cp ...
-```
-@z
+% snip command...
+% snip code...
 
 @x
 ## SSH mounts

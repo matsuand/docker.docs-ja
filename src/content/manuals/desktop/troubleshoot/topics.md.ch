@@ -79,12 +79,12 @@ As well as on the registry. For example:
 If you are using mounted volumes and get runtime errors indicating an
 application file is not found, access to a volume mount is denied, or a service
 cannot start, such as when using [Docker Compose](/manuals/compose/gettingstarted.md),
-you might need to turn on [file sharing](../settings/linux.md#file-sharing).
+you might need to turn on [file sharing](/manuals/desktop/settings.md#file-sharing).
 @y
 If you are using mounted volumes and get runtime errors indicating an
 application file is not found, access to a volume mount is denied, or a service
 cannot start, such as when using [Docker Compose](manuals/compose/gettingstarted.md),
-you might need to turn on [file sharing](../settings/linux.md#file-sharing).
+you might need to turn on [file sharing](manuals/desktop/settings.md#file-sharing).
 @z
 
 @x
@@ -248,11 +248,11 @@ To continue using VPNKit, add `"networkType":"vpnkit"` to your `settings.json` f
 @z
 
 @x
-When sharing files from Windows, Docker Desktop sets permissions on [shared volumes](../settings/windows.md#file-sharing)
+When sharing files from Windows, Docker Desktop sets permissions on [shared volumes](/manuals/desktop/settings.md#file-sharing)
 to a default value of [0777](https://chmodcommand.com/chmod-0777/)
 (`read`, `write`, `execute` permissions for `user` and for `group`).
 @y
-When sharing files from Windows, Docker Desktop sets permissions on [shared volumes](../settings/windows.md#file-sharing)
+When sharing files from Windows, Docker Desktop sets permissions on [shared volumes](manuals/desktop/settings.md#file-sharing)
 to a default value of [0777](https://chmodcommand.com/chmod-0777/)
 (`read`, `write`, `execute` permissions for `user` and for `group`).
 @z
@@ -291,12 +291,12 @@ in the FAQs.
 If you are using mounted volumes and get runtime errors indicating an
 application file is not found, access is denied to a volume mount, or a service
 cannot start, such as when using [Docker Compose](/manuals/compose/gettingstarted.md),
-you might need to turn on [shared folders](../settings/windows.md#file-sharing).
+you might need to turn on [shared folders](/manuals/desktop/settings.md#file-sharing).
 @y
 If you are using mounted volumes and get runtime errors indicating an
 application file is not found, access is denied to a volume mount, or a service
 cannot start, such as when using [Docker Compose](manuals/compose/gettingstarted.md),
-you might need to turn on [shared folders](../settings/windows.md#file-sharing).
+you might need to turn on [shared folders](manuals/desktop/settings.md#file-sharing).
 @z
 
 @x
@@ -698,10 +698,10 @@ In the subsequent screen, verify that Hyper-V is enabled.
 @z
 
 @x
-In addition to [Hyper-V](#hyper-v) or [WSL 2](../wsl/index.md), virtualization must be turned on. Check the
+In addition to [Hyper-V](#hyper-v) or [WSL 2](../wsl/_index.md), virtualization must be turned on. Check the
 Performance tab on the Task Manager. Alternatively, you can type 'systeminfo' into your terminal. If you see 'Hyper-V Requirements:   A hypervisor has been detected. Features required for Hyper-V will not be displayed', then virtualization is enabled.
 @y
-In addition to [Hyper-V](#hyper-v) or [WSL 2](../wsl/index.md), virtualization must be turned on. Check the
+In addition to [Hyper-V](#hyper-v) or [WSL 2](../wsl/_index.md), virtualization must be turned on. Check the
 Performance tab on the Task Manager. Alternatively, you can type 'systeminfo' into your terminal. If you see 'Hyper-V Requirements:   A hypervisor has been detected. Features required for Hyper-V will not be displayed', then virtualization is enabled.
 @z
 

@@ -4,11 +4,11 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Build the extensions for multiple architectures
+title: Build multi-arch extensions
 description: Step three in creating an extension.
 keywords: Docker, Extensions, sdk, build, multi-arch
 @y
-title: Build the extensions for multiple architectures
+title: Build multi-arch extensions
 description: Step three in creating an extension.
 keywords: Docker, Extensions, sdk, build, multi-arch
 @z

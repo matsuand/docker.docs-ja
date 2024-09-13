@@ -780,11 +780,11 @@ In this section, you took a look at setting up your Compose file to run your Rus
 @x
 Related information:
  - [Docker volumes](/manuals/engine/storage/volumes.md)
- - [Compose overview](/manuals/compose/index.md)
+ - [Compose overview](/manuals/compose/_index.md)
 @y
 Related information:
  - [Docker volumes](manuals/engine/storage/volumes.md)
- - [Compose overview](manuals/compose/index.md)
+ - [Compose overview](manuals/compose/_index.md)
 @z
 
 @x

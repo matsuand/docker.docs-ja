@@ -2,21 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Design guidelines for Docker extensions
+linkTitle: Guidelines
 description: Docker extension design
 keywords: Docker, extensions, design
-aliases: 
- - /desktop/extensions-sdk/design/design-guidelines/
----
 @y
----
 title: Design guidelines for Docker extensions
+linkTitle: Guidelines
 description: Docker extension design
 keywords: Docker, extensions, design
-aliases: 
- - /desktop/extensions-sdk/design/design-guidelines/
----
 @z
 
 @x
@@ -198,9 +192,9 @@ When creating your extension, ensure that first time users of the extension and 
 @x
 - Explore our [design principles](design-principles.md).
 - Take a look at our [UI styling guidelines](index.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @y
 - Explore our [design principles](design-principles.md).
 - Take a look at our [UI styling guidelines](index.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @z

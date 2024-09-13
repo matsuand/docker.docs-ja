@@ -5,9 +5,9 @@
 SUBDIRS = images
 
 bases = \
+	_index.md                \
 	EBS_volume.md            \
 	config.md                \
-	index.md                 \
 	legacy_plugins.md        \
 	plugin_api.md            \
 	plugins_authorization.md \

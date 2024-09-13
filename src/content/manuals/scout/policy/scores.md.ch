@@ -65,15 +65,55 @@ score is not visible to users outside the organization or members without
 @z
 
 @x
-Health scores are determined by evaluating images against a set of Docker Scout
+Health scores are determined by evaluating images against Docker Scout
 [policies](./_index.md). These policies align with best practices for
 the software supply chain and are recommended by Docker as foundational
-standards for images.
+standards for images. Some examples of these policies include:
 @y
-Health scores are determined by evaluating images against a set of Docker Scout
+Health scores are determined by evaluating images against Docker Scout
 [policies](./_index.md). These policies align with best practices for
 the software supply chain and are recommended by Docker as foundational
-standards for images.
+standards for images. Some examples of these policies include:
+@z
+
+@x
+- **Supply chain attestations**: Images should have supply chain attestations.
+- **No outdated base images**: Images should not use outdated base images.
+- **No AGPL v3 licenses**: Images should not contain AGPL v3-licensed packages.
+@y
+- **Supply chain attestations**: Images should have supply chain attestations.
+- **No outdated base images**: Images should not use outdated base images.
+- **No AGPL v3 licenses**: Images should not contain AGPL v3-licensed packages.
+@z
+
+@x
+If your image repositories are already enrolled with Docker Scout, the health
+score is calculated automatically based on the policies that are enabled for
+your organization. This also includes any custom policies that you have
+configured.
+@y
+If your image repositories are already enrolled with Docker Scout, the health
+score is calculated automatically based on the policies that are enabled for
+your organization. This also includes any custom policies that you have
+configured.
+@z
+
+@x
+If you're not using Docker Scout, the health scores show the compliance of your
+images with the default, [out-of-the-box policies](/manuals/scout/policy/_index.md#out-of-the-box-policies).
+You can enable Docker Scout for your organization to get a more relevant health
+score based on your specific policies.
+@y
+If you're not using Docker Scout, the health scores show the compliance of your
+images with the default, [out-of-the-box policies](/manuals/scout/policy/_index.md#out-of-the-box-policies).
+You can enable Docker Scout for your organization to get a more relevant health
+score based on your specific policies.
+@z
+
+@x
+### Scoring process
+@y
+### Scoring process
 @z
 
 @x
@@ -86,12 +126,6 @@ Each policy is assigned a points value. If the image is compliant with a
 policy, it is awarded the points value for that policy. The health score of an
 image is calculated based on the percentage of points achieved relative to the
 total possible points.
-@z
-
-@x
-### Scoring process
-@y
-### Scoring process
 @z
 
 @x
@@ -147,25 +181,27 @@ The policies that influence the score, and their respective weights, are as foll
 @z
 
 @x
-| Policy                                                                                                     | Points |
-| ---------------------------------------------------------------------------------------------------------- | ------ |
-| [No fixable critical or high vulnerabilities](/scout/policy#no-fixable-critical-or-high-vulnerabilities)   | 20     |
-| [No high-profile vulnerabilities](/scout/policy#no-high-profile-vulnerabilities)                           | 20     |
-| [Supply chain attestations](/scout/policy#supply-chain-attestations)                                       | 15     |
-| [No unapproved base images](/scout/policy/#no-unapproved-base-images)                                      | 15     |
-| [No outdated base images](/scout/policy#no-outdated-base-images)                                           | 10     |
-| [Default non-root user](/scout/policy#default-non-root-user)                                               | 5      |
-| [No AGPL v3 licenses](/manuals/scout/policy/_index.md#no-agpl-v3-licenses)                                         | 5      |
+| Policy                                                                                                                     | Points |
+| -------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [No fixable critical or high vulnerabilities](/manuals/scout/policy/_index.md#no-fixable-critical-or-high-vulnerabilities) | 20     |
+| [No high-profile vulnerabilities](/manuals/scout/policy/_index.md#no-high-profile-vulnerabilities)                         | 20     |
+| [Supply chain attestations](/manuals/scout/policy/_index.md#supply-chain-attestations)                                     | 15     |
+| [No unapproved base images](/manuals/scout/policy/_index.md#no-unapproved-base-images)                                     | 15     |
+| [No outdated base images](/manuals/scout/policy/_index.md#no-outdated-base-images)                                         | 10     |
+| [SonarQube quality gates passed](/manuals/scout/policy/_index.md#sonarqube-quality-gates-passed) \*                        | 10     |
+| [Default non-root user](/manuals/scout/policy/_index.md#default-non-root-user)                                             | 5      |
+| [No AGPL v3 licenses](/manuals/scout/policy/_index.md#no-agpl-v3-licenses)                                                 | 5      |
 @y
-| Policy                                                                                                     | Points |
-| ---------------------------------------------------------------------------------------------------------- | ------ |
-| [No fixable critical or high vulnerabilities](__SUBDIR__/scout/policy#no-fixable-critical-or-high-vulnerabilities)   | 20     |
-| [No high-profile vulnerabilities](__SUBDIR__/scout/policy#no-high-profile-vulnerabilities)                           | 20     |
-| [Supply chain attestations](__SUBDIR__/scout/policy#supply-chain-attestations)                                       | 15     |
-| [No unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images)                                      | 15     |
-| [No outdated base images](__SUBDIR__/scout/policy#no-outdated-base-images)                                           | 10     |
-| [Default non-root user](__SUBDIR__/scout/policy#default-non-root-user)                                               | 5      |
-| [No AGPL v3 licenses](manuals/scout/policy/_index.md#no-agpl-v3-licenses)                                         | 5      |
+| Policy                                                                                                                     | Points |
+| -------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [No fixable critical or high vulnerabilities](manuals/scout/policy/_index.md#no-fixable-critical-or-high-vulnerabilities) | 20     |
+| [No high-profile vulnerabilities](manuals/scout/policy/_index.md#no-high-profile-vulnerabilities)                         | 20     |
+| [Supply chain attestations](manuals/scout/policy/_index.md#supply-chain-attestations)                                     | 15     |
+| [No unapproved base images](manuals/scout/policy/_index.md#no-unapproved-base-images)                                     | 15     |
+| [No outdated base images](manuals/scout/policy/_index.md#no-outdated-base-images)                                         | 10     |
+| [SonarQube quality gates passed](manuals/scout/policy/_index.md#sonarqube-quality-gates-passed) \*                        | 10     |
+| [Default non-root user](manuals/scout/policy/_index.md#default-non-root-user)                                             | 5      |
+| [No AGPL v3 licenses](manuals/scout/policy/_index.md#no-agpl-v3-licenses)                                                 | 5      |
 @z
 
 @x

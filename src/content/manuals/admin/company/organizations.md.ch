@@ -208,10 +208,10 @@ There is no limit to the number of organizations you can have under a company la
 @z
 
 @x
-For more details about managing an organization, see [Organization administration](../organization/index.md).
+For more details about managing an organization, see [Organization administration](../organization/_index.md).
 {{< /tab >}}
 @y
-For more details about managing an organization, see [Organization administration](../organization/index.md).
+For more details about managing an organization, see [Organization administration](../organization/_index.md).
 {{< /tab >}}
 @z
 

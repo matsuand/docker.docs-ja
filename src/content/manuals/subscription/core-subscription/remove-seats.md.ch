@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to remove seats from your subscription
 keywords: Docker, Docker Hub, subscription, update, remove, seats, docker core
 title: Remove seats from your subscription
-aliases:
-- /docker-hub/billing/remove-seats/
-- /subscription/remove-seats/
----
+linkTitle: Remove seats
 @y
----
 description: Learn how to remove seats from your subscription
 keywords: Docker, Docker Hub, subscription, update, remove, seats, docker core
 title: Remove seats from your subscription
-aliases:
-- /docker-hub/billing/remove-seats/
-- /subscription/remove-seats/
----
+linkTitle: Remove seats
 @z
 
 @x

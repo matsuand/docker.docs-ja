@@ -2,23 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Disable two-factor authentication on your Docker account
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication, account security,
 title: Disable two-factor authentication on your Docker account
-aliases: 
-- /docker-hub/2fa/disable-2fa/
----
+linkTitle: Disable two-factor authentication
 @y
----
 description: Disable two-factor authentication on your Docker account
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication, account security,
 title: Disable two-factor authentication on your Docker account
-aliases: 
-- /docker-hub/2fa/disable-2fa/
----
+linkTitle: Disable two-factor authentication
 @z
 
 @x

@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker design principles
 description: Docker extension design
 keywords: Docker, extensions, design
-aliases: 
- - /desktop/extensions-sdk/design/design-principles/
----
 @y
----
 title: Docker design principles
 description: Docker extension design
 keywords: Docker, extensions, design
-aliases: 
- - /desktop/extensions-sdk/design/design-principles/
----
 @z
 
 @x
@@ -87,8 +79,8 @@ Our products focus on inclusive growth and are continuously useful and adapt to 
 
 @x
 - Take a look at our [UI styling guidelines](index.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @y
 - Take a look at our [UI styling guidelines](index.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @z

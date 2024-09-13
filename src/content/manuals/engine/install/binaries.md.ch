@@ -7,10 +7,12 @@
 description: Learn how to install Docker as a binary. These instructions are most suitable for testing purposes.
 keywords: binaries, installation, docker, documentation, linux, install docker engine
 title: Install Docker Engine from binaries
+linkTitle: Binaries
 @y
 description: Learn how to install Docker as a binary. These instructions are most suitable for testing purposes.
 keywords: binaries, installation, docker, documentation, linux, install docker engine
 title: Install Docker Engine from binaries
+linkTitle: Binaries
 @z
 
 @x
@@ -31,7 +33,7 @@ title: Install Docker Engine from binaries
 > Also, static binaries may not include all functionalities provided by the dynamic
 > packages.
 >
-> On Windows and Mac, we recommend that you install [Docker Desktop](/manuals/desktop/index.md)
+> On Windows and Mac, we recommend that you install [Docker Desktop](/manuals/desktop/_index.md)
 > instead. For Linux, we recommend that you follow the instructions specific for
 > your distribution.
 @y
@@ -52,7 +54,7 @@ title: Install Docker Engine from binaries
 > Also, static binaries may not include all functionalities provided by the dynamic
 > packages.
 >
-> On Windows and Mac, we recommend that you install [Docker Desktop](manuals/desktop/index.md)
+> On Windows and Mac, we recommend that you install [Docker Desktop](manuals/desktop/_index.md)
 > instead. For Linux, we recommend that you follow the instructions specific for
 > your distribution.
 @z
@@ -345,14 +347,14 @@ You have now successfully installed and started Docker Engine.
 > The following instructions are mostly suitable for testing purposes. The macOS
 > binary includes the Docker client only. It does not include the `dockerd` daemon
 > which is required to run containers. Therefore, we recommend that you install
-> [Docker Desktop](/manuals/desktop/index.md) instead.
+> [Docker Desktop](/manuals/desktop/_index.md) instead.
 @y
 > [!NOTE]
 >
 > The following instructions are mostly suitable for testing purposes. The macOS
 > binary includes the Docker client only. It does not include the `dockerd` daemon
 > which is required to run containers. Therefore, we recommend that you install
-> [Docker Desktop](manuals/desktop/index.md) instead.
+> [Docker Desktop](manuals/desktop/_index.md) instead.
 @z
 
 @x
@@ -498,7 +500,7 @@ To install client binaries, perform the following steps:
 > Server which allows you to run Windows containers only. When you install the
 > Docker daemon on Windows Server, the daemon doesn't contain Docker components
 > such as `buildx` and `compose`. If you're running Windows 10 or 11,
-> we recommend that you install [Docker Desktop](/manuals/desktop/index.md) instead.
+> we recommend that you install [Docker Desktop](/manuals/desktop/_index.md) instead.
 @y
 > [!NOTE]
 >
@@ -506,7 +508,7 @@ To install client binaries, perform the following steps:
 > Server which allows you to run Windows containers only. When you install the
 > Docker daemon on Windows Server, the daemon doesn't contain Docker components
 > such as `buildx` and `compose`. If you're running Windows 10 or 11,
-> we recommend that you install [Docker Desktop](manuals/desktop/index.md) instead.
+> we recommend that you install [Docker Desktop](manuals/desktop/_index.md) instead.
 @z
 
 @x

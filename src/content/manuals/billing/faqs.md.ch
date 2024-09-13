@@ -5,18 +5,18 @@
 
 @x
 title: Billing FAQs
-description: Frequently asked questions related to billing
-keywords: billing, renewal, payments, faq
+linkTitle: FAQs
 @y
 title: 支払いに関する FAQ
-description: Frequently asked questions related to billing
-keywords: billing, renewal, payments, faq
+linkTitle: FAQs
 @z
 
 @x
-For more information on billing, see [Billing and payments](_index.md).
+description: Frequently asked questions related to billing
+keywords: billing, renewal, payments, faq
 @y
-支払いに関する詳細は [Billing and payments](_index.md) を参照してください。
+description: Frequently asked questions related to billing
+keywords: billing, renewal, payments, faq
 @z
 
 @x

@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Engine 17.12 release notes
-toc_min: 1
-toc_max: 2
----
+linkTitle: Engine v17.12
 @y
----
 title: Docker Engine 17.12 release notes
-toc_min: 1
-toc_max: 2
----
+linkTitle: Engine v17.12
 @z
 
 @x

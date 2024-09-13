@@ -4,7 +4,6 @@
 bases = \
 	_index.md       \
 	known-issues.md \
-	overview.md     \
 	topics.md       \
 	workarounds.md
 

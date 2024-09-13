@@ -219,11 +219,11 @@ configure your organization.
 
 @x
 - **Repositories**: Displays a list of repositories associated with the
-  organization. See [Repositories](../../docker-hub/repos/index.md) for detailed information about
+  organization. See [Repositories](../../docker-hub/repos/_index.md) for detailed information about
   working with repositories.
 @y
 - **Repositories**: Displays a list of repositories associated with the
-  organization. See [Repositories](../../docker-hub/repos/index.md) for detailed information about
+  organization. See [Repositories](../../docker-hub/repos/_index.md) for detailed information about
   working with repositories.
 @z
 

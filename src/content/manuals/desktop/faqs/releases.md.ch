@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: FAQs on Docker Desktop releases
-tags: [FAQ]
----
+linkTitle: Releases
 @y
----
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: FAQs on Docker Desktop releases
-tags: [FAQ]
----
+linkTitle: Releases
 @z
 
 @x

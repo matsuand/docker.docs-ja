@@ -10,7 +10,7 @@ bases = \
 	github-links.html   \
 	guides-stepper.html \
 	post-links.html     \
-	search.html
+	search-bar.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -27,9 +27,7 @@ copyfiles = \
 	pagination.html     \
 	sidebar.html        \
 	tags.html           \
-	toc-cli.html        \
 	tooltip.html        \
-	top-nav.html        \
 	youtube-script.html
 
 include $(top_srcdir)/build-aux/copy.mk

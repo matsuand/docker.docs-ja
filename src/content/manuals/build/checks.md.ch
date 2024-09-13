@@ -5,10 +5,10 @@
 
 @x
 title: Checking your build configuration
-linkTitle: Build checks {{< badge color="green" text="New" >}}
+linkTitle: Build checks
 @y
 title: Checking your build configuration
-linkTitle: Build checks {{< badge color="green" text="New" >}}
+linkTitle: Build checks
 @z
 
 @x

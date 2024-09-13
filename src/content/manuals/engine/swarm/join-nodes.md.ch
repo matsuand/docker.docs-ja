@@ -253,8 +253,8 @@ This node joined a swarm as a manager.
 
 @x
 * `swarm join` [command line reference](/reference/cli/docker/swarm/join.md)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 @y
 * `swarm join` [command line reference](reference/cli/docker/swarm/join.md)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 @z

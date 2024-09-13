@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: Usage overview
+title: CLI reference
 description: Docker extension CLI
 keywords: Docker, extensions, sdk, CLI
-aliases:
- - /desktop/extensions-sdk/dev/cli/usage/
- - /desktop/extensions-sdk/dev/usage/
----
 @y
----
-title: Usage overview
+title: CLI reference
 description: Docker extension CLI
 keywords: Docker, extensions, sdk, CLI
-aliases:
- - /desktop/extensions-sdk/dev/cli/usage/
- - /desktop/extensions-sdk/dev/usage/
----
 @z
 
 @x

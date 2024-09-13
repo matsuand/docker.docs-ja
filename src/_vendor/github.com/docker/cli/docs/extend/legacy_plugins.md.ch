@@ -22,11 +22,11 @@ keywords: "Examples, Usage, plugins, docker, documentation, user guide"
 @x
 This document describes the Docker Engine plugins generally available in Docker
 Engine. To view information on plugins managed by Docker,
-refer to [Docker Engine plugin system](index.md).
+refer to [Docker Engine plugin system](_index.md).
 @y
 This document describes the Docker Engine plugins generally available in Docker
 Engine. To view information on plugins managed by Docker,
-refer to [Docker Engine plugin system](index.md).
+refer to [Docker Engine plugin system](_index.md).
 @z
 
 @x
@@ -46,12 +46,12 @@ volume and network plugins for Docker.
 @z
 
 @x
-Plugins extend Docker's functionality. They come in specific types.  For
+Plugins extend Docker's functionality. They come in specific types. For
 example, a [volume plugin](plugins_volume.md) might enable Docker
 volumes to persist across multiple Docker hosts and a
 [network plugin](plugins_network.md) might provide network plumbing.
 @y
-Plugins extend Docker's functionality. They come in specific types.  For
+Plugins extend Docker's functionality. They come in specific types. For
 example, a [volume plugin](plugins_volume.md) might enable Docker
 volumes to persist across multiple Docker hosts and a
 [network plugin](plugins_network.md) might provide network plumbing.

@@ -5,10 +5,12 @@
 
 @x
 title: Extension image labels
+linkTitle: Add labels
 description: Docker extension labels
 keywords: Docker, extensions, sdk, labels
 @y
 title: Extension image labels
+linkTitle: Add labels
 description: Docker extension labels
 keywords: Docker, extensions, sdk, labels
 @z
@@ -90,13 +92,13 @@ Here is the list of labels you can or need to specify when building your extensi
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
 > [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
-> [styling guidelines](../design/index.md).
+> [styling guidelines](../design/_index.md).
 @y
 > [!TIP]
 >
 > Docker Desktop applies CSS styles to the provided HTML content. You can make sure that it renders correctly 
 > [within the Marketplace](#preview-the-extension-in-the-marketplace). It is recommended that you follow the 
-> [styling guidelines](../design/index.md).
+> [styling guidelines](../design/_index.md).
 @z
 
 @x

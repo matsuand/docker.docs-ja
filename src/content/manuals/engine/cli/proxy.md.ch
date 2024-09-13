@@ -28,17 +28,11 @@ environment variables in containers.
 @z
 
 @x
-This page doesn't describe how to configure proxies for the Docker daemon.
-For instructions on configuring Docker Desktop to use HTTP/HTTPS proxies, see
-[proxies on Mac](/manuals/desktop/settings/mac.md#proxies),
-[proxies on Windows](/manuals/desktop/settings/windows.md#proxies), and
-[proxies on Linux](/manuals/desktop/settings/linux.md#proxies).
+This page doesn't describe how to configure proxies for Docker Desktop.
+For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](/manuals/desktop/settings.md#proxies).
 @y
-This page doesn't describe how to configure proxies for the Docker daemon.
-For instructions on configuring Docker Desktop to use HTTP/HTTPS proxies, see
-[proxies on Mac](manuals/desktop/settings/mac.md#proxies),
-[proxies on Windows](manuals/desktop/settings/windows.md#proxies), and
-[proxies on Linux](manuals/desktop/settings/linux.md#proxies).
+This page doesn't describe how to configure proxies for Docker Desktop.
+For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](/manuals/desktop/settings.md#proxies).
 @z
 
 @x

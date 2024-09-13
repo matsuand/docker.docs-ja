@@ -5,10 +5,16 @@
 
 @x
 title: Docker Build Cloud billing
+linkTitle: Docker Build Cloud
+@y
+title: Docker Build Cloud billing
+linkTitle: Docker Build Cloud
+@z
+
+@x
 description: Learn how to get started with a Docker Build Cloud subscription.
 keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder, buy docker build cloud
 @y
-title: Docker Build Cloud billing
 description: Learn how to get started with a Docker Build Cloud subscription.
 keywords: payments, billing, subscription, build, cloud, Build Cloud, remote builder, buy docker build cloud
 @z

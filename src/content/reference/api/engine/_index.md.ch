@@ -27,9 +27,9 @@ for you, you can use the Docker Engine API directly.
 @z
 
 @x
-For information about Docker Engine SDKs, see [Develop with Docker Engine SDKs](sdk/index.md).
+For information about Docker Engine SDKs, see [Develop with Docker Engine SDKs](sdk/_index.md).
 @y
-For information about Docker Engine SDKs, see [Develop with Docker Engine SDKs](sdk/index.md).
+For information about Docker Engine SDKs, see [Develop with Docker Engine SDKs](sdk/_index.md).
 @z
 
 @x
@@ -203,6 +203,7 @@ You can specify the API version to use in any of the following ways:
 @x
 | Docker version | Maximum API version        | Change log                                                                   |
 |:---------------|:---------------------------|:-----------------------------------------------------------------------------|
+| 27.2           | [1.47](/reference/api/engine/version/v1.47/) | [changes](/reference/api/engine/version-history/#v147-api-changes) |
 | 27.1           | [1.46](/reference/api/engine/version/v1.46/) | [changes](/reference/api/engine/version-history/#v146-api-changes) |
 | 27.0           | [1.46](/reference/api/engine/version/v1.46/) | [changes](/reference/api/engine/version-history/#v146-api-changes) |
 | 26.1           | [1.45](/reference/api/engine/version/v1.45/) | [changes](/reference/api/engine/version-history/#v145-api-changes) |
@@ -234,6 +235,7 @@ You can specify the API version to use in any of the following ways:
 @y
 | Docker version | Maximum API version        | Change log                                                                   |
 |:---------------|:---------------------------|:-----------------------------------------------------------------------------|
+| 27.2           | [1.47](__SUBDIR__/reference/api/engine/version/v1.47/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v147-api-changes) |
 | 27.1           | [1.46](__SUBDIR__/reference/api/engine/version/v1.46/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |
 | 27.0           | [1.46](__SUBDIR__/reference/api/engine/version/v1.46/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |
 | 26.1           | [1.45](__SUBDIR__/reference/api/engine/version/v1.45/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v145-api-changes) |

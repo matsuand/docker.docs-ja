@@ -6,11 +6,13 @@
 @x
 description: Learn how to manage Single Sign-On for your organization or company.
 keywords: manage, single sign-on, SSO, sign-on, docker hub, admin console, admin, security
-title: Manage Single Sign-On
+title: Manage single sign-on
+linkTitle: Manage
 @y
 description: Learn how to manage Single Sign-On for your organization or company.
 keywords: manage, single sign-on, SSO, sign-on, docker hub, admin console, admin, security
-title: Manage Single Sign-On
+title: Manage single sign-on
+linkTitle: Manage
 @z
 
 @x

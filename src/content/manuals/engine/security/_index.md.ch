@@ -509,10 +509,10 @@ the CLI for enforcing and performing image signature verification.
 
 @x
 For more information on configuring Docker Content Trust Signature Verification, go to 
-[Content trust in Docker](trust/index.md).
+[Content trust in Docker](trust/_index.md).
 @y
 For more information on configuring Docker Content Trust Signature Verification, go to 
-[Content trust in Docker](trust/index.md).
+[Content trust in Docker](trust/_index.md).
 @z
 
 @x
@@ -646,13 +646,13 @@ pull requests, or comments on the Docker community forums.
 @z
 
 @x
-* [Use trusted images](trust/index.md)
+* [Use trusted images](trust/_index.md)
 * [Seccomp security profiles for Docker](seccomp.md)
 * [AppArmor security profiles for Docker](apparmor.md)
 * [On the Security of Containers (2014)](https://medium.com/@ewindisch/on-the-security-of-containers-2c60ffe25a9e)
 * [Docker swarm mode overlay network security model](/manuals/engine/network/drivers/overlay.md)
 @y
-* [Use trusted images](trust/index.md)
+* [Use trusted images](trust/_index.md)
 * [Seccomp security profiles for Docker](seccomp.md)
 * [AppArmor security profiles for Docker](apparmor.md)
 * [On the Security of Containers (2014)](https://medium.com/@ewindisch/on-the-security-of-containers-2c60ffe25a9e)

@@ -5,10 +5,12 @@
 
 @x
 title: Docker Engine version 27 release notes
+linkTitle: Engine v27
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @y
 title: Docker Engine バージョン 27 リリースノート
+linkTitle: Engine v27
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @z

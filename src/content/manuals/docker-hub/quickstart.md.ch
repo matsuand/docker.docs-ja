@@ -83,9 +83,9 @@ You need to download Docker Desktop to build, push, and pull container images.
 @z
 
 @x
-1. Download and install [Docker Desktop](/manuals/desktop/index.md).
+1. Download and install [Docker Desktop](/manuals/desktop/_index.md).
 @y
-1. [Docker Desktop](manuals/desktop/index.md) をダウンロードしてインストールします。
+1. [Docker Desktop](manuals/desktop/_index.md) をダウンロードしてインストールします。
 @z
 
 @x
@@ -344,13 +344,13 @@ You've successfully:
 
 @x
 - Create an [organization](orgs.md) to use Docker Hub with your team.
-- Automatically build container images from code through [builds](builds/index.md).
+- Automatically build container images from code through [builds](builds/_index.md).
 - [Explore](https://hub.docker.com/explore) official & publisher images.
 - [Upgrade your subscription](https://www.docker.com/pricing) to push additional private Docker images to
 Docker Hub.
 @y
 - Create an [organization](orgs.md) to use Docker Hub with your team.
-- Automatically build container images from code through [builds](builds/index.md).
+- Automatically build container images from code through [builds](builds/_index.md).
 - [Explore](https://hub.docker.com/explore) official & publisher images.
 - [Upgrade your subscription](https://www.docker.com/pricing) to push additional private Docker images to
 Docker Hub.

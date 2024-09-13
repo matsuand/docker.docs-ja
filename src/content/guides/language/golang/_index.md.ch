@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Go language-specific guide
@@ -88,13 +88,13 @@ be at least vaguely familiar with the [Dockerfile format](manuals/build/concepts
 @z
 
 @x
-Your Docker set-up must have BuildKit enabled. BuildKit is enabled by default for all users on [Docker Desktop](/manuals/desktop/index.md). 
+Your Docker set-up must have BuildKit enabled. BuildKit is enabled by default for all users on [Docker Desktop](/manuals/desktop/_index.md). 
 If you have installed Docker Desktop, you don’t have to manually enable BuildKit. If you are running Docker on Linux, 
-please check out BuildKit [getting started](/manuals/build/buildkit/index.md#getting-started) page.
+please check out BuildKit [getting started](/manuals/build/buildkit/_index.md#getting-started) page.
 @y
-Your Docker set-up must have BuildKit enabled. BuildKit is enabled by default for all users on [Docker Desktop](manuals/desktop/index.md). 
+Your Docker set-up must have BuildKit enabled. BuildKit is enabled by default for all users on [Docker Desktop](manuals/desktop/_index.md). 
 If you have installed Docker Desktop, you don’t have to manually enable BuildKit. If you are running Docker on Linux, 
-please check out BuildKit [getting started](manuals/build/buildkit/index.md#getting-started) page.
+please check out BuildKit [getting started](manuals/build/buildkit/_index.md#getting-started) page.
 @z
 
 @x

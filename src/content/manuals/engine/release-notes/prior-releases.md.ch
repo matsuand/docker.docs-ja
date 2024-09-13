@@ -2,33 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: Docker Engine release notes
+title: Docker Engine prior releases
+linkTitle: Prior releases
+weight: 100
 description: Release notes for Docker CE
 keywords: release notes, community
-toc_max: 2
-aliases:
-- /cs-engine/1.12/release-notes/
-- /cs-engine/1.12/release-notes/release-notes/
-- /cs-engine/1.12/release-notes/prior-release-notes/
-- /cs-engine/1.13/release-notes/
-- /ee/engine/release-notes/
-- /ee/docker-ee/release-notes/
----
 @y
----
-title: Docker Engine release notes
+title: Docker Engine prior releases
+linkTitle: Prior releases
+weight: 100
 description: Release notes for Docker CE
 keywords: release notes, community
-toc_max: 2
-aliases:
-- /cs-engine/1.12/release-notes/
-- /cs-engine/1.12/release-notes/release-notes/
-- /cs-engine/1.12/release-notes/prior-release-notes/
-- /cs-engine/1.13/release-notes/
-- /ee/engine/release-notes/
-- /ee/docker-ee/release-notes/
----
 @z
 
 @x

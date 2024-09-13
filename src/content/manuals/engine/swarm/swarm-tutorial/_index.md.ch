@@ -50,9 +50,9 @@ terminal window.
 @z
 
 @x
-If you are brand new to Docker, see [About Docker Engine](../../index.md).
+If you are brand new to Docker, see [About Docker Engine](../../_index.md).
 @y
-If you are brand new to Docker, see [About Docker Engine](../../index.md).
+If you are brand new to Docker, see [About Docker Engine](../../_index.md).
 @z
 
 @x
@@ -125,12 +125,12 @@ workers (`worker1` and `worker2`).
 
 @x
 If you are using Linux based physical computers or cloud-provided computers as
-hosts, simply follow the [Linux install instructions](../../install/index.md)
+hosts, simply follow the [Linux install instructions](../../install/_index.md)
 for your platform. Spin up the three machines, and you are ready. You can test both
 single-node and multi-node swarm scenarios on Linux machines.
 @y
 If you are using Linux based physical computers or cloud-provided computers as
-hosts, simply follow the [Linux install instructions](../../install/index.md)
+hosts, simply follow the [Linux install instructions](../../install/_index.md)
 for your platform. Spin up the three machines, and you are ready. You can test both
 single-node and multi-node swarm scenarios on Linux machines.
 @z

@@ -118,8 +118,7 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `imagetools create` command supports adding annotations to the image
     > index and descriptor, using the following type prefixes:
     >
@@ -128,8 +127,7 @@ examples: |-
     >
     > It doesn't support annotating manifests or OCI layouts.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `imagetools create` command supports adding annotations to the image
     > index and descriptor, using the following type prefixes:
     >

@@ -2,17 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Understand what Docker Desktop Resource Saver mode is and how to configure it
 keywords: Docker Dashboard, resource saver, manage, containers, gui, dashboard, user manual
 title: Docker Desktop's Resource Saver mode
----
+linkTitle: Resource Saver mode
 @y
----
 description: Understand what Docker Desktop Resource Saver mode is and how to configure it
 keywords: Docker Dashboard, resource saver, manage, containers, gui, dashboard, user manual
 title: Docker Desktop's Resource Saver mode
----
+linkTitle: Resource Saver mode
 @z
 
 @x

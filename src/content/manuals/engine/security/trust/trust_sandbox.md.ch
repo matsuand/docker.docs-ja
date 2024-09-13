@@ -50,15 +50,15 @@ have privileges to run docker commands on your local machine or in the VM.
 @x
 This sandbox requires you to install two Docker tools: Docker Engine >= 1.10.0
 and Docker Compose >= 1.6.0. To install the Docker Engine, choose from the
-[list of supported platforms](../../install/index.md). To install
+[list of supported platforms](../../install/_index.md). To install
 Docker Compose, see the
-[detailed instructions here](/manuals/compose/install/index.md).
+[detailed instructions here](/manuals/compose/install/_index.md).
 @y
 This sandbox requires you to install two Docker tools: Docker Engine >= 1.10.0
 and Docker Compose >= 1.6.0. To install the Docker Engine, choose from the
-[list of supported platforms](../../install/index.md). To install
+[list of supported platforms](../../install/_index.md). To install
 Docker Compose, see the
-[detailed instructions here](manuals/compose/install/index.md).
+[detailed instructions here](manuals/compose/install/_index.md).
 @z
 
 @x

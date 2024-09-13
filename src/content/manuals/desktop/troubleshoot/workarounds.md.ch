@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Common workarounds
 keywords: linux, mac, windows, troubleshooting, workarounds, Docker Desktop
 title: Workarounds for common problems
-tags: [ Troubleshooting ]
----
 @y
----
 description: Common workarounds
 keywords: linux, mac, windows, troubleshooting, workarounds, Docker Desktop
 title: Workarounds for common problems
-tags: [ Troubleshooting ]
----
 @z
 
 @x

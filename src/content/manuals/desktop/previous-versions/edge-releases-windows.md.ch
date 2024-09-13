@@ -1544,9 +1544,9 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-- **WSL 2 backend:** The new Docker Desktop WSL 2 backend replaces the Docker Desktop WSL 2 Tech Preview. The WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](../wsl/index.md).
+- **WSL 2 backend:** The new Docker Desktop WSL 2 backend replaces the Docker Desktop WSL 2 Tech Preview. The WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](../wsl/_index.md).
 @y
-- **WSL 2 backend:** The new Docker Desktop WSL 2 backend replaces the Docker Desktop WSL 2 Tech Preview. The WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](../wsl/index.md).
+- **WSL 2 backend:** The new Docker Desktop WSL 2 backend replaces the Docker Desktop WSL 2 Tech Preview. The WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](../wsl/_index.md).
 @z
 
 @x
@@ -1726,9 +1726,9 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-- [Docker Desktop WSL 2 Tech Preview](../wsl/index.md)
+- [Docker Desktop WSL 2 Tech Preview](../wsl/_index.md)
 @y
-- [Docker Desktop WSL 2 Tech Preview](../wsl/index.md)
+- [Docker Desktop WSL 2 Tech Preview](../wsl/_index.md)
 @z
 
 @x
@@ -5783,12 +5783,12 @@ This Beta release includes some significant changes:
 * The GUI now runs in non-elevated mode and connects to an elevated Windows service
 * Allocate virtual machine memory by 256 MB increments, instead of 1 GB
 * Show a meaningful error when the user has an empty password
-* Improved [Troubleshooting](../troubleshoot/overview.md) page
+* Improved [Troubleshooting](../troubleshoot/_index.md) page
 @y
 * The GUI now runs in non-elevated mode and connects to an elevated Windows service
 * Allocate virtual machine memory by 256 MB increments, instead of 1 GB
 * Show a meaningful error when the user has an empty password
-* Improved [Troubleshooting](../troubleshoot/overview.md) page
+* Improved [Troubleshooting](../troubleshoot/_index.md) page
 @z
 
 @x
@@ -5920,9 +5920,9 @@ This Beta release includes some significant changes:
 @z
 
 @x
-*  Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. See [Troubleshooting](../troubleshoot/overview.md) for more details.
+*  Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. See [Troubleshooting](../troubleshoot/_index.md) for more details.
 @y
-*  Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. See [Troubleshooting](../troubleshoot/overview.md) for more details.
+*  Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. See [Troubleshooting](../troubleshoot/_index.md) for more details.
 @z
 
 @x

@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Dev Environments
 keywords: Dev Environments, share, Docker Desktop
 title: Distribute your dev environment
----
 @y
----
 description: Dev Environments
 keywords: Dev Environments, share, Docker Desktop
 title: Distribute your dev environment
----
 @z
 
 @x

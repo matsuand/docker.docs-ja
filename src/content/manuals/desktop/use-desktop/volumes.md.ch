@@ -6,11 +6,13 @@
 @x
 description: Understand what you can do with the Volumes view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
-title: Explore Volumes
+title: Explore the Volumes view in Docker Desktop
+linkTitle: Volumes
 @y
 description: Understand what you can do with the Volumes view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
-title: Explore Volumes
+title: Explore the Volumes view in Docker Desktop
+linkTitle: Volumes
 @z
 
 @x

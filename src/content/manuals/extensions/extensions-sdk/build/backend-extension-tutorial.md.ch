@@ -74,9 +74,9 @@ builders have used the backend to:
 @z
 
 @x
-For more information about extension backends, see [Architecture](../architecture/index.md#the-backend).
+For more information about extension backends, see [Architecture](../architecture/_index.md#the-backend).
 @y
-For more information about extension backends, see [Architecture](../architecture/index.md#the-backend).
+For more information about extension backends, see [Architecture](../architecture/_index.md#the-backend).
 @z
 
 @x
@@ -904,9 +904,9 @@ call displayed.
 @z
 
 @x
-- Learn how to [share and publish your extension](../extensions/index.md).
-- Learn more about extensions [architecture](../architecture/index.md).
+- Learn how to [share and publish your extension](../extensions/_index.md).
+- Learn more about extensions [architecture](../architecture/_index.md).
 @y
-- Learn how to [share and publish your extension](../extensions/index.md).
-- Learn more about extensions [architecture](../architecture/index.md).
+- Learn how to [share and publish your extension](../extensions/_index.md).
+- Learn more about extensions [architecture](../architecture/_index.md).
 @z

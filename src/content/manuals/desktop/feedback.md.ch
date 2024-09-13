@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Find a way to provide feedback that's right for you
 keywords: Feedback, Docker Desktop, Linux, Mac, Windows, Dev Environments, Extensions,
   Community forum, bugs, problems, issues
 title: Give feedback
----
 @y
----
 description: Find a way to provide feedback that's right for you
 keywords: Feedback, Docker Desktop, Linux, Mac, Windows, Dev Environments, Extensions,
   Community forum, bugs, problems, issues
 title: Give feedback
----
 @z
 
 @x

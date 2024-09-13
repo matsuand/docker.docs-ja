@@ -2,17 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Scout billing
+linkTitle: Docker Scout
 description: Learn how to get started with and manage you Docker Scout subscription.
 keywords: payments, billing, subscription, scout, buy docker scout, subscribe to docker scout
----
 @y
----
 title: Docker Scout billing
+linkTitle: Docker Scout
 description: Learn how to get started with and manage you Docker Scout subscription.
 keywords: payments, billing, subscription, scout, buy docker scout, subscribe to docker scout
----
 @z
 
 @x

@@ -2,47 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Desktop Enterprise
 description: Docker Desktop Enterprise
 keywords: Docker Desktop Enterprise
-sitemap: false
-aliases:
-- /ee/desktop/
-- /desktop/enterprise/release-notes/
-- /desktop/enterprise/admin/install/mac/
-- /desktop/enterprise/admin/configure/mac-admin/
-- /desktop/enterprise/admin/configure/windows-admin/
-- /desktop/enterprise/user/mac-user/
-- /desktop/enterprise/user/windows-user/
-- /desktop/enterprise/app-designer/
-- /desktop/enterprise/troubleshoot/mac-issues/
-- /desktop/enterprise/troubleshoot/windows-issues/
----
 @y
----
 title: Docker Desktop Enterprise
 description: Docker Desktop Enterprise
 keywords: Docker Desktop Enterprise
-sitemap: false
-aliases:
-- /ee/desktop/
-- /desktop/enterprise/release-notes/
-- /desktop/enterprise/admin/install/mac/
-- /desktop/enterprise/admin/configure/mac-admin/
-- /desktop/enterprise/admin/configure/windows-admin/
-- /desktop/enterprise/user/mac-user/
-- /desktop/enterprise/user/windows-user/
-- /desktop/enterprise/app-designer/
-- /desktop/enterprise/troubleshoot/mac-issues/
-- /desktop/enterprise/troubleshoot/windows-issues/
----
 @z
 
 @x
-Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Please use [Docker Desktop](../index.md) Community instead.
+Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Please use [Docker Desktop](../_index.md) Community instead.
 @y
-Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Please use [Docker Desktop](../index.md) Community instead.
+Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Please use [Docker Desktop](../_index.md) Community instead.
 @z
 
 @x

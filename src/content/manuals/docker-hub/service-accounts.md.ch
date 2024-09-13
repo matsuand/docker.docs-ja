@@ -21,12 +21,12 @@ weight: 50
 > [!NOTE]
 >
 > Service accounts require a
-> [Docker Team, or Business subscription](../subscription/index.md).
+> [Docker Team, or Business subscription](../subscription/_index.md).
 @y
 > [!NOTE]
 >
 > Service accounts require a
-> [Docker Team, or Business subscription](../subscription/index.md).
+> [Docker Team, or Business subscription](../subscription/_index.md).
 @z
 
 @x

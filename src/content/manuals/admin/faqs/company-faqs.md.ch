@@ -166,9 +166,9 @@ You can add organizations to a company in the [Admin Console](../../admin/compan
 @z
 
 @x
-See your [SCIM](scim.md) and [SSO](../../security/for-admins/single-sign-on/configure/index.md) settings.
+See your [SCIM](scim.md) and [SSO](../../security/for-admins/single-sign-on/configure/_index.md) settings.
 @y
-See your [SCIM](scim.md) and [SSO](../../security/for-admins/single-sign-on/configure/index.md) settings.
+See your [SCIM](scim.md) and [SSO](../../security/for-admins/single-sign-on/configure/_index.md) settings.
 @z
 
 @x

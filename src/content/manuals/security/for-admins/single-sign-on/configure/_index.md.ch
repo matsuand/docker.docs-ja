@@ -2,31 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to configure single sign-on for your organization or company.
 keywords: configure, sso, docker hub, hub, docker admin, admin, security 
 title: Configure single sign-on
-aliases:
-- /docker-hub/domains/
-- /docker-hub/sso-connection/
-- /docker-hub/enforcing-sso/
-- /single-sign-on/configure/
-- /admin/company/settings/sso-configuration/
-- /admin/organization/security-settings/sso-configuration/
----
+linkTitle: Configure
 @y
----
 description: Learn how to configure single sign-on for your organization or company.
 keywords: configure, sso, docker hub, hub, docker admin, admin, security 
 title: Configure single sign-on
-aliases:
-- /docker-hub/domains/
-- /docker-hub/sso-connection/
-- /docker-hub/enforcing-sso/
-- /single-sign-on/configure/
-- /admin/company/settings/sso-configuration/
-- /admin/organization/security-settings/sso-configuration/
----
+linkTitle: Configure
 @z
 
 @x

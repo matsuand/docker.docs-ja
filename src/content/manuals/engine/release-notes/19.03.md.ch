@@ -4,17 +4,11 @@
 % __SUBDIR__ 対応
 
 @x
----
 title: Docker Engine 19.03 release notes
-toc_min: 1
-toc_max: 2
----
+linkTitle: Engine v19.03
 @y
----
 title: Docker Engine 19.03 release notes
-toc_min: 1
-toc_max: 2
----
+linkTitle: Engine v19.03
 @z
 
 @x

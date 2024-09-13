@@ -5,10 +5,12 @@
 
 @x
 title: Enhanced Container Isolation (ECI) FAQs
+linkTitle: FAQs
 description: Frequently asked questions for Enhanced Container Isolation
 keywords: enhanced container isolation, security, faq, sysbox, Docker Desktop
 @y
 title: Enhanced Container Isolation (ECI) FAQs
+linkTitle: FAQs
 description: Frequently asked questions for Enhanced Container Isolation
 keywords: enhanced container isolation, security, faq, sysbox, Docker Desktop
 @z

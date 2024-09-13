@@ -1,9 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = dev-environments enterprise faqs images install linux mac \
-	previous-versions settings troubleshoot use-desktop windows \
-	wsl
+SUBDIRS = dev-environments enterprise faqs images install \
+	previous-versions troubleshoot use-desktop wsl
 
 bases = \
 	_index.md                    \
@@ -16,6 +15,7 @@ bases = \
 	kubernetes.md                \
 	networking.md                \
 	release-notes.md             \
+	settings.md                  \
 	support.md                   \
 	synchronized-file-sharing.md \
 	uninstall.md                 \

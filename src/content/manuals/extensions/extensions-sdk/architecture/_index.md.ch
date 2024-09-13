@@ -5,10 +5,12 @@
 
 @x
 title: Extension architecture
+linkTitle: Architecture
 description: Docker extension architecture
 keywords: Docker, extensions, sdk, metadata
 @y
 title: Extension architecture
+linkTitle: Architecture
 description: Docker extension architecture
 keywords: Docker, extensions, sdk, metadata
 @z

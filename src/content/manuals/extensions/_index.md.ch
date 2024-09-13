@@ -26,10 +26,10 @@ Docker Extensions は Docker Desktop 内において、サードパーティ製�
 @z
 
 @x
-You can seamlessly connect your favorite development tools to your application development and deployment workflows. Augment Docker Desktop with debugging, testing, security, and networking functionalities, and create custom add-ons using the Extensions [SDK](extensions-sdk/index.md).
+You can seamlessly connect your favorite development tools to your application development and deployment workflows. Augment Docker Desktop with debugging, testing, security, and networking functionalities, and create custom add-ons using the Extensions [SDK](extensions-sdk/_index.md).
 @y
 お気に入りの開発ツールをアプリケーション開発やデプロイワークフローにシームレスに接続することが可能となります。
-Extensions の [SDK](extensions-sdk/index.md) を利用すれば、Docker Desktop のデバッグ、テスト、セキュリティ、ネットワーク機能を拡張し、独自のアドオンを生成することができます。
+Extensions の [SDK](extensions-sdk/_index.md) を利用すれば、Docker Desktop のデバッグ、テスト、セキュリティ、ネットワーク機能を拡張し、独自のアドオンを生成することができます。
 @z
 
 @x

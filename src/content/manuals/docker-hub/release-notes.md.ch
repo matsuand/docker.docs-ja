@@ -6,15 +6,19 @@
 @x
 title: Docker Hub release notes
 linkTitle: Release notes
-weight: 999
-description: Learn about the new features, bug fixes, and breaking changes for Docker
-  Hub
 @y
 title: Docker Hub release notes
 linkTitle: Release notes
-weight: 999
+@z
+
+@x
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Hub
+keywords: docker hub, whats new, release notes
+@y
+description: Learn about the new features, bug fixes, and breaking changes for Docker
+  Hub
+keywords: docker hub, whats new, release notes
 @z
 
 @x
@@ -372,9 +376,9 @@ The updated [Docker Subscription Service Agreement](https://www.docker.com/legal
 @z
 
 @x
-    To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/index.md).
+    To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
 @y
-    To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/index.md).
+    To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
 @z
 
 @x
@@ -444,9 +448,9 @@ To change the email address receiving billing-related emails, log into Docker Hu
 @z
 
 @x
-For details on how to update your billing information, see [Update billing information](../billing/index.md).
+For details on how to update your billing information, see [Update billing information](../billing/_index.md).
 @y
-For details on how to update your billing information, see [Update billing information](../billing/index.md).
+For details on how to update your billing information, see [Update billing information](../billing/_index.md).
 @z
 
 @x
@@ -510,9 +514,9 @@ For more information about this feature and for instructions on how to use it, s
 @z
 
 @x
-The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/access/index.md#view-repository-tags).
+The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/access/_index.md#view-repository-tags).
 @y
-The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/access/index.md#view-repository-tags).
+The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/access/_index.md#view-repository-tags).
 @z
 
 @x
@@ -546,9 +550,9 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-* Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/index.md).
+* Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
 @y
-* Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/index.md).
+* Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
 @z
 
 @x
@@ -570,11 +574,11 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-* The [repositories page](repos/index.md) and all
+* The [repositories page](repos/_index.md) and all
 related settings and tabs have been updated and moved from `cloud.docker.com`
 to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker.com/repositories](https://hub.docker.com/repositories).
 @y
-* The [repositories page](repos/index.md) and all
+* The [repositories page](repos/_index.md) and all
 related settings and tabs have been updated and moved from `cloud.docker.com`
 to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker.com/repositories](https://hub.docker.com/repositories).
 @z

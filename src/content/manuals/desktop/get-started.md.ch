@@ -60,9 +60,9 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](/manuals/security/for-admins/hardened-desktop/index.md).
+- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](/manuals/security/for-admins/hardened-desktop/_index.md).
 @y
-- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](manuals/security/for-admins/hardened-desktop/index.md).
+- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](manuals/security/for-admins/hardened-desktop/_index.md).
 @z
 
 @x
@@ -220,11 +220,11 @@ docker.io/molly/privateimage:latest
 @z
 
 @x
-- [Explore Docker Desktop](use-desktop/index.md) and its features. 
+- [Explore Docker Desktop](use-desktop/_index.md) and its features. 
 - Change your Docker Desktop settings
 - [Browse common FAQs](faqs/general.md)
 @y
-- [Explore Docker Desktop](use-desktop/index.md) and its features. 
+- [Explore Docker Desktop](use-desktop/_index.md) and its features. 
 - Change your Docker Desktop settings
 - [Browse common FAQs](faqs/general.md)
 @z

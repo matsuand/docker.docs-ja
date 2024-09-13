@@ -47,7 +47,7 @@ The following GitHub Actions are available:
   installs [QEMU](https://github.com/qemu/qemu) static binaries for multi-arch
   builds.
 - [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  enables using high-level builds with [Bake](../../bake/index.md).
+  enables using high-level builds with [Bake](../../bake/_index.md).
 - [Docker Scout](https://github.com/docker/scout-action):
   analyze Docker images for security vulnerabilities.
 @y
@@ -62,7 +62,7 @@ The following GitHub Actions are available:
 - [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
   マルチアーキテクチャービルド向けに [QEMU](https://github.com/qemu/qemu) のスタティックバイナリをインストールします。
 - [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  [Bake](../../bake/index.md) を使った高度なビルドを可能にします。
+  [Bake](../../bake/_index.md) を使った高度なビルドを可能にします。
 - [Docker Scout](https://github.com/docker/scout-action):
   Docker イメージのセキュリティぜい弱性を分析します。
 @z

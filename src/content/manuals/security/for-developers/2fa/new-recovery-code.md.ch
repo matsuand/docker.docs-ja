@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Generate a new 2fa recovery code
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication, account security
 title: Generate a new recovery code
-aliases:
-- /docker-hub/2fa/new-recovery-code/
----
 @y
----
 description: Generate a new 2fa recovery code
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication, account security
 title: Generate a new recovery code
-aliases:
-- /docker-hub/2fa/new-recovery-code/
----
 @z
 
 @x

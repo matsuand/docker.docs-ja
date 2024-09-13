@@ -41,11 +41,11 @@ There are two types of nodes: [managers](#manager-nodes) and
 
 @x
 If you haven't already, read through the
-[Swarm mode overview](../index.md) and
+[Swarm mode overview](../_index.md) and
 [key concepts](../key-concepts.md).
 @y
 If you haven't already, read through the
-[Swarm mode overview](../index.md) and
+[Swarm mode overview](../_index.md) and
 [key concepts](../key-concepts.md).
 @z
 

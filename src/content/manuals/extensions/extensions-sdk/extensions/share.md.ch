@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Share your extension
 description: Share your extension with a share link
 keywords: Docker, extensions, share
-aliases: 
- - /desktop/extensions-sdk/extensions/share/
----
 @y
----
 title: Share your extension
 description: Share your extension with a share link
 keywords: Docker, extensions, share
-aliases: 
- - /desktop/extensions-sdk/extensions/share/
----
 @z
 
 @x

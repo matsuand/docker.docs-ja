@@ -68,9 +68,9 @@ To run through this tutorial, you need:
 @z
 
 @x
-2.  A current version of [Docker Compose](/manuals/compose/install/index.md).
+2.  A current version of [Docker Compose](/manuals/compose/install/_index.md).
 @y
-2.  A current version of [Docker Compose](manuals/compose/install/index.md).
+2.  A current version of [Docker Compose](manuals/compose/install/_index.md).
 @z
 
 @x

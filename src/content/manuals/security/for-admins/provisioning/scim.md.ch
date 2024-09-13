@@ -6,10 +6,12 @@
 @x
 keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 title: SCIM provisioning
+linkTitle: SCIM
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
 @y
 keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 title: SCIM provisioning
+linkTitle: SCIM
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
 @z
 

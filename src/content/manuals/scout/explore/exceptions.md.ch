@@ -194,9 +194,9 @@ appears next to the CVE ID. Details about the exception are also displayed.
 @z
 
 @x
-![SUPPRESSED label in the CLI output](../../images/suppressed-cve-cli.png)
+![SUPPRESSED label in the CLI output](/scout/images/suppressed-cve-cli.png)
 @y
-![SUPPRESSED label in the CLI output](../../images/suppressed-cve-cli.png)
+![SUPPRESSED label in the CLI output](__SUBDIR__/scout/images/suppressed-cve-cli.png)
 @z
 
 @x

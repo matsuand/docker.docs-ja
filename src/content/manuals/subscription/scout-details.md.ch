@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Scout subscriptions and features
 description: Learn about the Docker Scout subscriptions plans and features
 keywords: subscription, free, team, business, features
----
 @y
----
 title: Docker Scout subscriptions and features
 description: Learn about the Docker Scout subscriptions plans and features
 keywords: subscription, free, team, business, features
----
 @z
 
 @x

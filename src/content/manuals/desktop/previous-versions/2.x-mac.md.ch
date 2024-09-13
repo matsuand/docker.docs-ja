@@ -579,10 +579,10 @@ Docker Desktop 2.2.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 
 @x
 - **Docker Desktop Dashboard:** The new Docker Desktop **Dashboard** provides a user-friendly interface which enables you to interact with containers and applications, and manage the lifecycle of your applications directly from the UI. In addition, it allows you to access the logs, view container details, and monitor resource utilization to explore the container behavior.
-  For detailed information about the new Dashboard UI, see [Docker Desktop Dashboard](../index.md).
+  For detailed information about the new Dashboard UI, see [Docker Desktop Dashboard](../_index.md).
 @y
 - **Docker Desktop Dashboard:** The new Docker Desktop **Dashboard** provides a user-friendly interface which enables you to interact with containers and applications, and manage the lifecycle of your applications directly from the UI. In addition, it allows you to access the logs, view container details, and monitor resource utilization to explore the container behavior.
-  For detailed information about the new Dashboard UI, see [Docker Desktop Dashboard](../index.md).
+  For detailed information about the new Dashboard UI, see [Docker Desktop Dashboard](../_index.md).
 @z
 
 @x
@@ -873,10 +873,10 @@ Docker Desktop Community 2.1.0.0 contains the following experimental features.
 
 @x
 * Docker App: Docker App is a CLI plugin that helps configure, share, and install applications.
-* Docker Buildx: Docker Buildx is a CLI plugin for extended build capabilities with BuildKit. For more information, see the [Build page](/manuals/build/index.md).
+* Docker Buildx: Docker Buildx is a CLI plugin for extended build capabilities with BuildKit. For more information, see the [Build page](/manuals/build/_index.md).
 @y
 * Docker App: Docker App is a CLI plugin that helps configure, share, and install applications.
-* Docker Buildx: Docker Buildx is a CLI plugin for extended build capabilities with BuildKit. For more information, see the [Build page](manuals/build/index.md).
+* Docker Buildx: Docker Buildx is a CLI plugin for extended build capabilities with BuildKit. For more information, see the [Build page](manuals/build/_index.md).
 @z
 
 @x

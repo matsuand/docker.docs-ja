@@ -43,10 +43,10 @@ machine reboots.
 
 @x
 The command to start Docker depends on your operating system. Check the correct
-page under [Install Docker](/manuals/engine/install/index.md).
+page under [Install Docker](/manuals/engine/install/_index.md).
 @y
 Docker の開始コマンドはオペレーティングシステムにより異なります。
-[Docker のインストール](manuals/engine/install/index.md) における適切な説明を参照してください。
+[Docker のインストール](manuals/engine/install/_index.md) における適切な説明を参照してください。
 @z
 
 @x

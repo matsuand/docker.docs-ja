@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: FAQs on Docker subscriptions
 keywords: Docker, Docker Hub, subscription FAQs, subscription, platform
 title: Subscription FAQs
-tags: [FAQ]
----
+linkTitle: FAQs
 @y
----
 description: FAQs on Docker subscriptions
 keywords: Docker, Docker Hub, subscription FAQs, subscription, platform
 title: Subscription FAQs
-tags: [FAQ]
----
+linkTitle: FAQs
 @z
 
 @x

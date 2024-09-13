@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Desktop license agreement
 description: Information about Docker Desktop's license agreement
 keywords: license agreement, docker desktop, subscription
----
 @y
----
 title: Docker Desktop license agreement
 description: Information about Docker Desktop's license agreement
 keywords: license agreement, docker desktop, subscription
----
 @z
 
 @x
@@ -56,9 +52,9 @@ Read the [Blog](https://www.docker.com/blog/updating-product-subscriptions/) and
 @z
 
 @x
-Docker Desktop is built using open-source software. For information about the licensing of open-source components in Docker Desktop, select {{< inline-image src="../desktop/mac/images/whale-x.svg" alt="whale menu" >}} > **About Docker Desktop** > **Acknowledgements**.
+Docker Desktop is built using open-source software. For information about the licensing of open-source components in Docker Desktop, select the whale menu > **About Docker Desktop** > **Acknowledgements**.
 @y
-Docker Desktop is built using open-source software. For information about the licensing of open-source components in Docker Desktop, select {{< inline-image src="../desktop/mac/images/whale-x.svg" alt="whale menu" >}} > **About Docker Desktop** > **Acknowledgements**.
+Docker Desktop is built using open-source software. For information about the licensing of open-source components in Docker Desktop, select the whale menu > **About Docker Desktop** > **Acknowledgements**.
 @z
 
 @x

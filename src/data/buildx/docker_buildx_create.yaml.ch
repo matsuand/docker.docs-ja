@@ -220,13 +220,11 @@ examples: |-
 % snip code...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Network mode "bridge" is supported since BuildKit v0.13 and will become the
     > default in next v0.14.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Network mode "bridge" is supported since BuildKit v0.13 and will become the
     > default in next v0.14.
 @z

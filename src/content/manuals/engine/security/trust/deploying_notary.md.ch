@@ -14,9 +14,9 @@ title: Deploy Notary Server with Compose
 @z
 
 @x
-The easiest way to deploy Notary Server is by using Docker Compose. To follow the procedure on this page, you must have already [installed Docker Compose](/manuals/compose/install/index.md).
+The easiest way to deploy Notary Server is by using Docker Compose. To follow the procedure on this page, you must have already [installed Docker Compose](/manuals/compose/install/_index.md).
 @y
-The easiest way to deploy Notary Server is by using Docker Compose. To follow the procedure on this page, you must have already [installed Docker Compose](manuals/compose/install/index.md).
+The easiest way to deploy Notary Server is by using Docker Compose. To follow the procedure on this page, you must have already [installed Docker Compose](manuals/compose/install/_index.md).
 @z
 
 @x

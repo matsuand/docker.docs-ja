@@ -7,12 +7,12 @@
 description: Single sign-on FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, administration, security
 title: General FAQs on SSO
-tags: [FAQ]
+linkTitle: General
 @y
 description: Single sign-on FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, administration, security
 title: General FAQs on SSO
-tags: [FAQ]
+linkTitle: General
 @z
 
 @x

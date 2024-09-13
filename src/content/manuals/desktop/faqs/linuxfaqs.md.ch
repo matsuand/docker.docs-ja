@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Frequently asked questions for Docker Desktop for Linux
 keywords: desktop, linux, faqs
 title: FAQs for Docker Desktop for Linux
-tags: [FAQ]
-aliases:
-- /desktop/linux/space/
----
+linkTitle: Linux
 @y
----
 description: Frequently asked questions for Docker Desktop for Linux
 keywords: desktop, linux, faqs
 title: FAQs for Docker Desktop for Linux
-tags: [FAQ]
-aliases:
-- /desktop/linux/space/
----
+linkTitle: Linux
 @z
 
 @x

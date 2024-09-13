@@ -96,9 +96,9 @@ $ docker compose -f compose.yml -f production.yml up -d
 @z
 
 @x
-See [Using multiple compose files](multiple-compose-files/index.md) for a more complete example, and other options.
+See [Using multiple compose files](multiple-compose-files/_index.md) for a more complete example, and other options.
 @y
-See [Using multiple compose files](multiple-compose-files/index.md) for a more complete example, and other options.
+See [Using multiple compose files](multiple-compose-files/_index.md) for a more complete example, and other options.
 @z
 
 @x

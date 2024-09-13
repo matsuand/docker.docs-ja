@@ -2,13 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Tags
----
 @y
----
 title: Tags
----
 @z
 
 @x

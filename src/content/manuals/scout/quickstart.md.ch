@@ -101,7 +101,7 @@ You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
 Docker Scout analyzes all local images by default. To analyze images in
 remote repositories, you need to enable it first.
 You can do this from Docker Hub, the Docker Scout Dashboard, and CLI.
-[Find out how in the overview guide](scout).
+[Find out how in the overview guide](__SUBDIR__/scout).
 @z
 
 @x

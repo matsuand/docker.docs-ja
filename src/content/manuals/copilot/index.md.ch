@@ -5,10 +5,10 @@
 
 @x
 title: Docker for GitHub Copilot
-linkTitle: Docker for GitHub Copilot {{< badge color="violet" text="Early Access" >}}
+linkTitle: Docker for GitHub Copilot
 @y
 title: Docker for GitHub Copilot
-linkTitle: Docker for GitHub Copilot {{< badge color="violet" text="Early Access" >}}
+linkTitle: Docker for GitHub Copilot
 @z
 
 @x

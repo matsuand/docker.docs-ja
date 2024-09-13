@@ -2,27 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Validate your extension
+linkTitle: Validate
 description: Step three in the extension creation process
 keywords: Docker, Extensions, sdk, validate, install
-aliases:
- - /desktop/extensions-sdk/extensions/validation/
- - /desktop/extensions-sdk/build/build-install/
- - /desktop/extensions-sdk/dev/cli/build-test-install-extension/
- - /desktop/extensions-sdk/extensions/validate/
----
 @y
----
 title: Validate your extension
+linkTitle: Validate
 description: Step three in the extension creation process
 keywords: Docker, Extensions, sdk, validate, install
-aliases:
- - /desktop/extensions-sdk/extensions/validation/
- - /desktop/extensions-sdk/build/build-install/
- - /desktop/extensions-sdk/dev/cli/build-test-install-extension/
- - /desktop/extensions-sdk/extensions/validate/
----
 @z
 
 @x

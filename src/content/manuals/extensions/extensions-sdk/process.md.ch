@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Understand the process of creating an extension.
 title: The build and publish process
 keyword: Docker Extensions, sdk, build, create, publish
-aliases:
- - /desktop/extensions-sdk/process/
----
 @y
----
 description: Understand the process of creating an extension.
 title: The build and publish process
 keyword: Docker Extensions, sdk, build, create, publish
-aliases:
- - /desktop/extensions-sdk/process/
----
 @z
 
 @x
@@ -88,11 +80,11 @@ For further inspiration, see the other examples in the [samples folder](https://
 @x
 > [!TIP]
 >
-> Whilst creating your extension, make sure you follow the [design](design/design-guidelines.md) and [UI styling](design/index.md) guidelines to ensure visual consistency and [level AA accessibility standards](https://www.w3.org/WAI/WCAG2AA-Conformance).
+> Whilst creating your extension, make sure you follow the [design](design/design-guidelines.md) and [UI styling](design/_index.md) guidelines to ensure visual consistency and [level AA accessibility standards](https://www.w3.org/WAI/WCAG2AA-Conformance).
 @y
 > [!TIP]
 >
-> Whilst creating your extension, make sure you follow the [design](design/design-guidelines.md) and [UI styling](design/index.md) guidelines to ensure visual consistency and [level AA accessibility standards](https://www.w3.org/WAI/WCAG2AA-Conformance).
+> Whilst creating your extension, make sure you follow the [design](design/design-guidelines.md) and [UI styling](design/_index.md) guidelines to ensure visual consistency and [level AA accessibility standards](https://www.w3.org/WAI/WCAG2AA-Conformance).
 @z
 
 @x

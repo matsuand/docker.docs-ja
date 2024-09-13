@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Find the answers to FAQs related to networking and virtualization
 keywords: Docker, Docker Hub, Docker Desktop security FAQs, security, platform, networks, vms
 title: Network and VM FAQs
-tags: [FAQ]
-aliases:
-- /faq/security/networking-and-vms/
----
+linkTitle: Network and VM
 @y
----
 description: Find the answers to FAQs related to networking and virtualization
 keywords: Docker, Docker Hub, Docker Desktop security FAQs, security, platform, networks, vms
 title: Network and VM FAQs
-tags: [FAQ]
-aliases:
-- /faq/security/networking-and-vms/
----
+linkTitle: Network and VM
 @z
 
 @x

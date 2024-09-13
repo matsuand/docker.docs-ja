@@ -2826,11 +2826,11 @@ TCP connection is idle for more than five minutes (related to
 @x
 - Add daemon options validation
 - Diagnose can be cancelled & Improved help information. Fixes [docker/for-mac#1134](https://github.com/docker/for-mac/issues/1134), [docker/for-mac#1474](https://github.com/docker/for-mac/issues/1474)
-- Support paging of Docker Cloud [repositories](../../docker-hub/repos/index.md) and [organizations](../../admin/organization/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
+- Support paging of Docker Cloud [repositories](../../docker-hub/repos/_index.md) and [organizations](../../admin/organization/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
 @y
 - Add daemon options validation
 - Diagnose can be cancelled & Improved help information. Fixes [docker/for-mac#1134](https://github.com/docker/for-mac/issues/1134), [docker/for-mac#1474](https://github.com/docker/for-mac/issues/1474)
-- Support paging of Docker Cloud [repositories](../../docker-hub/repos/index.md) and [organizations](../../admin/organization/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
+- Support paging of Docker Cloud [repositories](../../docker-hub/repos/_index.md) and [organizations](../../admin/organization/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
 @z
 
 @x
@@ -3986,15 +3986,15 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](../settings/mac.md#docker-engine).
+- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](/manuals/desktop/settings.md#docker-engine).
 @y
-- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](../settings/mac.md#docker-engine).
+- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](manuals/desktop/settings.md#docker-engine).
 @z
 
 @x
-- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](../settings/mac.md#docker-engine).
+- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](/manuals/desktop/settings.md#docker-engine).
 @y
-- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](../settings/mac.md#docker-engine).
+- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](manuals/desktop/settings.md#docker-engine).
 @z
 
 @x
@@ -4852,9 +4852,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](../troubleshoot/known-issues.md) in [Logs and Troubleshooting](../troubleshoot/overview.md).
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](../troubleshoot/known-issues.md) in [Logs and Troubleshooting](../troubleshoot/_index.md).
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](../troubleshoot/known-issues.md) in [Logs and Troubleshooting](../troubleshoot/overview.md).
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](../troubleshoot/known-issues.md) in [Logs and Troubleshooting](../troubleshoot/_index.md).
 @z
 
 @x
@@ -5136,14 +5136,14 @@ events or unexpected unmounts.
 @z
 
 @x
-* Documentation moved to [/desktop/mac/](../index.md)
+* Documentation moved to [/desktop/mac/](../_index.md)
 * Allow non-admin users to launch the app for the first time (using admin creds)
 * Prompt non-admin users for admin password when needed in Preferences
 * Fixed download links, documentation links
 * Fixed "failure: No error" message in diagnostic panel
 * Improved diagnostics for networking and logs for the service port openers
 @y
-* Documentation moved to [/desktop/mac/](../index.md)
+* Documentation moved to [/desktop/mac/](../_index.md)
 * Allow non-admin users to launch the app for the first time (using admin creds)
 * Prompt non-admin users for admin password when needed in Preferences
 * Fixed download links, documentation links

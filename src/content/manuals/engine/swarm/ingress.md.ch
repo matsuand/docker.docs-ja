@@ -49,11 +49,11 @@ ports open between the swarm nodes before you enable Swarm mode:
 
 @x
 When setting up networking in a Swarm, special care should be taken. Consult
-the [tutorial](swarm-tutorial/index.md#open-protocols-and-ports-between-the-hosts)
+the [tutorial](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts)
 for an overview.
 @y
 When setting up networking in a Swarm, special care should be taken. Consult
-the [tutorial](swarm-tutorial/index.md#open-protocols-and-ports-between-the-hosts)
+the [tutorial](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts)
 for an overview.
 @z
 

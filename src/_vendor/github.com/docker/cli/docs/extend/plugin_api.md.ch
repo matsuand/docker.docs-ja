@@ -25,10 +25,10 @@ Docker Engine.
 
 @x
 This document describes the Docker Engine plugin API. To view information on
-plugins managed by Docker Engine, refer to [Docker Engine plugin system](index.md).
+plugins managed by Docker Engine, refer to [Docker Engine plugin system](_index.md).
 @y
 This document describes the Docker Engine plugin API. To view information on
-plugins managed by Docker Engine, refer to [Docker Engine plugin system](index.md).
+plugins managed by Docker Engine, refer to [Docker Engine plugin system](_index.md).
 @z
 
 @x

@@ -368,10 +368,10 @@ target doesn't depend on that stage.
 @z
 
 @x
-[BuildKit](../buildkit/index.md) only builds the stages that the target stage
+[BuildKit](../buildkit/_index.md) only builds the stages that the target stage
 depends on.
 @y
-[BuildKit](../buildkit/index.md) only builds the stages that the target stage
+[BuildKit](../buildkit/_index.md) only builds the stages that the target stage
 depends on.
 @z
 
@@ -412,11 +412,11 @@ RUN echo "stage2"
 @z
 
 @x
-With [BuildKit enabled](../buildkit/index.md#getting-started), building the
+With [BuildKit enabled](../buildkit/_index.md#getting-started), building the
 `stage2` target in this Dockerfile means only `base` and `stage2` are processed.
 There is no dependency on `stage1`, so it's skipped.
 @y
-With [BuildKit enabled](../buildkit/index.md#getting-started), building the
+With [BuildKit enabled](../buildkit/_index.md#getting-started), building the
 `stage2` target in this Dockerfile means only `base` and `stage2` are processed.
 There is no dependency on `stage1`, so it's skipped.
 @z

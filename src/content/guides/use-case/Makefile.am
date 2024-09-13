@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = genai-pdf-bot genai-video-bot images nlp
+SUBDIRS = genai-pdf-bot genai-video-bot images nlp rag-ollama
 
 bases = \
 	_index.md    \

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Using secrets with GitHub Actions
 linkTitle: Build secrets
@@ -61,21 +63,7 @@ First, create a `Dockerfile` that uses the secret:
 First, create a `Dockerfile` that uses the secret:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-RUN --mount=type=secret,id=github_token \
-  cat /run/secrets/github_token
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-RUN --mount=type=secret,id=github_token \
-  cat /run/secrets/github_token
-```
-@z
+% snip code...
 
 @x
 In this example, the secret name is `github_token`. The following workflow

@@ -4,11 +4,11 @@
 @x
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows,
-title: Non-Marketplace extensions
+title: Non-marketplace extensions
 @y
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows,
-title: Non-Marketplace extensions
+title: Non-marketplace extensions
 @z
 
 @x

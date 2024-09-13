@@ -2,37 +2,27 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to upgrade your Docker subscription
 keywords: Docker Hub, upgrade, subscription, Pro, Team, business, pricing plan, docker core
 title: Upgrade your subscription
-aliases:
-- /docker-hub/upgrade/
-- /docker-hub/billing/upgrade/
-- /subscription/upgrade/
----
+linkTitle: Upgrade
 @y
----
 description: Learn how to upgrade your Docker subscription
 keywords: Docker Hub, upgrade, subscription, Pro, Team, business, pricing plan, docker core
 title: Upgrade your subscription
-aliases:
-- /docker-hub/upgrade/
-- /docker-hub/billing/upgrade/
-- /subscription/upgrade/
----
-@z
-
-@x
-{{< include "tax-compliance.md" >}}
-@y
-{{< include "tax-compliance.md" >}}
+linkTitle: Upgrade
 @z
 
 @x
 When you upgrade to a paid subscription, you immediately have access to all the features and entitlements available in your new chosen subscription. For detailed information on features available in each subscription, see [Docker Pricing](https://www.docker.com/pricing).
 @y
 When you upgrade to a paid subscription, you immediately have access to all the features and entitlements available in your new chosen subscription. For detailed information on features available in each subscription, see [Docker Pricing](https://www.docker.com/pricing).
+@z
+
+@x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
 @z
 
 @x

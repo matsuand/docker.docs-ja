@@ -2,15 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: API reference by version
-build:
-  render: never
----
 @y
----
 title: API reference by version
-build:
-  render: never
----
 @z

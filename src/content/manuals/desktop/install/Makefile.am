@@ -1,18 +1,14 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images msi
+SUBDIRS = images linux msi
 
 bases = \
-	_index.md          \
-	archlinux.md       \
-	debian.md          \
-	fedora.md          \
-	linux-install.md   \
-	mac-install.md     \
-	rhel.md            \
-	ubuntu.md          \
-	windows-install.md
+	_index.md                          \
+	mac-install.md                     \
+	mac-permission-requirements.md     \
+	windows-install.md                 \
+	windows-permission-requirements.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

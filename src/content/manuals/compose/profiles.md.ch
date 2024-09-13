@@ -128,10 +128,10 @@ Valid profiles names follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 @z
 
 @x
-To start a specific profile supply the `--profile` [command-line option](reference/index.md) or
+To start a specific profile supply the `--profile` [command-line option](reference/_index.md) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @y
-To start a specific profile supply the `--profile` [command-line option](reference/index.md) or
+To start a specific profile supply the `--profile` [command-line option](reference/_index.md) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @z
 
@@ -152,12 +152,12 @@ $ COMPOSE_PROFILES=debug docker compose up
 @z
 
 @x
-The above commands would both start your application with the `debug` profile enabled.
-In the example, `compose.yml` file above, this starts the services `backend`,
+Both commands start the services with the `debug` profile enabled.
+In the previous `compose.yml` file, this starts the services
 `db` and `phpmyadmin`.
 @y
-The above commands would both start your application with the `debug` profile enabled.
-In the example, `compose.yml` file above, this starts the services `backend`,
+Both commands start the services with the `debug` profile enabled.
+In the previous `compose.yml` file, this starts the services
 `db` and `phpmyadmin`.
 @z
 

@@ -196,11 +196,11 @@ Docker Desktop is available for Mac, Linux, and Windows. The supported version i
 @x
 * [Mac system requirements](/manuals/desktop/install/mac-install.md#system-requirements)
 * [Windows system requirements](/manuals/desktop/install/windows-install.md#system-requirements)
-* [Linux system requirements](/manuals/desktop/install/linux-install.md#system-requirements)
+* [Linux system requirements](/manuals/desktop/install/linux/_index.md#system-requirements)
 @y
 * [Mac system requirements](manuals/desktop/install/mac-install.md#system-requirements)
 * [Windows system requirements](manuals/desktop/install/windows-install.md#system-requirements)
-* [Linux system requirements](manuals/desktop/install/linux-install.md#system-requirements)
+* [Linux system requirements](manuals/desktop/install/linux/_index.md#system-requirements)
 @z
 
 @x
@@ -236,9 +236,9 @@ For more information, see [Docker Data Processing Agreement](https://www.docker.
 @z
 
 @x
-Before seeking support, you can perform basic troubleshooting. See [Diagnose and troubleshooting](/manuals/desktop/troubleshoot/overview.md) for more information.
+Before seeking support, you can perform basic troubleshooting. See [Diagnose and troubleshooting](/manuals/desktop/troubleshoot/_index.md) for more information.
 @y
-Before seeking support, you can perform basic troubleshooting. See [Diagnose and troubleshooting](manuals/desktop/troubleshoot/overview.md) for more information.
+Before seeking support, you can perform basic troubleshooting. See [Diagnose and troubleshooting](manuals/desktop/troubleshoot/_index.md) for more information.
 @z
 
 @x

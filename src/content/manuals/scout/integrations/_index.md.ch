@@ -147,10 +147,10 @@ The following environment monitoring integrations are available
 
 @x
 For more information about environment integrations, see
-[Environments](./environment/index.md).
+[Environments](./environment/_index.md).
 @y
 For more information about environment integrations, see
-[Environments](./environment/index.md).
+[Environments](./environment/_index.md).
 @z
 
 @x

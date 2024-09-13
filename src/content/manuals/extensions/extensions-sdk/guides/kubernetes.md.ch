@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Interacting with Kubernetes from an extension
+linkTitle: Interacting with Kubernetes
 description: How to connect to a Kubernetes cluster from an extension
 keywords: Docker, Extensions, sdk, Kubernetes
-aliases:
- - /desktop/extensions-sdk/dev/kubernetes/
- - /desktop/extensions-sdk/guides/kubernetes/
----
 @y
----
 title: Interacting with Kubernetes from an extension
+linkTitle: Interacting with Kubernetes
 description: How to connect to a Kubernetes cluster from an extension
 keywords: Docker, Extensions, sdk, Kubernetes
-aliases:
- - /desktop/extensions-sdk/dev/kubernetes/
- - /desktop/extensions-sdk/guides/kubernetes/
----
 @z
 
 @x

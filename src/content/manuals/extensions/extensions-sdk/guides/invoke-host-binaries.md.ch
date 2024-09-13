@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Invoke host binaries
 description: Add invocations to host binaries from the frontend with the extension
   SDK.
 keywords: Docker, extensions, sdk, build
-aliases:
- - /desktop/extensions-sdk/guides/invoke-host-binaries/
----
 @y
----
 title: Invoke host binaries
 description: Add invocations to host binaries from the frontend with the extension
   SDK.
 keywords: Docker, extensions, sdk, build
-aliases:
- - /desktop/extensions-sdk/guides/invoke-host-binaries/
----
 @z
 
 @x
@@ -48,9 +40,9 @@ means that you need to ship the executables for all the platforms you want to su
 @z
 
 @x
-Learn more about extensions [architecture](../architecture/index.md).
+Learn more about extensions [architecture](../architecture/_index.md).
 @y
-Learn more about extensions [architecture](../architecture/index.md).
+Learn more about extensions [architecture](../architecture/_index.md).
 @z
 
 @x

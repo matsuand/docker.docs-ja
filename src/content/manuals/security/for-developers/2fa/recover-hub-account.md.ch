@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Recover your Docker account
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication
 title: Recover your Docker account
-aliases:
-- /docker-hub/2fa/recover-hub-account/
----
 @y
----
 description: Recover your Docker account
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication
 title: Recover your Docker account
-aliases:
-- /docker-hub/2fa/recover-hub-account/
----
 @z
 
 @x

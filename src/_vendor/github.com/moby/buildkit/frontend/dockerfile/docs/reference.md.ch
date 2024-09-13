@@ -249,12 +249,19 @@ top of a Dockerfile.
 @z
 
 @x
-Parser directives aren't case-sensitive, but they're lowercase by convention.
-It's also conventional to include a blank line following any parser directives.
-Line continuation characters aren't supported in parser directives.
+Parser directive keys, such as `syntax` or `check`, aren't case-sensitive, but
+they're lowercase by convention. Values for a directive are case-sensitive and
+must be written in the appropriate case for the directive. For example,
+`#check=skip=jsonargsrecommended` is invalid because the check name must use
+Pascal case, not lowercase. It's also conventional to include a blank line
+following any parser directives. Line continuation characters aren't supported
+in parser directives.
 @y
-パーサーディレクティブは大文字小文字を区別しません。
+`syntax` や `check` のようなパーサーディレクティブは大文字小文字を区別しません。
 ただし慣習として小文字とします。
+ディレクティブに指定する値は大文字小文字を区別し、そのディレクティブにおいて適切な表記とすることが必要です。
+たとえば `#check=skip=jsonargsrecommended` というのは不適切です。
+チェック名は Pascal ケースを用いるべきであり、小文字ばかりではふさわしくありません。
 同じく慣習として、パーサーディレクティブの次には空行を 1 行挿入します。
 パーサーディレクティブにおいて、行継続を指示する文字はサポートされていません。
 @z
@@ -889,9 +896,9 @@ They're equivalent to the following line:
 % snip code...
 
 @x
-You can also use heredocs with the shell form to break up a command:
+You can also use heredocs with the shell form to break up supported commands.
 @y
-You can also use heredocs with the shell form to break up a command:
+You can also use heredocs with the shell form to break up supported commands.
 @z
 
 % snip code...
@@ -1083,13 +1090,17 @@ The available `[OPTIONS]` for the `RUN` instruction are:
 @z
 
 @x
-- [`--mount`](#run---mount)
-- [`--network`](#run---network)
-- [`--security`](#run---security)
+| Option                          | Minimum Dockerfile version |
+| ------------------------------- | -------------------------- |
+| [`--mount`](#run---mount)       | 1.2                        |
+| [`--network`](#run---network)   | 1.3                        |
+| [`--security`](#run---security) | 1.1.2-labs                 |
 @y
-- [`--mount`](#run---mount)
-- [`--network`](#run---network)
-- [`--security`](#run---security)
+| Option                          | Minimum Dockerfile version |
+| ------------------------------- | -------------------------- |
+| [`--mount`](#run---mount)       | 1.2                        |
+| [`--network`](#run---network)   | 1.3                        |
+| [`--security`](#run---security) | 1.1.2-labs                 |
 @z
 
 @x
@@ -1159,21 +1170,21 @@ The supported mount types are:
 @z
 
 @x
-| Type                                     | Description                                                                                               |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [`bind`](#run---mounttypebind) (default) | Bind-mount context directories (read-only).                                                               |
-| [`cache`](#run---mounttypecache)         | Mount a temporary directory to cache directories for compilers and package managers.                      |
-| [`tmpfs`](#run---mounttypetmpfs)         | Mount a `tmpfs` in the build container.                                                                   |
-| [`secret`](#run---mounttypesecret)       | Allow the build container to access secure files such as private keys without baking them into the image. |
-| [`ssh`](#run---mounttypessh)             | Allow the build container to access SSH keys via SSH agents, with support for passphrases.                |
+| Type                                     | Description                                                                                                              |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------                |
+| [`bind`](#run---mounttypebind) (default) | Bind-mount context directories (read-only).                                                                              |
+| [`cache`](#run---mounttypecache)         | Mount a temporary directory to cache directories for compilers and package managers.                                     |
+| [`tmpfs`](#run---mounttypetmpfs)         | Mount a `tmpfs` in the build container.                                                                                  |
+| [`secret`](#run---mounttypesecret)       | Allow the build container to access secure files such as private keys without baking them into the image or build cache. |
+| [`ssh`](#run---mounttypessh)             | Allow the build container to access SSH keys via SSH agents, with support for passphrases.                               |
 @y
-| Type                                     | Description                                                                                               |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [`bind`](#run---mounttypebind) (default) | Bind-mount context directories (read-only).                                                               |
-| [`cache`](#run---mounttypecache)         | Mount a temporary directory to cache directories for compilers and package managers.                      |
-| [`tmpfs`](#run---mounttypetmpfs)         | Mount a `tmpfs` in the build container.                                                                   |
-| [`secret`](#run---mounttypesecret)       | Allow the build container to access secure files such as private keys without baking them into the image. |
-| [`ssh`](#run---mounttypessh)             | Allow the build container to access SSH keys via SSH agents, with support for passphrases.                |
+| Type                                     | Description                                                                                                              |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------                |
+| [`bind`](#run---mounttypebind) (default) | Bind-mount context directories (read-only).                                                                              |
+| [`cache`](#run---mounttypecache)         | Mount a temporary directory to cache directories for compilers and package managers.                                     |
+| [`tmpfs`](#run---mounttypetmpfs)         | Mount a `tmpfs` in the build container.                                                                                  |
+| [`secret`](#run---mounttypesecret)       | Allow the build container to access secure files such as private keys without baking them into the image or build cache. |
+| [`ssh`](#run---mounttypessh)             | Allow the build container to access SSH keys via SSH agents, with support for passphrases.                               |
 @z
 
 @x
@@ -1191,19 +1202,19 @@ bind mount is read-only by default.
 @z
 
 @x
-| Option           | Description                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------ |
-| `target`[^1]     | Mount path.                                                                          |
-| `source`         | Source path in the `from`. Defaults to the root of the `from`.                       |
-| `from`           | Build stage or image name for the root of the source. Defaults to the build context. |
-| `rw`,`readwrite` | Allow writes on the mount. Written data will be discarded.                           |
+| Option                             | Description                                                                                    |
+| ----------------                   | ---------------------------------------------------------------------------------------------- |
+| `target`, `dst`, `destination`[^1] | Mount path.                                                                                    |
+| `source`                           | Source path in the `from`. Defaults to the root of the `from`.                                 |
+| `from`                             | Build stage, context, or image name for the root of the source. Defaults to the build context. |
+| `rw`,`readwrite`                   | Allow writes on the mount. Written data will be discarded.                                     |
 @y
-| Option           | Description                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------ |
-| `target`[^1]     | Mount path.                                                                          |
-| `source`         | Source path in the `from`. Defaults to the root of the `from`.                       |
-| `from`           | Build stage or image name for the root of the source. Defaults to the build context. |
-| `rw`,`readwrite` | Allow writes on the mount. Written data will be discarded.                           |
+| Option                             | Description                                                                                    |
+| ----------------                   | ---------------------------------------------------------------------------------------------- |
+| `target`, `dst`, `destination`[^1] | Mount path.                                                                                    |
+| `source`                           | Source path in the `from`. Defaults to the root of the `from`.                                 |
+| `from`                             | Build stage, context, or image name for the root of the source. Defaults to the build context. |
+| `rw`,`readwrite`                   | Allow writes on the mount. Written data will be discarded.                                     |
 @z
 
 @x
@@ -1221,29 +1232,29 @@ and package managers.
 @z
 
 @x
-| Option          | Description                                                                                                                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`            | Optional ID to identify separate/different caches. Defaults to value of `target`.                                                                                                                                                                                          |
-| `target`[^1]    | Mount path.                                                                                                                                                                                                                                                                |
-| `ro`,`readonly` | Read-only if set.                                                                                                                                                                                                                                                          |
-| `sharing`       | One of `shared`, `private`, or `locked`. Defaults to `shared`. A `shared` cache mount can be used concurrently by multiple writers. `private` creates a new mount if there are multiple writers. `locked` pauses the second writer until the first one releases the mount. |
-| `from`          | Build stage to use as a base of the cache mount. Defaults to empty directory.                                                                                                                                                                                              |
-| `source`        | Subpath in the `from` to mount. Defaults to the root of the `from`.                                                                                                                                                                                                        |
-| `mode`          | File mode for new cache directory in octal. Default `0755`.                                                                                                                                                                                                                |
-| `uid`           | User ID for new cache directory. Default `0`.                                                                                                                                                                                                                              |
-| `gid`           | Group ID for new cache directory. Default `0`.                                                                                                                                                                                                                             |
+| Option                             | Description                                                                                                                                                                                                                                                                |
+| ---------------                    | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                               | Optional ID to identify separate/different caches. Defaults to value of `target`.                                                                                                                                                                                          |
+| `target`, `dst`, `destination`[^1] | Mount path.                                                                                                                                                                                                                                                                |
+| `ro`,`readonly`                    | Read-only if set.                                                                                                                                                                                                                                                          |
+| `sharing`                          | One of `shared`, `private`, or `locked`. Defaults to `shared`. A `shared` cache mount can be used concurrently by multiple writers. `private` creates a new mount if there are multiple writers. `locked` pauses the second writer until the first one releases the mount. |
+| `from`                             | Build stage, context, or image name to use as a base of the cache mount. Defaults to empty directory.                                                                                                                                                                      |
+| `source`                           | Subpath in the `from` to mount. Defaults to the root of the `from`.                                                                                                                                                                                                        |
+| `mode`                             | File mode for new cache directory in octal. Default `0755`.                                                                                                                                                                                                                |
+| `uid`                              | User ID for new cache directory. Default `0`.                                                                                                                                                                                                                              |
+| `gid`                              | Group ID for new cache directory. Default `0`.                                                                                                                                                                                                                             |
 @y
-| Option          | Description                                                                                                                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`            | Optional ID to identify separate/different caches. Defaults to value of `target`.                                                                                                                                                                                          |
-| `target`[^1]    | Mount path.                                                                                                                                                                                                                                                                |
-| `ro`,`readonly` | Read-only if set.                                                                                                                                                                                                                                                          |
-| `sharing`       | One of `shared`, `private`, or `locked`. Defaults to `shared`. A `shared` cache mount can be used concurrently by multiple writers. `private` creates a new mount if there are multiple writers. `locked` pauses the second writer until the first one releases the mount. |
-| `from`          | Build stage to use as a base of the cache mount. Defaults to empty directory.                                                                                                                                                                                              |
-| `source`        | Subpath in the `from` to mount. Defaults to the root of the `from`.                                                                                                                                                                                                        |
-| `mode`          | File mode for new cache directory in octal. Default `0755`.                                                                                                                                                                                                                |
-| `uid`           | User ID for new cache directory. Default `0`.                                                                                                                                                                                                                              |
-| `gid`           | Group ID for new cache directory. Default `0`.                                                                                                                                                                                                                             |
+| Option                             | Description                                                                                                                                                                                                                                                                |
+| ---------------                    | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                               | Optional ID to identify separate/different caches. Defaults to value of `target`.                                                                                                                                                                                          |
+| `target`, `dst`, `destination`[^1] | Mount path.                                                                                                                                                                                                                                                                |
+| `ro`,`readonly`                    | Read-only if set.                                                                                                                                                                                                                                                          |
+| `sharing`                          | One of `shared`, `private`, or `locked`. Defaults to `shared`. A `shared` cache mount can be used concurrently by multiple writers. `private` creates a new mount if there are multiple writers. `locked` pauses the second writer until the first one releases the mount. |
+| `from`                             | Build stage, context, or image name to use as a base of the cache mount. Defaults to empty directory.                                                                                                                                                                      |
+| `source`                           | Subpath in the `from` to mount. Defaults to the root of the `from`.                                                                                                                                                                                                        |
+| `mode`                             | File mode for new cache directory in octal. Default `0755`.                                                                                                                                                                                                                |
+| `uid`                              | User ID for new cache directory. Default `0`.                                                                                                                                                                                                                              |
+| `gid`                              | Group ID for new cache directory. Default `0`.                                                                                                                                                                                                                             |
 @z
 
 @x
@@ -1305,15 +1316,15 @@ This mount type allows mounting `tmpfs` in the build container.
 @z
 
 @x
-| Option       | Description                                           |
-| ------------ | ----------------------------------------------------- |
-| `target`[^1] | Mount path.                                           |
-| `size`       | Specify an upper limit on the size of the filesystem. |
+| Option                             | Description                                           |
+| ------------                       | ----------------------------------------------------- |
+| `target`, `dst`, `destination`[^1] | Mount path.                                           |
+| `size`                             | Specify an upper limit on the size of the filesystem. |
 @y
-| Option       | Description                                           |
-| ------------ | ----------------------------------------------------- |
-| `target`[^1] | Mount path.                                           |
-| `size`       | Specify an upper limit on the size of the filesystem. |
+| Option                             | Description                                           |
+| ------------                       | ----------------------------------------------------- |
+| `target`, `dst`, `destination`[^1] | Mount path.                                           |
+| `size`                             | Specify an upper limit on the size of the filesystem. |
 @z
 
 @x
@@ -1323,31 +1334,41 @@ This mount type allows mounting `tmpfs` in the build container.
 @z
 
 @x
-This mount type allows the build container to access secure files such as
-private keys without baking them into the image.
+This mount type allows the build container to access secret values, such as
+tokens or private keys, without baking them into the image.
 @y
-This mount type allows the build container to access secure files such as
-private keys without baking them into the image.
+This mount type allows the build container to access secret values, such as
+tokens or private keys, without baking them into the image.
 @z
 
 @x
-| Option     | Description                                                                                       |
-| ---------- | ------------------------------------------------------------------------------------------------- |
-| `id`       | ID of the secret. Defaults to basename of the target path.                                        |
-| `target`   | Mount path. Defaults to `/run/secrets/` + `id`.                                                   |
-| `required` | If set to `true`, the instruction errors out when the secret is unavailable. Defaults to `false`. |
-| `mode`     | File mode for secret file in octal. Default `0400`.                                               |
-| `uid`      | User ID for secret file. Default `0`.                                                             |
-| `gid`      | Group ID for secret file. Default `0`.                                                            |
+By default, the secret is mounted as a file. You can also mount the secret as
+an environment variable by setting the `env` option.
 @y
-| Option     | Description                                                                                       |
-| ---------- | ------------------------------------------------------------------------------------------------- |
-| `id`       | ID of the secret. Defaults to basename of the target path.                                        |
-| `target`   | Mount path. Defaults to `/run/secrets/` + `id`.                                                   |
-| `required` | If set to `true`, the instruction errors out when the secret is unavailable. Defaults to `false`. |
-| `mode`     | File mode for secret file in octal. Default `0400`.                                               |
-| `uid`      | User ID for secret file. Default `0`.                                                             |
-| `gid`      | Group ID for secret file. Default `0`.                                                            |
+By default, the secret is mounted as a file. You can also mount the secret as
+an environment variable by setting the `env` option.
+@z
+
+@x
+| Option                         | Description                                                                                                     |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `id`                           | ID of the secret. Defaults to basename of the target path.                                                      |
+| `target`, `dst`, `destination` | Mount the secret to the specified path. Defaults to `/run/secrets/` + `id` if unset and if `env` is also unset. |
+| `env`                          | Mount the secret to an environment variable instead of a file, or both. (since Dockerfile v1.10.0)              |
+| `required`                     | If set to `true`, the instruction errors out when the secret is unavailable. Defaults to `false`.               |
+| `mode`                         | File mode for secret file in octal. Default `0400`.                                                             |
+| `uid`                          | User ID for secret file. Default `0`.                                                                           |
+| `gid`                          | Group ID for secret file. Default `0`.                                                                          |
+@y
+| Option                         | Description                                                                                                     |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `id`                           | ID of the secret. Defaults to basename of the target path.                                                      |
+| `target`, `dst`, `destination` | Mount the secret to the specified path. Defaults to `/run/secrets/` + `id` if unset and if `env` is also unset. |
+| `env`                          | Mount the secret to an environment variable instead of a file, or both. (since Dockerfile v1.10.0)              |
+| `required`                     | If set to `true`, the instruction errors out when the secret is unavailable. Defaults to `false`.               |
+| `mode`                         | File mode for secret file in octal. Default `0400`.                                                             |
+| `uid`                          | User ID for secret file. Default `0`.                                                                           |
+| `gid`                          | Group ID for secret file. Default `0`.                                                                          |
 @z
 
 @x
@@ -1374,23 +1395,23 @@ with support for passphrases.
 @z
 
 @x
-| Option     | Description                                                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------- |
-| `id`       | ID of SSH agent socket or key. Defaults to "default".                                          |
-| `target`   | SSH agent socket path. Defaults to `/run/buildkit/ssh_agent.${N}`.                             |
-| `required` | If set to `true`, the instruction errors out when the key is unavailable. Defaults to `false`. |
-| `mode`     | File mode for socket in octal. Default `0600`.                                                 |
-| `uid`      | User ID for socket. Default `0`.                                                               |
-| `gid`      | Group ID for socket. Default `0`.                                                              |
+| Option                         | Description                                                                                    |
+| ----------                     | ---------------------------------------------------------------------------------------------- |
+| `id`                           | ID of SSH agent socket or key. Defaults to "default".                                          |
+| `target`, `dst`, `destination` | SSH agent socket path. Defaults to `/run/buildkit/ssh_agent.${N}`.                             |
+| `required`                     | If set to `true`, the instruction errors out when the key is unavailable. Defaults to `false`. |
+| `mode`                         | File mode for socket in octal. Default `0600`.                                                 |
+| `uid`                          | User ID for socket. Default `0`.                                                               |
+| `gid`                          | Group ID for socket. Default `0`.                                                              |
 @y
-| Option     | Description                                                                                    |
-| ---------- | ---------------------------------------------------------------------------------------------- |
-| `id`       | ID of SSH agent socket or key. Defaults to "default".                                          |
-| `target`   | SSH agent socket path. Defaults to `/run/buildkit/ssh_agent.${N}`.                             |
-| `required` | If set to `true`, the instruction errors out when the key is unavailable. Defaults to `false`. |
-| `mode`     | File mode for socket in octal. Default `0600`.                                                 |
-| `uid`      | User ID for socket. Default `0`.                                                               |
-| `gid`      | Group ID for socket. Default `0`.                                                              |
+| Option                         | Description                                                                                    |
+| ----------                     | ---------------------------------------------------------------------------------------------- |
+| `id`                           | ID of SSH agent socket or key. Defaults to "default".                                          |
+| `target`, `dst`, `destination` | SSH agent socket path. Defaults to `/run/buildkit/ssh_agent.${N}`.                             |
+| `required`                     | If set to `true`, the instruction errors out when the key is unavailable. Defaults to `false`. |
+| `mode`                         | File mode for socket in octal. Default `0600`.                                                 |
+| `uid`                          | User ID for socket. Default `0`.                                                               |
+| `gid`                          | Group ID for socket. Default `0`.                                                              |
 @z
 
 @x
@@ -1505,21 +1526,17 @@ The command is run in the host's network environment (similar to
 @z
 
 @x
-> **Warning**
->
+> [!WARNING]
 > The use of `--network=host` is protected by the `network.host` entitlement,
 > which needs to be enabled when starting the buildkitd daemon with
 > `--allow-insecure-entitlement network.host` flag or in [buildkitd config](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md),
 > and for a build request with [`--allow network.host` flag](https://docs.docker.com/engine/reference/commandline/buildx_build/#allow).
-{ .warning }
 @y
-> **Warning**
->
+> [!WARNING]
 > The use of `--network=host` is protected by the `network.host` entitlement,
 > which needs to be enabled when starting the buildkitd daemon with
 > `--allow-insecure-entitlement network.host` flag or in [buildkitd config](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md),
 > and for a build request with [`--allow network.host` flag](https://docs.docker.com/engine/reference/commandline/buildx_build/#allow).
-{ .warning }
 @z
 
 @x
@@ -1529,12 +1546,10 @@ The command is run in the host's network environment (similar to
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @y
-> **Note**
->
+> [!NOTE]
 > Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @z
 
@@ -1553,21 +1568,17 @@ This is equivalent to running `docker run --privileged`.
 @z
 
 @x
-> **Warning**
->
+> [!WARNING]
 > In order to access this feature, entitlement `security.insecure` should be
 > enabled when starting the buildkitd daemon with
 > `--allow-insecure-entitlement security.insecure` flag or in [buildkitd config](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md),
 > and for a build request with [`--allow security.insecure` flag](https://docs.docker.com/engine/reference/commandline/buildx_build/#allow).
-{ .warning }
 @y
-> **Warning**
->
+> [!WARNING]
 > In order to access this feature, entitlement `security.insecure` should be
 > enabled when starting the buildkitd daemon with
 > `--allow-insecure-entitlement security.insecure` flag or in [buildkitd config](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md),
 > and for a build request with [`--allow security.insecure` flag](https://docs.docker.com/engine/reference/commandline/buildx_build/#allow).
-{ .warning }
 @z
 
 @x
@@ -1652,14 +1663,12 @@ both the `CMD` and `ENTRYPOINT` instructions should be specified in the
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Don't confuse `RUN` with `CMD`. `RUN` actually runs a command and commits
 > the result; `CMD` doesn't execute anything at build time, but specifies
 > the intended command for the image.
 @y
-> **メモ**
->
+> [!NOTE]
 > `RUN` と `CMD` を混同しないようにしてください。
 > `RUN` はコマンドを実行して処理結果を確定させます。
 > 一方 `CMD` はイメージビルド時には何も実行せず、ただイメージ内にてコマンド指示がされたことを定めるだけです。
@@ -1701,14 +1710,12 @@ in a single instruction, in one of the following two ways:
 % snip code...
 
 @x
-> **Note**
->
+> [!NOTE]
 > Be sure to use double quotes and not single quotes. Particularly when you are
 > using string interpolation (e.g. `LABEL example="foo-$ENV_VAR"`), single
 > quotes will take the string as is without unpacking the variable's value.
 @y
-> **Note**
->
+> [!NOTE]
 > Be sure to use double quotes and not single quotes. Particularly when you are
 > using string interpolation (e.g. `LABEL example="foo-$ENV_VAR"`), single
 > quotes will take the string as is without unpacking the variable's value.
@@ -1732,8 +1739,41 @@ To view an image's labels, use the `docker image inspect` command. You can use
 the `--format` option to show just the labels;
 @z
 
-% snip command...
-% snip code...
+@x
+```console
+$ docker image inspect --format='{{json .Config.Labels}}' myimage
+```
+@y
+```console
+$ docker image inspect --format='{{json .Config.Labels}}' myimage
+```
+@z
+
+@x
+```json
+{
+  "com.example.vendor": "ACME Incorporated",
+  "com.example.label-with-value": "foo",
+  "version": "1.0",
+  "description": "This text illustrates that label-values can span multiple lines.",
+  "multi.label1": "value1",
+  "multi.label2": "value2",
+  "other": "value3"
+}
+```
+@y
+```json
+{
+  "com.example.vendor": "ACME Incorporated",
+  "com.example.label-with-value": "foo",
+  "version": "1.0",
+  "description": "This text illustrates that label-values can span multiple lines.",
+  "multi.label1": "value1",
+  "multi.label2": "value2",
+  "other": "value3"
+}
+```
+@z
 
 @x
 ## MAINTAINER (deprecated)
@@ -1741,7 +1781,15 @@ the `--format` option to show just the labels;
 ## MAINTAINER (deprecated)
 @z
 
-% snip code...
+@x
+```dockerfile
+MAINTAINER <name>
+```
+@y
+```dockerfile
+MAINTAINER <name>
+```
+@z
 
 @x
 The `MAINTAINER` instruction sets the _Author_ field of the generated images.
@@ -1757,7 +1805,15 @@ easily, for example with `docker inspect`. To set a label corresponding to the
 `MAINTAINER` field you could use:
 @z
 
-% snip code...
+@x
+```dockerfile
+LABEL org.opencontainers.image.authors="SvenDowideit@home.org.au"
+```
+@y
+```dockerfile
+LABEL org.opencontainers.image.authors="SvenDowideit@home.org.au"
+```
+@z
 
 @x
 This will then be visible from `docker inspect` with the other labels.
@@ -1771,7 +1827,15 @@ This will then be visible from `docker inspect` with the other labels.
 ## EXPOSE
 @z
 
-% snip code...
+@x
+```dockerfile
+EXPOSE <port> [<port>/<protocol>...]
+```
+@y
+```dockerfile
+EXPOSE <port> [<port>/<protocol>...]
+```
+@z
 
 @x
 The `EXPOSE` instruction informs Docker that the container listens on the
@@ -1805,7 +1869,15 @@ By default, `EXPOSE` assumes TCP. You can also specify UDP:
 By default, `EXPOSE` assumes TCP. You can also specify UDP:
 @z
 
-% snip code...
+@x
+```dockerfile
+EXPOSE 80/udp
+```
+@y
+```dockerfile
+EXPOSE 80/udp
+```
+@z
 
 @x
 To expose on both TCP and UDP, include two lines:
@@ -1813,7 +1885,17 @@ To expose on both TCP and UDP, include two lines:
 To expose on both TCP and UDP, include two lines:
 @z
 
-% snip code...
+@x
+```dockerfile
+EXPOSE 80/tcp
+EXPOSE 80/udp
+```
+@y
+```dockerfile
+EXPOSE 80/tcp
+EXPOSE 80/udp
+```
+@z
 
 @x
 In this case, if you use `-P` with `docker run`, the port will be exposed once
@@ -1833,7 +1915,15 @@ Regardless of the `EXPOSE` settings, you can override them at runtime by using
 the `-p` flag. For example
 @z
 
-% snip command...
+@x
+```console
+$ docker run -p 80:80/tcp -p 80:80/udp ...
+```
+@y
+```console
+$ docker run -p 80:80/tcp -p 80:80/udp ...
+```
+@z
 
 @x
 To set up port redirection on the host system, see [using the -P flag](https://docs.docker.com/reference/cli/docker/container/run/#publish).
@@ -1857,7 +1947,15 @@ port. For detailed information, see the
 ## ENV
 @z
 
-% snip code...
+@x
+```dockerfile
+ENV <key>=<value> ...
+```
+@y
+```dockerfile
+ENV <key>=<value> ...
+```
+@z
 
 @x
 The `ENV` instruction sets the environment variable `<key>` to the value
@@ -1881,7 +1979,19 @@ Example:
 Example:
 @z
 
-% snip code...
+@x
+```dockerfile
+ENV MY_NAME="John Doe"
+ENV MY_DOG=Rex\ The\ Dog
+ENV MY_CAT=fluffy
+```
+@y
+```dockerfile
+ENV MY_NAME="John Doe"
+ENV MY_DOG=Rex\ The\ Dog
+ENV MY_CAT=fluffy
+```
+@z
 
 @x
 The `ENV` instruction allows for multiple `<key>=<value> ...` variables to be set
@@ -1893,7 +2003,17 @@ at one time, and the example below will yield the same net results in the final
 image:
 @z
 
-% snip code...
+@x
+```dockerfile
+ENV MY_NAME="John Doe" MY_DOG=Rex\ The\ Dog \
+    MY_CAT=fluffy
+```
+@y
+```dockerfile
+ENV MY_NAME="John Doe" MY_DOG=Rex\ The\ Dog \
+    MY_CAT=fluffy
+```
+@z
 
 @x
 The environment variables set using `ENV` will persist when a container is run
@@ -1933,7 +2053,15 @@ If an environment variable is only needed during build, and not in the final
 image, consider setting a value for a single command instead:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
+```
+@y
+```dockerfile
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
+```
+@z
 
 @x
 Or using [`ARG`](#arg), which is not persisted in the final image:
@@ -1941,9 +2069,20 @@ Or using [`ARG`](#arg), which is not persisted in the final image:
 Or using [`ARG`](#arg), which is not persisted in the final image:
 @z
 
-% snip code...
+@x
+```dockerfile
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y ...
+```
+@y
+```dockerfile
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y ...
+```
+@z
 
 @x
+> [!NOTE]
 > **Alternative syntax**
 >
 > The `ENV` instruction also allows an alternative syntax `ENV <key> <value>`,
@@ -1964,6 +2103,7 @@ Or using [`ARG`](#arg), which is not persisted in the final image:
 > The alternative syntax is supported for backward compatibility, but discouraged
 > for the reasons outlined above, and may be removed in a future release.
 @y
+> [!NOTE]
 > **Alternative syntax**
 >
 > The `ENV` instruction also allows an alternative syntax `ENV <key> <value>`,
@@ -1999,26 +2139,42 @@ ADD has two forms.
 The latter form is required for paths containing whitespace.
 @z
 
-% snip code...
+@x
+```dockerfile
+ADD [OPTIONS] <src> ... <dest>
+ADD [OPTIONS] ["<src>", ... "<dest>"]
+```
+@y
+```dockerfile
+ADD [OPTIONS] <src> ... <dest>
+ADD [OPTIONS] ["<src>", ... "<dest>"]
+```
+@z
 
 @x
 The available `[OPTIONS]` are:
-
-- [`--keep-git-dir`](#add---keep-git-dir)
-- [`--checksum`](#add---checksum)
-- [`--chown`](#add---chown---chmod)
-- [`--chmod`](#add---chown---chmod)
-- [`--link`](#add---link)
-- [`--exclude`](#add---exclude)
 @y
 The available `[OPTIONS]` are:
+@z
 
-- [`--keep-git-dir`](#add---keep-git-dir)
-- [`--checksum`](#add---checksum)
-- [`--chown`](#add---chown---chmod)
-- [`--chmod`](#add---chown---chmod)
-- [`--link`](#add---link)
-- [`--exclude`](#add---exclude)
+@x
+| Option                                  | Minimum Dockerfile version |
+| --------------------------------------- | -------------------------- |
+| [`--keep-git-dir`](#add---keep-git-dir) | 1.1                        |
+| [`--checksum`](#add---checksum)         | 1.6                        |
+| [`--chown`](#add---chown---chmod)       |                            |
+| [`--chmod`](#add---chown---chmod)       | 1.2                        |
+| [`--link`](#add---link)                 | 1.4                        |
+| [`--exclude`](#add---exclude)           | 1.7                        |
+@y
+| Option                                  | Minimum Dockerfile version |
+| --------------------------------------- | -------------------------- |
+| [`--keep-git-dir`](#add---keep-git-dir) | 1.1                        |
+| [`--checksum`](#add---checksum)         | 1.6                        |
+| [`--chown`](#add---chown---chmod)       |                            |
+| [`--chmod`](#add---chown---chmod)       | 1.2                        |
+| [`--link`](#add---link)                 | 1.4                        |
+| [`--exclude`](#add---exclude)           | 1.7                        |
 @z
 
 @x
@@ -2308,16 +2464,14 @@ The result is the union of:
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Whether a file is identified as a recognized compression format or not is
 > done solely based on the contents of the file, not the name of the file. For
 > example, if an empty file happens to end with `.tar.gz` this isn't recognized
 > as a compressed file and doesn't generate any kind of decompression error
 > message, rather the file will simply be copied to the destination.
 @y
-> **Note**
->
+> [!NOTE]
 > Whether a file is identified as a recognized compression format or not is
 > done solely based on the contents of the file, not the name of the file. For
 > example, if an empty file happens to end with `.tar.gz` this isn't recognized
@@ -2632,9 +2786,13 @@ ADD [--checksum=<hash>] <src> ... <dir>
 @z
 
 @x
-The `--checksum` flag lets you verify the checksum of a remote resource:
+The `--checksum` flag lets you verify the checksum of a remote resource. The
+checksum is formatted as `<algorithm>:<hash>`. The supported algorithms are
+`sha256`, `sha384`, and `sha512`.
 @y
-The `--checksum` flag lets you verify the checksum of a remote resource:
+The `--checksum` flag lets you verify the checksum of a remote resource. The
+checksum is formatted as `<algorithm>:<hash>`. The supported algorithms are
+`sha256`, `sha384`, and `sha512`.
 @z
 
 @x
@@ -2722,19 +2880,23 @@ The available `[OPTIONS]` are:
 @z
 
 @x
-- [`--from`](#copy---from)
-- [`--chown`](#copy---chown---chmod)
-- [`--chmod`](#copy---chown---chmod)
-- [`--link`](#copy---link)
-- [`--parents`](#copy---parents)
-- [`--exclude`](#copy---exclude)
+| Option                             | Minimum Dockerfile version |
+| ---------------------------------- | -------------------------- |
+| [`--from`](#copy---from)           |                            |
+| [`--chown`](#copy---chown---chmod) |                            |
+| [`--chmod`](#copy---chown---chmod) | 1.2                        |
+| [`--link`](#copy---link)           | 1.4                        |
+| [`--parents`](#copy---parents)     | 1.7                        |
+| [`--exclude`](#copy---exclude)     | 1.7                        |
 @y
-- [`--from`](#copy---from)
-- [`--chown`](#copy---chown---chmod)
-- [`--chmod`](#copy---chown---chmod)
-- [`--link`](#copy---link)
-- [`--parents`](#copy---parents)
-- [`--exclude`](#copy---exclude)
+| Option                             | Minimum Dockerfile version |
+| ---------------------------------- | -------------------------- |
+| [`--from`](#copy---from)           |                            |
+| [`--chown`](#copy---chown---chmod) |                            |
+| [`--chmod`](#copy---chown---chmod) | 1.2                        |
+| [`--link`](#copy---link)           | 1.4                        |
+| [`--parents`](#copy---parents)     | 1.7                        |
+| [`--exclude`](#copy---exclude)     | 1.7                        |
 @z
 
 @x
@@ -2996,21 +3158,21 @@ relative to the root of the current build stage.
 @x
 ```dockerfile
 # create /abs/test.txt
-ADD test.txt /abs/
+COPY test.txt /abs/
 ```
 @y
 ```dockerfile
 # create /abs/test.txt
-ADD test.txt /abs/
+COPY test.txt /abs/
 ```
 @z
 
 @x
-Trailing slashes are significant. For example, `ADD test.txt /abs` creates a
-file at `/abs`, whereas `ADD test.txt /abs/` creates `/abs/test.txt`.
+Trailing slashes are significant. For example, `COPY test.txt /abs` creates a
+file at `/abs`, whereas `COPY test.txt /abs/` creates `/abs/test.txt`.
 @y
-Trailing slashes are significant. For example, `ADD test.txt /abs` creates a
-file at `/abs`, whereas `ADD test.txt /abs/` creates `/abs/test.txt`.
+Trailing slashes are significant. For example, `COPY test.txt /abs` creates a
+file at `/abs`, whereas `COPY test.txt /abs/` creates `/abs/test.txt`.
 @z
 
 @x
@@ -3025,13 +3187,13 @@ relative to the working directory of the build container.
 ```dockerfile
 WORKDIR /usr/src/app
 # create /usr/src/app/rel/test.txt
-ADD test.txt rel/
+COPY test.txt rel/
 ```
 @y
 ```dockerfile
 WORKDIR /usr/src/app
 # create /usr/src/app/rel/test.txt
-ADD test.txt rel/
+COPY test.txt rel/
 ```
 @z
 
@@ -3150,13 +3312,11 @@ image or stage that you specify.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Only octal notation is currently supported. Non-octal support is tracked in
 > [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
 @y
-> **Note**
->
+> [!NOTE]
 > Only octal notation is currently supported. Non-octal support is tracked in
 > [moby/buildkit#1951](https://github.com/moby/buildkit/issues/1951).
 @z
@@ -3237,6 +3397,34 @@ If the container root filesystem doesn't contain either `/etc/passwd` or
 `/etc/group` files and either user or group names are used in the `--chown`
 flag, the build will fail on the `COPY` operation. Using numeric IDs requires
 no lookup and does not depend on container root filesystem content.
+@z
+
+@x
+With the Dockerfile syntax version 1.10.0 and later,
+the `--chmod` flag supports variable interpolation,
+which lets you define the permission bits using build arguments:
+@y
+With the Dockerfile syntax version 1.10.0 and later,
+the `--chmod` flag supports variable interpolation,
+which lets you define the permission bits using build arguments:
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.10
+FROM alpine
+WORKDIR /src
+ARG MODE=440
+COPY --chmod=$MODE . .
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.10
+FROM alpine
+WORKDIR /src
+ARG MODE=440
+COPY --chmod=$MODE . .
+```
 @z
 
 @x
@@ -3416,12 +3604,10 @@ conditions for cache reuse.
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @y
-> **Note**
->
+> [!NOTE]
 > Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @z
 
@@ -3560,12 +3746,10 @@ with the `--parents` flag, the Buildkit is capable of packing multiple
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @y
-> **Note**
->
+> [!NOTE]
 > Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
 @z
 
@@ -4064,13 +4248,11 @@ sys	0m 0.03s
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > You can override the `ENTRYPOINT` setting using `--entrypoint`,
 > but this can only set the binary to exec (no `sh -c` will be used).
 @y
-> **Note**
->
+> [!NOTE]
 > You can override the `ENTRYPOINT` setting using `--entrypoint`,
 > but this can only set the binary to exec (no `sh -c` will be used).
 @z
@@ -4340,14 +4522,12 @@ The table below shows what command is executed for different `ENTRYPOINT` / `CMD
 @z
 
 @x
-> **Note**
->
+> [!NOTE]
 > If `CMD` is defined from the base image, setting `ENTRYPOINT` will
 > reset `CMD` to an empty value. In this scenario, `CMD` must be defined in the
 > current image to have a value.
 @y
-> **Note**
->
+> [!NOTE]
 > If `CMD` is defined from the base image, setting `ENTRYPOINT` will
 > reset `CMD` to an empty value. In this scenario, `CMD` must be defined in the
 > current image to have a value.
@@ -4538,8 +4718,7 @@ runtime, runs the relevant `ENTRYPOINT` and `CMD` commands.
 @z
 
 @x
-> **Warning**
->
+> [!WARNING]
 > When the user doesn't have a primary group then the image (or the next
 > instructions) will be run with the `root` group.
 >
@@ -4547,8 +4726,7 @@ runtime, runs the relevant `ENTRYPOINT` and `CMD` commands.
 > This can be done with the `net user` command called as part of a Dockerfile.
 { .warning }
 @y
-> **Warning**
->
+> [!WARNING]
 > When the user doesn't have a primary group then the image (or the next
 > instructions) will be run with the `root` group.
 >
@@ -4708,8 +4886,7 @@ flag.
 @z
 
 @x
-> **Warning**
->
+> [!WARNING]
 > It isn't recommended to use build arguments for passing secrets such as
 > user credentials, API tokens, etc. Build arguments are visible in the
 > `docker history` command and in `max` mode provenance attestations,
@@ -4720,8 +4897,7 @@ flag.
 > learn about secure ways to use secrets when building images.
 { .warning }
 @y
-> **Warning**
->
+> [!WARNING]
 > It isn't recommended to use build arguments for passing secrets such as
 > user credentials, API tokens, etc. Build arguments are visible in the
 > `docker history` command and in `max` mode provenance attestations,

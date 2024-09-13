@@ -2,21 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Advanced Configuration for Enhanced Container Isolation
 title: Advanced configuration options for ECI
+linkTitle: Advanced configuration
 keywords: enhanced container isolation, Docker Desktop, Docker socket, bind mount, configuration
-aliases:
- - /desktop/hardened-desktop/enhanced-container-isolation/config/
----
 @y
----
 description: Advanced Configuration for Enhanced Container Isolation
 title: Advanced configuration options for ECI
+linkTitle: Advanced configuration
 keywords: enhanced container isolation, Docker Desktop, Docker socket, bind mount, configuration
-aliases:
- - /desktop/hardened-desktop/enhanced-container-isolation/config/
----
 @z
 
 @x

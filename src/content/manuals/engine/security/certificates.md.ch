@@ -242,9 +242,9 @@ If the Docker registry is accessed without a port number, do not add the port to
 @z
 
 @x
-* [Use trusted images](trust/index.md)
+* [Use trusted images](trust/_index.md)
 * [Protect the Docker daemon socket](protect-access.md)
 @y
-* [Use trusted images](trust/index.md)
+* [Use trusted images](trust/_index.md)
 * [Protect the Docker daemon socket](protect-access.md)
 @z

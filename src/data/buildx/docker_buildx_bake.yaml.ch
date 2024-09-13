@@ -28,14 +28,12 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > `buildx bake` command may receive backwards incompatible features in the future
     > if needed. We are looking for feedback on improving the command and extending
     > the functionality further.
 @y
-    > **メモ**
-    >
+    > [!NOTE]
     > `buildx bake` command may receive backwards incompatible features in the future
     > if needed. We are looking for feedback on improving the command and extending
     > the functionality further.
@@ -217,8 +215,7 @@ examples: |-
 % snip code...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Build record [provenance](/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
@@ -226,9 +223,8 @@ examples: |-
     > * `max` sets full provenance.
     > * `disabled`, `false` or `0` does not set any provenance.
 @y
-    > **Note**
-    >
-    > Build record [provenance](build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
+    > [!NOTE]
+    > Build record [provenance](__SUBDIR__/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
     > * `min` sets minimal provenance (default).
@@ -237,14 +233,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Build warnings (`buildx.build.warnings`) are not included by default. Set the
     > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
     > include them.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Build warnings (`buildx.build.warnings`) are not included by default. Set the
     > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
     > include them.

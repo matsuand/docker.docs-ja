@@ -2,7 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Docker Verified Publisher API
+description: Reference documentation and Swagger (OpenAPI) specification for the Docker Verified Publisher API.
+linkTitle: DVP Data API
+title: Docker Verified Publisher API reference
 @y
-title: Docker Verified Publisher API
+description: Reference documentation and Swagger (OpenAPI) specification for the Docker Verified Publisher API.
+linkTitle: DVP Data API
+title: Docker Verified Publisher API reference
 @z

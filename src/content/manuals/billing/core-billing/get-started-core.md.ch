@@ -18,9 +18,9 @@ keywords: payments, billing, subscription, invoices, docker core, subscribe
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
+{{< include "new-plans.md" >}}
 @y
-{{< include "tax-compliance.md" >}}
+{{< include "new-plans.md" >}}
 @z
 
 @x
@@ -33,6 +33,12 @@ Docker Core subscriptions offer features and benefits to support both new and pr
 In this section, learn how to get started with a Docker Core subscription for individuals or for organizations. Before you begin, make sure you have a [Docker ID](/accounts/create-account/).
 @y
 In this section, learn how to get started with a Docker Core subscription for individuals or for organizations. Before you begin, make sure you have a [Docker ID](__SUBDIR__/accounts/create-account/).
+@z
+
+@x
+{{< include "tax-compliance.md" >}}
+@y
+{{< include "tax-compliance.md" >}}
 @z
 
 @x

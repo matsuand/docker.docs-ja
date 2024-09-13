@@ -86,14 +86,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The asterisk (`*`) next to node build platform(s) indicate they have been
     > manually set during `buildx create`. Otherwise the platforms were
     > automatically detected.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The asterisk (`*`) next to node build platform(s) indicate they have been
     > manually set during `buildx create`. Otherwise the platforms were
     > automatically detected.

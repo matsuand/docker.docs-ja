@@ -54,6 +54,14 @@ $ docker build --check .
 @z
 
 @x
+To learn more about how to use build checks, see
+[Checking your build configuration](https://docs.docker.com/build/checks/).
+@y
+To learn more about how to use build checks, see
+[Checking your build configuration](https://docs.docker.com/build/checks/).
+@z
+
+@x
 <table>
   <thead>
     <tr>
@@ -131,7 +139,7 @@ $ docker build --check .
       <td>FROM --platform flag should not use a constant value</td>
     </tr>
     <tr>
-      <td><a href="./copy-ignored-file/">CopyIgnoredFile</a></td>
+      <td><a href="./copy-ignored-file/">CopyIgnoredFile (experimental)</a></td>
       <td>Attempting to Copy file that is excluded by .dockerignore</td>
     </tr>
   </tbody>
@@ -214,7 +222,7 @@ $ docker build --check .
       <td>FROM --platform flag should not use a constant value</td>
     </tr>
     <tr>
-      <td><a href="./copy-ignored-file/">CopyIgnoredFile</a></td>
+      <td><a href="./copy-ignored-file/">CopyIgnoredFile (experimental)</a></td>
       <td>Attempting to Copy file that is excluded by .dockerignore</td>
     </tr>
   </tbody>

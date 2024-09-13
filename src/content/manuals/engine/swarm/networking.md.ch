@@ -159,11 +159,11 @@ each other over the following ports:
 
 @x
 When setting up networking in a Swarm, special care should be taken. Consult
-the [tutorial](swarm-tutorial/index.md#open-protocols-and-ports-between-the-hosts)
+the [tutorial](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts)
 for an overview.
 @y
 When setting up networking in a Swarm, special care should be taken. Consult
-the [tutorial](swarm-tutorial/index.md#open-protocols-and-ports-between-the-hosts)
+the [tutorial](swarm-tutorial/_index.md#open-protocols-and-ports-between-the-hosts)
 for an overview.
 @z
 
@@ -1140,13 +1140,13 @@ preferred because it is somewhat self-documenting.
 @x
 * [Deploy services to a swarm](services.md)
 * [Swarm administration guide](admin_guide.md)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 * [Networking overview](/manuals/engine/network/_index.md)
 * [Docker CLI reference](/reference/cli/docker/)
 @y
 * [Deploy services to a swarm](services.md)
 * [Swarm administration guide](admin_guide.md)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 * [Networking overview](manuals/engine/network/_index.md)
 * [Docker CLI reference](__SUBDIR__/reference/cli/docker/)
 @z

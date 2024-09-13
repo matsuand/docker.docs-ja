@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: The benefits of enhanced container isolation
 title: Key features and benefits
 keywords: set up, enhanced container isolation, rootless, security, features, Docker Desktop
-aliases: 
- - /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
----
 @y
----
 description: The benefits of enhanced container isolation
 title: Key features and benefits
 keywords: set up, enhanced container isolation, rootless, security, features, Docker Desktop
-aliases: 
- - /desktop/hardened-desktop/enhanced-container-isolation/features-benefits/
----
 @z
 
 @x

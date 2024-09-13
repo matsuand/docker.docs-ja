@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Extension metadata
+linkTitle: Metadata
 description: Docker extension metadata
 keywords: Docker, extensions, sdk, metadata
-aliases:
- - /desktop/extensions-sdk/extensions/METADATA
- - /desktop/extensions-sdk/architecture/metadata/
----
 @y
----
 title: Extension metadata
+linkTitle: Metadata
 description: Docker extension metadata
 keywords: Docker, extensions, sdk, metadata
-aliases:
- - /desktop/extensions-sdk/extensions/METADATA
- - /desktop/extensions-sdk/architecture/metadata/
----
 @z
 
 @x

@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to add seats to an existing subscription
 keywords: Docker, Docker Hub, subscription, update, add, seats, pricing, docker core
 title: Add seats to your subscription
-aliases:
-- /docker-hub/billing/add-seats/
-- /subscription/add-seats/
----
+linkTitle: Add seats
 @y
----
 description: Learn how to add seats to an existing subscription
 keywords: Docker, Docker Hub, subscription, update, add, seats, pricing, docker core
 title: Add seats to your subscription
-aliases:
-- /docker-hub/billing/add-seats/
-- /subscription/add-seats/
----
+linkTitle: Add seats
 @z
 
 @x
@@ -40,13 +32,13 @@ When you add seats to your subscription in the middle of your billing cycle, you
 @z
 
 @x
->**Important**
+> [!IMPORTANT]
 >
->If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription. 
+> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription. 
 @y
->**Important**
+> [!IMPORTANT]
 >
->If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription. 
+> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription. 
 @z
 
 @x

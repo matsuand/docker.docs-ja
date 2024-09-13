@@ -2,23 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to enable two-factor authentication on your Docker account
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication, account security
 title: Enable two-factor authentication for your Docker account
-aliases:
-- /docker-hub/2fa/
----
+linkTitle: Two-factor authentication
 @y
----
 description: Learn how to enable two-factor authentication on your Docker account
 keywords: Docker, docker, registry, security, Docker Hub, authentication, two-factor
   authentication, account security
 title: Enable two-factor authentication for your Docker account
-aliases:
-- /docker-hub/2fa/
----
+linkTitle: Two-factor authentication
 @z
 
 @x

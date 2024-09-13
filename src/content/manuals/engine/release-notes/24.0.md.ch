@@ -5,11 +5,13 @@
 
 @x
 title: Docker Engine 24.0 release notes
+linkTitle: Engine v24.0
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @y
 title: Docker Engine 24.0 リリースノート
+linkTitle: Engine v24.0
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes

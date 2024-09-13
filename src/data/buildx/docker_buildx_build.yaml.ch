@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 command: docker buildx build
 aliases: docker build, docker builder build, docker image build, docker buildx b
@@ -1638,8 +1640,7 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Build record [provenance](/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
@@ -1648,8 +1649,7 @@ examples: |-
     > - `max` sets full provenance.
     > - `disabled`, `false` or `0` doesn't set any provenance.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Build record [provenance](__SUBDIR__/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
@@ -1660,14 +1660,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Build warnings (`buildx.build.warnings`) are not included by default. Set the
     > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
     > include them.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Build warnings (`buildx.build.warnings`) are not included by default. Set the
     > `BUILDX_METADATA_WARNINGS` environment variable to `1` or `true` to
     > include them.
@@ -2282,12 +2280,10 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > You can also use the `BUILDKIT_PROGRESS` environment variable to set its value.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > You can also use the `BUILDKIT_PROGRESS` environment variable to set its value.
 @z
 
@@ -2330,14 +2326,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Check also the [`BUILDKIT_COLORS`](/build/building/variables/#buildkit_colors)
     > environment variable for modifying the colors of the terminal output.
 @y
-    > **Note**
-    >
-    > Check also the [`BUILDKIT_COLORS`](__SUBDIR__/build/building/variables/#buildkit_colors)
+    > [!NOTE]
+    > Check also the [`BUILDKIT_COLORS`](/build/building/variables/#buildkit_colors)
     > environment variable for modifying the colors of the terminal output.
 @z
 
@@ -2575,33 +2569,8 @@ examples: |-
     - `env` - Secret environment variable. `id` used if unset, otherwise will look for `src`, `source` if `id` unset.
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM node:alpine
-    RUN --mount=type=bind,target=. \
-      --mount=type=secret,id=SECRET_TOKEN \
-      SECRET_TOKEN=$(cat /run/secrets/SECRET_TOKEN) yarn run test
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM node:alpine
-    RUN --mount=type=bind,target=. \
-      --mount=type=secret,id=SECRET_TOKEN \
-      SECRET_TOKEN=$(cat /run/secrets/SECRET_TOKEN) yarn run test
-    ```
-@z
-
-@x
-    ```console
-    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
-    ```
-@y
-    ```console
-    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
-    ```
-@z
+% snip code...
+% snip output...
 
 @x
     ### Shared memory size for build containers (--shm-size) {#shm-size}
@@ -2628,14 +2597,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > In most cases, it is recommended to let the builder automatically determine
     > the appropriate configurations. Manual adjustments should only be considered
     > when specific performance tuning is required for complex build scenarios.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > In most cases, it is recommended to let the builder automatically determine
     > the appropriate configurations. Manual adjustments should only be considered
     > when specific performance tuning is required for complex build scenarios.
@@ -2837,52 +2804,30 @@ examples: |-
     `<type>=<soft limit>[:<hard limit>]`, for example:
 @z
 
-@x
-    ```console
-    $ docker buildx build --ulimit nofile=1024:1024 .
-    ```
-@y
-    ```console
-    $ docker buildx build --ulimit nofile=1024:1024 .
-    ```
-@z
+% snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > If you don't provide a `hard limit`, the `soft limit` is used
     > for both values. If no `ulimits` are set, they're inherited from
     > the default `ulimits` set on the daemon.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > If you don't provide a `hard limit`, the `soft limit` is used
     > for both values. If no `ulimits` are set, they're inherited from
     > the default `ulimits` set on the daemon.
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > In most cases, it is recommended to let the builder automatically determine
     > the appropriate configurations. Manual adjustments should only be considered
     > when specific performance tuning is required for complex build scenarios.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > In most cases, it is recommended to let the builder automatically determine
     > the appropriate configurations. Manual adjustments should only be considered
     > when specific performance tuning is required for complex build scenarios.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

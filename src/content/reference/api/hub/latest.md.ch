@@ -2,7 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Docker Hub API
+description: Reference documentation and Swagger (OpenAPI) specification for the Docker Hub API.
+title: Docker Hub API reference
+linkTitle: Docker Hub API
 @y
-title: Docker Hub API
+description: Reference documentation and Swagger (OpenAPI) specification for the Docker Hub API.
+title: Docker Hub API reference
+linkTitle: Docker Hub API
 @z

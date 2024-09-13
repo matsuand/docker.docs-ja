@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: OAuth 2.0 flow
+title: Authentication
 description: Docker extension OAuth 2.0 flow
 keywords: Docker, extensions, sdk, OAuth 2.0
-aliases:
- - /desktop/extensions-sdk/dev/oauth2-flow/
- - /desktop/extensions-sdk/guides/oauth2-flow/
----
 @y
----
-title: OAuth 2.0 flow
+title: Authentication
 description: Docker extension OAuth 2.0 flow
 keywords: Docker, extensions, sdk, OAuth 2.0
-aliases:
- - /desktop/extensions-sdk/dev/oauth2-flow/
- - /desktop/extensions-sdk/guides/oauth2-flow/
----
 @z
 
 @x
@@ -256,7 +246,7 @@ It's highly recommended that you use an external source of storage to store the 
 @z
 
 @x
-Learn how to [publish and distribute your extension](../extensions/index.md)
+Learn how to [publish and distribute your extension](../extensions/_index.md)
 @y
-Learn how to [publish and distribute your extension](../extensions/index.md)
+Learn how to [publish and distribute your extension](../extensions/_index.md)
 @z

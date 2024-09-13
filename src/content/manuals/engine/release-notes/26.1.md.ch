@@ -5,10 +5,12 @@
 
 @x
 title: Docker Engine 26.1 release notes
+linkTitle: Engine v26.1
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @y
 title: Docker Engine 26.1 リリースノート
+linkTitle: Engine v26.1
 description: Learn about the new features, bug fixes, and breaking changes for Docker Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @z

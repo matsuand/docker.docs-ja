@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: MUI best practices
 description: Guidelines for using MUI to maximise compatibility with Docker Desktop
 keywords: Docker, extensions, mui, theme, theming, material-ui, material
-aliases: 
- - /desktop/extensions-sdk/design/mui-best-practices/
----
 @y
----
 title: MUI best practices
 description: Guidelines for using MUI to maximise compatibility with Docker Desktop
 keywords: Docker, extensions, mui, theme, theming, material-ui, material
-aliases: 
- - /desktop/extensions-sdk/design/mui-best-practices/
----
 @z
 
 @x
@@ -129,8 +121,8 @@ Some of the above options require you to extend our MUI theme. See the MUI docum
 
 @x
 - Take a look at our [UI styling guide](index.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @y
 - Take a look at our [UI styling guide](index.md).
-- Learn how to [publish your extension](../extensions/index.md).
+- Learn how to [publish your extension](../extensions/_index.md).
 @z

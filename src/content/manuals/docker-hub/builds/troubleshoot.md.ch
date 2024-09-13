@@ -21,12 +21,12 @@ tags: [ Troubleshooting ]
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/index.md).
+> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
 @y
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/index.md).
+> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
 @z
 
 @x

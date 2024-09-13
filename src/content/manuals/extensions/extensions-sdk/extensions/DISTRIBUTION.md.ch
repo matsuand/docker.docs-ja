@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Package and release your extension
 description: Docker extension disctribution
 keywords: Docker, extensions, sdk, distribution
-aliases: 
- - /desktop/extensions-sdk/extensions/DISTRIBUTION/
----
 @y
----
 title: Package and release your extension
 description: Docker extension disctribution
 keywords: Docker, extensions, sdk, distribution
-aliases: 
- - /desktop/extensions-sdk/extensions/DISTRIBUTION/
----
 @z
 
 @x

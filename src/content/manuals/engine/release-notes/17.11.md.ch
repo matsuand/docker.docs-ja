@@ -3,8 +3,10 @@
 
 @x
 title: Docker Engine 17.11 release notes
+linkTitle: Engine v17.11
 @y
 title: Docker Engine 17.11 release notes
+linkTitle: Engine v17.11
 @z
 
 @x

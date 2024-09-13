@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Compose Deploy Specification
 description: Learn about the Compose Deploy Specification
 keywords: compose, compose specification, compose file reference, compose deploy specification
-aliases: 
- - /compose/compose-file/deploy/
----
 @y
----
 title: Compose Deploy Specification
 description: Learn about the Compose Deploy Specification
 keywords: compose, compose specification, compose file reference, compose deploy specification
-aliases: 
- - /compose/compose-file/deploy/
----
 @z
 
 @x

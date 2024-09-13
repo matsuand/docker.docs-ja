@@ -181,10 +181,10 @@ selected when you invoke builds.
 - For information about how to interact with and manage builders,
   see [Manage builders](./manage.md)
 - To learn about different types of builders,
-  see [Build drivers](drivers/index.md)
+  see [Build drivers](drivers/_index.md)
 @y
 - For information about how to interact with and manage builders,
   see [Manage builders](./manage.md)
 - To learn about different types of builders,
-  see [Build drivers](drivers/index.md)
+  see [Build drivers](drivers/_index.md)
 @z

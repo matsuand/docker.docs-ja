@@ -5,11 +5,13 @@
 
 @x
 title: Docker Engine 23.0 release notes
+linkTitle: Engine v23.0
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
 @y
 title: Docker Engine 23.0 release notes
+linkTitle: Engine v23.0
 description: Learn about the new features, bug fixes, and breaking changes for Docker
   Engine
 keywords: docker, docker engine, ce, whats new, release notes
@@ -46,9 +48,9 @@ keywords: docker, docker engine, ce, whats new, release notes
 @z
 
 @x
-[1]: ../install/index.md
+[1]: ../install/_index.md
 @y
-[1]: ../install/index.md
+[1]: ../install/_index.md
 @z
 
 @x

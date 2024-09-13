@@ -59,10 +59,10 @@ a machine to serve as a manager node in your swarm.
 
 @x
 If you haven't already, read through the [Swarm mode key concepts](key-concepts.md)
-and try the [Swarm mode tutorial](swarm-tutorial/index.md).
+and try the [Swarm mode tutorial](swarm-tutorial/_index.md).
 @y
 If you haven't already, read through the [Swarm mode key concepts](key-concepts.md)
-and try the [Swarm mode tutorial](swarm-tutorial/index.md).
+and try the [Swarm mode tutorial](swarm-tutorial/_index.md).
 @z
 
 @x
@@ -550,9 +550,9 @@ To add a worker to this swarm, run the following command:
 @x
 * [Join nodes to a swarm](join-nodes.md)
 * `swarm init` [command line reference](/reference/cli/docker/swarm/init.md)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 @y
 * [Join nodes to a swarm](join-nodes.md)
 * `swarm init` [command line reference](reference/cli/docker/swarm/init.md)
-* [Swarm mode tutorial](swarm-tutorial/index.md)
+* [Swarm mode tutorial](swarm-tutorial/_index.md)
 @z

@@ -200,11 +200,11 @@ This page contains download URLs, information about system requirements, and ins
 @x
 6. From the installation window, select either: 
    - **Use recommended settings (Requires password)**. This lets Docker Desktop automatically set the necessary configuration settings. 
-   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](../settings/mac.md#advanced), for more information and how to set the location of the Docker CLI tools.
+   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](/manuals/desktop/settings.md#advanced), for more information and how to set the location of the Docker CLI tools.
 @y
 6. From the installation window, select either: 
    - **Use recommended settings (Requires password)**. This lets Docker Desktop automatically set the necessary configuration settings. 
-   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](../settings/mac.md#advanced), for more information and how to set the location of the Docker CLI tools.
+   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](manuals/desktop/settings.md#advanced), for more information and how to set the location of the Docker CLI tools.
 @z
 
 @x
@@ -237,8 +237,8 @@ By default, Docker Desktop is installed at `/Applications/Docker.app`. As macOS 
 The `install` command accepts the following flags:
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run.
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](../mac/permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/index.md).
+- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
     `--allowed-org=<org name> --admin-settings='{"configurationFileVersion": 2, "enhancedContainerIsolation": {"value": true, "locked": false}}'`
@@ -250,8 +250,8 @@ The `install` command accepts the following flags:
 The `install` command accepts the following flags:
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run.
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](../mac/permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/index.md).
+- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](manuals/desktop/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
     `--allowed-org=<org name> --admin-settings='{"configurationFileVersion": 2, "enhancedContainerIsolation": {"value": true, "locked": false}}'`
@@ -264,7 +264,7 @@ The `install` command accepts the following flags:
 @x
 > [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
@@ -273,7 +273,7 @@ The `install` command accepts the following flags:
 @y
 > [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](manuals/security/for-admins/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
@@ -290,8 +290,8 @@ The `install` command accepts the following flags:
 @x
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
 - [Get started with Docker](/get-started/introduction/_index.md).
-- [Explore Docker Desktop](../use-desktop/index.md) and all its features.
-- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
+- [Explore Docker Desktop](../use-desktop/_index.md) and all its features.
+- [Troubleshooting](/manuals/desktop/troubleshoot/_index.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.
 - [FAQs](../faqs/general.md) provide answers to frequently asked questions.
 - [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
@@ -300,8 +300,8 @@ The `install` command accepts the following flags:
 @y
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
 - [Get started with Docker](get-started/introduction/_index.md).
-- [Explore Docker Desktop](../use-desktop/index.md) and all its features.
-- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, how
+- [Explore Docker Desktop](../use-desktop/_index.md) and all its features.
+- [Troubleshooting](manuals/desktop/troubleshoot/_index.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.
 - [FAQs](../faqs/general.md) provide answers to frequently asked questions.
 - [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.

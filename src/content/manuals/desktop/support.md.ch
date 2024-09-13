@@ -6,12 +6,14 @@
 description: See what support is available for Docker Desktop
 keywords: Support, Docker Desktop, Linux, Mac, Windows
 title: Get support
+weight: 170
 ---
 @y
 ---
 description: See what support is available for Docker Desktop
 keywords: Support, Docker Desktop, Linux, Mac, Windows
 title: Get support
+weight: 170
 ---
 @z
 
@@ -198,11 +200,11 @@ Docker Desktop is available for Mac, Linux, and Windows. The supported version i
 @x
 * [Mac system requirements](install/mac-install.md#system-requirements)
 * [Windows system requirements](install/windows-install.md#system-requirements)
-* [Linux system requirements](install/linux-install.md#system-requirements)
+* [Linux system requirements](install/linux/_index.md#system-requirements)
 @y
 * [Mac system requirements](install/mac-install.md#system-requirements)
 * [Windows system requirements](install/windows-install.md#system-requirements)
-* [Linux system requirements](install/linux-install.md#system-requirements)
+* [Linux system requirements](install/linux/_index.md#system-requirements)
 @z
 
 @x

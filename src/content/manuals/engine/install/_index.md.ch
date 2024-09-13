@@ -34,11 +34,11 @@ Docker Desktop のインストール手順については以下を参照して�
 @z
 
 @x
-- [Docker Desktop for Linux](/manuals/desktop/install/linux-install.md)
+- [Docker Desktop for Linux](/manuals/desktop/install/linux/_index.md)
 - [Docker Desktop for Mac (macOS)](/manuals/desktop/install/mac-install.md)
 - [Docker Desktop for Windows](/manuals/desktop/install/windows-install.md)
 @y
-- [Docker Desktop for Linux](manuals/desktop/install/linux-install.md)
+- [Docker Desktop for Linux](manuals/desktop/install/linux/_index.md)
 - [Docker Desktop for Mac (macOS)](manuals/desktop/install/mac-install.md)
 - [Docker Desktop for Windows](manuals/desktop/install/windows-install.md)
 @z

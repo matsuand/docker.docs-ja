@@ -5,8 +5,10 @@
 
 @x
 title: Docker Engine 18.09 release notes
+linkTitle: Engine v18.09
 @y
 title: Docker Engine 18.09 release notes
+linkTitle: Engine v18.09
 @z
 
 @x
@@ -20,7 +22,7 @@ title: Docker Engine 18.09 release notes
 > $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > ```
 > 
-> See the [installation instructions](../install/index.md) for the corresponding
+> See the [installation instructions](../install/_index.md) for the corresponding
 > Linux distro for details.
 @y
 > **Note:**
@@ -33,7 +35,7 @@ title: Docker Engine 18.09 release notes
 > $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 > ```
 > 
-> See the [installation instructions](../install/index.md) for the corresponding
+> See the [installation instructions](../install/_index.md) for the corresponding
 > Linux distro for details.
 @z
 

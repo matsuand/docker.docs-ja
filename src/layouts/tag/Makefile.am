@@ -3,7 +3,6 @@
 ##
 
 copyfiles = \
-	baseof.html   \
 	taxonomy.html \
 	term.html
 

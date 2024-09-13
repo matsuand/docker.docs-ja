@@ -470,7 +470,7 @@ The `install` command accepts the following flags:
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
 - `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/index.md).
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
 @y
@@ -481,7 +481,7 @@ The `install` command accepts the following flags:
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
 - `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/index.md).
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:
 @z
@@ -614,8 +614,8 @@ Docker Desktop を起動するには、以下を実行します。
 @x
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Get started with Docker](/get-started/introduction/_index.md).
-- [Explore Docker Desktop](../use-desktop/index.md) and all its features.
-- [Troubleshooting](../troubleshoot/overview.md) describes common problems, workarounds, and
+- [Explore Docker Desktop](../use-desktop/_index.md) and all its features.
+- [Troubleshooting](/manuals/desktop/troubleshoot/_index.md) describes common problems, workarounds, and
   how to get support.
 - [FAQs](../faqs/general.md) provide answers to frequently asked questions.
 - [Release notes](../release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
@@ -623,8 +623,8 @@ Docker Desktop を起動するには、以下を実行します。
 @y
 - Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Docker をはじめよう](get-started/introduction/_index.md).
-- [Docker Desktop の確認](../use-desktop/index.md) and all its features.
-- [トラブルシューティング](../troubleshoot/overview.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
+- [Docker Desktop の確認](../use-desktop/_index.md) and all its features.
+- [トラブルシューティング](manuals/desktop/troubleshoot/_index.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
 - [FAQ](../faqs/general.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。
 - [リリースノート](../release-notes.md) では、Docker Desktop リリースにおけるコンポーネントアップデート、新機能、改善項目を一覧にしています。
 - [データのバックアップとリストア](../backup-and-restore.md) では Docker に関するデータのバックアップやリストアの手順を説明しています。

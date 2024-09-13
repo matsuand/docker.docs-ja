@@ -197,11 +197,11 @@ You can install Docker Engine in different ways, depending on your needs:
 
 @x
 - Docker Engine comes bundled with
-  [Docker Desktop for Linux](/manuals/desktop/install/linux-install.md). This is
+  [Docker Desktop for Linux](/manuals/desktop/install/linux/_index.md). This is
   the easiest and quickest way to get started.
 @y
 - Docker Engine comes bundled with
-  [Docker Desktop for Linux](manuals/desktop/install/linux-install.md). This is
+  [Docker Desktop for Linux](manuals/desktop/install/linux/_index.md). This is
   the easiest and quickest way to get started.
 @z
 

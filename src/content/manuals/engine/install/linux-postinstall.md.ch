@@ -65,13 +65,13 @@ manually create the group.
 >
 > The `docker` group grants root-level privileges to the user. For
 > details on how this impacts security in your system, see
-> [Docker Daemon Attack Surface](../security/index.md#docker-daemon-attack-surface).
+> [Docker Daemon Attack Surface](../security/_index.md#docker-daemon-attack-surface).
 @y
 > [!WARNING]
 >
 > The `docker` group grants root-level privileges to the user. For
 > details on how this impacts security in your system, see
-> [Docker Daemon Attack Surface](../security/index.md#docker-daemon-attack-surface).
+> [Docker Daemon Attack Surface](../security/_index.md#docker-daemon-attack-surface).
 @z
 
 @x

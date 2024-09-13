@@ -32,9 +32,9 @@ Settings Management is a feature that helps admins to control certain Docker Des
 @z
 
 @x
-With a few lines of JSON, admins can configure controls for Docker Desktop settings such as proxies and network settings. For an extra layer of security, admins can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/index.md) which ensures that any configurations set with Settings Management cannot be modified by containers.
+With a few lines of JSON, admins can configure controls for Docker Desktop settings such as proxies and network settings. For an extra layer of security, admins can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md) which ensures that any configurations set with Settings Management cannot be modified by containers.
 @y
-With a few lines of JSON, admins can configure controls for Docker Desktop settings such as proxies and network settings. For an extra layer of security, admins can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/index.md) which ensures that any configurations set with Settings Management cannot be modified by containers.
+With a few lines of JSON, admins can configure controls for Docker Desktop settings such as proxies and network settings. For an extra layer of security, admins can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md) which ensures that any configurations set with Settings Management cannot be modified by containers.
 @z
 
 @x
@@ -90,7 +90,7 @@ Using the `admin-settings.json` file, admins can:
 @z
 
 @x
-- Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/index.md)
+- Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md)
 - Configure HTTP proxies
 - Configure network settings
 - Configure Kubernetes settings
@@ -106,7 +106,7 @@ Using the `admin-settings.json` file, admins can:
 - Specify which paths your developers can add file shares to
 - Configure Air-Gapped Containers
 @y
-- Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/index.md)
+- Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md)
 - Configure HTTP proxies
 - Configure network settings
 - Configure Kubernetes settings

@@ -81,12 +81,12 @@ Docker Desktop は、イメージビルド、コンテナー実行など数々�
 @x
 {{< card
   title="Docker Desktop for Linux"
-  description="[Install instructions](/desktop/install/linux-install/)"
+  description="[Install instructions](/desktop/install/linux/)"
   icon="/assets/images/linux_48.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Linux"
-  description="[インストール手順](__SUBDIR__/desktop/install/linux-install/)"
+  description="[インストール手順](desktop/install/linux/)"
   icon="__SUBDIR__/assets/images/linux_48.svg" >}}
 @z
 

@@ -4,11 +4,13 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Explore Builds
+title: Explore the Builds view in Docker Desktop
+linkTitle: Builds
 description: Understand how to use the Builds view in Docker Desktop
 keywords: Docker Dashboard, manage, gui, dashboard, builders, builds
 @y
-title: Explore Builds
+title: Explore the Builds view in Docker Desktop
+linkTitle: Builds
 description: Understand how to use the Builds view in Docker Desktop
 keywords: Docker Dashboard, manage, gui, dashboard, builders, builds
 @z
@@ -556,17 +558,7 @@ The **Builder settings** view in the Docker Desktop settings lets you:
 @z
 
 @x
-For more information about managing builders, see:
+For more information about managing builders, see [Change settings](/manuals/desktop/settings.md#builders)
 @y
-For more information about managing builders, see:
-@z
-
-@x
-- [Change settings, Windows](../settings/windows.md#builders)
-- [Change settings, Mac](../settings/mac.md#builders)
-- [Change settings, Linux](../settings/linux.md#builders)
-@y
-- [Change settings, Windows](../settings/windows.md#builders)
-- [Change settings, Mac](../settings/mac.md#builders)
-- [Change settings, Linux](../settings/linux.md#builders)
+For more information about managing builders, see [Change settings](manuals/desktop/settings.md#builders)
 @z
