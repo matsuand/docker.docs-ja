@@ -55,7 +55,7 @@ This includes:
   You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
 - [Kubernetes](../kubernetes.md) (Images are download when you enable Kubernetes for the first time)
 - Checking for updates
-- [In-app diagnostics](manuals/desktop/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](/manuals/desktop/troubleshoot/_index.md#diagnose-from-the-app))
+- [In-app diagnostics](manuals/desktop/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](manuals/desktop/troubleshoot/_index.md#diagnose-from-the-app))
 - Sending usage statistics
 @z
 

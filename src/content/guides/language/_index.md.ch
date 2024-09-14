@@ -7,7 +7,7 @@
 description: Language-specific guides overview
 linkTitle: Language-specific guides
 @y
-description: 言語別ガイドの概要。
+description: 各種言語別ガイドの概要。
 linkTitle: Language-specific guides
 @z
 

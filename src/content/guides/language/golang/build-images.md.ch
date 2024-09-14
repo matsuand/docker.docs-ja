@@ -411,7 +411,7 @@ COPY go.mod go.sum ./
 >
 > If you'd like to familiarize yourself with the trailing slash treatment by the
 > `COPY` command, see [Dockerfile
-> reference](/reference/dockerfile.md#copy). This trailing slash can
+> reference](reference/dockerfile.md#copy). This trailing slash can
 > cause issues in more ways than you can imagine.
 @z
 
@@ -1038,7 +1038,7 @@ present a security risk when the container is deployed.
 @x
 These two issues can be solved by using [multi-stage builds](/manuals/build/building/multi-stage.md).
 @y
-These two issues can be solved by using [multi-stage builds](/manuals/build/building/multi-stage.md).
+These two issues can be solved by using [multi-stage builds](manuals/build/building/multi-stage.md).
 @z
 
 @x
@@ -1220,7 +1220,7 @@ There's much more to multi-stage builds, including the possibility of multi-arch
 so feel free to check out [multi-stage builds](/manuals/build/building/multi-stage.md). This is, however, not essential for your progress here.
 @y
 There's much more to multi-stage builds, including the possibility of multi-architecture builds, 
-so feel free to check out [multi-stage builds](/manuals/build/building/multi-stage.md). This is, however, not essential for your progress here.
+so feel free to check out [multi-stage builds](manuals/build/building/multi-stage.md). This is, however, not essential for your progress here.
 @z
 
 @x

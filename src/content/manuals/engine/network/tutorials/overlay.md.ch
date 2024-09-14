@@ -24,7 +24,7 @@ learn more about Docker networking in general, see the [overview](/manuals/engin
 This series of tutorials deals with networking for swarm services.
 For networking with standalone containers, see
 [Networking with standalone containers](manuals/engine/network/tutorials/standalone.md). If you need to
-learn more about Docker networking in general, see the [overview](/manuals/engine/network/_index.md).
+learn more about Docker networking in general, see the [overview](manuals/engine/network/_index.md).
 @z
 
 @x

@@ -528,6 +528,24 @@ $ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecom
 @z
 
 @x
+To skip all checks, use the `skip=all` parameter:
+@y
+To skip all checks, use the `skip=all` parameter:
+@z
+
+@x
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=skip=all
+```
+@y
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=skip=all
+```
+@z
+
+@x
 ## Combine error and skip parameters for check directives
 @y
 ## Combine error and skip parameters for check directives
@@ -562,5 +580,105 @@ $ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecom
 @y
 ```console {title="Build argument"}
 $ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecommended,StageNameCasing;error=true" .
+```
+@z
+
+@x
+## Experimental checks
+@y
+## Experimental checks
+@z
+
+@x
+Before checks are promoted to stable, they may be available as experimental
+checks. Experimental checks are disabled by default. To see the list of
+experimental checks available, refer to the [Build checks reference](/reference/build-checks/).
+@y
+Before checks are promoted to stable, they may be available as experimental
+checks. Experimental checks are disabled by default. To see the list of
+experimental checks available, refer to the [Build checks reference](__SUBDIR__/reference/build-checks/).
+@z
+
+@x
+To enable all experimental checks, set the `BUILDKIT_DOCKERFILE_CHECK` build
+argument to `experimental=all`:
+@y
+To enable all experimental checks, set the `BUILDKIT_DOCKERFILE_CHECK` build
+argument to `experimental=all`:
+@z
+
+@x
+```console
+$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=experimental=all" .
+```
+@y
+```console
+$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=experimental=all" .
+```
+@z
+
+@x
+You can also enable experimental checks in your Dockerfile using the `check`
+directive:
+@y
+You can also enable experimental checks in your Dockerfile using the `check`
+directive:
+@z
+
+@x
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=experimental=all
+```
+@y
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=experimental=all
+```
+@z
+
+@x
+To selectively enable experimental checks, you can pass a CSV string of the
+check IDs you want to enable, either to the `check` directive in your Dockerfile
+or as a build argument. For example:
+@y
+To selectively enable experimental checks, you can pass a CSV string of the
+check IDs you want to enable, either to the `check` directive in your Dockerfile
+or as a build argument. For example:
+@z
+
+@x
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=experimental=JSONArgsRecommended,StageNameCasing
+```
+@y
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=experimental=JSONArgsRecommended,StageNameCasing
+```
+@z
+
+@x
+Note that the `experimental` directive takes precedence over the `skip`
+directive, meaning that experimental checks will run regardless of the `skip`
+directive you have set. For example, if you set `skip=all` and enable
+experimental checks, the experimental checks will still run:
+@y
+Note that the `experimental` directive takes precedence over the `skip`
+directive, meaning that experimental checks will run regardless of the `skip`
+directive you have set. For example, if you set `skip=all` and enable
+experimental checks, the experimental checks will still run:
+@z
+
+@x
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=skip=all;experimental=all
+```
+@y
+```dockerfile {title=Dockerfile}
+# syntax=docker/dockerfile:1
+# check=skip=all;experimental=all
 ```
 @z

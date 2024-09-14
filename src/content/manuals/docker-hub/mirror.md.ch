@@ -86,11 +86,11 @@ Hub can be mirrored.
 @x
 > [!NOTE]
 >
-> Mirrors of Docker Hub are still subject to Docker's [fair usage policy](https://www.docker.com/pricing/resource-consumption-updates).
+> Mirrors of Docker Hub are still subject to Docker's [fair use policy](./download-rate-limit.md#fair-use).
 @y
 > [!NOTE]
 >
-> Mirrors of Docker Hub are still subject to Docker's [fair usage policy](https://www.docker.com/pricing/resource-consumption-updates).
+> Mirrors of Docker Hub are still subject to Docker's [fair use policy](./download-rate-limit.md#fair-use).
 @z
 
 @x

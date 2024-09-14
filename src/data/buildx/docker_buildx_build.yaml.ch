@@ -2331,7 +2331,7 @@ examples: |-
     > environment variable for modifying the colors of the terminal output.
 @y
     > [!NOTE]
-    > Check also the [`BUILDKIT_COLORS`](/build/building/variables/#buildkit_colors)
+    > Check also the [`BUILDKIT_COLORS`](__SUBDIR__/build/building/variables/#buildkit_colors)
     > environment variable for modifying the colors of the terminal output.
 @z
 

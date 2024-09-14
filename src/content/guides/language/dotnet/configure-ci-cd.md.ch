@@ -92,7 +92,7 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 @x
 4. Create a new [Personal Access Token (PAT)](/manuals/security/for-developers/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-4. Create a new [Personal Access Token (PAT)](/manuals/security/for-developers/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
+4. Create a new [Personal Access Token (PAT)](manuals/security/for-developers/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @z
 
 @x
@@ -363,7 +363,7 @@ Related information:
  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
 Related information:
- - [Introduction to GitHub Actions](/manuals/build/ci/github-actions/_index.md)
+ - [Introduction to GitHub Actions](manuals/build/ci/github-actions/_index.md)
  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
 

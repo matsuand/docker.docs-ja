@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: OpenTelemetry support
 description: Analyze telemetry data for builds
 keywords: build, buildx buildkit, opentelemetry
-aliases:
-- /build/building/opentelemetry/
----
 @y
----
 title: OpenTelemetry support
 description: Analyze telemetry data for builds
 keywords: build, buildx buildkit, opentelemetry
-aliases:
-- /build/building/opentelemetry/
----
 @z
 
 @x
@@ -55,7 +49,7 @@ $ docker run -d --name jaeger -p "6831:6831/udp" -p "16686:16686" --restart unle
 Then [create a `docker-container` builder](/manuals/build/builders/drivers/docker-container.md)
 that will use the Jaeger instance via the `JAEGER_TRACE` environment variable:
 @y
-Then [create a `docker-container` builder](/manuals/build/builders/drivers/docker-container.md)
+Then [create a `docker-container` builder](manuals/build/builders/drivers/docker-container.md)
 that will use the Jaeger instance via the `JAEGER_TRACE` environment variable:
 @z
 
@@ -80,7 +74,7 @@ $ docker buildx create --use \
 @x
 Boot and [inspect `mybuilder`](/reference/cli/docker/buildx/inspect.md):
 @y
-Boot and [inspect `mybuilder`](/reference/cli/docker/buildx/inspect.md):
+Boot and [inspect `mybuilder`](reference/cli/docker/buildx/inspect.md):
 @z
 
 @x

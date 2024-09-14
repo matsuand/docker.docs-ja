@@ -221,7 +221,7 @@ network.**
     [configs](/manuals/engine/swarm/configs.md).
 @y
   - You can use swarm services instead of standalone containers, and take
-    advantage of shared [secrets](/manuals/engine/swarm/secrets.md) and
+    advantage of shared [secrets](manuals/engine/swarm/secrets.md) and
     [configs](manuals/engine/swarm/configs.md).
 @z
 

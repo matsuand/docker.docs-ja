@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Compose pre-defined environment variables
 keywords: fig, composition, compose, docker, orchestration, cli, reference
 title: Set or change pre-defined environment variables in Docker Compose
+linkTitle: Pre-defined environment variables
 @y
 description: Compose pre-defined environment variables
 keywords: fig, composition, compose, docker, orchestration, cli, reference
 title: Set or change pre-defined environment variables in Docker Compose
+linkTitle: Pre-defined environment variables
 @z
 
 @x
@@ -38,6 +40,8 @@ This page contains information on how you can set or change the following pre-de
 - `COMPOSE_ANSI`
 - `COMPOSE_STATUS_STDOUT`
 - `COMPOSE_ENV_FILES`
+- `COMPOSE_MENU`
+- `COMPOSE_EXPERIMENTAL`
 @y
 - `COMPOSE_CONVERT_WINDOWS_PATHS`
 - `COMPOSE_FILE`
@@ -51,6 +55,8 @@ This page contains information on how you can set or change the following pre-de
 - `COMPOSE_ANSI`
 - `COMPOSE_STATUS_STDOUT`
 - `COMPOSE_ENV_FILES`
+- `COMPOSE_MENU`
+- `COMPOSE_EXPERIMENTAL`
 @z
 
 @x
@@ -399,6 +405,74 @@ COMPOSE_ENV_FILES=.env.envfile1, .env.envfile2
 If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI, Docker Compose uses the default behavior, which is to look for an `.env` file in the project directory.
 @y
 If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI, Docker Compose uses the default behavior, which is to look for an `.env` file in the project directory.
+@z
+
+@x
+### COMPOSE\_MENU
+@y
+### COMPOSE\_MENU
+@z
+
+@x
+When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](/reference/cli/docker/debug.md).
+@y
+When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](reference/cli/docker/debug.md).
+@z
+
+@x
+* Supported values:
+  * `true` or `1`, to enable,
+  * `false` or `0`, to disable.
+* Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`.
+@y
+* Supported values:
+  * `true` or `1`, to enable,
+  * `false` or `0`, to disable.
+* Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`.
+@z
+
+@x
+> [!NOTE]
+>
+> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
+@y
+> [!NOTE]
+>
+> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
+@z
+
+@x
+### COMPOSE\_EXPERIMENTAL
+@y
+### COMPOSE\_EXPERIMENTAL
+@z
+
+@x
+This is an opt-out variable. When turned off it deactivates the experimental features such as the navigation menu or [Synchronized file shares](/manuals/desktop/synchronized-file-sharing.md).
+@y
+This is an opt-out variable. When turned off it deactivates the experimental features such as the navigation menu or [Synchronized file shares](manuals/desktop/synchronized-file-sharing.md).
+@z
+
+@x
+* Supported values:
+  * `true` or `1`, to enable,
+  * `false` or `0`, to disable.
+* Defaults to: `1`.
+@y
+* Supported values:
+  * `true` or `1`, to enable,
+  * `false` or `0`, to disable.
+* Defaults to: `1`.
+@z
+
+@x
+> [!NOTE]
+>
+> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
+@y
+> [!NOTE]
+>
+> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
 @z
 
 @x

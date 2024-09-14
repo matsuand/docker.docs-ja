@@ -105,7 +105,7 @@ You can enable Docker Scout for your organization to get a more relevant health
 score based on your specific policies.
 @y
 If you're not using Docker Scout, the health scores show the compliance of your
-images with the default, [out-of-the-box policies](/manuals/scout/policy/_index.md#out-of-the-box-policies).
+images with the default, [out-of-the-box policies](manuals/scout/policy/_index.md#out-of-the-box-policies).
 You can enable Docker Scout for your organization to get a more relevant health
 score based on your specific policies.
 @z

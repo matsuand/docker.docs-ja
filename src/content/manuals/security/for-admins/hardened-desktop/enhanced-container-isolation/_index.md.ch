@@ -60,7 +60,7 @@ When Enhanced Container Isolation is enabled, these mechanisms are applied autom
 @x
 Enhanced Container Isolation ensures stronger container isolation and also locks in any security configurations that have been created by IT admins, for instance through [Registry Access Management policies](/manuals/security/for-admins/hardened-desktop/registry-access-management.md) or with [Settings Management](../settings-management/_index.md).
 @y
-Enhanced Container Isolation ensures stronger container isolation and also locks in any security configurations that have been created by IT admins, for instance through [Registry Access Management policies](/manuals/security/for-admins/hardened-desktop/registry-access-management.md) or with [Settings Management](../settings-management/_index.md).
+Enhanced Container Isolation ensures stronger container isolation and also locks in any security configurations that have been created by IT admins, for instance through [Registry Access Management policies](manuals/security/for-admins/hardened-desktop/registry-access-management.md) or with [Settings Management](../settings-management/_index.md).
 @z
 
 @x
