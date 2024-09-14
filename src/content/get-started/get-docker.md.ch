@@ -14,7 +14,7 @@ description: Download and install Docker on the platform of your choice, includi
   Mac, Linux, or Windows.
 keywords: install docker, docker download, download docker, docker installation, how
   to install docker, get docker, docker locally
-title: Get Docker
+title: Docker の入手
 @z
 
 @x

@@ -330,25 +330,32 @@ And with that, you're done. Congrats on updating your website.
 @x
 Before you move on, take a moment and reflect on what happened here. Within a few moments, you were able to:
 @y
-Before you move on, take a moment and reflect on what happened here. Within a few moments, you were able to:
+これより先に進む前に、もう一度、ここで行った内容を思い起こしてください。
+ほんの数分の中で、以下のことができるようになりました。
 @z
 
 @x
 - Start a complete development project with zero installation effort. The containerized environment provided the development environment, ensuring you have everything you need. You didn't have to install Node, MySQL, or any of the other dependencies directly on your machine. All you needed was Docker Desktop and a code editor.
 @y
-- Start a complete development project with zero installation effort. The containerized environment provided the development environment, ensuring you have everything you need. You didn't have to install Node, MySQL, or any of the other dependencies directly on your machine. All you needed was Docker Desktop and a code editor.
+- インストールの手間ひまをいっさいかけずに、完全な開発プロジェクトを構築しました。
+  コンテナー化された環境は開発環境を提供するものです。
+  その中では必要となることをすべて行うことができます。
+  マシン内には Node、MySQL をはじめすべての依存パッケージを自分でインストールする必要はありません。
+  必要となるのは Docker Desktop とコードエディターだけです。
 @z
 
 @x
 - Make changes and see them immediately. This was made possible because 1) the processes running in each container are watching and responding to file changes and 2) the files are shared with the containerized environment.
 @y
-- Make changes and see them immediately. This was made possible because 1) the processes running in each container are watching and responding to file changes and 2) the files are shared with the containerized environment.
+- アプリへの修正を加え、それを即座に確認しました。
+  これが実現できた理由は、1) 各コンテナー内に稼働しているプロセスは、ファイル変更を常に監視しておりそれに応じた対処が可能であるからであり、2) ファイルはコンテナー化環境内において共有されているからです。
 @z
 
 @x
 Docker Desktop enables all of this and so much more. Once you start thinking with containers, you can create almost any environment and easily share it with your team.
 @y
-Docker Desktop enables all of this and so much more. Once you start thinking with containers, you can create almost any environment and easily share it with your team.
+上のことをすべて Docker Desktop が行っているわけですが、実現できることは他にも多々あります。
+コンテナーを使うという考えを持った時点で、どのような環境であっても作成できたも同然であり、それを開発チーム内で共有することが可能です。
 @z
 
 @x
@@ -360,11 +367,11 @@ Docker Desktop enables all of this and so much more. Once you start thinking wit
 @x
 Now that the application has been updated, you’re ready to learn about packaging it as a container image and pushing it to a registry, specifically Docker Hub.
 @y
-Now that the application has been updated, you’re ready to learn about packaging it as a container image and pushing it to a registry, specifically Docker Hub.
+アプリケーションの修正を行うことができたので、これをコンテナーイメージとしてパッケージングし、特に Docker Hub と呼ばれるレジストリにプッシュする方法について学んでいきます。
 @z
 
 @x
 {{< button text="Build and push your first image" url="build-and-push-first-image" >}}
 @y
-{{< button text="Build and push your first image" url="build-and-push-first-image" >}}
+{{< button text="初めてのイメージ作りとプッシュ" url="build-and-push-first-image" >}}
 @z
