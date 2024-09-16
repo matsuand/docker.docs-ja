@@ -34,6 +34,56 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
+## 4.34.2
+@y
+## 4.34.2
+@z
+
+@x
+{{< release-date date="2024-09-12" >}}
+@y
+{{< release-date date="2024-09-12" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.34.2" build_path="/167172/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.34.2" build_path="/167172/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed a bug where `docker compose up` would become unresponsive while in Resource Saver mode.
+@y
+- Fixed a bug where `docker compose up` would become unresponsive while in Resource Saver mode.
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+- Fixed [CVE-2024-8695](https://www.cve.org/cverecord?id=CVE-2024-8695) which allows RCE via crafted extension description/changelog which could be abused by a malicious extension.
+- Fixed [CVE-2024-8696](https://www.cve.org/cverecord?id=CVE-2024-8696) which allows RCE via crafted extension publisher-url/additional-urls which could be abused by a malicious extension.
+@y
+- Fixed [CVE-2024-8695](https://www.cve.org/cverecord?id=CVE-2024-8695) which allows RCE via crafted extension description/changelog which could be abused by a malicious extension.
+- Fixed [CVE-2024-8696](https://www.cve.org/cverecord?id=CVE-2024-8696) which allows RCE via crafted extension publisher-url/additional-urls which could be abused by a malicious extension.
+@z
+
+@x
 ## 4.34.1
 @y
 ## 4.34.1
@@ -1326,12 +1376,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install all=true version="4.28.0" build_path="/139021/" >}}
-@y
-{{< desktop-install all=true version="4.28.0" build_path="/139021/" >}}
-@z
-
-@x
 ### New
 @y
 ### New
@@ -1498,12 +1542,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install all=true version="4.27.2" build_path="/137060/" >}}
-@y
-{{< desktop-install all=true version="4.27.2" build_path="/137060/" >}}
-@z
-
-@x
 ### Upgrades
 @y
 ### Upgrades
@@ -1590,12 +1628,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install all=true version="4.27.1" build_path="/136059/" >}}
-@y
-{{< desktop-install all=true version="4.27.1" build_path="/136059/" >}}
-@z
-
-@x
 ### Upgrades
 @y
 ### Upgrades
@@ -1639,12 +1671,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 {{< release-date date="2024-01-25" >}}
 @y
 {{< release-date date="2024-01-25" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.27.0" build_path="/135262/" >}}
-@y
-{{< desktop-install all=true version="4.27.0" build_path="/135262/" >}}
 @z
 
 @x
@@ -1868,12 +1894,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install all=true version="4.26.1" build_path="/131620/" >}}
-@y
-{{< desktop-install all=true version="4.26.1" build_path="/131620/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
@@ -1913,12 +1933,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 {{< release-date date="2023-12-04" >}}
 @y
 {{< release-date date="2023-12-04" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.26.0" build_path="/130397/" >}}
-@y
-{{< desktop-install all=true version="4.26.0" build_path="/130397/" >}}
 @z
 
 @x
@@ -2104,12 +2118,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install all=true version="4.25.2" build_path="/129061/" >}}
-@y
-{{< desktop-install all=true version="4.25.2" build_path="/129061/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
@@ -2149,12 +2157,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 {{< release-date date="2023-11-13" >}}
 @y
 {{< release-date date="2023-11-13" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.25.1" build_path="/128006/" >}}
-@y
-{{< desktop-install all=true version="4.25.1" build_path="/128006/" >}}
 @z
 
 @x
@@ -2205,12 +2207,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 {{< release-date date="2023-10-26" >}}
 @y
 {{< release-date date="2023-10-26" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.25.0" build_path="/126437/" >}}
-@y
-{{< desktop-install all=true version="4.25.0" build_path="/126437/" >}}
 @z
 
 @x
@@ -2404,12 +2400,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install all=true version="4.24.2" build_path="/124339/" >}}
-@y
-{{< desktop-install all=true version="4.24.2" build_path="/124339/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
@@ -2475,12 +2465,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 {{< release-date date="2023-09-28" >}}
 @y
 {{< release-date date="2023-09-28" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.24.0" build_path="/122432/" >}}
-@y
-{{< desktop-install all=true version="4.24.0" build_path="/122432/" >}}
 @z
 
 @x
