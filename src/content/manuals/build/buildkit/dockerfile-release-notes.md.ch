@@ -1,36 +1,248 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Dockerfile release notes
 description: Release notes for Dockerfile frontend
 keywords: build, dockerfile, frontend, release notes
 tags: [Release notes]
-toc_max: 2
----
 @y
----
 title: Dockerfile release notes
 description: Release notes for Dockerfile frontend
 keywords: build, dockerfile, frontend, release notes
 tags: [Release notes]
-toc_max: 2
----
 @z
 
 @x
 This page contains information about the new features, improvements, known
-issues, and bug fixes in [Dockerfile reference](../../reference/dockerfile.md).
+issues, and bug fixes in [Dockerfile reference](/reference/dockerfile.md).
 @y
 This page contains information about the new features, improvements, known
-issues, and bug fixes in [Dockerfile reference](../../reference/dockerfile.md).
+issues, and bug fixes in [Dockerfile reference](reference/dockerfile.md).
 @z
 
 @x
 For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 @y
 For usage, see the [Dockerfile frontend syntax](frontend.md) page.
+@z
+
+@x
+## 1.10.0
+@y
+## 1.10.0
+@z
+
+@x
+{{< release-date date="2024-09-10" >}}
+@y
+{{< release-date date="2024-09-10" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.10.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.10.0).
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.10.0
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.10.0
+```
+@z
+
+@x
+- [Build secrets](/manuals/build/building/secrets.md#target) can now be mounted as environment variables using the `env=VARIABLE` option. [moby/buildkit#5215]
+- The [`# check` directive](/reference/dockerfile.md#check) now allows new experimental attribute for enabling experimental validation rules like `CopyIgnoredFile`. [moby/buildkit#5213]
+- Improve validation of unsupported modifiers for variable substitution. [moby/buildkit#5146]
+- `ADD` and `COPY` instructions now support variable interpolation for build arguments for the `--chmod` option values. [moby/buildkit#5151]
+- Improve validation of the `--chmod` option for `COPY` and `ADD` instructions. [moby/buildkit#5148]
+- Fix missing completions for size and destination attributes on mounts. [moby/buildkit#5245]
+- OCI annotations are now set to the Dockerfile frontend release image. [moby/buildkit#5197]
+@y
+- [Build secrets](manuals/build/building/secrets.md#target) can now be mounted as environment variables using the `env=VARIABLE` option. [moby/buildkit#5215]
+- The [`# check` directive](reference/dockerfile.md#check) now allows new experimental attribute for enabling experimental validation rules like `CopyIgnoredFile`. [moby/buildkit#5213]
+- Improve validation of unsupported modifiers for variable substitution. [moby/buildkit#5146]
+- `ADD` and `COPY` instructions now support variable interpolation for build arguments for the `--chmod` option values. [moby/buildkit#5151]
+- Improve validation of the `--chmod` option for `COPY` and `ADD` instructions. [moby/buildkit#5148]
+- Fix missing completions for size and destination attributes on mounts. [moby/buildkit#5245]
+- OCI annotations are now set to the Dockerfile frontend release image. [moby/buildkit#5197]
+@z
+
+@x
+[moby/buildkit#5215]: https://github.com/moby/buildkit/pull/5215
+[moby/buildkit#5213]: https://github.com/moby/buildkit/pull/5213
+[moby/buildkit#5146]: https://github.com/moby/buildkit/pull/5146
+[moby/buildkit#5151]: https://github.com/moby/buildkit/pull/5151
+[moby/buildkit#5148]: https://github.com/moby/buildkit/pull/5148
+[moby/buildkit#5245]: https://github.com/moby/buildkit/pull/5245
+[moby/buildkit#5197]: https://github.com/moby/buildkit/pull/5197
+@y
+[moby/buildkit#5215]: https://github.com/moby/buildkit/pull/5215
+[moby/buildkit#5213]: https://github.com/moby/buildkit/pull/5213
+[moby/buildkit#5146]: https://github.com/moby/buildkit/pull/5146
+[moby/buildkit#5151]: https://github.com/moby/buildkit/pull/5151
+[moby/buildkit#5148]: https://github.com/moby/buildkit/pull/5148
+[moby/buildkit#5245]: https://github.com/moby/buildkit/pull/5245
+[moby/buildkit#5197]: https://github.com/moby/buildkit/pull/5197
+@z
+
+@x
+## 1.9.0
+@y
+## 1.9.0
+@z
+
+@x
+{{< release-date date="2024-07-11" >}}
+@y
+{{< release-date date="2024-07-11" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.9.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.9.0).
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.9.0
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.9.0
+```
+@z
+
+@x
+- Add new validation rules:
+  - `SecretsUsedInArgOrEnv`
+  - `InvalidDefaultArgInFrom`
+  - `RedundantTargetPlatform`
+  - `CopyIgnoredFile` (experimental)
+  - `FromPlatformFlagConstDisallowed`
+- Many performance improvements for working with big Dockerfiles. [moby/buildkit#5067](https://github.com/moby/buildkit/pull/5067/), [moby/buildkit#5029](https://github.com/moby/buildkit/pull/5029/)
+- Fix possible panic when building Dockerfile without defined stages. [moby/buildkit#5150](https://github.com/moby/buildkit/pull/5150/)
+- Fix incorrect JSON parsing that could cause some incorrect JSON values to pass without producing an error. [moby/buildkit#5107](https://github.com/moby/buildkit/pull/5107/)
+- Fix a regression where `COPY --link` with a destination path of `.` could fail. [moby/buildkit#5080](https://github.com/moby/buildkit/pull/5080/)
+- Fix validation of `ADD --checksum` when used with a Git URL. [moby/buildkit#5085](https://github.com/moby/buildkit/pull/5085/)
+@y
+- Add new validation rules:
+  - `SecretsUsedInArgOrEnv`
+  - `InvalidDefaultArgInFrom`
+  - `RedundantTargetPlatform`
+  - `CopyIgnoredFile` (experimental)
+  - `FromPlatformFlagConstDisallowed`
+- Many performance improvements for working with big Dockerfiles. [moby/buildkit#5067](https://github.com/moby/buildkit/pull/5067/), [moby/buildkit#5029](https://github.com/moby/buildkit/pull/5029/)
+- Fix possible panic when building Dockerfile without defined stages. [moby/buildkit#5150](https://github.com/moby/buildkit/pull/5150/)
+- Fix incorrect JSON parsing that could cause some incorrect JSON values to pass without producing an error. [moby/buildkit#5107](https://github.com/moby/buildkit/pull/5107/)
+- Fix a regression where `COPY --link` with a destination path of `.` could fail. [moby/buildkit#5080](https://github.com/moby/buildkit/pull/5080/)
+- Fix validation of `ADD --checksum` when used with a Git URL. [moby/buildkit#5085](https://github.com/moby/buildkit/pull/5085/)
+@z
+
+@x
+## 1.8.1
+@y
+## 1.8.1
+@z
+
+@x
+{{< release-date date="2024-06-18" >}}
+@y
+{{< release-date date="2024-06-18" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.1).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.1).
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.8.1
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.8.1
+```
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix handling of empty strings on variable expansion. [moby/buildkit#5052](https://github.com/moby/buildkit/pull/5052/)
+- Improve formatting of build warnings. [moby/buildkit#5037](https://github.com/moby/buildkit/pull/5037/), [moby/buildkit#5045](https://github.com/moby/buildkit/pull/5045/), [moby/buildkit#5046](https://github.com/moby/buildkit/pull/5046/)
+- Fix possible invalid output for `UndeclaredVariable` warning for multi-stage builds. [moby/buildkit#5048](https://github.com/moby/buildkit/pull/5048/)
+@y
+- Fix handling of empty strings on variable expansion. [moby/buildkit#5052](https://github.com/moby/buildkit/pull/5052/)
+- Improve formatting of build warnings. [moby/buildkit#5037](https://github.com/moby/buildkit/pull/5037/), [moby/buildkit#5045](https://github.com/moby/buildkit/pull/5045/), [moby/buildkit#5046](https://github.com/moby/buildkit/pull/5046/)
+- Fix possible invalid output for `UndeclaredVariable` warning for multi-stage builds. [moby/buildkit#5048](https://github.com/moby/buildkit/pull/5048/)
+@z
+
+@x
+## 1.8.0
+@y
+## 1.8.0
+@z
+
+@x
+{{< release-date date="2024-06-11" >}}
+@y
+{{< release-date date="2024-06-11" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.0).
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.8.0
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.8.0
+```
+@z
+
+@x
+- Many new validation rules have been added to verify that your Dockerfile is using best practices. These rules are validated during build and new `check` frontend method can be used to only trigger validation without completing the whole build.
+- New directive `#check` and build argument `BUILDKIT_DOCKERFILE_CHECK` lets you control the behavior or build checks. [moby/buildkit#4962](https://github.com/moby/buildkit/pull/4962/)
+- Using a single-platform base image that does not match your expected platform is now validated. [moby/buildkit#4924](https://github.com/moby/buildkit/pull/4924/)
+- Errors from the expansion of `ARG` definitions in global scope are now handled properly. [moby/buildkit#4856](https://github.com/moby/buildkit/pull/4856/)
+- Expansion of the default value of `ARG` now only happens if it is not overwritten by the user. Previously, expansion was completed and value was later ignored, which could result in an unexpected expansion error. [moby/buildkit#4856](https://github.com/moby/buildkit/pull/4856/)
+- Performance of parsing huge Dockerfiles with many stages has been improved. [moby/buildkit#4970](https://github.com/moby/buildkit/pull/4970/)
+- Fix some Windows path handling consistency errors. [moby/buildkit#4825](https://github.com/moby/buildkit/pull/4825/)
+@y
+- Many new validation rules have been added to verify that your Dockerfile is using best practices. These rules are validated during build and new `check` frontend method can be used to only trigger validation without completing the whole build.
+- New directive `#check` and build argument `BUILDKIT_DOCKERFILE_CHECK` lets you control the behavior or build checks. [moby/buildkit#4962](https://github.com/moby/buildkit/pull/4962/)
+- Using a single-platform base image that does not match your expected platform is now validated. [moby/buildkit#4924](https://github.com/moby/buildkit/pull/4924/)
+- Errors from the expansion of `ARG` definitions in global scope are now handled properly. [moby/buildkit#4856](https://github.com/moby/buildkit/pull/4856/)
+- Expansion of the default value of `ARG` now only happens if it is not overwritten by the user. Previously, expansion was completed and value was later ignored, which could result in an unexpected expansion error. [moby/buildkit#4856](https://github.com/moby/buildkit/pull/4856/)
+- Performance of parsing huge Dockerfiles with many stages has been improved. [moby/buildkit#4970](https://github.com/moby/buildkit/pull/4970/)
+- Fix some Windows path handling consistency errors. [moby/buildkit#4825](https://github.com/moby/buildkit/pull/4825/)
 @z
 
 @x
@@ -111,20 +323,20 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
   [moby/buildkit#3001](https://github.com/moby/buildkit/pull/3001),
   [moby/buildkit#4720](https://github.com/moby/buildkit/pull/4720),
   [moby/buildkit#4728](https://github.com/moby/buildkit/pull/4728),
-  [docs](../../reference/dockerfile.md#copy---parents)
+  [docs](/reference/dockerfile.md#copy---parents)
 - New `--exclude` flag can be used in `COPY` and `ADD` commands to apply filter to copied files.
   [moby/buildkit#4561](https://github.com/moby/buildkit/pull/4561),
-  [docs](../../reference/dockerfile.md#copy---exclude)
+  [docs](/reference/dockerfile.md#copy---exclude)
 @y
 - New `--parents` flag has been added to `COPY` for copying files while keeping the parent directory structure.
   [moby/buildkit#4598](https://github.com/moby/buildkit/pull/4598),
   [moby/buildkit#3001](https://github.com/moby/buildkit/pull/3001),
   [moby/buildkit#4720](https://github.com/moby/buildkit/pull/4720),
   [moby/buildkit#4728](https://github.com/moby/buildkit/pull/4728),
-  [docs](../../reference/dockerfile.md#copy---parents)
+  [docs](reference/dockerfile.md#copy---parents)
 - New `--exclude` flag can be used in `COPY` and `ADD` commands to apply filter to copied files.
   [moby/buildkit#4561](https://github.com/moby/buildkit/pull/4561),
-  [docs](../../reference/dockerfile.md#copy---exclude)
+  [docs](reference/dockerfile.md#copy---exclude)
 @z
 
 @x
@@ -147,10 +359,10 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 
 @x
 - Add `--start-interval` flag to the
-  [`HEALTHCHECK` instruction](../../reference/dockerfile.md#healthcheck).
+  [`HEALTHCHECK` instruction](/reference/dockerfile.md#healthcheck).
 @y
 - Add `--start-interval` flag to the
-  [`HEALTHCHECK` instruction](../../reference/dockerfile.md#healthcheck).
+  [`HEALTHCHECK` instruction](reference/dockerfile.md#healthcheck).
 @z
 
 @x
@@ -160,12 +372,12 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- The `ADD` instruction can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
-- The `ADD` instruction now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- The `ADD` instruction can now [import files directly from Git URLs](/reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
+- The `ADD` instruction now supports [`--checksum` flag](/reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @y
-- The `ADD` instruction can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
-- The `ADD` instruction now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- The `ADD` instruction can now [import files directly from Git URLs](reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
+- The `ADD` instruction now supports [`--checksum` flag](reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @z
 
@@ -268,10 +480,10 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `ADD` command now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- `ADD` command now supports [`--checksum` flag](/reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @y
-- `ADD` command now supports [`--checksum` flag](../../reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
+- `ADD` command now supports [`--checksum` flag](reference/dockerfile.md#verifying-a-remote-file-checksum-add---checksumchecksum-http-src-dest)
   to validate the contents of the remote URL contents
 @z
 
@@ -294,9 +506,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `ADD` command can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
+- `ADD` command can now [import files directly from Git URLs](/reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
 @y
-- `ADD` command can now [import files directly from Git URLs](../../reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
+- `ADD` command can now [import files directly from Git URLs](reference/dockerfile.md#adding-a-git-repository-add-git-ref-dir)
 @z
 
 @x
@@ -430,30 +642,30 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- [`COPY --link` and `ADD --link`](../../reference/dockerfile.md#copy---link)
+- [`COPY --link` and `ADD --link`](/reference/dockerfile.md#copy---link)
   allow copying files with increased cache efficiency and rebase images without
   requiring them to be rebuilt. `--link` copies files to a separate layer and
   then uses new LLB MergeOp implementation to chain independent layers together
-- [Heredocs](../../reference/dockerfile.md#here-documents) support have
+- [Heredocs](/reference/dockerfile.md#here-documents) support have
   been promoted from labs channel to stable. This feature allows writing
   multiline inline scripts and files
-- Additional [named build contexts](../../reference/cli/docker/buildx/build.md#build-context)
+- Additional [named build contexts](/reference/cli/docker/buildx/build.md#build-context)
   can be passed to build to add or overwrite a stage or an image inside the
   build. A source for the context can be a local source, image, Git, or HTTP URL
-- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
+- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](/reference/dockerfile.md#buildkit-built-in-build-args)
   can be used to set the default hostname for the `RUN` steps
 @y
-- [`COPY --link` and `ADD --link`](../../reference/dockerfile.md#copy---link)
+- [`COPY --link` and `ADD --link`](reference/dockerfile.md#copy---link)
   allow copying files with increased cache efficiency and rebase images without
   requiring them to be rebuilt. `--link` copies files to a separate layer and
   then uses new LLB MergeOp implementation to chain independent layers together
-- [Heredocs](../../reference/dockerfile.md#here-documents) support have
+- [Heredocs](reference/dockerfile.md#here-documents) support have
   been promoted from labs channel to stable. This feature allows writing
   multiline inline scripts and files
-- Additional [named build contexts](../../reference/cli/docker/buildx/build.md#build-context)
+- Additional [named build contexts](reference/cli/docker/buildx/build.md#build-context)
   can be passed to build to add or overwrite a stage or an image inside the
   build. A source for the context can be a local source, image, Git, or HTTP URL
-- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
+- [`BUILDKIT_SANDBOX_HOSTNAME` build-arg](reference/dockerfile.md#buildkit-built-in-build-args)
   can be used to set the default hostname for the `RUN` steps
 @z
 
@@ -522,10 +734,10 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `RUN` and `COPY` commands now support [Here-document syntax](../../reference/dockerfile.md#here-documents)
+- `RUN` and `COPY` commands now support [Here-document syntax](/reference/dockerfile.md#here-documents)
   allowing writing multiline inline scripts and files
 @y
-- `RUN` and `COPY` commands now support [Here-document syntax](../../reference/dockerfile.md#here-documents)
+- `RUN` and `COPY` commands now support [Here-document syntax](reference/dockerfile.md#here-documents)
   allowing writing multiline inline scripts and files
 @z
 
@@ -548,12 +760,12 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
+- `RUN` command allows [`--network` flag](/reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement. This feature was previously
   only available on labs channel
 @y
-- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
+- `RUN` command allows [`--network` flag](reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement. This feature was previously
   only available on labs channel
@@ -567,16 +779,16 @@ The following features have graduated from the labs channel to stable:
 
 @x
 - `ADD` command with a remote URL input now correctly handles the `--chmod` flag
-- Values for [`RUN --mount` flag](../../reference/dockerfile.md#run---mount)
+- Values for [`RUN --mount` flag](/reference/dockerfile.md#run---mount)
   now support variable expansion, except for the `from` field
-- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
+- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](/reference/dockerfile.md#buildkit-built-in-build-args)
   to force always creating multi-platform image, even if only contains single
   platform
 @y
 - `ADD` command with a remote URL input now correctly handles the `--chmod` flag
-- Values for [`RUN --mount` flag](../../reference/dockerfile.md#run---mount)
+- Values for [`RUN --mount` flag](reference/dockerfile.md#run---mount)
   now support variable expansion, except for the `from` field
-- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
+- Allow [`BUILDKIT_MULTI_PLATFORM` build arg](reference/dockerfile.md#buildkit-built-in-build-args)
   to force always creating multi-platform image, even if only contains single
   platform
 @z
@@ -606,11 +818,11 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
+- `RUN` command allows [`--network` flag](/reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement
 @y
-- `RUN` command allows [`--network` flag](../../reference/dockerfile.md#run---network)
+- `RUN` command allows [`--network` flag](reference/dockerfile.md#run---network)
   for requesting a specific type of network conditions. `--network=host`
   requires allowing `network.host` entitlement
 @z
@@ -690,16 +902,16 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-- [`RUN --mount` syntax](../../reference/dockerfile.md#run---mount) for
+- [`RUN --mount` syntax](/reference/dockerfile.md#run---mount) for
   creating secret, ssh, bind, and cache mounts have been moved to mainline
   channel
-- [`ARG` command](../../reference/dockerfile.md#arg) now supports defining
+- [`ARG` command](/reference/dockerfile.md#arg) now supports defining
   multiple build args on the same line similarly to `ENV`
 @y
-- [`RUN --mount` syntax](../../reference/dockerfile.md#run---mount) for
+- [`RUN --mount` syntax](reference/dockerfile.md#run---mount) for
   creating secret, ssh, bind, and cache mounts have been moved to mainline
   channel
-- [`ARG` command](../../reference/dockerfile.md#arg) now supports defining
+- [`ARG` command](reference/dockerfile.md#arg) now supports defining
   multiple build args on the same line similarly to `ENV`
 @z
 
@@ -771,16 +983,16 @@ The following features have graduated from the labs channel to stable:
 
 @x
 - Allow setting security mode for a process with `RUN --security=sandbox|insecure`
-- Allow setting uid/gid for [cache mounts](../../reference/dockerfile.md#run---mounttypecache)
+- Allow setting uid/gid for [cache mounts](/reference/dockerfile.md#run---mounttypecache)
 - Avoid requesting internally linked paths to be pulled to build context
 - Ensure missing cache IDs default to target paths
-- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
+- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](/reference/dockerfile.md#buildkit-built-in-build-args)
 @y
 - Allow setting security mode for a process with `RUN --security=sandbox|insecure`
-- Allow setting uid/gid for [cache mounts](../../reference/dockerfile.md#run---mounttypecache)
+- Allow setting uid/gid for [cache mounts](reference/dockerfile.md#run---mounttypecache)
 - Avoid requesting internally linked paths to be pulled to build context
 - Ensure missing cache IDs default to target paths
-- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](../../reference/dockerfile.md#buildkit-built-in-build-args)
+- Allow setting namespace for cache mounts with [`BUILDKIT_CACHE_MOUNT_NS` build arg](reference/dockerfile.md#buildkit-built-in-build-args)
 @z
 
 @x

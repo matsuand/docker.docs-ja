@@ -66,6 +66,34 @@ If you have already installed Docker Desktop, you can check which version of Com
 @z
 
 @x
+> [!NOTE] 
+>
+> After Docker Compose V1 was removed in Docker Desktop version [4.23.0](/desktop/release-notes/#4230) as it had reached end-of-life,
+> the `docker-compose` command now points directly to the Docker Compose V2 binary, running in standalone mode. 
+> If you rely on Docker Desktop auto-update, the symlink might be broken and command unavailable, as the update doesn't ask for administrator password. 
+> 
+> This only affects Mac users. To fix this, either recreate the symlink:
+> ```console
+> $ sudo rm /usr/local/bin/docker-compose
+> $ sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
+> ```
+> Or enable [Automatically check configuration](/desktop/settings/) which will detect and fix it for you.
+@y
+> [!NOTE] 
+>
+> After Docker Compose V1 was removed in Docker Desktop version [4.23.0](__SUBDIR__/desktop/release-notes/#4230) as it had reached end-of-life,
+> the `docker-compose` command now points directly to the Docker Compose V2 binary, running in standalone mode. 
+> If you rely on Docker Desktop auto-update, the symlink might be broken and command unavailable, as the update doesn't ask for administrator password. 
+> 
+> This only affects Mac users. To fix this, either recreate the symlink:
+> ```console
+> $ sudo rm /usr/local/bin/docker-compose
+> $ sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
+> ```
+> Or enable [Automatically check configuration](__SUBDIR__/desktop/settings/) which will detect and fix it for you.
+@z
+
+@x
 ### Scenario two: Install the Compose plugin
 @y
 ### Scenario two: Install the Compose plugin

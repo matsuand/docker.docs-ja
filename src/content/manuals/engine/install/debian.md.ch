@@ -253,7 +253,8 @@ Docker from the repository.
    # Add Docker's official GPG key:
 @y
    # Add Docker's official GPG key:
-@x
+@z
+
 @x
    # Add the repository to Apt sources:
 @y
@@ -540,6 +541,14 @@ To upgrade Docker Engine, download the newer package files and repeat the
 @y
 2.  Images, containers, volumes, or custom configuration files on your host
     aren't automatically removed. To delete all images, containers, and volumes:
+@z
+
+% snip command...
+
+@x
+3.  Remove source list and keyrings
+@y
+3.  Remove source list and keyrings
 @z
 
 % snip command...

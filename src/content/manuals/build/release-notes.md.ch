@@ -1,24 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Build release notes
 weight: 120
 description: Learn about the new features, bug fixes, and breaking changes for the newest Buildx release
 keywords: build, buildx, buildkit, release notes
-tags: [Release notes]
-toc_max: 2
----
 @y
----
 title: Build release notes
 weight: 120
 description: Learn about the new features, bug fixes, and breaking changes for the newest Buildx release
 keywords: build, buildx, buildkit, release notes
-tags: [Release notes]
-toc_max: 2
----
 @z
 
 @x
@@ -27,6 +21,184 @@ fixes in [Docker Buildx](https://github.com/docker/buildx).
 @y
 This page contains information about the new features, improvements, and bug
 fixes in [Docker Buildx](https://github.com/docker/buildx).
+@z
+
+@x
+## 0.17.1
+@y
+## 0.17.1
+@z
+
+@x
+{{< release-date date="2024-09-13" >}}
+@y
+{{< release-date date="2024-09-13" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.17.1).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.17.1).
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Do not set `network.host` entitlement flag automatically on builder creation
+  for the `docker-container` and `kubernetes` drivers if the entitlement is set
+  in the [BuildKit configuration file](/manuals/build/buildkit/toml-configuration.md). [docker/buildx#2685]
+- Do not print the `network` field with `docker buildx bake --print` when empty. [docker/buildx#2689]
+- Fix telemetry socket path under WSL2. [docker/buildx#2698]
+@y
+- Do not set `network.host` entitlement flag automatically on builder creation
+  for the `docker-container` and `kubernetes` drivers if the entitlement is set
+  in the [BuildKit configuration file](manuals/build/buildkit/toml-configuration.md). [docker/buildx#2685]
+- Do not print the `network` field with `docker buildx bake --print` when empty. [docker/buildx#2689]
+- Fix telemetry socket path under WSL2. [docker/buildx#2698]
+@z
+
+@x
+[docker/buildx#2685]: https://github.com/docker/buildx/pull/2685
+[docker/buildx#2689]: https://github.com/docker/buildx/pull/2689
+[docker/buildx#2698]: https://github.com/docker/buildx/pull/2698
+@y
+[docker/buildx#2685]: https://github.com/docker/buildx/pull/2685
+[docker/buildx#2689]: https://github.com/docker/buildx/pull/2689
+[docker/buildx#2698]: https://github.com/docker/buildx/pull/2698
+@z
+
+@x
+## 0.17.0
+@y
+## 0.17.0
+@z
+
+@x
+{{< release-date date="2024-09-10" >}}
+@y
+{{< release-date date="2024-09-10" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.17.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.17.0).
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `basename`, `dirname` and `sanitize` functions to Bake. [docker/buildx#2649]
+- Enable support for Bake entitlements to allow privileged operations during builds. [docker/buildx#2666]
+@y
+- Add `basename`, `dirname` and `sanitize` functions to Bake. [docker/buildx#2649]
+- Enable support for Bake entitlements to allow privileged operations during builds. [docker/buildx#2666]
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- Introduce CLI metrics tracking for Bake commands. [docker/buildx#2610]
+- Add `--debug` to all build commands. Previously, it was only available on the top-level `docker` and `docker buildx` commands. [docker/buildx#2660]
+- Allow builds from stdin for multi-node builders. [docker/buildx#2656]
+- Improve `kubernetes` driver initialization. [docker/buildx#2606]
+- Include target name in the error message when building multiple targets with Bake. [docker/buildx#2651]
+- Optimize metrics handling to reduce performance overhead during progress tracking. [docker/buildx#2641]
+- Display the number of warnings after completing a rule check. [docker/buildx#2647]
+- Skip build ref and provenance metadata for frontend methods. [docker/buildx#2650]
+- Add support for setting network mode in Bake files (HCL and JSON). [docker/buildx#2671]
+- Support the `--metadata-file` flag when set along the `--call` flag. [docker/buildx#2640]
+- Use shared session for local contexts used by multiple Bake targets. [docker/buildx#2615], [docker/buildx#2607], [docker/buildx#2663]
+@y
+- Introduce CLI metrics tracking for Bake commands. [docker/buildx#2610]
+- Add `--debug` to all build commands. Previously, it was only available on the top-level `docker` and `docker buildx` commands. [docker/buildx#2660]
+- Allow builds from stdin for multi-node builders. [docker/buildx#2656]
+- Improve `kubernetes` driver initialization. [docker/buildx#2606]
+- Include target name in the error message when building multiple targets with Bake. [docker/buildx#2651]
+- Optimize metrics handling to reduce performance overhead during progress tracking. [docker/buildx#2641]
+- Display the number of warnings after completing a rule check. [docker/buildx#2647]
+- Skip build ref and provenance metadata for frontend methods. [docker/buildx#2650]
+- Add support for setting network mode in Bake files (HCL and JSON). [docker/buildx#2671]
+- Support the `--metadata-file` flag when set along the `--call` flag. [docker/buildx#2640]
+- Use shared session for local contexts used by multiple Bake targets. [docker/buildx#2615], [docker/buildx#2607], [docker/buildx#2663]
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Improve memory management to avoid unnecessary allocations. [docker/buildx#2601]
+@y
+- Improve memory management to avoid unnecessary allocations. [docker/buildx#2601]
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Compose support has been updated to v2.1.6. [docker/buildx#2547]
+@y
+- Compose support has been updated to v2.1.6. [docker/buildx#2547]
+@z
+
+@x
+[docker/buildx#2547]: https://github.com/docker/buildx/pull/2547/
+[docker/buildx#2601]: https://github.com/docker/buildx/pull/2601/
+[docker/buildx#2606]: https://github.com/docker/buildx/pull/2606/
+[docker/buildx#2607]: https://github.com/docker/buildx/pull/2607/
+[docker/buildx#2610]: https://github.com/docker/buildx/pull/2610/
+[docker/buildx#2615]: https://github.com/docker/buildx/pull/2615/
+[docker/buildx#2640]: https://github.com/docker/buildx/pull/2640/
+[docker/buildx#2641]: https://github.com/docker/buildx/pull/2641/
+[docker/buildx#2647]: https://github.com/docker/buildx/pull/2647/
+[docker/buildx#2649]: https://github.com/docker/buildx/pull/2649/
+[docker/buildx#2650]: https://github.com/docker/buildx/pull/2650/
+[docker/buildx#2651]: https://github.com/docker/buildx/pull/2651/
+[docker/buildx#2656]: https://github.com/docker/buildx/pull/2656/
+[docker/buildx#2660]: https://github.com/docker/buildx/pull/2660/
+[docker/buildx#2663]: https://github.com/docker/buildx/pull/2663/
+[docker/buildx#2666]: https://github.com/docker/buildx/pull/2666/
+[docker/buildx#2671]: https://github.com/docker/buildx/pull/2671/
+@y
+[docker/buildx#2547]: https://github.com/docker/buildx/pull/2547/
+[docker/buildx#2601]: https://github.com/docker/buildx/pull/2601/
+[docker/buildx#2606]: https://github.com/docker/buildx/pull/2606/
+[docker/buildx#2607]: https://github.com/docker/buildx/pull/2607/
+[docker/buildx#2610]: https://github.com/docker/buildx/pull/2610/
+[docker/buildx#2615]: https://github.com/docker/buildx/pull/2615/
+[docker/buildx#2640]: https://github.com/docker/buildx/pull/2640/
+[docker/buildx#2641]: https://github.com/docker/buildx/pull/2641/
+[docker/buildx#2647]: https://github.com/docker/buildx/pull/2647/
+[docker/buildx#2649]: https://github.com/docker/buildx/pull/2649/
+[docker/buildx#2650]: https://github.com/docker/buildx/pull/2650/
+[docker/buildx#2651]: https://github.com/docker/buildx/pull/2651/
+[docker/buildx#2656]: https://github.com/docker/buildx/pull/2656/
+[docker/buildx#2660]: https://github.com/docker/buildx/pull/2660/
+[docker/buildx#2663]: https://github.com/docker/buildx/pull/2663/
+[docker/buildx#2666]: https://github.com/docker/buildx/pull/2666/
+[docker/buildx#2671]: https://github.com/docker/buildx/pull/2671/
 @z
 
 @x
@@ -262,7 +434,7 @@ The full release note for this release is available
   - [`--call=outline`](/reference/cli/docker/buildx/build.md#call-outline): Show configuration that would be used by current build, including all build arguments, secrets, SSH mounts, etc., that your build would use.
   - [`--call=targets`](/reference/cli/docker/buildx/build.md#call-targets): Show all available targets and their descriptions.
 @y
-  - [`--call=check`](reference/cli/docker/buildx/build.md#check): Run validation routines for your build configuration. For more information about build checks, see [Build checks](manuals/build/checks.md)
+  - [`--call=check`](reference/cli/docker/buildx/build.md#check): Run validation routines for your build configuration. For more information about build checks, see [Build checks](/manuals/build/checks.md)
   - [`--call=outline`](reference/cli/docker/buildx/build.md#call-outline): Show configuration that would be used by current build, including all build arguments, secrets, SSH mounts, etc., that your build would use.
   - [`--call=targets`](reference/cli/docker/buildx/build.md#call-targets): Show all available targets and their descriptions.
 @z
