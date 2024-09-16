@@ -13,6 +13,19 @@ keywords: concepts, container, docker desktop
 description: This concept page will teach you how to build and push your first image
 @z
 
+@x
+summary: |
+  Learn how to build your first Docker image, a key step in containerizing your
+  application. We'll guide you through the process of creating an image
+  repository and building and pushing your image to Docker Hub. This enables
+  you to share your image easily within your team.
+@y
+summary: |
+  はじめて行う Docker イメージのビルド、つまりアプリケーションコンテナー化のキーポイントについて学びます。
+  そしてイメージリポジトリの生成手順について説明し、イメージをビルドした上で Docker Hub へのプッシュを行います。
+  こうして開発チーム内では簡単にイメージを共有できるようになります。
+@z
+
 % snip youbute...
 
 @x
