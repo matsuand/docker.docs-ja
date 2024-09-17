@@ -14,9 +14,9 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	api-baseof.html  \
-	list.html        \
-	single.html      \
-	wide-baseof.html
+	api-baseof.html \
+	list.html       \
+	single.html     \
+	wide.html
 
 include $(top_srcdir)/build-aux/copy.mk

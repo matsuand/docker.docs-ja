@@ -16,65 +16,65 @@ description: Explore the Docker guides
 % dive-deeper:
 
 @x
-- title: Language-specific guides
-  description: Learn how to containerize, develop, and test language-specific apps using Docker.
-  link: /language/
-  icon: code
+  - title: Language-specific guides
+    description: Learn how to containerize, develop, and test language-specific apps using Docker.
+    link: /language/
+    icon: code
 @y
-- title: 各種言語別ガイド
-  description: 各言語固有のアプリを Docker 上にてコンテナー化、開発、テストしていく方法について学びます。
-  link: __SUBDIR__/language/
-  icon: code
+  - title: 各種言語別ガイド
+    description: 各言語固有のアプリを Docker 上にてコンテナー化、開発、テストしていく方法について学びます。
+    link: __SUBDIR__/language/
+    icon: code
 @z
 
 @x
-- title: Use-case guides
-  description: Walk through practical Docker applications for specific scenarios.
-  link: /guides/use-case/
-  icon: task
+  - title: Use-case guides
+    description: Walk through practical Docker applications for specific scenarios.
+    link: /guides/use-case/
+    icon: task
 @y
-- title: ユースケースガイド
-  description: 特定のシナリオに基づいて実践的な Docker アプリケーションを体験します。
-  link: __SUBDIR__/guides/use-case/
-  icon: task
+  - title: ユースケースガイド
+    description: 特定のシナリオに基づいて実践的な Docker アプリケーションを体験します。
+    link: __SUBDIR__/guides/use-case/
+    icon: task
 @z
 
 @x
-- title: Deployment and Orchestration
-  description: Deploy and manage Docker containers at scale.
-  link: /guides/deployment-orchestration/orchestration/
-  icon: workspaces
+  - title: Deployment and Orchestration
+    description: Deploy and manage Docker containers at scale.
+    link: /guides/deployment-orchestration/orchestration/
+    icon: workspaces
 @y
-- title: デプロイとオーケストレーション
-  description: Docker コンテナーのデプロイやスケーリング管理を行います。
-  link: __SUBDIR__/guides/deployment-orchestration/orchestration/
-  icon: workspaces
+  - title: デプロイとオーケストレーション
+    description: Docker コンテナーのデプロイやスケーリング管理を行います。
+    link: __SUBDIR__/guides/deployment-orchestration/orchestration/
+    icon: workspaces
 @z
 
 % resources:
 
 @x
-- title: Educational resources
-  description: Explore diverse Docker training and hands-on experiences.
-  link: /guides/resources/
-  icon: book
+  - title: Educational resources
+    description: Explore diverse Docker training and hands-on experiences.
+    link: /guides/resources/
+    icon: book
 @y
-- title: 学習情報
-  description: Docker の多様なトレーニングと実践的な体験を確認します。
-  link: __SUBDIR__/guides/resources/
-  icon: book
+  - title: 学習情報
+    description: Docker の多様なトレーニングと実践的な体験を確認します。
+    link: __SUBDIR__/guides/resources/
+    icon: book
 @z
 
 @x
-- title: Contribute to Docker's docs
-  description: Learn how to help contribute to Docker docs.
-  link: /contribute/
-  icon: edit
+  - title: Contribute to Docker's docs
+    description: Learn how to help contribute to Docker docs.
+    link: /contribute/
+    icon: edit
 @y
-- title: Docker ドキュメントへの貢献
-  description: Docker ドキュメントへの貢献方法について学びます。
-  link: __SUBDIR__/contribute/
-  icon: edit
+  - title: Docker ドキュメントへの貢献
+    description: Docker ドキュメントへの貢献方法について学びます。
+    link: __SUBDIR__/contribute/
+    icon: edit
 @z
 
 @x

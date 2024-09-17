@@ -2,9 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 @y
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 @z

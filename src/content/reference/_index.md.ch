@@ -5,114 +5,120 @@
 
 @x
 title: Reference documentation
-description: Find reference documentation for the Docker platform’s various APIs, CLIs, and file formats
+linkTitle: Reference
 @y
 title: リファレンスドキュメント
+linkTitle: リファレンス
+@z
+
+@x
+description: Find reference documentation for the Docker platform’s various APIs, CLIs, and file formats
+@y
 description: Docker プラットフォームの API、CLI、ドライバー仕様、ファイルフォーマットについてドキュメントを確認してください。
 @z
 
 % grid_files:
 
 @x
-- title: Dockerfile
-  description: Defines the contents and startup behavior of a single container.
-  icon: edit_document
-  link: /reference/dockerfile/
+  - title: Dockerfile
+    description: Defines the contents and startup behavior of a single container.
+    icon: edit_document
+    link: /reference/dockerfile/
 @y
-- title: Dockerfile
-  description: Defines the contents and startup behavior of a single container.
-  icon: edit_document
-  link: __SUBDIR__/reference/dockerfile/
+  - title: Dockerfile
+    description: Defines the contents and startup behavior of a single container.
+    icon: edit_document
+    link: __SUBDIR__/reference/dockerfile/
 @z
 
 @x
-- title: Compose file
-  description: Defines a multi-container application.
-  icon: polyline
-  link: /reference/compose-file/
+  - title: Compose file
+    description: Defines a multi-container application.
+    icon: polyline
+    link: /reference/compose-file/
 @y
-- title: Compose ファイル
-  description: Defines a multi-container application.
-  icon: polyline
-  link: __SUBDIR__/reference/compose-file/
+  - title: Compose ファイル
+    description: Defines a multi-container application.
+    icon: polyline
+    link: __SUBDIR__/reference/compose-file/
 @z
 
 % grid_clis:
 
 @x
-- title: Docker CLI
-  description: The main Docker CLI, includes all `docker` commands.
-  icon: terminal
-  link: /reference/cli/docker/
+  - title: Docker CLI
+    description: The main Docker CLI, includes all `docker` commands.
+    icon: terminal
+    link: /reference/cli/docker/
 @y
-- title: Docker CLI
-  description: The main Docker CLI, includes all `docker` commands.
-  icon: terminal
-  link: __SUBDIR__/reference/cli/docker/
+  - title: Docker CLI
+    description: The main Docker CLI, includes all `docker` commands.
+    icon: terminal
+    link: __SUBDIR__/reference/cli/docker/
 @z
 
 @x
-- title: Compose CLI
-  description: The CLI for Docker Compose, for building and running multi-container
-    applications.
-  icon: subtitles
-  link: /reference/cli/docker/compose/
+  - title: Compose CLI
+    description: The CLI for Docker Compose, for building and running multi-container
+      applications.
+    icon: subtitles
+    link: /reference/cli/docker/compose/
 @y
-- title: Compose CLI
-  description: The CLI for Docker Compose, for building and running multi-container
-    applications.
-  icon: subtitles
-  link: __SUBDIR__/reference/cli/docker/compose/
+  - title: Compose CLI
+    description: The CLI for Docker Compose, for building and running multi-container
+      applications.
+    icon: subtitles
+    link: __SUBDIR__/reference/cli/docker/compose/
 @z
 
 @x
-- title: Daemon CLI (dockerd)
-  description: Persistent process that manages containers.
-  icon: developer_board
-  link: /reference/cli/dockerd/
+  - title: Daemon CLI (dockerd)
+    description: Persistent process that manages containers.
+    icon: developer_board
+    link: /reference/cli/dockerd/
 @y
-- title: Daemon CLI (dockerd)
-  description: Persistent process that manages containers.
-  icon: developer_board
-  link: __SUBDIR__/reference/cli/dockerd/
+  - title: Daemon CLI (dockerd)
+    description: Persistent process that manages containers.
+    icon: developer_board
+    link: __SUBDIR__/reference/cli/dockerd/
 @z
 
 % grid_apis:
 
 @x
-- title: Engine API
-  description: The main API for Docker, provides programmatic access to a daemon.
-  icon: api
-  link: /reference/api/engine/
+  - title: Engine API
+    description: The main API for Docker, provides programmatic access to a daemon.
+    icon: api
+    link: /reference/api/engine/
 @y
-- title: Engine API
-  description: The main API for Docker, provides programmatic access to a daemon.
-  icon: api
-  link: __SUBDIR__/reference/api/engine/
+  - title: Engine API
+    description: The main API for Docker, provides programmatic access to a daemon.
+    icon: api
+    link: __SUBDIR__/reference/api/engine/
 @z
 
 @x
-- title: Docker Hub API
-  description: API to interact with Docker Hub.
-  icon: communities
-  link: /reference/api/hub/latest/
+  - title: Docker Hub API
+    description: API to interact with Docker Hub.
+    icon: communities
+    link: /reference/api/hub/latest/
 @y
-- title: Docker Hub API
-  description: API to interact with Docker Hub.
-  icon: communities
-  link: __SUBDIR__/reference/api/hub/latest/
+  - title: Docker Hub API
+    description: API to interact with Docker Hub.
+    icon: communities
+    link: __SUBDIR__/reference/api/hub/latest/
 @z
 
 @x
-- title: DVP Data API
-  description: API for Docker Verified Publishers to fetch analytics data.
-  icon: area_chart
-  link: /reference/api/hub/dvp/
+  - title: DVP Data API
+    description: API for Docker Verified Publishers to fetch analytics data.
+    icon: area_chart
+    link: /reference/api/hub/dvp/
 @y
-- title: DVP Data API
-  description: API for Docker Verified Publishers to fetch analytics data.
-  icon: area_chart
-  link: __SUBDIR__/reference/api/hub/dvp/
+  - title: DVP Data API
+    description: API for Docker Verified Publishers to fetch analytics data.
+    icon: area_chart
+    link: __SUBDIR__/reference/api/hub/dvp/
 @z
 
 % snip aliases...

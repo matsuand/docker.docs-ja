@@ -16,65 +16,65 @@ description: Docker を使ってはじめよう
 % get-started:
 
 @x
-- title: Get Docker
-  description: Choose the best installation path for your setup.
-  link: /get-started/get-docker/
-  icon: download
+  - title: Get Docker
+    description: Choose the best installation path for your setup.
+    link: /get-started/get-docker/
+    icon: download
 @y
-- title: Docker の入手
-  description: 環境に合わせて適切なインストールを行ないます。
-  link: __SUBDIR__/get-started/get-docker/
-  icon: download
+  - title: Docker の入手
+    description: 環境に合わせて適切なインストールを行ないます。
+    link: __SUBDIR__/get-started/get-docker/
+    icon: download
 @z
 
 @x
-- title: What is Docker?
-  description: Learn about the Docker platform.
-  link: /get-started/docker-overview/
-  icon: summarize
+  - title: What is Docker?
+    description: Learn about the Docker platform.
+    link: /get-started/docker-overview/
+    icon: summarize
 @y
-- title: Docker って何？
-  description: Docker プラットフォームについて学びます。
-  link: __SUBDIR__/get-started/docker-overview/
-  icon: summarize
+  - title: Docker って何？
+    description: Docker プラットフォームについて学びます。
+    link: __SUBDIR__/get-started/docker-overview/
+    icon: summarize
 @z
 
 % get-started2:
 
 @x
-- title: Introduction
-  description: Get started with the basics and the benefits of containerizing your applications.
-  link: /get-started/introduction/
-  icon: rocket
+  - title: Introduction
+    description: Get started with the basics and the benefits of containerizing your applications.
+    link: /get-started/introduction/
+    icon: rocket
 @y
-- title: はじめに
-  description: アプリケーションのコンテナー化の基本と利点について学んでいきます。
-  link: __SUBDIR__/get-started/introduction/
-  icon: rocket
+  - title: はじめに
+    description: アプリケーションのコンテナー化の基本と利点について学んでいきます。
+    link: __SUBDIR__/get-started/introduction/
+    icon: rocket
 @z
 
 @x
-- title: Docker concepts
-  description: Gain a better understanding of foundational Docker concepts.
-  link: /get-started/docker-concepts/the-basics/what-is-a-container/
-  icon: foundation
+  - title: Docker concepts
+    description: Gain a better understanding of foundational Docker concepts.
+    link: /get-started/docker-concepts/the-basics/what-is-a-container/
+    icon: foundation
 @y
-- title: Docker の考え方
-  description: 基本的な Docker の考え方について、より深く理解していきます。
-  link: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/
-  icon: foundation
+  - title: Docker の考え方
+    description: 基本的な Docker の考え方について、より深く理解していきます。
+    link: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/
+    icon: foundation
 @z
 
 @x
-- title: Docker workshop
-  description: Get guided through a 45-minute workshop to learn about Docker.
-  link: /get-started/workshop/
-  icon: desk
+  - title: Docker workshop
+    description: Get guided through a 45-minute workshop to learn about Docker.
+    link: /get-started/workshop/
+    icon: desk
 @y
-- title: Docker ワークショップ
-  description: 45 分間のワークショップガイドを通じて Docker を学んでいきます。
-  link: __SUBDIR__/get-started/workshop/
-  icon: desk
+  - title: Docker ワークショップ
+    description: 45 分間のワークショップガイドを通じて Docker を学んでいきます。
+    link: __SUBDIR__/get-started/workshop/
+    icon: desk
 @z
 
 @x

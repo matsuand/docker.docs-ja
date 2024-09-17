@@ -300,6 +300,7 @@ AC_CONFIG_FILES([
 	src/layouts/learning-paths/Makefile
 	src/layouts/partials/Makefile
 	src/layouts/partials/components/Makefile
+	src/layouts/partials/sidebar/Makefile
 	src/layouts/partials/utils/Makefile
 	src/layouts/samples/Makefile
 	src/layouts/shortcodes/Makefile

@@ -15,7 +15,7 @@ description: Instructions for installing Docker Desktop Arch package. Mostly mea
   for hackers who want to try out Docker Desktop on a variety of Arch-based distributions.
 keywords: Arch Linux, install, uninstall, upgrade, update, linux, desktop, docker
   desktop, docker desktop for linux, dd4l
-title: Install Docker Desktop on Arch-based distributions
+title: Arch ベースディストリビューションへの Docker Desktop のインストール
 @z
 
 @x
@@ -31,64 +31,67 @@ title: Install Docker Desktop on Arch-based distributions
 @z
 
 @x
-This page contains information on how to install, launch and upgrade Docker Desktop on an Arch-based distribution. Docker has not tested or verified the installation.
+This page contains information on how to install, launch and upgrade Docker Desktop on an Arch-based distribution. 
 @y
-This page contains information on how to install, launch and upgrade Docker Desktop on an Arch-based distribution. Docker has not tested or verified the installation.
+本ページでは、Arch ベースディストリビューションへの Docker Desktop のインストール、起動、アップグレード方法について説明するものです。
+@z
+
+@x
+> [!IMPORTANT]
+>
+> This is an experimental installation package. Docker has not tested or verified the installation.
+@y
+> [!IMPORTANT]
+>
+> これは試験的なインストールパッケージです。
+> Docker ではインストールのテストや検証は行っていません。
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提要件 {#prerequisites}
 @z
 
 @x
 To install Docker Desktop successfully, you must meet the [general system requirements](_index.md#general-system-requirements).
 @y
-To install Docker Desktop successfully, you must meet the [general system requirements](_index.md#general-system-requirements).
+Docker Desktop のインストールを正常に行うためには、[一般的なシステム要件](_index.md#general-system-requirements) を満たしていることが必要です。
 @z
 
 @x
-Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be installed:
+## Install Docker Desktop
 @y
-Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be installed:
+## Docker Desktop のインストール {#install-docker-desktop}
+@z
+
+@x
+1. [Install the Docker client binary on Linux](/manuals/engine/install/binaries.md#install-daemon-and-client-binaries-on-linux). Static binaries for the Docker client are available for Linux as `docker`. You can use:
+@y
+1. [Install the Docker client binary on Linux](manuals/engine/install/binaries.md#install-daemon-and-client-binaries-on-linux). Static binaries for the Docker client are available for Linux as `docker`. You can use:
 @z
 
 % snip command...
 
 @x
-## Install Docker Desktop
+2. Download the latest Arch package from the [Release notes](/manuals/desktop/release-notes.md).
 @y
-## Install Docker Desktop
+2. Download the latest Arch package from the [Release notes](manuals/desktop/release-notes.md).
 @z
 
 @x
-1. Install client binaries. Docker does not have an Arch package repository. Binaries not included in the package must be installed manually before installing Docker Desktop.
+3. Install the package:
 @y
-1. Install client binaries. Docker does not have an Arch package repository. Binaries not included in the package must be installed manually before installing Docker Desktop.
-@z
-
-@x
-2. [Install Docker client binary on Linux](/manuals/engine/install/binaries.md#install-daemon-and-client-binaries-on-linux). On Arch-based distributions, users must install the Docker client binary.
-   Static binaries for the Docker client are available for Linux (as `docker`).
-@y
-2. [Install Docker client binary on Linux](manuals/engine/install/binaries.md#install-daemon-and-client-binaries-on-linux). On Arch-based distributions, users must install the Docker client binary.
-   Static binaries for the Docker client are available for Linux (as `docker`).
-@z
-
-@x
-3. Download the latest Arch package from the [Release notes](/manuals/desktop/release-notes.md).
-@y
-3. Download the latest Arch package from the [Release notes](manuals/desktop/release-notes.md).
-@z
-
-@x
-4. Install the package:
-@y
-4. Install the package:
+3. Install the package:
 @z
 
 % snip command...
+
+@x
+   By default, Docker Desktop is installed at `/opt/docker-desktop`.
+@y
+   By default, Docker Desktop is installed at `/opt/docker-desktop`.
+@z
 
 @x
 ## Launch Docker Desktop
@@ -124,6 +127,6 @@ Additionally, for non-Gnome Desktop environments, `gnome-terminal` must be insta
 - [Troubleshooting](manuals/desktop/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](manuals/desktop/faqs/general.md) provide answers to frequently asked questions.
 - [Release notes](manuals/desktop/release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
-- [Back up and restore data](manuals/desktop/backup-and-restore.md) provides instructions
+- [Back up and restore data](/manuals/desktop/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @z
