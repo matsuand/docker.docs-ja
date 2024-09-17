@@ -20,9 +20,9 @@ description: アプリケーションに変更を加えます。
 @z
 
 @x
-In [part 2](./02_our_app.md), you containerized a todo application. In this part, you'll update the application and image. You'll also learn how to stop and remove a container.
+In [part 1](./02_our_app.md), you containerized a todo application. In this part, you'll update the application and image. You'll also learn how to stop and remove a container.
 @y
-[2 部](./02_our_app.md) においては todo アプリケーションのコンテナー化を行いました。
+[1 部](./02_our_app.md) においては todo アプリケーションのコンテナー化を行いました。
 この部ではアプリケーションとイメージの更新を行っていきます。
 またコンテナーの停止や削除の方法についても学びます。
 @z

@@ -79,43 +79,7 @@ The following example illustrates Compose Build Specification concepts with a co
 The following example illustrates Compose Build Specification concepts with a concrete sample application. The sample is non-normative.
 @z
 
-@x
-```yaml
-services:
-  frontend:
-    image: example/webapp
-    build: ./webapp
-@y
-```yaml
-services:
-  frontend:
-    image: example/webapp
-    build: ./webapp
-@z
-
-@x
-  backend:
-    image: example/database
-    build:
-      context: backend
-      dockerfile: ../backend.Dockerfile
-@y
-  backend:
-    image: example/database
-    build:
-      context: backend
-      dockerfile: ../backend.Dockerfile
-@z
-
-@x
-  custom:
-    build: ~/custom
-```
-@y
-  custom:
-    build: ~/custom
-```
-@z
+% snip code...
 
 @x
 When used to build service images from source, the Compose file creates three Docker images:
@@ -161,19 +125,7 @@ Using the string syntax, only the build context can be configured as either:
 - A relative path to the Compose file's parent folder. This path must be a directory and must contain a `Dockerfile`
 @z
 
-@x
-  ```yml
-  services:
-    webapp:
-      build: ./dir
-  ```
-@y
-  ```yml
-  services:
-    webapp:
-      build: ./dir
-  ```
-@z
+% snip code...
 
 @x
 - A Git repository URL. Git URLs accept context configuration in their fragment section, separated by a colon (`:`).
@@ -185,19 +137,7 @@ The first part represents the reference that Git checks out, and can be either a
 The second part represents a subdirectory inside the repository that is used as a build context.
 @z
 
-@x
-  ```yml
-  services:
-    webapp:
-      build: https://github.com/mycompany/example.git#branch_or_tag:subdirectory
-  ```
-@y
-  ```yml
-  services:
-    webapp:
-      build: https://github.com/mycompany/example.git#branch_or_tag:subdirectory
-  ```
-@z
+% snip code...
 
 @x
 Alternatively `build` can be an object with fields defined as follows:
@@ -229,45 +169,7 @@ Alternatively `build` can be an object with fields defined as follows:
 `additional_contexts` can be a mapping or a list:
 @z
 
-@x
-```yml
-build:
-  context: .
-  additional_contexts:
-    - resources=/path/to/resources
-    - app=docker-image://my-app:latest
-    - source=https://github.com/myuser/project.git
-```
-@y
-```yml
-build:
-  context: .
-  additional_contexts:
-    - resources=/path/to/resources
-    - app=docker-image://my-app:latest
-    - source=https://github.com/myuser/project.git
-```
-@z
-
-@x
-```yml
-build:
-  context: .
-  additional_contexts:
-    resources: /path/to/resources
-    app: docker-image://my-app:latest
-    source: https://github.com/myuser/project.git
-```
-@y
-```yml
-build:
-  context: .
-  additional_contexts:
-    resources: /path/to/resources
-    app: docker-image://my-app:latest
-    source: https://github.com/myuser/project.git
-```
-@z
+% snip code...
 
 @x
 When used as a list, the syntax follows the `NAME=VALUE` format, where `VALUE` is a string. Validation beyond that
@@ -315,17 +217,7 @@ Using the following Dockerfile as an example:
 Using the following Dockerfile as an example:
 @z
 
-@x
-```Dockerfile
-ARG GIT_COMMIT
-RUN echo "Based on commit: $GIT_COMMIT"
-```
-@y
-```Dockerfile
-ARG GIT_COMMIT
-RUN echo "Based on commit: $GIT_COMMIT"
-```
-@z
+% snip code...
 
 @x
 `args` can be set in the Compose file under the `build` key to define `GIT_COMMIT`. `args` can be set as a mapping or a list:
@@ -333,37 +225,7 @@ RUN echo "Based on commit: $GIT_COMMIT"
 `args` can be set in the Compose file under the `build` key to define `GIT_COMMIT`. `args` can be set as a mapping or a list:
 @z
 
-@x
-```yml
-build:
-  context: .
-  args:
-    GIT_COMMIT: cdc3b19
-```
-@y
-```yml
-build:
-  context: .
-  args:
-    GIT_COMMIT: cdc3b19
-```
-@z
-
-@x
-```yml
-build:
-  context: .
-  args:
-    - GIT_COMMIT=cdc3b19
-```
-@y
-```yml
-build:
-  context: .
-  args:
-    - GIT_COMMIT=cdc3b19
-```
-@z
+% snip code...
 
 @x
 Values can be omitted when specifying a build argument, in which case its value at build time must be obtained by user interaction,
@@ -373,17 +235,7 @@ Values can be omitted when specifying a build argument, in which case its value 
 otherwise the build arg won't be set when building the Docker image.
 @z
 
-@x
-```yml
-args:
-  - GIT_COMMIT
-```
-@y
-```yml
-args:
-  - GIT_COMMIT
-```
-@z
+% snip code...
 
 @x
 ### context
@@ -407,31 +259,7 @@ Compose warns you about the absolute path used to define the build context as th
 from being portable.
 @z
 
-@x
-```yml
-build:
-  context: ./dir
-```
-@y
-```yml
-build:
-  context: ./dir
-```
-@z
-
-@x
-```yml
-services:
-  webapp:
-    build: https://github.com/mycompany/webapp.git
-```
-@y
-```yml
-services:
-  webapp:
-    build: https://github.com/mycompany/webapp.git
-```
-@z
+% snip code...
 
 @x
 If not set explicitly, `context` defaults to project directory (`.`). 
@@ -469,25 +297,7 @@ Compose Build implementations may support custom types, the Compose Specificatio
 - `registry` to retrieve build cache from an OCI image set by key `ref`
 @z
 
-@x
-```yml
-build:
-  context: .
-  cache_from:
-    - alpine:latest
-    - type=local,src=path/to/cache
-    - type=gha
-```
-@y
-```yml
-build:
-  context: .
-  cache_from:
-    - alpine:latest
-    - type=local,src=path/to/cache
-    - type=gha
-```
-@z
+% snip code...
 
 @x
 Unsupported caches are ignored and don't prevent you from building images.
@@ -507,23 +317,7 @@ Unsupported caches are ignored and don't prevent you from building images.
 `cache_to` defines a list of export locations to be used to share build cache with future builds.
 @z
 
-@x
-```yml
-build:
-  context: .
-  cache_to:
-   - user/app:cache
-   - type=local,dest=path/to/cache
-```
-@y
-```yml
-build:
-  context: .
-  cache_to:
-   - user/app:cache
-   - type=local,dest=path/to/cache
-```
-@z
+% snip code...
 
 @x
 Cache target is defined using the same `type=TYPE[,KEY=VALUE]` syntax defined by [`cache_from`](#cache_from).
@@ -561,19 +355,7 @@ When set, `dockerfile_inline` attribute is not allowed and Compose
 rejects any Compose file having both set.
 @z
 
-@x
-```yml
-build:
-  context: .
-  dockerfile: webapp.Dockerfile
-```
-@y
-```yml
-build:
-  context: .
-  dockerfile: webapp.Dockerfile
-```
-@z
+% snip code...
 
 @x
 ### dockerfile_inline
@@ -601,23 +383,7 @@ Use of YAML multi-line string syntax is recommended to define the Dockerfile con
 Use of YAML multi-line string syntax is recommended to define the Dockerfile content:
 @z
 
-@x
-```yml
-build:
-  context: .
-  dockerfile_inline: |
-    FROM baseimage
-    RUN some command
-```
-@y
-```yml
-build:
-  context: .
-  dockerfile_inline: |
-    FROM baseimage
-    RUN some command
-```
-@z
+% snip code...
 
 @x
 ### entitlements
@@ -637,19 +403,7 @@ build:
 `entitlements` defines extra privileged entitlements to be allowed during the build.
 @z
 
-@x
- ```yaml
- entitlements:
-   - network.host
-   - security.insecure
- ```
-@y
- ```yaml
- entitlements:
-   - network.host
-   - security.insecure
- ```
-@z
+% snip code...
 
 @x
 ### extra_hosts
@@ -663,35 +417,15 @@ build:
 `extra_hosts` adds hostname mappings at build-time. Use the same syntax as [extra_hosts](services.md#extra_hosts).
 @z
 
+% snip code...
+
 @x
-```yml
-extra_hosts:
-  - "somehost=162.242.195.82"
-  - "otherhost=50.31.209.229"
-  - "myhostv6=::1"
-```
 IPv6 addresses can be enclosed in square brackets, for example:
 @y
-```yml
-extra_hosts:
-  - "somehost=162.242.195.82"
-  - "otherhost=50.31.209.229"
-  - "myhostv6=::1"
-```
 IPv6 addresses can be enclosed in square brackets, for example:
 @z
 
-@x
-```yml
-extra_hosts:
-  - "myhostv6=[::1]"
-```
-@y
-```yml
-extra_hosts:
-  - "myhostv6=[::1]"
-```
-@z
+% snip code...
 
 @x
 The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/manuals/compose/release-notes.md#2241). For example:
@@ -699,19 +433,7 @@ The separator `=` is preferred, but `:` can also be used. Introduced in Docker C
 The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](manuals/compose/release-notes.md#2241). For example:
 @z
 
-@x
-```yml
-extra_hosts:
-  - "somehost:162.242.195.82"
-  - "myhostv6:::1"
-```
-@y
-```yml
-extra_hosts:
-  - "somehost:162.242.195.82"
-  - "myhostv6:::1"
-```
-@z
+% snip code...
 
 @x
 Compose creates matching entry with the IP address and hostname in the container's network
@@ -721,19 +443,7 @@ Compose creates matching entry with the IP address and hostname in the container
 configuration, which means for Linux `/etc/hosts` will get extra lines:
 @z
 
-@x
-```text
-162.242.195.82  somehost
-50.31.209.229   otherhost
-::1             myhostv6
-```
-@y
-```text
-162.242.195.82  somehost
-50.31.209.229   otherhost
-::1             myhostv6
-```
-@z
+% snip code...
 
 @x
 ### isolation
@@ -767,45 +477,7 @@ It's recommended that you use reverse-DNS notation to prevent your labels from c
 It's recommended that you use reverse-DNS notation to prevent your labels from conflicting with other software.
 @z
 
-@x
-```yml
-build:
-  context: .
-  labels:
-    com.example.description: "Accounting webapp"
-    com.example.department: "Finance"
-    com.example.label-with-empty-value: ""
-```
-@y
-```yml
-build:
-  context: .
-  labels:
-    com.example.description: "Accounting webapp"
-    com.example.department: "Finance"
-    com.example.label-with-empty-value: ""
-```
-@z
-
-@x
-```yml
-build:
-  context: .
-  labels:
-    - "com.example.description=Accounting webapp"
-    - "com.example.department=Finance"
-    - "com.example.label-with-empty-value"
-```
-@y
-```yml
-build:
-  context: .
-  labels:
-    - "com.example.description=Accounting webapp"
-    - "com.example.department=Finance"
-    - "com.example.label-with-empty-value"
-```
-@z
+% snip code...
 
 @x
 ### network
@@ -819,33 +491,7 @@ Set the network containers connect to for the `RUN` instructions during build.
 Set the network containers connect to for the `RUN` instructions during build.
 @z
 
-@x
-```yaml
-build:
-  context: .
-  network: host
-```  
-@y
-```yaml
-build:
-  context: .
-  network: host
-```  
-@z
-
-@x
-```yaml
-build:
-  context: .
-  network: custom_network_1
-```
-@y
-```yaml
-build:
-  context: .
-  network: custom_network_1
-```
-@z
+% snip code...
 
 @x
 Use `none` to disable networking during build:
@@ -853,19 +499,7 @@ Use `none` to disable networking during build:
 Use `none` to disable networking during build:
 @z
 
-@x
-```yaml
-build:
-  context: .
-  network: none
-```
-@y
-```yaml
-build:
-  context: .
-  network: none
-```
-@z
+% snip code...
 
 @x
 ### no_cache
@@ -895,23 +529,7 @@ has been updated on registry (see [pull](#pull)).
 `platforms` defines a list of target [platforms](services.md#platform).
 @z
 
-@x
-```yml
-build:
-  context: "."
-  platforms:
-    - "linux/amd64"
-    - "linux/arm64"
-```
-@y
-```yml
-build:
-  context: "."
-  platforms:
-    - "linux/amd64"
-    - "linux/arm64"
-```
-@z
+% snip code...
 
 @x
 When the `platforms` attribute is omitted, Compose includes the service's platform
@@ -939,47 +557,15 @@ Composes reports an error in the following cases:
 * When the list contains an unsupported platform.
 @z
 
+% snip code...
+
 @x
-  ```yml
-  build:
-    context: "."
-    platforms:
-      - "linux/amd64"
-      - "unsupported/unsupported"
-  ```
 * When the list is non-empty and does not contain the service's platform
 @y
-  ```yml
-  build:
-    context: "."
-    platforms:
-      - "linux/amd64"
-      - "unsupported/unsupported"
-  ```
 * When the list is non-empty and does not contain the service's platform
 @z
 
-@x
-  ```yml
-  services:
-    frontend:
-      platform: "linux/amd64"
-      build:
-        context: "."
-        platforms:
-          - "linux/arm64"
-  ```
-@y
-  ```yml
-  services:
-    frontend:
-      platform: "linux/amd64"
-      build:
-        context: "."
-        platforms:
-          - "linux/arm64"
-  ```
-@z
+% snip code...
 
 @x
 ### privileged
@@ -999,19 +585,7 @@ Composes reports an error in the following cases:
 `privileged` configures the service image to build with elevated privileges. Support and actual impacts are platform specific.
 @z
 
-@x
-```yml
-build:
-  context: .
-  privileged: true
-```
-@y
-```yml
-build:
-  context: .
-  privileged: true
-```
-@z
+% snip code...
 
 @x
 ### pull
@@ -1077,31 +651,7 @@ access to the `server-certificate` secret. The value of `server-certificate` is 
 to the contents of the file `./server.cert`.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    build:
-      context: .
-      secrets:
-        - server-certificate
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@y
-```yml
-services:
-  frontend:
-    build:
-      context: .
-      secrets:
-        - server-certificate
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -1151,39 +701,7 @@ to `103`. The value of `server-certificate` secret is provided by the platform t
 the secret lifecycle not directly managed by Compose.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    build:
-      context: .
-      secrets:
-        - source: server-certificate
-          target: server.cert
-          uid: "103"
-          gid: "103"
-          mode: 0440
-secrets:
-  server-certificate:
-    external: true
-```
-@y
-```yml
-services:
-  frontend:
-    build:
-      context: .
-      secrets:
-        - source: server-certificate
-          target: server.cert
-          uid: "103"
-          gid: "103"
-          mode: 0440
-secrets:
-  server-certificate:
-    external: true
-```
-@z
+% snip code...
 
 @x
 Service builds may be granted access to multiple secrets. Long and short syntax for secrets may be used in the
@@ -1247,29 +765,25 @@ build:
 
 @x
 Using a custom id `myproject` with path to a local SSH key:
-```yaml
-build:
-  context: .
-  ssh:
-    - myproject=~/.ssh/myproject.pem
-```
 @y
 Using a custom id `myproject` with path to a local SSH key:
-```yaml
-build:
-  context: .
-  ssh:
-    - myproject=~/.ssh/myproject.pem
-```
 @z
+
+% snip code...
 
 @x
 The image builder can then rely on this to mount the SSH key during build.
-For more information, see the [`RUN --mount=type=ssh` Dockerfile reference](/reference/dockerfile.md#run---mounttypessh).
 @y
 The image builder can then rely on this to mount the SSH key during build.
-For more information, see the [`RUN --mount=type=ssh` Dockerfile reference](reference/dockerfile.md#run---mounttypessh).
 @z
+
+@x
+For illustration, [SSH mounts](https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/reference.md#run---mounttypessh) can be used to mount the SSH key set by ID and access a secured resource:
+@y
+For illustration, [SSH mounts](https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/reference.md#run---mounttypessh) can be used to mount the SSH key set by ID and access a secured resource:
+@z
+
+% snip code...
 
 @x
 ### shm_size
@@ -1285,33 +799,7 @@ as an integer value representing the number of bytes or as a string expressing a
 as an integer value representing the number of bytes or as a string expressing a [byte value](extension.md#specifying-byte-values).
 @z
 
-@x
-```yml
-build:
-  context: .
-  shm_size: '2gb'
-```
-@y
-```yml
-build:
-  context: .
-  shm_size: '2gb'
-```
-@z
-
-@x
-```yaml
-build:
-  context: .
-  shm_size: 10000000
-```
-@y
-```yaml
-build:
-  context: .
-  shm_size: 10000000
-```
-@z
+% snip code...
 
 @x
 ### tags
@@ -1327,19 +815,7 @@ the `image` [property defined in the service section](services.md#image)
 the `image` [property defined in the service section](services.md#image)
 @z
 
-@x
-```yml
-tags:
-  - "myimage:mytag"
-  - "registry/username/myrepos:my-other-tag"
-```
-@y
-```yml
-tags:
-  - "myimage:mytag"
-  - "registry/username/myrepos:my-other-tag"
-```
-@z
+% snip code...
 
 @x
 ### target
@@ -1353,19 +829,7 @@ tags:
 `target` defines the stage to build as defined inside a multi-stage `Dockerfile`.
 @z
 
-@x
-```yml
-build:
-  context: .
-  target: prod
-```
-@y
-```yml
-build:
-  context: .
-  target: prod
-```
-@z
+% snip code...
 
 @x
 ### ulimits
@@ -1387,28 +851,4 @@ or as mapping for soft/hard limits.
 or as mapping for soft/hard limits.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    build:
-      context: .
-      ulimits:
-        nproc: 65535
-        nofile:
-          soft: 20000
-          hard: 40000
-```
-@y
-```yml
-services:
-  frontend:
-    build:
-      context: .
-      ulimits:
-        nproc: 65535
-        nofile:
-          soft: 20000
-          hard: 40000
-```
-@z
+% snip code...

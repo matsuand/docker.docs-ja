@@ -18,11 +18,11 @@ description: Using bind mounts in our application
 @z
 
 @x
-In [part 5](./05_persisting_data.md), you used a volume mount to persist the
+In [part 4](./05_persisting_data.md), you used a volume mount to persist the
 data in your database. A volume mount is a great choice when you need somewhere
 persistent to store your application data.
 @y
-[5部](./05_persisting_data.md) においては、データベース内のデータを維持するためにボリュームマウントを利用しました。
+[4 部](./05_persisting_data.md) においては、データベース内のデータを維持するためにボリュームマウントを利用しました。
 ボリュームマウントというものは、アプリケーションデータをどこかに保持しなければならないときに採用する優れた選択肢の一つです。
 @z
 

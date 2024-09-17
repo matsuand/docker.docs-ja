@@ -53,31 +53,7 @@ keywords: compose, compose specification, compose file reference, compose deploy
   list of IP addresses (DNS round-robin), and the client connects directly to one of these.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    ports:
-      - "8080:80"
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: vip
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    ports:
-      - "8080:80"
-    deploy:
-      mode: replicated
-      replicas: 2
-      endpoint_mode: vip
-```
-@z
+% snip code...
 
 @x
 ### labels
@@ -93,25 +69,7 @@ This assumes the platform has some native concept of "service" that can match th
 This assumes the platform has some native concept of "service" that can match the Compose application model.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      labels:
-        com.example.description: "This label will appear on the web service"
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      labels:
-        com.example.description: "This label will appear on the web service"
-```
-@z
+% snip code...
 
 @x
 ### mode
@@ -125,23 +83,7 @@ services:
 `mode` defines the replication model used to run the service on the  platform. Either `global`, exactly one container per physical node, or `replicated`, a specified number of containers. The default is `replicated`.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      mode: global
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      mode: global
-```
-@z
+% snip code...
 
 @x
 ### placement
@@ -162,44 +104,12 @@ services:
 @z
 
 @x
-`constraints` defines a required property the platform's node must fulfill to run the service container. It can be set either
-by a list or a map with string values.
+`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#constraint).
 @y
-`constraints` defines a required property the platform's node must fulfill to run the service container. It can be set either
-by a list or a map with string values.
+`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#constraint).
 @z
 
-@x
-```yml
-deploy:
-  placement:
-    constraints:
-      - disktype=ssd
-```
-@y
-```yml
-deploy:
-  placement:
-    constraints:
-      - disktype=ssd
-```
-@z
-
-@x
-```yml
-deploy:
-  placement:
-    constraints:
-      disktype: ssd
-```
-@y
-```yml
-deploy:
-  placement:
-    constraints:
-      disktype: ssd
-```
-@z
+% snip code...
 
 @x
 #### preferences
@@ -208,44 +118,14 @@ deploy:
 @z
 
 @x
-`preferences` defines a property the platform's node should fulfill to run service container. It can be set either
-by a list or a map with string values.
+`preferences` defines a strategy (currently `spread` is the only supported strategy) to spread tasks evenly 
+over the values of the datacenter node label. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#placement-pref)
 @y
-`preferences` defines a property the platform's node should fulfill to run service container. It can be set either
-by a list or a map with string values.
+`preferences` defines a strategy (currently `spread` is the only supported strategy) to spread tasks evenly 
+over the values of the datacenter node label. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#placement-pref)
 @z
 
-@x
-```yml
-deploy:
-  placement:
-    preferences:
-      - datacenter=us-east
-```
-@y
-```yml
-deploy:
-  placement:
-    preferences:
-      - datacenter=us-east
-```
-@z
-
-@x
-```yml
-deploy:
-  placement:
-    preferences:
-      datacenter: us-east
-```
-@y
-```yml
-deploy:
-  placement:
-    preferences:
-      datacenter: us-east
-```
-@z
+% snip code...
 
 @x
 ### replicas
@@ -261,25 +141,7 @@ If the service is `replicated` (which is the default), `replicas` specifies the 
 running at any given time.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      mode: replicated
-      replicas: 6
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      mode: replicated
-      replicas: 6
-```
-@z
+% snip code...
 
 @x
 ### resources
@@ -303,37 +165,7 @@ as:
 - `reservations`: The platform must guarantee the container can allocate at least the configured amount.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 50M
-          pids: 1
-        reservations:
-          cpus: '0.25'
-          memory: 20M
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    deploy:
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 50M
-          pids: 1
-        reservations:
-          cpus: '0.25'
-          memory: 20M
-```
-@z
+% snip code...
 
 @x
 #### cpus
@@ -419,23 +251,7 @@ To avoid name clashes, driver specific capabilities must be prefixed with the dr
 For example, reserving an nVidia CUDA-enabled accelerator might look like this:
 @z
 
-@x
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["nvidia-compute"]
-```
-@y
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["nvidia-compute"]
-```
-@z
+% snip code...
 
 @x
 ##### driver
@@ -449,25 +265,7 @@ A different driver for the reserved device(s) can be requested using `driver` fi
 A different driver for the reserved device(s) can be requested using `driver` field. The value is specified as a string.
 @z
 
-@x
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["nvidia-compute"]
-          driver: nvidia
-```
-@y
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["nvidia-compute"]
-          driver: nvidia
-```
-@z
+% snip code...
 
 @x
 ##### count
@@ -481,25 +279,7 @@ If `count` is set to `all` or not specified, Compose reserves all devices that s
 If `count` is set to `all` or not specified, Compose reserves all devices that satisfy the requested capabilities. Otherwise, Compose reserves at least the number of devices specified. The value is specified as an integer.
 @z
 
-@x
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["tpu"]
-          count: 2
-```
-@y
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["tpu"]
-          count: 2
-```
-@z
+% snip code...
 
 @x
 `count` and `device_ids` fields are exclusive. Compose returns an error if both are specified.
@@ -519,25 +299,7 @@ If `device_ids` is set, Compose reserves devices with the specified IDs provided
 If `device_ids` is set, Compose reserves devices with the specified IDs provided they satisfy the requested capabilities. The value is specified as a list of strings.
 @z
 
-@x
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["gpu"]
-          device_ids: ["GPU-f123d1c9-26bb-df9b-1c23-4a731f61d8c7"]
-```
-@y
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["gpu"]
-          device_ids: ["GPU-f123d1c9-26bb-df9b-1c23-4a731f61d8c7"]
-```
-@z
+% snip code...
 
 @x
 `count` and `device_ids` fields are exclusive. Compose returns an error if both are specified.
@@ -557,29 +319,7 @@ Driver specific options can be set with `options` as key-value pairs.
 Driver specific options can be set with `options` as key-value pairs.
 @z
 
-@x
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["gpu"]
-          driver: gpuvendor
-          options:
-            virtualization: false
-```
-@y
-```yml
-deploy:
-  resources:
-    reservations:
-      devices:
-        - capabilities: ["gpu"]
-          driver: gpuvendor
-          options:
-            virtualization: false
-```
-@z
+% snip code...
 
 @x
 ### restart_policy
@@ -617,25 +357,7 @@ deploy:
   decide immediately).
 @z
 
-@x
-```yml
-deploy:
-  restart_policy:
-    condition: on-failure
-    delay: 5s
-    max_attempts: 3
-    window: 120s
-```
-@y
-```yml
-deploy:
-  restart_policy:
-    condition: on-failure
-    delay: 5s
-    max_attempts: 3
-    window: 120s
-```
-@z
+% snip code...
 
 @x
 ### rollback_config
@@ -697,20 +419,4 @@ deploy:
    or `start-first` (new task is started first, and the running tasks briefly overlap) (default `stop-first`).
 @z
 
-@x
-```yml
-deploy:
-  update_config:
-    parallelism: 2
-    delay: 10s
-    order: stop-first
-```
-@y
-```yml
-deploy:
-  update_config:
-    parallelism: 2
-    delay: 10s
-    order: stop-first
-```
-@z
+% snip code...
