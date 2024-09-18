@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Latest (v{{< param latest_engine_api_version >}})
+title: Latest
 @y
-title: 最新 (v{{< param latest_engine_api_version >}})
+title: 最新
 @z

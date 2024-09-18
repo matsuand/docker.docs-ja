@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Defining and Running Multi-Container Applications with Docker Compose
+title: Defining and running multi-container applications with Docker Compose
 summary: Simplify the process of defining, configuring, and running multi-container Docker applications to enable efficient development, testing, and deployment.
 description: Learn how to use Docker Compose to define and run multi-container Docker applications.
 @y
-title: Defining and Running Multi-Container Applications with Docker Compose
+title: Defining and running multi-container applications with Docker Compose
 summary: Simplify the process of defining, configuring, and running multi-container Docker applications to enable efficient development, testing, and deployment.
 description: Learn how to use Docker Compose to define and run multi-container Docker applications.
 @z
