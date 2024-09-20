@@ -214,7 +214,7 @@ Environment variable behavior in Compose V1 wasn't formally documented and behav
 @x
 For Compose V2, the [Environment variables](/manuals/compose/how-tos/environment-variables/_index.md) section covers both [precedence](/manuals/compose/how-tos/environment-variables/envvars-precedence.md) as well as [`.env` file interpolation](/manuals/compose/how-tos/environment-variables/variable-interpolation.md) and includes many examples covering tricky situations such as escaping nested quotes.
 @y
-For Compose V2, the [Environment variables](manuals/compose/how-tos/environment-variables/_index.md) section covers both [precedence](/manuals/compose/how-tos/environment-variables/envvars-precedence.md) as well as [`.env` file interpolation](manuals/compose/how-tos/environment-variables/variable-interpolation.md) and includes many examples covering tricky situations such as escaping nested quotes.
+For Compose V2, the [Environment variables](manuals/compose/how-tos/environment-variables/_index.md) section covers both [precedence](manuals/compose/how-tos/environment-variables/envvars-precedence.md) as well as [`.env` file interpolation](manuals/compose/how-tos/environment-variables/variable-interpolation.md) and includes many examples covering tricky situations such as escaping nested quotes.
 @z
 
 @x

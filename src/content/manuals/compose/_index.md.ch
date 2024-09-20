@@ -36,7 +36,7 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
 - title: Compose 利用はなぜ？
   description: Understand Docker Compose's key benefits
   icon: feature_search
-  link: /compose/intro/features-uses/
+  link: __SUBDIR__/compose/intro/features-uses/
 @z
 
 @x
@@ -48,7 +48,7 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
 - title: Compose はどう動くのか
   description: Understand how Compose works
   icon: category
-  link: /compose/intro/compose-application-model/
+  link: __SUBDIR__/compose/intro/compose-application-model/
 @z
 
 @x
@@ -113,6 +113,18 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
   description: Explore general FAQs and find out how to give feedback.
   icon: help
   link: __SUBDIR__/compose/faq
+@z
+
+@x
+- title: Migrate to Compose V2
+  description: Learn how to migrate from Compose V1 to V2
+  icon: folder_delete
+  link: /compose/releases/migrate/
+@y
+- title: Migrate to Compose V2
+  description: Learn how to migrate from Compose V1 to V2
+  icon: folder_delete
+  link: __SUBDIR__/compose/releases/migrate/
 @z
 
 % snip aliases...

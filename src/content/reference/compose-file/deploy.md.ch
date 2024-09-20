@@ -106,7 +106,7 @@ This assumes the platform has some native concept of "service" that can match th
 @x
 `constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#constraint).
 @y
-`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#constraint).
+`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#constraint).
 @z
 
 % snip code...
@@ -122,7 +122,7 @@ This assumes the platform has some native concept of "service" that can match th
 over the values of the datacenter node label. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#placement-pref)
 @y
 `preferences` defines a strategy (currently `spread` is the only supported strategy) to spread tasks evenly 
-over the values of the datacenter node label. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#placement-pref)
+over the values of the datacenter node label. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#placement-pref)
 @z
 
 % snip code...

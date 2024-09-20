@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
 description: Find the Docker Desktop release notes for Mac, Linux, and Windows.
 keywords: Docker desktop, release notes, linux, mac, windows
@@ -339,10 +337,12 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 - [Docker Debug](/reference/cli/docker/debug.md) is now generally available.
 - BuildKit now evaluates Dockerfile rules to inform you of potential issues.
 - **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
+- New and improved experience for [troubleshooting](/manuals/desktop/troubleshoot/_index.md).
 @y
 - [Docker Debug](reference/cli/docker/debug.md) is now generally available.
 - BuildKit now evaluates Dockerfile rules to inform you of potential issues.
 - **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
+- New and improved experience for [troubleshooting](manuals/desktop/troubleshoot/_index.md).
 @z
 
 @x

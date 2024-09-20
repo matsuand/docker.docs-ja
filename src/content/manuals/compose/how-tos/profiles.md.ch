@@ -438,6 +438,96 @@ $ COMPOSE_PROFILES=dev docker compose up phpmyadmin
 @z
 
 @x
+## Stop specific profiles
+@y
+## Stop specific profiles
+@z
+
+@x
+As with starting specific profiles, you can use the `--profile` [command-line option](/reference/cli/docker/compose.md#use--p-to-specify-a-project-name) or
+use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
+@y
+As with starting specific profiles, you can use the `--profile` [command-line option](reference/cli/docker/compose.md#use--p-to-specify-a-project-name) or
+use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
+@z
+
+@x
+```console
+$ docker compose --profile debug down
+```
+```console
+$ COMPOSE_PROFILES=debug docker compose down
+```
+@y
+```console
+$ docker compose --profile debug down
+```
+```console
+$ COMPOSE_PROFILES=debug docker compose down
+```
+@z
+
+@x
+Both commands stop and remove services with the `debug` profile. In the following `compose.yml` file, this stops the services `db` and `phpmyadmin`.
+@y
+Both commands stop and remove services with the `debug` profile. In the following `compose.yml` file, this stops the services `db` and `phpmyadmin`.
+@z
+
+@x
+```yaml
+services:
+  frontend:
+    image: frontend
+    profiles: [frontend]
+@y
+```yaml
+services:
+  frontend:
+    image: frontend
+    profiles: [frontend]
+@z
+
+@x
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on: [db]
+    profiles: [debug]
+@y
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on: [db]
+    profiles: [debug]
+@z
+
+@x
+  backend:
+    image: backend
+@y
+  backend:
+    image: backend
+@z
+
+@x
+  db:
+    image: mysql
+```
+@y
+  db:
+    image: mysql
+```
+@z
+
+@x
+> [!NOTE]
+>
+> Running `docker compose down` only stops `backend` and `db`.
+@y
+> [!NOTE]
+>
+> Running `docker compose down` only stops `backend` and `db`.
+@z
+
+@x
 ## Reference information
 @y
 ## Reference information
