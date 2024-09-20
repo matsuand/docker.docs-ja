@@ -483,10 +483,10 @@ This is an opt-out variable. When turned off it deactivates the experimental fea
 
 @x
 The following environment variables have no effect in Compose V2.
-For more information, see [Migrate to Compose V2](../migrate.md).
+For more information, see [Migrate to Compose V2](/manuals/compose/releases/migrate.md).
 @y
 The following environment variables have no effect in Compose V2.
-For more information, see [Migrate to Compose V2](../migrate.md).
+For more information, see [Migrate to Compose V2](manuals/compose/releases/migrate.md).
 @z
 
 @x

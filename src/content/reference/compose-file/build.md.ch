@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Compose Build Specification
@@ -79,7 +79,43 @@ The following example illustrates Compose Build Specification concepts with a co
 The following example illustrates Compose Build Specification concepts with a concrete sample application. The sample is non-normative.
 @z
 
-% snip code...
+@x
+```yaml
+services:
+  frontend:
+    image: example/webapp
+    build: ./webapp
+@y
+```yaml
+services:
+  frontend:
+    image: example/webapp
+    build: ./webapp
+@z
+
+@x
+  backend:
+    image: example/database
+    build:
+      context: backend
+      dockerfile: ../backend.Dockerfile
+@y
+  backend:
+    image: example/database
+    build:
+      context: backend
+      dockerfile: ../backend.Dockerfile
+@z
+
+@x
+  custom:
+    build: ~/custom
+```
+@y
+  custom:
+    build: ~/custom
+```
+@z
 
 @x
 When used to build service images from source, the Compose file creates three Docker images:
@@ -125,7 +161,19 @@ Using the string syntax, only the build context can be configured as either:
 - A relative path to the Compose file's parent folder. This path must be a directory and must contain a `Dockerfile`
 @z
 
-% snip code...
+@x
+  ```yml
+  services:
+    webapp:
+      build: ./dir
+  ```
+@y
+  ```yml
+  services:
+    webapp:
+      build: ./dir
+  ```
+@z
 
 @x
 - A Git repository URL. Git URLs accept context configuration in their fragment section, separated by a colon (`:`).
@@ -137,7 +185,19 @@ The first part represents the reference that Git checks out, and can be either a
 The second part represents a subdirectory inside the repository that is used as a build context.
 @z
 
-% snip code...
+@x
+  ```yml
+  services:
+    webapp:
+      build: https://github.com/mycompany/example.git#branch_or_tag:subdirectory
+  ```
+@y
+  ```yml
+  services:
+    webapp:
+      build: https://github.com/mycompany/example.git#branch_or_tag:subdirectory
+  ```
+@z
 
 @x
 Alternatively `build` can be an object with fields defined as follows:
@@ -152,9 +212,9 @@ Alternatively `build` can be an object with fields defined as follows:
 @z
 
 @x
-{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
 @y
-{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
 @z
 
 @x
@@ -169,7 +229,45 @@ Alternatively `build` can be an object with fields defined as follows:
 `additional_contexts` can be a mapping or a list:
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  additional_contexts:
+    - resources=/path/to/resources
+    - app=docker-image://my-app:latest
+    - source=https://github.com/myuser/project.git
+```
+@y
+```yml
+build:
+  context: .
+  additional_contexts:
+    - resources=/path/to/resources
+    - app=docker-image://my-app:latest
+    - source=https://github.com/myuser/project.git
+```
+@z
+
+@x
+```yml
+build:
+  context: .
+  additional_contexts:
+    resources: /path/to/resources
+    app: docker-image://my-app:latest
+    source: https://github.com/myuser/project.git
+```
+@y
+```yml
+build:
+  context: .
+  additional_contexts:
+    resources: /path/to/resources
+    app: docker-image://my-app:latest
+    source: https://github.com/myuser/project.git
+```
+@z
 
 @x
 When used as a list, the syntax follows the `NAME=VALUE` format, where `VALUE` is a string. Validation beyond that
@@ -217,7 +315,17 @@ Using the following Dockerfile as an example:
 Using the following Dockerfile as an example:
 @z
 
-% snip code...
+@x
+```Dockerfile
+ARG GIT_COMMIT
+RUN echo "Based on commit: $GIT_COMMIT"
+```
+@y
+```Dockerfile
+ARG GIT_COMMIT
+RUN echo "Based on commit: $GIT_COMMIT"
+```
+@z
 
 @x
 `args` can be set in the Compose file under the `build` key to define `GIT_COMMIT`. `args` can be set as a mapping or a list:
@@ -225,7 +333,37 @@ Using the following Dockerfile as an example:
 `args` can be set in the Compose file under the `build` key to define `GIT_COMMIT`. `args` can be set as a mapping or a list:
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  args:
+    GIT_COMMIT: cdc3b19
+```
+@y
+```yml
+build:
+  context: .
+  args:
+    GIT_COMMIT: cdc3b19
+```
+@z
+
+@x
+```yml
+build:
+  context: .
+  args:
+    - GIT_COMMIT=cdc3b19
+```
+@y
+```yml
+build:
+  context: .
+  args:
+    - GIT_COMMIT=cdc3b19
+```
+@z
 
 @x
 Values can be omitted when specifying a build argument, in which case its value at build time must be obtained by user interaction,
@@ -235,7 +373,17 @@ Values can be omitted when specifying a build argument, in which case its value 
 otherwise the build arg won't be set when building the Docker image.
 @z
 
-% snip code...
+@x
+```yml
+args:
+  - GIT_COMMIT
+```
+@y
+```yml
+args:
+  - GIT_COMMIT
+```
+@z
 
 @x
 ### context
@@ -259,7 +407,31 @@ Compose warns you about the absolute path used to define the build context as th
 from being portable.
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: ./dir
+```
+@y
+```yml
+build:
+  context: ./dir
+```
+@z
+
+@x
+```yml
+services:
+  webapp:
+    build: https://github.com/mycompany/webapp.git
+```
+@y
+```yml
+services:
+  webapp:
+    build: https://github.com/mycompany/webapp.git
+```
+@z
 
 @x
 If not set explicitly, `context` defaults to project directory (`.`). 
@@ -297,7 +469,25 @@ Compose Build implementations may support custom types, the Compose Specificatio
 - `registry` to retrieve build cache from an OCI image set by key `ref`
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  cache_from:
+    - alpine:latest
+    - type=local,src=path/to/cache
+    - type=gha
+```
+@y
+```yml
+build:
+  context: .
+  cache_from:
+    - alpine:latest
+    - type=local,src=path/to/cache
+    - type=gha
+```
+@z
 
 @x
 Unsupported caches are ignored and don't prevent you from building images.
@@ -317,7 +507,23 @@ Unsupported caches are ignored and don't prevent you from building images.
 `cache_to` defines a list of export locations to be used to share build cache with future builds.
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  cache_to:
+   - user/app:cache
+   - type=local,dest=path/to/cache
+```
+@y
+```yml
+build:
+  context: .
+  cache_to:
+   - user/app:cache
+   - type=local,dest=path/to/cache
+```
+@z
 
 @x
 Cache target is defined using the same `type=TYPE[,KEY=VALUE]` syntax defined by [`cache_from`](#cache_from).
@@ -355,7 +561,19 @@ When set, `dockerfile_inline` attribute is not allowed and Compose
 rejects any Compose file having both set.
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  dockerfile: webapp.Dockerfile
+```
+@y
+```yml
+build:
+  context: .
+  dockerfile: webapp.Dockerfile
+```
+@z
 
 @x
 ### dockerfile_inline
@@ -364,9 +582,9 @@ rejects any Compose file having both set.
 @z
 
 @x
-{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
 @y
-{{< introduced compose 2.17.0 "/manuals/compose/release-notes.md#2170" >}}
+{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
 @z
 
 @x
@@ -383,7 +601,23 @@ Use of YAML multi-line string syntax is recommended to define the Dockerfile con
 Use of YAML multi-line string syntax is recommended to define the Dockerfile content:
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  dockerfile_inline: |
+    FROM baseimage
+    RUN some command
+```
+@y
+```yml
+build:
+  context: .
+  dockerfile_inline: |
+    FROM baseimage
+    RUN some command
+```
+@z
 
 @x
 ### entitlements
@@ -392,9 +626,9 @@ Use of YAML multi-line string syntax is recommended to define the Dockerfile con
 @z
 
 @x
-{{< introduced compose 2.27.1 "/manuals/compose/release-notes.md#2271" >}}
+{{< introduced compose 2.27.1 "/manuals/compose/releases/release-notes.md#2271" >}}
 @y
-{{< introduced compose 2.27.1 "/manuals/compose/release-notes.md#2271" >}}
+{{< introduced compose 2.27.1 "/manuals/compose/releases/release-notes.md#2271" >}}
 @z
 
 @x
@@ -403,7 +637,19 @@ Use of YAML multi-line string syntax is recommended to define the Dockerfile con
 `entitlements` defines extra privileged entitlements to be allowed during the build.
 @z
 
-% snip code...
+@x
+ ```yaml
+ entitlements:
+   - network.host
+   - security.insecure
+ ```
+@y
+ ```yaml
+ entitlements:
+   - network.host
+   - security.insecure
+ ```
+@z
 
 @x
 ### extra_hosts
@@ -417,23 +663,55 @@ Use of YAML multi-line string syntax is recommended to define the Dockerfile con
 `extra_hosts` adds hostname mappings at build-time. Use the same syntax as [extra_hosts](services.md#extra_hosts).
 @z
 
-% snip code...
-
 @x
+```yml
+extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
 IPv6 addresses can be enclosed in square brackets, for example:
 @y
+```yml
+extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
 IPv6 addresses can be enclosed in square brackets, for example:
 @z
 
-% snip code...
-
 @x
-The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/manuals/compose/release-notes.md#2241). For example:
+```yml
+extra_hosts:
+  - "myhostv6=[::1]"
+```
 @y
-The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](manuals/compose/release-notes.md#2241). For example:
+```yml
+extra_hosts:
+  - "myhostv6=[::1]"
+```
 @z
 
-% snip code...
+@x
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/manuals/compose/releases/release-notes.md#2241). For example:
+@y
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](manuals/compose/releases/release-notes.md#2241). For example:
+@z
+
+@x
+```yml
+extra_hosts:
+  - "somehost:162.242.195.82"
+  - "myhostv6:::1"
+```
+@y
+```yml
+extra_hosts:
+  - "somehost:162.242.195.82"
+  - "myhostv6:::1"
+```
+@z
 
 @x
 Compose creates matching entry with the IP address and hostname in the container's network
@@ -443,7 +721,19 @@ Compose creates matching entry with the IP address and hostname in the container
 configuration, which means for Linux `/etc/hosts` will get extra lines:
 @z
 
-% snip code...
+@x
+```text
+162.242.195.82  somehost
+50.31.209.229   otherhost
+::1             myhostv6
+```
+@y
+```text
+162.242.195.82  somehost
+50.31.209.229   otherhost
+::1             myhostv6
+```
+@z
 
 @x
 ### isolation
@@ -477,7 +767,45 @@ It's recommended that you use reverse-DNS notation to prevent your labels from c
 It's recommended that you use reverse-DNS notation to prevent your labels from conflicting with other software.
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  labels:
+    com.example.description: "Accounting webapp"
+    com.example.department: "Finance"
+    com.example.label-with-empty-value: ""
+```
+@y
+```yml
+build:
+  context: .
+  labels:
+    com.example.description: "Accounting webapp"
+    com.example.department: "Finance"
+    com.example.label-with-empty-value: ""
+```
+@z
+
+@x
+```yml
+build:
+  context: .
+  labels:
+    - "com.example.description=Accounting webapp"
+    - "com.example.department=Finance"
+    - "com.example.label-with-empty-value"
+```
+@y
+```yml
+build:
+  context: .
+  labels:
+    - "com.example.description=Accounting webapp"
+    - "com.example.department=Finance"
+    - "com.example.label-with-empty-value"
+```
+@z
 
 @x
 ### network
@@ -491,7 +819,33 @@ Set the network containers connect to for the `RUN` instructions during build.
 Set the network containers connect to for the `RUN` instructions during build.
 @z
 
-% snip code...
+@x
+```yaml
+build:
+  context: .
+  network: host
+```  
+@y
+```yaml
+build:
+  context: .
+  network: host
+```  
+@z
+
+@x
+```yaml
+build:
+  context: .
+  network: custom_network_1
+```
+@y
+```yaml
+build:
+  context: .
+  network: custom_network_1
+```
+@z
 
 @x
 Use `none` to disable networking during build:
@@ -499,7 +853,19 @@ Use `none` to disable networking during build:
 Use `none` to disable networking during build:
 @z
 
-% snip code...
+@x
+```yaml
+build:
+  context: .
+  network: none
+```
+@y
+```yaml
+build:
+  context: .
+  network: none
+```
+@z
 
 @x
 ### no_cache
@@ -529,7 +895,23 @@ has been updated on registry (see [pull](#pull)).
 `platforms` defines a list of target [platforms](services.md#platform).
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: "."
+  platforms:
+    - "linux/amd64"
+    - "linux/arm64"
+```
+@y
+```yml
+build:
+  context: "."
+  platforms:
+    - "linux/amd64"
+    - "linux/arm64"
+```
+@z
 
 @x
 When the `platforms` attribute is omitted, Compose includes the service's platform
@@ -557,15 +939,47 @@ Composes reports an error in the following cases:
 * When the list contains an unsupported platform.
 @z
 
-% snip code...
-
 @x
+  ```yml
+  build:
+    context: "."
+    platforms:
+      - "linux/amd64"
+      - "unsupported/unsupported"
+  ```
 * When the list is non-empty and does not contain the service's platform
 @y
+  ```yml
+  build:
+    context: "."
+    platforms:
+      - "linux/amd64"
+      - "unsupported/unsupported"
+  ```
 * When the list is non-empty and does not contain the service's platform
 @z
 
-% snip code...
+@x
+  ```yml
+  services:
+    frontend:
+      platform: "linux/amd64"
+      build:
+        context: "."
+        platforms:
+          - "linux/arm64"
+  ```
+@y
+  ```yml
+  services:
+    frontend:
+      platform: "linux/amd64"
+      build:
+        context: "."
+        platforms:
+          - "linux/arm64"
+  ```
+@z
 
 @x
 ### privileged
@@ -574,9 +988,9 @@ Composes reports an error in the following cases:
 @z
 
 @x
-{{< introduced compose 2.15.0 "/manuals/compose/release-notes.md#2" >}}
+{{< introduced compose 2.15.0 "/manuals/compose/releases/release-notes.md#2" >}}
 @y
-{{< introduced compose 2.15.0 "/manuals/compose/release-notes.md#2" >}}
+{{< introduced compose 2.15.0 "/manuals/compose/releases/release-notes.md#2" >}}
 @z
 
 @x
@@ -585,7 +999,19 @@ Composes reports an error in the following cases:
 `privileged` configures the service image to build with elevated privileges. Support and actual impacts are platform specific.
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  privileged: true
+```
+@y
+```yml
+build:
+  context: .
+  privileged: true
+```
+@z
 
 @x
 ### pull
@@ -651,7 +1077,31 @@ access to the `server-certificate` secret. The value of `server-certificate` is 
 to the contents of the file `./server.cert`.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    build:
+      context: .
+      secrets:
+        - server-certificate
+secrets:
+  server-certificate:
+    file: ./server.cert
+```
+@y
+```yml
+services:
+  frontend:
+    build:
+      context: .
+      secrets:
+        - server-certificate
+secrets:
+  server-certificate:
+    file: ./server.cert
+```
+@z
 
 @x
 #### Long syntax
@@ -701,7 +1151,39 @@ to `103`. The value of `server-certificate` secret is provided by the platform t
 the secret lifecycle not directly managed by Compose.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    build:
+      context: .
+      secrets:
+        - source: server-certificate
+          target: server.cert
+          uid: "103"
+          gid: "103"
+          mode: 0440
+secrets:
+  server-certificate:
+    external: true
+```
+@y
+```yml
+services:
+  frontend:
+    build:
+      context: .
+      secrets:
+        - source: server-certificate
+          target: server.cert
+          uid: "103"
+          gid: "103"
+          mode: 0440
+secrets:
+  server-certificate:
+    external: true
+```
+@z
 
 @x
 Service builds may be granted access to multiple secrets. Long and short syntax for secrets may be used in the
@@ -765,11 +1247,21 @@ build:
 
 @x
 Using a custom id `myproject` with path to a local SSH key:
+```yaml
+build:
+  context: .
+  ssh:
+    - myproject=~/.ssh/myproject.pem
+```
 @y
 Using a custom id `myproject` with path to a local SSH key:
+```yaml
+build:
+  context: .
+  ssh:
+    - myproject=~/.ssh/myproject.pem
+```
 @z
-
-% snip code...
 
 @x
 The image builder can then rely on this to mount the SSH key during build.
@@ -783,7 +1275,15 @@ For illustration, [SSH mounts](https://github.com/moby/buildkit/blob/master/fron
 For illustration, [SSH mounts](https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/reference.md#run---mounttypessh) can be used to mount the SSH key set by ID and access a secured resource:
 @z
 
-% snip code...
+@x
+```console
+RUN --mount=type=ssh,id=myproject git clone ...
+```
+@y
+```console
+RUN --mount=type=ssh,id=myproject git clone ...
+```
+@z
 
 @x
 ### shm_size
@@ -799,7 +1299,33 @@ as an integer value representing the number of bytes or as a string expressing a
 as an integer value representing the number of bytes or as a string expressing a [byte value](extension.md#specifying-byte-values).
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  shm_size: '2gb'
+```
+@y
+```yml
+build:
+  context: .
+  shm_size: '2gb'
+```
+@z
+
+@x
+```yaml
+build:
+  context: .
+  shm_size: 10000000
+```
+@y
+```yaml
+build:
+  context: .
+  shm_size: 10000000
+```
+@z
 
 @x
 ### tags
@@ -815,7 +1341,19 @@ the `image` [property defined in the service section](services.md#image)
 the `image` [property defined in the service section](services.md#image)
 @z
 
-% snip code...
+@x
+```yml
+tags:
+  - "myimage:mytag"
+  - "registry/username/myrepos:my-other-tag"
+```
+@y
+```yml
+tags:
+  - "myimage:mytag"
+  - "registry/username/myrepos:my-other-tag"
+```
+@z
 
 @x
 ### target
@@ -829,7 +1367,19 @@ the `image` [property defined in the service section](services.md#image)
 `target` defines the stage to build as defined inside a multi-stage `Dockerfile`.
 @z
 
-% snip code...
+@x
+```yml
+build:
+  context: .
+  target: prod
+```
+@y
+```yml
+build:
+  context: .
+  target: prod
+```
+@z
 
 @x
 ### ulimits
@@ -838,9 +1388,9 @@ the `image` [property defined in the service section](services.md#image)
 @z
 
 @x
-{{< introduced compose 2.23.1 "/manuals/compose/release-notes.md#2231" >}}
+{{< introduced compose 2.23.1 "/manuals/compose/releases/release-notes.md#2231" >}}
 @y
-{{< introduced compose 2.23.1 "/manuals/compose/release-notes.md#2231" >}}
+{{< introduced compose 2.23.1 "/manuals/compose/releases/release-notes.md#2231" >}}
 @z
 
 @x
@@ -851,4 +1401,28 @@ or as mapping for soft/hard limits.
 or as mapping for soft/hard limits.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    build:
+      context: .
+      ulimits:
+        nproc: 65535
+        nofile:
+          soft: 20000
+          hard: 40000
+```
+@y
+```yml
+services:
+  frontend:
+    build:
+      context: .
+      ulimits:
+        nproc: 65535
+        nofile:
+          soft: 20000
+          hard: 40000
+```
+@z

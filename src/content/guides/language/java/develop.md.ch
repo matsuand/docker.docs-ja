@@ -461,11 +461,11 @@ Press `ctrl+c` in the terminal to stop your application.
 @x
 Use Compose Watch to automatically update your running Compose services as you
 edit and save your code. For more details about Compose Watch, see
-[Use Compose Watch](/manuals/compose/file-watch.md).
+[Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 @y
 Use Compose Watch to automatically update your running Compose services as you
 edit and save your code. For more details about Compose Watch, see
-[Use Compose Watch](manuals/compose/file-watch.md).
+[Use Compose Watch](manuals/compose/how-tos/file-watch.md).
 @z
 
 @x
@@ -644,11 +644,11 @@ Related information:
 
 @x
  - [Compose file reference](/reference/compose-file/)
- - [Compose Watch](/manuals/compose/file-watch.md)
+ - [Compose Watch](/manuals/compose/how-tos/file-watch.md)
  - [Dockerfile reference](/reference/dockerfile/)
 @y
  - [Compose file reference](__SUBDIR__/reference/compose-file/)
- - [Compose Watch](manuals/compose/file-watch.md)
+ - [Compose Watch](manuals/compose/how-tos/file-watch.md)
  - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 @z
 

@@ -211,11 +211,11 @@ Press `ctrl+c` in the terminal to stop your application.
 @x
 Use Compose Watch to automatically update your running Compose services as you
 edit and save your code. For more details about Compose Watch, see [Use Compose
-Watch](/manuals/compose/file-watch.md).
+Watch](/manuals/compose/how-tos/file-watch.md).
 @y
 Use Compose Watch to automatically update your running Compose services as you
 edit and save your code. For more details about Compose Watch, see [Use Compose
-Watch](manuals/compose/file-watch.md).
+Watch](manuals/compose/how-tos/file-watch.md).
 @z
 
 @x
@@ -289,12 +289,12 @@ database and persist data. You also learned how to use Compose Watch to automati
 @x
 Related information:
  - [Compose file reference](/reference/compose-file/)
- - [Compose file watch](/manuals/compose/file-watch.md)
+ - [Compose file watch](/manuals/compose/how-tos/file-watch.md)
  - [Multi-stage builds](/manuals/build/building/multi-stage.md)
 @y
 関連情報
  - [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/)
- - [Compose file watch](manuals/compose/file-watch.md)
+ - [Compose file watch](manuals/compose/how-tos/file-watch.md)
  - [マルチステージビルド](manuals/build/building/multi-stage.md)
 @z
 

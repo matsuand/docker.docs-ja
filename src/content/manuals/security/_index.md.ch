@@ -217,12 +217,12 @@ keywords: docker, docker hub, docker desktop, security
 - title: Secrets in Docker Compose
   description: Learn how to use secrets in Docker Compose.
   icon: privacy_tip
-  link: /compose/use-secrets/
+  link: /compose/how-tos/use-secrets/
 @y
 - title: Secrets in Docker Compose
   description: Learn how to use secrets in Docker Compose.
   icon: privacy_tip
-  link: __SUBDIR__/compose/use-secrets/
+  link: __SUBDIR__/compose/how-tos/use-secrets/
 @z
 
 % grid_resources:

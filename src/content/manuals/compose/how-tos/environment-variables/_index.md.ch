@@ -4,20 +4,24 @@
 @x
 ---
 title: Environment variables in Compose
-linkTitle: Environment variables
-weight: 60
+linkTitle: Use environment variables
+weight: 40
 description: Explainer on the ways to set, use and manage environment variables in
   Compose
 keywords: compose, orchestration, environment, env file
+aliases:
+- /compose/environment-variables/
 ---
 @y
 ---
 title: Environment variables in Compose
-linkTitle: Environment variables
-weight: 60
+linkTitle: Use environment variables
+weight: 40
 description: Explainer on the ways to set, use and manage environment variables in
   Compose
 keywords: compose, orchestration, environment, env file
+aliases:
+- /compose/environment-variables/
 ---
 @z
 

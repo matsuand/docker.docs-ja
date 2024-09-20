@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Include
@@ -14,9 +14,9 @@ keywords: compose, compose specification, include, compose file reference
 @z
 
 @x
-{{< introduced compose 2.20.0 "/manuals/compose/release-notes.md#2200" >}}
+{{< introduced compose 2.20.0 "/manuals/compose/releases/release-notes.md#2200" >}}
 @y
-{{< introduced compose 2.20.0 "/manuals/compose/release-notes.md#2200" >}}
+{{< introduced compose 2.20.0 "/manuals/compose/releases/release-notes.md#2200" >}}
 @z
 
 @x
@@ -294,7 +294,7 @@ override values for customization.
 @z
 
 @x
-For more information on using `include`, see [Working with multiple Compose files](/manuals/compose/multiple-compose-files/_index.md)
+For more information on using `include`, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md)
 @y
-For more information on using `include`, see [Working with multiple Compose files](manuals/compose/multiple-compose-files/_index.md)
+For more information on using `include`, see [Working with multiple Compose files](manuals/compose/how-tos/multiple-compose-files/_index.md)
 @z

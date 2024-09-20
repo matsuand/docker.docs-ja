@@ -136,11 +136,14 @@ AC_CONFIG_FILES([
 	src/content/manuals/cloud/Makefile
 	src/content/manuals/compose/Makefile
 	src/content/manuals/compose/bridge/Makefile
-	src/content/manuals/compose/environment-variables/Makefile
+	src/content/manuals/compose/how-tos/Makefile
+	src/content/manuals/compose/how-tos/environment-variables/Makefile
+	src/content/manuals/compose/how-tos/multiple-compose-files/Makefile
 	src/content/manuals/compose/images/Makefile
 	src/content/manuals/compose/install/Makefile
 	src/content/manuals/compose/intro/Makefile
-	src/content/manuals/compose/multiple-compose-files/Makefile
+	src/content/manuals/compose/releases/Makefile
+	src/content/manuals/compose/support-and-feedback/Makefile
 	src/content/manuals/copilot/Makefile
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/dev-environments/Makefile

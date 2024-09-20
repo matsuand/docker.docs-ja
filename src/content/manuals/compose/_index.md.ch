@@ -43,12 +43,12 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
 - title: How Compose works 
   description: Understand how Compose works
   icon: category
-  link: /compose/compose-application-model/
+  link: /compose/intro/compose-application-model/
 @y
 - title: Compose はどう動くのか
   description: Understand how Compose works
   icon: category
-  link: /compose/compose-application-model/
+  link: /compose/intro/compose-application-model/
 @z
 
 @x

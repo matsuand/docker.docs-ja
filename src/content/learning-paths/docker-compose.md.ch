@@ -277,10 +277,10 @@ leaving the rest inactive.
 
 @x
 For more information on using profiles, see [Using profiles with
-Compose](/compose/profiles/).
+Compose](/compose/how-tos/profiles/).
 @y
 For more information on using profiles, see [Using profiles with
-Compose](__SUBDIR__/compose/profiles/).
+Compose](__SUBDIR__/compose/how-tos/profiles/).
 @z
 
 @x
@@ -321,10 +321,10 @@ handle requests.
 
 @x
 For more information on setting the startup order of your services, see
-[Control startup and shutdown order in Compose](/compose/startup-order/).
+[Control startup and shutdown order in Compose](/compose/how-tos/startup-order/).
 @y
 For more information on setting the startup order of your services, see
-[Control startup and shutdown order in Compose](__SUBDIR__/compose/startup-order/).
+[Control startup and shutdown order in Compose](__SUBDIR__/compose/how-tos/startup-order/).
 @z
 
 @x
@@ -422,16 +422,16 @@ tests or perform one-off tasks within that container.
 @x
 - [Overview of Docker Compose CLI](/compose/reference/)
 - [Overview of Docker Compose](/compose/)
-- [How Compose works](/compose/compose-application-model/)
-- [Using profiles with Compose](/compose/profiles/)
-- [Control startup and shutdown order with Compose](/compose/startup-order/)
+- [How Compose works](/compose/intro/compose-application-model/)
+- [Using profiles with Compose](/compose/how-tos/profiles/)
+- [Control startup and shutdown order with Compose](/compose/how-tos/startup-order/)
 - [Compose Build Specification](/compose/compose-file/build/)
 @y
 - [Overview of Docker Compose CLI](__SUBDIR__/compose/reference/)
 - [Overview of Docker Compose](__SUBDIR__/compose/)
-- [How Compose works](__SUBDIR__/compose/compose-application-model/)
-- [Using profiles with Compose](__SUBDIR__/compose/profiles/)
-- [Control startup and shutdown order with Compose](__SUBDIR__/compose/startup-order/)
+- [How Compose works](__SUBDIR__/compose/intro/compose-application-model/)
+- [Using profiles with Compose](__SUBDIR__/compose/how-tos/profiles/)
+- [Control startup and shutdown order with Compose](__SUBDIR__/compose/how-tos/startup-order/)
 - [Compose Build Specification](__SUBDIR__/compose/compose-file/build/)
 @z
 

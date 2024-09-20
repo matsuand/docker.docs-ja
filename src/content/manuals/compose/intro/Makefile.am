@@ -2,8 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index.md        \
-	features-uses.md \
+	_index.md                    \
+	compose-application-model.md \
+	features-uses.md             \
 	history.md
 
 include $(top_srcdir)/build-aux/common.mk

@@ -24,6 +24,150 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.29.6
+@y
+## 2.29.6
+@z
+
+@x
+{{< release-date date="2024-09-19" >}}
+@y
+{{< release-date date="2024-09-19" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v27.3.0-rc.2
+@y
+- Dependencies upgrade: bump docker engine and cli to v27.3.0-rc.2
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue with Windows Containers bind mounts.
+@y
+- Fixed an issue with Windows Containers bind mounts.
+@z
+
+@x
+## 2.29.5
+@y
+## 2.29.5
+@z
+
+@x
+{{< release-date date="2024-09-17" >}}
+@y
+{{< release-date date="2024-09-17" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue with bind mounts on WSL2.
+@y
+- Fixed an issue with bind mounts on WSL2.
+@z
+
+@x
+## 2.29.4
+@y
+## 2.29.4
+@z
+
+@x
+{{< release-date date="2024-09-16" >}}
+@y
+{{< release-date date="2024-09-16" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump buildx to v0.17.1
+- Dependencies upgrade: bump docker engine and cli to v27.3.0-rc.1
+@y
+- Dependencies upgrade: bump buildx to v0.17.1
+- Dependencies upgrade: bump docker engine and cli to v27.3.0-rc.1
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue with services not stopping when restarting diverged dependencies. 
+- Fixed potential `nil` pointer error on the OTEL client.
+@y
+- Fixed an issue with services not stopping when restarting diverged dependencies. 
+- Fixed potential `nil` pointer error on the OTEL client.
+@z
+
+@x
+## 2.29.3
+@y
+## 2.29.3
+@z
+
+@x
+{{< release-date date="2024-09-12" >}}
+@y
+{{< release-date date="2024-09-12" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.2.0
+- Dependencies upgrade: bump docker engine and cli to v27.2.1
+@y
+- Dependencies upgrade: bump compose-go to v2.2.0
+- Dependencies upgrade: bump docker engine and cli to v27.2.1
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Combination of bind mount and `rebuild` are now allowed with `watch`. 
+- Fixed a bug recreating containers when `--no-deps` is used with `up`.
+- Fixed a bug not closing streams when reattaching containers.
+- Restored recreation of anonymous volumes when using `-V` or `--renew-anon-volumes`.
+@y
+- Combination of bind mount and `rebuild` are now allowed with `watch`. 
+- Fixed a bug recreating containers when `--no-deps` is used with `up`.
+- Fixed a bug not closing streams when reattaching containers.
+- Restored recreation of anonymous volumes when using `-V` or `--renew-anon-volumes`.
+@z
+
+@x
 ## 2.29.2
 @y
 ## 2.29.2
@@ -1057,12 +1201,12 @@ This release fixes a build issue with Docker Desktop for Windows introduced in C
 > [!NOTE]
 >
 > The `watch` command is now generally available (GA). You can directly use it from the root command `docker compose watch`.
-> For more information, see [File watch](./file-watch.md).
+> For more information, see [File watch](/manuals/compose/how-tos/file-watch.md).
 @y
 > [!NOTE]
 >
 > The `watch` command is now generally available (GA). You can directly use it from the root command `docker compose watch`.
-> For more information, see [File watch](./file-watch.md).
+> For more information, see [File watch](manuals/compose/how-tos/file-watch.md).
 @z
 
 @x
@@ -8896,11 +9040,11 @@ naming scheme accordingly before upgrading.
 @x
     By default, you don't have to configure any networks. In fact, using
     networking with Compose involves even less configuration than using links.
-    Consult the [networking guide](/manuals/compose/networking.md) for how to use it.
+    Consult the [networking guide](/manuals/compose/how-tos/networking.md) for how to use it.
 @y
     By default, you don't have to configure any networks. In fact, using
     networking with Compose involves even less configuration than using links.
-    Consult the [networking guide](manuals/compose/networking.md) for how to use it.
+    Consult the [networking guide](manuals/compose/how-tos/networking.md) for how to use it.
 @z
 
 @x
@@ -9983,8 +10127,8 @@ Several new configuration keys have been added to `docker-compose.yml`:
 - `pid: host`, like `docker run --pid=host`, lets you reuse the same PID namespace as the host machine.
 - `cpuset`, like `docker run --cpuset-cpus`, lets you specify which CPUs to allow execution in.
 - `read_only`, like `docker run --read-only`, lets you mount a container's filesystem as read-only.
-- `security_opt`, like `docker run --security-opt`, lets you specify [security options](reference/cli/docker/container/run/#security-opt).
-- `log_driver`, like `docker run --log-driver`, lets you specify a [log driver](reference/cli/docker/container/run/#log-driver).
+- `security_opt`, like `docker run --security-opt`, lets you specify [security options](__SUBDIR__/reference/cli/docker/container/run/#security-opt).
+- `log_driver`, like `docker run --log-driver`, lets you specify a [log driver](__SUBDIR__/reference/cli/docker/container/run/#log-driver).
 @z
 
 @x

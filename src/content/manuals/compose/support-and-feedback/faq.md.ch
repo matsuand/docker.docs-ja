@@ -32,9 +32,9 @@ Version two of the Docker Compose command-line binary was announced in 2020, is 
 @z
 
 @x
-For further information, see [History and development of Compose](intro/history.md).
+For further information, see [History and development of Compose](/manuals/compose/intro/history.md).
 @y
-For further information, see [History and development of Compose](intro/history.md).
+For further information, see [History and development of Compose](manuals/compose/intro/history.md).
 @z
 
 @x
@@ -194,13 +194,13 @@ handling `SIGTERM` properly.
 @x
 Compose uses the project name to create unique identifiers for all of a
 project's containers and other resources. To run multiple copies of a project,
-set a custom project name using the [`-p` command line option](reference/_index.md)
-or the [`COMPOSE_PROJECT_NAME` environment variable](environment-variables/envvars.md#compose_project_name).
+set a custom project name using the `-p` command line option
+or the [`COMPOSE_PROJECT_NAME` environment variable](/manuals/compose/how-tos/environment-variables/envvars.md#compose_project_name).
 @y
 Compose uses the project name to create unique identifiers for all of a
 project's containers and other resources. To run multiple copies of a project,
-set a custom project name using the [`-p` command line option](reference/_index.md)
-or the [`COMPOSE_PROJECT_NAME` environment variable](environment-variables/envvars.md#compose_project_name).
+set a custom project name using the `-p` command line option
+or the [`COMPOSE_PROJECT_NAME` environment variable](manuals/compose/how-tos/environment-variables/envvars.md#compose_project_name).
 @z
 
 @x

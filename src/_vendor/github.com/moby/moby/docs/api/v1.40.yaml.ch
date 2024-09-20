@@ -4469,7 +4469,7 @@ definitions:
       Created:
         description: |
           Date and time at which the image was created as a Unix timestamp
-          (number of seconds sinds EPOCH).
+          (number of seconds since EPOCH).
         type: "integer"
         x-nullable: false
         example: "1644009612"
@@ -4498,7 +4498,7 @@ definitions:
       Created:
         description: |
           Date and time at which the image was created as a Unix timestamp
-          (number of seconds sinds EPOCH).
+          (number of seconds since EPOCH).
         type: "integer"
         x-nullable: false
         example: "1644009612"
@@ -7307,7 +7307,7 @@ definitions:
                 example: "json-file"
               Options:
                 description: |
-                  Driver-specific options for the selectd log driver, specified
+                  Driver-specific options for the selected log driver, specified
                   as key/value pairs.
                 type: "object"
                 additionalProperties:
@@ -7327,7 +7327,7 @@ definitions:
                 example: "json-file"
               Options:
                 description: |
-                  Driver-specific options for the selectd log driver, specified
+                  Driver-specific options for the selected log driver, specified
                   as key/value pairs.
                 type: "object"
                 additionalProperties:
@@ -14243,7 +14243,7 @@ paths:
         * Memory usage % = `(used_memory / available_memory) * 100.0`
         * cpu_delta = `cpu_stats.cpu_usage.total_usage - precpu_stats.cpu_usage.total_usage`
         * system_cpu_delta = `cpu_stats.system_cpu_usage - precpu_stats.system_cpu_usage`
-        * number_cpus = `lenght(cpu_stats.cpu_usage.percpu_usage)` or `cpu_stats.online_cpus`
+        * number_cpus = `length(cpu_stats.cpu_usage.percpu_usage)` or `cpu_stats.online_cpus`
         * CPU usage % = `(cpu_delta / system_cpu_delta) * number_cpus * 100.0`
       operationId: "ContainerStats"
       produces: ["application/json"]
@@ -14654,7 +14654,7 @@ paths:
         * Memory usage % = `(used_memory / available_memory) * 100.0`
         * cpu_delta = `cpu_stats.cpu_usage.total_usage - precpu_stats.cpu_usage.total_usage`
         * system_cpu_delta = `cpu_stats.system_cpu_usage - precpu_stats.system_cpu_usage`
-        * number_cpus = `lenght(cpu_stats.cpu_usage.percpu_usage)` or `cpu_stats.online_cpus`
+        * number_cpus = `length(cpu_stats.cpu_usage.percpu_usage)` or `cpu_stats.online_cpus`
         * CPU usage % = `(cpu_delta / system_cpu_delta) * number_cpus * 100.0`
       operationId: "ContainerStats"
       produces: ["application/json"]
@@ -17238,17 +17238,9 @@ paths:
       parameters:
         - name: "name"
           in: "path"
-          description: "Image name or ID."
-          type: "string"
-          required: true
-        - name: "tag"
-          in: "query"
-          description: "The tag to associate with the image on the registry."
-          type: "string"
-        - name: "X-Registry-Auth"
-          in: "header"
           description: |
-            A base64url-encoded auth configuration.
+            Name of the image to push. For example, `registry.example.com/myimage`.
+            The image must be present in the local image store with the same name.
 @y
         The push is cancelled if the HTTP connection is closed.
       operationId: "ImagePush"
@@ -17268,12 +17260,46 @@ paths:
       parameters:
         - name: "name"
           in: "path"
-          description: "Image name or ID."
+          description: |
+            Name of the image to push. For example, `registry.example.com/myimage`.
+            The image must be present in the local image store with the same name.
+@z
+
+@x
+            The name should be provided without tag; if a tag is provided, it
+            is ignored. For example, `registry.example.com/myimage:latest` is
+            considered equivalent to `registry.example.com/myimage`.
+@y
+            The name should be provided without tag; if a tag is provided, it
+            is ignored. For example, `registry.example.com/myimage:latest` is
+            considered equivalent to `registry.example.com/myimage`.
+@z
+
+@x
+            Use the `tag` parameter to specify the tag to push.
           type: "string"
           required: true
         - name: "tag"
           in: "query"
-          description: "The tag to associate with the image on the registry."
+          description: |
+            Tag of the image to push. For example, `latest`. If no tag is provided,
+            all tags of the given image that are present in the local image store
+            are pushed.
+          type: "string"
+        - name: "X-Registry-Auth"
+          in: "header"
+          description: |
+            A base64url-encoded auth configuration.
+@y
+            Use the `tag` parameter to specify the tag to push.
+          type: "string"
+          required: true
+        - name: "tag"
+          in: "query"
+          description: |
+            Tag of the image to push. For example, `latest`. If no tag is provided,
+            all tags of the given image that are present in the local image store
+            are pushed.
           type: "string"
         - name: "X-Registry-Auth"
           in: "header"

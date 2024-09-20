@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Secrets top-level elements
@@ -104,7 +104,7 @@ secrets:
 @z
 
 @x
-For more information, see [How to use secrets in Compose](/manuals/compose/use-secrets.md).
+For more information, see [How to use secrets in Compose](/manuals/compose/how-tos/use-secrets.md).
 @y
-For more information, see [How to use secrets in Compose](manuals/compose/use-secrets.md).
+For more information, see [How to use secrets in Compose](manuals/compose/how-tos/use-secrets.md).
 @z

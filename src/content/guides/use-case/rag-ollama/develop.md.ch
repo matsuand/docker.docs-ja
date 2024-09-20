@@ -249,10 +249,10 @@ To run Ollama in a container and provide GPU access:
 
 @x
    > [!NOTE]
-   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](/manuals/compose/gpu-support.md).
+   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](/manuals/compose/how-tos/gpu-support.md).
 @y
    > [!NOTE]
-   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](manuals/compose/gpu-support.md).
+   > For more details about the Compose instructions, see [Turn on GPU access with Docker Compose](manuals/compose/how-tos/gpu-support.md).
 @z
 
 @x

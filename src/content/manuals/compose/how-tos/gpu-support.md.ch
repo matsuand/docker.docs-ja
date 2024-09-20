@@ -6,13 +6,13 @@
 @x
 description: Understand GPU support in Docker Compose
 keywords: documentation, docs, docker, compose, GPU access, NVIDIA, samples
-title: Turn on GPU access with Docker Compose
-linkTitle: GPU support
+title: Enable GPU access with Docker Compose
+linkTitle: Enable GPU support
 @y
 description: Understand GPU support in Docker Compose
 keywords: documentation, docs, docker, compose, GPU access, NVIDIA, samples
-title: Turn on GPU access with Docker Compose
-linkTitle: GPU support
+title: Enable GPU access with Docker Compose
+linkTitle: Enable GPU support
 @z
 
 @x
@@ -23,10 +23,10 @@ Compose services can define GPU device reservations if the Docker host contains 
 
 @x
 The examples in the following sections focus specifically on providing service containers access to GPU devices with Docker Compose. 
-You can use either `docker-compose` or `docker compose` commands. For more information, see [Migrate to Compose V2](migrate.md).
+You can use either `docker-compose` or `docker compose` commands. For more information, see [Migrate to Compose V2](/manuals/compose/releases/migrate.md).
 @y
 The examples in the following sections focus specifically on providing service containers access to GPU devices with Docker Compose. 
-You can use either `docker-compose` or `docker compose` commands. For more information, see [Migrate to Compose V2](migrate.md).
+You can use either `docker-compose` or `docker compose` commands. For more information, see [Migrate to Compose V2](manuals/compose/releases/migrate.md).
 @z
 
 @x

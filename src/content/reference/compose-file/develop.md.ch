@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Compose Develop Specification
@@ -115,10 +115,10 @@ The `develop` subsection defines configuration options that are applied by Compo
 
 @x
 The `watch` attribute defines a list of rules that control automatic service updates based on local file changes. `watch` is a sequence, each individual item in the sequence defines a rule to be applied by 
-Compose to monitor source code for changes. For more information, see [Use Compose Watch](/manuals/compose/file-watch.md).
+Compose to monitor source code for changes. For more information, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
 @y
 The `watch` attribute defines a list of rules that control automatic service updates based on local file changes. `watch` is a sequence, each individual item in the sequence defines a rule to be applied by 
-Compose to monitor source code for changes. For more information, see [Use Compose Watch](manuals/compose/file-watch.md).
+Compose to monitor source code for changes. For more information, see [Use Compose Watch](manuals/compose/how-tos/file-watch.md).
 @z
 
 @x

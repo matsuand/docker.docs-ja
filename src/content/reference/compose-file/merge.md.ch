@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -223,9 +223,9 @@ Results in:
 @z
 
 @x
-{{< introduced compose 2.24.4 "/manuals/compose/release-notes.md#2244" >}}
+{{< introduced compose 2.24.4 "/manuals/compose/releases/release-notes.md#2244" >}}
 @y
-{{< introduced compose 2.24.4 "/manuals/compose/release-notes.md#2244" >}}
+{{< introduced compose 2.24.4 "/manuals/compose/releases/release-notes.md#2244" >}}
 @z
 
 @x
@@ -273,7 +273,7 @@ If `!override` had not been used, both `8080:80` and `8443:443` would be exposed
 @z
 
 @x
-For more information on how merge can be used to create a composite Compose file, see [Working with multiple Compose files](/manuals/compose/multiple-compose-files/_index.md)
+For more information on how merge can be used to create a composite Compose file, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md)
 @y
-For more information on how merge can be used to create a composite Compose file, see [Working with multiple Compose files](manuals/compose/multiple-compose-files/_index.md)
+For more information on how merge can be used to create a composite Compose file, see [Working with multiple Compose files](manuals/compose/how-tos/multiple-compose-files/_index.md)
 @z

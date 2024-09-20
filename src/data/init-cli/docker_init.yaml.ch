@@ -96,11 +96,11 @@ long: |-
 @x
     * [.dockerignore](/reference/dockerfile.md#dockerignore-file)
     * [Dockerfile](/reference/dockerfile.md)
-    * [compose.yaml](/manuals/compose/compose-application-model.md)
+    * [compose.yaml](/manuals/compose/intro/compose-application-model.md)
 @y
     * [.dockerignore](reference/dockerfile.md#dockerignore-file)
     * [Dockerfile](reference/dockerfile.md)
-    * [compose.yaml](manuals/compose/compose-application-model.md)
+    * [compose.yaml](manuals/compose/intro/compose-application-model.md)
 @z
 
 @x

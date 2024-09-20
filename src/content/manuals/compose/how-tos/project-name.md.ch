@@ -32,12 +32,12 @@ This page offers examples of scenarios where custom project names can be helpful
 > [!NOTE]
 >
 > The default project directory is the base directory of the Compose file. A custom value can also be set
-> for it using the [`--project-directory` command line option](reference/_index.md).
+> for it using the [`--project-directory` command line option](/reference/cli/docker/compose.md#use--p-to-specify-a-project-name).
 @y
 > [!NOTE]
 >
 > デフォルトのプロジェクトディレクトリは、Compose ファイルがあるベースディレクトリです。
-> これについても [コマンドラインオプション `--project-directory`](reference/_index.md) を使って、独自のものに設定することができます。
+> これについても [コマンドラインオプション `--project-directory`](reference/cli/docker/compose.md#use--p-to-specify-a-project-name) を使って、独自のものに設定することができます。
 @z
 
 @x

@@ -526,10 +526,10 @@ This command runs a Postgres container, sets an environment variable for passwor
 @z
 
 @x
-* [Ways to set environment variables with Compose](/compose/environment-variables/set-environment-variables/)
+* [Ways to set environment variables with Compose](/compose/how-tos/environment-variables/set-environment-variables/)
 * [What is a container](/get-started/docker-concepts/the-basics/what-is-a-container/)
 @y
-* [Ways to set environment variables with Compose](__SUBDIR__/compose/environment-variables/set-environment-variables/)
+* [Ways to set environment variables with Compose](__SUBDIR__/compose/how-tos/environment-variables/set-environment-variables/)
 * [What is a container](__SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/)
 @z
 

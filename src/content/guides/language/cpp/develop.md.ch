@@ -75,10 +75,10 @@ Clone the sample application to use with this guide. Open a terminal, change dir
 @x
 Use Compose Watch to automatically update your running Compose services as you
 edit and save your code. For more details about Compose Watch, see [Use Compose
-Watch](/manuals/compose/file-watch.md).
+Watch](/manuals/compose/how-tos/file-watch.md).
 @y
 Compose Watch を利用すると、自分が作成して実行している Compose サービスを自動的に更新できるようになります。
-Compose Watch に関する詳細は [Use Compose Watch](manuals/compose/file-watch.md) を参照してください。
+Compose Watch に関する詳細は [Use Compose Watch](manuals/compose/how-tos/file-watch.md) を参照してください。
 @z
 
 @x
@@ -136,12 +136,12 @@ In this section, you also learned how to use Compose Watch to automatically rebu
 @x
 Related information:
  - [Compose file reference](/reference/compose-file/)
- - [Compose file watch](/manuals/compose/file-watch.md)
+ - [Compose file watch](/manuals/compose/how-tos/file-watch.md)
  - [Multi-stage builds](/manuals/build/building/multi-stage.md)
 @y
 関連情報
  - [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/)
- - [Compose file watch](manuals/compose/file-watch.md)
+ - [Compose file watch](manuals/compose/how-tos/file-watch.md)
  - [マルチステージビルド](manuals/build/building/multi-stage.md)
 @z
 

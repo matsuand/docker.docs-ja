@@ -346,9 +346,9 @@ This page was a brief introduction to Compose. In the following resources, you c
 @x
 * [Overview of Docker Compose](/compose/)
 * [Overview of Docker Compose CLI](/compose/reference/)
-* [How Compose works](/compose/compose-application-model/)
+* [How Compose works](/compose/intro/compose-application-model/)
 @y
 * [Overview of Docker Compose](__SUBDIR__/compose/)
 * [Overview of Docker Compose CLI](__SUBDIR__/compose/reference/)
-* [How Compose works](__SUBDIR__/compose/compose-application-model/)
+* [How Compose works](__SUBDIR__/compose/intro/compose-application-model/)
 @z

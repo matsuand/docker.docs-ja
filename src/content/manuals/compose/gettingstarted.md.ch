@@ -240,7 +240,7 @@ image pulled from the Docker Hub registry.
 @x
 For more information on the `compose.yaml` file, see [How Compose works](compose-application-model.md).
 @y
-For more information on the `compose.yaml` file, see [How Compose works](compose-application-model.md).
+For more information on the `compose.yaml` file, see [How Compose works](manuals/compose/intro/compose-application-model.md).
 @z
 
 @x
@@ -384,9 +384,9 @@ Whenever a file is changed, Compose syncs the file to the corresponding location
 @z
 
 @x
-For more information on how Compose Watch works, see [Use Compose Watch](file-watch.md). Alternatively, see [Manage data in containers](/manuals/engine/storage/volumes.md) for other options.
+For more information on how Compose Watch works, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md). Alternatively, see [Manage data in containers](/manuals/engine/storage/volumes.md) for other options.
 @y
-For more information on how Compose Watch works, see [Use Compose Watch](file-watch.md). Alternatively, see [Manage data in containers](manuals/engine/storage/volumes.md) for other options.
+For more information on how Compose Watch works, see [Use Compose Watch](manuals/compose/how-tos/file-watch.md). Alternatively, see [Manage data in containers](manuals/engine/storage/volumes.md) for other options.
 @z
 
 @x
@@ -514,9 +514,9 @@ Using multiple Compose files lets you customize a Compose application for differ
 @z
 
 @x
-This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](multiple-compose-files/_index.md).
+This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md).
 @y
-This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](multiple-compose-files/_index.md).
+This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](manuals/compose/how-tos/multiple-compose-files/_index.md).
 @z
 
 @x
@@ -561,12 +561,12 @@ This is a simplified example, but it demonstrates the basic principle of `includ
 
 @x
 - Try the [Sample apps with Compose](https://github.com/docker/awesome-compose)
-- [Explore the full list of Compose commands](reference/_index.md)
+- [Explore the full list of Compose commands](/reference/cli/docker/compose.md)
 - [Explore the Compose file reference](/reference/compose-file/_index.md)
 - [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
 @y
 - Try the [Sample apps with Compose](https://github.com/docker/awesome-compose)
-- [Explore the full list of Compose commands](reference/_index.md)
+- [Explore the full list of Compose commands](reference/cli/docker/compose.md)
 - [Explore the Compose file reference](reference/compose-file/_index.md)
 - [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
 @z

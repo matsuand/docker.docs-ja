@@ -36,6 +36,196 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
+## v1.47 API changes
+@y
+## v1.47 API changes
+@z
+
+@x
+[Docker Engine API v1.47](https://docs.docker.com/engine/api/v1.47/) documentation
+@y
+[Docker Engine API v1.47](https://docs.docker.com/engine/api/v1.47/) documentation
+@z
+
+@x
+* `GET /images/json` response now includes `Manifests` field, which contains
+  information about the sub-manifests included in the image index. This
+  includes things like platform-specific manifests and build attestations.
+  The new field will only be populated if the request also sets the `manifests`
+  query parameter to `true`.
+  WARNING: This is experimental and may change at any time without any backward
+  compatibility.
+@y
+* `GET /images/json` response now includes `Manifests` field, which contains
+  information about the sub-manifests included in the image index. This
+  includes things like platform-specific manifests and build attestations.
+  The new field will only be populated if the request also sets the `manifests`
+  query parameter to `true`.
+  WARNING: This is experimental and may change at any time without any backward
+  compatibility.
+@z
+
+@x
+## v1.46 API changes
+@y
+## v1.46 API changes
+@z
+
+@x
+[Docker Engine API v1.46](https://docs.docker.com/engine/api/v1.46/) documentation
+@y
+[Docker Engine API v1.46](https://docs.docker.com/engine/api/v1.46/) documentation
+@z
+
+@x
+* `GET /info` now includes a `Containerd` field containing information about
+  the location of the containerd API socket and containerd namespaces used
+  by the daemon to run containers and plugins.
+* `POST /containers/create` field `NetworkingConfig.EndpointsConfig.DriverOpts`,
+  and `POST /networks/{id}/connect` field `EndpointsConfig.DriverOpts`, now
+  support label `com.docker.network.endpoint.sysctls` for setting per-interface
+  sysctls. The value is a comma separated list of sysctl assignments, the
+  interface name must be "IFNAME". For example, to set
+  `net.ipv4.config.eth0.log_martians=1`, use
+  `net.ipv4.config.IFNAME.log_martians=1`. In API versions up-to 1.46, top level
+  `--sysctl` settings for `eth0` will be migrated to `DriverOpts` when possible. 
+  This automatic migration will be removed in a future release.
+* `GET /containers/json` now returns the annotations of containers.
+* `POST /images/{name}/push` now supports a `platform` parameter (JSON encoded
+  OCI Platform type) that allows selecting a specific platform manifest from
+  the multi-platform image.
+* `POST /containers/create` now takes `Options` as part of `HostConfig.Mounts.TmpfsOptions` to set options for tmpfs mounts.
+* `POST /services/create` now takes `Options` as part of `ContainerSpec.Mounts.TmpfsOptions`, to set options for tmpfs mounts.
+* `GET /events` now supports image `create` event that is emitted when a new
+  image is built regardless if it was tagged or not.
+@y
+* `GET /info` now includes a `Containerd` field containing information about
+  the location of the containerd API socket and containerd namespaces used
+  by the daemon to run containers and plugins.
+* `POST /containers/create` field `NetworkingConfig.EndpointsConfig.DriverOpts`,
+  and `POST /networks/{id}/connect` field `EndpointsConfig.DriverOpts`, now
+  support label `com.docker.network.endpoint.sysctls` for setting per-interface
+  sysctls. The value is a comma separated list of sysctl assignments, the
+  interface name must be "IFNAME". For example, to set
+  `net.ipv4.config.eth0.log_martians=1`, use
+  `net.ipv4.config.IFNAME.log_martians=1`. In API versions up-to 1.46, top level
+  `--sysctl` settings for `eth0` will be migrated to `DriverOpts` when possible. 
+  This automatic migration will be removed in a future release.
+* `GET /containers/json` now returns the annotations of containers.
+* `POST /images/{name}/push` now supports a `platform` parameter (JSON encoded
+  OCI Platform type) that allows selecting a specific platform manifest from
+  the multi-platform image.
+* `POST /containers/create` now takes `Options` as part of `HostConfig.Mounts.TmpfsOptions` to set options for tmpfs mounts.
+* `POST /services/create` now takes `Options` as part of `ContainerSpec.Mounts.TmpfsOptions`, to set options for tmpfs mounts.
+* `GET /events` now supports image `create` event that is emitted when a new
+  image is built regardless if it was tagged or not.
+@z
+
+@x
+### Deprecated Config fields in `GET /images/{name}/json` response
+@y
+### Deprecated Config fields in `GET /images/{name}/json` response
+@z
+
+@x
+The `Config` field returned by this endpoint (used for "image inspect") returns
+additional fields that are not part of the image's configuration and not part of
+the [Docker Image Spec] and the [OCI Image Spec].
+@y
+The `Config` field returned by this endpoint (used for "image inspect") returns
+additional fields that are not part of the image's configuration and not part of
+the [Docker Image Spec] and the [OCI Image Spec].
+@z
+
+@x
+These additional fields are included in the response, due to an
+implementation detail, where the [api/types.ImageInspec] type used
+for the response is using the [container.Config] type.
+@y
+These additional fields are included in the response, due to an
+implementation detail, where the [api/types.ImageInspec] type used
+for the response is using the [container.Config] type.
+@z
+
+@x
+The [container.Config] type is a superset of the image config, and while the
+image's Config is used as a _template_ for containers created from the image,
+the additional fields are set at runtime (from options passed when creating
+the container) and not taken from the image Config.
+@y
+The [container.Config] type is a superset of the image config, and while the
+image's Config is used as a _template_ for containers created from the image,
+the additional fields are set at runtime (from options passed when creating
+the container) and not taken from the image Config.
+@z
+
+@x
+These fields are never set (and always return the default value for the type),
+but are not omitted in the response when left empty. As these fields were not
+intended to be part of the image configuration response, they are deprecated,
+and will be removed from the API.
+@y
+These fields are never set (and always return the default value for the type),
+but are not omitted in the response when left empty. As these fields were not
+intended to be part of the image configuration response, they are deprecated,
+and will be removed from the API.
+@z
+
+@x
+The following fields are currently included in the API response, but
+are not part of the underlying image's Config, and deprecated:
+@y
+The following fields are currently included in the API response, but
+are not part of the underlying image's Config, and deprecated:
+@z
+
+@x
+- `Hostname`
+- `Domainname`
+- `AttachStdin`
+- `AttachStdout`
+- `AttachStderr`
+- `Tty`
+- `OpenStdin`
+- `StdinOnce`
+- `Image`
+- `NetworkDisabled` (already omitted unless set)
+- `MacAddress` (already omitted unless set)
+- `StopTimeout` (already omitted unless set)
+@y
+- `Hostname`
+- `Domainname`
+- `AttachStdin`
+- `AttachStdout`
+- `AttachStderr`
+- `Tty`
+- `OpenStdin`
+- `StdinOnce`
+- `Image`
+- `NetworkDisabled` (already omitted unless set)
+- `MacAddress` (already omitted unless set)
+- `StopTimeout` (already omitted unless set)
+@z
+
+@x
+[Docker image spec]: https://github.com/moby/docker-image-spec/blob/v1.3.1/specs-go/v1/image.go#L19-L32
+[OCI Image Spec]: https://github.com/opencontainers/image-spec/blob/v1.1.0/specs-go/v1/config.go#L24-L62
+[api/types.ImageInspec]: https://github.com/moby/moby/blob/v26.1.4/api/types/types.go#L87-L104
+[container.Config]: https://github.com/moby/moby/blob/v26.1.4/api/types/container/config.go#L47-L82
+@y
+[Docker image spec]: https://github.com/moby/docker-image-spec/blob/v1.3.1/specs-go/v1/image.go#L19-L32
+[OCI Image Spec]: https://github.com/opencontainers/image-spec/blob/v1.1.0/specs-go/v1/config.go#L24-L62
+[api/types.ImageInspec]: https://github.com/moby/moby/blob/v26.1.4/api/types/types.go#L87-L104
+[container.Config]: https://github.com/moby/moby/blob/v26.1.4/api/types/container/config.go#L47-L82
+@z
+
+@x
+* `POST /services/create` and `POST /services/{id}/update` now support OomScoreAdj
+@y
+* `POST /services/create` and `POST /services/{id}/update` now support OomScoreAdj
+@z
+
+@x
 ## v1.45 API changes
 @y
 ## v1.45 API changes
@@ -114,7 +304,7 @@ keywords: "API, Docker, rcli, REST, documentation"
   interval for health checks during the start period.
 * `GET /info` now includes a `CDISpecDirs` field indicating the configured CDI
   specifications directories. The use of the applied setting requires the daemon
-  to have expermental enabled, and for non-experimental daemons an empty list is
+  to have experimental enabled, and for non-experimental daemons an empty list is
   always returned.
 * `POST /networks/create` now returns a 400 if the `IPAMConfig` has invalid
   values. Note that this change is _unversioned_ and applied to all API
@@ -179,7 +369,7 @@ keywords: "API, Docker, rcli, REST, documentation"
   interval for health checks during the start period.
 * `GET /info` now includes a `CDISpecDirs` field indicating the configured CDI
   specifications directories. The use of the applied setting requires the daemon
-  to have expermental enabled, and for non-experimental daemons an empty list is
+  to have experimental enabled, and for non-experimental daemons an empty list is
   always returned.
 * `POST /networks/create` now returns a 400 if the `IPAMConfig` has invalid
   values. Note that this change is _unversioned_ and applied to all API
@@ -724,7 +914,7 @@ keywords: "API, Docker, rcli, REST, documentation"
   to return those without the specified labels.
 * `POST /containers/create` now accepts a `fluentd-async` option in `HostConfig.LogConfig.Config`
   when using the Fluentd logging driver. This option deprecates the `fluentd-async-connect`
-  option, which remains funtional, but will be removed in a future release. Users
+  option, which remains functional, but will be removed in a future release. Users
   are encouraged to use the `fluentd-async` option going forward. This change is
   not versioned, and affects all API versions if the daemon has this patch.
 * `POST /containers/create` now accepts a `fluentd-request-ack` option in
@@ -787,7 +977,7 @@ keywords: "API, Docker, rcli, REST, documentation"
   to return those without the specified labels.
 * `POST /containers/create` now accepts a `fluentd-async` option in `HostConfig.LogConfig.Config`
   when using the Fluentd logging driver. This option deprecates the `fluentd-async-connect`
-  option, which remains funtional, but will be removed in a future release. Users
+  option, which remains functional, but will be removed in a future release. Users
   are encouraged to use the `fluentd-async` option going forward. This change is
   not versioned, and affects all API versions if the daemon has this patch.
 * `POST /containers/create` now accepts a `fluentd-request-ack` option in

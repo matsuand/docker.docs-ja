@@ -5,10 +5,12 @@
 
 @x
 title: History and development of Docker Compose
+linkTitle: History and development
 description: History of Compose V1 and Compose YAML schema versioning
 keywords: compose, compose yaml, swarm, migration, compatibility, docker compose vs docker-compose
 @y
 title: History and development of Docker Compose
+linkTitle: History and development
 description: History of Compose V1 and Compose YAML schema versioning
 keywords: compose, compose yaml, swarm, migration, compatibility, docker compose vs docker-compose
 @z
@@ -122,7 +124,7 @@ Compose V2 uses the Compose Specification for project definition. Unlike the pri
 @z
 
 @x
-To make [migration](../migrate.md) easier, Compose V2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
+To make [migration](/manuals/compose/releases/migrate.md) easier, Compose V2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
 @y
-To make [migration](../migrate.md) easier, Compose V2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
+To make [migration](manuals/compose/releases/migrate.md) easier, Compose V2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
 @z

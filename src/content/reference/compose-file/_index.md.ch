@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Find the latest recommended version of the Docker Compose file format
@@ -104,9 +104,9 @@ keywords: docker compose file, docker compose yml, docker compose reference, doc
 @z
 
 @x
-The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](/manuals/compose/compose-application-model.md) which is used to configure your Docker application’s services, networks, volumes, and more.
+The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](/manuals/compose/intro/compose-application-model.md) which is used to configure your Docker application’s services, networks, volumes, and more.
 @y
-The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](manuals/compose/compose-application-model.md) which is used to configure your Docker application’s services, networks, volumes, and more.
+The Compose Specification is the latest and recommended version of the Compose file format. It helps you define a [Compose file](manuals/compose/intro/compose-application-model.md) which is used to configure your Docker application’s services, networks, volumes, and more.
 @z
 
 @x

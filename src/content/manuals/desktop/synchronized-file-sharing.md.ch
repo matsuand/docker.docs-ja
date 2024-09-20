@@ -246,9 +246,9 @@ In general, use your `.syncignore` file to exclude items that aren't critical to
 @z
 
 @x
-- POSIX-style Windows paths are not supported. Avoid setting the [`COMPOSE_CONVERT_WINDOWS_PATHS`](/manuals/compose/environment-variables/envvars.md#compose_convert_windows_paths) environment variable in Docker Compose.
+- POSIX-style Windows paths are not supported. Avoid setting the [`COMPOSE_CONVERT_WINDOWS_PATHS`](/manuals/compose/how-tos/environment-variables/envvars.md#compose_convert_windows_paths) environment variable in Docker Compose.
 @y
-- POSIX-style Windows paths are not supported. Avoid setting the [`COMPOSE_CONVERT_WINDOWS_PATHS`](manuals/compose/environment-variables/envvars.md#compose_convert_windows_paths) environment variable in Docker Compose.
+- POSIX-style Windows paths are not supported. Avoid setting the [`COMPOSE_CONVERT_WINDOWS_PATHS`](manuals/compose/how-tos/environment-variables/envvars.md#compose_convert_windows_paths) environment variable in Docker Compose.
 @z
 
 @x

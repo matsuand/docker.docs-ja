@@ -195,7 +195,7 @@ info:
 # The tags on paths define the menu sections in the ReDoc documentation, so
 # the usage of tags must make sense for that:
 # - They should be singular, not plural.
-# - There should not be too many tags, or the menu becomes unwieldly. For
+# - There should not be too many tags, or the menu becomes unwieldy. For
 #   example, it is preferable to add a path to the "System" tag instead of
 #   creating a tag with a single path in it.
 # - The order of tags in this list defines the order in the menu.
@@ -223,7 +223,7 @@ tags:
 # The tags on paths define the menu sections in the ReDoc documentation, so
 # the usage of tags must make sense for that:
 # - They should be singular, not plural.
-# - There should not be too many tags, or the menu becomes unwieldly. For
+# - There should not be too many tags, or the menu becomes unwieldy. For
 #   example, it is preferable to add a path to the "System" tag instead of
 #   creating a tag with a single path in it.
 # - The order of tags in this list defines the order in the menu.
@@ -9576,12 +9576,53 @@ paths:
       parameters:
         - name: "name"
           in: "path"
-          description: "Image name or ID."
+          description: |
+            Name of the image to push. For example, `registry.example.com/myimage`.
+            The image must be present in the local image store with the same name.
+@y
+        The push is cancelled if the HTTP connection is closed.
+      operationId: "ImagePush"
+      consumes:
+        - "application/octet-stream"
+      responses:
+        200:
+          description: "No error"
+        404:
+          description: "No such image"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "Server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "name"
+          in: "path"
+          description: |
+            Name of the image to push. For example, `registry.example.com/myimage`.
+            The image must be present in the local image store with the same name.
+@z
+
+@x
+            The name should be provided without tag; if a tag is provided, it
+            is ignored. For example, `registry.example.com/myimage:latest` is
+            considered equivalent to `registry.example.com/myimage`.
+@y
+            The name should be provided without tag; if a tag is provided, it
+            is ignored. For example, `registry.example.com/myimage:latest` is
+            considered equivalent to `registry.example.com/myimage`.
+@z
+
+@x
+            Use the `tag` parameter to specify the tag to push.
           type: "string"
           required: true
         - name: "tag"
           in: "query"
-          description: "The tag to associate with the image on the registry."
+          description: |
+            Tag of the image to push. For example, `latest`. If no tag is provided,
+            all tags of the given image that are present in the local image store
+            are pushed.
           type: "string"
         - name: "X-Registry-Auth"
           in: "header"
@@ -9634,30 +9675,15 @@ paths:
       description: |
         Remove an image, along with any untagged parent images that were referenced by that image.
 @y
-        The push is cancelled if the HTTP connection is closed.
-      operationId: "ImagePush"
-      consumes:
-        - "application/octet-stream"
-      responses:
-        200:
-          description: "No error"
-        404:
-          description: "No such image"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        500:
-          description: "Server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "name"
-          in: "path"
-          description: "Image name or ID."
+            Use the `tag` parameter to specify the tag to push.
           type: "string"
           required: true
         - name: "tag"
           in: "query"
-          description: "The tag to associate with the image on the registry."
+          description: |
+            Tag of the image to push. For example, `latest`. If no tag is provided,
+            all tags of the given image that are present in the local image store
+            are pushed.
           type: "string"
         - name: "X-Registry-Auth"
           in: "header"

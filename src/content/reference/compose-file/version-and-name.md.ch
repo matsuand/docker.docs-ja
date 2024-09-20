@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Version and name top-level elements
@@ -88,7 +88,7 @@ services:
 @z
 
 @x
-For more information on other ways to name Compose projects, see [Specify a project name](/manuals/compose/project-name.md).
+For more information on other ways to name Compose projects, see [Specify a project name](/manuals/compose/how-tos/project-name.md).
 @y
-For more information on other ways to name Compose projects, see [Specify a project name](manuals/compose/project-name.md).
+For more information on other ways to name Compose projects, see [Specify a project name](manuals/compose/how-tos/project-name.md).
 @z

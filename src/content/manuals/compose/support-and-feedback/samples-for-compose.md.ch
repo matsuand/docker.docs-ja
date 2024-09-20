@@ -17,11 +17,11 @@ linkTitle: Sample apps
 
 @x
 The following samples show the various aspects of how to work with Docker
-Compose. As a prerequisite, be sure to [install Docker Compose](install/_index.md)
+Compose. As a prerequisite, be sure to [install Docker Compose](/manuals/compose/install/_index.md)
 if you have not already done so.
 @y
 The following samples show the various aspects of how to work with Docker
-Compose. As a prerequisite, be sure to [install Docker Compose](install/_index.md)
+Compose. As a prerequisite, be sure to [install Docker Compose](manuals/compose/install/_index.md)
 if you have not already done so.
 @z
 

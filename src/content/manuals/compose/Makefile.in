@@ -295,26 +295,12 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = bridge environment-variables images \
-	install intro multiple-compose-files
+SUBDIRS = bridge how-tos images install intro releases \
+	support-and-feedback
 
 bases = \
-	_index.md \
-	compose-application-model.md \
-	faq.md                       \
-	feedback.md                  \
-	file-watch.md                \
-	gettingstarted.md            \
-	gpu-support.md               \
-	migrate.md                   \
-	networking.md                \
-	production.md                \
-	profiles.md                  \
-	project-name.md              \
-	release-notes.md             \
-	samples-for-compose.md       \
-	startup-order.md             \
-	use-secrets.md
+	_index.md         \
+	gettingstarted.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

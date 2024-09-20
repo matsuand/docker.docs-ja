@@ -104,7 +104,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Try Docker Compose"
         url: "/compose/gettingstarted/"
       - text: "Release notes"
-        url: "/compose/release-notes/"
+        url: "/compose/releases/release-notes/"
 @y
   - title: Docker Compose
     icon: polyline
@@ -116,7 +116,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Docker Compose を試す"
         url: "compose/gettingstarted/"
       - text: "リリースノート"
-        url: "compose/release-notes/"
+        url: "compose/releases/release-notes/"
 @z
 
 @x

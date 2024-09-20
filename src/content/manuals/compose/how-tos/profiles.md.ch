@@ -128,10 +128,10 @@ Valid profiles names follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 @z
 
 @x
-To start a specific profile supply the `--profile` [command-line option](reference/_index.md) or
+To start a specific profile supply the `--profile` [command-line option](/reference/cli/docker/compose.md) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @y
-To start a specific profile supply the `--profile` [command-line option](reference/_index.md) or
+To start a specific profile supply the `--profile` [command-line option](reference/cli/docker/compose.md) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @z
 

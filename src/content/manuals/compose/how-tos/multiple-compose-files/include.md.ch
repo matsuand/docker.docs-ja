@@ -14,9 +14,9 @@ title: Include
 @z
 
 @x
-{{< introduced compose 2.20.3 "../release-notes.md#2203" >}}
+{{< introduced compose 2.20.3 "/manuals/compose/releases/release-notes.md#2203" >}}
 @y
-{{< introduced compose 2.20.3 "../release-notes.md#2203" >}}
+{{< introduced compose 2.20.3 "manuals/compose/releases/release-notes.md#2203" >}}
 @z
 
 @x

@@ -157,10 +157,10 @@ but with each release we're making progress on more production-oriented features
 
 @x
 For details on using production-oriented features, see
-[Compose in production](../production.md).
+[Compose in production](/manuals/compose/how-tos/production.md).
 @y
 For details on using production-oriented features, see
-[Compose in production](../production.md).
+[Compose in production](manuals/compose/how-tos/production.md).
 @z
 
 @x
@@ -171,10 +171,10 @@ For details on using production-oriented features, see
 
 @x
 - [Learn about the history of Compose](history.md)
-- [Understand how Compose works](../compose-application-model.md)
+- [Understand how Compose works](compose-application-model.md)
 - [Quickstart](../gettingstarted.md)
 @y
 - [Learn about the history of Compose](history.md)
-- [Understand how Compose works](../compose-application-model.md)
+- [Understand how Compose works](manuals/compose/intro/compose-application-model.md)
 - [Quickstart](../gettingstarted.md)
 @z

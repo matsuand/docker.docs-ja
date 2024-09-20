@@ -277,7 +277,7 @@ should retrieve, typically by using a parameter so the Compose file doesn't need
 @z
 
 @x
-For more examples, see [Networking in Compose](/manuals/compose/networking.md).
+For more examples, see [Networking in Compose](/manuals/compose/how-tos/networking.md).
 @y
-For more examples, see [Networking in Compose](manuals/compose/networking.md).
+For more examples, see [Networking in Compose](manuals/compose/how-tos/networking.md).
 @z
