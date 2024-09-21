@@ -2,27 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Run your Go image as a container
 linkTitle: Run containers
-weight: 10
-keywords: get started, go, golang, run, container
-description: Learn how to run the image as a container.
-aliases:
-- /get-started/golang/run-containers/
-- /language/golang/run-containers/
----
 @y
----
-title: Run your Go image as a container
-linkTitle: Run containers
-weight: 10
+title: コンテナーとしての Go 言語イメージの実行
+linkTitle: コンテナーの実行
+@z
+
+@x
 keywords: get started, go, golang, run, container
 description: Learn how to run the image as a container.
-aliases:
-- /get-started/golang/run-containers/
-- /language/golang/run-containers/
----
+@y
+keywords: get started, go, golang, run, container
+description: Learn how to run the image as a container.
 @z
 
 @x

@@ -2,25 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Configure CI/CD for your R application
 linkTitle: Configure CI/CD
-weight: 40
-keywords: ci/cd, github actions, R, shiny
-description: Learn how to configure CI/CD using GitHub Actions for your R application.
-aliases:
-- /language/r/configure-ci-cd/
----
 @y
----
-title: Configure CI/CD for your R application
-linkTitle: Configure CI/CD
-weight: 40
+title: R 言語アプリケーション向けの CI/CD 設定
+linkTitle: CI/CD の設定
+@z
+
+@x
 keywords: ci/cd, github actions, R, shiny
 description: Learn how to configure CI/CD using GitHub Actions for your R application.
-aliases:
-- /language/r/configure-ci-cd/
----
+@y
+keywords: ci/cd, github actions, R, shiny
+description: Learn how to configure CI/CD using GitHub Actions for your R application.
 @z
 
 @x

@@ -7,8 +7,8 @@
 title: Test your .NET deployment
 linkTitle: Test your deployment
 @y
-title: Test your .NET deployment
-linkTitle: Test your deployment
+title: .NET デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

@@ -7,8 +7,8 @@
 title: Use containers for Ruby on Rails development
 linkTitle: Develop your app
 @y
-title: Ruby on Rails 開発のためのコンテナー利用
-linkTitle: Develop your app
+title: コンテナーを利用した Ruby on Rails 開発
+linkTitle: アプリの開発
 @z
 
 @x

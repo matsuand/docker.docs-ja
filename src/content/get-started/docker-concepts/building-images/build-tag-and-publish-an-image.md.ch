@@ -13,7 +13,7 @@ summary: |
   images, how to tag those images with a unique identifier, and how to publish
   your image to a public registry.
 @y
-title: Build, tag, and publish an image
+title: イメージのビルド、タグづけ、公開
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to build, tag, and publish an image to Docker Hub or any other registry 
 summary: |

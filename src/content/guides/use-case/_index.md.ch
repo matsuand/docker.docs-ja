@@ -6,7 +6,7 @@
 @x
 title: Use-case guides
 @y
-title: Use-case guides
+title: ユースケースガイド
 @z
 
 @x

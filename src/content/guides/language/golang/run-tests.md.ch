@@ -2,27 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Run your tests using Go test
 linkTitle: Run your tests
-weight: 30
-keywords: build, go, golang, test
-description: How to build and run your Go tests in a container
-aliases:
-- /get-started/golang/run-tests/
-- /language/golang/run-tests/
----
 @y
----
-title: Run your tests using Go test
-linkTitle: Run your tests
-weight: 30
+title: コンテナーでの Go 言語テストの実行
+linkTitle: テストの実行
+@z
+
+@x
 keywords: build, go, golang, test
 description: How to build and run your Go tests in a container
-aliases:
-- /get-started/golang/run-tests/
-- /language/golang/run-tests/
----
+@y
+keywords: build, go, golang, test
+description: How to build and run your Go tests in a container
 @z
 
 @x

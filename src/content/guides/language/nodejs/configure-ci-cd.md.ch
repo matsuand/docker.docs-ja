@@ -6,7 +6,7 @@ title: Configure CI/CD for your Node.js application
 linkTitle: Configure CI/CD
 @y
 title: Node.js アプリケーション向けの CI/CD 設定
-linkTitle: Configure CI/CD
+linkTitle: CI/CD の設定
 @z
 
 @x

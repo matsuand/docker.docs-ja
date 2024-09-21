@@ -4,7 +4,7 @@
 @x
 title: Learning paths
 @y
-title: Learning paths
+title: ラーニングパス
 @z
 
 @x

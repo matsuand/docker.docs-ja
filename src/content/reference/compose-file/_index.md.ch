@@ -9,12 +9,14 @@ description: Find the latest recommended version of the Docker Compose file form
 keywords: docker compose file, docker compose yml, docker compose reference, docker
   compose cmd, docker compose user, docker compose image, yaml spec, docker compose
   syntax, yaml specification, docker compose specification
+title: Compose file reference
 @y
 description: Find the latest recommended version of the Docker Compose file format
   for defining multi-container applications.
 keywords: docker compose file, docker compose yml, docker compose reference, docker
   compose cmd, docker compose user, docker compose image, yaml spec, docker compose
   syntax, yaml specification, docker compose specification
+title: Compose ファイルリファレンス
 @z
 
 % grid:

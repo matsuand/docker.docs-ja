@@ -10,10 +10,12 @@ title: マルチコンテナーアプリ
 @z
 
 @x
+linkTitle: "Part 6: Multi-container apps"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using more than one container in your application
 @y
+linkTitle: "6 部: マルチコンテナーアプリ"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using more than one container in your application

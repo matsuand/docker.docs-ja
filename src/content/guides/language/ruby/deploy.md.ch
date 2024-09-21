@@ -7,8 +7,8 @@
 title: Test your Ruby on Rails deployment
 linkTitle: Test your deployment
 @y
-title: Test your Ruby on Rails deployment
-linkTitle: Test your deployment
+title: Ruby on Rails デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

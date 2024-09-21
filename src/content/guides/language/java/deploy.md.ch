@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Test your Java deployment
 linkTitle: Test your deployment
 @y
-title: Test your Java deployment
-linkTitle: Test your deployment
+title: Java デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

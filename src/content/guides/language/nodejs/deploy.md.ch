@@ -7,8 +7,8 @@
 title: Test your Node.js deployment
 linkTitle: Test your deployment
 @y
-title: Node.js のデプロイテスト
-linkTitle: Test your deployment
+title: Node.js デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

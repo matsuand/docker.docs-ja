@@ -8,7 +8,7 @@ title: Publishing and exposing ports
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of publishing and exposing ports in Docker 
 @y
-title: Publishing and exposing ports
+title: ポートの公開
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of publishing and exposing ports in Docker 
 @z

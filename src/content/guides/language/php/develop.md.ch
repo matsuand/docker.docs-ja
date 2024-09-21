@@ -7,8 +7,8 @@
 title: Use containers for PHP development
 linkTitle: Develop your app
 @y
-title: Use containers for PHP development
-linkTitle: Develop your app
+title: コンテナーを利用した PHP 開発
+linkTitle: アプリの開発
 @z
 
 @x

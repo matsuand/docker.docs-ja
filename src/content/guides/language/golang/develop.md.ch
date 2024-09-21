@@ -7,8 +7,8 @@
 title: Use containers for Go development
 linkTitle: Develop your app
 @y
-title: Use containers for Go development
-linkTitle: Develop your app
+title: コンテナーを利用した Go 言語の開発
+linkTitle: アプリの開発
 @z
 
 @x

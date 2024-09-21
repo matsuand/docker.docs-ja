@@ -13,6 +13,17 @@ summary: Simplify the process of defining, configuring, and running multi-contai
 description: Learn how to use Docker Compose to define and run multi-container Docker applications.
 @z
 
+%params:
+@x
+  skill: Beginner
+  time: 5 minutes
+  prereq: None
+@y
+  skill: 初心者向け
+  time: 5 分
+  prereq: なし
+@z
+
 @x
 {{< columns >}}
 @y

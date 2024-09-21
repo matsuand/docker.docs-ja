@@ -9,7 +9,7 @@ title: Multi-stage builds
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the purpose of the multi-stage build and its benefits
 @y
-title: Multi-stage builds
+title: マルチステージビルド
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the purpose of the multi-stage build and its benefits
 @z

@@ -6,7 +6,7 @@ title: Configure CI/CD for your C++ application
 linkTitle: Configure CI/CD
 @y
 title: C++ アプリケーション向けの CI/CD 設定
-linkTitle: CI/CD 設定
+linkTitle: CI/CD の設定
 @z
 
 @x

@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Containerize a PHP application
 linkTitle: Containerize your app
 @y
-title: Containerize a PHP application
-linkTitle: Containerize your app
+title: PHP アプリケーションのコンテナー化
+linkTitle: アプリのコンテナー化
 @z
 
 @x

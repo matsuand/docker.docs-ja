@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ �Ή�
+% __SUBDIR__ 対応
 
 @x
 title: Educational resources
@@ -9,7 +9,7 @@ keywords: get started, setup, orientation, quickstart, intro, concepts, kubernet
   docker desktop
 description: Get started resources learning docker
 @y
-title: Educational resources
+title: 学習情報
 keywords: get started, setup, orientation, quickstart, intro, concepts, kubernetes,
   docker desktop
 description: Get started resources learning docker

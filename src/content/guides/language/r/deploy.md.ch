@@ -8,8 +8,8 @@
 title: Test your R deployment
 linkTitle: Test your deployment
 @y
-title: Test your R deployment
-linkTitle: Test your deployment
+title: R 言語デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

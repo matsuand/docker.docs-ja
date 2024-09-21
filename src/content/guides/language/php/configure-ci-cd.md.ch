@@ -7,8 +7,8 @@
 title: Configure CI/CD for your PHP application
 linkTitle: Configure CI/CD
 @y
-title: Configure CI/CD for your PHP application
-linkTitle: Configure CI/CD
+title: PHP アプリケーション向けの CI/CD 設定
+linkTitle: CI/CD の設定
 @z
 
 @x

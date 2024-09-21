@@ -2,25 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Configure CI/CD for your .NET application
 linkTitle: Configure CI/CD
-weight: 40
-keywords: .net, CI/CD
-description: Learn how to Configure CI/CD for your .NET application
-aliases:
-- /language/dotnet/configure-ci-cd/
----
 @y
----
-title: Configure CI/CD for your .NET application
-linkTitle: Configure CI/CD
-weight: 40
+title: .NET アプリケーション向けの CI/CD 設定
+linkTitle: CI/CD の設定
+@z
+
+@x
 keywords: .net, CI/CD
 description: Learn how to Configure CI/CD for your .NET application
-aliases:
-- /language/dotnet/configure-ci-cd/
----
+@y
+keywords: .net, CI/CD
+description: Learn how to Configure CI/CD for your .NET application
 @z
 
 @x

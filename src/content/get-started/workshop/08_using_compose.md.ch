@@ -6,14 +6,16 @@
 @x
 title: Use Docker Compose
 @y
-title: Use Docker Compose
+title: Docker Compose の利用
 @z
 
 @x
+linkTitle: "Part 7: Use Docker Compose"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using Docker Compose for multi-container applications
 @y
+linkTitle: "7 部: Docker Compose の利用"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Using Docker Compose for multi-container applications

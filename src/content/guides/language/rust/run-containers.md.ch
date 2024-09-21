@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Run your Rust image as a container
 linkTitle: Run containers
 @y
-title: Run your Rust image as a container
-linkTitle: Run containers
+title: コンテナーとしての Rust イメージの実行
+linkTitle: コンテナーの実行
 @z
 
 @x

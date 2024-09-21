@@ -2,27 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Build your Go image
 linkTitle: Build images
-weight: 5
-keywords: containers, images, go, golang, dockerfiles, coding, build, push, run
-description: Learn how to build your first Docker image by writing a Dockerfile
-aliases:
-- /get-started/golang/build-images/
-- /language/golang/build-images/
----
 @y
----
-title: Build your Go image
-linkTitle: Build images
-weight: 5
+title: Go 言語イメージのビルド
+linkTitle: イメージのビルド
+@z
+
+@x
 keywords: containers, images, go, golang, dockerfiles, coding, build, push, run
 description: Learn how to build your first Docker image by writing a Dockerfile
-aliases:
-- /get-started/golang/build-images/
-- /language/golang/build-images/
----
+@y
+keywords: containers, images, go, golang, dockerfiles, coding, build, push, run
+description: Learn how to build your first Docker image by writing a Dockerfile
 @z
 
 @x

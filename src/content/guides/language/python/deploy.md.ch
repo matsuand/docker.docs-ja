@@ -8,8 +8,8 @@
 title: Test your Python deployment
 linkTitle: Test your deployment
 @y
-title: Test your Python deployment
-linkTitle: Test your deployment
+title: Python デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

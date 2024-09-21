@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Configure CI/CD for your Rust application
 linkTitle: Configure CI/CD
 @y
-title: Configure CI/CD for your Rust application
-linkTitle: Configure CI/CD
+title: Rust アプリケーション向けの CI/CD 設定
+linkTitle: CI/CD の設定
 @z
 
 @x

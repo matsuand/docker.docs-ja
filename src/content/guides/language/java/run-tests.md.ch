@@ -2,25 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Run your Java tests
 linkTitle: Run your tests
-weight: 30
-keywords: Java, build, test
-description: How to build and run your Java tests
-aliases:
-- /language/java/run-tests/
----
 @y
----
-title: Run your Java tests
-linkTitle: Run your tests
-weight: 30
+title: Java テストの実行
+linkTitle: テストの実行
+@z
+
+@x
 keywords: Java, build, test
 description: How to build and run your Java tests
-aliases:
-- /language/java/run-tests/
----
+@y
+keywords: Java, build, test
+description: How to build and run your Java tests
 @z
 
 @x

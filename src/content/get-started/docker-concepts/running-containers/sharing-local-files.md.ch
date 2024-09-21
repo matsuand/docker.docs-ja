@@ -6,7 +6,7 @@
 @x
 title: Sharing local files with containers
 @y
-title: Sharing local files with containers
+title: コンテナーにおけるローカルファイルの共有
 @z
 
 @x

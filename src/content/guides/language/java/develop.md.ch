@@ -8,8 +8,8 @@
 title: Use containers for Java development
 linkTitle: Develop your app
 @y
-title: Use containers for Java development
-linkTitle: Develop your app
+title: コンテナーを利用した Java 開発
+linkTitle: アプリの開発
 @z
 
 @x

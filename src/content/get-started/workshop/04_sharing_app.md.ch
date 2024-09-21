@@ -10,11 +10,13 @@ title: アプリケーションの共有
 @z
 
 @x
+linkTitle: "Part 3: Share the application"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop, docker hub, sharing
 description: Sharing your image you built for your example application so you can
   run it else where and other developers can use it
 @y
+linkTitle: "3 部: アプリケーションの共有"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop, docker hub, sharing
 description: Sharing your image you built for your example application so you can

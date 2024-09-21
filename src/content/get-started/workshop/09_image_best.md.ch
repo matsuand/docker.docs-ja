@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Image-building best practices
@@ -10,10 +10,12 @@ title: イメージビルドのベストプラクティス
 @z
 
 @x
+linkTitle: "Part 8: Image-building best practices"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Tips for building images for your application
 @y
+linkTitle: "8 部: イメージビルドのベストプラクティス"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Tips for building images for your application

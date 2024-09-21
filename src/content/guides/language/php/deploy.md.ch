@@ -7,8 +7,8 @@
 title: Test your PHP deployment
 linkTitle: Test your deployment
 @y
-title: Test your PHP deployment
-linkTitle: Test your deployment
+title: PHP デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

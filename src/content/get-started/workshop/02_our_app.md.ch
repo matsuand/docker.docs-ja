@@ -10,12 +10,14 @@ title: アプリケーションのコンテナー化
 @z
 
 @x
+linkTitle: "Part 1: Containerize an application"
 keywords: dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers
 description: Follow this step-by-step guide to learn how to create and run a containerized
   application using Docker
 @y
+linkTitle: "1部: アプリケーションのコンテナー化"
 keywords: dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers

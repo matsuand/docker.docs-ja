@@ -10,10 +10,12 @@ title: アプリケーションの更新
 @z
 
 @x
+linkTitle: "Part 2: Update the application"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making changes to your application
 @y
+linkTitle: "2 部: アプリケーションの更新"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: アプリケーションに変更を加えます。

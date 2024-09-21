@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -9,7 +9,7 @@ title: Containerize a R application
 linkTitle: Containerize your app
 @y
 title: R 言語アプリケーションのコンテナー化
-linkTitle: Containerize your app
+linkTitle: アプリのコンテナー化
 @z
 
 @x

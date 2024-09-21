@@ -2,29 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Building images
-weight: 20
-keywords: build images, Dockerfile, layers, tag, push, cache, multi-stage
-description: |
-  Learn how to build Docker images from a Dockerfile. You'll understand the
-  structure of a Dockerfile, how to build an image, and how to customize the
-  build process.
-summary: |
-  Building container images is both technical and an art. You want to keep the
-  image small and focused to increase your security posture, but also need to
-  balance potential tradeoffs, such as caching impacts. In this series, you’ll
-  deep dive into the secrets of images, how they are built and best practices.
-layout: series
-params:
-  skill: Beginner
-  time: 25 minutes
-  prereq: None
----
 @y
----
-title: Building images
-weight: 20
+title: イメージのビルド
+@z
+
+@x
 keywords: build images, Dockerfile, layers, tag, push, cache, multi-stage
 description: |
   Learn how to build Docker images from a Dockerfile. You'll understand the
@@ -35,18 +18,34 @@ summary: |
   image small and focused to increase your security posture, but also need to
   balance potential tradeoffs, such as caching impacts. In this series, you’ll
   deep dive into the secrets of images, how they are built and best practices.
-layout: series
-params:
+@y
+keywords: build images, Dockerfile, layers, tag, push, cache, multi-stage
+description: |
+  Learn how to build Docker images from a Dockerfile. You'll understand the
+  structure of a Dockerfile, how to build an image, and how to customize the
+  build process.
+summary: |
+  Building container images is both technical and an art. You want to keep the
+  image small and focused to increase your security posture, but also need to
+  balance potential tradeoffs, such as caching impacts. In this series, you’ll
+  deep dive into the secrets of images, how they are built and best practices.
+@z
+
+% params:
+@x
   skill: Beginner
   time: 25 minutes
   prereq: None
----
+@y
+  skill: 初心者向け
+  time: 25 分
+  prereq: なし
 @z
 
 @x
 ## About this series
 @y
-## About this series
+## 本シリーズについて {#about-this-series}
 @z
 
 @x

@@ -1,19 +1,21 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: What next after the Docker workshop
 @y
-title: What next after the Docker workshop
+title: Docker ワークショップの次にすることは
 @z
 
 @x
+linkTitle: "Part 9: What next"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making sure you have more ideas of what you could do next with your application
 @y
+linkTitle: "9 部: 次は何"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making sure you have more ideas of what you could do next with your application

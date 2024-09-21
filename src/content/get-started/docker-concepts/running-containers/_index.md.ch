@@ -2,17 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-build:
-  render: never
 title: Running containers
-weight: 30
----
 @y
----
-build:
-  render: never
-title: Running containers
-weight: 30
----
+title: コンテナーの実行
 @z

@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Multi-container applications
-weight: 5
+@y
+title: マルチコンテナーアプリケーション
+@z
+
+@x
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of multi-container application and how it is different from single-container application
 @y
-title: Multi-container applications
-weight: 5
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you the significance of multi-container application and how it is different from single-container application
 @z

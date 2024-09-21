@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 title: Run Node.js tests in a container
 linkTitle: Run your tests
 @y
 title: コンテナーでの Node.js テストの実行
-linkTitle: Run your tests
+linkTitle: テストの実行
 @z
 
 @x

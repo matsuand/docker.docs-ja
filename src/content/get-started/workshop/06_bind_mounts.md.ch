@@ -10,9 +10,11 @@ title: バインドマウントの利用
 @z
 
 @x
+linkTitle: "Part 5: Use bind mounts"
 keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers, docker desktop'
 description: Using bind mounts in our application
 @y
+linkTitle: "5 部: バインドマウントの利用"
 keywords: 'get started, setup, orientation, quickstart, intro, concepts, containers, docker desktop'
 description: Using bind mounts in our application
 @z

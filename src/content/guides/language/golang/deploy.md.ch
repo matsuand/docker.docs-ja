@@ -7,8 +7,8 @@
 title: Test your Go deployment
 linkTitle: Test your deployment
 @y
-title: Test your Go deployment
-linkTitle: Test your deployment
+title: Go 言語デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

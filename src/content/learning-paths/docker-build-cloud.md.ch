@@ -17,6 +17,17 @@ summary: |
   Create applications up to 39x faster using cloud-based resources, shared team cache, and native multi-architecture support.
 @z
 
+%params
+@x
+  skill: Beginner
+  time: 10 minutes
+  prereq: None
+@y
+  skill: 初心者向け
+  time: 10 分
+  prereq: なし
+@z
+
 @x
 {{< columns >}}
 @y

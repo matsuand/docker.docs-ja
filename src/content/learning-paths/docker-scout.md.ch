@@ -23,6 +23,17 @@ description: |
   your development workflow.
 @z
 
+%params
+@x
+  skill: Beginner
+  time: 10 minutes
+  prereq: None
+@y
+  skill: 初心者向け
+  time: 10 分
+  prereq: なし
+@z
+
 @x
 {{< columns >}}
 @y

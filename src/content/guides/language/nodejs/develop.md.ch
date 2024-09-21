@@ -9,7 +9,7 @@ title: Use containers for Node.js development
 linkTitle: Develop your app
 @y
 title: コンテナーを利用した Node.js 開発
-linkTitle: Develop your app
+linkTitle: アプリの開発
 @z
 
 @x

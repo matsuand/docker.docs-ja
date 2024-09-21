@@ -6,7 +6,7 @@
 @x
 title: Overriding container defaults
 @y
-title: Overriding container defaults
+title: コンテナーデフォルトのオーバーライド
 @z
 
 @x

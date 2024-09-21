@@ -7,8 +7,8 @@
 title: Develop your Rust application
 linkTitle: Develop your app
 @y
-title: Develop your Rust application
-linkTitle: Develop your app
+title: Rust アプリケーションの開発
+linkTitle: アプリの開発
 @z
 
 @x

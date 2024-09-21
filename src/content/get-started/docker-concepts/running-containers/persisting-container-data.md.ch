@@ -6,7 +6,7 @@
 @x
 title: Persisting container data
 @y
-title: Persisting container data
+title: コンテナーデータの保存
 @z
 
 @x

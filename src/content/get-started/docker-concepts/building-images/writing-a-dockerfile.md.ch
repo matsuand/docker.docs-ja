@@ -9,7 +9,7 @@ title: Writing a Dockerfile
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to create image using Dockerfile.
 @y
-title: Writing a Dockerfile
+title: Dockerfile の記述
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you how to create image using Dockerfile.
 @z

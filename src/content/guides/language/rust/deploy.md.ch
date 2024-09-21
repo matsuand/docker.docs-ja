@@ -7,8 +7,8 @@
 title: Test your Rust deployment
 linkTitle: Test your deployment
 @y
-title: Test your Rust deployment
-linkTitle: Test your deployment
+title: Rust デプロイのテスト
+linkTitle: デプロイのテスト
 @z
 
 @x

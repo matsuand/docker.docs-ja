@@ -7,8 +7,8 @@
 title: Use containers for R development
 linkTitle: Develop your app
 @y
-title: コンテナーを利用した R 言語開発
-linkTitle: Develop your app
+title: コンテナーを利用した R 言語の開発
+linkTitle: アプリの開発
 @z
 
 @x

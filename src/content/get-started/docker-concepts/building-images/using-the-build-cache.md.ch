@@ -8,7 +8,7 @@ title: Using the build cache
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the build cache, what changes invalidate the cache and how to effectively use the build cache.
 @y
-title: Using the build cache
+title: ビルドキャッシュの利用
 keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the build cache, what changes invalidate the cache and how to effectively use the build cache.
 @z

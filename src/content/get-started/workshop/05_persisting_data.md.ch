@@ -10,10 +10,12 @@ title: DB への保存
 @z
 
 @x
+linkTitle: "Part 4: Persist the DB"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
 @y
+linkTitle: "4 部: DB への保存"
 keywords: get started, setup, orientation, quickstart, intro, concepts, containers,
   docker desktop
 description: Making your DB persistent in your application
