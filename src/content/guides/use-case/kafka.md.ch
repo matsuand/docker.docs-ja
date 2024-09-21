@@ -6,6 +6,7 @@
 description: Developing event-driven applications with Kafka and Docker
 keywords: kafka, container-supported development
 title: Developing event-driven applications with Kafka and Docker
+linktitle: Event-driven apps with Kafka
 toc_max: 2
 ---
 @y
@@ -13,6 +14,7 @@ toc_max: 2
 description: Developing event-driven applications with Kafka and Docker
 keywords: kafka, container-supported development
 title: Developing event-driven applications with Kafka and Docker
+linktitle: Event-driven apps with Kafka
 toc_max: 2
 ---
 @z
