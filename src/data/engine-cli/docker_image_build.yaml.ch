@@ -8,8 +8,7 @@ command: docker image build
 aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |-
-    > **Note**
-    >
+    > [!NOTE]
     > This page refers to the **legacy implementation** of `docker build`,
     > using the legacy (pre-BuildKit) build backend.
     > This configuration is only relevant if you're building Windows containers.
@@ -21,8 +20,7 @@ command: docker image build
 aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |-
-    > **Note**
-    >
+    > [!NOTE]
     > This page refers to the **legacy implementation** of `docker build`,
     > using the legacy (pre-BuildKit) build backend.
     > This configuration is only relevant if you're building Windows containers.
@@ -452,11 +450,11 @@ examples: |-
 @z
 
 @x
-    > **Note**
+    > [!NOTE]
     > The `--squash` option is an experimental feature, and should not be considered
     > stable.
 @y
-    > **Note**
+    > [!NOTE]
     > The `--squash` option is an experimental feature, and should not be considered
     > stable.
 @z

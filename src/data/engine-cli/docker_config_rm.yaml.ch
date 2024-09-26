@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 command: docker config rm
@@ -24,87 +25,49 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker config rm CONFIG [CONFIG...]
-pname: docker config
-plink: docker_config.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker config rm CONFIG [CONFIG...]
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     This example removes a config:
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a Swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker config rm CONFIG [CONFIG...]
-pname: docker config
-plink: docker_config.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     This example removes a config:
 @z
 
-@x
-    ```console
-    $ docker config rm my_config
-    sapth4csdo5b6wz2p5uimh5xg
-    ```
-@y
-    ```console
-    $ docker config rm my_config
-    sapth4csdo5b6wz2p5uimh5xg
-    ```
-@z
+% snip command...
 
 @x
-    > **Warning**
-    >
+    > [!WARNING]
     > This command doesn't ask for confirmation before removing a config.
     { .warning }
-deprecated: false
-hidden: false
-min_api_version: "1.30"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
-    > **Warning**
-    >
+    > [!WARNING]
     > This command doesn't ask for confirmation before removing a config.
     { .warning }
-deprecated: false
-hidden: false
-min_api_version: "1.30"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @z
+
+% snip directives...

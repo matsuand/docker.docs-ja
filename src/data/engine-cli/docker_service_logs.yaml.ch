@@ -16,19 +16,15 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
 @z
 
 @x
@@ -44,13 +40,11 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This command is only functional for services that are started with
     > the `json-file` or `journald` logging driver.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > This command is only functional for services that are started with
     > the `json-file` or `journald` logging driver.
 @z

@@ -16,200 +16,86 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker swarm ca [OPTIONS]
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: ca-cert
-      value_type: pem-file
+@y
+usage: docker swarm ca [OPTIONS]
+@z
+
+% options:
+
+@x ca-cert
       description: |
         Path to the PEM-formatted root CA certificate to use for the new cluster
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ca-key
-      value_type: pem-file
+@y
+      description: |
+        Path to the PEM-formatted root CA certificate to use for the new cluster
+@z
+
+@x ca-key
       description: Path to the PEM-formatted root CA key to use for the new cluster
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cert-expiry
-      value_type: duration
-      default_value: 2160h0m0s
+@y
+      description: Path to the PEM-formatted root CA key to use for the new cluster
+@z
+
+@x cert-expiry
       description: Validity period for node certificates (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@y
+      description: Validity period for node certificates (ns|us|ms|s|m|h)
+@z
+
+@x detach
       description: |
         Exit immediately instead of waiting for the root rotation to converge
-      details_url: '#detach'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: external-ca
-      value_type: external-ca
+@y
+      description: |
+        Exit immediately instead of waiting for the root rotation to converge
+@z
+
+@x external-ca
       description: Specifications of one or more certificate signing endpoints
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Specifications of one or more certificate signing endpoints
+@z
+
+@x quiet
       description: Suppress progress output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rotate
-      value_type: bool
-      default_value: "false"
+@y
+      description: Suppress progress output
+@z
+
+@x rotate
       description: |
         Rotate the swarm CA - if no certificate or key are provided, new ones will be generated
-      details_url: '#rotate'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Rotate the swarm CA - if no certificate or key are provided, new ones will be generated
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     Run the `docker swarm ca` command without any options to view the current root CA certificate
     in PEM format.
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker swarm ca [OPTIONS]
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: ca-cert
-      value_type: pem-file
-      description: |
-        Path to the PEM-formatted root CA certificate to use for the new cluster
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ca-key
-      value_type: pem-file
-      description: Path to the PEM-formatted root CA key to use for the new cluster
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cert-expiry
-      value_type: duration
-      default_value: 2160h0m0s
-      description: Validity period for node certificates (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: |
-        Exit immediately instead of waiting for the root rotation to converge
-      details_url: '#detach'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: external-ca
-      value_type: external-ca
-      description: Specifications of one or more certificate signing endpoints
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress progress output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rotate
-      value_type: bool
-      default_value: "false"
-      description: |
-        Rotate the swarm CA - if no certificate or key are provided, new ones will be generated
-      details_url: '#rotate'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     Run the `docker swarm ca` command without any options to view the current root CA certificate
     in PEM format.
@@ -324,15 +210,13 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Mirantis Kubernetes Engine (MKE), formerly known as Docker UCP, provides an external
     > certificate manager service for the swarm. If you run swarm on MKE, you shouldn't
     > rotate the CA certificates manually. Instead, contact Mirantis support if you need
     > to rotate a certificate.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Mirantis Kubernetes Engine (MKE), formerly known as Docker UCP, provides an external
     > certificate manager service for the swarm. If you run swarm on MKE, you shouldn't
     > rotate the CA certificates manually. Instead, contact Mirantis support if you need

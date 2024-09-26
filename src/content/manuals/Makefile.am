@@ -2,8 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS =  accounts admin billing build build-cloud cloud compose    \
-	copilot desktop docker-hub engine extensions run-cloud scout \
+SUBDIRS =  accounts admin billing build build-cloud cloud compose   \
+	copilot desktop docker-hub engine extensions harmonia scout \
 	security subscription trusted-content
 
 bases = \

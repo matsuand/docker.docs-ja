@@ -24,89 +24,49 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker secret rm SECRET [SECRET...]
-pname: docker secret
-plink: docker_secret.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker secret rm SECRET [SECRET...]
+@z
+
+% inherited_options:
+
+@x
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     This example removes a secret:
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker secret rm SECRET [SECRET...]
-pname: docker secret
-plink: docker_secret.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     This example removes a secret:
 @z
 
-@x
-    ```console
-    $ docker secret rm secret.json
-    sapth4csdo5b6wz2p5uimh5xg
-    ```
-@y
-    ```console
-    $ docker secret rm secret.json
-    sapth4csdo5b6wz2p5uimh5xg
-    ```
-@z
+% snip command...
 
 @x
-    > **Warning**
-    >
+    > [!WARNING]
     > Unlike `docker rm`, this command does not ask for confirmation before removing
     > a secret.
-    { .warning }
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
-    > **Warning**
-    >
+    > [!WARNING]
     > Unlike `docker rm`, this command does not ask for confirmation before removing
     > a secret.
-    { .warning }
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @z
+
+% snip directives...

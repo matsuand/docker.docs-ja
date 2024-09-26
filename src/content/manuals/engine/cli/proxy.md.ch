@@ -202,10 +202,10 @@ sections for configuring proxy settings for the CLI and daemon.
 @z
 
 @x
-When you start a container, its proxy-related environment variable are set
+When you start a container, its proxy-related environment variables are set
 to reflect your proxy configuration in `~/.docker/config.json`.
 @y
-When you start a container, its proxy-related environment variable are set
+When you start a container, its proxy-related environment variables are set
 to reflect your proxy configuration in `~/.docker/config.json`.
 @z
 

@@ -24,12 +24,20 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > This is a cluster management command, and must be executed on a swarm
+    > manager node. To learn about managers and workers, refer to the
+    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
+    > documentation.
+@z
+
+@x
 usage: docker node inspect [OPTIONS] self|NODE [NODE...]
 pname: docker node
 plink: docker_node.yaml
@@ -73,12 +81,6 @@ inherited_options:
 examples: |-
     ### Inspect a node
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
 usage: docker node inspect [OPTIONS] self|NODE [NODE...]
 pname: docker node
 plink: docker_node.yaml

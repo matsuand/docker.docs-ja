@@ -203,7 +203,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/extensions/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
-	src/content/manuals/run-cloud/Makefile
+	src/content/manuals/harmonia/Makefile
 	src/content/manuals/scout/Makefile
 	src/content/manuals/scout/concepts/Makefile
 	src/content/manuals/scout/deep-dive/Makefile

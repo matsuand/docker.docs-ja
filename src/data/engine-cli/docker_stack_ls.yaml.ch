@@ -18,18 +18,26 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker stack ls [OPTIONS]
-pname: docker stack
-plink: docker_stack.yaml
-options:
-    - option: format
-      value_type: string
+@y
+usage: docker stack ls [OPTIONS]
+@z
+
+% options:
+
+@x format
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -37,48 +45,7 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: orchestrator
-      value_type: string
-      description: Orchestrator to use (swarm|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    The following command shows all stacks and some additional information:
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker stack ls [OPTIONS]
-pname: docker stack
-plink: docker_stack.yaml
-options:
-    - option: format
-      value_type: string
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -86,56 +53,31 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: orchestrator
-      value_type: string
+@y
+      description: Print usage
+@z
+
+@x orchestrator
       description: Orchestrator to use (swarm|all)
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Orchestrator to use (swarm|all)
+@z
+
+@x
+examples: |-
+    The following command shows all stacks and some additional information:
+@y
 examples: |-
     The following command shows all stacks and some additional information:
 @z
 
-@x
-    ```console
-    $ docker stack ls
-@y
-    ```console
-    $ docker stack ls
-@z
-
-@x
-    ID                 SERVICES            ORCHESTRATOR
-    myapp              2                   Kubernetes
-    vossibility-stack  6                   Swarm
-    ```
-@y
-    ID                 SERVICES            ORCHESTRATOR
-    myapp              2                   Kubernetes
-    vossibility-stack  6                   Swarm
-    ```
-@z
+% snip command...
 
 @x
     ### Format the output (--format) {#format}
@@ -189,19 +131,7 @@ examples: |-
     `Name` and `Services` entries separated by a colon (`:`) for all stacks:
 @z
 
-@x
-    ```console
-    $ docker stack ls --format "{{.Name}}: {{.Services}}"
-    web-server: 1
-    web-cache: 4
-    ```
-@y
-    ```console
-    $ docker stack ls --format "{{.Name}}: {{.Services}}"
-    web-server: 1
-    web-cache: 4
-    ```
-@z
+% snip command...
 
 @x
     To list all stacks in JSON format, use the `json` directive:
@@ -209,28 +139,5 @@ examples: |-
     To list all stacks in JSON format, use the `json` directive:
 @z
 
-@x
-    ```console
-    $ docker stack ls --format json
-    {"Name":"myapp","Namespace":"","Orchestrator":"Swarm","Services":"3"}
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    ```console
-    $ docker stack ls --format json
-    {"Name":"myapp","Namespace":"","Orchestrator":"Swarm","Services":"3"}
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip command...
+% snip directives...

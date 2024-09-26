@@ -38,101 +38,59 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker config inspect [OPTIONS] CONFIG [CONFIG...]
-pname: docker config
-plink: docker_config.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pretty
-      value_type: bool
-      default_value: "false"
-      description: Print the information in a human friendly format
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Inspect a config by name or ID
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a Swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
+@z
+
+@x
 usage: docker config inspect [OPTIONS] CONFIG [CONFIG...]
-pname: docker config
-plink: docker_config.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
+@y
+usage: docker config inspect [OPTIONS] CONFIG [CONFIG...]
+@z
+
+% options:
+
+@x format
       description: |-
         Format output using a custom template:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pretty
-      value_type: bool
-      default_value: "false"
+@y
+      description: |-
+        Format output using a custom template:
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+@x pretty
       description: Print the information in a human friendly format
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Print the information in a human friendly format
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Inspect a config by name or ID
+@y
 examples: |-
     ### Inspect a config by name or ID
 @z

@@ -16,211 +16,80 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker swarm update [OPTIONS]
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: autolock
-      value_type: bool
-      default_value: "false"
-      description: Change manager autolocking setting (true|false)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cert-expiry
-      value_type: duration
-      default_value: 2160h0m0s
-      description: Validity period for node certificates (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dispatcher-heartbeat
-      value_type: duration
-      default_value: 5s
-      description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: external-ca
-      value_type: external-ca
-      description: Specifications of one or more certificate signing endpoints
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: max-snapshots
-      value_type: uint64
-      default_value: "0"
-      description: Number of additional Raft snapshots to retain
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: snapshot-interval
-      value_type: uint64
-      default_value: "10000"
-      description: Number of log entries between Raft snapshots
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: task-history-limit
-      value_type: int64
-      default_value: "5"
-      description: Task history retention limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker swarm update --cert-expiry 720h
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker swarm update [OPTIONS]
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: autolock
-      value_type: bool
-      default_value: "false"
-      description: Change manager autolocking setting (true|false)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cert-expiry
-      value_type: duration
-      default_value: 2160h0m0s
-      description: Validity period for node certificates (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dispatcher-heartbeat
-      value_type: duration
-      default_value: 5s
-      description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: external-ca
-      value_type: external-ca
-      description: Specifications of one or more certificate signing endpoints
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: max-snapshots
-      value_type: uint64
-      default_value: "0"
-      description: Number of additional Raft snapshots to retain
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: snapshot-interval
-      value_type: uint64
-      default_value: "10000"
-      description: Number of log entries between Raft snapshots
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: task-history-limit
-      value_type: int64
-      default_value: "5"
-      description: Task history retention limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker swarm update --cert-expiry 720h
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
 @z
+
+@x
+usage: docker swarm update [OPTIONS]
+@y
+usage: docker swarm update [OPTIONS]
+@z
+
+% options:
+
+@x autolock
+      description: Change manager autolocking setting (true|false)
+@y
+      description: Change manager autolocking setting (true|false)
+@z
+
+@x cert-expiry
+      description: Validity period for node certificates (ns|us|ms|s|m|h)
+@y
+      description: Validity period for node certificates (ns|us|ms|s|m|h)
+@z
+
+@x dispatcher-heartbeat
+      description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
+@y
+      description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
+@z
+
+@x external-ca
+      description: Specifications of one or more certificate signing endpoints
+@y
+      description: Specifications of one or more certificate signing endpoints
+@z
+
+@x max-snapshots
+      description: Number of additional Raft snapshots to retain
+@y
+      description: Number of additional Raft snapshots to retain
+@z
+
+@x snapshot-interval
+      description: Number of log entries between Raft snapshots
+@y
+      description: Number of log entries between Raft snapshots
+@z
+
+@x task-history-limit
+      description: Task history retention limit
+@y
+      description: Task history retention limit
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+@y
+examples: |-
+@z
+
+% snip command...
+% snip directives...

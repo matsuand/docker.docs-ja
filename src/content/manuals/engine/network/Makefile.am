@@ -5,6 +5,7 @@ SUBDIRS = drivers tutorials
 
 bases = \
 	_index.md                     \
+	ca-certs.md                   \
 	links.md                      \
 	packet-filtering-firewalls.md
 

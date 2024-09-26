@@ -18,29 +18,32 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker service ls [OPTIONS]
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
+@y
+usage: docker service ls [OPTIONS]
+@z
+
+% options:
+
+@x filter
       description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
+@y
+      description: Filter output based on conditions provided
+@z
+
+@x format
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -48,61 +51,7 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    On a manager node:
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker service ls [OPTIONS]
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
-      description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -110,62 +59,31 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@z
+
+@x quiet
       description: Only display IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Only display IDs
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    On a manager node:
+@y
 examples: |-
     On a manager node:
 @z
 
-@x
-    ```console
-    $ docker service ls
-@y
-    ```console
-    $ docker service ls
-@z
-
-@x
-    ID            NAME      MODE            REPLICAS             IMAGE
-    c8wgl7q4ndfd  frontend  replicated      5/5                  nginx:alpine
-    dmu1ept4cxcf  redis     replicated      3/3                  redis:3.0.6
-    iwe3278osahj  mongo     global          7/7                  mongo:3.3
-    hh08h9uu8uwr  job       replicated-job  1/1 (3/5 completed)  nginx:latest
-    ```
-@y
-    ID            NAME      MODE            REPLICAS             IMAGE
-    c8wgl7q4ndfd  frontend  replicated      5/5                  nginx:alpine
-    dmu1ept4cxcf  redis     replicated      3/3                  redis:3.0.6
-    iwe3278osahj  mongo     global          7/7                  mongo:3.3
-    hh08h9uu8uwr  job       replicated-job  1/1 (3/5 completed)  nginx:latest
-    ```
-@z
+% snip command...
 
 @x
     The `REPLICAS` column shows both the actual and desired number of tasks for
@@ -229,19 +147,7 @@ examples: |-
     The following filter matches services with an ID starting with `0bcjw`:
 @z
 
-@x
-    ```console
-    $ docker service ls -f "id=0bcjw"
-    ID            NAME   MODE        REPLICAS  IMAGE
-    0bcjwfh8ychr  redis  replicated  1/1       redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service ls -f "id=0bcjw"
-    ID            NAME   MODE        REPLICAS  IMAGE
-    0bcjwfh8ychr  redis  replicated  1/1       redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     #### label
@@ -265,23 +171,7 @@ examples: |-
     its value:
 @z
 
-@x
-    ```console
-    $ docker service ls --filter label=project
-    ID            NAME       MODE        REPLICAS  IMAGE
-    01sl1rp6nj5u  frontend2  replicated  1/1       nginx:alpine
-    36xvvwwauej0  frontend   replicated  5/5       nginx:alpine
-    74nzcxxjv6fq  backend    replicated  3/3       redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service ls --filter label=project
-    ID            NAME       MODE        REPLICAS  IMAGE
-    01sl1rp6nj5u  frontend2  replicated  1/1       nginx:alpine
-    36xvvwwauej0  frontend   replicated  5/5       nginx:alpine
-    74nzcxxjv6fq  backend    replicated  3/3       redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     The following filter matches only services with the `project` label with the
@@ -291,21 +181,7 @@ examples: |-
     `project-a` value.
 @z
 
-@x
-    ```console
-    $ docker service ls --filter label=project=project-a
-    ID            NAME      MODE        REPLICAS  IMAGE
-    36xvvwwauej0  frontend  replicated  5/5       nginx:alpine
-    74nzcxxjv6fq  backend   replicated  3/3       redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service ls --filter label=project=project-a
-    ID            NAME      MODE        REPLICAS  IMAGE
-    36xvvwwauej0  frontend  replicated  5/5       nginx:alpine
-    74nzcxxjv6fq  backend   replicated  3/3       redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     #### mode
@@ -325,19 +201,7 @@ examples: |-
     The following filter matches only `global` services.
 @z
 
-@x
-    ```console
-    $ docker service ls --filter mode=global
-    ID                  NAME                MODE                REPLICAS            IMAGE
-    w7y0v2yrn620        top                 global              1/1                 busybox
-    ```
-@y
-    ```console
-    $ docker service ls --filter mode=global
-    ID                  NAME                MODE                REPLICAS            IMAGE
-    w7y0v2yrn620        top                 global              1/1                 busybox
-    ```
-@z
+% snip command...
 
 @x
     #### name
@@ -357,19 +221,7 @@ examples: |-
     The following filter matches services with a name starting with `redis`.
 @z
 
-@x
-    ```console
-    $ docker service ls --filter name=redis
-    ID            NAME   MODE        REPLICAS  IMAGE
-    0bcjwfh8ychr  redis  replicated  1/1       redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service ls --filter name=redis
-    ID            NAME   MODE        REPLICAS  IMAGE
-    0bcjwfh8ychr  redis  replicated  1/1       redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     ### Format the output (--format) {#format}
@@ -429,23 +281,7 @@ examples: |-
     `ID`, `Mode`, and `Replicas` entries separated by a colon (`:`) for all services:
 @z
 
-@x
-    ```console
-    $ docker service ls --format "{{.ID}}: {{.Mode}} {{.Replicas}}"
-@y
-    ```console
-    $ docker service ls --format "{{.ID}}: {{.Mode}} {{.Replicas}}"
-@z
-
-@x
-    0zmvwuiu3vue: replicated 10/10
-    fm6uf97exkul: global 5/5
-    ```
-@y
-    0zmvwuiu3vue: replicated 10/10
-    fm6uf97exkul: global 5/5
-    ```
-@z
+% snip command...
 
 @x
     To list all services in JSON format, use the `json` directive:
@@ -453,28 +289,4 @@ examples: |-
     To list all services in JSON format, use the `json` directive:
 @z
 
-@x
-    ```console
-    $ docker service ls --format json
-    {"ID":"ssniordqolsi","Image":"hello-world:latest","Mode":"replicated","Name":"hello","Ports":"","Replicas":"0/1"}
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    ```console
-    $ docker service ls --format json
-    {"ID":"ssniordqolsi","Image":"hello-world:latest","Mode":"replicated","Name":"hello","Ports":"","Replicas":"0/1"}
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip directives...

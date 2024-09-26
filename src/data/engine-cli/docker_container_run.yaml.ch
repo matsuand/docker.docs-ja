@@ -972,14 +972,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Docker disallows combining the `--hostname` and `--domainname` flags with
     > `--uts=host`. This is to prevent containers running in the host's UTS
     > namespace from attempting to change the hosts' configuration.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Docker disallows combining the `--hostname` and `--domainname` flags with
     > `--uts=host`. This is to prevent containers running in the host's UTS
     > namespace from attempting to change the hosts' configuration.
@@ -1116,8 +1114,7 @@ examples: |-
 @z
 
 @x
-    > **Warning**
-    >
+    > [!WARNING]
     > Use the `--privileged` flag with caution.
     > A container with `--privileged` is not a securely sandboxed process.
     > Containers in this mode can get a root shell on the host
@@ -1130,10 +1127,8 @@ examples: |-
     >
     > For more information, see
     > [Runtime privilege and Linux capabilities](/engine/containers/run/#runtime-privilege-and-linux-capabilities)
-    { .warning }
 @y
-    > **Warning**
-    >
+    > [!WARNING]
     > Use the `--privileged` flag with caution.
     > A container with `--privileged` is not a securely sandboxed process.
     > Containers in this mode can get a root shell on the host
@@ -1146,7 +1141,6 @@ examples: |-
     >
     > For more information, see
     > [Runtime privilege and Linux capabilities](__SUBDIR__/engine/containers/run/#runtime-privilege-and-linux-capabilities)
-    { .warning }
 @z
 
 @x
@@ -1422,8 +1416,7 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > If you don't specify an IP address (i.e., `-p 80:80` instead of `-p
     > 127.0.0.1:80:80`) when publishing a container's ports, Docker publishes the
     > port on all interfaces (address `0.0.0.0`) by default. These ports are
@@ -1431,8 +1424,7 @@ examples: |-
     > specific port, as Docker manages its own iptables rules. [Read
     > more](/network/packet-filtering-firewalls/)
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > If you don't specify an IP address (i.e., `-p 80:80` instead of `-p
     > 127.0.0.1:80:80`) when publishing a container's ports, Docker publishes the
     > port on all interfaces (address `0.0.0.0`) by default. These ports are
@@ -1755,16 +1747,12 @@ examples: |-
 
 % snip command...
 
-
-
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Network drivers may restrict the sysctl settings that can be modified and, to protect
     > the operation of the network, new restrictions may be added in the future.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Network drivers may restrict the sysctl settings that can be modified and, to protect
     > the operation of the network, new restrictions may be added in the future.
 @z
@@ -1980,13 +1968,11 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `--device` option cannot be safely used with ephemeral devices. You shouldn't
     > add block devices that may be removed to untrusted containers with `--device`.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `--device` option cannot be safely used with ephemeral devices. You shouldn't
     > add block devices that may be removed to untrusted containers with `--device`.
 @z
@@ -2026,13 +2012,11 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `--device` option is only supported on process-isolated Windows containers,
     > and produces an error if the container isolation is `hyperv`.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `--device` option is only supported on process-isolated Windows containers,
     > and produces an error if the container isolation is `hyperv`.
 @z
@@ -2044,13 +2028,11 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The CDI feature is experimental, and potentially subject to change.
     > CDI is currently only supported for Linux containers.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The CDI feature is experimental, and potentially subject to change.
     > CDI is currently only supported for Linux containers.
 @z
@@ -2172,14 +2154,12 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > A process running as PID 1 inside a container is treated specially by
     > Linux: it ignores any signal with the default action. So, the process
     > doesn't terminate on `SIGINT` or `SIGTERM` unless it's coded to do so.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > A process running as PID 1 inside a container is treated specially by
     > Linux: it ignores any signal with the default action. So, the process
     > doesn't terminate on `SIGINT` or `SIGTERM` unless it's coded to do so.
@@ -2378,10 +2358,12 @@ examples: |-
 @z
 
 @x
-    > **Note**: You still need to explicitly add initially present devices to the
+    > [!NOTE]
+    > You still need to explicitly add initially present devices to the
     > `docker run` / `docker create` command.
 @y
-    > **Note**: You still need to explicitly add initially present devices to the
+    > [!NOTE]
+    > You still need to explicitly add initially present devices to the
     > `docker run` / `docker create` command.
 @z
 
@@ -2400,13 +2382,11 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > You can also specify a GPU as a CDI device with the `--device` flag, see
     > [CDI devices](#cdi-devices).
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > You can also specify a GPU as a CDI device with the `--device` flag, see
     > [CDI devices](#cdi-devices).
 @z
@@ -2619,19 +2599,10 @@ examples: |-
     `--rm` flag:
 @z
 
-@x
-    ```text
-    --rm=false: Automatically remove the container when it exits
-    ```
-@y
-    ```text
-    --rm=false: Automatically remove the container when it exits
-    ```
-@z
+% snip text...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > If you set the `--rm` flag, Docker also removes the anonymous volumes
     > associated with the container when the container is removed. This is similar
     > to running `docker rm -v my-container`. Only volumes that are specified
@@ -2645,8 +2616,7 @@ examples: |-
     > Volumes inherited via `--volumes-from` are removed with the same logic:
     > if the original volume was specified with a name it isn't removed.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > If you set the `--rm` flag, Docker also removes the anonymous volumes
     > associated with the container when the container is removed. This is similar
     > to running `docker rm -v my-container`. Only volumes that are specified
@@ -2780,22 +2750,19 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > If you don't provide a hard limit value, Docker uses the soft limit value
     > for both values. If you don't provide any values, they are inherited from
     > the default `ulimits` set on the daemon.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > If you don't provide a hard limit value, Docker uses the soft limit value
     > for both values. If you don't provide any values, they are inherited from
     > the default `ulimits` set on the daemon.
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `as` option is deprecated.
     > In other words, the following script is not supported:
     >
@@ -2803,8 +2770,7 @@ examples: |-
     > $ docker run -it --ulimit as=1024 fedora /bin/bash
     > ```
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `as` option is deprecated.
     > In other words, the following script is not supported:
     >
@@ -2922,12 +2888,10 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Automatic translation of MLS labels isn't supported.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Automatic translation of MLS labels isn't supported.
 @z
 
@@ -2954,12 +2918,10 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > You would have to write policy defining a `svirt_apache_t` type.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > You would have to write policy defining a `svirt_apache_t` type.
 @z
 
@@ -3154,14 +3116,12 @@ examples: |-
 % snip command...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Not all sysctls are namespaced. Docker does not support changing sysctls
     > inside of a container that also modify the host system. As the kernel
     > evolves we expect to see more sysctls become namespaced.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Not all sysctls are namespaced. Docker does not support changing sysctls
     > inside of a container that also modify the host system. As the kernel
     > evolves we expect to see more sysctls become namespaced.

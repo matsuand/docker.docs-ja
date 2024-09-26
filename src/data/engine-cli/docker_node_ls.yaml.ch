@@ -22,75 +22,77 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker node ls [OPTIONS]
-pname: docker node
-plink: docker_node.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
-      description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'table':            Print output in table format with column headers (default)
-        'table TEMPLATE':   Print output in table format using the given Go template
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker node ls
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
     > documentation.
+@z
+
+@x
+usage: docker node ls [OPTIONS]
+pname: docker node
+plink: docker_node.yaml
+options:
+    - option: filter
+      shorthand: f
+      value_type: filter
+      description: Filter output based on conditions provided
+      details_url: '#filter'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: format
+      value_type: string
+      description: |-
+        Format output using a custom template:
+        'table':            Print output in table format with column headers (default)
+        'table TEMPLATE':   Print output in table format using the given Go template
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+      details_url: '#format'
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: quiet
+      shorthand: q
+      value_type: bool
+      default_value: "false"
+      description: Only display IDs
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: help
+      value_type: bool
+      default_value: "false"
+      description: Print usage
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ```console
+    $ docker node ls
+@y
 usage: docker node ls [OPTIONS]
 pname: docker node
 plink: docker_node.yaml
@@ -164,14 +166,12 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > In the above example output, there is a hidden column of `.Self` that indicates
     > if the node is the same node as the current docker daemon. A `*` (e.g.,
     > `e216jshn25ckzbvmwlnh5jr3g *`) means this node is the current docker daemon.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > In the above example output, there is a hidden column of `.Self` that indicates
     > if the node is the same node as the current docker daemon. A `*` (e.g.,
     > `e216jshn25ckzbvmwlnh5jr3g *`) means this node is the current docker daemon.

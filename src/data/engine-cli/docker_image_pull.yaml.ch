@@ -65,129 +65,57 @@ long: |-
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-downloads` daemon option. See the
     [daemon documentation](/reference/cli/dockerd/) for more details.
-usage: docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Download all tagged images in the repository
-      details_url: '#all-tags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.32"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Pull an image from Docker Hub
 @y
     By default the Docker daemon will pull three layers of an image at a time.
     If you are on a low bandwidth connection this may cause timeout issues and you may want to lower
     this via the `--max-concurrent-downloads` daemon option. See the
     [daemon documentation](__SUBDIR__/reference/cli/dockerd/) for more details.
+@z
+
+@x
 usage: docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker image pull [OPTIONS] NAME[:TAG|@DIGEST]
+@z
+
+% options:
+
+@x all-tags
       description: Download all tagged images in the repository
-      details_url: '#all-tags'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
+@y
+      description: Download all tagged images in the repository
+@z
+
+@x disable-content-trust
       description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
+@y
+      description: Skip image verification
+@z
+
+@x platform
       description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.32"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set platform if server is multi-platform capable
+@z
+
+@x quiet
       description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Suppress verbose output
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Pull an image from Docker Hub
+@y
 examples: |-
     ### Pull an image from Docker Hub
 @z
@@ -403,15 +331,13 @@ examples: |-
 % snip code...
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Using this feature "pins" an image to a specific version in time.
     > Docker does therefore not pull updated versions of an image, which may include
     > security updates. If you want to pull an updated image, you need to change the
     > digest accordingly.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Using this feature "pins" an image to a specific version in time.
     > Docker does therefore not pull updated versions of an image, which may include
     > security updates. If you want to pull an updated image, you need to change the

@@ -16,65 +16,30 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the [Swarm mode
     > section](/engine/swarm/) in the documentation.
-usage: docker node demote NODE [NODE...]
-pname: docker node
-plink: docker_node.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker node demote <node name>
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the [Swarm mode
-    > section](__SUBDIR__/engine/swarm/) in the documentation.
-usage: docker node demote NODE [NODE...]
-pname: docker node
-plink: docker_node.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker node demote <node name>
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
 @z
+
+@x
+usage: docker node demote NODE [NODE...]
+@y
+usage: docker node demote NODE [NODE...]
+@z
+
+% inherited_options:
+
+@x
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+% examples:
+% snip command...
+% snip directives...

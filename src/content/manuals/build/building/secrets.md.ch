@@ -15,11 +15,9 @@ linkTitle: Secrets
 @x
 description: Manage credentials and other secrets securely
 keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
-tags: [Secrets]
 @y
 description: Manage credentials and other secrets securely
 keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
-tags: [Secrets]
 @z
 
 @x
@@ -41,28 +39,56 @@ secret mounts or SSH mounts, which expose secrets to your builds securely.
 @z
 
 @x
-## Secret mounts
+## Types of build secrets
 @y
-## Secret mounts
+## Types of build secrets
 @z
 
 @x
-Secret mounts expose secrets to the build containers, as files or environment
-variables. You can use secret mounts to pass sensitive information to your
-builds, such as API tokens, passwords, or SSH keys. You [mount the secrets to
-the `RUN` instructions](/reference/dockerfile.md#run---mounttypesecret) that
-need to access them, similar to how you would define a bind mount or cache
-mount.
+- [Secret mounts](#secret-mounts) are general-purpose mounts for passing
+  secrets into your build. A secret mount takes a secret from the build client
+  and makes it temporarily available inside the build container, for the
+  duration of the build instruction. This is useful if, for example, your build
+  needs to communicate with a private artifact server or API.
+- [SSH mounts](#ssh-mounts) are special-purpose mounts for making SSH sockets
+  or keys available inside builds. They're commonly used when you need to fetch
+  private Git repositories in your builds.
+- [Git authentication for remote contexts](#git-authentication-for-remote-contexts)
+  is a set of pre-defined secrets for when you build with a remote Git context
+  that's also a private repository. These secrets are "pre-flight" secrets:
+  they are not consumed within your build instruction, but they're used to
+  provide the builder with the necessary credentials to fetch the context.
 @y
-Secret mounts expose secrets to the build containers, as files or environment
-variables. You can use secret mounts to pass sensitive information to your
-builds, such as API tokens, passwords, or SSH keys. You [mount the secrets to
-the `RUN` instructions](reference/dockerfile.md#run---mounttypesecret) that
-need to access them, similar to how you would define a bind mount or cache
-mount.
+- [Secret mounts](#secret-mounts) are general-purpose mounts for passing
+  secrets into your build. A secret mount takes a secret from the build client
+  and makes it temporarily available inside the build container, for the
+  duration of the build instruction. This is useful if, for example, your build
+  needs to communicate with a private artifact server or API.
+- [SSH mounts](#ssh-mounts) are special-purpose mounts for making SSH sockets
+  or keys available inside builds. They're commonly used when you need to fetch
+  private Git repositories in your builds.
+- [Git authentication for remote contexts](#git-authentication-for-remote-contexts)
+  is a set of pre-defined secrets for when you build with a remote Git context
+  that's also a private repository. These secrets are "pre-flight" secrets:
+  they are not consumed within your build instruction, but they're used to
+  provide the builder with the necessary credentials to fetch the context.
 @z
 
-% snip code...
+@x
+## Using build secrets
+@y
+## Using build secrets
+@z
+
+@x
+For secret mounts and SSH mounts, using build secrets is a two-step process.
+First you need to pass the secret into the `docker build` command, and then you
+need to consume the secret in your Dockerfile.
+@y
+For secret mounts and SSH mounts, using build secrets is a two-step process.
+First you need to pass the secret into the `docker build` command, and then you
+need to consume the secret in your Dockerfile.
+@z
 
 @x
 To pass a secret to a build, use the [`docker build --secret`
@@ -82,15 +108,7 @@ equivalent options for [Bake](../bake/reference.md#targetsecret).
 {{< tab name="CLI" >}}
 @z
 
-@x
-```console
-$ docker build --secret id=mytoken,src=$HOME/.aws/credentials .
-```
-@y
-```console
-$ docker build --secret id=mytoken,src=$HOME/.aws/credentials .
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -100,33 +118,7 @@ $ docker build --secret id=mytoken,src=$HOME/.aws/credentials .
 {{< tab name="Bake" >}}
 @z
 
-@x
-```hcl
-variable "HOME" {
-  default = null
-}
-@y
-```hcl
-variable "HOME" {
-  default = null
-}
-@z
-
-@x
-target "default" {
-  secret = [
-    "id=mytoken,src=${HOME}/.aws/credentials"
-  ]
-}
-```
-@y
-target "default" {
-  secret = [
-    "id=mytoken,src=${HOME}/.aws/credentials"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -134,6 +126,34 @@ target "default" {
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+To consume a secret in a build and make it accessible to the `RUN` instruction,
+use the [`--mount=type=secret`](/reference/dockerfile.md#run---mounttypesecret)
+flag in the Dockerfile.
+@y
+To consume a secret in a build and make it accessible to the `RUN` instruction,
+use the [`--mount=type=secret`](reference/dockerfile.md#run---mounttypesecret)
+flag in the Dockerfile.
+@z
+
+% snip code...
+
+@x
+## Secret mounts
+@y
+## Secret mounts
+@z
+
+@x
+Secret mounts expose secrets to the build containers, as files or environment
+variables. You can use secret mounts to pass sensitive information to your
+builds, such as API tokens, passwords, or SSH keys.
+@y
+Secret mounts expose secrets to the build containers, as files or environment
+variables. You can use secret mounts to pass sensitive information to your
+builds, such as API tokens, passwords, or SSH keys.
 @z
 
 @x
@@ -164,15 +184,7 @@ The following example mounts the environment variable `KUBECONFIG` to secret ID 
 as a file in the build container at `/run/secrets/kube`.
 @z
 
-@x
-```console
-$ docker build --secret id=kube,env=KUBECONFIG .
-```
-@y
-```console
-$ docker build --secret id=kube,env=KUBECONFIG .
-```
-@z
+% snip command...
 
 @x
 When you use secrets from environment variables, you can omit the `env` parameter
@@ -184,44 +196,67 @@ When you use secrets from environment variables, you can omit the `env` paramete
 to bind the secret to a file with the same name as the variable.
 In the following example, the value of the `API_TOKEN` variable
 is mounted to `/run/secrets/API_TOKEN` in the build container.
-@z
-
-@x
-```console
-$ docker build --secret id=API_TOKEN .
-```
-@y
-```console
-$ docker build --secret id=API_TOKEN .
-```
-@z
-
-@x
-### Target
-@y
-### Target
-@z
-
-@x
-By default, secrets are mounted as files located at `/run/secrets/<id>`. You
-can customize how the secrets get mounted in the build container using the
-`target` and `env` options for the `RUN --mount` flag in the Dockerfile.
-@y
-By default, secrets are mounted as files located at `/run/secrets/<id>`. You
-can customize how the secrets get mounted in the build container using the
-`target` and `env` options for the `RUN --mount` flag in the Dockerfile.
-@z
-
-@x
-The following example takes secret id `aws` and mounts it to `/run/secrets/aws`
-in the build container.
-@y
-The following example takes secret id `aws` and mounts it to `/run/secrets/aws`
-in the build container.
 @z
 
 % snip command...
+
+@x
+### Target
+@y
+### Target
+@z
+
+@x
+When consuming a secret in a Dockerfile, the secret is mounted a file by
+default. The default file path of the secret, inside the build container, is
+`/run/secrets/<id>`. You can customize how the secrets get mounted in the build
+container using the `target` and `env` options for the `RUN --mount` flag in
+the Dockerfile.
+@y
+When consuming a secret in a Dockerfile, the secret is mounted a file by
+default. The default file path of the secret, inside the build container, is
+`/run/secrets/<id>`. You can customize how the secrets get mounted in the build
+container using the `target` and `env` options for the `RUN --mount` flag in
+the Dockerfile.
+@z
+
+@x
+The following example takes secret id `aws` and mounts it to a file at
+`/run/secrets/aws` in the build container.
+@y
+The following example takes secret id `aws` and mounts it to a file at
+`/run/secrets/aws` in the build container.
+@z
+
 % snip code...
+
+@x
+To mount a secret as a file with a different name, use the `target` option in
+the `--mount` flag.
+@y
+To mount a secret as a file with a different name, use the `target` option in
+the `--mount` flag.
+@z
+
+% snip code...
+
+@x
+To mount a secret as an environment variable instead of a file, use the
+`env` option in the `--mount` flag.
+@y
+To mount a secret as an environment variable instead of a file, use the
+`env` option in the `--mount` flag.
+@z
+
+% snip code...
+
+@x
+It's possible to use the `target` and `env` options together to mount a secret
+as both a file and an environment variable.
+@y
+It's possible to use the `target` and `env` options together to mount a secret
+as both a file and an environment variable.
+@z
 
 @x
 ## SSH mounts
@@ -247,19 +282,7 @@ The following example clones a private GitHub repository using a [Dockerfile
 SSH mount](reference/dockerfile.md#run---mounttypessh).
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-ADD git@github.com:me/myprivaterepo.git /src/
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine
-ADD git@github.com:me/myprivaterepo.git /src/
-```
-@z
+% snip code...
 
 @x
 To pass an SSH socket the build, you use the [`docker build --ssh`
@@ -271,15 +294,7 @@ flag](reference/cli/docker/buildx/build.md#ssh), or equivalent
 options for [Bake](../bake/reference.md#targetssh).
 @z
 
-@x
-```console
-$ docker buildx build --ssh default .
-```
-@y
-```console
-$ docker buildx build --ssh default .
-```
-@z
+% snip command...
 
 @x
 ## Git authentication for remote contexts
@@ -317,27 +332,7 @@ that repository as the build context. An unauthenticated `docker build` command
 fails because the builder isn't authorized to pull the repository:
 @z
 
-@x
-```console
-$ docker build https://gitlab.com/example/todo-app.git
-[+] Building 0.4s (1/1) FINISHED
- => ERROR [internal] load git source https://gitlab.com/example/todo-app.git
-------
- > [internal] load git source https://gitlab.com/example/todo-app.git:
-0.313 fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
-------
-```
-@y
-```console
-$ docker build https://gitlab.com/example/todo-app.git
-[+] Building 0.4s (1/1) FINISHED
- => ERROR [internal] load git source https://gitlab.com/example/todo-app.git
-------
- > [internal] load git source https://gitlab.com/example/todo-app.git:
-0.313 fatal: could not read Username for 'https://gitlab.com': terminal prompts disabled
-------
-```
-@z
+% snip command...
 
 @x
 To authenticate the builder to the Git server, set the `GIT_AUTH_TOKEN`
@@ -349,19 +344,7 @@ environment variable to contain a valid GitLab access token, and pass it as a
 secret to the build:
 @z
 
-@x
-```console
-$ GIT_AUTH_TOKEN=$(cat gitlab-token.txt) docker build \
-  --secret id=GIT_AUTH_TOKEN \
-  https://gitlab.com/example/todo-app.git
-```
-@y
-```console
-$ GIT_AUTH_TOKEN=$(cat gitlab-token.txt) docker build \
-  --secret id=GIT_AUTH_TOKEN \
-  https://gitlab.com/example/todo-app.git
-```
-@z
+% snip command...
 
 @x
 The `GIT_AUTH_TOKEN` also works with `ADD` to fetch private Git repositories as
@@ -371,17 +354,7 @@ The `GIT_AUTH_TOKEN` also works with `ADD` to fetch private Git repositories as
 part of your build:
 @z
 
-@x
-```dockerfile
-FROM alpine
-ADD https://gitlab.com/example/todo-app.git /src
-```
-@y
-```dockerfile
-FROM alpine
-ADD https://gitlab.com/example/todo-app.git /src
-```
-@z
+% snip code...
 
 @x
 ### HTTP authentication scheme
@@ -395,15 +368,7 @@ By default, Git authentication over HTTP uses the Bearer authentication scheme:
 By default, Git authentication over HTTP uses the Bearer authentication scheme:
 @z
 
-@x
-```http
-Authorization: Bearer <GIT_AUTH_TOKEN>
-```
-@y
-```http
-Authorization: Bearer <GIT_AUTH_TOKEN>
-```
-@z
+% snip code...
 
 @x
 If you need to use a Basic scheme, with a username and password, you can set
@@ -413,25 +378,7 @@ If you need to use a Basic scheme, with a username and password, you can set
 the `GIT_AUTH_HEADER` build secret:
 @z
 
-@x
-```console
-$ export GIT_AUTH_TOKEN=$(cat gitlab-token.txt)
-$ export GIT_AUTH_HEADER=basic
-$ docker build \
-  --secret id=GIT_AUTH_TOKEN \
-  --secret id=GIT_AUTH_HEADER \
-  https://gitlab.com/example/todo-app.git
-```
-@y
-```console
-$ export GIT_AUTH_TOKEN=$(cat gitlab-token.txt)
-$ export GIT_AUTH_HEADER=basic
-$ docker build \
-  --secret id=GIT_AUTH_TOKEN \
-  --secret id=GIT_AUTH_HEADER \
-  https://gitlab.com/example/todo-app.git
-```
-@z
+% snip command...
 
 @x
 BuildKit currently only supports the Bearer and Basic schemes.
@@ -457,26 +404,4 @@ hostnames. To specify a hostname, append the hostname as a suffix to the secret
 ID:
 @z
 
-@x
-```console
-$ export GITLAB_TOKEN=$(cat gitlab-token.txt)
-$ export GERRIT_TOKEN=$(cat gerrit-username-password.txt)
-$ export GERRIT_SCHEME=basic
-$ docker build \
-  --secret id=GIT_AUTH_TOKEN.gitlab.com,env=GITLAB_TOKEN \
-  --secret id=GIT_AUTH_TOKEN.gerrit.internal.example,env=GERRIT_TOKEN \
-  --secret id=GIT_AUTH_HEADER.gerrit.internal.example,env=GERRIT_SCHEME \
-  https://gitlab.com/example/todo-app.git
-```
-@y
-```console
-$ export GITLAB_TOKEN=$(cat gitlab-token.txt)
-$ export GERRIT_TOKEN=$(cat gerrit-username-password.txt)
-$ export GERRIT_SCHEME=basic
-$ docker build \
-  --secret id=GIT_AUTH_TOKEN.gitlab.com,env=GITLAB_TOKEN \
-  --secret id=GIT_AUTH_TOKEN.gerrit.internal.example,env=GERRIT_TOKEN \
-  --secret id=GIT_AUTH_HEADER.gerrit.internal.example,env=GERRIT_SCHEME \
-  https://gitlab.com/example/todo-app.git
-```
-@z
+% snip command...

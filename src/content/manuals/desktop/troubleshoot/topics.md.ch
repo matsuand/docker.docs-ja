@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Explore common troubleshooting topics for Docker Desktop
 keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop
@@ -218,9 +220,9 @@ in the Apple documentation, and Docker Desktop [Mac system requirements](../inst
 @z
 
 @x
-In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performance of VM networking when using the Virtualization framework on macOS Ventura and above. 
+In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performance of VM networking when using the Virtualization framework on macOS 13 and above.
 @y
-In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performance of VM networking when using the Virtualization framework on macOS Ventura and above. 
+In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performance of VM networking when using the Virtualization framework on macOS 13 and above.
 @z
 
 @x

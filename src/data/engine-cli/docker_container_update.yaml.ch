@@ -36,363 +36,127 @@ long: |-
 @z
 
 @x
-    > **Warning**
-    >
+    > [!WARNING]
     > The `docker update` and `docker container update` commands are not supported
     > for Windows containers.
-    { .warning }
+@y
+    > [!WARNING]
+    > The `docker update` and `docker container update` commands are not supported
+    > for Windows containers.
+@z
+
+@x
 usage: docker container update [OPTIONS] CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: blkio-weight
-      value_type: uint16
-      default_value: "0"
+@y
+usage: docker container update [OPTIONS] CONTAINER [CONTAINER...]
+@z
+
+% options:
+
+@x blkio-weight
       description: |
         Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
+@y
+      description: |
+        Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
+@z
+
+@x cpu-period
       description: Limit CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit CPU CFS (Completely Fair Scheduler) period
+@z
+
+@x cpu-quota
       description: Limit CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-period
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit CPU CFS (Completely Fair Scheduler) quota
+@z
+
+@x cpu-rt-period
       description: Limit the CPU real-time period in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-runtime
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit the CPU real-time period in microseconds
+@z
+
+@x cpu-rt-runtime
       description: Limit the CPU real-time runtime in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit the CPU real-time runtime in microseconds
+@z
+
+@x cpu-shares
       description: CPU shares (relative weight)
-      details_url: '#cpu-shares'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpus
-      value_type: decimal
+@y
+      description: CPU shares (relative weight)
+@z
+
+@x cpus
       description: Number of CPUs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
+@y
+      description: Number of CPUs
+@z
+
+@x cpuset-cpus
       description: CPUs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
+@y
+      description: CPUs in which to allow execution (0-3, 0,1)
+@z
+
+@x cpuset-mems
       description: MEMs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: kernel-memory
-      value_type: bytes
-      default_value: "0"
+@y
+      description: MEMs in which to allow execution (0-3, 0,1)
+@z
+
+@x kernel-memory
       description: Kernel memory limit (deprecated)
-      details_url: '#kernel-memory'
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Kernel memory limit (deprecated)
+@z
+
+@x memory
       description: Memory limit
-      details_url: '#memory'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-reservation
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Memory limit
+@z
+
+@x memory-reservation
       description: Memory soft limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Memory soft limit
+@z
+
+@x memory-swap
       description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pids-limit
-      value_type: int64
-      default_value: "0"
+@y
+      description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
+@z
+
+@x pids-limit
       description: Tune container pids limit (set -1 for unlimited)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: restart
-      value_type: string
+@y
+      description: Tune container pids limit (set -1 for unlimited)
+@z
+
+@x restart
       description: Restart policy to apply when a container exits
-      details_url: '#restart'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Restart policy to apply when a container exits
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     The following sections illustrate ways to use this command.
 @y
-    > **Warning**
-    >
-    > The `docker update` and `docker container update` commands are not supported
-    > for Windows containers.
-    { .warning }
-usage: docker container update [OPTIONS] CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: blkio-weight
-      value_type: uint16
-      default_value: "0"
-      description: |
-        Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
-      description: Limit CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
-      description: Limit CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-period
-      value_type: int64
-      default_value: "0"
-      description: Limit the CPU real-time period in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-runtime
-      value_type: int64
-      default_value: "0"
-      description: Limit the CPU real-time runtime in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
-      description: CPU shares (relative weight)
-      details_url: '#cpu-shares'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpus
-      value_type: decimal
-      description: Number of CPUs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
-      description: CPUs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
-      description: MEMs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: kernel-memory
-      value_type: bytes
-      default_value: "0"
-      description: Kernel memory limit (deprecated)
-      details_url: '#kernel-memory'
-      deprecated: true
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: bytes
-      default_value: "0"
-      description: Memory limit
-      details_url: '#memory'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-reservation
-      value_type: bytes
-      default_value: "0"
-      description: Memory soft limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: bytes
-      default_value: "0"
-      description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pids-limit
-      value_type: int64
-      default_value: "0"
-      description: Tune container pids limit (set -1 for unlimited)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: restart
-      value_type: string
-      description: Restart policy to apply when a container exits
-      details_url: '#restart'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     The following sections illustrate ways to use this command.
 @z
@@ -466,12 +230,10 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `--kernel-memory` option has been deprecated since Docker 20.10.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `--kernel-memory` option has been deprecated since Docker 20.10.
 @z
 

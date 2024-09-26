@@ -32,103 +32,57 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker service inspect [OPTIONS] SERVICE [SERVICE...]
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
+@y
+usage: docker service inspect [OPTIONS] SERVICE [SERVICE...]
+@z
+
+% options:
+
+@x format
       description: |-
         Format output using a custom template:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pretty
-      value_type: bool
-      default_value: "false"
+@y
+      description: |-
+        Format output using a custom template:
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+@x pretty
       description: Print the information in a human friendly format
-      details_url: '#pretty'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Print the information in a human friendly format
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     ### Inspect a service by name or ID
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker service inspect [OPTIONS] SERVICE [SERVICE...]
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pretty
-      value_type: bool
-      default_value: "false"
-      description: Print the information in a human friendly format
-      details_url: '#pretty'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     ### Inspect a service by name or ID
 @z
@@ -145,19 +99,7 @@ examples: |-
     For example, given the following service;
 @z
 
-@x
-    ```console
-    $ docker service ls
-    ID            NAME   MODE        REPLICAS  IMAGE
-    dmu1ept4cxcf  redis  replicated  3/3       redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service ls
-    ID            NAME   MODE        REPLICAS  IMAGE
-    dmu1ept4cxcf  redis  replicated  3/3       redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     Both `docker service inspect redis`, and `docker service inspect dmu1ept4cxcf`
@@ -167,15 +109,7 @@ examples: |-
     produce the same result:
 @z
 
-@x
-    ```console
-    $ docker service inspect redis
-    ```
-@y
-    ```console
-    $ docker service inspect redis
-    ```
-@z
+% snip command...
 
 @x
     The output is in JSON format, for example:
@@ -183,123 +117,8 @@ examples: |-
     The output is in JSON format, for example:
 @z
 
-@x
-    ```json
-    [
-      {
-        "ID": "dmu1ept4cxcfe8k8lhtux3ro3",
-        "Version": {
-          "Index": 12
-        },
-        "CreatedAt": "2016-06-17T18:44:02.558012087Z",
-        "UpdatedAt": "2016-06-17T18:44:02.558012087Z",
-        "Spec": {
-          "Name": "redis",
-          "TaskTemplate": {
-            "ContainerSpec": {
-              "Image": "redis:3.0.6"
-            },
-            "Resources": {
-              "Limits": {},
-              "Reservations": {}
-            },
-            "RestartPolicy": {
-              "Condition": "any",
-              "MaxAttempts": 0
-            },
-            "Placement": {}
-          },
-          "Mode": {
-            "Replicated": {
-              "Replicas": 1
-            }
-          },
-          "UpdateConfig": {},
-          "EndpointSpec": {
-            "Mode": "vip"
-          }
-        },
-        "Endpoint": {
-          "Spec": {}
-        }
-      }
-    ]
-    ```
-@y
-    ```json
-    [
-      {
-        "ID": "dmu1ept4cxcfe8k8lhtux3ro3",
-        "Version": {
-          "Index": 12
-        },
-        "CreatedAt": "2016-06-17T18:44:02.558012087Z",
-        "UpdatedAt": "2016-06-17T18:44:02.558012087Z",
-        "Spec": {
-          "Name": "redis",
-          "TaskTemplate": {
-            "ContainerSpec": {
-              "Image": "redis:3.0.6"
-            },
-            "Resources": {
-              "Limits": {},
-              "Reservations": {}
-            },
-            "RestartPolicy": {
-              "Condition": "any",
-              "MaxAttempts": 0
-            },
-            "Placement": {}
-          },
-          "Mode": {
-            "Replicated": {
-              "Replicas": 1
-            }
-          },
-          "UpdateConfig": {},
-          "EndpointSpec": {
-            "Mode": "vip"
-          }
-        },
-        "Endpoint": {
-          "Spec": {}
-        }
-      }
-    ]
-    ```
-@z
-
-@x
-    ```console
-    $ docker service inspect dmu1ept4cxcf
-@y
-    ```console
-    $ docker service inspect dmu1ept4cxcf
-@z
-
-@x
-    [
-      {
-        "ID": "dmu1ept4cxcfe8k8lhtux3ro3",
-        "Version": {
-          "Index": 12
-        },
-        ...
-      }
-    ]
-    ```
-@y
-    [
-      {
-        "ID": "dmu1ept4cxcfe8k8lhtux3ro3",
-        "Version": {
-          "Index": 12
-        },
-        ...
-      }
-    ]
-    ```
-@z
+% snip code...
+% snip command...
 
 @x
     ### Formatting (--pretty) {#pretty}
@@ -315,61 +134,7 @@ examples: |-
     JSON output, by using the `--pretty` option:
 @z
 
-@x
-    ```console
-    $ docker service inspect --pretty frontend
-@y
-    ```console
-    $ docker service inspect --pretty frontend
-@z
-
-@x
-    ID:     c8wgl7q4ndfd52ni6qftkvnnp
-    Name:   frontend
-    Labels:
-     - org.example.projectname=demo-app
-    Service Mode:   REPLICATED
-     Replicas:      5
-    Placement:
-    UpdateConfig:
-     Parallelism:   0
-     On failure:    pause
-     Max failure ratio: 0
-    ContainerSpec:
-     Image:     nginx:alpine
-    Resources:
-    Networks:   net1
-    Endpoint Mode:  vip
-    Ports:
-     PublishedPort = 4443
-      Protocol = tcp
-      TargetPort = 443
-      PublishMode = ingress
-    ```
-@y
-    ID:     c8wgl7q4ndfd52ni6qftkvnnp
-    Name:   frontend
-    Labels:
-     - org.example.projectname=demo-app
-    Service Mode:   REPLICATED
-     Replicas:      5
-    Placement:
-    UpdateConfig:
-     Parallelism:   0
-     On failure:    pause
-     Max failure ratio: 0
-    ContainerSpec:
-     Image:     nginx:alpine
-    Resources:
-    Networks:   net1
-    Endpoint Mode:  vip
-    Ports:
-     PublishedPort = 4443
-      Protocol = tcp
-      TargetPort = 443
-      PublishMode = ingress
-    ```
-@z
+% snip command...
 
 @x
     You can also use `--format pretty` for the same effect.
@@ -395,32 +160,5 @@ examples: |-
     of the "redis" service.
 @z
 
-@x
-    ```console
-    $ docker service inspect --format='{{.Spec.Mode.Replicated.Replicas}}' redis
-@y
-    ```console
-    $ docker service inspect --format='{{.Spec.Mode.Replicated.Replicas}}' redis
-@z
-
-@x
-    10
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    10
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip command...
+% snip directives...

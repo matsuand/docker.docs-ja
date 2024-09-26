@@ -295,8 +295,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = accounts admin billing build build-cloud cloud compose    \
-	copilot desktop docker-hub engine extensions run-cloud scout \
+SUBDIRS = accounts admin billing build build-cloud cloud compose   \
+	copilot desktop docker-hub engine extensions harmonia scout \
 	security subscription trusted-content
 
 bases = \

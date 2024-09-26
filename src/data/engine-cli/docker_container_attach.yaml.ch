@@ -26,14 +26,12 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `attach` command displays the output of the container's `ENTRYPOINT` and
     > `CMD` process. This can appear as if the attach command is hung when in fact
     > the process may simply not be writing any output at that time.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `attach` command displays the output of the container's `ENTRYPOINT` and
     > `CMD` process. This can appear as if the attach command is hung when in fact
     > the process may simply not be writing any output at that time.
@@ -60,14 +58,12 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > A process running as PID 1 inside a container is treated specially by
     > Linux: it ignores any signal with the default action. So, the process
     > doesn't terminate on `SIGINT` or `SIGTERM` unless it's coded to do so.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > A process running as PID 1 inside a container is treated specially by
     > Linux: it ignores any signal with the default action. So, the process
     > doesn't terminate on `SIGINT` or `SIGTERM` unless it's coded to do so.

@@ -134,13 +134,11 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Since only `source` is settable in `mymount`,
     > `docker plugins set mymount=/bar myplugin` would work too.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Since only `source` is settable in `mymount`,
     > `docker plugins set mymount=/bar myplugin` would work too.
 @z
@@ -194,13 +192,11 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > Since only `path` is settable in `mydevice`,
     > `docker plugins set mydevice=/dev/bar myplugin` would work too.
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > Since only `path` is settable in `mydevice`,
     > `docker plugins set mydevice=/dev/bar myplugin` would work too.
 @z

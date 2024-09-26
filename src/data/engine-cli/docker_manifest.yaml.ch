@@ -654,8 +654,7 @@ examples: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > The `--insecure` flag is not required to annotate a manifest list,
     > since annotations are to a locally-stored copy of a manifest list. You may also
     > skip the `--insecure` flag if you are performing a `docker manifest inspect`
@@ -668,8 +667,7 @@ experimentalcli: true
 kubernetes: false
 swarm: false
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > The `--insecure` flag is not required to annotate a manifest list,
     > since annotations are to a locally-stored copy of a manifest list. You may also
     > skip the `--insecure` flag if you are performing a `docker manifest inspect`

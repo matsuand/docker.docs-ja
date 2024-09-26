@@ -38,8 +38,7 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
@@ -87,8 +86,7 @@ inherited_options:
 examples: |-
     ### Inspect a secret by name or ID
 @y
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](__SUBDIR__/engine/swarm/) in the

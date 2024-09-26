@@ -16,97 +16,49 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker service rollback [OPTIONS] SERVICE
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker service rollback [OPTIONS] SERVICE
+@z
+
+% options:
+
+@x detach
       description: Exit immediately instead of waiting for the service to converge
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Exit immediately instead of waiting for the service to converge
+@z
+
+@x quiet
       description: Suppress progress output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Suppress progress output
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     ### Roll back to the previous version of a service
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker service rollback [OPTIONS] SERVICE
-pname: docker service
-plink: docker_service.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: Exit immediately instead of waiting for the service to converge
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress progress output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     ### Roll back to the previous version of a service
 @z
@@ -139,15 +91,7 @@ examples: |-
     Create a service with a single replica:
 @z
 
-@x
-    ```console
-    $ docker service create --name my-service -p 8080:80 nginx:alpine
-    ```
-@y
-    ```console
-    $ docker service create --name my-service -p 8080:80 nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     Confirm that the service is running with a single replica:
@@ -155,23 +99,7 @@ examples: |-
     Confirm that the service is running with a single replica:
 @z
 
-@x
-    ```console
-    $ docker service ls
-@y
-    ```console
-    $ docker service ls
-@z
-
-@x
-    ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-    xbw728mf6q0d        my-service          replicated          1/1                 nginx:alpine        *:8080->80/tcp
-    ```
-@y
-    ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-    xbw728mf6q0d        my-service          replicated          1/1                 nginx:alpine        *:8080->80/tcp
-    ```
-@z
+% snip command...
 
 @x
     Update the service to use three replicas:
@@ -179,29 +107,7 @@ examples: |-
     Update the service to use three replicas:
 @z
 
-@x
-    ```console
-    $ docker service update --replicas=3 my-service
-@y
-    ```console
-    $ docker service update --replicas=3 my-service
-@z
-
-@x
-    $ docker service ls
-@y
-    $ docker service ls
-@z
-
-@x
-    ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-    xbw728mf6q0d        my-service          replicated          3/3                 nginx:alpine        *:8080->80/tcp
-    ```
-@y
-    ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-    xbw728mf6q0d        my-service          replicated          3/3                 nginx:alpine        *:8080->80/tcp
-    ```
-@z
+% snip command...
 
 @x
     Now roll back the service to its previous version, and confirm it is
@@ -211,40 +117,5 @@ examples: |-
     running a single replica again:
 @z
 
-@x
-    ```console
-    $ docker service rollback my-service
-@y
-    ```console
-    $ docker service rollback my-service
-@z
-
-@x
-    $ docker service ls
-@y
-    $ docker service ls
-@z
-
-@x
-    ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-    xbw728mf6q0d        my-service          replicated          1/1                 nginx:alpine        *:8080->80/tcp
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.31"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
-    xbw728mf6q0d        my-service          replicated          1/1                 nginx:alpine        *:8080->80/tcp
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.31"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip command...
+% snip directives...

@@ -24,93 +24,49 @@ long: |-
 @z
 
 @x
-    > **Note**
-    >
+    > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
+@y
+    > [!NOTE]
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker swarm join-token [OPTIONS] (worker|manager)
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker swarm join-token [OPTIONS] (worker|manager)
+@z
+
+% options:
+
+@x quiet
       description: Only display token
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rotate
-      value_type: bool
-      default_value: "false"
+@y
+      description: Only display token
+@z
+
+@x rotate
       description: Rotate join token
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Rotate join token
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     You can view or rotate the join tokens using `swarm join-token`.
 @y
-    > **Note**
-    >
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
-usage: docker swarm join-token [OPTIONS] (worker|manager)
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display token
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rotate
-      value_type: bool
-      default_value: "false"
-      description: Rotate join token
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     You can view or rotate the join tokens using `swarm join-token`.
 @z
@@ -125,53 +81,7 @@ examples: |-
     the swarm:
 @z
 
-@x
-    ```console
-    $ docker swarm join-token worker
-@y
-    ```console
-    $ docker swarm join-token worker
-@z
-
-@x
-    To add a worker to this swarm, run the following command:
-@y
-    To add a worker to this swarm, run the following command:
-@z
-
-@x
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx \
-        172.17.0.2:2377
-@y
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx \
-        172.17.0.2:2377
-@z
-
-@x
-    $ docker swarm join-token manager
-@y
-    $ docker swarm join-token manager
-@z
-
-@x
-    To add a manager to this swarm, run the following command:
-@y
-    To add a manager to this swarm, run the following command:
-@z
-
-@x
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2 \
-        172.17.0.2:2377
-    ```
-@y
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2 \
-        172.17.0.2:2377
-    ```
-@z
+% snip command...
 
 @x
     Use the `--rotate` flag to generate a new join token for the specified role:
@@ -179,37 +89,7 @@ examples: |-
     Use the `--rotate` flag to generate a new join token for the specified role:
 @z
 
-@x
-    ```console
-    $ docker swarm join-token --rotate worker
-@y
-    ```console
-    $ docker swarm join-token --rotate worker
-@z
-
-@x
-    Successfully rotated worker join token.
-@y
-    Successfully rotated worker join token.
-@z
-
-@x
-    To add a worker to this swarm, run the following command:
-@y
-    To add a worker to this swarm, run the following command:
-@z
-
-@x
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-b30ljddcqhef9b9v4rs7mel7t \
-        172.17.0.2:2377
-    ```
-@y
-        docker swarm join \
-        --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-b30ljddcqhef9b9v4rs7mel7t \
-        172.17.0.2:2377
-    ```
-@z
+% snip command...
 
 @x
     After using `--rotate`, only the new token will be valid for joining with the specified role.
@@ -223,21 +103,7 @@ examples: |-
     The `-q` (or `--quiet`) flag only prints the token:
 @z
 
-@x
-    ```console
-    $ docker swarm join-token -q worker
-@y
-    ```console
-    $ docker swarm join-token -q worker
-@z
-
-@x
-    SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-b30ljddcqhef9b9v4rs7mel7t
-    ```
-@y
-    SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-b30ljddcqhef9b9v4rs7mel7t
-    ```
-@z
+% snip command...
 
 @x
     ### `--rotate`
@@ -295,20 +161,8 @@ examples: |-
 
 @x
     Only print the token. Do not print a complete command for joining.
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
     Only print the token. Do not print a complete command for joining.
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @z
+
+% snip directives...
