@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Use Docker Compose
@@ -86,9 +86,9 @@ In the `getting-started-app` directory, create a file named `compose.yaml`.
 @z
 
 @x
-In [part 7](./07_multi_container.md), you used the following command to start the application service.
+In [part 6](./07_multi_container.md), you used the following command to start the application service.
 @y
-In [part 7](./07_multi_container.md), you used the following command to start the application service.
+In [part 6](./07_multi_container.md), you used the following command to start the application service.
 @z
 
 @x

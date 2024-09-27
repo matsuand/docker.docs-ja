@@ -304,8 +304,6 @@ copyfiles = \
 	TwitterCircle.svg       \
 	YoutubeCircle.svg       \
 	ai-stars.svg            \
-	build-cloud-light.svg   \
-	build-cloud-white.svg   \
 	docker-docs-white.svg   \
 	search-ai.svg
 

@@ -102,7 +102,7 @@
 @z
 @x
                 Learn Docker basics and the benefits of containerizing your
-                applications.
+                applications
 @y
                 アプリケーションのコンテナー化についてその基本と利点を学びます。
 @z
@@ -125,35 +125,31 @@
 @z
 
 @x
-                <h2 class="font-medium">Featured</h2>
+                <h2 class="font-medium">Research</h2>
 @y
-                <h2 class="font-medium">特集</h2>
+                <h2 class="font-medium">Research</h2>
 @z
 @x
-                  Accelerate your builds with cloud capabilities.
+                  Docker State of Application Development survey
 @y
-                  クラウド機能を利用してビルドを短縮します。
+                  Docker State of Application Development survey
 @z
 @x
-                  End-to-end encryption, a shared build cache for teams, and
-                  native multi-platform builds. Get started today for free.
+                  The survey takes approximately 20-30 minutes to complete, and
+                  you can save your progress and return at any time. As a thank
+                  you, you can opt into a raffle for Docker swag and other
+                  prizes!
 @y
-                  エンドツーエンド暗号化、チーム向けビルドキャッシュの共有化、ネイティブなマルチプラットフォームビルド。
-                  無償の機能を今からはじめましょう。
+                  The survey takes approximately 20-30 minutes to complete, and
+                  you can save your progress and return at any time. As a thank
+                  you, you can opt into a raffle for Docker swag and other
+                  prizes!
 @z
 @x
-                  class="cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Dashboard</a>
+                class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Take the survey</a>
 @y
-                  class="cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">ダッシュボード</a>
+                class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Take the survey</a>
 @z
-@x
-                <a href="/build/cloud/"
-                  class="cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Docs</a>
-@y
-                <a href="build/cloud/"
-                  class="cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">ドキュメント</a>
-@z
-
 
 @x
         <h2 class="mb-4 text-xl">Browse by section</h2>
