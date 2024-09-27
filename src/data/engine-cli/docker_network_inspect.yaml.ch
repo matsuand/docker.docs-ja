@@ -8,103 +8,43 @@ long: |-
     Returns information about one or more networks. By default, this command renders
     all results in a JSON object.
 usage: docker network inspect [OPTIONS] NETWORK [NETWORK...]
-pname: docker network
-plink: docker_network.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      shorthand: v
-      value_type: bool
-      default_value: "false"
-      description: Verbose output for diagnostics
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.21"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker network inspect
-short: Display detailed information on one or more networks
+short: 1 つまたは複数ネットワークの詳細情報を表示します。
 long: |-
-    Returns information about one or more networks. By default, this command renders
-    all results in a JSON object.
+    1 つまたは複数ネットワークの詳細情報を表示します。
+    このコマンドの出力結果は、デフォルトで JSON オブジェクト形式です。
 usage: docker network inspect [OPTIONS] NETWORK [NETWORK...]
-pname: docker network
-plink: docker_network.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
+@z
+
+% options:
+
+@x format
       description: |-
         Format output using a custom template:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      shorthand: v
-      value_type: bool
-      default_value: "false"
-      description: Verbose output for diagnostics
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.21"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |-
+        カスタムテンプレートを使って出力をフォーマットします。
+        'json':             JSON 書式により出力します。
+        'TEMPLATE':         指定された Go テンプレートを使って出力します。
+        テンプレートを使ったフォーマット出力の詳細は https://docs.docker.com/go/formatting/ を参照してください。
 @z
+
+@x verbose
+      description: Verbose output for diagnostics
+@y
+      description: 診断された情報を詳細に表示します。
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

@@ -11,194 +11,76 @@ long: |-
     host. If the plugin does not exist locally, then the plugin is pulled from
     the registry. Note that the minimum required registry version to distribute
     plugins is 2.3.0.
+@y
+command: docker plugin install
+short: プラグインをインストールします。
+long: |-
+    プラグインをインストールして有効化します。
+    Docker は初めに Docker ホスト内のプラグインを探しにいきます。
+    ローカルにプラグインが存在していなかった場合は、レジストリからプルされます。
+    プラグインを提供するために必要となるレジストリの最低バージョンは 2.3.0 です。
+@z
+
+@x
 usage: docker plugin install [OPTIONS] PLUGIN [KEY=VALUE...]
-pname: docker plugin
-plink: docker_plugin.yaml
-options:
-    - option: alias
-      value_type: string
+@y
+usage: docker plugin install [OPTIONS] PLUGIN [KEY=VALUE...]
+@z
+
+% options:
+
+@x alias
       description: Local name for plugin
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable
-      value_type: bool
-      default_value: "false"
+@y
+      description: プラグインのローカル名。
+@z
+
+@x disable
       description: Do not enable the plugin on install
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
+@y
+      description: インストール後にプラグインを有効にしません。
+@z
+
+@x disable-content-trust
       description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: grant-all-permissions
-      value_type: bool
-      default_value: "false"
+@y
+      description: イメージの検証を省略します。
+@z
+
+@x grant-all-permissions
       description: Grant all permissions necessary to run the plugin
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: プラグイン実行に必要となる権限をすべて許可します。
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     The following example installs `vieus/sshfs` plugin and [sets](/reference/cli/docker/plugin/set/) its
     `DEBUG` environment variable to `1`. To install, `pull` the plugin from Docker
     Hub and prompt the user to accept the list of privileges that the plugin needs,
     set the plugin's parameters and enable the plugin.
 @y
-command: docker plugin install
-short: Install a plugin
-long: |-
-    Installs and enables a plugin. Docker looks first for the plugin on your Docker
-    host. If the plugin does not exist locally, then the plugin is pulled from
-    the registry. Note that the minimum required registry version to distribute
-    plugins is 2.3.0.
-usage: docker plugin install [OPTIONS] PLUGIN [KEY=VALUE...]
-pname: docker plugin
-plink: docker_plugin.yaml
-options:
-    - option: alias
-      value_type: string
-      description: Local name for plugin
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable
-      value_type: bool
-      default_value: "false"
-      description: Do not enable the plugin on install
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: grant-all-permissions
-      value_type: bool
-      default_value: "false"
-      description: Grant all permissions necessary to run the plugin
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
-    The following example installs `vieus/sshfs` plugin and [sets](__SUBDIR__/reference/cli/docker/plugin/set/) its
-    `DEBUG` environment variable to `1`. To install, `pull` the plugin from Docker
-    Hub and prompt the user to accept the list of privileges that the plugin needs,
-    set the plugin's parameters and enable the plugin.
+  以下の例ではプラグイン`vieus/sshfs`をインストールし、環境変数`DEBUG`を`1`に [設定](__SUBDIR__/reference/cli/docker/plugin/set/) します。
+  インストールの際には Docker Hub からプラグインを`pull`し、プラグインに必要となる権限一覧を示してユーザーへの許可を求めます。
+  そしてプラグインへのパラメーターを設定した上で、このプラグインを有効にします。
 @z
 
-@x
-    ```console
-    $ docker plugin install vieux/sshfs DEBUG=1
-@y
-    ```console
-    $ docker plugin install vieux/sshfs DEBUG=1
-@z
-
-@x
-    Plugin "vieux/sshfs" is requesting the following privileges:
-     - network: [host]
-     - device: [/dev/fuse]
-     - capabilities: [CAP_SYS_ADMIN]
-    Do you grant the above permissions? [y/N] y
-    vieux/sshfs
-    ```
-@y
-    Plugin "vieux/sshfs" is requesting the following privileges:
-     - network: [host]
-     - device: [/dev/fuse]
-     - capabilities: [CAP_SYS_ADMIN]
-    Do you grant the above permissions? [y/N] y
-    vieux/sshfs
-    ```
-@z
+% snip command...
 
 @x
     After the plugin is installed, it appears in the list of plugins:
 @y
-    After the plugin is installed, it appears in the list of plugins:
+    プラグインをインストールすれば、プラグイン一覧に表示されるようになります。
 @z
 
-@x
-    ```console
-    $ docker plugin ls
-@y
-    ```console
-    $ docker plugin ls
-@z
-
-@x
-    ID             NAME                  DESCRIPTION                ENABLED
-    69553ca1d123   vieux/sshfs:latest    sshFS plugin for Docker    true
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ID             NAME                  DESCRIPTION                ENABLED
-    69553ca1d123   vieux/sshfs:latest    sshFS plugin for Docker    true
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

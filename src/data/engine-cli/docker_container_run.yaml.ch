@@ -368,13 +368,13 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x ip
       description: IPv4 address (e.g., 172.30.100.104)
 @y
-      description: IPv4 address (e.g., 172.30.100.104)
+      description: IPv4 アドレスを指定します。（たとえば 172.30.100.104 など）
 @z
 
 @x ip6
       description: IPv6 address (e.g., 2001:db8::33)
 @y
-      description: IPv6 address (e.g., 2001:db8::33)
+      description: IPv6 アドレスを指定します。（たとえば 2001:db8::33 など）
 @z
 
 @x ipc
@@ -410,13 +410,13 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x link
       description: Add link to another container
 @y
-      description: Add link to another container
+      description: 別コンテナーへのリンクを追加します。
 @z
 
 @x link-local-ip
       description: Container IPv4/IPv6 link-local addresses
 @y
-      description: Container IPv4/IPv6 link-local addresses
+      description: コンテナーの IPv4/IPv6 リンクローカルアドレスを追加します。
 @z
 
 @x log-driver

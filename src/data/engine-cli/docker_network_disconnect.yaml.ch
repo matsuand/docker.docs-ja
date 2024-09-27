@@ -8,83 +8,35 @@ long: |-
     Disconnects a container from a network. The container must be running to
     disconnect it from the network.
 usage: docker network disconnect [OPTIONS] NETWORK CONTAINER
-pname: docker network
-plink: docker_network.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Force the container to disconnect from a network
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker network disconnect multi-host-network container1
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.21"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker network disconnect
-short: Disconnect a container from a network
+short: ネットワークからコンテナーを切断します。
 long: |-
-    Disconnects a container from a network. The container must be running to
-    disconnect it from the network.
+    ネットワークからコンテナーを切断します。
+    コンテナーをネットワークから切断するには、そのコンテナーが実行中でなければなりません。
 usage: docker network disconnect [OPTIONS] NETWORK CONTAINER
-pname: docker network
-plink: docker_network.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Force the container to disconnect from a network
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker network disconnect multi-host-network container1
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.21"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x force
+      description: Force the container to disconnect from a network
+@y
+      description: コンテナーからネットワークを強制的に切断します。
+@z
+
+% inherited_options:
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
+examples: |-
+@y
+examples: |-
+@z
+
+% snip command...
+% snip directives...
