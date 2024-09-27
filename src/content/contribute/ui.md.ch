@@ -6,12 +6,14 @@
 title: UI elements in content
 description: How to refer and interact with UI content
 keywords: ui, contribute, style guide
+weight: 40
 ---
 @y
 ---
 title: UI elements in content
 description: How to refer and interact with UI content
 keywords: ui, contribute, style guide
+weight: 40
 ---
 @z
 

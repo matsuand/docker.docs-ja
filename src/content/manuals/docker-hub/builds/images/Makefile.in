@@ -239,6 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
 	authorize-builder.png \
+	bitbucket-revoke.png  \
 	build-cancelicon.png  \
 	index-active.png      \
 	index-dashboard.png   \

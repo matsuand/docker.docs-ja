@@ -238,6 +238,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
+	_index.md      \
 	accordions.md  \
 	badges.md      \
 	buttons.md     \

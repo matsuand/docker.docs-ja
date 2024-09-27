@@ -7,6 +7,7 @@ title: Grammar and style
 description: Grammar and style guidelines for technical documentation
 keywords: grammar, style, contribute
 toc_max: 2
+weight: 10
 ---
 @y
 ---
@@ -14,6 +15,7 @@ title: Grammar and style
 description: Grammar and style guidelines for technical documentation
 keywords: grammar, style, contribute
 toc_max: 2
+weight: 10
 ---
 @z
 

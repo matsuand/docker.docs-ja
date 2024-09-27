@@ -6,12 +6,14 @@
 title: Recommended word list
 description: Recommended word list for Technical documentation
 keywords: recommended word list, style guide, contribute
+weight: 30
 ---
 @y
 ---
 title: Recommended word list
 description: Recommended word list for Technical documentation
 keywords: recommended word list, style guide, contribute
+weight: 30
 ---
 @z
 

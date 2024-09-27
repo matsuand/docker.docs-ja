@@ -357,10 +357,10 @@ code provider.
 
 @x
 To permanently revoke Docker Hub's access to your Bitbucket account, you must
-unlink it both from Docker Hub, and from your Bitbucket account.
+unlink it both from Docker Hub, and revoke authorization in your Bitbucket account.
 @y
 To permanently revoke Docker Hub's access to your Bitbucket account, you must
-unlink it both from Docker Hub, and from your Bitbucket account.
+unlink it both from Docker Hub, and revoke authorization in your Bitbucket account.
 @z
 
 @x
@@ -382,21 +382,41 @@ unlink it both from Docker Hub, and from your Bitbucket account.
 @z
 
 @x
-4. Go to your Bitbucket account and navigate to **Bitbucket settings**.
+> [!IMPORTANT]
+> After unlinking the account on Docker Hub, you must also revoke the authorization on the Bitbucket end.
 @y
-4. Go to your Bitbucket account and navigate to **Bitbucket settings**.
+> [!IMPORTANT]
+> After unlinking the account on Docker Hub, you must also revoke the authorization on the Bitbucket end.
 @z
 
 @x
-5. On the page that appears, select **OAuth**.
+To revoke authorization in your Bitbucket account:
 @y
-5. On the page that appears, select **OAuth**.
+To revoke authorization in your Bitbucket account:
 @z
 
 @x
-6. Select **Revoke** next to the Docker Hub line.
+1. Go to your Bitbucket account and navigate to [**Bitbucket settings**](https://bitbucket.org/account/settings/app-authorizations/).
 @y
-6. Select **Revoke** next to the Docker Hub line.
+1. Go to your Bitbucket account and navigate to [**Bitbucket settings**](https://bitbucket.org/account/settings/app-authorizations/).
+@z
+
+@x
+2. On the page that appears, select **OAuth**.
+@y
+2. On the page that appears, select **OAuth**.
+@z
+
+@x
+3. Select **Revoke** next to the Docker Hub line.
+@y
+3. Select **Revoke** next to the Docker Hub line.
+@z
+
+@x
+![Bitbucket Authorization revocation page](images/bitbucket-revoke.png)
+@y
+![Bitbucket Authorization revocation page](images/bitbucket-revoke.png)
 @z
 
 @x

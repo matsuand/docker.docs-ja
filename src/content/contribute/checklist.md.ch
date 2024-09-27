@@ -6,12 +6,14 @@
 title: Writing checklist
 description: A helpful writing checklist when creating documentation
 keywords: checklist, documentation, style guide, contribute
+weight: 60
 ---
 @y
 ---
 title: Writing checklist
 description: A helpful writing checklist when creating documentation
 keywords: checklist, documentation, style guide, contribute
+weight: 60
 ---
 @z
 

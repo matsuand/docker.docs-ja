@@ -3,6 +3,7 @@
 ##
 copyfiles = \
 	authorize-builder.png \
+	bitbucket-revoke.png  \
 	build-cancelicon.png  \
 	index-active.png      \
 	index-dashboard.png   \

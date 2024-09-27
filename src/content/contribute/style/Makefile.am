@@ -2,6 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
+	_index.md            \
 	formatting.md        \
 	grammar.md           \
 	recommended-words.md \
