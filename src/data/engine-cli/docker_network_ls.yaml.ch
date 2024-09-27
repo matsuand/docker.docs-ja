@@ -42,7 +42,7 @@ usage: docker network ls [OPTIONS]
         'table TEMPLATE':   指定された Go テンプレートを使って表形式により出力します。
         'json':             JSON 書式により出力します。
         'TEMPLATE':         指定された Go テンプレートを使って出力します。
-        テンプレートを使ったフォーマット出力の詳細は __HOSTURL____SUBDIR__/go/formatting/ を参照してください。
+        テンプレートを使ったフォーマット出力の詳細は __HOSTURL____SUBDIR__/engine/cli/formatting/ を参照してください。
 @z
 
 @x no-trunc
