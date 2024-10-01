@@ -78,11 +78,11 @@ If you want to downgrade a Docker Business subscription and your organization us
 @z
 
 @x
->**Important**
+>[!IMPORTANT]
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription. 
 @y
->**Important**
+>[!IMPORTANT]
 >
 >If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription. 
 @z

@@ -22,11 +22,11 @@ This page details Docker's product release lifecycle and how Docker defines each
 @z
 
 @x
->Note
+>[!NOTE]
 >
 >Our [Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) governs your use of Docker and covers details of eligibility, content, use, payments and billing, and warranties. This document is not a contract and all use of Docker’s services are subject to Docker’s [Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement).
 @y
->Note
+>[!NOTE]
 >
 >Our [Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) governs your use of Docker and covers details of eligibility, content, use, payments and billing, and warranties. This document is not a contract and all use of Docker’s services are subject to Docker’s [Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement).
 @z

@@ -66,13 +66,13 @@ Before you start to onboard your organization, ensure that you:
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > When purchasing a self-serve subscription, the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/admin/organization/orgs).
 @y
-  > **Note**
+  > [!NOTE]
   >
-  > When purchasing a self-serve subscription, the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](__SUBDIR__/admin/organization/orgs).
+  > When purchasing a self-serve subscription, the on-screen instructions guide you through creating an organization. If you have purchased a subscription through Docker Sales and you have not yet created an organization, see [Create an organization](/admin/organization/orgs).
 @z
 
 @x

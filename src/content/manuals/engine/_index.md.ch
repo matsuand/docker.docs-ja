@@ -60,24 +60,24 @@ keywords: Engine
 @x
 - title: Container logs
   description: Learn how to view and read container logs.
-  icon: feed
+  icon: text_snippet
   link: /config/containers/logging/
 @y
 - title: コンテナーのログ
   description: コンテナーのログを参照し読む方法について学びます。
-  icon: feed
+  icon: text_snippet
   link: __SUBDIR__/config/containers/logging/
 @z
 
 @x
 - title: Prune
   description: Tidy up unused resources.
-  icon: cut
+  icon: content_cut
   link: /config/pruning
 @y
 - title: prune （取り除き）
   description: 未使用のリソースを取り除きます。
-  icon: cut
+  icon: content_cut
   link: __SUBDIR__/config/pruning
 @z
 

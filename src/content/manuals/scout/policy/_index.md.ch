@@ -357,15 +357,15 @@ Custom configuration options include:
 @z
 
 @x
-- **CVEs to avoid**: Specify the CVEs that you want to avoid in your artifacts.
+- **Excluded CVEs**: Specify the CVEs that you want this policy to ignore.
 @y
-- **CVEs to avoid**: Specify the CVEs that you want to avoid in your artifacts.
+- **Excluded CVEs**: Specify the CVEs that you want this policy to ignore.
 @z
 
 @x
-  Default: `CVE-2014-0160`, `CVE-2021-44228`, `CVE-2023-38545`, `CVE-2023-44487`, `CVE-2024-3094`
+  Default: `[]` (none of the high-profile CVEs are ignored)
 @y
-  Default: `CVE-2014-0160`, `CVE-2021-44228`, `CVE-2023-38545`, `CVE-2023-44487`, `CVE-2024-3094`
+  Default: `[]` (none of the high-profile CVEs are ignored)
 @z
 
 @x

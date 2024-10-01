@@ -24,12 +24,12 @@ title: Compose ファイルリファレンス
 @x
 - title: Version and name top-level element
   description: Understand version and name attributes for Compose.
-  icon: feed
+  icon: text_snippet
   link: /reference/compose-file/version-and-name/
 @y
 - title: Version and name top-level element
   description: Understand version and name attributes for Compose.
-  icon: feed
+  icon: text_snippet
   link: __SUBDIR__/reference/compose-file/version-and-name/
 @z
 

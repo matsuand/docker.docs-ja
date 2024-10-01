@@ -19,11 +19,11 @@ This section describes the prerequisites and steps to deactivate an organization
 @z
 
 @x
->**Warning**
+>[!WARNING]
 >
 > All Docker products and services that use your Docker account or organization account will be inaccessible after deactivating your account.
 @y
->**警告**
+>[!WARNING]
 >
 > All Docker products and services that use your Docker account or organization account will be inaccessible after deactivating your account.
 @z

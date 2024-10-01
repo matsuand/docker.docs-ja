@@ -152,11 +152,11 @@ When you have a [self-serve](../../subscription/core-subscription/details.md#sel
 @z
 
 @x
->**Important**
+>[!IMPORTANT]
 >
 > You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
 @y
->**Important**
+>[!IMPORTANT]
 >
 > You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
 @z
@@ -168,11 +168,11 @@ There is no limit to the number of organizations you can have under a company la
 @z
 
 @x
->**Important**
+>[!IMPORTANT]
 >
 > Once you add an organization to a company, you can't remove it from the company.
 @y
->**Important**
+>[!IMPORTANT]
 >
 > Once you add an organization to a company, you can't remove it from the company.
 @z

@@ -179,19 +179,19 @@ In this hands-on guide, you'll unlock the power of multi-stage builds to create 
 @z
 
 @x
-    Under the `src/main/java/com/example/springbootdocker/` directory, you can modify your  
+    Under the `src/main/java/com/example/spring_boot_docker/` directory, you can modify your  
     `SpringBootDockerApplication.java` file with the following content:
 @y
-    Under the `src/main/java/com/example/springbootdocker/` directory, you can modify your  
+    Under the `src/main/java/com/example/spring_boot_docker/` directory, you can modify your  
     `SpringBootDockerApplication.java` file with the following content:
 @z
 
 % snip code...
 
 @x
-    The `SpringbootDockerApplication.java` file starts by declaring your `com.example.springbootdocker` package and importing necessary Spring frameworks. This Java file creates a simple Spring Boot web application that responds with "Hello World" when a user visits its homepage. 
+    The `SpringbootDockerApplication.java` file starts by declaring your `com.example.spring_boot_docker` package and importing necessary Spring frameworks. This Java file creates a simple Spring Boot web application that responds with "Hello World" when a user visits its homepage. 
 @y
-    The `SpringbootDockerApplication.java` file starts by declaring your `com.example.springbootdocker` package and importing necessary Spring frameworks. This Java file creates a simple Spring Boot web application that responds with "Hello World" when a user visits its homepage. 
+    The `SpringbootDockerApplication.java` file starts by declaring your `com.example.spring_boot_docker` package and importing necessary Spring frameworks. This Java file creates a simple Spring Boot web application that responds with "Hello World" when a user visits its homepage. 
 @z
 
 @x

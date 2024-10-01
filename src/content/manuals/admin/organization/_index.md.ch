@@ -48,12 +48,12 @@ keywords: organizations, admin, overview
 @x
 - title: Activity logs
   description: Learn how to audit the activities of your members.
-  icon: feed
+  icon: text_snippet
   link: /admin/organization/activity-logs/
 @y
 - title: Activity logs
   description: Learn how to audit the activities of your members.
-  icon: feed
+  icon: text_snippet
   link: __SUBDIR__/admin/organization/activity-logs/
 @z
 
