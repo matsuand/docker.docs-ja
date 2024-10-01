@@ -53,6 +53,12 @@ You don't need to switch on `watch` for all services in a Compose project. In so
 @z
 
 @x
+Compose Watch is designed to work with services built from local source code using the `build` attribute. It doesn't track changes for services that rely on pre-built images specified by the `image` attribute.
+@y
+Compose Watch is designed to work with services built from local source code using the `build` attribute. It doesn't track changes for services that rely on pre-built images specified by the `image` attribute.
+@z
+
+@x
 ## Compose Watch versus bind mounts
 @y
 ## Compose Watch versus bind mounts
