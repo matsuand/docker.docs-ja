@@ -25,176 +25,65 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker node ps [OPTIONS] [NODE...]
-pname: docker node
-plink: docker_node.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
-      description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      description: Pretty-print tasks using a Go template
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-resolve
-      value_type: bool
-      default_value: "false"
-      description: Do not map IDs to Names
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Do not truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display task IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker node ps swarm-manager1
 @y
     > [!NOTE]
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker node ps [OPTIONS] [NODE...]
-pname: docker node
-plink: docker_node.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
+@y
+usage: docker node ps [OPTIONS] [NODE...]
+@z
+
+% options:
+
+@x filter
       description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
+@y
+      description: Filter output based on conditions provided
+@z
+
+@x format
       description: Pretty-print tasks using a Go template
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-resolve
-      value_type: bool
-      default_value: "false"
+@y
+      description: Pretty-print tasks using a Go template
+@z
+
+@x no-resolve
       description: Do not map IDs to Names
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not map IDs to Names
+@z
+
+@x no-trunc
       description: Do not truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not truncate output
+@z
+
+@x quiet
       description: Only display task IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Only display task IDs
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker node ps swarm-manager1
+@y
+      description: 利用方法を表示します。
 @z
 
-@x
-    NAME                                IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.1.7q92v0nr1hcgts2amcjyqg3pq   redis:3.0.6  swarm-manager1  Running        Running 5 hours
-    redis.6.b465edgho06e318egmgjbqo4o   redis:3.0.6  swarm-manager1  Running        Running 29 seconds
-    redis.7.bg8c07zzg87di2mufeq51a2qp   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.9.dkkual96p4bb3s6b10r7coxxt   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.10.0tgctg8h8cech4w0k0gwrmr23  redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    ```
-@y
-    NAME                                IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.1.7q92v0nr1hcgts2amcjyqg3pq   redis:3.0.6  swarm-manager1  Running        Running 5 hours
-    redis.6.b465edgho06e318egmgjbqo4o   redis:3.0.6  swarm-manager1  Running        Running 29 seconds
-    redis.7.bg8c07zzg87di2mufeq51a2qp   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.9.dkkual96p4bb3s6b10r7coxxt   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.10.0tgctg8h8cech4w0k0gwrmr23  redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    ```
-@z
+% examples:
+% snip command...
 
 @x
     ### Filtering (--filter) {#filter}
 @y
-    ### Filtering (--filter) {#filter}
+    ### フィルター検索 (--filter) {#filter}
 @z
 
 @x
@@ -210,7 +99,7 @@ examples: |-
 @x
     The currently supported filters are:
 @y
-    The currently supported filters are:
+    現在サポートされているフィルターは以下のとおりです。
 @z
 
 @x
@@ -243,31 +132,7 @@ examples: |-
     The following filter matches all tasks with a name containing the `redis` string.
 @z
 
-@x
-    ```console
-    $ docker node ps -f name=redis swarm-manager1
-@y
-    ```console
-    $ docker node ps -f name=redis swarm-manager1
-@z
-
-@x
-    NAME                                IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.1.7q92v0nr1hcgts2amcjyqg3pq   redis:3.0.6  swarm-manager1  Running        Running 5 hours
-    redis.6.b465edgho06e318egmgjbqo4o   redis:3.0.6  swarm-manager1  Running        Running 29 seconds
-    redis.7.bg8c07zzg87di2mufeq51a2qp   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.9.dkkual96p4bb3s6b10r7coxxt   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.10.0tgctg8h8cech4w0k0gwrmr23  redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    ```
-@y
-    NAME                                IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.1.7q92v0nr1hcgts2amcjyqg3pq   redis:3.0.6  swarm-manager1  Running        Running 5 hours
-    redis.6.b465edgho06e318egmgjbqo4o   redis:3.0.6  swarm-manager1  Running        Running 29 seconds
-    redis.7.bg8c07zzg87di2mufeq51a2qp   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.9.dkkual96p4bb3s6b10r7coxxt   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    redis.10.0tgctg8h8cech4w0k0gwrmr23  redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    ```
-@z
+% snip command...
 
 @x
     #### id
@@ -281,23 +146,7 @@ examples: |-
     The `id` filter matches a task's id.
 @z
 
-@x
-    ```console
-    $ docker node ps -f id=bg8c07zzg87di2mufeq51a2qp swarm-manager1
-@y
-    ```console
-    $ docker node ps -f id=bg8c07zzg87di2mufeq51a2qp swarm-manager1
-@z
-
-@x
-    NAME                                IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.7.bg8c07zzg87di2mufeq51a2qp   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    ```
-@y
-    NAME                                IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.7.bg8c07zzg87di2mufeq51a2qp   redis:3.0.6  swarm-manager1  Running        Running 5 seconds
-    ```
-@z
+% snip command...
 
 @x
     #### label
@@ -319,25 +168,7 @@ examples: |-
     The following filter matches tasks with the `usage` label regardless of its value.
 @z
 
-@x
-    ```console
-    $ docker node ps -f "label=usage"
-@y
-    ```console
-    $ docker node ps -f "label=usage"
-@z
-
-@x
-    NAME                               IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.6.b465edgho06e318egmgjbqo4o  redis:3.0.6  swarm-manager1  Running        Running 10 minutes
-    redis.7.bg8c07zzg87di2mufeq51a2qp  redis:3.0.6  swarm-manager1  Running        Running 9 minutes
-    ```
-@y
-    NAME                               IMAGE        NODE            DESIRED STATE  CURRENT STATE
-    redis.6.b465edgho06e318egmgjbqo4o  redis:3.0.6  swarm-manager1  Running        Running 10 minutes
-    redis.7.bg8c07zzg87di2mufeq51a2qp  redis:3.0.6  swarm-manager1  Running        Running 9 minutes
-    ```
-@z
+% snip command...
 
 @x
     #### desired-state
@@ -354,21 +185,20 @@ examples: |-
 @x
     ### Format the output (--format) {#format}
 @y
-    ### Format the output (--format) {#format}
+    ### フォーマット指定 (--format) {#format}
 @z
 
 @x
     The formatting options (`--format`) pretty-prints tasks output
     using a Go template.
 @y
-    The formatting options (`--format`) pretty-prints tasks output
-    using a Go template.
+    フォーマットオプション (`--format`) の指定により、Go 言語テンプレートを使ったわかりやすい検索結果を得ることができます。
 @z
 
 @x
     Valid placeholders for the Go template are listed below:
 @y
-    Valid placeholders for the Go template are listed below:
+    Go 言語テンプレートによるプレースホルダー（placeholder）は以下のとおりです。
 @z
 
 @x
@@ -383,16 +213,16 @@ examples: |-
     | `.Error`        | Error                                                            |
     | `.Ports`        | Task published ports                                             |
 @y
-    | Placeholder     | Description                                                      |
+    | プレースホルダー  | 内容説明                                                       |
     |-----------------|------------------------------------------------------------------|
-    | `.ID`           | Task ID                                                          |
-    | `.Name`         | Task name                                                        |
-    | `.Image`        | Task image                                                       |
-    | `.Node`         | Node ID                                                          |
-    | `.DesiredState` | Desired state of the task (`running`, `shutdown`, or `accepted`) |
-    | `.CurrentState` | Current state of the task                                        |
-    | `.Error`        | Error                                                            |
-    | `.Ports`        | Task published ports                                             |
+    | `.ID`           | タスク ID                                                        |
+    | `.Name`         | タスク名                                                         |
+    | `.Image`        | タスクイメージ                                                   |
+    | `.Node`         | ノード ID                                                        |
+    | `.DesiredState` | 期待するタスクの状態 (`running`, `shutdown`, `accepted`)         |
+    | `.CurrentState` | タスクの現在の状態                                               |
+    | `.Error`        | エラー                                                           |
+    | `.Ports`        | タスクの公開ポート                                               |
 @z
 
 @x
@@ -400,49 +230,17 @@ examples: |-
     output the data exactly as the template declares or, when using the
     `table` directive, includes column headers as well.
 @y
-    When using the `--format` option, the `node ps` command will either
-    output the data exactly as the template declares or, when using the
-    `table` directive, includes column headers as well.
+    `--format` オプションを利用すると `node ps` コマンドは、テンプレートが定めるデータを直接出力します。
+    あるいは `table` ディレクティブを指定していれば、カラムヘッダーも同時に出力されます。
 @z
 
 @x
     The following example uses a template without headers and outputs the
     `Name` and `Image` entries separated by a colon (`:`) for all tasks:
 @y
-    The following example uses a template without headers and outputs the
-    `Name` and `Image` entries separated by a colon (`:`) for all tasks:
+    以下はヘッダーを含めずにテンプレートを利用する例です。
+    すべてのタスクにおける `Name`、`Image` の各項目がコロン (`:`) で区切られて表示されます。
 @z
 
-@x
-    ```console
-    $ docker node ps --format "{{.Name}}: {{.Image}}"
-@y
-    ```console
-    $ docker node ps --format "{{.Name}}: {{.Image}}"
-@z
-
-@x
-    top.1: busybox
-    top.2: busybox
-    top.3: busybox
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    top.1: busybox
-    top.2: busybox
-    top.3: busybox
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip command...
+% snip directives...

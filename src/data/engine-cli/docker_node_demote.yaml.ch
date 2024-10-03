@@ -10,9 +10,9 @@ long: |-
     Demotes an existing manager so that it is no longer a manager.
 @y
 command: docker node demote
-short: Demote one or more nodes from manager in the swarm
+short: Swarm 内における 1 つあるいは複数のノードをマネージャーから降格させます。
 long: |-
-    Demotes an existing manager so that it is no longer a manager.
+    既存のマネージャーを降格させ、マネージャーでないノードとします。
 @z
 
 @x
@@ -37,7 +37,7 @@ usage: docker node demote NODE [NODE...]
 @x
       description: Print usage
 @y
-      description: Print usage
+      description: 利用方法を表示します。
 @z
 
 % examples:

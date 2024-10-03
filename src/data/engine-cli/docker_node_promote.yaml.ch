@@ -10,9 +10,10 @@ long: |-
     Promotes a node to manager. This command can only be executed on a manager node.
 @y
 command: docker node promote
-short: Promote one or more nodes to manager in the swarm
+short: Swarm 内における 1 つまたは複数ノードをマネージャーに昇格させます。
 long: |-
-    Promotes a node to manager. This command can only be executed on a manager node.
+    ノードをマネージャーに昇格させます。
+    このコマンドはマネージャーノード上においてのみ実行可能です。
 @z
 
 @x
@@ -23,10 +24,8 @@ long: |-
     > documentation.
 @y
     > [!NOTE]
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
 @z
 
 @x
@@ -40,7 +39,7 @@ usage: docker node promote NODE [NODE...]
 @x
       description: Print usage
 @y
-      description: Print usage
+      description: 利用方法を表示します。
 @z
 
 % examples:

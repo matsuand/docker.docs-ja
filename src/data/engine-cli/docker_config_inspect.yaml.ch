@@ -10,31 +10,30 @@ long: |-
     Inspects the specified config.
 @y
 command: docker config inspect
-short: Display detailed information on one or more configs
+short: 1 つまたは複数の config についての詳細情報を表示します。
 long: |-
-    Inspects the specified config.
+    指定された config の詳細情報を表示します。
 @z
 
 @x
     By default, this renders all results in a JSON array. If a format is specified,
     the given template will be executed for each result.
 @y
-    By default, this renders all results in a JSON array. If a format is specified,
-    the given template will be executed for each result.
+    デフォルトでは結果をすべて JSON 配列として返します。
+    フォーマット指定が行われた場合は、指定されたテンプレートが各項目に適用されて出力されます。
 @z
 
 @x
     Go's [text/template](https://pkg.go.dev/text/template) package
     describes all the details of the format.
 @y
-    Go's [text/template](https://pkg.go.dev/text/template) package
-    describes all the details of the format.
+    フォーマットの詳細については、Go 言語の [text/template](https://pkg.go.dev/text/template) パッケージに説明されているので参照してください。
 @z
 
 @x
     For detailed information about using configs, refer to [store configuration data using Docker Configs](/engine/swarm/configs/).
 @y
-    For detailed information about using configs, refer to [store configuration data using Docker Configs](__SUBDIR__/engine/swarm/configs/).
+    config 利用の詳細については [Docker Config を利用した設定データの保存](__SUBDIR__/engine/swarm/configs/) を参照してください。
 @z
 
 @x
@@ -45,10 +44,8 @@ long: |-
     > documentation.
 @y
     > [!NOTE]
-    > This is a cluster management command, and must be executed on a Swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
 @z
 
 @x
@@ -67,16 +64,16 @@ usage: docker config inspect [OPTIONS] CONFIG [CONFIG...]
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
 @y
       description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+        カスタムテンプレートを使って出力をフォーマットします。
+        'json':             JSON 書式により出力します。
+        'TEMPLATE':         指定された Go テンプレートを使って出力します。
+        テンプレートを使ったフォーマット出力の詳細は __HOSTURL____SUBDIR__/engine/cli/formatting/ を参照してください。
 @z
 
 @x pretty
       description: Print the information in a human friendly format
 @y
-      description: Print the information in a human friendly format
+      description: 読みやすい書式で内容を出力します。
 @z
 
 % inherited_options:
@@ -84,7 +81,7 @@ usage: docker config inspect [OPTIONS] CONFIG [CONFIG...]
 @x help
       description: Print usage
 @y
-      description: Print usage
+      description: 利用方法を表示します。
 @z
 
 @x
@@ -92,103 +89,35 @@ examples: |-
     ### Inspect a config by name or ID
 @y
 examples: |-
-    ### Inspect a config by name or ID
+    ### 名前や ID を指定した config の詳細表示 {#inspect-a-config-by-name-or-id}
 @z
 
 @x
     You can inspect a config, either by its *name*, or *ID*
 @y
-    You can inspect a config, either by its *name*, or *ID*
+    詳細表示する config を指定するには *名前* または *ID* を指定します。
 @z
 
 @x
     For example, given the following config:
 @y
-    For example, given the following config:
+    以下の config を使った例を示します。
 @z
 
-@x
-    ```console
-    $ docker config ls
-@y
-    ```console
-    $ docker config ls
-@z
-
-@x
-    ID                          NAME                CREATED             UPDATED
-    eo7jnzguqgtpdah3cm5srfb97   my_config           3 minutes ago       3 minutes ago
-    ```
-@y
-    ID                          NAME                CREATED             UPDATED
-    eo7jnzguqgtpdah3cm5srfb97   my_config           3 minutes ago       3 minutes ago
-    ```
-@z
-
-@x
-    ```console
-    $ docker config inspect config.json
-    ```
-@y
-    ```console
-    $ docker config inspect config.json
-    ```
-@z
+% snip command...
 
 @x
     The output is in JSON format, for example:
 @y
-    The output is in JSON format, for example:
+    結果は JSON 書式であり、たとえば以下のようになります。
 @z
 
-@x
-    ```json
-    [
-      {
-        "ID": "eo7jnzguqgtpdah3cm5srfb97",
-        "Version": {
-          "Index": 17
-        },
-        "CreatedAt": "2017-03-24T08:15:09.735271783Z",
-        "UpdatedAt": "2017-03-24T08:15:09.735271783Z",
-        "Spec": {
-          "Name": "my_config",
-          "Labels": {
-            "env": "dev",
-            "rev": "20170324"
-          },
-          "Data": "aGVsbG8K"
-        }
-      }
-    ]
-    ```
-@y
-    ```json
-    [
-      {
-        "ID": "eo7jnzguqgtpdah3cm5srfb97",
-        "Version": {
-          "Index": 17
-        },
-        "CreatedAt": "2017-03-24T08:15:09.735271783Z",
-        "UpdatedAt": "2017-03-24T08:15:09.735271783Z",
-        "Spec": {
-          "Name": "my_config",
-          "Labels": {
-            "env": "dev",
-            "rev": "20170324"
-          },
-          "Data": "aGVsbG8K"
-        }
-      }
-    ]
-    ```
-@z
+% snip output...
 
 @x
     ### Format the output (--format) {#format}
 @y
-    ### Format the output (--format) {#format}
+    ### フォーマット指定 (--format) {#format}
 @z
 
 @x
@@ -196,37 +125,9 @@ examples: |-
     config. The following example command outputs the creation time of the
     config.
 @y
-    You can use the --format option to obtain specific information about a
-    config. The following example command outputs the creation time of the
-    config.
+    --format オプションを利用すると、config の特定の情報を取得することができます。
+     以下の実行コマンド例では config の生成時刻を出力します。
 @z
 
-@x
-    ```console
-    $ docker config inspect --format='{{.CreatedAt}}' eo7jnzguqgtpdah3cm5srfb97
-@y
-    ```console
-    $ docker config inspect --format='{{.CreatedAt}}' eo7jnzguqgtpdah3cm5srfb97
-@z
-
-@x
-    2017-03-24 08:15:09.735271783 +0000 UTC
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.30"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@y
-    2017-03-24 08:15:09.735271783 +0000 UTC
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.30"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
-@z
+% snip command...
+% snip directives...
