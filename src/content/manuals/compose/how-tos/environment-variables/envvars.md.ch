@@ -414,6 +414,12 @@ If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI
 @z
 
 @x
+> Available in Docker Compose version [2.26.0](/manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
+@y
+> Available in Docker Compose version [2.26.0](manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
+@z
+
+@x
 When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](/reference/cli/docker/debug.md).
 @y
 When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](reference/cli/docker/debug.md).
@@ -432,19 +438,15 @@ When enabled, Compose displays a navigation menu where you can choose to open th
 @z
 
 @x
-> [!NOTE]
->
-> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
+### COMPOSE\_EXPERIMENTAL
 @y
-> [!NOTE]
->
-> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
+### COMPOSE\_EXPERIMENTAL
 @z
 
 @x
-### COMPOSE\_EXPERIMENTAL
+> Available in Docker Compose version [2.26.0](/manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
 @y
-### COMPOSE\_EXPERIMENTAL
+> Available in Docker Compose version [2.26.0](manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
 @z
 
 @x
@@ -463,16 +465,6 @@ This is an opt-out variable. When turned off it deactivates the experimental fea
   * `true` or `1`, to enable,
   * `false` or `0`, to disable.
 * Defaults to: `1`.
-@z
-
-@x
-> [!NOTE]
->
-> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
-@y
-> [!NOTE]
->
-> Available in Docker Compose version 2.26.0 and later, and Docker Desktop version 4.29 and later
 @z
 
 @x

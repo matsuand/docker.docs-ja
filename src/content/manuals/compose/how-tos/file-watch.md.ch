@@ -241,13 +241,13 @@ It will work well when you update a database configuration or your `nginx.conf` 
 @z
 
 @x
->**Tip**
+>[!TIP]
 >
 > Optimize your `Dockerfile` for speedy
 incremental rebuilds with [image layer caching](/build/cache)
 and [multi-stage builds](/build/building/multi-stage/).
 @y
->**Tip**
+>[!TIP]
 >
 > Optimize your `Dockerfile` for speedy
 incremental rebuilds with [image layer caching](__SUBDIR__/build/cache)
@@ -368,23 +368,25 @@ This setup demonstrates how to use the `sync+restart` action in Docker Compose t
 @z
 
 @x
-> [!TIP]
+> [!NOTE]
 >
 > Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
 > get the application logs mixed with the (re)build logs and filesystem sync events.
+@y
+> [!NOTE]
+>
+> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
+> get the application logs mixed with the (re)build logs and filesystem sync events.
+@z
 
-> **Looking for a sample project to test things out?**
+@x
+> [!TIP]
 >
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
 > or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
 > for a demonstration of Compose `watch`.
 @y
 > [!TIP]
->
-> Watch can also be used with the dedicated `docker compose watch` command if you don't want to 
-> get the application logs mixed with the (re)build logs and filesystem sync events.
-
-> **Looking for a sample project to test things out?**
 >
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
 > or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)

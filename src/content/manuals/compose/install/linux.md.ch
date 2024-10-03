@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Download and install Docker Compose on Linux with this step-by-step handbook.
@@ -95,31 +96,15 @@ For Compose standalone, see [Install Compose Standalone](standalone.md).
     * For Ubuntu and Debian, run:
 @z
 
+% snip command...
+
 @x
-        ```console
-        $ sudo apt-get update
-        $ sudo apt-get install docker-compose-plugin
-        ```
     * For RPM-based distros, run:
 @y
-        ```console
-        $ sudo apt-get update
-        $ sudo apt-get install docker-compose-plugin
-        ```
     * For RPM-based distros, run:
 @z
 
-@x
-        ```console
-        $ sudo yum update
-        $ sudo yum install docker-compose-plugin
-        ```
-@y
-        ```console
-        $ sudo yum update
-        $ sudo yum install docker-compose-plugin
-        ```
-@z
+% snip command...
 
 @x
 3.  Verify that Docker Compose is installed correctly by checking the version.
@@ -127,15 +112,7 @@ For Compose standalone, see [Install Compose Standalone](standalone.md).
 3.  Verify that Docker Compose is installed correctly by checking the version.
 @z
 
-@x
-    ```console
-    $ docker compose version
-    ```
-@y
-    ```console
-    $ docker compose version
-    ```
-@z
+% snip command...
 
 @x
     Expected output:
@@ -143,15 +120,7 @@ For Compose standalone, see [Install Compose Standalone](standalone.md).
     Expected output:
 @z
 
-@x
-    ```text
-    Docker Compose version vN.N.N
-    ```
-@y
-    ```text
-    Docker Compose version vN.N.N
-    ```
-@z
+% snip output...
 
 @x
     Where `vN.N.N` is placeholder text standing in for the latest version.
@@ -177,31 +146,15 @@ To update the Compose plugin, run the following commands:
 * For Ubuntu and Debian, run:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ sudo apt-get update
-    $ sudo apt-get install docker-compose-plugin
-    ```
 * For RPM-based distros, run:
 @y
-    ```console
-    $ sudo apt-get update
-    $ sudo apt-get install docker-compose-plugin
-    ```
 * For RPM-based distros, run:
 @z
 
-@x
-    ```console
-    $ sudo yum update
-    $ sudo yum install docker-compose-plugin
-    ```
-@y
-    ```console
-    $ sudo yum update
-    $ sudo yum install docker-compose-plugin
-    ```
-@z
+% snip command...
 
 @x
 ## Install the plugin manually
@@ -225,19 +178,7 @@ To update the Compose plugin, run the following commands:
 1.  To download and install the Compose CLI plugin, run:
 @z
 
-@x
-    ```console
-    $ DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-    $ mkdir -p $DOCKER_CONFIG/cli-plugins
-    $ curl -SL https://github.com/docker/compose/releases/download/{{% param "compose_version" %}}/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
-    ```
-@y
-    ```console
-    $ DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-    $ mkdir -p $DOCKER_CONFIG/cli-plugins
-    $ curl -SL https://github.com/docker/compose/releases/download/{{% param "compose_version" %}}/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
-    ```
-@z
+% snip command...
 
 @x
     This command downloads the latest release of Docker Compose (from the Compose releases repository) and installs Compose for the active user under `$HOME` directory.
@@ -263,27 +204,15 @@ To update the Compose plugin, run the following commands:
 2. Apply executable permissions to the binary:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
-    ```
     or, if you chose to install Compose for all users:
 @y
-    ```console
-    $ chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
-    ```
     or, if you chose to install Compose for all users:
 @z
 
-@x
-    ```console
-    $ sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
-    ```
-@y
-    ```console
-    $ sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
-    ```
-@z
+% snip command...
 
 @x
 3. Test the installation.
@@ -291,14 +220,4 @@ To update the Compose plugin, run the following commands:
 3. Test the installation.
 @z
 
-@x
-    ```console
-    $ docker compose version
-    Docker Compose version {{% param "compose_version" %}}
-    ```
-@y
-    ```console
-    $ docker compose version
-    Docker Compose version {{% param "compose_version" %}}
-    ```
-@z
+% snip command...

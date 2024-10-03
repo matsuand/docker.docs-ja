@@ -24,12 +24,12 @@ On this page you can find instructions on how to install Compose standalone on L
 @z
 
 @x
-> **Compose standalone**
+> [!WARNING]
 >
 > Note that Compose standalone uses the `-compose` syntax instead of the current standard syntax `compose`.  
 >For example type `docker-compose up` when using Compose standalone, instead of `docker compose up`.
 @y
-> **スタンドアローンの Compose**
+> [!WARNING]
 >
 > スタンドアローンの Compose では、現時点の標準文法となっている `compose` ではなく `-compose` を利用します。
 >たとえばスタンドアローンの Compose では `docker compose up` ではなく `docker-compose up` と入力してください。
@@ -120,13 +120,6 @@ Microsoft Windows Server において Docker デーモンおよびクライア�
     >
     > Windows Server 2019 においては、Compose 実行ファイルを `$Env:ProgramFiles\Docker` にインストールすることもできます。
     > このディレクトリはシステムの `PATH` に登録されているため、この後の手順においては、特になにも設定せずに `docker-compose --version` コマンドを実行することができます。
-@z
-
-@x
-    > To install a different version of Compose, substitute `{{% param "compose_version" %}}`
-    > with the version of Compose you want to use.
-@y
-    > Compose の別バージョンをインストールする場合は {{% param "compose_version" %}}` の部分を、インストールしようとしているバージョンに置き換えてください。
 @z
 
 @x

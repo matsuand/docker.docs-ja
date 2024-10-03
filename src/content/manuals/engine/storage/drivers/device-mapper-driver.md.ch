@@ -2085,7 +2085,7 @@ storage driver.
   by default `/var/lib/docker`.  If your containers generate lots of log messages, 
   this may lead to increased disk usage or the inability to manage your system due
   to a full disk. You can configure a 
-  [log driver](/manuals/engine/logging/configure.md) to store your container
+  [log driver](manuals/engine/logging/configure.md) to store your container
   logs externally.
 @z
 
