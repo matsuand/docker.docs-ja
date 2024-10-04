@@ -104,18 +104,18 @@ The default out-of-the-box policies are now:
 @x
 - **No high-profile vulnerabilities**
 - **No fixable critical or high vulnerabilities**
-- **No unapproved base images**
+- **Approved Base Images**
 - **Default non-root user**
 - **Supply chain attestations**
-- **No outdated base images**
+- **Up-to-Date Base Images**
 - **No AGPL v3 licenses**
 @y
 - **No high-profile vulnerabilities**
 - **No fixable critical or high vulnerabilities**
-- **No unapproved base images**
+- **Approved Base Images**
 - **Default non-root user**
 - **Supply chain attestations**
-- **No outdated base images**
+- **Up-to-Date Base Images**
 - **No AGPL v3 licenses**
 @z
 
@@ -294,23 +294,15 @@ For more information and setup instructions, see
 @z
 
 @x
-New **No unapproved base images** policy, which lets you restrict which base
+New **Approved Base Images** policy, which lets you restrict which base
 images you allow in your builds. You define the allowed base images using a
 pattern. Base images whose image reference don't match the specified patterns
 cause the policy to fail.
 @y
-New **No unapproved base images** policy, which lets you restrict which base
+New **Approved Base Images** policy, which lets you restrict which base
 images you allow in your builds. You define the allowed base images using a
 pattern. Base images whose image reference don't match the specified patterns
 cause the policy to fail.
-@z
-
-@x
-For more information, see
-[No unapproved base images](/scout/policy/#no-unapproved-base-images).
-@y
-For more information, see
-[No unapproved base images](__SUBDIR__/scout/policy/#no-unapproved-base-images).
 @z
 
 @x
@@ -329,12 +321,6 @@ New **Default non-root user** policy, which flags images that would run as the
 `root` superuser with full system administration privileges by default.
 Specifying a non-root default user for your images can help strengthen your
 runtime security.
-@z
-
-@x
-For more information, see [Default non-root user](/scout/policy/#default-non-root-user).
-@y
-For more information, see [Default non-root user](__SUBDIR__/scout/policy/#default-non-root-user).
 @z
 
 @x
@@ -454,20 +440,6 @@ images, and see the SonarQube quality gate conditions surfaced in the new
 @z
 
 @x
-For more information, see:
-@y
-For more information, see:
-@z
-
-@x
-- [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
-- [SonarQube quality gates passed policy](/scout/policy/#sonarqube-quality-gates-passed)
-@y
-- [Integration and setup instructions](../integrations/code-quality/sonarqube.md)
-- [SonarQube quality gates passed policy](__SUBDIR__/scout/policy/#sonarqube-quality-gates-passed)
-@z
-
-@x
 ### 2023-12-01
 @y
 ### 2023-12-01
@@ -544,14 +516,6 @@ often a prerequisite for doing more.
 @z
 
 @x
-See [Supply chain attestations policy](/scout/policy/#supply-chain-attestations)
-for details.
-@y
-See [Supply chain attestations policy](__SUBDIR__/scout/policy/#supply-chain-attestations)
-for details.
-@z
-
-@x
 ### 2023-11-01
 @y
 ### 2023-11-01
@@ -563,14 +527,6 @@ free from a curated list of vulnerabilities widely recognized to be risky.
 @y
 New **No high-profile vulnerabilities** policy, which ensures your artifacts are
 free from a curated list of vulnerabilities widely recognized to be risky.
-@z
-
-@x
-For more information, see
-[No high-profile vulnerabilities policy](/scout/policy/#no-high-profile-vulnerabilities).
-@y
-For more information, see
-[No high-profile vulnerabilities policy](__SUBDIR__/scout/policy/#no-high-profile-vulnerabilities).
 @z
 
 @x

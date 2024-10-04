@@ -253,11 +253,11 @@ Use the `docker scout config` command to configure your Docker organization.
 @x
 Now you can run the `quickview` command to get an overview
 of the compliance status for the image you just built.
-The image is evaluated against the default, out-of-the-box policies.
+The image is evaluated against the default policy configurations.
 @y
 Now you can run the `quickview` command to get an overview
 of the compliance status for the image you just built.
-The image is evaluated against the default, out-of-the-box policies.
+The image is evaluated against the default policy configurations.
 @z
 
 % snip command...
@@ -411,12 +411,12 @@ The sidebar shows a compliance overview for the last pushed tag of a repository.
 @z
 
 @x
-Inspect the **No outdated base images** policy.
+Inspect the **Up-to-Date Base Images** policy.
 This policy checks whether base images you use are up-to-date.
 It currently has a non-compliant status,
 because the example image uses an old version `alpine` as a base image.
 @y
-Inspect the **No outdated base images** policy.
+Inspect the **Up-to-Date Base Images** policy.
 This policy checks whether base images you use are up-to-date.
 It currently has a non-compliant status,
 because the example image uses an old version `alpine` as a base image.
