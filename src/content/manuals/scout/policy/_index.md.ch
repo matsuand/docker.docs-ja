@@ -127,81 +127,109 @@ image up-to-dateness.
 @z
 
 @x
-## Out-of-the-box policies
+## Policy types
 @y
-## Out-of-the-box policies
+## Policy types
 @z
 
 @x
-Docker Scout ships the following out-of-the-box policies:
+In Docker Scout, a *policy* is derived from a *policy type*. Policy types are
+templates that define the core parameters of a policy. You can compare policy
+types to classes in object-oriented programming, with each policy acting as an
+instance created from its corresponding policy type.
 @y
-Docker Scout ships the following out-of-the-box policies:
+In Docker Scout, a *policy* is derived from a *policy type*. Policy types are
+templates that define the core parameters of a policy. You can compare policy
+types to classes in object-oriented programming, with each policy acting as an
+instance created from its corresponding policy type.
 @z
 
 @x
-- [No fixable critical or high vulnerabilities](#no-fixable-critical-or-high-vulnerabilities)
-- [No AGPL v3 licenses](#no-agpl-v3-licenses)
-- [No outdated base images](#no-outdated-base-images)
-- [No high-profile vulnerabilities](#no-high-profile-vulnerabilities)
-- [Supply chain attestations](#supply-chain-attestations)
-- [Default non-root user](#default-non-root-user)
-- [No unapproved base images](#no-unapproved-base-images)
+Docker Scout supports the following policy types:
 @y
-- [No fixable critical or high vulnerabilities](#no-fixable-critical-or-high-vulnerabilities)
-- [No AGPL v3 licenses](#no-agpl-v3-licenses)
-- [No outdated base images](#no-outdated-base-images)
-- [No high-profile vulnerabilities](#no-high-profile-vulnerabilities)
-- [Supply chain attestations](#supply-chain-attestations)
-- [Default non-root user](#default-non-root-user)
-- [No unapproved base images](#no-unapproved-base-images)
+Docker Scout supports the following policy types:
 @z
 
 @x
-To give you a head start, Scout enables several policies by default for your
-Scout-enabled repositories. You can customize the default configurations to
-reflect internal requirements and standards. You can also disable a policy
-altogether if it isn't relevant to you. For more information, see [Configure
-policies](./configure.md).
+- [Severity-Based Vulnerability](#severity-based-vulnerability)
+- [Compliant Licenses](#compliant-licenses)
+- [Up-to-Date Base Images](#up-to-date-base-images)
+- [High-Profile Vulnerabilities](#high-profile-vulnerabilities)
+- [Supply Chain Attestations](#supply-chain-attestations)
+- [Default Non-Root User](#default-non-root-user)
+- [Approved Base Images](#approved-base-images)
+- [SonarQube Quality Gates](#sonarqube-quality-gates)
 @y
-To give you a head start, Scout enables several policies by default for your
-Scout-enabled repositories. You can customize the default configurations to
-reflect internal requirements and standards. You can also disable a policy
-altogether if it isn't relevant to you. For more information, see [Configure
-policies](./configure.md).
+- [Severity-Based Vulnerability](#severity-based-vulnerability)
+- [Compliant Licenses](#compliant-licenses)
+- [Up-to-Date Base Images](#up-to-date-base-images)
+- [High-Profile Vulnerabilities](#high-profile-vulnerabilities)
+- [Supply Chain Attestations](#supply-chain-attestations)
+- [Default Non-Root User](#default-non-root-user)
+- [Approved Base Images](#approved-base-images)
+- [SonarQube Quality Gates](#sonarqube-quality-gates)
 @z
 
 @x
-### No fixable critical or high vulnerabilities
+Docker Scout automatically provides default policies for repositories where it
+is enabled, except for the SonarQube Quality Gates policy, which requires
+[integration with SonarQube](/manuals/scout/integrations/code-quality/sonarqube.md)
+before use.
 @y
-### No fixable critical or high vulnerabilities
+Docker Scout automatically provides default policies for repositories where it
+is enabled, except for the SonarQube Quality Gates policy, which requires
+[integration with SonarQube](manuals/scout/integrations/code-quality/sonarqube.md)
+before use.
 @z
 
 @x
-The **No fixable critical or high vulnerabilities** policy requires that your
-artifacts aren't exposed to known vulnerabilities where there's a fix version
-available. Essentially, this means that there's an easy fix that you can deploy
-for images that fail this policy: upgrade the vulnerable package to a version
-containing a fix for the vulnerability.
+You can create custom policies from any of the supported policy types, or
+delete a default policy if it isn't applicable to your project. For more
+information, refer to [Configure policies](./configure.md).
 @y
-The **No fixable critical or high vulnerabilities** policy requires that your
-artifacts aren't exposed to known vulnerabilities where there's a fix version
-available. Essentially, this means that there's an easy fix that you can deploy
-for images that fail this policy: upgrade the vulnerable package to a version
-containing a fix for the vulnerability.
+You can create custom policies from any of the supported policy types, or
+delete a default policy if it isn't applicable to your project. For more
+information, refer to [Configure policies](./configure.md).
 @z
 
 @x
-By default, this policy only flags critical and high severity vulnerabilities.
+<!-- vale Docker.HeadingSentenceCase = NO -->
 @y
-By default, this policy only flags critical and high severity vulnerabilities.
+<!-- vale Docker.HeadingSentenceCase = NO -->
 @z
 
 @x
-This policy is violated if an artifact is affected by one or more critical-
-or high-severity vulnerability, where a fix version is available.
+### Severity-Based Vulnerability
 @y
-This policy is violated if an artifact is affected by one or more critical-
-or high-severity vulnerability, where a fix version is available.
+### Severity-Based Vulnerability
+@z
+
+@x
+The **Severity-Based Vulnerability** policy type checks whether your
+artifacts are exposed to known vulnerabilities.
+@y
+The **Severity-Based Vulnerability** policy type checks whether your
+artifacts are exposed to known vulnerabilities.
+@z
+
+@x
+By default, this policy only flags critical and high severity vulnerabilities
+where there's a fix version available. Essentially, this means that there's an
+easy fix that you can deploy for images that fail this policy: upgrade the
+vulnerable package to a version containing a fix for the vulnerability.
+@y
+By default, this policy only flags critical and high severity vulnerabilities
+where there's a fix version available. Essentially, this means that there's an
+easy fix that you can deploy for images that fail this policy: upgrade the
+vulnerable package to a version containing a fix for the vulnerability.
+@z
+
+@x
+Images are deemed non-compliant with this policy if they contain one or more
+vulnerabilities that fall outside the specified policy criteria.
+@y
+Images are deemed non-compliant with this policy if they contain one or more
+vulnerabilities that fall outside the specified policy criteria.
 @z
 
 @x
@@ -247,25 +275,41 @@ The following policy parameters are configurable in a custom version:
 @z
 
 @x
+- **Package types**: List of package types to consider.
+@y
+- **Package types**: List of package types to consider.
+@z
+
+@x
+  This option lets you specify the package types, as [PURL package type definitions](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst),
+  that you want to include in the policy evaluation. By default, the policy
+  considers all package types.
+@y
+  This option lets you specify the package types, as [PURL package type definitions](https://github.com/package-url/purl-spec/blob/master/PURL-TYPES.rst),
+  that you want to include in the policy evaluation. By default, the policy
+  considers all package types.
+@z
+
+@x
 For more information about configuring policies, see [Configure policies](./configure.md).
 @y
 For more information about configuring policies, see [Configure policies](./configure.md).
 @z
 
 @x
-### No AGPL v3 licenses
+### Compliant Licenses
 @y
-### No AGPL v3 licenses
+### Compliant Licenses
 @z
 
 @x
-The **No AGPL v3 licenses** policy requires that your artifacts don't contain
-packages distributed under an AGPLv3 license. This policy is violated if
-your artifacts contain one or more packages with this license.
+The **Compliant Licenses** policy type checks whether your images contain
+packages distributed under an inappropriate license. Images are considered
+non-compliant if they contain one or more packages with such a license.
 @y
-The **No AGPL v3 licenses** policy requires that your artifacts don't contain
-packages distributed under an AGPLv3 license. This policy is violated if
-your artifacts contain one or more packages with this license.
+The **Compliant Licenses** policy type checks whether your images contain
+packages distributed under an inappropriate license. Images are considered
+non-compliant if they contain one or more packages with such a license.
 @z
 
 @x
@@ -279,27 +323,29 @@ See [Configure policies](./configure.md).
 @z
 
 @x
-### No outdated base images
+### Up-to-Date Base Images
 @y
-### No outdated base images
+### Up-to-Date Base Images
 @z
 
 @x
-The **No outdated base images** policy requires that the base images you use are
-up-to-date.
+The **Up-to-Date Base Images** policy type checks whether the base images you
+use are up-to-date.
 @y
-The **No outdated base images** policy requires that the base images you use are
-up-to-date.
+The **Up-to-Date Base Images** policy type checks whether the base images you
+use are up-to-date.
 @z
 
 @x
-It's violated when the tag you used to build your image points to a
-different digest than what you're using. If there's a mismatch in digests, that
-means the base image you're using is out of date.
+Images are considered non-compliant with this policy if the tag you used to
+build your image points to a different digest than what you're using. If
+there's a mismatch in digests, that means the base image you're using is out of
+date.
 @y
-It's violated when the tag you used to build your image points to a
-different digest than what you're using. If there's a mismatch in digests, that
-means the base image you're using is out of date.
+Images are considered non-compliant with this policy if the tag you used to
+build your image points to a different digest than what you're using. If
+there's a mismatch in digests, that means the base image you're using is out of
+date.
 @z
 
 @x
@@ -311,18 +357,18 @@ evaluate. For more information, see [No base image data](#no-base-image-data).
 @z
 
 @x
-### No high-profile vulnerabilities
+### High-Profile Vulnerabilities
 @y
-### No high-profile vulnerabilities
+### High-Profile Vulnerabilities
 @z
 
 @x
-The **No high-profile vulnerabilities** policy requires that your artifacts don't
+The **High-Profile Vulnerabilities** policy type checks whether your images
 contain vulnerabilities from Docker Scout’s curated list. This list is kept
 up-to-date with newly disclosed vulnerabilities that are widely recognized to
 be risky.
 @y
-The **No high-profile vulnerabilities** policy requires that your artifacts don't
+The **High-Profile Vulnerabilities** policy type checks whether your images
 contain vulnerabilities from Docker Scout’s curated list. This list is kept
 up-to-date with newly disclosed vulnerabilities that are widely recognized to
 be risky.
@@ -357,11 +403,11 @@ The list includes the following vulnerabilities:
 @z
 
 @x
-You can configure the CVEs included in this list by creating a custom policy.
-Custom configuration options include:
+You can customize this policy to change which CVEs that are considered
+high-profile by configuring the policy. Custom configuration options include:
 @y
-You can configure the CVEs included in this list by creating a custom policy.
-Custom configuration options include:
+You can customize this policy to change which CVEs that are considered
+high-profile by configuring the policy. Custom configuration options include:
 @z
 
 @x
@@ -405,28 +451,28 @@ For more information on policy configuration, see [Configure policies](./configu
 @z
 
 @x
-### Supply chain attestations
+### Supply Chain Attestations
 @y
-### Supply chain attestations
+### Supply Chain Attestations
 @z
 
 @x
-The **Supply chain attestations** policy requires that your artifacts have
+The **Supply Chain Attestations** policy type checks whether your images have
 [SBOM](/manuals/build/metadata/attestations/sbom.md) and
 [provenance](/manuals/build/metadata/attestations/slsa-provenance.md) attestations.
 @y
-The **Supply chain attestations** policy requires that your artifacts have
+The **Supply Chain Attestations** policy type checks whether your images have
 [SBOM](manuals/build/metadata/attestations/sbom.md) and
 [provenance](manuals/build/metadata/attestations/slsa-provenance.md) attestations.
 @z
 
 @x
-This policy is violated if an artifact lacks either an SBOM attestation or a
-provenance attestation with max mode. To ensure compliance,
+Images are considered non-compliant if they lack either an SBOM attestation or
+a provenance attestation with *max mode* provenance. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @y
-This policy is violated if an artifact lacks either an SBOM attestation or a
-provenance attestation with max mode. To ensure compliance,
+Images are considered non-compliant if they lack either an SBOM attestation or
+a provenance attestation with *max mode* provenance. To ensure compliance,
 update your build command to attach these attestations at build-time:
 @z
 
@@ -459,9 +505,9 @@ to apply SBOM and provenance attestations.
 @z
 
 @x
-### Default non-root user
+### Default Non-Root User
 @y
-### Default non-root user
+### Default Non-Root User
 @z
 
 @x
@@ -479,15 +525,15 @@ administrative actions.
 @z
 
 @x
-The **Default non-root user** policy detects images that are set to run as the
-default `root` user. To comply with this policy, images must specify a non-root
-user in the image configuration. Images violate this policy if they don't
-specify a non-root default user for the runtime stage.
+The **Default Non-Root User** policy type detects images that are set to run as
+the default `root` user. To comply with this policy, images must specify a
+non-root user in the image configuration. Images are non-compliant with this
+policy if they don't specify a non-root default user for the runtime stage.
 @y
-The **Default non-root user** policy detects images that are set to run as the
-default `root` user. To comply with this policy, images must specify a non-root
-user in the image configuration. Images violate this policy if they don't
-specify a non-root default user for the runtime stage.
+The **Default Non-Root User** policy type detects images that are set to run as
+the default `root` user. To comply with this policy, images must specify a
+non-root user in the image configuration. Images are non-compliant with this
+policy if they don't specify a non-root default user for the runtime stage.
 @z
 
 @x
@@ -649,16 +695,16 @@ ENTRYPOINT ["/app/production"]
 @z
 
 @x
-### No unapproved base images
+### Approved Base Images
 @y
-### No unapproved base images
+### Approved Base Images
 @z
 
 @x
-The **No unapproved base images** policy ensures that the base images you use
+The **Approved Base Images** policy type ensures that the base images you use
 in your builds are maintained and secure.
 @y
-The **No unapproved base images** policy ensures that the base images you use
+The **Approved Base Images** policy type ensures that the base images you use
 in your builds are maintained and secure.
 @z
 
@@ -801,42 +847,18 @@ evaluate. For more information, see [No base image data](#no-base-image-data).
 @z
 
 @x
-## Additional policies
+### SonarQube Quality Gates
 @y
-## Additional policies
+### SonarQube Quality Gates
 @z
 
 @x
-In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
-by default, Docker Scout supports the following optional policies. Before you
-can enable these policies, you need to either configure the policies, or
-configure the integration that the policy requires.
-@y
-In addition to the [out-of-the-box policies](#out-of-the-box-policies) enabled
-by default, Docker Scout supports the following optional policies. Before you
-can enable these policies, you need to either configure the policies, or
-configure the integration that the policy requires.
-@z
-
-@x
-- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
-@y
-- [SonarQube quality gates passed](#sonarqube-quality-gates-passed)
-@z
-
-@x
-### SonarQube quality gates passed
-@y
-### SonarQube quality gates passed
-@z
-
-@x
-The **SonarQube quality gates passed** policy builds on the [SonarQube
+The **SonarQube Quality Gates** policy type builds on the [SonarQube
 integration](../integrations/code-quality/sonarqube.md) to assess the quality
 of your source code. This policy works by ingesting the SonarQube code analysis
 results into Docker Scout.
 @y
-The **SonarQube quality gates passed** policy builds on the [SonarQube
+The **SonarQube Quality Gates** policy type builds on the [SonarQube
 integration](../integrations/code-quality/sonarqube.md) to assess the quality
 of your source code. This policy works by ingesting the SonarQube code analysis
 results into Docker Scout.
@@ -910,12 +932,12 @@ in the CLI.
 
 @x
 There are cases when it's not possible to determine information about the base
-images used in your builds. In such cases, the **No outdated base images** and
-**No unapproved base images** policies get flagged as having **No data**.
+images used in your builds. In such cases, the **Up-to-Date Base Images** and
+**Approved Base Images** policies get flagged as having **No data**.
 @y
 There are cases when it's not possible to determine information about the base
-images used in your builds. In such cases, the **No outdated base images** and
-**No unapproved base images** policies get flagged as having **No data**.
+images used in your builds. In such cases, the **Up-to-Date Base Images** and
+**Approved Base Images** policies get flagged as having **No data**.
 @z
 
 @x

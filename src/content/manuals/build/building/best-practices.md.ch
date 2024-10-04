@@ -490,21 +490,19 @@ which is likely something you want to get.
 @z
 
 @x
-Docker Scout has a built-in [**No outdated base images**
-policy](../../scout/policy/_index.md#no-outdated-base-images) that checks for
-whether the base image version you're using is in fact the latest version. This
-policy also checks if pinned digests in your Dockerfile correspond to the
-correct version. If a publisher updates an image that you've pinned, the policy
-evaluation returns a non-compliant status, indicating that you should update
-your image.
+Docker Scout's default [**Up-to-Date Base Images**
+policy](../../scout/policy/_index.md#up-to-date-base-images) checks whether the
+base image version you're using is in fact the latest version. This policy also
+checks if pinned digests in your Dockerfile correspond to the correct version.
+If a publisher updates an image that you've pinned, the policy evaluation
+returns a non-compliant status, indicating that you should update your image.
 @y
-Docker Scout has a built-in [**No outdated base images**
-policy](../../scout/policy/_index.md#no-outdated-base-images) that checks for
-whether the base image version you're using is in fact the latest version. This
-policy also checks if pinned digests in your Dockerfile correspond to the
-correct version. If a publisher updates an image that you've pinned, the policy
-evaluation returns a non-compliant status, indicating that you should update
-your image.
+Docker Scout's default [**Up-to-Date Base Images**
+policy](../../scout/policy/_index.md#up-to-date-base-images) checks whether the
+base image version you're using is in fact the latest version. This policy also
+checks if pinned digests in your Dockerfile correspond to the correct version.
+If a publisher updates an image that you've pinned, the policy evaluation
+returns a non-compliant status, indicating that you should update your image.
 @z
 
 @x
@@ -525,12 +523,10 @@ audit trail of when and how the change occurred.
 
 @x
 For more information about automatically updating your base images with Docker
-Scout, see
-[Remediation](../../scout/policy/remediation.md#automatic-base-image-updates).
+Scout, see [Remediation](/manuals/scout/policy/remediation.md).
 @y
 For more information about automatically updating your base images with Docker
-Scout, see
-[Remediation](../../scout/policy/remediation.md#automatic-base-image-updates).
+Scout, see [Remediation](manuals/scout/policy/remediation.md).
 @z
 
 @x

@@ -38,17 +38,27 @@ results and recommendations.
 @z
 
 @x
-Docker Scout provides remediation advice for the following policies:
+Docker Scout provides remediation advice for the default policies of the
+following policy types:
 @y
-Docker Scout provides remediation advice for the following policies:
+Docker Scout provides remediation advice for the default policies of the
+following policy types:
 @z
 
 @x
-- [No outdated base images](#no-outdated-base-image-remediation)
-- [Supply chain attestations](#supply-chain-attestations-remediation)
+- [Up-to-Date Base Images](#up-to-date-base-images-remediation)
+- [Supply Chain Attestations](#supply-chain-attestations-remediation)
 @y
-- [No outdated base images](#no-outdated-base-image-remediation)
-- [Supply chain attestations](#supply-chain-attestations-remediation)
+- [Up-to-Date Base Images](#up-to-date-base-images-remediation)
+- [Supply Chain Attestations](#supply-chain-attestations-remediation)
+@z
+
+@x
+> [!NOTE]
+> Guided remediation is not supported for custom policies.
+@y
+> [!NOTE]
+> Guided remediation is not supported for custom policies.
 @z
 
 @x
@@ -156,18 +166,18 @@ available recommendations.
 @z
 
 @x
-## No outdated base image remediation
+## Up-to-Date Base Images remediation
 @y
-## No outdated base image remediation
+## Up-to-Date Base Images remediation
 @z
 
 @x
-The **No outdated base images** policy checks whether the base image you use is
+The **Up-to-Date Base Images** policy checks whether the base image you use is
 up-to-date. The recommended actions displayed in the remediation side panel
 depend on how much information Docker Scout has about your image. The more
 information that's available, the better the recommendations.
 @y
-The **No outdated base images** policy checks whether the base image you use is
+The **Up-to-Date Base Images** policy checks whether the base image you use is
 up-to-date. The recommended actions displayed in the remediation side panel
 depend on how much information Docker Scout has about your image. The more
 information that's available, the better the recommendations.
@@ -314,46 +324,18 @@ versions](manuals/build/building/best-practices.md#pin-base-image-versions).
 @z
 
 @x
-<!--
-  TODO(dvdksn): no support for the following, yet
+## Supply Chain Attestations remediation
 @y
-<!--
-  TODO(dvdksn): no support for the following, yet
+## Supply Chain Attestations remediation
 @z
 
 @x
-  Enabling the GitHub integration also allows Docker Scout to visualize the
-  remediation workflow in the Docker Scout Dashboard. Each step, from the pull
-  request being raised to the image being deployed to an environment, is
-  displayed in the remediation sidebar when inspecting the image.
-@y
-  Enabling the GitHub integration also allows Docker Scout to visualize the
-  remediation workflow in the Docker Scout Dashboard. Each step, from the pull
-  request being raised to the image being deployed to an environment, is
-  displayed in the remediation sidebar when inspecting the image.
-@z
-
-@x
-  https://github.com/docker/docs/pull/18961#discussion_r1447189475
--->
-@y
-  https://github.com/docker/docs/pull/18961#discussion_r1447189475
--->
-@z
-
-@x
-## Supply chain attestations remediation
-@y
-## Supply chain attestations remediation
-@z
-
-@x
-The **Supply chain attestations** policy requires full provenance and SBOM
-attestations on images. If your image is missing an attestation, or if an
+The default **Supply Chain Attestations** policy requires full provenance and
+SBOM attestations on images. If your image is missing an attestation, or if an
 attestation doesn't contain enough information, the policy is violated.
 @y
-The **Supply chain attestations** policy requires full provenance and SBOM
-attestations on images. If your image is missing an attestation, or if an
+The default **Supply Chain Attestations** policy requires full provenance and
+SBOM attestations on images. If your image is missing an attestation, or if an
 attestation doesn't contain enough information, the policy is violated.
 @z
 

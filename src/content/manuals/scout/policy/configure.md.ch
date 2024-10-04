@@ -1,90 +1,112 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Configure policies
-description: Learn how to configure or disable the default policies in Docker Scout
-keywords: scout, policy, configure, disable, enable, parametrize, thresholds
----
+description: Learn how to configure, disable, or delete policies in Docker Scout
+keywords: scout, policy, configure, delete, enable, parametrize, thresholds
 @y
----
 title: Configure policies
-description: Learn how to configure or disable the default policies in Docker Scout
-keywords: scout, policy, configure, disable, enable, parametrize, thresholds
----
+description: Learn how to configure, disable, or delete policies in Docker Scout
+keywords: scout, policy, configure, delete, enable, parametrize, thresholds
 @z
 
 @x
-Some of the existing policies are configurable. This means that you can clone
-an existing policy and create new, custom policies with your own configuration.
-You can also disable a policy altogether, if a policy doesn't quite match your
-needs.
+Some policy types are configurable. This means that you can create new,
+customized version of that policy type with your own configuration parameters.
+You can also disable a policy if you need to temporarily disregard it, or
+delete a policy altogether if it doesn't match your needs.
 @y
-Some of the existing policies are configurable. This means that you can clone
-an existing policy and create new, custom policies with your own configuration.
-You can also disable a policy altogether, if a policy doesn't quite match your
-needs.
+Some policy types are configurable. This means that you can create new,
+customized version of that policy type with your own configuration parameters.
+You can also disable a policy if you need to temporarily disregard it, or
+delete a policy altogether if it doesn't match your needs.
 @z
 
 @x
-## Configure a policy
+> [!NOTE]
+> Historic evaluation results for the default policy configuration are removed
+> if you delete or customize a policy.
 @y
-## Configure a policy
+> [!NOTE]
+> Historic evaluation results for the default policy configuration are removed
+> if you delete or customize a policy.
 @z
 
 @x
-To change the configuration of a policy, you must clone one of the existing
-default policies, and then save your configuration as a new policy. You can
-edit the display name and description of the new policy to help distinguish
-it from the default policy it's based on.
+## Add a policy
 @y
-To change the configuration of a policy, you must clone one of the existing
-default policies, and then save your configuration as a new policy. You can
-edit the display name and description of the new policy to help distinguish
-it from the default policy it's based on.
+## Add a policy
 @z
 
 @x
-The available configuration parameters for a policy depends on the default
-policy you used as a base for your custom policy.
+To add a new policy, select the policy type that you want to customize. All
+custom policies use a policy type as a base.
 @y
-The available configuration parameters for a policy depends on the default
-policy you used as a base for your custom policy.
+To add a new policy, select the policy type that you want to customize. All
+custom policies use a policy type as a base.
 @z
 
 @x
-To configure a policy:
+You can edit the display name and description of the new policy to help
+better communicate the compliant and non-compliant states of the policy.
+You can not change the name of the policy type, only its display names.
 @y
-To configure a policy:
+You can edit the display name and description of the new policy to help
+better communicate the compliant and non-compliant states of the policy.
+You can not change the name of the policy type, only its display names.
+@z
+
+@x
+The available configuration parameters for a policy depends on the
+policy type that you're editing. For more information, refer to
+[Policy types](/manuals/scout/policy/_index.md#policy-types).
+@y
+The available configuration parameters for a policy depends on the
+policy type that you're editing. For more information, refer to
+[Policy types](manuals/scout/policy/_index.md#policy-types).
+@z
+
+@x
+To add a policy:
+@y
+To add a policy:
 @z
 
 @x
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
-2. Select the policy you want to configure.
-3. Select **View policy details** to open the policy side panel.
+2. Select the **Add policy** button to open the policy configuration screen.
+3. On the policy configuration screen, locate the policy type that you want to
+   configure, and select **Configure** to open the policy configuration panel.
 @y
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
-2. Select the policy you want to configure.
-3. Select **View policy details** to open the policy side panel.
+2. Select the **Add policy** button to open the policy configuration screen.
+3. On the policy configuration screen, locate the policy type that you want to
+   configure, and select **Configure** to open the policy configuration panel.
 @z
 
 @x
-   If this button is grayed out, then the selected policy doesn't have any
-   configuration parameters.
+   - If the **Configure** button is grayed out, it means the selected policy
+     has no configurable parameters.
+   - If the button reads **Integrate**, it indicates that setup is required
+     before the policy can be enabled. Selecting **Integrate** will direct you
+     to the integration's setup guide.
 @y
-   If this button is grayed out, then the selected policy doesn't have any
-   configuration parameters.
+   - If the **Configure** button is grayed out, it means the selected policy
+     has no configurable parameters.
+   - If the button reads **Integrate**, it indicates that setup is required
+     before the policy can be enabled. Selecting **Integrate** will direct you
+     to the integration's setup guide.
 @z
 
 @x
-4. In the side panel, select **Copy to customize** to open the policy configuration page.
-5. Update the policy parameters.
-6. Save the changes:
+4. Update the policy parameters.
+5. Save the changes:
 @y
-4. In the side panel, select **Copy to customize** to open the policy configuration page.
-5. Update the policy parameters.
-6. Save the changes:
+4. Update the policy parameters.
+5. Save the changes:
 @z
 
 @x
@@ -133,4 +155,52 @@ To disable a policy:
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
 2. Select the policy you want to disable.
 3. Select the **Disable** button.
+@z
+
+@x
+## Delete a policy
+@y
+## Delete a policy
+@z
+
+@x
+When you delete a policy, evaluation results for that policy are deleted as
+well, and no longer appear in the Docker Scout Dashboard or in the CLI.
+@y
+When you delete a policy, evaluation results for that policy are deleted as
+well, and no longer appear in the Docker Scout Dashboard or in the CLI.
+@z
+
+@x
+To delete a policy:
+@y
+To delete a policy:
+@z
+
+@x
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select the policy you want to delete.
+3. Select **View policy details**.
+4. Select the **Delete** button.
+@y
+1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
+2. Select the policy you want to delete.
+3. Select **View policy details**.
+4. Select the **Delete** button.
+@z
+
+@x
+## Recover a deleted policy
+@y
+## Recover a deleted policy
+@z
+
+@x
+If you've deleted a policy, you can recreate it by following the steps in [Add
+a policy](#add-a-policy). On the policy configuration screen, select
+**Configure** on the deleted policy that you wish to recreate.
+@y
+If you've deleted a policy, you can recreate it by following the steps in [Add
+a policy](#add-a-policy). On the policy configuration screen, select
+**Configure** on the deleted policy that you wish to recreate.
 @z
