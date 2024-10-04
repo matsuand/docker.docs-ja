@@ -12,11 +12,11 @@ long: |-
     information about available filter options.
 @y
 command: docker node ps
-short: List tasks running on one or more nodes, defaults to current node
+short: 1 つまたは複数ノードにおいて実行中のタスク一覧を表示します。デフォルトはカレントノードのみです。
 long: |-
-    Lists all the tasks on a Node that Docker knows about. You can filter using the
-    `-f` or `--filter` flag. Refer to the [filtering](#filter) section for more
-    information about available filter options.
+    Docker が管理しているノード上でのタスクを一覧表示します。
+    `-f` または `--filter` フラグを使えばフィルター検索を行うことができます。
+    フィルター検索時のオプションの詳細は [フィルター検索](#filter) の節を参照してください。
 @z
 
 @x
@@ -42,31 +42,31 @@ usage: docker node ps [OPTIONS] [NODE...]
 @x filter
       description: Filter output based on conditions provided
 @y
-      description: Filter output based on conditions provided
+      description: 指定された条件に基づいてフィルター検索を行います。
 @z
 
 @x format
       description: Pretty-print tasks using a Go template
 @y
-      description: Pretty-print tasks using a Go template
+      description: Go 言語テンプレートを使って出力をフォーマットします。
 @z
 
 @x no-resolve
       description: Do not map IDs to Names
 @y
-      description: Do not map IDs to Names
+      description: ノード ID からノード名にマップしません。
 @z
 
 @x no-trunc
       description: Do not truncate output
 @y
-      description: Do not truncate output
+      description: 詳細出力を行います。
 @z
 
 @x quiet
       description: Only display task IDs
 @y
-      description: Only display task IDs
+      description: タスク ID のみを表示します。
 @z
 
 % inherited_options:
@@ -91,9 +91,8 @@ usage: docker node ps [OPTIONS] [NODE...]
     more than one filter, then pass multiple flags (e.g., `--filter "foo=bar"
     --filter "bif=baz"`).
 @y
-    The filtering flag (`-f` or `--filter`) format is of "key=value". If there is
-    more than one filter, then pass multiple flags (e.g., `--filter "foo=bar"
-    --filter "bif=baz"`).
+    フィルターフラグ (`-f` または `--filter`) の書式は "key=value" ペアとして指定します。
+    フィルターが複数必要な場合は、フラグを複数回指定します (たとえば `--filter "foo=bar" --filter "bif=baz"` とします)。
 @z
 
 @x
@@ -123,13 +122,13 @@ usage: docker node ps [OPTIONS] [NODE...]
 @x
     The `name` filter matches on all or part of a task's name.
 @y
-    The `name` filter matches on all or part of a task's name.
+    `name` フィルターはタスク名の全部または一部を検索します。
 @z
 
 @x
     The following filter matches all tasks with a name containing the `redis` string.
 @y
-    The following filter matches all tasks with a name containing the `redis` string.
+    以下の例では `redis` という文字列を名前に含んだタスクすべてを検索します。
 @z
 
 % snip command...
@@ -143,7 +142,7 @@ usage: docker node ps [OPTIONS] [NODE...]
 @x
     The `id` filter matches a task's id.
 @y
-    The `id` filter matches a task's id.
+    `id` フィルターはタスク ID を検索します。
 @z
 
 % snip command...
@@ -158,14 +157,14 @@ usage: docker node ps [OPTIONS] [NODE...]
     The `label` filter matches tasks based on the presence of a `label` alone or a `label` and a
     value.
 @y
-    The `label` filter matches tasks based on the presence of a `label` alone or a `label` and a
-    value.
+    `label` フィルターは、`label` のみが存在するタスクか、あるいは `label` と値が存在するタスクに対しての検索を行います。
 @z
 
 @x
     The following filter matches tasks with the `usage` label regardless of its value.
 @y
-    The following filter matches tasks with the `usage` label regardless of its value.
+    以下の例では `usage` ラベルを持ったタスクを検索します。
+    この場合、その値の内容は問いません。
 @z
 
 % snip command...
@@ -179,7 +178,7 @@ usage: docker node ps [OPTIONS] [NODE...]
 @x
     The `desired-state` filter can take the values `running`, `shutdown`, or `accepted`.
 @y
-    The `desired-state` filter can take the values `running`, `shutdown`, or `accepted`.
+    `desired-state` フィルターでは `running`、`shutdown`、`accepted` を指定することができます。
 @z
 
 @x

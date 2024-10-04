@@ -10,9 +10,10 @@ long: |-
     Update metadata about a node, such as its availability, labels, or roles.
 @y
 command: docker node update
-short: Update a node
+short: ノードを更新します。
 long: |-
-    Update metadata about a node, such as its availability, labels, or roles.
+    ノードに関するメタデータを更新します。
+    たとえば利用状態 (availability)、ラベル、ロールなどです。
 @z
 
 @x
@@ -21,212 +22,110 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker node update [OPTIONS] NODE
-pname: docker node
-plink: docker_node.yaml
-options:
-    - option: availability
-      value_type: string
-      description: Availability of the node (`active`, `pause`, `drain`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label-add
-      value_type: list
-      description: Add or update a node label (`key=value`)
-      details_url: '#label-add'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label-rm
-      value_type: list
-      description: Remove a node label if exists
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: role
-      value_type: string
-      description: Role of the node (`worker`, `manager`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Add label metadata to a node (--label-add) {#label-add}
 @y
     > [!NOTE]
-    > This is a cluster management command, and must be executed on a swarm
-    > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
-    > documentation.
+    > これはクラスター管理コマンドであるため、Swarm のマネージャーノード上で実行する必要があります。
+    > マネージャーノードとワーカーノードについては、本ドキュメントの [Swarm モード](__SUBDIR__/engine/swarm/) を参照してください。
+@z
+
+@x
 usage: docker node update [OPTIONS] NODE
-pname: docker node
-plink: docker_node.yaml
-options:
-    - option: availability
-      value_type: string
+@y
+usage: docker node update [OPTIONS] NODE
+@z
+
+% options:
+
+@x availability
       description: Availability of the node (`active`, `pause`, `drain`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label-add
-      value_type: list
+@y
+      description: ノードの利用状態。 (`active`, `pause`, `drain`)
+@z
+
+@x label-add
       description: Add or update a node label (`key=value`)
-      details_url: '#label-add'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label-rm
-      value_type: list
+@y
+      description: ノードラベルを追加または更新します。 (`key=value`)
+@z
+
+@x label-rm
       description: Remove a node label if exists
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: role
-      value_type: string
+@y
+      description: ノードにラベルが存在する場合に削除します。
+@z
+
+@x role
       description: Role of the node (`worker`, `manager`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: ノードのロール。 (`worker`, `manager`)
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     ### Add label metadata to a node (--label-add) {#label-add}
+@y
+examples: |-
+    ### ラベルのメタデータをノードに追加 (--label-add) {#label-add}
 @z
 
 @x
     Add metadata to a swarm node using node labels. You can specify a node label as
     a key with an empty value:
 @y
-    Add metadata to a swarm node using node labels. You can specify a node label as
-    a key with an empty value:
+    ノードラベルを用いてメタデータを Swarm ノードに追加します。
+    ノードラベルは、キーに対して空の値を設定することができます。
 @z
 
-@x
-    ``` bash
-    $ docker node update --label-add foo worker1
-    ```
-@y
-    ``` bash
-    $ docker node update --label-add foo worker1
-    ```
-@z
+% snip command...
 
 @x
     To add multiple labels to a node, pass the `--label-add` flag for each label:
 @y
-    To add multiple labels to a node, pass the `--label-add` flag for each label:
+    複数ラベルをノードに加えるには `--label-add` フラグを各ラベル指定に利用します。
 @z
 
-@x
-    ```console
-    $ docker node update --label-add foo --label-add bar worker1
-    ```
-@y
-    ```console
-    $ docker node update --label-add foo --label-add bar worker1
-    ```
-@z
+% snip command...
 
 @x
     When you [create a service](/reference/cli/docker/service/create/),
     you can use node labels as a constraint. A constraint limits the nodes where the
     scheduler deploys tasks for a service.
 @y
-    When you [create a service](__SUBDIR__/reference/cli/docker/service/create/),
-    you can use node labels as a constraint. A constraint limits the nodes where the
-    scheduler deploys tasks for a service.
+    [サービスの生成](__SUBDIR__/reference/cli/docker/service/create/) を行う際には、ノードラベルを制約として設定することができます。
+    この制約は、ノードにおけるスケジューラーが、サービスに対するタスクのデプロイを制限します。
 @z
 
 @x
     For example, to add a `type` label to identify nodes where the scheduler should
     deploy message queue service tasks:
 @y
-    For example, to add a `type` label to identify nodes where the scheduler should
-    deploy message queue service tasks:
+    たとえば `type` ラベルを追加し、ノードにおけるスケジューラーが、メッセージキューサービスタスクをデプロイするものとするには、以下のようにします。
 @z
 
-@x
-    ``` bash
-    $ docker node update --label-add type=queue worker1
-    ```
-@y
-    ``` bash
-    $ docker node update --label-add type=queue worker1
-    ```
-@z
+% snip command...
 
 @x
     The labels you set for nodes using `docker node update` apply only to the node
     entity within the swarm. Do not confuse them with the docker daemon labels for
     [dockerd](/reference/cli/dockerd/).
 @y
-    The labels you set for nodes using `docker node update` apply only to the node
-    entity within the swarm. Do not confuse them with the docker daemon labels for
-    [dockerd](__SUBDIR__/reference/cli/dockerd/).
+    `docker node update` を使ってノードに設定するラベルは、Swarm 内にあるノードエンティティにのみ適用されます。
+    これを [dockerd](__SUBDIR__/reference/cli/dockerd/) に対する Docker デーモンラベルと混同しないように注意してください。
 @z
 
 @x
     For more information about labels, refer to [apply custom
     metadata](/engine/userguide/labels-custom-metadata/).
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
-    For more information about labels, refer to [apply custom
-    metadata](__SUBDIR__/engine/userguide/labels-custom-metadata/).
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
+    ラベルに関する詳細は [独自メタデータの適用](__SUBDIR__/engine/userguide/labels-custom-metadata/) を参照してください。
 @z
+
+% snip directives...

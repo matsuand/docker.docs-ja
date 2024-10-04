@@ -146,7 +146,7 @@ usage: docker config ls [OPTIONS]
     The following filter matches all configs with a `project` label regardless of
     its value:
 @y
-    以下の例では `project` ラベルを持った config が検索されます。
+    以下の例では `project` ラベルを持った config を検索します。
     この場合、その値の内容は問いません。
 @z
 
