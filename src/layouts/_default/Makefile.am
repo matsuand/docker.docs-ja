@@ -4,17 +4,17 @@
 SUBDIRS = _markup
 
 bases = \
-	baseof.html   \
-	cli.html      \
-	glossary.html \
-	search.html   \
+	api-baseof.html \
+	baseof.html     \
+	cli.html        \
+	glossary.html   \
+	search.html     \
 	series.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	api-baseof.html \
 	list.html       \
 	single.html     \
 	wide.html
