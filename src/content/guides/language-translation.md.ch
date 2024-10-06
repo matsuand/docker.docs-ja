@@ -492,7 +492,75 @@ To run the application using Docker:
    In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
 @z
 
-% snip code...
+% snip command...
+
+@x
+   The following is a break down of the command:
+@y
+   The following is a break down of the command:
+@z
+
+@x
+   - `docker build`: This is the primary command used to build a Docker image
+     from a Dockerfile and a context. The context is typically a set of files at
+     a specified location, often the directory containing the Dockerfile.
+   - `-t basic-nlp`: This is an option for tagging the image. The `-t` flag
+     stands for tag. It assigns a name to the image, which in this case is
+     `basic-nlp`. Tags are a convenient way to reference images later,
+     especially when pushing them to a registry or running containers.
+   - `.`: This is the last part of the command and specifies the build context.
+     The period (`.`) denotes the current directory. Docker will look for a
+     Dockerfile in this directory. The build context (the current directory, in
+     this case) is sent to the Docker daemon to enable the build. It includes
+     all the files and subdirectories in the specified directory.
+@y
+   - `docker build`: This is the primary command used to build a Docker image
+     from a Dockerfile and a context. The context is typically a set of files at
+     a specified location, often the directory containing the Dockerfile.
+   - `-t basic-nlp`: This is an option for tagging the image. The `-t` flag
+     stands for tag. It assigns a name to the image, which in this case is
+     `basic-nlp`. Tags are a convenient way to reference images later,
+     especially when pushing them to a registry or running containers.
+   - `.`: This is the last part of the command and specifies the build context.
+     The period (`.`) denotes the current directory. Docker will look for a
+     Dockerfile in this directory. The build context (the current directory, in
+     this case) is sent to the Docker daemon to enable the build. It includes
+     all the files and subdirectories in the specified directory.
+@z
+
+@x
+   For more details, see the [docker build CLI reference](/reference/cli/docker/buildx/build/).
+@y
+   For more details, see the [docker build CLI reference](__SUBDIR__/reference/cli/docker/buildx/build/).
+@z
+
+@x
+   Docker outputs several logs to your console as it builds the image. You'll
+   see it download and install the dependencies. Depending on your network
+   connection, this may take several minutes. Docker does have a caching
+   feature, so subsequent builds can be faster. The console will
+   return to the prompt when it's complete.
+@y
+   Docker outputs several logs to your console as it builds the image. You'll
+   see it download and install the dependencies. Depending on your network
+   connection, this may take several minutes. Docker does have a caching
+   feature, so subsequent builds can be faster. The console will
+   return to the prompt when it's complete.
+@z
+
+@x
+2. Run the image as a container.
+@y
+2. Run the image as a container.
+@z
+
+@x
+   In a terminal, run the following command.
+@y
+   In a terminal, run the following command.
+@z
+
+% snip command...
 
 @x
    The following is a break down of the command:
@@ -551,7 +619,7 @@ To run the application using Docker:
    >
    > For Windows users, you may get an error when running the container. Verify
    > that the line endings in the `entrypoint.sh` are `LF` (`\n`) and not `CRLF` (`\r\n`),
-   > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](/desktop/troubleshoot/topics/#avoid-unexpected-syntax-errors-use-unix-style-line-endings-for-files-in-containers).
+   > then rebuild the image. For more details, see [Avoid unexpected syntax errors, use Unix style line endings for files in containers](__SUBDIR__/desktop/troubleshoot/topics/#avoid-unexpected-syntax-errors-use-unix-style-line-endings-for-files-in-containers).
 @z
 
 @x

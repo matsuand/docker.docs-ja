@@ -48,6 +48,32 @@ New features and enhancements released in the third quarter of 2024.
 @z
 
 @x
+### 2024-09-30
+@y
+### 2024-09-30
+@z
+
+@x
+In this release, we've changed how custom policies work. Before, custom
+policies were created by copying an out-of-the-box policy. Now, you can
+customize policies either by editing the default policy from a **policy type**
+which acts as a template. The default policies in Docker Scout are also
+implemented based on these types.
+@y
+In this release, we've changed how custom policies work. Before, custom
+policies were created by copying an out-of-the-box policy. Now, you can
+customize policies either by editing the default policy from a **policy type**
+which acts as a template. The default policies in Docker Scout are also
+implemented based on these types.
+@z
+
+@x
+For more information, refer to [policy types](/manuals/scout/policy/_index.md#policy-types).
+@y
+For more information, refer to [policy types](manuals/scout/policy/_index.md#policy-types).
+@z
+
+@x
 ### 2024-09-09
 @y
 ### 2024-09-09

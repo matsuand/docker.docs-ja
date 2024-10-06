@@ -1,18 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Common challenges and questions
 description: Explore common challenges and questions related to Docker Scout.
-weight: 30
----
 @y
----
 title: Common challenges and questions
 description: Explore common challenges and questions related to Docker Scout.
-weight: 30
----
 @z
 
 @x
@@ -94,7 +90,7 @@ The following container registry integrations are available:
 @x
 Learn more about configuring Scout with your registries in [Integrating Docker Scout with third-party registries](/scout/integrations/#container-registries).
 @y
-Learn more about configuring Scout with your registries in [Integrating Docker Scout with third-party registries](/scout/integrations/#container-registries).
+Learn more about configuring Scout with your registries in [Integrating Docker Scout with third-party registries](__SUBDIR__/scout/integrations/#container-registries).
 @z
 
 @x
@@ -120,7 +116,7 @@ If you run Docker Engine without Docker Desktop, Docker Scout doesn't come
 pre-installed, but you can [install it as a standalone binary](/scout/install/).
 @y
 If you run Docker Engine without Docker Desktop, Docker Scout doesn't come
-pre-installed, but you can [install it as a standalone binary](/scout/install/).
+pre-installed, but you can [install it as a standalone binary](__SUBDIR__/scout/install/).
 @z
 
 @x
@@ -138,7 +134,7 @@ an attestation), or generate an SBOM on the fly by analyzing the contents of
 the image.
 @y
 An SBOM, or software bill of materials, is a list of ingredients that make up
-software components. [Docker Scout uses SBOMs](/scout/concepts/sbom/) to
+software components. [Docker Scout uses SBOMs](__SUBDIR__/scout/concepts/sbom/) to
 determine the components that are used in a Docker image. When you analyze an
 image, Docker Scout will either use the SBOM that is attached to the image (as
 an attestation), or generate an SBOM on the fly by analyzing the contents of

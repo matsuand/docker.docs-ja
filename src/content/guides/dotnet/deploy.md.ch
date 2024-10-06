@@ -212,6 +212,6 @@ Related information:
 - [Swarm mode overview](/manuals/engine/swarm/_index.md)
 @y
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/kubernetes.md)
-- [Swarm mode overview](/manuals/engine/swarm/_index.md)
+- [Deploy on Kubernetes with Docker Desktop](manuals/desktop/kubernetes.md)
+- [Swarm mode overview](manuals/engine/swarm/_index.md)
 @z

@@ -1,18 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Common challenges and questions
 description: Explore common challenges and questions related to Docker Build Cloud.
-weight: 40
----
 @y
----
 title: Common challenges and questions
 description: Explore common challenges and questions related to Docker Build Cloud.
-weight: 40
----
 @z
 
 @x
@@ -39,7 +35,7 @@ works with Docker Build Cloud out-of-the-box. It shows information about your
 builds and those initiated by your team members using the same builder,
 enabling collaborative troubleshooting.
 @y
-When used with Docker Desktop, the [Builds view](/desktop/use-desktop/builds/)
+When used with Docker Desktop, the [Builds view](__SUBDIR__/desktop/use-desktop/builds/)
 works with Docker Build Cloud out-of-the-box. It shows information about your
 builds and those initiated by your team members using the same builder,
 enabling collaborative troubleshooting.
@@ -54,7 +50,7 @@ build` command, you also need a version of Docker Compose that supports Docker
 Build Cloud.
 @y
 To use Docker Build Cloud without Docker Desktop, you must
-[download and install](/build-cloud/setup/#use-docker-build-cloud-without-docker-desktop)
+[download and install](__SUBDIR__/build-cloud/setup/#use-docker-build-cloud-without-docker-desktop)
 a version of Buildx with support for Docker Build Cloud (the `cloud` driver).
 If you plan on building with Docker Build Cloud using the `docker compose
 build` command, you also need a version of Docker Compose that supports Docker
@@ -170,7 +166,7 @@ documentation](/build-cloud/ci/) for Docker Build Cloud.
 Using GitHub Actions with Docker Build Cloud is straightforward. With a
 one-line change in your GitHub Actions configuration, everything else stays the
 same. You don't need to create new pipelines. Learn more in the [CI
-documentation](/build-cloud/ci/) for Docker Build Cloud.
+documentation](__SUBDIR__/build-cloud/ci/) for Docker Build Cloud.
 @z
 
 @x

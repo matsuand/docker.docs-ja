@@ -1,24 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-@x
----
-title: Common challenges and questions
-description: Explore common challenges and questions related to Docker Compose.
-weight: 30
----
-@y
----
-title: Common challenges and questions
-description: Explore common challenges and questions related to Docker Compose.
-weight: 30
----
-@z
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-<!-- vale Docker.HeadingLength = NO -->
+title: Common challenges and questions
+description: Explore common challenges and questions related to Docker Compose.
 @y
-<!-- vale Docker.HeadingLength = NO -->
+title: Common challenges and questions
+description: Explore common challenges and questions related to Docker Compose.
 @z
 
 @x
@@ -72,7 +62,7 @@ For more information on using profiles, see [Using profiles with
 Compose](/compose/how-tos/profiles/).
 @y
 For more information on using profiles, see [Using profiles with
-Compose](/compose/how-tos/profiles/).
+Compose](__SUBDIR__/compose/how-tos/profiles/).
 @z
 
 @x
@@ -105,7 +95,7 @@ handle requests.
 However, `depends_on` only guarantees the order, not that the database is fully
 initialized. For a more robust approach, especially if your application relies
 on a prepared database (e.g., after migrations), consider [health
-checks](/reference/compose-file/services.md#healthcheck). Here, you can
+checks](reference/compose-file/services.md#healthcheck). Here, you can
 configure the frontend to wait until the database passes its health check
 before starting. This ensures the database is not only up but also ready to
 handle requests.
@@ -116,7 +106,7 @@ For more information on setting the startup order of your services, see
 [Control startup and shutdown order in Compose](/compose/how-tos/startup-order/).
 @y
 For more information on setting the startup order of your services, see
-[Control startup and shutdown order in Compose](/compose/how-tos/startup-order/).
+[Control startup and shutdown order in Compose](__SUBDIR__/compose/how-tos/startup-order/).
 @z
 
 @x
@@ -154,7 +144,7 @@ For more information on building Docker images using Compose, see the [Compose
 Build Specification](/compose/compose-file/build/).
 @y
 For more information on building Docker images using Compose, see the [Compose
-Build Specification](/compose/compose-file/build/).
+Build Specification](__SUBDIR__/compose/compose-file/build/).
 @z
 
 @x

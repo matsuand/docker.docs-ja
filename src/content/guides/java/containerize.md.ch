@@ -34,7 +34,7 @@ description: Learn how to containerize a Java application.
 * You have a [Git client](https://git-scm.com/downloads). The examples in this
   section use a command-line based Git client, but you can use any client.
 @y
-- You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
+- You have installed the latest version of [Docker Desktop](get-started/get-docker.md).
   Docker adds new features regularly and some parts of this guide may
   work only with the latest version of Docker Desktop.
 
