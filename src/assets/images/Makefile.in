@@ -305,7 +305,8 @@ copyfiles = \
 	YoutubeCircle.svg       \
 	ai-stars.svg            \
 	docker-docs-white.svg   \
-	search-ai.svg
+	search-ai.svg           \
+	thumbnail.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

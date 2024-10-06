@@ -9,7 +9,6 @@ bases = \
 	heading.html        \
 	github-links.html   \
 	guides-stepper.html \
-	post-links.html     \
 	search-bar.html
 
 include $(top_srcdir)/build-aux/common.mk

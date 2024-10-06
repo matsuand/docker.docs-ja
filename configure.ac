@@ -81,30 +81,39 @@ AC_CONFIG_FILES([
 	src/content/get-started/workshop/Makefile
 	src/content/get-started/workshop/images/Makefile
 	src/content/guides/Makefile
-	src/content/guides/deployment-orchestration/Makefile
-	src/content/guides/language/Makefile
-	src/content/guides/language/cpp/Makefile
-	src/content/guides/language/dotnet/Makefile
-	src/content/guides/language/golang/Makefile
-	src/content/guides/language/images/Makefile
-	src/content/guides/language/java/Makefile
-	src/content/guides/language/java/images/Makefile
-	src/content/guides/language/nodejs/Makefile
-	src/content/guides/language/php/Makefile
-	src/content/guides/language/python/Makefile
-	src/content/guides/language/r/Makefile
-	src/content/guides/language/ruby/Makefile
-	src/content/guides/language/rust/Makefile
-	src/content/guides/use-case/Makefile
-	src/content/guides/use-case/genai-pdf-bot/Makefile
-	src/content/guides/use-case/genai-video-bot/Makefile
-	src/content/guides/use-case/genai-video-bot/images/Makefile
-	src/content/guides/use-case/images/Makefile
-	src/content/guides/use-case/nlp/Makefile
-	src/content/guides/use-case/rag-ollama/Makefile
+	src/content/guides/cpp/Makefile
+	src/content/guides/docker-build-cloud/Makefile
+	src/content/guides/docker-compose/Makefile
+	src/content/guides/docker-scout/Makefile
+	src/content/guides/dotnet/Makefile
+	src/content/guides/genai-pdf-bot/Makefile
+	src/content/guides/genai-video-bot/Makefile
+	src/content/guides/genai-video-bot/images/Makefile
+	src/content/guides/golang/Makefile
+	src/content/guides/images/Makefile
+	src/content/guides/java/Makefile
+	src/content/guides/java/images/Makefile
+	src/content/guides/nodejs/Makefile
+	src/content/guides/php/Makefile
+	src/content/guides/python/Makefile
+	src/content/guides/r/Makefile
+	src/content/guides/rag-ollama/Makefile
+	src/content/guides/ruby/Makefile
+	src/content/guides/rust/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
-	src/content/learning-paths/Makefile
+	src/content/languages/Makefile
+	src/content/languages/c-sharp/Makefile
+	src/content/languages/cpp/Makefile
+	src/content/languages/go/Makefile
+	src/content/languages/java/Makefile
+	src/content/languages/js/Makefile
+	src/content/languages/php/Makefile
+	src/content/languages/python/Makefile
+	src/content/languages/r/Makefile
+	src/content/languages/ruby/Makefile
+	src/content/languages/rust/Makefile
+	src/content/levels/Makefile
 	src/content/manuals/Makefile
 	src/content/manuals/accounts/Makefile
 	src/content/manuals/admin/Makefile
@@ -244,6 +253,10 @@ AC_CONFIG_FILES([
 	src/content/manuals/trusted-content/Makefile
 	src/content/manuals/trusted-content/images/Makefile
 	src/content/manuals/trusted-content/official-images/Makefile
+	src/content/products/Makefile
+	src/content/products/compose/Makefile
+	src/content/products/dbc/Makefile
+	src/content/products/scout/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/engine/Makefile
@@ -284,6 +297,13 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/volume/Makefile
 	src/content/reference/compose-file/Makefile
 	src/content/samples/Makefile
+	src/content/subjects/Makefile
+	src/content/subjects/ai/Makefile
+	src/content/subjects/cloud-services/Makefile
+	src/content/subjects/data-science/Makefile
+	src/content/subjects/databases/Makefile
+	src/content/subjects/deploy/Makefile
+	src/content/subjects/distributed-systems/Makefile
 	src/content/tags/Makefile
 	src/content/tags/best-practices/Makefile
 	src/content/tags/faq/Makefile
@@ -300,7 +320,7 @@ AC_CONFIG_FILES([
 	src/layouts/Makefile
 	src/layouts/_default/Makefile
 	src/layouts/_default/_markup/Makefile
-	src/layouts/learning-paths/Makefile
+	src/layouts/guides/Makefile
 	src/layouts/partials/Makefile
 	src/layouts/partials/components/Makefile
 	src/layouts/partials/sidebar/Makefile

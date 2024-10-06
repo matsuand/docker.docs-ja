@@ -30,7 +30,6 @@ copyfiles = \
 	badge.html                 \
 	button.html                \
 	card.html                  \
-	columns.html               \
 	cta.html                   \
 	grid.html                  \
 	include.html               \

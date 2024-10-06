@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = contribute get-started guides includes learning-paths \
-	manuals reference samples tags
+SUBDIRS = contribute get-started guides includes languages \
+	levels manuals products reference samples subjects tags
 
 bases = \
 	_index.md \

@@ -299,7 +299,8 @@ SUBDIRS = docker-concepts images introduction workshop
 bases = \
 	_index.md          \
 	docker-overview.md \
-	get-docker.md
+	get-docker.md      \
+	resources.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

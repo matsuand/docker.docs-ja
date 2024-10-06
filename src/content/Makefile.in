@@ -295,8 +295,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = contribute get-started guides includes learning-paths \
-	manuals reference samples tags
+SUBDIRS = contribute get-started guides includes languages \
+	levels manuals products reference samples subjects tags
 
 bases = \
 	_index.md \

@@ -3,9 +3,10 @@
 ##
 
 copyfiles = \
-	css.html         \
-	description.html \
-	keywords.html    \
+	css.html          \
+	description.html  \
+	filter-terms.html \
+	keywords.html     \
 	title.html
 
 include $(top_srcdir)/build-aux/common.mk

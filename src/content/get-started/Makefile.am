@@ -6,7 +6,8 @@ SUBDIRS = docker-concepts images introduction workshop
 bases = \
 	_index.md          \
 	docker-overview.md \
-	get-docker.md
+	get-docker.md      \
+	resources.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

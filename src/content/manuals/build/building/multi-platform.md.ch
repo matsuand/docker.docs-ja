@@ -7,8 +7,8 @@
 title: Multi-platform builds
 linkTitle: Multi-platform
 @y
-title: Multi-platform builds
-linkTitle: Multi-platform
+title: マルチプラットフォームビルド
+linkTitle: マルチプラットフォーム
 @z
 
 @x
@@ -53,14 +53,14 @@ production.
 But containerization by itself only solves part of the problem. Containers
 share the host kernel, which means that the code that's running inside the
 container must be compatible with the host's architecture. This is why you
-can't run a `linux/amd64` container on a `linux/arm64` host, or a Windows
-container on a Linux host.
+can't run a `linux/amd64` container on an arm64 host (without using emulation),
+or a Windows container on a Linux host.
 @y
 But containerization by itself only solves part of the problem. Containers
 share the host kernel, which means that the code that's running inside the
 container must be compatible with the host's architecture. This is why you
-can't run a `linux/amd64` container on a `linux/arm64` host, or a Windows
-container on a Linux host.
+can't run a `linux/amd64` container on an arm64 host (without using emulation),
+or a Windows container on a Linux host.
 @z
 
 @x
@@ -76,9 +76,9 @@ ARM-based Amazon EC2 instances in the cloud, without the need for emulation.
 @z
 
 @x
-{{< accordion title="How it works" >}}
+### Difference between single-platform and multi-platform images
 @y
-{{< accordion title="How it works" >}}
+### Difference between single-platform and multi-platform images
 @z
 
 @x
@@ -120,121 +120,127 @@ selects the `linux/amd64` variant (if you're using Linux containers).
 @z
 
 @x
-{{< /accordion >}}
-@y
-{{< /accordion >}}
-@z
-
-@x
 ## Prerequisites
 @y
 ## Prerequisites
 @z
 
 @x
-To build multi-platform images, you first need to make sure that your builder
-and Docker Engine support multi-platform builds. The easiest way to do this is
-to [enable the containerd image store](#enable-the-containerd-image-store).
+To build multi-platform images, you first need to make sure that your Docker
+environment is set up to support it. There are two ways you can do that:
 @y
-To build multi-platform images, you first need to make sure that your builder
-and Docker Engine support multi-platform builds. The easiest way to do this is
-to [enable the containerd image store](#enable-the-containerd-image-store).
+To build multi-platform images, you first need to make sure that your Docker
+environment is set up to support it. There are two ways you can do that:
 @z
 
 @x
-Alternatively, you can [create a custom builder](#create-a-custom-builder) that
-uses the `docker-container` driver, which supports multi-platform builds.
+- You can switch from the "classic" image store to the containerd image store.
+- You can create and use a custom builder.
 @y
-Alternatively, you can [create a custom builder](#create-a-custom-builder) that
-uses the `docker-container` driver, which supports multi-platform builds.
+- You can switch from the "classic" image store to the containerd image store.
+- You can create and use a custom builder.
 @z
 
 @x
-### Enable the containerd image store
+The "classic" image store of the Docker Engine does not support multi-platform
+images. Switching to the containerd image store ensures that your Docker Engine
+can push, pull, and build multi-platform images.
 @y
-### Enable the containerd image store
+The "classic" image store of the Docker Engine does not support multi-platform
+images. Switching to the containerd image store ensures that your Docker Engine
+can push, pull, and build multi-platform images.
+@z
+
+@x
+Creating a custom builder that uses a driver with multi-platform support,
+such as the `docker-container` driver, will let you build multi-platform images
+without switching to a different image store. However, you still won't be able
+to load the multi-platform images you build into your Docker Engine image
+store. But you can push them to a container registry directly with `docker
+build --push`.
+@y
+Creating a custom builder that uses a driver with multi-platform support,
+such as the `docker-container` driver, will let you build multi-platform images
+without switching to a different image store. However, you still won't be able
+to load the multi-platform images you build into your Docker Engine image
+store. But you can push them to a container registry directly with `docker
+build --push`.
 @z
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Desktop" >}}
+{{< tab name="containerd image store" >}}
 @y
 {{< tabs >}}
-{{< tab name="Docker Desktop" >}}
+{{< tab name="containerd image store" >}}
 @z
 
 @x
-To enable the containerd image store in Docker Desktop,
-go to **Settings** and select **Use containerd for pulling and storing images**
-in the **General** tab.
+The steps for enabling the containerd image store depends on whether you're
+using Docker Desktop or Docker Engine standalone:
 @y
-To enable the containerd image store in Docker Desktop,
-go to **Settings** and select **Use containerd for pulling and storing images**
-in the **General** tab.
+The steps for enabling the containerd image store depends on whether you're
+using Docker Desktop or Docker Engine standalone:
 @z
 
 @x
-Note that changing the image store means you'll temporarily lose access to
-images and containers in the classic image store.
-Those resources still exist, but to view them, you'll need to
-disable the containerd image store.
+- If you're using Docker Desktop, enable the containerd image store in the
+  [Docker Desktop settings](/manuals/desktop/containerd.md).
 @y
-Note that changing the image store means you'll temporarily lose access to
-images and containers in the classic image store.
-Those resources still exist, but to view them, you'll need to
-disable the containerd image store.
+- If you're using Docker Desktop, enable the containerd image store in the
+  [Docker Desktop settings](manuals/desktop/containerd.md).
+@z
+
+@x
+- If you're using Docker Engine standalone, enable the containerd image store
+  using the [daemon configuration file](/manuals/engine/storage/containerd.md).
+@y
+- If you're using Docker Engine standalone, enable the containerd image store
+  using the [daemon configuration file](manuals/engine/storage/containerd.md).
 @z
 
 @x
 {{< /tab >}}
-{{< tab name="Docker Engine" >}}
+{{< tab name="Custom builder" >}}
 @y
 {{< /tab >}}
-{{< tab name="Docker Engine" >}}
+{{< tab name="Custom builder" >}}
 @z
 
 @x
-If you're not using Docker Desktop,
-enable the containerd image store by adding the following feature configuration
-to your `/etc/docker/daemon.json` configuration file.
+To create a custom builder, use the `docker buildx create` command to create a
+builder that uses the `docker-container` driver.
 @y
-If you're not using Docker Desktop,
-enable the containerd image store by adding the following feature configuration
-to your `/etc/docker/daemon.json` configuration file.
-@z
-
-@x
-```json {hl_lines=3}
-{
-  "features": {
-    "containerd-snapshotter": true
-  }
-}
-```
-@y
-```json {hl_lines=3}
-{
-  "features": {
-    "containerd-snapshotter": true
-  }
-}
-```
-@z
-
-@x
-Restart the daemon after updating the configuration file.
-@y
-Restart the daemon after updating the configuration file.
+To create a custom builder, use the `docker buildx create` command to create a
+builder that uses the `docker-container` driver.
 @z
 
 @x
 ```console
-$ systemctl restart docker
+$ docker buildx create \
+  --name container-builder \
+  --driver docker-container \
+  --bootstrap --use
 ```
 @y
 ```console
-$ systemctl restart docker
+$ docker buildx create \
+  --name container-builder \
+  --driver docker-container \
+  --bootstrap --use
 ```
+@z
+
+@x
+> [!NOTE]
+> Builds with the `docker-container` driver aren't automatically loaded to your
+> Docker Engine image store. For more information, see [Build
+> drivers](/manuals/build/builders/drivers/_index.md).
+@y
+> [!NOTE]
+> Builds with the `docker-container` driver aren't automatically loaded to your
+> Docker Engine image store. For more information, see [Build
+> drivers](manuals/build/builders/drivers/_index.md).
 @z
 
 @x
@@ -246,51 +252,13 @@ $ systemctl restart docker
 @z
 
 @x
-### Create a custom builder
+If you're using Docker Engine standalone and you need to build multi-platform
+images using emulation, you also need to install QEMU, see [Install QEMU
+manually](#install-qemu-manually).
 @y
-### Create a custom builder
-@z
-
-@x
-To create a custom builder, use the `docker buildx create` command to create a
-builder that uses the `docker-container` driver. This driver runs the BuildKit
-daemon in a container, as opposed to the default `docker` driver, which uses
-the BuildKit library bundled with the Docker daemon. There isn't much
-difference between the two drivers, but the `docker-container` driver provides
-more flexibility and advanced features, including multi-platform support.
-@y
-To create a custom builder, use the `docker buildx create` command to create a
-builder that uses the `docker-container` driver. This driver runs the BuildKit
-daemon in a container, as opposed to the default `docker` driver, which uses
-the BuildKit library bundled with the Docker daemon. There isn't much
-difference between the two drivers, but the `docker-container` driver provides
-more flexibility and advanced features, including multi-platform support.
-@z
-
-@x
-```console
-$ docker buildx create \
-  --name container-builder \
-  --driver docker-container \
-  --use --bootstrap
-```
-@y
-```console
-$ docker buildx create \
-  --name container-builder \
-  --driver docker-container \
-  --use --bootstrap
-```
-@z
-
-@x
-This command creates a new builder named `container-builder` that uses the
-`docker-container` driver (default) and sets it as the active builder. The
-`--bootstrap` flag pulls the BuildKit image and starts the build container.
-@y
-This command creates a new builder named `container-builder` that uses the
-`docker-container` driver (default) and sets it as the active builder. The
-`--bootstrap` flag pulls the BuildKit image and starts the build container.
+If you're using Docker Engine standalone and you need to build multi-platform
+images using emulation, you also need to install QEMU, see [Install QEMU
+manually](#install-qemu-manually).
 @z
 
 @x
@@ -309,26 +277,12 @@ platforms for the build output, such as `linux/amd64` and `linux/arm64`:
 
 @x
 ```console
-$ docker build --platform linux/amd64,linux/arm64 .
+$ docker buildx build --platform linux/amd64,linux/arm64 .
 ```
 @y
 ```console
-$ docker build --platform linux/amd64,linux/arm64 .
+$ docker buildx build --platform linux/amd64,linux/arm64 .
 ```
-@z
-
-@x
-> [!NOTE]
-> If you're using the `docker-container` driver, you need to specify the
-> `--load` flag to load the image into the local image store after the build
-> finishes. This is because images built using the `docker-container` driver
-> aren't automatically loaded into the local image store.
-@y
-> [!NOTE]
-> If you're using the `docker-container` driver, you need to specify the
-> `--load` flag to load the image into the local image store after the build
-> finishes. This is because images built using the `docker-container` driver
-> aren't automatically loaded into the local image store.
 @z
 
 @x
@@ -675,10 +629,10 @@ Prerequisites:
 
 @x
 - Docker Desktop, or Docker Engine with [QEMU installed](#install-qemu-manually)
-- [containerd image store enabled](#enable-the-containerd-image-store)
+- containerd image store enabled
 @y
 - Docker Desktop, or Docker Engine with [QEMU installed](#install-qemu-manually)
-- [containerd image store enabled](#enable-the-containerd-image-store)
+- containerd image store enabled
 @z
 
 @x

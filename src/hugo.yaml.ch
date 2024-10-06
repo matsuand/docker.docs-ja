@@ -73,9 +73,6 @@ menus:
   - name: Reference
     pageRef: /reference/
     weight: 4
-  - name: Learning paths
-    pageRef: /learning-paths/
-    weight: 5
 @y
 menus:
   main:
@@ -91,9 +88,6 @@ menus:
   - name: リファレンス
     pageRef: /reference/
     weight: 4
-  - name: ラーニングパス
-    pageRef: /learning-paths/
-    weight: 5
 @z
 
 ------------------------------

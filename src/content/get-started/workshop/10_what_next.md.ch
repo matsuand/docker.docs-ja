@@ -132,15 +132,3 @@ If you'd like to see how containers are built from scratch, Liz Rice from Aqua S
 @y
 <iframe src="https://www.youtube-nocookie.com/embed/8fi7uSYlOdc" style="max-width: 100%; aspect-ratio: 16 / 9;" width="560" height="auto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 @z
-
-@x
-## Language-specific guides
-@y
-## Language-specific guides
-@z
-
-@x
-If you are looking for information on how to containerize an application using your favorite language, see the [Language-specific guides](/guides/language/_index.md).
-@y
-If you are looking for information on how to containerize an application using your favorite language, see the [Language-specific guides](guides/language/_index.md).
-@z
