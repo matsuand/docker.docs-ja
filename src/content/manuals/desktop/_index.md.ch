@@ -32,7 +32,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
     [Linux](/desktop/install/linux/).
   icon: download
 @y
-- title: Install Docker Desktop
+- title: Docker Desktop のインストール
   description: |
     [Mac](__SUBDIR__/desktop/install/mac-install/),
     [Windows](__SUBDIR__/desktop/install/windows-install/),
@@ -49,7 +49,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 - title: Docker Desktop の確認
   description: Docker Desktop を始めて、その主要機能について学びます。
   icon: feature_search
-  link: desktop/use-desktop/
+  link: __SUBDIR__/desktop/use-desktop/
 @z
 
 @x
@@ -61,7 +61,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 - title: リリースノートの確認
   description: 新機能、機能改善、バグフィックスを確認します。
   icon: note_add
-  link: desktop/release-notes/
+  link: __SUBDIR__/desktop/release-notes/
 @z
 
 @x
@@ -73,7 +73,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 - title: 一般的な FAQ の確認
   description: 一般的な FAQ や特定プラットフォームの FAQ を確認します。
   icon: help
-  link: desktop/faqs/
+  link: __SUBDIR__/desktop/faqs/
 @z
 
 @x
@@ -86,7 +86,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 - title: その他のリソースを探す
   description: ネットワーク機能、Kubernetes へのデプロイなどについての情報を調べます。
   icon: category
-  link: desktop/kubernetes/
+  link: __SUBDIR__/desktop/kubernetes/
 @z
 
 @x
@@ -98,7 +98,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 - title: フィードバック
   description: Docker Desktop やその機能についてのフィードバックを行います。
   icon: sms
-  link: desktop/feedback/
+  link: __SUBDIR__/desktop/feedback/
 @z
 
 @x
