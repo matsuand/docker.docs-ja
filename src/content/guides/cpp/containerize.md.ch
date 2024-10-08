@@ -17,7 +17,7 @@ keywords: C++, containerize, initialize
 description: Learn how to containerize a C++ application.
 @y
 keywords: C++, containerize, initialize
-description: Learn how to containerize a C++ application.
+description: C++ アプリケーションのコンテナー化について学びます。
 @z
 
 @x

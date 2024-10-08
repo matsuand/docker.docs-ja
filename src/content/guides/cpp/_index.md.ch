@@ -51,7 +51,7 @@ The C++ getting started guide teaches you how to create a containerized C++ appl
 @y
 > **謝辞**
 >
-> Docker では、このガイドを提供してくれた [Pradumna Saraf](https://twitter.com/pradumna_saraf) に感謝いたします。
+> Docker では、このガイドを提供してくれた [Pradumna Saraf](https://twitter.com/pradumna_saraf) に感謝します。
 @z
 
 @x

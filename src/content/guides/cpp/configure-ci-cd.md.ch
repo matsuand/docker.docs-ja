@@ -14,7 +14,7 @@ keywords: ci/cd, github actions, c++, shiny
 description: Learn how to configure CI/CD using GitHub Actions for your C++ application.
 @y
 keywords: ci/cd, github actions, c++, shiny
-description: Learn how to configure CI/CD using GitHub Actions for your C++ application.
+description: C++ アプリケーションに対して GitHub Action を使った CI/CD 設定方法について学びます。
 @z
 
 @x

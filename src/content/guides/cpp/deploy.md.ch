@@ -16,7 +16,7 @@ keywords: deploy, kubernetes, c++
 description: Learn how to develop locally using Kubernetes
 @y
 keywords: deploy, kubernetes, c++
-description: Learn how to develop locally using Kubernetes
+description: Kubernetes を使ってローカルにおいてデプロイする方法について学びます。
 @z
 
 @x

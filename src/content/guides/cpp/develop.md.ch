@@ -16,7 +16,7 @@ keywords: C++, local, development
 description: Learn how to develop your C++ application locally.
 @y
 keywords: C++, local, development
-description: Learn how to develop your C++ application locally.
+description: ローカル環境において C++ アプリケーションを開発する方法を学びます。
 @z
 
 @x
