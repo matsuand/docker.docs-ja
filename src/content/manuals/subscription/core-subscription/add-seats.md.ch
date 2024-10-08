@@ -42,21 +42,21 @@ When you add seats to your subscription in the middle of your billing cycle, you
 @z
 
 @x
-1. Sign in to your [Docker Hub](https://hub.docker.com) account.
+1. Sign in to [Docker Home](https://app.docker.com).
 @y
-1. Sign in to your [Docker Hub](https://hub.docker.com) account.
+1. Sign in to [Docker Home](https://app.docker.com).
 @z
 
 @x
-2. Select **Organizations** and then choose your organization.
+2. Select your **avatar** to open the drop-down menu.
 @y
-2. Select **Organizations** and then choose your organization.
+2. Select your **avatar** to open the drop-down menu.
 @z
 
 @x
-3. Select the **Billing** tab and then **Add seats**.
+3. Select **Billing** from the drop-down menu and then **Add seats**.
 @y
-3. Select the **Billing** tab and then **Add seats**.
+3. Select **Billing** from the drop-down menu and then **Add seats**.
 @z
 
 @x

@@ -48,21 +48,21 @@ For example, if you receive your billing on the 8th of every month for 10 seats 
 @z
 
 @x
-1. Sign in to your [Docker Hub](https://hub.docker.com) account.
+1. Sign in to [Docker Home](https://app.docker.com).
 @y
-1. Sign in to your [Docker Hub](https://hub.docker.com) account.
+1. Sign in to [Docker Home](https://app.docker.com).
 @z
 
 @x
-2. Select **Organizations** and then choose your organization.
+2. Select your **avatar** to expand the drop-down menu.
 @y
-2. Select **Organizations** and then choose your organization.
+2. Select your **avatar** to expand the drop-down menu.
 @z
 
 @x
-3. Select the **Billing** tab and then **Remove seats**.
+3. Select **Billing** from the drop-down menu and then **Remove seats**.
 @y
-3. Select the **Billing** tab and then **Remove seats**.
+3. Select **Billing** from the drop-down menu and then **Remove seats**.
 @z
 
 @x

@@ -8,17 +8,14 @@ title: Develop and test AWS Cloud applications using LocalStack and Docker
 linktitle: AWS development with LocalStack
 summary: |
   This guide explains how to use Docker to run LocalStack, a local AWS cloud
-  stack emulator, covering setup, managing cloud service emulation, and testing
-  cloud-based applications locally in a containerized environment.
+  stack emulator.
 @y
-description: How to develop and test AWS Cloud applications using LocalStack and Docker
+description: LocalStack と Docker を使った AWS クラウドアプリケーションの開発とテスト
 keywords: LocalStack, container-supported development
-title: Develop and test AWS Cloud applications using LocalStack and Docker
+title: LocalStack と Docker を使った AWS クラウドアプリケーションの開発とテスト
 linktitle: AWS development with LocalStack
 summary: |
-  This guide explains how to use Docker to run LocalStack, a local AWS cloud
-  stack emulator, covering setup, managing cloud service emulation, and testing
-  cloud-based applications locally in a containerized environment.
+  このガイドでは Docker を使って LocalStack すなわちローカル AWS クラウドスタックエミュレーターを実行する方法について説明します。
 @z
 
 @x

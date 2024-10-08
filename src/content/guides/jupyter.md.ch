@@ -10,21 +10,15 @@ title: Data science with JupyterLab
 @y
 description: Run, develop, and share data science projects using JupyterLab and Docker
 keywords: getting started, jupyter, notebook, python, jupyterlab, data science
-title: Data science with JupyterLab
+title: JupyterLab を使ったデータサイエンス
 @z
 
 @x
 summary: |
-  This guide explains how to use Docker to run Jupyter notebooks, covering
-  image setup, container management, and best practices for creating
-  reproducible and isolated development environments for data science and
-  machine learning tasks.
+  Use Docker to run Jupyter notebooks.
 @y
 summary: |
-  This guide explains how to use Docker to run Jupyter notebooks, covering
-  image setup, container management, and best practices for creating
-  reproducible and isolated development environments for data science and
-  machine learning tasks.
+  Docker を使って Jupyter ノートブックを実行します。
 @z
 
 @x

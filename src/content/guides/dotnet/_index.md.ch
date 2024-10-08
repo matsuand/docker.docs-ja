@@ -11,11 +11,13 @@ linkTitle: C# (.NET)
 
 @x
 description: Containerize and develop .NET apps using Docker
-summary: Learn how to containerize .NET applications using Docker, including building, running, and deploying .NET apps in Docker containers, with best practices and step-by-step examples.
+summary: |
+  Learn how to containerize .NET applications using Docker.
 keywords: getting started, .net
 @y
 description: Containerize and develop .NET apps using Docker
-summary: Learn how to containerize .NET applications using Docker, including building, running, and deploying .NET apps in Docker containers, with best practices and step-by-step examples.
+summary: |
+  Docker を使って .NET アプリケーションのコンテナー化を行う方法について説明します。
 keywords: getting started, .net
 @z
 

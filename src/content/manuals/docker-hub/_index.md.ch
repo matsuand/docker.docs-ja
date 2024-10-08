@@ -91,9 +91,9 @@ It's the world’s largest repository of container images with an array of conte
 @z
 
 @x __SUBDIR__ 対応
-Docker Hub is also where you can go to [change your Docker account settings and carry out administrative tasks](/admin/). If you have a Docker Team or Business subscription, you can also carry out administrative tasks in the [Docker Admin Console](https://admin.docker.com).
+Docker Hub is also where you can go to [carry out administrative tasks for organizations](/admin/). If you have a Docker Team or Business subscription, you can also carry out administrative tasks in the [Docker Admin Console](https://admin.docker.com).
 @y
-Docker Hub はまた、[Docker アカウント設定の変更や管理タスクの実行](__SUBDIR__/admin/) 場所でもあります。
+Docker Hub はまた、[組織に関する管理タスクの実行](__SUBDIR__/admin/) 場所でもあります。
 Docker チームに参加、または Business サブスクリプションを購入している場合は [Docker 管理コンソール](https://admin.docker.com) において管理タスクを実行することもできます。
 @z
 

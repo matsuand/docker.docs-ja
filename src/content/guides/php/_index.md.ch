@@ -19,14 +19,10 @@ keywords: getting started, php, composer
 
 @x
 summary: |
-  This guide explains how to containerize PHP applications using Docker,
-  covering image building, dependency management, optimizing image size, and
-  best practices for deploying PHP apps efficiently in containers.
+  This guide explains how to containerize PHP applications using Docker.
 @y
 summary: |
-  This guide explains how to containerize PHP applications using Docker,
-  covering image building, dependency management, optimizing image size, and
-  best practices for deploying PHP apps efficiently in containers.
+  このガイドでは Docker を使って PHP アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

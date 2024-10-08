@@ -38,9 +38,9 @@ The steps to set up your SSO configuration are:
 @z
 
 @x
-This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
+This page walks through steps 1 and 2 using Docker Hub or the Admin Console. To configure SSO for a company, use the Admin Console.
 @y
-This page walks through steps 1 and 2 using Docker Hub or the Admin Console.
+This page walks through steps 1 and 2 using Docker Hub or the Admin Console. To configure SSO for a company, use the Admin Console.
 @z
 
 @x

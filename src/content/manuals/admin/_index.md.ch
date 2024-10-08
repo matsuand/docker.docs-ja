@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+
 @x
 title: Administration overview
 linkTitle: Administration
@@ -95,9 +96,9 @@ keywords: admin, administration, company, organization, Admin Console, user acco
 % skip aliases...
 
 @x
-Administrators can manage companies and organizations using Docker Hub or the Docker Admin Console.
+Administrators can manage companies and organizations using the Docker Admin Console, or manage organizations in Docker Hub.
 @y
-Administrators can manage companies and organizations using Docker Hub or the Docker Admin Console.
+Administrators can manage companies and organizations using the Docker Admin Console, or manage organizations in Docker Hub.
 @z
 
 @x

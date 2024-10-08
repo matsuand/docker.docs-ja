@@ -2,25 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Image and registry exporters
 description: |
   The image and registry exporters create an image that can be loaded to your
   local image store or pushed to a registry
 keywords: build, buildx, buildkit, exporter, image, registry
-aliases:
-  - /build/building/exporters/image-registry/
----
 @y
----
 title: Image and registry exporters
 description: |
   The image and registry exporters create an image that can be loaded to your
   local image store or pushed to a registry
 keywords: build, buildx, buildkit, exporter, image, registry
-aliases:
-  - /build/building/exporters/image-registry/
----
 @z
 
 @x
@@ -77,6 +69,7 @@ The following table describes the available parameters that you can pass to
 | `compression`          | `uncompressed`,`gzip`,`estargz`,`zstd` | `gzip`  | Compression type, see [compression][1]                                                                                                                                                                                              |
 | `compression-level`    | `0..22`                                |         | Compression level, see [compression][1]                                                                                                                                                                                             |
 | `force-compression`    | `true`,`false`                         | `false` | Forcefully apply compression, see [compression][1]                                                                                                                                                                                  |
+| `rewrite-timestamp`    | `true`,`false`                         | `false` | Rewrite the file timestamps to the `SOURCE_DATE_EPOCH` value. See [build reproducibility][4] for how to specify the `SOURCE_DATE_EPOCH` value.                                                                                      |
 | `oci-mediatypes`       | `true`,`false`                         | `false` | Use OCI media types in exporter manifests, see [OCI Media types][2]                                                                                                                                                                 |
 | `unpack`               | `true`,`false`                         | `false` | Unpack image after creation (for use with containerd)                                                                                                                                                                               |
 | `store`                | `true`,`false`                         | `true`  | Store the result images to the worker's (for example, containerd) image store, and ensures that the image has all blobs in the content store. Ignored if the worker doesn't have image store (when using OCI workers, for example). |
@@ -93,6 +86,7 @@ The following table describes the available parameters that you can pass to
 | `compression`          | `uncompressed`,`gzip`,`estargz`,`zstd` | `gzip`  | Compression type, see [compression][1]                                                                                                                                                                                              |
 | `compression-level`    | `0..22`                                |         | Compression level, see [compression][1]                                                                                                                                                                                             |
 | `force-compression`    | `true`,`false`                         | `false` | Forcefully apply compression, see [compression][1]                                                                                                                                                                                  |
+| `rewrite-timestamp`    | `true`,`false`                         | `false` | Rewrite the file timestamps to the `SOURCE_DATE_EPOCH` value. See [build reproducibility][4] for how to specify the `SOURCE_DATE_EPOCH` value.                                                                                      |
 | `oci-mediatypes`       | `true`,`false`                         | `false` | Use OCI media types in exporter manifests, see [OCI Media types][2]                                                                                                                                                                 |
 | `unpack`               | `true`,`false`                         | `false` | Unpack image after creation (for use with containerd)                                                                                                                                                                               |
 | `store`                | `true`,`false`                         | `true`  | Store the result images to the worker's (for example, containerd) image store, and ensures that the image has all blobs in the content store. Ignored if the worker doesn't have image store (when using OCI workers, for example). |
@@ -103,10 +97,12 @@ The following table describes the available parameters that you can pass to
 [1]: _index.md#compression
 [2]: _index.md#oci-media-types
 [3]: #annotations
+[4]: https://github.com/moby/buildkit/blob/master/docs/build-repro.md
 @y
 [1]: _index.md#compression
 [2]: _index.md#oci-media-types
 [3]: #annotations
+[4]: https://github.com/moby/buildkit/blob/master/docs/build-repro.md
 @z
 
 @x

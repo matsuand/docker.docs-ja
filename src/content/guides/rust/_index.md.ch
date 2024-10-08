@@ -19,14 +19,10 @@ keywords: Docker, getting started, Rust, language
 
 @x
 summary: |
-  This guide covers how to containerize Rust applications using Docker,
-  focusing on building images, managing dependencies, employing multi-stage
-  builds, and optimizing for efficient deployment in containers.
+  This guide covers how to containerize Rust applications using Docker.
 @y
 summary: |
-  This guide covers how to containerize Rust applications using Docker,
-  focusing on building images, managing dependencies, employing multi-stage
-  builds, and optimizing for efficient deployment in containers.
+  このガイドでは Docker を使って Rust アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

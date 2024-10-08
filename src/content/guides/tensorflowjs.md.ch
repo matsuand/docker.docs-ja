@@ -6,17 +6,13 @@ description: Learn how to deploy pre-trained models in a TensorFlow.js web appli
 keywords: tensorflow.js, machine learning, ml, mediapipe, blazeface, face detection
 title: Face detection with TensorFlow.js
 summary: |
-  This guide explains how to run TensorFlow.js in Docker containers, covering
-  setup, container management, and deploying machine learning models in
-  web-based environments using TensorFlow.js.
+  This guide explains how to run TensorFlow.js in Docker containers.
 @y
 description: Learn how to deploy pre-trained models in a TensorFlow.js web applications to perform face detection.
 keywords: tensorflow.js, machine learning, ml, mediapipe, blazeface, face detection
-title: Face detection with TensorFlow.js
+title: TensorFlow.js を使った顔認識
 summary: |
-  This guide explains how to run TensorFlow.js in Docker containers, covering
-  setup, container management, and deploying machine learning models in
-  web-based environments using TensorFlow.js.
+  Docker コンテナー内にて TensorFlow.js を実行する方法について説明します。
 @z
 
 @x

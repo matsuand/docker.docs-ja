@@ -7,18 +7,20 @@ linkTitle: Docker Build Cloud
 description: |
   Learn how to build and deploy Docker images to the cloud with Docker Build
   Cloud.
-summary: |
-  Create applications up to 39x faster using cloud-based resources, shared team
-  cache, and native multi-architecture support.
 @y
-title: "Docker Build Cloud: Reclaim your time with fast, multi-architecture builds"
+title: "Docker Build Cloud: 高速なマルチアーキテクチャービルドを通じて時間短縮を図ってください"
 linkTitle: Docker Build Cloud
 description: |
-  Learn how to build and deploy Docker images to the cloud with Docker Build
-  Cloud.
+  Docker Build Cloud を使って Docker イメージのビルドとクラウドへのデプロイ方法について学びます。
+@z
+
+@x
 summary: |
-  Create applications up to 39x faster using cloud-based resources, shared team
+  Build applications up to 39x faster using cloud-based resources, shared team
   cache, and native multi-architecture support.
+@y
+summary: |
+  クラウドベースのリソース、チームキャッシュの共有、ネイティブなマルチアーキテクチャーサポートを通じて、アプリケーションのビルドを 39 倍まですばやく行います。
 @z
 
 @x

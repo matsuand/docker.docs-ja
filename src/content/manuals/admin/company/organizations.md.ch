@@ -2,101 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to manage organization in a company.
 keywords: company, multiple organizations, manage organizations
 title: Manage organizations
----
 @y
----
 description: Learn how to manage organization in a company.
 keywords: company, multiple organizations, manage organizations
 title: Manage organizations
----
 @z
 
 @x
-You can manage the organizations in a company in Docker Hub and the Docker Admin Console. In Docker Hub, you can manage seats and members at the organization-level. When you use the Admin Console, you can do more to manage organizations at the company-level.
+You can manage the organizations in a company in the Docker Admin Console.
 @y
-You can manage the organizations in a company in Docker Hub and the Docker Admin Console. In Docker Hub, you can manage seats and members at the organization-level. When you use the Admin Console, you can do more to manage organizations at the company-level.
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-## View all organizations
-@y
-## View all organizations
-@z
-
-@x
-1. In Docker Hub, select **Organizations**.
-2. Select your company.
-3. From the company page, you can view all organizations in the **Overview** tab.
-@y
-1. In Docker Hub, select **Organizations**.
-2. Select your company.
-3. From the company page, you can view all organizations in the **Overview** tab.
-@z
-
-@x
-## Add organizations to a company
-@y
-## Add organizations to a company
-@z
-
-@x
->**Important**
->
-> You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
-@y
->**Important**
->
-> You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add.
-@z
-
-@x
-There is no limit to the number of organizations you can have under a company layer. All organizations must have a Business subscription.
-@y
-There is no limit to the number of organizations you can have under a company layer. All organizations must have a Business subscription.
-@z
-
-@x
->**Important**
->
-> Once you add an organization to a company, you can't remove it from the company.
-@y
->**Important**
->
-> Once you add an organization to a company, you can't remove it from the company.
-@z
-
-@x
-1. In Docker Hub, select **Organizations**.
-2. Select your company.
-3. From the company page, select **Add organization**.
-4. Choose the organization you want to add from the drop-down menu.
-5. Select **Add organization** to confirm.
-@y
-1. In Docker Hub, select **Organizations**.
-2. Select your company.
-3. From the company page, select **Add organization**.
-4. Choose the organization you want to add from the drop-down menu.
-5. Select **Add organization** to confirm.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
+You can manage the organizations in a company in the Docker Admin Console.
 @z
 
 @x
@@ -209,16 +127,8 @@ There is no limit to the number of organizations you can have under a company la
 
 @x
 For more details about managing an organization, see [Organization administration](../organization/_index.md).
-{{< /tab >}}
 @y
 For more details about managing an organization, see [Organization administration](../organization/_index.md).
-{{< /tab >}}
-@z
-
-@x
-{{< /tabs >}}
-@y
-{{< /tabs >}}
 @z
 
 @x

@@ -19,14 +19,10 @@ keywords: Docker, getting started, Python, language
 
 @x
 summary: |
-  This guide explains how to containerize Python applications using Docker,
-  covering image building, dependency management, optimizing image size, and
-  best practices for deploying Python apps efficiently in containers.
+  This guide explains how to containerize Python applications using Docker.
 @y
 summary: |
-  This guide explains how to containerize Python applications using Docker,
-  covering image building, dependency management, optimizing image size, and
-  best practices for deploying Python apps efficiently in containers.
+  このガイドでは Docker を使って Python アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

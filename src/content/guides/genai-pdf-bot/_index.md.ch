@@ -6,17 +6,14 @@ title: PDF analysis and chat
 description: Containerize generative AI (GenAI) apps using Docker
 keywords: python, generative ai, genai, llm, neo4j, ollama, langchain
 summary: |
-  This guide explains how to build a PDF bot using Docker and generative AI,
-  focusing on setting up a containerized environment for parsing PDF documents
-  and generating intelligent responses based on the content.
+  Learn how to build a PDF bot for parsing PDF documents and generating
+  responses using Docker and generative AI.
 @y
-title: PDF analysis and chat
+title: PDF 分析とチャット
 description: Containerize generative AI (GenAI) apps using Docker
 keywords: python, generative ai, genai, llm, neo4j, ollama, langchain
 summary: |
-  This guide explains how to build a PDF bot using Docker and generative AI,
-  focusing on setting up a containerized environment for parsing PDF documents
-  and generating intelligent responses based on the content.
+  Docker と生成 AI を活用して PDF 文書の検索とレスポンス生成を行う PDF bot のビルド方法について学びます。
 @z
 
 @x

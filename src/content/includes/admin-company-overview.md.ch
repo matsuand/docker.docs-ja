@@ -1,12 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
-A company provides a single point of visibility across multiple organizations. This view simplifies the management of Docker organizations and settings. It's available to Docker Business subscribers.
+A company provides a single point of visibility across multiple organizations. This view simplifies the management of Docker organizations and settings. Organization owners with a Docker Business subscription can create a company and then manage it through the [Docker Admin Console](https://app.docker.com/admin).
 @y
-A company provides a single point of visibility across multiple organizations. This view simplifies the management of Docker organizations and settings. It's available to Docker Business subscribers.
+A company provides a single point of visibility across multiple organizations. This view simplifies the management of Docker organizations and settings. Organization owners with a Docker Business subscription can create a company and then manage it through the [Docker Admin Console](https://app.docker.com/admin).
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 description: Learn how to manage Single Sign-On for your organization or company.
@@ -32,9 +32,15 @@ linkTitle: Manage
 @z
 
 @x
-{{< tab name="Admin Console" >}}
+{{< include "admin-early-access.md" >}}
 @y
-{{< tab name="Admin Console" >}}
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+{{% admin-sso-management-orgs product="admin" %}}
+@y
+{{% admin-sso-management-orgs product="admin" %}}
 @z
 
 @x
@@ -44,15 +50,141 @@ linkTitle: Manage
 @z
 
 @x
+{{< tabs >}}
 {{< tab name="Admin Console" >}}
 @y
+{{< tabs >}}
 {{< tab name="Admin Console" >}}
 @z
 
 @x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+{{% admin-sso-management product="admin" %}}
+@y
+{{% admin-sso-management product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
+@z
+
+@x
+{{% admin-sso-management product="hub" %}}
+@y
+{{% admin-sso-management product="hub" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Manage SSO connections
+@y
+## Manage SSO connections
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+{{% admin-sso-management-connections product="admin" %}}
+@y
+{{% admin-sso-management-connections product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+{{% admin-sso-management-connections product="hub" %}}
+@y
+{{% admin-sso-management-connections product="hub" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Manage users
+@y
+## Manage users
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+{{% admin-sso-management-users product="admin" %}}
+@y
+{{% admin-sso-management-users product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+{{% admin-sso-management-users product="hub" %}}
+@y
+{{% admin-sso-management-users product="hub" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x

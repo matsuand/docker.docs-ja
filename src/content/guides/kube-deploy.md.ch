@@ -8,21 +8,17 @@ title: Deploy to Kubernetes
 keywords: kubernetes, pods, deployments, kubernetes services
 description: Learn how to describe and deploy a simple application on Kubernetes.
 @y
-title: Deploy to Kubernetes
+title: Kubernetes を使ったデプロイ
 keywords: kubernetes, pods, deployments, kubernetes services
 description: Learn how to describe and deploy a simple application on Kubernetes.
 @z
 
 @x
 summary: |
-  Learn how to deploy and orchestrate Docker containers using Kubernetes, with
-  step-by-step guidance on setup, configuration, and best practices to enhance
-  your application's scalability and reliability.
+  Learn how to deploy and orchestrate Docker containers using Kubernetes.
 @y
 summary: |
-  Learn how to deploy and orchestrate Docker containers using Kubernetes, with
-  step-by-step guidance on setup, configuration, and best practices to enhance
-  your application's scalability and reliability.
+  Kubernetes を使って Docker コンテナーのデプロイとオーケストレーションを行う方法について学びます。
 @z
 
 @x

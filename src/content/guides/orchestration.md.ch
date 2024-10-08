@@ -15,14 +15,10 @@ description: Get oriented on some basics of Docker and install Docker Desktop.
 
 @x
 summary: |
-  Explore the essentials of container orchestration with Docker, including key
-  concepts, tools like Kubernetes and Docker Swarm, and practical guides to
-  efficiently deploy and manage your applications.
+  Explore the essentials of container orchestration with Docker.
 @y
 summary: |
-  Explore the essentials of container orchestration with Docker, including key
-  concepts, tools like Kubernetes and Docker Swarm, and practical guides to
-  efficiently deploy and manage your applications.
+  Docker を用いたコンテナーオーケストレーションの基本を学びます。
 @z
 
 @x

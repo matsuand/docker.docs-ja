@@ -10,19 +10,14 @@ keywords: nlp, natural language processing, sentiment analysis, python, nltk
 description: Learn how to build and run a sentiment analysis application using Python, NLTK, and Docker.
 summary: |
   This guide demonstrates how to containerize sentiment analysis models using
-  Docker, focusing on setting up robust environments for processing text data,
-  streamlining model deployment, and handling real-time sentiment
-  classification efficiently.
+  Docker.
 @y
-title: Build a sentiment analysis app
+title: センチメント分析アプリのビルド
 linkTitle: Sentiment analysis
 keywords: nlp, natural language processing, sentiment analysis, python, nltk
 description: Learn how to build and run a sentiment analysis application using Python, NLTK, and Docker.
 summary: |
-  This guide demonstrates how to containerize sentiment analysis models using
-  Docker, focusing on setting up robust environments for processing text data,
-  streamlining model deployment, and handling real-time sentiment
-  classification efficiently.
+  このガイドでは Docker を使ってセンチメント分析モデルをコンテナー化する方法について説明します。
 @z
 
 @x

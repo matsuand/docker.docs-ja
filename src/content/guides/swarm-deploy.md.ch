@@ -8,21 +8,17 @@ title: Deploy to Swarm
 keywords: swarm, swarm services, stacks
 description: Learn how to describe and deploy a simple application on Docker Swarm.
 @y
-title: Deploy to Swarm
+title: Swarm へのデプロイ
 keywords: swarm, swarm services, stacks
 description: Learn how to describe and deploy a simple application on Docker Swarm.
 @z
 
 @x
 summary: |
-  Discover how to deploy and manage Docker containers using Docker Swarm, with
-  step-by-step guides on setup, scaling, networking, and best practices for
-  efficient container orchestration.
+  Discover how to deploy and manage Docker containers using Docker Swarm.
 @y
 summary: |
-  Discover how to deploy and manage Docker containers using Docker Swarm, with
-  step-by-step guides on setup, scaling, networking, and best practices for
-  efficient container orchestration.
+  Docker Swarm を使って Docker コンテナーのデプロイや管理手法について学びます。
 @z
 
 @x

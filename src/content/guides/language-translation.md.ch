@@ -9,7 +9,7 @@ linkTitle: Language translation
 keywords: nlp, natural language processing, text summarization, python, language translation, googletrans
 description: Learn how to build and run a language translation application using Python, Googletrans, and Docker.
 @y
-title: Build a language translation app
+title: 言語翻訳アプリのビルド
 linkTitle: Language translation
 keywords: nlp, natural language processing, text summarization, python, language translation, googletrans
 description: Learn how to build and run a language translation application using Python, Googletrans, and Docker.
@@ -18,13 +18,10 @@ description: Learn how to build and run a language translation application using
 @x
 summary: |
   This guide demonstrates how to use Docker to deploy language translation
-  models for NLP tasks, covering setup, container management, and running
-  translation services efficiently in a containerized environment.
+  models for NLP tasks.
 @y
 summary: |
-  This guide demonstrates how to use Docker to deploy language translation
-  models for NLP tasks, covering setup, container management, and running
-  translation services efficiently in a containerized environment.
+  このガイドでは Docker を使って自然言語処理 (NLP) タスクの言語翻訳モデルをデプロイする方法について説明します。
 @z
 
 @x

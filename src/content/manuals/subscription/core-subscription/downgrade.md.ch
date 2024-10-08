@@ -28,11 +28,11 @@ When you downgrade your subscription, access to paid features is available until
 @x
 > [!IMPORTANT]
 >
-> If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only 1 private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
+> If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only one private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
 @y
 > [!IMPORTANT]
 >
-> If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only 1 private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
+> If you downgrade your personal account from a Pro subscription to a Personal subscription, note that [Personal subscriptions](details.md#docker-personal) don't include collaborators for private repositories, and only one private repository is included. When you downgrade, all collaborators will be removed and additional private repositories are locked.
 @z
 
 @x
@@ -88,15 +88,15 @@ If you want to downgrade a Docker Business subscription and your organization us
 @z
 
 @x
-1. Sign in to your [Docker Hub](https://hub.docker.com) account.
+1. Sign in to [Docker Home](https://app.docker.com).
 @y
-1. Sign in to your [Docker Hub](https://hub.docker.com) account.
+1. Sign in to [Docker Home](https://app.docker.com).
 @z
 
 @x
-2. Select your avatar in the top-right corner and from the drop-down menu select **Billing**.
+2. Select your **avatar** and from the drop-down menu select **Billing**.
 @y
-2. Select your avatar in the top-right corner and from the drop-down menu select **Billing**.
+2. Select your **avatar** and from the drop-down menu select **Billing**.
 @z
 
 @x
@@ -106,15 +106,15 @@ If you want to downgrade a Docker Business subscription and your organization us
 @z
 
 @x
-4. In the **Plan** section, select **Change plan**.
+4. In the plan section, select **Change plan**.
 @y
-4. In the **Plan** section, select **Change plan**.
+4. In the plan section, select **Change plan**.
 @z
 
 @x
-5. On the **Change Plan** page, select the plan you'd like to downgrade to. 
+5. Select the plan you'd like to downgrade to.
 @y
-5. On the **Change Plan** page, select the plan you'd like to downgrade to. 
+5. Select the plan you'd like to downgrade to.
 @z
 
 @x
@@ -124,10 +124,10 @@ If you want to downgrade a Docker Business subscription and your organization us
 @z
 
 @x
-7. Optional: Select a reason for your downgrade from the list and select **Send**.
+7. Optional. Select a reason for your downgrade from the list and select **Send**.
     The **Billing** page displays a confirmation of the downgrade with details on when the downgrade changes take effect.
 @y
-7. Optional: Select a reason for your downgrade from the list and select **Send**.
+7. Optional. Select a reason for your downgrade from the list and select **Send**.
     The **Billing** page displays a confirmation of the downgrade with details on when the downgrade changes take effect.
 @z
 

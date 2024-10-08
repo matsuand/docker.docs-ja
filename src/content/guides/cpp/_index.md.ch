@@ -16,14 +16,10 @@ keywords: getting started, c++
 
 @x
 summary: |
-  This guide explains how to containerize C++ applications using Docker,
-  covering how to build Docker images, manage dependencies, and deploy C++ apps
-  efficiently in containers.
+  This guide explains how to containerize C++ applications using Docker.
 @y
 summary: |
-  This guide explains how to containerize C++ applications using Docker,
-  covering how to build Docker images, manage dependencies, and deploy C++ apps
-  efficiently in containers.
+  このガイドでは Docker を使って C++ アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

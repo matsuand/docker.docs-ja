@@ -20,13 +20,10 @@ keywords: Docker, getting started, ruby, language
 @x
 summary: |
   This guide explains how to containerize Ruby on Rails applications using
-  Docker, covering image building, dependency management, optimizing image
-  size, and best practices for deploying Ruby apps efficiently in containers.
+  Docker.
 @y
 summary: |
-  This guide explains how to containerize Ruby on Rails applications using
-  Docker, covering image building, dependency management, optimizing image
-  size, and best practices for deploying Ruby apps efficiently in containers.
+  このガイドでは Docker を使って Ruby on Rails アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

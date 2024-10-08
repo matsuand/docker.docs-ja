@@ -19,14 +19,10 @@ keywords: Docker, getting started, R, language
 
 @x
 summary: |
-  This guide details how to containerize R applications using Docker, covering
-  image building, dependency management, optimizing image size, and best
-  practices for deploying R applications efficiently in containers.
+  This guide details how to containerize R applications using Docker.
 @y
 summary: |
-  This guide details how to containerize R applications using Docker, covering
-  image building, dependency management, optimizing image size, and best
-  practices for deploying R applications efficiently in containers.
+  このガイドでは Docker を使って R 言語アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

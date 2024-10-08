@@ -7,24 +7,21 @@
 title: GenAI video transcription and chat
 linkTitle: Video transcription and chat
 @y
-title: GenAI video transcription and chat
-linkTitle: Video transcription and chat
+title: GenAI によるビデオ文字起こしとチャット
+linkTitle: ビデオ文字起こしとチャット
 @z
 
 @x
 description: Explore a generative AI video analysis app that uses Docker, OpenAI, and Pinecone.
 keywords: python, generative ai, genai, llm, whisper, pinecone, openai, whisper
 summary: |
-  Learn how to build and deploy a generative AI video bot using Docker, with
-  step-by-step instructions for setup, integration, and optimization to enhance
-  your AI development projects.
+  Learn how to build and deploy a generative AI video analysis and
+  transcription bot using Docker.
 @y
 description: Explore a generative AI video analysis app that uses Docker, OpenAI, and Pinecone.
 keywords: python, generative ai, genai, llm, whisper, pinecone, openai, whisper
 summary: |
-  Learn how to build and deploy a generative AI video bot using Docker, with
-  step-by-step instructions for setup, integration, and optimization to enhance
-  your AI development projects.
+  Docker を利用した生成 AI 画像分析と文字起こし bot のビルドおよびデプロイ方法について学びます。
 @z
 
 @x

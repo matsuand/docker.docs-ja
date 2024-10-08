@@ -15,18 +15,12 @@ linkTitle: Go
 description: Containerize Go apps using Docker
 keywords: docker, getting started, go, golang, language, dockerfile
 summary: |
-  This guide teaches you how to containerize Go applications using Docker,
-  covering image building, dependency management, multi-stage builds for
-  smaller images, and best practices for deploying Go apps efficiently in
-  containers.
+  This guide teaches you how to containerize Go applications using Docker.
 @y
 description: Containerize Go apps using Docker
 keywords: docker, getting started, go, golang, language, dockerfile
 summary: |
-  This guide teaches you how to containerize Go applications using Docker,
-  covering image building, dependency management, multi-stage builds for
-  smaller images, and best practices for deploying Go apps efficiently in
-  containers.
+  このガイドでは Docker を使って Go 言語アプリケーションのコンテナー化を行う方法について学びます。
 @z
 
 @x

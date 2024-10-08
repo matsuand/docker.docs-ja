@@ -19,16 +19,10 @@ keywords: getting started, node, node.js
 
 @x
 summary: |
-  This guide explains how to containerize Node.js applications using Docker,
-  covering image building, dependency management, optimizing image size with
-  multi-stage builds, and best practices for deploying Node.js apps efficiently
-  in containers.
+  This guide explains how to containerize Node.js applications using Docker.
 @y
 summary: |
-  This guide explains how to containerize Node.js applications using Docker,
-  covering image building, dependency management, optimizing image size with
-  multi-stage builds, and best practices for deploying Node.js apps efficiently
-  in containers.
+  このガイドでは Docker を使って Node.js アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x

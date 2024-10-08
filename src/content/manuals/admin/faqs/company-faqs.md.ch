@@ -88,6 +88,34 @@ You can add a maximum of 10 company owners to a single company account.
 @z
 
 @x
+### Do company owners occupy a subscription seat?
+@y
+### Do company owners occupy a subscription seat?
+@z
+
+@x
+Company owners don't occupy a seat in any organization unless they are added as
+member of the organization. Since company owners have the same access as
+organization owners for all organizations associated with the company, it is not
+necessary to add company owners to an organization.
+@y
+Company owners don't occupy a seat in any organization unless they are added as
+member of the organization. Since company owners have the same access as
+organization owners for all organizations associated with the company, it is not
+necessary to add company owners to an organization.
+@z
+
+@x
+Note that when you first create a company, your account will be both a company
+owner and an organization owner. Your account will occupy a seat as long as
+you're an organization owner.
+@y
+Note that when you first create a company, your account will be both a company
+owner and an organization owner. Your account will occupy a seat as long as
+you're an organization owner.
+@z
+
+@x
 ### What permissions does the company owner have in the associated/nested organizations?
 @y
 ### What permissions does the company owner have in the associated/nested organizations?
@@ -154,9 +182,9 @@ A company name must be unique to that of its child organization. If a child orga
 @z
 
 @x
-You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md#add-organizations-to-a-company.md) or [Docker Hub](../../admin/company/new-company.md#add-organizations-to-a-company.md).
+You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md#add-organizations-to-a-company.md).
 @y
-You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md#add-organizations-to-a-company.md) or [Docker Hub](../../admin/company/new-company.md#add-organizations-to-a-company.md).
+You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md#add-organizations-to-a-company.md).
 @z
 
 @x

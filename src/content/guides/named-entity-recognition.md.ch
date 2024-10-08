@@ -10,19 +10,14 @@ keywords: nlp, natural language processing, named entity recognition, python, sp
 description: Learn how to build and run a named entity recognition application using Python, spaCy, and Docker.
 summary: |
   This guide explains how to containerize named entity recognition (NER) models
-  using Docker, detailing environment setup for large-scale data processing,
-  optimizing NER model deployment, and managing high-performance containerized
-  NLP workflows.
+  using Docker.
 @y
-title: Build a named entity recognition app
+title: NER アプリのビルド
 linkTitle: Named entity recognition
 keywords: nlp, natural language processing, named entity recognition, python, spacy, ner
 description: Learn how to build and run a named entity recognition application using Python, spaCy, and Docker.
 summary: |
-  This guide explains how to containerize named entity recognition (NER) models
-  using Docker, detailing environment setup for large-scale data processing,
-  optimizing NER model deployment, and managing high-performance containerized
-  NLP workflows.
+  このガイドでは Docker を使って NER (named entity recognition; 固有表現抽出) モデルをコンテナー化する方法について説明します。
 @z
 
 @x

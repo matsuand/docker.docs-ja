@@ -19,16 +19,10 @@ description: Containerize Java apps using Docker
 
 @x
 summary: |
-  This guide demonstrates how to containerize Java applications using Docker,
-  covering image building, dependency management, optimizing image size with
-  multi-stage builds, and best practices for deploying Java apps efficiently in
-  containers.
+  This guide demonstrates how to containerize Java applications using Docker.
 @y
 summary: |
-  This guide demonstrates how to containerize Java applications using Docker,
-  covering image building, dependency management, optimizing image size with
-  multi-stage builds, and best practices for deploying Java apps efficiently in
-  containers.
+  このガイドでは Docker を使って Java アプリケーションのコンテナー化を行う方法について説明します。
 @z
 
 @x
