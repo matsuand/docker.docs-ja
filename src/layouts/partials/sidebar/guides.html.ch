@@ -10,5 +10,5 @@
 @x
   <a href="/guides/" class="mt-2 link">« Back to all guides</a>
 @y
-  <a href="/guides/" class="mt-2 link">« Back to all guides</a>
+  <a href="__SUBDIR__/guides/" class="mt-2 link">« 全ガイドに戻る</a>
 @z
