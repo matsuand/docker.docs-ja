@@ -3,6 +3,7 @@
 ##
 
 bases = \
+	render-codeblock.html \
 	render-image.html
 
 include $(top_srcdir)/build-aux/common.mk
@@ -10,7 +11,6 @@ include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
 	render-blockquote.html \
-	render-codeblock.html  \
 	render-heading.html    \
 	render-link.html
 
