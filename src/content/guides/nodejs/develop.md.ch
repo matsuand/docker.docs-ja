@@ -17,7 +17,7 @@ keywords: node, node.js, development
 description: Learn how to develop your Node.js application locally using containers.
 @y
 keywords: node, node.js, development
-description: Learn how to develop your Node.js application locally using containers.
+description: コンテナーを使ってローカル環境にて Node.js アプリケーションを開発する方法を学びます。
 @z
 
 @x

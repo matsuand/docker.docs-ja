@@ -16,7 +16,7 @@ keywords: deploy, kubernetes, node, node.js
 description: Learn how to deploy locally to test and debug your Kubernetes deployment
 @y
 keywords: deploy, kubernetes, node, node.js
-description: Learn how to deploy locally to test and debug your Kubernetes deployment
+description: Kubernetes デプロイのテストとデバッグを行うために、ローカルにおいてデプロイする方法について学びます。
 @z
 
 @x

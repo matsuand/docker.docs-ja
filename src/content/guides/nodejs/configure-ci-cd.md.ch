@@ -14,7 +14,7 @@ keywords: ci/cd, github actions, node.js, node
 description: Learn how to configure CI/CD using GitHub Actions for your Node.js application.
 @y
 keywords: ci/cd, github actions, node.js, node
-description: Learn how to configure CI/CD using GitHub Actions for your Node.js application.
+description: Node.js アプリケーションに対して GitHub Action を使った CI/CD 設定方法について学びます。
 @z
 
 @x

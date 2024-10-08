@@ -16,7 +16,7 @@ keywords: node.js, node, test
 description: Learn how to run your Node.js tests in a container.
 @y
 keywords: node.js, node, test
-description: Learn how to run your Node.js tests in a container.
+description: コンテナー内の Node.js テストを実行する方法を学びます。
 @z
 
 @x
