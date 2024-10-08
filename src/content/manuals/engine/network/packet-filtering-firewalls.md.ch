@@ -1,26 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Packet filtering and firewalls
-weight: 10
-description: How Docker works with packet filtering, iptables, and firewalls
-keywords: network, iptables, firewall
-aliases:
-- /network/iptables/
-- /network/packet-filtering-firewalls/
----
 @y
----
-title: Packet filtering and firewalls
-weight: 10
+title: パケットフィルタリングとファイアウォール
+@z
+
+@x
 description: How Docker works with packet filtering, iptables, and firewalls
 keywords: network, iptables, firewall
-aliases:
-- /network/iptables/
-- /network/packet-filtering-firewalls/
----
+@y
+description: How Docker works with packet filtering, iptables, and firewalls
+keywords: network, iptables, firewall
 @z
 
 @x
@@ -165,17 +159,7 @@ request, you must use the
 For example:
 @z
 
-@x
-```console
-$ sudo iptables -I DOCKER-USER -p tcp -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-$ sudo iptables -I DOCKER-USER -p tcp -m conntrack --ctorigdst 198.51.100.2 --ctorigdstport 80 -j ACCEPT
-```
-@y
-```console
-$ sudo iptables -I DOCKER-USER -p tcp -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
-$ sudo iptables -I DOCKER-USER -p tcp -m conntrack --ctorigdst 198.51.100.2 --ctorigdstport 80 -j ACCEPT
-```
-@z
+% snip command...
 
 @x
 > [!IMPORTANT]
@@ -241,15 +225,7 @@ negated rule at the top of the `DOCKER-USER` filter chain. For example, the
 following rule drops packets from all IP addresses except `192.0.2.2`:
 @z
 
-@x
-```console
-$ iptables -I DOCKER-USER -i ext_if ! -s 192.0.2.2 -j DROP
-```
-@y
-```console
-$ iptables -I DOCKER-USER -i ext_if ! -s 192.0.2.2 -j DROP
-```
-@z
+% snip command...
 
 @x
 You will need to change `ext_if` to correspond with your
@@ -261,15 +237,7 @@ host's actual external interface. You could instead allow connections from a
 source subnet. The following rule only allows access from the subnet `192.0.2.0/24`:
 @z
 
-@x
-```console
-$ iptables -I DOCKER-USER -i ext_if ! -s 192.0.2.0/24 -j DROP
-```
-@y
-```console
-$ iptables -I DOCKER-USER -i ext_if ! -s 192.0.2.0/24 -j DROP
-```
-@z
+% snip command...
 
 @x
 Finally, you can specify a range of IP addresses to accept using `--src-range`
@@ -279,15 +247,7 @@ Finally, you can specify a range of IP addresses to accept using `--src-range`
 (Remember to also add `-m iprange` when using `--src-range` or `--dst-range`):
 @z
 
-@x
-```console
-$ iptables -I DOCKER-USER -m iprange -i ext_if ! --src-range 192.0.2.1-192.0.2.3 -j DROP
-```
-@y
-```console
-$ iptables -I DOCKER-USER -m iprange -i ext_if ! --src-range 192.0.2.1-192.0.2.3 -j DROP
-```
-@z
+% snip command...
 
 @x
 You can combine `-s` or `--src-range` with `-d` or `--dst-range` to control both
@@ -400,28 +360,20 @@ Docker host's firewall has additional restrictions.
 @x
 Create a network suitable for direct routing for IPv6, with NAT enabled
 for IPv4:
-```console
-$ docker network create --ipv6 --subnet 2001:db8::/64 -o com.docker.network.bridge.gateway_mode_ipv6=routed mynet
-```
 @y
 Create a network suitable for direct routing for IPv6, with NAT enabled
 for IPv4:
-```console
-$ docker network create --ipv6 --subnet 2001:db8::/64 -o com.docker.network.bridge.gateway_mode_ipv6=routed mynet
-```
 @z
+
+% snip command...
 
 @x
 Create a container with a published port:
-```console
-$ docker run --network=mynet -p 8080:80 myimage
-```
 @y
 Create a container with a published port:
-```console
-$ docker run --network=mynet -p 8080:80 myimage
-```
 @z
+
+% snip command...
 
 @x
 Then:
@@ -452,34 +404,24 @@ Then:
 @x
 In `docker inspect`, this port mapping will be shown as follows. Note that
 there is no `HostPort` for IPv6, because it is using `routed` mode:
-```console
-$ docker container inspect <id> --format "{{json .NetworkSettings.Ports}}"
-{"80/tcp":[{"HostIp":"0.0.0.0","HostPort":"8080"},{"HostIp":"::","HostPort":""}]}
-```
 @y
 In `docker inspect`, this port mapping will be shown as follows. Note that
 there is no `HostPort` for IPv6, because it is using `routed` mode:
-```console
-$ docker container inspect <id> --format "{{json .NetworkSettings.Ports}}"
-{"80/tcp":[{"HostIp":"0.0.0.0","HostPort":"8080"},{"HostIp":"::","HostPort":""}]}
-```
 @z
+
+% snip command...
 
 @x
 Alternatively, to make the mapping IPv6-only, disabling IPv4 access to the
 container's port 80, use the unspecified IPv6 address `[::]` and do not
 include a host port number:
-```console
-$ docker run --network mynet -p '[::]::80'
-```
 @y
 Alternatively, to make the mapping IPv6-only, disabling IPv4 access to the
 container's port 80, use the unspecified IPv6 address `[::]` and do not
 include a host port number:
-```console
-$ docker run --network mynet -p '[::]::80'
-```
 @z
+
+% snip command...
 
 @x
 ### Setting the default bind address for containers
@@ -507,15 +449,7 @@ interfaces on the host, on both IPv4 and IPv6 addresses, potentially
 making them available to the outside world.
 @z
 
-@x
-```console
-docker run -p 8080:80 nginx
-```
-@y
-```console
-docker run -p 8080:80 nginx
-```
-@z
+% snip command...
 
 @x
 You can change the default binding address for published container ports so that
@@ -553,17 +487,7 @@ the `com.docker.network.bridge.host_binding_ipv4`
 [driver option](./drivers/bridge.md#options) when you create the network.
 @z
 
-@x
-```console
-$ docker network create mybridge \
-  -o "com.docker.network.bridge.host_binding_ipv4=127.0.0.1"
-```
-@y
-```console
-$ docker network create mybridge \
-  -o "com.docker.network.bridge.host_binding_ipv4=127.0.0.1"
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -597,19 +521,7 @@ To set the default binding for the default bridge network, configure the `"ip"`
 key in the `daemon.json` configuration file:
 @z
 
-@x
-```json
-{
-  "ip": "127.0.0.1"
-}
-```
-@y
-```json
-{
-  "ip": "127.0.0.1"
-}
-```
-@z
+% snip code...
 
 @x
 This changes the default binding address to `127.0.0.1` for published container
@@ -645,15 +557,7 @@ If you want your system to function as a router, you must add explicit
 `ACCEPT` rules to the `DOCKER-USER` chain. For example:
 @z
 
-@x
-```console
-$ iptables -I DOCKER-USER -i src_if -o dst_if -j ACCEPT
-```
-@y
-```console
-$ iptables -I DOCKER-USER -i src_if -o dst_if -j ACCEPT
-```
-@z
+% snip command...
 
 @x
 ## Prevent Docker from manipulating iptables

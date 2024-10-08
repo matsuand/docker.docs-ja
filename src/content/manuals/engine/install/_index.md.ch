@@ -5,8 +5,10 @@
 
 @x
 title: Install Docker Engine
+linkTitle: Install
 @y
 title: Docker Engine のインストール
+linkTitle: インストール
 @z
 
 @x
@@ -66,7 +68,7 @@ Docker Desktop のインストール手順については以下を参照して�
 | [CentOS](centos.md)                            |       ✅       |       ✅        |              |   ✅    |       |
 | [Debian](debian.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |       |
 | [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
-| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
+| [Raspberry Pi OS (32 ビット)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
 | [RHEL](rhel.md)                                |       🚧       |       🚧        |              |         |  ✅   |
 | [SLES](sles.md)                                |                |                 |              |         |  ✅   |
 | [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |

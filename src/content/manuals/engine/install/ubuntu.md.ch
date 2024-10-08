@@ -16,7 +16,7 @@ description: Jumpstart your client-side server applications with Docker Engine o
 keywords: docker install script, ubuntu docker server, ubuntu server docker, install
   docker engine ubuntu, install docker on ubuntu server, ubuntu 22.04 docker-ce, install
   docker engine on ubuntu, ubuntu install docker ce, ubuntu install docker engine
-title: Install Docker Engine on Ubuntu
+title: Ubuntu への Docker Engine インストール
 @z
 
 @x
@@ -24,21 +24,19 @@ To get started with Docker Engine on Ubuntu, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).
 @y
-To get started with Docker Engine on Ubuntu, make sure you
-[meet the prerequisites](#prerequisites), and then follow the
-[installation steps](#installation-methods).
+Ubuntu 上での Docker Engine を使い始めるにあたっては、[前提条件](#prerequisites) を満たしていることを確認した上で、以下の [インストール手順](#installation-methods) に従ってください。
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 ### Firewall limitations
 @y
-### Firewall limitations
+### ファイアウォールの制限 {#firewall-limitations}
 @z
 
 @x
@@ -49,8 +47,7 @@ To get started with Docker Engine on Ubuntu, make sure you
 @y
 > [!WARNING]
 >
-> Before you install Docker, make sure you consider the following
-> security implications and firewall incompatibilities.
+> Docker をインストールするにあたっては、以下に示すセキュリティに関する影響やファイアウォールの互換性について確認してください。
 @z
 
 @x
@@ -64,29 +61,26 @@ To get started with Docker Engine on Ubuntu, make sure you
   and that you add them to the `DOCKER-USER` chain,
   see [Packet filtering and firewalls](/manuals/engine/network/packet-filtering-firewalls.md).
 @y
-- If you use ufw or firewalld to manage firewall settings, be aware that
-  when you expose container ports using Docker, these ports bypass your
-  firewall rules. For more information, refer to
-  [Docker and ufw](manuals/engine/network/packet-filtering-firewalls.md#docker-and-ufw).
-- Docker is only compatible with `iptables-nft` and `iptables-legacy`.
-  Firewall rules created with `nft` are not supported on a system with Docker installed.
-  Make sure that any firewall rulesets you use are created with `iptables` or `ip6tables`,
-  and that you add them to the `DOCKER-USER` chain,
-  see [Packet filtering and firewalls](manuals/engine/network/packet-filtering-firewalls.md).
+- ファイアウォール設定の管理に ufw または firewalld を利用している場合、Docker が利用するコンテナーポートが開放されていることを確認してください。
+  そのポートはファイアウォールルールをバイパスします。
+  詳しくは [Docker と ufw](manuals/engine/network/packet-filtering-firewalls.md#docker-and-ufw) を参照してください。
+- Docker との互換性があるのは `iptables-nft` と `iptables-legacy` のみです。
+  `nft` によって生成されたファイアウォールルールは、Docker をインストールしたシステム上ではサポートされません。
+  したがって利用できるファイアウォールのルールセットは `iptables` または `ip6tables` によって生成されたものであり、それが `DOCKER-USER` チェーンに追加したものであることを確認してください。
+  詳しくは [パケットフィルタリングとファイアウォール](manuals/engine/network/packet-filtering-firewalls.md) を参照してください。
 @z
 
 @x
 ### OS requirements
 @y
-### OS requirements
+### OS 要件 {#os-requirements}
 @z
 
 @x
 To install Docker Engine, you need the 64-bit version of one of these Ubuntu
 versions:
 @y
-To install Docker Engine, you need the 64-bit version of one of these Ubuntu
-versions:
+Docker Engine をインストールするには、以下に示す 64 ビット Ubuntu バージョンのいずれかであることが必要です。
 @z
 
 @x
@@ -103,20 +97,19 @@ versions:
 Docker Engine for Ubuntu is compatible with x86_64 (or amd64), armhf, arm64,
 s390x, and ppc64le (ppc64el) architectures.
 @y
-Docker Engine for Ubuntu is compatible with x86_64 (or amd64), armhf, arm64,
-s390x, and ppc64le (ppc64el) architectures.
+Ubuntu における Docker Engine は x86_64 (または amd64), armhf, arm64, s390x, ppc64le (ppc64el) の各アーキテクチャーに対応しています。
 @z
 
 @x
 ### Uninstall old versions
 @y
-### Uninstall old versions
+### 古いバージョンのアンインストール {#uninstall-old-versions}
 @z
 
 @x
 Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @y
-Before you can install Docker Engine, you need to uninstall any conflicting packages.
+Docker Engine をインストールするにあたっては、衝突しそうなパッケージをすべてアンインストールする必要があります。
 @z
 
 @x
@@ -124,15 +117,14 @@ Distro maintainers provide unofficial distributions of Docker packages in
 APT. You must uninstall these packages before you can install the official
 version of Docker Engine.
 @y
-Distro maintainers provide unofficial distributions of Docker packages in
-APT. You must uninstall these packages before you can install the official
-version of Docker Engine.
+ディストロのメンテナーは APT 形式による Docker パッケージを非公式に提供しています。
+そのようなパッケージはアンインストールした上で、Docker Engine の公式バージョンをインストールします。
 @z
 
 @x
 The unofficial packages to uninstall are:
 @y
-The unofficial packages to uninstall are:
+アンインストールするべき非公式パッケージとは以下のものです。
 @z
 
 @x
@@ -155,32 +147,23 @@ bundles these dependencies as one bundle: `containerd.io`. If you have
 installed the `containerd` or `runc` previously, uninstall them to avoid
 conflicts with the versions bundled with Docker Engine.
 @y
-Moreover, Docker Engine depends on `containerd` and `runc`. Docker Engine
-bundles these dependencies as one bundle: `containerd.io`. If you have
-installed the `containerd` or `runc` previously, uninstall them to avoid
-conflicts with the versions bundled with Docker Engine.
+さらに Docker Engine は `containerd` と `runc` に依存しています。
+Docker Engine にはバンドル製品として `containerd.io` が含まれています。
+以前より `containerd` または `runc` をインストールしていた場合は、Docker Engine にバンドルされたバージョンとの衝突を回避するためにそれらをアンインストールします。
 @z
 
 @x
 Run the following command to uninstall all conflicting packages:
 @y
-Run the following command to uninstall all conflicting packages:
+以下のコマンドを実行して、衝突が発生するパッケージすべてをアンインストールします。
 @z
 
-@x
-```console
-$ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-@y
-```console
-$ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-@z
+% snip command...
 
 @x
 `apt-get` might report that you have none of these packages installed.
 @y
-`apt-get` might report that you have none of these packages installed.
+インストールされていないパッケージがあれば `apt-get` がその旨を表示します。
 @z
 
 @x
@@ -189,22 +172,20 @@ automatically removed when you uninstall Docker. If you want to start with a
 clean installation, and prefer to clean up any existing data, read the
 [uninstall Docker Engine](#uninstall-docker-engine) section.
 @y
-Images, containers, volumes, and networks stored in `/var/lib/docker/` aren't
-automatically removed when you uninstall Docker. If you want to start with a
-clean installation, and prefer to clean up any existing data, read the
-[uninstall Docker Engine](#uninstall-docker-engine) section.
+イメージ、コンテナー、ボリューム、ネットワークの各情報は `/var/lib/docker/` に保存されますが、これらは Docker をアンインストールしても自動的には削除されません。
+既存のデータもすべて削除した状態でクリーンインストールを始めようとする場合は、[Docker Engine のアンインストール](#uninstall-docker-engine) の節を参照してください。
 @z
 
 @x
 ## Installation methods
 @y
-## Installation methods
+## インストール方法 {#installation-methods}
 @z
 
 @x
 You can install Docker Engine in different ways, depending on your needs:
 @y
-You can install Docker Engine in different ways, depending on your needs:
+Docker Engine のインストール方法はいくつかあるので、必要に応じて選んでください。
 @z
 
 @x
@@ -212,37 +193,35 @@ You can install Docker Engine in different ways, depending on your needs:
   [Docker Desktop for Linux](/manuals/desktop/install/linux/_index.md). This is
   the easiest and quickest way to get started.
 @y
-- Docker Engine comes bundled with
-  [Docker Desktop for Linux](manuals/desktop/install/linux/_index.md). This is
-  the easiest and quickest way to get started.
+- Docker Engine には [Linux 向け Docker Desktop](manuals/desktop/install/linux/_index.md) にバンドルされて提供されています。
+  Docker Engine を始めるにはこれを利用するのが最も簡単な方法です。
 @z
 
 @x
 - Set up and install Docker Engine from
   [Docker's `apt` repository](#install-using-the-repository).
 @y
-- Set up and install Docker Engine from
-  [Docker's `apt` repository](#install-using-the-repository).
+- [Docker の `apt` リポジトリ](#install-using-the-repository) から Docker Engine を入手してインストールすることができます。
 @z
 
 @x
 - [Install it manually](#install-from-a-package) and manage upgrades manually.
 @y
-- [Install it manually](#install-from-a-package) and manage upgrades manually.
+- [手動でのインストール](#install-from-a-package) を行い、アップグレードも手動で行うことができます。
 @z
 
 @x
 - Use a [convenience script](#install-using-the-convenience-script). Only
   recommended for testing and development environments.
 @y
-- Use a [convenience script](#install-using-the-convenience-script). Only
-  recommended for testing and development environments.
+- [便利スクリプト](#install-using-the-convenience-script) を利用することができます。
+  これはテスト環境や開発環境向けに利用することが推奨されます。
 @z
 
 @x
 ### Install using the `apt` repository {#install-using-the-repository}
 @y
-### Install using the `apt` repository {#install-using-the-repository}
+### `apt` リポジトリを利用したインストール {#install-using-the-repository}
 @z
 
 @x
@@ -250,51 +229,25 @@ Before you install Docker Engine for the first time on a new host machine, you
 need to set up the Docker repository. Afterward, you can install and update
 Docker from the repository.
 @y
-Before you install Docker Engine for the first time on a new host machine, you
-need to set up the Docker repository. Afterward, you can install and update
-Docker from the repository.
+Docker Engine を初めてマシン上にインストールするには、Docker リポジトリの設定があらかじめ必要です。
+これを行った後に、そのリポジトリから Docker のインストールやアップグレードを行います。
 @z
 
 @x
 1. Set up Docker's `apt` repository.
 @y
-1. Set up Docker's `apt` repository.
+1. Docker の `apt` リポジトリを設定します。
 @z
 
 @x
-   ```bash
    # Add Docker's official GPG key:
-   sudo apt-get update
-   sudo apt-get install ca-certificates curl
-   sudo install -m 0755 -d /etc/apt/keyrings
-   sudo curl -fsSL {{% param "download-url-base" %}}/gpg -o /etc/apt/keyrings/docker.asc
-   sudo chmod a+r /etc/apt/keyrings/docker.asc
 @y
-   ```bash
-   # Add Docker's official GPG key:
-   sudo apt-get update
-   sudo apt-get install ca-certificates curl
-   sudo install -m 0755 -d /etc/apt/keyrings
-   sudo curl -fsSL {{% param "download-url-base" %}}/gpg -o /etc/apt/keyrings/docker.asc
-   sudo chmod a+r /etc/apt/keyrings/docker.asc
+   # Docker の公式 GPG 鍵の追加
 @z
-
 @x
    # Add the repository to Apt sources:
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
-     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt-get update
-   ```
 @y
-   # Add the repository to Apt sources:
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
-     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt-get update
-   ```
+   # Apt ソースへのリポジトリ追加
 @z
 
 @x
@@ -305,14 +258,13 @@ Docker from the repository.
 @y
    > [!NOTE]
    >
-   > If you use an Ubuntu derivative distro, such as Linux Mint,
-   > you may need to use `UBUNTU_CODENAME` instead of `VERSION_CODENAME`.
+   > Linux Mint のような Ubuntu 派生ディストロを利用している場合は、`VERSION_CODENAME` ではなく `UBUNTU_CODENAME` を用いなければならない場合があります。
 @z
 
 @x
 2. Install the Docker packages.
 @y
-2. Install the Docker packages.
+2. Docker パッケージをインストールします。
 @z
 
 @x
@@ -320,80 +272,45 @@ Docker from the repository.
    {{< tab name="Latest" >}}
 @y
    {{< tabs >}}
-   {{< tab name="Latest" >}}
+   {{< tab name="最新バージョン" >}}
 @z
 
 @x
    To install the latest version, run:
 @y
-   To install the latest version, run:
+   最新バージョンをインストールするには以下を実行します。
 @z
 
-@x
-   ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
    {{< tab name="Specific version" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Specific version" >}}
+   {{< tab name="特定バージョン" >}}
 @z
 
 @x
    To install a specific version of Docker Engine, start by listing the
    available versions in the repository:
 @y
-   To install a specific version of Docker Engine, start by listing the
-   available versions in the repository:
+   Docker Engine の特定バージョンをインストールするには、まずリポジトリ内の利用可能なバージョンを一覧表示します。
 @z
 
 @x
-   ```console
    # List the available versions:
-   $ apt-cache madison docker-ce | awk '{ print $3 }'
 @y
-   ```console
-   # List the available versions:
-   $ apt-cache madison docker-ce | awk '{ print $3 }'
-@z
-
-@x
-   5:27.1.1-1~ubuntu.24.04~noble
-   5:27.1.0-1~ubuntu.24.04~noble
-   ...
-   ```
-@y
-   5:27.1.1-1~ubuntu.24.04~noble
-   5:27.1.0-1~ubuntu.24.04~noble
-   ...
-   ```
+   # 利用可能なバージョンを一覧表示
 @z
 
 @x
    Select the desired version and install:
 @y
-   Select the desired version and install:
+   必要なバージョンを選んでインストールします。
 @z
 
-@x
-   ```console
-   $ VERSION_STRING=5:27.1.1-1~ubuntu.24.04~noble
-   $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ VERSION_STRING=5:27.1.1-1~ubuntu.24.04~noble
-   $ sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -407,32 +324,23 @@ Docker from the repository.
 3. Verify that the Docker Engine installation is successful by running the
    `hello-world` image.
 @y
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
+3. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
 @z
 
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
    container runs, it prints a confirmation message and exits.
 @y
-   This command downloads a test image and runs it in a container. When the
-   container runs, it prints a confirmation message and exits.
+   このコマンドを実行すると、テストイメージがダウンロードされてコンテナーとして実行します。
+   コンテナーが実行されると、確認メッセージが表示されて終了します。
 @z
 
 @x
 You have now successfully installed and started Docker Engine.
 @y
-You have now successfully installed and started Docker Engine.
+Docker Engine のインストールと起動が正常に行われました。
 @z
 
 @x
@@ -444,7 +352,7 @@ You have now successfully installed and started Docker Engine.
 @x
 #### Upgrade Docker Engine
 @y
-#### Upgrade Docker Engine
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
@@ -452,15 +360,14 @@ To upgrade Docker Engine, follow step 2 of the
 [installation instructions](#install-using-the-repository),
 choosing the new version you want to install.
 @y
-To upgrade Docker Engine, follow step 2 of the
-[installation instructions](#install-using-the-repository),
-choosing the new version you want to install.
+Docker Engine をアップグレードする場合は [インストール作業](#install-using-the-repository) の手順 2 に従います。
+そこではインストールしたい新バージョンを選びます。
 @z
 
 @x
 ### Install from a package
 @y
-### Install from a package
+### パッケージからのインストール {#install-from-a-package}
 @z
 
 @x
@@ -468,39 +375,34 @@ If you can't use Docker's `apt` repository to install Docker Engine, you can
 download the `deb` file for your release and install it manually. You need to
 download a new file each time you want to upgrade Docker Engine.
 @y
-If you can't use Docker's `apt` repository to install Docker Engine, you can
-download the `deb` file for your release and install it manually. You need to
-download a new file each time you want to upgrade Docker Engine.
+Docker Engine のインストールにあたって Docker の `apt` リポジトリを利用したくない場合は、対象となるリリースの `deb` ファイルをダウンロードして手動でインストールします。
+Docker Engine のアップグレード時には、その都度、新しいファイルをダウンロードしてくることになります。
 @z
 
 @x
-<!-- markdownlint-disable-next-line -->
 1. Go to [`{{% param "download-url-base" %}}/dists/`]({{% param "download-url-base" %}}/dists/).
 @y
-<!-- markdownlint-disable-next-line -->
-1. Go to [`{{% param "download-url-base" %}}/dists/`]({{% param "download-url-base" %}}/dists/).
+1. [`{{% param "download-url-base" %}}/dists/`]({{% param "download-url-base" %}}/dists/) にアクセスします。
 @z
 
 @x
 2. Select your Ubuntu version in the list.
 @y
-2. Select your Ubuntu version in the list.
+2. 一覧の中から Ubuntu バージョンを選びます。
 @z
 
 @x
 3. Go to `pool/stable/` and select the applicable architecture (`amd64`,
    `armhf`, `arm64`, or `s390x`).
 @y
-3. Go to `pool/stable/` and select the applicable architecture (`amd64`,
-   `armhf`, `arm64`, or `s390x`).
+3. `pool/stable/` を開いて、適用可能なアーキテクチャー (`amd64`, `armhf`, `arm64`, `s390x`) を選びます。
 @z
 
 @x
 4. Download the following `deb` files for the Docker Engine, CLI, containerd,
    and Docker Compose packages:
 @y
-4. Download the following `deb` files for the Docker Engine, CLI, containerd,
-   and Docker Compose packages:
+4. Docker Engine、CLI、containerd、Docker Compose パッケージを表す以下の `deb` ファイルをダウンロードします。
 @z
 
 @x
@@ -521,66 +423,39 @@ download a new file each time you want to upgrade Docker Engine.
 5. Install the `.deb` packages. Update the paths in the following example to
    where you downloaded the Docker packages.
 @y
-5. Install the `.deb` packages. Update the paths in the following example to
-   where you downloaded the Docker packages.
+5. `.deb` パッケージをインストールします。
+   以下に例におけるパス指定では、Docker パッケージ類をダウンロードしたパスに置き換えてください。
 @z
 
-@x
-   ```console
-   $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
-     ./docker-ce_<version>_<arch>.deb \
-     ./docker-ce-cli_<version>_<arch>.deb \
-     ./docker-buildx-plugin_<version>_<arch>.deb \
-     ./docker-compose-plugin_<version>_<arch>.deb
-   ```
-@y
-   ```console
-   $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
-     ./docker-ce_<version>_<arch>.deb \
-     ./docker-ce-cli_<version>_<arch>.deb \
-     ./docker-buildx-plugin_<version>_<arch>.deb \
-     ./docker-compose-plugin_<version>_<arch>.deb
-   ```
-@z
+% snip command...
 
 @x
    The Docker daemon starts automatically.
 @y
-   The Docker daemon starts automatically.
+   Docker デーモンは自動的に起動します。
 @z
 
 @x
 6. Verify that the Docker Engine installation is successful by running the
    `hello-world` image.
 @y
-6. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
+6. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
 @z
 
-@x
-   ```console
-   $ sudo service docker start
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo service docker start
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
    container runs, it prints a confirmation message and exits.
 @y
-   This command downloads a test image and runs it in a container. When the
-   container runs, it prints a confirmation message and exits.
+   このコマンドを実行すると、テストイメージがダウンロードされてコンテナーとして実行します。
+   コンテナーが実行されると、確認メッセージが表示されて終了します。
 @z
 
 @x
 You have now successfully installed and started Docker Engine.
 @y
-You have now successfully installed and started Docker Engine.
+Docker Engine のインストールと起動が正常に行われました。
 @z
 
 @x
@@ -592,15 +467,15 @@ You have now successfully installed and started Docker Engine.
 @x
 #### Upgrade Docker Engine
 @y
-#### Upgrade Docker Engine
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
 To upgrade Docker Engine, download the newer package files and repeat the
 [installation procedure](#install-from-a-package), pointing to the new files.
 @y
-To upgrade Docker Engine, download the newer package files and repeat the
-[installation procedure](#install-from-a-package), pointing to the new files.
+Docker Engine をアップグレードするには、新たなパッケージファイルをダウンロードして [インストール手順](#install-from-a-package) に従います。
+対象ファイルは新しいものに置き換えてください。
 @z
 
 @x
@@ -612,59 +487,41 @@ To upgrade Docker Engine, download the newer package files and repeat the
 @x
 ## Uninstall Docker Engine
 @y
-## Uninstall Docker Engine
+## Docker Engine のアンインストール {#uninstall-docker-engine}
 @z
 
 @x
 1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @y
-1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
+1. Docker Engine, CLI、containerd、Docker Compose パッケージをアンインストールするには以下を行います。
 @z
 
-@x
-   ```console
-   $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@y
-   ```console
-   $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@z
+% snip command...
 
 @x
 2. Images, containers, volumes, or custom configuration files on your host
    aren't automatically removed. To delete all images, containers, and volumes:
 @y
-2. Images, containers, volumes, or custom configuration files on your host
-   aren't automatically removed. To delete all images, containers, and volumes:
+2. イメージ、コンテナー、ボリューム、独自の設定ファイルは自動的には削除されません。
+   イメージ、コンテナー、ボリュームを削除するには以下を行います。
 @z
 
-@x
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@y
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@z
+% snip command...
 
 @x
 You have to delete any edited configuration files manually.
 @y
-You have to delete any edited configuration files manually.
+独自に編集した設定ファイルは手動で削除する必要があります。
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
 - Continue to [Post-installation steps for Linux](linux-postinstall.md).
 @y
-- Continue to [Post-installation steps for Linux](linux-postinstall.md).
+- [Linux インストール後の作業](linux-postinstall.md) に進んでください。
 @z
