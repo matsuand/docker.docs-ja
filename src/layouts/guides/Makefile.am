@@ -3,13 +3,13 @@
 ##
 
 bases = \
-	landing.html
+	landing.html \
+	list.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	list.html    \
 	single.html
 
 include $(top_srcdir)/build-aux/copy.mk

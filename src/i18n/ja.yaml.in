@@ -58,6 +58,7 @@ Command:
 Subcommands:
   other: サブコマンド
 
+### layouts/guides/landing.html
 products:
   other: 製品
 subjects:
@@ -66,3 +67,7 @@ languages:
   other: 言語
 levels:
   other: レベル
+
+### guides/list.html
+Modules:
+  other: モジュール
