@@ -57,3 +57,12 @@ Command:
   other: コマンド
 Subcommands:
   other: サブコマンド
+
+products:
+  other: 製品
+subjects:
+  other: テーマ
+languages:
+  other: 言語
+levels:
+  other: レベル

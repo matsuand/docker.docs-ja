@@ -8,7 +8,7 @@ description: |
   Learn how to build and deploy Docker images to the cloud with Docker Build
   Cloud.
 @y
-title: "Docker Build Cloud: 高速なマルチアーキテクチャービルドを通じて時間短縮を図ってください"
+title: "Docker Build Cloud: 高速なマルチアーキテクチャービルドを通じた時間短縮"
 linkTitle: Docker Build Cloud
 description: |
   Docker Build Cloud を使って Docker イメージのビルドとクラウドへのデプロイ方法について学びます。

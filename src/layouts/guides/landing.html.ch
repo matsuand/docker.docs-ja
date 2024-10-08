@@ -8,6 +8,12 @@
 @z
 
 @x
+  <div>{{ humanize $taxonomy }}</div>
+@y
+  <div>{{ humanize (T $taxonomy) }}</div>
+@z
+
+@x
               <div class="text-xs font-semibold text-gray-light dark:text-gray-dark tracking-wider uppercase">Featured</div>
 @y
               <div class="text-xs font-semibold text-gray-light dark:text-gray-dark tracking-wider uppercase">注目の話題</div>
