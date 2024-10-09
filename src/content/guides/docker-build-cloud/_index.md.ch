@@ -65,24 +65,22 @@ $ resource_links:
 Heavy, complex builds can become a major roadblock for development teams,
 slowing down both local development and CI/CD pipelines.
 @y
-98% of developers spend up to an hour every day waiting for builds to finish
-([Incredibuild: 2022 Big Dev Build Times](https://www.incredibuild.com/survey-report-2022)).
-Heavy, complex builds can become a major roadblock for development teams,
-slowing down both local development and CI/CD pipelines.
+開発者の実に 98% は毎日、ビルド完了までに 1 時間くらいは要しています ([Incredibuild: 2022 Big Dev Build Times](https://www.incredibuild.com/survey-report-2022))。
+ビルドが重くなり複雑化してくると、開発チームにとっては大きな障害となっていきます。
+それはローカル開発でも CI/CD パイプラインでも、その作業効率を低下させます。
 @z
 
 @x
 Docker Build Cloud speeds up image build times to improve developer
 productivity, reduce frustrations, and help you shorten the release cycle.
 @y
-Docker Build Cloud speeds up image build times to improve developer
-productivity, reduce frustrations, and help you shorten the release cycle.
+Docker Build Cloud はイメージビルドの時間を早めるものであり、開発生産性の向上、フラストレーションの軽減、リリースサイクルの短縮を実現します。
 @z
 
 @x
 ## Who’s this for?
 @y
-## Who’s this for?
+## 誰のためのもの？ {#whos-this-for}
 @z
 
 @x
@@ -94,19 +92,17 @@ productivity, reduce frustrations, and help you shorten the release cycle.
 - Developers performing multi-architecture builds who don’t want to spend hours
   configuring and rebuilding for emulators.
 @y
-- Anyone who wants to tackle common causes of slow image builds: limited local
-  resources, slow emulation, and lack of build collaboration across a team.
-- Developers working on older machines who want to build faster.
-- Development teams working on the same repository who want to cut wait times
-  with a shared cache.
-- Developers performing multi-architecture builds who don’t want to spend hours
-  configuring and rebuilding for emulators.
+- イメージビルドに時間を要する原因を解消したいと思っている方ならどなたでも。
+  上限のあるローカルリソース、低速なエミュレーター、開発チーム内での共同ビルド手法を持ち合わせていない方。
+- 旧式のマシン上での作業を通じてビルドを早めたいと思う開発者。
+- 同一リポジトリ上で作業を行う開発チームにおいて、共有キャッシュを利用して待機時間を解消したい方。
+- マルチアーキテクチャービルドを実施していて、エミュレーター向けの設定や再ビルドに余計な時間を割きたくない開発者。
 @z
 
 @x
 ## What you’ll learn
 @y
-## What you’ll learn
+## 学べることは {#what-youll-learn}
 @z
 
 @x
@@ -114,21 +110,21 @@ productivity, reduce frustrations, and help you shorten the release cycle.
 - Accelerating builds for multi-platform images
 - Reusing pre-built images to expedite workflows
 @y
-- Building container images faster locally and in CI
-- Accelerating builds for multi-platform images
-- Reusing pre-built images to expedite workflows
+- ローカルや CI でのコンテナーイメージビルドを高速に実現できます。
+- マルチプラットフォームイメージのビルドを加速します。
+- プレビルドイメージの再利用によりワークフローを促進します。
 @z
 
 @x
 ## Tools integration
 @y
-## Tools integration
+## ツールとのインテグレーション {#tools-integration}
 @z
 
 @x
 Works well with Docker Compose, GitHub Actions, and other CI solutions
 @y
-Works well with Docker Compose, GitHub Actions, and other CI solutions
+Docker Compose、GitHub Actions、この他の CI ソリューションと連携して適切に動作します。
 @z
 
 @x
