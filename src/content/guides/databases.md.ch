@@ -1365,11 +1365,11 @@ Related information:
 - [Dockerfile reference](/reference/dockerfile/)
 - [Compose file reference](/reference/compose-file/)
 - [CLI reference](/reference/cli/docker/)
-- [Database samples](../../samples/_index.md#databases)
+- [Database samples](../../reference/samples/_index.md#databases)
 @y
 - [Docker Hub database images](https://hub.docker.com/search?q=database&type=image)
 - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 - [Compose file reference](__SUBDIR__/reference/compose-file/)
 - [CLI reference](__SUBDIR__/reference/cli/docker/)
-- [Database samples](../../samples/_index.md#databases)
+- [Database samples](../../reference/samples/_index.md#databases)
 @z

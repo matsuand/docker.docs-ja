@@ -2,33 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
+linkTitle: Samples
 title: Samples overview
 description: Learn how to containerize different types of services by walking through
   Official Docker samples.
-cascade:
-  layout: samples
-aliases:
-- /en/latest/examples/
-- /engine/examples/
-- /examples/
-- /samples/runnning_riak_service/
-- /samples/apt-cacher-ng/
----
 @y
----
+linkTitle: サンプル
 title: サンプル概要
 description: Learn how to containerize different types of services by walking through
   Official Docker samples.
-cascade:
-  layout: samples
-aliases:
-- /en/latest/examples/
-- /engine/examples/
-- /examples/
-- /samples/runnning_riak_service/
-- /samples/apt-cacher-ng/
----
 @z
 
 @x

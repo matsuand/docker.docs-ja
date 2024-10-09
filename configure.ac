@@ -296,7 +296,7 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/trust/signer/Makefile
 	src/content/reference/cli/docker/volume/Makefile
 	src/content/reference/compose-file/Makefile
-	src/content/samples/Makefile
+	src/content/reference/samples/Makefile
 	src/content/subjects/Makefile
 	src/content/subjects/ai/Makefile
 	src/content/subjects/cloud-services/Makefile

@@ -296,7 +296,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = contribute get-started guides includes languages \
-	levels manuals products reference samples subjects tags
+	levels manuals products reference subjects tags
 
 bases = \
 	_index.md \
