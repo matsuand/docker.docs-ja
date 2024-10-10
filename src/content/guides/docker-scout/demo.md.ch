@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Scout demo
-description: Learn about Docke rScout's powerful features for enhanced supply chain security.
-weight: 20
----
+description: Learn about Docker Scout's powerful features for enhanced supply chain security.
 @y
----
 title: Docker Scout demo
-description: Learn about Docke rScout's powerful features for enhanced supply chain security.
-weight: 20
----
+description: Learn about Docker Scout's powerful features for enhanced supply chain security.
 @z
 
 @x

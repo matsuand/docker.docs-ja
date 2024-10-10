@@ -186,34 +186,26 @@ The greeting at the top of the page is populated by an API call at `/api/greetin
 @z
 
 @x
-1. Open the `backend/src/routes/getGreeting.js` file. This file provides the handler for the API endpoint.
+1. Open the `backend/src/routes/getGreeting.js` file in a text editor. This file provides the handler for the API endpoint.
 @y
-1. `backend/src/routes/getGreeting.js` ファイルを開きます。
+1. `backend/src/routes/getGreeting.js` ファイルをテキストエディターで開きます。
    このファイルは API エンドポイントへのハンドラーを提供しています。
 @z
 
 @x
-2. Modify the variable at the top to an array of greetings. Feel free to use the following modifications or customize it to your own liking.
+2. Modify the variable at the top to an array of greetings. Feel free to use the following modifications or customize it to your own liking. Also, update the endpoint to send a random greeting from this list.
 @y
 2. 最上段の行にて、変数定義をあいさつ文の配列定義に変更します。
    以下に修正方法を示しますが、内容は好きなように書き換えてください。
+   そして配列の中からランダムにあいさつ文が取り出されるように、API エンドポイントを修正します。
 @z
 
 % snip code...
 
 @x
-3. Now, update the endpoint to send a random greeting from this list by making the following change:
+3. If you haven't done so yet, save the file. If you refresh your browser, you should see a new greeting. If you keep refreshing, you should see all of the messages appear.
 @y
-3. そして以下のような変更を加えます。
-   これによって配列の中からランダムにあいさつ文が取り出されるように、API エンドポイントを修正します。
-@z
-
-% snip code...
-
-@x
-4. If you haven't done so yet, save the file. If you refresh your browser, you should see a new greeting. If you keep refreshing, you should see all of the messages appear.
-@y
-4. ファイルの保存がまだであれば保存します。
+3. ファイルの保存がまだであれば保存します。
    ブラウザー表示を更新すると、新たなあいさつ文が表示されるはずです。
    表示更新を繰り返していけば、あいさつ文のすべてを見ることができるはずです。
 @z

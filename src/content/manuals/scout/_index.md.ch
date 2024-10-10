@@ -89,13 +89,13 @@ description:
 @z
 
 @x
-  - title: Policy {{< badge color=violet text="Early Access" >}}
+  - title: Policy
     link: /scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.
     icon: policy
 @y
-  - title: ポリシー {{< badge color=violet text="早期アクセス" >}}
+  - title: ポリシー
     link: __SUBDIR__/scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.

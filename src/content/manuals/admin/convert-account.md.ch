@@ -1,22 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Convert your Docker Hub user account into an organization
 title: Convert an account into an organization
 keywords: docker hub, hub, organization, convert account, migrate account
-aliases:
-- /docker-hub/convert-account/
----
 @y
----
 description: Convert your Docker Hub user account into an organization
 title: Convert an account into an organization
 keywords: docker hub, hub, organization, convert account, migrate account
-aliases:
-- /docker-hub/convert-account/
----
 @z
 
 @x
@@ -129,6 +123,12 @@ Consider the following effects of converting your account:
 - The user account that you add as the first owner will have full administrative access to configure and manage the organization.
 @y
 - The user account that you add as the first owner will have full administrative access to configure and manage the organization.
+@z
+
+@x
+- Converting a user account to an organization will delete all of the user's personal access tokens. See [Create an access token](/manuals/security/for-developers/access-tokens.md#create-an-access-token) for steps on creating personal access tokens after converting the user account.
+@y
+- Converting a user account to an organization will delete all of the user's personal access tokens. See [Create an access token](manuals/security/for-developers/access-tokens.md#create-an-access-token) for steps on creating personal access tokens after converting the user account.
 @z
 
 @x

@@ -61,20 +61,20 @@ products: [scout]
 @x
 When container images are insecure, significant risks can arise. Around 60% of
 organizations have reported experiencing at least one security breach or
-vulnerability incident within a year, resulting in operational
-disruption.[^CSA] These incidents often result in considerable downtime, with
+vulnerability incident within a year, [resulting in operational
+disruption][CSA]. These incidents often result in considerable downtime, with
 44% of affected companies experiencing over an hour of downtime per event. The
-financial impact is substantial, with the average data breach cost reaching
-$4.45 million.[^IBM] This highlights the critical importance of maintaining
+financial impact is substantial, with [the average data breach cost reaching
+$4.45 million][IBM]. This highlights the critical importance of maintaining
 robust container security measures.
 @y
 When container images are insecure, significant risks can arise. Around 60% of
 organizations have reported experiencing at least one security breach or
-vulnerability incident within a year, resulting in operational
-disruption.[^CSA] These incidents often result in considerable downtime, with
+vulnerability incident within a year, [resulting in operational
+disruption][CSA]. These incidents often result in considerable downtime, with
 44% of affected companies experiencing over an hour of downtime per event. The
-financial impact is substantial, with the average data breach cost reaching
-$4.45 million.[^IBM] This highlights the critical importance of maintaining
+financial impact is substantial, with [the average data breach cost reaching
+$4.45 million][IBM]. This highlights the critical importance of maintaining
 robust container security measures.
 @z
 
@@ -89,15 +89,15 @@ compliance with security standards.
 @z
 
 @x
-[^CSA]: https://cloudsecurityalliance.org/blog/2023/09/21/2023-global-cloud-threat-report-cloud-attacks-are-lightning-fast
+[CSA]: https://cloudsecurityalliance.org/blog/2023/09/21/2023-global-cloud-threat-report-cloud-attacks-are-lightning-fast
 @y
-[^CSA]: https://cloudsecurityalliance.org/blog/2023/09/21/2023-global-cloud-threat-report-cloud-attacks-are-lightning-fast
+[CSA]: https://cloudsecurityalliance.org/blog/2023/09/21/2023-global-cloud-threat-report-cloud-attacks-are-lightning-fast
 @z
 
 @x
-[^IBM]: https://www.ibm.com/reports/data-breach
+[IBM]: https://www.ibm.com/reports/data-breach
 @y
-[^IBM]: https://www.ibm.com/reports/data-breach
+[IBM]: https://www.ibm.com/reports/data-breach
 @z
 
 @x
@@ -107,11 +107,11 @@ compliance with security standards.
 @z
 
 @x
-- Define secure software supply chain (SSSC)
+- Define Secure Software Supply Chain (SSSC)
 - Review SBOMs and how to use them
 - Detect and monitor vulnerabilities
 @y
-- Define secure software supply chain (SSSC)
+- Define Secure Software Supply Chain (SSSC)
 - Review SBOMs and how to use them
 - Detect and monitor vulnerabilities
 @z

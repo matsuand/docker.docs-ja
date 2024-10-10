@@ -79,22 +79,22 @@ To add a policy:
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
 2. Select the **Add policy** button to open the policy configuration screen.
 3. On the policy configuration screen, locate the policy type that you want to
-   configure, and select **Configure** to open the policy configuration panel.
+   configure, and select **Configure** to open the policy configuration page.
 @y
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
 2. Select the **Add policy** button to open the policy configuration screen.
 3. On the policy configuration screen, locate the policy type that you want to
-   configure, and select **Configure** to open the policy configuration panel.
+   configure, and select **Configure** to open the policy configuration page.
 @z
 
 @x
-   - If the **Configure** button is grayed out, it means the selected policy
+   - If the **Configure** button is grayed out, it means the current policy
      has no configurable parameters.
    - If the button reads **Integrate**, it indicates that setup is required
      before the policy can be enabled. Selecting **Integrate** will direct you
      to the integration's setup guide.
 @y
-   - If the **Configure** button is grayed out, it means the selected policy
+   - If the **Configure** button is grayed out, it means the current policy
      has no configurable parameters.
    - If the button reads **Integrate**, it indicates that setup is required
      before the policy can be enabled. Selecting **Integrate** will direct you
@@ -110,14 +110,14 @@ To add a policy:
 @z
 
 @x
-   - Select **Save and enable** to commit the changes and enable the policy for
+   - Select **Save policy** to commit the changes and enable the policy for
      your current organization.
-   - Select **Save policy** to save the policy configuration without enabling
+   - Select **Save and disable** to save the policy configuration without enabling
      it.
 @y
-   - Select **Save and enable** to commit the changes and enable the policy for
+   - Select **Save policy** to commit the changes and enable the policy for
      your current organization.
-   - Select **Save policy** to save the policy configuration without enabling
+   - Select **Save and disable** to save the policy configuration without enabling
      it.
 @z
 
@@ -180,13 +180,11 @@ To delete a policy:
 @x
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
 2. Select the policy you want to delete.
-3. Select **View policy details**.
-4. Select the **Delete** button.
+3. Select the **Delete** button.
 @y
 1. Go to the [Policies page](https://scout.docker.com/reports/policy) in the Docker Scout Dashboard.
 2. Select the policy you want to delete.
-3. Select **View policy details**.
-4. Select the **Delete** button.
+3. Select the **Delete** button.
 @z
 
 @x

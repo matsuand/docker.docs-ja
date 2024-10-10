@@ -27,18 +27,6 @@ description: |
 @z
 
 @x
-{{% restricted title="Early Access" %}}
-Policy Evaluation is an [Early Access](/release-lifecycle/#early-access-ea)
-feature of Docker Scout.
-{{% /restricted %}}
-@y
-{{% restricted title="Early Access" %}}
-Policy Evaluation is an [Early Access](__SUBDIR__/release-lifecycle/#early-access-ea)
-feature of Docker Scout.
-{{% /restricted %}}
-@z
-
-@x
 In software supply chain management, maintaining the security and reliability
 of artifacts is a top priority. Policy Evaluation in Docker Scout introduces a
 layer of control, on top of existing analysis capabilities. It lets you define
