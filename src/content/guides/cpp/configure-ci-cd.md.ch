@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Configure CI/CD for your C++ application
 linkTitle: Configure CI/CD
@@ -81,7 +83,7 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 @x
 3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
 @y
-3. 新たな **リポジトリ変数** として、名称を `DOCKER_USERNAME`、その値に自身の Docker ID を設定して生成します。
+3. 新たな **Repository variable** (リポジトリ変数) として、名称を `DOCKER_USERNAME`、その値に自身の Docker ID を設定して生成します。
 @z
 
 @x
@@ -157,7 +159,7 @@ Docker Hub に対してのイメージビルド、テスト、プッシュを行
 @x
 3. In the editor window, copy and paste the following YAML configuration and commit the changes.
 @y
-3. 編集画面において、以下の YAML 設定をコピーペーストして、変更を決定します。
+3. 編集画面において、以下の YAML 設定をコピーペーストして変更を決定します。
 @z
 
 % snip code...

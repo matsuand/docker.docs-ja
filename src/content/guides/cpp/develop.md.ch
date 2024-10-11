@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Use containers for C++ development
@@ -84,9 +85,9 @@ Compose Watch に関する詳細は [Use Compose Watch](manuals/compose/how-tos/
 @x
 Open your `compose.yml` file in an IDE or text editor and then add the Compose Watch instructions. The following example shows how to add Compose Watch to your `compose.yml` file.
 @y
-IDE またはテキストエディターを使って `compose.yaml` ファイルを開きます。
+IDE またはテキストエディターを使って `compose.yml` ファイルを開きます。
 そして Compose Watch 命令を追加します。
-以下は `compose.yaml` ファイルに Compose Watch を追加する場所を示しています。
+以下は `compose.yml` ファイルに Compose Watch を追加する場所を示しています。
 @z
 
 % snip code...
