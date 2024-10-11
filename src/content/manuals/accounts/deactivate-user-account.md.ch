@@ -2,19 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Deactivate an account
-weight: 30
-description: Learn how to deactivate a Docker user account.
-keywords: Docker Hub, delete, deactivate, account, account management
----
 @y
----
-title: Deactivate an account
-weight: 30
+title: アカウントの無効化
+@z
+
+@x
 description: Learn how to deactivate a Docker user account.
 keywords: Docker Hub, delete, deactivate, account, account management
----
+@y
+description: Docker ユーザーアカウントの無効化方法について学びます。
+keywords: Docker Hub, delete, deactivate, account, account management
 @z
 
 @x
@@ -24,11 +22,11 @@ You can deactivate an account at any time. This section describes the prerequisi
 @z
 
 @x
->**Warning**
+>[!Warning]
 >
 > All Docker products and services that use your Docker account will be inaccessible after deactivating your account.
 @y
->**Warning**
+>[!Warning]
 >
 > All Docker products and services that use your Docker account will be inaccessible after deactivating your account.
 @z
@@ -36,37 +34,39 @@ You can deactivate an account at any time. This section describes the prerequisi
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 Before deactivating your Docker account, ensure that you meet the following requirements:
 @y
-Before deactivating your Docker account, ensure that you meet the following requirements:
+Docker アカウントの無効化を行うにあたっては、以下の条件を満たしている必要があります。
 @z
 
 @x
-- You must not be a member of a company or any teams or organizations. You must remove the account from all teams, organizations, or the company.
+- For owners, you must leave your organization or company before deactivating your Docker account.
 @y
-- You must not be a member of a company or any teams or organizations. You must remove the account from all teams, organizations, or the company.
+- For owners, you must leave your organization or company before deactivating your Docker account.
 @z
 
 @x
     To do this:
-    1. Navigate to **Organizations** and then select the organization(s) you need to leave.
-    2. Find your username in the **Members** tab.
-    3. Select the **More options** menu and then select **Leave organization**.
+    1. Sign in to the [Docker Admin Console](https://app.docker.com/admin).
+    2. Select the organization you need to leave from the top-left drop-down menu.
+    3. Find your username in the **Members** tab.
+    4. Select the **More options** menu and then select **Leave organization**.
 @y
     To do this:
-    1. Navigate to **Organizations** and then select the organization(s) you need to leave.
-    2. Find your username in the **Members** tab.
-    3. Select the **More options** menu and then select **Leave organization**.
+    1. Sign in to the [Docker Admin Console](https://app.docker.com/admin).
+    2. Select the organization you need to leave from the top-left drop-down menu.
+    3. Find your username in the **Members** tab.
+    4. Select the **More options** menu and then select **Leave organization**.
 @z
 
 @x
-- If you are the sole owner of an organization, either assign another member of the organization the owner role and then remove yourself from the organization, or deactivate the organization. Similarly, if you are the sole owner of a company, either add someone else as a company owner and then remove yourself, or deactivate the company.
+- If you are the sole owner of an organization, you must assign the owner role to another member of the organization and then remove yourself from the organization, or deactivate the organization. Similarly, if you are the sole owner of a company, either add someone else as a company owner and then remove yourself, or deactivate the company.
 @y
-- If you are the sole owner of an organization, either assign another member of the organization the owner role and then remove yourself from the organization, or deactivate the organization. Similarly, if you are the sole owner of a company, either add someone else as a company owner and then remove yourself, or deactivate the company.
+- If you are the sole owner of an organization, you must assign the owner role to another member of the organization and then remove yourself from the organization, or deactivate the organization. Similarly, if you are the sole owner of a company, either add someone else as a company owner and then remove yourself, or deactivate the company.
 @z
 
 @x
@@ -102,7 +102,7 @@ Before deactivating your Docker account, ensure that you meet the following requ
 @x
 ## Deactivate
 @y
-## Deactivate
+## 無効化 {#deactivate}
 @z
 
 @x
@@ -122,15 +122,15 @@ Once you have completed all the previous steps, you can deactivate your account.
 @z
 
 @x
-1. Sign in to your [Docker account](https://app.docker.com/login).
-2. In Docker Home, select your avatar in the top-right corner to open the drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/login).
+2. Select your avatar to open the drop-down menu.
 3. Select **Account settings**.
-4. In the **Account management** section, select **Deactivate account** to open to deactivate account page.
+4. In the **Account management** section, select **Deactivate account**.
 5. To confirm, select **Deactivate account**.
 @y
-1. Sign in to your [Docker account](https://app.docker.com/login).
-2. In Docker Home, select your avatar in the top-right corner to open the drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/login).
+2. Select your avatar to open the drop-down menu.
 3. Select **Account settings**.
-4. In the **Account management** section, select **Deactivate account** to open to deactivate account page.
+4. In the **Account management** section, select **Deactivate account**.
 5. To confirm, select **Deactivate account**.
 @z
