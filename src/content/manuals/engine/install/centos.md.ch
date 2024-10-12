@@ -303,7 +303,7 @@ Docker Engine のインストールと起動が正常に行われました。
 @x
 #### Upgrade Docker Engine
 @y
-### パッケージからのインストール {#install-from-a-package}
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
