@@ -6,9 +6,11 @@
 @x
 title: Project Harmonia
 description: Learn how you can run your applications in the cloud with Project Harmonia
+keywords: run, cloud, docker desktop, resources
 @y
 title: Project Harmonia
 description: Learn how you can run your applications in the cloud with Project Harmonia
+keywords: run, cloud, docker desktop, resources
 @z
 
 @x
@@ -125,24 +127,44 @@ Run the following command:
 
 @x
 ```console
-$ docker harmonia engine create cloudengine --arch "amd64"  --use
+$ docker harmonia engine create cloudengine --type "standard-amd64"  --use
 ```
 @y
 ```console
-$ docker harmonia engine create cloudengine --arch "amd64"  --use
+$ docker harmonia engine create cloudengine --type "standard-amd64"  --use
 ```
 @z
 
 @x
 This creates an engine called `cloudengine` and:
 - Immediately switches you to the new cloud engine with the `--use` flag.
-- Sets the engine's CPU architecture to amd64 using the `--arch "amd64"` flag. You can choose between amd64 and arm64.
-- Configures the engine size with the `--size "standard"` flag. Options are standard (2 CPU cores, 4GB RAM, default) or large (4 CPU cores, 8GB RAM).
+- Sets the engine size to standard and the engine's CPU architecture to amd64 with the `--type` flag. 
 @y
 This creates an engine called `cloudengine` and:
 - Immediately switches you to the new cloud engine with the `--use` flag.
-- Sets the engine's CPU architecture to amd64 using the `--arch "amd64"` flag. You can choose between amd64 and arm64.
-- Configures the engine size with the `--size "standard"` flag. Options are standard (2 CPU cores, 4GB RAM, default) or large (4 CPU cores, 8GB RAM).
+- Sets the engine size to standard and the engine's CPU architecture to amd64 with the `--type` flag. 
+@z
+
+@x
+Project Harmonia supports the following values for `--type`:
+- `standard-arm64`
+- `standard-amd64` (default)
+- `large-arm64`
+- `large-amd64`
+- `aiml-amd64`
+@y
+Project Harmonia supports the following values for `--type`:
+- `standard-arm64`
+- `standard-amd64` (default)
+- `large-arm64`
+- `large-amd64`
+- `aiml-amd64`
+@z
+
+@x
+Standard size engines have 2 CPU cores and 4GB RAM, large and AI/ML engines have 4 CPU cores and 8GB RAM.
+@y
+Standard size engines have 2 CPU cores and 4GB RAM, large and AI/ML engines have 4 CPU cores and 8GB RAM.
 @z
 
 @x
