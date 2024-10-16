@@ -376,6 +376,16 @@ Linux コンテナーへ切り替えた場合、プロキシーやデーモン�
 @z
 
 @x
+> [!TIP]
+>
+> See the [FAQs](/manuals/desktop/faqs/general.md#how-do-I-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
+@y
+> [!TIP]
+>
+> 管理者権限がなくても Docker Desktop のインストールと実行を行う方法については [FAQ](manuals/desktop/faqs/general.md#how-do-I-run-docker-desktop-without-administrator-privileges) を参照してください。
+@z
+
+@x
 ### Install interactively
 @y
 ### 対話的なインストール {#install-interactively}

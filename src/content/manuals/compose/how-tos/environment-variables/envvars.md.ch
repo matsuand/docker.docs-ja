@@ -72,7 +72,7 @@ You can set or change the pre-defined environment variables:
 - From your [shell](variable-interpolation.md#substitute-from-the-shell)
 @y
 You can set or change the pre-defined environment variables:
-- With an [`.env` file located in your working director](/manuals/compose/how-tos/environment-variables/variable-interpolation.md) 
+- With an [`.env` file located in your working director](manuals/compose/how-tos/environment-variables/variable-interpolation.md) 
 - From the command line
 - From your [shell](variable-interpolation.md#substitute-from-the-shell)
 @z

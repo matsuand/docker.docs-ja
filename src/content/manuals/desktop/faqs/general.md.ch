@@ -152,3 +152,97 @@ serial port) to a container as it requires support at the hypervisor level.
 It is not possible to pass through a USB device (or a
 serial port) to a container as it requires support at the hypervisor level.
 @z
+
+@x
+### How do I run Docker Desktop without administrator privileges?
+@y
+### How do I run Docker Desktop without administrator privileges?
+@z
+
+@x
+Docker Desktop requires administrator privileges only for installation. Once installed, administrator privileges are not needed to run it. However, for non-admin users to run Docker Desktop, it must be installed using a specific installer flag and meet certain prerequisites, which vary by platform.
+@y
+Docker Desktop requires administrator privileges only for installation. Once installed, administrator privileges are not needed to run it. However, for non-admin users to run Docker Desktop, it must be installed using a specific installer flag and meet certain prerequisites, which vary by platform.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Mac" >}}
+@y
+{{< tabs >}}
+{{< tab name="Mac" >}}
+@z
+
+@x
+To run Docker Desktop on Mac without requiring administrator privileges, install via the command line and pass the `—user=<userid>` installer flag:
+@y
+To run Docker Desktop on Mac without requiring administrator privileges, install via the command line and pass the `—user=<userid>` installer flag:
+@z
+
+@x
+```console
+$ /Applications/Docker.app/Contents/MacOS/install --user=<userid>
+```
+@y
+```console
+$ /Applications/Docker.app/Contents/MacOS/install --user=<userid>
+```
+@z
+
+@x
+You can then sign in to your machine with the user ID specified, and launch Docker Desktop. 
+@y
+You can then sign in to your machine with the user ID specified, and launch Docker Desktop. 
+@z
+
+@x
+> [!NOTE]
+> 
+> Before launching Docker Desktop, if a `settings.json` file already exists in the `~/Library/Group Containers/group.com.docker/` directory, you will see a **Finish setting up Docker Desktop** window that prompts for administrator privileges when you select **Finish**. To avoid this, ensure you delete the `settings.json` file left behind from any previous installations before launching the application.
+@y
+> [!NOTE]
+> 
+> Before launching Docker Desktop, if a `settings.json` file already exists in the `~/Library/Group Containers/group.com.docker/` directory, you will see a **Finish setting up Docker Desktop** window that prompts for administrator privileges when you select **Finish**. To avoid this, ensure you delete the `settings.json` file left behind from any previous installations before launching the application.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@y
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@z
+
+@x
+> [!NOTE]
+>
+> If you are using the WSL 2 backend, first make sure that you meet the [minimum required version](/manuals/desktop/wsl/best-practices.md) for WSL 2. Otherwise, update WSL 2 first.  
+@y
+> [!NOTE]
+>
+> If you are using the WSL 2 backend, first make sure that you meet the [minimum required version](manuals/desktop/wsl/best-practices.md) for WSL 2. Otherwise, update WSL 2 first.  
+@z
+
+@x
+To run Docker Desktop on Windows without requiring administrator privileges, install via the command line and pass the `—always-run-service` installer flag.
+@y
+To run Docker Desktop on Windows without requiring administrator privileges, install via the command line and pass the `—always-run-service` installer flag.
+@z
+
+@x
+```console
+$ "Docker Desktop Installer.exe" install —always-run-service
+```
+@y
+```console
+$ "Docker Desktop Installer.exe" install —always-run-service
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z

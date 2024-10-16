@@ -1,12 +1,13 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admin-set-up cpp docker-build-cloud docker-compose docker-scout \
-	dotnet genai-pdf-bot genai-video-bot golang images java nodejs    \
-	php python r rag-ollama ruby rust
+SUBDIRS = admin-set-up bun cpp docker-build-cloud docker-compose \
+	docker-scout dotnet genai-pdf-bot genai-video-bot golang \
+	images java nodejs php python r rag-ollama ruby rust
 
 bases = \
 	_index.md                   \
+	container-supported-development.md \
 	databases.md                \
 	jupyter.md                  \
 	kafka.md                    \

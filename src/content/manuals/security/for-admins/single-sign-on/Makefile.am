@@ -1,10 +1,12 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = configure connect images manage
+SUBDIRS = configure images
 
 bases = \
-	_index.md \
+	_index.md       \
+	connect.md      \
+	manage.md       \
 	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk

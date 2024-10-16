@@ -1,22 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Organization access tokens
 description: Learn how to create and manage organization access tokens
   to securely push and pull images programmatically.
 keywords: docker hub, security, OAT, organization access token
 linkTitle: Organization access tokens (Beta)
----
 @y
----
 title: Organization access tokens
 description: Learn how to create and manage organization access tokens
   to securely push and pull images programmatically.
 keywords: docker hub, security, OAT, organization access token
 linkTitle: Organization access tokens (Beta)
----
 @z
 
 @x
@@ -50,11 +48,11 @@ the token to single user. You must have a [Docker Team or Business
 subscription](/subscription/core-subscription/details/) to use OATs.
 @y
 An organization access token (OAT) is like a [personal access token
-(PAT)](/security/for-developers/access-tokens/), but an OAT is associated with
+(PAT)](__SUBDIR__/security/for-developers/access-tokens/), but an OAT is associated with
 an organization and not a single user account. Use an OAT instead of a PAT to
 let business-critical tasks access Docker Hub repositories without connecting
 the token to single user. You must have a [Docker Team or Business
-subscription](/subscription/core-subscription/details/) to use OATs.
+subscription](__SUBDIR__/subscription/core-subscription/details/) to use OATs.
 @z
 
 @x
@@ -86,7 +84,7 @@ OATs provide the following advantages:
 @x
 If you have existing [service accounts](/docker-hub/service-accounts/), Docker recommends that you replace the service accounts with OATs. OATs offer the following advantages over service accounts:
 @y
-If you have existing [service accounts](/docker-hub/service-accounts/), Docker recommends that you replace the service accounts with OATs. OATs offer the following advantages over service accounts:
+If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/), Docker recommends that you replace the service accounts with OATs. OATs offer the following advantages over service accounts:
 @z
 
 @x

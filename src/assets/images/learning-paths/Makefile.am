@@ -5,6 +5,7 @@
 copyfiles = \
 	build-cloud.png \
 	compose.png     \
+	container-supported-development.png \
 	scout.png
 
 include $(top_srcdir)/build-aux/common.mk

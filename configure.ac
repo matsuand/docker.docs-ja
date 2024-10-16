@@ -82,6 +82,7 @@ AC_CONFIG_FILES([
 	src/content/get-started/workshop/images/Makefile
 	src/content/guides/Makefile
 	src/content/guides/admin-set-up/Makefile
+	src/content/guides/bun/Makefile
 	src/content/guides/cpp/Makefile
 	src/content/guides/docker-build-cloud/Makefile
 	src/content/guides/docker-compose/Makefile
@@ -241,9 +242,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/for-admins/provisioning/Makefile
 	src/content/manuals/security/for-admins/single-sign-on/Makefile
 	src/content/manuals/security/for-admins/single-sign-on/configure/Makefile
-	src/content/manuals/security/for-admins/single-sign-on/connect/Makefile
 	src/content/manuals/security/for-admins/single-sign-on/images/Makefile
-	src/content/manuals/security/for-admins/single-sign-on/manage/Makefile
 	src/content/manuals/security/for-developers/Makefile
 	src/content/manuals/security/for-developers/2fa/Makefile
 	src/content/manuals/security/images/Makefile

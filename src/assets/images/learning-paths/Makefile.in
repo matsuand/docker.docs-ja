@@ -240,6 +240,7 @@ top_srcdir = @top_srcdir@
 copyfiles = \
 	build-cloud.png \
 	compose.png     \
+	container-supported-development.png \
 	scout.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

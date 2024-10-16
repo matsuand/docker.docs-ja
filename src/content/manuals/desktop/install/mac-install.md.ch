@@ -136,6 +136,16 @@ This page contains download URLs, information about system requirements, and ins
 @z
 
 @x
+> [!TIP]
+>
+> See the [FAQs](/manuals/desktop/faqs/general.md#how-do-I-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
+@y
+> [!TIP]
+>
+> See the [FAQs](manuals/desktop/faqs/general.md#how-do-I-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
+@z
+
+@x
 ### Install interactively
 @y
 ### Install interactively
