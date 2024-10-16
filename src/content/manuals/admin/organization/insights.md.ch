@@ -14,18 +14,6 @@ title: Insights
 @z
 
 @x
-{{% restricted title="Early Access" %}}
-Insights is an [early access](/release-lifecycle#early-access-ea) feature and
-is only available to those in the early access feedback program.
-{{% /restricted %}}
-@y
-{{% restricted title="Early Access" %}}
-Insights is an [early access](__SUBDIR__/release-lifecycle#early-access-ea) feature and
-is only available to those in the early access feedback program.
-{{% /restricted %}}
-@z
-
-@x
 > [!NOTE]
 > Insights requires a [Docker Business
 > subscription](/subscription/core-subscription/details/#docker-business) and

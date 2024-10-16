@@ -162,9 +162,9 @@ services:
 @z
 
 @x
-Using an `.env` file lets you to use the same file for use by a plain `docker run --env-file ...` command, or to share the same `.env` file within multiple services without the need to duplicate a long `environment` YAML block.
+Using an `.env` file lets you use the same file for use by a plain `docker run --env-file ...` command, or to share the same `.env` file within multiple services without the need to duplicate a long `environment` YAML block.
 @y
-Using an `.env` file lets you to use the same file for use by a plain `docker run --env-file ...` command, or to share the same `.env` file within multiple services without the need to duplicate a long `environment` YAML block.
+Using an `.env` file lets you use the same file for use by a plain `docker run --env-file ...` command, or to share the same `.env` file within multiple services without the need to duplicate a long `environment` YAML block.
 @z
 
 @x
@@ -207,7 +207,6 @@ The paths to your `.env` file, specified in the `env_file` attribute, are relati
 
 @x
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
-- In addition, as the `.env` file supports [interpolation](variable-interpolation.md), it is possible to combine those with values set by `environment`. 
 - As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
   ```yaml
   env_file:
@@ -219,7 +218,6 @@ The paths to your `.env` file, specified in the `env_file` attribute, are relati
 - Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
 @y
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
-- In addition, as the `.env` file supports [interpolation](variable-interpolation.md), it is possible to combine those with values set by `environment`. 
 - As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
   ```yaml
   env_file:

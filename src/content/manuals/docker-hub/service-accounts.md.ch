@@ -1,20 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 description: Docker Service accounts
 keywords: Docker, service, accounts, Docker Hub
 title: Service accounts
-weight: 50
----
 @y
----
 description: Docker Service accounts
 keywords: Docker, service, accounts, Docker Hub
 title: Service accounts
-weight: 50
----
+@z
+
+@x
+{{< include "new-plans.md" >}}
+@y
+{{< include "new-plans.md" >}}
 @z
 
 @x
@@ -22,11 +24,19 @@ weight: 50
 >
 > Service accounts require a
 > [Docker Team, or Business subscription](../subscription/_index.md).
+>
+> Docker recommends that you use organization access tokens instead of service
+> accounts. For more details, see [Organization access
+> tokens](/security/for-admins/access-tokens/).
 @y
 > [!NOTE]
 >
 > Service accounts require a
 > [Docker Team, or Business subscription](../subscription/_index.md).
+>
+> Docker recommends that you use organization access tokens instead of service
+> accounts. For more details, see [Organization access
+> tokens](__SUBDIR__/security/for-admins/access-tokens/).
 @z
 
 @x
@@ -120,13 +130,13 @@ To create a new service account for your Team account:
 2. Create a [team](manage-a-team.md) in your organization and grant it read-only access to your private repositories.
 3. Add the new Docker ID to your [organization](orgs.md).
 4. Add the new Docker ID  to the [team](manage-a-team.md) you created earlier.
-5. Create a new [personal access token (PAT)](access-tokens.md) from the user account and use it for CI.
+5. Create a new [personal access token (PAT)](/security/for-developers/access-tokens/) from the user account and use it for CI.
 @y
 1. Create a new Docker ID.
 2. Create a [team](manage-a-team.md) in your organization and grant it read-only access to your private repositories.
 3. Add the new Docker ID to your [organization](orgs.md).
 4. Add the new Docker ID  to the [team](manage-a-team.md) you created earlier.
-5. Create a new [personal access token (PAT)](access-tokens.md) from the user account and use it for CI.
+5. Create a new [personal access token (PAT)](__SUBDIR__/security/for-developers/access-tokens/) from the user account and use it for CI.
 @z
 
 @x

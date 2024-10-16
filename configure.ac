@@ -81,6 +81,7 @@ AC_CONFIG_FILES([
 	src/content/get-started/workshop/Makefile
 	src/content/get-started/workshop/images/Makefile
 	src/content/guides/Makefile
+	src/content/guides/admin-set-up/Makefile
 	src/content/guides/cpp/Makefile
 	src/content/guides/docker-build-cloud/Makefile
 	src/content/guides/docker-compose/Makefile

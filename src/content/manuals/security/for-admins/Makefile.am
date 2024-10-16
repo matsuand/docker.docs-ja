@@ -5,6 +5,7 @@ SUBDIRS = enforce-sign-in hardened-desktop provisioning single-sign-on
 
 bases = \
 	_index.md                \
+	access-tokens.md         \
 	domain-audit.md          \
 	roles-and-permissions.md
 

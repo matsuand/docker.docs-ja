@@ -67,14 +67,12 @@ This page contains information on how you can set or change the following pre-de
 
 @x
 You can set or change the pre-defined environment variables:
-- Within your Compose file using the [`environment` attribute](set-environment-variables.md#use-the-environment-attribute)
-- With the `env-file` attribute and an [environment file](set-environment-variables.md#use-the-env_file-attribute) 
+- With an [`.env` file located in your working director](/manuals/compose/how-tos/environment-variables/variable-interpolation.md) 
 - From the command line
 - From your [shell](variable-interpolation.md#substitute-from-the-shell)
 @y
 You can set or change the pre-defined environment variables:
-- Within your Compose file using the [`environment` attribute](set-environment-variables.md#use-the-environment-attribute)
-- With the `env-file` attribute and an [environment file](set-environment-variables.md#use-the-env_file-attribute) 
+- With an [`.env` file located in your working director](/manuals/compose/how-tos/environment-variables/variable-interpolation.md) 
 - From the command line
 - From your [shell](variable-interpolation.md#substitute-from-the-shell)
 @z
