@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Variables in Bake
 linkTitle: Variables
-weight: 40
-description: 
-keywords: build, buildx, bake, buildkit, hcl, variables
----
 @y
----
 title: Variables in Bake
 linkTitle: Variables
-weight: 40
+@z
+
+@x
 description: 
 keywords: build, buildx, bake, buildkit, hcl, variables
----
+@y
+description: 
+keywords: build, buildx, bake, buildkit, hcl, variables
 @z
 
 @x
@@ -43,19 +43,7 @@ Use the `variable` block to define a variable.
 Use the `variable` block to define a variable.
 @z
 
-@x
-```hcl
-variable "TAG" {
-  default = "docker.io/username/webapp:latest"
-}
-```
-@y
-```hcl
-variable "TAG" {
-  default = "docker.io/username/webapp:latest"
-}
-```
-@z
+% snip code...
 
 @x
 The following example shows how to use the `TAG` variable in a target.
@@ -63,23 +51,7 @@ The following example shows how to use the `TAG` variable in a target.
 The following example shows how to use the `TAG` variable in a target.
 @z
 
-@x
-```hcl
-target "default" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = [ TAG ]
-}
-```
-@y
-```hcl
-target "default" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = [ TAG ]
-}
-```
-@z
+% snip code...
 
 @x
 ## Interpolate variables into values
@@ -97,19 +69,7 @@ Bake supports string interpolation of variables into values. You can use the
 defines a `TAG` variable with a value of `latest`.
 @z
 
-@x
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-```
-@y
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-```
-@z
+% snip code...
 
 @x
 To interpolate the `TAG` variable into the value of an attribute, use the
@@ -119,23 +79,7 @@ To interpolate the `TAG` variable into the value of an attribute, use the
 `${TAG}` syntax.
 @z
 
-@x
-```hcl
-target "default" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@y
-```hcl
-target "default" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@z
+% snip code...
 
 @x
 Printing the Bake file with the `--print` flag shows the interpolated value in
@@ -145,51 +89,25 @@ Printing the Bake file with the `--print` flag shows the interpolated value in
 the resolved build configuration.
 @z
 
+% snip command...
+% snip code...
+
 @x
-```console
-$ docker buildx bake --print
-```
+## Escape variable interpolation
 @y
-```console
-$ docker buildx bake --print
-```
+## Escape variable interpolation
 @z
 
 @x
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["webapp"]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": ["docker.io/username/webapp:latest"]
-    }
-  }
-}
-```
+If you want to bypass variable interpolation when parsing the Bake definition,
+use double dollar signs (`$${VARIABLE}`).
 @y
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["webapp"]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": ["docker.io/username/webapp:latest"]
-    }
-  }
-}
-```
+If you want to bypass variable interpolation when parsing the Bake definition,
+use double dollar signs (`$${VARIABLE}`).
 @z
+
+% snip code...
+% snip command...
 
 @x
 ## Using variables in variables across files
@@ -207,19 +125,7 @@ another file. In the following example, the `vars.hcl` file defines a
 `BASE_IMAGE` variable with a default value of `docker.io/library/alpine`.
 @z
 
-@x
-```hcl {title=vars.hcl}
-variable "BASE_IMAGE" {
-  default = "docker.io/library/alpine"
-}
-```
-@y
-```hcl {title=vars.hcl}
-variable "BASE_IMAGE" {
-  default = "docker.io/library/alpine"
-}
-```
-@z
+% snip code...
 
 @x
 The following `docker-bake.hcl` file defines a `BASE_LATEST` variable that
@@ -229,33 +135,7 @@ The following `docker-bake.hcl` file defines a `BASE_LATEST` variable that
 references the `BASE_IMAGE` variable.
 @z
 
-@x
-```hcl {title=docker-bake.hcl}
-variable "BASE_LATEST" {
-  default = "${BASE_IMAGE}:latest"
-}
-@y
-```hcl {title=docker-bake.hcl}
-variable "BASE_LATEST" {
-  default = "${BASE_IMAGE}:latest"
-}
-@z
-
-@x
-target "default" {
-  contexts = {
-    base = BASE_LATEST
-  }
-}
-```
-@y
-target "default" {
-  contexts = {
-    base = BASE_LATEST
-  }
-}
-```
-@z
+% snip code...
 
 @x
 When you print the resolved build configuration, using the `-f` flag to specify
@@ -267,45 +147,8 @@ the `vars.hcl` and `docker-bake.hcl` files, you see that the `BASE_LATEST`
 variable is resolved to `docker.io/library/alpine:latest`.
 @z
 
-@x
-```console
-$ docker buildx bake -f vars.hcl -f docker-bake.hcl --print app
-```
-@y
-```console
-$ docker buildx bake -f vars.hcl -f docker-bake.hcl --print app
-```
-@z
-
-@x
-```json
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "contexts": {
-        "base": "docker.io/library/alpine:latest"
-      },
-      "dockerfile": "Dockerfile"
-    }
-  }
-}
-```
-@y
-```json
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "contexts": {
-        "base": "docker.io/library/alpine:latest"
-      },
-      "dockerfile": "Dockerfile"
-    }
-  }
-}
-```
-@z
+% snip command...
+% snip code...
 
 @x
 ## Additional resources

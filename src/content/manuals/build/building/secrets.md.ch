@@ -207,13 +207,13 @@ is mounted to `/run/secrets/API_TOKEN` in the build container.
 @z
 
 @x
-When consuming a secret in a Dockerfile, the secret is mounted a file by
+When consuming a secret in a Dockerfile, the secret is mounted to a file by
 default. The default file path of the secret, inside the build container, is
 `/run/secrets/<id>`. You can customize how the secrets get mounted in the build
 container using the `target` and `env` options for the `RUN --mount` flag in
 the Dockerfile.
 @y
-When consuming a secret in a Dockerfile, the secret is mounted a file by
+When consuming a secret in a Dockerfile, the secret is mounted to a file by
 default. The default file path of the secret, inside the build container, is
 `/run/secrets/<id>`. You can customize how the secrets get mounted in the build
 container using the `target` and `env` options for the `RUN --mount` flag in
