@@ -137,10 +137,10 @@ filesystem you can share with containers. For details about accessing the settin
 
 @x
    {{< tabs >}}
-   {{< tab name="Mac / Linux / PowerShell" >}}
+   {{< tab name="Mac / Linux" >}}
 @y
    {{< tabs >}}
-   {{< tab name="Mac / Linux / PowerShell" >}}
+   {{< tab name="Mac / Linux" >}}
 @z
 
 % snip command...
@@ -161,6 +161,16 @@ filesystem you can share with containers. For details about accessing the settin
 @y
    {{< /tab >}}
    {{< tab name="Git Bash" >}}
+@z
+
+% snip command...
+
+@x
+   {{< /tab >}}
+   {{< tab name="PowerShell" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="PowerShell" >}}
 @z
 
 % snip command...
