@@ -168,8 +168,8 @@ Kubernetes オブジェクトについての詳細は [Kubernetes ドキュメ�
 @x
 3. In a browser, visit the following address. You should see the message `{"Status" : "OK"}`.
 @y
-3. ブラウザーを使って以下のアドレスにアクセスします。
-   `{"Status" : "OK"}` というメッセージが表示されるはずです。
+3. ブラウザーにおいて以下のアドレスにアクセスします。
+   メッセージ `{"Status" : "OK"}` が表示されるはずです。
 @z
 
 % snip output...

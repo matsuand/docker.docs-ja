@@ -58,7 +58,7 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 @x
 ## Step one: Create the repository
 @y
-## 手順1: リポジトリの生成 {#step-one-create-the-repository}
+## 手順 1: リポジトリの生成 {#step-one-create-the-repository}
 @z
 
 @x
