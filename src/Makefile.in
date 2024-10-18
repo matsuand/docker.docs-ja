@@ -306,8 +306,9 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copydirs = \
-	_releaser \
-	assets    \
+	_releaser  \
+	archetypes \
+	assets     \
 	scripts
 
 copyfiles = \
