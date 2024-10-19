@@ -18,3 +18,9 @@
 @y
               <div class="text-xs font-semibold text-gray-light dark:text-gray-dark tracking-wider uppercase">注目の話題</div>
 @z
+
+@x
+                {{- $img := resources.Get (.Params.image | default "/images/thumbnail.webp") }}
+@y
+                {{- $img := resources.Get (.Params.image | default "/images/thumbnail.webp") }}
+@z

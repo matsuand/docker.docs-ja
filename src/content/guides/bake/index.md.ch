@@ -1,38 +1,39 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Mastering multi-platform builds, testing, and more with Docker Buildx Bake
 linkTitle: Mastering Docker Buildx Bake
 description: >
   Learn how to manage simple and complex build configurations with Buildx Bake.
 summary: >
   Learn to automate Docker builds and testing with declarative configurations using Buildx Bake.
-languages: [go]
-subjects: [devops]
-levels: [advanced]
-params:
-  time: 30 minutes
-  featured: true
-  image: /images/guides/bake.webp
----
 @y
----
 title: Mastering multi-platform builds, testing, and more with Docker Buildx Bake
 linkTitle: Mastering Docker Buildx Bake
 description: >
   Learn how to manage simple and complex build configurations with Buildx Bake.
 summary: >
   Learn to automate Docker builds and testing with declarative configurations using Buildx Bake.
+@z
+
+@x
 languages: [go]
 subjects: [devops]
 levels: [advanced]
-params:
+@y
+languages: [go]
+subjects: [devops]
+levels: [応用]
+@z
+
+% params:
+@x
   time: 30 minutes
-  featured: true
-  image: /images/guides/bake.webp
----
+@y
+  time: 30 分
 @z
 
 @x
@@ -69,10 +70,10 @@ This guide assumes that you're familiar with:
 - [Multi-platform builds](/manuals/build/building/multi-platform.md)
 @y
 - Docker
-- [Buildx](/manuals/build/concepts/overview.md#buildx)
-- [BuildKit](/manuals/build/concepts/overview.md#buildkit)
-- [Multi-stage builds](/manuals/build/building/multi-stage.md)
-- [Multi-platform builds](/manuals/build/building/multi-platform.md)
+- [Buildx](manuals/build/concepts/overview.md#buildx)
+- [BuildKit](manuals/build/concepts/overview.md#buildkit)
+- [Multi-stage builds](manuals/build/building/multi-stage.md)
+- [Multi-platform builds](manuals/build/building/multi-platform.md)
 @z
 
 @x
@@ -82,13 +83,13 @@ This guide assumes that you're familiar with:
 @z
 
 @x
-- A recent version of Docker is installed on your machine.
-- Git is installed for cloning repositories.
+- You have a recent version of Docker installed on your machine.
+- You have Git installed for cloning repositories.
 - You're using the [containerd](/manuals/desktop/containerd.md) image store.
 @y
-- A recent version of Docker is installed on your machine.
-- Git is installed for cloning repositories.
-- You're using the [containerd](/manuals/desktop/containerd.md) image store.
+- You have a recent version of Docker installed on your machine.
+- You have Git installed for cloning repositories.
+- You're using the [containerd](manuals/desktop/containerd.md) image store.
 @z
 
 @x
@@ -99,14 +100,14 @@ This guide assumes that you're familiar with:
 
 @x
 This guide uses an example project to demonstrate how Docker Buildx Bake can
-streamline your build and test workflows. This repository includes both a
-Dockerfile and `docker-bake.hcl`, giving you a ready-to-use setup to try out
-Bake commands.
+streamline your build and test workflows. The repository includes both a
+Dockerfile and a `docker-bake.hcl` file, giving you a ready-to-use setup to try
+out Bake commands.
 @y
 This guide uses an example project to demonstrate how Docker Buildx Bake can
-streamline your build and test workflows. This repository includes both a
-Dockerfile and `docker-bake.hcl`, giving you a ready-to-use setup to try out
-Bake commands.
+streamline your build and test workflows. The repository includes both a
+Dockerfile and a `docker-bake.hcl` file, giving you a ready-to-use setup to try
+out Bake commands.
 @z
 
 @x
@@ -198,7 +199,7 @@ line. Here's a quick summary of the options for the `default` target:
 @y
 - `target`: The target build stage in the Dockerfile.
 - `tags`: Tags to assign to the image.
-- `attest`: [Attestations](/manuals/build/metadata/attestations/_index.md) to attach to the image.
+- `attest`: [Attestations](manuals/build/metadata/attestations/_index.md) to attach to the image.
 @z
 
 @x
@@ -282,12 +283,12 @@ $ docker buildx build \
 @z
 
 @x
-Bake isn't just for defining build configurations, and running builds. You can
+Bake isn't just for defining build configurations and running builds. You can
 also use Bake to run your tests, effectively using BuildKit as a task runner.
 Running your tests in containers is great for ensuring reproducible results.
 This section shows how to add two types of tests:
 @y
-Bake isn't just for defining build configurations, and running builds. You can
+Bake isn't just for defining build configurations and running builds. You can
 also use Bake to run your tests, effectively using BuildKit as a task runner.
 Running your tests in containers is great for ensuring reproducible results.
 This section shows how to add two types of tests:
@@ -327,7 +328,7 @@ target "test" {
 
 @x
 > [!TIP]
-> Using the `type=cacheonly` ensures that the build output is effectively
+> Using `type=cacheonly` ensures that the build output is effectively
 > discarded; the layers are saved to BuildKit's cache, but Buildx will not
 > attempt to load the result to the Docker Engine's image store.
 >
@@ -335,7 +336,7 @@ target "test" {
 > execution matters.
 @y
 > [!TIP]
-> Using the `type=cacheonly` ensures that the build output is effectively
+> Using `type=cacheonly` ensures that the build output is effectively
 > discarded; the layers are saved to BuildKit's cache, but Buildx will not
 > attempt to load the result to the Docker Engine's image store.
 >
@@ -355,7 +356,7 @@ Dockerfile.
 
 @x
 ```console
-$ docker buildx bake bake test
+$ docker buildx bake test
 [+] Building 1.2s (6/6) FINISHED
  => [internal] load local bake definitions
 ...
@@ -363,7 +364,7 @@ ERROR: failed to solve: target stage "test" could not be found
 ```
 @y
 ```console
-$ docker buildx bake bake test
+$ docker buildx bake test
 [+] Building 1.2s (6/6) FINISHED
  => [internal] load local bake definitions
 ...
@@ -403,7 +404,7 @@ RUN --mount=target=. \
 > dependency set is available across build, test, and other stages.
 @y
 > [!TIP]
-> The [`--mount=type=cache` directive](/manuals/build/cache/optimize.md#use-cache-mounts)
+> The [`--mount=type=cache` directive](manuals/build/cache/optimize.md#use-cache-mounts)
 > caches Go modules between builds, improving build performance by avoiding the
 > need to re-download dependencies. This shared cache ensures that the same
 > dependency set is available across build, test, and other stages.
@@ -546,7 +547,7 @@ consistency.
 @y
 Sometimes you need to build more than one version of a program. The following
 example uses Bake to build separate "release" and "debug" variants of the
-program, using [matrices](/manuals/build/bake/matrices.md). Using matrices lets
+program, using [matrices](manuals/build/bake/matrices.md). Using matrices lets
 you run parallel builds with different configurations, saving time and ensuring
 consistency.
 @z
@@ -614,25 +615,23 @@ combinations to build:
 @x
 The `matrix` attribute defines the variants to build ("release" and "debug").
 The `name` attribute defines how the matrix gets expanded into multiple
-distinct build targets. In this case, it's relatively simple. The matrix
-attribute expands the build into two workflows: `image-release` and
-`image-debug`, each using different configuration parameters.
+distinct build targets. In this case, the matrix attribute expands the build
+into two workflows: `image-release` and `image-debug`, each using different
+configuration parameters.
 @y
 The `matrix` attribute defines the variants to build ("release" and "debug").
 The `name` attribute defines how the matrix gets expanded into multiple
-distinct build targets. In this case, it's relatively simple. The matrix
-attribute expands the build into two workflows: `image-release` and
-`image-debug`, each using different configuration parameters.
+distinct build targets. In this case, the matrix attribute expands the build
+into two workflows: `image-release` and `image-debug`, each using different
+configuration parameters.
 @z
 
 @x
-Next, when building the development variant, we'll pass in a `BUILD_TAGS`
-argument with the value of the matrix variable, which we'll later consume in
-the Dockerfile.
+Next, define a build argument named `BUILD_TAGS` which takes the value of the
+matrix variable.
 @y
-Next, when building the development variant, we'll pass in a `BUILD_TAGS`
-argument with the value of the matrix variable, which we'll later consume in
-the Dockerfile.
+Next, define a build argument named `BUILD_TAGS` which takes the value of the
+matrix variable.
 @z
 
 @x
@@ -870,11 +869,11 @@ bakeme:latest           20065d2c4d22       44.4MB         25.9MB
 @x
 Exporting build artifacts like binaries can be useful for deploying to
 environments without Docker or Kubernetes. For example, if your programs are
-meant to be run on user's local machine.
+meant to be run on a user's local machine.
 @y
 Exporting build artifacts like binaries can be useful for deploying to
 environments without Docker or Kubernetes. For example, if your programs are
-meant to be run on user's local machine.
+meant to be run on a user's local machine.
 @z
 
 @x
@@ -916,7 +915,7 @@ path using the [local exporter](/manuals/build/exporters/local-tar.md).
 In the `docker-bake.hcl` file, create a new `bin` target. In this stage, set
 the `output` attribute to a local filesystem path. Buildx automatically detects
 that the output looks like a filepath, and exports the results to the specified
-path using the [local exporter](/manuals/build/exporters/local-tar.md).
+path using the [local exporter](manuals/build/exporters/local-tar.md).
 @z
 
 @x
@@ -1005,7 +1004,7 @@ To do this, you can [inherit](/manuals/build/bake/inheritance.md) the `bin`
 target that you just created, and extend it by adding the desired platforms.
 @y
 Next, let's add a target to build all of the platform variants of the program.
-To do this, you can [inherit](/manuals/build/bake/inheritance.md) the `bin`
+To do this, you can [inherit](manuals/build/bake/inheritance.md) the `bin`
 target that you just created, and extend it by adding the desired platforms.
 @z
 
@@ -1190,13 +1189,13 @@ configuration portable, and wrangle complex configurations more easily.
 @z
 
 @x
-Experiment with different configurations and extend your Bake files to match
+Experiment with different configurations and extend your Bake files to suit
 your project's needs. You might consider integrating Bake into your CI/CD
 pipelines to automate builds, testing, and artifact deployment. The flexibility
 and power of Buildx Bake can significantly improve your development and
 deployment processes.
 @y
-Experiment with different configurations and extend your Bake files to match
+Experiment with different configurations and extend your Bake files to suit
 your project's needs. You might consider integrating Bake into your CI/CD
 pipelines to automate builds, testing, and artifact deployment. The flexibility
 and power of Buildx Bake can significantly improve your development and
@@ -1221,8 +1220,8 @@ For more information about how to use Bake, check out these resources:
 - [Bake file reference](/manuals/build/bake/reference.md)
 - [Bake GitHub Action](https://github.com/docker/bake-action)
 @y
-- [Bake documentation](/manuals/build/bake/_index.md)
-- [Matrix targets](/manuals/build/bake/matrices.md)
-- [Bake file reference](/manuals/build/bake/reference.md)
+- [Bake documentation](manuals/build/bake/_index.md)
+- [Matrix targets](manuals/build/bake/matrices.md)
+- [Bake file reference](manuals/build/bake/reference.md)
 - [Bake GitHub Action](https://github.com/docker/bake-action)
 @z
