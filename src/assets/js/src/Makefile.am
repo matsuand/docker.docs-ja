@@ -3,9 +3,10 @@
 ##
 
 copyfiles = \
-	alpine.js  \
-	toc.js     \
-	tooltip.js \
+	alpine.js           \
+	dockerfile-links.js \
+	toc.js              \
+	tooltip.js          \
 	vars.js
 
 include $(top_srcdir)/build-aux/common.mk

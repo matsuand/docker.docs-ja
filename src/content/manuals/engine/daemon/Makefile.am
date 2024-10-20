@@ -7,6 +7,7 @@ bases = \
 	_index.md               \
 	alternative-runtimes.md \
 	ipv6.md                 \
+	live-restore.md         \
 	logs.md                 \
 	prometheus.md           \
 	proxy.md                \

@@ -30,13 +30,21 @@ The organization access tokens feature is currently in [Beta](../../release-life
 @x
 > [!WARNING]
 >
-> Organization access tokens aren't currently compatible with Docker Build Cloud. If you
-> are using Docker Build Cloud, you must use personal access tokens instead.
+> Organization access tokens aren't currently compatible with the following services:
+>
+> - Docker Build Cloud
+> - Docker Scout
+>
+> If you use these services, you must use personal access tokens instead.
 @y
 > [!WARNING]
 >
-> Organization access tokens aren't currently compatible with Docker Build Cloud. If you
-> are using Docker Build Cloud, you must use personal access tokens instead.
+> Organization access tokens aren't currently compatible with the following services:
+>
+> - Docker Build Cloud
+> - Docker Scout
+>
+> If you use these services, you must use personal access tokens instead.
 @z
 
 @x

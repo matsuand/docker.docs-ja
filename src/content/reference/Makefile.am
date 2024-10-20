@@ -4,7 +4,8 @@
 SUBDIRS = api cli compose-file samples
 
 bases = \
-	_index.md
+	_index.md   \
+	glossary.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

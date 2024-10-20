@@ -5,6 +5,7 @@
 SUBDIRS = attestations
 
 bases = \
+	_index.md      \
 	annotations.md
 
 include $(top_srcdir)/build-aux/common.mk

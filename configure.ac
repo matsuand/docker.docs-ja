@@ -305,6 +305,7 @@ AC_CONFIG_FILES([
 	src/content/subjects/data-science/Makefile
 	src/content/subjects/databases/Makefile
 	src/content/subjects/deploy/Makefile
+	src/content/subjects/devops/Makefile
 	src/content/subjects/distributed-systems/Makefile
 	src/content/tags/Makefile
 	src/content/tags/best-practices/Makefile

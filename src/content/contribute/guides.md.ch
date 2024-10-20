@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-@x
----
-title: Guidelines for writing Docker usage guides
-linkTitle: Write a Docker guide
-description: Learn how to write guides for learning about Docker, with Docker.
----
-@y
----
-title: Guidelines for writing Docker usage guides
-linkTitle: Write a Docker guide
-description: Learn how to write guides for learning about Docker, with Docker.
----
-@z
+% .md リンクへの (no slash) 対応
 
 @x
-<!-- vale Docker.We = NO -->
+title: Guidelines for writing Docker usage guides
+linkTitle: Write a Docker guide
+description: Learn how to write guides for learning about Docker, with Docker.
 @y
-<!-- vale Docker.We = NO -->
+title: Guidelines for writing Docker usage guides
+linkTitle: Write a Docker guide
+description: Learn how to write guides for learning about Docker, with Docker.
 @z
 
 @x
@@ -29,7 +21,7 @@ alongside our product manuals and reference materials.
 @y
 This guide provides instructions and best practices for writing tutorial-style
 usage guides that help users achieve specific goals using Docker. These guides
-will be featured in the [guides section](/guides/_index.md) of the website,
+will be featured in the [guides section](guides/_index.md) of the website,
 alongside our product manuals and reference materials.
 @z
 
@@ -452,7 +444,7 @@ Use [sentence case](/contribute/style/formatting.md#capitalization) for all
 headings and titles. This means only the first word and proper nouns are
 capitalized.
 @y
-Use [sentence case](/contribute/style/formatting.md#capitalization) for all
+Use [sentence case](contribute/style/formatting.md#capitalization) for all
 headings and titles. This means only the first word and proper nouns are
 capitalized.
 @z
@@ -476,7 +468,7 @@ capitalized.
 @x
 For detailed guidelines, refer to our [voice and tone documentation](/contribute/style/voice-tone.md).
 @y
-For detailed guidelines, refer to our [voice and tone documentation](/contribute/style/voice-tone.md).
+For detailed guidelines, refer to our [voice and tone documentation](contribute/style/voice-tone.md).
 @z
 
 @x
@@ -496,15 +488,15 @@ For detailed guidelines, refer to our [voice and tone documentation](/contribute
 - **Code examples**: Provide complete, working code snippets with syntax highlighting.
 - **Lists and steps**: Use numbered lists for sequential steps and bullet points for non-sequential information.
 - **Emphasis**: Use bold for UI elements (e.g., **Button**), and italics for emphasis.
-- **Links**: Use descriptive link text (e.g., [Install Docker](/get-started/get-docker.md)).
+- **Links**: Use descriptive link text (e.g., [Install Docker](get-started/get-docker.md)).
 @z
 
 @x
 For more details, see our [content formatting guidelines](/contribute/style/formatting.md)
 and [grammar and style rules](/contribute/style/grammar.md).
 @y
-For more details, see our [content formatting guidelines](/contribute/style/formatting.md)
-and [grammar and style rules](/contribute/style/grammar.md).
+For more details, see our [content formatting guidelines](contribute/style/formatting.md)
+and [grammar and style rules](contribute/style/grammar.md).
 @z
 
 @x
@@ -562,11 +554,11 @@ and [grammar and style rules](/contribute/style/grammar.md).
   - [Grammar and style](/contribute/style/grammar.md)
 @y
 - **Existing guides**
-  - Refer to [Docker Guides](/guides/_index.md) for examples and inspiration.
+  - Refer to [Docker Guides](guides/_index.md) for examples and inspiration.
 - **Style guides**
-  - [Voice and tone](/contribute/style/voice-tone.md)
-  - [Content formatting](/contribute/style/formatting.md)
-  - [Grammar and style](/contribute/style/grammar.md)
+  - [Voice and tone](contribute/style/voice-tone.md)
+  - [Content formatting](contribute/style/formatting.md)
+  - [Grammar and style](contribute/style/grammar.md)
 @z
 
 @x

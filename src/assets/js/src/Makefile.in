@@ -238,9 +238,10 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	alpine.js  \
-	toc.js     \
-	tooltip.js \
+	alpine.js           \
+	dockerfile-links.js \
+	toc.js              \
+	tooltip.js          \
 	vars.js
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
