@@ -60,6 +60,7 @@ AC_CONFIG_FILES([
 	src/assets/css/Makefile
 	src/assets/favicons/Makefile
 	src/assets/images/Makefile
+	src/assets/images/guides/Makefile
 	src/assets/images/learning-paths/Makefile
 	src/assets/js/Makefile
 	src/assets/js/src/Makefile

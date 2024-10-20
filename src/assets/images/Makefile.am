@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = learning-paths
+SUBDIRS = guides learning-paths
 
 copyfiles = \
 	FacebookCircle.svg      \

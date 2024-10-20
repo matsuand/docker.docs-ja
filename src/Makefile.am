@@ -14,8 +14,8 @@ include $(top_srcdir)/build-aux/main.mk
 
 copydirs = \
 	_releaser  \
+	_vale      \
 	archetypes \
-	assets     \
 	scripts
 
 copyfiles = \
