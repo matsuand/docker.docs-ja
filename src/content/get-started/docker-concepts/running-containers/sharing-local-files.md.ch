@@ -246,15 +246,15 @@ Using a bind mount, you can map the configuration file on your host computer to 
 @z
 
 @x
-1. Delete the existing container by using the Docker Dashboard:
+1. Delete the existing container by using the Docker Desktop Dashboard:
 @y
-1. Delete the existing container by using the Docker Dashboard:
+1. Delete the existing container by using the Docker Desktop Dashboard:
 @z
 
 @x
-   ![A screenshot of Docker dashboard showing how to delete the httpd container](images/delete-httpd-container.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing how to delete the httpd container](images/delete-httpd-container.webp?border=true)
 @y
-   ![A screenshot of Docker dashboard showing how to delete the httpd container](images/delete-httpd-container.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing how to delete the httpd container](images/delete-httpd-container.webp?border=true)
 @z
 
 @x
@@ -400,9 +400,9 @@ Using a bind mount, you can map the configuration file on your host computer to 
 @z
 
 @x
-### Access the file on the Docker Dashboard
+### Access the file on the Docker Desktop Dashboard
 @y
-### Access the file on the Docker Dashboard
+### Access the file on the Docker Desktop Dashboard
 @z
 
 @x
@@ -412,27 +412,27 @@ Using a bind mount, you can map the configuration file on your host computer to 
 @z
 
 @x
-   ![A screenshot of Docker dashboard showing the mounted files inside the a container](images/mounted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the mounted files inside the a container](images/mounted-files.webp?border=true)
 @y
-   ![A screenshot of Docker dashboard showing the mounted files inside the a container](images/mounted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the mounted files inside the a container](images/mounted-files.webp?border=true)
 @z
 
 @x
-2. Delete the file on the host and verify the file is also deleted in the container. You will find that the files no longer exist under **Files** in the Docker Dashboard.
+2. Delete the file on the host and verify the file is also deleted in the container. You will find that the files no longer exist under **Files** in the Docker Desktop Dashboard.
 @y
-2. Delete the file on the host and verify the file is also deleted in the container. You will find that the files no longer exist under **Files** in the Docker Dashboard.
+2. Delete the file on the host and verify the file is also deleted in the container. You will find that the files no longer exist under **Files** in the Docker Desktop Dashboard.
 @z
 
 @x
-   ![A screenshot of Docker dashboard showing the deleted files inside the a container](images/deleted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the deleted files inside the a container](images/deleted-files.webp?border=true)
 @y
-   ![A screenshot of Docker dashboard showing the deleted files inside the a container](images/deleted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the deleted files inside the a container](images/deleted-files.webp?border=true)
 @z
 
 @x
-3. Recreate the HTML file on the host system and see that file re-appears under the **Files** tab under **Containers** on the Docker Dashboard. By now, you will be able to access the site too.
+3. Recreate the HTML file on the host system and see that file re-appears under the **Files** tab under **Containers** on the Docker Desktop Dashboard. By now, you will be able to access the site too.
 @y
-3. Recreate the HTML file on the host system and see that file re-appears under the **Files** tab under **Containers** on the Docker Dashboard. By now, you will be able to access the site too.
+3. Recreate the HTML file on the host system and see that file re-appears under the **Files** tab under **Containers** on the Docker Desktop Dashboard. By now, you will be able to access the site too.
 @z
 
 @x
@@ -448,9 +448,9 @@ The container continues to run until you stop it.
 @z
 
 @x
-1. Go to the **Containers** view in the Docker Dashboard.
+1. Go to the **Containers** view in the Docker Desktop Dashboard.
 @y
-1. Go to the **Containers** view in the Docker Dashboard.
+1. Go to the **Containers** view in the Docker Desktop Dashboard.
 @z
 
 @x
@@ -466,9 +466,9 @@ The container continues to run until you stop it.
 @z
 
 @x
-![A screenshot of Docker dashboard showing how to delete the container](images/delete-the-container.webp?border=true)
+![A screenshot of Docker Desktop Dashboard showing how to delete the container](images/delete-the-container.webp?border=true)
 @y
-![A screenshot of Docker dashboard showing how to delete the container](images/delete-the-container.webp?border=true)
+![A screenshot of Docker Desktop Dashboard showing how to delete the container](images/delete-the-container.webp?border=true)
 @z
 
 @x

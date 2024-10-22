@@ -94,10 +94,10 @@ You can install extensions through the Marketplace or through the Extensions SDK
 @z
 
 @x
-By default, containers created by extensions are hidden from the list of containers in Docker Dashboard and the Docker CLI. To make them visible
+By default, containers created by extensions are hidden from the list of containers in the Docker Desktop Dashboard and the Docker CLI. To make them visible
 update your settings:
 @y
-By default, containers created by extensions are hidden from the list of containers in Docker Dashboard and the Docker CLI. To make them visible
+By default, containers created by extensions are hidden from the list of containers in the Docker Desktop Dashboard and the Docker CLI. To make them visible
 update your settings:
 @z
 
@@ -140,7 +140,7 @@ Feedback can be given to an extension author through a dedicated Slack channel o
 @z
 
 @x
-1. Navigate to Docker Dashboard and select the **Manage** tab.
+1. Navigate to the Docker Desktop Dashboard and select the **Manage** tab.
    This displays a list of extensions you've installed.
 2. Select the extension you want to provide feedback on. 
 3. Scroll down to the bottom of the extension's description and, depending on the 
@@ -149,7 +149,7 @@ extension, select:
     - Slack
     - Issues. You'll be sent to a page outside of Docker Desktop to submit your feedback.
 @y
-1. Navigate to Docker Dashboard and select the **Manage** tab.
+1. Navigate to the Docker Desktop Dashboard and select the **Manage** tab.
    This displays a list of extensions you've installed.
 2. Select the extension you want to provide feedback on. 
 3. Scroll down to the bottom of the extension's description and, depending on the 

@@ -494,7 +494,7 @@ The `install` command accepts the following flags:
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
-  - For example:
+  - For example:`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 @y
 `install` コマンドでは以下のフラグ指定が可能です。
 - `--quiet`: インストーラーの起動時に情報出力を省略します。
@@ -507,10 +507,8 @@ The `install` command accepts the following flags:
   これは組織内にあるクライアントマシン上の Docker Desktop における特定設定項目を制御するものです。
   詳しくは [設定管理](manuals/security/for-admins/hardened-desktop/settings-management/_index.md) を参照してください。
   - これは `--allowed-org=<組織名>` フラグとともに用いなければなりません。
-  - たとえば以下のとおりです。
+  - たとえば以下のとおりです。`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 @z
-
-% snip text...
 
 @x
 - `--proxy-http-mode=<mode>`: Sets the HTTP Proxy mode, `system` (default) or `manual`

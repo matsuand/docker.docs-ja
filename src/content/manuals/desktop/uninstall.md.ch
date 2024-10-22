@@ -128,10 +128,10 @@ To uninstall Docker Desktop from your Mac:
 @z
 
 @x
-1. From the Docker menu, select the **Troubleshoot** icon in the top-right corner of Docker Dashboard and then select **Uninstall**.
+1. From the Docker menu, select the **Troubleshoot** icon in the top-right corner of the Docker Desktop Dashboard and then select **Uninstall**.
 2. Select **Uninstall** to confirm your selection.
 @y
-1. From the Docker menu, select the **Troubleshoot** icon in the top-right corner of Docker Dashboard and then select **Uninstall**.
+1. From the Docker menu, select the **Troubleshoot** icon in the top-right corner of the Docker Desktop Dashboard and then select **Uninstall**.
 2. Select **Uninstall** to confirm your selection.
 @z
 

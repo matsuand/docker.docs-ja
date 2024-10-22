@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: understand what pausing Docker Dashboard means
-keywords: Docker Dashboard, manage, containers, gui, dashboard, pause, user manual
+description: understand what pausing Docker Desktop Dashboard means
+keywords: Docker Desktop Dashboard, manage, containers, gui, dashboard, pause, user manual
 title: Pause Docker Desktop
 @y
-description: understand what pausing Docker Dashboard means
-keywords: Docker Dashboard, manage, containers, gui, dashboard, pause, user manual
+description: understand what pausing Docker Desktop Dashboard means
+keywords: Docker Desktop Dashboard, manage, containers, gui, dashboard, pause, user manual
 title: Pause Docker Desktop
 @z
 
@@ -24,9 +24,9 @@ You can manually pause Docker Desktop by selecting the Docker menu {{< inline-im
 @z
 
 @x
-When you manually pause Docker Desktop, a paused status displays on the Docker menu and on the Docker Dashboard. You can still access the **Settings** and the **Troubleshoot** menu.
+When you manually pause Docker Desktop, a paused status displays on the Docker menu and on the Docker Desktop Dashboard. You can still access the **Settings** and the **Troubleshoot** menu.
 @y
-When you manually pause Docker Desktop, a paused status displays on the Docker menu and on the Docker Dashboard. You can still access the **Settings** and the **Troubleshoot** menu.
+When you manually pause Docker Desktop, a paused status displays on the Docker menu and on the Docker Desktop Dashboard. You can still access the **Settings** and the **Troubleshoot** menu.
 @z
 
 @x

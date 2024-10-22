@@ -14,9 +14,9 @@
 @z
 
 @x
-              <div class="text-xs font-semibold text-gray-light dark:text-gray-dark tracking-wider uppercase">Featured</div>
+      <h2>Featured</h2>
 @y
-              <div class="text-xs font-semibold text-gray-light dark:text-gray-dark tracking-wider uppercase">注目の話題</div>
+      <h2>注目の話題</h2>
 @z
 
 @x

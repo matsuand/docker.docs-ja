@@ -230,9 +230,9 @@ Docker Desktop stores Linux containers and images in a single, large "disk image
 @z
 
 @x
-To locate the disk image file, select **Settings** from the Docker Dashboard then **Advanced** from the **Resources** tab.
+To locate the disk image file, select **Settings** from the Docker Desktop Dashboard then **Advanced** from the **Resources** tab.
 @y
-To locate the disk image file, select **Settings** from the Docker Dashboard then **Advanced** from the **Resources** tab.
+To locate the disk image file, select **Settings** from the Docker Desktop Dashboard then **Advanced** from the **Resources** tab.
 @z
 
 @x
@@ -446,9 +446,9 @@ To reduce the maximum size of the disk image file:
 @z
 
 @x
-1. From Docker Dashboard select **Settings** then **Advanced** from the **Resources** tab.
+1. From Docker Desktop Dashboard select **Settings** then **Advanced** from the **Resources** tab.
 @y
-1. From Docker Dashboard select **Settings** then **Advanced** from the **Resources** tab.
+1. From Docker Desktop Dashboard select **Settings** then **Advanced** from the **Resources** tab.
 @z
 
 @x

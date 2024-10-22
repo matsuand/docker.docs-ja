@@ -604,17 +604,17 @@ Now that you have your `compose.yaml` file, you can start your application.
 @z
 
 @x
-## See the app stack in Docker Dashboard
+## See the app stack in Docker Desktop Dashboard
 @y
-## See the app stack in Docker Dashboard
+## See the app stack in Docker Desktop Dashboard
 @z
 
 @x
-If you look at the Docker Dashboard, you'll see that there is a group named **getting-started-app**. This is the project name from Docker
+If you look at the Docker Desktop Dashboard, you'll see that there is a group named **getting-started-app**. This is the project name from Docker
 Compose and used to group the containers together. By default, the project name is simply the name of the directory that the
 `compose.yaml` was located in.
 @y
-If you look at the Docker Dashboard, you'll see that there is a group named **getting-started-app**. This is the project name from Docker
+If you look at the Docker Desktop Dashboard, you'll see that there is a group named **getting-started-app**. This is the project name from Docker
 Compose and used to group the containers together. By default, the project name is simply the name of the directory that the
 `compose.yaml` was located in.
 @z
@@ -636,10 +636,10 @@ quickly see what container is your app and which container is the mysql database
 @z
 
 @x
-When you're ready to tear it all down, simply run `docker compose down` or hit the trash can on the Docker Dashboard
+When you're ready to tear it all down, simply run `docker compose down` or hit the trash can on the Docker Desktop Dashboard
 for the entire app. The containers will stop and the network will be removed.
 @y
-When you're ready to tear it all down, simply run `docker compose down` or hit the trash can on the Docker Dashboard
+When you're ready to tear it all down, simply run `docker compose down` or hit the trash can on the Docker Desktop Dashboard
 for the entire app. The containers will stop and the network will be removed.
 @z
 
@@ -649,14 +649,14 @@ for the entire app. The containers will stop and the network will be removed.
 >By default, named volumes in your compose file are not removed when you run `docker compose down`. If you want to
 >remove the volumes, you need to add the `--volumes` flag.
 >
->The Docker Dashboard does not remove volumes when you delete the app stack.
+>The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @y
 >**Warning**
 >
 >By default, named volumes in your compose file are not removed when you run `docker compose down`. If you want to
 >remove the volumes, you need to add the `--volumes` flag.
 >
->The Docker Dashboard does not remove volumes when you delete the app stack.
+>The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @z
 
 @x

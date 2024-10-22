@@ -104,6 +104,8 @@ AC_CONFIG_FILES([
 	src/content/guides/rag-ollama/Makefile
 	src/content/guides/ruby/Makefile
 	src/content/guides/rust/Makefile
+	src/content/guides/use-case/Makefile
+	src/content/guides/use-case/images/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/languages/Makefile
@@ -307,6 +309,7 @@ AC_CONFIG_FILES([
 	src/content/subjects/deploy/Makefile
 	src/content/subjects/devops/Makefile
 	src/content/subjects/distributed-systems/Makefile
+	src/content/subjects/networking/Makefile
 	src/content/tags/Makefile
 	src/content/tags/best-practices/Makefile
 	src/content/tags/faq/Makefile

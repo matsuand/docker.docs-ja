@@ -140,9 +140,9 @@ beforeAll(async () => {
 @z
 
 @x
-Then open the Docker Dashboard and run some tests in your extension's UI:
+Then open the Docker Desktop Dashboard and run some tests in your extension's UI:
 @y
-Then open the Docker Dashboard and run some tests in your extension's UI:
+Then open the Docker Desktop Dashboard and run some tests in your extension's UI:
 @z
 
 @x
@@ -178,9 +178,9 @@ describe("Test my extension", () => {
 @z
 
 @x
-Finally, close the Docker Dashboard and uninstall your extension:
+Finally, close the Docker Desktop Dashboard and uninstall your extension:
 @y
-Finally, close the Docker Dashboard and uninstall your extension:
+Finally, close the Docker Desktop Dashboard and uninstall your extension:
 @z
 
 @x

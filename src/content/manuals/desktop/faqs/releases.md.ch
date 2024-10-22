@@ -26,9 +26,9 @@ New releases are available roughly every month, unless there are critical fixes 
 @z
 
 @x
-The **Automatically check for updates** setting in the **Software updates** tab is turned on by default. This means you receive notifications in the Docker menu and a notification badge on the Docker Dashboard when a new version is available. 
+The **Automatically check for updates** setting in the **Software updates** tab is turned on by default. This means you receive notifications in the Docker menu and a notification badge on the Docker Desktop Dashboard when a new version is available. 
 @y
-The **Automatically check for updates** setting in the **Software updates** tab is turned on by default. This means you receive notifications in the Docker menu and a notification badge on the Docker Dashboard when a new version is available. 
+The **Automatically check for updates** setting in the **Software updates** tab is turned on by default. This means you receive notifications in the Docker menu and a notification badge on the Docker Desktop Dashboard when a new version is available. 
 @z
 
 @x

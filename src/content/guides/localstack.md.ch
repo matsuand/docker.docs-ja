@@ -182,9 +182,9 @@ Launch a quick demo of LocalStack by using the following steps:
 @z
 
 @x
-   This Compose file also includes specifications for a required Mongo database. You can verify the services are up and running by visiting the Docker Dashboard.
+   This Compose file also includes specifications for a required Mongo database. You can verify the services are up and running by visiting the Docker Desktop Dashboard.
 @y
-   This Compose file also includes specifications for a required Mongo database. You can verify the services are up and running by visiting the Docker Dashboard.
+   This Compose file also includes specifications for a required Mongo database. You can verify the services are up and running by visiting the Docker Desktop Dashboard.
 @z
 
 @x
@@ -256,9 +256,9 @@ Launch a quick demo of LocalStack by using the following steps:
 @z
 
 @x
-    You can verify if the S3 bucket gets created or not by selecting the LocalStack container on the Docker Dashboard and viewing the logs. The logs indicates that your LocalStack environment is configured correctly and you can now use the `mysamplebucket` for storing and retrieving objects.
+    You can verify if the S3 bucket gets created or not by selecting the LocalStack container on the Docker Desktop Dashboard and viewing the logs. The logs indicates that your LocalStack environment is configured correctly and you can now use the `mysamplebucket` for storing and retrieving objects.
 @y
-    You can verify if the S3 bucket gets created or not by selecting the LocalStack container on the Docker Dashboard and viewing the logs. The logs indicates that your LocalStack environment is configured correctly and you can now use the `mysamplebucket` for storing and retrieving objects.
+    You can verify if the S3 bucket gets created or not by selecting the LocalStack container on the Docker Desktop Dashboard and viewing the logs. The logs indicates that your LocalStack environment is configured correctly and you can now use the `mysamplebucket` for storing and retrieving objects.
 @z
 
 @x
@@ -752,9 +752,9 @@ Now that you have learnt how to connect a non-containerized Node.js application 
 @z
 
 @x
-   Ensure that you stop the Node frontend and backend service from the previous step by pressing “Ctrl+C” in the terminal. Also, you'll need to stop the LocalStack and Mongo containers by selecting them in the Docker Dashboard and selecting the "Delete" button. 
+   Ensure that you stop the Node frontend and backend service from the previous step by pressing “Ctrl+C” in the terminal. Also, you'll need to stop the LocalStack and Mongo containers by selecting them in the Docker Desktop Dashboard and selecting the "Delete" button. 
 @y
-   Ensure that you stop the Node frontend and backend service from the previous step by pressing “Ctrl+C” in the terminal. Also, you'll need to stop the LocalStack and Mongo containers by selecting them in the Docker Dashboard and selecting the "Delete" button. 
+   Ensure that you stop the Node frontend and backend service from the previous step by pressing “Ctrl+C” in the terminal. Also, you'll need to stop the LocalStack and Mongo containers by selecting them in the Docker Desktop Dashboard and selecting the "Delete" button. 
 @z
 
 @x

@@ -46,12 +46,12 @@ Kubernetes サーバーの有効、無効は、他の開発内容へは影響し
 @z
 
 @x
-1. From the Docker Dashboard, select the **Settings**.
+1. From the Docker Desktop Dashboard, select the **Settings**.
 2. Select **Kubernetes** from the left sidebar. 
 3. Next to **Enable Kubernetes**, select the checkbox.
 4. Select **Apply & Restart** to save the settings and then select **Install** to confirm. This instantiates images required to run the Kubernetes server as containers, and installs the `/usr/local/bin/kubectl` command on your machine.
 @y
-1. From the Docker Dashboard, select the **Settings**.
+1. From the Docker Desktop Dashboard, select the **Settings**.
 2. Select **Kubernetes** from the left sidebar. 
 3. Next to **Enable Kubernetes**, select the checkbox.
 4. Select **Apply & Restart** to save the settings and then select **Install** to confirm. This instantiates images required to run the Kubernetes server as containers, and installs the `/usr/local/bin/kubectl` command on your machine.
@@ -74,9 +74,9 @@ By default, Kubernetes containers are hidden from commands like `docker ps`, bec
 @z
 
 @x
-When Kubernetes is turned on and running, an additional status bar in the Docker Dashboard footer and Docker menu displays. 
+When Kubernetes is turned on and running, an additional status bar in the Docker Desktop Dashboard footer and Docker menu displays. 
 @y
-When Kubernetes is turned on and running, an additional status bar in the Docker Dashboard footer and Docker menu displays. 
+When Kubernetes is turned on and running, an additional status bar in the Docker Desktop Dashboard footer and Docker menu displays. 
 @z
 
 @x
@@ -163,13 +163,13 @@ For more information about `kubectl`, see the
 
 @x
 To turn off Kubernetes in Docker Desktop:
-1. From the Docker Dashboard, select the **Settings** icon.
+1. From the Docker Desktop Dashboard, select the **Settings** icon.
 2. Select **Kubernetes** from the left sidebar. 
 3. Next to **Enable Kubernetes**, clear the checkbox
 4. Select **Apply & Restart** to save the settings.This stops and removes Kubernetes containers, and also removes the `/usr/local/bin/kubectl` command.
 @y
 To turn off Kubernetes in Docker Desktop:
-1. From the Docker Dashboard, select the **Settings** icon.
+1. From the Docker Desktop Dashboard, select the **Settings** icon.
 2. Select **Kubernetes** from the left sidebar. 
 3. Next to **Enable Kubernetes**, clear the checkbox
 4. Select **Apply & Restart** to save the settings.This stops and removes Kubernetes containers, and also removes the `/usr/local/bin/kubectl` command.

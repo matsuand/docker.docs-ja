@@ -68,9 +68,9 @@ In a terminal, type `docker extension install IMAGE[:TAG]` to install an extensi
 @z
 
 @x
-Go to the Docker Dashboard to see the new extension installed.
+Go to the Docker Desktop Dashboard to see the new extension installed.
 @y
-Go to the Docker Dashboard to see the new extension installed.
+Go to the Docker Desktop Dashboard to see the new extension installed.
 @z
 
 @x
@@ -102,10 +102,10 @@ john/my-extension   John                latest              1 tab(My-Extension) 
 @z
 
 @x
-Go to the Docker Dashboard, click on **Add Extensions** and on the **Managed** tab to see the new extension installed.
+Go to the Docker Desktop Dashboard, select **Add Extensions** and on the **Managed** tab to see the new extension installed.
 Notice that an `UNPUBLISHED` label displays which indicates that the extension has not been installed from the Marketplace.
 @y
-Go to the Docker Dashboard, click on **Add Extensions** and on the **Managed** tab to see the new extension installed.
+Go to the Docker Desktop Dashboard, select **Add Extensions** and on the **Managed** tab to see the new extension installed.
 Notice that an `UNPUBLISHED` label displays which indicates that the extension has not been installed from the Marketplace.
 @z
 
@@ -123,10 +123,10 @@ To update an extension which isn't present in the Marketplace, in a terminal typ
 
 @x
 For instance, if you installed an extension with `docker extension install john/my-extension:0.0.1`, you can update it by running `docker extension update john/my-extension:0.0.2`.
-Go to the Docker Dashboard to see the new extension updated.
+Go to the Docker Desktop Dashboard to see the new extension updated.
 @y
 For instance, if you installed an extension with `docker extension install john/my-extension:0.0.1`, you can update it by running `docker extension update john/my-extension:0.0.2`.
-Go to the Docker Dashboard to see the new extension updated.
+Go to the Docker Desktop Dashboard to see the new extension updated.
 @z
 
 @x

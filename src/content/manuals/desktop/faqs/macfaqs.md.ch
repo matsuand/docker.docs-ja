@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Frequently asked questions for Docker Desktop for Mac
@@ -116,9 +116,9 @@ Docker Desktop stores Linux containers and images in a single, large "disk image
 @z
 
 @x
-To locate the disk image file, select **Settings** from the Docker Dashboard then **Advanced** from the **Resources** tab.
+To locate the disk image file, select **Settings** from the Docker Desktop Dashboard then **Advanced** from the **Resources** tab.
 @y
-To locate the disk image file, select **Settings** from the Docker Dashboard then **Advanced** from the **Resources** tab.
+To locate the disk image file, select **Settings** from the Docker Desktop Dashboard then **Advanced** from the **Resources** tab.
 @z
 
 @x

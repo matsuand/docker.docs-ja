@@ -184,7 +184,7 @@ GUI を使う場合、コンテナーの起動は以下のようにします。
 @z
 
 @x
-1. In the Docker Dashboard, select the global search at the top of the window.
+1. In the Docker Desktop Dashboard, select the global search at the top of the window.
 2. Specify `mysql` in the search box, and select the `Images` tab if not already
    selected.
 3. Hover over the `msyql` image and select `Run`.
@@ -192,7 +192,7 @@ GUI を使う場合、コンテナーの起動は以下のようにします。
 4. Expand **Optional settings**.
 5. In the optional settings, specify the following:
 @y
-1. Docker Dashboard において、画面最上段のグローバル検索欄を選びます。
+1. Docker Desktop Dashboard において、画面最上段のグローバル検索欄を選びます。
 2. 検索欄に `mysql` を入力します。
    `Images` (イメージ) タブが選択されていない場合は選択します。
 3. `msyql` イメージ上にマウスカーソルを移動させて `Run` (実行) を選びます。
@@ -221,11 +221,11 @@ GUI を使う場合、コンテナーの起動は以下のようにします。
 
 @x
 6. Select `Run`.
-7. Open the **Container** view in the Docker Dashboard to verify that your
+7. Open the **Container** view in the Docker Desktop Dashboard to verify that your
    container is running.
 @y
 6. `Run` (実行) を選びます。
-7. Docker Dashboard の **Container** (コンテナー) 画面を開いて、対象コンテナーが起動していることを確認します。
+7. Docker Dashboard Dashboard の **Container** (コンテナー) 画面を開いて、対象コンテナーが起動していることを確認します。
 @z
 
 @x
@@ -323,11 +323,11 @@ can run `exit` to return to your terminal.
 @z
 
 @x
-1. Open the Docker Dashboard and select the **Containers** view.
+1. Open the Docker Desktop Dashboard and select the **Containers** view.
 2. In the **Actions** column for your container, select **Show container
    actions** and then select **Open in terminal**.
 @y
-1. Docker Dashboard を開いて **Containers** (コンテナー) 画面を選びます。
+1. Docker Desktop Dashboard を開いて **Containers** (コンテナー) 画面を選びます。
 2. 対象コンテナーの **Actions** (動作) カラムにおいて **Show container actions** (コンテナー動作の確認) を選択します。
    そして **Open in terminal** (端末を開く) を選びます。
 @z
@@ -390,11 +390,11 @@ guide. To stop and remove a container, either:
 @x
 - In a terminal, run `docker remove --force my-mysql` to remove the container
   named `my-mysql`.
-- Or, in the Docker Dashboard, select the **Delete** icon next to your
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @y
 - 端末から `docker remove --force my-mysql` を実行して `my-mysql` という名前のコンテナーを削除します。
-- または Docker Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
+- または Docker Desktop Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
 @z
 
 @x
@@ -457,7 +457,7 @@ GUI を使ってコンテナーを起動するには以下を行います。
 @z
 
 @x
-1. In the Docker Dashboard, select the global search at the top of the window.
+1. In the Docker Desktop Dashboard, select the global search at the top of the window.
 2. Specify `mysql` in the search box, and select the `Images` tab if not already
    selected.
 3. Hover over the `msyql` image and select `Run`.
@@ -465,7 +465,7 @@ GUI を使ってコンテナーを起動するには以下を行います。
 4. Expand **Optional settings**.
 5. In the optional settings, specify the following:
 @y
-1. Docker Dashboard において、画面最上段のグローバル検索欄を選びます。
+1. Docker Desktop Dashboard において、画面最上段のグローバル検索欄を選びます。
 2. 検索欄に `mysql` を入力します。
    `Images` (イメージ) タブが選択されていない場合は選択します。
 3. `msyql` イメージ上にマウスカーソルを移動させて `Run` (実行) を選びます。
@@ -550,11 +550,11 @@ guide. To stop and remove a container, either:
 @x
 - In a terminal, run `docker remove --force my-mysql` to remove the container
   named `my-mysql`.
-- Or, in the Docker Dashboard, select the **Delete** icon next to your
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @y
 - 端末から `docker remove --force my-mysql` を実行して `my-mysql` という名前のコンテナーを削除します。
-- または Docker Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
+- または Docker Desktop Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
 @z
 
 @x
@@ -660,11 +660,11 @@ guide. To stop and remove a container, either:
 @x
 - In a terminal, run `docker remove --force my-mysql` to remove the container
   named `my-mysql`.
-- Or, in the Docker Dashboard, select the **Delete** icon next to your
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @y
 - 端末から `docker remove --force my-mysql` を実行して `my-mysql` という名前のコンテナーを削除します。
-- または Docker Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
+- または Docker Desktop Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
 @z
 
 @x
@@ -803,7 +803,7 @@ data persists:
 @z
 
 @x
-   1. In the Docker Dashboard, select the global search at the top of the window.
+   1. In the Docker Desktop Dashboard, select the global search at the top of the window.
    2. Specify `mysql` in the search box, and select the **Images** tab if not
       already selected.
    3. Hover over the **mysql** image and select **Run**.
@@ -811,7 +811,7 @@ data persists:
    4. Expand **Optional settings**.
    5. In the optional settings, specify the following:
 @y
-   1. Docker Dashboard において、画面最上段のグローバル検索欄を選びます。
+   1. Docker Desktop Dashboard において、画面最上段のグローバル検索欄を選びます。
    2. 検索欄に `mysql` を入力します。
       `Images` (イメージ) タブが選択されていない場合は選択します。
    3. `msyql` イメージ上にマウスカーソルを移動させて `Run` (実行) を選びます。
@@ -897,7 +897,7 @@ data persists:
 @z
 
 @x
-   1. In the Docker Dashboard, select the global search at the top of the window.
+   1. In the Docker Desktop Dashboard, select the global search at the top of the window.
    2. Specify `mysql` in the search box, and select the **Images** tab if not
       already selected.
    3. Hover over the **mysql** image and select **Run**.
@@ -905,7 +905,7 @@ data persists:
    4. Expand **Optional settings**.
    5. In the optional settings, specify the following:
 @y
-   1. Docker Dashboard において、画面最上段のグローバル検索欄を選びます。
+   1. Docker Desktop Dashboard において、画面最上段のグローバル検索欄を選びます。
    2. 検索欄に `mysql` を入力します。
       `Images` (イメージ) タブが選択されていない場合は選択します。
    3. `msyql` イメージ上にマウスカーソルを移動させて `Run` (実行) を選びます。
@@ -1023,12 +1023,12 @@ guide. To stop and remove a container, either:
 @x
 - In a terminal, run `docker remove --force my-mysql` to remove the container
   named `my-mysql`.
-- Or, in the Docker Dashboard, select the **Delete** icon next to your
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @y
 - In a terminal, run `docker remove --force my-mysql` to remove the container
   named `my-mysql`.
-- Or, in the Docker Dashboard, select the **Delete** icon next to your
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @z
 

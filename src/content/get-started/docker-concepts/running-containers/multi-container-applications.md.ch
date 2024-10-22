@@ -406,15 +406,15 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 @z
 
 @x
-7. If you look at the Docker Dashboard, you can see the containers and dive deeper into their configuration.
+7. If you look at the Docker Desktop Dashboard, you can see the containers and dive deeper into their configuration.
 @y
-7. If you look at the Docker Dashboard, you can see the containers and dive deeper into their configuration.
+7. If you look at the Docker Desktop Dashboard, you can see the containers and dive deeper into their configuration.
 @z
 
 @x
-   ![A screenshot of Docker Dashboard showing multi-container applications](images/multi-container-apps.webp?w=5000&border=true)
+   ![A screenshot of the Docker Desktop Dashboard showing multi-container applications](images/multi-container-apps.webp?w=5000&border=true)
 @y
-   ![A screenshot of Docker Dashboard showing multi-container applications](images/multi-container-apps.webp?w=5000&border=true)
+   ![A screenshot of the Docker Desktop Dashboard showing multi-container applications](images/multi-container-apps.webp?w=5000&border=true)
 @z
 
 @x
@@ -450,15 +450,15 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 @z
 
 @x
-9. You can use the Docker Dashboard to remove the containers by selecting the containers and selecting the **Delete** button.
+9. You can use the Docker Desktop Dashboard to remove the containers by selecting the containers and selecting the **Delete** button.
 @y
-9. You can use the Docker Dashboard to remove the containers by selecting the containers and selecting the **Delete** button.
+9. You can use the Docker Desktop Dashboard to remove the containers by selecting the containers and selecting the **Delete** button.
 @z
 
 @x
-   ![A screenshot of Docker Dashboard showing how to delete the multi-container applications](images/delete-multi-container-apps.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing how to delete the multi-container applications](images/delete-multi-container-apps.webp?border=true)
 @y
-   ![A screenshot of Docker Dashboard showing how to delete the multi-container applications](images/delete-multi-container-apps.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing how to delete the multi-container applications](images/delete-multi-container-apps.webp?border=true)
 @z
 
 @x
@@ -522,27 +522,27 @@ Navigate to the root of the project directory. Inside this directory, you'll fin
 @z
 
 @x
-2. If you look at the Docker Dashboard, you can see the containers and dive deeper into their configuration.
+2. If you look at the Docker Desktop Dashboard, you can see the containers and dive deeper into their configuration.
 @y
-2. If you look at the Docker Dashboard, you can see the containers and dive deeper into their configuration.
+2. If you look at the Docker Desktop Dashboard, you can see the containers and dive deeper into their configuration.
 @z
 
 @x
-    ![A screenshot of Docker Dashboard showing the containers of the application stack deployed using Docker Compose](images/list-containers.webp?border=true)
+    ![A screenshot of the Docker Desktop Dashboard showing the containers of the application stack deployed using Docker Compose](images/list-containers.webp?border=true)
 @y
-    ![A screenshot of Docker Dashboard showing the containers of the application stack deployed using Docker Compose](images/list-containers.webp?border=true)
+    ![A screenshot of the Docker Desktop Dashboard showing the containers of the application stack deployed using Docker Compose](images/list-containers.webp?border=true)
 @z
 
 @x
-3. Alternatively, you can use the Docker Dashboard to remove the containers by selecting the application stack and selecting the **Delete** button.
+3. Alternatively, you can use the Docker Desktop Dashboard to remove the containers by selecting the application stack and selecting the **Delete** button.
 @y
-3. Alternatively, you can use the Docker Dashboard to remove the containers by selecting the application stack and selecting the **Delete** button.
+3. Alternatively, you can use the Docker Desktop Dashboard to remove the containers by selecting the application stack and selecting the **Delete** button.
 @z
 
 @x
-   ![A screenshot of Docker Dashboard that shows how to remove the containers that you deployed using Docker Compose](images/delete-containers.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard that shows how to remove the containers that you deployed using Docker Compose](images/delete-containers.webp?border=true)
 @y
-   ![A screenshot of Docker Dashboard that shows how to remove the containers that you deployed using Docker Compose](images/delete-containers.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard that shows how to remove the containers that you deployed using Docker Compose](images/delete-containers.webp?border=true)
 @z
 
 @x

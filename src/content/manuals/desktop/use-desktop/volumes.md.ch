@@ -5,24 +5,24 @@
 
 @x
 description: Understand what you can do with the Volumes view on Docker Dashboard
-keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
+keywords: Docker Desktop Dashboard, manage, containers, gui, dashboard, volumes, user manual
 title: Explore the Volumes view in Docker Desktop
 linkTitle: Volumes
 @y
 description: Understand what you can do with the Volumes view on Docker Dashboard
-keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
+keywords: Docker Desktop Dashboard, manage, containers, gui, dashboard, volumes, user manual
 title: Explore the Volumes view in Docker Desktop
 linkTitle: Volumes
 @z
 
 @x
-The **Volumes** view in Docker Dashboard lets you create, delete, and perform
+The **Volumes** view in Docker Desktop Dashboard lets you create, delete, and perform
 other actions on your [volumes](/manuals/engine/storage/volumes.md). You can also see
 which volumes are being used as well as inspect the files and folders in your
 volumes.
 @y
-The **Volumes** view in Docker Dashboard lets you create, delete, and perform
-other actions on your [volumes](manuals/engine/storage/volumes.md). You can also see
+The **Volumes** view in Docker Desktop Dashboard lets you create, delete, and perform
+other actions on your [volumes](/manuals/engine/storage/volumes.md). You can also see
 which volumes are being used as well as inspect the files and folders in your
 volumes.
 @z

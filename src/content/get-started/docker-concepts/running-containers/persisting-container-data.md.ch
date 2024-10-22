@@ -334,15 +334,15 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 @z
 
 @x
-The Docker Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, and clone volumes.
+The Docker Desktop Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, and clone volumes.
 @y
-The Docker Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, and clone volumes.
+The Docker Desktop Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, and clone volumes.
 @z
 
 @x
-1. Open the Docker Dashboard and navigate to the **Volumes** view. In this view, you should see the **postgres_data** volume.
+1. Open the Docker Desktop Dashboard and navigate to the **Volumes** view. In this view, you should see the **postgres_data** volume.
 @y
-1. Open the Docker Dashboard and navigate to the **Volumes** view. In this view, you should see the **postgres_data** volume.
+1. Open the Docker Desktop Dashboard and navigate to the **Volumes** view. In this view, you should see the **postgres_data** volume.
 @z
 
 @x
@@ -392,10 +392,10 @@ There are a few methods to remove volumes, including the following:
 @z
 
 @x
-- Select the **Delete Volume** option on a volume in the Docker Dashboard.
+- Select the **Delete Volume** option on a volume in the Docker Desktop Dashboard.
 - Use the `docker volume rm` command:
 @y
-- Select the **Delete Volume** option on a volume in the Docker Dashboard.
+- Select the **Delete Volume** option on a volume in the Docker Desktop Dashboard.
 - Use the `docker volume rm` command:
 @z
 

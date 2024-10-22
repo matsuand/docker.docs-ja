@@ -4,27 +4,27 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Learn how to use the Docker Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
-keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
+description: Learn how to use the Docker Desktop Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
+keywords: Docker Desktop Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
 title: Explore Docker Desktop
 @y
-description: Learn how to use the Docker Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
-keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual,
+description: Learn how to use the Docker Desktop Dashboard within Docker Desktop, including Quick search, the Docker menu, and more
+keywords: Docker Desktop Dashboard, manage, containers, gui, dashboard, images, user manual,
   whale menu
 title: Docker Desktop の確認
 @z
 
 @x
-When you open Docker Desktop, the Docker Dashboard displays.
+When you open Docker Desktop, the Docker Desktop Dashboard displays.
 @y
-Docker Desktop を開くと Docker Dashboard が表示されます。
+Docker Desktop を開くと Docker Desktop Dashboard が表示されます。
 @z
 
 @x
-![Docker Dashboard on Containers view](../images/dashboard.webp)
+![Docker Desktop Dashboard on Containers view](../images/dashboard.webp)
 @y
-![Docker Dashboard on Containers view](../images/dashboard.webp)
+![Docker Desktop Dashboard on Containers view](../images/dashboard.webp)
 @z
 
 @x
@@ -52,20 +52,20 @@ The **Builds** view lets you inspect your build history and manage builders. By 
 @z
 
 @x
-In addition, the Docker Dashboard allows you to:
+In addition, the Docker Desktop Dashboard let you:
 @y
-In addition, the Docker Dashboard allows you to:
+In addition, the Docker Desktop Dashboard let you:
 @z
 
 @x
 - Navigate to the **Settings** menu to configure your Docker Desktop settings. Select the **Settings** icon in the Dashboard header.
 - Access the **Troubleshoot** menu to debug and perform restart operations. Select the **Troubleshoot** icon in the Dashboard header.
-- Be notified of new releases, installation progress updates, and more in the **Notifications center**. Select the bell icon in the bottom-right corner of the Docker Dashboard to access the notification center.
+- Be notified of new releases, installation progress updates, and more in the **Notifications center**. Select the bell icon in the bottom-right corner of the Docker Desktop Dashboard to access the notification center.
 - Access the **Learning center** from the Dashboard header. It helps you get started with quick in-app walkthroughs and provides other resources for learning about Docker. 
 @y
 - Navigate to the **Settings** menu to configure your Docker Desktop settings. Select the **Settings** icon in the Dashboard header.
 - Access the **Troubleshoot** menu to debug and perform restart operations. Select the **Troubleshoot** icon in the Dashboard header.
-- Be notified of new releases, installation progress updates, and more in the **Notifications center**. Select the bell icon in the bottom-right corner of the Docker Dashboard to access the notification center.
+- Be notified of new releases, installation progress updates, and more in the **Notifications center**. Select the bell icon in the bottom-right corner of the Docker Desktop Dashboard to access the notification center.
 - Access the **Learning center** from the Dashboard header. It helps you get started with quick in-app walkthroughs and provides other resources for learning about Docker. 
 @z
 
@@ -86,9 +86,9 @@ In addition, the Docker Dashboard allows you to:
 @z
 
 @x
-From the Docker Dashboard you can use Quick Search, which is located in the Dashboard header, to search for:
+From the Docker Desktop Dashboard you can use Quick Search, which is located in the Dashboard header, to search for:
 @y
-From the Docker Dashboard you can use Quick Search, which is located in the Dashboard header, to search for:
+From the Docker Desktop Dashboard you can use Quick Search, which is located in the Dashboard header, to search for:
 @z
 
 @x
@@ -140,7 +140,7 @@ To display the Docker menu, select the {{< inline-image src="../../assets/images
 @z
 
 @x
-- **Dashboard**. This takes you to the Docker Dashboard.
+- **Dashboard**. This takes you to the Docker Desktop Dashboard.
 - **Sign in/Sign up**
 - **Settings**
 - **Check for updates**
@@ -155,7 +155,7 @@ To display the Docker menu, select the {{< inline-image src="../../assets/images
 - **Restart**
 - **Quit Docker Desktop**
 @y
-- **Dashboard**. This takes you to the Docker Dashboard.
+- **Dashboard**. This takes you to the Docker Desktop Dashboard.
 - **Sign in/Sign up**
 - **Settings**
 - **Check for updates**

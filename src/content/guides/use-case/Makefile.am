@@ -1,12 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-
-SUBDIRS =  ai cloud-services data-science databases deploy devops \
-	distributed-systems networking
+SUBDIRS = images
 
 bases = \
-	_index.md
+	pre-seeding.md \
+	wiremock.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

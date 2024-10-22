@@ -149,15 +149,15 @@ In this hands-on, you will learn how to search and pull a container image using 
 @z
 
 @x
-1. Open the Docker Dashboard and select the **Images** view in the left-hand navigation menu.
+1. Open the Docker Desktop Dashboard and select the **Images** view in the left-hand navigation menu.
 @y
-1. Docker Desktop を開いて、左側のナビゲーションメニューにある **Images** (イメージ) 画面を選びます。
+1. Docker Desktop Desktop を開いて、左側のナビゲーションメニューにある **Images** (イメージ) 画面を選びます。
 @z
 
 @x
-    ![A screenshot of the Docker Dashboard showing the image view on the left sidebar](images/click-image.webp?border=true&w=1050&h=400)
+    ![A screenshot of the Docker Desktop Dashboard showing the image view on the left sidebar](images/click-image.webp?border=true&w=1050&h=400)
 @y
-    ![Docker Dashboard のスクリーンショット、左サイドバーからのイメージ画面表示](images/click-image.webp?border=true&w=1050&h=400)
+    ![Docker Desktop Dashboard のスクリーンショット、左サイドバーからのイメージ画面表示](images/click-image.webp?border=true&w=1050&h=400)
 @z
 
 @x
@@ -168,9 +168,9 @@ In this hands-on, you will learn how to search and pull a container image using 
 @z
 
 @x
-    ![A screenshot of the Docker Dashboard showing the search ta](images/search-image.webp?border)
+    ![A screenshot of the Docker Desktop Dashboard showing the search ta](images/search-image.webp?border)
 @y
-    ![Docker Dashboard のスクリーンショット、検索欄](images/search-image.webp?border)
+    ![Docker Desktop Dashboard のスクリーンショット、検索欄](images/search-image.webp?border)
 @z
 
 @x
@@ -181,9 +181,9 @@ In this hands-on, you will learn how to search and pull a container image using 
 @z
 
 @x
-    ![A screenshot of the Docker Dashboard showing the search results for the docker/welcome-to-docker image](images/select-image.webp?border=true&w=1050&h=400)
+    ![A screenshot of the Docker Desktop Dashboard showing the search results for the docker/welcome-to-docker image](images/select-image.webp?border=true&w=1050&h=400)
 @y
-    ![Docker Dashboard のスクリーンショット、検索結果に docker/welcome-to-docker イメージ](images/select-image.webp?border=true&w=1050&h=400)
+    ![Docker Desktop Dashboard のスクリーンショット、検索結果に docker/welcome-to-docker イメージ](images/select-image.webp?border=true&w=1050&h=400)
 @z
 
 @x
@@ -205,9 +205,9 @@ Once you have an image downloaded, you can learn quite a few details about the i
 @z
 
 @x
-1. In the Docker Dashboard, select the **Images** view.
+1. In the Docker Desktop Dashboard, select the **Images** view.
 @y
-1. Docker Dashboard の **Images** (イメージ) 画面を選びます。
+1. Docker Desktop Dashboard の **Images** (イメージ) 画面を選びます。
 @z
 
 @x
@@ -217,9 +217,9 @@ Once you have an image downloaded, you can learn quite a few details about the i
 @z
 
 @x
-    ![A screenshot of the Docker Dashboard showing the images view with an arrow pointing to the docker/welcome-to-docker image](images/pulled-image.webp?border=true&w=1050&h=400)
+    ![A screenshot of the Docker Desktop Dashboard showing the images view with an arrow pointing to the docker/welcome-to-docker image](images/pulled-image.webp?border=true&w=1050&h=400)
 @y
-    ![Docker Dashboard のスクリーンショット、矢印先の docker/welcome-to-docker イメージを使ったイメージ確認](images/pulled-image.webp?border=true&w=1050&h=400)
+    ![Docker Desktop Dashboard のスクリーンショット、矢印先の docker/welcome-to-docker イメージを使ったイメージ確認](images/pulled-image.webp?border=true&w=1050&h=400)
 @z
 
 @x

@@ -2,9 +2,6 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS =  ai cloud-services data-science databases deploy devops \
-	distributed-systems networking
-
 bases = \
 	_index.md
 

@@ -60,14 +60,14 @@ Extension をインストールするには以下を行います。
 
 @x
 1. Open Docker Desktop.
-2. From the Docker Dashboard, select the **Extensions** tab.
+2. From the Docker Desktop Dashboard, select the **Extensions** tab.
    The Extensions Marketplace opens on the **Browse** tab.
 3. Browse the available extensions.
    You can sort the list of extensions by **Recently added**, **Most installed**, or alphabetically. Alternatively, use the **Content** or **Categories** drop-down menu to search for extensions by whether they have been reviewed or not, or by category.
 4. Choose an extension and select **Install**.
 @y
 1. Docker Desktop を開きます。
-2. Dashboard 画面から **Extensions** タブを選びます。
+2. Docker Desktop Dashboard 画面から **Extensions** タブを選びます。
    **Browse** (ブラウザー) タブに Extensions マーケットプレースが開きます。
 3. 利用可能な Extension を探します。
    Extension の一覧は **Recently added** (最新追加分)、**Most installed** (人気のインストール)、またアルファベット順に並び変えることができます。
@@ -88,9 +88,9 @@ From here, you can select **Open** to access the extension or install additional
 @z
 
 @x
-You can update any extension outside of Docker Desktop releases. To update an extension to the latest version, navigate to the Docker Dashboard and select the **Manage** tab.
+You can update any extension outside of Docker Desktop releases. To update an extension to the latest version, navigate to the Docker Desktop Dashboard and select the **Manage** tab.
 @y
-You can update any extension outside of Docker Desktop releases. To update an extension to the latest version, navigate to the Docker Dashboard and select the **Manage** tab.
+You can update any extension outside of Docker Desktop releases. To update an extension to the latest version, navigate to the Docker Desktop Dashboard and select the **Manage** tab.
 @z
 
 @x
@@ -122,12 +122,12 @@ You can uninstall an extension at any time.
 @z
 
 @x
-1. Navigate to the Docker Dashboard and select the **Manage** tab.
+1. Navigate to the Docker Desktop Dashboard and select the **Manage** tab.
    This displays a list of extensions you've installed.
 2. Select the ellipsis to the right of extension you want to uninstall.
 3. Select **Uninstall**.
 @y
-1. Navigate to the Docker Dashboard and select the **Manage** tab.
+1. Navigate to the Docker Desktop Dashboard and select the **Manage** tab.
    This displays a list of extensions you've installed.
 2. Select the ellipsis to the right of extension you want to uninstall.
 3. Select **Uninstall**.

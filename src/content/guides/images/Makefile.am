@@ -21,7 +21,9 @@ copyfiles = \
 	python.webp                    \
 	r.webp                         \
 	ruby-on-rails.webp             \
-	rust-logo.webp
+	rust-logo.webp                 \
+	traefik-in-development.webp    \
+	traefik-non-containerized-workload-architecture.webp
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

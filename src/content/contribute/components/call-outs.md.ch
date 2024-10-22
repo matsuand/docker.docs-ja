@@ -104,7 +104,7 @@ is displayed in the callout.
 > `docker compose down`. If you want to remove the volumes, you will need to add
 > the `--volumes` flag.
 >
-> The Docker Dashboard does not remove volumes when you delete the app stack.
+> The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @y
 > [!WARNING]
 >
@@ -114,7 +114,7 @@ is displayed in the callout.
 > `docker compose down`. If you want to remove the volumes, you will need to add
 > the `--volumes` flag.
 >
-> The Docker Dashboard does not remove volumes when you delete the app stack.
+> The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @z
 
 @x
@@ -224,7 +224,7 @@ Docker Scout is an [early access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > `docker compose down`. If you want to remove the volumes, you will need to add
 > the `--volumes` flag.
 >
-> The Docker Dashboard does _not_ remove volumes when you delete the app stack.
+> The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @y
 > [!WARNING]
 >
@@ -234,7 +234,7 @@ Docker Scout is an [early access](__SUBDIR__/release-lifecycle/#early-access-ea)
 > `docker compose down`. If you want to remove the volumes, you will need to add
 > the `--volumes` flag.
 >
-> The Docker Dashboard does _not_ remove volumes when you delete the app stack.
+> The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @z
 
 @x

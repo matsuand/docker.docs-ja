@@ -244,15 +244,15 @@ In this hands-on guide, you'll see how to use the `docker run` command to overri
 @z
 
 @x
-3. Verify that both containers are running by going to the **Containers** view in the Docker Dashboard.
+3. Verify that both containers are running by going to the **Containers** view in the Docker Desktop Dashboard.
 @y
-3. Verify that both containers are running by going to the **Containers** view in the Docker Dashboard.
+3. Verify that both containers are running by going to the **Containers** view in the Docker Desktop Dashboard.
 @z
 
 @x
-    ![A screenshot of Docker Dashboard showing the running instances of Postgres containers](images/running-postgres-containers.webp?border=true)
+    ![A screenshot of the Docker Desktop Dashboard showing the running instances of Postgres containers](images/running-postgres-containers.webp?border=true)
 @y
-    ![A screenshot of Docker Dashboard showing the running instances of Postgres containers](images/running-postgres-containers.webp?border=true)
+    ![A screenshot of the Docker Desktop Dashboard showing the running instances of Postgres containers](images/running-postgres-containers.webp?border=true)
 @z
 
 @x
@@ -454,15 +454,15 @@ Sometimes, you might need to override the default commands (`CMD`) or entry poin
 @z
 
 @x
-3. Verify the authentication with Docker Dashboard.
+3. Verify the authentication with Docker Desktop Dashboard.
 @y
-3. Verify the authentication with Docker Dashboard.
+3. Verify the authentication with Docker Desktop Dashboard.
 @z
 
 @x
-    Open the Docker Dashboard, select the **Postgres** container and select **Exec** to enter into the container shell. You can type the following command to connect to the Postgres database:
+    Open the Docker Desktop Dashboard, select the **Postgres** container and select **Exec** to enter into the container shell. You can type the following command to connect to the Postgres database:
 @y
-    Open the Docker Dashboard, select the **Postgres** container and select **Exec** to enter into the container shell. You can type the following command to connect to the Postgres database:
+    Open the Docker Desktop Dashboard, select the **Postgres** container and select **Exec** to enter into the container shell. You can type the following command to connect to the Postgres database:
 @z
 
 @x
@@ -476,9 +476,9 @@ Sometimes, you might need to override the default commands (`CMD`) or entry poin
 @z
 
 @x
-    ![A screenshot of the Docker Dashboard selecting the Postgres container and entering into its shell using EXEC button](images/exec-into-postgres-container.webp?border=true)
+    ![A screenshot of the Docker Desktop Dashboard selecting the Postgres container and entering into its shell using EXEC button](images/exec-into-postgres-container.webp?border=true)
 @y
-    ![A screenshot of the Docker Dashboard selecting the Postgres container and entering into its shell using EXEC button](images/exec-into-postgres-container.webp?border=true)
+    ![A screenshot of the Docker Desktop Dashboard selecting the Postgres container and entering into its shell using EXEC button](images/exec-into-postgres-container.webp?border=true)
 @z
 
 @x

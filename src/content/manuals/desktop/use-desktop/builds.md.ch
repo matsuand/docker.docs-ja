@@ -62,9 +62,9 @@ connected to the same cloud builder.
 @z
 
 @x
-Select the **Builds** view in the Docker Dashboard to open the build list.
+Select the **Builds** view in the Docker Desktop Dashboard to open the build list.
 @y
-Select the **Builds** view in the Docker Dashboard to open the build list.
+Select the **Builds** view in the Docker Desktop Dashboard to open the build list.
 @z
 
 @x

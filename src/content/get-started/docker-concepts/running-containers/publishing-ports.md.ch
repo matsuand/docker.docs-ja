@@ -240,15 +240,15 @@ In this step, you will run a container and publish its port using the Docker CLI
 @z
 
 @x
-3. Verify the published port by going to the **Containers** view of the Docker Dashboard.
+3. Verify the published port by going to the **Containers** view of the Docker Desktop Dashboard.
 @y
-3. Verify the published port by going to the **Containers** view of the Docker Dashboard.
+3. Verify the published port by going to the **Containers** view of the Docker Desktop Dashboard.
 @z
 
 @x
-   ![A screenshot of Docker dashboard showing the published port](images/published-ports.webp?w=5000&border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the published port](images/published-ports.webp?w=5000&border=true)
 @y
-   ![A screenshot of Docker dashboard showing the published port](images/published-ports.webp?w=5000&border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the published port](images/published-ports.webp?w=5000&border=true)
 @z
 
 @x

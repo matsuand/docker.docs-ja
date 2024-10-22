@@ -872,9 +872,9 @@ docker extension update awesome-inc/my-extension:latest
 @z
 
 @x
-Now you can see the backend service running in the **Containers8* tab of the Docker Dashboard and watch the logs when you need to debug it.
+Now you can see the backend service running in the **Containers** view of the Docker Desktop Dashboard and watch the logs when you need to debug it.
 @y
-Now you can see the backend service running in the **Containers8* tab of the Docker Dashboard and watch the logs when you need to debug it.
+Now you can see the backend service running in the **Containers** view of the Docker Desktop Dashboard and watch the logs when you need to debug it.
 @z
 
 @x
@@ -890,10 +890,10 @@ Now you can see the backend service running in the **Containers8* tab of the Doc
 @z
 
 @x
-Open Docker Dashboard and select the **Containers** tab. You should see the response from the backend service
+Open the Docker Desktop Dashboard and select the **Containers** tab. You should see the response from the backend service
 call displayed.
 @y
-Open Docker Dashboard and select the **Containers** tab. You should see the response from the backend service
+Open the Docker Desktop Dashboard and select the **Containers** tab. You should see the response from the backend service
 call displayed.
 @z
 

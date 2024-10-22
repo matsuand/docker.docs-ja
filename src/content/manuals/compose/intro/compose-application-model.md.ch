@@ -124,13 +124,13 @@ Multiple Compose files can be [merged](/reference/compose-file/merge.md) togethe
 Simple attributes and maps get overridden by the highest order Compose file, lists get merged by appending. Relative
 paths are resolved based on the first Compose file's parent folder, whenever complimentary files being
 merged are hosted in other folders. As some Compose file elements can both be expressed as single strings or complex objects, merges apply to
-the expanded form. For more information, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md)
+the expanded form. For more information, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md).
 @y
 Multiple Compose files can be [merged](reference/compose-file/merge.md) together to define the application model. The combination of YAML files is implemented by appending or overriding YAML elements based on the Compose file order you set. 
 Simple attributes and maps get overridden by the highest order Compose file, lists get merged by appending. Relative
 paths are resolved based on the first Compose file's parent folder, whenever complimentary files being
 merged are hosted in other folders. As some Compose file elements can both be expressed as single strings or complex objects, merges apply to
-the expanded form. For more information, see [Working with multiple Compose files](manuals/compose/how-tos/multiple-compose-files/_index.md)
+the expanded form. For more information, see [Working with multiple Compose files](manuals/compose/how-tos/multiple-compose-files/_index.md).
 @z
 
 @x

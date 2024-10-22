@@ -3,7 +3,7 @@
 ##
 SUBDIRS = admin-set-up bake bun cpp docker-build-cloud docker-compose \
 	docker-scout dotnet genai-pdf-bot genai-video-bot golang      \
-	images java nodejs php python r rag-ollama ruby rust
+	images java nodejs php python r rag-ollama ruby rust use-case
 
 bases = \
 	_index.md                   \
@@ -20,7 +20,8 @@ bases = \
 	swarm-deploy.md             \
 	tensorflowjs.md             \
 	text-classification.md      \
-	text-summarization.md
+	text-summarization.md       \
+	traefik.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

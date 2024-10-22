@@ -56,9 +56,9 @@ To get started with Project Harmonia, you need to:
 @z
 
 @x
-You can use Project Harmonia from the Docker Dashboard or from the CLI. 
+You can use Project Harmonia from the Docker Desktop Dashboard or from the CLI. 
 @y
-You can use Project Harmonia from the Docker Dashboard or from the CLI. 
+You can use Project Harmonia from the Docker Desktop Dashboard or from the CLI. 
 @z
 
 @x
@@ -82,14 +82,14 @@ This guide introduces you to essential commands and steps for creating, managing
 @z
 
 @x
-1. In the Docker Dashboard, navigate to the **Project Harmonia** tab. 
+1. In the Docker Desktop Dashboard, navigate to the **Project Harmonia** tab. 
 2. In the top right-hand corner, select **Create Cloud Engine**.
 3. Fill out the creation form:
    - Enter `cloudengine` as the name
    - Choose an organization to associate the cloud engine with
    - Select the engine size and architecture
 @y
-1. In the Docker Dashboard, navigate to the **Project Harmonia** tab. 
+1. In the Docker Desktop Dashboard, navigate to the **Project Harmonia** tab. 
 2. In the top right-hand corner, select **Create Cloud Engine**.
 3. Fill out the creation form:
    - Enter `cloudengine` as the name
@@ -106,9 +106,9 @@ This guide introduces you to essential commands and steps for creating, managing
 @z
 
 @x
-To verify creation, check the context switcher in the top-left corner of the Docker Dashboard; it should display `cloudengine`. You’re now ready to use it.
+To verify creation, check the context switcher in the top-left corner of the Docker Desktop Dashboard; it should display `cloudengine`. You’re now ready to use it.
 @y
-To verify creation, check the context switcher in the top-left corner of the Docker Dashboard; it should display `cloudengine`. You’re now ready to use it.
+To verify creation, check the context switcher in the top-left corner of the Docker Desktop Dashboard; it should display `cloudengine`. You’re now ready to use it.
 @z
 
 @x
@@ -227,7 +227,7 @@ You should see the following:
    This maps the container's port `80` to the host's port `8080`. If port `8080` is already in use on your host, you can specify a different port.
 2. View the Nginx welcome page. Navigate to [`http://localhost:8080/`](http://localhost:8080/).
 3. Verify the running container:
-   - In the **Containers** tab in the Docker Dashboard, you should see your Nginx container listed. 
+   - In the **Containers** tab in the Docker Desktop Dashboard, you should see your Nginx container listed. 
    - Alternatively, list all running containers in the cloud engine via the terminal:
       ```console
       $ docker ps
@@ -240,7 +240,7 @@ You should see the following:
    This maps the container's port `80` to the host's port `8080`. If port `8080` is already in use on your host, you can specify a different port.
 2. View the Nginx welcome page. Navigate to [`http://localhost:8080/`](http://localhost:8080/).
 3. Verify the running container:
-   - In the **Containers** tab in the Docker Dashboard, you should see your Nginx container listed. 
+   - In the **Containers** tab in the Docker Desktop Dashboard, you should see your Nginx container listed. 
    - Alternatively, list all running containers in the cloud engine via the terminal:
       ```console
       $ docker ps
@@ -273,14 +273,14 @@ Running a container with a cloud engine is just as straightforward as running it
    - Choose an organization to associate the cloud engine with
    - Select the **Standard** engine size with the **AMD-64** architecture
    In the **Project Harmonia** view you should now see both `cloudengine` and `cloudengine2`. 
-2. Switch between engines, also known as your Docker contexts. Use the context switcher in the top-left corner of the Docker Dashboard to toggle between your cloud engines or switch from your local engine (`desktop-linux`) to a cloud engine. 
+2. Switch between engines, also known as your Docker contexts. Use the context switcher in the top-left corner of the Docker Desktop Dashboard to toggle between your cloud engines or switch from your local engine (`desktop-linux`) to a cloud engine. 
 @y
 1. Create a new cloud engine:
    - Enter `cloudengine2` as the name
    - Choose an organization to associate the cloud engine with
    - Select the **Standard** engine size with the **AMD-64** architecture
    In the **Project Harmonia** view you should now see both `cloudengine` and `cloudengine2`. 
-2. Switch between engines, also known as your Docker contexts. Use the context switcher in the top-left corner of the Docker Dashboard to toggle between your cloud engines or switch from your local engine (`desktop-linux`) to a cloud engine. 
+2. Switch between engines, also known as your Docker contexts. Use the context switcher in the top-left corner of the Docker Desktop Dashboard to toggle between your cloud engines or switch from your local engine (`desktop-linux`) to a cloud engine. 
 @z
 
 @x
@@ -351,7 +351,7 @@ Project Harmonia takes advantage of [Synchronized file shares](manuals/desktop/s
 
 @x
 1. Clone the [Awesome Compose](https://github.com/docker/awesome-compose) repository. 
-2. In the Docker Dashboard, navigate to the **Project Harmonia** view. 
+2. In the Docker Desktop Dashboard, navigate to the **Project Harmonia** view. 
 3. For the `cloudengine` cloud engine, select the **Actions** menu and then **Manage file syncs**.
 4. Select **Create file sync**.
 5. Navigate to the `awesome-compose/react-express-mysql` folder and select **Open**.
@@ -365,7 +365,7 @@ Project Harmonia takes advantage of [Synchronized file shares](manuals/desktop/s
 9. In an IDE or text editor, open the `App.js` file, change some text, and save. Watch as the code reloads live in your browser.
 @y
 1. Clone the [Awesome Compose](https://github.com/docker/awesome-compose) repository. 
-2. In the Docker Dashboard, navigate to the **Project Harmonia** view. 
+2. In the Docker Desktop Dashboard, navigate to the **Project Harmonia** view. 
 3. For the `cloudengine` cloud engine, select the **Actions** menu and then **Manage file syncs**.
 4. Select **Create file sync**.
 5. Navigate to the `awesome-compose/react-express-mysql` folder and select **Open**.
@@ -439,22 +439,22 @@ Project Harmonia takes advantage of [Synchronized file shares](manuals/desktop/s
 
 @x
 1. Make sure your Docker context is set to `cloudengine`. 
-2. In the Docker Dashboard, navigate to the **Containers** view. 
+2. In the Docker Desktop Dashboard, navigate to the **Containers** view. 
 3. Select the **lock** icon in the **Ports** column of your running container next to `3000:3000`. 
    This creates a publicly accessible URL that you can share with teammates. 
 4. Select the **copy** icon, to copy this URL. 
 @y
 1. Make sure your Docker context is set to `cloudengine`. 
-2. In the Docker Dashboard, navigate to the **Containers** view. 
+2. In the Docker Desktop Dashboard, navigate to the **Containers** view. 
 3. Select the **lock** icon in the **Ports** column of your running container next to `3000:3000`. 
    This creates a publicly accessible URL that you can share with teammates. 
 4. Select the **copy** icon, to copy this URL. 
 @z
 
 @x
-To view all shared ports for your Docker context, select the **Shared ports** icon in the bottom-right corner of the Docker Dashboard.
+To view all shared ports for your Docker context, select the **Shared ports** icon in the bottom-right corner of the Docker Desktop Dashboard.
 @y
-To view all shared ports for your Docker context, select the **Shared ports** icon in the bottom-right corner of the Docker Dashboard.
+To view all shared ports for your Docker context, select the **Shared ports** icon in the bottom-right corner of the Docker Desktop Dashboard.
 @z
 
 @x

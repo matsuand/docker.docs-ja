@@ -236,9 +236,9 @@ $ docker extension install awesome-inc/my-extension:latest
 @z
 
 @x
-To preview the extension in Docker Desktop, close and open Docker Dashboard once the installation is complete.
+To preview the extension in Docker Desktop, close and open the Docker Desktop Dashboard once the installation is complete.
 @y
-To preview the extension in Docker Desktop, close and open Docker Dashboard once the installation is complete.
+To preview the extension in Docker Desktop, close and open the Docker Desktop Dashboard once the installation is complete.
 @z
 
 @x

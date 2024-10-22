@@ -161,9 +161,9 @@ Use the following instructions to run a container.
 @z
 
 @x
-    ![A screenshot of the Docker Dashboard showing the search result for welcome-to-docker Docker image ](images/search-the-docker-image.webp?border=true&w=1000&h=700)
+    ![A screenshot of the Docker Desktop Dashboard showing the search result for welcome-to-docker Docker image ](images/search-the-docker-image.webp?border=true&w=1000&h=700)
 @y
-    ![Docker Dashboard のスクリーンショット、Docker イメージ welcome-to-docker の検索結果](images/search-the-docker-image.webp?border=true&w=1000&h=700)
+    ![Docker Desktop Dashboard のスクリーンショット、Docker イメージ welcome-to-docker の検索結果](images/search-the-docker-image.webp?border=true&w=1000&h=700)
 @z
 
 @x
@@ -191,9 +191,9 @@ Use the following instructions to run a container.
 @z
 
 @x
-    ![A screenshot of Docker Dashboard showing the container run dialog with welcome-to-docker typed in as the container name and 8080 specified as the port number](images/run-a-new-container.webp?border=true&w=550&h=400)
+    ![A screenshot of Docker Desktop Dashboard showing the container run dialog with welcome-to-docker typed in as the container name and 8080 specified as the port number](images/run-a-new-container.webp?border=true&w=550&h=400)
 @y
-    ![Docker Dashboard のスクリーンショット、コンテナーの実行ダイアログにおいてコンテナー名に welcome-to-docker、ポート番号に 8080 を指定](images/run-a-new-container.webp?border=true&w=550&h=400)
+    ![Docker Desktop Dashboard のスクリーンショット、コンテナーの実行ダイアログにおいてコンテナー名に welcome-to-docker、ポート番号に 8080 を指定](images/run-a-new-container.webp?border=true&w=550&h=400)
 @z
 
 @x
@@ -216,9 +216,9 @@ Congratulations! You just ran your first container! 🎉
 @z
 
 @x
-You can view all of your containers by going to the **Containers** view of the Docker Dashboard.
+You can view all of your containers by going to the **Containers** view of the Docker Desktop Dashboard.
 @y
-コンテナーを確認するには Docker Dashboard の **Containers** (コンテナー) 画面を表示します。.
+コンテナーを確認するには Docker Desktop Dashboard の **Containers** (コンテナー) 画面を表示します。.
 @z
 
 @x
@@ -275,9 +275,9 @@ Docker Desktop を使うと、コンテナーのさまざまな情報につい�
 @z
 
 @x
-1. Go to the **Containers** view in the Docker Dashboard.
+1. Go to the **Containers** view in the Docker Desktop Dashboard.
 @y
-1. Docker Dashboard の **Containers** (コンテナー) 画面を開きます。
+1. Docker Desktop Dashboard の **Containers** (コンテナー) 画面を開きます。
 @z
 
 @x
@@ -293,9 +293,9 @@ Docker Desktop を使うと、コンテナーのさまざまな情報につい�
 @z
 
 @x
-    ![Screenshot of the Docker Dashboard showing the files and directories inside a running container](images/explore-your-container.webp?border)
+    ![Screenshot of the Docker Desktop Dashboard showing the files and directories inside a running container](images/explore-your-container.webp?border)
 @y
-    ![Docker Dashboard のスクリーンショット、実行中コンテナー内のファイルやディレクトリの一覧](images/explore-your-container.webp?border)
+    ![Docker Desktop Dashboard のスクリーンショット、実行中コンテナー内のファイルやディレクトリの一覧](images/explore-your-container.webp?border)
 @z
 
 @x
@@ -311,9 +311,9 @@ The `docker/welcome-to-docker` container continues to run until you stop it.
 @z
 
 @x
-1. Go to the **Containers** view in the Docker Dashboard.
+1. Go to the **Containers** view in the Docker Desktop Dashboard.
 @y
-1. Docker Dashboard の **Containers** (コンテナー) 画面を開きます。
+1. Docker Desktop Dashboard の **Containers** (コンテナー) 画面を開きます。
 @z
 
 @x
@@ -329,9 +329,9 @@ The `docker/welcome-to-docker` container continues to run until you stop it.
 @z
 
 @x
-    ![Screenshot of the Docker Dashboard with the welcome container selected and being prepared to stop](images/stop-your-container.webp?border)
+    ![Screenshot of the Docker Desktop Dashboard with the welcome container selected and being prepared to stop](images/stop-your-container.webp?border)
 @y
-    ![Docker Dashboard のスクリーンショット、選択されている welcome コンテナーが停止されようとしている場面](images/stop-your-container.webp?border)
+    ![Docker Desktop Dashboard のスクリーンショット、選択されている welcome コンテナーが停止されようとしている場面](images/stop-your-container.webp?border)
 @z
 
 @x

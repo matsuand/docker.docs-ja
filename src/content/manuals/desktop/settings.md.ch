@@ -25,10 +25,10 @@ To navigate to **Settings** either:
 
 @x
 - Select the Docker menu {{< inline-image src="images/whale-x.svg" alt="whale menu" >}} and then **Settings**
-- Select the **Settings** icon from the Docker Dashboard.
+- Select the **Settings** icon from the Docker Desktop Dashboard.
 @y
 - Select the Docker menu {{< inline-image src="images/whale-x.svg" alt="whale menu" >}} and then **Settings**
-- Select the **Settings** icon from the Docker Dashboard.
+- Select the **Settings** icon from the Docker Desktop Dashboard.
 @z
 
 @x
@@ -79,10 +79,10 @@ On the **General** tab, you can configure when to start Docker and specify other
 
 @x
 - **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
-If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](/manuals/desktop/use-desktop/container.md).
+If you choose the integrated terminal, you can run commands in a running container straight from the Docker Desktop Dashboard. For more information, see [Explore containers](/manuals/desktop/use-desktop/container.md).
 @y
 - **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
-If you choose the integrated terminal, you can run commands in a running container straight from the Docker Dashboard. For more information, see [Explore containers](manuals/desktop/use-desktop/container.md).
+If you choose the integrated terminal, you can run commands in a running container straight from the Docker Desktop Dashboard. For more information, see [Explore containers](manuals/desktop/use-desktop/container.md).
 @z
 
 @x
@@ -1106,12 +1106,12 @@ select the **Release Notes** option to learn what's included in the updated vers
 @x
 Turn off the check for updates by clearing the **Automatically check for updates**
 check box. This disables notifications in the Docker menu and the notification
-badge that appears on the Docker Dashboard. To check for updates manually, select
+badge that appears on the Docker Desktop Dashboard. To check for updates manually, select
 the **Check for updates** option in the Docker menu.
 @y
 Turn off the check for updates by clearing the **Automatically check for updates**
 check box. This disables notifications in the Docker menu and the notification
-badge that appears on the Docker Dashboard. To check for updates manually, select
+badge that appears on the Docker Desktop Dashboard. To check for updates manually, select
 the **Check for updates** option in the Docker menu.
 @z
 
@@ -1120,13 +1120,13 @@ To allow Docker Desktop to automatically download new updates in the background,
 select **Always download updates**. This downloads newer versions of Docker Desktop
 when an update becomes available. After downloading the update, select
 **Apply and Restart** to install the update. You can do this either through the
-Docker menu or in the **Updates** section in the Docker Dashboard.
+Docker menu or in the **Updates** section in the Docker Desktop Dashboard.
 @y
 To allow Docker Desktop to automatically download new updates in the background,
 select **Always download updates**. This downloads newer versions of Docker Desktop
 when an update becomes available. After downloading the update, select
 **Apply and Restart** to install the update. You can do this either through the
-Docker menu or in the **Updates** section in the Docker Dashboard.
+Docker menu or in the **Updates** section in the Docker Desktop Dashboard.
 @z
 
 @x
@@ -1250,9 +1250,9 @@ By default, all notifications are turned on. You'll always receive error notific
 @z
 
 @x
-Notifications momentarily appear in the lower-right of the Docker Dashboard and then move to the **Notifications** drawer. To open the **Notifications** drawer, select {{< inline-image src="images/notifications.svg" alt="notifications" >}}.
+Notifications momentarily appear in the lower-right of the Docker Desktop Dashboard and then move to the **Notifications** drawer. To open the **Notifications** drawer, select {{< inline-image src="images/notifications.svg" alt="notifications" >}}.
 @y
-Notifications momentarily appear in the lower-right of the Docker Dashboard and then move to the **Notifications** drawer. To open the **Notifications** drawer, select {{< inline-image src="images/notifications.svg" alt="notifications" >}}.
+Notifications momentarily appear in the lower-right of the Docker Desktop Dashboard and then move to the **Notifications** drawer. To open the **Notifications** drawer, select {{< inline-image src="images/notifications.svg" alt="notifications" >}}.
 @z
 
 @x
