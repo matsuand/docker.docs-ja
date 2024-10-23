@@ -151,7 +151,6 @@ webapp:
     - "/data"
   environment:
     - DEBUG=1
-    - ANOTHER_VARIABLE=value
 ```
 @y
 ```yaml
@@ -163,30 +162,383 @@ webapp:
     - "/data"
   environment:
     - DEBUG=1
-    - ANOTHER_VARIABLE=value
 ```
 @z
 
 @x
-> [!IMPORTANT]
->
-> When you use multiple Compose files, you must make sure all paths in the
-files are relative to the base Compose file (the first Compose file specified
+## Merging rules 
+@y
+## Merging rules 
+@z
+
+@x
+- Paths are evaluated relative to the base file. When you use multiple Compose files, you must make sure all paths in the files are relative to the base Compose file (the first Compose file specified
 with `-f`). This is required because override files need not be valid
 Compose files. Override files can contain small fragments of configuration.
 Tracking which fragment of a service is relative to which path is difficult and
 confusing, so to keep paths easier to understand, all paths must be defined
 relative to the base file.
 @y
-> [!IMPORTANT]
->
-> When you use multiple Compose files, you must make sure all paths in the
-files are relative to the base Compose file (the first Compose file specified
+- Paths are evaluated relative to the base file. When you use multiple Compose files, you must make sure all paths in the files are relative to the base Compose file (the first Compose file specified
 with `-f`). This is required because override files need not be valid
 Compose files. Override files can contain small fragments of configuration.
 Tracking which fragment of a service is relative to which path is difficult and
 confusing, so to keep paths easier to understand, all paths must be defined
 relative to the base file.
+@z
+
+@x
+   >[!TIP]
+   >
+   > You can use `docker compose config` to review your merged configuration and avoid path-related issues.
+@y
+   >[!TIP]
+   >
+   > You can use `docker compose config` to review your merged configuration and avoid path-related issues.
+@z
+
+@x
+- Compose copies configurations from the original service over to the local one.
+If a configuration option is defined in both the original service and the local
+service, the local value replaces or extends the original value.
+@y
+- Compose copies configurations from the original service over to the local one.
+If a configuration option is defined in both the original service and the local
+service, the local value replaces or extends the original value.
+@z
+
+@x
+   - For single-value options like `image`, `command` or `mem_limit`, the new value replaces the old value.
+@y
+   - For single-value options like `image`, `command` or `mem_limit`, the new value replaces the old value.
+@z
+
+@x
+      original service:
+@y
+      original service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          command: python app.py
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          command: python app.py
+      ```
+@z
+
+@x
+      local service:
+@y
+      local service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          command: python otherapp.py
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          command: python otherapp.py
+      ```
+@z
+
+@x
+      result:
+@y
+      result:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          command: python otherapp.py
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          command: python otherapp.py
+      ```
+@z
+
+@x
+   - For the multi-value options `ports`, `expose`, `external_links`, `dns`, `dns_search`, and `tmpfs`, Compose concatenates both sets of values:
+@y
+   - For the multi-value options `ports`, `expose`, `external_links`, `dns`, `dns_search`, and `tmpfs`, Compose concatenates both sets of values:
+@z
+
+@x
+      original service:
+@y
+      original service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          expose:
+            - "3000"
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          expose:
+            - "3000"
+      ```
+@z
+
+@x
+      local service:
+@y
+      local service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          expose:
+            - "4000"
+            - "5000"
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          expose:
+            - "4000"
+            - "5000"
+      ```
+@z
+
+@x
+      result:
+@y
+      result:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          expose:
+            - "3000"
+            - "4000"
+            - "5000"
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          expose:
+            - "3000"
+            - "4000"
+            - "5000"
+      ```
+@z
+
+@x
+   - In the case of `environment`, `labels`, `volumes`, and `devices`, Compose "merges" entries together with locally defined values taking precedence. For `environment` and `labels`, the environment variable or label name determines which value is used:
+@y
+   - In the case of `environment`, `labels`, `volumes`, and `devices`, Compose "merges" entries together with locally defined values taking precedence. For `environment` and `labels`, the environment variable or label name determines which value is used:
+@z
+
+@x
+      original service:
+@y
+      original service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          environment:
+            - FOO=original
+            - BAR=original
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          environment:
+            - FOO=original
+            - BAR=original
+      ```
+@z
+
+@x
+      local service:
+@y
+      local service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          environment:
+            - BAR=local
+            - BAZ=local
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          environment:
+            - BAR=local
+            - BAZ=local
+      ```
+@z
+
+@x
+     result:
+@y
+     result:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          environment:
+            - FOO=original
+            - BAR=local
+            - BAZ=local
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          environment:
+            - FOO=original
+            - BAR=local
+            - BAZ=local
+      ```
+@z
+
+@x
+   - Entries for `volumes` and `devices` are merged using the mount path in the container:
+@y
+   - Entries for `volumes` and `devices` are merged using the mount path in the container:
+@z
+
+@x
+      original service:
+@y
+      original service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          volumes:
+            - ./original:/foo
+            - ./original:/bar
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          volumes:
+            - ./original:/foo
+            - ./original:/bar
+      ```
+@z
+
+@x
+      local service:
+@y
+      local service:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          volumes:
+            - ./local:/bar
+            - ./local:/baz
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          volumes:
+            - ./local:/bar
+            - ./local:/baz
+      ```
+@z
+
+@x
+      result:
+@y
+      result:
+@z
+
+@x
+      ```yaml
+      services:
+        myservice:
+          # ...
+          volumes:
+            - ./original:/foo
+            - ./local:/bar
+            - ./local:/baz
+      ```
+@y
+      ```yaml
+      services:
+        myservice:
+          # ...
+          volumes:
+            - ./original:/foo
+            - ./local:/bar
+            - ./local:/baz
+      ```
+@z
+
+@x
+For more merging rules, see [Merge and override](/reference/compose-file/merge.md) in the Compose Specification. 
+@y
+For more merging rules, see [Merge and override](reference/compose-file/merge.md) in the Compose Specification. 
 @z
 
 @x
@@ -199,12 +551,6 @@ relative to the base file.
 - Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yml` and a `compose.override.yml` file. You must supply at least the `compose.yml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
 @y
 - Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yml` and a `compose.override.yml` file. You must supply at least the `compose.yml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
-@z
-
-@x
-- When you use multiple Compose files, all paths in the files are relative to the first configuration file specified with `-f`. You can  use the `--project-directory` option to override this base path.
-@y
-- When you use multiple Compose files, all paths in the files are relative to the first configuration file specified with `-f`. You can  use the `--project-directory` option to override this base path.
 @z
 
 @x
@@ -306,368 +652,6 @@ relative to the base file.
 @z
 
 @x
-## Merging rules
-@y
-## Merging rules
-@z
-
-@x
-Compose copies configurations from the original service over to the local one.
-If a configuration option is defined in both the original service and the local
-service, the local value replaces or extends the original value.
-@y
-Compose copies configurations from the original service over to the local one.
-If a configuration option is defined in both the original service and the local
-service, the local value replaces or extends the original value.
-@z
-
-@x
-For single-value options like `image`, `command` or `mem_limit`, the new value
-replaces the old value.
-@y
-For single-value options like `image`, `command` or `mem_limit`, the new value
-replaces the old value.
-@z
-
-@x
-original service:
-@y
-original service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    command: python app.py
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    command: python app.py
-```
-@z
-
-@x
-local service:
-@y
-local service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    command: python otherapp.py
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    command: python otherapp.py
-```
-@z
-
-@x
-result:
-@y
-result:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    command: python otherapp.py
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    command: python otherapp.py
-```
-@z
-
-@x
-For the multi-value options `ports`, `expose`, `external_links`, `dns`,
-`dns_search`, and `tmpfs`, Compose concatenates both sets of values:
-@y
-For the multi-value options `ports`, `expose`, `external_links`, `dns`,
-`dns_search`, and `tmpfs`, Compose concatenates both sets of values:
-@z
-
-@x
-original service:
-@y
-original service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    expose:
-      - "3000"
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    expose:
-      - "3000"
-```
-@z
-
-@x
-local service:
-@y
-local service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    expose:
-      - "4000"
-      - "5000"
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    expose:
-      - "4000"
-      - "5000"
-```
-@z
-
-@x
-result:
-@y
-result:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    expose:
-      - "3000"
-      - "4000"
-      - "5000"
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    expose:
-      - "3000"
-      - "4000"
-      - "5000"
-```
-@z
-
-@x
-In the case of `environment`, `labels`, `volumes`, and `devices`, Compose
-"merges" entries together with locally defined values taking precedence. For
-`environment` and `labels`, the environment variable or label name determines
-which value is used:
-@y
-In the case of `environment`, `labels`, `volumes`, and `devices`, Compose
-"merges" entries together with locally defined values taking precedence. For
-`environment` and `labels`, the environment variable or label name determines
-which value is used:
-@z
-
-@x
-original service:
-@y
-original service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    environment:
-      - FOO=original
-      - BAR=original
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    environment:
-      - FOO=original
-      - BAR=original
-```
-@z
-
-@x
-local service:
-@y
-local service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    environment:
-      - BAR=local
-      - BAZ=local
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    environment:
-      - BAR=local
-      - BAZ=local
-```
-@z
-
-@x
-result:
-@y
-result:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    environment:
-      - FOO=original
-      - BAR=local
-      - BAZ=local
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    environment:
-      - FOO=original
-      - BAR=local
-      - BAZ=local
-```
-@z
-
-@x
-Entries for `volumes` and `devices` are merged using the mount path in the
-container:
-@y
-Entries for `volumes` and `devices` are merged using the mount path in the
-container:
-@z
-
-@x
-original service:
-@y
-original service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    volumes:
-      - ./original:/foo
-      - ./original:/bar
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    volumes:
-      - ./original:/foo
-      - ./original:/bar
-```
-@z
-
-@x
-local service:
-@y
-local service:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    volumes:
-      - ./local:/bar
-      - ./local:/baz
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    volumes:
-      - ./local:/bar
-      - ./local:/baz
-```
-@z
-
-@x
-result:
-@y
-result:
-@z
-
-@x
-```yaml
-services:
-  myservice:
-    # ...
-    volumes:
-      - ./original:/foo
-      - ./local:/bar
-      - ./local:/baz
-```
-@y
-```yaml
-services:
-  myservice:
-    # ...
-    volumes:
-      - ./original:/foo
-      - ./local:/bar
-      - ./local:/baz
-```
-@z
-
-@x
-For more merging rules, see [Merge and override](/reference/compose-file/merge.md) in the Compose Specification. 
-@y
-For more merging rules, see [Merge and override](reference/compose-file/merge.md) in the Compose Specification. 
-@z
-
-@x
 ## Example
 @y
 ## Example
@@ -805,10 +789,10 @@ When you run `docker compose up` it reads the overrides automatically.
 
 @x
 To use this Compose app in a production environment, another override file is created, which might be stored in a different git
-repo or managed by a different team.
+repository or managed by a different team.
 @y
 To use this Compose app in a production environment, another override file is created, which might be stored in a different git
-repo or managed by a different team.
+repository or managed by a different team.
 @z
 
 @x
