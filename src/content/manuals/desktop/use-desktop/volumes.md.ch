@@ -22,7 +22,7 @@ which volumes are being used as well as inspect the files and folders in your
 volumes.
 @y
 The **Volumes** view in Docker Desktop Dashboard lets you create, delete, and perform
-other actions on your [volumes](/manuals/engine/storage/volumes.md). You can also see
+other actions on your [volumes](manuals/engine/storage/volumes.md). You can also see
 which volumes are being used as well as inspect the files and folders in your
 volumes.
 @z
