@@ -117,15 +117,21 @@ In this hands-on guide, you'll unlock the power of multi-stage builds to create 
 @z
 
 @x
-2. Open this [pre-initialized project](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.0-M3&packaging=jar&jvmVersion=21&groupId=com.example&artifactId=spring-boot-docker&name=spring-boot-docker&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-boot-docker&dependencies=web) to generate a ZIP file. Here’s how that looks:
+2. [Download and install](https://www.oracle.com/java/technologies/downloads/) Java.
 @y
-2. Open this [pre-initialized project](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.0-M3&packaging=jar&jvmVersion=21&groupId=com.example&artifactId=spring-boot-docker&name=spring-boot-docker&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-boot-docker&dependencies=web) to generate a ZIP file. Here’s how that looks:
+2. [Download and install](https://www.oracle.com/java/technologies/downloads/) Java.
 @z
 
 @x
-    ![A screenshot of Spring Initializr tool selected with Java 21, Spring Web and Spring Boot 3.3.0](images/spring-initializr.webp?border=true)
+3. Open this [pre-initialized project](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.4.0-M3&packaging=jar&jvmVersion=21&groupId=com.example&artifactId=spring-boot-docker&name=spring-boot-docker&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-boot-docker&dependencies=web) to generate a ZIP file. Here’s how that looks:
 @y
-    ![A screenshot of Spring Initializr tool selected with Java 21, Spring Web and Spring Boot 3.3.0](images/spring-initializr.webp?border=true)
+3. Open this [pre-initialized project](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.4.0-M3&packaging=jar&jvmVersion=21&groupId=com.example&artifactId=spring-boot-docker&name=spring-boot-docker&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.spring-boot-docker&dependencies=web) to generate a ZIP file. Here’s how that looks:
+@z
+
+@x
+    ![A screenshot of Spring Initializr tool selected with Java 21, Spring Web and Spring Boot 3.4.0](images/multi-stage-builds-spring-initializer.webp?border=true)
+@y
+    ![A screenshot of Spring Initializr tool selected with Java 21, Spring Web and Spring Boot 3.4.0](images/multi-stage-builds-spring-initializer.webp?border=true)
 @z
 
 @x
@@ -147,9 +153,9 @@ In this hands-on guide, you'll unlock the power of multi-stage builds to create 
 @z
 
 @x
-3. Navigate the project directory. Once you unzip the file, you'll see the following project directory structure:
+4. Navigate the project directory. Once you unzip the file, you'll see the following project directory structure:
 @y
-3. Navigate the project directory. Once you unzip the file, you'll see the following project directory structure:
+4. Navigate the project directory. Once you unzip the file, you'll see the following project directory structure:
 @z
 
 % snip text...
@@ -173,9 +179,9 @@ In this hands-on guide, you'll unlock the power of multi-stage builds to create 
 @z
 
 @x
-4. Create a RESTful web service that displays "Hello World!". 
+5. Create a RESTful web service that displays "Hello World!". 
 @y
-4. Create a RESTful web service that displays "Hello World!". 
+5. Create a RESTful web service that displays "Hello World!". 
 @z
 
 @x

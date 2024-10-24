@@ -241,7 +241,7 @@ copyfiles = \
 	container_image_layer_reuse.webp \
 	container_image_layers.webp      \
 	image_layers.webp                \
-	spring-initializr.webp
+	multi-stage-builds-spring-initializer.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

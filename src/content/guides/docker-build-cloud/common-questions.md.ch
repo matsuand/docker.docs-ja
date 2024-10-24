@@ -72,20 +72,9 @@ Docker Build Cloud 互換のクライアント (buildx) をインストールす
 @z
 
 @x
-You receive 200 minutes per month per purchased seat. If you are also a Docker
-subscriber (Personal, Pro, Team, Business), you will also receive your included
-build minutes from that plan.
+Pricing details for Docker Build Cloud can be found on the [pricing page](https://www.docker.com/pricing/).
 @y
-購入したシートごとに毎月 200 分まで利用できます。
-Docker 購入者 (Personal, Pro, Team, Business) であればさらに、そのプランが提供するビルド時間が追加されます。
-@z
-
-@x
-For example, if a Docker Team customer purchases 5 Build Cloud Team seats, they
-will have 400 minutes from their Docker Team plan plus 1000 minutes (200 min/mo * 5 seats) 
-for a total of 1400 minutes per month.
-@y
-たとえば Docker Team の購入者が Build Cloud のチームシートを 5 つ購入しているとすると、Docker チームから提供される 400 分に 1,000 分 (200 分/mo × 5 シート) が加わり、合計で毎月 1,400 分となります。
+Docker Build Cloud の価格については [価格のページ](https://www.docker.com/pricing/) を参照してください。
 @z
 
 @x
