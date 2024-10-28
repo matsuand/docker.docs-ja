@@ -398,11 +398,11 @@ args:
 @z
 
 @x
-When the value supplied is a relative path, it is interpreted as relative to the location of the Compose file.
+When the value supplied is a relative path, it is interpreted as relative to the project directory.
 Compose warns you about the absolute path used to define the build context as those prevent the Compose file
 from being portable.
 @y
-When the value supplied is a relative path, it is interpreted as relative to the location of the Compose file.
+When the value supplied is a relative path, it is interpreted as relative to the project directory.
 Compose warns you about the absolute path used to define the build context as those prevent the Compose file
 from being portable.
 @z

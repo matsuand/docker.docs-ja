@@ -582,9 +582,9 @@ To start the frontend service, open a new terminal and follow these steps:
 @z
 
 @x
-Now that you have learnt how to connect a non-containerized Node.js application to LocalStack, it's time to explore the necessary changes to run the complete application stack in a containerised environment. To achieve this, you will create a Compose file specifying all required services - frontend, backend, database, and LocalStack.
+Now that you have learnt how to connect a non-containerized Node.js application to LocalStack, it's time to explore the necessary changes to run the complete application stack in a containerized environment. To achieve this, you will create a Compose file specifying all required services - frontend, backend, database, and LocalStack.
 @y
-Now that you have learnt how to connect a non-containerized Node.js application to LocalStack, it's time to explore the necessary changes to run the complete application stack in a containerised environment. To achieve this, you will create a Compose file specifying all required services - frontend, backend, database, and LocalStack.
+Now that you have learnt how to connect a non-containerized Node.js application to LocalStack, it's time to explore the necessary changes to run the complete application stack in a containerized environment. To achieve this, you will create a Compose file specifying all required services - frontend, backend, database, and LocalStack.
 @z
 
 @x

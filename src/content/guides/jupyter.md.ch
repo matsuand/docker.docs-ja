@@ -293,9 +293,9 @@ notebooks outside of the container, you can use a [volume](__SUBDIR__/engine/sto
 @z
 
 @x
-### Run a JupterLab container with a volume
+### Run a JupyterLab container with a volume
 @y
-### Run a JupterLab container with a volume
+### Run a JupyterLab container with a volume
 @z
 
 @x

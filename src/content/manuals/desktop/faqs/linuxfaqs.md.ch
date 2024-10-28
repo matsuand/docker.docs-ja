@@ -100,21 +100,33 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 @x
 Docker Desktop for Linux uses [VirtioFS](https://virtio-fs.gitlab.io/) as the
 default (and currently only) mechanism to enable file sharing between the host
-and Docker Desktop VM. In order not to require elevated privileges, without
-unnecessarily restricting operations on the shared files, Docker Desktop runs
-the file sharing service (`virtiofsd`) inside a user namespace (see
-`user_namespaces(7)`) with UID and GID mapping configured. As a result Docker
-Desktop relies on the host being configured to enable the current user to use
-subordinate ID delegation. For this to be true `/etc/subuid` (see `subuid(5)`)
-and `/etc/subgid` (see `subgid(5)`) must be present. Docker Desktop only
-supports subordinate ID delegation configured via files. Docker Desktop maps the
-current user ID and GID to 0 in the containers. It uses the first entry
-corresponding to the current user in `/etc/subuid` and `/etc/subgid` to set up
-mappings for IDs above 0 in the containers.
+and Docker Desktop VM. 
 @y
 Docker Desktop for Linux uses [VirtioFS](https://virtio-fs.gitlab.io/) as the
 default (and currently only) mechanism to enable file sharing between the host
-and Docker Desktop VM. In order not to require elevated privileges, without
+and Docker Desktop VM. 
+@z
+
+@x
+{{< accordion title="Additional information for Docker Desktop version 4.34 and earlier" >}}
+@y
+{{< accordion title="Additional information for Docker Desktop version 4.34 and earlier" >}}
+@z
+
+@x
+In order not to require elevated privileges, without
+unnecessarily restricting operations on the shared files, Docker Desktop runs
+the file sharing service (`virtiofsd`) inside a user namespace (see
+`user_namespaces(7)`) with UID and GID mapping configured. As a result Docker
+Desktop relies on the host being configured to enable the current user to use
+subordinate ID delegation. For this to be true `/etc/subuid` (see `subuid(5)`)
+and `/etc/subgid` (see `subgid(5)`) must be present. Docker Desktop only
+supports subordinate ID delegation configured via files. Docker Desktop maps the
+current user ID and GID to 0 in the containers. It uses the first entry
+corresponding to the current user in `/etc/subuid` and `/etc/subgid` to set up
+mappings for IDs above 0 in the containers.
+@y
+In order not to require elevated privileges, without
 unnecessarily restricting operations on the shared files, Docker Desktop runs
 the file sharing service (`virtiofsd`) inside a user namespace (see
 `user_namespaces(7)`) with UID and GID mapping configured. As a result Docker
@@ -209,6 +221,12 @@ a user with a UID of 100999. This has the unfortunate side effect of preventing
 easy access to such a file on the host. The problem is resolved by creating
 a group with the new GID and adding our user to it, or by setting a recursive
 ACL (see `setfacl(1)`) for folders shared with the Docker Desktop VM.
+@z
+
+@x
+{{< /accordion >}}
+@y
+{{< /accordion >}}
 @z
 
 @x

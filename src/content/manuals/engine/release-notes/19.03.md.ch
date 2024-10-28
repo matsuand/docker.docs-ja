@@ -102,9 +102,9 @@ linkTitle: Engine v19.03
 @z
 
 @x
-- Return correct errors instead of spurrious -EINVAL [moby/moby#41293](https://github.com/moby/moby/pull/41293)
+- Return correct errors instead of spurious -EINVAL [moby/moby#41293](https://github.com/moby/moby/pull/41293)
 @y
-- Return correct errors instead of spurrious -EINVAL [moby/moby#41293](https://github.com/moby/moby/pull/41293)
+- Return correct errors instead of spurious -EINVAL [moby/moby#41293](https://github.com/moby/moby/pull/41293)
 @z
 
 @x

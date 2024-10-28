@@ -65,10 +65,10 @@ To create an exception for an image, you can:
 
 @x
 - Create an exception in the [GUI](/manuals/scout/how-tos/create-exceptions-gui.md) of
-  Docker Scout Dashboard.
+  Docker Scout Dashboard or Docker Desktop.
 @y
 - Create an exception in the [GUI](manuals/scout/how-tos/create-exceptions-gui.md) of
-  Docker Scout Dashboard.
+  Docker Scout Dashboard or Docker Desktop.
 @z
 
 @x
@@ -80,15 +80,15 @@ To create an exception for an image, you can:
 @z
 
 @x
-The recommended way to create exceptions is to use Docker Scout Dashboard. The
-GUI provides a user-friendly interface for creating exceptions. It also lets
-you create exceptions for multiple images, or your entire organization, all at
-once.
+The recommended way to create exceptions is to use Docker Scout Dashboard or
+Docker Desktop. The GUI provides a user-friendly interface for creating
+exceptions. It also lets you create exceptions for multiple images, or your
+entire organization, all at once.
 @y
-The recommended way to create exceptions is to use Docker Scout Dashboard. The
-GUI provides a user-friendly interface for creating exceptions. It also lets
-you create exceptions for multiple images, or your entire organization, all at
-once.
+The recommended way to create exceptions is to use Docker Scout Dashboard or
+Docker Desktop. The GUI provides a user-friendly interface for creating
+exceptions. It also lets you create exceptions for multiple images, or your
+entire organization, all at once.
 @z
 
 @x
@@ -120,9 +120,9 @@ To view exceptions for images, you need to have the appropriate permissions.
 @z
 
 @x
-### View exceptions in Docker Scout Dashboard
+### View exceptions in Docker Scout Dashboard or Docker Desktop
 @y
-### View exceptions in Docker Scout Dashboard
+### View exceptions in Docker Scout Dashboard or Docker Desktop
 @z
 
 @x

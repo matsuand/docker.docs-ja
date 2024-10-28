@@ -11,23 +11,23 @@
 % heading.html に受け渡す dict の第三引数追加
 
 @x {{ T "Description" }}
-          <th class="text-left w-32">Description</th>
+            <th class="text-left w-32">Description</th>
 @y
-          <th class="text-left w-32">{{ T "Description" }}</th>
+            <th class="text-left w-32">{{ T "Description" }}</th>
 @z
 
 @x {{ T "Usage" }}
-          <th class="text-left w-32">Usage</th>
+            <th class="text-left w-32">Usage</th>
 @y
-          <th class="text-left w-32">{{ T "Usage" }}</th>
+            <th class="text-left w-32">{{ T "Usage" }}</th>
 @z
 
 @x {{ T "Aliases" }}
-            <span>Aliases</span>
-            {{ partialCached "tooltip.html" "An alias is a short or memorable alternative for a longer command." "cli-alias" }}
+              <span>Aliases</span>
+              {{ partialCached "tooltip.html" "An alias is a short or memorable alternative for a longer command." "cli-alias" }}
 @y
-            <span>{{ T "Aliases" }}</span>
-            {{ partialCached "tooltip.html" "エイリアスとは長いコマンドに代わって覚えておくべき短めのコマンドのことです。" "cli-alias" }}
+              <span>{{ T "Aliases" }}</span>
+              {{ partialCached "tooltip.html" "エイリアスとは長いコマンドに代わって覚えておくべき短めのコマンドのことです。" "cli-alias" }}
 @z
 
 @x
@@ -111,55 +111,45 @@ can be removed entirely in a future release.
 @z
 
 @x
-        <table>
-          <thead>
-            <tr>
-              <th>Option</th>
-              <th>Default</th>
-              <th>Description</th>
-            </tr>
-          </thead>
+                <th class="p-2">Option</th>
+                <th class="p-2">Default</th>
+                <th class="p-2">Description</th>
 @y
-        <table>
-          <thead>
-            <tr>
-              <th>{{ T "Option" }}</th>
-              <th>{{ T "Default" }}</th>
-              <th>{{ T "Description" }}</th>
-            </tr>
-          </thead>
+                <th class="p-2">{{ T "Option" }}</th>
+                <th class="p-2">{{ T "Default" }}</th>
+                <th class="p-2">{{ T "Description" }}</th>
 @z
 
 @x "以上"
-                  {{ with .min_api_version }}
-                    {{ partialCached "components/badge.html" (dict "color" "blue" "content" (printf "API %s+" .)) "api" . }}
+                    {{ with .min_api_version }}
+                      {{ partialCached "components/badge.html" (dict "color" "blue" "content" (printf "API %s+" .)) "api" . }}
 @y
-                  {{ with .min_api_version }}
-                    {{ partialCached "components/badge.html" (dict "color" "blue" "content" (printf "API %s 以上" .)) "api" . }}
+                    {{ with .min_api_version }}
+                      {{ partialCached "components/badge.html" (dict "color" "blue" "content" (printf "API %s 以上" .)) "api" . }}
 @z
 
 @x "非推奨"
-                  {{ with .deprecated }}
-                    {{ partialCached "components/badge.html" (dict "color" "red" "content" "Deprecated") "deprecated" }}
+                    {{ with .deprecated }}
+                      {{ partialCached "components/badge.html" (dict "color" "red" "content" "Deprecated") "deprecated" }}
 @y
-                  {{ with .deprecated }}
-                    {{ partialCached "components/badge.html" (dict "color" "red" "content" "非推奨") "deprecated" }}
+                    {{ with .deprecated }}
+                      {{ partialCached "components/badge.html" (dict "color" "red" "content" "非推奨") "deprecated" }}
 @z
 
 @x "試験的"
-                  {{ with .experimental }}
-                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (daemon)") "exp" }}
+                    {{ with .experimental }}
+                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (daemon)") "exp" }}
 @y
-                  {{ with .experimental }}
-                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (デーモン)") "exp" }}
+                    {{ with .experimental }}
+                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (デーモン)") "exp" }}
 @z
 
 @x "試験的"
-                  {{ with .experimentalcli }}
-                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (CLI)") "exp-cli" }}
+                    {{ with .experimentalcli }}
+                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (CLI)") "exp-cli" }}
 @y
-                  {{ with .experimentalcli }}
-                    {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (CLI)") "exp-cli" }}
+                    {{ with .experimentalcli }}
+                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (CLI)") "exp-cli" }}
 @z
 
 @x (T "Examples") ／dict 第三引数追加

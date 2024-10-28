@@ -5,24 +5,24 @@
 
 @x
 title: Create an exception using the GUI
-description: Create an exception for a vulnerability in an image using the Docker Scout Dashboard.
-keywords: Docker, Docker Scout, vulnerability, exception, create, GUI
+description: Create an exception for a vulnerability in an image using the Docker Scout Dashboard or Docker Desktop.
+keywords: Docker, Docker Scout, Docker Desktop, vulnerability, exception, create, GUI
 @y
 title: Create an exception using the GUI
-description: Create an exception for a vulnerability in an image using the Docker Scout Dashboard.
-keywords: Docker, Docker Scout, vulnerability, exception, create, GUI
+description: Create an exception for a vulnerability in an image using the Docker Scout Dashboard or Docker Desktop.
+keywords: Docker, Docker Scout, Docker Desktop, vulnerability, exception, create, GUI
 @z
 
 @x
-The Docker Scout Dashboard provides a user-friendly interface for creating
-[exceptions](/manuals/scout/explore/exceptions.md) for vulnerabilities found in
-container images. Exceptions let you acknowledge accepted risks or address
-false positives in image analysis.
+The Docker Scout Dashboard and Docker Desktop provide a user-friendly interface
+for creating [exceptions](/manuals/scout/explore/exceptions.md) for
+vulnerabilities found in container images. Exceptions let you acknowledge
+accepted risks or address false positives in image analysis.
 @y
-The Docker Scout Dashboard provides a user-friendly interface for creating
-[exceptions](manuals/scout/explore/exceptions.md) for vulnerabilities found in
-container images. Exceptions let you acknowledge accepted risks or address
-false positives in image analysis.
+The Docker Scout Dashboard and Docker Desktop provide a user-friendly interface
+for creating [exceptions](manuals/scout/explore/exceptions.md) for
+vulnerabilities found in container images. Exceptions let you acknowledge
+accepted risks or address false positives in image analysis.
 @z
 
 @x
@@ -32,13 +32,13 @@ false positives in image analysis.
 @z
 
 @x
-To create an in the Docker Scout Dashboard, you need a Docker account with
-**Editor** or **Owner** permissions for the Docker organization that owns the
-image.
+To create an in the Docker Scout Dashboard or Docker Desktop, you need a Docker
+account with **Editor** or **Owner** permissions for the Docker organization
+that owns the image.
 @y
-To create an in the Docker Scout Dashboard, you need a Docker account with
-**Editor** or **Owner** permissions for the Docker organization that owns the
-image.
+To create an in the Docker Scout Dashboard or Docker Desktop, you need a Docker
+account with **Editor** or **Owner** permissions for the Docker organization
+that owns the image.
 @z
 
 @x
@@ -49,10 +49,10 @@ image.
 
 @x
 To create an exception for a vulnerability in an image using the Docker Scout
-Dashboard:
+Dashboard or Docker Desktop:
 @y
 To create an exception for a vulnerability in an image using the Docker Scout
-Dashboard:
+Dashboard or Docker Desktop:
 @z
 
 @x

@@ -112,7 +112,7 @@ $ export DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE="repopassphrase123"
 @z
 
 @x
-# Initialise Repo and Push Delegation
+# Initialize Repo and Push Delegation
 $ docker trust signer add --key delegation.crt jeff registry.example.com/admin/demo
 Adding signer "jeff" to registry.example.com/admin/demo...
 Initializing signed repository for registry.example.com/admin/demo...
@@ -120,7 +120,7 @@ Successfully initialized "registry.example.com/admin/demo"
 Successfully added signer: registry.example.com/admin/demo
 ```
 @y
-# Initialise Repo and Push Delegation
+# Initialize Repo and Push Delegation
 $ docker trust signer add --key delegation.crt jeff registry.example.com/admin/demo
 Adding signer "jeff" to registry.example.com/admin/demo...
 Initializing signed repository for registry.example.com/admin/demo...

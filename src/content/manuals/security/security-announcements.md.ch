@@ -14,6 +14,44 @@ title: Docker security announcements
 @z
 
 @x
+## Docker Desktop 4.34.2 Security Update: CVE-2024-8695 and CVE-2024-8696
+@y
+## Docker Desktop 4.34.2 Security Update: CVE-2024-8695 and CVE-2024-8696
+@z
+
+@x
+_Last updated September 13, 2024_
+@y
+_Last updated September 13, 2024_
+@z
+
+@x
+Two remote code execution (RCE) vulnerabilities in Docker Desktop related to Docker Extensions were reported by [Cure53](https://cure53.de/) and were fixed on September 12 in the [4.34.2](https://docs.docker.com/desktop/release-notes/#4342) release.
+@y
+Two remote code execution (RCE) vulnerabilities in Docker Desktop related to Docker Extensions were reported by [Cure53](https://cure53.de/) and were fixed on September 12 in the [4.34.2](https://docs.docker.com/desktop/release-notes/#4342) release.
+@z
+
+@x
+- [CVE-2024-8695](https://www.cve.org/cverecord?id=CVE-2024-8695): A remote code execution (RCE) vulnerability via crafted extension description/changelog could be abused by a malicious extension in Docker Desktop before 4.34.2. [Critical]
+- [CVE-2024-8696](https://www.cve.org/cverecord?id=CVE-2024-8696): A remote code execution (RCE) vulnerability via crafted extension publisher-url/additional-urls could be abused by a malicious extension in Docker Desktop before 4.34.2. [High]
+@y
+- [CVE-2024-8695](https://www.cve.org/cverecord?id=CVE-2024-8695): A remote code execution (RCE) vulnerability via crafted extension description/changelog could be abused by a malicious extension in Docker Desktop before 4.34.2. [Critical]
+- [CVE-2024-8696](https://www.cve.org/cverecord?id=CVE-2024-8696): A remote code execution (RCE) vulnerability via crafted extension publisher-url/additional-urls could be abused by a malicious extension in Docker Desktop before 4.34.2. [High]
+@z
+
+@x
+No existing extensions exploiting the vulnerabilities were found in the Extensions Marketplace. The Docker team will be closely monitoring and diligently reviewing any requests for publishing new extensions.
+@y
+No existing extensions exploiting the vulnerabilities were found in the Extensions Marketplace. The Docker team will be closely monitoring and diligently reviewing any requests for publishing new extensions.
+@z
+
+@x
+We strongly encourage you to update to Docker Desktop [4.34.2](https://docs.docker.com/desktop/release-notes/#4342). If you are unable to update promptly, you can [disable Docker Extensions](https://docs.docker.com/extensions/settings-feedback/#turn-on-or-turn-off-extensions) as a workaround.
+@y
+We strongly encourage you to update to Docker Desktop [4.34.2](https://docs.docker.com/desktop/release-notes/#4342). If you are unable to update promptly, you can [disable Docker Extensions](https://docs.docker.com/extensions/settings-feedback/#turn-on-or-turn-off-extensions) as a workaround.
+@z
+
+@x
 ## Deprecation of password logins on CLI when SSO enforced
 @y
 ## Deprecation of password logins on CLI when SSO enforced
@@ -26,9 +64,9 @@ _Last updated July, 2024_
 @z
 
 @x
-When [SSO enforcement](/security/for-admins/single-sign-on/connect/#optional-enforce-sso) was first introduced, Docker provided a grace period to continue to let passwords be used on the Docker CLI when authenticating to Docker Hub. This was allowed so organizations could more easily use SSO enforcement. It is recommended that administrators configuring SSO encourage users using the CLI [to switch over to Personal Access Tokens](/security/for-admins/single-sign-on/#prerequisites) in anticipation of this grace period ending.
+When [SSO enforcement](/manuals/security/for-admins/single-sign-on/connect.md) was first introduced, Docker provided a grace period to continue to let passwords be used on the Docker CLI when authenticating to Docker Hub. This was allowed so organizations could more easily use SSO enforcement. It is recommended that administrators configuring SSO encourage users using the CLI [to switch over to Personal Access Tokens](/security/for-admins/single-sign-on/#prerequisites) in anticipation of this grace period ending.
 @y
-When [SSO enforcement](__SUBDIR__/security/for-admins/single-sign-on/connect/#optional-enforce-sso) was first introduced, Docker provided a grace period to continue to let passwords be used on the Docker CLI when authenticating to Docker Hub. This was allowed so organizations could more easily use SSO enforcement. It is recommended that administrators configuring SSO encourage users using the CLI [to switch over to Personal Access Tokens](__SUBDIR__/security/for-admins/single-sign-on/#prerequisites) in anticipation of this grace period ending.
+When [SSO enforcement](manuals/security/for-admins/single-sign-on/connect.md) was first introduced, Docker provided a grace period to continue to let passwords be used on the Docker CLI when authenticating to Docker Hub. This was allowed so organizations could more easily use SSO enforcement. It is recommended that administrators configuring SSO encourage users using the CLI [to switch over to Personal Access Tokens](__SUBDIR__/security/for-admins/single-sign-on/#prerequisites) in anticipation of this grace period ending.
 @z
 
 @x

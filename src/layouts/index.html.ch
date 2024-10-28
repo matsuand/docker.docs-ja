@@ -57,7 +57,7 @@
                       ガイド
 @z
 @x
-                  Get started and learn how Docker can optimize your development workflows
+                  Get started and learn how Docker can optimize your development workflows.
 @y
                   Docker が開発ワークフローをいかに最適化できるかを学びます。
 @z

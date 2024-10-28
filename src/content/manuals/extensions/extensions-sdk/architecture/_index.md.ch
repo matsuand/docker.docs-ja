@@ -28,12 +28,12 @@ Docker Extensions CLI.
 @x
 Extensions can be composed of three (optional) components:
 - A frontend (or User Interface): A web application displayed in a tab of the dashboard in Docker Desktop
-- A backend: One or many containerised services running in the Docker Desktop VM
+- A backend: One or many containerized services running in the Docker Desktop VM
 - Executables: Shell scripts or binaries that Docker Desktop copies on the host when installing the extension
 @y
 Extensions can be composed of three (optional) components:
 - A frontend (or User Interface): A web application displayed in a tab of the dashboard in Docker Desktop
-- A backend: One or many containerised services running in the Docker Desktop VM
+- A backend: One or many containerized services running in the Docker Desktop VM
 - Executables: Shell scripts or binaries that Docker Desktop copies on the host when installing the extension
 @z
 

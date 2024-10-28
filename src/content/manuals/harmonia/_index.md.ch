@@ -220,31 +220,47 @@ You should see the following:
 @z
 
 @x
-1. Run an Nginx container in the cloud engine:
-   ```console
-   $ docker run -d -p 8080:80 nginx
-   ```
-   This maps the container's port `80` to the host's port `8080`. If port `8080` is already in use on your host, you can specify a different port.
-2. View the Nginx welcome page. Navigate to [`http://localhost:8080/`](http://localhost:8080/).
-3. Verify the running container:
-   - In the **Containers** tab in the Docker Desktop Dashboard, you should see your Nginx container listed. 
-   - Alternatively, list all running containers in the cloud engine via the terminal:
-      ```console
-      $ docker ps
-      ```
+1.  Run an Nginx container in the cloud engine:
+    ```console
+    $ docker run -d --name cloudnginx -p 8080:80 nginx
+    ```
+    This maps the container's port `80` to the host's port `8080`. If port `8080` is already in use on your host, you can specify a different port.
 @y
-1. Run an Nginx container in the cloud engine:
-   ```console
-   $ docker run -d -p 8080:80 nginx
-   ```
-   This maps the container's port `80` to the host's port `8080`. If port `8080` is already in use on your host, you can specify a different port.
-2. View the Nginx welcome page. Navigate to [`http://localhost:8080/`](http://localhost:8080/).
-3. Verify the running container:
-   - In the **Containers** tab in the Docker Desktop Dashboard, you should see your Nginx container listed. 
-   - Alternatively, list all running containers in the cloud engine via the terminal:
-      ```console
-      $ docker ps
-      ```
+1.  Run an Nginx container in the cloud engine:
+    ```console
+    $ docker run -d --name cloudnginx -p 8080:80 nginx
+    ```
+    This maps the container's port `80` to the host's port `8080`. If port `8080` is already in use on your host, you can specify a different port.
+@z
+
+@x
+2.  View the Nginx welcome page. Navigate to [`http://localhost:8080/`](http://localhost:8080/).
+3.  Verify the running container:
+    -   In the **Containers** tab in the Docker Desktop Dashboard, you should see your Nginx container listed.
+    -   Alternatively, list all running containers in the cloud engine via the terminal:
+        ```console
+        $ docker ps
+        ```
+@y
+2.  View the Nginx welcome page. Navigate to [`http://localhost:8080/`](http://localhost:8080/).
+3.  Verify the running container:
+    -   In the **Containers** tab in the Docker Desktop Dashboard, you should see your Nginx container listed.
+    -   Alternatively, list all running containers in the cloud engine via the terminal:
+        ```console
+        $ docker ps
+        ```
+@z
+
+@x
+4.  Shut down the container:
+    ```console
+    $ docker kill cloudnginx
+    ```
+@y
+4.  Shut down the container:
+    ```console
+    $ docker kill cloudnginx
+    ```
 @z
 
 @x
@@ -438,17 +454,19 @@ Project Harmonia takes advantage of [Synchronized file shares](manuals/desktop/s
 @z
 
 @x
-1. Make sure your Docker context is set to `cloudengine`. 
-2. In the Docker Desktop Dashboard, navigate to the **Containers** view. 
-3. Select the **lock** icon in the **Ports** column of your running container next to `3000:3000`. 
-   This creates a publicly accessible URL that you can share with teammates. 
-4. Select the **copy** icon, to copy this URL. 
+1.  Make sure your Docker context is set to `cloudengine`.
+2.  In the Docker Desktop Dashboard, navigate to the **Containers** view.
+3.  If necessary, expand the application listing to show all of its containers.
+4.  Select the **lock** icon in the **Ports** column of your running container next to `3000:3000`.
+    This creates a publicly accessible URL that you can share with teammates.
+5.  Select the **copy** icon, to copy this URL.
 @y
-1. Make sure your Docker context is set to `cloudengine`. 
-2. In the Docker Desktop Dashboard, navigate to the **Containers** view. 
-3. Select the **lock** icon in the **Ports** column of your running container next to `3000:3000`. 
-   This creates a publicly accessible URL that you can share with teammates. 
-4. Select the **copy** icon, to copy this URL. 
+1.  Make sure your Docker context is set to `cloudengine`.
+2.  In the Docker Desktop Dashboard, navigate to the **Containers** view.
+3.  If necessary, expand the application listing to show all of its containers.
+4.  Select the **lock** icon in the **Ports** column of your running container next to `3000:3000`.
+    This creates a publicly accessible URL that you can share with teammates.
+5.  Select the **copy** icon, to copy this URL.
 @z
 
 @x

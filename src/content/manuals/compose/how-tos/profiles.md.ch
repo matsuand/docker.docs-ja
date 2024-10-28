@@ -12,10 +12,10 @@ linkTitle: Use service profiles
 @z
 
 @x
-desription: How to use profiles with Docker Compose
+description: How to use profiles with Docker Compose
 keywords: cli, compose, profile, profiles reference
 @y
-desription: How to use profiles with Docker Compose
+description: How to use profiles with Docker Compose
 keywords: cli, compose, profile, profiles reference
 @z
 

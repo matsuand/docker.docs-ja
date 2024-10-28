@@ -53,21 +53,11 @@ Docker Desktop のインストールを正常に行うためには以下が必�
 
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have a 64-bit version of either the LTS version Ubuntu Jammy Jellyfish 22.04, or the current non-LTS version. Docker Desktop is supported on `x86_64` (or `amd64`) architecture.
-   > [!NOTE]
-   >
-   > The latest Ubuntu 24.04 LTS is not yet supported. Docker Desktop will fail to start. Due to a change in how the latest Ubuntu release restricts the unprivileged namespaces, `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` needs to be run at least once. Refer to the [Ubuntu Blog](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces) for more details.
-@y
-- [一般的なシステム要件](_index.md#general-system-requirements) を満たしていること。
-- Have a 64-bit version of either the LTS version Ubuntu Jammy Jellyfish 22.04, or the current non-LTS version. Docker Desktop is supported on `x86_64` (or `amd64`) architecture.
-   > [!NOTE]
-   >
-   > The latest Ubuntu 24.04 LTS is not yet supported. Docker Desktop will fail to start. Due to a change in how the latest Ubuntu release restricts the unprivileged namespaces, `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` needs to be run at least once. Refer to the [Ubuntu Blog](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces) for more details.
-@z
-
-@x
+- Have an x86-64 system with Ubuntu 22.04, 24.04, or the latest non-LTS version.
 - For non-Gnome Desktop environments, `gnome-terminal` must be installed:
 @y
+- [一般的なシステム要件](_index.md#general-system-requirements) を満たしていること。
+- Have an x86-64 system with Ubuntu 22.04, 24.04, or the latest non-LTS version.
 - For non-Gnome Desktop environments, `gnome-terminal` must be installed:
 @z
 

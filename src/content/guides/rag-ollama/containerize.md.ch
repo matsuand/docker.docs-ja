@@ -2,25 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Containerize a RAG application
 linkTitle: Containerize your app
-weight: 10
-keywords: python, generative ai, genai, llm, ollama, containerize, intitialize, qdrant
-description: Learn how to containerize a RAG application.
-aliases:
-  - /guides/use-case/rag-ollama/containerize/
----
 @y
----
 title: Containerize a RAG application
 linkTitle: Containerize your app
-weight: 10
-keywords: python, generative ai, genai, llm, ollama, containerize, intitialize, qdrant
+@z
+
+@x
+keywords: python, generative ai, genai, llm, ollama, containerize, initialize, qdrant
 description: Learn how to containerize a RAG application.
-aliases:
-  - /guides/use-case/rag-ollama/containerize/
----
+@y
+keywords: python, generative ai, genai, llm, ollama, containerize, initialize, qdrant
+description: Learn how to containerize a RAG application.
 @z
 
 @x

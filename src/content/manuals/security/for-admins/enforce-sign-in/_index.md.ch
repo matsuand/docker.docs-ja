@@ -86,13 +86,11 @@ following occurs:
 @z
 
 @x
-[Enforcing
-SSO](/security/for-admins/single-sign-on/connect#optional-enforce-sso) and
+[Enforcing SSO](/manuals/security/for-admins/single-sign-on/connect.md) and
 enforcing sign-in are different features. The following table provides a
 description and benefits when using each feature.
 @y
-[Enforcing
-SSO](__SUBDIR__/security/for-admins/single-sign-on/connect#optional-enforce-sso) and
+[Enforcing SSO](manuals/security/for-admins/single-sign-on/connect.md) and
 enforcing sign-in are different features. The following table provides a
 description and benefits when using each feature.
 @z

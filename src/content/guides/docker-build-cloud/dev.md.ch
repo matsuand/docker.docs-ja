@@ -3,7 +3,7 @@
 
 @x
 title: "Demo: set up and use Docker Build Cloud in development"
-description: Learn how to use Docker Buld Cloud for local builds.
+description: Learn how to use Docker Build Cloud for local builds.
 @y
 title: "デモ: 開発工程での Docker Build Cloud の設定と利用"
 description: ローカルビルドに向けた Docker Build Cloud  の利用方法について学びます。

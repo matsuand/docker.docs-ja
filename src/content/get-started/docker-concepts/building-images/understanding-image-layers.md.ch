@@ -13,6 +13,21 @@ keywords: concepts, build, images, container, docker desktop
 description: This concept page will teach you about the layers of container image.
 @z
 
+@x
+summary: |
+  Have you ever wondered how images work? This guide will help you to
+  understand image layers - the fundamental building blocks of container
+  images. You'll gain a comprehensive understanding of how layers are created,
+  stacked, and utilized to ensure efficient and optimized containers.
+@y
+summary: |
+  イメージってどうやって動作するのか考えたことがありますか？
+  このガイドではイメージレイヤーについての理解を進めていきます。
+  イメージレイヤーとは、コンテナーイメージを構成するビルドブロックのことです。
+  このレイヤーがどのようにして生成され積み上げられるのかを簡単に理解していきます。
+  そしてコンテナーを効果的に最適化して利用する方法を学びます。
+@z
+
 % snip youtube...
 
 @x
@@ -207,7 +222,10 @@ In this first step, you will create your own base image that you will then use f
 @x
 5. Now that you have Node installed, you’re ready to save the changes you’ve made as a new image layer, from which you can start new containers or build new images. To do so, you will use the [`docker container commit`](https://docs.docker.com/reference/cli/docker/container/commit/) command. Run the following command in a new terminal:
 @y
-5. Now that you have Node installed, you’re ready to save the changes you’ve made as a new image layer, from which you can start new containers or build new images. To do so, you will use the [`docker container commit`](https://docs.docker.com/reference/cli/docker/container/commit/) command. Run the following command in a new terminal:
+5. Node をインストールしたので、新たなイメージレイヤーに対して行った変更を保存できるようになりました。
+   このレイヤーから新たなコンテナーを起動したり新たなイメージをビルドできるわけです。
+   これを実際に行うには [`docker container commit`](__SUBDIR__/reference/cli/docker/container/commit/) コマンドを実行します。
+   新たな端末画面を立ち上げて以下のコマンドを実行します。
 @z
 
 % snip command...
@@ -215,7 +233,7 @@ In this first step, you will create your own base image that you will then use f
 @x
 6. View the layers of your image using the `docker image history` command:
 @y
-6. View the layers of your image using the `docker image history` command:
+6. `docker image history` コマンドを実行して、イメージ内のレイヤーを確認します。
 @z
 
 % snip command...
@@ -223,7 +241,7 @@ In this first step, you will create your own base image that you will then use f
 @x
     You will see output similar to the following:
 @y
-    You will see output similar to the following:
+    以下と同様の出力が得られるはずです。
 @z
 
 % snip output...
@@ -231,7 +249,8 @@ In this first step, you will create your own base image that you will then use f
 @x
     Note the “Add node” comment on the top line. This layer contains the Node.js install you just made.
 @y
-    Note the “Add node” comment on the top line. This layer contains the Node.js install you just made.
+    最上位の行に“Add node”というコメントがあります。
+    このレイヤーには、先に行った Node.js のインストール内容が含まれているわけです。
 @z
 
 @x

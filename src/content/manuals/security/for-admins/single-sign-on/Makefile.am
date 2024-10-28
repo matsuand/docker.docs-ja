@@ -1,10 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = configure images
+SUBDIRS = images
 
 bases = \
 	_index.md       \
+	configure.md    \
 	connect.md      \
 	manage.md       \
 	troubleshoot.md

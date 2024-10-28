@@ -22,9 +22,9 @@ Single sign-on (SSO) lets users access Docker by authenticating using their iden
 @z
 
 @x
-## How it works
+## How SSO works
 @y
-## How it works
+## How SSO works
 @z
 
 @x
@@ -53,22 +53,22 @@ The following diagram shows how SSO operates and is managed in Docker Hub and Do
 
 @x
 SSO is configured using the following steps:
-1. Configure SSO by creating and verifying a domain in Docker.
-2. Create your SSO connection in Docker and your IdP.
+1. [Configure SSO](../single-sign-on/configure.md) by creating and verifying a domain in Docker.
+2. [Create your SSO connection](../single-sign-on/connect.md) in Docker and your IdP.
 3. Cross-connect Docker and your IdP.
 4. Test your connection.
 5. Provision users.
-6. Optional. Enforce sign-in.
-7. Manage your SSO configuration.
+6. Optional. [Enforce sign-in](../enforce-sign-in/_index.md).
+7. [Manage your SSO configuration](../single-sign-on/manage.md).
 @y
 SSO is configured using the following steps:
-1. Configure SSO by creating and verifying a domain in Docker.
-2. Create your SSO connection in Docker and your IdP.
+1. [Configure SSO](../single-sign-on/configure.md) by creating and verifying a domain in Docker.
+2. [Create your SSO connection](../single-sign-on/connect.md) in Docker and your IdP.
 3. Cross-connect Docker and your IdP.
 4. Test your connection.
 5. Provision users.
-6. Optional. Enforce sign-in.
-7. Manage your SSO configuration.
+6. Optional. [Enforce sign-in](../enforce-sign-in/_index.md).
+7. [Manage your SSO configuration](../single-sign-on/manage.md).
 @z
 
 @x
@@ -85,17 +85,17 @@ Once your SSO configuration is complete, a first-time user can sign in to Docker
 
 @x
 Before configuring SSO, ensure you meet the following prerequisites:
-* To ensure users are aware of the sign in change, you must first notify your company about the new SSO login procedures.
-* Verify that your members have Docker Desktop version 4.4.2 or later installed on their machines.
-* If your organization is planning to [enforce SSO](/security/for-admins/single-sign-on/connect/#optional-enforce-sso), members using the Docker CLI are required to [create a Personal Access Token (PAT)](/docker-hub/access-tokens/) to sign in. The PAT will be used instead of their username and password. Docker plans to deprecate signing in to the CLI with a password in the future, so using a PAT will be required to prevent issues with authentication. For more details see the [security announcement](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced).
+* Notify your company about the new SSO sign in procedures.
+* Verify that all users have Docker Desktop version 4.4.2 or later installed.
+* If your organization is planning to [enforce SSO](../enforce-sign-in/_index.md), members using the Docker CLI are required to [create a Personal Access Token (PAT)](/docker-hub/access-tokens/). The PAT will be used instead of their username and password. Docker plans to deprecate signing in to the CLI with a password in the future, so using a PAT will be required to prevent issues with authentication. For more details see the [security announcement](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced).
 * Ensure all your Docker users have a valid user on your IdP with the same email address as their Unique Primary Identifier (UPN).
 * Confirm that all CI/CD pipelines have replaced their passwords with PATs.
 * For your service accounts, add your additional domains or enable it in your IdP.
 @y
 Before configuring SSO, ensure you meet the following prerequisites:
-* To ensure users are aware of the sign in change, you must first notify your company about the new SSO login procedures.
-* Verify that your members have Docker Desktop version 4.4.2 or later installed on their machines.
-* If your organization is planning to [enforce SSO](__SUBDIR__/security/for-admins/single-sign-on/connect/#optional-enforce-sso), members using the Docker CLI are required to [create a Personal Access Token (PAT)](__SUBDIR__/docker-hub/access-tokens/) to sign in. The PAT will be used instead of their username and password. Docker plans to deprecate signing in to the CLI with a password in the future, so using a PAT will be required to prevent issues with authentication. For more details see the [security announcement](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced).
+* Notify your company about the new SSO sign in procedures.
+* Verify that all users have Docker Desktop version 4.4.2 or later installed.
+* If your organization is planning to [enforce SSO](../enforce-sign-in/_index.md), members using the Docker CLI are required to [create a Personal Access Token (PAT)](__SUBDIR__/docker-hub/access-tokens/). The PAT will be used instead of their username and password. Docker plans to deprecate signing in to the CLI with a password in the future, so using a PAT will be required to prevent issues with authentication. For more details see the [security announcement](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced).
 * Ensure all your Docker users have a valid user on your IdP with the same email address as their Unique Primary Identifier (UPN).
 * Confirm that all CI/CD pipelines have replaced their passwords with PATs.
 * For your service accounts, add your additional domains or enable it in your IdP.
@@ -108,9 +108,9 @@ Before configuring SSO, ensure you meet the following prerequisites:
 @z
 
 @x
-- Start [configuring SSO](configure/_index.md) in Docker
-- Explore the [FAQs](../../../security/faqs/single-sign-on/faqs.md)
+- Start [configuring SSO](../../for-admins/single-sign-on/configure.md) in Docker
+- Explore the [FAQs](../../../security/faqs/single-sign-on/_index.md)
 @y
-- Start [configuring SSO](configure/_index.md) in Docker
-- Explore the [FAQs](../../../security/faqs/single-sign-on/faqs.md)
+- Start [configuring SSO](../../for-admins/single-sign-on/configure.md) in Docker
+- Explore the [FAQs](../../../security/faqs/single-sign-on/_index.md)
 @z

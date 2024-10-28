@@ -19,16 +19,6 @@ title: Install Docker Desktop on RHEL
 @z
 
 @x
-{{% restricted title="Early Access" %}}
-Docker Desktop on RHEL is in [Early Access](/manuals/release-lifecycle.md).
-{{% /restricted %}}
-@y
-{{% restricted title="Early Access" %}}
-Docker Desktop on RHEL is in [Early Access](manuals/release-lifecycle.md).
-{{% /restricted %}}
-@z
-
-@x
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
@@ -63,9 +53,11 @@ To install Docker Desktop successfully, you must:
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
 - Have a 64-bit version of either RHEL 8 or RHEL 9.
+- Have a [Docker account](/manuals/accounts/create-account.md), as authentication is required for Docker Desktop on RHEL.
 @y
 - Meet the [general system requirements](_index.md#general-system-requirements).
 - Have a 64-bit version of either RHEL 8 or RHEL 9.
+- Have a [Docker account](manuals/accounts/create-account.md), as authentication is required for Docker Desktop on RHEL.
 @z
 
 @x
@@ -129,9 +121,9 @@ To install Docker Desktop on RHEL:
 % snip command...
 
 @x
-2. Download the latest RPM package.
+2. Download the latest [RPM package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
 @y
-2. Download the latest RPM package.
+2. Download the latest [RPM package](https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64).
 @z
 
 @x
@@ -181,24 +173,30 @@ The post-install script:
 @z
 
 @x
->**Tip**
+> [!IMPORTANT]
 >
-> To attach Red Hat subscription data to containers, see [Red Hat verified solution](https://access.redhat.com/solutions/5870841).
->
-> For example:
-> ```console
-> $ docker run --rm -it -v "/etc/pki/entitlement:/etc/pki/entitlement" -v "/etc/rhsm:/etc/rhsm-host" -v "/etc/yum.repos.d/redhat.repo:/etc/yum.repos.d/redhat.repo" registry.access.redhat.com/ubi9
-> ```
+> After launching Docker Desktop for RHEL, you must sign in to your Docker account to start using Docker Desktop.
 @y
->**Tip**
+> [!IMPORTANT]
+>
+> After launching Docker Desktop for RHEL, you must sign in to your Docker account to start using Docker Desktop.
+@z
+
+@x
+> [!TIP]
 >
 > To attach Red Hat subscription data to containers, see [Red Hat verified solution](https://access.redhat.com/solutions/5870841).
 >
 > For example:
-> ```console
-> $ docker run --rm -it -v "/etc/pki/entitlement:/etc/pki/entitlement" -v "/etc/rhsm:/etc/rhsm-host" -v "/etc/yum.repos.d/redhat.repo:/etc/yum.repos.d/redhat.repo" registry.access.redhat.com/ubi9
-> ```
+@y
+> [!TIP]
+>
+> To attach Red Hat subscription data to containers, see [Red Hat verified solution](https://access.redhat.com/solutions/5870841).
+>
+> For example:
 @z
+
+% snip command...
 
 @x
 ## Upgrade Docker Desktop

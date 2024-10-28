@@ -32,15 +32,15 @@ To navigate to **Settings** either:
 @z
 
 @x
-You can also locate the `settings.json` file at:
- - Mac: `~/Library/Group Containers/group.com.docker/settings.json`
- - Windows: `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json`
- - Linux: `~/.docker/desktop/settings.json`
+You can also locate the `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier) at:
+ - Mac: `~/Library/Group Containers/group.com.docker/settings-store.json`
+ - Windows: `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings-store.json`
+ - Linux: `~/.docker/desktop/settings-store.json`
 @y
-You can also locate the `settings.json` file at:
- - Mac: `~/Library/Group Containers/group.com.docker/settings.json`
- - Windows: `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings.json`
- - Linux: `~/.docker/desktop/settings.json`
+You can also locate the `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier) at:
+ - Mac: `~/Library/Group Containers/group.com.docker/settings-store.json`
+ - Windows: `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings-store.json`
+ - Linux: `~/.docker/desktop/settings-store.json`
 @z
 
 @x
@@ -146,33 +146,37 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- {{< badge color=blue text="Mac only" >}} **Use Virtualization framework**. Select to allow Docker Desktop to use the `virtualization.framework` instead of the `hypervisor.framework`.
+- {{< badge color=blue text="Mac only" >}} **Choose Virtual Machine Manager (VMM)**. Choose the Virtual Machine Manager for creating and managing the Docker Desktop Linux VM.
+  - Select **Docker VMM** for the latest and most performant Hypervisor/Virtual Machine Manager. This option is available only on Apple Silicon Macs running macOS 12.5 or later and is currently in Beta.
     > [!TIP]
     >
     > Turn this setting on to make Docker Desktop run faster.
+  - Alternatively, you can choose **Apple Virtualization framework**, **QEMU** (for Apple Silicon), or **HyperKit** (for Intel Macs). For macOS 12.5 and later, Apple Virtualization framework is the default setting.
 @y
-- {{< badge color=blue text="Mac only" >}} **Use Virtualization framework**. Select to allow Docker Desktop to use the `virtualization.framework` instead of the `hypervisor.framework`.
+- {{< badge color=blue text="Mac only" >}} **Choose Virtual Machine Manager (VMM)**. Choose the Virtual Machine Manager for creating and managing the Docker Desktop Linux VM.
+  - Select **Docker VMM** for the latest and most performant Hypervisor/Virtual Machine Manager. This option is available only on Apple Silicon Macs running macOS 12.5 or later and is currently in Beta.
     > [!TIP]
     >
     > Turn this setting on to make Docker Desktop run faster.
+  - Alternatively, you can choose **Apple Virtualization framework**, **QEMU** (for Apple Silicon), or **HyperKit** (for Intel Macs). For macOS 12.5 and later, Apple Virtualization framework is the default setting.
 @z
 
 @x
-- {{< badge color=blue text="Mac only" >}}**Choose file sharing implementation for your containers**. Choose whether you want to share files using **VirtioFS**, **gRPC FUSE**, or **osxfs (Legacy)**. VirtioFS is only available for macOS versions 12.5 and above, and is turned on by default.
-    >**Tip**
+- {{< badge color=blue text="Mac only" >}}**Choose file sharing implementation for your containers**. Choose whether you want to share files using **VirtioFS**, **gRPC FUSE**, or **osxfs (Legacy)**. VirtioFS is only available for macOS 12.5 and later, and is turned on by default.
+    > [!TIP]
     >
-    > Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206)
+    > Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206). It is the only file sharing implementation supported by Docker VMM.
 @y
-- {{< badge color=blue text="Mac only" >}}**Choose file sharing implementation for your containers**. Choose whether you want to share files using **VirtioFS**, **gRPC FUSE**, or **osxfs (Legacy)**. VirtioFS is only available for macOS versions 12.5 and above, and is turned on by default.
-    >**Tip**
+- {{< badge color=blue text="Mac only" >}}**Choose file sharing implementation for your containers**. Choose whether you want to share files using **VirtioFS**, **gRPC FUSE**, or **osxfs (Legacy)**. VirtioFS is only available for macOS 12.5 and later, and is turned on by default.
+    > [!TIP]
     >
-    > Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206)
+    > Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206). It is the only file sharing implementation supported by Docker VMM.
 @z
 
 @x
-- {{< badge color=blue text="Mac only" >}}**Use Rosetta for x86_64/amd64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have turned on **Virtualization framework** in the **General** settings tab. You must also be on macOS 13 or later.
+- {{< badge color=blue text="Mac only" >}}**Use Rosetta for x86_64/amd64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have selected **Apple Virtualization framework** as the Virtual Machine Manager. You must also be on macOS 13 or later.
 @y
-- {{< badge color=blue text="Mac only" >}}**Use Rosetta for x86_64/amd64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have turned on **Virtualization framework** in the **General** settings tab. You must also be on macOS 13 or later.
+- {{< badge color=blue text="Mac only" >}}**Use Rosetta for x86_64/amd64 emulation on Apple Silicon**. Turns on Rosetta to accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have selected **Apple Virtualization framework** as the Virtual Machine Manager. You must also be on macOS 13 or later.
 @z
 
 @x
@@ -645,6 +649,24 @@ The HTTPS proxy settings used for scanning images are set using the `HTTPS_PROXY
 > [!NOTE]
 >
 > If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
+@z
+
+@x
+> [!IMPORTANT]
+> You cannot configure the proxy settings using the Docker daemon configuration
+> file (`daemon.json`), and we recommend you do not configure the proxy
+> settings via the Docker CLI configuration file (`config.json`).
+>
+> To manage proxy configurations for Docker Desktop, configure the settings in
+> the Docker Desktop app or use [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
+@y
+> [!IMPORTANT]
+> You cannot configure the proxy settings using the Docker daemon configuration
+> file (`daemon.json`), and we recommend you do not configure the proxy
+> settings via the Docker CLI configuration file (`config.json`).
+>
+> To manage proxy configurations for Docker Desktop, configure the settings in
+> the Docker Desktop app or use [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
 @z
 
 @x

@@ -250,7 +250,8 @@ EXTRA_DIST = $(changes)
 copyfiles = \
 	render-blockquote.html \
 	render-heading.html    \
-	render-link.html
+	render-link.html       \
+	render-table.html
 
 all: all-am
 

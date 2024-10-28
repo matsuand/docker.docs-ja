@@ -34,9 +34,9 @@ No. You can only configure Docker SSO to work with a single IdP. A domain can on
 @z
 
 @x
-Yes. You must delete your existing IdP configuration in your Docker SSO connection and then [configure SSO using your new IdP](/security/for-admins/single-sign-on/configure/configure-idp/). If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
+Yes. You must delete your existing IdP configuration in your Docker SSO connection and then [configure SSO using your new IdP](/manuals/security/for-admins/single-sign-on/connect.md). If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
 @y
-Yes. You must delete your existing IdP configuration in your Docker SSO connection and then [configure SSO using your new IdP](__SUBDIR__/security/for-admins/single-sign-on/configure/configure-idp/). If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
+Yes. You must delete your existing IdP configuration in your Docker SSO connection and then [configure SSO using your new IdP](manuals/security/for-admins/single-sign-on/connect.md). If you had already turned on enforcement, you should turn off enforcement before updating the provider SSO connection.
 @z
 
 @x

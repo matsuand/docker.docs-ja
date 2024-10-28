@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-
 @x
 title: Docker Engine 18.06 release notes
 linkTitle: Engine v18.06
@@ -327,12 +325,12 @@ linkTitle: Engine v18.06
 
 @x
 * Allow user to specify default address pools for docker networks. [moby/moby#36396](https://github.com/moby/moby/pull/36396) [docker/cli#818](https://github.com/docker/cli/pull/818)
-* Adding logs for ipam state [doccker/libnetwork#2417](https://github.com/docker/libnetwork/pull/2147)
-* Fix race conditions in the overlay network driver [doccker/libnetwork#2143](https://github.com/docker/libnetwork/pull/2143)
-* Add wait time into xtables lock warning [doccker/libnetwork#2142](https://github.com/docker/libnetwork/pull/2142)
-* filter xtables lock warnings when firewalld is active [doccker/libnetwork#2135](https://github.com/docker/libnetwork/pull/2135)
-* Switch from x/net/context to context [doccker/libnetwork#2140](https://github.com/docker/libnetwork/pull/2140)
-* Adding a recovery mechanism for a split gossip cluster [doccker/libnetwork#2134](https://github.com/docker/libnetwork/pull/2134)
+* Adding logs for ipam state [docker/libnetwork#2417](https://github.com/docker/libnetwork/pull/2147)
+* Fix race conditions in the overlay network driver [docker/libnetwork#2143](https://github.com/docker/libnetwork/pull/2143)
+* Add wait time into xtables lock warning [docker/libnetwork#2142](https://github.com/docker/libnetwork/pull/2142)
+* filter xtables lock warnings when firewalld is active [docker/libnetwork#2135](https://github.com/docker/libnetwork/pull/2135)
+* Switch from x/net/context to context [docker/libnetwork#2140](https://github.com/docker/libnetwork/pull/2140)
+* Adding a recovery mechanism for a split gossip cluster [docker/libnetwork#2134](https://github.com/docker/libnetwork/pull/2134)
 * Running docker inspect on network attachment tasks now returns a full task object. [moby/moby#35246](https://github.com/moby/moby/pull/35246)
 * Some container/network cleanups. [moby/moby#37033](https://github.com/moby/moby/pull/37033)
 - Fix network inspect for overlay network. [moby/moby#37045](https://github.com/moby/moby/pull/37045)
@@ -340,12 +338,12 @@ linkTitle: Engine v18.06
 * Change log level from error to warning. [docker/engine#19](https://github.com/docker/engine/pull/19)
 @y
 * Allow user to specify default address pools for docker networks. [moby/moby#36396](https://github.com/moby/moby/pull/36396) [docker/cli#818](https://github.com/docker/cli/pull/818)
-* Adding logs for ipam state [doccker/libnetwork#2417](https://github.com/docker/libnetwork/pull/2147)
-* Fix race conditions in the overlay network driver [doccker/libnetwork#2143](https://github.com/docker/libnetwork/pull/2143)
-* Add wait time into xtables lock warning [doccker/libnetwork#2142](https://github.com/docker/libnetwork/pull/2142)
-* filter xtables lock warnings when firewalld is active [doccker/libnetwork#2135](https://github.com/docker/libnetwork/pull/2135)
-* Switch from x/net/context to context [doccker/libnetwork#2140](https://github.com/docker/libnetwork/pull/2140)
-* Adding a recovery mechanism for a split gossip cluster [doccker/libnetwork#2134](https://github.com/docker/libnetwork/pull/2134)
+* Adding logs for ipam state [docker/libnetwork#2417](https://github.com/docker/libnetwork/pull/2147)
+* Fix race conditions in the overlay network driver [docker/libnetwork#2143](https://github.com/docker/libnetwork/pull/2143)
+* Add wait time into xtables lock warning [docker/libnetwork#2142](https://github.com/docker/libnetwork/pull/2142)
+* filter xtables lock warnings when firewalld is active [docker/libnetwork#2135](https://github.com/docker/libnetwork/pull/2135)
+* Switch from x/net/context to context [docker/libnetwork#2140](https://github.com/docker/libnetwork/pull/2140)
+* Adding a recovery mechanism for a split gossip cluster [docker/libnetwork#2134](https://github.com/docker/libnetwork/pull/2134)
 * Running docker inspect on network attachment tasks now returns a full task object. [moby/moby#35246](https://github.com/moby/moby/pull/35246)
 * Some container/network cleanups. [moby/moby#37033](https://github.com/moby/moby/pull/37033)
 - Fix network inspect for overlay network. [moby/moby#37045](https://github.com/moby/moby/pull/37045)

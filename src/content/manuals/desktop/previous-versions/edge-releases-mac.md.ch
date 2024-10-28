@@ -1939,7 +1939,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 * Bug fixes and minor changes
-  - Use Simple NTP to minimise clock drift between the virtual machine and the host. Fixes [docker/for-mac#2076](https://github.com/docker/for-mac/issues/2076)
+  - Use Simple NTP to minimize clock drift between the virtual machine and the host. Fixes [docker/for-mac#2076](https://github.com/docker/for-mac/issues/2076)
   - Fix filesystem event notifications for Swarm services and those using the new-style --mount option. Fixes [docker/for-mac#2216](https://github.com/docker/for-mac/issues/2216), [docker/for-mac#2375](https://github.com/docker/for-mac/issues/2375)
   - Fix filesystem event delivery to Kubernetes pods when the path to the bind mount is a symlink.
   - Fix a race between calling stat on a file and calling close of a file descriptor referencing the file that could result in the stat failing with EBADF (often presented as "File not found"). Fixes [docker/for-mac#2870](https://github.com/docker/for-mac/issues/2870)
@@ -1948,7 +1948,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Diagnostics are run when diagnostics window is displayed; user is prompted to upload them when available.
 @y
 * Bug fixes and minor changes
-  - Use Simple NTP to minimise clock drift between the virtual machine and the host. Fixes [docker/for-mac#2076](https://github.com/docker/for-mac/issues/2076)
+  - Use Simple NTP to minimize clock drift between the virtual machine and the host. Fixes [docker/for-mac#2076](https://github.com/docker/for-mac/issues/2076)
   - Fix filesystem event notifications for Swarm services and those using the new-style --mount option. Fixes [docker/for-mac#2216](https://github.com/docker/for-mac/issues/2216), [docker/for-mac#2375](https://github.com/docker/for-mac/issues/2375)
   - Fix filesystem event delivery to Kubernetes pods when the path to the bind mount is a symlink.
   - Fix a race between calling stat on a file and calling close of a file descriptor referencing the file that could result in the stat failing with EBADF (often presented as "File not found"). Fixes [docker/for-mac#2870](https://github.com/docker/for-mac/issues/2870)
@@ -2072,11 +2072,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @x
 * Bug fixes and minor changes
   - Fix support for AUFS. Fixes [docker/for-win#1831](https://github.com/docker/for-win/issues/1831)
-  - Fix synchronisation between CLI `docker login` and GUI login.
+  - Fix synchronization between CLI `docker login` and GUI login.
 @y
 * Bug fixes and minor changes
   - Fix support for AUFS. Fixes [docker/for-win#1831](https://github.com/docker/for-win/issues/1831)
-  - Fix synchronisation between CLI `docker login` and GUI login.
+  - Fix synchronization between CLI `docker login` and GUI login.
 @z
 
 @x
@@ -2270,7 +2270,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Avoid hitting DNS timeouts when querying docker.for.mac.* when the upstream DNS servers are slow or missing.
   - Fix for `docker push` to an insecure registry. Fixes [docker/for-mac#2392](https://github.com/docker/for-mac/issues/2392)
   - Separate internal ports used to proxy HTTP and HTTPS content.
-  - If kubectl was already installed before Docker For Mac, restore the existing kubectl when sitching Kubernetes off in Docker for Mac.
+  - If kubectl was already installed before Docker For Mac, restore the existing kubectl when switching Kubernetes off in Docker for Mac.
   - Migration of Docker Toolbox images is not proposed anymore in Docker For Mac installer (still possible to migrate Toolbox images manually).
 @y
 * Bug fixes and minor changes
@@ -2283,7 +2283,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Avoid hitting DNS timeouts when querying docker.for.mac.* when the upstream DNS servers are slow or missing.
   - Fix for `docker push` to an insecure registry. Fixes [docker/for-mac#2392](https://github.com/docker/for-mac/issues/2392)
   - Separate internal ports used to proxy HTTP and HTTPS content.
-  - If kubectl was already installed before Docker For Mac, restore the existing kubectl when sitching Kubernetes off in Docker for Mac.
+  - If kubectl was already installed before Docker For Mac, restore the existing kubectl when switching Kubernetes off in Docker for Mac.
   - Migration of Docker Toolbox images is not proposed anymore in Docker For Mac installer (still possible to migrate Toolbox images manually).
 @z
 

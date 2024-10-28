@@ -104,8 +104,6 @@ AC_CONFIG_FILES([
 	src/content/guides/rag-ollama/Makefile
 	src/content/guides/ruby/Makefile
 	src/content/guides/rust/Makefile
-	src/content/guides/use-case/Makefile
-	src/content/guides/use-case/images/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/languages/Makefile
@@ -245,7 +243,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/for-admins/hardened-desktop/settings-management/Makefile
 	src/content/manuals/security/for-admins/provisioning/Makefile
 	src/content/manuals/security/for-admins/single-sign-on/Makefile
-	src/content/manuals/security/for-admins/single-sign-on/configure/Makefile
 	src/content/manuals/security/for-admins/single-sign-on/images/Makefile
 	src/content/manuals/security/for-developers/Makefile
 	src/content/manuals/security/for-developers/2fa/Makefile

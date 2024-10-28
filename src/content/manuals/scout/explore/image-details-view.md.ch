@@ -4,25 +4,17 @@
 % .md リンクへの (no slash) 対応
 
 @x
----
 title: Image details view
 keywords: scout, supply chain, vulnerabilities, packages, cves, image, tag, scan,
   analysis, analyze
-description: The Docker Scout image detail view analyzes images to show their heirachy,
+description: The Docker Scout image detail view analyzes images to show their hierarchy,
   layers, packages, and vulnerabilities
-aliases:
-  - /scout/image-details-view
----
 @y
----
 title: Image details view
 keywords: scout, supply chain, vulnerabilities, packages, cves, image, tag, scan,
   analysis, analyze
-description: The Docker Scout image detail view analyzes images to show their heirachy,
+description: The Docker Scout image detail view analyzes images to show their hierarchy,
   layers, packages, and vulnerabilities
-aliases:
-  - /scout/image-details-view
----
 @z
 
 @x

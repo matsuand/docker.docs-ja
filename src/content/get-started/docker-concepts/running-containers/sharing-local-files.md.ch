@@ -162,11 +162,11 @@ Read-only bind mounts let the container access the mounted files on the host for
 @z
 
 @x
-> **Synchronised File Share**
+> **Synchronized File Share**
 >
 > As your codebase grows larger, traditional methods of file sharing like bind mounts may become inefficient or slow, especially in development environments where frequent access to files is necessary. [Synchronized file shares](/desktop/synchronized-file-sharing/) improve bind mount performance by leveraging synchronized filesystem caches. This optimization ensures that file access between the host and virtual machine (VM) is fast and efficient.
 @y
-> **Synchronised File Share**
+> **Synchronized File Share**
 >
 > As your codebase grows larger, traditional methods of file sharing like bind mounts may become inefficient or slow, especially in development environments where frequent access to files is necessary. [Synchronized file shares](__SUBDIR__/desktop/synchronized-file-sharing/) improve bind mount performance by leveraging synchronized filesystem caches. This optimization ensures that file access between the host and virtual machine (VM) is fast and efficient.
 @z

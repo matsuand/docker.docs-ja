@@ -454,14 +454,14 @@ linkTitle: Engine v18.09
 * Modified names in the container name generator. [docker/engine#159](https://github.com/docker/engine/pull/159)
 * When copying an existing folder, xattr set errors when the target filesystem doesn't support xattr are now ignored. [docker/engine#135](https://github.com/docker/engine/pull/135)
 * Graphdriver: fixed "device" mode not being detected if "character-device" bit is set. [docker/engine#160](https://github.com/docker/engine/pull/160)
-* Fixed nil pointer derefence on failure to connect to containerd. [docker/engine#162](https://github.com/docker/engine/pull/162)
+* Fixed nil pointer dereference on failure to connect to containerd. [docker/engine#162](https://github.com/docker/engine/pull/162)
 * Deleted stale containerd object on start failure. [docker/engine#154](https://github.com/docker/engine/pull/154)
 @y
 * Updated to Go version 1.10.8.
 * Modified names in the container name generator. [docker/engine#159](https://github.com/docker/engine/pull/159)
 * When copying an existing folder, xattr set errors when the target filesystem doesn't support xattr are now ignored. [docker/engine#135](https://github.com/docker/engine/pull/135)
 * Graphdriver: fixed "device" mode not being detected if "character-device" bit is set. [docker/engine#160](https://github.com/docker/engine/pull/160)
-* Fixed nil pointer derefence on failure to connect to containerd. [docker/engine#162](https://github.com/docker/engine/pull/162)
+* Fixed nil pointer dereference on failure to connect to containerd. [docker/engine#162](https://github.com/docker/engine/pull/162)
 * Deleted stale containerd object on start failure. [docker/engine#154](https://github.com/docker/engine/pull/154)
 @z
 
@@ -954,7 +954,6 @@ supported at this time, but support will be removed in a future release.
 @x
 For more information on the list of deprecated flags and APIs, have a look at the [deprecation information](/engine/deprecated/) where you can find the target removal dates.
 @y
-For more information on the list of deprecated flags and APIs, have a look at the [deprecation information](__SUBDIR__/engine/deprecated/) where you can find the target removal dates.
 @z
 
 @x

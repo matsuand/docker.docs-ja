@@ -88,11 +88,11 @@ For additional details about supported attributes and SCIM, see [Docker Hub API 
 @x
 > [!IMPORTANT]
 >
-> SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../single-sign-on/configure/configure-idp.md#sso-attributes).
+> SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see
 @y
 > [!IMPORTANT]
 >
-> SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see [SSO attributes](../single-sign-on/configure/configure-idp.md#sso-attributes).
+> SSO uses Just-in-Time (JIT) provisioning by default. If you [enable SCIM](scim.md#set-up-scim), JIT values still overwrite the attribute values set by SCIM provisioning whenever users log in. To avoid conflicts, make sure your JIT values match your SCIM values. For more information, see
 @z
 
 @x
@@ -416,9 +416,9 @@ The external namespace to use to set up these attributes is `urn:ietf:params:sci
 @z
 
 @x
-If a user doesn't already have attributes set up, users who are added to the group will inherit these attributes upon provsioning.
+If a user doesn't already have attributes set up, users who are added to the group will inherit these attributes upon provisioning.
 @y
-If a user doesn't already have attributes set up, users who are added to the group will inherit these attributes upon provsioning.
+If a user doesn't already have attributes set up, users who are added to the group will inherit these attributes upon provisioning.
 @z
 
 @x

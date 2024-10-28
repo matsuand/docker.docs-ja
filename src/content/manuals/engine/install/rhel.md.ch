@@ -16,26 +16,6 @@ title: Install Docker Engine on RHEL
 @z
 
 @x
-{{% experimental %}}
-Support for Docker Engine on RHEL x86_64 and aarch64 is experimental.
-{{% /experimental %}}
-@y
-{{% experimental %}}
-Support for Docker Engine on RHEL x86_64 and aarch64 is experimental.
-{{% /experimental %}}
-@z
-
-@x
-{{% restricted title="Docker Desktop for Linux is also available for RHEL." %}}
-To get access, join the [Early Access Program](https://www.docker.com/docker-desktop-preview-program/).
-{{% /restricted %}}
-@y
-{{% restricted title="Docker Desktop for Linux is also available for RHEL." %}}
-To get access, join the [Early Access Program](https://www.docker.com/docker-desktop-preview-program/).
-{{% /restricted %}}
-@z
-
-@x
 To get started with Docker Engine on RHEL, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).

@@ -671,11 +671,11 @@ Docker build process can access any of the files located in the context.
 
 @x
 The build command optionally takes a `--tag` flag. This flag is used to label
-the image with a string value, which is easy for humans to read and recognise.
+the image with a string value, which is easy for humans to read and recognize.
 If you don't pass a `--tag`, Docker will use `latest` as the default value.
 @y
 The build command optionally takes a `--tag` flag. This flag is used to label
-the image with a string value, which is easy for humans to read and recognise.
+the image with a string value, which is easy for humans to read and recognize.
 If you don't pass a `--tag`, Docker will use `latest` as the default value.
 @z
 

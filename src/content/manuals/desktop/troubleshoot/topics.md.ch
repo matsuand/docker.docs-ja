@@ -226,9 +226,9 @@ In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performanc
 @z
 
 @x
-To continue using VPNKit, add `"networkType":"vpnkit"` to your `settings.json` file located at `~/Library/Group Containers/group.com.docker/settings.json`.
+To continue using VPNKit, add `"networkType":"vpnkit"` to your `settings-store.json` file located at `~/Library/Group Containers/group.com.docker/settings-store.json`.
 @y
-To continue using VPNKit, add `"networkType":"vpnkit"` to your `settings.json` file located at `~/Library/Group Containers/group.com.docker/settings.json`.
+To continue using VPNKit, add `"networkType":"vpnkit"` to your `settings-store.json` file located at `~/Library/Group Containers/group.com.docker/settings-store.json`.
 @z
 
 @x
@@ -722,9 +722,9 @@ Docker Desktop cannot start.
 @z
 
 @x
-To turn on nested virtualisation, see [Run Docker Desktop for Windows in a VM or VDI environment](../vm-vdi.md#turn-on-nested-virtualization).
+To turn on nested virtualization, see [Run Docker Desktop for Windows in a VM or VDI environment](../vm-vdi.md#turn-on-nested-virtualization).
 @y
-To turn on nested virtualisation, see [Run Docker Desktop for Windows in a VM or VDI environment](../vm-vdi.md#turn-on-nested-virtualization).
+To turn on nested virtualization, see [Run Docker Desktop for Windows in a VM or VDI environment](../vm-vdi.md#turn-on-nested-virtualization).
 @z
 
 @x

@@ -256,9 +256,13 @@ Select an organization from the drop-down to view a list of repositories for tha
 @z
 
 @x
-If you have enabled [Docker Scout](../../scout/_index.md) on the repositories, image analysis results appear next to the image tags.
+If you have enabled [Docker Scout](../../scout/_index.md) on the repositories,
+image analysis results (and [health scores](/manuals/scout/policy/scores.md) if
+your Docker organization is eligible) appear next to the image tags.
 @y
-If you have enabled [Docker Scout](../../scout/_index.md) on the repositories, image analysis results appear next to the image tags.
+If you have enabled [Docker Scout](../../scout/_index.md) on the repositories,
+image analysis results (and [health scores](manuals/scout/policy/scores.md) if
+your Docker organization is eligible) appear next to the image tags.
 @z
 
 @x

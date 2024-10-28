@@ -30,9 +30,9 @@ However, this option doesn't provide a preview of the extension before it's inst
 @z
 
 @x
-## Createa a share URL
+## Create a share URL
 @y
-## Createa a share URL
+## Create a share URL
 @z
 
 @x

@@ -3,11 +3,11 @@
 
 @x
 title: Package and release your extension
-description: Docker extension disctribution
+description: Docker extension distribution
 keywords: Docker, extensions, sdk, distribution
 @y
 title: Package and release your extension
-description: Docker extension disctribution
+description: Docker extension distribution
 keywords: Docker, extensions, sdk, distribution
 @z
 

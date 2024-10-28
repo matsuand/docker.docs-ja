@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Deploying Notary
@@ -25,15 +26,7 @@ The easiest way to deploy Notary Server is by using Docker Compose. To follow th
 1. Clone the Notary repository.
 @z
 
-@x
-   ```consolse
-   $ git clone https://github.com/theupdateframework/notary.git
-   ```
-@y
-   ```consolse
-   $ git clone https://github.com/theupdateframework/notary.git
-   ```
-@z
+% snip command...
 
 @x
 2. Build and start Notary Server with the sample certificates.
@@ -41,15 +34,7 @@ The easiest way to deploy Notary Server is by using Docker Compose. To follow th
 2. Build and start Notary Server with the sample certificates.
 @z
 
-@x
-   ```consolse
-   $ docker compose up -d 
-   ```
-@y
-   ```consolse
-   $ docker compose up -d 
-   ```
-@z
+% snip command...
 
 @x
    For more detailed documentation about how to deploy Notary Server, see the [instructions to run a Notary service](https://github.com/theupdateframework/notary/blob/master/docs/running_a_service.md) as well as [the Notary repository](https://github.com/theupdateframework/notary) for more information.

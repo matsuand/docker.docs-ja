@@ -712,10 +712,10 @@ import { createDockerDesktopClient } from "@docker/extension-api-client";
 @z
 
 @x
-//obtain docker destkop extension client
+//obtain docker desktop extension client
 const ddClient = createDockerDesktopClient();
 @y
-//obtain docker destkop extension client
+//obtain docker desktop extension client
 const ddClient = createDockerDesktopClient();
 @z
 

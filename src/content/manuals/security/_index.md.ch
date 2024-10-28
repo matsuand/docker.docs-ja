@@ -252,12 +252,12 @@ keywords: docker, docker hub, docker desktop, security
 @z
 
 @x
-- title: Supress CVEs with VEX
+- title: Suppress CVEs with VEX
   description: Learn how to suppress non-applicable or fixed vulnerabilities found in your images.
   icon: query_stats
   link: /scout/guides/vex/
 @y
-- title: Supress CVEs with VEX
+- title: Suppress CVEs with VEX
   description: Learn how to suppress non-applicable or fixed vulnerabilities found in your images.
   icon: query_stats
   link: __SUBDIR__/scout/guides/vex/

@@ -58,7 +58,7 @@ Docker Desktop のインストール手順については以下を参照して�
 | [Debian](debian.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |       |
 | [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
 | [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
-| [RHEL](rhel.md)                                |       🚧       |       🚧        |              |         |  ✅   |
+| [RHEL](rhel.md)                                |       ✅       |       ✅        |              |         |  ✅   |
 | [SLES](sles.md)                                |                |                 |              |         |  ✅   |
 | [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |
 | [Binaries](binaries.md)                        |       ✅       |       ✅        |      ✅      |         |       |
@@ -68,17 +68,11 @@ Docker Desktop のインストール手順については以下を参照して�
 | [CentOS](centos.md)                            |       ✅       |       ✅        |              |   ✅    |       |
 | [Debian](debian.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |       |
 | [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
-| [Raspberry Pi OS (32 ビット)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
-| [RHEL](rhel.md)                                |       🚧       |       🚧        |              |         |  ✅   |
+| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
+| [RHEL](rhel.md)                                |       ✅       |       ✅        |              |         |  ✅   |
 | [SLES](sles.md)                                |                |                 |              |         |  ✅   |
 | [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |
 | [バイナリー](binaries.md)                      |       ✅       |       ✅        |      ✅      |         |       |
-@z
-
-@x
-🚧 = Experimental
-@y
-🚧 = 試験的
 @z
 
 @x
