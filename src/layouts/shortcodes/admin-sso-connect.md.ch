@@ -63,7 +63,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 > - [Okta](https://help.okta.com/en-us/Content/Topics/Security/policies/configure-app-signon-policies.htm)
 > - [Entra ID (formerly Azure AD)](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
 >
-> Alternatively, see [Manage how users are provisioned](/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
+> Alternatively, see [Manage how users are provisioned](/security/for-admins/single-sign-on/manage/).
 @y
 > [!IMPORTANT]
 >
@@ -74,7 +74,7 @@ After you’ve completed the SSO configuration process in Docker, you can test t
 > - [Okta](https://help.okta.com/en-us/Content/Topics/Security/policies/configure-app-signon-policies.htm)
 > - [Entra ID (formerly Azure AD)](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
 >
-> Alternatively, see [Manage how users are provisioned](__SUBDIR__/security/for-admins/single-sign-on/manage/#manage-how-users-are-provisioned).
+> Alternatively, see [Manage how users are provisioned](__SUBDIR__/security/for-admins/single-sign-on/manage/).
 @z
 
 @x

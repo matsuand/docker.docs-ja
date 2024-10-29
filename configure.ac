@@ -104,6 +104,7 @@ AC_CONFIG_FILES([
 	src/content/guides/rag-ollama/Makefile
 	src/content/guides/ruby/Makefile
 	src/content/guides/rust/Makefile
+	src/content/guides/testcontainers-cloud/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/languages/Makefile

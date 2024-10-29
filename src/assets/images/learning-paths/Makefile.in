@@ -241,7 +241,8 @@ copyfiles = \
 	build-cloud.png \
 	compose.png     \
 	container-supported-development.png \
-	scout.png
+	scout.png                           \
+	testcontainers-cloud-learning-path.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

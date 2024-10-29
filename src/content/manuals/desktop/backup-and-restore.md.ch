@@ -22,11 +22,11 @@ computer, for example.
 @z
 
 @x
-> Should I back up my containers?
+> [!IMPORTANT]
 >
 > If you use volumes or bind-mounts to store your container data, backing up your containers may not be needed, but make sure to remember the options that were used when creating the container or use a [Docker Compose file](/reference/compose-file/_index.md) if you want to re-create your containers with the same configuration after re-installation.
 @y
-> Should I back up my containers?
+> [!IMPORTANT]
 >
 > If you use volumes or bind-mounts to store your container data, backing up your containers may not be needed, but make sure to remember the options that were used when creating the container or use a [Docker Compose file](reference/compose-file/_index.md) if you want to re-create your containers with the same configuration after re-installation.
 @z

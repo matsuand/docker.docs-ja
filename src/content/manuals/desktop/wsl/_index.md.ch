@@ -58,7 +58,7 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @z
 
 @x
->**Tip**
+> [!TIP]
 >
 > For a better experience on WSL, consider enabling the WSL
 > [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings)
@@ -66,7 +66,7 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 >
 > This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
 @y
->**Tip**
+> [!TIP]
 >
 > For a better experience on WSL, consider enabling the WSL
 > [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings)
@@ -120,13 +120,13 @@ Now `docker` commands work from Windows using the new WSL 2 engine.
 @z
 
 @x
->**Tip**
+> [!TIP]
 >
 > By default, Docker Desktop stores the data for the WSL 2 engine at `C:\Users\[USERNAME]\AppData\Local\Docker\wsl`.
 > If you want to change the location, for example, to another drive you can do so via the `Settings -> Resources -> Advanced` page from the Docker Dashboard.
 > Read more about this and other Windows settings at [Changing settings](/manuals/desktop/settings.md)
 @y
->**Tip**
+> [!TIP]
 >
 > By default, Docker Desktop stores the data for the WSL 2 engine at `C:\Users\[USERNAME]\AppData\Local\Docker\wsl`.
 > If you want to change the location, for example, to another drive you can do so via the `Settings -> Resources -> Advanced` page from the Docker Dashboard.

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Learn how to manage Single Sign-On for your organization or company.
@@ -185,6 +185,18 @@ linkTitle: Manage
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+## Manage provisioning
+@y
+## Manage provisioning
+@z
+
+@x
+Users are provisioned with Just-in-Time (JIT) provisioning by default. If you enable SCIM, you can disable JIT. For more information, see the [Provisioning overview](/manuals/security/for-admins/provisioning/_index.md) [Just-in-Time](/manuals/security/for-admins/provisioning/just-in-time.md) guides.
+@y
+Users are provisioned with Just-in-Time (JIT) provisioning by default. If you enable SCIM, you can disable JIT. For more information, see the [Provisioning overview](manuals/security/for-admins/provisioning/_index.md) [Just-in-Time](manuals/security/for-admins/provisioning/just-in-time.md) guides.
 @z
 
 @x
