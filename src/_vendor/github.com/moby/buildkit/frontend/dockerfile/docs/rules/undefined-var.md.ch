@@ -2,19 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: UndefinedVar
 description: Variables should be defined before their use
-aliases:
-  - /go/dockerfile/rule/undefined-var/
----
 @y
----
 title: UndefinedVar
 description: Variables should be defined before their use
-aliases:
-  - /go/dockerfile/rule/undefined-var/
----
 @z
 
 @x
@@ -40,31 +32,35 @@ Usage of undefined variable '$foo'
 @z
 
 @x
-Before you reference an environment variable or a build argument in a `RUN`
-instruction, you should ensure that the variable is declared in the Dockerfile,
-using the `ARG` or `ENV` instructions.
+This check ensures that environment variables and build arguments are correctly
+declared before being used. While undeclared variables might not cause an
+immediate build failure, they can lead to unexpected behavior or errors later
+in the build process.
 @y
-Before you reference an environment variable or a build argument in a `RUN`
-instruction, you should ensure that the variable is declared in the Dockerfile,
-using the `ARG` or `ENV` instructions.
+This check ensures that environment variables and build arguments are correctly
+declared before being used. While undeclared variables might not cause an
+immediate build failure, they can lead to unexpected behavior or errors later
+in the build process.
 @z
 
 @x
-Attempting to access an environment variable without explicitly declaring it
-doesn't necessarily result in a build error, but it may yield an unexpected
-result or an error later on in the build process.
+This check does not evaluate undefined variables for `RUN`, `CMD`, and
+`ENTRYPOINT` instructions where you use the [shell form](https://docs.docker.com/reference/dockerfile/#shell-form).
+That's because when you use shell form, variables are resolved by the command
+shell.
 @y
-Attempting to access an environment variable without explicitly declaring it
-doesn't necessarily result in a build error, but it may yield an unexpected
-result or an error later on in the build process.
+This check does not evaluate undefined variables for `RUN`, `CMD`, and
+`ENTRYPOINT` instructions where you use the [shell form](https://docs.docker.com/reference/dockerfile/#shell-form).
+That's because when you use shell form, variables are resolved by the command
+shell.
 @z
 
 @x
-This check also attempts to detect if you're accessing a variable with a typo.
-For example, given the following Dockerfile:
+It also detects common mistakes like typos in variable names. For example, in
+the following Dockerfile:
 @y
-This check also attempts to detect if you're accessing a variable with a typo.
-For example, given the following Dockerfile:
+It also detects common mistakes like typos in variable names. For example, in
+the following Dockerfile:
 @z
 
 @x
@@ -80,11 +76,9 @@ ENV PATH=$PAHT:/app/bin
 @z
 
 @x
-The check detects that `$PAHT` is undefined, and that it's probably a
-misspelling of `PATH`.
+The check identifies that `$PAHT` is undefined and likely a typo for `$PATH`:
 @y
-The check detects that `$PAHT` is undefined, and that it's probably a
-misspelling of `PATH`.
+The check identifies that `$PAHT` is undefined and likely a typo for `$PATH`:
 @z
 
 @x
@@ -138,5 +132,41 @@ COPY $foo .
 FROM alpine AS base
 ARG foo
 COPY $foo .
+```
+@z
+
+@x
+❌ Bad: `$foo` is undefined.
+@y
+❌ Bad: `$foo` is undefined.
+@z
+
+@x
+```dockerfile
+FROM alpine AS base
+ARG VERSION=$foo
+```
+@y
+```dockerfile
+FROM alpine AS base
+ARG VERSION=$foo
+```
+@z
+
+@x
+✅ Good: the base image defines `$PYTHON_VERSION`
+@y
+✅ Good: the base image defines `$PYTHON_VERSION`
+@z
+
+@x
+```dockerfile
+FROM python AS base
+ARG VERSION=$PYTHON_VERSION
+```
+@y
+```dockerfile
+FROM python AS base
+ARG VERSION=$PYTHON_VERSION
 ```
 @z

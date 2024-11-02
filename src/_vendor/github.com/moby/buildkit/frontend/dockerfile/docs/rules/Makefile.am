@@ -10,6 +10,7 @@ bases = \
 	from-as-casing.md                      \
 	from-platform-flag-const-disallowed.md \
 	invalid-default-arg-in-from.md         \
+	invalid-definition-description.md      \
 	json-args-recommended.md               \
 	legacy-key-value-format.md             \
 	maintainer-deprecated.md               \

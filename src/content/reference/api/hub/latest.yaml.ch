@@ -64,15 +64,13 @@ tags:
 @z
 
 @x
-      - <a href="https://github.com/docker/hub-tool#readme" target="_blank">Docker Hub CLI tool</a> (currently experimental)
-      - <a href="https://www.postman.com/dockerdev/workspace/docker-hub/collection/17990590-9574e087-2a50-4ecf-88b3-55f12a29d99e" target="_blank">Postman Collection</a>
+      - <a href="https://github.com/docker/hub-tool#readme">Docker Hub CLI tool</a> (currently experimental)
   - name: rate-limiting
     x-displayName: Rate Limiting
     description: |
       The Docker Hub API is limited on the amount of requests you can perform per minute against it.
 @y
-      - <a href="https://github.com/docker/hub-tool#readme" target="_blank">Docker Hub CLI tool</a> (currently experimental)
-      - <a href="https://www.postman.com/dockerdev/workspace/docker-hub/collection/17990590-9574e087-2a50-4ecf-88b3-55f12a29d99e" target="_blank">Postman Collection</a>
+      - <a href="https://github.com/docker/hub-tool#readme">Docker Hub CLI tool</a> (currently experimental)
   - name: rate-limiting
     x-displayName: Rate Limiting
     description: |

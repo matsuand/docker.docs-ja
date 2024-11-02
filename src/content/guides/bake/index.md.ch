@@ -20,13 +20,11 @@ summary: >
 @z
 
 @x
+tags: [devops]
 languages: [go]
-subjects: [devops]
-levels: [advanced]
 @y
+tags: [devops]
 languages: [go]
-subjects: [devops]
-levels: [応用]
 @z
 
 % params:

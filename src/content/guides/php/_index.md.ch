@@ -27,10 +27,8 @@ summary: |
 
 @x
 languages: [php]
-levels: [beginner]
 @y
 languages: [php]
-levels: [初心者向け]
 @z
 
 % params:

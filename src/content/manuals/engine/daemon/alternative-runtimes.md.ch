@@ -335,10 +335,10 @@ To add youki as a container runtime:
 
 @x
    For instructions, refer to the
-   [official setup guide](https://containers.github.io/youki/user/basic_setup.html).
+   [official setup guide](https://youki-dev.github.io/youki/user/basic_setup.html).
 @y
    For instructions, refer to the
-   [official setup guide](https://containers.github.io/youki/user/basic_setup.html).
+   [official setup guide](https://youki-dev.github.io/youki/user/basic_setup.html).
 @z
 
 @x

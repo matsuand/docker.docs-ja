@@ -361,10 +361,16 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 % snip command...
 
 @x
-4. Verify that the Docker Engine installation is successful by running the
+4. Make Docker start automatically after reboot.
+@y
+4. 再起動後に Docker が自動起動するようにします。
+@z
+
+@x
+5. Verify that the Docker Engine installation is successful by running the
    `hello-world` image.
 @y
-4. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
+5. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...

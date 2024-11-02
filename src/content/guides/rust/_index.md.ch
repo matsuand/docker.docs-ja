@@ -27,10 +27,8 @@ summary: |
 
 @x
 languages: [rust]
-levels: [beginner]
 @y
 languages: [rust]
-levels: [初心者向け]
 @z
 
 % params:

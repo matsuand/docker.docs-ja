@@ -5798,10 +5798,10 @@ This Beta release includes some significant changes:
 @z
 
 @x
-* docker-compose 1.7.1  (see <a href="https://github.com/docker/compose/releases/tag/1.7.1" target="_blank"> changelog</a>)
+* docker-compose 1.7.1 (see [changelog](https://github.com/docker/compose/releases/tag/1.7.1))
 * Kernel 4.4.9
 @y
-* docker-compose 1.7.1  (see <a href="https://github.com/docker/compose/releases/tag/1.7.1" target="_blank"> changelog</a>)
+* docker-compose 1.7.1 (see [changelog](https://github.com/docker/compose/releases/tag/1.7.1))
 * Kernel 4.4.9
 @z
 

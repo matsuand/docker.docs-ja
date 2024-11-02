@@ -20,6 +20,7 @@ bases = \
 	synchronized-file-sharing.md \
 	uninstall.md                 \
 	vm-vdi.md                    \
+	vmm.md                       \
 	wasm.md
 
 include $(top_srcdir)/build-aux/common.mk

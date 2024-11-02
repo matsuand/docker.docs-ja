@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Block until the first service container stops
+Block until containers of all (or specified) services stop.
 @y
 <!---MARKER_GEN_START-->
-Block until the first service container stops
+Block until containers of all (or specified) services stop.
 @z
 
 @x

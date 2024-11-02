@@ -27,10 +27,8 @@ summary: |
 
 @x
 languages: [python]
-levels: [beginner]
 @y
 languages: [python]
-levels: [初心者向け]
 @z
 
 % params:

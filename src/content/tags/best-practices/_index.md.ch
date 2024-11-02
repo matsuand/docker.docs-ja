@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Best practices
-icon: star
 description: Optimal patterns for Docker
----
 @y
----
 title: Best practices
-icon: star
 description: Optimal patterns for Docker
----
 @z
 
 @x

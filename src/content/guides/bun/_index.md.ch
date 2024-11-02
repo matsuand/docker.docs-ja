@@ -20,10 +20,8 @@ linkTitle: Bun
 @z
 
 @x
-levels: [beginner]
 languages: [js]
 @y
-levels: [初心者向け]
 languages: [js]
 @z
 

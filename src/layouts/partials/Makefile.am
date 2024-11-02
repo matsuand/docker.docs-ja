@@ -21,6 +21,7 @@ copyfiles = \
 	favicon.html         \
 	header.html          \
 	icon.html            \
+	languages.html       \
 	meta.html            \
 	pagemeta.html        \
 	pagination.html      \

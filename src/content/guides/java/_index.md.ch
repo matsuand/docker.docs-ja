@@ -27,10 +27,8 @@ summary: |
 
 @x
 languages: [java]
-levels: [beginner]
 @y
 languages: [java]
-levels: [初心者向け]
 @z
 
 % params:

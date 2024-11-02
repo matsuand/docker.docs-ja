@@ -24,10 +24,8 @@ summary: |
 
 @x
 languages: [cpp]
-levels: [beginner]
 @y
 languages: [cpp]
-levels: [初心者向け]
 @z
 
 % params:

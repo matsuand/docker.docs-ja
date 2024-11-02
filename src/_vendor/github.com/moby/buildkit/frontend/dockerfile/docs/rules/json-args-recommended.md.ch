@@ -2,19 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: JSONArgsRecommended
 description: JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
-aliases:
-  - /go/dockerfile/rule/json-args-recommended/
----
 @y
----
 title: JSONArgsRecommended
 description: JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
-aliases:
-  - /go/dockerfile/rule/json-args-recommended/
----
 @z
 
 @x
@@ -134,15 +126,93 @@ child processes.
 @z
 
 @x
-Alternatively, if you want to ignore this lint rule because you do want your
-executable to be invoked via a shell, you can use the
-[`SHELL`](https://docs.docker.com/reference/dockerfile.md#shell) Dockerfile
-instruction to explicitly specify a shell to use.
+### Workarounds
 @y
-Alternatively, if you want to ignore this lint rule because you do want your
-executable to be invoked via a shell, you can use the
-[`SHELL`](https://docs.docker.com/reference/dockerfile.md#shell) Dockerfile
-instruction to explicitly specify a shell to use.
+### Workarounds
+@z
+
+@x
+There might still be cases when you want to run your containers under a shell.
+When using exec form, shell features such as variable expansion, piping (`|`)
+and command chaining (`&&`, `||`, `;`), are not available. To use such
+features, you need to use shell form.
+@y
+There might still be cases when you want to run your containers under a shell.
+When using exec form, shell features such as variable expansion, piping (`|`)
+and command chaining (`&&`, `||`, `;`), are not available. To use such
+features, you need to use shell form.
+@z
+
+@x
+Here are some ways you can achieve that. Note that this still means that
+executables run as child-processes of a shell.
+@y
+Here are some ways you can achieve that. Note that this still means that
+executables run as child-processes of a shell.
+@z
+
+@x
+#### Create a wrapper script
+@y
+#### Create a wrapper script
+@z
+
+@x
+You can create an entrypoint script that wraps your startup commands, and
+execute that script with a JSON-formatted `ENTRYPOINT` command.
+@y
+You can create an entrypoint script that wraps your startup commands, and
+execute that script with a JSON-formatted `ENTRYPOINT` command.
+@z
+
+@x
+✅ Good: the `ENTRYPOINT` uses JSON format.
+@y
+✅ Good: the `ENTRYPOINT` uses JSON format.
+@z
+
+@x
+```dockerfile
+FROM alpine
+RUN apk add bash
+COPY --chmod=755 <<EOT /entrypoint.sh
+#!/usr/bin/env bash
+set -e
+my-background-process &
+my-program start
+EOT
+ENTRYPOINT ["/entrypoint.sh"]
+```
+@y
+```dockerfile
+FROM alpine
+RUN apk add bash
+COPY --chmod=755 <<EOT /entrypoint.sh
+#!/usr/bin/env bash
+set -e
+my-background-process &
+my-program start
+EOT
+ENTRYPOINT ["/entrypoint.sh"]
+```
+@z
+
+@x
+#### Explicitly specify the shell
+@y
+#### Explicitly specify the shell
+@z
+
+@x
+You can use the [`SHELL`](https://docs.docker.com/reference/dockerfile/#shell)
+Dockerfile instruction to explicitly specify a shell to use. This will suppress
+the warning since setting the `SHELL` instruction indicates that using shell
+form is a conscious decision.
+@y
+You can use the [`SHELL`](https://docs.docker.com/reference/dockerfile/#shell)
+Dockerfile instruction to explicitly specify a shell to use. This will suppress
+the warning since setting the `SHELL` instruction indicates that using shell
+form is a conscious decision.
 @z
 
 @x

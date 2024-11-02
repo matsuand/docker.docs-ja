@@ -2,9 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# SLSA definitions
+title: SLSA definitions
 @y
-# SLSA definitions
+title: SLSA definitions
 @z
 
 @x

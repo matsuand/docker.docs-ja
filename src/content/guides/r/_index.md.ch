@@ -27,10 +27,8 @@ summary: |
 
 @x
 languages: [r]
-levels: [beginner]
 @y
 languages: [r]
-levels: [初心者向け]
 @z
 
 % params:

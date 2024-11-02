@@ -1743,63 +1743,7 @@ examples: |-
     - `release`
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-@z
-
-@x
-    FROM oven/bun:1 as base
-    WORKDIR /app
-@y
-    FROM oven/bun:1 as base
-    WORKDIR /app
-@z
-
-@x
-    FROM base AS install
-    WORKDIR /temp/dev
-    RUN --mount=type=bind,source=package.json,target=package.json \
-        --mount=type=bind,source=bun.lockb,target=bun.lockb \
-        bun install --frozen-lockfile
-@y
-    FROM base AS install
-    WORKDIR /temp/dev
-    RUN --mount=type=bind,source=package.json,target=package.json \
-        --mount=type=bind,source=bun.lockb,target=bun.lockb \
-        bun install --frozen-lockfile
-@z
-
-@x
-    FROM base AS test
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    RUN bun test
-@y
-    FROM base AS test
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    RUN bun test
-@z
-
-@x
-    FROM base AS release
-    ENV NODE_ENV=production
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    ENTRYPOINT ["bun", "run", "index.js"]
-    ```
-@y
-    FROM base AS release
-    ENV NODE_ENV=production
-    COPY --from=install /temp/dev/node_modules node_modules
-    COPY . .
-    ENTRYPOINT ["bun", "run", "index.js"]
-    ```
-@z
+% snip code...
 
 @x
     To ignore the cache for the `install` stage:
@@ -2488,37 +2432,93 @@ examples: |-
 @z
 
 @x
-    - [`file`](#file)
-    - [`env`](#env)
+    - [`type=file`](#typefile)
+    - [`type=env`](#typeenv)
 @y
-    - [`file`](#file)
-    - [`env`](#env)
+    - [`type=file`](#typefile)
+    - [`type=env`](#typeenv)
 @z
 
 @x
-    Buildx attempts to detect the `type` automatically if unset.
+    Buildx attempts to detect the `type` automatically if unset. If an environment
+    variable with the same key as `id` is set, then Buildx uses `type=env` and the
+    variable value becomes the secret. If no such environment variable is set, and
+    `type` is not set, then Buildx falls back to `type=file`.
 @y
-    Buildx attempts to detect the `type` automatically if unset.
+    Buildx attempts to detect the `type` automatically if unset. If an environment
+    variable with the same key as `id` is set, then Buildx uses `type=env` and the
+    variable value becomes the secret. If no such environment variable is set, and
+    `type` is not set, then Buildx falls back to `type=file`.
 @z
 
 @x
-    #### `file`
+    #### `type=file`
 @y
-    #### `file`
+    #### `type=file`
 @z
 
 @x
-    Attribute keys:
+    Source a build secret from a file.
 @y
-    Attribute keys:
+    Source a build secret from a file.
 @z
 
 @x
-    - `id` - ID of the secret. Defaults to base name of the `src` path.
-    - `src`, `source` - Secret filename. `id` used if unset.
+    ##### `type=file` synopsis
 @y
-    - `id` - ID of the secret. Defaults to base name of the `src` path.
-    - `src`, `source` - Secret filename. `id` used if unset.
+    ##### `type=file` synopsis
+@z
+
+@x
+    ```console
+    $ docker buildx build --secret [type=file,]id=<ID>[,src=<FILEPATH>] .
+    ```
+@y
+    ```console
+    $ docker buildx build --secret [type=file,]id=<ID>[,src=<FILEPATH>] .
+    ```
+@z
+
+@x
+    ##### `type=file` attributes
+@y
+    ##### `type=file` attributes
+@z
+
+@x
+    | Key             | Description                                                                                           | Default                    |
+    | --------------- | ----------------------------------------------------------------------------------------------------- | -------------------------- |
+    | `id`            | ID of the secret.                                                                                     | N/A (this key is required) |
+    | `src`, `source` | Filepath of the file containing the secret value (absolute or relative to current working directory). | `id` if unset.             |
+@y
+    | Key             | Description                                                                                           | Default                    |
+    | --------------- | ----------------------------------------------------------------------------------------------------- | -------------------------- |
+    | `id`            | ID of the secret.                                                                                     | N/A (this key is required) |
+    | `src`, `source` | Filepath of the file containing the secret value (absolute or relative to current working directory). | `id` if unset.             |
+@z
+
+@x
+    ###### `type=file` usage
+@y
+    ###### `type=file` usage
+@z
+
+@x
+    In the following example, `type=file` is automatically detected because no
+    environment variable mathing `aws` (the ID) is set.
+@y
+    In the following example, `type=file` is automatically detected because no
+    environment variable mathing `aws` (the ID) is set.
+@z
+
+@x
+    ```console
+    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
+    ```
+@y
+    ```console
+    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
+    ```
 @z
 
 @x
@@ -2540,37 +2540,142 @@ examples: |-
 @z
 
 @x
+    #### `type=env`
+@y
+    #### `type=env`
+@z
+
+@x
+    Source a build secret from an environment variable.
+@y
+    Source a build secret from an environment variable.
+@z
+
+@x
+    ##### `type=env` synopsis
+@y
+    ##### `type=env` synopsis
+@z
+
+@x
     ```console
-    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
+    $ docker buildx build --secret [type=env,]id=<ID>[,env=<VARIABLE>] .
     ```
 @y
     ```console
-    $ docker buildx build --secret id=aws,src=$HOME/.aws/credentials .
+    $ docker buildx build --secret [type=env,]id=<ID>[,env=<VARIABLE>] .
     ```
 @z
 
 @x
-    #### `env`
+    ##### `type=env` attributes
 @y
-    #### `env`
+    ##### `type=env` attributes
 @z
 
 @x
-    Attribute keys:
+    | Key                    | Description                                     | Default                    |
+    | ---------------------- | ----------------------------------------------- | -------------------------- |
+    | `id`                   | ID of the secret.                               | N/A (this key is required) |
+    | `env`, `src`, `source` | Environment variable to source the secret from. | `id` if unset.             |
 @y
-    Attribute keys:
+    | Key                    | Description                                     | Default                    |
+    | ---------------------- | ----------------------------------------------- | -------------------------- |
+    | `id`                   | ID of the secret.                               | N/A (this key is required) |
+    | `env`, `src`, `source` | Environment variable to source the secret from. | `id` if unset.             |
 @z
 
 @x
-    - `id` - ID of the secret. Defaults to `env` name.
-    - `env` - Secret environment variable. `id` used if unset, otherwise will look for `src`, `source` if `id` unset.
+    ##### `type=env` usage
 @y
-    - `id` - ID of the secret. Defaults to `env` name.
-    - `env` - Secret environment variable. `id` used if unset, otherwise will look for `src`, `source` if `id` unset.
+    ##### `type=env` usage
 @z
 
-% snip code...
-% snip output...
+@x
+    In the following example, `type=env` is automatically detected because an
+    environment variable matching `id` is set.
+@y
+    In the following example, `type=env` is automatically detected because an
+    environment variable matching `id` is set.
+@z
+
+@x
+    ```console
+    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
+    ```
+@y
+    ```console
+    $ SECRET_TOKEN=token docker buildx build --secret id=SECRET_TOKEN .
+    ```
+@z
+
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM node:alpine
+    RUN --mount=type=bind,target=. \
+      --mount=type=secret,id=SECRET_TOKEN,env=SECRET_TOKEN \
+      yarn run test
+    ```
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+    FROM node:alpine
+    RUN --mount=type=bind,target=. \
+      --mount=type=secret,id=SECRET_TOKEN,env=SECRET_TOKEN \
+      yarn run test
+    ```
+@z
+
+@x
+    In the following example, the build argument `SECRET_TOKEN` is set to contain
+    the value of the environment variable `API_KEY`.
+@y
+    In the following example, the build argument `SECRET_TOKEN` is set to contain
+    the value of the environment variable `API_KEY`.
+@z
+
+@x
+    ```console
+    $ API_KEY=token docker buildx build --secret id=SECRET_TOKEN,env=API_KEY .
+    ```
+@y
+    ```console
+    $ API_KEY=token docker buildx build --secret id=SECRET_TOKEN,env=API_KEY .
+    ```
+@z
+
+@x
+    You can also specify the name of the environment variable with `src` or `source`:
+@y
+    You can also specify the name of the environment variable with `src` or `source`:
+@z
+
+@x
+    ```console
+    $ API_KEY=token docker buildx build --secret type=env,id=SECRET_TOKEN,src=API_KEY .
+    ```
+@y
+    ```console
+    $ API_KEY=token docker buildx build --secret type=env,id=SECRET_TOKEN,src=API_KEY .
+    ```
+@z
+
+@x
+    > [!NOTE]
+    > Specifying the environment variable name with `src` or `source`, you are
+    > required to set `type=env` explicitly, or else Buildx assumes that the secret
+    > is `type=file`, and looks for a file with the name of `src` or `source` (in
+    > this case, a file named `API_KEY` relative to the location where the `docker
+    > buildx build` command was executed.
+@y
+    > [!NOTE]
+    > Specifying the environment variable name with `src` or `source`, you are
+    > required to set `type=env` explicitly, or else Buildx assumes that the secret
+    > is `type=file`, and looks for a file with the name of `src` or `source` (in
+    > this case, a file named `API_KEY` relative to the location where the `docker
+    > buildx build` command was executed.
+@z
 
 @x
     ### Shared memory size for build containers (--shm-size) {#shm-size}
@@ -2804,30 +2909,26 @@ examples: |-
     `<type>=<soft limit>[:<hard limit>]`, for example:
 @z
 
-% snip command...
-
 @x
-    > [!NOTE]
-    > If you don't provide a `hard limit`, the `soft limit` is used
-    > for both values. If no `ulimits` are set, they're inherited from
-    > the default `ulimits` set on the daemon.
+    ```console
+    $ docker buildx build --ulimit nofile=1024:1024 .
+    ```
 @y
-    > [!NOTE]
-    > If you don't provide a `hard limit`, the `soft limit` is used
-    > for both values. If no `ulimits` are set, they're inherited from
-    > the default `ulimits` set on the daemon.
+    ```console
+    $ docker buildx build --ulimit nofile=1024:1024 .
+    ```
 @z
 
 @x
     > [!NOTE]
-    > In most cases, it is recommended to let the builder automatically determine
-    > the appropriate configurations. Manual adjustments should only be considered
-    > when specific performance tuning is required for complex build scenarios.
+    > If you don't provide a `hard limit`, the `soft limit` is used
+    > for both values. If no `ulimits` are set, they're inherited from
+    > the default `ulimits` set on the daemon.
 @y
     > [!NOTE]
-    > In most cases, it is recommended to let the builder automatically determine
-    > the appropriate configurations. Manual adjustments should only be considered
-    > when specific performance tuning is required for complex build scenarios.
+    > If you don't provide a `hard limit`, the `soft limit` is used
+    > for both values. If no `ulimits` are set, they're inherited from
+    > the default `ulimits` set on the daemon.
 @z
 
 % snip directives...

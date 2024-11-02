@@ -98,12 +98,6 @@ Recommended approach to install Docker Desktop on Ubuntu:
 % snip command...
 
 @x
-   Don't forget to substitute `<arch>` with the architecture you want.
-@y
-   Don't forget to substitute `<arch>` with the architecture you want.
-@z
-
-@x
    > [!NOTE]
    >
    > At the end of the installation process, `apt` displays an error due to installing a downloaded package. You

@@ -21,13 +21,11 @@ summary: |
 @z
 
 @x
-subjects: [ai]
+tags: [ai]
 languages: [python]
-levels: [beginner]
 @y
-subjects: [ai]
+tags: [ai]
 languages: [python]
-levels: [初心者向け]
 @z
 
 % params:

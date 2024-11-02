@@ -25,10 +25,8 @@ summary: |
 
 @x
 languages: [go]
-levels: [beginner]
 @y
 languages: [go]
-levels: [初心者向け]
 @z
 
 % params:

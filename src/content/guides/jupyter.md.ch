@@ -22,13 +22,11 @@ summary: |
 @z
 
 @x
+tags: [data-science]
 languages: [python]
-levels: [beginner]
-subjects: [data-science]
 @y
+tags: [data-science]
 languages: [python]
-levels: [初心者向け]
-subjects: [データサイエンス]
 @z
 
 % params:

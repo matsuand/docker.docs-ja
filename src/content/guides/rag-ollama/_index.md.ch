@@ -19,11 +19,9 @@ summary: |
 @z
 
 @x
-subjects: [ai]
-levels: [beginner]
+tags: [ai]
 @y
-subjects: [ai]
-levels: [初心者向け]
+tags: [ai]
 @z
 
 % params:

@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = contribute get-started guides includes languages \
-	levels manuals products reference subjects tags
+	manuals reference tags
 
 bases = \
 	_index.md \

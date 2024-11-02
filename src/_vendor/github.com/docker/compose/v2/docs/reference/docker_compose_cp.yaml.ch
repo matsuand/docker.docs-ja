@@ -14,9 +14,9 @@ options:
     - option: all
       value_type: bool
       default_value: "false"
-      description: Copy to all the containers of the service
-      deprecated: true
-      hidden: true
+      description: Include containers created by the run command
+      deprecated: false
+      hidden: false
       experimental: false
       experimentalcli: false
       kubernetes: false
@@ -83,9 +83,9 @@ options:
     - option: all
       value_type: bool
       default_value: "false"
-      description: Copy to all the containers of the service
-      deprecated: true
-      hidden: true
+      description: Include containers created by the run command
+      deprecated: false
+      hidden: false
       experimental: false
       experimentalcli: false
       kubernetes: false

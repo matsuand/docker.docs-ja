@@ -8,6 +8,7 @@ bases = \
 	_index.md        \
 	file-watch.md    \
 	gpu-support.md   \
+	lifecycle.md     \
 	networking.md    \
 	production.md    \
 	profiles.md      \

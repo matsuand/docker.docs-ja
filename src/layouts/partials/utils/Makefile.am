@@ -5,7 +5,6 @@
 copyfiles = \
 	css.html          \
 	description.html  \
-	filter-terms.html \
 	keywords.html     \
 	title.html
 

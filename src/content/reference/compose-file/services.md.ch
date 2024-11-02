@@ -3095,11 +3095,19 @@ There is a performance penalty for applications that swap memory to disk often.
 @x
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
-- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](/manuals/engine/network/_index.md#container-networks).
+- `service:{name}`: Gives the container access to the specified container by referring to its service name. 
+- `container:{name}`: Gives the container access to the specified container by referring to its container ID. 
 @y
 - `none`: Turns off all container networking.
 - `host`: Gives the container raw access to the host's network interface.
-- `service:{name}`: Gives the containers access to the specified service only. For more information, see [Container networks](manuals/engine/network/_index.md#container-networks).
+- `service:{name}`: Gives the container access to the specified container by referring to its service name. 
+- `container:{name}`: Gives the container access to the specified container by referring to its container ID. 
+@z
+
+@x
+For more information container networks, see the [Docker Engine documentation](/manuals/engine/network/_index.md#container-networks).
+@y
+For more information container networks, see the [Docker Engine documentation](manuals/engine/network/_index.md#container-networks).
 @z
 
 @x

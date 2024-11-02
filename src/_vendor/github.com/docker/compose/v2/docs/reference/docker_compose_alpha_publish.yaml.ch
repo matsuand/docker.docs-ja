@@ -5,7 +5,7 @@
 command: docker compose alpha publish
 short: Publish compose application
 long: Publish compose application
-usage: docker compose alpha publish [OPTIONS] [REPOSITORY]
+usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
 pname: docker compose alpha
 plink: docker_compose_alpha.yaml
 options:
@@ -50,7 +50,7 @@ swarm: false
 command: docker compose alpha publish
 short: Publish compose application
 long: Publish compose application
-usage: docker compose alpha publish [OPTIONS] [REPOSITORY]
+usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
 pname: docker compose alpha
 plink: docker_compose_alpha.yaml
 options:

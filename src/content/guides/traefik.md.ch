@@ -2,29 +2,31 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: HTTP routing with Traefik
 description: &desc Use Traefik to easily route traffic between multiple containers or non-containerized workloads
 keywords: traefik, container-supported development
 linktitle: HTTP routing with Traefik
 summary: *desc
-levels: [intermediate]
-subjects: [networking]
-params:
-  time: 20 minutes
----
 @y
----
 title: HTTP routing with Traefik
 description: &desc Use Traefik to easily route traffic between multiple containers or non-containerized workloads
 keywords: traefik, container-supported development
 linktitle: HTTP routing with Traefik
 summary: *desc
-levels: [intermediate]
-subjects: [networking]
-params:
+@z
+
+@x
+tags: [networking]
+@y
+tags: [networking]
+@z
+
+%params:
+
+@x
   time: 20 minutes
----
+@y
+  time: 20 分
 @z
 
 @x

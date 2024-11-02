@@ -30,6 +30,86 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 @z
 
 @x
+## 1.11.0
+@y
+## 1.11.0
+@z
+
+@x
+{{< release-date date="2024-10-30" >}}
+@y
+{{< release-date date="2024-10-30" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.0).
+@z
+
+@x
+```dockerfile
+# syntax=docker/dockerfile:1.11.0
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1.11.0
+```
+@z
+
+@x
+- The [`ONBUILD` instruction](/reference/dockerfile.md#onbuild) now supports commands that refer to other stages or images with `from`, such as `COPY --from` or `RUN mount=from=...`. [moby/buildkit#5357]
+- The [`SecretsUsedInArgOrEnv`](/reference/build-checks/secrets-used-in-arg-or-env.md) build check has been improved to reduce false positives. [moby/buildkit#5208]
+- A new [`InvalidDefinitionDescription`](/reference/build-checks/invalid-definition-description.md) build check recommends formatting comments for build arguments and stages descriptions. This is an [experimental check](/manuals/build/checks.md#experimental-checks). [moby/buildkit#5208], [moby/buildkit#5414]
+- Multiple fixes for the `ONBUILD` instruction's progress and error handling. [moby/buildkit#5397]
+- Improved error reporting for missing flag errors. [moby/buildkit#5369]
+- Enhanced progress output for secret values mounted as environment variables. [moby/buildkit#5336]
+- Added built-in build argument `TARGETSTAGE` to expose the name of the (final) target stage for the current build. [moby/buildkit#5431]
+@y
+- The [`ONBUILD` instruction](reference/dockerfile.md#onbuild) now supports commands that refer to other stages or images with `from`, such as `COPY --from` or `RUN mount=from=...`. [moby/buildkit#5357]
+- The [`SecretsUsedInArgOrEnv`](reference/build-checks/secrets-used-in-arg-or-env.md) build check has been improved to reduce false positives. [moby/buildkit#5208]
+- A new [`InvalidDefinitionDescription`](reference/build-checks/invalid-definition-description.md) build check recommends formatting comments for build arguments and stages descriptions. This is an [experimental check](manuals/build/checks.md#experimental-checks). [moby/buildkit#5208], [moby/buildkit#5414]
+- Multiple fixes for the `ONBUILD` instruction's progress and error handling. [moby/buildkit#5397]
+- Improved error reporting for missing flag errors. [moby/buildkit#5369]
+- Enhanced progress output for secret values mounted as environment variables. [moby/buildkit#5336]
+- Added built-in build argument `TARGETSTAGE` to expose the name of the (final) target stage for the current build. [moby/buildkit#5431]
+@z
+
+@x
+### 1.11.0-labs
+@y
+### 1.11.0-labs
+@z
+
+@x
+- `COPY --chmod` now supports non-octal values. [moby/buildkit#5380]
+@y
+- `COPY --chmod` now supports non-octal values. [moby/buildkit#5380]
+@z
+
+@x
+[moby/buildkit#5357]: https://github.com/moby/buildkit/pull/5357
+[moby/buildkit#5208]: https://github.com/moby/buildkit/pull/5208
+[moby/buildkit#5414]: https://github.com/moby/buildkit/pull/5414
+[moby/buildkit#5397]: https://github.com/moby/buildkit/pull/5397
+[moby/buildkit#5369]: https://github.com/moby/buildkit/pull/5369
+[moby/buildkit#5336]: https://github.com/moby/buildkit/pull/5336
+[moby/buildkit#5431]: https://github.com/moby/buildkit/pull/5431
+[moby/buildkit#5380]: https://github.com/moby/buildkit/pull/5380
+@y
+[moby/buildkit#5357]: https://github.com/moby/buildkit/pull/5357
+[moby/buildkit#5208]: https://github.com/moby/buildkit/pull/5208
+[moby/buildkit#5414]: https://github.com/moby/buildkit/pull/5414
+[moby/buildkit#5397]: https://github.com/moby/buildkit/pull/5397
+[moby/buildkit#5369]: https://github.com/moby/buildkit/pull/5369
+[moby/buildkit#5336]: https://github.com/moby/buildkit/pull/5336
+[moby/buildkit#5431]: https://github.com/moby/buildkit/pull/5431
+[moby/buildkit#5380]: https://github.com/moby/buildkit/pull/5380
+@z
+
+@x
 ## 1.10.0
 @y
 ## 1.10.0

@@ -23,10 +23,8 @@ keywords: getting started, .net
 
 @x
 languages: [c-sharp]
-levels: [beginner]
 @y
 languages: [c-sharp]
-levels: [初心者向け]
 @z
 
 % params:

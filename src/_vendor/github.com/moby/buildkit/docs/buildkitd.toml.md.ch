@@ -2,13 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: buildkitd.toml
----
 @y
----
 title: buildkitd.toml
----
 @z
 
 @x
@@ -141,22 +137,6 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
   # Whether run subprocesses in main pid namespace or not, this is useful for
   # running rootless buildkit inside a container.
   noProcessSandbox = false
-  gc = true
-  # gckeepstorage can be an integer number of bytes (e.g. 512000000), a string
-  # with a unit (e.g. "512MB"), or a string percentage of the total disk
-  # space (e.g. "10%")
-  gckeepstorage = 9000
-  # alternate OCI worker binary name(example 'crun'), by default either 
-  # buildkit-runc or runc binary is used
-  binary = ""
-  # name of the apparmor profile that should be used to constrain build containers.
-  # the profile should already be loaded (by a higher level system) before creating a worker.
-  apparmor-profile = ""
-  # limit the number of parallel build steps that can run at the same time
-  max-parallelism = 4
-  # maintain a pool of reusable CNI network namespaces to amortize the overhead
-  # of allocating and releasing the namespaces
-  cniPoolSize = 16
 @y
 [worker.oci]
   enabled = true
@@ -167,11 +147,59 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
   # Whether run subprocesses in main pid namespace or not, this is useful for
   # running rootless buildkit inside a container.
   noProcessSandbox = false
+@z
+
+@x
+  # gc enables/disables garbage collection
   gc = true
-  # gckeepstorage can be an integer number of bytes (e.g. 512000000), a string
-  # with a unit (e.g. "512MB"), or a string percentage of the total disk
-  # space (e.g. "10%")
-  gckeepstorage = 9000
+  # reservedSpace is the minimum amount of disk space guaranteed to be
+  # retained by this buildkit worker - any usage below this threshold will not
+  # be reclaimed during garbage collection.
+  # all disk space parameters can be an integer number of bytes (e.g.
+  # 512000000), a string with a unit (e.g. "512MB"), or a string percentage
+  # of the total disk space (e.g. "10%")
+  reservedSpace = "30%"
+  # maxUsedSpace is the maximum amount of disk space that may be used by
+  # this buildkit worker - any usage above this threshold will be reclaimed
+  # during garbage collection.
+  maxUsedSpace = "60%"
+  # minFreeSpace is the target amount of free disk space that the garbage
+  # collector will attempt to leave - however, it will never be bought below
+  # reservedSpace.
+  minFreeSpace = "20GB"
+@y
+  # gc enables/disables garbage collection
+  gc = true
+  # reservedSpace is the minimum amount of disk space guaranteed to be
+  # retained by this buildkit worker - any usage below this threshold will not
+  # be reclaimed during garbage collection.
+  # all disk space parameters can be an integer number of bytes (e.g.
+  # 512000000), a string with a unit (e.g. "512MB"), or a string percentage
+  # of the total disk space (e.g. "10%")
+  reservedSpace = "30%"
+  # maxUsedSpace is the maximum amount of disk space that may be used by
+  # this buildkit worker - any usage above this threshold will be reclaimed
+  # during garbage collection.
+  maxUsedSpace = "60%"
+  # minFreeSpace is the target amount of free disk space that the garbage
+  # collector will attempt to leave - however, it will never be bought below
+  # reservedSpace.
+  minFreeSpace = "20GB"
+@z
+
+@x
+  # alternate OCI worker binary name(example 'crun'), by default either 
+  # buildkit-runc or runc binary is used
+  binary = ""
+  # name of the apparmor profile that should be used to constrain build containers.
+  # the profile should already be loaded (by a higher level system) before creating a worker.
+  apparmor-profile = ""
+  # limit the number of parallel build steps that can run at the same time
+  max-parallelism = 4
+  # maintain a pool of reusable CNI network namespaces to amortize the overhead
+  # of allocating and releasing the namespaces
+  cniPoolSize = 16
+@y
   # alternate OCI worker binary name(example 'crun'), by default either 
   # buildkit-runc or runc binary is used
   binary = ""
@@ -195,30 +223,50 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
 
 @x
   [[worker.oci.gcpolicy]]
-    # keepBytes can be an integer number of bytes (e.g. 512000000), a string
-    # with a unit (e.g. "512MB"), or a string percentage of the total disk
-    # space (e.g. "10%")
-    keepBytes = "512MB"
-    # keepDuration can be an integer number of seconds (e.g. 172800), or a
-    # string duration (e.g. "48h")
-    keepDuration = "48h"
-    filters = [ "type==source.local", "type==exec.cachemount", "type==source.git.checkout"]
-  [[worker.oci.gcpolicy]]
-    all = true
-    keepBytes = 1024000000
+    # reservedSpace is the minimum amount of disk space guaranteed to be
+    # retained by this policy - any usage below this threshold will not be
+    # reclaimed during # garbage collection.
+    reservedSpace = "512MB"
+    # maxUsedSpace is the maximum amount of disk space that may be used by this
+    # policy - any usage above this threshold will be reclaimed during garbage
+    # collection.
+    maxUsedSpace = "1GB"
+    # minFreeSpace is the target amount of free disk space that the garbage
+    # collector will attempt to leave - however, it will never be bought below
+    # reservedSpace.
+    minFreeSpace = "10GB"
 @y
   [[worker.oci.gcpolicy]]
-    # keepBytes can be an integer number of bytes (e.g. 512000000), a string
-    # with a unit (e.g. "512MB"), or a string percentage of the total disk
-    # space (e.g. "10%")
-    keepBytes = "512MB"
+    # reservedSpace is the minimum amount of disk space guaranteed to be
+    # retained by this policy - any usage below this threshold will not be
+    # reclaimed during # garbage collection.
+    reservedSpace = "512MB"
+    # maxUsedSpace is the maximum amount of disk space that may be used by this
+    # policy - any usage above this threshold will be reclaimed during garbage
+    # collection.
+    maxUsedSpace = "1GB"
+    # minFreeSpace is the target amount of free disk space that the garbage
+    # collector will attempt to leave - however, it will never be bought below
+    # reservedSpace.
+    minFreeSpace = "10GB"
+@z
+
+@x
     # keepDuration can be an integer number of seconds (e.g. 172800), or a
     # string duration (e.g. "48h")
     keepDuration = "48h"
     filters = [ "type==source.local", "type==exec.cachemount", "type==source.git.checkout"]
   [[worker.oci.gcpolicy]]
     all = true
-    keepBytes = 1024000000
+    reservedSpace = 1024000000
+@y
+    # keepDuration can be an integer number of seconds (e.g. 172800), or a
+    # string duration (e.g. "48h")
+    keepDuration = "48h"
+    filters = [ "type==source.local", "type==exec.cachemount", "type==source.git.checkout"]
+  [[worker.oci.gcpolicy]]
+    all = true
+    reservedSpace = 1024000000
 @z
 
 @x
@@ -227,23 +275,59 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
   enabled = true
   platforms = [ "linux/amd64", "linux/arm64" ]
   namespace = "buildkit"
-  gc = true
-  # gckeepstorage sets storage limit for default gc profile, in bytes.
-  gckeepstorage = 9000
-  # maintain a pool of reusable CNI network namespaces to amortize the overhead
-  # of allocating and releasing the namespaces
-  cniPoolSize = 16
-  # defaultCgroupParent sets the parent cgroup of all containers.
-  defaultCgroupParent = "buildkit"
 @y
 [worker.containerd]
   address = "/run/containerd/containerd.sock"
   enabled = true
   platforms = [ "linux/amd64", "linux/arm64" ]
   namespace = "buildkit"
+@z
+
+@x
+  # gc enables/disables garbage collection
   gc = true
-  # gckeepstorage sets storage limit for default gc profile, in bytes.
-  gckeepstorage = 9000
+  # reservedSpace is the minimum amount of disk space guaranteed to be
+  # retained by this buildkit worker - any usage below this threshold will not
+  # be reclaimed during garbage collection.
+  # all disk space parameters can be an integer number of bytes (e.g.
+  # 512000000), a string with a unit (e.g. "512MB"), or a string percentage
+  # of the total disk space (e.g. "10%")
+  reservedSpace = "30%"
+  # maxUsedSpace is the maximum amount of disk space that may be used by
+  # this buildkit worker - any usage above this threshold will be reclaimed
+  # during garbage collection.
+  maxUsedSpace = "60%"
+  # minFreeSpace is the target amount of free disk space that the garbage
+  # collector will attempt to leave - however, it will never be bought below
+  # reservedSpace.
+  minFreeSpace = "20GB"
+@y
+  # gc enables/disables garbage collection
+  gc = true
+  # reservedSpace is the minimum amount of disk space guaranteed to be
+  # retained by this buildkit worker - any usage below this threshold will not
+  # be reclaimed during garbage collection.
+  # all disk space parameters can be an integer number of bytes (e.g.
+  # 512000000), a string with a unit (e.g. "512MB"), or a string percentage
+  # of the total disk space (e.g. "10%")
+  reservedSpace = "30%"
+  # maxUsedSpace is the maximum amount of disk space that may be used by
+  # this buildkit worker - any usage above this threshold will be reclaimed
+  # during garbage collection.
+  maxUsedSpace = "60%"
+  # minFreeSpace is the target amount of free disk space that the garbage
+  # collector will attempt to leave - however, it will never be bought below
+  # reservedSpace.
+  minFreeSpace = "20GB"
+@z
+
+@x
+  # maintain a pool of reusable CNI network namespaces to amortize the overhead
+  # of allocating and releasing the namespaces
+  cniPoolSize = 16
+  # defaultCgroupParent sets the parent cgroup of all containers.
+  defaultCgroupParent = "buildkit"
+@y
   # maintain a pool of reusable CNI network namespaces to amortize the overhead
   # of allocating and releasing the namespaces
   cniPoolSize = 16
@@ -275,20 +359,20 @@ insecure-entitlements = [ "network.host", "security.insecure" ]
 
 @x
   [[worker.containerd.gcpolicy]]
-    keepBytes = 512000000
+    reservedSpace = 512000000
     keepDuration = 172800
     filters = [ "type==source.local", "type==exec.cachemount", "type==source.git.checkout"]
   [[worker.containerd.gcpolicy]]
     all = true
-    keepBytes = 1024000000
+    reservedSpace = 1024000000
 @y
   [[worker.containerd.gcpolicy]]
-    keepBytes = 512000000
+    reservedSpace = 512000000
     keepDuration = 172800
     filters = [ "type==source.local", "type==exec.cachemount", "type==source.git.checkout"]
   [[worker.containerd.gcpolicy]]
     all = true
-    keepBytes = 1024000000
+    reservedSpace = 1024000000
 @z
 
 @x

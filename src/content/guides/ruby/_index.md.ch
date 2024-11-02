@@ -28,10 +28,8 @@ summary: |
 
 @x
 languages: [ruby]
-levels: [beginner]
 @y
 languages: [ruby]
-levels: [初心者向け]
 @z
 
 % params:

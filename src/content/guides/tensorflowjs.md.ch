@@ -16,13 +16,11 @@ summary: |
 @z
 
 @x
-subjects: [ai]
+tags: [ai]
 languages: [js]
-levels: [beginner]
 @y
-subjects: [ai]
+tags: [ai]
 languages: [js]
-levels: [初心者向け]
 @z
 
 % params:

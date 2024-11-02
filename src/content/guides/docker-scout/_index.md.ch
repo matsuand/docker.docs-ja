@@ -23,11 +23,9 @@ description: |
 @z
 
 @x
-levels: [Beginner]
-products: [scout]
+tags: [product-demo]
 @y
-levels: [初心者向け]
-products: [scout]
+tags: [product-demo]
 @z
 
 % params:

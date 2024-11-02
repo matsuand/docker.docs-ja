@@ -1,7 +1,9 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = best-practices faq release-notes secrets troubleshooting
+SUBDIRS = admin ai app-dev best-practices cloud-services data-science \
+	databases deploy devops distributed-systems faq networking    \
+	product-demo release-notes secrets troubleshooting
 
 bases = \
 	_index.md

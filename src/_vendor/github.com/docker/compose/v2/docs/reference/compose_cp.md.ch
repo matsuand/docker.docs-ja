@@ -24,6 +24,7 @@ Copy files/folders between a service container and the local filesystem
 @x
 | Name                  | Type   | Default | Description                                             |
 |:----------------------|:-------|:--------|:--------------------------------------------------------|
+| `--all`               | `bool` |         | Include containers created by the run command           |
 | `-a`, `--archive`     | `bool` |         | Archive mode (copy all uid/gid information)             |
 | `--dry-run`           | `bool` |         | Execute command in dry run mode                         |
 | `-L`, `--follow-link` | `bool` |         | Always follow symbol link in SRC_PATH                   |
@@ -31,6 +32,7 @@ Copy files/folders between a service container and the local filesystem
 @y
 | Name                  | Type   | Default | Description                                             |
 |:----------------------|:-------|:--------|:--------------------------------------------------------|
+| `--all`               | `bool` |         | Include containers created by the run command           |
 | `-a`, `--archive`     | `bool` |         | Archive mode (copy all uid/gid information)             |
 | `--dry-run`           | `bool` |         | Execute command in dry run mode                         |
 | `-L`, `--follow-link` | `bool` |         | Always follow symbol link in SRC_PATH                   |

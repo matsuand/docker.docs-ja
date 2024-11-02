@@ -16,9 +16,9 @@ weight: 30
 @z
 
 @x
-{{< youtube-embed "https://youtu.be/NlZY9aumKJU" >}}
+{{< youtube-embed "NlZY9aumKJU" >}}
 @y
-{{< youtube-embed "https://youtu.be/NlZY9aumKJU" >}}
+{{< youtube-embed "NlZY9aumKJU" >}}
 @z
 
 @x

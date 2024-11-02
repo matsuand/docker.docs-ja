@@ -19,13 +19,11 @@ summary: |
 @z
 
 @x
-subjects: [cloud-services]
+tags: [cloud-services]
 languages: [js]
-levels: [intermediate]
 @y
-subjects: [クラウドサービス]
+tags: [cloud-services]
 languages: [js]
-levels: [中級者向け]
 @z
 
 % params:

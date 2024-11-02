@@ -3,8 +3,8 @@
 
 @x
 command: docker compose wait
-short: Block until the first service container stops
-long: Block until the first service container stops
+short: Block until containers of all (or specified) services stop.
+long: Block until containers of all (or specified) services stop.
 usage: docker compose wait SERVICE [SERVICE...] [OPTIONS]
 pname: docker compose
 plink: docker_compose.yaml
@@ -38,8 +38,8 @@ kubernetes: false
 swarm: false
 @y
 command: docker compose wait
-short: Block until the first service container stops
-long: Block until the first service container stops
+short: Block until containers of all (or specified) services stop.
+long: Block until containers of all (or specified) services stop.
 usage: docker compose wait SERVICE [SERVICE...] [OPTIONS]
 pname: docker compose
 plink: docker_compose.yaml

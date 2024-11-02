@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Troubleshooting
-icon: troubleshoot
 description: Fix common issues
----
 @y
----
 title: Troubleshooting
-icon: troubleshoot
 description: Fix common issues
----
 @z
 
 @x

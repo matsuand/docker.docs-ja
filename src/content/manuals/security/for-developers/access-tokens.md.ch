@@ -29,10 +29,10 @@ Compared to passwords, PATs provide the following advantages:
 
 @x
 - You can investigate when the PAT was last used and then disable or delete it if you find any suspicious activity.
-- When using an access token, you can't perform any admin activity on the account, including changing the password. It protects your account if your computer is compromised.
+- When using an access token, you can't perform any administrative activity on the account, including changing the password. It protects your account if your computer is compromised.
 @y
 - You can investigate when the PAT was last used and then disable or delete it if you find any suspicious activity.
-- When using an access token, you can't perform any admin activity on the account, including changing the password. It protects your account if your computer is compromised.
+- When using an access token, you can't perform any administrative activity on the account, including changing the password. It protects your account if your computer is compromised.
 @z
 
 @x
@@ -218,7 +218,7 @@ When you sign in to your Docker account with Docker Desktop, Docker Desktop gene
 @z
 
 @x
-You can have up to 5 auto-generated tokens associated with your account. These are deleted and created automatically based on usage and creation dates. You can also delete your auto-generated tokens as needed. See [Modify existing tokens](#modify-existing-tokens).
+You can have up to 5 auto-generated tokens associated with your account. These are deleted and created automatically based on usage and creation dates. You can also delete your auto-generated tokens as needed. For more information, see [Modify existing tokens](#modify-existing-tokens).
 @y
-You can have up to 5 auto-generated tokens associated with your account. These are deleted and created automatically based on usage and creation dates. You can also delete your auto-generated tokens as needed. See [Modify existing tokens](#modify-existing-tokens).
+You can have up to 5 auto-generated tokens associated with your account. These are deleted and created automatically based on usage and creation dates. You can also delete your auto-generated tokens as needed. For more information, see [Modify existing tokens](#modify-existing-tokens).
 @z

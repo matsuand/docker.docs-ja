@@ -2,9 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# Image Attestation Storage
+title: Image attestation storage
 @y
-# Image Attestation Storage
+title: Image attestation storage
 @z
 
 @x

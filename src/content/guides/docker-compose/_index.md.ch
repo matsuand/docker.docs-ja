@@ -17,11 +17,9 @@ description: Learn how to use Docker Compose to define and run multi-container D
 @z
 
 @x
-levels: [beginner]
-products: [compose]
+tags: [product-demo]
 @y
-levels: [初心者向け]
-products: [compose]
+tags: [product-demo]
 @z
 
 % params:

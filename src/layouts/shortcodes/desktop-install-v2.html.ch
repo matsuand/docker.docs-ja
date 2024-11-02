@@ -20,10 +20,10 @@
 @z
 
 @x
-  <a target="_blank" rel="noopener" href="https://desktop.docker.com/mac/main/arm64{{ $build_path }}Docker.dmg">Mac
+  <a rel="noopener" href="https://desktop.docker.com/mac/main/arm64{{ $build_path }}Docker.dmg">Mac
     with Apple chip</a>
 @y
-  <a target="_blank" rel="noopener" href="https://desktop.docker.com/mac/main/arm64{{ $build_path }}Docker.dmg">Apple チップの Mac</a>
+  <a rel="noopener" href="https://desktop.docker.com/mac/main/arm64{{ $build_path }}Docker.dmg">Apple チップの Mac</a>
 @z
 
 @x
@@ -33,10 +33,10 @@
 @z
 
 @x
-  <a target="_blank" rel="noopener" href="https://desktop.docker.com/mac/main/amd64{{ $build_path }}Docker.dmg">Mac
+  <a rel="noopener" href="https://desktop.docker.com/mac/main/amd64{{ $build_path }}Docker.dmg">Mac
     with Intel chip</a>
 @y
-  <a target="_blank" rel="noopener" href="https://desktop.docker.com/mac/main/amd64{{ $build_path }}Docker.dmg">Intel チップの Mac</a>
+  <a rel="noopener" href="https://desktop.docker.com/mac/main/amd64{{ $build_path }}Docker.dmg">Intel チップの Mac</a>
 @z
 
 @x

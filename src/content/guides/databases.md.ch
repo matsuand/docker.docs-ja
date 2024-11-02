@@ -18,11 +18,9 @@ summary: |
 @z
 
 @x
-levels: [beginner]
-subjects: [databases]
+tags: [databases]
 @y
-levels: [初心者向け]
-subjects: [データベース]
+tags: [databases]
 @z
 
 % params:

@@ -118,7 +118,6 @@ AC_CONFIG_FILES([
 	src/content/languages/r/Makefile
 	src/content/languages/ruby/Makefile
 	src/content/languages/rust/Makefile
-	src/content/levels/Makefile
 	src/content/manuals/Makefile
 	src/content/manuals/accounts/Makefile
 	src/content/manuals/admin/Makefile
@@ -255,10 +254,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/trusted-content/Makefile
 	src/content/manuals/trusted-content/images/Makefile
 	src/content/manuals/trusted-content/official-images/Makefile
-	src/content/products/Makefile
-	src/content/products/compose/Makefile
-	src/content/products/dbc/Makefile
-	src/content/products/scout/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/engine/Makefile
@@ -299,18 +294,20 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/volume/Makefile
 	src/content/reference/compose-file/Makefile
 	src/content/reference/samples/Makefile
-	src/content/subjects/Makefile
-	src/content/subjects/ai/Makefile
-	src/content/subjects/cloud-services/Makefile
-	src/content/subjects/data-science/Makefile
-	src/content/subjects/databases/Makefile
-	src/content/subjects/deploy/Makefile
-	src/content/subjects/devops/Makefile
-	src/content/subjects/distributed-systems/Makefile
-	src/content/subjects/networking/Makefile
 	src/content/tags/Makefile
+	src/content/tags/admin/Makefile
+	src/content/tags/ai/Makefile
+	src/content/tags/app-dev/Makefile
 	src/content/tags/best-practices/Makefile
+	src/content/tags/cloud-services/Makefile
+	src/content/tags/databases/Makefile
+	src/content/tags/data-science/Makefile
+	src/content/tags/deploy/Makefile
+	src/content/tags/devops/Makefile
+	src/content/tags/distributed-systems/Makefile
 	src/content/tags/faq/Makefile
+	src/content/tags/networking/Makefile
+	src/content/tags/product-demo/Makefile
 	src/content/tags/release-notes/Makefile
 	src/content/tags/secrets/Makefile
 	src/content/tags/troubleshooting/Makefile

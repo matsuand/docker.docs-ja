@@ -27,10 +27,8 @@ summary: |
 
 @x
 languages: [js]
-levels: [beginner]
 @y
 languages: [js]
-levels: [初心者向け]
 @z
 
 % params:

@@ -22,13 +22,11 @@ summary: |
 @z
 
 @x
-subjects: [distributed-systems]
+tags: [distributed-systems]
 languages: [js]
-levels: [intermediate]
 @y
-subjects: [配布システム]
+tags: [distributed-systems]
 languages: [js]
-levels: [中級者向け]
 @z
 
 %params:

@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Secrets
-icon: password
 description: Use sensitive information in containers securely
----
 @y
----
 title: Secrets
-icon: password
 description: Use sensitive information in containers securely
----
 @z
 
 @x

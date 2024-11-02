@@ -24,11 +24,9 @@ summary: |
 @z
 
 @x
-levels: [beginner]
-products: [dbc]
+tags: [product-demo]
 @y
-levels: [初心者向け]
-products: [dbc]
+tags: [product-demo]
 @z
 
 % params:

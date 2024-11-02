@@ -305,6 +305,7 @@ copyfiles = \
 	YoutubeCircle.svg       \
 	ai-stars.svg            \
 	docker-docs-white.svg   \
+	docker-docs-white-condensed.svg \
 	search-ai.svg           \
 	thumbnail.webp
 

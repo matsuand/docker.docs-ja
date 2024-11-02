@@ -2,13 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Guides
-keywords: Docker guides
+title: Docker guides
+linkTitle: Guides
 description: Explore the Docker guides
 @y
-title: ガイド
-keywords: Docker ガイド
-description: Docker ガイドを見ていきます。
+title: Docker ガイド
+linkTitle: ガイド
+description: Explore the Docker guides
 @z
 
 @x

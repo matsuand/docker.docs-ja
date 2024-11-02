@@ -22,11 +22,9 @@ summary: |
 @z
 
 @x
-subjects: [deploy]
-levels: [beginner]
+tags: [deploy]
 @y
-subjects: [デプロイ]
-levels: [初心者向け]
+tags: [deploy]
 @z
 
 % params:

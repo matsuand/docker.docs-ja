@@ -30,12 +30,12 @@ security features](manuals/security/for-admins/hardened-desktop/_index.md) for y
 @z
 
 @x
-There are multiple ways you can enforce sign-in, depending on your companies' set up and preferences:
+There are multiple methods for enforcing sign-in, depending on your companies' set up and preferences:
 - [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=green text="New" >}}
 - [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=green text="New" >}}
 - [`registry.json` method (All)](methods.md#registryjson-method-all)
 @y
-There are multiple ways you can enforce sign-in, depending on your companies' set up and preferences:
+There are multiple methods for enforcing sign-in, depending on your companies' set up and preferences:
 - [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=green text="New" >}}
 - [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=green text="New" >}}
 - [`registry.json` method (All)](methods.md#registryjson-method-all)
@@ -48,10 +48,10 @@ There are multiple ways you can enforce sign-in, depending on your companies' se
 @z
 
 @x
-When Docker Desktop starts and it detects a registry key, a `.plist` file or `registry.json` file, the
+When Docker Desktop starts and it detects a registry key, `.plist` file, or `registry.json` file, the
 following occurs:
 @y
-When Docker Desktop starts and it detects a registry key, a `.plist` file or `registry.json` file, the
+When Docker Desktop starts and it detects a registry key, `.plist` file, or `registry.json` file, the
 following occurs:
 @z
 
@@ -101,12 +101,26 @@ description and benefits when using each feature.
 | Enforce sign-in only              | Users must sign in before using Docker Desktop.                 | Ensures users receive the benefits of your subscription and ensures security features are applied. In addition, you gain insights into users’ activity.                                                                                                    |
 | Enforce single sign-on (SSO) only | If users sign in, they must sign in using SSO.                  | Centralizes authentication and enforces unified policies set by the identity provider.                                                                                                                                                                     |
 | Enforce both                      | Users must sign in using SSO before using Docker Desktop.       | Ensures users receive the benefits of your subscription and ensures security features are applied. In addition, you gain insights into users’ activity. Finally, it centralizes authentication and enforces unified policies set by the identity provider. |
-| Enforce neither                   | If users sign in, they can use SSO or their Docker credentials. | Allows users to access Docker Desktop without barriers, but at the cost of reduced security and insights.                                                                                                                                                  |
+| Enforce neither                   | If users sign in, they can use SSO or their Docker credentials. | Lets users access Docker Desktop without barriers, but at the cost of reduced security and insights.                                                                                                                                                  |
 @y
 | Enforcement                       | Description                                                     | Benefits                                                                                                                                                                                                                                                   |
 |:----------------------------------|:----------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Enforce sign-in only              | Users must sign in before using Docker Desktop.                 | Ensures users receive the benefits of your subscription and ensures security features are applied. In addition, you gain insights into users’ activity.                                                                                                    |
 | Enforce single sign-on (SSO) only | If users sign in, they must sign in using SSO.                  | Centralizes authentication and enforces unified policies set by the identity provider.                                                                                                                                                                     |
 | Enforce both                      | Users must sign in using SSO before using Docker Desktop.       | Ensures users receive the benefits of your subscription and ensures security features are applied. In addition, you gain insights into users’ activity. Finally, it centralizes authentication and enforces unified policies set by the identity provider. |
-| Enforce neither                   | If users sign in, they can use SSO or their Docker credentials. | Allows users to access Docker Desktop without barriers, but at the cost of reduced security and insights.                                                                                                                                                  |
+| Enforce neither                   | If users sign in, they can use SSO or their Docker credentials. | Lets users access Docker Desktop without barriers, but at the cost of reduced security and insights.                                                                                                                                                  |
+@z
+
+@x
+## What's next?
+@y
+## What's next?
+@z
+
+@x
+- To enforce sign-in, review the [Methods](/manuals/security/for-admins/enforce-sign-in/methods.md) guide.
+- To enforce SSO, review the [Enforce SSO](/manuals/security/for-admins/single-sign-on/connect.md) steps.
+@y
+- To enforce sign-in, review the [Methods](manuals/security/for-admins/enforce-sign-in/methods.md) guide.
+- To enforce SSO, review the [Enforce SSO](manuals/security/for-admins/single-sign-on/connect.md) steps.
 @z

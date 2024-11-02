@@ -240,7 +240,6 @@ top_srcdir = @top_srcdir@
 copyfiles = \
 	css.html          \
 	description.html  \
-	filter-terms.html \
 	keywords.html     \
 	title.html
 
