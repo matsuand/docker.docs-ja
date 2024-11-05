@@ -11,12 +11,12 @@
 
 @x
 {{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
+  {{ $product_link = "the [Admin Console](https://app.docker.com/admin)" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO and SCIM**." }}
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
+  {{ $product_link = "the [Admin Console](https://app.docker.com/admin)" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO and SCIM**." }}
 {{ end }}
 @z
@@ -35,7 +35,7 @@
 5. In the **Domain** drop-down, select the **x** icon next to the domain that you want to remove.
 6. Select **Next** to confirm or change the connected organization(s).
 7. Select **Next** to confirm or change the default organization and team provisioning selections.
-8. Review the **Connection Summary** and select **Save**.
+8. Review the **Connection Summary** and select **Update connection**.
 @y
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
@@ -44,15 +44,15 @@
 5. In the **Domain** drop-down, select the **x** icon next to the domain that you want to remove.
 6. Select **Next** to confirm or change the connected organization(s).
 7. Select **Next** to confirm or change the default organization and team provisioning selections.
-8. Review the **Connection Summary** and select **Save**.
+8. Review the **Connection Summary** and select **Update connection**.
 @z
 
 @x
-> **Note**
+> [!Note]
 >
 > If you want to re-add the domain, a new TXT record value is assigned. You must then complete the verification steps with the new TXT record value.
 @y
-> **Note**
+> [!Note]
 >
 > If you want to re-add the domain, a new TXT record value is assigned. You must then complete the verification steps with the new TXT record value.
 @z

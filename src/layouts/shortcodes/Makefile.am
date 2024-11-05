@@ -10,7 +10,6 @@ bases = \
 	admin-sso-connect.md                \
 	admin-sso-management-connections.md \
 	admin-sso-management-orgs.md        \
-	admin-sso-management-users.md       \
 	admin-sso-management.md             \
 	admin-users.html                    \
 	desktop-install.html                \

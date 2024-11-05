@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応
 
 @x
 description: >
@@ -18,9 +18,9 @@ title: Roles and permissions
 @z
 
 @x
-Organization and company owners can assign roles to individuals giving them different permissions in the organization. This section is for owners who want to learn about the defined roles and their permission scopes.
+Organization and company owners can assign roles to individuals giving them different permissions in the organization. This guide outlines Docker's organization roles and their permission scopes.
 @y
-Organization and company owners can assign roles to individuals giving them different permissions in the organization. This section is for owners who want to learn about the defined roles and their permission scopes.
+Organization and company owners can assign roles to individuals giving them different permissions in the organization. This guide outlines Docker's organization roles and their permission scopes.
 @z
 
 @x
@@ -30,9 +30,9 @@ Organization and company owners can assign roles to individuals giving them diff
 @z
 
 @x
-When you invite users to your organization, you assign a role. A role is a collection of permissions. Roles define access to perform actions like creating repositories, pulling images, creating teams, and configuring organization settings.
+When you invite users to your organization, you assign them a role. A role is a collection of permissions. Roles define whether users can create repositories, pull images, create teams, and configure organization settings.
 @y
-When you invite users to your organization, you assign a role. A role is a collection of permissions. Roles define access to perform actions like creating repositories, pulling images, creating teams, and configuring organization settings.
+When you invite users to your organization, you assign them a role. A role is a collection of permissions. Roles define whether users can create repositories, pull images, create teams, and configure organization settings.
 @z
 
 @x
@@ -42,21 +42,31 @@ The following roles are available to assign:
 @z
 
 @x
-- **Member** - Non-administrative role. Members can view other members that are in the same organization.
-- **Editor** - Partial administrative access to the organization. Editors can create, edit, and delete repositories. They can also edit an existing team's access permissions.
-- **Organization owner** - Full organization administrative access. Organization owners can manage organization repositories, teams, members, settings, and billing.
-- **Company owner** - In addition to the permissions of an organization owner, company owners can configure settings for their associated organizations.
+- Member: Non-administrative role. Members can view other members that are in the same organization.
+- Editor: Partial administrative access to the organization. Editors can create, edit, and delete repositories. They can also edit an existing team's access permissions.
+- Organization owner: Full organization administrative access. Organization owners can manage organization repositories, teams, members, settings, and billing.
+- Company owner: In addition to the permissions of an organization owner, company owners can configure settings for their associated organizations.
 @y
-- **Member** - Non-administrative role. Members can view other members that are in the same organization.
-- **Editor** - Partial administrative access to the organization. Editors can create, edit, and delete repositories. They can also edit an existing team's access permissions.
-- **Organization owner** - Full organization administrative access. Organization owners can manage organization repositories, teams, members, settings, and billing.
-- **Company owner** - In addition to the permissions of an organization owner, company owners can configure settings for their associated organizations.
+- Member: Non-administrative role. Members can view other members that are in the same organization.
+- Editor: Partial administrative access to the organization. Editors can create, edit, and delete repositories. They can also edit an existing team's access permissions.
+- Organization owner: Full organization administrative access. Organization owners can manage organization repositories, teams, members, settings, and billing.
+- Company owner: In addition to the permissions of an organization owner, company owners can configure settings for their associated organizations.
 @z
 
 @x
-Owners can manage roles for members of an organization on [Docker Hub](/manuals/admin/organization/members.md#update-a-member-role), as well members of an [organization](/manuals/admin/organization/members.md#update-a-member-role) or a [company](/manuals/admin/company/users.md#update-a-member-role) in the [Docker Admin Console](/manuals/admin/_index.md).
+Owners can manage roles for members of an organization using Docker Hub or the Admin Console:
 @y
-Owners can manage roles for members of an organization on [Docker Hub](manuals/admin/organization/members.md#update-a-member-role), as well members of an [organization](manuals/admin/organization/members.md#update-a-member-role) or a [company](manuals/admin/company/users.md#update-a-member-role) in the [Docker Admin Console](manuals/admin/_index.md).
+Owners can manage roles for members of an organization using Docker Hub or the Admin Console:
+@z
+
+@x
+- Update a member role in [Docker Hub](/manuals/admin/organization/members.md#update-a-member-role)
+- Update an organization's members or company in the [Admin Console](/manuals/admin/company/users.md#update-a-member-role)
+- Learn more about [organizations and companies](/manuals/admin/_index.md)
+@y
+- Update a member role in [Docker Hub](/manuals/admin/organization/members.md#update-a-member-role)
+- Update an organization's members or company in the [Admin Console](/manuals/admin/company/users.md#update-a-member-role)
+- Learn more about [organizations and companies](/manuals/admin/_index.md)
 @z
 
 @x
@@ -78,15 +88,9 @@ The following sections describe the permissions for each role.
 @z
 
 @x
-The following outlines content and registry permissions for member, editor, and organization owner roles. These permissions and roles apply to the entire organization, including all the repositories in the namespace for the organization.
+The following table outlines content and registry permissions for member, editor, and organization owner roles. These permissions and roles apply to the entire organization, including all the repositories in the namespace for the organization.
 @y
-The following outlines content and registry permissions for member, editor, and organization owner roles. These permissions and roles apply to the entire organization, including all the repositories in the namespace for the organization.
-@z
-
-@x
-Company owners have the same access as organization owners for all associated organizations. See [Company overview](/admin/company/).
-@y
-Company owners have the same access as organization owners for all associated organizations. See [Company overview](__SUBDIR__/admin/company/).
+The following table outlines content and registry permissions for member, editor, and organization owner roles. These permissions and roles apply to the entire organization, including all the repositories in the namespace for the organization.
 @z
 
 @x
@@ -132,9 +136,9 @@ When you add members to a team, you can manage their repository permissions. For
 @z
 
 @x
-See the following diagram for an example of how permissions may work for a user. In this example, the first permission check is for the role: member or editor. Editors have administrative permissions for repositories across the namespace of the organization. Members may have administrative permissions for a repository if they're a member of a team that grants those permissions.
+The following diagram provides an example of how permissions may work for a user. In this example, the first permission check is for the role: member or editor. Editors have administrative permissions for repositories across the namespace of the organization. Members may have administrative permissions for a repository if they're a member of a team that grants those permissions.
 @y
-See the following diagram for an example of how permissions may work for a user. In this example, the first permission check is for the role: member or editor. Editors have administrative permissions for repositories across the namespace of the organization. Members may have administrative permissions for a repository if they're a member of a team that grants those permissions.
+The following diagram provides an example of how permissions may work for a user. In this example, the first permission check is for the role: member or editor. Editors have administrative permissions for repositories across the namespace of the organization. Members may have administrative permissions for a repository if they're a member of a team that grants those permissions.
 @z
 
 @x
@@ -150,9 +154,9 @@ See the following diagram for an example of how permissions may work for a user.
 @z
 
 @x
-The following outlines organization management permissions for member, editor, organization owner, and company owner roles.
+The following table outlines organization management permissions for member, editor, organization owner, and company owner roles.
 @y
-The following outlines organization management permissions for member, editor, organization owner, and company owner roles.
+The following table outlines organization management permissions for member, editor, organization owner, and company owner roles.
 @z
 
 @x
@@ -171,8 +175,8 @@ The following outlines organization management permissions for member, editor, o
 | Registry Access Management                                        | ❌     | ❌     | ✅                 | ✅            |
 | Set up Single Sign-On (SSO) and SCIM                              | ❌     | ❌     | ✅ \*              | ✅            |
 | Require Docker Desktop sign-in                                    | ❌     | ❌     | ✅ \*              | ✅            |
-| Manage billing information (e.g. billing address)                 | ❌     | ❌     | ✅                 | ✅            |
-| Manage payment methods (e.g. credit card or invoice)              | ❌     | ❌     | ✅                 | ✅            |
+| Manage billing information (for example, billing address)                 | ❌     | ❌     | ✅                 | ✅            |
+| Manage payment methods (for example, credit card or invoice)              | ❌     | ❌     | ✅                 | ✅            |
 | View billing history                                              | ❌     | ❌     | ✅                 | ✅            |
 | Manage subscriptions                                              | ❌     | ❌     | ✅                 | ✅            |
 | Manage seats                                                      | ❌     | ❌     | ✅                 | ✅            |
@@ -193,8 +197,8 @@ The following outlines organization management permissions for member, editor, o
 | Registry Access Management                                        | ❌     | ❌     | ✅                 | ✅            |
 | Set up Single Sign-On (SSO) and SCIM                              | ❌     | ❌     | ✅ \*              | ✅            |
 | Require Docker Desktop sign-in                                    | ❌     | ❌     | ✅ \*              | ✅            |
-| Manage billing information (e.g. billing address)                 | ❌     | ❌     | ✅                 | ✅            |
-| Manage payment methods (e.g. credit card or invoice)              | ❌     | ❌     | ✅                 | ✅            |
+| Manage billing information (for example, billing address)                 | ❌     | ❌     | ✅                 | ✅            |
+| Manage payment methods (for example, credit card or invoice)              | ❌     | ❌     | ✅                 | ✅            |
 | View billing history                                              | ❌     | ❌     | ✅                 | ✅            |
 | Manage subscriptions                                              | ❌     | ❌     | ✅                 | ✅            |
 | Manage seats                                                      | ❌     | ❌     | ✅                 | ✅            |
@@ -208,15 +212,15 @@ _\* If not part of a company_
 @z
 
 @x
-### Docker Scout
+### Docker Scout permissions
 @y
-### Docker Scout
+### Docker Scout permissions
 @z
 
 @x
-The following outlines Docker Scout management permissions for member, editor, and organization owner roles.
+The following table outlines Docker Scout management permissions for member, editor, and organization owner roles.
 @y
-The following outlines Docker Scout management permissions for member, editor, and organization owner roles.
+The following table outlines Docker Scout management permissions for member, editor, and organization owner roles.
 @z
 
 @x

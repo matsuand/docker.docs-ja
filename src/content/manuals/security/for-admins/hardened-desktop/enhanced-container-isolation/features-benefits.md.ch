@@ -568,17 +568,17 @@ Desktop Linux VM (e.g., 100000->165535).
 @x
 Moreover, each container gets an exclusive range of real user-IDs in the Linux
 VM (e.g., container 0 could get mapped to 100000->165535, container 2 to
-165536->231071, container 3 to 231072->296607, and so on). Same applies to
+165536->231071, container 3 to 231072->296607, and so on). The same applies to
 group-IDs. In addition, if a container is stopped and restarted, there is no
-guarantee it will receive the same mapping as before. This by design and further
-improves security.
+guarantee it will receive the same mapping as before. This is by design and
+further improves security.
 @y
 Moreover, each container gets an exclusive range of real user-IDs in the Linux
 VM (e.g., container 0 could get mapped to 100000->165535, container 2 to
-165536->231071, container 3 to 231072->296607, and so on). Same applies to
+165536->231071, container 3 to 231072->296607, and so on). The same applies to
 group-IDs. In addition, if a container is stopped and restarted, there is no
-guarantee it will receive the same mapping as before. This by design and further
-improves security.
+guarantee it will receive the same mapping as before. This is by design and
+further improves security.
 @z
 
 @x

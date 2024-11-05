@@ -110,7 +110,7 @@ Invitees receive an email with instructions on how they can accept the invite. A
 @z
 
 @x
-For more information on the permissions granted to members, see [Roles and permissions](/security/for-admins/roles-and-permissions#docker-build-cloud).
+For more information on the permissions granted to members, see [Roles and permissions](/manuals/security/for-admins/roles-and-permissions.md#docker-build-cloud).
 @y
-For more information on the permissions granted to members, see [Roles and permissions](__SUBDIR__/security/for-admins/roles-and-permissions#docker-build-cloud).
+For more information on the permissions granted to members, see [Roles and permissions](manuals/security/for-admins/roles-and-permissions.md#docker-build-cloud).
 @z

@@ -74,11 +74,11 @@ You must manually register such runtimes in the daemon configuration.
 @z
 
 @x
-[youki](https://github.com/containers/youki)
+[youki](https://github.com/youki-dev/youki)
 is one example of a runtime that can function as a runc drop-in replacement.
 Refer to the [youki example](#youki) explaining the setup.
 @y
-[youki](https://github.com/containers/youki)
+[youki](https://github.com/youki-dev/youki)
 is one example of a runtime that can function as a runc drop-in replacement.
 Refer to the [youki example](#youki) explaining the setup.
 @z

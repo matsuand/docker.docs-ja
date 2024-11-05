@@ -11,12 +11,12 @@
 
 @x
 {{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
+  {{ $product_link = "the [Admin Console](https://app.docker.com/admin)" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO and SCIM**. Note that when an organization is part of a company, you must select the company and configure SSO for that organization at the company level. Each organization can have its own SSO configuration and domain, but it must be configured at the company level." }}
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
-  {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
+  {{ $product_link = "the [Admin Console](https://app.docker.com/admin)" }}
   {{ $sso_navigation = "Select your organization or company in the left navigation drop-down menu, and then select **SSO and SCIM**. Note that when an organization is part of a company, you must select the company and configure SSO for that organization at the company level. Each organization can have its own SSO configuration and domain, but it must be configured at the company level." }}
 {{ end }}
 @z
@@ -31,13 +31,13 @@
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
 3. In the SSO connections table, select the **Action** icon.
-4. Select **Edit connection** to edit your connection.
+4. Select **Edit connection**.
 5. Follow the on-screen instructions to edit the connection.
 @y
 1. Sign in to {{ $product_link }}.
 2. {{ $sso_navigation }}
 3. In the SSO connections table, select the **Action** icon.
-4. Select **Edit connection** to edit your connection.
+4. Select **Edit connection**.
 5. Follow the on-screen instructions to edit the connection.
 @z
 
@@ -68,7 +68,7 @@
 @z
 
 @x
-When you disable SSO, you can delete the connection to remove the configuration settings and the added domains. Once you delete this connection, it can't be undone. Users must authenticate with their Docker ID and password or create a password reset if they don't have one.
+When you disable SSO, you can delete the connection to remove the configuration settings and the added domains. Once you delete this connection, it can't be undone. If an SSO connection is deleted, Docker users must authenticate with their Docker ID and password.
 @y
-When you disable SSO, you can delete the connection to remove the configuration settings and the added domains. Once you delete this connection, it can't be undone. Users must authenticate with their Docker ID and password or create a password reset if they don't have one.
+When you disable SSO, you can delete the connection to remove the configuration settings and the added domains. Once you delete this connection, it can't be undone. If an SSO connection is deleted, Docker users must authenticate with their Docker ID and password.
 @z
