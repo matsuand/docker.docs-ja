@@ -71,15 +71,7 @@ randomly-generated name and no published ports. This is a naive example, since
 you can't interact with the Nginx service.
 @z
 
-@x
-```console
-$ docker service create nginx
-```
-@y
-```console
-$ docker service create nginx
-```
-@z
+% snip command...
 
 @x
 The service is scheduled on an available node. To confirm that the service
@@ -89,23 +81,7 @@ The service is scheduled on an available node. To confirm that the service
 was created and started successfully, use the `docker service ls` command:
 @z
 
-@x
-```console
-$ docker service ls
-@y
-```console
-$ docker service ls
-@z
-
-@x
-ID                  NAME                MODE                REPLICAS            IMAGE                                                                                             PORTS
-a3iixnklxuem        quizzical_lamarr    replicated          1/1                 docker.io/library/nginx@sha256:41ad9967ea448d7c2b203c699b429abe1ed5af331cd92533900c6d77490e0268
-```
-@y
-ID                  NAME                MODE                REPLICAS            IMAGE                                                                                             PORTS
-a3iixnklxuem        quizzical_lamarr    replicated          1/1                 docker.io/library/nginx@sha256:41ad9967ea448d7c2b203c699b429abe1ed5af331cd92533900c6d77490e0268
-```
-@z
+% snip command...
 
 @x
 Created services do not always run right away. A service can be in a pending
@@ -127,15 +103,7 @@ To provide a name for your service, use the `--name` flag:
 To provide a name for your service, use the `--name` flag:
 @z
 
-@x
-```console
-$ docker service create --name my_web nginx
-```
-@y
-```console
-$ docker service create --name my_web nginx
-```
-@z
+% snip command...
 
 @x
 Just like with standalone containers, you can specify a command that the
@@ -149,15 +117,7 @@ starts a service called `helloworld` which uses an `alpine` image and runs the
 command `ping docker.com`:
 @z
 
-@x
-```console
-$ docker service create --name helloworld alpine ping docker.com
-```
-@y
-```console
-$ docker service create --name helloworld alpine ping docker.com
-```
-@z
+% snip command...
 
 @x
 You can also specify an image tag for the service to use. This example modifies
@@ -167,15 +127,7 @@ You can also specify an image tag for the service to use. This example modifies
 the previous one to use the `alpine:3.6` tag:
 @z
 
-@x
-```console
-$ docker service create --name helloworld alpine:3.6 ping docker.com
-```
-@y
-```console
-$ docker service create --name helloworld alpine:3.6 ping docker.com
-```
-@z
+% snip command...
 
 @x
 For more details about image tag resolution, see
@@ -219,15 +171,7 @@ To use a config as a credential spec, first create the Docker config containing 
 To use a config as a credential spec, first create the Docker config containing the credential spec:
 @z
 
-@x
-```console
-$ docker config create credspec credspec.json
-```
-@y
-```console
-$ docker config create credspec credspec.json
-```
-@z
+% snip command...
 
 @x
 Now, you should have a Docker config named credspec, and you can create a service using this credential spec. To do so, use the --credential-spec flag with the config name, like this:
@@ -235,15 +179,7 @@ Now, you should have a Docker config named credspec, and you can create a servic
 Now, you should have a Docker config named credspec, and you can create a service using this credential spec. To do so, use the --credential-spec flag with the config name, like this:
 @z
 
-@x
-```console
-$ docker service create --credential-spec="config://credspec" <your image>
-```
-@y
-```console
-$ docker service create --credential-spec="config://credspec" <your image>
-```
-@z
+% snip command...
 
 @x
 Your service uses the gMSA credential spec when it starts, but unlike a typical Docker config (used by passing the --config flag), the credential spec is not mounted into the container.
@@ -269,27 +205,7 @@ your image is stored on `registry.example.com`, which is a private registry, use
 a command like the following:
 @z
 
-@x
-```console
-$ docker login registry.example.com
-@y
-```console
-$ docker login registry.example.com
-@z
-
-@x
-$ docker service  create \
-  --with-registry-auth \
-  --name my_service \
-  registry.example.com/acme/my_image:latest
-```
-@y
-$ docker service  create \
-  --with-registry-auth \
-  --name my_service \
-  registry.example.com/acme/my_image:latest
-```
-@z
+% snip command...
 
 @x
 This passes the login token from your local client to the swarm nodes where the
@@ -353,19 +269,7 @@ The credential spec contained in the specified `config` is used.
  The following simple example retrieves the gMSA name and JSON contents from your Active Directory (AD) instance:
 @z
 
-@x
- ```console
-$ name="mygmsa"
-$ contents="{...}"
-$ echo $contents > contents.json
-```
-@y
- ```console
-$ name="mygmsa"
-$ contents="{...}"
-$ echo $contents > contents.json
-```
-@z
+% snip command...
 
 @x
 Make sure that the nodes to which you are deploying are correctly configured for the gMSA.
@@ -381,15 +285,7 @@ Make sure that the nodes to which you are deploying are correctly configured for
  You can specify any name for the name of the `config`. 
 @z
 
-@x
-```console
-$ docker config create --label com.docker.gmsa.name=mygmsa credspec credspec.json
-```
-@y
-```console
-$ docker config create --label com.docker.gmsa.name=mygmsa credspec credspec.json
-```
-@z
+% snip command...
 
 @x
 Now you can create a service using this credential spec. Specify the `--credential-spec` flag with the config name:
@@ -397,15 +293,7 @@ Now you can create a service using this credential spec. Specify the `--credenti
 Now you can create a service using this credential spec. Specify the `--credential-spec` flag with the config name:
 @z
 
-@x
-```console
-$ docker service create --credential-spec="config://credspec" <your image>
-```
-@y
-```console
-$ docker service create --credential-spec="config://credspec" <your image>
-```
-@z
+% snip command...
 
 @x
  Your service uses the gMSA credential spec when it starts, but unlike a typical Docker config (used by passing the --config flag), the credential spec is not mounted into the container.
@@ -451,15 +339,7 @@ Assuming that the `my_web` service from the previous section still exists, use
 the following command to update it to publish port 80.
 @z
 
-@x
-```console
-$ docker service update --publish-add 80 my_web
-```
-@y
-```console
-$ docker service update --publish-add 80 my_web
-```
-@z
+% snip command...
 
 @x
 To verify that it worked, use `docker service ls`:
@@ -467,23 +347,7 @@ To verify that it worked, use `docker service ls`:
 To verify that it worked, use `docker service ls`:
 @z
 
-@x
-```console
-$ docker service ls
-@y
-```console
-$ docker service ls
-@z
-
-@x
-ID                  NAME                MODE                REPLICAS            IMAGE                                                                                             PORTS
-4nhxl7oxw5vz        my_web              replicated          1/1                 docker.io/library/nginx@sha256:41ad9967ea448d7c2b203c699b429abe1ed5af331cd92533900c6d77490e0268   *:0->80/tcp
-```
-@y
-ID                  NAME                MODE                REPLICAS            IMAGE                                                                                             PORTS
-4nhxl7oxw5vz        my_web              replicated          1/1                 docker.io/library/nginx@sha256:41ad9967ea448d7c2b203c699b429abe1ed5af331cd92533900c6d77490e0268   *:0->80/tcp
-```
-@z
+% snip command...
 
 @x
 For more information on how publishing ports works, see
@@ -519,15 +383,7 @@ service by its ID or name, as shown in the output of the `docker service ls`
 command. The following command removes the `my_web` service.
 @z
 
-@x
-```console
-$ docker service remove my_web
-```
-@y
-```console
-$ docker service remove my_web
-```
-@z
+% snip command...
 
 @x
 ## Service configuration details
@@ -593,23 +449,7 @@ set to `myvalue`, run from the `/tmp/` directory, and run as the
 `my_user` user.
 @z
 
-@x
-```console
-$ docker service create --name helloworld \
-  --env MYVAR=myvalue \
-  --workdir /tmp \
-  --user my_user \
-  alpine ping docker.com
-```
-@y
-```console
-$ docker service create --name helloworld \
-  --env MYVAR=myvalue \
-  --workdir /tmp \
-  --user my_user \
-  alpine ping docker.com
-```
-@z
+% snip command...
 
 @x
 ### Update the command an existing service runs
@@ -629,15 +469,7 @@ it runs the command `ping docker.com` instead of whatever command it was running
 before:
 @z
 
-@x
-```console
-$ docker service update --args "ping docker.com" helloworld
-```
-@y
-```console
-$ docker service update --args "ping docker.com" helloworld
-```
-@z
+% snip command...
 
 @x
 ### Specify the image version a service should use
@@ -675,15 +507,7 @@ An image version can be expressed in several different ways:
   worker node only sees the digest, not the tag.
 @z
 
-@x
-  ```console
-  $ docker service create --name="myservice" ubuntu:16.04
-  ```
-@y
-  ```console
-  $ docker service create --name="myservice" ubuntu:16.04
-  ```
-@z
+% snip command...
 
 @x
   Some tags represent discrete releases, such as `ubuntu:16.04`. Tags like this
@@ -723,21 +547,7 @@ An image version can be expressed in several different ways:
   Thus, the following two commands are equivalent:
 @z
 
-@x
-  ```console
-  $ docker service create --name="myservice" ubuntu
-@y
-  ```console
-  $ docker service create --name="myservice" ubuntu
-@z
-
-@x
-  $ docker service create --name="myservice" ubuntu:latest
-  ```
-@y
-  $ docker service create --name="myservice" ubuntu:latest
-  ```
-@z
+% snip command...
 
 @x
 - If you specify a digest directly, that exact version of the image is always
@@ -747,19 +557,7 @@ An image version can be expressed in several different ways:
   used when creating service tasks.
 @z
 
-@x
-  ```console
-  $ docker service create \
-      --name="myservice" \
-      ubuntu:16.04@sha256:35bc48a1ca97c3971611dc4662d08d131869daa692acb281c7e9e052924e38b1
-  ```
-@y
-  ```console
-  $ docker service create \
-      --name="myservice" \
-      ubuntu:16.04@sha256:35bc48a1ca97c3971611dc4662d08d131869daa692acb281c7e9e052924e38b1
-  ```
-@z
+% snip command...
 
 @x
 When you create a service, the image's tag is resolved to the specific digest
@@ -809,15 +607,7 @@ use different versions of the image. If this happens, a warning like the
 following is logged, substituting the placeholders for real information.
 @z
 
-@x
-```none
-unable to pin image <IMAGE-NAME> to digest: <REASON>
-```
-@y
-```none
-unable to pin image <IMAGE-NAME> to digest: <REASON>
-```
-@z
+% snip output...
 
 @x
 To see an image's current digest, issue the command
@@ -831,29 +621,8 @@ following is the current digest for `ubuntu:latest` at the time this content
 was written. The output is truncated for clarity.
 @z
 
-@x
-```console
-$ docker inspect ubuntu:latest
-```
-@y
-```console
-$ docker inspect ubuntu:latest
-```
-@z
-
-@x
-```json
-"RepoDigests": [
-    "ubuntu@sha256:35bc48a1ca97c3971611dc4662d08d131869daa692acb281c7e9e052924e38b1"
-],
-```
-@y
-```json
-"RepoDigests": [
-    "ubuntu@sha256:35bc48a1ca97c3971611dc4662d08d131869daa692acb281c7e9e052924e38b1"
-],
-```
-@z
+% snip command...
+% snip output...
 
 @x
 After you create a service, its image is never updated unless you explicitly run
@@ -1111,21 +880,7 @@ Imagine that you have a 10-node swarm, and you deploy an Nginx service running
 three tasks on a 10-node swarm:
 @z
 
-@x
-```console
-$ docker service create --name my_web \
-                        --replicas 3 \
-                        --publish published=8080,target=80 \
-                        nginx
-```
-@y
-```console
-$ docker service create --name my_web \
-                        --replicas 3 \
-                        --publish published=8080,target=80 \
-                        nginx
-```
-@z
+% snip command...
 
 @x
 Three tasks run on up to three nodes. You don't need to know which nodes
@@ -1149,31 +904,7 @@ The HTML output is truncated:
 The HTML output is truncated:
 @z
 
-@x
-```console
-$ curl localhost:8080
-@y
-```console
-$ curl localhost:8080
-@z
-
-@x
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-...truncated...
-</html>
-```
-@y
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-...truncated...
-</html>
-```
-@z
+% snip command...
 
 @x
 Subsequent connections may be routed to the same swarm node or a different one.
@@ -1253,23 +984,7 @@ The following example runs nginx as a service on each node in your swarm and
 exposes nginx port locally on each swarm node.
 @z
 
-@x
-```console
-$ docker service create \
-  --mode global \
-  --publish mode=host,target=80,published=8080 \
-  --name=nginx \
-  nginx:latest
-```
-@y
-```console
-$ docker service create \
-  --mode global \
-  --publish mode=host,target=80,published=8080 \
-  --name=nginx \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 You can reach the nginx server on port 8080 of every swarm node. If you add a
@@ -1315,15 +1030,7 @@ First, create overlay network on a manager node using the `docker network create
 command with the `--driver overlay` flag.
 @z
 
-@x
-```console
-$ docker network create --driver overlay my-network
-```
-@y
-```console
-$ docker network create --driver overlay my-network
-```
-@z
+% snip command...
 
 @x
 After you create an overlay network in swarm mode, all manager nodes have access
@@ -1341,23 +1048,7 @@ You can create a new service and pass the `--network` flag to attach the service
 to the overlay network:
 @z
 
-@x
-```console
-$ docker service create \
-  --replicas 3 \
-  --network my-network \
-  --name my-web \
-  nginx
-```
-@y
-```console
-$ docker service create \
-  --replicas 3 \
-  --network my-network \
-  --name my-web \
-  nginx
-```
-@z
+% snip command...
 
 @x
 The swarm extends `my-network` to each node running the service.
@@ -1373,15 +1064,7 @@ You can also connect an existing service to an overlay network using the
 `--network-add` flag.
 @z
 
-@x
-```console
-$ docker service update --network-add my-network my-web
-```
-@y
-```console
-$ docker service update --network-add my-network my-web
-```
-@z
+% snip command...
 
 @x
 To disconnect a running service from a network, use the `--network-rm` flag.
@@ -1389,15 +1072,7 @@ To disconnect a running service from a network, use the `--network-rm` flag.
 To disconnect a running service from a network, use the `--network-rm` flag.
 @z
 
-@x
-```console
-$ docker service update --network-rm my-network my-web
-```
-@y
-```console
-$ docker service update --network-rm my-network my-web
-```
-@z
+% snip command...
 
 @x
 For more information on overlay networking and service discovery, refer to
@@ -1625,21 +1300,7 @@ the number of replica tasks you want to start using the `--replicas` flag. For
 example, to start a replicated nginx service with 3 replica tasks:
 @z
 
-@x
-```console
-$ docker service create \
-  --name my_web \
-  --replicas 3 \
-  nginx
-```
-@y
-```console
-$ docker service create \
-  --name my_web \
-  --replicas 3 \
-  nginx
-```
-@z
+% snip command...
 
 @x
 To start a global service on each available node, pass `--mode global` to
@@ -1653,21 +1314,7 @@ places a task for the global service on the new node. For example to start a
 service that runs alpine on every node in the swarm:
 @z
 
-@x
-```console
-$ docker service create \
-  --name myservice \
-  --mode global \
-  alpine top
-```
-@y
-```console
-$ docker service create \
-  --name myservice \
-  --mode global \
-  alpine top
-```
-@z
+% snip command...
 
 @x
 Service constraints let you set criteria for a node to meet before the scheduler
@@ -1761,23 +1408,7 @@ nodes don't run any replicas. For global services, the service runs on every
 node that meets the placement constraint and any [resource requirements](#reserve-memory-or-cpus-for-a-service).
 @z
 
-@x
-```console
-$ docker service create \
-  --name my-nginx \
-  --replicas 5 \
-  --constraint node.labels.region==east \
-  nginx
-```
-@y
-```console
-$ docker service create \
-  --name my-nginx \
-  --replicas 5 \
-  --constraint node.labels.region==east \
-  nginx
-```
-@z
+% snip command...
 
 @x
 You can also use the `constraint` service-level key in a `compose.yml`
@@ -1797,25 +1428,7 @@ nodes where they are all met. The following example limits the service to run on
 all nodes where `region` is set to `east` and `type` is not set to `devel`:
 @z
 
-@x
-```console
-$ docker service create \
-  --name my-nginx \
-  --mode global \
-  --constraint node.labels.region==east \
-  --constraint node.labels.type!=devel \
-  nginx
-```
-@y
-```console
-$ docker service create \
-  --name my-nginx \
-  --mode global \
-  --constraint node.labels.region==east \
-  --constraint node.labels.type!=devel \
-  nginx
-```
-@z
+% snip command...
 
 @x
 You can also use placement constraints in conjunction with placement preferences
@@ -1889,23 +1502,7 @@ based on the value of the `datacenter` label. If some nodes have
 deployed as evenly as possible across the two sets of nodes.
 @z
 
-@x
-```console
-$ docker service create \
-  --replicas 9 \
-  --name redis_2 \
-  --placement-pref 'spread=node.labels.datacenter' \
-  redis:3.0.6
-```
-@y
-```console
-$ docker service create \
-  --replicas 9 \
-  --name redis_2 \
-  --placement-pref 'spread=node.labels.datacenter' \
-  redis:3.0.6
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -1941,25 +1538,7 @@ multiple placement preferences. Tasks are spread first over the various
 datacenters, and then over racks (as indicated by the respective labels):
 @z
 
-@x
-```console
-$ docker service create \
-  --replicas 9 \
-  --name redis_2 \
-  --placement-pref 'spread=node.labels.datacenter' \
-  --placement-pref 'spread=node.labels.rack' \
-  redis:3.0.6
-```
-@y
-```console
-$ docker service create \
-  --replicas 9 \
-  --name redis_2 \
-  --placement-pref 'spread=node.labels.datacenter' \
-  --placement-pref 'spread=node.labels.rack' \
-  redis:3.0.6
-```
-@z
+% snip command...
 
 @x
 You can also use placement preferences in conjunction with placement constraints
@@ -2059,27 +1638,7 @@ replicas at a time. When an updated task returns either `RUNNING` or `FAILED`,
 the scheduler waits 10 seconds before stopping the next task to update:
 @z
 
-@x
-```console
-$ docker service create \
-  --replicas 10 \
-  --name my_web \
-  --update-delay 10s \
-  --update-parallelism 2 \
-  --update-failure-action continue \
-  alpine
-```
-@y
-```console
-$ docker service create \
-  --replicas 10 \
-  --name my_web \
-  --update-delay 10s \
-  --update-parallelism 2 \
-  --update-failure-action continue \
-  alpine
-```
-@z
+% snip command...
 
 @x
 The `--update-max-failure-ratio` flag controls what fraction of tasks can fail
@@ -2137,21 +1696,7 @@ Other options can be combined with `--rollback`; for example,
 `--update-delay 0s`, to execute the rollback without a delay between tasks:
 @z
 
-@x
-```console
-$ docker service update \
-  --rollback \
-  --update-delay 0s
-  my_web
-```
-@y
-```console
-$ docker service update \
-  --rollback \
-  --update-delay 0s
-  my_web
-```
-@z
+% snip command...
 
 @x
 You can configure a service to roll back automatically if a service update fails
@@ -2223,25 +1768,7 @@ not exit, and a maximum failure ratio of 20% is tolerated. Default values are
 used for `--rollback-delay` and `--rollback-failure-action`.
 @z
 
-@x
-```console
-$ docker service create --name=my_redis \
-                        --replicas=5 \
-                        --rollback-parallelism=2 \
-                        --rollback-monitor=20s \
-                        --rollback-max-failure-ratio=.2 \
-                        redis:latest
-```
-@y
-```console
-$ docker service create --name=my_redis \
-                        --replicas=5 \
-                        --rollback-parallelism=2 \
-                        --rollback-monitor=20s \
-                        --rollback-max-failure-ratio=.2 \
-                        redis:latest
-```
-@z
+% snip command...
 
 @x
 ### Give a service access to volumes or bind mounts
@@ -2301,21 +1828,7 @@ To use existing data volumes with a service use the `--mount` flag:
 To use existing data volumes with a service use the `--mount` flag:
 @z
 
-@x
-```console
-$ docker service create \
-  --mount src=<VOLUME-NAME>,dst=<CONTAINER-PATH> \
-  --name myservice \
-  <IMAGE>
-```
-@y
-```console
-$ docker service create \
-  --mount src=<VOLUME-NAME>,dst=<CONTAINER-PATH> \
-  --name myservice \
-  <IMAGE>
-```
-@z
+% snip command...
 
 @x
 If a volume with the name `<VOLUME-NAME>` doesn't exist when a task is
@@ -2329,21 +1842,7 @@ driver is `local`.  To use a different volume driver with this create-on-demand
 pattern, specify the driver and its options with the `--mount` flag:
 @z
 
-@x
-```console
-$ docker service create \
-  --mount type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=<DRIVER>,volume-opt=<KEY0>=<VALUE0>,volume-opt=<KEY1>=<VALUE1>
-  --name myservice \
-  <IMAGE>
-```
-@y
-```console
-$ docker service create \
-  --mount type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=<DRIVER>,volume-opt=<KEY0>=<VALUE0>,volume-opt=<KEY1>=<VALUE1>
-  --name myservice \
-  <IMAGE>
-```
-@z
+% snip command...
 
 @x
 For more information on how to create data volumes and the use of volume
@@ -2383,21 +1882,7 @@ The following examples show bind mount syntax:
 - To mount a read-write bind:
 @z
 
-@x
-  ```console
-  $ docker service create \
-    --mount type=bind,src=<HOST-PATH>,dst=<CONTAINER-PATH> \
-    --name myservice \
-    <IMAGE>
-  ```
-@y
-  ```console
-  $ docker service create \
-    --mount type=bind,src=<HOST-PATH>,dst=<CONTAINER-PATH> \
-    --name myservice \
-    <IMAGE>
-  ```
-@z
+% snip command...
 
 @x
 - To mount a read-only bind:
@@ -2405,21 +1890,7 @@ The following examples show bind mount syntax:
 - To mount a read-only bind:
 @z
 
-@x
-  ```console
-  $ docker service create \
-    --mount type=bind,src=<HOST-PATH>,dst=<CONTAINER-PATH>,readonly \
-    --name myservice \
-    <IMAGE>
-  ```
-@y
-  ```console
-  $ docker service create \
-    --mount type=bind,src=<HOST-PATH>,dst=<CONTAINER-PATH>,readonly \
-    --name myservice \
-    <IMAGE>
-  ```
-@z
+% snip command...
 
 @x
 > [!IMPORTANT]
@@ -2535,19 +2006,7 @@ This example sets the template of the created containers based on the
 service's name and the ID of the node where the container is running:
 @z
 
-@x
-```console
-$ docker service create --name hosttempl \
-                        --hostname="{{.Node.ID}}-{{.Service.Name}}"\
-                         busybox top
-```
-@y
-```console
-$ docker service create --name hosttempl \
-                        --hostname="{{.Node.ID}}-{{.Service.Name}}"\
-                         busybox top
-```
-@z
+% snip command...
 
 @x
 To see the result of using the template, use the `docker service ps` and
@@ -2557,33 +2016,7 @@ To see the result of using the template, use the `docker service ps` and
 `docker inspect` commands.
 @z
 
-@x
-```console
-$ docker service ps va8ew30grofhjoychbr6iot8c
-@y
-```console
-$ docker service ps va8ew30grofhjoychbr6iot8c
-@z
-
-@x
-ID            NAME         IMAGE                                                                                   NODE          DESIRED STATE  CURRENT STATE               ERROR  PORTS
-wo41w8hg8qan  hosttempl.1  busybox:latest@sha256:29f5d56d12684887bdfa50dcd29fc31eea4aaf4ad3bec43daf19026a7ce69912  2e7a8a9c4da2  Running        Running about a minute ago
-```
-@y
-ID            NAME         IMAGE                                                                                   NODE          DESIRED STATE  CURRENT STATE               ERROR  PORTS
-wo41w8hg8qan  hosttempl.1  busybox:latest@sha256:29f5d56d12684887bdfa50dcd29fc31eea4aaf4ad3bec43daf19026a7ce69912  2e7a8a9c4da2  Running        Running about a minute ago
-```
-@z
-
-@x
-```console
-$ docker inspect --format="{{.Config.Hostname}}" hosttempl.1.wo41w8hg8qanxwjwsg4kxpprj
-```
-@y
-```console
-$ docker inspect --format="{{.Config.Hostname}}" hosttempl.1.wo41w8hg8qanxwjwsg4kxpprj
-```
-@z
+% snip command...
 
 @x
 ## Learn More

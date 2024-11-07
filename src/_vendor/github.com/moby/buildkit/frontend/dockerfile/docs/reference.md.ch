@@ -4736,7 +4736,6 @@ runtime, runs the relevant `ENTRYPOINT` and `CMD` commands.
 >
 > On Windows, the user must be created first if it's not a built-in account.
 > This can be done with the `net user` command called as part of a Dockerfile.
-{ .warning }
 @y
 > [!WARNING]
 > When the user doesn't have a primary group then the image (or the next
@@ -4744,7 +4743,6 @@ runtime, runs the relevant `ENTRYPOINT` and `CMD` commands.
 >
 > On Windows, the user must be created first if it's not a built-in account.
 > This can be done with the `net user` command called as part of a Dockerfile.
-{ .warning }
 @z
 
 @x
@@ -4907,7 +4905,6 @@ flag.
 >
 > Refer to the [`RUN --mount=type=secret`](#run---mounttypesecret) section to
 > learn about secure ways to use secrets when building images.
-{ .warning }
 @y
 > [!WARNING]
 > It isn't recommended to use build arguments for passing secrets such as
@@ -4918,7 +4915,6 @@ flag.
 >
 > Refer to the [`RUN --mount=type=secret`](#run---mounttypesecret) section to
 > learn about secure ways to use secrets when building images.
-{ .warning }
 @z
 
 @x

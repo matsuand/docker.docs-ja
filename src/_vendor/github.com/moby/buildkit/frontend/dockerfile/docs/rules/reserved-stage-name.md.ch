@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: ReservedStageName
-description: Reserved words should not be used as stage names
-aliases:
-  - /go/dockerfile/rule/reserved-stage-name/
----
+description: >-
+  Reserved words should not be used as stage names
 @y
----
 title: ReservedStageName
-description: Reserved words should not be used as stage names
-aliases:
-  - /go/dockerfile/rule/reserved-stage-name/
----
+description: >-
+  Reserved words should not be used as stage names
 @z
 
 @x

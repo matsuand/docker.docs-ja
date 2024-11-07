@@ -3,10 +3,12 @@
 
 @x
 title: JSONArgsRecommended
-description: JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
+description: >-
+  JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
 @y
 title: JSONArgsRecommended
-description: JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
+description: >-
+  JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
 @z
 
 @x

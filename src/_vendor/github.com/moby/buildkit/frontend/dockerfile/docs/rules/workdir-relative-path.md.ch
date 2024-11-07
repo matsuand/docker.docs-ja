@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: WorkdirRelativePath
-description: Relative workdir without an absolute workdir declared within the build can have unexpected results if the base image changes
-aliases:
-  - /go/dockerfile/rule/workdir-relative-path/
----
+description: >-
+  Relative workdir without an absolute workdir declared within the build can have unexpected results if the base image changes
 @y
----
 title: WorkdirRelativePath
-description: Relative workdir without an absolute workdir declared within the build can have unexpected results if the base image changes
-aliases:
-  - /go/dockerfile/rule/workdir-relative-path/
----
+description: >-
+  Relative workdir without an absolute workdir declared within the build can have unexpected results if the base image changes
 @z
 
 @x

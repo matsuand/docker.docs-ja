@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: UndefinedArgInFrom
-description: FROM command must use declared ARGs
-aliases:
-  - /go/dockerfile/rule/undefined-arg-in-from/
----
+description: >-
+  FROM command must use declared ARGs
 @y
----
 title: UndefinedArgInFrom
-description: FROM command must use declared ARGs
-aliases:
-  - /go/dockerfile/rule/undefined-arg-in-from/
----
+description: >-
+  FROM command must use declared ARGs
 @z
 
 @x

@@ -3,10 +3,12 @@
 
 @x
 title: NoEmptyContinuation
-description: Empty continuation lines will become errors in a future release
+description: >-
+  Empty continuation lines will become errors in a future release
 @y
 title: NoEmptyContinuation
-description: Empty continuation lines will become errors in a future release
+description: >-
+  Empty continuation lines will become errors in a future release
 @z
 
 @x

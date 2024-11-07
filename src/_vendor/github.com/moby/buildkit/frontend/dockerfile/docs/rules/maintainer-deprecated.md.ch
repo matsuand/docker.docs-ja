@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: MaintainerDeprecated
-description: The MAINTAINER instruction is deprecated, use a label instead to define an image author
-aliases:
-  - /go/dockerfile/rule/maintainer-deprecated/
----
+description: >-
+  The MAINTAINER instruction is deprecated, use a label instead to define an image author
 @y
----
 title: MaintainerDeprecated
-description: The MAINTAINER instruction is deprecated, use a label instead to define an image author
-aliases:
-  - /go/dockerfile/rule/maintainer-deprecated/
----
+description: >-
+  The MAINTAINER instruction is deprecated, use a label instead to define an image author
 @z
 
 @x

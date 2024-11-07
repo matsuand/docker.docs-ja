@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: FromAsCasing
-description: The 'as' keyword should match the case of the 'from' keyword
-aliases:
-  - /go/dockerfile/rule/from-as-casing/
----
+description: >-
+  The 'as' keyword should match the case of the 'from' keyword
 @y
----
 title: FromAsCasing
-description: The 'as' keyword should match the case of the 'from' keyword
-aliases:
-  - /go/dockerfile/rule/from-as-casing/
----
+description: >-
+  The 'as' keyword should match the case of the 'from' keyword
 @z
 
 @x

@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: InvalidDefaultArgInFrom
-description: Default value for global ARG results in an empty or invalid base image name
-aliases:
-  - /go/dockerfile/rule/invalid-default-arg-in-from/
----
+description: >-
+  Default value for global ARG results in an empty or invalid base image name
 @y
----
 title: InvalidDefaultArgInFrom
-description: Default value for global ARG results in an empty or invalid base image name
-aliases:
-  - /go/dockerfile/rule/invalid-default-arg-in-from/
----
+description: >-
+  Default value for global ARG results in an empty or invalid base image name
 @z
 
 @x

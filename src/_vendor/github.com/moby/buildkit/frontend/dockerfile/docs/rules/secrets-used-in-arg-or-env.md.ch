@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: SecretsUsedInArgOrEnv
-description: Sensitive data should not be used in the ARG or ENV commands
-aliases:
-  - /go/dockerfile/rule/secrets-used-in-arg-or-env/
----
+description: >-
+  Sensitive data should not be used in the ARG or ENV commands
 @y
----
 title: SecretsUsedInArgOrEnv
-description: Sensitive data should not be used in the ARG or ENV commands
-aliases:
-  - /go/dockerfile/rule/secrets-used-in-arg-or-env/
----
+description: >-
+  Sensitive data should not be used in the ARG or ENV commands
 @z
 
 @x

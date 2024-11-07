@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: CopyIgnoredFile
-description: Attempting to Copy file that is excluded by .dockerignore
-aliases:
-  - /go/dockerfile/rule/copy-ignored-file/
----
+description: >-
+  Attempting to Copy file that is excluded by .dockerignore
 @y
----
 title: CopyIgnoredFile
-description: Attempting to Copy file that is excluded by .dockerignore
-aliases:
-  - /go/dockerfile/rule/copy-ignored-file/
----
+description: >-
+  Attempting to Copy file that is excluded by .dockerignore
 @z
 
 @x

@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: FromPlatformFlagConstDisallowed
-description: FROM --platform flag should not use a constant value
-aliases:
-  - /go/dockerfile/rule/from-platform-flag-const-disallowed/
----
+description: >-
+  FROM --platform flag should not use a constant value
 @y
----
 title: FromPlatformFlagConstDisallowed
-description: FROM --platform flag should not use a constant value
-aliases:
-  - /go/dockerfile/rule/from-platform-flag-const-disallowed/
----
+description: >-
+  FROM --platform flag should not use a constant value
 @z
 
 @x

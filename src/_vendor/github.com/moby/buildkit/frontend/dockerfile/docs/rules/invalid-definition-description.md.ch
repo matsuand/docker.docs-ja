@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: InvalidDefinitionDescription
-description: "Comment for build stage or argument should follow the format: `# <arg/stage name> <description>`. If this is not intended to be a description comment, add an empty line or comment between the instruction and the comment."
-aliases:
-  - /go/dockerfile/rule/invalid-definition-description/
----
+description: >-
+  Comment for build stage or argument should follow the format: `# <arg/stage name> <description>`. If this is not intended to be a description comment, add an empty line or comment between the instruction and the comment.
 @y
----
 title: InvalidDefinitionDescription
-description: "Comment for build stage or argument should follow the format: `# <arg/stage name> <description>`. If this is not intended to be a description comment, add an empty line or comment between the instruction and the comment."
-aliases:
-  - /go/dockerfile/rule/invalid-definition-description/
----
+description: >-
+  Comment for build stage or argument should follow the format: `# <arg/stage name> <description>`. If this is not intended to be a description comment, add an empty line or comment between the instruction and the comment.
 @z
 
 @x

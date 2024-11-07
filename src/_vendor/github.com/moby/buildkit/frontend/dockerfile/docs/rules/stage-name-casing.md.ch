@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: StageNameCasing
-description: Stage names should be lowercase
-aliases:
-  - /go/dockerfile/rule/stage-name-casing/
----
+description: >-
+  Stage names should be lowercase
 @y
----
 title: StageNameCasing
-description: Stage names should be lowercase
-aliases:
-  - /go/dockerfile/rule/stage-name-casing/
----
+description: >-
+  Stage names should be lowercase
 @z
 
 @x

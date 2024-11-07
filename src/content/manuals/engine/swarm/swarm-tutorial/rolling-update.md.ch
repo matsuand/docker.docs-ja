@@ -22,13 +22,13 @@ notoc: true
 @x
 In a previous step of the tutorial, you [scaled](scale-service.md) the number of
 instances of a service. In this part of the tutorial, you deploy a service based
-on the Redis 3.0.6 container tag. Then you upgrade the service to use the
-Redis 3.0.7 container image using rolling updates.
+on the Redis 7.4.0 container tag. Then you upgrade the service to use the
+Redis 7.4.1 container image using rolling updates.
 @y
 In a previous step of the tutorial, you [scaled](scale-service.md) the number of
 instances of a service. In this part of the tutorial, you deploy a service based
-on the Redis 3.0.6 container tag. Then you upgrade the service to use the
-Redis 3.0.7 container image using rolling updates.
+on the Redis 7.4.0 container tag. Then you upgrade the service to use the
+Redis 7.4.1 container image using rolling updates.
 @z
 
 @x
@@ -55,14 +55,14 @@ Redis 3.0.7 container image using rolling updates.
       --replicas 3 \
       --name redis \
       --update-delay 10s \
-      redis:3.0.6
+      redis:7.4.0
 @y
     ```console
     $ docker service create \
       --replicas 3 \
       --name redis \
       --update-delay 10s \
-      redis:3.0.6
+      redis:7.4.0
 @z
 
 @x
@@ -142,7 +142,7 @@ Redis 3.0.7 container image using rolling updates.
      Parallelism:   1
      Delay:         10s
     ContainerSpec:
-     Image:         redis:3.0.6
+     Image:         redis:7.4.0
     Resources:
     Endpoint Mode:  vip
     ```
@@ -157,7 +157,7 @@ Redis 3.0.7 container image using rolling updates.
      Parallelism:   1
      Delay:         10s
     ContainerSpec:
-     Image:         redis:3.0.6
+     Image:         redis:7.4.0
     Resources:
     Endpoint Mode:  vip
     ```
@@ -173,12 +173,12 @@ Redis 3.0.7 container image using rolling updates.
 
 @x
     ```console
-    $ docker service update --image redis:3.0.7 redis
+    $ docker service update --image redis:7.4.1 redis
     redis
     ```
 @y
     ```console
-    $ docker service update --image redis:3.0.7 redis
+    $ docker service update --image redis:7.4.1 redis
     redis
     ```
 @z
@@ -234,7 +234,7 @@ Redis 3.0.7 container image using rolling updates.
      Parallelism:   1
      Delay:         10s
     ContainerSpec:
-     Image:         redis:3.0.7
+     Image:         redis:7.4.1
     Resources:
     Endpoint Mode:  vip
     ```
@@ -249,7 +249,7 @@ Redis 3.0.7 container image using rolling updates.
      Parallelism:   1
      Delay:         10s
     ContainerSpec:
-     Image:         redis:3.0.7
+     Image:         redis:7.4.1
     Resources:
     Endpoint Mode:  vip
     ```
@@ -331,31 +331,31 @@ Redis 3.0.7 container image using rolling updates.
 
 @x
     NAME                                   IMAGE        NODE       DESIRED STATE  CURRENT STATE            ERROR
-    redis.1.dos1zffgeofhagnve8w864fco      redis:3.0.7  worker1    Running        Running 37 seconds
-     \_ redis.1.88rdo6pa52ki8oqx6dogf04fh  redis:3.0.6  worker2    Shutdown       Shutdown 56 seconds ago
-    redis.2.9l3i4j85517skba5o7tn5m8g0      redis:3.0.7  worker2    Running        Running About a minute
-     \_ redis.2.66k185wilg8ele7ntu8f6nj6i  redis:3.0.6  worker1    Shutdown       Shutdown 2 minutes ago
-    redis.3.egiuiqpzrdbxks3wxgn8qib1g      redis:3.0.7  worker1    Running        Running 48 seconds
-     \_ redis.3.ctzktfddb2tepkr45qcmqln04  redis:3.0.6  mmanager1  Shutdown       Shutdown 2 minutes ago
+    redis.1.dos1zffgeofhagnve8w864fco      redis:7.4.1  worker1    Running        Running 37 seconds
+     \_ redis.1.88rdo6pa52ki8oqx6dogf04fh  redis:7.4.0  worker2    Shutdown       Shutdown 56 seconds ago
+    redis.2.9l3i4j85517skba5o7tn5m8g0      redis:7.4.1  worker2    Running        Running About a minute
+     \_ redis.2.66k185wilg8ele7ntu8f6nj6i  redis:7.4.0  worker1    Shutdown       Shutdown 2 minutes ago
+    redis.3.egiuiqpzrdbxks3wxgn8qib1g      redis:7.4.1  worker1    Running        Running 48 seconds
+     \_ redis.3.ctzktfddb2tepkr45qcmqln04  redis:7.4.0  mmanager1  Shutdown       Shutdown 2 minutes ago
     ```
 @y
     NAME                                   IMAGE        NODE       DESIRED STATE  CURRENT STATE            ERROR
-    redis.1.dos1zffgeofhagnve8w864fco      redis:3.0.7  worker1    Running        Running 37 seconds
-     \_ redis.1.88rdo6pa52ki8oqx6dogf04fh  redis:3.0.6  worker2    Shutdown       Shutdown 56 seconds ago
-    redis.2.9l3i4j85517skba5o7tn5m8g0      redis:3.0.7  worker2    Running        Running About a minute
-     \_ redis.2.66k185wilg8ele7ntu8f6nj6i  redis:3.0.6  worker1    Shutdown       Shutdown 2 minutes ago
-    redis.3.egiuiqpzrdbxks3wxgn8qib1g      redis:3.0.7  worker1    Running        Running 48 seconds
-     \_ redis.3.ctzktfddb2tepkr45qcmqln04  redis:3.0.6  mmanager1  Shutdown       Shutdown 2 minutes ago
+    redis.1.dos1zffgeofhagnve8w864fco      redis:7.4.1  worker1    Running        Running 37 seconds
+     \_ redis.1.88rdo6pa52ki8oqx6dogf04fh  redis:7.4.0  worker2    Shutdown       Shutdown 56 seconds ago
+    redis.2.9l3i4j85517skba5o7tn5m8g0      redis:7.4.1  worker2    Running        Running About a minute
+     \_ redis.2.66k185wilg8ele7ntu8f6nj6i  redis:7.4.0  worker1    Shutdown       Shutdown 2 minutes ago
+    redis.3.egiuiqpzrdbxks3wxgn8qib1g      redis:7.4.1  worker1    Running        Running 48 seconds
+     \_ redis.3.ctzktfddb2tepkr45qcmqln04  redis:7.4.0  mmanager1  Shutdown       Shutdown 2 minutes ago
     ```
 @z
 
 @x
     Before Swarm updates all of the tasks, you can see that some are running
-    `redis:3.0.6` while others are running `redis:3.0.7`. The output above shows
+    `redis:7.4.0` while others are running `redis:7.4.1`. The output above shows
     the state once the rolling updates are done.
 @y
     Before Swarm updates all of the tasks, you can see that some are running
-    `redis:3.0.6` while others are running `redis:3.0.7`. The output above shows
+    `redis:7.4.0` while others are running `redis:7.4.1`. The output above shows
     the state once the rolling updates are done.
 @z
 

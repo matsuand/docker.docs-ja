@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: RedundantTargetPlatform
-description: Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior
-aliases:
-  - /go/dockerfile/rule/redundant-target-platform/
----
+description: >-
+  Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior
 @y
----
 title: RedundantTargetPlatform
-description: Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior
-aliases:
-  - /go/dockerfile/rule/redundant-target-platform/
----
+description: >-
+  Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior
 @z
 
 @x

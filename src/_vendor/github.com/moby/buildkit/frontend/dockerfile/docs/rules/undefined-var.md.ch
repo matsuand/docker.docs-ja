@@ -3,10 +3,12 @@
 
 @x
 title: UndefinedVar
-description: Variables should be defined before their use
+description: >-
+  Variables should be defined before their use
 @y
 title: UndefinedVar
-description: Variables should be defined before their use
+description: >-
+  Variables should be defined before their use
 @z
 
 @x

@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: DuplicateStageName
-description: Stage names should be unique
-aliases:
-  - /go/dockerfile/rule/duplicate-stage-name/
----
+description: >-
+  Stage names should be unique
 @y
----
 title: DuplicateStageName
-description: Stage names should be unique
-aliases:
-  - /go/dockerfile/rule/duplicate-stage-name/
----
+description: >-
+  Stage names should be unique
 @z
 
 @x

@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: ConsistentInstructionCasing
-description: All commands within the Dockerfile should use the same casing (either upper or lower)
-aliases:
-  - /go/dockerfile/rule/consistent-instruction-casing/
----
+description: >-
+  All commands within the Dockerfile should use the same casing (either upper or lower)
 @y
----
 title: ConsistentInstructionCasing
-description: All commands within the Dockerfile should use the same casing (either upper or lower)
-aliases:
-  - /go/dockerfile/rule/consistent-instruction-casing/
----
+description: >-
+  All commands within the Dockerfile should use the same casing (either upper or lower)
 @z
 
 @x

@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: MultipleInstructionsDisallowed
-description: Multiple instructions of the same type should not be used in the same stage
-aliases:
-  - /go/dockerfile/rule/multiple-instructions-disallowed/
----
+description: >-
+  Multiple instructions of the same type should not be used in the same stage
 @y
----
 title: MultipleInstructionsDisallowed
-description: Multiple instructions of the same type should not be used in the same stage
-aliases:
-  - /go/dockerfile/rule/multiple-instructions-disallowed/
----
+description: >-
+  Multiple instructions of the same type should not be used in the same stage
 @z
 
 @x

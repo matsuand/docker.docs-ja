@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: LegacyKeyValueFormat
-description: Legacy key/value format with whitespace separator should not be used
-aliases:
-  - /go/dockerfile/rule/legacy-key-value-format/
----
+description: >-
+  Legacy key/value format with whitespace separator should not be used
 @y
----
 title: LegacyKeyValueFormat
-description: Legacy key/value format with whitespace separator should not be used
-aliases:
-  - /go/dockerfile/rule/legacy-key-value-format/
----
+description: >-
+  Legacy key/value format with whitespace separator should not be used
 @z
 
 @x
