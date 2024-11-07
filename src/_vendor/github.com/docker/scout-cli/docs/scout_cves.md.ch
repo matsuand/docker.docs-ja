@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 # docker scout cves
 @y
@@ -195,23 +197,7 @@ or if you want to control from where the image will be resolved, you must prefix
 ### Display vulnerabilities grouped by package
 @z
 
-@x
-```console
-$ docker scout cves alpine
-Analyzing image alpine
-✓ Image stored for indexing
-✓ Indexed 18 packages
-✓ No vulnerable package detected
-```
-@y
-```console
-$ docker scout cves alpine
-Analyzing image alpine
-✓ Image stored for indexing
-✓ Indexed 18 packages
-✓ No vulnerable package detected
-```
-@z
+% snip command...
 
 @x
 ### Display vulnerabilities from a `docker save` tarball
@@ -219,29 +205,7 @@ Analyzing image alpine
 ### Display vulnerabilities from a `docker save` tarball
 @z
 
-@x
-```console
-$ docker save alpine > alpine.tar
-@y
-```console
-$ docker save alpine > alpine.tar
-@z
-
-@x
-$ docker scout cves archive://alpine.tar
-Analyzing archive alpine.tar
-✓ Archive read
-✓ SBOM of image already cached, 18 packages indexed
-✓ No vulnerable package detected
-```
-@y
-$ docker scout cves archive://alpine.tar
-Analyzing archive alpine.tar
-✓ Archive read
-✓ SBOM of image already cached, 18 packages indexed
-✓ No vulnerable package detected
-```
-@z
+% snip command...
 
 @x
 ### Display vulnerabilities from an OCI directory
@@ -249,31 +213,7 @@ Analyzing archive alpine.tar
 ### Display vulnerabilities from an OCI directory
 @z
 
-@x
-```console
-$ skopeo copy --override-os linux docker://alpine oci:alpine
-@y
-```console
-$ skopeo copy --override-os linux docker://alpine oci:alpine
-@z
-
-@x
-$ docker scout cves oci-dir://alpine
-Analyzing OCI directory alpine
-✓ OCI directory read
-✓ Image stored for indexing
-✓ Indexed 19 packages
-✓ No vulnerable package detected
-```
-@y
-$ docker scout cves oci-dir://alpine
-Analyzing OCI directory alpine
-✓ OCI directory read
-✓ Image stored for indexing
-✓ Indexed 19 packages
-✓ No vulnerable package detected
-```
-@z
+% snip command...
 
 @x
 ### Display vulnerabilities from the current directory
@@ -281,15 +221,7 @@ Analyzing OCI directory alpine
 ### Display vulnerabilities from the current directory
 @z
 
-@x
-```console
-$ docker scout cves fs://.
-```
-@y
-```console
-$ docker scout cves fs://.
-```
-@z
+% snip command...
 
 @x
 ### Export vulnerabilities to a SARIF JSON file
@@ -297,23 +229,7 @@ $ docker scout cves fs://.
 ### Export vulnerabilities to a SARIF JSON file
 @z
 
-@x
-```console
-$ docker scout cves --format sarif --output alpine.sarif.json alpine
-Analyzing image alpine
-✓ SBOM of image already cached, 18 packages indexed
-✓ No vulnerable package detected
-✓ Report written to alpine.sarif.json
-```
-@y
-```console
-$ docker scout cves --format sarif --output alpine.sarif.json alpine
-Analyzing image alpine
-✓ SBOM of image already cached, 18 packages indexed
-✓ No vulnerable package detected
-✓ Report written to alpine.sarif.json
-```
-@z
+% snip command...
 
 @x
 ### Display markdown output
@@ -327,47 +243,7 @@ The following example shows how to generate the vulnerability report as markdown
 The following example shows how to generate the vulnerability report as markdown.
 @z
 
-@x
-```console
-$ docker scout cves --format markdown alpine
-✓ Pulled
-✓ SBOM of image already cached, 19 packages indexed
-✗ Detected 1 vulnerable package with 3 vulnerabilities
-<h2>:mag: Vulnerabilities of <code>alpine</code></h2>
-@y
-```console
-$ docker scout cves --format markdown alpine
-✓ Pulled
-✓ SBOM of image already cached, 19 packages indexed
-✗ Detected 1 vulnerable package with 3 vulnerabilities
-<h2>:mag: Vulnerabilities of <code>alpine</code></h2>
-@z
-
-@x
-<details open="true"><summary>:package: Image Reference</strong> <code>alpine</code></summary>
-<table>
-<tr><td>digest</td><td><code>sha256:e3bd82196e98898cae9fe7fbfd6e2436530485974dc4fb3b7ddb69134eda2407</code></td><tr><tr><td>vulnerabilities</td><td><img alt="critical: 0" src="https://img.shields.io/badge/critical-0-lightgrey"/> <img alt="high: 0" src="https://img.shields.io/badge/high-0-lightgrey"/> <img alt="medium: 2" src="https://img.shields.io/badge/medium-2-fbb552"/> <img alt="low: 0" src="https://img.shields.io/badge/low-0-lightgrey"/> <img alt="unspecified: 1" src="https://img.shields.io/badge/unspecified-1-lightgrey"/></td></tr>
-<tr><td>platform</td><td>linux/arm64</td></tr>
-<tr><td>size</td><td>3.3 MB</td></tr>
-<tr><td>packages</td><td>19</td></tr>
-</table>
-</details></table>
-</details>
-...
-```
-@y
-<details open="true"><summary>:package: Image Reference</strong> <code>alpine</code></summary>
-<table>
-<tr><td>digest</td><td><code>sha256:e3bd82196e98898cae9fe7fbfd6e2436530485974dc4fb3b7ddb69134eda2407</code></td><tr><tr><td>vulnerabilities</td><td><img alt="critical: 0" src="https://img.shields.io/badge/critical-0-lightgrey"/> <img alt="high: 0" src="https://img.shields.io/badge/high-0-lightgrey"/> <img alt="medium: 2" src="https://img.shields.io/badge/medium-2-fbb552"/> <img alt="low: 0" src="https://img.shields.io/badge/low-0-lightgrey"/> <img alt="unspecified: 1" src="https://img.shields.io/badge/unspecified-1-lightgrey"/></td></tr>
-<tr><td>platform</td><td>linux/arm64</td></tr>
-<tr><td>size</td><td>3.3 MB</td></tr>
-<tr><td>packages</td><td>19</td></tr>
-</table>
-</details></table>
-</details>
-...
-```
-@z
+% snip command...
 
 @x
 ### List all vulnerable packages of a certain type
@@ -383,31 +259,7 @@ The following example shows how to generate a list of packages, only including
 packages of the specified type, and only showing packages that are vulnerable.
 @z
 
-@x
-```console
-$ docker scout cves --format only-packages --only-package-type golang --only-vuln-packages golang:1.18.0
-✓ Pulled
-✓ SBOM of image already cached, 296 packages indexed
-✗ Detected 1 vulnerable package with 40 vulnerabilities
-@y
-```console
-$ docker scout cves --format only-packages --only-package-type golang --only-vuln-packages golang:1.18.0
-✓ Pulled
-✓ SBOM of image already cached, 296 packages indexed
-✗ Detected 1 vulnerable package with 40 vulnerabilities
-@z
-
-@x
-Name   Version   Type         Vulnerabilities
-───────────────────────────────────────────────────────────
-stdlib  1.18     golang     2C    29H     8M     1L
-```
-@y
-Name   Version   Type         Vulnerabilities
-───────────────────────────────────────────────────────────
-stdlib  1.18     golang     2C    29H     8M     1L
-```
-@z
+% snip command...
 
 @x
 ### <a name="epss"></a> Display EPSS score (--epss)
@@ -427,45 +279,7 @@ that a software vulnerability will be exploited in the wild in the next 30 days.
 The higher the score, the greater the probability that a vulnerability will be exploited.
 @z
 
-@x
-```console {hl_lines="13,14"}
-$ docker scout cves --epss nginx
- ✓ Provenance obtained from attestation
- ✓ SBOM obtained from attestation, 232 packages indexed
- ✓ Pulled
- ✗ Detected 23 vulnerable packages with a total of 39 vulnerabilities
-@y
-```console {hl_lines="13,14"}
-$ docker scout cves --epss nginx
- ✓ Provenance obtained from attestation
- ✓ SBOM obtained from attestation, 232 packages indexed
- ✓ Pulled
- ✗ Detected 23 vulnerable packages with a total of 39 vulnerabilities
-@z
-
-@x
-...
-@y
-...
-@z
-
-@x
- ✗ HIGH CVE-2023-52425
-   https://scout.docker.com/v/CVE-2023-52425
-   Affected range  : >=2.5.0-1
-   Fixed version   : not fixed
-   EPSS Score      : 0.000510
-   EPSS Percentile : 0.173680
-```
-@y
- ✗ HIGH CVE-2023-52425
-   https://scout.docker.com/v/CVE-2023-52425
-   Affected range  : >=2.5.0-1
-   Fixed version   : not fixed
-   EPSS Score      : 0.000510
-   EPSS Percentile : 0.173680
-```
-@z
+% snip command...
 
 @x
 - `EPSS Score` is a floating point number between 0 and 1 representing the probability of exploitation in the wild in the next 30 days (following score publication).
@@ -485,43 +299,7 @@ of `docker scout cves` based on these scores. For example,
 to only show vulnerabilities with an EPSS score higher than 0.5:
 @z
 
-@x
-```console
-$ docker scout cves --epss --epss-score 0.5 nginx
- ✓ SBOM of image already cached, 232 packages indexed
- ✓ EPSS scores for 2024-03-01 already cached
- ✗ Detected 1 vulnerable package with 1 vulnerability
-@y
-```console
-$ docker scout cves --epss --epss-score 0.5 nginx
- ✓ SBOM of image already cached, 232 packages indexed
- ✓ EPSS scores for 2024-03-01 already cached
- ✗ Detected 1 vulnerable package with 1 vulnerability
-@z
-
-@x
-...
-@y
-...
-@z
-
-@x
- ✗ LOW CVE-2023-44487
-   https://scout.docker.com/v/CVE-2023-44487
-   Affected range  : >=1.22.1-9
-   Fixed version   : not fixed
-   EPSS Score      : 0.705850
-   EPSS Percentile : 0.979410
-```
-@y
- ✗ LOW CVE-2023-44487
-   https://scout.docker.com/v/CVE-2023-44487
-   Affected range  : >=1.22.1-9
-   Fixed version   : not fixed
-   EPSS Score      : 0.705850
-   EPSS Percentile : 0.979410
-```
-@z
+% snip command...
 
 @x
 EPSS scores are updated on a daily basis.
@@ -535,15 +313,7 @@ You can use the `--epss-date` flag to manually specify a date
 in the format `yyyy-mm-dd` for fetching EPSS scores.
 @z
 
-@x
-```console
-$ docker scout cves --epss --epss-date 2024-01-02 nginx
-```
-@y
-```console
-$ docker scout cves --epss --epss-date 2024-01-02 nginx
-```
-@z
+% snip command...
 
 @x
 ### List vulnerabilities from an SPDX file
@@ -557,100 +327,4 @@ The following example shows how to generate a list of vulnerabilities from an SP
 The following example shows how to generate a list of vulnerabilities from an SPDX file using `syft`.
 @z
 
-@x
-```console
-$ syft -o spdx-json alpine:3.16.1 | docker scout cves sbom://
- ✔ Pulled image
- ✔ Loaded image                                                                                                                              alpine:3.16.1
- ✔ Parsed image                                                                    sha256:3d81c46cd8756ddb6db9ec36fa06a6fb71c287fb265232ba516739dc67a5f07d
- ✔ Cataloged contents                                                                     274a317d88b54f9e67799244a1250cad3fe7080f45249fa9167d1f871218d35f
-   ├── ✔ Packages                        [14 packages]
-   ├── ✔ File digests                    [75 files]
-   ├── ✔ File metadata                   [75 locations]
-   └── ✔ Executables                     [16 executables]
-    ✗ Detected 2 vulnerable packages with a total of 11 vulnerabilities
-@y
-```console
-$ syft -o spdx-json alpine:3.16.1 | docker scout cves sbom://
- ✔ Pulled image
- ✔ Loaded image                                                                                                                              alpine:3.16.1
- ✔ Parsed image                                                                    sha256:3d81c46cd8756ddb6db9ec36fa06a6fb71c287fb265232ba516739dc67a5f07d
- ✔ Cataloged contents                                                                     274a317d88b54f9e67799244a1250cad3fe7080f45249fa9167d1f871218d35f
-   ├── ✔ Packages                        [14 packages]
-   ├── ✔ File digests                    [75 files]
-   ├── ✔ File metadata                   [75 locations]
-   └── ✔ Executables                     [16 executables]
-    ✗ Detected 2 vulnerable packages with a total of 11 vulnerabilities
-@z
-
-@x
-## Overview
-@y
-## Overview
-@z
-
-@x
-                    │        Analyzed SBOM
-────────────────────┼──────────────────────────────
-  Target            │ <stdin>
-    digest          │  274a317d88b5
-    platform        │ linux/arm64
-    vulnerabilities │    1C     2H     8M     0L
-    packages        │ 15
-@y
-                    │        Analyzed SBOM
-────────────────────┼──────────────────────────────
-  Target            │ <stdin>
-    digest          │  274a317d88b5
-    platform        │ linux/arm64
-    vulnerabilities │    1C     2H     8M     0L
-    packages        │ 15
-@z
-
-@x
-## Packages and Vulnerabilities
-@y
-## Packages and Vulnerabilities
-@z
-
-@x
-   1C     0H     0M     0L  zlib 1.2.12-r1
-pkg:apk/alpine/zlib@1.2.12-r1?arch=aarch64&distro=alpine-3.16.1
-@y
-   1C     0H     0M     0L  zlib 1.2.12-r1
-pkg:apk/alpine/zlib@1.2.12-r1?arch=aarch64&distro=alpine-3.16.1
-@z
-
-@x
-    ✗ CRITICAL CVE-2022-37434
-      https://scout.docker.com/v/CVE-2022-37434
-      Affected range : <1.2.12-r2
-      Fixed version  : 1.2.12-r2
-@y
-    ✗ CRITICAL CVE-2022-37434
-      https://scout.docker.com/v/CVE-2022-37434
-      Affected range : <1.2.12-r2
-      Fixed version  : 1.2.12-r2
-@z
-
-@x
-    ...
-@y
-    ...
-@z
-
-@x
-11 vulnerabilities found in 2 packages
-  LOW       0
-  MEDIUM    8
-  HIGH      2
-  CRITICAL  1
-```
-@y
-11 vulnerabilities found in 2 packages
-  LOW       0
-  MEDIUM    8
-  HIGH      2
-  CRITICAL  1
-```
-@z
+% snip command...

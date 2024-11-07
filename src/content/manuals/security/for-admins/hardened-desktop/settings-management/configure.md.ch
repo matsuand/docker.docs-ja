@@ -71,9 +71,9 @@ Settings Management is designed specifically for organizations who don’t give 
 @z
 
 @x
-You can either use the `--admin-settings` installer flag on [macOS](/manuals/desktop/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location, or set it up manually.
+You can either use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location, or set it up manually.
 @y
-You can either use the `--admin-settings` installer flag on [macOS](manuals/desktop/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location, or set it up manually.
+You can either use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location, or set it up manually.
 @z
 
 @x

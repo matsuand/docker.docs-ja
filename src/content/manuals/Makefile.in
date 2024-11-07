@@ -303,7 +303,6 @@ bases = \
 	_index.md            \
 	registry.md          \
 	release-lifecycle.md \
-	support.md           \
 	tcc.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

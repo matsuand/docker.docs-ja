@@ -558,7 +558,7 @@ The **Builder settings** view in the Docker Desktop settings lets you:
 @z
 
 @x
-For more information about managing builders, see [Change settings](/manuals/desktop/settings.md#builders)
+For more information about managing builders, see [Change settings](/manuals/desktop/settings-and-maintenance/settings.md#builders)
 @y
-For more information about managing builders, see [Change settings](manuals/desktop/settings.md#builders)
+For more information about managing builders, see [Change settings](manuals/desktop/settings-and-maintenance/settings.md#builders)
 @z

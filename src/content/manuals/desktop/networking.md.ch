@@ -102,9 +102,9 @@ syntax for `-p` is `HOST_PORT:CLIENT_PORT`.
 @z
 
 @x
-See [Proxies](/manuals/desktop/settings.md#proxies)
+See [Proxies](/manuals/desktop/settings-and-maintenance/settings.md#proxies)
 @y
-See [Proxies](manuals/desktop/settings.md#proxies)
+See [Proxies](manuals/desktop/settings-and-maintenance/settings.md#proxies)
 @z
 
 @x

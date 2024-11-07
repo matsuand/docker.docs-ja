@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Create an account
@@ -240,7 +240,17 @@ To reset your password, enter your email address on the [Sign in](https://login.
 @z
 
 @x
-For support and troubleshooting information, see [Get support](../support.md).
+If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/).
 @y
-For support and troubleshooting information, see [Get support](../support.md).
+If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/).
+@z
+
+@x
+All Docker users can seek troubleshooting information and support through the following resources, where Docker or the community respond on a best effort basis.
+   - [Docker Community Forums](https://forums.docker.com/)
+   - [Docker Community Slack](http://dockr.ly/comm-slack)
+@y
+All Docker users can seek troubleshooting information and support through the following resources, where Docker or the community respond on a best effort basis.
+   - [Docker Community Forums](https://forums.docker.com/)
+   - [Docker Community Slack](http://dockr.ly/comm-slack)
 @z

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Learn how to install Docker Compose. Compose is available natively on
@@ -49,14 +49,14 @@ includes Docker Compose along with Docker Engine and Docker CLI which are Compos
 
 @x
 Docker Desktop is available on:
-- [Linux](/manuals/desktop/install/linux/_index.md)
-- [Mac](/manuals/desktop/install/mac-install.md)
-- [Windows](/manuals/desktop/install/windows-install.md)
+- [Linux](/manuals/desktop/setup/install/linux/_index.md)
+- [Mac](/manuals/desktop/setup/install/mac-install.md)
+- [Windows](/manuals/desktop/setup/install/windows-install.md)
 @y
 Docker Desktop is available on:
-- [Linux](manuals/desktop/install/linux/_index.md)
-- [Mac](manuals/desktop/install/mac-install.md)
-- [Windows](manuals/desktop/install/windows-install.md)
+- [Linux](manuals/desktop/setup/install/linux/_index.md)
+- [Mac](manuals/desktop/setup/install/mac-install.md)
+- [Windows](manuals/desktop/setup/install/windows-install.md)
 @z
 
 @x
@@ -77,7 +77,7 @@ If you have already installed Docker Desktop, you can check which version of Com
 > $ sudo rm /usr/local/bin/docker-compose
 > $ sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
 > ```
-> Or enable [Automatically check configuration](/desktop/settings/) which will detect and fix it for you.
+> Or enable [Automatically check configuration](/manuals/desktop/settings-and-maintenance/settings.md) which will detect and fix it for you.
 @y
 > [!NOTE] 
 >
@@ -90,7 +90,7 @@ If you have already installed Docker Desktop, you can check which version of Com
 > $ sudo rm /usr/local/bin/docker-compose
 > $ sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
 > ```
-> Or enable [Automatically check configuration](__SUBDIR__/desktop/settings/) which will detect and fix it for you.
+> Or enable [Automatically check configuration](manuals/desktop/settings-and-maintenance/settings.md) which will detect and fix it for you.
 @z
 
 @x

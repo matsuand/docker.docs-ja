@@ -22,27 +22,21 @@ Generate or display SBOM of an image
 @z
 
 @x
-| Name                  | Type          | Default | Description                                                                                                                                   |
-|:----------------------|:--------------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| `--format`            | `string`      | `json`  | Output format:<br>- list: list of packages of the image<br>- json: json representation of the SBOM<br>- spdx: spdx representation of the SBOM |
-| `--only-package-type` | `stringSlice` |         | Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)<br>Can only be used with --format list                     |
-| `-o`, `--output`      | `string`      |         | Write the report to a file                                                                                                                    |
-| `--platform`          | `string`      |         | Platform of image to analyze                                                                                                                  |
-| `--ref`               | `string`      |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive                                       |
+| Name                  | Type          | Default | Description                                                                                                                                                                                         |
+|:----------------------|:--------------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--format`            | `string`      | `json`  | Output format:<br>- list: list of packages of the image<br>- json: json representation of the SBOM<br>- spdx: spdx representation of the SBOM<br>- cyclonedx: cyclone dx representation of the SBOM |
+| `--only-package-type` | `stringSlice` |         | Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)<br>Can only be used with --format list                                                                           |
+| `-o`, `--output`      | `string`      |         | Write the report to a file                                                                                                                                                                          |
+| `--platform`          | `string`      |         | Platform of image to analyze                                                                                                                                                                        |
+| `--ref`               | `string`      |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive                                                                                             |
 @y
-| Name                  | Type          | Default | Description                                                                                                                                   |
-|:----------------------|:--------------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| `--format`            | `string`      | `json`  | Output format:<br>- list: list of packages of the image<br>- json: json representation of the SBOM<br>- spdx: spdx representation of the SBOM |
-| `--only-package-type` | `stringSlice` |         | Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)<br>Can only be used with --format list                     |
-| `-o`, `--output`      | `string`      |         | Write the report to a file                                                                                                                    |
-| `--platform`          | `string`      |         | Platform of image to analyze                                                                                                                  |
-| `--ref`               | `string`      |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive                                       |
-@z
-
-@x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
+| Name                  | Type          | Default | Description                                                                                                                                                                                         |
+|:----------------------|:--------------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--format`            | `string`      | `json`  | Output format:<br>- list: list of packages of the image<br>- json: json representation of the SBOM<br>- spdx: spdx representation of the SBOM<br>- cyclonedx: cyclone dx representation of the SBOM |
+| `--only-package-type` | `stringSlice` |         | Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)<br>Can only be used with --format list                                                                           |
+| `-o`, `--output`      | `string`      |         | Write the report to a file                                                                                                                                                                          |
+| `--platform`          | `string`      |         | Platform of image to analyze                                                                                                                                                                        |
+| `--ref`               | `string`      |         | Reference to use if the provided tarball contains multiple references.<br>Can only be used with archive                                                                                             |
 @z
 
 @x

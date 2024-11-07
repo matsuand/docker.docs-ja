@@ -64,13 +64,13 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Mac"
   description="A native application using the macOS sandbox security model that delivers all Docker tools to your Mac."
-  link="/desktop/install/mac-install/"
+  link="/desktop/setup/install/mac-install/"
   icon="/assets/images/apple_48.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Mac"
   description="Mac 上ですべての Docker ツールを実行するために macOS サンドボックスセキュリティモデルを使うネイティブなアプリケーションです。"
-  link="__SUBDIR__/desktop/install/mac-install/"
+  link="__SUBDIR__/desktop/setup/install/mac-install/"
   icon="__SUBDIR__/assets/images/apple_48.svg" >}}
 @z
 
@@ -78,13 +78,13 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Windows"
   description="A native Windows application that delivers all Docker tools to your Windows computer."
-  link="/desktop/install/windows-install/"
+  link="/desktop/setup/install/windows-install/"
   icon="/assets/images/windows_48.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Windows"
   description="Windows コンピューター上ですべての Docker ツールを実行するためのネイティブな Windows アプリケーションです。"
-  link="__SUBDIR__/desktop/install/windows-install/"
+  link="__SUBDIR__/desktop/setup/install/windows-install/"
   icon="__SUBDIR__/assets/images/windows_48.svg" >}}
 @z
 

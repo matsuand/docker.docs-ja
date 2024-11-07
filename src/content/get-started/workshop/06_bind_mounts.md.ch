@@ -113,11 +113,11 @@ work.
 @x
 1. Verify that your `getting-started-app` directory is in a directory defined in
 Docker Desktop's file sharing setting. This setting defines which parts of your
-filesystem you can share with containers. For details about accessing the setting, see [File sharing](/manuals/desktop/settings.md#file-sharing).
+filesystem you can share with containers. For details about accessing the setting, see [File sharing](/manuals/desktop/settings-and-maintenance/settings.md#file-sharing).
 @y
 1. ここで確認しておくことですが、`getting-started-app` ディレクトリは Docker Desktop のファイル共有設定において定義されたディレクトリ内にあることが必要です。
    この設定は、コンテナーとの間で共有するのがファイルシステムのどこであるかを定義します。
-   その設定へのアクセス方法の詳細については [ファイル共有](manuals/desktop/settings.md#file-sharing) を参照してください。
+   その設定へのアクセス方法の詳細については [ファイル共有](manuals/desktop/settings-and-maintenance/settings.md#file-sharing) を参照してください。
 @z
 
 @x

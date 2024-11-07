@@ -10,7 +10,6 @@ bases = \
 	_index.md            \
 	registry.md          \
 	release-lifecycle.md \
-	support.md           \
 	tcc.md
 
 include $(top_srcdir)/build-aux/common.mk

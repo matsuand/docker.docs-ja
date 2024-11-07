@@ -224,7 +224,7 @@ on your development host. Use the following command to bind-mount the `target/`
 directory into your container at `/app/`. Run the command from within the
 `source` directory. The `$(pwd)` sub-command expands to the current working
 directory on Linux or macOS hosts.
-If you're on Windows, see also [Path conversions on Windows](/manuals/desktop/troubleshoot/topics.md).
+If you're on Windows, see also [Path conversions on Windows](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md).
 @y
 Consider a case where you have a directory `source` and that when you build the
 source code, the artifacts are saved into another directory, `source/target/`.
@@ -234,7 +234,7 @@ on your development host. Use the following command to bind-mount the `target/`
 directory into your container at `/app/`. Run the command from within the
 `source` directory. The `$(pwd)` sub-command expands to the current working
 directory on Linux or macOS hosts.
-If you're on Windows, see also [Path conversions on Windows](manuals/desktop/troubleshoot/topics.md).
+If you're on Windows, see also [Path conversions on Windows](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md).
 @z
 
 @x

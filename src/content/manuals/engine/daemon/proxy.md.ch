@@ -45,12 +45,12 @@ Docker CLI to use a proxy server](manuals/engine/cli/proxy.md).
 > [!IMPORTANT]
 > Proxy configurations specified in the `daemon.json` are ignored by Docker
 > Desktop. If you use Docker Desktop, you can configure proxies using the
-> [Docker Desktop settings](/manuals/desktop/settings.md#proxies).
+> [Docker Desktop settings](/manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @y
 > [!IMPORTANT]
 > Proxy configurations specified in the `daemon.json` are ignored by Docker
 > Desktop. If you use Docker Desktop, you can configure proxies using the
-> [Docker Desktop settings](manuals/desktop/settings.md#proxies).
+> [Docker Desktop settings](manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @z
 
 @x

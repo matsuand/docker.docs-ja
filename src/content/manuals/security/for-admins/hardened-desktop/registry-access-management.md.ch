@@ -154,14 +154,14 @@ There are certain limitations when using Registry Access Management:
 @z
 
 @x
-- Windows image pulls and image builds are not restricted by default. For Registry Access Management to take effect on Windows Container mode, you must allow the Windows Docker daemon to use Docker Desktop's internal proxy by selecting the [Use proxy for Windows Docker daemon](/manuals/desktop/settings.md#proxies) setting.
+- Windows image pulls and image builds are not restricted by default. For Registry Access Management to take effect on Windows Container mode, you must allow the Windows Docker daemon to use Docker Desktop's internal proxy by selecting the [Use proxy for Windows Docker daemon](/manuals/desktop/settings-and-maintenance/settings.md#proxies) setting.
 - Builds such as `docker buildx` using a Kubernetes driver are not restricted
 - Builds such as `docker buildx` using a custom docker-container driver are not restricted
 - Blocking is DNS-based; you must use a registry's access control mechanisms to distinguish between “push” and “pull”
 - WSL 2 requires at least a 5.4 series Linux kernel (this does not apply to earlier Linux kernel series)
 - Under the WSL 2 network, traffic from all Linux distributions is restricted (this will be resolved in the updated 5.15 series Linux kernel)
 @y
-- Windows image pulls and image builds are not restricted by default. For Registry Access Management to take effect on Windows Container mode, you must allow the Windows Docker daemon to use Docker Desktop's internal proxy by selecting the [Use proxy for Windows Docker daemon](manuals/desktop/settings.md#proxies) setting.
+- Windows image pulls and image builds are not restricted by default. For Registry Access Management to take effect on Windows Container mode, you must allow the Windows Docker daemon to use Docker Desktop's internal proxy by selecting the [Use proxy for Windows Docker daemon](manuals/desktop/settings-and-maintenance/settings.md#proxies) setting.
 - Builds such as `docker buildx` using a Kubernetes driver are not restricted
 - Builds such as `docker buildx` using a custom docker-container driver are not restricted
 - Blocking is DNS-based; you must use a registry's access control mechanisms to distinguish between “push” and “pull”

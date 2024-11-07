@@ -1,22 +1,28 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Using lifecycle hooks with Compose
 linkTitle: Use lifecycle hooks
-weight: 20
-desription: How to use lifecycle hooks with Docker Compose
-keywords: cli, compose, lifecycle, hooks reference
----
 @y
----
 title: Using lifecycle hooks with Compose
 linkTitle: Use lifecycle hooks
-weight: 20
+@z
+
+@x
 desription: How to use lifecycle hooks with Docker Compose
 keywords: cli, compose, lifecycle, hooks reference
----
+@y
+desription: How to use lifecycle hooks with Docker Compose
+keywords: cli, compose, lifecycle, hooks reference
+@z
+
+@x
+{{< introduced compose 2.30.0 "../releases/release-notes.md#2300" >}}
+@y
+{{< introduced compose 2.30.0 "../releases/release-notes.md#2300" >}}
 @z
 
 @x
@@ -161,4 +167,18 @@ services:
     pre_stop:
       - command: ./data_flush.sh
 ```
+@z
+
+@x
+## Reference information
+@y
+## Reference information
+@z
+
+@x
+- [`post_start`](/reference/compose-file/services.md#post_start)
+- [`pre_stop`](/reference/compose-file/services.md#pre_stop)
+@y
+- [`post_start`](reference/compose-file/services.md#post_start)
+- [`pre_stop`](reference/compose-file/services.md#pre_stop)
 @z

@@ -186,10 +186,10 @@ Docker Engine のインストール方法はいくつかあるので、必要に
 
 @x
 - Docker Engine comes bundled with
-  [Docker Desktop for Linux](/manuals/desktop/install/linux/_index.md). This is
+  [Docker Desktop for Linux](/manuals/desktop/setup/install/linux/_index.md). This is
   the easiest and quickest way to get started.
 @y
-- Docker Engine には [Linux 向け Docker Desktop](manuals/desktop/install/linux/_index.md) にバンドルされて提供されています。
+- Docker Engine には [Linux 向け Docker Desktop](manuals/desktop/setup/install/linux/_index.md) にバンドルされて提供されています。
   Docker Engine を始めるにはこれを利用するのが最も簡単な方法です。
 @z
 

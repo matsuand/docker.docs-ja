@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: What is an image?
 @y
@@ -24,22 +26,17 @@ description: イメージとは何か。
 @z
 
 @x
-Seeing a [container](./what-is-a-container) is an isolated process, where does it get its files and configuration? How do you share those environments? 
+Seeing a [container](./what-is-a-container.md) is an isolated process, where does it get its files and configuration? How do you share those environments?
 @y
-[コンテナー](./what-is-a-container) を見てきましたが、これは独立したプロセスのことでした。
+[コンテナー](./what-is-a-container.md) を見てきましたが、これは独立したプロセスのことでした。
 ではどこからファイルなり設定なりを取得しているのでしょう？
 どうやったらこの環境を共有できるようになるのでしょう？
 @z
 
 @x
-That's where container images come in! 
+That's where container images come in. A container image is a standardized package that includes all of the files, binaries, libraries, and configurations to run a container.
 @y
 これこそがコンテナーイメージの出番です！
-@z
-
-@x
-A container image is a standardized package that includes all of the files, binaries, libraries, and configurations to run a container.
-@y
 コンテナーイメージとは標準化されたパッケージのことであり、コンテナー実行のために必要となるファイル、実行バイナリー、設定をすべて含んだもののことです。
 @z
 
@@ -65,7 +62,7 @@ There are two important principles of images:
 @z
 
 @x
-2. Container images are composed of layers. Each layer represented a set of file system changes that add, remove, or modify files.
+2. Container images are composed of layers. Each layer represents a set of file system changes that add, remove, or modify files.
 @y
 2. コンテナーイメージはレイヤーから構成されます。
    各レイヤーはファイルシステムに対して加えられた、ファイルの追加、削除、修正の情報によって表現されます。
@@ -155,9 +152,9 @@ In this hands-on, you will learn how to search and pull a container image using 
 @z
 
 @x
-    ![A screenshot of the Docker Desktop Dashboard showing the image view on the left sidebar](images/click-image.webp?border=true&w=1050&h=400)
+   ![A screenshot of the Docker Desktop Dashboard showing the image view on the left sidebar](images/click-image.webp?border=true&w=1050&h=400)
 @y
-    ![Docker Desktop Dashboard のスクリーンショット、左サイドバーからのイメージ画面表示](images/click-image.webp?border=true&w=1050&h=400)
+   ![Docker Desktop Dashboard のスクリーンショット、左サイドバーからのイメージ画面表示](images/click-image.webp?border=true&w=1050&h=400)
 @z
 
 @x
@@ -168,9 +165,9 @@ In this hands-on, you will learn how to search and pull a container image using 
 @z
 
 @x
-    ![A screenshot of the Docker Desktop Dashboard showing the search ta](images/search-image.webp?border)
+   ![A screenshot of the Docker Desktop Dashboard showing the search ta](images/search-image.webp?border)
 @y
-    ![Docker Desktop Dashboard のスクリーンショット、検索欄](images/search-image.webp?border)
+   ![Docker Desktop Dashboard のスクリーンショット、検索欄](images/search-image.webp?border)
 @z
 
 @x
@@ -181,9 +178,9 @@ In this hands-on, you will learn how to search and pull a container image using 
 @z
 
 @x
-    ![A screenshot of the Docker Desktop Dashboard showing the search results for the docker/welcome-to-docker image](images/select-image.webp?border=true&w=1050&h=400)
+   ![A screenshot of the Docker Desktop Dashboard showing the search results for the docker/welcome-to-docker image](images/select-image.webp?border=true&w=1050&h=400)
 @y
-    ![Docker Desktop Dashboard のスクリーンショット、検索結果に docker/welcome-to-docker イメージ](images/select-image.webp?border=true&w=1050&h=400)
+   ![Docker Desktop Dashboard のスクリーンショット、検索結果に docker/welcome-to-docker イメージ](images/select-image.webp?border=true&w=1050&h=400)
 @z
 
 @x
@@ -217,9 +214,9 @@ Once you have an image downloaded, you can learn quite a few details about the i
 @z
 
 @x
-    ![A screenshot of the Docker Desktop Dashboard showing the images view with an arrow pointing to the docker/welcome-to-docker image](images/pulled-image.webp?border=true&w=1050&h=400)
+   ![A screenshot of the Docker Desktop Dashboard showing the images view with an arrow pointing to the docker/welcome-to-docker image](images/pulled-image.webp?border=true&w=1050&h=400)
 @y
-    ![Docker Desktop Dashboard のスクリーンショット、矢印先の docker/welcome-to-docker イメージを使ったイメージ確認](images/pulled-image.webp?border=true&w=1050&h=400)
+   ![Docker Desktop Dashboard のスクリーンショット、矢印先の docker/welcome-to-docker イメージを使ったイメージ確認](images/pulled-image.webp?border=true&w=1050&h=400)
 @z
 
 @x
@@ -229,9 +226,9 @@ Once you have an image downloaded, you can learn quite a few details about the i
 @z
 
 @x
-    ![A screenshot of the image details view for the docker/welcome-to-docker image](images/image-layers.webp?border=true&w=1050&h=400)
+   ![A screenshot of the image details view for the docker/welcome-to-docker image](images/image-layers.webp?border=true&w=1050&h=400)
 @y
-    ![イメージ詳細画面のスクリーンショット、docker/welcome-to-docker イメージ](images/image-layers.webp?border=true&w=1050&h=400)
+   ![イメージ詳細画面のスクリーンショット、docker/welcome-to-docker イメージ](images/image-layers.webp?border=true&w=1050&h=400)
 @z
 
 @x
@@ -260,48 +257,48 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @z
 
 @x
-1. Open a terminal and search for images using the [`docker search`](/reference/cli/docker/search/) command:
+1. Open a terminal and search for images using the [`docker search`](/reference/cli/docker/search.md) command:
 @y
-1. 端末を開き、イメージを検索する [`docker search`](__SUBDIR__/reference/cli/docker/search/) コマンドを実行します。
+1. 端末を開き、イメージを検索する [`docker search`](reference/cli/docker/search.md) コマンドを実行します。
 @z
 
 % snip command...
 
 @x
-    You will see output like the following:
+   You will see output like the following:
 @y
-    出力結果は以下のようなものとなります。
+   出力結果は以下のようなものとなります。
 @z
 
 % snip output...
 
 @x
-    This output shows you information about relevant images available on Docker Hub.
+   This output shows you information about relevant images available on Docker Hub.
 @y
-    この出力には Docker Hub において利用可能な関連イメージの情報が示されています。
+   この出力には Docker Hub において利用可能な関連イメージの情報が示されています。
 @z
 
 @x
-2. Pull the image using the [`docker pull`](/reference/cli/docker/image/pull/) command.
+2. Pull the image using the [`docker pull`](/reference/cli/docker/image/pull.md) command.
 @y
-2. [`docker pull`](__SUBDIR__/reference/cli/docker/image/pull/) コマンドを使ってイメージをプルします。
+2. [`docker pull`](reference/cli/docker/image/pull.md) コマンドを使ってイメージをプルします。
 @z
 
 % snip command...
 
 @x
-    You will see output like the following:
+   You will see output like the following:
 @y
-    出力結果は以下のようなものとなります。
+   出力結果は以下のようなものとなります。
 @z
 
 % snip output...
 
 @x
-    Each of line represents a different downloaded layer of the image. Remember that each layer is a set of filesystem changes and provides functionality of the image.
+   Each of line represents a different downloaded layer of the image. Remember that each layer is a set of filesystem changes and provides functionality of the image.
 @y
-    ダウンロードしたイメージレイヤーについての情報が一行ずつ示されています。
-    各レイヤーはファイルシステムの変更情報であり、イメージの機能性を表したものであることを思い出してください。
+   ダウンロードしたイメージレイヤーについての情報が一行ずつ示されています。
+   各レイヤーはファイルシステムの変更情報であり、イメージの機能性を表したものであることを思い出してください。
 @z
 
 @x
@@ -311,69 +308,69 @@ CLI を使って Docker イメージの検索とプルを行うには以下の�
 @z
 
 @x
-1. List your downloaded images using the [`docker image ls`](/reference/cli/docker/image/ls/) command:
+1. List your downloaded images using the [`docker image ls`](/reference/cli/docker/image/ls.md) command:
 @y
-1. ダウンロード済みのイメージ一覧を見るには [`docker image ls`](__SUBDIR__/reference/cli/docker/image/ls/) コマンドを実行します。
+1. ダウンロード済みのイメージ一覧を見るには [`docker image ls`](reference/cli/docker/image/ls.md) コマンドを実行します。
 @z
 
 % snip command...
 
 @x
-    You will see output like the following:
+   You will see output like the following:
 @y
-    出力結果は以下のようなものとなります。
+   出力結果は以下のようなものとなります。
 @z
 
 % snip output...
 
 @x
-    The command shows a list of Docker images currently available on your system. The `docker/welcome-to-docker` has a total size of approximately 29.7MB.
+   The command shows a list of Docker images currently available on your system. The `docker/welcome-to-docker` has a total size of approximately 29.7MB.
 @y
-    このコマンドにより、システム上において利用可能な Docker イメージの一覧が表示されます。
-    `docker/welcome-to-docker` のトータルサイズはおよそ 29.7MB であることがわかります。
+   このコマンドにより、システム上において利用可能な Docker イメージの一覧が表示されます。
+   `docker/welcome-to-docker` のトータルサイズはおよそ 29.7MB であることがわかります。
 @z
 
 @x
-    > **Image size**
-    > 
-    > The image size represented here reflects the uncompressed size of the image, not the download size of the layers.
+   > **Image size**
+   > 
+   > The image size represented here reflects the uncompressed size of the image, not the download size of the layers.
 @y
-    > **イメージサイズ**
-    > 
-    > ここに示されるイメージサイズは、イメージを伸長 (解凍) したサイズを示しており、レイヤーのダウンロードサイズではありません。
+   > **イメージサイズ**
+   > 
+   > ここに示されるイメージサイズは、イメージを伸長 (解凍) したサイズを示しており、レイヤーのダウンロードサイズではありません。
 @z
 
 @x
-2. List the image's layers using the [`docker image history`](/reference/cli/docker/image/history/) command:
+2. List the image's layers using the [`docker image history`](/reference/cli/docker/image/history.md) command:
 @y
-2. [`docker image history`](__SUBDIR__/reference/cli/docker/image/history/) コマンドを使ってイメージのレイヤーを一覧表示します。
+2. [`docker image history`](reference/cli/docker/image/history.md) コマンドを使ってイメージのレイヤーを一覧表示します。
 @z
 
 % snip command...
 
 @x
-    You will see output like the following:
+   You will see output like the following:
 @y
-    出力結果は以下のようなものとなります。
+   出力結果は以下のようなものとなります。
 @z
 
 % snip output...
 
 @x
-    This output shows you all of the layers, their sizes, and the command used to create the layer. 
+   This output shows you all of the layers, their sizes, and the command used to create the layer. 
 @y
-    この出力によって全レイヤーの情報、そのサイズ、またレイヤー生成時のコマンドを見ることができます。
+   この出力によって全レイヤーの情報、そのサイズ、またレイヤー生成時のコマンドを見ることができます。
 @z
 
 @x
-    > **Viewing the full command**
-    >
-    > If you add the `--no-trunc` flag to the command, you will see the full command. Note that, since the output is in a table-like format, longer commands will cause the output to be very difficult to navigate.
+   > **Viewing the full command**
+   >
+   > If you add the `--no-trunc` flag to the command, you will see the full command. Note that, since the output is in a table-like format, longer commands will cause the output to be very difficult to navigate.
 @y
-    > **コマンドのフル表示**
-    >
-    > 上のコマンドに対して `--no-trunc` フラグをつけると、コマンドをフル表示にすることができます。
-    > 出力結果は表形式で行われているため、コマンドが長ければ、出力結果がその分だけわかりにくくなります。
+   > **コマンドのフル表示**
+   >
+   > 上のコマンドに対して `--no-trunc` フラグをつけると、コマンドをフル表示にすることができます。
+   > 出力結果は表形式で行われているため、コマンドが長ければ、出力結果がその分だけわかりにくくなります。
 @z
 
 @x
@@ -404,20 +401,20 @@ The following resources will help you learn more about exploring, finding, and b
 @z
 
 @x
-- [Docker Trusted Content](/trusted-content/)
-  - [Docker Official Images docs](/trusted-content/official-images/)
-  - [Docker Verified Publisher docs](/trusted-content/dvp-program/)
-  - [Docker-Sponsored Open Source Program docs](/trusted-content/dsos-program/)
-- [Explore the Image view in Docker Desktop](/desktop/use-desktop/images/)
-- [Packaging your software](/build/building/packaging/)
+- [Docker Trusted Content](/manuals/trusted-content/_index.md)
+  - [Docker Official Images docs](/manuals/trusted-content/official-images/_index.md)
+  - [Docker Verified Publisher docs](/manuals/trusted-content/dvp-program.md)
+  - [Docker-Sponsored Open Source Program docs](/manuals/trusted-content/dsos-program.md)
+- [Explore the Image view in Docker Desktop](/manuals/desktop/use-desktop/images.md)
+- [Docker Build overview](/manuals/build/concepts/overview.md)
 - [Docker Hub](https://hub.docker.com)
 @y
-- [Docker Trusted Content](__SUBDIR__/trusted-content/)
-  - [Docker 公式イメージのドキュメント](__SUBDIR__/trusted-content/official-images/)
-  - [Docker Verified Publisher のドキュメント](__SUBDIR__/trusted-content/dvp-program/)
-  - [Docker 提供のオープンソースプログラムのドキュメント](__SUBDIR__/trusted-content/dsos-program/)
-- [Explore the Image view in Docker Desktop](__SUBDIR__/desktop/use-desktop/images/)
-- [ソフトウェアのパッケージング](__SUBDIR__/build/building/packaging/)
+- [Docker Trusted Content](manuals/trusted-content/_index.md)
+  - [Docker 公式イメージのドキュメント](manuals/trusted-content/official-images/_index.md)
+  - [Docker Verified Publisher のドキュメント](manuals/trusted-content/dvp-program.md)
+  - [Docker 提供のオープンソースプログラムのドキュメント](manuals/trusted-content/dsos-program.md)
+- [Explore the Image view in Docker Desktop](manuals/desktop/use-desktop/images.md)
+- [Docker Build 概要](manuals/build/concepts/overview.md)
 - [Docker Hub](https://hub.docker.com)
 @z
 

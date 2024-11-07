@@ -30,16 +30,12 @@ Compared to passwords, PATs provide the following advantages:
 @x
 - You can investigate when the PAT was last used and then disable or delete it if you find any suspicious activity.
 - When using an access token, you can't perform any administrative activity on the account, including changing the password. It protects your account if your computer is compromised.
+- Access tokens are valuable for building integrations, as you can issue multiple tokens, one for each integration, and revoke them at
+any time.
 @y
 - You can investigate when the PAT was last used and then disable or delete it if you find any suspicious activity.
 - When using an access token, you can't perform any administrative activity on the account, including changing the password. It protects your account if your computer is compromised.
-@z
-
-@x
-Access tokens are also valuable for building integrations, as you can issue multiple tokens, one for each integration, and revoke them at
-any time.
-@y
-Access tokens are also valuable for building integrations, as you can issue multiple tokens, one for each integration, and revoke them at
+- Access tokens are valuable for building integrations, as you can issue multiple tokens, one for each integration, and revoke them at
 any time.
 @z
 
@@ -90,13 +86,19 @@ any time.
 @z
 
 @x
-6. Set the access permissions.
+6. Select the expiration date for the token.
+@y
+6. Select the expiration date for the token.
+@z
+
+@x
+7. Set the access permissions.
    The access permissions are scopes that set restrictions in your
    repositories. For example, for Read & Write permissions, an automation
    pipeline can build an image and then push it to a repository. However, it
    can't delete the repository.
 @y
-6. Set the access permissions.
+7. Set the access permissions.
    The access permissions are scopes that set restrictions in your
    repositories. For example, for Read & Write permissions, an automation
    pipeline can build an image and then push it to a repository. However, it
@@ -104,11 +106,9 @@ any time.
 @z
 
 @x
-7. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able
-   to retrieve the token once you close this prompt.
+8. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able to retrieve the token once you close this prompt.
 @y
-7. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able
-   to retrieve the token once you close this prompt.
+8. Select **Generate** and then copy the token that appears on the screen and save it. You won't be able to retrieve the token once you close this prompt.
 @z
 
 @x

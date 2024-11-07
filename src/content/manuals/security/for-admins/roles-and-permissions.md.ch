@@ -64,15 +64,25 @@ Owners can manage roles for members of an organization using Docker Hub or the A
 - Update an organization's members or company in the [Admin Console](/manuals/admin/company/users.md#update-a-member-role)
 - Learn more about [organizations and companies](/manuals/admin/_index.md)
 @y
-- Update a member role in [Docker Hub](/manuals/admin/organization/members.md#update-a-member-role)
-- Update an organization's members or company in the [Admin Console](/manuals/admin/company/users.md#update-a-member-role)
-- Learn more about [organizations and companies](/manuals/admin/_index.md)
+- Update a member role in [Docker Hub](manuals/admin/organization/members.md#update-a-member-role)
+- Update an organization's members or company in the [Admin Console](manuals/admin/company/users.md#update-a-member-role)
+- Learn more about [organizations and companies](manuals/admin/_index.md)
 @z
 
 @x
 ## Permissions
 @y
 ## Permissions
+@z
+
+@x
+> [!NOTE]
+>
+> Company owners have the same access as organization owners for all associated organizations. For more information, see [Company overview](/admin/company/).
+@y
+> [!NOTE]
+>
+> Company owners have the same access as organization owners for all associated organizations. For more information, see [Company overview](__SUBDIR__/admin/company/).
 @z
 
 @x

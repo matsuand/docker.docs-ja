@@ -656,11 +656,11 @@ daemon with user namespaces enabled:
 @x
 User namespaces are an advanced feature and require coordination with other
 capabilities. For example, if volumes are mounted from the host, file ownership
-must be pre-arranged need read or write access to the volume contents.
+must be pre-arranged if you need read or write access to the volume contents.
 @y
 User namespaces are an advanced feature and require coordination with other
 capabilities. For example, if volumes are mounted from the host, file ownership
-must be pre-arranged need read or write access to the volume contents.
+must be pre-arranged if you need read or write access to the volume contents.
 @z
 
 @x

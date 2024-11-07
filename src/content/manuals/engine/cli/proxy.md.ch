@@ -29,10 +29,10 @@ environment variables in containers.
 
 @x
 This page doesn't describe how to configure proxies for Docker Desktop.
-For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](/manuals/desktop/settings.md#proxies).
+For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](/manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @y
 This page doesn't describe how to configure proxies for Docker Desktop.
-For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](manuals/desktop/settings.md#proxies).
+For instructions, see [configuring Docker Desktop to use HTTP/HTTPS proxies](manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @z
 
 @x

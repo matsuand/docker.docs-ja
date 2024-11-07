@@ -21,10 +21,10 @@ This page contains information about Docker Desktop Edge releases. Edge releases
 
 @x
 For Docker Desktop system requirements, see
-[What to know before you install](../install/mac-install.md#system-requirements).
+[What to know before you install](/manuals/desktop/setup/install/mac-install.md#system-requirements).
 @y
 For Docker Desktop system requirements, see
-[What to know before you install](../install/mac-install.md#system-requirements).
+[What to know before you install](manuals/desktop/setup/install/mac-install.md#system-requirements).
 @z
 
 @x
@@ -3986,15 +3986,15 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](/manuals/desktop/settings.md#docker-engine).
+- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](/manuals/desktop/settings-and-maintenance/settings.md#docker-engine).
 @y
-- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](manuals/desktop/settings.md#docker-engine).
+- Dedicated preference pane for advanced configuration of the docker daemon (edit daemon.json). See [Daemon Advanced (JSON configuration file)](manuals/desktop/settings-and-maintenance/settings.md#docker-engine).
 @z
 
 @x
-- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](/manuals/desktop/settings.md#docker-engine).
+- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](/manuals/desktop/settings-and-maintenance/settings.md#docker-engine).
 @y
-- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](manuals/desktop/settings.md#docker-engine).
+- Docker Experimental mode can be toggled. See [Daemon Basic (experimental mode and registries)](manuals/desktop/settings-and-maintenance/settings.md#docker-engine).
 @z
 
 @x
@@ -4406,13 +4406,13 @@ issue is being investigated. The workaround is to restart Docker.app.
 traversals of large directories are currently slow. Additionally, containers
 that perform large numbers of directory operations, such as repeated scans of
 large directory trees, may suffer from poor performance. More information is
-available in [Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
 * There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
 traversals of large directories are currently slow. Additionally, containers
 that perform large numbers of directory operations, such as repeated scans of
 large directory trees, may suffer from poor performance. More information is
-available in [Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
@@ -4485,14 +4485,14 @@ with `osxfs`. In particular, writes of small blocks and traversals of large
 directories are currently slow. Additionally, containers that perform large
 numbers of directory operations, such as repeated scans of large directory
 trees, may suffer from poor performance. More information is available in
-[Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+[Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
 * There are a number of issues with the performance of directories bind-mounted
 with `osxfs`. In particular, writes of small blocks and traversals of large
 directories are currently slow. Additionally, containers that perform large
 numbers of directory operations, such as repeated scans of large directory
 trees, may suffer from poor performance. More information is available in
-[Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+[Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
@@ -4583,12 +4583,12 @@ trees, may suffer from poor performance. More information is available in
 * There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
 directories are currently slow. Additionally, containers that perform large
 numbers of directory operations, such as repeated scans of large directory
-trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
 * There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
 directories are currently slow. Additionally, containers that perform large
 numbers of directory operations, such as repeated scans of large directory
-trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
@@ -4658,9 +4658,9 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](../troubleshoot/known-issues.md) in Troubleshooting.
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
@@ -4722,9 +4722,9 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](../troubleshoot/known-issues.md).
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](../troubleshoot/known-issues.md).
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -4792,9 +4792,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](../install/mac-install.md).
+* Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker Engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](/manuals/desktop/setup/install/mac-install.md).
 @y
-* Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](../install/mac-install.md).
+* Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker Engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](manuals/desktop/setup/install/mac-install.md).
 @z
 
 @x
@@ -4852,9 +4852,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](../troubleshoot/known-issues.md) in [Logs and Troubleshooting](../troubleshoot/_index.md).
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](../troubleshoot/known-issues.md) in [Logs and Troubleshooting](../troubleshoot/_index.md).
+* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @z
 
 @x
@@ -4970,9 +4970,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5046,9 +5046,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5106,9 +5106,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5158,9 +5158,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5214,9 +5214,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5280,9 +5280,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](../troubleshoot/known-issues.md).
+* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x

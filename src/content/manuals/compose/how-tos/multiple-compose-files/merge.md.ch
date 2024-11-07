@@ -22,14 +22,14 @@ Docker Compose lets you merge and override a set of Compose files together to cr
 @z
 
 @x
-By default, Compose reads two files, a `compose.yml` and an optional
-`compose.override.yml` file. By convention, the `compose.yml`
+By default, Compose reads two files, a `compose.yaml` and an optional
+`compose.override.yaml` file. By convention, the `compose.yaml`
 contains your base configuration. The override file can
 contain configuration overrides for existing services or entirely new
 services.
 @y
-By default, Compose reads two files, a `compose.yml` and an optional
-`compose.override.yml` file. By convention, the `compose.yml`
+By default, Compose reads two files, a `compose.yaml` and an optional
+`compose.override.yaml` file. By convention, the `compose.yaml`
 contains your base configuration. The override file can
 contain configuration overrides for existing services or entirely new
 services.
@@ -75,61 +75,23 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker compose -f compose.yml -f compose.admin.yml run backup_db
-```
-@y
-```console
-$ docker compose -f compose.yml -f compose.admin.yml run backup_db
-```
-@z
+% snip command...
 
 @x
-The `compose.yml` file might specify a `webapp` service.
+The `compose.yaml` file might specify a `webapp` service.
 @y
-The `compose.yml` file might specify a `webapp` service.
+The `compose.yaml` file might specify a `webapp` service.
 @z
 
-@x
-```yaml
-webapp:
-  image: examples/web
-  ports:
-    - "8000:8000"
-  volumes:
-    - "/data"
-```
-@y
-```yaml
-webapp:
-  image: examples/web
-  ports:
-    - "8000:8000"
-  volumes:
-    - "/data"
-```
-@z
+% snip code...
 
 @x
-The `compose.admin.yml` may also specify this same service: 
+The `compose.admin.yaml` may also specify this same service: 
 @y
-The `compose.admin.yml` may also specify this same service: 
+The `compose.admin.yaml` may also specify this same service: 
 @z
 
-@x
-```yaml
-webapp:
-  environment:
-    - DEBUG=1
-```
-@y
-```yaml
-webapp:
-  environment:
-    - DEBUG=1
-```
-@z
+% snip code...
 
 @x
 Any matching
@@ -141,29 +103,7 @@ fields override the previous file. New values, add to the `webapp` service
 configuration:
 @z
 
-@x
-```yaml
-webapp:
-  image: examples/web
-  ports:
-    - "8000:8000"
-  volumes:
-    - "/data"
-  environment:
-    - DEBUG=1
-```
-@y
-```yaml
-webapp:
-  image: examples/web
-  ports:
-    - "8000:8000"
-  volumes:
-    - "/data"
-  environment:
-    - DEBUG=1
-```
-@z
+% snip code...
 
 @x
 ## Merging rules 
@@ -219,21 +159,7 @@ service, the local value replaces or extends the original value.
       original service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python app.py
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python app.py
-      ```
-@z
+% snip code...
 
 @x
       local service:
@@ -241,21 +167,7 @@ service, the local value replaces or extends the original value.
       local service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python otherapp.py
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python otherapp.py
-      ```
-@z
+% snip code...
 
 @x
       result:
@@ -263,21 +175,7 @@ service, the local value replaces or extends the original value.
       result:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python otherapp.py
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          command: python otherapp.py
-      ```
-@z
+% snip code...
 
 @x
    - For the multi-value options `ports`, `expose`, `external_links`, `dns`, `dns_search`, and `tmpfs`, Compose concatenates both sets of values:
@@ -291,23 +189,7 @@ service, the local value replaces or extends the original value.
       original service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "3000"
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "3000"
-      ```
-@z
+% snip code...
 
 @x
       local service:
@@ -315,25 +197,7 @@ service, the local value replaces or extends the original value.
       local service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "4000"
-            - "5000"
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "4000"
-            - "5000"
-      ```
-@z
+% snip code...
 
 @x
       result:
@@ -341,27 +205,7 @@ service, the local value replaces or extends the original value.
       result:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "3000"
-            - "4000"
-            - "5000"
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          expose:
-            - "3000"
-            - "4000"
-            - "5000"
-      ```
-@z
+% snip code...
 
 @x
    - In the case of `environment`, `labels`, `volumes`, and `devices`, Compose "merges" entries together with locally defined values taking precedence. For `environment` and `labels`, the environment variable or label name determines which value is used:
@@ -375,25 +219,7 @@ service, the local value replaces or extends the original value.
       original service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - FOO=original
-            - BAR=original
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - FOO=original
-            - BAR=original
-      ```
-@z
+% snip code...
 
 @x
       local service:
@@ -401,25 +227,7 @@ service, the local value replaces or extends the original value.
       local service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - BAR=local
-            - BAZ=local
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - BAR=local
-            - BAZ=local
-      ```
-@z
+% snip code...
 
 @x
      result:
@@ -427,27 +235,7 @@ service, the local value replaces or extends the original value.
      result:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - FOO=original
-            - BAR=local
-            - BAZ=local
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          environment:
-            - FOO=original
-            - BAR=local
-            - BAZ=local
-      ```
-@z
+% snip code...
 
 @x
    - Entries for `volumes` and `devices` are merged using the mount path in the container:
@@ -461,25 +249,7 @@ service, the local value replaces or extends the original value.
       original service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./original:/foo
-            - ./original:/bar
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./original:/foo
-            - ./original:/bar
-      ```
-@z
+% snip code...
 
 @x
       local service:
@@ -487,25 +257,7 @@ service, the local value replaces or extends the original value.
       local service:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./local:/bar
-            - ./local:/baz
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./local:/bar
-            - ./local:/baz
-      ```
-@z
+% snip code...
 
 @x
       result:
@@ -513,27 +265,7 @@ service, the local value replaces or extends the original value.
       result:
 @z
 
-@x
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./original:/foo
-            - ./local:/bar
-            - ./local:/baz
-      ```
-@y
-      ```yaml
-      services:
-        myservice:
-          # ...
-          volumes:
-            - ./original:/foo
-            - ./local:/bar
-            - ./local:/baz
-      ```
-@z
+% snip code...
 
 @x
 For more merging rules, see [Merge and override](/reference/compose-file/merge.md) in the Compose Specification. 
@@ -548,40 +280,18 @@ For more merging rules, see [Merge and override](reference/compose-file/merge.md
 @z
 
 @x
-- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yml` and a `compose.override.yml` file. You must supply at least the `compose.yml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
+- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yaml` and a `compose.override.yaml` file. You must supply at least the `compose.yaml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
 @y
-- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yml` and a `compose.override.yml` file. You must supply at least the `compose.yml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
+- Using `-f` is optional. If not provided, Compose searches the working directory and its parent directories for a `compose.yaml` and a `compose.override.yaml` file. You must supply at least the `compose.yaml` file. If both files exist on the same directory level, Compose combines them into a single configuration.
 @z
 
 @x
 - You can use a `-f` with `-` (dash) as the filename to read the configuration from `stdin`. For example: 
-   ```console
-   $ docker compose -f - <<EOF
-     webapp:
-       image: examples/web
-       ports:
-        - "8000:8000"
-       volumes:
-        - "/data"
-       environment:
-        - DEBUG=1
-     EOF
-   ```
 @y
 - You can use a `-f` with `-` (dash) as the filename to read the configuration from `stdin`. For example: 
-   ```console
-   $ docker compose -f - <<EOF
-     webapp:
-       image: examples/web
-       ports:
-        - "8000:8000"
-       volumes:
-        - "/data"
-       environment:
-        - DEBUG=1
-     EOF
-   ```
 @z
+
+% snip code...
 
 @x
    When `stdin` is used, all paths in the configuration are relative to the current working directory.
@@ -596,9 +306,9 @@ For more merging rules, see [Merge and override](reference/compose-file/merge.md
 @z
 
 @x
-   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](/reference/cli/docker/compose/pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
+   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yaml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](/reference/cli/docker/compose/pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yaml pull db`
 @y
-   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](reference/cli/docker/compose/pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yml pull db`
+   For example, if you are running the [Compose Rails sample](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md), and have a `compose.yaml` file in a directory called `sandbox/rails`. You can use a command like [docker compose pull](reference/cli/docker/compose/pull.md) to get the postgres image for the `db` service from anywhere by using the `-f` flag as follows: `docker compose -f ~/sandbox/rails/compose.yaml pull db`
 @z
 
 @x
@@ -607,49 +317,7 @@ For more merging rules, see [Merge and override](reference/compose-file/merge.md
    Here's the full example:
 @z
 
-@x
-   ```console
-   $ docker compose -f ~/sandbox/rails/compose.yml pull db
-   Pulling db (postgres:latest)...
-   latest: Pulling from library/postgres
-   ef0380f84d05: Pull complete
-   50cf91dc1db8: Pull complete
-   d3add4cd115c: Pull complete
-   467830d8a616: Pull complete
-   089b9db7dc57: Pull complete
-   6fba0a36935c: Pull complete
-   81ef0e73c953: Pull complete
-   338a6c4894dc: Pull complete
-   15853f32f67c: Pull complete
-   044c83d92898: Pull complete
-   17301519f133: Pull complete
-   dcca70822752: Pull complete
-   cecf11b8ccf3: Pull complete
-   Digest: sha256:1364924c753d5ff7e2260cd34dc4ba05ebd40ee8193391220be0f9901d4e1651
-   Status: Downloaded newer image for postgres:latest
-   ```
-@y
-   ```console
-   $ docker compose -f ~/sandbox/rails/compose.yml pull db
-   Pulling db (postgres:latest)...
-   latest: Pulling from library/postgres
-   ef0380f84d05: Pull complete
-   50cf91dc1db8: Pull complete
-   d3add4cd115c: Pull complete
-   467830d8a616: Pull complete
-   089b9db7dc57: Pull complete
-   6fba0a36935c: Pull complete
-   81ef0e73c953: Pull complete
-   338a6c4894dc: Pull complete
-   15853f32f67c: Pull complete
-   044c83d92898: Pull complete
-   17301519f133: Pull complete
-   dcca70822752: Pull complete
-   cecf11b8ccf3: Pull complete
-   Digest: sha256:1364924c753d5ff7e2260cd34dc4ba05ebd40ee8193391220be0f9901d4e1651
-   Status: Downloaded newer image for postgres:latest
-   ```
-@z
+% snip command...
 
 @x
 ## Example
@@ -678,46 +346,12 @@ services.
 @z
 
 @x
-`compose.yml`
+`compose.yaml`
 @y
-`compose.yml`
+`compose.yaml`
 @z
 
-@x
-```yaml
-services:
-  web:
-    image: example/my_web_app:latest
-    depends_on:
-      - db
-      - cache
-@y
-```yaml
-services:
-  web:
-    image: example/my_web_app:latest
-    depends_on:
-      - db
-      - cache
-@z
-
-@x
-  db:
-    image: postgres:latest
-@y
-  db:
-    image: postgres:latest
-@z
-
-@x
-  cache:
-    image: redis:latest
-```
-@y
-  cache:
-    image: redis:latest
-```
-@z
+% snip code...
 
 @x
 In this example the development configuration exposes some ports to the
@@ -728,58 +362,12 @@ host, mounts our code as a volume, and builds the web image.
 @z
 
 @x
-`compose.override.yml`
+`compose.override.yaml`
 @y
-`compose.override.yml`
+`compose.override.yaml`
 @z
 
-@x
-```yaml
-services:
-  web:
-    build: .
-    volumes:
-      - '.:/code'
-    ports:
-      - 8883:80
-    environment:
-      DEBUG: 'true'
-@y
-```yaml
-services:
-  web:
-    build: .
-    volumes:
-      - '.:/code'
-    ports:
-      - 8883:80
-    environment:
-      DEBUG: 'true'
-@z
-
-@x
-  db:
-    command: '-d'
-    ports:
-     - 5432:5432
-@y
-  db:
-    command: '-d'
-    ports:
-     - 5432:5432
-@z
-
-@x
-  cache:
-    ports:
-      - 6379:6379
-```
-@y
-  cache:
-    ports:
-      - 6379:6379
-```
-@z
+% snip code...
 
 @x
 When you run `docker compose up` it reads the overrides automatically.
@@ -796,40 +384,12 @@ repository or managed by a different team.
 @z
 
 @x
-`compose.prod.yml`
+`compose.prod.yaml`
 @y
-`compose.prod.yml`
+`compose.prod.yaml`
 @z
 
-@x
-```yaml
-services:
-  web:
-    ports:
-      - 80:80
-    environment:
-      PRODUCTION: 'true'
-@y
-```yaml
-services:
-  web:
-    ports:
-      - 80:80
-    environment:
-      PRODUCTION: 'true'
-@z
-
-@x
-  cache:
-    environment:
-      TTL: '500'
-```
-@y
-  cache:
-    environment:
-      TTL: '500'
-```
-@z
+% snip code...
 
 @x
 To deploy with this production Compose file you can run
@@ -837,24 +397,16 @@ To deploy with this production Compose file you can run
 To deploy with this production Compose file you can run
 @z
 
-@x
-```console
-$ docker compose -f compose.yml -f compose.prod.yml up -d
-```
-@y
-```console
-$ docker compose -f compose.yml -f compose.prod.yml up -d
-```
-@z
+% snip command...
 
 @x
 This deploys all three services using the configuration in
-`compose.yml` and `compose.prod.yml` but not the
-dev configuration in `compose.override.yml`.
+`compose.yaml` and `compose.prod.yaml` but not the
+dev configuration in `compose.override.yaml`.
 @y
 This deploys all three services using the configuration in
-`compose.yml` and `compose.prod.yml` but not the
-dev configuration in `compose.override.yml`.
+`compose.yaml` and `compose.prod.yaml` but not the
+dev configuration in `compose.override.yaml`.
 @z
 
 @x

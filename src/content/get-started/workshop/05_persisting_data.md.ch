@@ -53,44 +53,27 @@ changes won't be seen in another container, even if they're using the same image
 @z
 
 @x
-To see this in action, you're going to start two containers. In one container, you'll create a file. In the other container, you'll verify the file exists.
-What you'll see is that the file created in one container isn't available in another.
+To see this in action, you're going to start two containers. In one container,
+you'll create a file. In the other container, you'll check whether that same
+file exists.
 @y
 実際の動作を見てみるために 2 つのコンテナーを起動させます。
 1 つのコンテナーではファイル生成を行います。
-もう 1 つのコンテナーでは、ファイルの存在を確認します。
-そこでわかってくるのは、1 つのコンテナーで生成したファイルは、もう 1 つのコンテナーで利用することはできないということです。
+もう 1 つのコンテナーでは、同じファイルが存在しているかどうかを確認します。
 @z
 
 @x
-1. Start an Alpine container and access its shell.
+1. Start an Alpine container and create a new file in it.
 @y
-1. Alpine コンテナーを起動させて、そのシェルにアクセスします。
-@z
-
-% snip command...
-
-@x
-2. In the container, create a `greeting.txt` file with `hello` inside.
-@y
-2. コンテナー内に `greeting.txt` というファイルを生成して、その中に `hello` と書き込みます。
+1. Alpine コンテナーを起動させて、その中で新たなファイルを生成します。
 @z
 
 % snip command...
 
 @x
-3. Exit the container.
+2. Run a new Alpine container and use the `stat` command to check whether the file exists.
 @y
-3. コンテナーから抜け出ます。
-@z
-
-% snip command...
-
-@x
-4. Run a new Alpine container and use the `cat` command to verify that the
-   file does not exist.
-@y
-4. 新たな Alpine コンテナーを起動して `cat` コマンドを実行し、先のファイルは存在していないことを確認します。
+2. 新たな Alpine コンテナーを実行し、`stat` コマンドを使ってそのファイルの存在を確認します。
 @z
 
 % snip command...
@@ -98,18 +81,21 @@ What you'll see is that the file created in one container isn't available in ano
 @x
    You should see output similar to the following that indicates the file does not exist in the new container.
 @y
-   以下のようなメッセージが表示されるはずです。
-   これは、新たなコンテナー内にはそのファイルが含まれていないことを示しています。
+   以下のような出力が得られるはずです。
+   新しいコンテナー内にはファイルが存在していないことがわかります。
 @z
 
-% snip output...
+% snip command...
 
 @x
-5. Go ahead and remove the containers using `docker ps --all` to get the IDs,
-   and then `docker rm -f <container-id>` to remove the containers.
+The `greeting.txt` file created by the first container did not exist in the
+second container. That is because the writeable "top layer" of each container
+is isolated. Even though both containers shared the same underlying layers that
+make up the base image, the writable layer is unique to each container.
 @y
-5. `docker ps --all` を実行して ID の一覧を取得します。
-   そして `docker rm -f <container-id>` の実行によってコンテナーを削除します。
+1 つめのコンテナーにおいて生成した `greeting.txt` ファイルは、2 つめのコンテナーには存在しませんでした。
+これは各コンテナーが持つ書き込み可能は「トップレイヤー」は、それぞれが独立しているということです。
+2 つのコンテナーが同一ベースイメージから生成された同一レイヤーを持っている場合であっても、それぞれの書き込み可能レイヤーは、個々のコンテナーに固有のものであるということです。
 @z
 
 @x
@@ -252,9 +238,9 @@ You can create the volume and start the container using the CLI or Docker Deskto
 
 @x
    > For more details about Git Bash's syntax differences, see
-   > [Working with Git Bash](/desktop/troubleshoot/topics/#working-with-git-bash).
+   > [Working with Git Bash](/desktop/troubleshoot-and-support/troubleshoot/topics/#working-with-git-bash).
 @y
-   > Git Bash の文法の相違に関しては [Git Bash を使った操作](__SUBDIR__/desktop/troubleshoot/topics/#working-with-git-bash) を参照してください。
+   > Git Bash の文法の相違に関しては [Git Bash を使った操作](__SUBDIR__/desktop/troubleshoot-and-support/troubleshoot/topics/#working-with-git-bash) を参照してください。
 @z
 
 @x

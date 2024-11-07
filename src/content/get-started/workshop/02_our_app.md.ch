@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リン クへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Containerize an application
@@ -11,17 +11,21 @@ title: アプリケーションのコンテナー化
 
 @x
 linkTitle: "Part 1: Containerize an application"
-keywords: dockerfile example, Containerize an application, run docker file, running
+keywords: |
+  dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers
-description: Follow this step-by-step guide to learn how to create and run a containerized
+description: |
+  Follow this step-by-step guide to learn how to create and run a containerized
   application using Docker
 @y
 linkTitle: "1部: アプリケーションのコンテナー化"
-keywords: dockerfile example, Containerize an application, run docker file, running
+keywords: |
+  dockerfile example, Containerize an application, run docker file, running
   docker file, how to run dockerfile, example dockerfile, how to create a docker container,
   create dockerfile, simple dockerfile, creating containers
-description: Follow this step-by-step guide to learn how to create and run a containerized
+description: |
+  Follow this step-by-step guide to learn how to create and run a containerized
   application using Docker
 @z
 
@@ -97,132 +101,35 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 @z
 
 @x
-1. In the `getting-started-app` directory, the same location as the `package.json` file, create a file named `Dockerfile`. You can use the following commands to create a Dockerfile based on your operating system.
+1. In the `getting-started-app` directory, the same location as the
+   `package.json` file, create a file named `Dockerfile` with the following contents:
 @y
 1. `getting-started-app` ディレクトリには `package.json` というファイルがあります。
    そのファイルと同じ並びに `Dockerfile` という名前のファイルを生成します。
-   利用しているオペレーティングシステムに応じて、以下のコマンド実行により Dockerfile を生成します。
+   そしてその内容は以下のようにします。
 @z
 
 @x
-   {{< tabs >}}
-   {{< tab name="Mac / Linux / Windows (Git Bash)" >}}
+   This Dockerfile starts off with a `node:lts-alpine` base image, a
+   light-weight Linux image that comes with Node.js and the Yarn package
+   manager pre-installed. It copies all of the source code into the image,
+   installs the necessary dependencies, and starts the application.
 @y
-   {{< tabs >}}
-   {{< tab name="Mac / Linux / Windows (Git Bash)" >}}
+   この Dockerfile はベースイメージ `node:lts-alpine` の記述から始まります。
+   これは Node.js とYarn パッケージマネージャーがあらかじめインストールされている、軽量な Linux イメージです。
+   イメージに対しては全ソースコードがコピーされ、必要な依存パッケージがインストールされた上で、アプリケーションが起動します。
 @z
 
 @x
-   In the terminal, run the following commands.
+2. Build the image using the following commands:
 @y
-   端末画面から以下のコマンドを実行します。
-@z
-
-@x
-   Make sure you're in the `getting-started-app` directory. Replace `/path/to/getting-started-app` with the path to your `getting-started-app` directory.
-@y
-   カレントディレクトリを `getting-started-app` とします。
-   `/path/to/getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
-@z
-
-% snip command...
-
-@x
-   Create an empty file named `Dockerfile`.
-@y
-   `Dockerfile` という名の空のファイルを生成します。
-@z
-
-% snip command...
-
-@x
-   {{< /tab >}}
-   {{< tab name="Windows (Command Prompt)" >}}
-@y
-   {{< /tab >}}
-   {{< tab name="Windows (コマンドプロンプト)" >}}
-@z
-
-@x
-   In the Windows Command Prompt, run the following commands.
-@y
-   Windows コマンドプロンプトから以下のコマンドを実行します。
-@z
-
-@x
-   Make sure you're in the `getting-started-app` directory. Replace `\path\to\getting-started-app` with the path to your `getting-started-app` directory.
-@y
-   カレントディレクトリを `getting-started-app` とします。
-   `\path\to\getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
-@z
-
-% snip command...
-
-@x
-   Create an empty file named `Dockerfile`.
-@y
-   `Dockerfile` という名の空のファイルを生成します。
-@z
-
-% snip command...
-
-@x
-   {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
-@y
-   {{< /tab >}}
-   {{< tab name="Windows (PowerShell)" >}}
-@z
-
-@x
-   In PowerShell, run the following commands.
-@y
-   PowerShell から以下のコマンドを実行します。
-@z
-
-@x
-   Make sure you're in the `getting-started-app` directory. Replace `\path\to\getting-started-app` with the path to your `getting-started-app` directory.
-@y
-   カレントディレクトリを `getting-started-app` とします。
-   `\path\to\getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
-@z
-
-% snip command...
-
-@x
-   Create an empty file named `Dockerfile`.
-@y
-   `Dockerfile` という名の空のファイルを生成します。
-@z
-
-% snip command...
-
-@x
-   {{< /tab >}}
-   {{< /tabs >}}
-@y
-   {{< /tab >}}
-   {{< /tabs >}}
-@z
-
-@x
-2. Using a text editor or code editor, add the following contents to the Dockerfile:
-@y
-2. テキストエディターまたコードエディターを使って、Dockerfile に以下の内容を記述します。
-@z
-
-% snip code...
-
-@x
-3. Build the image using the following commands:
-@y
-3. 以下のコマンドを実行してイメージをビルドします。
+2. 以下のコマンドを実行してイメージをビルドします。
 @z
 
 @x
    In the terminal, make sure you're in the `getting-started-app` directory. Replace `/path/to/getting-started-app` with the path to your `getting-started-app` directory.
 @y
-   端末画面において、カレントディレクトリを `getting-started-app` とします。
+   端末内ではカレントディレクトリを `getting-started-app` とします。
    `/path/to/getting-started-app` の部分は、実際の `getting-started-app` ディレクトリに置き換えてください。
 @z
 
@@ -237,11 +144,11 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 % snip command...
 
 @x
-   The `docker build` command uses the Dockerfile to build a new image. You might have noticed that Docker downloaded a lot of "layers". This is because you instructed the builder that you wanted to start from the `node:18-alpine` image. But, since you didn't have that on your machine, Docker needed to download the image.
+   The `docker build` command uses the Dockerfile to build a new image. You might have noticed that Docker downloaded a lot of "layers". This is because you instructed the builder that you wanted to start from the `node:lts-alpine` image. But, since you didn't have that on your machine, Docker needed to download the image.
 @y
    `docker build` コマンドは Dockerfile を利用して新たなイメージをビルドします。
    実行すればわかることですが、Docker は数々の「レイヤー」をダウンロードします。
-   そうなるのは、ビルド処理に対して指示を行ったからであり、`node:18-alpine` イメージから処理を始めることを伝えたためです。
+   そうなるのは、ビルド処理に対して指示を行ったからであり、`node:lts-alpine` イメージから処理を始めることを伝えたためです。
    マシン内にそのイメージがなかったので、Docker がダウンロードする必要があったということになります。
 @z
 
@@ -290,22 +197,19 @@ Now that you have an image, you can run the application in a container using the
 @x
    The `-d` flag (short for `--detach`) runs the container in the background.
    This means that Docker starts your container and returns you to the terminal
-   prompt. You can verify that a container is running by viewing it in Docker
-   Dashboard under **Containers**, or by running `docker ps` in the terminal.
+   prompt.
 @y
    `-d` フラグ (`--detach` の短縮形) は、コンテナーをバックグラウンドで実行します。
    これを行うと、Docker がコンテナーを起動した後に、端末上のプロンプトに戻ります。
-   コンテナーが起動しているかどうかは、Docker ダッシュボードの **Containers** (コンテナー) タブにおいて確認することができます。
-   あるいは端末画面から `docker ps` を実行することで確認できます。
 @z
 
 @x
-   The `-p` flag (short for `--publish`) creates a port mapping between the host
-   and the container. The `-p` flag takes a string value in the format of
-   `HOST:CONTAINER`, where `HOST` is the address on the host, and `CONTAINER` is
-   the port on the container. The command publishes the container's port 3000 to
-   `127.0.0.1:3000` (`localhost:3000`) on the host. Without the port mapping,
-   you wouldn't be able to access the application from the host.
+   The `-p` flag (short for `--publish`) creates a port mapping between the
+   host and the container. The `-p` flag takes a string value in the format of
+   `HOST:CONTAINER`, where `HOST` is the address on the host, and `CONTAINER`
+   is the port on the container. The command publishes the container's port
+   3000 to `127.0.0.1:3000` (`localhost:3000`) on the host. Without the port
+   mapping, you wouldn't be able to access the application from the host.
 @y
    `-p` フラグ (`--publish` の短縮形) は、ホストとコンテナーの間でのポートマッピングを生成します。
    `-p` フラグには `HOST:CONTAINER` という書式の文字列を与えます。
@@ -360,7 +264,7 @@ If you take a quick look at your containers, you should see at least one contain
 @z
 
 @x
-Run the following `docker ps` command in a terminal to list your containers.
+Run the `docker ps` command in a terminal to list your containers.
 @y
 端末画面から `docker ps` コマンドを実行すると、コンテナーを一覧表示できます。
 @z
@@ -423,11 +327,11 @@ Related information:
 @z
 
 @x
- - [Dockerfile reference](/reference/dockerfile/)
- - [docker CLI reference](/reference/cli/docker/)
+- [Dockerfile reference](/reference/dockerfile/)
+- [docker CLI reference](/reference/cli/docker/)
 @y
- - [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
- - [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
+- [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/)
+- [docker CLI リファレンス](__SUBDIR__/reference/cli/docker/)
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 command: docker scout sbom
 short: Generate or display SBOM of an image
@@ -80,89 +82,6 @@ long: |-
     - `oci-dir://` use an OCI layout directory
     - `archive://` use a tarball archive, as created by `docker save`
     - `fs://` use a local directory or file
-usage: docker scout sbom [IMAGE|DIRECTORY|ARCHIVE]
-pname: docker scout
-plink: docker_scout.yaml
-options:
-    - option: format
-      value_type: string
-      default_value: json
-      description: |-
-        Output format:
-        - list: list of packages of the image
-        - json: json representation of the SBOM
-        - spdx: spdx representation of the SBOM
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-package-type
-      value_type: stringSlice
-      default_value: '[]'
-      description: |-
-        Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)
-        Can only be used with --format list
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: string
-      description: Write the report to a file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Platform of image to analyze
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ref
-      value_type: string
-      description: |-
-        Reference to use if the provided tarball contains multiple references.
-        Can only be used with archive
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
-      description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
-      description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Display the list of packages
 @y
     - `image://` (default) use a local image, or fall back to a registry lookup
     - `local://` use an image from the local image store (don't do a registry lookup)
@@ -170,100 +89,87 @@ examples: |-
     - `oci-dir://` use an OCI layout directory
     - `archive://` use a tarball archive, as created by `docker save`
     - `fs://` use a local directory or file
+@z
+
+@x
 usage: docker scout sbom [IMAGE|DIRECTORY|ARCHIVE]
-pname: docker scout
-plink: docker_scout.yaml
-options:
-    - option: format
-      value_type: string
-      default_value: json
+@y
+usage: docker scout sbom [IMAGE|DIRECTORY|ARCHIVE]
+@z
+
+% options:
+
+@x format
       description: |-
         Output format:
         - list: list of packages of the image
         - json: json representation of the SBOM
         - spdx: spdx representation of the SBOM
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: only-package-type
-      value_type: stringSlice
-      default_value: '[]'
+        - cyclonedx: cyclone dx representation of the SBOM
+@y
+      description: |-
+        Output format:
+        - list: list of packages of the image
+        - json: json representation of the SBOM
+        - spdx: spdx representation of the SBOM
+        - cyclonedx: cyclone dx representation of the SBOM
+@z
+
+@x only-package-type
       description: |-
         Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)
         Can only be used with --format list
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: string
+@y
+      description: |-
+        Comma separated list of package types (like apk, deb, rpm, npm, pypi, golang, etc)
+        Can only be used with --format list
+@z
+
+@x output
       description: Write the report to a file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
+@y
+      description: Write the report to a file
+@z
+
+@x platform
       description: Platform of image to analyze
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ref
-      value_type: string
+@y
+      description: Platform of image to analyze
+@z
+
+@x ref
       description: |-
         Reference to use if the provided tarball contains multiple references.
         Can only be used with archive
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: |-
+        Reference to use if the provided tarball contains multiple references.
+        Can only be used with archive
+@z
+
+% inherited_options:
+
+@x debug
       description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: Debug messages
+@z
+
+@x verbose-debug
       description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Verbose debug
+@z
+
+@x
+examples: |-
+    ### Display the list of packages
+@y
 examples: |-
     ### Display the list of packages
 @z
 
-@x
-    ```console
-    $ docker scout sbom --format list alpine
-    ```
-@y
-    ```console
-    $ docker scout sbom --format list alpine
-    ```
-@z
+% snip command...
 
 @x
     ### Only display packages of a specific type
@@ -271,15 +177,7 @@ examples: |-
     ### Only display packages of a specific type
 @z
 
-@x
-    ```console
-     $ docker scout sbom --format list --only-package-type apk alpine
-    ```
-@y
-    ```console
-     $ docker scout sbom --format list --only-package-type apk alpine
-    ```
-@z
+% snip command...
 
 @x
     ### Display the full SBOM in JSON format
@@ -287,15 +185,7 @@ examples: |-
     ### Display the full SBOM in JSON format
 @z
 
-@x
-    ```console
-    $ docker scout sbom alpine
-    ```
-@y
-    ```console
-    $ docker scout sbom alpine
-    ```
-@z
+% snip command...
 
 @x
     ### Display the full SBOM of the most recently built image
@@ -303,15 +193,7 @@ examples: |-
     ### Display the full SBOM of the most recently built image
 @z
 
-@x
-    ```console
-    $ docker scout sbom
-    ```
-@y
-    ```console
-    $ docker scout sbom
-    ```
-@z
+% snip command...
 
 @x
     ### Write SBOM to a file
@@ -319,22 +201,5 @@ examples: |-
     ### Write SBOM to a file
 @z
 
-@x
-    ```console
-    $ docker scout sbom --output alpine.sbom alpine
-    ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker scout sbom --output alpine.sbom alpine
-    ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

@@ -161,14 +161,17 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/dev-environments/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
-	src/content/manuals/desktop/faqs/Makefile
 	src/content/manuals/desktop/images/Makefile
-	src/content/manuals/desktop/install/Makefile
-	src/content/manuals/desktop/install/images/Makefile
-	src/content/manuals/desktop/install/linux/Makefile
-	src/content/manuals/desktop/install/msi/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile
-	src/content/manuals/desktop/troubleshoot/Makefile
+	src/content/manuals/desktop/settings-and-maintenance/Makefile
+	src/content/manuals/desktop/setup/Makefile
+	src/content/manuals/desktop/setup/install/Makefile
+	src/content/manuals/desktop/setup/install/images/Makefile
+	src/content/manuals/desktop/setup/install/linux/Makefile
+	src/content/manuals/desktop/setup/install/msi/Makefile
+	src/content/manuals/desktop/troubleshoot-and-support/Makefile
+	src/content/manuals/desktop/troubleshoot-and-support/faqs/Makefile
+	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
 	src/content/manuals/desktop/wsl/Makefile
 	src/content/manuals/docker-hub/Makefile
