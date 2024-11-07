@@ -4,7 +4,7 @@
 SUBDIRS = admin-set-up bake bun cpp docker-build-cloud docker-compose \
 	docker-scout dotnet genai-pdf-bot genai-video-bot golang      \
 	images java nodejs php python r rag-ollama ruby rust          \
-	testcontainers-cloud
+	testcontainers-cloud zscaler
 
 bases = \
 	_index.md                   \

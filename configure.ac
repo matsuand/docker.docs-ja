@@ -105,6 +105,7 @@ AC_CONFIG_FILES([
 	src/content/guides/ruby/Makefile
 	src/content/guides/rust/Makefile
 	src/content/guides/testcontainers-cloud/Makefile
+	src/content/guides/zscaler/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/languages/Makefile
@@ -158,6 +159,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/compose/releases/Makefile
 	src/content/manuals/compose/support-and-feedback/Makefile
 	src/content/manuals/copilot/Makefile
+	src/content/manuals/copilot/images/Makefile
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/dev-environments/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
