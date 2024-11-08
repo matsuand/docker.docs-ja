@@ -352,9 +352,9 @@ Running a container with a cloud engine is just as straightforward as running it
 @z
 
 @x
-Project Harmonia takes advantage of [Synchronized file shares](/manuals/desktop/synchronized-file-sharing.md) to enable local-to-remote file shares and port mappings. 
+Project Harmonia takes advantage of [Synchronized file shares](/manuals/desktop/features/synchronized-file-sharing.md) to enable local-to-remote file shares and port mappings. 
 @y
-Project Harmonia takes advantage of [Synchronized file shares](manuals/desktop/synchronized-file-sharing.md) to enable local-to-remote file shares and port mappings. 
+Project Harmonia takes advantage of [Synchronized file shares](manuals/desktop/features/synchronized-file-sharing.md) to enable local-to-remote file shares and port mappings. 
 @z
 
 @x

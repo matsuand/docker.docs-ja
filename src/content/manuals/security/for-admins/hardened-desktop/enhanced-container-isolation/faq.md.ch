@@ -199,10 +199,10 @@ and Linux).
 
 @x
 ECI does not yet protect Docker Desktop Kubernetes pods, Extension containers,
-and [Dev Environments containers](/manuals/desktop/dev-environments/_index.md).
+and [Dev Environments containers](/manuals/desktop/features/dev-environments/_index.md).
 @y
 ECI does not yet protect Docker Desktop Kubernetes pods, Extension containers,
-and [Dev Environments containers](manuals/desktop/dev-environments/_index.md).
+and [Dev Environments containers](manuals/desktop/features/dev-environments/_index.md).
 @z
 
 @x

@@ -6,12 +6,16 @@
 title: Use WSL
 description: How to develop with Docker and WSL 2 and understand GPU support for WSL
 keywords: wsl, wsl 2, develop, docker desktop, windows
+aliases:
+- /desktop/wsl/use-wsl/
 ---
 @y
 ---
 title: Use WSL
 description: How to develop with Docker and WSL 2 and understand GPU support for WSL
 keywords: wsl, wsl 2, develop, docker desktop, windows
+aliases:
+- /desktop/wsl/use-wsl/
 ---
 @z
 

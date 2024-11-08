@@ -108,9 +108,9 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 @z
 
 @x
-For more information on setting up WSL 2 with Docker Desktop, see [WSL](/manuals/desktop/wsl/_index.md).
+For more information on setting up WSL 2 with Docker Desktop, see [WSL](/manuals/desktop/features/wsl/_index.md).
 @y
-Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](manuals/desktop/wsl/_index.md) を参照してください。
+Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](manuals/desktop/features/wsl/_index.md) を参照してください。
 @z
 
 @x
@@ -321,9 +321,9 @@ Windows コンテナーの詳細については以下のドキュメントを参
 
 @x
 - To understand how to connect to Windows containers from the local host, see
-  [I want to connect to a container from Windows](/manuals/desktop/networking.md#i-want-to-connect-to-a-container-from-the-host)
+  [I want to connect to a container from Windows](/manuals/desktop/features/networking.md#i-want-to-connect-to-a-container-from-the-host)
 @y
-- ローカルホストから Windows コンテナーに接続する方法を理解するには、[Windows からコンテナーに接続したい](manuals/desktop/networking.md#i-want-to-connect-to-a-container-from-the-host) を参照してください。
+- ローカルホストから Windows コンテナーに接続する方法を理解するには、[Windows からコンテナーに接続したい](manuals/desktop/features/networking.md#i-want-to-connect-to-a-container-from-the-host) を参照してください。
 @z
 
 @x

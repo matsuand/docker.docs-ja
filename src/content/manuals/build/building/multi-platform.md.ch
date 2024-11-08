@@ -185,10 +185,10 @@ using Docker Desktop or Docker Engine standalone:
 
 @x
 - If you're using Docker Desktop, enable the containerd image store in the
-  [Docker Desktop settings](/manuals/desktop/containerd.md).
+  [Docker Desktop settings](/manuals/desktop/features/containerd.md).
 @y
 - If you're using Docker Desktop, enable the containerd image store in the
-  [Docker Desktop settings](manuals/desktop/containerd.md).
+  [Docker Desktop settings](manuals/desktop/features/containerd.md).
 @z
 
 @x

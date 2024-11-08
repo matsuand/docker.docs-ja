@@ -161,8 +161,10 @@ AC_CONFIG_FILES([
 	src/content/manuals/copilot/Makefile
 	src/content/manuals/copilot/images/Makefile
 	src/content/manuals/desktop/Makefile
-	src/content/manuals/desktop/dev-environments/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
+	src/content/manuals/desktop/features/Makefile
+	src/content/manuals/desktop/features/dev-environments/Makefile
+	src/content/manuals/desktop/features/wsl/Makefile
 	src/content/manuals/desktop/images/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile
 	src/content/manuals/desktop/settings-and-maintenance/Makefile
@@ -175,7 +177,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/troubleshoot-and-support/faqs/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
-	src/content/manuals/desktop/wsl/Makefile
 	src/content/manuals/docker-hub/Makefile
 	src/content/manuals/docker-hub/builds/Makefile
 	src/content/manuals/docker-hub/builds/images/Makefile

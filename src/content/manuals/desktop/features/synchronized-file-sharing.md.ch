@@ -34,9 +34,9 @@ Synchronized file shares is an alternative file sharing mechanism that provides 
 @z
 
 @x
-![Image of Synchronized file shares pane](images/synched-file-shares.webp)
+![Image of Synchronized file shares pane](../images/synched-file-shares.webp)
 @y
-![Image of Synchronized file shares pane](images/synched-file-shares.webp)
+![Image of Synchronized file shares pane](../images/synched-file-shares.webp)
 @z
 
 @x

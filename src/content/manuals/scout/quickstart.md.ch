@@ -328,13 +328,13 @@ built so that it can provide a better evaluation result.
 
 @x
 Before you can build an image with attestations,
-you must enable the [containerd image store](/manuals/desktop/containerd.md)
+you must enable the [containerd image store](/manuals/desktop/features/containerd.md)
 (or create a custom builder using the `docker-container` driver).
 The classic image store doesn't support manifest lists,
 which is how the provenance attestations are attached to an image.
 @y
 Before you can build an image with attestations,
-you must enable the [containerd image store](manuals/desktop/containerd.md)
+you must enable the [containerd image store](manuals/desktop/features/containerd.md)
 (or create a custom builder using the `docker-container` driver).
 The classic image store doesn't support manifest lists,
 which is how the provenance attestations are attached to an image.

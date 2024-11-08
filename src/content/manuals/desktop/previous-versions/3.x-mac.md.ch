@@ -110,9 +110,9 @@ This page contains release notes for Docker Desktop for Mac 3.x.
 @z
 
 @x
-**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](../dev-environments/_index.md).
+**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](/manuals/desktop/features/dev-environments/_index.md).
 @y
-**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](../dev-environments/_index.md).
+**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](manuals/desktop/features/dev-environments/_index.md).
 @z
 
 @x
@@ -182,9 +182,9 @@ This page contains release notes for Docker Desktop for Mac 3.x.
 @z
 
 @x
-**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](../dev-environments/_index.md).
+**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](/manuals/desktop/features/dev-environments/_index.md).
 @y
-**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](../dev-environments/_index.md).
+**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](manuals/desktop/features/dev-environments/_index.md).
 @z
 
 @x
@@ -220,9 +220,9 @@ This page contains release notes for Docker Desktop for Mac 3.x.
 @z
 
 @x
-**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](../dev-environments/_index.md).
+**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](/manuals/desktop/features/dev-environments/_index.md).
 @y
-**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](../dev-environments/_index.md).
+**Dev Environments Preview**: Dev Environments enable you to seamlessly collaborate with your team members without moving between Git branches to get your code onto your team members' machines. When using Dev Environments, you can share your in-progress work with your team members in just one click, and without having to deal with any merge conflicts. For more information and for instructions on how to use Dev Environments, see [Development Environments Preview](manuals/desktop/features/dev-environments/_index.md).
 @z
 
 @x

@@ -704,10 +704,10 @@ In the subsequent screen, verify that Hyper-V is enabled.
 @z
 
 @x
-In addition to [Hyper-V](#hyper-v) or [WSL 2](/manuals/desktop/wsl/_index.md), virtualization must be turned on. Check the
+In addition to [Hyper-V](#hyper-v) or [WSL 2](/manuals/desktop/features/wsl/_index.md), virtualization must be turned on. Check the
 Performance tab on the Task Manager. Alternatively, you can type 'systeminfo' into your terminal. If you see 'Hyper-V Requirements:   A hypervisor has been detected. Features required for Hyper-V will not be displayed', then virtualization is enabled.
 @y
-In addition to [Hyper-V](#hyper-v) or [WSL 2](manuals/desktop/wsl/_index.md), virtualization must be turned on. Check the
+In addition to [Hyper-V](#hyper-v) or [WSL 2](manuals/desktop/features/wsl/_index.md), virtualization must be turned on. Check the
 Performance tab on the Task Manager. Alternatively, you can type 'systeminfo' into your terminal. If you see 'Hyper-V Requirements:   A hypervisor has been detected. Features required for Hyper-V will not be displayed', then virtualization is enabled.
 @z
 

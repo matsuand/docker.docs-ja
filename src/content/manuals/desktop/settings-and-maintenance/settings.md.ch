@@ -119,10 +119,10 @@ If you choose the integrated terminal, you can run commands in a running contain
 
 @x
 - {{< badge color=blue text="Windows only" >}}**Use the WSL 2 based engine**. WSL 2 provides better performance than the
-  Hyper-V backend. For more information, see [Docker Desktop WSL 2 backend](/manuals/desktop/wsl/_index.md).
+  Hyper-V backend. For more information, see [Docker Desktop WSL 2 backend](/manuals/desktop/features/wsl/_index.md).
 @y
 - {{< badge color=blue text="Windows only" >}}**Use the WSL 2 based engine**. WSL 2 provides better performance than the
-  Hyper-V backend. For more information, see [Docker Desktop WSL 2 backend](manuals/desktop/wsl/_index.md).
+  Hyper-V backend. For more information, see [Docker Desktop WSL 2 backend](manuals/desktop/features/wsl/_index.md).
 @z
 
 @x
@@ -136,13 +136,13 @@ If you choose the integrated terminal, you can run commands in a running contain
   Turns on the containerd image store.
   This brings new features like faster container startup performance by lazy-pulling images,
   and the ability to run Wasm applications with Docker.
-  For more information, see [containerd image store](/manuals/desktop/containerd.md).
+  For more information, see [containerd image store](/manuals/desktop/features/containerd.md).
 @y
 - **Use containerd for pulling and storing images**.
   Turns on the containerd image store.
   This brings new features like faster container startup performance by lazy-pulling images,
   and the ability to run Wasm applications with Docker.
-  For more information, see [containerd image store](manuals/desktop/containerd.md).
+  For more information, see [containerd image store](manuals/desktop/features/containerd.md).
 @z
 
 @x
@@ -162,9 +162,9 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-   For more information, see [Virtual Machine Manager](/manuals/desktop/vmm.md).
+   For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
 @y
-   For more information, see [Virtual Machine Manager](manuals/desktop/vmm.md).
+   For more information, see [Virtual Machine Manager](manuals/desktop/features/vmm.md).
 @z
 
 @x
@@ -432,9 +432,9 @@ Synchronized file shares is an alternative file sharing mechanism that provides 
 @z
 
 @x
-To learn more, see [Synchronized file share](/manuals/desktop/synchronized-file-sharing.md).
+To learn more, see [Synchronized file share](/manuals/desktop/features/synchronized-file-sharing.md).
 @y
-To learn more, see [Synchronized file share](manuals/desktop/synchronized-file-sharing.md).
+To learn more, see [Synchronized file share](manuals/desktop/features/synchronized-file-sharing.md).
 @z
 
 @x
@@ -580,9 +580,9 @@ containers. Alternatively, you can opt not to share it by selecting **Cancel**.
 @z
 
 @x
-Docker Desktop supports the use of HTTP/HTTPS and [SOCKS5 proxies](/manuals/desktop/networking.md#socks5-proxy-support).
+Docker Desktop supports the use of HTTP/HTTPS and [SOCKS5 proxies](/manuals/desktop/features/networking.md#socks5-proxy-support).
 @y
-Docker Desktop supports the use of HTTP/HTTPS and [SOCKS5 proxies](manuals/desktop/networking.md#socks5-proxy-support).
+Docker Desktop supports the use of HTTP/HTTPS and [SOCKS5 proxies](manuals/desktop/features/networking.md#socks5-proxy-support).
 @z
 
 @x
@@ -813,10 +813,10 @@ You can also select any additional distributions you would like to enable the WS
 
 @x
 For more details on configuring Docker Desktop to use WSL 2, see
-[Docker Desktop WSL 2 backend](/manuals/desktop/wsl/_index.md).
+[Docker Desktop WSL 2 backend](/manuals/desktop/features/wsl/_index.md).
 @y
 For more details on configuring Docker Desktop to use WSL 2, see
-[Docker Desktop WSL 2 backend](manuals/desktop/wsl/_index.md).
+[Docker Desktop WSL 2 backend](manuals/desktop/features/wsl/_index.md).
 @z
 
 @x
@@ -1109,10 +1109,10 @@ Select **Reset Kubernetes cluster** to delete all stacks and Kubernetes resource
 
 @x
 For more information about using the Kubernetes integration with Docker Desktop,
-see [Deploy on Kubernetes](/manuals/desktop/kubernetes.md).
+see [Deploy on Kubernetes](/manuals/desktop/features/kubernetes.md).
 @y
 For more information about using the Kubernetes integration with Docker Desktop,
-see [Deploy on Kubernetes](manuals/desktop/kubernetes.md).
+see [Deploy on Kubernetes](manuals/desktop/features/kubernetes.md).
 @z
 
 @x

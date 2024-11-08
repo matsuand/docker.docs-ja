@@ -21,11 +21,11 @@ title: Overview of Dev Environments
 
 @x
 {{% experimental title="Beta" %}}
-The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
+The Dev Environments feature is currently in [Beta](/manuals/release-lifecycle.md#beta). 
 {{% /experimental %}}
 @y
 {{% experimental title="Beta" %}}
-The Dev Environments feature is currently in [Beta](../../release-lifecycle.md#beta). 
+The Dev Environments feature is currently in [Beta](manuals/release-lifecycle.md#beta). 
 {{% /experimental %}}
 @z
 

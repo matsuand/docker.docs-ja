@@ -109,10 +109,10 @@ This page contains release notes for older versions of Docker Desktop for Window
 
 @x
 * New
-  - Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as Docker commands. See [the Kubernetes section](../kubernetes.md)
+  - Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as Docker commands. See [the Kubernetes section](/manuals/desktop/features/kubernetes.md)
 @y
 * New
-  - Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as Docker commands. See [the Kubernetes section](../kubernetes.md)
+  - Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as Docker commands. See [the Kubernetes section](manuals/desktop/features/kubernetes.md)
 @z
 
 @x

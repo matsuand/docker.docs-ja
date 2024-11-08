@@ -1,33 +1,29 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Wasm workloads (Beta)
-weight: 60
+weight: 20
 description: How to run Wasm workloads with Docker Desktop
 keywords: Docker, WebAssembly, wasm, containerd, engine
-toc_max: 3
----
 @y
----
 title: Wasm workloads (Beta)
-weight: 60
+weight: 20
 description: How to run Wasm workloads with Docker Desktop
 keywords: Docker, WebAssembly, wasm, containerd, engine
-toc_max: 3
----
 @z
 
 @x
 {{% experimental title="Beta" %}}
-The Wasm feature is currently in [Beta](../release-lifecycle.md#beta).
+The Wasm feature is currently in [Beta](/manuals/release-lifecycle.md#beta).
 We recommend that you do not use this feature in production environments as
 this feature may change or be removed from future releases.
 {{% /experimental %}}
 @y
 {{% experimental title="Beta" %}}
-The Wasm feature is currently in [Beta](../release-lifecycle.md#beta).
+The Wasm feature is currently in [Beta](manuals/release-lifecycle.md#beta).
 We recommend that you do not use this feature in production environments as
 this feature may change or be removed from future releases.
 {{% /experimental %}}

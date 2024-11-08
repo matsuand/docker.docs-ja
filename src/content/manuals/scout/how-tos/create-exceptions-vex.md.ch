@@ -56,12 +56,12 @@ To create exceptions using OpenVEX documents, you need:
 @x
 - The latest version of Docker Desktop or the Docker Scout CLI plugin
 - The [`vexctl`](https://github.com/openvex/vexctl) command line tool.
-- The [containerd image store](/manuals/desktop/containerd.md) must be enabled
+- The [containerd image store](/manuals/desktop/features/containerd.md) must be enabled
 - Write permissions to the registry repository where the image is stored
 @y
 - The latest version of Docker Desktop or the Docker Scout CLI plugin
 - The [`vexctl`](https://github.com/openvex/vexctl) command line tool.
-- The [containerd image store](manuals/desktop/containerd.md) must be enabled
+- The [containerd image store](manuals/desktop/features/containerd.md) must be enabled
 - Write permissions to the registry repository where the image is stored
 @z
 

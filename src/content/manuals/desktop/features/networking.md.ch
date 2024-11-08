@@ -114,9 +114,9 @@ See [Proxies](manuals/desktop/settings-and-maintenance/settings.md#proxies)
 @z
 
 @x
-{{< introduced desktop 4.28.0 "release-notes.md#4280" >}}
+{{< introduced desktop 4.28.0 "../release-notes.md#4280" >}}
 @y
-{{< introduced desktop 4.28.0 "release-notes.md#4280" >}}
+{{< introduced desktop 4.28.0 "../release-notes.md#4280" >}}
 @z
 
 @x

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Set up a dev Environments
 keywords: Dev Environments, share, docker dev, Docker Desktop
 title: Use the docker dev CLI plugin
----
 @y
----
 description: Set up a dev Environments
 keywords: Dev Environments, share, docker dev, Docker Desktop
 title: Use the docker dev CLI plugin
----
 @z
 
 @x
@@ -28,9 +26,9 @@ Use the new `docker dev` CLI plugin to get the full Dev Environments experience 
 @z
 
 @x
-It is available with [Docker Desktop 4.13.0 and later](../release-notes.md). 
+It is available with [Docker Desktop 4.13.0 and later](/manuals/desktop/release-notes.md). 
 @y
-It is available with [Docker Desktop 4.13.0 and later](../release-notes.md). 
+It is available with [Docker Desktop 4.13.0 and later](manuals/desktop/release-notes.md). 
 @z
 
 @x

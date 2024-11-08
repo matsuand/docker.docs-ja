@@ -133,7 +133,7 @@ $ docker buildx build --sbom=true --provenance=true .
 >
 > - Use a `docker-container` driver with the `--push` flag to push the image to
 >   a registry directly.
-> - Enable the [containerd image store](/manuals/desktop/containerd.md).
+> - Enable the [containerd image store](/manuals/desktop/features/containerd.md).
 @y
 > [!NOTE]
 >
@@ -146,7 +146,7 @@ $ docker buildx build --sbom=true --provenance=true .
 >
 > - Use a `docker-container` driver with the `--push` flag to push the image to
 >   a registry directly.
-> - Enable the [containerd image store](manuals/desktop/containerd.md).
+> - Enable the [containerd image store](manuals/desktop/features/containerd.md).
 @z
 
 @x

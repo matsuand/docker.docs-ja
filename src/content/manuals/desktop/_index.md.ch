@@ -81,12 +81,12 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
   description: |
     Find information on networking features, deploying on Kubernetes, and more.
   icon: category
-  link: /desktop/kubernetes/
+  link: /desktop/features/kubernetes/
 @y
 - title: その他のリソースを探す
   description: ネットワーク機能、Kubernetes へのデプロイなどについての情報を調べます。
   icon: category
-  link: __SUBDIR__/desktop/kubernetes/
+  link: __SUBDIR__/desktop/features/kubernetes/
 @z
 
 @x

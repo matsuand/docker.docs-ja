@@ -24,13 +24,13 @@ description: Learn how to enable the containerd image store on Docker Engine
 >
 > The containerd image store is an experimental feature of Docker Engine.
 > If you're using Docker Desktop, refer to the instructions on the
-> [containerd image store with Docker Desktop page](/manuals/desktop/containerd.md).
+> [containerd image store with Docker Desktop page](/manuals/desktop/features/containerd.md).
 @y
 > [!NOTE]
 >
 > The containerd image store is an experimental feature of Docker Engine.
 > If you're using Docker Desktop, refer to the instructions on the
-> [containerd image store with Docker Desktop page](manuals/desktop/containerd.md).
+> [containerd image store with Docker Desktop page](manuals/desktop/features/containerd.md).
 @z
 
 @x
@@ -47,10 +47,10 @@ you can opt in to using containerd snapshotters as an experimental feature.
 
 @x
 To learn more about the containerd image store and its benefits, refer to
-[containerd image store on Docker Desktop](/manuals/desktop/containerd.md).
+[containerd image store on Docker Desktop](/manuals/desktop/features/containerd.md).
 @y
 To learn more about the containerd image store and its benefits, refer to
-[containerd image store on Docker Desktop](manuals/desktop/containerd.md).
+[containerd image store on Docker Desktop](manuals/desktop/features/containerd.md).
 @z
 
 @x

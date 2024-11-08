@@ -2,13 +2,14 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 command: docker image build
 aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |-
-    > [!NOTE]
+    > [!IMPORTANT]
     > This page refers to the **legacy implementation** of `docker build`,
     > using the legacy (pre-BuildKit) build backend.
     > This configuration is only relevant if you're building Windows containers.
@@ -20,7 +21,7 @@ command: docker image build
 aliases: docker image build, docker build, docker builder build
 short: Build an image from a Dockerfile
 long: |-
-    > [!NOTE]
+    > [!IMPORTANT]
     > This page refers to the **legacy implementation** of `docker build`,
     > using the legacy (pre-BuildKit) build backend.
     > This configuration is only relevant if you're building Windows containers.
@@ -89,15 +90,7 @@ long: |-
     working directory.
 @z
 
-@x
-    ```console
-    $ docker build .
-    ```
-@y
-    ```console
-    $ docker build .
-    ```
-@z
+% snip command...
 
 @x
     When using the legacy builder, the build context is sent over to the daemon in
@@ -143,33 +136,8 @@ long: |-
     build context using relative paths in your Dockerfile.
 @z
 
-@x
-    ```dockerfile
-    FROM alpine
-    COPY ../../some-dir .
-    ```
-@y
-    ```dockerfile
-    FROM alpine
-    COPY ../../some-dir .
-    ```
-@z
-
-@x
-    ```console
-    $ docker build .
-    ...
-    Step 2/2 : COPY ../../some-dir .
-    COPY failed: forbidden path outside the build context: ../../some-dir ()
-    ```
-@y
-    ```console
-    $ docker build .
-    ...
-    Step 2/2 : COPY ../../some-dir .
-    COPY failed: forbidden path outside the build context: ../../some-dir ()
-    ```
-@z
+% snip code...
+% snip command...
 
 @x
     BuildKit on the other hand strips leading relative paths that traverse outside
@@ -573,53 +541,7 @@ examples: |-
     line in the `Engine` section:
 @z
 
-@x
-    ```console
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.42
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           default
-@y
-    ```console
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.42
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           default
-@z
-
-@x
-    Server: Docker Engine - Community
-     Engine:
-      Version:          23.0.3
-      API version:      1.42 (minimum version 1.12)
-      Go version:       go1.19.7
-      Git commit:       59118bf
-      Built:            Tue Apr  4 22:05:41 2023
-      OS/Arch:          linux/amd64
-      Experimental:     true
-     [...]
-    ```
-@y
-    Server: Docker Engine - Community
-     Engine:
-      Version:          23.0.3
-      API version:      1.42 (minimum version 1.12)
-      Go version:       go1.19.7
-      Git commit:       59118bf
-      Built:            Tue Apr  4 22:05:41 2023
-      OS/Arch:          linux/amd64
-      Experimental:     true
-     [...]
-    ```
-@z
+% snip output...
 
 @x
     #### Build an image with the `--squash` flag
@@ -635,25 +557,7 @@ examples: |-
     `Dockerfile`:
 @z
 
-@x
-    ```dockerfile
-    FROM busybox
-    RUN echo hello > /hello
-    RUN echo world >> /hello
-    RUN touch remove_me /remove_me
-    ENV HELLO=world
-    RUN rm /remove_me
-    ```
-@y
-    ```dockerfile
-    FROM busybox
-    RUN echo hello > /hello
-    RUN echo world >> /hello
-    RUN touch remove_me /remove_me
-    ENV HELLO=world
-    RUN rm /remove_me
-    ```
-@z
+% snip code...
 
 @x
     Next, build an image named `test` using the `--squash` flag.
@@ -661,15 +565,7 @@ examples: |-
     Next, build an image named `test` using the `--squash` flag.
 @z
 
-@x
-    ```console
-    $ docker build --squash -t test .
-    ```
-@y
-    ```console
-    $ docker build --squash -t test .
-    ```
-@z
+% snip command...
 
 @x
     After the build completes, the history looks like the below. The history could show that a layer's
@@ -679,54 +575,14 @@ examples: |-
     name is `<missing>`, and there is a new layer with COMMENT `merge`.
 @z
 
-@x
-    ```console
-    $ docker history test
-@y
-    ```console
-    $ docker history test
-@z
-
-@x
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    4e10cb5b4cac        3 seconds ago                                                       12 B                merge sha256:88a7b0112a41826885df0e7072698006ee8f621c6ab99fca7fe9151d7b599702 to sha256:47bcc53f74dc94b1920f0b34f6036096526296767650f223433fe65c35f149eb
-    <missing>           5 minutes ago       /bin/sh -c rm /remove_me                        0 B
-    <missing>           5 minutes ago       /bin/sh -c #(nop) ENV HELLO=world               0 B
-    <missing>           5 minutes ago       /bin/sh -c touch remove_me /remove_me           0 B
-    <missing>           5 minutes ago       /bin/sh -c echo world >> /hello                 0 B
-    <missing>           6 minutes ago       /bin/sh -c echo hello > /hello                  0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) CMD ["sh"]                    0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:47ca6e777c36a4cfff   1.113 MB
-    ```
-@y
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    4e10cb5b4cac        3 seconds ago                                                       12 B                merge sha256:88a7b0112a41826885df0e7072698006ee8f621c6ab99fca7fe9151d7b599702 to sha256:47bcc53f74dc94b1920f0b34f6036096526296767650f223433fe65c35f149eb
-    <missing>           5 minutes ago       /bin/sh -c rm /remove_me                        0 B
-    <missing>           5 minutes ago       /bin/sh -c #(nop) ENV HELLO=world               0 B
-    <missing>           5 minutes ago       /bin/sh -c touch remove_me /remove_me           0 B
-    <missing>           5 minutes ago       /bin/sh -c echo world >> /hello                 0 B
-    <missing>           6 minutes ago       /bin/sh -c echo hello > /hello                  0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) CMD ["sh"]                    0 B
-    <missing>           7 weeks ago         /bin/sh -c #(nop) ADD file:47ca6e777c36a4cfff   1.113 MB
-    ```
-@z
+% snip command...
 
 @x
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     Test the image, check for `/remove_me` being gone, make sure `hello\nworld` is
     in `/hello`, make sure the `HELLO` environment variable's value is `world`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

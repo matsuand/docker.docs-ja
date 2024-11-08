@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -185,12 +185,12 @@ analysis is activated.
    > [!NOTE]
    >
    > The default `docker` driver only supports build attestations if you use the
-   > [containerd image store](/manuals/desktop/containerd.md).
+   > [containerd image store](/manuals/desktop/features/containerd.md).
 @y
    > [!NOTE]
    >
    > The default `docker` driver only supports build attestations if you use the
-   > [containerd image store](manuals/desktop/containerd.md).
+   > [containerd image store](manuals/desktop/features/containerd.md).
 @z
 
 @x

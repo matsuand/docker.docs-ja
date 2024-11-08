@@ -83,11 +83,11 @@ This guide assumes that you're familiar with:
 @x
 - You have a recent version of Docker installed on your machine.
 - You have Git installed for cloning repositories.
-- You're using the [containerd](/manuals/desktop/containerd.md) image store.
+- You're using the [containerd](/manuals/desktop/features/containerd.md) image store.
 @y
 - You have a recent version of Docker installed on your machine.
 - You have Git installed for cloning repositories.
-- You're using the [containerd](manuals/desktop/containerd.md) image store.
+- You're using the [containerd](manuals/desktop/features/containerd.md) image store.
 @z
 
 @x

@@ -7,6 +7,8 @@ title: Best practices
 description: Best practices for using Docker Desktop with WSL 2
 keywords: wsl, docker desktop, best practices
 tags: [Best practices]
+aliases:
+- /desktop/wsl/best-practices/
 ---
 @y
 ---
@@ -14,6 +16,8 @@ title: Best practices
 description: Best practices for using Docker Desktop with WSL 2
 keywords: wsl, docker desktop, best practices
 tags: [Best practices]
+aliases:
+- /desktop/wsl/best-practices/
 ---
 @z
 

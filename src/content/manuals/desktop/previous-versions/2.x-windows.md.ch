@@ -602,9 +602,9 @@ Docker Desktop 2.4.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 @z
 
 @x
-- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the [WSL 2 backend](../wsl/_index.md).
+- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the [WSL 2 backend](/manuals/desktop/features/wsl/_index.md).
 @y
-- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the [WSL 2 backend](../wsl/_index.md).
+- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the [WSL 2 backend](manuals/desktop/features/wsl/_index.md).
 @z
 
 @x
@@ -706,10 +706,10 @@ Docker Desktop 2.4.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 @z
 
 @x
-- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the experimental [WSL backend](../wsl/_index.md).
+- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the experimental [WSL backend](/manuals/desktop/features/wsl/_index.md).
 - It is not possible to resize the disk image using the Docker Desktop **Settings** UI. If you would like to update the size of the disk image (for example, to 128 GB), run the following command in PowerShell:
 @y
-- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the experimental [WSL backend](../wsl/_index.md).
+- Some CLI commands fail if you are running Docker Desktop in the experimental Linux Containers on Windows (LCOW) mode. As alternatives, we recommend running either traditional Linux containers, or the experimental [WSL backend](manuals/desktop/features/wsl/_index.md).
 - It is not possible to resize the disk image using the Docker Desktop **Settings** UI. If you would like to update the size of the disk image (for example, to 128 GB), run the following command in PowerShell:
 @z
 
@@ -798,9 +798,9 @@ Docker Desktop 2.4.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 @z
 
 @x
-- DockerNAT has been removed from Docker Desktop 2.2.0.0 as using an IP address to communicate from the host to a container is not a supported feature. To communicate from a container to the host, you must use the special DNS name `host.docker.internal`. We also recommend using ports to communicate from the host to a container. For more information, see [Networking](../networking.md#use-cases-and-workarounds-for-all-platforms).
+- DockerNAT has been removed from Docker Desktop 2.2.0.0 as using an IP address to communicate from the host to a container is not a supported feature. To communicate from a container to the host, you must use the special DNS name `host.docker.internal`. We also recommend using ports to communicate from the host to a container. For more information, see [Networking](/manuals/desktop/features/networking.md#use-cases-and-workarounds-for-all-platforms).
 @y
-- DockerNAT has been removed from Docker Desktop 2.2.0.0 as using an IP address to communicate from the host to a container is not a supported feature. To communicate from a container to the host, you must use the special DNS name `host.docker.internal`. We also recommend using ports to communicate from the host to a container. For more information, see [Networking](../networking.md#use-cases-and-workarounds-for-all-platforms).
+- DockerNAT has been removed from Docker Desktop 2.2.0.0 as using an IP address to communicate from the host to a container is not a supported feature. To communicate from a container to the host, you must use the special DNS name `host.docker.internal`. We also recommend using ports to communicate from the host to a container. For more information, see [Networking](manuals/desktop/features/networking.md#use-cases-and-workarounds-for-all-platforms).
 @z
 
 @x
@@ -866,9 +866,9 @@ Docker Desktop 2.2.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 @z
 
 @x
-- **WSL 2 backend:** The experimental Docker Desktop WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](../wsl/_index.md).
+- **WSL 2 backend:** The experimental Docker Desktop WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](/manuals/desktop/features/wsl/_index.md).
 @y
-- **WSL 2 backend:** The experimental Docker Desktop WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](../wsl/_index.md).
+- **WSL 2 backend:** The experimental Docker Desktop WSL 2 backend architecture introduces support for Kubernetes, provides an updated Docker daemon, offers VPN-friendly networking, and additional features. For more information, see [Docker Desktop WSL 2 backend](manuals/desktop/features/wsl/_index.md).
 @z
 
 @x

@@ -28,12 +28,12 @@ description: Learn how to deploy your Go application
 @x
 - Complete all the previous sections of this guide, starting with [Build
   your Go image](build-images.md).
-- [Turn on Kubernetes](/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker
+- [Turn on Kubernetes](/manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker
   Desktop.
 @y
 - Complete all the previous sections of this guide, starting with [Build
   your Go image](build-images.md).
-- [Turn on Kubernetes](__SUBDIR__/desktop/kubernetes/#install-and-turn-on-kubernetes) in Docker
+- [Turn on Kubernetes](manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker
   Desktop.
 @z
 
@@ -215,10 +215,10 @@ Related information:
 
 @x
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/kubernetes.md)
+- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/features/kubernetes.md)
 - [Swarm mode overview](/manuals/engine/swarm/_index.md)
 @y
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-- [Deploy on Kubernetes with Docker Desktop](manuals/desktop/kubernetes.md)
+- [Deploy on Kubernetes with Docker Desktop](manuals/desktop/features/kubernetes.md)
 - [Swarm mode overview](manuals/engine/swarm/_index.md)
 @z

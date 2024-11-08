@@ -37,10 +37,10 @@ This includes:
 - [Image Access Management](/manuals/security/for-developers/access-tokens.md)
 - [Static vulnerability scanning](/manuals/docker-hub/vulnerability-scanning.md)
 - Viewing remote images in the Docker Dashboard
-- Setting up [Dev Environments](/manuals/desktop/dev-environments/_index.md)
+- Setting up [Dev Environments](/manuals/desktop/features/dev-environments/_index.md)
 - Docker Build when using [BuildKit](/manuals/build/buildkit/_index.md#getting-started).
   You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
-- [Kubernetes](/manuals/desktop/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
+- [Kubernetes](/manuals/desktop/features/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
 - Checking for updates
 - [In-app diagnostics](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app))
 - Sending usage statistics
@@ -50,10 +50,10 @@ This includes:
 - [Image Access Management](manuals/security/for-developers/access-tokens.md)
 - [Static vulnerability scanning](manuals/docker-hub/vulnerability-scanning.md)
 - Viewing remote images in the Docker Dashboard
-- Setting up [Dev Environments](manuals/desktop/dev-environments/_index.md)
+- Setting up [Dev Environments](manuals/desktop/features/dev-environments/_index.md)
 - Docker Build when using [BuildKit](manuals/build/buildkit/_index.md#getting-started).
   You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
-- [Kubernetes](manuals/desktop/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
+- [Kubernetes](manuals/desktop/features/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
 - Checking for updates
 - [In-app diagnostics](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app))
 - Sending usage statistics
@@ -134,9 +134,9 @@ which resolves to the internal IP address used by the host.
 @z
 
 @x
-For more information and examples, see [how to connect from a container to a service on the host](/manuals/desktop/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+For more information and examples, see [how to connect from a container to a service on the host](/manuals/desktop/features/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
 @y
-For more information and examples, see [how to connect from a container to a service on the host](manuals/desktop/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+For more information and examples, see [how to connect from a container to a service on the host](manuals/desktop/features/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
 @z
 
 @x
@@ -216,11 +216,11 @@ You can then sign in to your machine with the user ID specified, and launch Dock
 @x
 > [!NOTE]
 >
-> If you are using the WSL 2 backend, first make sure that you meet the [minimum required version](/manuals/desktop/wsl/best-practices.md) for WSL 2. Otherwise, update WSL 2 first.  
+> If you are using the WSL 2 backend, first make sure that you meet the [minimum required version](/manuals/desktop/features/wsl/best-practices.md) for WSL 2. Otherwise, update WSL 2 first.  
 @y
 > [!NOTE]
 >
-> If you are using the WSL 2 backend, first make sure that you meet the [minimum required version](manuals/desktop/wsl/best-practices.md) for WSL 2. Otherwise, update WSL 2 first.  
+> If you are using the WSL 2 backend, first make sure that you meet the [minimum required version](manuals/desktop/features/wsl/best-practices.md) for WSL 2. Otherwise, update WSL 2 first.  
 @z
 
 @x

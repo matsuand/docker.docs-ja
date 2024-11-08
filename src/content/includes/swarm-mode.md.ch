@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 > [!NOTE]
@@ -13,7 +13,7 @@
 > If you're not planning on deploying with Swarm, use
 > [Docker Compose](/compose/) instead.
 > If you're developing for a Kubernetes deployment, consider using the
-> [integrated Kubernetes feature](/desktop/kubernetes/) in Docker Desktop.
+> [integrated Kubernetes feature](/manuals/desktop/features/kubernetes.md) in Docker Desktop.
 @y
 > [!NOTE]
 >
@@ -24,5 +24,5 @@
 > If you're not planning on deploying with Swarm, use
 > [Docker Compose](__SUBDIR__/compose/) instead.
 > If you're developing for a Kubernetes deployment, consider using the
-> [integrated Kubernetes feature](__SUBDIR__/desktop/kubernetes/) in Docker Desktop.
+> [integrated Kubernetes feature](manuals/desktop/features/kubernetes.md) in Docker Desktop.
 @z

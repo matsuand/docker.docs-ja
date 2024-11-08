@@ -210,7 +210,7 @@ In this particular example, HTTP and HTTPS requests for `internal.corp` are sent
 @z
 
 @x
-To restrict traffic connecting to ports on the developers local machine, [match the special hostname `host.docker.internal`](/manuals/desktop/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+To restrict traffic connecting to ports on the developers local machine, [match the special hostname `host.docker.internal`](/manuals/desktop/features/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
 @y
-To restrict traffic connecting to ports on the developers local machine, [match the special hostname `host.docker.internal`](manuals/desktop/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+To restrict traffic connecting to ports on the developers local machine, [match the special hostname `host.docker.internal`](manuals/desktop/features/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
 @z

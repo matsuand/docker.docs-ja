@@ -274,14 +274,14 @@ The UUID identifier is a random ID assigned to the container by the daemon.
 
 @x
 The daemon generates a random string name for containers automatically. You can
-also defined a custom name using [the `--name` flag](https://docs.docker.com/reference/cli/docker/container/run/#name).
+also define a custom name using [the `--name` flag](https://docs.docker.com/reference/cli/docker/container/run/#name).
 Defining a `name` can be a handy way to add meaning to a container. If you
 specify a `name`, you can use it when referring to the container in a
 user-defined network. This works for both background and foreground Docker
 containers.
 @y
 The daemon generates a random string name for containers automatically. You can
-also defined a custom name using [the `--name` flag](https://docs.docker.com/reference/cli/docker/container/run/#name).
+also define a custom name using [the `--name` flag](https://docs.docker.com/reference/cli/docker/container/run/#name).
 Defining a `name` can be a handy way to add meaning to a container. If you
 specify a `name`, you can use it when referring to the container in a
 user-defined network. This works for both background and foreground Docker

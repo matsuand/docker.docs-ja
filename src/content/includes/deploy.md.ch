@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応。
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 ## Docker and Azure ACI
@@ -78,7 +78,7 @@ To enable Kubernetes:
 @z
 
 @x
-For detailed information, see [Deploy on Kubernetes](/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](/manuals/desktop/features/kubernetes.md) and [Describing apps using Kubernetes YAML](/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
 @y
-For detailed information, see [Deploy on Kubernetes](__SUBDIR__/desktop/kubernetes/) and [Describing apps using Kubernetes YAML](__SUBDIR__/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
+For detailed information, see [Deploy on Kubernetes](manuals/desktop/features/kubernetes.md) and [Describing apps using Kubernetes YAML](__SUBDIR__/guides/deployment-orchestration/kube-deploy/#describing-apps-using-kubernetes-yaml).
 @z

@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/manuals/desktop/wsl
+subdir = src/content/manuals/desktop/features/wsl
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -259,9 +259,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/desktop/wsl/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/desktop/features/wsl/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/manuals/desktop/wsl/Makefile
+	  $(AUTOMAKE) --foreign src/content/manuals/desktop/features/wsl/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

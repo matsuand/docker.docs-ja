@@ -258,9 +258,9 @@ Docker Desktop does not require any particular Linux distros to be installed. Th
 @x
 - [Explore best practices](best-practices.md)
 - [Understand how to develop with Docker and WSL 2](use-wsl.md)
-- [Learn about GPU support with WSL 2](../gpu.md)
+- [Learn about GPU support with WSL 2](/manuals/desktop/features/gpu.md)
 @y
 - [Explore best practices](best-practices.md)
 - [Understand how to develop with Docker and WSL 2](use-wsl.md)
-- [Learn about GPU support with WSL 2](../gpu.md)
+- [Learn about GPU support with WSL 2](manuals/desktop/features/gpu.md)
 @z
