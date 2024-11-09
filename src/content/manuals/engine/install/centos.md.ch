@@ -4,13 +4,13 @@
 @x
 description: Learn how to install Docker Engine on CentOS. These instructions cover
   the different installation methods, how to uninstall, and next steps.
-keywords: requirements, yum, installation, centos, install, uninstall, docker engine, upgrade, update
+keywords: requirements, dnf, yum, installation, centos, install, uninstall, docker engine, upgrade, update
 title: Install Docker Engine on CentOS
 linkTitle: CentOS
 @y
 description: Learn how to install Docker Engine on CentOS. These instructions cover
   the different installation methods, how to uninstall, and next steps.
-keywords: requirements, yum, installation, centos, install, uninstall, docker engine, upgrade, update
+keywords: requirements, dnf, yum, installation, centos, install, uninstall, docker engine, upgrade, update
 title: CentOS への Docker Engine インストール
 linkTitle: CentOS
 @z
@@ -64,20 +64,27 @@ default. If you have disabled it, you need to re-enable it.
 @z
 
 @x
-Older versions of Docker went by `docker` or `docker-engine`.
-Uninstall any such older versions before attempting to install a new version,
-along with associated dependencies.
+Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @y
-古いバージョンでは `docker` または `docker-engine` が提供されていました。
-新たなバージョンをインストールするにあたっては、そのような古いバージョンは関連パッケージとともにアンインストールする必要があります。
+Docker Engine をインストールするにあたっては、衝突しそうなパッケージをすべてアンインストールする必要があります。
+@z
+
+@x
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
+@y
+この Linux ディストリビューションでは Docker の非公式パッケージが提供されているかもしれません。
+これは Docker が提供する公式パッケージとの間で衝突を引き起こします。
+したがって Docker Engine の公式バージョンをインストールするには、そういったパッケージはあらかじめアンインストールしておく必要があります。
 @z
 
 % snip command...
 
 @x
-`yum` might report that you have none of these packages installed.
+`dnf` might report that you have none of these packages installed.
 @y
-`yum` はインストールされていないパッケージがあれば、その旨を表示するかもしれません。
+`dnf` はインストールされていないパッケージがあれば、その旨を表示するかもしれません。
 @z
 
 @x
@@ -150,10 +157,10 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @z
 
 @x
-Install the `yum-utils` package (which provides the `yum-config-manager`
-utility) and set up the repository.
+Install the `dnf-plugins-core` package (which provides the commands to manage
+your DNF repositories) and set up the repository.
 @y
-`yum-utils` パッケージ (`yum-config-manager` ユーティリティーを提供している) をインストールし、リポジトリ設定を行います。
+`dnf-plugins-core` パッケージ (DNF リポジトリの管理コマンドを提供している) をインストールし、リポジトリ設定を行います。
 @z
 
 % snip command...
@@ -165,9 +172,9 @@ utility) and set up the repository.
 @z
 
 @x
-1. Install Docker Engine, containerd, and Docker Compose:
+1. Install the Docker packages.
 @y
-1. Docker Engine、containerd、Docker Compose をインストールします。
+1. Docker パッケージをインストールします。
 @z
 
 @x
@@ -230,11 +237,11 @@ utility) and set up the repository.
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.1.1-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1-1.el9`.
 @y
    目的のバージョンを完全なパッケージ文字列を指定してインストールします。
    完全な文字列とは、まずパッケージ名 (`docker-ce`) があり、次にハイフン (`-`) で区切って (2 カラムめに) バージョン文字列が続きます。
-   この例では `docker-ce-3:27.1.1-1.el9` といったものです。
+   この例では `docker-ce-3:27.3.1-1.el9` といったものです。
 @z
 
 @x
@@ -264,18 +271,26 @@ utility) and set up the repository.
 @z
 
 @x
-2. Start Docker.
+2. Start Docker Engine.
 @y
-2. Docker を起動します。
+2. Docker Engine を起動します。
 @z
 
 % snip command...
 
 @x
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
 @y
-3. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
+   これによって Docker の systemd サービスがシステム起動時に自動的に実行されるようになります。
+   Docker を自動起動させたくない場合は、ここではその代わりに `sudo systemctl start docker` を実行してください。
+@z
+
+@x
+3. Verify that the installation is successful by running the `hello-world` image:
+@y
+3. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -358,18 +373,26 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 @z
 
 @x
-3. Start Docker.
+3. Start Docker Engine.
 @y
-3. Docker を起動します。
+3. Docker Engine を起動します。
 @z
 
 % snip command...
 
 @x
-4. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
 @y
-4. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
+   これによって Docker の systemd サービスがシステム起動時に自動的に実行されるようになります。
+   Docker を自動起動させたくない場合は、ここではその代わりに `sudo systemctl start docker` を実行してください。
+@z
+
+@x
+4. Verify that the installation is successful by running the `hello-world` image:
+@y
+4. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -402,11 +425,11 @@ Docker Engine のインストールと起動が正常に行われました。
 
 @x
 To upgrade Docker Engine, download the newer package files and repeat the
-[installation procedure](#install-from-a-package), using `yum -y upgrade`
-instead of `yum -y install`, and point to the new files.
+[installation procedure](#install-from-a-package), using `dnf upgrade`
+instead of `dnf install`, and point to the new files.
 @y
 Docker Engine をアップグレードするには、新たなパッケージファイルをダウンロードして [インストール手順](#install-from-a-package) に従います。
-その際には `yum -y install` に代えて `yum -y upgrade` とし、対象ファイルは新しいものに置き換えてください。
+その際には `dnf install` に代えて `dnf upgrade` とし、対象ファイルは新しいものに置き換えてください。
 @z
 
 @x

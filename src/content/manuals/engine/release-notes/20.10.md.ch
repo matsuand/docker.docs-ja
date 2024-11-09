@@ -115,13 +115,13 @@ Docker Buildx, containerd, and some minor bug fixes and enhancements.
 - Update Docker Compose to [v2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1).
 - Update Docker Buildx to [v0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0).
 - Update containerd (`containerd.io` package) to [v1.6.15](https://github.com/containerd/containerd/releases/tag/v1.6.15).
-- Update the package versioning format for `docker-compose-cli` to allow distro version updates [docker/docker-ce-packaging#822](https://github.com/docker/docker-ce-packaging/pull/822).
+- Update the package versioning format for `docker-compose-cli` to allow distribution version updates [docker/docker-ce-packaging#822](https://github.com/docker/docker-ce-packaging/pull/822).
 - Update Go runtime to [1.18.10](https://go.dev/doc/devel/release#go1.18.minor),
 @y
 - Update Docker Compose to [v2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1).
 - Update Docker Buildx to [v0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0).
 - Update containerd (`containerd.io` package) to [v1.6.15](https://github.com/containerd/containerd/releases/tag/v1.6.15).
-- Update the package versioning format for `docker-compose-cli` to allow distro version updates [docker/docker-ce-packaging#822](https://github.com/docker/docker-ce-packaging/pull/822).
+- Update the package versioning format for `docker-compose-cli` to allow distribution version updates [docker/docker-ce-packaging#822](https://github.com/docker/docker-ce-packaging/pull/822).
 - Update Go runtime to [1.18.10](https://go.dev/doc/devel/release#go1.18.minor),
 @z
 
@@ -876,9 +876,9 @@ package without upgrading the Docker Engine:
 @z
 
 @x
-On `.deb` based distros, such as Ubuntu and Debian:
+On `.deb` based distributions, such as Ubuntu and Debian:
 @y
-On `.deb` based distros, such as Ubuntu and Debian:
+On `.deb` based distributions, such as Ubuntu and Debian:
 @z
 
 @x
@@ -892,9 +892,9 @@ $ apt-get update && apt-get install docker-scan-plugin
 @z
 
 @x
-On rpm-based distros, such as CentOS or Fedora:
+On rpm-based distributions, such as CentOS or Fedora:
 @y
-On rpm-based distros, such as CentOS or Fedora:
+On rpm-based distributions, such as CentOS or Fedora:
 @z
 
 @x

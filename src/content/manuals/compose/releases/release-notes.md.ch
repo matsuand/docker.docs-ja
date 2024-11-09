@@ -14,15 +14,201 @@ linkTitle: Release notes
 @x
 description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
+tags: [Release notes]
 @y
 description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
+tags: [Release notes]
 @z
 
 @x
 For more detailed information, see the [release notes in the Compose repo](https://github.com/docker/compose/releases/).
 @y
 For more detailed information, see the [release notes in the Compose repo](https://github.com/docker/compose/releases/).
+@z
+
+@x
+## 2.30.3
+@y
+## 2.30.3
+@z
+
+@x
+{{< release-date date="2024-11-07" >}}
+@y
+{{< release-date date="2024-11-07" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.4.4
+@y
+- Dependencies upgrade: bump compose-go to v2.4.4
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue re-starting services that should not when using `--watch`
+- Improve the fix of using same YAML anchor multiple times in a Compose file
+@y
+- Fixed an issue re-starting services that should not when using `--watch`
+- Improve the fix of using same YAML anchor multiple times in a Compose file
+@z
+
+@x
+## 2.30.2
+@y
+## 2.30.2
+@z
+
+@x
+{{< release-date date="2024-11-05" >}}
+@y
+{{< release-date date="2024-11-05" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.4.3
+@y
+- Dependencies upgrade: bump compose-go to v2.4.3
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue re-creating services when updating its profiles 
+- Fixed a regression when using the same YAML anchor multiple times in a Compose file
+@y
+- Fixed an issue re-creating services when updating its profiles 
+- Fixed a regression when using the same YAML anchor multiple times in a Compose file
+@z
+
+@x
+## 2.30.1
+@y
+## 2.30.1
+@z
+
+@x
+{{< release-date date="2024-10-30" >}}
+@y
+{{< release-date date="2024-10-30" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.4.2
+@y
+- Dependencies upgrade: bump compose-go to v2.4.2
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed a regression when using stdin as input for `-f` flag
+- Fixed a regression when using the same YAML anchor multiple times in a Compose file
+@y
+- Fixed a regression when using stdin as input for `-f` flag
+- Fixed a regression when using the same YAML anchor multiple times in a Compose file
+@z
+
+@x
+## 2.30.0
+@y
+## 2.30.0
+@z
+
+@x
+{{< release-date date="2024-10-29" >}}
+@y
+{{< release-date date="2024-10-29" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.4.1
+- Dependencies upgrade: bump docker engine and cli to v27.3.1
+@y
+- Dependencies upgrade: bump compose-go to v2.4.1
+- Dependencies upgrade: bump docker engine and cli to v27.3.1
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduction of service hooks support.
+- Addition of alpha `generate` command.
+- Addition of `export` command.
+- Added support for CDI device requests using `devices` in the Compose file.
+- A lot a bug fixes.
+@y
+- Introduction of service hooks support.
+- Addition of alpha `generate` command.
+- Addition of `export` command.
+- Added support for CDI device requests using `devices` in the Compose file.
+- A lot a bug fixes.
+@z
+
+@x
+## 2.29.7
+@y
+## 2.29.7
+@z
+
+@x
+{{< release-date date="2024-09-20" >}}
+@y
+{{< release-date date="2024-09-20" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed a regression when using mount API for bind mounts.
+@y
+- Fixed a regression when using mount API for bind mounts.
 @z
 
 @x
@@ -4524,9 +4710,9 @@ For a list of PRs and issues fixed in this release, see [Compose 1.28.3](https:/
 @z
 
 @x
-- Added `distro` package to get distro information.
+- Added `distribution` package to get distribution information.
 @y
-- Added `distro` package to get distro information.
+- Added `distribution` package to get distribution information.
 @z
 
 @x

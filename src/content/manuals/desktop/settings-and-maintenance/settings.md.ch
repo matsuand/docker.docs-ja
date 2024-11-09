@@ -797,12 +797,12 @@ WSL integration.
 
 @x
 By default, the integration is enabled on your default WSL distribution.
-To change your default WSL distro, run `wsl --set-default <distro name>`. (For example,
-to set Ubuntu as your default WSL distro, run `wsl --set-default ubuntu`).
+To change your default WSL distribution, run `wsl --set-default <distribution name>`. (For example,
+to set Ubuntu as your default WSL distribution, run `wsl --set-default ubuntu`).
 @y
 By default, the integration is enabled on your default WSL distribution.
-To change your default WSL distro, run `wsl --set-default <distro name>`. (For example,
-to set Ubuntu as your default WSL distro, run `wsl --set-default ubuntu`).
+To change your default WSL distribution, run `wsl --set-default <distribution name>`. (For example,
+to set Ubuntu as your default WSL distribution, run `wsl --set-default ubuntu`).
 @z
 
 @x

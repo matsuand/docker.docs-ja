@@ -61,9 +61,9 @@ For Compose standalone, see [Install Compose Standalone](standalone.md).
 @z
 
 @x
-1. Set up the repository. Find distro-specific instructions in:
+1. Set up the repository. Find distribution-specific instructions in:
 @y
-1. Set up the repository. Find distro-specific instructions in:
+1. Set up the repository. Find distribution-specific instructions in:
 @z
 
 @x
@@ -99,9 +99,9 @@ For Compose standalone, see [Install Compose Standalone](standalone.md).
 % snip command...
 
 @x
-    * For RPM-based distros, run:
+    * For RPM-based distributions, run:
 @y
-    * For RPM-based distros, run:
+    * For RPM-based distributions, run:
 @z
 
 % snip command...
@@ -149,9 +149,9 @@ To update the Compose plugin, run the following commands:
 % snip command...
 
 @x
-* For RPM-based distros, run:
+* For RPM-based distributions, run:
 @y
-* For RPM-based distros, run:
+* For RPM-based distributions, run:
 @z
 
 % snip command...

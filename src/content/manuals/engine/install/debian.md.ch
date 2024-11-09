@@ -111,12 +111,13 @@ Docker Engine をインストールするにあたっては、衝突しそうな
 @z
 
 @x
-Distro maintainers provide unofficial distributions of Docker packages in
-their repositories. You must uninstall these packages before you can install the
-official version of Docker Engine.
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @y
-ディストロのメンテナーはリポジトリから Docker パッケージを非公式に提供しています。
-そのようなパッケージはアンインストールした上で、Docker Engine の公式バージョンをインストールします。
+この Linux ディストリビューションでは Docker の非公式パッケージが提供されているかもしれません。
+これは Docker が提供する公式パッケージとの間で衝突を引き起こします。
+したがって Docker Engine の公式バージョンをインストールするには、そういったパッケージはあらかじめアンインストールしておく必要があります。
 @z
 
 @x
@@ -250,13 +251,13 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @x
    > [!NOTE]
    >
-   > If you use a derivative distro, such as Kali Linux,
+   > If you use a derivative distribution, such as Kali Linux,
    > you may need to substitute the part of this command that's expected to
    > print the version codename:
 @y
    > [!NOTE]
    >
-   > Kali Linux のような派生ディストロを利用している場合は、以下のコマンドにてバージョンコード名を適切に出力されるように、適切に修正する必要があるかもしれません。
+   > Kali Linux のような派生ディストリビューションを利用している場合は、以下のコマンドにてバージョンコード名を適切に出力されるように、適切に修正する必要があるかもしれません。
 @z
 
 % snip command...
@@ -328,10 +329,9 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @z
 
 @x
-3. Verify that the installation is successful by running the `hello-world`
-   image:
+3. Verify that the installation is successful by running the `hello-world` image:
 @y
-3. インストールが完了したことを確認するために `hello-world` イメージを実行します。
+3. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -443,10 +443,9 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 @z
 
 @x
-6. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image:
+6. Verify that the installation is successful by running the `hello-world` image:
 @y
-6. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
+6. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -498,27 +497,27 @@ Docker Engine をアップグレードするには、新たなパッケージフ
 @z
 
 @x
-1.  Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
+1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @y
-1.  Docker Engine, CLI、containerd、Docker Compose パッケージをアンインストールするには以下を行います。
+1. Docker Engine, CLI、containerd、Docker Compose パッケージをアンインストールするには以下を行います。
 @z
 
 % snip command...
 
 @x
-2.  Images, containers, volumes, or custom configuration files on your host
-    aren't automatically removed. To delete all images, containers, and volumes:
+2. Images, containers, volumes, or custom configuration files on your host
+   aren't automatically removed. To delete all images, containers, and volumes:
 @y
-2.  イメージ、コンテナー、ボリューム、独自の設定ファイルは自動的には削除されません。
-    イメージ、コンテナー、ボリュームを削除するには以下を行います。
+2. イメージ、コンテナー、ボリューム、独自の設定ファイルは自動的には削除されません。
+   イメージ、コンテナー、ボリュームを削除するには以下を行います。
 @z
 
 % snip command...
 
 @x
-3.  Remove source list and keyrings
+3. Remove source list and keyrings
 @y
-3.  ソースリストとキーリングを削除します。
+3. ソースリストとキーリングを削除します。
 @z
 
 % snip command...

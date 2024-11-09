@@ -62,7 +62,7 @@ Ubuntu, Debian の場合
 % snip command...
 
 @x
-RPM-based distros:
+RPM-based distributions:
 @y
 RPM ベースのディストロの場合
 @z

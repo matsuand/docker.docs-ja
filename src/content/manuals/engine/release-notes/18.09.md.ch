@@ -17,26 +17,22 @@ linkTitle: Engine v18.09
 > With this release, the daemon, client and container runtime are now all shipped
 > in separate packages. When updating, you need to update all packages at the same
 > time to get the latest patch releases for each. For example, on Ubuntu:
-> 
-> ```console
-> $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-> ```
-> 
-> See the [installation instructions](../install/_index.md) for the corresponding
-> Linux distro for details.
 @y
 > **Note:**
 >
 > With this release, the daemon, client and container runtime are now all shipped
 > in separate packages. When updating, you need to update all packages at the same
 > time to get the latest patch releases for each. For example, on Ubuntu:
-> 
-> ```console
-> $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-> ```
-> 
+@z
+
+% snip command...
+
+@x
 > See the [installation instructions](../install/_index.md) for the corresponding
-> Linux distro for details.
+> Linux distribution for details.
+@y
+> See the [installation instructions](../install/_index.md) for the corresponding
+> Linux distribution for details.
 @z
 
 @x

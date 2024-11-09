@@ -512,12 +512,12 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @x
 - Fixed a bug where Docker Desktop would reset docker's `credsStore` to `desktop` when the user's intention is to keep it empty. Fixes [docker/for-win#9843](https://github.com/docker/for-win/issues/9843).
 - Fixed a bug that would cause Docker Desktop to not start in the WSL2 engine  [docker/for-win#14034](https://github.com/docker/for-win/issues/14034).
-- Fixed a bug that caused WSL distro to terminate abruptly. Fixes [docker/for-win/14230](https://github.com/docker/for-win/issues/14230).
+- Fixed a bug that caused WSL distribution to terminate abruptly. Fixes [docker/for-win/14230](https://github.com/docker/for-win/issues/14230).
 - Fixed an issue that caused WSL to update in each startup. Fixes [docker/for-win/13868](https://github.com/docker/for-win/issues/13868), [docker/for-win/13806](https://github.com/docker/for-win/issues/13806).
 @y
 - Fixed a bug where Docker Desktop would reset docker's `credsStore` to `desktop` when the user's intention is to keep it empty. Fixes [docker/for-win#9843](https://github.com/docker/for-win/issues/9843).
 - Fixed a bug that would cause Docker Desktop to not start in the WSL2 engine  [docker/for-win#14034](https://github.com/docker/for-win/issues/14034).
-- Fixed a bug that caused WSL distro to terminate abruptly. Fixes [docker/for-win/14230](https://github.com/docker/for-win/issues/14230).
+- Fixed a bug that caused WSL distribution to terminate abruptly. Fixes [docker/for-win/14230](https://github.com/docker/for-win/issues/14230).
 - Fixed an issue that caused WSL to update in each startup. Fixes [docker/for-win/13868](https://github.com/docker/for-win/issues/13868), [docker/for-win/13806](https://github.com/docker/for-win/issues/13806).
 @z
 
@@ -1587,10 +1587,10 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 
 @x
 - Fixed a bug where `docker run -v` would fail after switching between WSL 2 and Hyper-V.
-- Fixed a bug where Docker Desktop was not stopping its WSL distros (`docker-desktop` and `docker-desktop-data`) when it was shutdown. Fixes [docker/for-win/issues/13443](https://github.com/docker/for-win/issues/13443) and [docker/for-win/issues/13938](https://github.com/docker/for-win/issues/13938).
+- Fixed a bug where Docker Desktop was not stopping its WSL distributions (`docker-desktop` and `docker-desktop-data`) when it was shutdown. Fixes [docker/for-win/issues/13443](https://github.com/docker/for-win/issues/13443) and [docker/for-win/issues/13938](https://github.com/docker/for-win/issues/13938).
 @y
 - Fixed a bug where `docker run -v` would fail after switching between WSL 2 and Hyper-V.
-- Fixed a bug where Docker Desktop was not stopping its WSL distros (`docker-desktop` and `docker-desktop-data`) when it was shutdown. Fixes [docker/for-win/issues/13443](https://github.com/docker/for-win/issues/13443) and [docker/for-win/issues/13938](https://github.com/docker/for-win/issues/13938).
+- Fixed a bug where Docker Desktop was not stopping its WSL distributions (`docker-desktop` and `docker-desktop-data`) when it was shutdown. Fixes [docker/for-win/issues/13443](https://github.com/docker/for-win/issues/13443) and [docker/for-win/issues/13938](https://github.com/docker/for-win/issues/13938).
 @z
 
 @x
@@ -1775,12 +1775,12 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 
 @x
 - Fixed an issue with DNS timeouts on Windows.
-- Added support for Enhanced Container Isolation Docker socket mount permission on WSL user distros.
+- Added support for Enhanced Container Isolation Docker socket mount permission on WSL user distributions.
 - Fixed an issue that caused the `failed to get console mode` error when redirecting output from the CLI.
 - Fixed an issue with the engine socket permissions when mounted inside containers. Fixes [docker/for-win#13898](https://github.com/docker/for-win/issues/13898)
 @y
 - Fixed an issue with DNS timeouts on Windows.
-- Added support for Enhanced Container Isolation Docker socket mount permission on WSL user distros.
+- Added support for Enhanced Container Isolation Docker socket mount permission on WSL user distributions.
 - Fixed an issue that caused the `failed to get console mode` error when redirecting output from the CLI.
 - Fixed an issue with the engine socket permissions when mounted inside containers. Fixes [docker/for-win#13898](https://github.com/docker/for-win/issues/13898)
 @z
@@ -3394,23 +3394,23 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 - Fixed a bug on WSL 2 where if Desktop is paused, killed, and then restarted, the startup hangs unless WSL is shut down first with `wsl --shutdown`.
 - Fixed the WSL engine in cases where wsl.exe is not on the PATH [docker/for-win#13547](https://github.com/docker/for-win/issues/13547).
-- Fixed the WSL engine's ability to detect cases where one of the Docker Desktop distros' drive is missing [docker/for-win#13554](https://github.com/docker/for-win/issues/13554).
+- Fixed the WSL engine's ability to detect cases where one of the Docker Desktop distributions' drive is missing [docker/for-win#13554](https://github.com/docker/for-win/issues/13554).
 - A slow or unresponsive WSL integration no longer prevents Docker Desktop from starting. Fixes [docker/for-win#13549](https://github.com/docker/for-win/issues/13549).
 - Fixed a bug that caused Docker Desktop to crash on startup [docker/for-win#6890](https://github.com/docker/for-mac/issues/6890).
 - Added the following installer flags:
   - `--hyper-v-default-data-root` which specifies the default location for Hyper-V VM disk.
   - `--windows-containers-default-data-root` which specifies the default data root for Windows Containers.
-  - `--wsl-default-data-root` which specifies the default location for WSL distro disks.
+  - `--wsl-default-data-root` which specifies the default location for WSL distribution disks.
 @y
 - Fixed a bug on WSL 2 where if Desktop is paused, killed, and then restarted, the startup hangs unless WSL is shut down first with `wsl --shutdown`.
 - Fixed the WSL engine in cases where wsl.exe is not on the PATH [docker/for-win#13547](https://github.com/docker/for-win/issues/13547).
-- Fixed the WSL engine's ability to detect cases where one of the Docker Desktop distros' drive is missing [docker/for-win#13554](https://github.com/docker/for-win/issues/13554).
+- Fixed the WSL engine's ability to detect cases where one of the Docker Desktop distributions' drive is missing [docker/for-win#13554](https://github.com/docker/for-win/issues/13554).
 - A slow or unresponsive WSL integration no longer prevents Docker Desktop from starting. Fixes [docker/for-win#13549](https://github.com/docker/for-win/issues/13549).
 - Fixed a bug that caused Docker Desktop to crash on startup [docker/for-win#6890](https://github.com/docker/for-mac/issues/6890).
 - Added the following installer flags:
   - `--hyper-v-default-data-root` which specifies the default location for Hyper-V VM disk.
   - `--windows-containers-default-data-root` which specifies the default data root for Windows Containers.
-  - `--wsl-default-data-root` which specifies the default location for WSL distro disks.
+  - `--wsl-default-data-root` which specifies the default location for WSL distribution disks.
 @z
 
 @x
@@ -3541,11 +3541,11 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 
 @x
 - Fixed a bug that meant WSL data could not be moved to a different disk. Fixes [docker/for-win#13269](https://github.com/docker/for-win/issues/13269).
-- Fixed a bug where Docker Desktop was not stopping its WSL distros (docker-desktop and docker-desktop-data) when it was shutdown, consuming host memory unnecessarily.
+- Fixed a bug where Docker Desktop was not stopping its WSL distributions (docker-desktop and docker-desktop-data) when it was shutdown, consuming host memory unnecessarily.
 - Added a new setting that allows the Windows Docker daemon to use Docker Desktop's internal proxy when running Windows containers. See [Windows proxy settings](/manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @y
 - Fixed a bug that meant WSL data could not be moved to a different disk. Fixes [docker/for-win#13269](https://github.com/docker/for-win/issues/13269).
-- Fixed a bug where Docker Desktop was not stopping its WSL distros (docker-desktop and docker-desktop-data) when it was shutdown, consuming host memory unnecessarily.
+- Fixed a bug where Docker Desktop was not stopping its WSL distributions (docker-desktop and docker-desktop-data) when it was shutdown, consuming host memory unnecessarily.
 - Added a new setting that allows the Windows Docker daemon to use Docker Desktop's internal proxy when running Windows containers. See [Windows proxy settings](manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @z
 
@@ -4098,22 +4098,22 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-- Added statical linking of WSL integration tools against `musl` so there is no need to install `alpine-pkg-glibc` in user distros.
+- Added statical linking of WSL integration tools against `musl` so there is no need to install `alpine-pkg-glibc` in user distributions.
 - Added support for running under cgroupv2 on WSL 2. This is activated by adding `kernelCommandLine = systemd.unified_cgroup_hierarchy=1 cgroup_no_v1=all` to your `%USERPROFILE%\.wslconfig` file in the `[wsl2]` section.
 - Fixed an issue that caused Docker Desktop to get stuck in the "starting" phase when in WSL 2 mode (introduced in 4.16).
 - Fixed Docker Desktop failing to start the WSL 2 backend when file system compression or encryption is enabled on `%LOCALAPPDATA%`.
-- Fixed Docker Desktop failing to report a missing or outdated (incapable of running WSL version 2 distros) WSL installation when starting.
+- Fixed Docker Desktop failing to report a missing or outdated (incapable of running WSL version 2 distributions) WSL installation when starting.
 - Fixed a bug where opening in Visual Studio Code fails if the target path has a space.
 - Fixed a bug that causes `~/.docker/context` corruption and the error message "unexpected end of JSON input". You can also remove `~/.docker/context` to work around this problem.
 - Ensured the credential helper used in WSL 2 is properly signed. Related to [docker/for-win#10247](https://github.com/docker/for-win/issues/10247).
 - Fixed an issue that caused WSL integration agents to be terminated erroneously. Related to [docker/for-win#13202](https://github.com/docker/for-win/issues/13202).
 - Fixed corrupt contexts on start. Fixes [docker/for-win#13180](https://github.com/docker/for-win/issues/13180) and [docker/for-win#12561](https://github.com/docker/for-win/issues/12561).
 @y
-- Added statical linking of WSL integration tools against `musl` so there is no need to install `alpine-pkg-glibc` in user distros.
+- Added statical linking of WSL integration tools against `musl` so there is no need to install `alpine-pkg-glibc` in user distributions.
 - Added support for running under cgroupv2 on WSL 2. This is activated by adding `kernelCommandLine = systemd.unified_cgroup_hierarchy=1 cgroup_no_v1=all` to your `%USERPROFILE%\.wslconfig` file in the `[wsl2]` section.
 - Fixed an issue that caused Docker Desktop to get stuck in the "starting" phase when in WSL 2 mode (introduced in 4.16).
 - Fixed Docker Desktop failing to start the WSL 2 backend when file system compression or encryption is enabled on `%LOCALAPPDATA%`.
-- Fixed Docker Desktop failing to report a missing or outdated (incapable of running WSL version 2 distros) WSL installation when starting.
+- Fixed Docker Desktop failing to report a missing or outdated (incapable of running WSL version 2 distributions) WSL installation when starting.
 - Fixed a bug where opening in Visual Studio Code fails if the target path has a space.
 - Fixed a bug that causes `~/.docker/context` corruption and the error message "unexpected end of JSON input". You can also remove `~/.docker/context` to work around this problem.
 - Ensured the credential helper used in WSL 2 is properly signed. Related to [docker/for-win#10247](https://github.com/docker/for-win/issues/10247).
@@ -5210,9 +5210,9 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-- Fixed `docker login` to private registries from WSL2 distro [docker/for-win#12871](https://github.com/docker/for-win/issues/12871)
+- Fixed `docker login` to private registries from WSL2 distribution [docker/for-win#12871](https://github.com/docker/for-win/issues/12871)
 @y
-- Fixed `docker login` to private registries from WSL2 distro [docker/for-win#12871](https://github.com/docker/for-win/issues/12871)
+- Fixed `docker login` to private registries from WSL2 distribution [docker/for-win#12871](https://github.com/docker/for-win/issues/12871)
 @z
 
 @x
@@ -7252,10 +7252,10 @@ actual memory usage. See
 @z
 
 @x
-- Fixed a regression in WSL 2 integrations for some distros (e.g. Arch or Alpine). Fixes [docker/for-win#12229](https://github.com/docker/for-win/issues/12229)
+- Fixed a regression in WSL 2 integrations for some distributions (e.g. Arch or Alpine). Fixes [docker/for-win#12229](https://github.com/docker/for-win/issues/12229)
 - Fixed update notification overlay sometimes getting out of sync between the Settings button and the Software update button in the Dashboard.
 @y
-- Fixed a regression in WSL 2 integrations for some distros (e.g. Arch or Alpine). Fixes [docker/for-win#12229](https://github.com/docker/for-win/issues/12229)
+- Fixed a regression in WSL 2 integrations for some distributions (e.g. Arch or Alpine). Fixes [docker/for-win#12229](https://github.com/docker/for-win/issues/12229)
 - Fixed update notification overlay sometimes getting out of sync between the Settings button and the Software update button in the Dashboard.
 @z
 
@@ -7300,7 +7300,7 @@ actual memory usage. See
 - [Go 1.17.1](https://github.com/golang/go/releases/tag/go1.17.1)
 - [Alpine 3.14](https://alpinelinux.org/posts/Alpine-3.14.0-released.html)
 - [Qemu 6.1.0](https://wiki.qemu.org/ChangeLog/6.1)
-- Base distro to debian:bullseye
+- Base distribution to debian:bullseye
 @y
 - [Compose V2](https://github.com/docker/compose/releases/tag/v2.0.0)
 - [Buildx 0.6.3](https://github.com/docker/buildx/releases/tag/v0.6.3)
@@ -7308,7 +7308,7 @@ actual memory usage. See
 - [Go 1.17.1](https://github.com/golang/go/releases/tag/go1.17.1)
 - [Alpine 3.14](https://alpinelinux.org/posts/Alpine-3.14.0-released.html)
 - [Qemu 6.1.0](https://wiki.qemu.org/ChangeLog/6.1)
-- Base distro to debian:bullseye
+- Base distribution to debian:bullseye
 @z
 
 @x
@@ -7330,7 +7330,7 @@ actual memory usage. See
 - Fixed CLI context switch sync with UI. See [docker/for-win#11721](https://github.com/docker/for-win/issues/11721).
 - Added the key `vpnKitMaxPortIdleTime` to `settings.json` to allow the idle network connection timeout to be disabled or extended.
 - Fixed a crash on exit. See [docker/for-win#12128](https://github.com/docker/for-win/issues/12128).
-- Fixed a bug where the CLI tools would not be available in WSL 2 distros.
+- Fixed a bug where the CLI tools would not be available in WSL 2 distributions.
 - Fixed switching from Linux to Windows containers that was stuck because access rights on panic.log. See [for-win#11899](https://github.com/docker/for-win/issues/11899).
 @y
 - Fixed a bug related to anti-malware software triggering, self-diagnose avoids calling the `net.exe` utility.
@@ -7339,7 +7339,7 @@ actual memory usage. See
 - Fixed CLI context switch sync with UI. See [docker/for-win#11721](https://github.com/docker/for-win/issues/11721).
 - Added the key `vpnKitMaxPortIdleTime` to `settings.json` to allow the idle network connection timeout to be disabled or extended.
 - Fixed a crash on exit. See [docker/for-win#12128](https://github.com/docker/for-win/issues/12128).
-- Fixed a bug where the CLI tools would not be available in WSL 2 distros.
+- Fixed a bug where the CLI tools would not be available in WSL 2 distributions.
 - Fixed switching from Linux to Windows containers that was stuck because access rights on panic.log. See [for-win#11899](https://github.com/docker/for-win/issues/11899).
 @z
 
@@ -7520,9 +7520,9 @@ For more information, see [Docker subscription overview](../subscription/_index.
 @z
 
 @x
-- Fixed a bug where the CLI tools would not be available in WSL 2 distros.
+- Fixed a bug where the CLI tools would not be available in WSL 2 distributions.
 - Fixed a bug when switching from Linux to Windows containers due to access rights on `panic.log`. [for-win#11899](https://github.com/docker/for-win/issues/11899)
 @y
-- Fixed a bug where the CLI tools would not be available in WSL 2 distros.
+- Fixed a bug where the CLI tools would not be available in WSL 2 distributions.
 - Fixed a bug when switching from Linux to Windows containers due to access rights on `panic.log`. [for-win#11899](https://github.com/docker/for-win/issues/11899)
 @z

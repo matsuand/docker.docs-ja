@@ -113,12 +113,13 @@ Docker Engine をインストールするにあたっては、衝突しそうな
 @z
 
 @x
-Distro maintainers provide unofficial distributions of Docker packages in
-APT. You must uninstall these packages before you can install the official
-version of Docker Engine.
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @y
-ディストロのメンテナーは APT 形式による Docker パッケージを非公式に提供しています。
-そのようなパッケージはアンインストールした上で、Docker Engine の公式バージョンをインストールします。
+この Linux ディストリビューションでは Docker の非公式パッケージが提供されているかもしれません。
+これは Docker が提供する公式パッケージとの間で衝突を引き起こします。
+したがって Docker Engine の公式バージョンをインストールするには、そういったパッケージはあらかじめアンインストールしておく必要があります。
 @z
 
 @x
@@ -226,10 +227,10 @@ Docker Engine のインストール方法はいくつかあるので、必要に
 
 @x
 Before you install Docker Engine for the first time on a new host machine, you
-need to set up the Docker repository. Afterward, you can install and update
+need to set up the Docker `apt` repository. Afterward, you can install and update
 Docker from the repository.
 @y
-Docker Engine を初めてマシン上にインストールするには、Docker リポジトリの設定があらかじめ必要です。
+Docker Engine を初めてマシン上にインストールするには、Docker の `apt` リポジトリの設定があらかじめ必要です。
 これを行った後に、そのリポジトリから Docker のインストールやアップグレードを行います。
 @z
 
@@ -253,12 +254,12 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @x
    > [!NOTE]
    >
-   > If you use an Ubuntu derivative distro, such as Linux Mint,
+   > If you use an Ubuntu derivative distribution, such as Linux Mint,
    > you may need to use `UBUNTU_CODENAME` instead of `VERSION_CODENAME`.
 @y
    > [!NOTE]
    >
-   > Linux Mint のような Ubuntu 派生ディストロを利用している場合は、`VERSION_CODENAME` ではなく `UBUNTU_CODENAME` を用いなければならない場合があります。
+   > Linux Mint のような Ubuntu 派生ディストリビューションを利用している場合は、`VERSION_CODENAME` ではなく `UBUNTU_CODENAME` を用いなければならない場合があります。
 @z
 
 @x
@@ -321,10 +322,9 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @z
 
 @x
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
+3. Verify that the installation is successful by running the `hello-world` image:
 @y
-3. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
+3. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -436,10 +436,9 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 @z
 
 @x
-6. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
+6. Verify that the installation is successful by running the `hello-world` image:
 @y
-6. Docker Engine のインストールが完了したことを確認するために `hello-world` イメージを実行します。
+6. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...

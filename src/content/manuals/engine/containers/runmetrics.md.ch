@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Learn how to measure running containers, and about the different metrics
@@ -24,43 +25,23 @@ You can use the `docker stats` command to live stream a container's
 runtime metrics. The command supports CPU, memory usage, memory limit,
 and network IO metrics.
 @y
-You can use the `docker stats` command to live stream a container's
-runtime metrics. The command supports CPU, memory usage, memory limit,
-and network IO metrics.
+`docker stats` コマンドを使うと、コンテナーのランタイムメトリックスをライブ出力できます。
+このコマンドでは CPU、メモリー使用量、メモリー制限、ネットワーク IO メトリックスがサポートされています。
 @z
 
 @x
 The following is a sample output from the `docker stats` command
 @y
-The following is a sample output from the `docker stats` command
+以下に `docker stats` コマンドの出力例を示します。
 @z
 
-@x
-```console
-$ docker stats redis1 redis2
-@y
-```console
-$ docker stats redis1 redis2
-@z
-
-@x
-CONTAINER           CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O
-redis1              0.07%               796 KB / 64 MB        1.21%               788 B / 648 B       3.568 MB / 512 KB
-redis2              0.07%               2.746 MB / 64 MB      4.29%               1.266 KB / 648 B    12.4 MB / 0 B
-```
-@y
-CONTAINER           CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O
-redis1              0.07%               796 KB / 64 MB        1.21%               788 B / 648 B       3.568 MB / 512 KB
-redis2              0.07%               2.746 MB / 64 MB      4.29%               1.266 KB / 648 B    12.4 MB / 0 B
-```
-@z
+% snip command...
 
 @x
 The [`docker stats`](/reference/cli/docker/container/stats.md) reference
 page has more details about the `docker stats` command.
 @y
-The [`docker stats`](reference/cli/docker/container/stats.md) reference
-page has more details about the `docker stats` command.
+[`docker stats`](reference/cli/docker/container/stats.md) リファレンスページでは `docker stats` コマンドのより詳細について示しています。
 @z
 
 @x
@@ -84,12 +65,12 @@ containers, as well as for Docker containers.
 @z
 
 @x
-Control groups are exposed through a pseudo-filesystem. In modern distros, you
+Control groups are exposed through a pseudo-filesystem. In modern distributions, you
 should find this filesystem under `/sys/fs/cgroup`. Under that directory, you
 see multiple sub-directories, called `devices`, `freezer`, `blkio`, and so on.
 Each sub-directory actually corresponds to a different cgroup hierarchy.
 @y
-Control groups are exposed through a pseudo-filesystem. In modern distros, you
+Control groups are exposed through a pseudo-filesystem. In modern distributions, you
 should find this filesystem under `/sys/fs/cgroup`. Under that directory, you
 see multiple sub-directories, called `devices`, `freezer`, `blkio`, and so on.
 Each sub-directory actually corresponds to a different cgroup hierarchy.
@@ -113,15 +94,7 @@ To figure out where your control groups are mounted, you can run:
 To figure out where your control groups are mounted, you can run:
 @z
 
-@x
-```console
-$ grep cgroup /proc/mounts
-```
-@y
-```console
-$ grep cgroup /proc/mounts
-```
-@z
+% snip command...
 
 @x
 ### Enumerate cgroups
@@ -231,15 +204,7 @@ If `grubby` command is available on your system (e.g. on Fedora), the command li
 If `grubby` command is available on your system (e.g. on Fedora), the command line can be modified as follows:
 @z
 
-@x
-```console
-$ sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=1"
-```
-@y
-```console
-$ sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=1"
-```
-@z
+% snip command...
 
 @x
 If `grubby` command isn't available, edit the `GRUB_CMDLINE_LINUX` line in `/etc/default/grub`
@@ -376,14 +341,14 @@ more pseudo-files exist and contain statistics.
 @x
 Memory metrics are found in the `memory` cgroup. The memory
 control group adds a little overhead, because it does very fine-grained
-accounting of the memory usage on your host. Therefore, many distros
+accounting of the memory usage on your host. Therefore, many distributions
 chose to not enable it by default. Generally, to enable it, all you have
 to do is to add some kernel command-line parameters:
 `cgroup_enable=memory swapaccount=1`.
 @y
 Memory metrics are found in the `memory` cgroup. The memory
 control group adds a little overhead, because it does very fine-grained
-accounting of the memory usage on your host. Therefore, many distros
+accounting of the memory usage on your host. Therefore, many distributions
 chose to not enable it by default. Generally, to enable it, all you have
 to do is to add some kernel command-line parameters:
 `cgroup_enable=memory swapaccount=1`.
@@ -853,15 +818,7 @@ For instance, you can setup a rule to account for the outbound HTTP
 traffic on a web server:
 @z
 
-@x
-```console
-$ iptables -I OUTPUT -p tcp --sport 80
-```
-@y
-```console
-$ iptables -I OUTPUT -p tcp --sport 80
-```
-@z
+% snip command...
 
 @x
 There is no `-j` or `-g` flag,
@@ -879,15 +836,7 @@ Later, you can check the values of the counters, with:
 Later, you can check the values of the counters, with:
 @z
 
-@x
-```console
-$ iptables -nxvL OUTPUT
-```
-@y
-```console
-$ iptables -nxvL OUTPUT
-```
-@z
+% snip command...
 
 @x
 Technically, `-n` isn't required, but it
@@ -981,15 +930,7 @@ The exact format of the command is:
 The exact format of the command is:
 @z
 
-@x
-```console
-$ ip netns exec <nsname> <command...>
-```
-@y
-```console
-$ ip netns exec <nsname> <command...>
-```
-@z
+% snip command...
 
 @x
 For example:
@@ -997,15 +938,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ ip netns exec mycontainer netstat -i
-```
-@y
-```console
-$ ip netns exec mycontainer netstat -i
-```
-@z
+% snip command...
 
 @x
 `ip netns` finds the `mycontainer` container by
@@ -1075,23 +1008,7 @@ Putting everything together, if the "short ID" of a container is held in
 the environment variable `$CID`, then you can do this:
 @z
 
-@x
-```console
-$ TASKS=/sys/fs/cgroup/devices/docker/$CID*/tasks
-$ PID=$(head -n 1 $TASKS)
-$ mkdir -p /var/run/netns
-$ ln -sf /proc/$PID/ns/net /var/run/netns/$CID
-$ ip netns exec $CID netstat -i
-```
-@y
-```console
-$ TASKS=/sys/fs/cgroup/devices/docker/$CID*/tasks
-$ PID=$(head -n 1 $TASKS)
-$ mkdir -p /var/run/netns
-$ ln -sf /proc/$PID/ns/net /var/run/netns/$CID
-$ ip netns exec $CID netstat -i
-```
-@z
+% snip command...
 
 @x
 ## Tips for high-performance metric collection

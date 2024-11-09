@@ -1,18 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: Learn how to install Docker Engine on RHEL. These instructions cover
   the different installation methods, how to uninstall, and next steps.
-keywords: requirements, apt, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
+keywords: requirements, dnf, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
   update
 title: Install Docker Engine on RHEL
+linkTitle: RHEL
 @y
 description: Learn how to install Docker Engine on RHEL. These instructions cover
   the different installation methods, how to uninstall, and next steps.
-keywords: requirements, apt, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
+keywords: requirements, dnf, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
   update
 title: Install Docker Engine on RHEL
+linkTitle: RHEL
 @z
 
 @x
@@ -60,49 +64,27 @@ RHEL versions:
 @z
 
 @x
-Older versions of Docker went by `docker` or `docker-engine`.
-Uninstall any such older versions before attempting to install a new version,
-along with associated dependencies. Also uninstall `Podman` and the associated
-dependencies if installed already:
+Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @y
-Older versions of Docker went by `docker` or `docker-engine`.
-Uninstall any such older versions before attempting to install a new version,
-along with associated dependencies. Also uninstall `Podman` and the associated
-dependencies if installed already:
+Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @z
 
 @x
-```console
-$ sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine \
-                  podman \
-                  runc
-```
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @y
-```console
-$ sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine \
-                  podman \
-                  runc
-```
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @z
 
+% snip command...
+
 @x
-`yum` might report that you have none of these packages installed.
+`dnf` might report that you have none of these packages installed.
 @y
-`yum` might report that you have none of these packages installed.
+`dnf` might report that you have none of these packages installed.
 @z
 
 @x
@@ -180,24 +162,14 @@ Docker from the repository.
 @z
 
 @x
-Install the `yum-utils` package (which provides the `yum-config-manager`
-utility) and set up the repository.
+Install the `dnf-plugins-core` package (which provides the commands to manage
+your DNF repositories) and set up the repository.
 @y
-Install the `yum-utils` package (which provides the `yum-config-manager`
-utility) and set up the repository.
+Install the `dnf-plugins-core` package (which provides the commands to manage
+your DNF repositories) and set up the repository.
 @z
 
-@x
-```console
-$ sudo yum install -y yum-utils
-$ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce.repo
-```
-@y
-```console
-$ sudo yum install -y yum-utils
-$ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce.repo
-```
-@z
+% snip command...
 
 @x
 #### Install Docker Engine
@@ -206,9 +178,9 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @z
 
 @x
-1. Install Docker Engine, containerd, and Docker Compose:
+1. Install the Docker packages.
 @y
-1. Install Docker Engine, containerd, and Docker Compose:
+1. Install the Docker packages.
 @z
 
 @x
@@ -225,15 +197,7 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    To install the latest version, run:
 @z
 
-@x
-   ```console
-   $ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    If prompted to accept the GPG key, verify that the fingerprint matches
@@ -267,25 +231,7 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    the repository:
 @z
 
-@x
-   ```console
-   $ yum list docker-ce --showduplicates | sort -r
-@y
-   ```console
-   $ yum list docker-ce --showduplicates | sort -r
-@z
-
-@x
-   docker-ce.x86_64    3:27.1.1-1.el9    docker-ce-stable
-   docker-ce.x86_64    3:27.1.0-1.el9    docker-ce-stable
-   <...>
-   ```
-@y
-   docker-ce.x86_64    3:27.1.1-1.el9    docker-ce-stable
-   docker-ce.x86_64    3:27.1.0-1.el9    docker-ce-stable
-   <...>
-   ```
-@z
+% snip command...
 
 @x
    The list returned depends on which repositories are enabled, and is specific
@@ -298,11 +244,11 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.1.1-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1-1.el9`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.1.1-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1-1.el9`.
 @z
 
 @x
@@ -313,15 +259,7 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
    command to install:
 @z
 
-@x
-   ```console
-   $ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    This command installs Docker, but it doesn't start Docker. It also creates a
@@ -340,38 +278,30 @@ $ sudo yum-config-manager --add-repo {{% param "download-url-base" %}}/docker-ce
 @z
 
 @x
-2. Start Docker.
+2. Start Docker Engine.
 @y
-2. Start Docker.
+2. Start Docker Engine.
+@z
+
+% snip command...
+
+@x
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
+@y
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
 @z
 
 @x
-   ```console
-   $ sudo systemctl start docker
-   ```
+3. Verify that the installation is successful by running the `hello-world` image:
 @y
-   ```console
-   $ sudo systemctl start docker
-   ```
+3. Verify that the installation is successful by running the `hello-world` image:
 @z
 
-@x
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@y
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@z
-
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -475,23 +405,7 @@ download a new file each time you want to upgrade Docker Engine.
    the packages.
 @z
 
-@x
-   ```console
-   $ sudo yum install ./containerd.io-<version>.<arch>.rpm \
-     ./docker-ce-<version>.<arch>.rpm \
-     ./docker-ce-cli-<version>.<arch>.rpm \
-     ./docker-buildx-plugin-<version>.<arch>.rpm \
-     ./docker-compose-plugin-<version>.<arch>.rpm
-   ```
-@y
-   ```console
-   $ sudo yum install ./containerd.io-<version>.<arch>.rpm \
-     ./docker-ce-<version>.<arch>.rpm \
-     ./docker-ce-cli-<version>.<arch>.rpm \
-     ./docker-buildx-plugin-<version>.<arch>.rpm \
-     ./docker-compose-plugin-<version>.<arch>.rpm
-   ```
-@z
+% snip command...
 
 @x
    Docker is installed but not started. The `docker` group is created, but no
@@ -502,38 +416,30 @@ download a new file each time you want to upgrade Docker Engine.
 @z
 
 @x
-6. Start Docker.
+6. Start Docker Engine.
 @y
-6. Start Docker.
+6. Start Docker Engine.
+@z
+
+% snip command...
+
+@x
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
+@y
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
 @z
 
 @x
-   ```console
-   $ sudo systemctl start docker
-   ```
+7. Verify that the installation is successful by running the `hello-world` image:
 @y
-   ```console
-   $ sudo systemctl start docker
-   ```
+7. Verify that the installation is successful by running the `hello-world` image:
 @z
 
-@x
-7. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@y
-7. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@z
-
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -563,12 +469,12 @@ You have now successfully installed and started Docker Engine.
 
 @x
 To upgrade Docker Engine, download the newer package files and repeat the
-[installation procedure](#install-from-a-package), using `yum -y upgrade`
-instead of `yum -y install`, and point to the new files.
+[installation procedure](#install-from-a-package), using `dnf upgrade`
+instead of `dnf install`, and point to the new files.
 @y
 To upgrade Docker Engine, download the newer package files and repeat the
-[installation procedure](#install-from-a-package), using `yum -y upgrade`
-instead of `yum -y install`, and point to the new files.
+[installation procedure](#install-from-a-package), using `dnf upgrade`
+instead of `dnf install`, and point to the new files.
 @z
 
 @x
@@ -589,15 +495,7 @@ instead of `yum -y install`, and point to the new files.
 1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @z
 
-@x
-   ```console
-   $ sudo yum remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@y
-   ```console
-   $ sudo yum remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@z
+% snip command...
 
 @x
 2. Images, containers, volumes, or custom configuration files on your host
@@ -607,17 +505,7 @@ instead of `yum -y install`, and point to the new files.
    aren't automatically removed. To delete all images, containers, and volumes:
 @z
 
-@x
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@y
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@z
+% snip command...
 
 @x
 You have to delete any edited configuration files manually.

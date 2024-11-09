@@ -3756,52 +3756,12 @@ expressed in the short form.
 - `name`: A human-readable name for the port, used to document it's usage within the service.
 @z
 
-@x
-```yml
-ports:
-  - name: web
-    target: 80
-    host_ip: 127.0.0.1
-    published: "8080"
-    protocol: tcp
-    app_protocol: http
-    mode: host
-@y
-```yml
-ports:
-  - name: web
-    target: 80
-    host_ip: 127.0.0.1
-    published: "8080"
-    protocol: tcp
-    app_protocol: http
-    mode: host
-@z
+% snip code...
 
 @x
-  - name: web-secured
-    target: 443
-    host_ip: 127.0.0.1
-    published: "8083-9000"
-    protocol: tcp
-    app_protocol: https
-    mode: host
-```
+### post_start
 @y
-  - name: web-secured
-    target: 443
-    host_ip: 127.0.0.1
-    published: "8083-9000"
-    protocol: tcp
-    app_protocol: https
-    mode: host
-```
-@z
-
-@x
-## post_start
-@y
-## post_start
+### post_start
 @z
 
 @x
@@ -3861,9 +3821,9 @@ For more information, see [Use lifecycle hooks](manuals/compose/how-tos/lifecycl
 @z
 
 @x
-## pre_stop
+### pre_stop
 @y
-## pre_stop
+### pre_stop
 @z
 
 @x

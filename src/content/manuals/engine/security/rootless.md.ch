@@ -70,10 +70,10 @@ UIDs/GIDs to be used in the user namespace.
 
 @x
 -  You must install `newuidmap` and `newgidmap` on the host. These commands
-  are provided by the `uidmap` package on most distros.
+  are provided by the `uidmap` package on most distributions.
 @y
 -  You must install `newuidmap` and `newgidmap` on the host. These commands
-  are provided by the `uidmap` package on most distros.
+  are provided by the `uidmap` package on most distributions.
 @z
 
 @x
@@ -232,10 +232,10 @@ UIDs/GIDs to be used in the user namespace.
 
 @x
 - `sudo modprobe ip_tables iptable_mangle iptable_nat iptable_filter` is required.
-  This might be required on other distros as well depending on the configuration.
+  This might be required on other distributions as well depending on the configuration.
 @y
 - `sudo modprobe ip_tables iptable_mangle iptable_nat iptable_filter` is required.
-  This might be required on other distros as well depending on the configuration.
+  This might be required on other distributions as well depending on the configuration.
 @z
 
 @x

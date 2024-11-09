@@ -1242,11 +1242,11 @@ systemctl restart docker` to reload changes and (re)start the docker daemon.
 @x
 - Run "dnf upgrade" before installing in fedora [#29150](https://github.com/docker/docker/pull/29150)
 - Add build-date back to RPM packages [#29150](https://github.com/docker/docker/pull/29150)
-- deb package filename changed to include distro to distinguish between distro code names [#27829](https://github.com/docker/docker/pull/27829)
+- deb package filename changed to include distribution to distinguish between distribution code names [#27829](https://github.com/docker/docker/pull/27829)
 @y
 - Run "dnf upgrade" before installing in fedora [#29150](https://github.com/docker/docker/pull/29150)
 - Add build-date back to RPM packages [#29150](https://github.com/docker/docker/pull/29150)
-- deb package filename changed to include distro to distinguish between distro code names [#27829](https://github.com/docker/docker/pull/27829)
+- deb package filename changed to include distribution to distinguish between distribution code names [#27829](https://github.com/docker/docker/pull/27829)
 @z
 
 @x
@@ -1717,10 +1717,10 @@ systemctl restart docker` to reload changes and (re)start the docker daemon.
 
 @x
 + Official ARM installation for Debian Jessie, Ubuntu Trusty, and Raspbian Jessie [#24815](https://github.com/docker/docker/pull/24815) [#25591](https://github.com/docker/docker/pull/25637)
-- Add selinux policy per distro/version, fixing issue preventing successful installation on Fedora 24, and Oracle Linux [#25334](https://github.com/docker/docker/pull/25334) [#25593](https://github.com/docker/docker/pull/25593)
+- Add selinux policy per distribution/version, fixing issue preventing successful installation on Fedora 24, and Oracle Linux [#25334](https://github.com/docker/docker/pull/25334) [#25593](https://github.com/docker/docker/pull/25593)
 @y
 + Official ARM installation for Debian Jessie, Ubuntu Trusty, and Raspbian Jessie [#24815](https://github.com/docker/docker/pull/24815) [#25591](https://github.com/docker/docker/pull/25637)
-- Add selinux policy per distro/version, fixing issue preventing successful installation on Fedora 24, and Oracle Linux [#25334](https://github.com/docker/docker/pull/25334) [#25593](https://github.com/docker/docker/pull/25593)
+- Add selinux policy per distribution/version, fixing issue preventing successful installation on Fedora 24, and Oracle Linux [#25334](https://github.com/docker/docker/pull/25334) [#25593](https://github.com/docker/docker/pull/25593)
 @z
 
 @x

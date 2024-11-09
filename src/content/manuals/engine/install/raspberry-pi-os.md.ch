@@ -125,13 +125,13 @@ Before you can install Docker Engine, you need to uninstall any conflicting pack
 @z
 
 @x
-Distro maintainers provide an unofficial distributions of Docker packages in
-APT. You must uninstall these packages before you can install the official
-version of Docker Engine.
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @y
-Distro maintainers provide an unofficial distributions of Docker packages in
-APT. You must uninstall these packages before you can install the official
-version of Docker Engine.
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @z
 
 @x
@@ -346,24 +346,10 @@ Docker from the repository.
    available versions in the repository:
 @z
 
-@x
-   ```console
+@x within code
    # List the available versions:
-   $ apt-cache madison docker-ce | awk '{ print $3 }'
-
-   5:27.1.1-1~raspbian.12~bookworm
-   5:27.1.0-1~raspbian.12~bookworm
-   ...
-   ```
 @y
-   ```console
-   # List the available versions:
-   $ apt-cache madison docker-ce | awk '{ print $3 }'
-
-   5:27.1.1-1~raspbian.12~bookworm
-   5:27.1.0-1~raspbian.12~bookworm
-   ...
-   ```
+   # 利用可能バージョンの一覧表示
 @z
 
 @x
@@ -383,11 +369,9 @@ Docker from the repository.
 @z
 
 @x
-3. Verify that the installation is successful by running the `hello-world`
-   image:
+3. Verify that the installation is successful by running the `hello-world` image:
 @y
-3. Verify that the installation is successful by running the `hello-world`
-   image:
+3. Verify that the installation is successful by running the `hello-world` image:
 @z
 
 @x
@@ -529,11 +513,9 @@ download a new file each time you want to upgrade Docker Engine.
 @z
 
 @x
-6. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image:
+6. Verify that the installation is successful by running the `hello-world` image:
 @y
-6. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image:
+6. Verify that the installation is successful by running the `hello-world` image:
 @z
 
 @x
@@ -595,39 +577,39 @@ To upgrade Docker Engine, download the newer package files and repeat the
 @z
 
 @x
-1.  Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
+1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @y
-1.  Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
+1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @z
 
 @x
-    ```console
-    $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-    ```
+   ```console
+   $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+   ```
 @y
-    ```console
-    $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-    ```
+   ```console
+   $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
+   ```
 @z
 
 @x
-2.  Images, containers, volumes, or custom configuration files on your host
-    aren't automatically removed. To delete all images, containers, and volumes:
+2. Images, containers, volumes, or custom configuration files on your host
+   aren't automatically removed. To delete all images, containers, and volumes:
 @y
-2.  Images, containers, volumes, or custom configuration files on your host
-    aren't automatically removed. To delete all images, containers, and volumes:
+2. Images, containers, volumes, or custom configuration files on your host
+   aren't automatically removed. To delete all images, containers, and volumes:
 @z
 
 @x
-    ```console
-    $ sudo rm -rf /var/lib/docker
-    $ sudo rm -rf /var/lib/containerd
-    ```
+   ```console
+   $ sudo rm -rf /var/lib/docker
+   $ sudo rm -rf /var/lib/containerd
+   ```
 @y
-    ```console
-    $ sudo rm -rf /var/lib/docker
-    $ sudo rm -rf /var/lib/containerd
-    ```
+   ```console
+   $ sudo rm -rf /var/lib/docker
+   $ sudo rm -rf /var/lib/containerd
+   ```
 @z
 
 @x

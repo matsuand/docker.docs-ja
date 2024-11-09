@@ -76,16 +76,16 @@ Docker Desktop のインストール手順については以下を参照して�
 @z
 
 @x
-### Other Linux distros
+### Other Linux distributions
 @y
-### その他の Linux ディストロ {#other-linux-distros}
+### その他の Linux ディストリビューション {#other-linux-distributions}
 @z
 
 @x
 > [!NOTE]
 >
 > While the following instructions may work, Docker doesn't test or verify
-> installation on distro derivatives.
+> installation on distribution derivatives.
 @y
 > [!NOTE]
 >
@@ -95,8 +95,8 @@ Docker Desktop のインストール手順については以下を参照して�
 @x
 - If you use Debian derivatives such as "BunsenLabs Linux", "Kali Linux" or 
   "LMDE" (Debian-based Mint) should follow the installation instructions for
-  [Debian](debian.md), substitute the version of your distro for the
-  corresponding Debian release. Refer to the documentation of your distro to find
+  [Debian](debian.md), substitute the version of your distribution for the
+  corresponding Debian release. Refer to the documentation of your distribution to find
   which Debian release corresponds with your derivative version.
 @y
 - Debian 派生ディストリビューション、たとえば "BunsenLabs Linux"、"Kali Linux"、"LMDE" (Debian ベースの Mint) などを利用するユーザーは、[Debian](debian.md) に示すインストール手順に従ってください。
@@ -107,8 +107,8 @@ Docker Desktop のインストール手順については以下を参照して�
 @x
 - Likewise, if you use Ubuntu derivatives such as "Kubuntu", "Lubuntu" or "Xubuntu"
   you should follow the installation instructions for [Ubuntu](ubuntu.md),
-  substituting the version of your distro for the corresponding Ubuntu release.
-  Refer to the documentation of your distro to find which Ubuntu release
+  substituting the version of your distribution for the corresponding Ubuntu release.
+  Refer to the documentation of your distribution to find which Ubuntu release
   corresponds with your derivative version.
 @y
 - 同様に Ubuntu 派生ディストリビューション、たとえば "Kubuntu"、"Lubuntu"、"Xubuntu" などを利用するユーザーは、[Ubuntu](ubuntu.md) に示すインストール手順に従ってください。
@@ -117,12 +117,12 @@ Docker Desktop のインストール手順については以下を参照して�
 @z
 
 @x
-- Some Linux distros provide a package of Docker Engine through their
+- Some Linux distributions provide a package of Docker Engine through their
   package repositories. These packages are built and maintained by the Linux
-  distro's package maintainers and may have differences in configuration
+  distribution's package maintainers and may have differences in configuration
   or are built from modified source code. Docker isn't involved in releasing these
   packages and you should report any bugs or issues involving these packages to
-  your Linux distro's issue tracker.
+  your Linux distribution's issue tracker.
 @y
 - Linux ディストリビューションの中には、パッケージリポジトリから Docker Engine パッケージを提供しているものがあります。
   このようなパッケージは、そのパッケージ配布の担当者がビルドし保守を行っています。
@@ -133,7 +133,7 @@ Docker Desktop のインストール手順については以下を参照して�
 
 @x
 Docker provides [binaries](binaries.md) for manual installation of Docker Engine.
-These binaries are statically linked and you can use them on any Linux distro.
+These binaries are statically linked and you can use them on any Linux distribution.
 @y
 Docker Engine を手動でインストールするための [実行バイナリ](binaries.md) も提供されています。
 このバイナリはスタティックライブラリをリンクしているため、どのような Linux ディストリビューションでも利用可能です。

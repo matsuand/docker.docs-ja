@@ -134,21 +134,21 @@ Now `docker` commands work from Windows using the new WSL 2 engine.
 @z
 
 @x
-## Enabling Docker support in WSL 2 distros
+## Enabling Docker support in WSL 2 distributions
 @y
-## Enabling Docker support in WSL 2 distros
+## Enabling Docker support in WSL 2 distributions
 @z
 
 @x
-WSL 2 adds support for "Linux distros" to Windows, where each distro behaves like a VM except they all run on top of a single shared Linux kernel.
+WSL 2 adds support for "Linux distributions" to Windows, where each distribution behaves like a VM except they all run on top of a single shared Linux kernel.
 @y
-WSL 2 adds support for "Linux distros" to Windows, where each distro behaves like a VM except they all run on top of a single shared Linux kernel.
+WSL 2 adds support for "Linux distributions" to Windows, where each distribution behaves like a VM except they all run on top of a single shared Linux kernel.
 @z
 
 @x
-Docker Desktop does not require any particular Linux distros to be installed. The `docker` CLI and UI all work fine from Windows without any additional Linux distros. However for the best developer experience, we recommend installing at least one additional distro and enable Docker support:
+Docker Desktop does not require any particular Linux distributions to be installed. The `docker` CLI and UI all work fine from Windows without any additional Linux distributions. However for the best developer experience, we recommend installing at least one additional distribution and enable Docker support:
 @y
-Docker Desktop does not require any particular Linux distros to be installed. The `docker` CLI and UI all work fine from Windows without any additional Linux distros. However for the best developer experience, we recommend installing at least one additional distro and enable Docker support:
+Docker Desktop does not require any particular Linux distributions to be installed. The `docker` CLI and UI all work fine from Windows without any additional Linux distributions. However for the best developer experience, we recommend installing at least one additional distribution and enable Docker support:
 @z
 
 @x
@@ -174,18 +174,18 @@ Docker Desktop does not require any particular Linux distros to be installed. Th
 @z
 
 @x
-    To upgrade the Linux distro to v2, run:
+    To upgrade the Linux distribution to v2, run:
 @y
-    To upgrade the Linux distro to v2, run:
+    To upgrade the Linux distribution to v2, run:
 @z
 
 @x
     ```console
-    $ wsl.exe --set-version (distro name) 2
+    $ wsl.exe --set-version (distribution name) 2
     ```
 @y
     ```console
-    $ wsl.exe --set-version (distro name) 2
+    $ wsl.exe --set-version (distribution name) 2
     ```
 @z
 
@@ -212,14 +212,14 @@ Docker Desktop does not require any particular Linux distros to be installed. Th
 @z
 
 @x
-    The Docker-WSL integration is enabled on the default WSL distribution, which is [Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/install). To change your default WSL distro, run:
+    The Docker-WSL integration is enabled on the default WSL distribution, which is [Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/install). To change your default WSL distribution, run:
      ```console
-    $ wsl --set-default <distro name>
+    $ wsl --set-default <distribution name>
     ```
 @y
-    The Docker-WSL integration is enabled on the default WSL distribution, which is [Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/install). To change your default WSL distro, run:
+    The Docker-WSL integration is enabled on the default WSL distribution, which is [Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/install). To change your default WSL distribution, run:
      ```console
-    $ wsl --set-default <distro name>
+    $ wsl --set-default <distribution name>
     ```
 @z
 
@@ -232,19 +232,19 @@ Docker Desktop does not require any particular Linux distros to be installed. Th
 @x
 > [!NOTE]
 >
-> With Docker Desktop version 4.30 and earlier, Docker Desktop installed two special-purpose internal Linux distros `docker-desktop` and `docker-desktop-data`. `docker-desktop` is used to run the Docker engine `dockerd`, while `docker-desktop-data` stores containers and images. Neither can be used for general development.
+> With Docker Desktop version 4.30 and earlier, Docker Desktop installed two special-purpose internal Linux distributions `docker-desktop` and `docker-desktop-data`. `docker-desktop` is used to run the Docker engine `dockerd`, while `docker-desktop-data` stores containers and images. Neither can be used for general development.
 >
 > With fresh installations of Docker Desktop 4.30 and later, `docker-desktop-data` is no longer created. Instead, Docker Desktop creates and 
-> manages its own virtual hard disk for storage. The `docker-desktop` distro is still created and used to run the Docker engine.
+> manages its own virtual hard disk for storage. The `docker-desktop` distribution is still created and used to run the Docker engine.
 >
 > Note that Docker Desktop version 4.30 and later keeps using the `docker-desktop-data` distribution if it was already created by an earlier version of Docker Desktop and has not been freshly installed or factory reset.
 @y
 > [!NOTE]
 >
-> With Docker Desktop version 4.30 and earlier, Docker Desktop installed two special-purpose internal Linux distros `docker-desktop` and `docker-desktop-data`. `docker-desktop` is used to run the Docker engine `dockerd`, while `docker-desktop-data` stores containers and images. Neither can be used for general development.
+> With Docker Desktop version 4.30 and earlier, Docker Desktop installed two special-purpose internal Linux distributions `docker-desktop` and `docker-desktop-data`. `docker-desktop` is used to run the Docker engine `dockerd`, while `docker-desktop-data` stores containers and images. Neither can be used for general development.
 >
 > With fresh installations of Docker Desktop 4.30 and later, `docker-desktop-data` is no longer created. Instead, Docker Desktop creates and 
-> manages its own virtual hard disk for storage. The `docker-desktop` distro is still created and used to run the Docker engine.
+> manages its own virtual hard disk for storage. The `docker-desktop` distribution is still created and used to run the Docker engine.
 >
 > Note that Docker Desktop version 4.30 and later keeps using the `docker-desktop-data` distribution if it was already created by an earlier version of Docker Desktop and has not been freshly installed or factory reset.
 @z

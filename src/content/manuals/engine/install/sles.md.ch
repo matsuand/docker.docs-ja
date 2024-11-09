@@ -2,61 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to install Docker Engine on SLES. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, install docker engine, centos, rpm, sles, install, uninstall,
   upgrade, update, s390x, ibm-z
 title: Install Docker Engine on SLES (s390x)
 linkTitle: SLES (s390x)
-weight: 70
-toc_max: 4
-aliases:
-- /ee/docker-ee/sles/
-- /ee/docker-ee/suse/
-- /engine/installation/linux/docker-ce/sles/
-- /engine/installation/linux/docker-ee/sles/
-- /engine/installation/linux/docker-ee/suse/
-- /engine/installation/linux/sles/
-- /engine/installation/linux/SUSE/
-- /engine/installation/linux/suse/
-- /engine/installation/sles/
-- /engine/installation/SUSE/
-- /install/linux/docker-ce/sles/
-- /install/linux/docker-ee/sles/
-- /install/linux/docker-ee/suse/
-- /install/linux/sles/
-- /installation/sles/
-download-url-base: https://download.docker.com/linux/sles
----
 @y
----
 description: Learn how to install Docker Engine on SLES. These instructions cover
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, apt, installation, install docker engine, centos, rpm, sles, install, uninstall,
   upgrade, update, s390x, ibm-z
 title: Install Docker Engine on SLES (s390x)
 linkTitle: SLES (s390x)
-weight: 70
-toc_max: 4
-aliases:
-- /ee/docker-ee/sles/
-- /ee/docker-ee/suse/
-- /engine/installation/linux/docker-ce/sles/
-- /engine/installation/linux/docker-ee/sles/
-- /engine/installation/linux/docker-ee/suse/
-- /engine/installation/linux/sles/
-- /engine/installation/linux/SUSE/
-- /engine/installation/linux/suse/
-- /engine/installation/sles/
-- /engine/installation/SUSE/
-- /install/linux/docker-ce/sles/
-- /install/linux/docker-ee/sles/
-- /install/linux/docker-ee/suse/
-- /install/linux/sles/
-- /installation/sles/
-download-url-base: https://download.docker.com/linux/sles
----
 @z
 
 @x
@@ -125,17 +83,7 @@ You must add the [OpenSUSE `SELinux` repository](https://download.opensuse.org/r
 You must add the [OpenSUSE `SELinux` repository](https://download.opensuse.org/repositories/security:/SELinux/). This repository is not added by default. Run the following commands to add it:
 @z
 
-@x
-```console
-$ opensuse_repo="https://download.opensuse.org/repositories/security:/SELinux/openSUSE_Factory/security:SELinux.repo"
-$ sudo zypper addrepo $opensuse_repo
-```
-@y
-```console
-$ opensuse_repo="https://download.opensuse.org/repositories/security:/SELinux/openSUSE_Factory/security:SELinux.repo"
-$ sudo zypper addrepo $opensuse_repo
-```
-@z
+% snip command...
 
 @x
 ### Uninstall old versions
@@ -144,40 +92,22 @@ $ sudo zypper addrepo $opensuse_repo
 @z
 
 @x
-Older versions of Docker went by `docker` or `docker-engine`.
-Uninstall any such older versions before attempting to install a new version,
-along with associated dependencies.
+Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @y
-Older versions of Docker went by `docker` or `docker-engine`.
-Uninstall any such older versions before attempting to install a new version,
-along with associated dependencies.
+Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @z
 
 @x
-```console
-$ sudo zypper remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine \
-                  runc
-```
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @y
-```console
-$ sudo zypper remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine \
-                  runc
-```
+Your Linux distribution may provide unofficial Docker packages, which may conflict
+with the official packages provided by Docker. You must uninstall these packages
+before you install the official version of Docker Engine.
 @z
+
+% snip command...
 
 @x
 `zypper` might report that you have none of these packages installed.
@@ -265,15 +195,7 @@ Set up the repository.
 Set up the repository.
 @z
 
-@x
-```console
-$ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
-```
-@y
-```console
-$ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
-```
-@z
+% snip command...
 
 @x
 #### Install Docker Engine
@@ -282,9 +204,9 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
 @z
 
 @x
-1. Install Docker Engine, containerd, and Docker Compose:
+1. Install the Docker packages.
 @y
-1. Install Docker Engine, containerd, and Docker Compose:
+1. Install the Docker packages.
 @z
 
 @x
@@ -301,15 +223,7 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
    To install the latest version, run:
 @z
 
-@x
-   ```console
-   $ sudo zypper install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo zypper install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    If prompted to accept the GPG key, verify that the fingerprint matches
@@ -343,23 +257,7 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
    the repository:
 @z
 
-@x
-   ```console
-   $ sudo zypper search -s --match-exact docker-ce | sort -r
-@y
-   ```console
-   $ sudo zypper search -s --match-exact docker-ce | sort -r
-@z
-
-@x
-     v  | docker-ce | package | 3:27.0.3-1 | s390x | Docker CE Stable - s390x
-     v  | docker-ce | package | 3:27.0.2-1 | s390x | Docker CE Stable - s390x
-   ```
-@y
-     v  | docker-ce | package | 3:27.0.3-1 | s390x | Docker CE Stable - s390x
-     v  | docker-ce | package | 3:27.0.2-1 | s390x | Docker CE Stable - s390x
-   ```
-@z
+% snip command...
 
 @x
    The list returned depends on which repositories are enabled, and is specific
@@ -372,11 +270,11 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.0.3`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.0.3`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1`.
 @z
 
 @x
@@ -387,15 +285,7 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
    command to install:
 @z
 
-@x
-   ```console
-   $ sudo zypper install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo zypper install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    This command installs Docker, but it doesn't start Docker. It also creates a
@@ -414,38 +304,30 @@ $ sudo zypper addrepo {{% param "download-url-base" %}}/docker-ce.repo
 @z
 
 @x
-2. Start Docker.
+2. Start Docker Engine.
 @y
-2. Start Docker.
+2. Start Docker Engine.
+@z
+
+% snip command...
+
+@x
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
+@y
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
 @z
 
 @x
-   ```console
-   $ sudo systemctl start docker
-   ```
+3. Verify that the installation is successful by running the `hello-world` image:
 @y
-   ```console
-   $ sudo systemctl start docker
-   ```
+3. Verify that the installation is successful by running the `hello-world` image:
 @z
 
-@x
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@y
-3. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@z
-
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -517,15 +399,7 @@ download a new file each time you want to upgrade Docker Engine.
    the Docker package.
 @z
 
-@x
-   ```console
-   $ sudo zypper install /path/to/package.rpm
-   ```
-@y
-   ```console
-   $ sudo zypper install /path/to/package.rpm
-   ```
-@z
+% snip command...
 
 @x
    Docker is installed but not started. The `docker` group is created, but no
@@ -536,38 +410,30 @@ download a new file each time you want to upgrade Docker Engine.
 @z
 
 @x
-3. Start Docker.
+3. Start Docker Engine.
 @y
-3. Start Docker.
+3. Start Docker Engine.
+@z
+
+% snip command...
+
+@x
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
+@y
+   This configures the Docker systemd service to start automatically when you
+   boot your system. If you don't want Docker to start automatically, use `sudo
+   systemctl start docker` instead.
 @z
 
 @x
-   ```console
-   $ sudo systemctl start docker
-   ```
+4. Verify that the installation is successful by running the `hello-world` image:
 @y
-   ```console
-   $ sudo systemctl start docker
-   ```
+4. Verify that the installation is successful by running the `hello-world` image:
 @z
 
-@x
-4. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@y
-4. Verify that the Docker Engine installation is successful by running the
-   `hello-world` image.
-@z
-
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -623,15 +489,7 @@ instead of `zypper -y install`, and point to the new files.
 1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @z
 
-@x
-   ```console
-   $ sudo zypper remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@y
-   ```console
-   $ sudo zypper remove docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@z
+% snip command...
 
 @x
 2. Images, containers, volumes, or custom configuration files on your host
@@ -641,17 +499,7 @@ instead of `zypper -y install`, and point to the new files.
    aren't automatically removed. To delete all images, containers, and volumes:
 @z
 
-@x
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@y
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@z
+% snip command...
 
 @x
 You have to delete any edited configuration files manually.

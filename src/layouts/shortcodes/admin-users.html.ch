@@ -9,7 +9,6 @@
 {{ $member_navigation := "Select **Organizations**, your organization, and then **Members**." }}
 {{ $remove_button := "**Remove member**" }}
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
-{{ $update_role := "Select the role you want to assign, then select **Save**." }}
 {{ $role_mapping_link := "[SCIM for role mapping](/security/for-admins/provisioning/scim/)" }}
 {{ $export_fields := `The CSV file for an organization contains the following fields:
 * **Name**: The user's name.
@@ -26,7 +25,6 @@
 {{ $member_navigation := "Select **Organizations**, your organization, and then **Members**." }}
 {{ $remove_button := "**Remove member**" }}
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
-{{ $update_role := "Select the role you want to assign, then select **Save**." }}
 {{ $role_mapping_link := "[SCIM for role mapping](__SUBDIR__/security/for-admins/provisioning/scim/)" }}
 {{ $export_fields := `The CSV file for an organization contains the following fields:
 * **Name**: The user's name.
@@ -57,7 +55,6 @@
 * **Account Created**: The time and date when the user account was created.` }}
 {{ $member_navigation = "Select your company in the left navigation drop-down menu, and then select **Users**." }}
 {{ $remove_button = "**Remove user**" }}
-{{ $update_role = "Select their organization, select the role you want to assign, and then select **Save**." }}
 {{ $role_mapping_link = "[SCIM for role mapping](/security/for-admins/provisioning/scim/)"}}
 {{ end }}
 {{ end }}
@@ -79,27 +76,20 @@
 * **Account Created**: The time and date when the user account was created.` }}
 {{ $member_navigation = "Select your company in the left navigation drop-down menu, and then select **Users**." }}
 {{ $remove_button = "**Remove user**" }}
-{{ $update_role = "Select their organization, select the role you want to assign, and then select **Save**." }}
 {{ $role_mapping_link = "[SCIM for role mapping](__SUBDIR__/security/for-admins/provisioning/scim/)"}}
 {{ end }}
 {{ end }}
 @z
 
 @x
-## Invite members
-@y
-## Invite members
-@z
-
-@x
-Owners can invite new members to an organization via Docker ID, email address, or via a CSV file containing email
+Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email
 addresses. If an invitee does not have a Docker account, they must create an account and verify their email address
-before they can accept the invitation to join the organization. When inviting members, their pending invitation occupies
+before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies
 a seat.
 @y
-Owners can invite new members to an organization via Docker ID, email address, or via a CSV file containing email
+Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email
 addresses. If an invitee does not have a Docker account, they must create an account and verify their email address
-before they can accept the invitation to join the organization. When inviting members, their pending invitation occupies
+before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies
 a seat.
 @z
 
@@ -134,13 +124,13 @@ of members to your organization via CSV file, see the next section.
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > When you invite members, you assign them a role.
    > See [Roles and permissions](/security/for-admins/roles-and-permissions/)
    > for details about the access permissions for each role.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > When you invite members, you assign them a role.
    > See [Roles and permissions](__SUBDIR__/security/for-admins/roles-and-permissions/)
@@ -240,14 +230,14 @@ To invite multiple members to an organization via a CSV file containing email ad
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > If the amount of email addresses in your CSV file exceeds the number of available seats in your organization, you
    > cannot continue to invite members. To invite members, you can purchase more seats, or remove some email addresses from
    > the CSV file and re-select the new file. To purchase more seats, see [Add seats to your
    > subscription](/subscription/add-seats/) or [Contact sales](https://www.docker.com/pricing/contact-sales/).
 @y
-   > **Note**
+   > [!NOTE]
    >
    > If the amount of email addresses in your CSV file exceeds the number of available seats in your organization, you
    > cannot continue to invite members. To invite members, you can purchase more seats, or remove some email addresses from
@@ -270,20 +260,20 @@ To invite multiple members to an organization via a CSV file containing email ad
 @z
 
 @x
-   - **Invalid email**: The email address is not a valid address.
+   - Invalid email: The email address is not a valid address.
      The email address will be ignored if you send invites.
      You can correct the email address in the CSV file and re-import the file.
-   - **Already invited**: The user has already been sent an invite email and another invite email will not be sent.
-   - **Member**: The user is already a member of your organization and an invite email will not be sent.
-   - **Duplicate**: The CSV file has multiple occurrences of the same email address.
+   - Already invited: The user has already been sent an invite email and another invite email will not be sent.
+   - Member: The user is already a member of your organization and an invite email will not be sent.
+   - Duplicate: The CSV file has multiple occurrences of the same email address.
      The user will be sent only one invite email.
 @y
-   - **Invalid email**: The email address is not a valid address.
+   - Invalid email: The email address is not a valid address.
      The email address will be ignored if you send invites.
      You can correct the email address in the CSV file and re-import the file.
-   - **Already invited**: The user has already been sent an invite email and another invite email will not be sent.
-   - **Member**: The user is already a member of your organization and an invite email will not be sent.
-   - **Duplicate**: The CSV file has multiple occurrences of the same email address.
+   - Already invited: The user has already been sent an invite email and another invite email will not be sent.
+   - Member: The user is already a member of your organization and an invite email will not be sent.
+   - Duplicate: The CSV file has multiple occurrences of the same email address.
      The user will be sent only one invite email.
 @z
 
@@ -294,13 +284,13 @@ To invite multiple members to an organization via a CSV file containing email ad
 @z
 
 @x
-   > **Note**
+   > [!NOTE]
    >
    > When you invite members, you assign them a role.
    > See [Roles and permissions](/security/for-admins/roles-and-permissions/)
    > for details about the access permissions for each role.
 @y
-   > **Note**
+   > [!NOTE]
    >
    > When you invite members, you assign them a role.
    > See [Roles and permissions](__SUBDIR__/security/for-admins/roles-and-permissions/)
@@ -313,130 +303,4 @@ or decline the invitation.
 @y
 Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept
 or decline the invitation.
-@z
-
-@x
-## Resend invitations
-@y
-## Resend invitations
-@z
-
-@x
-To resend an invitation if the invite is pending or declined:
-@y
-To resend an invitation if the invite is pending or declined:
-@z
-
-@x
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. In the table, locate the invitee, select the **Action** icon, and then select **Resend invitation**.
-4. Select **Invite** to confirm.
-@y
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. In the table, locate the invitee, select the **Action** icon, and then select **Resend invitation**.
-4. Select **Invite** to confirm.
-@z
-
-@x
-## Remove a member or invitee
-@y
-## Remove a member or invitee
-@z
-
-@x
-To remove a member from an organization:
-@y
-To remove a member from an organization:
-@z
-
-@x
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. In the table, select the **Action** icon, and then select {{ $remove_button }} or **Remove invitee**.
-4. Follow the on-screen instructions to remove the member or invitee.
-@y
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. In the table, select the **Action** icon, and then select {{ $remove_button }} or **Remove invitee**.
-4. Follow the on-screen instructions to remove the member or invitee.
-@z
-
-@x
-## Update a member role
-@y
-## Update a member role
-@z
-
-@x
-Organization owners can manage [roles](/security/for-admins/roles-and-permissions/)
-within an organization. If an organization is part of a company,
-the company owner can also manage that organization's roles. If you have SSO enabled, you can use {{ $role_mapping_link }}.
-@y
-Organization owners can manage [roles](__SUBDIR__/security/for-admins/roles-and-permissions/)
-within an organization. If an organization is part of a company,
-the company owner can also manage that organization's roles. If you have SSO enabled, you can use {{ $role_mapping_link }}.
-@z
-
-@x
-> **Note**
->
-> If you're the only owner of an organization,
-> you need to assign a new owner before you can edit your role.
-@y
-> **Note**
->
-> If you're the only owner of an organization,
-> you need to assign a new owner before you can edit your role.
-@z
-
-@x
-To update a member role:
-@y
-To update a member role:
-@z
-
-@x
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
-4. Select **Edit role**.
-5. {{ $update_role }}
-@y
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
-4. Select **Edit role**.
-5. {{ $update_role }}
-@z
-
-@x
-## Export members
-@y
-## Export members
-@z
-
-@x
-Owners can export a CSV file containing all members.
-{{ $export_fields }}
-@y
-Owners can export a CSV file containing all members.
-{{ $export_fields }}
-@z
-
-@x
-To export a CSV file of the members:
-@y
-To export a CSV file of the members:
-@z
-
-@x
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. Select {{ $export_button }}.
-@y
-1. Sign in to {{ $product_link }}.
-2. {{ $member_navigation }}
-3. Select {{ $export_button }}.
 @z
