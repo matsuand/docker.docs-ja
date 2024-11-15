@@ -3676,9 +3676,13 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -3716,9 +3720,13 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -3748,9 +3756,13 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -3784,9 +3796,13 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -3844,9 +3860,13 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -3868,9 +3888,13 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -4982,9 +5006,13 @@ events or unexpected unmounts.
 @z
 
 @x
->**Note**: Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
+> [!NOTE]
+>
+> Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
 @y
->**Note**: Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
+> [!NOTE]
+>
+> Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
 @z
 
 @x

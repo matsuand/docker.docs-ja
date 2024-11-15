@@ -224,14 +224,14 @@ multiple Dockerfiles that can't be easily merged into one.
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
-> As of Buildx version 0.17.0 and later, Bake automatically deduplicates
+> As of Buildx version 0.17.0 and later, Bake automatically de-duplicates
 > context transfer for targets that share the same context. In addition to
 > Buildx version 0.17.0, the builder must be running BuildKit version 0.16.0 or
 > later, and the Dockerfile syntax must be `docker/dockerfile:1.10` or later.
 >
-> If you meet these requirements, you don't need to manually deduplicate
+> If you meet these requirements, you don't need to manually de-duplicate
 > context transfer as described in this section.
 >
 > - To check your Buildx version, run `docker buildx version`.
@@ -243,21 +243,21 @@ multiple Dockerfiles that can't be easily merged into one.
 >   current version of BuildKit. To set the version explicitly, add
 >   `#syntax=docker/dockerfile:1.10` at the top of your Dockerfile.
 @y
-> **Note**
+> [!NOTE]
 >
-> As of Buildx version 0.17.0 and later, Bake automatically deduplicates
+> As of Buildx version 0.17.0 and later, Bake automatically de-duplicates
 > context transfer for targets that share the same context. In addition to
 > Buildx version 0.17.0, the builder must be running BuildKit version 0.16.0 or
 > later, and the Dockerfile syntax must be `docker/dockerfile:1.10` or later.
 >
-> If you meet these requirements, you don't need to manually deduplicate
+> If you meet these requirements, you don't need to manually de-duplicate
 > context transfer as described in this section.
 >
 > - To check your Buildx version, run `docker buildx version`.
 > - To check your BuildKit version, run `docker buildx inspect --bootstrap` and
 >   look for the `BuildKit version` field.
 > - To check your Dockerfile syntax version, check the `syntax`
->   [parser directive](reference/dockerfile.md#syntax) in your Dockerfile. If
+>   [parser directive](/reference/dockerfile.md#syntax) in your Dockerfile. If
 >   it's not present, the default version whatever comes bundled with your
 >   current version of BuildKit. To set the version explicitly, add
 >   `#syntax=docker/dockerfile:1.10` at the top of your Dockerfile.

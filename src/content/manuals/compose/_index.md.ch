@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Docker Compose overview
-linkTitle: Docker Compose
+title: Docker Compose
 @y
-title: Docker Compose 概要
-linkTitle: Docker Compose
+title: Docker Compose
 @z
 
 @x

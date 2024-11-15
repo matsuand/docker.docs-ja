@@ -38,14 +38,14 @@ configured to use either Hyper-V or WSL 2.
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
 > Docker Desktop requires WSL 2 version 1.1.3.0 or later. To get the current
 > version of WSL on your host, type `wsl --version`. If the command fails or if
 > it returns a version number prior to 1.1.3.0, update WSL to the latest version
 > by typing `wsl --update` in a Windows command or PowerShell terminal.
 @y
->**Note**
+> [!NOTE]
 >
 > Docker Desktop requires WSL 2 version 1.1.3.0 or later. To get the current
 > version of WSL on your host, type `wsl --version`. If the command fails or if

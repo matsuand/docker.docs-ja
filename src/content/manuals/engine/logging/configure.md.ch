@@ -38,9 +38,9 @@ included with Docker, you can also implement and use [logging driver plugins](pl
 @z
 
 @x
-> **Tip: use the `local` logging driver to prevent disk-exhaustion**
+> [!TIP]
 >
-> By default, no log-rotation is performed. As a result, log-files stored by the
+> Use the `local` logging driver to prevent disk-exhaustion. By default, no log-rotation is performed. As a result, log-files stored by the
 > default [`json-file` logging driver](drivers/json-file.md) logging driver can cause
 > a significant amount of disk space to be used for containers that generate much
 > output, which can lead to disk space exhaustion.
@@ -56,9 +56,9 @@ included with Docker, you can also implement and use [logging driver plugins](pl
 > and the [local file logging driver](drivers/local.md) page for more details about the
 > `local` logging driver.
 @y
-> **Tip: use the `local` logging driver to prevent disk-exhaustion**
+> [!TIP]
 >
-> By default, no log-rotation is performed. As a result, log-files stored by the
+> Use the `local` logging driver to prevent disk-exhaustion. By default, no log-rotation is performed. As a result, log-files stored by the
 > default [`json-file` logging driver](drivers/json-file.md) logging driver can cause
 > a significant amount of disk space to be used for containers that generate much
 > output, which can lead to disk space exhaustion.

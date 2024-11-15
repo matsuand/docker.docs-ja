@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Administration overview
-linkTitle: Administration
+title: Administration
 @y
-title: Administration overview
-linkTitle: Administration
+title: Administration
 @z
 
 @x

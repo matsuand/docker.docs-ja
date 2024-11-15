@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Overview of Docker Build
-linkTitle: Docker Build
+title: Docker Build
 @y
-title: Docker Build 概要
-linkTitle: Docker Build
+title: Docker Build
 @z
 
 @x

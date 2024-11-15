@@ -693,10 +693,10 @@ maintainable.
 
 @x
 For example, you can chain commands with the `&&` operator, and use
-use escape characters to break long commands into multiple lines.
+escape characters to break long commands into multiple lines.
 @y
 For example, you can chain commands with the `&&` operator, and use
-use escape characters to break long commands into multiple lines.
+escape characters to break long commands into multiple lines.
 @z
 
 % snip code...

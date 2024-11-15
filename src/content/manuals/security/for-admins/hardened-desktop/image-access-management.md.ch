@@ -24,9 +24,9 @@ title: Image Access Management
 @z
 
 @x
-Image Access Management gives administrators control over which types of images, such as Docker Official Images, Docker Verified Publisher Images, or community images, their developers can pull from Docker Hub.
+Image Access Management gives you control over which types of images, such as Docker Official Images, Docker Verified Publisher Images, or community images, your developers can pull from Docker Hub.
 @y
-Image Access Management gives administrators control over which types of images, such as Docker Official Images, Docker Verified Publisher Images, or community images, their developers can pull from Docker Hub.
+Image Access Management gives you control over which types of images, such as Docker Official Images, Docker Verified Publisher Images, or community images, your developers can pull from Docker Hub.
 @z
 
 @x
@@ -42,25 +42,15 @@ For example, a developer, who is part of an organization, building a new contain
 @z
 
 @x
-You need to [enforce sign-in](../enforce-sign-in/_index.md). For Image Access
-Management to take effect, Docker Desktop users must authenticate to your
-organization. Enforcing sign-in ensures that your Docker Desktop developers
-always authenticate to your organization, even though they can authenticate
-without it and the feature will take effect. Enforcing sign-in guarantees the
-feature always takes effect.
+You first need to [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md) to ensure that all Docker Desktop developers authenticate with your organization. Since Image Access Management requires a Docker Business subscription, enforced sign-in guarantees that only authenticated users have access and that the feature consistently takes effect across all users, even though it may still work without enforced sign-in.
 @y
-You need to [enforce sign-in](../enforce-sign-in/_index.md). For Image Access
-Management to take effect, Docker Desktop users must authenticate to your
-organization. Enforcing sign-in ensures that your Docker Desktop developers
-always authenticate to your organization, even though they can authenticate
-without it and the feature will take effect. Enforcing sign-in guarantees the
-feature always takes effect.
+You first need to [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md) to ensure that all Docker Desktop developers authenticate with your organization. Since Image Access Management requires a Docker Business subscription, enforced sign-in guarantees that only authenticated users have access and that the feature consistently takes effect across all users, even though it may still work without enforced sign-in.
 @z
 
 @x
-## Configure Image Access Management permissions
+## Configure
 @y
-## Configure Image Access Management permissions
+## Configure
 @z
 
 @x

@@ -66,11 +66,11 @@ A [secret](reference/compose-file/secrets.md) is a specific flavor of configurat
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
 > With volumes, configs and secrets you can have a simple declaration at the top-level and then add more platform-specific information at the service level.
 @y
->**Note**
+> [!NOTE]
 >
 > With volumes, configs and secrets you can have a simple declaration at the top-level and then add more platform-specific information at the service level.
 @z

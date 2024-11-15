@@ -3,13 +3,21 @@
 
 @x
 title: Docker Scout demo
+linkTitle: Demo
 description: Learn about Docker Scout's powerful features for enhanced supply chain security.
 @y
 title: Docker Scout demo
+linkTitle: Demo
 description: Learn about Docker Scout's powerful features for enhanced supply chain security.
 @z
 
 @x
+{{< youtube-embed "TkLwJ0p46W8" >}}
+@y
+{{< youtube-embed "TkLwJ0p46W8" >}}
+@z
+
+@x
 Docker Scout has powerful features for enhancing containerized application
 security and ensuring a robust software supply chain.
 @y
@@ -33,12 +41,6 @@ security and ensuring a robust software supply chain.
 - Implement remediation techniques: updating base images, applying patches,
   removing unnecessary packages
 - Verify and validate remediation efforts using Docker Scout
-@z
-
-@x
-{{< youtube-embed "TkLwJ0p46W8" >}}
-@y
-{{< youtube-embed "TkLwJ0p46W8" >}}
 @z
 
 @x

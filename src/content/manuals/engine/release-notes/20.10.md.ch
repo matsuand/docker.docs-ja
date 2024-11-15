@@ -962,25 +962,13 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 @z
 
 @x
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to [Configure the daemon to use a proxy](/manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to [Configure the daemon to use a proxy](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @y
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to [Configure the daemon to use a proxy](manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to [Configure the daemon to use a proxy](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @z
 
 @x
@@ -1032,25 +1020,13 @@ to learn how to use the `docker scan` command to check if images are vulnerable.
 @z
 
 @x
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @y
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to the [HTTP/HTTPS proxy section](manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @z
 
 @x
@@ -1132,25 +1108,13 @@ well as updated versions of the containerd.io package.
 @z
 
 @x
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @y
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to the [HTTP/HTTPS proxy section](manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @z
 
 @x
@@ -1238,25 +1202,13 @@ well as updated versions of the containerd.io package.
 @z
 
 @x
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @y
-> **IMPORTANT**
+> [!IMPORTANT]
 >
-> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http),
-> HTTP proxies configured through the `$HTTP_PROXY` environment variable are no
-> longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY`
-> environment variable for handling requests to `https://` URLs.
->
-> Refer to the [HTTP/HTTPS proxy section](manuals/engine/daemon/proxy.md)
-> to learn how to configure the Docker Daemon to use a proxy server.
+> Due to [net/http changes](https://github.com/golang/go/issues/40909) in [Go 1.16](https://golang.org/doc/go1.16#net/http), HTTP proxies configured through the `$HTTP_PROXY` environment variable are no longer used for TLS (`https://`) connections. Make sure you also set an `$HTTPS_PROXY` environment variable for handling requests to `https://` URLs. Refer to the [HTTP/HTTPS proxy section](/manuals/engine/daemon/proxy.md) to learn how to configure the Docker Daemon to use a proxy server.
 @z
 
 @x

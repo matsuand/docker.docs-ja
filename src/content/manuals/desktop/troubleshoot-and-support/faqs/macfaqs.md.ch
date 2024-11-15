@@ -180,11 +180,11 @@ To move the disk image file to a different location:
 @z
 
 @x
->**Important**
+> [!IMPORTANT]
 >
 > Do not move the file directly in Finder as this can cause Docker Desktop to lose track of the file.
 @y
->**Important**
+> [!IMPORTANT]
 >
 > Do not move the file directly in Finder as this can cause Docker Desktop to lose track of the file.
 @z

@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Overview of Docker Extensions
-linkTitle: Docker Extensions
+title: Docker Extensions
 @y
-title: Docker Extensions 概要
-linkTitle: Docker Extensions
+title: Docker Extensions
 @z
 
 @x

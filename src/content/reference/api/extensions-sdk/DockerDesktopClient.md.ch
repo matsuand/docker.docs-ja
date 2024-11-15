@@ -60,11 +60,11 @@ The client is already connected to the backend.
 @z
 
 @x
->**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [extension](DockerDesktopClient.md#extension) instead.
 @y
->**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [extension](DockerDesktopClient.md#extension) instead.
 @z
@@ -254,11 +254,11 @@ const containers = await window.ddClient.listContainers();
 @z
 
 @x
->**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [listContainers](Docker.md#listcontainers) instead.
 @y
->**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [listContainers](Docker.md#listcontainers) instead.
 @z
@@ -345,11 +345,11 @@ const images = await window.ddClient.listImages();
 
 @x
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [listImages](Docker.md#listimages) instead.
 @y
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [listImages](Docker.md#listimages) instead.
 @z
 
@@ -431,11 +431,11 @@ window.ddClient.navigateToContainers();
 
 @x
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [viewContainers](NavigationIntents.md#viewcontainers) instead.
 @y
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [viewContainers](NavigationIntents.md#viewcontainers) instead.
 @z
 
@@ -757,11 +757,11 @@ await window.ddClient.navigateToContainerStats(id);
 
 @x
 > [!WARNING]
-> 
+>
 > It will be removed in a future version.
 @y
 > [!WARNING]
-> 
+>
 > It will be removed in a future version.
 @z
 
@@ -1157,11 +1157,11 @@ window.ddClient.navigateToDevEnvironments();
 
 @x
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [viewDevEnvironments](NavigationIntents.md#viewdevenvironments) instead.
 @y
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [viewDevEnvironments](NavigationIntents.md#viewdevenvironments) instead.
 @z
 
@@ -1235,11 +1235,11 @@ window.ddClient.execHostCmd(`cliShippedOnHost xxx`).then((cmdResult: any) => {
 
 @x
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [exec](ExtensionCli.md#exec) instead.
 @y
 > [!WARNING]
-> 
+>
 > It will be removed in a future version. Use [exec](ExtensionCli.md#exec) instead.
 @z
 
@@ -1636,11 +1636,11 @@ window.ddClient.openExternal("https://docker.com");
 @z
 
 @x
-**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [openExternal](Host.md#openexternal) instead.
 @y
-**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [openExternal](Host.md#openexternal) instead.
 @z
@@ -1894,11 +1894,11 @@ window.ddClient.toastError("message");
 @z
 
 @x
->**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [error](Toast.md#error) instead.
 @y
->**Warning**
+> [!WARNING]
 >
 > It will be removed in a future version. Use [error](Toast.md#error) instead.
 @z

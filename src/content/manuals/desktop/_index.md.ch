@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Overview of Docker Desktop
-linkTitle: Docker Desktop
+title: Docker Desktop
 @y
-title: Docker Desktop の概要
-linkTitle: Docker Desktop
+title: Docker Desktop
 @z
 
 @x

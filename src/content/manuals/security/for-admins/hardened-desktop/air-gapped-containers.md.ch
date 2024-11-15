@@ -20,9 +20,9 @@ keywords: air gapped, security, Docker Desktop, configuration, proxy, network
 @z
 
 @x
-Air-Gapped Containers allows administrators to restrict containers from accessing network resources, limiting where data can be uploaded to or downloaded from.
+Air-gapped containers let you restrict containers from accessing network resources, limiting where data can be uploaded to or downloaded from.
 @y
-Air-Gapped Containers allows administrators to restrict containers from accessing network resources, limiting where data can be uploaded to or downloaded from.
+Air-gapped containers let you restrict containers from accessing network resources, limiting where data can be uploaded to or downloaded from.
 @z
 
 @x
@@ -32,11 +32,11 @@ Docker Desktop can apply a custom set of proxy rules to network traffic from con
 @z
 
 @x
-- Allow network connections
+- Accept network connections
 - Reject network connections
 - Tunnel through an HTTP or SOCKS proxy
 @y
-- Allow network connections
+- Accept network connections
 - Reject network connections
 - Tunnel through an HTTP or SOCKS proxy
 @z
@@ -194,12 +194,12 @@ The `FindProxyForURL` can return the following values:
 @x
 - `PROXY host_or_ip:port`: Tunnels this request through the HTTP proxy `host_or_ip:port`
 - `SOCKS5 host_or_ip:port`: Tunnels this request through the SOCKS proxy `host_or_ip:port`
-- `DIRECT`: Allows this request to go direct, without a proxy
+- `DIRECT`: Lets this request go direct, without a proxy
 - `PROXY reject.docker.internal:any_port`: Rejects this request
 @y
 - `PROXY host_or_ip:port`: Tunnels this request through the HTTP proxy `host_or_ip:port`
 - `SOCKS5 host_or_ip:port`: Tunnels this request through the SOCKS proxy `host_or_ip:port`
-- `DIRECT`: Allows this request to go direct, without a proxy
+- `DIRECT`: Lets this request go direct, without a proxy
 - `PROXY reject.docker.internal:any_port`: Rejects this request
 @z
 

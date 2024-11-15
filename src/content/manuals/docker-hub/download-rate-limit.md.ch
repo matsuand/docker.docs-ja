@@ -299,8 +299,8 @@ URLs (`/v2/*/manifests/*`).
 > Docker is introducing enhanced subscription plans. Our new plans are packed
 > with more features, higher usage limits, and simplified pricing. The new
 > subscription plans take effect at your next renewal date that occurs on or
-> after November 1, 2024. No charges on Docker Hub image pulls or storage will
-> be incurred between November 15, 2024, and January 31, 2025. See [Announcing
+> after December 10, 2024. No charges on Docker Hub image pulls or storage will
+> be incurred before February 28, 2025. See [Announcing
 > Upgraded Docker
 > Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/)
 > for more details and learn how your usage fits into these updates.
@@ -330,8 +330,8 @@ URLs (`/v2/*/manifests/*`).
 > Docker is introducing enhanced subscription plans. Our new plans are packed
 > with more features, higher usage limits, and simplified pricing. The new
 > subscription plans take effect at your next renewal date that occurs on or
-> after November 1, 2024. No charges on Docker Hub image pulls or storage will
-> be incurred between November 15, 2024, and January 31, 2025. See [Announcing
+> after December 10, 2024. No charges on Docker Hub image pulls or storage will
+> be incurred before February 28, 2025. See [Announcing
 > Upgraded Docker
 > Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/)
 > for more details and learn how your usage fits into these updates.
@@ -458,12 +458,12 @@ These headers are returned on both GET and HEAD requests.
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
 > Using GET emulates a real pull and counts towards the limit. Using HEAD won't.
 > To check your limits, you need `curl`, `grep`, and `jq` installed.
 @y
->**Note**
+> [!NOTE]
 >
 > Using GET emulates a real pull and counts towards the limit. Using HEAD won't.
 > To check your limits, you need `curl`, `grep`, and `jq` installed.

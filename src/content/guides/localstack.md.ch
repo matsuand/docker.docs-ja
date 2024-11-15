@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: How to develop and test AWS Cloud applications using LocalStack and Docker
 keywords: LocalStack, container-supported development
@@ -145,17 +147,7 @@ Launch a quick demo of LocalStack by using the following steps:
 1. Start by [cloning a sample application](https://github.com/dockersamples/todo-list-localstack-docker). Open the terminal and run the following command:
 @z
 
-@x
-   ```console
-   $ git clone https://github.com/dockersamples/todo-list-localstack-docker
-   $ cd todo-list-localstack-docker
-   ```
-@y
-   ```console
-   $ git clone https://github.com/dockersamples/todo-list-localstack-docker
-   $ cd todo-list-localstack-docker
-   ```
-@z
+% snip command...
 
 @x
 2. Bring up LocalStack
@@ -169,15 +161,7 @@ Launch a quick demo of LocalStack by using the following steps:
    Run the following command to bring up LocalStack.   
 @z
 
-@x
-   ```console
-   $ docker compose -f compose-native.yml up -d
-   ```
-@y
-   ```console
-   $ docker compose -f compose-native.yml up -d
-   ```
-@z
+% snip command...
 
 @x
    This Compose file also includes specifications for a required Mongo database. You can verify the services are up and running by visiting the Docker Desktop Dashboard.
@@ -221,15 +205,7 @@ Launch a quick demo of LocalStack by using the following steps:
    To create Local Amazon S3 bucket, you’ll need to install an `awscli-local` package to be installed on your system. This package provides the awslocal command, which is a thin wrapper around the AWS command line interface for use with LocalStack.  It lets you to test and develop against a simulated environment on your local machine without needing to access the real AWS services. You can learn more about this utility [here](https://github.com/localstack/awscli-local).
 @z
 
-@x
-    ```console
-    $ pip install awscli-local
-    ```
-@y
-    ```console
-    $ pip install awscli-local
-    ```
-@z
+% snip command...
 
 @x
     Create a new S3 bucket within the LocalStack environment with the following command:
@@ -237,15 +213,7 @@ Launch a quick demo of LocalStack by using the following steps:
     Create a new S3 bucket within the LocalStack environment with the following command:
 @z
 
-@x
-    ```console
-    $ awslocal s3 mb s3://mysamplebucket
-    ```
-@y
-    ```console
-    $ awslocal s3 mb s3://mysamplebucket
-    ```
-@z
+% snip command...
 
 @x
     The command `s3 mb s3://mysamplebucket` tells the AWS CLI to create a new S3 bucket (mb stands for `make bucket`) named `mysamplebucket`.
@@ -337,15 +305,7 @@ Let’s see it in action. Start by launching the Node.js backend service.
 1. Change to the backend/ directory
 @z
 
-@x
-   ```console
-   $ cd backend/
-   ```
-@y
-   ```console
-   $ cd backend/
-   ```
-@z
+% snip command...
 
 @x
 2. Install the required dependencies:
@@ -353,15 +313,7 @@ Let’s see it in action. Start by launching the Node.js backend service.
 2. Install the required dependencies:
 @z
 
-@x
-   ```console
-   $ npm install
-   ```
-@y
-   ```console
-   $ npm install
-   ```
-@z
+% snip command...
 
 @x
 3. Setting up AWS environment variables
@@ -385,25 +337,7 @@ Let’s see it in action. Start by launching the Node.js backend service.
    > Given that you’re running Mongo in a Docker container and the backend Node app is running natively on your host, ensure that  `MONGODB_URI=mongodb://localhost:27017/todos` is set in your `.env` file.
 @z
 
-@x
-   ```plaintext
-   MONGODB_URI=mongodb://localhost:27017/todos
-   AWS_ACCESS_KEY_ID=test
-   AWS_SECRET_ACCESS_KEY=test
-   S3_BUCKET_NAME=mysamplebucket
-   S3_ENDPOINT_URL=http://localhost:4566
-   AWS_REGION=us-east-1
-   ```
-@y
-   ```plaintext
-   MONGODB_URI=mongodb://localhost:27017/todos
-   AWS_ACCESS_KEY_ID=test
-   AWS_SECRET_ACCESS_KEY=test
-   S3_BUCKET_NAME=mysamplebucket
-   S3_ENDPOINT_URL=http://localhost:4566
-   AWS_REGION=us-east-1
-   ```
-@z
+% snip text...
 
 @x
    While the AWS SDK might typically use environment variables starting with `AWS_`, this specific application directly references the following `S3_*` variables in the index.js file (under the `backend/` directory) to configure the S3Client. 
@@ -411,27 +345,7 @@ Let’s see it in action. Start by launching the Node.js backend service.
    While the AWS SDK might typically use environment variables starting with `AWS_`, this specific application directly references the following `S3_*` variables in the index.js file (under the `backend/` directory) to configure the S3Client. 
 @z
 
-@x
-   ```js
-   const s3 = new S3Client({
-     endpoint: process.env.S3_ENDPOINT_URL, // Use the provided endpoint or fallback to defaults
-     credentials: {
-       accessKeyId: process.env.AWS_ACCESS_KEY_ID || 'default_access_key', // Default values for development
-       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || 'default_secret_key',  
-     },
-   });
-   ```
-@y
-   ```js
-   const s3 = new S3Client({
-     endpoint: process.env.S3_ENDPOINT_URL, // Use the provided endpoint or fallback to defaults
-     credentials: {
-       accessKeyId: process.env.AWS_ACCESS_KEY_ID || 'default_access_key', // Default values for development
-       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || 'default_secret_key',  
-     },
-   });
-   ```
-@z
+% snip code...
 
 @x
 4. Start the backend server:
@@ -439,15 +353,7 @@ Let’s see it in action. Start by launching the Node.js backend service.
 4. Start the backend server:
 @z
 
-@x
-   ```console
-   $ node index.js
-   ```
-@y
-   ```console
-   $ node index.js
-   ```
-@z
+% snip command...
 
 @x
     You will see the message that the backend service has successfully started at port 5000.
@@ -473,15 +379,7 @@ To start the frontend service, open a new terminal and follow these steps:
 1. Navigate to the `frontend` directory:
 @z
 
-@x
-   ```console
-   $ cd frontend
-   ```
-@y
-   ```console
-   $ cd frontend
-   ```
-@z
+% snip command...
 
 @x
 2. Install the required dependencies
@@ -489,15 +387,7 @@ To start the frontend service, open a new terminal and follow these steps:
 2. Install the required dependencies
 @z
 
-@x
-   ```console
-   $ npm install
-   ```
-@y
-   ```console
-   $ npm install
-   ```
-@z
+% snip command...
 
 @x
 3. Start the frontend service
@@ -505,15 +395,7 @@ To start the frontend service, open a new terminal and follow these steps:
 3. Start the frontend service
 @z
 
-@x
-   ```console
-   $ npm run dev
-   ```
-@y
-   ```console
-   $ npm run dev
-   ```
-@z
+% snip command...
 
 @x
    By now, you should see the following message:
@@ -521,21 +403,7 @@ To start the frontend service, open a new terminal and follow these steps:
    By now, you should see the following message:
 @z
 
-@x
-   ```console
-   VITE v5.4.2  ready in 110 ms
-   ➜  Local: http://localhost:5173/
-   ➜  Network: use --host to expose
-   ➜  press h + enter to show help
-   ```
-@y
-   ```console
-   VITE v5.4.2  ready in 110 ms
-   ➜  Local: http://localhost:5173/
-   ➜  Network: use --host to expose
-   ➜  press h + enter to show help
-   ```
-@z
+% snip output...
 
 @x
    You can now access the app via [http://localhost:5173](http://localhost:5173). Go ahead, and upload an image by choosing an image file and clicking the **Upload** button.
@@ -603,111 +471,7 @@ Now that you have learnt how to connect a non-containerized Node.js application 
    The `backend` service depends on `localstack` and `mongodb` services, ensuring they are running before it starts. It also uses a .env file for environment variables. The frontend service depends on the backend and sets the API URL. The `mongodb` service uses a persistent volume for data storage, and `localstack` is configured to run the S3 service. This setup lets you to develop and test your application locally with AWS-like services.
 @z
 
-@x
-   ```yaml
-   services:
-      backend:
-        build:
-          context: ./backend
-          dockerfile: Dockerfile
-        ports:
-          - 5000:5000
-        depends_on:
-          - localstack
-          - mongodb
-        env_file:
-          - backend/.env
-@y
-   ```yaml
-   services:
-      backend:
-        build:
-          context: ./backend
-          dockerfile: Dockerfile
-        ports:
-          - 5000:5000
-        depends_on:
-          - localstack
-          - mongodb
-        env_file:
-          - backend/.env
-@z
-
-@x
-       frontend:
-         build:
-           context: ./frontend
-           dockerfile: Dockerfile
-         ports:
-           - 5173:5173
-         depends_on:
-           - backend
-         environment:
-           - REACT_APP_API_URL=http://backend:5000/api
-@y
-       frontend:
-         build:
-           context: ./frontend
-           dockerfile: Dockerfile
-         ports:
-           - 5173:5173
-         depends_on:
-           - backend
-         environment:
-           - REACT_APP_API_URL=http://backend:5000/api
-@z
-
-@x
-        mongodb:
-          image: mongo
-          container_name: mongodb
-          volumes:
-            - mongodbdata:/data/db
-          ports:
-            - 27017:27017
-@y
-        mongodb:
-          image: mongo
-          container_name: mongodb
-          volumes:
-            - mongodbdata:/data/db
-          ports:
-            - 27017:27017
-@z
-
-@x
-          localstack:
-            image: localstack/localstack
-            container_name: localstack
-            ports:
-              - 4566:4566
-            environment:
-              - SERVICES=s3
-              - GATEWAY_LISTEN=0.0.0.0:4566
-            volumes:
-              - ./localstack:/docker-entrypoint-initaws.d"
-@y
-          localstack:
-            image: localstack/localstack
-            container_name: localstack
-            ports:
-              - 4566:4566
-            environment:
-              - SERVICES=s3
-              - GATEWAY_LISTEN=0.0.0.0:4566
-            volumes:
-              - ./localstack:/docker-entrypoint-initaws.d"
-@z
-
-@x
-   volumes:
-     mongodbdata:
-   ```
-@y
-   volumes:
-     mongodbdata:
-   ```
-@z
+% snip code...
 
 @x
 2. Modify the `.env` file under the `backend/` directory to have the resources connect using the internal network names.
@@ -723,25 +487,7 @@ Now that you have learnt how to connect a non-containerized Node.js application 
    > Given the previous Compose file, the app would connect to LocalStack using the hostname `localstack` while Mongo would connect using the hostname `mongodb`.
 @z
 
-@x
-   ```plaintext
-   MONGODB_URI=mongodb://mongodb:27017/todos
-   AWS_ACCESS_KEY_ID=test
-   AWS_SECRET_ACCESS_KEY=test
-   S3_BUCKET_NAME=mysamplebucket
-   S3_ENDPOINT_URL=http://localstack:4566
-   AWS_REGION=us-east-1
-   ```
-@y
-   ```plaintext
-   MONGODB_URI=mongodb://mongodb:27017/todos
-   AWS_ACCESS_KEY_ID=test
-   AWS_SECRET_ACCESS_KEY=test
-   S3_BUCKET_NAME=mysamplebucket
-   S3_ENDPOINT_URL=http://localstack:4566
-   AWS_REGION=us-east-1
-   ```
-@z
+% snip text...
 
 @x
 3. Stop the running services
@@ -761,15 +507,7 @@ Now that you have learnt how to connect a non-containerized Node.js application 
 4. Start the application stack by executing the following command at the root of your cloned project directory:
 @z
 
-@x
-   ```console
-   $ docker compose -f compose.yml up -d --build
-   ```
-@y
-   ```console
-   $ docker compose -f compose.yml up -d --build
-   ```
-@z
+% snip command...
 
 @x
    After a brief moment, the application will be up and running.
@@ -789,15 +527,7 @@ Now that you have learnt how to connect a non-containerized Node.js application 
    The AWS S3 bucket is not created beforehand by the Compose file. Run the following command to create a new bucket within the LocalStack environment:
 @z
 
-@x
-   ```console
-   $ awslocal s3 mb s3://mysamplebucket
-   ```
-@y
-   ```console
-   $ awslocal s3 mb s3://mysamplebucket
-   ```
-@z
+% snip command...
 
 @x
    The command creates an S3 bucket named `mysamplebucket`.

@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = concepts deep-dive explore how-tos images \
-	integrations policy release-notes
+SUBDIRS = deep-dive explore how-tos images integrations policy \
+	release-notes
 
 bases = \
 	_index.md     \

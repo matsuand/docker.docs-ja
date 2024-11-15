@@ -68,13 +68,14 @@ of the convenience script:
 @z
 
 @x
-> **Tip: preview script steps before running**
+> [!TIP]
 >
-> You can run the script with the `--dry-run` option to learn what steps the
+> Preview script steps before running. You can run the script with the `--dry-run` option to learn what steps the
 > script will run when invoked:
 @y
-> **ヒント**：  スクリプト実行前のインストールステップ確認
+> [!TIP]
 >
+> スクリプト実行前にインストールステップを確認します。
 > 本スクリプトの実行にあたって `--dry-run` オプションを指定すると、このスクリプトのインストールステップを確認することができます。
 @z
 

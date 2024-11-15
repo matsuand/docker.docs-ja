@@ -26,9 +26,9 @@ aliases:
 @z
 
 @x
->**Warning**
-> 
->The `--link` flag is a legacy feature of Docker. It may eventually
+> [!WARNING]
+>
+> The `--link` flag is a legacy feature of Docker. It may eventually
 be removed. Unless you absolutely need to continue using it, we recommend that you use
 user-defined networks to facilitate communication between two containers instead of using
 `--link`. One feature that user-defined networks do not support that you can do
@@ -39,9 +39,9 @@ between containers in a more controlled way.
 > See [Differences between user-defined bridges and the default bridge](drivers/bridge.md#differences-between-user-defined-bridges-and-the-default-bridge)
 > for some alternatives to using `--link`.
 @y
->**Warning**
-> 
->The `--link` flag is a legacy feature of Docker. It may eventually
+> [!WARNING]
+>
+> The `--link` flag is a legacy feature of Docker. It may eventually
 be removed. Unless you absolutely need to continue using it, we recommend that you use
 user-defined networks to facilitate communication between two containers instead of using
 `--link`. One feature that user-defined networks do not support that you can do

@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Docker subscription overview
-linkTitle: Subscription
+title: Subscription
 @y
-title: Docker subscription overview
-linkTitle: Subscription
+title: Subscription
 @z
 
 @x

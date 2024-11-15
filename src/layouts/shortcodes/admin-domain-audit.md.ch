@@ -64,17 +64,17 @@ You can invite all the uncaptured users to your organization using the exported 
 @z
 
 @x
-> **Note**
+> [!NOTE]
 >
 > Domain audit may identify accounts of users who are no longer a part of your organization. If you don't want to add a user to your organization and you don't want the user to appear in future domain audits, you must deactivate the account or update the associated email address.
 >
 > Only someone with access to the Docker account can deactivate the account or update the associated email address. For more details, see [Deactivating an account](/admin/deactivate-account/).
 >
 @y
-> **Note**
+> [!NOTE]
 >
 > Domain audit may identify accounts of users who are no longer a part of your organization. If you don't want to add a user to your organization and you don't want the user to appear in future domain audits, you must deactivate the account or update the associated email address.
 >
-> Only someone with access to the Docker account can deactivate the account or update the associated email address. For more details, see [Deactivating an account](__SUBDIR__/admin/deactivate-account/).
+> Only someone with access to the Docker account can deactivate the account or update the associated email address. For more details, see [Deactivating an account](/admin/deactivate-account/).
 >
 @z

@@ -97,15 +97,15 @@ Hardened Docker Desktop is a group of security features, designed to improve the
 @z
 
 @x
-It lets administrators enforce strict security settings, preventing developers and their containers from bypassing these controls, either intentionally or unintentionally. Additionally, you can enhance container isolation, to mitigate potential security threats such as malicious payloads breaching the Docker Desktop Linux VM and the underlying host.
+It lets you enforce strict security settings, preventing developers and their containers from bypassing these controls, either intentionally or unintentionally. Additionally, you can enhance container isolation, to mitigate potential security threats such as malicious payloads breaching the Docker Desktop Linux VM and the underlying host.
 @y
-It lets administrators enforce strict security settings, preventing developers and their containers from bypassing these controls, either intentionally or unintentionally. Additionally, you can enhance container isolation, to mitigate potential security threats such as malicious payloads breaching the Docker Desktop Linux VM and the underlying host.
+It lets you enforce strict security settings, preventing developers and their containers from bypassing these controls, either intentionally or unintentionally. Additionally, you can enhance container isolation, to mitigate potential security threats such as malicious payloads breaching the Docker Desktop Linux VM and the underlying host.
 @z
 
 @x
-Hardened Docker Desktop moves the ownership boundary for Docker Desktop configuration to the organization, meaning that any security controls administrators set cannot be altered by the user of Docker Desktop. 
+Hardened Docker Desktop moves the ownership boundary for Docker Desktop configuration to the organization, meaning that any security controls you set cannot be altered by the user of Docker Desktop. 
 @y
-Hardened Docker Desktop moves the ownership boundary for Docker Desktop configuration to the organization, meaning that any security controls administrators set cannot be altered by the user of Docker Desktop. 
+Hardened Docker Desktop moves the ownership boundary for Docker Desktop configuration to the organization, meaning that any security controls you set cannot be altered by the user of Docker Desktop. 
 @z
 
 @x
@@ -133,13 +133,13 @@ Hardened Desktop features work independently but collectively to create a defens
 @z
 
 @x
- - Malware and supply chain attacks: Registry Access Management and Image Access Management prevent developers from accessing certain container registries and image types, significantly lowering the risk of malicious payloads. Additionally, ECI restricts the impact of containers with malicious payloads by running them without root privileges inside a Linux user namespace.
- - Lateral movement: Air-Gapped Containers lets administrators configure network access restrictions for containers, thereby preventing malicious containers from performing lateral movement within the organization's network.
- - Insider threats: Settings Management configures and locks various Docker Desktop settings so administrators can enforce company policies and prevent developers from introducing insecure configurations, intentionally or unintentionally.
+ - Malware and supply chain attacks: Registry Access Management and Image Access Management prevent developers from accessing certain container registries and image types, significantly lowering the risk of malicious payloads. Additionally, Enhanced Container Isolation (ECI) restricts the impact of containers with malicious payloads by running them without root privileges inside a Linux user namespace.
+ - Lateral movement: Air-gapped containers lets you configure network access restrictions for containers, thereby preventing malicious containers from performing lateral movement within the organization's network.
+ - Insider threats: Settings Management configures and locks various Docker Desktop settings so you can enforce company policies and prevent developers from introducing insecure configurations, intentionally or unintentionally.
 @y
- - Malware and supply chain attacks: Registry Access Management and Image Access Management prevent developers from accessing certain container registries and image types, significantly lowering the risk of malicious payloads. Additionally, ECI restricts the impact of containers with malicious payloads by running them without root privileges inside a Linux user namespace.
- - Lateral movement: Air-Gapped Containers lets administrators configure network access restrictions for containers, thereby preventing malicious containers from performing lateral movement within the organization's network.
- - Insider threats: Settings Management configures and locks various Docker Desktop settings so administrators can enforce company policies and prevent developers from introducing insecure configurations, intentionally or unintentionally.
+ - Malware and supply chain attacks: Registry Access Management and Image Access Management prevent developers from accessing certain container registries and image types, significantly lowering the risk of malicious payloads. Additionally, Enhanced Container Isolation (ECI) restricts the impact of containers with malicious payloads by running them without root privileges inside a Linux user namespace.
+ - Lateral movement: Air-gapped containers lets you configure network access restrictions for containers, thereby preventing malicious containers from performing lateral movement within the organization's network.
+ - Insider threats: Settings Management configures and locks various Docker Desktop settings so you can enforce company policies and prevent developers from introducing insecure configurations, intentionally or unintentionally.
 @z
 
 % snip grid...

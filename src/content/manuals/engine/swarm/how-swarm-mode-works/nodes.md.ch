@@ -112,15 +112,13 @@ Docker recommends a maximum of seven manager nodes for a swarm.
 @z
 
 @x
-    >**Important**
+    > [!IMPORTANT]
     >
-    > Adding more managers does NOT mean increased
-    > scalability or higher performance. In general, the opposite is true.
+    > Adding more managers does NOT mean increased scalability or higher performance. In general, the opposite is true.
 @y
-    >**Important**
+    > [!IMPORTANT]
     >
-    > Adding more managers does NOT mean increased
-    > scalability or higher performance. In general, the opposite is true.
+    > Adding more managers does NOT mean increased scalability or higher performance. In general, the opposite is true.
 @z
 
 @x

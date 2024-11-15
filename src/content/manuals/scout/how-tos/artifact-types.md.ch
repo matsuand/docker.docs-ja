@@ -1,28 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
----
 title: Use Scout with different artifact types
 description: |
   Some of the Docker Scout commands support image references prefixes
   for controlling the location of the images or files that you want to analyze.
 keywords: scout, vulnerabilities, analyze, analysis, cli, packages, sbom, cve, security, local, source, code, supply chain
-aliases:
-  - /scout/image-prefix/
----
 @y
----
 title: Use Scout with different artifact types
 description: |
   Some of the Docker Scout commands support image references prefixes
   for controlling the location of the images or files that you want to analyze.
 keywords: scout, vulnerabilities, analyze, analysis, cli, packages, sbom, cve, security, local, source, code, supply chain
-aliases:
-  - /scout/image-prefix/
----
 @z
 
 @x
@@ -148,9 +140,9 @@ to specify artifacts for `docker scout` commands.
 @z
 
 @x
-## Analyze a local project
+### Analyze a local project
 @y
-## Analyze a local project
+### Analyze a local project
 @z
 
 @x
@@ -286,9 +278,9 @@ pkg:npm/fastify@3.29.0
 @z
 
 @x
-## Compare a local project to an image
+### Compare a local project to an image
 @y
-## Compare a local project to an image
+### Compare a local project to an image
 @z
 
 @x
@@ -433,7 +425,7 @@ Read about the commands and supported flags in the CLI reference documentation:
 Read about the commands and supported flags in the CLI reference documentation:
 @z
 
-@x (no slash) 対応
+@x
 - [`docker scout quickview`](/reference/cli/docker/scout/quickview.md)
 - [`docker scout cves`](/reference/cli/docker/scout/cves.md)
 - [`docker scout compare`](/reference/cli/docker/scout/compare.md)

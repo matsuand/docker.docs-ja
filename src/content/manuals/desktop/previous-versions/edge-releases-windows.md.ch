@@ -3142,13 +3142,15 @@ TCP connection is idle for more than 5 minutes (related to
 @z
 
 @x
-> [!NOTE]: The link above goes to Docker for Mac issues because a
-Mac user reported this problem, which applied to both Mac and Windows
-and was fixed on both.
+> [!NOTE]
+>
+> The link above goes to Docker for Mac issues because a
+Mac user reported this problem, which applied to both Mac and Windows and was fixed on both.
 @y
-> [!NOTE]: The link above goes to Docker for Mac issues because a
-Mac user reported this problem, which applied to both Mac and Windows
-and was fixed on both.
+> [!NOTE]
+>
+> The link above goes to Docker for Mac issues because a
+Mac user reported this problem, which applied to both Mac and Windows and was fixed on both.
 @z
 
 @x
@@ -4076,9 +4078,13 @@ registry access (fixes [docker/for-win#569](https://github.com/docker/for-win/is
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -4116,9 +4122,13 @@ registry access (fixes [docker/for-win#569](https://github.com/docker/for-win/is
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -4196,9 +4206,13 @@ registry access (fixes [docker/for-win#569](https://github.com/docker/for-win/is
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -4246,9 +4260,13 @@ registry access (fixes [docker/for-win#569](https://github.com/docker/for-win/is
 @z
 
 @x
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note:** Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> [!IMPORTANT]
+>
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -4326,13 +4344,13 @@ registry access (fixes [docker/for-win#569](https://github.com/docker/for-win/is
 @z
 
 @x
->**Important Note**:
+> [!IMPORTANT]
 >
->  Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @y
->**Important Note**:
+> [!IMPORTANT]
 >
->  Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
+> Plugins installed using the experimental "managed plugins" feature in Docker 1.12 must be removed/uninstalled before upgrading.
 @z
 
 @x
@@ -5260,9 +5278,13 @@ Unreleased. See Beta 23 for changes.
 @z
 
 @x
->**Note**: Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
+> [!NOTE]
+>
+> Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
 @y
->**Note**: Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
+> [!NOTE]
+>
+> Docker 1.12.0 RC3 release introduces a backward incompatible change from RC2. You can fix this by recreating or updating your containers.
 @z
 
 @x
@@ -6348,9 +6370,13 @@ are working on a solution.
 @z
 
 @x
->**Note**: Docker for Windows skipped from Beta 1 to Beta 5 at this point to synch up the version numbering with Docker for Mac, which went into beta cycles a little earlier.
+> [!NOTE]
+>
+> Docker for Windows skipped from Beta 1 to Beta 5 at this point to synch up the version numbering with Docker for Mac, which went into beta cycles a little earlier.
 @y
->**Note**: Docker for Windows skipped from Beta 1 to Beta 5 at this point to synch up the version numbering with Docker for Mac, which went into beta cycles a little earlier.
+> [!NOTE]
+>
+> Docker for Windows skipped from Beta 1 to Beta 5 at this point to synch up the version numbering with Docker for Mac, which went into beta cycles a little earlier.
 @z
 
 @x

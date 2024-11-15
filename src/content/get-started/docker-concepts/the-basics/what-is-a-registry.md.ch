@@ -90,11 +90,11 @@ The following diagram shows the relationship between a registry, repositories, a
 % snip text...
 
 @x
->**Note**
+> [!NOTE]
 >
 > You can create one private repository and unlimited public repositories using the free version of Docker Hub. For more information, visit the [Docker Hub subscription page](https://www.docker.com/pricing/).
 @y
->**メモ**
+> [!NOTE]
 >
 > Docker Hub の無償版を利用すると、プライベートリポジトリ 1 つと無制限のパブリックリポジトリを生成することができます。
 > 詳しくは [Docker Hub サブスクリプションページ](https://www.docker.com/pricing/) を参照してください。
@@ -241,11 +241,11 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 % snip command...
 
 @x
-    >**Note**
+    > [!NOTE]
     >
     > Make sure you include the dot (.) at the end of the `docker build` command. This tells Docker where to find the Dockerfile.
 @y
-    >**メモ**
+    > [!NOTE]
     >
     > `docker build` コマンドの最後にドット (.) があることを忘れないでください。
     > これは Docker に対して Dockerfile を探し出す場所を指定するものです。

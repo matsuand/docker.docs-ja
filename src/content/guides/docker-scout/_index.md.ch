@@ -30,9 +30,9 @@ tags: [product-demo]
 
 % params:
 @x
-  time: 10 minutes
+  time: 20 minutes
 @y
-  time: 10 分
+  time: 20 分
 @z
 
 % resource_links:
@@ -43,8 +43,6 @@ tags: [product-demo]
       url: /scout/quickstart/
     - title: Install Docker Scout
       url: /scout/install/
-    - title: Software Bill of Materials
-      url: /scout/concepts/sbom/
 @y
     - title: Docker Scout 概要
       url: __SUBDIR__/scout/
@@ -52,8 +50,6 @@ tags: [product-demo]
       url: __SUBDIR__/scout/quickstart/
     - title: Docker Scout のインストール
       url: __SUBDIR__/scout/install/
-    - title: Software Bill of Materials
-      url: __SUBDIR__/scout/concepts/sbom/
 @z
 
 @x

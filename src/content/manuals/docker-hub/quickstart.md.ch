@@ -1,231 +1,395 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+% snip 対応
+
 @x
 description: Learn how to get started using Docker Hub
-keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, accounts,
-  organizations, repositories, groups, teams
+keywords: Docker Hub, push image, pull image, repositories
 title: Docker Hub quickstart
 linkTitle: Quickstart
 @y
 description: Learn how to get started using Docker Hub
-keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, accounts,
-  organizations, repositories, groups, teams
-title: Docker Hub クィックスタート
-linkTitle: クィックスタート
+keywords: Docker Hub, push image, pull image, repositories
+title: Docker Hub quickstart
+linkTitle: Quickstart
 @z
 
 @x
-The following section contains step-by-step instructions on how to get started with Docker Hub.
+Docker Hub provides a vast library of pre-built images and resources,
+accelerating development workflows and reducing setup time. You can build upon
+pre-built images from Docker Hub and then use repositories to share and
+distribute your own images with your team or millions of other developers.
 @y
-以下の節において、Docker Hub をはじめる方法を順に示していきます。
+Docker Hub provides a vast library of pre-built images and resources,
+accelerating development workflows and reducing setup time. You can build upon
+pre-built images from Docker Hub and then use repositories to share and
+distribute your own images with your team or millions of other developers.
 @z
 
 @x
-### Step 1: Sign up for a free Docker account
+This guide shows you how to find and run a pre-built image. It then walks you
+through creating a custom image and sharing it through Docker Hub.
 @y
-### 手順 1: 無償 Docker アカウントへのサインアップ {#step-1-sign-up-for-a-free-docker-account}
+This guide shows you how to find and run a pre-built image. It then walks you
+through creating a custom image and sharing it through Docker Hub.
 @z
 
 @x
-Start by creating a [Docker ID](https://hub.docker.com/signup).
+## Prerequisites
 @y
-まずは [Docker ID](https://hub.docker.com/signup) を生成するところからはじめます。
+## Prerequisites
 @z
 
 @x
-A [Docker ID](/accounts/create-account/) grants you access to Docker Hub repositories and lets you explore available images from the community and verified publishers. You also need a Docker ID to share images on Docker Hub.
+- [Download and install Docker](../../get-started/get-docker.md)
+- [Create a Docker account](https://app.docker.com/signup)
 @y
-[Docker ID](__SUBDIR__/accounts/create-account/) は Docker Hub リポジトリへのアクセス権を定めるものであり、コミュニティや認証済み公開者が提供するイメージを参照できるようになります。
-また Docker ID は Docker Hub 上においてイメージを共有するために必要となります。
+- [Download and install Docker](../../get-started/get-docker.md)
+- [Create a Docker account](https://app.docker.com/signup)
 @z
 
 @x
-> [!TIP]
->
-> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
+## Step 1: Find an image in Docker Hub's library
 @y
-> [!TIP]
->
-> [Docker のコアサブスクリプション](https://www.docker.com/pricing/) を調べてみれば、この他にも Docker が提供するものを確認できます。
+## Step 1: Find an image in Docker Hub's library
 @z
 
 @x
-### Step 2: Create your first repository
+You can search for content in Docker Hub itself, in the Docker Desktop
+Dashboard, or by using the `docker search` CLI command. Searching on Docker Hub
+itself offers the most options to explore content.
 @y
-### 手順 2: リポジトリの新規生成 {#step-2-create-your-first-repository}
+You can search for content in Docker Hub itself, in the Docker Desktop
+Dashboard, or by using the `docker search` CLI command. Searching on Docker Hub
+itself offers the most options to explore content.
 @z
 
 @x
-To create a repository:
+To search or browse for content on Docker Hub:
 @y
-リポジトリ生成の手順は以下です。
+To search or browse for content on Docker Hub:
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-2. On the Repositories page, select **Create repository**.
-3. Name it **&lt;your-username&gt;/my-private-repo**.
-4. Set the visibility to **Private**.
-5. Select **Create**.
+1. Navigate to the [Docker Hub Explore page](https://hub.docker.com/explore).
 @y
-1. [Docker Hub](https://hub.docker.com) にサインインします。
-2. Repositories ページにて **Create repository** (リポジトリ生成) をクリックします。
-3. 名称を **&lt;your-username&gt;/my-private-repo** とします。
-4. visibility（見せ方）を **Private** に設定します。
-5. **Create** (生成) をクリックします。
+1. Navigate to the [Docker Hub Explore page](https://hub.docker.com/explore).
 @z
 
 @x
-You've created your first repository.
+   On the Explore page, you can browse by catalog or category, or use the search
+   to quickly find content.
 @y
-リポジトリ生成が完了しました。
+   On the Explore page, you can browse by catalog or category, or use the search
+   to quickly find content.
 @z
 
 @x
-### Step 3: Download and install Docker Desktop
+2. Under **Categories**, select **Web servers**.
 @y
-### 手順 3: Docker Desktop のダウンロードとインストール {#step-3-download-and-install-docker-desktop}
+2. Under **Categories**, select **Web servers**.
 @z
 
 @x
-You need to download Docker Desktop to build, push, and pull container images.
+   After the results are displayed, you can further filter the results using the
+   filters on the left side of the page.
 @y
-コンテナーイメージのビルド、プッシュ、プルを行うには Docker Desktop をダウンロードする必要があります。
+   After the results are displayed, you can further filter the results using the
+   filters on the left side of the page.
 @z
 
 @x
-1. Download and install [Docker Desktop](/manuals/desktop/_index.md).
+3. In the filters, select **Docker Official Image**.
 @y
-1. [Docker Desktop](manuals/desktop/_index.md) をダウンロードしてインストールします。
+3. In the filters, select **Docker Official Image**.
 @z
 
 @x
-2. Sign in to Docker Desktop using the Docker ID you created in step one.
+   Filtering by Trusted Content ensures that you see only high-quality, secure
+   images curated by Docker and verified publishing partners.
 @y
-2. 手順 1. において生成した Docker ID を使って Docker Desktop にサインインします。
+   Filtering by Trusted Content ensures that you see only high-quality, secure
+   images curated by Docker and verified publishing partners.
 @z
 
 @x
-### Step 4: Pull and run a container image from Docker Hub
+4. In the results, select the **nginx** image.
 @y
-### Step 4: Docker Hub からコンテナーイメージをプルして実行 {#step-4-pull-and-run-a-container-image-from-docker-hub}
+4. In the results, select the **nginx** image.
 @z
 
 @x
-1. In your terminal, run `docker pull hello-world` to pull the image from Docker Hub. You should see output similar to:
+   Selecting the image opens the image's page where you can learn more about how
+   to use the image. On the page, you'll also find the `docker pull` command to
+   pull the image.
 @y
-1. 端末上から `docker pull hello-world` を実行して Docker Hub からイメージをプルします。
-   以下のような出力になります。
+   Selecting the image opens the image's page where you can learn more about how
+   to use the image. On the page, you'll also find the `docker pull` command to
+   pull the image.
+@z
+
+@x
+Now that you've found an image, it's time to pull and run it on your device.
+@y
+Now that you've found an image, it's time to pull and run it on your device.
+@z
+
+@x
+## Step 2: Pull and run an image from Docker Hub
+@y
+## Step 2: Pull and run an image from Docker Hub
+@z
+
+@x
+1. In your terminal, run the following command to pull and run the Nginx image.
+@y
+1. In your terminal, run the following command to pull and run the Nginx image.
 @z
 
 % snip command...
 
 @x
-2. Run `docker run hello-world` to run the image locally. You should see output similar to:
+   The `docker run` command automatically pulls and runs the image without the
+   need to run `docker pull` first. To learn more about the command and its
+   options, see the [`docker run` CLI
+   reference](../../reference/cli/docker/container/run.md). After running the
+   command, you should see output similar to the following.
 @y
-2. `docker run hello-world` を入力して、このイメージをローカルにおいて実行します。
-   以下のような出力になります。
+   The `docker run` command automatically pulls and runs the image without the
+   need to run `docker pull` first. To learn more about the command and its
+   options, see the [`docker run` CLI
+   reference](../../reference/cli/docker/container/run.md). After running the
+   command, you should see output similar to the following.
 @z
 
-% snip command...
+% snip output...
 
 @x
-### Step 5: Build and push a container image to Docker Hub from your computer
+2. Visit [https://localhost:8080](https://localhost:8080) to view the default
+   Nginx page and verify that the container is running.
 @y
-### 手順 5: コンテナーイメージのビルドと Docker Hub へのプッシュ {#step-5-build-and-push-a-container-image-to-docker-hub-from-your-computer}
+2. Visit [https://localhost:8080](https://localhost:8080) to view the default
+   Nginx page and verify that the container is running.
 @z
 
 @x
-1. Start by creating a [Dockerfile](/reference/dockerfile.md) to specify your application as shown below:
+3. In the terminal, press CTRL+C to stop the container.
 @y
-1. [Dockerfile](reference/dockerfile.md) の生成から始めます。
-   以下に示すようにアプリケーションを指定します。
+3. In the terminal, press CTRL+C to stop the container.
+@z
+
+@x
+You've now run a web server without any set up or configuration, all from a
+single command. Docker Hub provides instant access to pre-built, ready-to-use
+container images, letting you quickly pull and run applications without needing
+to install or configure software manually. With Docker Hub's vast library of
+images, you can experiment with and deploy applications effortlessly, boosting
+productivity and making it easy to try out new tools, set up development
+environments, or build on top of existing software.
+@y
+You've now run a web server without any set up or configuration, all from a
+single command. Docker Hub provides instant access to pre-built, ready-to-use
+container images, letting you quickly pull and run applications without needing
+to install or configure software manually. With Docker Hub's vast library of
+images, you can experiment with and deploy applications effortlessly, boosting
+productivity and making it easy to try out new tools, set up development
+environments, or build on top of existing software.
+@z
+
+@x
+You can also extend images from Docker Hub, letting you quickly build and
+customize your own images to suit specific needs.
+@y
+You can also extend images from Docker Hub, letting you quickly build and
+customize your own images to suit specific needs.
+@z
+
+@x
+## Step 3: Build and push an image to Docker Hub
+@y
+## Step 3: Build and push an image to Docker Hub
+@z
+
+@x
+1. Create a [Dockerfile](/reference/dockerfile.md) to specify your application:
+@y
+1. Create a [Dockerfile](reference/dockerfile.md) to specify your application:
 @z
 
 % snip code...
 
 @x
-2. Run `docker build -t <your_username>/my-private-repo .` to build your Docker
-   image.
+   This Dockerfile extends the Nginx image from Docker Hub to create a
+   simple website. With just a few lines, you can easily set up, customize, and
+   share a static website using Docker.
 @y
-2. `docker build -t <your_username>/my-private-repo .` を実行して Docker イメージをビルドします。
+   This Dockerfile extends the Nginx image from Docker Hub to create a
+   simple website. With just a few lines, you can easily set up, customize, and
+   share a static website using Docker.
 @z
 
 @x
-3. Run `docker run <your_username>/my-private-repo` to test your
-Docker image locally.
+2. Run the following command to build your image. Replace `<YOUR-USERNAME>` with your Docker ID.
 @y
-3. `docker run <your_username>/my-private-repo` によってローカル環境内において Docker イメージを確認します。
-@z
-
-@x
-4. Run `docker push <your_username>/my-private-repo` to push your Docker image to Docker Hub. You should see output similar to:
-@y
-4. `docker push <your_username>/my-private-repo` を実行して Docker イメージを Docker Hub にプッシュします。
-   以下のような出力になります。
+2. Run the following command to build your image. Replace `<YOUR-USERNAME>` with your Docker ID.
 @z
 
 % snip command...
 
 @x
-    >**Note**
+   This command builds your image and tags it so that Docker understands which
+   repository to push it to in Docker Hub. To learn more about the command and
+   its options, see the [`docker build` CLI
+   reference](../../reference/cli/docker/buildx/build.md). After running the
+   command, you should see output similar to the following.
+@y
+   This command builds your image and tags it so that Docker understands which
+   repository to push it to in Docker Hub. To learn more about the command and
+   its options, see the [`docker build` CLI
+   reference](../../reference/cli/docker/buildx/build.md). After running the
+   command, you should see output similar to the following.
+@z
+
+% snip output...
+
+@x
+3. Run the following command to test your image. Replace `<YOUR-USERNAME>` with
+   your Docker ID.
+@y
+3. Run the following command to test your image. Replace `<YOUR-USERNAME>` with
+   your Docker ID.
+@z
+
+% snip command...
+
+@x
+4. Visit [https://localhost:8080](https://localhost:8080) to view the page. You
+   should see `Hello world from Docker!`.
+@y
+4. Visit [https://localhost:8080](https://localhost:8080) to view the page. You
+   should see `Hello world from Docker!`.
+@z
+
+@x
+5. In the terminal, press CTRL+C to stop the container.
+@y
+5. In the terminal, press CTRL+C to stop the container.
+@z
+
+@x
+6. Sign in to Docker Desktop. You must be signed in before pushing an image to
+   Docker Hub.
+@y
+6. Sign in to Docker Desktop. You must be signed in before pushing an image to
+   Docker Hub.
+@z
+
+@x
+7. Run the following command to push your image to Docker Hub. Replace `<YOUR-USERNAME>` with your Docker ID.
+@y
+7. Run the following command to push your image to Docker Hub. Replace `<YOUR-USERNAME>` with your Docker ID.
+@z
+
+% snip command...
+
+@x
+    > [!NOTE]
     >
     > You must be signed in to Docker Hub through Docker Desktop or the command line, and you must also name your images correctly, as per the above steps.
 @y
-    >**メモ**
+    > [!NOTE]
     >
-    > Docker Desktop あるいはコマンドラインから Docker Hub へのサインインを行っておくことが必要です。
-    > そして上記の手順ごとにイメージ名を正しく指定することが必要です。
+    > You must be signed in to Docker Hub through Docker Desktop or the command line, and you must also name your images correctly, as per the above steps.
 @z
 
 @x
-5. Your repository in Docker Hub should now display a new `latest` tag under **Tags**:
+   The command pushes the image to Docker Hub and automatically
+   creates the repository if it doesn't exist. To learn more about the command,
+   see the [`docker push` CLI
+   reference](../../reference/cli/docker/image/push.md). After running the
+   command, you should see output similar to the following.
 @y
-5. Docker Hub 内のリポジトリが、**Tags** のもとに新たに `latest` として表示されたはずです。
+   The command pushes the image to Docker Hub and automatically
+   creates the repository if it doesn't exist. To learn more about the command,
+   see the [`docker push` CLI
+   reference](../../reference/cli/docker/image/push.md). After running the
+   command, you should see output similar to the following.
 @z
 
+% snip output...
+
 @x
-    ![Tag created](images/index-tag.webp)
+  Now that you've created a repository and pushed your image, it's time to view
+  your repository and explore its options.
 @y
-    ![生成されたタグ](images/index-tag.webp)
+  Now that you've created a repository and pushed your image, it's time to view
+  your repository and explore its options.
 @z
 
 @x
-You've successfully:
+## Step 4: View your repository on Docker Hub and explore options
 @y
-以下の作業が実現できました。
+## Step 4: View your repository on Docker Hub and explore options
 @z
 
 @x
-- Signed up for a Docker account
-- Created your first repository
-- Pulled an existing container image from Docker Hub
-- Built your own container image on your computer
-- Pushed it successfully to Docker Hub
+1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 @y
-- Docker アカウントへのサインアップ
-- 初めてのリポジトリ生成
-- Docker Hub からの既存コンテナーイメージのプル
-- 自分のコンテナーイメージの自マシン上でのビルド
-- Docker Hub へのプッシュ
+1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 @z
 
 @x
-### Next steps
+   After signing in, you should be on the **Repositories** page. If not, then go
+   to the [**Repositories**](https://hub.docker.com/repositories/) page.
+@y
+   After signing in, you should be on the **Repositories** page. If not, then go
+   to the [**Repositories**](https://hub.docker.com/repositories/) page.
+@z
+
+@x
+2. Find the **nginx-custom** repository and select that row.
+@y
+2. Find the **nginx-custom** repository and select that row.
+@z
+
+@x
+   After selecting the repository, you should see more details and options for
+   your repository.
+@y
+   After selecting the repository, you should see more details and options for
+   your repository.
+@z
+
+@x
+You've now verified that your repository exists on Docker Hub, and you've
+discovered more options for it. View the next steps to learn more about some of
+these options.
+@y
+You've now verified that your repository exists on Docker Hub, and you've
+discovered more options for it. View the next steps to learn more about some of
+these options.
+@z
+
+@x
+## Next steps
 @y
 ### 次のステップ {#next-steps}
 @z
 
 @x
-- Create an [organization](orgs.md) to use Docker Hub with your team.
-- Automatically build container images from code through [builds](builds/_index.md).
-- [Explore](https://hub.docker.com/explore) official & publisher images.
-- [Upgrade your subscription](https://www.docker.com/pricing) to push additional private Docker images to
-Docker Hub.
+- Automatically build container images from code through
+  [builds](builds/_index.md).
+- Use [webhooks](./webhooks.md) to cause an action in another service in
+  response to a push event in the repository.
+- Manage [repository settings](./repos/_index.md) to set the default privacy for
+  your repositories.
 @y
-- [組織 (organization)](orgs.md) を生成してチーム内で Docker Hub を利用します。
-- [builds](builds/_index.md) を通じてコンテナーイメージの自動ビルドを行います。
-- 公式および公開イメージを [確認](https://hub.docker.com/explore) します。
-- [サブスクリプションのアップグレード](https://www.docker.com/pricing) を通じて、Docker Hub に対してプライベートな Docker イメージをプッシュします。
+- Automatically build container images from code through
+  [builds](builds/_index.md).
+- Use [webhooks](./webhooks.md) to cause an action in another service in
+  response to a push event in the repository.
+- Manage [repository settings](./repos/_index.md) to set the default privacy for
+  your repositories.
 @z

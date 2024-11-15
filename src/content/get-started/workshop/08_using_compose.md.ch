@@ -644,19 +644,19 @@ for the entire app. The containers will stop and the network will be removed.
 @z
 
 @x
->**Warning**
+> [!WARNING]
 >
->By default, named volumes in your compose file are not removed when you run `docker compose down`. If you want to
+> By default, named volumes in your compose file are not removed when you run `docker compose down`. If you want to
 >remove the volumes, you need to add the `--volumes` flag.
 >
->The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
+> The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @y
->**Warning**
+> [!WARNING]
 >
->By default, named volumes in your compose file are not removed when you run `docker compose down`. If you want to
+> By default, named volumes in your compose file are not removed when you run `docker compose down`. If you want to
 >remove the volumes, you need to add the `--volumes` flag.
 >
->The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
+> The Docker Desktop Dashboard does not remove volumes when you delete the app stack.
 @z
 
 @x

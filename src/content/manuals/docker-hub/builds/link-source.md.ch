@@ -26,13 +26,11 @@ aliases:
 @x
 > [!NOTE]
 >
-> Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
 @y
 > [!NOTE]
 >
-> Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
 @z
 
 @x
@@ -102,7 +100,7 @@ If you are linking a source code provider to create autobuilds for a team, follo
 @z
 
 @x
-    >**Note**
+    > [!NOTE]
     >
     > If you are the owner of any GitHub organizations, you might see
     options to grant Docker Hub access to them from this screen. You can also
@@ -111,7 +109,7 @@ If you are linking a source code provider to create autobuilds for a team, follo
     [Grant access to a GitHub organization](link-source.md#grant-access-to-a-github-organization)
     to learn more.
 @y
-    >**Note**
+    > [!NOTE]
     >
     > If you are the owner of any GitHub organizations, you might see
     options to grant Docker Hub access to them from this screen. You can also

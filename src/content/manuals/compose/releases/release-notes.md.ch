@@ -14,11 +14,9 @@ linkTitle: Release notes
 @x
 description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
-tags: [Release notes]
 @y
 description: Learn about the new features, bug fixes, and breaking changes for the newest Docker Compose release
 keywords: release notes, compose
-tags: [Release notes]
 @z
 
 @x
@@ -2642,14 +2640,14 @@ For the full change log or additional information, check the [Compose repository
 @z
 
 @x
-> [!NOTE]     
-> 
-> - Updates on environment file syntax & interpolation: see [compose#9879](https://github.com/docker/compose/issues/9879)  
+> [!NOTE]
+>
+> - Updates on environment file syntax & interpolation: see [compose#9879](https://github.com/docker/compose/issues/9879)
 > - Setting `DOCKER_HOST` via `.env` files is not supported in Compose v2
 @y
-> [!NOTE]     
-> 
-> - Updates on environment file syntax & interpolation: see [compose#9879](https://github.com/docker/compose/issues/9879)  
+> [!NOTE]
+>
+> - Updates on environment file syntax & interpolation: see [compose#9879](https://github.com/docker/compose/issues/9879)
 > - Setting `DOCKER_HOST` via `.env` files is not supported in Compose v2
 @z
 
@@ -3003,21 +3001,19 @@ For the full change log, check the [Compose repository 2.10.0 release page](http
 > [!IMPORTANT]
 >
 > Compose v2.9.0 contains changes to the environment variable's precedence that have since been reverted. We recommend using v2.10+ to avoid compatibility issues.
->
 @y
 > [!IMPORTANT]
 >
 > Compose v2.9.0 contains changes to the environment variable's precedence that have since been reverted. We recommend using v2.10+ to avoid compatibility issues.
->
 @z
 
 @x
 > [!NOTE]
-> 
+>
 > This release reverts the breaking changes introduced in [Compose v2.8.0](#280) by [`compose-go v1.3.0`](https://github.com/compose-spec/compose-go/releases/tag/v1.3.0).
 @y
 > [!NOTE]
-> 
+>
 > This release reverts the breaking changes introduced in [Compose v2.8.0](#280) by [`compose-go v1.3.0`](https://github.com/compose-spec/compose-go/releases/tag/v1.3.0).
 @z
 
@@ -5372,13 +5368,15 @@ This release contains minor improvements and bug fixes.
 @x
 - Reverted a 1.23.0 change that appended random strings to container names
   created by `docker-compose up`, causing addressability issues.
-  > [!NOTE]: Containers created by `docker-compose run` will continue to use
-  randomly generated names to avoid collisions during parallel runs.
+  > [!NOTE]
+  >
+  > Containers created by `docker-compose run` will continue to use randomly generated names to avoid collisions during parallel runs.
 @y
 - Reverted a 1.23.0 change that appended random strings to container names
   created by `docker-compose up`, causing addressability issues.
-  > [!NOTE]: Containers created by `docker-compose run` will continue to use
-  randomly generated names to avoid collisions during parallel runs.
+  > [!NOTE]
+  >
+  > Containers created by `docker-compose run` will continue to use randomly generated names to avoid collisions during parallel runs.
 @z
 
 @x
@@ -8137,12 +8135,20 @@ naming scheme accordingly before upgrading.
 - Containers dependencies can now be set up to wait on positive healthchecks
   when declared using `depends_on`. See the documentation for the updated
   syntax.
-  **Note**: This feature will not be ported to version 3 Compose files.
 @y
 - Containers dependencies can now be set up to wait on positive healthchecks
   when declared using `depends_on`. See the documentation for the updated
   syntax.
-  **Note**: This feature will not be ported to version 3 Compose files.
+@z
+
+@x
+  > [!NOTE]
+  >
+  > This feature will not be ported to version 3 Compose files.
+@y
+  > [!NOTE]
+  >
+  > This feature will not be ported to version 3 Compose files.
 @z
 
 @x
@@ -10315,8 +10321,8 @@ Several new configuration keys have been added to `docker-compose.yml`:
 - `pid: host`, like `docker run --pid=host`, lets you reuse the same PID namespace as the host machine.
 - `cpuset`, like `docker run --cpuset-cpus`, lets you specify which CPUs to allow execution in.
 - `read_only`, like `docker run --read-only`, lets you mount a container's filesystem as read-only.
-- `security_opt`, like `docker run --security-opt`, lets you specify [security options](__SUBDIR__/reference/cli/docker/container/run/#security-opt).
-- `log_driver`, like `docker run --log-driver`, lets you specify a [log driver](__SUBDIR__/reference/cli/docker/container/run/#log-driver).
+- `security_opt`, like `docker run --security-opt`, lets you specify [security options](reference/cli/docker/container/run/#security-opt).
+- `log_driver`, like `docker run --log-driver`, lets you specify a [log driver](reference/cli/docker/container/run/#log-driver).
 @z
 
 @x

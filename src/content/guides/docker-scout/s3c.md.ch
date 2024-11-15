@@ -4,17 +4,19 @@
 % .md リンクへの (no slash) 対応
 
 @x
----
 title: Software supply chain security
 description: Learn about software supply chain security (S3C), what it means, and why it is important.
 keywords: docker scout, secure, software, supply, chain, security, sssc, sscs, s3c
----
 @y
----
 title: Software supply chain security
 description: Learn about software supply chain security (S3C), what it means, and why it is important.
 keywords: docker scout, secure, software, supply, chain, security, sssc, sscs, s3c
----
+@z
+
+@x
+{{< youtube-embed YzNK6E7APv0 >}}
+@y
+{{< youtube-embed YzNK6E7APv0 >}}
 @z
 
 @x
@@ -102,9 +104,9 @@ they use, and the security risks associated with them.
 @z
 
 @x
-## Docker Scout
+## How Docker Scout is different
 @y
-## Docker Scout
+## How Docker Scout is different
 @z
 
 @x
@@ -135,18 +137,24 @@ development process.
 
 @x
 Docker Scout works by analyzing the composition of your images to create a
-[Software Bill of Materials (SBOM)](/manuals/scout/concepts/sbom.md). The SBOM is
-cross-referenced against the security advisories to identify CVEs that affect
-your images. Docker Scout integrates with [over 20 different security
+Software Bill of Materials (SBOM). The SBOM is cross-referenced against the
+security advisories to identify CVEs that affect your images. Docker Scout
+integrates with [over 20 different security
 advisories](/manuals/scout/deep-dive/advisory-db-sources.md), and updates its
 vulnerability database in real-time. This ensures that your security posture is
 represented using the latest available information.
 @y
 Docker Scout works by analyzing the composition of your images to create a
-[Software Bill of Materials (SBOM)](manuals/scout/concepts/sbom.md). The SBOM is
-cross-referenced against the security advisories to identify CVEs that affect
-your images. Docker Scout integrates with [over 20 different security
+Software Bill of Materials (SBOM). The SBOM is cross-referenced against the
+security advisories to identify CVEs that affect your images. Docker Scout
+integrates with [over 20 different security
 advisories](manuals/scout/deep-dive/advisory-db-sources.md), and updates its
 vulnerability database in real-time. This ensures that your security posture is
 represented using the latest available information.
+@z
+
+@x
+<div id="scout-lp-survey-anchor"></div>
+@y
+<div id="scout-lp-survey-anchor"></div>
 @z

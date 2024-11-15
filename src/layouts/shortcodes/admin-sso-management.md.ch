@@ -48,11 +48,11 @@
 @z
 
 @x
-> [!Note]
+> [!NOTE]
 >
 > If you want to re-add the domain, a new TXT record value is assigned. You must then complete the verification steps with the new TXT record value.
 @y
-> [!Note]
+> [!NOTE]
 >
 > If you want to re-add the domain, a new TXT record value is assigned. You must then complete the verification steps with the new TXT record value.
 @z

@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Update the application
@@ -47,17 +48,7 @@ In the following steps, you'll change the "empty text" when you don't have any t
 1. `src/static/js/app.js`ファイルにおいて、空っぽであることを示すテキストが 56 行めにあり、これを変更します。
 @z
 
-@x
-   ```diff
-   - <p className="text-center">No items yet! Add one above!</p>
-   + <p className="text-center">You have no todo items yet! Add one above!</p>
-   ```
-@y
-   ```diff
-   - <p className="text-center">No items yet! Add one above!</p>
-   + <p className="text-center">You have no todo items yet! Add one above!</p>
-   ```
-@z
+% snip code...
 
 @x
 2. Build your updated version of the image, using the `docker build` command.
@@ -66,15 +57,7 @@ In the following steps, you'll change the "empty text" when you don't have any t
    実行するコマンドは `docker build` です。
 @z
 
-@x
-   ```console
-   $ docker build -t getting-started .
-   ```
-@y
-   ```console
-   $ docker build -t getting-started .
-   ```
-@z
+% snip command...
 
 @x
 3. Start a new container using the updated code.
@@ -82,15 +65,7 @@ In the following steps, you'll change the "empty text" when you don't have any t
 3. 更新したソースコードを利用した新たなコンテナーを起動します。
 @z
 
-@x
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
-   ```
-@y
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
-   ```
-@z
+% snip command...
 
 @x
 You probably saw an error like this:
@@ -98,17 +73,7 @@ You probably saw an error like this:
 おそらく以下のようなエラーが表示されます。
 @z
 
-@x
-```console
-docker: Error response from daemon: driver failed programming external connectivity on endpoint laughing_burnell 
-(bb242b2ca4d67eba76e79474fb36bb5125708ebdabd7f45c8eaf16caaabde9dd): Bind for 127.0.0.1:3000 failed: port is already allocated.
-```
-@y
-```console
-docker: Error response from daemon: driver failed programming external connectivity on endpoint laughing_burnell 
-(bb242b2ca4d67eba76e79474fb36bb5125708ebdabd7f45c8eaf16caaabde9dd): Bind for 127.0.0.1:3000 failed: port is already allocated.
-```
-@z
+% snip command...
 
 @x
 The error occurred because you aren't able to start the new container while your old container is still running. The reason is that the old container is already using the host's port 3000 and only one process on the machine (containers included) can listen to a specific port. To fix this, you need to remove the old container.
@@ -154,15 +119,7 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 1. `docker ps` コマンドを実行してコンテナーの ID を確認します。
 @z
 
-@x
-   ```console
-   $ docker ps
-   ```
-@y
-   ```console
-   $ docker ps
-   ```
-@z
+% snip command...
 
 @x
 2. Use the `docker stop` command to stop the container. Replace `<the-container-id>` with the ID from `docker ps`.
@@ -171,15 +128,7 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
    `<the-container-id>` の部分は `docker ps` によって得られた ID に置き換えてください。
 @z
 
-@x
-   ```console
-   $ docker stop <the-container-id>
-   ```
-@y
-   ```console
-   $ docker stop <the-container-id>
-   ```
-@z
+% snip command...
 
 @x
 3. Once the container has stopped, you can remove it by using the `docker rm` command.
@@ -187,26 +136,18 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 3. コンテナーを停止したら `docker rm` コマンドを実行してコンテナーを削除します。
 @z
 
-@x
-   ```console
-   $ docker rm <the-container-id>
-   ```
-@y
-   ```console
-   $ docker rm <the-container-id>
-   ```
-@z
+% snip command...
 
 @x
->**Note**
+> [!NOTE]
 >
->You can stop and remove a container in a single command by adding the `force` flag to the `docker rm` command. For example: `docker rm -f <the-container-id>`
+> You can stop and remove a container in a single command by adding the `force` flag to the `docker rm` command. For example: `docker rm -f <the-container-id>`
 @y
->**メモ**
+> [!NOTE]
 >
->コンテナーの停止と削除を 1 つのコマンドで実行することができます。
->これは `docker rm` コマンドに `force` フラグをつけます。
->たとえば `docker rm -f <the-container-id>` とします。
+> コンテナーの停止と削除を 1 つのコマンドで実行することができます。
+> これは `docker rm` コマンドに `force` フラグをつけます。
+> たとえば `docker rm -f <the-container-id>` とします。
 @z
 
 @x
@@ -254,15 +195,7 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
    コマンドは `docker run` です。
 @z
 
-@x
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
-   ```
-@y
-   ```console
-   $ docker run -dp 127.0.0.1:3000:3000 getting-started
-   ```
-@z
+% snip command...
 
 @x
 2. Refresh your browser on [http://localhost:3000](http://localhost:3000) and you should see your updated help text.

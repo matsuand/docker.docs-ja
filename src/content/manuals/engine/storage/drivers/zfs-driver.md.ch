@@ -48,15 +48,13 @@ use unless you have substantial experience with ZFS on Linux.
 @z
 
 @x
-> ***Note***: There is also a FUSE implementation of ZFS on the Linux platform.
-> This is not recommended. The native ZFS driver (ZoL) is more tested, more
-> performant, and is more widely used. The remainder  of this document refers
-> to the native ZoL port.
+> [!NOTE]
+>
+> There is also a FUSE implementation of ZFS on the Linux platform. This is not recommended. The native ZFS driver (ZoL) is more tested, has better performance, and is more widely used. The remainder of this document refers to the native ZoL port.
 @y
-> ***Note***: There is also a FUSE implementation of ZFS on the Linux platform.
-> This is not recommended. The native ZFS driver (ZoL) is more tested, more
-> performant, and is more widely used. The remainder  of this document refers
-> to the native ZoL port.
+> [!NOTE]
+>
+> There is also a FUSE implementation of ZFS on the Linux platform. This is not recommended. The native ZFS driver (ZoL) is more tested, has better performance, and is more widely used. The remainder of this document refers to the native ZoL port.
 @z
 
 @x
@@ -88,13 +86,11 @@ use unless you have substantial experience with ZFS on Linux.
 @x
 > [!NOTE]
 >
-> There is no need to use `MountFlags=slave` because `dockerd` and `containerd`
-> are in different mount namespaces. 
+> There is no need to use `MountFlags=slave` because `dockerd` and `containerd` are in different mount namespaces.
 @y
 > [!NOTE]
 >
-> There is no need to use `MountFlags=slave` because `dockerd` and `containerd`
-> are in different mount namespaces. 
+> There is no need to use `MountFlags=slave` because `dockerd` and `containerd` are in different mount namespaces.
 @z
 
 @x

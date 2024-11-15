@@ -239,8 +239,12 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md           \
+	attestations.md     \
 	common-questions.md \
 	demo.md             \
+	remediation.md      \
+	s3c.md              \
+	sbom.md             \
 	why.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

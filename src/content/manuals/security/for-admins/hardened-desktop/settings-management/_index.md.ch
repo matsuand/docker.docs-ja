@@ -8,45 +8,41 @@ description: Understand how Settings Management works, who it is for, and what t
   benefits are
 keywords: Settings Management, rootless, docker desktop, hardened desktop
 title: What is Settings Management?
+linkTitle: Settings Management
 @y
 description: Understand how Settings Management works, who it is for, and what the
   benefits are
 keywords: Settings Management, rootless, docker desktop, hardened desktop
 title: What is Settings Management?
+linkTitle: Settings Management
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
->Settings Management is available to Docker Business customers only.
+> Settings Management is available to Docker Business customers only.
 @y
->**Note**
+> [!NOTE]
 >
->Settings Management is available to Docker Business customers only.
+> Settings Management is available to Docker Business customers only.
 @z
 
 @x
-Settings Management is a feature that helps admins to control certain Docker Desktop settings on client machines within their organization.
+Settings Management helps you control key Docker Desktop settings, like proxies and network configurations, on your developers' machines within your organization.
 @y
-Settings Management is a feature that helps admins to control certain Docker Desktop settings on client machines within their organization.
+Settings Management helps you control key Docker Desktop settings, like proxies and network configurations, on your developers' machines within your organization.
 @z
 
 @x
-With a few lines of JSON, admins can configure controls for Docker Desktop settings such as proxies and network settings. For an extra layer of security, admins can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md) which ensures that any configurations set with Settings Management cannot be modified by containers.
+For an extra layer of security, you can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md), which prevents containers from modifying any Settings Management configurations.
 @y
-With a few lines of JSON, admins can configure controls for Docker Desktop settings such as proxies and network settings. For an extra layer of security, admins can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md) which ensures that any configurations set with Settings Management cannot be modified by containers.
+For an extra layer of security, you can also use Settings Management to enable and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md), which prevents containers from modifying any Settings Management configurations.
 @z
 
 @x
-It is available with [Docker Desktop 4.13.0 and later](/manuals/desktop/release-notes.md).
+## Who is it for?
 @y
-It is available with [Docker Desktop 4.13.0 and later](manuals/desktop/release-notes.md).
-@z
-
-@x
-### Who is it for?
-@y
-### Who is it for?
+## Who is it for?
 @z
 
 @x
@@ -60,15 +56,15 @@ It is available with [Docker Desktop 4.13.0 and later](manuals/desktop/release-n
 @z
 
 @x
-### How does it work?
+## How does it work?
 @y
-### How does it work?
+## How does it work?
 @z
 
 @x
-Administrators can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or admin privileges.
+You can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
 @y
-Administrators can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or admin privileges.
+You can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
 @z
 
 @x
@@ -78,15 +74,15 @@ Values that are set to `locked: true` within the `admin-settings.json` override 
 @z
 
 @x
-### What features can I configure with Settings Management?
+## What features can I configure with Settings Management?
 @y
-### What features can I configure with Settings Management?
+## What features can I configure with Settings Management?
 @z
 
 @x
-Using the `admin-settings.json` file, admins can:
+Using the `admin-settings.json` file, you can:
 @y
-Using the `admin-settings.json` file, admins can:
+Using the `admin-settings.json` file, you can:
 @z
 
 @x
@@ -105,7 +101,7 @@ Using the `admin-settings.json` file, admins can:
 - Control whether developers can use the Docker terminal
 - Control the file sharing implementation for your developers on macOS
 - Specify which paths your developers can add file shares to
-- Configure Air-Gapped Containers
+- Configure Air-gapped containers
 @y
 - Turn on and lock in [Enhanced Container Isolation](../enhanced-container-isolation/_index.md)
 - Configure HTTP proxies
@@ -122,39 +118,25 @@ Using the `admin-settings.json` file, admins can:
 - Control whether developers can use the Docker terminal
 - Control the file sharing implementation for your developers on macOS
 - Specify which paths your developers can add file shares to
-- Configure Air-Gapped Containers
+- Configure Air-gapped containers
 @z
 
 @x
-For more details on the syntax and options admins can set, see [Configure Settings Management](configure.md).
+For more details on the syntax and options, see [Configure Settings Management](configure.md).
 @y
-For more details on the syntax and options admins can set, see [Configure Settings Management](configure.md).
+For more details on the syntax and options, see [Configure Settings Management](configure.md).
 @z
 
 @x
-### How do I set up and enforce Settings Management?
+## How do I set up and enforce Settings Management?
 @y
-### How do I set up and enforce Settings Management?
+## How do I set up and enforce Settings Management?
 @z
 
 @x
-As an administrator, you first need to [enforce
-sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md). This is
-because the Settings Management feature requires a Docker Business subscription
-and therefore your Docker Desktop developers must authenticate to your
-organization. Enforcing sign-in ensures that your Docker Desktop developers
-always authenticate to your organization, even though they can authenticate
-without it and the feature will take effect. Enforcing sign-in guarantees the
-feature always takes effect.
+You first need to [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md) to ensure that all Docker Desktop developers authenticate with your organization. Since the Settings Management feature requires a Docker Business subscription, enforced sign-in guarantees that only authenticated users have access and that the feature consistently takes effect across all users, even though it may still work without enforced sign-in.
 @y
-As an administrator, you first need to [enforce
-sign-in](manuals/security/for-admins/enforce-sign-in/_index.md). This is
-because the Settings Management feature requires a Docker Business subscription
-and therefore your Docker Desktop developers must authenticate to your
-organization. Enforcing sign-in ensures that your Docker Desktop developers
-always authenticate to your organization, even though they can authenticate
-without it and the feature will take effect. Enforcing sign-in guarantees the
-feature always takes effect.
+You first need to [enforce sign-in](manuals/security/for-admins/enforce-sign-in/_index.md) to ensure that all Docker Desktop developers authenticate with your organization. Since the Settings Management feature requires a Docker Business subscription, enforced sign-in guarantees that only authenticated users have access and that the feature consistently takes effect across all users, even though it may still work without enforced sign-in.
 @z
 
 @x
@@ -174,25 +156,43 @@ Once this is done, Docker Desktop developers receive the changed settings when t
 @z
 
 @x
-Docker doesn't automatically mandate that developers re-launch and re-authenticate once a change has been made, so as not to disrupt your developers' workflow.
+To avoid disrupting your developers' workflows, Docker doesn't automatically require that developers re-launch and re-authenticate once a change has been made.
 @y
-Docker doesn't automatically mandate that developers re-launch and re-authenticate once a change has been made, so as not to disrupt your developers' workflow.
+To avoid disrupting your developers' workflows, Docker doesn't automatically require that developers re-launch and re-authenticate once a change has been made.
 @z
 
 @x
-### What do developers see when the settings are enforced?
+## What do developers see when the settings are enforced?
 @y
-### What do developers see when the settings are enforced?
+## What do developers see when the settings are enforced?
 @z
 
 @x
-Any settings that are enforced, are grayed out in Docker Desktop and the user is unable to edit them, either via the Docker Desktop UI, CLI, or the `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier). In addition, if Enhanced Container Isolation is enforced, developers can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM, for example, reconfigure proxy and networking of reconfigure Docker Engine.
+Enforced settings appear grayed out in Docker Desktop. They can't be edited via the Docker Desktop Dashboard, CLI, or `settings-store.json` (or `settings.json` for Docker Desktop 4.34 and earlier).
 @y
-Any settings that are enforced, are grayed out in Docker Desktop and the user is unable to edit them, either via the Docker Desktop UI, CLI, or the `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier). In addition, if Enhanced Container Isolation is enforced, developers can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM, for example, reconfigure proxy and networking of reconfigure Docker Engine.
+Enforced settings appear grayed out in Docker Desktop. They can't be edited via the Docker Desktop Dashboard, CLI, or `settings-store.json` (or `settings.json` for Docker Desktop 4.34 and earlier).
+@z
+
+@x
+In addition, if Enhanced Container Isolation is enforced, developers can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM. For example, they can't reconfigure proxy and networking, or Docker Engine.
+@y
+In addition, if Enhanced Container Isolation is enforced, developers can't use privileged containers or similar techniques to modify enforced settings within the Docker Desktop Linux VM. For example, they can't reconfigure proxy and networking, or Docker Engine.
 @z
 
 @x
 ![Proxy settings grayed out](/assets/images/grayed-setting.png)
 @y
 ![Proxy settings grayed out](__SUBDIR__/assets/images/grayed-setting.png)
+@z
+
+@x
+## More resources
+@y
+## More resources
+@z
+
+@x
+- [Video: Settings Management](https://www.youtube.com/watch?v=I9oJOJ1P9PQ)
+@y
+- [Video: Settings Management](https://www.youtube.com/watch?v=I9oJOJ1P9PQ)
 @z

@@ -1,20 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
----
 title: Software Bill of Materials
 description: Learn about Software Bill of Materials (SBOM) and how Docker Scout uses it.
 keywords: scout, sbom, software bill of materials, analysis, composition
----
 @y
----
 title: Software Bill of Materials
 description: Learn about Software Bill of Materials (SBOM) and how Docker Scout uses it.
 keywords: scout, sbom, software bill of materials, analysis, composition
----
+@z
+
+@x
+{{< youtube-embed PbS4y7C7h4A >}}
+@y
+{{< youtube-embed PbS4y7C7h4A >}}
 @z
 
 @x
@@ -92,13 +94,13 @@ An SBOM typically includes the following information:
 @x
 Docker Scout uses SBOMs to determine the components that are used in a Docker
 image. When you analyze an image, Docker Scout will either use the SBOM that is
-attached to the image (using [attestations](/manuals/build/metadata/attestations/_index.md)), or
-it will generate an SBOM on the fly by analyzing the contents of the image.
+attached to the image as an attestation, or it will generate an SBOM on the fly
+by analyzing the contents of the image.
 @y
 Docker Scout uses SBOMs to determine the components that are used in a Docker
 image. When you analyze an image, Docker Scout will either use the SBOM that is
-attached to the image (using [attestations](manuals/build/metadata/attestations/_index.md)), or
-it will generate an SBOM on the fly by analyzing the contents of the image.
+attached to the image as an attestation, or it will generate an SBOM on the fly
+by analyzing the contents of the image.
 @z
 
 @x
@@ -110,23 +112,7 @@ to determine if any of the components in the image have known vulnerabilities.
 @z
 
 @x
-## Additional resources
+<div id="scout-lp-survey-anchor"></div>
 @y
-## Additional resources
-@z
-
-@x
-To learn more about generating SBOMs and how SBOMs are used in Docker Scout,
-see:
-@y
-To learn more about generating SBOMs and how SBOMs are used in Docker Scout,
-see:
-@z
-
-@x
-- [Image analysis in Docker Scout](/manuals/scout/explore/analysis.md)
-- [View and create SBOMs](/manuals/scout/how-tos/view-create-sboms.md)
-@y
-- [Image analysis in Docker Scout](manuals/scout/explore/analysis.md)
-- [View and create SBOMs](manuals/scout/how-tos/view-create-sboms.md)
+<div id="scout-lp-survey-anchor"></div>
 @z

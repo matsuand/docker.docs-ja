@@ -104,17 +104,13 @@ workers (`worker1` and `worker2`).
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
-> You can follow many of the tutorial steps to test single-node swarm
-> as well, in which case you need only one host. Multi-node commands do not
-> work, but you can initialize a swarm, create services, and scale them.
+> You can follow many of the tutorial steps to test single-node swarm as well, in which case you need only one host. Multi-node commands do not work, but you can initialize a swarm, create services, and scale them.
 @y
->**Note**
+> [!NOTE]
 >
-> You can follow many of the tutorial steps to test single-node swarm
-> as well, in which case you need only one host. Multi-node commands do not
-> work, but you can initialize a swarm, create services, and scale them.
+> You can follow many of the tutorial steps to test single-node swarm as well, in which case you need only one host. Multi-node commands do not work, but you can initialize a swarm, create services, and scale them.
 @z
 
 @x

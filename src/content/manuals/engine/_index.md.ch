@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Docker Engine overview
-linkTitle: Docker Engine
+title: Docker Engine
 @y
-title: Docker Engine 概要
-linkTitle: Docker Engine
+title: Docker Engine
 @z
 
 @x

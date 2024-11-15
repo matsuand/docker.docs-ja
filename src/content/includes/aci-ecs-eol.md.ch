@@ -2,11 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
->**Important**
+> [!IMPORTANT]
 >
->Docker Compose's integration for ECS and ACI is retiring in November 2023.
+> Docker Compose's integration for ECS and ACI is retiring in November 2023.
 @y
->**Important**
+> [!IMPORTANT]
 >
->Docker Compose's integration for ECS and ACI is retiring in November 2023.
+> Docker Compose's integration for ECS and ACI is retiring in November 2023.
 @z

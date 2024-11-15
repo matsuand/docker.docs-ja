@@ -4,11 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Docker account overview
-linkTitle: Docker accounts
+title: Docker accounts
 @y
-title: Docker account overview
-linkTitle: Docker accounts
+title: Docker accounts
 @z
 
 @x

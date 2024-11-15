@@ -16,13 +16,11 @@ keywords: autobuilds, automated, docker hub, registry
 @x
 > [!NOTE]
 >
-> Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
 @y
 > [!NOTE]
 >
-> Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
 @z
 
 @x
@@ -86,17 +84,13 @@ repository and branch, or tag, the build logs, the build duration, creation time
 @z
 
 @x
->**Note**
+> [!NOTE]
 >
-> You can now view the progress of your builds every 30 seconds when you
-> refresh the **Builds** page. With the in-progress build logs, you can debug your
-> builds before they're finished.
+> You can now view the progress of your builds every 30 seconds when you refresh the **Builds** page. With the in-progress build logs, you can debug your builds before they're finished.
 @y
->**Note**
+> [!NOTE]
 >
-> You can now view the progress of your builds every 30 seconds when you
-> refresh the **Builds** page. With the in-progress build logs, you can debug your
-> builds before they're finished.
+> You can now view the progress of your builds every 30 seconds when you refresh the **Builds** page. With the in-progress build logs, you can debug your builds before they're finished.
 @z
 
 @x

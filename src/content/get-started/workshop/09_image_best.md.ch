@@ -233,10 +233,10 @@ for your production build. You can ship the static resources in a static nginx c
 % snip code...
 
 @x
-In the previous Dockerfile example, it uses the `node:18` image to perform the build (maximizing layer caching) and then copies the output
+In the previous Dockerfile example, it uses the `node:lts` image to perform the build (maximizing layer caching) and then copies the output
 into an nginx container.
 @y
-In the previous Dockerfile example, it uses the `node:18` image to perform the build (maximizing layer caching) and then copies the output
+In the previous Dockerfile example, it uses the `node:lts` image to perform the build (maximizing layer caching) and then copies the output
 into an nginx container.
 @z
 
