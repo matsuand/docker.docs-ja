@@ -18,19 +18,19 @@ keywords: accounts, docker ID, account settings, account management, docker home
 @z
 
 @x
-You can centrally manage the settings for your Docker account. Here you can also take administrative actions for your account and manage your account security.
+You can centrally manage the settings for your Docker account using Docker Home. Here you can also take administrative actions for your account and manage your account security.
 @y
-You can centrally manage the settings for your Docker account. Here you can also take administrative actions for your account and manage your account security.
+You can centrally manage the settings for your Docker account using Docker Home. Here you can also take administrative actions for your account and manage your account security.
 @z
 
 @x
 > [!TIP]
 >
-> If your account is associated with an organization that enforces single sign-on (SSO), you may not have permissions to update your account settings. You need to contact your administrator to update your settings.
+> If your account is associated with an organization that enforces single sign-on (SSO), you may not have permissions to update your account settings. You must contact your administrator to update your settings.
 @y
 > [!TIP]
 >
-> If your account is associated with an organization that enforces single sign-on (SSO), you may not have permissions to update your account settings. You need to contact your administrator to update your settings.
+> If your account is associated with an organization that enforces single sign-on (SSO), you may not have permissions to update your account settings. You must contact your administrator to update your settings.
 @z
 
 @x
@@ -50,9 +50,9 @@ You can centrally manage the settings for your Docker account. Here you can also
 @z
 
 @x
-From here, you can take any of the following actions.
+From the Account settings page, you can take any of the following actions.
 @y
-From here, you can take any of the following actions.
+From the Account settings page, you can take any of the following actions.
 @z
 
 @x
@@ -164,9 +164,9 @@ For information on two-factor authentication (2FA) for your account, see [Enable
 @z
 
 @x
-For information on personal access tokens (PAT), see [Create and manage access tokens](../security/for-developers/access-tokens.md).
+For information on personal access tokens, see [Create and manage access tokens](../security/for-developers/access-tokens.md).
 @y
-For information on personal access tokens (PAT), see [Create and manage access tokens](../security/for-developers/access-tokens.md).
+For information on personal access tokens, see [Create and manage access tokens](../security/for-developers/access-tokens.md).
 @z
 
 @x

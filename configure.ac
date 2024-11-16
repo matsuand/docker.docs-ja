@@ -85,6 +85,7 @@ AC_CONFIG_FILES([
 	src/content/guides/admin-set-up/Makefile
 	src/content/guides/bake/Makefile
 	src/content/guides/bun/Makefile
+	src/content/guides/compose-bake/Makefile
 	src/content/guides/cpp/Makefile
 	src/content/guides/docker-build-cloud/Makefile
 	src/content/guides/docker-compose/Makefile

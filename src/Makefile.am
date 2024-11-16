@@ -13,10 +13,8 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copydirs = \
-	_releaser  \
 	_vale      \
-	archetypes \
-	scripts
+	archetypes
 
 copyfiles = \
 	.dockerignore      \

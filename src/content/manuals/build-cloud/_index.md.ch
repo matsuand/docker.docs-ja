@@ -127,12 +127,12 @@ data between cloud builders.
 To get started with Docker Build Cloud,
 [create a Docker account](/accounts/create-account/)
 and sign up for the starter plan on the
-[Docker Build Cloud Dashboard](https://build.docker.com/).
+[Docker Build Cloud Dashboard](https://app.docker.com/build/).
 @y
 To get started with Docker Build Cloud,
-[create a Docker account](__SUBDIR__/accounts/create-account/)
+[create a Docker account](/accounts/create-account/)
 and sign up for the starter plan on the
-[Docker Build Cloud Dashboard](https://build.docker.com/).
+[Docker Build Cloud Dashboard](https://app.docker.com/build/).
 @z
 
 @x

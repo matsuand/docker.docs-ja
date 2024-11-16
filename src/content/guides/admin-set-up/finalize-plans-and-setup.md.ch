@@ -82,9 +82,9 @@ You can also enable [SCIM](manuals/security/for-admins/provisioning/scim.md) for
 @z
 
 @x
-[Docker Build Cloud](/manuals/build-cloud/_index.md) significantly reduces build times, both locally and in CI, by providing a dedicated remote builder and shared cache. Powered by the cloud, developer time and local resources are freed up so your team can focus on more important things, like innovation. To get started, [set up a cloud builder](http://build.docker.com). 
+[Docker Build Cloud](/manuals/build-cloud/_index.md) significantly reduces build times, both locally and in CI, by providing a dedicated remote builder and shared cache. Powered by the cloud, developer time and local resources are freed up so your team can focus on more important things, like innovation. To get started, [set up a cloud builder](https://app.docker.com/build/). 
 @y
-[Docker Build Cloud](manuals/build-cloud/_index.md) significantly reduces build times, both locally and in CI, by providing a dedicated remote builder and shared cache. Powered by the cloud, developer time and local resources are freed up so your team can focus on more important things, like innovation. To get started, [set up a cloud builder](http://build.docker.com). 
+[Docker Build Cloud](manuals/build-cloud/_index.md) significantly reduces build times, both locally and in CI, by providing a dedicated remote builder and shared cache. Powered by the cloud, developer time and local resources are freed up so your team can focus on more important things, like innovation. To get started, [set up a cloud builder](https://app.docker.com/build/). 
 @z
 
 @x

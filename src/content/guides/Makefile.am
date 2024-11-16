@@ -1,9 +1,9 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admin-set-up bake bun cpp docker-build-cloud docker-compose \
-	docker-scout dotnet genai-pdf-bot genai-video-bot golang      \
-	images java nodejs php python r rag-ollama ruby rust          \
+SUBDIRS = admin-set-up bake bun compose-bake cpp docker-build-cloud      \
+	docker-compose docker-scout dotnet genai-pdf-bot genai-video-bot \
+	golang images java nodejs php python r rag-ollama ruby rust      \
 	testcontainers-cloud zscaler
 
 bases = \

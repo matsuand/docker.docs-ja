@@ -56,15 +56,20 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @z
 
 @x
-3. Enter a username.
+3. Enter a username to use as your Docker ID. Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
 @y
-3. ユーザー名を入力します。
+3. Docker ID として利用するユーザー名を入力します。
+   Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
 @z
 
 @x
-    Your Docker ID must be between 4 and 30 characters long, and can only contain numbers and lowercase letters. Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
+    Your username:
+    - Must be between 4 and 30 characters long
+    - Can only contain numbers and lowercase letters
 @y
-    Your Docker ID must be between 4 and 30 characters long, and can only contain numbers and lowercase letters. Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
+    Your username:
+    - Must be between 4 and 30 characters long
+    - Can only contain numbers and lowercase letters
 @z
 
 @x
@@ -80,25 +85,25 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @z
 
 @x
-   Docker sends a verification email to the address you provided.
+6. Open your email client. Docker sends a verification email to the address you provided.
 @y
-   Docker sends a verification email to the address you provided.
+6. Open your email client. Docker sends a verification email to the address you provided.
 @z
 
 @x
-6. Verify your email address to complete the registration process.
+7. Verify your email address to complete the registration process.
 @y
-6. メールアドレスを確認して登録操作を終了します。
+7. メールアドレスを確認して登録操作を終了します。
 @z
 
 @x
 > [!NOTE]
 >
-> You have limited actions available until you verify your email address.
+> You must verify your email address before you have full access to Docker's features.
 @y
 > [!NOTE]
 >
-> メールアドレスを確認しないでおくと、利用できる操作が限定されます。
+> Docker 機能へのアクセスをすべて行うために、メールアドレスを確認しておく必要があります。
 @z
 
 @x
@@ -110,11 +115,11 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @x
 > [!IMPORTANT]
 >
-> To sign up with your social provider, make sure you verify your email address with your provider before you begin.
+> To sign up with your social provider, you must verify your email address with your provider before you begin.
 @y
 > [!IMPORTANT]
 >
-> To sign up with your social provider, make sure you verify your email address with your provider before you begin.
+> To sign up with your social provider, you must verify your email address with your provider before you begin.
 @z
 
 @x
@@ -136,21 +141,25 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @z
 
 @x
-4. Select **Authorize Docker** to allow Docker to access your social account information and be re-routed to the sign-up page.
+4. Select **Authorize Docker** to let Docker to access your social account information. You will be re-routed to the sign-up page.
 @y
-4. Select **Authorize Docker** to allow Docker to access your social account information and be re-routed to the sign-up page.
+4. Select **Authorize Docker** to let Docker to access your social account information. You will be re-routed to the sign-up page.
 @z
 
 @x
-5. Enter a username.
+5. Enter a username to use as your Docker ID.
 @y
-5. ユーザー名を入力します。
+5. Docker ID として利用するユーザー名を入力します。
 @z
 
 @x
-    Your Docker ID must be between 4 and 30 characters long, and can only contain numbers and lowercase letters. Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
+    Your username:
+    - Must be between 4 and 30 characters long
+    - Can only contain numbers and lowercase letters
 @y
-    Your Docker ID must be between 4 and 30 characters long, and can only contain numbers and lowercase letters. Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
+    Your username:
+    - Must be between 4 and 30 characters long
+    - Can only contain numbers and lowercase letters
 @z
 
 @x
@@ -166,15 +175,19 @@ Your Docker ID becomes your username for hosted Docker services, and [Docker for
 @z
 
 @x
-Once you register and verify your Docker ID email address, you can sign in to [your Docker account](https://login.docker.com/u/login/). You can sign in with your email address (or username) and password. Or, you can sign in with your social provider. See [Sign in with your social provider](#sign-in-with-your-social-provider).
+Once you register your Docker ID and verify your email address, you can sign in to [your Docker account](https://login.docker.com/u/login/). You can either:
 @y
-Once you register and verify your Docker ID email address, you can sign in to [your Docker account](https://login.docker.com/u/login/). You can sign in with your email address (or username) and password. Or, you can sign in with your social provider. See [Sign in with your social provider](#sign-in-with-your-social-provider).
+Once you register your Docker ID and verify your email address, you can sign in to [your Docker account](https://login.docker.com/u/login/). You can either:
 @z
 
 @x
-You can also sign in through the CLI using the `docker login` command. For more information, see [`docker login`](/reference/cli/docker/login.md).
+- Sign in with your email address (or username) and password.
+- Sign in with your social provider. For more information, see [Sign in with your social provider](#sign-in-with-your-social-provider).
+- Sign in through the CLI using the `docker login` command. For more information, see [`docker login`](/reference/cli/docker/login.md).
 @y
-You can also sign in through the CLI using the `docker login` command. For more information, see [`docker login`](reference/cli/docker/login.md).
+- Sign in with your email address (or username) and password.
+- Sign in with your social provider. For more information, see [Sign in with your social provider](#sign-in-with-your-social-provider).
+- Sign in through the CLI using the `docker login` command. For more information, see [`docker login`](reference/cli/docker/login.md).
 @z
 
 @x
@@ -183,14 +196,14 @@ You can also sign in through the CLI using the `docker login` command. For more 
 > When you use the `docker login` command, your credentials are
 stored in your home directory in `.docker/config.json`. The password is base64-encoded in this file.
 >
-> We recommend using one of the [Docker credential helpers](https://github.com/docker/docker-credential-helpers) for secure storage of passwords. For extra security, you can also use a [personal access token](../security/for-developers/access-tokens.md) to log in instead, which is still encoded in this file (without a Docker credential helper) but doesn't allow admin actions (such as changing the password).
+> We recommend using one of the [Docker credential helpers](https://github.com/docker/docker-credential-helpers) for secure storage of passwords. For extra security, you can also use a [personal access token](../security/for-developers/access-tokens.md) to sign in instead, which is still encoded in this file (without a Docker credential helper) but doesn't permit administrator actions (such as changing the password).
 @y
 > [!WARNING]
 >
 > When you use the `docker login` command, your credentials are
 stored in your home directory in `.docker/config.json`. The password is base64-encoded in this file.
 >
-> We recommend using one of the [Docker credential helpers](https://github.com/docker/docker-credential-helpers) for secure storage of passwords. For extra security, you can also use a [personal access token](../security/for-developers/access-tokens.md) to log in instead, which is still encoded in this file (without a Docker credential helper) but doesn't allow admin actions (such as changing the password).
+> We recommend using one of the [Docker credential helpers](https://github.com/docker/docker-credential-helpers) for secure storage of passwords. For extra security, you can also use a [personal access token](../security/for-developers/access-tokens.md) to sign in instead, which is still encoded in this file (without a Docker credential helper) but doesn't permit administrator actions (such as changing the password).
 @z
 
 @x
@@ -202,17 +215,17 @@ stored in your home directory in `.docker/config.json`. The password is base64-e
 @x
 > [!IMPORTANT]
 >
-> To sign in with your social provider, make sure you verify your email address with your provider before you begin.
+> To sign in with your social provider, you must verify your email address with your provider before you begin.
 @y
 > [!IMPORTANT]
 >
-> To sign in with your social provider, make sure you verify your email address with your provider before you begin.
+> To sign in with your social provider, you must verify your email address with your provider before you begin.
 @z
 
 @x
-Optionally, you can sign in to an existing Docker account with your Google or GitHub account. If a Docker account exists with the same email address as the primary email for your social provider, your Docker account will automatically be linked to the social profile. This lets you sign in with your social provider.
+You can also sign in to your Docker account with your Google or GitHub account. If a Docker account exists with the same email address as the primary email for your social provider, your Docker account will automatically be linked to the social profile. This lets you sign in with your social provider.
 @y
-Optionally, you can sign in to an existing Docker account with your Google or GitHub account. If a Docker account exists with the same email address as the primary email for your social provider, your Docker account will automatically be linked to the social profile. This lets you sign in with your social provider.
+You can also sign in to your Docker account with your Google or GitHub account. If a Docker account exists with the same email address as the primary email for your social provider, your Docker account will automatically be linked to the social profile. This lets you sign in with your social provider.
 @z
 
 @x
@@ -240,17 +253,17 @@ To reset your password, enter your email address on the [Sign in](https://login.
 @z
 
 @x
-If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/).
+If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/) for assistance.
 @y
-If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/).
+If you have a paid Docker subscription, you can [contact the Support team](https://hub.docker.com/support/contact/) for assistance.
 @z
 
 @x
-All Docker users can seek troubleshooting information and support through the following resources, where Docker or the community respond on a best effort basis.
+All Docker users can seek troubleshooting information and support through the following resources, where Docker or the community respond on a best effort basis:
    - [Docker Community Forums](https://forums.docker.com/)
    - [Docker Community Slack](http://dockr.ly/comm-slack)
 @y
-All Docker users can seek troubleshooting information and support through the following resources, where Docker or the community respond on a best effort basis.
+All Docker users can seek troubleshooting information and support through the following resources, where Docker or the community respond on a best effort basis:
    - [Docker Community Forums](https://forums.docker.com/)
    - [Docker Community Slack](http://dockr.ly/comm-slack)
 @z

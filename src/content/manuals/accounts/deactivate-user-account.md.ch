@@ -22,11 +22,11 @@ You can deactivate an account at any time. This section describes the prerequisi
 @z
 
 @x
->[!Warning]
+>[!WARNING]
 >
 > All Docker products and services that use your Docker account will be inaccessible after deactivating your account.
 @y
->[!Warning]
+>[!WARNING]
 >
 > All Docker products and services that use your Docker account will be inaccessible after deactivating your account.
 @z
@@ -38,7 +38,7 @@ You can deactivate an account at any time. This section describes the prerequisi
 @z
 
 @x
-Before deactivating your Docker account, ensure that you meet the following requirements:
+Before deactivating your Docker account, ensure you meet the following requirements:
 @y
 Docker アカウントの無効化を行うにあたっては、以下の条件を満たしている必要があります。
 @z

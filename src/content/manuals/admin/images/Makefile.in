@@ -240,7 +240,6 @@ top_srcdir = @top_srcdir@
 copyfiles = \
 	docker-admin-structure.webp \
 	org-structure.webp          \
-	remove-owner.png            \
 	team-repo-permission.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

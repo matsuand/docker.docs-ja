@@ -6,7 +6,6 @@ copyfiles = \
 	create-connection.png             \
 	docker-hub-repo-settings-menu.png \
 	index-report.png                  \
-	index-tag.webp                    \
 	oci-artifact.png                  \
 	oci-helm-tagview.png              \
 	oci-helm.png                      \

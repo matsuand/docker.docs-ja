@@ -12,14 +12,12 @@ copyfiles = \
 	builds-view.webp               \
 	console.png                    \
 	dashboard.webp                 \
-	diagnose-support.png           \
 	hyperv-enabled.png             \
 	notifications.svg              \
 	resource-saver-settings.png    \
 	resource-saver-status-bar.png  \
 	shared-folder-on-demand.png    \
 	synched-file-shares.webp       \
-	troubleshoot.png               \
 	virtualization-enabled.png     \
 	whale-x.svg                    \
 	wsl2-enabled.png

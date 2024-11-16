@@ -306,10 +306,8 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copydirs = \
-	_releaser  \
 	_vale      \
-	archetypes \
-	scripts
+	archetypes
 
 copyfiles = \
 	.dockerignore      \
