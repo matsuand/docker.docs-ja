@@ -72,37 +72,7 @@ The following example demonstrates how to define two simple services, set their 
 The following example demonstrates how to define two simple services, set their images, map ports, and configure basic environment variables using Docker Compose.
 @z
 
-@x
-```yaml
-services:
-  web:
-    image: nginx:latest
-    ports:
-      - "8080:80"
-@y
-```yaml
-services:
-  web:
-    image: nginx:latest
-    ports:
-      - "8080:80"
-@z
-
-@x
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: example
-      POSTGRES_DB: exampledb
-```
-@y
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: example
-      POSTGRES_DB: exampledb
-```
-@z
+% snip code...
 
 @x
 ### Advanced example 
@@ -122,49 +92,7 @@ The `backend` service builds an image from the Dockerfile located in the `backen
 The `backend` service builds an image from the Dockerfile located in the `backend` directory that is set to build at stage `builder`.
 @z
 
-@x
-```yaml
-services:
-  proxy:
-    image: nginx
-    volumes:
-      - type: bind
-        source: ./proxy/nginx.conf
-        target: /etc/nginx/conf.d/default.conf
-        read_only: true
-    ports:
-      - 80:80
-    depends_on:
-      - backend
-@y
-```yaml
-services:
-  proxy:
-    image: nginx
-    volumes:
-      - type: bind
-        source: ./proxy/nginx.conf
-        target: /etc/nginx/conf.d/default.conf
-        read_only: true
-    ports:
-      - 80:80
-    depends_on:
-      - backend
-@z
-
-@x
-  backend:
-    build:
-      context: backend
-      target: builder
-```
-@y
-  backend:
-    build:
-      context: backend
-      target: builder
-```
-@z
+% snip code...
 
 @x
 For more example Compose files, explore the [Awesome Compose samples](https://github.com/docker/awesome-compose).
@@ -190,29 +118,7 @@ For more example Compose files, explore the [Awesome Compose samples](https://gi
 `annotations` defines annotations for the container. `annotations` can use either an array or a map.
 @z
 
-@x
-```yml
-annotations:
-  com.example.foo: bar
-```
-@y
-```yml
-annotations:
-  com.example.foo: bar
-```
-@z
-
-@x
-```yml
-annotations:
-  - com.example.foo=bar
-```
-@y
-```yml
-annotations:
-  - com.example.foo=bar
-```
-@z
+% snip code...
 
 @x
 ### attach
@@ -264,53 +170,7 @@ The default service configuration is `attach: true`.
 `blkio_config` defines a set of configuration options to set block IO limits for a service.
 @z
 
-@x
-```yml
-services:
-  foo:
-    image: busybox
-    blkio_config:
-       weight: 300
-       weight_device:
-         - path: /dev/sda
-           weight: 400
-       device_read_bps:
-         - path: /dev/sdb
-           rate: '12mb'
-       device_read_iops:
-         - path: /dev/sdb
-           rate: 120
-       device_write_bps:
-         - path: /dev/sdb
-           rate: '1024k'
-       device_write_iops:
-         - path: /dev/sdb
-           rate: 30
-```
-@y
-```yml
-services:
-  foo:
-    image: busybox
-    blkio_config:
-       weight: 300
-       weight_device:
-         - path: /dev/sda
-           weight: 400
-       device_read_bps:
-         - path: /dev/sdb
-           rate: '12mb'
-       device_read_iops:
-         - path: /dev/sdb
-           rate: 120
-       device_write_bps:
-         - path: /dev/sdb
-           rate: '1024k'
-       device_write_iops:
-         - path: /dev/sdb
-           rate: 30
-```
-@z
+% snip code...
 
 @x
 #### device_read_bps, device_write_bps
@@ -468,17 +328,7 @@ an integer value using microseconds as unit or a [duration](extension.md#specify
 an integer value using microseconds as unit or a [duration](extension.md#specifying-durations).
 @z
 
-@x
-```yml
- cpu_rt_runtime: '400ms'
- cpu_rt_runtime: 95000`
-```
-@y
-```yml
- cpu_rt_runtime: '400ms'
- cpu_rt_runtime: 95000`
-```
-@z
+% snip code...
 
 @x
 ### cpu_rt_period
@@ -494,17 +344,7 @@ an integer value using microseconds as unit or a [duration](extension.md#specify
 an integer value using microseconds as unit or a [duration](extension.md#specifying-durations).
 @z
 
-@x
-```yml
- cpu_rt_period: '1400us'
- cpu_rt_period: 11000`
-```
-@y
-```yml
- cpu_rt_period: '1400us'
- cpu_rt_period: 11000`
-```
-@z
+% snip code...
 
 @x
 ### cpus
@@ -552,17 +392,7 @@ as strings.
 as strings.
 @z
 
-@x
-```yaml
-cap_add:
-  - ALL
-```
-@y
-```yaml
-cap_add:
-  - ALL
-```
-@z
+% snip code...
 
 @x
 ### cap_drop
@@ -578,19 +408,7 @@ as strings.
 as strings.
 @z
 
-@x
-```yaml
-cap_drop:
-  - NET_ADMIN
-  - SYS_ADMIN
-```
-@y
-```yaml
-cap_drop:
-  - NET_ADMIN
-  - SYS_ADMIN
-```
-@z
+% snip code...
 
 @x
 ### cgroup
@@ -632,15 +450,7 @@ select which cgroup namespace to use, if supported.
 `cgroup_parent` specifies an optional parent [cgroup](https://man7.org/linux/man-pages/man7/cgroups.7.html) for the container.
 @z
 
-@x
-```yaml
-cgroup_parent: m-executor-abcd
-```
-@y
-```yaml
-cgroup_parent: m-executor-abcd
-```
-@z
+% snip code...
 
 @x
 ### command
@@ -654,15 +464,7 @@ cgroup_parent: m-executor-abcd
 `command` overrides the default command declared by the container image, for example by Dockerfile's `CMD`.
 @z
 
-@x
-```yaml
-command: bundle exec thin -p 3000
-```
-@y
-```yaml
-command: bundle exec thin -p 3000
-```
-@z
+% snip code...
 
 @x
 The value can also be a list, in a manner similar to [Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
@@ -670,15 +472,7 @@ The value can also be a list, in a manner similar to [Dockerfile](https://docs.d
 The value can also be a list, in a manner similar to [Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
 @z
 
-@x
-```yaml
-command: [ "bundle", "exec", "thin", "-p", "3000" ]
-```
-@y
-```yaml
-command: [ "bundle", "exec", "thin", "-p", "3000" ]
-```
-@z
+% snip code...
 
 @x
 If the value is `null`, the default command from the image is used.
@@ -758,35 +552,7 @@ already been defined in the platform. If the external config does not exist,
 the deployment fails.
 @z
 
-@x
-```yml
-services:
-  redis:
-    image: redis:latest
-    configs:
-      - my_config
-      - my_other_config
-configs:
-  my_config:
-    file: ./my_config.txt
-  my_other_config:
-    external: true
-```
-@y
-```yml
-services:
-  redis:
-    image: redis:latest
-    configs:
-      - my_config
-      - my_other_config
-configs:
-  my_config:
-    file: ./my_config.txt
-  my_other_config:
-    external: true
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -832,41 +598,7 @@ to `103`. The `redis` service does not have access to the `my_other_config`
 config.
 @z
 
-@x
-```yml
-services:
-  redis:
-    image: redis:latest
-    configs:
-      - source: my_config
-        target: /redis_config
-        uid: "103"
-        gid: "103"
-        mode: 0440
-configs:
-  my_config:
-    external: true
-  my_other_config:
-    external: true
-```
-@y
-```yml
-services:
-  redis:
-    image: redis:latest
-    configs:
-      - source: my_config
-        target: /redis_config
-        uid: "103"
-        gid: "103"
-        mode: 0440
-configs:
-  my_config:
-    external: true
-  my_other_config:
-    external: true
-```
-@z
+% snip code...
 
 @x
 ### container_name
@@ -880,15 +612,7 @@ configs:
 `container_name` is a string that specifies a custom container name, rather than a name generated by default.
 @z
 
-@x
-```yml
-container_name: my-web-container
-```
-@y
-```yml
-container_name: my-web-container
-```
-@z
+% snip code...
 
 @x
 Compose does not scale a service beyond one container if the Compose file specifies a
@@ -932,17 +656,7 @@ The `credential_spec` must be in the format `file://<filename>` or `registry://<
 The `credential_spec` must be in the format `file://<filename>` or `registry://<value-name>`.
 @z
 
-@x
-```yml
-credential_spec:
-  file: my-credential-spec.json
-```
-@y
-```yml
-credential_spec:
-  file: my-credential-spec.json
-```
-@z
+% snip code...
 
 @x
 When using `registry:`, the credential spec is read from the Windows registry on
@@ -966,17 +680,7 @@ The following example loads the credential spec from a value named `my-credentia
 in the registry:
 @z
 
-@x
-```yml
-credential_spec:
-  registry: my-credential-spec
-```
-@y
-```yml
-credential_spec:
-  registry: my-credential-spec
-```
-@z
+% snip code...
 
 @x
 #### Example gMSA configuration
@@ -992,33 +696,7 @@ When configuring a gMSA credential spec for a service, you only need
 to specify a credential spec with `config`, as shown in the following example:
 @z
 
-@x
-```yml
-services:
-  myservice:
-    image: myimage:latest
-    credential_spec:
-      config: my_credential_spec
-@y
-```yml
-services:
-  myservice:
-    image: myimage:latest
-    credential_spec:
-      config: my_credential_spec
-@z
-
-@x
-configs:
-  my_credentials_spec:
-    file: ./my-credential-spec.json|
-```
-@y
-configs:
-  my_credentials_spec:
-    file: ./my-credential-spec.json|
-```
-@z
+% snip code...
 
 @x
 ### depends_on
@@ -1068,33 +746,7 @@ Simple example:
 Simple example:
 @z
 
-@x
-```yml
-services:
-  web:
-    build: .
-    depends_on:
-      - db
-      - redis
-  redis:
-    image: redis
-  db:
-    image: postgres
-```
-@y
-```yml
-services:
-  web:
-    build: .
-    depends_on:
-      - db
-      - redis
-  redis:
-    image: redis
-  db:
-    image: postgres
-```
-@z
+% snip code...
 
 @x
 Compose guarantees dependency services have been started before
@@ -1186,39 +838,7 @@ Service dependencies cause the following behaviors:
   example, `web` is removed before `db` and `redis`.
 @z
 
-@x
-```yml
-services:
-  web:
-    build: .
-    depends_on:
-      db:
-        condition: service_healthy
-        restart: true
-      redis:
-        condition: service_started
-  redis:
-    image: redis
-  db:
-    image: postgres
-```
-@y
-```yml
-services:
-  web:
-    build: .
-    depends_on:
-      db:
-        condition: service_healthy
-        restart: true
-      redis:
-        condition: service_started
-  redis:
-    image: redis
-  db:
-    image: postgres
-```
-@z
+% snip code...
 
 @x
 Compose guarantees dependency services are started before
@@ -1278,19 +898,7 @@ The format is the same format the Linux kernel specifies in the [Control Groups
 Device Whitelist Controller](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/devices.html).
 @z
 
-@x
-```yml
-device_cgroup_rules:
-  - 'c 1:3 mr'
-  - 'a 7:* rmw'
-```
-@y
-```yml
-device_cgroup_rules:
-  - 'c 1:3 mr'
-  - 'a 7:* rmw'
-```
-@z
+% snip code...
 
 @x
 ### devices
@@ -1306,19 +914,7 @@ device_cgroup_rules:
 `HOST_PATH:CONTAINER_PATH[:CGROUP_PERMISSIONS]`.
 @z
 
-@x
-```yml
-devices:
-  - "/dev/ttyUSB0:/dev/ttyUSB0"
-  - "/dev/sda:/dev/xvda:rwm"
-```
-@y
-```yml
-devices:
-  - "/dev/ttyUSB0:/dev/ttyUSB0"
-  - "/dev/sda:/dev/xvda:rwm"
-```
-@z
+% snip code...
 
 @x
 ### dns
@@ -1332,29 +928,7 @@ devices:
 `dns` defines custom DNS servers to set on the container network interface configuration. It can be a single value or a list.
 @z
 
-@x
-```yml
-dns: 8.8.8.8
-```
-@y
-```yml
-dns: 8.8.8.8
-```
-@z
-
-@x
-```yml
-dns:
-  - 8.8.8.8
-  - 9.9.9.9
-```
-@y
-```yml
-dns:
-  - 8.8.8.8
-  - 9.9.9.9
-```
-@z
+% snip code...
 
 @x
 ### dns_opt
@@ -1368,19 +942,7 @@ dns:
 `dns_opt` list custom DNS options to be passed to the container’s DNS resolver (`/etc/resolv.conf` file on Linux).
 @z
 
-@x
-```yml
-dns_opt:
-  - use-vc
-  - no-tld-query
-```
-@y
-```yml
-dns_opt:
-  - use-vc
-  - no-tld-query
-```
-@z
+% snip code...
 
 @x
 ### dns_search
@@ -1394,29 +956,7 @@ dns_opt:
 `dns_search` defines custom DNS search domains to set on container network interface configuration. It can be a single value or a list.
 @z
 
-@x
-```yml
-dns_search: example.com
-```
-@y
-```yml
-dns_search: example.com
-```
-@z
-
-@x
-```yml
-dns_search:
-  - dc1.example.com
-  - dc2.example.com
-```
-@y
-```yml
-dns_search:
-  - dc1.example.com
-  - dc2.example.com
-```
-@z
+% snip code...
 
 @x
 ### domainname
@@ -1450,25 +990,7 @@ driver-dependent.
 driver-dependent.
 @z
 
-@x
-```yml
-services:
-  app:
-    networks:
-      app_net:
-        driver_opts:
-          com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
-```
-@y
-```yml
-services:
-  app:
-    networks:
-      app_net:
-        driver_opts:
-          com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
-```
-@z
+% snip code...
 
 @x
 Consult the [network drivers documentation](/manuals/engine/network/_index.md) for more information.
@@ -1506,15 +1028,11 @@ See also [`command`](#command) to set or override the default command to be exec
 
 @x
 In its short form, the value can be defined as a string:
-```yml
-entrypoint: /code/entrypoint.sh
-```
 @y
 In its short form, the value can be defined as a string:
-```yml
-entrypoint: /code/entrypoint.sh
-```
 @z
+
+% snip code...
 
 @x
 Alternatively, the value can also be a list, in a manner similar to the
@@ -1524,27 +1042,7 @@ Alternatively, the value can also be a list, in a manner similar to the
 [Dockerfile](https://docs.docker.com/reference/dockerfile/#cmd):
 @z
 
-@x
-```yml
-entrypoint:
-  - php
-  - -d
-  - zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so
-  - -d
-  - memory_limit=-1
-  - vendor/bin/phpunit
-```
-@y
-```yml
-entrypoint:
-  - php
-  - -d
-  - zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20100525/xdebug.so
-  - -d
-  - memory_limit=-1
-  - vendor/bin/phpunit
-```
-@z
+% snip code...
 
 @x
 If the value is `null`, the default entrypoint from the image is used.
@@ -1572,15 +1070,7 @@ i.e. overridden to be empty.
 {{< include "compose/services-env-file.md" >}} 
 @z
 
-@x
-```yml
-env_file: .env
-```
-@y
-```yml
-env_file: .env
-```
-@z
+% snip code...
 
 @x
 `env_file` can also be a list. The files in the list are processed from the top down. For the same variable
@@ -1590,64 +1080,32 @@ specified in two env files, the value from the last file in the list stands.
 specified in two env files, the value from the last file in the list stands.
 @z
 
+% snip code...
+
 @x
-```yml
-env_file:
-  - ./a.env
-  - ./b.env
-```
+List elements can also be declared as a mapping, which then lets you set additional
+attributes.
 @y
-```yml
-env_file:
-  - ./a.env
-  - ./b.env
-```
+List elements can also be declared as a mapping, which then lets you set additional
+attributes.
 @z
 
 @x
-List elements can also be declared as a mapping, which then lets you set an additional
-attribute `required`. This defaults to `true`. When `required` is set to `false` and the `.env` file is missing,
-Compose silently ignores the entry.
+#### required
 @y
-List elements can also be declared as a mapping, which then lets you set an additional
-attribute `required`. This defaults to `true`. When `required` is set to `false` and the `.env` file is missing,
-Compose silently ignores the entry.
+#### required
 @z
 
 @x
-```yml
-env_file:
-  - path: ./default.env
-    required: true # default
-  - path: ./override.env
-    required: false
-```
-> `required` attribute is available with Docker Compose version 2.24.0 or later.
+{{< introduced compose 2.24.0 "/manuals/compose/releases/release-notes.md#2240" >}}
 @y
-```yml
-env_file:
-  - path: ./default.env
-    required: true # default
-  - path: ./override.env
-    required: false
-```
-> `required` attribute is available with Docker Compose version 2.24.0 or later.
+{{< introduced compose 2.24.0 "/manuals/compose/releases/release-notes.md#2240" >}}
 @z
 
 @x
-Relative path are resolved from the Compose file's parent folder. As absolute paths prevent the Compose
-file from being portable, Compose warns you when such a path is used to set `env_file`.
+The `required` attribute defaults to `true`. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
 @y
-Relative path are resolved from the Compose file's parent folder. As absolute paths prevent the Compose
-file from being portable, Compose warns you when such a path is used to set `env_file`.
-@z
-
-@x
-Environment variables declared in the [environment](#environment) section override these values. This holds true even if those values are
-empty or undefined.
-@y
-Environment variables declared in the [environment](#environment) section override these values. This holds true even if those values are
-empty or undefined.
+The `required` attribute defaults to `true`. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
 @z
 
 @x
@@ -1720,19 +1178,7 @@ Each line in an `.env` file must be in `VAR[=[VAL]]` format. The following synta
 `=VAL` may be omitted, in such cases the variable is unset.
 @z
 
-@x
-```bash
-# Set Rails/Rack environment
-RACK_ENV=development
-VAR="quoted"
-```
-@y
-```bash
-# Set Rails/Rack environment
-RACK_ENV=development
-VAR="quoted"
-```
-@z
+% snip code...
 
 @x
 ### environment
@@ -1762,21 +1208,7 @@ Map syntax:
 Map syntax:
 @z
 
-@x
-```yml
-environment:
-  RACK_ENV: development
-  SHOW: "true"
-  USER_INPUT:
-```
-@y
-```yml
-environment:
-  RACK_ENV: development
-  SHOW: "true"
-  USER_INPUT:
-```
-@z
+% snip code...
 
 @x
 Array syntax:
@@ -1784,21 +1216,7 @@ Array syntax:
 Array syntax:
 @z
 
-@x
-```yml
-environment:
-  - RACK_ENV=development
-  - SHOW=true
-  - USER_INPUT
-```
-@y
-```yml
-environment:
-  - RACK_ENV=development
-  - SHOW=true
-  - USER_INPUT
-```
-@z
+% snip code...
 
 @x
 When both `env_file` and `environment` are set for a service, values set by `environment` have precedence.
@@ -1830,21 +1248,7 @@ Syntax is `<portnum>/[<proto>]` or `<startport-endport>/[<proto>]` for a port ra
 When not explicitly set, `tcp` protocol is used.
 @z
 
-@x
-```yml
-expose:
-  - "3000"
-  - "8000"
-  - "8080-8085/tcp"
-```
-@y
-```yml
-expose:
-  - "3000"
-  - "8000"
-  - "8080-8085/tcp"
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]
@@ -1876,19 +1280,7 @@ You can use `extends` on any service together with other configuration keys. The
 defined with a required `service` and an optional `file` key.
 @z
 
-@x
-```yaml
-extends:
-  file: common.yml
-  service: webapp
-```
-@y
-```yaml
-extends:
-  file: common.yml
-  service: webapp
-```
-@z
+% snip code...
 
 @x
 - `service`: Defines the name of the service being referenced as a base, for example `web` or `database`.
@@ -2026,35 +1418,7 @@ For example, the input below:
 For example, the input below:
 @z
 
-@x
-```yaml
-services:
-  common:
-    image: busybox
-    environment:
-      TZ: utc
-      PORT: 80
-  cli:
-    extends:
-      service: common
-    environment:
-      PORT: 8080
-```
-@y
-```yaml
-services:
-  common:
-    image: busybox
-    environment:
-      TZ: utc
-      PORT: 80
-  cli:
-    extends:
-      service: common
-    environment:
-      PORT: 8080
-```
-@z
+% snip code...
 
 @x
 Produces the following configuration for the `cli` service. The same output is
@@ -2064,21 +1428,7 @@ Produces the following configuration for the `cli` service. The same output is
 produced if array syntax is used.
 @z
 
-@x
-```yaml
-environment:
-  PORT: 8080
-  TZ: utc
-image: busybox
-```
-@y
-```yaml
-environment:
-  PORT: 8080
-  TZ: utc
-image: busybox
-```
-@z
+% snip code...
 
 @x
 Items under `blkio_config.device_read_bps`, `blkio_config.device_read_iops`,
@@ -2098,33 +1448,7 @@ For example, the input below:
 For example, the input below:
 @z
 
-@x
-```yaml
-services:
-  common:
-    image: busybox
-    volumes:
-      - common-volume:/var/lib/backup/data:rw
-  cli:
-    extends:
-      service: common
-    volumes:
-      - cli-volume:/var/lib/backup/data:ro
-```
-@y
-```yaml
-services:
-  common:
-    image: busybox
-    volumes:
-      - common-volume:/var/lib/backup/data:rw
-  cli:
-    extends:
-      service: common
-    volumes:
-      - cli-volume:/var/lib/backup/data:ro
-```
-@z
+% snip code...
 
 @x
 Produces the following configuration for the `cli` service. Note that the mounted path
@@ -2134,19 +1458,7 @@ Produces the following configuration for the `cli` service. Note that the mounte
 now points to the new volume name and `ro` flag was applied.
 @z
 
-@x
-```yaml
-image: busybox
-volumes:
-- cli-volume:/var/lib/backup/data:ro
-```
-@y
-```yaml
-image: busybox
-volumes:
-- cli-volume:/var/lib/backup/data:ro
-```
-@z
+% snip code...
 
 @x
 If the referenced service definition contains `extends` mapping, the items under it
@@ -2164,35 +1476,7 @@ For example, the input below:
 For example, the input below:
 @z
 
-@x
-```yaml
-services:
-  base:
-    image: busybox
-    user: root
-  common:
-    image: busybox
-    extends:
-      service: base
-  cli:
-    extends:
-      service: common
-```
-@y
-```yaml
-services:
-  base:
-    image: busybox
-    user: root
-  common:
-    image: busybox
-    extends:
-      service: base
-  cli:
-    extends:
-      service: common
-```
-@z
+% snip code...
 
 @x
 Produces the following configuration for the `cli` service. Here, `cli` services
@@ -2204,17 +1488,7 @@ gets `user` key from `common` service, which in turn gets this key from `base`
 service.
 @z
 
-@x
-```yaml
-image: busybox
-user: root
-```
-@y
-```yaml
-image: busybox
-user: root
-```
-@z
+% snip code...
 
 @x
 ##### Sequences
@@ -2244,33 +1518,7 @@ For example, the input below:
 For example, the input below:
 @z
 
-@x
-```yaml
-services:
-  common:
-    image: busybox
-    security_opt:
-      - label:role:ROLE
-  cli:
-    extends:
-      service: common
-    security_opt:
-      - label:user:USER
-```
-@y
-```yaml
-services:
-  common:
-    image: busybox
-    security_opt:
-      - label:role:ROLE
-  cli:
-    extends:
-      service: common
-    security_opt:
-      - label:user:USER
-```
-@z
+% snip code...
 
 @x
 Produces the following configuration for the `cli` service.
@@ -2278,21 +1526,7 @@ Produces the following configuration for the `cli` service.
 Produces the following configuration for the `cli` service.
 @z
 
-@x
-```yaml
-image: busybox
-security_opt:
-- label:role:ROLE
-- label:user:USER
-```
-@y
-```yaml
-image: busybox
-security_opt:
-- label:role:ROLE
-- label:user:USER
-```
-@z
+% snip code...
 
 @x
 In case list syntax is used, the following keys should also be treated as sequences:
@@ -2332,21 +1566,7 @@ An alias of the form `SERVICE:ALIAS` can be specified.
 An alias of the form `SERVICE:ALIAS` can be specified.
 @z
 
-@x
-```yml
-external_links:
-  - redis
-  - database:mysql
-  - database:postgresql
-```
-@y
-```yml
-external_links:
-  - redis
-  - database:mysql
-  - database:postgresql
-```
-@z
+% snip code...
 
 @x
 ### extra_hosts
@@ -2372,21 +1592,7 @@ Short syntax uses plain strings in a list. Values must set hostname and IP addre
 Short syntax uses plain strings in a list. Values must set hostname and IP address for additional hosts in the form of `HOSTNAME=IP`.
 @z
 
-@x
-```yml
-extra_hosts:
-  - "somehost=162.242.195.82"
-  - "otherhost=50.31.209.229"
-  - "myhostv6=::1"
-```
-@y
-```yml
-extra_hosts:
-  - "somehost=162.242.195.82"
-  - "otherhost=50.31.209.229"
-  - "myhostv6=::1"
-```
-@z
+% snip code...
 
 @x
 IPv6 addresses can be enclosed in square brackets, for example:
@@ -2394,17 +1600,7 @@ IPv6 addresses can be enclosed in square brackets, for example:
 IPv6 addresses can be enclosed in square brackets, for example:
 @z
 
-@x
-```yml
-extra_hosts:
-  - "myhostv6=[::1]"
-```
-@y
-```yml
-extra_hosts:
-  - "myhostv6=[::1]"
-```
-@z
+% snip code...
 
 @x
 The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/manuals/compose/releases/release-notes.md#2241). For example:
@@ -2412,19 +1608,7 @@ The separator `=` is preferred, but `:` can also be used. Introduced in Docker C
 The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](manuals/compose/releases/release-notes.md#2241). For example:
 @z
 
-@x
-```yml
-extra_hosts:
-  - "somehost:162.242.195.82"
-  - "myhostv6:::1"
-```
-@y
-```yml
-extra_hosts:
-  - "somehost:162.242.195.82"
-  - "myhostv6:::1"
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -2438,21 +1622,7 @@ Alternatively, `extra_hosts` can be set as a mapping between hostname(s) and IP(
 Alternatively, `extra_hosts` can be set as a mapping between hostname(s) and IP(s)
 @z
 
-@x
-```yml
-extra_hosts:
-  somehost: "162.242.195.82"
-  otherhost: "50.31.209.229"
-  myhostv6: "::1"
-```
-@y
-```yml
-extra_hosts:
-  somehost: "162.242.195.82"
-  otherhost: "50.31.209.229"
-  myhostv6: "::1"
-```
-@z
+% snip code...
 
 @x
 Compose creates a matching entry with the IP address and hostname in the container's network
@@ -2462,19 +1632,7 @@ Compose creates a matching entry with the IP address and hostname in the contain
 configuration, which means for Linux `/etc/hosts` get extra lines:
 @z
 
-@x
-```console
-162.242.195.82  somehost
-50.31.209.229   otherhost
-::1             myhostv6
-```
-@y
-```console
-162.242.195.82  somehost
-50.31.209.229   otherhost
-::1             myhostv6
-```
-@z
+% snip code...
 
 @x
 ### group_add
@@ -2498,23 +1656,7 @@ the same file on a shared volume. That file can be owned by a group shared by al
 `group_add`.
 @z
 
-@x
-```yml
-services:
-  myservice:
-    image: alpine
-    group_add:
-      - mail
-```
-@y
-```yml
-services:
-  myservice:
-    image: alpine
-    group_add:
-      - mail
-```
-@z
+% snip code...
 
 @x
 Running `id` inside the created container must show that the user belongs to the `mail` group, which would not have
@@ -2542,27 +1684,7 @@ For more information on `HEALTHCHECK`, see the [Dockerfile reference](/reference
 For more information on `HEALTHCHECK`, see the [Dockerfile reference](reference/dockerfile.md#healthcheck).
 @z
 
-@x
-```yml
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost"]
-  interval: 1m30s
-  timeout: 10s
-  retries: 3
-  start_period: 40s
-  start_interval: 5s
-```
-@y
-```yml
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost"]
-  interval: 1m30s
-  timeout: 10s
-  retries: 3
-  start_period: 40s
-  start_interval: 5s
-```
-@z
+% snip code...
 
 @x
 `interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](/manuals/compose/releases/release-notes.md#2202)
@@ -2580,16 +1702,10 @@ either a string or a list. If it's a list, the first item must be either `NONE`,
 If it's a string, it's equivalent to specifying `CMD-SHELL` followed by that string.
 @z
 
-@x
-```yml
+@x within code
 # Hit the local web app
-test: ["CMD", "curl", "-f", "http://localhost"]
-```
 @y
-```yml
 # Hit the local web app
-test: ["CMD", "curl", "-f", "http://localhost"]
-```
 @z
 
 @x
@@ -2600,25 +1716,7 @@ Using `CMD-SHELL` runs the command configured as a string using the container's 
 (`/bin/sh` for Linux). Both forms below are equivalent:
 @z
 
-@x
-```yml
-test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
-```
-@y
-```yml
-test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
-```
-@z
-
-@x
-```yml
-test: curl -f https://localhost || exit 1
-```
-@y
-```yml
-test: curl -f https://localhost || exit 1
-```
-@z
+% snip code...
 
 @x
 `NONE` disables the healthcheck, and is mostly useful to disable the Healthcheck Dockerfile instruction set by the service's Docker image. Alternatively,
@@ -2628,17 +1726,7 @@ the healthcheck set by the image can be disabled by setting `disable: true`:
 the healthcheck set by the image can be disabled by setting `disable: true`:
 @z
 
-@x
-```yml
-healthcheck:
-  disable: true
-```
-@y
-```yml
-healthcheck:
-  disable: true
-```
-@z
+% snip code...
 
 @x
 ### hostname
@@ -2668,25 +1756,7 @@ as `[<registry>/][<project>/]<image>[:<tag>|@<digest>]`.
 as `[<registry>/][<project>/]<image>[:<tag>|@<digest>]`.
 @z
 
-@x
-```yml
-    image: redis
-    image: redis:5
-    image: redis@sha256:0ed5d5928d4737458944eb604cc8509e245c3e19d02ad83935398bc4b991aac7
-    image: library/redis
-    image: docker.io/library/redis
-    image: my_private.registry:5000/redis
-```
-@y
-```yml
-    image: redis
-    image: redis:5
-    image: redis@sha256:0ed5d5928d4737458944eb604cc8509e245c3e19d02ad83935398bc4b991aac7
-    image: library/redis
-    image: docker.io/library/redis
-    image: my_private.registry:5000/redis
-```
-@z
+% snip code...
 
 @x
 If the image does not exist on the platform, Compose attempts to pull it based on the `pull_policy`.
@@ -2718,21 +1788,7 @@ Set this option to `true` to enable this feature for the service.
 Set this option to `true` to enable this feature for the service.
 @z
 
-@x
-```yml
-services:
-  web:
-    image: alpine:latest
-    init: true
-```
-@y
-```yml
-services:
-  web:
-    image: alpine:latest
-    init: true
-```
-@z
+% snip code...
 
 @x
 The init binary that is used is platform specific.
@@ -2764,17 +1820,7 @@ The init binary that is used is platform specific.
   (`shareable`) IPC namespace.
 @z
 
-@x
-```yml
-    ipc: "shareable"
-    ipc: "service:[service name]"
-```
-@y
-```yml
-    ipc: "shareable"
-    ipc: "service:[service name]"
-```
-@z
+% snip code...
 
 @x
 ### isolation
@@ -2808,37 +1854,7 @@ It's recommended that you use reverse-DNS notation to prevent your labels from c
 those used by other software.
 @z
 
-@x
-```yml
-labels:
-  com.example.description: "Accounting webapp"
-  com.example.department: "Finance"
-  com.example.label-with-empty-value: ""
-```
-@y
-```yml
-labels:
-  com.example.description: "Accounting webapp"
-  com.example.department: "Finance"
-  com.example.label-with-empty-value: ""
-```
-@z
-
-@x
-```yml
-labels:
-  - "com.example.description=Accounting webapp"
-  - "com.example.department=Finance"
-  - "com.example.label-with-empty-value"
-```
-@y
-```yml
-labels:
-  - "com.example.description=Accounting webapp"
-  - "com.example.department=Finance"
-  - "com.example.label-with-empty-value"
-```
-@z
+% snip code...
 
 @x
 Compose creates containers with canonical labels:
@@ -2876,23 +1892,7 @@ a link alias (`SERVICE:ALIAS`), or just the service name.
 a link alias (`SERVICE:ALIAS`), or just the service name.
 @z
 
-@x
-```yml
-web:
-  links:
-    - db
-    - db:database
-    - redis
-```
-@y
-```yml
-web:
-  links:
-    - db
-    - db:database
-    - redis
-```
-@z
+% snip code...
 
 @x
 Containers for the linked service are reachable at a hostname identical to the alias, or the service name
@@ -2934,21 +1934,7 @@ Links also express implicit dependency between services in the same way as
 `logging` defines the logging configuration for the service.
 @z
 
-@x
-```yml
-logging:
-  driver: syslog
-  options:
-    syslog-address: "tcp://192.168.0.42:123"
-```
-@y
-```yml
-logging:
-  driver: syslog
-  options:
-    syslog-address: "tcp://192.168.0.42:123"
-```
-@z
+% snip code...
 
 @x
 The `driver` name specifies a logging driver for the service's containers. The default and available values
@@ -3110,19 +2096,7 @@ For more information container networks, see the [Docker Engine documentation](/
 For more information container networks, see the [Docker Engine documentation](manuals/engine/network/_index.md#container-networks).
 @z
 
-@x
-```yml
-    network_mode: "host"
-    network_mode: "none"
-    network_mode: "service:[service name]"
-```
-@y
-```yml
-    network_mode: "host"
-    network_mode: "none"
-    network_mode: "service:[service name]"
-```
-@z
+% snip code...
 
 @x
 When set, the [`networks`](#networks) attribute is not allowed and Compose rejects any
@@ -3144,23 +2118,11 @@ Compose file containing both attributes.
 {{< include "compose/services-networks.md" >}}
 @z
 
+% snip code...
+
 @x
-```yml
-services:
-  some-service:
-    networks:
-      - some-network
-      - other-network
-```
 For more information about the `networks` top-level element, see [Networks](networks.md).
 @y
-```yml
-services:
-  some-service:
-    networks:
-      - some-network
-      - other-network
-```
 For more information about the `networks` top-level element, see [Networks](networks.md).
 @z
 
@@ -3194,33 +2156,7 @@ Since `aliases` are network-scoped, the same service can have different aliases 
 > If it is, then exactly which container the name resolves to is not guaranteed.
 @z
 
-@x
-```yml
-services:
-  some-service:
-    networks:
-      some-network:
-        aliases:
-          - alias1
-          - alias3
-      other-network:
-        aliases:
-          - alias2
-```
-@y
-```yml
-services:
-  some-service:
-    networks:
-      some-network:
-        aliases:
-          - alias1
-          - alias3
-      other-network:
-        aliases:
-          - alias2
-```
-@z
+% snip code...
 
 @x
 In the following example, service `frontend` is able to reach the `backend` service at
@@ -3232,71 +2168,7 @@ the hostname `backend` or `database` on the `back-tier` network. The service `mo
 is able to reach same `backend` service at `backend` or `mysql` on the `admin` network.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    networks:
-      - front-tier
-      - back-tier
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    networks:
-      - front-tier
-      - back-tier
-@z
-
-@x
-  monitoring:
-    image: example/monitoring
-    networks:
-      - admin
-@y
-  monitoring:
-    image: example/monitoring
-    networks:
-      - admin
-@z
-
-@x
-  backend:
-    image: example/backend
-    networks:
-      back-tier:
-        aliases:
-          - database
-      admin:
-        aliases:
-          - mysql
-@y
-  backend:
-    image: example/backend
-    networks:
-      back-tier:
-        aliases:
-          - database
-      admin:
-        aliases:
-          - mysql
-@z
-
-@x
-networks:
-  front-tier:
-  back-tier:
-  admin:
-```
-@y
-networks:
-  front-tier:
-  back-tier:
-  admin:
-```
-@z
+% snip code...
 
 @x
 #### ipv4_address, ipv6_address
@@ -3318,45 +2190,7 @@ The corresponding network configuration in the [top-level networks section](netw
 `ipam` attribute with subnet configurations covering each static address.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    networks:
-      front-tier:
-        ipv4_address: 172.16.238.10
-        ipv6_address: 2001:3984:3989::10
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    networks:
-      front-tier:
-        ipv4_address: 172.16.238.10
-        ipv6_address: 2001:3984:3989::10
-@z
-
-@x
-networks:
-  front-tier:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.16.238.0/24"
-        - subnet: "2001:3984:3989::/64"
-```
-@y
-networks:
-  front-tier:
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.16.238.0/24"
-        - subnet: "2001:3984:3989::/64"
-```
-@z
+% snip code...
 
 @x
 #### link_local_ips
@@ -3380,37 +2214,7 @@ Example:
 Example:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: busybox
-    command: top
-    networks:
-      app_net:
-        link_local_ips:
-          - 57.123.22.11
-          - 57.123.22.13
-networks:
-  app_net:
-    driver: bridge
-```
-@y
-```yaml
-services:
-  app:
-    image: busybox
-    command: top
-    networks:
-      app_net:
-        link_local_ips:
-          - 57.123.22.11
-          - 57.123.22.13
-networks:
-  app_net:
-    driver: bridge
-```
-@z
+% snip code...
 
 @x
 #### mac_address
@@ -3450,45 +2254,7 @@ In the following example, the app service connects to `app_net_1` first as it ha
 In the following example, the app service connects to `app_net_1` first as it has the highest priority. It then connects to `app_net_3`, then `app_net_2`, which uses the default priority value of 0.
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: busybox
-    command: top
-    networks:
-      app_net_1:
-        priority: 1000
-      app_net_2:
-@y
-```yaml
-services:
-  app:
-    image: busybox
-    command: top
-    networks:
-      app_net_1:
-        priority: 1000
-      app_net_2:
-@z
-
-@x
-      app_net_3:
-        priority: 100
-networks:
-  app_net_1:
-  app_net_2:
-  app_net_3:
-```
-@y
-      app_net_3:
-        priority: 100
-networks:
-  app_net_1:
-  app_net_2:
-  app_net_3:
-```
-@z
+% snip code...
 
 @x
 ### oom_kill_disable
@@ -3544,15 +2310,7 @@ Supported values are platform specific.
 `pids_limit` tunes a container’s PIDs limit. Set to -1 for unlimited PIDs.
 @z
 
-@x
-```yml
-pids_limit: 10
-```
-@y
-```yml
-pids_limit: 10
-```
-@z
+% snip code...
 
 @x
 When set, `pids_limit` must be consistent with the `pids` attribute in the [Deploy Specification](deploy.md#pids).
@@ -3586,19 +2344,7 @@ Compose uses this attribute to determine which version of the image is pulled
 and/or on which platform the service’s build is performed.
 @z
 
-@x
-```yml
-platform: darwin
-platform: windows/amd64
-platform: linux/arm64/v8
-```
-@y
-```yml
-platform: darwin
-platform: windows/amd64
-platform: linux/arm64/v8
-```
-@z
+% snip code...
 
 @x
 ### ports
@@ -3684,33 +2430,7 @@ Examples:
 Examples:
 @z
 
-@x
-```yml
-ports:
-  - "3000"
-  - "3000-3005"
-  - "8000:8000"
-  - "9090-9091:8080-8081"
-  - "49100:22"
-  - "8000-9000:80"
-  - "127.0.0.1:8001:8001"
-  - "127.0.0.1:5000-5010:5000-5010"
-  - "6060:6060/udp"
-```
-@y
-```yml
-ports:
-  - "3000"
-  - "3000-3005"
-  - "8000:8000"
-  - "9090-9091:8080-8081"
-  - "49100:22"
-  - "8000-9000:80"
-  - "127.0.0.1:8001:8001"
-  - "127.0.0.1:5000-5010:5000-5010"
-  - "6060:6060/udp"
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]
@@ -3790,29 +2510,7 @@ expressed in the short form.
 - `environment`: Sets environment variables specifically for the `post_start` command. While the command inherits the environment variables defined for the service’s main command, this section lets you add new variables or override existing ones.
 @z
 
-@x
-```yaml
-services:
-  test:
-    post_start:
-      - command: ./do_something_on_startup.sh
-        user: root
-        privileged: true
-        environment:
-          - FOO=BAR
-```
-@y
-```yaml
-services:
-  test:
-    post_start:
-      - command: ./do_something_on_startup.sh
-        user: root
-        privileged: true
-        environment:
-          - FOO=BAR
-```
-@z
+% snip code...
 
 @x
 For more information, see [Use lifecycle hooks](/manuals/compose/how-tos/lifecycle.md).
@@ -3874,37 +2572,7 @@ If present, `profiles` follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 If present, `profiles` follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 @z
 
-@x
-```yaml
-services:
-  frontend:
-    image: frontend
-    profiles: ["frontend"]
-@y
-```yaml
-services:
-  frontend:
-    image: frontend
-    profiles: ["frontend"]
-@z
-
-@x
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on:
-      - db
-    profiles:
-      - debug
-```
-@y
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on:
-      - db
-    profiles:
-      - debug
-```
-@z
+% snip code...
 
 @x
 ### pull_policy
@@ -3976,23 +2644,7 @@ Optionally, limit the number of restart retries the Docker daemon attempts.
   restarting when the service is stopped or removed.
 @z
 
-@x
-```yml
-    restart: "no"
-    restart: always
-    restart: on-failure
-    restart: on-failure:3
-    restart: unless-stopped
-```
-@y
-```yml
-    restart: "no"
-    restart: always
-    restart: on-failure
-    restart: on-failure:3
-    restart: unless-stopped
-```
-@z
+% snip code...
 
 @x
 You can find more detailed information on restart policies in the
@@ -4022,21 +2674,7 @@ For example, `runtime` can be the name of [an implementation of OCI Runtime Spec
 For example, `runtime` can be the name of [an implementation of OCI Runtime Spec](https://github.com/opencontainers/runtime-spec/blob/master/implementations.md), such as "runc".
 @z
 
-@x
-```yml
-web:
-  image: busybox:latest
-  command: true
-  runtime: runc
-```
-@y
-```yml
-web:
-  image: busybox:latest
-  command: true
-  runtime: runc
-```
-@z
+% snip code...
 
 @x
 The default is `runc`. To use a different runtime, see [Alternative runtimes](/manuals/engine/daemon/alternative-runtimes.md).
@@ -4120,29 +2758,7 @@ access to the `server-certificate` secret. The value of `server-certificate` is 
 to the contents of the file `./server.cert`.
 @z
 
-@x
-```yml
-services:
-  frontend:
-    image: example/webapp
-    secrets:
-      - server-certificate
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@y
-```yml
-services:
-  frontend:
-    image: example/webapp
-    secrets:
-      - server-certificate
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@z
+% snip code...
 
 @x
 #### Long syntax
@@ -4206,19 +2822,7 @@ to the contents of the file `./server.cert`.
 `security_opt` overrides the default labeling scheme for each container.
 @z
 
-@x
-```yml
-security_opt:
-  - label:user:USER
-  - label:role:ROLE
-```
-@y
-```yml
-security_opt:
-  - label:user:USER
-  - label:role:ROLE
-```
-@z
+% snip code...
 
 @x
 For further default labeling schemes you can override, see [Security configuration](/reference/cli/docker/container/run.md#security-opt).
@@ -4278,17 +2882,7 @@ handle SIGTERM (or whichever stop signal has been specified with
 as a [duration](extension.md#specifying-durations).
 @z
 
-@x
-```yml
-    stop_grace_period: 1s
-    stop_grace_period: 1m30s
-```
-@y
-```yml
-    stop_grace_period: 1s
-    stop_grace_period: 1m30s
-```
-@z
+% snip code...
 
 @x
 Default value is 10 seconds for the container to exit before sending SIGKILL.
@@ -4310,15 +2904,7 @@ If unset containers are stopped by Compose by sending `SIGTERM`.
 If unset containers are stopped by Compose by sending `SIGTERM`.
 @z
 
-@x
-```yml
-stop_signal: SIGUSR1
-```
-@y
-```yml
-stop_signal: SIGUSR1
-```
-@z
+% snip code...
 
 @x
 ### storage_opt
@@ -4332,17 +2918,7 @@ stop_signal: SIGUSR1
 `storage_opt` defines storage driver options for a service.
 @z
 
-@x
-```yml
-storage_opt:
-  size: '1G'
-```
-@y
-```yml
-storage_opt:
-  size: '1G'
-```
-@z
+% snip code...
 
 @x
 ### sysctls
@@ -4356,33 +2932,7 @@ storage_opt:
 `sysctls` defines kernel parameters to set in the container. `sysctls` can use either an array or a map.
 @z
 
-@x
-```yml
-sysctls:
-  net.core.somaxconn: 1024
-  net.ipv4.tcp_syncookies: 0
-```
-@y
-```yml
-sysctls:
-  net.core.somaxconn: 1024
-  net.ipv4.tcp_syncookies: 0
-```
-@z
-
-@x
-```yml
-sysctls:
-  - net.core.somaxconn=1024
-  - net.ipv4.tcp_syncookies=0
-```
-@y
-```yml
-sysctls:
-  - net.core.somaxconn=1024
-  - net.ipv4.tcp_syncookies=0
-```
-@z
+% snip code...
 
 @x
 You can only use sysctls that are namespaced in the kernel. Docker does not
@@ -4408,29 +2958,7 @@ parameters (sysctls) at runtime](reference/cli/docker/container/run.md#sysctl).
 `tmpfs` mounts a temporary file system inside the container. It can be a single value or a list.
 @z
 
-@x
-```yml
-tmpfs: /run
-```
-@y
-```yml
-tmpfs: /run
-```
-@z
-
-@x
-```yml
-tmpfs:
-  - /run
-  - /tmp
-```
-@y
-```yml
-tmpfs:
-  - /run
-  - /tmp
-```
-@z
+% snip code...
 
 @x
 ### tty
@@ -4466,23 +2994,7 @@ or as mapping for soft/hard limits.
 or as mapping for soft/hard limits.
 @z
 
-@x
-```yml
-ulimits:
-  nproc: 65535
-  nofile:
-    soft: 20000
-    hard: 40000
-```
-@y
-```yml
-ulimits:
-  nproc: 65535
-  nofile:
-    soft: 20000
-    hard: 40000
-```
-@z
+% snip code...
 
 @x
 ### user
@@ -4510,15 +3022,7 @@ on platform configuration.
 on platform configuration.
 @z
 
-@x
-```yml
-userns_mode: "host"
-```
-@y
-```yml
-userns_mode: "host"
-```
-@z
+% snip code...
 
 @x
 ### uts
@@ -4546,15 +3050,7 @@ it is the runtime's decision to assign a UTS namespace, if supported. Available 
 - `'host'`: Results in the container using the same UTS namespace as the host.
 @z
 
-@x
-```yml
-    uts: "host"
-```
-@y
-```yml
-    uts: "host"
-```
-@z
+% snip code...
 
 @x
 ### volumes
@@ -4576,47 +3072,7 @@ The following example shows a named volume (`db-data`) being used by the `backen
 and a bind mount defined for a single service.
 @z
 
-@x
-```yml
-services:
-  backend:
-    image: example/backend
-    volumes:
-      - type: volume
-        source: db-data
-        target: /data
-        volume:
-          nocopy: true
-          subpath: sub
-      - type: bind
-        source: /var/run/postgres/postgres.sock
-        target: /var/run/postgres/postgres.sock
-@y
-```yml
-services:
-  backend:
-    image: example/backend
-    volumes:
-      - type: volume
-        source: db-data
-        target: /data
-        volume:
-          nocopy: true
-          subpath: sub
-      - type: bind
-        source: /var/run/postgres/postgres.sock
-        target: /var/run/postgres/postgres.sock
-@z
-
-@x
-volumes:
-  db-data:
-```
-@y
-volumes:
-  db-data:
-```
-@z
+% snip code...
 
 @x
 For more information about the `volumes` top-level element, see [Volumes](volumes.md).
@@ -4772,23 +3228,7 @@ You can also mount volumes from a container that is not managed by Compose by us
 You can also mount volumes from a container that is not managed by Compose by using the `container:` prefix.
 @z
 
-@x
-```yaml
-volumes_from:
-  - service_name
-  - service_name:ro
-  - container:container_name
-  - container:container_name:rw
-```
-@y
-```yaml
-volumes_from:
-  - service_name
-  - service_name:ro
-  - container:container_name
-  - container:container_name:rw
-```
-@z
+% snip code...
 
 @x
 ### working_dir

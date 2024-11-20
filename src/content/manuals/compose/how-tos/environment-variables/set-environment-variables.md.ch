@@ -208,24 +208,16 @@ The paths to your `.env` file, specified in the `env_file` attribute, are relati
 @x
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
 - As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-  ```yaml
-  env_file:
-    - path: ./default.env
-      required: true # default
-    - path: ./override.env
-      required: false
-  ``` 
-- Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
 @y
 - If multiple files are specified, they are evaluated in order and can override values set in previous files.
 - As of Docker Compose version 2.24.0, you can set your `.env` file, defined by the `env_file` attribute, to be optional by using the `required` field. When `required` is set to `false` and the `.env` file is missing, Compose silently ignores the entry.
-  ```yaml
-  env_file:
-    - path: ./default.env
-      required: true # default
-    - path: ./override.env
-      required: false
-  ``` 
+@z
+
+% snip code...
+
+@x
+- Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
+@y
 - Values in your `.env` file can be overridden from the command line by using [`docker compose run -e`](#set-environment-variables-with-docker-compose-run---env). 
 @z
 
