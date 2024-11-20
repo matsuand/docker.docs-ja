@@ -2,23 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: .NET samples
 description: Docker samples for .NET.
 service: .net
-aliases:
-- /samples/dotnetcore/
-- /compose/aspnet-mssql-compose/
-- /samples/aspnet-mssql-compose/
----
 @y
----
 title: .NET サンプル
 description: .NET の Docker サンプル。
 service: .net
-aliases:
-- /samples/dotnetcore/
-- /compose/aspnet-mssql-compose/
-- /samples/aspnet-mssql-compose/
----
 @z

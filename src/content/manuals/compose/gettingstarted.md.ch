@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Check out this tutorial on how to use Docker Compose from defining application
@@ -289,15 +290,7 @@ With a single command, you create and start all the services from your configura
    You should see a message in your browser saying:
 @z
 
-@x
-   ```text
-   Hello World! I have been seen 1 times.
-   ```
-@y
-   ```text
-   Hello World! I have been seen 1 times.
-   ```
-@z
+% snip text...
 
 @x
    ![hello world in browser](images/quick-hello-world-1.png)
@@ -317,15 +310,7 @@ With a single command, you create and start all the services from your configura
    The number should increment.
 @z
 
-@x
-   ```text
-   Hello World! I have been seen 2 times.
-   ```
-@y
-   ```text
-   Hello World! I have been seen 2 times.
-   ```
-@z
+% snip text...
 
 @x
    ![hello world in browser](images/quick-hello-world-2.png)
@@ -443,15 +428,7 @@ message to `Hello from Docker!`:
 message to `Hello from Docker!`:
 @z
 
-@x
-   ```python
-   return 'Hello from Docker! I have been seen {} times.\n'.format(count)
-   ```
-@y
-   ```python
-   return 'Hello from Docker! I have been seen {} times.\n'.format(count)
-   ```
-@z
+% snip code...
 
 @x
 2. Refresh the app in your browser. The greeting should be updated, and the

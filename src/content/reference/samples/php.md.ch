@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: PHP samples
 description: Docker samples for PHP.
 service: php
----
 @y
----
 title: PHP サンプル
 description: PHP の Docker サンプル。
 service: php
----
 @z

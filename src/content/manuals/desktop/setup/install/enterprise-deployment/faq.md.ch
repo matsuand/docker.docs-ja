@@ -4,13 +4,13 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: MSI FAQs
-description: Frequently asked questions for deploying Docker Desktop with Microsoft installer
-keywords: msi, deploy, docker desktop, faqs
+title: FAQs
+description: Frequently asked questions for deploying Docker Desktop at scale
+keywords: msi, deploy, docker desktop, faqs, pkg
 @y
-title: MSI FAQs
-description: Frequently asked questions for deploying Docker Desktop with Microsoft installer
-keywords: msi, deploy, docker desktop, faqs
+title: FAQs
+description: Frequently asked questions for deploying Docker Desktop at scale
+keywords: msi, deploy, docker desktop, faqs, pkg
 @z
 
 @x

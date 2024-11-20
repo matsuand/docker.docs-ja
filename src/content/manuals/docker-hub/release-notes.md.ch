@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker Hub release notes
@@ -33,6 +33,42 @@ known issues for each Docker Hub release.
 Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projects/51/views/1?filterQuery=) to see what's coming next.
 @y
 Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projects/51/views/1?filterQuery=) to see what's coming next.
+@z
+
+@x
+## 2024-11-11
+@y
+## 2024-11-11
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- [Personal access tokens](/security/for-developers/access-tokens/) (PATs) now support expiration dates.
+@y
+- [Personal access tokens](__SUBDIR__/security/for-developers/access-tokens/) (PATs) now support expiration dates.
+@z
+
+@x
+## 2024-10-15
+@y
+## 2024-10-15
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Beta: You can now create [organization access tokens](/security/for-admins/access-tokens/) (OATs) to enhance security for organizations and streamline access management for organizations.
+@y
+- Beta: You can now create [organization access tokens](__SUBDIR__/security/for-admins/access-tokens/) (OATs) to enhance security for organizations and streamline access management for organizations.
 @z
 
 @x

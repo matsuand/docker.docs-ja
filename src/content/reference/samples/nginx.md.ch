@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: NGINX samples
 description: Docker samples for NGINX.
 service: nginx
----
 @y
----
 title: NGINX サンプル
 description: NGINX の Docker サンプル。
 service: nginx
----
 @z

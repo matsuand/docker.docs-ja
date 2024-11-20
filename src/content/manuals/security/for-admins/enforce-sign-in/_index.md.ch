@@ -32,11 +32,13 @@ security features](manuals/security/for-admins/hardened-desktop/_index.md) for y
 @x
 There are multiple methods for enforcing sign-in, depending on your companies' set up and preferences:
 - [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=green text="New" >}}
+- [Configuration profiles method (Mac only)](methods.md#configuration-profiles-method-mac-only){{< badge color=green text="New" >}}
 - [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=green text="New" >}}
 - [`registry.json` method (All)](methods.md#registryjson-method-all)
 @y
 There are multiple methods for enforcing sign-in, depending on your companies' set up and preferences:
 - [Registry key method (Windows only)](methods.md#registry-key-method-windows-only){{< badge color=green text="New" >}}
+- [Configuration profiles method (Mac only)](methods.md#configuration-profiles-method-mac-only){{< badge color=green text="New" >}}
 - [`.plist` method (Mac only)](methods.md#plist-method-mac-only){{< badge color=green text="New" >}}
 - [`registry.json` method (All)](methods.md#registryjson-method-all)
 @z

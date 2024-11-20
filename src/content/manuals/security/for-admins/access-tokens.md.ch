@@ -34,6 +34,7 @@ The organization access tokens feature is currently in [Beta](../../release-life
 >
 > - Docker Build Cloud
 > - Docker Scout
+> - Docker REST APIs
 >
 > If you use these services, you must use personal access tokens instead.
 @y
@@ -43,6 +44,7 @@ The organization access tokens feature is currently in [Beta](../../release-life
 >
 > - Docker Build Cloud
 > - Docker Scout
+> - Docker REST APIs
 >
 > If you use these services, you must use personal access tokens instead.
 @z

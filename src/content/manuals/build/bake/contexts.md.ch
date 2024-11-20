@@ -257,7 +257,7 @@ multiple Dockerfiles that can't be easily merged into one.
 > - To check your BuildKit version, run `docker buildx inspect --bootstrap` and
 >   look for the `BuildKit version` field.
 > - To check your Dockerfile syntax version, check the `syntax`
->   [parser directive](/reference/dockerfile.md#syntax) in your Dockerfile. If
+>   [parser directive](reference/dockerfile.md#syntax) in your Dockerfile. If
 >   it's not present, the default version whatever comes bundled with your
 >   current version of BuildKit. To set the version explicitly, add
 >   `#syntax=docker/dockerfile:1.10` at the top of your Dockerfile.

@@ -5,13 +5,29 @@
 % snip 対応
 
 @x
-title: Install and configure
+title: Use the MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure
 @y
-title: Install and configure
+title: Use the MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure
+@z
+
+@x
+> [!NOTE]
+>
+> The MSI installer is available to all company and organization owners with a Business subscription and Docker Desktop version 4.32 and later.
+@y
+> [!NOTE]
+>
+> The MSI installer is available to all company and organization owners with a Business subscription and Docker Desktop version 4.32 and later.
+@z
+
+@x
+The MSI package supports various MDM (Mobile Device Management) solutions, making it ideal for bulk installations and eliminating the need for manual setups by individual users. With this package, IT administrators can ensure standardized, policy-driven installations of Docker Desktop, enhancing efficiency and software management across their organizations.
+@y
+The MSI package supports various MDM (Mobile Device Management) solutions, making it ideal for bulk installations and eliminating the need for manual setups by individual users. With this package, IT administrators can ensure standardized, policy-driven installations of Docker Desktop, enhancing efficiency and software management across their organizations.
 @z
 
 @x
@@ -22,37 +38,17 @@ keywords: msi, windows, docker desktop, install, deploy, configure
 
 @x
 1. In the [Docker Admin Console](http://admin.docker.com/), navigate to your organization.   
-@y
-1. In the [Docker Admin Console](http://admin.docker.com/), navigate to your organization.   
-@z
-
-@x
 2. Under **Security and access**, select the **Deploy Docker Desktop** page. 
-@y
-2. Under **Security and access**, select the **Deploy Docker Desktop** page. 
-@z
-
-@x
-3. Select the **Download MSI installer** button. 
-@y
-3. Select the **Download MSI installer** button. 
-@z
-
-@x
+3. From the **Windows OS** tab, select the **Download MSI installer** button. 
 4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer. 
-@y
-4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer. 
-@z
-
-@x
 5. Once you've accepted the license agreement, you can choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
-@y
-5. Once you've accepted the license agreement, you can choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
-@z
-
-@x
 6. Configure the Docker Desktop installation. You can:
 @y
+1. In the [Docker Admin Console](http://admin.docker.com/), navigate to your organization.   
+2. Under **Security and access**, select the **Deploy Docker Desktop** page. 
+3. From the **Windows OS** tab, select the **Download MSI installer** button. 
+4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer. 
+5. Once you've accepted the license agreement, you can choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 6. Configure the Docker Desktop installation. You can:
 @z
 
@@ -76,19 +72,11 @@ keywords: msi, windows, docker desktop, install, deploy, configure
 
 @x
     - Select the engine for Docker Desktop. Either WSL or Hyper-V. If your system only supports one of the two options, you won't be able to select which backend to use.
-@y
-    - Select the engine for Docker Desktop. Either WSL or Hyper-V. If your system only supports one of the two options, you won't be able to select which backend to use.
-@z
-
-@x
 7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
-@y
-7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
-@z
-
-@x
 8. When the installation is successful, select **Finish** to complete the installation process.
 @y
+    - Select the engine for Docker Desktop. Either WSL or Hyper-V. If your system only supports one of the two options, you won't be able to select which backend to use.
+7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 8. When the installation is successful, select **Finish** to complete the installation process.
 @z
 
@@ -113,7 +101,7 @@ If your administrator account is different to your user account, you must add th
 >
 > Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy Docker Desktop** page > under **Security and access**. 
 >
-> To keep up to date with new releases, check the [release notes](https://docs.docker.com/desktop/release-notes/) page.
+> To keep up to date with new releases, check the [release notes](/manuals/desktop/release-notes.md) page.
 @y
 > [!NOTE]
 >
@@ -121,7 +109,7 @@ If your administrator account is different to your user account, you must add th
 >
 > Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy Docker Desktop** page > under **Security and access**. 
 >
-> To keep up to date with new releases, check the [release notes](https://docs.docker.com/desktop/release-notes/) page.
+> To keep up to date with new releases, check the [release notes](manuals/desktop/release-notes.md) page.
 @z
 
 @x
@@ -196,7 +184,7 @@ Non-interactive installations are silent and any additional configuration must b
 #### Installing interactively with verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Installing interactively without verbose logging
@@ -204,7 +192,7 @@ Non-interactive installations are silent and any additional configuration must b
 #### Installing interactively without verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Installing non-interactively with verbose logging
@@ -212,7 +200,7 @@ Non-interactive installations are silent and any additional configuration must b
 #### Installing non-interactively with verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Installing non-interactively and suppressing reboots
@@ -220,7 +208,7 @@ Non-interactive installations are silent and any additional configuration must b
 #### Installing non-interactively and suppressing reboots
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Installing non-interactively with admin settings
@@ -228,7 +216,7 @@ Non-interactive installations are silent and any additional configuration must b
 #### Installing non-interactively with admin settings
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Installing with the passive display option
@@ -254,7 +242,7 @@ For example:
 For example:
 @z
 
-% snip command...
+% snip code...
 
 @x
 > [!TIP]
@@ -294,7 +282,7 @@ If you no longer have the original `.msi` file, you need to use the product code
 If you no longer have the original `.msi` file, you need to use the product code associated with the installation. To find the product code, run:
 @z
 
-% snip command...
+% snip code...
 
 @x
 It should return output similar to the following:
@@ -305,12 +293,22 @@ It should return output similar to the following:
 % snip output...
 
 @x
+> [!NOTE]
+>
+> This command can take some time to return, depending on the number of installed applications.
+@y
+> [!NOTE]
+>
+> This command can take some time to return, depending on the number of installed applications.
+@z
+
+@x
 `IdentifyingNumber` is the applications product code and can be used to uninstall Docker Desktop. For example:
 @y
 `IdentifyingNumber` is the applications product code and can be used to uninstall Docker Desktop. For example:
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Uninstalling interactively with verbose logging
@@ -318,7 +316,7 @@ It should return output similar to the following:
 #### Uninstalling interactively with verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Uninstalling interactively without verbose logging
@@ -326,7 +324,7 @@ It should return output similar to the following:
 #### Uninstalling interactively without verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Uninstalling non-interactively with verbose logging
@@ -334,7 +332,7 @@ It should return output similar to the following:
 #### Uninstalling non-interactively with verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 #### Uninstalling non-interactively without verbose logging
@@ -342,7 +340,7 @@ It should return output similar to the following:
 #### Uninstalling non-interactively without verbose logging
 @z
 
-% snip command...
+% snip code...
 
 @x
 ### Configuration options 
@@ -458,7 +456,7 @@ When you install Docker Desktop from the command line, use the `DISABLEANALYTICS
 When you install Docker Desktop from the command line, use the `DISABLEANALYTICS` property.
 @z
 
-% snip command...
+% snip code...
 
 @x
 {{< /tab >}}
@@ -492,7 +490,7 @@ The registry key is as follows:
 The registry key is as follows:
 @z
 
-% snip command...
+% snip code...
 
 @x
 When analytics is disabled, this key has a value of `1`. 

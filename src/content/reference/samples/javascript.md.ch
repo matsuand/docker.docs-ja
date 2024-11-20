@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: JavaScript samples
 description: Docker samples for JavaScript.
 service: javascript
----
 @y
----
 title: JavaScript サンプル
 description: JavaScript の Docker サンプル。
 service: javascript
----
 @z

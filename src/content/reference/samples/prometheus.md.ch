@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Prometheus samples
 description: Docker samples for Prometheus.
 service: prometheus
----
 @y
----
 title: Prometheus サンプル
 description: Prometheus の Docker サンプル。
 service: prometheus
----
 @z

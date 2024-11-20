@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: MariaDB samples
 description: Docker samples for MariaDB.
 service: mariadb
----
 @y
----
 title: MariaDB サンプル
 description: MariaDB の Docker サンプル。
 service: mariadb
----
 @z

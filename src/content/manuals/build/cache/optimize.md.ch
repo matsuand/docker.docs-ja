@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Optimize cache usage in builds
@@ -39,7 +39,7 @@ the build process:
   invalidation.
 - [Keep the context small](#keep-the-context-small): The context is the set of
   files and directories that are sent to the builder to process a build
-  instruction. Keeping the context as small reduces the amount of data that
+  instruction. Keeping the context as small as possible reduces the amount of data that
   needs to be sent to the builder, and reduces the likelihood of cache
   invalidation.
 - [Use bind mounts](#use-bind-mounts): Bind mounts let you mount a file or
@@ -60,7 +60,7 @@ the build process:
   invalidation.
 - [Keep the context small](#keep-the-context-small): The context is the set of
   files and directories that are sent to the builder to process a build
-  instruction. Keeping the context as small reduces the amount of data that
+  instruction. Keeping the context as small as possible reduces the amount of data that
   needs to be sent to the builder, and reduces the likelihood of cache
   invalidation.
 - [Use bind mounts](#use-bind-mounts): Bind mounts let you mount a file or

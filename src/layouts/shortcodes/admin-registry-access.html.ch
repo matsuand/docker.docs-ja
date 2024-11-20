@@ -31,29 +31,41 @@ To configure Registry Access Management permissions, perform the following steps
 @z
 
 @x
-4. Select **Add registry** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
+4. Select **Add registry** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list. There is no limit on the number of registries you can add.
 5. Verify that the registry appears in your list and select **Save changes**.
 @y
-4. Select **Add registry** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list.
+4. Select **Add registry** and enter your registry details in the applicable fields, and then select **Create** to add the registry to your list. There is no limit on the number of registries you can add.
 5. Verify that the registry appears in your list and select **Save changes**.
 @z
 
 @x
-   > [!NOTE]
-   >
-   > Once you add a registry, it can take up to 24 hours for the changes to be enforced on your developers’ machines. If you want to apply the changes sooner, you must force a Docker logout on your developers’ machine and have the developers re-authenticate for Docker Desktop. Also, there is no limit on the number of registries you can add. See the Caveats section below to learn more about limitations when using this feature.
+Once you add a registry, it can take up to 24 hours for the changes to be enforced on your developers’ machines. 
 @y
-   > [!NOTE]
-   >
-   > Once you add a registry, it can take up to 24 hours for the changes to be enforced on your developers’ machines. If you want to apply the changes sooner, you must force a Docker logout on your developers’ machine and have the developers re-authenticate for Docker Desktop. Also, there is no limit on the number of registries you can add. See the Caveats section below to learn more about limitations when using this feature.
+Once you add a registry, it can take up to 24 hours for the changes to be enforced on your developers’ machines. 
 @z
 
 @x
-   > [!TIP]
-   >
-   > Since RAM sets policies about where content can be fetched from, the [ADD](/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
+If you want to apply the changes sooner, you must force a Docker signout on your developers’ machine and have the developers re-authenticate for Docker Desktop. See the [Caveats](#caveats) section below to learn more about limitations when using this feature.
 @y
-   > [!TIP]
-   >
-   > Since RAM sets policies about where content can be fetched from, the [ADD](__SUBDIR__/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
+If you want to apply the changes sooner, you must force a Docker signout on your developers’ machine and have the developers re-authenticate for Docker Desktop. See the [Caveats](#caveats) section below to learn more about limitations when using this feature.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Starting with Docker Desktop version 4.36, you can enforce sign-in for multiple organizations. If a developer belongs to multiple organizations with different RAM policies, only the RAM policy for the first organization listed in the `registry.json` file, `.plist` file, or registry key is enforced.
+@y
+> [!IMPORTANT]
+>
+> Starting with Docker Desktop version 4.36, you can enforce sign-in for multiple organizations. If a developer belongs to multiple organizations with different RAM policies, only the RAM policy for the first organization listed in the `registry.json` file, `.plist` file, or registry key is enforced.
+@z
+
+@x
+> [!TIP]
+>
+> Since RAM sets policies about where content can be fetched from, the [ADD](/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
+@y
+> [!TIP]
+>
+> Since RAM sets policies about where content can be fetched from, the [ADD](__SUBDIR__/reference/dockerfile/#add) instruction of the Dockerfile, when the parameter of the ADD instruction is a URL, is also subject to registry restrictions. It's recommended that you add the domains of URL parameters to the list of allowed registry addresses under the Registry Access Management settings of your organization.
 @z

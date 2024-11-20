@@ -92,13 +92,13 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
 {{< card
   title="Docker Desktop for Linux"
   description="A native Linux application that delivers all Docker tools to your Linux computer."
-  link="/desktop/install/linux/"
+  link="/desktop/setup/install/linux/"
   icon="/assets/images/linux_48.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Linux"
   description="お手元の Linux コンピューターに Docker ツールをすべて提供するネイティブな Linux アプリケーションです。"
-  link="__SUBDIR__/desktop/install/linux/"
+  link="__SUBDIR__/desktop/setup/install/linux/"
   icon="__SUBDIR__/assets/images/linux_48.svg" >}}
 @z
 

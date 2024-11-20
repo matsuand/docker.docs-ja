@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Multi-platform builds
@@ -215,21 +216,7 @@ To create a custom builder, use the `docker buildx create` command to create a
 builder that uses the `docker-container` driver.
 @z
 
-@x
-```console
-$ docker buildx create \
-  --name container-builder \
-  --driver docker-container \
-  --bootstrap --use
-```
-@y
-```console
-$ docker buildx create \
-  --name container-builder \
-  --driver docker-container \
-  --bootstrap --use
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -275,15 +262,7 @@ When triggering a build, use the `--platform` flag to define the target
 platforms for the build output, such as `linux/amd64` and `linux/arm64`:
 @z
 
-@x
-```console
-$ docker buildx build --platform linux/amd64,linux/arm64 .
-```
-@y
-```console
-$ docker buildx build --platform linux/amd64,linux/arm64 .
-```
-@z
+% snip command...
 
 @x
 ## Strategies
@@ -395,15 +374,7 @@ install QEMU and register the executable types on the host with a single
 command:
 @z
 
-@x
-```console
-$ docker run --privileged --rm tonistiigi/binfmt --install all
-```
-@y
-```console
-$ docker run --privileged --rm tonistiigi/binfmt --install all
-```
-@z
+% snip command...
 
 @x
 This installs the QEMU binaries and registers them with
@@ -455,21 +426,7 @@ The following command creates a multi-node builder from Docker contexts named
 those contexts.
 @z
 
-@x
-```console
-$ docker buildx create --use --name mybuild node-amd64
-mybuild
-$ docker buildx create --append --name mybuild node-arm64
-$ docker buildx build --platform linux/amd64,linux/arm64 .
-```
-@y
-```console
-$ docker buildx create --use --name mybuild node-amd64
-mybuild
-$ docker buildx create --append --name mybuild node-arm64
-$ docker buildx build --platform linux/amd64,linux/arm64 .
-```
-@z
+% snip command...
 
 @x
 While this approach has advantages over emulation, managing multi-node builders
@@ -497,27 +454,7 @@ After signing up for Docker Build Cloud, add the builder to your local
 environment and start building.
 @z
 
-@x
-```console
-$ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
-cloud-<ORG>-<BUILDER_NAME>
-$ docker build \
-  --builder cloud-<ORG>-<BUILDER_NAME> \
-  --platform linux/amd64,linux/arm64,linux/arm/v7 \
-  --tag <IMAGE_NAME> \
-  --push .
-```
-@y
-```console
-$ docker buildx create --driver cloud <ORG>/<BUILDER_NAME>
-cloud-<ORG>-<BUILDER_NAME>
-$ docker build \
-  --builder cloud-<ORG>-<BUILDER_NAME> \
-  --platform linux/amd64,linux/arm64,linux/arm/v7 \
-  --tag <IMAGE_NAME> \
-  --push .
-```
-@z
+% snip command...
 
 @x
 For more information, see [Docker Build Cloud](/manuals/build-cloud/_index.md).
@@ -561,27 +498,7 @@ this case, the values are just printed to stdout with `echo`, but this
 illustrates how you would pass them to the compiler for cross-compilation.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM golang:alpine AS build
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
-RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
-FROM alpine
-COPY --from=build /log /log
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM golang:alpine AS build
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
-RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
-FROM alpine
-COPY --from=build /log /log
-```
-@z
+% snip code...
 
 @x
 ## Examples
@@ -647,17 +564,7 @@ Steps:
 1. Create an empty directory and navigate to it:
 @z
 
-@x
-   ```console
-   $ mkdir multi-platform
-   $ cd multi-platform
-   ```
-@y
-   ```console
-   $ mkdir multi-platform
-   $ cd multi-platform
-   ```
-@z
+% snip command...
 
 @x
 2. Create a simple Dockerfile that prints the architecture of the container:
@@ -665,19 +572,7 @@ Steps:
 2. Create a simple Dockerfile that prints the architecture of the container:
 @z
 
-@x
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM alpine
-   RUN uname -m > /arch
-   ```
-@y
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM alpine
-   RUN uname -m > /arch
-   ```
-@z
+% snip code...
 
 @x
 3. Build the image for `linux/amd64` and `linux/arm64`:
@@ -685,15 +580,7 @@ Steps:
 3. Build the image for `linux/amd64` and `linux/arm64`:
 @z
 
-@x
-   ```console
-   $ docker build --platform linux/amd64,linux/arm64 -t multi-platform .
-   ```
-@y
-   ```console
-   $ docker build --platform linux/amd64,linux/arm64 -t multi-platform .
-   ```
-@z
+% snip command...
 
 @x
 4. Run the image and print the architecture:
@@ -701,15 +588,7 @@ Steps:
 4. Run the image and print the architecture:
 @z
 
-@x
-   ```console
-   $ docker run --rm multi-platform cat /arch
-   ```
-@y
-   ```console
-   $ docker run --rm multi-platform cat /arch
-   ```
-@z
+% snip command...
 
 @x
    - If you're running on an x86-64 machine, you should see `x86_64`.
@@ -769,17 +648,7 @@ Steps:
 1. Create an empty directory and navigate to it:
 @z
 
-@x
-   ```console
-   $ mkdir docker-build-neovim
-   $ cd docker-build-neovim
-   ```
-@y
-   ```console
-   $ mkdir docker-build-neovim
-   $ cd docker-build-neovim
-   ```
-@z
+% snip command...
 
 @x
 2. Create a Dockerfile that builds Neovim.
@@ -787,49 +656,7 @@ Steps:
 2. Create a Dockerfile that builds Neovim.
 @z
 
-@x
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM debian:bookworm AS build
-   WORKDIR /work
-   RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-       --mount=type=cache,target=/var/lib/apt,sharing=locked \
-       apt-get update && apt-get install -y \
-       build-essential \
-       cmake \
-       curl \
-       gettext \
-       ninja-build \
-       unzip
-   ADD https://github.com/neovim/neovim.git#stable .
-   RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
-@y
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM debian:bookworm AS build
-   WORKDIR /work
-   RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-       --mount=type=cache,target=/var/lib/apt,sharing=locked \
-       apt-get update && apt-get install -y \
-       build-essential \
-       cmake \
-       curl \
-       gettext \
-       ninja-build \
-       unzip
-   ADD https://github.com/neovim/neovim.git#stable .
-   RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
-@z
-
-@x
-   FROM scratch
-   COPY --from=build /work/build/bin/nvim /
-   ```
-@y
-   FROM scratch
-   COPY --from=build /work/build/bin/nvim /
-   ```
-@z
+% snip code...
 
 @x
 3. Build the image for `linux/amd64` and `linux/arm64` using Docker Build Cloud:
@@ -837,21 +664,7 @@ Steps:
 3. Build the image for `linux/amd64` and `linux/arm64` using Docker Build Cloud:
 @z
 
-@x
-   ```console
-   $ docker build \
-      --builder <cloud-builder> \
-      --platform linux/amd64,linux/arm64 \
-      --output ./bin
-   ```
-@y
-   ```console
-   $ docker build \
-      --builder <cloud-builder> \
-      --platform linux/amd64,linux/arm64 \
-      --output ./bin
-   ```
-@z
+% snip command...
 
 @x
    This command builds the image using the cloud builder and exports the
@@ -869,31 +682,7 @@ Steps:
    `nvim` binary for both `linux/amd64` and `linux/arm64`.
 @z
 
-@x
-   ```console
-   $ tree ./bin
-   ./bin
-   ├── linux_amd64
-   │   └── nvim
-   └── linux_arm64
-       └── nvim
-@y
-   ```console
-   $ tree ./bin
-   ./bin
-   ├── linux_amd64
-   │   └── nvim
-   └── linux_arm64
-       └── nvim
-@z
-
-@x
-   3 directories, 2 files
-   ```
-@y
-   3 directories, 2 files
-   ```
-@z
+% snip command...
 
 @x
 ### Cross-compiling a Go application
@@ -959,17 +748,7 @@ Steps:
 1. Create an empty directory and navigate to it:
 @z
 
-@x
-   ```console
-   $ mkdir go-server
-   $ cd go-server
-   ```
-@y
-   ```console
-   $ mkdir go-server
-   $ cd go-server
-   ```
-@z
+% snip command...
 
 @x
 2. Create a base Dockerfile that builds the Go application:
@@ -977,33 +756,7 @@ Steps:
 2. Create a base Dockerfile that builds the Go application:
 @z
 
-@x
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM golang:alpine AS build
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   RUN go build -o server .
-@y
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM golang:alpine AS build
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   RUN go build -o server .
-@z
-
-@x
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@y
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@z
+% snip code...
 
 @x
    This Dockerfile can't build multi-platform with cross-compilation yet. If
@@ -1057,37 +810,7 @@ Steps:
    {{< tab name="Updated Dockerfile" >}}
 @z
 
-@x
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM --platform=$BUILDPLATFORM golang:alpine AS build
-   ARG TARGETOS
-   ARG TARGETARCH
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o server .
-@y
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM --platform=$BUILDPLATFORM golang:alpine AS build
-   ARG TARGETOS
-   ARG TARGETARCH
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o server .
-@z
-
-@x
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@y
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@z
+% snip code...
 
 @x
    {{< /tab >}}
@@ -1097,33 +820,7 @@ Steps:
    {{< tab name="Old Dockerfile" >}}
 @z
 
-@x
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM golang:alpine AS build
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   RUN go build -o server .
-@y
-   ```dockerfile
-   # syntax=docker/dockerfile:1
-   FROM golang:alpine AS build
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   RUN go build -o server .
-@z
-
-@x
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@y
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@z
+% snip code...
 
 @x
    {{< /tab >}}
@@ -1133,41 +830,7 @@ Steps:
    {{< tab name="Diff" >}}
 @z
 
-@x
-   ```diff
-   # syntax=docker/dockerfile:1
-   -FROM golang:alpine AS build
-   +FROM --platform=$BUILDPLATFORM golang:alpine AS build
-   +ARG TARGETOS
-   +ARG TARGETARCH
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   -RUN go build -o server .
-   RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o server .
-@y
-   ```diff
-   # syntax=docker/dockerfile:1
-   -FROM golang:alpine AS build
-   +FROM --platform=$BUILDPLATFORM golang:alpine AS build
-   +ARG TARGETOS
-   +ARG TARGETARCH
-   WORKDIR /app
-   ADD https://github.com/dvdksn/buildme.git#eb6279e0ad8a10003718656c6867539bd9426ad8 .
-   -RUN go build -o server .
-   RUN GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -o server .
-@z
-
-@x
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@y
-   FROM alpine
-   COPY --from=build /app/server /server
-   ENTRYPOINT ["/server"]
-   ```
-@z
+% snip code...
 
 @x
    {{< /tab >}}
@@ -1183,15 +846,7 @@ Steps:
 4. Build the image for `linux/amd64` and `linux/arm64`:
 @z
 
-@x
-   ```console
-   $ docker build --platform linux/amd64,linux/arm64 -t go-server .
-   ```
-@y
-   ```console
-   $ docker build --platform linux/amd64,linux/arm64 -t go-server .
-   ```
-@z
+% snip command...
 
 @x
 This example has shown how to cross-compile a Go application for multiple

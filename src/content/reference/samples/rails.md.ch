@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Rails samples
 description: Docker samples for Rails.
 service: rails
----
 @y
----
 title: Rails サンプル
 description: Rails の Docker サンプル。
 service: rails
----
 @z

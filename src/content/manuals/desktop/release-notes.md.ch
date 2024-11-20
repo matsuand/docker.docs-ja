@@ -36,6 +36,142 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
+## 4.36.0
+@y
+## 4.36.0
+@z
+
+@x
+{{< release-date date="2024-11-18" >}}
+@y
+{{< release-date date="2024-11-18" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.36.0" build_path="/175267/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.36.0" build_path="/175267/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Existing Docker Desktop installations using the WSL2 engine on Windows are now automatically migrated to a unified single-distribution architecture for enhanced consistency and performance.
+- Enhance Container Isolation (ECI) has been improved to support images with wildcard tags.
+- Administrators can now:
+  - Allow any container to mount the Docker socket with ECI.
+  - Enforce sign-in with macOS [configuration profiles](/manuals/security/for-admins/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
+  - Enforce sign-in for more than one organization at a time (Early Access).
+  - Deploy Docker Desktop for Mac in bulk with the [PKG installer](/manuals/desktop/setup/install/enterprise-deployment/pkg-install-and-configure.md) (Early Access).
+  - Use Desktop Settings Management to manage and enforce defaults via admin.docker.com (Early Access).
+@y
+- Existing Docker Desktop installations using the WSL2 engine on Windows are now automatically migrated to a unified single-distribution architecture for enhanced consistency and performance.
+- Enhance Container Isolation (ECI) has been improved to support images with wildcard tags.
+- Administrators can now:
+  - Allow any container to mount the Docker socket with ECI.
+  - Enforce sign-in with macOS [configuration profiles](manuals/security/for-admins/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
+  - Enforce sign-in for more than one organization at a time (Early Access).
+  - Deploy Docker Desktop for Mac in bulk with the [PKG installer](manuals/desktop/setup/install/enterprise-deployment/pkg-install-and-configure.md) (Early Access).
+  - Use Desktop Settings Management to manage and enforce defaults via admin.docker.com (Early Access).
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Buildx v0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0)
+- [Docker Compose v2.30.3](https://github.com/docker/compose/releases/tag/v2.30.3)
+- [Kubernetes v1.30.2](https://github.com/kubernetes/kubernetes/releases/tag/v1.30.5)
+- [NVIDIA Container Toolkit v1.17.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.0)
+- [Docker Scout CLI v1.15.0](https://github.com/docker/scout-cli/releases/tag/v1.15.0)
+- Docker Init v1.4.0
+- Linux kernel `v6.10.13`
+@y
+- [Docker Buildx v0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0)
+- [Docker Compose v2.30.3](https://github.com/docker/compose/releases/tag/v2.30.3)
+- [Kubernetes v1.30.2](https://github.com/kubernetes/kubernetes/releases/tag/v1.30.5)
+- [NVIDIA Container Toolkit v1.17.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.0)
+- [Docker Scout CLI v1.15.0](https://github.com/docker/scout-cli/releases/tag/v1.15.0)
+- Docker Init v1.4.0
+- Linux kernel `v6.10.13`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed a bug where the `docker events` command would not terminate after streaming the events.
+- Docker Init: Improved Dockerfile caching for PHP applications that don't use Docker Compose.
+- Synchronized file shares now respects the `filesharingAllowedDirectories` setting in `admin-settings.json`.
+- Fixed an issue where if Docker Desktop is configured to use a proxy, it fails to start due to an internal timeout while fetching authentication tokens.
+- Added a recovery banner to retry an update if the download failed.
+- Fixed an issue where if the `umask` is set to `577` it would cause `rpmbuild` failure. Fixes [docker/for-mac#6511](https://github.com/docker/for-mac/issues/6511).
+- Fixed a bug that restricted containers using `--network=host` to 18 open host ports.
+- Fixed bind mount ownership for non-root containers. Fixes [docker/for-mac#6243](https://github.com/docker/for-mac/issues/6243).
+- Docker Desktop will not unpause automatically after a manual pause. The system will stay paused until you manually resume the Docker engine. This fixes a bug where other software would accidentally trigger a resume by running a CLI command in the background. Fixes [for-mac/#6908](https://github.com/docker/for-mac/issues/6908)
+@y
+- Fixed a bug where the `docker events` command would not terminate after streaming the events.
+- Docker Init: Improved Dockerfile caching for PHP applications that don't use Docker Compose.
+- Synchronized file shares now respects the `filesharingAllowedDirectories` setting in `admin-settings.json`.
+- Fixed an issue where if Docker Desktop is configured to use a proxy, it fails to start due to an internal timeout while fetching authentication tokens.
+- Added a recovery banner to retry an update if the download failed.
+- Fixed an issue where if the `umask` is set to `577` it would cause `rpmbuild` failure. Fixes [docker/for-mac#6511](https://github.com/docker/for-mac/issues/6511).
+- Fixed a bug that restricted containers using `--network=host` to 18 open host ports.
+- Fixed bind mount ownership for non-root containers. Fixes [docker/for-mac#6243](https://github.com/docker/for-mac/issues/6243).
+- Docker Desktop will not unpause automatically after a manual pause. The system will stay paused until you manually resume the Docker engine. This fixes a bug where other software would accidentally trigger a resume by running a CLI command in the background. Fixes [for-mac/#6908](https://github.com/docker/for-mac/issues/6908)
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed a bug in Docker VMM that prevented MySQL and other databases containers to start. Fixes reports from [docker/for-mac#7464](https://github.com/docker/for-mac/issues/7464).
+- The minimum memory requirement is now automatically adjusted for Docker VMM, improving the user experience and addressing reports from [docker/for-mac#7464](https://github.com/docker/for-mac/issues/7464), [docker/for-mac#7482](https://github.com/docker/for-mac/issues/7482).
+- Fixed a bug where the advanced option **Allowed privileged port mapping** was not working as expected. Fixes [docker/for-mac#7460](https://github.com/docker/for-mac/issues/7460).
+- Docker Desktop can now automatically configure shell completion scripts for zsh, bash and fish inside the install wizard and settings screen.
+- Fixed a bug where the in-app update would fail if Docker Desktop was installed by a non-admin user or if the current user was previously an administrator. Fixes [for-mac/#7403](https://github.com/docker/for-mac/issues/7403) and [for-mac/#6920](https://github.com/docker/for-mac/issues/6920)
+@y
+- Fixed a bug in Docker VMM that prevented MySQL and other databases containers to start. Fixes reports from [docker/for-mac#7464](https://github.com/docker/for-mac/issues/7464).
+- The minimum memory requirement is now automatically adjusted for Docker VMM, improving the user experience and addressing reports from [docker/for-mac#7464](https://github.com/docker/for-mac/issues/7464), [docker/for-mac#7482](https://github.com/docker/for-mac/issues/7482).
+- Fixed a bug where the advanced option **Allowed privileged port mapping** was not working as expected. Fixes [docker/for-mac#7460](https://github.com/docker/for-mac/issues/7460).
+- Docker Desktop can now automatically configure shell completion scripts for zsh, bash and fish inside the install wizard and settings screen.
+- Fixed a bug where the in-app update would fail if Docker Desktop was installed by a non-admin user or if the current user was previously an administrator. Fixes [for-mac/#7403](https://github.com/docker/for-mac/issues/7403) and [for-mac/#6920](https://github.com/docker/for-mac/issues/6920)
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed a bug preventing UDP port 53 to be bound.
+- Fixed a bug where Windows daemon options were overwritten at startup.
+@y
+- Fixed a bug preventing UDP port 53 to be bound.
+- Fixed a bug where Windows daemon options were overwritten at startup.
+@z
+
+@x
 ## 4.35.1
 @y
 ## 4.35.1
@@ -419,7 +555,7 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 - [Host networking](/manuals/engine/network/drivers/host.md#docker-desktop) support on Docker Desktop is now generally available.
 - If you authenticate via the CLI, you can now authenticate through a browser-based flow, removing the need for manual PAT generation.
 - Windows now supports automatic reclamation of disk space in Docker Desktop for WSL2 installations [using a managed virtual hard disk](/manuals/desktop/features/wsl/best-practices.md).
-- Deploying Docker Desktop via the [MSI installer](/manuals/desktop/setup/install/msi/_index.md) is now generally available.
+- Deploying Docker Desktop via the [MSI installer](/manuals/desktop/setup/install/enterprise-deployment/msi-install-and-configure.md) is now generally available.
 - Two new methods to [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md) (windows registry key and `.plist` file) are now generally available.
 - Fresh installations of Docker Desktop now use the containerd image store by default.
 - [Compose Bridge](/manuals/compose/bridge/_index.md) (Experimental) is now available from the Compose file viewer. Easily convert and deploy your Compose project to a Kubernetes cluster.
@@ -427,7 +563,7 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 - [Host networking](manuals/engine/network/drivers/host.md#docker-desktop) support on Docker Desktop is now generally available.
 - If you authenticate via the CLI, you can now authenticate through a browser-based flow, removing the need for manual PAT generation.
 - Windows now supports automatic reclamation of disk space in Docker Desktop for WSL2 installations [using a managed virtual hard disk](manuals/desktop/features/wsl/best-practices.md).
-- Deploying Docker Desktop via the [MSI installer](manuals/desktop/setup/install/msi/_index.md) is now generally available.
+- Deploying Docker Desktop via the [MSI installer](manuals/desktop/setup/install/enterprise-deployment/msi-install-and-configure.md) is now generally available.
 - Two new methods to [enforce sign-in](manuals/security/for-admins/enforce-sign-in/_index.md) (windows registry key and `.plist` file) are now generally available.
 - Fresh installations of Docker Desktop now use the containerd image store by default.
 - [Compose Bridge](manuals/compose/bridge/_index.md) (Experimental) is now available from the Compose file viewer. Easily convert and deploy your Compose project to a Kubernetes cluster.

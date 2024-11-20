@@ -630,9 +630,9 @@ Your machine must have the following features for Docker Desktop to function cor
 @z
 
 @x
-![WSL 2 enabled](../images/wsl2-enabled.png)
+![WSL 2 enabled](../../images/wsl2-enabled.png)
 @y
-![WSL 2 enabled](../images/wsl2-enabled.png)
+![WSL 2 enabled](../../images/wsl2-enabled.png)
 @z
 
 @x
@@ -662,9 +662,9 @@ On Windows 10 Pro or Enterprise, you can also use Hyper-V with the following fea
 @z
 
 @x
-![Hyper-V on Windows features](../images/hyperv-enabled.png)
+![Hyper-V on Windows features](../../images/hyperv-enabled.png)
 @y
-![Hyper-V on Windows features](../images/hyperv-enabled.png)
+![Hyper-V on Windows features](../../images/hyperv-enabled.png)
 @z
 
 @x
@@ -712,9 +712,9 @@ Performance tab on the Task Manager. Alternatively, you can type 'systeminfo' in
 @z
 
 @x
-![Task Manager](../images/virtualization-enabled.png)
+![Task Manager](../../images/virtualization-enabled.png)
 @y
-![Task Manager](../images/virtualization-enabled.png)
+![Task Manager](../../images/virtualization-enabled.png)
 @z
 
 @x

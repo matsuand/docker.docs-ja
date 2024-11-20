@@ -27,7 +27,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
     Install Docker Desktop on
     [Mac](/desktop/setup/install/mac-install/),
     [Windows](/desktop/setup/install/windows-install/), or
-    [Linux](/desktop/install/linux/).
+    [Linux](/desktop/setup/install/linux/).
   icon: download
 @y
 - title: Docker Desktop のインストール

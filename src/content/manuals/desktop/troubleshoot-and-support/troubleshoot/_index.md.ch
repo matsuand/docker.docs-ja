@@ -732,9 +732,9 @@ To read the Docker app log messages, type `docker` in the Console window search 
 @z
 
 @x
-![Mac Console search for Docker app](../images/console.png)
+![Mac Console search for Docker app](../../images/console.png)
 @y
-![Mac Console search for Docker app](../images/console.png)
+![Mac Console search for Docker app](../../images/console.png)
 @z
 
 @x

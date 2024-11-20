@@ -171,9 +171,9 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/settings-and-maintenance/Makefile
 	src/content/manuals/desktop/setup/Makefile
 	src/content/manuals/desktop/setup/install/Makefile
+	src/content/manuals/desktop/setup/install/enterprise-deployment/Makefile
 	src/content/manuals/desktop/setup/install/images/Makefile
 	src/content/manuals/desktop/setup/install/linux/Makefile
-	src/content/manuals/desktop/setup/install/msi/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/faqs/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile

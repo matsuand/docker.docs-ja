@@ -2,15 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Express samples
 description: Docker samples for Express.
 service: express
----
 @y
----
 title: Express サンプル
 description: Express の Docker サンプル。
 service: express
----
 @z
