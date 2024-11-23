@@ -272,9 +272,9 @@ Enforcing sign-in ensures that your Docker Desktop developers always authenticat
 @z
 
 @x
-[Create and configure the `admin-settings.json` file](../settings-management/configure.md) and specify:
+[Create and configure the `admin-settings.json` file](/manuals/security/for-admins/hardened-desktop/settings-management/configure-json-file.md) and specify:
 @y
-[Create and configure the `admin-settings.json` file](../settings-management/configure.md) and specify:
+[Create and configure the `admin-settings.json` file](manuals/security/for-admins/hardened-desktop/settings-management/configure-json-file.md) and specify:
 @z
 
 @x
@@ -341,6 +341,16 @@ For this to take effect:
 > [!IMPORTANT]
 >
 > Selecting **Restart** from the Docker menu isn't enough as it only restarts some components of Docker Desktop.
+@z
+
+@x
+> [!TIP]
+>
+> You can now also configure these settings in the [Docker Admin Console](/manuals/security/for-admins/hardened-desktop/settings-management/configure-admin-console.md).
+@y
+> [!TIP]
+>
+> You can now also configure these settings in the [Docker Admin Console](manuals/security/for-admins/hardened-desktop/settings-management/configure-admin-console.md).
 @z
 
 @x

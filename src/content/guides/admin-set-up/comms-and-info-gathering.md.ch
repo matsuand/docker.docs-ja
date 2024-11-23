@@ -78,9 +78,9 @@ Through [Settings Management](manuals/security/for-admins/hardened-desktop/setti
 @z
 
 @x
-To view the parameters that can be preset, see [Configure Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/configure.md#step-two-configure-the-settings-you-want-to-lock-in).
+To view the parameters that can be preset, see [Configure Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/configure-json-file.md#step-two-configure-the-settings-you-want-to-lock-in).
 @y
-To view the parameters that can be preset, see [Configure Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/configure.md#step-two-configure-the-settings-you-want-to-lock-in).
+To view the parameters that can be preset, see [Configure Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/configure-json-file.md#step-two-configure-the-settings-you-want-to-lock-in).
 @z
 
 @x

@@ -180,9 +180,9 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-- If you have enabled [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md) in Docker Hub, the scan results will now appear in Docker Desktop.
+- If you have enabled [Vulnerability Scanning](../../docker-hub/repos/manage/vulnerability-scanning.md) in Docker Hub, the scan results will now appear in Docker Desktop.
 @y
-- If you have enabled [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md) in Docker Hub, the scan results will now appear in Docker Desktop.
+- If you have enabled [Vulnerability Scanning](../../docker-hub/repos/manage/vulnerability-scanning.md) in Docker Hub, the scan results will now appear in Docker Desktop.
 @z
 
 @x

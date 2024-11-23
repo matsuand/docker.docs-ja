@@ -789,9 +789,9 @@ Other users can now download and run your image using the `docker run` command. 
 @z
 
 @x
-This example uses the Docker Desktop graphical user interface. Alternatively, in the command line interface you can [back up the volume](/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/manuals/docker-hub/oci-artifacts.md#push-a-volume).
+This example uses the Docker Desktop graphical user interface. Alternatively, in the command line interface you can [back up the volume](/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](/manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md#push-a-volume).
 @y
-This example uses the Docker Desktop graphical user interface. Alternatively, in the command line interface you can [back up the volume](__SUBDIR__/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](manuals/docker-hub/oci-artifacts.md#push-a-volume).
+This example uses the Docker Desktop graphical user interface. Alternatively, in the command line interface you can [back up the volume](__SUBDIR__/engine/storage/volumes/#back-up-a-volume) and then [push it using the ORAS CLI](manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md#push-a-volume).
 @z
 
 @x

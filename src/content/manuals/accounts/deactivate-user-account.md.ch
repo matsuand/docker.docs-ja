@@ -94,9 +94,9 @@ Docker アカウントの無効化を行うにあたっては、以下の条件�
 @z
 
 @x
-- Unlink your [GitHub and Bitbucket accounts](../docker-hub/builds/link-source.md#unlink-a-github-user-account).
+- Unlink your [GitHub and Bitbucket accounts](../docker-hub/repos/manage/builds/link-source.md#unlink-a-github-user-account).
 @y
-- Unlink your [GitHub and Bitbucket accounts](../docker-hub/builds/link-source.md#unlink-a-github-user-account).
+- Unlink your [GitHub and Bitbucket accounts](../docker-hub/repos/manage/builds/link-source.md#unlink-a-github-user-account).
 @z
 
 @x

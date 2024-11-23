@@ -965,14 +965,14 @@ Discarded in favor of [1.9.1](#191).
   instance by Docker Desktop there's no need anymore to re-index it on WSL2
   side.
 - Indexing is now blocked in the CLI if it has been disabled using
-  [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/configure.md) feature.
+  [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md) feature.
 @y
   When inside WSL2 with Docker Desktop running, the Docker Scout CLI plugin now
   uses the cache from Windows. That way, if an image has been indexed for
   instance by Docker Desktop there's no need anymore to re-index it on WSL2
   side.
 - Indexing is now blocked in the CLI if it has been disabled using
-  [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/configure.md) feature.
+  [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md) feature.
 @z
 
 @x

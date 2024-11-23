@@ -84,9 +84,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
- - You can tag Docker Hub repositories with [categories](./repos/categories.md).
+ - You can tag Docker Hub repositories with [categories](./repos/manage/information.md#repository-categories).
 @y
- - You can tag Docker Hub repositories with [categories](./repos/categories.md).
+ - You can tag Docker Hub repositories with [categories](./repos/manage/information.md#repository-categories).
 @z
 
 @x
@@ -222,9 +222,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
-- The new [autobuild feature](../docker-hub/builds/manage-builds.md#check-your-active-builds) lets you view your in-progress logs every 30 seconds instead of when the build is complete.
+- The new [autobuild feature](../docker-hub/repos/manage/builds/manage-builds.md#check-your-active-builds) lets you view your in-progress logs every 30 seconds instead of when the build is complete.
 @y
-- The new [autobuild feature](../docker-hub/builds/manage-builds.md#check-your-active-builds) lets you view your in-progress logs every 30 seconds instead of when the build is complete.
+- The new [autobuild feature](../docker-hub/repos/manage/builds/manage-builds.md#check-your-active-builds) lets you view your in-progress logs every 30 seconds instead of when the build is complete.
 @z
 
 @x
@@ -550,9 +550,9 @@ For more information about this feature and for instructions on how to use it, s
 @z
 
 @x
-The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/access/_index.md#view-repository-tags).
+The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/manage/access/_index.md#view-repository-tags).
 @y
-The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/access/_index.md#view-repository-tags).
+The **Repositories** view now shows which images have gone stale because they haven't been pulled or pushed recently. For more information, see [repository tags](repos/manage/access/_index.md#view-repository-tags).
 @z
 
 @x

@@ -2,35 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Link to GitHub and BitBucket
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, trusted,
   builds, trusted builds, automated builds, GitHub
 title: Configure automated builds from GitHub and BitBucket
-aliases:
-- /docker-hub/github/
-- /docker-hub/bitbucket/
----
 @y
----
 description: Link to GitHub and BitBucket
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, trusted,
   builds, trusted builds, automated builds, GitHub
 title: Configure automated builds from GitHub and BitBucket
-aliases:
-- /docker-hub/github/
-- /docker-hub/bitbucket/
----
 @z
 
 @x
 > [!NOTE]
 >
-> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a Docker Pro, Team, or Business subscription.
 @y
 > [!NOTE]
 >
-> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a Docker Pro, Team, or Business subscription.
 @z
 
 @x
@@ -70,9 +60,9 @@ If you are linking a source code provider to create autobuilds for a team, follo
 @z
 
 @x
-    ![Repository settings menu](../images/docker-hub-repo-settings-menu.png)
+    ![Repository settings menu](./images/docker-hub-repo-settings-menu.png)
 @y
-    ![Repository settings menu](../images/docker-hub-repo-settings-menu.png)
+    ![Repository settings menu](./images/docker-hub-repo-settings-menu.png)
 @z
 
 @x

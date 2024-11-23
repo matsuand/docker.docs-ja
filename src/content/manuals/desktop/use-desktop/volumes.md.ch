@@ -364,19 +364,13 @@ You can either [export a volume now](#export-a-volume-now) or [schedule a recurr
    - **Local image**: Select a local image to export the content to. Any
     existing data in the image will be replaced by the exported content.
    - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
-     repositories can be publicly accessible which means your data can be
-     publicly accessible. For more details, see
-     [Change a repository from public to private](/docker-hub/repos/#change-a-repository-from-public-to-private).
+   - **Registry**: Specify a Docker Hub repository.
 @y
    - **Local file**: Specify a file name and select a folder.
    - **Local image**: Select a local image to export the content to. Any
     existing data in the image will be replaced by the exported content.
    - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
-     repositories can be publicly accessible which means your data can be
-     publicly accessible. For more details, see
-     [Change a repository from public to private](__SUBDIR__/docker-hub/repos/#change-a-repository-from-public-to-private).
+   - **Registry**: Specify a Docker Hub repository.
 @z
 
 @x
@@ -486,19 +480,13 @@ You can either [export a volume now](#export-a-volume-now) or [schedule a recurr
    - **Local image**: Select a local image to export the content to. Any
     existing data in the image will be replaced by the exported content.
    - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
-     repositories can be publicly accessible which means your data can be
-     publicly accessible. For more details, see
-     [Change a repository from public to private](/docker-hub/repos/#change-a-repository-from-public-to-private).
+   - **Registry**: Specify a Docker Hub repository.
 @y
    - **Local file**: Specify a file name and select a folder.
    - **Local image**: Select a local image to export the content to. Any
     existing data in the image will be replaced by the exported content.
    - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
-     repositories can be publicly accessible which means your data can be
-     publicly accessible. For more details, see
-     [Change a repository from public to private](__SUBDIR__/docker-hub/repos/#change-a-repository-from-public-to-private).
+   - **Registry**: Specify a Docker Hub repository.
 @z
 
 @x

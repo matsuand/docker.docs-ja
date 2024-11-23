@@ -7,13 +7,13 @@
 @x
 description: How to configure Settings Management for Docker Desktop
 keywords: admin, controls, rootless, enhanced container isolation
-title: Configure Settings Management
-linkTitle: Configure
+title: Configure Settings Management with a JSON file
+linkTitle: Use a JSON file
 @y
 description: How to configure Settings Management for Docker Desktop
 keywords: admin, controls, rootless, enhanced container isolation
-title: Configure Settings Management
-linkTitle: Configure
+title: Configure Settings Management with a JSON file
+linkTitle: Use a JSON file
 @z
 
 @x
@@ -27,9 +27,9 @@ linkTitle: Configure
 @z
 
 @x
-This page contains information on how to configure Settings Management to specify and lock configuration parameters to create a standardized Docker Desktop environment across the organization.
+This page contains information on how to configure Settings Management with an `admin-settings.json` file. You can specify and lock configuration parameters to create a standardized Docker Desktop environment across your company or organization.
 @y
-This page contains information on how to configure Settings Management to specify and lock configuration parameters to create a standardized Docker Desktop environment across the organization.
+This page contains information on how to configure Settings Management with an `admin-settings.json` file. You can specify and lock configuration parameters to create a standardized Docker Desktop environment across your company or organization.
 @z
 
 @x
@@ -103,11 +103,11 @@ To set it up manually:
 @x
 > [!NOTE]
 >
-> Some of the configuration parameters only apply to Windows or to specific Docker Desktop versions. This is highlighted in the following table.
+> Some of the configuration parameters only apply to certain platforms or to specific Docker Desktop versions. This is highlighted in the following table.
 @y
 > [!NOTE]
 >
-> Some of the configuration parameters only apply to Windows or to specific Docker Desktop versions. This is highlighted in the following table.
+> Some of the configuration parameters only apply to certain platforms or to specific Docker Desktop versions. This is highlighted in the following table.
 @z
 
 @x

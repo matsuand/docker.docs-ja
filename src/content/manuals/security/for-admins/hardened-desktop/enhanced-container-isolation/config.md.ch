@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Advanced Configuration for Enhanced Container Isolation
 title: Advanced configuration options for ECI
@@ -89,10 +91,10 @@ bind mounting the Docker Engine socket into containers, but in a controlled way.
 
 @x
 This can be done via the Docker Socket mount permissions section in the
-[admin-settings.json](../settings-management/configure.md) file. For example:
+[admin-settings.json](../settings-management/_index.md) file. For example:
 @y
 This can be done via the Docker Socket mount permissions section in the
-[admin-settings.json](../settings-management/configure.md) file. For example:
+[admin-settings.json](../settings-management/_index.md) file. For example:
 @z
 
 @x
@@ -141,6 +143,16 @@ This can be done via the Docker Socket mount permissions section in the
   }
 }
 ```
+@z
+
+@x
+> [!TIP]
+>
+> You can now also configure these settings in the [Docker Admin Console](/manuals/security/for-admins/hardened-desktop/settings-management/configure-admin-console.md).
+@y
+> [!TIP]
+>
+> You can now also configure these settings in the [Docker Admin Console](manuals/security/for-admins/hardened-desktop/settings-management/configure-admin-console.md).
 @z
 
 @x

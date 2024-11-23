@@ -375,21 +375,13 @@ these options.
 @x
 ## Next steps
 @y
-### 次のステップ {#next-steps}
+## 次のステップ {#next-steps}
 @z
 
 @x
-- Automatically build container images from code through
-  [builds](builds/_index.md).
-- Use [webhooks](./webhooks.md) to cause an action in another service in
-  response to a push event in the repository.
-- Manage [repository settings](./repos/_index.md) to set the default privacy for
-  your repositories.
+Add [repository information](./repos/manage/information.md) to help users find and use
+your image.
 @y
-- Automatically build container images from code through
-  [builds](builds/_index.md).
-- Use [webhooks](./webhooks.md) to cause an action in another service in
-  response to a push event in the repository.
-- Manage [repository settings](./repos/_index.md) to set the default privacy for
-  your repositories.
+Add [repository information](./repos/manage/information.md) to help users find and use
+your image.
 @z

@@ -2,31 +2,27 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Troubleshoot your autobuilds
 description: How to troubleshoot Automated builds
 keywords: docker hub, troubleshoot, automated builds, autobuilds
 tags: [ Troubleshooting ]
----
 @y
----
 title: Troubleshoot your autobuilds
 description: How to troubleshoot Automated builds
 keywords: docker hub, troubleshoot, automated builds, autobuilds
 tags: [ Troubleshooting ]
----
 @z
 
 @x
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Docker Pro, Team, or Business subscription.
 @y
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Docker Pro, Team, or Business subscription.
 @z
 
 @x

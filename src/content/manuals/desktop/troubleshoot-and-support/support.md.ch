@@ -14,25 +14,13 @@ title: Get support
 @z
 
 @x
-Find information on how to get support, and the scope of Docker Desktop support.
+> [!NOTE]
+> 
+> Docker Desktop offers support for developers with a [Pro, Team, or Business subscription](https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade_desktop_support).
 @y
-Find information on how to get support, and the scope of Docker Desktop support.
-@z
-
-@x
-{{< cta
-  header-text="This feature requires a paid Docker subscription"
-  body="Docker Desktop offers support for developers subscribed to a Pro, Team, or a Business tier. Upgrade now to benefit from Docker Support."
-  url="https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade_desktop_support"
-  cta="Upgrade now"
->}}
-@y
-{{< cta
-  header-text="This feature requires a paid Docker subscription"
-  body="Docker Desktop offers support for developers subscribed to a Pro, Team, or a Business tier. Upgrade now to benefit from Docker Support."
-  url="https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade_desktop_support"
-  cta="Upgrade now"
->}}
+> [!NOTE]
+> 
+> Docker Desktop offers support for developers with a [Pro, Team, or Business subscription](https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade_desktop_support).
 @z
 
 @x

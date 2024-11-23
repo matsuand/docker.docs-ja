@@ -392,13 +392,13 @@ Docker Hub security scans triggered after 1200 UTC 21 October 2021 are now
 correctly identifying the Text4Shell CVE. Scans before this date do not
 currently reflect the status of this vulnerability. Therefore, we recommend that
 you trigger scans by pushing new images to Docker Hub to view the status of
-the Text4Shell CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/vulnerability-scanning.md).
+the Text4Shell CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/repos/manage/vulnerability-scanning.md).
 @y
 Docker Hub security scans triggered after 1200 UTC 21 October 2021 are now
 correctly identifying the Text4Shell CVE. Scans before this date do not
 currently reflect the status of this vulnerability. Therefore, we recommend that
 you trigger scans by pushing new images to Docker Hub to view the status of
-the Text4Shell CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/vulnerability-scanning.md).
+the Text4Shell CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/repos/manage/vulnerability-scanning.md).
 @z
 
 @x
@@ -516,13 +516,13 @@ Docker Hub security scans triggered after 1700 UTC 13 December 2021 are now
 correctly identifying the Log4j 2 CVEs. Scans before this date do not
 currently reflect the status of this vulnerability. Therefore, we recommend that
 you trigger scans by pushing new images to Docker Hub to view the status of
-Log4j 2 CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/vulnerability-scanning.md).
+Log4j 2 CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/repos/manage/vulnerability-scanning.md).
 @y
 Docker Hub security scans triggered after 1700 UTC 13 December 2021 are now
 correctly identifying the Log4j 2 CVEs. Scans before this date do not
 currently reflect the status of this vulnerability. Therefore, we recommend that
 you trigger scans by pushing new images to Docker Hub to view the status of
-Log4j 2 CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/vulnerability-scanning.md).
+Log4j 2 CVE in the vulnerability report. For detailed instructions, see [Scan images on Docker Hub](../docker-hub/repos/manage/vulnerability-scanning.md).
 @z
 
 @x

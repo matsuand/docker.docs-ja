@@ -19,12 +19,12 @@ linkTitle: Automated builds
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Docker Pro, Team, or Business subscription.
 @y
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Docker Pro, Team, or Business subscription.
 @z
 
 @x

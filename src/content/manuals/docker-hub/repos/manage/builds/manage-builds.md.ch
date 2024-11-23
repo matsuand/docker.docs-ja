@@ -16,11 +16,11 @@ keywords: autobuilds, automated, docker hub, registry
 @x
 > [!NOTE]
 >
-> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a Docker Pro, Team, or Business subscription.
 @y
 > [!NOTE]
 >
-> Automated builds require a [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Automated builds require a Docker Pro, Team, or Business subscription.
 @z
 
 @x
@@ -94,9 +94,9 @@ repository and branch, or tag, the build logs, the build duration, creation time
 @z
 
 @x
-![Build report](/docker-hub/images/index-report.png)
+![Build report](./images/index-report.png)
 @y
-![Build report](__SUBDIR__/docker-hub/images/index-report.png)
+![Build report](./images/index-report.png)
 @z
 
 @x

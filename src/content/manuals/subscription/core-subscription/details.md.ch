@@ -16,6 +16,12 @@ keywords: subscription, personal, pro, team, business, features, docker core sub
 @z
 
 @x
+{{< include "new-plans.md" >}}
+@y
+{{< include "new-plans.md" >}}
+@z
+
+@x
 You can do more with Docker with a Docker Core subscription, such as add collaborators, create scoped access tokens, and create private repositories. This page provides an overview of each subscription tier. To compare features available in each tier, see [Docker Pricing](https://www.docker.com/pricing/).
 @y
 You can do more with Docker with a Docker Core subscription, such as add collaborators, create scoped access tokens, and create private repositories. This page provides an overview of each subscription tier. To compare features available in each tier, see [Docker Pricing](https://www.docker.com/pricing/).
@@ -68,12 +74,12 @@ Docker Personal includes:
 @x
 - Unlimited public repositories
 - Unlimited [Scoped Access Tokens](../../security/for-developers/access-tokens.md)
-- Unlimited [collaborators](../../docker-hub/repos/access.md#collaborators-and-their-role) for public repositories at no cost per month.
+- Unlimited [collaborators](../../docker-hub/repos/manage/access.md#collaborators-and-their-role) for public repositories at no cost per month.
 - Access to [Docker Scout Free](../scout-details.md#docker-scout-free) to get started with software supply chain security.
 @y
 - Unlimited public repositories
 - Unlimited [Scoped Access Tokens](../../security/for-developers/access-tokens.md)
-- Unlimited [collaborators](../../docker-hub/repos/access.md#collaborators-and-their-role) for public repositories at no cost per month.
+- Unlimited [collaborators](../../docker-hub/repos/manage/access.md#collaborators-and-their-role) for public repositories at no cost per month.
 - Access to [Docker Scout Free](../scout-details.md#docker-scout-free) to get started with software supply chain security.
 @z
 
@@ -106,15 +112,15 @@ Docker Pro includes:
 - All the features available in Personal
 - Unlimited private repositories
 - 5000 image [pulls per day](../../docker-hub/download-rate-limit.md)
-- [Auto Builds](../../docker-hub/builds/_index.md) with 5 concurrent builds
-- 300 [Vulnerability Scans](../../docker-hub/vulnerability-scanning.md)
+- [Auto Builds](../../docker-hub/repos/manage/builds/_index.md) with 5 concurrent builds
+- 300 [Vulnerability Scans](../../docker-hub/repos/manage/vulnerability-scanning.md)
 @y
 Docker Pro includes:
 - All the features available in Personal
 - Unlimited private repositories
 - 5000 image [pulls per day](../../docker-hub/download-rate-limit.md)
-- [Auto Builds](../../docker-hub/builds/_index.md) with 5 concurrent builds
-- 300 [Vulnerability Scans](../../docker-hub/vulnerability-scanning.md)
+- [Auto Builds](../../docker-hub/repos/manage/builds/_index.md) with 5 concurrent builds
+- 300 [Vulnerability Scans](../../docker-hub/repos/manage/vulnerability-scanning.md)
 @z
 
 @x
@@ -139,15 +145,15 @@ For a list of features available in each tier, see [Docker Pricing](https://www.
 Docker Team includes:
 - Everything included in Docker Pro
 - Unlimited teams
-- [Auto Builds](../../docker-hub/builds/_index.md) with 15 concurrent builds
-- Unlimited [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md)
+- [Auto Builds](../../docker-hub/repos/manage/builds/_index.md) with 15 concurrent builds
+- Unlimited [Vulnerability Scanning](../../docker-hub/repos/manage/vulnerability-scanning.md)
 - 5000 image [pulls per day](../../docker-hub/download-rate-limit.md) for each team member
 @y
 Docker Team includes:
 - Everything included in Docker Pro
 - Unlimited teams
-- [Auto Builds](../../docker-hub/builds/_index.md) with 15 concurrent builds
-- Unlimited [Vulnerability Scanning](../../docker-hub/vulnerability-scanning.md)
+- [Auto Builds](../../docker-hub/repos/manage/builds/_index.md) with 15 concurrent builds
+- Unlimited [Vulnerability Scanning](../../docker-hub/repos/manage/vulnerability-scanning.md)
 - 5000 image [pulls per day](../../docker-hub/download-rate-limit.md) for each team member
 @z
 

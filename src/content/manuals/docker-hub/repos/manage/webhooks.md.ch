@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Docker Hub Webhooks
 keywords: Docker, webhooks, hub, builds
 title: Webhooks
-weight: 40
----
 @y
----
 description: Docker Hub Webhooks
 keywords: Docker, webhooks, hub, builds
 title: Webhooks
-weight: 40
----
 @z
 
 @x

@@ -233,10 +233,10 @@ developers that they can trust the image.
 
 @x
 You can enable analysis on a per-repository
-basis. For more about using this feature, see [Basic vulnerability scanning](/docker-hub/vulnerability-scanning/).
+basis. For more about using this feature, see [Basic vulnerability scanning](/docker-hub/repos/manage/vulnerability-scanning/).
 @y
 You can enable analysis on a per-repository
-basis. For more about using this feature, see [Basic vulnerability scanning](__SUBDIR__/docker-hub/vulnerability-scanning/).
+basis. For more about using this feature, see [Basic vulnerability scanning](__SUBDIR__/docker-hub/repos/manage/vulnerability-scanning/).
 @z
 
 @x

@@ -2,29 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: how automated builds work
 keywords: docker hub, automated builds
 title: How Automated builds work
----
 @y
----
 description: how automated builds work
 keywords: docker hub, automated builds
 title: How Automated builds work
----
 @z
 
 @x
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Docker Pro, Team, or Business subscription.
 @y
 > [!NOTE]
 >
 > Automated builds require a
-> [Docker Pro, Team, or Business subscription](../../subscription/_index.md).
+> Docker Pro, Team, or Business subscription.
 @z
 
 @x

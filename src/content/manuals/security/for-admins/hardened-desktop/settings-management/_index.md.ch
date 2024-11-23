@@ -62,15 +62,19 @@ For an extra layer of security, you can also use Settings Management to enable a
 @z
 
 @x
-You can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
+You can configure several Docker Desktop settings using either:
+ - An `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
+ - Creating a settings policy in the Docker Admin Console 
 @y
-You can configure several Docker Desktop settings using an `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
+You can configure several Docker Desktop settings using either:
+ - An `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
+ - Creating a settings policy in the Docker Admin Console 
 @z
 
 @x
-Values that are set to `locked: true` within the `admin-settings.json` override any previous values set by developers and ensure that these cannot be modified. For more information, see [Configure Settings Management](configure.md#step-two-configure-the-settings-you-want-to-lock-in).
+Settings that are defined by an administrator override any previous values set by developers and ensure that these cannot be modified. 
 @y
-Values that are set to `locked: true` within the `admin-settings.json` override any previous values set by developers and ensure that these cannot be modified. For more information, see [Configure Settings Management](configure.md#step-two-configure-the-settings-you-want-to-lock-in).
+Settings that are defined by an administrator override any previous values set by developers and ensure that these cannot be modified. 
 @z
 
 @x
@@ -122,9 +126,9 @@ Using the `admin-settings.json` file, you can:
 @z
 
 @x
-For more details on the syntax and options, see [Configure Settings Management](configure.md).
+For more details on the syntax and options, see [Configure Settings Management](configure-json-file.md).
 @y
-For more details on the syntax and options, see [Configure Settings Management](configure.md).
+For more details on the syntax and options, see [Configure Settings Management](configure-json-file.md).
 @z
 
 @x
@@ -140,9 +144,13 @@ You first need to [enforce sign-in](manuals/security/for-admins/enforce-sign-in/
 @z
 
 @x
-Next, you must either manually [create and configure the admin-settings.json file](configure.md), or use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
+Next, you must either:
+ - Manually [create and configure the `admin-settings.json` file](configure-json-file.md), or use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
+ - Fill out the **Settings policy** creation form in the [Docker Admin Console](configure-admin-console.md).
 @y
-Next, you must either manually [create and configure the admin-settings.json file](configure.md), or use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
+Next, you must either:
+ - Manually [create and configure the `admin-settings.json` file](configure-json-file.md), or use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json` and save it in the correct location.
+ - Fill out the **Settings policy** creation form in the [Docker Admin Console](configure-admin-console.md).
 @z
 
 @x
@@ -186,13 +194,15 @@ In addition, if Enhanced Container Isolation is enforced, developers can't use p
 @z
 
 @x
-## More resources
+## What's next?
 @y
-## More resources
+## What's next?
 @z
 
 @x
-- [Video: Settings Management](https://www.youtube.com/watch?v=I9oJOJ1P9PQ)
+- [Configure Settings Management with a `.json` file](configure-json-file.md)
+- [Configure Settings Management with the Docker Admin Console](configure-admin-console.md)
 @y
-- [Video: Settings Management](https://www.youtube.com/watch?v=I9oJOJ1P9PQ)
+- [Configure Settings Management with a `.json` file](configure-json-file.md)
+- [Configure Settings Management with the Docker Admin Console](configure-admin-console.md)
 @z

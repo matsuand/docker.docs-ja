@@ -193,12 +193,12 @@ keywords: docker, docker hub, docker desktop, security
 - title: Static vulnerability scanning
   description: Automatically run a point-in-time scan on your Docker images for vulnerabilities.
   icon: image_search
-  link: /docker-hub/vulnerability-scanning/
+  link: /docker-hub/repos/manage/vulnerability-scanning/
 @y
 - title: Static vulnerability scanning
   description: Automatically run a point-in-time scan on your Docker images for vulnerabilities.
   icon: image_search
-  link: __SUBDIR__/docker-hub/vulnerability-scanning/
+  link: __SUBDIR__/docker-hub/repos/manage/vulnerability-scanning/
 @z
 
 @x

@@ -2,31 +2,33 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: OCI artifacts on Docker Hub
-linkTitle: OCI artifacts
-weight: 100
-keywords: oci, artifacts, docker hub
-description: You can use Docker Hub to store software artifacts packaged as OCI artifacts.
----
+title: Software artifacts on Docker Hub
+linkTitle: Software artifacts
 @y
----
-title: OCI artifacts on Docker Hub
-linkTitle: OCI artifacts
-weight: 100
+title: Software artifacts on Docker Hub
+linkTitle: Software artifacts
+@z
+
+@x
 keywords: oci, artifacts, docker hub
 description: You can use Docker Hub to store software artifacts packaged as OCI artifacts.
----
+@y
+keywords: oci, artifacts, docker hub
+description: You can use Docker Hub to store software artifacts packaged as OCI artifacts.
 @z
 
 @x
 You can use Docker Hub to store any kind of software artifact, not just
-container images. Docker Hub supports OCI artifacts by leveraging the config
-property on the image manifest.
+container images. A software artifact is any item produced during the software
+development process that contributes to the creation, maintenance, or
+understanding of the software. Docker Hub supports OCI artifacts by leveraging
+the config property on the image manifest.
 @y
 You can use Docker Hub to store any kind of software artifact, not just
-container images. Docker Hub supports OCI artifacts by leveraging the config
-property on the image manifest.
+container images. A software artifact is any item produced during the software
+development process that contributes to the creation, maintenance, or
+understanding of the software. Docker Hub supports OCI artifacts by leveraging
+the config property on the image manifest.
 @z
 
 @x
@@ -206,9 +208,9 @@ Steps:
 @z
 
 @x
-3. Sign in to Docker Hub with Helm, using your Docker ID credentials.
+3. Sign in to Docker Hub with Helm, using your Docker credentials.
 @y
-3. Sign in to Docker Hub with Helm, using your Docker ID credentials.
+3. Sign in to Docker Hub with Helm, using your Docker credentials.
 @z
 
 @x

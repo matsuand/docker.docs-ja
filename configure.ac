@@ -179,10 +179,14 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
 	src/content/manuals/docker-hub/Makefile
-	src/content/manuals/docker-hub/builds/Makefile
-	src/content/manuals/docker-hub/builds/images/Makefile
 	src/content/manuals/docker-hub/images/Makefile
 	src/content/manuals/docker-hub/repos/Makefile
+	src/content/manuals/docker-hub/repos/manage/Makefile
+	src/content/manuals/docker-hub/repos/manage/builds/Makefile
+	src/content/manuals/docker-hub/repos/manage/builds/images/Makefile
+	src/content/manuals/docker-hub/repos/manage/hub-images/Makefile
+	src/content/manuals/docker-hub/repos/manage/hub-images/images/Makefile
+	src/content/manuals/docker-hub/repos/manage/images/Makefile
 	src/content/manuals/engine/Makefile
 	src/content/manuals/engine/cli/Makefile
 	src/content/manuals/engine/containers/Makefile
