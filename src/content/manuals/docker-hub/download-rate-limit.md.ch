@@ -38,11 +38,13 @@ manage your and your organization's usage effectively.
 @z
 
 @x
-Usage refers to the amount of data transferred from Docker Hub and the amount of
-data stored on Docker Hub.
+Usage refers to both:
+- Pulls: The amount of data transferred from Docker Hub
+- Storage: The amount of data stored on Docker Hub
 @y
-Usage refers to the amount of data transferred from Docker Hub and the amount of
-data stored on Docker Hub.
+Usage refers to both:
+- Pulls: The amount of data transferred from Docker Hub
+- Storage: The amount of data stored on Docker Hub
 @z
 
 @x
@@ -72,11 +74,43 @@ exhibiting excessive data and storage consumption.
 @z
 
 @x
-You can download a CSV file of your or your organization's Docker Hub usage. To
-download the file:
+1. Sign in to [Docker Hub](https://hub.docker.com).
 @y
-You can download a CSV file of your or your organization's Docker Hub usage. To
-download the file:
+1. Sign in to [Docker Hub](https://hub.docker.com).
+@z
+
+@x
+   If you want to download usage for all members of an organization, you must
+   sign in to an account that is an owner for that organization. Otherwise,
+   you can only view your own personal usage.
+@y
+   If you want to download usage for all members of an organization, you must
+   sign in to an account that is an owner for that organization. Otherwise,
+   you can only view your own personal usage.
+@z
+
+@x
+2. In Docker Hub, select **Usage** from the top-level navigation menu.
+3. In the drop-down, select whether you want to view your personal or organization data.
+4. The usage page displays **Pulls** and **Storage** usage.
+5. Select a usage type and use the available filters to view usage.
+@y
+2. In Docker Hub, select **Usage** from the top-level navigation menu.
+3. In the drop-down, select whether you want to view your personal or organization data.
+4. The usage page displays **Pulls** and **Storage** usage.
+5. Select a usage type and use the available filters to view usage.
+@z
+
+@x
+### Download Docker Hub usage
+@y
+### Download Docker Hub usage
+@z
+
+@x
+You can download a CSV file of your or your organization's Docker Hub usage. To download the file:
+@y
+You can download a CSV file of your or your organization's Docker Hub usage. To download the file:
 @z
 
 @x
@@ -88,33 +122,33 @@ download the file:
 @x
    If you want to download usage for all members of an organization, you must
    sign in to an account that is an owner for that organization. Otherwise,
-   you can only view your own usage. 
+   you can only view your own personal usage.
 @y
    If you want to download usage for all members of an organization, you must
    sign in to an account that is an owner for that organization. Otherwise,
-   you can only view your own usage. 
+   you can only view your own personal usage.
 @z
 
 @x
-2. In Docker Hub, navigate to the [**Usage** page](https://hub.docker.com/usage).
-3. In the drop-down, select whether to download your personal data or
-   data for an organization.
-4. In **From** and **To**, select a date range for the data.
-5. Select **Send report to email** to have Docker email you a link to the data
+2. In Docker Hub, select **Usage** from the top-level navigation menu.
+3. In the drop-down, select whether you want to view your personal or organization data.
+4. Optional. Use the **Filter by privacy** drop-down to select **Public** or **Private** pulls.
+5. Use the **From** and **To** filters to select a date range for the data.
+6. Select **Send report to email** to have Docker email you a link to the data
    file. Note that email processing time may vary.
 @y
-2. In Docker Hub, navigate to the [**Usage** page](https://hub.docker.com/usage).
-3. In the drop-down, select whether to download your personal data or
-   data for an organization.
-4. In **From** and **To**, select a date range for the data.
-5. Select **Send report to email** to have Docker email you a link to the data
+2. In Docker Hub, select **Usage** from the top-level navigation menu.
+3. In the drop-down, select whether you want to view your personal or organization data.
+4. Optional. Use the **Filter by privacy** drop-down to select **Public** or **Private** pulls.
+5. Use the **From** and **To** filters to select a date range for the data.
+6. Select **Send report to email** to have Docker email you a link to the data
    file. Note that email processing time may vary.
 @z
 
 @x
-The file contains the following comma separated values.
+The file contains the following comma separated values:
 @y
-The file contains the following comma separated values.
+The file contains the following comma separated values:
 @z
 
 @x
@@ -254,16 +288,12 @@ both individuals and organizations.
 @z
 
 @x
-A user's rate limit is equal to the highest entitlement of their personal
-account or any organization they belong to. To take advantage of this, you must
-sign in to [Docker Hub](https://hub.docker.com/) as an authenticated user. For
+Rate limits apply to pull usage. A user's rate limit is equal to the highest entitlement of their personal account or any organization they belong to. To take advantage of this, you must sign in to [Docker Hub](https://hub.docker.com/) as an authenticated user. For
 more information, see [How do I authenticate pull
 requests](#how-do-i-authenticate-pull-requests). Unauthenticated (anonymous)
 users will have the limits enforced via IP.
 @y
-A user's rate limit is equal to the highest entitlement of their personal
-account or any organization they belong to. To take advantage of this, you must
-sign in to [Docker Hub](https://hub.docker.com/) as an authenticated user. For
+Rate limits apply to pull usage. A user's rate limit is equal to the highest entitlement of their personal account or any organization they belong to. To take advantage of this, you must sign in to [Docker Hub](https://hub.docker.com/) as an authenticated user. For
 more information, see [How do I authenticate pull
 requests](#how-do-i-authenticate-pull-requests). Unauthenticated (anonymous)
 users will have the limits enforced via IP.

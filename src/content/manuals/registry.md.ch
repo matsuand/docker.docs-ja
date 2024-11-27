@@ -14,11 +14,11 @@ keywords: registry, distribution, docker hub, spec, schema, api, manifest, auth
 @x
 > [!IMPORTANT]
 >
-> The ability to push [deprecated Docker image manifest version 2, schema 1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/) images to Docker Hub will be deprecated on November 4th, 2024.
+> The ability to push [deprecated Docker image manifest version 2, schema 1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/) images to Docker Hub is deprecated as of November 4th, 2024.
 @y
 > [!IMPORTANT]
 >
-> The ability to push [deprecated Docker image manifest version 2, schema 1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/) images to Docker Hub will be deprecated on November 4th, 2024.
+> The ability to push [deprecated Docker image manifest version 2, schema 1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/) images to Docker Hub is deprecated as of November 4th, 2024.
 @z
 
 @x
