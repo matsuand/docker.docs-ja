@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Building Compose projects with Bake
@@ -90,17 +91,7 @@ repository as an example of a monorepo using Docker Compose that can be
 extended with Bake.
 @z
 
-@x
-```console
-$ git clone https://github.com/dvdksn/example-voting-app.git
-$ cd example-voting-app
-```
-@y
-```console
-$ git clone https://github.com/dvdksn/example-voting-app.git
-$ cd example-voting-app
-```
-@z
+% snip command...
 
 @x
 This repository uses Docker Compose to define the runtime configurations for
@@ -160,23 +151,7 @@ property are automatically built before the service is started. Here's the
 build configuration for the `vote` service in the example repository:
 @z
 
-@x
-```yaml {title="compose.yaml"}
-services:
-  vote:
-    build:
-      context: ./vote # Build context
-      target: dev # Dockerfile stage
-```
-@y
-```yaml {title="compose.yaml"}
-services:
-  vote:
-    build:
-      context: ./vote # Build context
-      target: dev # Dockerfile stage
-```
-@z
+% snip code...
 
 @x
 The `vote`, `result`, and `worker` services all have a build configuration
@@ -198,15 +173,7 @@ configuration specified in the Compose file. For example, to build the `vote`
 service with this configuration, run:
 @z
 
-@x
-```console
-$ docker compose build vote
-```
-@y
-```console
-$ docker compose build vote
-```
-@z
+% snip command...
 
 @x
 Omit the service name to build all services at once:
@@ -214,15 +181,7 @@ Omit the service name to build all services at once:
 Omit the service name to build all services at once:
 @z
 
-@x
-```console
-$ docker compose build
-```
-@y
-```console
-$ docker compose build
-```
-@z
+% snip command...
 
 @x
 The `docker compose build` command is useful when you only need to build images
@@ -242,55 +201,7 @@ build's configuration. For example, to specify the tag name for the images, set
 the `image` property on the service.
 @z
 
-@x
-```yaml
-services:
-  vote:
-    image: username/vote
-    build:
-      context: ./vote
-      target: dev
-    #...
-@y
-```yaml
-services:
-  vote:
-    image: username/vote
-    build:
-      context: ./vote
-      target: dev
-    #...
-@z
-
-@x
-  result:
-    image: username/result
-    build:
-      context: ./result
-    #...
-@y
-  result:
-    image: username/result
-    build:
-      context: ./result
-    #...
-@z
-
-@x
-  worker:
-    image: username/worker
-    build:
-      context: ./worker
-    #...
-```
-@y
-  worker:
-    image: username/worker
-    build:
-      context: ./worker
-    #...
-```
-@z
+% snip code...
 
 @x
 Running `docker compose build` creates three service images with fully
@@ -368,15 +279,7 @@ for a given Compose file. This flag evaluates the build configuration and
 outputs the build definition in JSON format.
 @z
 
-@x
-```console
-$ docker buildx bake --print
-```
-@y
-```console
-$ docker buildx bake --print
-```
-@z
+% snip command...
 
 @x
 The JSON-formatted output shows the group that would be executed, and all the
@@ -388,83 +291,7 @@ targets of that group. A group is a collection of builds, and a target
 represents a single build.
 @z
 
-@x
-```json
-{
-  "group": {
-    "default": {
-      "targets": [
-        "vote",
-        "result",
-        "worker",
-        "seed"
-      ]
-    }
-  },
-  "target": {
-    "result": {
-      "context": "result",
-      "dockerfile": "Dockerfile",
-      "network": ""
-    },
-    "seed": {
-      "context": "seed-data",
-      "dockerfile": "Dockerfile",
-      "network": ""
-    },
-    "vote": {
-      "context": "vote",
-      "dockerfile": "Dockerfile",
-      "target": "dev",
-      "network": ""
-    },
-    "worker": {
-      "context": "worker",
-      "dockerfile": "Dockerfile",
-      "network": ""
-    }
-  }
-}
-```
-@y
-```json
-{
-  "group": {
-    "default": {
-      "targets": [
-        "vote",
-        "result",
-        "worker",
-        "seed"
-      ]
-    }
-  },
-  "target": {
-    "result": {
-      "context": "result",
-      "dockerfile": "Dockerfile",
-      "network": ""
-    },
-    "seed": {
-      "context": "seed-data",
-      "dockerfile": "Dockerfile",
-      "network": ""
-    },
-    "vote": {
-      "context": "vote",
-      "dockerfile": "Dockerfile",
-      "target": "dev",
-      "network": ""
-    },
-    "worker": {
-      "context": "worker",
-      "dockerfile": "Dockerfile",
-      "network": ""
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 As you can see, Bake has created a `default` group that includes four targets:
@@ -494,15 +321,7 @@ your services containing a build configuration. To build this group of services
 with Bake, run:
 @z
 
-@x
-```console
-$ docker buildx bake
-```
-@y
-```console
-$ docker buildx bake
-```
-@z
+% snip command...
 
 @x
 ### Customize the build group
@@ -532,15 +351,7 @@ root of the repository, alongside your `compose.yaml` file, named
 `docker-bake.hcl`.
 @z
 
-@x
-```console
-$ touch docker-bake.hcl
-```
-@y
-```console
-$ touch docker-bake.hcl
-```
-@z
+% snip command...
 
 @x
 Open the Bake file and add the following configuration:
@@ -548,19 +359,7 @@ Open the Bake file and add the following configuration:
 Open the Bake file and add the following configuration:
 @z
 
-@x
-```hcl {title=docker-bake.hcl}
-group "default" {
-  targets = ["vote", "result", "worker"]
-}
-```
-@y
-```hcl {title=docker-bake.hcl}
-group "default" {
-  targets = ["vote", "result", "worker"]
-}
-```
-@z
+% snip code...
 
 @x
 Save the file and print your Bake definition again.
@@ -568,15 +367,7 @@ Save the file and print your Bake definition again.
 Save the file and print your Bake definition again.
 @z
 
-@x
-```console
-$ docker buildx bake --print
-```
-@y
-```console
-$ docker buildx bake --print
-```
-@z
+% snip command...
 
 @x
 The JSON output shows that the `default` group only includes the targets you
@@ -586,63 +377,7 @@ The JSON output shows that the `default` group only includes the targets you
 care about.
 @z
 
-@x
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["vote", "result", "worker"]
-    }
-  },
-  "target": {
-    "result": {
-      "context": "result",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/result"]
-    },
-    "vote": {
-      "context": "vote",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/vote"],
-      "target": "dev"
-    },
-    "worker": {
-      "context": "worker",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/worker"]
-    }
-  }
-}
-```
-@y
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["vote", "result", "worker"]
-    }
-  },
-  "target": {
-    "result": {
-      "context": "result",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/result"]
-    },
-    "vote": {
-      "context": "vote",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/vote"],
-      "target": "dev"
-    },
-    "worker": {
-      "context": "worker",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/worker"]
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 Here, the build configuration for each target (context, tags, etc.) is picked
@@ -682,19 +417,7 @@ To modify the target stage used by the `vote` service, add the following
 configuration to the Bake file:
 @z
 
-@x
-```hcl
-target "vote" {
-  target = "final"
-}
-```
-@y
-```hcl
-target "vote" {
-  target = "final"
-}
-```
-@z
+% snip code...
 
 @x
 This overrides the `target` property specified in the Compose file with a
@@ -710,43 +433,7 @@ the build configuration for the `vote` target with `docker buildx bake --print
 vote`:
 @z
 
-@x
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["vote"]
-    }
-  },
-  "target": {
-    "vote": {
-      "context": "vote",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/vote"],
-      "target": "final"
-    }
-  }
-}
-```
-@y
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["vote"]
-    }
-  },
-  "target": {
-    "vote": {
-      "context": "vote",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/vote"],
-      "target": "final"
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### Additional build features
@@ -836,71 +523,7 @@ To add these properties to the images you build with Bake, update the Bake file
 as follows:
 @z
 
-@x
-```hcl
-group "default" {
-  targets = ["vote", "result", "worker"]
-}
-@y
-```hcl
-group "default" {
-  targets = ["vote", "result", "worker"]
-}
-@z
-
-@x
-target "_common" {
-  annotations = ["org.opencontainers.image.authors=username"]
-  platforms = ["linux/amd64", "linux/arm64"]
-  attest = [
-    "type=provenance,mode=max",
-    "type=sbom"
-  ]
-}
-@y
-target "_common" {
-  annotations = ["org.opencontainers.image.authors=username"]
-  platforms = ["linux/amd64", "linux/arm64"]
-  attest = [
-    "type=provenance,mode=max",
-    "type=sbom"
-  ]
-}
-@z
-
-@x
-target "vote" {
-  inherits = ["_common"]
-  target = "final"
-}
-@y
-target "vote" {
-  inherits = ["_common"]
-  target = "final"
-}
-@z
-
-@x
-target "result" {
-  inherits = ["_common"]
-}
-@y
-target "result" {
-  inherits = ["_common"]
-}
-@z
-
-@x
-target "worker" {
-  inherits = ["_common"]
-}
-```
-@y
-target "worker" {
-  inherits = ["_common"]
-}
-```
-@z
+% snip code...
 
 @x
 This defines a new `_common` target that defines reusable build configuration

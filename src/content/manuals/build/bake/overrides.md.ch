@@ -678,86 +678,111 @@ passed as environment variables are coerced into suitable types first.
 @z
 
 @x
-The following example defines a `PORT` variable with a default value of `8080`.
-The `default` target uses a [ternary operator](expressions.md#ternary-operators)
-to set the `PORT` variable to the value of the environment variable `PORT`
-if it is greater than `1024`, otherwise it uses the default value.
+The following example defines a `PORT` variable. The `backend` target uses the
+`PORT` variable as-is, and the `frontend` target uses the value of `PORT`
+incremented by one.
 @y
-The following example defines a `PORT` variable with a default value of `8080`.
-The `default` target uses a [ternary operator](expressions.md#ternary-operators)
-to set the `PORT` variable to the value of the environment variable `PORT`
-if it is greater than `1024`, otherwise it uses the default value.
-@z
-
-@x
-In this case, the `PORT` variable is coerced to an integer before the ternary
-operator is evaluated.
-@y
-In this case, the `PORT` variable is coerced to an integer before the ternary
-operator is evaluated.
+The following example defines a `PORT` variable. The `backend` target uses the
+`PORT` variable as-is, and the `frontend` target uses the value of `PORT`
+incremented by one.
 @z
 
 @x
 ```hcl
-default_port = 8080
+variable "PORT" {
+  default = 3000
+}
 @y
 ```hcl
-default_port = 8080
+variable "PORT" {
+  default = 3000
+}
 @z
 
 @x
-variable "PORT" {
-  default = default_port
+group "default" {
+  targets = ["backend", "frontend"]
 }
 @y
-variable "PORT" {
-  default = default_port
+group "default" {
+  targets = ["backend", "frontend"]
 }
 @z
 
 @x
-target "default" {
+target "backend" {
   args = {
-    PORT = PORT > 1024 ? PORT : default_port
+    PORT = PORT
+  }
+}
+@y
+target "backend" {
+  args = {
+    PORT = PORT
+  }
+}
+@z
+
+@x
+target "frontend" {
+  args = {
+    PORT = add(PORT, 1)
   }
 }
 ```
 @y
-target "default" {
+target "frontend" {
   args = {
-    PORT = PORT > 1024 ? PORT : default_port
+    PORT = add(PORT, 1)
   }
 }
 ```
 @z
 
 @x
-Attempting to set the `PORT` variable with a value less than `1024` will result
-in the default value being used.
+Overriding `PORT` using an environment variable will first coerce the value
+into the expected type, an integer, before the expression in the `frontend`
+target runs.
 @y
-Attempting to set the `PORT` variable with a value less than `1024` will result
-in the default value being used.
+Overriding `PORT` using an environment variable will first coerce the value
+into the expected type, an integer, before the expression in the `frontend`
+target runs.
 @z
 
 @x
 ```console
-$ PORT=80 docker buildx bake --print
+$ PORT=7070 docker buildx bake --print
 ```
 @y
 ```console
-$ PORT=80 docker buildx bake --print
+$ PORT=7070 docker buildx bake --print
 ```
 @z
 
 @x
 ```json
 {
-  "target": {
+  "group": {
     "default": {
+      "targets": [
+        "backend",
+        "frontend"
+      ]
+    }
+  },
+  "target": {
+    "backend": {
       "context": ".",
       "dockerfile": "Dockerfile",
       "args": {
-        "PORT": "8080"
+        "PORT": "7070"
+      }
+    },
+    "frontend": {
+      "context": ".",
+      "dockerfile": "Dockerfile",
+      "args": {
+        "PORT": "7071"
       }
     }
   }
@@ -766,12 +791,27 @@ $ PORT=80 docker buildx bake --print
 @y
 ```json
 {
-  "target": {
+  "group": {
     "default": {
+      "targets": [
+        "backend",
+        "frontend"
+      ]
+    }
+  },
+  "target": {
+    "backend": {
       "context": ".",
       "dockerfile": "Dockerfile",
       "args": {
-        "PORT": "8080"
+        "PORT": "7070"
+      }
+    },
+    "frontend": {
+      "context": ".",
+      "dockerfile": "Dockerfile",
+      "args": {
+        "PORT": "7071"
       }
     }
   }

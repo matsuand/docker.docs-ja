@@ -66,9 +66,9 @@ Deploy the Docker settings and enforce sign-in for a small group of test users v
 @z
 
 @x
-## Test Build Cloud capabilities
+## Test Docker Build Cloud capabilities
 @y
-## Test Build Cloud capabilities
+## Test Docker Build Cloud capabilities
 @z
 
 @x
@@ -78,9 +78,9 @@ Have one of your Docker Desktop testers [connect to the cloud builder you create
 @z
 
 @x
-## Verify Scout monitoring of repositories
+## Verify Docker Scout monitoring of repositories
 @y
-## Verify Scout monitoring of repositories
+## Verify Docker Scout monitoring of repositories
 @z
 
 @x

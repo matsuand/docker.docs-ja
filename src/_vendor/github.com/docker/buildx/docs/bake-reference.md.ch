@@ -430,6 +430,32 @@ This takes a list value, so you can specify multiple cache export targets.
 % snip code...
 
 @x
+### `target.call`
+@y
+### `target.call`
+@z
+
+@x
+Specifies the frontend method to use. Frontend methods let you, for example,
+execute build checks only, instead of running a build. This is the same as the
+`--call` flag.
+@y
+Specifies the frontend method to use. Frontend methods let you, for example,
+execute build checks only, instead of running a build. This is the same as the
+`--call` flag.
+@z
+
+% snip code...
+
+@x
+For more information about frontend methods, refer to the CLI reference for
+[`docker buildx build --call`](https://docs.docker.com/reference/cli/docker/buildx/build/#call).
+@y
+For more information about frontend methods, refer to the CLI reference for
+[`docker buildx build --call`](https://docs.docker.com/reference/cli/docker/buildx/build/#call).
+@z
+
+@x
 ### `target.context`
 @y
 ### `target.context`

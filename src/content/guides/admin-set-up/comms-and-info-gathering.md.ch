@@ -90,7 +90,7 @@ To view the parameters that can be preset, see [Configure Settings Management](m
 @z
 
 @x
-The Docker Implementation team can help you step through setting up your organization, configuring SSO, enforcing sign in, and configuring Docker. You can reach out to set up a meeting by emailing successteam@docker.com.
+The Docker Implementation team can help you step through setting up your organization, configuring SSO, enforcing sign-in, and configuring Docker. You can reach out to set up a meeting by emailing successteam@docker.com.
 @y
-The Docker Implementation team can help you step through setting up your organization, configuring SSO, enforcing sign in, and configuring Docker. You can reach out to set up a meeting by emailing successteam@docker.com.
+The Docker Implementation team can help you step through setting up your organization, configuring SSO, enforcing sign-in, and configuring Docker. You can reach out to set up a meeting by emailing successteam@docker.com.
 @z

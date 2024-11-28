@@ -327,20 +327,6 @@ following lines are all treated identically:
 % snip code...
 
 @x
-The following parser directives are supported:
-@y
-パーサーディレクティブは以下のものがサポートされます。
-@z
-
-@x
-- `syntax`
-- `escape`
-@y
-- `syntax`
-- `escape`
-@z
-
-@x
 ### syntax
 @y
 ### syntax
@@ -4647,10 +4633,12 @@ Keep the following things in mind about volumes in the Dockerfile.
 
 @x
 - **Changing the volume from within the Dockerfile**: If any build steps change the
-  data within the volume after it has been declared, those changes will be discarded.
+  data within the volume after it has been declared, those changes will be discarded
+  when using the legacy builder. When using Buildkit, the changes will instead be kept.
 @y
 - **Changing the volume from within the Dockerfile**: If any build steps change the
-  data within the volume after it has been declared, those changes will be discarded.
+  data within the volume after it has been declared, those changes will be discarded
+  when using the legacy builder. When using Buildkit, the changes will instead be kept.
 @z
 
 @x
