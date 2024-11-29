@@ -26,14 +26,6 @@ workloads. For more details see [Under the hood](#under-the-hood).
 @z
 
 @x
-Starting with version 4.13, Docker Desktop includes a customized version of
-Sysbox.
-@y
-Starting with version 4.13, Docker Desktop includes a customized version of
-Sysbox.
-@z
-
-@x
 When [Enhanced Container Isolation is enabled](index.md#how-do-i-enable-enhanced-container-isolation), containers
 created by users through `docker run` or `docker create` are automatically
 launched using Sysbox instead of the standard OCI runc runtime. Users need not
@@ -61,22 +53,20 @@ to breach the Docker Desktop Virtual Machine (VM) or other containers.
 > [!NOTE]
 >
 > When Enhanced Container Isolation is enabled in Docker Desktop, the Docker CLI
-> "--runtime" flag is ignored. Docker's default runtime continues to be "runc",
+> `--runtime` flag is ignored. Docker's default runtime continues to be `runc`,
 > but all user containers are implicitly launched with Sysbox.
 @y
 > [!NOTE]
 >
 > When Enhanced Container Isolation is enabled in Docker Desktop, the Docker CLI
-> "--runtime" flag is ignored. Docker's default runtime continues to be "runc",
+> `--runtime` flag is ignored. Docker's default runtime continues to be `runc`,
 > but all user containers are implicitly launched with Sysbox.
 @z
 
 @x
-Enhanced Container Isolation is not the same as Docker Engine's userns-remap
-mode or Rootless Docker. This is explained further below.
+Enhanced Container Isolation is not the same as [Docker Engine's userns-remap mode or Rootless Docker](#enhanced-container-isolation-versus-user-namespace-remapping).
 @y
-Enhanced Container Isolation is not the same as Docker Engine's userns-remap
-mode or Rootless Docker. This is explained further below.
+Enhanced Container Isolation is not the same as [Docker Engine's userns-remap mode or Rootless Docker](#enhanced-container-isolation-versus-user-namespace-remapping).
 @z
 
 @x
@@ -96,13 +86,13 @@ Sysbox enhances container isolation by using techniques such as:
 * Restricting the container from mounting sensitive VM directories.
 * Vetting sensitive system-calls between the container and the Linux kernel.
 * Mapping filesystem user/group IDs between the container's user-namespace and the Linux VM.
-* Emulating portions of the procfs and sysfs filesystems inside the container.
+* Emulating portions of the `/proc` and `/sys` filesystems inside the container.
 @y
 * Enabling the Linux user-namespace on all containers (root user in the container maps to an unprivileged user in the Linux VM).
 * Restricting the container from mounting sensitive VM directories.
 * Vetting sensitive system-calls between the container and the Linux kernel.
 * Mapping filesystem user/group IDs between the container's user-namespace and the Linux VM.
-* Emulating portions of the procfs and sysfs filesystems inside the container.
+* Emulating portions of the `/proc` and `/sys` filesystems inside the container.
 @z
 
 @x
@@ -117,13 +107,13 @@ functional or performance impact to containers.
 
 @x
 These techniques complement Docker's traditional container security mechanisms
-such as using other Linux namespaces, cgroups, restricted Linux capabilities,
-seccomp, and AppArmor. They add a strong layer of isolation between the
+such as using other Linux namespaces, cgroups, restricted Linux Capabilities,
+Seccomp, and AppArmor. They add a strong layer of isolation between the
 container and the Linux kernel inside the Docker Desktop VM.
 @y
 These techniques complement Docker's traditional container security mechanisms
-such as using other Linux namespaces, cgroups, restricted Linux capabilities,
-seccomp, and AppArmor. They add a strong layer of isolation between the
+such as using other Linux namespaces, cgroups, restricted Linux Capabilities,
+Seccomp, and AppArmor. They add a strong layer of isolation between the
 container and the Linux kernel inside the Docker Desktop VM.
 @z
 
@@ -134,19 +124,19 @@ For more information, see [Key features and benefits](features-benefits.md).
 @z
 
 @x
-### Enhanced Container Isolation vs Docker Userns-Remap Mode
+### Enhanced Container Isolation versus user namespace remapping
 @y
-### Enhanced Container Isolation vs Docker Userns-Remap Mode
+### Enhanced Container Isolation versus user namespace remapping
 @z
 
 @x
 The Docker Engine includes a feature called [userns-remap mode](/engine/security/userns-remap/)
-that enables the user-namespace in all containers. However it suffers from a few
+that enables the user namespace in all containers. However it suffers from a few
 [limitations](/engine/security/userns-remap/) and it's
 not supported within Docker Desktop.
 @y
 The Docker Engine includes a feature called [userns-remap mode](__SUBDIR__/engine/security/userns-remap/)
-that enables the user-namespace in all containers. However it suffers from a few
+that enables the user namespace in all containers. However it suffers from a few
 [limitations](__SUBDIR__/engine/security/userns-remap/) and it's
 not supported within Docker Desktop.
 @z
@@ -172,32 +162,32 @@ Desktop in organizations with stringent security requirements.
 @z
 
 @x
-### Enhanced Container Isolation vs Rootless Docker
+### Enhanced Container Isolation versus Rootless Docker
 @y
-### Enhanced Container Isolation vs Rootless Docker
+### Enhanced Container Isolation versus Rootless Docker
 @z
 
 @x
-[Rootless Docker](/engine/security/rootless/) allows the Docker Engine, and by
+[Rootless Docker](/engine/security/rootless/) lets Docker Engine, and by
 extension the containers, to run without root privileges natively on a Linux host. This
-allows non-root users to install and run Docker natively on Linux.
+lets non-root users to install and run Docker natively on Linux.
 @y
-[Rootless Docker](__SUBDIR__/engine/security/rootless/) allows the Docker Engine, and by
+[Rootless Docker](__SUBDIR__/engine/security/rootless/) lets Docker Engine, and by
 extension the containers, to run without root privileges natively on a Linux host. This
-allows non-root users to install and run Docker natively on Linux.
+lets non-root users to install and run Docker natively on Linux.
 @z
 
 @x
 Rootless Docker is not supported within Docker Desktop. While it's a valuable
 feature when running Docker natively on Linux, its value within Docker Desktop
 is reduced since Docker Desktop runs the Docker Engine within a Linux VM. That
-is, Docker Desktop already allows non-root host users to run Docker and
+is, Docker Desktop already lets non-root host users to run Docker and
 isolates the Docker Engine from the host using a virtual machine.
 @y
 Rootless Docker is not supported within Docker Desktop. While it's a valuable
 feature when running Docker natively on Linux, its value within Docker Desktop
 is reduced since Docker Desktop runs the Docker Engine within a Linux VM. That
-is, Docker Desktop already allows non-root host users to run Docker and
+is, Docker Desktop already lets non-root host users to run Docker and
 isolates the Docker Engine from the host using a virtual machine.
 @z
 

@@ -16,34 +16,16 @@ keywords: enhanced container isolation, Docker Desktop, Docker socket, bind moun
 @z
 
 @x
-> [!NOTE]
->
-> This feature is available with Docker Desktop version 4.27 (and later) on Mac, Linux, and Windows (Hyper-V).
-> For Windows with WSL 2, this feature requires Docker Desktop 4.28 and later.
-@y
-> [!NOTE]
->
-> This feature is available with Docker Desktop version 4.27 (and later) on Mac, Linux, and Windows (Hyper-V).
-> For Windows with WSL 2, this feature requires Docker Desktop 4.28 and later.
-@z
-
-@x
-This page describes optional, advanced configurations for ECI, once ECI is enabled.
-@y
-This page describes optional, advanced configurations for ECI, once ECI is enabled.
-@z
-
-@x
 ## Docker socket mount permissions
 @y
 ## Docker socket mount permissions
 @z
 
 @x
-By default, when ECI is enabled, Docker Desktop does not allow bind-mounting the
+By default, when Enhanced Container Isolation (ECI) is enabled, Docker Desktop does not allow bind-mounting the
 Docker Engine socket into containers:
 @y
-By default, when ECI is enabled, Docker Desktop does not allow bind-mounting the
+By default, when Enhanced Container Isolation (ECI) is enabled, Docker Desktop does not allow bind-mounting the
 Docker Engine socket into containers:
 @z
 
@@ -53,16 +35,16 @@ $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:cli
 docker: Error response from daemon: enhanced container isolation: docker socket mount denied for container with image "docker.io/library/docker"; image is not in the allowed list; if you wish to allow it, configure the docker socket image list in the Docker Desktop settings.
 ```
 This prevents malicious containers from gaining access to the Docker Engine, as
-such access could allow them to perform supply chain attacks (e.g., build and
-push malicious images into the organization's repositories) or similar.
+such access could allow them to perform supply chain attacks. For example, build and
+push malicious images into the organization's repositories or similar.
 @y
 ```console
 $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:cli
 docker: Error response from daemon: enhanced container isolation: docker socket mount denied for container with image "docker.io/library/docker"; image is not in the allowed list; if you wish to allow it, configure the docker socket image list in the Docker Desktop settings.
 ```
 This prevents malicious containers from gaining access to the Docker Engine, as
-such access could allow them to perform supply chain attacks (e.g., build and
-push malicious images into the organization's repositories) or similar.
+such access could allow them to perform supply chain attacks. For example, build and
+push malicious images into the organization's repositories or similar.
 @z
 
 @x
@@ -82,19 +64,19 @@ containers.
 @z
 
 @x
-Starting with Docker Desktop 4.27, admins can optionally configure ECI to allow
+Administrators can optionally configure ECI to allow
 bind mounting the Docker Engine socket into containers, but in a controlled way.
 @y
-Starting with Docker Desktop 4.27, admins can optionally configure ECI to allow
+Administrators can optionally configure ECI to allow
 bind mounting the Docker Engine socket into containers, but in a controlled way.
 @z
 
 @x
 This can be done via the Docker Socket mount permissions section in the
-[admin-settings.json](../settings-management/_index.md) file. For example:
+[`admin-settings.json`](../settings-management/configure-json-file.md) file. For example:
 @y
 This can be done via the Docker Socket mount permissions section in the
-[admin-settings.json](../settings-management/_index.md) file. For example:
+[`admin-settings.json`](../settings-management/configure-json-file.md) file. For example:
 @z
 
 @x
@@ -173,13 +155,13 @@ described below.
 
 @x
 The `imageList` is a list of container images that are allowed to bind-mount the
-Docker socket. By default the list is empty (i.e., no containers are allowed to
-bind-mount the Docker socket when ECI is enabled). However, an admin can add
+Docker socket. By default the list is empty, no containers are allowed to
+bind-mount the Docker socket when ECI is enabled. However, an administrator can add
 images to the list, using either of these formats:
 @y
 The `imageList` is a list of container images that are allowed to bind-mount the
-Docker socket. By default the list is empty (i.e., no containers are allowed to
-bind-mount the Docker socket when ECI is enabled). However, an admin can add
+Docker socket. By default the list is empty, no containers are allowed to
+bind-mount the Docker socket when ECI is enabled. However, an administrator can add
 images to the list, using either of these formats:
 @z
 
@@ -204,9 +186,9 @@ and repository.
 @z
 
 @x
-In the example above, the image list was configured with three images:
+In the previous example, the image list was configured with three images:
 @y
-In the example above, the image list was configured with three images:
+In the previous example, the image list was configured with three images:
 @z
 
 @x
@@ -258,24 +240,22 @@ $ docker run -it -v /var/run/docker.sock:/var/run/docker.sock docker:cli sh
 @x
 > [!TIP]
 >
-> Be restrictive on the images you allow, as described in [Recommendations](#recommendations) below.
+> Be restrictive with the images you allow, as described in [Recommendations](#recommendations).
 @y
 > [!TIP]
 >
-> Be restrictive on the images you allow, as described in [Recommendations](#recommendations) below.
+> Be restrictive with the images you allow, as described in [Recommendations](#recommendations).
 @z
 
 @x
-In general, it's easier to specify the image using the tag wildcard format
-(e.g., `<image-name>:*`) because then `imageList` doesn't need to be updated whenever a new version of the
-image is used. Alternatively, you can use an immutable tag (e.g., `:latest`),
+In general, it's easier to specify the image using the tag wildcard format, for example `<image-name>:*`, because then `imageList` doesn't need to be updated whenever a new version of the
+image is used. Alternatively, you can use an immutable tag, for example `:latest`,
 but it does not always work as well as the wildcard because, for example,
 Testcontainers uses specific versions of the image, not necessarily the latest
 one.
 @y
-In general, it's easier to specify the image using the tag wildcard format
-(e.g., `<image-name>:*`) because then `imageList` doesn't need to be updated whenever a new version of the
-image is used. Alternatively, you can use an immutable tag (e.g., `:latest`),
+In general, it's easier to specify the image using the tag wildcard format, for example `<image-name>:*`, because then `imageList` doesn't need to be updated whenever a new version of the
+image is used. Alternatively, you can use an immutable tag, for example `:latest`,
 but it does not always work as well as the wildcard because, for example,
 Testcontainers uses specific versions of the image, not necessarily the latest
 one.
@@ -296,13 +276,11 @@ digests. If so, the container is allowed to start, otherwise it's blocked.
 @z
 
 @x
-Note that due to the digest comparison mentioned in the prior paragraph, it's
-not possible to bypass the Docker socket mount permissions by retagging a
+Due to the digest comparison, it's not possible to bypass the Docker socket mount permissions by re-tagging a
 disallowed image to the name of an allowed one. In other words, if a user
 does:
 @y
-Note that due to the digest comparison mentioned in the prior paragraph, it's
-not possible to bypass the Docker socket mount permissions by retagging a
+Due to the digest comparison, it's not possible to bypass the Docker socket mount permissions by re-tagging a
 disallowed image to the name of an allowed one. In other words, if a user
 does:
 @z
@@ -338,20 +316,16 @@ ones in the repository.
 @z
 
 @x
-> [!NOTE]
->
-> This feature is available with Docker Desktop version 4.34 and later.
+{{ introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" }}
 @y
-> [!NOTE]
->
-> This feature is available with Docker Desktop version 4.34 and later.
+{{ introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" }}
 @z
 
 @x
-As described in the prior section, admins can configure the list of container
+As described in the prior section, administrators can configure the list of container
 images that are allowed to mount the Docker socket via the `imageList`.
 @y
-As described in the prior section, admins can configure the list of container
+As described in the prior section, administrators can configure the list of container
 images that are allowed to mount the Docker socket via the `imageList`.
 @z
 
@@ -385,12 +359,12 @@ also apply to any local images derived (i.e., built from) an image in the
 That is, if a local image called "myLocalImage" is built from "myBaseImage"
 (i.e., has a Dockerfile with a `FROM myBaseImage`), then if "myBaseImage" is in
 the `imageList`, both "myBaseImage" and "myLocalImage" are allowed to mount the
-Docker socket (i.e., ECI won't block the mount).
+Docker socket.
 @y
 That is, if a local image called "myLocalImage" is built from "myBaseImage"
 (i.e., has a Dockerfile with a `FROM myBaseImage`), then if "myBaseImage" is in
 the `imageList`, both "myBaseImage" and "myLocalImage" are allowed to mount the
-Docker socket (i.e., ECI won't block the mount).
+Docker socket.
 @z
 
 @x
@@ -454,11 +428,11 @@ A couple of caveats:
 @x
 * The `allowDerivedImages` setting only applies to local-only images built from
   an allowed image. That is, the derived image must not be present in a remote
-  repository (because if it were, you would just list it's name in the `imageList`).
+  repository because if it were, you would just list its name in the `imageList`.
 @y
 * The `allowDerivedImages` setting only applies to local-only images built from
   an allowed image. That is, the derived image must not be present in a remote
-  repository (because if it were, you would just list it's name in the `imageList`).
+  repository because if it were, you would just list its name in the `imageList`.
 @z
 
 @x
@@ -812,31 +786,29 @@ Whether to configure the list as an allow or deny list depends on the use case.
 @x
 | Unsupported command  | Description |
 | :------------------- | :---------- |
-| compose              | Docker compose |
-| dev                  | Docker dev environments |
-| extension            | Manages Docker extensions |
-| feedback             | Send feedback to Docker |
-| init                 | Creates Docker-related starter files |
-| manifest             | Manages Docker image manifests |
-| plugins              | Manages plugins |
-| sbom                 | View Software Bill of Materials (SBOM) |
-| scan                 | Docker Scan |
-| scout                | Docker Scout |
-| trust                | Manage trust on Docker images |
+| `compose`              | Docker Compose |
+| `dev`                  | Dev environments |
+| `extension`            | Manages Docker Extensions |
+| `feedback`             | Send feedback to Docker |
+| `init`                 | Creates Docker-related starter files |
+| `manifest`             | Manages Docker image manifests |
+| `plugin`              | Manages plugins |
+| `sbom`                 | View Software Bill of Materials (SBOM) |
+| `scout`                | Docker Scout |
+| `trust`                | Manage trust on Docker images |
 @y
 | Unsupported command  | Description |
 | :------------------- | :---------- |
-| compose              | Docker compose |
-| dev                  | Docker dev environments |
-| extension            | Manages Docker extensions |
-| feedback             | Send feedback to Docker |
-| init                 | Creates Docker-related starter files |
-| manifest             | Manages Docker image manifests |
-| plugins              | Manages plugins |
-| sbom                 | View Software Bill of Materials (SBOM) |
-| scan                 | Docker Scan |
-| scout                | Docker Scout |
-| trust                | Manage trust on Docker images |
+| `compose`              | Docker Compose |
+| `dev`                  | Dev environments |
+| `extension`            | Manages Docker Extensions |
+| `feedback`             | Send feedback to Docker |
+| `init`                 | Creates Docker-related starter files |
+| `manifest`             | Manages Docker image manifests |
+| `plugin`              | Manages plugins |
+| `sbom`                 | View Software Bill of Materials (SBOM) |
+| `scout`                | Docker Scout |
+| `trust`                | Manage trust on Docker images |
 @z
 
 @x

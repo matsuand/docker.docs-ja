@@ -1374,12 +1374,6 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @z
 
 @x
-{{< desktop-install all=true beta_win_arm=true version="4.30.0" build_path="/149282/" >}}
-@y
-{{< desktop-install all=true beta_win_arm=true version="4.30.0" build_path="/149282/" >}}
-@z
-
-@x
 ### New
 @y
 ### New
@@ -1583,12 +1577,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 {{< release-date date="2024-04-08" >}}
 @y
 {{< release-date date="2024-04-08" >}}
-@z
-
-@x
-{{< desktop-install all=true version="4.29.0" build_path="/145265/" >}}
-@y
-{{< desktop-install all=true version="4.29.0" build_path="/145265/" >}}
 @z
 
 @x

@@ -224,9 +224,11 @@ usage: docker compose up [OPTIONS] [SERVICE...]
 @z
 
 @x wait-timeout
-      description: Maximum duration to wait for the project to be running|healthy
+      description: |
+        Maximum duration in seconds to wait for the project to be running|healthy
 @y
-      description: Maximum duration to wait for the project to be running|healthy
+      description: |
+        Maximum duration in seconds to wait for the project to be running|healthy
 @z
 
 @x watch

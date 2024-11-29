@@ -13,6 +13,7 @@ bases = \
 	compose_alpha_watch.md             \
 	compose_attach.md                  \
 	compose_build.md                   \
+	compose_commit.md                  \
 	compose_config.md                  \
 	compose_cp.md                      \
 	compose_create.md                  \
@@ -52,6 +53,7 @@ bases = \
 	docker_compose_alpha_watch.yaml    \
 	docker_compose_attach.yaml         \
 	docker_compose_build.yaml          \
+	docker_compose_commit.yaml         \
 	docker_compose_config.yaml         \
 	docker_compose_convert.yaml        \
 	docker_compose_cp.yaml             \

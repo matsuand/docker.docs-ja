@@ -11,31 +11,7 @@ description: Learn how to install, set up, configure, and use Docker products wi
 keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
-% development:
-
-@x
-  - title: Docker Desktop
-    description: Your command center for container development.
-    icon: /assets/icons/Whale.svg
-    link: /desktop/
-@y
-  - title: Docker Desktop
-    description: コンテナー開発を行うための中心的な存在です。
-    icon: __SUBDIR__/assets/icons/Whale.svg
-    link: __SUBDIR__/desktop/
-@z
-
-@x
-  - title: Docker Compose
-    description: Define and run multi-container applications.
-    icon: /assets/icons/Compose.svg
-    link: /compose/
-@y
-  - title: Docker Compose
-    description: マルチコンテナーアプリケーションを定義して実行します。
-    icon: __SUBDIR__/assets/icons/Compose.svg
-    link: __SUBDIR__/compose/
-@z
+% open-source:
 
 @x
   - title: Docker Build
@@ -62,18 +38,30 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Docker Extensions
-    description: Customize your Docker Desktop workflow.
-    icon: extension
-    link: /extensions/
+  - title: Docker Compose
+    description: Define and run multi-container applications.
+    icon: /assets/icons/Compose.svg
+    link: /compose/
 @y
-  - title: Docker Extensions
-    description: Docker Desktop ワークフローをカスタマイズします。
-    icon: extension
-    link: __SUBDIR__/extensions/
+  - title: Docker Compose
+    description: マルチコンテナーアプリケーションを定義して実行します。
+    icon: __SUBDIR__/assets/icons/Compose.svg
+    link: __SUBDIR__/compose/
 @z
 
-% services:
+% products:
+
+@x
+  - title: Docker Desktop
+    description: Your command center for container development.
+    icon: /assets/icons/Whale.svg
+    link: /desktop/
+@y
+  - title: Docker Desktop
+    description: コンテナー開発を行うための中心的な存在です。
+    icon: __SUBDIR__/assets/icons/Whale.svg
+    link: __SUBDIR__/desktop/
+@z
 
 @x
   - title: Docker Hub
@@ -100,18 +88,18 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Trusted content
-    description: Curated, high-quality content from trusted sources.
-    icon: verified
-    link: /trusted-content/
+  - title: Docker Extensions
+    description: Customize your Docker Desktop workflow.
+    icon: extension
+    link: /extensions/
 @y
-  - title: Trusted content
-    description: Curated, high-quality content from trusted sources.
-    icon: verified
-    link: __SUBDIR__/trusted-content/
+  - title: Docker Extensions
+    description: Docker Desktop ワークフローをカスタマイズします。
+    icon: extension
+    link: __SUBDIR__/extensions/
 @z
 
-% admin:
+% platform:
 
 @x
   - title: Administration
@@ -123,18 +111,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
     description: Centralized observability for companies and organizations.
     icon: admin_panel_settings
     link: __SUBDIR__/admin/
-@z
-
-@x
-  - title: Security
-    description: Security guardrails for both administrators and developers.
-    icon: lock
-    link: /security/
-@y
-  - title: Security
-    description: Security guardrails for both administrators and developers.
-    icon: lock
-    link: __SUBDIR__/security/
 @z
 
 @x
@@ -150,6 +126,18 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
+  - title: Security
+    description: Security guardrails for both administrators and developers.
+    icon: lock
+    link: /security/
+@y
+  - title: Security
+    description: Security guardrails for both administrators and developers.
+    icon: lock
+    link: __SUBDIR__/security/
+@z
+
+@x
   - title: Subscription
     description: Commercial use licenses for Docker products.
     icon: card_membership
@@ -162,6 +150,18 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
+  - title: Trusted content
+    description: Curated, high-quality content from trusted sources.
+    icon: verified
+    link: /trusted-content/
+@y
+  - title: Trusted content
+    description: Curated, high-quality content from trusted sources.
+    icon: verified
+    link: __SUBDIR__/trusted-content/
+@z
+
+@x
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
 @y
@@ -169,55 +169,57 @@ Docker products.
 @z
 
 @x
-## Developer tools
+## Open source
 @y
-## 開発ツール {#developer-tools}
+## Open source
 @z
 
 @x
-Software development and containerization technologies.
+Open source development and containerization technologies.
 @y
-以下はソフトウェア開発とコンテナー化技術です。
+以下はオープンソフトウェア開発とコンテナー化技術です。
 @z
 
 @x
-{{< grid items=development >}}
+{{< grid items=open-source >}}
 @y
-{{< grid items=development >}}
+{{< grid items=open-source >}}
 @z
 
 @x
-## Services
+## Products
 @y
-## サービス {#services}
+## 製品 {#products}
 @z
 
 @x
-Artifact management and supply chain security.
+End-to-end developer solutions for innovative teams.
 @y
-Artifact management and supply chain security.
+End-to-end developer solutions for innovative teams.
 @z
 
 @x
-{{< grid items=services >}}
+{{< grid items=products >}}
 @y
-{{< grid items=services >}}
+{{< grid items=products >}}
 @z
 
 @x
-## Administration and accounts
+## Platform
 @y
-## Administration and accounts
+## Platform
 @z
 
 @x
-Administration and subscription management for organizations.
+Documentation related to the Docker platform, such as administration and
+subscription management for organizations.
 @y
-Administration and subscription management for organizations.
+Documentation related to the Docker platform, such as administration and
+subscription management for organizations.
 @z
 
 @x
-{{< grid items=admin >}}
+{{< grid items=platform >}}
 @y
-{{< grid items=admin >}}
+{{< grid items=platform >}}
 @z

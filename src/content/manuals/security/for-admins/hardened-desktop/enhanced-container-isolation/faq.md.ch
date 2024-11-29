@@ -4,12 +4,12 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Enhanced Container Isolation (ECI) FAQs
+title: Enhanced Container Isolation FAQs
 linkTitle: FAQs
 description: Frequently asked questions for Enhanced Container Isolation
 keywords: enhanced container isolation, security, faq, sysbox, Docker Desktop
 @y
-title: Enhanced Container Isolation (ECI) FAQs
+title: Enhanced Container Isolation FAQs
 linkTitle: FAQs
 description: Frequently asked questions for Enhanced Container Isolation
 keywords: enhanced container isolation, security, faq, sysbox, Docker Desktop
@@ -57,13 +57,13 @@ minimum.
 Yes, you can use the `--privileged` flag in containers but unlike privileged
 containers without ECI, the container can only use it's elevated privileges to
 access resources assigned to the container. It can't access global kernel
-resources in the Docker Desktop Linux VM. This allows you to run privileged
+resources in the Docker Desktop Linux VM. This lets you run privileged
 containers securely (including Docker-in-Docker). For more information, see [Key features and benefits](features-benefits.md#privileged-containers-are-also-secured).
 @y
 Yes, you can use the `--privileged` flag in containers but unlike privileged
 containers without ECI, the container can only use it's elevated privileges to
 access resources assigned to the container. It can't access global kernel
-resources in the Docker Desktop Linux VM. This allows you to run privileged
+resources in the Docker Desktop Linux VM. This lets you run privileged
 containers securely (including Docker-in-Docker). For more information, see [Key features and benefits](features-benefits.md#privileged-containers-are-also-secured).
 @z
 
@@ -74,11 +74,11 @@ containers securely (including Docker-in-Docker). For more information, see [Key
 @z
 
 @x
-No. Privileged container workloads that wish to access global kernel resources
+No. Privileged container workloads that want to access global kernel resources
 inside the Docker Desktop Linux VM won't work. For example, you can't use a
 privileged container to load a kernel module.
 @y
-No. Privileged container workloads that wish to access global kernel resources
+No. Privileged container workloads that want to access global kernel resources
 inside the Docker Desktop Linux VM won't work. For example, you can't use a
 privileged container to load a kernel module.
 @z
@@ -150,12 +150,12 @@ when using [Testcontainers](https://testcontainers.com/) for local testing.
 @x
 To enable such use cases, it's possible to configure ECI to allow Docker socket
 mounts into containers, but only for your chosen (i.e,. trusted) container images, and
-even restrict what commands the container can send to the Docker engine via the socket.
+even restrict what commands the container can send to the Docker Engine via the socket.
 See [ECI Docker socket mount permissions](config.md#docker-socket-mount-permissions).
 @y
 To enable such use cases, it's possible to configure ECI to allow Docker socket
 mounts into containers, but only for your chosen (i.e,. trusted) container images, and
-even restrict what commands the container can send to the Docker engine via the socket.
+even restrict what commands the container can send to the Docker Engine via the socket.
 See [ECI Docker socket mount permissions](config.md#docker-socket-mount-permissions).
 @z
 
@@ -212,11 +212,11 @@ and [Dev Environments containers](manuals/desktop/features/dev-environments/_ind
 @z
 
 @x
-No. Containers created prior to switching on ECI are not protected. Therefore, we
-recommend removing all containers prior to switching on ECI.
+No. Containers created prior to switching on ECI are not protected. Therefore, it is 
+recommended you remove all containers prior to switching on ECI.
 @y
-No. Containers created prior to switching on ECI are not protected. Therefore, we
-recommend removing all containers prior to switching on ECI.
+No. Containers created prior to switching on ECI are not protected. Therefore, it is 
+recommended you remove all containers prior to switching on ECI.
 @z
 
 @x
@@ -226,12 +226,12 @@ recommend removing all containers prior to switching on ECI.
 @z
 
 @x
-ECI has very little impact on the performance of
+ECI has little impact on the performance of
 containers. The exception is for containers that perform lots of `mount` and
 `umount` system calls, as these are trapped and vetted by the Sysbox container
 runtime to ensure they are not being used to breach the container's filesystem.
 @y
-ECI has very little impact on the performance of
+ECI has little impact on the performance of
 containers. The exception is for containers that perform lots of `mount` and
 `umount` system calls, as these are trapped and vetted by the Sysbox container
 runtime to ensure they are not being used to breach the container's filesystem.
@@ -256,15 +256,15 @@ container is created through the Sysbox runtime.
 @z
 
 @x
-The reason `runc` is disallowed with ECI because it allows users to run as "true
+The reason `runc` is disallowed is it lets users run as "true
 root" on the Docker Desktop Linux VM, thereby providing them with implicit
 control of the VM and the ability to modify the administrative configurations
-for Docker Desktop, for example.
+for Docker Desktop.
 @y
-The reason `runc` is disallowed with ECI because it allows users to run as "true
+The reason `runc` is disallowed is it lets users run as "true
 root" on the Docker Desktop Linux VM, thereby providing them with implicit
 control of the VM and the ability to modify the administrative configurations
-for Docker Desktop, for example.
+for Docker Desktop.
 @z
 
 @x
