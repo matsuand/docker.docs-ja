@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Add SBOM and provenance attestations with GitHub Actions
@@ -121,91 +122,7 @@ the runner. This is because the local image store doesn't support loading
 images with attestations.
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-env:
-  IMAGE_NAME: user/app
-@y
-env:
-  IMAGE_NAME: user/app
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@y
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@z
-
-@x
-      - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          provenance: mode=max
-          tags: ${{ steps.meta.outputs.tags }}
-```
-@y
-      - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          provenance: mode=max
-          tags: ${{ steps.meta.outputs.tags }}
-```
-@z
+% snip code...
 
 @x
 ## SBOM
@@ -233,88 +150,4 @@ the runner. This is because the local image store doesn't support loading
 images with attestations.
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-env:
-  IMAGE_NAME: user/app
-@y
-env:
-  IMAGE_NAME: user/app
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@y
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@z
-
-@x
-      - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          sbom: true
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-```
-@y
-      - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          sbom: true
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-```
-@z
+% snip code...

@@ -228,29 +228,29 @@ jobs:
 @x
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v3
+      - name: Log into registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
 @y
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v3
+      - name: Log into registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
 @z
 
 @x
-      - name: Log into registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
 @y
-      - name: Log into registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
 @z
 
 @x

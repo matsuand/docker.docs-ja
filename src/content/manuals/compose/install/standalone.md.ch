@@ -45,9 +45,15 @@ On this page you can find instructions on how to install Compose standalone on L
 
 @x
 2. Apply executable permissions to the standalone binary in the target path for the installation.
-3. Test and execute compose commands using `docker-compose`.
 @y
 2. インストール先となっているパス内のスタンドアローンバイナリーに対して実行パーミッションを与えます。
+@z
+
+% snip command...
+
+@x
+3. Test and execute Compose commands using `docker-compose`.
+@y
 3. `docker-compose` を実行して Compose コマンドの実行を確認します。
 @z
 

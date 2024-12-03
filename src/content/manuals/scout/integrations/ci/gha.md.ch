@@ -141,30 +141,30 @@ jobs:
 
 @x
     steps:
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v3
+      # Authenticate to the container registry
+      - name: Authenticate to registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
 @y
     steps:
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v3
+      # Authenticate to the container registry
+      - name: Authenticate to registry ${{ env.REGISTRY }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
 @z
 
 @x
-      # Authenticate to the container registry
-      - name: Authenticate to registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
 @y
-      # Authenticate to the container registry
-      - name: Authenticate to registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+      - name: Setup Docker buildx
+        uses: docker/setup-buildx-action@v3
 @z
 
 @x

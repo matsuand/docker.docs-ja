@@ -348,12 +348,6 @@ URLs (`/v2/*/manifests/*`).
 >   different architecture.
 > - Pulls are accounted to the user doing the pull, not to the owner of the
 >   image.
->
-> There will be no image pull rate limit for users or automated systems with a
-> paid subscription. Anonymous and Docker Personal users using Docker Hub will
-> experience rate limits on image pull requests. For authenticated users, there
-> will be a 40 pull/hour rate limit per user; for unauthenticated usage, there
-> will be a 10 pull/hour rate limit per IP address.
 @y
 > [!IMPORTANT]
 >
@@ -379,28 +373,38 @@ URLs (`/v2/*/manifests/*`).
 >   different architecture.
 > - Pulls are accounted to the user doing the pull, not to the owner of the
 >   image.
+@z
+
+@x
+### What's the download rate limit on Docker Hub?
+@y
+### What's the download rate limit on Docker Hub?
+@z
+
+@x
+> [!IMPORTANT]
 >
-> There will be no image pull rate limit for users or automated systems with a
-> paid subscription. Anonymous and Docker Personal users using Docker Hub will
-> experience rate limits on image pull requests. For authenticated users, there
-> will be a 40 pull/hour rate limit per user; for unauthenticated usage, there
-> will be a 10 pull/hour rate limit per IP address.
-@z
-
-@x
-### What's the download rate limit on Docker Hub?
+> After March 3rd, 2025, with Docker's enhanced subscription plans, there will be no image pull rate limit for users or automated systems with a
+> paid subscription.
+>
+> Anonymous and Docker Personal users using Docker Hub will experience rate limits on image pull requests. For authenticated users, there will be a 40 pull/hour rate limit per user; for unauthenticated usage, there will be a 10 pull/hour rate limit per IP address.
 @y
-### What's the download rate limit on Docker Hub?
+> [!IMPORTANT]
+>
+> After March 3rd, 2025, with Docker's enhanced subscription plans, there will be no image pull rate limit for users or automated systems with a
+> paid subscription.
+>
+> Anonymous and Docker Personal users using Docker Hub will experience rate limits on image pull requests. For authenticated users, there will be a 40 pull/hour rate limit per user; for unauthenticated usage, there will be a 10 pull/hour rate limit per IP address.
 @z
 
 @x
 Docker Hub limits the number of Docker image downloads, or pulls, based on the
 account type of the user pulling the image. Pull rate limits are based on
-individual IP address.
+individual IP address. The following table reflects Docker's current rate limits:
 @y
 Docker Hub limits the number of Docker image downloads, or pulls, based on the
 account type of the user pulling the image. Pull rate limits are based on
-individual IP address.
+individual IP address. The following table reflects Docker's current rate limits:
 @z
 
 @x

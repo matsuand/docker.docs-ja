@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Checking your build configuration
@@ -681,4 +681,24 @@ experimental checks, the experimental checks will still run:
 # syntax=docker/dockerfile:1
 # check=skip=all;experimental=all
 ```
+@z
+
+@x
+## Further reading
+@y
+## Further reading
+@z
+
+@x
+For more information about using build checks, see:
+@y
+For more information about using build checks, see:
+@z
+
+@x
+- [Build checks reference](/reference/build-checks/)
+- [Validating build configuration with GitHub Actions](/manuals/build/ci/github-actions/checks.md)
+@y
+- [Build checks reference](__SUBDIR__/reference/build-checks/)
+- [Validating build configuration with GitHub Actions](manuals/build/ci/github-actions/checks.md)
 @z

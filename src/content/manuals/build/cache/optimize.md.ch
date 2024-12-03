@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Optimize cache usage in builds
@@ -105,24 +106,14 @@ Consider the following example. A Dockerfile snippet that runs a JavaScript
 build from the source files in the current directory:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node
-WORKDIR /app
+@x within code
 COPY . .          # Copy over all files in the current directory
 RUN npm install   # Install dependencies
 RUN npm build     # Run build
-```
 @y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node
-WORKDIR /app
 COPY . .          # Copy over all files in the current directory
 RUN npm install   # Install dependencies
 RUN npm build     # Run build
-```
 @z
 
 @x
@@ -147,26 +138,16 @@ the dependencies. Finally, copy over the project source code, which is subject
 to frequent change.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node
-WORKDIR /app
+@x within code
 COPY package.json yarn.lock .    # Copy package management files
 RUN npm install                  # Install dependencies
 COPY . .                         # Copy over project files
 RUN npm build                    # Run build
-```
 @y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM node
-WORKDIR /app
 COPY package.json yarn.lock .    # Copy package management files
 RUN npm install                  # Install dependencies
 COPY . .                         # Copy over project files
 RUN npm build                    # Run build
-```
 @z
 
 @x
@@ -203,17 +184,7 @@ Here's an example `.dockerignore` file that excludes the `node_modules`
 directory, all files and directories that start with `tmp`:
 @z
 
-@x
-```plaintext {title=".dockerignore"}
-node_modules
-tmp*
-```
-@y
-```plaintext {title=".dockerignore"}
-node_modules
-tmp*
-```
-@z
+% snip code...
 
 @x
 Ignore-rules specified in the `.dockerignore` file apply to the entire build
@@ -269,19 +240,7 @@ To use bind mounts in a build, you can use the `--mount` flag with the `RUN`
 instruction in your Dockerfile:
 @z
 
-@x
-```dockerfile
-FROM golang:latest
-WORKDIR /app
-RUN --mount=type=bind,target=. go build -o /app/hello
-```
-@y
-```dockerfile
-FROM golang:latest
-WORKDIR /app
-RUN --mount=type=bind,target=. go build -o /app/hello
-```
-@z
+% snip code...
 
 @x
 In this example, the current directory is mounted into the build container
@@ -365,17 +324,7 @@ There are a few things to be aware of when using bind mounts in a build:
   For example, given a build context with only a `Dockerfile` in it:
 @z
 
-@x
-  ```plaintext
-  .
-  └── Dockerfile
-  ```
-@y
-  ```plaintext
-  .
-  └── Dockerfile
-  ```
-@z
+% snip text...
 
 @x
   And a Dockerfile that mounts the current directory into the build container:
@@ -383,23 +332,7 @@ There are a few things to be aware of when using bind mounts in a build:
   And a Dockerfile that mounts the current directory into the build container:
 @z
 
-@x
-  ```dockerfile
-  FROM alpine:latest
-  WORKDIR /work
-  RUN touch foo.txt
-  RUN --mount=type=bind,target=. ls
-  RUN ls
-  ```
-@y
-  ```dockerfile
-  FROM alpine:latest
-  WORKDIR /work
-  RUN touch foo.txt
-  RUN --mount=type=bind,target=. ls
-  RUN ls
-  ```
-@z
+% snip code...
 
 @x
   The first `ls` command with the bind mount shows the contents of the mounted
@@ -409,37 +342,7 @@ There are a few things to be aware of when using bind mounts in a build:
   directory. The second `ls` lists the contents of the original build context.
 @z
 
-@x
-  ```plaintext {title="Build log"}
-  #8 [stage-0 3/5] RUN touch foo.txt
-  #8 DONE 0.1s
-@y
-  ```plaintext {title="Build log"}
-  #8 [stage-0 3/5] RUN touch foo.txt
-  #8 DONE 0.1s
-@z
-
-@x
-  #9 [stage-0 4/5] RUN --mount=target=. ls -1
-  #9 0.040 Dockerfile
-  #9 DONE 0.0s
-@y
-  #9 [stage-0 4/5] RUN --mount=target=. ls -1
-  #9 0.040 Dockerfile
-  #9 DONE 0.0s
-@z
-
-@x
-  #10 [stage-0 5/5] RUN ls -1
-  #10 0.046 foo.txt
-  #10 DONE 0.1s
-  ```
-@y
-  #10 [stage-0 5/5] RUN ls -1
-  #10 0.046 foo.txt
-  #10 DONE 0.1s
-  ```
-@z
+% snip output...
 
 @x
   {{< /accordion >}}
@@ -487,19 +390,7 @@ To use cache mounts in a build, you can use the `--mount` flag with the `RUN`
 instruction in your Dockerfile:
 @z
 
-@x
-```dockerfile
-FROM node:latest
-WORKDIR /app
-RUN --mount=type=cache,target=/root/.npm npm install
-```
-@y
-```dockerfile
-FROM node:latest
-WORKDIR /app
-RUN --mount=type=cache,target=/root/.npm npm install
-```
-@z
+% snip code...
 
 @x
 In this example, the `npm install` command uses a cache mount for the
@@ -533,17 +424,7 @@ tool you're using. Here are a few examples:
 {{< tab name="Go" >}}
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/go/pkg/mod \
-    go build -o /app/hello
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/go/pkg/mod \
-    go build -o /app/hello
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -553,19 +434,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 {{< tab name="Apt" >}}
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,sharing=locked \
-  apt update && apt-get --no-install-recommends install -y gcc
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-  --mount=type=cache,target=/var/lib/apt,sharing=locked \
-  apt update && apt-get --no-install-recommends install -y gcc
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -575,17 +444,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 {{< tab name="Python" >}}
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r requirements.txt
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r requirements.txt
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -595,17 +454,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 {{< tab name="Ruby" >}}
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/root/.gem \
-    bundle install
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/root/.gem \
-    bundle install
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -615,21 +464,7 @@ RUN --mount=type=cache,target=/root/.gem \
 {{< tab name="Rust" >}}
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/app/target/ \
-    --mount=type=cache,target=/usr/local/cargo/git/db \
-    --mount=type=cache,target=/usr/local/cargo/registry/ \
-    cargo build
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/app/target/ \
-    --mount=type=cache,target=/usr/local/cargo/git/db \
-    --mount=type=cache,target=/usr/local/cargo/registry/ \
-    cargo build
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -639,17 +474,7 @@ RUN --mount=type=cache,target=/app/target/ \
 {{< tab name=".NET" >}}
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/root/.nuget/packages \
-    dotnet restore
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/root/.nuget/packages \
-    dotnet restore
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -659,17 +484,7 @@ RUN --mount=type=cache,target=/root/.nuget/packages \
 {{< tab name="PHP" >}}  
 @z
 
-@x
-```dockerfile
-RUN --mount=type=cache,target=/tmp/cache \
-    composer install
-```
-@y
-```dockerfile
-RUN --mount=type=cache,target=/tmp/cache \
-    composer install
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -755,71 +570,7 @@ The following example shows how to set up a GitHub Actions workflow using
 image:
 @z
 
-@x
-```yaml {title=".github/workflows/ci.yml"}
-name: ci
-@y
-```yaml {title=".github/workflows/ci.yml"}
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:buildcache
-          cache-to: type=registry,ref=user/app:buildcache,mode=max
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:buildcache
-          cache-to: type=registry,ref=user/app:buildcache,mode=max
-```
-@z
+% snip code...
 
 @x
 This setup tells BuildKit to look for cache in the `user/app:buildcache` image.
@@ -839,15 +590,7 @@ This cache can be used locally as well. To pull the cache in a local build,
 you can use the `--cache-from` option with the `docker buildx build` command:
 @z
 
-@x
-```console
-$ docker buildx build --cache-from type=registry,ref=user/app:buildcache .
-```
-@y
-```console
-$ docker buildx build --cache-from type=registry,ref=user/app:buildcache .
-```
-@z
+% snip command...
 
 @x
 ## Summary

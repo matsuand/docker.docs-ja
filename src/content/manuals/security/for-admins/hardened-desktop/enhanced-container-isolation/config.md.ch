@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Advanced Configuration for Enhanced Container Isolation
@@ -29,19 +30,13 @@ By default, when Enhanced Container Isolation (ECI) is enabled, Docker Desktop d
 Docker Engine socket into containers:
 @z
 
+% snip command...
+
 @x
-```console
-$ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:cli
-docker: Error response from daemon: enhanced container isolation: docker socket mount denied for container with image "docker.io/library/docker"; image is not in the allowed list; if you wish to allow it, configure the docker socket image list in the Docker Desktop settings.
-```
 This prevents malicious containers from gaining access to the Docker Engine, as
 such access could allow them to perform supply chain attacks. For example, build and
 push malicious images into the organization's repositories or similar.
 @y
-```console
-$ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock docker:cli
-docker: Error response from daemon: enhanced container isolation: docker socket mount denied for container with image "docker.io/library/docker"; image is not in the allowed list; if you wish to allow it, configure the docker socket image list in the Docker Desktop settings.
-```
 This prevents malicious containers from gaining access to the Docker Engine, as
 such access could allow them to perform supply chain attacks. For example, build and
 push malicious images into the organization's repositories or similar.
@@ -79,53 +74,7 @@ This can be done via the Docker Socket mount permissions section in the
 [`admin-settings.json`](../settings-management/configure-json-file.md) file. For example:
 @z
 
-@x
-```json
-{
-  "configurationFileVersion": 2,
-  "enhancedContainerIsolation": {
-    "locked": true,
-    "value": true,
-    "dockerSocketMount": {
-      "imageList": {
-        "images": [
-          "docker.io/localstack/localstack:*",
-          "docker.io/testcontainers/ryuk:*",
-          "docker:cli"
-        ]
-      },
-      "commandList": {
-        "type": "deny",
-        "commands": ["push"]
-      }
-    }
-  }
-}
-```
-@y
-```json
-{
-  "configurationFileVersion": 2,
-  "enhancedContainerIsolation": {
-    "locked": true,
-    "value": true,
-    "dockerSocketMount": {
-      "imageList": {
-        "images": [
-          "docker.io/localstack/localstack:*",
-          "docker.io/testcontainers/ryuk:*",
-          "docker:cli"
-        ]
-      },
-      "commandList": {
-        "type": "deny",
-        "commands": ["push"]
-      }
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 > [!TIP]
@@ -191,27 +140,7 @@ In the previous example, the image list was configured with three images:
 In the previous example, the image list was configured with three images:
 @z
 
-@x
-```json
-"imageList": {
-  "images": [
-    "docker.io/localstack/localstack:*",
-    "docker.io/testcontainers/ryuk:*",
-    "docker:cli"
-  ]
-}
-```
-@y
-```json
-"imageList": {
-  "images": [
-    "docker.io/localstack/localstack:*",
-    "docker.io/testcontainers/ryuk:*",
-    "docker:cli"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 This means that containers that use either the `docker.io/localstack/localstack`
@@ -225,17 +154,7 @@ image, are allowed to bind-mount the Docker socket when ECI is enabled. Thus,
 the following works:
 @z
 
-@x
-```console
-$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock docker:cli sh
-/ #
-```
-@y
-```console
-$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock docker:cli sh
-/ #
-```
-@z
+% snip command...
 
 @x
 > [!TIP]
@@ -276,28 +195,16 @@ digests. If so, the container is allowed to start, otherwise it's blocked.
 @z
 
 @x
-Due to the digest comparison, it's not possible to bypass the Docker socket mount permissions by re-tagging a
-disallowed image to the name of an allowed one. In other words, if a user
-does:
+Due to the digest comparison, it's not possible to bypass the Docker socket
+mount permissions by re-tagging a disallowed image to the name of an allowed
+one. In other words, if a user does:
 @y
-Due to the digest comparison, it's not possible to bypass the Docker socket mount permissions by re-tagging a
-disallowed image to the name of an allowed one. In other words, if a user
-does:
+Due to the digest comparison, it's not possible to bypass the Docker socket
+mount permissions by re-tagging a disallowed image to the name of an allowed
+one. In other words, if a user does:
 @z
 
-@x
-```console
-$ docker image rm <allowed_image>
-$ docker tag <disallowed_image> <allowed_image>
-$ docker run -v /var/run/docker.sock:/var/run/docker.sock <allowed_image>
-```
-@y
-```console
-$ docker image rm <allowed_image>
-$ docker tag <disallowed_image> <allowed_image>
-$ docker run -v /var/run/docker.sock:/var/run/docker.sock <allowed_image>
-```
-@z
+% snip command...
 
 @x
 then the tag operation succeeds, but the `docker run` command fails
@@ -316,9 +223,9 @@ ones in the repository.
 @z
 
 @x
-{{ introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" }}
+{{< introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" >}}
 @y
-{{ introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" }}
+{{< introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" >}}
 @z
 
 @x
@@ -375,25 +282,7 @@ For example, to enable Paketo buildpacks to work with Docker Desktop and ECI,
 simply add the following image to the `imageList`:
 @z
 
-@x
-```json
-"imageList": {
-  "images": [
-    "paketobuildpacks/builder:base",
-  ],
-  "allowDerivedImages": true
-}
-```
-@y
-```json
-"imageList": {
-  "images": [
-    "paketobuildpacks/builder:base",
-  ],
-  "allowDerivedImages": true
-}
-```
-@z
+% snip code...
 
 @x
 When the buildpack runs, it will create an ephemeral image derived from
@@ -408,21 +297,19 @@ allowed image.
 @z
 
 @x
-The behavior is enabled by default. It can be disabled by setting
-`allowDerivedImages=false` in the `admin-settings.json` file. In general it is
-not recommended that you disable this setting unless you know it won't be
-required.
+The behavior is disabled by default and must be explicitly enabled by setting
+`"allowDerivedImages": true` as shown above. In general it is recommended that
+you disable this setting unless you know it's required.
 @y
-The behavior is enabled by default. It can be disabled by setting
-`allowDerivedImages=false` in the `admin-settings.json` file. In general it is
-not recommended that you disable this setting unless you know it won't be
-required.
+The behavior is disabled by default and must be explicitly enabled by setting
+`"allowDerivedImages": true` as shown above. In general it is recommended that
+you disable this setting unless you know it's required.
 @z
 
 @x
-A couple of caveats:
+A few caveats:
 @y
-A couple of caveats:
+A few caveats:
 @z
 
 @x
@@ -481,23 +368,7 @@ list to allow any container to mount the Docker socket. You do this by adding
 `"*"` to the `imageList`:
 @z
 
-@x
-```json
-"imageList": {
-  "images": [
-    "*"
-  ]
-}
-```
-@y
-```json
-"imageList": {
-  "images": [
-    "*"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 It is recommended that you use this only in scenarios where explicitly listing
@@ -535,17 +406,7 @@ For example, say the `imageList` is configured to allow image `docker:cli` to
 mount the Docker socket, and a container is started with it:
 @z
 
-@x
-```console
-$ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock sh
-/ #
-```
-@y
-```console
-$ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock sh
-/ #
-```
-@z
+% snip command...
 
 @x
 By default, this allows the container to issue any command via that Docker
@@ -607,21 +468,7 @@ For example, the following configuration blocks the `build` and `push` commands
 on the Docker socket:
 @z
 
-@x
-```json
-"commandList": {
-  "type": "deny",
-  "commands": ["build", "push"]
-}
-```
-@y
-```json
-"commandList": {
-  "type": "deny",
-  "commands": ["build", "push"]
-}
-```
-@z
+% snip code...
 
 @x
 Thus, if inside the container, you issue either of those commands on the
@@ -631,17 +478,7 @@ Thus, if inside the container, you issue either of those commands on the
 bind-mounted Docker socket, they will be blocked:
 @z
 
-@x
-```console
-/ # docker push myimage
-Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings or admin-settings.
-```
-@y
-```console
-/ # docker push myimage
-Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings or admin-settings.
-```
-@z
+% snip command...
 
 @x
 Similarly:
@@ -649,17 +486,7 @@ Similarly:
 Similarly:
 @z
 
-@x
-```console
-/ # curl --unix-socket /var/run/docker.sock -XPOST http://localhost/v1.43/images/myimage/push?tag=latest
-Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings or admin-settings.
-```
-@y
-```console
-/ # curl --unix-socket /var/run/docker.sock -XPOST http://localhost/v1.43/images/myimage/push?tag=latest
-Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings or admin-settings.
-```
-@z
+% snip command...
 
 @x
 Note that if the `commandList` had been configured as an "allow" list, then the

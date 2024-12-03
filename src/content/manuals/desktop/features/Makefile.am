@@ -10,6 +10,7 @@ bases = \
 	kubernetes.md                \
 	networking.md                \
 	synchronized-file-sharing.md \
+	usbip.md                     \
 	vmm.md                       \
 	wasm.md
 

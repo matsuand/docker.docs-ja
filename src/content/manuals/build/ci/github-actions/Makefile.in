@@ -302,6 +302,7 @@ bases = \
 	attestations.md          \
 	build-summary.md         \
 	cache.md                 \
+	checks.md                \
 	configure-builder.md     \
 	copy-image-registries.md \
 	export-docker.md         \
