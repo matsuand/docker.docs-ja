@@ -26,19 +26,19 @@ Uninstalling Docker Compose depends on the method you have used to install Docke
 @z
 
 @x
-If you want to uninstall Compose and you have installed Docker Desktop, see [Uninstall Docker Desktop](/manuals/desktop/uninstall.md).
+If you want to uninstall Docker Compose and you have installed Docker Desktop, see [Uninstall Docker Desktop](/manuals/desktop/uninstall.md).
 @y
-If you want to uninstall Compose and you have installed Docker Desktop, see [Uninstall Docker Desktop](manuals/desktop/uninstall.md).
+If you want to uninstall Docker Compose and you have installed Docker Desktop, see [Uninstall Docker Desktop](manuals/desktop/uninstall.md).
 @z
 
 @x
 > [!NOTE]
 >
-> Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
+> Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling Docker Desktop.
 @y
 > [!NOTE]
 >
-> Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling the Desktop.
+> Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling Docker Desktop.
 @z
 
 @x
@@ -48,9 +48,9 @@ If you want to uninstall Compose and you have installed Docker Desktop, see [Uni
 @z
 
 @x
-To remove the Compose CLI plugin, run:
+To remove the Docker Compose CLI plugin, run:
 @y
-To remove the Compose CLI plugin, run:
+To remove the Docker Compose CLI plugin, run:
 @z
 
 @x
@@ -76,9 +76,9 @@ RPM ベースのディストロの場合
 @z
 
 @x
-If you used `curl` to install Compose CLI plugin, to uninstall it, run:
+If you used `curl` to install Docker Compose CLI plugin, to uninstall it, run:
 @y
-If you used `curl` to install Compose CLI plugin, to uninstall it, run:
+If you used `curl` to install Docker Compose CLI plugin, to uninstall it, run:
 @z
 
 % snip command...
@@ -90,9 +90,9 @@ If you used `curl` to install Compose CLI plugin, to uninstall it, run:
 @z
 
 @x
-Or, if you have installed Compose for all users, run:
+Or, if you have installed Docker Compose for all users, run:
 @y
-Or, if you have installed Compose for all users, run:
+Or, if you have installed Docker Compose for all users, run:
 @z
 
 % snip command...
@@ -100,15 +100,15 @@ Or, if you have installed Compose for all users, run:
 @x
 > [!NOTE]
 >
-> If you get a **Permission denied** error using either of the above
-> methods, you do not have the permissions allowing you to remove
-> Docker Compose. To force the removal, prepend `sudo` to either of the above instructions and run it again.
+> If you get a **Permission denied** error using either of the previous
+> methods, you do not have the permissions needed to remove
+> Docker Compose. To force the removal, prepend `sudo` to either of the previous instructions and run it again.
 @y
 > [!NOTE]
 >
-> If you get a **Permission denied** error using either of the above
-> methods, you do not have the permissions allowing you to remove
-> Docker Compose. To force the removal, prepend `sudo` to either of the above instructions and run it again.
+> If you get a **Permission denied** error using either of the previous
+> methods, you do not have the permissions needed to remove
+> Docker Compose. To force the removal, prepend `sudo` to either of the previous instructions and run it again.
 @z
 
 @x

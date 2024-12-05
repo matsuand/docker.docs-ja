@@ -28,30 +28,28 @@ This page contains information on how you can set or change the following pre-de
 @z
 
 @x
-- `COMPOSE_CONVERT_WINDOWS_PATHS`
+- `COMPOSE_PROJECT_NAME`
 - `COMPOSE_FILE`
 - `COMPOSE_PROFILES`
-- `COMPOSE_PROJECT_NAME`
-- `DOCKER_CERT_PATH`
-- `COMPOSE_PARALLEL_LIMIT`
+- `COMPOSE_CONVERT_WINDOWS_PATHS`
+- `COMPOSE_PATH_SEPARATOR`
 - `COMPOSE_IGNORE_ORPHANS`
 - `COMPOSE_REMOVE_ORPHANS`
-- `COMPOSE_PATH_SEPARATOR`
+- `COMPOSE_PARALLEL_LIMIT`
 - `COMPOSE_ANSI`
 - `COMPOSE_STATUS_STDOUT`
 - `COMPOSE_ENV_FILES`
 - `COMPOSE_MENU`
 - `COMPOSE_EXPERIMENTAL`
 @y
-- `COMPOSE_CONVERT_WINDOWS_PATHS`
+- `COMPOSE_PROJECT_NAME`
 - `COMPOSE_FILE`
 - `COMPOSE_PROFILES`
-- `COMPOSE_PROJECT_NAME`
-- `DOCKER_CERT_PATH`
-- `COMPOSE_PARALLEL_LIMIT`
+- `COMPOSE_CONVERT_WINDOWS_PATHS`
+- `COMPOSE_PATH_SEPARATOR`
 - `COMPOSE_IGNORE_ORPHANS`
 - `COMPOSE_REMOVE_ORPHANS`
-- `COMPOSE_PATH_SEPARATOR`
+- `COMPOSE_PARALLEL_LIMIT`
 - `COMPOSE_ANSI`
 - `COMPOSE_STATUS_STDOUT`
 - `COMPOSE_ENV_FILES`
@@ -166,27 +164,25 @@ Specifies the path to a Compose file. Specifying multiple Compose files is suppo
 @z
 
 @x
-- Default behavior: If not provided, Compose looks for a file named `compose.yaml` or `docker-compose.yaml` in the current directory and, if not found, then Compose searches each parent directory recursively until a file by that name is found.
-- Default separator: When specifying multiple Compose files, the path separators are, by default, on:
-    * Mac and Linux: `:` (colon),
-    * Windows: `;` (semicolon).
+- Default behavior: If not provided, Compose looks for a file named `compose.yaml` in the current directory and, if not found, then Compose searches each parent directory recursively until a file by that name is found.
+- When specifying multiple Compose files, the path separators are, by default, on:
+   - Mac and Linux: `:` (colon)
+   - Windows: `;` (semicolon)
+   For example:
 @y
-- Default behavior: If not provided, Compose looks for a file named `compose.yaml` or `docker-compose.yaml` in the current directory and, if not found, then Compose searches each parent directory recursively until a file by that name is found.
-- Default separator: When specifying multiple Compose files, the path separators are, by default, on:
-    * Mac and Linux: `:` (colon),
-    * Windows: `;` (semicolon).
+- Default behavior: If not provided, Compose looks for a file named `compose.yaml` in the current directory and, if not found, then Compose searches each parent directory recursively until a file by that name is found.
+- When specifying multiple Compose files, the path separators are, by default, on:
+   - Mac and Linux: `:` (colon)
+   - Windows: `;` (semicolon)
+   For example:
 @z
 
-@x
-The path separator can also be customized using `COMPOSE_PATH_SEPARATOR`.  
-@y
-The path separator can also be customized using `COMPOSE_PATH_SEPARATOR`.  
-@z
+% snip code...
 
 @x
-Example: `COMPOSE_FILE=docker-compose.yml:docker-compose.prod.yml`.  
+   The path separator can also be customized using [`COMPOSE_PATH_SEPARATOR`](#compose_path_separator).  
 @y
-Example: `COMPOSE_FILE=docker-compose.yml:docker-compose.prod.yml`.  
+   The path separator can also be customized using [`COMPOSE_PATH_SEPARATOR`](#compose_path_separator).  
 @z
 
 @x
@@ -202,10 +198,14 @@ See also the [command-line options overview](reference/cli/docker/compose/_index
 @z
 
 @x
-Specifies one or more profiles to be enabled on `compose up` execution.
+Specifies one or more profiles to be enabled when `docker compose up` is run.
+@y
+Specifies one or more profiles to be enabled when `docker compose up` is run.
+@z
+
+@x
 Services with matching profiles are started as well as any services for which no profile has been defined.
 @y
-Specifies one or more profiles to be enabled on `compose up` execution.
 Services with matching profiles are started as well as any services for which no profile has been defined.
 @z
 
@@ -218,18 +218,18 @@ For example, calling `docker compose up`with `COMPOSE_PROFILES=frontend` selects
 @z
 
 @x
-* Default separator: specify a list of profiles using a comma as separator.
+If specifying multiple profiles, use a comma as a separator.
 @y
-* Default separator: specify a list of profiles using a comma as separator.
+If specifying multiple profiles, use a comma as a separator.
 @z
 
 @x
-Example: `COMPOSE_PROFILES=frontend,debug`  
-This example enables all services matching both the `frontend` and `debug` profiles and services without a profile.
+This following example enables all services matching both the `frontend` and `debug` profiles and services without a profile. 
 @y
-Example: `COMPOSE_PROFILES=frontend,debug`  
-This example enables all services matching both the `frontend` and `debug` profiles and services without a profile.
+This following example enables all services matching both the `frontend` and `debug` profiles and services without a profile. 
 @z
+
+% snip code...
 
 @x
 See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use---profile-to-specify-one-or-more-active-profiles).
@@ -250,15 +250,15 @@ When enabled, Compose performs path conversion from Windows-style to Unix-style 
 @z
 
 @x
-* Supported values: 
-    * `true` or `1`, to enable,
-    * `false` or `0`, to disable.
-* Defaults to: `0`.
+- Supported values: 
+    - `true` or `1`, to enable
+    - `false` or `0`, to disable
+- Defaults to: `0`
 @y
-* Supported values: 
-    * `true` or `1`, to enable,
-    * `false` or `0`, to disable.
-* Defaults to: `0`.
+- Supported values: 
+    - `true` or `1`, to enable
+    - `false` or `0`, to disable
+- Defaults to: `0`
 @z
 
 @x
@@ -274,13 +274,13 @@ Specifies a different path separator for items listed in `COMPOSE_FILE`.
 @z
 
 @x
-* Defaults to:
-    * On macOS and Linux to `:`,
-    * On Windows to`;`.
+- Defaults to:
+    - On macOS and Linux to `:`
+    - On Windows to`;`
 @y
-* Defaults to:
-    * On macOS and Linux to `:`,
-    * On Windows to`;`.
+- Defaults to:
+    - On macOS and Linux to `:`
+    - On Windows to`;`
 @z
 
 @x
@@ -296,15 +296,15 @@ When enabled, Compose doesn't try to detect orphaned containers for the project.
 @z
 
 @x
-* Supported values: 
-    * `true` or `1`, to enable,
-    * `false` or `0`, to disable.
-* Defaults to: `0`.
+- Supported values: 
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `0`
 @y
-* Supported values: 
-    * `true` or `1`, to enable,
-    * `false` or `0`, to disable.
-* Defaults to: `0`.
+- Supported values: 
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `0`
 @z
 
 @x
@@ -332,17 +332,17 @@ Specifies when to print ANSI control characters.
 @z
 
 @x
-* Supported values:
-  * `auto`, Compose detects if TTY mode can be used. Otherwise, use plain text mode.
-  * `never`, use plain text mode.
-  * `always` or `0`, use TTY mode.
-* Defaults to: `auto`.
+- Supported values:
+   - `auto`, Compose detects if TTY mode can be used. Otherwise, use plain text mode
+   - `never`, use plain text mode
+   - `always` or `0`, use TTY mode
+- Defaults to: `auto`
 @y
-* Supported values:
-  * `auto`, Compose detects if TTY mode can be used. Otherwise, use plain text mode.
-  * `never`, use plain text mode.
-  * `always` or `0`, use TTY mode.
-* Defaults to: `auto`.
+- Supported values:
+   - `auto`, Compose detects if TTY mode can be used. Otherwise, use plain text mode
+   - `never`, use plain text mode
+   - `always` or `0`, use TTY mode
+- Defaults to: `auto`
 @z
 
 @x
@@ -360,15 +360,15 @@ The default value is false to clearly separate the output streams between Compos
 @z
 
 @x
-* Supported values:
-  * `true` or `1`, to enable,
-  * `false` or `0`, to disable.
-* Defaults to: `0`.
+- Supported values:
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `0`
 @y
-* Supported values:
-  * `true` or `1`, to enable,
-  * `false` or `0`, to disable.
-* Defaults to: `0`.
+- Supported values:
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `0`
 @z
 
 @x
@@ -384,20 +384,12 @@ Lets you specify which environment files Compose should use if `--env-file` isn'
 @z
 
 @x
-When using multiple environment files, use a comma as a separator. For example, 
+When using multiple environment files, use a comma as a separator. For example: 
 @y
-When using multiple environment files, use a comma as a separator. For example, 
+When using multiple environment files, use a comma as a separator. For example: 
 @z
 
-@x
-```console
-COMPOSE_ENV_FILES=.env.envfile1, .env.envfile2
-```
-@y
-```console
-COMPOSE_ENV_FILES=.env.envfile1, .env.envfile2
-```
-@z
+% snip code...
 
 @x
 If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI, Docker Compose uses the default behavior, which is to look for an `.env` file in the project directory.
@@ -412,9 +404,9 @@ If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI
 @z
 
 @x
-> Available in Docker Compose version [2.26.0](/manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
+{{< introduced compose 2.26.0 "/manuals/compose/releases/release-notes.md#2260" >}}
 @y
-> Available in Docker Compose version [2.26.0](manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
+{{< introduced compose 2.26.0 "manuals/compose/releases/release-notes.md#2260" >}}
 @z
 
 @x
@@ -424,15 +416,15 @@ When enabled, Compose displays a navigation menu where you can choose to open th
 @z
 
 @x
-* Supported values:
-  * `true` or `1`, to enable,
-  * `false` or `0`, to disable.
-* Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`.
+- Supported values:
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`
 @y
-* Supported values:
-  * `true` or `1`, to enable,
-  * `false` or `0`, to disable.
-* Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`.
+- Supported values:
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`
 @z
 
 @x
@@ -442,9 +434,9 @@ When enabled, Compose displays a navigation menu where you can choose to open th
 @z
 
 @x
-> Available in Docker Compose version [2.26.0](/manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
+{{< introduced compose 2.26.0 "/manuals/compose/releases/release-notes.md#2260" >}}
 @y
-> Available in Docker Compose version [2.26.0](manuals/compose/releases/release-notes.md#2260) and later, and Docker Desktop version 4.29 and later.
+{{< introduced compose 2.26.0 "manuals/compose/releases/release-notes.md#2260" >}}
 @z
 
 @x
@@ -454,15 +446,15 @@ This is an opt-out variable. When turned off it deactivates the experimental fea
 @z
 
 @x
-* Supported values:
-  * `true` or `1`, to enable,
-  * `false` or `0`, to disable.
-* Defaults to: `1`.
+- Supported values:
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `1`
 @y
-* Supported values:
-  * `true` or `1`, to enable,
-  * `false` or `0`, to disable.
-* Defaults to: `1`.
+- Supported values:
+   - `true` or `1`, to enable
+   - `false` or `0`, to disable
+- Defaults to: `1`
 @z
 
 @x

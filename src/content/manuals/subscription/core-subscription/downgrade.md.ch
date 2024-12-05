@@ -88,9 +88,9 @@ If you want to downgrade a Docker Business subscription and your organization us
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com).
+1. Sign in to [Docker Hub](https://hub.docker.com).
 @y
-1. Sign in to [Docker Home](https://app.docker.com).
+1. Sign in to [Docker Hub](https://hub.docker.com).
 @z
 
 @x

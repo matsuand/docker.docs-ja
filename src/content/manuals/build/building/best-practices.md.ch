@@ -786,13 +786,13 @@ run, your build can potentially get an outdated version of the `curl` and
 @z
 
 @x
-Using `RUN apt-get update && apt-get install -y` ensures your Dockerfile
+Using `RUN apt-get update && apt-get install -y --no-install-recommends` ensures your Dockerfile
 installs the latest package versions with no further coding or manual
 intervention. This technique is known as cache busting. You can also achieve
 cache busting by specifying a package version. This is known as version pinning.
 For example:
 @y
-Using `RUN apt-get update && apt-get install -y` ensures your Dockerfile
+Using `RUN apt-get update && apt-get install -y --no-install-recommends` ensures your Dockerfile
 installs the latest package versions with no further coding or manual
 intervention. This technique is known as cache busting. You can also achieve
 cache busting by specifying a package version. This is known as version pinning.

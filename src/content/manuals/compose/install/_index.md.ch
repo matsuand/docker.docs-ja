@@ -94,49 +94,49 @@ If you have already installed Docker Desktop, you can check which version of Com
 @z
 
 @x
-### Scenario two: Install the Compose plugin
+### Scenario two: Install the Docker Compose plugin
 @y
-### Scenario two: Install the Compose plugin
-@z
-
-@x
-If you already have Docker Engine and Docker CLI installed, you can install the Compose plugin from the command line, by either:
-- [Using Docker's repository](linux.md#install-using-the-repository)
-- [Downloading and installing manually](linux.md#install-the-plugin-manually)
-@y
-If you already have Docker Engine and Docker CLI installed, you can install the Compose plugin from the command line, by either:
-- [Using Docker's repository](linux.md#install-using-the-repository)
-- [Downloading and installing manually](linux.md#install-the-plugin-manually)
+### Scenario two: Install the Docker Compose plugin
 @z
 
 @x
 > [!IMPORTANT]
 >
->This is only available on Linux
+> This install scenario is only available on Linux.
 @y
 > [!IMPORTANT]
 >
->This is only available on Linux
+> This install scenario is only available on Linux.
 @z
 
 @x
-### Scenario three: Install the Compose standalone 
+If you already have Docker Engine and Docker CLI installed, you can install the Docker Compose plugin from the command line, by either:
+- [Using Docker's repository](linux.md#install-using-the-repository)
+- [Downloading and installing manually](linux.md#install-the-plugin-manually)
 @y
-### Scenario three: Install the Compose standalone 
+If you already have Docker Engine and Docker CLI installed, you can install the Docker Compose plugin from the command line, by either:
+- [Using Docker's repository](linux.md#install-using-the-repository)
+- [Downloading and installing manually](linux.md#install-the-plugin-manually)
 @z
 
 @x
-You can [install the Compose standalone](standalone.md) on Linux or on Windows Server.
+### Scenario three: Install the Docker Compose standalone 
 @y
-You can [install the Compose standalone](standalone.md) on Linux or on Windows Server.
+### Scenario three: Install the Docker Compose standalone 
 @z
 
 @x
 > [!WARNING]
 >
->This install scenario is not recommended and is only supported for backward compatibility purposes.
+> This install scenario is not recommended and is only supported for backward compatibility purposes.
 @y
 > [!WARNING]
 >
->This install scenario is not recommended and is only supported for backward compatibility purposes.
+> This install scenario is not recommended and is only supported for backward compatibility purposes.
+@z
+
+@x
+You can [install the Docker Compose standalone](standalone.md) on Linux or on Windows Server.
+@y
+You can [install the Docker Compose standalone](standalone.md) on Linux or on Windows Server.
 @z
