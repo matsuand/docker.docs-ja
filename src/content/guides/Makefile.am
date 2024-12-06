@@ -7,21 +7,22 @@ SUBDIRS = admin-set-up bake bun compose-bake cpp docker-build-cloud      \
 	testcontainers-cloud zscaler
 
 bases = \
-	_index.md                   \
+	_index.md                          \
 	container-supported-development.md \
-	databases.md                \
-	jupyter.md                  \
-	kafka.md                    \
-	kube-deploy.md              \
-	language-translation.md     \
-	localstack.md               \
-	named-entity-recognition.md \
-	orchestration.md            \
-	sentiment-analysis.md       \
-	swarm-deploy.md             \
-	tensorflowjs.md             \
-	text-classification.md      \
-	text-summarization.md       \
+	databases.md                       \
+	gha.md                             \
+	jupyter.md                         \
+	kafka.md                           \
+	kube-deploy.md                     \
+	language-translation.md            \
+	localstack.md                      \
+	named-entity-recognition.md        \
+	orchestration.md                   \
+	sentiment-analysis.md              \
+	swarm-deploy.md                    \
+	tensorflowjs.md                    \
+	text-classification.md             \
+	text-summarization.md              \
 	traefik.md
 
 include $(top_srcdir)/build-aux/common.mk

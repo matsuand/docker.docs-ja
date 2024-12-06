@@ -4,10 +4,10 @@
 % snip 対応
 
 @x
-title: Introduction to GitHub Actions
+title: Docker Build GitHub Actions
 linkTitle: GitHub Actions
 @y
-title: GitHub Actions について
+title: Docker Build GitHub Actions
 linkTitle: GitHub Actions
 @z
 

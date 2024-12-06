@@ -2,23 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: View billing history
-weight: 40
-description: Discover how to view your billing history in Docker Hub
-keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration
-aliases:
-- /billing/history/
----
 @y
----
 title: View billing history
-weight: 40
+@z
+
+@x
 description: Discover how to view your billing history in Docker Hub
 keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration
-aliases:
-- /billing/history/
----
+@y
+description: Discover how to view your billing history in Docker Hub
+keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration
 @z
 
 @x
@@ -119,6 +113,16 @@ You receive your invoice when the subscription renews. To verify your renewal da
 ### Include your VAT number on your invoice
 @y
 ### Include your VAT number on your invoice
+@z
+
+@x
+> [!NOTE]
+>
+> If the VAT number field is not available, complete the [Contact Support form](https://hub.docker.com/support/contact/). This field may need to be manually added.
+@y
+> [!NOTE]
+>
+> If the VAT number field is not available, complete the [Contact Support form](https://hub.docker.com/support/contact/). This field may need to be manually added.
 @z
 
 @x
@@ -130,14 +134,14 @@ Update your billing information to include your VAT number:
 @x
 1. Sign in to Docker Hub.
 2. For user accounts, Select your avatar in the top-right corner, then **Billing**. For organizations, select the name of the organization.
-3. Select the **Payment methods and billing history** link.
+3. Select the **Billing address** link.
 4. In the **Billing Information** section, select **Update information**.
 5. In the **Tax ID** section, select the ID type and enter your VAT number.
 6. Select **Save**.
 @y
 1. Sign in to Docker Hub.
 2. For user accounts, Select your avatar in the top-right corner, then **Billing**. For organizations, select the name of the organization.
-3. Select the **Payment methods and billing history** link.
+3. Select the **Billing address** link.
 4. In the **Billing Information** section, select **Update information**.
 5. In the **Tax ID** section, select the ID type and enter your VAT number.
 6. Select **Save**.
