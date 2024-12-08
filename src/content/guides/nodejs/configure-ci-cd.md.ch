@@ -238,10 +238,12 @@ Related information:
 @z
 
 @x
-- [Introduction to GitHub Actions](/manuals/build/ci/github-actions/_index.md)
+- [Introduction to GitHub Actions](/guides/gha.md)
+- [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
-- [GitHub アクション導入](manuals/build/ci/github-actions/_index.md)
+- [GitHub アクション導入](guides/gha.md)
+- [Docker Build GitHub Actions](manuals/build/ci/github-actions/_index.md)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
 
