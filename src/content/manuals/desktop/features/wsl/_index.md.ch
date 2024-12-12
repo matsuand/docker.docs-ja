@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: Turn on the Docker WSL 2 backend and get to work using best practices,
   GPU support, and more in this thorough guide.
@@ -163,15 +165,7 @@ Docker Desktop does not require any particular Linux distributions to be install
     To check the WSL mode, run:
 @z
 
-@x
-     ```console
-     $ wsl.exe -l -v
-     ```
-@y
-     ```console
-     $ wsl.exe -l -v
-     ```
-@z
+% snip command...
 
 @x
     To upgrade the Linux distribution to v2, run:
@@ -179,15 +173,7 @@ Docker Desktop does not require any particular Linux distributions to be install
     To upgrade the Linux distribution to v2, run:
 @z
 
-@x
-    ```console
-    $ wsl.exe --set-version (distribution name) 2
-    ```
-@y
-    ```console
-    $ wsl.exe --set-version (distribution name) 2
-    ```
-@z
+% snip command...
 
 @x
     To set v2 as the default version for future installations, run:
@@ -195,15 +181,7 @@ Docker Desktop does not require any particular Linux distributions to be install
     To set v2 as the default version for future installations, run:
 @z
 
-@x
-    ```console
-    $ wsl.exe --set-default-version 2
-    ```
-@y
-    ```console
-    $ wsl.exe --set-default-version 2
-    ```
-@z
+% snip command...
 
 @x
 2. When Docker Desktop starts, go to **Settings** > **Resources** > **WSL Integration**.
@@ -213,14 +191,16 @@ Docker Desktop does not require any particular Linux distributions to be install
 
 @x
     The Docker-WSL integration is enabled on the default WSL distribution, which is [Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/install). To change your default WSL distribution, run:
-     ```console
-    $ wsl --set-default <distribution name>
-    ```
 @y
     The Docker-WSL integration is enabled on the default WSL distribution, which is [Ubuntu](https://learn.microsoft.com/en-us/windows/wsl/install). To change your default WSL distribution, run:
-     ```console
-    $ wsl --set-default <distribution name>
-    ```
+@z
+
+% snip command...
+
+@x
+   If **WSL integrations** isn't available under **Resources**, Docker may be in Windows container mode. In your taskbar, select the Docker menu and then **Switch to Linux containers**.
+@y
+   If **WSL integrations** isn't available under **Resources**, Docker may be in Windows container mode. In your taskbar, select the Docker menu and then **Switch to Linux containers**.
 @z
 
 @x
