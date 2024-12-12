@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 command: docker service create
@@ -511,49 +512,7 @@ examples: |-
     ### Create a service
 @z
 
-@x
-    ```console
-    $ docker service create --name redis redis:3.0.6
-@y
-    ```console
-    $ docker service create --name redis redis:3.0.6
-@z
-
-@x
-    dmu1ept4cxcfe8k8lhtux3ro3
-@y
-    dmu1ept4cxcfe8k8lhtux3ro3
-@z
-
-@x
-    $ docker service create --mode global --name redis2 redis:3.0.6
-@y
-    $ docker service create --mode global --name redis2 redis:3.0.6
-@z
-
-@x
-    a8q9dasaafudfs8q8w32udass
-@y
-    a8q9dasaafudfs8q8w32udass
-@z
-
-@x
-    $ docker service ls
-@y
-    $ docker service ls
-@z
-
-@x
-    ID            NAME    MODE        REPLICAS  IMAGE
-    dmu1ept4cxcf  redis   replicated  1/1       redis:3.0.6
-    a8q9dasaafud  redis2  global      1/1       redis:3.0.6
-    ```
-@y
-    ID            NAME    MODE        REPLICAS  IMAGE
-    dmu1ept4cxcf  redis   replicated  1/1       redis:3.0.6
-    a8q9dasaafud  redis2  global      1/1       redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     #### Create a service using an image on a private registry (--with-registry-auth) {#with-registry-auth}
@@ -573,27 +532,7 @@ examples: |-
     a command like the following:
 @z
 
-@x
-    ```console
-    $ docker login registry.example.com
-@y
-    ```console
-    $ docker login registry.example.com
-@z
-
-@x
-    $ docker service  create \
-      --with-registry-auth \
-      --name my_service \
-      registry.example.com/acme/my_image:latest
-    ```
-@y
-    $ docker service  create \
-      --with-registry-auth \
-      --name my_service \
-      registry.example.com/acme/my_image:latest
-    ```
-@z
+% snip command...
 
 @x
     This passes the login token from your local client to the swarm nodes where the
@@ -619,21 +558,7 @@ examples: |-
     service. The following command creates a `redis` service with `5` replica tasks:
 @z
 
-@x
-    ```console
-    $ docker service create --name redis --replicas=5 redis:3.0.6
-@y
-    ```console
-    $ docker service create --name redis --replicas=5 redis:3.0.6
-@z
-
-@x
-    4cdgfyky7ozwh3htjfw0d12qv
-    ```
-@y
-    4cdgfyky7ozwh3htjfw0d12qv
-    ```
-@z
+% snip command...
 
 @x
     The above command sets the *desired* number of tasks for the service. Even
@@ -655,23 +580,7 @@ examples: |-
     number of `RUNNING` tasks is `3`:
 @z
 
-@x
-    ```console
-    $ docker service ls
-@y
-    ```console
-    $ docker service ls
-@z
-
-@x
-    ID            NAME   MODE        REPLICAS  IMAGE
-    4cdgfyky7ozw  redis  replicated  3/5       redis:3.0.7
-    ```
-@y
-    ID            NAME   MODE        REPLICAS  IMAGE
-    4cdgfyky7ozw  redis  replicated  3/5       redis:3.0.7
-    ```
-@z
+% snip command...
 
 @x
     Once all the tasks are created and `RUNNING`, the actual number of tasks is
@@ -681,23 +590,7 @@ examples: |-
     equal to the desired number:
 @z
 
-@x
-    ```console
-    $ docker service ls
-@y
-    ```console
-    $ docker service ls
-@z
-
-@x
-    ID            NAME   MODE        REPLICAS  IMAGE
-    4cdgfyky7ozw  redis  replicated  5/5       redis:3.0.7
-    ```
-@y
-    ID            NAME   MODE        REPLICAS  IMAGE
-    4cdgfyky7ozw  redis  replicated  5/5       redis:3.0.7
-    ```
-@z
+% snip command...
 
 @x
     ### Create a service with secrets (--secret) {#secret}
@@ -719,21 +612,7 @@ examples: |-
     Create a service specifying a secret:
 @z
 
-@x
-    ```console
-    $ docker service create --name redis --secret secret.json redis:3.0.6
-@y
-    ```console
-    $ docker service create --name redis --secret secret.json redis:3.0.6
-@z
-
-@x
-    4cdgfyky7ozwh3htjfw0d12qv
-    ```
-@y
-    4cdgfyky7ozwh3htjfw0d12qv
-    ```
-@z
+% snip command...
 
 @x
     Create a service specifying the secret, target, user/group ID, and mode:
@@ -741,27 +620,7 @@ examples: |-
     Create a service specifying the secret, target, user/group ID, and mode:
 @z
 
-@x
-    ```console
-    $ docker service create --name redis \
-        --secret source=ssh-key,target=ssh \
-        --secret source=app-key,target=app,uid=1000,gid=1001,mode=0400 \
-        redis:3.0.6
-@y
-    ```console
-    $ docker service create --name redis \
-        --secret source=ssh-key,target=ssh \
-        --secret source=app-key,target=app,uid=1000,gid=1001,mode=0400 \
-        redis:3.0.6
-@z
-
-@x
-    4cdgfyky7ozwh3htjfw0d12qv
-    ```
-@y
-    4cdgfyky7ozwh3htjfw0d12qv
-    ```
-@z
+% snip command...
 
 @x
     To grant a service access to multiple secrets, use multiple `--secret` flags.
@@ -813,15 +672,7 @@ examples: |-
     as `0755`.
 @z
 
-@x
-    ```console
-    $ docker service create --name=redis --config redis-conf redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create --name=redis --config redis-conf redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     Create a service with a config and specify the target location and file mode:
@@ -829,17 +680,7 @@ examples: |-
     Create a service with a config and specify the target location and file mode:
 @z
 
-@x
-    ```console
-    $ docker service create --name redis \
-      --config source=redis-conf,target=/etc/redis/redis.conf,mode=0400 redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create --name redis \
-      --config source=redis-conf,target=/etc/redis/redis.conf,mode=0400 redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     To grant a service access to multiple configs, use multiple `--config` flags.
@@ -863,25 +704,7 @@ examples: |-
     ### Create a service with a rolling update policy {#update-delay}
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --replicas 10 \
-      --name redis \
-      --update-delay 10s \
-      --update-parallelism 2 \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --replicas 10 \
-      --name redis \
-      --update-delay 10s \
-      --update-parallelism 2 \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     When you run a [service update](/reference/cli/docker/service/update/), the scheduler updates a
@@ -907,23 +730,7 @@ examples: |-
     This sets an environment variable for all tasks in a service. For example:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --replicas 5 \
-      --env MYVAR=foo \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --replicas 5 \
-      --env MYVAR=foo \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     To specify multiple environment variables, specify multiple `--env` flags, each
@@ -933,25 +740,7 @@ examples: |-
     with a separate key-value pair.
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --replicas 5 \
-      --env MYVAR=foo \
-      --env MYVAR2=bar \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --replicas 5 \
-      --env MYVAR=foo \
-      --env MYVAR2=bar \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     ### Create a service with specific hostname (--hostname) {#hostname}
@@ -967,15 +756,7 @@ examples: |-
     For example:
 @z
 
-@x
-    ```console
-    $ docker service create --name redis --hostname myredis redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create --name redis --hostname myredis redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     ### Set metadata on a service (-l, --label) {#label}
@@ -991,23 +772,7 @@ examples: |-
     service with two labels:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --label com.example.foo="bar" \
-      --label bar=baz \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --label com.example.foo="bar" \
-      --label bar=baz \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     For more information about labels, refer to [apply custom
@@ -1703,23 +1468,7 @@ examples: |-
     The following example creates a service that uses a named volume:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name my-service \
-      --replicas 3 \
-      --mount type=volume,source=my-volume,destination=/path/in/container,volume-label="color=red",volume-label="shape=round" \
-      nginx:alpine
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name my-service \
-      --replicas 3 \
-      --mount type=volume,source=my-volume,destination=/path/in/container,volume-label="color=red",volume-label="shape=round" \
-      nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     For each replica of the service, the engine requests a volume named "my-volume"
@@ -1775,23 +1524,7 @@ examples: |-
     volume on `/path/in/container`:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name my-service \
-      --replicas 3 \
-      --mount type=volume,destination=/path/in/container \
-      nginx:alpine
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name my-service \
-      --replicas 3 \
-      --mount type=volume,destination=/path/in/container \
-      nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     In this example, no name (`source`) is specified for the volume, so a new volume
@@ -1819,21 +1552,7 @@ examples: |-
     the containers backing the service:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name my-service \
-      --mount type=bind,source=/path/on/host,destination=/path/in/container \
-      nginx:alpine
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name my-service \
-      --mount type=bind,source=/path/on/host,destination=/path/in/container \
-      nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     ### Set service mode (--mode)
@@ -1857,21 +1576,7 @@ examples: |-
     The following command creates a global service:
 @z
 
-@x
-    ```console
-    $ docker service create \
-     --name redis_2 \
-     --mode global \
-     redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-     --name redis_2 \
-     --mode global \
-     redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     ### Specify service constraints (--constraint) {#constraint}
@@ -1933,23 +1638,7 @@ examples: |-
     node type label equals queue:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --constraint node.platform.os==linux \
-      --constraint node.labels.type==queue \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name redis_2 \
-      --constraint node.platform.os==linux \
-      --constraint node.labels.type==queue \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     If the service constraints exclude all nodes in the cluster, a message is printed
@@ -1969,41 +1658,7 @@ examples: |-
     service to not reconcile with the desired state:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name web \
-      --constraint node.labels.region==east \
-      nginx:alpine
-@y
-    ```console
-    $ docker service create \
-      --name web \
-      --constraint node.labels.region==east \
-      nginx:alpine
-@z
-
-@x
-    lx1wrhhpmbbu0wuk0ybws30bc
-    overall progress: 0 out of 1 tasks
-    1/1: no suitable node (scheduling constraints not satisfied on 5 nodes)
-@y
-    lx1wrhhpmbbu0wuk0ybws30bc
-    overall progress: 0 out of 1 tasks
-    1/1: no suitable node (scheduling constraints not satisfied on 5 nodes)
-@z
-
-@x
-    $ docker service ls
-    ID                  NAME     MODE         REPLICAS   IMAGE               PORTS
-    b6lww17hrr4e        web      replicated   0/1        nginx:alpine
-    ```
-@y
-    $ docker service ls
-    ID                  NAME     MODE         REPLICAS   IMAGE               PORTS
-    b6lww17hrr4e        web      replicated   0/1        nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     After adding the `region=east` label to a node in the cluster, the service
@@ -2013,27 +1668,7 @@ examples: |-
     reconciles, and the desired number of replicas are deployed:
 @z
 
-@x
-    ```console
-    $ docker node update --label-add region=east yswe2dm4c5fdgtsrli1e8ya5l
-    yswe2dm4c5fdgtsrli1e8ya5l
-@y
-    ```console
-    $ docker node update --label-add region=east yswe2dm4c5fdgtsrli1e8ya5l
-    yswe2dm4c5fdgtsrli1e8ya5l
-@z
-
-@x
-    $ docker service ls
-    ID                  NAME     MODE         REPLICAS   IMAGE               PORTS
-    b6lww17hrr4e        web      replicated   1/1        nginx:alpine
-    ```
-@y
-    $ docker service ls
-    ID                  NAME     MODE         REPLICAS   IMAGE               PORTS
-    b6lww17hrr4e        web      replicated   1/1        nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     ### Specify service placement preferences (--placement-pref) {#placement-pref}
@@ -2051,23 +1686,7 @@ examples: |-
     of datacenters or availability zones. The example below illustrates this:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --replicas 9 \
-      --name redis_2 \
-      --placement-pref spread=node.labels.datacenter \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --replicas 9 \
-      --name redis_2 \
-      --placement-pref spread=node.labels.datacenter \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     This uses `--placement-pref` with a `spread` strategy (currently the only
@@ -2169,25 +1788,7 @@ examples: |-
     (as indicated by the respective labels):
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --replicas 9 \
-      --name redis_2 \
-      --placement-pref 'spread=node.labels.datacenter' \
-      --placement-pref 'spread=node.labels.rack' \
-      redis:3.0.6
-    ```
-@y
-    ```console
-    $ docker service create \
-      --replicas 9 \
-      --name redis_2 \
-      --placement-pref 'spread=node.labels.datacenter' \
-      --placement-pref 'spread=node.labels.rack' \
-      redis:3.0.6
-    ```
-@z
+% snip command...
 
 @x
     When updating a service with `docker service update`, `--placement-pref-add`
@@ -2229,15 +1830,7 @@ examples: |-
     on a given node before scheduling the service to run on that node.
 @z
 
-@x
-    ```console
-    $ docker service create --reserve-memory=4GB --name=too-big nginx:alpine
-    ```
-@y
-    ```console
-    $ docker service create --reserve-memory=4GB --name=too-big nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     The managers won't schedule a set of containers on a single node whose combined
@@ -2261,15 +1854,7 @@ examples: |-
     only 2GB of memory, because `--limit-memory` is an upper limit.
 @z
 
-@x
-    ```console
-    $ docker service create --limit-memory=4GB --name=too-big nginx:alpine
-    ```
-@y
-    ```console
-    $ docker service create --limit-memory=4GB --name=too-big nginx:alpine
-    ```
-@z
+% snip command...
 
 @x
     Using `--reserve-memory` and `--limit-memory` does not guarantee that Docker
@@ -2397,25 +1982,7 @@ examples: |-
     The example below illustrates this:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --name nginx \
-      --replicas 2 \
-      --replicas-max-per-node 1 \
-      --placement-pref 'spread=node.labels.datacenter' \
-      nginx
-    ```
-@y
-    ```console
-    $ docker service create \
-      --name nginx \
-      --replicas 2 \
-      --replicas-max-per-node 1 \
-      --placement-pref 'spread=node.labels.datacenter' \
-      nginx
-    ```
-@z
+% snip command...
 
 @x
     ### Attach a service to an existing network (--network) {#network}
@@ -2437,21 +2004,7 @@ examples: |-
     command:
 @z
 
-@x
-    ```console
-    $ docker network create --driver overlay my-network
-@y
-    ```console
-    $ docker network create --driver overlay my-network
-@z
-
-@x
-    etjpu59cykrptrgw0z0hk5snf
-    ```
-@y
-    etjpu59cykrptrgw0z0hk5snf
-    ```
-@z
+% snip command...
 
 @x
     After you create an overlay network in swarm mode, all manager nodes have
@@ -2469,29 +2022,7 @@ examples: |-
     the overlay network:
 @z
 
-@x
-    ```console
-    $ docker service create \
-      --replicas 3 \
-      --network my-network \
-      --name my-web \
-      nginx
-@y
-    ```console
-    $ docker service create \
-      --replicas 3 \
-      --network my-network \
-      --name my-web \
-      nginx
-@z
-
-@x
-    716thylsndqma81j6kkkb5aus
-    ```
-@y
-    716thylsndqma81j6kkkb5aus
-    ```
-@z
+% snip command...
 
 @x
     The swarm extends my-network to each node running the service.
@@ -2533,15 +2064,7 @@ examples: |-
     published port and target port separated by a colon (`:`).
 @z
 
-@x
-    ```console
-    $ docker service create --name my_web --replicas 3 --publish 8080:80 nginx
-    ```
-@y
-    ```console
-    $ docker service create --name my_web --replicas 3 --publish 8080:80 nginx
-    ```
-@z
+% snip command...
 
 @x
     There is also a long format, which is easier to read and allows you to specify
@@ -2555,15 +2078,7 @@ examples: |-
     for the same service as above:
 @z
 
-@x
-    ```console
-    $ docker service create --name my_web --replicas 3 --publish published=8080,target=80 nginx
-    ```
-@y
-    ```console
-    $ docker service create --name my_web --replicas 3 --publish published=8080,target=80 nginx
-    ```
-@z
+% snip command...
 
 @x
     The options you can specify are:
@@ -2847,53 +2362,7 @@ examples: |-
     service's name, the node's ID and hostname where it sits.
 @z
 
-@x
-    ```console
-    $ docker service create \
-        --name hosttempl \
-        --hostname="{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"\
-        busybox top
-@y
-    ```console
-    $ docker service create \
-        --name hosttempl \
-        --hostname="{{.Node.Hostname}}-{{.Node.ID}}-{{.Service.Name}}"\
-        busybox top
-@z
-
-@x
-    va8ew30grofhjoychbr6iot8c
-@y
-    va8ew30grofhjoychbr6iot8c
-@z
-
-@x
-    $ docker service ps va8ew30grofhjoychbr6iot8c
-@y
-    $ docker service ps va8ew30grofhjoychbr6iot8c
-@z
-
-@x
-    ID            NAME         IMAGE                                                                                   NODE          DESIRED STATE  CURRENT STATE               ERROR  PORTS
-    wo41w8hg8qan  hosttempl.1  busybox:latest@sha256:29f5d56d12684887bdfa50dcd29fc31eea4aaf4ad3bec43daf19026a7ce69912  2e7a8a9c4da2  Running        Running about a minute ago
-@y
-    ID            NAME         IMAGE                                                                                   NODE          DESIRED STATE  CURRENT STATE               ERROR  PORTS
-    wo41w8hg8qan  hosttempl.1  busybox:latest@sha256:29f5d56d12684887bdfa50dcd29fc31eea4aaf4ad3bec43daf19026a7ce69912  2e7a8a9c4da2  Running        Running about a minute ago
-@z
-
-@x
-    $ docker inspect --format="{{.Config.Hostname}}" 2e7a8a9c4da2-wo41w8hg8qanxwjwsg4kxpprj-hosttempl
-@y
-    $ docker inspect --format="{{.Config.Hostname}}" 2e7a8a9c4da2-wo41w8hg8qanxwjwsg4kxpprj-hosttempl
-@z
-
-@x
-    x3ti0erg11rjpg64m75kej2mz-hosttempl
-    ```
-@y
-    x3ti0erg11rjpg64m75kej2mz-hosttempl
-    ```
-@z
+% snip command...
 
 @x
     ### Specify isolation mode on Windows (--isolation) {#isolation}
@@ -2911,15 +2380,7 @@ examples: |-
     the `--isolation` flag:
 @z
 
-@x
-    ```console
-    $ docker service create --name myservice --isolation=process microsoft/nanoserver
-    ```
-@y
-    ```console
-    $ docker service create --name myservice --isolation=process microsoft/nanoserver
-    ```
-@z
+% snip command...
 
 @x
     Supported isolation modes on Windows are:
@@ -2947,23 +2408,7 @@ examples: |-
     `--generic-resource` flag (if the nodes advertise these resources):
 @z
 
-@x
-    ```console
-    $ docker service create \
-        --name cuda \
-        --generic-resource "NVIDIA-GPU=2" \
-        --generic-resource "SSD=1" \
-        nvidia/cuda
-    ```
-@y
-    ```console
-    $ docker service create \
-        --name cuda \
-        --generic-resource "NVIDIA-GPU=2" \
-        --generic-resource "SSD=1" \
-        nvidia/cuda
-    ```
-@z
+% snip command...
 
 @x
     ### Running as a job
@@ -2989,19 +2434,7 @@ examples: |-
     Jobs are started by using one of two modes, `replicated-job` or `global-job`
 @z
 
-@x
-    ```console
-    $ docker service create --name myjob \
-                            --mode replicated-job \
-                            bash "true"
-    ```
-@y
-    ```console
-    $ docker service create --name myjob \
-                            --mode replicated-job \
-                            bash "true"
-    ```
-@z
+% snip command...
 
 @x
     This command will run one Task, which will, using the `bash` image, execute the
@@ -3065,25 +2498,7 @@ examples: |-
     the `--max-concurrent` flag can be used:
 @z
 
-@x
-    ```console
-    $ docker service create \
-        --name mythrottledjob \
-        --mode replicated-job \
-        --replicas 10 \
-        --max-concurrent 2 \
-        bash "true"
-    ```
-@y
-    ```console
-    $ docker service create \
-        --name mythrottledjob \
-        --mode replicated-job \
-        --replicas 10 \
-        --max-concurrent 2 \
-        bash "true"
-    ```
-@z
+% snip command...
 
 @x
     The above command will execute 10 Tasks in total, but only 2 of them will be

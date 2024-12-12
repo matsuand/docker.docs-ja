@@ -295,12 +295,16 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = build-cloud core-subscription images
+SUBDIRS = images
 bases = \
 	_index.md          \
+	change.md          \
 	desktop-license.md \
+	details.md         \
 	faq.md             \
-	scout-details.md
+	manage-seats.md    \
+	scale.md           \
+	setup.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

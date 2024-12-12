@@ -7,6 +7,7 @@ bases = \
 	general-settings.md \
 	insights.md         \
 	manage-a-team.md    \
+	manage-products.md  \
 	members.md          \
 	onboard.md          \
 	orgs.md

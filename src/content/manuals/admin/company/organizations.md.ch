@@ -46,9 +46,9 @@ You can manage the organizations in a company in the Docker Admin Console.
 @z
 
 @x
-When you have a [self-serve](../../subscription/core-subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
+When you have a [self-serve](../../subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
 @y
-When you have a [self-serve](../../subscription/core-subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
+When you have a [self-serve](../../subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps.
 @z
 
 @x

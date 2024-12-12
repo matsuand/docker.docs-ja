@@ -78,10 +78,10 @@ Before you audit your domains, review the following required prerequisites:
 @z
 
 @x
-- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/core-subscription/upgrade.md).
+- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/change.md).
 - You must [add and verify your domains](./single-sign-on/configure/_index.md#step-one-add-and-verify-your-domain).
 @y
-- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/core-subscription/upgrade.md).
+- Your organization must be part of a Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](../../subscription/change.md).
 - You must [add and verify your domains](./single-sign-on/configure/_index.md#step-one-add-and-verify-your-domain).
 @z
 

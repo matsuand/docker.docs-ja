@@ -104,18 +104,16 @@ description:
 
 @x
   - title: Upgrade
-    link: /billing/scout-billing/
+    link: /subscription/change/
     description: |
-      The free plan includes up to 3 repositories. Upgrade for more.
+      The free plan includes up to 1 repository. Upgrade for more.
     icon: upgrade
----
 @y
   - title: アップグレード
-    link: __SUBDIR__/billing/scout-billing/
+    link: __SUBDIR__/subscription/change/
     description: |
-      無償プランは 3 リポジトリまで。アップグレードによりさらに増やせます。
+      無償プランは 1 リポジトリまで。アップグレードによりさらに増やせます。
     icon: upgrade
----
 @z
 
 @x

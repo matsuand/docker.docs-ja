@@ -20,68 +20,64 @@ keywords: Docker, pricing, billing, Pro, Team, business, subscription, tier, pla
 % grid_subscriptions:
 
 @x
-- title: Docker Core subscriptions and features
+- title: Docker subscriptions and features
   description: Explore what you can do with your Docker subscription.
   link: /subscription/details/
   icon: feature_search
 @y
-- title: Docker Core subscriptions and features
+- title: Docker subscriptions and features
   description: Explore what you can do with your Docker subscription.
   link: __SUBDIR__/subscription/details/
   icon: feature_search
 @z
 
 @x
-- title: Docker Scout subscriptions and features
-  description: Discover how a Docker Scout subscription can help you create a more secure supply chain.
-  link: /subscription/scout-details/
-  icon: query_stats
+- title: Set up your subscription
+  description: Get started setting up a personal or organization subscription.
+  link: /subscription/setup/
+  icon: shopping_cart
 @y
-- title: Docker Scout subscriptions and features
-  description: Discover how a Docker Scout subscription can help you create a more secure supply chain.
-  link: __SUBDIR__/subscription/scout-details/
-  icon: query_stats
+- title: Set up your subscription
+  description: Get started setting up a personal or organization subscription.
+  link: __SUBDIR__/subscription/setup/
+  icon: shopping_cart
 @z
 
 @x
-- title: Docker Build Cloud subscriptions and features
-  description: Learn how a Docker Build Cloud subscription can accelerate your builds.
-  link: /subscription/build-cloud/build-details/
-  icon: build
+- title: Scale your subscription
+  description: Scale your subscription to fit your needs.
+  link: /subscription/scale/
+  icon: leaderboard
 @y
-- title: Docker Build Cloud subscriptions and features
-  description: Learn how a Docker Build Cloud subscription can accelerate your builds.
-  link: __SUBDIR__/subscription/build-cloud/build-details/
-  icon: build
+- title: Scale your subscription
+  description: Scale your subscription to fit your needs.
+  link: __SUBDIR__/subscription/scale/
+  icon: leaderboard
 @z
 
-% grid_core:
-
 @x
-- title: Upgrade your subscription
-  description: Learn how to upgrade your plan to the next level.
-  link: /subscription/upgrade/
+- title: Change your subscription
+  description: Learn how to upgrade or downgrade your plan.
+  link: /subscription/change/
   icon: upgrade
 @y
-- title: Upgrade your subscription
-  description: Learn how to upgrade your plan to the next level.
-  link: __SUBDIR__/subscription/upgrade/
+- title: Change your subscription
+  description: Learn how to upgrade or downgrade your plan.
+  link: __SUBDIR__/subscription/change/
   icon: upgrade
 @z
 
 @x
-- title: Add more seats to your subscription
-  description: Do more with Docker and add seats to your subscription.
-  link: /subscription/add-seats/
+- title: Manage seats
+  description: Learn how to add or remove seats from your subscription.
+  link: /subscription/manage-seats/
   icon: group_add
 @y
-- title: Add more seats to your subscription
-  description: Do more with Docker and add seats to your subscription.
-  link: __SUBDIR__/subscription/add-seats/
+- title: Manage seats
+  description: Learn how to add or remove seats from your subscription.
+  link: __SUBDIR__/subscription/manage-seats/
   icon: group_add
 @z
-
-% grid_resources:
 
 @x
 - title: Docker Desktop license agreement
@@ -108,49 +104,17 @@ keywords: Docker, pricing, billing, Pro, Team, business, subscription, tier, pla
 @z
 
 @x
-A Docker Core subscription includes licensing for commercial use of Docker components including Docker Desktop and Docker Hub.
+A Docker subscription includes licensing for commercial use of Docker products
+including Docker Desktop, Docker Hub, Docker Build Cloud, Docker Scout, and
+Testcontainers Cloud.
 @y
-A Docker Core subscription includes licensing for commercial use of Docker components including Docker Desktop and Docker Hub.
+A Docker subscription includes licensing for commercial use of Docker products
+including Docker Desktop, Docker Hub, Docker Build Cloud, Docker Scout, and
+Testcontainers Cloud.
 @z
 
 @x
-Use the resources here to decide what subscription you need, manage an existing subscription, or explore additional products like Docker Scout or Docker Build Cloud.
+Use the resources here to decide what subscription you need, or manage an existing subscription.
 @y
-Use the resources here to decide what subscription you need, manage an existing subscription, or explore additional products like Docker Scout or Docker Build Cloud.
-@z
-
-@x
-## Docker subscriptions and features
-@y
-## Docker subscriptions and features
-@z
-
-@x
-{{< grid items="grid_subscriptions" >}}
-@y
-{{< grid items="grid_subscriptions" >}}
-@z
-
-@x
-## Manage your Docker Core subscription
-@y
-## Manage your Docker Core subscription
-@z
-
-@x
-{{< grid items="grid_core" >}}
-@y
-{{< grid items="grid_core" >}}
-@z
-
-@x
-## Resources
-@y
-## Resources
-@z
-
-@x
-{{< grid items="grid_resources" >}}
-@y
-{{< grid items="grid_resources" >}}
+Use the resources here to decide what subscription you need, or manage an existing subscription.
 @z

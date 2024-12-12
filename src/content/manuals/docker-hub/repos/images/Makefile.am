@@ -1,11 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-
-bases = \
-	_index.md        \
-	build-details.md \
-	manage-seats.md
+copyfiles = \
+	outdated-icon.webp
 
 include $(top_srcdir)/build-aux/common.mk
-include $(top_srcdir)/build-aux/main.mk
+include $(top_srcdir)/build-aux/copy.mk

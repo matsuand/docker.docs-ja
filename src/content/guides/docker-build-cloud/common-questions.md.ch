@@ -92,20 +92,18 @@ Docker 購入者 (Pro, Team, Business) は Build Cloud を利用するために�
 
 @x
 If you do not have a Docker subscription, you may sign up for a free Personal
-account and get 50 minutes per month. Personal accounts are limited to a single
-user.
+account and start a trial of Docker Build Cloud. Personal accounts are limited to a
+single user.
 @y
-Docker 購入者でない場合には、無償の個人アカウントにサインアップすれば、毎月 50 分の利用が可能になります。
+Docker 購入者でない場合には、無償の個人アカウントにサインアップすれば、Docker Build Cloud のトライアル版の利用が可能になります。
 個人アカウントは 1 ユーザーに限定されます。
 @z
 
 @x
 For teams to receive the shared cache benefit, they must either be on a Docker
-Team, Docker Business, or paid Build Cloud Team plan. You may buy a month of
-Build Cloud Team for the number of seats testing.
+Team or Docker Business plan.
 @y
-チームを通じてキャッシュ共有機能を利用するためには、Docker Team、Docker Business、または Build Cloud の有償チームプランを購入する必要があります。
-シート数の確認のために Build Cloud チームを 1 カ月分購入することもできます。
+チームを通じてキャッシュ共有機能を利用するためには、Docker Team、Docker Business の有償チームプランを購入する必要があります。
 @z
 
 @x

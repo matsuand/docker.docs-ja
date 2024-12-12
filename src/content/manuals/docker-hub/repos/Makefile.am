@@ -1,10 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = manage
+SUBDIRS = images manage
 
 bases = \
 	_index.md   \
+	archive.md  \
 	create.md   \
 	delete.md   \
 	settings.md

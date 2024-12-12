@@ -290,13 +290,13 @@ The `install` command accepts the following flags:
 @z
 
 @x
-## Where to go next 
+## Where to go next
 @y
-## Where to go next 
+## Where to go next
 @z
 
 @x
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
+- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Get started with Docker](/get-started/introduction/_index.md).
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how
@@ -306,7 +306,7 @@ The `install` command accepts the following flags:
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you. 
+- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Get started with Docker](get-started/introduction/_index.md).
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how

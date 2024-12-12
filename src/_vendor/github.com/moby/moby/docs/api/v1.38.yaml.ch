@@ -11026,10 +11026,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the tty session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the tty session in characters"
           type: "integer"
       tags: ["Container"]
@@ -11425,10 +11427,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the tty session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the tty session in characters"
           type: "integer"
       tags: ["Container"]
@@ -15540,10 +15544,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the TTY session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the TTY session in characters"
           type: "integer"
       tags: ["Exec"]
@@ -15804,10 +15810,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the TTY session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the TTY session in characters"
           type: "integer"
       tags: ["Exec"]

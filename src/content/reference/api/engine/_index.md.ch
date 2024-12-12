@@ -195,6 +195,13 @@ You can specify the API version to use in any of the following ways:
 @x
 | Docker version | Maximum API version        | Change log                                                                   |
 |:---------------|:---------------------------|:-----------------------------------------------------------------------------|
+@y
+| Docker version | Maximum API version        | Change log                                                                   |
+|:---------------|:---------------------------|:-----------------------------------------------------------------------------|
+@z
+
+@x
+| 27.4           | [1.47](/reference/api/engine/version/v1.47/) | [changes](/reference/api/engine/version-history/#v147-api-changes) |
 | 27.3           | [1.47](/reference/api/engine/version/v1.47/) | [changes](/reference/api/engine/version-history/#v147-api-changes) |
 | 27.2           | [1.47](/reference/api/engine/version/v1.47/) | [changes](/reference/api/engine/version-history/#v147-api-changes) |
 | 27.1           | [1.46](/reference/api/engine/version/v1.46/) | [changes](/reference/api/engine/version-history/#v146-api-changes) |
@@ -226,8 +233,7 @@ You can specify the API version to use in any of the following ways:
 | 1.13           | [1.25](/reference/api/engine/version/v1.26/) | [changes](/reference/api/engine/version-history/#v125-api-changes) |
 | 1.12           | [1.24](/reference/api/engine/version/v1.24/) | [changes](/reference/api/engine/version-history/#v124-api-changes) |
 @y
-| Docker version | Maximum API version        | Change log                                                                   |
-|:---------------|:---------------------------|:-----------------------------------------------------------------------------|
+| 27.4           | [1.47](__SUBDIR__/reference/api/engine/version/v1.47/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v147-api-changes) |
 | 27.3           | [1.47](__SUBDIR__/reference/api/engine/version/v1.47/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v147-api-changes) |
 | 27.2           | [1.47](__SUBDIR__/reference/api/engine/version/v1.47/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v147-api-changes) |
 | 27.1           | [1.46](__SUBDIR__/reference/api/engine/version/v1.46/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v146-api-changes) |

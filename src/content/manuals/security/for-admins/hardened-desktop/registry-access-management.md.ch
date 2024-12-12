@@ -16,11 +16,11 @@ title: Registry Access Management
 @x
 > [!NOTE]
 >
-> Registry Access Management is available to [Docker Business](/manuals/subscription/core-subscription/details.md) customers only.
+> Registry Access Management is available to [Docker Business](/manuals/subscription/details.md) customers only.
 @y
 > [!NOTE]
 >
-> Registry Access Management is available to [Docker Business](manuals/subscription/core-subscription/details.md) customers only.
+> Registry Access Management is available to [Docker Business](manuals/subscription/details.md) customers only.
 @z
 
 @x

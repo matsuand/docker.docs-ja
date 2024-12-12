@@ -237,11 +237,11 @@ your DNF repositories) and set up the repository.
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:{{% param "docker_ce_version" %}}-1.el9`.
 @y
    目的のバージョンを完全なパッケージ文字列を指定してインストールします。
    完全な文字列とは、まずパッケージ名 (`docker-ce`) があり、次にハイフン (`-`) で区切って (2 カラムめに) バージョン文字列が続きます。
-   この例では `docker-ce-3:27.3.1-1.el9` といったものです。
+   この例では `docker-ce-3:27.4.0-1.el9` といったものです。
 @z
 
 @x

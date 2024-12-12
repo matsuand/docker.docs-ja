@@ -15,18 +15,12 @@ title: Insights
 
 @x
 > [!NOTE]
-> Insights requires a [Docker Business
-> subscription](/subscription/core-subscription/details/#docker-business) and
-> administrators must [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md)
-> to ensure that users sign in with an account associated with their
-> organization.
+>
+> Insights requires a [Docker Business subscription](../../subscription/details.md#docker-business) and administrators must [enforce sign-in](/security/for-admins/enforce-sign-in/). This ensures users sign in with an account associated with their organization.
 @y
 > [!NOTE]
-> Insights requires a [Docker Business
-> subscription](__SUBDIR__/subscription/core-subscription/details/#docker-business) and
-> administrators must [enforce sign-in](manuals/security/for-admins/enforce-sign-in/_index.md)
-> to ensure that users sign in with an account associated with their
-> organization.
+>
+> Insights requires a [Docker Business subscription](../../subscription/details.md#docker-business) and administrators must [enforce sign-in](__SUBDIR__/security/for-admins/enforce-sign-in/). This ensures users sign in with an account associated with their organization.
 @z
 
 @x

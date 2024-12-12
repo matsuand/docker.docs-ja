@@ -76,9 +76,9 @@ You can also enable [SCIM](manuals/security/for-admins/provisioning/scim.md) for
 @z
 
 @x
-### Set up free tier Docker product entitlements included in the subscription
+### Set up Docker product entitlements included in the subscription
 @y
-### Set up free tier Docker product entitlements included in the subscription
+### Set up Docker product entitlements included in the subscription
 @z
 
 @x

@@ -40,16 +40,14 @@ If you run image analysis as a one-off task using the CLI or Docker Desktop,
 Docker Scout won't store any data about your image.
 If you enable Docker Scout for your container image repositories however,
 Docker Scout saves a metadata snapshot of your images after the analysis.
-As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot,
-which means your security status for images is updated in real-time.
+As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot, which means your security status for images is updated in real-time.
 This dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed.
 @y
 If you run image analysis as a one-off task using the CLI or Docker Desktop,
 Docker Scout won't store any data about your image.
 If you enable Docker Scout for your container image repositories however,
 Docker Scout saves a metadata snapshot of your images after the analysis.
-As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot,
-which means your security status for images is updated in real-time.
+As new vulnerability data becomes available, Docker Scout recalibrates the analysis using the metadata snapshot, which means your security status for images is updated in real-time.
 This dynamic evaluation means there's no need to re-analyze images when new CVE information is disclosed.
 @z
 
@@ -70,15 +68,17 @@ see [Integrating Docker Scout with other systems](manuals/scout/integrations/_in
 @z
 
 @x
-The free tier of Docker Scout lets you use Docker Scout for up to 3
-repositories per Docker organization. You can update your Docker Scout plan if
-you need additional repositories, see [Docker Scout
-billing](/manuals/billing/scout-billing.md).
+Docker Personal comes with 1 Scout-enabled repository. You can upgrade your
+Docker subscription if you need additional repositories.
+See [Subscriptions and features](../../subscription/details.md)
+to learn how many Scout-enabled
+repositories come with each subscription tier.
 @y
-The free tier of Docker Scout lets you use Docker Scout for up to 3
-repositories per Docker organization. You can update your Docker Scout plan if
-you need additional repositories, see [Docker Scout
-billing](manuals/billing/scout-billing.md).
+Docker Personal comes with 1 Scout-enabled repository. You can upgrade your
+Docker subscription if you need additional repositories.
+See [Subscriptions and features](../../subscription/details.md)
+to learn how many Scout-enabled
+repositories come with each subscription tier.
 @z
 
 @x

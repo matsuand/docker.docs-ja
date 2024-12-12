@@ -98,7 +98,7 @@ sections of the Docker Scout Dashboard:
 - **Packages**: lists all packages across repositories in the organization
 - **Vulnerabilities**: lists all CVEs in the organization's images, see [Vulnerabilities](#vulnerabilities)
 - **Integrations**: create and manage third-party integrations, see [Integrations](#integrations)
-- **Settings**: manage repository and billing settings, see [Settings](#settings)
+- **Settings**: manage repository settings, see [Settings](#settings)
 @y
 - **Policies**: shows the policy compliance for the organization, see [Policies](#policies)
 - **Images**: lists all Docker Scout-enabled repositories in the organization, see [Images](#images)
@@ -106,7 +106,7 @@ sections of the Docker Scout Dashboard:
 - **Packages**: lists all packages across repositories in the organization
 - **Vulnerabilities**: lists all CVEs in the organization's images, see [Vulnerabilities](#vulnerabilities)
 - **Integrations**: create and manage third-party integrations, see [Integrations](#integrations)
-- **Settings**: manage repository and billing settings, see [Settings](#settings)
+- **Settings**: manage repository settings, see [Settings](#settings)
 @z
 
 @x
@@ -282,39 +282,11 @@ The settings menu in the Docker Scout Dashboard contains:
 @z
 
 @x
-- [**Billing**](#billing-settings) for managing your Docker Scout subscription and payments
 - [**Repository settings**](#repository-settings) for enabling and disabling repositories
 - [**Notifications**](#notification-settings) for managing your notification preferences for Docker Scout.
 @y
-- [**Billing**](#billing-settings) for managing your Docker Scout subscription and payments
 - [**Repository settings**](#repository-settings) for enabling and disabling repositories
 - [**Notifications**](#notification-settings) for managing your notification preferences for Docker Scout.
-@z
-
-@x
-### Billing settings
-@y
-### Billing settings
-@z
-
-@x
-The [Billing settings](https://scout.docker.com/settings/billing) page shows
-you the Docker Scout plan for the current organization. Here you can see what's
-included in your plan, compare it with other available plans, and change the
-plan if you're an organization owner.
-@y
-The [Billing settings](https://scout.docker.com/settings/billing) page shows
-you the Docker Scout plan for the current organization. Here you can see what's
-included in your plan, compare it with other available plans, and change the
-plan if you're an organization owner.
-@z
-
-@x
-For more information about subscription plans, see
-[Docker Scout subscriptions and features](/manuals/subscription/scout-details.md)
-@y
-For more information about subscription plans, see
-[Docker Scout subscriptions and features](manuals/subscription/scout-details.md)
 @z
 
 @x

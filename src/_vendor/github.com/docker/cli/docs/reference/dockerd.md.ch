@@ -2186,9 +2186,9 @@ directories using the `docker info` command.
 @z
 
 @x
-#### <a name="log-format"></a> Daemon logging format
+#### Daemon logging format {#log-format}
 @y
-#### <a name="log-format"></a> Daemon logging format
+#### Daemon logging format {#log-format}
 @z
 
 @x
@@ -2454,9 +2454,9 @@ Example of usage:
 @z
 
 @x
-### <a name="feature"></a> Enable feature in the daemon (--feature)
+### Enable feature in the daemon (--feature) {#feature}
 @y
-### <a name="feature"></a> Enable feature in the daemon (--feature)
+### Enable feature in the daemon (--feature) {#feature}
 @z
 
 @x

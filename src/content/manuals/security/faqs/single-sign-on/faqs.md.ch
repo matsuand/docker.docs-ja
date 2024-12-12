@@ -22,9 +22,9 @@ linkTitle: General
 @z
 
 @x
-Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](/subscription/core-subscription/upgrade/) to start using Docker SSO.
+Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](../../../subscription/change.md) to start using Docker SSO.
 @y
-Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](__SUBDIR__/subscription/core-subscription/upgrade/) to start using Docker SSO.
+Docker single sign-on (SSO) is only available with the Docker Business subscription. [Upgrade your existing subscription](../../../subscription/change.md) to start using Docker SSO.
 @z
 
 @x

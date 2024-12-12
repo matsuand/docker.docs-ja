@@ -8,44 +8,6 @@ long: |-
     Remove all unused networks. Unused networks are those which are not referenced
     by any containers.
 usage: docker network prune [OPTIONS]
-pname: docker network
-plink: docker_network.yaml
-options:
-    - option: filter
-      value_type: filter
-      description: Provide filter values (e.g. `until=<timestamp>`)
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker network prune
 @y
 command: docker network prune
 short: Remove all unused networks
@@ -53,61 +15,38 @@ long: |-
     Remove all unused networks. Unused networks are those which are not referenced
     by any containers.
 usage: docker network prune [OPTIONS]
-pname: docker network
-plink: docker_network.yaml
-options:
-    - option: filter
-      value_type: filter
+@z
+
+
+%options:
+
+@x filter
       description: Provide filter values (e.g. `until=<timestamp>`)
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@y
+      description: Provide filter values (e.g. `until=<timestamp>`)
+@z
+
+@x force
       description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not prompt for confirmation
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker network prune
+@y
+      description: Print usage
 @z
 
 @x
-    WARNING! This will remove all custom networks not used by at least one container.
-    Are you sure you want to continue? [y/N] y
-    Deleted Networks:
-    n1
-    n2
-    ```
+examples: |-
 @y
-    WARNING! This will remove all custom networks not used by at least one container.
-    Are you sure you want to continue? [y/N] y
-    Deleted Networks:
-    n1
-    n2
-    ```
+examples: |-
 @z
+
+% snip command...
 
 @x
     ### Filtering (--filter) {#filter}
@@ -139,7 +78,7 @@ examples: |-
 
 @x
     The `until` filter can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the daemon machine’s time. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local
@@ -151,7 +90,7 @@ examples: |-
     fraction of a second no more than nine digits long.
 @y
     The `until` filter can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the daemon machine’s time. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local

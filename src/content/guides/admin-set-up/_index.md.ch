@@ -31,10 +31,8 @@ tags: [admin]
       url: /security/for-admins/hardened-desktop/registry-access-management/
     - title: Image Access Management
       url: /security/for-admins/hardened-desktop/image-access-management/
-    - title: Docker Build Cloud subscription information
-      url: /subscription/build-cloud/build-details/
-    - title: Docker Scout subscription information
-      url: /subscription/scout-details/
+    - title: Docker subscription information
+      url: /subscription/details/
 @y
     - title: Overview of Administration in Docker
       url: __SUBDIR__/admin/
@@ -50,10 +48,8 @@ tags: [admin]
       url: __SUBDIR__/security/for-admins/hardened-desktop/registry-access-management/
     - title: Image Access Management
       url: __SUBDIR__/security/for-admins/hardened-desktop/image-access-management/
-    - title: Docker Build Cloud subscription information
-      url: __SUBDIR__/subscription/build-cloud/build-details/
-    - title: Docker Scout subscription information
-      url: __SUBDIR__/subscription/scout-details/
+    - title: Docker subscription information
+      url: __SUBDIR__/subscription/details/
 @z
 
 @x

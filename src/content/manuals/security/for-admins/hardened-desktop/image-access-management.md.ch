@@ -16,11 +16,11 @@ title: Image Access Management
 @x
 > [!NOTE]
 >
-> Image Access Management is available to [Docker Business](/manuals/subscription/core-subscription/details.md#docker-business) customers only.
+> Image Access Management is available to [Docker Business](/manuals/subscription/details.md#docker-business) customers only.
 @y
 > [!NOTE]
 >
-> Image Access Management is available to [Docker Business](manuals/subscription/core-subscription/details.md#docker-business) customers only.
+> Image Access Management is available to [Docker Business](manuals/subscription/details.md#docker-business) customers only.
 @z
 
 @x

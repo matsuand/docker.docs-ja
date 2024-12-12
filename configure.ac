@@ -128,7 +128,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/admin/images/Makefile
 	src/content/manuals/admin/organization/Makefile
 	src/content/manuals/billing/Makefile
-	src/content/manuals/billing/core-billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
 	src/content/manuals/build/builders/Makefile
@@ -181,6 +180,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/docker-hub/Makefile
 	src/content/manuals/docker-hub/images/Makefile
 	src/content/manuals/docker-hub/repos/Makefile
+	src/content/manuals/docker-hub/repos/images/Makefile
 	src/content/manuals/docker-hub/repos/manage/Makefile
 	src/content/manuals/docker-hub/repos/manage/builds/Makefile
 	src/content/manuals/docker-hub/repos/manage/builds/images/Makefile
@@ -258,8 +258,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/for-developers/2fa/Makefile
 	src/content/manuals/security/images/Makefile
 	src/content/manuals/subscription/Makefile
-	src/content/manuals/subscription/build-cloud/Makefile
-	src/content/manuals/subscription/core-subscription/Makefile
 	src/content/manuals/subscription/images/Makefile
 	src/content/manuals/trusted-content/Makefile
 	src/content/manuals/trusted-content/images/Makefile

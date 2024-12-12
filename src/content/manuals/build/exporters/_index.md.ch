@@ -1,7 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Exporters overview
@@ -73,17 +74,7 @@ To specify an exporter, use the following command syntax:
 To specify an exporter, use the following command syntax:
 @z
 
-@x
-```console
-$ docker buildx build --tag <registry>/<image> \
-  --output type=<TYPE> .
-```
-@y
-```console
-$ docker buildx build --tag <registry>/<image> \
-  --output type=<TYPE> .
-```
-@z
+% snip command...
 
 @x
 Most common use cases don't require that you specify which exporter to use
@@ -149,17 +140,7 @@ how to build an image using the `docker` exporter, and have that image loaded to
 the local image store, using the `--output` option:
 @z
 
-@x
-```console
-$ docker buildx build \
-  --output type=docker,name=<registry>/<image> .
-```
-@y
-```console
-$ docker buildx build \
-  --output type=docker,name=<registry>/<image> .
-```
-@z
+% snip command...
 
 @x
 Buildx CLI will automatically use the `docker` exporter and load it to the image
@@ -169,15 +150,7 @@ Buildx CLI will automatically use the `docker` exporter and load it to the image
 store if you supply the `--tag` and `--load` options:
 @z
 
-@x
-```console
-$ docker buildx build --tag <registry>/<image> --load .
-```
-@y
-```console
-$ docker buildx build --tag <registry>/<image> --load .
-```
-@z
+% snip command...
 
 @x
 Building images using the `docker` driver are automatically loaded to the local
@@ -219,15 +192,7 @@ When you pass the `--push` option to the Buildx CLI, you instruct BuildKit to
 push the built image to the specified registry:
 @z
 
-@x
-```console
-$ docker buildx build --tag <registry>/<image> --push .
-```
-@y
-```console
-$ docker buildx build --tag <registry>/<image> --push .
-```
-@z
+% snip command...
 
 @x
 Under the hood, this uses the `image` exporter, and sets the `push` parameter.
@@ -239,17 +204,7 @@ It's the same as using the following long-form command using the `--output`
 option:
 @z
 
-@x
-```console
-$ docker buildx build \
-  --output type=image,name=<registry>/<image>,push=true .
-```
-@y
-```console
-$ docker buildx build \
-  --output type=image,name=<registry>/<image>,push=true .
-```
-@z
+% snip command...
 
 @x
 You can also use the `registry` exporter, which does the same thing:
@@ -257,17 +212,7 @@ You can also use the `registry` exporter, which does the same thing:
 You can also use the `registry` exporter, which does the same thing:
 @z
 
-@x
-```console
-$ docker buildx build \
-  --output type=registry,name=<registry>/<image> .
-```
-@y
-```console
-$ docker buildx build \
-  --output type=registry,name=<registry>/<image> .
-```
-@z
+% snip command...
 
 @x
 ### Export image layout to file
@@ -287,55 +232,7 @@ archive file containing the corresponding image layout. The `dest` parameter
 defines the target output path for the tarball.
 @z
 
-@x
-```console
-$ docker buildx build --output type=oci,dest=./image.tar .
-[+] Building 0.8s (7/7) FINISHED
- ...
- => exporting to oci image format                                                                     0.0s
- => exporting layers                                                                                  0.0s
- => exporting manifest sha256:c1ef01a0a0ef94a7064d5cbce408075730410060e253ff8525d1e5f7e27bc900        0.0s
- => exporting config sha256:eadab326c1866dd247efb52cb715ba742bd0f05b6a205439f107cf91b3abc853          0.0s
- => sending tarball                                                                                   0.0s
-$ mkdir -p out && tar -C out -xf ./image.tar
-$ tree out
-out
-├── blobs
-│   └── sha256
-│       ├── 9b18e9b68314027565b90ff6189d65942c0f7986da80df008b8431276885218e
-│       ├── c78795f3c329dbbbfb14d0d32288dea25c3cd12f31bd0213be694332a70c7f13
-│       ├── d1cf38078fa218d15715e2afcf71588ee482352d697532cf316626164699a0e2
-│       ├── e84fa1df52d2abdfac52165755d5d1c7621d74eda8e12881f6b0d38a36e01775
-│       └── fe9e23793a27fe30374308988283d40047628c73f91f577432a0d05ab0160de7
-├── index.json
-├── manifest.json
-└── oci-layout
-```
-@y
-```console
-$ docker buildx build --output type=oci,dest=./image.tar .
-[+] Building 0.8s (7/7) FINISHED
- ...
- => exporting to oci image format                                                                     0.0s
- => exporting layers                                                                                  0.0s
- => exporting manifest sha256:c1ef01a0a0ef94a7064d5cbce408075730410060e253ff8525d1e5f7e27bc900        0.0s
- => exporting config sha256:eadab326c1866dd247efb52cb715ba742bd0f05b6a205439f107cf91b3abc853          0.0s
- => sending tarball                                                                                   0.0s
-$ mkdir -p out && tar -C out -xf ./image.tar
-$ tree out
-out
-├── blobs
-│   └── sha256
-│       ├── 9b18e9b68314027565b90ff6189d65942c0f7986da80df008b8431276885218e
-│       ├── c78795f3c329dbbbfb14d0d32288dea25c3cd12f31bd0213be694332a70c7f13
-│       ├── d1cf38078fa218d15715e2afcf71588ee482352d697532cf316626164699a0e2
-│       ├── e84fa1df52d2abdfac52165755d5d1c7621d74eda8e12881f6b0d38a36e01775
-│       └── fe9e23793a27fe30374308988283d40047628c73f91f577432a0d05ab0160de7
-├── index.json
-├── manifest.json
-└── oci-layout
-```
-@z
+% snip command...
 
 @x
 ### Export filesystem
@@ -359,15 +256,7 @@ The `local` exporter unpacks the filesystem into a directory structure in the
 specified location. The `tar` exporter creates a tarball archive file.
 @z
 
-@x
-```console
-$ docker buildx build --output type=tar,dest=<path/to/output> .
-```
-@y
-```console
-$ docker buildx build --output type=tar,dest=<path/to/output> .
-```
-@z
+% snip command...
 
 @x
 The `local` exporter is useful in [multi-stage builds](../building/multi-stage.md)
@@ -399,15 +288,7 @@ subsequent commands. The `cacheonly` exporter creates a build cache, so any
 successive builds are instant.
 @z
 
-@x
-```console
-$ docker buildx build --output type=cacheonly
-```
-@y
-```console
-$ docker buildx build --output type=cacheonly
-```
-@z
+% snip command...
 
 @x
 If you don't specify an exporter, and you don't provide short-hand options like
@@ -427,23 +308,7 @@ Buildx logs a warning message when using `cacheonly` as a default:
 Buildx logs a warning message when using `cacheonly` as a default:
 @z
 
-@x
-```console
-$ docker buildx build .
-WARNING: No output specified with docker-container driver.
-         Build result will only remain in the build cache.
-         To push result image into registry use --push or
-         to load image into docker use --load
-```
-@y
-```console
-$ docker buildx build .
-WARNING: No output specified with docker-container driver.
-         Build result will only remain in the build cache.
-         To push result image into registry use --push or
-         to load image into docker use --load
-```
-@z
+% snip command...
 
 @x
 ## Multiple exporters
@@ -485,21 +350,7 @@ different exporters:
 - The `--load` flag (a shorthand for the `image` exporter) to load the results to the local image store.
 @z
 
-@x
-```console
-$ docker buildx build \
-  --output type=registry,tag=<registry>/<image> \
-  --output type=local,dest=<path/to/output> \
-  --load .
-```
-@y
-```console
-$ docker buildx build \
-  --output type=registry,tag=<registry>/<image> \
-  --output type=local,dest=<path/to/output> \
-  --load .
-```
-@z
+% snip command...
 
 @x
 ## Configuration options
@@ -567,17 +418,7 @@ To select the compression algorithm, you can use the `compression` option. For
 example, to build an `image` with `compression=zstd`:
 @z
 
-@x
-```console
-$ docker buildx build \
-  --output type=image,name=<registry>/<image>,push=true,compression=zstd .
-```
-@y
-```console
-$ docker buildx build \
-  --output type=image,name=<registry>/<image>,push=true,compression=zstd .
-```
-@z
+% snip command...
 
 @x
 Use the `compression-level=<value>` option alongside the `compression` parameter
@@ -645,17 +486,7 @@ To export images with OCI media types set, use the `oci-mediatypes` property.
 To export images with OCI media types set, use the `oci-mediatypes` property.
 @z
 
-@x
-```console
-$ docker buildx build \
-  --output type=image,name=<registry>/<image>,push=true,oci-mediatypes=true .
-```
-@y
-```console
-$ docker buildx build \
-  --output type=image,name=<registry>/<image>,push=true,oci-mediatypes=true .
-```
-@z
+% snip command...
 
 @x
 ## What's next

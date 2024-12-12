@@ -2,11 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Deactivating an organization
+title: Deactivate an organization
 description: Learn how to deactivate a Docker organization.
 keywords: Docker Hub, delete, deactivate organization, account, organization management
 @y
-title: Deactivating an organization
+title: Deactivate an organization
 description: Learn how to deactivate a Docker organization.
 keywords: Docker Hub, delete, deactivate organization, account, organization management
 @z
@@ -49,15 +49,9 @@ Before deactivating an organization, complete the following:
 @z
 
 @x
-- If you have an active Docker subscription, [downgrade it to a free subscription](../subscription/core-subscription/downgrade.md).
+- If you have an active Docker subscription, [downgrade it to a free subscription](../subscription/change.md).
 @y
-- If you have an active Docker subscription, [downgrade it to a free subscription](../subscription/core-subscription/downgrade.md).
-@z
-
-@x
-- If you have an active Docker Scout subscription, [downgrade it to a Docker Scout Free subscription](../billing/scout-billing.md#downgrade-your-subscription).
-@y
-- If you have an active Docker Scout subscription, [downgrade it to a Docker Scout Free subscription](../billing/scout-billing.md#downgrade-your-subscription).
+- If you have an active Docker subscription, [downgrade it to a free subscription](../subscription/change.md).
 @z
 
 @x

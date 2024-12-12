@@ -6,112 +6,44 @@ command: docker container prune
 short: Remove all stopped containers
 long: Removes all stopped containers.
 usage: docker container prune [OPTIONS]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: filter
-      value_type: filter
-      description: Provide filter values (e.g. `until=<timestamp>`)
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Prune containers
 @y
 command: docker container prune
 short: Remove all stopped containers
 long: Removes all stopped containers.
 usage: docker container prune [OPTIONS]
-pname: docker container
-plink: docker_container.yaml
-options:
-    - option: filter
-      value_type: filter
+@z
+
+%options:
+
+@x filter
       description: Provide filter values (e.g. `until=<timestamp>`)
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@y
+      description: Provide filter values (e.g. `until=<timestamp>`)
+@z
+
+@x force
       description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not prompt for confirmation
+@z
+
+%inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Prune containers
+@y
 examples: |-
     ### Prune containers
 @z
 
-@x
-    ```console
-    $ docker container prune
-    WARNING! This will remove all stopped containers.
-    Are you sure you want to continue? [y/N] y
-    Deleted Containers:
-    4a7f7eebae0f63178aff7eb0aa39cd3f0627a203ab2df258c1a00b456cf20063
-    f98f9c2aa1eaf727e4ec9c0283bc7d4aa4762fbdba7f26191f26c97f64090360
-@y
-    ```console
-    $ docker container prune
-    WARNING! This will remove all stopped containers.
-    Are you sure you want to continue? [y/N] y
-    Deleted Containers:
-    4a7f7eebae0f63178aff7eb0aa39cd3f0627a203ab2df258c1a00b456cf20063
-    f98f9c2aa1eaf727e4ec9c0283bc7d4aa4762fbdba7f26191f26c97f64090360
-@z
-
-@x
-    Total reclaimed space: 212 B
-    ```
-@y
-    Total reclaimed space: 212 B
-    ```
-@z
+% snip code...
 
 @x
     ### Filtering (--filter) {#filter}
@@ -143,7 +75,7 @@ examples: |-
 
 @x
     The `until` filter can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the daemon machine’s time. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local
@@ -155,7 +87,7 @@ examples: |-
     fraction of a second no more than nine digits long.
 @y
     The `until` filter can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the daemon machine’s time. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local

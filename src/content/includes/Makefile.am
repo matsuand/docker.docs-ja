@@ -21,8 +21,8 @@ bases = \
 	experimental.md                   \
 	extensions-form.md                \
 	guides-get-docker.md              \
+	hub-limits.md                     \
 	install-script.md                 \
-	new-plans.md                      \
 	open-terminal.md                  \
 	root-errors.md                    \
 	swarm-compose-compat.md           \

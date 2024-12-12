@@ -18,195 +18,363 @@ keywords: storage, persistence, data persistence, mounts, bind mounts
 @z
 
 @x
-Bind mounts have been around since the early days of Docker. Bind mounts have
-limited functionality compared to [volumes](volumes.md). When you use a bind
-mount, a file or directory on the host machine is mounted into a container.
-The file or directory is referenced by its absolute path on the host
-machine. By contrast, when you use a volume, a new directory is created within
-Docker's storage directory on the host machine, and Docker manages that
-directory's contents.
+When you use a bind mount, a file or directory on the host machine is mounted
+from the host into a container. By contrast, when you use a volume, a new
+directory is created within Docker's storage directory on the host machine, and
+Docker manages that directory's contents.
 @y
-Bind mounts have been around since the early days of Docker. Bind mounts have
-limited functionality compared to [volumes](volumes.md). When you use a bind
-mount, a file or directory on the host machine is mounted into a container.
-The file or directory is referenced by its absolute path on the host
-machine. By contrast, when you use a volume, a new directory is created within
-Docker's storage directory on the host machine, and Docker manages that
-directory's contents.
+When you use a bind mount, a file or directory on the host machine is mounted
+from the host into a container. By contrast, when you use a volume, a new
+directory is created within Docker's storage directory on the host machine, and
+Docker manages that directory's contents.
 @z
 
 @x
-The file or directory does not need to exist on the Docker host already. It is
-created on demand if it does not yet exist. Bind mounts are very performant, but
-they rely on the host machine's filesystem having a specific directory structure
-available. If you are developing new Docker applications, consider using
-[named volumes](volumes.md) instead. You can't use Docker CLI commands to directly
-manage bind mounts.
+## When to use bind mounts
 @y
-The file or directory does not need to exist on the Docker host already. It is
-created on demand if it does not yet exist. Bind mounts are very performant, but
-they rely on the host machine's filesystem having a specific directory structure
-available. If you are developing new Docker applications, consider using
-[named volumes](volumes.md) instead. You can't use Docker CLI commands to directly
-manage bind mounts.
+## When to use bind mounts
 @z
 
 @x
-![Bind mounts on the Docker host](images/types-of-mounts-bind.webp?w=450&h=300)
+Bind mounts are appropriate for the following types of use case:
 @y
-![Bind mounts on the Docker host](images/types-of-mounts-bind.webp?w=450&h=300)
+Bind mounts are appropriate for the following types of use case:
 @z
 
 @x
-> [!TIP]
->
-> Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase?
-> Check out [Synchronized file shares](/manuals/desktop/features/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
+- Sharing source code or build artifacts between a development environment on
+  the Docker host and a container.
 @y
-> [!TIP]
->
-> Working with large repositories or monorepos, or with virtual file systems that are no longer scaling with your codebase?
-> Check out [Synchronized file shares](manuals/desktop/features/synchronized-file-sharing.md). It provides fast and flexible host-to-VM file sharing by enhancing bind mount performance through the use of synchronized filesystem caches.
+- Sharing source code or build artifacts between a development environment on
+  the Docker host and a container.
 @z
 
 @x
-## Choose the -v or --mount flag
+- When you want to create or generate files in a container and persist the
+  files onto the host's filesystem.
 @y
-## Choose the -v or --mount flag
+- When you want to create or generate files in a container and persist the
+  files onto the host's filesystem.
 @z
 
 @x
-In general, `--mount` is more explicit and verbose. The biggest difference is that
-the `-v` syntax combines all the options together in one field, while the `--mount`
-syntax separates them. Here is a comparison of the syntax for each flag.
+- Sharing configuration files from the host machine to containers. This is how
+  Docker provides DNS resolution to containers by default, by mounting
+  `/etc/resolv.conf` from the host machine into each container.
 @y
-In general, `--mount` is more explicit and verbose. The biggest difference is that
-the `-v` syntax combines all the options together in one field, while the `--mount`
-syntax separates them. Here is a comparison of the syntax for each flag.
+- Sharing configuration files from the host machine to containers. This is how
+  Docker provides DNS resolution to containers by default, by mounting
+  `/etc/resolv.conf` from the host machine into each container.
 @z
 
 @x
-> Tip
->
-> New users should use the `--mount` syntax. Experienced users may
-> be more familiar with the `-v` or `--volume` syntax, but are encouraged to
-> use `--mount`, because research has shown it to be easier to use.
+Bind mounts are also available for builds: you can bind mount source code from
+the host into the build container to test, lint, or compile a project.
 @y
-> Tip
->
-> New users should use the `--mount` syntax. Experienced users may
-> be more familiar with the `-v` or `--volume` syntax, but are encouraged to
-> use `--mount`, because research has shown it to be easier to use.
+Bind mounts are also available for builds: you can bind mount source code from
+the host into the build container to test, lint, or compile a project.
 @z
 
 @x
-- `-v` or `--volume`: Consists of three fields, separated by colon characters
-  (`:`). The fields must be in the correct order, and the meaning of each field
-  is not immediately obvious.
-  - In the case of bind mounts, the first field is the path to the file or
-    directory on the **host machine**.
-  - The second field is the path where the file or directory is mounted in
-    the container.
-  - The third field is optional, and is a comma-separated list of options, such
-    as `ro`, `z`, and `Z`. These options
-    are discussed below.
+## Bind-mounting over existing data
 @y
-- `-v` or `--volume`: Consists of three fields, separated by colon characters
-  (`:`). The fields must be in the correct order, and the meaning of each field
-  is not immediately obvious.
-  - In the case of bind mounts, the first field is the path to the file or
-    directory on the **host machine**.
-  - The second field is the path where the file or directory is mounted in
-    the container.
-  - The third field is optional, and is a comma-separated list of options, such
-    as `ro`, `z`, and `Z`. These options
-    are discussed below.
+## Bind-mounting over existing data
 @z
 
 @x
-- `--mount`: Consists of multiple key-value pairs, separated by commas and each
-  consisting of a `<key>=<value>` tuple. The `--mount` syntax is more verbose
-  than `-v` or `--volume`, but the order of the keys is not significant, and
-  the value of the flag is easier to understand.
-  - The `type` of the mount, which can be `bind`, `volume`, or `tmpfs`. This
-    topic discusses bind mounts, so the type is always `bind`.
-  - The `source` of the mount. For bind mounts, this is the path to the file
-    or directory on the Docker daemon host. May be specified as `source` or
-    `src`.
-  - The `destination` takes as its value the path where the file or directory
-    is mounted in the container. May be specified as `destination`, `dst`,
-    or `target`.
-  - The `readonly` option, if present, causes the bind mount to be [mounted into
-    the container as read-only](#use-a-read-only-bind-mount).
-  - The `bind-propagation` option, if present, changes the
-    [bind propagation](#configure-bind-propagation). May be one of `rprivate`,
-    `private`, `rshared`, `shared`, `rslave`, `slave`.
-  - The `--mount` flag does not support `z` or `Z` options for modifying
-    selinux labels.
+If you bind mount file or directory into a directory in the container in which
+files or directories exist, the pre-existing files are obscured by the mount.
+This is similar to if you were to save files into `/mnt` on a Linux host, and
+then mounted a USB drive into `/mnt`. The contents of `/mnt` would be obscured
+by the contents of the USB drive until the USB drive was unmounted.
 @y
-- `--mount`: Consists of multiple key-value pairs, separated by commas and each
-  consisting of a `<key>=<value>` tuple. The `--mount` syntax is more verbose
-  than `-v` or `--volume`, but the order of the keys is not significant, and
-  the value of the flag is easier to understand.
-  - The `type` of the mount, which can be `bind`, `volume`, or `tmpfs`. This
-    topic discusses bind mounts, so the type is always `bind`.
-  - The `source` of the mount. For bind mounts, this is the path to the file
-    or directory on the Docker daemon host. May be specified as `source` or
-    `src`.
-  - The `destination` takes as its value the path where the file or directory
-    is mounted in the container. May be specified as `destination`, `dst`,
-    or `target`.
-  - The `readonly` option, if present, causes the bind mount to be [mounted into
-    the container as read-only](#use-a-read-only-bind-mount).
-  - The `bind-propagation` option, if present, changes the
-    [bind propagation](#configure-bind-propagation). May be one of `rprivate`,
-    `private`, `rshared`, `shared`, `rslave`, `slave`.
-  - The `--mount` flag does not support `z` or `Z` options for modifying
-    selinux labels.
+If you bind mount file or directory into a directory in the container in which
+files or directories exist, the pre-existing files are obscured by the mount.
+This is similar to if you were to save files into `/mnt` on a Linux host, and
+then mounted a USB drive into `/mnt`. The contents of `/mnt` would be obscured
+by the contents of the USB drive until the USB drive was unmounted.
 @z
 
 @x
-The examples below show both the `--mount` and `-v` syntax where possible, and
-`--mount` is presented first.
+With containers, there's no straightforward way of removing a mount to reveal
+the obscured files again. Your best option is to recreate the container without
+the mount.
 @y
-The examples below show both the `--mount` and `-v` syntax where possible, and
-`--mount` is presented first.
+With containers, there's no straightforward way of removing a mount to reveal
+the obscured files again. Your best option is to recreate the container without
+the mount.
 @z
 
 @x
-### Differences between `-v` and `--mount` behavior
+## Considerations and constraints
 @y
-### Differences between `-v` and `--mount` behavior
+## Considerations and constraints
 @z
 
 @x
-Because the `-v` and `--volume` flags have been a part of Docker for a long
-time, their behavior cannot be changed. This means that there is one behavior
-that is different between `-v` and `--mount`.
+- Bind mounts have write access to files on the host by default.
 @y
-Because the `-v` and `--volume` flags have been a part of Docker for a long
-time, their behavior cannot be changed. This means that there is one behavior
-that is different between `-v` and `--mount`.
+- Bind mounts have write access to files on the host by default.
 @z
 
 @x
-If you use `-v` or `--volume` to bind-mount a file or directory that does not
-yet exist on the Docker host, `-v` creates the endpoint for you. It is
-always created as a directory.
+  One side effect of using bind mounts is that you can change the host
+  filesystem via processes running in a container, including creating,
+  modifying, or deleting important system files or directories. This capability
+  can have security implications. For example, it may affect non-Docker
+  processes on the host system.
 @y
-If you use `-v` or `--volume` to bind-mount a file or directory that does not
-yet exist on the Docker host, `-v` creates the endpoint for you. It is
-always created as a directory.
+  One side effect of using bind mounts is that you can change the host
+  filesystem via processes running in a container, including creating,
+  modifying, or deleting important system files or directories. This capability
+  can have security implications. For example, it may affect non-Docker
+  processes on the host system.
 @z
 
 @x
-If you use `--mount` to bind-mount a file or directory that does not
-yet exist on the Docker host, Docker does not automatically create it for
-you, but generates an error.
+  You can use the `readonly` or `ro` option to prevent the container from
+  writing to the mount.
 @y
-If you use `--mount` to bind-mount a file or directory that does not
-yet exist on the Docker host, Docker does not automatically create it for
-you, but generates an error.
+  You can use the `readonly` or `ro` option to prevent the container from
+  writing to the mount.
+@z
+
+@x
+- Bind mounts are created to the Docker daemon host, not the client.
+@y
+- Bind mounts are created to the Docker daemon host, not the client.
+@z
+
+@x
+  If you're using a remote Docker daemon, you can't create a bind mount to
+  access files on the client machine in a container.
+@y
+  If you're using a remote Docker daemon, you can't create a bind mount to
+  access files on the client machine in a container.
+@z
+
+@x
+  For Docker Desktop, the daemon runs inside a Linux VM, not directly on the
+  native host. Docker Desktop has built-in mechanisms that transparently handle
+  bind mounts, allowing you to share native host filesystem paths with
+  containers running in the virtual machine.
+@y
+  For Docker Desktop, the daemon runs inside a Linux VM, not directly on the
+  native host. Docker Desktop has built-in mechanisms that transparently handle
+  bind mounts, allowing you to share native host filesystem paths with
+  containers running in the virtual machine.
+@z
+
+@x
+- Containers with bind mounts are strongly tied to the host.
+@y
+- Containers with bind mounts are strongly tied to the host.
+@z
+
+@x
+  Bind mounts rely on the host machine's filesystem having a specific directory
+  structure available. This reliance means that containers with bind mounts may
+  fail if run on a different host without the same directory structure.
+@y
+  Bind mounts rely on the host machine's filesystem having a specific directory
+  structure available. This reliance means that containers with bind mounts may
+  fail if run on a different host without the same directory structure.
+@z
+
+@x
+## Syntax
+@y
+## Syntax
+@z
+
+@x
+To create a bind mount, you can use either the `--mount` or `--volume` flag.
+@y
+To create a bind mount, you can use either the `--mount` or `--volume` flag.
+@z
+
+@x
+```console
+$ docker run --mount type=bind,src=<host-path>,dst=<container-path>
+$ docker run --volume <host-path>:<container-path>
+```
+@y
+```console
+$ docker run --mount type=bind,src=<host-path>,dst=<container-path>
+$ docker run --volume <host-path>:<container-path>
+```
+@z
+
+@x
+In general, `--mount` is preferred. The main difference is that the `--mount`
+flag is more explicit and supports all the available options.
+@y
+In general, `--mount` is preferred. The main difference is that the `--mount`
+flag is more explicit and supports all the available options.
+@z
+
+@x
+If you use `--volume` to bind-mount a file or directory that does not yet
+exist on the Docker host, Docker automatically creates the directory on the
+host for you. It's always created as a directory.
+@y
+If you use `--volume` to bind-mount a file or directory that does not yet
+exist on the Docker host, Docker automatically creates the directory on the
+host for you. It's always created as a directory.
+@z
+
+@x
+`--mount` does not automatically create a directory if the specified mount
+path does not exist on the host. Instead, it produces an error:
+@y
+`--mount` does not automatically create a directory if the specified mount
+path does not exist on the host. Instead, it produces an error:
+@z
+
+@x
+```console
+$ docker run --mount type=bind,src=/dev/noexist,dst=/mnt/foo alpine
+docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /dev/noexist.
+```
+@y
+```console
+$ docker run --mount type=bind,src=/dev/noexist,dst=/mnt/foo alpine
+docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /dev/noexist.
+```
+@z
+
+@x
+### Options for --mount
+@y
+### Options for --mount
+@z
+
+@x
+The `--mount` flag consists of multiple key-value pairs, separated by commas
+and each consisting of a `<key>=<value>` tuple. The order of the keys isn't
+significant.
+@y
+The `--mount` flag consists of multiple key-value pairs, separated by commas
+and each consisting of a `<key>=<value>` tuple. The order of the keys isn't
+significant.
+@z
+
+@x
+```console
+$ docker run --mount type=bind,src=<host-path>,dst=<container-path>[,<key>=<value>...]
+```
+@y
+```console
+$ docker run --mount type=bind,src=<host-path>,dst=<container-path>[,<key>=<value>...]
+```
+@z
+
+@x
+Valid options for `--mount type=bind` include:
+@y
+Valid options for `--mount type=bind` include:
+@z
+
+@x
+| Option                         | Description                                                                                                     |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                    |
+| `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                     |
+| `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount). |
+| `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                        |
+@y
+| Option                         | Description                                                                                                     |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                    |
+| `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                     |
+| `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount). |
+| `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                        |
+@z
+
+@x
+```console {title="Example"}
+$ docker run --mount type=bind,src=.,dst=/project,ro,bind-propagation=rshared
+```
+@y
+```console {title="Example"}
+$ docker run --mount type=bind,src=.,dst=/project,ro,bind-propagation=rshared
+```
+@z
+
+@x
+### Options for --volume
+@y
+### Options for --volume
+@z
+
+@x
+The `--volume` or `-v` flag consists of three fields, separated by colon
+characters (`:`). The fields must be in the correct order.
+@y
+The `--volume` or `-v` flag consists of three fields, separated by colon
+characters (`:`). The fields must be in the correct order.
+@z
+
+@x
+```console
+$ docker run -v <host-path>:<container-path>[:opts]
+```
+@y
+```console
+$ docker run -v <host-path>:<container-path>[:opts]
+```
+@z
+
+@x
+The first field is the path on the host to bind mount into the container. The
+second field is the path where the file or directory is mounted in the
+container.
+@y
+The first field is the path on the host to bind mount into the container. The
+second field is the path where the file or directory is mounted in the
+container.
+@z
+
+@x
+The third field is optional, and is a comma-separated list of options. Valid
+options for `--volume` with a bind mount include:
+@y
+The third field is optional, and is a comma-separated list of options. Valid
+options for `--volume` with a bind mount include:
+@z
+
+@x
+| Option               | Description                                                                                                        |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `readonly`, `ro`     | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount).    |
+| `z`, `Z`             | Configures SELinux labeling. See [Configure the SELinux label](#configure-the-selinux-label)                       |
+| `rprivate` (default) | Sets bind propagation to `rprivate` for this mount. See [Configure bind propagation](#configure-bind-propagation). |
+| `private`            | Sets bind propagation to `private` for this mount. See [Configure bind propagation](#configure-bind-propagation).  |
+| `rshared`            | Sets bind propagation to `rshared` for this mount. See [Configure bind propagation](#configure-bind-propagation).  |
+| `shared`             | Sets bind propagation to `shared` for this mount. See [Configure bind propagation](#configure-bind-propagation).   |
+| `rslave`             | Sets bind propagation to `rslave` for this mount. See [Configure bind propagation](#configure-bind-propagation).   |
+| `slave`              | Sets bind propagation to `slave` for this mount. See [Configure bind propagation](#configure-bind-propagation).    |
+@y
+| Option               | Description                                                                                                        |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `readonly`, `ro`     | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount).    |
+| `z`, `Z`             | Configures SELinux labeling. See [Configure the SELinux label](#configure-the-selinux-label)                       |
+| `rprivate` (default) | Sets bind propagation to `rprivate` for this mount. See [Configure bind propagation](#configure-bind-propagation). |
+| `private`            | Sets bind propagation to `private` for this mount. See [Configure bind propagation](#configure-bind-propagation).  |
+| `rshared`            | Sets bind propagation to `rshared` for this mount. See [Configure bind propagation](#configure-bind-propagation).  |
+| `shared`             | Sets bind propagation to `shared` for this mount. See [Configure bind propagation](#configure-bind-propagation).   |
+| `rslave`             | Sets bind propagation to `rslave` for this mount. See [Configure bind propagation](#configure-bind-propagation).   |
+| `slave`              | Sets bind propagation to `slave` for this mount. See [Configure bind propagation](#configure-bind-propagation).    |
+@z
+
+@x
+```console {title="Example"}
+$ docker run -v .:/project:ro,rshared
+```
+@y
+```console {title="Example"}
+$ docker run -v .:/project:ro,rshared
+```
 @z
 
 @x
@@ -238,13 +406,13 @@ If you're on Windows, see also [Path conversions on Windows](manuals/desktop/tro
 @z
 
 @x
-The `--mount` and `-v` examples below produce the same result. You
-can't run them both unless you remove the `devtest` container after running the
-first one.
+The following `--mount` and `-v` examples produce the same result. You can't
+run them both unless you remove the `devtest` container after running the first
+one.
 @y
-The `--mount` and `-v` examples below produce the same result. You
-can't run them both unless you remove the `devtest` container after running the
-first one.
+The following `--mount` and `-v` examples produce the same result. You can't
+run them both unless you remove the `devtest` container after running the first
+one.
 @z
 
 @x
@@ -354,24 +522,18 @@ set to `rprivate`.
 @z
 
 @x
-Stop the container:
+Stop and remove the container:
 @y
-Stop the container:
+Stop and remove the container:
 @z
 
 @x
 ```console
-$ docker container stop devtest
-@y
-```console
-$ docker container stop devtest
-@z
-
-@x
-$ docker container rm devtest
+$ docker container rm -fv devtest
 ```
 @y
-$ docker container rm devtest
+```console
+$ docker container rm -fv devtest
 ```
 @z
 
@@ -382,17 +544,17 @@ $ docker container rm devtest
 @z
 
 @x
-If you bind-mount a directory into a non-empty directory on the container, the directory's
-existing contents are obscured by the bind mount. This can be beneficial,
-such as when you want to test a new version of your application without
-building a new image. However, it can also be surprising and this behavior
-differs from that of [docker volumes](volumes.md).
+If you bind-mount a directory into a non-empty directory on the container, the
+directory's existing contents are obscured by the bind mount. This can be
+beneficial, such as when you want to test a new version of your application
+without building a new image. However, it can also be surprising and this
+behavior differs from that of [volumes](volumes.md).
 @y
-If you bind-mount a directory into a non-empty directory on the container, the directory's
-existing contents are obscured by the bind mount. This can be beneficial,
-such as when you want to test a new version of your application without
-building a new image. However, it can also be surprising and this behavior
-differs from that of [docker volumes](volumes.md).
+If you bind-mount a directory into a non-empty directory on the container, the
+directory's existing contents are obscured by the bind mount. This can be
+beneficial, such as when you want to test a new version of your application
+without building a new image. However, it can also be surprising and this
+behavior differs from that of [volumes](volumes.md).
 @z
 
 @x
@@ -520,12 +682,12 @@ Docker host. At other times, the container only needs read access.
 @z
 
 @x
-This example modifies the one above but mounts the directory as a read-only
+This example modifies the previous one, but mounts the directory as a read-only
 bind mount, by adding `ro` to the (empty by default) list of options, after the
 mount point within the container. Where multiple options are present, separate
 them by commas.
 @y
-This example modifies the one above but mounts the directory as a read-only
+This example modifies the previous one, but mounts the directory as a read-only
 bind mount, by adding `ro` to the (empty by default) list of options, after the
 mount point within the container. Where multiple options are present, separate
 them by commas.
@@ -634,24 +796,18 @@ correctly. Look for the `Mounts` section:
 @z
 
 @x
-Stop the container:
+Stop and remove the container:
 @y
-Stop the container:
+Stop and remove the container:
 @z
 
 @x
 ```console
-$ docker container stop devtest
-@y
-```console
-$ docker container stop devtest
-@z
-
-@x
-$ docker container rm devtest
+$ docker container rm -fv devtest
 ```
 @y
-$ docker container rm devtest
+```console
+$ docker container rm -fv devtest
 ```
 @z
 
@@ -699,14 +855,14 @@ Supported values for the `bind-recursive` option are:
 
 @x
 | Value               | Description                                                                                                       |
-|:--------------------|:------------------------------------------------------------------------------------------------------------------|
+| :------------------ | :---------------------------------------------------------------------------------------------------------------- |
 | `enabled` (default) | Read-only mounts are made recursively read-only if kernel is v5.12 or later. Otherwise, submounts are read-write. |
 | `disabled`          | Submounts are ignored (not included in the bind mount).                                                           |
 | `writable`          | Submounts are read-write.                                                                                         |
 | `readonly`          | Submounts are read-only. Requires kernel v5.12 or later.                                                          |
 @y
 | Value               | Description                                                                                                       |
-|:--------------------|:------------------------------------------------------------------------------------------------------------------|
+| :------------------ | :---------------------------------------------------------------------------------------------------------------- |
 | `enabled` (default) | Read-only mounts are made recursively read-only if kernel is v5.12 or later. Otherwise, submounts are read-write. |
 | `disabled`          | Submounts are ignored (not included in the bind mount).                                                           |
 | `writable`          | Submounts are read-write.                                                                                         |
@@ -748,18 +904,16 @@ control whether `/mnt/a` and/or `/tmp/a` would exist.
 @z
 
 @x
-> [!WARNING]
->
+> [!NOTE]
 > Mount propagation doesn't work with Docker Desktop.
 @y
-> [!WARNING]
->
+> [!NOTE]
 > Mount propagation doesn't work with Docker Desktop.
 @z
 
 @x
 | Propagation setting | Description                                                                                                                                                                                                         |
-|:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `shared`            | Sub-mounts of the original mount are exposed to replica mounts, and sub-mounts of replica mounts are also propagated to the original mount.                                                                         |
 | `slave`             | similar to a shared mount, but only in one direction. If the original mount exposes a sub-mount, the replica mount can see it. However, if the replica mount exposes a sub-mount, the original mount cannot see it. |
 | `private`           | The mount is private. Sub-mounts within it are not exposed to replica mounts, and sub-mounts of replica mounts are not exposed to the original mount.                                                               |
@@ -768,7 +922,7 @@ control whether `/mnt/a` and/or `/tmp/a` would exist.
 | `rprivate`          | The default. The same as private, meaning that no mount points anywhere within the original or replica mount points propagate in either direction.                                                                  |
 @y
 | Propagation setting | Description                                                                                                                                                                                                         |
-|:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `shared`            | Sub-mounts of the original mount are exposed to replica mounts, and sub-mounts of replica mounts are also propagated to the original mount.                                                                         |
 | `slave`             | similar to a shared mount, but only in one direction. If the original mount exposes a sub-mount, the replica mount can see it. However, if the replica mount exposes a sub-mount, the original mount cannot see it. |
 | `private`           | The mount is private. Sub-mounts within it are not exposed to replica mounts, and sub-mounts of replica mounts are not exposed to the original mount.                                                               |
@@ -880,18 +1034,18 @@ Now if you create `/app/foo/`, `/app2/foo/` also exists.
 @z
 
 @x
-## Configure the selinux label
+## Configure the SELinux label
 @y
-## Configure the selinux label
+## Configure the SELinux label
 @z
 
 @x
-If you use `selinux` you can add the `z` or `Z` options to modify the selinux
+If you use SELinux, you can add the `z` or `Z` options to modify the SELinux
 label of the host file or directory being mounted into the container. This
 affects the file or directory on the host machine itself and can have
 consequences outside of the scope of Docker.
 @y
-If you use `selinux` you can add the `z` or `Z` options to modify the selinux
+If you use SELinux, you can add the `z` or `Z` options to modify the SELinux
 label of the host file or directory being mounted into the container. This
 affects the file or directory on the host machine itself and can have
 consequences outside of the scope of Docker.
@@ -920,13 +1074,13 @@ inoperable and you may need to relabel the host machine files by hand.
 @x
 > [!IMPORTANT]
 >
-> When using bind mounts with services, selinux labels
+> When using bind mounts with services, SELinux labels
 > (`:Z` and `:z`), as well as `:ro` are ignored. See
 > [moby/moby #32579](https://github.com/moby/moby/issues/32579) for details.
 @y
 > [!IMPORTANT]
 >
-> When using bind mounts with services, selinux labels
+> When using bind mounts with services, SELinux labels
 > (`:Z` and `:z`), as well as `:ro` are ignored. See
 > [moby/moby #32579](https://github.com/moby/moby/issues/32579) for details.
 @z
@@ -940,9 +1094,9 @@ the bind mount's contents:
 @z
 
 @x
-It is not possible to modify the selinux label using the `--mount` flag.
+It is not possible to modify the SELinux label using the `--mount` flag.
 @y
-It is not possible to modify the selinux label using the `--mount` flag.
+It is not possible to modify the SELinux label using the `--mount` flag.
 @z
 
 @x
@@ -964,9 +1118,9 @@ $ docker run -d \
 @z
 
 @x
-## Use a bind mount with compose
+## Use a bind mount with Docker Compose
 @y
-## Use a bind mount with compose
+## Use a bind mount with Docker Compose
 @z
 
 @x

@@ -206,9 +206,9 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Overview"
         url: "/subscription/"
       - text: "Subscriptions and features"
-        url: "/subscription/core-subscription/details/"
-      - text: "Upgrade"
-        url: "/subscription/core-subscription/upgrade/"
+        url: "/subscription/details/"
+      - text: "Change subscription"
+        url: "/subscription/change/"
 @y
   - title: Subscription
     icon: card_membership
@@ -218,9 +218,9 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "概要"
         url: "subscription/"
       - text: "サブスクリプションと機能"
-        url: "subscription/core-subscription/details/"
-      - text: "アップグレード"
-        url: "subscription/core-subscription/upgrade/"
+        url: "subscription/details/"
+      - text: "サブスクリプションの変更"
+        url: "subscription/change/"
 @z
 
 @x
@@ -232,9 +232,9 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Overview"
         url: "/billing/"
       - text: "Update payment method"
-        url: "/billing/core-billing/payment-method/"
+        url: "/billing/payment-method/"
       - text: "View billing history"
-        url: "/billing/core-billing/history/"
+        url: "/billing/history/"
 @y
   - title: Billing
     icon: payments
@@ -244,9 +244,9 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "概要"
         url: "billing/"
       - text: "支払い方法の更新"
-        url: "billing/core-billing/payment-method/"
+        url: "billing/payment-method/"
       - text: "購入履歴の参照"
-        url: "billing/core-billing/history/"
+        url: "billing/history/"
 @z
 
 @x

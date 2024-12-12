@@ -16055,10 +16055,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the TTY session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the TTY session in characters"
           type: "integer"
       tags: ["Container"]
@@ -16482,10 +16484,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the TTY session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the TTY session in characters"
           type: "integer"
       tags: ["Container"]
@@ -19046,10 +19050,12 @@ paths:
             all tags of the given image that are present in the local image store
             are pushed.
           type: "string"
-        - name: "X-Registry-Auth"
-          in: "header"
+        - name: "platform"
+          type: "string"
+          in: "query"
           description: |
-            A base64url-encoded auth configuration.
+            JSON-encoded OCI platform to select the platform-variant to push.
+            If not provided, all available variants will attempt to be pushed.
 @y
             Use the `tag` parameter to specify the tag to push.
           type: "string"
@@ -19061,6 +19067,34 @@ paths:
             all tags of the given image that are present in the local image store
             are pushed.
           type: "string"
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON-encoded OCI platform to select the platform-variant to push.
+            If not provided, all available variants will attempt to be pushed.
+@z
+
+@x
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to push to the registry. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@y
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to push to the registry. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
+        - name: "X-Registry-Auth"
+          in: "header"
+          description: |
+            A base64url-encoded auth configuration.
+@y
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
         - name: "X-Registry-Auth"
           in: "header"
           description: |
@@ -19072,11 +19106,6 @@ paths:
             details.
           type: "string"
           required: true
-        - name: "platform"
-          in: "query"
-          description: "Select a platform-specific manifest to be pushed. OCI platform (JSON encoded)"
-          type: "string"
-          x-nullable: true
       tags: ["Image"]
   /images/{name}/tag:
     post:
@@ -19128,11 +19157,6 @@ paths:
             details.
           type: "string"
           required: true
-        - name: "platform"
-          in: "query"
-          description: "Select a platform-specific manifest to be pushed. OCI platform (JSON encoded)"
-          type: "string"
-          x-nullable: true
       tags: ["Image"]
   /images/{name}/tag:
     post:
@@ -20817,10 +20841,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the TTY session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the TTY session in characters"
           type: "integer"
       tags: ["Exec"]
@@ -21116,10 +21142,12 @@ paths:
           type: "string"
         - name: "h"
           in: "query"
+          required: true
           description: "Height of the TTY session in characters"
           type: "integer"
         - name: "w"
           in: "query"
+          required: true
           description: "Width of the TTY session in characters"
           type: "integer"
       tags: ["Exec"]

@@ -42,9 +42,9 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
-[Docker Engine API v1.47](https://docs.docker.com/engine/api/v1.47/) documentation
+[Docker Engine API v1.47](https://docs.docker.com/reference/api/engine/version/v1.47/) documentation
 @y
-[Docker Engine API v1.47](https://docs.docker.com/engine/api/v1.47/) documentation
+[Docker Engine API v1.47](https://docs.docker.com/reference/api/engine/version/v1.47/) documentation
 @z
 
 @x
@@ -72,9 +72,9 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
-[Docker Engine API v1.46](https://docs.docker.com/engine/api/v1.46/) documentation
+[Docker Engine API v1.46](https://docs.docker.com/reference/api/engine/version/v1.46/) documentation
 @y
-[Docker Engine API v1.46](https://docs.docker.com/engine/api/v1.46/) documentation
+[Docker Engine API v1.46](https://docs.docker.com/reference/api/engine/version/v1.46/) documentation
 @z
 
 @x
@@ -232,9 +232,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.45](https://docs.docker.com/engine/api/v1.45/) documentation
+[Docker Engine API v1.45](https://docs.docker.com/reference/api/engine/version/v1.45/) documentation
 @y
-[Docker Engine API v1.45](https://docs.docker.com/engine/api/v1.45/) documentation
+[Docker Engine API v1.45](https://docs.docker.com/reference/api/engine/version/v1.45/) documentation
 @z
 
 @x
@@ -274,9 +274,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.44](https://docs.docker.com/engine/api/v1.44/) documentation
+[Docker Engine API v1.44](https://docs.docker.com/reference/api/engine/version/v1.44/) documentation
 @y
-[Docker Engine API v1.44](https://docs.docker.com/engine/api/v1.44/) documentation
+[Docker Engine API v1.44](https://docs.docker.com/reference/api/engine/version/v1.44/) documentation
 @z
 
 @x
@@ -418,9 +418,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.43](https://docs.docker.com/engine/api/v1.43/) documentation
+[Docker Engine API v1.43](https://docs.docker.com/reference/api/engine/version/v1.43/) documentation
 @y
-[Docker Engine API v1.43](https://docs.docker.com/engine/api/v1.43/) documentation
+[Docker Engine API v1.43](https://docs.docker.com/reference/api/engine/version/v1.43/) documentation
 @z
 
 @x
@@ -458,9 +458,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.42](https://docs.docker.com/engine/api/v1.42/) documentation
+[Docker Engine API v1.42](https://docs.docker.com/reference/api/engine/version/v1.42/) documentation
 @y
-[Docker Engine API v1.42](https://docs.docker.com/engine/api/v1.42/) documentation
+[Docker Engine API v1.42](https://docs.docker.com/reference/api/engine/version/v1.42/) documentation
 @z
 
 @x
@@ -690,9 +690,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41/) documentation
+[Docker Engine API v1.41](https://docs.docker.com/reference/api/engine/version/v1.41/) documentation
 @y
-[Docker Engine API v1.41](https://docs.docker.com/engine/api/v1.41/) documentation
+[Docker Engine API v1.41](https://docs.docker.com/reference/api/engine/version/v1.41/) documentation
 @z
 
 @x
@@ -880,9 +880,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.40](https://docs.docker.com/engine/api/v1.40/) documentation
+[Docker Engine API v1.40](https://docs.docker.com/reference/api/engine/version/v1.40/) documentation
 @y
-[Docker Engine API v1.40](https://docs.docker.com/engine/api/v1.40/) documentation
+[Docker Engine API v1.40](https://docs.docker.com/reference/api/engine/version/v1.40/) documentation
 @z
 
 @x
@@ -1020,9 +1020,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.39](https://docs.docker.com/engine/api/v1.39/) documentation
+[Docker Engine API v1.39](https://docs.docker.com/reference/api/engine/version/v1.39/) documentation
 @y
-[Docker Engine API v1.39](https://docs.docker.com/engine/api/v1.39/) documentation
+[Docker Engine API v1.39](https://docs.docker.com/reference/api/engine/version/v1.39/) documentation
 @z
 
 @x
@@ -1060,9 +1060,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.38](https://docs.docker.com/engine/api/v1.38/) documentation
+[Docker Engine API v1.38](https://docs.docker.com/reference/api/engine/version/v1.38/) documentation
 @y
-[Docker Engine API v1.38](https://docs.docker.com/engine/api/v1.38/) documentation
+[Docker Engine API v1.38](https://docs.docker.com/reference/api/engine/version/v1.38/) documentation
 @z
 
 @x
@@ -1082,9 +1082,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.37](https://docs.docker.com/engine/api/v1.37/) documentation
+[Docker Engine API v1.37](https://docs.docker.com/reference/api/engine/version/v1.37/) documentation
 @y
-[Docker Engine API v1.37](https://docs.docker.com/engine/api/v1.37/) documentation
+[Docker Engine API v1.37](https://docs.docker.com/reference/api/engine/version/v1.37/) documentation
 @z
 
 @x
@@ -1108,9 +1108,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.36](https://docs.docker.com/engine/api/v1.36/) documentation
+[Docker Engine API v1.36](https://docs.docker.com/reference/api/engine/version/v1.36/) documentation
 @y
-[Docker Engine API v1.36](https://docs.docker.com/engine/api/v1.36/) documentation
+[Docker Engine API v1.36](https://docs.docker.com/reference/api/engine/version/v1.36/) documentation
 @z
 
 @x
@@ -1126,9 +1126,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.35](https://docs.docker.com/engine/api/v1.35/) documentation
+[Docker Engine API v1.35](https://docs.docker.com/reference/api/engine/version/v1.35/) documentation
 @y
-[Docker Engine API v1.35](https://docs.docker.com/engine/api/v1.35/) documentation
+[Docker Engine API v1.35](https://docs.docker.com/reference/api/engine/version/v1.35/) documentation
 @z
 
 @x
@@ -1176,9 +1176,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.34](https://docs.docker.com/engine/api/v1.34/) documentation
+[Docker Engine API v1.34](https://docs.docker.com/reference/api/engine/version/v1.34/) documentation
 @y
-[Docker Engine API v1.34](https://docs.docker.com/engine/api/v1.34/) documentation
+[Docker Engine API v1.34](https://docs.docker.com/reference/api/engine/version/v1.34/) documentation
 @z
 
 @x
@@ -1204,9 +1204,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.33](https://docs.docker.com/engine/api/v1.33/) documentation
+[Docker Engine API v1.33](https://docs.docker.com/reference/api/engine/version/v1.33/) documentation
 @y
-[Docker Engine API v1.33](https://docs.docker.com/engine/api/v1.33/) documentation
+[Docker Engine API v1.33](https://docs.docker.com/reference/api/engine/version/v1.33/) documentation
 @z
 
 @x
@@ -1224,9 +1224,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.32](https://docs.docker.com/engine/api/v1.32/) documentation
+[Docker Engine API v1.32](https://docs.docker.com/reference/api/engine/version/v1.32/) documentation
 @y
-[Docker Engine API v1.32](https://docs.docker.com/engine/api/v1.32/) documentation
+[Docker Engine API v1.32](https://docs.docker.com/reference/api/engine/version/v1.32/) documentation
 @z
 
 @x
@@ -1258,9 +1258,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.31](https://docs.docker.com/engine/api/v1.31/) documentation
+[Docker Engine API v1.31](https://docs.docker.com/reference/api/engine/version/v1.31/) documentation
 @y
-[Docker Engine API v1.31](https://docs.docker.com/engine/api/v1.31/) documentation
+[Docker Engine API v1.31](https://docs.docker.com/reference/api/engine/version/v1.31/) documentation
 @z
 
 @x
@@ -1326,9 +1326,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.30](https://docs.docker.com/engine/api/v1.30/) documentation
+[Docker Engine API v1.30](https://docs.docker.com/reference/api/engine/version/v1.30/) documentation
 @y
-[Docker Engine API v1.30](https://docs.docker.com/engine/api/v1.30/) documentation
+[Docker Engine API v1.30](https://docs.docker.com/reference/api/engine/version/v1.30/) documentation
 @z
 
 @x
@@ -1378,9 +1378,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.29](https://docs.docker.com/engine/api/v1.29/) documentation
+[Docker Engine API v1.29](https://docs.docker.com/reference/api/engine/version/v1.29/) documentation
 @y
-[Docker Engine API v1.29](https://docs.docker.com/engine/api/v1.29/) documentation
+[Docker Engine API v1.29](https://docs.docker.com/reference/api/engine/version/v1.29/) documentation
 @z
 
 @x
@@ -1412,9 +1412,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.28](https://docs.docker.com/engine/api/v1.28/) documentation
+[Docker Engine API v1.28](https://docs.docker.com/reference/api/engine/version/v1.28/) documentation
 @y
-[Docker Engine API v1.28](https://docs.docker.com/engine/api/v1.28/) documentation
+[Docker Engine API v1.28](https://docs.docker.com/reference/api/engine/version/v1.28/) documentation
 @z
 
 @x
@@ -1454,9 +1454,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.27](https://docs.docker.com/engine/api/v1.27/) documentation
+[Docker Engine API v1.27](https://docs.docker.com/reference/api/engine/version/v1.27/) documentation
 @y
-[Docker Engine API v1.27](https://docs.docker.com/engine/api/v1.27/) documentation
+[Docker Engine API v1.27](https://docs.docker.com/reference/api/engine/version/v1.27/) documentation
 @z
 
 @x
@@ -1472,9 +1472,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.26](https://docs.docker.com/engine/api/v1.26/) documentation
+[Docker Engine API v1.26](https://docs.docker.com/reference/api/engine/version/v1.26/) documentation
 @y
-[Docker Engine API v1.26](https://docs.docker.com/engine/api/v1.26/) documentation
+[Docker Engine API v1.26](https://docs.docker.com/reference/api/engine/version/v1.26/) documentation
 @z
 
 @x
@@ -1490,9 +1490,9 @@ are not part of the underlying image's Config, and deprecated:
 @z
 
 @x
-[Docker Engine API v1.25](https://docs.docker.com/engine/api/v1.25/) documentation
+[Docker Engine API v1.25](https://docs.docker.com/reference/api/engine/version/v1.25/) documentation
 @y
-[Docker Engine API v1.25](https://docs.docker.com/engine/api/v1.25/) documentation
+[Docker Engine API v1.25](https://docs.docker.com/reference/api/engine/version/v1.25/) documentation
 @z
 
 @x

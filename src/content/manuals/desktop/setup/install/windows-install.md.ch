@@ -628,7 +628,7 @@ Docker Desktop を起動するには、以下を実行します。
 @z
 
 @x
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - [Get started with Docker](/get-started/introduction/_index.md).
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, and
@@ -637,7 +637,7 @@ Docker Desktop を起動するには、以下を実行します。
 - [Release notes](/manuals/desktop/release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
-- [Docker のコアサブスクリプション](https://www.docker.com/pricing/) を確認して Docker のサービス内容を確認してください。
+- [Docker のサブスクリプション](https://www.docker.com/pricing/) を確認して Docker のサービス内容を確認してください。
 - [Docker をはじめよう](get-started/introduction/_index.md)。
 - [Docker Desktop の確認](manuals/desktop/use-desktop/_index.md) を行って、その全機能を見てください。
 - [トラブルシューティング](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) では、一般的な問題、回避策、サポートの受け方などについて説明しています。

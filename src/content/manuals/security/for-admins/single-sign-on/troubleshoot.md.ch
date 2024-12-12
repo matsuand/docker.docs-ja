@@ -183,15 +183,13 @@ Possible solutions:
 
 @x
  * Add more Docker Business subscription seats to the organization. For details,
-   see [Add seats to your
-  subscription](/subscription/core-subscription/add-seats/).
+   see [Add seats to your subscription](../../../subscription/manage-seats.md).
  * Remove some users or pending invitations from your organization to make more
    seats available. For more details, see [Manage organization
    members](/admin/organization/members/).
 @y
  * Add more Docker Business subscription seats to the organization. For details,
-   see [Add seats to your
-  subscription](__SUBDIR__/subscription/core-subscription/add-seats/).
+   see [Add seats to your subscription](../../../subscription/manage-seats.md).
  * Remove some users or pending invitations from your organization to make more
    seats available. For more details, see [Manage organization
    members](__SUBDIR__/admin/organization/members/).

@@ -70,21 +70,9 @@ Docker アカウントの無効化を行うにあたっては、以下の条件�
 @z
 
 @x
-- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/core-subscription/downgrade.md).
+- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/change.md).
 @y
-- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/core-subscription/downgrade.md).
-@z
-
-@x
-- If you have an active Docker Build Cloud Paid subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
-@y
-- If you have an active Docker Build Cloud Paid subscription, [downgrade it to a Docker Build Cloud Starter subscription](../billing/build-billing.md#downgrade-your-subscription).
-@z
-
-@x
-- If you have an active Docker Scout subscription, [downgrade it to a Docker Scout Free subscription](../billing/scout-billing.md#downgrade-your-subscription).
-@y
-- If you have an active Docker Scout subscription, [downgrade it to a Docker Scout Free subscription](../billing/scout-billing.md#downgrade-your-subscription).
+- If you have an active Docker subscription, [downgrade it to a Docker Personal subscription](../subscription/change.md).
 @z
 
 @x

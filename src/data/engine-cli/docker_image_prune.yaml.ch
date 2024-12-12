@@ -83,7 +83,7 @@ examples: |-
 
 @x
     The `until` filter can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the daemon machine’s time. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local
@@ -95,7 +95,7 @@ examples: |-
     fraction of a second no more than nine digits long.
 @y
     The `until` filter can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the daemon machine’s time. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
     `2006-01-02T15:04:05.999999999`, `2006-01-02T07:00`, and `2006-01-02`. The local

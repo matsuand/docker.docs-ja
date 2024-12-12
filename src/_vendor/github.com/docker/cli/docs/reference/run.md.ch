@@ -544,10 +544,10 @@ Exit code `125` indicates that the error is with Docker daemon itself.
 
 @x
 Exit code `126` indicates that the specified contained command can't be invoked.
-The container command in the following example is: `/etc; echo $?`.
+The container command in the following example is: `/etc`.
 @y
 Exit code `126` indicates that the specified contained command can't be invoked.
-The container command in the following example is: `/etc; echo $?`.
+The container command in the following example is: `/etc`.
 @z
 
 % snip command...

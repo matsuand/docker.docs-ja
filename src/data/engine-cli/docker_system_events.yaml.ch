@@ -47,57 +47,7 @@ long: |-
     Docker containers report the following events:
 @z
 
-@x
-    - `attach`
-    - `commit`
-    - `copy`
-    - `create`
-    - `destroy`
-    - `detach`
-    - `die`
-    - `exec_create`
-    - `exec_detach`
-    - `exec_die`
-    - `exec_start`
-    - `export`
-    - `health_status`
-    - `kill`
-    - `oom`
-    - `pause`
-    - `rename`
-    - `resize`
-    - `restart`
-    - `start`
-    - `stop`
-    - `top`
-    - `unpause`
-    - `update`
-@y
-    - `attach`
-    - `commit`
-    - `copy`
-    - `create`
-    - `destroy`
-    - `detach`
-    - `die`
-    - `exec_create`
-    - `exec_detach`
-    - `exec_die`
-    - `exec_start`
-    - `export`
-    - `health_status`
-    - `kill`
-    - `oom`
-    - `pause`
-    - `rename`
-    - `resize`
-    - `restart`
-    - `start`
-    - `stop`
-    - `top`
-    - `unpause`
-    - `update`
-@z
+% snip events...
 
 @x
     #### Images
@@ -111,25 +61,7 @@ long: |-
     Docker images report the following events:
 @z
 
-@x
-    - `delete`
-    - `import`
-    - `load`
-    - `pull`
-    - `push`
-    - `save`
-    - `tag`
-    - `untag`
-@y
-    - `delete`
-    - `import`
-    - `load`
-    - `pull`
-    - `push`
-    - `save`
-    - `tag`
-    - `untag`
-@z
+% snip events...
 
 @x
     #### Plugins
@@ -143,17 +75,7 @@ long: |-
     Docker plugins report the following events:
 @z
 
-@x
-    - `enable`
-    - `disable`
-    - `install`
-    - `remove`
-@y
-    - `enable`
-    - `disable`
-    - `install`
-    - `remove`
-@z
+% snip events...
 
 @x
     #### Volumes
@@ -167,17 +89,7 @@ long: |-
     Docker volumes report the following events:
 @z
 
-@x
-    - `create`
-    - `destroy`
-    - `mount`
-    - `unmount`
-@y
-    - `create`
-    - `destroy`
-    - `mount`
-    - `unmount`
-@z
+% snip events...
 
 @x
     #### Networks
@@ -191,19 +103,7 @@ long: |-
     Docker networks report the following events:
 @z
 
-@x
-    - `create`
-    - `connect`
-    - `destroy`
-    - `disconnect`
-    - `remove`
-@y
-    - `create`
-    - `connect`
-    - `destroy`
-    - `disconnect`
-    - `remove`
-@z
+% snip events...
 
 @x
     #### Daemons
@@ -217,11 +117,7 @@ long: |-
     Docker daemons report the following events:
 @z
 
-@x
-    - `reload`
-@y
-    - `reload`
-@z
+% snip events...
 
 @x
     #### Services
@@ -235,15 +131,7 @@ long: |-
     Docker services report the following events:
 @z
 
-@x
-    - `create`
-    - `remove`
-    - `update`
-@y
-    - `create`
-    - `remove`
-    - `update`
-@z
+% snip events...
 
 @x
     #### Nodes
@@ -257,15 +145,7 @@ long: |-
     Docker nodes report the following events:
 @z
 
-@x
-    - `create`
-    - `remove`
-    - `update`
-@y
-    - `create`
-    - `remove`
-    - `update`
-@z
+% snip events...
 
 @x
     #### Secrets
@@ -279,15 +159,7 @@ long: |-
     Docker secrets report the following events:
 @z
 
-@x
-    - `create`
-    - `remove`
-    - `update`
-@y
-    - `create`
-    - `remove`
-    - `update`
-@z
+% snip events...
 
 @x
     #### Configs
@@ -301,15 +173,7 @@ long: |-
     Docker configs report the following events:
 @z
 
-@x
-    - `create`
-    - `remove`
-    - `update`
-@y
-    - `create`
-    - `remove`
-    - `update`
-@z
+% snip events...
 
 @x
     ### Limiting, filtering, and formatting the output
@@ -325,7 +189,7 @@ long: |-
 
 @x
     The `--since` and `--until` parameters can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the client machine’s time. If you do not provide the `--since` option,
     the command returns only new and/or live events. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
@@ -338,7 +202,7 @@ long: |-
     fraction of a second no more than nine digits long.
 @y
     The `--since` and `--until` parameters can be Unix timestamps, date formatted
-    timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed
+    timestamps, or Go duration strings supported by [ParseDuration](https://pkg.go.dev/time#ParseDuration) (e.g. `10m`, `1h30m`) computed
     relative to the client machine’s time. If you do not provide the `--since` option,
     the command returns only new and/or live events. Supported formats for date
     formatted time stamps include RFC3339Nano, RFC3339, `2006-01-02T15:04:05`,
@@ -452,123 +316,63 @@ long: |-
 @x
     If a format is set to `{{json .}}`, events are streamed in the JSON Lines format.
     For information about JSON Lines, see <https://jsonlines.org/>.
+@y
+    If a format is set to `{{json .}}`, events are streamed in the JSON Lines format.
+    For information about JSON Lines, see <https://jsonlines.org/>.
+@z
+
+@x
 usage: docker system events [OPTIONS]
-pname: docker system
-plink: docker_system.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
+@y
+usage: docker system events [OPTIONS]
+@z
+
+% options:
+
+@x filter
       description: Filter output based on conditions provided
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
+@y
+      description: Filter output based on conditions provided
+@z
+
+@x format
       description: |-
         Format output using a custom template:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: since
-      value_type: string
+@y
+      description: |-
+        Format output using a custom template:
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+@x since
       description: Show all events created since timestamp
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: until
-      value_type: string
+@y
+      description: Show all events created since timestamp
+@z
+
+@x until
       description: Stream events until this timestamp
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Stream events until this timestamp
+@z
+
+%inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     ### Basic example
 @y
-    If a format is set to `{{json .}}`, events are streamed in the JSON Lines format.
-    For information about JSON Lines, see <https://jsonlines.org/>.
-usage: docker system events [OPTIONS]
-pname: docker system
-plink: docker_system.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
-      description: Filter output based on conditions provided
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: since
-      value_type: string
-      description: Show all events created since timestamp
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: until
-      value_type: string
-      description: Stream events until this timestamp
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     ### Basic example
 @z

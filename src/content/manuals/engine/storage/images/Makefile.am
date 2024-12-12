@@ -3,10 +3,6 @@
 ##
 
 copyfiles = \
-	types-of-mounts-bind.webp   \
-	types-of-mounts-tmpfs.webp  \
-	types-of-mounts-volume.webp \
-	types-of-mounts.webp        \
 	volumes-shared-storage.webp
 
 include $(top_srcdir)/build-aux/common.mk

@@ -112,7 +112,7 @@ Docker Desktop のインストールを正常に行うためには、[一般的�
 @z
 
 @x
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
@@ -121,7 +121,7 @@ Docker Desktop のインストールを正常に行うためには、[一般的�
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.

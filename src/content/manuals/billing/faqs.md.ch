@@ -102,9 +102,9 @@ Starting July 1, 2024, Docker will begin collecting sales tax on subscription fe
 @z
 
 @x
-To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](/billing/core-billing/details/).
+To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](/billing/details/).
 @y
-To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](__SUBDIR__/billing/core-billing/details/).
+To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](__SUBDIR__/billing/details/).
 @z
 
 @x

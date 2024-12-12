@@ -244,11 +244,11 @@ your DNF repositories) and set up the repository.
 @x
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:{{% param "docker_ce_version" %}}-1.el9`.
 @y
    Install a specific version by its fully qualified package name, which is
    the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:27.3.1-1.el9`.
+   separated by a hyphen (`-`). For example, `docker-ce-3:{{% param "docker_ce_version" %}}-1.el9`.
 @z
 
 @x

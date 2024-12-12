@@ -38,6 +38,16 @@ parameters by defining garbage collection policies.
 @z
 
 @x
+Each of the policy's parameters corresponds with a `docker buildx prune` command line
+argument. Details can be found in the
+`docker buildx prune` [documentation](/reference/cli/docker/buildx/prune.md).
+@y
+Each of the policy's parameters corresponds with a `docker buildx prune` command line
+argument. Details can be found in the
+`docker buildx prune` [documentation](reference/cli/docker/buildx/prune.md).
+@z
+
+@x
 ## Configuration
 @y
 ## Configuration
