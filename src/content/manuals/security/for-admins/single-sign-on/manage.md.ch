@@ -183,12 +183,12 @@ To add a guest that isn't verified through your IdP:
 
 @x
 1. Sign in to the [Admin Console](https://app.docker.com/admin).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select your organization or company from the **Choose profile** page, then select **Members**.
 3. Select **Invite**.
 4. Follow the on-screen instructions to invite the user.
 @y
 1. Sign in to the [Admin Console](https://app.docker.com/admin).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select your organization or company from the **Choose profile** page, then select **Members**.
 3. Select **Invite**.
 4. Follow the on-screen instructions to invite the user.
 @z
@@ -207,12 +207,12 @@ To remove a user:
 
 @x
 1. Sign in to [Admin Console](https://app.docker.com/admin).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select your organization or company from the **Choose profile** page, then select **Members**.
 3. Select the action icon next to a user’s name, and then select **Remove member**, if you're an organization, or **Remove user**, if you're a company.
 4. Follow the on-screen instructions to remove the user.
 @y
 1. Sign in to [Admin Console](https://app.docker.com/admin).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select your organization or company from the **Choose profile** page, then select **Members**.
 3. Select the action icon next to a user’s name, and then select **Remove member**, if you're an organization, or **Remove user**, if you're a company.
 4. Follow the on-screen instructions to remove the user.
 @z

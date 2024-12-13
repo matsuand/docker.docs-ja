@@ -36,6 +36,144 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
+## 4.37.0
+@y
+## 4.37.0
+@z
+
+@x
+{{< release-date date="2024-12-12" >}}
+@y
+{{< release-date date="2024-12-12" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.37.0" build_path="/178034/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.37.0" build_path="/178034/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- You can now perform key operations such as starting, stopping, restarting, and checking the status of Docker Desktop directly from the [command line](/manuals/desktop/features/desktop-cli.md) (Beta).
+- The AI Catalog in Docker Hub is available directly through Docker Desktop.
+@y
+- You can now perform key operations such as starting, stopping, restarting, and checking the status of Docker Desktop directly from the [command line](manuals/desktop/features/desktop-cli.md) (Beta).
+- The AI Catalog in Docker Hub is available directly through Docker Desktop.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Buildx v0.19.2](https://github.com/docker/buildx/releases/tag/v0.19.2)
+- [Docker Compose v2.31.0](https://github.com/docker/compose/releases/tag/v2.31.0)
+- [Docker Engine v27.4.0](https://docs.docker.com/engine/release-notes/27/#2740)
+- [Docker Scout CLI v1.15.1](https://github.com/docker/scout-cli/releases/tag/v1.15.1)
+- [NVIDIA Container Toolkit v1.17.2](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.2)
+@y
+- [Docker Buildx v0.19.2](https://github.com/docker/buildx/releases/tag/v0.19.2)
+- [Docker Compose v2.31.0](https://github.com/docker/compose/releases/tag/v2.31.0)
+- [Docker Engine v27.4.0](https://docs.docker.com/engine/release-notes/27/#2740)
+- [Docker Scout CLI v1.15.1](https://github.com/docker/scout-cli/releases/tag/v1.15.1)
+- [NVIDIA Container Toolkit v1.17.2](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- The default disk usage limit for Docker Engine in new installations is now 1TB.
+- Fixed an issue where containers could not establish loopback `AF_VSOCK` connections.
+- Fixed a bug where resetting default settings would also reset the CLI context.
+- Fixed a bug where the Docker Desktop Dashboard would get out of sync with the Docker daemon after restarting the engine while in Resource Saver mode (Windows with WSL2 backend only) or after switching engines (macOS).
+- Fixed a bug where Resource Saver mode would fail to re-engage after restarting the engine while in Resource Saver mode.
+@y
+- The default disk usage limit for Docker Engine in new installations is now 1TB.
+- Fixed an issue where containers could not establish loopback `AF_VSOCK` connections.
+- Fixed a bug where resetting default settings would also reset the CLI context.
+- Fixed a bug where the Docker Desktop Dashboard would get out of sync with the Docker daemon after restarting the engine while in Resource Saver mode (Windows with WSL2 backend only) or after switching engines (macOS).
+- Fixed a bug where Resource Saver mode would fail to re-engage after restarting the engine while in Resource Saver mode.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed a bug that would create certain user directories with root permission when running the uninstaller binary twice with `sudo`.
+- Fixed a bug where the in-app update would fail if Docker Desktop was installed by a non-admin user or if the current user was previously an administrator. Fixes [docker/for-mac#7403](https://github.com/docker/for-mac/issues/7403) and [docker/for-mac#6920](https://github.com/docker/for-mac/issues/6920).
+@y
+- Fixed a bug that would create certain user directories with root permission when running the uninstaller binary twice with `sudo`.
+- Fixed a bug where the in-app update would fail if Docker Desktop was installed by a non-admin user or if the current user was previously an administrator. Fixes [docker/for-mac#7403](https://github.com/docker/for-mac/issues/7403) and [docker/for-mac#6920](https://github.com/docker/for-mac/issues/6920).
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Added support for Windows on ARM using WSL 2 version 2.3.24 and later to single distribution mode on WSL 2.
+- Fixed an issue where Docker Desktop would fail to start. Fixes [docker/for-win#14453](https://github.com/docker/for-win/issues/14453)
+@y
+- Added support for Windows on ARM using WSL 2 version 2.3.24 and later to single distribution mode on WSL 2.
+- Fixed an issue where Docker Desktop would fail to start. Fixes [docker/for-win#14453](https://github.com/docker/for-win/issues/14453)
+@z
+
+@x
+### Known issues
+@y
+### Known issues
+@z
+
+@x
+- Kubernetes cluster may not start if **Registry Access Manager** is enabled. As a workaround, add `registry.k8s.io` and `<geo>-docker.pkg.dev` to **Registry Access Management** policies.
+@y
+- Kubernetes cluster may not start if **Registry Access Manager** is enabled. As a workaround, add `registry.k8s.io` and `<geo>-docker.pkg.dev` to **Registry Access Management** policies.
+@z
+
+@x
+### Deprecation
+@y
+### Deprecation
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- QEMU (Legacy) as a VMM on Apple Silicon will be removed in a future version. It is recommended that you switch to the Apple Virtualization Framework for increased performance and stability. If you encounter an issue, [contact Docker Support](https://www.docker.com/support/) or [file a GitHub issue](https://github.com/docker/for-mac/issues).
+- osxfs (Legacy) will be removed in a future version. It is recommended that you switch to VirtioFS for increased performance. If you encounter an issue, [contact Docker Support](https://www.docker.com/support/) or [file a GitHub issue](https://github.com/docker/for-mac/issues).
+@y
+- QEMU (Legacy) as a VMM on Apple Silicon will be removed in a future version. It is recommended that you switch to the Apple Virtualization Framework for increased performance and stability. If you encounter an issue, [contact Docker Support](https://www.docker.com/support/) or [file a GitHub issue](https://github.com/docker/for-mac/issues).
+- osxfs (Legacy) will be removed in a future version. It is recommended that you switch to VirtioFS for increased performance. If you encounter an issue, [contact Docker Support](https://www.docker.com/support/) or [file a GitHub issue](https://github.com/docker/for-mac/issues).
+@z
+
+@x
 ## 4.36.0
 @y
 ## 4.36.0

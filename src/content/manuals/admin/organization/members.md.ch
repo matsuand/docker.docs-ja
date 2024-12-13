@@ -186,14 +186,12 @@ To resend an invitation from the Admin Console:
 @z
 
 @x
-1. Open the [Admin Console](https://app.docker.com/admin) and select your organization from
-top-left drop-down menu.
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
 2. Select **Members**.
 3. Select the **action menu** next to the invitee and select **Resend invitation**.
 4. Select **Invite** to confirm.
 @y
-1. Open the [Admin Console](https://app.docker.com/admin) and select your organization from
-top-left drop-down menu.
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
 2. Select **Members**.
 3. Select the **action menu** next to the invitee and select **Resend invitation**.
 4. Select **Invite** to confirm.
@@ -260,14 +258,12 @@ To remove an invitation from the Admin Console:
 @z
 
 @x
-1. Open the [Admin Console](https://app.docker.com/admin) and select your organization from
-top-left drop-down menu.
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
 2. Select **Members**.
 3. Select the **action menu** next to the invitee and select **Remove invitee**.
 4. Select **Remove** to confirm.
 @y
-1. Open the [Admin Console](https://app.docker.com/admin) and select your organization from
-top-left drop-down menu.
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
 2. Select **Members**.
 3. Select the **action menu** next to the invitee and select **Remove invitee**.
 4. Select **Remove** to confirm.

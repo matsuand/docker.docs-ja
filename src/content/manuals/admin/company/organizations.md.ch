@@ -31,11 +31,11 @@ You can manage the organizations in a company in the Docker Admin Console.
 
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Under **Organizations**, select **Overview**.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Under **Organizations**, select **Overview**.
 @z
 
@@ -53,12 +53,12 @@ When you have a [self-serve](../../subscription/details.md#self-serve) subscript
 
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Under **Organizations**, select **Overview**.
 4. Select the action icon in the organization's card, and then select **Get more seats**.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Under **Organizations**, select **Overview**.
 4. Select the action icon in the organization's card, and then select **Get more seats**.
 @z
@@ -97,13 +97,13 @@ There is no limit to the number of organizations you can have under a company la
 
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Select **Add organization**.
 4. Choose the organization you want to add from the drop-down menu.
 5. Select **Add organization** to confirm.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Select **Add organization**.
 4. Choose the organization you want to add from the drop-down menu.
 5. Select **Add organization** to confirm.
@@ -117,11 +117,11 @@ There is no limit to the number of organizations you can have under a company la
 
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Select the organization that you want to manage.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your company in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Select the organization that you want to manage.
 @z
 

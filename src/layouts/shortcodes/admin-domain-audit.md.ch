@@ -18,14 +18,14 @@
 @x
 {{ if eq (.Get "product") "admin" }}
   {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-  {{ $domain_navigation = "Select your organization in the left navigation drop-down menu, and then select **Domain management**." }}
+  {{ $domain_navigation = "Select your organization on the **Choose profile** page, and then select **Domain management**." }}
   {{ $sso_link = "[SSO](/security/for-admins/single-sign-on/)" }}
   {{ $scim_link = "[SCIM](/security/for-admins/provisioning/scim/)" }}
 {{ end }}
 @y
 {{ if eq (.Get "product") "admin" }}
   {{ $product_link = "the [Admin Console](https://admin.docker.com)" }}
-  {{ $domain_navigation = "Select your organization in the left navigation drop-down menu, and then select **Domain management**." }}
+  {{ $domain_navigation = "Select your organization on the **Choose profile** page, and then select **Domain management**." }}
   {{ $sso_link = "[SSO](__SUBDIR__/security/for-admins/single-sign-on/)" }}
   {{ $scim_link = "[SCIM](__SUBDIR__/security/for-admins/provisioning/scim/)" }}
 {{ end }}

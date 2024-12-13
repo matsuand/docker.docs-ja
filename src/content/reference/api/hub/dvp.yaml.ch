@@ -1168,6 +1168,8 @@ components:
       properties:
         data:
           type: array
+          description: |
+            List of urls to download the data. When the data is large, the data will be split into multiple files.
           items: 
             $ref: '#/components/schemas/ResponseDataFile'
     ResponseDataFile:
@@ -1240,6 +1242,8 @@ components:
       properties:
         data:
           type: array
+          description: |
+            List of urls to download the data. When the data is large, the data will be split into multiple files.
           items: 
             $ref: '#/components/schemas/ResponseDataFile'
     ResponseDataFile:

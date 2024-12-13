@@ -281,6 +281,8 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/config/Makefile
 	src/content/reference/cli/docker/container/Makefile
 	src/content/reference/cli/docker/context/Makefile
+	src/content/reference/cli/docker/desktop/Makefile
+	src/content/reference/cli/docker/desktop/engine/Makefile
 	src/content/reference/cli/docker/image/Makefile
 	src/content/reference/cli/docker/manifest/Makefile
 	src/content/reference/cli/docker/network/Makefile
@@ -322,6 +324,7 @@ AC_CONFIG_FILES([
 	src/data/Makefile
 	src/data/buildx/Makefile
 	src/data/debug-cli/Makefile
+	src/data/desktop-cli/Makefile
 	src/data/docsarchive/Makefile
 	src/data/engine-cli/Makefile
 	src/data/init-cli/Makefile

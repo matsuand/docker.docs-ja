@@ -6,6 +6,7 @@ SUBDIRS = dev-environments wsl
 bases = \
 	_index.md                    \
 	containerd.md                \
+	desktop-cli.md               \
 	gpu.md                       \
 	kubernetes.md                \
 	networking.md                \

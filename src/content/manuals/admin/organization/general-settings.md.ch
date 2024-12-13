@@ -2,19 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Organization settings
-weight: 60
-description: Learn how to manage settings for organizations using Docker Admin Console.
-keywords: organization, settings, Admin Console
----
 @y
----
 title: Organization settings
-weight: 60
+@z
+
+@x
 description: Learn how to manage settings for organizations using Docker Admin Console.
 keywords: organization, settings, Admin Console
----
+@y
+description: Learn how to manage settings for organizations using Docker Admin Console.
+keywords: organization, settings, Admin Console
 @z
 
 @x
@@ -65,12 +63,12 @@ To edit this information:
 
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your organization in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Under **Organization settings**, select **General**.
 4. Specify the organization information and select **Save**.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com).
-2. In the left navigation, select your organization in the drop-down menu.
+2. Select your company on the **Choose profile** page.
 3. Under **Organization settings**, select **General**.
 4. Specify the organization information and select **Save**.
 @z

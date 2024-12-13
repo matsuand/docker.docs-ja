@@ -58,12 +58,10 @@ through creating a custom image and sharing it through Docker Hub.
 
 @x
 You can search for content in Docker Hub itself, in the Docker Desktop
-Dashboard, or by using the `docker search` CLI command. Searching on Docker Hub
-itself offers the most options to explore content.
+Dashboard, or by using the CLI.
 @y
 You can search for content in Docker Hub itself, in the Docker Desktop
-Dashboard, or by using the `docker search` CLI command. Searching on Docker Hub
-itself offers the most options to explore content.
+Dashboard, or by using the CLI.
 @z
 
 @x
@@ -73,16 +71,24 @@ To search or browse for content on Docker Hub:
 @z
 
 @x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
 1. Navigate to the [Docker Hub Explore page](https://hub.docker.com/explore).
 @y
 1. Navigate to the [Docker Hub Explore page](https://hub.docker.com/explore).
 @z
 
 @x
-   On the Explore page, you can browse by catalog or category, or use the search
+   On the **Explore** page, you can browse by catalog or category, or use the search
    to quickly find content.
 @y
-   On the Explore page, you can browse by catalog or category, or use the search
+   On the **Explore** page, you can browse by catalog or category, or use the search
    to quickly find content.
 @z
 
@@ -131,6 +137,102 @@ To search or browse for content on Docker Hub:
 @z
 
 @x
+{{< /tab >}}
+{{< tab name="Docker Desktop" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Desktop" >}}
+@z
+
+@x
+1. Open the Docker Desktop Dashboard.
+2. Select the **Docker Hub** view.
+@y
+1. Open the Docker Desktop Dashboard.
+2. Select the **Docker Hub** view.
+@z
+
+@x
+   In the **Docker Hub** view, you can browse by catalog or category, or use the search
+   to quickly find content.
+@y
+   In the **Docker Hub** view, you can browse by catalog or category, or use the search
+   to quickly find content.
+@z
+
+@x
+3. Leave the search box empty and then select **Search**.
+@y
+3. Leave the search box empty and then select **Search**.
+@z
+
+@x
+   The search results are shown with additional filters now next to the search box.
+@y
+   The search results are shown with additional filters now next to the search box.
+@z
+
+@x
+4. Select the search filter icon, and then select **Docker Official Image** and **Web Servers**.
+5. In the results, select the **nginx** image.
+@y
+4. Select the search filter icon, and then select **Docker Official Image** and **Web Servers**.
+5. In the results, select the **nginx** image.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+1. Open a terminal window.
+@y
+1. Open a terminal window.
+@z
+
+@x
+   > [!TIP]
+   >
+   > The Docker Desktop Dashboard contains a built-in terminal. At the bottom of
+   > the Dashboard, select **>_ Terminal** to open it.
+@y
+   > [!TIP]
+   >
+   > The Docker Desktop Dashboard contains a built-in terminal. At the bottom of
+   > the Dashboard, select **>_ Terminal** to open it.
+@z
+
+@x
+2. In the terminal, run the following command.
+@y
+2. In the terminal, run the following command.
+@z
+
+% snip command...
+
+@x
+   Unlike the Docker Hub and Docker Desktop interfaces, you can't browse by
+   category using the `docker search` command. For more details about the
+   command, see [docker search](/reference/cli/docker/search/).
+@y
+   Unlike the Docker Hub and Docker Desktop interfaces, you can't browse by
+   category using the `docker search` command. For more details about the
+   command, see [docker search](__SUBDIR__/reference/cli/docker/search/).
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 Now that you've found an image, it's time to pull and run it on your device.
 @y
 Now that you've found an image, it's time to pull and run it on your device.
@@ -143,9 +245,107 @@ Now that you've found an image, it's time to pull and run it on your device.
 @z
 
 @x
-1. In your terminal, run the following command to pull and run the Nginx image.
+You can run images from Docker Hub using the CLI or Docker Desktop Dashboard.
 @y
-1. In your terminal, run the following command to pull and run the Nginx image.
+You can run images from Docker Hub using the CLI or Docker Desktop Dashboard.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Desktop" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Desktop" >}}
+@z
+
+@x
+1. In the Docker Desktop Dashboard, select the **nginx** image in the **Docker
+   Hub** view. For more details, see [Step 1: Find an image in Docker Hub's
+   library](#step-1-find-an-image-in-docker-hubs-library).
+@y
+1. In the Docker Desktop Dashboard, select the **nginx** image in the **Docker
+   Hub** view. For more details, see [Step 1: Find an image in Docker Hub's
+   library](#step-1-find-an-image-in-docker-hubs-library).
+@z
+
+@x
+2. On the **nginx** screen, select **Run**.
+@y
+2. On the **nginx** screen, select **Run**.
+@z
+
+@x
+   If the image doesn't exist on your device, it is automatically pulled from
+   Docker Hub. Pulling the image may take a few seconds or minutes depending on
+   your connection. After the image has been pulled, a window appears in Docker
+   Desktop and you can specify run options.
+@y
+   If the image doesn't exist on your device, it is automatically pulled from
+   Docker Hub. Pulling the image may take a few seconds or minutes depending on
+   your connection. After the image has been pulled, a window appears in Docker
+   Desktop and you can specify run options.
+@z
+
+@x
+3. In the **Host port** option, specify `8080`.
+4. Select **Run**.
+@y
+3. In the **Host port** option, specify `8080`.
+4. Select **Run**.
+@z
+
+@x
+   The container logs appear after the container starts.
+@y
+   The container logs appear after the container starts.
+@z
+
+@x
+5. Select the **8080:80** link to open the server, or visit
+   [https://localhost:8080](https://localhost:8080) in your web browser.
+@y
+5. Select the **8080:80** link to open the server, or visit
+   [https://localhost:8080](https://localhost:8080) in your web browser.
+@z
+
+@x
+6. In the Docker Desktop Dashboard, select the **Stop** button to stop the
+   container.
+@y
+6. In the Docker Desktop Dashboard, select the **Stop** button to stop the
+   container.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+1. Open a terminal window.
+@y
+1. Open a terminal window.
+@z
+
+@x
+   > [!TIP]
+   >
+   > The Docker Desktop Dashboard contains a built-in terminal. At the bottom of
+   > the Dashboard, select **>_ Terminal** to open it.
+@y
+   > [!TIP]
+   >
+   > The Docker Desktop Dashboard contains a built-in terminal. At the bottom of
+   > the Dashboard, select **>_ Terminal** to open it.
+@z
+
+@x
+2. In your terminal, run the following command to pull and run the Nginx image.
+@y
+2. In your terminal, run the following command to pull and run the Nginx image.
 @z
 
 % snip command...
@@ -167,35 +367,43 @@ Now that you've found an image, it's time to pull and run it on your device.
 % snip output...
 
 @x
-2. Visit [https://localhost:8080](https://localhost:8080) to view the default
+3. Visit [https://localhost:8080](https://localhost:8080) to view the default
    Nginx page and verify that the container is running.
 @y
-2. Visit [https://localhost:8080](https://localhost:8080) to view the default
+3. Visit [https://localhost:8080](https://localhost:8080) to view the default
    Nginx page and verify that the container is running.
 @z
 
 @x
-3. In the terminal, press CTRL+C to stop the container.
+4. In the terminal, press <kdb>Ctrl+C</kbd> to stop the container.
 @y
-3. In the terminal, press CTRL+C to stop the container.
+4. In the terminal, press <kdb>Ctrl+C</kbd> to stop the container.
 @z
 
 @x
-You've now run a web server without any set up or configuration, all from a
-single command. Docker Hub provides instant access to pre-built, ready-to-use
-container images, letting you quickly pull and run applications without needing
-to install or configure software manually. With Docker Hub's vast library of
-images, you can experiment with and deploy applications effortlessly, boosting
-productivity and making it easy to try out new tools, set up development
-environments, or build on top of existing software.
+{{< /tab >}}
+{{< /tabs >}}
 @y
-You've now run a web server without any set up or configuration, all from a
-single command. Docker Hub provides instant access to pre-built, ready-to-use
-container images, letting you quickly pull and run applications without needing
-to install or configure software manually. With Docker Hub's vast library of
-images, you can experiment with and deploy applications effortlessly, boosting
-productivity and making it easy to try out new tools, set up development
-environments, or build on top of existing software.
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+You've now run a web server without any set up or configuration. Docker Hub
+provides instant access to pre-built, ready-to-use container images, letting you
+quickly pull and run applications without needing to install or configure
+software manually. With Docker Hub's vast library of images, you can experiment
+with and deploy applications effortlessly, boosting productivity and making it
+easy to try out new tools, set up development environments, or build on top of
+existing software.
+@y
+You've now run a web server without any set up or configuration. Docker Hub
+provides instant access to pre-built, ready-to-use container images, letting you
+quickly pull and run applications without needing to install or configure
+software manually. With Docker Hub's vast library of images, you can experiment
+with and deploy applications effortlessly, boosting productivity and making it
+easy to try out new tools, set up development environments, or build on top of
+existing software.
 @z
 
 @x
@@ -335,6 +543,20 @@ customize your own images to suit specific needs.
 @z
 
 @x
+You can view your Docker Hub repositories in the Docker Hub or Docker Desktop interface.
+@y
+You can view your Docker Hub repositories in the Docker Hub or Docker Desktop interface.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 @y
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
@@ -360,6 +582,50 @@ customize your own images to suit specific needs.
 @y
    After selecting the repository, you should see more details and options for
    your repository.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Desktop" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Desktop" >}}
+@z
+
+@x
+1. Sign in to Docker Desktop.
+2. Select the **Images** view.
+3. Select the **Hub repositories** tab.
+@y
+1. Sign in to Docker Desktop.
+2. Select the **Images** view.
+3. Select the **Hub repositories** tab.
+@z
+
+@x
+   A list of your Docker Hub repositories appears.
+@y
+   A list of your Docker Hub repositories appears.
+@z
+
+@x
+4. Find the **nginx-custom** repository, hover over the row, and then select **View in Hub**.
+@y
+4. Find the **nginx-custom** repository, hover over the row, and then select **View in Hub**.
+@z
+
+@x
+   Docker Hub opens and you are able to view more details about the image.
+@y
+   Docker Hub opens and you are able to view more details about the image.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -375,7 +641,7 @@ these options.
 @x
 ## Next steps
 @y
-## 次のステップ {#next-steps}
+## Next steps
 @z
 
 @x

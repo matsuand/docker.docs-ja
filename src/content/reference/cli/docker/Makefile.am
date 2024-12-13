@@ -1,9 +1,9 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = builder buildx checkpoint compose config container context \
-	image manifest network node plugin scout secret service stack \
-	swarm system trust volume
+SUBDIRS = builder buildx checkpoint compose config container context    \
+	desktop image manifest network node plugin scout secret service \
+	stack swarm system trust volume
 
 bases = \
 	README.md

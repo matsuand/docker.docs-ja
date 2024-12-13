@@ -41,14 +41,14 @@ Get started creating a single sign-on (SSO) connection for your organization or 
 
 @x
 1. Sign in to the [Admin Console](https://admin.docker.com/).
-2. Select your organization or company from the left-hand drop-down menu. Note that when an organization is part of a company, you must select the company and configure the domain for the organization at the company level.
+2. Select your organization or company from the **Choose profile** page. Note that when an organization is part of a company, you must select the company and configure the domain for the organization at the company level.
 3. Under **Security and access**, select **Domain management**.
 4. Select **Add a domain**.
 5. Enter your domain in the text box and select **Add domain**.
 6. The pop-up modal will prompt you with steps to verify your domain. Copy the **TXT Record Value**.
 @y
 1. Sign in to the [Admin Console](https://admin.docker.com/).
-2. Select your organization or company from the left-hand drop-down menu. Note that when an organization is part of a company, you must select the company and configure the domain for the organization at the company level.
+2. Select your organization or company from the **Choose profile** page. Note that when an organization is part of a company, you must select the company and configure the domain for the organization at the company level.
 3. Under **Security and access**, select **Domain management**.
 4. Select **Add a domain**.
 5. Enter your domain in the text box and select **Add domain**.

@@ -52,9 +52,9 @@ The **Builds** view lets you inspect your build history and manage builders. By 
 @z
 
 @x
-In addition, the Docker Desktop Dashboard let you:
+In addition, the Docker Desktop Dashboard lets you:
 @y
-In addition, the Docker Desktop Dashboard let you:
+In addition, the Docker Desktop Dashboard lets you:
 @z
 
 @x
@@ -73,10 +73,14 @@ In addition, the Docker Desktop Dashboard let you:
   For a more detailed guide about getting started, see [Get started](/get-started/introduction/_index.md).
 - Get to the [Docker Scout](../../scout/_index.md) dashboard.
 - Check the status of Docker services.
+- Access [Docker Hub](/manuals/docker-hub/_index.md) to search, browse, pull, run, or view details
+  of images.
 @y
   For a more detailed guide about getting started, see [Get started](get-started/introduction/_index.md).
 - Get to the [Docker Scout](../../scout/_index.md) dashboard.
 - Check the status of Docker services.
+- Access [Docker Hub](manuals/docker-hub/_index.md) to search, browse, pull, run, or view details
+  of images.
 @z
 
 @x
