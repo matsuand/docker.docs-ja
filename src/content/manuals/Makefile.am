@@ -4,7 +4,7 @@
 
 SUBDIRS =  accounts admin billing build build-cloud cloud compose   \
 	copilot desktop docker-hub engine extensions harmonia scout \
-	security subscription trusted-content
+	security subscription
 
 bases = \
 	_index.md            \

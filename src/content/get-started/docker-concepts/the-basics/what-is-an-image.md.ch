@@ -401,18 +401,12 @@ The following resources will help you learn more about exploring, finding, and b
 @z
 
 @x
-- [Docker Trusted Content](/manuals/trusted-content/_index.md)
-  - [Docker Official Images docs](/manuals/trusted-content/official-images/_index.md)
-  - [Docker Verified Publisher docs](/manuals/trusted-content/dvp-program.md)
-  - [Docker-Sponsored Open Source Program docs](/manuals/trusted-content/dsos-program.md)
+- [Docker trusted content](/manuals/docker-hub/image-library/trusted-content.md)
 - [Explore the Image view in Docker Desktop](/manuals/desktop/use-desktop/images.md)
 - [Docker Build overview](/manuals/build/concepts/overview.md)
 - [Docker Hub](https://hub.docker.com)
 @y
-- [Docker Trusted Content](manuals/trusted-content/_index.md)
-  - [Docker 公式イメージのドキュメント](manuals/trusted-content/official-images/_index.md)
-  - [Docker Verified Publisher のドキュメント](manuals/trusted-content/dvp-program.md)
-  - [Docker 提供のオープンソースプログラムのドキュメント](manuals/trusted-content/dsos-program.md)
+- [Docker trusted content](manuals/docker-hub/image-library/trusted-content.md)
 - [Explore the Image view in Docker Desktop](manuals/desktop/use-desktop/images.md)
 - [Docker Build 概要](manuals/build/concepts/overview.md)
 - [Docker Hub](https://hub.docker.com)

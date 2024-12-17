@@ -540,12 +540,16 @@ Owners can export a CSV file containing all members. The CSV file for a company 
 @z
 
 @x
-To export a CSV file of the members:
+To export a CSV file of your members:
+@y
+To export a CSV file of your members:
+@z
+
+@x
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select **Organizations**, your organization, and then **Members**.
 3. Select the **Action** icon and then select **Export users as CSV**.
 @y
-To export a CSV file of the members:
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select **Organizations**, your organization, and then **Members**.
 3. Select the **Action** icon and then select **Export users as CSV**.

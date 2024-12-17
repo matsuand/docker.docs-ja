@@ -239,8 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
 	docker-admin-structure.webp \
-	org-structure.webp          \
-	team-repo-permission.png
+	org-structure.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

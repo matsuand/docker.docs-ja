@@ -74,9 +74,9 @@ To view data in the chart:
 @z
 
 @x
-![Insights and analytics chart visualization](./images/chart.png)
+![Insights and analytics chart visualization](../../../images/chart.png)
 @y
-![Insights and analytics chart visualization](./images/chart.png)
+![Insights and analytics chart visualization](../../../images/chart.png)
 @z
 
 @x
@@ -108,9 +108,9 @@ This is a convenient way to share statistics with others in your organization.
 @z
 
 @x
-![Chart share icon](./images/chart-share-icon.png)
+![Chart share icon](../../../images/chart-share-icon.png)
 @y
-![Chart share icon](./images/chart-share-icon.png)
+![Chart share icon](../../../images/chart-share-icon.png)
 @z
 
 @x
@@ -192,9 +192,9 @@ Export usage data for your organization's images using the Docker Hub website by
 @z
 
 @x
-    ![Organization overview page, with the Insights and Analytics tab](./images/organization-tabs.png)
+    ![Organization overview page, with the Insights and Analytics tab](../../../images/organization-tabs.png)
 @y
-    ![Organization overview page, with the Insights and Analytics tab](./images/organization-tabs.png)
+    ![Organization overview page, with the Insights and Analytics tab](../../../images/organization-tabs.png)
 @z
 
 @x
@@ -212,9 +212,9 @@ Export usage data for your organization's images using the Docker Hub website by
 @z
 
 @x
-    ![Filtering options and download links for analytics data](./images/download-analytics-data.png)
+    ![Filtering options and download links for analytics data](../../../images/download-analytics-data.png)
 @y
-    ![Filtering options and download links for analytics data](./images/download-analytics-data.png)
+    ![Filtering options and download links for analytics data](../../../images/download-analytics-data.png)
 @z
 
 @x

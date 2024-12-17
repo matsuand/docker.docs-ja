@@ -172,6 +172,116 @@ selected when you invoke builds.
 @z
 
 @x
+### Difference between `docker build` and `docker buildx build`
+@y
+### Difference between `docker build` and `docker buildx build`
+@z
+
+@x
+Even though `docker build` is an alias for `docker buildx build`, there are
+subtle differences between the two commands. With Buildx, the build client and
+the and daemon (BuildKit) are decoupled. This means you can use multiple
+builders from a single client, even remote ones.
+@y
+Even though `docker build` is an alias for `docker buildx build`, there are
+subtle differences between the two commands. With Buildx, the build client and
+the and daemon (BuildKit) are decoupled. This means you can use multiple
+builders from a single client, even remote ones.
+@z
+
+@x
+The `docker build` command always defaults to using the default builder that
+comes bundled with the Docker Engine, for ensuring backwards compatibility with
+older versions of the Docker CLI. The `docker buildx build` command, on the
+other hand, checks whether you've set a different builder as the default
+builder before it sends your build to BuildKit.
+@y
+The `docker build` command always defaults to using the default builder that
+comes bundled with the Docker Engine, for ensuring backwards compatibility with
+older versions of the Docker CLI. The `docker buildx build` command, on the
+other hand, checks whether you've set a different builder as the default
+builder before it sends your build to BuildKit.
+@z
+
+@x
+To use the `docker build` command with a non-default builder, you must either:
+@y
+To use the `docker build` command with a non-default builder, you must either:
+@z
+
+@x
+- Specify the builder explicitly, using the `--builder` flag or the `BUILDX_BUILDER` environment variable:
+@y
+- Specify the builder explicitly, using the `--builder` flag or the `BUILDX_BUILDER` environment variable:
+@z
+
+@x
+  ```console
+  $ BUILDX_BUILDER=my_builder docker build .
+  $ docker build --builder my_builder .
+  ```
+@y
+  ```console
+  $ BUILDX_BUILDER=my_builder docker build .
+  $ docker build --builder my_builder .
+  ```
+@z
+
+@x
+- Configure Buildx as the default client by running the following command:
+@y
+- Configure Buildx as the default client by running the following command:
+@z
+
+@x
+  ```console
+  $ docker buildx install
+  ```
+@y
+  ```console
+  $ docker buildx install
+  ```
+@z
+
+@x
+  This updates your [Docker CLI configuration file](/reference/cli/docker/_index.md#configuration-files)
+  to ensure all of your build-related commands are routed via Buildx.
+@y
+  This updates your [Docker CLI configuration file](reference/cli/docker/_index.md#configuration-files)
+  to ensure all of your build-related commands are routed via Buildx.
+@z
+
+@x
+  > [!TIP]
+  > To undo this change, run `docker buildx uninstall`.
+@y
+  > [!TIP]
+  > To undo this change, run `docker buildx uninstall`.
+@z
+
+@x
+<!-- vale Docker.We = NO -->
+@y
+<!-- vale Docker.We = NO -->
+@z
+
+@x
+In general, we recommend that you use the `docker buildx build` command when
+you want to use custom builders. This ensures that your [selected
+builder](#selected-builder) configuration is interpreted correctly.
+@y
+In general, we recommend that you use the `docker buildx build` command when
+you want to use custom builders. This ensures that your [selected
+builder](#selected-builder) configuration is interpreted correctly.
+@z
+
+@x
+<!-- vale Docker.We = YES -->
+@y
+<!-- vale Docker.We = YES -->
+@z
+
+@x
 ## Additional information
 @y
 ## Additional information

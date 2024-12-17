@@ -124,11 +124,11 @@ it small.
 @x
 - [Docker-Sponsored Open Source](https://hub.docker.com/search?image_filter=open_source)
   are published and maintained by open source projects sponsored by Docker
-  through an [open source program](../../trusted-content/dsos-program).
+  through an [open source program](../../docker-hub/image-library/trusted-content.md#docker-sponsored-open-source-software-images).
 @y
 - [Docker-Sponsored Open Source](https://hub.docker.com/search?image_filter=open_source)
   are published and maintained by open source projects sponsored by Docker
-  through an [open source program](../../trusted-content/dsos-program).
+  through an [open source program](../../docker-hub/image-library/trusted-content.md#docker-sponsored-open-source-software-images).
 @z
 
 @x

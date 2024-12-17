@@ -2,21 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-title: Contributing to Docker Official Images
+title: Docker Official Images
 description: |
   This article describes how Docker Official Images are created,
   and how you can contribute or leave feedback.
 keywords: docker official images, doi, contributing, upstream, open source
----
 @y
----
-title: Contributing to Docker Official Images
+title: Docker Official Images
 description: |
   This article describes how Docker Official Images are created,
   and how you can contribute or leave feedback.
 keywords: docker official images, doi, contributing, upstream, open source
----
 @z
 
 @x

@@ -4,27 +4,19 @@
 % __SUBDIR__ 対応。
 
 @x
----
 description: Learn about the Docker-Sponsored Open Source Program and how it works
 title: Docker-Sponsored Open Source Program
 keywords: docker hub, hub, insights, analytics, open source, Docker sponsored, program
-aliases:
-  - /docker-hub/dsos-program/
----
 @y
----
 description: Learn about the Docker-Sponsored Open Source Program and how it works
 title: Docker-Sponsored Open Source Program
 keywords: docker hub, hub, insights, analytics, open source, Docker sponsored, program
-aliases:
-  - /docker-hub/dsos-program/
----
 @z
 
 @x
-[Docker Sponsored Open Source images](https://hub.docker.com/search?q=&image_filter=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
+[Docker-Sponsored Open Source images](https://hub.docker.com/search?q=&image_filter=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
 @y
-[Docker Sponsored Open Source images](https://hub.docker.com/search?q=&image_filter=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
+[Docker-Sponsored Open Source images](https://hub.docker.com/search?q=&image_filter=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
 @z
 
 @x
@@ -34,15 +26,9 @@ Images that are part of this program have a special badge on Docker Hub making i
 @z
 
 @x
-![Docker-Sponsored Open Source badge](images/sponsored-badge-iso.png)
+![Docker-Sponsored Open Source badge](../../../images/sponsored-badge-iso.png)
 @y
-![Docker-Sponsored Open Source badge](images/sponsored-badge-iso.png)
-@z
-
-@x
-## For content publishers
-@y
-## For content publishers
+![Docker-Sponsored Open Source badge](../../../images/sponsored-badge-iso.png)
 @z
 
 @x
@@ -129,7 +115,7 @@ over the repository can change the repository logo.
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Go to the page of the repository that you want to change the logo for.
 3. Select the upload logo button, represented by a camera icon
-   ({{< inline-image src="images/upload_logo_sm.png" alt="camera icon" >}})
+   ({{< inline-image src="../../../images/upload_logo_sm.png" alt="camera icon" >}})
    overlaying the current repository logo.
 4. In the dialog that opens, select the PNG image that you want to upload to
    set it as the logo for the repository.
@@ -137,7 +123,7 @@ over the repository can change the repository logo.
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Go to the page of the repository that you want to change the logo for.
 3. Select the upload logo button, represented by a camera icon
-   ({{< inline-image src="images/upload_logo_sm.png" alt="camera icon" >}})
+   ({{< inline-image src="../../../images/upload_logo_sm.png" alt="camera icon" >}})
    overlaying the current repository logo.
 4. In the dialog that opens, select the PNG image that you want to upload to
    set it as the logo for the repository.
@@ -150,10 +136,10 @@ over the repository can change the repository logo.
 @z
 
 @x
-Select the **Clear** button ({{< inline-image src="images/clear_logo_sm.png"
+Select the **Clear** button ({{< inline-image src="../../../images/clear_logo_sm.png"
 alt="clear button" >}}) to remove a logo.
 @y
-Select the **Clear** button ({{< inline-image src="images/clear_logo_sm.png"
+Select the **Clear** button ({{< inline-image src="../../../images/clear_logo_sm.png"
 alt="clear button" >}}) to remove a logo.
 @z
 
@@ -164,9 +150,9 @@ Removing the logo makes the repository default to using the organization logo, i
 @z
 
 @x
-![Default logo which is a 3D grey cube](images/default_logo_sm.png)
+![Default logo which is a 3D grey cube](../../../images/default_logo_sm.png)
 @y
-![Default logo which is a 3D grey cube](images/default_logo_sm.png)
+![Default logo which is a 3D grey cube](../../../images/default_logo_sm.png)
 @z
 
 @x
@@ -182,9 +168,9 @@ Docker verifies that developers can trust images with this badge on Docker Hub a
 @z
 
 @x
-![Fluent org with a Docker-Sponsored Open Source badge](images/sponsored-badge.png)
+![Fluent org with a Docker-Sponsored Open Source badge](../../../images/sponsored-badge.png)
 @y
-![Fluent org with a Docker-Sponsored Open Source badge](images/sponsored-badge.png)
+![Fluent org with a Docker-Sponsored Open Source badge](../../../images/sponsored-badge.png)
 @z
 
 @x
@@ -207,12 +193,6 @@ geolocation, cloud provider, client, and more.
 @y
 The usage metrics show the number of image pulls by tag or by digest, and breakdowns by
 geolocation, cloud provider, client, and more.
-@z
-
-@x
-![The insights and analytics tab on the Docker Hub website](images/insights-and-analytics-tab.png)
-@y
-![The insights and analytics tab on the Docker Hub website](images/insights-and-analytics-tab.png)
 @z
 
 @x

@@ -3,8 +3,7 @@
 ##
 copyfiles = \
 	docker-admin-structure.webp \
-	org-structure.webp          \
-	team-repo-permission.png
+	org-structure.webp
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

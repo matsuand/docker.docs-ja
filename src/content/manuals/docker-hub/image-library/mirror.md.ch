@@ -1,20 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Setting-up a local mirror for Docker Hub images
 keywords: registry, on-prem, images, tags, repository, distribution, mirror, Hub,
   recipe, advanced
-title: Registry as a pull through cache
-linkTitle: Mirroring
+title: Mirror the Docker Hub library
+linkTitle: Mirror
 @y
 description: Setting-up a local mirror for Docker Hub images
 keywords: registry, on-prem, images, tags, repository, distribution, mirror, Hub,
   recipe, advanced
-title: Registry as a pull through cache
-linkTitle: Mirroring
+title: Mirror the Docker Hub library
+linkTitle: Mirror
 @z
 
 @x
@@ -86,11 +86,11 @@ Hub can be mirrored.
 @x
 > [!NOTE]
 >
-> Mirrors of Docker Hub are still subject to Docker's [fair use policy](./download-rate-limit.md#fair-use).
+> Mirrors of Docker Hub are still subject to Docker's [fair use policy](/manuals/docker-hub/download-rate-limit.md#fair-use).
 @y
 > [!NOTE]
 >
-> Mirrors of Docker Hub are still subject to Docker's [fair use policy](./download-rate-limit.md#fair-use).
+> Mirrors of Docker Hub are still subject to Docker's [fair use policy](manuals/docker-hub/download-rate-limit.md#fair-use).
 @z
 
 @x

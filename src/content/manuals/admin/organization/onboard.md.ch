@@ -28,15 +28,15 @@ Learn how to onboard your organization using Docker Hub or the Docker Admin Cons
 @z
 
 @x
-Onboarding your organization lets administrators gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](../../subscription/details.md).
+Onboarding your organization lets administrators gain visibility into user activity and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](../../subscription/details.md).
 @y
-Onboarding your organization lets administrators gain visibility into the activity of your users and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](../../subscription/details.md).
+Onboarding your organization lets administrators gain visibility into user activity and enforce security settings. In addition, members of your organization receive increased pull limits and other organization wide benefits. For more details, see [Docker subscriptions and features](../../subscription/details.md).
 @z
 
 @x
-In this guide, you'll learn how to get started with the following:
+In this guide, you'll learn how to do the following:
 @y
-In this guide, you'll learn how to get started with the following:
+In this guide, you'll learn how to do the following:
 @z
 
 @x
@@ -59,10 +59,14 @@ In this guide, you'll learn how to get started with the following:
 
 @x
 Before you start to onboard your organization, ensure that you:
-- Have a Docker Team or Business subscription. See [Pricing & Subscriptions](https://www.docker.com/pricing/) for details.
 @y
 Before you start to onboard your organization, ensure that you:
-- Have a Docker Team or Business subscription. See [Pricing & Subscriptions](https://www.docker.com/pricing/) for details.
+@z
+
+@x
+- Have a Docker Team or Business subscription. See [Docker Pricing](https://www.docker.com/pricing/) for details.
+@y
+- Have a Docker Team or Business subscription. See [Docker Pricing](https://www.docker.com/pricing/) for details.
 @z
 
 @x
@@ -82,9 +86,9 @@ Before you start to onboard your organization, ensure that you:
 @z
 
 @x
-## Step 1: Identify your Docker users and their Docker accounts
+## Step 1: Identify your Docker users
 @y
-## Step 1: Identify your Docker users and their Docker accounts
+## Step 1: Identify your Docker users
 @z
 
 @x
@@ -95,23 +99,23 @@ Identifying your users will ensure that you allocate your subscription seats eff
 
 @x
 1. Identify the Docker users in your organization.
-   - If your organization uses device management software, like MDM or JAMF, you may use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
+   - If your organization uses device management software, like MDM or Jamf, you may use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
       - Mac: `/Applications/Docker.app`
       - Windows: `C:\Program Files\Docker\Docker`
       - Linux: `/opt/docker-desktop`
    - If your organization doesn't use device management software or your users haven't installed Docker Desktop yet, you may survey your users.
-2. Instruct all your Docker users in your organization to update their existing Docker account's email address to an address that's in your organization's domain, or to create a new account using an email address in your organization's domain.
+2. Instruct all your organization's Docker users to update their existing Docker account's email address to an address that's in your organization's domain, or to create a new account using an email address in your organization's domain.
    - To update an account's email address, instruct your users to sign in to [Docker Hub](https://hub.docker.com), and update the email address to their email address in your organization's domain.
    - To create a new account, instruct your users to go [sign up](https://hub.docker.com/signup) using their email address in your organization's domain.
 3. Ask your Docker sales representative or [contact sales](https://www.docker.com/pricing/contact-sales/) to get a list of Docker accounts that use an email address in your organization's domain.
 @y
 1. Identify the Docker users in your organization.
-   - If your organization uses device management software, like MDM or JAMF, you may use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
+   - If your organization uses device management software, like MDM or Jamf, you may use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
       - Mac: `/Applications/Docker.app`
       - Windows: `C:\Program Files\Docker\Docker`
       - Linux: `/opt/docker-desktop`
    - If your organization doesn't use device management software or your users haven't installed Docker Desktop yet, you may survey your users.
-2. Instruct all your Docker users in your organization to update their existing Docker account's email address to an address that's in your organization's domain, or to create a new account using an email address in your organization's domain.
+2. Instruct all your organization's Docker users to update their existing Docker account's email address to an address that's in your organization's domain, or to create a new account using an email address in your organization's domain.
    - To update an account's email address, instruct your users to sign in to [Docker Hub](https://hub.docker.com), and update the email address to their email address in your organization's domain.
    - To create a new account, instruct your users to go [sign up](https://hub.docker.com/signup) using their email address in your organization's domain.
 3. Ask your Docker sales representative or [contact sales](https://www.docker.com/pricing/contact-sales/) to get a list of Docker accounts that use an email address in your organization's domain.
@@ -124,9 +128,9 @@ Identifying your users will ensure that you allocate your subscription seats eff
 @z
 
 @x
-When you create an organization, you are the only owner. You may optionally add additional owners. Owners can help you onboard and manage your organization.
+When you create an organization, you are the only owner. It is optional to add additional owners. Owners can help you onboard and manage your organization.
 @y
-When you create an organization, you are the only owner. You may optionally add additional owners. Owners can help you onboard and manage your organization.
+When you create an organization, you are the only owner. It is optional to add additional owners. Owners can help you onboard and manage your organization.
 @z
 
 @x
@@ -168,24 +172,32 @@ Configuring SSO and SCIM is optional and only available to Docker Business subsc
 @x
 You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
    - [Configure SSO](/manuals/security/for-admins/single-sign-on/configure.md) to authenticate and add members when they sign in to Docker through your identity provider.
-   - Optional: [Enforce SSO](/manuals/security/for-admins/single-sign-on/connect.md) to ensure that when users sign in to Docker, they must use SSO.
+   - Optional. [Enforce SSO](/manuals/security/for-admins/single-sign-on/connect.md) to ensure that when users sign in to Docker, they must use SSO.
+@y
+You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
+   - [Configure SSO](manuals/security/for-admins/single-sign-on/configure.md) to authenticate and add members when they sign in to Docker through your identity provider.
+   - Optional. [Enforce SSO](manuals/security/for-admins/single-sign-on/connect.md) to ensure that when users sign in to Docker, they must use SSO.
+@z
+
+@x
      > [!NOTE]
      >
      > Enforcing single sign-on (SSO) and [Step 5: Enforce sign-in for Docker
      > Desktop](#step-5-enforce-sign-in-for-docker-desktop) are different
      > features. For more details, see
      > [Enforcing sign-in versus enforcing single sign-on (SSO)](/security/for-admins/enforce-sign-in/#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
-   - [Configure SCIM](/security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
 @y
-You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
-   - [Configure SSO](manuals/security/for-admins/single-sign-on/configure.md) to authenticate and add members when they sign in to Docker through your identity provider.
-   - Optional: [Enforce SSO](manuals/security/for-admins/single-sign-on/connect.md) to ensure that when users sign in to Docker, they must use SSO.
      > [!NOTE]
      >
      > Enforcing single sign-on (SSO) and [Step 5: Enforce sign-in for Docker
      > Desktop](#step-5-enforce-sign-in-for-docker-desktop) are different
      > features. For more details, see
      > [Enforcing sign-in versus enforcing single sign-on (SSO)](__SUBDIR__/security/for-admins/enforce-sign-in/#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
+@z
+
+@x
+   - [Configure SCIM](/security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
+@y
    - [Configure SCIM](__SUBDIR__/security/for-admins/provisioning/scim/) to automatically provision, add, and de-provision members to Docker through your identity provider.
 @z
 
@@ -198,15 +210,11 @@ You can manage your members in your identity provider and automatically provisio
 @x
 By default, members of your organization can use Docker Desktop without signing
 in. When users don’t sign in as a member of your organization, they don’t
-receive the [benefits of your organization’s subscription](../../subscription/details.md) and they can circumvent
-[Docker’s security features](/security/for-admins/hardened-desktop/) for your
-organization.
+receive the [benefits of your organization’s subscription](../../subscription/details.md) and they can circumvent [Docker’s security features](/security/for-admins/hardened-desktop/).
 @y
 By default, members of your organization can use Docker Desktop without signing
 in. When users don’t sign in as a member of your organization, they don’t
-receive the [benefits of your organization’s subscription](../../subscription/details.md) and they can circumvent
-[Docker’s security features](__SUBDIR__/security/for-admins/hardened-desktop/) for your
-organization.
+receive the [benefits of your organization’s subscription](../../subscription/details.md) and they can circumvent [Docker’s security features](__SUBDIR__/security/for-admins/hardened-desktop/).
 @z
 
 @x

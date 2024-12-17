@@ -21,6 +21,7 @@ bases = \
 	experimental.md                   \
 	extensions-form.md                \
 	guides-get-docker.md              \
+	hub-categories.md                 \
 	hub-limits.md                     \
 	install-script.md                 \
 	open-terminal.md                  \

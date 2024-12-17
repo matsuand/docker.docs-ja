@@ -30,15 +30,9 @@ Images that are part of this program have a special badge on Docker Hub making i
 @z
 
 @x
-![Docker-Sponsored Open Source badge](./images/verified-publisher-badge-iso.png)
+![Docker-Sponsored Open Source badge](../../../images/verified-publisher-badge-iso.png)
 @y
-![Docker-Sponsored Open Source badge](./images/verified-publisher-badge-iso.png)
-@z
-
-@x
-## For content publishers
-@y
-## For content publishers
+![Docker-Sponsored Open Source badge](../../../images/verified-publisher-badge-iso.png)
 @z
 
 @x
@@ -119,7 +113,7 @@ over the repository can change the repository logo.
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Go to the page of the repository that you want to change the logo for.
 3. Select the upload logo button, represented by a camera icon ({{< inline-image
-   src="./images/upload_logo_sm.png" alt="camera icon" >}}) overlaying the
+   src="../../../images/upload_logo_sm.png" alt="camera icon" >}}) overlaying the
 current repository logo.
 4. In the dialog that opens, select the PNG image that you want to upload to
    set it as the logo for the repository.
@@ -127,7 +121,7 @@ current repository logo.
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Go to the page of the repository that you want to change the logo for.
 3. Select the upload logo button, represented by a camera icon ({{< inline-image
-   src="./images/upload_logo_sm.png" alt="camera icon" >}}) overlaying the
+   src="../../../images/upload_logo_sm.png" alt="camera icon" >}}) overlaying the
 current repository logo.
 4. In the dialog that opens, select the PNG image that you want to upload to
    set it as the logo for the repository.
@@ -140,10 +134,10 @@ current repository logo.
 @z
 
 @x
-Select the **Clear** button ({{< inline-image src="images/clear_logo_sm.png"
+Select the **Clear** button ({{< inline-image src="../../../images/clear_logo_sm.png"
 alt="clear button" >}}) to remove a logo.
 @y
-Select the **Clear** button ({{< inline-image src="images/clear_logo_sm.png"
+Select the **Clear** button ({{< inline-image src="../../../images/clear_logo_sm.png"
 alt="clear button" >}}) to remove a logo.
 @z
 
@@ -154,9 +148,9 @@ Removing the logo makes the repository default to using the organization logo, i
 @z
 
 @x
-![Default logo which is a 3D grey cube](images/default_logo_sm.png)
+![Default logo which is a 3D grey cube](../../../images/default_logo_sm.png)
 @y
-![Default logo which is a 3D grey cube](images/default_logo_sm.png)
+![Default logo which is a 3D grey cube](../../../images/default_logo_sm.png)
 @z
 
 @x
@@ -174,9 +168,9 @@ to identify projects that Docker has verified as high quality publishers and wit
 @z
 
 @x
-![Docker, Inc. org with a verified publisher badge](./images/verified-publisher-badge.png)
+![Docker, Inc. org with a verified publisher badge](../../../images/verified-publisher-badge.png)
 @y
-![Docker, Inc. org with a verified publisher badge](./images/verified-publisher-badge.png)
+![Docker, Inc. org with a verified publisher badge](../../../images/verified-publisher-badge.png)
 @z
 
 @x
@@ -186,10 +180,10 @@ to identify projects that Docker has verified as high quality publishers and wit
 @z
 
 @x
-The [insights and analytics](/docker-hub/publish/insights-analytics) service provides usage metrics for how
+The [insights and analytics](./insights-analytics.md) service provides usage metrics for how
 the community uses Docker images, granting insight into user behavior.
 @y
-The [insights and analytics](__SUBDIR__/docker-hub/publish/insights-analytics) service provides usage metrics for how
+The [insights and analytics](./insights-analytics.md) service provides usage metrics for how
 the community uses Docker images, granting insight into user behavior.
 @z
 
@@ -199,12 +193,6 @@ geolocation, cloud provider, client, and more.
 @y
 The usage metrics show the number of image pulls by tag or by digest, and breakdowns by
 geolocation, cloud provider, client, and more.
-@z
-
-@x
-![The insights and analytics tab on the Docker Hub website](./images/insights-and-analytics-tab.png)
-@y
-![The insights and analytics tab on the Docker Hub website](./images/insights-and-analytics-tab.png)
 @z
 
 @x

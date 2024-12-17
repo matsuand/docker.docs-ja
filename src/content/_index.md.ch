@@ -172,32 +172,6 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
 @z
 
 @x
-  - title: Trusted content
-    icon: verified
-    description: |
-      High-quality, secure images from Docker and verified partners.
-    links:
-      - text: "Overview"
-        url: "/trusted-content/"
-      - text: "Official images"
-        url: "/trusted-content/official-images/"
-      - text: "Verified publisher program"
-        url: "/trusted-content/dvp-program/"
-@y
-  - title: Trusted content
-    icon: verified
-    description: |
-      Docker や認証パートナーにより高品質でセキュアなイメージを提供します。
-    links:
-      - text: "概要"
-        url: "trusted-content/"
-      - text: "公式イメージ"
-        url: "trusted-content/official-images/"
-      - text: "公開者向け認証プログラム"
-        url: "trusted-content/dvp-program/"
-@z
-
-@x
   - title: Subscription
     icon: card_membership
     description: |

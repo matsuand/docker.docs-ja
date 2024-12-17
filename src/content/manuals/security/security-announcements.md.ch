@@ -156,7 +156,7 @@ If you are unable to update to an unaffected version promptly, follow these best
 @z
 
 @x
-* Only use trusted Docker images (such as [Docker Official Images](../trusted-content/official-images/_index.md)).
+* Only use trusted Docker images (such as [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images)).
 * Don’t build Docker images from untrusted sources or untrusted Dockerfiles.
 * If you are a Docker Business customer using Docker Desktop and unable to update to v4.27.1, make sure to enable [Hardened Docker Desktop](/manuals/security/for-admins/hardened-desktop/_index.md) features such as:
   * [Enhanced Container Isolation](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md), which mitigates the impact of CVE-2024-21626 in the case of running containers from malicious images.
@@ -164,7 +164,7 @@ If you are unable to update to an unaffected version promptly, follow these best
 * For CVE-2024-23650, CVE-2024-23651, CVE-2024-23652, and CVE-2024-23653, avoid using BuildKit frontend from an untrusted source. A frontend image is usually specified as the #syntax line on your Dockerfile, or with `--frontend` flag when using the `buildctl build` command.
 * To mitigate CVE-2024-24557, make sure to either use BuildKit or disable caching when building images. From the CLI this can be done via the `DOCKER_BUILDKIT=1` environment variable (default for Moby >= v23.0 if the buildx plugin is installed) or the `--no-cache flag`. If you are using the HTTP API directly or through a client, the same can be done by setting `nocache` to `true` or `version` to `2` for the [/build API endpoint](https://docs.docker.com/engine/api/v1.44/#tag/Image/operation/ImageBuild).
 @y
-* Only use trusted Docker images (such as [Docker Official Images](../trusted-content/official-images/_index.md)).
+* Only use trusted Docker images (such as [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images)).
 * Don’t build Docker images from untrusted sources or untrusted Dockerfiles.
 * If you are a Docker Business customer using Docker Desktop and unable to update to v4.27.1, make sure to enable [Hardened Docker Desktop](manuals/security/for-admins/hardened-desktop/_index.md) features such as:
   * [Enhanced Container Isolation](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md), which mitigates the impact of CVE-2024-21626 in the case of running containers from malicious images.
@@ -408,11 +408,11 @@ the Text4Shell CVE in the vulnerability report. For detailed instructions, see [
 @z
 
 @x
-A number of [Docker Official Images](../trusted-content/official-images/_index.md) contain the vulnerable versions of
+A number of [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images) contain the vulnerable versions of
 Apache Commons Text. The following lists Docker Official Images that
 may contain the vulnerable versions of Apache Commons Text:
 @y
-A number of [Docker Official Images](../trusted-content/official-images/_index.md) contain the vulnerable versions of
+A number of [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images) contain the vulnerable versions of
 Apache Commons Text. The following lists Docker Official Images that
 may contain the vulnerable versions of Apache Commons Text:
 @z
@@ -538,12 +538,12 @@ _Last updated December 2021_
 @z
 
 @x
-A number of [Docker Official Images](../trusted-content/official-images/_index.md) contain the vulnerable versions of
+A number of [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images) contain the vulnerable versions of
 Log4j 2 CVE-2021-44228. The following table lists Docker Official Images that
 may contained the vulnerable versions of Log4j 2. We updated Log4j 2 in these images to the latest version. Some of these images may not be
 vulnerable for other reasons. We recommend that you also review the guidelines published on the upstream websites.
 @y
-A number of [Docker Official Images](../trusted-content/official-images/_index.md) contain the vulnerable versions of
+A number of [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images) contain the vulnerable versions of
 Log4j 2 CVE-2021-44228. The following table lists Docker Official Images that
 may contained the vulnerable versions of Log4j 2. We updated Log4j 2 in these images to the latest version. Some of these images may not be
 vulnerable for other reasons. We recommend that you also review the guidelines published on the upstream websites.

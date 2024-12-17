@@ -150,18 +150,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Trusted content
-    description: Curated, high-quality content from trusted sources.
-    icon: verified
-    link: /trusted-content/
-@y
-  - title: Trusted content
-    description: Curated, high-quality content from trusted sources.
-    icon: verified
-    link: __SUBDIR__/trusted-content/
-@z
-
-@x
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
 @y

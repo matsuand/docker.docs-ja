@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Build and push your first image
@@ -90,10 +90,10 @@ Docker Hub はご自身のイメージを保存する場所となると同時に
 @z
 
 @x
-In [Develop with containers](develop-with-containers.md), you used the following images that came from Docker Hub, each of which are [Docker Official Images](/trusted-content/official-images/):
+In [Develop with containers](develop-with-containers.md), you used the following images that came from Docker Hub, each of which are [Docker Official Images](/manuals/docker-hub/image-library/trusted-content.md#docker-official-images):
 @y
 [コンテナーを使った開発](develop-with-containers.md) では Docker Hub から入手した以下のイメージを利用しました。
-すべては [Docker 公式イメージ](__SUBDIR__/trusted-content/official-images/) です。
+すべては [Docker 公式イメージ](manuals/docker-hub/image-library/trusted-content.md#docker-official-images) です。
 @z
 
 @x

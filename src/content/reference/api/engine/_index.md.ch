@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -48,11 +48,11 @@ The Docker Engine API is a RESTful API accessed by an HTTP client such as `wget`
 
 @x
 You can
-[view the reference for the latest version of the API](latest/index.html)
+[view the reference for the latest version of the API](/reference/api/engine/version/v{{% param latest_engine_api_version %}}.md)
 or [choose a specific version](/reference/api/engine/version-history/).
 @y
 You can
-[view the reference for the latest version of the API](latest/index.html)
+[view the reference for the latest version of the API](reference/api/engine/version/v{{% param latest_engine_api_version %}}.md)
 or [choose a specific version](__SUBDIR__/reference/api/engine/version-history/).
 @z
 

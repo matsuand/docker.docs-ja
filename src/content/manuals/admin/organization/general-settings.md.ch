@@ -34,9 +34,9 @@ This section describes how to manage organization settings in the Docker Admin C
 @z
 
 @x
-General organization information appears on your organization landing page in Docker Hub.
+General organization information appears on your organization landing page in the Admin Console.
 @y
-General organization information appears on your organization landing page in Docker Hub.
+General organization information appears on your organization landing page in the Admin Console.
 @z
 
 @x

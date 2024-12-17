@@ -2,21 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to add content to a repository on Docker Hub.
 keywords: Docker Hub, Hub, repository content, push
 title: Push images to a repository
 linkTitle: Push images
-weight: 30
----
 @y
----
 description: Learn how to add content to a repository on Docker Hub.
 keywords: Docker Hub, Hub, repository content, push
 title: Push images to a repository
 linkTitle: Push images
-weight: 30
----
 @z
 
 @x
@@ -99,11 +93,11 @@ images with others or use them in different environments.
 
 @x
    ```console
-   $ docker push my-app my-namespace/my-repo:v1.0
+   $ docker push my-namespace/my-repo:v1.0
    ```
 @y
    ```console
-   $ docker push my-app my-namespace/my-repo:v1.0
+   $ docker push my-namespace/my-repo:v1.0
    ```
 @z
 

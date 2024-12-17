@@ -197,10 +197,11 @@ Now that you have an image, you can run the application in a container using the
 @x
    The `-d` flag (short for `--detach`) runs the container in the background.
    This means that Docker starts your container and returns you to the terminal
-   prompt.
+   prompt. Also, it does not display logs in the terminal.
 @y
    `-d` フラグ (`--detach` の短縮形) は、コンテナーをバックグラウンドで実行します。
    これを行うと、Docker がコンテナーを起動した後に、端末上のプロンプトに戻ります。
+   またその場合、端末上にはログが表示されなくなります。
 @z
 
 @x

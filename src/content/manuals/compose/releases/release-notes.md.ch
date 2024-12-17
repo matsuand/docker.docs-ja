@@ -26,6 +26,114 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.32.0
+@y
+## 2.32.0
+@z
+
+@x
+{{< release-date date="2024-12-13" >}}
+@y
+{{< release-date date="2024-12-13" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker + buildx to latest release
+- Dependencies upgrade: bump otel dependencies to v1.28.0 and v0.53.0
+- Dependencies upgrade: bump golang.org/x/sys 0.28.0
+- Dependencies upgrade: bump golang.org/x/crypto to 0.31.0
+- Dependencies upgrade: bump google.golang.org/grpc to 1.68.1
+- Dependencies upgrade: bump golang.org/x/sync 0.10.0
+- Dependencies upgrade: bump xx to v1.6.1
+@y
+- Dependencies upgrade: bump docker + buildx to latest release
+- Dependencies upgrade: bump otel dependencies to v1.28.0 and v0.53.0
+- Dependencies upgrade: bump golang.org/x/sys 0.28.0
+- Dependencies upgrade: bump golang.org/x/crypto to 0.31.0
+- Dependencies upgrade: bump google.golang.org/grpc to 1.68.1
+- Dependencies upgrade: bump golang.org/x/sync 0.10.0
+- Dependencies upgrade: bump xx to v1.6.1
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Improved support when building with [Bake](/manuals/build/bake.md)
+- Added `restart` and `sync+exec` watch actions
+- Compose now recreates containers when the volume or network configuration changes
+- Fixed support for `mac_address`
+- Fixed `pull --quiet` to only hide progress, not global status
+- Fixed an issue where only the `rebuild` watch action now requires a build declaration
+- Compose now logs `watch` configuration error when enabled through the Compose menu
+@y
+- Improved support when building with [Bake](manuals/build/bake.md)
+- Added `restart` and `sync+exec` watch actions
+- Compose now recreates containers when the volume or network configuration changes
+- Fixed support for `mac_address`
+- Fixed `pull --quiet` to only hide progress, not global status
+- Fixed an issue where only the `rebuild` watch action now requires a build declaration
+- Compose now logs `watch` configuration error when enabled through the Compose menu
+@z
+
+@x
+## 2.31.0
+@y
+## 2.31.0
+@z
+
+@x
+{{< release-date date="2024-11-28" >}}
+@y
+{{< release-date date="2024-11-28" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.4.5
+- Dependencies upgrade: bump docker engine and cli to v27.4.0-rc.2
+- Dependencies upgrade: bump buildx to v0.18.0
+- Dependencies upgrade: bump buildkit to v0.17.1
+@y
+- Dependencies upgrade: bump compose-go to v2.4.5
+- Dependencies upgrade: bump docker engine and cli to v27.4.0-rc.2
+- Dependencies upgrade: bump buildx to v0.18.0
+- Dependencies upgrade: bump buildkit to v0.17.1
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added the ability to use Docker Buildx Bake to build Docker Compose services
+- Added `commit` command to create new images from running containers
+- Fixed an issue where network changes were not detected
+- Fixed an issue where containers stopped sequentially which slowed down the restart process
+@y
+- Added the ability to use Docker Buildx Bake to build Docker Compose services
+- Added `commit` command to create new images from running containers
+- Fixed an issue where network changes were not detected
+- Fixed an issue where containers stopped sequentially which slowed down the restart process
+@z
+
+@x
 ## 2.30.3
 @y
 ## 2.30.3

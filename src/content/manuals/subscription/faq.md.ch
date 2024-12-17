@@ -63,12 +63,12 @@ Contact the [Docker Sales Team](https://www.docker.com/company/contact).
 
 @x
 Docker offers two programs:
-- [Docker-Sponsored Open Source Program (DSOS)](../trusted-content/dsos-program.md)
-- [Docker Verified Publisher (DVP)](../trusted-content/dvp-program.md)
+- [Docker-Sponsored Open Source Program (DSOS)](../docker-hub/repos/manage/trusted-content/dsos-program.md)
+- [Docker Verified Publisher (DVP)](../docker-hub/repos/manage/trusted-content/dvp-program.md)
 @y
 Docker offers two programs:
-- [Docker-Sponsored Open Source Program (DSOS)](../trusted-content/dsos-program.md)
-- [Docker Verified Publisher (DVP)](../trusted-content/dvp-program.md)
+- [Docker-Sponsored Open Source Program (DSOS)](../docker-hub/repos/manage/trusted-content/dsos-program.md)
+- [Docker Verified Publisher (DVP)](../docker-hub/repos/manage/trusted-content/dvp-program.md)
 @z
 
 @x
