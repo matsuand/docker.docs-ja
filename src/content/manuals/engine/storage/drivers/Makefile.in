@@ -304,6 +304,7 @@ bases = \
 	overlayfs-driver.md      \
 	select-storage-driver.md \
 	vfs-driver.md            \
+	windowsfilter-driver.md  \
 	zfs-driver.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

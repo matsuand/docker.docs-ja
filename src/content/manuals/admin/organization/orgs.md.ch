@@ -52,11 +52,19 @@ There are multiple ways to create an organization. You can either:
 @x
 The following section contains instructions on how to create a new organization. For prerequisites and
 detailed instructions on converting an existing user account to an organization, see
-[Convert an account into an organization](../convert-account.md).
+[Convert an account into an organization](/manuals/admin/organization/convert-account.md).
 @y
 The following section contains instructions on how to create a new organization. For prerequisites and
 detailed instructions on converting an existing user account to an organization, see
-[Convert an account into an organization](../convert-account.md).
+[Convert an account into an organization](manuals/admin/organization/convert-account.md).
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x
@@ -80,11 +88,11 @@ organization after you've created it.
 @x
    > [!NOTE]
    >
-   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](../convert-account.md).
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/convert-account.md).
 @y
    > [!NOTE]
    >
-   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](../convert-account.md).
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](manuals/admin/organization/convert-account.md).
 @z
 
 @x
@@ -112,9 +120,99 @@ You've now created an organization.
 @z
 
 @x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+To create an organization:
+@y
+To create an organization:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/).
+2. Under Settings and administration, select **Go to Admin Console**.
+3. Select the **Organization** drop-down in the left-hand navigation and then **Create Organization**.
+4. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
+5. Select **Continue to profile**.
+6. Enter an **Organization namespace**. This is the official, unique name for
+your organization in Docker Hub. It's not possible to change the name of the
+organization after you've created it.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/).
+2. Under Settings and administration, select **Go to Admin Console**.
+3. Select the **Organization** drop-down in the left-hand navigation and then **Create Organization**.
+4. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
+5. Select **Continue to profile**.
+6. Enter an **Organization namespace**. This is the official, unique name for
+your organization in Docker Hub. It's not possible to change the name of the
+organization after you've created it.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/convert-account.md).
+@y
+   > [!NOTE]
+   >
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](manuals/admin/organization/convert-account.md).
+@z
+
+@x
+7. Enter your **Company name**. This is the full name of your company. Docker
+displays the company name on your organization page and in the details of any
+public images you publish. You can update the company name anytime by navigating
+to your organization's **Settings** page.
+8. Select **Continue to billing** to continue.
+9. Enter your organization's billing information and select **Continue to payment** to continue to the billing portal.
+10. Provide your card details and select **Purchase**.
+@y
+7. Enter your **Company name**. This is the full name of your company. Docker
+displays the company name on your organization page and in the details of any
+public images you publish. You can update the company name anytime by navigating
+to your organization's **Settings** page.
+8. Select **Continue to billing** to continue.
+9. Enter your organization's billing information and select **Continue to payment** to continue to the billing portal.
+10. Provide your card details and select **Purchase**.
+@z
+
+@x
+You've now created an organization.
+@y
+You've now created an organization.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 ## View an organization
 @y
 ## View an organization
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x
@@ -136,7 +234,7 @@ To view an organization:
       >
       > You can't *directly* sign in to an organization. This is especially
       > important to note if you create an organization by
-      [converting a user account](../convert-account.md), as conversion means you lose the ability to log into that
+      [converting a user account](/manuals/admin/organization/convert-account.md), as conversion means you lose the ability to log into that
       > "account", since it no longer exists. To view the organization you
       > need to sign in with the new owner account assigned during the
       > conversion or another account that was added as a member. If you
@@ -148,7 +246,7 @@ To view an organization:
       >
       > You can't *directly* sign in to an organization. This is especially
       > important to note if you create an organization by
-      [converting a user account](../convert-account.md), as conversion means you lose the ability to log into that
+      [converting a user account](manuals/admin/organization/convert-account.md), as conversion means you lose the ability to log into that
       > "account", since it no longer exists. To view the organization you
       > need to sign in with the new owner account assigned during the
       > conversion or another account that was added as a member. If you
@@ -234,6 +332,20 @@ configure your organization.
 @z
 
 @x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
 To view an organization in the Admin Console:
 @y
 To view an organization in the Admin Console:
@@ -298,9 +410,33 @@ configure your organization.
 @z
 
 @x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 ## Merge organizations
 @y
 ## Merge organizations
+@z
+
+@x
+> [!WARNING]
+>
+> If you are merging organizations, it is recommended to do so at the *end* of
+> your billing cycle. When you merge an organization and downgrade another, you
+> will lose seats on your downgraded organization. Docker does not offer
+> refunds for downgrades.
+@y
+> [!WARNING]
+>
+> If you are merging organizations, it is recommended to do so at the *end* of
+> your billing cycle. When you merge an organization and downgrade another, you
+> will lose seats on your downgraded organization. Docker does not offer
+> refunds for downgrades.
 @z
 
 @x

@@ -179,14 +179,6 @@ UIDs/GIDs to be used in the user namespace.
 @z
 
 @x
-- For Debian 10, add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.conf` (or
-  `/etc/sysctl.d`) and run `sudo sysctl --system`. This step is not required on Debian 11.
-@y
-- For Debian 10, add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.conf` (or
-  `/etc/sysctl.d`) and run `sudo sysctl --system`. This step is not required on Debian 11.
-@z
-
-@x
 - For Debian 11, installing `fuse-overlayfs` is recommended. Run `sudo apt-get install -y fuse-overlayfs`.
   This step is not required on Debian 12.
 @y

@@ -12,9 +12,13 @@ keywords: company, hub, organization, company owner, Admin Console, company mana
 @z
 
 @x
-You can create a new company in the Docker Admin Console. Before you begin, make sure you're the owner of the organization you want to add to the new company. The organization also needs to have a Docker Business subscription.
+You can create a new company in the Docker Admin Console. Before you begin, you must:
+- Be the owner of the organization you want to add to your company
+- Have a Docker Business subscription
 @y
-You can create a new company in the Docker Admin Console. Before you begin, make sure you're the owner of the organization you want to add to the new company. The organization also needs to have a Docker Business subscription.
+You can create a new company in the Docker Admin Console. Before you begin, you must:
+- Be the owner of the organization you want to add to your company
+- Have a Docker Business subscription
 @z
 
 @x
@@ -36,15 +40,17 @@ To create a new company:
 @z
 
 @x
-1. In the Admin Console, navigate to the organization you want to place under a company. The organization must have a Business subscription, and you must be an owner of the organization.
-2. Under **Organization settings**, select **Company management**.
-3. Select **Create a company**.
-4. Enter a unique name for your company, then select **Continue**.
+1. Sign in to the [Admin Console](https://app.docker.com/admin).
+2. Select your organization you want to add to your company from the **Choose profile** page.
+3. Under **Organization settings**, select **Company management**.
+4. Select **Create a company**.
+5. Enter a unique name for your company, then select **Continue**.
 @y
-1. In the Admin Console, navigate to the organization you want to place under a company. The organization must have a Business subscription, and you must be an owner of the organization.
-2. Under **Organization settings**, select **Company management**.
-3. Select **Create a company**.
-4. Enter a unique name for your company, then select **Continue**.
+1. Sign in to the [Admin Console](https://app.docker.com/admin).
+2. Select your organization you want to add to your company from the **Choose profile** page.
+3. Under **Organization settings**, select **Company management**.
+4. Select **Create a company**.
+5. Enter a unique name for your company, then select **Continue**.
 @z
 
 @x
@@ -58,9 +64,9 @@ To create a new company:
 @z
 
 @x
-5. Review the company migration details and then select **Create company**.
+6. Review the company migration details and then select **Create company**.
 @y
-5. Review the company migration details and then select **Create company**.
+6. Review the company migration details and then select **Create company**.
 @z
 
 @x

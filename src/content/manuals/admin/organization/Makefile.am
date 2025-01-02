@@ -4,6 +4,7 @@
 bases = \
 	_index.md           \
 	activity-logs.md    \
+	convert-account.md  \
 	general-settings.md \
 	insights.md         \
 	manage-a-team.md    \

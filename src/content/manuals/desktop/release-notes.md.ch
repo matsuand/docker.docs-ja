@@ -36,6 +36,44 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
+## 4.37.1
+@y
+## 4.37.1
+@z
+
+@x
+{{< release-date date="2024-12-17" >}}
+@y
+{{< release-date date="2024-12-17" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.37.1" build_path="/178610/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.37.1" build_path="/178610/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed an issue that caused the AI Catalog in Docker Hub to be unavailable in Docker Desktop.
+- Fixed an issue that caused Docker Desktop to panic with `index out of range [0] with length 0` when using [Enhanced Container Isolation](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md).
+@y
+- Fixed an issue that caused the AI Catalog in Docker Hub to be unavailable in Docker Desktop.
+- Fixed an issue that caused Docker Desktop to panic with `index out of range [0] with length 0` when using [Enhanced Container Isolation](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md).
+@z
+
+@x
 ## 4.37.0
 @y
 ## 4.37.0
@@ -121,10 +159,8 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 
 @x
 - Fixed a bug that would create certain user directories with root permission when running the uninstaller binary twice with `sudo`.
-- Fixed a bug where the in-app update would fail if Docker Desktop was installed by a non-admin user or if the current user was previously an administrator. Fixes [docker/for-mac#7403](https://github.com/docker/for-mac/issues/7403) and [docker/for-mac#6920](https://github.com/docker/for-mac/issues/6920).
 @y
 - Fixed a bug that would create certain user directories with root permission when running the uninstaller binary twice with `sudo`.
-- Fixed a bug where the in-app update would fail if Docker Desktop was installed by a non-admin user or if the current user was previously an administrator. Fixes [docker/for-mac#7403](https://github.com/docker/for-mac/issues/7403) and [docker/for-mac#6920](https://github.com/docker/for-mac/issues/6920).
 @z
 
 @x

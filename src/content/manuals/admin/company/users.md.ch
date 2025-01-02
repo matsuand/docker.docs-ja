@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to manage company users in the Docker Admin Console.
 keywords: company, company users, users, admin, Admin Console
 title: Manage company users
----
 @y
----
 description: Learn how to manage company users in the Docker Admin Console.
 keywords: company, company users, users, admin, Admin Console
 title: Manage company users
----
-@z
-
-@x
-{{< include "admin-early-access.md" >}}
-@y
-{{< include "admin-early-access.md" >}}
 @z
 
 @x
@@ -31,6 +21,12 @@ You can manage users at the company-level in the Docker Admin Console.
 {{% admin-users product="admin" layer="company" %}}
 @y
 {{% admin-users product="admin" layer="company" %}}
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
 @z
 
 @x

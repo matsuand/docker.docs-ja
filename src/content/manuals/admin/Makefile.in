@@ -298,7 +298,6 @@ top_srcdir = @top_srcdir@
 SUBDIRS = company faqs images organization
 bases = \
 	_index.md             \
-	convert-account.md    \
 	deactivate-account.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

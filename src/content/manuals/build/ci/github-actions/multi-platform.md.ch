@@ -68,11 +68,11 @@ each platform across multiple runners and create manifest list using the
 @x
 The following workflow will build the image for each platform on a dedicated
 runner using a matrix strategy and push by digest. Then, the `merge` job will
-create a manifest list and push it to Docker Hub.
+create manifest lists and push them to two registries:
 @y
 The following workflow will build the image for each platform on a dedicated
 runner using a matrix strategy and push by digest. Then, the `merge` job will
-create a manifest list and push it to Docker Hub.
+create manifest lists and push them to two registries:
 @z
 
 @x

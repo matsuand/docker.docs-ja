@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
-description: Mocking API services in development and testing with WireMock
-keywords: WireMock, container-supported development
 title: Mocking API services in development and testing with WireMock
+description: &desc Mocking API services in development and testing with WireMock
+keywords: WireMock, container-supported development
 linktitle: Mocking API services with WireMock
----
 @y
----
-description: Mocking API services in development and testing with WireMock
-keywords: WireMock, container-supported development
 title: Mocking API services in development and testing with WireMock
+description: &desc Mocking API services in development and testing with WireMock
+keywords: WireMock, container-supported development
 linktitle: Mocking API services with WireMock
----
 @z
 
 @x

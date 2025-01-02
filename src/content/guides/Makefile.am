@@ -23,7 +23,8 @@ bases = \
 	tensorflowjs.md                    \
 	text-classification.md             \
 	text-summarization.md              \
-	traefik.md
+	traefik.md                         \
+	wiremock.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

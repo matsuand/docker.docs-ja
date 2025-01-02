@@ -2537,9 +2537,9 @@ For more information, see [Use lifecycle hooks](manuals/compose/how-tos/lifecycl
 @z
 
 @x
-Configuration is equivalent to [`post_start](#post_start).
+Configuration is equivalent to [post_start](#post_start).
 @y
-Configuration is equivalent to [`post_start](#post_start).
+Configuration is equivalent to [post_start](#post_start).
 @z
 
 @x

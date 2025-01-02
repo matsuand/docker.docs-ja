@@ -12,6 +12,7 @@ copyfiles = \
 	builds-view.webp               \
 	console.png                    \
 	dashboard.webp                 \
+	gordon-run-ctr.png             \
 	hyperv-enabled.png             \
 	notifications.svg              \
 	resource-saver-settings.png    \

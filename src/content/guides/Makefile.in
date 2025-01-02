@@ -317,7 +317,8 @@ bases = \
 	tensorflowjs.md                    \
 	text-classification.md             \
 	text-summarization.md              \
-	traefik.md
+	traefik.md                         \
+	wiremock.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

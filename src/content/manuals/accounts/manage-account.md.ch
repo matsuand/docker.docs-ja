@@ -182,9 +182,9 @@ You can take administrative actions for your account in Docker Home.
 @z
 
 @x
-For more information on converting your account, see [Convert an account into an organization](../admin/convert-account.md).
+For more information on converting your account, see [Convert an account into an organization](../admin/organization/convert-account.md).
 @y
-For more information on converting your account, see [Convert an account into an organization](../admin/convert-account.md).
+For more information on converting your account, see [Convert an account into an organization](../admin/organization/convert-account.md).
 @z
 
 @x

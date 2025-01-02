@@ -5,7 +5,6 @@ SUBDIRS = company faqs images organization
 
 bases = \
 	_index.md             \
-	convert-account.md    \
 	deactivate-account.md
 
 include $(top_srcdir)/build-aux/common.mk

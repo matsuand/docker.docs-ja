@@ -1,34 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: "Faster development and testing with container-supported development"
 linkTitle: Container-supported development
 summary: |
   Containers don't have to be just for your app. Learn how to run your app's dependent services and other debugging tools to enhance your development environment.
 description: |
   Use containers in your local development loop to develop and test faster… even if your main app isn't running in containers.
-tags: [app-dev]
-params:
-  image: images/learning-paths/container-supported-development.png
-  time: 20 minutes
-  resource_links: []
----
 @y
----
 title: "Faster development and testing with container-supported development"
 linkTitle: Container-supported development
 summary: |
   Containers don't have to be just for your app. Learn how to run your app's dependent services and other debugging tools to enhance your development environment.
 description: |
   Use containers in your local development loop to develop and test faster… even if your main app isn't running in containers.
-tags: [app-dev]
-params:
-  image: images/learning-paths/container-supported-development.png
-  time: 20 minutes
-  resource_links: []
----
 @z
 
 @x
@@ -140,6 +128,16 @@ With container-supported development, it's easy to run databases locally. In thi
 @z
 
 @x
+> [!TIP]
+>
+> Learn more about running databases in containers in the [Use containerized databases](/guides/databases.md) guide.
+@y
+> [!TIP]
+>
+> Learn more about running databases in containers in the [Use containerized databases](guides/databases.md) guide.
+@z
+
+@x
 ### Demo: mocking API endpoints
 @y
 ### Demo: mocking API endpoints
@@ -164,6 +162,16 @@ This demo will demonstrate how using WireMock can make it easy to develop and te
 @z
 
 @x
+> [!TIP]
+>
+> Learn more about using WireMock to mock API in the [Mocking API services with WireMock](/guides/wiremock.md) guide.
+@y
+> [!TIP]
+>
+> Learn more about using WireMock to mock API in the [Mocking API services with WireMock](guides/wiremock.md) guide.
+@z
+
+@x
 ### Demo: developing the cloud locally
 @y
 ### Demo: developing the cloud locally
@@ -185,6 +193,16 @@ With container-supported development, you can run local instances of these servi
 {{< youtube-embed JtwUMvR5xlY >}}
 @y
 {{< youtube-embed JtwUMvR5xlY >}}
+@z
+
+@x
+> [!TIP]
+>
+> Learn more about using LocalStack in the [Develop and test AWS Cloud applications using LocalStack](/guides/localstack.md) guide.
+@y
+> [!TIP]
+>
+> Learn more about using LocalStack in the [Develop and test AWS Cloud applications using LocalStack](guides/localstack.md) guide.
 @z
 
 @x

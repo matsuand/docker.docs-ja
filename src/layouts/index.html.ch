@@ -57,7 +57,7 @@
                       ガイド
 @z
 @x
-                  Get started and learn how Docker can optimize your development workflows.
+                  Learn how Docker can optimize your development workflows.
 @y
                   Docker が開発ワークフローをいかに最適化できるかを学びます。
 @z
@@ -96,25 +96,24 @@
 @z
 
 @x
-              <h2 class="font-medium">Getting started</h2>
+              <h2 class="font-medium">Gen AI catalog {{ partial
 @y
-              <h2 class="font-medium">はじめよう</h2>
+              <h2 class="font-medium">Gen AI catalog {{ partial
 @z
 @x
-                Learn Docker basics and the benefits of containerizing your
-                applications
+                Integrate AI solutions into your apps with minimal effort
 @y
-                アプリケーションのコンテナー化についてその基本と利点を学びます。
+                Integrate AI solutions into your apps with minimal effort
 @z
 @x
-              <a href="/get-started/"
+                Explore on Docker Hub
 @y
-              <a href="get-started/"
+                Explore on Docker Hub
 @z
 @x
-                Get started
+                Read the docs
 @y
-                はじめよう
+                Read the docs
 @z
 @x
             <img class="dark:hidden" alt="Low-fi desktop app" src="/assets/images/app-wf-light-2.svg" />
@@ -125,30 +124,35 @@
 @z
 
 @x
-                <h2 class="font-medium">Research</h2>
+                  Ask Gordon
 @y
-                <h2 class="font-medium">Research</h2>
+                  Ask Gordon
 @z
 @x
-                  Docker State of Application Development survey
+                  Your personal Docker expert, built right into Docker Desktop.
 @y
-                  Docker State of Application Development survey
+                  Your personal Docker expert, built right into Docker Desktop.
 @z
 @x
-                  The survey takes approximately 20-30 minutes to complete, and
-                  you can save your progress and return at any time. As a thank
-                  you, you can opt into a raffle for Docker swag and other
-                  prizes!
+                  Boost your productivity with Ask Gordon, an AI-powered
+                  assistant designed to optimize your Docker workflows. From
+                  improving Dockerfiles to troubleshooting containers, Gordon
+                  is here to help.
 @y
-                  The survey takes approximately 20-30 minutes to complete, and
-                  you can save your progress and return at any time. As a thank
-                  you, you can opt into a raffle for Docker swag and other
-                  prizes!
+                  Boost your productivity with Ask Gordon, an AI-powered
+                  assistant designed to optimize your Docker workflows. From
+                  improving Dockerfiles to troubleshooting containers, Gordon
+                  is here to help.
 @z
 @x
-                class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Take the survey</a>
+                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Join the beta</a>
 @y
-                class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Take the survey</a>
+                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Join the beta</a>
+@z
+@x
+                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Read the docs</a>
+@y
+                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Read the docs</a>
 @z
 
 @x

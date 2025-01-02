@@ -30,11 +30,9 @@ keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
 @z
 
 @x
-A Docker ID is a username for your Docker account that lets you access Docker products. All you need is an email address to create a Docker ID, or you can sign up with your Google or GitHub account. Your Docker ID must be between 4 and 30 characters long, and can only contain
-numbers and lowercase letters. You can't use any special characters or spaces.
+A Docker ID is a username for your Docker account that lets you access Docker products. To create a Docker ID, you need an email address or you can sign up with your social or GitHub accounts. Your Docker ID must be between 4 and 30 characters long, and can only contain numbers and lowercase letters. You can't use any special characters or spaces.
 @y
-A Docker ID is a username for your Docker account that lets you access Docker products. All you need is an email address to create a Docker ID, or you can sign up with your Google or GitHub account. Your Docker ID must be between 4 and 30 characters long, and can only contain
-numbers and lowercase letters. You can't use any special characters or spaces.
+A Docker ID is a username for your Docker account that lets you access Docker products. To create a Docker ID, you need an email address or you can sign up with your social or GitHub accounts. Your Docker ID must be between 4 and 30 characters long, and can only contain numbers and lowercase letters. You can't use any special characters or spaces.
 @z
 
 @x
@@ -180,6 +178,16 @@ information, see [Configure SSO](../../security/for-admins/single-sign-on/config
 @z
 
 @x
+> [!IMPORTANT]
+>
+> As of December 10, 2024, service accounts are no longer available. Existing Service Account agreements will be honored until their current term expires, but new purchases or renewals of service accounts no longer available and customers must renew under a new subscription plan. It is recommended to transition to Organization Access Tokens (OATs), which can provide similar functionality. For more information, see [Organization access tokens (Beta)](/manuals/security/for-admins/access-tokens.md).
+@y
+> [!IMPORTANT]
+>
+> As of December 10, 2024, service accounts are no longer available. Existing Service Account agreements will be honored until their current term expires, but new purchases or renewals of service accounts no longer available and customers must renew under a new subscription plan. It is recommended to transition to Organization Access Tokens (OATs), which can provide similar functionality. For more information, see [Organization access tokens (Beta)](manuals/security/for-admins/access-tokens.md).
+@z
+
+@x
 A [service account](../../docker-hub/service-accounts.md) is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and don't share Docker IDs with the members in the Team or Business plan. Common use cases for service accounts include mirroring content on Docker Hub, or tying in image pulls from your CI/CD process.
 @y
 A [service account](../../docker-hub/service-accounts.md) is a Docker ID used for automated management of container images or containerized applications. Service accounts are typically used in automated workflows, and don't share Docker IDs with the members in the Team or Business plan. Common use cases for service accounts include mirroring content on Docker Hub, or tying in image pulls from your CI/CD process.
@@ -210,7 +218,7 @@ If the user is a member of your organization, you can remove the user from your 
 @z
 
 @x
-You can manage your account settings any time when you sign in to your [Docker account](https://app.docker.com/login). In Docker Home, select your avatar in the top-right navigation, then select **My Account**. You can also access this menu from any Docker web applications when you're signed in to your account. See [Manage your Docker account](/accounts/manage-account). If your account is associated with an organization that uses SSO, you may have limited access to the settings that you can control.
+You can manage your account settings anytime when you sign in to your [Docker account](https://app.docker.com/login). In Docker Home, select your avatar in the top-right navigation, then select **My Account**. You can also access this menu from any Docker web applications when you're signed in to your account. See [Manage your Docker account](/accounts/manage-account). If your account is associated with an organization that uses SSO, you may have limited access to the settings that you can control.
 @y
-You can manage your account settings any time when you sign in to your [Docker account](https://app.docker.com/login). In Docker Home, select your avatar in the top-right navigation, then select **My Account**. You can also access this menu from any Docker web applications when you're signed in to your account. See [Manage your Docker account](__SUBDIR__/accounts/manage-account). If your account is associated with an organization that uses SSO, you may have limited access to the settings that you can control.
+You can manage your account settings anytime when you sign in to your [Docker account](https://app.docker.com/login). In Docker Home, select your avatar in the top-right navigation, then select **My Account**. You can also access this menu from any Docker web applications when you're signed in to your account. See [Manage your Docker account](__SUBDIR__/accounts/manage-account). If your account is associated with an organization that uses SSO, you may have limited access to the settings that you can control.
 @z

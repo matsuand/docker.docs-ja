@@ -19,11 +19,11 @@ This section describes the prerequisites and steps to deactivate an organization
 @z
 
 @x
->[!WARNING]
+> [!WARNING]
 >
 > All Docker products and services that use your Docker account or organization account will be inaccessible after deactivating your account.
 @y
->[!WARNING]
+> [!WARNING]
 >
 > All Docker products and services that use your Docker account or organization account will be inaccessible after deactivating your account.
 @z
@@ -110,10 +110,10 @@ Once you have completed all the previous steps, you can deactivate your organiza
 
 @x
 {{< /tab >}}
-{{< tab name="Hub" >}}
+{{< tab name="Docker Hub" >}}
 @y
 {{< /tab >}}
-{{< tab name="Hub" >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x

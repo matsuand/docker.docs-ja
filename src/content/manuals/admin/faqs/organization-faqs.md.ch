@@ -28,9 +28,9 @@ tags: [FAQ]
 @z
 
 @x
-All Docker IDs are first-come, first-served except for companies that have a US Trademark on a username. If you have a trademark for your namespace, [Docker Support](https://hub.docker.com/support/contact/) can retrieve the Docker ID for you.
+All Docker IDs are first-come, first-served except for companies that have a U.S. Trademark on a username. If you have a trademark for your namespace, [Docker Support](https://hub.docker.com/support/contact/) can retrieve the Docker ID for you.
 @y
-All Docker IDs are first-come, first-served except for companies that have a US Trademark on a username. If you have a trademark for your namespace, [Docker Support](https://hub.docker.com/support/contact/) can retrieve the Docker ID for you.
+All Docker IDs are first-come, first-served except for companies that have a U.S. Trademark on a username. If you have a trademark for your namespace, [Docker Support](https://hub.docker.com/support/contact/) can retrieve the Docker ID for you.
 @z
 
 @x
@@ -64,9 +64,9 @@ If your organization uses a Software Asset Management tool, you can use it to fi
 @z
 
 @x
-No. Organization owners can invite users with their email address, and also assign them to a team during the invite process.
+No. Organization owners can invite users with their email addresses, and also assign them to a team during the invite process.
 @y
-No. Organization owners can invite users with their email address, and also assign them to a team during the invite process.
+No. Organization owners can invite users with their email addresses, and also assign them to a team during the invite process.
 @z
 
 @x
@@ -76,9 +76,9 @@ No. Organization owners can invite users with their email address, and also assi
 @z
 
 @x
-Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md) and some benefits are:
+Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md). Some benefits of enforcing sign-in are:
 @y
-Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md) and some benefits are:
+Yes. You can [enforce sign-in](../../security/for-admins/enforce-sign-in/_index.md). Some benefits of enforcing sign-in are:
 @z
 
 @x
@@ -126,13 +126,9 @@ revert it to a personal user account. For prerequisites and instructions, see
 @z
 
 @x
-There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team
-members exceed the number of licenses, you will receive an error informing you
-to contact the administrator due to lack of seats. You can [add seats](../../subscription/manage-seats.md) if needed.
+There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team members exceed the number of licenses, you will receive an error informing you to contact the administrator due to lack of seats. You can [add seats](../../subscription/manage-seats.md) if needed.
 @y
-There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team
-members exceed the number of licenses, you will receive an error informing you
-to contact the administrator due to lack of seats. You can [add seats](../../subscription/manage-seats.md) if needed.
+There isn't any automatic notification when the total number of users for the requested licenses has been met. However, if the number of team members exceed the number of licenses, you will receive an error informing you to contact the administrator due to lack of seats. You can [add seats](../../subscription/manage-seats.md) if needed.
 @z
 
 @x
@@ -182,27 +178,27 @@ Yes. Organization owners will take up a seat.
 @z
 
 @x
-User may refer to a Docker user with a Docker ID.
+User refers to a Docker user with a Docker ID.
 @y
-User may refer to a Docker user with a Docker ID.
+User refers to a Docker user with a Docker ID.
 @z
 
 @x
-An invitee is a user that an administrator has invited to join an organization, but has not yet accepted their invitation.
+An invitee is a user that an administrator has invited to join an organization but has not yet accepted their invitation.
 @y
-An invitee is a user that an administrator has invited to join an organization, but has not yet accepted their invitation.
+An invitee is a user that an administrator has invited to join an organization but has not yet accepted their invitation.
 @z
 
 @x
-Seats is the number of planned members within an organization.
+Seats are the number of planned members within an organization.
 @y
-Seats is the number of planned members within an organization.
+Seats are the number of planned members within an organization.
 @z
 
 @x
-Member may refer to a user that has received and accepted an invitation to join an organization. Member can also refer to a member of a team within an organization.
+Member may refer to a user who has received and accepted an invitation to join an organization. Member can also refer to a member of a team within an organization.
 @y
-Member may refer to a user that has received and accepted an invitation to join an organization. Member can also refer to a member of a team within an organization.
+Member may refer to a user who has received and accepted an invitation to join an organization. Member can also refer to a member of a team within an organization.
 @z
 
 @x

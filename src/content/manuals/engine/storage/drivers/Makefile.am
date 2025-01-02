@@ -11,6 +11,7 @@ bases = \
 	overlayfs-driver.md      \
 	select-storage-driver.md \
 	vfs-driver.md            \
+	windowsfilter-driver.md  \
 	zfs-driver.md
 
 include $(top_srcdir)/build-aux/common.mk

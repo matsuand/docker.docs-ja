@@ -460,13 +460,15 @@ to physical or logical disks on the Docker host.
 @z
 
 @x
-- [About images, containers, and storage drivers](./_index.md)
-- [`overlay2` storage driver in practice](overlayfs-driver.md)
-- [`btrfs` storage driver in practice](btrfs-driver.md)
-- [`zfs` storage driver in practice](zfs-driver.md)
+- [Storage drivers](./_index.md)
+- [`overlay2` storage driver](overlayfs-driver.md)
+- [`btrfs` storage driver](btrfs-driver.md)
+- [`zfs` storage driver](zfs-driver.md)
+- [`windowsfilter` storage driver](windowsfilter-driver.md)
 @y
-- [About images, containers, and storage drivers](./_index.md)
-- [`overlay2` storage driver in practice](overlayfs-driver.md)
-- [`btrfs` storage driver in practice](btrfs-driver.md)
-- [`zfs` storage driver in practice](zfs-driver.md)
+- [Storage drivers](./_index.md)
+- [`overlay2` storage driver](overlayfs-driver.md)
+- [`btrfs` storage driver](btrfs-driver.md)
+- [`zfs` storage driver](zfs-driver.md)
+- [`windowsfilter` storage driver](windowsfilter-driver.md)
 @z

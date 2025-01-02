@@ -94,12 +94,12 @@ You can add a maximum of 10 company owners to a single company account.
 @z
 
 @x
-Company owners don't occupy a seat in any organization unless they are added as
+Company owners don't occupy a seat in any organization unless they are added as a
 member of the organization. Since company owners have the same access as
 organization owners for all organizations associated with the company, it is not
 necessary to add company owners to an organization.
 @y
-Company owners don't occupy a seat in any organization unless they are added as
+Company owners don't occupy a seat in any organization unless they are added as a
 member of the organization. Since company owners have the same access as
 organization owners for all organizations associated with the company, it is not
 necessary to add company owners to an organization.
@@ -122,9 +122,9 @@ you're an organization owner.
 @z
 
 @x
-Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change single sign-on (SSO) and System for Cross-domain Identity Management (SCIM) settings. Changes to company settings impact all users in each organization under the company. See [Roles and permissions](../../security/for-admins/roles-and-permissions.md).
+Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change single sign-on (SSO) and System for Cross-domain Identity Management (SCIM) settings. Changes to company settings impact all users in each organization under the company. For more information, see [Roles and permissions](../../security/for-admins/roles-and-permissions.md).
 @y
-Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change single sign-on (SSO) and System for Cross-domain Identity Management (SCIM) settings. Changes to company settings impact all users in each organization under the company. See [Roles and permissions](../../security/for-admins/roles-and-permissions.md).
+Company owners can navigate to the **Organizations** page to view all their nested organizations in a single location. They can also view or edit organization members and change single sign-on (SSO) and System for Cross-domain Identity Management (SCIM) settings. Changes to company settings impact all users in each organization under the company. For more information, see [Roles and permissions](../../security/for-admins/roles-and-permissions.md).
 @z
 
 @x
@@ -182,15 +182,15 @@ A company name must be unique to that of its child organization. If a child orga
 @z
 
 @x
-You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md#add-organizations-to-a-company.md).
+You can add organizations to a company in the Admin Console. For more information, see [Add organizations to a company](../../admin/company/organizations.md#add-organizations-to-a-company.md).
 @y
-You can add organizations to a company in the [Admin Console](../../admin/company/organizations.md#add-organizations-to-a-company.md).
+You can add organizations to a company in the Admin Console. For more information, see [Add organizations to a company](../../admin/company/organizations.md#add-organizations-to-a-company.md).
 @z
 
 @x
-### How does a company owner manage SSO/SCIM settings from a company?
+### How does a company owner manage SSO/SCIM settings for a company?
 @y
-### How does a company owner manage SSO/SCIM settings from a company?
+### How does a company owner manage SSO/SCIM settings for a company?
 @z
 
 @x
@@ -212,9 +212,9 @@ See [SCIM](scim.md) and [group mapping](../../security/for-admins/provisioning/g
 @z
 
 @x
-### What's the definition of a company vs an organization?
+### What's the definition of a company versus an organization?
 @y
-### What's the definition of a company vs an organization?
+### What's the definition of a company versus an organization?
 @z
 
 @x
