@@ -101,6 +101,7 @@ Using the `admin-settings.json` file, you can:
 - Turn off Docker Extensions
 - Turn off Docker Scout SBOM indexing
 - Turn off beta and experimental features
+- Turn off Docker AI ([Ask Gordon](../../../../desktop/features/gordon.md))
 - Turn off Docker Desktop's onboarding survey
 - Control whether developers can use the Docker terminal
 - Control the file sharing implementation for your developers on macOS
@@ -118,6 +119,7 @@ Using the `admin-settings.json` file, you can:
 - Turn off Docker Extensions
 - Turn off Docker Scout SBOM indexing
 - Turn off beta and experimental features
+- Turn off Docker AI ([Ask Gordon](../../../../desktop/features/gordon.md))
 - Turn off Docker Desktop's onboarding survey
 - Control whether developers can use the Docker terminal
 - Control the file sharing implementation for your developers on macOS
