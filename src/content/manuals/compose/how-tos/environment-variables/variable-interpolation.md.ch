@@ -480,9 +480,9 @@ $ docker compose --env-file ./config/.env.dev up
 @z
 
 @x
-### local `.env` file versus <project directory> `.env` file
+### local `.env` file versus &lt;project directory&gt; `.env` file
 @y
-### local `.env` file versus <project directory> `.env` file
+### local `.env` file versus &lt;project directory&gt; `.env` file
 @z
 
 @x

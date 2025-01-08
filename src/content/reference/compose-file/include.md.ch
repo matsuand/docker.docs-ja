@@ -148,13 +148,13 @@ services:
 @z
 
 @x
-In the above example, both `../commons/compose.yaml` and 
+In the previous example, both `../commons/compose.yaml` and 
 `../another_domain/compose.yaml` are loaded as individual Compose projects. Relative paths 
 in Compose files being referred by `include` are resolved relative to their own Compose 
 file path, not based on the local project's directory. Variables are interpolated using values set in the optional
 `.env` file in same folder and are overridden by the local project's environment.
 @y
-In the above example, both `../commons/compose.yaml` and 
+In the previous example, both `../commons/compose.yaml` and 
 `../another_domain/compose.yaml` are loaded as individual Compose projects. Relative paths 
 in Compose files being referred by `include` are resolved relative to their own Compose 
 file path, not based on the local project's directory. Variables are interpolated using values set in the optional
@@ -190,21 +190,31 @@ include:
 @z
 
 @x
-### path
+### `path`
 @y
-### path
+### `path`
 @z
 
 @x
 `path` is required and defines the location of the Compose file(s) to be parsed and included into the
-local Compose model. `path` can be set to either a string when a single Compose file is involved,
-or to a list of strings when multiple Compose files need to be [merged together](merge.md) to
-define the Compose model to be included in the local application.
+local Compose model.
 @y
 `path` is required and defines the location of the Compose file(s) to be parsed and included into the
-local Compose model. `path` can be set to either a string when a single Compose file is involved,
-or to a list of strings when multiple Compose files need to be [merged together](merge.md) to
-define the Compose model to be included in the local application.
+local Compose model.
+@z
+
+@x
+`path` can be set as:
+@y
+`path` can be set as:
+@z
+
+@x
+- A string: When using a single Compose file.
+- A list of strings: When multiple Compose files need to be [merged together](merge.md) to define the Compose model for the local application.
+@y
+- A string: When using a single Compose file.
+- A list of strings: When multiple Compose files need to be [merged together](merge.md) to define the Compose model for the local application.
 @z
 
 @x
@@ -224,9 +234,9 @@ include:
 @z
 
 @x
-### project_directory
+### `project_directory`
 @y
-### project_directory
+### `project_directory`
 @z
 
 @x
@@ -238,9 +248,9 @@ the directory of the included Compose file.
 @z
 
 @x
-### env_file
+### `env_file`
 @y
-### env_file
+### `env_file`
 @z
 
 @x

@@ -35,10 +35,10 @@ application. The source of the secret is either `file` or `environment`.
 
 @x
 - `file`: The secret is created with the contents of the file at the specified path.
-- `environment`: The secret is created with the value of an environment variable. 
+- `environment`: The secret is created with the value of an environment variable on the host.
 @y
 - `file`: The secret is created with the contents of the file at the specified path.
-- `environment`: The secret is created with the value of an environment variable. 
+- `environment`: The secret is created with the value of an environment variable on the host.
 @z
 
 @x

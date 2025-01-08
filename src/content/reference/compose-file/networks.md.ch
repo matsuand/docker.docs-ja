@@ -69,9 +69,9 @@ The advanced example shows a Compose file which defines two custom networks. The
 @z
 
 @x
-### driver
+### `driver`
 @y
-### driver
+### `driver`
 @z
 
 @x
@@ -91,9 +91,9 @@ For more information on drivers and available options, see [Network drivers](man
 @z
 
 @x
-### driver_opts
+### `driver_opts`
 @y
-### driver_opts
+### `driver_opts`
 @z
 
 @x
@@ -113,9 +113,9 @@ Consult the [network drivers documentation](manuals/engine/network/_index.md) fo
 @z
 
 @x
-### attachable
+### `attachable`
 @y
-### attachable
+### `attachable`
 @z
 
 @x
@@ -131,9 +131,9 @@ that are also attached to the network.
 % snip code...
 
 @x
-### enable_ipv6
+### `enable_ipv6`
 @y
-### enable_ipv6
+### `enable_ipv6`
 @z
 
 @x
@@ -143,9 +143,9 @@ that are also attached to the network.
 @z
 
 @x
-### external
+### `external`
 @y
-### external
+### `external`
 @z
 
 @x
@@ -161,11 +161,11 @@ Compose doesn't attempt to create these networks, and returns an error if one do
 @z
 
 @x
-In the example below, `proxy` is the gateway to the outside world. Instead of attempting to create a network, Compose
+In the following example, `proxy` is the gateway to the outside world. Instead of attempting to create a network, Compose
 queries the platform for an existing network simply called `outside` and connects the
 `proxy` service's containers to it.
 @y
-In the example below, `proxy` is the gateway to the outside world. Instead of attempting to create a network, Compose
+In the following example, `proxy` is the gateway to the outside world. Instead of attempting to create a network, Compose
 queries the platform for an existing network simply called `outside` and connects the
 `proxy` service's containers to it.
 @z
@@ -173,9 +173,9 @@ queries the platform for an existing network simply called `outside` and connect
 % snip code...
 
 @x
-### ipam
+### `ipam`
 @y
-### ipam
+### `ipam`
 @z
 
 @x
@@ -205,23 +205,23 @@ queries the platform for an existing network simply called `outside` and connect
 % snip code...
 
 @x
-### internal
+### `internal`
 @y
-### internal
+### `internal`
 @z
 
 @x
-By default, Compose provides external connectivity to networks. `internal`, when set to `true`, allows you to
+By default, Compose provides external connectivity to networks. `internal`, when set to `true`, lets you
 create an externally isolated network.
 @y
-By default, Compose provides external connectivity to networks. `internal`, when set to `true`, allows you to
+By default, Compose provides external connectivity to networks. `internal`, when set to `true`, lets you
 create an externally isolated network.
 @z
 
 @x
-### labels
+### `labels`
 @y
-### labels
+### `labels`
 @z
 
 @x
@@ -245,9 +245,9 @@ Compose sets `com.docker.compose.project` and `com.docker.compose.network` label
 @z
 
 @x
-### name
+### `name`
 @y
-### name
+### `name`
 @z
 
 @x

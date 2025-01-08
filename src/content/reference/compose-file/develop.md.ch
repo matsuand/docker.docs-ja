@@ -14,11 +14,11 @@ keywords: compose, compose specification, compose file reference, compose develo
 @z
 
 @x
-> **Note:** 
+> [!NOTE] 
 >
 > Develop is an optional part of the Compose Specification. It is available with Docker Compose version 2.22.0 and later.
 @y
-> **Note:** 
+> [!NOTE] 
 >
 > Develop is an optional part of the Compose Specification. It is available with Docker Compose version 2.22.0 and later.
 @z
@@ -30,11 +30,9 @@ keywords: compose, compose specification, compose file reference, compose develo
 @z
 
 @x
-This page defines how Compose behaves to efficiently assist you and defines the development constraints and workflows set by Compose. Only a subset of
-Compose file services may require a `develop` subsection.
+This page defines how Compose behaves to efficiently assist you and defines the development constraints and workflows set by Compose. Only a subset of Compose file services may require a `develop` subsection.
 @y
-This page defines how Compose behaves to efficiently assist you and defines the development constraints and workflows set by Compose. Only a subset of
-Compose file services may require a `develop` subsection.
+This page defines how Compose behaves to efficiently assist you and defines the development constraints and workflows set by Compose. Only a subset of Compose file services may require a `develop` subsection.
 @z
 
 @x
@@ -102,15 +100,21 @@ services:
 @z
 
 @x
+<!-- vale Docker.HeadingSentenceCase = NO ) -->
+@y
+<!-- vale Docker.HeadingSentenceCase = NO ) -->
+@z
+
+@x
 The `develop` subsection defines configuration options that are applied by Compose to assist you during development of a service with optimized workflows.
 @y
 The `develop` subsection defines configuration options that are applied by Compose to assist you during development of a service with optimized workflows.
 @z
 
 @x
-### watch
+### `watch`
 @y
-### watch
+### `watch`
 @z
 
 @x
@@ -122,9 +126,9 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 @z
 
 @x
-#### action
+#### `action`
 @y
-#### action
+#### `action`
 @z
 
 @x
@@ -134,29 +138,29 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 @z
 
 @x
-- `rebuild`, Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
-- `restart`, Compose restarts the service container. Available with Docker Compose version 2.32.0 and later.
-- `sync`, Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
-- `sync+restart`, Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container. Available with Docker Compose version 2.23.0 and later.
-- `sync+exec`, Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container. Available with Docker Compose version 2.32.0 and later.
+- `rebuild`: Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
+- `restart`: Compose restarts the service container. Available with Docker Compose version 2.32.0 and later.
+- `sync`: Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
+- `sync+restart`: Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container. Available with Docker Compose version 2.23.0 and later.
+- `sync+exec`: Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container. Available with Docker Compose version 2.32.0 and later.
 @y
-- `rebuild`, Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
-- `restart`, Compose restarts the service container. Available with Docker Compose version 2.32.0 and later.
-- `sync`, Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
-- `sync+restart`, Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container. Available with Docker Compose version 2.23.0 and later.
-- `sync+exec`, Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container. Available with Docker Compose version 2.32.0 and later.
+- `rebuild`: Compose rebuilds the service image based on the `build` section and recreates the service with the updated image.
+- `restart`: Compose restarts the service container. Available with Docker Compose version 2.32.0 and later.
+- `sync`: Compose keeps the existing service container(s) running, but synchronizes source files with container content according to the `target` attribute.
+- `sync+restart`: Compose synchronizes source files with container content according to the `target` attribute, and then restarts the container. Available with Docker Compose version 2.23.0 and later.
+- `sync+exec`: Compose synchronizes source files with container content according to the `target` attribute, and then executes a command inside the container. Available with Docker Compose version 2.32.0 and later.
 @z
 
 @x
-#### exec
+#### `exec`
 @y
-#### exec
+#### `exec`
 @z
 
 @x
 {{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
 @y
-{{< introduced compose 2.23.2 "manuals/compose/releases/release-notes.md#2232" >}}
+{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
 @z
 
 @x
@@ -179,12 +183,40 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 - `environment`: Sets the environment variables to run the command. While the command inherits the environment variables defined for the service’s main command, this section lets you add new variables or override existing ones.
 @z
 
-% snip code...
+@x
+```yaml
+services:
+  frontend:
+    image: ...
+    develop:
+      watch: 
+        # sync content then run command to reload service without interruption
+        - path: ./etc/config
+          action: sync+exec
+          target: /etc/config/
+          exec:
+            command: app reload
+```
+@y
+```yaml
+services:
+  frontend:
+    image: ...
+    develop:
+      watch: 
+        # sync content then run command to reload service without interruption
+        - path: ./etc/config
+          action: sync+exec
+          target: /etc/config/
+          exec:
+            command: app reload
+```
+@z
 
 @x
-#### ignore
+#### `ignore`
 @y
-#### ignore
+#### `ignore`
 @z
 
 @x
@@ -198,13 +230,13 @@ The syntax is the same as `.dockerignore` file:
 @z
 
 @x
-- `*` matches 0 or more characters in a file name. 
-- `?` matches a single character in file name. 
+- `*` matches 0 or more characters in a filename. 
+- `?` matches a single character in filename. 
 - `*/*` matches two nested folders with arbitrary names
 - `**` matches an arbitrary number of nested folders
 @y
-- `*` matches 0 or more characters in a file name. 
-- `?` matches a single character in file name. 
+- `*` matches 0 or more characters in a filename. 
+- `?` matches a single character in filename. 
 - `*/*` matches two nested folders with arbitrary names
 - `**` matches an arbitrary number of nested folders
 @z
@@ -218,9 +250,9 @@ for the `ignores` file, and values set in the Compose model are appended.
 @z
 
 @x
-#### path
+#### `path`
 @y
-#### path
+#### `path`
 @z
 
 @x
@@ -232,15 +264,13 @@ inside the path, which doesn't match any `ignore` rule, triggers the configured 
 @z
 
 @x
-#### target
+#### `target`
 @y
-#### target
+#### `target`
 @z
 
 @x
-`target` attribute only applies when `action` is configured for `sync`. Files within `path` with changes are synchronized
-with container filesystem, so that the latter is always running with up-to-date content.
+`target` attribute only applies when `action` is configured for `sync`. Files within `path` that have changes are synchronized with the container's filesystem, so that the latter is always running with up-to-date content.
 @y
-`target` attribute only applies when `action` is configured for `sync`. Files within `path` with changes are synchronized
-with container filesystem, so that the latter is always running with up-to-date content.
+`target` attribute only applies when `action` is configured for `sync`. Files within `path` that have changes are synchronized with the container's filesystem, so that the latter is always running with up-to-date content.
 @z

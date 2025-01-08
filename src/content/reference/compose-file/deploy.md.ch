@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Compose Deploy Specification
 description: Learn about the Compose Deploy Specification
@@ -24,9 +26,9 @@ keywords: compose, compose specification, compose file reference, compose deploy
 @z
 
 @x
-### endpoint_mode
+### `endpoint_mode`
 @y
-### endpoint_mode
+### `endpoint_mode`
 @z
 
 @x
@@ -53,12 +55,36 @@ keywords: compose, compose specification, compose file reference, compose deploy
   list of IP addresses (DNS round-robin), and the client connects directly to one of these.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    image: example/webapp
+    ports:
+      - "8080:80"
+    deploy:
+      mode: replicated
+      replicas: 2
+      endpoint_mode: vip
+```
+@y
+```yml
+services:
+  frontend:
+    image: example/webapp
+    ports:
+      - "8080:80"
+    deploy:
+      mode: replicated
+      replicas: 2
+      endpoint_mode: vip
+```
+@z
 
 @x
-### labels
+### `labels`
 @y
-### labels
+### `labels`
 @z
 
 @x
@@ -69,26 +95,122 @@ This assumes the platform has some native concept of "service" that can match th
 This assumes the platform has some native concept of "service" that can match the Compose application model.
 @z
 
-% snip code...
-
 @x
-### mode
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      labels:
+        com.example.description: "This label will appear on the web service"
+```
 @y
-### mode
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      labels:
+        com.example.description: "This label will appear on the web service"
+```
 @z
 
 @x
-`mode` defines the replication model used to run the service on the  platform. Either `global`, exactly one container per physical node, or `replicated`, a specified number of containers. The default is `replicated`.
+### `mode`
 @y
-`mode` defines the replication model used to run the service on the  platform. Either `global`, exactly one container per physical node, or `replicated`, a specified number of containers. The default is `replicated`.
+### `mode`
 @z
 
-% snip code...
+@x
+`mode` defines the replication model used to run a service or job. Options include:
+@y
+`mode` defines the replication model used to run a service or job. Options include:
+@z
 
 @x
-### placement
+- `global`: Ensures exactly one task continuously runs per physical node until stopped.
+- `replicated`: Continuously runs a specified number of tasks across nodes until stopped (default).
+- `replicated-job`: Executes a defined number of tasks until a completion state (exits with code 0)'.
+   - Total tasks are determined by `replicas`. 
+   - Concurrency can be limited using the `max-concurrent` option (CLI only).
+- `global-job`: Executes one task per physical node with a completion state (exits with code 0).
+   - Automatically runs on new nodes as they are added.
 @y
-### placement
+- `global`: Ensures exactly one task continuously runs per physical node until stopped.
+- `replicated`: Continuously runs a specified number of tasks across nodes until stopped (default).
+- `replicated-job`: Executes a defined number of tasks until a completion state (exits with code 0)'.
+   - Total tasks are determined by `replicas`. 
+   - Concurrency can be limited using the `max-concurrent` option (CLI only).
+- `global-job`: Executes one task per physical node with a completion state (exits with code 0).
+   - Automatically runs on new nodes as they are added.
+@z
+
+@x
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      mode: global
+@y
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      mode: global
+@z
+
+@x
+  batch-job:
+    image: example/processor
+    deploy:
+      mode: replicated-job
+      replicas: 5
+@y
+  batch-job:
+    image: example/processor
+    deploy:
+      mode: replicated-job
+      replicas: 5
+@z
+
+@x
+  maintenance:
+    image: example/updater
+    deploy:
+      mode: global-job
+```
+@y
+  maintenance:
+    image: example/updater
+    deploy:
+      mode: global-job
+```
+@z
+
+@x
+> [!NOTE] 
+> - Job modes (`replicated-job` and `global-job`) are designed for tasks that complete and exit with code 0.
+> - Completed tasks remain until explicitly removed.
+> - Options like `max-concurrent` for controlling concurrency are supported only via the CLI and are not available in Compose.
+@y
+> [!NOTE] 
+> - Job modes (`replicated-job` and `global-job`) are designed for tasks that complete and exit with code 0.
+> - Completed tasks remain until explicitly removed.
+> - Options like `max-concurrent` for controlling concurrency are supported only via the CLI and are not available in Compose.
+@z
+
+@x
+For more detailed information about job options and behavior, see the [Docker CLI documentation](/reference/cli/docker/service/create.md#running-as-a-job)
+@y
+For more detailed information about job options and behavior, see the [Docker CLI documentation](reference/cli/docker/service/create.md#running-as-a-job)
+@z
+
+@x
+### `placement`
+@y
+### `placement`
 @z
 
 @x
@@ -98,9 +220,9 @@ This assumes the platform has some native concept of "service" that can match th
 @z
 
 @x
-#### constraints
+#### `constraints`
 @y
-#### constraints
+#### `constraints`
 @z
 
 @x
@@ -109,12 +231,26 @@ This assumes the platform has some native concept of "service" that can match th
 `constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#constraint).
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  placement:
+    constraints:
+      - disktype=ssd
+```
+@y
+```yml
+deploy:
+  placement:
+    constraints:
+      - disktype=ssd
+```
+@z
 
 @x
-#### preferences
+#### `preferences`
 @y
-#### preferences
+#### `preferences`
 @z
 
 @x
@@ -125,12 +261,26 @@ over the values of the datacenter node label. For a further example, see the [CL
 over the values of the datacenter node label. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#placement-pref)
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  placement:
+    preferences:
+      - spread: node.labels.zone
+```
+@y
+```yml
+deploy:
+  placement:
+    preferences:
+      - spread: node.labels.zone
+```
+@z
 
 @x
-### replicas
+### `replicas`
 @y
-### replicas
+### `replicas`
 @z
 
 @x
@@ -141,12 +291,30 @@ If the service is `replicated` (which is the default), `replicas` specifies the 
 running at any given time.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      mode: replicated
+      replicas: 6
+```
+@y
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      mode: replicated
+      replicas: 6
+```
+@z
 
 @x
-### resources
+### `resources`
 @y
-### resources
+### `resources`
 @z
 
 @x
@@ -165,12 +333,42 @@ as:
 - `reservations`: The platform must guarantee the container can allocate at least the configured amount.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+          pids: 1
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+```
+@y
+```yml
+services:
+  frontend:
+    image: example/webapp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+          pids: 1
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+```
+@z
 
 @x
-#### cpus
+#### `cpus`
 @y
-#### cpus
+#### `cpus`
 @z
 
 @x
@@ -180,9 +378,9 @@ as:
 @z
 
 @x
-#### memory
+#### `memory`
 @y
-#### memory
+#### `memory`
 @z
 
 @x
@@ -192,9 +390,9 @@ as:
 @z
 
 @x
-#### pids
+#### `pids`
 @y
-#### pids
+#### `pids`
 @z
 
 @x
@@ -204,9 +402,9 @@ as:
 @z
 
 @x
-#### devices
+#### `devices`
 @y
-#### devices
+#### `devices`
 @z
 
 @x
@@ -222,9 +420,9 @@ Devices are reserved using a list of capabilities, making `capabilities` the onl
 @z
 
 @x
-##### capabilities
+##### `capabilities`
 @y
-##### capabilities
+##### `capabilities`
 @z
 
 @x
@@ -245,18 +443,34 @@ The following generic capabilities are recognized today:
 
 @x
 To avoid name clashes, driver specific capabilities must be prefixed with the driver name.
-For example, reserving an nVidia CUDA-enabled accelerator might look like this:
+For example, reserving an NVIDIA CUDA-enabled accelerator might look like this:
 @y
 To avoid name clashes, driver specific capabilities must be prefixed with the driver name.
-For example, reserving an nVidia CUDA-enabled accelerator might look like this:
+For example, reserving an NVIDIA CUDA-enabled accelerator might look like this:
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["nvidia-compute"]
+```
+@y
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["nvidia-compute"]
+```
+@z
 
 @x
-##### driver
+##### `driver`
 @y
-##### driver
+##### `driver`
 @z
 
 @x
@@ -265,12 +479,30 @@ A different driver for the reserved device(s) can be requested using `driver` fi
 A different driver for the reserved device(s) can be requested using `driver` field. The value is specified as a string.
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["nvidia-compute"]
+          driver: nvidia
+```
+@y
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["nvidia-compute"]
+          driver: nvidia
+```
+@z
 
 @x
-##### count
+##### `count`
 @y
-##### count
+##### `count`
 @z
 
 @x
@@ -279,7 +511,25 @@ If `count` is set to `all` or not specified, Compose reserves all devices that s
 If `count` is set to `all` or not specified, Compose reserves all devices that satisfy the requested capabilities. Otherwise, Compose reserves at least the number of devices specified. The value is specified as an integer.
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["tpu"]
+          count: 2
+```
+@y
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["tpu"]
+          count: 2
+```
+@z
 
 @x
 `count` and `device_ids` fields are exclusive. Compose returns an error if both are specified.
@@ -288,9 +538,9 @@ If `count` is set to `all` or not specified, Compose reserves all devices that s
 @z
 
 @x
-##### device_ids
+##### `device_ids`
 @y
-##### device_ids
+##### `device_ids`
 @z
 
 @x
@@ -299,7 +549,25 @@ If `device_ids` is set, Compose reserves devices with the specified IDs provided
 If `device_ids` is set, Compose reserves devices with the specified IDs provided they satisfy the requested capabilities. The value is specified as a list of strings.
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["gpu"]
+          device_ids: ["GPU-f123d1c9-26bb-df9b-1c23-4a731f61d8c7"]
+```
+@y
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["gpu"]
+          device_ids: ["GPU-f123d1c9-26bb-df9b-1c23-4a731f61d8c7"]
+```
+@z
 
 @x
 `count` and `device_ids` fields are exclusive. Compose returns an error if both are specified.
@@ -308,9 +576,9 @@ If `device_ids` is set, Compose reserves devices with the specified IDs provided
 @z
 
 @x
-##### options
+##### `options`
 @y
-##### options
+##### `options`
 @z
 
 @x
@@ -319,12 +587,34 @@ Driver specific options can be set with `options` as key-value pairs.
 Driver specific options can be set with `options` as key-value pairs.
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["gpu"]
+          driver: gpuvendor
+          options:
+            virtualization: false
+```
+@y
+```yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - capabilities: ["gpu"]
+          driver: gpuvendor
+          options:
+            virtualization: false
+```
+@z
 
 @x
-### restart_policy
+### `restart_policy`
 @y
-### restart_policy
+### `restart_policy`
 @z
 
 @x
@@ -357,12 +647,30 @@ Driver specific options can be set with `options` as key-value pairs.
   decide immediately).
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  restart_policy:
+    condition: on-failure
+    delay: 5s
+    max_attempts: 3
+    window: 120s
+```
+@y
+```yml
+deploy:
+  restart_policy:
+    condition: on-failure
+    delay: 5s
+    max_attempts: 3
+    window: 120s
+```
+@z
 
 @x
-### rollback_config
+### `rollback_config`
 @y
-### rollback_config
+### `rollback_config`
 @z
 
 @x
@@ -390,9 +698,9 @@ Driver specific options can be set with `options` as key-value pairs.
 @z
 
 @x
-### update_config
+### `update_config`
 @y
-### update_config
+### `update_config`
 @z
 
 @x
@@ -419,4 +727,20 @@ Driver specific options can be set with `options` as key-value pairs.
    or `start-first` (new task is started first, and the running tasks briefly overlap) (default `stop-first`).
 @z
 
-% snip code...
+@x
+```yml
+deploy:
+  update_config:
+    parallelism: 2
+    delay: 10s
+    order: stop-first
+```
+@y
+```yml
+deploy:
+  update_config:
+    parallelism: 2
+    delay: 10s
+    order: stop-first
+```
+@z

@@ -126,11 +126,11 @@ When used to build service images from source, the Compose file creates three Do
 @x
 * `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's parent folder, as the Docker build context. Lack of a `Dockerfile` within this folder throws an error.
 * `example/database`: A Docker image is built using `backend` sub-directory within the Compose file parent folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's parent folder, so `backend.Dockerfile` is a sibling file.
-* A Docker image is built using the `custom` directory with the user's HOME as the Docker context. Compose displays a warning about the non-portable path used to build image.
+* A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
 @y
 * `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's parent folder, as the Docker build context. Lack of a `Dockerfile` within this folder throws an error.
 * `example/database`: A Docker image is built using `backend` sub-directory within the Compose file parent folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's parent folder, so `backend.Dockerfile` is a sibling file.
-* A Docker image is built using the `custom` directory with the user's HOME as the Docker context. Compose displays a warning about the non-portable path used to build image.
+* A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
 @z
 
 @x
@@ -206,9 +206,9 @@ Alternatively `build` can be an object with fields defined as follows:
 @z
 
 @x
-### additional_contexts
+### `additional_contexts`
 @y
-### additional_contexts
+### `additional_contexts`
 @z
 
 @x
@@ -298,15 +298,15 @@ Illustrative examples of how this is used in Buildx can be found
 @z
 
 @x
-### args
+### `args`
 @y
-### args
+### `args`
 @z
 
 @x
-`args` define build arguments, i.e. Dockerfile `ARG` values.
+`args` define build arguments, that is Dockerfile `ARG` values.
 @y
-`args` define build arguments, i.e. Dockerfile `ARG` values.
+`args` define build arguments, that is Dockerfile `ARG` values.
 @z
 
 @x
@@ -367,10 +367,10 @@ build:
 
 @x
 Values can be omitted when specifying a build argument, in which case its value at build time must be obtained by user interaction,
-otherwise the build arg won't be set when building the Docker image.
+otherwise the build argument won't be set when building the Docker image.
 @y
 Values can be omitted when specifying a build argument, in which case its value at build time must be obtained by user interaction,
-otherwise the build arg won't be set when building the Docker image.
+otherwise the build argument won't be set when building the Docker image.
 @z
 
 @x
@@ -386,15 +386,15 @@ args:
 @z
 
 @x
-### context
+### `context`
 @y
-### context
+### `context`
 @z
 
 @x
-`context` defines either a path to a directory containing a Dockerfile, or a URL to a git repository.
+`context` defines either a path to a directory containing a Dockerfile, or a URL to a Git repository.
 @y
-`context` defines either a path to a directory containing a Dockerfile, or a URL to a git repository.
+`context` defines either a path to a directory containing a Dockerfile, or a URL to a Git repository.
 @z
 
 @x
@@ -440,9 +440,9 @@ If not set explicitly, `context` defaults to project directory (`.`).
 @z
 
 @x
-### cache_from
+### `cache_from`
 @y
-### cache_from
+### `cache_from`
 @z
 
 @x
@@ -496,9 +496,9 @@ Unsupported caches are ignored and don't prevent you from building images.
 @z
 
 @x
-### cache_to
+### `cache_to`
 @y
-### cache_to
+### `cache_to`
 @z
 
 @x
@@ -538,9 +538,9 @@ Unsupported caches are ignored and don't prevent you from building images.
 @z
 
 @x
-### dockerfile
+### `dockerfile`
 @y
-### dockerfile
+### `dockerfile`
 @z
 
 @x
@@ -576,9 +576,9 @@ build:
 @z
 
 @x
-### dockerfile_inline
+### `dockerfile_inline`
 @y
-### dockerfile_inline
+### `dockerfile_inline`
 @z
 
 @x
@@ -620,9 +620,9 @@ build:
 @z
 
 @x
-### entitlements
+### `entitlements`
 @y
-### entitlements
+### `entitlements`
 @z
 
 @x
@@ -652,15 +652,15 @@ build:
 @z
 
 @x
-### extra_hosts
+### `extra_hosts`
 @y
-### extra_hosts
+### `extra_hosts`
 @z
 
 @x
-`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [extra_hosts](services.md#extra_hosts).
+`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [`extra_hosts`](services.md#extra_hosts).
 @y
-`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [extra_hosts](services.md#extra_hosts).
+`extra_hosts` adds hostname mappings at build-time. Use the same syntax as [`extra_hosts`](services.md#extra_hosts).
 @z
 
 @x
@@ -736,9 +736,9 @@ configuration, which means for Linux `/etc/hosts` will get extra lines:
 @z
 
 @x
-### isolation
+### `isolation`
 @y
-### isolation
+### `isolation`
 @z
 
 @x
@@ -750,9 +750,9 @@ are platform specific.
 @z
 
 @x
-### labels
+### `labels`
 @y
-### labels
+### `labels`
 @z
 
 @x
@@ -808,9 +808,9 @@ build:
 @z
 
 @x
-### network
+### `network`
 @y
-### network
+### `network`
 @z
 
 @x
@@ -868,9 +868,9 @@ build:
 @z
 
 @x
-### no_cache
+### `no_cache`
 @y
-### no_cache
+### `no_cache`
 @z
 
 @x
@@ -884,9 +884,9 @@ has been updated on registry (see [pull](#pull)).
 @z
 
 @x
-### platforms
+### `platforms`
 @y
-### platforms
+### `platforms`
 @z
 
 @x
@@ -931,12 +931,12 @@ platform, otherwise users won't be able to run images they built.
 
 @x
 Composes reports an error in the following cases:
-* When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
-* When the list contains an unsupported platform.
+- When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
+- When the list contains an unsupported platform.
 @y
 Composes reports an error in the following cases:
-* When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
-* When the list contains an unsupported platform.
+- When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
+- When the list contains an unsupported platform.
 @z
 
 @x
@@ -947,7 +947,7 @@ Composes reports an error in the following cases:
       - "linux/amd64"
       - "unsupported/unsupported"
   ```
-* When the list is non-empty and does not contain the service's platform
+- When the list is non-empty and does not contain the service's platform.
 @y
   ```yml
   build:
@@ -956,7 +956,7 @@ Composes reports an error in the following cases:
       - "linux/amd64"
       - "unsupported/unsupported"
   ```
-* When the list is non-empty and does not contain the service's platform
+- When the list is non-empty and does not contain the service's platform.
 @z
 
 @x
@@ -982,9 +982,9 @@ Composes reports an error in the following cases:
 @z
 
 @x
-### privileged
+### `privileged`
 @y
-### privileged
+### `privileged`
 @z
 
 @x
@@ -1014,9 +1014,9 @@ build:
 @z
 
 @x
-### pull
+### `pull`
 @y
-### pull
+### `pull`
 @z
 
 @x
@@ -1028,9 +1028,9 @@ available in the local image store.
 @z
 
 @x
-### secrets
+### `secrets`
 @y
-### secrets
+### `secrets`
 @z
 
 @x
@@ -1121,8 +1121,8 @@ the service's containers.
 - `source`: The name of the secret as it exists on the platform.
 - `target`: The name of the file to be mounted in `/run/secrets/` in the
   service's task containers. Defaults to `source` if not specified.
-- `uid` and `gid`: The numeric UID or GID that owns the file within
-  `/run/secrets/` in the service's task containers. Default value is USER running container.
+- `uid` and `gid`: The numeric uid or gid that owns the file within
+  `/run/secrets/` in the service's task containers. Default value is `USER`.
 - `mode`: The [permissions](https://wintelguy.com/permissions-calc.pl) for the file to be mounted in `/run/secrets/`
   in the service's task containers, in octal notation.
   Default value is world-readable permissions (mode `0444`).
@@ -1131,8 +1131,8 @@ the service's containers.
 - `source`: The name of the secret as it exists on the platform.
 - `target`: The name of the file to be mounted in `/run/secrets/` in the
   service's task containers. Defaults to `source` if not specified.
-- `uid` and `gid`: The numeric UID or GID that owns the file within
-  `/run/secrets/` in the service's task containers. Default value is USER running container.
+- `uid` and `gid`: The numeric uid or gid that owns the file within
+  `/run/secrets/` in the service's task containers. Default value is `USER`.
 - `mode`: The [permissions](https://wintelguy.com/permissions-calc.pl) for the file to be mounted in `/run/secrets/`
   in the service's task containers, in octal notation.
   Default value is world-readable permissions (mode `0444`).
@@ -1196,9 +1196,9 @@ Such grant must be explicit within service specification as [secrets](services.m
 @z
 
 @x
-### ssh
+### `ssh`
 @y
-### ssh
+### `ssh`
 @z
 
 @x
@@ -1286,9 +1286,9 @@ RUN --mount=type=ssh,id=myproject git clone ...
 @z
 
 @x
-### shm_size
+### `shm_size`
 @y
-### shm_size
+### `shm_size`
 @z
 
 @x
@@ -1328,9 +1328,9 @@ build:
 @z
 
 @x
-### tags
+### `tags`
 @y
-### tags
+### `tags`
 @z
 
 @x
@@ -1356,9 +1356,9 @@ tags:
 @z
 
 @x
-### target
+### `target`
 @y
-### target
+### `target`
 @z
 
 @x
@@ -1382,9 +1382,9 @@ build:
 @z
 
 @x
-### ulimits
+### `ulimits`
 @y
-### ulimits
+### `ulimits`
 @z
 
 @x
@@ -1394,10 +1394,10 @@ build:
 @z
 
 @x
-`ulimits` overrides the default ulimits for a container. It's specified either as an integer for a single limit
+`ulimits` overrides the default `ulimits` for a container. It's specified either as an integer for a single limit
 or as mapping for soft/hard limits.
 @y
-`ulimits` overrides the default ulimits for a container. It's specified either as an integer for a single limit
+`ulimits` overrides the default `ulimits` for a container. It's specified either as an integer for a single limit
 or as mapping for soft/hard limits.
 @z
 

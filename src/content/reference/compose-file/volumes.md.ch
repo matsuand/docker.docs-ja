@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
-% snip 対応
 
 @x
 title: Volumes top-level element
@@ -54,7 +53,43 @@ The following example shows a two-service setup where a database's data director
 `db-data`, so that it can be periodically backed up.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  backend:
+    image: example/database
+    volumes:
+      - db-data:/etc/data
+@y
+```yml
+services:
+  backend:
+    image: example/database
+    volumes:
+      - db-data:/etc/data
+@z
+
+@x
+  backup:
+    image: backup-service
+    volumes:
+      - db-data:/var/lib/backup/data
+@y
+  backup:
+    image: backup-service
+    volumes:
+      - db-data:/var/lib/backup/data
+@z
+
+@x
+volumes:
+  db-data:
+```
+@y
+volumes:
+  db-data:
+```
+@z
 
 @x
 The `db-data` volume is mounted at the `/var/lib/backup/data` and `/etc/data` container paths for backup and backend respectively.
@@ -83,9 +118,9 @@ creating a volume. Optionally, you can configure it with the following keys:
 @z
 
 @x
-### driver
+### `driver`
 @y
-### driver
+### `driver`
 @z
 
 @x
@@ -94,12 +129,24 @@ Specifies which volume driver should be used. If the driver is not available, Co
 Specifies which volume driver should be used. If the driver is not available, Compose returns an error and doesn't deploy the application.
 @z
 
-% snip code...
+@x
+```yml
+volumes:
+  db-data:
+    driver: foobar
+```
+@y
+```yml
+volumes:
+  db-data:
+    driver: foobar
+```
+@z
 
 @x
-### driver_opts
+### `driver_opts`
 @y
-### driver_opts
+### `driver_opts`
 @z
 
 @x
@@ -108,12 +155,30 @@ Specifies which volume driver should be used. If the driver is not available, Co
 `driver_opts` specifies a list of options as key-value pairs to pass to the driver for this volume. The options are driver-dependent.
 @z
 
-% snip code...
+@x
+```yml
+volumes:
+  example:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.40.0.199,nolock,soft,rw"
+      device: ":/docker/example"
+```
+@y
+```yml
+volumes:
+  example:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.40.0.199,nolock,soft,rw"
+      device: ":/docker/example"
+```
+@z
 
 @x
-### external
+### `external`
 @y
-### external
+### `external`
 @z
 
 @x
@@ -129,21 +194,47 @@ of that of the application. Compose then doesn't create the volume and returns a
 @z
 
 @x
-In the example below, instead of attempting to create a volume called
+In the following example, instead of attempting to create a volume called
 `{project_name}_db-data`, Compose looks for an existing volume simply
 called `db-data` and mounts it into the `backend` service's containers.
 @y
-In the example below, instead of attempting to create a volume called
+In the following example, instead of attempting to create a volume called
 `{project_name}_db-data`, Compose looks for an existing volume simply
 called `db-data` and mounts it into the `backend` service's containers.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  backend:
+    image: example/database
+    volumes:
+      - db-data:/etc/data
+@y
+```yml
+services:
+  backend:
+    image: example/database
+    volumes:
+      - db-data:/etc/data
+@z
 
 @x
-### labels
+volumes:
+  db-data:
+    external: true
+```
 @y
-### labels
+volumes:
+  db-data:
+    external: true
+```
+@z
+
+@x
+### `labels`
+@y
+### `labels`
 @z
 
 @x
@@ -158,7 +249,45 @@ It's recommended that you use reverse-DNS notation to prevent your labels from c
 It's recommended that you use reverse-DNS notation to prevent your labels from conflicting with those used by other software.
 @z
 
-% snip code...
+@x
+```yml
+volumes:
+  db-data:
+    labels:
+      com.example.description: "Database volume"
+      com.example.department: "IT/Ops"
+      com.example.label-with-empty-value: ""
+```
+@y
+```yml
+volumes:
+  db-data:
+    labels:
+      com.example.description: "Database volume"
+      com.example.department: "IT/Ops"
+      com.example.label-with-empty-value: ""
+```
+@z
+
+@x
+```yml
+volumes:
+  db-data:
+    labels:
+      - "com.example.description=Database volume"
+      - "com.example.department=IT/Ops"
+      - "com.example.label-with-empty-value"
+```
+@y
+```yml
+volumes:
+  db-data:
+    labels:
+      - "com.example.description=Database volume"
+      - "com.example.department=IT/Ops"
+      - "com.example.label-with-empty-value"
+```
+@z
 
 @x
 Compose sets `com.docker.compose.project` and `com.docker.compose.volume` labels.
@@ -167,9 +296,9 @@ Compose sets `com.docker.compose.project` and `com.docker.compose.volume` labels
 @z
 
 @x
-### name
+### `name`
 @y
-### name
+### `name`
 @z
 
 @x
@@ -180,7 +309,19 @@ characters. The name is used as is and is not scoped with the stack name.
 characters. The name is used as is and is not scoped with the stack name.
 @z
 
-% snip code...
+@x
+```yml
+volumes:
+  db-data:
+    name: "my-app-data"
+```
+@y
+```yml
+volumes:
+  db-data:
+    name: "my-app-data"
+```
+@z
 
 @x
 This makes it possible to make this lookup name a parameter of the Compose file, so that the model ID for the volume is hard-coded but the actual volume ID on the platform is set at runtime during deployment. 
@@ -194,7 +335,19 @@ For example, if `DATABASE_VOLUME=my_volume_001` is in your `.env` file:
 For example, if `DATABASE_VOLUME=my_volume_001` is in your `.env` file:
 @z
 
-% snip code...
+@x
+```yml
+volumes:
+  db-data:
+    name: ${DATABASE_VOLUME}
+```
+@y
+```yml
+volumes:
+  db-data:
+    name: ${DATABASE_VOLUME}
+```
+@z
 
 @x
 Running `docker compose up` uses the volume called `my_volume_001`. 
@@ -208,4 +361,18 @@ It can also be used in conjunction with the `external` property. This means the 
 It can also be used in conjunction with the `external` property. This means the name used to look up the actual volume on the platform is set separately from the name used to refer to the volume within the Compose file:
 @z
 
-% snip code...
+@x
+```yml
+volumes:
+  db-data:
+    external: true
+    name: actual-name-of-volume
+```
+@y
+```yml
+volumes:
+  db-data:
+    external: true
+    name: actual-name-of-volume
+```
+@z
