@@ -6,11 +6,13 @@
 @x
 description: Automated builds
 keywords: automated, build, images
-title: Advanced options for Autobuild and Autotest
+title: Advanced options for autobuild and autotest
+linkTitle: Advanced options
 @y
 description: Automated builds
 keywords: automated, build, images
-title: Advanced options for Autobuild and Autotest
+title: Advanced options for autobuild and autotest
+linkTitle: Advanced options
 @z
 
 @x

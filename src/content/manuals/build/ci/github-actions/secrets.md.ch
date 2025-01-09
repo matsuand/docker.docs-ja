@@ -373,63 +373,7 @@ ID or path for the SSH agent socket explicitly.
 {{< tab name="`docker/build-push-action`" >}}
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_GITHUB_PPK }}
-          private-key-name: github-ppk
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_GITHUB_PPK }}
-          private-key-name: github-ppk
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          ssh: default
-          push: true
-          tags: user/app:latest
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          ssh: default
-          push: true
-          tags: user/app:latest
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -439,69 +383,7 @@ jobs:
 {{< tab name="`docker/bake-action`" >}}
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_GITHUB_PPK }}
-          private-key-name: github-ppk
-@y
-      - name: Set up SSH
-        uses: MrSquaare/ssh-setup-action@2d028b70b5e397cf8314c6eaea229a6c3e34977a # v3.1.0
-        with:
-          host: github.com
-          private-key: ${{ secrets.SSH_GITHUB_PPK }}
-          private-key-name: github-ppk
-@z
-
-@x
-      - name: Build
-        uses: docker/bake-action@v5
-        with:
-          set: |
-            *.ssh=default
-```
-@y
-      - name: Build
-        uses: docker/bake-action@v5
-        with:
-          set: |
-            *.ssh=default
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}

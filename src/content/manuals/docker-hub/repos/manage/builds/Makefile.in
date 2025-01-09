@@ -300,9 +300,9 @@ bases = \
 	_index.md            \
 	advanced.md          \
 	automated-testing.md \
-	how-builds-work.md   \
 	link-source.md       \
 	manage-builds.md     \
+	setup.md             \
 	troubleshoot.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

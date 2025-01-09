@@ -7,9 +7,9 @@ bases = \
 	_index.md            \
 	advanced.md          \
 	automated-testing.md \
-	how-builds-work.md   \
 	link-source.md       \
 	manage-builds.md     \
+	setup.md             \
 	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk

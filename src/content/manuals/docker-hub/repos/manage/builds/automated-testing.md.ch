@@ -88,10 +88,10 @@ services:
 @z
 
 @x
-The example above builds the repository, and runs the `run_tests.sh` file inside
+The previous example builds the repository, and runs the `run_tests.sh` file inside
 a container using the built image.
 @y
-The example above builds the repository, and runs the `run_tests.sh` file inside
+The previous example builds the repository, and runs the `run_tests.sh` file inside
 a container using the built image.
 @z
 
@@ -138,40 +138,40 @@ to further customize your test behavior.
 @x
 > [!NOTE]
 >
-> If you enable Automated builds, they also run any tests defined
+> If you enable automated builds, they also run any tests defined
 in the `test.yml` files.
 @y
 > [!NOTE]
 >
-> If you enable Automated builds, they also run any tests defined
+> If you enable automated builds, they also run any tests defined
 in the `test.yml` files.
 @z
 
 @x
-## Enable Automated tests on a repository
+## Enable automated tests on a repository
 @y
-## Enable Automated tests on a repository
+## Enable automated tests on a repository
 @z
 
 @x
 To enable testing on a source code repository, you must first create an
 associated build-repository in Docker Hub. Your `Autotest` settings are
 configured on the same page as [automated builds](index.md), however
-you do not need to enable Autobuilds to use `Autotest`. Autobuild is enabled per
+you do not need to enable autobuilds to use autotest. Autobuild is enabled per
 branch or tag, and you do not need to enable it at all.
 @y
 To enable testing on a source code repository, you must first create an
 associated build-repository in Docker Hub. Your `Autotest` settings are
 configured on the same page as [automated builds](index.md), however
-you do not need to enable Autobuilds to use `Autotest`. Autobuild is enabled per
+you do not need to enable autobuilds to use autotest. Autobuild is enabled per
 branch or tag, and you do not need to enable it at all.
 @z
 
 @x
-Only branches that are configured to use Autobuild push images to the
+Only branches that are configured to use autobuild push images to the
 Docker repository, regardless of the Autotest settings.
 @y
-Only branches that are configured to use Autobuild push images to the
+Only branches that are configured to use autobuild push images to the
 Docker repository, regardless of the Autotest settings.
 @z
 
@@ -200,9 +200,9 @@ Docker repository, regardless of the Autotest settings.
 @z
 
 @x
-5. Configure the automated build settings as explained in [Automated Builds](index.md).
+5. Configure the automated build settings as explained in [Automated builds](index.md).
 @y
-5. Configure the automated build settings as explained in [Automated Builds](index.md).
+5. Configure the automated build settings as explained in [Automated builds](index.md).
 @z
 
 @x

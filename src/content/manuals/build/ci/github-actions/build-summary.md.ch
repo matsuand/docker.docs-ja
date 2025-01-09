@@ -54,10 +54,10 @@ GitHub Actions:
 
 @x
 - `docker/build-push-action@v6`
-- `docker/bake-action@v5`
+- `docker/bake-action@v6`
 @y
 - `docker/build-push-action@v6`
-- `docker/bake-action@v5`
+- `docker/bake-action@v6`
 @z
 
 @x
