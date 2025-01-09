@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Build variables
@@ -217,57 +218,7 @@ The following example defines the version of `node` and `alpine` using build arg
 The following example defines the version of `node` and `alpine` using build arguments.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-ARG NODE_VERSION="{{% param example_node_version %}}"
-ARG ALPINE_VERSION="{{% param example_alpine_version %}}"
-@y
-ARG NODE_VERSION="{{% param example_node_version %}}"
-ARG ALPINE_VERSION="{{% param example_alpine_version %}}"
-@z
-
-@x
-FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS base
-WORKDIR /src
-@y
-FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS base
-WORKDIR /src
-@z
-
-@x
-FROM base AS build
-COPY package*.json ./
-RUN npm ci
-RUN npm run build
-@y
-FROM base AS build
-COPY package*.json ./
-RUN npm ci
-RUN npm run build
-@z
-
-@x
-FROM base AS production
-COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-COPY --from=build /src/dist/ .
-CMD ["node", "app.js"]
-```
-@y
-FROM base AS production
-COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-COPY --from=build /src/dist/ .
-CMD ["node", "app.js"]
-```
-@z
+% snip code...
 
 @x
 In this case, the build arguments have default values.
@@ -279,15 +230,7 @@ Specifying their values when you invoke a build is optional.
 To override the defaults, you would use the `--build-arg` CLI flag:
 @z
 
-@x
-```console
-$ docker build --build-arg NODE_VERSION=current .
-```
-@y
-```console
-$ docker build --build-arg NODE_VERSION=current .
-```
-@z
+% snip command...
 
 @x
 For more information on how to use build arguments, refer to:
@@ -323,33 +266,7 @@ before installing JavaScript dependencies with `npm`.
 Setting the variable makes `npm` omits packages needed only for local development.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-FROM node:20
-WORKDIR /app
-COPY package*.json ./
-ENV NODE_ENV=production
-RUN npm ci && npm cache clean --force
-COPY . .
-CMD ["node", "app.js"]
-```
-@y
-FROM node:20
-WORKDIR /app
-COPY package*.json ./
-ENV NODE_ENV=production
-RUN npm ci && npm cache clean --force
-COPY . .
-CMD ["node", "app.js"]
-```
-@z
+% snip code...
 
 @x
 Environment variables aren't configurable at build-time by default.
@@ -361,35 +278,7 @@ If you want to change the value of an `ENV` at build-time,
 you can combine environment variables and build arguments:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-FROM node:20
-ARG NODE_ENV=production
-ENV NODE_ENV=$NODE_ENV
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci && npm cache clean --force
-COPY . .
-CMD ["node", "app.js"]
-```
-@y
-FROM node:20
-ARG NODE_ENV=production
-ENV NODE_ENV=$NODE_ENV
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci && npm cache clean --force
-COPY . .
-CMD ["node", "app.js"]
-```
-@z
+% snip code...
 
 @x
 With this Dockerfile, you can use `--build-arg` to override the default value of `ENV`:
@@ -397,15 +286,7 @@ With this Dockerfile, you can use `--build-arg` to override the default value of
 With this Dockerfile, you can use `--build-arg` to override the default value of `ENV`:
 @z
 
-@x
-```console
-$ docker build --build-arg NODE_ENV=development .
-```
-@y
-```console
-$ docker build --build-arg NODE_ENV=development .
-```
-@z
+% snip command...
 
 @x
 Note that, because the environment variables you set persist in containers,
@@ -729,15 +610,7 @@ To configure a proxy for your build:
 To configure a proxy for your build:
 @z
 
-@x
-```console
-$ docker build --build-arg HTTP_PROXY=https://my-proxy.example.com .
-```
-@y
-```console
-$ docker build --build-arg HTTP_PROXY=https://my-proxy.example.com .
-```
-@z
+% snip command...
 
 @x
 For more information about proxy build arguments, refer to
@@ -849,15 +722,7 @@ Changes the colors of the terminal output. Set `BUILDKIT_COLORS` to a CSV string
 in the following format:
 @z
 
-@x
-```console
-$ export BUILDKIT_COLORS="run=123,20,245:error=yellow:cancel=blue:warning=white"
-```
-@y
-```console
-$ export BUILDKIT_COLORS="run=123,20,245:error=yellow:cancel=blue:warning=white"
-```
-@z
+% snip command...
 
 @x
 Color values can be any valid RGB hex code, or one of the
@@ -903,17 +768,7 @@ Usage:
 Usage:
 @z
 
-@x
-```console
-$ export BUILDKIT_HOST=tcp://localhost:1234
-$ docker buildx create --name=remote --driver=remote
-```
-@y
-```console
-$ export BUILDKIT_HOST=tcp://localhost:1234
-$ docker buildx create --name=remote --driver=remote
-```
-@z
+% snip command...
 
 @x
 If you specify both the `BUILDKIT_HOST` environment variable and a positional
@@ -939,11 +794,13 @@ Sets the type of the BuildKit progress output. Valid values are:
 - `auto` (default)
 - `plain`
 - `tty`
+- `quiet`
 - `rawjson`
 @y
 - `auto` (default)
 - `plain`
 - `tty`
+- `quiet`
 - `rawjson`
 @z
 
@@ -953,15 +810,7 @@ Usage:
 Usage:
 @z
 
-@x
-```console
-$ export BUILDKIT_PROGRESS=plain
-```
-@y
-```console
-$ export BUILDKIT_PROGRESS=plain
-```
-@z
+% snip command...
 
 @x
 ### BUILDKIT_TTY_LOG_LINES
@@ -977,15 +826,7 @@ You can change how many log lines are visible for active steps in TTY mode by
 setting `BUILDKIT_TTY_LOG_LINES` to a number (default to `6`).
 @z
 
-@x
-```console
-$ export BUILDKIT_TTY_LOG_LINES=8
-```
-@y
-```console
-$ export BUILDKIT_TTY_LOG_LINES=8
-```
-@z
+% snip command...
 
 @x
 ### EXPERIMENTAL_BUILDKIT_SOURCE_POLICY
@@ -1003,15 +844,7 @@ Lets you specify a
 file for creating reproducible builds with pinned dependencies.
 @z
 
-@x
-```console
-$ export EXPERIMENTAL_BUILDKIT_SOURCE_POLICY=./policy.json
-```
-@y
-```console
-$ export EXPERIMENTAL_BUILDKIT_SOURCE_POLICY=./policy.json
-```
-@z
+% snip command...
 
 @x
 Example:
@@ -1019,69 +852,7 @@ Example:
 Example:
 @z
 
-@x
-```json
-{
-  "rules": [
-    {
-      "action": "CONVERT",
-      "selector": {
-        "identifier": "docker-image://docker.io/library/alpine:latest"
-      },
-      "updates": {
-        "identifier": "docker-image://docker.io/library/alpine:latest@sha256:4edbd2beb5f78b1014028f4fbb99f3237d9561100b6881aabbf5acce2c4f9454"
-      }
-    },
-    {
-      "action": "CONVERT",
-      "selector": {
-        "identifier": "https://raw.githubusercontent.com/moby/buildkit/v0.10.1/README.md"
-      },
-      "updates": {
-        "attrs": {"http.checksum": "sha256:6e4b94fc270e708e1068be28bd3551dc6917a4fc5a61293d51bb36e6b75c4b53"}
-      }
-    },
-    {
-      "action": "DENY",
-      "selector": {
-        "identifier": "docker-image://docker.io/library/golang*"
-      }
-    }
-  ]
-}
-```
-@y
-```json
-{
-  "rules": [
-    {
-      "action": "CONVERT",
-      "selector": {
-        "identifier": "docker-image://docker.io/library/alpine:latest"
-      },
-      "updates": {
-        "identifier": "docker-image://docker.io/library/alpine:latest@sha256:4edbd2beb5f78b1014028f4fbb99f3237d9561100b6881aabbf5acce2c4f9454"
-      }
-    },
-    {
-      "action": "CONVERT",
-      "selector": {
-        "identifier": "https://raw.githubusercontent.com/moby/buildkit/v0.10.1/README.md"
-      },
-      "updates": {
-        "attrs": {"http.checksum": "sha256:6e4b94fc270e708e1068be28bd3551dc6917a4fc5a61293d51bb36e6b75c4b53"}
-      }
-    },
-    {
-      "action": "DENY",
-      "selector": {
-        "identifier": "docker-image://docker.io/library/golang*"
-      }
-    }
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 ### BUILDX_BAKE_GIT_AUTH_HEADER
