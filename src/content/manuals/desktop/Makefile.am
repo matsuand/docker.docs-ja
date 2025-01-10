@@ -6,8 +6,9 @@ SUBDIRS = enterprise features images previous-versions          \
 	use-desktop
 
 bases = \
-	_index.md        \
-	release-notes.md \
+	_index.md               \
+	cert-revoke-solution.md \
+	release-notes.md        \
 	uninstall.md
 
 include $(top_srcdir)/build-aux/common.mk

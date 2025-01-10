@@ -10,7 +10,8 @@ copyfiles = \
 	develop-app-with-updated-placeholder.webp     \
 	develop-getting-started-app-first-launch.webp \
 	exec-into-docker-container.webp               \
-	inspecting-container.webp
+	inspecting-container.webp                     \
+	install-docker-extension.webp
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

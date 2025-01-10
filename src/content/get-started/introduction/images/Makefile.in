@@ -246,7 +246,8 @@ copyfiles = \
 	develop-app-with-updated-placeholder.webp     \
 	develop-getting-started-app-first-launch.webp \
 	exec-into-docker-container.webp               \
-	inspecting-container.webp
+	inspecting-container.webp                     \
+	install-docker-extension.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

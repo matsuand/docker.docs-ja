@@ -300,8 +300,9 @@ SUBDIRS = enterprise features images previous-versions          \
 	use-desktop
 
 bases = \
-	_index.md        \
-	release-notes.md \
+	_index.md               \
+	cert-revoke-solution.md \
+	release-notes.md        \
 	uninstall.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

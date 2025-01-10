@@ -329,10 +329,22 @@ Now that you have a repository, you are ready to build and push your image. An i
 @z
 
 @x
-1. Open Visual Studio Code. In the **File** menu, select **Open Folder**. Choose **Clone Git Repository** and paste this URL: [https://github.com/docker/getting-started-todo-app](https://github.com/docker/getting-started-todo-app)
+1. Open Visual Studio Code. Ensure you have the **Docker extension for VS Code** installed from [Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker).
 @y
 1. Visual Studio Code を開きます。
-   **File** (ファイル) メニューにおいて **Open Folder** (フォルダーを開く) を選びます。
+[Extension Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) から **Docker extension for VS Code** がインストールできていることを確認します。
+@z
+
+@x
+   ![Screenshot of VS code extension marketplace](images/install-docker-extension.webp)
+@y
+   ![VS code extension marketplace のスクリーンショット](images/install-docker-extension.webp)
+@z
+
+@x
+2. In the **File** menu, select **Open Folder**. Choose **Clone Git Repository** and paste this URL: [https://github.com/docker/getting-started-todo-app](https://github.com/docker/getting-started-todo-app)
+@y
+2. **File** (ファイル) メニューにおいて **Open Folder** (フォルダーを開く) を選びます。
    **Clone Git Repository** (Git リポジトリのクローン) を選んで以下の URL  [https://github.com/docker/getting-started-todo-app](https://github.com/docker/getting-started-todo-app) をペーストします。
 @z
 
@@ -343,9 +355,9 @@ Now that you have a repository, you are ready to build and push your image. An i
 @z
 
 @x
-2. Right-click the `Dockerfile` and select the **Build Image...** menu item.
+3. Right-click the `Dockerfile` and select the **Build Image...** menu item.
 @y
-2. `Dockerfile` 上にて右クリックして、メニュー項目の中から **Build Image...** (イメージのビルド) を選びます。
+3. `Dockerfile` 上にて右クリックして、メニュー項目の中から **Build Image...** (イメージのビルド) を選びます。
 @z
 
 @x
@@ -355,44 +367,44 @@ Now that you have a repository, you are ready to build and push your image. An i
 @z
 
 @x
-3. In the dialog that appears, enter a name of `DOCKER_USERNAME/getting-started-todo-app`, replacing `DOCKER_USERNAME` with your Docker username. 
+4. In the dialog that appears, enter a name of `DOCKER_USERNAME/getting-started-todo-app`, replacing `DOCKER_USERNAME` with your Docker username. 
 @y
-3. ダイアログ画面が表示されるので、名前欄に `DOCKER_USERNAME/getting-started-todo-app` を入力します。
+4. ダイアログ画面が表示されるので、名前欄に `DOCKER_USERNAME/getting-started-todo-app` を入力します。
    `DOCKER_USERNAME` の部分は自身の Docker ユーザー名に置き換えます。
 @z
 
 @x
-4. After pressing **Enter**, you'll see a terminal appear where the build will occur. Once it's completed, feel free to close the terminal.
+5. After pressing **Enter**, you'll see a terminal appear where the build will occur. Once it's completed, feel free to close the terminal.
 @y
-4. **Enter** を押すと、ビルド実行するディレクトリにてターミナル画面が開きます。
+5. **Enter** を押すと、ビルド実行するディレクトリにてターミナル画面が開きます。
    ビルドが完了したらターミナル画面は閉じてかまいません。
 @z
 
 @x
-5. Open the Docker Extension for VS Code by selecting the Docker logo in the left nav menu.
+6. Open the Docker Extension for VS Code by selecting the Docker logo in the left nav menu.
 @y
-5. VS Code の Docker Extension を開くために、左側ナビメニュー内の Docker ロゴを選びます。
+6. VS Code の Docker Extension を開くために、左側ナビメニュー内の Docker ロゴを選びます。
 @z
 
 @x
-6. Find the image you created. It'll have a name of `docker.io/DOCKER_USERNAME/getting-started-todo-app`. 
+7. Find the image you created. It'll have a name of `docker.io/DOCKER_USERNAME/getting-started-todo-app`. 
 @y
-6. 生成したイメージを探し出します。
+7. 生成したイメージを探し出します。
    イメージ名称は `docker.io/DOCKER_USERNAME/getting-started-todo-app` となっているはずです。
 @z
 
 @x
-7. Expand the image to view the tags (or different versions) of the image. You should see a tag named `latest`, which is the default tag given to an image.
+8. Expand the image to view the tags (or different versions) of the image. You should see a tag named `latest`, which is the default tag given to an image.
 @y
-7. イメージを展開して、イメージのタグ (あるいはいくつかあるバージョン) を確認します。
+8. イメージを展開して、イメージのタグ (あるいはいくつかあるバージョン) を確認します。
    タグ名として `latest` があるはずです。
    このタグはイメージに対して与えられるデフォルト名です。
 @z
 
 @x
-8. Right-click on the **latest** item and select the **Push...** option.
+9. Right-click on the **latest** item and select the **Push...** option.
 @y
-8. **latest** 上で右クリックして **Push...** (プッシュ) オプションを選びます。
+9. **latest** 上で右クリックして **Push...** (プッシュ) オプションを選びます。
 @z
 
 @x
@@ -402,9 +414,9 @@ Now that you have a repository, you are ready to build and push your image. An i
 @z
 
 @x
-9. Press **Enter** to confirm and then watch as your image is pushed to Docker Hub. Depending on your upload speeds, it might take a moment to push the image.
+10. Press **Enter** to confirm and then watch as your image is pushed to Docker Hub. Depending on your upload speeds, it might take a moment to push the image.
 @y
-9. **Enter** を押して、Docker Hub に対してイメージがプッシュされることを確認します。
+10. **Enter** を押して、Docker Hub に対してイメージがプッシュされることを確認します。
    アップロード速度により、プッシュにはある程度の時間がかかります。
 @z
 
