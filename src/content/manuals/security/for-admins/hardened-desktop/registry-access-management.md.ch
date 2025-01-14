@@ -4,12 +4,12 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Registry Access Management
-keywords: registry, access, management, permissions, Docker Business feature
+description: Control access to approved registries with Registry Access Management, ensuring secure Docker Desktop usage
+keywords: registry, access, management, permissions, Docker Business feature, security, admin
 title: Registry Access Management
 @y
-description: Registry Access Management
-keywords: registry, access, management, permissions, Docker Business feature
+description: Control access to approved registries with Registry Access Management, ensuring secure Docker Desktop usage
+keywords: registry, access, management, permissions, Docker Business feature, security, admin
 title: Registry Access Management
 @z
 

@@ -13,12 +13,20 @@ include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
 	_index.md       \
+	build.md        \
 	build-legacy.md \
 	debug.md        \
+	exec.md         \
+	images.md       \
+	info.md         \
 	init.md         \
 	inspect.md      \
 	login.md        \
 	logout.md       \
+	ps.md           \
+	pull.md         \
+	push.md         \
+	run.md          \
 	search.md       \
 	version.md
 

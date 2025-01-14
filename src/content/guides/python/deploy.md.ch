@@ -27,10 +27,10 @@ description: Learn how to develop locally using Kubernetes
 @z
 
 @x
-- Complete all the previous sections of this guide, starting with [Use containers for python development](develop.md).
+- Complete all the previous sections of this guide, starting with [Use containers for Python development](develop.md).
 - [Turn on Kubernetes](/manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
 @y
-- Complete all the previous sections of this guide, starting with [Use containers for python development](develop.md).
+- Complete all the previous sections of this guide, starting with [Use containers for Python development](develop.md).
 - [Turn on Kubernetes](manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
 @z
 
@@ -63,9 +63,15 @@ the following contents.
 % snip code...
 
 @x
-In your `python-docker-dev-example` directory, create a file named `docker-python-kubernetes.yaml`.
+In your `python-docker-dev-example` directory, create a file named
+`docker-python-kubernetes.yaml`. Replace `DOCKER_USERNAME/REPO_NAME` with your
+Docker username and the repository name that you created in [Configure CI/CD for
+your Python application](./configure-ci-cd.md).
 @y
-In your `python-docker-dev-example` directory, create a file named `docker-python-kubernetes.yaml`.
+In your `python-docker-dev-example` directory, create a file named
+`docker-python-kubernetes.yaml`. Replace `DOCKER_USERNAME/REPO_NAME` with your
+Docker username and the repository name that you created in [Configure CI/CD for
+your Python application](./configure-ci-cd.md).
 @z
 
 % snip code...

@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: Allowlist for Docker Desktop for Business customers
-keywords: Docker Desktop, allowlist, allow list, firewall
+description: A list of domain URLs required for Docker Desktop to function correctly within an organization.
+keywords: Docker Desktop, allowlist, allow list, firewall, authentication URLs, analytics, 
 title: Allowlist for Docker Desktop
 @y
-description: Allowlist for Docker Desktop for Business customers
-keywords: Docker Desktop, allowlist, allow list, firewall
+description: A list of domain URLs required for Docker Desktop to function correctly within an organization.
+keywords: Docker Desktop, allowlist, allow list, firewall, authentication URLs, analytics, 
 title: Allowlist for Docker Desktop
 @z
 

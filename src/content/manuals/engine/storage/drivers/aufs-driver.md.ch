@@ -62,7 +62,6 @@ potential performance advantages over the `aufs` storage driver.
 @x
 - For Docker Engine - Community, AUFS is supported on Ubuntu, and on Debian versions prior to
   Stretch.
-- For Docker EE, AUFS is supported on Ubuntu.
 - If you use Ubuntu, you need to add the AUFS module to the kernel. If you do
   not install these packages, you need to use  `overlay2`.
 - AUFS cannot use the following backing filesystems: `aufs`, `btrfs`, or
@@ -71,7 +70,6 @@ potential performance advantages over the `aufs` storage driver.
 @y
 - For Docker Engine - Community, AUFS is supported on Ubuntu, and on Debian versions prior to
   Stretch.
-- For Docker EE, AUFS is supported on Ubuntu.
 - If you use Ubuntu, you need to add the AUFS module to the kernel. If you do
   not install these packages, you need to use  `overlay2`.
 - AUFS cannot use the following backing filesystems: `aufs`, `btrfs`, or

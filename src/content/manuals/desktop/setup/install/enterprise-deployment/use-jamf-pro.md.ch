@@ -6,11 +6,11 @@
 @x
 title: Use Jamf Pro
 description: Use Jamf Pro to deploy Docker Desktop
-keywords: jamf, mac, docker desktop, deploy, mdm, enterprise, administrator,
+keywords: jamf, mac, docker desktop, deploy, mdm, enterprise, administrator, pkg
 @y
 title: Use Jamf Pro
 description: Use Jamf Pro to deploy Docker Desktop
-keywords: jamf, mac, docker desktop, deploy, mdm, enterprise, administrator,
+keywords: jamf, mac, docker desktop, deploy, mdm, enterprise, administrator, pkg
 @z
 
 @x

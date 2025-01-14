@@ -2427,6 +2427,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
           MaskedPaths:
             type: "array"
             description: |
@@ -2459,6 +2460,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
           MaskedPaths:
             type: "array"
             description: |
@@ -8533,6 +8535,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
           Init:
             description: |
               Run an init inside the container that forwards signals and reaps
@@ -8618,6 +8621,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
           Init:
             description: |
               Run an init inside the container that forwards signals and reaps
@@ -11717,6 +11721,7 @@ definitions:
           - "default"
           - "hyperv"
           - "process"
+          - ""
       InitBinary:
         description: |
           Name and, optional, path of the `docker-init` binary.
@@ -11728,6 +11733,7 @@ definitions:
           - "default"
           - "hyperv"
           - "process"
+          - ""
       InitBinary:
         description: |
           Name and, optional, path of the `docker-init` binary.
@@ -11868,8 +11874,6 @@ definitions:
           type: "string"
         example:
           - "WARNING: No memory limit support"
-          - "WARNING: bridge-nf-call-iptables is disabled"
-          - "WARNING: bridge-nf-call-ip6tables is disabled"
 @y
           These messages can be printed by the client as information to the user.
         type: "array"
@@ -11877,8 +11881,6 @@ definitions:
           type: "string"
         example:
           - "WARNING: No memory limit support"
-          - "WARNING: bridge-nf-call-iptables is disabled"
-          - "WARNING: bridge-nf-call-ip6tables is disabled"
 @z
 
 @x
@@ -18972,7 +18974,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Builder-Version:
@@ -19098,7 +19100,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Builder-Version:
@@ -19163,7 +19165,7 @@ paths:
             type: "string"
             example: "(empty)"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Builder-Version:
@@ -19299,7 +19301,7 @@ paths:
             type: "string"
             example: "(empty)"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Builder-Version:
@@ -23357,6 +23359,7 @@ paths:
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
+              DataPathAddr: "192.168.1.1"
               RemoteAddrs:
                 - "node1:2377"
               JoinToken: "SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2"
@@ -23534,6 +23537,7 @@ paths:
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
+              DataPathAddr: "192.168.1.1"
               RemoteAddrs:
                 - "node1:2377"
               JoinToken: "SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2"

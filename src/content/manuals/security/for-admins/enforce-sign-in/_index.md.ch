@@ -6,13 +6,15 @@
 @x
 description: Understand what happens when you force users to sign in to Docker Desktop
 toc_max: 2
-keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security,
+keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows
 title: Enforce sign-in for Docker Desktop
+linkTitle: Enforce sign-in
 @y
 description: Understand what happens when you force users to sign in to Docker Desktop
 toc_max: 2
-keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security,
+keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows
 title: Enforce sign-in for Docker Desktop
+linkTitle: Enforce sign-in
 @z
 
 @x

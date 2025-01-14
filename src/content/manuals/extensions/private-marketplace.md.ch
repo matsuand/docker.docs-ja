@@ -6,11 +6,11 @@
 
 @x
 description: How to configure and use Docker Extensions' private marketplace
-keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace, private, security
+keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace, private, security, admin
 title: Configure a private marketplace for extensions
 @y
 description: How to configure and use Docker Extensions' private marketplace
-keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace, private, security
+keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, Marketplace, private, security, admin
 title: Configure a private marketplace for extensions
 @z
 

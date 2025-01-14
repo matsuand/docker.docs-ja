@@ -1494,6 +1494,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @y
               - `"container:<name|id>"`: joins another container's PID namespace
               - `"host"`: use the host's PID namespace inside the container
@@ -1559,6 +1560,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @z
 
 @x
@@ -11289,7 +11291,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Docker-Experimental:
@@ -11709,7 +11711,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Docker-Experimental:
@@ -15516,6 +15518,7 @@ paths:
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
+              DataPathAddr: "192.168.1.1"
               RemoteAddrs:
                 - "node1:2377"
               JoinToken: "SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2"
@@ -15683,6 +15686,7 @@ paths:
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
+              DataPathAddr: "192.168.1.1"
               RemoteAddrs:
                 - "node1:2377"
               JoinToken: "SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2"

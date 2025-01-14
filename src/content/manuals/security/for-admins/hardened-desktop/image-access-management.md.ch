@@ -4,12 +4,12 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Image Access Management
-keywords: image, access, management, trusted content, permissions, Docker Business feature
+description: Manage Docker Hub image access with Image Access Management, restricting developers to trusted images for enhanced security
+keywords: image, access, management, trusted content, permissions, Docker Business feature, security, admin
 title: Image Access Management
 @y
-description: Image Access Management
-keywords: image, access, management, trusted content, permissions, Docker Business feature
+description: Manage Docker Hub image access with Image Access Management, restricting developers to trusted images for enhanced security
+keywords: image, access, management, trusted content, permissions, Docker Business feature, security, admin
 title: Image Access Management
 @z
 

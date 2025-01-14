@@ -63,11 +63,31 @@ If possible, update directly through the app. If not, and you’re still seeing 
 
 @x
 1. Kill the Docker process that cannot start properly:
+   ```console
+   $ sudo launchctl bootout system/com.docker.vmnetd 2>/dev/null || true
+   $ sudo launchctl bootout system/com.docker.socket 2>/dev/null || true
 @y
 1. Kill the Docker process that cannot start properly:
+   ```console
+   $ sudo launchctl bootout system/com.docker.vmnetd 2>/dev/null || true
+   $ sudo launchctl bootout system/com.docker.socket 2>/dev/null || true
 @z
 
-% snip command...
+@x
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.vmnetd || true
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.socket || true
+@y
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.vmnetd || true
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.socket || true
+@z
+
+@x
+   $ ps aux | grep -i docker | awk '{print $2}' | sudo xargs kill -9 2>/dev/null
+   ```
+@y
+   $ ps aux | grep -i docker | awk '{print $2}' | sudo xargs kill -9 2>/dev/null
+   ```
+@z
 
 @x
 2. Make sure the malware pop-up is permanently closed. 
@@ -100,6 +120,16 @@ You should now see the Docker Desktop Dashboard.
 @z
 
 @x
+> [!TIP]
+>
+> If the malware pop-up persists after completing these steps and Docker is in the Trash, try emptying the Trash and rerunning the steps.
+@y
+> [!TIP]
+>
+> If the malware pop-up persists after completing these steps and Docker is in the Trash, try emptying the Trash and rerunning the steps.
+@z
+
+@x
 ### Install a patch if you have version 4.32 - 4.36
 @y
 ### Install a patch if you have version 4.32 - 4.36
@@ -113,11 +143,31 @@ If you can’t upgrade to the latest version and you’re seeing the malware pop
 
 @x
 1. Kill the Docker process that cannot start properly:
+   ```console
+   $ sudo launchctl bootout system/com.docker.vmnetd 2>/dev/null || true
+   $ sudo launchctl bootout system/com.docker.socket 2>/dev/null || true
 @y
 1. Kill the Docker process that cannot start properly:
+   ```console
+   $ sudo launchctl bootout system/com.docker.vmnetd 2>/dev/null || true
+   $ sudo launchctl bootout system/com.docker.socket 2>/dev/null || true
 @z
 
-% snip command...
+@x
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.vmnetd || true
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.socket || true
+@y
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.vmnetd || true
+   $ sudo rm /Library/PrivilegedHelperTools/com.docker.socket || true
+@z
+
+@x
+   $ ps aux | grep docker | awk '{print $2}' | sudo xargs kill -9 2>/dev/null
+   ```
+@y
+   $ ps aux | grep docker | awk '{print $2}' | sudo xargs kill -9 2>/dev/null
+   ```
+@z
 
 @x
 2. Make sure the malware pop-up is permanently closed.
@@ -150,44 +200,139 @@ You should now see the Docker Desktop Dashboard.
 @z
 
 @x
+> [!TIP]
+>
+> If the malware pop-up persists after completing these steps and Docker is in the Trash, try emptying the Trash and rerunning the steps.
+@y
+> [!TIP]
+>
+> If the malware pop-up persists after completing these steps and Docker is in the Trash, try emptying the Trash and rerunning the steps.
+@z
+
+@x
 ## MDM script
 @y
 ## MDM script
 @z
 
 @x
-If you are an IT administrator, you can use the following script as a workaround for your developers if they have a re-signed version of Docker Desktop version 4.35 or later.
+If you are an IT administrator and your developers are seeing the malware pop-up:
 @y
-If you are an IT administrator, you can use the following script as a workaround for your developers if they have a re-signed version of Docker Desktop version 4.35 or later.
+If you are an IT administrator and your developers are seeing the malware pop-up:
 @z
 
-@x within code
-# Stop the docker services
-@y
-# docker サービスの停止
-@z
 @x
-# Stop the vmnetd service
+1. Make sure your developers have a re-signed version of Docker Desktop version 4.32 or later.
+2. Run the following script:
 @y
-# vmnetd サービスの停止
+1. Make sure your developers have a re-signed version of Docker Desktop version 4.32 or later.
+2. Run the following script:
 @z
+
 @x
-# Stop the socket service
+   ```console
+   #!/bin/bash
 @y
-# socket サービスの停止
+   ```console
+   #!/bin/bash
 @z
+
 @x
-# Remove vmnetd binary
+   # Stop the docker services
+   echo "Stopping Docker..."
+   sudo pkill -i docker
 @y
-# vmnetd バイナリの削除
+   # Stop the docker services
+   echo "Stopping Docker..."
+   sudo pkill -i docker
 @z
+
 @x
-# Remove socket binary
+   # Stop the vmnetd service
+   echo "Stopping com.docker.vmnetd service..."
+   sudo launchctl bootout system /Library/LaunchDaemons/com.docker.vmnetd.plist
 @y
-# socket バイナリの削除
+   # Stop the vmnetd service
+   echo "Stopping com.docker.vmnetd service..."
+   sudo launchctl bootout system /Library/LaunchDaemons/com.docker.vmnetd.plist
 @z
+
 @x
-# Install new binaries
+   # Stop the socket service
+   echo "Stopping com.docker.socket service..."
+   sudo launchctl bootout system /Library/LaunchDaemons/com.docker.socket.plist
 @y
-# 新たなバイナリのインストール
+   # Stop the socket service
+   echo "Stopping com.docker.socket service..."
+   sudo launchctl bootout system /Library/LaunchDaemons/com.docker.socket.plist
+@z
+
+@x
+   # Remove vmnetd binary
+   echo "Removing com.docker.vmnetd binary..."
+   sudo rm -f /Library/PrivilegedHelperTools/com.docker.vmnetd
+@y
+   # Remove vmnetd binary
+   echo "Removing com.docker.vmnetd binary..."
+   sudo rm -f /Library/PrivilegedHelperTools/com.docker.vmnetd
+@z
+
+@x
+   # Remove socket binary
+   echo "Removing com.docker.socket binary..."
+   sudo rm -f /Library/PrivilegedHelperTools/com.docker.socket
+@y
+   # Remove socket binary
+   echo "Removing com.docker.socket binary..."
+   sudo rm -f /Library/PrivilegedHelperTools/com.docker.socket
+@z
+
+@x
+   # Install new binaries
+   echo "Install new binaries..."
+   sudo cp /Applications/Docker.app/Contents/Library/LaunchServices/com.docker.vmnetd /Library/PrivilegedHelperTools/
+   sudo cp /Applications/Docker.app/Contents/MacOS/com.docker.socket /Library/PrivilegedHelperTools/
+   ```
+@y
+   # Install new binaries
+   echo "Install new binaries..."
+   sudo cp /Applications/Docker.app/Contents/Library/LaunchServices/com.docker.vmnetd /Library/PrivilegedHelperTools/
+   sudo cp /Applications/Docker.app/Contents/MacOS/com.docker.socket /Library/PrivilegedHelperTools/
+   ```
+@z
+
+@x
+## Homebrew casks
+@y
+## Homebrew casks
+@z
+
+@x
+If you installed Docker Desktop using Homebrew casks, the recommended solution is to perform a full reinstall to resolve the issue.
+@y
+If you installed Docker Desktop using Homebrew casks, the recommended solution is to perform a full reinstall to resolve the issue.
+@z
+
+@x
+To reinstall Docker Desktop, run the following commands in your terminal:
+@y
+To reinstall Docker Desktop, run the following commands in your terminal:
+@z
+
+@x
+```console
+$ brew update
+$ brew reinstall --cask docker
+```
+@y
+```console
+$ brew update
+$ brew reinstall --cask docker
+```
+@z
+
+@x
+These commands will update Homebrew and completely reinstall Docker Desktop, ensuring you have the latest version with the fix applied.
+@y
+These commands will update Homebrew and completely reinstall Docker Desktop, ensuring you have the latest version with the fix applied.
 @z

@@ -61,10 +61,10 @@ container to it.
 
 @x
 - The `macvlan` networking driver only works on Linux hosts, and is not supported
-  on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
+  on Docker Desktop or Docker Engine on Windows.
 @y
 - The `macvlan` networking driver only works on Linux hosts, and is not supported
-  on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
+  on Docker Desktop or Docker Engine on Windows.
 @z
 
 @x

@@ -7,12 +7,14 @@
 description: Understand how Settings Management works, who it is for, and what the
   benefits are
 keywords: Settings Management, rootless, docker desktop, hardened desktop
+tags: [admin]
 title: What is Settings Management?
 linkTitle: Settings Management
 @y
 description: Understand how Settings Management works, who it is for, and what the
   benefits are
 keywords: Settings Management, rootless, docker desktop, hardened desktop
+tags: [admin]
 title: What is Settings Management?
 linkTitle: Settings Management
 @z

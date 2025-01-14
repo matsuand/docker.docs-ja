@@ -91,6 +91,8 @@ AC_CONFIG_FILES([
 	src/content/guides/docker-compose/Makefile
 	src/content/guides/docker-scout/Makefile
 	src/content/guides/dotnet/Makefile
+	src/content/guides/frameworks/Makefile
+	src/content/guides/frameworks/laravel/Makefile
 	src/content/guides/genai-pdf-bot/Makefile
 	src/content/guides/genai-video-bot/Makefile
 	src/content/guides/genai-video-bot/images/Makefile
@@ -315,6 +317,7 @@ AC_CONFIG_FILES([
 	src/content/tags/devops/Makefile
 	src/content/tags/distributed-systems/Makefile
 	src/content/tags/faq/Makefile
+	src/content/tags/frameworks/Makefile
 	src/content/tags/networking/Makefile
 	src/content/tags/product-demo/Makefile
 	src/content/tags/release-notes/Makefile

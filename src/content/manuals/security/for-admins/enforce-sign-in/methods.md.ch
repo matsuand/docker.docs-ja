@@ -4,14 +4,18 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-description: Learn about the different ways you can force users to sign in to Docker Desktop
-keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security 
+description: Learn about the different ways you can force your developers to sign in to Docker Desktop
+keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist. registry key, mac, windows
 title: Ways to enforce sign-in for Docker Desktop
+@y
+description: Learn about the different ways you can force your developers to sign in to Docker Desktop
+keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist. registry key, mac, windows
+title: Ways to enforce sign-in for Docker Desktop
+@z
+
+@x
 linkTitle: Methods
 @y
-description: Learn about the different ways you can force users to sign in to Docker Desktop
-keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security 
-title: Ways to enforce sign-in for Docker Desktop
 linkTitle: Methods
 @z
 

@@ -1478,6 +1478,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @y
               - `"container:<name|id>"`: joins another container's PID namespace
               - `"host"`: use the host's PID namespace inside the container
@@ -1543,6 +1544,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @z
 
 @x
@@ -10712,7 +10714,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Docker-Experimental:
@@ -11127,7 +11129,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Docker-Experimental:

@@ -2,8 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = admin ai app-dev best-practices cloud-services data-science \
-	databases deploy devops distributed-systems faq networking    \
-	product-demo release-notes secrets troubleshooting
+	databases deploy devops distributed-systems faq frameworks    \
+	networking product-demo release-notes secrets troubleshooting
 
 bases = \
 	_index.md

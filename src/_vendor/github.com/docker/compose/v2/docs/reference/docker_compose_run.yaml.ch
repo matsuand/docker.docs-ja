@@ -270,6 +270,16 @@ options:
       experimentalcli: false
       kubernetes: false
       swarm: false
+    - option: pull
+      value_type: string
+      default_value: policy
+      description: Pull image before running ("always"|"missing"|"never")
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
     - option: quiet-pull
       value_type: bool
       default_value: "false"
@@ -505,6 +515,16 @@ options:
       value_type: stringArray
       default_value: '[]'
       description: Publish a container's port(s) to the host
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: pull
+      value_type: string
+      default_value: policy
+      description: Pull image before running ("always"|"missing"|"never")
       deprecated: false
       hidden: false
       experimental: false

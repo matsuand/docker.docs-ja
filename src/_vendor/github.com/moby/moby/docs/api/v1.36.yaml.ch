@@ -1664,6 +1664,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @y
               The port is selected from the ephemeral port range that depends on the kernel.
               For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
@@ -1723,6 +1724,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @z
 
 @x
@@ -5637,6 +5639,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
       Resources:
         description: "Resource requirements which apply to each individual container created as part of the service."
         type: "object"
@@ -5829,6 +5832,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
       Resources:
         description: "Resource requirements which apply to each individual container created as part of the service."
         type: "object"
@@ -8033,6 +8037,7 @@ definitions:
           - "default"
           - "hyperv"
           - "process"
+          - ""
       InitBinary:
         description: |
           Name and, optional, path of the `docker-init` binary.
@@ -8044,6 +8049,7 @@ definitions:
           - "default"
           - "hyperv"
           - "process"
+          - ""
       InitBinary:
         description: |
           Name and, optional, path of the `docker-init` binary.
@@ -14314,7 +14320,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Docker-Experimental:
@@ -14441,7 +14447,7 @@ paths:
             type: "string"
             example: "OK"
           headers:
-            API-Version:
+            Api-Version:
               type: "string"
               description: "Max API Version the server supports"
             Docker-Experimental:
@@ -18196,6 +18202,7 @@ paths:
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
+              DataPathAddr: "192.168.1.1"
               RemoteAddrs:
                 - "node1:2377"
               JoinToken: "SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2"
@@ -18364,6 +18371,7 @@ paths:
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
+              DataPathAddr: "192.168.1.1"
               RemoteAddrs:
                 - "node1:2377"
               JoinToken: "SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2"

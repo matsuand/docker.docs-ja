@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Services top-level elements
@@ -3720,11 +3721,11 @@ platform: linux/arm64/v8
 @x
 > [!NOTE]
 >
-> Port mapping must not be used with `network_mode: host` otherwise a runtime error occurs.
+> Port mapping must not be used with `network_mode: host`. Doing so causes a runtime error because `network_mode: host` already exposes container ports directly to the host network, so port mapping isn’t needed.
 @y
 > [!NOTE]
 >
-> Port mapping must not be used with `network_mode: host` otherwise a runtime error occurs.
+> Port mapping must not be used with `network_mode: host`. Doing so causes a runtime error because `network_mode: host` already exposes container ports directly to the host network, so port mapping isn’t needed.
 @z
 
 @x
@@ -3748,30 +3749,26 @@ in the form:
 @z
 
 @x
-- `HOST` is `[IP:](port | range)`
-- `CONTAINER` is `port | range`
-- `PROTOCOL` to restrict port to specified protocol. `tcp` and `udp` values are defined by the Specification,
-  Compose offers support for platform-specific protocol names.
+- `HOST` is `[IP:](port | range)` (optional). If it is not set, it binds to all network interfaces (`0.0.0.0`). 
+- `CONTAINER` is `port | range`.
+- `PROTOCOL` restricts ports to a specified protocol either `tcp` or `upd`(optional). Default is `tcp`.
 @y
-- `HOST` is `[IP:](port | range)`
-- `CONTAINER` is `port | range`
-- `PROTOCOL` to restrict port to specified protocol. `tcp` and `udp` values are defined by the Specification,
-  Compose offers support for platform-specific protocol names.
+- `HOST` is `[IP:](port | range)` (optional). If it is not set, it binds to all network interfaces (`0.0.0.0`). 
+- `CONTAINER` is `port | range`.
+- `PROTOCOL` restricts ports to a specified protocol either `tcp` or `upd`(optional). Default is `tcp`.
 @z
 
 @x
-If host IP is not set, it binds to all network interfaces. Ports can be either a single
-value or a range. Host and container must use equivalent ranges.
+Ports can be either a single value or a range. `HOST` and `CONTAINER` must use equivalent ranges. 
 @y
-If host IP is not set, it binds to all network interfaces. Ports can be either a single
-value or a range. Host and container must use equivalent ranges.
+Ports can be either a single value or a range. `HOST` and `CONTAINER` must use equivalent ranges. 
 @z
 
 @x
-Either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
+You can either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
 the container runtime automatically allocates any unassigned port of the host.
 @y
-Either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
+You can either specify both ports (`HOST:CONTAINER`), or just the container port. In the latter case,
 the container runtime automatically allocates any unassigned port of the host.
 @z
 
@@ -3789,43 +3786,17 @@ Examples:
 Examples:
 @z
 
-@x
-```yml
-ports:
-  - "3000"
-  - "3000-3005"
-  - "8000:8000"
-  - "9090-9091:8080-8081"
-  - "49100:22"
-  - "8000-9000:80"
-  - "127.0.0.1:8001:8001"
-  - "127.0.0.1:5000-5010:5000-5010"
-  - "6060:6060/udp"
-```
-@y
-```yml
-ports:
-  - "3000"
-  - "3000-3005"
-  - "8000:8000"
-  - "9090-9091:8080-8081"
-  - "49100:22"
-  - "8000-9000:80"
-  - "127.0.0.1:8001:8001"
-  - "127.0.0.1:5000-5010:5000-5010"
-  - "6060:6060/udp"
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]
 >
-> If Host IP mapping is not supported by a container engine, Compose rejects
+> If host IP mapping is not supported by a container engine, Compose rejects
 > the Compose file and ignores the specified host IP.
 @y
 > [!NOTE]
 >
-> If Host IP mapping is not supported by a container engine, Compose rejects
+> If host IP mapping is not supported by a container engine, Compose rejects
 > the Compose file and ignores the specified host IP.
 @z
 
@@ -3844,64 +3815,24 @@ expressed in the short form.
 @z
 
 @x
-- `target`: The container port
+- `target`: The container port.
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
-- `host_ip`: The Host IP mapping, unspecified means all network interfaces (`0.0.0.0`).
+- `host_ip`: The host IP mapping. If it is not set, it binds to all network interfaces (`0.0.0.0`).
 - `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
 - `app_protocol`: The application protocol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](/manuals/compose/releases/release-notes.md#2260).
-- `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
+- `mode`: Specifies how the port is published in a Swarm setup. If set to `host`, it publishes the port on every node in Swarm. If set to `ingress`, it allows load balancing across the nodes in Swarm. Defaults to `ingress`.
 - `name`: A human-readable name for the port, used to document it's usage within the service.
 @y
-- `target`: The container port
+- `target`: The container port.
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
-- `host_ip`: The Host IP mapping, unspecified means all network interfaces (`0.0.0.0`).
+- `host_ip`: The host IP mapping. If it is not set, it binds to all network interfaces (`0.0.0.0`).
 - `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
 - `app_protocol`: The application protocol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](manuals/compose/releases/release-notes.md#2260).
-- `mode`: `host`: For publishing a host port on each node, or `ingress` for a port to be load balanced. Defaults to `ingress`.
+- `mode`: Specifies how the port is published in a Swarm setup. If set to `host`, it publishes the port on every node in Swarm. If set to `ingress`, it allows load balancing across the nodes in Swarm. Defaults to `ingress`.
 - `name`: A human-readable name for the port, used to document it's usage within the service.
 @z
 
-@x
-```yml
-ports:
-  - name: web
-    target: 80
-    host_ip: 127.0.0.1
-    published: "8080"
-    protocol: tcp
-    app_protocol: http
-    mode: host
-@y
-```yml
-ports:
-  - name: web
-    target: 80
-    host_ip: 127.0.0.1
-    published: "8080"
-    protocol: tcp
-    app_protocol: http
-    mode: host
-@z
-
-@x
-  - name: web-secured
-    target: 443
-    host_ip: 127.0.0.1
-    published: "8083-9000"
-    protocol: tcp
-    app_protocol: https
-    mode: host
-```
-@y
-  - name: web-secured
-    target: 443
-    host_ip: 127.0.0.1
-    published: "8083-9000"
-    protocol: tcp
-    app_protocol: https
-    mode: host
-```
-@z
+% snip code...
 
 @x
 ### `post_start`

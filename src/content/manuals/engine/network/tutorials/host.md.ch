@@ -62,15 +62,15 @@ host.
 @z
 
 @x
-- The `host` networking driver only works on Linux hosts, but is available as a
-  [beta feature](/manuals/release-lifecycle.md#beta) on Docker Desktop version 4.29
-  and later for Mac, Windows, and Linux. To enable this feature, navigate to the
-  **Resources** tab in **Settings**, and then under **Network** select **Enable host networking**.
+- The `host` networking driver only works on Linux hosts, and as an opt-in
+  feature in Docker Desktop version 4.34 and later. To enable this feature in
+  Docker Desktop, navigate to the **Resources** tab in **Settings**, and then
+  under **Network** select **Enable host networking**.
 @y
-- The `host` networking driver only works on Linux hosts, but is available as a
-  [beta feature](manuals/release-lifecycle.md#beta) on Docker Desktop version 4.29
-  and later for Mac, Windows, and Linux. To enable this feature, navigate to the
-  **Resources** tab in **Settings**, and then under **Network** select **Enable host networking**.
+- The `host` networking driver only works on Linux hosts, and as an opt-in
+  feature in Docker Desktop version 4.34 and later. To enable this feature in
+  Docker Desktop, navigate to the **Resources** tab in **Settings**, and then
+  under **Network** select **Enable host networking**.
 @z
 
 @x

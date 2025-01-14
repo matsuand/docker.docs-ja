@@ -384,12 +384,6 @@ examples: |-
 @z
 
 @x
-    Specifying the `--isolation` flag without a value is the same as setting `--isolation="default"`.
-@y
-    Specifying the `--isolation` flag without a value is the same as setting `--isolation="default"`.
-@z
-
-@x
     ### Optional security options (--security-opt) {#security-opt}
 @y
     ### Optional security options (--security-opt) {#security-opt}
