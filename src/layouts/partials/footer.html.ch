@@ -6,13 +6,11 @@
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/pricing/">Pricing</a>
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/company/">About us</a>
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/support/">Support</a>
-      <a class="underline-offset-2 hover:underline" href="https://github.com/docker/docs/blob/main/CONTRIBUTING.md">Contribute</a>
 @y
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/">提供製品</a>
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/pricing/">価格</a>
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/company/">会社情報</a>
       <a class="underline-offset-2 hover:underline" href="https://www.docker.com/support/">サポート</a>
-      <a class="underline-offset-2 hover:underline" href="https://github.com/docker/docs/blob/main/CONTRIBUTING.md">貢献</a>
 @z
 
 @x

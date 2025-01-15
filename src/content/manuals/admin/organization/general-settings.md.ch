@@ -45,14 +45,13 @@ This information includes:
  - Company
  - Location
  - Website
- - Avatar
+ - Gravatar email: To add an avatar to your Docker account, create a [Gravatar account](https://gravatar.com/) and create your avatar. Next, add your Gravatar email to your Docker account settings. It may take some time for your avatar to update in Docker.
 @y
-This information includes:
  - Organization Name
  - Company
  - Location
  - Website
- - Avatar
+ - Gravatar email: To add an avatar to your Docker account, create a [Gravatar account](https://gravatar.com/) and create your avatar. Next, add your Gravatar email to your Docker account settings. It may take some time for your avatar to update in Docker.
 @z
 
 @x

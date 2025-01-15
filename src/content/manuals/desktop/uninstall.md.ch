@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: How to uninstall Docker Desktop
 keywords: Windows, uninstall, Mac, Linux, Docker Desktop
@@ -93,27 +95,7 @@ After uninstalling Docker Desktop, there may be some residual files left behind 
 After uninstalling Docker Desktop, there may be some residual files left behind which you can remove manually. These are:
 @z
 
-@x
-```console
-C:\ProgramData\Docker
-C:\ProgramData\DockerDesktop
-C:\Program Files\Docker
-C:\Users\<your user name>\AppData\Local\Docker
-C:\Users\<your user name>\AppData\Roaming\Docker
-C:\Users\<your user name>\AppData\Roaming\Docker Desktop
-C:\Users\<your user name>\.docker
-```
-@y
-```console
-C:\ProgramData\Docker
-C:\ProgramData\DockerDesktop
-C:\Program Files\Docker
-C:\Users\<your user name>\AppData\Local\Docker
-C:\Users\<your user name>\AppData\Roaming\Docker
-C:\Users\<your user name>\AppData\Roaming\Docker Desktop
-C:\Users\<your user name>\.docker
-```
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -143,15 +125,7 @@ You can also uninstall Docker Desktop from the CLI. Run:
 You can also uninstall Docker Desktop from the CLI. Run:
 @z
 
-@x
-```console
-$ /Applications/Docker.app/Contents/MacOS/uninstall
-```
-@y
-```console
-$ /Applications/Docker.app/Contents/MacOS/uninstall
-```
-@z
+% snip command...
 
 @x
 After uninstalling Docker Desktop, there may be some residual files left behind which you can remove:
@@ -159,19 +133,7 @@ After uninstalling Docker Desktop, there may be some residual files left behind 
 After uninstalling Docker Desktop, there may be some residual files left behind which you can remove:
 @z
 
-@x
-```console
-$ rm -rf ~/Library/Group\ Containers/group.com.docker
-$ rm -rf ~/Library/Containers/com.docker.docker
-$ rm -rf ~/.docker
-```
-@y
-```console
-$ rm -rf ~/Library/Group\ Containers/group.com.docker
-$ rm -rf ~/Library/Containers/com.docker.docker
-$ rm -rf ~/.docker
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -207,15 +169,7 @@ To remove Docker Desktop for Ubuntu, run:
 To remove Docker Desktop for Ubuntu, run:
 @z
 
-@x
-```console
-$ sudo apt remove docker-desktop
-```
-@y
-```console
-$ sudo apt remove docker-desktop
-```
-@z
+% snip command...
 
 @x
 For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
@@ -225,19 +179,7 @@ For a complete cleanup, remove configuration and data files at `$HOME/.docker/de
 the remaining systemd service files.
 @z
 
-@x
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-$ sudo apt purge docker-desktop
-```
-@y
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-$ sudo apt purge docker-desktop
-```
-@z
+% snip command...
 
 @x
 Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
@@ -259,15 +201,7 @@ To remove Docker Desktop for Debian, run:
 To remove Docker Desktop for Debian, run:
 @z
 
-@x
-```console
-$ sudo apt remove docker-desktop
-```
-@y
-```console
-$ sudo apt remove docker-desktop
-```
-@z
+% snip command...
 
 @x
 For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
@@ -277,19 +211,7 @@ For a complete cleanup, remove configuration and data files at `$HOME/.docker/de
 the remaining systemd service files.
 @z
 
-@x
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-$ sudo apt purge docker-desktop
-```
-@y
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-$ sudo apt purge docker-desktop
-```
-@z
+% snip command...
 
 @x
 Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.
@@ -311,15 +233,7 @@ To remove Docker Desktop for Fedora, run:
 To remove Docker Desktop for Fedora, run:
 @z
 
-@x
-```console
-$ sudo dnf remove docker-desktop
-```
-@y
-```console
-$ sudo dnf remove docker-desktop
-```
-@z
+% snip command...
 
 @x
 For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
@@ -329,17 +243,7 @@ For a complete cleanup, remove configuration and data files at `$HOME/.docker/de
 the remaining systemd service files.
 @z
 
-@x
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-```
-@y
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-```
-@z
+% snip command...
 
 @x
 Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
@@ -361,15 +265,7 @@ To remove Docker Desktop for Arch, run:
 To remove Docker Desktop for Arch, run:
 @z
 
-@x
-```console
-$ sudo pacman -R docker-desktop
-```
-@y
-```console
-$ sudo pacman -R docker-desktop
-```
-@z
+% snip command...
 
 @x
 For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
@@ -379,19 +275,7 @@ For a complete cleanup, remove configuration and data files at `$HOME/.docker/de
 the remaining systemd service files.
 @z
 
-@x
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-$ sudo pacman -Rns docker-desktop
-```
-@y
-```console
-$ rm -r $HOME/.docker/desktop
-$ sudo rm /usr/local/bin/com.docker.cli
-$ sudo pacman -Rns docker-desktop
-```
-@z
+% snip command...
 
 @x
 Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
