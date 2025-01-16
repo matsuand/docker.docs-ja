@@ -6,12 +6,12 @@
 @x
 description: Single sign-on domain FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
-title: Domains
+title: FAQS on SSO and domains
 tags: [FAQ]
 @y
 description: Single sign-on domain FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
-title: Domains
+title: FAQS on SSO and domains
 tags: [FAQ]
 @z
 

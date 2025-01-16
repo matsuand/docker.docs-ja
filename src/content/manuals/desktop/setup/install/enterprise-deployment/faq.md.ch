@@ -4,11 +4,11 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: FAQs
+title: Enterprise deployment FAQs
 description: Frequently asked questions for deploying Docker Desktop at scale
 keywords: msi, deploy, docker desktop, faqs, pkg, mdm, jamf, intune, windows, mac, enterprise, admin
 @y
-title: FAQs
+title: Enterprise deployment FAQs
 description: Frequently asked questions for deploying Docker Desktop at scale
 keywords: msi, deploy, docker desktop, faqs, pkg, mdm, jamf, intune, windows, mac, enterprise, admin
 @z

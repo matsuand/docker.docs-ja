@@ -38,10 +38,8 @@ languages:
 
 @x
   repo: https://github.com/docker/docs
-  docs_url: https://docs.docker.com
 @y
   repo: https://github.com/docker/docs
-  docs_url: https://docs.docker.com
 @z
 
 ------------------------------
@@ -60,6 +58,7 @@ suburldir 追加
 ------------------------------
 @x
 menus:
+  # Site header menu
   main:
   - name: Get started
     pageRef: /get-started/
@@ -75,6 +74,7 @@ menus:
     weight: 4
 @y
 menus:
+  # Site header menu
   main:
   - name: はじめよう
     pageRef: /get-started/

@@ -7,9 +7,10 @@ SUBDIRS =  accounts admin billing build build-cloud cloud compose   \
 	security subscription
 
 bases = \
-	_index.md            \
-	registry.md          \
-	release-lifecycle.md \
+	_index.md                 \
+	platform-release-notes.md \
+	registry.md               \
+	release-lifecycle.md      \
 	tcc.md
 
 include $(top_srcdir)/build-aux/common.mk

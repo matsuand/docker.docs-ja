@@ -6,11 +6,11 @@
 @x
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
-title: Enforcement
+title: FAQs on SSO and enforcement
 @y
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
-title: Enforcement
+title: FAQs on SSO and enforcement
 @z
 
 @x

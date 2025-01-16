@@ -36,9 +36,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
-## 2024-11-11
+## 2024-12-12
 @y
-## 2024-11-11
+## 2024-12-12
 @z
 
 @x
@@ -48,27 +48,9 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 @z
 
 @x
-- [Personal access tokens](/security/for-developers/access-tokens/) (PATs) now support expiration dates.
+- The AI Catalog in Docker Hub is available directly through Docker Desktop.
 @y
-- [Personal access tokens](__SUBDIR__/security/for-developers/access-tokens/) (PATs) now support expiration dates.
-@z
-
-@x
-## 2024-10-15
-@y
-## 2024-10-15
-@z
-
-@x
-### New
-@y
-### New
-@z
-
-@x
-- Beta: You can now create [organization access tokens](/security/for-admins/access-tokens/) (OATs) to enhance security for organizations and streamline access management for organizations.
-@y
-- Beta: You can now create [organization access tokens](__SUBDIR__/security/for-admins/access-tokens/) (OATs) to enhance security for organizations and streamline access management for organizations.
+- The AI Catalog in Docker Hub is available directly through Docker Desktop.
 @z
 
 @x
