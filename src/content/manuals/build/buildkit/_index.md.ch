@@ -272,15 +272,13 @@ daemon.
 @x
 > [!WARNING]
 >
-> BuildKit only fully supports building Linux containers.
-> Windows container support is experimental, and is tracked in
-> [`moby/buildkit#616`](https://github.com/moby/buildkit/issues/616).
+> BuildKit only fully supports building Linux containers. Windows container
+> support is experimental.
 @y
 > [!WARNING]
 >
-> BuildKit only fully supports building Linux containers.
-> Windows container support is experimental, and is tracked in
-> [`moby/buildkit#616`](https://github.com/moby/buildkit/issues/616).
+> BuildKit only fully supports building Linux containers. Windows container
+> support is experimental.
 @z
 
 @x
@@ -300,11 +298,11 @@ We appreciate any feedback you submit by [opening an issue here](https://github.
 @z
 
 @x
-- BuildKit on Windows currently only supports the `containerd` worker.
-  Support for non-OCI workers is tracked in [moby/buildkit#4836](https://github.com/moby/buildkit/issues/4836).
+For information about open bugs and limitations related to BuildKit on Windows,
+see [GitHub issues](https://github.com/moby/buildkit/issues?q=is%3Aissue%20state%3Aopen%20label%3Aarea%2Fwindows-wcow).
 @y
-- BuildKit on Windows currently only supports the `containerd` worker.
-  Support for non-OCI workers is tracked in [moby/buildkit#4836](https://github.com/moby/buildkit/issues/4836).
+For information about open bugs and limitations related to BuildKit on Windows,
+see [GitHub issues](https://github.com/moby/buildkit/issues?q=is%3Aissue%20state%3Aopen%20label%3Aarea%2Fwindows-wcow).
 @z
 
 @x

@@ -6418,9 +6418,9 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-### Bug fixes and enahncements
+### Bug fixes and enhancements
 @y
-### Bug fixes and enahncements
+### Bug fixes and enhancements
 @z
 
 @x
@@ -6496,9 +6496,9 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-### Bug fixes and enahncements
+### Bug fixes and enhancements
 @y
-### Bug fixes and enahncements
+### Bug fixes and enhancements
 @z
 
 @x

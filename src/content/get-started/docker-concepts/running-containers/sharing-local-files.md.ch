@@ -95,15 +95,7 @@ Here's a way to use `docker run` to start a container using a bind mount and map
 Here's a way to use `docker run` to start a container using a bind mount and map it to the container file location.
 @z
 
-@x
-```console
-$ docker run -v /HOST/PATH:/CONTAINER/PATH -it nginx
-```
-@y
-```console
-$ docker run -v /HOST/PATH:/CONTAINER/PATH -it nginx
-```
-@z
+% snip command...
 
 @x
 The `--mount` flag offers more advanced features and granular control, making it suitable for complex mount scenarios or production deployments. If you use `--mount` to bind-mount a file or directory that doesn't yet exist on the Docker host, the `docker run` command doesn't automatically create it for you but generates an error.
@@ -111,15 +103,7 @@ The `--mount` flag offers more advanced features and granular control, making it
 The `--mount` flag offers more advanced features and granular control, making it suitable for complex mount scenarios or production deployments. If you use `--mount` to bind-mount a file or directory that doesn't yet exist on the Docker host, the `docker run` command doesn't automatically create it for you but generates an error.
 @z
 
-@x
-```console
-$ docker run --mount type=bind,source=/HOST/PATH,target=/CONTAINER/PATH,readonly nginx
-```
-@y
-```console
-$ docker run --mount type=bind,source=/HOST/PATH,target=/CONTAINER/PATH,readonly nginx
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -145,15 +129,7 @@ When using bind mounts, it's crucial to ensure that Docker has the necessary per
 For example, the following command grants read-write access permission.
 @z
 
-@x
-```console
-$ docker run -v HOST-DIRECTORY:/CONTAINER-DIRECTORY:rw nginx
-```
-@y
-```console
-$ docker run -v HOST-DIRECTORY:/CONTAINER-DIRECTORY:rw nginx
-```
-@z
+% snip command...
 
 @x
 Read-only bind mounts let the container access the mounted files on the host for reading, but it can't change or delete the files. With read-write bind mounts, containers can modify or delete mounted files, and these changes or deletions will also be reflected on the host system. Read-only bind mounts ensures that files on the host can't be accidentally modified or deleted by a container.
@@ -201,15 +177,7 @@ In this hands-on guide, you’ll practice how to create and use a bind mount to 
 2. Start a container using the [httpd](https://hub.docker.com/_/httpd) image with the following command:
 @z
 
-@x
-   ```console
-   $ docker run -d -p 8080:80 --name my_site httpd:2.4
-   ```
-@y
-   ```console
-   $ docker run -d -p 8080:80 --name my_site httpd:2.4
-   ```
-@z
+% snip command...
 
 @x
    This will start the `httpd` service in the background, and publish the webpage to port `8080` on the host.
@@ -223,15 +191,7 @@ In this hands-on guide, you’ll practice how to create and use a bind mount to 
 3. Open the browser and access [http://localhost:8080](http://localhost:8080) or use the curl command to verify if it's working fine or not.
 @z
 
-@x
-    ```console
-    $ curl localhost:8080
-    ```
-@y
-    ```console
-    $ curl localhost:8080
-    ```
-@z
+% snip command...
 
 @x
 ### Use a bind mount
@@ -263,77 +223,15 @@ Using a bind mount, you can map the configuration file on your host computer to 
 2. Create a new directory called `public_html` on your host system.
 @z
 
-@x
-    ```console
-    $ mkdir public_html
-    ```
-@y
-    ```console
-    $ mkdir public_html
-    ```
-@z
+% snip command...
 
 @x
-3. Change the directory to `public_html` and create a file called `index.html` with the following content. This is a basic HTML document that creates a simple webpage that welcomes you with a friendly whale.
+3. Navigate into the newly created directory `public_html` and create a file called `index.html` with the following content. This is a basic HTML document that creates a simple webpage that welcomes you with a friendly whale.
 @y
-3. Change the directory to `public_html` and create a file called `index.html` with the following content. This is a basic HTML document that creates a simple webpage that welcomes you with a friendly whale.
+3. Navigate into the newly created directory `public_html` and create a file called `index.html` with the following content. This is a basic HTML document that creates a simple webpage that welcomes you with a friendly whale.
 @z
 
-@x
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title> My Website with a Whale & Docker!</title>
-    </head>
-    <body>
-    <h1>Whalecome!!</h1>
-    <p>Look! There's a friendly whale greeting you!</p>
-    <pre id="docker-art">
-       ##         .
-      ## ## ##        ==
-     ## ## ## ## ##    ===
-     /"""""""""""""""""\___/ ===
-   {                       /  ===-
-   \______ O           __/
-    \    \         __/
-     \____\_______/
-@y
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title> My Website with a Whale & Docker!</title>
-    </head>
-    <body>
-    <h1>Whalecome!!</h1>
-    <p>Look! There's a friendly whale greeting you!</p>
-    <pre id="docker-art">
-       ##         .
-      ## ## ##        ==
-     ## ## ## ## ##    ===
-     /"""""""""""""""""\___/ ===
-   {                       /  ===-
-   \______ O           __/
-    \    \         __/
-     \____\_______/
-@z
-
-@x
-    Hello from Docker!
-    </pre>
-    </body>
-    </html>
-    ```
-@y
-    Hello from Docker!
-    </pre>
-    </body>
-    </html>
-    ```
-@z
+% snip code...
 
 @x
 4. It's time to run the container. The `--mount` and `-v` examples produce the same result. You can't run them both unless you remove the `my_site` container after running the first one.
@@ -349,15 +247,7 @@ Using a bind mount, you can map the configuration file on your host computer to 
    {{< tab name="`-v`" >}}
 @z
 
-@x
-   ```console
-   $ docker run -d --name my_site -p 8080:80 -v .:/usr/local/apache2/htdocs/ httpd:2.4
-   ```
-@y
-   ```console
-   $ docker run -d --name my_site -p 8080:80 -v .:/usr/local/apache2/htdocs/ httpd:2.4
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -367,15 +257,7 @@ Using a bind mount, you can map the configuration file on your host computer to 
    {{< tab name="`--mount`" >}}
 @z
 
-@x
-   ```console
-   $ docker run -d --name my_site -p 8080:80 --mount type=bind,source=./,target=/usr/local/apache2/htdocs/ httpd:2.4
-   ```
-@y
-   ```console
-   $ docker run -d --name my_site -p 8080:80 --mount type=bind,source=./,target=/usr/local/apache2/htdocs/ httpd:2.4
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}

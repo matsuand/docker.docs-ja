@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Overriding configurations
@@ -31,37 +32,7 @@ The following list of attributes can be overridden:
 The following list of attributes can be overridden:
 @z
 
-@x
-- `args`
-- `cache-from`
-- `cache-to`
-- `context`
-- `dockerfile`
-- `labels`
-- `no-cache`
-- `output`
-- `platform`
-- `pull`
-- `secrets`
-- `ssh`
-- `tags`
-- `target`
-@y
-- `args`
-- `cache-from`
-- `cache-to`
-- `context`
-- `dockerfile`
-- `labels`
-- `no-cache`
-- `output`
-- `platform`
-- `pull`
-- `secrets`
-- `ssh`
-- `tags`
-- `target`
-@z
+% snip attributes...
 
 @x
 To override these attributes, you can use the following methods:
@@ -515,37 +486,7 @@ Complete list of attributes that can be overridden with `--set` are:
 Complete list of attributes that can be overridden with `--set` are:
 @z
 
-@x
-- `args`
-- `cache-from`
-- `cache-to`
-- `context`
-- `dockerfile`
-- `labels`
-- `no-cache`
-- `output`
-- `platform`
-- `pull`
-- `secrets`
-- `ssh`
-- `tags`
-- `target`
-@y
-- `args`
-- `cache-from`
-- `cache-to`
-- `context`
-- `dockerfile`
-- `labels`
-- `no-cache`
-- `output`
-- `platform`
-- `pull`
-- `secrets`
-- `ssh`
-- `tags`
-- `target`
-@z
+% snip attributes...
 
 @x
 ## Environment variables

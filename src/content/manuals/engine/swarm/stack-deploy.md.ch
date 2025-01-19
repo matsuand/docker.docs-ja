@@ -97,15 +97,7 @@ a throwaway registry, which you can discard afterward.
 1.  Start the registry as a service on your swarm:
 @z
 
-@x
-    ```console
-    $ docker service create --name registry --publish published=5000,target=5000 registry:2
-    ```
-@y
-    ```console
-    $ docker service create --name registry --publish published=5000,target=5000 registry:2
-    ```
-@z
+% snip command...
 
 @x
 2.  Check its status with `docker service ls`:
@@ -113,23 +105,7 @@ a throwaway registry, which you can discard afterward.
 2.  Check its status with `docker service ls`:
 @z
 
-@x
-    ```console
-    $ docker service ls
-@y
-    ```console
-    $ docker service ls
-@z
-
-@x
-    ID            NAME      REPLICAS  IMAGE                                                                               COMMAND
-    l7791tpuwkco  registry  1/1       registry:2@sha256:1152291c7f93a4ea2ddc95e46d142c31e743b6dd70e194af9e6ebe530f782c17
-    ```
-@y
-    ID            NAME      REPLICAS  IMAGE                                                                               COMMAND
-    l7791tpuwkco  registry  1/1       registry:2@sha256:1152291c7f93a4ea2ddc95e46d142c31e743b6dd70e194af9e6ebe530f782c17
-    ```
-@z
+% snip command...
 
 @x
     Once it reads `1/1` under `REPLICAS`, it's running. If it reads `0/1`, it's
@@ -145,21 +121,7 @@ a throwaway registry, which you can discard afterward.
 3.  Check that it's working with `curl`:
 @z
 
-@x
-    ```console
-    $ curl http://localhost:5000/v2/
-@y
-    ```console
-    $ curl http://localhost:5000/v2/
-@z
-
-@x
-    {}
-    ```
-@y
-    {}
-    ```
-@z
+% snip command...
 
 @x
 ## Create the example application
@@ -185,17 +147,7 @@ counter whenever you visit it.
 1.  Create a directory for the project:
 @z
 
-@x
-    ```console
-    $ mkdir stackdemo
-    $ cd stackdemo
-    ```
-@y
-    ```console
-    $ mkdir stackdemo
-    $ cd stackdemo
-    ```
-@z
+% snip command...
 
 @x
 2.  Create a file called `app.py` in the project directory and paste this in:
@@ -203,45 +155,7 @@ counter whenever you visit it.
 2.  Create a file called `app.py` in the project directory and paste this in:
 @z
 
-@x
-    ```python
-    from flask import Flask
-    from redis import Redis
-@y
-    ```python
-    from flask import Flask
-    from redis import Redis
-@z
-
-@x
-    app = Flask(__name__)
-    redis = Redis(host='redis', port=6379)
-@y
-    app = Flask(__name__)
-    redis = Redis(host='redis', port=6379)
-@z
-
-@x
-    @app.route('/')
-    def hello():
-        count = redis.incr('hits')
-        return 'Hello World! I have been seen {} times.\n'.format(count)
-@y
-    @app.route('/')
-    def hello():
-        count = redis.incr('hits')
-        return 'Hello World! I have been seen {} times.\n'.format(count)
-@z
-
-@x
-    if __name__ == "__main__":
-        app.run(host="0.0.0.0", port=8000, debug=True)
-    ```
-@y
-    if __name__ == "__main__":
-        app.run(host="0.0.0.0", port=8000, debug=True)
-    ```
-@z
+% snip code...
 
 @x
 3.  Create a file called `requirements.txt` and paste these two lines in:
@@ -249,17 +163,7 @@ counter whenever you visit it.
 3.  Create a file called `requirements.txt` and paste these two lines in:
 @z
 
-@x
-    ```none
-    flask
-    redis
-    ```
-@y
-    ```none
-    flask
-    redis
-    ```
-@z
+% snip code...
 
 @x
 4.  Create a file called `Dockerfile` and paste this in:
@@ -267,25 +171,7 @@ counter whenever you visit it.
 4.  Create a file called `Dockerfile` and paste this in:
 @z
 
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM python:3.4-alpine
-    ADD . /code
-    WORKDIR /code
-    RUN pip install -r requirements.txt
-    CMD ["python", "app.py"]
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM python:3.4-alpine
-    ADD . /code
-    WORKDIR /code
-    RUN pip install -r requirements.txt
-    CMD ["python", "app.py"]
-    ```
-@z
+% snip code...
 
 @x
 5.  Create a file called `compose.yml` and paste this in:
@@ -293,29 +179,7 @@ counter whenever you visit it.
 5.  Create a file called `compose.yml` and paste this in:
 @z
 
-@x
-    ```yaml
-      services:
-        web:
-          image: 127.0.0.1:5000/stackdemo
-          build: .
-          ports:
-            - "8000:8000"
-        redis:
-          image: redis:alpine
-    ```
-@y
-    ```yaml
-      services:
-        web:
-          image: 127.0.0.1:5000/stackdemo
-          build: .
-          ports:
-            - "8000:8000"
-        redis:
-          image: redis:alpine
-    ```
-@z
+% snip code...
 
 @x
     The image for the web app is built using the Dockerfile defined
@@ -355,49 +219,7 @@ counter whenever you visit it.
     single node. You can safely ignore this.
 @z
 
-@x
-    ```console
-    $ docker compose up -d
-@y
-    ```console
-    $ docker compose up -d
-@z
-
-@x
-    WARNING: The Docker Engine you're using is running in swarm mode.
-@y
-    WARNING: The Docker Engine you're using is running in swarm mode.
-@z
-
-@x
-    Compose does not use swarm mode to deploy services to multiple nodes in
-    a swarm. All containers are scheduled on the current node.
-@y
-    Compose does not use swarm mode to deploy services to multiple nodes in
-    a swarm. All containers are scheduled on the current node.
-@z
-
-@x
-    To deploy your application across the swarm, use `docker stack deploy`.
-@y
-    To deploy your application across the swarm, use `docker stack deploy`.
-@z
-
-@x
-    Creating network "stackdemo_default" with the default driver
-    Building web
-    ...(build output)...
-    Creating stackdemo_redis_1
-    Creating stackdemo_web_1
-    ```
-@y
-    Creating network "stackdemo_default" with the default driver
-    Building web
-    ...(build output)...
-    Creating stackdemo_redis_1
-    Creating stackdemo_web_1
-    ```
-@z
+% snip command...
 
 @x
 2.  Check that the app is running with `docker compose ps`:
@@ -405,27 +227,7 @@ counter whenever you visit it.
 2.  Check that the app is running with `docker compose ps`:
 @z
 
-@x
-    ```console
-    $ docker compose ps
-@y
-    ```console
-    $ docker compose ps
-@z
-
-@x
-          Name                     Command               State           Ports
-    -----------------------------------------------------------------------------------
-    stackdemo_redis_1   docker-entrypoint.sh redis ...   Up      6379/tcp
-    stackdemo_web_1     python app.py                    Up      0.0.0.0:8000->8000/tcp
-    ```
-@y
-          Name                     Command               State           Ports
-    -----------------------------------------------------------------------------------
-    stackdemo_redis_1   docker-entrypoint.sh redis ...   Up      6379/tcp
-    stackdemo_web_1     python app.py                    Up      0.0.0.0:8000->8000/tcp
-    ```
-@z
+% snip command...
 
 @x
     You can test the app with `curl`:
@@ -433,33 +235,7 @@ counter whenever you visit it.
     You can test the app with `curl`:
 @z
 
-@x
-    ```console
-    $ curl http://localhost:8000
-    Hello World! I have been seen 1 times.
-@y
-    ```console
-    $ curl http://localhost:8000
-    Hello World! I have been seen 1 times.
-@z
-
-@x
-    $ curl http://localhost:8000
-    Hello World! I have been seen 2 times.
-@y
-    $ curl http://localhost:8000
-    Hello World! I have been seen 2 times.
-@z
-
-@x
-    $ curl http://localhost:8000
-    Hello World! I have been seen 3 times.
-    ```
-@y
-    $ curl http://localhost:8000
-    Hello World! I have been seen 3 times.
-    ```
-@z
+% snip command...
 
 @x
 3.  Bring the app down:
@@ -467,29 +243,7 @@ counter whenever you visit it.
 3.  Bring the app down:
 @z
 
-@x
-    ```console
-    $ docker compose down --volumes
-@y
-    ```console
-    $ docker compose down --volumes
-@z
-
-@x
-    Stopping stackdemo_web_1 ... done
-    Stopping stackdemo_redis_1 ... done
-    Removing stackdemo_web_1 ... done
-    Removing stackdemo_redis_1 ... done
-    Removing network stackdemo_default
-    ```
-@y
-    Stopping stackdemo_web_1 ... done
-    Stopping stackdemo_redis_1 ... done
-    Removing stackdemo_web_1 ... done
-    Removing stackdemo_redis_1 ... done
-    Removing network stackdemo_default
-    ```
-@z
+% snip command...
 
 @x
 ## Push the generated image to the registry
@@ -505,35 +259,7 @@ To distribute the web app's image across the swarm, it needs to be pushed to the
 registry you set up earlier. With Compose, this is very simple:
 @z
 
-@x
-```console
-$ docker compose push
-@y
-```console
-$ docker compose push
-@z
-
-@x
-Pushing web (127.0.0.1:5000/stackdemo:latest)...
-The push refers to a repository [127.0.0.1:5000/stackdemo]
-5b5a49501a76: Pushed
-be44185ce609: Pushed
-bd7330a79bcf: Pushed
-c9fc143a069a: Pushed
-011b303988d2: Pushed
-latest: digest: sha256:a81840ebf5ac24b42c1c676cbda3b2cb144580ee347c07e1bc80e35e5ca76507 size: 1372
-```
-@y
-Pushing web (127.0.0.1:5000/stackdemo:latest)...
-The push refers to a repository [127.0.0.1:5000/stackdemo]
-5b5a49501a76: Pushed
-be44185ce609: Pushed
-bd7330a79bcf: Pushed
-c9fc143a069a: Pushed
-011b303988d2: Pushed
-latest: digest: sha256:a81840ebf5ac24b42c1c676cbda3b2cb144580ee347c07e1bc80e35e5ca76507 size: 1372
-```
-@z
+% snip command...
 
 @x
 The stack is now ready to be deployed.
@@ -553,31 +279,7 @@ The stack is now ready to be deployed.
 1.  Create the stack with `docker stack deploy`:
 @z
 
-@x
-    ```console
-    $ docker stack deploy --compose-file compose.yml stackdemo
-@y
-    ```console
-    $ docker stack deploy --compose-file compose.yml stackdemo
-@z
-
-@x
-    Ignoring unsupported options: build
-@y
-    Ignoring unsupported options: build
-@z
-
-@x
-    Creating network stackdemo_default
-    Creating service stackdemo_web
-    Creating service stackdemo_redis
-    ```
-@y
-    Creating network stackdemo_default
-    Creating service stackdemo_web
-    Creating service stackdemo_redis
-    ```
-@z
+% snip command...
 
 @x
     The last argument is a name for the stack. Each network, volume and service
@@ -593,25 +295,7 @@ The stack is now ready to be deployed.
 2.  Check that it's running with `docker stack services stackdemo`:
 @z
 
-@x
-    ```console
-    $ docker stack services stackdemo
-@y
-    ```console
-    $ docker stack services stackdemo
-@z
-
-@x
-    ID            NAME             MODE        REPLICAS  IMAGE
-    orvjk2263y1p  stackdemo_redis  replicated  1/1       redis:3.2-alpine@sha256:f1ed3708f538b537eb9c2a7dd50dc90a706f7debd7e1196c9264edeea521a86d
-    s1nf0xy8t1un  stackdemo_web    replicated  1/1       127.0.0.1:5000/stackdemo@sha256:adb070e0805d04ba2f92c724298370b7a4eb19860222120d43e0f6351ddbc26f
-    ```
-@y
-    ID            NAME             MODE        REPLICAS  IMAGE
-    orvjk2263y1p  stackdemo_redis  replicated  1/1       redis:3.2-alpine@sha256:f1ed3708f538b537eb9c2a7dd50dc90a706f7debd7e1196c9264edeea521a86d
-    s1nf0xy8t1un  stackdemo_web    replicated  1/1       127.0.0.1:5000/stackdemo@sha256:adb070e0805d04ba2f92c724298370b7a4eb19860222120d43e0f6351ddbc26f
-    ```
-@z
+% snip command...
 
 @x
     Once it's running, you should see `1/1` under `REPLICAS` for both services.
@@ -629,33 +313,7 @@ The stack is now ready to be deployed.
     As before, you can test the app with `curl`:
 @z
 
-@x
-    ```console
-    $ curl http://localhost:8000
-    Hello World! I have been seen 1 times.
-@y
-    ```console
-    $ curl http://localhost:8000
-    Hello World! I have been seen 1 times.
-@z
-
-@x
-    $ curl http://localhost:8000
-    Hello World! I have been seen 2 times.
-@y
-    $ curl http://localhost:8000
-    Hello World! I have been seen 2 times.
-@z
-
-@x
-    $ curl http://localhost:8000
-    Hello World! I have been seen 3 times.
-    ```
-@y
-    $ curl http://localhost:8000
-    Hello World! I have been seen 3 times.
-    ```
-@z
+% snip command...
 
 @x
     With Docker's built-in routing mesh, you can access any node in the
@@ -665,17 +323,7 @@ The stack is now ready to be deployed.
     swarm on port `8000` and get routed to the app:
 @z
 
-@x
-    ```console
-    $ curl http://address-of-other-node:8000
-    Hello World! I have been seen 4 times.
-    ```
-@y
-    ```console
-    $ curl http://address-of-other-node:8000
-    Hello World! I have been seen 4 times.
-    ```
-@z
+% snip command...
 
 @x
 3.  Bring the stack down with `docker stack rm`:
@@ -683,25 +331,7 @@ The stack is now ready to be deployed.
 3.  Bring the stack down with `docker stack rm`:
 @z
 
-@x
-    ```console
-    $ docker stack rm stackdemo
-@y
-    ```console
-    $ docker stack rm stackdemo
-@z
-
-@x
-    Removing service stackdemo_web
-    Removing service stackdemo_redis
-    Removing network stackdemo_default
-    ```
-@y
-    Removing service stackdemo_web
-    Removing service stackdemo_redis
-    Removing network stackdemo_default
-    ```
-@z
+% snip command...
 
 @x
 4.  Bring the registry down with `docker service rm`:
@@ -709,15 +339,7 @@ The stack is now ready to be deployed.
 4.  Bring the registry down with `docker service rm`:
 @z
 
-@x
-    ```console
-    $ docker service rm registry
-    ```
-@y
-    ```console
-    $ docker service rm registry
-    ```
-@z
+% snip command...
 
 @x
 5.  If you're just testing things out on a local machine and want to bring your
@@ -727,18 +349,4 @@ The stack is now ready to be deployed.
     Docker Engine out of Swarm mode, use `docker swarm leave`:
 @z
 
-@x
-    ```console
-    $ docker swarm leave --force
-@y
-    ```console
-    $ docker swarm leave --force
-@z
-
-@x
-    Node left the swarm.
-    ```
-@y
-    Node left the swarm.
-    ```
-@z
+% snip command...
