@@ -14,13 +14,9 @@ title: Insights
 @z
 
 @x
-> [!NOTE]
->
-> Insights requires a [Docker Business subscription](../../subscription/details.md#docker-business) and administrators must [enforce sign-in](/security/for-admins/enforce-sign-in/). This ensures users sign in with an account associated with their organization.
+{{< summary-bar feature_name="Insights" >}}
 @y
-> [!NOTE]
->
-> Insights requires a [Docker Business subscription](../../subscription/details.md#docker-business) and administrators must [enforce sign-in](__SUBDIR__/security/for-admins/enforce-sign-in/). This ensures users sign in with an account associated with their organization.
+{{< summary-bar feature_name="Insights" >}}
 @z
 
 @x
@@ -62,9 +58,41 @@ Key benefits include:
 @z
 
 @x
+## Prerequisites
+@y
+## Prerequisites
+@z
+
+@x
+- [Docker Business subscription](../../subscription/details.md#docker-business)
+- Administrators must [enforce sign-in](/security/for-admins/enforce-sign-in/) for users
+- Insights enabled by your Customer Success Manager
+@y
+- [Docker Business subscription](../../subscription/details.md#docker-business)
+- Administrators must [enforce sign-in](__SUBDIR__/security/for-admins/enforce-sign-in/) for users
+- Insights enabled by your Customer Success Manager
+@z
+
+@x
 ## View Insights for organization users
 @y
 ## View Insights for organization users
+@z
+
+@x
+{{< include "admin-early-access.md" >}}
+@y
+{{< include "admin-early-access.md" >}}
+@z
+
+@x
+To access Insights, you must contact your Customer Success Manager to have the
+feature enabled. Once the feature is enabled, access Insights using the following
+steps:
+@y
+To access Insights, you must contact your Customer Success Manager to have the
+feature enabled. Once the feature is enabled, access Insights using the following
+steps:
 @z
 
 @x

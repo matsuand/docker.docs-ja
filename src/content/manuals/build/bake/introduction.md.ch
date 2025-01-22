@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Introduction to Bake
@@ -49,15 +50,7 @@ Here's a simple example of a `docker build` command:
 Here's a simple example of a `docker build` command:
 @z
 
-@x
-```console
-$ docker build -f Dockerfile -t myapp:latest .
-```
-@y
-```console
-$ docker build -f Dockerfile -t myapp:latest .
-```
-@z
+% snip command...
 
 @x
 This command builds the Dockerfile in the current directory and tags the
@@ -73,23 +66,7 @@ To express the same build configuration using Bake:
 To express the same build configuration using Bake:
 @z
 
-@x
-```hcl {title=docker-bake.hcl}
-target "myapp" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["myapp:latest"]
-}
-```
-@y
-```hcl {title=docker-bake.hcl}
-target "myapp" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["myapp:latest"]
-}
-```
-@z
+% snip code...
 
 @x
 Bake provides a structured way to manage your build configuration, and it saves
@@ -101,15 +78,7 @@ you from having to remember all the CLI flags for `docker build` every time.
 With this file, building the image is as simple as running:
 @z
 
-@x
-```console
-$ docker buildx bake myapp
-```
-@y
-```console
-$ docker buildx bake myapp
-```
-@z
+% snip command...
 
 @x
 For simple builds, the difference between `docker build` and `docker buildx
@@ -153,27 +122,7 @@ The properties that can be set for a target closely resemble the CLI flags for
 `docker build`. For instance, consider the following `docker build` command:
 @z
 
-@x
-```console
-$ docker build \
-  -f Dockerfile \
-  -t myapp:latest \
-  --build-arg foo=bar \
-  --no-cache \
-  --platform linux/amd64,linux/arm64 \
-  .
-```
-@y
-```console
-$ docker build \
-  -f Dockerfile \
-  -t myapp:latest \
-  --build-arg foo=bar \
-  --no-cache \
-  --platform linux/amd64,linux/arm64 \
-  .
-```
-@z
+% snip command...
 
 @x
 The Bake equivalent would be:
@@ -181,33 +130,7 @@ The Bake equivalent would be:
 The Bake equivalent would be:
 @z
 
-@x
-```hcl
-target "myapp" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["myapp:latest"]
-  args = {
-    foo = "bar"
-  }
-  no-cache = true
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@y
-```hcl
-target "myapp" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["myapp:latest"]
-  args = {
-    foo = "bar"
-  }
-  no-cache = true
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@z
+% snip code...
 
 @x
 ## Next steps

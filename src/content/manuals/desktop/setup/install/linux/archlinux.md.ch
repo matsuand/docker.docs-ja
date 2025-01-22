@@ -37,14 +37,9 @@ This page contains information on how to install, launch and upgrade Docker Desk
 @z
 
 @x
-> [!IMPORTANT]
->
-> This is an experimental installation package. Docker has not tested or verified the installation.
+{{< summary-bar feature_name="Docker Desktop Archlinux" >}}
 @y
-> [!IMPORTANT]
->
-> これは試験的なインストールパッケージです。
-> Docker ではインストールのテストや検証は行っていません。
+{{< summary-bar feature_name="Docker Desktop Archlinux" >}}
 @z
 
 @x

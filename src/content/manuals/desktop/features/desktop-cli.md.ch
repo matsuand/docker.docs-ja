@@ -20,13 +20,9 @@ keywords: cli, docker desktop, macos, windows, linux
 @z
 
 @x
-{{% experimental title="Beta" %}}
-Docker Desktop CLI is currently in [Beta](../../release-lifecycle.md#beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Desktop CLI" >}}
 @y
-{{% experimental title="Beta" %}}
-Docker Desktop CLI is currently in [Beta](../../release-lifecycle.md#beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Desktop CLI" >}}
 @z
 
 @x

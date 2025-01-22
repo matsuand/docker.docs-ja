@@ -295,10 +295,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = images image-library repos
+SUBDIRS = images image-library repos usage
 bases = \
 	_index.md              \
-	download-rate-limit.md \
 	quickstart.md          \
 	release-notes.md       \
 	service-accounts.md

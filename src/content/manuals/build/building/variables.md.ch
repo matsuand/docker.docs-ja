@@ -281,9 +281,9 @@ you can combine environment variables and build arguments:
 % snip code...
 
 @x
-With this Dockerfile, you can use `--build-arg` to override the default value of `ENV`:
+With this Dockerfile, you can use `--build-arg` to override the default value of `NODE_ENV`:
 @y
-With this Dockerfile, you can use `--build-arg` to override the default value of `ENV`:
+With this Dockerfile, you can use `--build-arg` to override the default value of `NODE_ENV`:
 @z
 
 % snip command...

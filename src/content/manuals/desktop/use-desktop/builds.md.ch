@@ -112,13 +112,9 @@ Docker Desktop settings.
 @z
 
 @x
-{{% experimental title="Beta feature" %}}
-Import builds is currently in [Beta](../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Import builds" >}}
 @y
-{{% experimental title="Beta feature" %}}
-Import builds is currently in [Beta](../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Import builds" >}}
 @z
 
 @x

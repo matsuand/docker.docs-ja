@@ -14,13 +14,9 @@ keywords: scout, supply chain, security, remediation, automation
 @z
 
 @x
-{{% experimental title="Beta feature" %}}
-Remediation with Docker Scout is currently in [Beta](../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Remediation with Docker Scout" >}}
 @y
-{{% experimental title="Beta feature" %}}
-Remediation with Docker Scout is currently in [Beta](../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Remediation with Docker Scout" >}}
 @z
 
 @x

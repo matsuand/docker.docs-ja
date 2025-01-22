@@ -14,15 +14,9 @@ keywords: build, buildx, cache, backend, gha, github, actions
 @z
 
 @x
-{{% restricted %}}
-This is an experimental feature. The interface and behavior are unstable and
-may change in future releases.
-{{% /restricted %}}
+{{< summary-bar feature_name="GitHub Actions cache" >}}
 @y
-{{% restricted %}}
-This is an experimental feature. The interface and behavior are unstable and
-may change in future releases.
-{{% /restricted %}}
+{{< summary-bar feature_name="GitHub Actions cache" >}}
 @z
 
 @x

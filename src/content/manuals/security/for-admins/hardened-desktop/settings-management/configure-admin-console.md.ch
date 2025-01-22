@@ -16,13 +16,9 @@ linkTitle: Use the Admin Console
 @z
 
 @x
-{{% restricted title="Early Access" %}}
-Settings Management in the Docker Admin Console is an [early access](/release-lifecycle#early-access-ea) feature and is available to Docker Business customers only.
-{{% /restricted %}}
+{{< summary-bar feature_name="Admin Console" >}}
 @y
-{{% restricted title="Early Access" %}}
-Settings Management in the Docker Admin Console is an [early access](__SUBDIR__/release-lifecycle#early-access-ea) feature and is available to Docker Business customers only.
-{{% /restricted %}}
+{{< summary-bar feature_name="Admin Console" >}}
 @z
 
 @x

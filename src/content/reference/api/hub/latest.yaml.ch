@@ -99,14 +99,14 @@ tags:
 
 @x
       **Note**: These rate limits are separate from anti-abuse and Docker Hub download, or pull rate limiting.
-      To learn more about Docker Hub pull rate limiting, see [Docker Hub download rate limit](https://docs.docker.com/docker-hub/download-rate-limit/).
+      To learn more about Docker Hub pull rate limiting, see [Usage and limits](https://docs.docker.com/docker-hub/usage/).
   - name: authentication
     x-displayName: Authentication
     description: |
       Most Docker Hub API endpoints require you to authenticate using your Docker credentials before using them.
 @y
       **Note**: These rate limits are separate from anti-abuse and Docker Hub download, or pull rate limiting.
-      To learn more about Docker Hub pull rate limiting, see [Docker Hub download rate limit](https://docs.docker.com/docker-hub/download-rate-limit/).
+      To learn more about Docker Hub pull rate limiting, see [Usage and limits](https://docs.docker.com/docker-hub/usage/).
   - name: authentication
     x-displayName: Authentication
     description: |

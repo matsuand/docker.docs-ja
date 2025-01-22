@@ -2,41 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Bake
 weight: 50
 keywords: build, buildx, bake, buildkit, hcl, json, compose
-aliases:
-  - /build/customize/bake/
----
 @y
----
 title: Bake
 weight: 50
 keywords: build, buildx, bake, buildkit, hcl, json, compose
-aliases:
-  - /build/customize/bake/
----
 @z
 
 @x
-{{% experimental %}}
+{{< summary-bar feature_name="Build bake" >}}
 @y
-{{% experimental %}}
-@z
-
-@x
-Bake is an experimental feature, and we are looking for
-[feedback from users](https://github.com/docker/buildx/issues).
-@y
-Bake is an experimental feature, and we are looking for
-[feedback from users](https://github.com/docker/buildx/issues).
-@z
-
-@x
-{{% /experimental %}}
-@y
-{{% /experimental %}}
+{{< summary-bar feature_name="Build bake" >}}
 @z
 
 @x
@@ -60,12 +38,12 @@ format:
 @z
 
 @x
-```hcl
+```hcl {title=docker-bake.hcl}
 group "default" {
   targets = ["frontend", "backend"]
 }
 @y
-```hcl
+```hcl {title=docker-bake.hcl}
 group "default" {
   targets = ["frontend", "backend"]
 }

@@ -14,13 +14,9 @@ title: Registry Access Management
 @z
 
 @x
-> [!NOTE]
->
-> Registry Access Management is available to [Docker Business](/manuals/subscription/details.md) customers only.
+{{< summary-bar feature_name="Registry access management" >}}
 @y
-> [!NOTE]
->
-> Registry Access Management is available to [Docker Business](manuals/subscription/details.md) customers only.
+{{< summary-bar feature_name="Registry access management" >}}
 @z
 
 @x

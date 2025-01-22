@@ -10,11 +10,7 @@ title: docker desktop (Beta)
 @z
 
 @x
-{{% experimental title="Beta" %}}
-Docker Desktop CLI is currently in [Beta](/manuals/release-lifecycle.md#beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Desktop CLI" >}}
 @y
-{{% experimental title="Beta" %}}
-Docker Desktop CLI is currently in [Beta](manuals/release-lifecycle.md#beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Desktop CLI" >}}
 @z

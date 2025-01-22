@@ -1,28 +1,28 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Advanced integration
 linkTitle: Advanced
-weight: 30
-description: Learn about how Compose Bridge can function a kubectl plugin
-keywords: kubernetes, compose, compose bridge, plugin, advanced
----
 @y
----
 title: Advanced integration
 linkTitle: Advanced
-weight: 30
-description: Learn about how Compose Bridge can function a kubectl plugin
-keywords: kubernetes, compose, compose bridge, plugin, advanced
----
 @z
 
 @x
-{{< include "compose-bridge-experimental.md" >}}
+description: Learn about how Compose Bridge can function a kubectl plugin
+keywords: kubernetes, compose, compose bridge, plugin, advanced
 @y
-{{< include "compose-bridge-experimental.md" >}}
+description: Learn about how Compose Bridge can function a kubectl plugin
+keywords: kubernetes, compose, compose bridge, plugin, advanced
+@z
+
+@x
+{{< summary-bar feature_name="Compose bridge" >}}
+@y
+{{< summary-bar feature_name="Compose bridge" >}}
 @z
 
 @x
@@ -49,15 +49,7 @@ To use the `compose-bridge` binary as a `kubectl` plugin, you need to make sure 
 1. Rename or copy the `compose-bridge` binary to `kubectl-compose_bridge`:
 @z
 
-@x
-    ```console
-    $ mv /path/to/compose-bridge /usr/local/bin/kubectl-compose_bridge
-    ```
-@y
-    ```console
-    $ mv /path/to/compose-bridge /usr/local/bin/kubectl-compose_bridge
-    ```
-@z
+% snip command...
 
 @x
 2. Ensure that the binary is executable:
@@ -65,15 +57,7 @@ To use the `compose-bridge` binary as a `kubectl` plugin, you need to make sure 
 2. Ensure that the binary is executable:
 @z
 
-@x
-    ```console
-    $ chmod +x /usr/local/bin/kubectl-compose_bridge
-    ```
-@y
-    ```console
-    $ chmod +x /usr/local/bin/kubectl-compose_bridge
-    ```
-@z
+% snip command...
 
 @x
 3. Verify that the plugin is recognized by `kubectl`:
@@ -81,15 +65,7 @@ To use the `compose-bridge` binary as a `kubectl` plugin, you need to make sure 
 3. Verify that the plugin is recognized by `kubectl`:
 @z
 
-@x
-    ```console
-    $ kubectl plugin list
-    ```
-@y
-    ```console
-    $ kubectl plugin list
-    ```
-@z
+% snip command...
 
 @x
     In the output, you should see `kubectl-compose_bridge`.
@@ -103,15 +79,7 @@ To use the `compose-bridge` binary as a `kubectl` plugin, you need to make sure 
 4. Now you can use `compose-bridge` as a `kubectl` plugin:
 @z
 
-@x
-    ```console
-   $ kubectl compose-bridge [command]
-    ```
-@y
-    ```console
-   $ kubectl compose-bridge [command]
-    ```
-@z
+% snip command...
 
 @x
 Replace `[command]` with any `compose-bridge` command you want to use.

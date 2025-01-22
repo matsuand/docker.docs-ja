@@ -17,13 +17,9 @@ linkTitle: Use a JSON file
 @z
 
 @x
-> [!NOTE]
->
-> Settings Management is available to Docker Business customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @y
-> [!NOTE]
->
-> Settings Management is available to Docker Business customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @z
 
 @x

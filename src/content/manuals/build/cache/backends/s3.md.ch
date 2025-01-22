@@ -14,15 +14,9 @@ keywords: build, buildx, cache, backend, s3, buckets, aws
 @z
 
 @x
-{{% restricted %}}
-This is an experimental feature. The interface and behavior are unstable and
-may change in future releases.
-{{% /restricted %}}
+{{< summary-bar feature_name="Amazon S3 cache" >}}
 @y
-{{% restricted %}}
-This is an experimental feature. The interface and behavior are unstable and
-may change in future releases.
-{{% /restricted %}}
+{{< summary-bar feature_name="Amazon S3 cache" >}}
 @z
 
 @x

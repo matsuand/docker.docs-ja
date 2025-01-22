@@ -19,17 +19,9 @@ keywords: scout, health scores, evaluation, checks, grades, docker hub
 @z
 
 @x
-{{% restricted title="Beta" %}}
-Health scores is a [Beta](/release-lifecycle/#beta) feature of Docker Scout.
-The feature is only available to organizations selected to participate in the
-early access program.
-{{% /restricted %}}
+{{< summary-bar feature_name="Docker Scout health scores" >}}
 @y
-{{% restricted title="Beta" %}}
-Health scores is a [Beta](__SUBDIR__/release-lifecycle/#beta) feature of Docker Scout.
-The feature is only available to organizations selected to participate in the
-early access program.
-{{% /restricted %}}
+{{< summary-bar feature_name="Docker Scout health scores" >}}
 @z
 
 @x

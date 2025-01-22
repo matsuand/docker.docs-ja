@@ -53,93 +53,8 @@ The following example resolves the app target to `app-foo` and `app-bar`. It
 also uses the matrix value to define the [target build stage](__SUBDIR__/build/bake/reference/#targettarget).
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${tgt}"
-  matrix = {
-    tgt = ["foo", "bar"]
-  }
-  target = tgt
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${tgt}"
-  matrix = {
-    tgt = ["foo", "bar"]
-  }
-  target = tgt
-}
-```
-@z
-
-@x
-```console
-$ docker buildx bake --print app
-[+] Building 0.0s (0/0)
-{
-  "group": {
-    "app": {
-      "targets": [
-        "app-foo",
-        "app-bar"
-      ]
-    },
-    "default": {
-      "targets": [
-        "app"
-      ]
-    }
-  },
-  "target": {
-    "app-bar": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "bar"
-    },
-    "app-foo": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "foo"
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print app
-[+] Building 0.0s (0/0)
-{
-  "group": {
-    "app": {
-      "targets": [
-        "app-foo",
-        "app-bar"
-      ]
-    },
-    "default": {
-      "targets": [
-        "app"
-      ]
-    }
-  },
-  "target": {
-    "app-bar": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "bar"
-    },
-    "app-foo": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "target": "foo"
-    }
-  }
-}
-```
-@z
+% snip code...
+% snip command...
 
 @x
 ## Multiple axes
@@ -173,35 +88,7 @@ The following example builds four targets:
 - `app-bar-2-0`
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${tgt}-${replace(version, ".", "-")}"
-  matrix = {
-    tgt = ["foo", "bar"]
-    version = ["1.0", "2.0"]
-  }
-  target = tgt
-  args = {
-    VERSION = version
-  }
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${tgt}-${replace(version, ".", "-")}"
-  matrix = {
-    tgt = ["foo", "bar"]
-    version = ["1.0", "2.0"]
-  }
-  target = tgt
-  args = {
-    VERSION = version
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ## Multiple values per matrix target
@@ -233,48 +120,4 @@ The following example builds two targets:
 - `app-bar-2-0`
 @z
 
-@x
-```hcl
-target "app" {
-  name = "app-${item.tgt}-${replace(item.version, ".", "-")}"
-  matrix = {
-    item = [
-      {
-        tgt = "foo"
-        version = "1.0"
-      },
-      {
-        tgt = "bar"
-        version = "2.0"
-      }
-    ]
-  }
-  target = item.tgt
-  args = {
-    VERSION = item.version
-  }
-}
-```
-@y
-```hcl
-target "app" {
-  name = "app-${item.tgt}-${replace(item.version, ".", "-")}"
-  matrix = {
-    item = [
-      {
-        tgt = "foo"
-        version = "1.0"
-      },
-      {
-        tgt = "bar"
-        version = "2.0"
-      }
-    ]
-  }
-  target = item.tgt
-  args = {
-    VERSION = item.version
-  }
-}
-```
-@z
+% snip code...

@@ -2284,17 +2284,17 @@ filesystem in the build container.
 @z
 
 @x
-When adding source files from the build context, their paths are interpreted as
-relative to the root of the context. If you specify a relative path leading
-outside of the build context, such as `ADD ../something /something`, parent
-directory paths are stripped out automatically. The effective source path in
-this example becomes `ADD something /something`.
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as `ADD ../something /something`, automatically removes any
+parent directory navigation (`../`). Trailing slashes in the source path are
+also disregarded, making `ADD something/ /something` equivalent to `ADD
+something /something`.
 @y
-When adding source files from the build context, their paths are interpreted as
-relative to the root of the context. If you specify a relative path leading
-outside of the build context, such as `ADD ../something /something`, parent
-directory paths are stripped out automatically. The effective source path in
-this example becomes `ADD something /something`.
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as `ADD ../something /something`, automatically removes any
+parent directory navigation (`../`). Trailing slashes in the source path are
+also disregarded, making `ADD something/ /something` equivalent to `ADD
+something /something`.
 @z
 
 @x
@@ -2761,35 +2761,19 @@ ADD --keep-git-dir=true https://github.com/moby/buildkit.git#v0.10.1 /buildkit
 ### ADD --checksum
 @z
 
-@x
-```dockerfile
-ADD [--checksum=<hash>] <src> ... <dir>
-```
-@y
-```dockerfile
-ADD [--checksum=<hash>] <src> ... <dir>
-```
-@z
+% snip code...
 
 @x
 The `--checksum` flag lets you verify the checksum of a remote resource. The
-checksum is formatted as `<algorithm>:<hash>`. The supported algorithms are
-`sha256`, `sha384`, and `sha512`.
+checksum is formatted as `sha256:<hash>`. SHA-256 is the only supported hash
+algorithm.
 @y
 The `--checksum` flag lets you verify the checksum of a remote resource. The
-checksum is formatted as `<algorithm>:<hash>`. The supported algorithms are
-`sha256`, `sha384`, and `sha512`.
+checksum is formatted as `sha256:<hash>`. SHA-256 is the only supported hash
+algorithm.
 @z
 
-@x
-```dockerfile
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
-```
-@y
-```dockerfile
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d https://mirrors.edge.kernel.org/pub/linux/kernel/Historic/linux-0.01.tar.gz /
-```
-@z
+% snip code...
 
 @x
 The `--checksum` flag only supports HTTP(S) sources.
@@ -2984,17 +2968,25 @@ For more information about copying from named sources, see the
 @z
 
 @x
-When copying source files from the build context, their paths are interpreted as
-relative to the root of the context. If you specify a relative path leading
-outside of the build context, such as `COPY ../something /something`, parent
-directory paths are stripped out automatically. The effective source path in
-this example becomes `COPY something /something`.
+When copying source files from the build context, paths are interpreted as
+relative to the root of the context.
 @y
-When copying source files from the build context, their paths are interpreted as
-relative to the root of the context. If you specify a relative path leading
-outside of the build context, such as `COPY ../something /something`, parent
-directory paths are stripped out automatically. The effective source path in
-this example becomes `COPY something /something`.
+When copying source files from the build context, paths are interpreted as
+relative to the root of the context.
+@z
+
+@x
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as `COPY ../something /something`, automatically removes
+any parent directory navigation (`../`). Trailing slashes in the source path
+are also disregarded, making `COPY something/ /something` equivalent to `COPY
+something /something`.
+@y
+Specifying a source path with a leading slash or one that navigates outside the
+build context, such as `COPY ../something /something`, automatically removes
+any parent directory navigation (`../`). Trailing slashes in the source path
+are also disregarded, making `COPY something/ /something` equivalent to `COPY
+something /something`.
 @z
 
 @x

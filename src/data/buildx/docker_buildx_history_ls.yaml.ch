@@ -1,0 +1,114 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker buildx history ls
+short: List build records
+long: List build records
+usage: docker buildx history ls
+pname: docker buildx history
+plink: docker_buildx_history.yaml
+options:
+    - option: format
+      value_type: string
+      default_value: table
+      description: Format the output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: no-trunc
+      value_type: bool
+      default_value: "false"
+      description: Don't truncate output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: builder
+      value_type: string
+      description: Override the configured builder instance
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: debug
+      shorthand: D
+      value_type: bool
+      default_value: "false"
+      description: Enable debug logging
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker buildx history ls
+short: List build records
+long: List build records
+usage: docker buildx history ls
+pname: docker buildx history
+plink: docker_buildx_history.yaml
+options:
+    - option: format
+      value_type: string
+      default_value: table
+      description: Format the output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: no-trunc
+      value_type: bool
+      default_value: "false"
+      description: Don't truncate output
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+inherited_options:
+    - option: builder
+      value_type: string
+      description: Override the configured builder instance
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: debug
+      shorthand: D
+      value_type: bool
+      default_value: "false"
+      description: Enable debug logging
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

@@ -12,15 +12,9 @@ title: Automated builds
 @z
 
 @x
-> [!NOTE]
->
-> Automated builds require a
-> Docker Pro, Team, or Business subscription.
+{{< summary-bar feature_name="Automated builds" >}}
 @y
-> [!NOTE]
->
-> Automated builds require a
-> Docker Pro, Team, or Business subscription.
+{{< summary-bar feature_name="Automated builds" >}}
 @z
 
 @x

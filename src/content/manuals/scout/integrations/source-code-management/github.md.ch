@@ -16,13 +16,9 @@ keywords: scout, github, integration, image analysis, supply chain, remediation,
 @z
 
 @x
-{{% experimental title="Beta feature" %}}
-The GitHub integration is currently in [Beta](../../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Scout GitHub" >}}
 @y
-{{% experimental title="Beta feature" %}}
-The GitHub integration is currently in [Beta](../../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Scout GitHub" >}}
 @z
 
 @x

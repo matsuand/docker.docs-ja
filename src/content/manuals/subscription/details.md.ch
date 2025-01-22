@@ -440,7 +440,7 @@ Legacy Docker Pro includes:
 - Unlimited [collaborators](/docker-hub/repos/manage/access/#collaborators) for public repositories at no cost per month.
 - Access to [Legacy Docker Scout Free](#legacy-docker-scout-free) to get started with software supply chain security.
 - Unlimited private repositories
-- 5000 image [pulls per day](/docker-hub/download-rate-limit/)
+- 5000 image [pulls per day](/manuals/docker-hub/usage/pulls.md)
 - [Auto Builds](/docker-hub/builds/) with 5 concurrent builds
 - 300 [Vulnerability Scans](/docker-hub/vulnerability-scanning/)
 @y
@@ -450,7 +450,7 @@ Legacy Docker Pro includes:
 - Unlimited [collaborators](__SUBDIR__/docker-hub/repos/manage/access/#collaborators) for public repositories at no cost per month.
 - Access to [Legacy Docker Scout Free](#legacy-docker-scout-free) to get started with software supply chain security.
 - Unlimited private repositories
-- 5000 image [pulls per day](__SUBDIR__/docker-hub/download-rate-limit/)
+- 5000 image [pulls per day](manuals/docker-hub/usage/pulls.md)
 - [Auto Builds](__SUBDIR__/docker-hub/builds/) with 5 concurrent builds
 - 300 [Vulnerability Scans](__SUBDIR__/docker-hub/vulnerability-scanning/)
 @z
@@ -521,14 +521,13 @@ Legacy Docker Team includes:
 - Unlimited teams
 - [Auto Builds](/docker-hub/builds/) with 15 concurrent builds
 - Unlimited [Vulnerability Scanning](/docker-hub/vulnerability-scanning/)
-- 5000 image [pulls per day](/docker-hub/download-rate-limit/) for each team member
+- 5000 image [pulls per day](/manuals/docker-hub/usage/pulls.md) for each team member
 @y
-Legacy Docker Team includes:
 - Everything included in legacy Docker Pro
 - Unlimited teams
 - [Auto Builds](__SUBDIR__/docker-hub/builds/) with 15 concurrent builds
 - Unlimited [Vulnerability Scanning](__SUBDIR__/docker-hub/vulnerability-scanning/)
-- 5000 image [pulls per day](__SUBDIR__/docker-hub/download-rate-limit/) for each team member
+- 5000 image [pulls per day](manuals/docker-hub/usage/pulls.md) for each team member
 @z
 
 @x

@@ -170,17 +170,9 @@ To view all exceptions for a specific image tag:
 @z
 
 @x
-{{% experimental %}}
-Viewing exceptions in the CLI is an experimental feature.
-It requires the latest version of the Docker Scout CLI plugin.
-Some exceptions may not appear correctly in the CLI.
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Scout exceptions" >}}
 @y
-{{% experimental %}}
-Viewing exceptions in the CLI is an experimental feature.
-It requires the latest version of the Docker Scout CLI plugin.
-Some exceptions may not appear correctly in the CLI.
-{{% /experimental %}}
+{{< summary-bar feature_name="Docker Scout exceptions" >}}
 @z
 
 @x

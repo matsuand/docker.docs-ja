@@ -225,10 +225,10 @@ long: The `docker buildx build` command starts a build using BuildKit.
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @z
 
 @x provenance
@@ -2216,11 +2216,19 @@ examples: |-
 @z
 
 @x
-    Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use `plain` to show container
-    output (default `auto`).
+    Set type of progress output. Supported values are:
+    - `auto` (default): Uses the `tty` mode if the client is a TTY, or `plain` otherwise
+    - `tty`: An interactive stream of the output with color and redrawing
+    - `plain`: Prints the raw build progress in a plaintext format
+    - `quiet`: Suppress the build output and print image ID on success (same as `--quiet`)
+    - `rawjson`: Prints the raw build progress as JSON lines
 @y
-    Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use `plain` to show container
-    output (default `auto`).
+    Set type of progress output. Supported values are:
+    - `auto` (default): Uses the `tty` mode if the client is a TTY, or `plain` otherwise
+    - `tty`: An interactive stream of the output with color and redrawing
+    - `plain`: Prints the raw build progress in a plaintext format
+    - `quiet`: Suppress the build output and print image ID on success (same as `--quiet`)
+    - `rawjson`: Prints the raw build progress as JSON lines
 @z
 
 @x

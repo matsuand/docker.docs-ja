@@ -18,9 +18,9 @@ keywords: usb, usbip, docker desktop, macos, windows, linux
 @z
 
 @x
-{{< introduced desktop 4.35.0 "../../desktop/release-notes.md#4350" >}}
+{{< summary-bar feature_name="USB/IP support" >}}
 @y
-{{< introduced desktop 4.35.0 "../../desktop/release-notes.md#4350" >}}
+{{< summary-bar feature_name="USB/IP support" >}}
 @z
 
 @x

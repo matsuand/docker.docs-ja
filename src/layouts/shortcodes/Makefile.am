@@ -15,7 +15,8 @@ bases = \
 	desktop-install.html                \
 	desktop-install-v2.html             \
 	experimental.html                   \
-	restricted.html
+	restricted.html                     \
+	summary-bar.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

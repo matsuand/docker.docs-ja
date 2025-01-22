@@ -15,25 +15,15 @@ title: Configure a private marketplace for extensions
 @z
 
 @x
-{{% experimental title="Beta" %}}
-This feature is currently in [Beta](/manuals/release-lifecycle.md#beta). It is available to Docker Business customers only.
-{{% /experimental %}}
+{{< summary-bar feature_name="Private marketplace" >}}
 @y
-{{% experimental title="Beta" %}}
-This feature is currently in [Beta](manuals/release-lifecycle.md#beta). It is available to Docker Business customers only.
-{{% /experimental %}}
+{{< summary-bar feature_name="Private marketplace" >}}
 @z
 
 @x
 Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
 @y
 Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
-@z
-
-@x
-It is designed specifically 
-@y
-It is designed specifically 
 @z
 
 @x

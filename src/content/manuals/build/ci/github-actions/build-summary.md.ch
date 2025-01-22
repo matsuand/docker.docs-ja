@@ -85,19 +85,9 @@ message that caused the build to fail:
 @z
 
 @x
-{{< introduced desktop 4.31 >}}
+{{< summary-bar feature_name="Import builds" >}}
 @y
-{{< introduced desktop 4.31 >}}
-@z
-
-@x
-{{% experimental title="Beta feature" %}}
-Import builds is currently in [Beta](../../../release-lifecycle.md#Beta).
-{{% /experimental %}}
-@y
-{{% experimental title="Beta feature" %}}
-Import builds is currently in [Beta](../../../release-lifecycle.md#Beta).
-{{% /experimental %}}
+{{< summary-bar feature_name="Import builds" >}}
 @z
 
 @x

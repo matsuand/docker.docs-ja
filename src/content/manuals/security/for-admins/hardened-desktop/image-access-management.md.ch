@@ -14,13 +14,9 @@ title: Image Access Management
 @z
 
 @x
-> [!NOTE]
->
-> Image Access Management is available to [Docker Business](/manuals/subscription/details.md#docker-business) customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @y
-> [!NOTE]
->
-> Image Access Management is available to [Docker Business](manuals/subscription/details.md#docker-business) customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @z
 
 @x

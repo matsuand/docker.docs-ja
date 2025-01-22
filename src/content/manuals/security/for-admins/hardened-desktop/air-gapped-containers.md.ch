@@ -14,9 +14,9 @@ keywords: air gapped, security, Docker Desktop, configuration, proxy, network
 @z
 
 @x
-{{< introduced desktop 4.29.0 "/manuals/desktop/release-notes.md#4290" >}}
+{{< summary-bar feature_name="Air-gapped containers" >}}
 @y
-{{< introduced desktop 4.29.0 "manuals/desktop/release-notes.md#4290" >}}
+{{< summary-bar feature_name="Air-gapped containers" >}}
 @z
 
 @x

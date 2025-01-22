@@ -18,13 +18,9 @@ description: |
 @z
 
 @x
-{{% restricted title="Early Access" %}}
-The Docker for GitHub Copilot extension is an [early access](/release-lifecycle#early-access-ea) product.
-{{% /restricted %}}
+{{< summary-bar feature_name="Docker GitHub Copilot" >}}
 @y
-{{% restricted title="Early Access" %}}
-The Docker for GitHub Copilot extension is an [early access](__SUBDIR__/release-lifecycle#early-access-ea) product.
-{{% /restricted %}}
+{{< summary-bar feature_name="Docker GitHub Copilot" >}}
 @z
 
 @x

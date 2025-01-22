@@ -79,10 +79,10 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
 @z
 
 @x provenance

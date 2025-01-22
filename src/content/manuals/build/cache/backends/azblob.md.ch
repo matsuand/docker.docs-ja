@@ -14,15 +14,9 @@ keywords: build, buildx, cache, backend, azblob, azure
 @z
 
 @x
-{{% experimental %}}
-This is an experimental feature. The interface and behavior are unstable and
-may change in future releases.
-{{% /experimental %}}
+{{< summary-bar feature_name="Azure blob" >}}
 @y
-{{% experimental %}}
-This is an experimental feature. The interface and behavior are unstable and
-may change in future releases.
-{{% /experimental %}}
+{{< summary-bar feature_name="Azure blob" >}}
 @z
 
 @x

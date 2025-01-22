@@ -251,7 +251,8 @@ bases = \
 	desktop-install.html                \
 	desktop-install-v2.html             \
 	experimental.html                   \
-	restricted.html
+	restricted.html                     \
+	summary-bar.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

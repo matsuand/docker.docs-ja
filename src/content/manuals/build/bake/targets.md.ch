@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Bake targets
@@ -27,23 +28,7 @@ A target in a Bake file represents a build invocation. It holds all the
 information you would normally pass to a `docker build` command using flags.
 @z
 
-@x
-```hcl
-target "webapp" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-```
-@y
-```hcl
-target "webapp" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-```
-@z
+% snip code...
 
 @x
 To build a target with Bake, pass name of the target to the `bake` command.
@@ -51,15 +36,7 @@ To build a target with Bake, pass name of the target to the `bake` command.
 To build a target with Bake, pass name of the target to the `bake` command.
 @z
 
-@x
-```console
-$ docker buildx bake webapp
-```
-@y
-```console
-$ docker buildx bake webapp
-```
-@z
+% snip command...
 
 @x
 You can build multiple targets at once by passing multiple target names to the
@@ -69,15 +46,7 @@ You can build multiple targets at once by passing multiple target names to the
 `bake` command.
 @z
 
-@x
-```console
-$ docker buildx bake webapp api tests
-```
-@y
-```console
-$ docker buildx bake webapp api tests
-```
-@z
+% snip command...
 
 @x
 ## Default target
@@ -93,23 +62,7 @@ If you don't specify a target when running `docker buildx bake`, Bake will
 build the target named `default`.
 @z
 
-@x
-```hcl
-target "default" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-```
-@y
-```hcl
-target "default" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-```
-@z
+% snip code...
 
 @x
 To build this target, run `docker buildx bake` without any arguments:
@@ -117,15 +70,7 @@ To build this target, run `docker buildx bake` without any arguments:
 To build this target, run `docker buildx bake` without any arguments:
 @z
 
-@x
-```console
-$ docker buildx bake
-```
-@y
-```console
-$ docker buildx bake
-```
-@z
+% snip command...
 
 @x
 ## Target properties
@@ -161,69 +106,7 @@ You can group targets together using the `group` block. This is useful when you
 want to build multiple targets at once.
 @z
 
-@x
-```hcl
-group "all" {
-  targets = ["webapp", "api", "tests"]
-}
-@y
-```hcl
-group "all" {
-  targets = ["webapp", "api", "tests"]
-}
-@z
-
-@x
-target "webapp" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-@y
-target "webapp" {
-  dockerfile = "webapp.Dockerfile"
-  tags = ["docker.io/username/webapp:latest"]
-  context = "https://github.com/username/webapp"
-}
-@z
-
-@x
-target "api" {
-  dockerfile = "api.Dockerfile"
-  tags = ["docker.io/username/api:latest"]
-  context = "https://github.com/username/api"
-}
-@y
-target "api" {
-  dockerfile = "api.Dockerfile"
-  tags = ["docker.io/username/api:latest"]
-  context = "https://github.com/username/api"
-}
-@z
-
-@x
-target "tests" {
-  dockerfile = "tests.Dockerfile"
-  contexts = {
-    webapp = "target:webapp",
-    api = "target:api",
-  }
-  output = ["type=local,dest=build/tests"]
-  context = "."
-}
-```
-@y
-target "tests" {
-  dockerfile = "tests.Dockerfile"
-  contexts = {
-    webapp = "target:webapp",
-    api = "target:api",
-  }
-  output = ["type=local,dest=build/tests"]
-  context = "."
-}
-```
-@z
+% snip code...
 
 @x
 To build all the targets in a group, pass the name of the group to the `bake`
@@ -233,15 +116,7 @@ To build all the targets in a group, pass the name of the group to the `bake`
 command.
 @z
 
-@x
-```console
-$ docker buildx bake all
-```
-@y
-```console
-$ docker buildx bake all
-```
-@z
+% snip command...
 
 @x
 ## Additional resources

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Activity logs
@@ -45,16 +45,6 @@ For example, activity logs display activities such as the date when a repository
 Owners can also see the activity logs for their repository if the repository is part of the organization subscribed to a Docker Business or Team plan.
 @y
 Owners can also see the activity logs for their repository if the repository is part of the organization subscribed to a Docker Business or Team plan.
-@z
-
-@x
-> [!NOTE]
->
-> Activity logs requires a [Docker Team or Business subscription](/manuals/subscription/_index.md).
-@y
-> [!NOTE]
->
-> Activity logs requires a [Docker Team or Business subscription](manuals/subscription/_index.md).
 @z
 
 @x

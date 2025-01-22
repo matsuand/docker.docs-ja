@@ -574,9 +574,9 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-* Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Download rate limit](download-rate-limit.md).
+* Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Usage and limits](/manuals/docker-hub/usage/_index.md).
 @y
-* Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Download rate limit](download-rate-limit.md).
+* Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Usage and limits](manuals/docker-hub/usage/_index.md).
 @z
 
 @x

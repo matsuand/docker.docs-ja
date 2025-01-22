@@ -53,15 +53,15 @@ title: Docker Hub
 @z
 
 @x
-- title: Usage
+- title: Usage and limits
   description: Explore usage limits and how to better utilize Docker Hub.
   icon: leaderboard
-  link: /docker-hub/download-rate-limit/
+  link: /docker-hub/usage/
 @y
-- title: 利用方法
+- title: 利用方法と制限
   description: Docker Hub の利用制約とより良い利用方法について見ていきます。
   icon: leaderboard
-  link: __SUBDIR__/docker-hub/download-rate-limit/
+  link: __SUBDIR__/docker-hub/usage/
 @z
 
 @x

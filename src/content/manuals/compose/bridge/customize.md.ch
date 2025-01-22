@@ -20,9 +20,9 @@ keywords: compose, bridge, templates
 @z
 
 @x
-{{< include "compose-bridge-experimental.md" >}}
+{{< summary-bar feature_name="Compose bridge" >}}
 @y
-{{< include "compose-bridge-experimental.md" >}}
+{{< summary-bar feature_name="Compose bridge" >}}
 @z
 
 @x

@@ -26,9 +26,9 @@ The Virtual Machine Manager (VMM) in Docker Desktop for Mac is responsible for c
 @z
 
 @x
-## Docker VMM (Beta)
+## Docker VMM
 @y
-## Docker VMM (Beta)
+## Docker VMM
 @z
 
 @x

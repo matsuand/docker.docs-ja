@@ -208,17 +208,9 @@ jobs:
 @z
 
 @x
-{{% experimental %}}
-This cache exporter is experimental. Please provide feedback on the
-[BuildKit repository](https://github.com/moby/buildkit)
-if you experience any issues.
-{{% /experimental %}}
+{{< summary-bar feature_name="Cache backend API" >}}
 @y
-{{% experimental %}}
-This cache exporter is experimental. Please provide feedback on the
-[BuildKit repository](https://github.com/moby/buildkit)
-if you experience any issues.
-{{% /experimental %}}
+{{< summary-bar feature_name="Cache backend API" >}}
 @z
 
 @x

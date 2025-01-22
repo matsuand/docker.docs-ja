@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Inheritance in Bake
 linkTitle: Inheritance
-weight: 30
-description: Learn how to inherit attributes from other targets in Bake
-keywords: buildx, buildkit, bake, inheritance, targets, attributes
----
 @y
----
 title: Inheritance in Bake
 linkTitle: Inheritance
-weight: 30
+@z
+
+@x
 description: Learn how to inherit attributes from other targets in Bake
 keywords: buildx, buildkit, bake, inheritance, targets, attributes
----
+@y
+description: Learn how to inherit attributes from other targets in Bake
+keywords: buildx, buildkit, bake, inheritance, targets, attributes
 @z
 
 @x
@@ -29,33 +29,7 @@ attribute. For example, imagine that you have a target that builds a Docker
 image for a development environment:
 @z
 
-@x
-```hcl
-target "app-dev" {
-  args = {
-    GO_VERSION = "{{% param example_go_version %}}"
-  }
-  tags = ["docker.io/username/myapp:dev"]
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-    "org.opencontainers.image.author" = "moby.whale@example.com"
-  }
-}
-```
-@y
-```hcl
-target "app-dev" {
-  args = {
-    GO_VERSION = "{{% param example_go_version %}}"
-  }
-  tags = ["docker.io/username/myapp:dev"]
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-    "org.opencontainers.image.author" = "moby.whale@example.com"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 You can create a new target that uses the same build configuration, but with
@@ -69,23 +43,7 @@ slightly different attributes for a production build. In this example, the
 attribute and adds a new `platforms` attribute:
 @z
 
-@x
-```hcl
-target "app-release" {
-  inherits = ["app-dev"]
-  tags = ["docker.io/username/myapp:latest"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@y
-```hcl
-target "app-release" {
-  inherits = ["app-dev"]
-  tags = ["docker.io/username/myapp:latest"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@z
+% snip code...
 
 @x
 ## Common reusable targets
@@ -105,25 +63,7 @@ example, the following `_common` target defines a common set of build
 arguments:
 @z
 
-@x
-```hcl
-target "_common" {
-  args = {
-    GO_VERSION = "{{% param example_go_version %}}"
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
-  }
-}
-```
-@y
-```hcl
-target "_common" {
-  args = {
-    GO_VERSION = "{{% param example_go_version %}}"
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
-  }
-}
-```
-@z
+% snip code...
 
 @x
 You can then inherit the `_common` target in other targets to apply the shared
@@ -133,67 +73,7 @@ You can then inherit the `_common` target in other targets to apply the shared
 attributes:
 @z
 
-@x
-```hcl
-target "lint" {
-  inherits = ["_common"]
-  dockerfile = "./dockerfiles/lint.Dockerfile"
-  output = ["type=cacheonly"]
-}
-@y
-```hcl
-target "lint" {
-  inherits = ["_common"]
-  dockerfile = "./dockerfiles/lint.Dockerfile"
-  output = ["type=cacheonly"]
-}
-@z
-
-@x
-target "docs" {
-  inherits = ["_common"]
-  dockerfile = "./dockerfiles/docs.Dockerfile"
-  output = ["./docs/reference"]
-}
-@y
-target "docs" {
-  inherits = ["_common"]
-  dockerfile = "./dockerfiles/docs.Dockerfile"
-  output = ["./docs/reference"]
-}
-@z
-
-@x
-target "test" {
-  inherits = ["_common"]
-  target = "test-output"
-  output = ["./test"]
-}
-@y
-target "test" {
-  inherits = ["_common"]
-  target = "test-output"
-  output = ["./test"]
-}
-@z
-
-@x
-target "binaries" {
-  inherits = ["_common"]
-  target = "binaries"
-  output = ["./build"]
-  platforms = ["local"]
-}
-```
-@y
-target "binaries" {
-  inherits = ["_common"]
-  target = "binaries"
-  output = ["./build"]
-  platforms = ["local"]
-}
-```
-@z
+% snip code...
 
 @x
 ## Overriding inherited attributes
@@ -211,27 +91,7 @@ attributes. For example, the following target overrides the `args` attribute
 from the inherited target:
 @z
 
-@x
-```hcl
-target "app-dev" {
-  inherits = ["_common"]
-  args = {
-    GO_VERSION = "1.17"
-  }
-  tags = ["docker.io/username/myapp:dev"]
-}
-```
-@y
-```hcl
-target "app-dev" {
-  inherits = ["_common"]
-  args = {
-    GO_VERSION = "1.17"
-  }
-  tags = ["docker.io/username/myapp:dev"]
-}
-```
-@z
+% snip code...
 
 @x
 The `GO_VERSION` argument in `app-release` is set to `1.17`, overriding the
@@ -265,65 +125,7 @@ multiple other targets. In the following example, the app-release target reuses
 attributes from both the `app-dev` and `_common` targets.
 @z
 
-@x
-```hcl
-target "_common" {
-  args = {
-    GO_VERSION = "{{% param example_go_version %}}"
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
-  }
-}
-@y
-```hcl
-target "_common" {
-  args = {
-    GO_VERSION = "{{% param example_go_version %}}"
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
-  }
-}
-@z
-
-@x
-target "app-dev" {
-  inherits = ["_common"]
-  args = {
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 0
-  }
-  tags = ["docker.io/username/myapp:dev"]
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-    "org.opencontainers.image.author" = "moby.whale@example.com"
-  }
-}
-@y
-target "app-dev" {
-  inherits = ["_common"]
-  args = {
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 0
-  }
-  tags = ["docker.io/username/myapp:dev"]
-  labels = {
-    "org.opencontainers.image.source" = "https://github.com/username/myapp"
-    "org.opencontainers.image.author" = "moby.whale@example.com"
-  }
-}
-@z
-
-@x
-target "app-release" {
-  inherits = ["app-dev", "_common"]
-  tags = ["docker.io/username/myapp:latest"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@y
-target "app-release" {
-  inherits = ["app-dev", "_common"]
-  tags = ["docker.io/username/myapp:latest"]
-  platforms = ["linux/amd64", "linux/arm64"]
-}
-```
-@z
+% snip code...
 
 @x
 When inheriting attributes from multiple targets and there's a conflict, the
@@ -369,26 +171,4 @@ following Bake file, the `bar` target reuses the `tags` attribute from the
 `foo` target:
 @z
 
-@x
-```hcl {title=docker-bake.hcl}
-target "foo" {
-  dockerfile = "foo.Dockerfile"
-  tags       = ["myapp:latest"]
-}
-target "bar" {
-  dockerfile = "bar.Dockerfile"
-  tags       = target.foo.tags
-}
-```
-@y
-```hcl {title=docker-bake.hcl}
-target "foo" {
-  dockerfile = "foo.Dockerfile"
-  tags       = ["myapp:latest"]
-}
-target "bar" {
-  dockerfile = "bar.Dockerfile"
-  tags       = target.foo.tags
-}
-```
-@z
+% snip code...

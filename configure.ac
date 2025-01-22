@@ -191,6 +191,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/docker-hub/repos/manage/hub-images/images/Makefile
 	src/content/manuals/docker-hub/repos/manage/trusted-content/Makefile
 	src/content/manuals/docker-hub/repos/manage/images/Makefile
+	src/content/manuals/docker-hub/usage/Makefile
 	src/content/manuals/engine/Makefile
 	src/content/manuals/engine/cli/Makefile
 	src/content/manuals/engine/containers/Makefile
@@ -275,6 +276,8 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/builder/Makefile
 	src/content/reference/cli/docker/buildx/Makefile
 	src/content/reference/cli/docker/buildx/debug/Makefile
+	src/content/reference/cli/docker/buildx/history/Makefile
+	src/content/reference/cli/docker/buildx/history/inspect/Makefile
 	src/content/reference/cli/docker/buildx/imagetools/Makefile
 	src/content/reference/cli/docker/checkpoint/Makefile
 	src/content/reference/cli/docker/compose/Makefile

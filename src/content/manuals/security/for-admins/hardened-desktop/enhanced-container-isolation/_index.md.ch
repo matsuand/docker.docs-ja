@@ -18,13 +18,9 @@ linkTitle: Enhanced Container Isolation
 @z
 
 @x
-> [!NOTE]
->
-> Enhanced Container Isolation is available to Docker Business customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @y
-> [!NOTE]
->
-> Enhanced Container Isolation is available to Docker Business customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @z
 
 @x

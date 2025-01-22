@@ -1,11 +1,10 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images image-library repos
+SUBDIRS = images image-library repos usage
 
 bases = \
 	_index.md              \
-	download-rate-limit.md \
 	quickstart.md          \
 	release-notes.md       \
 	service-accounts.md

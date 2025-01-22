@@ -81,13 +81,9 @@ keywords: security, hardened desktop, enhanced container isolation, registry acc
 @z
 
 @x
-> [!NOTE]
->
-> Hardened Docker Desktop is available to Docker Business customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @y
-> [!NOTE]
->
-> Hardened Docker Desktop is available to Docker Business customers only.
+{{< summary-bar feature_name="Hardened Docker Desktop" >}}
 @z
 
 @x

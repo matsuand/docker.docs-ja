@@ -450,16 +450,6 @@ To add Wasmtime as a container runtime, follow these steps:
 @z
 
 @x
-   > [!NOTE]
-   >
-   > This is an experimental feature.
-@y
-   > [!NOTE]
-   >
-   > This is an experimental feature.
-@z
-
-@x
    ```json
    {
      "features": {

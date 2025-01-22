@@ -16,17 +16,9 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
 
 @x
-{{% experimental title="Beta" %}}
-The Wasm feature is currently in [Beta](/manuals/release-lifecycle.md#beta).
-We recommend that you do not use this feature in production environments as
-this feature may change or be removed from future releases.
-{{% /experimental %}}
+{{< summary-bar feature_name="Wasm workloads" >}}
 @y
-{{% experimental title="Beta" %}}
-The Wasm feature is currently in [Beta](manuals/release-lifecycle.md#beta).
-We recommend that you do not use this feature in production environments as
-this feature may change or be removed from future releases.
-{{% /experimental %}}
+{{< summary-bar feature_name="Wasm workloads" >}}
 @z
 
 @x

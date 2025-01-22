@@ -300,7 +300,8 @@ SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli
 bases = \
 	frontmatter.yaml \
 	glossary.yaml    \
-	samples.yaml
+	samples.yaml     \
+	summary.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

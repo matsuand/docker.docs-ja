@@ -20,17 +20,9 @@ description: Learn how to enable the containerd image store on Docker Engine
 @z
 
 @x
-> [!NOTE]
->
-> The containerd image store is an experimental feature of Docker Engine.
-> If you're using Docker Desktop, refer to the instructions on the
-> [containerd image store with Docker Desktop page](/manuals/desktop/features/containerd.md).
+{{< summary-bar feature_name="containerd" >}}
 @y
-> [!NOTE]
->
-> The containerd image store is an experimental feature of Docker Engine.
-> If you're using Docker Desktop, refer to the instructions on the
-> [containerd image store with Docker Desktop page](manuals/desktop/features/containerd.md).
+{{< summary-bar feature_name="containerd" >}}
 @z
 
 @x

@@ -12,13 +12,9 @@ keywords: pkg, mac, docker desktop, install, deploy, configure, admin, mdm
 @z
 
 @x
-{{% restricted title="Early Access" %}}
-The PKG installer is currently an [Early Access](/manuals/release-lifecycle.md) feature and is available to all company and organization owners with a Business subscription and Docker Desktop version 4.36 and later.
-{{% /restricted %}}
+{{< summary-bar feature_name="PKG installer" >}}
 @y
-{{% restricted title="Early Access" %}}
-The PKG installer is currently an [Early Access](manuals/release-lifecycle.md) feature and is available to all company and organization owners with a Business subscription and Docker Desktop version 4.36 and later.
-{{% /restricted %}}
+{{< summary-bar feature_name="PKG installer" >}}
 @z
 
 @x

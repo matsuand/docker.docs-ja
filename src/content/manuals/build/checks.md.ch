@@ -20,9 +20,9 @@ keywords: build, buildx, buildkit, checks, validate, configuration, lint
 @z
 
 @x
-{{< introduced buildx 0.15.0 >}}
+{{< summary-bar feature_name="Build checks" >}}
 @y
-{{< introduced buildx 0.15.0 >}}
+{{< summary-bar feature_name="Build checks" >}}
 @z
 
 @x
