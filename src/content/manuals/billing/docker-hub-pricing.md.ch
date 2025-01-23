@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Docker Hub storage pricing
 description: Learn how Docker Hub storage pricing is calculated
@@ -22,12 +24,12 @@ to help you understand your storage consumption and costs.
 @x
 > [!NOTE]
 >
-> Docker Hub plan limits will take effect on March 1, 2025. No charge on Docker Hub image pulls
+> Docker Hub plan limits will take effect on March 1, 2025. No charges on Docker Hub image pulls
 or storage will be incurred from December 10, 2024 and February 28, 2025.
 @y
 > [!NOTE]
 >
-> Docker Hub plan limits will take effect on March 1, 2025. No charge on Docker Hub image pulls
+> Docker Hub plan limits will take effect on March 1, 2025. No charges on Docker Hub image pulls
 or storage will be incurred from December 10, 2024 and February 28, 2025.
 @z
 
@@ -60,10 +62,10 @@ Docker Hub measures storage using:
 @z
 
 @x
-Docker subscription plans include a specific amount of allocated
+[Docker subscription plans](/manuals/subscription/details.md) include a specific amount of allocated
 private repository storage:
 @y
-Docker subscription plans include a specific amount of allocated
+[Docker subscription plans](manuals/subscription/details.md) include a specific amount of allocated
 private repository storage:
 @z
 
@@ -80,18 +82,18 @@ private repository storage:
 @z
 
 @x
-Docker Hub determines additional charges based on your average monthly usage of private repository storage.
+Docker Hub determines additional charges based on your average monthly usage of private repository storage. If a repository is private at any point within an hour, it is counted as private for the full hour.
 @y
-Docker Hub determines additional charges based on your average monthly usage of private repository storage.
+Docker Hub determines additional charges based on your average monthly usage of private repository storage. If a repository is private at any point within an hour, it is counted as private for the full hour.
 @z
 
 @x
 If you go over your allocated private repository storage, you will incur overage
-costs. To calculate overage costs the included storage for your plan is subtracted from your average monthly
+costs. To calculate overage costs, the included storage for your plan is subtracted from your average monthly
 usage.
 @y
 If you go over your allocated private repository storage, you will incur overage
-costs. To calculate overage costs the included storage for your plan is subtracted from your average monthly
+costs. To calculate overage costs, the included storage for your plan is subtracted from your average monthly
 usage.
 @z
 
@@ -148,9 +150,9 @@ at the end of your billing cycle.
 @z
 
 @x
-If you pre-pay for storage, your purchased storage is valid for the entire subscription period. You can use it any time during that period, and any unused portion will roll over to the next month until the subscription period ends.
+If you pre-pay for storage, your purchased storage is valid for your entire subscription period. You can use it any time during that period, and any unused portion will roll over to the next month until the subscription period ends.
 @y
-If you pre-pay for storage, your purchased storage is valid for the entire subscription period. You can use it any time during that period, and any unused portion will roll over to the next month until the subscription period ends.
+If you pre-pay for storage, your purchased storage is valid for your entire subscription period. You can use it any time during that period, and any unused portion will roll over to the next month until the subscription period ends.
 @z
 
 @x
@@ -172,14 +174,14 @@ storage is 490GB.
 |---------------------------------|----------|----------|---------|
 | Included GB-month	              | 500	     | 500      | 500     |
 | Used storage in month	          | 510	     | 450	    | 600     |
-| Overage in GB-month	          | 10	     | 0	    | 100     |
+| Overage in GB-month	            | 10	     | 0	      | 100     |
 | Remaining pre-purchased storage |	490	     | 490	    | 390     |
 @y
 |                                 | January  | February | March   |
 |---------------------------------|----------|----------|---------|
 | Included GB-month	              | 500	     | 500      | 500     |
 | Used storage in month	          | 510	     | 450	    | 600     |
-| Overage in GB-month	          | 10	     | 0	    | 100     |
+| Overage in GB-month	            | 10	     | 0	      | 100     |
 | Remaining pre-purchased storage |	490	     | 490	    | 390     |
 @z
 

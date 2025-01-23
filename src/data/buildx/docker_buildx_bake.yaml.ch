@@ -121,11 +121,143 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
       description: Override the configured builder instance
 @z
 
+@x debug
+      description: Enable debug logging
+@y
+      description: Enable debug logging
+@z
+
 @x
 examples: |-
-    ### Override the configured builder instance (--builder) {#builder}
+    ### Allow extra privileged entitlement (--allow) {#allow}
 @y
 examples: |-
+    ### Allow extra privileged entitlement (--allow) {#allow}
+@z
+
+% snip code...
+
+@x
+    Entitlements are designed to provide controlled access to privileged
+    operations. By default, Buildx and BuildKit operates with restricted
+    permissions to protect users and their systems from unintended side effects or
+    security risks. The `--allow` flag explicitly grants access to additional
+    entitlements, making it clear when a build or bake operation requires elevated
+    privileges.
+@y
+    Entitlements are designed to provide controlled access to privileged
+    operations. By default, Buildx and BuildKit operates with restricted
+    permissions to protect users and their systems from unintended side effects or
+    security risks. The `--allow` flag explicitly grants access to additional
+    entitlements, making it clear when a build or bake operation requires elevated
+    privileges.
+@z
+
+@x
+    In addition to BuildKit's `network.host` and `security.insecure` entitlements
+    (see [`docker buildx build --allow`](/reference/cli/docker/buildx/build/#allow),
+    Bake supports file system entitlements that grant granular control over file
+    system access. These are particularly useful when working with builds that need
+    access to files outside the default working directory.
+@y
+    In addition to BuildKit's `network.host` and `security.insecure` entitlements
+    (see [`docker buildx build --allow`](__SUBDIR__/reference/cli/docker/buildx/build/#allow),
+    Bake supports file system entitlements that grant granular control over file
+    system access. These are particularly useful when working with builds that need
+    access to files outside the default working directory.
+@z
+
+@x
+    Bake supports the following filesystem entitlements:
+@y
+    Bake supports the following filesystem entitlements:
+@z
+
+@x
+    - `--allow fs=<path|*>` - Grant read and write access to files outside of the
+      working directory.
+    - `--allow fs.read=<path|*>` - Grant read access to files outside of the
+      working directory.
+    - `--allow fs.write=<path|*>` - Grant write access to files outside of the
+      working directory.
+@y
+    - `--allow fs=<path|*>` - Grant read and write access to files outside of the
+      working directory.
+    - `--allow fs.read=<path|*>` - Grant read access to files outside of the
+      working directory.
+    - `--allow fs.write=<path|*>` - Grant write access to files outside of the
+      working directory.
+@z
+
+@x
+    The `fs` entitlements take a path value (relative or absolute) to a directory
+    on the filesystem. Alternatively, you can pass a wildcard (`*`) to allow Bake
+    to access the entire filesystem.
+@y
+    The `fs` entitlements take a path value (relative or absolute) to a directory
+    on the filesystem. Alternatively, you can pass a wildcard (`*`) to allow Bake
+    to access the entire filesystem.
+@z
+
+@x
+    ### Example: fs.read
+@y
+    ### Example: fs.read
+@z
+
+@x
+    Given the following Bake configuration, Bake would need to access the parent
+    directory, relative to the Bake file.
+@y
+    Given the following Bake configuration, Bake would need to access the parent
+    directory, relative to the Bake file.
+@z
+
+% snip code...
+
+@x
+    Assuming `docker buildx bake app` is executed in the same directory as the
+    `docker-bake.hcl` file, you would need to explicitly allow Bake to read from
+    the `../src` directory. In this case, the following invocations all work:
+@y
+    Assuming `docker buildx bake app` is executed in the same directory as the
+    `docker-bake.hcl` file, you would need to explicitly allow Bake to read from
+    the `../src` directory. In this case, the following invocations all work:
+@z
+
+% snip command...
+
+@x
+    ### Example: fs.write
+@y
+    ### Example: fs.write
+@z
+
+@x
+    The following `docker-bake.hcl` file requires write access to the `/tmp`
+    directory.
+@y
+    The following `docker-bake.hcl` file requires write access to the `/tmp`
+    directory.
+@z
+
+% snip code...
+
+@x
+    Assuming `docker buildx bake app` is executed outside of the `/tmp` directory,
+    you would need to allow the `fs.write` entitlement, either by specifying the
+    path or using a wildcard:
+@y
+    Assuming `docker buildx bake app` is executed outside of the `/tmp` directory,
+    you would need to allow the `fs.write` entitlement, either by specifying the
+    path or using a wildcard:
+@z
+
+% snip command...
+
+@x
+    ### Override the configured builder instance (--builder) {#builder}
+@y
     ### Override the configured builder instance (--builder) {#builder}
 @z
 
@@ -195,6 +327,50 @@ examples: |-
     See the [Bake file reference](__SUBDIR__/build/bake/reference/)
     for more details.
 @z
+
+@x
+    ### List targets and variables (--list) {#list}
+@y
+    ### List targets and variables (--list) {#list}
+@z
+
+@x
+    The `--list` flag displays all available targets or variables in the Bake
+    configuration, along with a description (if set using the `description`
+    property in the Bake file).
+@y
+    The `--list` flag displays all available targets or variables in the Bake
+    configuration, along with a description (if set using the `description`
+    property in the Bake file).
+@z
+
+@x
+    To list all targets:
+@y
+    To list all targets:
+@z
+
+% snip command...
+
+@x
+    To list variables:
+@y
+    To list variables:
+@z
+
+% snip command...
+
+@x
+    By default, the output of `docker buildx bake --list` is presented in a table
+    format. Alternatively, you can use a long-form CSV syntax and specify a
+    `format` attribute to output the list in JSON.
+@y
+    By default, the output of `docker buildx bake --list` is presented in a table
+    format. Alternatively, you can use a long-form CSV syntax and specify a
+    `format` attribute to output the list in JSON.
+@z
+
+% snip command...
 
 @x
     ### Write build results metadata to a file (--metadata-file) {#metadata-file}
@@ -270,51 +446,7 @@ examples: |-
     format, without starting a build.
 @z
 
-@x
-    ```console
-    $ docker buildx bake -f docker-bake.hcl --print db
-    {
-      "group": {
-        "default": {
-          "targets": [
-            "db"
-          ]
-        }
-      },
-      "target": {
-        "db": {
-          "context": "./",
-          "dockerfile": "Dockerfile",
-          "tags": [
-            "docker.io/tiborvass/db"
-          ]
-        }
-      }
-    }
-    ```
-@y
-    ```console
-    $ docker buildx bake -f docker-bake.hcl --print db
-    {
-      "group": {
-        "default": {
-          "targets": [
-            "db"
-          ]
-        }
-      },
-      "target": {
-        "db": {
-          "context": "./",
-          "dockerfile": "Dockerfile",
-          "tags": [
-            "docker.io/tiborvass/db"
-          ]
-        }
-      }
-    }
-    ```
-@z
+% snip command...
 
 @x
     ### Set type of progress output (--progress) {#progress}
@@ -370,15 +502,7 @@ examples: |-
     ### Override target configurations from command line (--set) {#set}
 @z
 
-@x
-    ```
-    --set targetpattern.key[.subkey]=value
-    ```
-@y
-    ```
-    --set targetpattern.key[.subkey]=value
-    ```
-@z
+% snip code...
 
 @x
     Override target configurations from command line. The pattern matching syntax
@@ -412,40 +536,5 @@ examples: |-
     You can override the following fields:
 @z
 
-@x
-    * `args`
-    * `cache-from`
-    * `cache-to`
-    * `context`
-    * `dockerfile`
-    * `labels`
-    * `load`
-    * `no-cache`
-    * `no-cache-filter`
-    * `output`
-    * `platform`
-    * `pull`
-    * `push`
-    * `secrets`
-    * `ssh`
-    * `tags`
-    * `target`
-@y
-    * `args`
-    * `cache-from`
-    * `cache-to`
-    * `context`
-    * `dockerfile`
-    * `labels`
-    * `load`
-    * `no-cache`
-    * `no-cache-filter`
-    * `output`
-    * `platform`
-    * `pull`
-    * `push`
-    * `secrets`
-    * `ssh`
-    * `tags`
-    * `target`
-@z
+% snip fields...
+% snip directives...

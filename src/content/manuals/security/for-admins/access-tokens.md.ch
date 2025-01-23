@@ -8,13 +8,13 @@ title: Organization access tokens
 description: Learn how to create and manage organization access tokens
   to securely push and pull images programmatically.
 keywords: docker hub, security, OAT, organization access token
-linkTitle: Organization access tokens (Beta)
+linkTitle: Organization access tokens
 @y
 title: Organization access tokens
 description: Learn how to create and manage organization access tokens
   to securely push and pull images programmatically.
 keywords: docker hub, security, OAT, organization access token
-linkTitle: Organization access tokens (Beta)
+linkTitle: Organization access tokens
 @z
 
 @x
