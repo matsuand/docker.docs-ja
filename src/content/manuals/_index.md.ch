@@ -107,7 +107,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     icon: admin_panel_settings
     link: /admin/
 @y
-  - title: Administration
+  - title: 管理
     description: Centralized observability for companies and organizations.
     icon: admin_panel_settings
     link: __SUBDIR__/admin/
@@ -119,7 +119,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     icon: payments
     link: /billing/
 @y
-  - title: Billing
+  - title: 支払い
     description: Manage billing and payment methods.
     icon: payments
     link: __SUBDIR__/billing/
@@ -131,7 +131,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     icon: lock
     link: /security/
 @y
-  - title: Security
+  - title: セキュリティ
     description: Security guardrails for both administrators and developers.
     icon: lock
     link: __SUBDIR__/security/
@@ -143,7 +143,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     icon: card_membership
     link: /subscription/
 @y
-  - title: Subscription
+  - title: サブスクリプション
     description: Commercial use licenses for Docker products.
     icon: card_membership
     link: __SUBDIR__/subscription/
@@ -159,7 +159,7 @@ Docker products.
 @x
 ## Open source
 @y
-## Open source
+## オープンソース {#open-source}
 @z
 
 @x

@@ -15,6 +15,12 @@ description: Learn how to onboard your company and take advantage of all of the 
 tags: [admin]
 @z
 
+@x
+  time: 20 minutes
+@y
+  time: 20 分
+@z
+
 % params:/resource_links:
 @x
     - title: Overview of Administration in Docker

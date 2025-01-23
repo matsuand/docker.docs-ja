@@ -5,7 +5,7 @@
 title: Best practices
 description: Optimal patterns for Docker
 @y
-title: Best practices
+title: ベストプラクティス
 description: Optimal patterns for Docker
 @z
 

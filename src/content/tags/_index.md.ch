@@ -4,11 +4,11 @@
 @x
 title: Tags
 @y
-title: Tags
+title: タグ
 @z
 
 @x
 Here you can browse Docker docs by tag.
 @y
-Here you can browse Docker docs by tag.
+ここでは Docker ドキュメントをタグを使って調べます。
 @z

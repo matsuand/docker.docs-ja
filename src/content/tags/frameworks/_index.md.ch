@@ -4,5 +4,5 @@
 @x
 title: Frameworks
 @y
-title: Frameworks
+title: フレームワーク
 @z

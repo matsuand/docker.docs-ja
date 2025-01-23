@@ -94,6 +94,32 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
 @z
 
 @x
+  - title: Docker Build Cloud
+    icon: cloud
+    description: |
+      Run your builds in the cloud.
+    links:
+      - text: "Overview"
+        url: "/build-cloud/"
+      - text: "Setup"
+        url: "/build-cloud/setup/"
+      - text: "Optimization"
+        url: "/build-cloud/optimization/"
+@y
+  - title: Docker Build Cloud
+    icon: cloud
+    description: |
+      クラウド上にてビルド実行します。
+    links:
+      - text: "概要"
+        url: "build-cloud/"
+      - text: "設定"
+        url: "build-cloud/setup/"
+      - text: "最適化"
+        url: "build-cloud/optimization/"
+@z
+
+@x
   - title: Docker Compose
     icon: polyline
     description: |
@@ -273,4 +299,30 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
         url: "security/for-admins/single-sign-on/"
       - text: "SCIM"
         url: "security/for-admins/provisioning/scim/"
+@z
+
+@x
+  - title: Testcontainers Cloud
+    icon: cloud
+    description: |
+      Testcontainers Cloud lets you run heavy test workloads remotely.
+    links:
+      - text: "Overview"
+        url: "https://testcontainers.com/cloud/docs/"
+      - text: "Getting started"
+        url: "https://testcontainers.com/cloud/docs/#getting-started"
+      - text: "TCC for CI"
+        url: "https://testcontainers.com/cloud/docs/#tcc-for-ci"
+@y
+  - title: Testcontainers Cloud
+    icon: cloud
+    description: |
+      Testcontainers Cloud は負荷の高い処理をリモートから実行可能にします。
+    links:
+      - text: "概要"
+        url: "https://testcontainers.com/cloud/docs/"
+      - text: "はじめよう"
+        url: "https://testcontainers.com/cloud/docs/#getting-started"
+      - text: "CI 向け TCC"
+        url: "https://testcontainers.com/cloud/docs/#tcc-for-ci"
 @z

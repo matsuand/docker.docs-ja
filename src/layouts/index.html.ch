@@ -47,6 +47,24 @@
 @z
 
 @x
+            <a class="h-full" href="/get-started/">
+@y
+            <a class="h-full" href="get-started/">
+@z
+
+@x
+                      Get started
+@y
+                      はじめよう
+@z
+
+@x
+                  Learn Docker basics and the benefits of containerization.
+@y
+                  Docker の基本やコンテナー技術の利点を学びます。
+@z
+
+@x
             <a class="h-full" href="/guides/">
 @y
             <a class="h-full" href="guides/">
@@ -98,22 +116,22 @@
 @x
               <h2 class="font-medium">Gen AI catalog {{ partial
 @y
-              <h2 class="font-medium">Gen AI catalog {{ partial
+              <h2 class="font-medium">生成 AI カタログ {{ partial
 @z
 @x
                 Integrate AI solutions into your apps with minimal effort
 @y
-                Integrate AI solutions into your apps with minimal effort
+                手間ひまをかけずに AI 機能をアプリに統合します。
 @z
 @x
                 Explore on Docker Hub
 @y
-                Explore on Docker Hub
+                Docker Hub 上の確認
 @z
 @x
                 Read the docs
 @y
-                Read the docs
+                ドキュメント
 @z
 @x
             <img class="dark:hidden" alt="Low-fi desktop app" src="/assets/images/app-wf-light-2.svg" />
@@ -131,7 +149,7 @@
 @x
                   Your personal Docker expert, built right into Docker Desktop.
 @y
-                  Your personal Docker expert, built right into Docker Desktop.
+                  自分用の Docker エクスパート、Docker Desktop 内に組み入れます。
 @z
 @x
                   Boost your productivity with Ask Gordon, an AI-powered
@@ -139,10 +157,9 @@
                   improving Dockerfiles to troubleshooting containers, Gordon
                   is here to help.
 @y
-                  Boost your productivity with Ask Gordon, an AI-powered
-                  assistant designed to optimize your Docker workflows. From
-                  improving Dockerfiles to troubleshooting containers, Gordon
-                  is here to help.
+                  Ask Gordon を使って生産性を高めます。
+                  これは Docker ワークフロー最適化を意図した AI パワーによるアシスタント機能です。
+                  Dockerfile 改善からコンテナーのトラブルシューティングまで、Gordon がアシストします。
 @z
 @x
                   class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Join the beta</a>
@@ -159,6 +176,12 @@
         <h2 class="mb-4 text-xl">Browse by section</h2>
 @y
         <h2 class="mb-4 text-xl">項目別のブラウズ</h2>
+@z
+
+@x
+        <h2 class="mb-4 text-xl">Browse by tag</h2>
+@y
+        <h2 class="mb-4 text-xl">タグ別のブラウズ</h2>
 @z
 
 @x

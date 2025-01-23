@@ -26,6 +26,12 @@
 @z
 
 @x
+      <h2 x-show="noFilters()" id="all-guides" class="scroll-mt-36">All guides</h2>
+@y
+      <h2 x-show="noFilters()" id="all-guides" class="scroll-mt-36">全ガイド</h2>
+@z
+
+@x
           <p>Filtered results: showing <span x-text="total - hidden.length"></span> out of <span x-text="total"></span> guides.</p>
 @y
           <p>フィルター結果: <span x-text="total"></span> 件中 <span x-text="total - hidden.length"></span> 件のガイドを表示</p>

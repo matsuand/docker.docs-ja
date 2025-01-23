@@ -30,7 +30,7 @@ keywords: build, buildx, buildkit
   description: 'Build and package your application to run it anywhere: locally or
     in the cloud.'
   icon: inventory_2
-  link: build/concepts/overview/
+  link: __SUBDIR__/build/concepts/overview/
 @z
 
 @x
@@ -42,7 +42,7 @@ keywords: build, buildx, buildkit
 - title: マルチステージビルド
   description: Keep your images small and secure with minimal dependencies.
   icon: stairs
-  link: build/building/multi-stage/
+  link: __SUBDIR__/build/building/multi-stage/
 @z
 
 @x
@@ -56,7 +56,7 @@ keywords: build, buildx, buildkit
   description: Build, push, pull, and run images seamlessly on different computer
     architectures.
   icon: content_copy
-  link: build/building/multi-platform/
+  link: __SUBDIR__/build/building/multi-platform/
 @z
 
 @x
@@ -68,7 +68,7 @@ keywords: build, buildx, buildkit
 - title: BuildKit
   description: Explore BuildKit, the open source build engine.
   icon: construction
-  link: build/buildkit/
+  link: __SUBDIR__/build/buildkit/
 @z
 
 @x
@@ -80,7 +80,7 @@ keywords: build, buildx, buildkit
 - title: Build ドライバー
   description: ビルド実行をどこでどのように行うのかを設定します。
   icon: engineering
-  link: build/builders/drivers/
+  link: __SUBDIR__/build/builders/drivers/
 @z
 
 @x
@@ -92,7 +92,7 @@ keywords: build, buildx, buildkit
 - title: Exporters
   description: Docker イメージだけではなく、お望みの成果をエクスポートします。
   icon: output
-  link: build/exporters/
+  link: __SUBDIR__/build/exporters/
 @z
 
 @x
@@ -105,7 +105,7 @@ keywords: build, buildx, buildkit
 - title: Build キャッシュ処理
   description: パッケージインストールなどコストを要する不要な繰り返し操作をなくします。
   icon: cycle
-  link: build/cache/
+  link: __SUBDIR__/build/cache/
 @z
 
 @x
@@ -117,7 +117,7 @@ keywords: build, buildx, buildkit
 - title: Bake
   description: Bake を使ってビルドをオーケストレートします。
   icon: cake
-  link: build/bake/
+  link: __SUBDIR__/build/bake/
 @z
 
 % snip aliases...

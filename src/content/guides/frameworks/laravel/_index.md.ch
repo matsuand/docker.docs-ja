@@ -2,49 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Develop and Deploy Laravel applications with Docker Compose
 linkTitle: Laravel applications with Docker Compose
 summary: Learn how to efficiently set up Laravel development and production environments using Docker Compose.
 description: A guide on using Docker Compose to manage Laravel applications for development and production, covering container configurations and service management.
 tags: [frameworks]
 languages: [php]
-aliases:
-  - /frameworks/laravel/
-params:
-  time: 30 minutes
-  resource_links:
-    - title: Laravel
-      url: https://laravel.com/
-    - title: Docker Compose
-      url: /compose/
-    - title: Use Compose in production
-      url: /compose/how-tos/production/
-    - title: Repository with examples
-      url: https://github.com/dockersamples/laravel-docker-examples
----
 @y
----
 title: Develop and Deploy Laravel applications with Docker Compose
 linkTitle: Laravel applications with Docker Compose
 summary: Learn how to efficiently set up Laravel development and production environments using Docker Compose.
 description: A guide on using Docker Compose to manage Laravel applications for development and production, covering container configurations and service management.
 tags: [frameworks]
 languages: [php]
-aliases:
-  - /frameworks/laravel/
-params:
+@z
+
+@x
   time: 30 minutes
-  resource_links:
-    - title: Laravel
-      url: https://laravel.com/
-    - title: Docker Compose
-      url: /compose/
-    - title: Use Compose in production
-      url: /compose/how-tos/production/
-    - title: Repository with examples
-      url: https://github.com/dockersamples/laravel-docker-examples
----
+@y
+  time: 30 分
 @z
 
 @x

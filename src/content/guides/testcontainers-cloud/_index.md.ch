@@ -25,6 +25,12 @@ tags: [product-demo]
 tags: [product-demo]
 @z
 
+@x
+  time: 12 minutes
+@y
+  time: 12 分
+@z
+
 %params:/resource_links:
 
 @x

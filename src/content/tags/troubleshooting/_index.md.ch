@@ -5,7 +5,7 @@
 title: Troubleshooting
 description: Fix common issues
 @y
-title: Troubleshooting
+title: トラブルシューティング
 description: Fix common issues
 @z
 

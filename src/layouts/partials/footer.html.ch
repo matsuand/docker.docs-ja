@@ -30,3 +30,9 @@
 @y
           >法的関連</a>
 @z
+
+@x
+        <span>Theme:</span>
+@y
+        <span>テーマ:</span>
+@z
