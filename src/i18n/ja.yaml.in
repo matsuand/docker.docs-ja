@@ -61,3 +61,8 @@ Subcommands:
 ### guides/list.html
 Modules:
   other: モジュール
+
+### layouts/partials/sections.html での利用
+Open source: オープンソース
+Products: 製品
+Platform: プラットフォーム

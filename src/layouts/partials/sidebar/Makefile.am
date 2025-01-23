@@ -3,14 +3,14 @@
 ##
 
 bases = \
-	guides.html
+	guides.html   \
+	sections.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	mainnav.html  \
-	sections.html \
+	mainnav.html \
 	tags.html
 
 include $(top_srcdir)/build-aux/copy.mk
