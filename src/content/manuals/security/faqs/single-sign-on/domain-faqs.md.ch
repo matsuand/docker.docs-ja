@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Single sign-on domain FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
 title: FAQS on SSO and domains
-tags: [FAQ]
 @y
 description: Single sign-on domain FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
 title: FAQS on SSO and domains
-tags: [FAQ]
 @z
 
 @x
@@ -61,4 +59,16 @@ Adding and verifying a domain is required to enable and enforce SSO. See [Config
 IdP-initiated authentication isn't supported by Docker SSO. Users must initiate sign-in through Docker Desktop or Hub.
 @y
 IdP-initiated authentication isn't supported by Docker SSO. Users must initiate sign-in through Docker Desktop or Hub.
+@z
+
+@x
+### Can I verify the same domain on multiple organizations?
+@y
+### Can I verify the same domain on multiple organizations?
+@z
+
+@x
+You can't verify the same domain for multiple orgnaizations at the organization level. If you want to verify one domain for multiple organizations, you must have a Docker Business subscription, and [create a company](/manuals/admin/company/new-company.md). A company enables centralized management of organizations and allows domain verification at the company level.
+@y
+You can't verify the same domain for multiple orgnaizations at the organization level. If you want to verify one domain for multiple organizations, you must have a Docker Business subscription, and [create a company](manuals/admin/company/new-company.md). A company enables centralized management of organizations and allows domain verification at the company level.
 @z

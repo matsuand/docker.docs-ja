@@ -24,6 +24,304 @@ fixes in [Docker Buildx](https://github.com/docker/buildx).
 @z
 
 @x
+## 0.20.1
+@y
+## 0.20.1
+@z
+
+@x
+{{< release-date date="2025-01-23" >}}
+@y
+{{< release-date date="2025-01-23" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.20.1).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.20.1).
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fix `bake --print` output after missing some attributes for attestations. [docker/buildx#2937](https://github.com/docker/buildx/pull/2937)
+- Fix allowing comma-separated image reference strings for cache import and export values. [docker/buildx#2944](https://github.com/docker/buildx/pull/2944)
+@y
+- Fix `bake --print` output after missing some attributes for attestations. [docker/buildx#2937](https://github.com/docker/buildx/pull/2937)
+- Fix allowing comma-separated image reference strings for cache import and export values. [docker/buildx#2944](https://github.com/docker/buildx/pull/2944)
+@z
+
+@x
+## 0.20.0
+@y
+## 0.20.0
+@z
+
+@x
+{{< release-date date="2025-01-20" >}}
+@y
+{{< release-date date="2025-01-20" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.20.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.20.0).
+@z
+
+@x
+> [!NOTE]
+>
+> This version of buildx enables filesystem entitlement checks for `buildx bake`
+> command by default. If your Bake definition needs to read or write files
+> outside your current working directory, you need to allow access to these
+> paths with `--allow fs=<path|*>`. On the terminal, you can also interactively
+> approve these paths with the provided prompt. Optionally, you can disable
+> these checks by setting `BUILDX_BAKE_ENTITLEMENTS_FS=0`. This validation
+> produced a warning in Buildx v0.19.0+, but starting from current release it
+> produces an error. For more information, see the [reference documentation](/reference/cli/docker/buildx/bake.md#allow).
+@y
+> [!NOTE]
+>
+> This version of buildx enables filesystem entitlement checks for `buildx bake`
+> command by default. If your Bake definition needs to read or write files
+> outside your current working directory, you need to allow access to these
+> paths with `--allow fs=<path|*>`. On the terminal, you can also interactively
+> approve these paths with the provided prompt. Optionally, you can disable
+> these checks by setting `BUILDX_BAKE_ENTITLEMENTS_FS=0`. This validation
+> produced a warning in Buildx v0.19.0+, but starting from current release it
+> produces an error. For more information, see the [reference documentation](reference/cli/docker/buildx/bake.md#allow).
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- New `buildx history` command has been added that allows working with build records of completed and running builds. You can use these commands to list, inspect, remove your builds, replay the logs of already completed builds, and quickly open your builds in Docker Desktop Build UI for further debugging. This is an early version of this command and we expect to add more features in the future releases. [#2891](https://github.com/docker/buildx/pull/2891), [#2925](https://github.com/docker/buildx/pull/2925)
+@y
+- New `buildx history` command has been added that allows working with build records of completed and running builds. You can use these commands to list, inspect, remove your builds, replay the logs of already completed builds, and quickly open your builds in Docker Desktop Build UI for further debugging. This is an early version of this command and we expect to add more features in the future releases. [#2891](https://github.com/docker/buildx/pull/2891), [#2925](https://github.com/docker/buildx/pull/2925)
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- Bake: Definition now supports new object notation for the fields that previously required CSV strings as inputs (`attest`, `output`, `cache-from`, `cache-to`, `secret`, `ssh`). [docker/buildx#2758](https://github.com/docker/buildx/pull/2758), [docker/buildx#2848](https://github.com/docker/buildx/pull/2848), [docker/buildx#2871](https://github.com/docker/buildx/pull/2871), [docker/buildx#2814](https://github.com/docker/buildx/pull/2814)
+- Bake: Filesystem entitlements now error by default. To disable this behavior, you can set `BUILDX_BAKE_ENTITLEMENTS_FS=0`. [docker/buildx#2875](https://github.com/docker/buildx/pull/2875)
+- Bake: Infer Git authentication token from remote files to build request. [docker/buildx#2905](https://github.com/docker/buildx/pull/2905)
+- Bake: Add support for `--list` flag to list targets and variables. [docker/buildx#2900](https://github.com/docker/buildx/pull/2900), [docker/buildx#2907](https://github.com/docker/buildx/pull/2907)
+- Bake: Update lookup order for default definition files to load the files with "override" suffix later. [docker/buildx#2886](https://github.com/docker/buildx/pull/2886)
+@y
+- Bake: Definition now supports new object notation for the fields that previously required CSV strings as inputs (`attest`, `output`, `cache-from`, `cache-to`, `secret`, `ssh`). [docker/buildx#2758](https://github.com/docker/buildx/pull/2758), [docker/buildx#2848](https://github.com/docker/buildx/pull/2848), [docker/buildx#2871](https://github.com/docker/buildx/pull/2871), [docker/buildx#2814](https://github.com/docker/buildx/pull/2814)
+- Bake: Filesystem entitlements now error by default. To disable this behavior, you can set `BUILDX_BAKE_ENTITLEMENTS_FS=0`. [docker/buildx#2875](https://github.com/docker/buildx/pull/2875)
+- Bake: Infer Git authentication token from remote files to build request. [docker/buildx#2905](https://github.com/docker/buildx/pull/2905)
+- Bake: Add support for `--list` flag to list targets and variables. [docker/buildx#2900](https://github.com/docker/buildx/pull/2900), [docker/buildx#2907](https://github.com/docker/buildx/pull/2907)
+- Bake: Update lookup order for default definition files to load the files with "override" suffix later. [docker/buildx#2886](https://github.com/docker/buildx/pull/2886)
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Bake: Fix entitlements check for default SSH socket. [docker/buildx#2898](https://github.com/docker/buildx/pull/2898)
+- Bake: Fix missing default target in group's default targets. [docker/buildx#2863](https://github.com/docker/buildx/pull/2863)
+- Bake: Fix named context from target platform matching. [docker/buildx#2877](https://github.com/docker/buildx/pull/2877)
+- Fix missing documentation for quiet progress mode. [docker/buildx#2899](https://github.com/docker/buildx/pull/2899)
+- Fix missing last progress from loading layers. [docker/buildx#2876](https://github.com/docker/buildx/pull/2876)
+- Validate BuildKit configuration before creating a builder. [docker/buildx#2864](https://github.com/docker/buildx/pull/2864)
+@y
+- Bake: Fix entitlements check for default SSH socket. [docker/buildx#2898](https://github.com/docker/buildx/pull/2898)
+- Bake: Fix missing default target in group's default targets. [docker/buildx#2863](https://github.com/docker/buildx/pull/2863)
+- Bake: Fix named context from target platform matching. [docker/buildx#2877](https://github.com/docker/buildx/pull/2877)
+- Fix missing documentation for quiet progress mode. [docker/buildx#2899](https://github.com/docker/buildx/pull/2899)
+- Fix missing last progress from loading layers. [docker/buildx#2876](https://github.com/docker/buildx/pull/2876)
+- Validate BuildKit configuration before creating a builder. [docker/buildx#2864](https://github.com/docker/buildx/pull/2864)
+@z
+
+@x
+### Packaging
+@y
+### Packaging
+@z
+
+@x
+- Compose compatibility has been updated to v2.4.7. [docker/buildx#2893](https://github.com/docker/buildx/pull/2893), [docker/buildx#2857](https://github.com/docker/buildx/pull/2857), [docker/buildx#2829](https://github.com/docker/buildx/pull/2829)
+@y
+- Compose compatibility has been updated to v2.4.7. [docker/buildx#2893](https://github.com/docker/buildx/pull/2893), [docker/buildx#2857](https://github.com/docker/buildx/pull/2857), [docker/buildx#2829](https://github.com/docker/buildx/pull/2829)
+@z
+
+@x
+## 0.19.1
+@y
+## 0.19.1
+@z
+
+@x
+{{< release-date date="2024-11-27" >}}
+@y
+{{< release-date date="2024-11-27" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.19.1).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.19.1).
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Reverted the change in v0.19.0 that added new object notation for the fields
+  that previously required CSV strings in Bake definition. This enhancement was
+  reverted because of backwards incompatibility issues were discovered in some
+  edge cases. This feature has now been postponed to the v0.20.0 release.
+  [docker/buildx#2824](https://github.com/docker/buildx/pull/2824)
+@y
+- Reverted the change in v0.19.0 that added new object notation for the fields
+  that previously required CSV strings in Bake definition. This enhancement was
+  reverted because of backwards incompatibility issues were discovered in some
+  edge cases. This feature has now been postponed to the v0.20.0 release.
+  [docker/buildx#2824](https://github.com/docker/buildx/pull/2824)
+@z
+
+@x
+## 0.19.0
+@y
+## 0.19.0
+@z
+
+@x
+{{< release-date date="2024-11-27" >}}
+@y
+{{< release-date date="2024-11-27" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.19.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.19.0).
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Bake now requires you to allow filesystem entitlements when your build needs
+  to read or write files outside of your current working directory.
+  [docker/buildx#2796](https://github.com/docker/buildx/pull/2796),
+  [docker/buildx#2812](https://github.com/docker/buildx/pull/2812).
+@y
+- Bake now requires you to allow filesystem entitlements when your build needs
+  to read or write files outside of your current working directory.
+  [docker/buildx#2796](https://github.com/docker/buildx/pull/2796),
+  [docker/buildx#2812](https://github.com/docker/buildx/pull/2812).
+@z
+
+@x
+  To allow filesystem entitlements, use the `--allow fs.read=<path>` flag for
+  the `docker buildx bake` command.
+@y
+  To allow filesystem entitlements, use the `--allow fs.read=<path>` flag for
+  the `docker buildx bake` command.
+@z
+
+@x
+  This feature currently only reports a warning when using a local Bake
+  definition, but will start to produce an error starting from the v0.20
+  release. To enable the error in the current release, you can set
+  `BUILDX_BAKE_ENTITLEMENTS_FS=1`.
+@y
+  This feature currently only reports a warning when using a local Bake
+  definition, but will start to produce an error starting from the v0.20
+  release. To enable the error in the current release, you can set
+  `BUILDX_BAKE_ENTITLEMENTS_FS=1`.
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- Bake definition now supports new object notation for the fields that previously required CSV strings as inputs. [docker/buildx#2758](https://github.com/docker/buildx/pull/2758)
+@y
+- Bake definition now supports new object notation for the fields that previously required CSV strings as inputs. [docker/buildx#2758](https://github.com/docker/buildx/pull/2758)
+@z
+
+@x
+  > [!NOTE]
+  > This enhancement was reverted in [v0.19.1](#0191) due to a bug.
+@y
+  > [!NOTE]
+  > This enhancement was reverted in [v0.19.1](#0191) due to a bug.
+@z
+
+@x
+- Bake definition now allows defining validation conditions to variables. [docker/buildx#2794](https://github.com/docker/buildx/pull/2794)
+- Metadata file values can now contain JSON array values. [docker/buildx#2777](https://github.com/docker/buildx/pull/2777)
+- Improved error messages when using an incorrect format for labels. [docker/buildx#2778](https://github.com/docker/buildx/pull/2778)
+- FreeBSD and OpenBSD artifacts are now included in the release. [docker/buildx#2774](https://github.com/docker/buildx/pull/2774), [docker/buildx#2775](https://github.com/docker/buildx/pull/2775), [docker/buildx#2781](https://github.com/docker/buildx/pull/2781)
+@y
+- Bake definition now allows defining validation conditions to variables. [docker/buildx#2794](https://github.com/docker/buildx/pull/2794)
+- Metadata file values can now contain JSON array values. [docker/buildx#2777](https://github.com/docker/buildx/pull/2777)
+- Improved error messages when using an incorrect format for labels. [docker/buildx#2778](https://github.com/docker/buildx/pull/2778)
+- FreeBSD and OpenBSD artifacts are now included in the release. [docker/buildx#2774](https://github.com/docker/buildx/pull/2774), [docker/buildx#2775](https://github.com/docker/buildx/pull/2775), [docker/buildx#2781](https://github.com/docker/buildx/pull/2781)
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fixed an issue with printing Bake definitions containing empty Compose networks. [docker/buildx#2790](https://github.com/docker/buildx/pull/2790).
+@y
+- Fixed an issue with printing Bake definitions containing empty Compose networks. [docker/buildx#2790](https://github.com/docker/buildx/pull/2790).
+@z
+
+@x
+### Packaging
+@y
+### Packaging
+@z
+
+@x
+- Compose support has been updated to v2.4.4. [docker/buildx#2806](https://github.com/docker/buildx/pull/2806) [docker/buildx#2780](https://github.com/docker/buildx/pull/2780).
+@y
+- Compose support has been updated to v2.4.4. [docker/buildx#2806](https://github.com/docker/buildx/pull/2806) [docker/buildx#2780](https://github.com/docker/buildx/pull/2780).
+@z
+
+@x
 ## 0.18.0
 @y
 ## 0.18.0

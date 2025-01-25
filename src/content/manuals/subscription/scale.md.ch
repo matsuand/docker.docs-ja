@@ -68,25 +68,35 @@ You can scale consumption for the following:
 @z
 
 @x
-- Docker Build Cloud minutes
+- Docker Build Cloud build minutes
 - Docker Testcontainers Cloud runtime minutes
 - Docker Hub storage and image pulls
 @y
-- Docker Build Cloud minutes
+- Docker Build Cloud build minutes
 - Docker Testcontainers Cloud runtime minutes
 - Docker Hub storage and image pulls
 @z
 
 @x
-## Add Docker Build Cloud minutes
+To better understand your needs, you can view your consumption at any time. For
+more details, see [View Docker product
+usage](../admin/organization/manage-products.md#view-docker-product-usage).
 @y
-## Add Docker Build Cloud minutes
+To better understand your needs, you can view your consumption at any time. For
+more details, see [View Docker product
+usage](../admin/organization/manage-products.md#view-docker-product-usage).
 @z
 
 @x
-You can pre-purchase Docker Build Cloud minutes in the Docker Build Cloud Dashboard:
+## Add Docker Build Cloud build minutes
 @y
-You can pre-purchase Docker Build Cloud minutes in the Docker Build Cloud Dashboard:
+## Add Docker Build Cloud build minutes
+@z
+
+@x
+You can pre-purchase Docker Build Cloud build minutes in the Docker Build Cloud Dashboard:
+@y
+You can pre-purchase Docker Build Cloud build minutes in the Docker Build Cloud Dashboard:
 @z
 
 @x
