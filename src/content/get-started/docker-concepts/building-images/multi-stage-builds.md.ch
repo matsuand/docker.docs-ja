@@ -425,13 +425,9 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 @z
 
 @x
-    By optimizing each stage and only including what's necessary, you were able to significantly reduce the   
-    overall image size while still achieving the same functionality. This not only improves performance but   
-    also makes your Docker images more lightweight, more secure, and easier to manage.
+    By optimizing each stage and only including what's necessary, you were able to significantly reduce the overall image size while still achieving the same functionality. This not only improves performance but also makes your Docker images more lightweight, more secure, and easier to manage.
 @y
-    By optimizing each stage and only including what's necessary, you were able to significantly reduce the   
-    overall image size while still achieving the same functionality. This not only improves performance but   
-    also makes your Docker images more lightweight, more secure, and easier to manage.
+    By optimizing each stage and only including what's necessary, you were able to significantly reduce the overall image size while still achieving the same functionality. This not only improves performance but also makes your Docker images more lightweight, more secure, and easier to manage.
 @z
 
 @x

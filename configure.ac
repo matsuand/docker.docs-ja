@@ -150,7 +150,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/build/metadata/Makefile
 	src/content/manuals/build/metadata/attestations/Makefile
 	src/content/manuals/build-cloud/Makefile
-	src/content/manuals/cloud/Makefile
 	src/content/manuals/compose/Makefile
 	src/content/manuals/compose/bridge/Makefile
 	src/content/manuals/compose/how-tos/Makefile

@@ -436,9 +436,9 @@ The following is the updated `compose.yaml` file.
 % snip code...
 
 @x
-Your containerized application will now use the `mcr.microsoft.com/dotnet/sdk:6.0-alpine` image, which includes development tools like `dotnet test`. Continue to the next section to learn how you can run `dotnet test`.
+Your containerized application will now use the `mcr.microsoft.com/dotnet/sdk:8.0-alpine` image, which includes development tools like `dotnet test`. Continue to the next section to learn how you can run `dotnet test`.
 @y
-コンテナー化したアプリケーションは、今は `mcr.microsoft.com/dotnet/sdk:6.0-alpine` イメージを用いるようになりました。
+コンテナー化したアプリケーションは、今は `mcr.microsoft.com/dotnet/sdk:8.0-alpine` イメージを用いるようになりました。
 ここには `dotnet test` のような開発ツールが含まれています。
 続けて次の節では `dotnet test` の実行方法について学びます。
 @z
