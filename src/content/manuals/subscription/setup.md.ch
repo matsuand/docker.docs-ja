@@ -30,9 +30,9 @@ In this section, learn how to get started with a Docker subscription for individ
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @y
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @z
 
 @x

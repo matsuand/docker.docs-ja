@@ -318,9 +318,9 @@ You have now successfully installed and started Docker Engine.
 @z
 
 @x
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @y
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @z
 
 @x
@@ -456,9 +456,9 @@ You have now successfully installed and started Docker Engine.
 @z
 
 @x
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @y
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @z
 
 @x
@@ -478,9 +478,9 @@ instead of `dnf install`, and point to the new files.
 @z
 
 @x
-{{< include "install-script.md" >}}
+{{% include "install-script.md" %}}
 @y
-{{< include "install-script.md" >}}
+{{% include "install-script.md" %}}
 @z
 
 @x

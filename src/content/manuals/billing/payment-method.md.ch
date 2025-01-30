@@ -68,9 +68,9 @@ All currency, for example the amount listed on your billing invoice, is in Unite
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @y
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @z
 
 @x

@@ -20,9 +20,9 @@ keywords: cli, compose, profile, profiles reference
 @z
 
 @x
-{{< include "compose/profiles.md" >}}
+{{% include "compose/profiles.md" %}}
 @y
-{{< include "compose/profiles.md" >}}
+{{% include "compose/profiles.md" %}}
 @z
 
 @x

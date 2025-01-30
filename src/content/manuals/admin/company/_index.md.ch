@@ -122,9 +122,9 @@ keywords: company, multiple organizations, manage companies
 % snip alias...
 
 @x
-{{< include "admin-company-overview.md" >}}
+{{% include "admin-company-overview.md" %}}
 @y
-{{< include "admin-company-overview.md" >}}
+{{% include "admin-company-overview.md" %}}
 @z
 
 @x

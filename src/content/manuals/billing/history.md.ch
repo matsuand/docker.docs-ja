@@ -22,9 +22,9 @@ In this section, learn how you can view your billing history, manage your invoic
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @y
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @z
 
 @x

@@ -20,9 +20,9 @@ title: Include
 @z
 
 @x
-{{< include "compose/include.md" >}}
+{{% include "compose/include.md" %}}
 @y
-{{< include "compose/include.md" >}}
+{{% include "compose/include.md" %}}
 @z
 
 @x

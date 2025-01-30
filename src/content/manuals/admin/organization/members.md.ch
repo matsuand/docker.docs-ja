@@ -52,9 +52,9 @@ Learn how to manage members for your organization in Docker Hub and the Docker A
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x
@@ -174,9 +174,9 @@ To resend an invitation from Docker Hub:
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x
@@ -246,9 +246,9 @@ To remove a member's invitation from Docker Hub:
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x
@@ -350,9 +350,9 @@ To add a member to a team with Docker Hub:
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x
@@ -436,9 +436,9 @@ To remove a member from a specific team with Docker Hub:
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x

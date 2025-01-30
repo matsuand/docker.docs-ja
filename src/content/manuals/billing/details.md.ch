@@ -28,9 +28,9 @@ The billing information provided appears on all your billing invoices. The email
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @y
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @z
 
 @x

@@ -12,9 +12,9 @@ keywords: compose, compose specification, fragments, compose file reference
 @z
 
 @x
-{{< include "compose/fragments.md" >}}
+{{% include "compose/fragments.md" %}}
 @y
-{{< include "compose/fragments.md" >}}
+{{% include "compose/fragments.md" %}}
 @z
 
 @x

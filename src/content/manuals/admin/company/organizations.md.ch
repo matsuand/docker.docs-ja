@@ -18,9 +18,9 @@ You can manage the organizations in a company in the Docker Admin Console.
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x

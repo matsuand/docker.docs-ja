@@ -14,9 +14,9 @@ keywords: scout, sysdig, integration, image analysis, environments, supply chain
 @z
 
 @x
-{{< include "scout-early-access.md" >}}
+{{% include "scout-early-access.md" %}}
 @y
-{{< include "scout-early-access.md" >}}
+{{% include "scout-early-access.md" %}}
 @z
 
 @x

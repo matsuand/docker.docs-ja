@@ -95,9 +95,9 @@ Docker Desktop のインストールを正常に行うためには、[一般的�
 @z
 
 @x
-{{< include "desktop-linux-launch.md" >}}
+{{% include "desktop-linux-launch.md" %}}
 @y
-{{< include "desktop-linux-launch.md" >}}
+{{% include "desktop-linux-launch.md" %}}
 @z
 
 @x

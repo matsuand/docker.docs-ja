@@ -296,9 +296,9 @@ The Docker Hub content team maintains a curated list of categories.
 @z
 
 @x
-{{< include "hub-categories.md" >}}
+{{% include "hub-categories.md" %}}
 @y
-{{< include "hub-categories.md" >}}
+{{% include "hub-categories.md" %}}
 @z
 
 @x

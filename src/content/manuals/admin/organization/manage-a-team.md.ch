@@ -120,9 +120,9 @@ The organization owner can also add additional organization owners to help them 
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x
@@ -336,9 +336,9 @@ Organization owners can delete a team in Docker Hub or Admin Console. When you r
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x

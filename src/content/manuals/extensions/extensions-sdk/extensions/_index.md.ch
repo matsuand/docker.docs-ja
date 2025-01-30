@@ -120,7 +120,7 @@ In addition to providing a description of your extension's features and screensh
 @z
 
 @x
-{{< include "extensions-form.md" >}}
+{{% include "extensions-form.md" %}}
 @y
-{{< include "extensions-form.md" >}}
+{{% include "extensions-form.md" %}}
 @z

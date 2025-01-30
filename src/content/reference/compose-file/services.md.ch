@@ -15,9 +15,9 @@ keywords: compose, compose specification, services, compose file reference
 @z
 
 @x
-{{< include "compose/services.md" >}}
+{{% include "compose/services.md" %}}
 @y
-{{< include "compose/services.md" >}}
+{{% include "compose/services.md" %}}
 @z
 
 @x
@@ -1033,9 +1033,9 @@ configs:
 @z
 
 @x
-{{< include "compose/services-depends-on.md" >}}
+{{% include "compose/services-depends-on.md" %}}
 @y
-{{< include "compose/services-depends-on.md" >}}
+{{% include "compose/services-depends-on.md" %}}
 @z
 
 @x
@@ -1571,9 +1571,9 @@ If the value is `[]` (empty list) or `''` (empty string), the default entrypoint
 @z
 
 @x
-{{< include "compose/services-env-file.md" >}} 
+{{% include "compose/services-env-file.md" %}}
 @y
-{{< include "compose/services-env-file.md" >}} 
+{{% include "compose/services-env-file.md" %}}
 @z
 
 @x
@@ -1799,9 +1799,9 @@ VAR="quoted"
 @z
 
 @x
-{{< include "compose/services-environment.md" >}}
+{{% include "compose/services-environment.md" %}}
 @y
-{{< include "compose/services-environment.md" >}}
+{{% include "compose/services-environment.md" %}}
 @z
 
 @x
@@ -2587,9 +2587,9 @@ been the case if `group_add` were not declared.
 @z
 
 @x
-{{< include "compose/services-healthcheck.md" >}} 
+{{% include "compose/services-healthcheck.md" %}}
 @y
-{{< include "compose/services-healthcheck.md" >}} 
+{{% include "compose/services-healthcheck.md" %}}
 @z
 
 @x
@@ -3249,9 +3249,9 @@ Compose file containing both attributes.
 @z
 
 @x
-{{< include "compose/services-networks.md" >}}
+{{% include "compose/services-networks.md" %}}
 @y
-{{< include "compose/services-networks.md" >}}
+{{% include "compose/services-networks.md" %}}
 @z
 
 @x
@@ -3717,9 +3717,9 @@ platform: linux/arm64/v8
 @z
 
 @x
-{{< include "compose/services-ports.md" >}}
+{{% include "compose/services-ports.md" %}}
 @y
-{{< include "compose/services-ports.md" >}}
+{{% include "compose/services-ports.md" %}}
 @z
 
 @x
@@ -4145,9 +4145,9 @@ When both are set, `scale` must be consistent with the `replicas` attribute in t
 @z
 
 @x
-{{< include "compose/services-secrets.md" >}}
+{{% include "compose/services-secrets.md" %}}
 @y
-{{< include "compose/services-secrets.md" >}}
+{{% include "compose/services-secrets.md" %}}
 @z
 
 @x
@@ -4705,9 +4705,9 @@ it is the runtime's decision to assign a UTS namespace, if supported. Available 
 @z
 
 @x
-{{< include "compose/services-volumes.md" >}}
+{{% include "compose/services-volumes.md" %}}
 @y
-{{< include "compose/services-volumes.md" >}}
+{{% include "compose/services-volumes.md" %}}
 @z
 
 @x

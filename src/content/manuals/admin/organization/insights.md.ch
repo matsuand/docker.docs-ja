@@ -80,9 +80,9 @@ Key benefits include:
 @z
 
 @x
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @y
-{{< include "admin-early-access.md" >}}
+{{% include "admin-early-access.md" %}}
 @z
 
 @x

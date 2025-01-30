@@ -106,9 +106,9 @@ If you want your extension published in the Marketplace, read the [publish docum
 @z
 
 @x
-{{< include "extensions-form.md" >}}
+{{% include "extensions-form.md" %}}
 @y
-{{< include "extensions-form.md" >}}
+{{% include "extensions-form.md" %}}
 @z
 
 @x

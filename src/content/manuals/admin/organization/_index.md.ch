@@ -130,9 +130,9 @@ keywords: organizations, admin, overview
 @z
 
 @x
-{{< include "admin-org-overview.md" >}}
+{{% include "admin-org-overview.md" %}}
 @y
-{{< include "admin-org-overview.md" >}}
+{{% include "admin-org-overview.md" %}}
 @z
 
 @x

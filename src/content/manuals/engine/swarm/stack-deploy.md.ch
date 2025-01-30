@@ -24,9 +24,9 @@ a stack description in the form of a [Compose file](reference/compose-file/legac
 @z
 
 @x
-{{< include "swarm-compose-compat.md" >}}
+{{% include "swarm-compose-compat.md" %}}
 @y
-{{< include "swarm-compose-compat.md" >}}
+{{% include "swarm-compose-compat.md" %}}
 @z
 
 @x

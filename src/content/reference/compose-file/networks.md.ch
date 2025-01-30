@@ -15,9 +15,9 @@ keywords: compose, compose specification, networks, compose file reference
 @z
 
 @x
-{{< include "compose/networks.md" >}}
+{{% include "compose/networks.md" %}}
 @y
-{{< include "compose/networks.md" >}}
+{{% include "compose/networks.md" %}}
 @z
 
 @x

@@ -24,9 +24,9 @@ keywords: compose, compose specification, compose file reference, compose develo
 @z
 
 @x
-{{< include "compose/develop.md" >}}
+{{% include "compose/develop.md" %}}
 @y
-{{< include "compose/develop.md" >}}
+{{% include "compose/develop.md" %}}
 @z
 
 @x

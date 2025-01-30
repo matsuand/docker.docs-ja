@@ -21,9 +21,9 @@ title: Use Compose Watch
 @z
 
 @x
-{{< include "compose/watch.md" >}}
+{{% include "compose/watch.md" %}}
 @y
-{{< include "compose/watch.md" >}}
+{{% include "compose/watch.md" %}}
 @z
 
 @x
@@ -362,9 +362,9 @@ This setup demonstrates how to use the `sync+restart` action in Docker Compose t
 @z
 
 @x
-{{< include "compose/configure-watch.md" >}}
+{{% include "compose/configure-watch.md" %}}
 @y
-{{< include "compose/configure-watch.md" >}}
+{{% include "compose/configure-watch.md" %}}
 @z
 
 @x

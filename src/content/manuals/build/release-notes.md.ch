@@ -1602,9 +1602,9 @@ The full release note for this release is available
 @z
 
 @x
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @y
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @z
 
 @x
@@ -1636,9 +1636,9 @@ The full release note for this release is available
 @z
 
 @x
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @y
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @z
 
 @x
@@ -1674,9 +1674,9 @@ The full release note for this release is available
 @z
 
 @x
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @y
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @z
 
 @x
@@ -1712,9 +1712,9 @@ The full release note for this release is available
 @z
 
 @x
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @y
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @z
 
 @x
@@ -1756,9 +1756,9 @@ The full release note for this release is available
 @z
 
 @x
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @y
-{{< include "buildx-v0.10-disclaimer.md" >}}
+{{% include "buildx-v0.10-disclaimer.md" %}}
 @z
 
 @x

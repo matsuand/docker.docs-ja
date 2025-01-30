@@ -14,9 +14,9 @@ title: Service accounts
 @z
 
 @x
-{{< include "new-plans.md" >}}
+{{% include "new-plans.md" %}}
 @y
-{{< include "new-plans.md" >}}
+{{% include "new-plans.md" %}}
 @z
 
 @x

@@ -330,9 +330,9 @@ You have now successfully installed and started Docker Engine.
 @z
 
 @x
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @y
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @z
 
 @x

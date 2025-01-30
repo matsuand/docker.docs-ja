@@ -64,9 +64,9 @@ When you change the billing cycle's duration:
 @z
 
 @x
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @y
-{{< include "tax-compliance.md" >}}
+{{% include "tax-compliance.md" %}}
 @z
 
 @x

@@ -35,9 +35,9 @@ tags: [deploy]
 @z
 
 @x
-{{< include "swarm-mode.md" >}}
+{{% include "swarm-mode.md" %}}
 @y
-{{< include "swarm-mode.md" >}}
+{{% include "swarm-mode.md" %}}
 @z
 
 @x
@@ -99,9 +99,9 @@ Now you can write a simple stack file to run and manage your Todo app, the conta
 @z
 
 @x
-{{< include "swarm-compose-compat.md" >}}
+{{% include "swarm-compose-compat.md" %}}
 @y
-{{< include "swarm-compose-compat.md" >}}
+{{% include "swarm-compose-compat.md" %}}
 @z
 
 % snip code...

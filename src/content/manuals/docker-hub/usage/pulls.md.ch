@@ -16,9 +16,9 @@ linkTitle: Pulls
 @z
 
 @x
-{{< include "hub-limits.md" >}}
+{{% include "hub-limits.md" %}}
 @y
-{{< include "hub-limits.md" >}}
+{{% include "hub-limits.md" %}}
 @z
 
 @x

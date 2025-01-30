@@ -548,9 +548,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @y
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @z
 
 @x
@@ -802,9 +802,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @y
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @z
 
 @x
@@ -886,9 +886,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @y
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @z
 
 @x
@@ -946,9 +946,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @y
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @z
 
 @x
@@ -1050,9 +1050,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @y
-{{< include "dockerfile-labs-channel.md" >}}
+{{% include "dockerfile-labs-channel.md" %}}
 @z
 
 @x

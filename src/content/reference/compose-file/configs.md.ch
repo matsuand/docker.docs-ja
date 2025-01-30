@@ -14,9 +14,9 @@ keywords: compose, compose specification, configs, compose file reference
 @z
 
 @x
-{{< include "compose/configs.md" >}}
+{{% include "compose/configs.md" %}}
 @y
-{{< include "compose/configs.md" >}}
+{{% include "compose/configs.md" %}}
 @z
 
 @x

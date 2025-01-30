@@ -15,9 +15,9 @@ title: Networking in Compose
 @z
 
 @x
-{{< include "compose-eol.md" >}}
+{{% include "compose-eol.md" %}}
 @y
-{{< include "compose-eol.md" >}}
+{{% include "compose-eol.md" %}}
 @z
 
 @x

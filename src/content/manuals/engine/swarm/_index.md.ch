@@ -14,9 +14,9 @@ title: Swarm mode
 @z
 
 @x
-{{< include "swarm-mode.md" >}}
+{{% include "swarm-mode.md" %}}
 @y
-{{< include "swarm-mode.md" >}}
+{{% include "swarm-mode.md" %}}
 @z
 
 @x

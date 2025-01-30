@@ -16,9 +16,9 @@ linkTitle: Generic (CLI)
 @z
 
 @x
-{{< include "scout-early-access.md" >}}
+{{% include "scout-early-access.md" %}}
 @y
-{{< include "scout-early-access.md" >}}
+{{% include "scout-early-access.md" %}}
 @z
 
 @x

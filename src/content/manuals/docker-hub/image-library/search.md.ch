@@ -260,9 +260,9 @@ applications.
 @z
 
 @x
-{{< include "hub-categories.md" >}}
+{{% include "hub-categories.md" %}}
 @y
-{{< include "hub-categories.md" >}}
+{{% include "hub-categories.md" %}}
 @z
 
 @x

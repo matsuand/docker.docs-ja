@@ -571,9 +571,9 @@ Docker Desktop を起動するには、以下を実行します。
 @z
 
 @x
-   {{< include "desktop-license-update.md" >}}
+   {{% include "desktop-license-update.md" %}}
 @y
-   {{< include "desktop-license-update.md" >}}
+   {{% include "desktop-license-update.md" %}}
 @z
 
 @x

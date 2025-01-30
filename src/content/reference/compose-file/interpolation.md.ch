@@ -12,9 +12,9 @@ keywords: compose, compose specification, interpolation, compose file reference
 @z
 
 @x
-{{< include "compose/interpolation.md" >}}
+{{% include "compose/interpolation.md" %}}
 @y
-{{< include "compose/interpolation.md" >}}
+{{% include "compose/interpolation.md" %}}
 @z
 
 @x

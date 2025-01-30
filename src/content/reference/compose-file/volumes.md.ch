@@ -14,9 +14,9 @@ keywords: compose, compose specification, volumes, compose file reference
 @z
 
 @x
-{{< include "compose/volumes.md" >}}
+{{% include "compose/volumes.md" %}}
 @y
-{{< include "compose/volumes.md" >}}
+{{% include "compose/volumes.md" %}}
 @z
 
 @x

@@ -14,9 +14,9 @@ title: Use the docker dev CLI plugin
 @z
 
 @x
-{{< include "dev-envs-changing.md" >}}
+{{% include "dev-envs-changing.md" %}}
 @y
-{{< include "dev-envs-changing.md" >}}
+{{% include "dev-envs-changing.md" %}}
 @z
 
 @x

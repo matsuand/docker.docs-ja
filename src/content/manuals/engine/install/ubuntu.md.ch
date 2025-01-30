@@ -344,9 +344,9 @@ Docker Engine のインストールと起動が正常に行われました。
 @z
 
 @x
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @y
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @z
 
 @x
@@ -458,9 +458,9 @@ Docker Engine のインストールと起動が正常に行われました。
 @z
 
 @x
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @y
-{{< include "root-errors.md" >}}
+{{% include "root-errors.md" %}}
 @z
 
 @x
@@ -478,9 +478,9 @@ Docker Engine をアップグレードするには、新たなパッケージフ
 @z
 
 @x
-{{< include "install-script.md" >}}
+{{% include "install-script.md" %}}
 @y
-{{< include "install-script.md" >}}
+{{% include "install-script.md" %}}
 @z
 
 @x

@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Using Docker with Zscaler
@@ -67,15 +68,7 @@ certificate with its own. However, Docker doesn't trust this Zscaler
 certificate by default, leading to SSL errors.
 @z
 
-@x
-```plaintext
-x509: certificate signed by unknown authority
-```
-@y
-```plaintext
-x509: certificate signed by unknown authority
-```
-@z
+% snip code...
 
 @x
 These errors occur because Docker cannot verify the validity of the certificate
@@ -209,29 +202,13 @@ the build container and update the trust store. An example Dockerfile looks
 like this:
 @z
 
-@x
-```dockerfile
-FROM debian:bookworm
-COPY zscaler-cert.pem /usr/local/share/ca-certificates/zscaler-cert.pem
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates
-```
-@y
-```dockerfile
-FROM debian:bookworm
-COPY zscaler-cert.pem /usr/local/share/ca-certificates/zscaler-cert.pem
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates
-```
-@z
+% snip code...
 
 @x
-Here, `zscaler-cert.pem` is the root certificate, located at the root of the
+Here, `zscaler-root-ca.crt` is the root certificate, located at the root of the
 build context (often within the application's Git repository).
 @y
-Here, `zscaler-cert.pem` is the root certificate, located at the root of the
+Here, `zscaler-root-ca.crt` is the root certificate, located at the root of the
 build context (often within the application's Git repository).
 @z
 
@@ -245,25 +222,7 @@ the `ADD` instruction. You can also use the `--checksum` flag to verify that
 the content digest of the certificate is correct.
 @z
 
-@x
-```dockerfile
-FROM debian:bookworm
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d \
-    https://artifacts.example/certs/zscaler-cert.pem /usr/local/share/ca-certificates/zscaler-cert.pem
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates
-```
-@y
-```dockerfile
-FROM debian:bookworm
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d \
-    https://artifacts.example/certs/zscaler-cert.pem /usr/local/share/ca-certificates/zscaler-cert.pem
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates
-```
-@z
+% snip code...
 
 @x
 #### Using multi-stage builds
@@ -279,51 +238,7 @@ For multi-stage builds where certificates are needed in the final runtime
 image, ensure the certificate installation occurs in the final stage.
 @z
 
-@x
-```dockerfile
-FROM debian:bookworm AS build
-WORKDIR /build
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    curl \
-    git
-RUN --mount=target=. cmake -B output/
-@y
-```dockerfile
-FROM debian:bookworm AS build
-WORKDIR /build
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    curl \
-    git
-RUN --mount=target=. cmake -B output/
-@z
-
-@x
-FROM debian:bookworm-slim AS final
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d \
-    https://artifacts.example/certs/zscaler-cert.pem /usr/local/share/ca-certificates/zscaler-cert.pem
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates
-WORKDIR /app
-COPY --from=build /build/output/bin .
-ENTRYPOINT ["/app/bin"]
-```
-@y
-FROM debian:bookworm-slim AS final
-ADD --checksum=sha256:24454f830cdb571e2c4ad15481119c43b3cafd48dd869a9b2945d1036d1dc68d \
-    https://artifacts.example/certs/zscaler-cert.pem /usr/local/share/ca-certificates/zscaler-cert.pem
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    update-ca-certificates
-WORKDIR /app
-COPY --from=build /build/output/bin .
-ENTRYPOINT ["/app/bin"]
-```
-@z
+% snip code...
 
 @x
 ## Conclusion

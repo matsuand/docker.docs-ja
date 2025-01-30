@@ -2,31 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn about usage and limits for Docker Hub.
 keywords: Docker Hub, limit, usage
 title: Docker Hub usage and limits
 linkTitle: Usage and limits
-weight: 30
-aliases:
-  /docker-hub/download-rate-limit/
----
 @y
----
 description: Learn about usage and limits for Docker Hub.
 keywords: Docker Hub, limit, usage
 title: Docker Hub usage and limits
 linkTitle: Usage and limits
-weight: 30
-aliases:
-  /docker-hub/download-rate-limit/
----
 @z
 
 @x
-{{< include "hub-limits.md" >}}
+{{% include "hub-limits.md" %}}
 @y
-{{< include "hub-limits.md" >}}
+{{% include "hub-limits.md" %}}
 @z
 
 @x

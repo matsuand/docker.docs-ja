@@ -133,9 +133,9 @@ the extension to Docker Hub. See [Extensions distribution](extensions/DISTRIBUTI
 @z
 
 @x
-{{< include "extensions-form.md" >}}
+{{% include "extensions-form.md" %}}
 @y
-{{< include "extensions-form.md" >}}
+{{% include "extensions-form.md" %}}
 @z
 
 @x

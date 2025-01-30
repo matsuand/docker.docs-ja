@@ -14,9 +14,9 @@ keywords: compose, compose specification, compose file reference, compose deploy
 @z
 
 @x
-{{< include "compose/deploy.md" >}}
+{{% include "compose/deploy.md" %}}
 @y
-{{< include "compose/deploy.md" >}}
+{{% include "compose/deploy.md" %}}
 @z
 
 @x

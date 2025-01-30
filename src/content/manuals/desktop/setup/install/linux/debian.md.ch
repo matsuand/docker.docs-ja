@@ -147,9 +147,9 @@ The post-install script:
 @z
 
 @x
-{{< include "desktop-linux-launch.md" >}}
+{{% include "desktop-linux-launch.md" %}}
 @y
-{{< include "desktop-linux-launch.md" >}}
+{{% include "desktop-linux-launch.md" %}}
 @z
 
 @x

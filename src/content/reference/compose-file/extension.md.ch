@@ -12,9 +12,9 @@ keywords: compose, compose specification, extensions, compose file reference
 @z
 
 @x
-{{< include "compose/extension.md" >}}
+{{% include "compose/extension.md" %}}
 @y
-{{< include "compose/extension.md" >}}
+{{% include "compose/extension.md" %}}
 @z
 
 @x

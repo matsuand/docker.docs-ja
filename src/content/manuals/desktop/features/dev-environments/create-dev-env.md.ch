@@ -12,9 +12,9 @@ title: Launch a dev environment
 @z
 
 @x
-{{< include "dev-envs-changing.md" >}}
+{{% include "dev-envs-changing.md" %}}
 @y
-{{< include "dev-envs-changing.md" >}}
+{{% include "dev-envs-changing.md" %}}
 @z
 
 @x

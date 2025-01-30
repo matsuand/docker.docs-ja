@@ -14,9 +14,9 @@ keywords: compose, compose specification, compose file reference, compose build 
 @z
 
 @x
-{{< include "compose/build.md" >}}
+{{% include "compose/build.md" %}}
 @y
-{{< include "compose/build.md" >}}
+{{% include "compose/build.md" %}}
 @z
 
 @x
