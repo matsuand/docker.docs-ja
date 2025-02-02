@@ -301,7 +301,8 @@ bases = \
 	restart.md \
 	start.md   \
 	status.md  \
-	stop.md
+	stop.md    \
+	update.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

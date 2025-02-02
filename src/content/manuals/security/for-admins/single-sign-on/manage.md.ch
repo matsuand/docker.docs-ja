@@ -22,6 +22,12 @@ linkTitle: Manage
 @z
 
 @x
+{{< summary-bar feature_name="Admin console early access" >}}
+@y
+{{< summary-bar feature_name="Admin console early access" >}}
+@z
+
+@x
 > [!NOTE]
 >
 > You must have a [company](/admin/company/) to manage more than one organization.
@@ -32,12 +38,6 @@ linkTitle: Manage
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
-@z
-
-@x
 {{% admin-sso-management-orgs product="admin" %}}
 @y
 {{% admin-sso-management-orgs product="admin" %}}
@@ -50,17 +50,17 @@ linkTitle: Manage
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< summary-bar feature_name="Admin console early access" >}}
 @y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< summary-bar feature_name="Admin console early access" >}}
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
 @y
-{{% include "admin-early-access.md" %}}
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x
@@ -98,17 +98,17 @@ linkTitle: Manage
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< summary-bar feature_name="Admin console early access" >}}
 @y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< summary-bar feature_name="Admin console early access" >}}
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
 @y
-{{% include "admin-early-access.md" %}}
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x

@@ -108,15 +108,15 @@ See [Proxies](manuals/desktop/settings-and-maintenance/settings.md#proxies)
 @z
 
 @x
-### SOCKS5 proxy support 
+### SOCKS5 proxy support
 @y
-### SOCKS5 proxy support 
+### SOCKS5 proxy support
 @z
 
 @x
-{{< introduced desktop 4.28.0 "../release-notes.md#4280" >}}
+{{< summary-bar feature_name="SOCKS5 proxy support" >}}
 @y
-{{< introduced desktop 4.28.0 "../release-notes.md#4280" >}}
+{{< summary-bar feature_name="SOCKS5 proxy support" >}}
 @z
 
 @x

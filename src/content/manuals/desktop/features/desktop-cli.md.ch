@@ -26,9 +26,9 @@ keywords: cli, docker desktop, macos, windows, linux
 @z
 
 @x
-The Docker Desktop CLI lets you perform key operations such as starting, stopping, restarting, and checking the status of Docker Desktop directly from the command line. It is available with Docker Desktop version 4.37 and later.
+The Docker Desktop CLI lets you perform key operations such as starting, stopping, restarting, and checking the status of Docker Desktop directly from the command line.
 @y
-The Docker Desktop CLI lets you perform key operations such as starting, stopping, restarting, and checking the status of Docker Desktop directly from the command line. It is available with Docker Desktop version 4.37 and later.
+The Docker Desktop CLI lets you perform key operations such as starting, stopping, restarting, and checking the status of Docker Desktop directly from the command line.
 @z
 
 @x
@@ -75,7 +75,8 @@ docker desktop COMMAND [OPTIONS]
 | `restart`            | Restarts Docker Desktop                  |
 | `status`             | Displays whether Docker Desktop is running or stopped.       |
 | `engine ls`          | Lists available engines (Windows only)   |
-| `engine use`        | Switch between Linux and Windows containers (Windows only) |
+| `engine use`         | Switch between Linux and Windows containers (Windows only) |
+| `update`             | Manage Docker Desktop updates. Available for Mac only and with Docker Desktop version 4.38 and later. |
 @y
 | Command              | Description                              |
 |:---------------------|:-----------------------------------------|
@@ -84,7 +85,8 @@ docker desktop COMMAND [OPTIONS]
 | `restart`            | Restarts Docker Desktop                  |
 | `status`             | Displays whether Docker Desktop is running or stopped.       |
 | `engine ls`          | Lists available engines (Windows only)   |
-| `engine use`        | Switch between Linux and Windows containers (Windows only) |
+| `engine use`         | Switch between Linux and Windows containers (Windows only) |
+| `update`             | Manage Docker Desktop updates. Available for Mac only and with Docker Desktop version 4.38 and later. |
 @z
 
 @x

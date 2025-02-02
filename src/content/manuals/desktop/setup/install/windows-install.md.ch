@@ -471,7 +471,7 @@ By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 The `install` command accepts the following flags:
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
-- `--no-windows-containers`: Disables the Windows containers integration
+- `--no-windows-containers`: Disables the Windows containers integration. This can improve security. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
 - `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
@@ -483,6 +483,8 @@ The `install` command accepts the following flags:
 - `--quiet`: インストーラーの起動時に情報出力を省略します。
 - `--accept-license`: [Docker サブスクリプションサービス契約](https://www.docker.com/legal/docker-subscription-service-agreement) をここで受け入れます。これを行わない場合は、アプリケーションの初回起動時に行うことになります。
 - `--no-windows-containers`: Windows コンテナー統合機能を無効にします。
+  これによってセキュリティを向上させます。
+  詳しくは [Windows コンテナー](manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers) を参照してください。
 - `--allowed-org=<組織名>`: アプリケーションの実行にあたっては、ユーザーがサインインしていることを要求し、指定された Docker Hub 組織のメンバーであることを要求します。
 - `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。`hyper-v`、`windows`、`wsl-2` (デフォルト) のいずれか。
 - `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。

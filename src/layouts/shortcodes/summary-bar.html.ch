@@ -18,7 +18,7 @@
 {{ $availabilityIcons := dict
   "Experimental" "science"
   "Beta" "bolt"
-  "Early access" "rocket_launch"
+  "Early Access" "rocket_launch"
   "GA" "check_circle"
   "Retired" "package_2"
 }}
@@ -41,7 +41,7 @@
 {{ $availabilityIcons := dict
   "Experimental" "science"
   "Beta" "bolt"
-  "Early access" "rocket_launch"
+  "Early Access" "rocket_launch"
   "GA" "check_circle"
   "Retired" "package_2"
 }}
@@ -89,41 +89,41 @@
 
 @x
   {{ with $feature.availability }}
+  {{ $availabilityText := . }}
   <div class="flex items-center gap-1">
       <span class="font-bold">Availability:</span>
-      <span>{{ . }}</span>
-      <span class="icon-svg">
-          {{ $icon := index $availabilityIcons . }}
-          {{ if $icon }}
-            {{ partial "icon" $icon }}
-          {{ else }}
-            {{ partial "icon" "default_icon" }}
+      <span>
+          {{ $availabilityText }}
+          {{ range $key, $icon := $availabilityIcons }}
+            {{ if in $availabilityText $key }}
+              <span class="icon-svg">{{ partial "icon" $icon }}</span>
+            {{ end }}
           {{ end }}
       </span>
   </div>
-  {{ end }}
+{{ end }}
 @y
   {{ with $feature.availability }}
+  {{ $availabilityText := . }}
   <div class="flex items-center gap-1">
       <span class="font-bold">Availability:</span>
-      <span>{{ . }}</span>
-      <span class="icon-svg">
-          {{ $icon := index $availabilityIcons . }}
-          {{ if $icon }}
-            {{ partial "icon" $icon }}
-          {{ else }}
-            {{ partial "icon" "default_icon" }}
+      <span>
+          {{ $availabilityText }}
+          {{ range $key, $icon := $availabilityIcons }}
+            {{ if in $availabilityText $key }}
+              <span class="icon-svg">{{ partial "icon" $icon }}</span>
+            {{ end }}
           {{ end }}
       </span>
   </div>
-  {{ end }}
+{{ end }}
 @z
 
 @x
   {{ with $feature.requires }}
   <div class="flex items-center gap-1">
       <span class="font-bold">Requires:</span>
-      <span>{{ . }}</span>
+      <span>{{ . | markdownify }}</span>
       <span class="icon-svg">
           {{ partial "icon" $requiresIcon }}
       </span>
@@ -133,7 +133,7 @@
   {{ with $feature.requires }}
   <div class="flex items-center gap-1">
       <span class="font-bold">Requires:</span>
-      <span>{{ . }}</span>
+      <span>{{ . | markdownify }}</span>
       <span class="icon-svg">
           {{ partial "icon" $requiresIcon }}
       </span>

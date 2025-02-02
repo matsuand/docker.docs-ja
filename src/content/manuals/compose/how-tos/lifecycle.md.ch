@@ -20,9 +20,9 @@ keywords: cli, compose, lifecycle, hooks reference
 @z
 
 @x
-{{< introduced compose 2.30.0 "../releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose lifecycle hooks" >}}
 @y
-{{< introduced compose 2.30.0 "../releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose lifecycle hooks" >}}
 @z
 
 @x

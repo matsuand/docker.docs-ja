@@ -12,15 +12,15 @@ title: Manage company organizations
 @z
 
 @x
-You can manage the organizations in a company in the Docker Admin Console.
+{{< summary-bar feature_name="Company" >}}
 @y
-You can manage the organizations in a company in the Docker Admin Console.
+{{< summary-bar feature_name="Company" >}}
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
+You can manage the organizations in a company in the Docker Admin Console.
 @y
-{{% include "admin-early-access.md" %}}
+You can manage the organizations in a company in the Docker Admin Console.
 @z
 
 @x

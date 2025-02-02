@@ -20,9 +20,9 @@ aliases:
 @z
 
 @x
-{{< introduced engine 26.1.0 >}}
+{{< summary-bar feature_name="Docker CLI OpenTelemetry" >}}
 @y
-{{< introduced engine 26.1.0 >}}
+{{< summary-bar feature_name="Docker CLI OpenTelemetry" >}}
 @z
 
 @x

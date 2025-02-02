@@ -13,7 +13,6 @@ copyfiles = \
 	code.css         \
 	hack.css         \
 	icons.css        \
-	kapa.css         \
 	styles.css       \
 	syntax-dark.css  \
 	syntax-light.css \

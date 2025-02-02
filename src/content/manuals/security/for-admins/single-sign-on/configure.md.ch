@@ -26,17 +26,17 @@ Get started creating a single sign-on (SSO) connection for your organization or 
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< summary-bar feature_name="Admin console early access" >}}
 @y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< summary-bar feature_name="Admin console early access" >}}
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
 @y
-{{% include "admin-early-access.md" %}}
+{{< tabs >}}
+{{< tab name="Admin Console" >}}
 @z
 
 @x
@@ -105,12 +105,6 @@ Verifying your domain ensures Docker knows you own it. Domain verification is do
 @y
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
 @z
 
 @x

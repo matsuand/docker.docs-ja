@@ -12,23 +12,9 @@ description: Learn how to streamline your workflow with Docker's AI-powered assi
 @z
 
 @x
-{{% restricted title=Beta %}}
-Ask Gordon is a [Beta](/manuals/release-lifecycle.md) feature, and only members
-of the Ask Gordon beta program can access it. Features, user interface, and
-behavior are subject to change in future releases.
+{{< summary-bar feature_name="Ask Gordon" >}}
 @y
-{{% restricted title=Beta %}}
-Ask Gordon is a [Beta](manuals/release-lifecycle.md) feature, and only members
-of the Ask Gordon beta program can access it. Features, user interface, and
-behavior are subject to change in future releases.
-@z
-
-@x
-{{< button text="Apply for access" url="https://docker.qualtrics.com/jfe/form/SV_dmVHFjQ4fZlrEOy" >}}
-{{% /restricted %}}
-@y
-{{< button text="Apply for access" url="https://docker.qualtrics.com/jfe/form/SV_dmVHFjQ4fZlrEOy" >}}
-{{% /restricted %}}
+{{< summary-bar feature_name="Ask Gordon" >}}
 @z
 
 @x
@@ -134,13 +120,15 @@ To provide accurate responses, Ask Gordon may send relevant files, directories,
 or image metadata to the Gordon backend along with your query. This data
 transfer occurs over the network but is never stored persistently or shared
 with third parties. It is used exclusively to process your request and
-formulate a response.
+formulate a response. For more information about privacy terms and conditions
+for Docker AI, review [Gordon's Supplemental Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
 @y
 To provide accurate responses, Ask Gordon may send relevant files, directories,
 or image metadata to the Gordon backend along with your query. This data
 transfer occurs over the network but is never stored persistently or shared
 with third parties. It is used exclusively to process your request and
-formulate a response.
+formulate a response. For more information about privacy terms and conditions
+for Docker AI, review [Gordon's Supplemental Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
 @z
 
 @x
@@ -218,33 +206,23 @@ To use this feature, you must have:
 @z
 
 @x
-- [Access to the Ask Gordon beta program](https://docker.qualtrics.com/jfe/form/SV_dmVHFjQ4fZlrEOy).
+- Docker Desktop version 4.38 or later.
 @y
-- [Access to the Ask Gordon beta program](https://docker.qualtrics.com/jfe/form/SV_dmVHFjQ4fZlrEOy).
+- Docker Desktop version 4.38 or later.
 @z
 
 @x
-- Docker Desktop version 4.37 or later.
+Ask Gordon is not enabled by default. To enable the feature:
 @y
-- Docker Desktop version 4.37 or later.
-@z
-
-@x
-Ask Gordon is not enabled by default. After having received access to the beta
-program, you must enable the feature:
-@y
-Ask Gordon is not enabled by default. After having received access to the beta
-program, you must enable the feature:
+Ask Gordon is not enabled by default. To enable the feature:
 @z
 
 @x
 1. [Sign in](#sign-in) to your Docker account.
 2. [Enable the feature](#enable-the-feature) in the Docker Desktop settings.
-3. [Accept the terms of service](#accept-the-terms-of-service).
 @y
 1. [Sign in](#sign-in) to your Docker account.
 2. [Enable the feature](#enable-the-feature) in the Docker Desktop settings.
-3. [Accept the terms of service](#accept-the-terms-of-service).
 @z
 
 @x
@@ -279,64 +257,10 @@ After signing in to your Docker Account, enable the Docker AI feature:
 1. Open the **Settings** view in Docker Desktop.
 2. Navigate to **Features in development**.
 3. Check the **Enable Docker AI** checkbox.
-4. Select **Apply & restart**.
 @y
 1. Open the **Settings** view in Docker Desktop.
 2. Navigate to **Features in development**.
 3. Check the **Enable Docker AI** checkbox.
-4. Select **Apply & restart**.
-@z
-
-@x
-### Accept the terms of service
-@y
-### Accept the terms of service
-@z
-
-@x
-To start using Docker AI, you need to accept the terms of service. You can do
-this in one of two ways:
-@y
-To start using Docker AI, you need to accept the terms of service. You can do
-this in one of two ways:
-@z
-
-@x
-- Open the **Ask Gordon** view in Docker Desktop and ask a question.
-- Use the `docker ai` CLI command to issue a query.
-@y
-- Open the **Ask Gordon** view in Docker Desktop and ask a question.
-- Use the `docker ai` CLI command to issue a query.
-@z
-
-@x
-The first time you interact with Docker AI, you'll see a prompt to accept the
-terms of service. For example:
-@y
-The first time you interact with Docker AI, you'll see a prompt to accept the
-terms of service. For example:
-@z
-
-@x
-```console
-$ docker ai what can you do?
-@y
-```console
-$ docker ai what can you do?
-@z
-
-@x
-  Before using Gordon, please accept the terms of service
-```
-@y
-  Before using Gordon, please accept the terms of service
-```
-@z
-
-@x
-After accepting the terms, you can begin using Ask Gordon.
-@y
-After accepting the terms, you can begin using Ask Gordon.
 @z
 
 @x

@@ -15,13 +15,9 @@ keywords: msi, windows, docker desktop, install, deploy, configure, admin, mdm
 @z
 
 @x
-> [!NOTE]
->
-> The MSI installer is available to all company and organization owners with a Business subscription and Docker Desktop version 4.32 and later.
+{{< summary-bar feature_name="MSI installer" >}}
 @y
-> [!NOTE]
->
-> The MSI installer is available to all company and organization owners with a Business subscription and Docker Desktop version 4.32 and later.
+{{< summary-bar feature_name="MSI installer" >}}
 @z
 
 @x

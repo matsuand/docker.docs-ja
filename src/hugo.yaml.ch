@@ -46,9 +46,9 @@ languages:
 suburldir 追加
 ------------------------------
 @x
-    scout: "1.0.0"
+  example_node_version: "20"
 @y
-    scout: "1.0.0"
+  example_node_version: "20"
 
   suburldir: /docker.docs-ja
 @z

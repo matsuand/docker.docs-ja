@@ -14,9 +14,9 @@ keywords: compose, compose specification, include, compose file reference
 @z
 
 @x
-{{< introduced compose 2.20.0 "/manuals/compose/releases/release-notes.md#2200" >}}
+{{< summary-bar feature_name="Composefile include" >}}
 @y
-{{< introduced compose 2.20.0 "/manuals/compose/releases/release-notes.md#2200" >}}
+{{< summary-bar feature_name="Composefile include" >}}
 @z
 
 @x

@@ -747,9 +747,9 @@ Setting `NO_COLOR` to anything turns off colorized output, as recommended by
 @z
 
 @x
-{{< introduced buildx 0.9.0 "../release-notes.md#090" >}}
+{{< summary-bar feature_name="Buildkit host" >}}
 @y
-{{< introduced buildx 0.9.0 "../release-notes.md#090" >}}
+{{< summary-bar feature_name="Buildkit host" >}}
 @z
 
 @x
@@ -861,9 +861,9 @@ Example:
 @z
 
 @x
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Buildx bake Git auth token" >}}
 @y
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Buildx bake Git auth token" >}}
 @z
 
 @x
@@ -901,9 +901,9 @@ $ export BUILDX_BAKE_GIT_AUTH_HEADER=basic
 @z
 
 @x
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Buildx bake Git auth token" >}}
 @y
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Buildx bake Git auth token" >}}
 @z
 
 @x
@@ -939,9 +939,9 @@ $ export BUILDX_BAKE_GIT_AUTH_TOKEN=$(cat git-token.txt)
 @z
 
 @x
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Buildx bake Git SSH" >}}
 @y
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Buildx bake Git SSH" >}}
 @z
 
 @x
@@ -1087,9 +1087,9 @@ $ export BUILDX_EXPERIMENTAL=1
 @z
 
 @x
-{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
+{{< summary-bar feature_name="Buildx Git check dirty" >}}
 @y
-{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
+{{< summary-bar feature_name="Buildx Git check dirty" >}}
 @z
 
 @x
@@ -1123,9 +1123,9 @@ $ export BUILDX_GIT_CHECK_DIRTY=1
 @z
 
 @x
-{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
+{{< summary-bar feature_name="Buildx Git info" >}}
 @y
-{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
+{{< summary-bar feature_name="Buildx Git info" >}}
 @z
 
 @x
@@ -1159,9 +1159,9 @@ $ export BUILDX_GIT_INFO=0
 @z
 
 @x
-{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
+{{< summary-bar feature_name="Buildx Git labels" >}}
 @y
-{{< introduced buildx 0.10.0 "../release-notes.md#0100" >}}
+{{< summary-bar feature_name="Buildx Git labels" >}}
 @z
 
 @x
@@ -1235,9 +1235,9 @@ If the repository is in a dirty state, the `revision` gets a `-dirty` suffix.
 @z
 
 @x
-{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
+{{< summary-bar feature_name="Buildx no default" >}}
 @y
-{{< introduced buildx 0.10.4 "../release-notes.md#0104" >}}
+{{< summary-bar feature_name="Buildx no default" >}}
 @z
 
 @x

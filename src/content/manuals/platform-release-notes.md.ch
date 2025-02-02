@@ -65,13 +65,13 @@ Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projec
 
 @x
 - Administrators can now:
-  - Enforce sign-in with macOS [configuration profiles](/manuals/security/for-admins/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
+  - Enforce sign-in with [configuration profiles](/manuals/security/for-admins/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
   - Enforce sign-in for more than one organization at a time (Early Access).
   - Deploy Docker Desktop for Mac in bulk with the [PKG installer](/manuals/desktop/setup/install/enterprise-deployment/pkg-install-and-configure.md) (Early Access).
   - [Use Desktop Settings Management via the Docker Admin Console](/manuals/security/for-admins/hardened-desktop/settings-management/configure-admin-console.md) (Early Access).
 @y
 - Administrators can now:
-  - Enforce sign-in with macOS [configuration profiles](manuals/security/for-admins/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
+  - Enforce sign-in with [configuration profiles](manuals/security/for-admins/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
   - Enforce sign-in for more than one organization at a time (Early Access).
   - Deploy Docker Desktop for Mac in bulk with the [PKG installer](manuals/desktop/setup/install/enterprise-deployment/pkg-install-and-configure.md) (Early Access).
   - [Use Desktop Settings Management via the Docker Admin Console](manuals/security/for-admins/hardened-desktop/settings-management/configure-admin-console.md) (Early Access).

@@ -96,9 +96,9 @@ Once the grace period is over and the invoice is still not paid, the subscriptio
 @z
 
 @x
-Starting July 1, 2024, Docker will begin collecting sales tax on subscription fees in compliance with state regulations for customers in the United States. For global customers subject to VAT, the implementation will start rolling out on July 1, 2024. Note that while the rollout begins on this date, VAT charges may not apply to all applicable subscriptions immediately.
+Docker began collecting sales tax on subscription fees for United States customers on July 1, 2024. For European customers, Docker will begin collecting VAT on March 1, 2025.
 @y
-Starting July 1, 2024, Docker will begin collecting sales tax on subscription fees in compliance with state regulations for customers in the United States. For global customers subject to VAT, the implementation will start rolling out on July 1, 2024. Note that while the rollout begins on this date, VAT charges may not apply to all applicable subscriptions immediately.
+Docker began collecting sales tax on subscription fees for United States customers on July 1, 2024. For European customers, Docker will begin collecting VAT on March 1, 2025.
 @z
 
 @x

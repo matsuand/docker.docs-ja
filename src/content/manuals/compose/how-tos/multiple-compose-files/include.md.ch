@@ -14,9 +14,9 @@ title: Include
 @z
 
 @x
-{{< introduced compose 2.20.3 "/manuals/compose/releases/release-notes.md#2203" >}}
+{{< summary-bar feature_name="Compose include" >}}
 @y
-{{< introduced compose 2.20.3 "manuals/compose/releases/release-notes.md#2203" >}}
+{{< summary-bar feature_name="Compose include" >}}
 @z
 
 @x

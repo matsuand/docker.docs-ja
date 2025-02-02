@@ -128,12 +128,6 @@ You must [configure SSO](../single-sign-on/configure/_index.md) before you enabl
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
-@z
-
-@x
 {{% admin-scim product="admin" %}}
 @y
 {{% admin-scim product="admin" %}}
@@ -617,12 +611,6 @@ If SCIM is disabled, any user provisioned through SCIM will remain in the organi
 @y
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
 @z
 
 @x

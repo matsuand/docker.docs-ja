@@ -72,12 +72,6 @@ You first need to [enforce sign-in](manuals/security/for-admins/enforce-sign-in/
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
-@z
-
-@x
 {{% admin-image-access product="admin" %}}
 @y
 {{% admin-image-access product="admin" %}}

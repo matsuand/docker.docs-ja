@@ -245,7 +245,8 @@ bases = \
 	docker_desktop_restart.yaml    \
 	docker_desktop_start.yaml      \
 	docker_desktop_status.yaml     \
-	docker_desktop_stop.yaml
+	docker_desktop_stop.yaml       \
+	docker_desktop_update.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

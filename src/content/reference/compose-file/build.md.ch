@@ -212,9 +212,9 @@ Alternatively `build` can be an object with fields defined as follows:
 @z
 
 @x
-{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
+{{< summary-bar feature_name="Build additional contexts" >}}
 @y
-{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
+{{< summary-bar feature_name="Build additional contexts" >}}
 @z
 
 @x
@@ -582,9 +582,9 @@ build:
 @z
 
 @x
-{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
+{{< summary-bar feature_name="Build dockerfile inline" >}}
 @y
-{{< introduced compose 2.17.0 "/manuals/compose/releases/release-notes.md#2170" >}}
+{{< summary-bar feature_name="Build dockerfile inline" >}}
 @z
 
 @x
@@ -626,9 +626,9 @@ build:
 @z
 
 @x
-{{< introduced compose 2.27.1 "/manuals/compose/releases/release-notes.md#2271" >}}
+{{< summary-bar feature_name="Build entitlements" >}}
 @y
-{{< introduced compose 2.27.1 "/manuals/compose/releases/release-notes.md#2271" >}}
+{{< summary-bar feature_name="Build entitlements" >}}
 @z
 
 @x
@@ -988,9 +988,9 @@ Composes reports an error in the following cases:
 @z
 
 @x
-{{< introduced compose 2.15.0 "/manuals/compose/releases/release-notes.md#2" >}}
+{{< summary-bar feature_name="Build privileged" >}}
 @y
-{{< introduced compose 2.15.0 "/manuals/compose/releases/release-notes.md#2" >}}
+{{< summary-bar feature_name="Build privileged" >}}
 @z
 
 @x
@@ -1388,9 +1388,9 @@ build:
 @z
 
 @x
-{{< introduced compose 2.23.1 "/manuals/compose/releases/release-notes.md#2231" >}}
+{{< summary-bar feature_name="Build ulimits" >}}
 @y
-{{< introduced compose 2.23.1 "/manuals/compose/releases/release-notes.md#2231" >}}
+{{< summary-bar feature_name="Build ulimits" >}}
 @z
 
 @x

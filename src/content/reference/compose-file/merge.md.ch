@@ -223,9 +223,9 @@ Results in:
 @z
 
 @x
-{{< introduced compose 2.24.4 "/manuals/compose/releases/release-notes.md#2244" >}}
+{{< summary-bar feature_name="Compose replace file" >}}
 @y
-{{< introduced compose 2.24.4 "/manuals/compose/releases/release-notes.md#2244" >}}
+{{< summary-bar feature_name="Compose replace file" >}}
 @z
 
 @x

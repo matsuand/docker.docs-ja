@@ -12,6 +12,12 @@ title: Manage company users
 @z
 
 @x
+{{< summary-bar feature_name="Company" >}}
+@y
+{{< summary-bar feature_name="Company" >}}
+@z
+
+@x
 You can manage users at the company-level in the Docker Admin Console.
 @y
 You can manage users at the company-level in the Docker Admin Console.
@@ -21,12 +27,6 @@ You can manage users at the company-level in the Docker Admin Console.
 {{% admin-users product="admin" layer="company" %}}
 @y
 {{% admin-users product="admin" layer="company" %}}
-@z
-
-@x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
 @z
 
 @x

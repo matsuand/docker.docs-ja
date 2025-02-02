@@ -158,9 +158,9 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 @z
 
 @x
-{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
+{{< summary-bar feature_name="Compose exec" >}}
 @y
-{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
+{{< summary-bar feature_name="Compose exec" >}}
 @z
 
 @x

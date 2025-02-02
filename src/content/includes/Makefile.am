@@ -8,7 +8,6 @@ bases = \
 	_index.md                         \
 	aci-ecs-eol.md                    \
 	admin-company-overview.md         \
-	admin-early-access.md             \
 	admin-org-overview.md             \
 	buildx-v0.10-disclaimer.md        \
 	compose-bridge-experimental.md    \

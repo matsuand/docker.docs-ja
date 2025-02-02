@@ -223,9 +223,9 @@ ones in the repository.
 @z
 
 @x
-{{< introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" >}}
+{{< summary-bar feature_name="Docker Scout Mount Permissions" >}}
 @y
-{{< introduced desktop 4.34.0 "../../../../desktop/release-notes.md#4340" >}}
+{{< summary-bar feature_name="Docker Scout Mount Permissions" >}}
 @z
 
 @x

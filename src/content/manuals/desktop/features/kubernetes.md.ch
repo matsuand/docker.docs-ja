@@ -21,9 +21,9 @@ Docker Desktop には手元のマシン上で動作する Docker CLI 統合環�
 @z
 
 @x
-The Kubernetes server runs as a single-node cluster within a Docker container. This lightweight setup helps you explore Kubernetes features, test workloads, and work with container orchestration in parallel with other Docker functionalities.
+The Kubernetes server runs as a single or multi-node cluster within a Docker container. This lightweight setup helps you explore Kubernetes features, test workloads, and work with container orchestration in parallel with other Docker functionalities.
 @y
-Kubernetes サーバーは Docker インスタンス内において単一ノードクラスターとしてローカルに実行されます。
+Kubernetes サーバーは Docker インスタンス内において単一あるいは複数ノードクラスターとしてローカルに実行されます。
 セットアップが簡単であるため、Kuberntes 機能の確認、ワークロードのテスト、Docker の他機能を同時に利用したコンテナーオーケストレーション作業を容易に進めていくことができます。
 @z
 
@@ -72,13 +72,13 @@ Turning the Kubernetes server on or off in Docker Desktop does not affect your o
 @x
 1. Open the Docker Desktop Dashboard and navigate to **Settings**.
 2. Select the **Kubernetes** tab. 
-3. Select the **Enable Kubernetes** checkbox.
-4. Select **Apply & Restart** to save the settings and then select **Install** to confirm. This sets up the images required to run the Kubernetes server as containers, and installs the `kubectl` command-line tool on your system at `/usr/local/bin/kubectl` (Mac) or `C:\Program Files\Docker\Docker\Resources\bin\kubectl.exe` (Windows).
+3. Toggle on **Enable Kubernetes**.
+4. Choose your cluster provisioning method. You can choose either **Kubeadm** or **kind** if you are signed in and are using Docker Desktop version 4.38 or later. 
 @y
 1. Open the Docker Desktop Dashboard and navigate to **Settings**.
 2. Select the **Kubernetes** tab. 
-3. Select the **Enable Kubernetes** checkbox.
-4. Select **Apply & Restart** to save the settings and then select **Install** to confirm. This sets up the images required to run the Kubernetes server as containers, and installs the `kubectl` command-line tool on your system at `/usr/local/bin/kubectl` (Mac) or `C:\Program Files\Docker\Docker\Resources\bin\kubectl.exe` (Windows).
+3. Toggle on **Enable Kubernetes**.
+4. Choose your cluster provisioning method. You can choose either **Kubeadm** or **kind** if you are signed in and are using Docker Desktop version 4.38 or later. 
 @z
 
 @x
@@ -106,15 +106,33 @@ You can check which version of Kubernetes you're on with:
 % snip command...
 
 @x
-### Viewing system containers
+### Additional settings
 @y
-### Viewing system containers
+### Additional settings
 @z
 
 @x
-By default, Kubernetes system containers are hidden. To inspect these containers, navigate to **Settings** > **Kubernetes** and then enable **Show system containers (advanced)**.
+#### Kubernetes dashboard
 @y
-By default, Kubernetes system containers are hidden. To inspect these containers, navigate to **Settings** > **Kubernetes** and then enable **Show system containers (advanced)**.
+#### Kubernetes dashboard
+@z
+
+@x
+Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting so you can manage and monitor your Kubernetes clusters and applications more easily. 
+@y
+Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting so you can manage and monitor your Kubernetes clusters and applications more easily. 
+@z
+
+@x
+#### Viewing system containers
+@y
+#### Viewing system containers
+@z
+
+@x
+By default, Kubernetes system containers are hidden. To inspect these containers, enable **Show system containers (advanced)**.
+@y
+By default, Kubernetes system containers are hidden. To inspect these containers, enable **Show system containers (advanced)**.
 @z
 
 @x

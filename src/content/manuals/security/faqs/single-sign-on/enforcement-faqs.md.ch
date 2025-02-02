@@ -1,40 +1,28 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
 title: FAQs on SSO and enforcement
+tags: [FAQ]
 @y
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
 title: FAQs on SSO and enforcement
+tags: [FAQ]
 @z
 
 @x
-### We currently have a Docker Team subscription. How do we enable SSO?
+### I currently have a Docker Team subscription. How do I enable SSO?
 @y
-### We currently have a Docker Team subscription. How do we enable SSO?
+### I currently have a Docker Team subscription. How do I enable SSO?
 @z
 
 @x
 SSO is available with a Docker Business subscription. To enable SSO, you must first upgrade your subscription to a Docker Business subscription. To learn how to upgrade your existing account, see [Upgrade your subscription](../../../subscription/change.md).
 @y
 SSO is available with a Docker Business subscription. To enable SSO, you must first upgrade your subscription to a Docker Business subscription. To learn how to upgrade your existing account, see [Upgrade your subscription](../../../subscription/change.md).
-@z
-
-@x
-### How do service accounts work with SSO?
-@y
-### How do service accounts work with SSO?
-@z
-
-@x
-Service accounts work like any other user when SSO is turned on. If the service account is using an email for a domain with SSO turned on, it needs a PAT for CLI and API usage.
-@y
-Service accounts work like any other user when SSO is turned on. If the service account is using an email for a domain with SSO turned on, it needs a PAT for CLI and API usage.
 @z
 
 @x
@@ -68,15 +56,15 @@ Each user must create a PAT to access the CLI. To learn how to create a PAT, see
 @z
 
 @x
-### How does SSO affect our automation systems and CI/CD pipelines?
+### How does SSO affect automation systems and CI/CD pipelines?
 @y
-### How does SSO affect our automation systems and CI/CD pipelines?
+### How does SSO affect automation systems and CI/CD pipelines?
 @z
 
 @x
-Before enforcing SSO, you must create PATs for automation systems and CI/CD pipelines and use the tokens instead of a password.
+Before enforcing SSO, you must [create PATs](/security/for-developers/access-tokens/). These PATs are used instead of passwords for signing into automation systems and CI/CD pipelines.
 @y
-Before enforcing SSO, you must create PATs for automation systems and CI/CD pipelines and use the tokens instead of a password.
+Before enforcing SSO, you must [create PATs](__SUBDIR__/security/for-developers/access-tokens/). These PATs are used instead of passwords for signing into automation systems and CI/CD pipelines.
 @z
 
 @x
@@ -104,9 +92,9 @@ Yes, you can choose to not enforce, and users have the option to use either Dock
 @z
 
 @x
-### SSO is enforced, but one of our users is able to sign in through username and password. Why is this happening?
+### SSO is enforced, but a user can sign in using a username and password. Why is this happening?
 @y
-### SSO is enforced, but one of our users is able to sign in through username and password. Why is this happening?
+### SSO is enforced, but a user can sign in using a username and password. Why is this happening?
 @z
 
 @x
@@ -122,33 +110,9 @@ Guest users who are not part of your registered domain but have been invited to 
 @z
 
 @x
-Yes, you can create a test organization. Companies can set up a new 5 seat Business plan on a new organization to test with (making sure to only enable SSO, not enforce it or all domain email users will be forced to sign in to that test tenant).
+Yes, you can create a test organization. Companies can set up a new 5 seat Business plan on a new organization to test with. To do this, make sure to only enable SSO, not enforce it, or all domain email users will be forced to sign in to that test tenant.
 @y
-Yes, you can create a test organization. Companies can set up a new 5 seat Business plan on a new organization to test with (making sure to only enable SSO, not enforce it or all domain email users will be forced to sign in to that test tenant).
-@z
-
-@x
-### Once we enable SSO for Docker Desktop, what's the impact to the flow for Build systems that use service accounts?
-@y
-### Once we enable SSO for Docker Desktop, what's the impact to the flow for Build systems that use service accounts?
-@z
-
-@x
-If you enable SSO, there is no impact. Both username/password or personal access token (PAT) sign-in are supported.
-However, if you enforce SSO:
-@y
-If you enable SSO, there is no impact. Both username/password or personal access token (PAT) sign-in are supported.
-However, if you enforce SSO:
-@z
-
-@x
-- Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password authentication [won’t work](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced), so you should update the build system to use a PAT instead of a password
-- Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
-@y
-- Service Account domain email addresses must not be aliased and must be enabled in their IdP
-- Username/password authentication [won’t work](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced), so you should update the build system to use a PAT instead of a password
-- Those who know the IdP credentials can sign in as that Service Account through SSO on Hub and create or change the personal access token for that service account.
+Yes, you can create a test organization. Companies can set up a new 5 seat Business plan on a new organization to test with. To do this, make sure to only enable SSO, not enforce it, or all domain email users will be forced to sign in to that test tenant.
 @z
 
 @x
@@ -158,9 +122,9 @@ However, if you enforce SSO:
 @z
 
 @x
-At runtime for Docker Desktop if it’s configured to require authentication to the organization.
+For Docker Desktop, if it's configured to require authentication to the organization, it tracks at runtime.
 @y
-At runtime for Docker Desktop if it’s configured to require authentication to the organization.
+For Docker Desktop, if it's configured to require authentication to the organization, it tracks at runtime.
 @z
 
 @x
@@ -182,13 +146,7 @@ Enforcing SSO ensures that users sign in using their SSO credentials instead of 
 @z
 
 @x
-Enforcing sign-in to Docker Desktop ensures that users always sign in to an
+Enforcing sign-in to Docker Desktop ensures that users always sign in to an account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/enforce-sign-in/_index.md#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
 @y
-Enforcing sign-in to Docker Desktop ensures that users always sign in to an
-@z
-
-@x
-account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/enforce-sign-in/_index.md).
-@y
-account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/enforce-sign-in/_index.md).
+Enforcing sign-in to Docker Desktop ensures that users always sign in to an account that's a member of your organization. The benefits are that your organization's security settings are always applied to the user's session and your users always receive the benefits of your subscription. For more details, see [Enforce sign-in for Desktop](../../../security/for-admins/enforce-sign-in/_index.md#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
 @z

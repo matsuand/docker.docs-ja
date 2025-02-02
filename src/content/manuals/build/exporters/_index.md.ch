@@ -317,9 +317,9 @@ Buildx logs a warning message when using `cacheonly` as a default:
 @z
 
 @x
-{{< introduced buildx 0.13.0 >}}
+{{< summary-bar feature_name="Build multiple exporters" >}}
 @y
-{{< introduced buildx 0.13.0 >}}
+{{< summary-bar feature_name="Build multiple exporters" >}}
 @z
 
 @x

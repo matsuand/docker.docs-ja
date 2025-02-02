@@ -252,17 +252,6 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @z
 
 @x
-   > [!NOTE]
-   >
-   > If you use an Ubuntu derivative distribution, such as Linux Mint,
-   > you may need to use `UBUNTU_CODENAME` instead of `VERSION_CODENAME`.
-@y
-   > [!NOTE]
-   >
-   > Linux Mint のような Ubuntu 派生ディストリビューションを利用している場合は、`VERSION_CODENAME` ではなく `UBUNTU_CODENAME` を用いなければならない場合があります。
-@z
-
-@x
 2. Install the Docker packages.
 @y
 2. Docker パッケージをインストールします。

@@ -128,12 +128,6 @@ You've now created an organization.
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
-@z
-
-@x
 To create an organization:
 @y
 To create an organization:
@@ -337,12 +331,6 @@ configure your organization.
 @y
 {{< /tab >}}
 {{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
 @z
 
 @x

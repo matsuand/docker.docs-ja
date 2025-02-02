@@ -15,9 +15,9 @@ title: Use Compose Watch
 @z
 
 @x
-{{< introduced compose 2.22.0 "/manuals/compose/releases/release-notes.md#2220" >}}
+{{< summary-bar feature_name="Compose file watch" >}}
 @y
-{{< introduced compose 2.22.0 "manuals/compose/releases/release-notes.md#2220" >}}
+{{< summary-bar feature_name="Compose file watch" >}}
 @z
 
 @x

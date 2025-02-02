@@ -52,11 +52,9 @@ There are multiple methods for enforcing sign-in, depending on your companies' s
 @z
 
 @x
-When Docker Desktop starts and it detects a registry key, `.plist` file, or `registry.json` file, the
-following occurs:
+When Docker Desktop starts and it detects a registry key, `.plist` file, or `registry.json` file, the following occurs:
 @y
-When Docker Desktop starts and it detects a registry key, `.plist` file, or `registry.json` file, the
-following occurs:
+When Docker Desktop starts and it detects a registry key, `.plist` file, or `registry.json` file, the following occurs:
 @z
 
 @x
@@ -90,12 +88,10 @@ following occurs:
 @z
 
 @x
-[Enforcing SSO](/manuals/security/for-admins/single-sign-on/connect.md) and
-enforcing sign-in are different features. The following table provides a
+[Enforcing SSO](/manuals/security/for-admins/single-sign-on/connect.md#optional-enforce-sso) and enforcing sign-in are different features. The following table provides a
 description and benefits when using each feature.
 @y
-[Enforcing SSO](manuals/security/for-admins/single-sign-on/connect.md) and
-enforcing sign-in are different features. The following table provides a
+[Enforcing SSO](manuals/security/for-admins/single-sign-on/connect.md#optional-enforce-sso) and enforcing sign-in are different features. The following table provides a
 description and benefits when using each feature.
 @z
 

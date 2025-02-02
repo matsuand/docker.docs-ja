@@ -404,9 +404,9 @@ If `COMPOSE_ENV_FILES` is not set, and you don't provide `--env-file` in the CLI
 @z
 
 @x
-{{< introduced compose 2.26.0 "/manuals/compose/releases/release-notes.md#2260" >}}
+{{< summary-bar feature_name="Compose menu" >}}
 @y
-{{< introduced compose 2.26.0 "manuals/compose/releases/release-notes.md#2260" >}}
+{{< summary-bar feature_name="Compose menu" >}}
 @z
 
 @x
@@ -434,9 +434,9 @@ When enabled, Compose displays a navigation menu where you can choose to open th
 @z
 
 @x
-{{< introduced compose 2.26.0 "/manuals/compose/releases/release-notes.md#2260" >}}
+{{< summary-bar feature_name="Compose experimental" >}}
 @y
-{{< introduced compose 2.26.0 "manuals/compose/releases/release-notes.md#2260" >}}
+{{< summary-bar feature_name="Compose experimental" >}}
 @z
 
 @x

@@ -227,9 +227,9 @@ annotations:
 @z
 
 @x
-{{< introduced compose 2.20.0 "/manuals/compose/releases/release-notes.md#2200" >}}
+{{< summary-bar feature_name="Compose attach" >}}
 @y
-{{< introduced compose 2.20.0 "/manuals/compose/releases/release-notes.md#2200" >}}
+{{< summary-bar feature_name="Compose attach" >}}
 @z
 
 @x
@@ -605,9 +605,9 @@ cap_drop:
 @z
 
 @x
-{{< introduced compose 2.15.0 "/manuals/compose/releases/release-notes.md#2150" >}}
+{{< summary-bar feature_name="Compose cgroup" >}}
 @y
-{{< introduced compose 2.15.0 "/manuals/compose/releases/release-notes.md#2150" >}}
+{{< summary-bar feature_name="Compose cgroup" >}}
 @z
 
 @x
@@ -1257,9 +1257,9 @@ Compose guarantees dependency services marked with
 @z
 
 @x
-{{< introduced compose 2.22.0 "/manuals/compose/releases/release-notes.md#2220" >}}
+{{< summary-bar feature_name="Compose develop" >}}
 @y
-{{< introduced compose 2.22.0 "/manuals/compose/releases/release-notes.md#2220" >}}
+{{< summary-bar feature_name="Compose develop" >}}
 @z
 
 @x
@@ -1443,9 +1443,9 @@ dns_search:
 @z
 
 @x
-{{< introduced compose 2.27.1 "/manuals/compose/releases/release-notes.md#2271" >}}
+{{< summary-bar feature_name="Compose driver opts" >}}
 @y
-{{< introduced compose 2.27.1 "/manuals/compose/releases/release-notes.md#2271" >}}
+{{< summary-bar feature_name="Compose driver opts" >}}
 @z
 
 @x
@@ -1639,9 +1639,9 @@ attributes.
 @z
 
 @x
-{{< introduced compose 2.24.0 "/manuals/compose/releases/release-notes.md#2240" >}}
+{{< summary-bar feature_name="Compose required" >}}
 @y
-{{< introduced compose 2.24.0 "/manuals/compose/releases/release-notes.md#2240" >}}
+{{< summary-bar feature_name="Compose required" >}}
 @z
 
 @x
@@ -1675,9 +1675,9 @@ env_file:
 @z
 
 @x
-{{< introduced compose 2.30.0 "/manuals/compose/releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose format" >}}
 @y
-{{< introduced compose 2.30.0 "/manuals/compose/releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose format" >}}
 @z
 
 @x
@@ -2925,9 +2925,9 @@ results in a runtime error.
 @z
 
 @x
-{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
+{{< summary-bar feature_name="Compose label file" >}}
 @y
-{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
+{{< summary-bar feature_name="Compose label file" >}}
 @z
 
 @x
@@ -3529,9 +3529,9 @@ networks:
 @z
 
 @x
-{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
+{{< summary-bar feature_name="Compose mac address" >}}
 @y
-{{< introduced compose 2.23.2 "/manuals/compose/releases/release-notes.md#2232" >}}
+{{< summary-bar feature_name="Compose mac address" >}}
 @z
 
 @x
@@ -3845,9 +3845,9 @@ expressed in the short form.
 @z
 
 @x
-{{< introduced compose 2.30.0 "../../manuals/compose/releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose post start" >}}
 @y
-{{< introduced compose 2.30.0 "../../manuals/compose/releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose post start" >}}
 @z
 
 @x
@@ -3907,9 +3907,9 @@ For more information, see [Use lifecycle hooks](manuals/compose/how-tos/lifecycl
 @z
 
 @x
-{{< introduced compose 2.30.0 "../../manuals/compose/releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose pre stop" >}}
 @y
-{{< introduced compose 2.30.0 "../../manuals/compose/releases/release-notes.md#2300" >}}
+{{< summary-bar feature_name="Compose pre stop" >}}
 @z
 
 @x
@@ -4669,9 +4669,9 @@ userns_mode: "host"
 @z
 
 @x
-{{< introduced compose 2.15.1 "/manuals/compose/releases/release-notes.md#2151" >}}
+{{< summary-bar feature_name="Compose uts" >}}
 @y
-{{< introduced compose 2.15.1 "/manuals/compose/releases/release-notes.md#2151" >}}
+{{< summary-bar feature_name="Compose uts" >}}
 @z
 
 @x

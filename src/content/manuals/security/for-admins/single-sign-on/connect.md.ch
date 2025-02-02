@@ -60,6 +60,12 @@ Make sure you have completed the following before you begin:
 @z
 
 @x
+{{< summary-bar feature_name="Admin console early access" >}}
+@y
+{{< summary-bar feature_name="Admin console early access" >}}
+@z
+
+@x
 >[!NOTE]
 >
 > Before creating an SSO connection in Docker, you must verify at least one domain.
@@ -75,12 +81,6 @@ Make sure you have completed the following before you begin:
 @y
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% include "admin-early-access.md" %}}
-@y
-{{% include "admin-early-access.md" %}}
 @z
 
 @x

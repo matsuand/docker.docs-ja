@@ -16,9 +16,9 @@ keywords: business, team, organizations, get started, onboarding
 @z
 
 @x
-{{% include "admin-early-access.md" %}}
+{{< summary-bar feature_name="Admin orgs" >}}
 @y
-{{% include "admin-early-access.md" %}}
+{{< summary-bar feature_name="Admin orgs" >}}
 @z
 
 @x
@@ -218,14 +218,12 @@ receive the [benefits of your organization’s subscription](../../subscription/
 @z
 
 @x
-There are multiple ways you can enforce sign-in, depending on your company's
-set up and preferences:
+There are multiple ways you can enforce sign-in, depending on your company's setup and preferences:
 - [Registry key method (Windows only)](/security/for-admins/enforce-sign-in/methods/#registry-key-method-windows-only)
 - [`.plist` method (Mac only)](/security/for-admins/enforce-sign-in/methods/#plist-method-mac-only)
 - [`registry.json` method (All)](/security/for-admins/enforce-sign-in/methods/#registryjson-method-all)
 @y
-There are multiple ways you can enforce sign-in, depending on your company's
-set up and preferences:
+There are multiple ways you can enforce sign-in, depending on your company's setup and preferences:
 - [Registry key method (Windows only)](__SUBDIR__/security/for-admins/enforce-sign-in/methods/#registry-key-method-windows-only)
 - [`.plist` method (Mac only)](__SUBDIR__/security/for-admins/enforce-sign-in/methods/#plist-method-mac-only)
 - [`registry.json` method (All)](__SUBDIR__/security/for-admins/enforce-sign-in/methods/#registryjson-method-all)

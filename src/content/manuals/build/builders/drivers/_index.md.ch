@@ -154,9 +154,9 @@ To build an image using a non-default driver and load it to the image store,
 @z
 
 @x
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Load by default" >}}
 @y
-{{< introduced buildx 0.14.0 >}}
+{{< summary-bar feature_name="Load by default" >}}
 @z
 
 @x
