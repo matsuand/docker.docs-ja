@@ -1,13 +1,12 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = dev-environments wsl
+SUBDIRS = dev-environments gordon wsl
 
 bases = \
 	_index.md                    \
 	containerd.md                \
 	desktop-cli.md               \
-	gordon.md                    \
 	gpu.md                       \
 	kubernetes.md                \
 	networking.md                \

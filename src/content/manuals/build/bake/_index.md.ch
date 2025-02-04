@@ -12,12 +12,6 @@ keywords: build, buildx, bake, buildkit, hcl, json, compose
 @z
 
 @x
-{{< summary-bar feature_name="Build bake" >}}
-@y
-{{< summary-bar feature_name="Build bake" >}}
-@z
-
-@x
 Bake is a feature of Docker Buildx that lets you define your build configuration
 using a declarative file, as opposed to specifying a complex CLI expression. It
 also lets you run multiple builds concurrently with a single invocation.

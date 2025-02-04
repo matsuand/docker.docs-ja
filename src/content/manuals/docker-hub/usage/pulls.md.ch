@@ -56,21 +56,21 @@ fair use:
 @z
 
 @x
-| User type                | Pulls per month | Pull rate limit per hour |
-|--------------------------|-----------------|--------------------------|
-| Business (authenticated) | 1M              | Unlimited                |
-| Team (authenticated)     | 100K            | Unlimited                |
-| Pro (authenticated)      | 25K             | Unlimited                |
-| Personal (authenticated) | Not applicable  | 40                       |
-| Unauthenticated Users    | Not applicable  | 10 per IP address        |
+| User type                | Pulls per month | Pull rate limit per hour               |
+|--------------------------|-----------------|----------------------------------------|
+| Business (authenticated) | 1M              | Unlimited                              |
+| Team (authenticated)     | 100K            | Unlimited                              |
+| Pro (authenticated)      | 25K             | Unlimited                              |
+| Personal (authenticated) | Not applicable  | 40                                     |
+| Unauthenticated Users    | Not applicable  | 10 per IPv4 address or IPv6 /64 subnet |
 @y
-| User type                | Pulls per month | Pull rate limit per hour |
-|--------------------------|-----------------|--------------------------|
-| Business (authenticated) | 1M              | Unlimited                |
-| Team (authenticated)     | 100K            | Unlimited                |
-| Pro (authenticated)      | 25K             | Unlimited                |
-| Personal (authenticated) | Not applicable  | 40                       |
-| Unauthenticated Users    | Not applicable  | 10 per IP address        |
+| User type                | Pulls per month | Pull rate limit per hour               |
+|--------------------------|-----------------|----------------------------------------|
+| Business (authenticated) | 1M              | Unlimited                              |
+| Team (authenticated)     | 100K            | Unlimited                              |
+| Pro (authenticated)      | 25K             | Unlimited                              |
+| Personal (authenticated) | Not applicable  | 40                                     |
+| Unauthenticated Users    | Not applicable  | 10 per IPv4 address or IPv6 /64 subnet |
 @z
 
 @x

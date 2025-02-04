@@ -28,7 +28,7 @@ title: Use Compose Watch
 
 @x
 `watch` adheres to the following file path rules:
-* All paths are relative to the project directory
+* All paths are relative to the project directory, apart from ignore file patterns
 * Directories are watched recursively
 * Glob patterns aren't supported
 * Rules from `.dockerignore` apply
@@ -37,7 +37,7 @@ title: Use Compose Watch
   * `.git` directories are ignored automatically
 @y
 `watch` adheres to the following file path rules:
-* All paths are relative to the project directory
+* All paths are relative to the project directory, apart from ignore file patterns
 * Directories are watched recursively
 * Glob patterns aren't supported
 * Rules from `.dockerignore` apply

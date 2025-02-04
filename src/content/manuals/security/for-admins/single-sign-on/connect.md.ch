@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Learn how to complete your single-sign on connection and next steps for enabling SSO.
@@ -13,6 +13,12 @@ description: Learn how to complete your single-sign on connection and next steps
 keywords: configure, sso, docker hub, hub, docker admin, admin, security
 title: Create an SSO connection
 linkTitle: Connect
+@z
+
+@x
+{{< summary-bar feature_name="SSO" >}}
+@y
+{{< summary-bar feature_name="SSO" >}}
 @z
 
 @x
@@ -511,6 +517,16 @@ Enforcing SSO requires users to use SSO when signing into Docker. This centraliz
 Your users must now sign in to Docker with SSO.
 @y
 Your users must now sign in to Docker with SSO.
+@z
+
+@x
+> [!NOTE]
+>
+> When SSO is enforced, [users can't use passwords to access the Docker CLI](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). Users must use a [personal access token](/manuals/security/for-admins/access-tokens.md) (PAT) for authentication to access the Docker CLI.
+@y
+> [!NOTE]
+>
+> When SSO is enforced, [users can't use passwords to access the Docker CLI](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). Users must use a [personal access token](manuals/security/for-admins/access-tokens.md) (PAT) for authentication to access the Docker CLI.
 @z
 
 @x
@@ -542,7 +558,9 @@ The following videos demonstrate how to enforce SSO.
 @x
 - [Provision users](/manuals/security/for-admins/provisioning/_index.md)
 - [Enforce sign-in](../enforce-sign-in/_index.md)
+- [Create access tokens](/manuals/security/for-admins/access-tokens.md)
 @y
 - [Provision users](manuals/security/for-admins/provisioning/_index.md)
 - [Enforce sign-in](../enforce-sign-in/_index.md)
+- [Create access tokens](manuals/security/for-admins/access-tokens.md)
 @z
