@@ -125,10 +125,10 @@ writable layer.
 @z
 
 @x
-Volumes use `rprivate` bind propagation, and bind propagation isn't
+Volumes use `rprivate` (recursive private) bind propagation, and bind propagation isn't
 configurable for volumes.
 @y
-Volumes use `rprivate` bind propagation, and bind propagation isn't
+Volumes use `rprivate` (recursive private) bind propagation, and bind propagation isn't
 configurable for volumes.
 @z
 

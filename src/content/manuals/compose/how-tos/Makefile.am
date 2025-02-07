@@ -5,15 +5,16 @@
 SUBDIRS = environment-variables multiple-compose-files
 
 bases = \
-	_index.md        \
-	file-watch.md    \
-	gpu-support.md   \
-	lifecycle.md     \
-	networking.md    \
-	production.md    \
-	profiles.md      \
-	project-name.md  \
-	startup-order.md \
+	_index.md           \
+	dependent-images.md \
+	file-watch.md       \
+	gpu-support.md      \
+	lifecycle.md        \
+	networking.md       \
+	production.md       \
+	profiles.md         \
+	project-name.md     \
+	startup-order.md    \
 	use-secrets.md
 
 include $(top_srcdir)/build-aux/common.mk

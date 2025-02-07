@@ -245,10 +245,10 @@ flag.
 
 @x
 The following table describes the driver-specific options that you can pass to
-`--option` when creating a custom network using the `bridge` driver.
+`--opt` when creating a custom network using the `bridge` driver.
 @y
 The following table describes the driver-specific options that you can pass to
-`--option` when creating a custom network using the `bridge` driver.
+`--opt` when creating a custom network using the `bridge` driver.
 @z
 
 @x

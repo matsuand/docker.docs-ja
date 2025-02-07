@@ -71,8 +71,10 @@ Compose bridge:
   availability: Experimental
 Config profiles:
   requires: Docker Desktop 4.36 and later
+Compose dependent images:
+  requires: Docker Compose [2.22.0](/manuals/compose/releases/release-notes.md#2220) and later
 Compose cgroup:
-  requires: Docker Compose [2.15.0](/manuals/compose/releases/release-notes.md#2200) and later
+  requires: Docker Compose [2.15.0](/manuals/compose/releases/release-notes.md#2150) and later
 Compose develop:
   requires: Docker Compose [2.22.0](/manuals/compose/releases/release-notes.md#2220) and later
 Compose driver opts:
@@ -84,6 +86,8 @@ Compose experimental:
 Compose file watch:
   requires: Docker Compose [2.22.0](/manuals/compose/releases/release-notes.md#2220) and later
 Compose format:
+  requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
+Compose gpus:
   requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
 Compose include:
   requires: Docker Compose [2.20.3](/manuals/compose/releases/release-notes.md#2203) and later
@@ -266,8 +270,10 @@ Compose bridge:
   availability: Experimental
 Config profiles:
   requires: Docker Desktop 4.36 and later
+Compose dependent images:
+  requires: Docker Compose [2.22.0](manuals/compose/releases/release-notes.md#2220) and later
 Compose cgroup:
-  requires: Docker Compose [2.15.0](manuals/compose/releases/release-notes.md#2200) and later
+  requires: Docker Compose [2.15.0](manuals/compose/releases/release-notes.md#2150) and later
 Compose develop:
   requires: Docker Compose [2.22.0](manuals/compose/releases/release-notes.md#2220) and later
 Compose driver opts:
@@ -279,6 +285,8 @@ Compose experimental:
 Compose file watch:
   requires: Docker Compose [2.22.0](manuals/compose/releases/release-notes.md#2220) and later
 Compose format:
+  requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) and later
+Compose gpus:
   requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) and later
 Compose include:
   requires: Docker Compose [2.20.3](manuals/compose/releases/release-notes.md#2203) and later

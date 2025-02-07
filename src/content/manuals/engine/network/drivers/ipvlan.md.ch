@@ -71,10 +71,10 @@ is no need for port mappings in these scenarios.
 
 @x
 The following table describes the driver-specific options that you can pass to
-`--option` when creating a network using the `ipvlan` driver.
+`--opt` when creating a network using the `ipvlan` driver.
 @y
 The following table describes the driver-specific options that you can pass to
-`--option` when creating a network using the `ipvlan` driver.
+`--opt` when creating a network using the `ipvlan` driver.
 @z
 
 @x

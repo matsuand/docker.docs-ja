@@ -174,35 +174,89 @@ Not yet. It protects all containers launched by users via `docker create` and
 @z
 
 @x
-Prior to Docker Desktop 4.30, it did not protect containers implicitly used by
-`docker build` with the `docker` build driver (the default driver). Starting
-with Docker Desktop 4.30, it protects such containers, except for Docker Desktop
-on WSL 2 (Windows hosts).
+For containers implicitly created by `docker build` as well as Docker
+Desktop's integrated Kubernetes, protection varies depending on the Docker
+Desktop version (see the following two FAQs).
 @y
-Prior to Docker Desktop 4.30, it did not protect containers implicitly used by
-`docker build` with the `docker` build driver (the default driver). Starting
-with Docker Desktop 4.30, it protects such containers, except for Docker Desktop
-on WSL 2 (Windows hosts).
+For containers implicitly created by `docker build` as well as Docker
+Desktop's integrated Kubernetes, protection varies depending on the Docker
+Desktop version (see the following two FAQs).
 @z
 
 @x
-Note that ECI always protects containers used by `docker build`, when using the
-[docker-container build driver](/manuals/build/builders/drivers/_index.md), since Docker
-Desktop 4.19 and on all supported platforms (Windows with WSL 2 or Hyper-V, Mac,
-and Linux).
+ECI does not yet protect Docker Desktop Extension containers and
+[Dev Environments containers](/manuals/desktop/features/dev-environments/_index.md).
 @y
-Note that ECI always protects containers used by `docker build`, when using the
-[docker-container build driver](manuals/build/builders/drivers/_index.md), since Docker
-Desktop 4.19 and on all supported platforms (Windows with WSL 2 or Hyper-V, Mac,
-and Linux).
+ECI does not yet protect Docker Desktop Extension containers and
+[Dev Environments containers](manuals/desktop/features/dev-environments/_index.md).
 @z
 
 @x
-ECI does not yet protect Docker Desktop Kubernetes pods, Extension containers,
-and [Dev Environments containers](/manuals/desktop/features/dev-environments/_index.md).
+### Does ECI protect containers implicitly used by `docker build`?
 @y
-ECI does not yet protect Docker Desktop Kubernetes pods, Extension containers,
-and [Dev Environments containers](manuals/desktop/features/dev-environments/_index.md).
+### Does ECI protect containers implicitly used by `docker build`?
+@z
+
+@x
+Prior to Docker Desktop 4.19, ECI did not protect containers used implicitly
+by `docker build` during the build process.
+@y
+Prior to Docker Desktop 4.19, ECI did not protect containers used implicitly
+by `docker build` during the build process.
+@z
+
+@x
+Since Docker Desktop 4.19, ECI protects containers used by `docker build`
+when using the [Docker container build driver](/manuals/build/builders/drivers/_index.md).
+@y
+Since Docker Desktop 4.19, ECI protects containers used by `docker build`
+when using the [Docker container build driver](manuals/build/builders/drivers/_index.md).
+@z
+
+@x
+In addition, since Docker Desktop 4.30, ECI also protects containers used by
+`docker build` when using the default "docker" build driver, on all
+platforms supported by Docker Desktop except Windows with WSL 2.
+@y
+In addition, since Docker Desktop 4.30, ECI also protects containers used by
+`docker build` when using the default "docker" build driver, on all
+platforms supported by Docker Desktop except Windows with WSL 2.
+@z
+
+@x
+### Does ECI protect Kubernetes in Docker Desktop?
+@y
+### Does ECI protect Kubernetes in Docker Desktop?
+@z
+
+@x
+Prior to Docker Desktop 4.38, ECI did not protect the Kubernetes cluster
+integrated in Docker Desktop.
+@y
+Prior to Docker Desktop 4.38, ECI did not protect the Kubernetes cluster
+integrated in Docker Desktop.
+@z
+
+@x
+Since Docker Desktop 4.38, ECI protects the integrated Kubernetes cluster
+when using the new **kind** provisioner (see [Deploy On Kubernetes](/manuals/desktop/features/kubernetes.md)).
+In this case, each node in the multi-node Kubernetes cluster is actually an ECI
+protected container. With ECI disabled, each node in the Kubernetes cluster is
+a less-secure fully privileged container.
+@y
+Since Docker Desktop 4.38, ECI protects the integrated Kubernetes cluster
+when using the new **kind** provisioner (see [Deploy On Kubernetes](manuals/desktop/features/kubernetes.md)).
+In this case, each node in the multi-node Kubernetes cluster is actually an ECI
+protected container. With ECI disabled, each node in the Kubernetes cluster is
+a less-secure fully privileged container.
+@z
+
+@x
+ECI does not protect the integrated Kubernetes cluster when using the
+older **Kubeadm** single-node cluster provisioner.
+@y
+ECI does not protect the integrated Kubernetes cluster when using the
+older **Kubeadm** single-node cluster provisioner.
 @z
 
 @x
@@ -212,10 +266,10 @@ and [Dev Environments containers](manuals/desktop/features/dev-environments/_ind
 @z
 
 @x
-No. Containers created prior to switching on ECI are not protected. Therefore, it is 
+No. Containers created prior to switching on ECI are not protected. Therefore, it is
 recommended you remove all containers prior to switching on ECI.
 @y
-No. Containers created prior to switching on ECI are not protected. Therefore, it is 
+No. Containers created prior to switching on ECI are not protected. Therefore, it is
 recommended you remove all containers prior to switching on ECI.
 @z
 

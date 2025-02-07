@@ -4,6 +4,7 @@
 bases = \
 	_index.md         \
 	best-practices.md \
+	custom-kernels.md \
 	use-wsl.md
 
 include $(top_srcdir)/build-aux/common.mk

@@ -77,10 +77,10 @@ Keep the following things in mind:
 
 @x
 The following table describes the driver-specific options that you can pass to
-`--option` when creating a network using the `macvlan` driver.
+`--opt` when creating a network using the `macvlan` driver.
 @y
 The following table describes the driver-specific options that you can pass to
-`--option` when creating a network using the `macvlan` driver.
+`--opt` when creating a network using the `macvlan` driver.
 @z
 
 @x

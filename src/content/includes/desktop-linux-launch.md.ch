@@ -11,9 +11,9 @@ To start Docker Desktop for Linux:
 @z
 
 @x
-1. Open your **Applications** menu in Gnome/KDE Desktop and search for **Docker Desktop**.
+1. Navigate to the Docker Desktop application in your Gnome/KDE Desktop.
 @y
-1. Open your **Applications** menu in Gnome/KDE Desktop and search for **Docker Desktop**.
+1. Navigate to the Docker Desktop application in your Gnome/KDE Desktop.
 @z
 
 @x

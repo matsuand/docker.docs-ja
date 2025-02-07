@@ -14,6 +14,7 @@ copyfiles = \
 	dashboard.webp                 \
 	gordon-run-ctr.png             \
 	hyperv-enabled.png             \
+	k8s-settings.png               \
 	notifications.svg              \
 	resource-saver-settings.png    \
 	resource-saver-status-bar.png  \

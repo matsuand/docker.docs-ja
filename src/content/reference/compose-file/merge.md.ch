@@ -130,15 +130,15 @@ While these types are modeled in a Compose file as a sequence, they have special
 | Attribute   | Unique key               |
 |-------------|--------------------------|
 | volumes     |  target                  |
-| secrets     |  source                  |
-| configs     |  source                  |
+| secrets     |  target                  |
+| configs     |  target                  |
 | ports       |  {ip, target, published, protocol}   |
 @y
 | Attribute   | Unique key               |
 |-------------|--------------------------|
 | volumes     |  target                  |
-| secrets     |  source                  |
-| configs     |  source                  |
+| secrets     |  target                  |
+| configs     |  target                  |
 | ports       |  {ip, target, published, protocol}   |
 @z
 

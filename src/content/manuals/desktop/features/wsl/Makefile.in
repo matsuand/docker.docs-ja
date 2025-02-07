@@ -240,6 +240,7 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md         \
 	best-practices.md \
+	custom-kernels.md \
 	use-wsl.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

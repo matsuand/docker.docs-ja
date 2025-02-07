@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: What is Docker Compose?
@@ -101,15 +102,7 @@ Follow the instructions to run the to-do list app on your system.
 2. Open a terminal and [clone this sample application](https://github.com/dockersamples/todo-list-app).
 @z
 
-@x
-    ```console
-    git clone https://github.com/dockersamples/todo-list-app 
-    ```
-@y
-    ```console
-    git clone https://github.com/dockersamples/todo-list-app 
-    ```
-@z
+% snip command...
 
 @x
 3. Navigate into the `todo-list-app` directory:
@@ -117,15 +110,7 @@ Follow the instructions to run the to-do list app on your system.
 3. Navigate into the `todo-list-app` directory:
 @z
 
-@x
-    ```console
-    cd todo-list-app
-    ```
-@y
-    ```console
-    cd todo-list-app
-    ```
-@z
+% snip command...
 
 @x
     Inside this directory, you'll find a file named `compose.yaml`. This YAML file is where all the magic happens! It defines all the services that make up your application, along with their configurations. Each service specifies its image, ports, volumes, networks, and any other settings necessary for its functionality. Take some time to explore the YAML file and familiarize yourself with its structure. 
@@ -139,15 +124,7 @@ Follow the instructions to run the to-do list app on your system.
 4. Use the [`docker compose up`](__SUBDIR__/reference/cli/docker/compose/up/) command to start the application:
 @z
 
-@x
-    ```console
-    docker compose up -d --build
-    ```
-@y
-    ```console
-    docker compose up -d --build
-    ```
-@z
+% snip command...
 
 @x
     When you run this command, you should see an output like this:
@@ -155,33 +132,7 @@ Follow the instructions to run the to-do list app on your system.
     When you run this command, you should see an output like this:
 @z
 
-@x
-    ```console
-    [+] Running 4/4
-    ✔ app 3 layers [⣿⣿⣿]      0B/0B            Pulled           7.1s
-      ✔ e6f4e57cc59e Download complete                          0.9s
-      ✔ df998480d81d Download complete                          1.0s
-      ✔ 31e174fedd23 Download complete                          2.5s
-    [+] Running 2/4
-      ⠸ Network todo-list-app_default           Created         0.3s
-      ⠸ Volume "todo-list-app_todo-mysql-data"  Created         0.3s
-      ✔ Container todo-list-app-app-1           Started         0.3s
-      ✔ Container todo-list-app-mysql-1         Started         0.3s
-    ```
-@y
-    ```console
-    [+] Running 4/4
-    ✔ app 3 layers [⣿⣿⣿]      0B/0B            Pulled           7.1s
-      ✔ e6f4e57cc59e Download complete                          0.9s
-      ✔ df998480d81d Download complete                          1.0s
-      ✔ 31e174fedd23 Download complete                          2.5s
-    [+] Running 2/4
-      ⠸ Network todo-list-app_default           Created         0.3s
-      ⠸ Volume "todo-list-app_todo-mysql-data"  Created         0.3s
-      ✔ Container todo-list-app-app-1           Started         0.3s
-      ✔ Container todo-list-app-mysql-1         Started         0.3s
-    ```
-@z
+% snip output...
 
 @x
     A lot happened here! A couple of things to call out:
@@ -249,15 +200,7 @@ Since this application was started using Docker Compose, it's easy to tear it al
 1. In the CLI, use the [`docker compose down`](__SUBDIR__/reference/cli/docker/compose/down/) command to remove everything:
 @z
 
-@x
-    ```console
-    docker compose down
-    ```
-@y
-    ```console
-    docker compose down
-    ```
-@z
+% snip command...
 
 @x
     You'll see output similar to the following:
@@ -265,21 +208,7 @@ Since this application was started using Docker Compose, it's easy to tear it al
     You'll see output similar to the following:
 @z
 
-@x
-    ```console
-    [+] Running 2/2
-    ✔ Container todo-list-app-mysql-1  Removed        2.9s
-    ✔ Container todo-list-app-app-1    Removed        0.1s
-    ✔ Network todo-list-app_default    Removed        0.1s
-    ```
-@y
-    ```console
-    [+] Running 2/2
-    ✔ Container todo-list-app-mysql-1  Removed        2.9s
-    ✔ Container todo-list-app-app-1    Removed        0.1s
-    ✔ Network todo-list-app_default    Removed        0.1s
-    ```
-@z
+% snip output...
 
 @x
     > **Volume persistence**
@@ -287,21 +216,15 @@ Since this application was started using Docker Compose, it's easy to tear it al
     > By default, volumes _aren't_ automatically removed when you tear down a Compose stack. The idea is that you might want the data back if you start the stack again.
     >
     > If you do want to remove the volumes, add the `--volumes` flag when running the `docker compose down` command:
-    >
-    > ```console
-    > docker compose down --volumes
-    > ```
 @y
     > **Volume persistence**
     >
     > By default, volumes _aren't_ automatically removed when you tear down a Compose stack. The idea is that you might want the data back if you start the stack again.
     >
     > If you do want to remove the volumes, add the `--volumes` flag when running the `docker compose down` command:
-    >
-    > ```console
-    > docker compose down --volumes
-    > ```
 @z
+
+% snip command...
 
 @x
 2. Alternatively, you can use the Docker Desktop GUI to remove the containers by selecting the application stack and selecting the **Delete** button.
