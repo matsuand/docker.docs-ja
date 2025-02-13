@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Local cache
 description: Manage build cache with Amazon S3 buckets
 keywords: build, buildx, cache, backend, local
-aliases:
-  - /build/building/cache/backends/local/
----
 @y
----
 title: Local cache
 description: Manage build cache with Amazon S3 buckets
 keywords: build, buildx, cache, backend, local
-aliases:
-  - /build/building/cache/backends/local/
----
 @z
 
 @x
@@ -196,10 +188,10 @@ for more information).
 @z
 
 @x
-When importing cache using `--cache-to`, you can specify the `digest` parameter
+When importing cache using `--cache-from`, you can specify the `digest` parameter
 to force loading an older version of the cache, for example:
 @y
-When importing cache using `--cache-to`, you can specify the `digest` parameter
+When importing cache using `--cache-from`, you can specify the `digest` parameter
 to force loading an older version of the cache, for example:
 @z
 

@@ -16,12 +16,6 @@ keywords: organization, settings, Admin Console
 @z
 
 @x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
-@z
-
-@x
 This section describes how to manage organization settings in the Docker Admin Console.
 @y
 This section describes how to manage organization settings in the Docker Admin Console.

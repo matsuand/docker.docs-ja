@@ -2,7 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-openapi: 3.0.0
+# yaml-language-server: $schema=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/schemas/v3.0/schema.yaml
+@y
+# yaml-language-server: $schema=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/schemas/v3.0/schema.yaml
+@z
+
+@x
+openapi: 3.0.3
 info:
   title: Docker HUB API
   version: beta
@@ -12,7 +18,7 @@ info:
   description: |
     Docker Hub is a service provided by Docker for finding and sharing container images with your team.
 @y
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   title: Docker HUB API
   version: beta
@@ -258,6 +264,8 @@ paths:
         - authentication
       summary: Create an authentication token
       operationId: PostUsersLogin
+      security: []
+      deprecated: true
       description: |
         Creates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.
 @y
@@ -269,6 +277,8 @@ paths:
         - authentication
       summary: Create an authentication token
       operationId: PostUsersLogin
+      security: []
+      deprecated: true
       description: |
         Creates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.
 @z
@@ -280,13 +290,15 @@ paths:
 @z
 
 @x
-        Most Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.
+        _**As of September 16, 2024, this route requires a personal access token (PAT) instead of a password if your organization has SSO enforced.**_
 @y
-        Most Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.
+        _**As of September 16, 2024, this route requires a personal access token (PAT) instead of a password if your organization has SSO enforced.**_
 @z
 
 @x
-        _**As of September 16, 2024, this route requires a PAT instead of a password if your organization has SSO enforced.**_
+        <div style="background-color:rgb(255, 165, 0, .25); padding:5px; border-radius:4px">
+          <strong>Deprecated</strong>: Use [<a href="#tag/authentication/operation/AuthCreateAccessToken">Create access token</a>] instead.
+        </div>
       requestBody:
         content:
           application/json:
@@ -313,10 +325,13 @@ paths:
         - authentication
       summary: Second factor authentication
       operationId: PostUsers2FALogin
+      security: []
       description: |
         When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/users/login` call.
 @y
-        _**As of September 16, 2024, this route requires a PAT instead of a password if your organization has SSO enforced.**_
+        <div style="background-color:rgb(255, 165, 0, .25); padding:5px; border-radius:4px">
+          <strong>Deprecated</strong>: Use [<a href="#tag/authentication/operation/AuthCreateAccessToken">Create access token</a>] instead.
+        </div>
       requestBody:
         content:
           application/json:
@@ -343,6 +358,7 @@ paths:
         - authentication
       summary: Second factor authentication
       operationId: PostUsers2FALogin
+      security: []
       description: |
         When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/users/login` call.
 @z
@@ -376,17 +392,103 @@ paths:
               schema:
                 $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
         '401':
-          description: Authentication failed or second factor required
+          description: Authentication failed
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/PostUsers2FALoginErrorResponse'
+  /v2/auth/token:
+    post:
+      tags:
+        - authentication
+      security: []
+      summary: Create access token
+      operationId: AuthCreateAccessToken
+      description: |
+        Creates and returns a short-lived access token in JWT format for use as a bearer when calling Docker APIs.
+@y
+        Most Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Users2FALoginRequest'
+        description: Login details.
+        required: true
+      responses:
+        '200':
+          description: Authentication successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsers2FALoginErrorResponse'
+  /v2/auth/token:
+    post:
+      tags:
+        - authentication
+      security: []
+      summary: Create access token
+      operationId: AuthCreateAccessToken
+      description: |
+        Creates and returns a short-lived access token in JWT format for use as a bearer when calling Docker APIs.
+@z
+
+@x
+        If successful, the access token returned should be used in the HTTP Authorization header like 
+        `Authorization: Bearer {access_token}`.
+@y
+        If successful, the access token returned should be used in the HTTP Authorization header like 
+        `Authorization: Bearer {access_token}`.
+@z
+
+@x
+        _**If your organization has SSO enforced, you must use a personal access token (PAT) instead of a password.**_
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: Request to create access token
+              type: object
+              required:
+                - identifier
+                - secret
+              properties:
+                identifier:
+                  description: |
+                    The identifier of the account to create an access token for. If using a password or personal access token,
+                    this must be a username. If using an organization access token, this must be an organization name.
+                  type: string
+                  example: myusername
+                secret:
+                  description: |
+                    The secret of the account to create an access token for. This can be a password, personal access token, or
+                    organization access token.
+                  type: string
+                  example: dckr_pat_124509ugsdjga93
+      responses:
+        '200':
+          description: Token created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthCreateTokenResponse'
+        '401':
+          description: Authentication failed
+          $ref: '#/components/responses/unauthorized'
   /v2/access-tokens:
     post:
       summary: Create a personal access token
       description: Creates and returns a personal access token.
       tags:
         - access-tokens
+      security:
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -409,6 +511,8 @@ paths:
       description: Returns a paginated list of personal access tokens.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       parameters:
         - in: query
           name: page
@@ -444,6 +548,8 @@ paths:
         Updates a personal access token partially. You can either update the token's label or enable/disable it.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -466,6 +572,8 @@ paths:
       description: Returns a personal access token by UUID.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -489,6 +597,8 @@ paths:
         Deletes a personal access token permanently. This cannot be undone.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: A successful response.
@@ -501,6 +611,8 @@ paths:
       summary: Returns list of audit log events
       description: Get audit log events for a given namespace.
       operationId: AuditLogs_GetAuditLogs
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: A successful response.
@@ -609,6 +721,8 @@ paths:
       description: |
         Get audit log actions for a namespace to be used as a filter for querying audit events.
       operationId: AuditLogs_GetAuditActions
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: A successful response.
@@ -706,6 +820,8 @@ paths:
         Returns organization settings by name.
       tags:
         - org-settings
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -724,33 +840,47 @@ paths:
       description: |
         Updates an organization's settings. Some settings are only used when the organization is on a business plan.
 @y
-        Most Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.
+        _**If your organization has SSO enforced, you must use a personal access token (PAT) instead of a password.**_
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Users2FALoginRequest'
-        description: Login details.
-        required: true
+              description: Request to create access token
+              type: object
+              required:
+                - identifier
+                - secret
+              properties:
+                identifier:
+                  description: |
+                    The identifier of the account to create an access token for. If using a password or personal access token,
+                    this must be a username. If using an organization access token, this must be an organization name.
+                  type: string
+                  example: myusername
+                secret:
+                  description: |
+                    The secret of the account to create an access token for. This can be a password, personal access token, or
+                    organization access token.
+                  type: string
+                  example: dckr_pat_124509ugsdjga93
       responses:
         '200':
-          description: Authentication successful
+          description: Token created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
+                $ref: '#/components/schemas/AuthCreateTokenResponse'
         '401':
-          description: Authentication failed or second factor required
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PostUsers2FALoginErrorResponse'
+          description: Authentication failed
+          $ref: '#/components/responses/unauthorized'
   /v2/access-tokens:
     post:
       summary: Create a personal access token
       description: Creates and returns a personal access token.
       tags:
         - access-tokens
+      security:
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -773,6 +903,8 @@ paths:
       description: Returns a paginated list of personal access tokens.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       parameters:
         - in: query
           name: page
@@ -808,6 +940,8 @@ paths:
         Updates a personal access token partially. You can either update the token's label or enable/disable it.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -830,6 +964,8 @@ paths:
       description: Returns a personal access token by UUID.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -853,6 +989,8 @@ paths:
         Deletes a personal access token permanently. This cannot be undone.
       tags:
         - access-tokens
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: A successful response.
@@ -865,6 +1003,8 @@ paths:
       summary: Returns list of audit log events
       description: Get audit log events for a given namespace.
       operationId: AuditLogs_GetAuditLogs
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: A successful response.
@@ -973,6 +1113,8 @@ paths:
       description: |
         Get audit log actions for a namespace to be used as a filter for querying audit events.
       operationId: AuditLogs_GetAuditActions
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: A successful response.
@@ -1070,6 +1212,8 @@ paths:
         Returns organization settings by name.
       tags:
         - org-settings
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -1100,6 +1244,8 @@ paths:
         - `restricted_images`
       tags:
         - org-settings
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -1137,6 +1283,8 @@ paths:
       summary: List repository tags
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       parameters:
         - in: query
           name: page
@@ -1161,6 +1309,8 @@ paths:
       summary: Check repository tags
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: Repository contains tags
@@ -1177,6 +1327,8 @@ paths:
       summary: Read repository tag
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           $ref: '#/components/responses/get_tag'
@@ -1188,6 +1340,8 @@ paths:
       summary: Check repository tag
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: Repository tag exists
@@ -1211,6 +1365,8 @@ paths:
         Returns a list of members for an organization"
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: List of members
@@ -1238,6 +1394,8 @@ paths:
         Export members of an organization as a CSV
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: Exported members
@@ -1309,6 +1467,8 @@ paths:
         ***Only users in the "owners" group of the organization can use this endpoint.***
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -1345,6 +1505,8 @@ paths:
         Removes the member from the org, ie. all groups in the org, unless they're the last owner
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: Member removed successfully
@@ -1366,6 +1528,8 @@ paths:
         Return all pending invites for a given org, only team owners can call this endpoint
       tags:
         - invites
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: ''
@@ -1392,6 +1556,8 @@ paths:
       summary: Get groups of an organization
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/page_size'
@@ -1436,6 +1602,8 @@ paths:
       description: Create a new group within an organization.
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -1469,6 +1637,8 @@ paths:
       summary: Get a group of an organization
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: ''
@@ -1486,6 +1656,8 @@ paths:
       summary: Update the details for an organization group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -1514,6 +1686,8 @@ paths:
       summary: Update some details for an organization group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -1540,6 +1714,8 @@ paths:
       summary: Delete an organization group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: Group deleted successfully
@@ -1552,6 +1728,8 @@ paths:
   /v2/orgs/{org_name}/groups/{group_name}/members:
     x-audience: public
     get:
+      security: 
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/org_name'
         - $ref: '#/components/parameters/group_name'
@@ -1601,6 +1779,8 @@ paths:
       summary: Adds a member to a group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         $ref: '#/components/requestBodies/add_member_to_org_group'
       responses:
@@ -1624,6 +1804,8 @@ paths:
       summary: Removes a user from a group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: User removed successfully
@@ -1647,6 +1829,8 @@ paths:
         Mark the invite as cancelled so it doesn't show up on the list of pending invites
       tags:
         - invites
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: ''
@@ -1670,6 +1854,8 @@ paths:
         Resend a pending invite to the user, any org owner can resend an invite
       tags:
         - invites
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: ''
@@ -1691,6 +1877,8 @@ paths:
         - invites
       requestBody:
         $ref: '#/components/requestBodies/bulk_invite_request'
+      security: 
+        - bearerAuth: []
       responses:
         '202':
           description: Accepted
@@ -1819,6 +2007,8 @@ paths:
         - `restricted_images`
       tags:
         - org-settings
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -1856,6 +2046,8 @@ paths:
       summary: List repository tags
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       parameters:
         - in: query
           name: page
@@ -1880,6 +2072,8 @@ paths:
       summary: Check repository tags
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: Repository contains tags
@@ -1896,6 +2090,8 @@ paths:
       summary: Read repository tag
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           $ref: '#/components/responses/get_tag'
@@ -1907,6 +2103,8 @@ paths:
       summary: Check repository tag
       tags:
         - repositories
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: Repository tag exists
@@ -1930,6 +2128,8 @@ paths:
         Returns a list of members for an organization"
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: List of members
@@ -1957,6 +2157,8 @@ paths:
         Export members of an organization as a CSV
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: Exported members
@@ -2028,6 +2230,8 @@ paths:
         ***Only users in the "owners" group of the organization can use this endpoint.***
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       requestBody:
         required: true
         content:
@@ -2064,6 +2268,8 @@ paths:
         Removes the member from the org, ie. all groups in the org, unless they're the last owner
       tags:
         - orgs
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: Member removed successfully
@@ -2085,6 +2291,8 @@ paths:
         Return all pending invites for a given org, only team owners can call this endpoint
       tags:
         - invites
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: ''
@@ -2111,6 +2319,8 @@ paths:
       summary: Get groups of an organization
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/page'
         - $ref: '#/components/parameters/page_size'
@@ -2155,6 +2365,8 @@ paths:
       description: Create a new group within an organization.
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -2188,6 +2400,8 @@ paths:
       summary: Get a group of an organization
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       responses:
         '200':
           description: ''
@@ -2205,6 +2419,8 @@ paths:
       summary: Update the details for an organization group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -2233,6 +2449,8 @@ paths:
       summary: Update some details for an organization group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         content:
           application/json:
@@ -2259,6 +2477,8 @@ paths:
       summary: Delete an organization group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: Group deleted successfully
@@ -2271,6 +2491,8 @@ paths:
   /v2/orgs/{org_name}/groups/{group_name}/members:
     x-audience: public
     get:
+      security: 
+        - bearerAuth: []
       parameters:
         - $ref: '#/components/parameters/org_name'
         - $ref: '#/components/parameters/group_name'
@@ -2320,6 +2542,8 @@ paths:
       summary: Adds a member to a group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       requestBody:
         $ref: '#/components/requestBodies/add_member_to_org_group'
       responses:
@@ -2343,6 +2567,8 @@ paths:
       summary: Removes a user from a group
       tags:
         - groups
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: User removed successfully
@@ -2366,6 +2592,8 @@ paths:
         Mark the invite as cancelled so it doesn't show up on the list of pending invites
       tags:
         - invites
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: ''
@@ -2389,6 +2617,8 @@ paths:
         Resend a pending invite to the user, any org owner can resend an invite
       tags:
         - invites
+      security: 
+        - bearerAuth: []
       responses:
         '204':
           description: ''
@@ -2410,6 +2640,8 @@ paths:
         - invites
       requestBody:
         $ref: '#/components/requestBodies/bulk_invite_request'
+      security: 
+        - bearerAuth: []
       responses:
         '202':
           description: Accepted
@@ -2962,6 +3194,14 @@ components:
             The password or personal access token (PAT) of the Docker Hub account to authenticate with.
           type: string
           example: p@ssw0rd
+    AuthCreateTokenResponse:
+      description: successful access token response
+      type: object
+      properties:
+        access_token:
+          description: The created access token. This expires in 10 minutes.
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
     PostUsersLoginSuccessResponse:
       description: successful user login response
       type: object
@@ -4067,6 +4307,14 @@ components:
               member:
                 type: string
                 example: jonsnow
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    bearerSCIMAuth:
+      type: http
+      scheme: bearer
 x-tagGroups:
   - name: General
     tags:
@@ -4475,6 +4723,14 @@ components:
             The password or personal access token (PAT) of the Docker Hub account to authenticate with.
           type: string
           example: p@ssw0rd
+    AuthCreateTokenResponse:
+      description: successful access token response
+      type: object
+      properties:
+        access_token:
+          description: The created access token. This expires in 10 minutes.
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
     PostUsersLoginSuccessResponse:
       description: successful user login response
       type: object
@@ -5580,6 +5836,14 @@ components:
               member:
                 type: string
                 example: jonsnow
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    bearerSCIMAuth:
+      type: http
+      scheme: bearer
 x-tagGroups:
   - name: General
     tags:

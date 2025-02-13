@@ -80,12 +80,6 @@ Key benefits include:
 @z
 
 @x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
-@z
-
-@x
 To access Insights, you must contact your Customer Success Manager to have the
 feature enabled. Once the feature is enabled, access Insights using the following
 steps:

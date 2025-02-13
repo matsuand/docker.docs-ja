@@ -7,10 +7,7 @@ Activity logs:
   for: Administrators
 Admin Console:
   subscription: [Business]
-  availability: Early Access
   for: Administrators
-Admin console early access:
-  availability: The Admin Console is in Early Access
 Admin orgs:
   subscription: [Team, Business]
   for: Administrators
@@ -166,6 +163,7 @@ Jamf Pro:
 Load by default:
   requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
 MSI installer:
+  subscription: [Business]
   requires: Docker Desktop [4.32](/manuals/desktop/release-notes.md#4320) and later
   for: Administrators
 OATs:
@@ -206,10 +204,7 @@ Activity logs:
   for: Administrators
 Admin Console:
   subscription: [Business]
-  availability: Early Access
   for: Administrators
-Admin console early access:
-  availability: The Admin Console is in Early Access
 Admin orgs:
   subscription: [Team, Business]
   for: Administrators
@@ -365,6 +360,7 @@ Jamf Pro:
 Load by default:
   requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) and later
 MSI installer:
+  subscription: [Business]
   requires: Docker Desktop [4.32](manuals/desktop/release-notes.md#4320) and later
   for: Administrators
 OATs:

@@ -54,12 +54,6 @@ Owners can also see the activity logs for their repository if the repository is 
 @z
 
 @x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
-@z
-
-@x
 {{< tabs >}}
 {{< tab name="Docker Hub" >}}
 @y

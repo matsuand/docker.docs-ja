@@ -22,12 +22,6 @@ linkTitle: Manage
 @z
 
 @x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
-@z
-
-@x
 > [!NOTE]
 >
 > You must have a [company](/admin/company/) to manage more than one organization.
@@ -50,12 +44,6 @@ linkTitle: Manage
 @z
 
 @x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
-@z
-
-@x
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
 @y
@@ -95,12 +83,6 @@ linkTitle: Manage
 ## Manage SSO connections
 @y
 ## Manage SSO connections
-@z
-
-@x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
 @z
 
 @x

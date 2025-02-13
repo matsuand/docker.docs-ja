@@ -26,12 +26,6 @@ Get started creating a single sign-on (SSO) connection for your organization or 
 @z
 
 @x
-{{< summary-bar feature_name="Admin console early access" >}}
-@y
-{{< summary-bar feature_name="Admin console early access" >}}
-@z
-
-@x
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
 @y
