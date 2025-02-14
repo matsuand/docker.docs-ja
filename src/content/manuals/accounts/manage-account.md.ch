@@ -2,19 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Manage an account
-weight: 20
-description: Learn how to manage settings for your Docker account.
-keywords: accounts, docker ID, account settings, account management, docker home
----
 @y
----
 title: Manage an account
-weight: 20
+@z
+
+@x
 description: Learn how to manage settings for your Docker account.
 keywords: accounts, docker ID, account settings, account management, docker home
----
+@y
+description: Learn how to manage settings for your Docker account.
+keywords: accounts, docker ID, account settings, account management, docker home
 @z
 
 @x
@@ -50,9 +48,9 @@ You can centrally manage the settings for your Docker account using Docker Home.
 @z
 
 @x
-From the Account settings page, you can take any of the following actions.
+From the Account Center page, you can take any of the following actions.
 @y
-From the Account settings page, you can take any of the following actions.
+From the Account Center page, you can take any of the following actions.
 @z
 
 @x
@@ -100,9 +98,9 @@ Make your changes here, then select **Save** to save your settings.
 @z
 
 @x
-To update your email address, select the arrow icon.
+To update your email address, select **Email**.
 @y
-To update your email address, select the arrow icon.
+To update your email address, select **Email**.
 @z
 
 @x
@@ -134,9 +132,9 @@ You can change your password by initiating a password reset via email.
 @z
 
 @x
-To change your password, select **Reset password**.
+To change your password, select **Password** and then **Reset password**.
 @y
-To change your password, select **Reset password**.
+To change your password, select **Password** and then **Reset password**.
 @z
 
 @x
@@ -152,20 +150,18 @@ Follow the instructions in the password reset email.
 @z
 
 @x
-You can manage the security settings for your account in Docker Home.
-@y
-You can manage the security settings for your account in Docker Home.
-@z
-
-@x
+To update your two-factor authentication (2FA) settings, select **2FA**.
 For information on two-factor authentication (2FA) for your account, see [Enable two-factor authentication](../security/for-developers/2fa/_index.md) to get started.
 @y
+To update your two-factor authentication (2FA) settings, select **2FA**.
 For information on two-factor authentication (2FA) for your account, see [Enable two-factor authentication](../security/for-developers/2fa/_index.md) to get started.
 @z
 
 @x
+To manage personal access tokens, select **Personal access tokens**.
 For information on personal access tokens, see [Create and manage access tokens](../security/for-developers/access-tokens.md).
 @y
+To manage personal access tokens, select **Personal access tokens**.
 For information on personal access tokens, see [Create and manage access tokens](../security/for-developers/access-tokens.md).
 @z
 
@@ -176,19 +172,17 @@ For information on personal access tokens, see [Create and manage access tokens]
 @z
 
 @x
-You can take administrative actions for your account in Docker Home.
-@y
-You can take administrative actions for your account in Docker Home.
-@z
-
-@x
+To convert your account into an organization, select **Convert**.
 For more information on converting your account, see [Convert an account into an organization](../admin/organization/convert-account.md).
 @y
+To convert your account into an organization, select **Convert**.
 For more information on converting your account, see [Convert an account into an organization](../admin/organization/convert-account.md).
 @z
 
 @x
+To deactivate your account, select **Deactivate**.
 For information on deactivating your account, see [Deactivating a user account](./deactivate-user-account.md).
 @y
+To deactivate your account, select **Deactivate**.
 For information on deactivating your account, see [Deactivating a user account](./deactivate-user-account.md).
 @z

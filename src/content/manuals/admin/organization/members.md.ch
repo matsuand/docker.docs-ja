@@ -372,6 +372,16 @@ To add a member to a team with the Admin Console:
 @z
 
 @x
+> [!NOTE]
+>
+> If your organization uses single sign-on (SSO) with [SCIM](/manuals/security/for-admins/provisioning/scim.md) enabled, you should remove members from your identity provider (IdP). This will automatically remove members from Docker. If SCIM is disabled, you must manually manage members in Docker.
+@y
+> [!NOTE]
+>
+> If your organization uses single sign-on (SSO) with [SCIM](manuals/security/for-admins/provisioning/scim.md) enabled, you should remove members from your identity provider (IdP). This will automatically remove members from Docker. If SCIM is disabled, you must manually manage members in Docker.
+@z
+
+@x
 Organization owners can remove a member from a team in Docker Hub or Admin Console. Removing the member from the team will revoke their access to the permitted resources.
 @y
 Organization owners can remove a member from a team in Docker Hub or Admin Console. Removing the member from the team will revoke their access to the permitted resources.

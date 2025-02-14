@@ -26,6 +26,224 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.33.0
+@y
+## 2.33.0
+@z
+
+@x
+{{< release-date date="2025-02-13" >}}
+@y
+{{< release-date date="2025-02-13" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduced a hint to promote the use of [Bake](/build/bake/)
+- Introduced support for the `additional_context` attribute referencing another service
+- Added support for `BUILDKIT_PROGRESS`
+- Compose now warns you when a published Compose application includes environment variables
+- Added a `--with-env` flag to publish a Compose application with environment variables
+- Updated `ls --quiet` help description
+- Fixed multiple issues delegating build to Bake
+- Updated help in `stats` command
+- Fixed support for "builtin" seccomp profile
+- Fixed support for `watch` with multiple services
+- Removed exit code per error type used by legacy metrics system
+- Fixed test coverage for `compatibility`
+- Removed raw os.Args sent to OpenTelemetry
+- Enabled copyloopvar linter
+- Fixed provenance for binaries and generate SBOM
+- Main branch for docs upstream validation is now used
+- Added codeowners file
+- Added Docker Engine v28.x to the test-matrix
+@y
+- Introduced a hint to promote the use of [Bake](__SUBDIR__/build/bake/)
+- Introduced support for the `additional_context` attribute referencing another service
+- Added support for `BUILDKIT_PROGRESS`
+- Compose now warns you when a published Compose application includes environment variables
+- Added a `--with-env` flag to publish a Compose application with environment variables
+- Updated `ls --quiet` help description
+- Fixed multiple issues delegating build to Bake
+- Updated help in `stats` command
+- Fixed support for "builtin" seccomp profile
+- Fixed support for `watch` with multiple services
+- Removed exit code per error type used by legacy metrics system
+- Fixed test coverage for `compatibility`
+- Removed raw os.Args sent to OpenTelemetry
+- Enabled copyloopvar linter
+- Fixed provenance for binaries and generate SBOM
+- Main branch for docs upstream validation is now used
+- Added codeowners file
+- Added Docker Engine v28.x to the test-matrix
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: Bump compose-go v2.4.8
+- Dependencies upgrade: Bump buildx v0.20.1
+- Dependencies upgrade: Bump docker to v27.5.1
+- Dependencies upgrade: Bump golangci-lint to v1.63.4
+- Dependencies upgrade: Bump golang.org/x/sys from 0.28.0 to 0.30.0
+- Dependencies upgrade: Bump github.com/moby/term v0.5.2
+- Dependencies upgrade: Bump github.com/otiai10/copy from 1.14.0 to 1.14.1
+- Dependencies upgrade: Bump github.com/jonboulle/clockwork from 0.4.0 to 0.5.0
+- Dependencies upgrade: Bump github.com/spf13/pflag from 1.0.5 to 1.0.6
+- Dependencies upgrade: Bump golang.org/x/sync from 0.10.0 to 0.11.0
+- Dependencies upgrade: Bump gotest.tools/v3 from 3.5.1 to 3.5.2
+@y
+- Dependencies upgrade: Bump compose-go v2.4.8
+- Dependencies upgrade: Bump buildx v0.20.1
+- Dependencies upgrade: Bump docker to v27.5.1
+- Dependencies upgrade: Bump golangci-lint to v1.63.4
+- Dependencies upgrade: Bump golang.org/x/sys from 0.28.0 to 0.30.0
+- Dependencies upgrade: Bump github.com/moby/term v0.5.2
+- Dependencies upgrade: Bump github.com/otiai10/copy from 1.14.0 to 1.14.1
+- Dependencies upgrade: Bump github.com/jonboulle/clockwork from 0.4.0 to 0.5.0
+- Dependencies upgrade: Bump github.com/spf13/pflag from 1.0.5 to 1.0.6
+- Dependencies upgrade: Bump golang.org/x/sync from 0.10.0 to 0.11.0
+- Dependencies upgrade: Bump gotest.tools/v3 from 3.5.1 to 3.5.2
+@z
+
+@x
+## 2.32.4
+@y
+## 2.32.4
+@z
+
+@x
+{{< release-date date="2025-01-16" >}}
+@y
+{{< release-date date="2025-01-16" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue where the Compose version did not display properly when using `docker compose version`
+@y
+- Fixed an issue where the Compose version did not display properly when using `docker compose version`
+@z
+
+@x
+## 2.32.3
+@y
+## 2.32.3
+@z
+
+@x
+{{< release-date date="2025-01-13" >}}
+@y
+{{< release-date date="2025-01-13" >}}
+@z
+
+@x
+> [!NOTE]
+>
+> Binaries from the Compose GitHub repository may not display the version number properly. If you rely on `docker compose version`
+> in your development or CI processes, upgrade to Compose version 2.32.4.
+@y
+> [!NOTE]
+>
+> Binaries from the Compose GitHub repository may not display the version number properly. If you rely on `docker compose version`
+> in your development or CI processes, upgrade to Compose version 2.32.4.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue where Compose would override a service-level MAC address with the main network MAC address
+- Fixed a log rendering issue during concurrent builds
+@y
+- Fixed an issue where Compose would override a service-level MAC address with the main network MAC address
+- Fixed a log rendering issue during concurrent builds
+@z
+
+@x
+## 2.32.2
+@y
+## 2.32.2
+@z
+
+@x
+{{< release-date date="2025-01-07" >}}
+@y
+{{< release-date date="2025-01-07" >}}
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.4.7
+- Dependencies upgrade: bump golang to v1.22.10
+@y
+- Dependencies upgrade: bump compose-go to v2.4.7
+- Dependencies upgrade: bump golang to v1.22.10
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added `--pull` flag to the `docker compose run` command
+- Fixed a bug which meant the `restart` action of `watch` mode didn't monitor bind mounts
+- Fixed an issue recreating containers when using anonymous volumes
+@y
+- Added `--pull` flag to the `docker compose run` command
+- Fixed a bug which meant the `restart` action of `watch` mode didn't monitor bind mounts
+- Fixed an issue recreating containers when using anonymous volumes
+@z
+
+@x
+## 2.32.1
+@y
+## 2.32.1
+@z
+
+@x
+{{< release-date date="2024-12-16" >}}
+@y
+{{< release-date date="2024-12-16" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed a bug recreating containers when not needed
+@y
+- Fixed a bug recreating containers when not needed
+@z
+
+@x
 ## 2.32.0
 @y
 ## 2.32.0

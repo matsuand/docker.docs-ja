@@ -230,6 +230,36 @@ Docker Desktop does not require any particular Linux distributions to be install
 @z
 
 @x
+## WSL 2 security in Docker Desktop
+@y
+## WSL 2 security in Docker Desktop
+@z
+
+@x
+Docker Desktop’s WSL 2 integration operates within the existing security model of WSL and does not introduce additional security risks beyond standard WSL behavior.
+@y
+Docker Desktop’s WSL 2 integration operates within the existing security model of WSL and does not introduce additional security risks beyond standard WSL behavior.
+@z
+
+@x
+Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions.
+@y
+Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions.
+@z
+
+@x
+WSL is designed to facilitate interoperability between Windows and Linux environments. Its file system is accessible from the Windows host `\\wsl$`, meaning Windows processes can read and modify files within WSL. This behavior is not specific to Docker Desktop, but rather a core aspect of WSL itself.
+@y
+WSL is designed to facilitate interoperability between Windows and Linux environments. Its file system is accessible from the Windows host `\\wsl$`, meaning Windows processes can read and modify files within WSL. This behavior is not specific to Docker Desktop, but rather a core aspect of WSL itself.
+@z
+
+@x
+For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
+@y
+For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
+@z
+
+@x
 ## Additional resources
 @y
 ## Additional resources

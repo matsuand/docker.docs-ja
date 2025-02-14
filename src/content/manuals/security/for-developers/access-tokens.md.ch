@@ -68,9 +68,9 @@ any time.
 @z
 
 @x
-3. In the **Security** section, select **Personal access tokens**.
+3. Select **Personal access tokens**.
 @y
-3. In the **Security** section, select **Personal access tokens**.
+3. Select **Personal access tokens**.
 @z
 
 @x
@@ -184,25 +184,35 @@ You can rename, activate, deactivate, or delete a token as needed. You can manag
 @z
 
 @x
-3. In the **Security** section, select **Personal access tokens**.
-   This page shows an overview of all your tokens, and lists if the token was generated manually or if it was [auto-generated](#auto-generated-tokens). You can also view the number
-   of tokens that are activated and deactivated in the toolbar.
+3. Select **Personal access tokens**.
 @y
-3. In the **Security** section, select **Personal access tokens**.
-   This page shows an overview of all your tokens, and lists if the token was generated manually or if it was [auto-generated](#auto-generated-tokens). You can also view the number
-   of tokens that are activated and deactivated in the toolbar.
+3. Select **Personal access tokens**.
 @z
 
 @x
-4. Select the actions menu on the far right of a token row, then select **Deactivate**, **Edit**, or **Delete** to modify the token.
+   This page shows an overview of all your
+   tokens, and lists if the token was generated manually or if it was
+   [auto-generated](#auto-generated-tokens). You can also view the scope of the
+   tokens, which tokens are activate and inactive, when they were created, when
+   they were last used, and their expiration date.
 @y
-4. Select the actions menu on the far right of a token row, then select **Deactivate**, **Edit**, or **Delete** to modify the token.
+   This page shows an overview of all your
+   tokens, and lists if the token was generated manually or if it was
+   [auto-generated](#auto-generated-tokens). You can also view the scope of the
+   tokens, which tokens are activate and inactive, when they were created, when
+   they were last used, and their expiration date.
 @z
 
 @x
-5. After modifying the token, select **Save token**.
+4. Select the actions menu on the far right of a token row, then select **Deactivate** or **Activate**, **Edit**, or **Delete** to modify the token.
 @y
-5. After modifying the token, select **Save token**.
+4. Select the actions menu on the far right of a token row, then select **Deactivate** or **Activate**, **Edit**, or **Delete** to modify the token.
+@z
+
+@x
+5. After editing the token, select **Save token**.
+@y
+5. After editing the token, select **Save token**.
 @z
 
 @x

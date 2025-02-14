@@ -162,9 +162,9 @@ Consider the following effects of converting your account:
 @z
 
 @x
-5. In the **Account management** section, select **Convert account**.
+5. Select **Convert**.
 @y
-5. In the **Account management** section, select **Convert account**.
+5. Select **Convert**.
 @z
 
 @x
@@ -174,13 +174,13 @@ Consider the following effects of converting your account:
 @z
 
 @x
-7. Enter a **Docker ID** to set an organization owner. This is the user account that will manage the organization, and the only way to access the organization settings after conversion. You cannot use the same Docker ID as the account you are trying to convert.
+7. Enter a **Username of new owner** to set an organization owner. This is the user account that will manage the organization, and the only way to access the organization settings after conversion. You cannot use the same Docker ID as the account you are trying to convert.
 @y
-7. Enter a **Docker ID** to set an organization owner. This is the user account that will manage the organization, and the only way to access the organization settings after conversion. You cannot use the same Docker ID as the account you are trying to convert.
+7. Enter a **Username of new owner** to set an organization owner. This is the user account that will manage the organization, and the only way to access the organization settings after conversion. You cannot use the same Docker ID as the account you are trying to convert.
 @z
 
 @x
-8. Select **Confirm and purchase** to confirm. The new owner receives a notification email. Use that owner account to sign in and manage the new organization.
+8. Select **Confirm**. The new owner receives a notification email. Use that owner account to sign in and manage the new organization.
 @y
-8. Select **Confirm and purchase** to confirm. The new owner receives a notification email. Use that owner account to sign in and manage the new organization.
+8. Select **Confirm**. The new owner receives a notification email. Use that owner account to sign in and manage the new organization.
 @z

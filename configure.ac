@@ -88,12 +88,14 @@ AC_CONFIG_FILES([
 	src/content/guides/bun/Makefile
 	src/content/guides/compose-bake/Makefile
 	src/content/guides/cpp/Makefile
+	src/content/guides/deno/Makefile
 	src/content/guides/docker-build-cloud/Makefile
 	src/content/guides/docker-compose/Makefile
 	src/content/guides/docker-scout/Makefile
 	src/content/guides/dotnet/Makefile
 	src/content/guides/frameworks/Makefile
 	src/content/guides/frameworks/laravel/Makefile
+	src/content/guides/genai-leveraging-rag/Makefile
 	src/content/guides/genai-pdf-bot/Makefile
 	src/content/guides/genai-video-bot/Makefile
 	src/content/guides/genai-video-bot/images/Makefile
