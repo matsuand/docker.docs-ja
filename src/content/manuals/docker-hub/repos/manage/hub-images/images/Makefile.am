@@ -2,6 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 copyfiles = \
+	image-index.svg      \
 	oci-artifact.png     \
 	oci-helm-tagview.png \
 	oci-helm.png         \

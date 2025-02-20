@@ -55,6 +55,10 @@ Buildx Git labels:
   requires: Docker Buildx [0.10.0](/manuals/build/release-notes.md#0100) and later
 Buildx mem profile:
   requires: Docker Buildx [0.18.0](/manuals/build/release-notes.md#0180) and later
+Buildx metadata provenance:
+  requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
+Buildx metadata warnings:
+  requires: Docker Buildx [0.16.0](/manuals/build/release-notes.md#0160) and later
 Buildx no default:
   requires: Docker Buildx [0.10.4](/manuals/build/release-notes.md#0104) and later
 Cache backend API:
@@ -150,6 +154,8 @@ GitHub Actions cache:
 Hardened Docker Desktop:
   subscription: [Business]
   for: Administrators
+Image management:
+  availability: Beta
 Import builds:
   availability: Beta
   requires: Docker Desktop [4.31](/manuals/desktop/release-notes.md#4310) and later
@@ -252,6 +258,10 @@ Buildx Git labels:
   requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) and later
 Buildx mem profile:
   requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) and later
+Buildx metadata provenance:
+  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) and later
+Buildx metadata warnings:
+  requires: Docker Buildx [0.16.0](manuals/build/release-notes.md#0160) and later
 Buildx no default:
   requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) and later
 Cache backend API:
@@ -347,6 +357,8 @@ GitHub Actions cache:
 Hardened Docker Desktop:
   subscription: [Business]
   for: Administrators
+Image management:
+  availability: Beta
 Import builds:
   availability: Beta
   requires: Docker Desktop [4.31](manuals/desktop/release-notes.md#4310) and later

@@ -127,12 +127,128 @@ tags:
 
 @x
       To learn more about the features available in each plan and to upgrade your existing plan, see [Docker Pricing](https://www.docker.com/pricing).
+@y
+      To learn more about the features available in each plan and to upgrade your existing plan, see [Docker Pricing](https://www.docker.com/pricing).
+@z
+
+@x
+      # Types
+@y
+      # Types
+@z
+
+@x
+      The Docker Hub API supports the following authentication types.
+@y
+      The Docker Hub API supports the following authentication types.
+@z
+
+@x
+      You must use each authentication type with the [Create access token](#tag/authentication-api/operation/AuthCreateAccessToken) route to obtain a bearer token.
+@y
+      You must use each authentication type with the [Create access token](#tag/authentication-api/operation/AuthCreateAccessToken) route to obtain a bearer token.
+@z
+
+@x
+      ## Password
+      Using a username and password is the most powerful, yet least secure way 
+      to authenticate with Docker as a user. It allows access to resources 
+      for the user without scopes. 
+@y
+      ## Password
+      Using a username and password is the most powerful, yet least secure way 
+      to authenticate with Docker as a user. It allows access to resources 
+      for the user without scopes. 
+@z
+
+@x
+      _In general, it is recommended to use a personal access token (PAT) instead._
+@y
+      _In general, it is recommended to use a personal access token (PAT) instead._
+@z
+
+@x
+      _**The password authentication type is not available if your organization has SSO enforced.**_
+@y
+      _**The password authentication type is not available if your organization has SSO enforced.**_
+@z
+
+@x
+      ## Personal Access Token (PAT)
+      Using a username and PAT is the most secure way to authenticate with 
+      Docker as a user. PATs are scoped to specific resources and scopes.
+@y
+      ## Personal Access Token (PAT)
+      Using a username and PAT is the most secure way to authenticate with 
+      Docker as a user. PATs are scoped to specific resources and scopes.
+@z
+
+@x
+      Currently, a PAT is a more secure password due to limited functionality. 
+      In the future, we may add fine-grained access like organization 
+      access tokens for enhanced usage and security.
+@y
+      Currently, a PAT is a more secure password due to limited functionality. 
+      In the future, we may add fine-grained access like organization 
+      access tokens for enhanced usage and security.
+@z
+
+@x
+      ## Organization Access Token (OAT)
+      Organization access tokens are scoped to specific resources and scopes 
+      in an organization. They are managed by organization owners. 
+@y
+      ## Organization Access Token (OAT)
+      Organization access tokens are scoped to specific resources and scopes 
+      in an organization. They are managed by organization owners. 
+@z
+
+@x
+      These tokens are meant for automation and are not meant to be used by 
+      users.
+@y
+      These tokens are meant for automation and are not meant to be used by 
+      users.
+@z
+
+@x
+      # Labels
+@y
+      # Labels
+@z
+
+@x
+      These labels will show up on routes in this reference that allow for use of bearer 
+      tokens issued from them.
+@y
+      These labels will show up on routes in this reference that allow for use of bearer 
+      tokens issued from them.
+@z
+
+@x
+      <span class="pat"></span>
+      <span class="oat"></span>
+  - name: authentication-api
+    x-displayName: Authentication
+    description: |
+      The authentication endpoints allow you to authenticate with Docker Hub APIs.
+@y
+      <span class="pat"></span>
+      <span class="oat"></span>
+  - name: authentication-api
+    x-displayName: Authentication
+    description: |
+      The authentication endpoints allow you to authenticate with Docker Hub APIs.
+@z
+
+@x
+      For more information, see [Authentication](#tag/authentication).
   - name: access-tokens
     x-displayName: Personal Access Tokens
     description: |
       The Personal Access Token endpoints lets you manage personal access tokens. For more information, see [Access Tokens](https://docs.docker.com/security/for-developers/access-tokens/).
 @y
-      To learn more about the features available in each plan and to upgrade your existing plan, see [Docker Pricing](https://www.docker.com/pricing).
+      For more information, see [Authentication](#tag/authentication).
   - name: access-tokens
     x-displayName: Personal Access Tokens
     description: |
@@ -261,7 +377,7 @@ paths:
   /v2/users/login:
     post:
       tags:
-        - authentication
+        - authentication-api
       summary: Create an authentication token
       operationId: PostUsersLogin
       security: []
@@ -274,7 +390,7 @@ paths:
   /v2/users/login:
     post:
       tags:
-        - authentication
+        - authentication-api
       summary: Create an authentication token
       operationId: PostUsersLogin
       security: []
@@ -297,7 +413,7 @@ paths:
 
 @x
         <div style="background-color:rgb(255, 165, 0, .25); padding:5px; border-radius:4px">
-          <strong>Deprecated</strong>: Use [<a href="#tag/authentication/operation/AuthCreateAccessToken">Create access token</a>] instead.
+          <strong>Deprecated</strong>: Use [<a href="#tag/authentication-api/operation/AuthCreateAccessToken">Create access token</a>] instead.
         </div>
       requestBody:
         content:
@@ -322,7 +438,7 @@ paths:
   /v2/users/2fa-login:
     post:
       tags:
-        - authentication
+        - authentication-api
       summary: Second factor authentication
       operationId: PostUsers2FALogin
       security: []
@@ -330,7 +446,7 @@ paths:
         When a user has two-factor authentication (2FA) enabled, this is the second call to perform after `/v2/users/login` call.
 @y
         <div style="background-color:rgb(255, 165, 0, .25); padding:5px; border-radius:4px">
-          <strong>Deprecated</strong>: Use [<a href="#tag/authentication/operation/AuthCreateAccessToken">Create access token</a>] instead.
+          <strong>Deprecated</strong>: Use [<a href="#tag/authentication-api/operation/AuthCreateAccessToken">Create access token</a>] instead.
         </div>
       requestBody:
         content:
@@ -355,7 +471,7 @@ paths:
   /v2/users/2fa-login:
     post:
       tags:
-        - authentication
+        - authentication-api
       summary: Second factor authentication
       operationId: PostUsers2FALogin
       security: []
@@ -400,7 +516,7 @@ paths:
   /v2/auth/token:
     post:
       tags:
-        - authentication
+        - authentication-api
       security: []
       summary: Create access token
       operationId: AuthCreateAccessToken
@@ -431,7 +547,7 @@ paths:
   /v2/auth/token:
     post:
       tags:
-        - authentication
+        - authentication-api
       security: []
       summary: Create access token
       operationId: AuthCreateAccessToken
@@ -1362,7 +1478,135 @@ paths:
     get:
       summary: List org members
       description: |
-        Returns a list of members for an organization"
+        Returns a list of members for an organization
+@y
+        The following settings are only used on a business plan:
+        - `restricted_images`
+      tags:
+        - org-settings
+      security: 
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - restricted_images
+              properties:
+                restricted_images:
+                  allOf:
+                    - $ref: '#/components/schemas/restricted_images'
+                    - type: object
+                      required:
+                        - enabled
+                        - allow_official_images
+                        - allow_verified_publishers
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/orgSettings'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v2/namespaces/{namespace}/repositories/{repository}/tags:
+    parameters:
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/repository'
+    get:
+      summary: List repository tags
+      tags:
+        - repositories
+      security: 
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          required: false
+          schema:
+            type: integer
+          description: Page number to get. Defaults to 1.
+        - in: query
+          name: page_size
+          required: false
+          schema:
+            type: integer
+          description: Number of items to get per page. Defaults to 10. Max of 100.
+      responses:
+        '200':
+          $ref: '#/components/responses/list_tags'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    head:
+      summary: Check repository tags
+      tags:
+        - repositories
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Repository contains tags
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
+    parameters:
+      - $ref: '#/components/parameters/namespace'
+      - $ref: '#/components/parameters/repository'
+      - $ref: '#/components/parameters/tag'
+    get:
+      summary: Read repository tag
+      tags:
+        - repositories
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/get_tag'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    head:
+      summary: Check repository tag
+      tags:
+        - repositories
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Repository tag exists
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v2/orgs/{org_name}/members:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/search'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/page_size'
+      - $ref: '#/components/parameters/invites'
+      - $ref: '#/components/parameters/type'
+      - $ref: '#/components/parameters/role'
+    get:
+      summary: List org members
+      description: |
+        Returns a list of members for an organization
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - orgs
       security: 
@@ -1392,6 +1636,41 @@ paths:
       summary: Export org members CSV
       description: |
         Export members of an organization as a CSV
+@y
+        <span class="oat"></span>
+      tags:
+        - orgs
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of members
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/org_member_paginated'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/orgs/{org_name}/members/export:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+    get:
+      summary: Export org members CSV
+      description: |
+        Export members of an organization as a CSV
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - orgs
       security: 
@@ -1465,6 +1744,85 @@ paths:
       description: |
         Updates the role of a member in the organization.
         ***Only users in the "owners" group of the organization can use this endpoint.***
+@y
+        <span class="oat"></span>
+      tags:
+        - orgs
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Exported members
+          content:
+            text/csv:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - Name
+                    - Username
+                    - Email
+                    - Type
+                    - Role
+                    - Date Joined
+                  properties:
+                    Name:
+                      type: string
+                      description: First and last name of the member
+                    Username:
+                      type: string
+                      description: Username of the member
+                    Email:
+                      type: string
+                      description: Email address of the member
+                    Type:
+                      type: string
+                      description: Type of the member
+                      enum:
+                        - Invitee
+                        - User
+                    Permission:
+                      type: string
+                      description: Permission of the member
+                      enum:
+                        - Owner
+                        - Member
+                    Teams:
+                      type: string
+                      description: Comma-separated list of teams the member is part of
+                      example: team-1, team-2
+                    Date Joined:
+                      type: string
+                      description: Date the member joined the organization
+                      example: 2020-01-01 15:00:51.193355 +0000 UTC
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+              example: attachment;filename="{org_name}-members-{timestamp}.csv"
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/orgs/{org_name}/members/{username}:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/username'
+    put:
+      summary: Update org member (role)
+      description: |
+        Updates the role of a member in the organization.
+        ***Only users in the "owners" group of the organization can use this endpoint.***
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - orgs
       security: 
@@ -1503,6 +1861,50 @@ paths:
       summary: Remove member from org
       description: |
         Removes the member from the org, ie. all groups in the org, unless they're the last owner
+@y
+        <span class="oat"></span>
+      tags:
+        - orgs
+      security: 
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - role
+              properties:
+                role:
+                  type: string
+                  description: Role of the member
+                  enum:
+                    - owner
+                    - editor
+                    - member
+      responses:
+        '200':
+          description: Member role updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/org_member'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+    delete:
+      summary: Remove member from org
+      description: |
+        Removes the member from the org, ie. all groups in the org, unless they're the last owner
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - orgs
       security: 
@@ -1526,6 +1928,35 @@ paths:
       summary: List org invites
       description: |
         Return all pending invites for a given org, only team owners can call this endpoint
+@y
+        <span class="oat"></span>
+      tags:
+        - orgs
+      security: 
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Member removed successfully
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/orgs/{org_name}/invites:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+    get:
+      summary: List org invites
+      description: |
+        Return all pending invites for a given org, only team owners can call this endpoint
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - invites
       security: 
@@ -1554,6 +1985,8 @@ paths:
       - $ref: '#/components/parameters/org_name'
     get:
       summary: Get groups of an organization
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1599,7 +2032,91 @@ paths:
           $ref: '#/components/responses/not_found'
     post:
       summary: Create a new group
-      description: Create a new group within an organization.
+      description: |
+        Create a new group within an organization.
+@y
+        <span class="oat"></span>
+      tags:
+        - invites
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/invite'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/orgs/{org_name}/groups:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+    get:
+      summary: Get groups of an organization
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/page_size'
+        - in: query
+          name: username
+          schema:
+            type: string
+          description: Get groups for the specified username in the organization.
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Get groups for the specified group in the organization.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  count:
+                    type: number
+                    example: 1
+                  next:
+                    type: string
+                    example: null
+                  previous:
+                    type: string
+                    example: null
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/org_group'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+    post:
+      summary: Create a new group
+      description: |
+        Create a new group within an organization.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1635,6 +2152,8 @@ paths:
       - $ref: '#/components/parameters/group_name'
     get:
       summary: Get a group of an organization
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1654,6 +2173,8 @@ paths:
           $ref: '#/components/responses/not_found'
     put:
       summary: Update the details for an organization group
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1684,6 +2205,8 @@ paths:
           $ref: '#/components/responses/not_found'
     patch:
       summary: Update some details for an organization group
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1712,6 +2235,8 @@ paths:
           $ref: '#/components/responses/not_found'
     delete:
       summary: Delete an organization group
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1744,6 +2269,164 @@ paths:
       description: |
         List the members (users) that are in a group.
         If user is owner of the org or has otherwise elevated permissions, they can search by email and the result will also contain emails.
+@y
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Group created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/org_group'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+  /v2/orgs/{org_name}/groups/{group_name}:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/group_name'
+    get:
+      summary: Get a group of an organization
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/org_group'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+    put:
+      summary: Update the details for an organization group
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/org_group'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+    patch:
+      summary: Update some details for an organization group
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/org_group'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+    delete:
+      summary: Delete an organization group
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      responses:
+        '204':
+          description: Group deleted successfully
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/orgs/{org_name}/groups/{group_name}/members:
+    x-audience: public
+    get:
+      security: 
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/org_name'
+        - $ref: '#/components/parameters/group_name'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/page_size'
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Search members by username, full_name or email.
+      summary: List members of a group
+      description: |
+        List the members (users) that are in a group.
+        If user is owner of the org or has otherwise elevated permissions, they can search by email and the result will also contain emails.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - groups
       responses:
@@ -1776,7 +2459,9 @@ paths:
       parameters:
         - $ref: '#/components/parameters/org_name'
         - $ref: '#/components/parameters/group_name'
-      summary: Adds a member to a group
+      summary: Add a member to a group
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1801,7 +2486,9 @@ paths:
       - $ref: '#/components/parameters/group_name'
       - $ref: '#/components/parameters/username'
     delete:
-      summary: Removes a user from a group
+      summary: Remove a user from a group
+      description: |
+        <span class="oat"></span>
       tags:
         - groups
       security: 
@@ -1827,6 +2514,99 @@ paths:
       summary: Cancel an invite
       description: |
         Mark the invite as cancelled so it doesn't show up on the list of pending invites
+@y
+        <span class="oat"></span>
+      tags:
+        - groups
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                properties:
+                  count:
+                    type: number
+                    example: 1
+                  next:
+                    type: string
+                    example: null
+                  previous:
+                    type: string
+                    example: null
+                  results:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/group_member'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+    post:
+      parameters:
+        - $ref: '#/components/parameters/org_name'
+        - $ref: '#/components/parameters/group_name'
+      summary: Add a member to a group
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/add_member_to_org_group'
+      responses:
+        '200':
+          description: OK
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/internal_error'
+  /v2/orgs/{org_name}/groups/{group_name}/members/{username}:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/org_name'
+      - $ref: '#/components/parameters/group_name'
+      - $ref: '#/components/parameters/username'
+    delete:
+      summary: Remove a user from a group
+      description: |
+        <span class="oat"></span>
+      tags:
+        - groups
+      security: 
+        - bearerAuth: []
+      responses:
+        '204':
+          description: User removed successfully
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/invites/{id}:
+    x-audience: public
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Cancel an invite
+      description: |
+        Mark the invite as cancelled so it doesn't show up on the list of pending invites
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - invites
       security: 
@@ -1852,6 +2632,37 @@ paths:
       summary: Resend an invite
       description: |
         Resend a pending invite to the user, any org owner can resend an invite
+@y
+        <span class="oat"></span>
+      tags:
+        - invites
+      security: 
+        - bearerAuth: []
+      responses:
+        '204':
+          description: ''
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/invites/{id}/resend:
+    x-audience: public
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+    patch:
+      summary: Resend an invite
+      description: |
+        Resend a pending invite to the user, any org owner can resend an invite
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - invites
       security: 
@@ -1873,6 +2684,33 @@ paths:
       summary: Bulk create invites
       description: |
         Create multiple invites by emails or DockerIDs. Only a team owner can create invites.
+@y
+        <span class="oat"></span>
+      tags:
+        - invites
+      security: 
+        - bearerAuth: []
+      responses:
+        '204':
+          description: ''
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+  /v2/invites/bulk:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/bulk_invite'
+    post:
+      summary: Bulk create invites
+      description: |
+        Create multiple invites by emails or DockerIDs. Only a team owner can create invites.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - invites
       requestBody:
@@ -2003,639 +2841,7 @@ paths:
       description: |
         Returns paginated users for an organization. Use `startIndex` and `count` query parameters to receive paginated results.
 @y
-        The following settings are only used on a business plan:
-        - `restricted_images`
-      tags:
-        - org-settings
-      security: 
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              required:
-                - restricted_images
-              properties:
-                restricted_images:
-                  allOf:
-                    - $ref: '#/components/schemas/restricted_images'
-                    - type: object
-                      required:
-                        - enabled
-                        - allow_official_images
-                        - allow_verified_publishers
-        required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/orgSettings'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/namespaces/{namespace}/repositories/{repository}/tags:
-    parameters:
-      - $ref: '#/components/parameters/namespace'
-      - $ref: '#/components/parameters/repository'
-    get:
-      summary: List repository tags
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      parameters:
-        - in: query
-          name: page
-          required: false
-          schema:
-            type: integer
-          description: Page number to get. Defaults to 1.
-        - in: query
-          name: page_size
-          required: false
-          schema:
-            type: integer
-          description: Number of items to get per page. Defaults to 10. Max of 100.
-      responses:
-        '200':
-          $ref: '#/components/responses/list_tags'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-    head:
-      summary: Check repository tags
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Repository contains tags
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
-    parameters:
-      - $ref: '#/components/parameters/namespace'
-      - $ref: '#/components/parameters/repository'
-      - $ref: '#/components/parameters/tag'
-    get:
-      summary: Read repository tag
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          $ref: '#/components/responses/get_tag'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-    head:
-      summary: Check repository tag
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Repository tag exists
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/orgs/{org_name}/members:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/search'
-      - $ref: '#/components/parameters/page'
-      - $ref: '#/components/parameters/page_size'
-      - $ref: '#/components/parameters/invites'
-      - $ref: '#/components/parameters/type'
-      - $ref: '#/components/parameters/role'
-    get:
-      summary: List org members
-      description: |
-        Returns a list of members for an organization"
-      tags:
-        - orgs
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: List of members
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/org_member_paginated'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/orgs/{org_name}/members/export:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-    get:
-      summary: Export org members CSV
-      description: |
-        Export members of an organization as a CSV
-      tags:
-        - orgs
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Exported members
-          content:
-            text/csv:
-              schema:
-                type: array
-                items:
-                  type: object
-                  required:
-                    - Name
-                    - Username
-                    - Email
-                    - Type
-                    - Role
-                    - Date Joined
-                  properties:
-                    Name:
-                      type: string
-                      description: First and last name of the member
-                    Username:
-                      type: string
-                      description: Username of the member
-                    Email:
-                      type: string
-                      description: Email address of the member
-                    Type:
-                      type: string
-                      description: Type of the member
-                      enum:
-                        - Invitee
-                        - User
-                    Permission:
-                      type: string
-                      description: Permission of the member
-                      enum:
-                        - Owner
-                        - Member
-                    Teams:
-                      type: string
-                      description: Comma-separated list of teams the member is part of
-                      example: team-1, team-2
-                    Date Joined:
-                      type: string
-                      description: Date the member joined the organization
-                      example: 2020-01-01 15:00:51.193355 +0000 UTC
-          headers:
-            Content-Disposition:
-              schema:
-                type: string
-              example: attachment;filename="{org_name}-members-{timestamp}.csv"
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/orgs/{org_name}/members/{username}:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/username'
-    put:
-      summary: Update org member (role)
-      description: |
-        Updates the role of a member in the organization.
-        ***Only users in the "owners" group of the organization can use this endpoint.***
-      tags:
-        - orgs
-      security: 
-        - bearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              required:
-                - role
-              properties:
-                role:
-                  type: string
-                  description: Role of the member
-                  enum:
-                    - owner
-                    - editor
-                    - member
-      responses:
-        '200':
-          description: Member role updated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/org_member'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-    delete:
-      summary: Remove member from org
-      description: |
-        Removes the member from the org, ie. all groups in the org, unless they're the last owner
-      tags:
-        - orgs
-      security: 
-        - bearerAuth: []
-      responses:
-        '204':
-          description: Member removed successfully
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/orgs/{org_name}/invites:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-    get:
-      summary: List org invites
-      description: |
-        Return all pending invites for a given org, only team owners can call this endpoint
-      tags:
-        - invites
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/invite'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/orgs/{org_name}/groups:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-    get:
-      summary: Get groups of an organization
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/page_size'
-        - in: query
-          name: username
-          schema:
-            type: string
-          description: Get groups for the specified username in the organization.
-        - in: query
-          name: search
-          schema:
-            type: string
-          description: Get groups for the specified group in the organization.
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                properties:
-                  count:
-                    type: number
-                    example: 1
-                  next:
-                    type: string
-                    example: null
-                  previous:
-                    type: string
-                    example: null
-                  results:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-    post:
-      summary: Create a new group
-      description: Create a new group within an organization.
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              required:
-                - name
-              properties:
-                name:
-                  type: string
-                description:
-                  type: string
-      responses:
-        '201':
-          description: Group created successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/org_group'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-  /v2/orgs/{org_name}/groups/{group_name}:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/group_name'
-    get:
-      summary: Get a group of an organization
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-    put:
-      summary: Update the details for an organization group
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              required:
-                - name
-              properties:
-                name:
-                  type: string
-                description:
-                  type: string
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-    patch:
-      summary: Update some details for an organization group
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                name:
-                  type: string
-                description:
-                  type: string
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-    delete:
-      summary: Delete an organization group
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      responses:
-        '204':
-          description: Group deleted successfully
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/orgs/{org_name}/groups/{group_name}/members:
-    x-audience: public
-    get:
-      security: 
-        - bearerAuth: []
-      parameters:
-        - $ref: '#/components/parameters/org_name'
-        - $ref: '#/components/parameters/group_name'
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/page_size'
-        - in: query
-          name: search
-          schema:
-            type: string
-          description: Search members by username, full_name or email.
-      summary: List members of a group
-      description: |
-        List the members (users) that are in a group.
-        If user is owner of the org or has otherwise elevated permissions, they can search by email and the result will also contain emails.
-      tags:
-        - groups
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                properties:
-                  count:
-                    type: number
-                    example: 1
-                  next:
-                    type: string
-                    example: null
-                  previous:
-                    type: string
-                    example: null
-                  results:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/group_member'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-    post:
-      parameters:
-        - $ref: '#/components/parameters/org_name'
-        - $ref: '#/components/parameters/group_name'
-      summary: Adds a member to a group
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      requestBody:
-        $ref: '#/components/requestBodies/add_member_to_org_group'
-      responses:
-        '200':
-          description: OK
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-        '500':
-          $ref: '#/components/responses/internal_error'
-  /v2/orgs/{org_name}/groups/{group_name}/members/{username}:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/group_name'
-      - $ref: '#/components/parameters/username'
-    delete:
-      summary: Removes a user from a group
-      tags:
-        - groups
-      security: 
-        - bearerAuth: []
-      responses:
-        '204':
-          description: User removed successfully
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/invites/{id}:
-    x-audience: public
-    parameters:
-      - in: path
-        name: id
-        required: true
-        schema:
-          type: string
-    delete:
-      summary: Cancel an invite
-      description: |
-        Mark the invite as cancelled so it doesn't show up on the list of pending invites
-      tags:
-        - invites
-      security: 
-        - bearerAuth: []
-      responses:
-        '204':
-          description: ''
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/invites/{id}/resend:
-    x-audience: public
-    parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-        required: true
-    patch:
-      summary: Resend an invite
-      description: |
-        Resend a pending invite to the user, any org owner can resend an invite
-      tags:
-        - invites
-      security: 
-        - bearerAuth: []
-      responses:
-        '204':
-          description: ''
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-  /v2/invites/bulk:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/bulk_invite'
-    post:
-      summary: Bulk create invites
-      description: |
-        Create multiple invites by emails or DockerIDs. Only a team owner can create invites.
+        <span class="oat"></span>
       tags:
         - invites
       requestBody:
@@ -4320,9 +4526,10 @@ x-tagGroups:
     tags:
       - resources
       - rate-limiting
+      - authentication
   - name: API
     tags:
-      - authentication
+      - authentication-api
       - access-tokens
       - images
       - audit-logs
@@ -5849,9 +6056,10 @@ x-tagGroups:
     tags:
       - resources
       - rate-limiting
+      - authentication
   - name: API
     tags:
-      - authentication
+      - authentication-api
       - access-tokens
       - images
       - audit-logs

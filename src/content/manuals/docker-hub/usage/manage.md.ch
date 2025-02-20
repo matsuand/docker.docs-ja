@@ -84,11 +84,11 @@ both individuals and organizations:
 @z
 
 @x
-    - Regularly auditing and removing repositories with untagged, unused, or outdated images.
-    - Looking for private repositories in Hub storage that exceed your plan's limits.
+    - Regularly auditing and [removing entire repositories](../repos/delete.md) with untagged, unused, or outdated images.
+    - Using [Image Management](../repos/manage/hub-images/manage.md) to remove stale and outdated images within a repository.
 @y
-    - Regularly auditing and removing repositories with untagged, unused, or outdated images.
-    - Looking for private repositories in Hub storage that exceed your plan's limits.
+    - Regularly auditing and [removing entire repositories](../repos/delete.md) with untagged, unused, or outdated images.
+    - Using [Image Management](../repos/manage/hub-images/manage.md) to remove stale and outdated images within a repository.
 @z
 
 @x
