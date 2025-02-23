@@ -4,11 +4,10 @@
 SUBDIRS = images
 
 bases = \
-	_index.md       \
-	configure.md    \
-	connect.md      \
-	manage.md       \
-	troubleshoot.md
+	_index.md    \
+	configure.md \
+	connect.md   \
+	manage.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

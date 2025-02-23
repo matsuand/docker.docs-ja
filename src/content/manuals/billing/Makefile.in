@@ -238,14 +238,13 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md             \
-	3d-secure.md          \
-	cycle.md              \
-	details.md            \
-	docker-hub-pricing.md \
-	faqs.md               \
-	history.md            \
-	payment-method.md     \
+	_index.md          \
+	3d-secure.md       \
+	cycle.md           \
+	details.md         \
+	faqs.md            \
+	history.md         \
+	payment-method.md  \
 	tax-certificate.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

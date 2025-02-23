@@ -22,10 +22,10 @@ long: |-
 @z
 
 @x
-    Only the last 1000 log events are returned. You can use filters to further limit
+    Only the last 256 log events are returned. You can use filters to further limit
     the number of events returned.
 @y
-    Only the last 1000 log events are returned. You can use filters to further limit
+    Only the last 256 log events are returned. You can use filters to further limit
     the number of events returned.
 @z
 
@@ -216,10 +216,10 @@ long: |-
 @z
 
 @x
-    Only the last 1000 log events are returned. You can use filters to further limit
+    Only the last 256 log events are returned. You can use filters to further limit
     the number of events returned.
 @y
-    Only the last 1000 log events are returned. You can use filters to further limit
+    Only the last 256 log events are returned. You can use filters to further limit
     the number of events returned.
 @z
 

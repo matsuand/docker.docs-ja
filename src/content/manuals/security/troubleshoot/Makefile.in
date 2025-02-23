@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/_vendor/github.com/moby/moby/docs/api
+subdir = src/content/manuals/security/troubleshoot
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -238,32 +238,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	v1.24.md   \
-	v1.25.yaml \
-	v1.26.yaml \
-	v1.27.yaml \
-	v1.28.yaml \
-	v1.29.yaml \
-	v1.30.yaml \
-	v1.31.yaml \
-	v1.32.yaml \
-	v1.33.yaml \
-	v1.34.yaml \
-	v1.35.yaml \
-	v1.36.yaml \
-	v1.37.yaml \
-	v1.38.yaml \
-	v1.39.yaml \
-	v1.40.yaml \
-	v1.41.yaml \
-	v1.42.yaml \
-	v1.43.yaml \
-	v1.44.yaml \
-	v1.45.yaml \
-	v1.46.yaml \
-	v1.47.yaml \
-	v1.48.yaml \
-	version-history.md
+	_index.md           \
+	troubleshoot-sso.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -282,9 +258,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/_vendor/github.com/moby/moby/docs/api/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/security/troubleshoot/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/_vendor/github.com/moby/moby/docs/api/Makefile
+	  $(AUTOMAKE) --foreign src/content/manuals/security/troubleshoot/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

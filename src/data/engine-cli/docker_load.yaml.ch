@@ -7,92 +7,42 @@ aliases: docker image load, docker load
 short: Load an image from a tar archive or STDIN
 long: Load an image from a tar archive or STDIN
 usage: docker load [OPTIONS]
-pname: docker
-plink: docker.yaml
-options:
-    - option: input
-      shorthand: i
-      value_type: string
-      description: Read from tar archive file, instead of STDIN
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress the load output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker load
 aliases: docker image load, docker load
 short: Load an image from a tar archive or STDIN
 long: Load an image from a tar archive or STDIN
 usage: docker load [OPTIONS]
-pname: docker
-plink: docker.yaml
-options:
-    - option: input
-      shorthand: i
-      value_type: string
-      description: Read from tar archive file, instead of STDIN
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress the load output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x input
+      description: Read from tar archive file, instead of STDIN
+@y
+      description: Read from tar archive file, instead of STDIN
+@z
+
+@x platform
+      description: |
+        Load only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+      description: |
+        Load only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@z
+
+@x quiet
+      description: Suppress the load output
+@y
+      description: Suppress the load output
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+% snip directives...

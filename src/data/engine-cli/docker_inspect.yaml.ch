@@ -46,9 +46,9 @@ long: |-
 @z
 
 @x
-    `--type container|image|node|network|secret|service|volume|task|plugin`
+    `--type config|container|image|node|network|secret|service|volume|task|plugin`
 @y
-    `--type container|image|node|network|secret|service|volume|task|plugin`
+    `--type config|container|image|node|network|secret|service|volume|task|plugin`
 @z
 
 @x

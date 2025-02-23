@@ -183,10 +183,16 @@ usage: docker network create [OPTIONS] NETWORK
       description: IPAM ドライバーの特定オプションを設定します。
 @z
 
-@x ipv6
-      description: Enable or disable IPv6 networking
+@x ipv4
+      description: Enable or disable IPv4 address assignment
 @y
-      description: IPv6 ネットワークを有効または無効にします。
+      description: IPv4 アドレス割り当てを有効または無効にします。
+@z
+
+@x ipv6
+      description: Enable or disable IPv6 address assignment
+@y
+      description: IPv6 アドレス割り当てを有効または無効にします。
 @z
 
 @x label
@@ -325,60 +331,70 @@ examples: |-
 @z
 
 @x
-    When creating a custom network, the default network driver (i.e. `bridge`) has
-    additional options that can be passed. The following are those options and the
-    equivalent Docker daemon flags used for docker0 bridge:
+    When creating a custom `bridge` network, the following additional options can
+    be passed. Some of these have equivalent flags that can be used on the dockerd
+    command line or in `daemon.json` to configure the default bridge, `docker0`:
 @y
-    カスタムネットワークを生成すると、デフォルトのネットワークドライバー（つまり `bridge`）には、指定可能なオプションが追加されます。
-    以下に示すのがその追加オプションであり、docker0 ブリッジに対して用いられる同等の Docker デーモンフラグを合わせて示します。
+    カスタムネットワークである `bridge` を生成すると、以下に示すオプションが追加されます。
+    この中には、デフォルトブリッジである `docker0` を設定するために dockerd コマンドラインあるいは `daemon.json` にて指定されるフラグと同等のものがいくつかあります。
 @z
 
 @x
-    | Option                                           | Equivalent  | Description                                           |
-    |--------------------------------------------------|-------------|-------------------------------------------------------|
-    | `com.docker.network.bridge.name`                 | -           | Bridge name to be used when creating the Linux bridge |
-    | `com.docker.network.bridge.enable_ip_masquerade` | `--ip-masq` | Enable IP masquerading                                |
-    | `com.docker.network.bridge.enable_icc`           | `--icc`     | Enable or Disable Inter Container Connectivity        |
-    | `com.docker.network.bridge.host_binding_ipv4`    | `--ip`      | Default IP when binding container ports               |
-    | `com.docker.network.driver.mtu`                  | `--mtu`     | Set the containers network MTU                        |
-    | `com.docker.network.container_iface_prefix`      | -           | Set a custom prefix for container interfaces          |
+    | Network create option                            | Daemon option for `docker0` | Description                                           |
+    |--------------------------------------------------|-----------------------------|-------------------------------------------------------|
 @y
-    | オプション                                       | 同等の指定  | 内容説明                                              |
-    |--------------------------------------------------|-------------|-------------------------------------------------------|
-    | `com.docker.network.bridge.name`                 | -           | Bridge name to be used when creating the Linux bridge |
-    | `com.docker.network.bridge.enable_ip_masquerade` | `--ip-masq` | Enable IP masquerading                                |
-    | `com.docker.network.bridge.enable_icc`           | `--icc`     | Enable or Disable Inter Container Connectivity        |
-    | `com.docker.network.bridge.host_binding_ipv4`    | `--ip`      | Default IP when binding container ports               |
-    | `com.docker.network.driver.mtu`                  | `--mtu`     | Set the containers network MTU                        |
-    | `com.docker.network.container_iface_prefix`      | -           | Set a custom prefix for container interfaces          |
+    | network create オプション                        | `docker0` デーモンオプション | 内容説明                                              |
+    |--------------------------------------------------|------------------------------|-------------------------------------------------------|
+@z
+
+@x
+    | `com.docker.network.bridge.name`                 | -                           | Bridge name to be used when creating the Linux bridge |
+    | `com.docker.network.bridge.enable_ip_masquerade` | `--ip-masq`                 | Enable IP masquerading                                |
+    | `com.docker.network.bridge.enable_icc`           | `--icc`                     | Enable or Disable Inter Container Connectivity        |
+    | `com.docker.network.bridge.host_binding_ipv4`    | `--ip`                      | Default IP when binding container ports               |
+    | `com.docker.network.driver.mtu`                  | `--mtu`                     | Set the containers network MTU                        |
+    | `com.docker.network.container_iface_prefix`      | -                           | Set a custom prefix for container interfaces          |
+@y
+    | `com.docker.network.bridge.name`                 | -                           | Bridge name to be used when creating the Linux bridge |
+    | `com.docker.network.bridge.enable_ip_masquerade` | `--ip-masq`                 | Enable IP masquerading                                |
+    | `com.docker.network.bridge.enable_icc`           | `--icc`                     | Enable or Disable Inter Container Connectivity        |
+    | `com.docker.network.bridge.host_binding_ipv4`    | `--ip`                      | Default IP when binding container ports               |
+    | `com.docker.network.driver.mtu`                  | `--mtu`                     | Set the containers network MTU                        |
+    | `com.docker.network.container_iface_prefix`      | -                           | Set a custom prefix for container interfaces          |
 @z
 
 @x
     The following arguments can be passed to `docker network create` for any
     network driver, again with their approximate equivalents to Docker daemon
-    flags used for the docker0 bridge:
+    flags used for the `docker0` bridge:
 @y
     The following arguments can be passed to `docker network create` for any
     network driver, again with their approximate equivalents to Docker daemon
-    flags used for the docker0 bridge:
+    flags used for the `docker0` bridge:
 @z
 
 @x
-    | Argument     | Equivalent     | Description                                |
-    |--------------|----------------|--------------------------------------------|
-    | `--gateway`  | -              | IPv4 or IPv6 Gateway for the master subnet |
-    | `--ip-range` | `--fixed-cidr` | Allocate IPs from a range                  |
-    | `--internal` | -              | Restrict external access to the network    |
-    | `--ipv6`     | `--ipv6`       | Enable or disable IPv6 networking          |
-    | `--subnet`   | `--bip`        | Subnet for network                         |
+    | Network create option | Daemon option for `docker0`       | Description                                |
+    |-----------------------|-----------------------------------|--------------------------------------------|
 @y
-    | 引数         | 同等の指定     | 内容説明                                   |
-    |--------------|----------------|--------------------------------------------|
-    | `--gateway`  | -              | IPv4 or IPv6 Gateway for the master subnet |
-    | `--ip-range` | `--fixed-cidr` | Allocate IPs from a range                  |
-    | `--internal` | -              | Restrict external access to the network    |
-    | `--ipv6`     | `--ipv6`       | Enable or disable IPv6 networking          |
-    | `--subnet`   | `--bip`        | Subnet for network                         |
+    | network create オプション | `docker0` デーモンオプション      | 内容説明                                   |
+    |---------------------------|-----------------------------------|--------------------------------------------|
+@z
+
+@x
+    | `--gateway`           | -                                 | IPv4 or IPv6 Gateway for the master subnet |
+    | `--ip-range`          | `--fixed-cidr`, `--fixed-cidr-v6` | Allocate IP addresses from a range         |
+    | `--internal`          | -                                 | Restrict external access to the network    |
+    | `--ipv4`              | -                                 | Enable or disable IPv4 address assignment  |
+    | `--ipv6`              | `--ipv6`                          | Enable or disable IPv6 address assignment  |
+    | `--subnet`            | `--bip`, `--bip6`                 | Subnet for network                         |
+@y
+    | `--gateway`           | -                                 | IPv4 or IPv6 Gateway for the master subnet |
+    | `--ip-range`          | `--fixed-cidr`, `--fixed-cidr-v6` | Allocate IP addresses from a range         |
+    | `--internal`          | -                                 | Restrict external access to the network    |
+    | `--ipv4`              | -                                 | Enable or disable IPv4 address assignment  |
+    | `--ipv6`              | `--ipv6`                          | Enable or disable IPv6 address assignment  |
+    | `--subnet`            | `--bip`, `--bip6`                 | Subnet for network                         |
 @z
 
 @x

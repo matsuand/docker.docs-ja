@@ -92,18 +92,10 @@ both individuals and organizations:
 @z
 
 @x
-5. Increase your limits by upgrading or purchasing additional consumption. For
-   details, see [Scale your subscription](/manuals/subscription/scale.md).
-@y
-5. Increase your limits by upgrading or purchasing additional consumption. For
-   details, see [Scale your subscription](manuals/subscription/scale.md).
-@z
-
-@x
-6. For organizations, monitor and enforce organizational policies by doing the
+5. For organizations, monitor and enforce organizational policies by doing the
    following:
 @y
-6. For organizations, monitor and enforce organizational policies by doing the
+5. For organizations, monitor and enforce organizational policies by doing the
    following:
 @z
 

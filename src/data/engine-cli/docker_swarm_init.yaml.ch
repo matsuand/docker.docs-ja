@@ -10,190 +10,6 @@ long: |-
     Initialize a swarm. The Docker Engine targeted by this command becomes a manager
     in the newly created single-node swarm.
 usage: docker swarm init [OPTIONS]
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: advertise-addr
-      value_type: string
-      description: 'Advertised address (format: `<ip|interface>[:port]`)'
-      details_url: '#advertise-addr'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: autolock
-      value_type: bool
-      default_value: "false"
-      description: |
-        Enable manager autolocking (requiring an unlock key to start a stopped manager)
-      details_url: '#autolock'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: availability
-      value_type: string
-      default_value: active
-      description: Availability of the node (`active`, `pause`, `drain`)
-      details_url: '#availability'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cert-expiry
-      value_type: duration
-      default_value: 2160h0m0s
-      description: Validity period for node certificates (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: data-path-addr
-      value_type: string
-      description: |
-        Address or interface to use for data path traffic (format: `<ip|interface>`)
-      details_url: '#data-path-addr'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.31"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: data-path-port
-      value_type: uint32
-      default_value: "0"
-      description: |
-        Port number to use for data path traffic (1024 - 49151). If no value is set or is set to 0, the default port (4789) is used.
-      details_url: '#data-path-port'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: default-addr-pool
-      value_type: ipNetSlice
-      default_value: '[]'
-      description: default address pool in CIDR format
-      details_url: '#default-addr-pool'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.39"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: default-addr-pool-mask-length
-      value_type: uint32
-      default_value: "24"
-      description: default address pool subnet mask length
-      deprecated: false
-      hidden: false
-      min_api_version: "1.39"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dispatcher-heartbeat
-      value_type: duration
-      default_value: 5s
-      description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: external-ca
-      value_type: external-ca
-      description: Specifications of one or more certificate signing endpoints
-      details_url: '#external-ca'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-new-cluster
-      value_type: bool
-      default_value: "false"
-      description: Force create a new cluster from current state
-      details_url: '#force-new-cluster'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: listen-addr
-      value_type: node-addr
-      default_value: 0.0.0.0:2377
-      description: 'Listen address (format: `<ip|interface>[:port]`)'
-      details_url: '#listen-addr'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: max-snapshots
-      value_type: uint64
-      default_value: "0"
-      description: Number of additional Raft snapshots to retain
-      details_url: '#max-snapshots'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: snapshot-interval
-      value_type: uint64
-      default_value: "10000"
-      description: Number of log entries between Raft snapshots
-      details_url: '#snapshot-interval'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: task-history-limit
-      value_type: int64
-      default_value: "5"
-      description: Task history retention limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker swarm init --advertise-addr 192.168.99.121
 @y
 command: docker swarm init
 short: Initialize a swarm
@@ -201,217 +17,121 @@ long: |-
     Initialize a swarm. The Docker Engine targeted by this command becomes a manager
     in the newly created single-node swarm.
 usage: docker swarm init [OPTIONS]
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: advertise-addr
-      value_type: string
+@z
+
+% options:
+
+@x advertise-addr
       description: 'Advertised address (format: `<ip|interface>[:port]`)'
-      details_url: '#advertise-addr'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: autolock
-      value_type: bool
-      default_value: "false"
+@y
+      description: 'Advertised address (format: `<ip|interface>[:port]`)'
+@z
+
+@x autolock
       description: |
         Enable manager autolocking (requiring an unlock key to start a stopped manager)
-      details_url: '#autolock'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: availability
-      value_type: string
-      default_value: active
+@y
+      description: |
+        Enable manager autolocking (requiring an unlock key to start a stopped manager)
+@z
+
+@x availability
       description: Availability of the node (`active`, `pause`, `drain`)
-      details_url: '#availability'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cert-expiry
-      value_type: duration
-      default_value: 2160h0m0s
+@y
+      description: Availability of the node (`active`, `pause`, `drain`)
+@z
+
+@x cert-expiry
       description: Validity period for node certificates (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: data-path-addr
-      value_type: string
+@y
+      description: Validity period for node certificates (ns|us|ms|s|m|h)
+@z
+
+@x data-path-addr
       description: |
         Address or interface to use for data path traffic (format: `<ip|interface>`)
-      details_url: '#data-path-addr'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.31"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: data-path-port
-      value_type: uint32
-      default_value: "0"
+@y
+      description: |
+        Address or interface to use for data path traffic (format: `<ip|interface>`)
+@z
+
+@x data-path-port
       description: |
         Port number to use for data path traffic (1024 - 49151). If no value is set or is set to 0, the default port (4789) is used.
-      details_url: '#data-path-port'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: default-addr-pool
-      value_type: ipNetSlice
-      default_value: '[]'
+@y
+      description: |
+        Port number to use for data path traffic (1024 - 49151). If no value is set or is set to 0, the default port (4789) is used.
+@z
+
+@x default-addr-pool
       description: default address pool in CIDR format
-      details_url: '#default-addr-pool'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.39"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: default-addr-pool-mask-length
-      value_type: uint32
-      default_value: "24"
+@y
+      description: default address pool in CIDR format
+@z
+
+@x default-addr-pool-mask-length
       description: default address pool subnet mask length
-      deprecated: false
-      hidden: false
-      min_api_version: "1.39"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dispatcher-heartbeat
-      value_type: duration
-      default_value: 5s
+@y
+      description: default address pool subnet mask length
+@z
+
+@x dispatcher-heartbeat
       description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: external-ca
-      value_type: external-ca
+@y
+      description: Dispatcher heartbeat period (ns|us|ms|s|m|h)
+@z
+
+@x external-ca
       description: Specifications of one or more certificate signing endpoints
-      details_url: '#external-ca'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-new-cluster
-      value_type: bool
-      default_value: "false"
+@y
+      description: Specifications of one or more certificate signing endpoints
+@z
+
+@x force-new-cluster
       description: Force create a new cluster from current state
-      details_url: '#force-new-cluster'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: listen-addr
-      value_type: node-addr
-      default_value: 0.0.0.0:2377
+@y
+      description: Force create a new cluster from current state
+@z
+
+@x listen-addr
       description: 'Listen address (format: `<ip|interface>[:port]`)'
-      details_url: '#listen-addr'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: max-snapshots
-      value_type: uint64
-      default_value: "0"
+@y
+      description: 'Listen address (format: `<ip|interface>[:port]`)'
+@z
+
+@x max-snapshots
       description: Number of additional Raft snapshots to retain
-      details_url: '#max-snapshots'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: snapshot-interval
-      value_type: uint64
-      default_value: "10000"
+@y
+      description: Number of additional Raft snapshots to retain
+@z
+
+@x snapshot-interval
       description: Number of log entries between Raft snapshots
-      details_url: '#snapshot-interval'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: task-history-limit
-      value_type: int64
-      default_value: "5"
+@y
+      description: Number of log entries between Raft snapshots
+@z
+
+@x task-history-limit
       description: Task history retention limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Task history retention limit
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
-    ```console
-    $ docker swarm init --advertise-addr 192.168.99.121
+@y
+examples: |-
 @z
 
-@x
-    Swarm initialized: current node (bvz81updecsj6wjz393c09vti) is now a manager.
-@y
-    Swarm initialized: current node (bvz81updecsj6wjz393c09vti) is now a manager.
-@z
-
-@x
-    To add a worker to this swarm, run the following command:
-@y
-    To add a worker to this swarm, run the following command:
-@z
-
-@x
-        docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx 172.17.0.2:2377
-@y
-        docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx 172.17.0.2:2377
-@z
-
-@x
-    To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
-    ```
-@y
-    To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
-    ```
-@z
+% snip command...
 
 @x
     The `docker swarm init` command generates two random tokens: a worker token and
@@ -460,9 +180,9 @@ examples: |-
 @z
 
 @x
-    ### <a name=""></a> Configure node healthcheck frequency (--dispatcher-heartbeat)
+    ### Configure node healthcheck frequency (--dispatcher-heartbeat) {#dispatcher-heartbeat}
 @y
-    ### <a name=""></a> Configure node healthcheck frequency (--dispatcher-heartbeat)
+    ### Configure node healthcheck frequency (--dispatcher-heartbeat) {#dispatcher-heartbeat}
 @z
 
 @x
@@ -598,6 +318,20 @@ examples: |-
 @z
 
 @x
+    Setting `--data-path-addr` does not restrict which interfaces or source IP
+    addresses the VXLAN socket is bound to. Similar to `--advertise-addr`, the
+    purpose of this flag is to inform other members of the swarm about which
+    address to use for control plane traffic. To restrict access to the VXLAN port
+    of the node, use firewall rules.
+@y
+    Setting `--data-path-addr` does not restrict which interfaces or source IP
+    addresses the VXLAN socket is bound to. Similar to `--advertise-addr`, the
+    purpose of this flag is to inform other members of the swarm about which
+    address to use for control plane traffic. To restrict access to the VXLAN port
+    of the node, use firewall rules.
+@z
+
+@x
     ### Configure port number for data traffic (--data-path-port) {#data-path-port}
 @y
     ### Configure port number for data traffic (--data-path-port) {#data-path-port}
@@ -619,15 +353,7 @@ examples: |-
     initializes a new Swarm, and configures the data path port to UDP port 7777;
 @z
 
-@x
-    ```console
-    $ docker swarm init --data-path-port=7777
-    ```
-@y
-    ```console
-    $ docker swarm init --data-path-port=7777
-    ```
-@z
+% snip command...
 
 @x
     After the swarm is initialized, use the `docker info` command to verify that
@@ -637,27 +363,7 @@ examples: |-
     the port is configured:
 @z
 
-@x
-    ```console
-    $ docker info
-    <...>
-    ClusterID: 9vs5ygs0gguyyec4iqf2314c0
-    Managers: 1
-    Nodes: 1
-    Data Path Port: 7777
-    <...>
-    ```
-@y
-    ```console
-    $ docker info
-    <...>
-    ClusterID: 9vs5ygs0gguyyec4iqf2314c0
-    Managers: 1
-    Nodes: 1
-    Data Path Port: 7777
-    <...>
-    ```
-@z
+% snip command...
 
 @x
     ### Specify default subnet pools (--default-addr-pool) {#default-addr-pool}
@@ -673,19 +379,7 @@ examples: |-
     networks. For example, to specify two address pools:
 @z
 
-@x
-    ```console
-    $ docker swarm init \
-      --default-addr-pool 30.30.0.0/16 \
-      --default-addr-pool 40.40.0.0/16
-    ```
-@y
-    ```console
-    $ docker swarm init \
-      --default-addr-pool 30.30.0.0/16 \
-      --default-addr-pool 40.40.0.0/16
-    ```
-@z
+% snip command...
 
 @x
     Use the `--default-addr-pool-mask-length` flag to specify the default subnet

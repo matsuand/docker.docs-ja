@@ -22,9 +22,23 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projects/51/views/1?filterQuery=) to see what's coming next.
+## 2025-01-30
 @y
-Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projects/51/views/1?filterQuery=) to see what's coming next.
+## 2025-01-30
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Installing Docker Desktop via the PKG installer is now generally available.
+- Enforcing sign-in via configuration profiles is now generally available.
+@y
+- Installing Docker Desktop via the PKG installer is now generally available.
+- Enforcing sign-in via configuration profiles is now generally available.
 @z
 
 @x

@@ -9,7 +9,8 @@ copyfiles = \
 	logs.md   \
 	ls.md     \
 	open.md   \
-	rm.md
+	rm.md     \
+	trace.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

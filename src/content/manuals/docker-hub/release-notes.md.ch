@@ -30,9 +30,21 @@ known issues for each Docker Hub release.
 @z
 
 @x
-Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projects/51/views/1?filterQuery=) to see what's coming next.
+## 2025-02-18
 @y
-Take a look at the [Docker Public Roadmap](https://github.com/orgs/docker/projects/51/views/1?filterQuery=) to see what's coming next.
+## 2025-02-18
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- You can delete images and image indexes using [Image Management](./repos/manage/hub-images/manage.md).
+@y
+- You can delete images and image indexes using [Image Management](./repos/manage/hub-images/manage.md).
 @z
 
 @x

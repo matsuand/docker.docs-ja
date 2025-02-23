@@ -1,120 +1,138 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 command: docker image tag
 aliases: docker image tag, docker tag
 short: Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 long: |-
-    A full image name has the following format and components:
+    A Docker image reference consists of several components that describe where the
+    image is stored and its identity. These components are:
 @y
 command: docker image tag
 aliases: docker image tag, docker tag
 short: Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
 long: |-
-    A full image name has the following format and components:
+    A Docker image reference consists of several components that describe where the
+    image is stored and its identity. These components are:
 @z
 
+% snip text...
+
 @x
-    `[HOST[:PORT_NUMBER]/]PATH`
+    `HOST`
+    : Specifies the registry location where the image resides. If omitted, Docker
+      defaults to Docker Hub (`docker.io`).
 @y
-    `[HOST[:PORT_NUMBER]/]PATH`
+    `HOST`
+    : Specifies the registry location where the image resides. If omitted, Docker
+      defaults to Docker Hub (`docker.io`).
 @z
 
 @x
-    - `HOST`: The optional registry hostname specifies where the image is located.
-      The hostname must comply with standard DNS rules, but may not contain
-      underscores. If you don't specify a hostname, the command uses Docker's public
-      registry at `registry-1.docker.io` by default. Note that `docker.io` is the
-      canonical reference for Docker's public registry.
-    - `PORT_NUMBER`: If a hostname is present, it may optionally be followed by a
-      registry port number in the format `:8080`.
-    - `PATH`: The path consists of slash-separated components. Each
-      component may contain lowercase letters, digits and separators. A separator is
-      defined as a period, one or two underscores, or one or more hyphens. A component
-      may not start or end with a separator. While the
-      [OCI Distribution Specification](https://github.com/opencontainers/distribution-spec)
-      supports more than two slash-separated components, most registries only support
-      two slash-separated components. For Docker's public registry, the path format is
-      as follows:
-      - `[NAMESPACE/]REPOSITORY`: The first, optional component is typically a
-      user's or an organization's namespace. The second, mandatory component is the
-      repository name. When the namespace is not present, Docker uses `library`
-      as the default namespace.
+    `PORT`
+    : An optional port number for the registry, if necessary (for example, `:5000`).
 @y
-    - `HOST`: The optional registry hostname specifies where the image is located.
-      The hostname must comply with standard DNS rules, but may not contain
-      underscores. If you don't specify a hostname, the command uses Docker's public
-      registry at `registry-1.docker.io` by default. Note that `docker.io` is the
-      canonical reference for Docker's public registry.
-    - `PORT_NUMBER`: If a hostname is present, it may optionally be followed by a
-      registry port number in the format `:8080`.
-    - `PATH`: The path consists of slash-separated components. Each
-      component may contain lowercase letters, digits and separators. A separator is
-      defined as a period, one or two underscores, or one or more hyphens. A component
-      may not start or end with a separator. While the
-      [OCI Distribution Specification](https://github.com/opencontainers/distribution-spec)
-      supports more than two slash-separated components, most registries only support
-      two slash-separated components. For Docker's public registry, the path format is
-      as follows:
-      - `[NAMESPACE/]REPOSITORY`: The first, optional component is typically a
-      user's or an organization's namespace. The second, mandatory component is the
-      repository name. When the namespace is not present, Docker uses `library`
-      as the default namespace.
+    `PORT`
+    : An optional port number for the registry, if necessary (for example, `:5000`).
 @z
 
 @x
-    After the image name, the optional `TAG` is a custom, human-readable manifest
-    identifier that's typically a specific version or variant of an image. The tag
-    must be valid ASCII and can contain lowercase and uppercase letters, digits,
-    underscores, periods, and hyphens. It can't start with a period or hyphen and
-    must be no longer than 128 characters. If you don't specify a tag, the command uses `latest` by default.
+    `NAMESPACE/REPOSITORY`
+    : The namespace (optional) usually represents a user or organization. The
+      repository is required and identifies the specific image. If the namespace is
+      omitted, Docker defaults to `library`, the namespace reserved for Docker
+      Official Images.
 @y
-    After the image name, the optional `TAG` is a custom, human-readable manifest
-    identifier that's typically a specific version or variant of an image. The tag
-    must be valid ASCII and can contain lowercase and uppercase letters, digits,
-    underscores, periods, and hyphens. It can't start with a period or hyphen and
-    must be no longer than 128 characters. If you don't specify a tag, the command uses `latest` by default.
+    `NAMESPACE/REPOSITORY`
+    : The namespace (optional) usually represents a user or organization. The
+      repository is required and identifies the specific image. If the namespace is
+      omitted, Docker defaults to `library`, the namespace reserved for Docker
+      Official Images.
 @z
 
 @x
-    You can group your images together using names and tags, and then
-    [push](/reference/cli/docker/image/push/) them to a registry.
+    `TAG`
+    : An optional identifier used to specify a particular version or variant of the
+      image. If no tag is provided, Docker defaults to `latest`.
+@y
+    `TAG`
+    : An optional identifier used to specify a particular version or variant of the
+      image. If no tag is provided, Docker defaults to `latest`.
+@z
+
+@x
+    ### Example image references
+@y
+    ### Example image references
+@z
+
+@x
+    `example.com:5000/team/my-app:2.0`
+@y
+    `example.com:5000/team/my-app:2.0`
+@z
+
+@x
+    - Host: `example.com`
+    - Port: `5000`
+    - Namespace: `team`
+    - Repository: `my-app`
+    - Tag: `2.0`
+@y
+    - Host: `example.com`
+    - Port: `5000`
+    - Namespace: `team`
+    - Repository: `my-app`
+    - Tag: `2.0`
+@z
+
+@x
+    `alpine`
+@y
+    `alpine`
+@z
+
+@x
+    - Host: `docker.io` (default)
+    - Namespace: `library` (default)
+    - Repository: `alpine`
+    - Tag: `latest` (default)
+@y
+    - Host: `docker.io` (default)
+    - Namespace: `library` (default)
+    - Repository: `alpine`
+    - Tag: `latest` (default)
+@z
+
+@x
+    For more information on the structure and rules of image naming, refer to the
+    [Distribution reference](https://pkg.go.dev/github.com/distribution/reference#pkg-overview)
+    as the canonical definition of the format.
+@y
+    For more information on the structure and rules of image naming, refer to the
+    [Distribution reference](https://pkg.go.dev/github.com/distribution/reference#pkg-overview)
+    as the canonical definition of the format.
+@z
+
+@x
 usage: docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
-pname: docker image
-plink: docker_image.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     ### Tag an image referenced by ID
 @y
-    You can group your images together using names and tags, and then
-    [push](__SUBDIR__/reference/cli/docker/image/push/) them to a registry.
-usage: docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
-pname: docker image
-plink: docker_image.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     ### Tag an image referenced by ID
 @z
@@ -127,15 +145,7 @@ examples: |-
     `version1.0`:
 @z
 
-@x
-    ```console
-    $ docker tag 0e5574283393 fedora/httpd:version1.0
-    ```
-@y
-    ```console
-    $ docker tag 0e5574283393 fedora/httpd:version1.0
-    ```
-@z
+% snip command...
 
 @x
     ### Tag an image referenced by Name
@@ -149,15 +159,7 @@ examples: |-
     To tag a local image `httpd` as `fedora/httpd` with the tag `version1.0`:
 @z
 
-@x
-    ```console
-    $ docker tag httpd fedora/httpd:version1.0
-    ```
-@y
-    ```console
-    $ docker tag httpd fedora/httpd:version1.0
-    ```
-@z
+% snip command...
 
 @x
     Note that since the tag name isn't specified, the alias is created for an
@@ -181,15 +183,7 @@ examples: |-
     with the tag `version1.0.test`:
 @z
 
-@x
-    ```console
-    $ docker tag httpd:test fedora/httpd:version1.0.test
-    ```
-@y
-    ```console
-    $ docker tag httpd:test fedora/httpd:version1.0.test
-    ```
-@z
+% snip command...
 
 @x
     ### Tag an image for a private registry
@@ -205,24 +199,5 @@ examples: |-
     must include the registry hostname and port (if needed).
 @z
 
-@x
-    ```console
-    $ docker tag 0e5574283393 myregistryhost:5000/fedora/httpd:version1.0
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker tag 0e5574283393 myregistryhost:5000/fedora/httpd:version1.0
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

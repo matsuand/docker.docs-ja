@@ -98,7 +98,7 @@ on Microsoft Windows Server](/manuals/engine/install/binaries.md#install-server-
 
 @x
 2.  Optional. Ensure TLS1.2 is enabled. 
-    GitHub requires TLS1.2 fore secure connections. If you’re using an older version of Windows Server, for example 2016, or suspect that TLS1.2 is not enabled, run the following command in PowerShell:
+    GitHub requires TLS1.2 for secure connections. If you’re using an older version of Windows Server, for example 2016, or suspect that TLS1.2 is not enabled, run the following command in PowerShell:
 @y
 2.  任意の作業。
     TLS1.2 の有効化操作です。

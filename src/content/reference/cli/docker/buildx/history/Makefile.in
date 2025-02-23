@@ -301,7 +301,8 @@ copyfiles = \
 	logs.md   \
 	ls.md     \
 	open.md   \
-	rm.md
+	rm.md     \
+	trace.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

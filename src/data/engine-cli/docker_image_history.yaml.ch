@@ -7,81 +7,17 @@ aliases: docker image history, docker history
 short: Show the history of an image
 long: Show the history of an image
 usage: docker image history [OPTIONS] IMAGE
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: format
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'table':            Print output in table format with column headers (default)
-        'table TEMPLATE':   Print output in table format using the given Go template
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: human
-      shorthand: H
-      value_type: bool
-      default_value: "true"
-      description: Print sizes and dates in human readable format
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Don't truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only show image IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    To see how the `docker:latest` image was built:
 @y
 command: docker image history
 aliases: docker image history, docker history
 short: Show the history of an image
 long: Show the history of an image
 usage: docker image history [OPTIONS] IMAGE
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: format
-      value_type: string
+@z
+
+% options:
+
+@x format
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -89,87 +25,59 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: human
-      shorthand: H
-      value_type: bool
-      default_value: "true"
+@y
+      description: |-
+        Format output using a custom template:
+        'table':            Print output in table format with column headers (default)
+        'table TEMPLATE':   Print output in table format using the given Go template
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+@x human
       description: Print sizes and dates in human readable format
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
+@y
+      description: Print sizes and dates in human readable format
+@z
+
+@x no-trunc
       description: Don't truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Don't truncate output
+@z
+
+@x platform
+      description: |
+        Show history for the given platform. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+      description: |
+        Show history for the given platform. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@z
+
+@x quiet
       description: Only show image IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Only show image IDs
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    To see how the `docker:latest` image was built:
+@y
 examples: |-
     To see how the `docker:latest` image was built:
 @z
 
-@x
-    ```console
-    $ docker history docker
-@y
-    ```console
-    $ docker history docker
-@z
-
-@x
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    3e23a5875458        8 days ago          /bin/sh -c #(nop) ENV LC_ALL=C.UTF-8            0 B
-    8578938dd170        8 days ago          /bin/sh -c dpkg-reconfigure locales &&    loc   1.245 MB
-    be51b77efb42        8 days ago          /bin/sh -c apt-get update && apt-get install    338.3 MB
-    4b137612be55        6 weeks ago         /bin/sh -c #(nop) ADD jessie.tar.xz in /        121 MB
-    750d58736b4b        6 weeks ago         /bin/sh -c #(nop) MAINTAINER Tianon Gravi <ad   0 B
-    511136ea3c5a        9 months ago                                                        0 B                 Imported from -
-    ```
-@y
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    3e23a5875458        8 days ago          /bin/sh -c #(nop) ENV LC_ALL=C.UTF-8            0 B
-    8578938dd170        8 days ago          /bin/sh -c dpkg-reconfigure locales &&    loc   1.245 MB
-    be51b77efb42        8 days ago          /bin/sh -c apt-get update && apt-get install    338.3 MB
-    4b137612be55        6 weeks ago         /bin/sh -c #(nop) ADD jessie.tar.xz in /        121 MB
-    750d58736b4b        6 weeks ago         /bin/sh -c #(nop) MAINTAINER Tianon Gravi <ad   0 B
-    511136ea3c5a        9 months ago                                                        0 B                 Imported from -
-    ```
-@z
+% snip command...
 
 @x
     To see how the `docker:apache` image was added to a container's base image:
@@ -177,25 +85,7 @@ examples: |-
     To see how the `docker:apache` image was added to a container's base image:
 @z
 
-@x
-    ```console
-    $ docker history docker:scm
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    2ac9d1098bf1        3 months ago        /bin/bash                                       241.4 MB            Added Apache to Fedora base image
-    88b42ffd1f7c        5 months ago        /bin/sh -c #(nop) ADD file:1fd8d7f9f6557cafc7   373.7 MB
-    c69cab00d6ef        5 months ago        /bin/sh -c #(nop) MAINTAINER Lokesh Mandvekar   0 B
-    511136ea3c5a        19 months ago                                                       0 B                 Imported from -
-    ```
-@y
-    ```console
-    $ docker history docker:scm
-    IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    2ac9d1098bf1        3 months ago        /bin/bash                                       241.4 MB            Added Apache to Fedora base image
-    88b42ffd1f7c        5 months ago        /bin/sh -c #(nop) ADD file:1fd8d7f9f6557cafc7   373.7 MB
-    c69cab00d6ef        5 months ago        /bin/sh -c #(nop) MAINTAINER Lokesh Mandvekar   0 B
-    511136ea3c5a        19 months ago                                                       0 B                 Imported from -
-    ```
-@z
+% snip command...
 
 @x
     ### Format the output (--format) {#format}
@@ -257,32 +147,65 @@ examples: |-
     image:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker history --format "{{.ID}}: {{.CreatedSince}}" busybox
+    ### Show history for a specific platform (--platform) {#platform}
 @y
-    ```console
-    $ docker history --format "{{.ID}}: {{.CreatedSince}}" busybox
+    ### Show history for a specific platform (--platform) {#platform}
 @z
 
 @x
-    f6e427c148a7: 4 weeks ago
-    <missing>: 4 weeks ago
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    The `--platform` option allows you to specify which platform variant to show
+    history for if multiple platforms are present. By default, `docker history`
+    shows the history for the daemon's native platform or if not present, the
+    first available platform.
 @y
-    f6e427c148a7: 4 weeks ago
-    <missing>: 4 weeks ago
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    The `--platform` option allows you to specify which platform variant to show
+    history for if multiple platforms are present. By default, `docker history`
+    shows the history for the daemon's native platform or if not present, the
+    first available platform.
 @z
+
+@x
+    If the local image store has multiple platform variants of an image, the
+    `--platform` option selects which variant to show the history for. An error
+    is produced if the given platform is not present in the local image cache.
+@y
+    If the local image store has multiple platform variants of an image, the
+    `--platform` option selects which variant to show the history for. An error
+    is produced if the given platform is not present in the local image cache.
+@z
+
+@x
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and if omitted falls back to the daemon's defaults.
+@y
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and if omitted falls back to the daemon's defaults.
+@z
+
+@x
+    The following example pulls the RISC-V variant of the `alpine:latest` image
+    and shows its history.
+@y
+    The following example pulls the RISC-V variant of the `alpine:latest` image
+    and shows its history.
+@z
+
+% snip command...
+
+@x
+    The following example attempts to show the history for a platform variant of
+    `alpine:latest` that doesn't exist in the local image store, resulting in
+    an error.
+@y
+    The following example attempts to show the history for a platform variant of
+    `alpine:latest` that doesn't exist in the local image store, resulting in
+    an error.
+@z
+
+% snip command...
+% snip directives...

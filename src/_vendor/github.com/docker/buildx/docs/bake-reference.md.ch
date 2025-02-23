@@ -344,14 +344,6 @@ The key takes a list of annotations, in the format of `KEY=VALUE`.
 % snip code...
 
 @x
-is the same as
-@y
-is the same as
-@z
-
-% snip code...
-
-@x
 By default, the annotation is added to image manifests. You can configure the
 level of the annotations by adding a prefix to the annotation, containing a
 comma-separated list of all the levels that you want to annotate. The following

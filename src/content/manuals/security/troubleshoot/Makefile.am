@@ -3,10 +3,8 @@
 ##
 
 bases = \
-	_index.md  \
-	manage.md  \
-	pulls.md   \
-	repositories.md
+	_index.md           \
+	troubleshoot-sso.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

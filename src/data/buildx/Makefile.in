@@ -252,6 +252,7 @@ bases = \
 	docker_buildx_history_logs.yaml               \
 	docker_buildx_history_ls.yaml                 \
 	docker_buildx_history_open.yaml               \
+	docker_buildx_history_trace.yaml              \
 	docker_buildx_history_rm.yaml                 \
 	docker_buildx_imagetools.yaml                 \
 	docker_buildx_imagetools_create.yaml          \

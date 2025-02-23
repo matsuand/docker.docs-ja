@@ -88,28 +88,28 @@ examples: |-
 @z
 
 @x
-    ### Stop container with timeout (-t, --timeout) {#time}
+    ### Stop container with timeout (-t, --timeout) {#timeout}
 @y
-    ### Stop container with timeout (-t, --timeout) {#time}
+    ### Stop container with timeout (-t, --timeout) {#timeout}
 @z
 
 @x
-    The `--time` flag sets the number of seconds to wait for the container
+    The `--timeout` flag sets the number of seconds to wait for the container
     to stop after sending the pre-defined (see [`--signal`]{#signal)) system call signal.
     If the container does not exit after the timeout elapses, it's forcibly killed
     with a `SIGKILL` signal.
 @y
-    The `--time` flag sets the number of seconds to wait for the container
+    The `--timeout` flag sets the number of seconds to wait for the container
     to stop after sending the pre-defined (see [`--signal`]{#signal)) system call signal.
     If the container does not exit after the timeout elapses, it's forcibly killed
     with a `SIGKILL` signal.
 @z
 
 @x
-    If you set `--time` to `-1`, no timeout is applied, and the daemon
+    If you set `--timeout` to `-1`, no timeout is applied, and the daemon
     waits indefinitely for the container to exit.
 @y
-    If you set `--time` to `-1`, no timeout is applied, and the daemon
+    If you set `--timeout` to `-1`, no timeout is applied, and the daemon
     waits indefinitely for the container to exit.
 @z
 
@@ -122,6 +122,7 @@ examples: |-
     The default timeout can be specified using the [`--stop-timeout`](__SUBDIR__/reference/cli/docker/container/run/#stop-timeout)
     option when creating the container. If no default is configured for the container,
     the Daemon determines the default, and is 10 seconds for Linux containers, and
+    30 seconds for Windows containers.
     30 seconds for Windows containers.
 @z
 

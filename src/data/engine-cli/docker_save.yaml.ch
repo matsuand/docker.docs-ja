@@ -7,70 +7,36 @@ aliases: docker image save, docker save
 short: Save one or more images to a tar archive (streamed to STDOUT by default)
 long: Save one or more images to a tar archive (streamed to STDOUT by default)
 usage: docker save [OPTIONS] IMAGE [IMAGE...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
-      description: Write to a file, instead of STDOUT
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker save
 aliases: docker image save, docker save
 short: Save one or more images to a tar archive (streamed to STDOUT by default)
 long: Save one or more images to a tar archive (streamed to STDOUT by default)
 usage: docker save [OPTIONS] IMAGE [IMAGE...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
-      description: Write to a file, instead of STDOUT
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x output
+      description: Write to a file, instead of STDOUT
+@y
+      description: Write to a file, instead of STDOUT
+@z
+
+@x platform
+      description: |
+        Save only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+      description: |
+        Save only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+% snip directives...

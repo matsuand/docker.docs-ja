@@ -241,7 +241,7 @@ bases = \
 	_index.md  \
 	manage.md  \
 	pulls.md   \
-	storage.md
+	repositories.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

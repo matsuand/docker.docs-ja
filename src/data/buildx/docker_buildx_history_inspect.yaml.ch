@@ -6,75 +6,47 @@ command: docker buildx history inspect
 short: Inspect a build
 long: Inspect a build
 usage: docker buildx history inspect [OPTIONS] [REF]
-pname: docker buildx history
-plink: docker_buildx_history.yaml
-cname:
-    - docker buildx history inspect attachment
-clink:
-    - docker_buildx_history_inspect_attachment.yaml
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-command: docker buildx history inspect
-short: Inspect a build
-long: Inspect a build
-usage: docker buildx history inspect [OPTIONS] [REF]
-pname: docker buildx history
-plink: docker_buildx_history.yaml
-cname:
-    - docker buildx history inspect attachment
-clink:
-    - docker_buildx_history_inspect_attachment.yaml
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% cname:
+% clink:
+% options:
+
+@x format
+      description: Format the output
+@y
+      description: Format the output
+@z
+
+% inherited_options:
+@x builder
+      description: Override the configured builder instance
+@y
+      description: Override the configured builder instance
+@z
+
+@x debug
+      description: Enable debug logging
+@y
+      description: Enable debug logging
+@z
+
+@x
+examples: |-
+    ### Format the output (--format) {#format}
+@y
+examples: |-
+    ### Format the output (--format) {#format}
+@z
+
+@x
+    The formatting options (`--format`) pretty-prints the output to `pretty` (default),
+    `json` or using a Go template.
+@y
+    The formatting options (`--format`) pretty-prints the output to `pretty` (default),
+    `json` or using a Go template.
+@z
+
+% snip command...
+% snip directives...

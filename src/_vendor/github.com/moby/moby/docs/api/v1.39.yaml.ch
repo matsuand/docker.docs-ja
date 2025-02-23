@@ -11104,65 +11104,29 @@ definitions:
 @z
 
 @x
-          Some images (for example, Windows base images) contain artifacts
-          whose distribution is restricted by license. When these images are
-          pushed to a registry, restricted artifacts are not included.
+          <p><br /></p>
 @y
-          Some images (for example, Windows base images) contain artifacts
-          whose distribution is restricted by license. When these images are
-          pushed to a registry, restricted artifacts are not included.
+          <p><br /></p>
 @z
 
 @x
-          This configuration override this behavior, and enables the daemon to
-          push nondistributable artifacts to all registries whose resolved IP
-          address is within the subnet described by the CIDR syntax.
-@y
-          This configuration override this behavior, and enables the daemon to
-          push nondistributable artifacts to all registries whose resolved IP
-          address is within the subnet described by the CIDR syntax.
-@z
-
-@x
-          This option is useful when pushing images containing
-          nondistributable artifacts to a registry on an air-gapped network so
-          hosts on that network can pull the images without connecting to
-          another server.
-@y
-          This option is useful when pushing images containing
-          nondistributable artifacts to a registry on an air-gapped network so
-          hosts on that network can pull the images without connecting to
-          another server.
-@z
-
-@x
-          > **Warning**: Nondistributable artifacts typically have restrictions
-          > on how and where they can be distributed and shared. Only use this
-          > feature to push artifacts to private registries and ensure that you
-          > are in compliance with any terms that cover redistributing
-          > nondistributable artifacts.
-@y
-          > **Warning**: Nondistributable artifacts typically have restrictions
-          > on how and where they can be distributed and shared. Only use this
-          > feature to push artifacts to private registries and ensure that you
-          > are in compliance with any terms that cover redistributing
-          > nondistributable artifacts.
-@z
-
-@x
+          > **Deprecated**: Pushing nondistributable artifacts is now always enabled
+          > and this field is always `null`.
         type: "array"
         items:
           type: "string"
-        example: ["::1/128", "127.0.0.0/8"]
+        example: []
       AllowNondistributableArtifactsHostnames:
         description: |
           List of registry hostnames to which nondistributable artifacts can be
           pushed, using the format `<hostname>[:<port>]` or `<IP address>[:<port>]`.
 @y
+          > **Deprecated**: Pushing nondistributable artifacts is now always enabled
+          > and this field is always `null`.
         type: "array"
         items:
           type: "string"
-        example: ["::1/128", "127.0.0.0/8"]
+        example: []
       AllowNondistributableArtifactsHostnames:
         description: |
           List of registry hostnames to which nondistributable artifacts can be
@@ -11170,45 +11134,18 @@ definitions:
 @z
 
 @x
-          Some images (for example, Windows base images) contain artifacts
-          whose distribution is restricted by license. When these images are
-          pushed to a registry, restricted artifacts are not included.
+          <p><br /></p>
 @y
-          Some images (for example, Windows base images) contain artifacts
-          whose distribution is restricted by license. When these images are
-          pushed to a registry, restricted artifacts are not included.
+          <p><br /></p>
 @z
 
 @x
-          This configuration override this behavior for the specified
-          registries.
-@y
-          This configuration override this behavior for the specified
-          registries.
-@z
-
-@x
-          This option is useful when pushing images containing
-          nondistributable artifacts to a registry on an air-gapped network so
-          hosts on that network can pull the images without connecting to
-          another server.
-@y
-          This option is useful when pushing images containing
-          nondistributable artifacts to a registry on an air-gapped network so
-          hosts on that network can pull the images without connecting to
-          another server.
-@z
-
-@x
-          > **Warning**: Nondistributable artifacts typically have restrictions
-          > on how and where they can be distributed and shared. Only use this
-          > feature to push artifacts to private registries and ensure that you
-          > are in compliance with any terms that cover redistributing
-          > nondistributable artifacts.
+          > **Deprecated**: Pushing nondistributable artifacts is now always enabled
+          > and this field is always `null`.
         type: "array"
         items:
           type: "string"
-        example: ["registry.internal.corp.example.com:3000", "[2001:db8:a0b:12f0::1]:443"]
+        example: []
       InsecureRegistryCIDRs:
         description: |
           List of IP ranges of insecure registries, using the CIDR syntax
@@ -11216,15 +11153,12 @@ definitions:
           accept un-encrypted (HTTP) and/or untrusted (HTTPS with certificates
           from unknown CAs) communication.
 @y
-          > **Warning**: Nondistributable artifacts typically have restrictions
-          > on how and where they can be distributed and shared. Only use this
-          > feature to push artifacts to private registries and ensure that you
-          > are in compliance with any terms that cover redistributing
-          > nondistributable artifacts.
+          > **Deprecated**: Pushing nondistributable artifacts is now always enabled
+          > and this field is always `null`.
         type: "array"
         items:
           type: "string"
-        example: ["registry.internal.corp.example.com:3000", "[2001:db8:a0b:12f0::1]:443"]
+        example: []
       InsecureRegistryCIDRs:
         description: |
           List of IP ranges of insecure registries, using the CIDR syntax

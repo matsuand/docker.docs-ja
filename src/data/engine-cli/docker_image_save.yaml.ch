@@ -10,32 +10,6 @@ long: |-
     Contains all parent layers, and all tags + versions, or specified `repo:tag`, for
     each argument provided.
 usage: docker image save [OPTIONS] IMAGE [IMAGE...]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
-      description: Write to a file, instead of STDOUT
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Create a backup that can then be used with `docker load`.
 @y
 command: docker image save
 aliases: docker image save, docker save
@@ -45,85 +19,41 @@ long: |-
     Contains all parent layers, and all tags + versions, or specified `repo:tag`, for
     each argument provided.
 usage: docker image save [OPTIONS] IMAGE [IMAGE...]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
+@z
+
+% options:
+
+@x output
       description: Write to a file, instead of STDOUT
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Write to a file, instead of STDOUT
+@z
+
+@x platform
+      description: |
+        Save only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+      description: |
+        Save only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Create a backup that can then be used with `docker load`.
+@y
 examples: |-
     ### Create a backup that can then be used with `docker load`.
 @z
 
-@x
-    ```console
-    $ docker save busybox > busybox.tar
-@y
-    ```console
-    $ docker save busybox > busybox.tar
-@z
-
-@x
-    $ ls -sh busybox.tar
-@y
-    $ ls -sh busybox.tar
-@z
-
-@x
-    2.7M busybox.tar
-@y
-    2.7M busybox.tar
-@z
-
-@x
-    $ docker save --output busybox.tar busybox
-@y
-    $ docker save --output busybox.tar busybox
-@z
-
-@x
-    $ ls -sh busybox.tar
-@y
-    $ ls -sh busybox.tar
-@z
-
-@x
-    2.7M busybox.tar
-@y
-    2.7M busybox.tar
-@z
-
-@x
-    $ docker save -o fedora-all.tar fedora
-@y
-    $ docker save -o fedora-all.tar fedora
-@z
-
-@x
-    $ docker save -o fedora-latest.tar fedora:latest
-    ```
-@y
-    $ docker save -o fedora-latest.tar fedora:latest
-    ```
-@z
+% snip command...
 
 @x
     ### Save an image to a tar.gz file using gzip
@@ -137,15 +67,7 @@ examples: |-
     You can use gzip to save the image file and make the backup smaller.
 @z
 
-@x
-    ```console
-    $ docker save myimage:latest | gzip > myimage_latest.tar.gz
-    ```
-@y
-    ```console
-    $ docker save myimage:latest | gzip > myimage_latest.tar.gz
-    ```
-@z
+% snip command...
 
 @x
     ### Cherry-pick particular tags
@@ -159,24 +81,55 @@ examples: |-
     You can even cherry-pick particular tags of an image repository.
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker save -o ubuntu.tar ubuntu:lucid ubuntu:saucy
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    ### Save a specific platform (--platform) {#platform}
 @y
-    ```console
-    $ docker save -o ubuntu.tar ubuntu:lucid ubuntu:saucy
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    ### Save a specific platform (--platform) {#platform}
 @z
+
+@x
+    The `--platform` option allows you to specify which platform variant of the
+    image to save. By default, `docker save` saves all platform variants that
+    are present in the daemon's image store. Use the `--platform` option
+    to specify which platform variant of the image to save. An error is produced
+    if the given platform is not present in the local image store.
+@y
+    The `--platform` option allows you to specify which platform variant of the
+    image to save. By default, `docker save` saves all platform variants that
+    are present in the daemon's image store. Use the `--platform` option
+    to specify which platform variant of the image to save. An error is produced
+    if the given platform is not present in the local image store.
+@z
+
+@x
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and default to the daemon's native architecture if omitted.
+@y
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and default to the daemon's native architecture if omitted.
+@z
+
+@x
+    The following example pulls the RISC-V variant of the `alpine:latest` image
+    and saves it to a tar archive.
+@y
+    The following example pulls the RISC-V variant of the `alpine:latest` image
+    and saves it to a tar archive.
+@z
+
+% snip command...
+
+@x
+    The following example attempts to save a platform variant of `alpine:latest`
+    that doesn't exist in the local image store, resulting in an error.
+@y
+    The following example attempts to save a platform variant of `alpine:latest`
+    that doesn't exist in the local image store, resulting in an error.
+@z
+
+% snip command...
+% snip directives...

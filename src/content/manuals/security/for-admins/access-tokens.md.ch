@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: Organization access tokens
 description: Learn how to create and manage organization access tokens
@@ -26,25 +24,23 @@ linkTitle: Organization access tokens
 @x
 > [!WARNING]
 >
-> Organization access tokens (OATs) are not intended to be used with Docker Desktop, and are incompatible.
+> Organization access tokens (OATs) are not intended to be used with Docker 
+> Desktop, and are incompatible.
 >
 > OATs are also currently incompatible with the following services:
 >
-> - Docker Build Cloud
 > - Docker Scout
-> - Docker REST APIs
 >
 > If you use Docker Desktop or one of these services, you must use personal access tokens instead.
 @y
 > [!WARNING]
 >
-> Organization access tokens (OATs) are not intended to be used with Docker Desktop, and are incompatible.
+> Organization access tokens (OATs) are not intended to be used with Docker 
+> Desktop, and are incompatible.
 >
 > OATs are also currently incompatible with the following services:
 >
-> - Docker Build Cloud
 > - Docker Scout
-> - Docker REST APIs
 >
 > If you use Docker Desktop or one of these services, you must use personal access tokens instead.
 @z
@@ -76,8 +72,8 @@ OATs provide the following advantages:
   if you find any suspicious activity.
 - You can limit what each OAT has access to, which limits the impact if an OAT
   is compromised.
-- All organization owners can manage OATs. If one owner leaves the organization,
-  the remaining owners can still manage the OATs.
+- All company or organization owners can manage OATs. If one owner leaves the 
+  organization, the remaining owners can still manage the OATs.
 - OATs have their own Docker Hub usage limits that don't count towards your
   personal account's limits.
 @y
@@ -85,8 +81,8 @@ OATs provide the following advantages:
   if you find any suspicious activity.
 - You can limit what each OAT has access to, which limits the impact if an OAT
   is compromised.
-- All organization owners can manage OATs. If one owner leaves the organization,
-  the remaining owners can still manage the OATs.
+- All company or organization owners can manage OATs. If one owner leaves the 
+  organization, the remaining owners can still manage the OATs.
 - OATs have their own Docker Hub usage limits that don't count towards your
   personal account's limits.
 @z
@@ -108,7 +104,7 @@ If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/)
   it.
 - OATs are not associated with a single user. If a user with access to the
   service account leaves your organization, you may lose access to the service
-  account. OATs can be managed by any organization owner.
+  account. OATs can be managed by any company or organization owner.
 @y
 - Access permissions are easier to manage with OATs. You can assign access
   permissions to OATs, while service accounts require using teams for access
@@ -120,7 +116,7 @@ If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/)
   it.
 - OATs are not associated with a single user. If a user with access to the
   service account leaves your organization, you may lose access to the service
-  account. OATs can be managed by any organization owner.
+  account. OATs can be managed by any company or organization owner.
 @z
 
 @x
@@ -132,23 +128,25 @@ If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/)
 @x
 > [!IMPORTANT]
 >
-> Treat access tokens like a password and keep them secret. Store your tokens securely in a credential manager for example.
+> Treat access tokens like a password and keep them secret. Store your tokens 
+> securely in a credential manager for example.
 @y
 > [!IMPORTANT]
 >
-> Treat access tokens like a password and keep them secret. Store your tokens securely in a credential manager for example.
+> Treat access tokens like a password and keep them secret. Store your tokens 
+> securely in a credential manager for example.
 @z
 
 @x
-Organization owners can create up to 10 organization access tokens (OATs) for
-organizations with a Team subscription and up to 100 OATs for organizations with
-a Business subscription. Expired tokens count towards the total amount of
-tokens.
+Company or organization owners can create up to 10 organization access tokens 
+(OATs) for organizations with a Team subscription and up to 100 OATs for 
+organizations with a Business subscription. Expired tokens count towards the 
+total amount of tokens.
 @y
-Organization owners can create up to 10 organization access tokens (OATs) for
-organizations with a Team subscription and up to 100 OATs for organizations with
-a Business subscription. Expired tokens count towards the total amount of
-tokens.
+Company or organization owners can create up to 10 organization access tokens 
+(OATs) for organizations with a Team subscription and up to 100 OATs for 
+organizations with a Business subscription. Expired tokens count towards the 
+total amount of tokens.
 @z
 
 @x

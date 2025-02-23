@@ -36,10 +36,10 @@ produces:
 consumes:
   - "application/json"
   - "text/plain"
-basePath: "/v1.42"
+basePath: "/v1.48"
 info:
   title: "Docker Engine API"
-  version: "1.42"
+  version: "1.48"
   x-logo:
     url: "https://docs.docker.com/assets/images/logo-docker-main.png"
   description: |
@@ -57,10 +57,10 @@ produces:
 consumes:
   - "application/json"
   - "text/plain"
-basePath: "/v1.42"
+basePath: "/v1.48"
 info:
   title: "Docker Engine API"
-  version: "1.42"
+  version: "1.48"
   x-logo:
     url: "https://docs.docker.com/assets/images/logo-docker-main.png"
   description: |
@@ -132,12 +132,12 @@ info:
 @z
 
 @x
-    If you omit the version-prefix, the current version of the API (v1.42) is used.
-    For example, calling `/info` is the same as calling `/v1.42/info`. Using the
+    If you omit the version-prefix, the current version of the API (v1.48) is used.
+    For example, calling `/info` is the same as calling `/v1.48/info`. Using the
     API without a version-prefix is deprecated and will be removed in a future release.
 @y
-    If you omit the version-prefix, the current version of the API (v1.42) is used.
-    For example, calling `/info` is the same as calling `/v1.42/info`. Using the
+    If you omit the version-prefix, the current version of the API (v1.48) is used.
+    For example, calling `/info` is the same as calling `/v1.48/info`. Using the
     API without a version-prefix is deprecated and will be removed in a future release.
 @z
 
@@ -150,13 +150,13 @@ info:
 @z
 
 @x
-    The API uses an open schema model, which means server may add extra properties
+    The API uses an open schema model, which means the server may add extra properties
     to responses. Likewise, the server will ignore any extra query parameters and
     request body properties. When you write clients, you need to ignore additional
     properties in responses to ensure they do not break when talking to newer
     daemons.
 @y
-    The API uses an open schema model, which means server may add extra properties
+    The API uses an open schema model, which means the server may add extra properties
     to responses. Likewise, the server will ignore any extra query parameters and
     request body properties. When you write clients, you need to ignore additional
     properties in responses to ensure they do not break when talking to newer
@@ -470,6 +470,7 @@ definitions:
 @x
           - `bind` a mount of a file or directory from the host into the container.
           - `volume` a docker volume with the given `Name`.
+          - `image` a docker image
           - `tmpfs` a `tmpfs`.
           - `npipe` a named pipe from the host into the container.
           - `cluster` a Swarm cluster volume
@@ -477,6 +478,7 @@ definitions:
         enum:
           - "bind"
           - "volume"
+          - "image"
           - "tmpfs"
           - "npipe"
           - "cluster"
@@ -493,6 +495,7 @@ definitions:
 @y
           - `bind` a mount of a file or directory from the host into the container.
           - `volume` a docker volume with the given `Name`.
+          - `image` a docker image
           - `tmpfs` a `tmpfs`.
           - `npipe` a named pipe from the host into the container.
           - `cluster` a Swarm cluster volume
@@ -500,6 +503,7 @@ definitions:
         enum:
           - "bind"
           - "volume"
+          - "image"
           - "tmpfs"
           - "npipe"
           - "cluster"
@@ -760,6 +764,7 @@ definitions:
 @x
           - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
           - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
+          - `image` Mounts an image.
           - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
           - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container.
           - `cluster` a Swarm cluster volume
@@ -767,6 +772,7 @@ definitions:
         enum:
           - "bind"
           - "volume"
+          - "image"
           - "tmpfs"
           - "npipe"
           - "cluster"
@@ -798,45 +804,14 @@ definitions:
             description: "Create mount point on host if missing"
             type: "boolean"
             default: false
-      VolumeOptions:
-        description: "Optional configuration for the `volume` type."
-        type: "object"
-        properties:
-          NoCopy:
-            description: "Populate volume with data from the target."
-            type: "boolean"
-            default: false
-          Labels:
-            description: "User-defined key/value metadata."
-            type: "object"
-            additionalProperties:
-              type: "string"
-          DriverConfig:
-            description: "Map of driver specific options"
-            type: "object"
-            properties:
-              Name:
-                description: "Name of the driver to use to create the volume."
-                type: "string"
-              Options:
-                description: "key/value map of driver specific options."
-                type: "object"
-                additionalProperties:
-                  type: "string"
-      TmpfsOptions:
-        description: "Optional configuration for the `tmpfs` type."
-        type: "object"
-        properties:
-          SizeBytes:
-            description: "The size for the tmpfs mount in bytes."
-            type: "integer"
-            format: "int64"
-          Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
-            type: "integer"
+          ReadOnlyNonRecursive:
+            description: |
+               Make the mount non-recursively read-only, but still leave the mount recursive
+               (unless NonRecursive is set to `true` in conjunction).
 @y
           - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
           - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
+          - `image` Mounts an image.
           - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
           - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container.
           - `cluster` a Swarm cluster volume
@@ -844,6 +819,7 @@ definitions:
         enum:
           - "bind"
           - "volume"
+          - "image"
           - "tmpfs"
           - "npipe"
           - "cluster"
@@ -875,6 +851,22 @@ definitions:
             description: "Create mount point on host if missing"
             type: "boolean"
             default: false
+          ReadOnlyNonRecursive:
+            description: |
+               Make the mount non-recursively read-only, but still leave the mount recursive
+               (unless NonRecursive is set to `true` in conjunction).
+@z
+
+@x
+               Added in v1.44, before that version all read-only mounts were
+               non-recursive by default. To match the previous behaviour this
+               will default to `true` for clients on versions prior to v1.44.
+            type: "boolean"
+            default: false
+          ReadOnlyForceRecursive:
+            description: "Raise an error if the mount cannot be made recursively read-only."
+            type: "boolean"
+            default: false
       VolumeOptions:
         description: "Optional configuration for the `volume` type."
         type: "object"
@@ -900,6 +892,18 @@ definitions:
                 type: "object"
                 additionalProperties:
                   type: "string"
+          Subpath:
+            description: "Source path inside the volume. Must be relative without any back traversals."
+            type: "string"
+            example: "dir-inside-volume/subdirectory"
+      ImageOptions:
+        description: "Optional configuration for the `image` type."
+        type: "object"
+        properties:
+          Subpath:
+            description: "Source path inside the image. Must be relative without any back traversals."
+            type: "string"
+            example: "dir-inside-image/subdirectory"
       TmpfsOptions:
         description: "Optional configuration for the `tmpfs` type."
         type: "object"
@@ -911,6 +915,94 @@ definitions:
           Mode:
             description: "The permission mode for the tmpfs mount in an integer."
             type: "integer"
+          Options:
+            description: |
+              The options to be passed to the tmpfs mount. An array of arrays.
+              Flag options should be provided as 1-length arrays. Other types
+              should be provided as as 2-length arrays, where the first item is
+              the key and the second the value.
+            type: "array"
+            items:
+              type: "array"
+              minItems: 1
+              maxItems: 2
+              items:
+                type: "string"
+            example:
+              [["noexec"]]
+@y
+               Added in v1.44, before that version all read-only mounts were
+               non-recursive by default. To match the previous behaviour this
+               will default to `true` for clients on versions prior to v1.44.
+            type: "boolean"
+            default: false
+          ReadOnlyForceRecursive:
+            description: "Raise an error if the mount cannot be made recursively read-only."
+            type: "boolean"
+            default: false
+      VolumeOptions:
+        description: "Optional configuration for the `volume` type."
+        type: "object"
+        properties:
+          NoCopy:
+            description: "Populate volume with data from the target."
+            type: "boolean"
+            default: false
+          Labels:
+            description: "User-defined key/value metadata."
+            type: "object"
+            additionalProperties:
+              type: "string"
+          DriverConfig:
+            description: "Map of driver specific options"
+            type: "object"
+            properties:
+              Name:
+                description: "Name of the driver to use to create the volume."
+                type: "string"
+              Options:
+                description: "key/value map of driver specific options."
+                type: "object"
+                additionalProperties:
+                  type: "string"
+          Subpath:
+            description: "Source path inside the volume. Must be relative without any back traversals."
+            type: "string"
+            example: "dir-inside-volume/subdirectory"
+      ImageOptions:
+        description: "Optional configuration for the `image` type."
+        type: "object"
+        properties:
+          Subpath:
+            description: "Source path inside the image. Must be relative without any back traversals."
+            type: "string"
+            example: "dir-inside-image/subdirectory"
+      TmpfsOptions:
+        description: "Optional configuration for the `tmpfs` type."
+        type: "object"
+        properties:
+          SizeBytes:
+            description: "The size for the tmpfs mount in bytes."
+            type: "integer"
+            format: "int64"
+          Mode:
+            description: "The permission mode for the tmpfs mount in an integer."
+            type: "integer"
+          Options:
+            description: |
+              The options to be passed to the tmpfs mount. An array of arrays.
+              Flag options should be provided as 1-length arrays. Other types
+              should be provided as as 2-length arrays, where the first item is
+              the key and the second the value.
+            type: "array"
+            items:
+              type: "array"
+              minItems: 1
+              maxItems: 2
+              items:
+                type: "string"
+            example:
+              [["noexec"]]
 @z
 
 @x
@@ -1653,6 +1745,12 @@ definitions:
           1000000 (1 ms). 0 means inherit.
         type: "integer"
         format: "int64"
+      StartInterval:
+        description: |
+          The time to wait between checks in nanoseconds during the start period.
+          It should be 0 or at least 1000000 (1 ms). 0 means inherit.
+        type: "integer"
+        format: "int64"
 @y
           - `[]` inherit healthcheck from image or parent image
           - `["NONE"]` disable healthcheck
@@ -1685,6 +1783,12 @@ definitions:
           1000000 (1 ms). 0 means inherit.
         type: "integer"
         format: "int64"
+      StartInterval:
+        description: |
+          The time to wait between checks in nanoseconds during the start period.
+          It should be 0 or at least 1000000 (1 ms). 0 means inherit.
+        type: "integer"
+        format: "int64"
 @z
 
 @x
@@ -1909,13 +2013,18 @@ definitions:
           ContainerIDFile:
             type: "string"
             description: "Path to a file where the container ID is written"
+            example: ""
           LogConfig:
             type: "object"
             description: "The logging configuration for this container"
             properties:
               Type:
+                description: |-
+                  Name of the logging driver used for the container or "none"
+                  if logging is disabled.
                 type: "string"
                 enum:
+                  - "local"
                   - "json-file"
                   - "syslog"
                   - "journald"
@@ -1926,9 +2035,14 @@ definitions:
                   - "etwlogs"
                   - "none"
               Config:
+                description: |-
+                  Driver-specific configuration options for the logging driver.
                 type: "object"
                 additionalProperties:
                   type: "string"
+                example:
+                  "max-file": "5"
+                  "max-size": "10m"
           NetworkMode:
             type: "string"
             description: |
@@ -1971,6 +2085,14 @@ definitions:
             items:
               type: "integer"
               minimum: 0
+            example: [80, 64]
+          Annotations:
+            type: "object"
+            description: |
+              Arbitrary non-identifying metadata attached to container and
+              provided to the runtime when the container is started.
+            additionalProperties:
+              type: "string"
 @y
               - `nocopy` disables automatic copying of data from the container
                 path to the volume. The `nocopy` flag only applies to named volumes.
@@ -2003,13 +2125,18 @@ definitions:
           ContainerIDFile:
             type: "string"
             description: "Path to a file where the container ID is written"
+            example: ""
           LogConfig:
             type: "object"
             description: "The logging configuration for this container"
             properties:
               Type:
+                description: |-
+                  Name of the logging driver used for the container or "none"
+                  if logging is disabled.
                 type: "string"
                 enum:
+                  - "local"
                   - "json-file"
                   - "syslog"
                   - "journald"
@@ -2020,9 +2147,14 @@ definitions:
                   - "etwlogs"
                   - "none"
               Config:
+                description: |-
+                  Driver-specific configuration options for the logging driver.
                 type: "object"
                 additionalProperties:
                   type: "string"
+                example:
+                  "max-file": "5"
+                  "max-size": "10m"
           NetworkMode:
             type: "string"
             description: |
@@ -2065,6 +2197,14 @@ definitions:
             items:
               type: "integer"
               minimum: 0
+            example: [80, 64]
+          Annotations:
+            type: "object"
+            description: |
+              Arbitrary non-identifying metadata attached to container and
+              provided to the runtime when the container is started.
+            additionalProperties:
+              type: "string"
 @z
 
 @x
@@ -2262,7 +2402,8 @@ definitions:
               - `"host"`: use the host's PID namespace inside the container
           Privileged:
             type: "boolean"
-            description: "Gives the container full access to the host."
+            description: |-
+              Gives the container full access to the host.
           PublishAllPorts:
             type: "boolean"
             description: |
@@ -2273,7 +2414,8 @@ definitions:
               - `"host"`: use the host's PID namespace inside the container
           Privileged:
             type: "boolean"
-            description: "Gives the container full access to the host."
+            description: |-
+              Gives the container full access to the host.
           PublishAllPorts:
             type: "boolean"
             description: |
@@ -2365,9 +2507,9 @@ definitions:
             minimum: 0
           Sysctls:
             type: "object"
-            description: |
+            x-nullable: true
+            description: |-
               A list of kernel parameters (sysctls) to set in the container.
-              For example:
 @y
               ```
               { "/run": "rw,noexec,nosuid,size=65536k" }
@@ -2390,20 +2532,22 @@ definitions:
             minimum: 0
           Sysctls:
             type: "object"
-            description: |
+            x-nullable: true
+            description: |-
               A list of kernel parameters (sysctls) to set in the container.
-              For example:
 @z
 
 @x
-              ```
-              {"net.ipv4.ip_forward": "1"}
-              ```
+              This field is omitted if not set.
             additionalProperties:
               type: "string"
+            example:
+              "net.ipv4.ip_forward": "1"
           Runtime:
             type: "string"
-            description: "Runtime to use with this container."
+            x-nullable: true
+            description: |-
+              Runtime to use with this container.
           # Applicable to Windows
           Isolation:
             type: "string"
@@ -2421,6 +2565,18 @@ definitions:
               the default set of paths).
             items:
               type: "string"
+            example:
+              - "/proc/asound"
+              - "/proc/acpi"
+              - "/proc/kcore"
+              - "/proc/keys"
+              - "/proc/latency_stats"
+              - "/proc/timer_list"
+              - "/proc/timer_stats"
+              - "/proc/sched_debug"
+              - "/proc/scsi"
+              - "/sys/firmware"
+              - "/sys/devices/virtual/powercap"
           ReadonlyPaths:
             type: "array"
             description: |
@@ -2428,15 +2584,23 @@ definitions:
               (this overrides the default set of paths).
             items:
               type: "string"
+            example:
+              - "/proc/bus"
+              - "/proc/fs"
+              - "/proc/irq"
+              - "/proc/sys"
+              - "/proc/sysrq-trigger"
 @y
-              ```
-              {"net.ipv4.ip_forward": "1"}
-              ```
+              This field is omitted if not set.
             additionalProperties:
               type: "string"
+            example:
+              "net.ipv4.ip_forward": "1"
           Runtime:
             type: "string"
-            description: "Runtime to use with this container."
+            x-nullable: true
+            description: |-
+              Runtime to use with this container.
           # Applicable to Windows
           Isolation:
             type: "string"
@@ -2454,6 +2618,18 @@ definitions:
               the default set of paths).
             items:
               type: "string"
+            example:
+              - "/proc/asound"
+              - "/proc/acpi"
+              - "/proc/kcore"
+              - "/proc/keys"
+              - "/proc/latency_stats"
+              - "/proc/timer_list"
+              - "/proc/timer_stats"
+              - "/proc/sched_debug"
+              - "/proc/scsi"
+              - "/sys/firmware"
+              - "/sys/devices/virtual/powercap"
           ReadonlyPaths:
             type: "array"
             description: |
@@ -2461,31 +2637,18 @@ definitions:
               (this overrides the default set of paths).
             items:
               type: "string"
+            example:
+              - "/proc/bus"
+              - "/proc/fs"
+              - "/proc/irq"
+              - "/proc/sys"
+              - "/proc/sysrq-trigger"
 @z
 
 @x
   ContainerConfig:
     description: |
       Configuration for a container that is portable between hosts.
-@y
-  ContainerConfig:
-    description: |
-      Configuration for a container that is portable between hosts.
-@z
-
-@x
-      When used as `ContainerConfig` field in an image, `ContainerConfig` is an
-      optional field containing the configuration of the container that was last
-      committed when creating the image.
-@y
-      When used as `ContainerConfig` field in an image, `ContainerConfig` is an
-      optional field containing the configuration of the container that was last
-      committed when creating the image.
-@z
-
-@x
-      Previous versions of Docker builder used this field to store build cache,
-      and it is not in active use anymore.
     type: "object"
     properties:
       Hostname:
@@ -2498,8 +2661,35 @@ definitions:
           The domain name to use for the container.
         type: "string"
       User:
-        description: "The user that commands are run as inside the container."
+        description: |-
+          Commands run as this user inside the container. If omitted, commands
+          run as the user specified in the image the container was started from.
+@y
+  ContainerConfig:
+    description: |
+      Configuration for a container that is portable between hosts.
+    type: "object"
+    properties:
+      Hostname:
+        description: |
+          The hostname to use for the container, as a valid RFC 1123 hostname.
         type: "string"
+        example: "439f4e91bd1d"
+      Domainname:
+        description: |
+          The domain name to use for the container.
+        type: "string"
+      User:
+        description: |-
+          Commands run as this user inside the container. If omitted, commands
+          run as the user specified in the image the container was started from.
+@z
+
+@x
+          Can be either user-name or UID, and optional group-name or GID,
+          separated by a colon (`<user-name|UID>[<:group-name|GID>]`).
+        type: "string"
+        example: "123:456"
       AttachStdin:
         description: "Whether to attach to `stdin`."
         type: "boolean"
@@ -2516,22 +2706,10 @@ definitions:
         description: |
           An object mapping ports to an empty object in the form:
 @y
-      Previous versions of Docker builder used this field to store build cache,
-      and it is not in active use anymore.
-    type: "object"
-    properties:
-      Hostname:
-        description: |
-          The hostname to use for the container, as a valid RFC 1123 hostname.
+          Can be either user-name or UID, and optional group-name or GID,
+          separated by a colon (`<user-name|UID>[<:group-name|GID>]`).
         type: "string"
-        example: "439f4e91bd1d"
-      Domainname:
-        description: |
-          The domain name to use for the container.
-        type: "string"
-      User:
-        description: "The user that commands are run as inside the container."
-        type: "string"
+        example: "123:456"
       AttachStdin:
         description: "Whether to attach to `stdin`."
         type: "boolean"
@@ -2712,44 +2890,8 @@ definitions:
         type: "boolean"
         x-nullable: true
       MacAddress:
-        description: "MAC address of the container."
-        type: "string"
-        x-nullable: true
-      OnBuild:
         description: |
-          `ONBUILD` metadata that were defined in the image's `Dockerfile`.
-        type: "array"
-        x-nullable: true
-        items:
-          type: "string"
-        example: []
-      Labels:
-        description: "User-defined key/value metadata."
-        type: "object"
-        additionalProperties:
-          type: "string"
-        example:
-          com.example.some-label: "some-value"
-          com.example.some-other-label: "some-other-value"
-      StopSignal:
-        description: |
-          Signal to stop a container as a string or unsigned integer.
-        type: "string"
-        example: "SIGTERM"
-        x-nullable: true
-      StopTimeout:
-        description: "Timeout to stop a container in seconds."
-        type: "integer"
-        default: 10
-        x-nullable: true
-      Shell:
-        description: |
-          Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell.
-        type: "array"
-        x-nullable: true
-        items:
-          type: "string"
-        example: ["/bin/sh", "-c"]
+          MAC address of the container.
 @y
           If the array consists of exactly one empty string (`[""]`) then the
           entry point is reset to system default (i.e., the entry point used by
@@ -2763,7 +2905,51 @@ definitions:
         type: "boolean"
         x-nullable: true
       MacAddress:
-        description: "MAC address of the container."
+        description: |
+          MAC address of the container.
+@z
+
+@x
+          Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
+        type: "string"
+        x-nullable: true
+      OnBuild:
+        description: |
+          `ONBUILD` metadata that were defined in the image's `Dockerfile`.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "string"
+        example: []
+      Labels:
+        description: "User-defined key/value metadata."
+        type: "object"
+        additionalProperties:
+          type: "string"
+        example:
+          com.example.some-label: "some-value"
+          com.example.some-other-label: "some-other-value"
+      StopSignal:
+        description: |
+          Signal to stop a container as a string or unsigned integer.
+        type: "string"
+        example: "SIGTERM"
+        x-nullable: true
+      StopTimeout:
+        description: "Timeout to stop a container in seconds."
+        type: "integer"
+        default: 10
+        x-nullable: true
+      Shell:
+        description: |
+          Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "string"
+        example: ["/bin/sh", "-c"]
+@y
+          Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
         type: "string"
         x-nullable: true
       OnBuild:
@@ -2832,14 +3018,16 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always empty and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always empty. It must not be used, and will be removed in API v1.48.
         type: "string"
         example: ""
       Domainname:
         description: |
           The domain name to use for the container.
 @y
-          > **Note**: this field is always empty and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always empty. It must not be used, and will be removed in API v1.48.
         type: "string"
         example: ""
       Domainname:
@@ -2854,7 +3042,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always empty and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always empty. It must not be used, and will be removed in API v1.48.
         type: "string"
         example: ""
       User:
@@ -2865,7 +3054,8 @@ definitions:
         description: |
           Whether to attach to `stdin`.
 @y
-          > **Note**: this field is always empty and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always empty. It must not be used, and will be removed in API v1.48.
         type: "string"
         example: ""
       User:
@@ -2884,7 +3074,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2892,7 +3083,8 @@ definitions:
         description: |
           Whether to attach to `stdout`.
 @y
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2908,7 +3100,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2916,7 +3109,8 @@ definitions:
         description: |
           Whether to attach to `stderr`.
 @y
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2932,7 +3126,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2940,7 +3135,8 @@ definitions:
         description: |
           An object mapping ports to an empty object in the form:
 @y
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2990,7 +3186,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -2998,7 +3195,8 @@ definitions:
         description: |
           Open `stdin`
 @y
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3014,7 +3212,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3022,7 +3221,8 @@ definitions:
         description: |
           Close `stdin` after one attached client disconnects.
 @y
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3038,7 +3238,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3072,7 +3273,8 @@ definitions:
           The name (or reference) of the image to use when creating the container,
           or which was used when the container was created.
 @y
-          > **Note**: this field is always false and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always false. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3114,7 +3316,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always empty and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always empty. It must not be used, and will be removed in API v1.48.
         type: "string"
         default: ""
         example: ""
@@ -3139,7 +3342,8 @@ definitions:
         description: |
           The entry point for the container as a string or an array of strings.
 @y
-          > **Note**: this field is always empty and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always empty. It must not be used, and will be removed in API v1.48.
         type: "string"
         default: ""
         example: ""
@@ -3196,7 +3400,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always omitted and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always omitted. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3205,7 +3410,8 @@ definitions:
         description: |
           MAC address of the container.
 @y
-          > **Note**: this field is always omitted and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always omitted. It must not be used, and will be removed in API v1.48.
         type: "boolean"
         default: false
         example: false
@@ -3222,7 +3428,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always omitted and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always omitted. It must not be used, and will be removed in API v1.48.
         type: "string"
         default: ""
         example: ""
@@ -3253,7 +3460,8 @@ definitions:
         description: |
           Timeout to stop a container in seconds.
 @y
-          > **Note**: this field is always omitted and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always omitted. It must not be used, and will be removed in API v1.48.
         type: "string"
         default: ""
         example: ""
@@ -3292,7 +3500,8 @@ definitions:
 @z
 
 @x
-          > **Note**: this field is always omitted and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always omitted. It must not be used, and will be removed in API v1.48.
         type: "integer"
         default: 10
         x-nullable: true
@@ -3345,7 +3554,8 @@ definitions:
       "StopSignal": "SIGTERM"
       "Shell": ["/bin/sh", "-c"]
 @y
-          > **Note**: this field is always omitted and must not be used.
+          > **Deprecated**: this field is not part of the image specification and is
+          > always omitted. It must not be used, and will be removed in API v1.48.
         type: "integer"
         default: 10
         x-nullable: true
@@ -3411,16 +3621,16 @@ definitions:
       EndpointsConfig:
         description: |
           A mapping of network name to endpoint configuration for that network.
+          The endpoint configuration can be left empty to connect to that
+          network with no particular endpoint configuration.
         type: "object"
         additionalProperties:
           $ref: "#/definitions/EndpointSettings"
     example:
       # putting an example here, instead of using the example values from
-      # /definitions/EndpointSettings, because containers/create currently
-      # does not support attaching to multiple networks, so the example request
-      # would be confusing if it showed that multiple networks can be contained
-      # in the EndpointsConfig.
-      # TODO remove once we support multiple networks on container create (see https://github.com/moby/moby/blob/07e6b843594e061f82baa5fa23c2ff7d536c2a05/daemon/create.go#L323)
+      # /definitions/EndpointSettings, because EndpointSettings contains
+      # operational data returned when inspecting a container that we don't
+      # accept here.
       EndpointsConfig:
         isolated_nw:
           IPAMConfig:
@@ -3429,12 +3639,14 @@ definitions:
             LinkLocalIPs:
               - "169.254.34.68"
               - "fe80::3468"
+          MacAddress: "02:42:ac:12:05:02"
           Links:
             - "container_1"
             - "container_2"
           Aliases:
             - "server_x"
             - "server_y"
+        database_nw: {}
 @y
   NetworkingConfig:
     description: |
@@ -3447,16 +3659,16 @@ definitions:
       EndpointsConfig:
         description: |
           A mapping of network name to endpoint configuration for that network.
+          The endpoint configuration can be left empty to connect to that
+          network with no particular endpoint configuration.
         type: "object"
         additionalProperties:
           $ref: "#/definitions/EndpointSettings"
     example:
       # putting an example here, instead of using the example values from
-      # /definitions/EndpointSettings, because containers/create currently
-      # does not support attaching to multiple networks, so the example request
-      # would be confusing if it showed that multiple networks can be contained
-      # in the EndpointsConfig.
-      # TODO remove once we support multiple networks on container create (see https://github.com/moby/moby/blob/07e6b843594e061f82baa5fa23c2ff7d536c2a05/daemon/create.go#L323)
+      # /definitions/EndpointSettings, because EndpointSettings contains
+      # operational data returned when inspecting a container that we don't
+      # accept here.
       EndpointsConfig:
         isolated_nw:
           IPAMConfig:
@@ -3465,12 +3677,14 @@ definitions:
             LinkLocalIPs:
               - "169.254.34.68"
               - "fe80::3468"
+          MacAddress: "02:42:ac:12:05:02"
           Links:
             - "container_1"
             - "container_2"
           Aliases:
             - "server_x"
             - "server_y"
+        database_nw: {}
 @z
 
 @x
@@ -3479,7 +3693,8 @@ definitions:
     type: "object"
     properties:
       Bridge:
-        description: Name of the network's bridge (for example, `docker0`).
+        description: |
+          Name of the default bridge interface when dockerd's --bridge flag is set.
         type: "string"
         example: "docker0"
       SandboxID:
@@ -3489,29 +3704,14 @@ definitions:
       HairpinMode:
         description: |
           Indicates if hairpin NAT should be enabled on the virtual interface.
-        type: "boolean"
-        example: false
-      LinkLocalIPv6Address:
-        description: IPv6 unicast address using the link-local prefix.
-        type: "string"
-        example: "fe80::42:acff:fe11:1"
-      LinkLocalIPv6PrefixLen:
-        description: Prefix length of the IPv6 unicast address.
-        type: "integer"
-        example: "64"
-      Ports:
-        $ref: "#/definitions/PortMap"
-      SandboxKey:
-        description: SandboxKey identifies the sandbox
-        type: "string"
-        example: "/var/run/docker/netns/8ab54b426c38"
 @y
   NetworkSettings:
     description: "NetworkSettings exposes the network settings in the API"
     type: "object"
     properties:
       Bridge:
-        description: Name of the network's bridge (for example, `docker0`).
+        description: |
+          Name of the default bridge interface when dockerd's --bridge flag is set.
         type: "string"
         example: "docker0"
       SandboxID:
@@ -3521,36 +3721,72 @@ definitions:
       HairpinMode:
         description: |
           Indicates if hairpin NAT should be enabled on the virtual interface.
+@z
+
+@x
+          Deprecated: This field is never set and will be removed in a future release.
         type: "boolean"
         example: false
       LinkLocalIPv6Address:
-        description: IPv6 unicast address using the link-local prefix.
+        description: |
+          IPv6 unicast address using the link-local prefix.
+@y
+          Deprecated: This field is never set and will be removed in a future release.
+        type: "boolean"
+        example: false
+      LinkLocalIPv6Address:
+        description: |
+          IPv6 unicast address using the link-local prefix.
+@z
+
+@x
+          Deprecated: This field is never set and will be removed in a future release.
         type: "string"
-        example: "fe80::42:acff:fe11:1"
+        example: ""
       LinkLocalIPv6PrefixLen:
-        description: Prefix length of the IPv6 unicast address.
+        description: |
+          Prefix length of the IPv6 unicast address.
+@y
+          Deprecated: This field is never set and will be removed in a future release.
+        type: "string"
+        example: ""
+      LinkLocalIPv6PrefixLen:
+        description: |
+          Prefix length of the IPv6 unicast address.
+@z
+
+@x
+          Deprecated: This field is never set and will be removed in a future release.
         type: "integer"
-        example: "64"
+        example: ""
       Ports:
         $ref: "#/definitions/PortMap"
       SandboxKey:
-        description: SandboxKey identifies the sandbox
+        description: SandboxKey is the full path of the netns handle
+        type: "string"
+        example: "/var/run/docker/netns/8ab54b426c38"
+@y
+          Deprecated: This field is never set and will be removed in a future release.
+        type: "integer"
+        example: ""
+      Ports:
+        $ref: "#/definitions/PortMap"
+      SandboxKey:
+        description: SandboxKey is the full path of the netns handle
         type: "string"
         example: "/var/run/docker/netns/8ab54b426c38"
 @z
 
 @x
-      # TODO is SecondaryIPAddresses actually used?
       SecondaryIPAddresses:
-        description: ""
+        description: "Deprecated: This field is never set and will be removed in a future release."
         type: "array"
         items:
           $ref: "#/definitions/Address"
         x-nullable: true
 @y
-      # TODO is SecondaryIPAddresses actually used?
       SecondaryIPAddresses:
-        description: ""
+        description: "Deprecated: This field is never set and will be removed in a future release."
         type: "array"
         items:
           $ref: "#/definitions/Address"
@@ -3558,17 +3794,15 @@ definitions:
 @z
 
 @x
-      # TODO is SecondaryIPv6Addresses actually used?
       SecondaryIPv6Addresses:
-        description: ""
+        description: "Deprecated: This field is never set and will be removed in a future release."
         type: "array"
         items:
           $ref: "#/definitions/Address"
         x-nullable: true
 @y
-      # TODO is SecondaryIPv6Addresses actually used?
       SecondaryIPv6Addresses:
-        description: ""
+        description: "Deprecated: This field is never set and will be removed in a future release."
         type: "array"
         items:
           $ref: "#/definitions/Address"
@@ -3958,7 +4192,7 @@ definitions:
 @z
 
 @x
-  GraphDriverData:
+  DriverData:
     description: |
       Information about the storage driver used to store the container's and
       image's filesystem.
@@ -3974,7 +4208,7 @@ definitions:
         description: |
           Low-level storage metadata, provided as key/value pairs.
 @y
-  GraphDriverData:
+  DriverData:
     description: |
       Information about the storage driver used to store the container's and
       image's filesystem.
@@ -4015,6 +4249,70 @@ definitions:
           "UpperDir": "/var/lib/docker/overlay2/ef749362d13333e65fc95c572eb525abbe0052e16e086cb64bc3b98ae9aa6d74/diff",
           "WorkDir": "/var/lib/docker/overlay2/ef749362d13333e65fc95c572eb525abbe0052e16e086cb64bc3b98ae9aa6d74/work"
         }
+@z
+
+@x
+  FilesystemChange:
+    description: |
+      Change in the container's filesystem.
+    type: "object"
+    required: [Path, Kind]
+    properties:
+      Path:
+        description: |
+          Path to file or directory that has changed.
+        type: "string"
+        x-nullable: false
+      Kind:
+        $ref: "#/definitions/ChangeType"
+@y
+  FilesystemChange:
+    description: |
+      Change in the container's filesystem.
+    type: "object"
+    required: [Path, Kind]
+    properties:
+      Path:
+        description: |
+          Path to file or directory that has changed.
+        type: "string"
+        x-nullable: false
+      Kind:
+        $ref: "#/definitions/ChangeType"
+@z
+
+@x
+  ChangeType:
+    description: |
+      Kind of change
+@y
+  ChangeType:
+    description: |
+      Kind of change
+@z
+
+@x
+      Can be one of:
+@y
+      Can be one of:
+@z
+
+@x
+      - `0`: Modified ("C")
+      - `1`: Added ("A")
+      - `2`: Deleted ("D")
+    type: "integer"
+    format: "uint8"
+    enum: [0, 1, 2]
+    x-nullable: false
+@y
+      - `0`: Modified ("C")
+      - `1`: Added ("A")
+      - `2`: Deleted ("D")
+    type: "integer"
+    format: "uint8"
+    enum: [0, 1, 2]
+    x-nullable: false
 @z
 
 @x
@@ -4053,16 +4351,78 @@ definitions:
         type: "string"
         x-nullable: false
         example: "sha256:ec3f0931a6e6b6855d76b2d7b0be30e81860baccd891b2e243280bf1cd8ad710"
+      Descriptor:
+        description: |
+          Descriptor is an OCI descriptor of the image target.
+          In case of a multi-platform image, this descriptor points to the OCI index
+          or a manifest list.
+@y
+          Note that this digest differs from the `RepoDigests` below, which
+          holds digests of image manifests that reference the image.
+        type: "string"
+        x-nullable: false
+        example: "sha256:ec3f0931a6e6b6855d76b2d7b0be30e81860baccd891b2e243280bf1cd8ad710"
+      Descriptor:
+        description: |
+          Descriptor is an OCI descriptor of the image target.
+          In case of a multi-platform image, this descriptor points to the OCI index
+          or a manifest list.
+@z
+
+@x
+          This field is only present if the daemon provides a multi-platform image store.
+@y
+          This field is only present if the daemon provides a multi-platform image store.
+@z
+
+@x
+          WARNING: This is experimental and may change at any time without any backward
+          compatibility.
+        x-nullable: true
+        $ref: "#/definitions/OCIDescriptor"
+      Manifests:
+        description: |
+            Manifests is a list of image manifests available in this image. It
+            provides a more detailed view of the platform-specific image manifests or
+            other image-attached data like build attestations.
+@y
+          WARNING: This is experimental and may change at any time without any backward
+          compatibility.
+        x-nullable: true
+        $ref: "#/definitions/OCIDescriptor"
+      Manifests:
+        description: |
+            Manifests is a list of image manifests available in this image. It
+            provides a more detailed view of the platform-specific image manifests or
+            other image-attached data like build attestations.
+@z
+
+@x
+            Only available if the daemon provides a multi-platform image store
+            and the `manifests` option is set in the inspect request.
+@y
+            Only available if the daemon provides a multi-platform image store
+            and the `manifests` option is set in the inspect request.
+@z
+
+@x
+            WARNING: This is experimental and may change at any time without any backward
+            compatibility.
+        type: "array"
+        x-nullable: true
+        items:
+          $ref: "#/definitions/ImageManifestSummary"
       RepoTags:
         description: |
           List of image names/tags in the local image cache that reference this
           image.
 @y
-          Note that this digest differs from the `RepoDigests` below, which
-          holds digests of image manifests that reference the image.
-        type: "string"
-        x-nullable: false
-        example: "sha256:ec3f0931a6e6b6855d76b2d7b0be30e81860baccd891b2e243280bf1cd8ad710"
+            WARNING: This is experimental and may change at any time without any backward
+            compatibility.
+        type: "array"
+        x-nullable: true
+        items:
+          $ref: "#/definitions/ImageManifestSummary"
       RepoTags:
         description: |
           List of image names/tags in the local image cache that reference this
@@ -4150,12 +4510,6 @@ definitions:
         description: |
           Date and time at which the image was created, formatted in
           [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-        type: "string"
-        x-nullable: false
-        example: "2022-02-04T21:20:12.497794809Z"
-      Container:
-        description: |
-          The ID of the container that was used to create the image.
 @y
           Depending on how the image was created, this field may be empty and
           is only set for images that were built/created locally. This field
@@ -4173,31 +4527,25 @@ definitions:
         description: |
           Date and time at which the image was created, formatted in
           [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
+@z
+
+@x
+          This information is only available if present in the image,
+          and omitted otherwise.
         type: "string"
-        x-nullable: false
+        format: "dateTime"
+        x-nullable: true
         example: "2022-02-04T21:20:12.497794809Z"
-      Container:
-        description: |
-          The ID of the container that was used to create the image.
-@z
-
-@x
-          Depending on how the image was created, this field may be empty.
-        type: "string"
-        x-nullable: false
-        example: "65974bc86f1770ae4bff79f651ebdbce166ae9aada632ee3fa9af3a264911735"
-      ContainerConfig:
-        $ref: "#/definitions/ContainerConfig"
       DockerVersion:
         description: |
           The version of Docker that was used to build the image.
 @y
-          Depending on how the image was created, this field may be empty.
+          This information is only available if present in the image,
+          and omitted otherwise.
         type: "string"
-        x-nullable: false
-        example: "65974bc86f1770ae4bff79f651ebdbce166ae9aada632ee3fa9af3a264911735"
-      ContainerConfig:
-        $ref: "#/definitions/ContainerConfig"
+        format: "dateTime"
+        x-nullable: true
+        example: "2022-02-04T21:20:12.497794809Z"
       DockerVersion:
         description: |
           The version of Docker that was used to build the image.
@@ -4207,7 +4555,7 @@ definitions:
           Depending on how the image was created, this field may be empty.
         type: "string"
         x-nullable: false
-        example: "20.10.7"
+        example: "27.0.1"
       Author:
         description: |
           Name of the author that was specified when committing the image, or as
@@ -4256,7 +4604,7 @@ definitions:
           Depending on how the image was created, this field may be empty.
         type: "string"
         x-nullable: false
-        example: "20.10.7"
+        example: "27.0.1"
       Author:
         description: |
           Name of the author that was specified when committing the image, or as
@@ -4304,26 +4652,12 @@ definitions:
 @z
 
 @x
-          In versions of Docker before v1.10, this field was calculated from
-          the image itself and all of its parent images. Docker v1.10 and up
-          store images self-contained, and no longer use a parent-chain, making
-          this field an equivalent of the Size field.
-@y
-          In versions of Docker before v1.10, this field was calculated from
-          the image itself and all of its parent images. Docker v1.10 and up
-          store images self-contained, and no longer use a parent-chain, making
-          this field an equivalent of the Size field.
-@z
-
-@x
-          This field is kept for backward compatibility, but may be removed in
-          a future version of the API.
+          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
         type: "integer"
         format: "int64"
-        x-nullable: false
         example: 1239828
       GraphDriver:
-        $ref: "#/definitions/GraphDriverData"
+        $ref: "#/definitions/DriverData"
       RootFS:
         description: |
           Information about the image's RootFS, including the layer IDs.
@@ -4352,14 +4686,12 @@ definitions:
               Date and time at which the image was last tagged in
               [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
 @y
-          This field is kept for backward compatibility, but may be removed in
-          a future version of the API.
+          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
         type: "integer"
         format: "int64"
-        x-nullable: false
         example: 1239828
       GraphDriver:
-        $ref: "#/definitions/GraphDriverData"
+        $ref: "#/definitions/DriverData"
       RootFS:
         description: |
           Information about the image's RootFS, including the layer IDs.
@@ -4396,8 +4728,19 @@ definitions:
             format: "dateTime"
             example: "2022-02-28T14:40:02.623929178Z"
             x-nullable: true
+@y
+              This information is only available if the image was tagged locally,
+              and omitted otherwise.
+            type: "string"
+            format: "dateTime"
+            example: "2022-02-28T14:40:02.623929178Z"
+            x-nullable: true
+@z
+
+@x
   ImageSummary:
     type: "object"
+    x-go-name: "Summary"
     required:
       - Id
       - ParentId
@@ -4406,7 +4749,6 @@ definitions:
       - Created
       - Size
       - SharedSize
-      - VirtualSize
       - Labels
       - Containers
     properties:
@@ -4414,14 +4756,9 @@ definitions:
         description: |
           ID is the content-addressable ID of an image.
 @y
-              This information is only available if the image was tagged locally,
-              and omitted otherwise.
-            type: "string"
-            format: "dateTime"
-            example: "2022-02-28T14:40:02.623929178Z"
-            x-nullable: true
   ImageSummary:
     type: "object"
+    x-go-name: "Summary"
     required:
       - Id
       - ParentId
@@ -4430,7 +4767,6 @@ definitions:
       - Created
       - Size
       - SharedSize
-      - VirtualSize
       - Labels
       - Containers
     properties:
@@ -4599,7 +4935,7 @@ definitions:
         x-nullable: false
         example: 1239828
       VirtualSize:
-        description: |
+        description: |-
           Total size of the image including all layers it is composed of.
 @y
           This size is not calculated by default. `-1` indicates that the value
@@ -4609,28 +4945,14 @@ definitions:
         x-nullable: false
         example: 1239828
       VirtualSize:
-        description: |
+        description: |-
           Total size of the image including all layers it is composed of.
 @z
 
 @x
-          In versions of Docker before v1.10, this field was calculated from
-          the image itself and all of its parent images. Docker v1.10 and up
-          store images self-contained, and no longer use a parent-chain, making
-          this field an equivalent of the Size field.
-@y
-          In versions of Docker before v1.10, this field was calculated from
-          the image itself and all of its parent images. Docker v1.10 and up
-          store images self-contained, and no longer use a parent-chain, making
-          this field an equivalent of the Size field.
-@z
-
-@x
-          This field is kept for backward compatibility, but may be removed in
-          a future version of the API.
+          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
         type: "integer"
         format: "int64"
-        x-nullable: false
         example: 172064416
       Labels:
         description: "User-defined key/value metadata."
@@ -4646,11 +4968,9 @@ definitions:
           Number of containers using this image. Includes both stopped and running
           containers.
 @y
-          This field is kept for backward compatibility, but may be removed in
-          a future version of the API.
+          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
         type: "integer"
         format: "int64"
-        x-nullable: false
         example: 172064416
       Labels:
         description: "User-defined key/value metadata."
@@ -4673,12 +4993,68 @@ definitions:
         x-nullable: false
         type: "integer"
         example: 2
+      Manifests:
+        description: |
+          Manifests is a list of manifests available in this image.
+          It provides a more detailed view of the platform-specific image manifests
+          or other image-attached data like build attestations.
 @y
           This size is not calculated by default, and depends on which API endpoint
           is used. `-1` indicates that the value has not been set / calculated.
         x-nullable: false
         type: "integer"
         example: 2
+      Manifests:
+        description: |
+          Manifests is a list of manifests available in this image.
+          It provides a more detailed view of the platform-specific image manifests
+          or other image-attached data like build attestations.
+@z
+
+@x
+          WARNING: This is experimental and may change at any time without any backward
+          compatibility.
+        type: "array"
+        x-nullable: false
+        x-omitempty: true
+        items:
+          $ref: "#/definitions/ImageManifestSummary"
+      Descriptor:
+        description: |
+          Descriptor is an OCI descriptor of the image target.
+          In case of a multi-platform image, this descriptor points to the OCI index
+          or a manifest list.
+@y
+          WARNING: This is experimental and may change at any time without any backward
+          compatibility.
+        type: "array"
+        x-nullable: false
+        x-omitempty: true
+        items:
+          $ref: "#/definitions/ImageManifestSummary"
+      Descriptor:
+        description: |
+          Descriptor is an OCI descriptor of the image target.
+          In case of a multi-platform image, this descriptor points to the OCI index
+          or a manifest list.
+@z
+
+@x
+          This field is only present if the daemon provides a multi-platform image store.
+@y
+          This field is only present if the daemon provides a multi-platform image store.
+@z
+
+@x
+          WARNING: This is experimental and may change at any time without any backward
+          compatibility.
+        x-nullable: true
+        $ref: "#/definitions/OCIDescriptor"
+@y
+          WARNING: This is experimental and may change at any time without any backward
+          compatibility.
+        x-nullable: true
+        $ref: "#/definitions/OCIDescriptor"
 @z
 
 @x
@@ -5098,6 +5474,11 @@ definitions:
           `overlay`).
         type: "string"
         example: "overlay"
+      EnableIPv4:
+        description: |
+          Whether the network was created with IPv4 enabled.
+        type: "boolean"
+        example: true
       EnableIPv6:
         description: |
           Whether the network was created with IPv6 enabled.
@@ -5211,6 +5592,11 @@ definitions:
           `overlay`).
         type: "string"
         example: "overlay"
+      EnableIPv4:
+        description: |
+          Whether the network was created with IPv4 enabled.
+        type: "boolean"
+        example: true
       EnableIPv6:
         description: |
           Whether the network was created with IPv6 enabled.
@@ -5490,6 +5876,44 @@ definitions:
 @z
 
 @x
+  NetworkCreateResponse:
+    description: "OK response to NetworkCreate operation"
+    type: "object"
+    title: "NetworkCreateResponse"
+    x-go-name: "CreateResponse"
+    required: [Id, Warning]
+    properties:
+      Id:
+        description: "The ID of the created network."
+        type: "string"
+        x-nullable: false
+        example: "b5c4fc71e8022147cd25de22b22173de4e3b170134117172eb595cb91b4e7e5d"
+      Warning:
+        description: "Warnings encountered when creating the container"
+        type: "string"
+        x-nullable: false
+        example: ""
+@y
+  NetworkCreateResponse:
+    description: "OK response to NetworkCreate operation"
+    type: "object"
+    title: "NetworkCreateResponse"
+    x-go-name: "CreateResponse"
+    required: [Id, Warning]
+    properties:
+      Id:
+        description: "The ID of the created network."
+        type: "string"
+        x-nullable: false
+        example: "b5c4fc71e8022147cd25de22b22173de4e3b170134117172eb595cb91b4e7e5d"
+      Warning:
+        description: "Warnings encountered when creating the container"
+        type: "string"
+        x-nullable: false
+        example: ""
+@z
+
+@x
   BuildInfo:
     type: "object"
     properties:
@@ -5499,16 +5923,9 @@ definitions:
         type: "string"
       error:
         type: "string"
-      errorDetail:
-        $ref: "#/definitions/ErrorDetail"
-      status:
-        type: "string"
-      progress:
-        type: "string"
-      progressDetail:
-        $ref: "#/definitions/ProgressDetail"
-      aux:
-        $ref: "#/definitions/ImageID"
+        x-nullable: true
+        description: |-
+          errors encountered during the operation.
 @y
   BuildInfo:
     type: "object"
@@ -5519,12 +5936,43 @@ definitions:
         type: "string"
       error:
         type: "string"
+        x-nullable: true
+        description: |-
+          errors encountered during the operation.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since API v1.4, and will be omitted in a future API version. Use the information in errorDetail instead.
       errorDetail:
         $ref: "#/definitions/ErrorDetail"
       status:
         type: "string"
       progress:
         type: "string"
+        x-nullable: true
+        description: |-
+          Progress is a pre-formatted presentation of progressDetail.
+@y
+          > **Deprecated**: This field is deprecated since API v1.4, and will be omitted in a future API version. Use the information in errorDetail instead.
+      errorDetail:
+        $ref: "#/definitions/ErrorDetail"
+      status:
+        type: "string"
+      progress:
+        type: "string"
+        x-nullable: true
+        description: |-
+          Progress is a pre-formatted presentation of progressDetail.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since API v1.8, and will be omitted in a future API version. Use the information in progressDetail instead.
+      progressDetail:
+        $ref: "#/definitions/ProgressDetail"
+      aux:
+        $ref: "#/definitions/ImageID"
+@y
+          > **Deprecated**: This field is deprecated since API v1.8, and will be omitted in a future API version. Use the information in progressDetail instead.
       progressDetail:
         $ref: "#/definitions/ProgressDetail"
       aux:
@@ -5719,14 +6167,9 @@ definitions:
         type: "string"
       error:
         type: "string"
-      errorDetail:
-        $ref: "#/definitions/ErrorDetail"
-      status:
-        type: "string"
-      progress:
-        type: "string"
-      progressDetail:
-        $ref: "#/definitions/ProgressDetail"
+        x-nullable: true
+        description: |-
+          errors encountered during the operation.
 @y
   CreateImageInfo:
     type: "object"
@@ -5735,12 +6178,41 @@ definitions:
         type: "string"
       error:
         type: "string"
+        x-nullable: true
+        description: |-
+          errors encountered during the operation.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since API v1.4, and will be omitted in a future API version. Use the information in errorDetail instead.
       errorDetail:
         $ref: "#/definitions/ErrorDetail"
       status:
         type: "string"
       progress:
         type: "string"
+        x-nullable: true
+        description: |-
+          Progress is a pre-formatted presentation of progressDetail.
+@y
+          > **Deprecated**: This field is deprecated since API v1.4, and will be omitted in a future API version. Use the information in errorDetail instead.
+      errorDetail:
+        $ref: "#/definitions/ErrorDetail"
+      status:
+        type: "string"
+      progress:
+        type: "string"
+        x-nullable: true
+        description: |-
+          Progress is a pre-formatted presentation of progressDetail.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since API v1.8, and will be omitted in a future API version. Use the information in progressDetail instead.
+      progressDetail:
+        $ref: "#/definitions/ProgressDetail"
+@y
+          > **Deprecated**: This field is deprecated since API v1.8, and will be omitted in a future API version. Use the information in progressDetail instead.
       progressDetail:
         $ref: "#/definitions/ProgressDetail"
 @z
@@ -5751,22 +6223,50 @@ definitions:
     properties:
       error:
         type: "string"
-      status:
-        type: "string"
-      progress:
-        type: "string"
-      progressDetail:
-        $ref: "#/definitions/ProgressDetail"
+        x-nullable: true
+        description: |-
+          errors encountered during the operation.
 @y
   PushImageInfo:
     type: "object"
     properties:
       error:
         type: "string"
+        x-nullable: true
+        description: |-
+          errors encountered during the operation.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since API v1.4, and will be omitted in a future API version. Use the information in errorDetail instead.
+      errorDetail:
+        $ref: "#/definitions/ErrorDetail"
       status:
         type: "string"
       progress:
         type: "string"
+        x-nullable: true
+        description: |-
+          Progress is a pre-formatted presentation of progressDetail.
+@y
+          > **Deprecated**: This field is deprecated since API v1.4, and will be omitted in a future API version. Use the information in errorDetail instead.
+      errorDetail:
+        $ref: "#/definitions/ErrorDetail"
+      status:
+        type: "string"
+      progress:
+        type: "string"
+        x-nullable: true
+        description: |-
+          Progress is a pre-formatted presentation of progressDetail.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since API v1.8, and will be omitted in a future API version. Use the information in progressDetail instead.
+      progressDetail:
+        $ref: "#/definitions/ProgressDetail"
+@y
+          > **Deprecated**: This field is deprecated since API v1.8, and will be omitted in a future API version. Use the information in progressDetail instead.
       progressDetail:
         $ref: "#/definitions/ProgressDetail"
 @z
@@ -5834,9 +6334,10 @@ definitions:
 @z
 
 @x
-  IdResponse:
+  IDResponse:
     description: "Response to an API call that returns just an Id"
     type: "object"
+    x-go-name: "IDResponse"
     required: ["Id"]
     properties:
       Id:
@@ -5844,9 +6345,10 @@ definitions:
         type: "string"
         x-nullable: false
 @y
-  IdResponse:
+  IDResponse:
     description: "Response to an API call that returns just an Id"
     type: "object"
+    x-go-name: "IDResponse"
     required: ["Id"]
     properties:
       Id:
@@ -5870,6 +6372,11 @@ definitions:
         example:
           - "container_1"
           - "container_2"
+      MacAddress:
+        description: |
+          MAC address for the endpoint on this network. The network driver might ignore this parameter.
+        type: "string"
+        example: "02:42:ac:11:00:04"
       Aliases:
         type: "array"
         items:
@@ -5877,6 +6384,27 @@ definitions:
         example:
           - "server_x"
           - "server_y"
+      DriverOpts:
+        description: |
+          DriverOpts is a mapping of driver options and values. These options
+          are passed directly to the driver and are driver specific.
+        type: "object"
+        x-nullable: true
+        additionalProperties:
+          type: "string"
+        example:
+          com.example.some-label: "some-value"
+          com.example.some-other-label: "some-other-value"
+      GwPriority:
+        description: |
+          This property determines which endpoint will provide the default
+          gateway for a container. The endpoint with the highest priority will
+          be used. If multiple endpoints have the same priority, endpoints are
+          lexicographically sorted based on their network name, and the one
+          that sorts first is picked.
+        type: "number"
+        example:
+          - 10
 @y
   EndpointSettings:
     description: "Configuration for a network endpoint."
@@ -5892,6 +6420,11 @@ definitions:
         example:
           - "container_1"
           - "container_2"
+      MacAddress:
+        description: |
+          MAC address for the endpoint on this network. The network driver might ignore this parameter.
+        type: "string"
+        example: "02:42:ac:11:00:04"
       Aliases:
         type: "array"
         items:
@@ -5899,6 +6432,27 @@ definitions:
         example:
           - "server_x"
           - "server_y"
+      DriverOpts:
+        description: |
+          DriverOpts is a mapping of driver options and values. These options
+          are passed directly to the driver and are driver specific.
+        type: "object"
+        x-nullable: true
+        additionalProperties:
+          type: "string"
+        example:
+          com.example.some-label: "some-value"
+          com.example.some-other-label: "some-other-value"
+      GwPriority:
+        description: |
+          This property determines which endpoint will provide the default
+          gateway for a container. The endpoint with the highest priority will
+          be used. If multiple endpoints have the same priority, endpoints are
+          lexicographically sorted based on their network name, and the one
+          that sorts first is picked.
+        type: "number"
+        example:
+          - 10
 @z
 
 @x
@@ -5944,22 +6498,11 @@ definitions:
         type: "integer"
         format: "int64"
         example: 64
-      MacAddress:
+      DNSNames:
         description: |
-          MAC address for the endpoint on this network.
-        type: "string"
-        example: "02:42:ac:11:00:04"
-      DriverOpts:
-        description: |
-          DriverOpts is a mapping of driver options and values. These options
-          are passed directly to the driver and are driver specific.
-        type: "object"
-        x-nullable: true
-        additionalProperties:
-          type: "string"
-        example:
-          com.example.some-label: "some-value"
-          com.example.some-other-label: "some-other-value"
+          List of all DNS names an endpoint has on a specific network. This
+          list is based on the container name, network aliases, container short
+          ID, and hostname.
 @y
       # Operational data
       NetworkID:
@@ -6003,22 +6546,33 @@ definitions:
         type: "integer"
         format: "int64"
         example: 64
-      MacAddress:
+      DNSNames:
         description: |
-          MAC address for the endpoint on this network.
-        type: "string"
-        example: "02:42:ac:11:00:04"
-      DriverOpts:
-        description: |
-          DriverOpts is a mapping of driver options and values. These options
-          are passed directly to the driver and are driver specific.
-        type: "object"
-        x-nullable: true
-        additionalProperties:
-          type: "string"
-        example:
-          com.example.some-label: "some-value"
-          com.example.some-other-label: "some-other-value"
+          List of all DNS names an endpoint has on a specific network. This
+          list is based on the container name, network aliases, container short
+          ID, and hostname.
+@z
+
+@x
+          These DNS names are non-fully qualified but can contain several dots.
+          You can get fully qualified DNS names by appending `.<network-name>`.
+          For instance, if container name is `my.ctr` and the network is named
+          `testnet`, `DNSNames` will contain `my.ctr` and the FQDN will be
+          `my.ctr.testnet`.
+        type: array
+        items:
+          type: string
+        example: ["foobar", "server_x", "server_y", "my.ctr"]
+@y
+          These DNS names are non-fully qualified but can contain several dots.
+          You can get fully qualified DNS names by appending `.<network-name>`.
+          For instance, if container name is `my.ctr` and the network is named
+          `testnet`, `DNSNames` will contain `my.ctr` and the FQDN will be
+          `my.ctr.testnet`.
+        type: array
+        items:
+          type: string
+        example: ["foobar", "server_x", "server_y", "my.ctr"]
 @z
 
 @x
@@ -8137,40 +8691,31 @@ definitions:
                   Level:
                     type: "string"
                     description: "SELinux level label"
-          TTY:
-            description: "Whether a pseudo-TTY should be allocated."
-            type: "boolean"
-          OpenStdin:
-            description: "Open `stdin`"
-            type: "boolean"
-          ReadOnly:
-            description: "Mount the container's root filesystem as read only."
-            type: "boolean"
-          Mounts:
-            description: |
-              Specification for mounts to be added to containers created as part
-              of the service.
-            type: "array"
-            items:
-              $ref: "#/definitions/Mount"
-          StopSignal:
-            description: "Signal to stop the container."
-            type: "string"
-          StopGracePeriod:
-            description: |
-              Amount of time to wait for the container to terminate before
-              forcefully killing it.
-            type: "integer"
-            format: "int64"
-          HealthCheck:
-            $ref: "#/definitions/HealthConfig"
-          Hosts:
-            type: "array"
-            description: |
-              A list of hostname/IP mappings to add to the container's `hosts`
-              file. The format of extra hosts is specified in the
-              [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html)
-              man page:
+              Seccomp:
+                type: "object"
+                description: "Options for configuring seccomp on the container"
+                properties:
+                  Mode:
+                    type: "string"
+                    enum:
+                      - "default"
+                      - "unconfined"
+                      - "custom"
+                  Profile:
+                    description: "The custom seccomp profile as a json object"
+                    type: "string"
+              AppArmor:
+                type: "object"
+                description: "Options for configuring AppArmor on the container"
+                properties:
+                  Mode:
+                    type: "string"
+                    enum:
+                      - "default"
+                      - "disabled"
+              NoNewPrivileges:
+                type: "boolean"
+                description: "Configuration of the no_new_privs bit in the container"
 @y
                       > **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,
                       > and `CredentialSpec.Config` are mutually exclusive.
@@ -8193,6 +8738,69 @@ definitions:
                   Level:
                     type: "string"
                     description: "SELinux level label"
+              Seccomp:
+                type: "object"
+                description: "Options for configuring seccomp on the container"
+                properties:
+                  Mode:
+                    type: "string"
+                    enum:
+                      - "default"
+                      - "unconfined"
+                      - "custom"
+                  Profile:
+                    description: "The custom seccomp profile as a json object"
+                    type: "string"
+              AppArmor:
+                type: "object"
+                description: "Options for configuring AppArmor on the container"
+                properties:
+                  Mode:
+                    type: "string"
+                    enum:
+                      - "default"
+                      - "disabled"
+              NoNewPrivileges:
+                type: "boolean"
+                description: "Configuration of the no_new_privs bit in the container"
+@z
+
+@x
+          TTY:
+            description: "Whether a pseudo-TTY should be allocated."
+            type: "boolean"
+          OpenStdin:
+            description: "Open `stdin`"
+            type: "boolean"
+          ReadOnly:
+            description: "Mount the container's root filesystem as read only."
+            type: "boolean"
+          Mounts:
+            description: |
+              Specification for mounts to be added to containers created as part
+              of the service.
+            type: "array"
+            items:
+              $ref: "#/definitions/Mount"
+          StopSignal:
+            description: "Signal to stop the container."
+            type: "string"
+          StopGracePeriod:
+            description: |
+              Amount of time to wait for the container to terminate before
+              forcefully killing it.
+            type: "integer"
+            format: "int64"
+          HealthCheck:
+            $ref: "#/definitions/HealthConfig"
+          Hosts:
+            type: "array"
+            description: |
+              A list of hostname/IP mappings to add to the container's `hosts`
+              file. The format of extra hosts is specified in the
+              [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html)
+              man page:
+@y
           TTY:
             description: "Whether a pseudo-TTY should be allocated."
             type: "boolean"
@@ -8294,6 +8902,13 @@ definitions:
                     but this is just provided for lookup/display purposes. The
                     secret in the reference will be identified by its ID.
                   type: "string"
+          OomScoreAdj:
+            type: "integer"
+            format: "int64"
+            description: |
+              An integer value containing the score given to the container in
+              order to tune OOM killer preferences.
+            example: 0
           Configs:
             description: |
               Configs contains references to zero or more configs that will be
@@ -8370,6 +8985,13 @@ definitions:
                     but this is just provided for lookup/display purposes. The
                     secret in the reference will be identified by its ID.
                   type: "string"
+          OomScoreAdj:
+            type: "integer"
+            format: "int64"
+            description: |
+              An integer value containing the score given to the container in
+              order to tune OOM killer preferences.
+            example: 0
           Configs:
             description: |
               Configs contains references to zero or more configs that will be
@@ -8758,7 +9380,7 @@ definitions:
               `node.platform.os`   | Node operating system          | `node.platform.os==windows`
               `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
               `node.labels`        | User-defined node labels       | `node.labels.security==high`
-              `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
+              `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-24.04`
 @y
               node attribute       | matches                        | example
               ---------------------|--------------------------------|-----------------------------------------------
@@ -8768,7 +9390,7 @@ definitions:
               `node.platform.os`   | Node operating system          | `node.platform.os==windows`
               `node.platform.arch` | Node architecture              | `node.platform.arch==x86_64`
               `node.labels`        | User-defined node labels       | `node.labels.security==high`
-              `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-14.04`
+              `engine.labels`      | Docker Engine's labels         | `engine.labels.operatingsystem==ubuntu-24.04`
 @z
 
 @x
@@ -8969,6 +9591,88 @@ definitions:
       - "rejected"
       - "remove"
       - "orphaned"
+@z
+
+@x
+  ContainerStatus:
+    type: "object"
+    description: "represents the status of a container."
+    properties:
+      ContainerID:
+        type: "string"
+      PID:
+        type: "integer"
+      ExitCode:
+        type: "integer"
+@y
+  ContainerStatus:
+    type: "object"
+    description: "represents the status of a container."
+    properties:
+      ContainerID:
+        type: "string"
+      PID:
+        type: "integer"
+      ExitCode:
+        type: "integer"
+@z
+
+@x
+  PortStatus:
+    type: "object"
+    description: "represents the port status of a task's host ports whose service has published host ports"
+    properties:
+      Ports:
+        type: "array"
+        items:
+          $ref: "#/definitions/EndpointPortConfig"
+@y
+  PortStatus:
+    type: "object"
+    description: "represents the port status of a task's host ports whose service has published host ports"
+    properties:
+      Ports:
+        type: "array"
+        items:
+          $ref: "#/definitions/EndpointPortConfig"
+@z
+
+@x
+  TaskStatus:
+    type: "object"
+    description: "represents the status of a task."
+    properties:
+      Timestamp:
+        type: "string"
+        format: "dateTime"
+      State:
+        $ref: "#/definitions/TaskState"
+      Message:
+        type: "string"
+      Err:
+        type: "string"
+      ContainerStatus:
+        $ref: "#/definitions/ContainerStatus"
+      PortStatus:
+        $ref: "#/definitions/PortStatus"
+@y
+  TaskStatus:
+    type: "object"
+    description: "represents the status of a task."
+    properties:
+      Timestamp:
+        type: "string"
+        format: "dateTime"
+      State:
+        $ref: "#/definitions/TaskState"
+      Message:
+        type: "string"
+      Err:
+        type: "string"
+      ContainerStatus:
+        $ref: "#/definitions/ContainerStatus"
+      PortStatus:
+        $ref: "#/definitions/PortStatus"
 @z
 
 @x
@@ -9007,26 +9711,7 @@ definitions:
       AssignedGenericResources:
         $ref: "#/definitions/GenericResources"
       Status:
-        type: "object"
-        properties:
-          Timestamp:
-            type: "string"
-            format: "dateTime"
-          State:
-            $ref: "#/definitions/TaskState"
-          Message:
-            type: "string"
-          Err:
-            type: "string"
-          ContainerStatus:
-            type: "object"
-            properties:
-              ContainerID:
-                type: "string"
-              PID:
-                type: "integer"
-              ExitCode:
-                type: "integer"
+        $ref: "#/definitions/TaskStatus"
       DesiredState:
         $ref: "#/definitions/TaskState"
       JobIteration:
@@ -9137,26 +9822,7 @@ definitions:
       AssignedGenericResources:
         $ref: "#/definitions/GenericResources"
       Status:
-        type: "object"
-        properties:
-          Timestamp:
-            type: "string"
-            format: "dateTime"
-          State:
-            $ref: "#/definitions/TaskState"
-          Message:
-            type: "string"
-          Err:
-            type: "string"
-          ContainerStatus:
-            type: "object"
-            properties:
-              ContainerID:
-                type: "string"
-              PID:
-                type: "integer"
-              ExitCode:
-                type: "integer"
+        $ref: "#/definitions/TaskStatus"
       DesiredState:
         $ref: "#/definitions/TaskState"
       JobIteration:
@@ -9374,10 +10040,8 @@ definitions:
               - "stop-first"
               - "start-first"
       Networks:
-        description: "Specifies which networks the service should attach to."
-        type: "array"
-        items:
-          $ref: "#/definitions/NetworkAttachmentConfig"
+        description: |
+          Specifies which networks the service should attach to.
 @y
   ServiceSpec:
     description: "User modifiable configuration for a service."
@@ -9519,7 +10183,17 @@ definitions:
               - "stop-first"
               - "start-first"
       Networks:
-        description: "Specifies which networks the service should attach to."
+        description: |
+          Specifies which networks the service should attach to.
+@z
+
+@x
+          Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachmentConfig"
+@y
+          Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
         type: "array"
         items:
           $ref: "#/definitions/NetworkAttachmentConfig"
@@ -9996,6 +10670,7 @@ definitions:
 @x
   ImageDeleteResponseItem:
     type: "object"
+    x-go-name: "DeleteResponse"
     properties:
       Untagged:
         description: "The image ID of an image that was untagged"
@@ -10006,6 +10681,7 @@ definitions:
 @y
   ImageDeleteResponseItem:
     type: "object"
+    x-go-name: "DeleteResponse"
     properties:
       Untagged:
         description: "The image ID of an image that was untagged"
@@ -10016,6 +10692,56 @@ definitions:
 @z
 
 @x
+  ServiceCreateResponse:
+    type: "object"
+    description: |
+      contains the information returned to a client on the
+      creation of a new service.
+    properties:
+      ID:
+        description: "The ID of the created service."
+        type: "string"
+        x-nullable: false
+        example: "ak7w3gjqoa3kuz8xcpnyy0pvl"
+      Warnings:
+        description: |
+          Optional warning message.
+@y
+  ServiceCreateResponse:
+    type: "object"
+    description: |
+      contains the information returned to a client on the
+      creation of a new service.
+    properties:
+      ID:
+        description: "The ID of the created service."
+        type: "string"
+        x-nullable: false
+        example: "ak7w3gjqoa3kuz8xcpnyy0pvl"
+      Warnings:
+        description: |
+          Optional warning message.
+@z
+
+@x
+          FIXME(thaJeztah): this should have "omitempty" in the generated type.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "string"
+        example:
+          - "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+@y
+          FIXME(thaJeztah): this should have "omitempty" in the generated type.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "string"
+        example:
+          - "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+@z
+
+@x
   ServiceUpdateResponse:
     type: "object"
     properties:
@@ -10025,7 +10751,8 @@ definitions:
         items:
           type: "string"
     example:
-      Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+      Warnings:
+        - "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
 @y
   ServiceUpdateResponse:
     type: "object"
@@ -10036,7 +10763,380 @@ definitions:
         items:
           type: "string"
     example:
-      Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+      Warnings:
+        - "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+@z
+
+@x
+  ContainerInspectResponse:
+    type: "object"
+    title: "ContainerInspectResponse"
+    x-go-name: "InspectResponse"
+    properties:
+      Id:
+        description: |-
+          The ID of this container as a 128-bit (64-character) hexadecimal string (32 bytes).
+        type: "string"
+        x-go-name: "ID"
+        minLength: 64
+        maxLength: 64
+        pattern: "^[0-9a-fA-F]{64}$"
+        example: "aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf"
+      Created:
+        description: |-
+          Date and time at which the container was created, formatted in
+          [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
+        type: "string"
+        format: "dateTime"
+        x-nullable: true
+        example: "2025-02-17T17:43:39.64001363Z"
+      Path:
+        description: |-
+          The path to the command being run
+        type: "string"
+        example: "/bin/sh"
+      Args:
+        description: "The arguments to the command being run"
+        type: "array"
+        items:
+          type: "string"
+        example:
+          - "-c"
+          - "exit 9"
+      State:
+        $ref: "#/definitions/ContainerState"
+      Image:
+        description: |-
+          The ID (digest) of the image that this container was created from.
+        type: "string"
+        example: "sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782"
+      ResolvConfPath:
+        description: |-
+          Location of the `/etc/resolv.conf` generated for the container on the
+          host.
+@y
+  ContainerInspectResponse:
+    type: "object"
+    title: "ContainerInspectResponse"
+    x-go-name: "InspectResponse"
+    properties:
+      Id:
+        description: |-
+          The ID of this container as a 128-bit (64-character) hexadecimal string (32 bytes).
+        type: "string"
+        x-go-name: "ID"
+        minLength: 64
+        maxLength: 64
+        pattern: "^[0-9a-fA-F]{64}$"
+        example: "aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf"
+      Created:
+        description: |-
+          Date and time at which the container was created, formatted in
+          [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
+        type: "string"
+        format: "dateTime"
+        x-nullable: true
+        example: "2025-02-17T17:43:39.64001363Z"
+      Path:
+        description: |-
+          The path to the command being run
+        type: "string"
+        example: "/bin/sh"
+      Args:
+        description: "The arguments to the command being run"
+        type: "array"
+        items:
+          type: "string"
+        example:
+          - "-c"
+          - "exit 9"
+      State:
+        $ref: "#/definitions/ContainerState"
+      Image:
+        description: |-
+          The ID (digest) of the image that this container was created from.
+        type: "string"
+        example: "sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782"
+      ResolvConfPath:
+        description: |-
+          Location of the `/etc/resolv.conf` generated for the container on the
+          host.
+@z
+
+@x
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        example: "/var/lib/docker/containers/aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf/resolv.conf"
+      HostnamePath:
+        description: |-
+          Location of the `/etc/hostname` generated for the container on the
+          host.
+@y
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        example: "/var/lib/docker/containers/aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf/resolv.conf"
+      HostnamePath:
+        description: |-
+          Location of the `/etc/hostname` generated for the container on the
+          host.
+@z
+
+@x
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        example: "/var/lib/docker/containers/aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf/hostname"
+      HostsPath:
+        description: |-
+          Location of the `/etc/hosts` generated for the container on the
+          host.
+@y
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        example: "/var/lib/docker/containers/aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf/hostname"
+      HostsPath:
+        description: |-
+          Location of the `/etc/hosts` generated for the container on the
+          host.
+@z
+
+@x
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        example: "/var/lib/docker/containers/aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf/hosts"
+      LogPath:
+        description: |-
+          Location of the file used to buffer the container's logs. Depending on
+          the logging-driver used for the container, this field may be omitted.
+@y
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        example: "/var/lib/docker/containers/aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf/hosts"
+      LogPath:
+        description: |-
+          Location of the file used to buffer the container's logs. Depending on
+          the logging-driver used for the container, this field may be omitted.
+@z
+
+@x
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        x-nullable: true
+        example: "/var/lib/docker/containers/5b7c7e2b992aa426584ce6c47452756066be0e503a08b4516a433a54d2f69e59/5b7c7e2b992aa426584ce6c47452756066be0e503a08b4516a433a54d2f69e59-json.log"
+      Name:
+        description: |-
+          The name associated with this container.
+@y
+          This file is managed through the docker daemon, and should not be
+          accessed or modified by other tools.
+        type: "string"
+        x-nullable: true
+        example: "/var/lib/docker/containers/5b7c7e2b992aa426584ce6c47452756066be0e503a08b4516a433a54d2f69e59/5b7c7e2b992aa426584ce6c47452756066be0e503a08b4516a433a54d2f69e59-json.log"
+      Name:
+        description: |-
+          The name associated with this container.
+@z
+
+@x
+          For historic reasons, the name may be prefixed with a forward-slash (`/`).
+        type: "string"
+        example: "/funny_chatelet"
+      RestartCount:
+        description: |-
+          Number of times the container was restarted since it was created,
+          or since daemon was started.
+        type: "integer"
+        example: 0
+      Driver:
+        description: |-
+          The storage-driver used for the container's filesystem (graph-driver
+          or snapshotter).
+        type: "string"
+        example: "overlayfs"
+      Platform:
+        description: |-
+          The platform (operating system) for which the container was created.
+@y
+          For historic reasons, the name may be prefixed with a forward-slash (`/`).
+        type: "string"
+        example: "/funny_chatelet"
+      RestartCount:
+        description: |-
+          Number of times the container was restarted since it was created,
+          or since daemon was started.
+        type: "integer"
+        example: 0
+      Driver:
+        description: |-
+          The storage-driver used for the container's filesystem (graph-driver
+          or snapshotter).
+        type: "string"
+        example: "overlayfs"
+      Platform:
+        description: |-
+          The platform (operating system) for which the container was created.
+@z
+
+@x
+          This field was introduced for the experimental "LCOW" (Linux Containers
+          On Windows) features, which has been removed. In most cases, this field
+          is equal to the host's operating system (`linux` or `windows`).
+        type: "string"
+        example: "linux"
+      ImageManifestDescriptor:
+        $ref: "#/definitions/OCIDescriptor"
+        description: |-
+          OCI descriptor of the platform-specific manifest of the image
+          the container was created from.
+@y
+          This field was introduced for the experimental "LCOW" (Linux Containers
+          On Windows) features, which has been removed. In most cases, this field
+          is equal to the host's operating system (`linux` or `windows`).
+        type: "string"
+        example: "linux"
+      ImageManifestDescriptor:
+        $ref: "#/definitions/OCIDescriptor"
+        description: |-
+          OCI descriptor of the platform-specific manifest of the image
+          the container was created from.
+@z
+
+@x
+          Note: Only available if the daemon provides a multi-platform
+          image store.
+      MountLabel:
+        description: |-
+          SELinux mount label set for the container.
+        type: "string"
+        example: ""
+      ProcessLabel:
+        description: |-
+          SELinux process label set for the container.
+        type: "string"
+        example: ""
+      AppArmorProfile:
+        description: |-
+          The AppArmor profile set for the container.
+        type: "string"
+        example: ""
+      ExecIDs:
+        description: |-
+          IDs of exec instances that are running in the container.
+        type: "array"
+        items:
+          type: "string"
+        x-nullable: true
+        example:
+          - "b35395de42bc8abd327f9dd65d913b9ba28c74d2f0734eeeae84fa1c616a0fca"
+          - "3fc1232e5cd20c8de182ed81178503dc6437f4e7ef12b52cc5e8de020652f1c4"
+      HostConfig:
+        $ref: "#/definitions/HostConfig"
+      GraphDriver:
+        $ref: "#/definitions/DriverData"
+      SizeRw:
+        description: |-
+          The size of files that have been created or changed by this container.
+@y
+          Note: Only available if the daemon provides a multi-platform
+          image store.
+      MountLabel:
+        description: |-
+          SELinux mount label set for the container.
+        type: "string"
+        example: ""
+      ProcessLabel:
+        description: |-
+          SELinux process label set for the container.
+        type: "string"
+        example: ""
+      AppArmorProfile:
+        description: |-
+          The AppArmor profile set for the container.
+        type: "string"
+        example: ""
+      ExecIDs:
+        description: |-
+          IDs of exec instances that are running in the container.
+        type: "array"
+        items:
+          type: "string"
+        x-nullable: true
+        example:
+          - "b35395de42bc8abd327f9dd65d913b9ba28c74d2f0734eeeae84fa1c616a0fca"
+          - "3fc1232e5cd20c8de182ed81178503dc6437f4e7ef12b52cc5e8de020652f1c4"
+      HostConfig:
+        $ref: "#/definitions/HostConfig"
+      GraphDriver:
+        $ref: "#/definitions/DriverData"
+      SizeRw:
+        description: |-
+          The size of files that have been created or changed by this container.
+@z
+
+@x
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "122880"
+      SizeRootFs:
+        description: |-
+          The total size of all files in the read-only layers from the image
+          that the container uses. These layers can be shared between containers.
+@y
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "122880"
+      SizeRootFs:
+        description: |-
+          The total size of all files in the read-only layers from the image
+          that the container uses. These layers can be shared between containers.
+@z
+
+@x
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "1653948416"
+      Mounts:
+        description: |-
+          List of mounts used by the container.
+        type: "array"
+        items:
+          $ref: "#/definitions/MountPoint"
+      Config:
+        $ref: "#/definitions/ContainerConfig"
+      NetworkSettings:
+        $ref: "#/definitions/NetworkSettings"
+@y
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "1653948416"
+      Mounts:
+        description: |-
+          List of mounts used by the container.
+        type: "array"
+        items:
+          $ref: "#/definitions/MountPoint"
+      Config:
+        $ref: "#/definitions/ContainerConfig"
+      NetworkSettings:
+        $ref: "#/definitions/NetworkSettings"
 @z
 
 @x
@@ -10044,133 +11144,349 @@ definitions:
     type: "object"
     properties:
       Id:
-        description: "The ID of this container"
+        description: |-
+          The ID of this container as a 128-bit (64-character) hexadecimal string (32 bytes).
         type: "string"
         x-go-name: "ID"
+        minLength: 64
+        maxLength: 64
+        pattern: "^[0-9a-fA-F]{64}$"
+        example: "aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf"
       Names:
-        description: "The names that this container has been given"
-        type: "array"
-        items:
-          type: "string"
-      Image:
-        description: "The name of the image used when creating this container"
-        type: "string"
-      ImageID:
-        description: "The ID of the image that this container was created from"
-        type: "string"
-      Command:
-        description: "Command to run when starting the container"
-        type: "string"
-      Created:
-        description: "When the container was created"
-        type: "integer"
-        format: "int64"
-      Ports:
-        description: "The ports exposed by this container"
-        type: "array"
-        items:
-          $ref: "#/definitions/Port"
-      SizeRw:
-        description: "The size of files that have been created or changed by this container"
-        type: "integer"
-        format: "int64"
-      SizeRootFs:
-        description: "The total size of all the files in this container"
-        type: "integer"
-        format: "int64"
-      Labels:
-        description: "User-defined key/value metadata."
-        type: "object"
-        additionalProperties:
-          type: "string"
-      State:
-        description: "The state of this container (e.g. `Exited`)"
-        type: "string"
-      Status:
-        description: "Additional human-readable status of this container (e.g. `Exit 0`)"
-        type: "string"
-      HostConfig:
-        type: "object"
-        properties:
-          NetworkMode:
-            type: "string"
-      NetworkSettings:
-        description: "A summary of the container's network settings"
-        type: "object"
-        properties:
-          Networks:
-            type: "object"
-            additionalProperties:
-              $ref: "#/definitions/EndpointSettings"
-      Mounts:
-        type: "array"
-        items:
-          $ref: "#/definitions/MountPoint"
+        description: |-
+          The names associated with this container. Most containers have a single
+          name, but when using legacy "links", the container can have multiple
+          names.
 @y
   ContainerSummary:
     type: "object"
     properties:
       Id:
-        description: "The ID of this container"
+        description: |-
+          The ID of this container as a 128-bit (64-character) hexadecimal string (32 bytes).
         type: "string"
         x-go-name: "ID"
+        minLength: 64
+        maxLength: 64
+        pattern: "^[0-9a-fA-F]{64}$"
+        example: "aa86eacfb3b3ed4cd362c1e88fc89a53908ad05fb3a4103bca3f9b28292d14bf"
       Names:
-        description: "The names that this container has been given"
+        description: |-
+          The names associated with this container. Most containers have a single
+          name, but when using legacy "links", the container can have multiple
+          names.
+@z
+
+@x
+          For historic reasons, names are prefixed with a forward-slash (`/`).
         type: "array"
         items:
           type: "string"
+        example:
+          - "/funny_chatelet"
       Image:
-        description: "The name of the image used when creating this container"
+        description: |-
+          The name or ID of the image used to create the container.
+@y
+          For historic reasons, names are prefixed with a forward-slash (`/`).
+        type: "array"
+        items:
+          type: "string"
+        example:
+          - "/funny_chatelet"
+      Image:
+        description: |-
+          The name or ID of the image used to create the container.
+@z
+
+@x
+          This field shows the image reference as was specified when creating the container,
+          which can be in its canonical form (e.g., `docker.io/library/ubuntu:latest`
+          or `docker.io/library/ubuntu@sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782`),
+          short form (e.g., `ubuntu:latest`)), or the ID(-prefix) of the image (e.g., `72297848456d`).
+@y
+          This field shows the image reference as was specified when creating the container,
+          which can be in its canonical form (e.g., `docker.io/library/ubuntu:latest`
+          or `docker.io/library/ubuntu@sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782`),
+          short form (e.g., `ubuntu:latest`)), or the ID(-prefix) of the image (e.g., `72297848456d`).
+@z
+
+@x
+          The content of this field can be updated at runtime if the image used to
+          create the container is untagged, in which case the field is updated to
+          contain the the image ID (digest) it was resolved to in its canonical,
+          non-truncated form (e.g., `sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782`).
         type: "string"
+        example: "docker.io/library/ubuntu:latest"
       ImageID:
-        description: "The ID of the image that this container was created from"
+        description: |-
+          The ID (digest) of the image that this container was created from.
         type: "string"
+        example: "sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782"
+      ImageManifestDescriptor:
+        $ref: "#/definitions/OCIDescriptor"
+        x-nullable: true
+        description: |
+          OCI descriptor of the platform-specific manifest of the image
+          the container was created from.
+@y
+          The content of this field can be updated at runtime if the image used to
+          create the container is untagged, in which case the field is updated to
+          contain the the image ID (digest) it was resolved to in its canonical,
+          non-truncated form (e.g., `sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782`).
+        type: "string"
+        example: "docker.io/library/ubuntu:latest"
+      ImageID:
+        description: |-
+          The ID (digest) of the image that this container was created from.
+        type: "string"
+        example: "sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782"
+      ImageManifestDescriptor:
+        $ref: "#/definitions/OCIDescriptor"
+        x-nullable: true
+        description: |
+          OCI descriptor of the platform-specific manifest of the image
+          the container was created from.
+@z
+
+@x
+          Note: Only available if the daemon provides a multi-platform
+          image store.
+@y
+          Note: Only available if the daemon provides a multi-platform
+          image store.
+@z
+
+@x
+          This field is not populated in the `GET /system/df` endpoint.
       Command:
         description: "Command to run when starting the container"
         type: "string"
+        example: "/bin/bash"
       Created:
-        description: "When the container was created"
+        description: |-
+          Date and time at which the container was created as a Unix timestamp
+          (number of seconds since EPOCH).
         type: "integer"
         format: "int64"
+        example: "1739811096"
       Ports:
-        description: "The ports exposed by this container"
+        description: |-
+          Port-mappings for the container.
         type: "array"
         items:
           $ref: "#/definitions/Port"
       SizeRw:
-        description: "The size of files that have been created or changed by this container"
+        description: |-
+          The size of files that have been created or changed by this container.
+@y
+          This field is not populated in the `GET /system/df` endpoint.
+      Command:
+        description: "Command to run when starting the container"
+        type: "string"
+        example: "/bin/bash"
+      Created:
+        description: |-
+          Date and time at which the container was created as a Unix timestamp
+          (number of seconds since EPOCH).
         type: "integer"
         format: "int64"
+        example: "1739811096"
+      Ports:
+        description: |-
+          Port-mappings for the container.
+        type: "array"
+        items:
+          $ref: "#/definitions/Port"
+      SizeRw:
+        description: |-
+          The size of files that have been created or changed by this container.
+@z
+
+@x
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "122880"
       SizeRootFs:
-        description: "The total size of all the files in this container"
+        description: |-
+          The total size of all files in the read-only layers from the image
+          that the container uses. These layers can be shared between containers.
+@y
+          This field is omitted by default, and only set when size is requested
+          in the API request.
         type: "integer"
         format: "int64"
+        x-nullable: true
+        example: "122880"
+      SizeRootFs:
+        description: |-
+          The total size of all files in the read-only layers from the image
+          that the container uses. These layers can be shared between containers.
+@z
+
+@x
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "1653948416"
       Labels:
         description: "User-defined key/value metadata."
         type: "object"
         additionalProperties:
           type: "string"
+        example:
+          com.example.vendor: "Acme"
+          com.example.license: "GPL"
+          com.example.version: "1.0"
       State:
-        description: "The state of this container (e.g. `Exited`)"
+        description: |
+          The state of this container.
         type: "string"
+        enum:
+          - "created"
+          - "running"
+          - "paused"
+          - "restarting"
+          - "exited"
+          - "removing"
+          - "dead"
+        example: "running"
       Status:
-        description: "Additional human-readable status of this container (e.g. `Exit 0`)"
+        description: |-
+          Additional human-readable status of this container (e.g. `Exit 0`)
         type: "string"
+        example: "Up 4 days"
       HostConfig:
         type: "object"
+        description: |-
+          Summary of host-specific runtime information of the container. This
+          is a reduced set of information in the container's "HostConfig" as
+          available in the container "inspect" response.
         properties:
           NetworkMode:
+            description: |-
+              Networking mode (`host`, `none`, `container:<id>`) or name of the
+              primary network the container is using.
+@y
+          This field is omitted by default, and only set when size is requested
+          in the API request.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+        example: "1653948416"
+      Labels:
+        description: "User-defined key/value metadata."
+        type: "object"
+        additionalProperties:
+          type: "string"
+        example:
+          com.example.vendor: "Acme"
+          com.example.license: "GPL"
+          com.example.version: "1.0"
+      State:
+        description: |
+          The state of this container.
+        type: "string"
+        enum:
+          - "created"
+          - "running"
+          - "paused"
+          - "restarting"
+          - "exited"
+          - "removing"
+          - "dead"
+        example: "running"
+      Status:
+        description: |-
+          Additional human-readable status of this container (e.g. `Exit 0`)
+        type: "string"
+        example: "Up 4 days"
+      HostConfig:
+        type: "object"
+        description: |-
+          Summary of host-specific runtime information of the container. This
+          is a reduced set of information in the container's "HostConfig" as
+          available in the container "inspect" response.
+        properties:
+          NetworkMode:
+            description: |-
+              Networking mode (`host`, `none`, `container:<id>`) or name of the
+              primary network the container is using.
+@z
+
+@x
+              This field is primarily for backward compatibility. The container
+              can be connected to multiple networks for which information can be
+              found in the `NetworkSettings.Networks` field, which enumerates
+              settings per network.
             type: "string"
+            example: "mynetwork"
+          Annotations:
+            description: |-
+              Arbitrary key-value metadata attached to the container.
+            type: "object"
+            x-nullable: true
+            additionalProperties:
+              type: "string"
+            example:
+              io.kubernetes.docker.type: "container"
+              io.kubernetes.sandbox.id: "3befe639bed0fd6afdd65fd1fa84506756f59360ec4adc270b0fdac9be22b4d3"
       NetworkSettings:
-        description: "A summary of the container's network settings"
+        description: |-
+          Summary of the container's network settings
         type: "object"
         properties:
           Networks:
             type: "object"
+            description: |-
+              Summary of network-settings for each network the container is
+              attached to.
             additionalProperties:
               $ref: "#/definitions/EndpointSettings"
       Mounts:
         type: "array"
+        description: |-
+          List of mounts used by the container.
+        items:
+          $ref: "#/definitions/MountPoint"
+@y
+              This field is primarily for backward compatibility. The container
+              can be connected to multiple networks for which information can be
+              found in the `NetworkSettings.Networks` field, which enumerates
+              settings per network.
+            type: "string"
+            example: "mynetwork"
+          Annotations:
+            description: |-
+              Arbitrary key-value metadata attached to the container.
+            type: "object"
+            x-nullable: true
+            additionalProperties:
+              type: "string"
+            example:
+              io.kubernetes.docker.type: "container"
+              io.kubernetes.sandbox.id: "3befe639bed0fd6afdd65fd1fa84506756f59360ec4adc270b0fdac9be22b4d3"
+      NetworkSettings:
+        description: |-
+          Summary of the container's network settings
+        type: "object"
+        properties:
+          Networks:
+            type: "object"
+            description: |-
+              Summary of network-settings for each network the container is
+              attached to.
+            additionalProperties:
+              $ref: "#/definitions/EndpointSettings"
+      Mounts:
+        type: "array"
+        description: |-
+          List of mounts used by the container.
         items:
           $ref: "#/definitions/MountPoint"
 @z
@@ -10491,7 +11807,8 @@ definitions:
         example: false
       OOMKilled:
         description: |
-          Whether this container has been killed because it ran out of memory.
+          Whether a process within this container has been killed because it ran
+          out of memory since the container was last started.
         type: "boolean"
         example: false
       Dead:
@@ -10531,7 +11848,8 @@ definitions:
         example: false
       OOMKilled:
         description: |
-          Whether this container has been killed because it ran out of memory.
+          Whether a process within this container has been killed because it ran
+          out of memory since the container was last started.
         type: "boolean"
         example: false
       Dead:
@@ -10602,6 +11920,1306 @@ definitions:
 @z
 
 @x
+  ContainerUpdateResponse:
+    type: "object"
+    title: "ContainerUpdateResponse"
+    x-go-name: "UpdateResponse"
+    description: |-
+      Response for a successful container-update.
+    properties:
+      Warnings:
+        type: "array"
+        description: |-
+          Warnings encountered when updating the container.
+        items:
+          type: "string"
+        example: ["Published ports are discarded when using host network mode"]
+@y
+  ContainerUpdateResponse:
+    type: "object"
+    title: "ContainerUpdateResponse"
+    x-go-name: "UpdateResponse"
+    description: |-
+      Response for a successful container-update.
+    properties:
+      Warnings:
+        type: "array"
+        description: |-
+          Warnings encountered when updating the container.
+        items:
+          type: "string"
+        example: ["Published ports are discarded when using host network mode"]
+@z
+
+@x
+  ContainerStatsResponse:
+    description: |
+      Statistics sample for a container.
+    type: "object"
+    x-go-name: "StatsResponse"
+    title: "ContainerStatsResponse"
+    properties:
+      name:
+        description: "Name of the container"
+        type: "string"
+        x-nullable: true
+        example: "boring_wozniak"
+      id:
+        description: "ID of the container"
+        type: "string"
+        x-nullable: true
+        example: "ede54ee1afda366ab42f824e8a5ffd195155d853ceaec74a927f249ea270c743"
+      read:
+        description: |
+          Date and time at which this sample was collected.
+          The value is formatted as [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          with nano-seconds.
+        type: "string"
+        format: "date-time"
+        example: "2025-01-16T13:55:22.165243637Z"
+      preread:
+        description: |
+          Date and time at which this first sample was collected. This field
+          is not propagated if the "one-shot" option is set. If the "one-shot"
+          option is set, this field may be omitted, empty, or set to a default
+          date (`0001-01-01T00:00:00Z`).
+@y
+  ContainerStatsResponse:
+    description: |
+      Statistics sample for a container.
+    type: "object"
+    x-go-name: "StatsResponse"
+    title: "ContainerStatsResponse"
+    properties:
+      name:
+        description: "Name of the container"
+        type: "string"
+        x-nullable: true
+        example: "boring_wozniak"
+      id:
+        description: "ID of the container"
+        type: "string"
+        x-nullable: true
+        example: "ede54ee1afda366ab42f824e8a5ffd195155d853ceaec74a927f249ea270c743"
+      read:
+        description: |
+          Date and time at which this sample was collected.
+          The value is formatted as [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          with nano-seconds.
+        type: "string"
+        format: "date-time"
+        example: "2025-01-16T13:55:22.165243637Z"
+      preread:
+        description: |
+          Date and time at which this first sample was collected. This field
+          is not propagated if the "one-shot" option is set. If the "one-shot"
+          option is set, this field may be omitted, empty, or set to a default
+          date (`0001-01-01T00:00:00Z`).
+@z
+
+@x
+          The value is formatted as [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          with nano-seconds.
+        type: "string"
+        format: "date-time"
+        example: "2025-01-16T13:55:21.160452595Z"
+      pids_stats:
+        $ref: "#/definitions/ContainerPidsStats"
+      blkio_stats:
+        $ref: "#/definitions/ContainerBlkioStats"
+      num_procs:
+        description: |
+          The number of processors on the system.
+@y
+          The value is formatted as [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          with nano-seconds.
+        type: "string"
+        format: "date-time"
+        example: "2025-01-16T13:55:21.160452595Z"
+      pids_stats:
+        $ref: "#/definitions/ContainerPidsStats"
+      blkio_stats:
+        $ref: "#/definitions/ContainerBlkioStats"
+      num_procs:
+        description: |
+          The number of processors on the system.
+@z
+
+@x
+          This field is Windows-specific and always zero for Linux containers.
+        type: "integer"
+        format: "uint32"
+        example: 16
+      storage_stats:
+        $ref: "#/definitions/ContainerStorageStats"
+      cpu_stats:
+        $ref: "#/definitions/ContainerCPUStats"
+      precpu_stats:
+        $ref: "#/definitions/ContainerCPUStats"
+      memory_stats:
+        $ref: "#/definitions/ContainerMemoryStats"
+      networks:
+        description: |
+          Network statistics for the container per interface.
+@y
+          This field is Windows-specific and always zero for Linux containers.
+        type: "integer"
+        format: "uint32"
+        example: 16
+      storage_stats:
+        $ref: "#/definitions/ContainerStorageStats"
+      cpu_stats:
+        $ref: "#/definitions/ContainerCPUStats"
+      precpu_stats:
+        $ref: "#/definitions/ContainerCPUStats"
+      memory_stats:
+        $ref: "#/definitions/ContainerMemoryStats"
+      networks:
+        description: |
+          Network statistics for the container per interface.
+@z
+
+@x
+          This field is omitted if the container has no networking enabled.
+        x-nullable: true
+        additionalProperties:
+          $ref: "#/definitions/ContainerNetworkStats"
+        example:
+          eth0:
+            rx_bytes: 5338
+            rx_dropped: 0
+            rx_errors: 0
+            rx_packets: 36
+            tx_bytes: 648
+            tx_dropped: 0
+            tx_errors: 0
+            tx_packets: 8
+          eth5:
+            rx_bytes: 4641
+            rx_dropped: 0
+            rx_errors: 0
+            rx_packets: 26
+            tx_bytes: 690
+            tx_dropped: 0
+            tx_errors: 0
+            tx_packets: 9
+@y
+          This field is omitted if the container has no networking enabled.
+        x-nullable: true
+        additionalProperties:
+          $ref: "#/definitions/ContainerNetworkStats"
+        example:
+          eth0:
+            rx_bytes: 5338
+            rx_dropped: 0
+            rx_errors: 0
+            rx_packets: 36
+            tx_bytes: 648
+            tx_dropped: 0
+            tx_errors: 0
+            tx_packets: 8
+          eth5:
+            rx_bytes: 4641
+            rx_dropped: 0
+            rx_errors: 0
+            rx_packets: 26
+            tx_bytes: 690
+            tx_dropped: 0
+            tx_errors: 0
+            tx_packets: 9
+@z
+
+@x
+  ContainerBlkioStats:
+    description: |
+      BlkioStats stores all IO service stats for data read and write.
+@y
+  ContainerBlkioStats:
+    description: |
+      BlkioStats stores all IO service stats for data read and write.
+@z
+
+@x
+      This type is Linux-specific and holds many fields that are specific to cgroups v1.
+      On a cgroup v2 host, all fields other than `io_service_bytes_recursive`
+      are omitted or `null`.
+@y
+      This type is Linux-specific and holds many fields that are specific to cgroups v1.
+      On a cgroup v2 host, all fields other than `io_service_bytes_recursive`
+      are omitted or `null`.
+@z
+
+@x
+      This type is only populated on Linux and omitted for Windows containers.
+    type: "object"
+    x-go-name: "BlkioStats"
+    x-nullable: true
+    properties:
+      io_service_bytes_recursive:
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_serviced_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_queue_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_service_time_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_wait_time_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_merged_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_time_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      sectors_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+    example:
+      io_service_bytes_recursive: [
+        {"major": 254, "minor": 0, "op": "read", "value": 7593984},
+        {"major": 254, "minor": 0, "op": "write", "value": 100}
+      ]
+      io_serviced_recursive: null
+      io_queue_recursive: null
+      io_service_time_recursive: null
+      io_wait_time_recursive: null
+      io_merged_recursive: null
+      io_time_recursive: null
+      sectors_recursive: null
+@y
+      This type is only populated on Linux and omitted for Windows containers.
+    type: "object"
+    x-go-name: "BlkioStats"
+    x-nullable: true
+    properties:
+      io_service_bytes_recursive:
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_serviced_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_queue_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_service_time_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_wait_time_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_merged_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      io_time_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+      sectors_recursive:
+        description: |
+          This field is only available when using Linux containers with
+          cgroups v1. It is omitted or `null` when using cgroups v2.
+        x-nullable: true
+        type: "array"
+        items:
+          $ref: "#/definitions/ContainerBlkioStatEntry"
+    example:
+      io_service_bytes_recursive: [
+        {"major": 254, "minor": 0, "op": "read", "value": 7593984},
+        {"major": 254, "minor": 0, "op": "write", "value": 100}
+      ]
+      io_serviced_recursive: null
+      io_queue_recursive: null
+      io_service_time_recursive: null
+      io_wait_time_recursive: null
+      io_merged_recursive: null
+      io_time_recursive: null
+      sectors_recursive: null
+@z
+
+@x
+  ContainerBlkioStatEntry:
+    description: |
+      Blkio stats entry.
+@y
+  ContainerBlkioStatEntry:
+    description: |
+      Blkio stats entry.
+@z
+
+@x
+      This type is Linux-specific and omitted for Windows containers.
+    type: "object"
+    x-go-name: "BlkioStatEntry"
+    x-nullable: true
+    properties:
+      major:
+        type: "integer"
+        format: "uint64"
+        example: 254
+      minor:
+        type: "integer"
+        format: "uint64"
+        example: 0
+      op:
+        type: "string"
+        example: "read"
+      value:
+        type: "integer"
+        format: "uint64"
+        example: 7593984
+@y
+      This type is Linux-specific and omitted for Windows containers.
+    type: "object"
+    x-go-name: "BlkioStatEntry"
+    x-nullable: true
+    properties:
+      major:
+        type: "integer"
+        format: "uint64"
+        example: 254
+      minor:
+        type: "integer"
+        format: "uint64"
+        example: 0
+      op:
+        type: "string"
+        example: "read"
+      value:
+        type: "integer"
+        format: "uint64"
+        example: 7593984
+@z
+
+@x
+  ContainerCPUStats:
+    description: |
+      CPU related info of the container
+    type: "object"
+    x-go-name: "CPUStats"
+    x-nullable: true
+    properties:
+      cpu_usage:
+        $ref: "#/definitions/ContainerCPUUsage"
+      system_cpu_usage:
+        description: |
+          System Usage.
+@y
+  ContainerCPUStats:
+    description: |
+      CPU related info of the container
+    type: "object"
+    x-go-name: "CPUStats"
+    x-nullable: true
+    properties:
+      cpu_usage:
+        $ref: "#/definitions/ContainerCPUUsage"
+      system_cpu_usage:
+        description: |
+          System Usage.
+@z
+
+@x
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 5
+      online_cpus:
+        description: |
+          Number of online CPUs.
+@y
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 5
+      online_cpus:
+        description: |
+          Number of online CPUs.
+@z
+
+@x
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint32"
+        x-nullable: true
+        example: 5
+      throttling_data:
+        $ref: "#/definitions/ContainerThrottlingData"
+@y
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint32"
+        x-nullable: true
+        example: 5
+      throttling_data:
+        $ref: "#/definitions/ContainerThrottlingData"
+@z
+
+@x
+  ContainerCPUUsage:
+    description: |
+      All CPU stats aggregated since container inception.
+    type: "object"
+    x-go-name: "CPUUsage"
+    x-nullable: true
+    properties:
+      total_usage:
+        description: |
+          Total CPU time consumed in nanoseconds (Linux) or 100's of nanoseconds (Windows).
+        type: "integer"
+        format: "uint64"
+        example: 29912000
+      percpu_usage:
+        description: |
+          Total CPU time (in nanoseconds) consumed per core (Linux).
+@y
+  ContainerCPUUsage:
+    description: |
+      All CPU stats aggregated since container inception.
+    type: "object"
+    x-go-name: "CPUUsage"
+    x-nullable: true
+    properties:
+      total_usage:
+        description: |
+          Total CPU time consumed in nanoseconds (Linux) or 100's of nanoseconds (Windows).
+        type: "integer"
+        format: "uint64"
+        example: 29912000
+      percpu_usage:
+        description: |
+          Total CPU time (in nanoseconds) consumed per core (Linux).
+@z
+
+@x
+          This field is Linux-specific when using cgroups v1. It is omitted
+          when using cgroups v2 and Windows containers.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "integer"
+          format: "uint64"
+          example: 29912000
+@y
+          This field is Linux-specific when using cgroups v1. It is omitted
+          when using cgroups v2 and Windows containers.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "integer"
+          format: "uint64"
+          example: 29912000
+@z
+
+@x
+      usage_in_kernelmode:
+        description: |
+          Time (in nanoseconds) spent by tasks of the cgroup in kernel mode (Linux),
+          or time spent (in 100's of nanoseconds) by all container processes in
+          kernel mode (Windows).
+@y
+      usage_in_kernelmode:
+        description: |
+          Time (in nanoseconds) spent by tasks of the cgroup in kernel mode (Linux),
+          or time spent (in 100's of nanoseconds) by all container processes in
+          kernel mode (Windows).
+@z
+
+@x
+          Not populated for Windows containers using Hyper-V isolation.
+        type: "integer"
+        format: "uint64"
+        example: 21994000
+      usage_in_usermode:
+        description: |
+          Time (in nanoseconds) spent by tasks of the cgroup in user mode (Linux),
+          or time spent (in 100's of nanoseconds) by all container processes in
+          kernel mode (Windows).
+@y
+          Not populated for Windows containers using Hyper-V isolation.
+        type: "integer"
+        format: "uint64"
+        example: 21994000
+      usage_in_usermode:
+        description: |
+          Time (in nanoseconds) spent by tasks of the cgroup in user mode (Linux),
+          or time spent (in 100's of nanoseconds) by all container processes in
+          kernel mode (Windows).
+@z
+
+@x
+          Not populated for Windows containers using Hyper-V isolation.
+        type: "integer"
+        format: "uint64"
+        example: 7918000
+@y
+          Not populated for Windows containers using Hyper-V isolation.
+        type: "integer"
+        format: "uint64"
+        example: 7918000
+@z
+
+@x
+  ContainerPidsStats:
+    description: |
+      PidsStats contains Linux-specific stats of a container's process-IDs (PIDs).
+@y
+  ContainerPidsStats:
+    description: |
+      PidsStats contains Linux-specific stats of a container's process-IDs (PIDs).
+@z
+
+@x
+      This type is Linux-specific and omitted for Windows containers.
+    type: "object"
+    x-go-name: "PidsStats"
+    x-nullable: true
+    properties:
+      current:
+        description: |
+          Current is the number of PIDs in the cgroup.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 5
+      limit:
+        description: |
+          Limit is the hard limit on the number of pids in the cgroup.
+          A "Limit" of 0 means that there is no limit.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 18446744073709551615
+@y
+      This type is Linux-specific and omitted for Windows containers.
+    type: "object"
+    x-go-name: "PidsStats"
+    x-nullable: true
+    properties:
+      current:
+        description: |
+          Current is the number of PIDs in the cgroup.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 5
+      limit:
+        description: |
+          Limit is the hard limit on the number of pids in the cgroup.
+          A "Limit" of 0 means that there is no limit.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 18446744073709551615
+@z
+
+@x
+  ContainerThrottlingData:
+    description: |
+      CPU throttling stats of the container.
+@y
+  ContainerThrottlingData:
+    description: |
+      CPU throttling stats of the container.
+@z
+
+@x
+      This type is Linux-specific and omitted for Windows containers.
+    type: "object"
+    x-go-name: "ThrottlingData"
+    x-nullable: true
+    properties:
+      periods:
+        description: |
+          Number of periods with throttling active.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      throttled_periods:
+        description: |
+          Number of periods when the container hit its throttling limit.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      throttled_time:
+        description: |
+          Aggregated time (in nanoseconds) the container was throttled for.
+        type: "integer"
+        format: "uint64"
+        example: 0
+@y
+      This type is Linux-specific and omitted for Windows containers.
+    type: "object"
+    x-go-name: "ThrottlingData"
+    x-nullable: true
+    properties:
+      periods:
+        description: |
+          Number of periods with throttling active.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      throttled_periods:
+        description: |
+          Number of periods when the container hit its throttling limit.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      throttled_time:
+        description: |
+          Aggregated time (in nanoseconds) the container was throttled for.
+        type: "integer"
+        format: "uint64"
+        example: 0
+@z
+
+@x
+  ContainerMemoryStats:
+    description: |
+      Aggregates all memory stats since container inception on Linux.
+      Windows returns stats for commit and private working set only.
+    type: "object"
+    x-go-name: "MemoryStats"
+    properties:
+      usage:
+        description: |
+          Current `res_counter` usage for memory.
+@y
+  ContainerMemoryStats:
+    description: |
+      Aggregates all memory stats since container inception on Linux.
+      Windows returns stats for commit and private working set only.
+    type: "object"
+    x-go-name: "MemoryStats"
+    properties:
+      usage:
+        description: |
+          Current `res_counter` usage for memory.
+@z
+
+@x
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      max_usage:
+        description: |
+          Maximum usage ever recorded.
+@y
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      max_usage:
+        description: |
+          Maximum usage ever recorded.
+@z
+
+@x
+          This field is Linux-specific and only supported on cgroups v1.
+          It is omitted when using cgroups v2 and for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      stats:
+        description: |
+          All the stats exported via memory.stat. when using cgroups v2.
+@y
+          This field is Linux-specific and only supported on cgroups v1.
+          It is omitted when using cgroups v2 and for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      stats:
+        description: |
+          All the stats exported via memory.stat. when using cgroups v2.
+@z
+
+@x
+          This field is Linux-specific and omitted for Windows containers.
+        type: "object"
+        additionalProperties:
+          type: "integer"
+          format: "uint64"
+          x-nullable: true
+        example:
+          {
+            "active_anon": 1572864,
+            "active_file": 5115904,
+            "anon": 1572864,
+            "anon_thp": 0,
+            "file": 7626752,
+            "file_dirty": 0,
+            "file_mapped": 2723840,
+            "file_writeback": 0,
+            "inactive_anon": 0,
+            "inactive_file": 2510848,
+            "kernel_stack": 16384,
+            "pgactivate": 0,
+            "pgdeactivate": 0,
+            "pgfault": 2042,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 45,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 1180928,
+            "slab_reclaimable": 725576,
+            "slab_unreclaimable": 455352,
+            "sock": 0,
+            "thp_collapse_alloc": 0,
+            "thp_fault_alloc": 1,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+          }
+      failcnt:
+        description: |
+          Number of times memory usage hits limits.
+@y
+          This field is Linux-specific and omitted for Windows containers.
+        type: "object"
+        additionalProperties:
+          type: "integer"
+          format: "uint64"
+          x-nullable: true
+        example:
+          {
+            "active_anon": 1572864,
+            "active_file": 5115904,
+            "anon": 1572864,
+            "anon_thp": 0,
+            "file": 7626752,
+            "file_dirty": 0,
+            "file_mapped": 2723840,
+            "file_writeback": 0,
+            "inactive_anon": 0,
+            "inactive_file": 2510848,
+            "kernel_stack": 16384,
+            "pgactivate": 0,
+            "pgdeactivate": 0,
+            "pgfault": 2042,
+            "pglazyfree": 0,
+            "pglazyfreed": 0,
+            "pgmajfault": 45,
+            "pgrefill": 0,
+            "pgscan": 0,
+            "pgsteal": 0,
+            "shmem": 0,
+            "slab": 1180928,
+            "slab_reclaimable": 725576,
+            "slab_unreclaimable": 455352,
+            "sock": 0,
+            "thp_collapse_alloc": 0,
+            "thp_fault_alloc": 1,
+            "unevictable": 0,
+            "workingset_activate": 0,
+            "workingset_nodereclaim": 0,
+            "workingset_refault": 0
+          }
+      failcnt:
+        description: |
+          Number of times memory usage hits limits.
+@z
+
+@x
+          This field is Linux-specific and only supported on cgroups v1.
+          It is omitted when using cgroups v2 and for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      limit:
+        description: |
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 8217579520
+      commitbytes:
+        description: |
+          Committed bytes.
+@y
+          This field is Linux-specific and only supported on cgroups v1.
+          It is omitted when using cgroups v2 and for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      limit:
+        description: |
+          This field is Linux-specific and omitted for Windows containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 8217579520
+      commitbytes:
+        description: |
+          Committed bytes.
+@z
+
+@x
+          This field is Windows-specific and omitted for Linux containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      commitpeakbytes:
+        description: |
+          Peak committed bytes.
+@y
+          This field is Windows-specific and omitted for Linux containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      commitpeakbytes:
+        description: |
+          Peak committed bytes.
+@z
+
+@x
+          This field is Windows-specific and omitted for Linux containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      privateworkingset:
+        description: |
+          Private working set.
+@y
+          This field is Windows-specific and omitted for Linux containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+      privateworkingset:
+        description: |
+          Private working set.
+@z
+
+@x
+          This field is Windows-specific and omitted for Linux containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+@y
+          This field is Windows-specific and omitted for Linux containers.
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 0
+@z
+
+@x
+  ContainerNetworkStats:
+    description: |
+      Aggregates the network stats of one container
+    type: "object"
+    x-go-name: "NetworkStats"
+    x-nullable: true
+    properties:
+      rx_bytes:
+        description: |
+          Bytes received. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 5338
+      rx_packets:
+        description: |
+          Packets received. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 36
+      rx_errors:
+        description: |
+          Received errors. Not used on Windows.
+@y
+  ContainerNetworkStats:
+    description: |
+      Aggregates the network stats of one container
+    type: "object"
+    x-go-name: "NetworkStats"
+    x-nullable: true
+    properties:
+      rx_bytes:
+        description: |
+          Bytes received. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 5338
+      rx_packets:
+        description: |
+          Packets received. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 36
+      rx_errors:
+        description: |
+          Received errors. Not used on Windows.
+@z
+
+@x
+          This field is Linux-specific and always zero for Windows containers.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      rx_dropped:
+        description: |
+          Incoming packets dropped. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      tx_bytes:
+        description: |
+          Bytes sent. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 1200
+      tx_packets:
+        description: |
+          Packets sent. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 12
+      tx_errors:
+        description: |
+          Sent errors. Not used on Windows.
+@y
+          This field is Linux-specific and always zero for Windows containers.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      rx_dropped:
+        description: |
+          Incoming packets dropped. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      tx_bytes:
+        description: |
+          Bytes sent. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 1200
+      tx_packets:
+        description: |
+          Packets sent. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 12
+      tx_errors:
+        description: |
+          Sent errors. Not used on Windows.
+@z
+
+@x
+          This field is Linux-specific and always zero for Windows containers.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      tx_dropped:
+        description: |
+          Outgoing packets dropped. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      endpoint_id:
+        description: |
+          Endpoint ID. Not used on Linux.
+@y
+          This field is Linux-specific and always zero for Windows containers.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      tx_dropped:
+        description: |
+          Outgoing packets dropped. Windows and Linux.
+        type: "integer"
+        format: "uint64"
+        example: 0
+      endpoint_id:
+        description: |
+          Endpoint ID. Not used on Linux.
+@z
+
+@x
+          This field is Windows-specific and omitted for Linux containers.
+        type: "string"
+        x-nullable: true
+      instance_id:
+        description: |
+          Instance ID. Not used on Linux.
+@y
+          This field is Windows-specific and omitted for Linux containers.
+        type: "string"
+        x-nullable: true
+      instance_id:
+        description: |
+          Instance ID. Not used on Linux.
+@z
+
+@x
+          This field is Windows-specific and omitted for Linux containers.
+        type: "string"
+        x-nullable: true
+@y
+          This field is Windows-specific and omitted for Linux containers.
+        type: "string"
+        x-nullable: true
+@z
+
+@x
+  ContainerStorageStats:
+    description: |
+      StorageStats is the disk I/O stats for read/write on Windows.
+@y
+  ContainerStorageStats:
+    description: |
+      StorageStats is the disk I/O stats for read/write on Windows.
+@z
+
+@x
+      This type is Windows-specific and omitted for Linux containers.
+    type: "object"
+    x-go-name: "StorageStats"
+    x-nullable: true
+    properties:
+      read_count_normalized:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+      read_size_bytes:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+      write_count_normalized:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+      write_size_bytes:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+@y
+      This type is Windows-specific and omitted for Linux containers.
+    type: "object"
+    x-go-name: "StorageStats"
+    x-nullable: true
+    properties:
+      read_count_normalized:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+      read_size_bytes:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+      write_count_normalized:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+      write_size_bytes:
+        type: "integer"
+        format: "uint64"
+        x-nullable: true
+        example: 7593984
+@z
+
+@x
+  ContainerTopResponse:
+    type: "object"
+    x-go-name: "TopResponse"
+    title: "ContainerTopResponse"
+    description: |-
+      Container "top" response.
+    properties:
+      Titles:
+        description: "The ps column titles"
+        type: "array"
+        items:
+          type: "string"
+        example:
+          Titles:
+            - "UID"
+            - "PID"
+            - "PPID"
+            - "C"
+            - "STIME"
+            - "TTY"
+            - "TIME"
+            - "CMD"
+      Processes:
+        description: |-
+          Each process running in the container, where each process
+          is an array of values corresponding to the titles.
+        type: "array"
+        items:
+          type: "array"
+          items:
+            type: "string"
+        example:
+          Processes:
+            -
+              - "root"
+              - "13642"
+              - "882"
+              - "0"
+              - "17:03"
+              - "pts/0"
+              - "00:00:00"
+              - "/bin/bash"
+            -
+              - "root"
+              - "13735"
+              - "13642"
+              - "0"
+              - "17:06"
+              - "pts/0"
+              - "00:00:00"
+              - "sleep 10"
+@y
+  ContainerTopResponse:
+    type: "object"
+    x-go-name: "TopResponse"
+    title: "ContainerTopResponse"
+    description: |-
+      Container "top" response.
+    properties:
+      Titles:
+        description: "The ps column titles"
+        type: "array"
+        items:
+          type: "string"
+        example:
+          Titles:
+            - "UID"
+            - "PID"
+            - "PPID"
+            - "C"
+            - "STIME"
+            - "TTY"
+            - "TIME"
+            - "CMD"
+      Processes:
+        description: |-
+          Each process running in the container, where each process
+          is an array of values corresponding to the titles.
+        type: "array"
+        items:
+          type: "array"
+          items:
+            type: "string"
+        example:
+          Processes:
+            -
+              - "root"
+              - "13642"
+              - "882"
+              - "0"
+              - "17:03"
+              - "pts/0"
+              - "00:00:00"
+              - "/bin/bash"
+            -
+              - "root"
+              - "13735"
+              - "13642"
+              - "0"
+              - "17:06"
+              - "pts/0"
+              - "00:00:00"
+              - "sleep 10"
+@z
+
+@x
   ContainerWaitResponse:
     description: "OK response to ContainerWait operation"
     type: "object"
@@ -10684,7 +13302,7 @@ definitions:
                 Version of the component
               type: "string"
               x-nullable: false
-              example: "19.03.12"
+              example: "27.0.1"
             Details:
               description: |
                 Key/value pairs of strings with additional information about the
@@ -10722,7 +13340,7 @@ definitions:
                 Version of the component
               type: "string"
               x-nullable: false
-              example: "19.03.12"
+              example: "27.0.1"
             Details:
               description: |
                 Key/value pairs of strings with additional information about the
@@ -10738,17 +13356,17 @@ definitions:
       Version:
         description: "The version of the daemon"
         type: "string"
-        example: "19.03.12"
+        example: "27.0.1"
       ApiVersion:
         description: |
           The default (and highest) API version that is supported by the daemon
         type: "string"
-        example: "1.40"
+        example: "1.47"
       MinAPIVersion:
         description: |
           The minimum API version that is supported by the daemon
         type: "string"
-        example: "1.12"
+        example: "1.24"
       GitCommit:
         description: |
           The Git commit of the source code that was used to build the daemon
@@ -10759,7 +13377,7 @@ definitions:
           The version Go used to compile the daemon, and the version of the Go
           runtime in use.
         type: "string"
-        example: "go1.13.14"
+        example: "go1.22.7"
       Os:
         description: |
           The operating system that the daemon is running on ("linux" or "windows")
@@ -10780,17 +13398,17 @@ definitions:
       Version:
         description: "The version of the daemon"
         type: "string"
-        example: "19.03.12"
+        example: "27.0.1"
       ApiVersion:
         description: |
           The default (and highest) API version that is supported by the daemon
         type: "string"
-        example: "1.40"
+        example: "1.47"
       MinAPIVersion:
         description: |
           The minimum API version that is supported by the daemon
         type: "string"
-        example: "1.12"
+        example: "1.24"
       GitCommit:
         description: |
           The Git commit of the source code that was used to build the daemon
@@ -10801,7 +13419,7 @@ definitions:
           The version Go used to compile the daemon, and the version of the Go
           runtime in use.
         type: "string"
-        example: "go1.13.14"
+        example: "go1.22.7"
       Os:
         description: |
           The operating system that the daemon is running on ("linux" or "windows")
@@ -10820,14 +13438,14 @@ definitions:
 @x
           This field is omitted when empty.
         type: "string"
-        example: "4.19.76-linuxkit"
+        example: "6.8.0-31-generic"
       Experimental:
         description: |
           Indicates if the daemon is started with experimental features enabled.
 @y
           This field is omitted when empty.
         type: "string"
-        example: "4.19.76-linuxkit"
+        example: "6.8.0-31-generic"
       Experimental:
         description: |
           Indicates if the daemon is started with experimental features enabled.
@@ -11115,22 +13733,9 @@ definitions:
         type: "boolean"
         example: true
       BridgeNfIptables:
-        description: "Indicates if `bridge-nf-call-iptables` is available on the host."
-        type: "boolean"
-        example: true
-      BridgeNfIp6tables:
-        description: "Indicates if `bridge-nf-call-ip6tables` is available on the host."
-        type: "boolean"
-        example: true
-      Debug:
         description: |
-          Indicates if the daemon is running in debug-mode / with debug-level
-          logging enabled.
-        type: "boolean"
-        example: true
-      NFd:
-        description: |
-          The total number of file Descriptors in use by the daemon process.
+          Indicates if `bridge-nf-call-iptables` is available on the host when
+          the daemon was started.
 @y
           See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
         type: "boolean"
@@ -11147,13 +13752,64 @@ definitions:
         type: "boolean"
         example: true
       BridgeNfIptables:
-        description: "Indicates if `bridge-nf-call-iptables` is available on the host."
+        description: |
+          Indicates if `bridge-nf-call-iptables` is available on the host when
+          the daemon was started.
+@z
+
+@x
+          <p><br /></p>
+@y
+          <p><br /></p>
+@z
+
+@x
+          > **Deprecated**: netfilter module is now loaded on-demand and no longer
+          > during daemon startup, making this field obsolete. This field is always
+          > `false` and will be removed in a API v1.49.
         type: "boolean"
-        example: true
+        example: false
       BridgeNfIp6tables:
-        description: "Indicates if `bridge-nf-call-ip6tables` is available on the host."
+        description: |
+          Indicates if `bridge-nf-call-ip6tables` is available on the host.
+@y
+          > **Deprecated**: netfilter module is now loaded on-demand and no longer
+          > during daemon startup, making this field obsolete. This field is always
+          > `false` and will be removed in a API v1.49.
+        type: "boolean"
+        example: false
+      BridgeNfIp6tables:
+        description: |
+          Indicates if `bridge-nf-call-ip6tables` is available on the host.
+@z
+
+@x
+          <p><br /></p>
+@y
+          <p><br /></p>
+@z
+
+@x
+          > **Deprecated**: netfilter module is now loaded on-demand, and no longer
+          > during daemon startup, making this field obsolete. This field is always
+          > `false` and will be removed in a API v1.49.
+        type: "boolean"
+        example: false
+      Debug:
+        description: |
+          Indicates if the daemon is running in debug-mode / with debug-level
+          logging enabled.
         type: "boolean"
         example: true
+      NFd:
+        description: |
+          The total number of file Descriptors in use by the daemon process.
+@y
+          > **Deprecated**: netfilter module is now loaded on-demand, and no longer
+          > during daemon startup, making this field obsolete. This field is always
+          > `false` and will be removed in a API v1.49.
+        type: "boolean"
+        example: false
       Debug:
         description: |
           Indicates if the daemon is running in debug-mode / with debug-level
@@ -11258,13 +13914,13 @@ definitions:
           information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
           registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
         type: "string"
-        example: "4.9.38-moby"
+        example: "6.8.0-31-generic"
       OperatingSystem:
         description: |
-          Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
+          Name of the host's operating system, for example: "Ubuntu 24.04 LTS"
           or "Windows Server 2016 Datacenter"
         type: "string"
-        example: "Alpine Linux v3.5"
+        example: "Ubuntu 24.04 LTS"
       OSVersion:
         description: |
           Version of the host's operating system
@@ -11273,13 +13929,13 @@ definitions:
           information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
           registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
         type: "string"
-        example: "4.9.38-moby"
+        example: "6.8.0-31-generic"
       OperatingSystem:
         description: |
-          Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
+          Name of the host's operating system, for example: "Ubuntu 24.04 LTS"
           or "Windows Server 2016 Datacenter"
         type: "string"
-        example: "Alpine Linux v3.5"
+        example: "Ubuntu 24.04 LTS"
       OSVersion:
         description: |
           Version of the host's operating system
@@ -11296,7 +13952,7 @@ definitions:
           > very existence, and the formatting of values, should not be considered
           > stable, and may change without notice.
         type: "string"
-        example: "16.04"
+        example: "24.04"
       OSType:
         description: |
           Generic type of the operating system of the host, as returned by the
@@ -11306,7 +13962,7 @@ definitions:
           > very existence, and the formatting of values, should not be considered
           > stable, and may change without notice.
         type: "string"
-        example: "16.04"
+        example: "24.04"
       OSType:
         description: |
           Generic type of the operating system of the host, as returned by the
@@ -11504,7 +14160,7 @@ definitions:
         description: |
           Version string of the daemon.
         type: "string"
-        example: "23.0.0"
+        example: "27.0.1"
       Runtimes:
         description: |
           List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
@@ -11529,7 +14185,7 @@ definitions:
         description: |
           Version string of the daemon.
         type: "string"
-        example: "23.0.0"
+        example: "27.0.1"
       Runtimes:
         description: |
           List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
@@ -11681,7 +14337,8 @@ definitions:
       SecurityOptions:
         description: |
           List of security features that are enabled on the daemon, such as
-          apparmor, seccomp, SELinux, user-namespaces (userns), and rootless.
+          apparmor, seccomp, SELinux, user-namespaces (userns), rootless and
+          no-new-privileges.
 @y
           If the path is omitted, the daemon searches the host's `$PATH` for the
           binary and uses the first result.
@@ -11696,7 +14353,8 @@ definitions:
       SecurityOptions:
         description: |
           List of security features that are enabled on the daemon, such as
-          apparmor, seccomp, SELinux, user-namespaces (userns), and rootless.
+          apparmor, seccomp, SELinux, user-namespaces (userns), rootless and
+          no-new-privileges.
 @z
 
 @x
@@ -11800,6 +14458,10 @@ definitions:
           type: "string"
         example:
           - "WARNING: No memory limit support"
+      CDISpecDirs:
+        description: |
+          List of directories where (Container Device Interface) CDI
+          specifications are located.
 @y
           These messages can be printed by the client as information to the user.
         type: "array"
@@ -11807,6 +14469,158 @@ definitions:
           type: "string"
         example:
           - "WARNING: No memory limit support"
+      CDISpecDirs:
+        description: |
+          List of directories where (Container Device Interface) CDI
+          specifications are located.
+@z
+
+@x
+          These specifications define vendor-specific modifications to an OCI
+          runtime specification for a container being created.
+@y
+          These specifications define vendor-specific modifications to an OCI
+          runtime specification for a container being created.
+@z
+
+@x
+          An empty list indicates that CDI device injection is disabled.
+@y
+          An empty list indicates that CDI device injection is disabled.
+@z
+
+@x
+          Note that since using CDI device injection requires the daemon to have
+          experimental enabled. For non-experimental daemons an empty list will
+          always be returned.
+        type: "array"
+        items:
+          type: "string"
+        example:
+          - "/etc/cdi"
+          - "/var/run/cdi"
+      Containerd:
+        $ref: "#/definitions/ContainerdInfo"
+@y
+          Note that since using CDI device injection requires the daemon to have
+          experimental enabled. For non-experimental daemons an empty list will
+          always be returned.
+        type: "array"
+        items:
+          type: "string"
+        example:
+          - "/etc/cdi"
+          - "/var/run/cdi"
+      Containerd:
+        $ref: "#/definitions/ContainerdInfo"
+@z
+
+@x
+  ContainerdInfo:
+    description: |
+      Information for connecting to the containerd instance that is used by the daemon.
+      This is included for debugging purposes only.
+    type: "object"
+    x-nullable: true
+    properties:
+      Address:
+        description: "The address of the containerd socket."
+        type: "string"
+        example: "/run/containerd/containerd.sock"
+      Namespaces:
+        description: |
+          The namespaces that the daemon uses for running containers and
+          plugins in containerd. These namespaces can be configured in the
+          daemon configuration, and are considered to be used exclusively
+          by the daemon, Tampering with the containerd instance may cause
+          unexpected behavior.
+@y
+  ContainerdInfo:
+    description: |
+      Information for connecting to the containerd instance that is used by the daemon.
+      This is included for debugging purposes only.
+    type: "object"
+    x-nullable: true
+    properties:
+      Address:
+        description: "The address of the containerd socket."
+        type: "string"
+        example: "/run/containerd/containerd.sock"
+      Namespaces:
+        description: |
+          The namespaces that the daemon uses for running containers and
+          plugins in containerd. These namespaces can be configured in the
+          daemon configuration, and are considered to be used exclusively
+          by the daemon, Tampering with the containerd instance may cause
+          unexpected behavior.
+@z
+
+@x
+          As these namespaces are considered to be exclusively accessed
+          by the daemon, it is not recommended to change these values,
+          or to change them to a value that is used by other systems,
+          such as cri-containerd.
+        type: "object"
+        properties:
+          Containers:
+            description: |
+              The default containerd namespace used for containers managed
+              by the daemon.
+@y
+          As these namespaces are considered to be exclusively accessed
+          by the daemon, it is not recommended to change these values,
+          or to change them to a value that is used by other systems,
+          such as cri-containerd.
+        type: "object"
+        properties:
+          Containers:
+            description: |
+              The default containerd namespace used for containers managed
+              by the daemon.
+@z
+
+@x
+              The default namespace for containers is "moby", but will be
+              suffixed with the `<uid>.<gid>` of the remapped `root` if
+              user-namespaces are enabled and the containerd image-store
+              is used.
+            type: "string"
+            default: "moby"
+            example: "moby"
+          Plugins:
+            description: |
+              The default containerd namespace used for plugins managed by
+              the daemon.
+@y
+              The default namespace for containers is "moby", but will be
+              suffixed with the `<uid>.<gid>` of the remapped `root` if
+              user-namespaces are enabled and the containerd image-store
+              is used.
+            type: "string"
+            default: "moby"
+            example: "moby"
+          Plugins:
+            description: |
+              The default containerd namespace used for plugins managed by
+              the daemon.
+@z
+
+@x
+              The default namespace for plugins is "plugins.moby", but will be
+              suffixed with the `<uid>.<gid>` of the remapped `root` if
+              user-namespaces are enabled and the containerd image-store
+              is used.
+            type: "string"
+            default: "plugins.moby"
+            example: "plugins.moby"
+@y
+              The default namespace for plugins is "plugins.moby", but will be
+              suffixed with the `<uid>.<gid>` of the remapped `root` if
+              user-namespaces are enabled and the containerd image-store
+              is used.
+            type: "string"
+            default: "plugins.moby"
+            example: "plugins.moby"
 @z
 
 @x
@@ -11923,7 +14737,7 @@ definitions:
 
 @x
           > **Deprecated**: Pushing nondistributable artifacts is now always enabled
-          > and this field is always `null`.
+          > and this field is always `null`. This field will be removed in a API v1.49.
         type: "array"
         items:
           type: "string"
@@ -11934,7 +14748,7 @@ definitions:
           pushed, using the format `<hostname>[:<port>]` or `<IP address>[:<port>]`.
 @y
           > **Deprecated**: Pushing nondistributable artifacts is now always enabled
-          > and this field is always `null`.
+          > and this field is always `null`. This field will be removed in a API v1.49.
         type: "array"
         items:
           type: "string"
@@ -11953,7 +14767,7 @@ definitions:
 
 @x
           > **Deprecated**: Pushing nondistributable artifacts is now always enabled
-          > and this field is always `null`.
+          > and this field is always `null`. This field will be removed in a API v1.49.
         type: "array"
         items:
           type: "string"
@@ -11966,7 +14780,7 @@ definitions:
           from unknown CAs) communication.
 @y
           > **Deprecated**: Pushing nondistributable artifacts is now always enabled
-          > and this field is always `null`.
+          > and this field is always `null`. This field will be removed in a API v1.49.
         type: "array"
         items:
           type: "string"
@@ -11980,12 +14794,12 @@ definitions:
 @z
 
 @x
-          By default, local registries (`127.0.0.0/8`) are configured as
+          By default, local registries (`::1/128` and `127.0.0.0/8`) are configured as
           insecure. All other registries are secure. Communicating with an
           insecure registry is not possible if the daemon assumes that registry
           is secure.
 @y
-          By default, local registries (`127.0.0.0/8`) are configured as
+          By default, local registries (`::1/128` and `127.0.0.0/8`) are configured as
           insecure. All other registries are secure. Communicating with an
           insecure registry is not possible if the daemon assumes that registry
           is secure.
@@ -12244,6 +15058,9 @@ definitions:
         items:
           type: "string"
         example: ["--debug", "--systemd-cgroup=false"]
+      status:
+        description: |
+          Information specific to the runtime.
 @y
           If the path is omitted, the daemon searches the host's `$PATH` for the
           binary and uses the first result.
@@ -12257,6 +15074,55 @@ definitions:
         items:
           type: "string"
         example: ["--debug", "--systemd-cgroup=false"]
+      status:
+        description: |
+          Information specific to the runtime.
+@z
+
+@x
+          While this API specification does not define data provided by runtimes,
+          the following well-known properties may be provided by runtimes:
+@y
+          While this API specification does not define data provided by runtimes,
+          the following well-known properties may be provided by runtimes:
+@z
+
+@x
+          `org.opencontainers.runtime-spec.features`: features structure as defined
+          in the [OCI Runtime Specification](https://github.com/opencontainers/runtime-spec/blob/main/features.md),
+          in a JSON string representation.
+@y
+          `org.opencontainers.runtime-spec.features`: features structure as defined
+          in the [OCI Runtime Specification](https://github.com/opencontainers/runtime-spec/blob/main/features.md),
+          in a JSON string representation.
+@z
+
+@x
+          <p><br /></p>
+@y
+          <p><br /></p>
+@z
+
+@x
+          > **Note**: The information returned in this field, including the
+          > formatting of values and labels, should not be considered stable,
+          > and may change without notice.
+        type: "object"
+        x-nullable: true
+        additionalProperties:
+          type: "string"
+        example:
+          "org.opencontainers.runtime-spec.features": "{\"ociVersionMin\":\"1.0.0\",\"ociVersionMax\":\"1.1.0\",\"...\":\"...\"}"
+@y
+          > **Note**: The information returned in this field, including the
+          > formatting of values and labels, should not be considered stable,
+          > and may change without notice.
+        type: "object"
+        x-nullable: true
+        additionalProperties:
+          type: "string"
+        example:
+          "org.opencontainers.runtime-spec.features": "{\"ociVersionMin\":\"1.0.0\",\"ociVersionMax\":\"1.1.0\",\"...\":\"...\"}"
 @z
 
 @x
@@ -12274,23 +15140,29 @@ definitions:
       Expected:
         description: |
           Commit ID of external tool expected by dockerd as set at build time.
+@y
+  Commit:
+    description: |
+      Commit holds the Git-commit (SHA1) that a binary was built from, as
+      reported in the version-string of external tools, such as `containerd`,
+      or `runC`.
+    type: "object"
+    properties:
+      ID:
+        description: "Actual commit ID of external tool."
+        type: "string"
+        example: "cfb82a876ecc11b5ca0977d1733adbe58599088a"
+      Expected:
+        description: |
+          Commit ID of external tool expected by dockerd as set at build time.
+@z
+
+@x
+          **Deprecated**: This field is deprecated and will be omitted in a API v1.49.
         type: "string"
         example: "2d41c047c83e09a6d61d464906feb2a2f3c52aa4"
 @y
-  Commit:
-    description: |
-      Commit holds the Git-commit (SHA1) that a binary was built from, as
-      reported in the version-string of external tools, such as `containerd`,
-      or `runC`.
-    type: "object"
-    properties:
-      ID:
-        description: "Actual commit ID of external tool."
-        type: "string"
-        example: "cfb82a876ecc11b5ca0977d1733adbe58599088a"
-      Expected:
-        description: |
-          Commit ID of external tool expected by dockerd as set at build time.
+          **Deprecated**: This field is deprecated and will be omitted in a API v1.49.
         type: "string"
         example: "2d41c047c83e09a6d61d464906feb2a2f3c52aa4"
 @z
@@ -12631,7 +15503,7 @@ definitions:
         description: |
           The media type of the object this schema refers to.
         type: "string"
-        example: "application/vnd.docker.distribution.manifest.v2+json"
+        example: "application/vnd.oci.image.manifest.v1+json"
       digest:
         description: |
           The digest of the targeted content.
@@ -12642,23 +15514,47 @@ definitions:
           The size in bytes of the blob.
         type: "integer"
         format: "int64"
-        example: 3987495
-        # TODO Not yet including these fields for now, as they are nil / omitted in our response.
-        # urls:
-        #   description: |
-        #     List of URLs from which this object MAY be downloaded.
-        #   type: "array"
-        #   items:
-        #     type: "string"
-        #     format: "uri"
-        # annotations:
-        #   description: |
-        #     Arbitrary metadata relating to the targeted content.
-        #   type: "object"
-        #   additionalProperties:
-        #     type: "string"
-        # platform:
-        #   $ref: "#/definitions/OCIPlatform"
+        example: 424
+      urls:
+        description: |-
+          List of URLs from which this object MAY be downloaded.
+        type: "array"
+        items:
+          type: "string"
+          format: "uri"
+        x-nullable: true
+      annotations:
+        description: |-
+          Arbitrary metadata relating to the targeted content.
+        type: "object"
+        x-nullable: true
+        additionalProperties:
+          type: "string"
+        example:
+          "com.docker.official-images.bashbrew.arch": "amd64"
+          "org.opencontainers.image.base.digest": "sha256:0d0ef5c914d3ea700147da1bd050c59edb8bb12ca312f3800b29d7c8087eabd8"
+          "org.opencontainers.image.base.name": "scratch"
+          "org.opencontainers.image.created": "2025-01-27T00:00:00Z"
+          "org.opencontainers.image.revision": "9fabb4bad5138435b01857e2fe9363e2dc5f6a79"
+          "org.opencontainers.image.source": "https://git.launchpad.net/cloud-images/+oci/ubuntu-base"
+          "org.opencontainers.image.url": "https://hub.docker.com/_/ubuntu"
+          "org.opencontainers.image.version": "24.04"
+      data:
+        type: string
+        x-nullable: true
+        description: |-
+          Data is an embedding of the targeted content. This is encoded as a base64
+          string when marshalled to JSON (automatically, by encoding/json). If
+          present, Data can be used directly to avoid fetching the targeted content.
+        example: null
+      platform:
+        $ref: "#/definitions/OCIPlatform"
+      artifactType:
+        description: |-
+          ArtifactType is the IANA media type of this artifact.
+        type: "string"
+        x-nullable: true
+        example: null
 @y
   OCIDescriptor:
     type: "object"
@@ -12671,7 +15567,7 @@ definitions:
         description: |
           The media type of the object this schema refers to.
         type: "string"
-        example: "application/vnd.docker.distribution.manifest.v2+json"
+        example: "application/vnd.oci.image.manifest.v1+json"
       digest:
         description: |
           The digest of the targeted content.
@@ -12682,29 +15578,54 @@ definitions:
           The size in bytes of the blob.
         type: "integer"
         format: "int64"
-        example: 3987495
-        # TODO Not yet including these fields for now, as they are nil / omitted in our response.
-        # urls:
-        #   description: |
-        #     List of URLs from which this object MAY be downloaded.
-        #   type: "array"
-        #   items:
-        #     type: "string"
-        #     format: "uri"
-        # annotations:
-        #   description: |
-        #     Arbitrary metadata relating to the targeted content.
-        #   type: "object"
-        #   additionalProperties:
-        #     type: "string"
-        # platform:
-        #   $ref: "#/definitions/OCIPlatform"
+        example: 424
+      urls:
+        description: |-
+          List of URLs from which this object MAY be downloaded.
+        type: "array"
+        items:
+          type: "string"
+          format: "uri"
+        x-nullable: true
+      annotations:
+        description: |-
+          Arbitrary metadata relating to the targeted content.
+        type: "object"
+        x-nullable: true
+        additionalProperties:
+          type: "string"
+        example:
+          "com.docker.official-images.bashbrew.arch": "amd64"
+          "org.opencontainers.image.base.digest": "sha256:0d0ef5c914d3ea700147da1bd050c59edb8bb12ca312f3800b29d7c8087eabd8"
+          "org.opencontainers.image.base.name": "scratch"
+          "org.opencontainers.image.created": "2025-01-27T00:00:00Z"
+          "org.opencontainers.image.revision": "9fabb4bad5138435b01857e2fe9363e2dc5f6a79"
+          "org.opencontainers.image.source": "https://git.launchpad.net/cloud-images/+oci/ubuntu-base"
+          "org.opencontainers.image.url": "https://hub.docker.com/_/ubuntu"
+          "org.opencontainers.image.version": "24.04"
+      data:
+        type: string
+        x-nullable: true
+        description: |-
+          Data is an embedding of the targeted content. This is encoded as a base64
+          string when marshalled to JSON (automatically, by encoding/json). If
+          present, Data can be used directly to avoid fetching the targeted content.
+        example: null
+      platform:
+        $ref: "#/definitions/OCIPlatform"
+      artifactType:
+        description: |-
+          ArtifactType is the IANA media type of this artifact.
+        type: "string"
+        x-nullable: true
+        example: null
 @z
 
 @x
   OCIPlatform:
     type: "object"
     x-go-name: Platform
+    x-nullable: true
     description: |
       Describes the platform which the image in the manifest runs on, as defined
       in the [OCI Image Index Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/image-index.md).
@@ -12744,6 +15665,7 @@ definitions:
   OCIPlatform:
     type: "object"
     x-go-name: Platform
+    x-nullable: true
     description: |
       Describes the platform which the image in the manifest runs on, as defined
       in the [OCI Image Index Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/image-index.md).
@@ -13300,6 +16222,238 @@ definitions:
 @z
 
 @x
+  ImageManifestSummary:
+    x-go-name: "ManifestSummary"
+    description: |
+      ImageManifestSummary represents a summary of an image manifest.
+    type: "object"
+    required: ["ID", "Descriptor", "Available", "Size", "Kind"]
+    properties:
+      ID:
+        description: |
+          ID is the content-addressable ID of an image and is the same as the
+          digest of the image manifest.
+        type: "string"
+        example: "sha256:95869fbcf224d947ace8d61d0e931d49e31bb7fc67fffbbe9c3198c33aa8e93f"
+      Descriptor:
+        $ref: "#/definitions/OCIDescriptor"
+      Available:
+        description: Indicates whether all the child content (image config, layers) is fully available locally.
+        type: "boolean"
+        example: true
+      Size:
+        type: "object"
+        x-nullable: false
+        required: ["Content", "Total"]
+        properties:
+          Total:
+            type: "integer"
+            format: "int64"
+            example: 8213251
+            description: |
+              Total is the total size (in bytes) of all the locally present
+              data (both distributable and non-distributable) that's related to
+              this manifest and its children.
+              This equal to the sum of [Content] size AND all the sizes in the
+              [Size] struct present in the Kind-specific data struct.
+              For example, for an image kind (Kind == "image")
+              this would include the size of the image content and unpacked
+              image snapshots ([Size.Content] + [ImageData.Size.Unpacked]).
+          Content:
+            description: |
+              Content is the size (in bytes) of all the locally present
+              content in the content store (e.g. image config, layers)
+              referenced by this manifest and its children.
+              This only includes blobs in the content store.
+            type: "integer"
+            format: "int64"
+            example: 3987495
+      Kind:
+        type: "string"
+        example: "image"
+        enum:
+          - "image"
+          - "attestation"
+          - "unknown"
+        description: |
+          The kind of the manifest.
+@y
+  ImageManifestSummary:
+    x-go-name: "ManifestSummary"
+    description: |
+      ImageManifestSummary represents a summary of an image manifest.
+    type: "object"
+    required: ["ID", "Descriptor", "Available", "Size", "Kind"]
+    properties:
+      ID:
+        description: |
+          ID is the content-addressable ID of an image and is the same as the
+          digest of the image manifest.
+        type: "string"
+        example: "sha256:95869fbcf224d947ace8d61d0e931d49e31bb7fc67fffbbe9c3198c33aa8e93f"
+      Descriptor:
+        $ref: "#/definitions/OCIDescriptor"
+      Available:
+        description: Indicates whether all the child content (image config, layers) is fully available locally.
+        type: "boolean"
+        example: true
+      Size:
+        type: "object"
+        x-nullable: false
+        required: ["Content", "Total"]
+        properties:
+          Total:
+            type: "integer"
+            format: "int64"
+            example: 8213251
+            description: |
+              Total is the total size (in bytes) of all the locally present
+              data (both distributable and non-distributable) that's related to
+              this manifest and its children.
+              This equal to the sum of [Content] size AND all the sizes in the
+              [Size] struct present in the Kind-specific data struct.
+              For example, for an image kind (Kind == "image")
+              this would include the size of the image content and unpacked
+              image snapshots ([Size.Content] + [ImageData.Size.Unpacked]).
+          Content:
+            description: |
+              Content is the size (in bytes) of all the locally present
+              content in the content store (e.g. image config, layers)
+              referenced by this manifest and its children.
+              This only includes blobs in the content store.
+            type: "integer"
+            format: "int64"
+            example: 3987495
+      Kind:
+        type: "string"
+        example: "image"
+        enum:
+          - "image"
+          - "attestation"
+          - "unknown"
+        description: |
+          The kind of the manifest.
+@z
+
+@x
+          kind         | description
+          -------------|-----------------------------------------------------------
+          image        | Image manifest that can be used to start a container.
+          attestation  | Attestation manifest produced by the Buildkit builder for a specific image manifest.
+      ImageData:
+        description: |
+          The image data for the image manifest.
+          This field is only populated when Kind is "image".
+        type: "object"
+        x-nullable: true
+        x-omitempty: true
+        required: ["Platform", "Containers", "Size", "UnpackedSize"]
+        properties:
+          Platform:
+            $ref: "#/definitions/OCIPlatform"
+            description: |
+              OCI platform of the image. This will be the platform specified in the
+              manifest descriptor from the index/manifest list.
+              If it's not available, it will be obtained from the image config.
+          Containers:
+            description: |
+              The IDs of the containers that are using this image.
+            type: "array"
+            items:
+              type: "string"
+            example: ["ede54ee1fda366ab42f824e8a5ffd195155d853ceaec74a927f249ea270c7430", "abadbce344c096744d8d6071a90d474d28af8f1034b5ea9fb03c3f4bfc6d005e"]
+          Size:
+            type: "object"
+            x-nullable: false
+            required: ["Unpacked"]
+            properties:
+              Unpacked:
+                type: "integer"
+                format: "int64"
+                example: 3987495
+                description: |
+                  Unpacked is the size (in bytes) of the locally unpacked
+                  (uncompressed) image content that's directly usable by the containers
+                  running this image.
+                  It's independent of the distributable content - e.g.
+                  the image might still have an unpacked data that's still used by
+                  some container even when the distributable/compressed content is
+                  already gone.
+      AttestationData:
+        description: |
+          The image data for the attestation manifest.
+          This field is only populated when Kind is "attestation".
+        type: "object"
+        x-nullable: true
+        x-omitempty: true
+        required: ["For"]
+        properties:
+          For:
+            description: |
+              The digest of the image manifest that this attestation is for.
+            type: "string"
+            example: "sha256:95869fbcf224d947ace8d61d0e931d49e31bb7fc67fffbbe9c3198c33aa8e93f"
+@y
+          kind         | description
+          -------------|-----------------------------------------------------------
+          image        | Image manifest that can be used to start a container.
+          attestation  | Attestation manifest produced by the Buildkit builder for a specific image manifest.
+      ImageData:
+        description: |
+          The image data for the image manifest.
+          This field is only populated when Kind is "image".
+        type: "object"
+        x-nullable: true
+        x-omitempty: true
+        required: ["Platform", "Containers", "Size", "UnpackedSize"]
+        properties:
+          Platform:
+            $ref: "#/definitions/OCIPlatform"
+            description: |
+              OCI platform of the image. This will be the platform specified in the
+              manifest descriptor from the index/manifest list.
+              If it's not available, it will be obtained from the image config.
+          Containers:
+            description: |
+              The IDs of the containers that are using this image.
+            type: "array"
+            items:
+              type: "string"
+            example: ["ede54ee1fda366ab42f824e8a5ffd195155d853ceaec74a927f249ea270c7430", "abadbce344c096744d8d6071a90d474d28af8f1034b5ea9fb03c3f4bfc6d005e"]
+          Size:
+            type: "object"
+            x-nullable: false
+            required: ["Unpacked"]
+            properties:
+              Unpacked:
+                type: "integer"
+                format: "int64"
+                example: 3987495
+                description: |
+                  Unpacked is the size (in bytes) of the locally unpacked
+                  (uncompressed) image content that's directly usable by the containers
+                  running this image.
+                  It's independent of the distributable content - e.g.
+                  the image might still have an unpacked data that's still used by
+                  some container even when the distributable/compressed content is
+                  already gone.
+      AttestationData:
+        description: |
+          The image data for the attestation manifest.
+          This field is only populated when Kind is "attestation".
+        type: "object"
+        x-nullable: true
+        x-omitempty: true
+        required: ["For"]
+        properties:
+          For:
+            description: |
+              The digest of the image manifest that this attestation is for.
+            type: "string"
+            example: "sha256:95869fbcf224d947ace8d61d0e931d49e31bb7fc67fffbbe9c3198c33aa8e93f"
+@z
+
+@x
 paths:
   /containers/json:
     get:
@@ -13413,133 +16567,6 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/ContainerSummary"
-          examples:
-            application/json:
-              - Id: "8dfafdbc3a40"
-                Names:
-                  - "/boring_feynman"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 1"
-                Created: 1367854155
-                State: "Exited"
-                Status: "Exit 0"
-                Ports:
-                  - PrivatePort: 2222
-                    PublicPort: 3333
-                    Type: "tcp"
-                Labels:
-                  com.example.vendor: "Acme"
-                  com.example.license: "GPL"
-                  com.example.version: "1.0"
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "2cdc4edb1ded3631c81f57966563e5c8525b81121bb3706a9a9a3ae102711f3f"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.2"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:02"
-                Mounts:
-                  - Name: "fac362...80535"
-                    Source: "/data"
-                    Destination: "/data"
-                    Driver: "local"
-                    Mode: "ro,Z"
-                    RW: false
-                    Propagation: ""
-              - Id: "9cd87474be90"
-                Names:
-                  - "/coolName"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 222222"
-                Created: 1367854155
-                State: "Exited"
-                Status: "Exit 0"
-                Ports: []
-                Labels: {}
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "88eaed7b37b38c2a3f0c4bc796494fdf51b270c2d22656412a2ca5d559a64d7a"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.8"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:08"
-                Mounts: []
-              - Id: "3176a2479c92"
-                Names:
-                  - "/sleepy_dog"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 3333333333333333"
-                Created: 1367854154
-                State: "Exited"
-                Status: "Exit 0"
-                Ports: []
-                Labels: {}
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "8b27c041c30326d59cd6e6f510d4f8d1d570a228466f956edf7815508f78e30d"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.6"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:06"
-                Mounts: []
-              - Id: "4cb07b47f9fb"
-                Names:
-                  - "/running_cat"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 444444444444444444444444444444444"
-                Created: 1367854152
-                State: "Exited"
-                Status: "Exit 0"
-                Ports: []
-                Labels: {}
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "d91c7b2f0644403d7ef3095985ea0e2370325cd2332ff3a3225c4247328e66e9"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.5"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:05"
-                Mounts: []
         400:
           description: "bad parameter"
           schema:
@@ -13594,133 +16621,6 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/ContainerSummary"
-          examples:
-            application/json:
-              - Id: "8dfafdbc3a40"
-                Names:
-                  - "/boring_feynman"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 1"
-                Created: 1367854155
-                State: "Exited"
-                Status: "Exit 0"
-                Ports:
-                  - PrivatePort: 2222
-                    PublicPort: 3333
-                    Type: "tcp"
-                Labels:
-                  com.example.vendor: "Acme"
-                  com.example.license: "GPL"
-                  com.example.version: "1.0"
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "2cdc4edb1ded3631c81f57966563e5c8525b81121bb3706a9a9a3ae102711f3f"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.2"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:02"
-                Mounts:
-                  - Name: "fac362...80535"
-                    Source: "/data"
-                    Destination: "/data"
-                    Driver: "local"
-                    Mode: "ro,Z"
-                    RW: false
-                    Propagation: ""
-              - Id: "9cd87474be90"
-                Names:
-                  - "/coolName"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 222222"
-                Created: 1367854155
-                State: "Exited"
-                Status: "Exit 0"
-                Ports: []
-                Labels: {}
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "88eaed7b37b38c2a3f0c4bc796494fdf51b270c2d22656412a2ca5d559a64d7a"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.8"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:08"
-                Mounts: []
-              - Id: "3176a2479c92"
-                Names:
-                  - "/sleepy_dog"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 3333333333333333"
-                Created: 1367854154
-                State: "Exited"
-                Status: "Exit 0"
-                Ports: []
-                Labels: {}
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "8b27c041c30326d59cd6e6f510d4f8d1d570a228466f956edf7815508f78e30d"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.6"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:06"
-                Mounts: []
-              - Id: "4cb07b47f9fb"
-                Names:
-                  - "/running_cat"
-                Image: "ubuntu:latest"
-                ImageID: "d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82"
-                Command: "echo 444444444444444444444444444444444"
-                Created: 1367854152
-                State: "Exited"
-                Status: "Exit 0"
-                Ports: []
-                Labels: {}
-                SizeRw: 12288
-                SizeRootFs: 0
-                HostConfig:
-                  NetworkMode: "default"
-                NetworkSettings:
-                  Networks:
-                    bridge:
-                      NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                      EndpointID: "d91c7b2f0644403d7ef3095985ea0e2370325cd2332ff3a3225c4247328e66e9"
-                      Gateway: "172.17.0.1"
-                      IPAddress: "172.17.0.5"
-                      IPPrefixLen: 16
-                      IPv6Gateway: ""
-                      GlobalIPv6Address: ""
-                      GlobalIPv6PrefixLen: 0
-                      MacAddress: "02:42:ac:11:00:05"
-                Mounts: []
         400:
           description: "bad parameter"
           schema:
@@ -13929,6 +16829,7 @@ paths:
                     Aliases:
                       - "server_x"
                       - "server_y"
+                  database_nw: {}
 @y
           type: "string"
           default: ""
@@ -14069,6 +16970,7 @@ paths:
                     Aliases:
                       - "server_x"
                       - "server_y"
+                  database_nw: {}
 @z
 
 @x
@@ -14109,238 +17011,7 @@ paths:
         200:
           description: "no error"
           schema:
-            type: "object"
-            title: "ContainerInspectResponse"
-            properties:
-              Id:
-                description: "The ID of the container"
-                type: "string"
-              Created:
-                description: "The time the container was created"
-                type: "string"
-              Path:
-                description: "The path to the command being run"
-                type: "string"
-              Args:
-                description: "The arguments to the command being run"
-                type: "array"
-                items:
-                  type: "string"
-              State:
-                $ref: "#/definitions/ContainerState"
-              Image:
-                description: "The container's image ID"
-                type: "string"
-              ResolvConfPath:
-                type: "string"
-              HostnamePath:
-                type: "string"
-              HostsPath:
-                type: "string"
-              LogPath:
-                type: "string"
-              Name:
-                type: "string"
-              RestartCount:
-                type: "integer"
-              Driver:
-                type: "string"
-              Platform:
-                type: "string"
-              MountLabel:
-                type: "string"
-              ProcessLabel:
-                type: "string"
-              AppArmorProfile:
-                type: "string"
-              ExecIDs:
-                description: "IDs of exec instances that are running in the container."
-                type: "array"
-                items:
-                  type: "string"
-                x-nullable: true
-              HostConfig:
-                $ref: "#/definitions/HostConfig"
-              GraphDriver:
-                $ref: "#/definitions/GraphDriverData"
-              SizeRw:
-                description: |
-                  The size of files that have been created or changed by this
-                  container.
-                type: "integer"
-                format: "int64"
-              SizeRootFs:
-                description: "The total size of all the files in this container."
-                type: "integer"
-                format: "int64"
-              Mounts:
-                type: "array"
-                items:
-                  $ref: "#/definitions/MountPoint"
-              Config:
-                $ref: "#/definitions/ContainerConfig"
-              NetworkSettings:
-                $ref: "#/definitions/NetworkSettings"
-          examples:
-            application/json:
-              AppArmorProfile: ""
-              Args:
-                - "-c"
-                - "exit 9"
-              Config:
-                AttachStderr: true
-                AttachStdin: false
-                AttachStdout: true
-                Cmd:
-                  - "/bin/sh"
-                  - "-c"
-                  - "exit 9"
-                Domainname: ""
-                Env:
-                  - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-                Healthcheck:
-                  Test: ["CMD-SHELL", "exit 0"]
-                Hostname: "ba033ac44011"
-                Image: "ubuntu"
-                Labels:
-                  com.example.vendor: "Acme"
-                  com.example.license: "GPL"
-                  com.example.version: "1.0"
-                MacAddress: ""
-                NetworkDisabled: false
-                OpenStdin: false
-                StdinOnce: false
-                Tty: false
-                User: ""
-                Volumes:
-                  /volumes/data: {}
-                WorkingDir: ""
-                StopSignal: "SIGTERM"
-                StopTimeout: 10
-              Created: "2015-01-06T15:47:31.485331387Z"
-              Driver: "overlay2"
-              ExecIDs:
-                - "b35395de42bc8abd327f9dd65d913b9ba28c74d2f0734eeeae84fa1c616a0fca"
-                - "3fc1232e5cd20c8de182ed81178503dc6437f4e7ef12b52cc5e8de020652f1c4"
-              HostConfig:
-                MaximumIOps: 0
-                MaximumIOBps: 0
-                BlkioWeight: 0
-                BlkioWeightDevice:
-                  - {}
-                BlkioDeviceReadBps:
-                  - {}
-                BlkioDeviceWriteBps:
-                  - {}
-                BlkioDeviceReadIOps:
-                  - {}
-                BlkioDeviceWriteIOps:
-                  - {}
-                ContainerIDFile: ""
-                CpusetCpus: ""
-                CpusetMems: ""
-                CpuPercent: 80
-                CpuShares: 0
-                CpuPeriod: 100000
-                CpuRealtimePeriod: 1000000
-                CpuRealtimeRuntime: 10000
-                Devices: []
-                DeviceRequests:
-                  - Driver: "nvidia"
-                    Count: -1
-                    DeviceIDs": ["0", "1", "GPU-fef8089b-4820-abfc-e83e-94318197576e"]
-                    Capabilities: [["gpu", "nvidia", "compute"]]
-                    Options:
-                      property1: "string"
-                      property2: "string"
-                IpcMode: ""
-                Memory: 0
-                MemorySwap: 0
-                MemoryReservation: 0
-                OomKillDisable: false
-                OomScoreAdj: 500
-                NetworkMode: "bridge"
-                PidMode: ""
-                PortBindings: {}
-                Privileged: false
-                ReadonlyRootfs: false
-                PublishAllPorts: false
-                RestartPolicy:
-                  MaximumRetryCount: 2
-                  Name: "on-failure"
-                LogConfig:
-                  Type: "json-file"
-                Sysctls:
-                  net.ipv4.ip_forward: "1"
-                Ulimits:
-                  - {}
-                VolumeDriver: ""
-                ShmSize: 67108864
-              HostnamePath: "/var/lib/docker/containers/ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39/hostname"
-              HostsPath: "/var/lib/docker/containers/ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39/hosts"
-              LogPath: "/var/lib/docker/containers/1eb5fabf5a03807136561b3c00adcd2992b535d624d5e18b6cdc6a6844d9767b/1eb5fabf5a03807136561b3c00adcd2992b535d624d5e18b6cdc6a6844d9767b-json.log"
-              Id: "ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39"
-              Image: "04c5d3b7b0656168630d3ba35d8889bd0e9caafcaeb3004d2bfbc47e7c5d35d2"
-              MountLabel: ""
-              Name: "/boring_euclid"
-              NetworkSettings:
-                Bridge: ""
-                SandboxID: ""
-                HairpinMode: false
-                LinkLocalIPv6Address: ""
-                LinkLocalIPv6PrefixLen: 0
-                SandboxKey: ""
-                EndpointID: ""
-                Gateway: ""
-                GlobalIPv6Address: ""
-                GlobalIPv6PrefixLen: 0
-                IPAddress: ""
-                IPPrefixLen: 0
-                IPv6Gateway: ""
-                MacAddress: ""
-                Networks:
-                  bridge:
-                    NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                    EndpointID: "7587b82f0dada3656fda26588aee72630c6fab1536d36e394b2bfbcf898c971d"
-                    Gateway: "172.17.0.1"
-                    IPAddress: "172.17.0.2"
-                    IPPrefixLen: 16
-                    IPv6Gateway: ""
-                    GlobalIPv6Address: ""
-                    GlobalIPv6PrefixLen: 0
-                    MacAddress: "02:42:ac:12:00:02"
-              Path: "/bin/sh"
-              ProcessLabel: ""
-              ResolvConfPath: "/var/lib/docker/containers/ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39/resolv.conf"
-              RestartCount: 1
-              State:
-                Error: ""
-                ExitCode: 9
-                FinishedAt: "2015-01-06T15:47:32.080254511Z"
-                Health:
-                  Status: "healthy"
-                  FailingStreak: 0
-                  Log:
-                    - Start: "2019-12-22T10:59:05.6385933Z"
-                      End: "2019-12-22T10:59:05.8078452Z"
-                      ExitCode: 0
-                      Output: ""
-                OOMKilled: false
-                Dead: false
-                Paused: false
-                Pid: 0
-                Restarting: false
-                Running: true
-                StartedAt: "2015-01-06T15:47:32.072697474Z"
-                Status: "running"
-              Mounts:
-                - Name: "fac362...80535"
-                  Source: "/data"
-                  Destination: "/data"
-                  Driver: "local"
-                  Mode: "ro,Z"
-                  RW: false
-                  Propagation: ""
+            $ref: "#/definitions/ContainerInspectResponse"
         404:
           description: "no such container"
           schema:
@@ -14375,54 +17046,7 @@ paths:
         200:
           description: "no error"
           schema:
-            type: "object"
-            title: "ContainerTopResponse"
-            description: "OK response to ContainerTop operation"
-            properties:
-              Titles:
-                description: "The ps column titles"
-                type: "array"
-                items:
-                  type: "string"
-              Processes:
-                description: |
-                  Each process running in the container, where each is process
-                  is an array of values corresponding to the titles.
-                type: "array"
-                items:
-                  type: "array"
-                  items:
-                    type: "string"
-          examples:
-            application/json:
-              Titles:
-                - "UID"
-                - "PID"
-                - "PPID"
-                - "C"
-                - "STIME"
-                - "TTY"
-                - "TIME"
-                - "CMD"
-              Processes:
-                -
-                  - "root"
-                  - "13642"
-                  - "882"
-                  - "0"
-                  - "17:03"
-                  - "pts/0"
-                  - "00:00:00"
-                  - "/bin/bash"
-                -
-                  - "root"
-                  - "13735"
-                  - "13642"
-                  - "0"
-                  - "17:06"
-                  - "pts/0"
-                  - "00:00:00"
-                  - "sleep 10"
+            $ref: "#/definitions/ContainerTopResponse"
         404:
           description: "no such container"
           schema:
@@ -14489,238 +17113,7 @@ paths:
         200:
           description: "no error"
           schema:
-            type: "object"
-            title: "ContainerInspectResponse"
-            properties:
-              Id:
-                description: "The ID of the container"
-                type: "string"
-              Created:
-                description: "The time the container was created"
-                type: "string"
-              Path:
-                description: "The path to the command being run"
-                type: "string"
-              Args:
-                description: "The arguments to the command being run"
-                type: "array"
-                items:
-                  type: "string"
-              State:
-                $ref: "#/definitions/ContainerState"
-              Image:
-                description: "The container's image ID"
-                type: "string"
-              ResolvConfPath:
-                type: "string"
-              HostnamePath:
-                type: "string"
-              HostsPath:
-                type: "string"
-              LogPath:
-                type: "string"
-              Name:
-                type: "string"
-              RestartCount:
-                type: "integer"
-              Driver:
-                type: "string"
-              Platform:
-                type: "string"
-              MountLabel:
-                type: "string"
-              ProcessLabel:
-                type: "string"
-              AppArmorProfile:
-                type: "string"
-              ExecIDs:
-                description: "IDs of exec instances that are running in the container."
-                type: "array"
-                items:
-                  type: "string"
-                x-nullable: true
-              HostConfig:
-                $ref: "#/definitions/HostConfig"
-              GraphDriver:
-                $ref: "#/definitions/GraphDriverData"
-              SizeRw:
-                description: |
-                  The size of files that have been created or changed by this
-                  container.
-                type: "integer"
-                format: "int64"
-              SizeRootFs:
-                description: "The total size of all the files in this container."
-                type: "integer"
-                format: "int64"
-              Mounts:
-                type: "array"
-                items:
-                  $ref: "#/definitions/MountPoint"
-              Config:
-                $ref: "#/definitions/ContainerConfig"
-              NetworkSettings:
-                $ref: "#/definitions/NetworkSettings"
-          examples:
-            application/json:
-              AppArmorProfile: ""
-              Args:
-                - "-c"
-                - "exit 9"
-              Config:
-                AttachStderr: true
-                AttachStdin: false
-                AttachStdout: true
-                Cmd:
-                  - "/bin/sh"
-                  - "-c"
-                  - "exit 9"
-                Domainname: ""
-                Env:
-                  - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-                Healthcheck:
-                  Test: ["CMD-SHELL", "exit 0"]
-                Hostname: "ba033ac44011"
-                Image: "ubuntu"
-                Labels:
-                  com.example.vendor: "Acme"
-                  com.example.license: "GPL"
-                  com.example.version: "1.0"
-                MacAddress: ""
-                NetworkDisabled: false
-                OpenStdin: false
-                StdinOnce: false
-                Tty: false
-                User: ""
-                Volumes:
-                  /volumes/data: {}
-                WorkingDir: ""
-                StopSignal: "SIGTERM"
-                StopTimeout: 10
-              Created: "2015-01-06T15:47:31.485331387Z"
-              Driver: "overlay2"
-              ExecIDs:
-                - "b35395de42bc8abd327f9dd65d913b9ba28c74d2f0734eeeae84fa1c616a0fca"
-                - "3fc1232e5cd20c8de182ed81178503dc6437f4e7ef12b52cc5e8de020652f1c4"
-              HostConfig:
-                MaximumIOps: 0
-                MaximumIOBps: 0
-                BlkioWeight: 0
-                BlkioWeightDevice:
-                  - {}
-                BlkioDeviceReadBps:
-                  - {}
-                BlkioDeviceWriteBps:
-                  - {}
-                BlkioDeviceReadIOps:
-                  - {}
-                BlkioDeviceWriteIOps:
-                  - {}
-                ContainerIDFile: ""
-                CpusetCpus: ""
-                CpusetMems: ""
-                CpuPercent: 80
-                CpuShares: 0
-                CpuPeriod: 100000
-                CpuRealtimePeriod: 1000000
-                CpuRealtimeRuntime: 10000
-                Devices: []
-                DeviceRequests:
-                  - Driver: "nvidia"
-                    Count: -1
-                    DeviceIDs": ["0", "1", "GPU-fef8089b-4820-abfc-e83e-94318197576e"]
-                    Capabilities: [["gpu", "nvidia", "compute"]]
-                    Options:
-                      property1: "string"
-                      property2: "string"
-                IpcMode: ""
-                Memory: 0
-                MemorySwap: 0
-                MemoryReservation: 0
-                OomKillDisable: false
-                OomScoreAdj: 500
-                NetworkMode: "bridge"
-                PidMode: ""
-                PortBindings: {}
-                Privileged: false
-                ReadonlyRootfs: false
-                PublishAllPorts: false
-                RestartPolicy:
-                  MaximumRetryCount: 2
-                  Name: "on-failure"
-                LogConfig:
-                  Type: "json-file"
-                Sysctls:
-                  net.ipv4.ip_forward: "1"
-                Ulimits:
-                  - {}
-                VolumeDriver: ""
-                ShmSize: 67108864
-              HostnamePath: "/var/lib/docker/containers/ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39/hostname"
-              HostsPath: "/var/lib/docker/containers/ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39/hosts"
-              LogPath: "/var/lib/docker/containers/1eb5fabf5a03807136561b3c00adcd2992b535d624d5e18b6cdc6a6844d9767b/1eb5fabf5a03807136561b3c00adcd2992b535d624d5e18b6cdc6a6844d9767b-json.log"
-              Id: "ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39"
-              Image: "04c5d3b7b0656168630d3ba35d8889bd0e9caafcaeb3004d2bfbc47e7c5d35d2"
-              MountLabel: ""
-              Name: "/boring_euclid"
-              NetworkSettings:
-                Bridge: ""
-                SandboxID: ""
-                HairpinMode: false
-                LinkLocalIPv6Address: ""
-                LinkLocalIPv6PrefixLen: 0
-                SandboxKey: ""
-                EndpointID: ""
-                Gateway: ""
-                GlobalIPv6Address: ""
-                GlobalIPv6PrefixLen: 0
-                IPAddress: ""
-                IPPrefixLen: 0
-                IPv6Gateway: ""
-                MacAddress: ""
-                Networks:
-                  bridge:
-                    NetworkID: "7ea29fc1412292a2d7bba362f9253545fecdfa8ce9a6e37dd10ba8bee7129812"
-                    EndpointID: "7587b82f0dada3656fda26588aee72630c6fab1536d36e394b2bfbcf898c971d"
-                    Gateway: "172.17.0.1"
-                    IPAddress: "172.17.0.2"
-                    IPPrefixLen: 16
-                    IPv6Gateway: ""
-                    GlobalIPv6Address: ""
-                    GlobalIPv6PrefixLen: 0
-                    MacAddress: "02:42:ac:12:00:02"
-              Path: "/bin/sh"
-              ProcessLabel: ""
-              ResolvConfPath: "/var/lib/docker/containers/ba033ac4401106a3b513bc9d639eee123ad78ca3616b921167cd74b20e25ed39/resolv.conf"
-              RestartCount: 1
-              State:
-                Error: ""
-                ExitCode: 9
-                FinishedAt: "2015-01-06T15:47:32.080254511Z"
-                Health:
-                  Status: "healthy"
-                  FailingStreak: 0
-                  Log:
-                    - Start: "2019-12-22T10:59:05.6385933Z"
-                      End: "2019-12-22T10:59:05.8078452Z"
-                      ExitCode: 0
-                      Output: ""
-                OOMKilled: false
-                Dead: false
-                Paused: false
-                Pid: 0
-                Restarting: false
-                Running: true
-                StartedAt: "2015-01-06T15:47:32.072697474Z"
-                Status: "running"
-              Mounts:
-                - Name: "fac362...80535"
-                  Source: "/data"
-                  Destination: "/data"
-                  Driver: "local"
-                  Mode: "ro,Z"
-                  RW: false
-                  Propagation: ""
+            $ref: "#/definitions/ContainerInspectResponse"
         404:
           description: "no such container"
           schema:
@@ -14755,54 +17148,7 @@ paths:
         200:
           description: "no error"
           schema:
-            type: "object"
-            title: "ContainerTopResponse"
-            description: "OK response to ContainerTop operation"
-            properties:
-              Titles:
-                description: "The ps column titles"
-                type: "array"
-                items:
-                  type: "string"
-              Processes:
-                description: |
-                  Each process running in the container, where each is process
-                  is an array of values corresponding to the titles.
-                type: "array"
-                items:
-                  type: "array"
-                  items:
-                    type: "string"
-          examples:
-            application/json:
-              Titles:
-                - "UID"
-                - "PID"
-                - "PPID"
-                - "C"
-                - "STIME"
-                - "TTY"
-                - "TIME"
-                - "CMD"
-              Processes:
-                -
-                  - "root"
-                  - "13642"
-                  - "882"
-                  - "0"
-                  - "17:03"
-                  - "pts/0"
-                  - "00:00:00"
-                  - "/bin/bash"
-                -
-                  - "root"
-                  - "13735"
-                  - "13642"
-                  - "0"
-                  - "17:06"
-                  - "pts/0"
-                  - "00:00:00"
-                  - "sleep 10"
+            $ref: "#/definitions/ContainerTopResponse"
         404:
           description: "no such container"
           schema:
@@ -14992,9 +17338,9 @@ paths:
 @z
 
 @x
-        - `0`: Modified
-        - `1`: Added
-        - `2`: Deleted
+        - `0`: Modified ("C")
+        - `1`: Added ("A")
+        - `2`: Deleted ("D")
       operationId: "ContainerChanges"
       produces: ["application/json"]
       responses:
@@ -15003,22 +17349,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              x-go-name: "ContainerChangeResponseItem"
-              title: "ContainerChangeResponseItem"
-              description: "change item in response to ContainerChanges operation"
-              required: [Path, Kind]
-              properties:
-                Path:
-                  description: "Path to file that has changed"
-                  type: "string"
-                  x-nullable: false
-                Kind:
-                  description: "Kind of change"
-                  type: "integer"
-                  format: "uint8"
-                  enum: [0, 1, 2]
-                  x-nullable: false
+              $ref: "#/definitions/FilesystemChange"
           examples:
             application/json:
               - Path: "/dev"
@@ -15080,9 +17411,9 @@ paths:
         This endpoint returns a live stream of a container’s resource usage
         statistics.
 @y
-        - `0`: Modified
-        - `1`: Added
-        - `2`: Deleted
+        - `0`: Modified ("C")
+        - `1`: Added ("A")
+        - `2`: Deleted ("D")
       operationId: "ContainerChanges"
       produces: ["application/json"]
       responses:
@@ -15091,22 +17422,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              x-go-name: "ContainerChangeResponseItem"
-              title: "ContainerChangeResponseItem"
-              description: "change item in response to ContainerChanges operation"
-              required: [Path, Kind]
-              properties:
-                Path:
-                  description: "Path to file that has changed"
-                  type: "string"
-                  x-nullable: false
-                Kind:
-                  description: "Kind of change"
-                  type: "integer"
-                  format: "uint8"
-                  enum: [0, 1, 2]
-                  x-nullable: false
+              $ref: "#/definitions/FilesystemChange"
           examples:
             application/json:
               - Path: "/dev"
@@ -15219,99 +17535,7 @@ paths:
         200:
           description: "no error"
           schema:
-            type: "object"
-          examples:
-            application/json:
-              read: "2015-01-08T22:57:31.547920715Z"
-              pids_stats:
-                current: 3
-              networks:
-                eth0:
-                  rx_bytes: 5338
-                  rx_dropped: 0
-                  rx_errors: 0
-                  rx_packets: 36
-                  tx_bytes: 648
-                  tx_dropped: 0
-                  tx_errors: 0
-                  tx_packets: 8
-                eth5:
-                  rx_bytes: 4641
-                  rx_dropped: 0
-                  rx_errors: 0
-                  rx_packets: 26
-                  tx_bytes: 690
-                  tx_dropped: 0
-                  tx_errors: 0
-                  tx_packets: 9
-              memory_stats:
-                stats:
-                  total_pgmajfault: 0
-                  cache: 0
-                  mapped_file: 0
-                  total_inactive_file: 0
-                  pgpgout: 414
-                  rss: 6537216
-                  total_mapped_file: 0
-                  writeback: 0
-                  unevictable: 0
-                  pgpgin: 477
-                  total_unevictable: 0
-                  pgmajfault: 0
-                  total_rss: 6537216
-                  total_rss_huge: 6291456
-                  total_writeback: 0
-                  total_inactive_anon: 0
-                  rss_huge: 6291456
-                  hierarchical_memory_limit: 67108864
-                  total_pgfault: 964
-                  total_active_file: 0
-                  active_anon: 6537216
-                  total_active_anon: 6537216
-                  total_pgpgout: 414
-                  total_cache: 0
-                  inactive_anon: 0
-                  active_file: 0
-                  pgfault: 964
-                  inactive_file: 0
-                  total_pgpgin: 477
-                max_usage: 6651904
-                usage: 6537216
-                failcnt: 0
-                limit: 67108864
-              blkio_stats: {}
-              cpu_stats:
-                cpu_usage:
-                  percpu_usage:
-                    - 8646879
-                    - 24472255
-                    - 36438778
-                    - 30657443
-                  usage_in_usermode: 50000000
-                  total_usage: 100215355
-                  usage_in_kernelmode: 30000000
-                system_cpu_usage: 739306590000000
-                online_cpus: 4
-                throttling_data:
-                  periods: 0
-                  throttled_periods: 0
-                  throttled_time: 0
-              precpu_stats:
-                cpu_usage:
-                  percpu_usage:
-                    - 8646879
-                    - 24350896
-                    - 36438778
-                    - 30657443
-                  usage_in_usermode: 50000000
-                  total_usage: 100093996
-                  usage_in_kernelmode: 30000000
-                system_cpu_usage: 9492140000000
-                online_cpus: 4
-                throttling_data:
-                  periods: 0
-                  throttled_periods: 0
-                  throttled_time: 0
+            $ref: "#/definitions/ContainerStatsResponse"
         404:
           description: "no such container"
           schema:
@@ -15542,14 +17766,7 @@ paths:
         200:
           description: "The container has been updated."
           schema:
-            type: "object"
-            title: "ContainerUpdateResponse"
-            description: "OK response to ContainerUpdate operation"
-            properties:
-              Warnings:
-                type: "array"
-                items:
-                  type: "string"
+            $ref: "#/definitions/ContainerUpdateResponse"
         404:
           description: "no such container"
           schema:
@@ -15648,99 +17865,7 @@ paths:
         200:
           description: "no error"
           schema:
-            type: "object"
-          examples:
-            application/json:
-              read: "2015-01-08T22:57:31.547920715Z"
-              pids_stats:
-                current: 3
-              networks:
-                eth0:
-                  rx_bytes: 5338
-                  rx_dropped: 0
-                  rx_errors: 0
-                  rx_packets: 36
-                  tx_bytes: 648
-                  tx_dropped: 0
-                  tx_errors: 0
-                  tx_packets: 8
-                eth5:
-                  rx_bytes: 4641
-                  rx_dropped: 0
-                  rx_errors: 0
-                  rx_packets: 26
-                  tx_bytes: 690
-                  tx_dropped: 0
-                  tx_errors: 0
-                  tx_packets: 9
-              memory_stats:
-                stats:
-                  total_pgmajfault: 0
-                  cache: 0
-                  mapped_file: 0
-                  total_inactive_file: 0
-                  pgpgout: 414
-                  rss: 6537216
-                  total_mapped_file: 0
-                  writeback: 0
-                  unevictable: 0
-                  pgpgin: 477
-                  total_unevictable: 0
-                  pgmajfault: 0
-                  total_rss: 6537216
-                  total_rss_huge: 6291456
-                  total_writeback: 0
-                  total_inactive_anon: 0
-                  rss_huge: 6291456
-                  hierarchical_memory_limit: 67108864
-                  total_pgfault: 964
-                  total_active_file: 0
-                  active_anon: 6537216
-                  total_active_anon: 6537216
-                  total_pgpgout: 414
-                  total_cache: 0
-                  inactive_anon: 0
-                  active_file: 0
-                  pgfault: 964
-                  inactive_file: 0
-                  total_pgpgin: 477
-                max_usage: 6651904
-                usage: 6537216
-                failcnt: 0
-                limit: 67108864
-              blkio_stats: {}
-              cpu_stats:
-                cpu_usage:
-                  percpu_usage:
-                    - 8646879
-                    - 24472255
-                    - 36438778
-                    - 30657443
-                  usage_in_usermode: 50000000
-                  total_usage: 100215355
-                  usage_in_kernelmode: 30000000
-                system_cpu_usage: 739306590000000
-                online_cpus: 4
-                throttling_data:
-                  periods: 0
-                  throttled_periods: 0
-                  throttled_time: 0
-              precpu_stats:
-                cpu_usage:
-                  percpu_usage:
-                    - 8646879
-                    - 24350896
-                    - 36438778
-                    - 30657443
-                  usage_in_usermode: 50000000
-                  total_usage: 100093996
-                  usage_in_kernelmode: 30000000
-                system_cpu_usage: 9492140000000
-                online_cpus: 4
-                throttling_data:
-                  periods: 0
-                  throttled_periods: 0
-                  throttled_time: 0
+            $ref: "#/definitions/ContainerStatsResponse"
         404:
           description: "no such container"
           schema:
@@ -15971,14 +18096,7 @@ paths:
         200:
           description: "The container has been updated."
           schema:
-            type: "object"
-            title: "ContainerUpdateResponse"
-            description: "OK response to ContainerUpdate operation"
-            properties:
-              Warnings:
-                type: "array"
-                items:
-                  type: "string"
+            $ref: "#/definitions/ContainerUpdateResponse"
         404:
           description: "no such container"
           schema:
@@ -17337,6 +19455,7 @@ paths:
             - `label=key` or `label="key=value"` of an image label
             - `reference`=(`<image-name>[:<tag>]`)
             - `since`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)
+            - `until=<timestamp>`
           type: "string"
         - name: "shared-size"
           in: "query"
@@ -17346,6 +19465,11 @@ paths:
         - name: "digests"
           in: "query"
           description: "Show digest information as a `RepoDigests` field on each image."
+          type: "boolean"
+          default: false
+        - name: "manifests"
+          in: "query"
+          description: "Include `Manifests` in the image summary."
           type: "boolean"
           default: false
       tags: ["Image"]
@@ -17360,6 +19484,7 @@ paths:
             - `label=key` or `label="key=value"` of an image label
             - `reference`=(`<image-name>[:<tag>]`)
             - `since`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)
+            - `until=<timestamp>`
           type: "string"
         - name: "shared-size"
           in: "query"
@@ -17369,6 +19494,11 @@ paths:
         - name: "digests"
           in: "query"
           description: "Show digest information as a `RepoDigests` field on each image."
+          type: "boolean"
+          default: false
+        - name: "manifests"
+          in: "query"
+          description: "Include `Manifests` in the image summary."
           type: "boolean"
           default: false
       tags: ["Image"]
@@ -17759,19 +19889,8 @@ paths:
       parameters:
         - name: "keep-storage"
           in: "query"
-          description: "Amount of disk space in bytes to keep for cache"
-          type: "integer"
-          format: "int64"
-        - name: "all"
-          in: "query"
-          type: "boolean"
-          description: "Remove all types of build cache"
-        - name: "filters"
-          in: "query"
-          type: "string"
           description: |
-            A JSON encoded value of the filters (a `map[string][]string`) to
-            process on the list of build cache objects.
+            Amount of disk space in bytes to keep for cache
 @y
             - `1` is the first generation classic (deprecated) builder in the Docker daemon (default)
             - `2` is [BuildKit](https://github.com/moby/buildkit)
@@ -17796,7 +19915,58 @@ paths:
       parameters:
         - name: "keep-storage"
           in: "query"
+          description: |
+            Amount of disk space in bytes to keep for cache
+@z
+
+@x
+            > **Deprecated**: This parameter is deprecated and has been renamed to "reserved-space".
+            > It is kept for backward compatibility and will be removed in API v1.49.
+          type: "integer"
+          format: "int64"
+        - name: "reserved-space"
+          in: "query"
           description: "Amount of disk space in bytes to keep for cache"
+          type: "integer"
+          format: "int64"
+        - name: "max-used-space"
+          in: "query"
+          description: "Maximum amount of disk space allowed to keep for cache"
+          type: "integer"
+          format: "int64"
+        - name: "min-free-space"
+          in: "query"
+          description: "Target amount of free disk space after pruning"
+          type: "integer"
+          format: "int64"
+        - name: "all"
+          in: "query"
+          type: "boolean"
+          description: "Remove all types of build cache"
+        - name: "filters"
+          in: "query"
+          type: "string"
+          description: |
+            A JSON encoded value of the filters (a `map[string][]string`) to
+            process on the list of build cache objects.
+@y
+            > **Deprecated**: This parameter is deprecated and has been renamed to "reserved-space".
+            > It is kept for backward compatibility and will be removed in API v1.49.
+          type: "integer"
+          format: "int64"
+        - name: "reserved-space"
+          in: "query"
+          description: "Amount of disk space in bytes to keep for cache"
+          type: "integer"
+          format: "int64"
+        - name: "max-used-space"
+          in: "query"
+          description: "Maximum amount of disk space allowed to keep for cache"
+          type: "integer"
+          format: "int64"
+        - name: "min-free-space"
+          in: "query"
+          description: "Target amount of free disk space after pruning"
           type: "integer"
           format: "int64"
         - name: "all"
@@ -17818,7 +19988,7 @@ paths:
 @z
 
 @x
-            - `until=<duration>`: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')
+            - `until=<timestamp>` remove cache older than `<timestamp>`. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon's local time.
             - `id=<id>`
             - `parent=<id>`
             - `type=<string>`
@@ -17850,7 +20020,7 @@ paths:
   /images/create:
     post:
       summary: "Create an image"
-      description: "Create an image by either pulling it from a registry or importing it."
+      description: "Pull or import an image."
       operationId: "ImageCreate"
       consumes:
         - "text/plain"
@@ -17871,7 +20041,71 @@ paths:
       parameters:
         - name: "fromImage"
           in: "query"
-          description: "Name of the image to pull. The name may include a tag or digest. This parameter may only be used when pulling an image. The pull is cancelled if the HTTP connection is closed."
+          description: |
+            Name of the image to pull. If the name includes a tag or digest, specific behavior applies:
+@y
+            - `until=<timestamp>` remove cache older than `<timestamp>`. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon's local time.
+            - `id=<id>`
+            - `parent=<id>`
+            - `type=<string>`
+            - `description=<string>`
+            - `inuse`
+            - `shared`
+            - `private`
+      responses:
+        200:
+          description: "No error"
+          schema:
+            type: "object"
+            title: "BuildPruneResponse"
+            properties:
+              CachesDeleted:
+                type: "array"
+                items:
+                  description: "ID of build cache object"
+                  type: "string"
+              SpaceReclaimed:
+                description: "Disk space reclaimed in bytes"
+                type: "integer"
+                format: "int64"
+        500:
+          description: "Server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      tags: ["Image"]
+  /images/create:
+    post:
+      summary: "Create an image"
+      description: "Pull or import an image."
+      operationId: "ImageCreate"
+      consumes:
+        - "text/plain"
+        - "application/octet-stream"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "no error"
+        404:
+          description: "repository does not exist or no read access"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: "server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "fromImage"
+          in: "query"
+          description: |
+            Name of the image to pull. If the name includes a tag or digest, specific behavior applies:
+@z
+
+@x
+            - If only `fromImage` includes a tag, that tag is used.
+            - If both `fromImage` and `tag` are provided, `tag` takes precedence.
+            - If `fromImage` includes a digest, the image is pulled by digest, and `tag` is ignored.
+            - If neither a tag nor digest is specified, all tags are pulled.
           type: "string"
         - name: "fromSrc"
           in: "query"
@@ -17900,60 +20134,10 @@ paths:
           description: |
             A base64url-encoded auth configuration.
 @y
-            - `until=<duration>`: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')
-            - `id=<id>`
-            - `parent=<id>`
-            - `type=<string>`
-            - `description=<string>`
-            - `inuse`
-            - `shared`
-            - `private`
-      responses:
-        200:
-          description: "No error"
-          schema:
-            type: "object"
-            title: "BuildPruneResponse"
-            properties:
-              CachesDeleted:
-                type: "array"
-                items:
-                  description: "ID of build cache object"
-                  type: "string"
-              SpaceReclaimed:
-                description: "Disk space reclaimed in bytes"
-                type: "integer"
-                format: "int64"
-        500:
-          description: "Server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      tags: ["Image"]
-  /images/create:
-    post:
-      summary: "Create an image"
-      description: "Create an image by either pulling it from a registry or importing it."
-      operationId: "ImageCreate"
-      consumes:
-        - "text/plain"
-        - "application/octet-stream"
-      produces:
-        - "application/json"
-      responses:
-        200:
-          description: "no error"
-        404:
-          description: "repository does not exist or no read access"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-        500:
-          description: "server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "fromImage"
-          in: "query"
-          description: "Name of the image to pull. The name may include a tag or digest. This parameter may only be used when pulling an image. The pull is cancelled if the HTTP connection is closed."
+            - If only `fromImage` includes a tag, that tag is used.
+            - If both `fromImage` and `tag` are provided, `tag` takes precedence.
+            - If `fromImage` includes a digest, the image is pulled by digest, and `tag` is ignored.
+            - If neither a tag nor digest is specified, all tags are pulled.
           type: "string"
         - name: "fromSrc"
           in: "query"
@@ -18084,6 +20268,12 @@ paths:
           description: "Image name or id"
           type: "string"
           required: true
+        - name: "manifests"
+          in: "query"
+          description: "Include Manifests in the image summary."
+          type: "boolean"
+          default: false
+          required: false
       tags: ["Image"]
   /images/{name}/history:
     get:
@@ -18162,12 +20352,13 @@ paths:
           description: "Image name or ID"
           type: "string"
           required: true
-      tags: ["Image"]
-  /images/{name}/push:
-    post:
-      summary: "Push an image"
-      description: |
-        Push an image to a registry.
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON-encoded OCI platform to select the platform-variant.
+            If omitted, it defaults to any locally available platform,
+            prioritizing the daemon's host platform.
 @y
             When used with the `fromSrc` option to import an image from an archive,
             this option sets the platform information for the imported image. If
@@ -18205,6 +20396,12 @@ paths:
           description: "Image name or id"
           type: "string"
           required: true
+        - name: "manifests"
+          in: "query"
+          description: "Include Manifests in the image summary."
+          type: "boolean"
+          default: false
+          required: false
       tags: ["Image"]
   /images/{name}/history:
     get:
@@ -18283,6 +20480,37 @@ paths:
           description: "Image name or ID"
           type: "string"
           required: true
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON-encoded OCI platform to select the platform-variant.
+            If omitted, it defaults to any locally available platform,
+            prioritizing the daemon's host platform.
+@z
+
+@x
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to show the history for. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@y
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to show the history for. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
+      tags: ["Image"]
+  /images/{name}/push:
+    post:
+      summary: "Push an image"
+      description: |
+        Push an image to a registry.
+@y
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /images/{name}/push:
     post:
@@ -18368,10 +20596,12 @@ paths:
             all tags of the given image that are present in the local image store
             are pushed.
           type: "string"
-        - name: "X-Registry-Auth"
-          in: "header"
+        - name: "platform"
+          type: "string"
+          in: "query"
           description: |
-            A base64url-encoded auth configuration.
+            JSON-encoded OCI platform to select the platform-variant to push.
+            If not provided, all available variants will attempt to be pushed.
 @y
             Use the `tag` parameter to specify the tag to push.
           type: "string"
@@ -18383,6 +20613,34 @@ paths:
             all tags of the given image that are present in the local image store
             are pushed.
           type: "string"
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON-encoded OCI platform to select the platform-variant to push.
+            If not provided, all available variants will attempt to be pushed.
+@z
+
+@x
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to push to the registry. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@y
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to push to the registry. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
+        - name: "X-Registry-Auth"
+          in: "header"
+          description: |
+            A base64url-encoded auth configuration.
+@y
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
         - name: "X-Registry-Auth"
           in: "header"
           description: |
@@ -18560,46 +20818,8 @@ paths:
                 is_official:
                   type: "boolean"
                 is_automated:
-                  type: "boolean"
-                name:
-                  type: "string"
-                star_count:
-                  type: "integer"
-          examples:
-            application/json:
-              - description: ""
-                is_official: false
-                is_automated: false
-                name: "wma55/u1210sshd"
-                star_count: 0
-              - description: ""
-                is_official: false
-                is_automated: false
-                name: "jdswinbank/sshd"
-                star_count: 0
-              - description: ""
-                is_official: false
-                is_automated: false
-                name: "vgauthier/sshd"
-                star_count: 0
-        500:
-          description: "Server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "term"
-          in: "query"
-          description: "Term to search"
-          type: "string"
-          required: true
-        - name: "limit"
-          in: "query"
-          description: "Maximum number of results to return"
-          type: "integer"
-        - name: "filters"
-          in: "query"
-          description: |
-            A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
+                  description: |
+                    Whether this repository has automated builds enabled.
 @y
         Images can't be removed if they have descendant images, are being
         used by a running container or are being used by a build.
@@ -18667,28 +20887,84 @@ paths:
                 is_official:
                   type: "boolean"
                 is_automated:
+                  description: |
+                    Whether this repository has automated builds enabled.
+@z
+
+@x
+                    <p><br /></p>
+@y
+                    <p><br /></p>
+@z
+
+@x
+                    > **Deprecated**: This field is deprecated and will always be "false".
                   type: "boolean"
+                  example: false
                 name:
                   type: "string"
                 star_count:
                   type: "integer"
           examples:
             application/json:
-              - description: ""
-                is_official: false
+              - description: "A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
+                is_official: true
                 is_automated: false
-                name: "wma55/u1210sshd"
-                star_count: 0
-              - description: ""
-                is_official: false
+                name: "alpine"
+                star_count: 10093
+              - description: "Busybox base image."
+                is_official: true
                 is_automated: false
-                name: "jdswinbank/sshd"
-                star_count: 0
-              - description: ""
-                is_official: false
+                name: "Busybox base image."
+                star_count: 3037
+              - description: "The PostgreSQL object-relational database system provides reliability and data integrity."
+                is_official: true
                 is_automated: false
-                name: "vgauthier/sshd"
-                star_count: 0
+                name: "postgres"
+                star_count: 12408
+        500:
+          description: "Server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "term"
+          in: "query"
+          description: "Term to search"
+          type: "string"
+          required: true
+        - name: "limit"
+          in: "query"
+          description: "Maximum number of results to return"
+          type: "integer"
+        - name: "filters"
+          in: "query"
+          description: |
+            A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
+@y
+                    > **Deprecated**: This field is deprecated and will always be "false".
+                  type: "boolean"
+                  example: false
+                name:
+                  type: "string"
+                star_count:
+                  type: "integer"
+          examples:
+            application/json:
+              - description: "A minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
+                is_official: true
+                is_automated: false
+                name: "alpine"
+                star_count: 10093
+              - description: "Busybox base image."
+                is_official: true
+                is_automated: false
+                name: "Busybox base image."
+                star_count: 3037
+              - description: "The PostgreSQL object-relational database system provides reliability and data integrity."
+                is_official: true
+                is_automated: false
+                name: "postgres"
+                star_count: 12408
         500:
           description: "Server error"
           schema:
@@ -18710,7 +20986,6 @@ paths:
 @z
 
 @x
-            - `is-automated=(true|false)`
             - `is-official=(true|false)`
             - `stars=<number>` Matches images that has at least 'number' stars.
           type: "string"
@@ -18727,7 +21002,6 @@ paths:
           description: |
             Filters to process on the prune list, encoded as JSON (a `map[string][]string`). Available filters:
 @y
-            - `is-automated=(true|false)`
             - `is-official=(true|false)`
             - `stars=<number>` Matches images that has at least 'number' stars.
           type: "string"
@@ -19094,7 +21368,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         404:
           description: "no such container"
           schema:
@@ -19230,7 +21504,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         404:
           description: "no such container"
           schema:
@@ -19298,9 +21572,9 @@ paths:
 @z
 
 @x
-        Images report these events: `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
+        Images report these events: `create`, `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
 @y
-        Images report these events: `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
+        Images report these events: `create`, `delete`, `import`, `load`, `pull`, `push`, `save`, `tag`, `untag`, and `prune`
 @z
 
 @x
@@ -19473,7 +21747,6 @@ paths:
                   Created: 1466724217
                   Size: 1092588
                   SharedSize: 0
-                  VirtualSize: 1092588
                   Labels: {}
                   Containers: 1
               Containers:
@@ -19622,7 +21895,6 @@ paths:
                   Created: 1466724217
                   Size: 1092588
                   SharedSize: 0
-                  VirtualSize: 1092588
                   Labels: {}
                   Containers: 1
               Containers:
@@ -19780,7 +22052,53 @@ paths:
           description: "Image name or ID"
           type: "string"
           required: true
-      tags: ["Image"]
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON encoded OCI platform describing a platform which will be used
+            to select a platform-specific image to be saved if the image is
+            multi-platform.
+            If not provided, the full multi-platform image will be saved.
+@y
+        ```json
+        {
+          "hello-world": {
+            "latest": "565a9d68a73f6706862bfe8409a7f659776d4d60a8d096eb4a3cbce6999cc2a1"
+          }
+        }
+        ```
+      operationId: "ImageGet"
+      produces:
+        - "application/x-tar"
+      responses:
+        200:
+          description: "no error"
+          schema:
+            type: "string"
+            format: "binary"
+        500:
+          description: "server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "name"
+          in: "path"
+          description: "Image name or ID"
+          type: "string"
+          required: true
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON encoded OCI platform describing a platform which will be used
+            to select a platform-specific image to be saved if the image is
+            multi-platform.
+            If not provided, the full multi-platform image will be saved.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
   /images/get:
     get:
       summary: "Export several images"
@@ -19788,33 +22106,7 @@ paths:
         Get a tarball containing all images and metadata for several image
         repositories.
 @y
-        ```json
-        {
-          "hello-world": {
-            "latest": "565a9d68a73f6706862bfe8409a7f659776d4d60a8d096eb4a3cbce6999cc2a1"
-          }
-        }
-        ```
-      operationId: "ImageGet"
-      produces:
-        - "application/x-tar"
-      responses:
-        200:
-          description: "no error"
-          schema:
-            type: "string"
-            format: "binary"
-        500:
-          description: "server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "name"
-          in: "path"
-          description: "Image name or ID"
-          type: "string"
-          required: true
-      tags: ["Image"]
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
   /images/get:
     get:
       summary: "Export several images"
@@ -19921,6 +22213,52 @@ paths:
           description: "Suppress progress details during load."
           type: "boolean"
           default: false
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON encoded OCI platform describing a platform which will be used
+            to select a platform-specific image to be load if the image is
+            multi-platform.
+            If not provided, the full multi-platform image will be loaded.
+@y
+        For details on the format, see the [export image endpoint](#operation/ImageGet).
+      operationId: "ImageLoad"
+      consumes:
+        - "application/x-tar"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "no error"
+        500:
+          description: "server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "imagesTarball"
+          in: "body"
+          description: "Tar archive containing images"
+          schema:
+            type: "string"
+            format: "binary"
+        - name: "quiet"
+          in: "query"
+          description: "Suppress progress details during load."
+          type: "boolean"
+          default: false
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON encoded OCI platform describing a platform which will be used
+            to select a platform-specific image to be load if the image is
+            multi-platform.
+            If not provided, the full multi-platform image will be loaded.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /containers/{id}/exec:
     post:
@@ -19935,7 +22273,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         404:
           description: "no such container"
           schema:
@@ -19977,6 +22315,7 @@ paths:
                 items:
                   type: "integer"
                   minimum: 0
+                example: [80, 64]
               DetachKeys:
                 type: "string"
                 description: |
@@ -20063,9 +22402,11 @@ paths:
               Detach:
                 type: "boolean"
                 description: "Detach from the command."
+                example: false
               Tty:
                 type: "boolean"
                 description: "Allocate a pseudo-TTY."
+                example: true
               ConsoleSize:
                 type: "array"
                 description: "Initial console size, as an `[height, width]` array."
@@ -20075,10 +22416,7 @@ paths:
                 items:
                   type: "integer"
                   minimum: 0
-            example:
-              Detach: false
-              Tty: true
-              ConsoleSize: [80, 64]
+                example: [80, 64]
         - name: "id"
           in: "path"
           description: "Exec instance ID"
@@ -20197,31 +22535,7 @@ paths:
           type: "string"
       tags: ["Exec"]
 @y
-        For details on the format, see the [export image endpoint](#operation/ImageGet).
-      operationId: "ImageLoad"
-      consumes:
-        - "application/x-tar"
-      produces:
-        - "application/json"
-      responses:
-        200:
-          description: "no error"
-        500:
-          description: "server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "imagesTarball"
-          in: "body"
-          description: "Tar archive containing images"
-          schema:
-            type: "string"
-            format: "binary"
-        - name: "quiet"
-          in: "query"
-          description: "Suppress progress details during load."
-          type: "boolean"
-          default: false
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /containers/{id}/exec:
     post:
@@ -20236,7 +22550,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         404:
           description: "no such container"
           schema:
@@ -20278,6 +22592,7 @@ paths:
                 items:
                   type: "integer"
                   minimum: 0
+                example: [80, 64]
               DetachKeys:
                 type: "string"
                 description: |
@@ -20364,9 +22679,11 @@ paths:
               Detach:
                 type: "boolean"
                 description: "Detach from the command."
+                example: false
               Tty:
                 type: "boolean"
                 description: "Allocate a pseudo-TTY."
+                example: true
               ConsoleSize:
                 type: "array"
                 description: "Initial console size, as an `[height, width]` array."
@@ -20376,10 +22693,7 @@ paths:
                 items:
                   type: "integer"
                   minimum: 0
-            example:
-              Detach: false
-              Tty: true
-              ConsoleSize: [80, 64]
+                example: [80, 64]
         - name: "id"
           in: "path"
           description: "Exec instance ID"
@@ -20970,6 +23284,7 @@ paths:
                 Created: "2016-10-19T06:21:00.416543526Z"
                 Scope: "local"
                 Driver: "bridge"
+                EnableIPv4: true
                 EnableIPv6: false
                 Internal: false
                 Attachable: false
@@ -20991,6 +23306,7 @@ paths:
                 Created: "0001-01-01T00:00:00Z"
                 Scope: "local"
                 Driver: "null"
+                EnableIPv4: false
                 EnableIPv6: false
                 Internal: false
                 Attachable: false
@@ -21005,6 +23321,7 @@ paths:
                 Created: "0001-01-01T00:00:00Z"
                 Scope: "local"
                 Driver: "host"
+                EnableIPv4: false
                 EnableIPv6: false
                 Internal: false
                 Attachable: false
@@ -21045,6 +23362,7 @@ paths:
                 Created: "2016-10-19T06:21:00.416543526Z"
                 Scope: "local"
                 Driver: "bridge"
+                EnableIPv4: true
                 EnableIPv6: false
                 Internal: false
                 Attachable: false
@@ -21066,6 +23384,7 @@ paths:
                 Created: "0001-01-01T00:00:00Z"
                 Scope: "local"
                 Driver: "null"
+                EnableIPv4: false
                 EnableIPv6: false
                 Internal: false
                 Attachable: false
@@ -21080,6 +23399,7 @@ paths:
                 Created: "0001-01-01T00:00:00Z"
                 Scope: "local"
                 Driver: "host"
+                EnableIPv4: false
                 EnableIPv6: false
                 Internal: false
                 Attachable: false
@@ -21274,25 +23594,17 @@ paths:
         - "application/json"
       responses:
         201:
-          description: "No error"
+          description: "Network created successfully"
           schema:
-            type: "object"
-            title: "NetworkCreateResponse"
-            properties:
-              Id:
-                description: "The ID of the created network."
-                type: "string"
-              Warning:
-                type: "string"
-            example:
-              Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
-              Warning: ""
+            $ref: "#/definitions/NetworkCreateResponse"
         400:
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
         403:
-          description: "operation not supported for pre-defined networks"
+          description: |
+            Forbidden operation. This happens when trying to create a network named after a pre-defined network,
+            or when trying to create an overlay network on a daemon which is not part of a Swarm cluster.
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -21317,17 +23629,6 @@ paths:
                 description: "The network's name."
                 type: "string"
                 example: "my_network"
-              CheckDuplicate:
-                description: |
-                  Check for networks with duplicate names. Since Network is
-                  primarily keyed based on a random ID and not on the name, and
-                  network name is strictly a user-friendly alias to the network
-                  which is uniquely identified using ID, there is no guaranteed
-                  way to check for duplicates. CheckDuplicate is there to provide
-                  a best effort checking of any networks which has the same name
-                  but it is not guaranteed to catch all name collisions.
-                type: "boolean"
-                example: true
               Driver:
                 description: "Name of the network driver plugin to use."
                 type: "string"
@@ -21371,6 +23672,10 @@ paths:
               IPAM:
                 description: "Optional custom IP scheme for the network."
                 $ref: "#/definitions/IPAM"
+              EnableIPv4:
+                description: "Enable IPv4 on the network."
+                type: "boolean"
+                example: true
               EnableIPv6:
                 description: "Enable IPv6 on the network."
                 type: "boolean"
@@ -21407,25 +23712,17 @@ paths:
         - "application/json"
       responses:
         201:
-          description: "No error"
+          description: "Network created successfully"
           schema:
-            type: "object"
-            title: "NetworkCreateResponse"
-            properties:
-              Id:
-                description: "The ID of the created network."
-                type: "string"
-              Warning:
-                type: "string"
-            example:
-              Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
-              Warning: ""
+            $ref: "#/definitions/NetworkCreateResponse"
         400:
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
         403:
-          description: "operation not supported for pre-defined networks"
+          description: |
+            Forbidden operation. This happens when trying to create a network named after a pre-defined network,
+            or when trying to create an overlay network on a daemon which is not part of a Swarm cluster.
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -21450,17 +23747,6 @@ paths:
                 description: "The network's name."
                 type: "string"
                 example: "my_network"
-              CheckDuplicate:
-                description: |
-                  Check for networks with duplicate names. Since Network is
-                  primarily keyed based on a random ID and not on the name, and
-                  network name is strictly a user-friendly alias to the network
-                  which is uniquely identified using ID, there is no guaranteed
-                  way to check for duplicates. CheckDuplicate is there to provide
-                  a best effort checking of any networks which has the same name
-                  but it is not guaranteed to catch all name collisions.
-                type: "boolean"
-                example: true
               Driver:
                 description: "Name of the network driver plugin to use."
                 type: "string"
@@ -21504,6 +23790,10 @@ paths:
               IPAM:
                 description: "Optional custom IP scheme for the network."
                 $ref: "#/definitions/IPAM"
+              EnableIPv4:
+                description: "Enable IPv4 on the network."
+                type: "boolean"
+                example: true
               EnableIPv6:
                 description: "Enable IPv6 on the network."
                 type: "boolean"
@@ -21535,14 +23825,19 @@ paths:
   /networks/{id}/connect:
     post:
       summary: "Connect a container to a network"
+      description: "The network must be either a local-scoped network or a swarm-scoped network with the `attachable` option set. A network cannot be re-attached to a running container"
       operationId: "NetworkConnect"
       consumes:
         - "application/json"
       responses:
         200:
           description: "No error"
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         403:
-          description: "Operation not supported for swarm scoped networks"
+          description: "Operation forbidden"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -21577,19 +23872,26 @@ paths:
                 IPAMConfig:
                   IPv4Address: "172.24.56.89"
                   IPv6Address: "2001:db8::5689"
+                MacAddress: "02:42:ac:12:05:02"
+                Priority: 100
       tags: ["Network"]
 @y
   /networks/{id}/connect:
     post:
       summary: "Connect a container to a network"
+      description: "The network must be either a local-scoped network or a swarm-scoped network with the `attachable` option set. A network cannot be re-attached to a running container"
       operationId: "NetworkConnect"
       consumes:
         - "application/json"
       responses:
         200:
           description: "No error"
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         403:
-          description: "Operation not supported for swarm scoped networks"
+          description: "Operation forbidden"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -21624,6 +23926,8 @@ paths:
                 IPAMConfig:
                   IPv4Address: "172.24.56.89"
                   IPv6Address: "2001:db8::5689"
+                MacAddress: "02:42:ac:12:05:02"
+                Priority: 100
       tags: ["Network"]
 @z
 
@@ -23622,18 +25926,7 @@ paths:
         201:
           description: "no error"
           schema:
-            type: "object"
-            title: "ServiceCreateResponse"
-            properties:
-              ID:
-                description: "The ID of the created service."
-                type: "string"
-              Warning:
-                description: "Optional warning message"
-                type: "string"
-            example:
-              ID: "ak7w3gjqoa3kuz8xcpnyy0pvl"
-              Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+            $ref: "#/definitions/ServiceCreateResponse"
         400:
           description: "bad parameter"
           schema:
@@ -23692,6 +25985,7 @@ paths:
                             Mode: 384
                           SecretID: "fpjqlhnwb19zds35k8wn80lq9"
                           SecretName: "example_org_domain_key"
+                      OomScoreAdj: 0
                     LogDriver:
                       Name: "json-file"
                       Options:
@@ -23757,18 +26051,7 @@ paths:
         201:
           description: "no error"
           schema:
-            type: "object"
-            title: "ServiceCreateResponse"
-            properties:
-              ID:
-                description: "The ID of the created service."
-                type: "string"
-              Warning:
-                description: "Optional warning message"
-                type: "string"
-            example:
-              ID: "ak7w3gjqoa3kuz8xcpnyy0pvl"
-              Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+            $ref: "#/definitions/ServiceCreateResponse"
         400:
           description: "bad parameter"
           schema:
@@ -23827,6 +26110,7 @@ paths:
                             Mode: 384
                           SecretID: "fpjqlhnwb19zds35k8wn80lq9"
                           SecretName: "example_org_domain_key"
+                      OomScoreAdj: 0
                     LogDriver:
                       Name: "json-file"
                       Options:
@@ -23981,6 +26265,7 @@ paths:
                       Image: "busybox"
                       Args:
                         - "top"
+                      OomScoreAdj: 0
                     Resources:
                       Limits: {}
                       Reservations: {}
@@ -24116,6 +26401,7 @@ paths:
                       Image: "busybox"
                       Args:
                         - "top"
+                      OomScoreAdj: 0
                     Resources:
                       Limits: {}
                       Reservations: {}
@@ -25029,7 +27315,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         409:
           description: "name conflicts with an existing object"
           schema:
@@ -25105,7 +27391,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         409:
           description: "name conflicts with an existing object"
           schema:
@@ -25449,7 +27735,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         409:
           description: "name conflicts with an existing object"
           schema:
@@ -25642,7 +27928,7 @@ paths:
         201:
           description: "no error"
           schema:
-            $ref: "#/definitions/IdResponse"
+            $ref: "#/definitions/IDResponse"
         409:
           description: "name conflicts with an existing object"
           schema:

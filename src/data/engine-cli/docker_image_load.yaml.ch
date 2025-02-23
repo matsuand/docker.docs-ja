@@ -9,101 +9,41 @@ long: |-
     Load an image or repository from a tar archive (even if compressed with gzip,
     bzip2, xz or zstd) from a file or STDIN. It restores both images and tags.
 usage: docker image load [OPTIONS]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: input
-      shorthand: i
-      value_type: string
-      description: Read from tar archive file, instead of STDIN
-      details_url: '#input'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress the load output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker image ls
 @y
-command: docker image load
-aliases: docker image load, docker load
-short: Load an image from a tar archive or STDIN
-long: |-
-    Load an image or repository from a tar archive (even if compressed with gzip,
-    bzip2, xz or zstd) from a file or STDIN. It restores both images and tags.
-usage: docker image load [OPTIONS]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: input
-      shorthand: i
-      value_type: string
+@z
+
+% options:
+
+@x input
       description: Read from tar archive file, instead of STDIN
-      details_url: '#input'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+@z
+
+@x platform
+      description: |
+        Load only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+@z
+
+@x quiet
       description: Suppress the load output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker image ls
+@y
 @z
 
 @x
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    ```
+examples: |-
 @y
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    ```
+examples: |-
 @z
+
+% snip command...
 
 @x
     ### Load images from STDIN
@@ -111,27 +51,7 @@ examples: |-
     ### Load images from STDIN
 @z
 
-@x
-    ```console
-    $ docker load < busybox.tar.gz
-@y
-    ```console
-    $ docker load < busybox.tar.gz
-@z
-
-@x
-    Loaded image: busybox:latest
-    $ docker images
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    busybox             latest              769b9341d937        7 weeks ago         2.489 MB
-    ```
-@y
-    Loaded image: busybox:latest
-    $ docker images
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    busybox             latest              769b9341d937        7 weeks ago         2.489 MB
-    ```
-@z
+% snip command...
 
 @x
     ### Load images from a file (--input) {#input}
@@ -139,54 +59,55 @@ examples: |-
     ### Load images from a file (--input) {#input}
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker load --input fedora.tar
+    ### Load a specific platform (--platform) {#platform}
 @y
-    ```console
-    $ docker load --input fedora.tar
+    ### Load a specific platform (--platform) {#platform}
 @z
 
 @x
-    Loaded image: fedora:rawhide
-    Loaded image: fedora:20
+    The `--platform` option allows you to specify which platform variant of the
+    image to load. By default, `docker load` loads all platform variants that
+    are present in the archive. Use the `--platform` option to specify which
+    platform variant of the image to load. An error is produced if the given
+    platform is not present in the archive.
 @y
-    Loaded image: fedora:rawhide
-    Loaded image: fedora:20
+    The `--platform` option allows you to specify which platform variant of the
+    image to load. By default, `docker load` loads all platform variants that
+    are present in the archive. Use the `--platform` option to specify which
+    platform variant of the image to load. An error is produced if the given
+    platform is not present in the archive.
 @z
 
 @x
-    $ docker images
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and default to the daemon's native architecture if omitted.
 @y
-    $ docker images
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and default to the daemon's native architecture if omitted.
 @z
 
 @x
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    busybox             latest              769b9341d937        7 weeks ago         2.489 MB
-    fedora              rawhide             0d20aec6529d        7 weeks ago         387 MB
-    fedora              20                  58394af37342        7 weeks ago         385.5 MB
-    fedora              heisenbug           58394af37342        7 weeks ago         385.5 MB
-    fedora              latest              58394af37342        7 weeks ago         385.5 MB
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    The following example loads the `linux/amd64` variant of an `alpine` image
+    from an archive that contains multiple platform variants.
 @y
-    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    busybox             latest              769b9341d937        7 weeks ago         2.489 MB
-    fedora              rawhide             0d20aec6529d        7 weeks ago         387 MB
-    fedora              20                  58394af37342        7 weeks ago         385.5 MB
-    fedora              heisenbug           58394af37342        7 weeks ago         385.5 MB
-    fedora              latest              58394af37342        7 weeks ago         385.5 MB
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    The following example loads the `linux/amd64` variant of an `alpine` image
+    from an archive that contains multiple platform variants.
 @z
+
+% snip command...
+
+@x
+    The following example attempts to load a `linux/ppc64le` image from an
+    archive, but the given platform is not present in the archive;
+@y
+    The following example attempts to load a `linux/ppc64le` image from an
+    archive, but the given platform is not present in the archive;
+@z
+
+% snip command...
+% snip directives...

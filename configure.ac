@@ -265,6 +265,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/for-developers/Makefile
 	src/content/manuals/security/for-developers/2fa/Makefile
 	src/content/manuals/security/images/Makefile
+	src/content/manuals/security/troubleshoot/Makefile
 	src/content/manuals/subscription/Makefile
 	src/content/manuals/subscription/images/Makefile
 	src/content/reference/Makefile

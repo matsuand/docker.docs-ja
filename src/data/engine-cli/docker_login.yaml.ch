@@ -332,15 +332,15 @@ usage: docker login [OPTIONS] [SERVER]
 % options:
 
 @x password
-      description: Password
+      description: Password or Personal Access Token (PAT)
 @y
-      description: Password
+      description: Password or Personal Access Token (PAT)
 @z
 
 @x password-stdin
-      description: Take the password from stdin
+      description: Take the Password or Personal Access Token (PAT) from stdin
 @y
-      description: Take the password from stdin
+      description: Take the Password or Personal Access Token (PAT) from stdin
 @z
 
 @x username

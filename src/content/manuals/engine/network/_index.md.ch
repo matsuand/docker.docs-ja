@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Networking overview
@@ -81,17 +82,7 @@ The following example creates a network using the `bridge` network driver and
 running a container in the created network:
 @z
 
-@x
-```console
-$ docker network create -d bridge my-net
-$ docker run --network=my-net -itd --name=container3 busybox
-```
-@y
-```console
-$ docker network create -d bridge my-net
-$ docker run --network=my-net -itd --name=container3 busybox
-```
-@z
+% snip command...
 
 @x
 ### Drivers
@@ -134,6 +125,82 @@ overview](./drivers/_index.md).
 For more information about the different drivers, see [Network drivers
 overview](./drivers/_index.md).
 @z
+
+@x
+### Connecting to multiple networks
+@y
+### Connecting to multiple networks
+@z
+
+@x
+A container can be connected to multiple networks.
+@y
+A container can be connected to multiple networks.
+@z
+
+@x
+For example, a frontend container may be connected to a bridge network
+with external access, and a
+[`--internal`](/reference/cli/docker/network/create/#internal) network
+to communicate with containers running backend services that do not need
+external network access.
+@y
+For example, a frontend container may be connected to a bridge network
+with external access, and a
+[`--internal`](__SUBDIR__/reference/cli/docker/network/create/#internal) network
+to communicate with containers running backend services that do not need
+external network access.
+@z
+
+@x
+A container may also be connected to different types of network. For example,
+an `ipvlan` network to provide internet access, and a `bridge` network for
+access to local services.
+@y
+A container may also be connected to different types of network. For example,
+an `ipvlan` network to provide internet access, and a `bridge` network for
+access to local services.
+@z
+
+@x
+When sending packets, if the destination is an address in a directly connected
+network, packets are sent to that network. Otherwise, packets are sent to
+a default gateway for routing to their destination. In the example above,
+the `ipvlan` network's gateway must be the default gateway.
+@y
+When sending packets, if the destination is an address in a directly connected
+network, packets are sent to that network. Otherwise, packets are sent to
+a default gateway for routing to their destination. In the example above,
+the `ipvlan` network's gateway must be the default gateway.
+@z
+
+@x
+The default gateway is selected by Docker, and may change whenever a
+container's network connections change.
+To make Docker choose a specific default gateway when creating the container
+or connecting a new network, set a gateway priority. See option `gw-priority`
+for the [`docker run`](/reference/cli/docker/container/run.md) and
+[`docker network connect`](/reference/cli/docker/network/connect.md) commands.
+@y
+The default gateway is selected by Docker, and may change whenever a
+container's network connections change.
+To make Docker choose a specific default gateway when creating the container
+or connecting a new network, set a gateway priority. See option `gw-priority`
+for the [`docker run`](reference/cli/docker/container/run.md) and
+[`docker network connect`](reference/cli/docker/network/connect.md) commands.
+@z
+
+@x
+The default `gw-priority` is `0` and the gateway in the network with the
+highest priority is the default gateway. So, when a network should always
+be the default gateway, it is enough to set its `gw-priority` to `1`.
+@y
+The default `gw-priority` is `0` and the gateway in the network with the
+highest priority is the default gateway. So, when a network should always
+be the default gateway, it is enough to set its `gw-priority` to `1`.
+@z
+
+% snip command...
 
 @x
 ## Container networks
@@ -191,17 +258,7 @@ The following example runs a Redis container, with Redis binding to
 server over the `localhost` interface.
 @z
 
-@x
-```console
-$ docker run -d --name redis example/redis --bind 127.0.0.1
-$ docker run --rm -it --network container:redis example/redis-cli -h 127.0.0.1
-```
-@y
-```console
-$ docker run -d --name redis example/redis --bind 127.0.0.1
-$ docker run --rm -it --network container:redis example/redis-cli -h 127.0.0.1
-```
-@z
+% snip command...
 
 @x
 ## Published ports
