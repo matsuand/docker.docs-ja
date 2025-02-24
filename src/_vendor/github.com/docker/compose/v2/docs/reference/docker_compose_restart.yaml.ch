@@ -27,94 +27,40 @@ long: |-
 
 @x
     If you are looking to configure a service's restart policy, refer to
-    [restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
-    or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
-usage: docker compose restart [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: no-deps
-      value_type: bool
-      default_value: "false"
-      description: Don't restart dependent services
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timeout
-      shorthand: t
-      value_type: int
-      default_value: "0"
-      description: Specify a shutdown timeout in seconds
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    [restart](https://github.com/compose-spec/compose-spec/blob/main/spec.md#restart)
+    or [restart_policy](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy).
 @y
     If you are looking to configure a service's restart policy, refer to
-    [restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
-    or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
-usage: docker compose restart [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: no-deps
-      value_type: bool
-      default_value: "false"
-      description: Don't restart dependent services
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timeout
-      shorthand: t
-      value_type: int
-      default_value: "0"
-      description: Specify a shutdown timeout in seconds
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    [restart](https://github.com/compose-spec/compose-spec/blob/main/spec.md#restart)
+    or [restart_policy](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy).
 @z
+
+@x
+usage: docker compose restart [OPTIONS] [SERVICE...]
+@y
+usage: docker compose restart [OPTIONS] [SERVICE...]
+@z
+
+% options:
+
+@x no-deps
+      description: Don't restart dependent services
+@y
+      description: Don't restart dependent services
+@z
+
+@x timeout
+      description: Specify a shutdown timeout in seconds
+@y
+      description: Specify a shutdown timeout in seconds
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

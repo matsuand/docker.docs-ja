@@ -129,6 +129,11 @@
                 Docker Hub 上の確認
 @z
 @x
+              <a href="/docker-hub/image-library/catalogs/"
+@y
+              <a href="docker-hub/image-library/catalogs/"
+@z
+@x
                 Read the docs
 @y
                 ドキュメント
@@ -162,14 +167,11 @@
                   Dockerfile 改善からコンテナーのトラブルシューティングまで、Gordon がアシストします。
 @z
 @x
-                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Join the beta</a>
-@y
-                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Join the beta</a>
-@z
-@x
+                <a href="/desktop/features/gordon/"
                   class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Read the docs</a>
 @y
-                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Read the docs</a>
+                <a href="desktop/features/gordon/"
+                  class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">ドキュメント</a>
 @z
 
 @x

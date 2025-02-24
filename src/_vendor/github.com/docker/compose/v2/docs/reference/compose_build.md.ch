@@ -17,14 +17,14 @@ Services are built once and then tagged, by default as `project-service`.
 
 @x
 If the Compose file specifies an
-[image](https://github.com/compose-spec/compose-spec/blob/master/spec.md#image) name,
+[image](https://github.com/compose-spec/compose-spec/blob/main/spec.md#image) name,
 the image is tagged with that name, substituting any variables beforehand. See
-[variable interpolation](https://github.com/compose-spec/compose-spec/blob/master/spec.md#interpolation).
+[variable interpolation](https://github.com/compose-spec/compose-spec/blob/main/spec.md#interpolation).
 @y
 If the Compose file specifies an
-[image](https://github.com/compose-spec/compose-spec/blob/master/spec.md#image) name,
+[image](https://github.com/compose-spec/compose-spec/blob/main/spec.md#image) name,
 the image is tagged with that name, substituting any variables beforehand. See
-[variable interpolation](https://github.com/compose-spec/compose-spec/blob/master/spec.md#interpolation).
+[variable interpolation](https://github.com/compose-spec/compose-spec/blob/main/spec.md#interpolation).
 @z
 
 @x
@@ -55,7 +55,7 @@ run `docker compose build` to rebuild it.
 | `--ssh`               | `string`      |         | Set SSH authentications used when building service images. (use 'default' for using your default SSH Agent) |
 | `--with-dependencies` | `bool`        |         | Also build dependencies (transitively)                                                                      |
 @y
-| Name                  | Type          | Default | Description                                                                                                 |
+| 名前                  | 型            | デフォルト | 内容説明                                                                                                 |
 |:----------------------|:--------------|:--------|:------------------------------------------------------------------------------------------------------------|
 | `--build-arg`         | `stringArray` |         | Set build-time variables for services                                                                       |
 | `--builder`           | `string`      |         | Set builder to use                                                                                          |
@@ -89,14 +89,14 @@ Services are built once and then tagged, by default as `project-service`.
 
 @x
 If the Compose file specifies an
-[image](https://github.com/compose-spec/compose-spec/blob/master/spec.md#image) name,
+[image](https://github.com/compose-spec/compose-spec/blob/main/spec.md#image) name,
 the image is tagged with that name, substituting any variables beforehand. See
-[variable interpolation](https://github.com/compose-spec/compose-spec/blob/master/spec.md#interpolation).
+[variable interpolation](https://github.com/compose-spec/compose-spec/blob/main/spec.md#interpolation).
 @y
 If the Compose file specifies an
-[image](https://github.com/compose-spec/compose-spec/blob/master/spec.md#image) name,
+[image](https://github.com/compose-spec/compose-spec/blob/main/spec.md#image) name,
 the image is tagged with that name, substituting any variables beforehand. See
-[variable interpolation](https://github.com/compose-spec/compose-spec/blob/master/spec.md#interpolation).
+[variable interpolation](https://github.com/compose-spec/compose-spec/blob/main/spec.md#interpolation).
 @z
 
 @x

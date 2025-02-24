@@ -6,141 +6,57 @@ command: docker compose stats
 short: Display a live stream of container(s) resource usage statistics
 long: Display a live stream of container(s) resource usage statistics
 usage: docker compose stats [OPTIONS] [SERVICE]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: all
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Show all containers (default shows just running)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'table':            Print output in table format with column headers (default)
-        'table TEMPLATE':   Print output in table format using the given Go template
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-stream
-      value_type: bool
-      default_value: "false"
-      description: Disable streaming stats and only pull the first result
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Do not truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker compose stats
 short: Display a live stream of container(s) resource usage statistics
 long: Display a live stream of container(s) resource usage statistics
 usage: docker compose stats [OPTIONS] [SERVICE]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: all
-      shorthand: a
-      value_type: bool
-      default_value: "false"
+@z
+
+% options:
+
+@x all
       description: Show all containers (default shows just running)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
+@y
+      description: Show all containers (default shows just running)
+@z
+
+@x format
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
         'table TEMPLATE':   Print output in table format using the given Go template
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-stream
-      value_type: bool
-      default_value: "false"
-      description: Disable streaming stats and only pull the first result
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Do not truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+        Refer to https://docs.docker.com/engine/cli/formatting/ for more information about formatting output with templates
+@y
+      description: |-
+        Format output using a custom template:
+        'table':            Print output in table format with column headers (default)
+        'table TEMPLATE':   Print output in table format using the given Go template
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/engine/cli/formatting/ for more information about formatting output with templates
 @z
+
+@x no-stream
+      description: Disable streaming stats and only pull the first result
+@y
+      description: Disable streaming stats and only pull the first result
+@z
+
+@x no-trunc
+      description: Do not truncate output
+@y
+      description: Do not truncate output
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

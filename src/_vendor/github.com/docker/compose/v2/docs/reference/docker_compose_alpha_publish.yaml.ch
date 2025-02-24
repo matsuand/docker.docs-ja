@@ -6,89 +6,47 @@ command: docker compose alpha publish
 short: Publish compose application
 long: Publish compose application
 usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
-pname: docker compose alpha
-plink: docker_compose_alpha.yaml
-options:
-    - option: oci-version
-      value_type: string
-      description: |
-        OCI Image/Artifact specification version (automatically determined by default)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: resolve-image-digests
-      value_type: bool
-      default_value: "false"
-      description: Pin image tags to digests
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @y
 command: docker compose alpha publish
 short: Publish compose application
 long: Publish compose application
 usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
-pname: docker compose alpha
-plink: docker_compose_alpha.yaml
-options:
-    - option: oci-version
-      value_type: string
-      description: |
-        OCI Image/Artifact specification version (automatically determined by default)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: resolve-image-digests
-      value_type: bool
-      default_value: "false"
-      description: Pin image tags to digests
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x oci-version
+      description: |
+        OCI image/artifact specification version (automatically determined by default)
+@y
+      description: |
+        OCI image/artifact specification version (automatically determined by default)
+@z
+
+@x resolve-image-digests
+      description: Pin image tags to digests
+@y
+      description: Pin image tags to digests
+@z
+
+@x with-env
+      description: Include environment variables in the published OCI artifact
+@y
+      description: Include environment variables in the published OCI artifact
+@z
+
+@x "y"
+      description: Assume "yes" as answer to all prompts
+@y
+      description: Assume "yes" as answer to all prompts
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

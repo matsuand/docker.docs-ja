@@ -28,15 +28,15 @@ Lists running Compose projects
 | `--dry-run`     | `bool`   |         | Execute command in dry run mode            |
 | `--filter`      | `filter` |         | Filter output based on conditions provided |
 | `--format`      | `string` | `table` | Format the output. Values: [table \| json] |
-| `-q`, `--quiet` | `bool`   |         | Only display IDs                           |
+| `-q`, `--quiet` | `bool`   |         | Only display project names                 |
 @y
-| Name            | Type     | Default | Description                                |
+| 名前            | 型       | デフォルト | 内容説明                                |
 |:----------------|:---------|:--------|:-------------------------------------------|
 | `-a`, `--all`   | `bool`   |         | Show all stopped Compose projects          |
 | `--dry-run`     | `bool`   |         | Execute command in dry run mode            |
 | `--filter`      | `filter` |         | Filter output based on conditions provided |
 | `--format`      | `string` | `table` | Format the output. Values: [table \| json] |
-| `-q`, `--quiet` | `bool`   |         | Only display IDs                           |
+| `-q`, `--quiet` | `bool`   |         | Only display project names                 |
 @z
 
 @x

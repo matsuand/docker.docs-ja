@@ -29,12 +29,12 @@ after restarting.
 
 @x
 If you are looking to configure a service's restart policy, refer to
-[restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
-or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
+[restart](https://github.com/compose-spec/compose-spec/blob/main/spec.md#restart)
+or [restart_policy](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy).
 @y
 If you are looking to configure a service's restart policy, refer to
-[restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
-or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
+[restart](https://github.com/compose-spec/compose-spec/blob/main/spec.md#restart)
+or [restart_policy](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy).
 @z
 
 @x
@@ -89,10 +89,10 @@ after restarting.
 
 @x
 If you are looking to configure a service's restart policy, refer to
-[restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
-or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
+[restart](https://github.com/compose-spec/compose-spec/blob/main/spec.md#restart)
+or [restart_policy](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy).
 @y
 If you are looking to configure a service's restart policy, refer to
-[restart](https://github.com/compose-spec/compose-spec/blob/master/spec.md#restart)
-or [restart_policy](https://github.com/compose-spec/compose-spec/blob/master/deploy.md#restart_policy).
+[restart](https://github.com/compose-spec/compose-spec/blob/main/spec.md#restart)
+or [restart_policy](https://github.com/compose-spec/compose-spec/blob/main/deploy.md#restart_policy).
 @z

@@ -438,9 +438,9 @@ In the _Run a new container_ dialog that opens, you should see a message about
 @z
 
 @x
-![Ask Gordon hint in Docker Desktop](../images/gordon-run-ctr.png)
+![Ask Gordon hint in Docker Desktop](../../images/gordon-run-ctr.png)
 @y
-![Ask Gordon hint in Docker Desktop](../images/gordon-run-ctr.png)
+![Ask Gordon hint in Docker Desktop](../../images/gordon-run-ctr.png)
 @z
 
 @x
