@@ -14,24 +14,12 @@ short: Get a shell into any container or image. An alternative to debugging with
 
 @x
 long: |-
-  > **Note**
-  >
-  > Docker Debug requires a [Pro, Team, or Business subcription](/subscription/details/).
-  > You must [sign in](/desktop/get-started/) to use this command.
+  Docker Debug is a CLI command that helps you follow best practices by keeping your images small and secure. 
+  With Docker Debug, you can debug your images while they contain the bare minimum to run your application.
+  It does this by letting you create and work with slim images or containers that are often difficult to debug because all tools have been removed. 
+  For example, while typical debug approaches like `docker exec -it my-app bash` may not work on a slim container, `docker debug` will work.
 @y
 long: |-
-  > **Note**
-  >
-  > Docker Debug requires a [Pro, Team, or Business subcription](__SUBDIR__/subscription/details/).
-  > You must [sign in](__SUBDIR__/desktop/get-started/) to use this command.
-@z
-
-@x
-  Docker Debug is a CLI command that helps you follow best practices by keeping your images small and secure. 
-  With Docker Debug, you can debug your images while they contain the bare minimum to run your application.
-  It does this by letting you create and work with slim images or containers that are often difficult to debug because all tools have been removed. 
-  For example, while typical debug approaches like `docker exec -it my-app bash` may not work on a slim container, `docker debug` will work.
-@y
   Docker Debug is a CLI command that helps you follow best practices by keeping your images small and secure. 
   With Docker Debug, you can debug your images while they contain the bare minimum to run your application.
   It does this by letting you create and work with slim images or containers that are often difficult to debug because all tools have been removed. 
@@ -73,14 +61,14 @@ long: |-
 @z
 
 @x
-  > **Note**
+  > [!NOTE]
   >
   > For images and stopped containers, all changes are discarded when leaving the shell. 
   > At no point, do changes affect the actual image or container. 
   > When accessing running or paused containers, all filesystem changes are directly visible to the container. 
   > The `/nix` directory is never visible to the actual image or container.
 @y
-  > **Note**
+  > [!NOTE]
   >
   > For images and stopped containers, all changes are discarded when leaving the shell. 
   > At no point, do changes affect the actual image or container. 

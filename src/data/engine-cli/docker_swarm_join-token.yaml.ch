@@ -106,9 +106,9 @@ examples: |-
 % snip command...
 
 @x
-    ### `--rotate`
+    ### `--rotate` {#rotate}
 @y
-    ### `--rotate`
+    ### `--rotate` {#rotate}
 @z
 
 @x
@@ -154,9 +154,9 @@ examples: |-
 @z
 
 @x
-    ### `--quiet`
+    ### `--quiet` {#quiet}
 @y
-    ### `--quiet`
+    ### `--quiet` {#quiet}
 @z
 
 @x

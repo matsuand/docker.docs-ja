@@ -137,10 +137,12 @@ that are also attached to the network.
 @z
 
 @x
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](/manuals/engine/daemon/ipv6.md).
+`enable_ipv6` enables IPv6 address assignment.
 @y
-`enable_ipv6` enables IPv6 networking. For an example, see step four of [Create an IPv6 network](manuals/engine/daemon/ipv6.md).
+`enable_ipv6` enables IPv6 address assignment.
 @z
+
+% snip code...
 
 @x
 ### `external`

@@ -80,9 +80,9 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 @z
 
 @x
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
 @y
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
 @z
 
 @x

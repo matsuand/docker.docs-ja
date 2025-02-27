@@ -95,12 +95,12 @@ examples: |-
 
 @x
     The `--timeout` flag sets the number of seconds to wait for the container
-    to stop after sending the pre-defined (see [`--signal`]{#signal)) system call signal.
+    to stop after sending the pre-defined (see [`--signal`](#signal)) system call signal.
     If the container does not exit after the timeout elapses, it's forcibly killed
     with a `SIGKILL` signal.
 @y
     The `--timeout` flag sets the number of seconds to wait for the container
-    to stop after sending the pre-defined (see [`--signal`]{#signal)) system call signal.
+    to stop after sending the pre-defined (see [`--signal`](#signal)) system call signal.
     If the container does not exit after the timeout elapses, it's forcibly killed
     with a `SIGKILL` signal.
 @z

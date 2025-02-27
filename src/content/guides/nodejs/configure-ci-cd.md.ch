@@ -79,7 +79,7 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 @z
 
 @x
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as value.
+3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
 @y
 3. **Repository variable** (リポジトリ変数) として新たに `DOCKER_USERNAME` という名前の変数を生成します。
    その変数値にはご自身の Docker ID を設定します。

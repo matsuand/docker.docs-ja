@@ -9,71 +9,6 @@ long: |-
     pass with the `--token` flag. If you pass a manager token, the node joins as a manager. If you
     pass a worker token, the node joins as a worker.
 usage: docker swarm join [OPTIONS] HOST:PORT
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: advertise-addr
-      value_type: string
-      description: 'Advertised address (format: `<ip|interface>[:port]`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: availability
-      value_type: string
-      default_value: active
-      description: Availability of the node (`active`, `pause`, `drain`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: data-path-addr
-      value_type: string
-      description: |
-        Address or interface to use for data path traffic (format: `<ip|interface>`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.31"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: listen-addr
-      value_type: node-addr
-      default_value: 0.0.0.0:2377
-      description: 'Listen address (format: `<ip|interface>[:port]`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: token
-      value_type: string
-      description: Token for entry into the swarm
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Join a node to swarm as a manager
 @y
 command: docker swarm join
 short: Join a swarm as a node and/or manager
@@ -82,69 +17,54 @@ long: |-
     pass with the `--token` flag. If you pass a manager token, the node joins as a manager. If you
     pass a worker token, the node joins as a worker.
 usage: docker swarm join [OPTIONS] HOST:PORT
-pname: docker swarm
-plink: docker_swarm.yaml
-options:
-    - option: advertise-addr
-      value_type: string
+@z
+
+% options:
+
+@x advertise-addr
       description: 'Advertised address (format: `<ip|interface>[:port]`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: availability
-      value_type: string
-      default_value: active
+@y
+      description: 'Advertised address (format: `<ip|interface>[:port]`)'
+@z
+
+@x availability
       description: Availability of the node (`active`, `pause`, `drain`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: data-path-addr
-      value_type: string
+@y
+      description: Availability of the node (`active`, `pause`, `drain`)
+@z
+
+@x data-path-addr
       description: |
         Address or interface to use for data path traffic (format: `<ip|interface>`)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.31"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: listen-addr
-      value_type: node-addr
-      default_value: 0.0.0.0:2377
+@y
+      description: |
+        Address or interface to use for data path traffic (format: `<ip|interface>`)
+@z
+
+@x listen-addr
       description: 'Listen address (format: `<ip|interface>[:port]`)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: token
-      value_type: string
+@y
+      description: 'Listen address (format: `<ip|interface>[:port]`)'
+@z
+
+@x token
       description: Token for entry into the swarm
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Token for entry into the swarm
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    ### Join a node to swarm as a manager
+@y
 examples: |-
     ### Join a node to swarm as a manager
 @z
@@ -155,29 +75,7 @@ examples: |-
     The example below demonstrates joining a manager node using a manager token.
 @z
 
-@x
-    ```console
-    $ docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2 192.168.99.121:2377
-    This node joined a swarm as a manager.
-@y
-    ```console
-    $ docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-7p73s1dx5in4tatdymyhg9hu2 192.168.99.121:2377
-    This node joined a swarm as a manager.
-@z
-
-@x
-    $ docker node ls
-    ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
-    dkp8vy1dq1kxleu9g4u78tlag *  manager2  Ready   Active        Reachable
-    dvfxp4zseq4s0rih1selh0d20    manager1  Ready   Active        Leader
-    ```
-@y
-    $ docker node ls
-    ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
-    dkp8vy1dq1kxleu9g4u78tlag *  manager2  Ready   Active        Reachable
-    dvfxp4zseq4s0rih1selh0d20    manager1  Ready   Active        Leader
-    ```
-@z
+% snip command...
 
 @x
     A cluster should only have 3-7 managers at most, because a majority of managers must be available
@@ -201,36 +99,12 @@ examples: |-
     The example below demonstrates joining a worker node using a worker token.
 @z
 
-@x
-    ```console
-    $ docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx 192.168.99.121:2377
-    This node joined a swarm as a worker.
-@y
-    ```console
-    $ docker swarm join --token SWMTKN-1-3pu6hszjas19xyp7ghgosyx9k8atbfcr8p2is99znpy26u2lkl-1awxwuwd3z9j1z3puu7rcgdbx 192.168.99.121:2377
-    This node joined a swarm as a worker.
-@z
+% snip command...
 
 @x
-    $ docker node ls
-    ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
-    7ln70fl22uw2dvjn2ft53m3q5    worker2   Ready   Active
-    dkp8vy1dq1kxleu9g4u78tlag    worker1   Ready   Active        Reachable
-    dvfxp4zseq4s0rih1selh0d20 *  manager1  Ready   Active        Leader
-    ```
+    ### `--listen-addr value` {#listen-addr}
 @y
-    $ docker node ls
-    ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
-    7ln70fl22uw2dvjn2ft53m3q5    worker2   Ready   Active
-    dkp8vy1dq1kxleu9g4u78tlag    worker1   Ready   Active        Reachable
-    dvfxp4zseq4s0rih1selh0d20 *  manager1  Ready   Active        Leader
-    ```
-@z
-
-@x
-    ### `--listen-addr value`
-@y
-    ### `--listen-addr value`
+    ### `--listen-addr value` {#listen-addr}
 @z
 
 @x
@@ -258,9 +132,9 @@ examples: |-
 @z
 
 @x
-    ### `--advertise-addr value`
+    ### `--advertise-addr value` {#advertise-addr}
 @y
-    ### `--advertise-addr value`
+    ### `--advertise-addr value` {#advertise-addr}
 @z
 
 @x
@@ -308,9 +182,9 @@ examples: |-
 @z
 
 @x
-    ### `--data-path-addr`
+    ### `--data-path-addr` {#data-path-addr}
 @y
-    ### `--data-path-addr`
+    ### `--data-path-addr` {#data-path-addr}
 @z
 
 @x
@@ -330,9 +204,9 @@ examples: |-
 @z
 
 @x
-    ### `--token string`
+    ### `--token string` {#token}
 @y
-    ### `--token string`
+    ### `--token string` {#token}
 @z
 
 @x
@@ -342,9 +216,9 @@ examples: |-
 @z
 
 @x
-    ### `--availability`
+    ### `--availability` {#availability}
 @y
-    ### `--availability`
+    ### `--availability` {#availability}
 @z
 
 @x
@@ -359,22 +233,10 @@ examples: |-
     This flag is useful in certain situations. For example, a cluster may want to have
     dedicated manager nodes that are not served as worker nodes. This could be achieved
     by passing `--availability=drain` to `docker swarm join`.
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
     This flag is useful in certain situations. For example, a cluster may want to have
     dedicated manager nodes that are not served as worker nodes. This could be achieved
     by passing `--availability=drain` to `docker swarm join`.
-deprecated: false
-hidden: false
-min_api_version: "1.24"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @z
+
+% snip directives...

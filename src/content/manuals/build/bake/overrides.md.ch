@@ -110,25 +110,7 @@ If more than one Bake file is found, all files are loaded and merged into a
 single definition. Files are merged according to the lookup order.
 @z
 
-@x
-```console
-$ docker buildx bake bake --print
-[+] Building 0.0s (1/1) FINISHED                                                                                                                                                                                            
- => [internal] load local bake definitions                                                                                                                                                                             0.0s
- => => reading compose.yaml 45B / 45B                                                                                                                                                                                  0.0s
- => => reading docker-bake.hcl 113B / 113B                                                                                                                                                                             0.0s
- => => reading docker-bake.override.hcl 65B / 65B
-```
-@y
-```console
-$ docker buildx bake bake --print
-[+] Building 0.0s (1/1) FINISHED                                                                                                                                                                                            
- => [internal] load local bake definitions                                                                                                                                                                             0.0s
- => => reading compose.yaml 45B / 45B                                                                                                                                                                                  0.0s
- => => reading docker-bake.hcl 113B / 113B                                                                                                                                                                             0.0s
- => => reading docker-bake.override.hcl 65B / 65B
-```
-@z
+% snip command...
 
 @x
 If merged files contain duplicate attribute definitions, those definitions are
@@ -154,43 +136,7 @@ For example, given the following files:
 For example, given the following files:
 @z
 
-@x
-```hcl {title=docker-bake.hcl}
-variable "TAG" {
-  default = "foo"
-}
-@y
-```hcl {title=docker-bake.hcl}
-variable "TAG" {
-  default = "foo"
-}
-@z
-
-@x
-target "default" {
-  tags = ["username/my-app:${TAG}"]
-}
-```
-@y
-target "default" {
-  tags = ["username/my-app:${TAG}"]
-}
-```
-@z
-
-@x
-```hcl {title=docker-bake.override.hcl}
-variable "TAG" {
-  default = "bar"
-}
-```
-@y
-```hcl {title=docker-bake.override.hcl}
-variable "TAG" {
-  default = "bar"
-}
-```
-@z
+% snip code...
 
 @x
 Since `docker-bake.override.hcl` is loaded last in the default lookup order,
@@ -200,33 +146,7 @@ Since `docker-bake.override.hcl` is loaded last in the default lookup order,
 the `TAG` variable is overridden with the value `bar`.
 @z
 
-@x
-```console
-$ docker buildx bake --print
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/my-app:bar"]
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": ["username/my-app:bar"]
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 ### Manual file overrides
@@ -254,43 +174,7 @@ following example shows how to load an `override.hcl` file that sets the `TAG`
 variable to `bar`. The `TAG` variable is then used in the `default` target.
 @z
 
-@x
-```hcl {title=docker-bake.hcl}
-variable "TAG" {
-  default = "foo"
-}
-@y
-```hcl {title=docker-bake.hcl}
-variable "TAG" {
-  default = "foo"
-}
-@z
-
-@x
-target "default" {
-  tags = ["username/my-app:${TAG}"]
-}
-```
-@y
-target "default" {
-  tags = ["username/my-app:${TAG}"]
-}
-```
-@z
-
-@x
-```hcl {title=overrides.hcl}
-variable "TAG" {
-  default = "bar"
-}
-```
-@y
-```hcl {title=overrides.hcl}
-variable "TAG" {
-  default = "bar"
-}
-```
-@z
+% snip code...
 
 @x
 Printing the build configuration without the `--file` flag shows the `TAG`
@@ -300,37 +184,7 @@ Printing the build configuration without the `--file` flag shows the `TAG`
 variable is set to the default value `foo`.
 @z
 
-@x
-```console
-$ docker buildx bake --print
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": [
-        "username/my-app:foo"
-      ]
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake --print
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": [
-        "username/my-app:foo"
-      ]
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 Using the `--file` flag to load the `overrides.hcl` file overrides the `TAG`
@@ -340,37 +194,7 @@ Using the `--file` flag to load the `overrides.hcl` file overrides the `TAG`
 variable with the value `bar`.
 @z
 
-@x
-```console
-$ docker buildx bake -f docker-bake.hcl -f overrides.hcl --print
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": [
-        "username/my-app:bar"
-      ]
-    }
-  }
-}
-```
-@y
-```console
-$ docker buildx bake -f docker-bake.hcl -f overrides.hcl --print
-{
-  "target": {
-    "default": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": [
-        "username/my-app:bar"
-      ]
-    }
-  }
-}
-```
-@z
+% snip command...
 
 @x
 ## Command line
@@ -386,77 +210,9 @@ You can also override target configurations from the command line with the
 [`--set` flag](reference/cli/docker/buildx/bake.md#set):
 @z
 
-@x
-```hcl
-# docker-bake.hcl
-target "app" {
-  args = {
-    mybuildarg = "foo"
-  }
-}
-```
-@y
-```hcl
-# docker-bake.hcl
-target "app" {
-  args = {
-    mybuildarg = "foo"
-  }
-}
-```
-@z
-
-@x
-```console
-$ docker buildx bake --set app.args.mybuildarg=bar --set app.platform=linux/arm64 app --print
-```
-@y
-```console
-$ docker buildx bake --set app.args.mybuildarg=bar --set app.platform=linux/arm64 app --print
-```
-@z
-
-@x
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["app"]
-    }
-  },
-  "target": {
-    "app": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "args": {
-        "mybuildarg": "bar"
-      },
-      "platforms": ["linux/arm64"]
-    }
-  }
-}
-```
-@y
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["app"]
-    }
-  },
-  "target": {
-    "app": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "args": {
-        "mybuildarg": "bar"
-      },
-      "platforms": ["linux/arm64"]
-    }
-  }
-}
-```
-@z
+% snip code...
+% snip command...
+% snip output...
 
 @x
 Pattern matching syntax defined in [https://golang.org/pkg/path/#Match](https://golang.org/pkg/path/#Match)
@@ -466,19 +222,7 @@ Pattern matching syntax defined in [https://golang.org/pkg/path/#Match](https://
 is also supported:
 @z
 
-@x
-```console
-$ docker buildx bake --set foo*.args.mybuildarg=value  # overrides build arg for all targets starting with "foo"
-$ docker buildx bake --set *.platform=linux/arm64      # overrides platform for all targets
-$ docker buildx bake --set foo*.no-cache               # bypass caching only for targets starting with "foo"
-```
-@y
-```console
-$ docker buildx bake --set foo*.args.mybuildarg=value  # overrides build arg for all targets starting with "foo"
-$ docker buildx bake --set *.platform=linux/arm64      # overrides platform for all targets
-$ docker buildx bake --set foo*.no-cache               # bypass caching only for targets starting with "foo"
-```
-@z
+% snip command...
 
 @x
 Complete list of attributes that can be overridden with `--set` are:
@@ -520,45 +264,8 @@ The following example shows how you can define a `TAG` variable with a default
 value in the Bake file, and override it with an environment variable.
 @z
 
-@x
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@y
-```hcl
-variable "TAG" {
-  default = "latest"
-}
-@z
-
-@x
-target "default" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@y
-target "default" {
-  context = "."
-  dockerfile = "Dockerfile"
-  tags = ["docker.io/username/webapp:${TAG}"]
-}
-```
-@z
-
-@x
-```console
-$ export TAG=$(git rev-parse --short HEAD)
-$ docker buildx bake --print webapp
-```
-@y
-```console
-$ export TAG=$(git rev-parse --short HEAD)
-$ docker buildx bake --print webapp
-```
-@z
+% snip code...
+% snip command...
 
 @x
 The `TAG` variable is overridden with the value of the environment variable,
@@ -568,41 +275,7 @@ The `TAG` variable is overridden with the value of the environment variable,
 which is the short commit hash generated by `git rev-parse --short HEAD`.
 @z
 
-@x
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["webapp"]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": ["docker.io/username/webapp:985e9e9"]
-    }
-  }
-}
-```
-@y
-```json
-{
-  "group": {
-    "default": {
-      "targets": ["webapp"]
-    }
-  },
-  "target": {
-    "webapp": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "tags": ["docker.io/username/webapp:985e9e9"]
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### Type coercion
@@ -628,57 +301,7 @@ The following example defines a `PORT` variable. The `backend` target uses the
 incremented by one.
 @z
 
-@x
-```hcl
-variable "PORT" {
-  default = 3000
-}
-@y
-```hcl
-variable "PORT" {
-  default = 3000
-}
-@z
-
-@x
-group "default" {
-  targets = ["backend", "frontend"]
-}
-@y
-group "default" {
-  targets = ["backend", "frontend"]
-}
-@z
-
-@x
-target "backend" {
-  args = {
-    PORT = PORT
-  }
-}
-@y
-target "backend" {
-  args = {
-    PORT = PORT
-  }
-}
-@z
-
-@x
-target "frontend" {
-  args = {
-    PORT = add(PORT, 1)
-  }
-}
-```
-@y
-target "frontend" {
-  args = {
-    PORT = add(PORT, 1)
-  }
-}
-```
-@z
+% snip code...
 
 @x
 Overriding `PORT` using an environment variable will first coerce the value
@@ -690,72 +313,5 @@ into the expected type, an integer, before the expression in the `frontend`
 target runs.
 @z
 
-@x
-```console
-$ PORT=7070 docker buildx bake --print
-```
-@y
-```console
-$ PORT=7070 docker buildx bake --print
-```
-@z
-
-@x
-```json
-{
-  "group": {
-    "default": {
-      "targets": [
-        "backend",
-        "frontend"
-      ]
-    }
-  },
-  "target": {
-    "backend": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "args": {
-        "PORT": "7070"
-      }
-    },
-    "frontend": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "args": {
-        "PORT": "7071"
-      }
-    }
-  }
-}
-```
-@y
-```json
-{
-  "group": {
-    "default": {
-      "targets": [
-        "backend",
-        "frontend"
-      ]
-    }
-  },
-  "target": {
-    "backend": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "args": {
-        "PORT": "7070"
-      }
-    },
-    "frontend": {
-      "context": ".",
-      "dockerfile": "Dockerfile",
-      "args": {
-        "PORT": "7071"
-      }
-    }
-  }
-}
-```
-@z
+% snip command...
+% snip output...
