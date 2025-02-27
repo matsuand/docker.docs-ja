@@ -49,7 +49,6 @@ amount of consumption. See [Docker subscriptions and features](./details.md) to
 learn how much base consumption comes with each subscription. You can scale your
 consumption at any time during your subscription period. All purchased
 consumption expires at the end of your subscription term.
-amount of consumption. You can scale your consumption at any time during your subscription period. All purchased consumption expires at the end of your subscription term.
 @y
 Docker subscriptions let you scale your consumption as your needs evolve. Except
 for legacy Docker subscription plans, all paid Docker subscriptions come with
@@ -58,7 +57,6 @@ amount of consumption. See [Docker subscriptions and features](./details.md) to
 learn how much base consumption comes with each subscription. You can scale your
 consumption at any time during your subscription period. All purchased
 consumption expires at the end of your subscription term.
-amount of consumption. You can scale your consumption at any time during your subscription period. All purchased consumption expires at the end of your subscription term.
 @z
 
 @x

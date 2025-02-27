@@ -81,11 +81,15 @@ See [Loading build results](./usage/#loading-build-results) for details.
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="GitHub Actions" >}}
+## CI platform examples
 @y
-{{< tabs >}}
-{{< tab name="GitHub Actions" >}}
+## CI platform examples
+@z
+
+@x
+### GitHub Actions
+@y
+### GitHub Actions
 @z
 
 @x
@@ -129,11 +133,9 @@ See [Loading build results](./usage/#loading-build-results) for details.
 % snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="GitLab" >}}
+### GitLab
 @y
-{{< /tab >}}
-{{< tab name="GitLab" >}}
+### GitLab
 @z
 
 @x within code
@@ -148,11 +150,9 @@ See [Loading build results](./usage/#loading-build-results) for details.
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Circle CI" >}}
+### Circle CI
 @y
-{{< /tab >}}
-{{< tab name="Circle CI" >}}
+### Circle CI
 @z
 
 @x within code...
@@ -167,11 +167,9 @@ See [Loading build results](./usage/#loading-build-results) for details.
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Buildkite" >}}
+### Buildkite
 @y
-{{< /tab >}}
-{{< tab name="Buildkite" >}}
+### Buildkite
 @z
 
 @x
@@ -237,31 +235,25 @@ Create the `build.sh` script:
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Jenkins" >}}
+### Jenkins
 @y
-{{< /tab >}}
-{{< tab name="Jenkins" >}}
+### Jenkins
 @z
 
 % snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="Travis CI" >}}
+### Travis CI
 @y
-{{< /tab >}}
-{{< tab name="Travis CI" >}}
+### Travis CI
 @z
 
 % snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="BitBucket Pipelines" >}}
+### BitBucket Pipelines 
 @y
-{{< /tab >}}
-{{< tab name="BitBucket Pipelines" >}}
+### BitBucket Pipelines 
 @z
 
 @x within code
@@ -275,11 +267,9 @@ Create the `build.sh` script:
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Shell" >}}
+### Shell script
 @y
-{{< /tab >}}
-{{< tab name="Shell" >}}
+### Shell script
 @z
 
 @x within code
@@ -314,11 +304,9 @@ Create the `build.sh` script:
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Docker Compose" >}}
+### Docker Compose
 @y
-{{< /tab >}}
-{{< tab name="Docker Compose" >}}
+### Docker Compose
 @z
 
 @x
@@ -399,12 +387,4 @@ docker compose build
 # Build the image build
 docker compose build
 ```
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z

@@ -103,8 +103,8 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
         url: "/build-cloud/"
       - text: "Setup"
         url: "/build-cloud/setup/"
-      - text: "Optimization"
-        url: "/build-cloud/optimization/"
+      - text: "Release notes"
+        url: "/build-cloud/release-notes/"
 @y
   - title: Docker Build Cloud
     icon: cloud
@@ -115,8 +115,8 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
         url: "build-cloud/"
       - text: "設定"
         url: "build-cloud/setup/"
-      - text: "最適化"
-        url: "build-cloud/optimization/"
+      - text: "リリースノート"
+        url: "build-cloud/release-notes/"
 @z
 
 @x

@@ -3,10 +3,12 @@
 ##
 
 bases = \
-	_index.md       \
-	ci.md           \
-	optimization.md \
-	setup.md        \
+	_index.md           \
+	builder-settings.md \
+	ci.md               \
+	optimization.md     \
+	release-notes.md    \
+	setup.md            \
 	usage.md
 
 include $(top_srcdir)/build-aux/common.mk

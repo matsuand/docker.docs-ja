@@ -238,10 +238,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md       \
-	ci.md           \
-	optimization.md \
-	setup.md        \
+	_index.md           \
+	builder-settings.md \
+	ci.md               \
+	optimization.md     \
+	release-notes.md    \
+	setup.md            \
 	usage.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
