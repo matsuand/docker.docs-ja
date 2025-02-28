@@ -266,9 +266,3 @@ In the next section, you'll learn how to properly configure the application with
 @y
 In the next section, you'll learn how to properly configure the application with your preferred LLM model, completely locally, using Docker.
 @z
-
-@x
-{{< button text="Develop your application" url="develop.md" >}}
-@y
-{{< button text="Develop your application" url="develop.md" >}}
-@z

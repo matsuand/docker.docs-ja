@@ -242,7 +242,9 @@ bases = \
 	configure-ci-cd.md \
 	containerize.md    \
 	deploy.md          \
-	develop.md
+	develop.md         \
+	multistage.md      \
+	security.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

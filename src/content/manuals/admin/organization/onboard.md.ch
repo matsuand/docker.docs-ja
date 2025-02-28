@@ -80,9 +80,9 @@ Before you start to onboard your organization, ensure that you:
 @z
 
 @x
-- Familiarize yourself with Docker concepts and terminology in the [glossary](/glossary/) and [FAQs](/faq/admin/general-faqs/).
+- Familiarize yourself with Docker concepts and terminology in the [administration overview](../_index.md) and [FAQs](/faq/admin/general-faqs/).
 @y
-- Familiarize yourself with Docker concepts and terminology in the [glossary](__SUBDIR__/glossary/) and [FAQs](__SUBDIR__/faq/admin/general-faqs/).
+- Familiarize yourself with Docker concepts and terminology in the [administration overview](../_index.md) and [FAQs](__SUBDIR__/faq/admin/general-faqs/).
 @z
 
 @x

@@ -3621,6 +3621,13 @@ components:
             - repo:read
           items:
             type: string
+        expires_at:
+          type: string
+          description: |
+            Optional expiration date for the token.
+            If omitted, the token will remain valid indefinitely.
+          format: date-time
+          example: '2021-10-28T18:30:19.520861Z'
     createAccessTokensResponse:
       $ref: '#/components/schemas/accessToken'
     getAccessTokensResponse:
@@ -5151,6 +5158,13 @@ components:
             - repo:read
           items:
             type: string
+        expires_at:
+          type: string
+          description: |
+            Optional expiration date for the token.
+            If omitted, the token will remain valid indefinitely.
+          format: date-time
+          example: '2021-10-28T18:30:19.520861Z'
     createAccessTokensResponse:
       $ref: '#/components/schemas/accessToken'
     getAccessTokensResponse:

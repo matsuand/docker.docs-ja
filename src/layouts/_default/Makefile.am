@@ -7,7 +7,6 @@ bases = \
 	api-baseof.html \
 	baseof.html     \
 	cli.html        \
-	glossary.html   \
 	search.html     \
 	series.html
 

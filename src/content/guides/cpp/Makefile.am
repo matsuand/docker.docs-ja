@@ -6,7 +6,9 @@ bases = \
 	configure-ci-cd.md \
 	containerize.md    \
 	deploy.md          \
-	develop.md
+	develop.md         \
+	multistage.md      \
+	security.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

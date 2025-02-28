@@ -155,8 +155,8 @@ Once you've signed up and created a builder, continue by
 
 @x
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](/manuals/security/for-admins/roles-and-permissions.md#docker-build-cloud).
+[Roles and Permissions](/manuals/security/for-admins/roles-and-permissions.md#docker-build-cloud-permissions).
 @y
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](manuals/security/for-admins/roles-and-permissions.md#docker-build-cloud).
+[Roles and Permissions](manuals/security/for-admins/roles-and-permissions.md#docker-build-cloud-permissions).
 @z

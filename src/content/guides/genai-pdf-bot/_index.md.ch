@@ -48,9 +48,3 @@ Start by containerizing an existing GenAI application.
 @y
 既存の GenAI アプリケーションをコンテナー化するところからはじめます。
 @z
-
-@x
-{{< button text="Containerize a GenAI app" url="containerize.md" >}}
-@y
-{{< button text="GenAI アプリのコンテナー化" url="containerize.md" >}}
-@z

@@ -30,9 +30,9 @@ languages: [cpp]
 
 % params:
 @x
-  time: 10 minutes
+  time: 20 minutes
 @y
-  time: 10 分
+  time: 20 分
 @z
 
 @x
@@ -45,23 +45,28 @@ The C++ getting started guide teaches you how to create a containerized C++ appl
 @x
 > **Acknowledgment**
 >
-> Docker would like to thank [Pradumna Saraf](https://twitter.com/pradumna_saraf) for his contribution to this guide.
+> Docker would like to thank [Pradumna Saraf](https://twitter.com/pradumna_saraf) and [Mohammad-Ali A'râbi](https://twitter.com/MohammadAliEN) for their contribution to this guide.
+
 @y
 > **謝辞**
 >
-> Docker では、このガイドを提供してくれた [Pradumna Saraf](https://twitter.com/pradumna_saraf) に感謝します。
+> Docker では、このガイドを提供してくれた [Pradumna Saraf](https://twitter.com/pradumna_saraf) と [Mohammad-Ali A'râbi](https://twitter.com/MohammadAliEN) に感謝します。
 @z
 
 @x
-- Containerize and run a C++ application
+- Containerize and run a C++ application using a multi-stage Docker build
+- Build and run a C++ application using Docker Compose
 - Set up a local environment to develop a C++ application using containers
 - Configure a CI/CD pipeline for a containerized C++ application using GitHub Actions
 - Deploy your containerized application locally to Kubernetes to test and debug your deployment
+- Use BuildKit to generate SBOM attestations during the build process
 @y
-- C++ アプリケーションをコンテナー化して実行します。
+- マルチステージビルドにより C++ アプリケーションをコンテナー化して実行します。
+- Docker Compose を使って C++ アプリケーションをビルドして実行します。
 - コンテナーを利用して C++ アプリケーションを開発するローカル環境を構築します。
 - GitHub アクションを使って、コンテナー化した C++ アプリケーションの CI/CD パイプラインを設定します。
 - コンテナー化した C++ アプリケーションをローカルな Kubernetes にデプロイして、テストおよびデバッグを行います。
+- ビルドの過程で BuildKit を使って SBOM 認証を生成します。
 @z
 
 @x

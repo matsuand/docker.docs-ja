@@ -6,18 +6,18 @@
 
 @x
 title: Containerize a C++ application
-linkTitle: Containerize your app
+linkTitle: Build and run a C++ application using Docker Compose
 @y
 title: C++ アプリケーションのコンテナー化
-linkTitle: アプリのコンテナー化
+linkTitle: Docker Compose を使った C++ アプリケーションのビルドと実行
 @z
 
 @x
 keywords: C++, containerize, initialize
-description: Learn how to containerize a C++ application.
+description: Learn how to use Docker Compose to build and run a C++ application.
 @y
 keywords: C++, containerize, initialize
-description: C++ アプリケーションのコンテナー化について学びます。
+description: Docker Compose を使って C++ アプリケーションのビルドと実行について学びます。
 @z
 
 @x
@@ -40,9 +40,9 @@ description: C++ アプリケーションのコンテナー化について学び
 @z
 
 @x
-This section walks you through containerizing and running a C++ application.
+This section walks you through containerizing and running a C++ application, using Docker Compose.
 @y
-本節では C++ アプリケーションをコンテナー化して実行する手順を示していきます。
+本節では Docker Compose を使って C++ アプリケーションをコンテナー化し実行する手順を示していきます。
 @z
 
 @x
@@ -52,20 +52,19 @@ This section walks you through containerizing and running a C++ application.
 @z
 
 @x
-Clone the sample application to use with this guide. Open a terminal, change directory to a directory that you want to work in, and run the following command to clone the repository:
+We're using the same sample repository that you used in the previous sections of this guide. If you haven't already cloned the repository, clone it now:
 @y
-本ガイドにおいて利用するサンプルアプリケーションをクローンします。
-端末画面を開いて、作業を行うディレクトリに移動します。
-そして以下のコマンドを実行してリポジトリをクローンします。
+ここでは本ガイドの前節にて利用したサンプルリポジトリを再度利用します。
+リポジトリのクローンを取得していない場合は、ここでクローンを取得します。
 @z
 
 % snip command...
 
 @x
-You should now have the following contents in your `c-plus-plus-docker`
+You should now have the following contents in your `c-plus-plus-docker` (root)
 directory.
 @y
-上により `c-plus-plus-docker` ディレクトリ内は以下の内容となるはずです。
+上により `c-plus-plus-docker` (ルート) ディレクトリ内は以下の内容となるはずです。
 @z
 
 % snip text...

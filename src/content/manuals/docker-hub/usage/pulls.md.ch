@@ -99,12 +99,10 @@ A pull is defined as the following:
 
 @x
 Pulls from authenticated users can be attributed to either a personal or an
-organization
-[namespace](/reference/glossary/#organization-name).
+[organization namespace](/manuals/admin/faqs/general-faqs.md#whats-an-organization-name-or-namespace).
 @y
 Pulls from authenticated users can be attributed to either a personal or an
-organization
-[namespace](reference/glossary/#organization-name).
+[organization namespace](manuals/admin/faqs/general-faqs.md#whats-an-organization-name-or-namespace).
 @z
 
 @x
