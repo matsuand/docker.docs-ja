@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Learn about pull usage and limits for Docker Hub.
@@ -425,33 +426,17 @@ To view your current pull rate and limit:
    - To get a token anonymously, if you are pulling anonymously:
 @z
 
-@x
-      ```console
-      $ TOKEN=$(curl "https://auth.docker.io/token?service=registry.docker.io&scope=repository:ratelimitpreview/test:pull" | jq -r .token)
-      ```
-@y
-      ```console
-      $ TOKEN=$(curl "https://auth.docker.io/token?service=registry.docker.io&scope=repository:ratelimitpreview/test:pull" | jq -r .token)
-      ```
-@z
+% snip command...
 
 @x
-   - To get a token with a user account, if you are authenticated (insert your
-     username and password in the following command):
+   - To get a token with a user account, if you are authenticated, insert your
+     username and password in the following command:
 @y
-   - To get a token with a user account, if you are authenticated (insert your
-     username and password in the following command):
+   - To get a token with a user account, if you are authenticated, insert your
+     username and password in the following command:
 @z
 
-@x
-      ```console
-      $ TOKEN=$(curl --user 'username:password' "https://auth.docker.io/token?service=registry.docker.io&scope=repository:ratelimitpreview/test:pull" | jq -r .token)
-      ```
-@y
-      ```console
-      $ TOKEN=$(curl --user 'username:password' "https://auth.docker.io/token?service=registry.docker.io&scope=repository:ratelimitpreview/test:pull" | jq -r .token)
-      ```
-@z
+% snip command...
 
 @x
 2. Get the headers that contain your limits. These headers are returned on both
@@ -463,15 +448,7 @@ To view your current pull rate and limit:
    limit. Using HEAD won't.
 @z
 
-@x
-   ```console
-   $ curl --head -H "Authorization: Bearer $TOKEN" https://registry-1.docker.io/v2/ratelimitpreview/test/manifests/latest
-   ```
-@y
-   ```console
-   $ curl --head -H "Authorization: Bearer $TOKEN" https://registry-1.docker.io/v2/ratelimitpreview/test/manifests/latest
-   ```
-@z
+% snip command...
 
 @x
 3. Examine the headers. You should see the following headers.
@@ -479,26 +456,14 @@ To view your current pull rate and limit:
 3. Examine the headers. You should see the following headers.
 @z
 
-@x
-   ```text
-   ratelimit-limit: 100;w=21600
-   ratelimit-remaining: 76;w=21600
-   docker-ratelimit-source: 192.0.2.1
-   ```
-@y
-   ```text
-   ratelimit-limit: 100;w=21600
-   ratelimit-remaining: 76;w=21600
-   docker-ratelimit-source: 192.0.2.1
-   ```
-@z
+% snip code...
 
 @x
-   In the previous example, the pull limit is 100 pulls per 21600 seconds (6
-   hours), and there are 76 pulls remaining.
+   In the previous example, the pull limit is 100 pulls per 3600 seconds (1
+   hour), and there are 20 pulls remaining.
 @y
-   In the previous example, the pull limit is 100 pulls per 21600 seconds (6
-   hours), and there are 76 pulls remaining.
+   In the previous example, the pull limit is 100 pulls per 3600 seconds (1
+   hour), and there are 20 pulls remaining.
 @z
 
 @x

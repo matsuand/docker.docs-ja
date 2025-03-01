@@ -308,13 +308,13 @@ To empty a volume:
 @z
 
 @x
-You can export the content of a volume to a local file, a local image, an to an
+You can export the content of a volume to a local file, a local image, and to an
 image in Docker Hub, or to a supported cloud provider. When exporting content
 from a volume used by one or more running containers, the containers are
 temporarily stopped while Docker exports the content, and then restarted when
 the export process is completed.
 @y
-You can export the content of a volume to a local file, a local image, an to an
+You can export the content of a volume to a local file, a local image, and to an
 image in Docker Hub, or to a supported cloud provider. When exporting content
 from a volume used by one or more running containers, the containers are
 temporarily stopped while Docker exports the content, and then restarted when

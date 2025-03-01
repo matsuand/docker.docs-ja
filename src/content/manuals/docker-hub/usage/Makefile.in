@@ -238,10 +238,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md  \
-	manage.md  \
-	pulls.md   \
-	repositories.md
+	_index.md \
+	manage.md \
+	pulls.md 
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

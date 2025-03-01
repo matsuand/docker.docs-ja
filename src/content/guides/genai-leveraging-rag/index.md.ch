@@ -94,9 +94,9 @@ The system operates as follows:
 @z
 
 @x
-To hold this vector information in a efficient manner, we need a special type of database.
+To hold this vector information in an efficient manner, we need a special type of database.
 @y
-To hold this vector information in a efficient manner, we need a special type of database.
+To hold this vector information in an efficient manner, we need a special type of database.
 @z
 
 @x

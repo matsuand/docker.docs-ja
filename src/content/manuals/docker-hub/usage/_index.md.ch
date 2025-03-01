@@ -46,17 +46,9 @@ user type, subject to fair use:
 @z
 
 @x
-For more details, see the following:
+For more details, see [Pull usage and limits](./pulls.md).
 @y
-For more details, see the following:
-@z
-
-@x
-- [Pull usage and limits](./pulls.md)
-- [Docker Hub repositories](./repositories.md)
-@y
-- [Pull usage and limits](./pulls.md)
-- [Docker Hub repositories](./repositories.md)
+For more details, see [Pull usage and limits](./pulls.md).
 @z
 
 @x

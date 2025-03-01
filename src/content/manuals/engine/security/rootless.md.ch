@@ -903,9 +903,9 @@ The value is automatically set to `/run/user/$UID` and cleaned up on every logou
 @z
 
 @x
-This error occurs mostly when you switch from the root user to an non-root user with `sudo`:
+This error occurs mostly when you switch from the root user to a non-root user with `sudo`:
 @y
-This error occurs mostly when you switch from the root user to an non-root user with `sudo`:
+This error occurs mostly when you switch from the root user to a non-root user with `sudo`:
 @z
 
 % snip command...

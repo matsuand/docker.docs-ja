@@ -201,9 +201,9 @@ A base `compose.yaml` file:
 % snip code...
 
 @x
-And an `compose.override.yaml` file:
+And a `compose.override.yaml` file:
 @y
-And an `compose.override.yaml` file:
+And a `compose.override.yaml` file:
 @z
 
 % snip code...
