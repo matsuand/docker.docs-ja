@@ -26,6 +26,46 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.33.1 
+@y
+## 2.33.1 
+@z
+
+@x
+{{< release-date date="2025-02-21" >}}
+@y
+{{< release-date date="2025-02-21" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added support for `gw_priority`, `enable_ipv4` (requires Docker v28.0) 
+- Fixed an issue with the navigation menu
+- Improved error message when using non-file secret/config with read-only service
+@y
+- Added support for `gw_priority`, `enable_ipv4` (requires Docker v28.0) 
+- Fixed an issue with the navigation menu
+- Improved error message when using non-file secret/config with read-only service
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.0.0
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.0.0
+@z
+
+@x
 ## 2.33.0
 @y
 ## 2.33.0
@@ -724,12 +764,12 @@ For more detailed information, see the [release notes in the Compose repo](https
 @x
 - Fixed the docs on `docker compose kill` usage.
 - Fixed redundant condition from `toAPIBuildOptions` in build.go.
-- Fixed initial Watch `sync` after Compose restarts with introduction of `x-initSync`.
+- Fixed initial Watch `sync` after Compose restarts with introduction of `x-initialSync`.
 - Fixed an issue which stopped the Compose process for a single container on `sync-restart` Watch action.
 @y
 - Fixed the docs on `docker compose kill` usage.
 - Fixed redundant condition from `toAPIBuildOptions` in build.go.
-- Fixed initial Watch `sync` after Compose restarts with introduction of `x-initSync`.
+- Fixed initial Watch `sync` after Compose restarts with introduction of `x-initialSync`.
 - Fixed an issue which stopped the Compose process for a single container on `sync-restart` Watch action.
 @z
 

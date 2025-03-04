@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Guide to using Docker Compose in production
@@ -67,14 +68,14 @@ production. These changes might include:
 
 @x
 For this reason, consider defining an additional Compose file, for example
-`production.yml`, which specifies production-appropriate
+`compose.production.yaml`, which specifies production-appropriate
 configuration. This configuration file only needs to include the changes you want to make from the original Compose file. The additional Compose file
-is then applied over the original `compose.yml` to create a new configuration.
+is then applied over the original `compose.yaml` to create a new configuration.
 @y
 For this reason, consider defining an additional Compose file, for example
-`production.yml`, which specifies production-appropriate
+`compose.production.yaml`, which specifies production-appropriate
 configuration. This configuration file only needs to include the changes you want to make from the original Compose file. The additional Compose file
-is then applied over the original `compose.yml` to create a new configuration.
+is then applied over the original `compose.yaml` to create a new configuration.
 @z
 
 @x
@@ -85,15 +86,7 @@ Once you have a second configuration file, you can use it with the
 `-f` option:
 @z
 
-@x
-```console
-$ docker compose -f compose.yml -f production.yml up -d
-```
-@y
-```console
-$ docker compose -f compose.yml -f production.yml up -d
-```
-@z
+% snip command...
 
 @x
 See [Using multiple compose files](multiple-compose-files/_index.md) for a more complete example, and other options.
@@ -117,17 +110,7 @@ recreate your app's containers. To redeploy a service called
 `web`, use:
 @z
 
-@x
-```console
-$ docker compose build web
-$ docker compose up --no-deps -d web
-```
-@y
-```console
-$ docker compose build web
-$ docker compose up --no-deps -d web
-```
-@z
+% snip command...
 
 @x
 This first command rebuilds the image for `web` and then stops, destroys, and recreates

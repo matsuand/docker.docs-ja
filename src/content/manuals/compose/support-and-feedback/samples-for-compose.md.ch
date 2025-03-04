@@ -39,18 +39,18 @@ The samples should help you to:
 
 @x
 - Define services based on Docker images using
-  [Compose files](/reference/compose-file/_index.md): `compose.yml` and
+  [Compose files](/reference/compose-file/_index.md): `compose.yaml` and
   `docker-stack.yml`
-- Understand the relationship between `compose.yml` and
+- Understand the relationship between `compose.yaml` and
   [Dockerfiles](/reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](/manuals/engine/swarm/_index.md)
 @y
 - Define services based on Docker images using
-  [Compose files](reference/compose-file/_index.md): `compose.yml` and
+  [Compose files](reference/compose-file/_index.md): `compose.yaml` and
   `docker-stack.yml`
-- Understand the relationship between `compose.yml` and
-  [Dockerfiles](__SUBDIR__/reference/dockerfile/)
+- Understand the relationship between `compose.yaml` and
+  [Dockerfiles](reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](manuals/engine/swarm/_index.md)
 @z

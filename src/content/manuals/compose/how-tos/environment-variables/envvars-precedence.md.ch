@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Environment variables precedence in Docker Compose
@@ -63,37 +64,7 @@ In the following example, a different value for the same environment variable in
 In the following example, a different value for the same environment variable in an `.env` file and with the `environment` attribute in the Compose file:
 @z
 
-@x
-```console
-$ cat ./webapp.env
-NODE_ENV=test
-@y
-```console
-$ cat ./webapp.env
-NODE_ENV=test
-@z
-
-@x
-$ cat compose.yml
-services:
-  webapp:
-    image: 'webapp'
-    env_file:
-     - ./webapp.env
-    environment:
-     - NODE_ENV=production
-```
-@y
-$ cat compose.yml
-services:
-  webapp:
-    image: 'webapp'
-    env_file:
-     - ./webapp.env
-    environment:
-     - NODE_ENV=production
-```
-@z
+% snip command...
 
 @x
 The environment variable defined with the `environment` attribute takes precedence.
@@ -101,17 +72,7 @@ The environment variable defined with the `environment` attribute takes preceden
 The environment variable defined with the `environment` attribute takes precedence.
 @z
 
-@x
-```console
-$ docker compose run webapp env | grep NODE_ENV
-NODE_ENV=production
-```
-@y
-```console
-$ docker compose run webapp env | grep NODE_ENV
-NODE_ENV=production
-```
-@z
+% snip command...
 
 @x
 ## Advanced example 

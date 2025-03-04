@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Extension metadata
 linkTitle: Metadata
@@ -35,25 +37,7 @@ The format of the `metadata.json` file must be:
 The format of the `metadata.json` file must be:
 @z
 
-@x
-```json
-{
-    "icon": "extension-icon.svg",
-    "ui": ...
-    "vm": ...
-    "host": ...
-}
-```
-@y
-```json
-{
-    "icon": "extension-icon.svg",
-    "ui": ...
-    "vm": ...
-    "host": ...
-}
-```
-@z
+% snip code...
 
 @x
 The `ui`, `vm`, and `host` sections are optional and depend on what a given extension provides. They describe the extension content to be installed.
@@ -73,29 +57,7 @@ The `ui` section defines a new tab that's added to the dashboard in Docker Deskt
 The `ui` section defines a new tab that's added to the dashboard in Docker Desktop. It follows the form:
 @z
 
-@x
-```json
-"ui":{
-    "dashboard-tab":
-    {
-        "title":"MyTitle",
-        "root":"/ui",
-        "src":"index.html"
-    }
-}
-```
-@y
-```json
-"ui":{
-    "dashboard-tab":
-    {
-        "title":"MyTitle",
-        "root":"/ui",
-        "src":"index.html"
-    }
-}
-```
-@z
+% snip code...
 
 @x
 `root` specifies the folder where the UI code is within the extension image filesystem.
@@ -119,25 +81,13 @@ Other UI extension points will be available in the future.
 
 @x
 The `vm` section defines a backend service that runs inside the Desktop VM. It must define either an `image` or a
-`docker-compose.yaml` file that specifies what service to run in the Desktop VM.
+`compose.yaml` file that specifies what service to run in the Desktop VM.
 @y
 The `vm` section defines a backend service that runs inside the Desktop VM. It must define either an `image` or a
-`docker-compose.yaml` file that specifies what service to run in the Desktop VM.
+`compose.yaml` file that specifies what service to run in the Desktop VM.
 @z
 
-@x
-```json
-"vm": {
-    "image":"${DESKTOP_PLUGIN_IMAGE}"
-},
-```
-@y
-```json
-"vm": {
-    "image":"${DESKTOP_PLUGIN_IMAGE}"
-},
-```
-@z
+% snip code...
 
 @x
 When you use `image`, a default compose file is generated for the extension.
@@ -155,19 +105,7 @@ When you use `image`, a default compose file is generated for the extension.
 > things easier for extension development.
 @z
 
-@x
-```json
-"vm": {
-    "composefile": "docker-compose.yaml"
-},
-```
-@y
-```json
-"vm": {
-    "composefile": "docker-compose.yaml"
-},
-```
-@z
+% snip code...
 
 @x
 The Compose file, with a volume definition for example, would look like:
@@ -175,23 +113,7 @@ The Compose file, with a volume definition for example, would look like:
 The Compose file, with a volume definition for example, would look like:
 @z
 
-@x
-```yaml
-services:
-  myExtension:
-    image: ${DESKTOP_PLUGIN_IMAGE}
-    volumes:
-      - /host/path:/container/path
-```
-@y
-```yaml
-services:
-  myExtension:
-    image: ${DESKTOP_PLUGIN_IMAGE}
-    volumes:
-      - /host/path:/container/path
-```
-@z
+% snip code...
 
 @x
 ### Host section
@@ -205,55 +127,7 @@ The `host` section defines executables that Docker Desktop copies on the host.
 The `host` section defines executables that Docker Desktop copies on the host.
 @z
 
-@x
-```json
-  "host": {
-    "binaries": [
-      {
-        "darwin": [
-          {
-            "path": "/darwin/myBinary"
-          },
-        ],
-        "windows": [
-          {
-            "path": "/windows/myBinary.exe"
-          },
-        ],
-        "linux": [
-          {
-            "path": "/linux/myBinary"
-          },
-        ]
-      }
-    ]
-  }
-```
-@y
-```json
-  "host": {
-    "binaries": [
-      {
-        "darwin": [
-          {
-            "path": "/darwin/myBinary"
-          },
-        ],
-        "windows": [
-          {
-            "path": "/windows/myBinary.exe"
-          },
-        ],
-        "linux": [
-          {
-            "path": "/linux/myBinary"
-          },
-        ]
-      }
-    ]
-  }
-```
-@z
+% snip code...
 
 @x
 `binaries` defines a list of binaries Docker Desktop copies from the extension image to the host.

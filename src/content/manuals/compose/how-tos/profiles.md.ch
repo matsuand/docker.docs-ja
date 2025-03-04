@@ -41,49 +41,7 @@ Services are associated with profiles through the
 array of profile names:
 @z
 
-@x
-```yaml
-services:
-  frontend:
-    image: frontend
-    profiles: [frontend]
-@y
-```yaml
-services:
-  frontend:
-    image: frontend
-    profiles: [frontend]
-@z
-
-@x
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on: [db]
-    profiles: [debug]
-@y
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on: [db]
-    profiles: [debug]
-@z
-
-@x
-  backend:
-    image: backend
-@y
-  backend:
-    image: backend
-@z
-
-@x
-  db:
-    image: mysql
-```
-@y
-  db:
-    image: mysql
-```
-@z
+% snip code...
 
 @x
 Here the services `frontend` and `phpmyadmin` are assigned to the profiles
@@ -135,29 +93,15 @@ To start a specific profile supply the `--profile` [command-line option](referen
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @z
 
-@x
-```console
-$ docker compose --profile debug up
-```
-```console
-$ COMPOSE_PROFILES=debug docker compose up
-```
-@y
-```console
-$ docker compose --profile debug up
-```
-```console
-$ COMPOSE_PROFILES=debug docker compose up
-```
-@z
+% snip command...
 
 @x
 Both commands start the services with the `debug` profile enabled.
-In the previous `compose.yml` file, this starts the services
+In the previous `compose.yaml` file, this starts the services
 `db`, `backend` and `phpmyadmin`.
 @y
 Both commands start the services with the `debug` profile enabled.
-In the previous `compose.yml` file, this starts the services
+In the previous `compose.yaml` file, this starts the services
 `db`, `backend` and `phpmyadmin`.
 @z
 
@@ -185,25 +129,7 @@ Multiple profiles can be specified by passing multiple `--profile` flags or
 a comma-separated list for the `COMPOSE_PROFILES` environment variable:
 @z
 
-@x
-```console
-$ docker compose --profile frontend --profile debug up
-```
-@y
-```console
-$ docker compose --profile frontend --profile debug up
-```
-@z
-
-@x
-```console
-$ COMPOSE_PROFILES=frontend,debug docker compose up
-```
-@y
-```console
-$ COMPOSE_PROFILES=frontend,debug docker compose up
-```
-@z
+% snip command...
 
 @x
 If you want to enable all profiles at the same time, you can run `docker compose --profile "*"`.
@@ -229,45 +155,7 @@ manually. This can be used for one-off services and debugging tools.
 As an example consider the following configuration:
 @z
 
-@x
-```yaml
-services:
-  backend:
-    image: backend
-@y
-```yaml
-services:
-  backend:
-    image: backend
-@z
-
-@x
-  db:
-    image: mysql
-@y
-  db:
-    image: mysql
-@z
-
-@x
-  db-migrations:
-    image: backend
-    command: myapp migrate
-    depends_on:
-      - db
-    profiles:
-      - tools
-```
-@y
-  db-migrations:
-    image: backend
-    command: myapp migrate
-    depends_on:
-      - db
-    profiles:
-      - tools
-```
-@z
+% snip code...
 
 @x
 ```sh
@@ -309,57 +197,7 @@ This means that any other services the targeted service `depends_on` should eith
 - Always be started, by omitting `profiles` or having a matching profile started explicitly
 @z
 
-@x
-```yaml
-services:
-  web:
-    image: web
-@y
-```yaml
-services:
-  web:
-    image: web
-@z
-
-@x
-  mock-backend:
-    image: backend
-    profiles: ["dev"]
-    depends_on:
-      - db
-@y
-  mock-backend:
-    image: backend
-    profiles: ["dev"]
-    depends_on:
-      - db
-@z
-
-@x
-  db:
-    image: mysql
-    profiles: ["dev"]
-@y
-  db:
-    image: mysql
-    profiles: ["dev"]
-@z
-
-@x
-  phpmyadmin:
-    image: phpmyadmin
-    profiles: ["debug"]
-    depends_on:
-      - db
-```
-@y
-  phpmyadmin:
-    image: phpmyadmin
-    profiles: ["debug"]
-    depends_on:
-      - db
-```
-@z
+% snip code...
 
 @x
 ```sh
@@ -403,19 +241,7 @@ To fix this you either have to add the `debug` profile to the `db` service:
 To fix this you either have to add the `debug` profile to the `db` service:
 @z
 
-@x
-```yaml
-db:
-  image: mysql
-  profiles: ["debug", "dev"]
-```
-@y
-```yaml
-db:
-  image: mysql
-  profiles: ["debug", "dev"]
-```
-@z
+% snip code...
 
 @x
 or start the `dev` profile explicitly:
@@ -451,71 +277,15 @@ As with starting specific profiles, you can use the `--profile` [command-line op
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @z
 
-@x
-```console
-$ docker compose --profile debug down
-```
-```console
-$ COMPOSE_PROFILES=debug docker compose down
-```
-@y
-```console
-$ docker compose --profile debug down
-```
-```console
-$ COMPOSE_PROFILES=debug docker compose down
-```
-@z
+% snip command...
 
 @x
-Both commands stop and remove services with the `debug` profile. In the following `compose.yml` file, this stops the services `db` and `phpmyadmin`.
+Both commands stop and remove services with the `debug` profile. In the following `compose.yaml` file, this stops the services `db` and `phpmyadmin`.
 @y
-Both commands stop and remove services with the `debug` profile. In the following `compose.yml` file, this stops the services `db` and `phpmyadmin`.
+Both commands stop and remove services with the `debug` profile. In the following `compose.yaml` file, this stops the services `db` and `phpmyadmin`.
 @z
 
-@x
-```yaml
-services:
-  frontend:
-    image: frontend
-    profiles: [frontend]
-@y
-```yaml
-services:
-  frontend:
-    image: frontend
-    profiles: [frontend]
-@z
-
-@x
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on: [db]
-    profiles: [debug]
-@y
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on: [db]
-    profiles: [debug]
-@z
-
-@x
-  backend:
-    image: backend
-@y
-  backend:
-    image: backend
-@z
-
-@x
-  db:
-    image: mysql
-```
-@y
-  db:
-    image: mysql
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]

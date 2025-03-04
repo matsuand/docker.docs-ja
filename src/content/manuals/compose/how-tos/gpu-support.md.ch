@@ -36,9 +36,9 @@ You can use either `docker-compose` or `docker compose` commands. For more infor
 @z
 
 @x
-GPUs are referenced in a `compose.yml` file using the [device](/reference/compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them. 
+GPUs are referenced in a `compose.yaml` file using the [device](/reference/compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them.
 @y
-GPUs are referenced in a `compose.yml` file using the [device](reference/compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them. 
+GPUs are referenced in a `compose.yaml` file using the [device](reference/compose-file/deploy.md#devices) attribute from the Compose Deploy specification, within your services that need them.
 @z
 
 @x

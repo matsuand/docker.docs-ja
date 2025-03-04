@@ -174,9 +174,9 @@ counter whenever you visit it.
 % snip code...
 
 @x
-5.  Create a file called `compose.yml` and paste this in:
+5.  Create a file called `compose.yaml` and paste this in:
 @y
-5.  Create a file called `compose.yml` and paste this in:
+5.  Create a file called `compose.yaml` and paste this in:
 @z
 
 % snip code...

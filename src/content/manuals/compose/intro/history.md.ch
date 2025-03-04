@@ -59,18 +59,18 @@ It also provides a quick snapshot of the differences in file formats, command-li
 
 @x
 Version one of the Docker Compose command-line binary was first released in 2014. It was written in Python, and is invoked with `docker-compose`.
-Typically, Compose V1 projects include a top-level `version` element in the `compose.yml` file, with values ranging from `2.0` to `3.8`, which refer to the specific [file formats](#compose-file-format-versioning).
+Typically, Compose V1 projects include a top-level `version` element in the `compose.yaml` file, with values ranging from `2.0` to `3.8`, which refer to the specific [file formats](#compose-file-format-versioning).
 @y
 Version one of the Docker Compose command-line binary was first released in 2014. It was written in Python, and is invoked with `docker-compose`.
-Typically, Compose V1 projects include a top-level `version` element in the `compose.yml` file, with values ranging from `2.0` to `3.8`, which refer to the specific [file formats](#compose-file-format-versioning).
+Typically, Compose V1 projects include a top-level `version` element in the `compose.yaml` file, with values ranging from `2.0` to `3.8`, which refer to the specific [file formats](#compose-file-format-versioning).
 @z
 
 @x
 Version two of the Docker Compose command-line binary was announced in 2020, is written in Go, and is invoked with `docker compose`.
-Compose V2 ignores the `version` top-level element in the `compose.yml` file. 
+Compose V2 ignores the `version` top-level element in the `compose.yaml` file.
 @y
 Version two of the Docker Compose command-line binary was announced in 2020, is written in Go, and is invoked with `docker compose`.
-Compose V2 ignores the `version` top-level element in the `compose.yml` file. 
+Compose V2 ignores the `version` top-level element in the `compose.yaml` file.
 @z
 
 @x

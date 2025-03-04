@@ -157,27 +157,15 @@ the `trustsandbox` container, the Notary server, and the Registry server.
 1. Create a new `trustsandbox` directory and change into it.
 @z
 
-@x
-        $ mkdir trustsandbox
-        $ cd trustsandbox
-@y
-        $ mkdir trustsandbox
-        $ cd trustsandbox
-@z
+% snip command...
 
 @x
-2. Create a file called `compose.yml` with your favorite editor.  For example, using vim:
+2. Create a file called `compose.yaml` with your favorite editor.  For example, using vim:
 @y
-2. Create a file called `compose.yml` with your favorite editor.  For example, using vim:
+2. Create a file called `compose.yaml` with your favorite editor.  For example, using vim:
 @z
 
-@x
-        $ touch compose.yml
-        $ vim compose.yml
-@y
-        $ touch compose.yml
-        $ vim compose.yml
-@z
+% snip command...
 
 @x
 3. Add the following to the new file.

@@ -1411,10 +1411,10 @@ node that meets the placement constraint and any [resource requirements](#reserv
 % snip command...
 
 @x
-You can also use the `constraint` service-level key in a `compose.yml`
+You can also use the `constraint` service-level key in a `compose.yaml`
 file.
 @y
-You can also use the `constraint` service-level key in a `compose.yml`
+You can also use the `constraint` service-level key in a `compose.yaml`
 file.
 @z
 

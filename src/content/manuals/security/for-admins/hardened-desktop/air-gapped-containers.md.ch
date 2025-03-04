@@ -67,37 +67,7 @@ Assuming [enforced sign-in](/manuals/security/for-admins/enforce-sign-in/_index.
 Assuming [enforced sign-in](manuals/security/for-admins/enforce-sign-in/_index.md) and [Settings Management](settings-management/_index.md) are enabled, add the new proxy configuration to the `admin-settings.json` file. For example:
 @z
 
-@x
-```json
-{
-  "configurationFileVersion": 2,
-  "containersProxy": {
-    "locked": true,
-    "mode": "manual",
-    "http": "",
-    "https": "",
-    "exclude": "",
-    "pac": "http://192.168.1.16:62039/proxy.pac",
-    "transparentPorts": "*"
-  }
-}
-```
-@y
-```json
-{
-  "configurationFileVersion": 2,
-  "containersProxy": {
-    "locked": true,
-    "mode": "manual",
-    "http": "",
-    "https": "",
-    "exclude": "",
-    "pac": "http://192.168.1.16:62039/proxy.pac",
-    "transparentPorts": "*"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 The `containersProxy` setting describes the policy which is applied to traffic from containers. The valid fields are:
@@ -147,31 +117,7 @@ The following is an example PAC file:
 The following is an example PAC file:
 @z
 
-@x
-```javascript
-function FindProxyForURL(url, host) {
-	if (localHostOrDomainIs(host, 'internal.corp')) {
-		return "PROXY 10.0.0.1:3128";
-	}
-	if (isInNet(host, "192.168.0.0", "255.255.255.0")) {
-	    return "DIRECT";
-	}
-    return "PROXY reject.docker.internal:1234";
-}
-```
-@y
-```javascript
-function FindProxyForURL(url, host) {
-	if (localHostOrDomainIs(host, 'internal.corp')) {
-		return "PROXY 10.0.0.1:3128";
-	}
-	if (isInNet(host, "192.168.0.0", "255.255.255.0")) {
-	    return "DIRECT";
-	}
-    return "PROXY reject.docker.internal:1234";
-}
-```
-@z
+% snip code...
 
 @x
 The `url` parameter is either `http://host_or_ip:port` or `https://host_or_ip:port`.

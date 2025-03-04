@@ -43,10 +43,10 @@ A container's environment is not set until there's an explicit entry in the serv
 
 @x
 You can set environment variables directly in your container's environment with the
-[`environment` attribute](/reference/compose-file/services.md#environment) in your `compose.yml`. 
+[`environment` attribute](/reference/compose-file/services.md#environment) in your `compose.yaml`.
 @y
 You can set environment variables directly in your container's environment with the
-[`environment` attribute](reference/compose-file/services.md#environment) in your `compose.yml`. 
+[`environment` attribute](reference/compose-file/services.md#environment) in your `compose.yaml`.
 @z
 
 @x
@@ -180,9 +180,9 @@ The [`env_file` attribute](reference/compose-file/services.md#env_file) also let
 @z
 
 @x
-The paths to your `.env` file, specified in the `env_file` attribute, are relative to the location of your `compose.yml` file. 
+The paths to your `.env` file, specified in the `env_file` attribute, are relative to the location of your `compose.yaml` file.
 @y
-The paths to your `.env` file, specified in the `env_file` attribute, are relative to the location of your `compose.yml` file. 
+The paths to your `.env` file, specified in the `env_file` attribute, are relative to the location of your `compose.yaml` file.
 @z
 
 @x

@@ -11,7 +11,8 @@ bases = \
 	platform-release-notes.md \
 	release-lifecycle.md      \
 	retired.md                \
-	tcc.md
+	tcc.md                    \
+	testcontainers.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

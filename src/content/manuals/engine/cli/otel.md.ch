@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: OpenTelemetry for the Docker CLI
 description: Learn about how to capture OpenTelemetry metrics for the Docker command line
 keywords: otel, opentelemetry, telemetry, traces, tracing, metrics, logs
-aliases:
-  - /config/otel/
----
 @y
----
 title: OpenTelemetry for the Docker CLI
 description: Learn about how to capture OpenTelemetry metrics for the Docker command line
 keywords: otel, opentelemetry, telemetry, traces, tracing, metrics, logs
-aliases:
-  - /config/otel/
----
 @z
 
 @x
@@ -166,7 +158,7 @@ and a Prometheus backend that scrapes the metrics off the collector.
 @z
 
 @x
-```yaml {collapse=true,title=compose.yml}
+```yaml {collapse=true,title=compose.yaml}
 name: cli-otel
 services:
   prometheus:
@@ -193,7 +185,7 @@ services:
       # Mount the otelcol.yml config file
       - ./otelcol.yml:/etc/otelcol/config.yaml
 @y
-```yaml {collapse=true,title=compose.yml}
+```yaml {collapse=true,title=compose.yaml}
 name: cli-otel
 services:
   prometheus:
@@ -233,10 +225,10 @@ volumes:
 
 @x
 This service assumes that the following two configuration files exist alongside
-`compose.yml`:
+`compose.yaml`:
 @y
 This service assumes that the following two configuration files exist alongside
-`compose.yml`:
+`compose.yaml`:
 @z
 
 @x

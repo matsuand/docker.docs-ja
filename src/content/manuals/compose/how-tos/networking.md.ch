@@ -49,9 +49,9 @@ other containers on that network, and discoverable by the service's name.
 @z
 
 @x
-For example, suppose your app is in a directory called `myapp`, and your `compose.yml` looks like this:
+For example, suppose your app is in a directory called `myapp`, and your `compose.yaml` looks like this:
 @y
-For example, suppose your app is in a directory called `myapp`, and your `compose.yml` looks like this:
+For example, suppose your app is in a directory called `myapp`, and your `compose.yaml` looks like this:
 @z
 
 % snip code...

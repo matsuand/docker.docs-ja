@@ -304,7 +304,8 @@ bases = \
 	platform-release-notes.md \
 	release-lifecycle.md      \
 	retired.md                \
-	tcc.md
+	tcc.md                    \
+	testcontainers.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
