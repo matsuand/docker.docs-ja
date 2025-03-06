@@ -6,7 +6,7 @@ title: How to use secrets in Docker Compose
 linkTitle: Secrets in Compose
 @y
 title: Docker Compose における Secrets の利用
-linkTitle: Secrets in Compose
+linkTitle: Compose における Secrets
 @z
 
 @x
@@ -40,15 +40,24 @@ Secrets を利用すれば、こういったリスクは軽減されます。
 @z
 
 @x
+Secrets are mounted as a file in `/run/secrets/<secret_name>` inside the container.
+@y
+secret はコンテナー内部において `/run/secrets/<secret_name>` 内のファイルとしてマウントします。
+@z
+
+@x
 Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](/reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](/reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
 @y
-Getting a secret into a container is a two-step process. First, define the secret using the [top-level secrets element in your Compose file](reference/compose-file/secrets.md). Next, update your service definitions to reference the secrets they require with the [secrets attribute](reference/compose-file/services.md#secrets). Compose grants access to secrets on a per-service basis.
+secret をコンテナーに含めるには 2 つのステップを経ます。
+まず [Compose ファイル内のトップレベル項目の secret](reference/compose-file/secrets.md) として secret を定義します。
+そしてその secret を利用して [secret の属性](reference/compose-file/services.md#secrets) を参照するサービスの定義を適切に設定します。
+Compose において secret へのアクセス権限は、各サービスごとに扱われます。
 @z
 
 @x
 Unlike the other methods, this permits granular access control within a service container via standard filesystem permissions.
 @y
-Unlike the other methods, this permits granular access control within a service container via standard filesystem permissions.
+アクセス権限に関する手法は他のものとは異なっているため、標準的なファイルシステム上の権限を介して、きめ細かなアクセス制御が可能です。
 @z
 
 @x
@@ -60,129 +69,30 @@ Unlike the other methods, this permits granular access control within a service 
 @x
 ### Simple
 @y
-### Simple {#simple}
+### 単純な例 {#simple}
 @z
 
 @x
 In the following example, the frontend service is given access to the `my_secret` secret. In the container, `/run/secrets/my_secret` is set to the contents of the file `./my_secret.txt`.
 @y
-In the following example, the frontend service is given access to the `my_secret` secret. In the container, `/run/secrets/my_secret` is set to the contents of the file `./my_secret.txt`.
+以下の利用例では、フロントエンドサービスにおいて `my_secret` という secret へのアクセス権が与えられています。
+このコンテナーでは `./my_secret.txt` のファイル内容が `/run/secrets/my_secret` に設定されます。
 @z
 
-@x
-```yaml
-services:
-  myapp:
-    image: myapp:latest
-    secrets:
-      - my_secret
-secrets:
-  my_secret:
-    file: ./my_secret.txt
-```
-@y
-```yaml
-services:
-  myapp:
-    image: myapp:latest
-    secrets:
-      - my_secret
-secrets:
-  my_secret:
-    file: ./my_secret.txt
-```
-@z
+% snip code...
 
 @x
 ### Advanced
 @y
-### Advanced
+### 応用的な例 {#advanced}
 @z
 
-@x
-```yaml
-services:
-   db:
-     image: mysql:latest
-     volumes:
-       - db_data:/var/lib/mysql
-     environment:
-       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD_FILE: /run/secrets/db_password
-     secrets:
-       - db_root_password
-       - db_password
-@y
-```yaml
-services:
-   db:
-     image: mysql:latest
-     volumes:
-       - db_data:/var/lib/mysql
-     environment:
-       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD_FILE: /run/secrets/db_password
-     secrets:
-       - db_root_password
-       - db_password
-@z
+% snip code...
 
 @x
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     ports:
-       - "8000:80"
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_password
-     secrets:
-       - db_password
-@y
-   wordpress:
-     depends_on:
-       - db
-     image: wordpress:latest
-     ports:
-       - "8000:80"
-     environment:
-       WORDPRESS_DB_HOST: db:3306
-       WORDPRESS_DB_USER: wordpress
-       WORDPRESS_DB_PASSWORD_FILE: /run/secrets/db_password
-     secrets:
-       - db_password
-@z
-
-@x
-secrets:
-   db_password:
-     file: db_password.txt
-   db_root_password:
-     file: db_root_password.txt
-@y
-secrets:
-   db_password:
-     file: db_password.txt
-   db_root_password:
-     file: db_root_password.txt
-@z
-
-@x
-volumes:
-    db_data:
-```
 In the advanced example above:
 @y
-volumes:
-    db_data:
-```
-In the advanced example above:
+この応用的な利用例では以下のことが行われています。
 @z
 
 @x
@@ -190,9 +100,9 @@ In the advanced example above:
 - The top-level `secrets` section defines the variables `db_password` and `db_root_password` and provides the `file` that populates their values.
 - The deployment of each container means Docker creates a temporary filesystem mount under `/run/secrets/<secret_name>` with their specific values.
 @y
-- The `secrets` attribute under each service defines the secrets you want to inject into the specific container.
-- The top-level `secrets` section defines the variables `db_password` and `db_root_password` and provides the `file` that populates their values.
-- The deployment of each container means Docker creates a temporary filesystem mount under `/run/secrets/<secret_name>` with their specific values.
+- 各サービスにおける `secrets` 属性として、所定コンテナー内に含めたい secret を定義しています。
+- トップレベルの `secrets` セクションでは、変数 `db_password` および `db_root_password` を定義して、`file` によってそれらの値を提供するファイルを指定しています。
+- 各コンテナーのデプロイを行うと、Docker が `/run/secrets/<secret_name>` の配下に一時的なファイルシステムを生成し、そこに指定の値を設定します。
 @z
 
 @x
@@ -202,8 +112,23 @@ In the advanced example above:
 @y
 > [!NOTE]
 >
-> The `_FILE` environment variables demonstrated here are a convention used by some images, including Docker Official Images like [mysql](https://hub.docker.com/_/mysql) and [postgres](https://hub.docker.com/_/postgres).
+> 上に示している `_FILE` 環境変数は、Docker の公式イメージ [mysql](https://hub.docker.com/_/mysql) や [postgres](https://hub.docker.com/_/postgres) などにおいて慣例的に用いられているものです。
 @z
+
+@x
+### Build secrets
+@y
+### secret のビルド {#build-secrets}
+@z
+
+@x
+In the following example, the `npm_token` secret is made available at build time. Its value is taken from the `NPM_TOKEN` environment variable.
+@y
+以下の利用例では `npm_token` という secret がビルド時に利用可能となるようにしています。
+その値は環境変数 `NPM_TOKEN` から取得されます。
+@z
+
+% snip code...
 
 @x
 ## Resources
@@ -216,7 +141,7 @@ In the advanced example above:
 - [Secrets attribute for services top-level element](/reference/compose-file/services.md#secrets)
 - [Build secrets](https://docs.docker.com/build/building/secrets/)
 @y
-- [Secrets top-level element](reference/compose-file/secrets.md)
-- [Secrets attribute for services top-level element](reference/compose-file/services.md#secrets)
-- [Build secrets](https://docs.docker.com/build/building/secrets/)
+- [secret のトップレベル要素](reference/compose-file/secrets.md)
+- [サービスのトップレベル要素に対する secret 属性](reference/compose-file/services.md#secrets)
+- [secret のビルド](https://docs.docker.com/build/building/secrets/)
 @z
