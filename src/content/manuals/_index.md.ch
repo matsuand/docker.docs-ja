@@ -76,6 +76,18 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
+  - title: Build Cloud
+    description: Build your images faster in the cloud.
+    icon: /assets/images/logo-build-cloud.svg
+    link: /build-cloud/
+@y
+  - title: Build Cloud
+    description: Build your images faster in the cloud.
+    icon: __SUBDIR__/assets/images/logo-build-cloud.svg
+    link: __SUBDIR__/build-cloud/
+@z
+
+@x
   - title: Docker Hub
     description: Discover, share, and integrate container images.
     icon: hub
@@ -156,9 +168,21 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /billing/
 @y
   - title: 支払い
-    description: Manage billing and payment methods.
+    description: 請求方法や支払い方法について管理します。
     icon: payments
     link: __SUBDIR__/billing/
+@z
+
+@x
+  - title: Accounts
+    description: Manage your Docker account.
+    icon: account_circle
+    link: /accounts/
+@y
+  - title: Accounts
+    description: Docker アカウントを管理します。
+    icon: account_circle
+    link: __SUBDIR__/accounts/
 @z
 
 @x
@@ -180,7 +204,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /subscription/
 @y
   - title: サブスクリプション
-    description: Commercial use licenses for Docker products.
+    description: Docker 製品に対する商用利用ライセンスです。
     icon: card_membership
     link: __SUBDIR__/subscription/
 @z
@@ -231,15 +255,15 @@ End-to-end developer solutions for innovative teams.
 @x
 ## Platform
 @y
-## Platform
+## プラットフォーム {#platform}
 @z
 
 @x
 Documentation related to the Docker platform, such as administration and
 subscription management for organizations.
 @y
-Documentation related to the Docker platform, such as administration and
-subscription management for organizations.
+Docker プラットフォームに関連するドキュメントです。
+管理、組織向けのサブスク管理などがあります。
 @z
 
 @x
