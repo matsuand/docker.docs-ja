@@ -49,6 +49,18 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: __SUBDIR__/compose/
 @z
 
+@x
+  - title: Testcontainers
+    description: Run containers programmatically in your preferred programming language.
+    icon: /assets/icons/Testcontainers.svg
+    link: /testcontainers/
+@y
+  - title: Testcontainers
+    description: Run containers programmatically in your preferred programming language.
+    icon: __SUBDIR__/assets/icons/Testcontainers.svg
+    link: __SUBDIR__/testcontainers/
+@z
+
 % products:
 
 @x
@@ -97,6 +109,30 @@ keywords: docker, docs, manuals, products, user guides, how-to
     description: Docker Desktop ワークフローをカスタマイズします。
     icon: extension
     link: __SUBDIR__/extensions/
+@z
+
+@x
+  - title: Testcontainers Cloud
+    description: Run integration tests, with real dependencies, in the cloud.
+    icon: package_2
+    link: https://testcontainers.com/cloud/docs/
+@y
+  - title: Testcontainers Cloud
+    description: Run integration tests, with real dependencies, in the cloud.
+    icon: package_2
+    link: https://testcontainers.com/cloud/docs/
+@z
+
+@x
+  - title: Docker Projects
+    description: Use a unified, project-based workflow to run your containerized projects. 
+    icon: folder
+    link: /projects/
+@y
+  - title: Docker Projects
+    description: Use a unified, project-based workflow to run your containerized projects. 
+    icon: folder
+    link: __SUBDIR__/projects/
 @z
 
 % platform:
