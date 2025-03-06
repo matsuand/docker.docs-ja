@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/data/desktop-cli
+subdir = src/content/manuals/projects
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -238,16 +238,14 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	docker_desktop.yaml            \
-	docker_desktop_engine.yaml     \
-	docker_desktop_engine_ls.yaml  \
-	docker_desktop_engine_use.yaml \
-	docker_desktop_logs.yaml       \
-	docker_desktop_restart.yaml    \
-	docker_desktop_start.yaml      \
-	docker_desktop_status.yaml     \
-	docker_desktop_stop.yaml       \
-	docker_desktop_update.yaml
+	_index.md \
+	about.md  \
+	edit.md   \
+	faq.md    \
+	manage.md \
+	open.md   \
+	share.md  \
+	view.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -266,9 +264,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/data/desktop-cli/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/projects/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/data/desktop-cli/Makefile
+	  $(AUTOMAKE) --foreign src/content/manuals/projects/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

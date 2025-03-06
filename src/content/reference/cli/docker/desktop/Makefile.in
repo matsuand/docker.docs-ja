@@ -298,6 +298,7 @@ top_srcdir = @top_srcdir@
 SUBDIRS = engine
 bases = \
 	_index.md  \
+	logs.md    \
 	restart.md \
 	start.md   \
 	status.md  \

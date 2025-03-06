@@ -2,13 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Testcontainers OSS
-description: Learn how to use Testcontainers OSS to run containers programmatically in your preferred programming language.
+title: Testcontainers
+description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
 keywords: docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
   docker compose, docker-compose, java, golang, go
 @y
-title: Testcontainers OSS
-description: Learn how to use Testcontainers OSS to run containers programmatically in your preferred programming language.
+title: Testcontainers
+description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
 keywords: docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
   docker compose, docker-compose, java, golang, go
 @z
@@ -76,10 +76,10 @@ params:
 @z
 
 @x
-Testcontainers is set libraries that provides easy and lightweight APIs for bootstrapping local development and test dependencies with real services wrapped in Docker containers.
+Testcontainers is a set of open source libraries that provides easy and lightweight APIs for bootstrapping local development and test dependencies with real services wrapped in Docker containers.
 Using Testcontainers, you can write tests that depend on the same services you use in production without mocks or in-memory services.
 @y
-Testcontainers is set libraries that provides easy and lightweight APIs for bootstrapping local development and test dependencies with real services wrapped in Docker containers.
+Testcontainers is a set of open source libraries that provides easy and lightweight APIs for bootstrapping local development and test dependencies with real services wrapped in Docker containers.
 Using Testcontainers, you can write tests that depend on the same services you use in production without mocks or in-memory services.
 @z
 
@@ -109,10 +109,10 @@ Testcontainers provide support for the most popular languages, and Docker sponso
 
 @x
 - [Go](https://golang.testcontainers.org/quickstart/)
-- [Java](https://java.testcontainers.org/quickstart/)
+- [Java](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
 @y
 - [Go](https://golang.testcontainers.org/quickstart/)
-- [Java](https://java.testcontainers.org/quickstart/)
+- [Java](https://java.testcontainers.org/quickstart/junit_5_quickstart/)
 @z
 
 @x

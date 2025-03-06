@@ -132,12 +132,15 @@ Docker Debug:
 Docker Desktop Archlinux:
   availability: Experimental
 Docker Desktop CLI:
-  availability: Beta
   requires: Docker Desktop [4.37](/manuals/desktop/release-notes.md#4370) and later
 Docker Desktop CLI update:
-  requires: Docker Desktop 4.38 and later
+  requires: Docker Desktop 4.39 and later
+Docker Desktop CLI logs:
+  requires: Docker Desktop 4.39 and later
 Docker GitHub Copilot:
   availability: Early Access
+Docker Projects:
+  availability: Beta
 Docker Init:
   requires: Docker Desktop [4.27](/manuals/desktop/release-notes.md#4270) and later
 Docker Scout exceptions:
@@ -246,7 +249,7 @@ Build dockerfile inline:
 Build entitlements:
   requires: Docker Compose [2.27.1](manuals/compose/releases/release-notes.md#2271) and later
 Build multiple exporters:
-  requires: Docker Buildx [0.13.0]((/manuals/build/release-notes.md#0130) and later
+  requires: Docker Buildx [0.13.0]((manuals/build/release-notes.md#0130) and later
 Buildkit host:
   requires: Docker Buildx [0.9.0](manuals/build/release-notes.md#090) and later
 Build privileged:
@@ -344,12 +347,15 @@ Docker Debug:
 Docker Desktop Archlinux:
   availability: Experimental
 Docker Desktop CLI:
-  availability: Beta
   requires: Docker Desktop [4.37](manuals/desktop/release-notes.md#4370) and later
 Docker Desktop CLI update:
-  requires: Docker Desktop 4.38 and later
+  requires: Docker Desktop 4.39 and later
+Docker Desktop CLI logs:
+  requires: Docker Desktop 4.39 and later
 Docker GitHub Copilot:
   availability: Early Access
+Docker Projects:
+  availability: Beta
 Docker Init:
   requires: Docker Desktop [4.27](manuals/desktop/release-notes.md#4270) and later
 Docker Scout exceptions:

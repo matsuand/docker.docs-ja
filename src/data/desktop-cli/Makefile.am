@@ -7,6 +7,7 @@ bases = \
 	docker_desktop_engine.yaml     \
 	docker_desktop_engine_ls.yaml  \
 	docker_desktop_engine_use.yaml \
+	docker_desktop_logs.yaml       \
 	docker_desktop_restart.yaml    \
 	docker_desktop_start.yaml      \
 	docker_desktop_status.yaml     \

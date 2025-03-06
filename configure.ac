@@ -236,6 +236,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/guides/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
 	src/content/manuals/harmonia/Makefile
+	src/content/manuals/projects/Makefile
 	src/content/manuals/scout/Makefile
 	src/content/manuals/scout/deep-dive/Makefile
 	src/content/manuals/scout/explore/Makefile

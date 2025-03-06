@@ -3,15 +3,16 @@
 
 @x
 command: docker desktop update
-short: Manage Docker Desktop updates (Mac only)
+short: Manage Docker Desktop updates
 usage: docker desktop update [OPTIONS]
 @y
 command: docker desktop update
-short: Manage Docker Desktop updates (Mac only)
+short: Manage Docker Desktop updates
 usage: docker desktop update [OPTIONS]
 @z
 
 % options:
+
 @x check-only
       description: Check for updates without applying them
 @y

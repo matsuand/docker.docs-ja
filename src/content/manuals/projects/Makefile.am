@@ -1,17 +1,15 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-
-SUBDIRS = engine
-
 bases = \
-	_index.md  \
-	logs.md    \
-	restart.md \
-	start.md   \
-	status.md  \
-	stop.md    \
-	update.md
+	_index.md \
+	about.md  \
+	edit.md   \
+	faq.md    \
+	manage.md \
+	open.md   \
+	share.md  \
+	view.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

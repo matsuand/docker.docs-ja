@@ -96,9 +96,9 @@ Works well with Docker Desktop, GitHub Actions, Jenkins, Kubernetes, and other C
 @z
 
 @x
-Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runtime minutes, and additional minutes are available via consumption pricing. 
+Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runtime minutes, and additional minutes are available via consumption pricing. Testcontainers Cloud runtime minutes do not rollover month to month.
 @y
-Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runtime minutes, and additional minutes are available via consumption pricing. 
+Docker Pro, Team, and Business subscriptions come with Testcontainers Cloud runtime minutes, and additional minutes are available via consumption pricing. Testcontainers Cloud runtime minutes do not rollover month to month.
 @z
 
 @x
