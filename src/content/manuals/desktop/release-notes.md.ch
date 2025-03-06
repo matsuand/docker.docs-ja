@@ -104,6 +104,18 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
+### Security
+@y
+### Security
+@z
+
+@x
+- Fixed [CVE-2025-1696](https://www.cve.org/CVERecord?id=CVE-2025-1696) which could disclose proxy authentication credentials in plaintext in log files.
+@y
+- Fixed [CVE-2025-1696](https://www.cve.org/CVERecord?id=CVE-2025-1696) which could disclose proxy authentication credentials in plaintext in log files.
+@z
+
+@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
