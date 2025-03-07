@@ -240,8 +240,7 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md       \
 	known-issues.md \
-	topics.md       \
-	workarounds.md
+	topics.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

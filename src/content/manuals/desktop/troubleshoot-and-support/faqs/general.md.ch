@@ -125,11 +125,11 @@ For details, see [Docker Engine API](reference/api/engine/_index.md).
 
 @x
 The host has a changing IP address, or none if you have no network access.
-We recommend that you connect to the special DNS name `host.docker.internal`,
+It is recommend that you connect to the special DNS name `host.docker.internal`,
 which resolves to the internal IP address used by the host.
 @y
 The host has a changing IP address, or none if you have no network access.
-We recommend that you connect to the special DNS name `host.docker.internal`,
+It is recommend that you connect to the special DNS name `host.docker.internal`,
 which resolves to the internal IP address used by the host.
 @z
 

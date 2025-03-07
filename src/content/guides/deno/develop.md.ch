@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Use containers for Deno development
@@ -61,15 +62,7 @@ Clone the sample application to use with this guide. Open a terminal, change dir
 Clone the sample application to use with this guide. Open a terminal, change directory to a directory that you want to work in, and run the following command to clone the repository:
 @z
 
-@x
-```console
-$ git clone https://github.com/dockersamples/docker-deno.git
-```
-@y
-```console
-$ git clone https://github.com/dockersamples/docker-deno.git
-```
-@z
+% snip command...
 
 @x
 ## Automatically update services
@@ -93,37 +86,7 @@ Open your `compose.yml` file in an IDE or text editor and then add the Compose W
 Open your `compose.yml` file in an IDE or text editor and then add the Compose Watch instructions. The following example shows how to add Compose Watch to your `compose.yml` file.
 @z
 
-@x
-```yaml {hl_lines="9-12",linenos=true}
-services:
-  server:
-    image: deno-server
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    develop:
-      watch:
-        - action: rebuild
-          path: .
-```
-@y
-```yaml {hl_lines="9-12",linenos=true}
-services:
-  server:
-    image: deno-server
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    develop:
-      watch:
-        - action: rebuild
-          path: .
-```
-@z
+% snip code...
 
 @x
 Run the following command to run your application with Compose Watch.
@@ -131,15 +94,7 @@ Run the following command to run your application with Compose Watch.
 Run the following command to run your application with Compose Watch.
 @z
 
-@x
-```console
-$ docker compose watch
-```
-@y
-```console
-$ docker compose watch
-```
-@z
+% snip command...
 
 @x
 Now, if you modify your `server.ts` you will see the changes in real time without re-building the image.

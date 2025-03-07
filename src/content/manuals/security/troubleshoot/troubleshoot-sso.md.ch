@@ -38,9 +38,9 @@ If you experience issues with SSO, check both the Docker Admin Console and your 
 @z
 
 @x
-#### Check Docker error logs
+### Check Docker error logs
 @y
-#### Check Docker error logs
+### Check Docker error logs
 @z
 
 @x
@@ -58,9 +58,9 @@ If you experience issues with SSO, check both the Docker Admin Console and your 
 @z
 
 @x
-#### Check for errors in your IdP
+### Check for errors in your IdP
 @y
-#### Check for errors in your IdP
+### Check for errors in your IdP
 @z
 
 @x
@@ -90,9 +90,9 @@ For further troubleshooting, check your IdP’s documentation. You can also cont
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -108,9 +108,9 @@ Some of the groups assigned to the user are not formatted as '<organization name
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -122,9 +122,9 @@ Some of the groups assigned to the user are not formatted as '<organization name
 @z
 
 @x
-#### Affected environments
+### Affected environments
 @y
-#### Affected environments
+### Affected environments
 @z
 
 @x
@@ -136,9 +136,9 @@ Some of the groups assigned to the user are not formatted as '<organization name
 @z
 
 @x
-#### Steps to replicate
+### Steps to replicate
 @y
-#### Steps to replicate
+### Steps to replicate
 @z
 
 @x
@@ -154,9 +154,9 @@ To replicate this issue:
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x
@@ -182,9 +182,9 @@ Update group names in your IdP:
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -200,9 +200,9 @@ User '$username' is not assigned to this SSO organization. Contact your administ
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -216,9 +216,9 @@ User '$username' is not assigned to this SSO organization. Contact your administ
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x
@@ -300,9 +300,9 @@ If you have SCIM enabled, troubleshoot your SCIM connection using the following 
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -318,9 +318,9 @@ IdP-Initiated sign in is not enabled for connection '$ssoConnection'.
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -330,9 +330,9 @@ Docker does not support an IdP-initiated SAML flow. This error occurs when a use
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x
@@ -366,9 +366,9 @@ You can hide the Docker SSO app from users in your IdP. This prevents users from
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -384,9 +384,9 @@ Not enough seats in organization '$orgName'. Add more seats or contact your admi
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -396,9 +396,9 @@ This error occurs when the organization has no available seats for the user when
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x
@@ -432,9 +432,9 @@ Review your organization members and pending invitations. Remove inactive users 
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -450,9 +450,9 @@ Domain '$emailDomain' is not verified for your SSO connection. Contact your comp
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -466,9 +466,9 @@ SSO connection configured in Docker.
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x
@@ -502,9 +502,9 @@ Add and verify all domains and subdomains used as UPN by your IdP and associate 
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -520,9 +520,9 @@ We couldn't find your session. You may have pressed the back button, refreshed t
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -536,9 +536,9 @@ The following causes may create this issue:
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x
@@ -572,9 +572,9 @@ Close the browser tab and restart the authentication flow from the Docker applic
 @z
 
 @x
-#### Error message
+### Error message
 @y
-#### Error message
+### Error message
 @z
 
 @x
@@ -590,9 +590,9 @@ The name ID sent by the identity provider is not an email address. Contact your 
 @z
 
 @x
-#### Possible causes
+### Possible causes
 @y
-#### Possible causes
+### Possible causes
 @z
 
 @x
@@ -606,9 +606,9 @@ The following causes may create this issue:
 @z
 
 @x
-#### Solutions
+### Solutions
 @y
-#### Solutions
+### Solutions
 @z
 
 @x

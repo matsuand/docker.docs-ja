@@ -65,15 +65,7 @@ directory to a directory that you want to work in, and run the following
 command to clone the repository:
 @z
 
-@x
-```console
-$ git clone https://github.com/dockersamples/docker-deno.git
-```
-@y
-```console
-$ git clone https://github.com/dockersamples/docker-deno.git
-```
-@z
+% snip command...
 
 @x
 You should now have the following contents in your `deno-docker` directory.
@@ -81,25 +73,7 @@ You should now have the following contents in your `deno-docker` directory.
 You should now have the following contents in your `deno-docker` directory.
 @z
 
-@x
-```text
-├── deno-docker/
-│ ├── compose.yml
-│ ├── Dockerfile
-│ ├── LICENSE
-│ ├── server.ts
-│ └── README.md
-```
-@y
-```text
-├── deno-docker/
-│ ├── compose.yml
-│ ├── Dockerfile
-│ ├── LICENSE
-│ ├── server.ts
-│ └── README.md
-```
-@z
+% snip text...
 
 @x
 ## Understand the sample application
@@ -263,15 +237,7 @@ Make sure you are in the `deno-docker` directory. Run the following command in a
 Make sure you are in the `deno-docker` directory. Run the following command in a terminal to build and run the application.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000). You will see a message `{"Status" : "OK"}` in the browser.
@@ -301,15 +267,7 @@ option. Inside the `deno-docker` directory, run the following command
 in a terminal.
 @z
 
-@x
-```console
-$ docker compose up --build -d
-```
-@y
-```console
-$ docker compose up --build -d
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000).
@@ -323,15 +281,7 @@ In the terminal, run the following command to stop the application.
 In the terminal, run the following command to stop the application.
 @z
 
-@x
-```console
-$ docker compose down
-```
-@y
-```console
-$ docker compose down
-```
-@z
+% snip command...
 
 @x
 ## Summary

@@ -7,10 +7,14 @@
 description: Frequently asked questions for Docker Desktop for Windows
 keywords: desktop, windows, faqs
 title: FAQs for Docker Desktop for Windows
+linkTitle: Windows
+tags: [FAQ]
 @y
 description: Frequently asked questions for Docker Desktop for Windows
 keywords: desktop, windows, faqs
 title: FAQs for Docker Desktop for Windows
+linkTitle: Windows
+tags: [FAQ]
 @z
 
 @x
@@ -47,36 +51,6 @@ Docker Desktop uses the Windows Hyper-V features. While older Windows versions h
 No, running Docker Desktop on Windows Server is not supported.
 @y
 No, running Docker Desktop on Windows Server is not supported.
-@z
-
-@x
-### Can I change permissions on shared volumes for container-specific deployment requirements?
-@y
-### Can I change permissions on shared volumes for container-specific deployment requirements?
-@z
-
-@x
-Docker Desktop does not enable you to control (`chmod`)
-the Unix-style permissions on [shared volumes](/manuals/desktop/settings-and-maintenance/settings.md#file-sharing) for
-deployed containers, but rather sets permissions to a default value of
-[0777](https://chmodcommand.com/chmod-0777/)
-(`read`, `write`, `execute` permissions for `user` and for
-`group`) which is not configurable.
-@y
-Docker Desktop does not enable you to control (`chmod`)
-the Unix-style permissions on [shared volumes](manuals/desktop/settings-and-maintenance/settings.md#file-sharing) for
-deployed containers, but rather sets permissions to a default value of
-[0777](https://chmodcommand.com/chmod-0777/)
-(`read`, `write`, `execute` permissions for `user` and for
-`group`) which is not configurable.
-@z
-
-@x
-For workarounds and to learn more, see
-[Permissions errors on data directories for shared volumes](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#permissions-errors-on-data-directories-for-shared-volumes).
-@y
-For workarounds and to learn more, see
-[Permissions errors on data directories for shared volumes](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#permissions-errors-on-data-directories-for-shared-volumes).
 @z
 
 @x

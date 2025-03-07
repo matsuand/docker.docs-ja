@@ -7,46 +7,14 @@
 description: Frequently asked questions for Docker Desktop for Mac
 keywords: desktop, mac, faqs
 title: FAQs for Docker Desktop for Mac
+linkTitle: Mac
+tags: [FAQ]
 @y
 description: Frequently asked questions for Docker Desktop for Mac
 keywords: desktop, mac, faqs
 title: FAQs for Docker Desktop for Mac
-@z
-
-@x
-### Why do I keep getting a notification telling me an application has changed my Desktop configurations?
-@y
-### Why do I keep getting a notification telling me an application has changed my Desktop configurations?
-@z
-
-@x
-You receive this notification because the Configuration integrity check feature has detected that a third-party application has altered your Docker Desktop configuration. This usually happens due to incorrect or missing symlinks. The notification ensures you are aware of these changes so you can review and repair any potential issues to maintain system reliability.
-@y
-You receive this notification because the Configuration integrity check feature has detected that a third-party application has altered your Docker Desktop configuration. This usually happens due to incorrect or missing symlinks. The notification ensures you are aware of these changes so you can review and repair any potential issues to maintain system reliability.
-@z
-
-@x
-Opening the notification presents a pop-up window which provides detailed information about the detected integrity issues.
-@y
-Opening the notification presents a pop-up window which provides detailed information about the detected integrity issues.
-@z
-
-@x
-If you choose to ignore the notification, it will be shown again only at the next Docker Desktop startup. If you choose to repair your configuration, you won't be prompted again.
-@y
-If you choose to ignore the notification, it will be shown again only at the next Docker Desktop startup. If you choose to repair your configuration, you won't be prompted again.
-@z
-
-@x
-If you want to switch off Configuration integrity check notifications, navigate to Docker Desktop's settings and in the **General** tab, clear the **Automatically check configuration** setting. 
-@y
-If you want to switch off Configuration integrity check notifications, navigate to Docker Desktop's settings and in the **General** tab, clear the **Automatically check configuration** setting. 
-@z
-
-@x
-If you have feedback on how to further improve the Configuration integrity check feature, [fill out the feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeD_Odqc__4ihRXDtH_ba52QJuaKZ00qGnNa_tM72MmH32CZw/viewform).
-@y
-If you have feedback on how to further improve the Configuration integrity check feature, [fill out the feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeD_Odqc__4ihRXDtH_ba52QJuaKZ00qGnNa_tM72MmH32CZw/viewform).
+linkTitle: Mac
+tags: [FAQ]
 @z
 
 @x
@@ -62,11 +30,11 @@ HyperKit is a hypervisor built on top of the Hypervisor.framework in macOS. It r
 @z
 
 @x
-We use HyperKit to eliminate the need for other VM products, such as Oracle
-VirtualBox or VMWare Fusion.
+Docker uses HyperKit to eliminate the need for other VM products, such as Oracle
+VirtualBox or VMware Fusion.
 @y
-We use HyperKit to eliminate the need for other VM products, such as Oracle
-VirtualBox or VMWare Fusion.
+Docker uses HyperKit to eliminate the need for other VM products, such as Oracle
+VirtualBox or VMware Fusion.
 @z
 
 @x
@@ -76,25 +44,9 @@ VirtualBox or VMWare Fusion.
 @z
 
 @x
-HyperKit is thinner than VirtualBox and VMWare fusion, and the version included is customized for Docker workloads on Mac.
+HyperKit is thinner than VirtualBox and VMware fusion, and the version included is customized for Docker workloads on Mac.
 @y
-HyperKit is thinner than VirtualBox and VMWare fusion, and the version included is customized for Docker workloads on Mac.
-@z
-
-@x
-### Why is com.docker.vmnetd still running after I quit the app?
-@y
-### Why is com.docker.vmnetd still running after I quit the app?
-@z
-
-@x
-The privileged helper process `com.docker.vmnetd` is started by `launchd` and
-runs in the background. The process does not consume any resources unless
-`Docker.app` connects to it, so it's safe to ignore.
-@y
-The privileged helper process `com.docker.vmnetd` is started by `launchd` and
-runs in the background. The process does not consume any resources unless
-`Docker.app` connects to it, so it's safe to ignore.
+HyperKit is thinner than VirtualBox and VMware fusion, and the version included is customized for Docker workloads on Mac.
 @z
 
 @x

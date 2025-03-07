@@ -238,9 +238,9 @@ You can create the volume and start the container using the CLI or Docker Deskto
 
 @x
    > For more details about Git Bash's syntax differences, see
-   > [Working with Git Bash](/desktop/troubleshoot-and-support/troubleshoot/topics/#working-with-git-bash).
+   > [Working with Git Bash](/desktop/troubleshoot-and-support/troubleshoot/topics/#docker-commands-failing-in-git-bash).
 @y
-   > Git Bash の文法の相違に関しては [Git Bash を使った操作](__SUBDIR__/desktop/troubleshoot-and-support/troubleshoot/topics/#working-with-git-bash) を参照してください。
+   > Git Bash の文法の相違に関しては [Git Bash を使った操作](__SUBDIR__/desktop/troubleshoot-and-support/troubleshoot/topics/#docker-commands-failing-in-git-bash) を参照してください。
 @z
 
 @x
