@@ -352,6 +352,26 @@ After creating your connection in Docker and your IdP, you can cross-connect the
 2. Copy the following values from the Okta SAML setup instruction page:
     - **SAML Sign-in URL**
     - **x509 Certificate**
+@y
+1. Open your app you created in Okta and select **View SAML setup instructions**.
+2. Copy the following values from the Okta SAML setup instruction page:
+    - **SAML Sign-in URL**
+    - **x509 Certificate**
+@z
+
+@x
+        > [!IMPORTANT]
+        >
+        > You must copy the entire contents of your **x509 Certificate**,
+        including the `----BEGIN CERTIFICATE----` and `----END CERTIFICATE----` lines.
+@y
+        > [!IMPORTANT]
+        >
+        > You must copy the entire contents of your **x509 Certificate**,
+        including the `----BEGIN CERTIFICATE----` and `----END CERTIFICATE----` lines.
+@z
+
+@x
 3. Open Docker Hub or the Admin Console. Your SSO configuration page should still be open from Step one of this guide.
 4. Select **Next** to open the **Update single-sign on connection** page.
 5. Paste your Okta **SAML Sign-in URL** and **x509 Certificate** values in Docker.
@@ -359,10 +379,6 @@ After creating your connection in Docker and your IdP, you can cross-connect the
 7. Optional. Select a default team to provision users to and select **Next**.
 8. Verify your SSO connection details and select **Create Connection**.
 @y
-1. Open your app you created in Okta and select **View SAML setup instructions**.
-2. Copy the following values from the Okta SAML setup instruction page:
-    - **SAML Sign-in URL**
-    - **x509 Certificate**
 3. Open Docker Hub or the Admin Console. Your SSO configuration page should still be open from Step one of this guide.
 4. Select **Next** to open the **Update single-sign on connection** page.
 5. Paste your Okta **SAML Sign-in URL** and **x509 Certificate** values in Docker.
@@ -384,18 +400,34 @@ After creating your connection in Docker and your IdP, you can cross-connect the
 2. Open your downloaded **Certificate (Base64)** in a text editor.
 3. Copy the following values:
     - From Azure AD: **Login URL**
-    - Copy your the contents of your **Certificate (Base64)** file from your text editor
+    - Copy the contents of your **Certificate (Base64)** file from your text editor
+@y
+1. Open your app in Azure AD.
+2. Open your downloaded **Certificate (Base64)** in a text editor.
+3. Copy the following values:
+    - From Azure AD: **Login URL**
+    - Copy the contents of your **Certificate (Base64)** file from your text editor
+@z
+
+@x
+        > [!IMPORTANT]
+        >
+        > You must copy the entire contents of your **Certificate (base64)**,
+        including the `----BEGIN CERTIFICATE----` and `----END CERTIFICATE----` lines.
+@y
+        > [!IMPORTANT]
+        >
+        > You must copy the entire contents of your **Certificate (base64)**,
+        including the `----BEGIN CERTIFICATE----` and `----END CERTIFICATE----` lines.
+@z
+
+@x
 4. Open Docker Hub or the Admin Console. Your SSO configuration page should still be open from Step one of this guide.
 5. Paste your **Login URL** and **Certificate (Base64)** values in Docker.
 6. Select **Next**.
 7. Optional. Select a default team to provision users to and select **Next**.
 8. Verify your SSO connection details and select **Create Connection**.
 @y
-1. Open your app in Azure AD.
-2. Open your downloaded **Certificate (Base64)** in a text editor.
-3. Copy the following values:
-    - From Azure AD: **Login URL**
-    - Copy your the contents of your **Certificate (Base64)** file from your text editor
 4. Open Docker Hub or the Admin Console. Your SSO configuration page should still be open from Step one of this guide.
 5. Paste your **Login URL** and **Certificate (Base64)** values in Docker.
 6. Select **Next**.

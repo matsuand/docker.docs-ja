@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Billing FAQs
@@ -87,6 +87,28 @@ Docker also sends an email notification `Action Required - Credit Card Payment F
 Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
 @y
 Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+@z
+
+@x
+### Can I manually retry a failed payment?
+@y
+### Can I manually retry a failed payment?
+@z
+
+@x
+No. Docker retries failed payments on a [retry schedule](/manuals/billing/faqs.md#what-happens-if-my-subscription-payment-fails).
+@y
+No. Docker retries failed payments on a [retry schedule](manuals/billing/faqs.md#what-happens-if-my-subscription-payment-fails).
+@z
+
+@x
+To ensure a retired payment is successful, verify your default payment is
+updated. If you need to update your default payment method, see
+[Manage payment method](/manuals/billing/payment-method.md#manage-payment-method).
+@y
+To ensure a retired payment is successful, verify your default payment is
+updated. If you need to update your default payment method, see
+[Manage payment method](manuals/billing/payment-method.md#manage-payment-method).
 @z
 
 @x

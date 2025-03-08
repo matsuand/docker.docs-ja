@@ -302,7 +302,6 @@ bases = \
 	admin-company-overview.md         \
 	admin-org-overview.md             \
 	buildx-v0.10-disclaimer.md        \
-	compose-bridge-experimental.md    \
 	compose-eol.md                    \
 	deploy.md                         \
 	desktop-license-update.md         \

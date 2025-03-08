@@ -38,10 +38,10 @@ The Docker Desktop CLI provides:
 @z
 
 @x
-- Enhanced automation and CI/CD integration: Perform Docker Desktop operations directly in CI/CD pipelines for better workflow automation.
+- Simplified automation for local development: Execute Docker Desktop operations more efficiently in scripts and tests. 
 - An improved developer experience: Restart, quit, or reset Docker Desktop from the command line, reducing dependency on the Docker Desktop Dashboard and improving flexibility and efficiency.
 @y
-- Enhanced automation and CI/CD integration: Perform Docker Desktop operations directly in CI/CD pipelines for better workflow automation.
+- Simplified automation for local development: Execute Docker Desktop operations more efficiently in scripts and tests. 
 - An improved developer experience: Restart, quit, or reset Docker Desktop from the command line, reducing dependency on the Docker Desktop Dashboard and improving flexibility and efficiency.
 @z
 

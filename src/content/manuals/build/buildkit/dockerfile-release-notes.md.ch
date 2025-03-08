@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Dockerfile release notes
@@ -30,6 +31,212 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 @z
 
 @x
+## 1.14.0
+@y
+## 1.14.0
+@z
+
+@x
+{{< release-date date="2025-02-19" >}}
+@y
+{{< release-date date="2025-02-19" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0).
+@z
+
+% snip code...
+
+@x
+- `COPY --chmod` now allows non-octal values. This feature was previously in the labs channel and is now available in the main release. [moby/buildkit#5734](https://github.com/moby/buildkit/pull/5734)
+- Fix handling of OSVersion platform property if one is set by the base image [moby/buildkit#5714](https://github.com/moby/buildkit/pull/5714)
+- Fix errors where a named context metadata could be resolved even if it was not reachable by the current build configuration, leading to build errors [moby/buildkit#5688](https://github.com/moby/buildkit/pull/5688)
+@y
+- `COPY --chmod` now allows non-octal values. This feature was previously in the labs channel and is now available in the main release. [moby/buildkit#5734](https://github.com/moby/buildkit/pull/5734)
+- Fix handling of OSVersion platform property if one is set by the base image [moby/buildkit#5714](https://github.com/moby/buildkit/pull/5714)
+- Fix errors where a named context metadata could be resolved even if it was not reachable by the current build configuration, leading to build errors [moby/buildkit#5688](https://github.com/moby/buildkit/pull/5688)
+@z
+
+@x
+## 1.14.0 (labs)
+@y
+## 1.14.0 (labs)
+@z
+
+@x
+{{< release-date date="2025-02-19" >}}
+@y
+{{< release-date date="2025-02-19" >}}
+@z
+
+@x
+{{% include "dockerfile-labs-channel.md" %}}
+@y
+{{% include "dockerfile-labs-channel.md" %}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0-labs).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0-labs).
+@z
+
+% snip code...
+
+@x
+- New `RUN --device=name,[required]` flag lets builds request CDI devices are available to the build step. Requires BuildKit v0.20.0+ [moby/buildkit#4056](https://github.com/moby/buildkit/pull/4056), [moby/buildkit#5738](https://github.com/moby/buildkit/pull/5738)
+@y
+- New `RUN --device=name,[required]` flag lets builds request CDI devices are available to the build step. Requires BuildKit v0.20.0+ [moby/buildkit#4056](https://github.com/moby/buildkit/pull/4056), [moby/buildkit#5738](https://github.com/moby/buildkit/pull/5738)
+@z
+
+@x
+## 1.13.0
+@y
+## 1.13.0
+@z
+
+@x
+{{< release-date date="2025-01-20" >}}
+@y
+{{< release-date date="2025-01-20" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0).
+@z
+
+% snip code...
+
+@x
+- New `TARGETOSVERSION`, `BUILDOSVERSION` builtin build-args are available for Windows builds, and `TARGETPLATFORM` value now also contains `OSVersion` value. [moby/buildkit#5614](https://github.com/moby/buildkit/pull/5614)
+- Allow syntax forwarding for external frontends for files starting with a Byte Order Mark (BOM). [moby/buildkit#5645](https://github.com/moby/buildkit/pull/5645)
+- Default `PATH` in Windows Containers has been updated with `powershell.exe` directory. [moby/buildkit#5446](https://github.com/moby/buildkit/pull/5446)
+- Fix Dockerfile directive parsing to not allow invalid syntax. [moby/buildkit#5646](https://github.com/moby/buildkit/pull/5646)
+- Fix case where `ONBUILD` command may have run twice on inherited stage. [moby/buildkit#5593](https://github.com/moby/buildkit/pull/5593)
+- Fix possible missing named context replacement for child stages in Dockerfile. [moby/buildkit#5596](https://github.com/moby/buildkit/pull/5596)
+@y
+- New `TARGETOSVERSION`, `BUILDOSVERSION` builtin build-args are available for Windows builds, and `TARGETPLATFORM` value now also contains `OSVersion` value. [moby/buildkit#5614](https://github.com/moby/buildkit/pull/5614)
+- Allow syntax forwarding for external frontends for files starting with a Byte Order Mark (BOM). [moby/buildkit#5645](https://github.com/moby/buildkit/pull/5645)
+- Default `PATH` in Windows Containers has been updated with `powershell.exe` directory. [moby/buildkit#5446](https://github.com/moby/buildkit/pull/5446)
+- Fix Dockerfile directive parsing to not allow invalid syntax. [moby/buildkit#5646](https://github.com/moby/buildkit/pull/5646)
+- Fix case where `ONBUILD` command may have run twice on inherited stage. [moby/buildkit#5593](https://github.com/moby/buildkit/pull/5593)
+- Fix possible missing named context replacement for child stages in Dockerfile. [moby/buildkit#5596](https://github.com/moby/buildkit/pull/5596)
+@z
+
+@x
+## 1.13.0 (labs)
+@y
+## 1.13.0 (labs)
+@z
+
+@x
+{{< release-date date="2025-01-20" >}}
+@y
+{{< release-date date="2025-01-20" >}}
+@z
+
+@x
+{{% include "dockerfile-labs-channel.md" %}}
+@y
+{{% include "dockerfile-labs-channel.md" %}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0-labs).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0-labs).
+@z
+
+% snip code...
+
+@x
+- Fix support for non-octal values for `COPY --chmod`. [moby/buildkit#5626](https://github.com/moby/buildkit/pull/5626)
+@y
+- Fix support for non-octal values for `COPY --chmod`. [moby/buildkit#5626](https://github.com/moby/buildkit/pull/5626)
+@z
+
+@x
+## 1.12.0
+@y
+## 1.12.0
+@z
+
+@x
+{{< release-date date="2024-11-27" >}}
+@y
+{{< release-date date="2024-11-27" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.12.0).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.12.0).
+@z
+
+% snip code...
+
+@x
+- Fix incorrect description in History line of image configuration with multiple `ARG` instructions. [moby/buildkit#5508]
+@y
+- Fix incorrect description in History line of image configuration with multiple `ARG` instructions. [moby/buildkit#5508]
+@z
+
+@x
+[moby/buildkit#5508]: https://github.com/moby/buildkit/pull/5508
+@y
+[moby/buildkit#5508]: https://github.com/moby/buildkit/pull/5508
+@z
+
+@x
+## 1.11.1
+@y
+## 1.11.1
+@z
+
+@x
+{{< release-date date="2024-11-08" >}}
+@y
+{{< release-date date="2024-11-08" >}}
+@z
+
+@x
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.1).
+@y
+The full release note for this release is available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.1).
+@z
+
+% snip code...
+
+@x
+- Fix regression when using the `ONBUILD` instruction in stages inherited within the same Dockerfile. [moby/buildkit#5490]
+@y
+- Fix regression when using the `ONBUILD` instruction in stages inherited within the same Dockerfile. [moby/buildkit#5490]
+@z
+
+@x
+[moby/buildkit#5490]: https://github.com/moby/buildkit/pull/5490
+@y
+[moby/buildkit#5490]: https://github.com/moby/buildkit/pull/5490
+@z
+
+@x
 ## 1.11.0
 @y
 ## 1.11.0
@@ -49,15 +256,7 @@ The full release note for this release is available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.0).
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.11.0
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.11.0
-```
-@z
+% snip code...
 
 @x
 - The [`ONBUILD` instruction](/reference/dockerfile.md#onbuild) now supports commands that refer to other stages or images with `from`, such as `COPY --from` or `RUN mount=from=...`. [moby/buildkit#5357]
@@ -78,9 +277,15 @@ The full release note for this release is available
 @z
 
 @x
-### 1.11.0-labs
+## 1.11.0 (labs)
 @y
-### 1.11.0-labs
+## 1.11.0 (labs)
+@z
+
+@x
+{{% include "dockerfile-labs-channel.md" %}}
+@y
+{{% include "dockerfile-labs-channel.md" %}}
 @z
 
 @x
@@ -129,15 +334,7 @@ The full release note for this release is available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.10.0).
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.10.0
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.10.0
-```
-@z
+% snip code...
 
 @x
 - [Build secrets](/manuals/build/building/secrets.md#target) can now be mounted as environment variables using the `env=VARIABLE` option. [moby/buildkit#5215]
@@ -195,15 +392,7 @@ The full release note for this release is available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.9.0).
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.9.0
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.9.0
-```
-@z
+% snip code...
 
 @x
 - Add new validation rules:
@@ -251,15 +440,7 @@ The full release note for this release is available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.1).
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.8.1
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.8.1
-```
-@z
+% snip code...
 
 @x
 ### Bug fixes and enhancements
@@ -297,15 +478,7 @@ The full release note for this release is available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.0).
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.8.0
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.8.0
-```
-@z
+% snip code...
 
 @x
 - Many new validation rules have been added to verify that your Dockerfile is using best practices. These rules are validated during build and new `check` frontend method can be used to only trigger validation without completing the whole build.
@@ -343,15 +516,7 @@ The full release note for this release is available
 ### Stable
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.7
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.7
-```
-@z
+% snip code...
 
 @x
 - Variable expansion now allows string substitutions and trimming.
@@ -387,15 +552,7 @@ The full release note for this release is available
 ### Labs
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1.7-labs
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1.7-labs
-```
-@z
+% snip code...
 
 @x
 - New `--parents` flag has been added to `COPY` for copying files while keeping the parent directory structure.
@@ -1038,9 +1195,9 @@ The following features have graduated from the labs channel to stable:
 @z
 
 @x
-## 1.1.2 (experimental)
+## 1.1.2 (labs)
 @y
-## 1.1.2 (experimental)
+## 1.1.2 (labs)
 @z
 
 @x

@@ -2,13 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-{{% experimental %}}
-The "labs" channel provides early access to Dockerfile features that are not
-yet available in the stable channel.
-{{% /experimental %}}
+> [!IMPORTANT]
+>
+> The labs channel gives you access to experimental Dockerfile features not yet available in the stable channel.
 @y
-{{% experimental %}}
-The "labs" channel provides early access to Dockerfile features that are not
-yet available in the stable channel.
-{{% /experimental %}}
+> [!IMPORTANT]
+>
+> The labs channel gives you access to experimental Dockerfile features not yet available in the stable channel.
 @z
