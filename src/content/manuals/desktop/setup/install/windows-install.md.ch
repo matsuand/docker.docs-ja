@@ -90,7 +90,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
   WSL 2 on Windows 10 or Windows 11:
   - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
   - 4GB system RAM
-  - Enable hardware virtualization in BIOS. For more information, see
+  - Enable hardware virtualization in BIOS/UEFI. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
 @y
 - WSL バージョン 1.1.3.0 またはそれ以降。
@@ -103,7 +103,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 - Windows 10 または Windows 11 上の WSL 2 を正常動作させるためには、以下のハードウェア要件が必要。
   - [第 2 レベルのアドレス変換](https://en.wikipedia.org/wiki/Second_Level_Address_Translation) (Second Level Address Translation; SLAT) に対応した 64 ビットプロセッサー。
   - 4GB システム RAM
-  - BIOS におけるハードウェア仮想機能の有効化。
+  - BIOS/UEFI におけるハードウェア仮想機能の有効化。
     詳しくは [仮想化](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization) を参照してください。
 @z
 
@@ -161,14 +161,13 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
 @x
   - 64 bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
   - 4GB system RAM
-  - Turn on BIOS-level hardware virtualization support in the
-    BIOS settings. For more information, see
+  - Turn on BIOS/UEFI-level hardware virtualization support in the
+    BIOS/UEFI settings. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
 @y
   - [第 2 レベルのアドレス変換](https://en.wikipedia.org/wiki/Second_Level_Address_Translation) (Second Level Address Translation; SLAT) に対応した 64 ビットプロセッサー。
   - 4GB システム RAM
-  - BIOS におけるハードウェア仮想機能の有効化。
-    For more information, see
+  - BIOS/UEFI におけるハードウェア仮想機能の有効化。
     詳しくは [仮想化](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization) を参照してください。
 @z
 
@@ -214,7 +213,7 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
   WSL 2 on Windows 10 or Windows 11:
   - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
   - 4GB system RAM
-  - Enable hardware virtualization in BIOS. For more information, see
+  - Enable hardware virtualization in BIOS/UEFI. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
 @y
 - WSL バージョン 1.1.3.0 またはそれ以降。
@@ -227,7 +226,7 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
 - Windows 10 または Windows 11 上の WSL 2 を正常動作させるためには、以下のハードウェア要件が必要。
   - [第 2 レベルのアドレス変換](https://en.wikipedia.org/wiki/Second_Level_Address_Translation) (Second Level Address Translation; SLAT) に対応した 64 ビットプロセッサー。
   - 4GB システム RAM
-  - BIOS におけるハードウェア仮想機能の有効化。
+  - BIOS/UEFI におけるハードウェア仮想機能の有効化。
     詳しくは [仮想化](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization) を参照してください。
 @z
 

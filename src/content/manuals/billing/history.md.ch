@@ -172,7 +172,6 @@ To add or update your VAT number:
 4. Select **Change** on your billing information card.
 5. Ensure the **I'm purchasing as a business** checkbox is checked.
 6. Enter your VAT number in the Tax ID section.
-7. Select **Update**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/).
 2. Under Settings and administration, select **Billing**.
@@ -180,6 +179,23 @@ To add or update your VAT number:
 4. Select **Change** on your billing information card.
 5. Ensure the **I'm purchasing as a business** checkbox is checked.
 6. Enter your VAT number in the Tax ID section.
+@z
+
+@x
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@y
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@z
+
+@x
+7. Select **Update**.
+@y
 7. Select **Update**.
 @z
 
@@ -209,13 +225,29 @@ To add or update your VAT number:
 3. Select the **Billing address** link.
 4. In the **Billing Information** section, select **Update information**.
 5. Enter your VAT number in the Tax ID section.
-6. Select **Save**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. For user accounts, Select your avatar in the top-right corner, then **Billing**. For organizations, select the name of the organization.
 3. Select the **Billing address** link.
 4. In the **Billing Information** section, select **Update information**.
 5. Enter your VAT number in the Tax ID section.
+@z
+
+@x
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@y
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@z
+
+@x
+6. Select **Save**.
+@y
 6. Select **Save**.
 @z
 

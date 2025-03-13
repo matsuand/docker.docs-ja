@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Organization access tokens
 description: Learn how to create and manage organization access tokens
@@ -24,25 +26,19 @@ linkTitle: Organization access tokens
 @x
 > [!WARNING]
 >
-> Organization access tokens (OATs) are not intended to be used with Docker 
-> Desktop, and are incompatible.
+> Organization access tokens (OATs) are not intended to be used with Docker
+> Desktop or Docker Scout, and are incompatible.
 >
-> OATs are also currently incompatible with the following services:
->
-> - Docker Scout
->
-> If you use Docker Desktop or one of these services, you must use personal access tokens instead.
+> If you use Docker Desktop or Docker Scout, you must use personal
+> access tokens instead.
 @y
 > [!WARNING]
 >
-> Organization access tokens (OATs) are not intended to be used with Docker 
-> Desktop, and are incompatible.
+> Organization access tokens (OATs) are not intended to be used with Docker
+> Desktop or Docker Scout, and are incompatible.
 >
-> OATs are also currently incompatible with the following services:
->
-> - Docker Scout
->
-> If you use Docker Desktop or one of these services, you must use personal access tokens instead.
+> If you use Docker Desktop or Docker Scout, you must use personal
+> access tokens instead.
 @z
 
 @x
@@ -72,7 +68,7 @@ OATs provide the following advantages:
   if you find any suspicious activity.
 - You can limit what each OAT has access to, which limits the impact if an OAT
   is compromised.
-- All company or organization owners can manage OATs. If one owner leaves the 
+- All company or organization owners can manage OATs. If one owner leaves the
   organization, the remaining owners can still manage the OATs.
 - OATs have their own Docker Hub usage limits that don't count towards your
   personal account's limits.
@@ -81,16 +77,20 @@ OATs provide the following advantages:
   if you find any suspicious activity.
 - You can limit what each OAT has access to, which limits the impact if an OAT
   is compromised.
-- All company or organization owners can manage OATs. If one owner leaves the 
+- All company or organization owners can manage OATs. If one owner leaves the
   organization, the remaining owners can still manage the OATs.
 - OATs have their own Docker Hub usage limits that don't count towards your
   personal account's limits.
 @z
 
 @x
-If you have existing [service accounts](/docker-hub/service-accounts/), Docker recommends that you replace the service accounts with OATs. OATs offer the following advantages over service accounts:
+If you have existing [service accounts](/docker-hub/service-accounts/),
+Docker recommends that you replace the service accounts with OATs. OATs offer
+the following advantages over service accounts:
 @y
-If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/), Docker recommends that you replace the service accounts with OATs. OATs offer the following advantages over service accounts:
+If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/),
+Docker recommends that you replace the service accounts with OATs. OATs offer
+the following advantages over service accounts:
 @z
 
 @x
@@ -128,25 +128,29 @@ If you have existing [service accounts](__SUBDIR__/docker-hub/service-accounts/)
 @x
 > [!IMPORTANT]
 >
-> Treat access tokens like a password and keep them secret. Store your tokens 
+> Treat access tokens like a password and keep them secret. Store your tokens
 > securely in a credential manager for example.
 @y
 > [!IMPORTANT]
 >
-> Treat access tokens like a password and keep them secret. Store your tokens 
+> Treat access tokens like a password and keep them secret. Store your tokens
 > securely in a credential manager for example.
 @z
 
 @x
-Company or organization owners can create up to 10 organization access tokens 
-(OATs) for organizations with a Team subscription and up to 100 OATs for 
-organizations with a Business subscription. Expired tokens count towards the 
-total amount of tokens.
+Company or organization owners can create up to:
+- 10 OATs for organizations with a Team subscription
+- 100 OATs for organizations with a Business subscription
 @y
-Company or organization owners can create up to 10 organization access tokens 
-(OATs) for organizations with a Team subscription and up to 100 OATs for 
-organizations with a Business subscription. Expired tokens count towards the 
-total amount of tokens.
+Company or organization owners can create up to:
+- 10 OATs for organizations with a Team subscription
+- 100 OATs for organizations with a Business subscription
+@z
+
+@x
+Expired tokens count towards the total amount of tokens.
+@y
+Expired tokens count towards the total amount of tokens.
 @z
 
 @x
@@ -180,9 +184,11 @@ To create an OAT:
 @z
 
 @x
-5. Add a label and optional description for your token. Use something that indicates the use case or purpose of the token.
+5. Add a label and optional description for your token. Use something that
+indicates the use case or purpose of the token.
 @y
-5. Add a label and optional description for your token. Use something that indicates the use case or purpose of the token.
+5. Add a label and optional description for your token. Use something that
+indicates the use case or purpose of the token.
 @z
 
 @x
@@ -192,41 +198,53 @@ To create an OAT:
 @z
 
 @x
-7. Select the repository access for the token.
+7. Expand the **Repository** drop-down to set access permission
+scopes for your token. To set Repository access scopes:
+    1. Optional. Select **Read public repositories**.
+    2. Select **Add repository** and choose a repository from the drop-down.
+    3. Set the scopes for your repository &mdash; **Image Push** or
+    **Image Pull**.
+    4. Add more repositories as needed. You can add up to 50 repositories.
 @y
-7. Select the repository access for the token.
+7. Expand the **Repository** drop-down to set access permission
+scopes for your token. To set Repository access scopes:
+    1. Optional. Select **Read public repositories**.
+    2. Select **Add repository** and choose a repository from the drop-down.
+    3. Set the scopes for your repository &mdash; **Image Push** or
+    **Image Pull**.
+    4. Add more repositories as needed. You can add up to 50 repositories.
 @z
 
 @x
-   The access permissions are scopes that set restrictions in your repositories.
-   For example, for Read & Write permissions, an automation pipeline can build
-   an image and then push it to a repository. However, it can't delete the
-   repository. You can select one of the following options:
+8. Optional. Expand the **Organization** drop-down and select the
+**Allow management access to this organization's resources** checkbox. This
+setting enables organization management scopes for your token. The following
+organization management scopes are available:
+    - **Member Edit**: Edit members of the organization
+    - **Member Read**: Read members of the organization
+    - **Invite Edit**: Invite members to the organization
+    - **Invite Read**: Read invites to the organization
+    - **Group Edit**: Edit groups of the organization
+    - **Group Read**: Read groups of the organization
 @y
-   The access permissions are scopes that set restrictions in your repositories.
-   For example, for Read & Write permissions, an automation pipeline can build
-   an image and then push it to a repository. However, it can't delete the
-   repository. You can select one of the following options:
+8. Optional. Expand the **Organization** drop-down and select the
+**Allow management access to this organization's resources** checkbox. This
+setting enables organization management scopes for your token. The following
+organization management scopes are available:
+    - **Member Edit**: Edit members of the organization
+    - **Member Read**: Read members of the organization
+    - **Invite Edit**: Invite members to the organization
+    - **Invite Read**: Read invites to the organization
+    - **Group Edit**: Edit groups of the organization
+    - **Group Read**: Read groups of the organization
 @z
 
 @x
-   - **Public repositories (read only)**
-   - **All repositories**: You can select read access, or read and write access.
-   - **Select repositories**: You can select up to 50 repositories, and then
-     select read access, or read and write access for each repository.
-@y
-   - **Public repositories (read only)**
-   - **All repositories**: You can select read access, or read and write access.
-   - **Select repositories**: You can select up to 50 repositories, and then
-     select read access, or read and write access for each repository.
-@z
-
-@x
-8. Select **Generate token** and then copy the token that appears on the screen
+9. Select **Generate token**. Copy the token that appears on the screen
    and save it. You won't be able to retrieve the token once you exit the
    screen.
 @y
-8. Select **Generate token** and then copy the token that appears on the screen
+9. Select **Generate token**. Copy the token that appears on the screen
    and save it. You won't be able to retrieve the token once you exit the
    screen.
 @z
@@ -302,11 +320,11 @@ deactivate, or delete a token as needed.
 @z
 
 @x
-4. Select the actions menu on the far right of a token row, then select
+4. Select the actions menu in the token row, then select
    **Deactivate**, **Edit**, or **Delete** to modify the token. For **Inactive**
    tokens, you can only select **Delete**.
 @y
-4. Select the actions menu on the far right of a token row, then select
+4. Select the actions menu in the token row, then select
    **Deactivate**, **Edit**, or **Delete** to modify the token. For **Inactive**
    tokens, you can only select **Delete**.
 @z

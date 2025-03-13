@@ -58,9 +58,9 @@ If you have an existing Rails application, you will need to create the Docker as
 @z
 
 @x
-## Initialize Docker assets
+## 1. Initialize Docker assets
 @y
-## Docker アセットの初期化 {#initialize-docker-assets}
+## 1. Docker アセットの初期化 {#1-initialize-docker-assets}
 @z
 
 @x
@@ -130,9 +130,9 @@ To learn more about the files, see the following:
 @z
 
 @x
-## Run the application
+## 2. Run the application
 @y
-## Run the application
+## 2. Run the application
 @z
 
 @x
@@ -156,9 +156,9 @@ In the terminal, press `ctrl`+`c` to stop the application.
 @z
 
 @x
-### Run the application in the background
+## 3. Run the application in the background
 @y
-### Run the application in the background
+## 3. Run the application in the background
 @z
 
 @x
@@ -250,9 +250,7 @@ Related information:
 @z
 
 @x
-In the next section, you'll learn how you can develop your application using
-containers.
+In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
 @y
-In the next section, you'll learn how you can develop your application using
-containers.
+In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
 @z

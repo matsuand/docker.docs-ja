@@ -66,7 +66,6 @@ To update your billing information:
 4. On your billing information card, select **Change**.
 5. Update your billing contact and billing address information.
 6. Optional. To add or update a VAT ID, select the **I'm purchasing as a business** checkbox and enter your Tax ID.
-7. Select **Update**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/).
 2. Under Settings and administration, select **Billing**.
@@ -74,6 +73,23 @@ To update your billing information:
 4. On your billing information card, select **Change**.
 5. Update your billing contact and billing address information.
 6. Optional. To add or update a VAT ID, select the **I'm purchasing as a business** checkbox and enter your Tax ID.
+@z
+
+@x
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@y
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@z
+
+@x
+7. Select **Update**.
+@y
 7. Select **Update**.
 @z
 
@@ -97,13 +113,29 @@ To update your billing information:
 3. From the drop-down menu, select **Billing**.
 4. Select **Billing Address** and enter your updated billing information.
 5. Optional. To add or update a VAT ID, enter your **Tax ID/VAT**.
-6. Select **Submit**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select your avatar in the top-right corner.
 3. From the drop-down menu, select **Billing**.
 4. Select **Billing Address** and enter your updated billing information.
 5. Optional. To add or update a VAT ID, enter your **Tax ID/VAT**.
+@z
+
+@x
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@y
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@z
+
+@x
+6. Select **Submit**.
+@y
 6. Select **Submit**.
 @z
 
@@ -152,7 +184,6 @@ To update your billing information:
 4. On your billing information card, select **Change**.
 5. Update your billing contact and billing address information.
 6. Optional. To add or update a VAT ID, select the **I'm purchasing as a business** checkbox and enter your Tax ID.
-7. Select **Update**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/).
 2. Under Settings and administration, select **Billing**.
@@ -160,6 +191,23 @@ To update your billing information:
 4. On your billing information card, select **Change**.
 5. Update your billing contact and billing address information.
 6. Optional. To add or update a VAT ID, select the **I'm purchasing as a business** checkbox and enter your Tax ID.
+@z
+
+@x
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@y
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@z
+
+@x
+7. Select **Update**.
+@y
 7. Select **Update**.
 @z
 
@@ -184,14 +232,30 @@ To update your billing information:
 4. Select the organization that you want to change the payment method for.
 5. Select **Billing Address**.
 6. Optional. To add or update a VAT ID, enter your **Tax ID/VAT**.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com).
+2. Select your avatar in the top-right corner.
+3. From the drop-down menu select **Billing**.
+4. Select the organization that you want to change the payment method for.
+5. Select **Billing Address**.
+6. Optional. To add or update a VAT ID, enter your **Tax ID/VAT**.
+@z
+
+@x
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@y
+    > [!IMPORTANT]
+    >
+    > Your VAT number must include your country prefix. For example, if you are
+    entering a VAT number for Germany, you would enter `DE123456789`.
+@z
+
+@x
 7. Select **Submit**.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select your avatar in the top-right corner.
-3. From the drop-down menu select **Billing**.
-4. Select the organization that you want to change the payment method for.
-5. Select **Billing Address**.
-6. Optional. To add or update a VAT ID, enter your **Tax ID/VAT**.
 7. Select **Submit**.
 @z
 

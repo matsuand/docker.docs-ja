@@ -47,13 +47,13 @@ The Ruby language-specific guide teaches you how to containerize a Ruby on Rails
 
 @x
 - Containerize and run a Ruby on Rails application
+- Configure a GitHub Actions workflow to build and push a Docker image to Docker Hub
 - Set up a local environment to develop a Ruby on Rails application using containers
-- Configure a CI/CD pipeline for a containerized Ruby on Rails application using GitHub Actions
 - Deploy your containerized Ruby on Rails application locally to Kubernetes to test and debug your deployment
 @y
 - Containerize and run a Ruby on Rails application
+- Configure a GitHub Actions workflow to build and push a Docker image to Docker Hub
 - Set up a local environment to develop a Ruby on Rails application using containers
-- Configure a CI/CD pipeline for a containerized Ruby on Rails application using GitHub Actions
 - Deploy your containerized Ruby on Rails application locally to Kubernetes to test and debug your deployment
 @z
 
